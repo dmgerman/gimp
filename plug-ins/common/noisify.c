@@ -56,7 +56,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1cc6090108
+DECL|struct|__anon2b021d700108
 block|{
 DECL|member|independent
 name|gboolean
@@ -83,7 +83,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1cc6090208
+DECL|struct|__anon2b021d700208
 block|{
 DECL|member|channels
 name|gint
@@ -472,7 +472,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_scatter_rgb"
+literal|"plug_in_rgb_noise"
 argument_list|,
 literal|"Adds random noise to image channels "
 argument_list|,
@@ -491,7 +491,7 @@ literal|"May 2000"
 argument_list|,
 name|N_
 argument_list|(
-literal|"_Scatter RGB..."
+literal|"_RGB Noise..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
@@ -512,7 +512,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_scatter_rgb"
+literal|"plug_in_rgb_noise"
 argument_list|,
 literal|"<Image>/Filters/Noise"
 argument_list|)

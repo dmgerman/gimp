@@ -217,7 +217,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2976a7e50108
+DECL|struct|__anon2b2b85480108
 block|{
 DECL|member|holdness
 name|gint
@@ -344,7 +344,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-name|PLUG_IN_NAME
+literal|"plug_in_hsv_noise"
 argument_list|,
 literal|"Scattering pixel values in HSV space"
 argument_list|,
@@ -358,7 +358,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"S_catter HSV..."
+literal|"HSV Noise..."
 argument_list|)
 argument_list|,
 literal|"RGB*"
@@ -379,9 +379,41 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-name|PLUG_IN_NAME
+literal|"plug_in_hsv_noise"
 argument_list|,
 literal|"<Image>/Filters/Noise"
+argument_list|)
+expr_stmt|;
+name|gimp_install_procedure
+argument_list|(
+name|PLUG_IN_NAME
+argument_list|,
+literal|"Scattering pixel values in HSV space"
+argument_list|,
+literal|"Scattering pixel values in HSV space"
+argument_list|,
+literal|"Shuji Narazaki (narazaki@InetQ.or.jp)"
+argument_list|,
+literal|"Shuji Narazaki"
+argument_list|,
+literal|"1997"
+argument_list|,
+name|NULL
+argument_list|,
+literal|"RGB*"
+argument_list|,
+name|GIMP_PLUGIN
+argument_list|,
+name|G_N_ELEMENTS
+argument_list|(
+name|args
+argument_list|)
+argument_list|,
+literal|0
+argument_list|,
+name|args
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
