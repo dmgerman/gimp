@@ -197,6 +197,31 @@ name|GIMP_HELP_DOCUMENT_REMOVE
 block|}
 block|,
 block|{
+literal|"documents-clear"
+block|,
+name|GTK_STOCK_CLEAR
+block|,
+name|N_
+argument_list|(
+literal|"_Clear History"
+argument_list|)
+block|,
+literal|""
+block|,
+name|N_
+argument_list|(
+literal|"Clear the entire document history"
+argument_list|)
+block|,
+name|G_CALLBACK
+argument_list|(
+name|documents_clear_cmd_callback
+argument_list|)
+block|,
+name|GIMP_HELP_DOCUMENT_CLEAR
+block|}
+block|,
+block|{
 literal|"documents-recreate-preview"
 block|,
 name|GTK_STOCK_REFRESH
@@ -377,6 +402,13 @@ argument_list|(
 literal|"documents-remove"
 argument_list|,
 name|imagefile
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"documents-clear"
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
