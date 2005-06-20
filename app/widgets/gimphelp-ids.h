@@ -2425,6 +2425,14 @@ value|"gimp-buffer-delete"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_DOCUMENT_CLEAR
+define|#
+directive|define
+name|GIMP_HELP_DOCUMENT_CLEAR
+value|"gimp-document-clear"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_DOCUMENT_DIALOG
 define|#
 directive|define
