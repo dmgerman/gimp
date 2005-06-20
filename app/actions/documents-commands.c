@@ -744,8 +744,24 @@ name|box
 argument_list|,
 name|_
 argument_list|(
-literal|"Do you really want to remove all "
-literal|"entries from the document history?"
+literal|"Remove all entries from the "
+literal|"document history?"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_message_box_set_text
+argument_list|(
+name|GIMP_MESSAGE_DIALOG
+argument_list|(
+name|dialog
+argument_list|)
+operator|->
+name|box
+argument_list|,
+name|_
+argument_list|(
+literal|"Clearing the document history will permanently "
+literal|"remove all currently listed entries."
 argument_list|)
 argument_list|)
 expr_stmt|;
