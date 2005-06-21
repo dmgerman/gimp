@@ -335,7 +335,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6d7af40108
+DECL|struct|__anon2a237f8b0108
 block|{
 DECL|member|name
 specifier|const
@@ -595,7 +595,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6d7af40208
+DECL|struct|__anon2a237f8b0208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -668,7 +668,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6d7af40308
+DECL|struct|__anon2a237f8b0308
 block|{
 DECL|member|input_spi
 name|gdouble
@@ -702,7 +702,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6d7af40408
+DECL|struct|__anon2a237f8b0408
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -809,7 +809,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6d7af40508
+DECL|struct|__anon2a237f8b0508
 block|{
 DECL|member|pull_table
 name|GtkWidget
@@ -977,7 +977,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6d7af40608
+DECL|struct|__anon2a237f8b0608
 block|{
 DECL|member|name
 specifier|const
@@ -7040,7 +7040,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6d7af40708
+DECL|struct|__anon2a237f8b0708
 block|{
 DECL|member|index
 name|gint
@@ -7928,22 +7928,11 @@ index|]
 operator|.
 name|thresh
 expr_stmt|;
-comment|/* optimisation: only use separate threshold matrices if the        * spot functions are actually different */
 name|ASRT
 argument_list|(
 name|gf
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|spotfn_list
-index|[
-name|gf
-index|]
-operator|.
-name|thresh
-condition|)
 name|spotfn_list
 index|[
 name|gf
@@ -7975,16 +7964,6 @@ argument_list|(
 name|bf
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|spotfn_list
-index|[
-name|bf
-index|]
-operator|.
-name|thresh
-condition|)
 name|spotfn_list
 index|[
 name|bf
@@ -8041,16 +8020,6 @@ argument_list|(
 name|gf
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|spotfn_list
-index|[
-name|gf
-index|]
-operator|.
-name|thresh
-condition|)
 name|spotfn_list
 index|[
 name|gf
