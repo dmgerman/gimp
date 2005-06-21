@@ -76,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af4b9b30108
+DECL|struct|__anon2c0af8b50108
 block|{
 DECL|member|scale
 name|gint
@@ -107,7 +107,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2af4b9b30203
+DECL|enum|__anon2c0af8b50203
 block|{
 DECL|enumerator|filter_uniform
 name|filter_uniform
@@ -165,7 +165,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af4b9b30308
+DECL|struct|__anon2c0af8b50308
 block|{
 DECL|member|N
 name|gint
@@ -3007,6 +3007,20 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
+name|memset
+argument_list|(
+name|dst
+argument_list|,
+literal|0
+argument_list|,
+name|size
+operator|*
+sizeof|sizeof
+argument_list|(
+name|gfloat
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|channelsize
 operator|=
 operator|(
