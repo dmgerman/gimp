@@ -223,7 +223,7 @@ name|gimp_layer_set_preserve_trans
 argument_list|(
 name|layer
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|)
