@@ -1721,7 +1721,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"R_e-show \"%s\""
+literal|"R_e-Show \"%s\""
 argument_list|)
 argument_list|,
 name|label
