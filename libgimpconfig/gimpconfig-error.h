@@ -16,10 +16,18 @@ directive|define
 name|__GIMP_CONFIG_ERROR_H__
 end_define
 
+begin_macro
+name|G_BEGIN_DECLS
+end_macro
+
+begin_comment
+comment|/* For information look into the C source or the html documentation */
+end_comment
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29983b6c0103
+DECL|enum|__anon2892963b0103
 block|{
 DECL|enumerator|GIMP_CONFIG_ERROR_OPEN
 name|GIMP_CONFIG_ERROR_OPEN
@@ -63,6 +71,10 @@ argument_list|)
 name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
+
+begin_macro
+name|G_END_DECLS
+end_macro
 
 begin_endif
 endif|#

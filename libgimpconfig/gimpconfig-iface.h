@@ -16,6 +16,14 @@ directive|define
 name|__GIMP_CONFIG_IFACE_H__
 end_define
 
+begin_macro
+name|G_BEGIN_DECLS
+end_macro
+
+begin_comment
+comment|/* For information look into the C source or the html documentation */
+end_comment
+
 begin_define
 DECL|macro|GIMP_TYPE_CONFIG
 define|#
@@ -400,6 +408,10 @@ name|config
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|G_END_DECLS
+end_macro
 
 begin_endif
 endif|#

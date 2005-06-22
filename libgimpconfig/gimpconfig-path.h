@@ -16,19 +16,15 @@ directive|define
 name|__GIMP_CONFIG_PATH_H__
 end_define
 
-begin_comment
+begin_decl_stmt
+name|G_BEGIN_DECLS
+comment|/* For information look into the C source or the html documentation */
 comment|/*  * GIMP_TYPE_CONFIG_PATH  */
-end_comment
-
-begin_define
 DECL|macro|GIMP_TYPE_CONFIG_PATH
 define|#
 directive|define
 name|GIMP_TYPE_CONFIG_PATH
 value|(gimp_config_path_get_type ())
-end_define
-
-begin_define
 DECL|macro|GIMP_VALUE_HOLDS_CONFIG_PATH (value)
 define|#
 directive|define
@@ -37,9 +33,6 @@ parameter_list|(
 name|value
 parameter_list|)
 value|(G_TYPE_CHECK_VALUE_TYPE ((value), GIMP_TYPE_CONFIG_PATH))
-end_define
-
-begin_decl_stmt
 name|GType
 name|gimp_config_path_get_type
 argument_list|(
@@ -56,7 +49,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ab4dac60103
+DECL|enum|__anon2b97b7890103
 block|{
 DECL|enumerator|GIMP_CONFIG_PATH_FILE
 name|GIMP_CONFIG_PATH_FILE
@@ -212,6 +205,10 @@ name|name
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|G_END_DECLS
+end_macro
 
 begin_endif
 endif|#

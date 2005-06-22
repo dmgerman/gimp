@@ -17,6 +17,8 @@ name|__GIMP_CONFIG_DESERIALIZE_H__
 end_define
 
 begin_function_decl
+name|G_BEGIN_DECLS
+comment|/* For information look into the C source or the html documentation */
 name|gboolean
 name|gimp_config_deserialize_properties
 parameter_list|(
@@ -51,6 +53,10 @@ name|nest_level
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|G_END_DECLS
+end_macro
 
 begin_endif
 endif|#
