@@ -78,7 +78,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27fbab4b0108
+DECL|struct|__anon2b2a94da0108
 block|{
 DECL|member|console
 name|GtkTextBuffer
@@ -423,10 +423,6 @@ decl_stmt|;
 name|GtkWidget
 modifier|*
 name|button
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|label
 decl_stmt|;
 name|GtkWidget
 modifier|*
