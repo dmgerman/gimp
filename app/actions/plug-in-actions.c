@@ -1685,8 +1685,6 @@ name|domain
 operator|=
 name|plug_ins_locale_domain
 argument_list|(
-name|group
-operator|->
 name|gimp
 argument_list|,
 name|progname
@@ -1788,6 +1786,14 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+comment|/* update sensitivity of the "plug-in-repeat" and "plug-in-reshow" actions */
+name|plug_in_actions_update
+argument_list|(
+name|group
+argument_list|,
+name|gimp
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
