@@ -180,7 +180,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3f0d060103
+DECL|enum|__anon2a20bb1d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -282,6 +282,19 @@ parameter_list|,
 name|GParamSpec
 modifier|*
 name|pspec
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|GtkWidget
+modifier|*
+name|cdisplay_lcms_configure
+parameter_list|(
+name|GimpColorDisplay
+modifier|*
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -619,6 +632,12 @@ literal|"gimp-colordisplay-lcms"
 expr_stmt|;
 name|display_class
 operator|->
+name|configure
+operator|=
+name|cdisplay_lcms_configure
+expr_stmt|;
+name|display_class
+operator|->
 name|convert
 operator|=
 name|cdisplay_lcms_convert
@@ -830,6 +849,58 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
+block|}
+end_function
+
+begin_function
+specifier|static
+name|GtkWidget
+modifier|*
+DECL|function|cdisplay_lcms_configure (GimpColorDisplay * display)
+name|cdisplay_lcms_configure
+parameter_list|(
+name|GimpColorDisplay
+modifier|*
+name|display
+parameter_list|)
+block|{
+return|return
+name|g_object_new
+argument_list|(
+name|GTK_TYPE_LABEL
+argument_list|,
+literal|"label"
+argument_list|,
+name|_
+argument_list|(
+literal|"This module takes its configuration "
+literal|"from the<i>Color Management</i> "
+literal|"section in the Preferences dialog."
+argument_list|)
+argument_list|,
+literal|"use-markup"
+argument_list|,
+name|TRUE
+argument_list|,
+literal|"justify"
+argument_list|,
+name|GTK_JUSTIFY_LEFT
+argument_list|,
+literal|"wrap"
+argument_list|,
+name|TRUE
+argument_list|,
+literal|"xalign"
+argument_list|,
+literal|0.5
+argument_list|,
+literal|"yalign"
+argument_list|,
+literal|0.5
+argument_list|,
+name|NULL
+argument_list|)
+return|;
 block|}
 end_function
 
