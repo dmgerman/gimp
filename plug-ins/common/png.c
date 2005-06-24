@@ -114,7 +114,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6109490108
+DECL|struct|__anon29d3ba480108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -161,7 +161,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6109490208
+DECL|struct|__anon29d3ba480208
 block|{
 DECL|member|run
 name|gboolean
@@ -280,7 +280,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|save_image
 parameter_list|(
 specifier|const
@@ -362,6 +362,7 @@ specifier|static
 name|gboolean
 name|ia_has_transparent_pixels
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|pixels
@@ -374,9 +375,10 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
-name|find_unused_ia_colour
+name|gint
+name|find_unused_ia_color
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|pixels
@@ -1775,15 +1777,16 @@ block|}
 end_function
 
 begin_comment
-comment|/* Try to find a colour in the palette which isn't actually  * used in the image, so that we can use it as the transparency  * index. Taken from gif.c */
+comment|/* Try to find a color in the palette which isn't actually  * used in the image, so that we can use it as the transparency  * index. Taken from gif.c */
 end_comment
 
 begin_function
 specifier|static
 name|gint
-DECL|function|find_unused_ia_colour (guchar * pixels,gint numpixels,gint * colors)
-name|find_unused_ia_colour
+DECL|function|find_unused_ia_color (const guchar * pixels,gint numpixels,gint * colors)
+name|find_unused_ia_color
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|pixels
@@ -1847,7 +1850,7 @@ name|i
 operator|++
 control|)
 block|{
-comment|/* If alpha is over a threshold, the colour index in the        * palette is taken. Otherwise, this pixel is transparent. */
+comment|/* If alpha is over a threshold, the color index in the        * palette is taken. Otherwise, this pixel is transparent. */
 if|if
 condition|(
 name|pixels
@@ -1920,7 +1923,7 @@ name|i
 return|;
 block|}
 block|}
-comment|/* Couldn't find an unused colour index within the number of      bits per pixel we wanted.  Will have to increment the number      of colours in the image and assign a transparent pixel there. */
+comment|/* Couldn't find an unused color index within the number of      bits per pixel we wanted.  Will have to increment the number      of colors in the image and assign a transparent pixel there. */
 if|if
 condition|(
 operator|(
@@ -1939,20 +1942,16 @@ operator|++
 expr_stmt|;
 return|return
 operator|(
-operator|(
 operator|*
 name|colors
 operator|)
 operator|-
 literal|1
-operator|)
 return|;
 block|}
 return|return
-operator|(
 operator|-
 literal|1
-operator|)
 return|;
 block|}
 end_function
@@ -3741,7 +3740,7 @@ end_comment
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|save_image (const gchar * filename,gint32 image_ID,gint32 drawable_ID,gint32 orig_image_ID)
 name|save_image
 parameter_list|(
@@ -3760,7 +3759,7 @@ name|gint32
 name|orig_image_ID
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|k
@@ -4113,7 +4112,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
-literal|0
+name|FALSE
 return|;
 block|}
 if|if
@@ -4167,7 +4166,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
-literal|0
+name|FALSE
 return|;
 block|}
 name|png_init_io
@@ -4409,7 +4408,7 @@ literal|"Image type can't be saved as PNG"
 argument_list|)
 expr_stmt|;
 return|return
-literal|0
+name|FALSE
 return|;
 block|}
 comment|/*    * Fix bit depths for (possibly) smaller colormap images    */
@@ -5345,9 +5344,7 @@ name|fp
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
-literal|1
-operator|)
+name|TRUE
 return|;
 block|}
 end_function
@@ -5355,9 +5352,10 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|ia_has_transparent_pixels (guchar * pixels,gint numpixels)
+DECL|function|ia_has_transparent_pixels (const guchar * pixels,gint numpixels)
 name|ia_has_transparent_pixels
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|pixels
@@ -5437,9 +5435,6 @@ modifier|*
 name|before
 decl_stmt|;
 name|gint
-name|transparent
-decl_stmt|;
-name|gint
 name|cols
 decl_stmt|,
 name|rows
@@ -5486,6 +5481,11 @@ operator|=
 literal|1
 expr_stmt|;
 block|}
+if|#
+directive|if
+name|PNG_LIBPNG_VER
+operator|>
+literal|99
 name|cols
 operator|=
 name|drawable
@@ -5504,6 +5504,18 @@ name|cols
 operator|*
 name|rows
 expr_stmt|;
+name|pixels
+operator|=
+name|g_new
+argument_list|(
+name|guchar
+argument_list|,
+name|numpixels
+operator|*
+literal|2
+argument_list|)
+expr_stmt|;
+comment|/* GIMP_INDEXEDA_IMAGE */
 name|gimp_pixel_rgn_init
 argument_list|(
 operator|&
@@ -5528,19 +5540,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|pixels
-operator|=
-operator|(
-name|guchar
-operator|*
-operator|)
-name|g_malloc
-argument_list|(
-name|numpixels
-operator|*
-literal|2
-argument_list|)
-expr_stmt|;
 name|gimp_pixel_rgn_get_rect
 argument_list|(
 operator|&
@@ -5562,11 +5561,6 @@ name|height
 argument_list|)
 expr_stmt|;
 comment|/* Try to find an entry which isn't actually used in the      image, for a transparency index. */
-if|#
-directive|if
-name|PNG_LIBPNG_VER
-operator|>
-literal|99
 if|if
 condition|(
 name|ia_has_transparent_pixels
@@ -5577,9 +5571,10 @@ name|numpixels
 argument_list|)
 condition|)
 block|{
+name|gint
 name|transparent
-operator|=
-name|find_unused_ia_colour
+init|=
+name|find_unused_ia_color
 argument_list|(
 name|pixels
 argument_list|,
@@ -5588,7 +5583,7 @@ argument_list|,
 operator|&
 name|colors
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|transparent
@@ -5750,6 +5745,7 @@ expr_stmt|;
 block|}
 block|}
 else|else
+block|{
 name|png_set_PLTE
 argument_list|(
 name|pp
@@ -5762,6 +5758,12 @@ operator|)
 name|before
 argument_list|,
 name|colors
+argument_list|)
+expr_stmt|;
+block|}
+name|g_free
+argument_list|(
+name|pixels
 argument_list|)
 expr_stmt|;
 else|#
@@ -5790,11 +5792,6 @@ expr_stmt|;
 endif|#
 directive|endif
 comment|/* PNG_LIBPNG_VER> 99 */
-name|g_free
-argument_list|(
-name|pixels
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
