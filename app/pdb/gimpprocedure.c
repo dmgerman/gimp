@@ -310,7 +310,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2bff4f650108
+DECL|struct|__anon2761e2180108
 block|{
 DECL|member|old_name
 specifier|const
@@ -1357,6 +1357,11 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
+comment|/*  If there are no return arguments, assume            *  an execution error and fall through.            */
+if|if
+condition|(
+name|return_args
+condition|)
 break|break;
 default|default:
 name|return_args
