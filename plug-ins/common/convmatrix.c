@@ -50,7 +50,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b3b7c460103
+DECL|enum|__anon2c53e7060103
 block|{
 DECL|enumerator|EXTEND
 name|EXTEND
@@ -274,7 +274,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3b7c460208
+DECL|struct|__anon2c53e7060208
 block|{
 DECL|member|matrix
 name|gfloat
@@ -431,7 +431,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon2b3b7c460308
+DECL|struct|__anon2c53e7060308
 block|{
 DECL|member|matrix
 name|GtkWidget
@@ -634,7 +634,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug_in_convmatrix"
 argument_list|,
-literal|"<Image>/Filters/Generic"
+literal|"<Image>/Filters/Effects/Generic"
 argument_list|)
 expr_stmt|;
 block|}

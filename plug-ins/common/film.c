@@ -84,7 +84,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e219140108
+DECL|struct|__anon2b54410e0108
 block|{
 DECL|member|film_height
 name|gint
@@ -188,7 +188,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e219140208
+DECL|struct|__anon2b54410e0208
 block|{
 DECL|member|advanced_adj
 name|GtkObject
@@ -911,7 +911,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug_in_film"
 argument_list|,
-literal|"<Image>/Filters/Combine"
+literal|"<Image>/Filters/Effects/Combine"
 argument_list|)
 expr_stmt|;
 block|}

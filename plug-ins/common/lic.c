@@ -71,7 +71,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b4f728a0103
+DECL|enum|__anon28d768f60103
 block|{
 DECL|enumerator|LIC_HUE
 name|LIC_HUE
@@ -119,7 +119,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4f728a0208
+DECL|struct|__anon28d768f60208
 block|{
 DECL|member|filtlen
 name|gdouble
@@ -3886,7 +3886,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug_in_lic"
 argument_list|,
-literal|"<Image>/Filters/Map"
+literal|"<Image>/Filters/Artistic"
 argument_list|)
 expr_stmt|;
 block|}

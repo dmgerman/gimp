@@ -261,29 +261,18 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"_Generic"
+literal|"_Effects"
 argument_list|)
 block|}
 block|,
 block|{
-literal|"plug-in-glass-effects-menu"
+literal|"plug-in-light-shadow-menu"
 block|,
 name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Gla_ss Effects"
-argument_list|)
-block|}
-block|,
-block|{
-literal|"plug-in-light-effects-menu"
-block|,
-name|NULL
-block|,
-name|N_
-argument_list|(
-literal|"_Light Effects"
+literal|"_Light and Shadow"
 argument_list|)
 block|}
 block|,
