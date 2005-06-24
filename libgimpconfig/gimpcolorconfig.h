@@ -105,6 +105,10 @@ name|gchar
 modifier|*
 name|display_profile
 decl_stmt|;
+DECL|member|display_profile_from_gdk
+name|gboolean
+name|display_profile_from_gdk
+decl_stmt|;
 DECL|member|printer_profile
 name|gchar
 modifier|*

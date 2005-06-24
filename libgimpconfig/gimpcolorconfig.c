@@ -76,6 +76,15 @@ value|N_("Sets the color profile for the display.")
 end_define
 
 begin_define
+DECL|macro|DISPLAY_PROFILE_FROM_GDK_BLURB
+define|#
+directive|define
+name|DISPLAY_PROFILE_FROM_GDK_BLURB
+define|\
+value|N_("When enabled, the GIMP will try to use the display color profile " \      "from the windowing system.")
+end_define
+
+begin_define
 DECL|macro|RGB_PROFILE_BLURB
 define|#
 directive|define
@@ -149,7 +158,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon297739520103
+DECL|enum|__anon29db7fc90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -165,6 +174,9 @@ name|PROP_CMYK_PROFILE
 block|,
 DECL|enumerator|PROP_DISPLAY_PROFILE
 name|PROP_DISPLAY_PROFILE
+block|,
+DECL|enumerator|PROP_DISPLAY_PROFILE_FROM_GDK
+name|PROP_DISPLAY_PROFILE_FROM_GDK
 block|,
 DECL|enumerator|PROP_PRINTER_PROFILE
 name|PROP_PRINTER_PROFILE
@@ -491,6 +503,21 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+argument_list|(
+name|object_class
+argument_list|,
+name|PROP_DISPLAY_PROFILE_FROM_GDK
+argument_list|,
+literal|"display-profile-from-gdk"
+argument_list|,
+name|DISPLAY_PROFILE_FROM_GDK_BLURB
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_PATH
 argument_list|(
 name|object_class
@@ -775,6 +802,19 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
+name|PROP_DISPLAY_PROFILE_FROM_GDK
+case|:
+name|color_config
+operator|->
+name|display_profile_from_gdk
+operator|=
+name|g_value_get_boolean
+argument_list|(
+name|value
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
 name|PROP_PRINTER_PROFILE
 case|:
 name|g_free
@@ -946,6 +986,19 @@ argument_list|,
 name|color_config
 operator|->
 name|display_profile
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|PROP_DISPLAY_PROFILE_FROM_GDK
+case|:
+name|g_value_set_boolean
+argument_list|(
+name|value
+argument_list|,
+name|color_config
+operator|->
+name|display_profile_from_gdk
 argument_list|)
 expr_stmt|;
 break|break;
