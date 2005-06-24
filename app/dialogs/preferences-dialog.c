@@ -8479,7 +8479,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon29d627220108
+DECL|struct|__anon2b30a4490108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -9632,7 +9632,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29d627220208
+DECL|struct|__anon2b30a4490208
 block|{
 DECL|member|label
 specifier|const
@@ -9914,8 +9914,8 @@ literal|"display-profile-from-gdk"
 argument_list|,
 name|_
 argument_list|(
-literal|"Try to obtain the monitor profile "
-literal|"from the X server"
+literal|"_Try to obtain the monitor "
+literal|"profile from the X server"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -10531,7 +10531,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29d627220308
+DECL|struct|__anon2b30a4490308
 block|{
 DECL|member|label
 specifier|const
@@ -10688,7 +10688,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29d627220408
+DECL|struct|__anon2b30a4490408
 block|{
 DECL|member|tree_label
 specifier|const

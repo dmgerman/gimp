@@ -1139,7 +1139,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_prop_int_combo_box_new:  * @config:         Object to which property is attached.  * @property_name:  Name of Int property controlled by combo box.  * @store:          #GimpIntStore holding list of labels, values, etc.  *  * Creates a #GimpIntComboBox widget to display and set the specified  * property.  The contents of the widget are determined by @store,  * which should be created using gimp_int_store_new().  *  * Return value: The newly created #GimpIntComboBox widget.  *  * Since GIMP 2.4  */
+comment|/**  * gimp_prop_int_combo_box_new:  * @config:         Object to which property is attached.  * @property_name:  Name of Int property controlled by combo box.  * @store:          #GimpIntStore holding list of labels, values, etc.  *  * Creates a #GimpIntComboBox widget to display and set the specified  * property.  The contents of the widget are determined by @store,  * which should be created using gimp_int_store_new().  *  * Return value: The newly created #GimpIntComboBox widget, optionally  *               wrapped into a #GtkEventBox.  *  * Since GIMP 2.4  */
 end_comment
 
 begin_function
@@ -1336,7 +1336,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_prop_enum_combo_box_new:  * @config:         Object to which property is attached.  * @property_name:  Name of Enum property controlled by combo box.  * @minimum:        Smallest allowed value of enum.  * @maximum:        Largest allowed value of enum.  *  * Creates a #GimpIntComboBox widget to display and set the specified  * Enum property.  The @mimimum_value and @maximum_value give the  * possibility of restricting the allowed range to a subset of the  * enum.  If the two values are equal (e.g., 0, 0), then the full  * range of the Enum is used.  *  * Return value: The newly created #GimpIntComboBox widget.  *  * Since GIMP 2.4  */
+comment|/**  * gimp_prop_enum_combo_box_new:  * @config:         Object to which property is attached.  * @property_name:  Name of Enum property controlled by combo box.  * @minimum:        Smallest allowed value of enum.  * @maximum:        Largest allowed value of enum.  *  * Creates a #GimpIntComboBox widget to display and set the specified  * Enum property.  The @mimimum_value and @maximum_value give the  * possibility of restricting the allowed range to a subset of the  * enum.  If the two values are equal (e.g., 0, 0), then the full  * range of the Enum is used.  *  * Return value: The newly created #GimpEnumComboBox widget, optionally  *               wrapped into a #GtkEventBox.  *  * Since GIMP 2.4  */
 end_comment
 
 begin_function
@@ -1761,7 +1761,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_prop_boolean_combo_box_new:  * @config:            Object to which property is attached.  * @property_name:     Name of Boolean property controlled by combo box.  * @true_text:         Label used for entry corresponding to #TRUE value.  * @false_text:        Label used for entry corresponding to #FALSE value.  *  * Creates a #GtkComboBox widget to display and set the specified  * Boolean property.  The combo box will have two entries, one  * displaying the @true_text label, the other displaying the  * @false_text label.  *  * Return value: The newly created #GtkComboBox widget.  *  * Since GIMP 2.4  */
+comment|/**  * gimp_prop_boolean_combo_box_new:  * @config:            Object to which property is attached.  * @property_name:     Name of Boolean property controlled by combo box.  * @true_text:         Label used for entry corresponding to #TRUE value.  * @false_text:        Label used for entry corresponding to #FALSE value.  *  * Creates a #GtkComboBox widget to display and set the specified  * Boolean property.  The combo box will have two entries, one  * displaying the @true_text label, the other displaying the  * @false_text label.  *  * Return value: The newly created #GtkComboBox widget, optionally  *               wrapped into a #GtkEventBox..  *  * Since GIMP 2.4  */
 end_comment
 
 begin_function
@@ -6400,6 +6400,10 @@ name|GtkWidget
 modifier|*
 name|button
 decl_stmt|;
+name|GtkWidget
+modifier|*
+name|widget
+decl_stmt|;
 name|gchar
 modifier|*
 name|filename
@@ -6510,6 +6514,43 @@ name|filename
 argument_list|)
 expr_stmt|;
 block|}
+comment|/*  can't set a tooltip on a file-chooser button  */
+if|if
+condition|(
+name|g_param_spec_get_blurb
+argument_list|(
+name|param_spec
+argument_list|)
+condition|)
+block|{
+name|widget
+operator|=
+name|gtk_event_box_new
+argument_list|()
+expr_stmt|;
+name|gtk_container_add
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|widget
+argument_list|)
+argument_list|,
+name|button
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|button
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|widget
+operator|=
+name|button
+expr_stmt|;
+block|}
 name|set_param_spec
 argument_list|(
 name|G_OBJECT
@@ -6517,7 +6558,7 @@ argument_list|(
 name|button
 argument_list|)
 argument_list|,
-name|button
+name|widget
 argument_list|,
 name|param_spec
 argument_list|)
@@ -6551,7 +6592,7 @@ name|button
 argument_list|)
 expr_stmt|;
 return|return
-name|button
+name|widget
 return|;
 block|}
 end_function

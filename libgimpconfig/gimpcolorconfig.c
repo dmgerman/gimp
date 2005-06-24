@@ -72,7 +72,7 @@ define|#
 directive|define
 name|DISPLAY_PROFILE_BLURB
 define|\
-value|N_("Sets the color profile for the display.")
+value|N_("The color profile of your (primary) monitor.")
 end_define
 
 begin_define
@@ -81,7 +81,7 @@ define|#
 directive|define
 name|DISPLAY_PROFILE_FROM_GDK_BLURB
 define|\
-value|N_("When enabled, the GIMP will try to use the display color profile " \      "from the windowing system.")
+value|N_("When enabled, the GIMP will try to use the display color profile " \      "from the windowing system. The configured monitor profile is then " \      "only used as a fallback.")
 end_define
 
 begin_define
@@ -90,7 +90,7 @@ define|#
 directive|define
 name|RGB_PROFILE_BLURB
 define|\
-value|N_("Sets default RGB workspace color profile.")
+value|N_("The default RGB workspace color profile.")
 end_define
 
 begin_define
@@ -99,7 +99,7 @@ define|#
 directive|define
 name|CMYK_PROFILE_BLURB
 define|\
-value|N_("Sets the CMYK color profile used to convert between RGB and CMYK.")
+value|N_("The CMYK color profile used to convert between RGB and CMYK.")
 end_define
 
 begin_define
@@ -108,7 +108,7 @@ define|#
 directive|define
 name|PRINTER_PROFILE_BLURB
 define|\
-value|N_("Sets the color profile used when printing.")
+value|N_("The color profile used for simulating a printed version (softproof).")
 end_define
 
 begin_define
@@ -158,7 +158,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29db7fc90103
+DECL|enum|__anon2771047f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
