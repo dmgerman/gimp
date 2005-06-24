@@ -217,6 +217,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpEnumLabel
+typedef|typedef
+name|struct
+name|_GimpEnumLabel
+name|GimpEnumLabel
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpFileEntry
 typedef|typedef
 name|struct

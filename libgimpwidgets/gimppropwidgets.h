@@ -282,6 +282,23 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|GtkWidget
+modifier|*
+name|gimp_prop_enum_label_new
+parameter_list|(
+name|GObject
+modifier|*
+name|config
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|property_name
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/*  GParamInt, GParamUInt, GParamLong, GParamULong, GParamDouble  */
 end_comment
