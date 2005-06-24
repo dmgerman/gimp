@@ -180,7 +180,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2760c9050103
+DECL|enum|__anon2c3f0d060103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1247,6 +1247,12 @@ modifier|*
 name|config
 parameter_list|)
 block|{
+if|#
+directive|if
+name|defined
+argument_list|(
+name|GDK_WINDOWING_X11
+argument_list|)
 if|if
 condition|(
 name|config
@@ -1264,16 +1270,24 @@ argument_list|()
 decl_stmt|;
 name|GdkAtom
 name|type
+init|=
+name|GDK_NONE
 decl_stmt|;
 name|gint
 name|format
+init|=
+literal|0
 decl_stmt|;
 name|gint
 name|nitems
+init|=
+literal|0
 decl_stmt|;
 name|guchar
 modifier|*
 name|data
+init|=
+name|NULL
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -1305,7 +1319,9 @@ name|GDK_NONE
 argument_list|,
 literal|0
 argument_list|,
-name|G_MAXLONG
+literal|256
+operator|*
+literal|1024
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1323,6 +1339,8 @@ name|data
 argument_list|)
 operator|&&
 name|nitems
+operator|>
+literal|0
 condition|)
 block|{
 name|cmsHPROFILE
@@ -1346,6 +1364,8 @@ name|profile
 return|;
 block|}
 block|}
+endif|#
+directive|endif
 if|if
 condition|(
 name|config
@@ -1361,6 +1381,9 @@ name|display_profile
 argument_list|,
 literal|"r"
 argument_list|)
+return|;
+return|return
+name|NULL
 return|;
 block|}
 end_function
