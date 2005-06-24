@@ -180,7 +180,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a20bb1d0103
+DECL|enum|__anon2bf0fb3e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1390,7 +1390,9 @@ name|GDK_NONE
 argument_list|,
 literal|0
 argument_list|,
-literal|256
+literal|64
+operator|*
+literal|1024
 operator|*
 literal|1024
 argument_list|,
@@ -1415,7 +1417,6 @@ literal|0
 condition|)
 block|{
 name|cmsHPROFILE
-modifier|*
 name|profile
 init|=
 name|cmsOpenProfileFromMem
@@ -1430,6 +1431,33 @@ argument_list|(
 name|data
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|profile
+condition|)
+block|{
+specifier|const
+name|gchar
+modifier|*
+name|name
+init|=
+name|cmsTakeProductName
+argument_list|(
+name|profile
+argument_list|)
+decl_stmt|;
+name|g_printerr
+argument_list|(
+literal|"obtained ICC profile from X server: %s\n"
+argument_list|,
+name|name
+condition|?
+name|name
+else|:
+literal|"<untitled>"
+argument_list|)
+expr_stmt|;
+block|}
 return|return
 name|profile
 return|;
