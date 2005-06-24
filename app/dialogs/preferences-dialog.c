@@ -8479,7 +8479,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2b30a4490108
+DECL|struct|__anon2b1b69060108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -9632,7 +9632,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b30a4490208
+DECL|struct|__anon2b1b69060208
 block|{
 DECL|member|label
 specifier|const
@@ -9702,7 +9702,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"_Printer profile:"
+literal|"_Print simulation profile:"
 argument_list|)
 block|,
 name|N_
@@ -10531,7 +10531,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b30a4490308
+DECL|struct|__anon2b1b69060308
 block|{
 DECL|member|label
 specifier|const
@@ -10688,7 +10688,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b30a4490408
+DECL|struct|__anon2b1b69060408
 block|{
 DECL|member|tree_label
 specifier|const

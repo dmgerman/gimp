@@ -126,7 +126,7 @@ define|#
 directive|define
 name|SIMULATION_RENDERING_INTENT_BLURB
 define|\
-value|N_("Sets how colors are converted from workspace to simulation device.")
+value|N_("Sets how colors are converted from workspace to the print simulation " \      "device.")
 end_define
 
 begin_define
@@ -158,7 +158,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2771047f0103
+DECL|enum|__anon2bd65ec10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
