@@ -206,7 +206,7 @@ block|,
 block|{
 literal|"layers-properties-menu"
 block|,
-name|NULL
+name|GTK_STOCK_PROPERTIES
 block|,
 name|N_
 argument_list|(

@@ -458,7 +458,7 @@ block|,
 block|{
 literal|"image-properties"
 block|,
-name|GIMP_STOCK_INFO
+name|GTK_STOCK_PROPERTIES
 block|,
 name|N_
 argument_list|(
