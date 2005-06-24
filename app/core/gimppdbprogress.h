@@ -172,17 +172,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|void
-name|gimp_pdb_progresss_check_callback
-parameter_list|(
-name|GimpPdbProgressClass
-modifier|*
-name|klass
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_macro
 name|G_END_DECLS
 end_macro
