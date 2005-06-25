@@ -87,6 +87,8 @@ literal|"Kevin Cozens"
 block|,
 literal|"Brian Degenhardt"
 block|,
+literal|"Karine Delvare"
+block|,
 literal|"Gert Dewit"
 block|,
 literal|"Andreas Dilger"
@@ -301,6 +303,8 @@ literal|"Sergey Panov"
 block|,
 literal|"Ville PÃ¤tsi"
 block|,
+literal|"Akkana Peck"
+block|,
 literal|"Asbjorn Pettersen"
 block|,
 literal|"Mike Phillips"
@@ -308,8 +312,6 @@ block|,
 literal|"Artur Polaczynski"
 block|,
 literal|"Ari Pollak"
-block|,
-literal|"Karine Proot"
 block|,
 literal|"RaphaÃ«l Quinet"
 block|,
