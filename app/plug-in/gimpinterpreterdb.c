@@ -2637,6 +2637,13 @@ name|cp
 operator|==
 literal|'\t'
 operator|)
+operator|||
+operator|(
+operator|*
+name|cp
+operator|==
+literal|'\r'
+operator|)
 condition|)
 operator|*
 name|cp
