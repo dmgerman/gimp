@@ -592,23 +592,21 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
-name|view_selection_func
+specifier|static
+name|void
+name|view_activate
 parameter_list|(
-name|GtkTreeSelection
+name|GtkTreeView
 modifier|*
-name|selection
-parameter_list|,
-name|GtkTreeModel
-modifier|*
-name|model
+name|view
 parameter_list|,
 name|GtkTreePath
 modifier|*
 name|path
 parameter_list|,
-name|gboolean
-name|path_currently_selected
+name|GtkTreeViewColumn
+modifier|*
+name|col
 parameter_list|,
 name|gpointer
 name|data
@@ -3516,29 +3514,31 @@ block|}
 end_function
 
 begin_function
-name|gboolean
-DECL|function|view_selection_func (GtkTreeSelection * selection,GtkTreeModel * model,GtkTreePath * path,gboolean path_currently_selected,gpointer data)
-name|view_selection_func
+specifier|static
+name|void
+DECL|function|view_activate (GtkTreeView * view,GtkTreePath * path,GtkTreeViewColumn * col,gpointer data)
+name|view_activate
 parameter_list|(
-name|GtkTreeSelection
+name|GtkTreeView
 modifier|*
-name|selection
-parameter_list|,
-name|GtkTreeModel
-modifier|*
-name|model
+name|view
 parameter_list|,
 name|GtkTreePath
 modifier|*
 name|path
 parameter_list|,
-name|gboolean
-name|path_currently_selected
+name|GtkTreeViewColumn
+modifier|*
+name|col
 parameter_list|,
 name|gpointer
 name|data
 parameter_list|)
 block|{
+name|GtkTreeModel
+modifier|*
+name|model
+decl_stmt|;
 name|GtkTreeIter
 name|iter
 decl_stmt|;
@@ -3546,6 +3546,13 @@ name|fractalexplorerOBJ
 modifier|*
 name|sel_obj
 decl_stmt|;
+name|model
+operator|=
+name|gtk_tree_view_get_model
+argument_list|(
+name|view
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|gtk_tree_model_get_iter
@@ -3575,12 +3582,6 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|path_currently_selected
-condition|)
-block|{
 name|current_obj
 operator|=
 name|sel_obj
@@ -3601,11 +3602,6 @@ name|dialog_update_preview
 argument_list|()
 expr_stmt|;
 block|}
-block|}
-return|return
-name|TRUE
-return|;
-comment|/* allow selection state to change */
 block|}
 end_function
 
@@ -4298,13 +4294,16 @@ argument_list|,
 name|GTK_SELECTION_BROWSE
 argument_list|)
 expr_stmt|;
-name|gtk_tree_selection_set_select_function
+name|g_signal_connect
 argument_list|(
-name|selection
+name|view
 argument_list|,
-name|view_selection_func
+literal|"row_activated"
 argument_list|,
-name|NULL
+name|G_CALLBACK
+argument_list|(
+name|view_activate
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -4745,7 +4744,7 @@ name|model
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/* select first */
+comment|/* select active fractal, otherwise first fractal */
 name|selection
 operator|=
 name|gtk_tree_view_get_selection
