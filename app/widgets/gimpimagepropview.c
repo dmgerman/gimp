@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c588d80103
+DECL|enum|__anon2b70fd910103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1161,6 +1161,11 @@ decl_stmt|;
 name|gint
 name|unit_digits
 decl_stmt|;
+specifier|const
+name|gchar
+modifier|*
+name|desc
+decl_stmt|;
 name|gchar
 name|format_buf
 index|[
@@ -1419,6 +1424,22 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
+name|gimp_enum_get_value
+argument_list|(
+name|GIMP_TYPE_IMAGE_BASE_TYPE
+argument_list|,
+name|type
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+operator|&
+name|desc
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 switch|switch
 condition|(
 name|type
@@ -1427,24 +1448,6 @@ block|{
 case|case
 name|GIMP_RGB
 case|:
-name|g_snprintf
-argument_list|(
-name|buf
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|buf
-argument_list|)
-argument_list|,
-literal|"%s"
-argument_list|,
-name|_
-argument_list|(
-literal|"RGB Color"
-argument_list|)
-argument_list|)
-expr_stmt|;
-break|break;
 case|case
 name|GIMP_GRAY
 case|:
@@ -1459,10 +1462,7 @@ argument_list|)
 argument_list|,
 literal|"%s"
 argument_list|,
-name|_
-argument_list|(
-literal|"Grayscale"
-argument_list|)
+name|desc
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1480,10 +1480,7 @@ argument_list|)
 argument_list|,
 literal|"%s (%d %s)"
 argument_list|,
-name|_
-argument_list|(
-literal|"Indexed Color"
-argument_list|)
+name|desc
 argument_list|,
 name|image
 operator|->
