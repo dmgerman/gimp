@@ -63,7 +63,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5291c50103
+DECL|enum|__anon2a5440b00103
 block|{
 DECL|enumerator|SRC_COLUMN_NAME
 name|SRC_COLUMN_NAME
@@ -79,7 +79,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5291c50203
+DECL|enum|__anon2a5440b00203
 block|{
 DECL|enumerator|DEST_COLUMN_ENABLED
 name|DEST_COLUMN_ENABLED
@@ -2363,10 +2363,6 @@ condition|(
 name|display
 condition|)
 block|{
-name|gchar
-modifier|*
-name|str
-decl_stmt|;
 name|editor
 operator|->
 name|selected
@@ -2398,13 +2394,13 @@ argument_list|(
 name|display
 argument_list|)
 expr_stmt|;
-name|str
-operator|=
-name|g_strdup_printf
+name|gtk_frame_set_label
 argument_list|(
-name|_
+name|GTK_FRAME
 argument_list|(
-literal|"Configure selected filter: %s"
+name|editor
+operator|->
+name|config_frame
 argument_list|)
 argument_list|,
 name|GIMP_COLOR_DISPLAY_GET_CLASS
@@ -2415,23 +2411,6 @@ operator|->
 name|name
 argument_list|)
 expr_stmt|;
-name|gtk_frame_set_label
-argument_list|(
-name|GTK_FRAME
-argument_list|(
-name|editor
-operator|->
-name|config_frame
-argument_list|)
-argument_list|,
-name|str
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|str
-argument_list|)
-expr_stmt|;
 block|}
 else|else
 block|{
@@ -2439,22 +2418,7 @@ name|editor
 operator|->
 name|config_widget
 operator|=
-name|gtk_label_new
-argument_list|(
-name|_
-argument_list|(
-literal|"No filter selected"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_widget_set_sensitive
-argument_list|(
-name|editor
-operator|->
-name|config_widget
-argument_list|,
-name|FALSE
-argument_list|)
+name|NULL
 expr_stmt|;
 name|gtk_frame_set_label
 argument_list|(
@@ -2467,7 +2431,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Configure selected filter"
+literal|"No filter selected"
 argument_list|)
 argument_list|)
 expr_stmt|;
