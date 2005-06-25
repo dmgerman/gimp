@@ -180,7 +180,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon288c543e0103
+DECL|enum|__anon297bb9b30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1077,13 +1077,9 @@ argument_list|,
 name|_
 argument_list|(
 literal|"This filter takes its configuration "
-literal|"from the<i>Color Management</i> "
-literal|"section in the Preferences dialog."
+literal|"from the Color Management section "
+literal|"in the Preferences dialog."
 argument_list|)
-argument_list|,
-literal|"use-markup"
-argument_list|,
-name|TRUE
 argument_list|,
 literal|"wrap"
 argument_list|,
@@ -1102,6 +1098,20 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_label_set_attributes
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
+name|PANGO_ATTR_STYLE
+argument_list|,
+name|PANGO_STYLE_ITALIC
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

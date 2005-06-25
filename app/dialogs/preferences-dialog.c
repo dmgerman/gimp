@@ -2357,6 +2357,21 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|gimp_label_set_attributes
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
+name|PANGO_ATTR_STYLE
+argument_list|,
+name|PANGO_STYLE_ITALIC
+argument_list|,
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
@@ -8479,7 +8494,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2b1b69060108
+DECL|struct|__anon2b55bf080108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -9632,7 +9647,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b1b69060208
+DECL|struct|__anon2b55bf080208
 block|{
 DECL|member|label
 specifier|const
@@ -10531,7 +10546,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b1b69060308
+DECL|struct|__anon2b55bf080308
 block|{
 DECL|member|label
 specifier|const
@@ -10688,7 +10703,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b1b69060408
+DECL|struct|__anon2b55bf080408
 block|{
 DECL|member|tree_label
 specifier|const
