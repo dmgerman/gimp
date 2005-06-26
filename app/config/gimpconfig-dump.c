@@ -695,6 +695,15 @@ name|GIMP_CONFIG_PARAM_SERIALIZE
 operator|)
 condition|)
 continue|continue;
+if|if
+condition|(
+name|prop_spec
+operator|->
+name|flags
+operator|&
+name|GIMP_CONFIG_PARAM_IGNORE
+condition|)
+continue|continue;
 name|write
 argument_list|(
 name|fd
