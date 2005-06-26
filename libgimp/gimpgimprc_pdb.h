@@ -90,6 +90,16 @@ end_function_decl
 begin_function_decl
 name|gchar
 modifier|*
+name|_gimp_get_color_configuration
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gchar
+modifier|*
 name|gimp_get_module_load_inhibit
 parameter_list|(
 name|void

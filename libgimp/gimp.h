@@ -25,19 +25,25 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimpbase/gimpbase.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimpcolor/gimpcolor.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<libgimpmath/gimpmath.h>
+file|<libgimpconfig/gimpconfig.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<libgimpbase/gimpbase.h>
+file|<libgimpmath/gimpmath.h>
 end_include
 
 begin_include
@@ -80,6 +86,12 @@ begin_include
 include|#
 directive|include
 file|<libgimp/gimpfontselect.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimpgimprc.h>
 end_include
 
 begin_include

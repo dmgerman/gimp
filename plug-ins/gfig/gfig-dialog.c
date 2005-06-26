@@ -82,12 +82,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimpconfig/gimpconfig.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
@@ -428,7 +422,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293e4bc90108
+DECL|struct|__anon27cbb2020108
 block|{
 DECL|member|gridspacing
 name|GtkAdjustment

@@ -82,7 +82,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon274f82120103
+DECL|enum|__anon2be1eab90103
 block|{
 DECL|enumerator|FONT_SET
 name|FONT_SET
@@ -95,7 +95,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon274f82120203
+DECL|enum|__anon2be1eab90203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -243,7 +243,7 @@ name|gimp_font_select_button_create_inside
 parameter_list|(
 name|GimpFontSelectButton
 modifier|*
-name|font_button
+name|button
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -478,24 +478,24 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_font_select_button_init (GimpFontSelectButton * font_button)
+DECL|function|gimp_font_select_button_init (GimpFontSelectButton * button)
 name|gimp_font_select_button_init
 parameter_list|(
 name|GimpFontSelectButton
 modifier|*
-name|font_button
+name|button
 parameter_list|)
 block|{
-name|font_button
+name|button
 operator|->
 name|priv
 operator|=
 name|GIMP_FONT_SELECT_BUTTON_GET_PRIVATE
 argument_list|(
-name|font_button
+name|button
 argument_list|)
 expr_stmt|;
-name|font_button
+name|button
 operator|->
 name|priv
 operator|->
@@ -509,7 +509,7 @@ literal|"Font Selection"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|font_button
+name|button
 operator|->
 name|priv
 operator|->
@@ -523,7 +523,7 @@ literal|"Sans"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|font_button
+name|button
 operator|->
 name|priv
 operator|->
@@ -531,7 +531,7 @@ name|temp_font_callback
 operator|=
 name|NULL
 expr_stmt|;
-name|font_button
+name|button
 operator|->
 name|priv
 operator|->
@@ -539,17 +539,17 @@ name|inside
 operator|=
 name|gimp_font_select_button_create_inside
 argument_list|(
-name|font_button
+name|button
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
-name|font_button
+name|button
 argument_list|)
 argument_list|,
-name|font_button
+name|button
 operator|->
 name|priv
 operator|->
@@ -560,7 +560,7 @@ name|gtk_drag_dest_set
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
-name|font_button
+name|button
 argument_list|)
 argument_list|,
 name|GTK_DEST_DEFAULT_HIGHLIGHT
@@ -581,7 +581,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_font_select_button_new:  * @title:     Title of the dialog to use or %NULL means to use the default  *             title.  * @font_name: Initial font name.  * @callback:  A function to call when the selected font changes.  * @data:      A pointer to arbitary data to be used in the call to @callback.  *  * Creates a new #GtkWidget that completely controls the selection of  * a font.  This widget is suitable for placement in a table in a  * plug-in dialog.  *  * Returns: A #GtkWidget that you can use in your UI.  */
+comment|/**  * gimp_font_select_button_new:  * @title:     Title of the dialog to use or %NULL means to use the default  *             title.  * @font_name: Initial font name.  *  * Creates a new #GtkWidget that completely controls the selection of  * a font.  This widget is suitable for placement in a table in a  * plug-in dialog.  *  * Returns: A #GtkWidget that you can use in your UI.  */
 end_comment
 
 begin_function
@@ -603,13 +603,13 @@ parameter_list|)
 block|{
 name|GtkWidget
 modifier|*
-name|font_button
+name|button
 decl_stmt|;
 if|if
 condition|(
 name|title
 condition|)
-name|font_button
+name|button
 operator|=
 name|g_object_new
 argument_list|(
@@ -627,7 +627,7 @@ name|NULL
 argument_list|)
 expr_stmt|;
 else|else
-name|font_button
+name|button
 operator|=
 name|g_object_new
 argument_list|(
@@ -641,36 +641,36 @@ name|NULL
 argument_list|)
 expr_stmt|;
 return|return
-name|font_button
+name|button
 return|;
 block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_font_select_button_close_popup:  * @font_button: A #GimpFontSelectButton  *  * Closes the popup window associated with @font_button.  */
+comment|/**  * gimp_font_select_button_close_popup:  * @button: A #GimpFontSelectButton  *  * Closes the popup window associated with @button.  */
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_font_select_button_close_popup (GimpFontSelectButton * font_button)
+DECL|function|gimp_font_select_button_close_popup (GimpFontSelectButton * button)
 name|gimp_font_select_button_close_popup
 parameter_list|(
 name|GimpFontSelectButton
 modifier|*
-name|font_button
+name|button
 parameter_list|)
 block|{
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_FONT_SELECT_BUTTON
 argument_list|(
-name|font_button
+name|button
 argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|font_button
+name|button
 operator|->
 name|priv
 operator|->
@@ -679,14 +679,14 @@ condition|)
 block|{
 name|gimp_font_select_destroy
 argument_list|(
-name|font_button
+name|button
 operator|->
 name|priv
 operator|->
 name|temp_font_callback
 argument_list|)
 expr_stmt|;
-name|font_button
+name|button
 operator|->
 name|priv
 operator|->
@@ -699,33 +699,33 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_font_select_button_get_font_name:  * @font_button: A #GimpFontSelectButton  *  * Retrieves the name of currently selected font.  *  * Returns: an internal copy of the font name which must not be freed.  *  * Since: 2.4  */
+comment|/**  * gimp_font_select_button_get_font_name:  * @button: A #GimpFontSelectButton  *  * Retrieves the name of currently selected font.  *  * Returns: an internal copy of the font name which must not be freed.  *  * Since: 2.4  */
 end_comment
 
 begin_function
 name|G_CONST_RETURN
 name|gchar
 modifier|*
-DECL|function|gimp_font_select_button_get_font_name (GimpFontSelectButton * font_button)
+DECL|function|gimp_font_select_button_get_font_name (GimpFontSelectButton * button)
 name|gimp_font_select_button_get_font_name
 parameter_list|(
 name|GimpFontSelectButton
 modifier|*
-name|font_button
+name|button
 parameter_list|)
 block|{
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_FONT_SELECT_BUTTON
 argument_list|(
-name|font_button
+name|button
 argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
 return|return
-name|font_button
+name|button
 operator|->
 name|priv
 operator|->
@@ -735,17 +735,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_font_select_button_set_font_name:  * @font_button: A #GimpFontSelectButton  * @font_name: Font name to set; %NULL means no change.  *  * Sets the current font for the font select button.  *  * Since: 2.4  */
+comment|/**  * gimp_font_select_button_set_font_name:  * @button: A #GimpFontSelectButton  * @font_name: Font name to set; %NULL means no change.  *  * Sets the current font for the font select button.  *  * Since: 2.4  */
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_font_select_button_set_font_name (GimpFontSelectButton * font_button,const gchar * font_name)
+DECL|function|gimp_font_select_button_set_font_name (GimpFontSelectButton * button,const gchar * font_name)
 name|gimp_font_select_button_set_font_name
 parameter_list|(
 name|GimpFontSelectButton
 modifier|*
-name|font_button
+name|button
 parameter_list|,
 specifier|const
 name|gchar
@@ -757,13 +757,13 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_FONT_SELECT_BUTTON
 argument_list|(
-name|font_button
+name|button
 argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|font_button
+name|button
 operator|->
 name|priv
 operator|->
@@ -771,7 +771,7 @@ name|temp_font_callback
 condition|)
 name|gimp_fonts_set_popup
 argument_list|(
-name|font_button
+name|button
 operator|->
 name|priv
 operator|->
@@ -787,7 +787,7 @@ name|font_name
 argument_list|,
 name|FALSE
 argument_list|,
-name|font_button
+name|button
 argument_list|)
 expr_stmt|;
 block|}
@@ -822,7 +822,7 @@ parameter_list|)
 block|{
 name|GimpFontSelectButton
 modifier|*
-name|font_button
+name|button
 init|=
 name|GIMP_FONT_SELECT_BUTTON
 argument_list|(
@@ -839,14 +839,14 @@ name|PROP_TITLE
 case|:
 name|g_free
 argument_list|(
-name|font_button
+name|button
 operator|->
 name|priv
 operator|->
 name|title
 argument_list|)
 expr_stmt|;
-name|font_button
+name|button
 operator|->
 name|priv
 operator|->
@@ -870,7 +870,7 @@ name|PROP_FONT_NAME
 case|:
 name|gimp_font_select_button_set_font_name
 argument_list|(
-name|font_button
+name|button
 argument_list|,
 name|g_value_get_string
 argument_list|(
@@ -918,7 +918,7 @@ parameter_list|)
 block|{
 name|GimpFontSelectButton
 modifier|*
-name|font_button
+name|button
 init|=
 name|GIMP_FONT_SELECT_BUTTON
 argument_list|(
@@ -937,7 +937,7 @@ name|g_value_set_string
 argument_list|(
 name|value
 argument_list|,
-name|font_button
+name|button
 operator|->
 name|priv
 operator|->
@@ -952,7 +952,7 @@ name|g_value_set_string
 argument_list|(
 name|value
 argument_list|,
-name|font_button
+name|button
 operator|->
 name|priv
 operator|->
@@ -995,7 +995,7 @@ parameter_list|)
 block|{
 name|GimpFontSelectButton
 modifier|*
-name|font_button
+name|button
 init|=
 name|GIMP_FONT_SELECT_BUTTON
 argument_list|(
@@ -1004,14 +1004,14 @@ argument_list|)
 decl_stmt|;
 name|g_free
 argument_list|(
-name|font_button
+name|button
 operator|->
 name|priv
 operator|->
 name|font_name
 argument_list|)
 expr_stmt|;
-name|font_button
+name|button
 operator|->
 name|priv
 operator|->
@@ -1026,7 +1026,7 @@ name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL
 argument_list|(
-name|font_button
+name|button
 operator|->
 name|priv
 operator|->
@@ -1040,7 +1040,7 @@ if|if
 condition|(
 name|closing
 condition|)
-name|font_button
+name|button
 operator|->
 name|priv
 operator|->
@@ -1050,7 +1050,7 @@ name|NULL
 expr_stmt|;
 name|g_signal_emit
 argument_list|(
-name|font_button
+name|button
 argument_list|,
 name|font_button_signals
 index|[
@@ -1068,7 +1068,7 @@ name|g_object_notify
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|font_button
+name|button
 argument_list|)
 argument_list|,
 literal|"font-name"
@@ -1147,7 +1147,7 @@ name|font_name
 argument_list|,
 name|gimp_font_select_button_callback
 argument_list|,
-name|font_button
+name|button
 argument_list|)
 expr_stmt|;
 block|}
@@ -1167,7 +1167,7 @@ parameter_list|)
 block|{
 name|GimpFontSelectButton
 modifier|*
-name|font_button
+name|button
 init|=
 name|GIMP_FONT_SELECT_BUTTON
 argument_list|(
@@ -1176,7 +1176,7 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|font_button
+name|button
 operator|->
 name|priv
 operator|->
@@ -1185,14 +1185,14 @@ condition|)
 block|{
 name|gimp_font_select_destroy
 argument_list|(
-name|font_button
+name|button
 operator|->
 name|priv
 operator|->
 name|temp_font_callback
 argument_list|)
 expr_stmt|;
-name|font_button
+name|button
 operator|->
 name|priv
 operator|->
@@ -1203,14 +1203,14 @@ expr_stmt|;
 block|}
 name|g_free
 argument_list|(
-name|font_button
+name|button
 operator|->
 name|priv
 operator|->
 name|title
 argument_list|)
 expr_stmt|;
-name|font_button
+name|button
 operator|->
 name|priv
 operator|->
@@ -1220,14 +1220,14 @@ name|NULL
 expr_stmt|;
 name|g_free
 argument_list|(
-name|font_button
+name|button
 operator|->
 name|priv
 operator|->
 name|font_name
 argument_list|)
 expr_stmt|;
-name|font_button
+name|button
 operator|->
 name|priv
 operator|->
@@ -1356,12 +1356,12 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|gimp_font_select_button_create_inside (GimpFontSelectButton * font_button)
+DECL|function|gimp_font_select_button_create_inside (GimpFontSelectButton * button)
 name|gimp_font_select_button_create_inside
 parameter_list|(
 name|GimpFontSelectButton
 modifier|*
-name|font_button
+name|button
 parameter_list|)
 block|{
 name|GtkWidget
@@ -1409,7 +1409,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|font_button
+name|button
 operator|->
 name|priv
 operator|->
@@ -1417,7 +1417,7 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
-name|font_button
+name|button
 operator|->
 name|priv
 operator|->
@@ -1431,7 +1431,7 @@ argument_list|(
 name|hbox
 argument_list|)
 argument_list|,
-name|font_button
+name|button
 operator|->
 name|priv
 operator|->

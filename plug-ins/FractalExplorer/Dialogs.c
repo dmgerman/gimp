@@ -48,12 +48,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimpconfig/gimpconfig.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"FractalExplorer.h"
 end_include
 
