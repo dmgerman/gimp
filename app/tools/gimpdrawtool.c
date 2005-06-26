@@ -4968,6 +4968,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_draw_tool_draw_boundary:  *  * @draw_tool: a #GimpDrawTool  * @bound_segs: the sorted brush outline  * @n_bound_segs: the number of segments in @bound_segs  * @offset_x: x offset  * @offset_y: y offset  * @use_offsets: whether to use offsets  *  * Draw the boundary of the brush that @draw_tool uses. The boundary  * should be sorted with sort_boundary(), and @n_bound_segs should  * include the sentinel segments inserted by sort_boundary() that  * indicate the end of connected segment sequences (groups) .  */
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_draw_tool_draw_boundary (GimpDrawTool * draw_tool,const BoundSeg * bound_segs,gint n_bound_segs,gdouble offset_x,gdouble offset_y,gboolean use_offsets)
@@ -5019,13 +5023,6 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
-name|gint
-name|num_groups
-decl_stmt|;
-name|BoundSeg
-modifier|*
-name|sorted_segs
-decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DRAW_TOOL
@@ -5054,18 +5051,6 @@ operator|->
 name|gdisp
 operator|->
 name|shell
-argument_list|)
-expr_stmt|;
-name|sorted_segs
-operator|=
-name|sort_boundary
-argument_list|(
-name|bound_segs
-argument_list|,
-name|n_bound_segs
-argument_list|,
-operator|&
-name|num_groups
 argument_list|)
 expr_stmt|;
 name|gdk_points
@@ -5109,8 +5094,6 @@ init|;
 name|i
 operator|<
 name|n_bound_segs
-operator|+
-name|num_groups
 condition|;
 name|i
 operator|++
@@ -5118,7 +5101,7 @@ control|)
 block|{
 if|if
 condition|(
-name|sorted_segs
+name|bound_segs
 index|[
 name|i
 index|]
@@ -5128,7 +5111,7 @@ operator|==
 operator|-
 literal|1
 operator|&&
-name|sorted_segs
+name|bound_segs
 index|[
 name|i
 index|]
@@ -5138,7 +5121,7 @@ operator|==
 operator|-
 literal|1
 operator|&&
-name|sorted_segs
+name|bound_segs
 index|[
 name|i
 index|]
@@ -5148,7 +5131,7 @@ operator|==
 operator|-
 literal|1
 operator|&&
-name|sorted_segs
+name|bound_segs
 index|[
 name|i
 index|]
@@ -5193,7 +5176,7 @@ name|gimp_display_shell_transform_xy
 argument_list|(
 name|shell
 argument_list|,
-name|sorted_segs
+name|bound_segs
 index|[
 name|i
 index|]
@@ -5202,7 +5185,7 @@ name|x1
 operator|+
 name|offset_x
 argument_list|,
-name|sorted_segs
+name|bound_segs
 index|[
 name|i
 index|]
@@ -5271,7 +5254,7 @@ name|gimp_display_shell_transform_xy
 argument_list|(
 name|shell
 argument_list|,
-name|sorted_segs
+name|bound_segs
 index|[
 name|i
 index|]
@@ -5280,7 +5263,7 @@ name|x2
 operator|+
 name|offset_x
 argument_list|,
-name|sorted_segs
+name|bound_segs
 index|[
 name|i
 index|]
@@ -5339,11 +5322,6 @@ block|}
 name|g_free
 argument_list|(
 name|gdk_points
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|sorted_segs
 argument_list|)
 expr_stmt|;
 block|}
