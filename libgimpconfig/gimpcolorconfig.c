@@ -158,7 +158,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd65ec10103
+DECL|enum|__anon2c7e78310103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -379,6 +379,14 @@ name|GIMP_TYPE_CONFIG
 argument_list|,
 operator|&
 name|config_iface_info
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_domain
+argument_list|(
+name|config_type
+argument_list|,
+name|GETTEXT_PACKAGE
+literal|"-libgimp"
 argument_list|)
 expr_stmt|;
 block|}
