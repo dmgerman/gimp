@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29cde98c0103
+DECL|enum|__anon2c1926520103
 block|{
 DECL|enumerator|SELECTION_CHANGED
 name|SELECTION_CHANGED
@@ -66,7 +66,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29cde98c0203
+DECL|enum|__anon2c1926520203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -79,7 +79,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29cde98c0303
+DECL|enum|__anon2c1926520303
 block|{
 DECL|enumerator|COLUMN_PAGE_NO
 name|COLUMN_PAGE_NO
@@ -1555,8 +1555,8 @@ end_comment
 begin_function
 name|GdkPixbuf
 modifier|*
-DECL|function|gimp_page_selector_get_page_thmbnail (GimpPageSelector * selector,gint page_no)
-name|gimp_page_selector_get_page_thmbnail
+DECL|function|gimp_page_selector_get_page_thumbnail (GimpPageSelector * selector,gint page_no)
+name|gimp_page_selector_get_page_thumbnail
 parameter_list|(
 name|GimpPageSelector
 modifier|*
