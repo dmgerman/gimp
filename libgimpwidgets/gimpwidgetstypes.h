@@ -280,6 +280,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpPageSelector
+typedef|typedef
+name|struct
+name|_GimpPageSelector
+name|GimpPageSelector
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpPathEditor
 typedef|typedef
 name|struct

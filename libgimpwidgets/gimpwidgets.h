@@ -193,6 +193,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimpwidgets/gimppageselector.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimpwidgets/gimppatheditor.h>
 end_include
 
