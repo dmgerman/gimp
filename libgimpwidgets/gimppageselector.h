@@ -29,7 +29,7 @@ end_macro
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon278a61720103
+DECL|enum|__anon29f5d8340103
 block|{
 DECL|enumerator|GIMP_PAGE_SELECTOR_OPEN_LAYERS
 name|GIMP_PAGE_SELECTOR_OPEN_LAYERS
@@ -136,6 +136,11 @@ DECL|member|view
 name|GtkWidget
 modifier|*
 name|view
+decl_stmt|;
+DECL|member|range_entry
+name|GtkWidget
+modifier|*
+name|range_entry
 decl_stmt|;
 DECL|member|thumbnail
 name|GdkPixbuf
