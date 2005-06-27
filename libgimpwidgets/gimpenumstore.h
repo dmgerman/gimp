@@ -117,9 +117,9 @@ DECL|struct|_GimpEnumStoreClass
 struct|struct
 name|_GimpEnumStoreClass
 block|{
-DECL|member|parent_instance
+DECL|member|parent_class
 name|GimpIntStoreClass
-name|parent_instance
+name|parent_class
 decl_stmt|;
 DECL|member|_gimp_reserved1
 name|void

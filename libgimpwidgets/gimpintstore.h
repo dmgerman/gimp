@@ -29,7 +29,7 @@ end_macro
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2804a12d0103
+DECL|enum|__anon2b41814d0103
 block|{
 DECL|enumerator|GIMP_INT_STORE_VALUE
 name|GIMP_INT_STORE_VALUE
@@ -150,9 +150,9 @@ DECL|struct|_GimpIntStoreClass
 struct|struct
 name|_GimpIntStoreClass
 block|{
-DECL|member|parent_instance
+DECL|member|parent_class
 name|GtkListStoreClass
-name|parent_instance
+name|parent_class
 decl_stmt|;
 comment|/* Padding for future expansion */
 DECL|member|_gimp_reserved1

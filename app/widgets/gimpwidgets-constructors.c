@@ -349,15 +349,9 @@ argument_list|)
 expr_stmt|;
 name|combo
 operator|=
-name|g_object_new
+name|gimp_enum_combo_box_new_with_model
 argument_list|(
-name|GIMP_TYPE_ENUM_COMBO_BOX
-argument_list|,
-literal|"model"
-argument_list|,
 name|store
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|g_object_unref

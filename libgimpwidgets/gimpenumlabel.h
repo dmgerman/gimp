@@ -118,9 +118,9 @@ DECL|struct|_GimpEnumLabelClass
 struct|struct
 name|_GimpEnumLabelClass
 block|{
-DECL|member|parent_instance
+DECL|member|parent_class
 name|GtkLabelClass
-name|parent_instance
+name|parent_class
 decl_stmt|;
 block|}
 struct|;

@@ -157,9 +157,9 @@ DECL|struct|_GimpIntComboBoxClass
 struct|struct
 name|_GimpIntComboBoxClass
 block|{
-DECL|member|parent_instance
+DECL|member|parent_class
 name|GtkComboBoxClass
-name|parent_instance
+name|parent_class
 decl_stmt|;
 block|}
 struct|;

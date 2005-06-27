@@ -112,9 +112,9 @@ DECL|struct|_GimpEnumComboBoxClass
 struct|struct
 name|_GimpEnumComboBoxClass
 block|{
-DECL|member|parent_instance
+DECL|member|parent_class
 name|GimpIntComboBoxClass
-name|parent_instance
+name|parent_class
 decl_stmt|;
 comment|/* Padding for future expansion */
 DECL|member|_gimp_reserved1
@@ -178,6 +178,18 @@ name|gimp_enum_combo_box_new
 parameter_list|(
 name|GType
 name|enum_type
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GtkWidget
+modifier|*
+name|gimp_enum_combo_box_new_with_model
+parameter_list|(
+name|GimpEnumStore
+modifier|*
+name|enum_store
 parameter_list|)
 function_decl|;
 end_function_decl
