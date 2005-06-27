@@ -351,7 +351,10 @@ name|combo
 operator|=
 name|gimp_enum_combo_box_new_with_model
 argument_list|(
+name|GIMP_ENUM_STORE
+argument_list|(
 name|store
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_object_unref
