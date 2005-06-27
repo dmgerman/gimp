@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"actions.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"debug-commands.h"
 end_include
 
@@ -113,6 +119,17 @@ specifier|extern
 name|gboolean
 name|gimp_debug_memsize
 decl_stmt|;
+name|Gimp
+modifier|*
+name|gimp
+decl_stmt|;
+name|return_if_no_gimp
+argument_list|(
+name|gimp
+argument_list|,
+name|data
+argument_list|)
+expr_stmt|;
 name|gimp_debug_memsize
 operator|=
 name|TRUE
@@ -121,7 +138,7 @@ name|gimp_object_get_memsize
 argument_list|(
 name|GIMP_OBJECT
 argument_list|(
-name|data
+name|gimp
 argument_list|)
 argument_list|,
 name|NULL
