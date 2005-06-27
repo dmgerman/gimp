@@ -180,7 +180,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bceb11a0103
+DECL|enum|__anon2a0532160103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1075,6 +1075,14 @@ name|row
 init|=
 literal|0
 decl_stmt|;
+if|if
+condition|(
+operator|!
+name|config
+condition|)
+return|return
+name|NULL
+return|;
 name|vbox
 operator|=
 name|gtk_vbox_new
