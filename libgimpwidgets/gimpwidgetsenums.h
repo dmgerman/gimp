@@ -36,7 +36,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296601b10103
+DECL|enum|__anon28037d590103
 block|{
 DECL|enumerator|GIMP_CHAIN_TOP
 name|GIMP_CHAIN_TOP
@@ -76,7 +76,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296601b10203
+DECL|enum|__anon28037d590203
 block|{
 DECL|enumerator|GIMP_COLOR_AREA_FLAT
 name|GIMP_COLOR_AREA_FLAT
@@ -115,7 +115,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296601b10303
+DECL|enum|__anon28037d590303
 block|{
 DECL|enumerator|GIMP_COLOR_SELECTOR_HUE
 name|GIMP_COLOR_SELECTOR_HUE
@@ -151,6 +151,42 @@ typedef|;
 end_typedef
 
 begin_define
+DECL|macro|GIMP_TYPE_PAGE_SELECTOR_TARGET
+define|#
+directive|define
+name|GIMP_TYPE_PAGE_SELECTOR_TARGET
+value|(gimp_page_selector_target_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_page_selector_target_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon28037d590403
+block|{
+DECL|enumerator|GIMP_PAGE_SELECTOR_TARGET_LAYERS
+name|GIMP_PAGE_SELECTOR_TARGET_LAYERS
+block|,
+comment|/*< desc="Layers">*/
+DECL|enumerator|GIMP_PAGE_SELECTOR_TARGET_IMAGES
+name|GIMP_PAGE_SELECTOR_TARGET_IMAGES
+comment|/*< desc="Images">*/
+DECL|typedef|GimpPageSelectorTarget
+block|}
+name|GimpPageSelectorTarget
+typedef|;
+end_typedef
+
+begin_define
 DECL|macro|GIMP_TYPE_SIZE_ENTRY_UPDATE_POLICY
 define|#
 directive|define
@@ -171,7 +207,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296601b10403
+DECL|enum|__anon28037d590503
 block|{
 DECL|enumerator|GIMP_SIZE_ENTRY_UPDATE_NONE
 name|GIMP_SIZE_ENTRY_UPDATE_NONE
