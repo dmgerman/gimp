@@ -1953,7 +1953,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2c1337920108
+DECL|struct|__anon2c13fdcc0108
 typedef|typedef
 struct|struct
 block|{
@@ -2396,7 +2396,7 @@ name|props
 operator|->
 name|x
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2468,7 +2468,7 @@ name|props
 operator|->
 name|y
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2538,7 +2538,7 @@ name|props
 operator|->
 name|width
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2608,7 +2608,7 @@ name|props
 operator|->
 name|height
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

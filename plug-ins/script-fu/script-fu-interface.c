@@ -108,7 +108,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b486650108
+DECL|struct|__anon287fd5490108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -1422,7 +1422,7 @@ name|g_signal_connect
 argument_list|(
 name|widget
 argument_list|,
-literal|"color_changed"
+literal|"color-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1912,7 +1912,7 @@ name|sfa_adjustment
 operator|.
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

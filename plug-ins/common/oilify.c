@@ -79,7 +79,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7072790108
+DECL|struct|__anon2945f2930108
 block|{
 DECL|member|mask_size
 name|gdouble
@@ -2362,7 +2362,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2379,7 +2379,7 @@ name|g_signal_connect_swapped
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

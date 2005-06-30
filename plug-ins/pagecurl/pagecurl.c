@@ -76,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29bd06d80103
+DECL|enum|__anon29ec3c140103
 block|{
 DECL|enumerator|CURL_COLORS_FG_BG
 name|CURL_COLORS_FG_BG
@@ -100,7 +100,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29bd06d80203
+DECL|enum|__anon29ec3c140203
 block|{
 DECL|enumerator|CURL_ORIENTATION_VERTICAL
 name|CURL_ORIENTATION_VERTICAL
@@ -121,7 +121,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29bd06d80303
+DECL|enum|__anon29ec3c140303
 block|{
 DECL|enumerator|CURL_EDGE_LOWER_RIGHT
 name|CURL_EDGE_LOWER_RIGHT
@@ -209,7 +209,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29bd06d80408
+DECL|struct|__anon29ec3c140408
 block|{
 DECL|member|colors
 name|CurlColors
@@ -2449,7 +2449,7 @@ name|g_signal_connect
 argument_list|(
 name|adjustment
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

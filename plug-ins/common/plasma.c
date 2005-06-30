@@ -72,7 +72,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3a1a3c0108
+DECL|struct|__anon2c619e480108
 block|{
 DECL|member|seed
 name|guint32
@@ -1212,7 +1212,7 @@ argument_list|(
 name|seed
 argument_list|)
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1273,7 +1273,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1290,7 +1290,7 @@ name|g_signal_connect_swapped
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

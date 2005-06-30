@@ -383,7 +383,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2adda1560103
+DECL|enum|__anon2c26a0bf0103
 block|{
 DECL|enumerator|GF_NORMAL
 name|GF_NORMAL
@@ -410,7 +410,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2adda1560203
+DECL|enum|__anon2c26a0bf0203
 block|{
 DECL|enumerator|GF_CIRCLE
 name|GF_CIRCLE
@@ -431,7 +431,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2adda1560308
+DECL|struct|__anon2c26a0bf0308
 block|{
 DECL|member|name
 name|gchar
@@ -572,7 +572,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2adda1560408
+DECL|struct|__anon2c26a0bf0408
 block|{
 DECL|member|fp
 name|FILE
@@ -592,7 +592,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2adda1560503
+DECL|enum|__anon2c26a0bf0503
 block|{
 DECL|enumerator|PAGE_SETTINGS
 name|PAGE_SETTINGS
@@ -620,7 +620,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2adda1560608
+DECL|struct|__anon2c26a0bf0608
 block|{
 DECL|member|init
 name|gint
@@ -642,7 +642,7 @@ modifier|*
 name|preview
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2adda1560708
+DECL|struct|__anon2c26a0bf0708
 block|{
 DECL|member|x0
 DECL|member|y0
@@ -721,7 +721,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2adda1560808
+DECL|struct|__anon2c26a0bf0808
 block|{
 DECL|member|init
 name|gint
@@ -791,7 +791,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2adda1560908
+DECL|struct|__anon2c26a0bf0908
 block|{
 DECL|member|x0
 name|gdouble
@@ -818,7 +818,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2adda1560a08
+DECL|struct|__anon2c26a0bf0a08
 block|{
 DECL|member|init
 name|gint
@@ -988,7 +988,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2adda1560b08
+DECL|struct|__anon2c26a0bf0b08
 block|{
 DECL|member|xcenter
 name|gdouble
@@ -1015,7 +1015,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2adda1560c08
+DECL|struct|__anon2c26a0bf0c08
 block|{
 DECL|member|is_color
 name|gint
@@ -1256,7 +1256,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2adda1560d08
+DECL|struct|__anon2c26a0bf0d08
 block|{
 DECL|member|tag
 name|gint
@@ -1333,7 +1333,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2adda1560e08
+DECL|struct|__anon2c26a0bf0e08
 block|{
 DECL|member|xcenter
 name|gint
@@ -8527,7 +8527,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-DECL|struct|__anon2adda1560f08
+DECL|struct|__anon2c26a0bf0f08
 specifier|static
 struct|struct
 block|{
@@ -13477,7 +13477,7 @@ name|g_signal_connect
 argument_list|(
 name|center
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -13491,7 +13491,7 @@ name|g_signal_connect
 argument_list|(
 name|center
 argument_list|,
-literal|"refval_changed"
+literal|"refval-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -13648,7 +13648,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -13665,7 +13665,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -13728,7 +13728,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -13745,7 +13745,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -13808,7 +13808,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -13825,7 +13825,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -13887,7 +13887,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -13904,7 +13904,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -13966,7 +13966,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -13983,7 +13983,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -14200,7 +14200,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -14265,7 +14265,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -14485,7 +14485,7 @@ name|i
 decl_stmt|;
 specifier|static
 struct|struct
-DECL|struct|__anon2adda1561008
+DECL|struct|__anon2c26a0bf1008
 block|{
 DECL|member|label
 specifier|const
@@ -16714,7 +16714,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -16731,7 +16731,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -16907,7 +16907,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -16924,7 +16924,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -17100,7 +17100,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -17117,7 +17117,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -17584,7 +17584,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -17601,7 +17601,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -17664,7 +17664,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -17681,7 +17681,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -17744,7 +17744,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -17761,7 +17761,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -18203,7 +18203,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -18220,7 +18220,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -18283,7 +18283,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -18300,7 +18300,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -18363,7 +18363,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -18380,7 +18380,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -18442,7 +18442,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -18459,7 +18459,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -18521,7 +18521,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -18538,7 +18538,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -19013,7 +19013,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -19030,7 +19030,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -19093,7 +19093,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -19110,7 +19110,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -19173,7 +19173,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -19190,7 +19190,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -19696,7 +19696,7 @@ argument_list|(
 name|seed
 argument_list|)
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

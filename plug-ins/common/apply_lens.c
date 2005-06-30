@@ -136,7 +136,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb725220108
+DECL|struct|__anon2c7336af0108
 block|{
 DECL|member|refraction
 name|gdouble
@@ -2232,7 +2232,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2249,7 +2249,7 @@ name|g_signal_connect_swapped
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

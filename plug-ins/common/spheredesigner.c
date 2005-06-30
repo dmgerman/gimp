@@ -205,7 +205,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ddc4850103
+DECL|enum|__anon29125e140103
 block|{
 DECL|enumerator|TRIANGLE
 name|TRIANGLE
@@ -230,7 +230,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ddc4850203
+DECL|enum|__anon29125e140203
 block|{
 DECL|enumerator|SOLID
 name|SOLID
@@ -279,7 +279,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ddc4850303
+DECL|enum|__anon29125e140303
 block|{
 DECL|enumerator|PERSPECTIVE
 name|PERSPECTIVE
@@ -295,7 +295,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ddc4850403
+DECL|enum|__anon29125e140403
 block|{
 DECL|enumerator|FOG
 name|FOG
@@ -305,7 +305,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ddc4850503
+DECL|enum|__anon29125e140503
 block|{
 DECL|enumerator|TYPE
 name|TYPE
@@ -358,7 +358,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ddc4850608
+DECL|struct|__anon29125e140608
 block|{
 DECL|member|xsize
 DECL|member|ysize
@@ -381,7 +381,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ddc4850708
+DECL|struct|__anon29125e140708
 block|{
 DECL|member|numcol
 name|gshort
@@ -410,7 +410,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ddc4850808
+DECL|struct|__anon29125e140808
 block|{
 DECL|member|majtype
 name|gint
@@ -505,7 +505,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ddc4850908
+DECL|struct|__anon29125e140908
 block|{
 DECL|member|type
 name|gshort
@@ -532,7 +532,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ddc4850a08
+DECL|struct|__anon29125e140a08
 block|{
 DECL|member|type
 name|gshort
@@ -573,7 +573,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ddc4850b08
+DECL|struct|__anon29125e140b08
 block|{
 DECL|member|com
 name|common
@@ -598,7 +598,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ddc4850c08
+DECL|struct|__anon29125e140c08
 block|{
 DECL|member|com
 name|common
@@ -624,7 +624,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ddc4850d08
+DECL|struct|__anon29125e140d08
 block|{
 DECL|member|com
 name|common
@@ -647,7 +647,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ddc4850e08
+DECL|struct|__anon29125e140e08
 block|{
 DECL|member|com
 name|common
@@ -672,7 +672,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ddc4850f08
+DECL|struct|__anon29125e140f08
 block|{
 DECL|member|com
 name|common
@@ -695,7 +695,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ddc4851008
+DECL|struct|__anon29125e141008
 block|{
 DECL|member|com
 name|common
@@ -718,7 +718,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ddc4851108
+DECL|struct|__anon29125e141108
 block|{
 DECL|member|v1
 DECL|member|v2
@@ -744,7 +744,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon28ddc485120a
+DECL|union|__anon29125e14120a
 block|{
 DECL|member|com
 name|common
@@ -1060,7 +1060,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon28ddc4851308
+DECL|struct|__anon29125e141308
 block|{
 DECL|member|solid
 DECL|member|phong
@@ -14696,7 +14696,7 @@ name|g_signal_connect
 argument_list|(
 name|drawarea
 argument_list|,
-literal|"expose_event"
+literal|"expose-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -15579,7 +15579,7 @@ name|g_signal_connect
 argument_list|(
 name|button
 argument_list|,
-literal|"color_changed"
+literal|"color-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -15638,7 +15638,7 @@ name|g_signal_connect
 argument_list|(
 name|button
 argument_list|,
-literal|"color_changed"
+literal|"color-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -15698,7 +15698,7 @@ name|g_signal_connect
 argument_list|(
 name|scalescale
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -15758,7 +15758,7 @@ name|g_signal_connect
 argument_list|(
 name|turbulencescale
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -15818,7 +15818,7 @@ name|g_signal_connect
 argument_list|(
 name|amountscale
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -15878,7 +15878,7 @@ name|g_signal_connect
 argument_list|(
 name|expscale
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -16069,7 +16069,7 @@ name|g_signal_connect
 argument_list|(
 name|scalexscale
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -16129,7 +16129,7 @@ name|g_signal_connect
 argument_list|(
 name|scaleyscale
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -16189,7 +16189,7 @@ name|g_signal_connect
 argument_list|(
 name|scalezscale
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -16249,7 +16249,7 @@ name|g_signal_connect
 argument_list|(
 name|rotxscale
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -16309,7 +16309,7 @@ name|g_signal_connect
 argument_list|(
 name|rotyscale
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -16369,7 +16369,7 @@ name|g_signal_connect
 argument_list|(
 name|rotzscale
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -16430,7 +16430,7 @@ name|g_signal_connect
 argument_list|(
 name|rotxscale
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -16491,7 +16491,7 @@ name|g_signal_connect
 argument_list|(
 name|rotyscale
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -16552,7 +16552,7 @@ name|g_signal_connect
 argument_list|(
 name|rotzscale
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

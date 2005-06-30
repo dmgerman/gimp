@@ -71,7 +71,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28d768f60103
+DECL|enum|__anon2bf183630103
 block|{
 DECL|enumerator|LIC_HUE
 name|LIC_HUE
@@ -119,7 +119,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d768f60208
+DECL|struct|__anon2bf183630208
 block|{
 DECL|member|filtlen
 name|gdouble
@@ -3424,7 +3424,7 @@ name|g_signal_connect
 argument_list|(
 name|scale_data
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3489,7 +3489,7 @@ name|g_signal_connect
 argument_list|(
 name|scale_data
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3554,7 +3554,7 @@ name|g_signal_connect
 argument_list|(
 name|scale_data
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3620,7 +3620,7 @@ name|g_signal_connect
 argument_list|(
 name|scale_data
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3685,7 +3685,7 @@ name|g_signal_connect
 argument_list|(
 name|scale_data
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

@@ -68,7 +68,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb9cc830108
+DECL|struct|__anon28a6a7d70108
 block|{
 DECL|member|radius
 name|gdouble
@@ -95,7 +95,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb9cc830208
+DECL|struct|__anon28a6a7d70208
 block|{
 DECL|member|run
 name|gboolean
@@ -2856,7 +2856,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2873,7 +2873,7 @@ name|g_signal_connect_swapped
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2934,7 +2934,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2951,7 +2951,7 @@ name|g_signal_connect_swapped
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3012,7 +3012,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3029,7 +3029,7 @@ name|g_signal_connect_swapped
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

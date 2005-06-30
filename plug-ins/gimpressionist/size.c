@@ -479,7 +479,7 @@ name|g_signal_connect
 argument_list|(
 name|sizenumadjust
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -547,7 +547,7 @@ name|g_signal_connect
 argument_list|(
 name|sizefirstadjust
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -615,7 +615,7 @@ name|g_signal_connect
 argument_list|(
 name|sizelastadjust
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

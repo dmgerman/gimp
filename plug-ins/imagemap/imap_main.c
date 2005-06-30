@@ -5441,7 +5441,7 @@ name|g_signal_stop_emission_by_name
 argument_list|(
 name|widget
 argument_list|,
-literal|"key_press_event"
+literal|"key-press-event"
 argument_list|)
 expr_stmt|;
 return|return
@@ -5985,7 +5985,7 @@ name|g_signal_connect
 argument_list|(
 name|dlg
 argument_list|,
-literal|"delete_event"
+literal|"delete-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -5999,7 +5999,7 @@ name|g_signal_connect
 argument_list|(
 name|dlg
 argument_list|,
-literal|"key_press_event"
+literal|"key-press-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

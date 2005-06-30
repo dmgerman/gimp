@@ -100,7 +100,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dcb3ce0108
+DECL|struct|__anon2b087be50108
 block|{
 DECL|member|run
 name|gint
@@ -115,7 +115,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dcb3ce0208
+DECL|struct|__anon2b087be50208
 block|{
 DECL|member|width
 name|gint
@@ -149,7 +149,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28dcb3ce0303
+DECL|enum|__anon2b087be50303
 block|{
 DECL|enumerator|SHADOWS
 name|SHADOWS
@@ -170,7 +170,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon28dcb3ce0403
+DECL|enum|__anon2b087be50403
 block|{
 DECL|enumerator|NONEATALL
 name|NONEATALL
@@ -202,7 +202,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28dcb3ce0503
+DECL|enum|__anon2b087be50503
 block|{
 DECL|enumerator|BY_HUE
 name|BY_HUE
@@ -221,7 +221,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28dcb3ce0603
+DECL|enum|__anon2b087be50603
 block|{
 DECL|enumerator|RED
 name|RED
@@ -249,7 +249,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28dcb3ce0703
+DECL|enum|__anon2b087be50703
 block|{
 DECL|enumerator|DOWN
 name|DOWN
@@ -268,7 +268,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dcb3ce0808
+DECL|struct|__anon2b087be50808
 block|{
 DECL|member|window
 name|GtkWidget
@@ -299,7 +299,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dcb3ce0908
+DECL|struct|__anon2b087be50908
 block|{
 DECL|member|roughness
 name|gdouble
@@ -400,7 +400,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dcb3ce0a08
+DECL|struct|__anon2b087be50a08
 block|{
 DECL|member|roughness_scale
 name|GtkWidget
@@ -1311,7 +1311,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28dcb3ce0b08
+DECL|struct|__anon2b087be50b08
 block|{
 DECL|member|bna
 name|GtkWidget
@@ -2865,7 +2865,7 @@ name|g_signal_connect
 argument_list|(
 name|win
 argument_list|,
-literal|"delete_event"
+literal|"delete-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3443,7 +3443,7 @@ name|g_signal_connect
 argument_list|(
 name|data
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3850,7 +3850,7 @@ name|g_signal_connect
 argument_list|(
 name|win
 argument_list|,
-literal|"delete_event"
+literal|"delete-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -4143,7 +4143,7 @@ name|g_signal_connect
 argument_list|(
 name|win
 argument_list|,
-literal|"delete_event"
+literal|"delete-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -6905,7 +6905,7 @@ name|AW
 operator|.
 name|window
 argument_list|,
-literal|"delete_event"
+literal|"delete-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -7624,7 +7624,7 @@ name|g_signal_connect
 argument_list|(
 name|smoothnessData
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -7794,7 +7794,7 @@ name|g_signal_connect
 argument_list|(
 name|smoothnessData
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

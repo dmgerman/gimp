@@ -227,7 +227,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b88f4db0108
+DECL|struct|__anon296ccdc40108
 block|{
 DECL|member|hwidth
 name|gint
@@ -3647,7 +3647,7 @@ name|g_signal_connect
 argument_list|(
 name|width
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3661,7 +3661,7 @@ name|g_signal_connect_swapped
 argument_list|(
 name|width
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -4030,7 +4030,7 @@ name|g_signal_connect
 argument_list|(
 name|space
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -4058,7 +4058,7 @@ name|g_signal_connect_swapped
 argument_list|(
 name|space
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -4481,7 +4481,7 @@ name|g_signal_connect
 argument_list|(
 name|offset
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -4509,7 +4509,7 @@ name|g_signal_connect_swapped
 argument_list|(
 name|offset
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -4636,7 +4636,7 @@ name|g_signal_connect
 argument_list|(
 name|hcolor_button
 argument_list|,
-literal|"color_changed"
+literal|"color-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -4653,7 +4653,7 @@ name|g_signal_connect
 argument_list|(
 name|hcolor_button
 argument_list|,
-literal|"color_changed"
+literal|"color-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -4667,7 +4667,7 @@ name|g_signal_connect_swapped
 argument_list|(
 name|hcolor_button
 argument_list|,
-literal|"color_changed"
+literal|"color-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -4735,7 +4735,7 @@ name|g_signal_connect
 argument_list|(
 name|vcolor_button
 argument_list|,
-literal|"color_changed"
+literal|"color-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -4752,7 +4752,7 @@ name|g_signal_connect
 argument_list|(
 name|vcolor_button
 argument_list|,
-literal|"color_changed"
+literal|"color-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -4766,7 +4766,7 @@ name|g_signal_connect_swapped
 argument_list|(
 name|vcolor_button
 argument_list|,
-literal|"color_changed"
+literal|"color-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -4834,7 +4834,7 @@ name|g_signal_connect
 argument_list|(
 name|button
 argument_list|,
-literal|"color_changed"
+literal|"color-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -4851,7 +4851,7 @@ name|g_signal_connect_swapped
 argument_list|(
 name|button
 argument_list|,
-literal|"color_changed"
+literal|"color-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

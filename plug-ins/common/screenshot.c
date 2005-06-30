@@ -299,7 +299,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b77cf530103
+DECL|enum|__anon27cd8f700103
 block|{
 DECL|enumerator|SHOOT_ROOT
 name|SHOOT_ROOT
@@ -318,7 +318,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b77cf530208
+DECL|struct|__anon27cd8f700208
 block|{
 DECL|member|shoot_type
 name|ShootType
@@ -3668,7 +3668,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

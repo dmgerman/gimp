@@ -58,7 +58,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b80caac0103
+DECL|enum|__anon28d354e60103
 block|{
 DECL|enumerator|MBLUR_LINEAR
 name|MBLUR_LINEAR
@@ -82,7 +82,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b80caac0208
+DECL|struct|__anon28d354e60208
 block|{
 DECL|member|mblur_type
 name|gint32
@@ -4283,7 +4283,7 @@ name|g_signal_connect
 argument_list|(
 name|entry
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -4297,7 +4297,7 @@ name|g_signal_connect_swapped
 argument_list|(
 name|entry
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -4673,7 +4673,7 @@ name|g_signal_connect
 argument_list|(
 name|length
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -4690,7 +4690,7 @@ name|g_signal_connect_swapped
 argument_list|(
 name|length
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -4751,7 +4751,7 @@ name|g_signal_connect
 argument_list|(
 name|angle
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -4768,7 +4768,7 @@ name|g_signal_connect_swapped
 argument_list|(
 name|angle
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

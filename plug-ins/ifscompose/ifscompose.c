@@ -146,7 +146,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1a16040103
+DECL|enum|__anon2bc3cb9e0103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -166,7 +166,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1a16040203
+DECL|enum|__anon2bc3cb9e0203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -182,7 +182,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1a16040308
+DECL|struct|__anon2bc3cb9e0308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -204,7 +204,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon2a1a1604040a
+DECL|union|__anon2bc3cb9e040a
 block|{
 DECL|member|d
 name|gdouble
@@ -229,7 +229,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1a16040508
+DECL|struct|__anon2bc3cb9e0508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -259,7 +259,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1a16040608
+DECL|struct|__anon2bc3cb9e0608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -294,7 +294,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1a16040708
+DECL|struct|__anon2bc3cb9e0708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -330,7 +330,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1a16040808
+DECL|struct|__anon2bc3cb9e0808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -397,7 +397,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1a16040908
+DECL|struct|__anon2bc3cb9e0908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -546,7 +546,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1a16040a08
+DECL|struct|__anon2bc3cb9e0a08
 block|{
 DECL|member|run
 name|gboolean
@@ -5255,7 +5255,7 @@ name|ifsDesign
 operator|->
 name|area
 argument_list|,
-literal|"expose_event"
+literal|"expose-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -5271,7 +5271,7 @@ name|ifsDesign
 operator|->
 name|area
 argument_list|,
-literal|"button_press_event"
+literal|"button-press-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -5287,7 +5287,7 @@ name|ifsDesign
 operator|->
 name|area
 argument_list|,
-literal|"button_release_event"
+literal|"button-release-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -5303,7 +5303,7 @@ name|ifsDesign
 operator|->
 name|area
 argument_list|,
-literal|"motion_notify_event"
+literal|"motion-notify-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -5319,7 +5319,7 @@ name|ifsDesign
 operator|->
 name|area
 argument_list|,
-literal|"configure_event"
+literal|"configure-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -10562,7 +10562,7 @@ name|color_map
 operator|->
 name|button
 argument_list|,
-literal|"color_changed"
+literal|"color-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -10578,7 +10578,7 @@ name|color_map
 operator|->
 name|button
 argument_list|,
-literal|"color_changed"
+literal|"color-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -11032,7 +11032,7 @@ name|value_pair
 operator|->
 name|adjustment
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

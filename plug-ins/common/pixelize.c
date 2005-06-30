@@ -72,7 +72,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e9480b0108
+DECL|struct|__anon29d640840108
 block|{
 DECL|member|pixelwidth
 name|gint
@@ -91,7 +91,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e9480b0208
+DECL|struct|__anon29d640840208
 block|{
 DECL|member|x
 DECL|member|y
@@ -1187,7 +1187,7 @@ name|g_signal_connect
 argument_list|(
 name|sizeentry
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1201,7 +1201,7 @@ name|g_signal_connect
 argument_list|(
 name|sizeentry
 argument_list|,
-literal|"refval_changed"
+literal|"refval-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

@@ -173,7 +173,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2baafb390108
+DECL|struct|__anon2af8e6920108
 block|{
 DECL|member|spacing
 name|guint
@@ -246,7 +246,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2baafb390208
+DECL|struct|__anon2af8e6920208
 block|{
 DECL|member|orientation
 name|GimpOrientationType
@@ -4022,7 +4022,7 @@ name|g_signal_connect
 argument_list|(
 name|adjustment
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -4224,7 +4224,7 @@ name|g_signal_connect
 argument_list|(
 name|adjustment
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -4361,7 +4361,7 @@ name|g_signal_connect
 argument_list|(
 name|adjustment
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -4493,7 +4493,7 @@ name|g_signal_connect
 argument_list|(
 name|adjustment
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -4892,7 +4892,7 @@ name|g_signal_connect
 argument_list|(
 name|adjustment
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -5027,7 +5027,7 @@ name|g_signal_connect
 argument_list|(
 name|adjustment
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

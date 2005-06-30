@@ -100,7 +100,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289f87440108
+DECL|struct|__anon275e794c0108
 block|{
 DECL|member|npts
 name|gint
@@ -122,7 +122,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289f87440208
+DECL|struct|__anon275e794c0208
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -1204,7 +1204,7 @@ name|g_signal_connect
 argument_list|(
 name|scale_data
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1221,7 +1221,7 @@ name|g_signal_connect_swapped
 argument_list|(
 name|scale_data
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1282,7 +1282,7 @@ name|g_signal_connect
 argument_list|(
 name|scale_data
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1299,7 +1299,7 @@ name|g_signal_connect_swapped
 argument_list|(
 name|scale_data
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

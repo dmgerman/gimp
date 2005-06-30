@@ -2283,7 +2283,7 @@ name|g_signal_connect
 argument_list|(
 name|list
 argument_list|,
-literal|"button_press_event"
+literal|"button-press-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2297,7 +2297,7 @@ name|g_signal_connect
 argument_list|(
 name|list
 argument_list|,
-literal|"button_release_event"
+literal|"button-release-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

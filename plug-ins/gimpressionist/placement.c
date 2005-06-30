@@ -451,7 +451,7 @@ name|g_signal_connect
 argument_list|(
 name|brush_density_adjust
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

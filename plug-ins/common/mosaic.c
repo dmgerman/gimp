@@ -152,7 +152,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a559d00108
+DECL|struct|__anon2b13a66a0108
 block|{
 DECL|member|x
 DECL|member|y
@@ -170,7 +170,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a559d00208
+DECL|struct|__anon2b13a66a0208
 block|{
 DECL|member|npts
 name|guint
@@ -192,7 +192,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a559d00308
+DECL|struct|__anon2b13a66a0308
 block|{
 DECL|member|base_x
 DECL|member|base_y
@@ -221,7 +221,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a559d00408
+DECL|struct|__anon2b13a66a0408
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -3510,7 +3510,7 @@ name|g_signal_connect
 argument_list|(
 name|scale_data
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3527,7 +3527,7 @@ name|g_signal_connect_swapped
 argument_list|(
 name|scale_data
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3588,7 +3588,7 @@ name|g_signal_connect
 argument_list|(
 name|scale_data
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3605,7 +3605,7 @@ name|g_signal_connect_swapped
 argument_list|(
 name|scale_data
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3666,7 +3666,7 @@ name|g_signal_connect
 argument_list|(
 name|scale_data
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3683,7 +3683,7 @@ name|g_signal_connect_swapped
 argument_list|(
 name|scale_data
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3744,7 +3744,7 @@ name|g_signal_connect
 argument_list|(
 name|scale_data
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3761,7 +3761,7 @@ name|g_signal_connect_swapped
 argument_list|(
 name|scale_data
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3822,7 +3822,7 @@ name|g_signal_connect
 argument_list|(
 name|scale_data
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3839,7 +3839,7 @@ name|g_signal_connect_swapped
 argument_list|(
 name|scale_data
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3900,7 +3900,7 @@ name|g_signal_connect
 argument_list|(
 name|scale_data
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3917,7 +3917,7 @@ name|g_signal_connect_swapped
 argument_list|(
 name|scale_data
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

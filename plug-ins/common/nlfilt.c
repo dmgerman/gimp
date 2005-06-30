@@ -40,7 +40,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0a70e20108
+DECL|struct|__anon296e02e20108
 block|{
 DECL|member|alpha
 name|gdouble
@@ -67,7 +67,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c0a70e20203
+DECL|enum|__anon296e02e20203
 block|{
 DECL|enumerator|filter_alpha_trim
 name|filter_alpha_trim
@@ -6369,7 +6369,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -6386,7 +6386,7 @@ name|g_signal_connect_swapped
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -6449,7 +6449,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -6466,7 +6466,7 @@ name|g_signal_connect_swapped
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

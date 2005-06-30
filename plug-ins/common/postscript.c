@@ -224,7 +224,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2befce780108
+DECL|struct|__anon27eae2ad0108
 block|{
 DECL|member|resolution
 name|guint
@@ -313,7 +313,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2befce780208
+DECL|struct|__anon27eae2ad0208
 block|{
 DECL|member|width
 DECL|member|height
@@ -887,7 +887,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2befce780308
+DECL|struct|__anon27eae2ad0308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1743,7 +1743,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2befce780408
+DECL|struct|__anon27eae2ad0408
 block|{
 DECL|member|eol
 name|long
@@ -14263,7 +14263,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -14333,7 +14333,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -14403,7 +14403,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -15316,7 +15316,7 @@ index|[
 literal|0
 index|]
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -15396,7 +15396,7 @@ index|[
 literal|1
 index|]
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -15476,7 +15476,7 @@ index|[
 literal|2
 index|]
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -15556,7 +15556,7 @@ index|[
 literal|3
 index|]
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -16152,7 +16152,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

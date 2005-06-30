@@ -114,7 +114,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d3ba480108
+DECL|struct|__anon29eaec210108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -161,7 +161,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d3ba480208
+DECL|struct|__anon29eaec210208
 block|{
 DECL|member|run
 name|gboolean
@@ -6689,7 +6689,7 @@ name|g_signal_connect
 argument_list|(
 name|scale
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

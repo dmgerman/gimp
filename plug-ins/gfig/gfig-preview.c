@@ -299,7 +299,7 @@ name|gfig_context
 operator|->
 name|preview
 argument_list|,
-literal|"expose_event"
+literal|"expose-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -413,7 +413,7 @@ name|gfig_context
 operator|->
 name|preview
 argument_list|,
-literal|"motion_notify_event"
+literal|"motion-notify-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -489,7 +489,7 @@ name|gfig_context
 operator|->
 name|preview
 argument_list|,
-literal|"motion_notify_event"
+literal|"motion-notify-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

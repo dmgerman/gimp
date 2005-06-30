@@ -104,7 +104,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277344a60108
+DECL|struct|__anon2b04bf530108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -486,7 +486,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon277344a60203
+DECL|enum|__anon2b04bf530203
 block|{
 DECL|enumerator|ALL
 name|ALL
@@ -505,7 +505,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277344a60308
+DECL|struct|__anon2b04bf530308
 block|{
 DECL|member|type
 name|AppliedTo
@@ -575,7 +575,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277344a60408
+DECL|struct|__anon2b04bf530408
 block|{
 DECL|member|htoggle
 name|GtkWidget
@@ -1554,7 +1554,7 @@ name|tint
 operator|.
 name|preview
 argument_list|,
-literal|"expose_event"
+literal|"expose-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2240,7 +2240,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2419,7 +2419,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2658,7 +2658,7 @@ name|g_signal_connect
 argument_list|(
 name|scale
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2793,7 +2793,7 @@ name|g_signal_connect
 argument_list|(
 name|scale
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

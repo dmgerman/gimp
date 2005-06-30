@@ -76,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a65c4c0108
+DECL|struct|__anon27cc3ae40108
 block|{
 DECL|member|resolution
 name|gdouble
@@ -2786,7 +2786,7 @@ name|g_signal_connect
 argument_list|(
 name|size
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2969,7 +2969,7 @@ name|g_signal_connect
 argument_list|(
 name|xadj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3123,7 +3123,7 @@ name|g_signal_connect
 argument_list|(
 name|yadj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

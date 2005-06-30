@@ -206,7 +206,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bfe18e00103
+DECL|enum|__anon28f77b1e0103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -406,7 +406,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bfe18e00203
+DECL|enum|__anon28f77b1e0203
 block|{
 DECL|enumerator|PTYP_NOT_SUPPORTED
 name|PTYP_NOT_SUPPORTED
@@ -466,7 +466,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bfe18e00303
+DECL|enum|__anon28f77b1e0303
 block|{
 DECL|enumerator|XJT_IMAGE_PARASITE
 name|XJT_IMAGE_PARASITE
@@ -496,7 +496,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bfe18e00403
+DECL|enum|__anon28f77b1e0403
 block|{
 DECL|enumerator|XJT_RGB
 name|XJT_RGB
@@ -518,7 +518,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bfe18e00503
+DECL|enum|__anon28f77b1e0503
 block|{
 DECL|enumerator|XJT_PATHTYPE_UNDEF
 name|XJT_PATHTYPE_UNDEF
@@ -538,7 +538,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bfe18e00603
+DECL|enum|__anon28f77b1e0603
 block|{
 DECL|enumerator|XJT_UNIT_PIXEL
 name|XJT_UNIT_PIXEL
@@ -573,7 +573,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bfe18e00703
+DECL|enum|__anon28f77b1e0703
 block|{
 DECL|enumerator|XJT_NORMAL_MODE
 name|XJT_NORMAL_MODE
@@ -698,7 +698,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bfe18e00808
+DECL|struct|__anon28f77b1e0808
 block|{
 DECL|member|prop_id
 name|t_proptype
@@ -734,7 +734,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bfe18e00908
+DECL|struct|__anon28f77b1e0908
 block|{
 DECL|member|int_val1
 name|gint32
@@ -783,7 +783,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bfe18e00a08
+DECL|struct|__anon28f77b1e0a08
 block|{
 DECL|member|parasite_type
 name|t_parasitetype
@@ -820,7 +820,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bfe18e00b08
+DECL|struct|__anon28f77b1e0b08
 block|{
 DECL|member|path_type
 name|gint32
@@ -870,7 +870,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bfe18e00c08
+DECL|struct|__anon28f77b1e0c08
 block|{
 DECL|member|active_channel
 name|gint
@@ -944,7 +944,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bfe18e00d08
+DECL|struct|__anon28f77b1e0d08
 block|{
 DECL|member|active_layer
 name|gint
@@ -1029,7 +1029,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bfe18e00e08
+DECL|struct|__anon28f77b1e0e08
 block|{
 DECL|member|position
 name|gint32
@@ -1053,7 +1053,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bfe18e00f08
+DECL|struct|__anon28f77b1e0f08
 block|{
 DECL|member|version
 name|gchar
@@ -3843,7 +3843,7 @@ name|g_signal_connect
 argument_list|(
 name|scale_data
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3907,7 +3907,7 @@ name|g_signal_connect
 argument_list|(
 name|scale_data
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

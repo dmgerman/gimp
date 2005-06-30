@@ -688,7 +688,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0bd2aa0108
+DECL|struct|__anon2b44750f0108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -742,7 +742,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0bd2aa0208
+DECL|struct|__anon2b44750f0208
 block|{
 DECL|member|y
 name|gint32
@@ -6194,7 +6194,7 @@ name|cd
 operator|->
 name|rotate_data
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

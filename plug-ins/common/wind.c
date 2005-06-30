@@ -98,7 +98,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b56ced00103
+DECL|enum|__anon29262d700103
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -114,7 +114,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b56ced00203
+DECL|enum|__anon29262d700203
 block|{
 DECL|enumerator|RENDER_WIND
 name|RENDER_WIND
@@ -130,7 +130,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b56ced00303
+DECL|enum|__anon29262d700303
 block|{
 DECL|enumerator|BOTH
 name|BOTH
@@ -4418,7 +4418,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -4435,7 +4435,7 @@ name|g_signal_connect_swapped
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -4500,7 +4500,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -4517,7 +4517,7 @@ name|g_signal_connect_swapped
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

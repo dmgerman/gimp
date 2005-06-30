@@ -2083,7 +2083,7 @@ name|g_signal_connect
 argument_list|(
 name|tmpw2
 argument_list|,
-literal|"button_press_event"
+literal|"button-press-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2160,7 +2160,7 @@ name|g_signal_connect
 argument_list|(
 name|smvectprevbrightadjust
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2634,7 +2634,7 @@ name|g_signal_connect
 argument_list|(
 name|sizadjust
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2696,7 +2696,7 @@ name|g_signal_connect
 argument_list|(
 name|smstradjust
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2758,7 +2758,7 @@ name|g_signal_connect
 argument_list|(
 name|smstrexpadjust
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

@@ -73,7 +73,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon289adcbd0108
+DECL|struct|__anon27c33ecd0108
 typedef|typedef
 struct|struct
 block|{
@@ -608,7 +608,7 @@ name|command
 operator|->
 name|widget
 argument_list|,
-literal|"button_release_event"
+literal|"button-release-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -624,7 +624,7 @@ name|command
 operator|->
 name|widget
 argument_list|,
-literal|"motion_notify_event"
+literal|"motion-notify-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

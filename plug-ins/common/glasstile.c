@@ -44,7 +44,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27706df60108
+DECL|struct|__anon2bdce6ac0108
 block|{
 DECL|member|xblock
 name|gint
@@ -72,7 +72,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27706df60208
+DECL|struct|__anon2bdce6ac0208
 block|{
 DECL|member|gval
 name|GlassValues
@@ -1032,7 +1032,7 @@ name|gv
 operator|->
 name|xadj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1048,7 +1048,7 @@ name|gv
 operator|->
 name|xadj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1114,7 +1114,7 @@ name|gv
 operator|->
 name|yadj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1130,7 +1130,7 @@ name|gv
 operator|->
 name|yadj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

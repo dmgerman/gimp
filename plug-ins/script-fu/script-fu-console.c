@@ -78,7 +78,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2a94da0108
+DECL|struct|__anon2c6283840108
 block|{
 DECL|member|console
 name|GtkTextBuffer
@@ -903,7 +903,7 @@ name|cint
 operator|.
 name|cc
 argument_list|,
-literal|"key_press_event"
+literal|"key-press-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

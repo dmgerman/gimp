@@ -76,7 +76,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b665b2e0103
+DECL|enum|__anon2bd296770103
 block|{
 DECL|enumerator|BACKGROUND_TYPE_TRANSPARENT
 name|BACKGROUND_TYPE_TRANSPARENT
@@ -104,7 +104,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b665b2e0203
+DECL|enum|__anon2bd296770203
 block|{
 DECL|enumerator|FRACTIONAL_TYPE_BACKGROUND
 name|FRACTIONAL_TYPE_BACKGROUND
@@ -192,7 +192,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b665b2e0308
+DECL|struct|__anon2bd296770308
 block|{
 DECL|member|params
 name|PluginParams
@@ -212,7 +212,7 @@ name|gboolean
 name|drawable_has_alpha
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2b665b2e0408
+DECL|struct|__anon2bd296770408
 block|{
 DECL|member|x0
 name|gint
@@ -579,7 +579,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b665b2e0508
+DECL|struct|__anon2bd296770508
 block|{
 DECL|member|tile_size_adj
 name|GtkObject
@@ -1248,7 +1248,7 @@ name|w
 operator|.
 name|division_x_adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1325,7 +1325,7 @@ name|w
 operator|.
 name|division_y_adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1411,7 +1411,7 @@ name|w
 operator|.
 name|tile_size_adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1732,7 +1732,7 @@ name|g_signal_connect
 argument_list|(
 name|adjustment
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2005,7 +2005,7 @@ name|g_signal_connect
 argument_list|(
 name|color_button
 argument_list|,
-literal|"color_changed"
+literal|"color-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

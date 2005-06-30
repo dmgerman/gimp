@@ -119,7 +119,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2910260103
+DECL|enum|__anon29fb793e0103
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -136,7 +136,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2910260208
+DECL|struct|__anon29fb793e0208
 block|{
 DECL|member|interlace
 name|gint
@@ -4643,7 +4643,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

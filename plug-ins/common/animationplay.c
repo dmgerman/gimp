@@ -52,7 +52,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c5aaa10103
+DECL|enum|__anon279f49150103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -599,7 +599,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c5aaa10208
+DECL|struct|__anon279f49150208
 block|{
 DECL|member|x
 DECL|member|y
@@ -2267,7 +2267,7 @@ name|g_signal_connect
 argument_list|(
 name|shape_window
 argument_list|,
-literal|"button_press_event"
+literal|"button-press-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2281,7 +2281,7 @@ name|g_signal_connect
 argument_list|(
 name|shape_window
 argument_list|,
-literal|"button_release_event"
+literal|"button-release-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2295,7 +2295,7 @@ name|g_signal_connect
 argument_list|(
 name|shape_window
 argument_list|,
-literal|"motion_notify_event"
+literal|"motion-notify-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2331,7 +2331,7 @@ name|g_signal_connect
 argument_list|(
 name|eventbox
 argument_list|,
-literal|"button_press_event"
+literal|"button-press-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2345,7 +2345,7 @@ name|g_signal_connect
 argument_list|(
 name|drawing_area
 argument_list|,
-literal|"expose_event"
+literal|"expose-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2359,7 +2359,7 @@ name|g_signal_connect
 argument_list|(
 name|shape_drawing_area
 argument_list|,
-literal|"expose_event"
+literal|"expose-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

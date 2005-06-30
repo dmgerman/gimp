@@ -153,7 +153,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27bccf7b0108
+DECL|struct|__anon28d579f30108
 block|{
 DECL|member|threshold
 name|gint
@@ -908,7 +908,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

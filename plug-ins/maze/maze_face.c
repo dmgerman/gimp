@@ -133,7 +133,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9e37990108
+DECL|struct|__anon2a99a4a30108
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -2796,7 +2796,7 @@ argument_list|,
 literal|0.5
 argument_list|)
 expr_stmt|;
-comment|/*     If the first arg of gtk_adjustment_new() isn't between min and     max, it is automatically corrected by gtk later with     "value_changed" signal. I don't like this, since I want to leave     *intvar untouched when `constraint' is false.     The lines below might look oppositely, but this is OK.    */
+comment|/*     If the first arg of gtk_adjustment_new() isn't between min and     max, it is automatically corrected by gtk later with     "value-changed" signal. I don't like this, since I want to leave     *intvar untouched when `constraint' is false.     The lines below might look oppositely, but this is OK.    */
 name|userdata
 operator|->
 name|constraint
@@ -2982,7 +2982,7 @@ name|g_signal_connect
 argument_list|(
 name|adjustment
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

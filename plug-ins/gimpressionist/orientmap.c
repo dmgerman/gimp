@@ -2980,7 +2980,7 @@ name|g_signal_connect
 argument_list|(
 name|ebox
 argument_list|,
-literal|"button_press_event"
+literal|"button-press-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3057,7 +3057,7 @@ name|g_signal_connect
 argument_list|(
 name|vector_preview_brightness_adjust
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3748,7 +3748,7 @@ name|g_signal_connect
 argument_list|(
 name|angle_adjust
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3810,7 +3810,7 @@ name|g_signal_connect
 argument_list|(
 name|angle_offset_adjust
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3872,7 +3872,7 @@ name|g_signal_connect
 argument_list|(
 name|strength_adjust
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3934,7 +3934,7 @@ name|g_signal_connect
 argument_list|(
 name|orient_map_str_exp_adjust
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

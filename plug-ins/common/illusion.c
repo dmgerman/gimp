@@ -140,7 +140,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fce70f0108
+DECL|struct|__anon2bbdb3d40108
 block|{
 DECL|member|division
 name|gint32
@@ -627,7 +627,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon29fce70f0208
+DECL|struct|__anon2bbdb3d40208
 typedef|typedef
 struct|struct
 block|{
@@ -2191,7 +2191,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2208,7 +2208,7 @@ name|g_signal_connect_swapped
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

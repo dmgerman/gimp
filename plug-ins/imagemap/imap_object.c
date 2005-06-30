@@ -52,7 +52,7 @@ file|"imap_string.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon2af95b9f0108
+DECL|struct|__anon294ab25d0108
 typedef|typedef
 struct|struct
 block|{
@@ -2321,7 +2321,7 @@ name|g_signal_connect
 argument_list|(
 name|widget
 argument_list|,
-literal|"motion_notify_event"
+literal|"motion-notify-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

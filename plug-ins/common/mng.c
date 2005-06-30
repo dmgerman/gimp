@@ -225,7 +225,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bcacc6b0103
+DECL|enum|__anon291a37cf0103
 block|{
 DECL|enumerator|CHUNKS_PNG_D
 name|CHUNKS_PNG_D
@@ -244,7 +244,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bcacc6b0203
+DECL|enum|__anon291a37cf0203
 block|{
 DECL|enumerator|DISPOSE_COMBINE
 name|DISPOSE_COMBINE
@@ -5913,7 +5913,7 @@ name|g_signal_connect
 argument_list|(
 name|scale_adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -6046,7 +6046,7 @@ name|g_signal_connect
 argument_list|(
 name|scale_adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -6166,7 +6166,7 @@ name|g_signal_connect
 argument_list|(
 name|scale_adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -6380,7 +6380,7 @@ name|g_signal_connect
 argument_list|(
 name|spinbutton_adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

@@ -218,7 +218,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2947a55e0103
+DECL|enum|__anon2c83ecae0103
 block|{
 DECL|enumerator|CML_KEEP_VALUES
 name|CML_KEEP_VALUES
@@ -347,7 +347,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2947a55e0203
+DECL|enum|__anon2c83ecae0203
 block|{
 DECL|enumerator|COMP_NONE
 name|COMP_NONE
@@ -492,7 +492,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2947a55e0303
+DECL|enum|__anon2c83ecae0303
 block|{
 DECL|enumerator|STANDARD
 name|STANDARD
@@ -597,7 +597,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2947a55e0403
+DECL|enum|__anon2c83ecae0403
 block|{
 DECL|enumerator|CML_INITIAL_RANDOM_INDEPENDENT
 name|CML_INITIAL_RANDOM_INDEPENDENT
@@ -695,7 +695,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2947a55e0508
+DECL|struct|__anon2c83ecae0508
 block|{
 DECL|member|function
 name|gint
@@ -768,7 +768,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2947a55e0608
+DECL|struct|__anon2c83ecae0608
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -1580,7 +1580,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2947a55e0708
+DECL|struct|__anon2c83ecae0708
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -10532,7 +10532,7 @@ name|g_signal_connect
 argument_list|(
 name|preview
 argument_list|,
-literal|"expose_event"
+literal|"expose-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -11101,7 +11101,7 @@ name|g_signal_connect
 argument_list|(
 name|dialog
 argument_list|,
-literal|"delete_event"
+literal|"delete-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -12011,7 +12011,7 @@ name|g_signal_connect
 argument_list|(
 name|dialog
 argument_list|,
-literal|"delete_event"
+literal|"delete-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -13587,7 +13587,7 @@ name|g_signal_connect
 argument_list|(
 name|adjustment
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -13719,7 +13719,7 @@ name|g_signal_connect
 argument_list|(
 name|adjustment
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

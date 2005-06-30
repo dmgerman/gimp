@@ -183,7 +183,7 @@ name|MAIN
 argument_list|()
 comment|/******************************************************************************/
 expr|enum
-DECL|enum|__anon2c4c4df30103
+DECL|enum|__anon2b6da97e0103
 block|{
 DECL|enumerator|OUTSIDE_TYPE_WRAP
 name|OUTSIDE_TYPE_WRAP
@@ -203,7 +203,7 @@ end_expr_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4c4df30208
+DECL|struct|__anon2b6da97e0208
 block|{
 DECL|member|x1
 name|gdouble
@@ -406,7 +406,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4c4df30308
+DECL|struct|__anon2b6da97e0308
 block|{
 DECL|member|x1
 name|gint
@@ -449,7 +449,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4c4df30408
+DECL|struct|__anon2b6da97e0408
 block|{
 DECL|member|width
 name|gint
@@ -1004,7 +1004,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4c4df30508
+DECL|struct|__anon2b6da97e0508
 block|{
 DECL|member|r
 name|guchar
@@ -2882,7 +2882,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4c4df30608
+DECL|struct|__anon2b6da97e0608
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -4253,7 +4253,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -4318,7 +4318,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -4383,7 +4383,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -4448,7 +4448,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -4512,7 +4512,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

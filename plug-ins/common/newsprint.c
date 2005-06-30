@@ -335,7 +335,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a237f8b0108
+DECL|struct|__anon29020f2b0108
 block|{
 DECL|member|name
 specifier|const
@@ -595,7 +595,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a237f8b0208
+DECL|struct|__anon29020f2b0208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -668,7 +668,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a237f8b0308
+DECL|struct|__anon29020f2b0308
 block|{
 DECL|member|input_spi
 name|gdouble
@@ -702,7 +702,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a237f8b0408
+DECL|struct|__anon29020f2b0408
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -809,7 +809,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a237f8b0508
+DECL|struct|__anon29020f2b0508
 block|{
 DECL|member|pull_table
 name|GtkWidget
@@ -977,7 +977,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a237f8b0608
+DECL|struct|__anon29020f2b0608
 block|{
 DECL|member|name
 specifier|const
@@ -3932,7 +3932,7 @@ name|chst
 operator|->
 name|angle_adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3948,7 +3948,7 @@ name|chst
 operator|->
 name|angle_adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -5231,7 +5231,7 @@ name|st
 operator|.
 name|input_spi
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -5248,7 +5248,7 @@ name|st
 operator|.
 name|input_spi
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -5313,7 +5313,7 @@ name|st
 operator|.
 name|output_lpi
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -5330,7 +5330,7 @@ name|st
 operator|.
 name|output_lpi
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -5395,7 +5395,7 @@ name|st
 operator|.
 name|cellsize
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -5412,7 +5412,7 @@ name|st
 operator|.
 name|cellsize
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -5601,7 +5601,7 @@ name|st
 operator|.
 name|pull
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -5620,7 +5620,7 @@ name|st
 operator|.
 name|pull
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -6385,7 +6385,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -6402,7 +6402,7 @@ name|g_signal_connect_swapped
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -7040,7 +7040,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a237f8b0708
+DECL|struct|__anon29020f2b0708
 block|{
 DECL|member|index
 name|gint

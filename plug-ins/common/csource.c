@@ -42,7 +42,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a109f390108
+DECL|struct|__anon2c072b180108
 block|{
 DECL|member|file_name
 name|gchar
@@ -3644,7 +3644,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

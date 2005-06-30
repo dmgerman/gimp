@@ -36,7 +36,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296b52800103
+DECL|enum|__anon2b4d8b7b0103
 block|{
 DECL|enumerator|BLUR_IIR
 name|BLUR_IIR
@@ -52,7 +52,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296b52800208
+DECL|struct|__anon2b4d8b7b0208
 block|{
 DECL|member|horizontal
 name|gdouble
@@ -1937,7 +1937,7 @@ name|g_signal_connect_swapped
 argument_list|(
 name|size
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1951,7 +1951,7 @@ name|g_signal_connect_swapped
 argument_list|(
 name|size
 argument_list|,
-literal|"refval_changed"
+literal|"refval-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

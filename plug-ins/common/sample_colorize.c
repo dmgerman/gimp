@@ -341,7 +341,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2848c70108
+DECL|struct|__anon28d360c80108
 block|{
 DECL|member|dst_id
 name|gint32
@@ -410,7 +410,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2848c70208
+DECL|struct|__anon28d360c80208
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -518,7 +518,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2848c70308
+DECL|struct|__anon28d360c80308
 block|{
 DECL|member|color
 name|guchar
@@ -547,7 +547,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2848c70408
+DECL|struct|__anon28d360c80408
 block|{
 DECL|member|all_samples
 name|gint32
@@ -574,7 +574,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2848c70508
+DECL|struct|__anon28d360c80508
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -7616,7 +7616,7 @@ name|g_di
 operator|.
 name|adj_lvl_in_min
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -7709,7 +7709,7 @@ name|g_di
 operator|.
 name|adj_lvl_in_gamma
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -7802,7 +7802,7 @@ name|g_di
 operator|.
 name|adj_lvl_in_max
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -7969,7 +7969,7 @@ name|g_di
 operator|.
 name|adj_lvl_out_min
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -8062,7 +8062,7 @@ name|g_di
 operator|.
 name|adj_lvl_out_max
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

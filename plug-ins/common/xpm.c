@@ -130,7 +130,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7f3a940108
+DECL|struct|__anon2b6833590108
 block|{
 DECL|member|threshold
 name|gint
@@ -145,7 +145,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7f3a940208
+DECL|struct|__anon2b6833590208
 block|{
 DECL|member|r
 name|guchar
@@ -3185,7 +3185,7 @@ name|g_signal_connect
 argument_list|(
 name|scale_data
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

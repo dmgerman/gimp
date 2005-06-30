@@ -134,7 +134,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27f2fee70108
+DECL|struct|__anon2bf8e60f0108
 block|{
 DECL|member|cinfo
 name|struct
@@ -2858,7 +2858,7 @@ name|g_signal_connect
 argument_list|(
 name|entry
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2875,7 +2875,7 @@ name|g_signal_connect
 argument_list|(
 name|entry
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3280,7 +3280,7 @@ name|g_signal_connect
 argument_list|(
 name|entry
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3297,7 +3297,7 @@ name|g_signal_connect
 argument_list|(
 name|entry
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3494,7 +3494,7 @@ name|g_signal_connect
 argument_list|(
 name|scale_data
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -4686,7 +4686,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27f2fee70208
+DECL|struct|__anon2bf8e60f0208
 block|{
 DECL|member|pub
 name|struct

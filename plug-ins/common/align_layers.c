@@ -61,7 +61,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6089640103
+DECL|enum|__anon2b07a3b40103
 block|{
 DECL|enumerator|H_NONE
 name|H_NONE
@@ -83,7 +83,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6089640203
+DECL|enum|__anon2b07a3b40203
 block|{
 DECL|enumerator|H_BASE_LEFT
 name|H_BASE_LEFT
@@ -99,7 +99,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6089640303
+DECL|enum|__anon2b07a3b40303
 block|{
 DECL|enumerator|V_NONE
 name|V_NONE
@@ -121,7 +121,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6089640403
+DECL|enum|__anon2b07a3b40403
 block|{
 DECL|enumerator|V_BASE_TOP
 name|V_BASE_TOP
@@ -244,7 +244,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6089640508
+DECL|struct|__anon2b07a3b40508
 block|{
 DECL|member|h_style
 name|gint
@@ -2047,7 +2047,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

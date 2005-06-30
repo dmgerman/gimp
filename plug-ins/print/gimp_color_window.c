@@ -1002,7 +1002,7 @@ name|g_signal_connect
 argument_list|(
 name|swatch
 argument_list|,
-literal|"expose_event"
+literal|"expose-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1182,7 +1182,7 @@ name|g_signal_connect
 argument_list|(
 name|brightness_adjustment
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1273,7 +1273,7 @@ name|g_signal_connect
 argument_list|(
 name|contrast_adjustment
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1364,7 +1364,7 @@ name|g_signal_connect
 argument_list|(
 name|cyan_adjustment
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1455,7 +1455,7 @@ name|g_signal_connect
 argument_list|(
 name|magenta_adjustment
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1546,7 +1546,7 @@ name|g_signal_connect
 argument_list|(
 name|yellow_adjustment
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1639,7 +1639,7 @@ name|g_signal_connect
 argument_list|(
 name|saturation_adjustment
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1733,7 +1733,7 @@ name|g_signal_connect
 argument_list|(
 name|density_adjustment
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1828,7 +1828,7 @@ name|g_signal_connect
 argument_list|(
 name|gamma_adjustment
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

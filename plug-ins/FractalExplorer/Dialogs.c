@@ -2388,7 +2388,7 @@ name|wint
 operator|.
 name|preview
 argument_list|,
-literal|"button_press_event"
+literal|"button-press-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2404,7 +2404,7 @@ name|wint
 operator|.
 name|preview
 argument_list|,
-literal|"button_release_event"
+literal|"button-release-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2420,7 +2420,7 @@ name|wint
 operator|.
 name|preview
 argument_list|,
-literal|"motion_notify_event"
+literal|"motion-notify-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2436,7 +2436,7 @@ name|wint
 operator|.
 name|preview
 argument_list|,
-literal|"leave_notify_event"
+literal|"leave-notify-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2452,7 +2452,7 @@ name|wint
 operator|.
 name|preview
 argument_list|,
-literal|"enter_notify_event"
+literal|"enter-notify-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3085,7 +3085,7 @@ name|elements
 operator|->
 name|xmin
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3158,7 +3158,7 @@ name|elements
 operator|->
 name|xmax
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3231,7 +3231,7 @@ name|elements
 operator|->
 name|ymin
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3304,7 +3304,7 @@ name|elements
 operator|->
 name|ymax
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3377,7 +3377,7 @@ name|elements
 operator|->
 name|iter
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3451,7 +3451,7 @@ name|elements
 operator|->
 name|cx
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3525,7 +3525,7 @@ name|elements
 operator|->
 name|cy
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -4408,7 +4408,7 @@ name|elements
 operator|->
 name|ncol
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -4636,7 +4636,7 @@ name|elements
 operator|->
 name|red
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -4707,7 +4707,7 @@ name|elements
 operator|->
 name|green
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -4778,7 +4778,7 @@ name|elements
 operator|->
 name|blue
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

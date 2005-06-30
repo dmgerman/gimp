@@ -689,7 +689,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon294f967a0108
+DECL|struct|__anon2953197f0108
 typedef|typedef
 struct|struct
 block|{
@@ -1854,7 +1854,7 @@ name|g_signal_connect
 argument_list|(
 name|size_entry
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

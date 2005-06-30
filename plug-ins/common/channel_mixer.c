@@ -88,7 +88,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c785b360103
+DECL|enum|__anon2b5392540103
 block|{
 DECL|enumerator|CM_RED_CHANNEL
 name|CM_RED_CHANNEL
@@ -107,7 +107,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c785b360208
+DECL|struct|__anon2b5392540208
 block|{
 DECL|member|red_gain
 name|gdouble
@@ -130,7 +130,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c785b360308
+DECL|struct|__anon2b5392540308
 block|{
 DECL|member|red
 name|CmChannelType
@@ -2757,7 +2757,7 @@ name|mix
 operator|.
 name|red_data
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2866,7 +2866,7 @@ name|mix
 operator|.
 name|green_data
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2975,7 +2975,7 @@ name|mix
 operator|.
 name|blue_data
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -4282,7 +4282,7 @@ name|g_signal_connect
 argument_list|(
 name|dialog
 argument_list|,
-literal|"delete_event"
+literal|"delete-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -5036,7 +5036,7 @@ name|g_signal_connect
 argument_list|(
 name|dialog
 argument_list|,
-literal|"delete_event"
+literal|"delete-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

@@ -932,7 +932,7 @@ name|st
 operator|->
 name|preview
 argument_list|,
-literal|"expose_event"
+literal|"expose-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -948,7 +948,7 @@ name|st
 operator|->
 name|preview
 argument_list|,
-literal|"button_press_event"
+literal|"button-press-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -964,7 +964,7 @@ name|st
 operator|->
 name|preview
 argument_list|,
-literal|"button_release_event"
+literal|"button-release-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -980,7 +980,7 @@ name|st
 operator|->
 name|preview
 argument_list|,
-literal|"motion_notify_event"
+literal|"motion-notify-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2183,7 +2183,7 @@ name|g_signal_connect_after
 argument_list|(
 name|preview
 argument_list|,
-literal|"expose_event"
+literal|"expose-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2197,7 +2197,7 @@ name|g_signal_connect
 argument_list|(
 name|preview
 argument_list|,
-literal|"button_press_event"
+literal|"button-press-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2211,7 +2211,7 @@ name|g_signal_connect
 argument_list|(
 name|preview
 argument_list|,
-literal|"button_release_event"
+literal|"button-release-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2225,7 +2225,7 @@ name|g_signal_connect
 argument_list|(
 name|preview
 argument_list|,
-literal|"motion_notify_event"
+literal|"motion-notify-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

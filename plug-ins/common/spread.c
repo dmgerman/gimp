@@ -38,7 +38,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298f7c520108
+DECL|struct|__anon275b0e140108
 block|{
 DECL|member|spread_amount_x
 name|gdouble
@@ -663,7 +663,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298f7c520208
+DECL|struct|__anon275b0e140208
 block|{
 DECL|member|pft
 name|GimpPixelFetcher
@@ -1605,7 +1605,7 @@ name|g_signal_connect_swapped
 argument_list|(
 name|size
 argument_list|,
-literal|"refval_changed"
+literal|"refval-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

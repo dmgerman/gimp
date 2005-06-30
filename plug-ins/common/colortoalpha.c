@@ -50,7 +50,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bac93590108
+DECL|struct|__anon296d71d50108
 block|{
 DECL|member|color
 name|GimpRGB
@@ -1777,7 +1777,7 @@ name|g_signal_connect
 argument_list|(
 name|button
 argument_list|,
-literal|"color_changed"
+literal|"color-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1794,7 +1794,7 @@ name|g_signal_connect_swapped
 argument_list|(
 name|button
 argument_list|,
-literal|"color_changed"
+literal|"color-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

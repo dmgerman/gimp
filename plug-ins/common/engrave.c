@@ -50,7 +50,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0fbfcd0108
+DECL|struct|__anon2c228f010108
 block|{
 DECL|member|height
 name|gint
@@ -912,7 +912,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -929,7 +929,7 @@ name|g_signal_connect_swapped
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1146,7 +1146,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0fbfcd0208
+DECL|struct|__anon2c228f010208
 block|{
 DECL|member|x
 DECL|member|y

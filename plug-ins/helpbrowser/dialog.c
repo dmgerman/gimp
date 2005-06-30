@@ -155,7 +155,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4563360103
+DECL|enum|__anon27f0fba90103
 block|{
 DECL|enumerator|HISTORY_TITLE
 name|HISTORY_TITLE
@@ -1512,7 +1512,7 @@ name|g_signal_connect
 argument_list|(
 name|html
 argument_list|,
-literal|"button_press_event"
+literal|"button-press-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

@@ -456,7 +456,7 @@ name|g_signal_connect
 argument_list|(
 name|orient_num_adjust
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -524,7 +524,7 @@ name|g_signal_connect
 argument_list|(
 name|orient_first_adjust
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -592,7 +592,7 @@ name|g_signal_connect
 argument_list|(
 name|orient_last_adjust
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

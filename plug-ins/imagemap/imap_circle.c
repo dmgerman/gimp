@@ -1307,7 +1307,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2ad29f920108
+DECL|struct|__anon289c2c360108
 typedef|typedef
 struct|struct
 block|{
@@ -1649,7 +1649,7 @@ name|props
 operator|->
 name|x
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1721,7 +1721,7 @@ name|props
 operator|->
 name|y
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1791,7 +1791,7 @@ name|props
 operator|->
 name|r
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

@@ -278,7 +278,7 @@ end_function
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29c5c88b0108
+DECL|struct|__anon2c1d2c9d0108
 block|{
 DECL|member|width
 name|gint
@@ -2226,7 +2226,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

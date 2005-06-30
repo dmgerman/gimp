@@ -75,7 +75,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd42a160103
+DECL|enum|__anon2796b9090103
 block|{
 DECL|enumerator|SOBEL
 name|SOBEL
@@ -101,7 +101,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd42a160208
+DECL|struct|__anon2796b9090208
 block|{
 DECL|member|amount
 name|gdouble
@@ -3412,7 +3412,7 @@ name|g_signal_connect
 argument_list|(
 name|scale_data
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3429,7 +3429,7 @@ name|g_signal_connect_swapped
 argument_list|(
 name|scale_data
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

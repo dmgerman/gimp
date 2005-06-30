@@ -141,7 +141,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b052e220108
+DECL|struct|__anon2c0bd3810108
 block|{
 DECL|member|description
 name|gchar
@@ -1962,7 +1962,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon2b052e22020a
+DECL|union|__anon2c0bd381020a
 block|{
 DECL|member|u
 name|guint16
@@ -2948,7 +2948,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

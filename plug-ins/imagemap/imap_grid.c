@@ -70,7 +70,7 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_typedef
-DECL|enum|__anon29ae7db30103
+DECL|enum|__anon2a04d4790103
 DECL|enumerator|GRID_HIDDEN
 DECL|enumerator|GRID_LINES
 DECL|enumerator|GRID_CROSSES
@@ -89,7 +89,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29ae7db30208
+DECL|struct|__anon2a04d4790208
 typedef|typedef
 struct|struct
 block|{
@@ -1352,7 +1352,7 @@ name|data
 operator|->
 name|width
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1422,7 +1422,7 @@ name|data
 operator|->
 name|height
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1611,7 +1611,7 @@ name|data
 operator|->
 name|left
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1667,7 +1667,7 @@ name|data
 operator|->
 name|top
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
