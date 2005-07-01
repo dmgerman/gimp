@@ -128,13 +128,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"jpeg-icc.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"jpeg-save.h"
 end_include
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27487b3c0108
+DECL|struct|__anon2c6dbb830108
 block|{
 DECL|member|cinfo
 name|struct
@@ -772,6 +778,10 @@ decl_stmt|;
 name|GimpImageType
 name|drawable_type
 decl_stmt|;
+name|GimpParasite
+modifier|*
+name|parasite
+decl_stmt|;
 name|struct
 name|jpeg_compress_struct
 name|cinfo
@@ -1049,7 +1059,6 @@ case|:
 case|case
 name|GIMP_GRAYA_IMAGE
 case|:
-comment|/*gimp_message ("jpeg: image contains a-channel info which will be lost");*/
 comment|/* # of color components per pixel (minus the GIMP alpha channel) */
 name|cinfo
 operator|.
@@ -1069,17 +1078,13 @@ break|break;
 case|case
 name|GIMP_INDEXED_IMAGE
 case|:
-comment|/*gimp_message ("jpeg: cannot operate on indexed color images");*/
 return|return
 name|FALSE
 return|;
-break|break;
 default|default:
-comment|/*gimp_message ("jpeg: cannot operate on unknown image types");*/
 return|return
 name|FALSE
 return|;
-break|break;
 block|}
 comment|/* Step 3: set parameters for compression */
 comment|/* First we supply a description of the input image.    * Four fields of the cinfo struct must be filled in:    */
@@ -1875,10 +1880,6 @@ operator|.
 name|save_xmp
 condition|)
 block|{
-name|GimpParasite
-modifier|*
-name|parasite
-decl_stmt|;
 comment|/* FIXME: temporary hack until the right thing is done by a library */
 name|parasite
 operator|=
@@ -2004,6 +2005,43 @@ name|app_block
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+comment|/* Step 4.3: store the color profile if there is one */
+name|parasite
+operator|=
+name|gimp_image_parasite_find
+argument_list|(
+name|orig_image_ID
+argument_list|,
+literal|"icc-profile"
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|parasite
+condition|)
+block|{
+name|jpeg_icc_write_profile
+argument_list|(
+operator|&
+name|cinfo
+argument_list|,
+name|gimp_parasite_data
+argument_list|(
+name|parasite
+argument_list|)
+argument_list|,
+name|gimp_parasite_data_size
+argument_list|(
+name|parasite
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_parasite_free
+argument_list|(
+name|parasite
+argument_list|)
+expr_stmt|;
 block|}
 comment|/* Step 5: while (scan lines remain to be written) */
 comment|/*           jpeg_write_scanlines(...); */
@@ -4698,7 +4736,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27487b3c0208
+DECL|struct|__anon2c6dbb830208
 block|{
 DECL|member|pub
 name|struct

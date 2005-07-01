@@ -93,6 +93,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"jpeg-icc.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"jpeg-load.h"
 end_include
 
@@ -154,6 +160,13 @@ name|guchar
 modifier|*
 modifier|*
 name|rowbuf
+decl_stmt|;
+name|guchar
+modifier|*
+name|profile
+decl_stmt|;
+name|guint
+name|profile_size
 decl_stmt|;
 name|gint
 name|image_type
@@ -381,6 +394,12 @@ argument_list|,
 name|infile
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|preview
+condition|)
+block|{
 comment|/* - step 2.1: tell the lib to save the comments */
 name|jpeg_save_markers
 argument_list|(
@@ -392,7 +411,7 @@ argument_list|,
 literal|0xffff
 argument_list|)
 expr_stmt|;
-comment|/* - step 2.2: tell the lib to save APP1 markers (may contain EXIF or XMP) */
+comment|/* - step 2.2: tell the lib to save APP1 markers        *   (may contain EXIF or XMP)        */
 name|jpeg_save_markers
 argument_list|(
 operator|&
@@ -405,6 +424,14 @@ argument_list|,
 literal|0xffff
 argument_list|)
 expr_stmt|;
+comment|/* - step 2.3: tell the lib to keep any APP2 data it may find */
+name|jpeg_icc_setup_read_profile
+argument_list|(
+operator|&
+name|cinfo
+argument_list|)
+expr_stmt|;
+block|}
 comment|/* Step 3: read file parameters with jpeg_read_header() */
 operator|(
 name|void
@@ -1161,6 +1188,58 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+comment|/* Step 5.3: check for an embedded ICC profile */
+if|if
+condition|(
+operator|!
+name|preview
+operator|&&
+name|jpeg_icc_read_profile
+argument_list|(
+operator|&
+name|cinfo
+argument_list|,
+operator|&
+name|profile
+argument_list|,
+operator|&
+name|profile_size
+argument_list|)
+condition|)
+block|{
+name|GimpParasite
+modifier|*
+name|parasite
+init|=
+name|gimp_parasite_new
+argument_list|(
+literal|"icc-profile"
+argument_list|,
+literal|0
+argument_list|,
+name|profile_size
+argument_list|,
+name|profile
+argument_list|)
+decl_stmt|;
+name|gimp_image_parasite_attach
+argument_list|(
+name|image_ID
+argument_list|,
+name|parasite
+argument_list|)
+expr_stmt|;
+name|gimp_parasite_free
+argument_list|(
+name|parasite
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|profile
+argument_list|)
+expr_stmt|;
+block|}
 if|if
 condition|(
 operator|!
@@ -1232,7 +1311,7 @@ name|comment
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* Do not attach the "jpeg-save-options" parasite to the image        * because this conflics with the global defaults.  See bug #75398:        * http://bugzilla.gnome.org/show_bug.cgi?id=75398 */
+comment|/* Do not attach the "jpeg-save-options" parasite to the image        * because this conflicts with the global defaults (bug #75398).        */
 block|}
 comment|/* Step 6: while (scan lines remain to be read) */
 comment|/*           jpeg_read_scanlines(...); */
@@ -1757,7 +1836,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278f3c290108
+DECL|struct|__anon2b51e1bb0108
 block|{
 DECL|member|pub
 name|struct
