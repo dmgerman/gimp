@@ -255,7 +255,7 @@ argument_list|)
 block|}
 block|,
 block|{
-literal|"plug-in-generic-menu"
+literal|"plug-in-effects-menu"
 block|,
 name|NULL
 block|,
