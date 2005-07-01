@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8266e20103
+DECL|enum|__anon2be442220103
 block|{
 DECL|enumerator|SELECTION_CHANGED
 name|SELECTION_CHANGED
@@ -66,7 +66,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8266e20203
+DECL|enum|__anon2be442220203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -82,7 +82,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8266e20303
+DECL|enum|__anon2be442220303
 block|{
 DECL|enumerator|COLUMN_PAGE_NO
 name|COLUMN_PAGE_NO
@@ -1486,7 +1486,7 @@ comment|/*  public functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_page_selector_new:  *  * Creates a new #GimpPageSelector widget.  *  * Returns: Pointer to the new #GimpPageSelector widget.  **/
+comment|/**  * gimp_page_selector_new:  *  * Creates a new #GimpPageSelector widget.  *  * Returns: Pointer to the new #GimpPageSelector widget.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -1521,7 +1521,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_page_selector_set_n_pages:  * @selector: Pointer to a #GimpPageSelector.  * @n_pages:  *  *  **/
+comment|/**  * gimp_page_selector_set_n_pages:  * @selector: Pointer to a #GimpPageSelector.  * @n_pages:  *  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -1726,7 +1726,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_page_selector_get_n_pages:  * @selector: Pointer to a #GimpPageSelector.  *  * Retrieves the number of pages in the document to open.  **/
+comment|/**  * gimp_page_selector_get_n_pages:  * @selector: Pointer to a #GimpPageSelector.  *  * Returns: the number of pages in the document to open.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -1847,7 +1847,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_page_selector_set_page_thumbnail:  * @selector: Pointer to a #GimpPageSelector.  * @page_no: The number of the page to set the thumbnail for.  * @thumbnail: The thumbnail pixbuf.  *  **/
+comment|/**  * gimp_page_selector_set_page_thumbnail:  * @selector: Pointer to a #GimpPageSelector.  * @page_no: The number of the page to set the thumbnail for.  * @thumbnail: The thumbnail pixbuf.  *  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -1952,7 +1952,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_page_selector_get_page_thumbnail:  * @page_no: The number of the page to get the thumbnail for.  *  * Returns: The page's thumbnail, or %NULL if none is set.  **/
+comment|/**  * gimp_page_selector_get_page_thumbnail:  * @selector: Pointer to a #GimpPageSelector.  * @page_no: The number of the page to get the thumbnail for.  *  * Returns: The page's thumbnail, or %NULL if none is set.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -2064,6 +2064,10 @@ name|thumbnail
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_page_selector_set_page_label:  * @selector: Pointer to a #GimpPageSelector.  * @page_no: The number of the page to set the label for.  * @label: The label.  *  *  * Since: GIMP 2.4  **/
+end_comment
 
 begin_function
 name|void
@@ -2192,6 +2196,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_page_selector_get_page_label:  * @selector: Pointer to a #GimpPageSelector.  * @page_no: The number of the page to get the thumbnail for.  *  * Returns: The page's label, or %NULL if none is set.  *  * Since: GIMP 2.4  **/
+end_comment
+
 begin_function
 name|gchar
 modifier|*
@@ -2305,6 +2313,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_page_selector_select_all:  * @selector: Pointer to a #GimpPageSelector.  *  * Selects all pages.  *  * Since: GIMP 2.4  **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_page_selector_select_all (GimpPageSelector * selector)
@@ -2336,6 +2348,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_page_selector_unselect_all:  * @selector: Pointer to a #GimpPageSelector.  *  * Unselects all pages.  *  * Since: GIMP 2.4  **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_page_selector_unselect_all (GimpPageSelector * selector)
@@ -2366,6 +2382,10 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_page_selector_select_page:  * @selector: Pointer to a #GimpPageSelector.  * @page_no: The number of the page to select.  *  * Adds a page to the selection.  *  * Since: GIMP 2.4  **/
+end_comment
 
 begin_function
 name|void
@@ -2460,6 +2480,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_page_selector_unselect_page:  * @selector: Pointer to a #GimpPageSelector.  * @page_no: The number of the page to unselect.  *  * Removes a page from the selection.  *  * Since: GIMP 2.4  **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_page_selector_unselect_page (GimpPageSelector * selector,gint page_no)
@@ -2552,6 +2576,10 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_page_selector_page_is_selected:  * @selector: Pointer to a #GimpPageSelector.  * @page_no: The number of the page to check.  *  * Returns: %TRUE if the page is selected, %FALSE otherwise.  *  * Since: GIMP 2.4  **/
+end_comment
 
 begin_function
 name|gboolean
@@ -2659,6 +2687,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|gint
 DECL|function|gimp_page_selector_int_compare (gconstpointer a,gconstpointer b)
 name|gimp_page_selector_int_compare
@@ -2687,6 +2716,10 @@ name|b
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_page_selector_get_selected_pages:  * @selector: Pointer to a #GimpPageSelector.  * @n_selected_pages: Returns the number of selected pages.  *  * Returns: An array of page numbers of selected pages. Use g_free() if  *          you don't need the array any longer.  *  * Since: GIMP 2.4  **/
+end_comment
 
 begin_function
 name|gint
@@ -2850,9 +2883,13 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_page_selector_select_range:  * @selector: Pointer to a #GimpPageSelector.  * @range:  *  * Since: GIMP 2.4  **/
+end_comment
+
 begin_function
 name|void
-DECL|function|gimp_page_selector_select_range (GimpPageSelector * selector,const gchar * range_string)
+DECL|function|gimp_page_selector_select_range (GimpPageSelector * selector,const gchar * range)
 name|gimp_page_selector_select_range
 parameter_list|(
 name|GimpPageSelector
@@ -2862,7 +2899,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|range_string
+name|range
 parameter_list|)
 block|{
 name|gchar
@@ -2881,9 +2918,9 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|range_string
+name|range
 condition|)
-name|range_string
+name|range
 operator|=
 literal|""
 expr_stmt|;
@@ -2907,7 +2944,7 @@ name|ranges
 operator|=
 name|g_strsplit
 argument_list|(
-name|range_string
+name|range
 argument_list|,
 literal|","
 argument_list|,
@@ -3137,6 +3174,10 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_page_selector_get_selected_range:  * @selector: Pointer to a #GimpPageSelector.  *  * Returns: A newly allocated string.  *  * Since: GIMP 2.4  **/
+end_comment
 
 begin_function
 name|gchar
