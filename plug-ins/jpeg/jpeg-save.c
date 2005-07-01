@@ -134,7 +134,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf8e60f0108
+DECL|struct|__anon27487b3c0108
 block|{
 DECL|member|cinfo
 name|struct
@@ -3472,6 +3472,18 @@ argument_list|(
 name|toggle
 argument_list|)
 expr_stmt|;
+name|gtk_toggle_button_set_active
+argument_list|(
+name|GTK_TOGGLE_BUTTON
+argument_list|(
+name|toggle
+argument_list|)
+argument_list|,
+name|jsvals
+operator|.
+name|restart
+argument_list|)
+expr_stmt|;
 name|gtk_widget_set_sensitive
 argument_list|(
 name|restart_markers_label
@@ -4686,7 +4698,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf8e60f0208
+DECL|struct|__anon27487b3c0208
 block|{
 DECL|member|pub
 name|struct
