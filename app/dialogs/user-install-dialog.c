@@ -163,7 +163,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c5b62c0103
+DECL|enum|__anon2c5054f50103
 block|{
 DECL|enumerator|GPL_PAGE
 name|GPL_PAGE
@@ -188,7 +188,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c5b62c0203
+DECL|enum|__anon2c5054f50203
 block|{
 DECL|enumerator|DIRENT_COLUMN
 name|DIRENT_COLUMN
@@ -400,7 +400,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28c5b62c0303
+DECL|enum|__anon2c5054f50303
 block|{
 DECL|enumerator|TREE_ITEM_DO_NOTHING
 name|TREE_ITEM_DO_NOTHING
@@ -422,7 +422,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28c5b62c0408
+DECL|struct|__anon2c5054f50408
 block|{
 DECL|member|directory
 name|gboolean
@@ -490,7 +490,7 @@ literal|"Plug-ins and extensions are external programs which "
 literal|"provide additional functionality to GIMP.  These "
 literal|"programs are searched for at run-time and information "
 literal|"about their functionality is cached in this file.  "
-literal|"This file is intended to be written by GIMP only, "
+literal|"This file is intended to be written to by GIMP only, "
 literal|"and should not be edited."
 argument_list|)
 block|,

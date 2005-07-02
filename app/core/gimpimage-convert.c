@@ -442,7 +442,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon298f7e390103
+DECL|enum|__anon2b182c690103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1483,7 +1483,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298f7e390208
+DECL|struct|__anon2b182c690208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1560,7 +1560,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298f7e390308
+DECL|struct|__anon2b182c690308
 block|{
 DECL|member|ncolors
 name|long
@@ -1745,7 +1745,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298f7e390408
+DECL|struct|__anon2b182c690408
 block|{
 DECL|member|used_count
 name|signed
@@ -3010,7 +3010,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Cannot convert image, palette is empty."
+literal|"Cannot convert image: palette is empty."
 argument_list|)
 argument_list|)
 expr_stmt|;

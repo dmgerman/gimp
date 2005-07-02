@@ -316,8 +316,8 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"The batch interpreter '%s' is not available, "
-literal|"batch mode disabled."
+literal|"The batch interpreter '%s' is not available. "
+literal|"Batch mode disabled."
 argument_list|)
 argument_list|,
 name|batch_interpreter
