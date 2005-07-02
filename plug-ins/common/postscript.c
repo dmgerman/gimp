@@ -224,7 +224,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27eae2ad0108
+DECL|struct|__anon2b568b910108
 block|{
 DECL|member|resolution
 name|guint
@@ -313,7 +313,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27eae2ad0208
+DECL|struct|__anon2b568b910208
 block|{
 DECL|member|width
 DECL|member|height
@@ -887,7 +887,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27eae2ad0308
+DECL|struct|__anon2b568b910308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1743,7 +1743,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27eae2ad0408
+DECL|struct|__anon2b568b910408
 block|{
 DECL|member|eol
 name|long
@@ -2365,6 +2365,9 @@ argument_list|,
 literal|"0,string,%!,0,long,0xc5d0d3c6"
 argument_list|)
 expr_stmt|;
+ifndef|#
+directive|ifndef
+name|HAVE_POPPLER
 name|gimp_install_procedure
 argument_list|(
 literal|"file_pdf_load"
@@ -2421,6 +2424,8 @@ argument_list|,
 literal|"0,string,%PDF"
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 name|gimp_install_procedure
 argument_list|(
 literal|"file_ps_load_setargs"
@@ -2502,6 +2507,9 @@ argument_list|,
 literal|"file_ps_load_thumb"
 argument_list|)
 expr_stmt|;
+ifndef|#
+directive|ifndef
+name|HAVE_POPPLER
 name|gimp_register_thumbnail_loader
 argument_list|(
 literal|"file_pdf_load"
@@ -2509,6 +2517,8 @@ argument_list|,
 literal|"file_ps_load_thumb"
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 name|gimp_install_procedure
 argument_list|(
 literal|"file_ps_save"
