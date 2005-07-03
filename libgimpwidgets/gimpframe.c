@@ -208,7 +208,7 @@ end_function_decl
 begin_decl_stmt
 DECL|variable|parent_class
 specifier|static
-name|GtkVBoxClass
+name|GtkFrameClass
 modifier|*
 name|parent_class
 init|=
@@ -280,7 +280,10 @@ operator|(
 name|GInstanceInitFunc
 operator|)
 name|gimp_frame_init
-block|,       }
+block|,
+name|NULL
+comment|/* value_table    */
+block|}
 decl_stmt|;
 name|frame_type
 operator|=
