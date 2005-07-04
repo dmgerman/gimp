@@ -252,18 +252,6 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-modifier|*
-name|xmalloc
-parameter_list|(
-name|size_t
-name|n
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
 name|psd_lmode_layer
 parameter_list|(
 name|gint32
@@ -544,18 +532,6 @@ name|run
 block|,
 comment|/* run_proc */
 block|}
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|prog_name
-specifier|static
-specifier|const
-name|gchar
-modifier|*
-name|prog_name
-init|=
-literal|"PSD"
 decl_stmt|;
 end_decl_stmt
 
@@ -952,75 +928,6 @@ end_function
 begin_function
 specifier|static
 name|void
-modifier|*
-DECL|function|xmalloc (size_t n)
-name|xmalloc
-parameter_list|(
-name|size_t
-name|n
-parameter_list|)
-block|{
-name|void
-modifier|*
-name|p
-decl_stmt|;
-if|if
-condition|(
-name|n
-operator|==
-literal|0
-condition|)
-block|{
-name|IFDBG
-name|printf
-argument_list|(
-literal|"PSD: WARNING: %s: xmalloc asked for zero-sized chunk\n"
-argument_list|,
-name|prog_name
-argument_list|)
-decl_stmt|;
-return|return
-operator|(
-name|NULL
-operator|)
-return|;
-block|}
-if|if
-condition|(
-operator|(
-name|p
-operator|=
-name|g_malloc
-argument_list|(
-name|n
-argument_list|)
-operator|)
-operator|!=
-name|NULL
-condition|)
-return|return
-name|p
-return|;
-name|IFDBG
-name|printf
-argument_list|(
-literal|"%s: out of memory\n"
-argument_list|,
-name|prog_name
-argument_list|)
-decl_stmt|;
-name|gimp_quit
-argument_list|()
-expr_stmt|;
-return|return
-name|NULL
-return|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
 DECL|function|psd_lmode_layer (gint32 idLayer,gchar * psdMode)
 name|psd_lmode_layer
 parameter_list|(
@@ -1174,8 +1081,6 @@ literal|"over"
 argument_list|)
 expr_stmt|;
 break|break;
-comment|/*    case GIMP_BEHIND_MODE:                 These are from GIMP 1.1.14*/
-comment|/*    case GIMP_DIVIDE_MODE:                 These are from GIMP 1.1.14*/
 case|case
 name|GIMP_ADDITION_MODE
 case|:
@@ -2172,7 +2077,7 @@ name|i
 decl_stmt|;
 name|mapPSD
 operator|=
-name|xmalloc
+name|g_malloc
 argument_list|(
 literal|768
 argument_list|)
@@ -2565,7 +2470,7 @@ expr_stmt|;
 comment|/* For this type, length is always 768 */
 name|cmap_modified
 operator|=
-name|xmalloc
+name|g_malloc
 argument_list|(
 literal|768
 argument_list|)
