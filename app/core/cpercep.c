@@ -1804,24 +1804,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/* call this before using the CPercep function */
-end_comment
-
-begin_function
-name|void
-DECL|function|cpercep_init_conversions (void)
-name|cpercep_init_conversions
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-name|rgbxyzrgb_init
-argument_list|()
-expr_stmt|;
-block|}
-end_function
-
 begin_function
 specifier|static
 specifier|inline
@@ -2350,6 +2332,41 @@ name|inb
 operator|=
 name|Z
 expr_stmt|;
+block|}
+end_function
+
+begin_comment
+comment|/* call this before using the CPercep function */
+end_comment
+
+begin_function
+name|void
+DECL|function|cpercep_init (void)
+name|cpercep_init
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+specifier|static
+name|gboolean
+name|initialized
+init|=
+name|FALSE
+decl_stmt|;
+if|if
+condition|(
+operator|!
+name|initialized
+condition|)
+block|{
+name|rgbxyzrgb_init
+argument_list|()
+expr_stmt|;
+name|initialized
+operator|=
+name|TRUE
+expr_stmt|;
+block|}
 block|}
 end_function
 
