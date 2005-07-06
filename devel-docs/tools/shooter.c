@@ -31,12 +31,6 @@ end_endif
 begin_include
 include|#
 directive|include
-file|<X11/extensions/shape.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<gdk/gdkx.h>
 end_include
 
@@ -44,6 +38,12 @@ begin_include
 include|#
 directive|include
 file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<X11/extensions/shape.h>
 end_include
 
 begin_include
