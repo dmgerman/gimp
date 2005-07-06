@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b39ea60103
+DECL|enum|__anon27f99dcf0103
 block|{
 DECL|enumerator|SEARCH
 name|SEARCH
@@ -797,6 +797,16 @@ expr_stmt|;
 name|va_end
 argument_list|(
 name|args
+argument_list|)
+expr_stmt|;
+name|gtk_combo_box_set_focus_on_click
+argument_list|(
+name|GTK_COMBO_BOX
+argument_list|(
+name|combo
+argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|browser

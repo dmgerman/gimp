@@ -105,7 +105,7 @@ literal|0
 argument_list|,
 name|NULL
 argument_list|,
-literal|0
+name|REG_ICASE
 argument_list|)
 return|;
 block|}

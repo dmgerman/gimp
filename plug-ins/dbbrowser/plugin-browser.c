@@ -77,7 +77,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2ebcd00103
+DECL|enum|__anon2b8d16990103
 block|{
 DECL|enumerator|LIST_COLUMN_NAME
 name|LIST_COLUMN_NAME
@@ -102,7 +102,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2ebcd00203
+DECL|enum|__anon2b8d16990203
 block|{
 DECL|enumerator|TREE_COLUMN_PATH_NAME
 name|TREE_COLUMN_PATH_NAME
@@ -128,7 +128,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2ebcd00308
+DECL|struct|__anon2b8d16990308
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -159,7 +159,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2ebcd00408
+DECL|struct|__anon2b8d16990408
 block|{
 DECL|member|menu
 name|gchar
@@ -2250,46 +2250,6 @@ name|gtk_tree_view_column_new_with_attributes
 argument_list|(
 name|_
 argument_list|(
-literal|"Insertion Date"
-argument_list|)
-argument_list|,
-name|renderer
-argument_list|,
-literal|"text"
-argument_list|,
-name|LIST_COLUMN_DATE
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gtk_tree_view_column_set_sort_column_id
-argument_list|(
-name|column
-argument_list|,
-name|LIST_COLUMN_DATE
-argument_list|)
-expr_stmt|;
-name|gtk_tree_view_append_column
-argument_list|(
-name|GTK_TREE_VIEW
-argument_list|(
-name|list_view
-argument_list|)
-argument_list|,
-name|column
-argument_list|)
-expr_stmt|;
-name|renderer
-operator|=
-name|gtk_cell_renderer_text_new
-argument_list|()
-expr_stmt|;
-name|column
-operator|=
-name|gtk_tree_view_column_new_with_attributes
-argument_list|(
-name|_
-argument_list|(
 literal|"Menu Path"
 argument_list|)
 argument_list|,
@@ -2347,6 +2307,46 @@ argument_list|(
 name|column
 argument_list|,
 name|LIST_COLUMN_IMAGE_TYPES
+argument_list|)
+expr_stmt|;
+name|gtk_tree_view_append_column
+argument_list|(
+name|GTK_TREE_VIEW
+argument_list|(
+name|list_view
+argument_list|)
+argument_list|,
+name|column
+argument_list|)
+expr_stmt|;
+name|renderer
+operator|=
+name|gtk_cell_renderer_text_new
+argument_list|()
+expr_stmt|;
+name|column
+operator|=
+name|gtk_tree_view_column_new_with_attributes
+argument_list|(
+name|_
+argument_list|(
+literal|"Installation Date"
+argument_list|)
+argument_list|,
+name|renderer
+argument_list|,
+literal|"text"
+argument_list|,
+name|LIST_COLUMN_DATE
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_tree_view_column_set_sort_column_id
+argument_list|(
+name|column
+argument_list|,
+name|LIST_COLUMN_DATE
 argument_list|)
 expr_stmt|;
 name|gtk_tree_view_append_column
@@ -2575,14 +2575,14 @@ name|gtk_tree_view_column_new_with_attributes
 argument_list|(
 name|_
 argument_list|(
-literal|"Insertion Date"
+literal|"Image Types"
 argument_list|)
 argument_list|,
 name|renderer
 argument_list|,
 literal|"text"
 argument_list|,
-name|TREE_COLUMN_DATE
+name|TREE_COLUMN_IMAGE_TYPES
 argument_list|,
 name|NULL
 argument_list|)
@@ -2591,7 +2591,7 @@ name|gtk_tree_view_column_set_sort_column_id
 argument_list|(
 name|column
 argument_list|,
-name|TREE_COLUMN_DATE
+name|TREE_COLUMN_IMAGE_TYPES
 argument_list|)
 expr_stmt|;
 name|gtk_tree_view_append_column
@@ -2615,14 +2615,14 @@ name|gtk_tree_view_column_new_with_attributes
 argument_list|(
 name|_
 argument_list|(
-literal|"Image Types"
+literal|"Installation Date"
 argument_list|)
 argument_list|,
 name|renderer
 argument_list|,
 literal|"text"
 argument_list|,
-name|TREE_COLUMN_IMAGE_TYPES
+name|TREE_COLUMN_DATE
 argument_list|,
 name|NULL
 argument_list|)
@@ -2631,7 +2631,7 @@ name|gtk_tree_view_column_set_sort_column_id
 argument_list|(
 name|column
 argument_list|,
-name|TREE_COLUMN_IMAGE_TYPES
+name|TREE_COLUMN_DATE
 argument_list|)
 expr_stmt|;
 name|gtk_tree_view_append_column
