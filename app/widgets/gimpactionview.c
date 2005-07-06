@@ -1181,6 +1181,16 @@ name|show_shortcuts
 operator|=
 name|show_shortcuts
 expr_stmt|;
+name|gtk_tree_view_set_search_column
+argument_list|(
+name|GTK_TREE_VIEW
+argument_list|(
+name|view
+argument_list|)
+argument_list|,
+name|GIMP_ACTION_VIEW_COLUMN_LABEL
+argument_list|)
+expr_stmt|;
 name|column
 operator|=
 name|gtk_tree_view_column_new
@@ -1771,7 +1781,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b42e9050108
+DECL|struct|__anon275e7a5f0108
 block|{
 DECL|member|accel_path
 name|gchar
