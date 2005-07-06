@@ -77,7 +77,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8d16990103
+DECL|enum|__anon2bc3ad2f0103
 block|{
 DECL|enumerator|LIST_COLUMN_NAME
 name|LIST_COLUMN_NAME
@@ -102,7 +102,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8d16990203
+DECL|enum|__anon2bc3ad2f0203
 block|{
 DECL|enumerator|TREE_COLUMN_PATH_NAME
 name|TREE_COLUMN_PATH_NAME
@@ -128,7 +128,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8d16990308
+DECL|struct|__anon2bc3ad2f0308
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -159,7 +159,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8d16990408
+DECL|struct|__anon2bc3ad2f0408
 block|{
 DECL|member|menu
 name|gchar
@@ -1329,33 +1329,81 @@ literal|0
 expr_stmt|;
 if|if
 condition|(
-name|num_plugins
+operator|!
+name|search_text
+operator|||
+name|strlen
+argument_list|(
+name|search_text
+argument_list|)
 operator|==
-literal|1
+literal|0
 condition|)
-name|str
-operator|=
-name|g_strdup
-argument_list|(
-name|_
-argument_list|(
-literal|"1 Plug-In Interface"
-argument_list|)
-argument_list|)
-expr_stmt|;
-else|else
+block|{
 name|str
 operator|=
 name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"%d Plug-In Interfaces"
+literal|"%d Plug-ins"
 argument_list|)
 argument_list|,
 name|num_plugins
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+switch|switch
+condition|(
+name|num_plugins
+condition|)
+block|{
+case|case
+literal|0
+case|:
+name|str
+operator|=
+name|g_strdup
+argument_list|(
+name|_
+argument_list|(
+literal|"No matches for your query"
+argument_list|)
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+literal|1
+case|:
+name|str
+operator|=
+name|g_strdup
+argument_list|(
+name|_
+argument_list|(
+literal|"1 plug-in matches your query"
+argument_list|)
+argument_list|)
+expr_stmt|;
+break|break;
+default|default:
+name|str
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"%d plug-ins match your query"
+argument_list|)
+argument_list|,
+name|num_plugins
+argument_list|)
+expr_stmt|;
+break|break;
+block|}
+block|}
 name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL

@@ -30,13 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpbrowser.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpintcombobox.h"
+file|"gimpwidgets.h"
 end_include
 
 begin_include
@@ -53,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27f99dcf0103
+DECL|enum|__anon29da6c610103
 block|{
 DECL|enumerator|SEARCH
 name|SEARCH
@@ -526,6 +520,23 @@ argument_list|,
 literal|0.0
 argument_list|,
 literal|0.5
+argument_list|)
+expr_stmt|;
+name|gimp_label_set_attributes
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|browser
+operator|->
+name|count_label
+argument_list|)
+argument_list|,
+name|PANGO_ATTR_STYLE
+argument_list|,
+name|PANGO_STYLE_ITALIC
+argument_list|,
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_end
