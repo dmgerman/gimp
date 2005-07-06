@@ -98,6 +98,14 @@ file|"gimp-intl.h"
 end_include
 
 begin_define
+DECL|macro|PDB_REGCOMP_FLAGS
+define|#
+directive|define
+name|PDB_REGCOMP_FLAGS
+value|REG_ICASE
+end_define
+
+begin_define
 DECL|macro|COMPAT_BLURB
 define|#
 directive|define
@@ -530,7 +538,7 @@ name|name_regex
 argument_list|,
 name|name
 argument_list|,
-literal|0
+name|PDB_REGCOMP_FLAGS
 argument_list|)
 condition|)
 goto|goto
@@ -547,7 +555,7 @@ name|blurb_regex
 argument_list|,
 name|blurb
 argument_list|,
-literal|0
+name|PDB_REGCOMP_FLAGS
 argument_list|)
 condition|)
 goto|goto
@@ -564,7 +572,7 @@ name|help_regex
 argument_list|,
 name|help
 argument_list|,
-literal|0
+name|PDB_REGCOMP_FLAGS
 argument_list|)
 condition|)
 goto|goto
@@ -581,7 +589,7 @@ name|author_regex
 argument_list|,
 name|author
 argument_list|,
-literal|0
+name|PDB_REGCOMP_FLAGS
 argument_list|)
 condition|)
 goto|goto
@@ -598,7 +606,7 @@ name|copyright_regex
 argument_list|,
 name|copyright
 argument_list|,
-literal|0
+name|PDB_REGCOMP_FLAGS
 argument_list|)
 condition|)
 goto|goto
@@ -615,7 +623,7 @@ name|date_regex
 argument_list|,
 name|date
 argument_list|,
-literal|0
+name|PDB_REGCOMP_FLAGS
 argument_list|)
 condition|)
 goto|goto
@@ -632,7 +640,7 @@ name|proc_type_regex
 argument_list|,
 name|proc_type
 argument_list|,
-literal|0
+name|PDB_REGCOMP_FLAGS
 argument_list|)
 condition|)
 goto|goto
