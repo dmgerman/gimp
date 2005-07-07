@@ -1,18 +1,12 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * The GIMP Foreground Extraction Utility   * segmentator.c - main algorithm.  *  * For algorithm documentation refer to:  * G. Friedland, K. Jantz, L. Knipping, R. Rojas:   * "Image Segmentation by Uniform Color Clustering -- Approach and Benchmark Results",   * Technical Report B-05-07, Department of Computer Science, Freie Universitaet Berlin, June 2005.  * http://www.inf.fu-berlin.de/inst/pubs/tr-b-05-07.pdf  *   * Algorithm idea by Gerald Friedland.   * This implementation is Copyright (C) 2005 by Gerald Friedland<fland@inf.fu-berlin.de>   * and Kristian Jantz<jantz@inf.fu-berlin.de>.   *   * This program is free software; you can redistribute it and/or  * modify it under the terms of the GNU General Public License  * as published by the Free Software Foundation; either version 2  * of the License, or (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.  *  * Revision History:  * Version 0.1 - 2005-06-16 initial version  * Version 0.2 - 2005-06-22 several bug fixes and optimized using MS Benchmark  * Version 0.3 - 2005-06-23 tested it and fixed several bugs. Now same error rate like Java version.  * Version 0.4 - 2005-06-27 tested it further and improved segmentation error to 4.25% (MS Benchmark)  *  * TODO:  * - Improve speed (see paper)  * - Find further bugs  *  * To compile use:  * gcc -ansi -pedantic -Wall -fexpensive-optimizations -O5 -ffast-math -c segmentator.c -o segmentator.o  * Need to be linked with: -lm (math library)  *   * Instructions:  * Call function segmentate as documented.  */
+comment|/*  * The GIMP Foreground Extraction Utility  * segmentator.c - main algorithm.  *  * For algorithm documentation refer to:  * G. Friedland, K. Jantz, L. Knipping, R. Rojas:  * "Image Segmentation by Uniform Color Clustering  *  -- Approach and Benchmark Results",  * Technical Report B-05-07, Department of Computer Science,  * Freie Universitaet Berlin, June 2005.  * http://www.inf.fu-berlin.de/inst/pubs/tr-b-05-07.pdf  *  * Algorithm idea by Gerald Friedland.  * This implementation is Copyright (C) 2005  * by Gerald Friedland<fland@inf.fu-berlin.de>  * and Kristian Jantz<jantz@inf.fu-berlin.de>.  *  * This program is free software; you can redistribute it and/or  * modify it under the terms of the GNU General Public License  * as published by the Free Software Foundation; either version 2  * of the License, or (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  * 02110-1301, USA.  */
 end_comment
 
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdio.h>
+file|<string.h>
 end_include
 
 begin_include
@@ -24,7 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<string.h>
+file|<glib-object.h>
 end_include
 
 begin_include
@@ -32,6 +26,27 @@ include|#
 directive|include
 file|"segmentator.h"
 end_include
+
+begin_comment
+comment|/* Please look all the way down for an explanation of JNI_COMPILE.  */
+end_comment
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|JNI_COMPILE
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|"NativeExperimentalPipe.h"
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_comment
 comment|/* Simulate a java.util.ArrayList */
@@ -42,9 +57,9 @@ comment|/* These methods are NOT generic */
 end_comment
 
 begin_typedef
-DECL|struct|__anon296fb8870108
 typedef|typedef
 struct|struct
+DECL|struct|__anon2c113e290108
 block|{
 DECL|member|l
 name|float
@@ -69,9 +84,18 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon296fb8870208
+DECL|typedef|ArrayList
 typedef|typedef
+name|struct
+name|_ArrayList
+name|ArrayList
+typedef|;
+end_typedef
+
+begin_struct
+DECL|struct|_ArrayList
 struct|struct
+name|_ArrayList
 block|{
 DECL|member|array
 name|lab
@@ -83,19 +107,18 @@ name|int
 name|arraylength
 decl_stmt|;
 DECL|member|next
-name|void
+name|ArrayList
 modifier|*
 name|next
 decl_stmt|;
-DECL|typedef|ArrayList
 block|}
-name|ArrayList
-typedef|;
-end_typedef
+struct|;
+end_struct
 
 begin_function
-DECL|function|addtoList (ArrayList * list,lab * newarray,int newarraylength)
+specifier|static
 name|void
+DECL|function|addtoList (ArrayList * list,lab * newarray,int newarraylength)
 name|addtoList
 parameter_list|(
 name|ArrayList
@@ -142,61 +165,12 @@ name|prev
 operator|->
 name|next
 operator|=
-name|malloc
-argument_list|(
-sizeof|sizeof
+name|g_new0
 argument_list|(
 name|ArrayList
+argument_list|,
+literal|1
 argument_list|)
-argument_list|)
-expr_stmt|;
-operator|(
-operator|(
-name|ArrayList
-operator|*
-operator|)
-operator|(
-name|prev
-operator|->
-name|next
-operator|)
-operator|)
-operator|->
-name|next
-operator|=
-name|NULL
-expr_stmt|;
-operator|(
-operator|(
-name|ArrayList
-operator|*
-operator|)
-operator|(
-name|prev
-operator|->
-name|next
-operator|)
-operator|)
-operator|->
-name|array
-operator|=
-name|NULL
-expr_stmt|;
-operator|(
-operator|(
-name|ArrayList
-operator|*
-operator|)
-operator|(
-name|prev
-operator|->
-name|next
-operator|)
-operator|)
-operator|->
-name|arraylength
-operator|=
-literal|0
 expr_stmt|;
 name|prev
 operator|->
@@ -214,8 +188,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|listSize (ArrayList * list)
+specifier|static
 name|int
+DECL|function|listSize (ArrayList * list)
 name|listSize
 parameter_list|(
 name|ArrayList
@@ -258,9 +233,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|listToArray (ArrayList * list,int * returnlength)
+specifier|static
 name|lab
 modifier|*
+DECL|function|listToArray (ArrayList * list,int * returnlength)
 name|listToArray
 parameter_list|(
 name|ArrayList
@@ -276,7 +252,8 @@ name|int
 name|i
 init|=
 literal|0
-decl_stmt|,
+decl_stmt|;
+name|int
 name|len
 decl_stmt|;
 name|ArrayList
@@ -298,14 +275,11 @@ argument_list|)
 expr_stmt|;
 name|arraytoreturn
 operator|=
-name|malloc
-argument_list|(
-name|len
-operator|*
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|lab
-argument_list|)
+argument_list|,
+name|len
 argument_list|)
 expr_stmt|;
 name|returnlength
@@ -335,7 +309,7 @@ index|[
 literal|0
 index|]
 expr_stmt|;
-comment|/* Every array in the list node has only one point when we call this method */
+comment|/* Every array in the list node has only one point        * when we call this method        */
 name|cur
 operator|=
 name|cur
@@ -350,8 +324,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|freelist (ArrayList * list)
+specifier|static
 name|void
+DECL|function|freelist (ArrayList * list)
 name|freelist
 parameter_list|(
 name|ArrayList
@@ -387,14 +362,14 @@ name|prev
 operator|->
 name|array
 condition|)
-name|free
+name|g_free
 argument_list|(
 name|prev
 operator|->
 name|array
 argument_list|)
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|prev
 argument_list|)
@@ -413,13 +388,12 @@ comment|/* RGB -> CIELAB and other interesting methods... */
 end_comment
 
 begin_function
-DECL|function|getRed (unsigned int rgb)
-name|unsigned
-name|char
+DECL|function|getRed (guint rgb)
+specifier|static
+name|guchar
 name|getRed
 parameter_list|(
-name|unsigned
-name|int
+name|guint
 name|rgb
 parameter_list|)
 block|{
@@ -434,13 +408,12 @@ block|}
 end_function
 
 begin_function
-DECL|function|getGreen (unsigned int rgb)
-name|unsigned
-name|char
+DECL|function|getGreen (guint rgb)
+specifier|static
+name|guchar
 name|getGreen
 parameter_list|(
-name|unsigned
-name|int
+name|guint
 name|rgb
 parameter_list|)
 block|{
@@ -457,13 +430,12 @@ block|}
 end_function
 
 begin_function
-DECL|function|getBlue (unsigned int rgb)
-name|unsigned
-name|char
+DECL|function|getBlue (guint rgb)
+specifier|static
+name|guchar
 name|getBlue
 parameter_list|(
-name|unsigned
-name|int
+name|guint
 name|rgb
 parameter_list|)
 block|{
@@ -479,41 +451,30 @@ return|;
 block|}
 end_function
 
-begin_function
-DECL|function|getAlpha (unsigned int rgb)
-name|unsigned
-name|char
-name|getAlpha
-parameter_list|(
-name|unsigned
-name|int
-name|rgb
-parameter_list|)
-block|{
-return|return
-operator|(
-name|rgb
-operator|>>
-literal|24
-operator|)
-operator|&
-literal|0xFF
-return|;
-block|}
-end_function
+begin_if
+if|#
+directive|if
+literal|0
+end_if
+
+begin_endif
+unit|static guchar getAlpha (guint rgb) {   return (rgb>> 24)& 0xFF; }
+endif|#
+directive|endif
+end_endif
 
 begin_comment
 comment|/* Gets an int containing rgb, and an lab struct */
 end_comment
 
 begin_function
-DECL|function|calcLAB (unsigned int rgb,lab * newpixel)
+DECL|function|calcLAB (guint rgb,lab * newpixel)
+specifier|static
 name|lab
 modifier|*
 name|calcLAB
 parameter_list|(
-name|unsigned
-name|int
+name|guint
 name|rgb
 parameter_list|,
 name|lab
@@ -911,44 +872,26 @@ return|;
 block|}
 end_function
 
-begin_function
-DECL|function|cie_f (float t)
-name|float
-name|cie_f
-parameter_list|(
-name|float
-name|t
-parameter_list|)
-block|{
-return|return
-name|t
-operator|>
-literal|0.008856
-condition|?
-operator|(
-literal|1
-operator|/
-literal|3.0
-operator|)
-else|:
-literal|7.787
-operator|*
-name|t
-operator|+
-literal|16.0
-operator|/
-literal|116.0
-return|;
-block|}
-end_function
+begin_if
+if|#
+directive|if
+literal|0
+end_if
+
+begin_endif
+unit|static float cie_f (float t) {   return t> 0.008856 ? (1 / 3.0) : 7.787 * t + 16.0 / 116.0; }
+endif|#
+directive|endif
+end_endif
 
 begin_comment
 comment|/* Stage one of modified KD-Tree algorithm */
 end_comment
 
 begin_function
-DECL|function|stageone (lab * points,int dims,int depth,ArrayList * clusters,float limits[DIMS],int length)
+specifier|static
 name|void
+DECL|function|stageone (lab * points,int dims,int depth,ArrayList * clusters,float limits[DIMS],int length)
 name|stageone
 parameter_list|(
 name|lab
@@ -1150,6 +1093,7 @@ operator|=
 name|curval
 expr_stmt|;
 block|}
+comment|/* Split according to Rubner-Rule */
 if|if
 condition|(
 name|max
@@ -1162,8 +1106,6 @@ name|curdim
 index|]
 condition|)
 block|{
-comment|/* Split according to Rubner-Rule */
-comment|/* split */
 name|pivotvalue
 operator|=
 operator|(
@@ -1186,6 +1128,7 @@ name|countgr
 operator|=
 literal|0
 expr_stmt|;
+comment|/* find out cluster sizes */
 for|for
 control|(
 name|i
@@ -1200,7 +1143,6 @@ name|i
 operator|++
 control|)
 block|{
-comment|/* find out cluster sizes */
 if|if
 condition|(
 name|curdim
@@ -1268,27 +1210,20 @@ block|}
 block|}
 name|smallerpoints
 operator|=
-name|malloc
-argument_list|(
-name|countsm
-operator|*
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|lab
-argument_list|)
+argument_list|,
+name|countsm
 argument_list|)
 expr_stmt|;
-comment|/* allocate mem */
 name|biggerpoints
 operator|=
-name|malloc
-argument_list|(
-name|countgr
-operator|*
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|lab
-argument_list|)
+argument_list|,
+name|countgr
 argument_list|)
 expr_stmt|;
 name|smallc
@@ -1452,12 +1387,13 @@ comment|/* Stage two of modified KD-Tree algorithm */
 end_comment
 
 begin_comment
-comment|/* This is very similar to stageone... but in future there will bemore differences => not integrated into method stageone() */
+comment|/* This is very similar to stageone... but in future there will be more  * differences => not integrated into method stageone()  */
 end_comment
 
 begin_function
-DECL|function|stagetwo (lab * points,int dims,int depth,ArrayList * clusters,float limits[DIMS],int length,int total,float threshold)
+specifier|static
 name|void
+DECL|function|stagetwo (lab * points,int dims,int depth,ArrayList * clusters,float limits[DIMS],int length,int total,float threshold)
 name|stagetwo
 parameter_list|(
 name|lab
@@ -1672,6 +1608,7 @@ operator|=
 name|curval
 expr_stmt|;
 block|}
+comment|/* Split according to Rubner-Rule */
 if|if
 condition|(
 name|max
@@ -1684,8 +1621,6 @@ name|curdim
 index|]
 condition|)
 block|{
-comment|/* Split according to Rubner-Rule */
-comment|/* split */
 name|pivotvalue
 operator|=
 operator|(
@@ -1700,7 +1635,7 @@ operator|)
 operator|+
 name|min
 expr_stmt|;
-comment|/*		printf("max=%f min=%f pivot=%f\n",max,min,pivotvalue); */
+comment|/*  g_printerr ("max=%f min=%f pivot=%f\n",max,min,pivotvalue); */
 name|countsm
 operator|=
 literal|0
@@ -1791,7 +1726,7 @@ block|}
 block|}
 name|smallerpoints
 operator|=
-name|malloc
+name|g_malloc
 argument_list|(
 name|countsm
 operator|*
@@ -1801,10 +1736,9 @@ name|lab
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/* allocate mem */
 name|biggerpoints
 operator|=
-name|malloc
+name|g_malloc
 argument_list|(
 name|countgr
 operator|*
@@ -1822,6 +1756,7 @@ name|bigc
 operator|=
 literal|0
 expr_stmt|;
+comment|/* do actual split */
 for|for
 control|(
 name|i
@@ -1836,7 +1771,6 @@ name|i
 operator|++
 control|)
 block|{
-comment|/* do actual split */
 if|if
 condition|(
 name|curdim
@@ -1961,11 +1895,11 @@ argument_list|,
 name|threshold
 argument_list|)
 expr_stmt|;
-comment|/*		free(smallerpoints); 		free(biggerpoints); */
+comment|/*  g_free (smallerpoints);        *  g_free (biggerpoints);        */
 block|}
 else|else
-block|{
 comment|/* create leave */
+block|{
 name|sum
 operator|=
 literal|0
@@ -2011,31 +1945,12 @@ condition|)
 block|{
 name|point
 operator|=
-name|malloc
-argument_list|(
-sizeof|sizeof
+name|g_new0
 argument_list|(
 name|lab
+argument_list|,
+literal|1
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|point
-operator|->
-name|l
-operator|=
-literal|0
-expr_stmt|;
-name|point
-operator|->
-name|a
-operator|=
-literal|0
-expr_stmt|;
-name|point
-operator|->
-name|b
-operator|=
-literal|0
 expr_stmt|;
 for|for
 control|(
@@ -2115,7 +2030,7 @@ operator|*
 literal|1.0
 operator|)
 expr_stmt|;
-comment|/*			printf("cluster=%f, %f, %f sum=%d\n",point->l,point->a,point->b,sum); */
+comment|/* g_printerr ("cluster=%f, %f, %f sum=%d\n",                           point->l, point->a, point->b, sum);            */
 name|addtoList
 argument_list|(
 name|clusters
@@ -2126,7 +2041,7 @@ literal|1
 argument_list|)
 expr_stmt|;
 block|}
-name|free
+name|g_free
 argument_list|(
 name|points
 argument_list|)
@@ -2140,86 +2055,83 @@ comment|/* squared euclidean distance */
 end_comment
 
 begin_function
-DECL|function|euklid (lab p,lab q)
+specifier|static
+specifier|inline
 name|float
+DECL|function|euklid (const lab p,const lab q)
 name|euklid
 parameter_list|(
+specifier|const
 name|lab
 name|p
 parameter_list|,
+specifier|const
 name|lab
 name|q
 parameter_list|)
 block|{
-name|float
-name|sum
-init|=
-operator|(
-name|p
-operator|.
-name|l
-operator|-
-name|q
-operator|.
-name|l
-operator|)
-operator|*
-operator|(
-name|p
-operator|.
-name|l
-operator|-
-name|q
-operator|.
-name|l
-operator|)
-decl_stmt|;
-name|sum
-operator|+=
-operator|(
-name|p
-operator|.
-name|a
-operator|-
-name|q
-operator|.
-name|a
-operator|)
-operator|*
-operator|(
-name|p
-operator|.
-name|a
-operator|-
-name|q
-operator|.
-name|a
-operator|)
-expr_stmt|;
-name|sum
-operator|+=
-operator|(
-name|p
-operator|.
-name|b
-operator|-
-name|q
-operator|.
-name|b
-operator|)
-operator|*
-operator|(
-name|p
-operator|.
-name|b
-operator|-
-name|q
-operator|.
-name|b
-operator|)
-expr_stmt|;
 return|return
-name|sum
+operator|(
+operator|(
+name|p
+operator|.
+name|l
+operator|-
+name|q
+operator|.
+name|l
+operator|)
+operator|*
+operator|(
+name|p
+operator|.
+name|l
+operator|-
+name|q
+operator|.
+name|l
+operator|)
+operator|+
+operator|(
+name|p
+operator|.
+name|a
+operator|-
+name|q
+operator|.
+name|a
+operator|)
+operator|*
+operator|(
+name|p
+operator|.
+name|a
+operator|-
+name|q
+operator|.
+name|a
+operator|)
+operator|+
+operator|(
+name|p
+operator|.
+name|b
+operator|-
+name|q
+operator|.
+name|b
+operator|)
+operator|*
+operator|(
+name|p
+operator|.
+name|b
+operator|-
+name|q
+operator|.
+name|b
+operator|)
+operator|)
 return|;
 block|}
 end_function
@@ -2229,9 +2141,10 @@ comment|/* Creates a color signature for a given set of pixels */
 end_comment
 
 begin_function
-DECL|function|createSignature (lab * input,int length,float limits[DIMS],int * returnlength)
+specifier|static
 name|lab
 modifier|*
+DECL|function|createSignature (lab * input,int length,float limits[DIMS],int * returnlength)
 name|createSignature
 parameter_list|(
 name|lab
@@ -2289,19 +2202,12 @@ name|clusters1size
 decl_stmt|;
 name|clusters1
 operator|=
-name|malloc
-argument_list|(
-sizeof|sizeof
+name|g_new0
 argument_list|(
 name|ArrayList
+argument_list|,
+literal|1
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|clusters1
-operator|->
-name|next
-operator|=
-name|NULL
 expr_stmt|;
 name|stageone
 argument_list|(
@@ -2327,21 +2233,13 @@ argument_list|)
 expr_stmt|;
 name|centroids
 operator|=
-operator|(
-name|lab
-operator|*
-operator|)
-name|malloc
+name|g_new
 argument_list|(
+name|lab
+argument_list|,
 name|clusters1size
-operator|*
-sizeof|sizeof
-argument_list|(
-name|lab
-argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/* allocate mem */
 name|curelem
 operator|=
 name|clusters1
@@ -2509,22 +2407,15 @@ operator|->
 name|next
 expr_stmt|;
 block|}
-comment|/*	printf("step #1 -> %d clusters\n", clusters1size); */
+comment|/* g_printerr ("step #1 -> %d clusters\n", clusters1size); */
 name|clusters2
 operator|=
-name|malloc
-argument_list|(
-sizeof|sizeof
+name|g_new0
 argument_list|(
 name|ArrayList
+argument_list|,
+literal|1
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|clusters2
-operator|->
-name|next
-operator|=
-name|NULL
 expr_stmt|;
 name|stagetwo
 argument_list|(
@@ -2565,12 +2456,12 @@ argument_list|(
 name|clusters2
 argument_list|)
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|centroids
 argument_list|)
 expr_stmt|;
-comment|/*	printf("step #2 -> %d clusters\n", returnlength[0]); */
+comment|/* g_printerr ("step #2 -> %d clusters\n", returnlength[0]); */
 return|return
 name|rval
 return|;
@@ -2582,8 +2473,9 @@ comment|/* Smoothes the confidence matrix */
 end_comment
 
 begin_function
-DECL|function|smoothcm (float * cm,int xres,int yres,float f1,float f2,float f3)
+specifier|static
 name|void
+DECL|function|smoothcm (float * cm,int xres,int yres,float f1,float f2,float f3)
 name|smoothcm
 parameter_list|(
 name|float
@@ -2606,7 +2498,6 @@ name|float
 name|f3
 parameter_list|)
 block|{
-comment|/* Smoothright */
 name|int
 name|y
 decl_stmt|,
@@ -2614,6 +2505,7 @@ name|x
 decl_stmt|,
 name|idx
 decl_stmt|;
+comment|/* Smoothright */
 for|for
 control|(
 name|y
@@ -2949,78 +2841,64 @@ comment|/* The methods are NOT generic */
 end_comment
 
 begin_typedef
-DECL|struct|__anon296fb8870308
+DECL|typedef|Queue
 typedef|typedef
+name|struct
+name|_Queue
+name|Queue
+typedef|;
+end_typedef
+
+begin_struct
+DECL|struct|_Queue
 struct|struct
+name|_Queue
 block|{
 DECL|member|val
 name|int
 name|val
 decl_stmt|;
-DECL|member|invalid
-name|int
-name|invalid
+DECL|member|valid
+name|gboolean
+name|valid
 decl_stmt|;
 DECL|member|next
-name|void
+name|Queue
 modifier|*
 name|next
 decl_stmt|;
-DECL|typedef|queue
 block|}
-name|queue
-typedef|;
-end_typedef
+struct|;
+end_struct
 
 begin_function
-DECL|function|createqueue ()
-name|queue
+specifier|static
+name|Queue
 modifier|*
+DECL|function|createqueue (void)
 name|createqueue
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
-name|queue
-modifier|*
-name|q
-init|=
-name|malloc
-argument_list|(
-sizeof|sizeof
-argument_list|(
-name|queue
-argument_list|)
-argument_list|)
-decl_stmt|;
-name|q
-operator|->
-name|next
-operator|=
-name|NULL
-expr_stmt|;
-name|q
-operator|->
-name|val
-operator|=
-literal|0
-expr_stmt|;
-name|q
-operator|->
-name|invalid
-operator|=
-literal|1
-expr_stmt|;
 return|return
-name|q
+name|g_new0
+argument_list|(
+name|Queue
+argument_list|,
+literal|1
+argument_list|)
 return|;
 block|}
 end_function
 
 begin_function
-DECL|function|addtoqueue (queue * q,int val)
+specifier|static
 name|void
+DECL|function|addtoqueue (Queue * q,int val)
 name|addtoqueue
 parameter_list|(
-name|queue
+name|Queue
 modifier|*
 name|q
 parameter_list|,
@@ -3028,7 +2906,7 @@ name|int
 name|val
 parameter_list|)
 block|{
-name|queue
+name|Queue
 modifier|*
 name|cur
 init|=
@@ -3038,9 +2916,7 @@ while|while
 condition|(
 name|cur
 operator|->
-name|invalid
-operator|==
-literal|0
+name|valid
 condition|)
 block|{
 name|cur
@@ -3059,9 +2935,9 @@ name|val
 expr_stmt|;
 name|cur
 operator|->
-name|invalid
+name|valid
 operator|=
-literal|0
+name|TRUE
 expr_stmt|;
 name|cur
 operator|->
@@ -3074,38 +2950,40 @@ block|}
 end_function
 
 begin_function
-DECL|function|isempty (queue * q)
-name|int
+specifier|static
+name|gboolean
+DECL|function|isempty (Queue * q)
 name|isempty
 parameter_list|(
-name|queue
+name|Queue
 modifier|*
 name|q
 parameter_list|)
 block|{
 if|if
 condition|(
+operator|!
 name|q
-operator|==
-name|NULL
 condition|)
 return|return
-literal|1
+name|TRUE
 return|;
 return|return
+operator|!
 name|q
 operator|->
-name|invalid
+name|valid
 return|;
 block|}
 end_function
 
 begin_function
-DECL|function|headval (queue * q)
+specifier|static
 name|int
+DECL|function|headval (Queue * q)
 name|headval
 parameter_list|(
-name|queue
+name|Queue
 modifier|*
 name|q
 parameter_list|)
@@ -3119,17 +2997,18 @@ block|}
 end_function
 
 begin_function
-DECL|function|removehead (queue * q)
-name|queue
+specifier|static
+name|Queue
 modifier|*
+DECL|function|removehead (Queue * q)
 name|removehead
 parameter_list|(
-name|queue
+name|Queue
 modifier|*
 name|q
 parameter_list|)
 block|{
-name|queue
+name|Queue
 modifier|*
 name|n
 decl_stmt|;
@@ -3141,17 +3020,15 @@ literal|0
 expr_stmt|;
 name|q
 operator|->
-name|invalid
+name|valid
 operator|=
-literal|1
+name|FALSE
 expr_stmt|;
 if|if
 condition|(
 name|q
 operator|->
 name|next
-operator|!=
-name|NULL
 condition|)
 block|{
 name|n
@@ -3160,7 +3037,7 @@ name|q
 operator|->
 name|next
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|q
 argument_list|)
@@ -3184,16 +3061,16 @@ comment|/* Region growing */
 end_comment
 
 begin_function
-DECL|function|findmaxblob (float * cm,unsigned int * image,int xres,int yres)
+specifier|static
 name|void
+DECL|function|findmaxblob (float * cm,guint * image,int xres,int yres)
 name|findmaxblob
 parameter_list|(
 name|float
 modifier|*
 name|cm
 parameter_list|,
-name|unsigned
-name|int
+name|guint
 modifier|*
 name|image
 parameter_list|,
@@ -3223,13 +3100,6 @@ init|=
 literal|0
 decl_stmt|;
 name|int
-name|length
-init|=
-name|xres
-operator|*
-name|yres
-decl_stmt|;
-name|int
 name|regioncount
 init|=
 literal|0
@@ -3240,39 +3110,27 @@ init|=
 literal|0
 decl_stmt|;
 name|int
-modifier|*
-name|labelfield
+name|length
 init|=
-name|malloc
-argument_list|(
 name|xres
 operator|*
 name|yres
-operator|*
-sizeof|sizeof
+decl_stmt|;
+name|int
+modifier|*
+name|labelfield
+init|=
+name|g_new0
 argument_list|(
 name|int
-argument_list|)
+argument_list|,
+name|length
 argument_list|)
 decl_stmt|;
-name|queue
+name|Queue
 modifier|*
 name|q
 decl_stmt|;
-name|memset
-argument_list|(
-name|labelfield
-argument_list|,
-literal|0
-argument_list|,
-name|length
-operator|*
-sizeof|sizeof
-argument_list|(
-name|int
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|q
 operator|=
 name|createqueue
@@ -3465,10 +3323,7 @@ name|i
 index|]
 operator|!=
 literal|0
-condition|)
-block|{
-if|if
-condition|(
+operator|&&
 name|labelfield
 index|[
 name|i
@@ -3486,13 +3341,12 @@ literal|0.0
 expr_stmt|;
 block|}
 block|}
-block|}
-name|free
+name|g_free
 argument_list|(
 name|q
 argument_list|)
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|labelfield
 argument_list|)
@@ -3505,8 +3359,9 @@ comment|/* Returns squared clustersize */
 end_comment
 
 begin_function
-DECL|function|getclustersize (float limits[DIMS])
+specifier|static
 name|float
+DECL|function|getclustersize (float limits[DIMS])
 name|getclustersize
 parameter_list|(
 name|float
@@ -3624,8 +3479,9 @@ comment|/* calculates alpha\timesConfidencematrix */
 end_comment
 
 begin_function
-DECL|function|premultiplyMatrix (float alpha,float * cm,int length)
+specifier|static
 name|void
+DECL|function|premultiplyMatrix (float alpha,float * cm,int length)
 name|premultiplyMatrix
 parameter_list|(
 name|float
@@ -3677,8 +3533,9 @@ comment|/* Normalizes a confidencematrix */
 end_comment
 
 begin_function
-DECL|function|normalizeMatrix (float * cm,int length)
+specifier|static
 name|void
+DECL|function|normalizeMatrix (float * cm,int length)
 name|normalizeMatrix
 parameter_list|(
 name|float
@@ -3694,13 +3551,13 @@ name|max
 init|=
 literal|0.0
 decl_stmt|;
-name|int
-name|i
-decl_stmt|;
 name|float
 name|alpha
 init|=
 literal|0.0
+decl_stmt|;
+name|int
+name|i
 decl_stmt|;
 for|for
 control|(
@@ -3765,65 +3622,14 @@ expr_stmt|;
 block|}
 end_function
 
-begin_function
-DECL|function|min (float a,float b)
-name|float
-name|min
-parameter_list|(
-name|float
-name|a
-parameter_list|,
-name|float
-name|b
-parameter_list|)
-block|{
-return|return
-operator|(
-name|a
-operator|<
-name|b
-condition|?
-name|a
-else|:
-name|b
-operator|)
-return|;
-block|}
-end_function
-
-begin_function
-DECL|function|max (float a,float b)
-name|float
-name|max
-parameter_list|(
-name|float
-name|a
-parameter_list|,
-name|float
-name|b
-parameter_list|)
-block|{
-return|return
-operator|(
-name|a
-operator|>
-name|b
-condition|?
-name|a
-else|:
-name|b
-operator|)
-return|;
-block|}
-end_function
-
 begin_comment
 comment|/* A confidence matrix eroder */
 end_comment
 
 begin_function
-DECL|function|erode2 (float * cm,int xres,int yres)
+specifier|static
 name|void
+DECL|function|erode2 (float * cm,int xres,int yres)
 name|erode2
 parameter_list|(
 name|float
@@ -3890,7 +3696,7 @@ index|[
 name|idx
 index|]
 operator|=
-name|min
+name|MIN
 argument_list|(
 name|cm
 index|[
@@ -3953,7 +3759,7 @@ index|[
 name|idx
 index|]
 operator|=
-name|min
+name|MIN
 argument_list|(
 name|cm
 index|[
@@ -4016,7 +3822,7 @@ index|[
 name|idx
 index|]
 operator|=
-name|min
+name|MIN
 argument_list|(
 name|cm
 index|[
@@ -4087,7 +3893,7 @@ index|[
 name|idx
 index|]
 operator|=
-name|min
+name|MIN
 argument_list|(
 name|cm
 index|[
@@ -4119,13 +3925,10 @@ begin_comment
 comment|/* A confidence matrix dilater */
 end_comment
 
-begin_comment
-comment|/* A confidence matrix dilater */
-end_comment
-
 begin_function
-DECL|function|dilate2 (float * cm,int xres,int yres)
+specifier|static
 name|void
+DECL|function|dilate2 (float * cm,int xres,int yres)
 name|dilate2
 parameter_list|(
 name|float
@@ -4192,7 +3995,7 @@ index|[
 name|idx
 index|]
 operator|=
-name|max
+name|MAX
 argument_list|(
 name|cm
 index|[
@@ -4255,7 +4058,7 @@ index|[
 name|idx
 index|]
 operator|=
-name|max
+name|MAX
 argument_list|(
 name|cm
 index|[
@@ -4318,7 +4121,7 @@ index|[
 name|idx
 index|]
 operator|=
-name|max
+name|MAX
 argument_list|(
 name|cm
 index|[
@@ -4389,7 +4192,7 @@ index|[
 name|idx
 index|]
 operator|=
-name|max
+name|MAX
 argument_list|(
 name|cm
 index|[
@@ -4418,17 +4221,16 @@ block|}
 end_function
 
 begin_comment
-comment|/*  * Call this method:  * rgbs - the picture  * confidencematrix - a confidencematrix with values<=0.1 is sure background,>=0.9 is sure foreground, rest unknown  * xres, yres - the dimensions of the picture and the confidencematrix  * limits - a three dimensional float array specifing the accuracy - a good value is: {0.66,1.25,2.5}  * int smoothness - specifies how smooth the boundaries of a picture should be made (value greater or equal to 0). More smooth = fault tolerant, less smooth = exact boundaries - try 3 for a first guess.  * returns and writes into the confidencematrix the resulting segmentation  */
+comment|/*  * Call this method:  * rgbs - the picture  * confidencematrix - a confidencematrix with values<=0.1 is sure background,  *>=0.9 is sure foreground, rest unknown  * xres, yres - the dimensions of the picture and the confidencematrix  * limits - a three dimensional float array specifing the accuracy  *          a good value is: {0.66,1.25,2.5}  * int smoothness - specifies how smooth the boundaries of a picture should  *                  be made (value greater or equal to 0).  *                  More smooth = fault tolerant,  *                  less smooth = exact boundaries - try 3 for a first guess.  * returns and writes into the confidencematrix the resulting segmentation  */
 end_comment
 
 begin_function
-DECL|function|segmentate (unsigned int * rgbs,float * confidencematrix,int xres,int yres,float limits[DIMS],int smoothness)
 name|float
 modifier|*
+DECL|function|segmentate (guint * rgbs,float * confidencematrix,int xres,int yres,float limits[DIMS],int smoothness)
 name|segmentate
 parameter_list|(
-name|unsigned
-name|int
+name|guint
 modifier|*
 name|rgbs
 parameter_list|,
@@ -4518,6 +4320,7 @@ decl_stmt|;
 name|lab
 name|labpixel
 decl_stmt|;
+comment|/* count given foreground and background pixels */
 for|for
 control|(
 name|i
@@ -4532,7 +4335,6 @@ name|i
 operator|++
 control|)
 block|{
-comment|/* count given foreground and background pixels */
 if|if
 condition|(
 name|confidencematrix
@@ -4565,17 +4367,13 @@ block|}
 block|}
 name|surebg
 operator|=
-name|malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|lab
-argument_list|)
-operator|*
+argument_list|,
 name|surebgcount
 argument_list|)
 expr_stmt|;
-comment|/* alloc mem for them */
 if|if
 condition|(
 name|surefgcount
@@ -4584,13 +4382,10 @@ literal|0
 condition|)
 name|surefg
 operator|=
-name|malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|lab
-argument_list|)
-operator|*
+argument_list|,
 name|surefgcount
 argument_list|)
 expr_stmt|;
@@ -4602,6 +4397,7 @@ name|j
 operator|=
 literal|0
 expr_stmt|;
+comment|/* create inputs for colorsignatures */
 for|for
 control|(
 name|i
@@ -4616,7 +4412,6 @@ name|i
 operator|++
 control|)
 block|{
-comment|/* create inputs for colorsignatures */
 if|if
 condition|(
 name|confidencematrix
@@ -4675,6 +4470,7 @@ operator|++
 expr_stmt|;
 block|}
 block|}
+comment|/* Create color signature for bg */
 name|bgsig
 operator|=
 name|createSignature
@@ -4689,7 +4485,6 @@ operator|&
 name|bgsiglen
 argument_list|)
 expr_stmt|;
-comment|/* Create color signature for bg */
 if|if
 condition|(
 name|bgsiglen
@@ -4700,6 +4495,7 @@ return|return
 name|confidencematrix
 return|;
 comment|/* No segmentation possible */
+comment|/* Create color signature for fg if possible */
 if|if
 condition|(
 name|surefgcount
@@ -4720,12 +4516,12 @@ operator|&
 name|fgsiglen
 argument_list|)
 expr_stmt|;
-comment|/* Create color signature for fg if possible */
 else|else
 name|fgsiglen
 operator|=
 literal|0
 expr_stmt|;
+comment|/* Classify - the slow way....Better: Tree traversation */
 for|for
 control|(
 name|i
@@ -4740,7 +4536,6 @@ name|i
 operator|++
 control|)
 block|{
-comment|/* Classify - the slow way....Better: Tree traversation */
 if|if
 condition|(
 name|confidencematrix
@@ -4941,6 +4736,7 @@ literal|0.0f
 expr_stmt|;
 block|}
 block|}
+comment|/* Smooth a bit for error killing */
 name|smoothcm
 argument_list|(
 name|confidencematrix
@@ -4956,7 +4752,6 @@ argument_list|,
 literal|0.33
 argument_list|)
 expr_stmt|;
-comment|/* Smooth a bit for error killing */
 name|normalizeMatrix
 argument_list|(
 name|confidencematrix
@@ -4964,6 +4759,7 @@ argument_list|,
 name|length
 argument_list|)
 expr_stmt|;
+comment|/* Now erode, to make sure only "strongly connected components"    * keep being connected    */
 name|erode2
 argument_list|(
 name|confidencematrix
@@ -4973,7 +4769,7 @@ argument_list|,
 name|yres
 argument_list|)
 expr_stmt|;
-comment|/* Now erode, to make sure only "strongly connected components" keep being connected */
+comment|/* search the biggest connected component */
 name|findmaxblob
 argument_list|(
 name|confidencematrix
@@ -4985,7 +4781,6 @@ argument_list|,
 name|yres
 argument_list|)
 expr_stmt|;
-comment|/* search the biggest connected component */
 for|for
 control|(
 name|i
@@ -5000,6 +4795,7 @@ name|i
 operator|++
 control|)
 block|{
+comment|/* smooth again - as user specified */
 name|smoothcm
 argument_list|(
 name|confidencematrix
@@ -5015,7 +4811,6 @@ argument_list|,
 literal|0.33
 argument_list|)
 expr_stmt|;
-comment|/* smooth again - as user specified */
 block|}
 name|normalizeMatrix
 argument_list|(
@@ -5024,6 +4819,7 @@ argument_list|,
 name|length
 argument_list|)
 expr_stmt|;
+comment|/* Threshold the values */
 for|for
 control|(
 name|i
@@ -5038,7 +4834,6 @@ name|i
 operator|++
 control|)
 block|{
-comment|/* Threshold the values */
 if|if
 condition|(
 name|confidencematrix
@@ -5064,6 +4859,7 @@ operator|=
 literal|0.0
 expr_stmt|;
 block|}
+comment|/* search the biggest connected component again      to make sure jitter is killed    */
 name|findmaxblob
 argument_list|(
 name|confidencematrix
@@ -5075,7 +4871,7 @@ argument_list|,
 name|yres
 argument_list|)
 expr_stmt|;
-comment|/* search the biggest connected component again to make sure jitter is killed */
+comment|/* Now dilate, to fill up boundary pixels killed by erode */
 name|dilate2
 argument_list|(
 name|confidencematrix
@@ -5085,47 +4881,22 @@ argument_list|,
 name|yres
 argument_list|)
 expr_stmt|;
-comment|/* Now dilate, to fill up boundary pixels killed by erode */
-if|if
-condition|(
-name|surefg
-operator|!=
-name|NULL
-condition|)
-name|free
+name|g_free
 argument_list|(
 name|surefg
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|surebg
-operator|!=
-name|NULL
-condition|)
-name|free
+name|g_free
 argument_list|(
 name|surebg
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|bgsig
-operator|!=
-name|NULL
-condition|)
-name|free
+name|g_free
 argument_list|(
 name|bgsig
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|fgsig
-operator|!=
-name|NULL
-condition|)
-name|free
+name|g_free
 argument_list|(
 name|fgsig
 argument_list|)
@@ -5135,6 +4906,139 @@ name|confidencematrix
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/* If JNI_COMPILE is defined, we provide a Java binding for the segmentate  * funtion.  This allows me to use an existing benchmark as a unit test.  * The plan is to implement this test as a GIMP plug-in later. Until then,  * please leave this code in.  */
+end_comment
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|JNI_COMPILE
+end_ifdef
+
+begin_function
+DECL|function|Java_NativeExperimentalPipe_segmentate (JNIEnv * env,jobject obj,jintArray rgbs,jfloatArray cm,jint xres,jint yres,jfloatArray limits)
+name|JNIEXPORT
+name|void
+name|JNICALL
+name|Java_NativeExperimentalPipe_segmentate
+parameter_list|(
+name|JNIEnv
+modifier|*
+name|env
+parameter_list|,
+name|jobject
+name|obj
+parameter_list|,
+name|jintArray
+name|rgbs
+parameter_list|,
+name|jfloatArray
+name|cm
+parameter_list|,
+name|jint
+name|xres
+parameter_list|,
+name|jint
+name|yres
+parameter_list|,
+name|jfloatArray
+name|limits
+parameter_list|)
+block|{
+name|jint
+modifier|*
+name|jrgbs
+init|=
+operator|(
+operator|*
+name|env
+operator|)
+operator|->
+name|GetIntArrayElements
+argument_list|(
+name|env
+argument_list|,
+name|rgbs
+argument_list|,
+literal|0
+argument_list|)
+decl_stmt|;
+name|jfloat
+modifier|*
+name|jcm
+init|=
+operator|(
+operator|*
+name|env
+operator|)
+operator|->
+name|GetFloatArrayElements
+argument_list|(
+name|env
+argument_list|,
+name|cm
+argument_list|,
+literal|0
+argument_list|)
+decl_stmt|;
+name|jfloat
+modifier|*
+name|jlimits
+init|=
+operator|(
+operator|*
+name|env
+operator|)
+operator|->
+name|GetFloatArrayElements
+argument_list|(
+name|env
+argument_list|,
+name|limits
+argument_list|,
+literal|0
+argument_list|)
+decl_stmt|;
+name|segmentate
+argument_list|(
+name|jrgbs
+argument_list|,
+name|jcm
+argument_list|,
+name|xres
+argument_list|,
+name|yres
+argument_list|,
+name|jlimits
+argument_list|,
+literal|6
+argument_list|)
+expr_stmt|;
+operator|(
+operator|*
+name|env
+operator|)
+operator|->
+name|ReleaseFloatArrayElements
+argument_list|(
+name|env
+argument_list|,
+name|cm
+argument_list|,
+name|jcm
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 end_unit
 
