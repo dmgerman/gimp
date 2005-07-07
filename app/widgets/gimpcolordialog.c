@@ -87,7 +87,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2c2c5e0103
+DECL|enum|__anon2a5988ce0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -502,6 +502,23 @@ name|dialog
 argument_list|)
 argument_list|,
 name|GTK_RESPONSE_OK
+argument_list|)
+expr_stmt|;
+name|gtk_dialog_set_alternative_button_order
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|,
+name|RESPONSE_RESET
+argument_list|,
+name|GTK_RESPONSE_OK
+argument_list|,
+name|GTK_RESPONSE_CANCEL
+argument_list|,
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 name|dialog

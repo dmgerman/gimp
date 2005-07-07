@@ -129,7 +129,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27baa67e0103
+DECL|enum|__anon2b01a1770103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -145,7 +145,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27baa67e0203
+DECL|enum|__anon2b01a1770203
 block|{
 DECL|enumerator|BOOK_ADDED
 name|BOOK_ADDED
@@ -1415,6 +1415,21 @@ argument_list|,
 name|NULL
 argument_list|)
 decl_stmt|;
+name|gtk_dialog_set_alternative_button_order
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|,
+name|GTK_RESPONSE_OK
+argument_list|,
+name|GTK_RESPONSE_CANCEL
+argument_list|,
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
 name|gimp_message_box_set_primary_text
 argument_list|(
 name|GIMP_MESSAGE_DIALOG
