@@ -2433,6 +2433,14 @@ value|"gimp-document-clear"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_DOCUMENT_COPY_LOCATION
+define|#
+directive|define
+name|GIMP_HELP_DOCUMENT_COPY_LOCATION
+value|"gimp-document-copy-location"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_DOCUMENT_DIALOG
 define|#
 directive|define

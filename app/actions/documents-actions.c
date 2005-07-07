@@ -172,6 +172,31 @@ name|GIMP_HELP_DOCUMENT_OPEN
 block|}
 block|,
 block|{
+literal|"documents-copy-location"
+block|,
+name|GTK_STOCK_COPY
+block|,
+name|N_
+argument_list|(
+literal|"Copy Image _Location"
+argument_list|)
+block|,
+literal|""
+block|,
+name|N_
+argument_list|(
+literal|"Copy image location to clipboard"
+argument_list|)
+block|,
+name|G_CALLBACK
+argument_list|(
+name|documents_copy_location_cmd_callback
+argument_list|)
+block|,
+name|GIMP_HELP_DOCUMENT_COPY_LOCATION
+block|}
+block|,
+block|{
 literal|"documents-remove"
 block|,
 name|GTK_STOCK_REMOVE
@@ -395,6 +420,13 @@ argument_list|(
 literal|"documents-file-open-dialog"
 argument_list|,
 name|TRUE
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"documents-copy-location"
+argument_list|,
+name|imagefile
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
