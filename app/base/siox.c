@@ -59,7 +59,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299de5d30108
+DECL|struct|__anon28fde6c10108
 block|{
 DECL|member|l
 name|float
@@ -394,6 +394,89 @@ begin_comment
 comment|/* RGB -> CIELAB and other interesting methods... */
 end_comment
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|JNI_COMPILE
+end_ifdef
+
+begin_comment
+comment|/* Java */
+end_comment
+
+begin_function
+DECL|function|getRed (int rgb)
+specifier|static
+name|guchar
+name|getRed
+parameter_list|(
+name|int
+name|rgb
+parameter_list|)
+block|{
+return|return
+operator|(
+name|rgb
+operator|>>
+literal|16
+operator|)
+operator|&
+literal|0xFF
+return|;
+block|}
+end_function
+
+begin_function
+DECL|function|getGreen (int rgb)
+specifier|static
+name|guchar
+name|getGreen
+parameter_list|(
+name|int
+name|rgb
+parameter_list|)
+block|{
+return|return
+operator|(
+name|rgb
+operator|>>
+literal|8
+operator|)
+operator|&
+literal|0xFF
+return|;
+block|}
+end_function
+
+begin_function
+DECL|function|getBlue (int rgb)
+specifier|static
+name|guchar
+name|getBlue
+parameter_list|(
+name|int
+name|rgb
+parameter_list|)
+block|{
+return|return
+operator|(
+name|rgb
+operator|)
+operator|&
+literal|0xFF
+return|;
+block|}
+end_function
+
+begin_else
+else|#
+directive|else
+end_else
+
+begin_comment
+comment|/* GIMP */
+end_comment
+
 begin_function
 DECL|function|getRed (guint rgb)
 specifier|static
@@ -457,6 +540,11 @@ literal|0xFF
 return|;
 block|}
 end_function
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_if
 if|#
