@@ -59,7 +59,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c113e290108
+DECL|struct|__anon29a274e90108
 block|{
 DECL|member|l
 name|float
@@ -198,16 +198,16 @@ modifier|*
 name|list
 parameter_list|)
 block|{
-name|int
-name|count
-init|=
-literal|0
-decl_stmt|;
 name|ArrayList
 modifier|*
 name|cur
 init|=
 name|list
+decl_stmt|;
+name|int
+name|count
+init|=
+literal|0
 decl_stmt|;
 while|while
 condition|(
@@ -248,14 +248,6 @@ modifier|*
 name|returnlength
 parameter_list|)
 block|{
-name|int
-name|i
-init|=
-literal|0
-decl_stmt|;
-name|int
-name|len
-decl_stmt|;
 name|ArrayList
 modifier|*
 name|cur
@@ -265,6 +257,14 @@ decl_stmt|;
 name|lab
 modifier|*
 name|arraytoreturn
+decl_stmt|;
+name|int
+name|i
+init|=
+literal|0
+decl_stmt|;
+name|int
+name|len
 decl_stmt|;
 name|len
 operator|=
@@ -1726,26 +1726,20 @@ block|}
 block|}
 name|smallerpoints
 operator|=
-name|g_malloc
-argument_list|(
-name|countsm
-operator|*
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|lab
-argument_list|)
+argument_list|,
+name|countsm
 argument_list|)
 expr_stmt|;
 name|biggerpoints
 operator|=
-name|g_malloc
-argument_list|(
-name|countgr
-operator|*
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|lab
-argument_list|)
+argument_list|,
+name|countgr
 argument_list|)
 expr_stmt|;
 name|smallc
@@ -1895,7 +1889,6 @@ argument_list|,
 name|threshold
 argument_list|)
 expr_stmt|;
-comment|/*  g_free (smallerpoints);        *  g_free (biggerpoints);        */
 block|}
 else|else
 comment|/* create leave */
@@ -2144,8 +2137,8 @@ begin_function
 specifier|static
 name|lab
 modifier|*
-DECL|function|createSignature (lab * input,int length,float limits[DIMS],int * returnlength)
-name|createSignature
+DECL|function|create_signature (lab * input,int length,float limits[DIMS],int * returnlength)
+name|create_signature
 parameter_list|(
 name|lab
 modifier|*
@@ -3475,14 +3468,14 @@ block|}
 end_function
 
 begin_comment
-comment|/* calculates alpha\timesConfidencematrix */
+comment|/* calculates alpha \times Confidencematrix */
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|premultiplyMatrix (float alpha,float * cm,int length)
-name|premultiplyMatrix
+DECL|function|premultiply_matrix (float alpha,float * cm,int length)
+name|premultiply_matrix
 parameter_list|(
 name|float
 name|alpha
@@ -3535,8 +3528,8 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|normalizeMatrix (float * cm,int length)
-name|normalizeMatrix
+DECL|function|normalize_matrix (float * cm,int length)
+name|normalize_matrix
 parameter_list|(
 name|float
 modifier|*
@@ -3610,7 +3603,7 @@ literal|1.00f
 operator|/
 name|max
 expr_stmt|;
-name|premultiplyMatrix
+name|premultiply_matrix
 argument_list|(
 name|alpha
 argument_list|,
@@ -4473,7 +4466,7 @@ block|}
 comment|/* Create color signature for bg */
 name|bgsig
 operator|=
-name|createSignature
+name|create_signature
 argument_list|(
 name|surebg
 argument_list|,
@@ -4504,7 +4497,7 @@ literal|0
 condition|)
 name|fgsig
 operator|=
-name|createSignature
+name|create_signature
 argument_list|(
 name|surefg
 argument_list|,
@@ -4752,7 +4745,7 @@ argument_list|,
 literal|0.33
 argument_list|)
 expr_stmt|;
-name|normalizeMatrix
+name|normalize_matrix
 argument_list|(
 name|confidencematrix
 argument_list|,
@@ -4812,7 +4805,7 @@ literal|0.33
 argument_list|)
 expr_stmt|;
 block|}
-name|normalizeMatrix
+name|normalize_matrix
 argument_list|(
 name|confidencematrix
 argument_list|,
