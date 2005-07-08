@@ -66,6 +66,16 @@ end_include
 begin_include
 include|#
 directive|include
+file|"pdb/procedural_db.h"
+end_include
+
+begin_comment
+comment|/* FIXME */
+end_comment
+
+begin_include
+include|#
+directive|include
 file|"file/file-utils.h"
 end_include
 
@@ -1207,6 +1217,9 @@ name|gchar
 modifier|*
 name|automatic_help_id
 decl_stmt|;
+name|gboolean
+name|local_only
+decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_GIMP
@@ -1278,6 +1291,20 @@ name|automatic_help_id
 operator|=
 name|GIMP_HELP_FILE_OPEN_BY_EXTENSION
 expr_stmt|;
+comment|/* FIXME */
+name|local_only
+operator|=
+operator|(
+name|procedural_db_lookup
+argument_list|(
+name|gimp
+argument_list|,
+literal|"file_uri_load"
+argument_list|)
+operator|==
+name|NULL
+operator|)
+expr_stmt|;
 break|break;
 case|case
 name|GTK_FILE_CHOOSER_ACTION_SAVE
@@ -1298,6 +1325,20 @@ expr_stmt|;
 name|automatic_help_id
 operator|=
 name|GIMP_HELP_FILE_SAVE_BY_EXTENSION
+expr_stmt|;
+comment|/* FIXME */
+name|local_only
+operator|=
+operator|(
+name|procedural_db_lookup
+argument_list|(
+name|gimp
+argument_list|,
+literal|"file_uri_save"
+argument_list|)
+operator|==
+name|NULL
+operator|)
 expr_stmt|;
 break|break;
 default|default:
@@ -1327,6 +1368,10 @@ argument_list|,
 literal|"action"
 argument_list|,
 name|action
+argument_list|,
+literal|"local-only"
+argument_list|,
+name|local_only
 argument_list|,
 name|NULL
 argument_list|)
@@ -1472,6 +1517,18 @@ name|gimp_file_dialog_help_clicked
 argument_list|)
 argument_list|,
 name|dialog
+argument_list|)
+expr_stmt|;
+name|g_object_set_data
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|,
+literal|"gimp-dialog-help-button"
+argument_list|,
+name|button
 argument_list|)
 expr_stmt|;
 block|}
