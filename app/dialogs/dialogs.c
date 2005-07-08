@@ -649,7 +649,7 @@ argument_list|)
 argument_list|,
 name|GIMP_STOCK_CURSOR
 argument_list|,
-name|GIMP_HELP_CURSOR_DIALOG
+name|GIMP_HELP_CURSOR_INFO_DIALOG
 argument_list|,
 name|dialogs_cursor_view_new
 argument_list|,

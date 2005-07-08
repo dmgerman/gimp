@@ -162,6 +162,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"cursor-info-actions.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"debug-actions.h"
 end_include
 
@@ -432,6 +438,21 @@ block|,
 name|context_actions_setup
 block|,
 name|context_actions_update
+block|}
+block|,
+block|{
+literal|"cursor-info"
+block|,
+name|N_
+argument_list|(
+literal|"Cursor Info"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|cursor_info_actions_setup
+block|,
+name|cursor_info_actions_update
 block|}
 block|,
 block|{
