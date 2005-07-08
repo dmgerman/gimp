@@ -59,7 +59,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276d37660108
+DECL|struct|__anon299de5d30108
 block|{
 DECL|member|l
 name|float
@@ -103,8 +103,12 @@ modifier|*
 name|array
 decl_stmt|;
 DECL|member|arraylength
-name|int
+name|guint
 name|arraylength
+decl_stmt|;
+DECL|member|owned
+name|gboolean
+name|owned
 decl_stmt|;
 DECL|member|next
 name|ArrayList
@@ -118,7 +122,7 @@ end_struct
 begin_function
 specifier|static
 name|void
-DECL|function|add_to_list (ArrayList * list,lab * newarray,int newarraylength)
+DECL|function|add_to_list (ArrayList * list,lab * array,guint arraylength,gboolean take)
 name|add_to_list
 parameter_list|(
 name|ArrayList
@@ -127,10 +131,13 @@ name|list
 parameter_list|,
 name|lab
 modifier|*
-name|newarray
+name|array
 parameter_list|,
-name|int
-name|newarraylength
+name|guint
+name|arraylength
+parameter_list|,
+name|gboolean
+name|take
 parameter_list|)
 block|{
 name|ArrayList
@@ -176,13 +183,19 @@ name|prev
 operator|->
 name|array
 operator|=
-name|newarray
+name|array
 expr_stmt|;
 name|prev
 operator|->
 name|arraylength
 operator|=
-name|newarraylength
+name|arraylength
+expr_stmt|;
+name|prev
+operator|->
+name|owned
+operator|=
+name|take
 expr_stmt|;
 block|}
 end_function
@@ -324,8 +337,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|freelist (ArrayList * list)
-name|freelist
+DECL|function|free_list (ArrayList * list)
+name|free_list
 parameter_list|(
 name|ArrayList
 modifier|*
@@ -355,6 +368,12 @@ name|cur
 operator|->
 name|next
 expr_stmt|;
+if|if
+condition|(
+name|prev
+operator|->
+name|owned
+condition|)
 name|g_free
 argument_list|(
 name|prev
@@ -456,10 +475,10 @@ comment|/* Gets an int containing rgb, and an lab struct */
 end_comment
 
 begin_function
-DECL|function|calcLAB (guint rgb,lab * newpixel)
 specifier|static
 name|lab
 modifier|*
+DECL|function|calcLAB (guint rgb,lab * newpixel)
 name|calcLAB
 parameter_list|(
 name|guint
@@ -1318,6 +1337,17 @@ index|]
 expr_stmt|;
 block|}
 block|}
+if|if
+condition|(
+name|depth
+operator|>
+literal|0
+condition|)
+name|g_free
+argument_list|(
+name|points
+argument_list|)
+expr_stmt|;
 comment|/* create subtrees */
 name|stageone
 argument_list|(
@@ -1364,6 +1394,10 @@ argument_list|,
 name|points
 argument_list|,
 name|length
+argument_list|,
+name|depth
+operator|!=
+literal|0
 argument_list|)
 expr_stmt|;
 block|}
@@ -2024,6 +2058,8 @@ argument_list|,
 name|point
 argument_list|,
 literal|1
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
@@ -2186,6 +2222,22 @@ decl_stmt|;
 name|int
 name|clusters1size
 decl_stmt|;
+if|if
+condition|(
+name|length
+operator|<
+literal|1
+condition|)
+block|{
+operator|*
+name|returnlength
+operator|=
+literal|0
+expr_stmt|;
+return|return
+name|NULL
+return|;
+block|}
 name|clusters1
 operator|=
 name|g_new0
@@ -2432,12 +2484,12 @@ argument_list|,
 name|returnlength
 argument_list|)
 expr_stmt|;
-name|freelist
+name|free_list
 argument_list|(
 name|clusters2
 argument_list|)
 expr_stmt|;
-name|freelist
+name|free_list
 argument_list|(
 name|clusters1
 argument_list|)
@@ -4247,13 +4299,7 @@ return|return
 name|confidencematrix
 return|;
 comment|/* No segmentation possible */
-comment|/* Create color signature for fg if possible */
-if|if
-condition|(
-name|surefgcount
-operator|>
-literal|0
-condition|)
+comment|/* Create color signature for fg */
 name|fgsig
 operator|=
 name|create_signature
@@ -4267,11 +4313,6 @@ argument_list|,
 operator|&
 name|fgsiglen
 argument_list|)
-expr_stmt|;
-else|else
-name|fgsiglen
-operator|=
-literal|0
 expr_stmt|;
 comment|/* Classify - the slow way....Better: Tree traversation */
 for|for
