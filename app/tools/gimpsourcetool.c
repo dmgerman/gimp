@@ -274,6 +274,8 @@ specifier|static
 name|GimpPaintToolClass
 modifier|*
 name|parent_class
+init|=
+name|NULL
 decl_stmt|;
 end_decl_stmt
 
