@@ -241,6 +241,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimpwidgets/gimpscrolledpreview.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimpwidgets/gimpsizeentry.h>
 end_include
 
