@@ -1882,8 +1882,10 @@ argument_list|,
 operator|&
 name|rgb
 argument_list|,
-operator|-
-literal|1
+name|color
+index|[
+literal|4
+index|]
 argument_list|)
 expr_stmt|;
 name|gimp_color_frame_set_color
@@ -1900,8 +1902,10 @@ argument_list|,
 operator|&
 name|rgb
 argument_list|,
-operator|-
-literal|1
+name|color
+index|[
+literal|4
+index|]
 argument_list|)
 expr_stmt|;
 name|g_free
