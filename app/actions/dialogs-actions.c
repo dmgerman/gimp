@@ -391,7 +391,7 @@ name|NULL
 block|,
 literal|"gimp-cursor-view"
 block|,
-name|GIMP_HELP_CURSOR_DIALOG
+name|GIMP_HELP_CURSOR_INFO_DIALOG
 block|}
 block|,
 block|{
