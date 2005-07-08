@@ -572,6 +572,10 @@ name|iy
 decl_stmt|;
 name|GimpRGB
 name|v
+init|=
+block|{
+literal|0
+block|, }
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -836,6 +840,10 @@ name|alpha
 decl_stmt|;
 name|GimpRGB
 name|v
+init|=
+block|{
+literal|0
+block|, }
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(

@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28bf0f500103
+DECL|enum|__anon2b1bf9b90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3873,6 +3873,10 @@ name|inter
 index|[
 literal|2
 index|]
+init|=
+block|{
+literal|0
+block|, }
 decl_stmt|;
 if|if
 condition|(
@@ -6945,6 +6949,10 @@ name|inter
 index|[
 literal|2
 index|]
+init|=
+block|{
+literal|0
+block|, }
 decl_stmt|;
 if|if
 condition|(
