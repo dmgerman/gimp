@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c386000103
+DECL|enum|__anon2b0469500103
 block|{
 DECL|enumerator|SELECTION_CHANGED
 name|SELECTION_CHANGED
@@ -72,7 +72,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c386000203
+DECL|enum|__anon2b0469500203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -88,7 +88,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c386000303
+DECL|enum|__anon2b0469500303
 block|{
 DECL|enumerator|COLUMN_PAGE_NO
 name|COLUMN_PAGE_NO
@@ -595,6 +595,7 @@ name|selection_changed
 operator|=
 name|NULL
 expr_stmt|;
+comment|/**    * GimpPageSelector::selection-changed:    *    * This signal is emitted whenever the set of selected pages changes.    *    * Since: GIMP 2.4    **/
 name|selector_signals
 index|[
 name|SELECTION_CHANGED
@@ -629,7 +630,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-comment|/**    * GimpPageSelector::n_pages:    *    * The number of pages of the document to open.    *    * Since: GIMP 2.4    **/
+comment|/**    * GimpPageSelector:n-pages:    *    * The number of pages of the document to open.    *    * Since: GIMP 2.4    **/
 name|g_object_class_install_property
 argument_list|(
 name|object_class
@@ -654,7 +655,7 @@ name|G_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/**    * GimpPageSelector::target:    *    * The target to open the document to.    *    * Since: GIMP 2.4    **/
+comment|/**    * GimpPageSelector:target:    *    * The target to open the document to.    *    * Since: GIMP 2.4    **/
 name|g_object_class_install_property
 argument_list|(
 name|object_class
