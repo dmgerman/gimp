@@ -146,7 +146,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bc3cb9e0103
+DECL|enum|__anon2aa2022e0103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -166,7 +166,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bc3cb9e0203
+DECL|enum|__anon2aa2022e0203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -182,7 +182,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc3cb9e0308
+DECL|struct|__anon2aa2022e0308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -204,7 +204,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon2bc3cb9e040a
+DECL|union|__anon2aa2022e040a
 block|{
 DECL|member|d
 name|gdouble
@@ -229,7 +229,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc3cb9e0508
+DECL|struct|__anon2aa2022e0508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -259,7 +259,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc3cb9e0608
+DECL|struct|__anon2aa2022e0608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -294,7 +294,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc3cb9e0708
+DECL|struct|__anon2aa2022e0708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -330,7 +330,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc3cb9e0808
+DECL|struct|__anon2aa2022e0808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -397,7 +397,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc3cb9e0908
+DECL|struct|__anon2aa2022e0908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -546,7 +546,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc3cb9e0a08
+DECL|struct|__anon2aa2022e0a08
 block|{
 DECL|member|run
 name|gboolean
@@ -12803,7 +12803,7 @@ name|gtk_file_chooser_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Save as IFS Fraktal file"
+literal|"Save as IFS Fractal file"
 argument_list|)
 argument_list|,
 name|GTK_WINDOW
@@ -12920,7 +12920,7 @@ name|gtk_file_chooser_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Open IFS Fraktal file"
+literal|"Open IFS Fractal file"
 argument_list|)
 argument_list|,
 name|GTK_WINDOW
