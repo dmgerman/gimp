@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c62cb710103
+DECL|enum|__anon2b9d27220103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -6988,10 +6988,6 @@ name|layer
 argument_list|)
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|gimage
-condition|)
 name|gimp_image_undo_push_layer_opacity
 argument_list|(
 name|gimage
@@ -7137,10 +7133,6 @@ name|layer
 argument_list|)
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|gimage
-condition|)
 name|gimp_image_undo_push_layer_mode
 argument_list|(
 name|gimage
@@ -7286,10 +7278,6 @@ name|layer
 argument_list|)
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|gimage
-condition|)
 name|gimp_image_undo_push_layer_preserve_trans
 argument_list|(
 name|gimage
