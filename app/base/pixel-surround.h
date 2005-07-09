@@ -92,6 +92,7 @@ parameter_list|,
 name|gint
 name|h
 parameter_list|,
+specifier|const
 name|guchar
 name|bg
 index|[

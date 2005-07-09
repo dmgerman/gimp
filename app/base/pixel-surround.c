@@ -47,7 +47,7 @@ end_include
 
 begin_function
 name|void
-DECL|function|pixel_surround_init (PixelSurround * ps,TileManager * tm,gint w,gint h,guchar bg[MAX_CHANNELS])
+DECL|function|pixel_surround_init (PixelSurround * ps,TileManager * tm,gint w,gint h,const guchar bg[MAX_CHANNELS])
 name|pixel_surround_init
 parameter_list|(
 name|PixelSurround
@@ -64,6 +64,7 @@ parameter_list|,
 name|gint
 name|h
 parameter_list|,
+specifier|const
 name|guchar
 name|bg
 index|[
@@ -87,7 +88,6 @@ condition|;
 operator|++
 name|i
 control|)
-block|{
 name|ps
 operator|->
 name|bg
@@ -100,7 +100,6 @@ index|[
 name|i
 index|]
 expr_stmt|;
-block|}
 name|ps
 operator|->
 name|tile
@@ -430,14 +429,12 @@ operator|,
 operator|++
 name|ptr
 control|)
-block|{
 operator|*
 name|ptr
 operator|=
 operator|*
 name|k
 expr_stmt|;
-block|}
 name|tile_release
 argument_list|(
 name|tile
@@ -472,14 +469,12 @@ operator|,
 operator|++
 name|ptr
 control|)
-block|{
 operator|*
 name|ptr
 operator|=
 operator|*
 name|k
 expr_stmt|;
-block|}
 block|}
 block|}
 block|}
