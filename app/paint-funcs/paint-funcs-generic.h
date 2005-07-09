@@ -5412,7 +5412,7 @@ begin_function
 specifier|static
 specifier|inline
 name|void
-DECL|function|dissolve_pixels (const guchar * src,guchar * mask,guchar * dest,gint x,gint y,gint opacity,gint length,gint sb,gint db,guint has_alpha)
+DECL|function|dissolve_pixels (const guchar * src,guchar * mask,guchar * dest,gint x,gint y,gint opacity,gint length,gint sb,gint db,gboolean has_alpha)
 name|dissolve_pixels
 parameter_list|(
 specifier|const
@@ -5446,7 +5446,7 @@ parameter_list|,
 name|gint
 name|db
 parameter_list|,
-name|guint
+name|gboolean
 name|has_alpha
 parameter_list|)
 block|{

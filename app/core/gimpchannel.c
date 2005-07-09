@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ef4ec60103
+DECL|enum|__anon297692aa0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -5297,7 +5297,7 @@ name|channel
 argument_list|)
 argument_list|)
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gaussian_blur_region
