@@ -850,6 +850,25 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|gimp_menu_factory_manager_register
+argument_list|(
+name|global_menu_factory
+argument_list|,
+literal|"<SamplePointEditor>"
+argument_list|,
+literal|"sample-point-editor"
+argument_list|,
+name|NULL
+argument_list|,
+literal|"/sample-point-editor-popup"
+argument_list|,
+literal|"sample-point-editor-menu.xml"
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

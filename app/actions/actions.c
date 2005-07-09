@@ -294,6 +294,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"sample-point-editor-actions.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"select-actions.h"
 end_include
 
@@ -768,6 +774,21 @@ block|,
 name|qmask_actions_setup
 block|,
 name|qmask_actions_update
+block|}
+block|,
+block|{
+literal|"sample-point-editor"
+block|,
+name|N_
+argument_list|(
+literal|"Sample Points"
+argument_list|)
+block|,
+name|GIMP_STOCK_SAMPLE_POINT
+block|,
+name|sample_point_editor_actions_setup
+block|,
+name|sample_point_editor_actions_update
 block|}
 block|,
 block|{
