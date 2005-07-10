@@ -242,7 +242,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_layer_get_preserve_trans
+name|gimp_layer_get_lock_alpha
 parameter_list|(
 name|gint32
 name|layer_ID
@@ -252,13 +252,13 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_layer_set_preserve_trans
+name|gimp_layer_set_lock_alpha
 parameter_list|(
 name|gint32
 name|layer_ID
 parameter_list|,
 name|gboolean
-name|preserve_trans
+name|lock_alpha
 parameter_list|)
 function_decl|;
 end_function_decl

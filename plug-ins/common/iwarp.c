@@ -88,7 +88,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27e796d50103
+DECL|enum|__anon2a950bce0103
 block|{
 DECL|enumerator|GROW
 name|GROW
@@ -116,7 +116,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e796d50208
+DECL|struct|__anon2a950bce0208
 block|{
 DECL|member|run
 name|gboolean
@@ -131,7 +131,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e796d50308
+DECL|struct|__anon2a950bce0308
 block|{
 DECL|member|deform_area_radius
 name|gint
@@ -726,10 +726,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|preserve_trans
+DECL|variable|lock_alpha
 specifier|static
 name|gint
-name|preserve_trans
+name|lock_alpha
 decl_stmt|;
 end_decl_stmt
 
@@ -4340,9 +4340,9 @@ operator|->
 name|drawable_id
 argument_list|)
 condition|)
-name|preserve_trans
+name|lock_alpha
 operator|=
-name|gimp_layer_get_preserve_trans
+name|gimp_layer_get_lock_alpha
 argument_list|(
 name|drawable
 operator|->
@@ -4350,7 +4350,7 @@ name|drawable_id
 argument_list|)
 expr_stmt|;
 else|else
-name|preserve_trans
+name|lock_alpha
 operator|=
 name|FALSE
 expr_stmt|;
@@ -7578,7 +7578,7 @@ expr_stmt|;
 comment|/* Yeah, it is ugly but since color is a pointer into image-data              * I must not change color[image_bpp - 1]  ...              */
 if|if
 condition|(
-name|preserve_trans
+name|lock_alpha
 operator|&&
 operator|(
 name|image_bpp
@@ -7626,7 +7626,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|preserve_trans
+name|lock_alpha
 operator|&&
 operator|(
 name|image_bpp

@@ -212,18 +212,18 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|layer_get_preserve_trans_proc
+DECL|variable|layer_get_lock_alpha_proc
 specifier|static
 name|ProcRecord
-name|layer_get_preserve_trans_proc
+name|layer_get_lock_alpha_proc
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|layer_set_preserve_trans_proc
+DECL|variable|layer_set_lock_alpha_proc
 specifier|static
 name|ProcRecord
-name|layer_set_preserve_trans_proc
+name|layer_set_lock_alpha_proc
 decl_stmt|;
 end_decl_stmt
 
@@ -442,7 +442,7 @@ argument_list|(
 name|gimp
 argument_list|,
 operator|&
-name|layer_get_preserve_trans_proc
+name|layer_get_lock_alpha_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
@@ -450,7 +450,7 @@ argument_list|(
 name|gimp
 argument_list|,
 operator|&
-name|layer_set_preserve_trans_proc
+name|layer_set_lock_alpha_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
@@ -4329,8 +4329,8 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|layer_get_preserve_trans_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
-name|layer_get_preserve_trans_invoker
+DECL|function|layer_get_lock_alpha_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+name|layer_get_lock_alpha_invoker
 parameter_list|(
 name|Gimp
 modifier|*
@@ -4410,7 +4410,7 @@ operator|=
 name|procedural_db_return_args
 argument_list|(
 operator|&
-name|layer_get_preserve_trans_proc
+name|layer_get_lock_alpha_proc
 argument_list|,
 name|success
 argument_list|)
@@ -4428,7 +4428,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|gimp_layer_get_preserve_trans
+name|gimp_layer_get_lock_alpha
 argument_list|(
 name|layer
 argument_list|)
@@ -4440,10 +4440,10 @@ block|}
 end_function
 
 begin_decl_stmt
-DECL|variable|layer_get_preserve_trans_inargs
+DECL|variable|layer_get_lock_alpha_inargs
 specifier|static
 name|ProcArg
-name|layer_get_preserve_trans_inargs
+name|layer_get_lock_alpha_inargs
 index|[]
 init|=
 block|{
@@ -4459,36 +4459,36 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|layer_get_preserve_trans_outargs
+DECL|variable|layer_get_lock_alpha_outargs
 specifier|static
 name|ProcArg
-name|layer_get_preserve_trans_outargs
+name|layer_get_lock_alpha_outargs
 index|[]
 init|=
 block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"preserve_trans"
+literal|"lock_alpha"
 block|,
-literal|"The layer's preserve transperancy setting"
+literal|"The layer's lock alpha channel setting"
 block|}
 block|}
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|layer_get_preserve_trans_proc
+DECL|variable|layer_get_lock_alpha_proc
 specifier|static
 name|ProcRecord
-name|layer_get_preserve_trans_proc
+name|layer_get_lock_alpha_proc
 init|=
 block|{
-literal|"gimp_layer_get_preserve_trans"
+literal|"gimp_layer_get_lock_alpha"
 block|,
-literal|"Get the preserve transperancy setting of the specified layer."
+literal|"Get the lock alpha channel setting of the specified layer."
 block|,
-literal|"This procedure returns the specified layer's preserve transperancy setting."
+literal|"This procedure returns the specified layer's lock alpha channel setting."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -4502,15 +4502,15 @@ name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
-name|layer_get_preserve_trans_inargs
+name|layer_get_lock_alpha_inargs
 block|,
 literal|1
 block|,
-name|layer_get_preserve_trans_outargs
+name|layer_get_lock_alpha_outargs
 block|,
 block|{
 block|{
-name|layer_get_preserve_trans_invoker
+name|layer_get_lock_alpha_invoker
 block|}
 block|}
 block|}
@@ -4521,8 +4521,8 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|layer_set_preserve_trans_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
-name|layer_set_preserve_trans_invoker
+DECL|function|layer_set_lock_alpha_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+name|layer_set_lock_alpha_invoker
 parameter_list|(
 name|Gimp
 modifier|*
@@ -4551,7 +4551,7 @@ modifier|*
 name|layer
 decl_stmt|;
 name|gboolean
-name|preserve_trans
+name|lock_alpha
 decl_stmt|;
 name|layer
 operator|=
@@ -4596,7 +4596,7 @@ name|success
 operator|=
 name|FALSE
 expr_stmt|;
-name|preserve_trans
+name|lock_alpha
 operator|=
 name|args
 index|[
@@ -4615,11 +4615,11 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimp_layer_set_preserve_trans
+name|gimp_layer_set_lock_alpha
 argument_list|(
 name|layer
 argument_list|,
-name|preserve_trans
+name|lock_alpha
 argument_list|,
 name|TRUE
 argument_list|)
@@ -4628,7 +4628,7 @@ return|return
 name|procedural_db_return_args
 argument_list|(
 operator|&
-name|layer_set_preserve_trans_proc
+name|layer_set_lock_alpha_proc
 argument_list|,
 name|success
 argument_list|)
@@ -4637,10 +4637,10 @@ block|}
 end_function
 
 begin_decl_stmt
-DECL|variable|layer_set_preserve_trans_inargs
+DECL|variable|layer_set_lock_alpha_inargs
 specifier|static
 name|ProcArg
-name|layer_set_preserve_trans_inargs
+name|layer_set_lock_alpha_inargs
 index|[]
 init|=
 block|{
@@ -4655,26 +4655,26 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"preserve_trans"
+literal|"lock_alpha"
 block|,
-literal|"The new layer's preserve transperancy setting"
+literal|"The new layer's lock alpha channel setting"
 block|}
 block|}
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|layer_set_preserve_trans_proc
+DECL|variable|layer_set_lock_alpha_proc
 specifier|static
 name|ProcRecord
-name|layer_set_preserve_trans_proc
+name|layer_set_lock_alpha_proc
 init|=
 block|{
-literal|"gimp_layer_set_preserve_trans"
+literal|"gimp_layer_set_lock_alpha"
 block|,
-literal|"Set the preserve transperancy setting of the specified layer."
+literal|"Set the lock alpha channel setting of the specified layer."
 block|,
-literal|"This procedure sets the specified layer's preserve transperancy setting."
+literal|"This procedure sets the specified layer's lock alpha channel setting."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -4688,7 +4688,7 @@ name|GIMP_INTERNAL
 block|,
 literal|2
 block|,
-name|layer_set_preserve_trans_inargs
+name|layer_set_lock_alpha_inargs
 block|,
 literal|0
 block|,
@@ -4696,7 +4696,7 @@ name|NULL
 block|,
 block|{
 block|{
-name|layer_set_preserve_trans_invoker
+name|layer_set_lock_alpha_invoker
 block|}
 block|}
 block|}

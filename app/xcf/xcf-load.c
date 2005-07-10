@@ -2523,7 +2523,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|PROP_PRESERVE_TRANSPARENCY
+name|PROP_LOCK_ALPHA
 case|:
 name|info
 operator|->
@@ -2542,7 +2542,7 @@ operator|)
 operator|&
 name|layer
 operator|->
-name|preserve_trans
+name|lock_alpha
 argument_list|,
 literal|1
 argument_list|)

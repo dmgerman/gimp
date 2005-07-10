@@ -719,7 +719,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2978adbb0108
+DECL|struct|__anon29d8f56a0108
 block|{
 DECL|member|propagate_mode
 name|gint
@@ -887,7 +887,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2978adbb0208
+DECL|struct|__anon29d8f56a0208
 block|{
 DECL|member|applicable_image_type
 name|gint
@@ -4040,7 +4040,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2978adbb0308
+DECL|struct|__anon29d8f56a0308
 block|{
 DECL|member|min_modified
 name|gshort
@@ -6561,7 +6561,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimp_layer_get_preserve_trans
+name|gimp_layer_get_lock_alpha
 argument_list|(
 name|drawable
 operator|->

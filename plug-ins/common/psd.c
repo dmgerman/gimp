@@ -120,7 +120,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c770fc40103
+DECL|enum|__anon2b5f13d70103
 block|{
 DECL|enumerator|PSD_UNKNOWN_IMAGE
 name|PSD_UNKNOWN_IMAGE
@@ -308,7 +308,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c770fc40208
+DECL|struct|__anon2b5f13d70208
 block|{
 DECL|member|hRes
 name|Fixed
@@ -557,7 +557,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c770fc40308
+DECL|struct|__anon2b5f13d70308
 block|{
 DECL|member|signature
 name|gchar
@@ -4156,9 +4156,9 @@ name|flags
 operator|&
 literal|1
 condition|?
-literal|"preserve transparency"
+literal|"lock alpha"
 else|:
-literal|"don't preserve transparency"
+literal|"don't lock alpha"
 argument_list|,
 name|flags
 operator|&
@@ -8826,7 +8826,7 @@ operator|->
 name|y
 argument_list|)
 expr_stmt|;
-name|gimp_layer_set_preserve_trans
+name|gimp_layer_set_lock_alpha
 argument_list|(
 name|layer_ID
 argument_list|,

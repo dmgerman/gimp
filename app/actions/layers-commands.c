@@ -3042,8 +3042,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_preserve_trans_cmd_callback (GtkAction * action,gpointer data)
-name|layers_preserve_trans_cmd_callback
+DECL|function|layers_lock_alpha_cmd_callback (GtkAction * action,gpointer data)
+name|layers_lock_alpha_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -3062,7 +3062,7 @@ modifier|*
 name|layer
 decl_stmt|;
 name|gboolean
-name|preserve
+name|lock_alpha
 decl_stmt|;
 name|return_if_no_layer
 argument_list|(
@@ -3073,7 +3073,7 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
-name|preserve
+name|lock_alpha
 operator|=
 name|gtk_toggle_action_get_active
 argument_list|(
@@ -3085,9 +3085,9 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|preserve
+name|lock_alpha
 operator|!=
-name|gimp_layer_get_preserve_trans
+name|gimp_layer_get_lock_alpha
 argument_list|(
 name|layer
 argument_list|)
@@ -3110,7 +3110,7 @@ name|gimage
 argument_list|,
 name|GIMP_TYPE_ITEM_UNDO
 argument_list|,
-name|GIMP_UNDO_LAYER_PRESERVE_TRANS
+name|GIMP_UNDO_LAYER_LOCK_ALPHA
 argument_list|)
 expr_stmt|;
 if|if
@@ -3133,11 +3133,11 @@ name|push_undo
 operator|=
 name|FALSE
 expr_stmt|;
-name|gimp_layer_set_preserve_trans
+name|gimp_layer_set_lock_alpha
 argument_list|(
 name|layer
 argument_list|,
-name|preserve
+name|lock_alpha
 argument_list|,
 name|push_undo
 argument_list|)

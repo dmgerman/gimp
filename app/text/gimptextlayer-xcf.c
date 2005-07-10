@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1c7b9d0103
+DECL|enum|__anon29b6ac1e0103
 block|{
 DECL|enumerator|TEXT_LAYER_XCF_NONE
 name|TEXT_LAYER_XCF_NONE
@@ -802,9 +802,9 @@ argument_list|(
 name|text_layer
 argument_list|)
 operator|->
-name|preserve_trans
+name|lock_alpha
 operator|=
-name|gimp_layer_get_preserve_trans
+name|gimp_layer_get_lock_alpha
 argument_list|(
 name|layer
 argument_list|)

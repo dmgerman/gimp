@@ -740,13 +740,13 @@ index|[]
 init|=
 block|{
 block|{
-literal|"layers-preserve-transparency"
+literal|"layers-lock-alpha"
 block|,
 name|GIMP_STOCK_TRANSPARENCY
 block|,
 name|N_
 argument_list|(
-literal|"Kee_p Transparency"
+literal|"Lock Alph_a Channel"
 argument_list|)
 block|,
 name|NULL
@@ -755,12 +755,12 @@ name|NULL
 block|,
 name|G_CALLBACK
 argument_list|(
-name|layers_preserve_trans_cmd_callback
+name|layers_lock_alpha_cmd_callback
 argument_list|)
 block|,
 name|FALSE
 block|,
-name|GIMP_HELP_LAYER_KEEP_TRANSPARENCY
+name|GIMP_HELP_LAYER_LOCK_ALPHA
 block|}
 block|,
 block|{
@@ -1603,7 +1603,7 @@ name|FALSE
 decl_stmt|;
 comment|/*  is indexed             */
 name|gboolean
-name|preserve
+name|lock_alpha
 init|=
 name|FALSE
 decl_stmt|;
@@ -1696,9 +1696,9 @@ argument_list|(
 name|layer
 argument_list|)
 expr_stmt|;
-name|preserve
+name|lock_alpha
 operator|=
-name|gimp_layer_get_preserve_trans
+name|gimp_layer_get_lock_alpha
 argument_list|(
 name|layer
 argument_list|)
@@ -2095,16 +2095,16 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"layers-preserve-transparency"
+literal|"layers-lock-alpha"
 argument_list|,
 name|layer
 argument_list|)
 expr_stmt|;
 name|SET_ACTIVE
 argument_list|(
-literal|"layers-preserve-transparency"
+literal|"layers-lock-alpha"
 argument_list|,
-name|preserve
+name|lock_alpha
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE

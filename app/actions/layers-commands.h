@@ -428,7 +428,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|layers_preserve_trans_cmd_callback
+name|layers_lock_alpha_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*

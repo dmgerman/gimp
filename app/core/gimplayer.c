@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9d27220103
+DECL|enum|__anon2773155c0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -157,8 +157,8 @@ block|,
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
 block|,
-DECL|enumerator|PRESERVE_TRANS_CHANGED
-name|PRESERVE_TRANS_CHANGED
+DECL|enumerator|LOCK_ALPHA_CHANGED
+name|LOCK_ALPHA_CHANGED
 block|,
 DECL|enumerator|MASK_CHANGED
 name|MASK_CHANGED
@@ -892,12 +892,12 @@ argument_list|)
 expr_stmt|;
 name|layer_signals
 index|[
-name|PRESERVE_TRANS_CHANGED
+name|LOCK_ALPHA_CHANGED
 index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"preserve-trans-changed"
+literal|"lock-alpha-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -910,7 +910,7 @@ name|G_STRUCT_OFFSET
 argument_list|(
 name|GimpLayerClass
 argument_list|,
-name|preserve_trans_changed
+name|lock_alpha_changed
 argument_list|)
 argument_list|,
 name|NULL
@@ -1170,7 +1170,7 @@ name|NULL
 expr_stmt|;
 name|klass
 operator|->
-name|preserve_trans_changed
+name|lock_alpha_changed
 operator|=
 name|NULL
 expr_stmt|;
@@ -1208,7 +1208,7 @@ name|GIMP_NORMAL_MODE
 expr_stmt|;
 name|layer
 operator|->
-name|preserve_trans
+name|lock_alpha
 operator|=
 name|FALSE
 expr_stmt|;
@@ -1825,7 +1825,7 @@ argument_list|)
 operator|&&
 name|layer
 operator|->
-name|preserve_trans
+name|lock_alpha
 condition|)
 name|active
 index|[
@@ -2133,11 +2133,11 @@ name|opacity
 expr_stmt|;
 name|new_layer
 operator|->
-name|preserve_trans
+name|lock_alpha
 operator|=
 name|layer
 operator|->
-name|preserve_trans
+name|lock_alpha
 expr_stmt|;
 comment|/*  duplicate the layer mask if necessary  */
 if|if
@@ -7222,15 +7222,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_layer_set_preserve_trans (GimpLayer * layer,gboolean preserve,gboolean push_undo)
-name|gimp_layer_set_preserve_trans
+DECL|function|gimp_layer_set_lock_alpha (GimpLayer * layer,gboolean lock_alpha,gboolean push_undo)
+name|gimp_layer_set_lock_alpha
 parameter_list|(
 name|GimpLayer
 modifier|*
 name|layer
 parameter_list|,
 name|gboolean
-name|preserve
+name|lock_alpha
 parameter_list|,
 name|gboolean
 name|push_undo
@@ -7244,13 +7244,21 @@ name|layer
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|lock_alpha
+operator|=
+name|lock_alpha
+condition|?
+name|TRUE
+else|:
+name|FALSE
+expr_stmt|;
 if|if
 condition|(
 name|layer
 operator|->
-name|preserve_trans
+name|lock_alpha
 operator|!=
-name|preserve
+name|lock_alpha
 condition|)
 block|{
 if|if
@@ -7278,7 +7286,7 @@ name|layer
 argument_list|)
 argument_list|)
 decl_stmt|;
-name|gimp_image_undo_push_layer_preserve_trans
+name|gimp_image_undo_push_layer_lock_alpha
 argument_list|(
 name|gimage
 argument_list|,
@@ -7290,13 +7298,9 @@ expr_stmt|;
 block|}
 name|layer
 operator|->
-name|preserve_trans
+name|lock_alpha
 operator|=
-name|preserve
-condition|?
-name|TRUE
-else|:
-name|FALSE
+name|lock_alpha
 expr_stmt|;
 name|g_signal_emit
 argument_list|(
@@ -7304,7 +7308,7 @@ name|layer
 argument_list|,
 name|layer_signals
 index|[
-name|PRESERVE_TRANS_CHANGED
+name|LOCK_ALPHA_CHANGED
 index|]
 argument_list|,
 literal|0
@@ -7316,8 +7320,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_layer_get_preserve_trans (const GimpLayer * layer)
-name|gimp_layer_get_preserve_trans
+DECL|function|gimp_layer_get_lock_alpha (const GimpLayer * layer)
+name|gimp_layer_get_lock_alpha
 parameter_list|(
 specifier|const
 name|GimpLayer
@@ -7338,7 +7342,7 @@ expr_stmt|;
 return|return
 name|layer
 operator|->
-name|preserve_trans
+name|lock_alpha
 return|;
 block|}
 end_function

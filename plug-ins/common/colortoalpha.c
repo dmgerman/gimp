@@ -50,7 +50,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296d71d50108
+DECL|struct|__anon29eb6ce60108
 block|{
 DECL|member|color
 name|GimpRGB
@@ -559,7 +559,7 @@ argument_list|)
 condition|)
 block|{
 name|gboolean
-name|preserve_trans
+name|lock_alpha
 decl_stmt|;
 name|gimp_image_undo_group_start
 argument_list|(
@@ -584,17 +584,17 @@ operator|->
 name|drawable_id
 argument_list|)
 expr_stmt|;
-comment|/*  Unset 'Keep transparency'  */
-name|preserve_trans
+comment|/*  Unset 'Lock alpha'  */
+name|lock_alpha
 operator|=
-name|gimp_layer_get_preserve_trans
+name|gimp_layer_get_lock_alpha
 argument_list|(
 name|drawable
 operator|->
 name|drawable_id
 argument_list|)
 expr_stmt|;
-name|gimp_layer_set_preserve_trans
+name|gimp_layer_set_lock_alpha
 argument_list|(
 name|drawable
 operator|->
@@ -623,13 +623,13 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_layer_set_preserve_trans
+name|gimp_layer_set_lock_alpha
 argument_list|(
 name|drawable
 operator|->
 name|drawable_id
 argument_list|,
-name|preserve_trans
+name|lock_alpha
 argument_list|)
 expr_stmt|;
 name|gimp_image_undo_group_end

@@ -153,7 +153,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d579f30108
+DECL|struct|__anon29e016770108
 block|{
 DECL|member|threshold
 name|gint
@@ -388,7 +388,7 @@ case|:
 comment|/* Since a channel might be selected, we must check wheter RGB or not. */
 if|if
 condition|(
-name|gimp_layer_get_preserve_trans
+name|gimp_layer_get_lock_alpha
 argument_list|(
 name|drawable_id
 argument_list|)
@@ -398,7 +398,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"The layer preserves transparency."
+literal|"The layer has its alpha channel locked."
 argument_list|)
 argument_list|)
 expr_stmt|;

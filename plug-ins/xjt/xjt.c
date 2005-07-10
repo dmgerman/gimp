@@ -206,7 +206,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28f77b1e0103
+DECL|enum|__anon27dc14d00103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -258,8 +258,8 @@ name|PROP_LINKED
 init|=
 literal|9
 block|,
-DECL|enumerator|PROP_PRESERVE_TRANSPARENCY
-name|PROP_PRESERVE_TRANSPARENCY
+DECL|enumerator|PROP_LOCK_ALPHA
+name|PROP_LOCK_ALPHA
 init|=
 literal|10
 block|,
@@ -406,7 +406,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28f77b1e0203
+DECL|enum|__anon27dc14d00203
 block|{
 DECL|enumerator|PTYP_NOT_SUPPORTED
 name|PTYP_NOT_SUPPORTED
@@ -466,7 +466,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28f77b1e0303
+DECL|enum|__anon27dc14d00303
 block|{
 DECL|enumerator|XJT_IMAGE_PARASITE
 name|XJT_IMAGE_PARASITE
@@ -496,7 +496,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28f77b1e0403
+DECL|enum|__anon27dc14d00403
 block|{
 DECL|enumerator|XJT_RGB
 name|XJT_RGB
@@ -518,7 +518,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28f77b1e0503
+DECL|enum|__anon27dc14d00503
 block|{
 DECL|enumerator|XJT_PATHTYPE_UNDEF
 name|XJT_PATHTYPE_UNDEF
@@ -538,7 +538,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28f77b1e0603
+DECL|enum|__anon27dc14d00603
 block|{
 DECL|enumerator|XJT_UNIT_PIXEL
 name|XJT_UNIT_PIXEL
@@ -573,7 +573,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28f77b1e0703
+DECL|enum|__anon27dc14d00703
 block|{
 DECL|enumerator|XJT_NORMAL_MODE
 name|XJT_NORMAL_MODE
@@ -698,7 +698,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f77b1e0808
+DECL|struct|__anon27dc14d00808
 block|{
 DECL|member|prop_id
 name|t_proptype
@@ -734,7 +734,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f77b1e0908
+DECL|struct|__anon27dc14d00908
 block|{
 DECL|member|int_val1
 name|gint32
@@ -783,7 +783,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f77b1e0a08
+DECL|struct|__anon27dc14d00a08
 block|{
 DECL|member|parasite_type
 name|t_parasitetype
@@ -820,7 +820,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f77b1e0b08
+DECL|struct|__anon27dc14d00b08
 block|{
 DECL|member|path_type
 name|gint32
@@ -870,7 +870,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f77b1e0c08
+DECL|struct|__anon27dc14d00c08
 block|{
 DECL|member|active_channel
 name|gint
@@ -944,7 +944,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f77b1e0d08
+DECL|struct|__anon27dc14d00d08
 block|{
 DECL|member|active_layer
 name|gint
@@ -974,9 +974,9 @@ DECL|member|linked
 name|gint
 name|linked
 decl_stmt|;
-DECL|member|preserve_transparency
+DECL|member|lock_alpha
 name|gint
-name|preserve_transparency
+name|lock_alpha
 decl_stmt|;
 DECL|member|apply_mask
 name|gint
@@ -1029,7 +1029,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f77b1e0e08
+DECL|struct|__anon27dc14d00e08
 block|{
 DECL|member|position
 name|gint32
@@ -1053,7 +1053,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f77b1e0f08
+DECL|struct|__anon27dc14d00f08
 block|{
 DECL|member|version
 name|gchar
@@ -1307,7 +1307,7 @@ literal|0.0
 block|}
 block|,
 block|{
-name|PROP_PRESERVE_TRANSPARENCY
+name|PROP_LOCK_ALPHA
 block|,
 literal|"pt"
 block|,
@@ -6250,7 +6250,7 @@ name|l_param
 operator|.
 name|int_val1
 operator|=
-name|gimp_layer_get_preserve_trans
+name|gimp_layer_get_lock_alpha
 argument_list|(
 name|layer_id
 argument_list|)
@@ -6259,7 +6259,7 @@ name|p_write_prop
 argument_list|(
 name|fp
 argument_list|,
-name|PROP_PRESERVE_TRANSPARENCY
+name|PROP_LOCK_ALPHA
 argument_list|,
 operator|&
 name|l_param
@@ -8481,13 +8481,13 @@ name|default_val1
 expr_stmt|;
 name|l_new_prop
 operator|->
-name|preserve_transparency
+name|lock_alpha
 operator|=
 name|g_prop_table
 index|[
 name|p_get_property_index
 argument_list|(
-name|PROP_PRESERVE_TRANSPARENCY
+name|PROP_LOCK_ALPHA
 argument_list|)
 index|]
 operator|.
@@ -11710,11 +11710,11 @@ name|int_val1
 expr_stmt|;
 break|break;
 case|case
-name|PROP_PRESERVE_TRANSPARENCY
+name|PROP_LOCK_ALPHA
 case|:
 name|l_new_prop
 operator|->
-name|preserve_transparency
+name|lock_alpha
 operator|=
 name|l_param
 operator|.
@@ -14717,13 +14717,13 @@ operator|->
 name|linked
 argument_list|)
 expr_stmt|;
-name|gimp_layer_set_preserve_trans
+name|gimp_layer_set_lock_alpha
 argument_list|(
 name|l_layer_id
 argument_list|,
 name|l_layer_prp_ptr
 operator|->
-name|preserve_transparency
+name|lock_alpha
 argument_list|)
 expr_stmt|;
 if|if

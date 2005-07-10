@@ -93,5 +93,53 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_layer_get_preserve_trans:  * @layer_ID: The layer.  *  * This procedure is deprecated! Use gimp_layer_get_lock_alpha() instead.  *  * Returns: The layer's preserve transperancy setting.  */
+end_comment
+
+begin_function
+name|gboolean
+DECL|function|gimp_layer_get_preserve_trans (gint32 layer_ID)
+name|gimp_layer_get_preserve_trans
+parameter_list|(
+name|gint32
+name|layer_ID
+parameter_list|)
+block|{
+return|return
+name|gimp_layer_get_lock_alpha
+argument_list|(
+name|layer_ID
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_layer_set_preserve_trans:  * @layer_ID: The layer.  * @preserve_trans: The new layer's preserve transperancy setting.  *  * This procedure is deprecated! Use gimp_layer_set_lock_alpha() instead.  *  * Returns: TRUE on success.  */
+end_comment
+
+begin_function
+name|gboolean
+DECL|function|gimp_layer_set_preserve_trans (gint32 layer_ID,gboolean preserve_trans)
+name|gimp_layer_set_preserve_trans
+parameter_list|(
+name|gint32
+name|layer_ID
+parameter_list|,
+name|gboolean
+name|preserve_trans
+parameter_list|)
+block|{
+name|gimp_layer_set_lock_alpha
+argument_list|(
+name|layer_ID
+argument_list|,
+name|preserve_trans
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
 end_unit
 

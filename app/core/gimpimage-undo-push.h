@@ -435,7 +435,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_image_undo_push_layer_preserve_trans
+name|gimp_image_undo_push_layer_lock_alpha
 parameter_list|(
 name|GimpImage
 modifier|*

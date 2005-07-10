@@ -310,7 +310,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2761e2180108
+DECL|struct|__anon2bfa919f0108
 block|{
 DECL|member|old_name
 specifier|const
@@ -663,6 +663,18 @@ block|{
 literal|"gimp_channel_ops_offset"
 block|,
 literal|"gimp_drawable_offset"
+block|}
+block|,
+block|{
+literal|"gimp_layer_get_preserve_trans"
+block|,
+literal|"gimp_drawable_set_lock_alpha"
+block|}
+block|,
+block|{
+literal|"gimp_layer_set_preserve_trans"
+block|,
+literal|"gimp_drawable_set_lock_alpha"
 block|}
 block|}
 struct|;

@@ -113,11 +113,11 @@ name|GimpLayerModeEffects
 name|mode
 decl_stmt|;
 comment|/*  layer combination mode     */
-DECL|member|preserve_trans
+DECL|member|lock_alpha
 name|gboolean
-name|preserve_trans
+name|lock_alpha
 decl_stmt|;
-comment|/*  preserve transparency      */
+comment|/*  lock the alpha channel     */
 DECL|member|mask
 name|GimpLayerMask
 modifier|*
@@ -126,7 +126,7 @@ decl_stmt|;
 comment|/*  possible layer mask        */
 comment|/*  Floating selections  */
 struct|struct
-DECL|struct|__anon29a0f7090108
+DECL|struct|__anon2a5180de0108
 block|{
 DECL|member|backing_store
 name|TileManager
@@ -202,11 +202,11 @@ modifier|*
 name|layer
 parameter_list|)
 function_decl|;
-DECL|member|preserve_trans_changed
+DECL|member|lock_alpha_changed
 name|void
 function_decl|(
 modifier|*
-name|preserve_trans_changed
+name|lock_alpha_changed
 function_decl|)
 parameter_list|(
 name|GimpLayer
@@ -562,14 +562,14 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_layer_set_preserve_trans
+name|gimp_layer_set_lock_alpha
 parameter_list|(
 name|GimpLayer
 modifier|*
 name|layer
 parameter_list|,
 name|gboolean
-name|preserve
+name|lock_alpha
 parameter_list|,
 name|gboolean
 name|push_undo
@@ -579,7 +579,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_layer_get_preserve_trans
+name|gimp_layer_get_lock_alpha
 parameter_list|(
 specifier|const
 name|GimpLayer

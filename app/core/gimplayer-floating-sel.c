@@ -219,7 +219,7 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/*  set the drawable and allocate a backing store  */
-name|gimp_layer_set_preserve_trans
+name|gimp_layer_set_lock_alpha
 argument_list|(
 name|layer
 argument_list|,
@@ -1902,7 +1902,7 @@ init|=
 name|NULL
 decl_stmt|;
 name|gint
-name|preserve_trans
+name|lock_alpha
 decl_stmt|;
 name|gint
 name|active
@@ -2244,7 +2244,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/*  a kludge here to prevent the case of the drawable 	   *  underneath having preserve transparency on, and disallowing 	   *  the composited floating selection from being shown 	   */
+comment|/*  a kludge here to prevent the case of the drawable 	   *  underneath having lock alpha on, and disallowing 	   *  the composited floating selection from being shown 	   */
 if|if
 condition|(
 name|GIMP_IS_LAYER
@@ -2271,15 +2271,15 @@ expr_stmt|;
 if|if
 condition|(
 operator|(
-name|preserve_trans
+name|lock_alpha
 operator|=
-name|gimp_layer_get_preserve_trans
+name|gimp_layer_get_lock_alpha
 argument_list|(
 name|d_layer
 argument_list|)
 operator|)
 condition|)
-name|gimp_layer_set_preserve_trans
+name|gimp_layer_set_lock_alpha
 argument_list|(
 name|d_layer
 argument_list|,
@@ -2290,7 +2290,7 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
-name|preserve_trans
+name|lock_alpha
 operator|=
 name|FALSE
 expr_stmt|;
@@ -2370,12 +2370,12 @@ name|offy
 operator|)
 argument_list|)
 expr_stmt|;
-comment|/*  restore preserve transparency  */
+comment|/*  restore lock alpha  */
 if|if
 condition|(
-name|preserve_trans
+name|lock_alpha
 condition|)
-name|gimp_layer_set_preserve_trans
+name|gimp_layer_set_lock_alpha
 argument_list|(
 name|d_layer
 argument_list|,

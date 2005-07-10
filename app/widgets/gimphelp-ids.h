@@ -785,19 +785,19 @@ value|"gimp-layer-dialog-paint-mode-menu"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_LAYER_DIALOG_KEEP_TRANS_BUTTON
-define|#
-directive|define
-name|GIMP_HELP_LAYER_DIALOG_KEEP_TRANS_BUTTON
-value|"gimp-layer-dialog-keep-trans-button"
-end_define
-
-begin_define
 DECL|macro|GIMP_HELP_LAYER_DIALOG_OPACITY_SCALE
 define|#
 directive|define
 name|GIMP_HELP_LAYER_DIALOG_OPACITY_SCALE
 value|"gimp-layer-dialog-opacity-scale"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_LAYER_DIALOG_LOCK_ALPHA_BUTTON
+define|#
+directive|define
+name|GIMP_HELP_LAYER_DIALOG_LOCK_ALPHA_BUTTON
+value|"gimp-layer-dialog-lock-alpha-button"
 end_define
 
 begin_define
@@ -977,11 +977,11 @@ value|"gimp-layer-mode"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_LAYER_KEEP_TRANSPARENCY
+DECL|macro|GIMP_HELP_LAYER_LOCK_ALPHA
 define|#
 directive|define
-name|GIMP_HELP_LAYER_KEEP_TRANSPARENCY
-value|"gimp-layer-keep-transparency"
+name|GIMP_HELP_LAYER_LOCK_ALPHA
+value|"gimp-layer-lock-alpha"
 end_define
 
 begin_define

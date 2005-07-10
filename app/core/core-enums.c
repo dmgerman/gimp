@@ -3857,11 +3857,11 @@ literal|"layer-opacity"
 block|}
 block|,
 block|{
-name|GIMP_UNDO_LAYER_PRESERVE_TRANS
+name|GIMP_UNDO_LAYER_LOCK_ALPHA
 block|,
-literal|"GIMP_UNDO_LAYER_PRESERVE_TRANS"
+literal|"GIMP_UNDO_LAYER_LOCK_ALPHA"
 block|,
-literal|"layer-preserve-trans"
+literal|"layer-lock-alpha"
 block|}
 block|,
 block|{
@@ -4692,11 +4692,11 @@ name|NULL
 block|}
 block|,
 block|{
-name|GIMP_UNDO_LAYER_PRESERVE_TRANS
+name|GIMP_UNDO_LAYER_LOCK_ALPHA
 block|,
 name|N_
 argument_list|(
-literal|"Set preserve trans"
+literal|"Lock/Unlock alpha channel"
 argument_list|)
 block|,
 name|NULL

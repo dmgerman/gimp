@@ -1264,13 +1264,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_get_preserve_trans:  * @layer_ID: The layer.  *  * Get the preserve transperancy setting of the specified layer.  *  * This procedure returns the specified layer's preserve transperancy  * setting.  *  * Returns: The layer's preserve transperancy setting.  */
+comment|/**  * gimp_layer_get_lock_alpha:  * @layer_ID: The layer.  *  * Get the lock alpha channel setting of the specified layer.  *  * This procedure returns the specified layer's lock alpha channel  * setting.  *  * Returns: The layer's lock alpha channel setting.  */
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_layer_get_preserve_trans (gint32 layer_ID)
-name|gimp_layer_get_preserve_trans
+DECL|function|gimp_layer_get_lock_alpha (gint32 layer_ID)
+name|gimp_layer_get_lock_alpha
 parameter_list|(
 name|gint32
 name|layer_ID
@@ -1284,7 +1284,7 @@ name|gint
 name|nreturn_vals
 decl_stmt|;
 name|gboolean
-name|preserve_trans
+name|lock_alpha
 init|=
 name|FALSE
 decl_stmt|;
@@ -1292,7 +1292,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_layer_get_preserve_trans"
+literal|"gimp_layer_get_lock_alpha"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1317,7 +1317,7 @@ name|d_status
 operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
-name|preserve_trans
+name|lock_alpha
 operator|=
 name|return_vals
 index|[
@@ -1336,25 +1336,25 @@ name|nreturn_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|preserve_trans
+name|lock_alpha
 return|;
 block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_set_preserve_trans:  * @layer_ID: The layer.  * @preserve_trans: The new layer's preserve transperancy setting.  *  * Set the preserve transperancy setting of the specified layer.  *  * This procedure sets the specified layer's preserve transperancy  * setting.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_layer_set_lock_alpha:  * @layer_ID: The layer.  * @lock_alpha: The new layer's lock alpha channel setting.  *  * Set the lock alpha channel setting of the specified layer.  *  * This procedure sets the specified layer's lock alpha channel  * setting.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_layer_set_preserve_trans (gint32 layer_ID,gboolean preserve_trans)
-name|gimp_layer_set_preserve_trans
+DECL|function|gimp_layer_set_lock_alpha (gint32 layer_ID,gboolean lock_alpha)
+name|gimp_layer_set_lock_alpha
 parameter_list|(
 name|gint32
 name|layer_ID
 parameter_list|,
 name|gboolean
-name|preserve_trans
+name|lock_alpha
 parameter_list|)
 block|{
 name|GimpParam
@@ -1373,7 +1373,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_layer_set_preserve_trans"
+literal|"gimp_layer_set_lock_alpha"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1384,7 +1384,7 @@ name|layer_ID
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
-name|preserve_trans
+name|lock_alpha
 argument_list|,
 name|GIMP_PDB_END
 argument_list|)

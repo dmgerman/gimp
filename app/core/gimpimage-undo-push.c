@@ -6977,9 +6977,9 @@ DECL|member|old_opacity
 name|gdouble
 name|old_opacity
 decl_stmt|;
-DECL|member|old_preserve_trans
+DECL|member|old_lock_alpha
 name|gboolean
-name|old_preserve_trans
+name|old_lock_alpha
 decl_stmt|;
 block|}
 struct|;
@@ -7113,8 +7113,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_undo_push_layer_preserve_trans (GimpImage * gimage,const gchar * undo_desc,GimpLayer * layer)
-name|gimp_image_undo_push_layer_preserve_trans
+DECL|function|gimp_image_undo_push_layer_lock_alpha (GimpImage * gimage,const gchar * undo_desc,GimpLayer * layer)
+name|gimp_image_undo_push_layer_lock_alpha
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -7135,7 +7135,7 @@ name|undo_push_layer_properties
 argument_list|(
 name|gimage
 argument_list|,
-name|GIMP_UNDO_LAYER_PRESERVE_TRANS
+name|GIMP_UNDO_LAYER_LOCK_ALPHA
 argument_list|,
 name|undo_desc
 argument_list|,
@@ -7273,9 +7273,9 @@ argument_list|)
 expr_stmt|;
 name|lpu
 operator|->
-name|old_preserve_trans
+name|old_lock_alpha
 operator|=
-name|gimp_layer_get_preserve_trans
+name|gimp_layer_get_lock_alpha
 argument_list|(
 name|layer
 argument_list|)
@@ -7404,35 +7404,35 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|GIMP_UNDO_LAYER_PRESERVE_TRANS
+name|GIMP_UNDO_LAYER_LOCK_ALPHA
 case|:
 block|{
 name|gboolean
-name|preserve_trans
+name|lock_alpha
 decl_stmt|;
-name|preserve_trans
+name|lock_alpha
 operator|=
-name|gimp_layer_get_preserve_trans
+name|gimp_layer_get_lock_alpha
 argument_list|(
 name|layer
 argument_list|)
 expr_stmt|;
-name|gimp_layer_set_preserve_trans
+name|gimp_layer_set_lock_alpha
 argument_list|(
 name|layer
 argument_list|,
 name|lpu
 operator|->
-name|old_preserve_trans
+name|old_lock_alpha
 argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
 name|lpu
 operator|->
-name|old_preserve_trans
+name|old_lock_alpha
 operator|=
-name|preserve_trans
+name|lock_alpha
 expr_stmt|;
 block|}
 break|break;
