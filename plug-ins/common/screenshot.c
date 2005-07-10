@@ -299,7 +299,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27cd8f700103
+DECL|enum|__anon275ed5310103
 block|{
 DECL|enumerator|SHOOT_ROOT
 name|SHOOT_ROOT
@@ -318,7 +318,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cd8f700208
+DECL|struct|__anon275ed5310208
 block|{
 DECL|member|shoot_type
 name|ShootType
@@ -2073,8 +2073,8 @@ end_ifdef
 begin_function
 specifier|static
 name|GdkNativeWindow
-DECL|function|select_window_x11 (GdkScreen * screen)
-name|select_window_x11
+DECL|function|select_window_win32 (GdkScreen * screen)
+name|select_window_win32
 parameter_list|(
 name|GdkScreen
 modifier|*
@@ -2095,7 +2095,9 @@ directive|else
 pragma|#
 directive|pragma
 name|message
+name|(
 literal|"Win32 screenshot window chooser not implemented yet"
+name|)
 endif|#
 directive|endif
 return|return

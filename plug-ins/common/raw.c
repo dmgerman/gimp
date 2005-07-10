@@ -62,6 +62,23 @@ directive|include
 file|<glib/gstdio.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|<io.h>
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_include
 include|#
 directive|include
@@ -91,7 +108,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29bf06970103
+DECL|enum|__anon2b88eb200103
 block|{
 DECL|enumerator|RAW_RGB
 name|RAW_RGB
@@ -117,7 +134,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29bf06970203
+DECL|enum|__anon2b88eb200203
 block|{
 DECL|enumerator|RAW_PALETTE_RGB
 name|RAW_PALETTE_RGB
@@ -135,7 +152,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29bf06970308
+DECL|struct|__anon2b88eb200308
 block|{
 DECL|member|file_offset
 name|gint32
@@ -176,7 +193,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29bf06970408
+DECL|struct|__anon2b88eb200408
 block|{
 DECL|member|fp
 name|FILE

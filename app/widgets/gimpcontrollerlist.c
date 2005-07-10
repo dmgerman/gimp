@@ -121,7 +121,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpmessagedialog.c"
+file|"gimpmessagebox.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpmessagedialog.h"
 end_include
 
 begin_include
@@ -150,7 +156,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a31762d0103
+DECL|enum|__anon2b0bca420103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -163,7 +169,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a31762d0203
+DECL|enum|__anon2b0bca420203
 block|{
 DECL|enumerator|COLUMN_ICON
 name|COLUMN_ICON
