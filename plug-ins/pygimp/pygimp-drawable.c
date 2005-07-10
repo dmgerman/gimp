@@ -8201,8 +8201,8 @@ begin_function
 specifier|static
 name|PyObject
 modifier|*
-DECL|function|lay_get_preserve_trans (PyGimpLayer * self,void * closure)
-name|lay_get_preserve_trans
+DECL|function|lay_get_lock_alpha (PyGimpLayer * self,void * closure)
+name|lay_get_lock_alpha
 parameter_list|(
 name|PyGimpLayer
 modifier|*
@@ -8216,7 +8216,7 @@ block|{
 return|return
 name|PyBool_FromLong
 argument_list|(
-name|gimp_layer_get_preserve_trans
+name|gimp_layer_get_lock_alpha
 argument_list|(
 name|self
 operator|->
@@ -8230,8 +8230,8 @@ end_function
 begin_function
 specifier|static
 name|int
-DECL|function|lay_set_preserve_trans (PyGimpLayer * self,PyObject * value,void * closure)
-name|lay_set_preserve_trans
+DECL|function|lay_set_lock_alpha (PyGimpLayer * self,PyObject * value,void * closure)
+name|lay_set_lock_alpha
 parameter_list|(
 name|PyGimpLayer
 modifier|*
@@ -8257,7 +8257,7 @@ name|PyErr_SetString
 argument_list|(
 name|PyExc_TypeError
 argument_list|,
-literal|"cannot delete preserve_transparency"
+literal|"cannot delete lock_alpha"
 argument_list|)
 expr_stmt|;
 return|return
@@ -8289,7 +8289,7 @@ block|}
 if|if
 condition|(
 operator|!
-name|gimp_layer_set_preserve_trans
+name|gimp_layer_set_lock_alpha
 argument_list|(
 name|self
 operator|->
@@ -8306,8 +8306,7 @@ name|PyErr_Format
 argument_list|(
 name|pygimp_error
 argument_list|,
-literal|"could not set preserve transperancy setting on "
-literal|"layer (ID %d)"
+literal|"could not set lock alpha setting on layer (ID %d)"
 argument_list|,
 name|self
 operator|->
@@ -8452,6 +8451,94 @@ return|;
 block|}
 end_function
 
+begin_function
+specifier|static
+name|PyObject
+modifier|*
+DECL|function|lay_get_preserve_trans (PyGimpLayer * self,void * closure)
+name|lay_get_preserve_trans
+parameter_list|(
+name|PyGimpLayer
+modifier|*
+name|self
+parameter_list|,
+name|void
+modifier|*
+name|closure
+parameter_list|)
+block|{
+if|if
+condition|(
+name|PyErr_Warn
+argument_list|(
+name|PyExc_DeprecationWarning
+argument_list|,
+literal|"use lock_alpha attribute"
+argument_list|)
+operator|<
+literal|0
+condition|)
+return|return
+name|NULL
+return|;
+return|return
+name|lay_get_lock_alpha
+argument_list|(
+name|self
+argument_list|,
+name|closure
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|int
+DECL|function|lay_set_preserve_trans (PyGimpLayer * self,PyObject * value,void * closure)
+name|lay_set_preserve_trans
+parameter_list|(
+name|PyGimpLayer
+modifier|*
+name|self
+parameter_list|,
+name|PyObject
+modifier|*
+name|value
+parameter_list|,
+name|void
+modifier|*
+name|closure
+parameter_list|)
+block|{
+if|if
+condition|(
+name|PyErr_Warn
+argument_list|(
+name|PyExc_DeprecationWarning
+argument_list|,
+literal|"use lock_alpha attribute"
+argument_list|)
+operator|<
+literal|0
+condition|)
+return|return
+operator|-
+literal|1
+return|;
+return|return
+name|lay_set_lock_alpha
+argument_list|(
+name|self
+argument_list|,
+name|value
+argument_list|,
+name|closure
+argument_list|)
+return|;
+block|}
+end_function
+
 begin_decl_stmt
 DECL|variable|lay_getsets
 specifier|static
@@ -8545,17 +8632,17 @@ name|lay_set_opacity
 block|}
 block|,
 block|{
-literal|"preserve_trans"
+literal|"lock_alpha"
 block|,
 operator|(
 name|getter
 operator|)
-name|lay_get_preserve_trans
+name|lay_get_lock_alpha
 block|,
 operator|(
 name|setter
 operator|)
-name|lay_set_preserve_trans
+name|lay_set_lock_alpha
 block|}
 block|,
 block|{
@@ -8570,6 +8657,20 @@ operator|(
 name|setter
 operator|)
 name|lay_set_show_mask
+block|}
+block|,
+block|{
+literal|"preserve_trans"
+block|,
+operator|(
+name|getter
+operator|)
+name|lay_get_preserve_trans
+block|,
+operator|(
+name|setter
+operator|)
+name|lay_set_preserve_trans
 block|}
 block|,
 block|{

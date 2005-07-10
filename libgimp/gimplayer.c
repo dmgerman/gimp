@@ -131,13 +131,14 @@ name|gboolean
 name|preserve_trans
 parameter_list|)
 block|{
+return|return
 name|gimp_layer_set_lock_alpha
 argument_list|(
 name|layer_ID
 argument_list|,
 name|preserve_trans
 argument_list|)
-expr_stmt|;
+return|;
 block|}
 end_function
 
