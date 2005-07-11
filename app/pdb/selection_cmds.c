@@ -64,6 +64,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimppickable.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpselection.h"
 end_include
 
@@ -769,11 +775,14 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|gimp_channel_value
+name|gimp_pickable_get_opacity_at
+argument_list|(
+name|GIMP_PICKABLE
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
 name|gimage
+argument_list|)
 argument_list|)
 argument_list|,
 name|x

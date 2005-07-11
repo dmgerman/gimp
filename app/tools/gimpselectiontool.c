@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimppickable.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimptoolinfo.h"
 end_include
 
@@ -766,9 +772,12 @@ block|}
 elseif|else
 if|if
 condition|(
-name|gimp_channel_value
+name|gimp_pickable_get_opacity_at
+argument_list|(
+name|GIMP_PICKABLE
 argument_list|(
 name|selection
+argument_list|)
 argument_list|,
 name|coords
 operator|->

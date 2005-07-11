@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6f690a0103
+DECL|enum|__anon2b87fbf40103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -161,6 +161,24 @@ specifier|static
 name|guchar
 modifier|*
 name|gimp_projection_get_color_at
+parameter_list|(
+name|GimpPickable
+modifier|*
+name|pickable
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|gint
+name|gimp_projection_get_opacity_at
 parameter_list|(
 name|GimpPickable
 modifier|*
@@ -742,6 +760,12 @@ name|get_color_at
 operator|=
 name|gimp_projection_get_color_at
 expr_stmt|;
+name|pickable_iface
+operator|->
+name|get_opacity_at
+operator|=
+name|gimp_projection_get_opacity_at
+expr_stmt|;
 block|}
 end_function
 
@@ -1062,6 +1086,29 @@ argument_list|)
 expr_stmt|;
 return|return
 name|dest
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|gint
+DECL|function|gimp_projection_get_opacity_at (GimpPickable * pickable,gint x,gint y)
+name|gimp_projection_get_opacity_at
+parameter_list|(
+name|GimpPickable
+modifier|*
+name|pickable
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
+parameter_list|)
+block|{
+return|return
+name|OPAQUE_OPACITY
 return|;
 block|}
 end_function

@@ -112,6 +112,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimppickable.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpprojection.h"
 end_include
 
@@ -1984,11 +1990,14 @@ name|iscissors
 operator|->
 name|mask
 operator|&&
-name|gimp_channel_value
+name|gimp_pickable_get_opacity_at
+argument_list|(
+name|GIMP_PICKABLE
 argument_list|(
 name|iscissors
 operator|->
 name|mask
+argument_list|)
 argument_list|,
 name|iscissors
 operator|->
@@ -4007,11 +4016,14 @@ condition|)
 block|{
 if|if
 condition|(
-name|gimp_channel_value
+name|gimp_pickable_get_opacity_at
+argument_list|(
+name|GIMP_PICKABLE
 argument_list|(
 name|iscissors
 operator|->
 name|mask
+argument_list|)
 argument_list|,
 name|coords
 operator|->
