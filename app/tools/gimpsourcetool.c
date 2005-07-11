@@ -862,14 +862,7 @@ name|gimp_channel_is_empty
 argument_list|(
 name|selection
 argument_list|)
-condition|)
-name|ctype
-operator|=
-name|GIMP_CURSOR_MOUSE
-expr_stmt|;
-elseif|else
-if|if
-condition|(
+operator|||
 name|gimp_channel_value
 argument_list|(
 name|selection
