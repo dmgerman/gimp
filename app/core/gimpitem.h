@@ -469,10 +469,6 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|GimpContext
-modifier|*
-name|context
-parameter_list|,
 name|GimpStrokeDesc
 modifier|*
 name|stroke_desc

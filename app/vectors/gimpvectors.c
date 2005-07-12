@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0e257b0103
+DECL|enum|__anon28eec1c30103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE
@@ -435,10 +435,6 @@ parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
-parameter_list|,
-name|GimpContext
-modifier|*
-name|context
 parameter_list|,
 name|GimpStrokeDesc
 modifier|*
@@ -2342,7 +2338,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_vectors_stroke (GimpItem * item,GimpDrawable * drawable,GimpContext * context,GimpStrokeDesc * stroke_desc)
+DECL|function|gimp_vectors_stroke (GimpItem * item,GimpDrawable * drawable,GimpStrokeDesc * stroke_desc)
 name|gimp_vectors_stroke
 parameter_list|(
 name|GimpItem
@@ -2352,10 +2348,6 @@ parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
-parameter_list|,
-name|GimpContext
-modifier|*
-name|context
 parameter_list|,
 name|GimpStrokeDesc
 modifier|*

@@ -197,7 +197,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0130b60103
+DECL|enum|__anon276781480103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -522,10 +522,6 @@ parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
-parameter_list|,
-name|GimpContext
-modifier|*
-name|context
 parameter_list|,
 name|GimpStrokeDesc
 modifier|*
@@ -3323,7 +3319,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_channel_stroke (GimpItem * item,GimpDrawable * drawable,GimpContext * context,GimpStrokeDesc * stroke_desc)
+DECL|function|gimp_channel_stroke (GimpItem * item,GimpDrawable * drawable,GimpStrokeDesc * stroke_desc)
 name|gimp_channel_stroke
 parameter_list|(
 name|GimpItem
@@ -3333,10 +3329,6 @@ parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
-parameter_list|,
-name|GimpContext
-modifier|*
-name|context
 parameter_list|,
 name|GimpStrokeDesc
 modifier|*

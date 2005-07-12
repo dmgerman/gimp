@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2778280103
+DECL|enum|__anon2781a4070103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -3612,8 +3612,6 @@ argument_list|(
 name|item
 argument_list|,
 name|drawable
-argument_list|,
-name|context
 argument_list|,
 name|stroke_desc
 argument_list|)
