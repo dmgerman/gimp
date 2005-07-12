@@ -217,6 +217,12 @@ parameter_list|,
 name|GimpFillType
 name|fill_type
 parameter_list|,
+name|gdouble
+name|opacity
+parameter_list|,
+name|GimpLayerModeEffects
+name|paint_mode
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -1457,6 +1463,10 @@ name|context
 argument_list|,
 name|GIMP_TRANSPARENT_FILL
 argument_list|,
+name|GIMP_OPACITY_OPAQUE
+argument_list|,
+name|GIMP_ERASE_MODE
+argument_list|,
 name|_
 argument_list|(
 literal|"Clear"
@@ -1633,6 +1643,10 @@ argument_list|,
 name|context
 argument_list|,
 name|fill_type
+argument_list|,
+name|GIMP_OPACITY_OPAQUE
+argument_list|,
+name|GIMP_NORMAL_MODE
 argument_list|,
 name|undo_desc
 argument_list|)
@@ -1849,7 +1863,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_edit_fill_internal (GimpImage * gimage,GimpDrawable * drawable,GimpContext * context,GimpFillType fill_type,const gchar * undo_desc)
+DECL|function|gimp_edit_fill_internal (GimpImage * gimage,GimpDrawable * drawable,GimpContext * context,GimpFillType fill_type,gdouble opacity,GimpLayerModeEffects paint_mode,const gchar * undo_desc)
 name|gimp_edit_fill_internal
 parameter_list|(
 name|GimpImage
@@ -1866,6 +1880,12 @@ name|context
 parameter_list|,
 name|GimpFillType
 name|fill_type
+parameter_list|,
+name|gdouble
+name|opacity
+parameter_list|,
+name|GimpLayerModeEffects
+name|paint_mode
 parameter_list|,
 specifier|const
 name|gchar
@@ -2203,17 +2223,9 @@ name|TRUE
 argument_list|,
 name|undo_desc
 argument_list|,
-name|GIMP_OPACITY_OPAQUE
+name|opacity
 argument_list|,
-operator|(
-name|fill_type
-operator|==
-name|GIMP_TRANSPARENT_FILL
-operator|)
-condition|?
-name|GIMP_ERASE_MODE
-else|:
-name|GIMP_NORMAL_MODE
+name|paint_mode
 argument_list|,
 name|NULL
 argument_list|,
