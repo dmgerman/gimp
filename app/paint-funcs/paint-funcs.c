@@ -12583,7 +12583,6 @@ condition|;
 name|i
 operator|++
 control|)
-block|{
 name|p
 index|[
 name|i
@@ -12596,7 +12595,6 @@ operator|+
 literal|1
 index|]
 expr_stmt|;
-block|}
 name|p
 index|[
 name|i
@@ -15349,12 +15347,10 @@ index|[
 literal|3
 index|]
 decl_stmt|;
-comment|/* caches the the region's pixels           */
 name|guchar
 modifier|*
 name|out
 decl_stmt|;
-comment|/* holds the new scan line we are computing */
 name|width
 operator|=
 name|region
@@ -15460,12 +15456,12 @@ name|memcpy
 argument_list|(
 name|buf
 index|[
-literal|0
+literal|1
 index|]
 argument_list|,
 name|buf
 index|[
-literal|1
+literal|2
 index|]
 argument_list|,
 name|width
@@ -15489,22 +15485,15 @@ name|y
 operator|++
 control|)
 block|{
-name|rotate_pointers
-argument_list|(
-name|buf
-argument_list|,
-literal|2
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|y
+operator|+
+literal|1
 operator|<
 name|region
 operator|->
 name|h
-operator|+
-literal|1
 condition|)
 block|{
 name|pixel_region_get_row
@@ -15721,6 +15710,13 @@ argument_list|,
 name|width
 argument_list|,
 name|out
+argument_list|)
+expr_stmt|;
+name|rotate_pointers
+argument_list|(
+name|buf
+argument_list|,
+literal|3
 argument_list|)
 expr_stmt|;
 block|}
