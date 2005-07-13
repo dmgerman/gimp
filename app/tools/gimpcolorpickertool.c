@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpdockable.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimphelp-ids.h"
 end_include
 
@@ -1125,6 +1131,21 @@ literal|"gimp-palette-editor"
 argument_list|,
 operator|-
 literal|1
+argument_list|)
+expr_stmt|;
+comment|/* don't blink like mad when updating */
+if|if
+condition|(
+name|pick_state
+operator|==
+name|GIMP_COLOR_PICK_STATE_UPDATE
+condition|)
+name|gimp_dockable_blink_cancel
+argument_list|(
+name|GIMP_DOCKABLE
+argument_list|(
+name|dockable
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|palette_editor
