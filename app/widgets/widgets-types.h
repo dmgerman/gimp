@@ -1019,6 +1019,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpViewRendererPalette
+typedef|typedef
+name|struct
+name|_GimpViewRendererPalette
+name|GimpViewRendererPalette
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpViewRendererLayer
 typedef|typedef
 name|struct

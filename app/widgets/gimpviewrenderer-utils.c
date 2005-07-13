@@ -48,12 +48,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimplayer.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -61,6 +55,18 @@ begin_include
 include|#
 directive|include
 file|"core/gimpimagefile.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimplayer.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimppalette.h"
 end_include
 
 begin_include
@@ -103,6 +109,12 @@ begin_include
 include|#
 directive|include
 file|"gimpviewrendererimagefile.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpviewrendererpalette.h"
 end_include
 
 begin_include
@@ -262,6 +274,22 @@ block|{
 name|type
 operator|=
 name|GIMP_TYPE_VIEW_RENDERER_IMAGEFILE
+expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+name|g_type_is_a
+argument_list|(
+name|viewable_type
+argument_list|,
+name|GIMP_TYPE_PALETTE
+argument_list|)
+condition|)
+block|{
+name|type
+operator|=
+name|GIMP_TYPE_VIEW_RENDERER_PALETTE
 expr_stmt|;
 block|}
 return|return
