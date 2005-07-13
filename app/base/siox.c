@@ -62,7 +62,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c142ad00108
+DECL|struct|__anon2b1d05f30108
 block|{
 DECL|member|l
 name|float
@@ -2751,15 +2751,10 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-comment|/* inefficient */
-name|gaussian_blur_region
+name|smooth_region
 argument_list|(
 operator|&
 name|region
-argument_list|,
-literal|1.0
-argument_list|,
-literal|1.0
 argument_list|)
 expr_stmt|;
 block|}
