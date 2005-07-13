@@ -30,7 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/segmentator.h"
+file|"base/siox.h"
 end_include
 
 begin_include
@@ -88,7 +88,7 @@ decl_stmt|;
 name|gfloat
 name|limits
 index|[
-name|DIMS
+name|SIOX_DIMS
 index|]
 init|=
 block|{
@@ -146,7 +146,7 @@ name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|foreground_extract
+name|siox_foreground_extract
 argument_list|(
 name|gimp_drawable_data
 argument_list|(
