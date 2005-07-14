@@ -62,7 +62,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b743f170108
+DECL|struct|__anon28e94fd00108
 block|{
 DECL|member|l
 name|float
