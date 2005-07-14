@@ -103,10 +103,10 @@ DECL|member|parent_instance
 name|GimpDataEditor
 name|parent_instance
 decl_stmt|;
-DECL|member|color_area
+DECL|member|view
 name|GtkWidget
 modifier|*
-name|color_area
+name|view
 decl_stmt|;
 DECL|member|scrolled_window
 name|GtkWidget
@@ -133,11 +133,6 @@ name|GimpPaletteEntry
 modifier|*
 name|color
 decl_stmt|;
-DECL|member|dnd_color
-name|GimpPaletteEntry
-modifier|*
-name|dnd_color
-decl_stmt|;
 DECL|member|zoom_factor
 name|gfloat
 name|zoom_factor
@@ -154,10 +149,6 @@ decl_stmt|;
 DECL|member|columns
 name|gint
 name|columns
-decl_stmt|;
-DECL|member|columns_valid
-name|gboolean
-name|columns_valid
 decl_stmt|;
 block|}
 struct|;
