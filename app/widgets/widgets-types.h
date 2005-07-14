@@ -961,6 +961,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpPaletteView
+typedef|typedef
+name|struct
+name|_GimpPaletteView
+name|GimpPaletteView
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpNavigationView
 typedef|typedef
 name|struct
