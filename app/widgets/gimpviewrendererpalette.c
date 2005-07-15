@@ -483,6 +483,10 @@ name|renderpal
 operator|->
 name|rows
 operator|=
+name|MAX
+argument_list|(
+literal|1
+argument_list|,
 name|palette
 operator|->
 name|n_colors
@@ -490,6 +494,7 @@ operator|/
 name|renderpal
 operator|->
 name|columns
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
