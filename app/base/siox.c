@@ -62,7 +62,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e94fd00108
+DECL|struct|__anon2c3103c00108
 block|{
 DECL|member|l
 name|float
@@ -2360,9 +2360,9 @@ argument_list|,
 name|length
 argument_list|,
 literal|0.1
+comment|/* magic constant, see paper by tomasi */
 argument_list|)
 expr_stmt|;
-comment|/* see paper by tomasi */
 name|rval
 operator|=
 name|list_to_array
