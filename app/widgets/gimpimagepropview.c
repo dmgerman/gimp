@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29cd75520103
+DECL|enum|__anon2c4a73670103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -693,6 +693,23 @@ argument_list|,
 name|_
 argument_list|(
 literal|"Size in memory:"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|view
+operator|->
+name|pixels_label
+operator|=
+name|gimp_image_prop_view_add_label
+argument_list|(
+name|table
+argument_list|,
+name|row
+operator|++
+argument_list|,
+name|_
+argument_list|(
+literal|"Number of pixels:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1454,6 +1471,39 @@ name|str
 argument_list|)
 expr_stmt|;
 block|}
+comment|/*  number of layers  */
+name|g_snprintf
+argument_list|(
+name|buf
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|buf
+argument_list|)
+argument_list|,
+literal|"%d"
+argument_list|,
+name|image
+operator|->
+name|width
+operator|*
+name|image
+operator|->
+name|height
+argument_list|)
+expr_stmt|;
+name|gtk_label_set_text
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|view
+operator|->
+name|pixels_label
+argument_list|)
+argument_list|,
+name|buf
+argument_list|)
+expr_stmt|;
 comment|/*  number of layers  */
 name|g_snprintf
 argument_list|(

@@ -133,6 +133,11 @@ name|GtkWidget
 modifier|*
 name|memsize_label
 decl_stmt|;
+DECL|member|pixels_label
+name|GtkWidget
+modifier|*
+name|pixels_label
+decl_stmt|;
 DECL|member|layers_label
 name|GtkWidget
 modifier|*
