@@ -62,7 +62,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3103c00108
+DECL|struct|__anon2b17c0b00108
 block|{
 DECL|member|l
 name|float
@@ -388,6 +388,10 @@ expr_stmt|;
 block|}
 block|}
 end_function
+
+begin_comment
+comment|/* FIXME: try to use cpersep conversion here, should be faster */
+end_comment
 
 begin_function
 specifier|static
@@ -1103,6 +1107,7 @@ operator|++
 expr_stmt|;
 block|}
 block|}
+comment|/* FIXME: consider to sort the array and split in place instead        *        of allocating memory here        */
 name|smallerpoints
 operator|=
 name|g_new
@@ -1634,6 +1639,7 @@ operator|++
 expr_stmt|;
 block|}
 block|}
+comment|/* FIXME: consider to sort the array and split in place instead        *        of allocating memory here        */
 name|smallerpoints
 operator|=
 name|g_new
@@ -3674,6 +3680,7 @@ argument_list|(
 name|pixels
 argument_list|)
 expr_stmt|;
+comment|/* FIXME: handle grayscale and indexed images */
 name|g_return_if_fail
 argument_list|(
 name|bpp
