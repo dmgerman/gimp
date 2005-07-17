@@ -116,7 +116,7 @@ decl_stmt|,
 modifier|*
 name|children
 decl_stmt|;
-name|gint
+name|guint
 name|nchildren
 decl_stmt|;
 do|do
