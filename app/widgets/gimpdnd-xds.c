@@ -263,6 +263,11 @@ literal|8
 argument_list|,
 name|GDK_PROP_MODE_REPLACE
 argument_list|,
+operator|(
+specifier|const
+name|guchar
+operator|*
+operator|)
 name|basename
 argument_list|,
 name|basename
@@ -523,6 +528,11 @@ name|target
 argument_list|,
 literal|8
 argument_list|,
+operator|(
+specifier|const
+name|guchar
+operator|*
+operator|)
 literal|"S"
 argument_list|,
 literal|1
@@ -541,6 +551,11 @@ name|target
 argument_list|,
 literal|8
 argument_list|,
+operator|(
+specifier|const
+name|guchar
+operator|*
+operator|)
 literal|"E"
 argument_list|,
 literal|1
@@ -605,6 +620,11 @@ name|target
 argument_list|,
 literal|8
 argument_list|,
+operator|(
+specifier|const
+name|guchar
+operator|*
+operator|)
 literal|"E"
 argument_list|,
 literal|1
