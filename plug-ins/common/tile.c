@@ -40,7 +40,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad6e5bd0108
+DECL|struct|__anon287d9aa60108
 block|{
 DECL|member|new_width
 name|gint
@@ -376,6 +376,9 @@ name|GIMP_PDB_SUCCESS
 decl_stmt|;
 name|gint32
 name|new_layer
+init|=
+operator|-
+literal|1
 decl_stmt|;
 name|gint
 name|width

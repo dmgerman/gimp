@@ -76,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cc3ae40108
+DECL|struct|__anon2b30bb590108
 block|{
 DECL|member|resolution
 name|gdouble
@@ -228,11 +228,11 @@ name|gchar
 modifier|*
 name|filename
 parameter_list|,
-name|gint
+name|guint
 modifier|*
 name|width
 parameter_list|,
-name|gint
+name|guint
 modifier|*
 name|height
 parameter_list|)
@@ -1124,10 +1124,10 @@ decl_stmt|;
 name|wmfD_Rect
 name|bbox
 decl_stmt|;
-name|gint
+name|guint
 name|width
 decl_stmt|;
-name|gint
+name|guint
 name|height
 decl_stmt|;
 name|gboolean
@@ -3760,10 +3760,10 @@ decl_stmt|;
 name|wmfAPI_Options
 name|api_options
 decl_stmt|;
-name|gint
+name|guint
 name|file_width
 decl_stmt|;
-name|gint
+name|guint
 name|file_height
 decl_stmt|;
 name|wmfD_Rect
@@ -4180,7 +4180,7 @@ begin_function
 specifier|static
 name|guchar
 modifier|*
-DECL|function|wmf_load_file (const gchar * filename,gint * width,gint * height)
+DECL|function|wmf_load_file (const gchar * filename,guint * width,guint * height)
 name|wmf_load_file
 parameter_list|(
 specifier|const
@@ -4188,11 +4188,11 @@ name|gchar
 modifier|*
 name|filename
 parameter_list|,
-name|gint
+name|guint
 modifier|*
 name|width
 parameter_list|,
-name|gint
+name|guint
 modifier|*
 name|height
 parameter_list|)
@@ -4558,7 +4558,7 @@ decl_stmt|,
 modifier|*
 name|buf
 decl_stmt|;
-name|gint
+name|guint
 name|width
 decl_stmt|,
 name|height

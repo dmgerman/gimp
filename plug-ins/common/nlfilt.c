@@ -40,7 +40,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296e02e20108
+DECL|struct|__anon2909d8670108
 block|{
 DECL|member|alpha
 name|gdouble
@@ -67,7 +67,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296e02e20203
+DECL|enum|__anon2909d8670203
 block|{
 DECL|enumerator|filter_alpha_trim
 name|filter_alpha_trim
@@ -5412,7 +5412,7 @@ name|y1
 decl_stmt|,
 name|y2
 decl_stmt|;
-name|guint
+name|gint
 name|width
 decl_stmt|,
 name|height

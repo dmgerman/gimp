@@ -422,6 +422,11 @@ literal|"file_pat_load"
 argument_list|,
 name|GIMP_ICON_TYPE_STOCK_ID
 argument_list|,
+operator|(
+specifier|const
+name|guchar
+operator|*
+operator|)
 name|GIMP_STOCK_PATTERN
 argument_list|)
 expr_stmt|;
@@ -485,6 +490,11 @@ literal|"file_pat_save"
 argument_list|,
 name|GIMP_ICON_TYPE_STOCK_ID
 argument_list|,
+operator|(
+specifier|const
+name|guchar
+operator|*
+operator|)
 name|GIMP_STOCK_PATTERN
 argument_list|)
 expr_stmt|;

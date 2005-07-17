@@ -84,7 +84,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a359d480108
+DECL|struct|__anon279595510108
 block|{
 DECL|member|resolution
 name|gdouble
@@ -1134,7 +1134,7 @@ name|GdkPixbuf
 modifier|*
 name|pixbuf
 decl_stmt|;
-name|gchar
+name|guchar
 modifier|*
 name|pixels
 decl_stmt|;
@@ -1817,7 +1817,7 @@ operator|!=
 name|G_IO_STATUS_EOF
 condition|)
 block|{
-name|guchar
+name|gchar
 name|buf
 index|[
 literal|8192
@@ -1880,6 +1880,11 @@ name|rsvg_handle_write
 argument_list|(
 name|handle
 argument_list|,
+operator|(
+specifier|const
+name|guchar
+operator|*
+operator|)
 name|buf
 argument_list|,
 name|len
@@ -2182,7 +2187,7 @@ operator|>
 literal|0.0
 condition|)
 block|{
-name|guchar
+name|gchar
 name|buf
 index|[
 literal|1024
@@ -2245,6 +2250,11 @@ name|rsvg_handle_write
 argument_list|(
 name|handle
 argument_list|,
+operator|(
+specifier|const
+name|guchar
+operator|*
+operator|)
 name|buf
 argument_list|,
 name|len
