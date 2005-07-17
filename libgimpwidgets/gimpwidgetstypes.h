@@ -334,6 +334,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpResolutionEntry
+typedef|typedef
+name|struct
+name|_GimpResolutionEntry
+name|GimpResolutionEntry
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpScrolledPreview
 typedef|typedef
 name|struct
