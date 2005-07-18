@@ -36,7 +36,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28eb2d070103
+DECL|enum|__anon2be4112c0103
 block|{
 DECL|enumerator|BLUR_IIR
 name|BLUR_IIR
@@ -52,7 +52,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28eb2d070208
+DECL|struct|__anon2be4112c0208
 block|{
 DECL|member|horizontal
 name|gdouble
@@ -3979,6 +3979,13 @@ break|break;
 case|case
 name|BLUR_RLE
 case|:
+if|if
+condition|(
+name|vert
+operator|>
+literal|0.0
+condition|)
+block|{
 name|g_free
 argument_list|(
 name|sum
@@ -3993,6 +4000,7 @@ operator|-
 name|length
 argument_list|)
 expr_stmt|;
+block|}
 name|curve
 operator|=
 name|make_curve
@@ -4943,6 +4951,17 @@ break|break;
 case|case
 name|BLUR_RLE
 case|:
+if|if
+condition|(
+name|horz
+operator|>
+literal|0.0
+operator|||
+name|vert
+operator|>
+literal|0.0
+condition|)
+block|{
 name|g_free
 argument_list|(
 name|sum
@@ -4957,6 +4976,7 @@ operator|-
 name|length
 argument_list|)
 expr_stmt|;
+block|}
 name|g_free
 argument_list|(
 name|buf
