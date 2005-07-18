@@ -55,12 +55,13 @@ name|GIMP_RESOLUTION_ENTRY_DIGITS
 parameter_list|(
 name|unit
 parameter_list|)
+define|\
 value|(MIN (gimp_unit_get_digits (unit), 5) + 1)
 end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1eb2d70103
+DECL|enum|__anon2b3c3ce50103
 block|{
 DECL|enumerator|WIDTH_CHANGED
 name|WIDTH_CHANGED
