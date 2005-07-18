@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  *  * pdf.c - PDF file loader  *   * Copyright (C) 2005 Nathan Summers  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  *  * poppler.c - PDF file loader  *  * Copyright (C) 2005 Nathan Summers  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -52,7 +52,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2b3f920108
+DECL|struct|__anon2aacfc110108
 block|{
 DECL|member|resolution
 name|gdouble
@@ -87,7 +87,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2b3f920208
+DECL|struct|__anon2aacfc110208
 block|{
 DECL|member|n_pages
 name|gint
@@ -574,10 +574,15 @@ name|GIMP_PDB_SUCCESS
 decl_stmt|;
 name|gint32
 name|image_ID
+init|=
+operator|-
+literal|1
 decl_stmt|;
 name|PopplerDocument
 modifier|*
 name|doc
+init|=
+name|NULL
 decl_stmt|;
 name|run_mode
 operator|=
@@ -2000,7 +2005,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2b3f920308
+DECL|struct|__anon2aacfc110308
 block|{
 DECL|member|document
 name|PopplerDocument
@@ -2025,7 +2030,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2b3f920408
+DECL|struct|__anon2aacfc110408
 block|{
 DECL|member|selector
 name|GimpPageSelector
@@ -2236,15 +2241,15 @@ name|selector
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|table
-decl_stmt|;
-name|GtkWidget
-modifier|*
 name|resolution
 decl_stmt|;
 name|GtkWidget
 modifier|*
 name|toggle
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|hbox
 decl_stmt|;
 name|ThreadData
 name|thread_data
@@ -2253,10 +2258,10 @@ name|GThread
 modifier|*
 name|thread
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
-name|int
+name|gint
 name|n_pages
 decl_stmt|;
 name|gdouble
@@ -2555,36 +2560,14 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/* table */
-name|table
+comment|/* Resolution */
+name|hbox
 operator|=
-name|gtk_table_new
+name|gtk_hbox_new
 argument_list|(
-literal|1
-argument_list|,
-literal|2
-argument_list|,
 name|FALSE
-argument_list|)
-expr_stmt|;
-name|gtk_table_set_row_spacings
-argument_list|(
-name|GTK_TABLE
-argument_list|(
-name|table
-argument_list|)
 argument_list|,
-literal|6
-argument_list|)
-expr_stmt|;
-name|gtk_table_set_col_spacings
-argument_list|(
-name|GTK_TABLE
-argument_list|(
-name|table
-argument_list|)
-argument_list|,
-literal|6
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2594,7 +2577,7 @@ argument_list|(
 name|vbox
 argument_list|)
 argument_list|,
-name|table
+name|hbox
 argument_list|,
 name|FALSE
 argument_list|,
@@ -2605,31 +2588,30 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|table
+name|hbox
 argument_list|)
 expr_stmt|;
-comment|/* Resolution */
 name|resolution
 operator|=
 name|gimp_resolution_entry_new
 argument_list|(
-literal|"_Width (pixels): "
+literal|"_Width (pixels):"
 argument_list|,
 name|width
 argument_list|,
-literal|"_Height (pixels): "
+literal|"_Height (pixels):"
 argument_list|,
 name|height
 argument_list|,
 name|GIMP_UNIT_POINT
 argument_list|,
-literal|"_Resolution: "
+literal|"_Resolution:"
 argument_list|,
 name|loadvals
 operator|.
 name|resolution
 argument_list|,
-literal|"_Resolution: "
+literal|"_Resolution:"
 argument_list|,
 name|loadvals
 operator|.
@@ -2646,7 +2628,7 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|vbox
+name|hbox
 argument_list|)
 argument_list|,
 name|resolution

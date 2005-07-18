@@ -60,7 +60,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27aab8370103
+DECL|enum|__anon2b1eb2d70103
 block|{
 DECL|enumerator|WIDTH_CHANGED
 name|WIDTH_CHANGED
@@ -244,6 +244,25 @@ name|gref
 parameter_list|,
 name|gdouble
 name|value
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_resolution_entry_format_label
+parameter_list|(
+name|GimpResolutionEntry
+modifier|*
+name|gre
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|label
+parameter_list|,
+name|gdouble
+name|size
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -616,6 +635,26 @@ name|independent
 operator|=
 name|FALSE
 expr_stmt|;
+name|gtk_table_set_col_spacings
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|gre
+argument_list|)
+argument_list|,
+literal|4
+argument_list|)
+expr_stmt|;
+name|gtk_table_set_row_spacings
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|gre
+argument_list|)
+argument_list|,
+literal|2
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -809,49 +848,53 @@ condition|(
 name|size
 condition|)
 block|{
-comment|/*         * warning: not correctly localizable in many gimp supported languages         * */
-name|gchar
-modifier|*
-name|text
-init|=
-name|g_strdup_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"%f %s"
-argument_list|)
-argument_list|,
-name|gref
-operator|->
-name|phy_size
-operator|*
-name|gimp_unit_get_factor
-argument_list|(
-name|gre
-operator|->
-name|unit
-argument_list|)
-argument_list|,
-name|gimp_unit_get_plural
-argument_list|(
-name|gre
-operator|->
-name|unit
-argument_list|)
-argument_list|)
-decl_stmt|;
 name|gref
 operator|->
 name|label
 operator|=
-name|gtk_label_new
+name|g_object_new
 argument_list|(
-name|text
+name|GTK_TYPE_LABEL
+argument_list|,
+literal|"xalign"
+argument_list|,
+literal|0.0
+argument_list|,
+literal|"yalign"
+argument_list|,
+literal|0.5
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
-name|g_free
+name|gimp_label_set_attributes
 argument_list|(
-name|text
+name|GTK_LABEL
+argument_list|(
+name|gref
+operator|->
+name|label
+argument_list|)
+argument_list|,
+name|PANGO_ATTR_STYLE
+argument_list|,
+name|PANGO_STYLE_ITALIC
+argument_list|,
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
+name|gimp_resolution_entry_format_label
+argument_list|(
+name|gre
+argument_list|,
+name|gref
+operator|->
+name|label
+argument_list|,
+name|gref
+operator|->
+name|phy_size
 argument_list|)
 expr_stmt|;
 block|}
@@ -943,7 +986,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_resolution_entry_new:  * @width_label:       Optional label for the width control.  * @width:             Width of the item, specified in terms of @size_unit.  * @width_label:       Optional label for the height control.  * @height:            Height of the item, specified in terms of @size_unit.  * @size_unit:         Unit used to specify the width and height.  * @x_label:           Optional label for the X resolution entry.  * @initial_x:         The initial X resolution.  * @x_label:           Optional label for the Y resolution entry.  Ignored if   *                     @independent is %FALSE.  * @initial_y:         The initial Y resolution.  Ignored if @independent is   *                     %FALSE.  * @initial_unit:      The initial unit.  * @independent:       Whether the X and Y resolutions can be different values.  * @spinbutton_width:  The minimal horizontal size of the #GtkSpinButton s.  *  * Creates a new #GimpResolutionEntry widget.  *  * The #GimpResolutionEntry is derived from #GtkTable and will have  * an empty border of one cell width on each side plus an empty column left  * of the #GimpUnitMenu to allow the caller to add labels or other widgets.  *   * A #GimpChainButton is displayed if independent is set to %TRUE.  *  * Returns: A pointer to the new #GimpResolutionEntry widget.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_resolution_entry_new:  * @width_label:       Optional label for the width control.  * @width:             Width of the item, specified in terms of @size_unit.  * @width_label:       Optional label for the height control.  * @height:            Height of the item, specified in terms of @size_unit.  * @size_unit:         Unit used to specify the width and height.  * @x_label:           Optional label for the X resolution entry.  * @initial_x:         The initial X resolution.  * @y_label:           Optional label for the Y resolution entry.  Ignored if  *                     @independent is %FALSE.  * @initial_y:         The initial Y resolution.  Ignored if @independent is  *                     %FALSE.  * @initial_unit:      The initial unit.  * @independent:       Whether the X and Y resolutions can be different values.  * @spinbutton_width:  The minimal horizontal size of the #GtkSpinButton s.  *  * Creates a new #GimpResolutionEntry widget.  *  * The #GimpResolutionEntry is derived from #GtkTable and will have  * an empty border of one cell width on each side plus an empty column left  * of the #GimpUnitMenu to allow the caller to add labels or other widgets.  *  * A #GimpChainButton is displayed if independent is set to %TRUE.  *  * Returns: A pointer to the new #GimpResolutionEntry widget.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -1564,7 +1607,7 @@ literal|1
 argument_list|,
 literal|0
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|)
 expr_stmt|;
 if|if
@@ -1581,7 +1624,7 @@ literal|2
 argument_list|,
 literal|0
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|)
 expr_stmt|;
 if|if
@@ -1598,7 +1641,7 @@ literal|3
 argument_list|,
 literal|0
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|)
 expr_stmt|;
 if|if
@@ -1617,7 +1660,7 @@ literal|4
 argument_list|,
 literal|0
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|)
 expr_stmt|;
 return|return
@@ -1726,10 +1769,6 @@ control|)
 block|{
 name|child
 operator|=
-operator|(
-name|GtkTableChild
-operator|*
-operator|)
 name|list
 operator|->
 name|data
@@ -1823,7 +1862,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_resolution_entry_set_width_value_boundaries:  * @gre:   The #GimpResolutionEntry you want to set value boundaries for.  * @lower: The new lower boundary of the value of the field in pixels.  * @upper: The new upper boundary of the value of the field in pixels.  *  * Limits the range of possible values which can be entered in the width field   * of the #GimpResolutionEntry.  *  * The current value of the field will be clamped to fit in its  * new boundaries.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_resolution_entry_set_width_value_boundaries:  * @gre:   The #GimpResolutionEntry you want to set value boundaries for.  * @lower: The new lower boundary of the value of the field in pixels.  * @upper: The new upper boundary of the value of the field in pixels.  *  * Limits the range of possible values which can be entered in the width field  * of the #GimpResolutionEntry.  *  * The current value of the field will be clamped to fit in its  * new boundaries.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -1866,7 +1905,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_resolution_entry_set_height_value_boundaries:  * @gre:   The #GimpResolutionEntry you want to set value boundaries for.  * @lower: The new lower boundary of the value of the field in pixels.  * @upper: The new upper boundary of the value of the field in pixels.  *  * Limits the range of possible values which can be entered in the height field   * of the #GimpResolutionEntry.  *  * The current value of the field will be clamped to fit in its  * new boundaries.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_resolution_entry_set_height_value_boundaries:  * @gre:   The #GimpResolutionEntry you want to set value boundaries for.  * @lower: The new lower boundary of the value of the field in pixels.  * @upper: The new upper boundary of the value of the field in pixels.  *  * Limits the range of possible values which can be entered in the height field  * of the #GimpResolutionEntry.  *  * The current value of the field will be clamped to fit in its  * new boundaries.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -1909,7 +1948,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_resolution_entry_set_x_boundaries:  * @gre:   The #GimpResolutionEntry you want to set value boundaries for.  * @lower: The new lower boundary of the value of the field, in the current unit.  * @upper: The new upper boundary of the value of the field, in the current unit.  *  * Limits the range of possible values which can be entered in the x field   * of the #GimpResolutionEntry.  *  * The current value of the field will be clamped to fit in its  * new boundaries.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_resolution_entry_set_x_boundaries:  * @gre:   The #GimpResolutionEntry you want to set value boundaries for.  * @lower: The new lower boundary of the value of the field, in the current unit.  * @upper: The new upper boundary of the value of the field, in the current unit.  *  * Limits the range of possible values which can be entered in the x field  * of the #GimpResolutionEntry.  *  * The current value of the field will be clamped to fit in its  * new boundaries.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -1952,7 +1991,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_resolution_entry_set_y_boundaries:  * @gre:   The #GimpResolutionEntry you want to set value boundaries for.  * @lower: The new lower boundary of the value of the field, in the current unit.  * @upper: The new upper boundary of the value of the field, in the current unit.  *  * Limits the range of possible values which can be entered in the y field   * of the #GimpResolutionEntry.  *  * The current value of the field will be clamped to fit in its  * new boundaries.  *  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_resolution_entry_set_y_boundaries:  * @gre:   The #GimpResolutionEntry you want to set value boundaries for.  * @lower: The new lower boundary of the value of the field, in the current unit.  * @upper: The new upper boundary of the value of the field, in the current unit.  *  * Limits the range of possible values which can be entered in the y field  * of the #GimpResolutionEntry.  *  * The current value of the field will be clamped to fit in its  * new boundaries.  *  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -2859,10 +2898,6 @@ decl_stmt|;
 name|gint
 name|digits
 decl_stmt|;
-name|gchar
-modifier|*
-name|label_text
-decl_stmt|;
 name|gdouble
 name|factor
 decl_stmt|;
@@ -3038,96 +3073,38 @@ name|value
 argument_list|)
 expr_stmt|;
 block|}
-name|factor
-operator|=
-name|gimp_unit_get_factor
+name|gimp_resolution_entry_format_label
 argument_list|(
-name|unit
-argument_list|)
-expr_stmt|;
-comment|/*     * warning: not correctly localizable in many gimp supported languages     */
-name|label_text
-operator|=
-name|g_strdup_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"%f %s"
-argument_list|)
+name|gre
+argument_list|,
+name|gre
+operator|->
+name|width
+operator|.
+name|label
 argument_list|,
 name|gre
 operator|->
 name|width
 operator|.
 name|phy_size
-operator|*
-name|factor
-argument_list|,
-name|gimp_unit_get_plural
-argument_list|(
-name|unit
-argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_label_set_text
-argument_list|(
-name|GTK_LABEL
+name|gimp_resolution_entry_format_label
 argument_list|(
 name|gre
+argument_list|,
+name|gre
 operator|->
-name|width
+name|height
 operator|.
 name|label
-argument_list|)
-argument_list|,
-name|label_text
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|label_text
-argument_list|)
-expr_stmt|;
-name|label_text
-operator|=
-name|g_strdup_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"%f %s"
-argument_list|)
 argument_list|,
 name|gre
 operator|->
 name|height
 operator|.
 name|phy_size
-operator|*
-name|factor
-argument_list|,
-name|gimp_unit_get_plural
-argument_list|(
-name|unit
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_label_set_text
-argument_list|(
-name|GTK_LABEL
-argument_list|(
-name|gre
-operator|->
-name|height
-operator|.
-name|label
-argument_list|)
-argument_list|,
-name|label_text
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|label_text
 argument_list|)
 expr_stmt|;
 name|g_signal_emit
@@ -3631,7 +3608,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_resolution_entry_update_width:  * @gre: the #GimpResolutionEntry  * @data: a pointer to a gdouble  *   * Convenience function to set a double to the width, suitable  * for use as a signal callback.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_resolution_entry_update_width:  * @gre: the #GimpResolutionEntry  * @data: a pointer to a gdouble  *  * Convenience function to set a double to the width, suitable  * for use as a signal callback.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
@@ -3693,7 +3670,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_resolution_entry_update_height:  * @gre: the #GimpResolutionEntry  * @data: a pointer to a gdouble  *   * Convenience function to set a double to the height, suitable  * for use as a signal callback.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_resolution_entry_update_height:  * @gre: the #GimpResolutionEntry  * @data: a pointer to a gdouble  *  * Convenience function to set a double to the height, suitable  * for use as a signal callback.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
@@ -3755,7 +3732,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_resolution_entry_update_x:  * @gre: the #GimpResolutionEntry  * @data: a pointer to a gdouble  *   * Convenience function to set a double to the X resolution, suitable  * for use as a signal callback.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_resolution_entry_update_x:  * @gre: the #GimpResolutionEntry  * @data: a pointer to a gdouble  *  * Convenience function to set a double to the X resolution, suitable  * for use as a signal callback.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
@@ -3817,7 +3794,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_resolution_entry_update_x_in_dpi:  * @gre: the #GimpResolutionEntry  * @data: a pointer to a gdouble  *   * Convenience function to set a double to the X resolution, suitable  * for use as a signal callback.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_resolution_entry_update_x_in_dpi:  * @gre: the #GimpResolutionEntry  * @data: a pointer to a gdouble  *  * Convenience function to set a double to the X resolution, suitable  * for use as a signal callback.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
@@ -3879,7 +3856,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_resolution_entry_update_y:  * @gre: the #GimpResolutionEntry  * @data: a pointer to a gdouble  *   * Convenience function to set a double to the Y resolution, suitable  * for use as a signal callback.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_resolution_entry_update_y:  * @gre: the #GimpResolutionEntry  * @data: a pointer to a gdouble  *  * Convenience function to set a double to the Y resolution, suitable  * for use as a signal callback.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
@@ -3941,7 +3918,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_resolution_entry_update_y_in_dpi:  * @gre: the #GimpResolutionEntry  * @data: a pointer to a gdouble  *   * Convenience function to set a double to the Y resolution, suitable  * for use as a signal callback.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_resolution_entry_update_y_in_dpi:  * @gre: the #GimpResolutionEntry  * @data: a pointer to a gdouble  *  * Convenience function to set a double to the Y resolution, suitable  * for use as a signal callback.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
@@ -3997,6 +3974,88 @@ operator|=
 name|gimp_resolution_entry_get_y_in_dpi
 argument_list|(
 name|gre
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_resolution_entry_format_label (GimpResolutionEntry * gre,GtkWidget * label,gdouble size)
+name|gimp_resolution_entry_format_label
+parameter_list|(
+name|GimpResolutionEntry
+modifier|*
+name|gre
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|label
+parameter_list|,
+name|gdouble
+name|size
+parameter_list|)
+block|{
+name|gchar
+modifier|*
+name|format
+init|=
+name|g_strdup_printf
+argument_list|(
+literal|"%%.%df %%s"
+argument_list|,
+name|gimp_unit_get_digits
+argument_list|(
+name|gre
+operator|->
+name|unit
+argument_list|)
+argument_list|)
+decl_stmt|;
+name|gchar
+modifier|*
+name|text
+init|=
+name|g_strdup_printf
+argument_list|(
+name|format
+argument_list|,
+name|size
+operator|*
+name|gimp_unit_get_factor
+argument_list|(
+name|gre
+operator|->
+name|unit
+argument_list|)
+argument_list|,
+name|gimp_unit_get_plural
+argument_list|(
+name|gre
+operator|->
+name|unit
+argument_list|)
+argument_list|)
+decl_stmt|;
+name|g_free
+argument_list|(
+name|format
+argument_list|)
+expr_stmt|;
+name|gtk_label_set_text
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
+name|text
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|text
 argument_list|)
 expr_stmt|;
 block|}
