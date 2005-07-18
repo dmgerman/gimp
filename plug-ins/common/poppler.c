@@ -18,12 +18,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimp.h>
 end_include
 
@@ -52,7 +46,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aacfc110108
+DECL|struct|__anon28dbde130108
 block|{
 DECL|member|resolution
 name|gdouble
@@ -87,7 +81,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aacfc110208
+DECL|struct|__anon28dbde130208
 block|{
 DECL|member|n_pages
 name|gint
@@ -1196,9 +1190,9 @@ condition|(
 name|err
 condition|)
 block|{
-name|g_message
+name|g_warning
 argument_list|(
-literal|"Could not convert '%s' to a URI: %s"
+literal|"Could not convert '%s' to an URI: %s"
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
@@ -1238,7 +1232,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Could not open '%s' for reading: %s"
+argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
@@ -2005,7 +2002,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aacfc110308
+DECL|struct|__anon28dbde130308
 block|{
 DECL|member|document
 name|PopplerDocument
@@ -2030,7 +2027,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aacfc110408
+DECL|struct|__anon28dbde130408
 block|{
 DECL|member|selector
 name|GimpPageSelector
@@ -2284,7 +2281,10 @@ name|dialog
 operator|=
 name|gimp_dialog_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Load PDF"
+argument_list|)
 argument_list|,
 literal|"pdf"
 argument_list|,
@@ -2595,23 +2595,35 @@ name|resolution
 operator|=
 name|gimp_resolution_entry_new
 argument_list|(
+name|_
+argument_list|(
 literal|"_Width (pixels):"
+argument_list|)
 argument_list|,
 name|width
 argument_list|,
+name|_
+argument_list|(
 literal|"_Height (pixels):"
+argument_list|)
 argument_list|,
 name|height
 argument_list|,
 name|GIMP_UNIT_POINT
 argument_list|,
+name|_
+argument_list|(
 literal|"_Resolution:"
+argument_list|)
 argument_list|,
 name|loadvals
 operator|.
 name|resolution
 argument_list|,
+name|_
+argument_list|(
 literal|"_Resolution:"
+argument_list|)
 argument_list|,
 name|loadvals
 operator|.
@@ -2667,7 +2679,10 @@ name|toggle
 operator|=
 name|gtk_check_button_new_with_mnemonic
 argument_list|(
+name|_
+argument_list|(
 literal|"A_ntialiasing"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_active
