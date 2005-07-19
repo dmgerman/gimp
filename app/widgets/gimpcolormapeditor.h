@@ -111,10 +111,10 @@ DECL|member|dnd_col_index
 name|gint
 name|dnd_col_index
 decl_stmt|;
-DECL|member|palette
+DECL|member|preview
 name|GtkWidget
 modifier|*
-name|palette
+name|preview
 decl_stmt|;
 DECL|member|xn
 name|gint
