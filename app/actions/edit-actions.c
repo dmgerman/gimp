@@ -491,7 +491,7 @@ argument_list|(
 literal|"Cl_ear"
 argument_list|)
 block|,
-literal|"<control>K"
+literal|"Delete"
 block|,
 name|NULL
 block|,
