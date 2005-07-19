@@ -51,29 +51,6 @@ directive|include
 file|"widgets-types.h"
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__GNUC__
-end_ifdef
-
-begin_warning
-warning|#
-directive|warning
-warning|FIXME #include "display/display-types.h"
-end_warning
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_include
-include|#
-directive|include
-file|"display/display-types.h"
-end_include
-
 begin_include
 include|#
 directive|include
@@ -95,7 +72,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpdisplayshell-render.h"
+file|"gimprender.h"
 end_include
 
 begin_include
@@ -118,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon291343880103
+DECL|enum|__anon2be2b2700103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -3801,7 +3778,7 @@ name|GIMP_VIEW_BG_CHECKS
 condition|)
 name|pad_buf
 operator|=
-name|render_check_buf
+name|gimp_render_check_buf
 expr_stmt|;
 elseif|else
 if|if
@@ -3812,12 +3789,12 @@ name|GIMP_VIEW_BG_WHITE
 condition|)
 name|pad_buf
 operator|=
-name|render_white_buf
+name|gimp_render_white_buf
 expr_stmt|;
 else|else
 name|pad_buf
 operator|=
-name|render_empty_buf
+name|gimp_render_empty_buf
 expr_stmt|;
 if|if
 condition|(
@@ -4060,7 +4037,7 @@ condition|;
 name|b
 operator|++
 control|)
-name|render_temp_buf
+name|gimp_render_temp_buf
 index|[
 name|j
 operator|*
@@ -4131,7 +4108,7 @@ operator|&
 literal|0x4
 condition|)
 block|{
-name|render_temp_buf
+name|gimp_render_temp_buf
 index|[
 name|j
 operator|*
@@ -4140,7 +4117,7 @@ operator|+
 literal|0
 index|]
 operator|=
-name|render_blend_dark_check
+name|gimp_render_blend_dark_check
 index|[
 operator|(
 name|a
@@ -4152,7 +4129,7 @@ index|]
 operator|)
 index|]
 expr_stmt|;
-name|render_temp_buf
+name|gimp_render_temp_buf
 index|[
 name|j
 operator|*
@@ -4161,7 +4138,7 @@ operator|+
 literal|1
 index|]
 operator|=
-name|render_blend_dark_check
+name|gimp_render_blend_dark_check
 index|[
 operator|(
 name|a
@@ -4173,7 +4150,7 @@ index|]
 operator|)
 index|]
 expr_stmt|;
-name|render_temp_buf
+name|gimp_render_temp_buf
 index|[
 name|j
 operator|*
@@ -4182,7 +4159,7 @@ operator|+
 literal|2
 index|]
 operator|=
-name|render_blend_dark_check
+name|gimp_render_blend_dark_check
 index|[
 operator|(
 name|a
@@ -4197,7 +4174,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|render_temp_buf
+name|gimp_render_temp_buf
 index|[
 name|j
 operator|*
@@ -4206,7 +4183,7 @@ operator|+
 literal|0
 index|]
 operator|=
-name|render_blend_light_check
+name|gimp_render_blend_light_check
 index|[
 operator|(
 name|a
@@ -4218,7 +4195,7 @@ index|]
 operator|)
 index|]
 expr_stmt|;
-name|render_temp_buf
+name|gimp_render_temp_buf
 index|[
 name|j
 operator|*
@@ -4227,7 +4204,7 @@ operator|+
 literal|1
 index|]
 operator|=
-name|render_blend_light_check
+name|gimp_render_blend_light_check
 index|[
 operator|(
 name|a
@@ -4239,7 +4216,7 @@ index|]
 operator|)
 index|]
 expr_stmt|;
-name|render_temp_buf
+name|gimp_render_temp_buf
 index|[
 name|j
 operator|*
@@ -4248,7 +4225,7 @@ operator|+
 literal|2
 index|]
 operator|=
-name|render_blend_light_check
+name|gimp_render_blend_light_check
 index|[
 operator|(
 name|a
@@ -4265,7 +4242,7 @@ block|}
 else|else
 comment|/* GIMP_VIEW_BG_WHITE */
 block|{
-name|render_temp_buf
+name|gimp_render_temp_buf
 index|[
 name|j
 operator|*
@@ -4274,7 +4251,7 @@ operator|+
 literal|0
 index|]
 operator|=
-name|render_blend_white
+name|gimp_render_blend_white
 index|[
 operator|(
 name|a
@@ -4286,7 +4263,7 @@ index|]
 operator|)
 index|]
 expr_stmt|;
-name|render_temp_buf
+name|gimp_render_temp_buf
 index|[
 name|j
 operator|*
@@ -4295,7 +4272,7 @@ operator|+
 literal|1
 index|]
 operator|=
-name|render_blend_white
+name|gimp_render_blend_white
 index|[
 operator|(
 name|a
@@ -4307,7 +4284,7 @@ index|]
 operator|)
 index|]
 expr_stmt|;
-name|render_temp_buf
+name|gimp_render_temp_buf
 index|[
 name|j
 operator|*
@@ -4316,7 +4293,7 @@ operator|+
 literal|2
 index|]
 operator|=
-name|render_blend_white
+name|gimp_render_blend_white
 index|[
 operator|(
 name|a
@@ -4332,7 +4309,7 @@ block|}
 block|}
 else|else
 block|{
-name|render_temp_buf
+name|gimp_render_temp_buf
 index|[
 name|j
 operator|*
@@ -4346,7 +4323,7 @@ index|[
 name|red_component
 index|]
 expr_stmt|;
-name|render_temp_buf
+name|gimp_render_temp_buf
 index|[
 name|j
 operator|*
@@ -4360,7 +4337,7 @@ index|[
 name|green_component
 index|]
 expr_stmt|;
-name|render_temp_buf
+name|gimp_render_temp_buf
 index|[
 name|j
 operator|*
@@ -4409,7 +4386,7 @@ condition|;
 name|b
 operator|++
 control|)
-name|render_temp_buf
+name|gimp_render_temp_buf
 index|[
 name|j
 operator|*
@@ -4460,7 +4437,7 @@ condition|;
 name|b
 operator|++
 control|)
-name|render_temp_buf
+name|gimp_render_temp_buf
 index|[
 name|j
 operator|*
@@ -4487,7 +4464,7 @@ name|i
 operator|*
 name|dest_rowstride
 argument_list|,
-name|render_temp_buf
+name|gimp_render_temp_buf
 argument_list|,
 name|dest_width
 operator|*

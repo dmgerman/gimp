@@ -86,29 +86,6 @@ directive|include
 file|"widgets-types.h"
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__GNUC__
-end_ifdef
-
-begin_warning
-warning|#
-directive|warning
-warning|FIXME #include "display/display-types.h"
-end_warning
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_include
-include|#
-directive|include
-file|"display/display-types.h"
-end_include
-
 begin_include
 include|#
 directive|include
@@ -148,12 +125,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpdisplayshell-render.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpcolormapeditor.h"
 end_include
 
@@ -161,6 +132,12 @@ begin_include
 include|#
 directive|include
 file|"gimpdnd.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimprender.h"
 end_include
 
 begin_include
@@ -187,7 +164,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4a88740103
+DECL|enum|__anon2886509d0103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -2069,12 +2046,12 @@ operator|&
 literal|0x4
 operator|)
 condition|?
-name|render_blend_light_check
+name|gimp_render_blend_light_check
 index|[
 literal|0
 index|]
 else|:
-name|render_blend_dark_check
+name|gimp_render_blend_dark_check
 index|[
 literal|0
 index|]
@@ -2910,12 +2887,12 @@ operator|&
 literal|0x4
 operator|)
 condition|?
-name|render_blend_dark_check
+name|gimp_render_blend_dark_check
 index|[
 literal|0
 index|]
 else|:
-name|render_blend_light_check
+name|gimp_render_blend_light_check
 index|[
 literal|0
 index|]
@@ -3059,12 +3036,12 @@ operator|&
 literal|0x4
 operator|)
 condition|?
-name|render_blend_dark_check
+name|gimp_render_blend_dark_check
 index|[
 literal|0
 index|]
 else|:
-name|render_blend_light_check
+name|gimp_render_blend_light_check
 index|[
 literal|0
 index|]

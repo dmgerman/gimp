@@ -39,29 +39,6 @@ directive|include
 file|"widgets-types.h"
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__GNUC__
-end_ifdef
-
-begin_warning
-warning|#
-directive|warning
-warning|FIXME #include "display/display-types.h"
-end_warning
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_include
-include|#
-directive|include
-file|"display/display-types.h"
-end_include
-
 begin_include
 include|#
 directive|include
@@ -71,7 +48,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpdisplayshell-render.h"
+file|"gimprender.h"
 end_include
 
 begin_include
@@ -660,7 +637,7 @@ operator|*
 name|even
 operator|++
 operator|=
-name|render_blend_dark_check
+name|gimp_render_blend_dark_check
 index|[
 operator|(
 name|a
@@ -675,7 +652,7 @@ operator|*
 name|even
 operator|++
 operator|=
-name|render_blend_dark_check
+name|gimp_render_blend_dark_check
 index|[
 operator|(
 name|a
@@ -690,7 +667,7 @@ operator|*
 name|even
 operator|++
 operator|=
-name|render_blend_dark_check
+name|gimp_render_blend_dark_check
 index|[
 operator|(
 name|a
@@ -705,7 +682,7 @@ operator|*
 name|odd
 operator|++
 operator|=
-name|render_blend_light_check
+name|gimp_render_blend_light_check
 index|[
 operator|(
 name|a
@@ -720,7 +697,7 @@ operator|*
 name|odd
 operator|++
 operator|=
-name|render_blend_light_check
+name|gimp_render_blend_light_check
 index|[
 operator|(
 name|a
@@ -735,7 +712,7 @@ operator|*
 name|odd
 operator|++
 operator|=
-name|render_blend_light_check
+name|gimp_render_blend_light_check
 index|[
 operator|(
 name|a
@@ -753,7 +730,7 @@ operator|*
 name|even
 operator|++
 operator|=
-name|render_blend_light_check
+name|gimp_render_blend_light_check
 index|[
 operator|(
 name|a
@@ -768,7 +745,7 @@ operator|*
 name|even
 operator|++
 operator|=
-name|render_blend_light_check
+name|gimp_render_blend_light_check
 index|[
 operator|(
 name|a
@@ -783,7 +760,7 @@ operator|*
 name|even
 operator|++
 operator|=
-name|render_blend_light_check
+name|gimp_render_blend_light_check
 index|[
 operator|(
 name|a
@@ -798,7 +775,7 @@ operator|*
 name|odd
 operator|++
 operator|=
-name|render_blend_dark_check
+name|gimp_render_blend_dark_check
 index|[
 operator|(
 name|a
@@ -813,7 +790,7 @@ operator|*
 name|odd
 operator|++
 operator|=
-name|render_blend_dark_check
+name|gimp_render_blend_dark_check
 index|[
 operator|(
 name|a
@@ -828,7 +805,7 @@ operator|*
 name|odd
 operator|++
 operator|=
-name|render_blend_dark_check
+name|gimp_render_blend_dark_check
 index|[
 operator|(
 name|a

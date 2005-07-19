@@ -114,6 +114,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimprender.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimphelp-ids.h"
 end_include
 
@@ -216,12 +222,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdisplayshell-render.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdisplayshell-scale.h"
 end_include
 
@@ -257,7 +257,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b70a5b0103
+DECL|enum|__anon2c0443450103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -273,7 +273,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b70a5b0203
+DECL|enum|__anon2c0443450203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1078,9 +1078,9 @@ name|render_buf
 operator|=
 name|g_malloc
 argument_list|(
-name|GIMP_DISPLAY_SHELL_RENDER_BUF_WIDTH
+name|GIMP_RENDER_BUF_WIDTH
 operator|*
-name|GIMP_DISPLAY_SHELL_RENDER_BUF_HEIGHT
+name|GIMP_RENDER_BUF_HEIGHT
 operator|*
 literal|3
 argument_list|)

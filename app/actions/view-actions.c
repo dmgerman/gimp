@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimprender.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimphelp-ids.h"
 end_include
 
@@ -97,12 +103,6 @@ begin_include
 include|#
 directive|include
 file|"display/gimpdisplayshell-appearance.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"display/gimpdisplayshell-render.h"
 end_include
 
 begin_include
@@ -2606,17 +2606,17 @@ argument_list|(
 operator|&
 name|color
 argument_list|,
-name|render_blend_light_check
+name|gimp_render_blend_light_check
 index|[
 literal|0
 index|]
 argument_list|,
-name|render_blend_light_check
+name|gimp_render_blend_light_check
 index|[
 literal|1
 index|]
 argument_list|,
-name|render_blend_light_check
+name|gimp_render_blend_light_check
 index|[
 literal|2
 index|]
@@ -2641,17 +2641,17 @@ argument_list|(
 operator|&
 name|color
 argument_list|,
-name|render_blend_dark_check
+name|gimp_render_blend_dark_check
 index|[
 literal|0
 index|]
 argument_list|,
-name|render_blend_dark_check
+name|gimp_render_blend_dark_check
 index|[
 literal|1
 index|]
 argument_list|,
-name|render_blend_dark_check
+name|gimp_render_blend_dark_check
 index|[
 literal|2
 index|]

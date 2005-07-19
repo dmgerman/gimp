@@ -162,6 +162,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimprender.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimphelp.h"
 end_include
 
@@ -1528,7 +1534,12 @@ argument_list|,
 name|global_action_factory
 argument_list|)
 expr_stmt|;
-name|render_init
+name|gimp_render_init
+argument_list|(
+name|gimp
+argument_list|)
+expr_stmt|;
+name|gimp_display_shell_render_init
 argument_list|(
 name|gimp
 argument_list|)
@@ -1945,7 +1956,12 @@ argument_list|(
 name|gimp
 argument_list|)
 expr_stmt|;
-name|render_exit
+name|gimp_display_shell_render_exit
+argument_list|(
+name|gimp
+argument_list|)
+expr_stmt|;
+name|gimp_render_exit
 argument_list|(
 name|gimp
 argument_list|)
