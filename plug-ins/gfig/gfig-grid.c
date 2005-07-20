@@ -114,6 +114,8 @@ specifier|static
 name|GdkGC
 modifier|*
 name|grid_hightlight_drawgc
+init|=
+name|NULL
 decl_stmt|;
 end_decl_stmt
 
@@ -201,7 +203,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf718c50108
+DECL|struct|__anon2ad0dab00108
 block|{
 DECL|member|product
 name|gint
@@ -230,9 +232,9 @@ typedef|;
 end_typedef
 
 begin_decl_stmt
-specifier|static
-name|char
 DECL|variable|primes
+specifier|static
+name|gchar
 name|primes
 index|[]
 init|=
@@ -478,16 +480,11 @@ name|PrimeFactors
 modifier|*
 name|this
 init|=
-operator|(
-name|PrimeFactors
-operator|*
-operator|)
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|PrimeFactors
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 decl_stmt|;
 name|this
@@ -518,7 +515,7 @@ modifier|*
 name|this
 parameter_list|)
 block|{
-name|free
+name|g_free
 argument_list|(
 name|this
 argument_list|)
@@ -584,6 +581,7 @@ name|inner_radius
 operator|*
 name|sector_size
 operator|>
+operator|(
 name|prime_factors_lookahead
 argument_list|(
 name|factors
@@ -594,6 +592,7 @@ operator|.
 name|opts
 operator|.
 name|grid_granularity
+operator|)
 operator|)
 condition|)
 block|{
@@ -686,13 +685,15 @@ name|r
 init|=
 name|sqrt
 argument_list|(
+name|SQR
+argument_list|(
 name|px
-operator|*
-name|px
+argument_list|)
 operator|+
+name|SQR
+argument_list|(
 name|py
-operator|*
-name|py
+argument_list|)
 argument_list|)
 decl_stmt|;
 if|if
@@ -705,9 +706,15 @@ name|opts
 operator|.
 name|grid_radius_min
 operator|*
-literal|.5
+literal|0.5
 condition|)
 block|{
+name|gdouble
+name|t
+decl_stmt|;
+name|gdouble
+name|sectorSize
+decl_stmt|;
 name|r
 operator|=
 name|selvals
@@ -747,9 +754,8 @@ name|opts
 operator|.
 name|grid_radius_min
 expr_stmt|;
-name|gdouble
 name|t
-init|=
+operator|=
 name|atan2
 argument_list|(
 name|py
@@ -760,15 +766,14 @@ operator|+
 literal|2
 operator|*
 name|G_PI
-decl_stmt|;
-name|gdouble
+expr_stmt|;
 name|sectorSize
-init|=
+operator|=
 name|sector_size_at_radius
 argument_list|(
 name|r
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|t
 operator|=
 name|selvals
@@ -1254,7 +1259,7 @@ operator|==
 name|ISO_GRID
 condition|)
 block|{
-comment|/*        * This really needs a picture to show the math...        *        * Consider an isometric grid with one of the sets of lines parallel to the        * y axis (vertical alignment). Further define that the origin of a Cartesian        * grid is at a isometric vertex.  For simplicity consider the first quadrant only.        *        *  - Let one line segment between vertices be r        *  - Define the value of r as the grid spacing        *  - Assign an integer n identifier to each vertical grid line along the x axis.        *    with n=0 being the y axis. n can be any integer        *  - Let m to be any integer        *  - Let h be the spacing between vertical grid lines measured along the x axis.        *    It follows from the isometric grid that h has a value of r * COS(1/6 Pi Rad)        *        *  Consider a Vertex V at the Cartesian location [Xv, Yv]        *        *   It follows that vertices belong to the set...        *   V[Xv, Yv] = [ [ n * h ] ,        *                 [ m * r + ( 0.5 * r (n % 2) ) ] ]        *   for all integers n and m        *        * Who cares? Me. It's useful in solving this problem:        * Consider an arbitrary point P[Xp,Yp], find the closest vertex in the set V.        *        * Restated this problem is "find values for m and n that are drive V closest to P"        *        * A Solution method (there may be a better one?):        *        * Step 1) bound n to the two closest values for Xp        *         n_lo = (int) (Xp / h)        *         n_hi = n_lo + 1        *        * Step 2) Consider the two closes vertices for each n_lo and n_hi. The further of        *         the vertices in each pair can readily be discarded.        *         m_lo_n_lo = (int) ( (Yp / r) - 0.5 (n_lo % 2) )        *         m_hi_n_lo = m_lo_n_lo + 1        *        *         m_lo_n_hi = (int) ( (Yp / r) - 0.5 (n_hi % 2) )        *         m_hi_n_hi = m_hi_n_hi        *        * Step 3) compute the distance from P to V1 and V2. Snap to the closer point.        */
+comment|/*        * This really needs a picture to show the math...        *        * Consider an isometric grid with one of the sets of lines        * parallel to the y axis (vertical alignment). Further define        * that the origin of a Cartesian grid is at a isometric vertex.        * For simplicity consider the first quadrant only.        *        *  - Let one line segment between vertices be r        *  - Define the value of r as the grid spacing        *  - Assign an integer n identifier to each vertical grid line        *    along the x axis.  with n=0 being the y axis. n can be any        *    integer        *  - Let m to be any integer         *  - Let h be the spacing between vertical grid lines measured        *    along the x axis.  It follows from the isometric grid that        *    h has a value of r * COS(1/6 Pi Rad)        *        *  Consider a Vertex V at the Cartesian location [Xv, Yv]        *        *   It follows that vertices belong to the set...        *   V[Xv, Yv] = [ [ n * h ] ,        *                 [ m * r + ( 0.5 * r (n % 2) ) ] ]        *   for all integers n and m        *        * Who cares? Me. It's useful in solving this problem:        * Consider an arbitrary point P[Xp,Yp], find the closest vertex        * in the set V.        *        * Restated this problem is "find values for m and n that are        * drive V closest to P"        *        * A Solution method (there may be a better one?):        *        * Step 1) bound n to the two closest values for Xp        *         n_lo = (int) (Xp / h)        *         n_hi = n_lo + 1        *        * Step 2) Consider the two closes vertices for each n_lo and        *         n_hi. The further of the vertices in each pair can        *         readily be discarded.        *        *         m_lo_n_lo = (int) ( (Yp / r) - 0.5 (n_lo % 2) )        *         m_hi_n_lo = m_lo_n_lo + 1        *        *         m_lo_n_hi = (int) ( (Yp / r) - 0.5 (n_hi % 2) )        *         m_hi_n_hi = m_hi_n_hi        *        * Step 3) compute the distance from P to V1 and V2. Snap to the        *         closer point.        */
 name|gint
 name|n_lo
 decl_stmt|;
@@ -1506,7 +1511,7 @@ operator|=
 name|m_hi_n_hi
 expr_stmt|;
 block|}
-comment|/* Now, which is closer to [x,y]? we can use a somewhat abbreviated form of the        * distance formula since we only care about relative values. */
+comment|/* Now, which is closer to [x,y]? we can use a somewhat        * abbreviated form of the distance formula since we only care        * about relative values.        */
 name|x1
 operator|=
 call|(
@@ -1684,13 +1689,15 @@ name|max_radius
 init|=
 name|sqrt
 argument_list|(
+name|SQR
+argument_list|(
 name|preview_width
-operator|*
-name|preview_width
+argument_list|)
 operator|+
+name|SQR
+argument_list|(
 name|preview_height
-operator|*
-name|preview_height
+argument_list|)
 argument_list|)
 decl_stmt|;
 name|gint
