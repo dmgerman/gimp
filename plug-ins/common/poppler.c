@@ -46,7 +46,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dbde130108
+DECL|struct|__anon2772d6e20108
 block|{
 DECL|member|resolution
 name|gdouble
@@ -81,7 +81,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dbde130208
+DECL|struct|__anon2772d6e20208
 block|{
 DECL|member|n_pages
 name|gint
@@ -746,6 +746,7 @@ name|status
 operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
+block|{
 name|image_ID
 operator|=
 name|load_image
@@ -770,15 +771,6 @@ operator|.
 name|antialias
 argument_list|,
 name|pages
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|doc
-condition|)
-name|g_object_unref
-argument_list|(
-name|doc
 argument_list|)
 expr_stmt|;
 if|if
@@ -822,6 +814,16 @@ operator|=
 name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
+block|}
+if|if
+condition|(
+name|doc
+condition|)
+name|g_object_unref
+argument_list|(
+name|doc
+argument_list|)
+expr_stmt|;
 name|g_free
 argument_list|(
 name|pages
@@ -2002,7 +2004,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dbde130308
+DECL|struct|__anon2772d6e20308
 block|{
 DECL|member|document
 name|PopplerDocument
@@ -2027,7 +2029,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dbde130408
+DECL|struct|__anon2772d6e20408
 block|{
 DECL|member|selector
 name|GimpPageSelector
