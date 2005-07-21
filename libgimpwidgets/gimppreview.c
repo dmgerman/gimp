@@ -57,7 +57,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon288abdff0103
+DECL|enum|__anon27e8c3820103
 block|{
 DECL|enumerator|INVALIDATED
 name|INVALIDATED
@@ -70,7 +70,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon288abdff0203
+DECL|enum|__anon27e8c3820203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2158,6 +2158,39 @@ name|preview
 operator|->
 name|ymin
 expr_stmt|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_preview_get_area:  * @preview: a #GimpPreview widget  *  * In most cases, you shouldn't need to access the #GimpPreviewArea  * that is being used in the @preview. Sometimes however, you need to.  * For example if you want to receive mouse events from the area. In  * such cases, use gimp_preview_get_area().  *  * Return value: a pointer to the #GimpPreviewArea used in the @preview.  *  * Since: GIMP 2.4  **/
+end_comment
+
+begin_function
+name|GtkWidget
+modifier|*
+DECL|function|gimp_preview_get_area (GimpPreview * preview)
+name|gimp_preview_get_area
+parameter_list|(
+name|GimpPreview
+modifier|*
+name|preview
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_PREVIEW
+argument_list|(
+name|preview
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+return|return
+name|preview
+operator|->
+name|area
+return|;
 block|}
 end_function
 
