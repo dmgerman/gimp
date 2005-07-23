@@ -3126,6 +3126,24 @@ condition|)
 return|return
 name|NULL
 return|;
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|name
+argument_list|,
+literal|"Global Buffer"
+argument_list|)
+operator|==
+literal|0
+condition|)
+name|buffer
+operator|=
+name|gimp
+operator|->
+name|global_buffer
+expr_stmt|;
+else|else
 name|buffer
 operator|=
 operator|(
