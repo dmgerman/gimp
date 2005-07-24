@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c54554f0103
+DECL|enum|__anon2b435c140103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1370,6 +1370,10 @@ argument_list|,
 literal|"gimp-dialog-help-button"
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|button
+condition|)
 name|gtk_widget_hide
 argument_list|(
 name|button
@@ -1413,7 +1417,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c54554f0208
+DECL|struct|__anon2b435c140208
 block|{
 DECL|member|dialog
 name|GtkDialog
