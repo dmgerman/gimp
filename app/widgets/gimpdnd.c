@@ -841,7 +841,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_dnd_get_data_data
+name|gimp_dnd_get_object_data
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -852,10 +852,10 @@ modifier|*
 name|context
 parameter_list|,
 name|GCallback
-name|get_data_func
+name|get_object_func
 parameter_list|,
 name|gpointer
-name|get_data_data
+name|get_object_data
 parameter_list|,
 name|GtkSelectionData
 modifier|*
@@ -1091,7 +1091,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|gimp_dnd_set_tool_data
+name|gimp_dnd_set_tool_info_data
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -1104,10 +1104,10 @@ name|gint
 name|y
 parameter_list|,
 name|GCallback
-name|set_tool_func
+name|set_tool_info_func
 parameter_list|,
 name|gpointer
-name|set_tool_data
+name|set_tool_info_data
 parameter_list|,
 name|GtkSelectionData
 modifier|*
@@ -1411,7 +1411,7 @@ literal|"gimp-dnd-set-brush-data"
 block|,
 name|gimp_dnd_get_viewable_icon
 block|,
-name|gimp_dnd_get_data_data
+name|gimp_dnd_get_object_data
 block|,
 name|gimp_dnd_set_brush_data
 block|}
@@ -1429,7 +1429,7 @@ literal|"gimp-dnd-set-pattern-data"
 block|,
 name|gimp_dnd_get_viewable_icon
 block|,
-name|gimp_dnd_get_data_data
+name|gimp_dnd_get_object_data
 block|,
 name|gimp_dnd_set_pattern_data
 block|}
@@ -1447,7 +1447,7 @@ literal|"gimp-dnd-set-gradient-data"
 block|,
 name|gimp_dnd_get_viewable_icon
 block|,
-name|gimp_dnd_get_data_data
+name|gimp_dnd_get_object_data
 block|,
 name|gimp_dnd_set_gradient_data
 block|}
@@ -1465,7 +1465,7 @@ literal|"gimp-dnd-set-palette-data"
 block|,
 name|gimp_dnd_get_viewable_icon
 block|,
-name|gimp_dnd_get_data_data
+name|gimp_dnd_get_object_data
 block|,
 name|gimp_dnd_set_palette_data
 block|}
@@ -1483,7 +1483,7 @@ literal|"gimp-dnd-set-font-data"
 block|,
 name|gimp_dnd_get_viewable_icon
 block|,
-name|gimp_dnd_get_data_data
+name|gimp_dnd_get_object_data
 block|,
 name|gimp_dnd_set_font_data
 block|}
@@ -1501,7 +1501,7 @@ literal|"gimp-dnd-set-buffer-data"
 block|,
 name|gimp_dnd_get_viewable_icon
 block|,
-name|gimp_dnd_get_data_data
+name|gimp_dnd_get_object_data
 block|,
 name|gimp_dnd_set_buffer_data
 block|}
@@ -1519,7 +1519,7 @@ literal|"gimp-dnd-set-imagefile-data"
 block|,
 name|gimp_dnd_get_viewable_icon
 block|,
-name|gimp_dnd_get_data_data
+name|gimp_dnd_get_object_data
 block|,
 name|gimp_dnd_set_imagefile_data
 block|}
@@ -1537,27 +1537,27 @@ literal|"gimp-dnd-set-template-data"
 block|,
 name|gimp_dnd_get_viewable_icon
 block|,
-name|gimp_dnd_get_data_data
+name|gimp_dnd_get_object_data
 block|,
 name|gimp_dnd_set_template_data
 block|}
 block|,
 block|{
-name|GIMP_TARGET_TOOL
+name|GIMP_TARGET_TOOL_INFO
 block|,
-literal|"gimp-dnd-get-tool-func"
+literal|"gimp-dnd-get-tool-info-func"
 block|,
-literal|"gimp-dnd-get-tool-data"
+literal|"gimp-dnd-get-tool-info-data"
 block|,
-literal|"gimp-dnd-set-tool-func"
+literal|"gimp-dnd-set-tool-info-func"
 block|,
-literal|"gimp-dnd-set-tool-data"
+literal|"gimp-dnd-set-tool-info-data"
 block|,
 name|gimp_dnd_get_viewable_icon
 block|,
-name|gimp_dnd_get_data_data
+name|gimp_dnd_get_object_data
 block|,
-name|gimp_dnd_set_tool_data
+name|gimp_dnd_set_tool_info_data
 block|}
 block|,
 block|{
@@ -6015,7 +6015,7 @@ condition|)
 block|{
 name|dnd_type
 operator|=
-name|GIMP_DND_TYPE_TOOL
+name|GIMP_DND_TYPE_TOOL_INFO
 expr_stmt|;
 block|}
 return|return
@@ -6560,15 +6560,15 @@ block|}
 end_function
 
 begin_comment
-comment|/*************************/
+comment|/*****************************/
 end_comment
 
 begin_comment
-comment|/*  image dnd functions  */
+comment|/*  GimpImage dnd functions  */
 end_comment
 
 begin_comment
-comment|/*************************/
+comment|/*****************************/
 end_comment
 
 begin_function
@@ -6708,15 +6708,15 @@ block|}
 end_function
 
 begin_comment
-comment|/************************/
+comment|/****************************/
 end_comment
 
 begin_comment
-comment|/*  item dnd functions  */
+comment|/*  GimpItem dnd functions  */
 end_comment
 
 begin_comment
-comment|/************************/
+comment|/****************************/
 end_comment
 
 begin_function
@@ -6856,22 +6856,22 @@ block|}
 end_function
 
 begin_comment
-comment|/****************************/
+comment|/******************************/
 end_comment
 
 begin_comment
-comment|/*  GimpData dnd functions  */
+comment|/*  GimpObject dnd functions  */
 end_comment
 
 begin_comment
-comment|/****************************/
+comment|/******************************/
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dnd_get_data_data (GtkWidget * widget,GdkDragContext * context,GCallback get_data_func,gpointer get_data_data,GtkSelectionData * selection)
-name|gimp_dnd_get_data_data
+DECL|function|gimp_dnd_get_object_data (GtkWidget * widget,GdkDragContext * context,GCallback get_object_func,gpointer get_object_data,GtkSelectionData * selection)
+name|gimp_dnd_get_object_data
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -6882,24 +6882,24 @@ modifier|*
 name|context
 parameter_list|,
 name|GCallback
-name|get_data_func
+name|get_object_func
 parameter_list|,
 name|gpointer
-name|get_data_data
+name|get_object_data
 parameter_list|,
 name|GtkSelectionData
 modifier|*
 name|selection
 parameter_list|)
 block|{
-name|GimpData
+name|GimpObject
 modifier|*
-name|data
+name|object
 decl_stmt|;
-name|data
+name|object
 operator|=
 operator|(
-name|GimpData
+name|GimpObject
 operator|*
 operator|)
 operator|(
@@ -6907,41 +6907,41 @@ operator|*
 operator|(
 name|GimpDndDragViewableFunc
 operator|)
-name|get_data_func
+name|get_object_func
 operator|)
 operator|(
 name|widget
 operator|,
-name|get_data_data
+name|get_object_data
 operator|)
 expr_stmt|;
 if|if
 condition|(
-name|data
+name|GIMP_IS_OBJECT
+argument_list|(
+name|object
+argument_list|)
 condition|)
-name|gimp_selection_data_set_viewable
+name|gimp_selection_data_set_object
 argument_list|(
 name|selection
 argument_list|,
-name|GIMP_VIEWABLE
-argument_list|(
-name|data
-argument_list|)
+name|object
 argument_list|)
 expr_stmt|;
 block|}
 end_function
 
 begin_comment
-comment|/*************************/
+comment|/*****************************/
 end_comment
 
 begin_comment
-comment|/*  brush dnd functions  */
+comment|/*  GimpBrush dnd functions  */
 end_comment
 
 begin_comment
-comment|/*************************/
+comment|/*****************************/
 end_comment
 
 begin_function
@@ -7019,15 +7019,15 @@ block|}
 end_function
 
 begin_comment
-comment|/***************************/
+comment|/*******************************/
 end_comment
 
 begin_comment
-comment|/*  pattern dnd functions  */
+comment|/*  GimpPattern dnd functions  */
 end_comment
 
 begin_comment
-comment|/***************************/
+comment|/*******************************/
 end_comment
 
 begin_function
@@ -7105,15 +7105,15 @@ block|}
 end_function
 
 begin_comment
-comment|/****************************/
+comment|/********************************/
 end_comment
 
 begin_comment
-comment|/*  gradient dnd functions  */
+comment|/*  GimpGradient dnd functions  */
 end_comment
 
 begin_comment
-comment|/****************************/
+comment|/********************************/
 end_comment
 
 begin_function
@@ -7191,15 +7191,15 @@ block|}
 end_function
 
 begin_comment
-comment|/***************************/
+comment|/*******************************/
 end_comment
 
 begin_comment
-comment|/*  palette dnd functions  */
+comment|/*  GimpPalette dnd functions  */
 end_comment
 
 begin_comment
-comment|/***************************/
+comment|/*******************************/
 end_comment
 
 begin_function
@@ -7277,15 +7277,15 @@ block|}
 end_function
 
 begin_comment
-comment|/************************/
+comment|/****************************/
 end_comment
 
 begin_comment
-comment|/*  font dnd functions  */
+comment|/*  GimpFont dnd functions  */
 end_comment
 
 begin_comment
-comment|/************************/
+comment|/****************************/
 end_comment
 
 begin_function
@@ -7363,15 +7363,15 @@ block|}
 end_function
 
 begin_comment
-comment|/**************************/
+comment|/******************************/
 end_comment
 
 begin_comment
-comment|/*  buffer dnd functions  */
+comment|/*  GimpBuffer dnd functions  */
 end_comment
 
 begin_comment
-comment|/**************************/
+comment|/******************************/
 end_comment
 
 begin_function
@@ -7449,15 +7449,15 @@ block|}
 end_function
 
 begin_comment
-comment|/*****************************/
+comment|/*********************************/
 end_comment
 
 begin_comment
-comment|/*  imagefile dnd functions  */
+comment|/*  GimpImagefile dnd functions  */
 end_comment
 
 begin_comment
-comment|/*****************************/
+comment|/*********************************/
 end_comment
 
 begin_function
@@ -7535,15 +7535,15 @@ block|}
 end_function
 
 begin_comment
-comment|/*****************************/
+comment|/********************************/
 end_comment
 
 begin_comment
-comment|/*  template dnd functions  */
+comment|/*  GimpTemplate dnd functions  */
 end_comment
 
 begin_comment
-comment|/*****************************/
+comment|/********************************/
 end_comment
 
 begin_function
@@ -7621,22 +7621,22 @@ block|}
 end_function
 
 begin_comment
-comment|/************************/
+comment|/********************************/
 end_comment
 
 begin_comment
-comment|/*  tool dnd functions  */
+comment|/*  GimpToolInfo dnd functions  */
 end_comment
 
 begin_comment
-comment|/************************/
+comment|/********************************/
 end_comment
 
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_dnd_set_tool_data (GtkWidget * widget,gint x,gint y,GCallback set_tool_func,gpointer set_tool_data,GtkSelectionData * selection)
-name|gimp_dnd_set_tool_data
+DECL|function|gimp_dnd_set_tool_info_data (GtkWidget * widget,gint x,gint y,GCallback set_tool_info_func,gpointer set_tool_info_data,GtkSelectionData * selection)
+name|gimp_dnd_set_tool_info_data
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -7649,10 +7649,10 @@ name|gint
 name|y
 parameter_list|,
 name|GCallback
-name|set_tool_func
+name|set_tool_info_func
 parameter_list|,
 name|gpointer
-name|set_tool_data
+name|set_tool_info_data
 parameter_list|,
 name|GtkSelectionData
 modifier|*
@@ -7663,7 +7663,7 @@ name|GimpToolInfo
 modifier|*
 name|tool_info
 init|=
-name|gimp_selection_data_get_tool
+name|gimp_selection_data_get_tool_info
 argument_list|(
 name|selection
 argument_list|,
@@ -7683,7 +7683,7 @@ operator|*
 operator|(
 name|GimpDndDropViewableFunc
 operator|)
-name|set_tool_func
+name|set_tool_info_func
 operator|)
 operator|(
 name|widget
@@ -7697,7 +7697,7 @@ argument_list|(
 name|tool_info
 argument_list|)
 operator|,
-name|set_tool_data
+name|set_tool_info_data
 operator|)
 expr_stmt|;
 return|return

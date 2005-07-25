@@ -219,12 +219,12 @@ value|{ "application/x-gimp-template-name", GTK_TARGET_SAME_APP, GIMP_DND_TYPE_T
 end_define
 
 begin_define
-DECL|macro|GIMP_TARGET_TOOL
+DECL|macro|GIMP_TARGET_TOOL_INFO
 define|#
 directive|define
-name|GIMP_TARGET_TOOL
+name|GIMP_TARGET_TOOL_INFO
 define|\
-value|{ "application/x-gimp-tool-name", GTK_TARGET_SAME_APP, GIMP_DND_TYPE_TOOL }
+value|{ "application/x-gimp-tool-info-name", GTK_TARGET_SAME_APP, GIMP_DND_TYPE_TOOL_INFO }
 end_define
 
 begin_define

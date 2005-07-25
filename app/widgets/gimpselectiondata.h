@@ -240,15 +240,15 @@ end_comment
 
 begin_function_decl
 name|void
-name|gimp_selection_data_set_viewable
+name|gimp_selection_data_set_object
 parameter_list|(
 name|GtkSelectionData
 modifier|*
 name|selection
 parameter_list|,
-name|GimpViewable
+name|GimpObject
 modifier|*
-name|viewable
+name|object
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -384,7 +384,7 @@ end_function_decl
 begin_function_decl
 name|GimpToolInfo
 modifier|*
-name|gimp_selection_data_get_tool
+name|gimp_selection_data_get_tool_info
 parameter_list|(
 name|GtkSelectionData
 modifier|*
