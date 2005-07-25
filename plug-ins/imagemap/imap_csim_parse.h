@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* A Bison parser, made by GNU Bison 1.875d.  */
+comment|/* A Bison parser, made by GNU Bison 2.0.  */
 end_comment
 
 begin_comment
@@ -424,9 +424,10 @@ DECL|member|id
 name|char
 name|id
 index|[
-literal|256
+literal|1024
 index|]
 decl_stmt|;
+comment|/* Large enough to hold all polygon points! */
 DECL|typedef|YYSTYPE
 block|}
 name|YYSTYPE
@@ -434,7 +435,7 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/* Line 1285 of yacc.c.  */
+comment|/* Line 1318 of yacc.c.  */
 end_comment
 
 begin_line
