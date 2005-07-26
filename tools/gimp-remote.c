@@ -510,6 +510,11 @@ literal|11
 operator|&&
 name|strcmp
 argument_list|(
+operator|(
+specifier|const
+name|gchar
+operator|*
+operator|)
 name|data
 argument_list|,
 literal|"gimp-toolbox"
@@ -588,6 +593,11 @@ name|target
 argument_list|,
 literal|8
 argument_list|,
+operator|(
+specifier|const
+name|guchar
+operator|*
+operator|)
 name|uri
 argument_list|,
 name|strlen
