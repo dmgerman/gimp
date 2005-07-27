@@ -63,6 +63,12 @@ directive|include
 file|"gimpimage.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpimage-colormap.h"
+end_include
+
 begin_comment
 comment|/*  public functions  */
 end_comment
