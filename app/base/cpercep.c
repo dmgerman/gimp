@@ -10,13 +10,19 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
+file|"config.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|<math.h>
+file|<glib-object.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimpmath/gimpmath.h>
 end_include
 
 begin_ifndef
@@ -45,26 +51,11 @@ endif|#
 directive|endif
 end_endif
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|GIMP_COMPILATION
-end_ifdef
-
 begin_include
 include|#
 directive|include
-file|<glib.h>
+file|"cpercep.h"
 end_include
-
-begin_comment
-comment|/* to get working 'inline' */
-end_comment
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_comment
 comment|/* defines:     SANITY: emits warnings when passed non-sane colours (and usually    corrects them) -- useful when debugging.     APPROX: speeds up the conversion from RGB to the colourspace by    assuming that the RGB values passed in are integral and definitely    in the range 0->255     SRGB: assumes that the RGB values being passed in (and out) are    destined for an sRGB-alike display device (a typical modern monitor)    -- if you change this then you'll probably want to change ASSUMED_GAMMA,    the phosphor colours and the white point definition. */
@@ -87,12 +78,6 @@ define|#
 directive|define
 name|SRGB
 end_define
-
-begin_include
-include|#
-directive|include
-file|"cpercep.h"
-end_include
 
 begin_ifdef
 ifdef|#
