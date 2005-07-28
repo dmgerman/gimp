@@ -133,6 +133,16 @@ name|GtkWidget
 modifier|*
 name|memsize_label
 decl_stmt|;
+DECL|member|undo_label
+name|GtkWidget
+modifier|*
+name|undo_label
+decl_stmt|;
+DECL|member|redo_label
+name|GtkWidget
+modifier|*
+name|redo_label
+decl_stmt|;
 DECL|member|pixels_label
 name|GtkWidget
 modifier|*

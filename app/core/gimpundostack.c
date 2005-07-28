@@ -964,5 +964,36 @@ return|;
 block|}
 end_function
 
+begin_function
+name|gint
+DECL|function|gimp_undo_stack_get_depth (GimpUndoStack * stack)
+name|gimp_undo_stack_get_depth
+parameter_list|(
+name|GimpUndoStack
+modifier|*
+name|stack
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_UNDO_STACK
+argument_list|(
+name|stack
+argument_list|)
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+return|return
+name|gimp_container_num_children
+argument_list|(
+name|stack
+operator|->
+name|undos
+argument_list|)
+return|;
+block|}
+end_function
+
 end_unit
 

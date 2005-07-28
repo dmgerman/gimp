@@ -2197,7 +2197,7 @@ name|target_vectors
 init|=
 name|NULL
 decl_stmt|;
-name|guchar
+name|gchar
 modifier|*
 name|name
 init|=
