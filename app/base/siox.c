@@ -102,7 +102,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a44efe70108
+DECL|struct|__anon2c774c1d0108
 block|{
 DECL|member|l
 name|gfloat
@@ -3155,8 +3155,8 @@ end_comment
 begin_function
 specifier|static
 name|gfloat
-DECL|function|getclustersize (const gfloat limits[SIOX_DIMS])
-name|getclustersize
+DECL|function|get_clustersize (const gfloat limits[SIOX_DIMS])
+name|get_clustersize
 parameter_list|(
 specifier|const
 name|gfloat
@@ -3317,6 +3317,9 @@ decl_stmt|;
 name|gpointer
 name|pr
 decl_stmt|;
+name|gboolean
+name|intersect
+decl_stmt|;
 name|gint
 name|x
 decl_stmt|,
@@ -3335,10 +3338,11 @@ name|row
 decl_stmt|,
 name|col
 decl_stmt|;
+specifier|const
 name|gfloat
 name|clustersize
 init|=
-name|getclustersize
+name|get_clustersize
 argument_list|(
 name|limits
 argument_list|)
@@ -3403,6 +3407,8 @@ expr_stmt|;
 name|cpercep_init
 argument_list|()
 expr_stmt|;
+name|intersect
+operator|=
 name|gimp_rectangle_intersect
 argument_list|(
 name|offset_x
@@ -3450,15 +3456,7 @@ comment|/* FIXME:    * Should clear the mask outside the rectangle that we are w
 if|if
 condition|(
 operator|!
-operator|(
-name|width
-operator|>
-literal|0
-operator|&&
-name|height
-operator|>
-literal|0
-operator|)
+name|intersect
 condition|)
 return|return;
 comment|/* count given foreground and background pixels */
