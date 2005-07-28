@@ -36,6 +36,16 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp-utils.h"
+end_include
+
+begin_comment
+comment|/*  FIXME  */
+end_comment
+
+begin_include
+include|#
+directive|include
 file|"cpercep.h"
 end_include
 
@@ -58,7 +68,7 @@ file|"tile-manager.h"
 end_include
 
 begin_comment
-comment|/*  thresholds in the the mask, pixels< LOW are known background,  *                              pixels> HIGH are known foreground  */
+comment|/* Thresholds in the mask:  *   pixels< LOW are known background  *   pixels> HIGH are known foreground  */
 end_comment
 
 begin_define
@@ -92,7 +102,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293651930108
+DECL|struct|__anon2a44efe70108
 block|{
 DECL|member|l
 name|gfloat
@@ -3260,12 +3270,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * siox_foreground_extract:  * @pixels:     the tiles to extract the foreground from  * @colormap:   colormap in case @pixels are indexed, %NULL otherwise  * @mask:       a trimap indicating sure foreground, sure background and  *              undecided regions  * @limits:     a three dimensional float array specifing the accuracy,  *              a good value is: { 0.66, 1.25, 2.5 }  * @smoothness: boundary smoothness (a good value is 3)  *  * Writes the resulting segmentation into @mask.  */
+comment|/**  * siox_foreground_extract:  * @pixels:     the tiles to extract the foreground from  * @colormap:   colormap in case @pixels are indexed, %NULL otherwise  * @offset_x:   horizontal offset of @pixels with respect to the @mask  * @offset_y:   vertical offset of @pixels with respect to the @mask   * @mask:       a mask indicating sure foreground (255), sure background (0)  *              and undecided regions ([1..254]).  * @limits:     a three dimensional float array specifing the accuracy,  *              a good value is: { 0.66, 1.25, 2.5 }  * @smoothness: boundary smoothness (a good value is 3)  *  * Writes the resulting segmentation into @mask.  */
 end_comment
 
 begin_function
 name|void
-DECL|function|siox_foreground_extract (TileManager * pixels,const guchar * colormap,TileManager * mask,const gfloat limits[SIOX_DIMS],gint smoothness)
+DECL|function|siox_foreground_extract (TileManager * pixels,const guchar * colormap,gint offset_x,gint offset_y,TileManager * mask,const gfloat limits[SIOX_DIMS],gint smoothness)
 name|siox_foreground_extract
 parameter_list|(
 name|TileManager
@@ -3276,6 +3286,12 @@ specifier|const
 name|guchar
 modifier|*
 name|colormap
+parameter_list|,
+name|gint
+name|offset_x
+parameter_list|,
+name|gint
+name|offset_y
 parameter_list|,
 name|TileManager
 modifier|*
@@ -3300,6 +3316,11 @@ name|mapPR
 decl_stmt|;
 name|gpointer
 name|pr
+decl_stmt|;
+name|gint
+name|x
+decl_stmt|,
+name|y
 decl_stmt|;
 name|gint
 name|width
@@ -3379,43 +3400,67 @@ operator|==
 literal|1
 argument_list|)
 expr_stmt|;
-name|width
-operator|=
-name|tile_manager_width
-argument_list|(
-name|pixels
-argument_list|)
-expr_stmt|;
-name|height
-operator|=
-name|tile_manager_height
-argument_list|(
-name|pixels
-argument_list|)
-expr_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|tile_manager_width
-argument_list|(
-name|mask
-argument_list|)
-operator|==
-name|width
-argument_list|)
-expr_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|tile_manager_height
-argument_list|(
-name|mask
-argument_list|)
-operator|==
-name|height
-argument_list|)
-expr_stmt|;
 name|cpercep_init
 argument_list|()
 expr_stmt|;
+name|gimp_rectangle_intersect
+argument_list|(
+name|offset_x
+argument_list|,
+name|offset_y
+argument_list|,
+name|tile_manager_width
+argument_list|(
+name|pixels
+argument_list|)
+argument_list|,
+name|tile_manager_height
+argument_list|(
+name|pixels
+argument_list|)
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+name|tile_manager_width
+argument_list|(
+name|mask
+argument_list|)
+argument_list|,
+name|tile_manager_height
+argument_list|(
+name|mask
+argument_list|)
+argument_list|,
+operator|&
+name|x
+argument_list|,
+operator|&
+name|y
+argument_list|,
+operator|&
+name|width
+argument_list|,
+operator|&
+name|height
+argument_list|)
+expr_stmt|;
+comment|/* FIXME:    * Should clear the mask outside the rectangle that we are working on.    */
+if|if
+condition|(
+operator|!
+operator|(
+name|width
+operator|>
+literal|0
+operator|&&
+name|height
+operator|>
+literal|0
+operator|)
+condition|)
+return|return;
 comment|/* count given foreground and background pixels */
 name|pixel_region_init
 argument_list|(
@@ -3424,9 +3469,9 @@ name|mapPR
 argument_list|,
 name|mask
 argument_list|,
-literal|0
+name|x
 argument_list|,
-literal|0
+name|y
 argument_list|,
 name|width
 argument_list|,
@@ -3581,9 +3626,13 @@ name|srcPR
 argument_list|,
 name|pixels
 argument_list|,
-literal|0
+name|x
+operator|-
+name|offset_x
 argument_list|,
-literal|0
+name|y
+operator|-
+name|offset_y
 argument_list|,
 name|width
 argument_list|,
@@ -3599,9 +3648,9 @@ name|mapPR
 argument_list|,
 name|mask
 argument_list|,
-literal|0
+name|x
 argument_list|,
-literal|0
+name|y
 argument_list|,
 name|width
 argument_list|,
@@ -3836,9 +3885,13 @@ name|srcPR
 argument_list|,
 name|pixels
 argument_list|,
-literal|0
+name|x
+operator|-
+name|offset_x
 argument_list|,
-literal|0
+name|y
+operator|-
+name|offset_y
 argument_list|,
 name|width
 argument_list|,
@@ -3854,9 +3907,9 @@ name|mapPR
 argument_list|,
 name|mask
 argument_list|,
-literal|0
+name|x
 argument_list|,
-literal|0
+name|y
 argument_list|,
 name|width
 argument_list|,
@@ -4161,9 +4214,9 @@ name|smooth_mask
 argument_list|(
 name|mask
 argument_list|,
-literal|0
+name|x
 argument_list|,
-literal|0
+name|y
 argument_list|,
 name|width
 argument_list|,
@@ -4175,9 +4228,9 @@ name|erode_mask
 argument_list|(
 name|mask
 argument_list|,
-literal|0
+name|x
 argument_list|,
-literal|0
+name|y
 argument_list|,
 name|width
 argument_list|,
@@ -4189,9 +4242,9 @@ name|find_max_blob
 argument_list|(
 name|mask
 argument_list|,
-literal|0
+name|x
 argument_list|,
-literal|0
+name|y
 argument_list|,
 name|width
 argument_list|,
@@ -4216,9 +4269,9 @@ name|smooth_mask
 argument_list|(
 name|mask
 argument_list|,
-literal|0
+name|x
 argument_list|,
-literal|0
+name|y
 argument_list|,
 name|width
 argument_list|,
@@ -4230,9 +4283,9 @@ name|threshold_mask
 argument_list|(
 name|mask
 argument_list|,
-literal|0
+name|x
 argument_list|,
-literal|0
+name|y
 argument_list|,
 name|width
 argument_list|,
@@ -4244,9 +4297,9 @@ name|find_max_blob
 argument_list|(
 name|mask
 argument_list|,
-literal|0
+name|x
 argument_list|,
-literal|0
+name|y
 argument_list|,
 name|width
 argument_list|,
@@ -4258,9 +4311,9 @@ name|dilate_mask
 argument_list|(
 name|mask
 argument_list|,
-literal|0
+name|x
 argument_list|,
-literal|0
+name|y
 argument_list|,
 name|width
 argument_list|,

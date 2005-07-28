@@ -41,6 +41,12 @@ name|guchar
 modifier|*
 name|colormap
 parameter_list|,
+name|gint
+name|offset_x
+parameter_list|,
+name|gint
+name|offset_y
+parameter_list|,
 name|TileManager
 modifier|*
 name|map
