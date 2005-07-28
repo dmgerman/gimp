@@ -78,6 +78,10 @@ value|254
 end_define
 
 begin_comment
+comment|/* #define DEBUG */
+end_comment
+
+begin_comment
 comment|/* Simulate a java.util.ArrayList */
 end_comment
 
@@ -88,7 +92,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b22c2a0108
+DECL|struct|__anon293651930108
 block|{
 DECL|member|l
 name|gfloat
@@ -1365,7 +1369,22 @@ operator|)
 operator|+
 name|min
 expr_stmt|;
-comment|/*  g_printerr ("max=%f min=%f pivot=%f\n", max, min, pivotvalue); */
+ifdef|#
+directive|ifdef
+name|DEBUG
+name|g_printerr
+argument_list|(
+literal|"max=%f min=%f pivot=%f\n"
+argument_list|,
+name|max
+argument_list|,
+name|min
+argument_list|,
+name|pivotvalue
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 name|countsm
 operator|=
 literal|0
@@ -1759,7 +1778,30 @@ operator|*
 literal|1.0
 operator|)
 expr_stmt|;
-comment|/* g_printerr ("cluster=%f, %f, %f sum=%d\n",                           point->l, point->a, point->b, sum);            */
+ifdef|#
+directive|ifdef
+name|DEBUG
+name|g_printerr
+argument_list|(
+literal|"cluster=%f, %f, %f sum=%d\n"
+argument_list|,
+name|point
+operator|->
+name|l
+argument_list|,
+name|point
+operator|->
+name|a
+argument_list|,
+name|point
+operator|->
+name|b
+argument_list|,
+name|sum
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 name|add_to_list
 argument_list|(
 name|clusters
@@ -2155,7 +2197,18 @@ operator|->
 name|next
 expr_stmt|;
 block|}
-comment|/* g_printerr ("step #1 -> %d clusters\n", clusters1size); */
+ifdef|#
+directive|ifdef
+name|DEBUG
+name|g_printerr
+argument_list|(
+literal|"step #1 -> %d clusters\n"
+argument_list|,
+name|clusters1size
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 name|clusters2
 operator|=
 name|g_new0
@@ -2204,7 +2257,21 @@ argument_list|(
 name|clusters1
 argument_list|)
 expr_stmt|;
-comment|/* g_printerr ("step #2 -> %d clusters\n", returnlength[0]); */
+ifdef|#
+directive|ifdef
+name|DEBUG
+name|g_printerr
+argument_list|(
+literal|"step #2 -> %d clusters\n"
+argument_list|,
+name|returnlength
+index|[
+literal|0
+index|]
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 return|return
 name|rval
 return|;
