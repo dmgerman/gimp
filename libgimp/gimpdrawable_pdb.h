@@ -563,6 +563,9 @@ parameter_list|(
 name|gint32
 name|drawable_ID
 parameter_list|,
+name|GimpForegroundExtractMode
+name|mode
+parameter_list|,
 name|gint32
 name|mask_ID
 parameter_list|)

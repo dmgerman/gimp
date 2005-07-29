@@ -9060,6 +9060,9 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
+name|gint32
+name|mode
+decl_stmt|;
 name|GimpDrawable
 modifier|*
 name|mask
@@ -9107,6 +9110,27 @@ name|success
 operator|=
 name|FALSE
 expr_stmt|;
+name|mode
+operator|=
+name|args
+index|[
+literal|1
+index|]
+operator|.
+name|value
+operator|.
+name|pdb_int
+expr_stmt|;
+if|if
+condition|(
+name|mode
+operator|!=
+name|GIMP_FOREGROUND_EXTRACT_SIOX
+condition|)
+name|success
+operator|=
+name|FALSE
+expr_stmt|;
 name|mask
 operator|=
 operator|(
@@ -9119,7 +9143,7 @@ name|gimp
 argument_list|,
 name|args
 index|[
-literal|1
+literal|2
 index|]
 operator|.
 name|value
@@ -9173,6 +9197,8 @@ name|gimp_drawable_foreground_extract
 argument_list|(
 name|drawable
 argument_list|,
+name|mode
+argument_list|,
 name|mask
 argument_list|)
 expr_stmt|;
@@ -9203,6 +9229,14 @@ block|,
 literal|"drawable"
 block|,
 literal|"The drawable"
+block|}
+block|,
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"mode"
+block|,
+literal|"The algorithm to use: GIMP_FOREGROUND_EXTRACT_SIOX (0)"
 block|}
 block|,
 block|{
@@ -9239,7 +9273,7 @@ name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
-literal|2
+literal|3
 block|,
 name|drawable_foreground_extract_inargs
 block|,

@@ -903,7 +903,12 @@ name|gimp_drawable_foreground_extract
 argument_list|(
 name|drawable
 argument_list|,
+name|GIMP_FOREGROUND_EXTRACT_SIOX
+argument_list|,
+name|GIMP_DRAWABLE
+argument_list|(
 name|mask
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_channel_select_channel

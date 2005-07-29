@@ -24,6 +24,9 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
+name|GimpForegroundExtractMode
+name|mode
+parameter_list|,
 name|GimpDrawable
 modifier|*
 name|mask

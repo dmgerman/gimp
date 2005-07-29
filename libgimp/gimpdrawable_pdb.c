@@ -3231,16 +3231,19 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_foreground_extract:  * @drawable_ID: The drawable.  * @mask_ID: Tri-Map.  *  * Extract the foreground of a drawable using a given trimap.  *  * Image Segmentation by Uniform Color Clustering, see  * http://www.inf.fu-berlin.de/inst/pubs/tr-b-05-07.pdf  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_drawable_foreground_extract:  * @drawable_ID: The drawable.  * @mode: The algorithm to use.  * @mask_ID: Tri-Map.  *  * Extract the foreground of a drawable using a given trimap.  *  * Image Segmentation by Uniform Color Clustering, see  * http://www.inf.fu-berlin.de/inst/pubs/tr-b-05-07.pdf  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_drawable_foreground_extract (gint32 drawable_ID,gint32 mask_ID)
+DECL|function|gimp_drawable_foreground_extract (gint32 drawable_ID,GimpForegroundExtractMode mode,gint32 mask_ID)
 name|gimp_drawable_foreground_extract
 parameter_list|(
 name|gint32
 name|drawable_ID
+parameter_list|,
+name|GimpForegroundExtractMode
+name|mode
 parameter_list|,
 name|gint32
 name|mask_ID
@@ -3270,6 +3273,10 @@ argument_list|,
 name|GIMP_PDB_DRAWABLE
 argument_list|,
 name|drawable_ID
+argument_list|,
+name|GIMP_PDB_INT32
+argument_list|,
+name|mode
 argument_list|,
 name|GIMP_PDB_DRAWABLE
 argument_list|,
