@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpforegroundselecttool.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpnewrectselecttool.h"
 end_include
 
@@ -113,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ab1cef40103
+DECL|enum|__anon2876c5550103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1322,18 +1328,16 @@ decl_stmt|;
 name|GtkWidget
 modifier|*
 name|vbox
+init|=
+name|gimp_tool_options_gui
+argument_list|(
+name|tool_options
+argument_list|)
 decl_stmt|;
 name|GtkWidget
 modifier|*
 name|button
 decl_stmt|;
-name|vbox
-operator|=
-name|gimp_tool_options_gui
-argument_list|(
-name|tool_options
-argument_list|)
-expr_stmt|;
 comment|/*  the selection operation radio buttons  */
 block|{
 name|GtkWidget
@@ -1581,6 +1585,18 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/*  the antialias toggle button  */
+if|if
+condition|(
+operator|!
+name|tool_options
+operator|->
+name|tool_info
+operator|->
+name|tool_type
+operator|==
+name|GIMP_TYPE_FOREGROUND_SELECT_TOOL
+condition|)
+block|{
 name|button
 operator|=
 name|gimp_prop_check_button_new
@@ -1641,6 +1657,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+block|}
 comment|/*  the feather frame  */
 block|{
 name|GtkWidget
