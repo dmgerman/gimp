@@ -1323,6 +1323,11 @@ for|for
 control|(
 name|p
 operator|=
+operator|(
+specifier|const
+name|guchar
+operator|*
+operator|)
 name|val
 operator|,
 name|len
@@ -1517,6 +1522,11 @@ argument_list|)
 expr_stmt|;
 name|val
 operator|=
+operator|(
+specifier|const
+name|gchar
+operator|*
+operator|)
 name|p
 operator|+
 literal|1
