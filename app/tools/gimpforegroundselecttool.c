@@ -307,7 +307,7 @@ argument_list|)
 argument_list|,
 name|N_
 argument_list|(
-literal|"_Foreground Select"
+literal|"F_oreground Select"
 argument_list|)
 argument_list|,
 name|NULL
