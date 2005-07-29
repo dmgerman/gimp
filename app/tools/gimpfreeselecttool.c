@@ -12,18 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -31,12 +19,6 @@ begin_include
 include|#
 directive|include
 file|"libgimpwidgets/gimpwidgets.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimpmath/gimpmath.h"
 end_include
 
 begin_include
@@ -800,14 +782,11 @@ expr_stmt|;
 comment|/*  First take care of the case where the user "cancels" the action  */
 if|if
 condition|(
-operator|!
-operator|(
 name|state
 operator|&
 name|GDK_BUTTON3_MASK
-operator|)
 condition|)
-block|{
+return|return;
 if|if
 condition|(
 name|free_sel
@@ -853,15 +832,9 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|gimp_image_flush
-argument_list|(
-name|gdisp
-operator|->
-name|gimage
-argument_list|)
-expr_stmt|;
-return|return;
 block|}
+else|else
+block|{
 name|gimp_channel_select_polygon
 argument_list|(
 name|gimp_image_get_mask
@@ -909,6 +882,7 @@ operator|->
 name|feather_radius
 argument_list|)
 expr_stmt|;
+block|}
 name|gimp_image_flush
 argument_list|(
 name|gdisp
@@ -916,7 +890,6 @@ operator|->
 name|gimage
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 
