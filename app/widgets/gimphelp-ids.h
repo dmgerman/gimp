@@ -1649,6 +1649,14 @@ value|"gimp-tool-free-select"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_TOOL_FOREGROUND_SELECT
+define|#
+directive|define
+name|GIMP_HELP_TOOL_FOREGROUND_SELECT
+value|"gimp-tool-foreground-select"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_TOOL_FUZZY_SELECT
 define|#
 directive|define

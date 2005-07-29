@@ -144,7 +144,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* This is a more low level version. Expects a tile manager of depth 1.  *  * You cannot add additional polygons after this command.  */
+comment|/* These are more low level version. Expects a tile manager of depth 1.  *  * You cannot add additional polygons after this command.  */
 end_comment
 
 begin_function_decl
@@ -167,6 +167,30 @@ name|off_y
 parameter_list|,
 name|gboolean
 name|antialias
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_scan_convert_render_value
+parameter_list|(
+name|GimpScanConvert
+modifier|*
+name|sc
+parameter_list|,
+name|TileManager
+modifier|*
+name|tile_manager
+parameter_list|,
+name|gint
+name|off_x
+parameter_list|,
+name|gint
+name|off_y
+parameter_list|,
+name|guchar
+name|value
 parameter_list|)
 function_decl|;
 end_function_decl

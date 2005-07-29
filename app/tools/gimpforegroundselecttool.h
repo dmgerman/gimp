@@ -6,166 +6,137 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_FREE_SELECT_TOOL_H__
+name|__GIMP_FOREGROUND_SELECT_TOOL_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_FREE_SELECT_TOOL_H__
+DECL|macro|__GIMP_FOREGROUND_SELECT_TOOL_H__
 define|#
 directive|define
-name|__GIMP_FREE_SELECT_TOOL_H__
+name|__GIMP_FOREGROUND_SELECT_TOOL_H__
 end_define
 
 begin_include
 include|#
 directive|include
-file|"gimpselectiontool.h"
+file|"gimpfreeselecttool.h"
 end_include
 
 begin_define
-DECL|macro|GIMP_TYPE_FREE_SELECT_TOOL
+DECL|macro|GIMP_TYPE_FOREGROUND_SELECT_TOOL
 define|#
 directive|define
-name|GIMP_TYPE_FREE_SELECT_TOOL
-value|(gimp_free_select_tool_get_type ())
+name|GIMP_TYPE_FOREGROUND_SELECT_TOOL
+value|(gimp_foreground_select_tool_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_FREE_SELECT_TOOL (obj)
+DECL|macro|GIMP_FOREGROUND_SELECT_TOOL (obj)
 define|#
 directive|define
-name|GIMP_FREE_SELECT_TOOL
+name|GIMP_FOREGROUND_SELECT_TOOL
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_FREE_SELECT_TOOL, GimpFreeSelectTool))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_FOREGROUND_SELECT_TOOL, GimpForegroundSelectTool))
 end_define
 
 begin_define
-DECL|macro|GIMP_FREE_SELECT_TOOL_CLASS (klass)
+DECL|macro|GIMP_FOREGROUND_SELECT_TOOL_CLASS (klass)
 define|#
 directive|define
-name|GIMP_FREE_SELECT_TOOL_CLASS
+name|GIMP_FOREGROUND_SELECT_TOOL_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_FREE_SELECT_TOOL, GimpFreeSelectToolClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_FOREGROUND_SELECT_TOOL, GimpForegroundSelectToolClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_FREE_SELECT_TOOL (obj)
+DECL|macro|GIMP_IS_FOREGROUND_SELECT_TOOL (obj)
 define|#
 directive|define
-name|GIMP_IS_FREE_SELECT_TOOL
+name|GIMP_IS_FOREGROUND_SELECT_TOOL
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_FREE_SELECT_TOOL))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_FOREGROUND_SELECT_TOOL))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_FREE_SELECT_TOOL_CLASS (klass)
+DECL|macro|GIMP_IS_FOREGROUND_SELECT_TOOL_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_FREE_SELECT_TOOL_CLASS
+name|GIMP_IS_FOREGROUND_SELECT_TOOL_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_FREE_SELECT_TOOL))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_FOREGROUND_SELECT_TOOL))
 end_define
 
 begin_define
-DECL|macro|GIMP_FREE_SELECT_TOOL_GET_CLASS (obj)
+DECL|macro|GIMP_FOREGROUND_SELECT_TOOL_GET_CLASS (obj)
 define|#
 directive|define
-name|GIMP_FREE_SELECT_TOOL_GET_CLASS
+name|GIMP_FOREGROUND_SELECT_TOOL_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_FREE_SELECT_TOOL, GimpFreeSelectToolClass))
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_FOREGROUND_SELECT_TOOL, GimpForegroundSelectToolClass))
 end_define
 
 begin_typedef
-DECL|typedef|GimpFreeSelectTool
+DECL|typedef|GimpForegroundSelectTool
 typedef|typedef
 name|struct
-name|_GimpFreeSelectTool
-name|GimpFreeSelectTool
+name|_GimpForegroundSelectTool
+name|GimpForegroundSelectTool
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpFreeSelectToolClass
+DECL|typedef|GimpForegroundSelectToolClass
 typedef|typedef
 name|struct
-name|_GimpFreeSelectToolClass
-name|GimpFreeSelectToolClass
+name|_GimpForegroundSelectToolClass
+name|GimpForegroundSelectToolClass
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpFreeSelectTool
+DECL|struct|_GimpForegroundSelectTool
 struct|struct
-name|_GimpFreeSelectTool
+name|_GimpForegroundSelectTool
 block|{
 DECL|member|parent_instance
-name|GimpSelectionTool
+name|GimpFreeSelectTool
 name|parent_instance
 decl_stmt|;
-DECL|member|last_coords
-name|GimpCoords
-name|last_coords
-decl_stmt|;
-DECL|member|points
-name|GimpVector2
+DECL|member|mask
+name|GimpChannel
 modifier|*
-name|points
-decl_stmt|;
-DECL|member|num_points
-name|gint
-name|num_points
-decl_stmt|;
-DECL|member|max_segs
-name|gint
-name|max_segs
+name|mask
 decl_stmt|;
 block|}
 struct|;
 end_struct
 
 begin_struct
-DECL|struct|_GimpFreeSelectToolClass
+DECL|struct|_GimpForegroundSelectToolClass
 struct|struct
-name|_GimpFreeSelectToolClass
+name|_GimpForegroundSelectToolClass
 block|{
 DECL|member|parent_class
-name|GimpSelectionToolClass
+name|GimpFreeSelectToolClass
 name|parent_class
 decl_stmt|;
-comment|/*  virtual function  */
-DECL|member|select
-name|void
-function_decl|(
-modifier|*
-name|select
-function_decl|)
-parameter_list|(
-name|GimpFreeSelectTool
-modifier|*
-name|free_select_tool
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|)
-function_decl|;
 block|}
 struct|;
 end_struct
 
 begin_function_decl
 name|void
-name|gimp_free_select_tool_register
+name|gimp_foreground_select_tool_register
 parameter_list|(
 name|GimpToolRegisterCallback
 name|callback
@@ -178,7 +149,7 @@ end_function_decl
 
 begin_decl_stmt
 name|GType
-name|gimp_free_select_tool_get_type
+name|gimp_foreground_select_tool_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -192,7 +163,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMP_FREE_SELECT_TOOL_H__  */
+comment|/*  __GIMP_FOREGROUND_SELECT_TOOL_H__  */
 end_comment
 
 end_unit

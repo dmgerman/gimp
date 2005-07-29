@@ -215,6 +215,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpforegroundselecttool.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpfuzzyselecttool.h"
 end_include
 
@@ -515,6 +521,8 @@ comment|/*  path tool */
 name|gimp_vector_tool_register
 block|,
 comment|/*  selection tools */
+name|gimp_foreground_select_tool_register
+block|,
 name|gimp_iscissors_tool_register
 block|,
 name|gimp_by_color_select_tool_register
