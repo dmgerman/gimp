@@ -236,9 +236,9 @@ name|GimpFreeSelectTool
 modifier|*
 name|free_sel
 parameter_list|,
-name|GimpImage
+name|GimpDisplay
 modifier|*
-name|gimage
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -871,8 +871,6 @@ argument_list|(
 name|free_sel
 argument_list|,
 name|gdisp
-operator|->
-name|gimage
 argument_list|)
 expr_stmt|;
 block|}
@@ -1186,16 +1184,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_free_select_tool_select (GimpFreeSelectTool * free_sel,GimpImage * gimage)
+DECL|function|gimp_free_select_tool_select (GimpFreeSelectTool * free_sel,GimpDisplay * gdisp)
 name|gimp_free_select_tool_select
 parameter_list|(
 name|GimpFreeSelectTool
 modifier|*
 name|free_sel
 parameter_list|,
-name|GimpImage
+name|GimpDisplay
 modifier|*
-name|gimage
+name|gdisp
 parameter_list|)
 block|{
 name|GimpTool
@@ -1226,6 +1224,8 @@ name|gimp_channel_select_polygon
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
+name|gdisp
+operator|->
 name|gimage
 argument_list|)
 argument_list|,

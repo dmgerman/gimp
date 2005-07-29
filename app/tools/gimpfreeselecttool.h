@@ -154,9 +154,9 @@ name|GimpFreeSelectTool
 modifier|*
 name|free_select_tool
 parameter_list|,
-name|GimpImage
+name|GimpDisplay
 modifier|*
-name|gimage
+name|gdisp
 parameter_list|)
 function_decl|;
 block|}

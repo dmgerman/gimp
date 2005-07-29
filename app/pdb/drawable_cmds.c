@@ -9200,6 +9200,8 @@ argument_list|,
 name|mode
 argument_list|,
 name|mask
+argument_list|,
+name|progress
 argument_list|)
 expr_stmt|;
 block|}

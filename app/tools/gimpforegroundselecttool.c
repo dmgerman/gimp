@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpprogress.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpscanconvert.h"
 end_include
 
@@ -240,9 +246,9 @@ name|GimpFreeSelectTool
 modifier|*
 name|free_sel
 parameter_list|,
-name|GimpImage
+name|GimpDisplay
 modifier|*
-name|gimage
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -768,16 +774,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_foreground_select_tool_select (GimpFreeSelectTool * free_sel,GimpImage * gimage)
+DECL|function|gimp_foreground_select_tool_select (GimpFreeSelectTool * free_sel,GimpDisplay * gdisp)
 name|gimp_foreground_select_tool_select
 parameter_list|(
 name|GimpFreeSelectTool
 modifier|*
 name|free_sel
 parameter_list|,
-name|GimpImage
+name|GimpDisplay
 modifier|*
-name|gimage
+name|gdisp
 parameter_list|)
 block|{
 name|GimpTool
@@ -788,6 +794,14 @@ name|GIMP_TOOL
 argument_list|(
 name|free_sel
 argument_list|)
+decl_stmt|;
+name|GimpImage
+modifier|*
+name|gimage
+init|=
+name|gdisp
+operator|->
+name|gimage
 decl_stmt|;
 name|GimpDrawable
 modifier|*
@@ -908,6 +922,11 @@ argument_list|,
 name|GIMP_DRAWABLE
 argument_list|(
 name|mask
+argument_list|)
+argument_list|,
+name|GIMP_PROGRESS
+argument_list|(
+name|gdisp
 argument_list|)
 argument_list|)
 expr_stmt|;

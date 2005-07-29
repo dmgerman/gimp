@@ -69,13 +69,25 @@ directive|include
 file|"gimpimage-colormap.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpprogress.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimp-intl.h"
+end_include
+
 begin_comment
 comment|/*  public functions  */
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_drawable_foreground_extract (GimpDrawable * drawable,GimpForegroundExtractMode mode,GimpDrawable * mask)
+DECL|function|gimp_drawable_foreground_extract (GimpDrawable * drawable,GimpForegroundExtractMode mode,GimpDrawable * mask,GimpProgress * progress)
 name|gimp_drawable_foreground_extract
 parameter_list|(
 name|GimpDrawable
@@ -88,6 +100,10 @@ parameter_list|,
 name|GimpDrawable
 modifier|*
 name|mask
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|)
 block|{
 name|GimpImage
@@ -143,6 +159,18 @@ operator|==
 literal|1
 argument_list|)
 expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|progress
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_PROGRESS
+argument_list|(
+name|progress
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gimage
 operator|=
 name|gimp_item_get_image
@@ -181,6 +209,22 @@ name|x
 argument_list|,
 operator|&
 name|y
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|progress
+condition|)
+name|gimp_progress_start
+argument_list|(
+name|progress
+argument_list|,
+name|_
+argument_list|(
+literal|"Foreground Extraction..."
+argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -237,6 +281,15 @@ name|g_return_if_reached
 argument_list|()
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|progress
+condition|)
+name|gimp_progress_end
+argument_list|(
+name|progress
+argument_list|)
+expr_stmt|;
 name|gimp_drawable_update
 argument_list|(
 name|mask
