@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a3cdcc0103
+DECL|enum|__anon2a3ebd700103
 block|{
 DECL|enumerator|SELECTION_CHANGED
 name|SELECTION_CHANGED
@@ -78,7 +78,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a3cdcc0203
+DECL|enum|__anon2a3ebd700203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -94,7 +94,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a3cdcc0303
+DECL|enum|__anon2a3ebd700303
 block|{
 DECL|enumerator|COLUMN_PAGE_NO
 name|COLUMN_PAGE_NO
@@ -769,7 +769,7 @@ argument_list|(
 name|selector
 argument_list|)
 argument_list|,
-literal|6
+literal|12
 argument_list|)
 expr_stmt|;
 comment|/*  Pages  */
