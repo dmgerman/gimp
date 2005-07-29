@@ -73,7 +73,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|guchar
+name|gchar
 modifier|*
 name|gimp_clipboard_get_svg
 parameter_list|(

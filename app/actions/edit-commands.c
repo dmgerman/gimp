@@ -329,10 +329,10 @@ name|gchar
 modifier|*
 name|size
 decl_stmt|;
-name|guint64
+name|gint64
 name|memsize
 decl_stmt|;
-name|guint64
+name|gint64
 name|guisize
 decl_stmt|;
 name|return_if_no_image
@@ -1175,7 +1175,7 @@ name|gboolean
 name|paste_into
 parameter_list|)
 block|{
-name|guchar
+name|gchar
 modifier|*
 name|svg
 decl_stmt|;

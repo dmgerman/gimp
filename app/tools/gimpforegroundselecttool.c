@@ -302,7 +302,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Extract foreground"
+literal|"Extract foreground using SIOX algorithm"
 argument_list|)
 argument_list|,
 name|N_
@@ -316,7 +316,7 @@ name|NULL
 argument_list|,
 name|GIMP_HELP_TOOL_FOREGROUND_SELECT
 argument_list|,
-name|GIMP_STOCK_TOOL_FUZZY_SELECT
+name|GIMP_STOCK_TOOL_FOREGROUND_SELECT
 argument_list|,
 name|data
 argument_list|)

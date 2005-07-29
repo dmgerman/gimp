@@ -807,7 +807,7 @@ name|blob_type
 parameter_list|)
 block|{
 specifier|const
-name|guchar
+name|gchar
 modifier|*
 name|stock_id
 init|=

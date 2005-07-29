@@ -906,7 +906,7 @@ comment|/**  * gimp_clipboard_get_svg:  * @gimp: pointer to #Gimp  * @svg_length
 end_comment
 
 begin_function
-name|guchar
+name|gchar
 modifier|*
 DECL|function|gimp_clipboard_get_svg (Gimp * gimp,gsize * svg_length)
 name|gimp_clipboard_get_svg
@@ -1000,16 +1000,19 @@ condition|(
 name|data
 condition|)
 block|{
+specifier|const
 name|guchar
 modifier|*
-name|svg
+name|stream
 decl_stmt|;
+name|gchar
+modifier|*
 name|svg
+init|=
+name|NULL
+decl_stmt|;
+name|stream
 operator|=
-operator|(
-name|guchar
-operator|*
-operator|)
 name|gimp_selection_data_get_stream
 argument_list|(
 name|data
@@ -1019,13 +1022,13 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|svg
+name|stream
 condition|)
 name|svg
 operator|=
 name|g_memdup
 argument_list|(
-name|svg
+name|stream
 argument_list|,
 operator|*
 name|svg_length

@@ -385,6 +385,11 @@ define|#
 directive|define
 name|GIMP_STOCK_TOOL_FREE_SELECT
 value|"gimp-tool-free-select"
+DECL|macro|GIMP_STOCK_TOOL_FOREGROUND_SELECT
+define|#
+directive|define
+name|GIMP_STOCK_TOOL_FOREGROUND_SELECT
+value|"gimp-tool-foreground-select"
 DECL|macro|GIMP_STOCK_TOOL_FUZZY_SELECT
 define|#
 directive|define
