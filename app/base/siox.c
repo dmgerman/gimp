@@ -102,7 +102,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a43dbde0108
+DECL|struct|__anon2b757b700108
 block|{
 DECL|member|l
 name|gfloat
@@ -3284,13 +3284,44 @@ return|;
 block|}
 end_function
 
+begin_function
+specifier|static
+specifier|inline
+name|void
+DECL|function|siox_progress_update (SioxProgressFunc progress_callback,gpointer progress_data,gdouble value)
+name|siox_progress_update
+parameter_list|(
+name|SioxProgressFunc
+name|progress_callback
+parameter_list|,
+name|gpointer
+name|progress_data
+parameter_list|,
+name|gdouble
+name|value
+parameter_list|)
+block|{
+if|if
+condition|(
+name|progress_data
+condition|)
+name|progress_callback
+argument_list|(
+name|progress_data
+argument_list|,
+name|value
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
 begin_comment
 comment|/**  * siox_foreground_extract:  * @pixels:     the tiles to extract the foreground from  * @colormap:   colormap in case @pixels are indexed, %NULL otherwise  * @offset_x:   horizontal offset of @pixels with respect to the @mask  * @offset_y:   vertical offset of @pixels with respect to the @mask   * @mask:       a mask indicating sure foreground (255), sure background (0)  *              and undecided regions ([1..254]).  * @limits:     a three dimensional float array specifing the accuracy,  *              a good value is: { 0.66, 1.25, 2.5 }  * @smoothness: boundary smoothness (a good value is 3)  *  * Writes the resulting segmentation into @mask.  */
 end_comment
 
 begin_function
 name|void
-DECL|function|siox_foreground_extract (TileManager * pixels,const guchar * colormap,gint offset_x,gint offset_y,TileManager * mask,const gfloat limits[SIOX_DIMS],gint smoothness)
+DECL|function|siox_foreground_extract (TileManager * pixels,const guchar * colormap,gint offset_x,gint offset_y,TileManager * mask,const gfloat limits[SIOX_DIMS],gint smoothness,SioxProgressFunc progress_callback,gpointer progress_data)
 name|siox_foreground_extract
 parameter_list|(
 name|TileManager
@@ -3321,6 +3352,12 @@ index|]
 parameter_list|,
 name|gint
 name|smoothness
+parameter_list|,
+name|SioxProgressFunc
+name|progress_callback
+parameter_list|,
+name|gpointer
+name|progress_data
 parameter_list|)
 block|{
 name|PixelRegion
@@ -3419,6 +3456,17 @@ operator|==
 literal|1
 argument_list|)
 expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|progress_data
+operator|==
+name|NULL
+operator|||
+name|progress_callback
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
 name|cpercep_init
 argument_list|()
 expr_stmt|;
@@ -3474,6 +3522,15 @@ operator|!
 name|intersect
 condition|)
 return|return;
+name|siox_progress_update
+argument_list|(
+name|progress_callback
+argument_list|,
+name|progress_data
+argument_list|,
+literal|0.0
+argument_list|)
+expr_stmt|;
 comment|/* count given foreground and background pixels */
 name|pixel_region_init
 argument_list|(
@@ -3623,6 +3680,15 @@ expr_stmt|;
 name|j
 operator|=
 literal|0
+expr_stmt|;
+name|siox_progress_update
+argument_list|(
+name|progress_callback
+argument_list|,
+name|progress_data
+argument_list|,
+literal|0.1
+argument_list|)
 expr_stmt|;
 name|bpp
 operator|=
@@ -3836,6 +3902,15 @@ name|rowstride
 expr_stmt|;
 block|}
 block|}
+name|siox_progress_update
+argument_list|(
+name|progress_callback
+argument_list|,
+name|progress_data
+argument_list|,
+literal|0.2
+argument_list|)
+expr_stmt|;
 comment|/* Create color signature for the background */
 name|bgsig
 operator|=
@@ -3870,6 +3945,15 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
+name|siox_progress_update
+argument_list|(
+name|progress_callback
+argument_list|,
+name|progress_data
+argument_list|,
+literal|0.3
+argument_list|)
+expr_stmt|;
 comment|/* Create color signature for the foreground */
 name|fgsig
 operator|=
@@ -3888,6 +3972,15 @@ expr_stmt|;
 name|g_free
 argument_list|(
 name|surefg
+argument_list|)
+expr_stmt|;
+name|siox_progress_update
+argument_list|(
+name|progress_callback
+argument_list|,
+name|progress_data
+argument_list|,
+literal|0.4
 argument_list|)
 expr_stmt|;
 comment|/* Classify - the slow way....Better: Tree traversation */
@@ -4222,6 +4315,15 @@ argument_list|(
 name|bgsig
 argument_list|)
 expr_stmt|;
+name|siox_progress_update
+argument_list|(
+name|progress_callback
+argument_list|,
+name|progress_data
+argument_list|,
+literal|0.9
+argument_list|)
+expr_stmt|;
 comment|/* Smooth a bit for error killing */
 name|smooth_mask
 argument_list|(
@@ -4331,6 +4433,15 @@ argument_list|,
 name|width
 argument_list|,
 name|height
+argument_list|)
+expr_stmt|;
+name|siox_progress_update
+argument_list|(
+name|progress_callback
+argument_list|,
+name|progress_data
+argument_list|,
+literal|1.0
 argument_list|)
 expr_stmt|;
 block|}

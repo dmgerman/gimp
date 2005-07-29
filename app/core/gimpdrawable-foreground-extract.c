@@ -272,6 +272,13 @@ argument_list|,
 name|limits
 argument_list|,
 literal|3
+argument_list|,
+operator|(
+name|SioxProgressFunc
+operator|)
+name|gimp_progress_set_value
+argument_list|,
+name|progress
 argument_list|)
 expr_stmt|;
 block|}

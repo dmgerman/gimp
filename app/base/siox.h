@@ -28,6 +28,24 @@ name|SIOX_DIMS
 value|3
 end_define
 
+begin_typedef
+DECL|typedef|SioxProgressFunc
+typedef|typedef
+name|void
+function_decl|(
+modifier|*
+name|SioxProgressFunc
+function_decl|)
+parameter_list|(
+name|gpointer
+name|progress_data
+parameter_list|,
+name|gdouble
+name|fraction
+parameter_list|)
+function_decl|;
+end_typedef
+
 begin_function_decl
 name|void
 name|siox_foreground_extract
@@ -60,6 +78,12 @@ index|]
 parameter_list|,
 name|gint
 name|smoothness
+parameter_list|,
+name|SioxProgressFunc
+name|progress_callback
+parameter_list|,
+name|gpointer
+name|progress_data
 parameter_list|)
 function_decl|;
 end_function_decl
