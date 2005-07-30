@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * GimpForegroundSelectTool  * Copyright (C) 2005  Sven Neumann<sven@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -327,7 +327,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_foreground_select_tool_apply_mask
+name|gimp_foreground_select_tool_apply
 parameter_list|(
 name|GimpForegroundSelectTool
 modifier|*
@@ -543,12 +543,14 @@ decl_stmt|;
 name|GimpFreeSelectToolClass
 modifier|*
 name|free_select_tool_class
-init|=
+decl_stmt|;
+name|free_select_tool_class
+operator|=
 name|GIMP_FREE_SELECT_TOOL_CLASS
 argument_list|(
 name|klass
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|parent_class
 operator|=
 name|g_type_class_peek_parent
@@ -784,6 +786,15 @@ modifier|*
 name|gdisp
 parameter_list|)
 block|{
+name|GimpForegroundSelectTool
+modifier|*
+name|fg_select
+init|=
+name|GIMP_FOREGROUND_SELECT_TOOL
+argument_list|(
+name|tool
+argument_list|)
+decl_stmt|;
 if|if
 condition|(
 name|gdisp
@@ -808,12 +819,9 @@ case|:
 case|case
 name|GDK_Return
 case|:
-name|gimp_foreground_select_tool_apply_mask
+name|gimp_foreground_select_tool_apply
 argument_list|(
-name|GIMP_FOREGROUND_SELECT_TOOL
-argument_list|(
-name|tool
-argument_list|)
+name|fg_select
 argument_list|,
 name|gdisp
 argument_list|)
@@ -1251,8 +1259,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_foreground_select_tool_apply_mask (GimpForegroundSelectTool * fg_select,GimpDisplay * gdisp)
-name|gimp_foreground_select_tool_apply_mask
+DECL|function|gimp_foreground_select_tool_apply (GimpForegroundSelectTool * fg_select,GimpDisplay * gdisp)
+name|gimp_foreground_select_tool_apply
 parameter_list|(
 name|GimpForegroundSelectTool
 modifier|*
@@ -1276,6 +1284,14 @@ name|GimpSelectionOptions
 modifier|*
 name|options
 decl_stmt|;
+if|if
+condition|(
+operator|!
+name|fg_select
+operator|->
+name|mask
+condition|)
+return|return;
 name|options
 operator|=
 name|GIMP_SELECTION_OPTIONS
@@ -1287,14 +1303,6 @@ operator|->
 name|tool_options
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|fg_select
-operator|->
-name|mask
-condition|)
-return|return;
 name|gimp_channel_select_channel
 argument_list|(
 name|gimp_image_get_mask
