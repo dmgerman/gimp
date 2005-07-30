@@ -626,6 +626,11 @@ modifier|*
 name|highlight
 decl_stmt|;
 comment|/* in image coordinates, can be NULL   */
+DECL|member|overlay
+name|GimpDrawable
+modifier|*
+name|overlay
+decl_stmt|;
 DECL|member|scroll_info
 name|gpointer
 name|scroll_info
@@ -983,6 +988,21 @@ specifier|const
 name|GdkRectangle
 modifier|*
 name|highlight
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_display_shell_set_overlay
+parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|,
+name|GimpDrawable
+modifier|*
+name|overlay
 parameter_list|)
 function_decl|;
 end_function_decl
