@@ -1504,13 +1504,13 @@ decl_stmt|;
 name|gdouble
 name|version
 decl_stmt|;
-name|guchar
+name|gchar
 name|magic1
 index|[
 literal|20
 index|]
 decl_stmt|;
-name|guchar
+name|gchar
 name|magic2
 index|[
 literal|20

@@ -1922,6 +1922,11 @@ name|object_set_url
 argument_list|(
 name|obj
 argument_list|,
+operator|(
+specifier|const
+name|gchar
+operator|*
+operator|)
 name|data
 operator|->
 name|data

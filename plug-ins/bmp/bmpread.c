@@ -643,7 +643,7 @@ decl_stmt|;
 name|gint32
 name|image_ID
 decl_stmt|;
-name|guchar
+name|gchar
 name|magick
 index|[
 literal|2

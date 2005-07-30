@@ -240,10 +240,12 @@ parameter_list|,
 name|gint
 name|element
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|value_rep
 parameter_list|,
+specifier|const
 name|guint8
 modifier|*
 name|data
@@ -269,10 +271,12 @@ parameter_list|,
 name|gint
 name|element
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|value_rep
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|s
@@ -295,6 +299,7 @@ parameter_list|,
 name|gint
 name|element
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|value_rep
@@ -2690,6 +2695,11 @@ literal|0x0001
 argument_list|,
 literal|"OB"
 argument_list|,
+operator|(
+specifier|const
+name|guint8
+operator|*
+operator|)
 literal|"\0\1"
 argument_list|,
 literal|2
@@ -3209,7 +3219,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|add_tag_pointer (GByteArray * group_stream,gint group,gint element,gchar * value_rep,guint8 * data,gint length)
+DECL|function|add_tag_pointer (GByteArray * group_stream,gint group,gint element,const gchar * value_rep,const guint8 * data,gint length)
 name|add_tag_pointer
 parameter_list|(
 name|GByteArray
@@ -3222,10 +3232,12 @@ parameter_list|,
 name|gint
 name|element
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|value_rep
 parameter_list|,
+specifier|const
 name|guint8
 modifier|*
 name|data
@@ -3275,7 +3287,7 @@ argument_list|(
 name|group_stream
 argument_list|,
 operator|(
-name|gchar
+name|guint8
 operator|*
 operator|)
 operator|&
@@ -3299,7 +3311,7 @@ argument_list|(
 name|group_stream
 argument_list|,
 operator|(
-name|gchar
+name|guint8
 operator|*
 operator|)
 operator|&
@@ -3312,6 +3324,11 @@ name|g_byte_array_append
 argument_list|(
 name|group_stream
 argument_list|,
+operator|(
+specifier|const
+name|guchar
+operator|*
+operator|)
 name|value_rep
 argument_list|,
 literal|2
@@ -3326,6 +3343,11 @@ name|g_byte_array_append
 argument_list|(
 name|group_stream
 argument_list|,
+operator|(
+specifier|const
+name|guchar
+operator|*
+operator|)
 literal|"\0\0"
 argument_list|,
 literal|2
@@ -3346,7 +3368,7 @@ argument_list|(
 name|group_stream
 argument_list|,
 operator|(
-name|gchar
+name|guint8
 operator|*
 operator|)
 operator|&
@@ -3373,7 +3395,7 @@ argument_list|(
 name|group_stream
 argument_list|,
 operator|(
-name|gchar
+name|guint8
 operator|*
 operator|)
 operator|&
@@ -3402,7 +3424,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|add_tag_string (GByteArray * group_stream,gint group,gint element,gchar * value_rep,gchar * s)
+DECL|function|add_tag_string (GByteArray * group_stream,gint group,gint element,const gchar * value_rep,const gchar * s)
 name|add_tag_string
 parameter_list|(
 name|GByteArray
@@ -3415,10 +3437,12 @@ parameter_list|,
 name|gint
 name|element
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|value_rep
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|s
@@ -3435,6 +3459,7 @@ argument_list|,
 name|value_rep
 argument_list|,
 operator|(
+specifier|const
 name|guint8
 operator|*
 operator|)
@@ -3456,7 +3481,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|add_tag_int (GByteArray * group_stream,gint group,gint element,gchar * value_rep,gint value)
+DECL|function|add_tag_int (GByteArray * group_stream,gint group,gint element,const gchar * value_rep,gint value)
 name|add_tag_int
 parameter_list|(
 name|GByteArray
@@ -3469,6 +3494,7 @@ parameter_list|,
 name|gint
 name|element
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|value_rep
@@ -3511,6 +3537,7 @@ argument_list|,
 name|value_rep
 argument_list|,
 operator|(
+specifier|const
 name|guint8
 operator|*
 operator|)

@@ -168,7 +168,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b112a00108
+DECL|struct|__anon2c4715370108
 block|{
 DECL|member|about_dialog
 name|GtkWidget
@@ -4915,6 +4915,11 @@ name|line
 argument_list|(
 name|noise
 argument_list|,
+operator|(
+specifier|const
+name|guchar
+operator|*
+operator|)
 literal|"\211\120\116\107\r\n\032\n\0\0\0\r\111\110D\122\0\0\001+\0\0\001"
 literal|"\r\004\003\0\0\0\245\177^\254\0\0\0000\120\114TE\0\0\0\023\026\026"
 literal|" \'(2=ANXYSr\177surg\216\234\226\230\225z\247\272\261\263\257\222Ê"

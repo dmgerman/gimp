@@ -606,6 +606,10 @@ name|entry
 operator|->
 name|data
 operator|=
+operator|(
+name|guchar
+operator|*
+operator|)
 name|g_strdup
 argument_list|(
 literal|"The GIMP"

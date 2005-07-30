@@ -2761,6 +2761,11 @@ name|name
 operator|=
 name|g_strndup
 argument_list|(
+operator|(
+specifier|const
+name|gchar
+operator|*
+operator|)
 name|selection
 operator|->
 name|data
