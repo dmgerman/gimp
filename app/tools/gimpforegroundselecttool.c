@@ -1587,7 +1587,7 @@ argument_list|(
 name|mask
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_set_overlay
+name|gimp_display_shell_set_mask
 argument_list|(
 name|GIMP_DISPLAY_SHELL
 argument_list|(
