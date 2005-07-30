@@ -385,15 +385,6 @@ argument_list|,
 name|GIMP_TOOL_CURSOR_ERASER
 argument_list|)
 expr_stmt|;
-name|gimp_tool_control_set_toggle_tool_cursor
-argument_list|(
-name|tool
-operator|->
-name|control
-argument_list|,
-name|GIMP_TOOL_CURSOR_ERASER
-argument_list|)
-expr_stmt|;
 name|gimp_tool_control_set_toggle_cursor_modifier
 argument_list|(
 name|tool
