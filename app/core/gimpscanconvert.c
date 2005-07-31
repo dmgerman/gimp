@@ -2184,7 +2184,7 @@ condition|)
 return|return;
 comment|/* We already have a valid SVP */
 comment|/* Debug output of libart path */
-comment|/* {    *   gint i;    *   for (i=0; i< sc->num_nodes + 1; i++)    *     {    *       g_printerr ("X: %f, Y: %f, Type: %d\n", sc->vpath[i].x,    *                                               sc->vpath[i].y,    *                                               sc->vpath[i].code );    *     }    * }    */
+comment|/* {    *   gint i;    *   for (i = 0; i< sc->num_nodes + 1; i++)    *     {    *       g_printerr ("X: %f, Y: %f, Type: %d\n", sc->vpath[i].x,    *                                               sc->vpath[i].y,    *                                               sc->vpath[i].code );    *     }    * }    */
 if|if
 condition|(
 name|sc
