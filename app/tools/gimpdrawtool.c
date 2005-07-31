@@ -3519,7 +3519,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_draw_tool_on_vectors_handle (GimpDrawTool * draw_tool,GimpDisplay * gdisp,GimpVectors * vectors,GimpCoords * coord,gint width,gint height,GimpAnchorType preferred,gboolean exclusive,GimpAnchor ** ret_anchor,GimpStroke ** ret_stroke)
+DECL|function|gimp_draw_tool_on_vectors_handle (GimpDrawTool * draw_tool,GimpDisplay * gdisp,GimpVectors * vectors,const GimpCoords * coord,gint width,gint height,GimpAnchorType preferred,gboolean exclusive,GimpAnchor ** ret_anchor,GimpStroke ** ret_stroke)
 name|gimp_draw_tool_on_vectors_handle
 parameter_list|(
 name|GimpDrawTool
@@ -3534,6 +3534,7 @@ name|GimpVectors
 modifier|*
 name|vectors
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coord
@@ -4080,7 +4081,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_draw_tool_on_vectors_curve (GimpDrawTool * draw_tool,GimpDisplay * gdisp,GimpVectors * vectors,GimpCoords * coord,gint width,gint height,GimpCoords * ret_coords,gdouble * ret_pos,GimpAnchor ** ret_segment_start,GimpAnchor ** ret_segment_end,GimpStroke ** ret_stroke)
+DECL|function|gimp_draw_tool_on_vectors_curve (GimpDrawTool * draw_tool,GimpDisplay * gdisp,GimpVectors * vectors,const GimpCoords * coord,gint width,gint height,GimpCoords * ret_coords,gdouble * ret_pos,GimpAnchor ** ret_segment_start,GimpAnchor ** ret_segment_end,GimpStroke ** ret_stroke)
 name|gimp_draw_tool_on_vectors_curve
 parameter_list|(
 name|GimpDrawTool
@@ -4095,6 +4096,7 @@ name|GimpVectors
 modifier|*
 name|vectors
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coord
@@ -4407,7 +4409,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_draw_tool_on_vectors (GimpDrawTool * draw_tool,GimpDisplay * gdisp,GimpCoords * coords,gint width,gint height,GimpCoords * ret_coords,gdouble * ret_pos,GimpAnchor ** ret_segment_start,GimpAnchor ** ret_segment_end,GimpStroke ** ret_stroke,GimpVectors ** ret_vectors)
+DECL|function|gimp_draw_tool_on_vectors (GimpDrawTool * draw_tool,GimpDisplay * gdisp,const GimpCoords * coords,gint width,gint height,GimpCoords * ret_coords,gdouble * ret_pos,GimpAnchor ** ret_segment_start,GimpAnchor ** ret_segment_end,GimpStroke ** ret_stroke,GimpVectors ** ret_vectors)
 name|gimp_draw_tool_on_vectors
 parameter_list|(
 name|GimpDrawTool
@@ -4418,6 +4420,7 @@ name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -4612,13 +4615,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_draw_tool_draw_lines (GimpDrawTool * draw_tool,gdouble * points,gint n_points,gboolean filled,gboolean use_offsets)
+DECL|function|gimp_draw_tool_draw_lines (GimpDrawTool * draw_tool,const gdouble * points,gint n_points,gboolean filled,gboolean use_offsets)
 name|gimp_draw_tool_draw_lines
 parameter_list|(
 name|GimpDrawTool
 modifier|*
 name|draw_tool
 parameter_list|,
+specifier|const
 name|gdouble
 modifier|*
 name|points
@@ -4643,11 +4647,6 @@ name|coords
 decl_stmt|;
 name|gint
 name|i
-decl_stmt|;
-name|gint
-name|sx
-decl_stmt|,
-name|sy
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -4712,31 +4711,23 @@ literal|1
 index|]
 argument_list|,
 operator|&
-name|sx
-argument_list|,
-operator|&
-name|sy
-argument_list|,
-name|use_offsets
-argument_list|)
-expr_stmt|;
 name|coords
 index|[
 name|i
 index|]
 operator|.
 name|x
-operator|=
-name|sx
-expr_stmt|;
+argument_list|,
+operator|&
 name|coords
 index|[
 name|i
 index|]
 operator|.
 name|y
-operator|=
-name|sy
+argument_list|,
+name|use_offsets
+argument_list|)
 expr_stmt|;
 block|}
 if|if
@@ -4792,13 +4783,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_draw_tool_draw_strokes (GimpDrawTool * draw_tool,GimpCoords * points,gint n_points,gboolean filled,gboolean use_offsets)
+DECL|function|gimp_draw_tool_draw_strokes (GimpDrawTool * draw_tool,const GimpCoords * points,gint n_points,gboolean filled,gboolean use_offsets)
 name|gimp_draw_tool_draw_strokes
 parameter_list|(
 name|GimpDrawTool
 modifier|*
 name|draw_tool
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|points
@@ -4823,11 +4815,6 @@ name|coords
 decl_stmt|;
 name|gint
 name|i
-decl_stmt|;
-name|gint
-name|sx
-decl_stmt|,
-name|sy
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -4890,31 +4877,23 @@ operator|.
 name|y
 argument_list|,
 operator|&
-name|sx
-argument_list|,
-operator|&
-name|sy
-argument_list|,
-name|use_offsets
-argument_list|)
-expr_stmt|;
 name|coords
 index|[
 name|i
 index|]
 operator|.
 name|x
-operator|=
-name|sx
-expr_stmt|;
+argument_list|,
+operator|&
 name|coords
 index|[
 name|i
 index|]
 operator|.
 name|y
-operator|=
-name|sy
+argument_list|,
+name|use_offsets
+argument_list|)
 expr_stmt|;
 block|}
 if|if
