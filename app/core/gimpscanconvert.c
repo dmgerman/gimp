@@ -1874,7 +1874,7 @@ name|off_y
 argument_list|,
 name|antialias
 argument_list|,
-literal|0
+literal|255
 argument_list|)
 expr_stmt|;
 block|}
