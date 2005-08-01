@@ -350,5 +350,43 @@ return|;
 block|}
 end_function
 
+begin_function
+name|gboolean
+DECL|function|gimp_composite_altivec_init (void)
+name|gimp_composite_altivec_init
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+if|#
+directive|if
+name|defined
+argument_list|(
+name|COMPILE_ALTIVEC_IS_OKAY
+argument_list|)
+if|if
+condition|(
+name|cpu_accel
+argument_list|()
+operator|&
+name|CPU_ACCEL_PPC_ALTIVEC
+condition|)
+block|{
+return|return
+operator|(
+name|TRUE
+operator|)
+return|;
+block|}
+endif|#
+directive|endif
+return|return
+operator|(
+name|FALSE
+operator|)
+return|;
+block|}
+end_function
+
 end_unit
 

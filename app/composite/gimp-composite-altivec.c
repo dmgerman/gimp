@@ -30,12 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/cpu-accel.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimp-composite.h"
 end_include
 
@@ -2697,7 +2691,7 @@ operator|.
 name|blend
 decl_stmt|;
 union|union
-DECL|union|__anon29313b77010a
+DECL|union|__anon29376e5c010a
 block|{
 DECL|member|v
 name|vector
@@ -4650,7 +4644,7 @@ literal|1
 argument_list|)
 decl_stmt|;
 union|union
-DECL|union|__anon29313b77020a
+DECL|union|__anon29376e5c020a
 block|{
 DECL|member|v
 name|vector
@@ -5721,7 +5715,7 @@ literal|1
 argument_list|)
 decl_stmt|;
 union|union
-DECL|union|__anon29313b77030a
+DECL|union|__anon29376e5c030a
 block|{
 DECL|member|v
 name|vector
@@ -6746,41 +6740,6 @@ end_endif
 begin_comment
 comment|/* COMPILE_IS_OKAY */
 end_comment
-
-begin_function
-name|gboolean
-DECL|function|gimp_composite_altivec_init (void)
-name|gimp_composite_altivec_init
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-ifdef|#
-directive|ifdef
-name|COMPILE_ALTIVEC_IS_OKAY
-if|if
-condition|(
-name|cpu_accel
-argument_list|()
-operator|&
-name|CPU_ACCEL_PPC_ALTIVEC
-condition|)
-block|{
-return|return
-operator|(
-name|TRUE
-operator|)
-return|;
-block|}
-endif|#
-directive|endif
-return|return
-operator|(
-name|FALSE
-operator|)
-return|;
-block|}
-end_function
 
 end_unit
 

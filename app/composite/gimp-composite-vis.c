@@ -50,33 +50,5 @@ endif|#
 directive|endif
 end_endif
 
-begin_function
-name|gboolean
-DECL|function|gimp_composite_vis_init (void)
-name|gimp_composite_vis_init
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-ifdef|#
-directive|ifdef
-name|COMPILE_VIS_IS_OKAY
-return|return
-operator|(
-name|TRUE
-operator|)
-return|;
-else|#
-directive|else
-return|return
-operator|(
-name|FALSE
-operator|)
-return|;
-endif|#
-directive|endif
-block|}
-end_function
-
 end_unit
 

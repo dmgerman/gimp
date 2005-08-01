@@ -30,12 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/cpu-accel.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimp-composite.h"
 end_include
 
@@ -1790,46 +1784,6 @@ end_endif
 begin_comment
 comment|/* COMPILE_SSE2_IS_OKAY */
 end_comment
-
-begin_function
-name|gboolean
-DECL|function|gimp_composite_sse2_init (void)
-name|gimp_composite_sse2_init
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-ifdef|#
-directive|ifdef
-name|COMPILE_SSE2_IS_OKAY
-name|guint32
-name|cpu
-init|=
-name|cpu_accel
-argument_list|()
-decl_stmt|;
-if|if
-condition|(
-name|cpu
-operator|&
-name|CPU_ACCEL_X86_SSE2
-condition|)
-block|{
-return|return
-operator|(
-name|TRUE
-operator|)
-return|;
-block|}
-endif|#
-directive|endif
-return|return
-operator|(
-name|FALSE
-operator|)
-return|;
-block|}
-end_function
 
 end_unit
 

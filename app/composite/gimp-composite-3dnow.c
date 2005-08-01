@@ -30,12 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/cpu-accel.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimp-composite.h"
 end_include
 
@@ -55,41 +49,6 @@ begin_endif
 endif|#
 directive|endif
 end_endif
-
-begin_function
-name|gboolean
-DECL|function|gimp_composite_3dnow_init (void)
-name|gimp_composite_3dnow_init
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-ifdef|#
-directive|ifdef
-name|COMPILE_3DNOW_IS_OKAY
-if|if
-condition|(
-name|cpu_accel
-argument_list|()
-operator|&
-name|CPU_ACCEL_X86_3DNOW
-condition|)
-block|{
-return|return
-operator|(
-name|TRUE
-operator|)
-return|;
-block|}
-endif|#
-directive|endif
-return|return
-operator|(
-name|FALSE
-operator|)
-return|;
-block|}
-end_function
 
 end_unit
 

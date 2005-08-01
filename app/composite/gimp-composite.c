@@ -36,12 +36,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/cpu-accel.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimp-composite.h"
 end_include
 
@@ -590,7 +584,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon29b1ee410108
+DECL|struct|__anon2792a0e20108
 block|{
 DECL|member|announce_function
 name|gchar

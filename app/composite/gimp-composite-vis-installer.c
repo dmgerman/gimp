@@ -66,5 +66,36 @@ return|;
 block|}
 end_function
 
+begin_function
+name|gboolean
+DECL|function|gimp_composite_vis_init (void)
+name|gimp_composite_vis_init
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+if|#
+directive|if
+name|defined
+argument_list|(
+name|COMPILE_VIS_IS_OKAY
+argument_list|)
+return|return
+operator|(
+name|TRUE
+operator|)
+return|;
+else|#
+directive|else
+return|return
+operator|(
+name|FALSE
+operator|)
+return|;
+endif|#
+directive|endif
+block|}
+end_function
+
 end_unit
 
