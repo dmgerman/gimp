@@ -40,6 +40,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"base/cpu-accel.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-composite.h"
 end_include
 
