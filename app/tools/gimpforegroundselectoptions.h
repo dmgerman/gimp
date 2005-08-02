@@ -115,6 +115,10 @@ DECL|member|background
 name|gboolean
 name|background
 decl_stmt|;
+DECL|member|stroke_width
+name|gdouble
+name|stroke_width
+decl_stmt|;
 block|}
 struct|;
 end_struct
