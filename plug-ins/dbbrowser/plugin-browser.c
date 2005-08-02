@@ -42,12 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpprocview.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
@@ -77,7 +71,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc3ad2f0103
+DECL|enum|__anon2c638a440103
 block|{
 DECL|enumerator|LIST_COLUMN_NAME
 name|LIST_COLUMN_NAME
@@ -102,7 +96,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc3ad2f0203
+DECL|enum|__anon2c638a440203
 block|{
 DECL|enumerator|TREE_COLUMN_PATH_NAME
 name|TREE_COLUMN_PATH_NAME
@@ -128,7 +122,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc3ad2f0308
+DECL|struct|__anon2c638a440308
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -159,7 +153,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc3ad2f0408
+DECL|struct|__anon2c638a440408
 block|{
 DECL|member|menu
 name|gchar

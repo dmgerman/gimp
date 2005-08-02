@@ -97,6 +97,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimp/gimpprocbrowserdialog.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimpprocview.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimpprogressbar.h>
 end_include
 

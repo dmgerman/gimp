@@ -28,13 +28,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimp.h>
+file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|<libgimp/gimpui.h>
+file|"gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpuitypes.h"
 end_include
 
 begin_include
@@ -46,7 +52,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/stdplugins-intl.h"
+file|"libgimp-intl.h"
 end_include
 
 begin_comment
