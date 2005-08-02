@@ -111,10 +111,6 @@ DECL|member|parent_instance
 name|GimpDialog
 name|parent_instance
 decl_stmt|;
-DECL|member|scheme_names
-name|gboolean
-name|scheme_names
-decl_stmt|;
 DECL|member|browser
 name|GtkWidget
 modifier|*
@@ -215,11 +211,7 @@ name|GtkWidget
 modifier|*
 name|gimp_proc_browser_dialog_new
 parameter_list|(
-name|gboolean
-name|scheme_names
-parameter_list|,
-name|gboolean
-name|apply_button
+name|void
 parameter_list|)
 function_decl|;
 end_function_decl

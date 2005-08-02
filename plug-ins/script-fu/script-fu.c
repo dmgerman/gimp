@@ -297,7 +297,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"extension_script_fu"
+literal|"extension-script-fu"
 argument_list|,
 literal|"A scheme interpreter for scripting GIMP operations"
 argument_list|,
@@ -326,7 +326,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_script_fu_console"
+literal|"plug-in-script-fu-console"
 argument_list|,
 literal|"Provides a console mode for script-fu development"
 argument_list|,
@@ -362,7 +362,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_script_fu_console"
+literal|"plug-in-script-fu-console"
 argument_list|,
 name|N_
 argument_list|(
@@ -372,7 +372,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_script_fu_text_console"
+literal|"plug-in-script-fu-text-console"
 argument_list|,
 literal|"Provides a text console mode for script-fu "
 literal|"development"
@@ -406,7 +406,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_script_fu_server"
+literal|"plug-in-script-fu-server"
 argument_list|,
 literal|"Provides a server for remote script-fu operation"
 argument_list|,
@@ -441,7 +441,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_script_fu_server"
+literal|"plug-in-script-fu-server"
 argument_list|,
 name|N_
 argument_list|(
@@ -451,7 +451,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_script_fu_eval"
+literal|"plug-in-script-fu-eval"
 argument_list|,
 literal|"Evaluate scheme code"
 argument_list|,
@@ -534,7 +534,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"extension_script_fu"
+literal|"extension-script-fu"
 argument_list|)
 operator|==
 literal|0
@@ -570,7 +570,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"extension_script_fu"
+literal|"extension-script-fu"
 argument_list|)
 operator|==
 literal|0
@@ -640,7 +640,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"plug_in_script_fu_text_console"
+literal|"plug-in-script-fu-text-console"
 argument_list|)
 operator|==
 literal|0
@@ -668,7 +668,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"plug_in_script_fu_console"
+literal|"plug-in-script-fu-console"
 argument_list|)
 operator|==
 literal|0
@@ -696,7 +696,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"plug_in_script_fu_server"
+literal|"plug-in-script-fu-server"
 argument_list|)
 operator|==
 literal|0
@@ -724,7 +724,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"plug_in_script_fu_eval"
+literal|"plug-in-script-fu-eval"
 argument_list|)
 operator|==
 literal|0
@@ -954,7 +954,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_install_temp_proc
 argument_list|(
-literal|"script_fu_refresh"
+literal|"script-fu-refresh"
 argument_list|,
 literal|"Re-read all available scripts"
 argument_list|,

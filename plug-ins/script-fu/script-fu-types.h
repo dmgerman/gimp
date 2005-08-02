@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b457300108
+DECL|struct|__anon27c69b060108
 block|{
 DECL|member|adj
 name|GtkAdjustment
@@ -69,7 +69,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b457300208
+DECL|struct|__anon27c69b060208
 block|{
 DECL|member|file_entry
 name|GtkWidget
@@ -90,7 +90,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b457300308
+DECL|struct|__anon27c69b060308
 block|{
 DECL|member|name
 name|gchar
@@ -118,7 +118,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b457300408
+DECL|struct|__anon27c69b060408
 block|{
 DECL|member|list
 name|GSList
@@ -138,7 +138,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b457300508
+DECL|struct|__anon27c69b060508
 block|{
 DECL|member|type_name
 name|gchar
@@ -158,7 +158,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon27b45730060a
+DECL|union|__anon27c69b06060a
 block|{
 DECL|member|sfa_image
 name|gint32
@@ -238,17 +238,12 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b457300708
+DECL|struct|__anon27c69b060708
 block|{
 DECL|member|script_name
 name|gchar
 modifier|*
 name|script_name
-decl_stmt|;
-DECL|member|pdb_name
-name|gchar
-modifier|*
-name|pdb_name
 decl_stmt|;
 DECL|member|menu_path
 name|gchar
