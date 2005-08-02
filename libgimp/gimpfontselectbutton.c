@@ -82,7 +82,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e1b6ab0103
+DECL|enum|__anon28b6d5970103
 block|{
 DECL|enumerator|FONT_SET
 name|FONT_SET
@@ -95,7 +95,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e1b6ab0203
+DECL|enum|__anon28b6d5970203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1313,6 +1313,11 @@ name|str
 operator|=
 name|g_strndup
 argument_list|(
+operator|(
+specifier|const
+name|gchar
+operator|*
+operator|)
 name|selection
 operator|->
 name|data
