@@ -49,6 +49,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpProcBrowserDialog
+typedef|typedef
+name|struct
+name|_GimpProcBrowserDialog
+name|GimpProcBrowserDialog
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpProgressBar
 typedef|typedef
 name|struct
