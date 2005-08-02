@@ -49,7 +49,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_version"
+literal|"gimp-version"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -125,7 +125,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_getpid"
+literal|"gimp-getpid"
 argument_list|,
 operator|&
 name|nreturn_vals

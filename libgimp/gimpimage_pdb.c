@@ -57,7 +57,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_list"
+literal|"gimp-image-list"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -178,7 +178,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_new"
+literal|"gimp-image-new"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -265,7 +265,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_duplicate"
+literal|"gimp-image-duplicate"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -343,7 +343,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_delete"
+literal|"gimp-image-delete"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -410,7 +410,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_base_type"
+literal|"gimp-image-base-type"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -488,7 +488,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_width"
+literal|"gimp-image-width"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -566,7 +566,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_height"
+literal|"gimp-image-height"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -644,7 +644,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_free_shadow"
+literal|"gimp-image-free-shadow"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -723,7 +723,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_resize"
+literal|"gimp-image-resize"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -806,7 +806,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_resize_to_layers"
+literal|"gimp-image-resize-to-layers"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -879,7 +879,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_scale"
+literal|"gimp-image-scale"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -966,7 +966,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_crop"
+literal|"gimp-image-crop"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1052,7 +1052,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_flip"
+literal|"gimp-image-flip"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1126,7 +1126,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_rotate"
+literal|"gimp-image-rotate"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1203,7 +1203,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_get_layers"
+literal|"gimp-image-get-layers"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1327,7 +1327,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_get_channels"
+literal|"gimp-image-get-channels"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1451,7 +1451,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_get_vectors"
+literal|"gimp-image-get-vectors"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1570,7 +1570,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_get_active_drawable"
+literal|"gimp-image-get-active-drawable"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1648,7 +1648,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_unset_active_channel"
+literal|"gimp-image-unset-active-channel"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1716,7 +1716,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_get_floating_sel"
+literal|"gimp-image-get-floating-sel"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1795,7 +1795,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_floating_sel_attached_to"
+literal|"gimp-image-floating-sel-attached-to"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1895,7 +1895,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_pick_color"
+literal|"gimp-image-pick-color"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -2009,7 +2009,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_pick_correlate_layer"
+literal|"gimp-image-pick-correlate-layer"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -2101,7 +2101,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_add_layer"
+literal|"gimp-image-add-layer"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -2179,7 +2179,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_remove_layer"
+literal|"gimp-image-remove-layer"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -2253,7 +2253,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_raise_layer"
+literal|"gimp-image-raise-layer"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -2327,7 +2327,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_lower_layer"
+literal|"gimp-image-lower-layer"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -2401,7 +2401,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_raise_layer_to_top"
+literal|"gimp-image-raise-layer-to-top"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -2475,7 +2475,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_lower_layer_to_bottom"
+literal|"gimp-image-lower-layer-to-bottom"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -2552,7 +2552,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_add_channel"
+literal|"gimp-image-add-channel"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -2630,7 +2630,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_remove_channel"
+literal|"gimp-image-remove-channel"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -2704,7 +2704,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_raise_channel"
+literal|"gimp-image-raise-channel"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -2778,7 +2778,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_lower_channel"
+literal|"gimp-image-lower-channel"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -2850,7 +2850,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_flatten"
+literal|"gimp-image-flatten"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -2932,7 +2932,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_merge_visible_layers"
+literal|"gimp-image-merge-visible-layers"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -3021,7 +3021,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_merge_down"
+literal|"gimp-image-merge-down"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -3113,7 +3113,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_get_colormap"
+literal|"gimp-image-get-colormap"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -3239,7 +3239,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_set_colormap"
+literal|"gimp-image-set-colormap"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -3314,7 +3314,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_clean_all"
+literal|"gimp-image-clean-all"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -3381,7 +3381,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_is_dirty"
+literal|"gimp-image-is-dirty"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -3486,7 +3486,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_thumbnail"
+literal|"gimp-image-thumbnail"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -3675,7 +3675,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_get_active_layer"
+literal|"gimp-image-get-active-layer"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -3756,7 +3756,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_set_active_layer"
+literal|"gimp-image-set-active-layer"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -3828,7 +3828,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_get_active_channel"
+literal|"gimp-image-get-active-channel"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -3909,7 +3909,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_set_active_channel"
+literal|"gimp-image-set-active-channel"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -3981,7 +3981,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_get_selection"
+literal|"gimp-image-get-selection"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -4062,7 +4062,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_get_component_active"
+literal|"gimp-image-get-component-active"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -4150,7 +4150,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_set_component_active"
+literal|"gimp-image-set-component-active"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -4228,7 +4228,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_get_component_visible"
+literal|"gimp-image-get-component-visible"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -4316,7 +4316,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_set_component_visible"
+literal|"gimp-image-set-component-visible"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -4393,7 +4393,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_get_filename"
+literal|"gimp-image-get-filename"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -4479,7 +4479,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_set_filename"
+literal|"gimp-image-set-filename"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -4552,7 +4552,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_get_name"
+literal|"gimp-image-get-name"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -4641,7 +4641,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_get_resolution"
+literal|"gimp-image-get-resolution"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -4754,7 +4754,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_set_resolution"
+literal|"gimp-image-set-resolution"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -4829,7 +4829,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_get_unit"
+literal|"gimp-image-get-unit"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -4910,7 +4910,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_set_unit"
+literal|"gimp-image-set-unit"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -4981,7 +4981,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_get_tattoo_state"
+literal|"gimp-image-get-tattoo-state"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -5062,7 +5062,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_set_tattoo_state"
+literal|"gimp-image-set-tattoo-state"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -5137,7 +5137,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_get_layer_by_tattoo"
+literal|"gimp-image-get-layer-by-tattoo"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -5223,7 +5223,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_get_channel_by_tattoo"
+literal|"gimp-image-get-channel-by-tattoo"
 argument_list|,
 operator|&
 name|nreturn_vals

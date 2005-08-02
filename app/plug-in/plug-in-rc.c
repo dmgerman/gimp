@@ -225,7 +225,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a8e7ae30103
+DECL|enum|__anon298b50960103
 block|{
 DECL|enumerator|PROTOCOL_VERSION
 name|PROTOCOL_VERSION
@@ -1155,12 +1155,27 @@ name|proc_def
 operator|->
 name|db_info
 operator|.
-name|name
+name|original_name
 argument_list|)
 condition|)
 return|return
 name|G_TOKEN_STRING
 return|;
+name|proc_def
+operator|->
+name|db_info
+operator|.
+name|name
+operator|=
+name|gimp_canonicalize_identifier
+argument_list|(
+name|proc_def
+operator|->
+name|db_info
+operator|.
+name|original_name
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -2920,7 +2935,7 @@ name|proc_def
 operator|->
 name|db_info
 operator|.
-name|name
+name|original_name
 argument_list|,
 name|proc_def
 operator|->

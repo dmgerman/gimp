@@ -61,7 +61,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_transform_flip_simple"
+literal|"gimp-drawable-transform-flip-simple"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -183,7 +183,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_transform_flip"
+literal|"gimp-drawable-transform-flip"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -316,7 +316,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_transform_flip_default"
+literal|"gimp-drawable-transform-flip-default"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -458,7 +458,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_transform_perspective"
+literal|"gimp-drawable-transform-perspective"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -619,7 +619,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_transform_perspective_default"
+literal|"gimp-drawable-transform-perspective-default"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -753,7 +753,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_transform_rotate_simple"
+literal|"gimp-drawable-transform-rotate-simple"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -879,7 +879,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_transform_rotate"
+literal|"gimp-drawable-transform-rotate"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1012,7 +1012,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_transform_rotate_default"
+literal|"gimp-drawable-transform-rotate-default"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1142,7 +1142,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_transform_scale"
+literal|"gimp-drawable-transform-scale"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1275,7 +1275,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_transform_scale_default"
+literal|"gimp-drawable-transform-scale-default"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1399,7 +1399,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_transform_shear"
+literal|"gimp-drawable-transform-shear"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1518,7 +1518,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_transform_shear_default"
+literal|"gimp-drawable-transform-shear-default"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1649,7 +1649,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_transform_2d"
+literal|"gimp-drawable-transform-2d"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1803,7 +1803,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_transform_2d_default"
+literal|"gimp-drawable-transform-2d-default"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1960,7 +1960,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_transform_matrix"
+literal|"gimp-drawable-transform-matrix"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -2128,7 +2128,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_transform_matrix_default"
+literal|"gimp-drawable-transform-matrix-default"
 argument_list|,
 operator|&
 name|nreturn_vals

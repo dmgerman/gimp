@@ -274,7 +274,9 @@ name|ProcRecord
 name|help_proc
 init|=
 block|{
-literal|"gimp_help"
+literal|"gimp-help"
+block|,
+literal|"gimp-help"
 block|,
 literal|"Load a help page."
 block|,

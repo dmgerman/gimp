@@ -462,7 +462,9 @@ name|ProcRecord
 name|edit_cut_proc
 init|=
 block|{
-literal|"gimp_edit_cut"
+literal|"gimp-edit-cut"
+block|,
+literal|"gimp-edit-cut"
 block|,
 literal|"Cut from the specified drawable."
 block|,
@@ -703,7 +705,9 @@ name|ProcRecord
 name|edit_copy_proc
 init|=
 block|{
-literal|"gimp_edit_copy"
+literal|"gimp-edit-copy"
+block|,
+literal|"gimp-edit-copy"
 block|,
 literal|"Copy from the specified drawable."
 block|,
@@ -899,7 +903,9 @@ name|ProcRecord
 name|edit_copy_visible_proc
 init|=
 block|{
-literal|"gimp_edit_copy_visible"
+literal|"gimp-edit-copy-visible"
+block|,
+literal|"gimp-edit-copy-visible"
 block|,
 literal|"Copy from the projection."
 block|,
@@ -1198,7 +1204,9 @@ name|ProcRecord
 name|edit_paste_proc
 init|=
 block|{
-literal|"gimp_edit_paste"
+literal|"gimp-edit-paste"
+block|,
+literal|"gimp-edit-paste"
 block|,
 literal|"Paste buffer to the specified drawable."
 block|,
@@ -1390,7 +1398,9 @@ name|ProcRecord
 name|edit_clear_proc
 init|=
 block|{
-literal|"gimp_edit_clear"
+literal|"gimp-edit-clear"
+block|,
+literal|"gimp-edit-clear"
 block|,
 literal|"Clear selected area of drawable."
 block|,
@@ -1623,7 +1633,9 @@ name|ProcRecord
 name|edit_fill_proc
 init|=
 block|{
-literal|"gimp_edit_fill"
+literal|"gimp-edit-fill"
+block|,
+literal|"gimp-edit-fill"
 block|,
 literal|"Fill selected area of drawable."
 block|,
@@ -2059,7 +2071,9 @@ name|ProcRecord
 name|edit_bucket_fill_proc
 init|=
 block|{
-literal|"gimp_edit_bucket_fill"
+literal|"gimp-edit-bucket-fill"
+block|,
+literal|"gimp-edit-bucket-fill"
 block|,
 literal|"Fill the area specified either by the current selection if there is one, or by a seed fill starting at the specified coordinates."
 block|,
@@ -2752,7 +2766,9 @@ name|ProcRecord
 name|edit_blend_proc
 init|=
 block|{
-literal|"gimp_edit_blend"
+literal|"gimp-edit-blend"
+block|,
+literal|"gimp-edit-blend"
 block|,
 literal|"Blend between the starting and ending coordinates with the specified blend mode and gradient type."
 block|,
@@ -2981,7 +2997,9 @@ name|ProcRecord
 name|edit_stroke_proc
 init|=
 block|{
-literal|"gimp_edit_stroke"
+literal|"gimp-edit-stroke"
+block|,
+literal|"gimp-edit-stroke"
 block|,
 literal|"Stroke the current selection"
 block|,

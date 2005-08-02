@@ -295,7 +295,9 @@ name|ProcRecord
 name|floating_sel_remove_proc
 init|=
 block|{
-literal|"gimp_floating_sel_remove"
+literal|"gimp-floating-sel-remove"
+block|,
+literal|"gimp-floating-sel-remove"
 block|,
 literal|"Remove the specified floating selection from its associated drawable."
 block|,
@@ -465,7 +467,9 @@ name|ProcRecord
 name|floating_sel_anchor_proc
 init|=
 block|{
-literal|"gimp_floating_sel_anchor"
+literal|"gimp-floating-sel-anchor"
+block|,
+literal|"gimp-floating-sel-anchor"
 block|,
 literal|"Anchor the specified floating selection to its associated drawable."
 block|,
@@ -635,7 +639,9 @@ name|ProcRecord
 name|floating_sel_to_layer_proc
 init|=
 block|{
-literal|"gimp_floating_sel_to_layer"
+literal|"gimp-floating-sel-to-layer"
+block|,
+literal|"gimp-floating-sel-to-layer"
 block|,
 literal|"Transforms the specified floating selection into a layer."
 block|,
@@ -864,7 +870,9 @@ name|ProcRecord
 name|floating_sel_attach_proc
 init|=
 block|{
-literal|"gimp_floating_sel_attach"
+literal|"gimp-floating-sel-attach"
+block|,
+literal|"gimp-floating-sel-attach"
 block|,
 literal|"Attach the specified layer as floating to the specified drawable."
 block|,
@@ -1062,7 +1070,9 @@ name|ProcRecord
 name|floating_sel_rigor_proc
 init|=
 block|{
-literal|"gimp_floating_sel_rigor"
+literal|"gimp-floating-sel-rigor"
+block|,
+literal|"gimp-floating-sel-rigor"
 block|,
 literal|"Rigor the floating selection."
 block|,
@@ -1260,7 +1270,9 @@ name|ProcRecord
 name|floating_sel_relax_proc
 init|=
 block|{
-literal|"gimp_floating_sel_relax"
+literal|"gimp-floating-sel-relax"
+block|,
+literal|"gimp-floating-sel-relax"
 block|,
 literal|"Relax the floating selection."
 block|,

@@ -767,7 +767,9 @@ name|ProcRecord
 name|gradient_new_proc
 init|=
 block|{
-literal|"gimp_gradient_new"
+literal|"gimp-gradient-new"
+block|,
+literal|"gimp-gradient-new"
 block|,
 literal|"Creates a new gradient"
 block|,
@@ -1029,7 +1031,9 @@ name|ProcRecord
 name|gradient_duplicate_proc
 init|=
 block|{
-literal|"gimp_gradient_duplicate"
+literal|"gimp-gradient-duplicate"
+block|,
+literal|"gimp-gradient-duplicate"
 block|,
 literal|"Duplicates a gradient"
 block|,
@@ -1258,7 +1262,9 @@ name|ProcRecord
 name|gradient_is_editable_proc
 init|=
 block|{
-literal|"gimp_gradient_is_editable"
+literal|"gimp-gradient-is-editable"
+block|,
+literal|"gimp-gradient-is-editable"
 block|,
 literal|"Tests if gradient can be edited"
 block|,
@@ -1551,7 +1557,9 @@ name|ProcRecord
 name|gradient_rename_proc
 init|=
 block|{
-literal|"gimp_gradient_rename"
+literal|"gimp-gradient-rename"
+block|,
+literal|"gimp-gradient-rename"
 block|,
 literal|"Rename a gradient"
 block|,
@@ -1783,7 +1791,9 @@ name|ProcRecord
 name|gradient_delete_proc
 init|=
 block|{
-literal|"gimp_gradient_delete"
+literal|"gimp-gradient-delete"
+block|,
+literal|"gimp-gradient-delete"
 block|,
 literal|"Deletes a gradient"
 block|,
@@ -2198,7 +2208,9 @@ name|ProcRecord
 name|gradient_get_uniform_samples_proc
 init|=
 block|{
-literal|"gimp_gradient_get_uniform_samples"
+literal|"gimp-gradient-get-uniform-samples"
+block|,
+literal|"gimp-gradient-get-uniform-samples"
 block|,
 literal|"Sample the specified in uniform parts."
 block|,
@@ -2624,7 +2636,9 @@ name|ProcRecord
 name|gradient_get_custom_samples_proc
 init|=
 block|{
-literal|"gimp_gradient_get_custom_samples"
+literal|"gimp-gradient-get-custom-samples"
+block|,
+literal|"gimp-gradient-get-custom-samples"
 block|,
 literal|"Sample the spacified gradient in custom positions."
 block|,
@@ -2951,7 +2965,9 @@ name|ProcRecord
 name|gradient_segment_get_left_color_proc
 init|=
 block|{
-literal|"gimp_gradient_segment_get_left_color"
+literal|"gimp-gradient-segment-get-left-color"
+block|,
+literal|"gimp-gradient-segment-get-left-color"
 block|,
 literal|"Retrieves the left endpoint color of the specified gradient and segment"
 block|,
@@ -3265,7 +3281,9 @@ name|ProcRecord
 name|gradient_segment_set_left_color_proc
 init|=
 block|{
-literal|"gimp_gradient_segment_set_left_color"
+literal|"gimp-gradient-segment-set-left-color"
+block|,
+literal|"gimp-gradient-segment-set-left-color"
 block|,
 literal|"Retrieves the left endpoint color of the specified gradient and segment"
 block|,
@@ -3592,7 +3610,9 @@ name|ProcRecord
 name|gradient_segment_get_right_color_proc
 init|=
 block|{
-literal|"gimp_gradient_segment_get_right_color"
+literal|"gimp-gradient-segment-get-right-color"
+block|,
+literal|"gimp-gradient-segment-get-right-color"
 block|,
 literal|"Retrieves the right endpoint color of the specified gradient and segment"
 block|,
@@ -3906,7 +3926,9 @@ name|ProcRecord
 name|gradient_segment_set_right_color_proc
 init|=
 block|{
-literal|"gimp_gradient_segment_set_right_color"
+literal|"gimp-gradient-segment-set-right-color"
+block|,
+literal|"gimp-gradient-segment-set-right-color"
 block|,
 literal|"Retrieves the right endpoint color of the specified gradient and segment"
 block|,
@@ -4200,7 +4222,9 @@ name|ProcRecord
 name|gradient_segment_get_left_pos_proc
 init|=
 block|{
-literal|"gimp_gradient_segment_get_left_pos"
+literal|"gimp-gradient-segment-get-left-pos"
+block|,
+literal|"gimp-gradient-segment-get-left-pos"
 block|,
 literal|"Retrieves the left endpoint position of the specified gradient and segment"
 block|,
@@ -4532,7 +4556,9 @@ name|ProcRecord
 name|gradient_segment_set_left_pos_proc
 init|=
 block|{
-literal|"gimp_gradient_segment_set_left_pos"
+literal|"gimp-gradient-segment-set-left-pos"
+block|,
+literal|"gimp-gradient-segment-set-left-pos"
 block|,
 literal|"Sets the left endpoint position of the specified gradient and segment"
 block|,
@@ -4826,7 +4852,9 @@ name|ProcRecord
 name|gradient_segment_get_middle_pos_proc
 init|=
 block|{
-literal|"gimp_gradient_segment_get_middle_pos"
+literal|"gimp-gradient-segment-get-middle-pos"
+block|,
+literal|"gimp-gradient-segment-get-middle-pos"
 block|,
 literal|"Retrieves the middle point position of the specified gradient and segment"
 block|,
@@ -5158,7 +5186,9 @@ name|ProcRecord
 name|gradient_segment_set_middle_pos_proc
 init|=
 block|{
-literal|"gimp_gradient_segment_set_middle_pos"
+literal|"gimp-gradient-segment-set-middle-pos"
+block|,
+literal|"gimp-gradient-segment-set-middle-pos"
 block|,
 literal|"Sets the middle point position of the specified gradient and segment"
 block|,
@@ -5452,7 +5482,9 @@ name|ProcRecord
 name|gradient_segment_get_right_pos_proc
 init|=
 block|{
-literal|"gimp_gradient_segment_get_right_pos"
+literal|"gimp-gradient-segment-get-right-pos"
+block|,
+literal|"gimp-gradient-segment-get-right-pos"
 block|,
 literal|"Retrieves the right endpoint position of the specified gradient and segment"
 block|,
@@ -5784,7 +5816,9 @@ name|ProcRecord
 name|gradient_segment_set_right_pos_proc
 init|=
 block|{
-literal|"gimp_gradient_segment_set_right_pos"
+literal|"gimp-gradient-segment-set-right-pos"
+block|,
+literal|"gimp-gradient-segment-set-right-pos"
 block|,
 literal|"Sets the right endpoint position of the specified gradient and segment"
 block|,
@@ -6078,7 +6112,9 @@ name|ProcRecord
 name|gradient_segment_get_blending_function_proc
 init|=
 block|{
-literal|"gimp_gradient_segment_get_blending_function"
+literal|"gimp-gradient-segment-get-blending-function"
+block|,
+literal|"gimp-gradient-segment-get-blending-function"
 block|,
 literal|"Retrieves the gradient segment's blending function"
 block|,
@@ -6372,7 +6408,9 @@ name|ProcRecord
 name|gradient_segment_get_coloring_type_proc
 init|=
 block|{
-literal|"gimp_gradient_segment_get_coloring_type"
+literal|"gimp-gradient-segment-get-coloring-type"
+block|,
+literal|"gimp-gradient-segment-get-coloring-type"
 block|,
 literal|"Retrieves the gradient segment's coloring type"
 block|,
@@ -6730,7 +6768,9 @@ name|ProcRecord
 name|gradient_segment_range_set_blending_function_proc
 init|=
 block|{
-literal|"gimp_gradient_segment_range_set_blending_function"
+literal|"gimp-gradient-segment-range-set-blending-function"
+block|,
+literal|"gimp-gradient-segment-range-set-blending-function"
 block|,
 literal|"Change the blending function of a segments range"
 block|,
@@ -7088,7 +7128,9 @@ name|ProcRecord
 name|gradient_segment_range_set_coloring_type_proc
 init|=
 block|{
-literal|"gimp_gradient_segment_range_set_coloring_type"
+literal|"gimp-gradient-segment-range-set-coloring-type"
+block|,
+literal|"gimp-gradient-segment-range-set-coloring-type"
 block|,
 literal|"Change the coloring type of a segments range"
 block|,
@@ -7412,7 +7454,9 @@ name|ProcRecord
 name|gradient_segment_range_flip_proc
 init|=
 block|{
-literal|"gimp_gradient_segment_range_flip"
+literal|"gimp-gradient-segment-range-flip"
+block|,
+literal|"gimp-gradient-segment-range-flip"
 block|,
 literal|"Flip the segment range"
 block|,
@@ -7774,7 +7818,9 @@ name|ProcRecord
 name|gradient_segment_range_replicate_proc
 init|=
 block|{
-literal|"gimp_gradient_segment_range_replicate"
+literal|"gimp-gradient-segment-range-replicate"
+block|,
+literal|"gimp-gradient-segment-range-replicate"
 block|,
 literal|"Replicate the segment range"
 block|,
@@ -8098,7 +8144,9 @@ name|ProcRecord
 name|gradient_segment_range_split_midpoint_proc
 init|=
 block|{
-literal|"gimp_gradient_segment_range_split_midpoint"
+literal|"gimp-gradient-segment-range-split-midpoint"
+block|,
+literal|"gimp-gradient-segment-range-split-midpoint"
 block|,
 literal|"Splits each segment in the segment range at midpoint"
 block|,
@@ -8460,7 +8508,9 @@ name|ProcRecord
 name|gradient_segment_range_split_uniform_proc
 init|=
 block|{
-literal|"gimp_gradient_segment_range_split_uniform"
+literal|"gimp-gradient-segment-range-split-uniform"
+block|,
+literal|"gimp-gradient-segment-range-split-uniform"
 block|,
 literal|"Splits each segment in the segment range uniformly"
 block|,
@@ -8784,7 +8834,9 @@ name|ProcRecord
 name|gradient_segment_range_delete_proc
 init|=
 block|{
-literal|"gimp_gradient_segment_range_delete"
+literal|"gimp-gradient-segment-range-delete"
+block|,
+literal|"gimp-gradient-segment-range-delete"
 block|,
 literal|"Delete the segment range"
 block|,
@@ -9104,7 +9156,9 @@ name|ProcRecord
 name|gradient_segment_range_redistribute_handles_proc
 init|=
 block|{
-literal|"gimp_gradient_segment_range_redistribute_handles"
+literal|"gimp-gradient-segment-range-redistribute-handles"
+block|,
+literal|"gimp-gradient-segment-range-redistribute-handles"
 block|,
 literal|"Uniformly redistribute the segment range's handles"
 block|,
@@ -9438,7 +9492,9 @@ name|ProcRecord
 name|gradient_segment_range_blend_colors_proc
 init|=
 block|{
-literal|"gimp_gradient_segment_range_blend_colors"
+literal|"gimp-gradient-segment-range-blend-colors"
+block|,
+literal|"gimp-gradient-segment-range-blend-colors"
 block|,
 literal|"Blend the colors of the segment range."
 block|,
@@ -9772,7 +9828,9 @@ name|ProcRecord
 name|gradient_segment_range_blend_opacity_proc
 init|=
 block|{
-literal|"gimp_gradient_segment_range_blend_opacity"
+literal|"gimp-gradient-segment-range-blend-opacity"
+block|,
+literal|"gimp-gradient-segment-range-blend-opacity"
 block|,
 literal|"Blend the opacity of the segment range."
 block|,
@@ -10208,7 +10266,9 @@ name|ProcRecord
 name|gradient_segment_range_move_proc
 init|=
 block|{
-literal|"gimp_gradient_segment_range_move"
+literal|"gimp-gradient-segment-range-move"
+block|,
+literal|"gimp-gradient-segment-range-move"
 block|,
 literal|"Move the position of an entire segment range by a delta."
 block|,

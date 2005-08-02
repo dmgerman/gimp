@@ -378,7 +378,9 @@ name|ProcRecord
 name|image_add_hguide_proc
 init|=
 block|{
-literal|"gimp_image_add_hguide"
+literal|"gimp-image-add-hguide"
+block|,
+literal|"gimp-image-add-hguide"
 block|,
 literal|"Add a horizontal guide to an image."
 block|,
@@ -631,7 +633,9 @@ name|ProcRecord
 name|image_add_vguide_proc
 init|=
 block|{
-literal|"gimp_image_add_vguide"
+literal|"gimp-image-add-vguide"
+block|,
+literal|"gimp-image-add-vguide"
 block|,
 literal|"Add a vertical guide to an image."
 block|,
@@ -864,7 +868,9 @@ name|ProcRecord
 name|image_delete_guide_proc
 init|=
 block|{
-literal|"gimp_image_delete_guide"
+literal|"gimp-image-delete-guide"
+block|,
+literal|"gimp-image-delete-guide"
 block|,
 literal|"Deletes a guide from an image."
 block|,
@@ -1193,7 +1199,9 @@ name|ProcRecord
 name|image_find_next_guide_proc
 init|=
 block|{
-literal|"gimp_image_find_next_guide"
+literal|"gimp-image-find-next-guide"
+block|,
+literal|"gimp-image-find-next-guide"
 block|,
 literal|"Find next guide on an image."
 block|,
@@ -1470,7 +1478,9 @@ name|ProcRecord
 name|image_get_guide_orientation_proc
 init|=
 block|{
-literal|"gimp_image_get_guide_orientation"
+literal|"gimp-image-get-guide-orientation"
+block|,
+literal|"gimp-image-get-guide-orientation"
 block|,
 literal|"Get orientation of a guide on an image."
 block|,
@@ -1747,7 +1757,9 @@ name|ProcRecord
 name|image_get_guide_position_proc
 init|=
 block|{
-literal|"gimp_image_get_guide_position"
+literal|"gimp-image-get-guide-position"
+block|,
+literal|"gimp-image-get-guide-position"
 block|,
 literal|"Get position of a guide on an image."
 block|,

@@ -48,7 +48,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_undo_group_start"
+literal|"gimp-image-undo-group-start"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -115,7 +115,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_undo_group_end"
+literal|"gimp-image-undo-group-end"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -182,7 +182,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_undo_is_enabled"
+literal|"gimp-image-undo-is-enabled"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -260,7 +260,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_undo_disable"
+literal|"gimp-image-undo-disable"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -338,7 +338,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_undo_enable"
+literal|"gimp-image-undo-enable"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -416,7 +416,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_undo_freeze"
+literal|"gimp-image-undo-freeze"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -494,7 +494,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_undo_thaw"
+literal|"gimp-image-undo-thaw"
 argument_list|,
 operator|&
 name|nreturn_vals

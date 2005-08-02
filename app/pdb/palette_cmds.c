@@ -505,7 +505,9 @@ name|ProcRecord
 name|palette_new_proc
 init|=
 block|{
-literal|"gimp_palette_new"
+literal|"gimp-palette-new"
+block|,
+literal|"gimp-palette-new"
 block|,
 literal|"Creates a new palette"
 block|,
@@ -767,7 +769,9 @@ name|ProcRecord
 name|palette_duplicate_proc
 init|=
 block|{
-literal|"gimp_palette_duplicate"
+literal|"gimp-palette-duplicate"
+block|,
+literal|"gimp-palette-duplicate"
 block|,
 literal|"Duplicates a palette"
 block|,
@@ -1060,7 +1064,9 @@ name|ProcRecord
 name|palette_rename_proc
 init|=
 block|{
-literal|"gimp_palette_rename"
+literal|"gimp-palette-rename"
+block|,
+literal|"gimp-palette-rename"
 block|,
 literal|"Rename a palette"
 block|,
@@ -1292,7 +1298,9 @@ name|ProcRecord
 name|palette_delete_proc
 init|=
 block|{
-literal|"gimp_palette_delete"
+literal|"gimp-palette-delete"
+block|,
+literal|"gimp-palette-delete"
 block|,
 literal|"Deletes a palette"
 block|,
@@ -1521,7 +1529,9 @@ name|ProcRecord
 name|palette_is_editable_proc
 init|=
 block|{
-literal|"gimp_palette_is_editable"
+literal|"gimp-palette-is-editable"
+block|,
+literal|"gimp-palette-is-editable"
 block|,
 literal|"Tests if palette can be edited"
 block|,
@@ -1742,7 +1752,9 @@ name|ProcRecord
 name|palette_get_info_proc
 init|=
 block|{
-literal|"gimp_palette_get_info"
+literal|"gimp-palette-get-info"
+block|,
+literal|"gimp-palette-get-info"
 block|,
 literal|"Retrieve information about the specified palette."
 block|,
@@ -1963,7 +1975,9 @@ name|ProcRecord
 name|palette_get_columns_proc
 init|=
 block|{
-literal|"gimp_palette_get_columns"
+literal|"gimp-palette-get-columns"
+block|,
+literal|"gimp-palette-get-columns"
 block|,
 literal|"Retrieves the number of columns to use to display this palette"
 block|,
@@ -2191,7 +2205,9 @@ name|ProcRecord
 name|palette_set_columns_proc
 init|=
 block|{
-literal|"gimp_palette_set_columns"
+literal|"gimp-palette-set-columns"
+block|,
+literal|"gimp-palette-set-columns"
 block|,
 literal|"Sets the number of columns to use when displaying the palette"
 block|,
@@ -2509,7 +2525,9 @@ name|ProcRecord
 name|palette_add_entry_proc
 init|=
 block|{
-literal|"gimp_palette_add_entry"
+literal|"gimp-palette-add-entry"
+block|,
+literal|"gimp-palette-add-entry"
 block|,
 literal|"Adds a palette entry to the specified palette."
 block|,
@@ -2761,7 +2779,9 @@ name|ProcRecord
 name|palette_delete_entry_proc
 init|=
 block|{
-literal|"gimp_palette_delete_entry"
+literal|"gimp-palette-delete-entry"
+block|,
+literal|"gimp-palette-delete-entry"
 block|,
 literal|"Deletes a palette entry from the specified palette."
 block|,
@@ -3050,7 +3070,9 @@ name|ProcRecord
 name|palette_entry_get_color_proc
 init|=
 block|{
-literal|"gimp_palette_entry_get_color"
+literal|"gimp-palette-entry-get-color"
+block|,
+literal|"gimp-palette-entry-get-color"
 block|,
 literal|"Gets the specified palette entry from the specified palette."
 block|,
@@ -3331,7 +3353,9 @@ name|ProcRecord
 name|palette_entry_set_color_proc
 init|=
 block|{
-literal|"gimp_palette_entry_set_color"
+literal|"gimp-palette-entry-set-color"
+block|,
+literal|"gimp-palette-entry-set-color"
 block|,
 literal|"Sets the specified palette entry in the specified palette."
 block|,
@@ -3614,7 +3638,9 @@ name|ProcRecord
 name|palette_entry_get_name_proc
 init|=
 block|{
-literal|"gimp_palette_entry_get_name"
+literal|"gimp-palette-entry-get-name"
+block|,
+literal|"gimp-palette-entry-get-name"
 block|,
 literal|"Gets the specified palette entry from the specified palette."
 block|,
@@ -3929,7 +3955,9 @@ name|ProcRecord
 name|palette_entry_set_name_proc
 init|=
 block|{
-literal|"gimp_palette_entry_set_name"
+literal|"gimp-palette-entry-set-name"
+block|,
+literal|"gimp-palette-entry-set-name"
 block|,
 literal|"Sets the specified palette entry in the specified palette."
 block|,

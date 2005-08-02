@@ -68,7 +68,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_pattern_get_info"
+literal|"gimp-pattern-get-info"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -215,7 +215,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_pattern_get_pixels"
+literal|"gimp-pattern-get-pixels"
 argument_list|,
 operator|&
 name|nreturn_vals

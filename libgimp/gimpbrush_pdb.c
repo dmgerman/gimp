@@ -58,7 +58,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_brush_new"
+literal|"gimp-brush-new"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -143,7 +143,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_brush_duplicate"
+literal|"gimp-brush-duplicate"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -226,7 +226,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_brush_is_generated"
+literal|"gimp-brush-is-generated"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -313,7 +313,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_brush_rename"
+literal|"gimp-brush-rename"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -400,7 +400,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_brush_delete"
+literal|"gimp-brush-delete"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -469,7 +469,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_brush_is_editable"
+literal|"gimp-brush-is-editable"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -565,7 +565,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_brush_get_info"
+literal|"gimp-brush-get-info"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -742,7 +742,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_brush_get_pixels"
+literal|"gimp-brush-get-pixels"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1001,7 +1001,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_brush_get_spacing"
+literal|"gimp-brush-get-spacing"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1094,7 +1094,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_brush_set_spacing"
+literal|"gimp-brush-set-spacing"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1167,7 +1167,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_brush_get_shape"
+literal|"gimp-brush-get-shape"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1247,7 +1247,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_brush_get_radius"
+literal|"gimp-brush-get-radius"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1327,7 +1327,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_brush_get_spikes"
+literal|"gimp-brush-get-spikes"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1407,7 +1407,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_brush_get_hardness"
+literal|"gimp-brush-get-hardness"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1487,7 +1487,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_brush_get_aspect_ratio"
+literal|"gimp-brush-get-aspect-ratio"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1567,7 +1567,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_brush_get_angle"
+literal|"gimp-brush-get-angle"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1650,7 +1650,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_brush_set_shape"
+literal|"gimp-brush-set-shape"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1737,7 +1737,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_brush_set_radius"
+literal|"gimp-brush-set-radius"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1824,7 +1824,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_brush_set_spikes"
+literal|"gimp-brush-set-spikes"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1911,7 +1911,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_brush_set_hardness"
+literal|"gimp-brush-set-hardness"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1998,7 +1998,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_brush_set_aspect_ratio"
+literal|"gimp-brush-set-aspect-ratio"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -2085,7 +2085,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_brush_set_angle"
+literal|"gimp-brush-set-angle"
 argument_list|,
 operator|&
 name|nreturn_vals

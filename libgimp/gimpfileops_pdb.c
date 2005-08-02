@@ -59,7 +59,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_file_load"
+literal|"gimp-file-load"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -161,7 +161,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_file_save"
+literal|"gimp-file-save"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -248,7 +248,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_temp_name"
+literal|"gimp-temp-name"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -346,7 +346,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_register_magic_load_handler"
+literal|"gimp-register-magic-load-handler"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -437,7 +437,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_register_load_handler"
+literal|"gimp-register-load-handler"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -524,7 +524,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_register_save_handler"
+literal|"gimp-register-save-handler"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -606,7 +606,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_register_file_handler_mime"
+literal|"gimp-register-file-handler-mime"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -684,7 +684,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_register_thumbnail_loader"
+literal|"gimp-register-thumbnail-loader"
 argument_list|,
 operator|&
 name|nreturn_vals

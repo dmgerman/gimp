@@ -268,7 +268,9 @@ name|ProcRecord
 name|image_convert_rgb_proc
 init|=
 block|{
-literal|"gimp_image_convert_rgb"
+literal|"gimp-image-convert-rgb"
+block|,
+literal|"gimp-image-convert-rgb"
 block|,
 literal|"Convert specified image to RGB color"
 block|,
@@ -441,7 +443,9 @@ name|ProcRecord
 name|image_convert_grayscale_proc
 init|=
 block|{
-literal|"gimp_image_convert_grayscale"
+literal|"gimp-image-convert-grayscale"
+block|,
+literal|"gimp-image-convert-grayscale"
 block|,
 literal|"Convert specified image to grayscale (256 intensity levels)"
 block|,
@@ -879,7 +883,9 @@ name|ProcRecord
 name|image_convert_indexed_proc
 init|=
 block|{
-literal|"gimp_image_convert_indexed"
+literal|"gimp-image-convert-indexed"
+block|,
+literal|"gimp-image-convert-indexed"
 block|,
 literal|"Convert specified image to and Indexed image"
 block|,

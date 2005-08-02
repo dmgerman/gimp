@@ -324,7 +324,9 @@ name|ProcRecord
 name|image_undo_group_start_proc
 init|=
 block|{
-literal|"gimp_image_undo_group_start"
+literal|"gimp-image-undo-group-start"
+block|,
+literal|"gimp-image-undo-group-start"
 block|,
 literal|"Starts a group undo."
 block|,
@@ -465,7 +467,9 @@ name|ProcRecord
 name|image_undo_group_end_proc
 init|=
 block|{
-literal|"gimp_image_undo_group_end"
+literal|"gimp-image-undo-group-end"
+block|,
+literal|"gimp-image-undo-group-end"
 block|,
 literal|"Finish a group undo."
 block|,
@@ -655,7 +659,9 @@ name|ProcRecord
 name|image_undo_is_enabled_proc
 init|=
 block|{
-literal|"gimp_image_undo_is_enabled"
+literal|"gimp-image-undo-is-enabled"
+block|,
+literal|"gimp-image-undo-is-enabled"
 block|,
 literal|"Check if the image's undo stack is enabled."
 block|,
@@ -844,7 +850,9 @@ name|ProcRecord
 name|image_undo_disable_proc
 init|=
 block|{
-literal|"gimp_image_undo_disable"
+literal|"gimp-image-undo-disable"
+block|,
+literal|"gimp-image-undo-disable"
 block|,
 literal|"Disable the image's undo stack."
 block|,
@@ -1033,7 +1041,9 @@ name|ProcRecord
 name|image_undo_enable_proc
 init|=
 block|{
-literal|"gimp_image_undo_enable"
+literal|"gimp-image-undo-enable"
+block|,
+literal|"gimp-image-undo-enable"
 block|,
 literal|"Enable the image's undo stack."
 block|,
@@ -1222,7 +1232,9 @@ name|ProcRecord
 name|image_undo_freeze_proc
 init|=
 block|{
-literal|"gimp_image_undo_freeze"
+literal|"gimp-image-undo-freeze"
+block|,
+literal|"gimp-image-undo-freeze"
 block|,
 literal|"Freeze the image's undo stack."
 block|,
@@ -1411,7 +1423,9 @@ name|ProcRecord
 name|image_undo_thaw_proc
 init|=
 block|{
-literal|"gimp_image_undo_thaw"
+literal|"gimp-image-undo-thaw"
+block|,
+literal|"gimp-image-undo-thaw"
 block|,
 literal|"Thaw the image's undo stack."
 block|,

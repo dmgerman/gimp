@@ -60,7 +60,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_vectors_get_strokes"
+literal|"gimp-vectors-get-strokes"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -181,7 +181,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_vectors_stroke_remove"
+literal|"gimp-vectors-stroke-remove"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -261,7 +261,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_vectors_stroke_translate"
+literal|"gimp-vectors-stroke-translate"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -355,7 +355,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_vectors_stroke_interpolate"
+literal|"gimp-vectors-stroke-interpolate"
 argument_list|,
 operator|&
 name|nreturn_vals

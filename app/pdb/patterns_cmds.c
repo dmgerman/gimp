@@ -206,7 +206,9 @@ name|ProcRecord
 name|patterns_refresh_proc
 init|=
 block|{
-literal|"gimp_patterns_refresh"
+literal|"gimp-patterns-refresh"
+block|,
+literal|"gimp-patterns-refresh"
 block|,
 literal|"Refresh current patterns. This function always succeeds."
 block|,
@@ -437,11 +439,13 @@ name|ProcRecord
 name|patterns_get_list_proc
 init|=
 block|{
-literal|"gimp_patterns_get_list"
+literal|"gimp-patterns-get-list"
+block|,
+literal|"gimp-patterns-get-list"
 block|,
 literal|"Retrieve a complete listing of the available patterns."
 block|,
-literal|"This procedure returns a complete listing of available GIMP patterns. Each name returned can be used as input to the 'gimp_context_set_pattern'."
+literal|"This procedure returns a complete listing of available GIMP patterns. Each name returned can be used as input to the 'gimp-context-set-pattern'."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -633,19 +637,21 @@ name|ProcRecord
 name|patterns_get_pattern_proc
 init|=
 block|{
-literal|"gimp_patterns_get_pattern"
+literal|"gimp-patterns-get-pattern"
 block|,
-literal|"This procedure is deprecated! Use 'gimp_context_get_pattern' instead."
+literal|"gimp-patterns-get-pattern"
 block|,
-literal|"This procedure is deprecated! Use 'gimp_context_get_pattern' instead."
+literal|"This procedure is deprecated! Use 'gimp-context-get-pattern' instead."
+block|,
+literal|"This procedure is deprecated! Use 'gimp-context-get-pattern' instead."
+block|,
+literal|""
 block|,
 literal|""
 block|,
 literal|""
 block|,
-literal|""
-block|,
-literal|"gimp_context_get_pattern"
+literal|"gimp-context-get-pattern"
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -1036,19 +1042,21 @@ name|ProcRecord
 name|patterns_get_pattern_data_proc
 init|=
 block|{
-literal|"gimp_patterns_get_pattern_data"
+literal|"gimp-patterns-get-pattern-data"
 block|,
-literal|"This procedure is deprecated! Use 'gimp_pattern_get_pixels' instead."
+literal|"gimp-patterns-get-pattern-data"
 block|,
-literal|"This procedure is deprecated! Use 'gimp_pattern_get_pixels' instead."
+literal|"This procedure is deprecated! Use 'gimp-pattern-get-pixels' instead."
+block|,
+literal|"This procedure is deprecated! Use 'gimp-pattern-get-pixels' instead."
+block|,
+literal|""
 block|,
 literal|""
 block|,
 literal|""
 block|,
-literal|""
-block|,
-literal|"gimp_pattern_get_pixels"
+literal|"gimp-pattern-get-pixels"
 block|,
 name|GIMP_INTERNAL
 block|,

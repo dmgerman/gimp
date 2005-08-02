@@ -148,7 +148,9 @@ name|ProcRecord
 name|fonts_refresh_proc
 init|=
 block|{
-literal|"gimp_fonts_refresh"
+literal|"gimp-fonts-refresh"
+block|,
+literal|"gimp-fonts-refresh"
 block|,
 literal|"Refresh current fonts. This function always succeeds."
 block|,
@@ -377,7 +379,9 @@ name|ProcRecord
 name|fonts_get_list_proc
 init|=
 block|{
-literal|"gimp_fonts_get_list"
+literal|"gimp-fonts-get-list"
+block|,
+literal|"gimp-fonts-get-list"
 block|,
 literal|"Retrieve the list of loaded fonts."
 block|,

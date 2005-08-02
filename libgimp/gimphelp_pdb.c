@@ -55,7 +55,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_help"
+literal|"gimp-help"
 argument_list|,
 operator|&
 name|nreturn_vals

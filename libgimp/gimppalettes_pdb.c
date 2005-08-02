@@ -47,7 +47,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_palettes_refresh"
+literal|"gimp-palettes-refresh"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -82,7 +82,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_palettes_get_list:  * @filter: An optional regular expression used to filter the list.  * @num_palettes: The number of palettes in the list.  *  * Retrieves a list of all of the available palettes  *  * This procedure returns a complete listing of available palettes.  * Each name returned can be used as input to the command  * 'gimp_context_set_palette'.  *  * Returns: The list of palette names.  */
+comment|/**  * gimp_palettes_get_list:  * @filter: An optional regular expression used to filter the list.  * @num_palettes: The number of palettes in the list.  *  * Retrieves a list of all of the available palettes  *  * This procedure returns a complete listing of available palettes.  * Each name returned can be used as input to the command  * 'gimp-context-set-palette'.  *  * Returns: The list of palette names.  */
 end_comment
 
 begin_function
@@ -123,7 +123,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_palettes_get_list"
+literal|"gimp-palettes-get-list"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -257,7 +257,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_palettes_get_palette"
+literal|"gimp-palettes-get-palette"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -363,7 +363,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_palettes_get_palette_entry"
+literal|"gimp-palettes-get-palette-entry"
 argument_list|,
 operator|&
 name|nreturn_vals

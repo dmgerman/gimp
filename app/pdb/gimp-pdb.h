@@ -265,6 +265,12 @@ modifier|*
 name|name
 decl_stmt|;
 comment|/*  Procedure name  */
+DECL|member|original_name
+name|gchar
+modifier|*
+name|original_name
+decl_stmt|;
+comment|/*  Procedure name before canonicalization  */
 DECL|member|blurb
 name|gchar
 modifier|*

@@ -397,7 +397,9 @@ name|ProcRecord
 name|gimprc_query_proc
 init|=
 block|{
-literal|"gimp_gimprc_query"
+literal|"gimp-gimprc-query"
+block|,
+literal|"gimp-gimprc-query"
 block|,
 literal|"Queries the gimprc file parser for information on a specified token."
 block|,
@@ -620,7 +622,9 @@ name|ProcRecord
 name|gimprc_set_proc
 init|=
 block|{
-literal|"gimp_gimprc_set"
+literal|"gimp-gimprc-set"
+block|,
+literal|"gimp-gimprc-set"
 block|,
 literal|"Sets a gimprc token to a value and saves it in the gimprc."
 block|,
@@ -751,7 +755,9 @@ name|ProcRecord
 name|get_default_comment_proc
 init|=
 block|{
-literal|"gimp_get_default_comment"
+literal|"gimp-get-default-comment"
+block|,
+literal|"gimp-get-default-comment"
 block|,
 literal|"Get the default image comment as specified in the Preferences."
 block|,
@@ -912,7 +918,9 @@ name|ProcRecord
 name|get_monitor_resolution_proc
 init|=
 block|{
-literal|"gimp_get_monitor_resolution"
+literal|"gimp-get-monitor-resolution"
+block|,
+literal|"gimp-get-monitor-resolution"
 block|,
 literal|"Get the monitor resolution as specified in the Preferences."
 block|,
@@ -1040,7 +1048,9 @@ name|ProcRecord
 name|get_theme_dir_proc
 init|=
 block|{
-literal|"gimp_get_theme_dir"
+literal|"gimp-get-theme-dir"
+block|,
+literal|"gimp-get-theme-dir"
 block|,
 literal|"Get the directory of the current GUI theme."
 block|,
@@ -1174,7 +1184,9 @@ name|ProcRecord
 name|get_color_configuration_proc
 init|=
 block|{
-literal|"gimp_get_color_configuration"
+literal|"gimp-get-color-configuration"
+block|,
+literal|"gimp-get-color-configuration"
 block|,
 literal|"Get a serialized version of the color management configuration."
 block|,
@@ -1304,7 +1316,9 @@ name|ProcRecord
 name|get_module_load_inhibit_proc
 init|=
 block|{
-literal|"gimp_get_module_load_inhibit"
+literal|"gimp-get-module-load-inhibit"
+block|,
+literal|"gimp-get-module-load-inhibit"
 block|,
 literal|"Get the list of modules which should not be loaded."
 block|,

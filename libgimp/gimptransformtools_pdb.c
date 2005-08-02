@@ -52,7 +52,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_flip"
+literal|"gimp-flip"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -162,7 +162,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_perspective"
+literal|"gimp-perspective"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -283,7 +283,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_rotate"
+literal|"gimp-rotate"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -385,7 +385,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_scale"
+literal|"gimp-scale"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -493,7 +493,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_shear"
+literal|"gimp-shear"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -608,7 +608,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_transform_2d"
+literal|"gimp-transform-2d"
 argument_list|,
 operator|&
 name|nreturn_vals

@@ -49,7 +49,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_display_new"
+literal|"gimp-display-new"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -127,7 +127,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_display_delete"
+literal|"gimp-display-delete"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -193,7 +193,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_displays_flush"
+literal|"gimp-displays-flush"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -259,7 +259,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_displays_reconnect"
+literal|"gimp-displays-reconnect"
 argument_list|,
 operator|&
 name|nreturn_vals

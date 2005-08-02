@@ -4442,9 +4442,9 @@ name|proc_def
 operator|->
 name|image_types
 condition|?
-literal|"gimp_register_save_handler"
+literal|"gimp-register-save-handler"
 else|:
-literal|"gimp_register_magic_load_handler"
+literal|"gimp-register-magic-load-handler"
 argument_list|,
 name|args
 argument_list|)
@@ -4607,7 +4607,7 @@ name|proc_a
 operator|->
 name|prog
 argument_list|,
-literal|"gimp_xcf"
+literal|"gimp-xcf"
 argument_list|,
 literal|8
 argument_list|)
@@ -4626,7 +4626,7 @@ name|proc_b
 operator|->
 name|prog
 argument_list|,
-literal|"gimp_xcf"
+literal|"gimp-xcf"
 argument_list|,
 literal|8
 argument_list|)

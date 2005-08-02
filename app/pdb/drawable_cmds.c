@@ -830,7 +830,9 @@ name|ProcRecord
 name|drawable_delete_proc
 init|=
 block|{
-literal|"gimp_drawable_delete"
+literal|"gimp-drawable-delete"
+block|,
+literal|"gimp-drawable-delete"
 block|,
 literal|"Delete a drawable."
 block|,
@@ -1026,7 +1028,9 @@ name|ProcRecord
 name|drawable_is_layer_proc
 init|=
 block|{
-literal|"gimp_drawable_is_layer"
+literal|"gimp-drawable-is-layer"
+block|,
+literal|"gimp-drawable-is-layer"
 block|,
 literal|"Returns whether the drawable is a layer."
 block|,
@@ -1222,7 +1226,9 @@ name|ProcRecord
 name|drawable_is_layer_mask_proc
 init|=
 block|{
-literal|"gimp_drawable_is_layer_mask"
+literal|"gimp-drawable-is-layer-mask"
+block|,
+literal|"gimp-drawable-is-layer-mask"
 block|,
 literal|"Returns whether the drawable is a layer mask."
 block|,
@@ -1418,7 +1424,9 @@ name|ProcRecord
 name|drawable_is_channel_proc
 init|=
 block|{
-literal|"gimp_drawable_is_channel"
+literal|"gimp-drawable-is-channel"
+block|,
+literal|"gimp-drawable-is-channel"
 block|,
 literal|"Returns whether the drawable is a channel."
 block|,
@@ -1610,7 +1618,9 @@ name|ProcRecord
 name|drawable_type_proc
 init|=
 block|{
-literal|"gimp_drawable_type"
+literal|"gimp-drawable-type"
+block|,
+literal|"gimp-drawable-type"
 block|,
 literal|"Returns the drawable's type."
 block|,
@@ -1802,7 +1812,9 @@ name|ProcRecord
 name|drawable_type_with_alpha_proc
 init|=
 block|{
-literal|"gimp_drawable_type_with_alpha"
+literal|"gimp-drawable-type-with-alpha"
+block|,
+literal|"gimp-drawable-type-with-alpha"
 block|,
 literal|"Returns the drawable's type with alpha."
 block|,
@@ -1994,7 +2006,9 @@ name|ProcRecord
 name|drawable_has_alpha_proc
 init|=
 block|{
-literal|"gimp_drawable_has_alpha"
+literal|"gimp-drawable-has-alpha"
+block|,
+literal|"gimp-drawable-has-alpha"
 block|,
 literal|"Returns non-zero if the drawable has an alpha channel."
 block|,
@@ -2186,7 +2200,9 @@ name|ProcRecord
 name|drawable_is_rgb_proc
 init|=
 block|{
-literal|"gimp_drawable_is_rgb"
+literal|"gimp-drawable-is-rgb"
+block|,
+literal|"gimp-drawable-is-rgb"
 block|,
 literal|"Returns whether the drawable is an RGB type."
 block|,
@@ -2378,7 +2394,9 @@ name|ProcRecord
 name|drawable_is_gray_proc
 init|=
 block|{
-literal|"gimp_drawable_is_gray"
+literal|"gimp-drawable-is-gray"
+block|,
+literal|"gimp-drawable-is-gray"
 block|,
 literal|"Returns whether the drawable is a grayscale type."
 block|,
@@ -2570,7 +2588,9 @@ name|ProcRecord
 name|drawable_is_indexed_proc
 init|=
 block|{
-literal|"gimp_drawable_is_indexed"
+literal|"gimp-drawable-is-indexed"
+block|,
+literal|"gimp-drawable-is-indexed"
 block|,
 literal|"Returns whether the drawable is an indexed type."
 block|,
@@ -2762,7 +2782,9 @@ name|ProcRecord
 name|drawable_bpp_proc
 init|=
 block|{
-literal|"gimp_drawable_bpp"
+literal|"gimp-drawable-bpp"
+block|,
+literal|"gimp-drawable-bpp"
 block|,
 literal|"Returns the bytes per pixel."
 block|,
@@ -2957,7 +2979,9 @@ name|ProcRecord
 name|drawable_width_proc
 init|=
 block|{
-literal|"gimp_drawable_width"
+literal|"gimp-drawable-width"
+block|,
+literal|"gimp-drawable-width"
 block|,
 literal|"Returns the width of the drawable."
 block|,
@@ -3152,7 +3176,9 @@ name|ProcRecord
 name|drawable_height_proc
 init|=
 block|{
-literal|"gimp_drawable_height"
+literal|"gimp-drawable-height"
+block|,
+literal|"gimp-drawable-height"
 block|,
 literal|"Returns the height of the drawable."
 block|,
@@ -3386,7 +3412,9 @@ name|ProcRecord
 name|drawable_offsets_proc
 init|=
 block|{
-literal|"gimp_drawable_offsets"
+literal|"gimp-drawable-offsets"
+block|,
+literal|"gimp-drawable-offsets"
 block|,
 literal|"Returns the offsets for the drawable."
 block|,
@@ -3604,7 +3632,9 @@ name|ProcRecord
 name|drawable_get_image_proc
 init|=
 block|{
-literal|"gimp_drawable_get_image"
+literal|"gimp-drawable-get-image"
+block|,
+literal|"gimp-drawable-get-image"
 block|,
 literal|"Returns the drawable's image."
 block|,
@@ -3811,7 +3841,9 @@ name|ProcRecord
 name|drawable_set_image_proc
 init|=
 block|{
-literal|"gimp_drawable_set_image"
+literal|"gimp-drawable-set-image"
+block|,
+literal|"gimp-drawable-set-image"
 block|,
 literal|"This procedure is deprecated!"
 block|,
@@ -4009,7 +4041,9 @@ name|ProcRecord
 name|drawable_get_name_proc
 init|=
 block|{
-literal|"gimp_drawable_get_name"
+literal|"gimp-drawable-get-name"
+block|,
+literal|"gimp-drawable-get-name"
 block|,
 literal|"Get the name of the specified drawable."
 block|,
@@ -4220,7 +4254,9 @@ name|ProcRecord
 name|drawable_set_name_proc
 init|=
 block|{
-literal|"gimp_drawable_set_name"
+literal|"gimp-drawable-set-name"
+block|,
+literal|"gimp-drawable-set-name"
 block|,
 literal|"Set the name of the specified drawable."
 block|,
@@ -4415,7 +4451,9 @@ name|ProcRecord
 name|drawable_get_visible_proc
 init|=
 block|{
-literal|"gimp_drawable_get_visible"
+literal|"gimp-drawable-get-visible"
+block|,
+literal|"gimp-drawable-get-visible"
 block|,
 literal|"Get the visibility of the specified drawable."
 block|,
@@ -4604,7 +4642,9 @@ name|ProcRecord
 name|drawable_set_visible_proc
 init|=
 block|{
-literal|"gimp_drawable_set_visible"
+literal|"gimp-drawable-set-visible"
+block|,
+literal|"gimp-drawable-set-visible"
 block|,
 literal|"Set the visibility of the specified drawable."
 block|,
@@ -4799,7 +4839,9 @@ name|ProcRecord
 name|drawable_get_linked_proc
 init|=
 block|{
-literal|"gimp_drawable_get_linked"
+literal|"gimp-drawable-get-linked"
+block|,
+literal|"gimp-drawable-get-linked"
 block|,
 literal|"Get the linked state of the specified drawable."
 block|,
@@ -4988,7 +5030,9 @@ name|ProcRecord
 name|drawable_set_linked_proc
 init|=
 block|{
-literal|"gimp_drawable_set_linked"
+literal|"gimp-drawable-set-linked"
+block|,
+literal|"gimp-drawable-set-linked"
 block|,
 literal|"Set the linked state of the specified drawable."
 block|,
@@ -5183,7 +5227,9 @@ name|ProcRecord
 name|drawable_get_tattoo_proc
 init|=
 block|{
-literal|"gimp_drawable_get_tattoo"
+literal|"gimp-drawable-get-tattoo"
+block|,
+literal|"gimp-drawable-get-tattoo"
 block|,
 literal|"Get the tattoo of the specified drawable."
 block|,
@@ -5376,7 +5422,9 @@ name|ProcRecord
 name|drawable_set_tattoo_proc
 init|=
 block|{
-literal|"gimp_drawable_set_tattoo"
+literal|"gimp-drawable-set-tattoo"
+block|,
+literal|"gimp-drawable-set-tattoo"
 block|,
 literal|"Set the tattoo of the specified drawable."
 block|,
@@ -5683,7 +5731,9 @@ name|ProcRecord
 name|drawable_mask_bounds_proc
 init|=
 block|{
-literal|"gimp_drawable_mask_bounds"
+literal|"gimp-drawable-mask-bounds"
+block|,
+literal|"gimp-drawable-mask-bounds"
 block|,
 literal|"Find the bounding box of the current selection in relation to the specified drawable."
 block|,
@@ -5990,7 +6040,9 @@ name|ProcRecord
 name|drawable_mask_intersect_proc
 init|=
 block|{
-literal|"gimp_drawable_mask_intersect"
+literal|"gimp-drawable-mask-intersect"
+block|,
+literal|"gimp-drawable-mask-intersect"
 block|,
 literal|"Find the bounding box of the current selection in relation to the specified drawable."
 block|,
@@ -6235,7 +6287,9 @@ name|ProcRecord
 name|drawable_merge_shadow_proc
 init|=
 block|{
-literal|"gimp_drawable_merge_shadow"
+literal|"gimp-drawable-merge-shadow"
+block|,
+literal|"gimp-drawable-merge-shadow"
 block|,
 literal|"Merge the shadow buffer with the specified drawable."
 block|,
@@ -6487,7 +6541,9 @@ name|ProcRecord
 name|drawable_update_proc
 init|=
 block|{
-literal|"gimp_drawable_update"
+literal|"gimp-drawable-update"
+block|,
+literal|"gimp-drawable-update"
 block|,
 literal|"Update the specified region of the drawable."
 block|,
@@ -6901,7 +6957,9 @@ name|ProcRecord
 name|drawable_get_pixel_proc
 init|=
 block|{
-literal|"gimp_drawable_get_pixel"
+literal|"gimp-drawable-get-pixel"
+block|,
+literal|"gimp-drawable-get-pixel"
 block|,
 literal|"Gets the value of the pixel at the specified coordinates."
 block|,
@@ -7279,7 +7337,9 @@ name|ProcRecord
 name|drawable_set_pixel_proc
 init|=
 block|{
-literal|"gimp_drawable_set_pixel"
+literal|"gimp-drawable-set-pixel"
+block|,
+literal|"gimp-drawable-set-pixel"
 block|,
 literal|"Sets the value of the pixel at the specified coordinates."
 block|,
@@ -7478,7 +7538,9 @@ name|ProcRecord
 name|drawable_fill_proc
 init|=
 block|{
-literal|"gimp_drawable_fill"
+literal|"gimp-drawable-fill"
+block|,
+literal|"gimp-drawable-fill"
 block|,
 literal|"Fill the drawable with the specified fill mode."
 block|,
@@ -7766,7 +7828,9 @@ name|ProcRecord
 name|drawable_offset_proc
 init|=
 block|{
-literal|"gimp_drawable_offset"
+literal|"gimp-drawable-offset"
+block|,
+literal|"gimp-drawable-offset"
 block|,
 literal|"Offset the drawable by the specified amounts in the X and Y directions"
 block|,
@@ -8326,7 +8390,9 @@ name|ProcRecord
 name|drawable_thumbnail_proc
 init|=
 block|{
-literal|"gimp_drawable_thumbnail"
+literal|"gimp-drawable-thumbnail"
+block|,
+literal|"gimp-drawable-thumbnail"
 block|,
 literal|"Get a thumbnail of a drawable."
 block|,
@@ -8994,7 +9060,9 @@ name|ProcRecord
 name|drawable_sub_thumbnail_proc
 init|=
 block|{
-literal|"gimp_drawable_sub_thumbnail"
+literal|"gimp-drawable-sub-thumbnail"
+block|,
+literal|"gimp-drawable-sub-thumbnail"
 block|,
 literal|"Get a thumbnail of a sub-area of a drawable drawable."
 block|,
@@ -9259,7 +9327,9 @@ name|ProcRecord
 name|drawable_foreground_extract_proc
 init|=
 block|{
-literal|"gimp_drawable_foreground_extract"
+literal|"gimp-drawable-foreground-extract"
+block|,
+literal|"gimp-drawable-foreground-extract"
 block|,
 literal|"Extract the foreground of a drawable using a given trimap."
 block|,

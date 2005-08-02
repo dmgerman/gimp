@@ -556,7 +556,7 @@ name|name
 operator|=
 name|proc_rec
 operator|->
-name|name
+name|original_name
 expr_stmt|;
 name|proc_run
 operator|.
@@ -1094,7 +1094,7 @@ name|name
 operator|=
 name|proc_rec
 operator|->
-name|name
+name|original_name
 expr_stmt|;
 name|proc_run
 operator|.

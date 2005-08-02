@@ -343,7 +343,9 @@ name|ProcRecord
 name|fonts_popup_proc
 init|=
 block|{
-literal|"gimp_fonts_popup"
+literal|"gimp-fonts-popup"
+block|,
+literal|"gimp-fonts-popup"
 block|,
 literal|"Invokes the Gimp font selection."
 block|,
@@ -519,7 +521,9 @@ name|ProcRecord
 name|fonts_close_popup_proc
 init|=
 block|{
-literal|"gimp_fonts_close_popup"
+literal|"gimp-fonts-close-popup"
+block|,
+literal|"gimp-fonts-close-popup"
 block|,
 literal|"Popdown the Gimp font selection."
 block|,
@@ -747,7 +751,9 @@ name|ProcRecord
 name|fonts_set_popup_proc
 init|=
 block|{
-literal|"gimp_fonts_set_popup"
+literal|"gimp-fonts-set-popup"
+block|,
+literal|"gimp-fonts-set-popup"
 block|,
 literal|"Sets the current font selection in a popup."
 block|,

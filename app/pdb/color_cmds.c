@@ -788,7 +788,9 @@ name|ProcRecord
 name|brightness_contrast_proc
 init|=
 block|{
-literal|"gimp_brightness_contrast"
+literal|"gimp-brightness-contrast"
+block|,
+literal|"gimp-brightness-contrast"
 block|,
 literal|"Modify brightness/contrast in the specified drawable."
 block|,
@@ -1227,7 +1229,9 @@ name|ProcRecord
 name|levels_proc
 init|=
 block|{
-literal|"gimp_levels"
+literal|"gimp-levels"
+block|,
+literal|"gimp-levels"
 block|,
 literal|"Modifies intensity levels in the specified drawable."
 block|,
@@ -1411,7 +1415,9 @@ name|ProcRecord
 name|levels_auto_proc
 init|=
 block|{
-literal|"gimp_levels_auto"
+literal|"gimp-levels-auto"
+block|,
+literal|"gimp-levels-auto"
 block|,
 literal|"This procedure is deprecated! Use 'gimp_levels_stretch' instead."
 block|,
@@ -1595,7 +1601,9 @@ name|ProcRecord
 name|levels_stretch_proc
 init|=
 block|{
-literal|"gimp_levels_stretch"
+literal|"gimp-levels-stretch"
+block|,
+literal|"gimp-levels-stretch"
 block|,
 literal|"Automatically modifies intensity levels in the specified drawable."
 block|,
@@ -1952,7 +1960,9 @@ name|ProcRecord
 name|posterize_proc
 init|=
 block|{
-literal|"gimp_posterize"
+literal|"gimp-posterize"
+block|,
+literal|"gimp-posterize"
 block|,
 literal|"Posterize the specified drawable."
 block|,
@@ -2137,7 +2147,9 @@ name|ProcRecord
 name|desaturate_proc
 init|=
 block|{
-literal|"gimp_desaturate"
+literal|"gimp-desaturate"
+block|,
+literal|"gimp-desaturate"
 block|,
 literal|"Desaturate the contents of the specified drawable."
 block|,
@@ -2361,7 +2373,9 @@ name|ProcRecord
 name|desaturate_full_proc
 init|=
 block|{
-literal|"gimp_desaturate_full"
+literal|"gimp-desaturate-full"
+block|,
+literal|"gimp-desaturate-full"
 block|,
 literal|"Desaturate the contents of the specified drawable, with the specified formula."
 block|,
@@ -2571,7 +2585,9 @@ name|ProcRecord
 name|equalize_proc
 init|=
 block|{
-literal|"gimp_equalize"
+literal|"gimp-equalize"
+block|,
+literal|"gimp-equalize"
 block|,
 literal|"Equalize the contents of the specified drawable."
 block|,
@@ -2753,7 +2769,9 @@ name|ProcRecord
 name|invert_proc
 init|=
 block|{
-literal|"gimp_invert"
+literal|"gimp-invert"
+block|,
+literal|"gimp-invert"
 block|,
 literal|"Invert the contents of the specified drawable."
 block|,
@@ -3349,7 +3367,9 @@ name|ProcRecord
 name|curves_spline_proc
 init|=
 block|{
-literal|"gimp_curves_spline"
+literal|"gimp-curves-spline"
+block|,
+literal|"gimp-curves-spline"
 block|,
 literal|"Modifies the intensity curve(s) for specified drawable."
 block|,
@@ -3865,7 +3885,9 @@ name|ProcRecord
 name|curves_explicit_proc
 init|=
 block|{
-literal|"gimp_curves_explicit"
+literal|"gimp-curves-explicit"
+block|,
+literal|"gimp-curves-explicit"
 block|,
 literal|"Modifies the intensity curve(s) for specified drawable."
 block|,
@@ -4387,7 +4409,9 @@ name|ProcRecord
 name|color_balance_proc
 init|=
 block|{
-literal|"gimp_color_balance"
+literal|"gimp-color-balance"
+block|,
+literal|"gimp-color-balance"
 block|,
 literal|"Modify the color balance of the specified drawable."
 block|,
@@ -4831,7 +4855,9 @@ name|ProcRecord
 name|colorize_proc
 init|=
 block|{
-literal|"gimp_colorize"
+literal|"gimp-colorize"
+block|,
+literal|"gimp-colorize"
 block|,
 literal|"Render the drawable as a grayscale image seen through a colored glass."
 block|,
@@ -5404,7 +5430,9 @@ name|ProcRecord
 name|histogram_proc
 init|=
 block|{
-literal|"gimp_histogram"
+literal|"gimp-histogram"
+block|,
+literal|"gimp-histogram"
 block|,
 literal|"Returns information on the intensity histogram for the specified drawable."
 block|,
@@ -5895,7 +5923,9 @@ name|ProcRecord
 name|hue_saturation_proc
 init|=
 block|{
-literal|"gimp_hue_saturation"
+literal|"gimp-hue-saturation"
+block|,
+literal|"gimp-hue-saturation"
 block|,
 literal|"Modify hue, lightness, and saturation in the specified drawable."
 block|,
@@ -6298,7 +6328,9 @@ name|ProcRecord
 name|threshold_proc
 init|=
 block|{
-literal|"gimp_threshold"
+literal|"gimp-threshold"
+block|,
+literal|"gimp-threshold"
 block|,
 literal|"Threshold the specified drawable."
 block|,

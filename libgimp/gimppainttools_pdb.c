@@ -59,7 +59,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_airbrush"
+literal|"gimp-airbrush"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -146,7 +146,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_airbrush_default"
+literal|"gimp-airbrush-default"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -241,7 +241,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_clone"
+literal|"gimp-clone"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -340,7 +340,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_clone_default"
+literal|"gimp-clone-default"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -429,7 +429,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_convolve"
+literal|"gimp-convolve"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -520,7 +520,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_convolve_default"
+literal|"gimp-convolve-default"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -612,7 +612,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_dodgeburn"
+literal|"gimp-dodgeburn"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -707,7 +707,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_dodgeburn_default"
+literal|"gimp-dodgeburn-default"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -796,7 +796,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_eraser"
+literal|"gimp-eraser"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -887,7 +887,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_eraser_default"
+literal|"gimp-eraser-default"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -979,7 +979,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_paintbrush"
+literal|"gimp-paintbrush"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1074,7 +1074,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_paintbrush_default"
+literal|"gimp-paintbrush-default"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1157,7 +1157,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_pencil"
+literal|"gimp-pencil"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1243,7 +1243,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_smudge"
+literal|"gimp-smudge"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1330,7 +1330,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_smudge_default"
+literal|"gimp-smudge-default"
 argument_list|,
 operator|&
 name|nreturn_vals

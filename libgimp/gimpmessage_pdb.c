@@ -50,7 +50,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_message"
+literal|"gimp-message"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -116,7 +116,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_message_get_handler"
+literal|"gimp-message-get-handler"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -190,7 +190,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_message_set_handler"
+literal|"gimp-message-set-handler"
 argument_list|,
 operator|&
 name|nreturn_vals

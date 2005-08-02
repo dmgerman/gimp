@@ -68,7 +68,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_selection_bounds"
+literal|"gimp-selection-bounds"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -232,7 +232,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_selection_value"
+literal|"gimp-selection-value"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -318,7 +318,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_selection_is_empty"
+literal|"gimp-selection-is-empty"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -402,7 +402,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_selection_translate"
+literal|"gimp-selection-translate"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -484,7 +484,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_selection_float"
+literal|"gimp-selection-float"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -570,7 +570,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_selection_invert"
+literal|"gimp-selection-invert"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -637,7 +637,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_selection_sharpen"
+literal|"gimp-selection-sharpen"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -704,7 +704,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_selection_all"
+literal|"gimp-selection-all"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -771,7 +771,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_selection_none"
+literal|"gimp-selection-none"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -841,7 +841,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_selection_feather"
+literal|"gimp-selection-feather"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -915,7 +915,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_selection_border"
+literal|"gimp-selection-border"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -989,7 +989,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_selection_grow"
+literal|"gimp-selection-grow"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1063,7 +1063,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_selection_shrink"
+literal|"gimp-selection-shrink"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1134,7 +1134,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_selection_layer_alpha"
+literal|"gimp-selection-layer-alpha"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1201,7 +1201,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_selection_load"
+literal|"gimp-selection-load"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1269,7 +1269,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_selection_save"
+literal|"gimp-selection-save"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1350,7 +1350,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_selection_combine"
+literal|"gimp-selection-combine"
 argument_list|,
 operator|&
 name|nreturn_vals

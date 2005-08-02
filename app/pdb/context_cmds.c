@@ -516,7 +516,9 @@ name|ProcRecord
 name|context_push_proc
 init|=
 block|{
-literal|"gimp_context_push"
+literal|"gimp-context-push"
+block|,
+literal|"gimp-context-push"
 block|,
 literal|"Pushes a context to the top of the plug-in's context stack."
 block|,
@@ -627,7 +629,9 @@ name|ProcRecord
 name|context_pop_proc
 init|=
 block|{
-literal|"gimp_context_pop"
+literal|"gimp-context-pop"
+block|,
+literal|"gimp-context-pop"
 block|,
 literal|"Pops the topmost context from the plug-in's context stack."
 block|,
@@ -752,7 +756,9 @@ name|ProcRecord
 name|context_get_foreground_proc
 init|=
 block|{
-literal|"gimp_context_get_foreground"
+literal|"gimp-context-get-foreground"
+block|,
+literal|"gimp-context-get-foreground"
 block|,
 literal|"Get the current GIMP foreground color."
 block|,
@@ -877,7 +883,9 @@ name|ProcRecord
 name|context_set_foreground_proc
 init|=
 block|{
-literal|"gimp_context_set_foreground"
+literal|"gimp-context-set-foreground"
+block|,
+literal|"gimp-context-set-foreground"
 block|,
 literal|"Set the current GIMP foreground color."
 block|,
@@ -1002,7 +1010,9 @@ name|ProcRecord
 name|context_get_background_proc
 init|=
 block|{
-literal|"gimp_context_get_background"
+literal|"gimp-context-get-background"
+block|,
+literal|"gimp-context-get-background"
 block|,
 literal|"Get the current GIMP background color."
 block|,
@@ -1127,7 +1137,9 @@ name|ProcRecord
 name|context_set_background_proc
 init|=
 block|{
-literal|"gimp_context_set_background"
+literal|"gimp-context-set-background"
+block|,
+literal|"gimp-context-set-background"
 block|,
 literal|"Set the current GIMP background color."
 block|,
@@ -1208,7 +1220,9 @@ name|ProcRecord
 name|context_set_default_colors_proc
 init|=
 block|{
-literal|"gimp_context_set_default_colors"
+literal|"gimp-context-set-default-colors"
+block|,
+literal|"gimp-context-set-default-colors"
 block|,
 literal|"Set the current GIMP foreground and background colors to black and white."
 block|,
@@ -1289,7 +1303,9 @@ name|ProcRecord
 name|context_swap_colors_proc
 init|=
 block|{
-literal|"gimp_context_swap_colors"
+literal|"gimp-context-swap-colors"
+block|,
+literal|"gimp-context-swap-colors"
 block|,
 literal|"Swap the current GIMP foreground and background colors."
 block|,
@@ -1408,7 +1424,9 @@ name|ProcRecord
 name|context_get_opacity_proc
 init|=
 block|{
-literal|"gimp_context_get_opacity"
+literal|"gimp-context-get-opacity"
+block|,
+literal|"gimp-context-get-opacity"
 block|,
 literal|"Get the opacity."
 block|,
@@ -1549,7 +1567,9 @@ name|ProcRecord
 name|context_set_opacity_proc
 init|=
 block|{
-literal|"gimp_context_set_opacity"
+literal|"gimp-context-set-opacity"
+block|,
+literal|"gimp-context-set-opacity"
 block|,
 literal|"Set the opacity."
 block|,
@@ -1666,7 +1686,9 @@ name|ProcRecord
 name|context_get_paint_mode_proc
 init|=
 block|{
-literal|"gimp_context_get_paint_mode"
+literal|"gimp-context-get-paint-mode"
+block|,
+literal|"gimp-context-get-paint-mode"
 block|,
 literal|"Get the paint mode."
 block|,
@@ -1805,7 +1827,9 @@ name|ProcRecord
 name|context_set_paint_mode_proc
 init|=
 block|{
-literal|"gimp_context_set_paint_mode"
+literal|"gimp-context-set-paint-mode"
+block|,
+literal|"gimp-context-set-paint-mode"
 block|,
 literal|"Set the paint mode."
 block|,
@@ -1954,7 +1978,9 @@ name|ProcRecord
 name|context_get_brush_proc
 init|=
 block|{
-literal|"gimp_context_get_brush"
+literal|"gimp-context-get-brush"
+block|,
+literal|"gimp-context-get-brush"
 block|,
 literal|"Retrieve the currently active brush."
 block|,
@@ -2137,7 +2163,9 @@ name|ProcRecord
 name|context_set_brush_proc
 init|=
 block|{
-literal|"gimp_context_set_brush"
+literal|"gimp-context-set-brush"
+block|,
+literal|"gimp-context-set-brush"
 block|,
 literal|"Set the specified brush as the active brush."
 block|,
@@ -2286,7 +2314,9 @@ name|ProcRecord
 name|context_get_pattern_proc
 init|=
 block|{
-literal|"gimp_context_get_pattern"
+literal|"gimp-context-get-pattern"
+block|,
+literal|"gimp-context-get-pattern"
 block|,
 literal|"Retrieve the currently active pattern."
 block|,
@@ -2469,7 +2499,9 @@ name|ProcRecord
 name|context_set_pattern_proc
 init|=
 block|{
-literal|"gimp_context_set_pattern"
+literal|"gimp-context-set-pattern"
+block|,
+literal|"gimp-context-set-pattern"
 block|,
 literal|"Set the specified pattern as the active pattern."
 block|,
@@ -2618,7 +2650,9 @@ name|ProcRecord
 name|context_get_gradient_proc
 init|=
 block|{
-literal|"gimp_context_get_gradient"
+literal|"gimp-context-get-gradient"
+block|,
+literal|"gimp-context-get-gradient"
 block|,
 literal|"Retrieve the currently active gradient."
 block|,
@@ -2801,7 +2835,9 @@ name|ProcRecord
 name|context_set_gradient_proc
 init|=
 block|{
-literal|"gimp_context_set_gradient"
+literal|"gimp-context-set-gradient"
+block|,
+literal|"gimp-context-set-gradient"
 block|,
 literal|"Sets the specified gradient as the active gradient."
 block|,
@@ -2950,7 +2986,9 @@ name|ProcRecord
 name|context_get_palette_proc
 init|=
 block|{
-literal|"gimp_context_get_palette"
+literal|"gimp-context-get-palette"
+block|,
+literal|"gimp-context-get-palette"
 block|,
 literal|"Retrieve the currently active palette."
 block|,
@@ -3133,7 +3171,9 @@ name|ProcRecord
 name|context_set_palette_proc
 init|=
 block|{
-literal|"gimp_context_set_palette"
+literal|"gimp-context-set-palette"
+block|,
+literal|"gimp-context-set-palette"
 block|,
 literal|"Set the specified palette as the active palette."
 block|,
@@ -3282,7 +3322,9 @@ name|ProcRecord
 name|context_get_font_proc
 init|=
 block|{
-literal|"gimp_context_get_font"
+literal|"gimp-context-get-font"
+block|,
+literal|"gimp-context-get-font"
 block|,
 literal|"Retrieve the currently active font."
 block|,
@@ -3463,7 +3505,9 @@ name|ProcRecord
 name|context_set_font_proc
 init|=
 block|{
-literal|"gimp_context_set_font"
+literal|"gimp-context-set-font"
+block|,
+literal|"gimp-context-set-font"
 block|,
 literal|"Set the specified font as the active font."
 block|,

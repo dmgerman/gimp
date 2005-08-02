@@ -238,7 +238,9 @@ name|ProcRecord
 name|brushes_refresh_proc
 init|=
 block|{
-literal|"gimp_brushes_refresh"
+literal|"gimp-brushes-refresh"
+block|,
+literal|"gimp-brushes-refresh"
 block|,
 literal|"Refresh current brushes. This function always succeeds."
 block|,
@@ -469,11 +471,13 @@ name|ProcRecord
 name|brushes_get_list_proc
 init|=
 block|{
-literal|"gimp_brushes_get_list"
+literal|"gimp-brushes-get-list"
+block|,
+literal|"gimp-brushes-get-list"
 block|,
 literal|"Retrieve a complete listing of the available brushes."
 block|,
-literal|"This procedure returns a complete listing of available GIMP brushes. Each name returned can be used as input to the 'gimp_context_set_brush' procedure."
+literal|"This procedure returns a complete listing of available GIMP brushes. Each name returned can be used as input to the 'gimp-context-set-brush' procedure."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -686,19 +690,21 @@ name|ProcRecord
 name|brushes_get_brush_proc
 init|=
 block|{
-literal|"gimp_brushes_get_brush"
+literal|"gimp-brushes-get-brush"
 block|,
-literal|"This procedure is deprecated! Use 'gimp_context_get_brush' instead."
+literal|"gimp-brushes-get-brush"
 block|,
-literal|"This procedure is deprecated! Use 'gimp_context_get_brush' instead."
+literal|"This procedure is deprecated! Use 'gimp-context-get-brush' instead."
+block|,
+literal|"This procedure is deprecated! Use 'gimp-context-get-brush' instead."
+block|,
+literal|""
 block|,
 literal|""
 block|,
 literal|""
 block|,
-literal|""
-block|,
-literal|"gimp_context_get_brush"
+literal|"gimp-context-get-brush"
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -806,19 +812,21 @@ name|ProcRecord
 name|brushes_get_spacing_proc
 init|=
 block|{
-literal|"gimp_brushes_get_spacing"
+literal|"gimp-brushes-get-spacing"
 block|,
-literal|"This procedure is deprecated! Use 'gimp_brush_get_spacing' instead."
+literal|"gimp-brushes-get-spacing"
 block|,
-literal|"This procedure is deprecated! Use 'gimp_brush_get_spacing' instead."
+literal|"This procedure is deprecated! Use 'gimp-brush-get-spacing' instead."
+block|,
+literal|"This procedure is deprecated! Use 'gimp-brush-get-spacing' instead."
+block|,
+literal|""
 block|,
 literal|""
 block|,
 literal|""
 block|,
-literal|""
-block|,
-literal|"gimp_brush_get_spacing"
+literal|"gimp-brush-get-spacing"
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -948,19 +956,21 @@ name|ProcRecord
 name|brushes_set_spacing_proc
 init|=
 block|{
-literal|"gimp_brushes_set_spacing"
+literal|"gimp-brushes-set-spacing"
 block|,
-literal|"This procedure is deprecated! Use 'gimp_brush_set_spacing' instead."
+literal|"gimp-brushes-set-spacing"
 block|,
-literal|"This procedure is deprecated! Use 'gimp_brush_set_spacing' instead."
+literal|"This procedure is deprecated! Use 'gimp-brush-set-spacing' instead."
+block|,
+literal|"This procedure is deprecated! Use 'gimp-brush-set-spacing' instead."
+block|,
+literal|""
 block|,
 literal|""
 block|,
 literal|""
 block|,
-literal|""
-block|,
-literal|"gimp_brush_set_spacing"
+literal|"gimp-brush-set-spacing"
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -1381,19 +1391,21 @@ name|ProcRecord
 name|brushes_get_brush_data_proc
 init|=
 block|{
-literal|"gimp_brushes_get_brush_data"
+literal|"gimp-brushes-get-brush-data"
 block|,
-literal|"This procedure is deprecated! Use 'gimp_brush_get_pixels' instead."
+literal|"gimp-brushes-get-brush-data"
 block|,
-literal|"This procedure is deprecated! Use 'gimp_brush_get_pixels' instead."
+literal|"This procedure is deprecated! Use 'gimp-brush-get-pixels' instead."
+block|,
+literal|"This procedure is deprecated! Use 'gimp-brush-get-pixels' instead."
+block|,
+literal|""
 block|,
 literal|""
 block|,
 literal|""
 block|,
-literal|""
-block|,
-literal|"gimp_brush_get_pixels"
+literal|"gimp-brush-get-pixels"
 block|,
 name|GIMP_INTERNAL
 block|,

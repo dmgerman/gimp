@@ -54,7 +54,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_brightness_contrast"
+literal|"gimp-brightness-contrast"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -147,7 +147,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_levels"
+literal|"gimp-levels"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -238,7 +238,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_levels_auto"
+literal|"gimp-levels-auto"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -305,7 +305,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_levels_stretch"
+literal|"gimp-levels-stretch"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -375,7 +375,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_posterize"
+literal|"gimp-posterize"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -446,7 +446,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_desaturate"
+literal|"gimp-desaturate"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -516,7 +516,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_desaturate_full"
+literal|"gimp-desaturate-full"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -590,7 +590,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_equalize"
+literal|"gimp-equalize"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -661,7 +661,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_invert"
+literal|"gimp-invert"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -739,7 +739,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_curves_spline"
+literal|"gimp-curves-spline"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -829,7 +829,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_curves_explicit"
+literal|"gimp-curves-explicit"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -923,7 +923,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_color_balance"
+literal|"gimp-color-balance"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1019,7 +1019,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_colorize"
+literal|"gimp-colorize"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1131,7 +1131,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_histogram"
+literal|"gimp-histogram"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1330,7 +1330,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_hue_saturation"
+literal|"gimp-hue-saturation"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1419,7 +1419,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_threshold"
+literal|"gimp-threshold"
 argument_list|,
 operator|&
 name|nreturn_vals

@@ -68,7 +68,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_channel_new"
+literal|"gimp-channel-new"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -175,7 +175,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_channel_new_from_component"
+literal|"gimp-channel-new-from-component"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -262,7 +262,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_channel_copy"
+literal|"gimp-channel-copy"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -352,7 +352,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_channel_combine_masks"
+literal|"gimp-channel-combine-masks"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -435,7 +435,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_channel_get_show_masked"
+literal|"gimp-channel-get-show-masked"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -516,7 +516,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_channel_set_show_masked"
+literal|"gimp-channel-set-show-masked"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -587,7 +587,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_channel_get_opacity"
+literal|"gimp-channel-get-opacity"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -668,7 +668,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_channel_set_opacity"
+literal|"gimp-channel-set-opacity"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -743,7 +743,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_channel_get_color"
+literal|"gimp-channel-get-color"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -831,7 +831,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_channel_set_color"
+literal|"gimp-channel-set-color"
 argument_list|,
 operator|&
 name|nreturn_vals

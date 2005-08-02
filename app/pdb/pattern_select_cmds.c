@@ -351,7 +351,9 @@ name|ProcRecord
 name|patterns_popup_proc
 init|=
 block|{
-literal|"gimp_patterns_popup"
+literal|"gimp-patterns-popup"
+block|,
+literal|"gimp-patterns-popup"
 block|,
 literal|"Invokes the Gimp pattern selection."
 block|,
@@ -529,7 +531,9 @@ name|ProcRecord
 name|patterns_close_popup_proc
 init|=
 block|{
-literal|"gimp_patterns_close_popup"
+literal|"gimp-patterns-close-popup"
+block|,
+literal|"gimp-patterns-close-popup"
 block|,
 literal|"Popdown the Gimp pattern selection."
 block|,
@@ -759,7 +763,9 @@ name|ProcRecord
 name|patterns_set_popup_proc
 init|=
 block|{
-literal|"gimp_patterns_set_popup"
+literal|"gimp-patterns-set-popup"
+block|,
+literal|"gimp-patterns-set-popup"
 block|,
 literal|"Sets the current pattern selection in a popup."
 block|,

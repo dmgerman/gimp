@@ -216,7 +216,9 @@ name|ProcRecord
 name|gradients_refresh_proc
 init|=
 block|{
-literal|"gimp_gradients_refresh"
+literal|"gimp-gradients-refresh"
+block|,
+literal|"gimp-gradients-refresh"
 block|,
 literal|"Refresh current gradients. This function always succeeds."
 block|,
@@ -447,11 +449,13 @@ name|ProcRecord
 name|gradients_get_list_proc
 init|=
 block|{
-literal|"gimp_gradients_get_list"
+literal|"gimp-gradients-get-list"
+block|,
+literal|"gimp-gradients-get-list"
 block|,
 literal|"Retrieve the list of loaded gradients."
 block|,
-literal|"This procedure returns a list of the gradients that are currently loaded. You can later use the 'gimp_context_set_gradient' function to set the active gradient."
+literal|"This procedure returns a list of the gradients that are currently loaded. You can later use the 'gimp-context-set-gradient' function to set the active gradient."
 block|,
 literal|"Federico Mena Quintero"
 block|,
@@ -796,19 +800,21 @@ name|ProcRecord
 name|gradients_sample_uniform_proc
 init|=
 block|{
-literal|"gimp_gradients_sample_uniform"
+literal|"gimp-gradients-sample-uniform"
 block|,
-literal|"This procedure is deprecated! Use 'gimp_gradient_get_uniform_samples' instead."
+literal|"gimp-gradients-sample-uniform"
 block|,
-literal|"This procedure is deprecated! Use 'gimp_gradient_get_uniform_samples' instead."
+literal|"This procedure is deprecated! Use 'gimp-gradient-get-uniform-samples' instead."
+block|,
+literal|"This procedure is deprecated! Use 'gimp-gradient-get-uniform-samples' instead."
+block|,
+literal|""
 block|,
 literal|""
 block|,
 literal|""
 block|,
-literal|""
-block|,
-literal|"gimp_gradient_get_uniform_samples"
+literal|"gimp-gradient-get-uniform-samples"
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -1153,19 +1159,21 @@ name|ProcRecord
 name|gradients_sample_custom_proc
 init|=
 block|{
-literal|"gimp_gradients_sample_custom"
+literal|"gimp-gradients-sample-custom"
 block|,
-literal|"This procedure is deprecated! Use 'gimp_gradient_get_custom_samples' instead."
+literal|"gimp-gradients-sample-custom"
 block|,
-literal|"This procedure is deprecated! Use 'gimp_gradient_get_custom_samples' instead."
+literal|"This procedure is deprecated! Use 'gimp-gradient-get-custom-samples' instead."
+block|,
+literal|"This procedure is deprecated! Use 'gimp-gradient-get-custom-samples' instead."
+block|,
+literal|""
 block|,
 literal|""
 block|,
 literal|""
 block|,
-literal|""
-block|,
-literal|"gimp_gradient_get_custom_samples"
+literal|"gimp-gradient-get-custom-samples"
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -1623,19 +1631,21 @@ name|ProcRecord
 name|gradients_get_gradient_data_proc
 init|=
 block|{
-literal|"gimp_gradients_get_gradient_data"
+literal|"gimp-gradients-get-gradient-data"
 block|,
-literal|"This procedure is deprecated! Use 'gimp_gradient_get_uniform_samples' instead."
+literal|"gimp-gradients-get-gradient-data"
 block|,
-literal|"This procedure is deprecated! Use 'gimp_gradient_get_uniform_samples' instead."
+literal|"This procedure is deprecated! Use 'gimp-gradient-get-uniform-samples' instead."
+block|,
+literal|"This procedure is deprecated! Use 'gimp-gradient-get-uniform-samples' instead."
+block|,
+literal|""
 block|,
 literal|""
 block|,
 literal|""
 block|,
-literal|""
-block|,
-literal|"gimp_gradient_get_uniform_samples"
+literal|"gimp-gradient-get-uniform-samples"
 block|,
 name|GIMP_INTERNAL
 block|,

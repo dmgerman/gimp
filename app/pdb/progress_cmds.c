@@ -344,7 +344,9 @@ name|ProcRecord
 name|progress_init_proc
 init|=
 block|{
-literal|"gimp_progress_init"
+literal|"gimp-progress-init"
+block|,
+literal|"gimp-progress-init"
 block|,
 literal|"Initializes the progress bar for the current plug-in."
 block|,
@@ -493,7 +495,9 @@ name|ProcRecord
 name|progress_update_proc
 init|=
 block|{
-literal|"gimp_progress_update"
+literal|"gimp-progress-update"
+block|,
+literal|"gimp-progress-update"
 block|,
 literal|"Updates the progress bar for the current plug-in."
 block|,
@@ -607,7 +611,9 @@ name|ProcRecord
 name|progress_pulse_proc
 init|=
 block|{
-literal|"gimp_progress_pulse"
+literal|"gimp-progress-pulse"
+block|,
+literal|"gimp-progress-pulse"
 block|,
 literal|"Pulses the progress bar for the current plug-in."
 block|,
@@ -786,7 +792,9 @@ name|ProcRecord
 name|progress_set_text_proc
 init|=
 block|{
-literal|"gimp_progress_set_text"
+literal|"gimp-progress-set-text"
+block|,
+literal|"gimp-progress-set-text"
 block|,
 literal|"Changes the text in the progress bar for the current plug-in."
 block|,
@@ -960,7 +968,9 @@ name|ProcRecord
 name|progress_install_proc
 init|=
 block|{
-literal|"gimp_progress_install"
+literal|"gimp-progress-install"
+block|,
+literal|"gimp-progress-install"
 block|,
 literal|"Installs a progress callback for the current plug-in."
 block|,
@@ -1134,7 +1144,9 @@ name|ProcRecord
 name|progress_uninstall_proc
 init|=
 block|{
-literal|"gimp_progress_uninstall"
+literal|"gimp-progress-uninstall"
+block|,
+literal|"gimp-progress-uninstall"
 block|,
 literal|"Uninstalls the progress callback for the current plug-in."
 block|,
@@ -1308,7 +1320,9 @@ name|ProcRecord
 name|progress_cancel_proc
 init|=
 block|{
-literal|"gimp_progress_cancel"
+literal|"gimp-progress-cancel"
+block|,
+literal|"gimp-progress-cancel"
 block|,
 literal|"Cancels a running progress."
 block|,

@@ -595,7 +595,9 @@ name|ProcRecord
 name|plugins_query_proc
 init|=
 block|{
-literal|"gimp_plugins_query"
+literal|"gimp-plugins-query"
+block|,
+literal|"gimp-plugins-query"
 block|,
 literal|"Queries the plugin database for its contents."
 block|,
@@ -809,7 +811,9 @@ name|ProcRecord
 name|plugin_domain_register_proc
 init|=
 block|{
-literal|"gimp_plugin_domain_register"
+literal|"gimp-plugin-domain-register"
+block|,
+literal|"gimp-plugin-domain-register"
 block|,
 literal|"Registers a textdomain for localisation."
 block|,
@@ -1044,7 +1048,9 @@ name|ProcRecord
 name|plugin_help_register_proc
 init|=
 block|{
-literal|"gimp_plugin_help_register"
+literal|"gimp-plugin-help-register"
+block|,
+literal|"gimp-plugin-help-register"
 block|,
 literal|"Register a help path for a plug-in."
 block|,
@@ -1204,6 +1210,17 @@ name|proc_def
 init|=
 name|NULL
 decl_stmt|;
+name|gchar
+modifier|*
+name|canonical
+decl_stmt|;
+name|canonical
+operator|=
+name|gimp_canonicalize_identifier
+argument_list|(
+name|procedure_name
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|gimp
@@ -1224,7 +1241,7 @@ name|plug_in_def
 operator|->
 name|proc_defs
 argument_list|,
-name|procedure_name
+name|canonical
 argument_list|)
 expr_stmt|;
 if|if
@@ -1242,7 +1259,7 @@ name|current_plug_in
 operator|->
 name|temp_proc_defs
 argument_list|,
-name|procedure_name
+name|canonical
 argument_list|)
 expr_stmt|;
 if|if
@@ -1280,7 +1297,7 @@ name|current_plug_in
 operator|->
 name|prog
 argument_list|,
-name|procedure_name
+name|canonical
 argument_list|,
 name|menu_path
 argument_list|,
@@ -1464,7 +1481,7 @@ argument_list|)
 argument_list|,
 name|menu_path
 argument_list|,
-name|procedure_name
+name|canonical
 argument_list|)
 expr_stmt|;
 name|success
@@ -1477,6 +1494,11 @@ else|else
 name|success
 operator|=
 name|FALSE
+expr_stmt|;
+name|g_free
+argument_list|(
+name|canonical
+argument_list|)
 expr_stmt|;
 block|}
 else|else
@@ -1531,7 +1553,9 @@ name|ProcRecord
 name|plugin_menu_register_proc
 init|=
 block|{
-literal|"gimp_plugin_menu_register"
+literal|"gimp-plugin-menu-register"
+block|,
+literal|"gimp-plugin-menu-register"
 block|,
 literal|"Register an additional menu path for a plug-in procedure."
 block|,
@@ -1782,7 +1806,9 @@ name|ProcRecord
 name|plugin_menu_branch_register_proc
 init|=
 block|{
-literal|"gimp_plugin_menu_branch_register"
+literal|"gimp-plugin-menu-branch-register"
+block|,
+literal|"gimp-plugin-menu-branch-register"
 block|,
 literal|"Register a sub-menu."
 block|,
@@ -1977,6 +2003,17 @@ name|PlugInProcDef
 modifier|*
 name|proc_def
 decl_stmt|;
+name|gchar
+modifier|*
+name|canonical
+decl_stmt|;
+name|canonical
+operator|=
+name|gimp_canonicalize_identifier
+argument_list|(
+name|procedure_name
+argument_list|)
+expr_stmt|;
 name|proc_def
 operator|=
 name|plug_in_proc_def_find
@@ -1989,7 +2026,12 @@ name|plug_in_def
 operator|->
 name|proc_defs
 argument_list|,
-name|procedure_name
+name|canonical
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|canonical
 argument_list|)
 expr_stmt|;
 if|if
@@ -2081,7 +2123,9 @@ name|ProcRecord
 name|plugin_icon_register_proc
 init|=
 block|{
-literal|"gimp_plugin_icon_register"
+literal|"gimp-plugin-icon-register"
+block|,
+literal|"gimp-plugin-icon-register"
 block|,
 literal|"Register an icon for a plug-in procedure."
 block|,

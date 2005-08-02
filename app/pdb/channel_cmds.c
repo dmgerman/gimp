@@ -592,7 +592,9 @@ name|ProcRecord
 name|channel_new_proc
 init|=
 block|{
-literal|"gimp_channel_new"
+literal|"gimp-channel-new"
+block|,
+literal|"gimp-channel-new"
 block|,
 literal|"Create a new channel."
 block|,
@@ -914,7 +916,9 @@ name|ProcRecord
 name|channel_new_from_component_proc
 init|=
 block|{
-literal|"gimp_channel_new_from_component"
+literal|"gimp-channel-new-from-component"
+block|,
+literal|"gimp-channel-new-from-component"
 block|,
 literal|"Create a new channel from a color component"
 block|,
@@ -1149,7 +1153,9 @@ name|ProcRecord
 name|channel_copy_proc
 init|=
 block|{
-literal|"gimp_channel_copy"
+literal|"gimp-channel-copy"
+block|,
+literal|"gimp-channel-copy"
 block|,
 literal|"Copy a channel."
 block|,
@@ -1450,7 +1456,9 @@ name|ProcRecord
 name|channel_combine_masks_proc
 init|=
 block|{
-literal|"gimp_channel_combine_masks"
+literal|"gimp-channel-combine-masks"
+block|,
+literal|"gimp-channel-combine-masks"
 block|,
 literal|"Combine two channel masks."
 block|,
@@ -1642,7 +1650,9 @@ name|ProcRecord
 name|channel_get_show_masked_proc
 init|=
 block|{
-literal|"gimp_channel_get_show_masked"
+literal|"gimp-channel-get-show-masked"
+block|,
+literal|"gimp-channel-get-show-masked"
 block|,
 literal|"Get the composite method of the specified channel."
 block|,
@@ -1826,7 +1836,9 @@ name|ProcRecord
 name|channel_set_show_masked_proc
 init|=
 block|{
-literal|"gimp_channel_set_show_masked"
+literal|"gimp-channel-set-show-masked"
+block|,
+literal|"gimp-channel-set-show-masked"
 block|,
 literal|"Set the composite method of the specified channel."
 block|,
@@ -2020,7 +2032,9 @@ name|ProcRecord
 name|channel_get_opacity_proc
 init|=
 block|{
-literal|"gimp_channel_get_opacity"
+literal|"gimp-channel-get-opacity"
+block|,
+literal|"gimp-channel-get-opacity"
 block|,
 literal|"Get the opacity of the specified channel."
 block|,
@@ -2218,7 +2232,9 @@ name|ProcRecord
 name|channel_set_opacity_proc
 init|=
 block|{
-literal|"gimp_channel_set_opacity"
+literal|"gimp-channel-set-opacity"
+block|,
+literal|"gimp-channel-set-opacity"
 block|,
 literal|"Set the opacity of the specified channel."
 block|,
@@ -2422,7 +2438,9 @@ name|ProcRecord
 name|channel_get_color_proc
 init|=
 block|{
-literal|"gimp_channel_get_color"
+literal|"gimp-channel-get-color"
+block|,
+literal|"gimp-channel-get-color"
 block|,
 literal|"Get the compositing color of the specified channel."
 block|,
@@ -2622,7 +2640,9 @@ name|ProcRecord
 name|channel_set_color_proc
 init|=
 block|{
-literal|"gimp_channel_set_color"
+literal|"gimp-channel-set-color"
+block|,
+literal|"gimp-channel-set-color"
 block|,
 literal|"Set the compositing color of the specified channel."
 block|,

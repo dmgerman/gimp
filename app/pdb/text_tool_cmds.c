@@ -668,7 +668,9 @@ name|ProcRecord
 name|text_fontname_proc
 init|=
 block|{
-literal|"gimp_text_fontname"
+literal|"gimp-text-fontname"
+block|,
+literal|"gimp-text-fontname"
 block|,
 literal|"Add text at the specified location as a floating selection or a new layer."
 block|,
@@ -1087,7 +1089,9 @@ name|ProcRecord
 name|text_get_extents_fontname_proc
 init|=
 block|{
-literal|"gimp_text_get_extents_fontname"
+literal|"gimp-text-get-extents-fontname"
+block|,
+literal|"gimp-text-get-extents-fontname"
 block|,
 literal|"Get extents of the bounding box for the specified text."
 block|,
@@ -1898,19 +1902,21 @@ name|ProcRecord
 name|text_proc
 init|=
 block|{
-literal|"gimp_text"
+literal|"gimp-text"
 block|,
-literal|"This procedure is deprecated! Use 'gimp_text_fontname' instead."
+literal|"gimp-text"
 block|,
-literal|"This procedure is deprecated! Use 'gimp_text_fontname' instead."
+literal|"This procedure is deprecated! Use 'gimp-text-fontname' instead."
+block|,
+literal|"This procedure is deprecated! Use 'gimp-text-fontname' instead."
+block|,
+literal|""
 block|,
 literal|""
 block|,
 literal|""
 block|,
-literal|""
-block|,
-literal|"gimp_text_fontname"
+literal|"gimp-text-fontname"
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -2565,19 +2571,21 @@ name|ProcRecord
 name|text_get_extents_proc
 init|=
 block|{
-literal|"gimp_text_get_extents"
+literal|"gimp-text-get-extents"
 block|,
-literal|"This procedure is deprecated! Use 'gimp_text_get_extents_fontname' instead."
+literal|"gimp-text-get-extents"
 block|,
-literal|"This procedure is deprecated! Use 'gimp_text_get_extents_fontname' instead."
+literal|"This procedure is deprecated! Use 'gimp-text-get-extents-fontname' instead."
+block|,
+literal|"This procedure is deprecated! Use 'gimp-text-get-extents-fontname' instead."
+block|,
+literal|""
 block|,
 literal|""
 block|,
 literal|""
 block|,
-literal|""
-block|,
-literal|"gimp_text_get_extents_fontname"
+literal|"gimp-text-get-extents-fontname"
 block|,
 name|GIMP_INTERNAL
 block|,

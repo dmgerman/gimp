@@ -52,7 +52,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_gimprc_query"
+literal|"gimp-gimprc-query"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -140,7 +140,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_gimprc_set"
+literal|"gimp-gimprc-set"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -212,7 +212,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_get_default_comment"
+literal|"gimp-get-default-comment"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -294,7 +294,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_get_monitor_resolution"
+literal|"gimp-get-monitor-resolution"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -398,7 +398,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_get_theme_dir"
+literal|"gimp-get-theme-dir"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -476,7 +476,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_get_color_configuration"
+literal|"gimp-get-color-configuration"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -554,7 +554,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_get_module_load_inhibit"
+literal|"gimp-get-module-load-inhibit"
 argument_list|,
 operator|&
 name|nreturn_vals

@@ -426,7 +426,9 @@ name|ProcRecord
 name|vectors_get_strokes_proc
 init|=
 block|{
-literal|"gimp_vectors_get_strokes"
+literal|"gimp-vectors-get-strokes"
+block|,
+literal|"gimp-vectors-get-strokes"
 block|,
 literal|"List the strokes associated with the passed path."
 block|,
@@ -630,7 +632,9 @@ name|ProcRecord
 name|vectors_stroke_remove_proc
 init|=
 block|{
-literal|"gimp_vectors_stroke_remove"
+literal|"gimp-vectors-stroke-remove"
+block|,
+literal|"gimp-vectors-stroke-remove"
 block|,
 literal|"return coordinates along the given stroke."
 block|,
@@ -925,7 +929,9 @@ name|ProcRecord
 name|vectors_stroke_translate_proc
 init|=
 block|{
-literal|"gimp_vectors_stroke_translate"
+literal|"gimp-vectors-stroke-translate"
+block|,
+literal|"gimp-vectors-stroke-translate"
 block|,
 literal|"translate the given stroke."
 block|,
@@ -1358,7 +1364,9 @@ name|ProcRecord
 name|vectors_stroke_interpolate_proc
 init|=
 block|{
-literal|"gimp_vectors_stroke_interpolate"
+literal|"gimp-vectors-stroke-interpolate"
+block|,
+literal|"gimp-vectors-stroke-interpolate"
 block|,
 literal|"returns polygonal approximation of the stroke."
 block|,

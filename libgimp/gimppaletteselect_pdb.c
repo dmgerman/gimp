@@ -60,7 +60,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_palettes_popup"
+literal|"gimp-palettes-popup"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -137,7 +137,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_palettes_close_popup"
+literal|"gimp-palettes-close-popup"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -211,7 +211,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_palettes_set_popup"
+literal|"gimp-palettes-set-popup"
 argument_list|,
 operator|&
 name|nreturn_vals

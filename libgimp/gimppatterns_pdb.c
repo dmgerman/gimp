@@ -53,7 +53,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_patterns_refresh"
+literal|"gimp-patterns-refresh"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -88,7 +88,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_patterns_get_list:  * @filter: An optional regular expression used to filter the list.  * @num_patterns: The number of patterns in the pattern list.  *  * Retrieve a complete listing of the available patterns.  *  * This procedure returns a complete listing of available GIMP  * patterns. Each name returned can be used as input to the  * 'gimp_context_set_pattern'.  *  * Returns: The list of pattern names.  */
+comment|/**  * gimp_patterns_get_list:  * @filter: An optional regular expression used to filter the list.  * @num_patterns: The number of patterns in the pattern list.  *  * Retrieve a complete listing of the available patterns.  *  * This procedure returns a complete listing of available GIMP  * patterns. Each name returned can be used as input to the  * 'gimp-context-set-pattern'.  *  * Returns: The list of pattern names.  */
 end_comment
 
 begin_function
@@ -129,7 +129,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_patterns_get_list"
+literal|"gimp-patterns-get-list"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -267,7 +267,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_patterns_get_pattern"
+literal|"gimp-patterns-get-pattern"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -395,7 +395,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_patterns_get_pattern_data"
+literal|"gimp-patterns-get-pattern-data"
 argument_list|,
 operator|&
 name|nreturn_vals

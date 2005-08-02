@@ -560,7 +560,9 @@ name|ProcRecord
 name|path_list_proc
 init|=
 block|{
-literal|"gimp_path_list"
+literal|"gimp-path-list"
+block|,
+literal|"gimp-path-list"
 block|,
 literal|"List the paths associated with the passed image."
 block|,
@@ -779,7 +781,9 @@ name|ProcRecord
 name|path_get_current_proc
 init|=
 block|{
-literal|"gimp_path_get_current"
+literal|"gimp-path-get-current"
+block|,
+literal|"gimp-path-get-current"
 block|,
 literal|"The name of the current path. Error if no paths."
 block|,
@@ -994,7 +998,9 @@ name|ProcRecord
 name|path_set_current_proc
 init|=
 block|{
-literal|"gimp_path_set_current"
+literal|"gimp-path-set-current"
+block|,
+literal|"gimp-path-set-current"
 block|,
 literal|"Sets the current path associated with the passed image."
 block|,
@@ -1209,7 +1215,9 @@ name|ProcRecord
 name|path_delete_proc
 init|=
 block|{
-literal|"gimp_path_delete"
+literal|"gimp-path-delete"
+block|,
+literal|"gimp-path-delete"
 block|,
 literal|"Delete the named path associated with the passed image."
 block|,
@@ -1663,7 +1671,9 @@ name|ProcRecord
 name|path_get_points_proc
 init|=
 block|{
-literal|"gimp_path_get_points"
+literal|"gimp-path-get-points"
+block|,
+literal|"gimp-path-get-points"
 block|,
 literal|"List the points associated with the named path."
 block|,
@@ -2108,7 +2118,9 @@ name|ProcRecord
 name|path_set_points_proc
 init|=
 block|{
-literal|"gimp_path_set_points"
+literal|"gimp-path-set-points"
+block|,
+literal|"gimp-path-set-points"
 block|,
 literal|"Set the points associated with the named path."
 block|,
@@ -2322,7 +2334,9 @@ name|ProcRecord
 name|path_stroke_current_proc
 init|=
 block|{
-literal|"gimp_path_stroke_current"
+literal|"gimp-path-stroke-current"
+block|,
+literal|"gimp-path-stroke-current"
 block|,
 literal|"Stroke the current path in the passed image."
 block|,
@@ -2742,7 +2756,9 @@ name|ProcRecord
 name|path_get_point_at_dist_proc
 init|=
 block|{
-literal|"gimp_path_get_point_at_dist"
+literal|"gimp-path-get-point-at-dist"
+block|,
+literal|"gimp-path-get-point-at-dist"
 block|,
 literal|"Get point on a path at a specified distance along the path."
 block|,
@@ -3007,7 +3023,9 @@ name|ProcRecord
 name|path_get_tattoo_proc
 init|=
 block|{
-literal|"gimp_path_get_tattoo"
+literal|"gimp-path-get-tattoo"
+block|,
+literal|"gimp-path-get-tattoo"
 block|,
 literal|"Returns the tattoo associated with the name path."
 block|,
@@ -3249,7 +3267,9 @@ name|ProcRecord
 name|path_set_tattoo_proc
 init|=
 block|{
-literal|"gimp_path_set_tattoo"
+literal|"gimp-path-set-tattoo"
+block|,
+literal|"gimp-path-set-tattoo"
 block|,
 literal|"Sets the tattoo associated with the named path."
 block|,
@@ -3492,7 +3512,9 @@ name|ProcRecord
 name|get_path_by_tattoo_proc
 init|=
 block|{
-literal|"gimp_get_path_by_tattoo"
+literal|"gimp-get-path-by-tattoo"
+block|,
+literal|"gimp-get-path-by-tattoo"
 block|,
 literal|"Return the name of the path with the given tattoo."
 block|,
@@ -3757,7 +3779,9 @@ name|ProcRecord
 name|path_get_locked_proc
 init|=
 block|{
-literal|"gimp_path_get_locked"
+literal|"gimp-path-get-locked"
+block|,
+literal|"gimp-path-get-locked"
 block|,
 literal|"Returns the locked status associated with the named path."
 block|,
@@ -4005,7 +4029,9 @@ name|ProcRecord
 name|path_set_locked_proc
 init|=
 block|{
-literal|"gimp_path_set_locked"
+literal|"gimp-path-set-locked"
+block|,
+literal|"gimp-path-set-locked"
 block|,
 literal|"Set the locked status associated with the named path."
 block|,
@@ -4370,7 +4396,9 @@ name|ProcRecord
 name|path_to_selection_proc
 init|=
 block|{
-literal|"gimp_path_to_selection"
+literal|"gimp-path-to-selection"
+block|,
+literal|"gimp-path-to-selection"
 block|,
 literal|"Transforms the active path into a selection"
 block|,
@@ -4613,7 +4641,9 @@ name|ProcRecord
 name|path_import_proc
 init|=
 block|{
-literal|"gimp_path_import"
+literal|"gimp-path-import"
+block|,
+literal|"gimp-path-import"
 block|,
 literal|"Import paths from an SVG file."
 block|,
@@ -4880,7 +4910,9 @@ name|ProcRecord
 name|path_import_string_proc
 init|=
 block|{
-literal|"gimp_path_import_string"
+literal|"gimp-path-import-string"
+block|,
+literal|"gimp-path-import-string"
 block|,
 literal|"Import paths from an SVG string."
 block|,

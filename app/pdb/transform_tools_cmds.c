@@ -457,19 +457,21 @@ name|ProcRecord
 name|flip_proc
 init|=
 block|{
-literal|"gimp_flip"
+literal|"gimp-flip"
 block|,
-literal|"This procedure is deprecated! Use 'gimp_drawable_transform_flip_simple' instead."
+literal|"gimp-flip"
 block|,
-literal|"This procedure is deprecated! Use 'gimp_drawable_transform_flip_simple' instead."
+literal|"This procedure is deprecated! Use 'gimp-drawable-transform-flip-simple' instead."
+block|,
+literal|"This procedure is deprecated! Use 'gimp-drawable-transform-flip-simple' instead."
+block|,
+literal|""
 block|,
 literal|""
 block|,
 literal|""
 block|,
-literal|""
-block|,
-literal|"gimp_drawable_transform_flip_simple"
+literal|"gimp-drawable-transform-flip-simple"
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -1039,19 +1041,21 @@ name|ProcRecord
 name|perspective_proc
 init|=
 block|{
-literal|"gimp_perspective"
+literal|"gimp-perspective"
 block|,
-literal|"This procedure is deprecated! Use 'gimp_drawable_transform_perspective_default' instead."
+literal|"gimp-perspective"
 block|,
-literal|"This procedure is deprecated! Use 'gimp_drawable_transform_perspective_default' instead."
+literal|"This procedure is deprecated! Use 'gimp-drawable-transform-perspective-default' instead."
+block|,
+literal|"This procedure is deprecated! Use 'gimp-drawable-transform-perspective-default' instead."
+block|,
+literal|""
 block|,
 literal|""
 block|,
 literal|""
 block|,
-literal|""
-block|,
-literal|"gimp_drawable_transform_perspective_default"
+literal|"gimp-drawable-transform-perspective-default"
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -1423,19 +1427,21 @@ name|ProcRecord
 name|rotate_proc
 init|=
 block|{
-literal|"gimp_rotate"
+literal|"gimp-rotate"
 block|,
-literal|"This procedure is deprecated! Use 'gimp_drawable_transform_rotate_default' instead."
+literal|"gimp-rotate"
 block|,
-literal|"This procedure is deprecated! Use 'gimp_drawable_transform_rotate_default' instead."
+literal|"This procedure is deprecated! Use 'gimp-drawable-transform-rotate-default' instead."
+block|,
+literal|"This procedure is deprecated! Use 'gimp-drawable-transform-rotate-default' instead."
+block|,
+literal|""
 block|,
 literal|""
 block|,
 literal|""
 block|,
-literal|""
-block|,
-literal|"gimp_drawable_transform_rotate_default"
+literal|"gimp-drawable-transform-rotate-default"
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -1929,19 +1935,21 @@ name|ProcRecord
 name|scale_proc
 init|=
 block|{
-literal|"gimp_scale"
+literal|"gimp-scale"
 block|,
-literal|"This procedure is deprecated! Use 'gimp_drawable_transform_scale_default' instead."
+literal|"gimp-scale"
 block|,
-literal|"This procedure is deprecated! Use 'gimp_drawable_transform_scale_default' instead."
+literal|"This procedure is deprecated! Use 'gimp-drawable-transform-scale-default' instead."
+block|,
+literal|"This procedure is deprecated! Use 'gimp-drawable-transform-scale-default' instead."
+block|,
+literal|""
 block|,
 literal|""
 block|,
 literal|""
 block|,
-literal|""
-block|,
-literal|"gimp_drawable_transform_scale_default"
+literal|"gimp-drawable-transform-scale-default"
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -2351,19 +2359,21 @@ name|ProcRecord
 name|shear_proc
 init|=
 block|{
-literal|"gimp_shear"
+literal|"gimp-shear"
 block|,
-literal|"This procedure is deprecated! Use 'gimp_drawable_transform_shear_default' instead."
+literal|"gimp-shear"
 block|,
-literal|"This procedure is deprecated! Use 'gimp_drawable_transform_shear_default' instead."
+literal|"This procedure is deprecated! Use 'gimp-drawable-transform-shear-default' instead."
+block|,
+literal|"This procedure is deprecated! Use 'gimp-drawable-transform-shear-default' instead."
+block|,
+literal|""
 block|,
 literal|""
 block|,
 literal|""
 block|,
-literal|""
-block|,
-literal|"gimp_drawable_transform_shear_default"
+literal|"gimp-drawable-transform-shear-default"
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -2891,19 +2901,21 @@ name|ProcRecord
 name|transform_2d_proc
 init|=
 block|{
-literal|"gimp_transform_2d"
+literal|"gimp-transform-2d"
 block|,
-literal|"This procedure is deprecated! Use 'gimp_drawable_transform_2d_default' instead."
+literal|"gimp-transform-2d"
 block|,
-literal|"This procedure is deprecated! Use 'gimp_drawable_transform_2d_default' instead."
+literal|"This procedure is deprecated! Use 'gimp-drawable-transform-2d-default' instead."
+block|,
+literal|"This procedure is deprecated! Use 'gimp-drawable-transform-2d-default' instead."
+block|,
+literal|""
 block|,
 literal|""
 block|,
 literal|""
 block|,
-literal|""
-block|,
-literal|"gimp_drawable_transform_2d_default"
+literal|"gimp-drawable-transform-2d-default"
 block|,
 name|GIMP_INTERNAL
 block|,

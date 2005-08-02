@@ -63,7 +63,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_gradients_popup"
+literal|"gimp-gradients-popup"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -144,7 +144,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_gradients_close_popup"
+literal|"gimp-gradients-close-popup"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -218,7 +218,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_gradients_set_popup"
+literal|"gimp-gradients-set-popup"
 argument_list|,
 operator|&
 name|nreturn_vals

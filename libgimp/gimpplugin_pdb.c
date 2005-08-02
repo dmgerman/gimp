@@ -55,7 +55,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_plugin_domain_register"
+literal|"gimp-plugin-domain-register"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -133,7 +133,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_plugin_help_register"
+literal|"gimp-plugin-help-register"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -211,7 +211,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_plugin_menu_register"
+literal|"gimp-plugin-menu-register"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -289,7 +289,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_plugin_menu_branch_register"
+literal|"gimp-plugin-menu-branch-register"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -373,7 +373,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_plugin_icon_register"
+literal|"gimp-plugin-icon-register"
 argument_list|,
 operator|&
 name|nreturn_vals

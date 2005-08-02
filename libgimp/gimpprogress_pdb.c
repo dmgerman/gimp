@@ -50,7 +50,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_progress_init"
+literal|"gimp-progress-init"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -122,7 +122,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_progress_update"
+literal|"gimp-progress-update"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -188,7 +188,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_progress_pulse"
+literal|"gimp-progress-pulse"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -253,7 +253,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_progress_set_text"
+literal|"gimp-progress-set-text"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -322,7 +322,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_progress_install"
+literal|"gimp-progress-install"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -391,7 +391,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_progress_uninstall"
+literal|"gimp-progress-uninstall"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -460,7 +460,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_progress_cancel"
+literal|"gimp-progress-cancel"
 argument_list|,
 operator|&
 name|nreturn_vals

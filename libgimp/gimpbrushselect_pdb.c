@@ -69,7 +69,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_brushes_popup"
+literal|"gimp-brushes-popup"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -158,7 +158,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_brushes_close_popup"
+literal|"gimp-brushes-close-popup"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -241,7 +241,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_brushes_set_popup"
+literal|"gimp-brushes-set-popup"
 argument_list|,
 operator|&
 name|nreturn_vals

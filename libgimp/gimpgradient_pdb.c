@@ -58,7 +58,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_gradient_new"
+literal|"gimp-gradient-new"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -143,7 +143,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_gradient_duplicate"
+literal|"gimp-gradient-duplicate"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -226,7 +226,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_gradient_is_editable"
+literal|"gimp-gradient-is-editable"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -313,7 +313,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_gradient_rename"
+literal|"gimp-gradient-rename"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -400,7 +400,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_gradient_delete"
+literal|"gimp-gradient-delete"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -484,7 +484,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_gradient_get_uniform_samples"
+literal|"gimp-gradient-get-uniform-samples"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -643,7 +643,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_gradient_get_custom_samples"
+literal|"gimp-gradient-get-custom-samples"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -797,7 +797,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_gradient_segment_get_left_color"
+literal|"gimp-gradient-segment-get-left-color"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -916,7 +916,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_gradient_segment_set_left_color"
+literal|"gimp-gradient-segment-set-left-color"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1008,7 +1008,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_gradient_segment_get_right_color"
+literal|"gimp-gradient-segment-get-right-color"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1127,7 +1127,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_gradient_segment_set_right_color"
+literal|"gimp-gradient-segment-set-right-color"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1215,7 +1215,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_gradient_segment_get_left_pos"
+literal|"gimp-gradient-segment-get-left-pos"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1319,7 +1319,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_gradient_segment_set_left_pos"
+literal|"gimp-gradient-segment-set-left-pos"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1424,7 +1424,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_gradient_segment_get_middle_pos"
+literal|"gimp-gradient-segment-get-middle-pos"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1528,7 +1528,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_gradient_segment_set_middle_pos"
+literal|"gimp-gradient-segment-set-middle-pos"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1633,7 +1633,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_gradient_segment_get_right_pos"
+literal|"gimp-gradient-segment-get-right-pos"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1737,7 +1737,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_gradient_segment_set_right_pos"
+literal|"gimp-gradient-segment-set-right-pos"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1842,7 +1842,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_gradient_segment_get_blending_function"
+literal|"gimp-gradient-segment-get-blending-function"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1943,7 +1943,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_gradient_segment_get_coloring_type"
+literal|"gimp-gradient-segment-get-coloring-type"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -2046,7 +2046,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_gradient_segment_range_set_blending_function"
+literal|"gimp-gradient-segment-range-set-blending-function"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -2136,7 +2136,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_gradient_segment_range_set_coloring_type"
+literal|"gimp-gradient-segment-range-set-coloring-type"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -2223,7 +2223,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_gradient_segment_range_flip"
+literal|"gimp-gradient-segment-range-flip"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -2309,7 +2309,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_gradient_segment_range_replicate"
+literal|"gimp-gradient-segment-range-replicate"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -2396,7 +2396,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_gradient_segment_range_split_midpoint"
+literal|"gimp-gradient-segment-range-split-midpoint"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -2482,7 +2482,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_gradient_segment_range_split_uniform"
+literal|"gimp-gradient-segment-range-split-uniform"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -2569,7 +2569,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_gradient_segment_range_delete"
+literal|"gimp-gradient-segment-range-delete"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -2652,7 +2652,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_gradient_segment_range_redistribute_handles"
+literal|"gimp-gradient-segment-range-redistribute-handles"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -2735,7 +2735,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_gradient_segment_range_blend_colors"
+literal|"gimp-gradient-segment-range-blend-colors"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -2818,7 +2818,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_gradient_segment_range_blend_opacity"
+literal|"gimp-gradient-segment-range-blend-opacity"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -2907,7 +2907,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_gradient_segment_range_move"
+literal|"gimp-gradient-segment-range-move"
 argument_list|,
 operator|&
 name|nreturn_vals

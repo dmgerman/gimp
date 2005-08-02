@@ -206,7 +206,9 @@ name|ProcRecord
 name|palettes_refresh_proc
 init|=
 block|{
-literal|"gimp_palettes_refresh"
+literal|"gimp-palettes-refresh"
+block|,
+literal|"gimp-palettes-refresh"
 block|,
 literal|"Refreshes current palettes. This function always succeeds."
 block|,
@@ -437,11 +439,13 @@ name|ProcRecord
 name|palettes_get_list_proc
 init|=
 block|{
-literal|"gimp_palettes_get_list"
+literal|"gimp-palettes-get-list"
+block|,
+literal|"gimp-palettes-get-list"
 block|,
 literal|"Retrieves a list of all of the available palettes"
 block|,
-literal|"This procedure returns a complete listing of available palettes. Each name returned can be used as input to the command 'gimp_context_set_palette'."
+literal|"This procedure returns a complete listing of available palettes. Each name returned can be used as input to the command 'gimp-context-set-palette'."
 block|,
 literal|"Nathan Summers<rock@gimp.org>"
 block|,
@@ -608,19 +612,21 @@ name|ProcRecord
 name|palettes_get_palette_proc
 init|=
 block|{
-literal|"gimp_palettes_get_palette"
+literal|"gimp-palettes-get-palette"
 block|,
-literal|"This procedure is deprecated! Use 'gimp_context_get_palette' instead."
+literal|"gimp-palettes-get-palette"
 block|,
-literal|"This procedure is deprecated! Use 'gimp_context_get_palette' instead."
+literal|"This procedure is deprecated! Use 'gimp-context-get-palette' instead."
+block|,
+literal|"This procedure is deprecated! Use 'gimp-context-get-palette' instead."
+block|,
+literal|""
 block|,
 literal|""
 block|,
 literal|""
 block|,
-literal|""
-block|,
-literal|"gimp_context_get_palette"
+literal|"gimp-context-get-palette"
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -970,19 +976,21 @@ name|ProcRecord
 name|palettes_get_palette_entry_proc
 init|=
 block|{
-literal|"gimp_palettes_get_palette_entry"
+literal|"gimp-palettes-get-palette-entry"
 block|,
-literal|"This procedure is deprecated! Use 'gimp_palette_entry_get_color' instead."
+literal|"gimp-palettes-get-palette-entry"
 block|,
-literal|"This procedure is deprecated! Use 'gimp_palette_entry_get_color' instead."
+literal|"This procedure is deprecated! Use 'gimp-palette-entry-get-color' instead."
+block|,
+literal|"This procedure is deprecated! Use 'gimp-palette-entry-get-color' instead."
+block|,
+literal|""
 block|,
 literal|""
 block|,
 literal|""
 block|,
-literal|""
-block|,
-literal|"gimp_palette_entry_get_color"
+literal|"gimp-palette-entry-get-color"
 block|,
 name|GIMP_INTERNAL
 block|,

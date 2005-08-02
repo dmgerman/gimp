@@ -351,7 +351,9 @@ name|ProcRecord
 name|palettes_popup_proc
 init|=
 block|{
-literal|"gimp_palettes_popup"
+literal|"gimp-palettes-popup"
+block|,
+literal|"gimp-palettes-popup"
 block|,
 literal|"Invokes the Gimp palette selection."
 block|,
@@ -529,7 +531,9 @@ name|ProcRecord
 name|palettes_close_popup_proc
 init|=
 block|{
-literal|"gimp_palettes_close_popup"
+literal|"gimp-palettes-close-popup"
+block|,
+literal|"gimp-palettes-close-popup"
 block|,
 literal|"Popdown the Gimp palette selection."
 block|,
@@ -759,7 +763,9 @@ name|ProcRecord
 name|palettes_set_popup_proc
 init|=
 block|{
-literal|"gimp_palettes_set_popup"
+literal|"gimp-palettes-set-popup"
+block|,
+literal|"gimp-palettes-set-popup"
 block|,
 literal|"Sets the current palette selection in a popup."
 block|,

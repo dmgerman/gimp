@@ -106,6 +106,19 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gchar
+modifier|*
+name|gimp_canonicalize_identifier
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|name
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpEnumDesc
 modifier|*
 name|gimp_enum_get_desc

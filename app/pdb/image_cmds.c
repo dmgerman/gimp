@@ -1454,7 +1454,9 @@ name|ProcRecord
 name|image_list_proc
 init|=
 block|{
-literal|"gimp_image_list"
+literal|"gimp-image-list"
+block|,
+literal|"gimp-image-list"
 block|,
 literal|"Returns the list of images currently open."
 block|,
@@ -1726,7 +1728,9 @@ name|ProcRecord
 name|image_new_proc
 init|=
 block|{
-literal|"gimp_image_new"
+literal|"gimp-image-new"
+block|,
+literal|"gimp-image-new"
 block|,
 literal|"Creates a new image with the specified width, height, and type."
 block|,
@@ -1926,7 +1930,9 @@ name|ProcRecord
 name|image_duplicate_proc
 init|=
 block|{
-literal|"gimp_image_duplicate"
+literal|"gimp-image-duplicate"
+block|,
+literal|"gimp-image-duplicate"
 block|,
 literal|"Duplicate the specified image"
 block|,
@@ -2082,7 +2088,9 @@ name|ProcRecord
 name|image_delete_proc
 init|=
 block|{
-literal|"gimp_image_delete"
+literal|"gimp-image-delete"
+block|,
+literal|"gimp-image-delete"
 block|,
 literal|"Delete the specified image."
 block|,
@@ -2272,7 +2280,9 @@ name|ProcRecord
 name|image_base_type_proc
 init|=
 block|{
-literal|"gimp_image_base_type"
+literal|"gimp-image-base-type"
+block|,
+literal|"gimp-image-base-type"
 block|,
 literal|"Get the base type of the image."
 block|,
@@ -2448,7 +2458,9 @@ name|ProcRecord
 name|image_width_proc
 init|=
 block|{
-literal|"gimp_image_width"
+literal|"gimp-image-width"
+block|,
+literal|"gimp-image-width"
 block|,
 literal|"Return the width of the image"
 block|,
@@ -2624,7 +2636,9 @@ name|ProcRecord
 name|image_height_proc
 init|=
 block|{
-literal|"gimp_image_height"
+literal|"gimp-image-height"
+block|,
+literal|"gimp-image-height"
 block|,
 literal|"Return the height of the image"
 block|,
@@ -2765,7 +2779,9 @@ name|ProcRecord
 name|image_free_shadow_proc
 init|=
 block|{
-literal|"gimp_image_free_shadow"
+literal|"gimp-image-free-shadow"
+block|,
+literal|"gimp-image-free-shadow"
 block|,
 literal|"Free the specified image's shadow data (if it exists)."
 block|,
@@ -3028,7 +3044,9 @@ name|ProcRecord
 name|image_resize_proc
 init|=
 block|{
-literal|"gimp_image_resize"
+literal|"gimp-image-resize"
+block|,
+literal|"gimp-image-resize"
 block|,
 literal|"Resize the image to the specified extents."
 block|,
@@ -3175,7 +3193,9 @@ name|ProcRecord
 name|image_resize_to_layers_proc
 init|=
 block|{
-literal|"gimp_image_resize_to_layers"
+literal|"gimp-image-resize-to-layers"
+block|,
+literal|"gimp-image-resize-to-layers"
 block|,
 literal|"Resize the image to fit all layers."
 block|,
@@ -3394,7 +3414,9 @@ name|ProcRecord
 name|image_scale_proc
 init|=
 block|{
-literal|"gimp_image_scale"
+literal|"gimp-image-scale"
+block|,
+literal|"gimp-image-scale"
 block|,
 literal|"Scale the image to the specified extents."
 block|,
@@ -3722,7 +3744,9 @@ name|ProcRecord
 name|image_crop_proc
 init|=
 block|{
-literal|"gimp_image_crop"
+literal|"gimp-image-crop"
+block|,
+literal|"gimp-image-crop"
 block|,
 literal|"Crop the image to the specified extents."
 block|,
@@ -3907,7 +3931,9 @@ name|ProcRecord
 name|image_flip_proc
 init|=
 block|{
-literal|"gimp_image_flip"
+literal|"gimp-image-flip"
+block|,
+literal|"gimp-image-flip"
 block|,
 literal|"Flips the image horizontally or vertically."
 block|,
@@ -4092,7 +4118,9 @@ name|ProcRecord
 name|image_rotate_proc
 init|=
 block|{
-literal|"gimp_image_rotate"
+literal|"gimp-image-rotate"
+block|,
+literal|"gimp-image-rotate"
 block|,
 literal|"Rotates the image by the specified degrees."
 block|,
@@ -4381,7 +4409,9 @@ name|ProcRecord
 name|image_get_layers_proc
 init|=
 block|{
-literal|"gimp_image_get_layers"
+literal|"gimp-image-get-layers"
+block|,
+literal|"gimp-image-get-layers"
 block|,
 literal|"Returns the list of layers contained in the specified image."
 block|,
@@ -4670,7 +4700,9 @@ name|ProcRecord
 name|image_get_channels_proc
 init|=
 block|{
-literal|"gimp_image_get_channels"
+literal|"gimp-image-get-channels"
+block|,
+literal|"gimp-image-get-channels"
 block|,
 literal|"Returns the list of channels contained in the specified image."
 block|,
@@ -4959,7 +4991,9 @@ name|ProcRecord
 name|image_get_vectors_proc
 init|=
 block|{
-literal|"gimp_image_get_vectors"
+literal|"gimp-image-get-vectors"
+block|,
+literal|"gimp-image-get-vectors"
 block|,
 literal|"Returns the list of vectors contained in the specified image."
 block|,
@@ -5162,7 +5196,9 @@ name|ProcRecord
 name|image_get_active_drawable_proc
 init|=
 block|{
-literal|"gimp_image_get_active_drawable"
+literal|"gimp-image-get-active-drawable"
+block|,
+literal|"gimp-image-get-active-drawable"
 block|,
 literal|"Get the image's active drawable"
 block|,
@@ -5303,7 +5339,9 @@ name|ProcRecord
 name|image_unset_active_channel_proc
 init|=
 block|{
-literal|"gimp_image_unset_active_channel"
+literal|"gimp-image-unset-active-channel"
+block|,
+literal|"gimp-image-unset-active-channel"
 block|,
 literal|"Unsets the active channel in the specified image."
 block|,
@@ -5505,7 +5543,9 @@ name|ProcRecord
 name|image_get_floating_sel_proc
 init|=
 block|{
-literal|"gimp_image_get_floating_sel"
+literal|"gimp-image-get-floating-sel"
+block|,
+literal|"gimp-image-get-floating-sel"
 block|,
 literal|"Return the floating selection of the image."
 block|,
@@ -5736,7 +5776,9 @@ name|ProcRecord
 name|image_floating_sel_attached_to_proc
 init|=
 block|{
-literal|"gimp_image_floating_sel_attached_to"
+literal|"gimp-image-floating-sel-attached-to"
+block|,
+literal|"gimp-image-floating-sel-attached-to"
 block|,
 literal|"Return the drawable the floating selection is attached to."
 block|,
@@ -6145,7 +6187,9 @@ name|ProcRecord
 name|image_pick_color_proc
 init|=
 block|{
-literal|"gimp_image_pick_color"
+literal|"gimp-image-pick-color"
+block|,
+literal|"gimp-image-pick-color"
 block|,
 literal|"Determine the color at the given drawable coordinates"
 block|,
@@ -6390,7 +6434,9 @@ name|ProcRecord
 name|image_pick_correlate_layer_proc
 init|=
 block|{
-literal|"gimp_image_pick_correlate_layer"
+literal|"gimp-image-pick-correlate-layer"
+block|,
+literal|"gimp-image-pick-correlate-layer"
 block|,
 literal|"Find the layer visible at the specified coordinates."
 block|,
@@ -6658,7 +6704,9 @@ name|ProcRecord
 name|image_add_layer_proc
 init|=
 block|{
-literal|"gimp_image_add_layer"
+literal|"gimp-image-add-layer"
+block|,
+literal|"gimp-image-add-layer"
 block|,
 literal|"Add the specified layer to the image."
 block|,
@@ -6856,7 +6904,9 @@ name|ProcRecord
 name|image_remove_layer_proc
 init|=
 block|{
-literal|"gimp_image_remove_layer"
+literal|"gimp-image-remove-layer"
+block|,
+literal|"gimp-image-remove-layer"
 block|,
 literal|"Remove the specified layer from the image."
 block|,
@@ -7056,7 +7106,9 @@ name|ProcRecord
 name|image_raise_layer_proc
 init|=
 block|{
-literal|"gimp_image_raise_layer"
+literal|"gimp-image-raise-layer"
+block|,
+literal|"gimp-image-raise-layer"
 block|,
 literal|"Raise the specified layer in the image's layer stack"
 block|,
@@ -7256,7 +7308,9 @@ name|ProcRecord
 name|image_lower_layer_proc
 init|=
 block|{
-literal|"gimp_image_lower_layer"
+literal|"gimp-image-lower-layer"
+block|,
+literal|"gimp-image-lower-layer"
 block|,
 literal|"Lower the specified layer in the image's layer stack"
 block|,
@@ -7456,7 +7510,9 @@ name|ProcRecord
 name|image_raise_layer_to_top_proc
 init|=
 block|{
-literal|"gimp_image_raise_layer_to_top"
+literal|"gimp-image-raise-layer-to-top"
+block|,
+literal|"gimp-image-raise-layer-to-top"
 block|,
 literal|"Raise the specified layer in the image's layer stack to top of stack"
 block|,
@@ -7656,7 +7712,9 @@ name|ProcRecord
 name|image_lower_layer_to_bottom_proc
 init|=
 block|{
-literal|"gimp_image_lower_layer_to_bottom"
+literal|"gimp-image-lower-layer-to-bottom"
+block|,
+literal|"gimp-image-lower-layer-to-bottom"
 block|,
 literal|"Lower the specified layer in the image's layer stack to bottom of stack"
 block|,
@@ -7902,7 +7960,9 @@ name|ProcRecord
 name|image_add_channel_proc
 init|=
 block|{
-literal|"gimp_image_add_channel"
+literal|"gimp-image-add-channel"
+block|,
+literal|"gimp-image-add-channel"
 block|,
 literal|"Add the specified channel to the image."
 block|,
@@ -8100,7 +8160,9 @@ name|ProcRecord
 name|image_remove_channel_proc
 init|=
 block|{
-literal|"gimp_image_remove_channel"
+literal|"gimp-image-remove-channel"
+block|,
+literal|"gimp-image-remove-channel"
 block|,
 literal|"Remove the specified channel from the image."
 block|,
@@ -8300,7 +8362,9 @@ name|ProcRecord
 name|image_raise_channel_proc
 init|=
 block|{
-literal|"gimp_image_raise_channel"
+literal|"gimp-image-raise-channel"
+block|,
+literal|"gimp-image-raise-channel"
 block|,
 literal|"Raise the specified channel in the image's channel stack"
 block|,
@@ -8500,7 +8564,9 @@ name|ProcRecord
 name|image_lower_channel_proc
 init|=
 block|{
-literal|"gimp_image_lower_channel"
+literal|"gimp-image-lower-channel"
+block|,
+literal|"gimp-image-lower-channel"
 block|,
 literal|"Lower the specified layer in the image's layer stack"
 block|,
@@ -8705,7 +8771,9 @@ name|ProcRecord
 name|image_flatten_proc
 init|=
 block|{
-literal|"gimp_image_flatten"
+literal|"gimp-image-flatten"
+block|,
+literal|"gimp-image-flatten"
 block|,
 literal|"Flatten all visible layers into a single layer. Discard all invisible layers."
 block|,
@@ -8950,7 +9018,9 @@ name|ProcRecord
 name|image_merge_visible_layers_proc
 init|=
 block|{
-literal|"gimp_image_merge_visible_layers"
+literal|"gimp-image-merge-visible-layers"
+block|,
+literal|"gimp-image-merge-visible-layers"
 block|,
 literal|"Merge the visible image layers into one."
 block|,
@@ -9252,7 +9322,9 @@ name|ProcRecord
 name|image_merge_down_proc
 init|=
 block|{
-literal|"gimp_image_merge_down"
+literal|"gimp-image-merge-down"
+block|,
+literal|"gimp-image-merge-down"
 block|,
 literal|"Merge the layer passed and the first visible layer below."
 block|,
@@ -9513,19 +9585,21 @@ name|ProcRecord
 name|image_add_layer_mask_proc
 init|=
 block|{
-literal|"gimp_image_add_layer_mask"
+literal|"gimp-image-add-layer-mask"
 block|,
-literal|"This procedure is deprecated! Use 'gimp_layer_add_mask' instead."
+literal|"gimp-image-add-layer-mask"
 block|,
-literal|"This procedure is deprecated! Use 'gimp_layer_add_mask' instead."
+literal|"This procedure is deprecated! Use 'gimp-layer-add-mask' instead."
+block|,
+literal|"This procedure is deprecated! Use 'gimp-layer-add-mask' instead."
+block|,
+literal|""
 block|,
 literal|""
 block|,
 literal|""
 block|,
-literal|""
-block|,
-literal|"gimp_layer_add_mask"
+literal|"gimp-layer-add-mask"
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -9749,19 +9823,21 @@ name|ProcRecord
 name|image_remove_layer_mask_proc
 init|=
 block|{
-literal|"gimp_image_remove_layer_mask"
+literal|"gimp-image-remove-layer-mask"
 block|,
-literal|"This procedure is deprecated! Use 'gimp_layer_remove_mask' instead."
+literal|"gimp-image-remove-layer-mask"
 block|,
-literal|"This procedure is deprecated! Use 'gimp_layer_remove_mask' instead."
+literal|"This procedure is deprecated! Use 'gimp-layer-remove-mask' instead."
+block|,
+literal|"This procedure is deprecated! Use 'gimp-layer-remove-mask' instead."
+block|,
+literal|""
 block|,
 literal|""
 block|,
 literal|""
 block|,
-literal|""
-block|,
-literal|"gimp_layer_remove_mask"
+literal|"gimp-layer-remove-mask"
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -9982,7 +10058,9 @@ name|ProcRecord
 name|image_get_colormap_proc
 init|=
 block|{
-literal|"gimp_image_get_colormap"
+literal|"gimp-image-get-colormap"
+block|,
+literal|"gimp-image-get-colormap"
 block|,
 literal|"Returns the image's colormap"
 block|,
@@ -10194,7 +10272,9 @@ name|ProcRecord
 name|image_set_colormap_proc
 init|=
 block|{
-literal|"gimp_image_set_colormap"
+literal|"gimp-image-set-colormap"
+block|,
+literal|"gimp-image-set-colormap"
 block|,
 literal|"Sets the entries in the image's colormap."
 block|,
@@ -10335,7 +10415,9 @@ name|ProcRecord
 name|image_clean_all_proc
 init|=
 block|{
-literal|"gimp_image_clean_all"
+literal|"gimp-image-clean-all"
+block|,
+literal|"gimp-image-clean-all"
 block|,
 literal|"Set the image dirty count to 0."
 block|,
@@ -10528,7 +10610,9 @@ name|ProcRecord
 name|image_is_dirty_proc
 init|=
 block|{
-literal|"gimp_image_is_dirty"
+literal|"gimp-image-is-dirty"
+block|,
+literal|"gimp-image-is-dirty"
 block|,
 literal|"Checks if the image has unsaved changes."
 block|,
@@ -11062,7 +11146,9 @@ name|ProcRecord
 name|image_thumbnail_proc
 init|=
 block|{
-literal|"gimp_image_thumbnail"
+literal|"gimp-image-thumbnail"
+block|,
+literal|"gimp-image-thumbnail"
 block|,
 literal|"Get a thumbnail of an image."
 block|,
@@ -11264,7 +11350,9 @@ name|ProcRecord
 name|image_get_active_layer_proc
 init|=
 block|{
-literal|"gimp_image_get_active_layer"
+literal|"gimp-image-get-active-layer"
+block|,
+literal|"gimp-image-get-active-layer"
 block|,
 literal|"Returns the specified image's active layer."
 block|,
@@ -11468,7 +11556,9 @@ name|ProcRecord
 name|image_set_active_layer_proc
 init|=
 block|{
-literal|"gimp_image_set_active_layer"
+literal|"gimp-image-set-active-layer"
+block|,
+literal|"gimp-image-set-active-layer"
 block|,
 literal|"Sets the specified image's active layer."
 block|,
@@ -11670,7 +11760,9 @@ name|ProcRecord
 name|image_get_active_channel_proc
 init|=
 block|{
-literal|"gimp_image_get_active_channel"
+literal|"gimp-image-get-active-channel"
+block|,
+literal|"gimp-image-get-active-channel"
 block|,
 literal|"Returns the specified image's active channel."
 block|,
@@ -11874,7 +11966,9 @@ name|ProcRecord
 name|image_set_active_channel_proc
 init|=
 block|{
-literal|"gimp_image_set_active_channel"
+literal|"gimp-image-set-active-channel"
+block|,
+literal|"gimp-image-set-active-channel"
 block|,
 literal|"Sets the specified image's active channel."
 block|,
@@ -12077,7 +12171,9 @@ name|ProcRecord
 name|image_get_selection_proc
 init|=
 block|{
-literal|"gimp_image_get_selection"
+literal|"gimp-image-get-selection"
+block|,
+literal|"gimp-image-get-selection"
 block|,
 literal|"Returns the specified image's selection."
 block|,
@@ -12339,7 +12435,9 @@ name|ProcRecord
 name|image_get_component_active_proc
 init|=
 block|{
-literal|"gimp_image_get_component_active"
+literal|"gimp-image-get-component-active"
+block|,
+literal|"gimp-image-get-component-active"
 block|,
 literal|"Returns if the specified image's image component is active."
 block|,
@@ -12593,7 +12691,9 @@ name|ProcRecord
 name|image_set_component_active_proc
 init|=
 block|{
-literal|"gimp_image_set_component_active"
+literal|"gimp-image-set-component-active"
+block|,
+literal|"gimp-image-set-component-active"
 block|,
 literal|"Sets if the specified image's image component is active."
 block|,
@@ -12855,7 +12955,9 @@ name|ProcRecord
 name|image_get_component_visible_proc
 init|=
 block|{
-literal|"gimp_image_get_component_visible"
+literal|"gimp-image-get-component-visible"
+block|,
+literal|"gimp-image-get-component-visible"
 block|,
 literal|"Returns if the specified image's image component is visible."
 block|,
@@ -13109,7 +13211,9 @@ name|ProcRecord
 name|image_set_component_visible_proc
 init|=
 block|{
-literal|"gimp_image_set_component_visible"
+literal|"gimp-image-set-component-visible"
+block|,
+literal|"gimp-image-set-component-visible"
 block|,
 literal|"Sets if the specified image's image component is visible."
 block|,
@@ -13286,7 +13390,9 @@ name|ProcRecord
 name|image_get_filename_proc
 init|=
 block|{
-literal|"gimp_image_get_filename"
+literal|"gimp-image-get-filename"
+block|,
+literal|"gimp-image-get-filename"
 block|,
 literal|"Returns the specified image's filename."
 block|,
@@ -13539,7 +13645,9 @@ name|ProcRecord
 name|image_set_filename_proc
 init|=
 block|{
-literal|"gimp_image_set_filename"
+literal|"gimp-image-set-filename"
+block|,
+literal|"gimp-image-set-filename"
 block|,
 literal|"Sets the specified image's filename."
 block|,
@@ -13758,7 +13866,9 @@ name|ProcRecord
 name|image_get_name_proc
 init|=
 block|{
-literal|"gimp_image_get_name"
+literal|"gimp-image-get-name"
+block|,
+literal|"gimp-image-get-name"
 block|,
 literal|"Returns the specified image's name."
 block|,
@@ -13957,7 +14067,9 @@ name|ProcRecord
 name|image_get_resolution_proc
 init|=
 block|{
-literal|"gimp_image_get_resolution"
+literal|"gimp-image-get-resolution"
+block|,
+literal|"gimp-image-get-resolution"
 block|,
 literal|"Returns the specified image's resolution."
 block|,
@@ -14196,7 +14308,9 @@ name|ProcRecord
 name|image_set_resolution_proc
 init|=
 block|{
-literal|"gimp_image_set_resolution"
+literal|"gimp-image-set-resolution"
+block|,
+literal|"gimp-image-set-resolution"
 block|,
 literal|"Sets the specified image's resolution."
 block|,
@@ -14373,7 +14487,9 @@ name|ProcRecord
 name|image_get_unit_proc
 init|=
 block|{
-literal|"gimp_image_get_unit"
+literal|"gimp-image-get-unit"
+block|,
+literal|"gimp-image-get-unit"
 block|,
 literal|"Returns the specified image's unit."
 block|,
@@ -14555,7 +14671,9 @@ name|ProcRecord
 name|image_set_unit_proc
 init|=
 block|{
-literal|"gimp_image_set_unit"
+literal|"gimp-image-set-unit"
+block|,
+literal|"gimp-image-set-unit"
 block|,
 literal|"Sets the specified image's unit."
 block|,
@@ -14732,7 +14850,9 @@ name|ProcRecord
 name|image_get_tattoo_state_proc
 init|=
 block|{
-literal|"gimp_image_get_tattoo_state"
+literal|"gimp-image-get-tattoo-state"
+block|,
+literal|"gimp-image-get-tattoo-state"
 block|,
 literal|"Returns the tattoo state associated with the image."
 block|,
@@ -14897,7 +15017,9 @@ name|ProcRecord
 name|image_set_tattoo_state_proc
 init|=
 block|{
-literal|"gimp_image_set_tattoo_state"
+literal|"gimp-image-set-tattoo-state"
+block|,
+literal|"gimp-image-set-tattoo-state"
 block|,
 literal|"Set the tattoo state associated with the image."
 block|,
@@ -15136,7 +15258,9 @@ name|ProcRecord
 name|image_get_layer_by_tattoo_proc
 init|=
 block|{
-literal|"gimp_image_get_layer_by_tattoo"
+literal|"gimp-image-get-layer-by-tattoo"
+block|,
+literal|"gimp-image-get-layer-by-tattoo"
 block|,
 literal|"Find a layer with a given tattoo in an image."
 block|,
@@ -15375,7 +15499,9 @@ name|ProcRecord
 name|image_get_channel_by_tattoo_proc
 init|=
 block|{
-literal|"gimp_image_get_channel_by_tattoo"
+literal|"gimp-image-get-channel-by-tattoo"
+block|,
+literal|"gimp-image-get-channel-by-tattoo"
 block|,
 literal|"Find a channel with a given tattoo in an image."
 block|,

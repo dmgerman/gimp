@@ -47,7 +47,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_fonts_refresh"
+literal|"gimp-fonts-refresh"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -123,7 +123,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_fonts_get_list"
+literal|"gimp-fonts-get-list"
 argument_list|,
 operator|&
 name|nreturn_vals

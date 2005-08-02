@@ -512,7 +512,9 @@ name|ProcRecord
 name|by_color_select_proc
 init|=
 block|{
-literal|"gimp_by_color_select"
+literal|"gimp-by-color-select"
+block|,
+literal|"gimp-by-color-select"
 block|,
 literal|"Create a selection by selecting all pixels (in the specified drawable) with the same (or similar) color to that specified."
 block|,
@@ -904,7 +906,9 @@ name|ProcRecord
 name|ellipse_select_proc
 init|=
 block|{
-literal|"gimp_ellipse_select"
+literal|"gimp-ellipse-select"
+block|,
+literal|"gimp-ellipse-select"
 block|,
 literal|"Create an elliptical selection over the specified image."
 block|,
@@ -1248,7 +1252,9 @@ name|ProcRecord
 name|free_select_proc
 init|=
 block|{
-literal|"gimp_free_select"
+literal|"gimp-free-select"
+block|,
+literal|"gimp-free-select"
 block|,
 literal|"Create a polygonal selection over the specified image."
 block|,
@@ -1662,7 +1668,9 @@ name|ProcRecord
 name|fuzzy_select_proc
 init|=
 block|{
-literal|"gimp_fuzzy_select"
+literal|"gimp-fuzzy-select"
+block|,
+literal|"gimp-fuzzy-select"
 block|,
 literal|"Create a fuzzy selection starting at the specified coordinates on the specified drawable."
 block|,
@@ -2027,7 +2035,9 @@ name|ProcRecord
 name|rect_select_proc
 init|=
 block|{
-literal|"gimp_rect_select"
+literal|"gimp-rect-select"
+block|,
+literal|"gimp-rect-select"
 block|,
 literal|"Create a rectangular selection over the specified image;"
 block|,

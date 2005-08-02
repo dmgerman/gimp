@@ -55,7 +55,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_procedural_db_temp_name"
+literal|"gimp-procedural-db-temp-name"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -134,7 +134,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_procedural_db_dump"
+literal|"gimp-procedural-db-dump"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -246,7 +246,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_procedural_db_query"
+literal|"gimp-procedural-db-query"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -453,7 +453,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_procedural_db_proc_info"
+literal|"gimp-procedural-db-proc-info"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -696,7 +696,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_procedural_db_proc_arg"
+literal|"gimp-procedural-db-proc-arg"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -849,7 +849,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_procedural_db_proc_val"
+literal|"gimp-procedural-db-proc-val"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -994,7 +994,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_procedural_db_get_data"
+literal|"gimp-procedural-db-get-data"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1125,7 +1125,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_procedural_db_get_data_size"
+literal|"gimp-procedural-db-get-data-size"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1213,7 +1213,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_procedural_db_set_data"
+literal|"gimp-procedural-db-set-data"
 argument_list|,
 operator|&
 name|nreturn_vals

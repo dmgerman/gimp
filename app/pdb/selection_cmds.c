@@ -626,7 +626,9 @@ name|ProcRecord
 name|selection_bounds_proc
 init|=
 block|{
-literal|"gimp_selection_bounds"
+literal|"gimp-selection-bounds"
+block|,
+literal|"gimp-selection-bounds"
 block|,
 literal|"Find the bounding box of the current selection."
 block|,
@@ -857,7 +859,9 @@ name|ProcRecord
 name|selection_value_proc
 init|=
 block|{
-literal|"gimp_selection_value"
+literal|"gimp-selection-value"
+block|,
+literal|"gimp-selection-value"
 block|,
 literal|"Find the value of the selection at the specified coordinates."
 block|,
@@ -1037,7 +1041,9 @@ name|ProcRecord
 name|selection_is_empty_proc
 init|=
 block|{
-literal|"gimp_selection_is_empty"
+literal|"gimp-selection-is-empty"
+block|,
+literal|"gimp-selection-is-empty"
 block|,
 literal|"Determine whether the selection is empty."
 block|,
@@ -1234,7 +1240,9 @@ name|ProcRecord
 name|selection_translate_proc
 init|=
 block|{
-literal|"gimp_selection_translate"
+literal|"gimp-selection-translate"
+block|,
+literal|"gimp-selection-translate"
 block|,
 literal|"Translate the selection by the specified offsets."
 block|,
@@ -1542,7 +1550,9 @@ name|ProcRecord
 name|selection_float_proc
 init|=
 block|{
-literal|"gimp_selection_float"
+literal|"gimp-selection-float"
+block|,
+literal|"gimp-selection-float"
 block|,
 literal|"Float the selection from the specified drawable with initial offsets as specified."
 block|,
@@ -1688,7 +1698,9 @@ name|ProcRecord
 name|selection_invert_proc
 init|=
 block|{
-literal|"gimp_selection_invert"
+literal|"gimp-selection-invert"
+block|,
+literal|"gimp-selection-invert"
 block|,
 literal|"Invert the selection mask."
 block|,
@@ -1834,7 +1846,9 @@ name|ProcRecord
 name|selection_sharpen_proc
 init|=
 block|{
-literal|"gimp_selection_sharpen"
+literal|"gimp-selection-sharpen"
+block|,
+literal|"gimp-selection-sharpen"
 block|,
 literal|"Sharpen the selection mask."
 block|,
@@ -1980,7 +1994,9 @@ name|ProcRecord
 name|selection_all_proc
 init|=
 block|{
-literal|"gimp_selection_all"
+literal|"gimp-selection-all"
+block|,
+literal|"gimp-selection-all"
 block|,
 literal|"Select all of the image."
 block|,
@@ -2128,7 +2144,9 @@ name|ProcRecord
 name|selection_none_proc
 init|=
 block|{
-literal|"gimp_selection_none"
+literal|"gimp-selection-none"
+block|,
+literal|"gimp-selection-none"
 block|,
 literal|"Deselect the entire image."
 block|,
@@ -2310,7 +2328,9 @@ name|ProcRecord
 name|selection_feather_proc
 init|=
 block|{
-literal|"gimp_selection_feather"
+literal|"gimp-selection-feather"
+block|,
+literal|"gimp-selection-feather"
 block|,
 literal|"Feather the image's selection"
 block|,
@@ -2492,7 +2512,9 @@ name|ProcRecord
 name|selection_border_proc
 init|=
 block|{
-literal|"gimp_selection_border"
+literal|"gimp-selection-border"
+block|,
+literal|"gimp-selection-border"
 block|,
 literal|"Border the image's selection"
 block|,
@@ -2674,7 +2696,9 @@ name|ProcRecord
 name|selection_grow_proc
 init|=
 block|{
-literal|"gimp_selection_grow"
+literal|"gimp-selection-grow"
+block|,
+literal|"gimp-selection-grow"
 block|,
 literal|"Grow the image's selection"
 block|,
@@ -2858,7 +2882,9 @@ name|ProcRecord
 name|selection_shrink_proc
 init|=
 block|{
-literal|"gimp_selection_shrink"
+literal|"gimp-selection-shrink"
+block|,
+literal|"gimp-selection-shrink"
 block|,
 literal|"Shrink the image's selection"
 block|,
@@ -3046,7 +3072,9 @@ name|ProcRecord
 name|selection_layer_alpha_proc
 init|=
 block|{
-literal|"gimp_selection_layer_alpha"
+literal|"gimp-selection-layer-alpha"
+block|,
+literal|"gimp-selection-layer-alpha"
 block|,
 literal|"Transfer the specified layer's alpha channel to the selection mask."
 block|,
@@ -3259,7 +3287,9 @@ name|ProcRecord
 name|selection_load_proc
 init|=
 block|{
-literal|"gimp_selection_load"
+literal|"gimp-selection-load"
+block|,
+literal|"gimp-selection-load"
 block|,
 literal|"Transfer the specified channel to the selection mask."
 block|,
@@ -3465,7 +3495,9 @@ name|ProcRecord
 name|selection_save_proc
 init|=
 block|{
-literal|"gimp_selection_save"
+literal|"gimp-selection-save"
+block|,
+literal|"gimp-selection-save"
 block|,
 literal|"Copy the selection mask to a new channel."
 block|,
@@ -3714,7 +3746,9 @@ name|ProcRecord
 name|selection_combine_proc
 init|=
 block|{
-literal|"gimp_selection_combine"
+literal|"gimp-selection-combine"
+block|,
+literal|"gimp-selection-combine"
 block|,
 literal|"Combines the specified channel with the selection mask."
 block|,

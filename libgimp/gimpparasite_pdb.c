@@ -52,7 +52,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_parasite_find"
+literal|"gimp-parasite-find"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -135,7 +135,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_parasite_attach"
+literal|"gimp-parasite-attach"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -204,7 +204,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_parasite_detach"
+literal|"gimp-parasite-detach"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -281,7 +281,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_parasite_list"
+literal|"gimp-parasite-list"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -428,7 +428,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_parasite_find"
+literal|"gimp-drawable-parasite-find"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -518,7 +518,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_parasite_attach"
+literal|"gimp-drawable-parasite-attach"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -594,7 +594,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_parasite_detach"
+literal|"gimp-drawable-parasite-detach"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -678,7 +678,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_parasite_list"
+literal|"gimp-drawable-parasite-list"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -829,7 +829,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_parasite_find"
+literal|"gimp-image-parasite-find"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -919,7 +919,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_parasite_attach"
+literal|"gimp-image-parasite-attach"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -995,7 +995,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_parasite_detach"
+literal|"gimp-image-parasite-detach"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1079,7 +1079,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_parasite_list"
+literal|"gimp-image-parasite-list"
 argument_list|,
 operator|&
 name|nreturn_vals

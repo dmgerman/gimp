@@ -625,7 +625,9 @@ name|ProcRecord
 name|file_load_proc
 init|=
 block|{
-literal|"gimp_file_load"
+literal|"gimp-file-load"
+block|,
+literal|"gimp-file-load"
 block|,
 literal|"Loads a file by invoking the right load handler."
 block|,
@@ -952,7 +954,9 @@ name|ProcRecord
 name|file_save_proc
 init|=
 block|{
-literal|"gimp_file_save"
+literal|"gimp-file-save"
+block|,
+literal|"gimp-file-save"
 block|,
 literal|"Saves a file by extension."
 block|,
@@ -1400,7 +1404,9 @@ name|ProcRecord
 name|file_load_thumbnail_proc
 init|=
 block|{
-literal|"gimp_file_load_thumbnail"
+literal|"gimp-file-load-thumbnail"
+block|,
+literal|"gimp-file-load-thumbnail"
 block|,
 literal|"Loads the thumbnail for a file."
 block|,
@@ -1688,7 +1694,9 @@ name|ProcRecord
 name|file_save_thumbnail_proc
 init|=
 block|{
-literal|"gimp_file_save_thumbnail"
+literal|"gimp-file-save-thumbnail"
+block|,
+literal|"gimp-file-save-thumbnail"
 block|,
 literal|"Saves a thumbnail for the given image"
 block|,
@@ -1953,7 +1961,9 @@ name|ProcRecord
 name|temp_name_proc
 init|=
 block|{
-literal|"gimp_temp_name"
+literal|"gimp-temp-name"
+block|,
+literal|"gimp-temp-name"
 block|,
 literal|"Generates a unique filename."
 block|,
@@ -2125,9 +2135,20 @@ condition|(
 name|success
 condition|)
 block|{
+name|gchar
+modifier|*
+name|canonical
+decl_stmt|;
 name|success
 operator|=
 name|FALSE
+expr_stmt|;
+name|canonical
+operator|=
+name|gimp_canonicalize_identifier
+argument_list|(
+name|name
+argument_list|)
 expr_stmt|;
 name|proc
 operator|=
@@ -2135,7 +2156,7 @@ name|procedural_db_lookup
 argument_list|(
 name|gimp
 argument_list|,
-name|name
+name|canonical
 argument_list|)
 expr_stmt|;
 if|if
@@ -2217,7 +2238,7 @@ name|g_message
 argument_list|(
 literal|"load handler \"%s\" does not take the standard load handler args"
 argument_list|,
-name|name
+name|canonical
 argument_list|)
 expr_stmt|;
 goto|goto
@@ -2230,7 +2251,7 @@ name|plug_ins_file_register_magic
 argument_list|(
 name|gimp
 argument_list|,
-name|name
+name|canonical
 argument_list|,
 name|extensions
 argument_list|,
@@ -2249,7 +2270,7 @@ name|g_message
 argument_list|(
 literal|"attempt to register nonexistent load handler \"%s\""
 argument_list|,
-name|name
+name|canonical
 argument_list|)
 expr_stmt|;
 goto|goto
@@ -2287,7 +2308,11 @@ name|TRUE
 expr_stmt|;
 name|done
 label|:
-empty_stmt|;
+name|g_free
+argument_list|(
+name|canonical
+argument_list|)
+expr_stmt|;
 block|}
 return|return
 name|procedural_db_return_args
@@ -2351,7 +2376,9 @@ name|ProcRecord
 name|register_magic_load_handler_proc
 init|=
 block|{
-literal|"gimp_register_magic_load_handler"
+literal|"gimp-register-magic-load-handler"
+block|,
+literal|"gimp-register-magic-load-handler"
 block|,
 literal|"Registers a file load handler procedure."
 block|,
@@ -2517,7 +2544,9 @@ name|ProcRecord
 name|register_load_handler_proc
 init|=
 block|{
-literal|"gimp_register_load_handler"
+literal|"gimp-register-load-handler"
+block|,
+literal|"gimp-register-load-handler"
 block|,
 literal|"Registers a file load handler procedure."
 block|,
@@ -2670,9 +2699,20 @@ condition|(
 name|success
 condition|)
 block|{
+name|gchar
+modifier|*
+name|canonical
+decl_stmt|;
 name|success
 operator|=
 name|FALSE
+expr_stmt|;
+name|canonical
+operator|=
+name|gimp_canonicalize_identifier
+argument_list|(
+name|name
+argument_list|)
 expr_stmt|;
 name|proc
 operator|=
@@ -2680,7 +2720,7 @@ name|procedural_db_lookup
 argument_list|(
 name|gimp
 argument_list|,
-name|name
+name|canonical
 argument_list|)
 expr_stmt|;
 if|if
@@ -2767,7 +2807,7 @@ name|g_message
 argument_list|(
 literal|"save handler \"%s\" does not take the standard save handler args"
 argument_list|,
-name|name
+name|canonical
 argument_list|)
 expr_stmt|;
 goto|goto
@@ -2780,7 +2820,7 @@ name|plug_ins_file_register_magic
 argument_list|(
 name|gimp
 argument_list|,
-name|name
+name|canonical
 argument_list|,
 name|extensions
 argument_list|,
@@ -2799,7 +2839,7 @@ name|g_message
 argument_list|(
 literal|"attempt to register nonexistent save handler \"%s\""
 argument_list|,
-name|name
+name|canonical
 argument_list|)
 expr_stmt|;
 goto|goto
@@ -2837,7 +2877,11 @@ name|TRUE
 expr_stmt|;
 name|done
 label|:
-empty_stmt|;
+name|g_free
+argument_list|(
+name|canonical
+argument_list|)
+expr_stmt|;
 block|}
 return|return
 name|procedural_db_return_args
@@ -2893,7 +2937,9 @@ name|ProcRecord
 name|register_save_handler_proc
 init|=
 block|{
-literal|"gimp_register_save_handler"
+literal|"gimp-register-save-handler"
+block|,
+literal|"gimp-register-save-handler"
 block|,
 literal|"Registers a file save handler procedure."
 block|,
@@ -3040,6 +3086,17 @@ condition|(
 name|success
 condition|)
 block|{
+name|gchar
+modifier|*
+name|canonical
+decl_stmt|;
+name|canonical
+operator|=
+name|gimp_canonicalize_identifier
+argument_list|(
+name|name
+argument_list|)
+expr_stmt|;
 name|success
 operator|=
 operator|(
@@ -3047,13 +3104,18 @@ name|plug_ins_file_register_mime
 argument_list|(
 name|gimp
 argument_list|,
-name|name
+name|canonical
 argument_list|,
 name|mime_type
 argument_list|)
 operator|!=
 name|NULL
 operator|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|canonical
+argument_list|)
 expr_stmt|;
 block|}
 return|return
@@ -3102,7 +3164,9 @@ name|ProcRecord
 name|register_file_handler_mime_proc
 init|=
 block|{
-literal|"gimp_register_file_handler_mime"
+literal|"gimp-register-file-handler-mime"
+block|,
+literal|"gimp-register-file-handler-mime"
 block|,
 literal|"Associates a MIME type with a file handler procedure."
 block|,
@@ -3249,6 +3313,17 @@ condition|(
 name|success
 condition|)
 block|{
+name|gchar
+modifier|*
+name|canonical
+decl_stmt|;
+name|canonical
+operator|=
+name|gimp_canonicalize_identifier
+argument_list|(
+name|load_proc
+argument_list|)
+expr_stmt|;
 name|success
 operator|=
 operator|(
@@ -3256,13 +3331,18 @@ name|plug_ins_file_register_thumb_loader
 argument_list|(
 name|gimp
 argument_list|,
-name|load_proc
+name|canonical
 argument_list|,
 name|thumb_proc
 argument_list|)
 operator|!=
 name|NULL
 operator|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|canonical
+argument_list|)
 expr_stmt|;
 block|}
 return|return
@@ -3311,7 +3391,9 @@ name|ProcRecord
 name|register_thumbnail_loader_proc
 init|=
 block|{
-literal|"gimp_register_thumbnail_loader"
+literal|"gimp-register-thumbnail-loader"
+block|,
+literal|"gimp-register-thumbnail-loader"
 block|,
 literal|"Associates a thumbnail loader with a file load procedure."
 block|,

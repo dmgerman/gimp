@@ -48,7 +48,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_edit_cut"
+literal|"gimp-edit-cut"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -126,7 +126,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_edit_copy"
+literal|"gimp-edit-copy"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -204,7 +204,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_edit_copy_visible"
+literal|"gimp-edit-copy-visible"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -286,7 +286,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_edit_paste"
+literal|"gimp-edit-paste"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -368,7 +368,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_edit_clear"
+literal|"gimp-edit-clear"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -438,7 +438,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_edit_fill"
+literal|"gimp-edit-fill"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -530,7 +530,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_edit_bucket_fill"
+literal|"gimp-edit-bucket-fill"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -670,7 +670,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_edit_blend"
+literal|"gimp-edit-blend"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -797,7 +797,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_edit_stroke"
+literal|"gimp-edit-stroke"
 argument_list|,
 operator|&
 name|nreturn_vals

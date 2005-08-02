@@ -639,7 +639,9 @@ name|ProcRecord
 name|brush_new_proc
 init|=
 block|{
-literal|"gimp_brush_new"
+literal|"gimp-brush-new"
+block|,
+literal|"gimp-brush-new"
 block|,
 literal|"Creates a new brush"
 block|,
@@ -901,7 +903,9 @@ name|ProcRecord
 name|brush_duplicate_proc
 init|=
 block|{
-literal|"gimp_brush_duplicate"
+literal|"gimp-brush-duplicate"
+block|,
+literal|"gimp-brush-duplicate"
 block|,
 literal|"Duplicates a brush"
 block|,
@@ -1128,7 +1132,9 @@ name|ProcRecord
 name|brush_is_generated_proc
 init|=
 block|{
-literal|"gimp_brush_is_generated"
+literal|"gimp-brush-is-generated"
+block|,
+literal|"gimp-brush-is-generated"
 block|,
 literal|"Tests if generated"
 block|,
@@ -1421,7 +1427,9 @@ name|ProcRecord
 name|brush_rename_proc
 init|=
 block|{
-literal|"gimp_brush_rename"
+literal|"gimp-brush-rename"
+block|,
+literal|"gimp-brush-rename"
 block|,
 literal|"Rename a brush"
 block|,
@@ -1653,7 +1661,9 @@ name|ProcRecord
 name|brush_delete_proc
 init|=
 block|{
-literal|"gimp_brush_delete"
+literal|"gimp-brush-delete"
+block|,
+literal|"gimp-brush-delete"
 block|,
 literal|"Deletes a brush"
 block|,
@@ -1882,7 +1892,9 @@ name|ProcRecord
 name|brush_is_editable_proc
 init|=
 block|{
-literal|"gimp_brush_is_editable"
+literal|"gimp-brush-is-editable"
+block|,
+literal|"gimp-brush-is-editable"
 block|,
 literal|"Tests if brush can be edited"
 block|,
@@ -2182,7 +2194,9 @@ name|ProcRecord
 name|brush_get_info_proc
 init|=
 block|{
-literal|"gimp_brush_get_info"
+literal|"gimp-brush-get-info"
+block|,
+literal|"gimp-brush-get-info"
 block|,
 literal|"Retrieve information about the specified brush."
 block|,
@@ -2659,7 +2673,9 @@ name|ProcRecord
 name|brush_get_pixels_proc
 init|=
 block|{
-literal|"gimp_brush_get_pixels"
+literal|"gimp-brush-get-pixels"
+block|,
+literal|"gimp-brush-get-pixels"
 block|,
 literal|"Retrieve information about the specified brush."
 block|,
@@ -2881,7 +2897,9 @@ name|ProcRecord
 name|brush_get_spacing_proc
 init|=
 block|{
-literal|"gimp_brush_get_spacing"
+literal|"gimp-brush-get-spacing"
+block|,
+literal|"gimp-brush-get-spacing"
 block|,
 literal|"Get the brush spacing."
 block|,
@@ -3109,7 +3127,9 @@ name|ProcRecord
 name|brush_set_spacing_proc
 init|=
 block|{
-literal|"gimp_brush_set_spacing"
+literal|"gimp-brush-set-spacing"
+block|,
+literal|"gimp-brush-set-spacing"
 block|,
 literal|"Set the brush spacing."
 block|,
@@ -3338,7 +3358,9 @@ name|ProcRecord
 name|brush_get_shape_proc
 init|=
 block|{
-literal|"gimp_brush_get_shape"
+literal|"gimp-brush-get-shape"
+block|,
+literal|"gimp-brush-get-shape"
 block|,
 literal|"Get the shape of a generated brush."
 block|,
@@ -3567,7 +3589,9 @@ name|ProcRecord
 name|brush_get_radius_proc
 init|=
 block|{
-literal|"gimp_brush_get_radius"
+literal|"gimp-brush-get-radius"
+block|,
+literal|"gimp-brush-get-radius"
 block|,
 literal|"Get the radius of a generated brush."
 block|,
@@ -3796,7 +3820,9 @@ name|ProcRecord
 name|brush_get_spikes_proc
 init|=
 block|{
-literal|"gimp_brush_get_spikes"
+literal|"gimp-brush-get-spikes"
+block|,
+literal|"gimp-brush-get-spikes"
 block|,
 literal|"Get the number of spikes for a generated brush."
 block|,
@@ -4025,7 +4051,9 @@ name|ProcRecord
 name|brush_get_hardness_proc
 init|=
 block|{
-literal|"gimp_brush_get_hardness"
+literal|"gimp-brush-get-hardness"
+block|,
+literal|"gimp-brush-get-hardness"
 block|,
 literal|"Get the hardness of a generated brush."
 block|,
@@ -4254,7 +4282,9 @@ name|ProcRecord
 name|brush_get_aspect_ratio_proc
 init|=
 block|{
-literal|"gimp_brush_get_aspect_ratio"
+literal|"gimp-brush-get-aspect-ratio"
+block|,
+literal|"gimp-brush-get-aspect-ratio"
 block|,
 literal|"Get the aspect ratio of a generated brush."
 block|,
@@ -4483,7 +4513,9 @@ name|ProcRecord
 name|brush_get_angle_proc
 init|=
 block|{
-literal|"gimp_brush_get_angle"
+literal|"gimp-brush-get-angle"
+block|,
+literal|"gimp-brush-get-angle"
 block|,
 literal|"Get the rotation angle of a generated brush."
 block|,
@@ -4752,7 +4784,9 @@ name|ProcRecord
 name|brush_set_shape_proc
 init|=
 block|{
-literal|"gimp_brush_set_shape"
+literal|"gimp-brush-set-shape"
+block|,
+literal|"gimp-brush-set-shape"
 block|,
 literal|"Set the shape of a generated brush."
 block|,
@@ -5021,7 +5055,9 @@ name|ProcRecord
 name|brush_set_radius_proc
 init|=
 block|{
-literal|"gimp_brush_set_radius"
+literal|"gimp-brush-set-radius"
+block|,
+literal|"gimp-brush-set-radius"
 block|,
 literal|"Set the radius of a generated brush."
 block|,
@@ -5290,7 +5326,9 @@ name|ProcRecord
 name|brush_set_spikes_proc
 init|=
 block|{
-literal|"gimp_brush_set_spikes"
+literal|"gimp-brush-set-spikes"
+block|,
+literal|"gimp-brush-set-spikes"
 block|,
 literal|"Set the number of spikes for a generated brush."
 block|,
@@ -5559,7 +5597,9 @@ name|ProcRecord
 name|brush_set_hardness_proc
 init|=
 block|{
-literal|"gimp_brush_set_hardness"
+literal|"gimp-brush-set-hardness"
+block|,
+literal|"gimp-brush-set-hardness"
 block|,
 literal|"Set the hardness of a generated brush."
 block|,
@@ -5828,7 +5868,9 @@ name|ProcRecord
 name|brush_set_aspect_ratio_proc
 init|=
 block|{
-literal|"gimp_brush_set_aspect_ratio"
+literal|"gimp-brush-set-aspect-ratio"
+block|,
+literal|"gimp-brush-set-aspect-ratio"
 block|,
 literal|"Set the aspect ratio of a generated brush."
 block|,
@@ -6097,7 +6139,9 @@ name|ProcRecord
 name|brush_set_angle_proc
 init|=
 block|{
-literal|"gimp_brush_set_angle"
+literal|"gimp-brush-set-angle"
+block|,
+literal|"gimp-brush-set-angle"
 block|,
 literal|"Set the rotation angle of a generated brush."
 block|,

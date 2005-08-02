@@ -54,7 +54,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_delete"
+literal|"gimp-drawable-delete"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -121,7 +121,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_is_layer"
+literal|"gimp-drawable-is-layer"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -199,7 +199,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_is_layer_mask"
+literal|"gimp-drawable-is-layer-mask"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -277,7 +277,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_is_channel"
+literal|"gimp-drawable-is-channel"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -355,7 +355,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_type"
+literal|"gimp-drawable-type"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -433,7 +433,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_type_with_alpha"
+literal|"gimp-drawable-type-with-alpha"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -511,7 +511,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_has_alpha"
+literal|"gimp-drawable-has-alpha"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -589,7 +589,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_is_rgb"
+literal|"gimp-drawable-is-rgb"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -667,7 +667,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_is_gray"
+literal|"gimp-drawable-is-gray"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -745,7 +745,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_is_indexed"
+literal|"gimp-drawable-is-indexed"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -823,7 +823,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_bpp"
+literal|"gimp-drawable-bpp"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -901,7 +901,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_width"
+literal|"gimp-drawable-width"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -979,7 +979,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_height"
+literal|"gimp-drawable-height"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1065,7 +1065,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_offsets"
+literal|"gimp-drawable-offsets"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1173,7 +1173,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_get_image"
+literal|"gimp-drawable-get-image"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1254,7 +1254,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_set_image"
+literal|"gimp-drawable-set-image"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1327,7 +1327,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_get_name"
+literal|"gimp-drawable-get-name"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1413,7 +1413,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_set_name"
+literal|"gimp-drawable-set-name"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1484,7 +1484,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_get_visible"
+literal|"gimp-drawable-get-visible"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1565,7 +1565,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_set_visible"
+literal|"gimp-drawable-set-visible"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1636,7 +1636,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_get_linked"
+literal|"gimp-drawable-get-linked"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1717,7 +1717,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_set_linked"
+literal|"gimp-drawable-set-linked"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1788,7 +1788,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_get_tattoo"
+literal|"gimp-drawable-get-tattoo"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1869,7 +1869,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_set_tattoo"
+literal|"gimp-drawable-set-tattoo"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1956,7 +1956,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_mask_bounds"
+literal|"gimp-drawable-mask-bounds"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -2100,7 +2100,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_mask_intersect"
+literal|"gimp-drawable-mask-intersect"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -2231,7 +2231,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_merge_shadow"
+literal|"gimp-drawable-merge-shadow"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -2314,7 +2314,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_update"
+literal|"gimp-drawable-update"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -2409,7 +2409,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_get_pixel"
+literal|"gimp-drawable-get-pixel"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -2549,7 +2549,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_set_pixel"
+literal|"gimp-drawable-set-pixel"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -2635,7 +2635,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_fill"
+literal|"gimp-drawable-fill"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -2718,7 +2718,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_offset"
+literal|"gimp-drawable-offset"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -2828,7 +2828,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_thumbnail"
+literal|"gimp-drawable-thumbnail"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -3055,7 +3055,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_sub_thumbnail"
+literal|"gimp-drawable-sub-thumbnail"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -3265,7 +3265,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_foreground_extract"
+literal|"gimp-drawable-foreground-extract"
 argument_list|,
 operator|&
 name|nreturn_vals

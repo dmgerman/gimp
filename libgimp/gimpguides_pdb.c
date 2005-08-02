@@ -52,7 +52,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_add_hguide"
+literal|"gimp-image-add-hguide"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -138,7 +138,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_add_vguide"
+literal|"gimp-image-add-vguide"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -223,7 +223,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_delete_guide"
+literal|"gimp-image-delete-guide"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -298,7 +298,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_find_next_guide"
+literal|"gimp-image-find-next-guide"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -383,7 +383,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_get_guide_orientation"
+literal|"gimp-image-get-guide-orientation"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -469,7 +469,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_get_guide_position"
+literal|"gimp-image-get-guide-position"
 argument_list|,
 operator|&
 name|nreturn_vals

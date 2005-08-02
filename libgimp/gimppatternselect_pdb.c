@@ -60,7 +60,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_patterns_popup"
+literal|"gimp-patterns-popup"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -137,7 +137,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_patterns_close_popup"
+literal|"gimp-patterns-close-popup"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -211,7 +211,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_patterns_set_popup"
+literal|"gimp-patterns-set-popup"
 argument_list|,
 operator|&
 name|nreturn_vals

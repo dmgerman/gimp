@@ -356,7 +356,9 @@ name|ProcRecord
 name|pattern_get_info_proc
 init|=
 block|{
-literal|"gimp_pattern_get_info"
+literal|"gimp-pattern-get-info"
+block|,
+literal|"gimp-pattern-get-info"
 block|,
 literal|"Retrieve information about the specified pattern."
 block|,
@@ -713,7 +715,9 @@ name|ProcRecord
 name|pattern_get_pixels_proc
 init|=
 block|{
-literal|"gimp_pattern_get_pixels"
+literal|"gimp-pattern-get-pixels"
+block|,
+literal|"gimp-pattern-get-pixels"
 block|,
 literal|"Retrieve information about the specified pattern (including pixels)."
 block|,

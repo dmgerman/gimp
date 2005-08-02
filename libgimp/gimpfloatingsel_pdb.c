@@ -48,7 +48,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_floating_sel_remove"
+literal|"gimp-floating-sel-remove"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -115,7 +115,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_floating_sel_anchor"
+literal|"gimp-floating-sel-anchor"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -182,7 +182,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_floating_sel_to_layer"
+literal|"gimp-floating-sel-to-layer"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -252,7 +252,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_floating_sel_attach"
+literal|"gimp-floating-sel-attach"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -326,7 +326,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_floating_sel_rigor"
+literal|"gimp-floating-sel-rigor"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -400,7 +400,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_floating_sel_relax"
+literal|"gimp-floating-sel-relax"
 argument_list|,
 operator|&
 name|nreturn_vals

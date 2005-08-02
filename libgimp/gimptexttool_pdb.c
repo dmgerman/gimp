@@ -80,7 +80,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_text_fontname"
+literal|"gimp-text-fontname"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -223,7 +223,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_text_get_extents_fontname"
+literal|"gimp-text-get-extents-fontname"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -443,7 +443,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_text"
+literal|"gimp-text"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -649,7 +649,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_text_get_extents"
+literal|"gimp-text-get-extents"
 argument_list|,
 operator|&
 name|nreturn_vals

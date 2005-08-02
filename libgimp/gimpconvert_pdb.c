@@ -48,7 +48,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_convert_rgb"
+literal|"gimp-image-convert-rgb"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -115,7 +115,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_convert_grayscale"
+literal|"gimp-image-convert-grayscale"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -202,7 +202,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_convert_indexed"
+literal|"gimp-image-convert-indexed"
 argument_list|,
 operator|&
 name|nreturn_vals

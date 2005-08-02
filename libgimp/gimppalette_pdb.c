@@ -52,7 +52,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_palette_new"
+literal|"gimp-palette-new"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -137,7 +137,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_palette_duplicate"
+literal|"gimp-palette-duplicate"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -227,7 +227,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_palette_rename"
+literal|"gimp-palette-rename"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -314,7 +314,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_palette_delete"
+literal|"gimp-palette-delete"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -383,7 +383,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_palette_is_editable"
+literal|"gimp-palette-is-editable"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -467,7 +467,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_palette_get_info"
+literal|"gimp-palette-get-info"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -557,7 +557,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_palette_get_columns"
+literal|"gimp-palette-get-columns"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -640,7 +640,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_palette_set_columns"
+literal|"gimp-palette-set-columns"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -727,7 +727,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_palette_add_entry"
+literal|"gimp-palette-add-entry"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -828,7 +828,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_palette_delete_entry"
+literal|"gimp-palette-delete-entry"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -908,7 +908,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_palette_entry_get_color"
+literal|"gimp-palette-entry-get-color"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1005,7 +1005,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_palette_entry_set_color"
+literal|"gimp-palette-entry-set-color"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1090,7 +1090,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_palette_entry_get_name"
+literal|"gimp-palette-entry-get-name"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1195,7 +1195,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_palette_entry_set_name"
+literal|"gimp-palette-entry-set-name"
 argument_list|,
 operator|&
 name|nreturn_vals

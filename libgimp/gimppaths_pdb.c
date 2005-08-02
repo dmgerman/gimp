@@ -65,7 +65,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_path_list"
+literal|"gimp-path-list"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -198,7 +198,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_path_get_current"
+literal|"gimp-path-get-current"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -284,7 +284,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_path_set_current"
+literal|"gimp-path-set-current"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -360,7 +360,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_path_delete"
+literal|"gimp-path-delete"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -449,7 +449,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_path_get_points"
+literal|"gimp-path-get-points"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -612,7 +612,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_path_set_points"
+literal|"gimp-path-set-points"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -695,7 +695,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_path_stroke_current"
+literal|"gimp-path-stroke-current"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -773,7 +773,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_path_get_point_at_dist"
+literal|"gimp-path-get-point-at-dist"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -886,7 +886,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_path_get_tattoo"
+literal|"gimp-path-get-tattoo"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -976,7 +976,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_path_set_tattoo"
+literal|"gimp-path-set-tattoo"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1056,7 +1056,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_get_path_by_tattoo"
+literal|"gimp-get-path-by-tattoo"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1146,7 +1146,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_path_get_locked"
+literal|"gimp-path-get-locked"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1236,7 +1236,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_path_set_locked"
+literal|"gimp-path-set-locked"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1331,7 +1331,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_path_to_selection"
+literal|"gimp-path-to-selection"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1433,7 +1433,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_path_import"
+literal|"gimp-path-import"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1526,7 +1526,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_path_import_string"
+literal|"gimp-path-import-string"
 argument_list|,
 operator|&
 name|nreturn_vals

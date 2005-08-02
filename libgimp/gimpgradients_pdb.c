@@ -53,7 +53,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_gradients_refresh"
+literal|"gimp-gradients-refresh"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -88,7 +88,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradients_get_list:  * @filter: An optional regular expression used to filter the list.  * @num_gradients: The number of loaded gradients.  *  * Retrieve the list of loaded gradients.  *  * This procedure returns a list of the gradients that are currently  * loaded. You can later use the 'gimp_context_set_gradient' function  * to set the active gradient.  *  * Returns: The list of gradient names.  */
+comment|/**  * gimp_gradients_get_list:  * @filter: An optional regular expression used to filter the list.  * @num_gradients: The number of loaded gradients.  *  * Retrieve the list of loaded gradients.  *  * This procedure returns a list of the gradients that are currently  * loaded. You can later use the 'gimp-context-set-gradient' function  * to set the active gradient.  *  * Returns: The list of gradient names.  */
 end_comment
 
 begin_function
@@ -129,7 +129,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_gradients_get_list"
+literal|"gimp-gradients-get-list"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -268,7 +268,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_gradients_sample_uniform"
+literal|"gimp-gradients-sample-uniform"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -395,7 +395,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_gradients_sample_custom"
+literal|"gimp-gradients-sample-custom"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -532,7 +532,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_gradients_get_gradient_data"
+literal|"gimp-gradients-get-gradient-data"
 argument_list|,
 operator|&
 name|nreturn_vals

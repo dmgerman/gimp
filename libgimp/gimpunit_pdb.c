@@ -47,7 +47,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_unit_get_number_of_units"
+literal|"gimp-unit-get-number-of-units"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -120,7 +120,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_unit_get_number_of_built_in_units"
+literal|"gimp-unit-get-number-of-built-in-units"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -222,7 +222,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_unit_new"
+literal|"gimp-unit-new"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -324,7 +324,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_unit_get_deletion_flag"
+literal|"gimp-unit-get-deletion-flag"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -405,7 +405,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_unit_set_deletion_flag"
+literal|"gimp-unit-set-deletion-flag"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -478,7 +478,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_unit_get_identifier"
+literal|"gimp-unit-get-identifier"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -559,7 +559,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_unit_get_factor"
+literal|"gimp-unit-get-factor"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -637,7 +637,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_unit_get_digits"
+literal|"gimp-unit-get-digits"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -717,7 +717,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_unit_get_symbol"
+literal|"gimp-unit-get-symbol"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -800,7 +800,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_unit_get_abbreviation"
+literal|"gimp-unit-get-abbreviation"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -883,7 +883,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_unit_get_singular"
+literal|"gimp-unit-get-singular"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -966,7 +966,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_unit_get_plural"
+literal|"gimp-unit-get-plural"
 argument_list|,
 operator|&
 name|nreturn_vals

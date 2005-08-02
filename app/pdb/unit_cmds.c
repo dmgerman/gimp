@@ -332,7 +332,9 @@ name|ProcRecord
 name|unit_get_number_of_units_proc
 init|=
 block|{
-literal|"gimp_unit_get_number_of_units"
+literal|"gimp-unit-get-number-of-units"
+block|,
+literal|"gimp-unit-get-number-of-units"
 block|,
 literal|"Returns the number of units."
 block|,
@@ -449,7 +451,9 @@ name|ProcRecord
 name|unit_get_number_of_built_in_units_proc
 init|=
 block|{
-literal|"gimp_unit_get_number_of_built_in_units"
+literal|"gimp-unit-get-number-of-built-in-units"
+block|,
+literal|"gimp-unit-get-number-of-built-in-units"
 block|,
 literal|"Returns the number of built-in units."
 block|,
@@ -897,7 +901,9 @@ name|ProcRecord
 name|unit_new_proc
 init|=
 block|{
-literal|"gimp_unit_new"
+literal|"gimp-unit-new"
+block|,
+literal|"gimp-unit-new"
 block|,
 literal|"Creates a new unit and returns it's integer ID."
 block|,
@@ -1075,7 +1081,9 @@ name|ProcRecord
 name|unit_get_deletion_flag_proc
 init|=
 block|{
-literal|"gimp_unit_get_deletion_flag"
+literal|"gimp-unit-get-deletion-flag"
+block|,
+literal|"gimp-unit-get-deletion-flag"
 block|,
 literal|"Returns the deletion flag of the unit."
 block|,
@@ -1245,7 +1253,9 @@ name|ProcRecord
 name|unit_set_deletion_flag_proc
 init|=
 block|{
-literal|"gimp_unit_set_deletion_flag"
+literal|"gimp-unit-set-deletion-flag"
+block|,
+literal|"gimp-unit-set-deletion-flag"
 block|,
 literal|"Sets the deletion flag of a unit."
 block|,
@@ -1426,7 +1436,9 @@ name|ProcRecord
 name|unit_get_identifier_proc
 init|=
 block|{
-literal|"gimp_unit_get_identifier"
+literal|"gimp-unit-get-identifier"
+block|,
+literal|"gimp-unit-get-identifier"
 block|,
 literal|"Returns the textual identifier of the unit."
 block|,
@@ -1604,7 +1616,9 @@ name|ProcRecord
 name|unit_get_factor_proc
 init|=
 block|{
-literal|"gimp_unit_get_factor"
+literal|"gimp-unit-get-factor"
+block|,
+literal|"gimp-unit-get-factor"
 block|,
 literal|"Returns the factor of the unit."
 block|,
@@ -1782,7 +1796,9 @@ name|ProcRecord
 name|unit_get_digits_proc
 init|=
 block|{
-literal|"gimp_unit_get_digits"
+literal|"gimp-unit-get-digits"
+block|,
+literal|"gimp-unit-get-digits"
 block|,
 literal|"Returns the number of digits of the unit."
 block|,
@@ -1963,7 +1979,9 @@ name|ProcRecord
 name|unit_get_symbol_proc
 init|=
 block|{
-literal|"gimp_unit_get_symbol"
+literal|"gimp-unit-get-symbol"
+block|,
+literal|"gimp-unit-get-symbol"
 block|,
 literal|"Returns the symbol of the unit."
 block|,
@@ -2144,7 +2162,9 @@ name|ProcRecord
 name|unit_get_abbreviation_proc
 init|=
 block|{
-literal|"gimp_unit_get_abbreviation"
+literal|"gimp-unit-get-abbreviation"
+block|,
+literal|"gimp-unit-get-abbreviation"
 block|,
 literal|"Returns the abbreviation of the unit."
 block|,
@@ -2325,7 +2345,9 @@ name|ProcRecord
 name|unit_get_singular_proc
 init|=
 block|{
-literal|"gimp_unit_get_singular"
+literal|"gimp-unit-get-singular"
+block|,
+literal|"gimp-unit-get-singular"
 block|,
 literal|"Returns the singular form of the unit."
 block|,
@@ -2506,7 +2528,9 @@ name|ProcRecord
 name|unit_get_plural_proc
 init|=
 block|{
-literal|"gimp_unit_get_plural"
+literal|"gimp-unit-get-plural"
+block|,
+literal|"gimp-unit-get-plural"
 block|,
 literal|"Returns the plural form of the unit."
 block|,

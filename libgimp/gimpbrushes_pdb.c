@@ -53,7 +53,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_brushes_refresh"
+literal|"gimp-brushes-refresh"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -88,7 +88,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_brushes_get_list:  * @filter: An optional regular expression used to filter the list.  * @num_brushes: The number of brushes in the brush list.  *  * Retrieve a complete listing of the available brushes.  *  * This procedure returns a complete listing of available GIMP brushes.  * Each name returned can be used as input to the  * 'gimp_context_set_brush' procedure.  *  * Returns: The list of brush names.  */
+comment|/**  * gimp_brushes_get_list:  * @filter: An optional regular expression used to filter the list.  * @num_brushes: The number of brushes in the brush list.  *  * Retrieve a complete listing of the available brushes.  *  * This procedure returns a complete listing of available GIMP brushes.  * Each name returned can be used as input to the  * 'gimp-context-set-brush' procedure.  *  * Returns: The list of brush names.  */
 end_comment
 
 begin_function
@@ -129,7 +129,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_brushes_get_list"
+literal|"gimp-brushes-get-list"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -271,7 +271,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_brushes_get_brush"
+literal|"gimp-brushes-get-brush"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -385,7 +385,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_brushes_get_spacing"
+literal|"gimp-brushes-get-spacing"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -459,7 +459,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_brushes_set_spacing"
+literal|"gimp-brushes-set-spacing"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -559,7 +559,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_brushes_get_brush_data"
+literal|"gimp-brushes-get-brush-data"
 argument_list|,
 operator|&
 name|nreturn_vals

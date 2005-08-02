@@ -246,7 +246,7 @@ name|PlugInProcDef
 name|xcf_plug_in_load_proc
 init|=
 block|{
-literal|"gimp_xcf_load"
+literal|"gimp-xcf-load"
 block|,
 name|N_
 argument_list|(
@@ -273,7 +273,9 @@ block|,
 name|FALSE
 block|,
 block|{
-literal|"gimp_xcf_load"
+literal|"gimp-xcf-load"
+block|,
+literal|"gimp-xcf-load"
 block|,
 literal|"loads file saved in the .xcf file format"
 block|,
@@ -386,7 +388,7 @@ name|PlugInProcDef
 name|xcf_plug_in_save_proc
 init|=
 block|{
-literal|"gimp_xcf_save"
+literal|"gimp-xcf-save"
 block|,
 name|N_
 argument_list|(
@@ -412,7 +414,9 @@ block|,
 name|FALSE
 block|,
 block|{
-literal|"gimp_xcf_save"
+literal|"gimp-xcf-save"
+block|,
+literal|"gimp-xcf-save"
 block|,
 literal|"saves file in the .xcf file format"
 block|,

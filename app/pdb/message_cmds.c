@@ -260,7 +260,9 @@ name|ProcRecord
 name|message_proc
 init|=
 block|{
-literal|"gimp_message"
+literal|"gimp-message"
+block|,
+literal|"gimp-message"
 block|,
 literal|"Displays a dialog box with a message."
 block|,
@@ -376,7 +378,9 @@ name|ProcRecord
 name|message_get_handler_proc
 init|=
 block|{
-literal|"gimp_message_get_handler"
+literal|"gimp-message-get-handler"
+block|,
+literal|"gimp-message-get-handler"
 block|,
 literal|"Returns the current state of where warning messages are displayed."
 block|,
@@ -514,7 +518,9 @@ name|ProcRecord
 name|message_set_handler_proc
 init|=
 block|{
-literal|"gimp_message_set_handler"
+literal|"gimp-message-set-handler"
+block|,
+literal|"gimp-message-set-handler"
 block|,
 literal|"Controls where warning messages are displayed."
 block|,

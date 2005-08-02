@@ -1372,6 +1372,10 @@ name|PlugInProcFrame
 modifier|*
 name|proc_frame
 decl_stmt|;
+name|gchar
+modifier|*
+name|canonical
+decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
@@ -1391,6 +1395,15 @@ name|Argument
 modifier|*
 name|return_vals
 decl_stmt|;
+name|canonical
+operator|=
+name|gimp_canonicalize_identifier
+argument_list|(
+name|proc_run
+operator|->
+name|name
+argument_list|)
+expr_stmt|;
 name|proc_frame
 operator|=
 name|plug_in_get_proc_frame
@@ -1406,9 +1419,7 @@ name|plug_in
 operator|->
 name|gimp
 argument_list|,
-name|proc_run
-operator|->
-name|name
+name|canonical
 argument_list|)
 expr_stmt|;
 if|if
@@ -1427,9 +1438,7 @@ name|gimp
 operator|->
 name|procedural_compat_ht
 argument_list|,
-name|proc_run
-operator|->
-name|name
+name|canonical
 argument_list|)
 expr_stmt|;
 if|if
@@ -1479,9 +1488,7 @@ operator|->
 name|prog
 argument_list|)
 argument_list|,
-name|proc_run
-operator|->
-name|name
+name|canonical
 argument_list|,
 name|proc_name
 argument_list|)
@@ -1540,9 +1547,7 @@ operator|->
 name|prog
 argument_list|)
 argument_list|,
-name|proc_run
-operator|->
-name|name
+name|canonical
 argument_list|)
 expr_stmt|;
 block|}
@@ -1568,9 +1573,7 @@ operator|->
 name|prog
 argument_list|)
 argument_list|,
-name|proc_run
-operator|->
-name|name
+name|canonical
 argument_list|,
 name|proc_rec
 operator|->
@@ -1604,9 +1607,7 @@ name|proc_name
 condition|)
 name|proc_name
 operator|=
-name|proc_run
-operator|->
-name|name
+name|canonical
 expr_stmt|;
 name|args
 operator|=
@@ -1671,6 +1672,11 @@ operator|->
 name|gimp
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|canonical
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|return_vals
@@ -1679,7 +1685,7 @@ block|{
 name|GPProcReturn
 name|proc_return
 decl_stmt|;
-comment|/*  Return the name we got called with, *not* proc_name, since        *  proc_name may have been remapped by gimp->procedural_compat_ht        */
+comment|/*  Return the name we got called with, *not* proc_name or canonical,        *  since proc_name may have been remapped by gimp->procedural_compat_ht        *  and canonical may be different too.        */
 name|proc_return
 operator|.
 name|name
@@ -2237,6 +2243,10 @@ name|NULL
 decl_stmt|;
 name|gchar
 modifier|*
+name|canonical
+decl_stmt|;
+name|gchar
+modifier|*
 name|prog
 init|=
 name|NULL
@@ -2249,6 +2259,15 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
+name|canonical
+operator|=
+name|gimp_canonicalize_identifier
+argument_list|(
+name|proc_install
+operator|->
+name|name
+argument_list|)
+expr_stmt|;
 comment|/*  Argument checking    *   --only sanity check arguments when the procedure requests a menu path    */
 if|if
 condition|(
@@ -2285,9 +2304,7 @@ name|plug_in
 operator|->
 name|prog
 argument_list|,
-name|proc_install
-operator|->
-name|name
+name|canonical
 argument_list|,
 name|proc_install
 operator|->
@@ -2325,6 +2342,11 @@ name|g_clear_error
 argument_list|(
 operator|&
 name|error
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|canonical
 argument_list|)
 expr_stmt|;
 return|return;
@@ -2430,11 +2452,14 @@ operator|->
 name|prog
 argument_list|)
 argument_list|,
-name|proc_install
-operator|->
-name|name
+name|canonical
 argument_list|,
 name|i
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|canonical
 argument_list|)
 expr_stmt|;
 return|return;
@@ -2466,9 +2491,7 @@ operator|&&
 operator|(
 name|g_utf8_validate
 argument_list|(
-name|proc_install
-operator|->
-name|name
+name|canonical
 argument_list|,
 operator|-
 literal|1
@@ -2759,6 +2782,11 @@ name|prog
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|canonical
+argument_list|)
+expr_stmt|;
 return|return;
 block|}
 comment|/*  Initialization  */
@@ -2795,9 +2823,7 @@ name|plug_in_def
 operator|->
 name|proc_defs
 argument_list|,
-name|proc_install
-operator|->
-name|name
+name|canonical
 argument_list|)
 expr_stmt|;
 if|if
@@ -2844,9 +2870,7 @@ name|plug_in
 operator|->
 name|temp_proc_defs
 argument_list|,
-name|proc_install
-operator|->
-name|name
+name|canonical
 argument_list|)
 expr_stmt|;
 if|if
@@ -3012,6 +3036,15 @@ expr_stmt|;
 name|proc
 operator|->
 name|name
+operator|=
+name|g_strdup
+argument_list|(
+name|canonical
+argument_list|)
+expr_stmt|;
+name|proc
+operator|->
+name|original_name
 operator|=
 name|g_strdup
 argument_list|(
@@ -3343,6 +3376,11 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
+name|g_free
+argument_list|(
+name|canonical
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -3365,6 +3403,19 @@ name|PlugInProcDef
 modifier|*
 name|proc_def
 decl_stmt|;
+name|gchar
+modifier|*
+name|canonical
+decl_stmt|;
+name|canonical
+operator|=
+name|gimp_canonicalize_identifier
+argument_list|(
+name|proc_uninstall
+operator|->
+name|name
+argument_list|)
+expr_stmt|;
 name|proc_def
 operator|=
 name|plug_in_proc_def_find
@@ -3373,9 +3424,7 @@ name|plug_in
 operator|->
 name|temp_proc_defs
 argument_list|,
-name|proc_uninstall
-operator|->
-name|name
+name|canonical
 argument_list|)
 expr_stmt|;
 if|if
@@ -3406,6 +3455,11 @@ name|proc_def
 argument_list|)
 expr_stmt|;
 block|}
+name|g_free
+argument_list|(
+name|canonical
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

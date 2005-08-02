@@ -234,7 +234,9 @@ name|ProcRecord
 name|version_proc
 init|=
 block|{
-literal|"gimp_version"
+literal|"gimp-version"
+block|,
+literal|"gimp-version"
 block|,
 literal|"Returns the host gimp version."
 block|,
@@ -349,7 +351,9 @@ name|ProcRecord
 name|getpid_proc
 init|=
 block|{
-literal|"gimp_getpid"
+literal|"gimp-getpid"
+block|,
+literal|"gimp-getpid"
 block|,
 literal|"Returns the PID of the host gimp process."
 block|,
@@ -469,7 +473,9 @@ name|ProcRecord
 name|quit_proc
 init|=
 block|{
-literal|"gimp_quit"
+literal|"gimp-quit"
+block|,
+literal|"gimp-quit"
 block|,
 literal|"Causes the gimp to exit gracefully."
 block|,

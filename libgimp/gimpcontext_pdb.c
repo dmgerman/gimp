@@ -47,7 +47,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_context_push"
+literal|"gimp-context-push"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -109,7 +109,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_context_pop"
+literal|"gimp-context-pop"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -173,7 +173,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_context_get_foreground"
+literal|"gimp-context-get-foreground"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -254,7 +254,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_context_set_foreground"
+literal|"gimp-context-set-foreground"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -322,7 +322,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_context_get_background"
+literal|"gimp-context-get-background"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -403,7 +403,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_context_set_background"
+literal|"gimp-context-set-background"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -469,7 +469,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_context_set_default_colors"
+literal|"gimp-context-set-default-colors"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -531,7 +531,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_context_swap_colors"
+literal|"gimp-context-swap-colors"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -593,7 +593,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_context_get_opacity"
+literal|"gimp-context-get-opacity"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -667,7 +667,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_context_set_opacity"
+literal|"gimp-context-set-opacity"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -733,7 +733,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_context_get_paint_mode"
+literal|"gimp-context-get-paint-mode"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -807,7 +807,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_context_set_paint_mode"
+literal|"gimp-context-set-paint-mode"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -875,7 +875,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_context_get_brush"
+literal|"gimp-context-get-brush"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -954,7 +954,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_context_set_brush"
+literal|"gimp-context-set-brush"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1022,7 +1022,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_context_get_pattern"
+literal|"gimp-context-get-pattern"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1101,7 +1101,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_context_set_pattern"
+literal|"gimp-context-set-pattern"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1169,7 +1169,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_context_get_gradient"
+literal|"gimp-context-get-gradient"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1248,7 +1248,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_context_set_gradient"
+literal|"gimp-context-set-gradient"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1316,7 +1316,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_context_get_palette"
+literal|"gimp-context-get-palette"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1395,7 +1395,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_context_set_palette"
+literal|"gimp-context-set-palette"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1463,7 +1463,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_context_get_font"
+literal|"gimp-context-get-font"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1542,7 +1542,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_context_set_font"
+literal|"gimp-context-set-font"
 argument_list|,
 operator|&
 name|nreturn_vals

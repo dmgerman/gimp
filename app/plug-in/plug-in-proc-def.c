@@ -137,6 +137,15 @@ name|proc_def
 operator|->
 name|db_info
 operator|.
+name|original_name
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|proc_def
+operator|->
+name|db_info
+operator|.
 name|blurb
 argument_list|)
 expr_stmt|;

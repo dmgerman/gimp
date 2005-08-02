@@ -439,7 +439,9 @@ name|ProcRecord
 name|parasite_find_proc
 init|=
 block|{
-literal|"gimp_parasite_find"
+literal|"gimp-parasite-find"
+block|,
+literal|"gimp-parasite-find"
 block|,
 literal|"Finds the named parasite."
 block|,
@@ -598,7 +600,9 @@ name|ProcRecord
 name|parasite_attach_proc
 init|=
 block|{
-literal|"gimp_parasite_attach"
+literal|"gimp-parasite-attach"
+block|,
+literal|"gimp-parasite-attach"
 block|,
 literal|"Add a parasite to the gimp."
 block|,
@@ -749,7 +753,9 @@ name|ProcRecord
 name|parasite_detach_proc
 init|=
 block|{
-literal|"gimp_parasite_detach"
+literal|"gimp-parasite-detach"
+block|,
+literal|"gimp-parasite-detach"
 block|,
 literal|"Removes a parasite from the gimp."
 block|,
@@ -900,7 +906,9 @@ name|ProcRecord
 name|parasite_list_proc
 init|=
 block|{
-literal|"gimp_parasite_list"
+literal|"gimp-parasite-list"
+block|,
+literal|"gimp-parasite-list"
 block|,
 literal|"List all parasites."
 block|,
@@ -1170,7 +1178,9 @@ name|ProcRecord
 name|drawable_parasite_find_proc
 init|=
 block|{
-literal|"gimp_drawable_parasite_find"
+literal|"gimp-drawable-parasite-find"
+block|,
+literal|"gimp-drawable-parasite-find"
 block|,
 literal|"Finds the named parasite in a drawable"
 block|,
@@ -1387,7 +1397,9 @@ name|ProcRecord
 name|drawable_parasite_attach_proc
 init|=
 block|{
-literal|"gimp_drawable_parasite_attach"
+literal|"gimp-drawable-parasite-attach"
+block|,
+literal|"gimp-drawable-parasite-attach"
 block|,
 literal|"Add a parasite to a drawable."
 block|,
@@ -1596,7 +1608,9 @@ name|ProcRecord
 name|drawable_parasite_detach_proc
 init|=
 block|{
-literal|"gimp_drawable_parasite_detach"
+literal|"gimp-drawable-parasite-detach"
+block|,
+literal|"gimp-drawable-parasite-detach"
 block|,
 literal|"Removes a parasite from a drawable."
 block|,
@@ -1833,7 +1847,9 @@ name|ProcRecord
 name|drawable_parasite_list_proc
 init|=
 block|{
-literal|"gimp_drawable_parasite_list"
+literal|"gimp-drawable-parasite-list"
+block|,
+literal|"gimp-drawable-parasite-list"
 block|,
 literal|"List all parasites."
 block|,
@@ -2085,7 +2101,9 @@ name|ProcRecord
 name|image_parasite_find_proc
 init|=
 block|{
-literal|"gimp_image_parasite_find"
+literal|"gimp-image-parasite-find"
+block|,
+literal|"gimp-image-parasite-find"
 block|,
 literal|"Finds the named parasite in an image"
 block|,
@@ -2284,7 +2302,9 @@ name|ProcRecord
 name|image_parasite_attach_proc
 init|=
 block|{
-literal|"gimp_image_parasite_attach"
+literal|"gimp-image-parasite-attach"
+block|,
+literal|"gimp-image-parasite-attach"
 block|,
 literal|"Add a parasite to an image."
 block|,
@@ -2475,7 +2495,9 @@ name|ProcRecord
 name|image_parasite_detach_proc
 init|=
 block|{
-literal|"gimp_image_parasite_detach"
+literal|"gimp-image-parasite-detach"
+block|,
+literal|"gimp-image-parasite-detach"
 block|,
 literal|"Removes a parasite from an image."
 block|,
@@ -2694,7 +2716,9 @@ name|ProcRecord
 name|image_parasite_list_proc
 init|=
 block|{
-literal|"gimp_image_parasite_list"
+literal|"gimp-image-parasite-list"
+block|,
+literal|"gimp-image-parasite-list"
 block|,
 literal|"List all parasites."
 block|,

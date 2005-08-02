@@ -829,7 +829,9 @@ name|ProcRecord
 name|airbrush_proc
 init|=
 block|{
-literal|"gimp_airbrush"
+literal|"gimp-airbrush"
+block|,
+literal|"gimp-airbrush"
 block|,
 literal|"Paint in the current brush with varying pressure. Paint application is time-dependent."
 block|,
@@ -1112,7 +1114,9 @@ name|ProcRecord
 name|airbrush_default_proc
 init|=
 block|{
-literal|"gimp_airbrush_default"
+literal|"gimp-airbrush-default"
+block|,
+literal|"gimp-airbrush-default"
 block|,
 literal|"Paint in the current brush with varying pressure. Paint application is time-dependent."
 block|,
@@ -1555,7 +1559,9 @@ name|ProcRecord
 name|clone_proc
 init|=
 block|{
-literal|"gimp_clone"
+literal|"gimp-clone"
+block|,
+literal|"gimp-clone"
 block|,
 literal|"Clone from the source to the dest drawable using the current brush"
 block|,
@@ -1838,7 +1844,9 @@ name|ProcRecord
 name|clone_default_proc
 init|=
 block|{
-literal|"gimp_clone_default"
+literal|"gimp-clone-default"
+block|,
+literal|"gimp-clone-default"
 block|,
 literal|"Clone from the source to the dest drawable using the current brush"
 block|,
@@ -2208,7 +2216,9 @@ name|ProcRecord
 name|convolve_proc
 init|=
 block|{
-literal|"gimp_convolve"
+literal|"gimp-convolve"
+block|,
+literal|"gimp-convolve"
 block|,
 literal|"Convolve (Blur, Sharpen) using the current brush."
 block|,
@@ -2491,7 +2501,9 @@ name|ProcRecord
 name|convolve_default_proc
 init|=
 block|{
-literal|"gimp_convolve_default"
+literal|"gimp-convolve-default"
+block|,
+literal|"gimp-convolve-default"
 block|,
 literal|"Convolve (Blur, Sharpen) using the current brush."
 block|,
@@ -2901,7 +2913,9 @@ name|ProcRecord
 name|dodgeburn_proc
 init|=
 block|{
-literal|"gimp_dodgeburn"
+literal|"gimp-dodgeburn"
+block|,
+literal|"gimp-dodgeburn"
 block|,
 literal|"Dodgeburn image with varying exposure."
 block|,
@@ -3184,7 +3198,9 @@ name|ProcRecord
 name|dodgeburn_default_proc
 init|=
 block|{
-literal|"gimp_dodgeburn_default"
+literal|"gimp-dodgeburn-default"
+block|,
+literal|"gimp-dodgeburn-default"
 block|,
 literal|"Dodgeburn image with varying exposure. This is the same as the gimp_dodgeburn function except that the exposure, type and mode are taken from the tools option dialog. If the dialog has not been activated then the defaults as used by the dialog will be used."
 block|,
@@ -3554,7 +3570,9 @@ name|ProcRecord
 name|eraser_proc
 init|=
 block|{
-literal|"gimp_eraser"
+literal|"gimp-eraser"
+block|,
+literal|"gimp-eraser"
 block|,
 literal|"Erase using the current brush."
 block|,
@@ -3837,7 +3855,9 @@ name|ProcRecord
 name|eraser_default_proc
 init|=
 block|{
-literal|"gimp_eraser_default"
+literal|"gimp-eraser-default"
+block|,
+literal|"gimp-eraser-default"
 block|,
 literal|"Erase using the current brush."
 block|,
@@ -4251,7 +4271,9 @@ name|ProcRecord
 name|paintbrush_proc
 init|=
 block|{
-literal|"gimp_paintbrush"
+literal|"gimp-paintbrush"
+block|,
+literal|"gimp-paintbrush"
 block|,
 literal|"Paint in the current brush with optional fade out parameter and pull colors from a gradient."
 block|,
@@ -4534,7 +4556,9 @@ name|ProcRecord
 name|paintbrush_default_proc
 init|=
 block|{
-literal|"gimp_paintbrush_default"
+literal|"gimp-paintbrush-default"
+block|,
+literal|"gimp-paintbrush-default"
 block|,
 literal|"Paint in the current brush. The fade out parameter and pull colors from a gradient parameter are set from the paintbrush options dialog. If this dialog has not been activated then the dialog defaults will be used."
 block|,
@@ -4817,7 +4841,9 @@ name|ProcRecord
 name|pencil_proc
 init|=
 block|{
-literal|"gimp_pencil"
+literal|"gimp-pencil"
+block|,
+literal|"gimp-pencil"
 block|,
 literal|"Paint in the current brush without sub-pixel sampling."
 block|,
@@ -5147,7 +5173,9 @@ name|ProcRecord
 name|smudge_proc
 init|=
 block|{
-literal|"gimp_smudge"
+literal|"gimp-smudge"
+block|,
+literal|"gimp-smudge"
 block|,
 literal|"Smudge image with varying pressure."
 block|,
@@ -5430,7 +5458,9 @@ name|ProcRecord
 name|smudge_default_proc
 init|=
 block|{
-literal|"gimp_smudge_default"
+literal|"gimp-smudge-default"
+block|,
+literal|"gimp-smudge-default"
 block|,
 literal|"Smudge image with varying pressure."
 block|,

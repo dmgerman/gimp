@@ -69,7 +69,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_layer_new"
+literal|"gimp-layer-new"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -175,7 +175,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_layer_new_from_drawable"
+literal|"gimp-layer-new-from-drawable"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -261,7 +261,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_layer_copy"
+literal|"gimp-layer-copy"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -343,7 +343,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_layer_add_alpha"
+literal|"gimp-layer-add-alpha"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -419,7 +419,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_layer_scale"
+literal|"gimp-layer-scale"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -510,7 +510,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_layer_resize"
+literal|"gimp-layer-resize"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -593,7 +593,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_layer_resize_to_image_size"
+literal|"gimp-layer-resize-to-image-size"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -666,7 +666,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_layer_translate"
+literal|"gimp-layer-translate"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -747,7 +747,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_layer_set_offsets"
+literal|"gimp-layer-set-offsets"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -826,7 +826,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_layer_create_mask"
+literal|"gimp-layer-create-mask"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -909,7 +909,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_layer_get_mask"
+literal|"gimp-layer-get-mask"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -988,7 +988,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_layer_from_mask"
+literal|"gimp-layer-from-mask"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1069,7 +1069,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_layer_add_mask"
+literal|"gimp-layer-add-mask"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1143,7 +1143,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_layer_remove_mask"
+literal|"gimp-layer-remove-mask"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1214,7 +1214,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_layer_is_floating_sel"
+literal|"gimp-layer-is-floating-sel"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1292,7 +1292,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_layer_get_lock_alpha"
+literal|"gimp-layer-get-lock-alpha"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1373,7 +1373,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_layer_set_lock_alpha"
+literal|"gimp-layer-set-lock-alpha"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1444,7 +1444,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_layer_get_apply_mask"
+literal|"gimp-layer-get-apply-mask"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1525,7 +1525,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_layer_set_apply_mask"
+literal|"gimp-layer-set-apply-mask"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1596,7 +1596,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_layer_get_show_mask"
+literal|"gimp-layer-get-show-mask"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1677,7 +1677,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_layer_set_show_mask"
+literal|"gimp-layer-set-show-mask"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1748,7 +1748,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_layer_get_edit_mask"
+literal|"gimp-layer-get-edit-mask"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1829,7 +1829,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_layer_set_edit_mask"
+literal|"gimp-layer-set-edit-mask"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1900,7 +1900,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_layer_get_opacity"
+literal|"gimp-layer-get-opacity"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1981,7 +1981,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_layer_set_opacity"
+literal|"gimp-layer-set-opacity"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -2052,7 +2052,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_layer_get_mode"
+literal|"gimp-layer-get-mode"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -2133,7 +2133,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_layer_set_mode"
+literal|"gimp-layer-set-mode"
 argument_list|,
 operator|&
 name|nreturn_vals

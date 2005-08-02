@@ -71,7 +71,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_by_color_select"
+literal|"gimp-by-color-select"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -190,7 +190,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_ellipse_select"
+literal|"gimp-ellipse-select"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -309,7 +309,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_free_select"
+literal|"gimp-free-select"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -424,7 +424,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_fuzzy_select"
+literal|"gimp-fuzzy-select"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -544,7 +544,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_rect_select"
+literal|"gimp-rect-select"
 argument_list|,
 operator|&
 name|nreturn_vals

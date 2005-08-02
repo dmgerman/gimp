@@ -397,7 +397,9 @@ name|ProcRecord
 name|gradients_popup_proc
 init|=
 block|{
-literal|"gimp_gradients_popup"
+literal|"gimp-gradients-popup"
+block|,
+literal|"gimp-gradients-popup"
 block|,
 literal|"Invokes the Gimp gradients selection."
 block|,
@@ -575,7 +577,9 @@ name|ProcRecord
 name|gradients_close_popup_proc
 init|=
 block|{
-literal|"gimp_gradients_close_popup"
+literal|"gimp-gradients-close-popup"
+block|,
+literal|"gimp-gradients-close-popup"
 block|,
 literal|"Popdown the Gimp gradient selection."
 block|,
@@ -805,7 +809,9 @@ name|ProcRecord
 name|gradients_set_popup_proc
 init|=
 block|{
-literal|"gimp_gradients_set_popup"
+literal|"gimp-gradients-set-popup"
+block|,
+literal|"gimp-gradients-set-popup"
 block|,
 literal|"Sets the current gradient selection in a popup."
 block|,

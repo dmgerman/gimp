@@ -942,7 +942,9 @@ name|ProcRecord
 name|layer_new_proc
 init|=
 block|{
-literal|"gimp_layer_new"
+literal|"gimp-layer-new"
+block|,
+literal|"gimp-layer-new"
 block|,
 literal|"Create a new layer."
 block|,
@@ -1274,7 +1276,9 @@ name|ProcRecord
 name|layer_new_from_drawable_proc
 init|=
 block|{
-literal|"gimp_layer_new_from_drawable"
+literal|"gimp-layer-new-from-drawable"
+block|,
+literal|"gimp-layer-new-from-drawable"
 block|,
 literal|"Create a new layer by copying an existing drawable."
 block|,
@@ -1531,7 +1535,9 @@ name|ProcRecord
 name|layer_copy_proc
 init|=
 block|{
-literal|"gimp_layer_copy"
+literal|"gimp-layer-copy"
+block|,
+literal|"gimp-layer-copy"
 block|,
 literal|"Copy a layer."
 block|,
@@ -1687,7 +1693,9 @@ name|ProcRecord
 name|layer_add_alpha_proc
 init|=
 block|{
-literal|"gimp_layer_add_alpha"
+literal|"gimp-layer-add-alpha"
+block|,
+literal|"gimp-layer-add-alpha"
 block|,
 literal|"Add an alpha channel to the layer if it doesn't already have one."
 block|,
@@ -1966,7 +1974,9 @@ name|ProcRecord
 name|layer_scale_proc
 init|=
 block|{
-literal|"gimp_layer_scale"
+literal|"gimp-layer-scale"
+block|,
+literal|"gimp-layer-scale"
 block|,
 literal|"Scale the layer to the specified extents."
 block|,
@@ -2259,7 +2269,9 @@ name|ProcRecord
 name|layer_resize_proc
 init|=
 block|{
-literal|"gimp_layer_resize"
+literal|"gimp-layer-resize"
+block|,
+literal|"gimp-layer-resize"
 block|,
 literal|"Resize the layer to the specified extents."
 block|,
@@ -2433,7 +2445,9 @@ name|ProcRecord
 name|layer_resize_to_image_size_proc
 init|=
 block|{
-literal|"gimp_layer_resize_to_image_size"
+literal|"gimp-layer-resize-to-image-size"
+block|,
+literal|"gimp-layer-resize-to-image-size"
 block|,
 literal|"Resize a layer to the image size."
 block|,
@@ -2697,7 +2711,9 @@ name|ProcRecord
 name|layer_translate_proc
 init|=
 block|{
-literal|"gimp_layer_translate"
+literal|"gimp-layer-translate"
+block|,
+literal|"gimp-layer-translate"
 block|,
 literal|"Translate the layer by the specified offsets."
 block|,
@@ -2975,7 +2991,9 @@ name|ProcRecord
 name|layer_set_offsets_proc
 init|=
 block|{
-literal|"gimp_layer_set_offsets"
+literal|"gimp-layer-set-offsets"
+block|,
+literal|"gimp-layer-set-offsets"
 block|,
 literal|"Set the layer offsets."
 block|,
@@ -3234,7 +3252,9 @@ name|ProcRecord
 name|layer_create_mask_proc
 init|=
 block|{
-literal|"gimp_layer_create_mask"
+literal|"gimp-layer-create-mask"
+block|,
+literal|"gimp-layer-create-mask"
 block|,
 literal|"Create a layer mask for the specified specified layer."
 block|,
@@ -3438,7 +3458,9 @@ name|ProcRecord
 name|layer_get_mask_proc
 init|=
 block|{
-literal|"gimp_layer_get_mask"
+literal|"gimp-layer-get-mask"
+block|,
+literal|"gimp-layer-get-mask"
 block|,
 literal|"Get the specified layer's mask if it exists."
 block|,
@@ -3657,7 +3679,9 @@ name|ProcRecord
 name|layer_from_mask_proc
 init|=
 block|{
-literal|"gimp_layer_from_mask"
+literal|"gimp-layer-from-mask"
+block|,
+literal|"gimp-layer-from-mask"
 block|,
 literal|"Get the specified mask's layer."
 block|,
@@ -3888,7 +3912,9 @@ name|ProcRecord
 name|layer_add_mask_proc
 init|=
 block|{
-literal|"gimp_layer_add_mask"
+literal|"gimp-layer-add-mask"
+block|,
+literal|"gimp-layer-add-mask"
 block|,
 literal|"Add a layer mask to the specified layer."
 block|,
@@ -4100,7 +4126,9 @@ name|ProcRecord
 name|layer_remove_mask_proc
 init|=
 block|{
-literal|"gimp_layer_remove_mask"
+literal|"gimp-layer-remove-mask"
+block|,
+literal|"gimp-layer-remove-mask"
 block|,
 literal|"Remove the specified layer mask from the layer."
 block|,
@@ -4292,7 +4320,9 @@ name|ProcRecord
 name|layer_is_floating_sel_proc
 init|=
 block|{
-literal|"gimp_layer_is_floating_sel"
+literal|"gimp-layer-is-floating-sel"
+block|,
+literal|"gimp-layer-is-floating-sel"
 block|,
 literal|"Is the specified layer a floating selection?"
 block|,
@@ -4484,7 +4514,9 @@ name|ProcRecord
 name|layer_get_lock_alpha_proc
 init|=
 block|{
-literal|"gimp_layer_get_lock_alpha"
+literal|"gimp-layer-get-lock-alpha"
+block|,
+literal|"gimp-layer-get-lock-alpha"
 block|,
 literal|"Get the lock alpha channel setting of the specified layer."
 block|,
@@ -4670,7 +4702,9 @@ name|ProcRecord
 name|layer_set_lock_alpha_proc
 init|=
 block|{
-literal|"gimp_layer_set_lock_alpha"
+literal|"gimp-layer-set-lock-alpha"
+block|,
+literal|"gimp-layer-set-lock-alpha"
 block|,
 literal|"Set the lock alpha channel setting of the specified layer."
 block|,
@@ -4862,7 +4896,9 @@ name|ProcRecord
 name|layer_get_apply_mask_proc
 init|=
 block|{
-literal|"gimp_layer_get_apply_mask"
+literal|"gimp-layer-get-apply-mask"
+block|,
+literal|"gimp-layer-get-apply-mask"
 block|,
 literal|"Get the apply mask of the specified layer."
 block|,
@@ -5046,7 +5082,9 @@ name|ProcRecord
 name|layer_set_apply_mask_proc
 init|=
 block|{
-literal|"gimp_layer_set_apply_mask"
+literal|"gimp-layer-set-apply-mask"
+block|,
+literal|"gimp-layer-set-apply-mask"
 block|,
 literal|"Set the apply mask of the specified layer."
 block|,
@@ -5238,7 +5276,9 @@ name|ProcRecord
 name|layer_get_show_mask_proc
 init|=
 block|{
-literal|"gimp_layer_get_show_mask"
+literal|"gimp-layer-get-show-mask"
+block|,
+literal|"gimp-layer-get-show-mask"
 block|,
 literal|"Get the show mask of the specified layer."
 block|,
@@ -5422,7 +5462,9 @@ name|ProcRecord
 name|layer_set_show_mask_proc
 init|=
 block|{
-literal|"gimp_layer_set_show_mask"
+literal|"gimp-layer-set-show-mask"
+block|,
+literal|"gimp-layer-set-show-mask"
 block|,
 literal|"Set the show mask of the specified layer."
 block|,
@@ -5614,7 +5656,9 @@ name|ProcRecord
 name|layer_get_edit_mask_proc
 init|=
 block|{
-literal|"gimp_layer_get_edit_mask"
+literal|"gimp-layer-get-edit-mask"
+block|,
+literal|"gimp-layer-get-edit-mask"
 block|,
 literal|"Get the edit mask of the specified layer."
 block|,
@@ -5798,7 +5842,9 @@ name|ProcRecord
 name|layer_set_edit_mask_proc
 init|=
 block|{
-literal|"gimp_layer_set_edit_mask"
+literal|"gimp-layer-set-edit-mask"
+block|,
+literal|"gimp-layer-set-edit-mask"
 block|,
 literal|"Set the edit mask of the specified layer."
 block|,
@@ -5992,7 +6038,9 @@ name|ProcRecord
 name|layer_get_opacity_proc
 init|=
 block|{
-literal|"gimp_layer_get_opacity"
+literal|"gimp-layer-get-opacity"
+block|,
+literal|"gimp-layer-get-opacity"
 block|,
 literal|"Get the opacity of the specified layer."
 block|,
@@ -6190,7 +6238,9 @@ name|ProcRecord
 name|layer_set_opacity_proc
 init|=
 block|{
-literal|"gimp_layer_set_opacity"
+literal|"gimp-layer-set-opacity"
+block|,
+literal|"gimp-layer-set-opacity"
 block|,
 literal|"Set the opacity of the specified layer."
 block|,
@@ -6382,7 +6432,9 @@ name|ProcRecord
 name|layer_get_mode_proc
 init|=
 block|{
-literal|"gimp_layer_get_mode"
+literal|"gimp-layer-get-mode"
+block|,
+literal|"gimp-layer-get-mode"
 block|,
 literal|"Get the combination mode of the specified layer."
 block|,
@@ -6578,7 +6630,9 @@ name|ProcRecord
 name|layer_set_mode_proc
 init|=
 block|{
-literal|"gimp_layer_set_mode"
+literal|"gimp-layer-set-mode"
+block|,
+literal|"gimp-layer-set-mode"
 block|,
 literal|"Set the combination mode of the specified layer."
 block|,

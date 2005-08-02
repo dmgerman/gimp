@@ -469,7 +469,9 @@ name|ProcRecord
 name|brushes_popup_proc
 init|=
 block|{
-literal|"gimp_brushes_popup"
+literal|"gimp-brushes-popup"
+block|,
+literal|"gimp-brushes-popup"
 block|,
 literal|"Invokes the Gimp brush selection."
 block|,
@@ -647,7 +649,9 @@ name|ProcRecord
 name|brushes_close_popup_proc
 init|=
 block|{
-literal|"gimp_brushes_close_popup"
+literal|"gimp-brushes-close-popup"
+block|,
+literal|"gimp-brushes-close-popup"
 block|,
 literal|"Popdown the Gimp brush selection."
 block|,
@@ -995,7 +999,9 @@ name|ProcRecord
 name|brushes_set_popup_proc
 init|=
 block|{
-literal|"gimp_brushes_set_popup"
+literal|"gimp-brushes-set-popup"
+block|,
+literal|"gimp-brushes-set-popup"
 block|,
 literal|"Sets the current brush selection in a popup."
 block|,

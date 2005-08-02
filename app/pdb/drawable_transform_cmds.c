@@ -691,7 +691,9 @@ name|ProcRecord
 name|drawable_transform_flip_simple_proc
 init|=
 block|{
-literal|"gimp_drawable_transform_flip_simple"
+literal|"gimp-drawable-transform-flip-simple"
+block|,
+literal|"gimp-drawable-transform-flip-simple"
 block|,
 literal|"Flip the specified drawable either vertically or horizontally."
 block|,
@@ -1260,7 +1262,9 @@ name|ProcRecord
 name|drawable_transform_flip_proc
 init|=
 block|{
-literal|"gimp_drawable_transform_flip"
+literal|"gimp-drawable-transform-flip"
+block|,
+literal|"gimp-drawable-transform-flip"
 block|,
 literal|"Flip the specified drawable around a given line."
 block|,
@@ -1742,7 +1746,9 @@ name|ProcRecord
 name|drawable_transform_flip_default_proc
 init|=
 block|{
-literal|"gimp_drawable_transform_flip_default"
+literal|"gimp-drawable-transform-flip-default"
+block|,
+literal|"gimp-drawable-transform-flip-default"
 block|,
 literal|"Flip the specified drawable around a given line."
 block|,
@@ -2437,7 +2443,9 @@ name|ProcRecord
 name|drawable_transform_perspective_proc
 init|=
 block|{
-literal|"gimp_drawable_transform_perspective"
+literal|"gimp-drawable-transform-perspective"
+block|,
+literal|"gimp-drawable-transform-perspective"
 block|,
 literal|"Perform a possibly non-affine transformation on the specified drawable, with extra parameters."
 block|,
@@ -3045,7 +3053,9 @@ name|ProcRecord
 name|drawable_transform_perspective_default_proc
 init|=
 block|{
-literal|"gimp_drawable_transform_perspective_default"
+literal|"gimp-drawable-transform-perspective-default"
+block|,
+literal|"gimp-drawable-transform-perspective-default"
 block|,
 literal|"Perform a possibly non-affine transformation on the specified drawable, with extra parameters."
 block|,
@@ -3439,7 +3449,9 @@ name|ProcRecord
 name|drawable_transform_rotate_simple_proc
 init|=
 block|{
-literal|"gimp_drawable_transform_rotate_simple"
+literal|"gimp-drawable-transform-rotate-simple"
+block|,
+literal|"gimp-drawable-transform-rotate-simple"
 block|,
 literal|"Rotate the specified drawable about given coordinates through the specified angle."
 block|,
@@ -4023,7 +4035,9 @@ name|ProcRecord
 name|drawable_transform_rotate_proc
 init|=
 block|{
-literal|"gimp_drawable_transform_rotate"
+literal|"gimp-drawable-transform-rotate"
+block|,
+literal|"gimp-drawable-transform-rotate"
 block|,
 literal|"Rotate the specified drawable about given coordinates through the specified angle."
 block|,
@@ -4520,7 +4534,9 @@ name|ProcRecord
 name|drawable_transform_rotate_default_proc
 init|=
 block|{
-literal|"gimp_drawable_transform_rotate_default"
+literal|"gimp-drawable-transform-rotate-default"
+block|,
+literal|"gimp-drawable-transform-rotate-default"
 block|,
 literal|"Rotate the specified drawable about given coordinates through the specified angle."
 block|,
@@ -5139,7 +5155,9 @@ name|ProcRecord
 name|drawable_transform_scale_proc
 init|=
 block|{
-literal|"gimp_drawable_transform_scale"
+literal|"gimp-drawable-transform-scale"
+block|,
+literal|"gimp-drawable-transform-scale"
 block|,
 literal|"Scale the specified drawable with extra parameters"
 block|,
@@ -5671,7 +5689,9 @@ name|ProcRecord
 name|drawable_transform_scale_default_proc
 init|=
 block|{
-literal|"gimp_drawable_transform_scale_default"
+literal|"gimp-drawable-transform-scale-default"
+block|,
+literal|"gimp-drawable-transform-scale-default"
 block|,
 literal|"Scale the specified drawable with extra parameters"
 block|,
@@ -6206,7 +6226,9 @@ name|ProcRecord
 name|drawable_transform_shear_proc
 init|=
 block|{
-literal|"gimp_drawable_transform_shear"
+literal|"gimp-drawable-transform-shear"
+block|,
+literal|"gimp-drawable-transform-shear"
 block|,
 literal|"Shear the specified drawable about its center by the specified magnitude, with extra parameters."
 block|,
@@ -6654,7 +6676,9 @@ name|ProcRecord
 name|drawable_transform_shear_default_proc
 init|=
 block|{
-literal|"gimp_drawable_transform_shear_default"
+literal|"gimp-drawable-transform-shear-default"
+block|,
+literal|"gimp-drawable-transform-shear-default"
 block|,
 literal|"Shear the specified drawable about its center by the specified magnitude, with extra parameters."
 block|,
@@ -7307,7 +7331,9 @@ name|ProcRecord
 name|drawable_transform_2d_proc
 init|=
 block|{
-literal|"gimp_drawable_transform_2d"
+literal|"gimp-drawable-transform-2d"
+block|,
+literal|"gimp-drawable-transform-2d"
 block|,
 literal|"Transform the specified drawable in 2d, with extra parameters."
 block|,
@@ -7873,7 +7899,9 @@ name|ProcRecord
 name|drawable_transform_2d_default_proc
 init|=
 block|{
-literal|"gimp_drawable_transform_2d_default"
+literal|"gimp-drawable-transform-2d-default"
+block|,
+literal|"gimp-drawable-transform-2d-default"
 block|,
 literal|"Transform the specified drawable in 2d, with extra parameters."
 block|,
@@ -8632,7 +8660,9 @@ name|ProcRecord
 name|drawable_transform_matrix_proc
 init|=
 block|{
-literal|"gimp_drawable_transform_matrix"
+literal|"gimp-drawable-transform-matrix"
+block|,
+literal|"gimp-drawable-transform-matrix"
 block|,
 literal|"Transform the specified drawable in 2d, with extra parameters."
 block|,
@@ -9304,7 +9334,9 @@ name|ProcRecord
 name|drawable_transform_matrix_default_proc
 init|=
 block|{
-literal|"gimp_drawable_transform_matrix_default"
+literal|"gimp-drawable-transform-matrix-default"
+block|,
+literal|"gimp-drawable-transform-matrix-default"
 block|,
 literal|"Transform the specified drawable in 2d, with extra parameters."
 block|,

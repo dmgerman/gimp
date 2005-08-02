@@ -321,7 +321,9 @@ name|ProcRecord
 name|display_new_proc
 init|=
 block|{
-literal|"gimp_display_new"
+literal|"gimp-display-new"
+block|,
+literal|"gimp-display-new"
 block|,
 literal|"Create a new display for the specified image."
 block|,
@@ -464,7 +466,9 @@ name|ProcRecord
 name|display_delete_proc
 init|=
 block|{
-literal|"gimp_display_delete"
+literal|"gimp-display-delete"
+block|,
+literal|"gimp-display-delete"
 block|,
 literal|"Delete the specified display."
 block|,
@@ -554,7 +558,9 @@ name|ProcRecord
 name|displays_flush_proc
 init|=
 block|{
-literal|"gimp_displays_flush"
+literal|"gimp-displays-flush"
+block|,
+literal|"gimp-displays-flush"
 block|,
 literal|"Flush all internal changes to the user interface"
 block|,
@@ -781,7 +787,9 @@ name|ProcRecord
 name|displays_reconnect_proc
 init|=
 block|{
-literal|"gimp_displays_reconnect"
+literal|"gimp-displays-reconnect"
+block|,
+literal|"gimp-displays-reconnect"
 block|,
 literal|"Reconnect displays from one image to another image."
 block|,
