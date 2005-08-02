@@ -489,7 +489,7 @@ argument_list|)
 condition|)
 name|procedure
 operator|=
-literal|"extension_gimp_help_browser_temp"
+literal|"extension-gimp-help-browser-temp"
 expr_stmt|;
 block|}
 if|if
@@ -504,7 +504,7 @@ block|{
 comment|/*  FIXME: should check for procedure availability  */
 name|procedure
 operator|=
-literal|"plug_in_web_browser"
+literal|"plug-in-web-browser"
 expr_stmt|;
 block|}
 if|if
@@ -603,7 +603,7 @@ name|procedural_db_lookup
 argument_list|(
 name|gimp
 argument_list|,
-literal|"extension_gimp_help_browser_temp"
+literal|"extension-gimp-help-browser-temp"
 argument_list|)
 expr_stmt|;
 if|if
@@ -624,7 +624,7 @@ name|procedural_db_lookup
 argument_list|(
 name|gimp
 argument_list|,
-literal|"extension_gimp_help_browser"
+literal|"extension-gimp-help-browser"
 argument_list|)
 expr_stmt|;
 if|if
@@ -731,7 +731,7 @@ name|procedural_db_lookup
 argument_list|(
 name|gimp
 argument_list|,
-literal|"extension_gimp_help_browser_temp"
+literal|"extension-gimp-help-browser-temp"
 argument_list|)
 expr_stmt|;
 if|if
@@ -934,7 +934,7 @@ name|procedural_db_lookup
 argument_list|(
 name|gimp
 argument_list|,
-literal|"extension_gimp_help_temp"
+literal|"extension-gimp-help-temp"
 argument_list|)
 expr_stmt|;
 if|if
@@ -974,7 +974,7 @@ name|procedural_db_lookup
 argument_list|(
 name|gimp
 argument_list|,
-literal|"extension_gimp_help"
+literal|"extension-gimp-help"
 argument_list|)
 expr_stmt|;
 if|if
@@ -1126,7 +1126,7 @@ name|procedural_db_lookup
 argument_list|(
 name|gimp
 argument_list|,
-literal|"extension_gimp_help_temp"
+literal|"extension-gimp-help-temp"
 argument_list|)
 expr_stmt|;
 if|if
@@ -1184,7 +1184,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-literal|"extension_gimp_help_temp"
+literal|"extension-gimp-help-temp"
 argument_list|,
 operator|&
 name|n_return_vals

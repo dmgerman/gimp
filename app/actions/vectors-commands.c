@@ -1194,7 +1194,7 @@ name|gimage
 operator|->
 name|gimp
 argument_list|,
-literal|"plug_in_sel2path_advanced"
+literal|"plug-in-sel2path-advanced"
 argument_list|)
 expr_stmt|;
 else|else
@@ -1206,7 +1206,7 @@ name|gimage
 operator|->
 name|gimp
 argument_list|,
-literal|"plug_in_sel2path"
+literal|"plug-in-sel2path"
 argument_list|)
 expr_stmt|;
 if|if
