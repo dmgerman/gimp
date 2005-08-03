@@ -3372,7 +3372,7 @@ name|gchar
 modifier|*
 name|buffer
 decl_stmt|;
-name|gssize
+name|gsize
 name|buffer_length
 decl_stmt|;
 name|g_return_val_if_fail

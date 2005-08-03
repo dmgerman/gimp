@@ -1198,6 +1198,11 @@ if|if
 condition|(
 name|strncmp
 argument_list|(
+operator|(
+specifier|const
+name|gchar
+operator|*
+operator|)
 name|header
 argument_list|,
 literal|"KiSS"
@@ -2179,6 +2184,11 @@ condition|(
 operator|!
 name|strncmp
 argument_list|(
+operator|(
+specifier|const
+name|gchar
+operator|*
+operator|)
 name|header
 argument_list|,
 literal|"KiSS"
@@ -2631,6 +2641,10 @@ argument_list|)
 expr_stmt|;
 name|strcpy
 argument_list|(
+operator|(
+name|gchar
+operator|*
+operator|)
 name|header
 argument_list|,
 literal|"KiSS"

@@ -113,7 +113,7 @@ modifier|*
 name|ctx
 parameter_list|,
 specifier|const
-name|guchar
+name|gchar
 modifier|*
 name|buf
 parameter_list|,
@@ -339,7 +339,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_md5_update (GimpMD5Context * ctx,const guchar * buf,guint32 len)
+DECL|function|gimp_md5_update (GimpMD5Context * ctx,const gchar * buf,guint32 len)
 name|gimp_md5_update
 parameter_list|(
 name|GimpMD5Context
@@ -347,7 +347,7 @@ modifier|*
 name|ctx
 parameter_list|,
 specifier|const
-name|guchar
+name|gchar
 modifier|*
 name|buf
 parameter_list|,

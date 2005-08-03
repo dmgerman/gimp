@@ -1499,7 +1499,7 @@ name|gchar
 modifier|*
 name|filename
 decl_stmt|;
-name|gchar
+name|guchar
 modifier|*
 name|buffer
 decl_stmt|;

@@ -52,7 +52,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274647ee0108
+DECL|struct|__anon2b0a76e50108
 block|{
 DECL|member|mask_radius
 name|gdouble
@@ -935,7 +935,7 @@ decl_stmt|;
 name|gdouble
 name|ramp
 decl_stmt|;
-name|gchar
+name|guchar
 modifier|*
 name|preview_buffer
 init|=

@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a160dff0103
+DECL|enum|__anon2c425e780103
 block|{
 DECL|enumerator|FUNCTION_BUMPMAP
 name|FUNCTION_BUMPMAP
@@ -53,7 +53,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a160dff0208
+DECL|struct|__anon2c425e780208
 block|{
 DECL|member|azimuth
 name|gdouble
@@ -1463,7 +1463,7 @@ name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
-name|guint
+name|gint
 name|width
 decl_stmt|,
 name|height

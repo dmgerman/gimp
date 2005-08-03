@@ -187,7 +187,7 @@ name|j
 operator|++
 control|)
 block|{
-name|guchar
+name|gchar
 name|buf
 index|[
 literal|4

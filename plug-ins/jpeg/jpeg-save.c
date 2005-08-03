@@ -140,7 +140,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6dbb830108
+DECL|struct|__anon296650cd0108
 block|{
 DECL|member|cinfo
 name|struct
@@ -234,6 +234,43 @@ name|toggle
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_EXIF
+end_ifdef
+
+begin_function_decl
+specifier|static
+name|gint
+name|create_thumbnail
+parameter_list|(
+name|gint32
+name|image_ID
+parameter_list|,
+name|gint32
+name|drawable_ID
+parameter_list|,
+name|gdouble
+name|quality
+parameter_list|,
+name|guchar
+modifier|*
+modifier|*
+name|thumbnail_buffer
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* HAVE_EXIF */
+end_comment
 
 begin_decl_stmt
 DECL|variable|restart_markers_scale
@@ -829,7 +866,7 @@ decl_stmt|;
 ifdef|#
 directive|ifdef
 name|HAVE_EXIF
-name|gchar
+name|guchar
 modifier|*
 name|thumbnail_buffer
 init|=
@@ -1903,7 +1940,7 @@ decl_stmt|;
 name|glong
 name|xmp_data_size
 decl_stmt|;
-name|gchar
+name|guchar
 modifier|*
 name|app_block
 decl_stmt|;
@@ -4704,7 +4741,7 @@ end_ifdef
 begin_decl_stmt
 DECL|variable|tbuffer
 specifier|static
-name|gchar
+name|guchar
 modifier|*
 name|tbuffer
 init|=
@@ -4715,7 +4752,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|tbuffer2
 specifier|static
-name|gchar
+name|guchar
 modifier|*
 name|tbuffer2
 init|=
@@ -4736,7 +4773,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6dbb830208
+DECL|struct|__anon296650cd0208
 block|{
 DECL|member|pub
 name|struct
@@ -4745,7 +4782,7 @@ name|pub
 decl_stmt|;
 comment|/* public fields */
 DECL|member|buffer
-name|gchar
+name|guchar
 modifier|*
 name|buffer
 decl_stmt|;
@@ -4806,12 +4843,10 @@ literal|16384
 expr_stmt|;
 name|tbuffer
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
-name|g_realloc
+name|g_renew
 argument_list|(
+name|guchar
+argument_list|,
 name|tbuffer
 argument_list|,
 name|tbuffer_count
@@ -4889,12 +4924,10 @@ operator|)
 expr_stmt|;
 name|tbuffer
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
-name|g_realloc
+name|g_renew
 argument_list|(
+name|guchar
+argument_list|,
 name|tbuffer
 argument_list|,
 name|tbuffer_count
@@ -4931,8 +4964,9 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|gint
-DECL|function|create_thumbnail (gint32 image_ID,gint32 drawable_ID,gdouble quality,gchar ** thumbnail_buffer)
+DECL|function|create_thumbnail (gint32 image_ID,gint32 drawable_ID,gdouble quality,guchar ** thumbnail_buffer)
 name|create_thumbnail
 parameter_list|(
 name|gint32
@@ -4944,7 +4978,7 @@ parameter_list|,
 name|gdouble
 name|quality
 parameter_list|,
-name|gchar
+name|guchar
 modifier|*
 modifier|*
 name|thumbnail_buffer
@@ -5114,7 +5148,7 @@ name|tbuffer2
 operator|=
 name|g_new
 argument_list|(
-name|gchar
+name|guchar
 argument_list|,
 literal|16384
 argument_list|)

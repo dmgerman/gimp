@@ -46,7 +46,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2772d6e20108
+DECL|struct|__anon29d7a57a0108
 block|{
 DECL|member|resolution
 name|gdouble
@@ -81,7 +81,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2772d6e20208
+DECL|struct|__anon29d7a57a0208
 block|{
 DECL|member|n_pages
 name|gint
@@ -1312,7 +1312,7 @@ decl_stmt|;
 name|gint
 name|bpp
 decl_stmt|;
-name|gchar
+name|guchar
 modifier|*
 name|pixels
 decl_stmt|;
@@ -2004,7 +2004,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2772d6e20308
+DECL|struct|__anon29d7a57a0308
 block|{
 DECL|member|document
 name|PopplerDocument
@@ -2029,7 +2029,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2772d6e20408
+DECL|struct|__anon29d7a57a0408
 block|{
 DECL|member|selector
 name|GimpPageSelector

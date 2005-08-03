@@ -54,7 +54,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a36ae4e0108
+DECL|struct|__anon28dd40a30108
 block|{
 DECL|member|from
 name|GimpRGB
@@ -3239,7 +3239,7 @@ decl_stmt|,
 modifier|*
 name|dest_row
 decl_stmt|;
-name|guint
+name|gint
 name|x
 decl_stmt|,
 name|y
@@ -3262,7 +3262,7 @@ name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
-name|guint
+name|gint
 name|width
 decl_stmt|,
 name|height

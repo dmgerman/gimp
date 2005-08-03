@@ -6028,6 +6028,11 @@ name|len
 operator|=
 name|strlen
 argument_list|(
+operator|(
+specifier|const
+name|char
+operator|*
+operator|)
 name|char_data
 argument_list|)
 expr_stmt|;

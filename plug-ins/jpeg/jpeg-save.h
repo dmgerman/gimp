@@ -114,7 +114,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be8254a0108
+DECL|struct|__anon28b9f5490108
 block|{
 DECL|member|quality
 name|gdouble
@@ -223,42 +223,6 @@ name|void
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|HAVE_EXIF
-end_ifdef
-
-begin_function_decl
-name|gint
-name|create_thumbnail
-parameter_list|(
-name|gint32
-name|image_ID
-parameter_list|,
-name|gint32
-name|drawable_ID
-parameter_list|,
-name|gdouble
-name|quality
-parameter_list|,
-name|gchar
-modifier|*
-modifier|*
-name|thumbnail_buffer
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* HAVE_EXIF */
-end_comment
 
 end_unit
 
