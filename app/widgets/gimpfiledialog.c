@@ -1299,7 +1299,7 @@ name|procedural_db_lookup
 argument_list|(
 name|gimp
 argument_list|,
-literal|"file_uri_load"
+literal|"file-uri-load"
 argument_list|)
 operator|==
 name|NULL
@@ -1334,7 +1334,7 @@ name|procedural_db_lookup
 argument_list|(
 name|gimp
 argument_list|,
-literal|"file_uri_save"
+literal|"file-uri-save"
 argument_list|)
 operator|==
 name|NULL
