@@ -1499,11 +1499,11 @@ name|gchar
 modifier|*
 name|filename
 decl_stmt|;
-name|guchar
+name|gchar
 modifier|*
 name|buffer
 decl_stmt|;
-name|gssize
+name|gsize
 name|buffer_length
 decl_stmt|;
 name|GError

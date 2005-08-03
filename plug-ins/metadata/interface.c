@@ -165,7 +165,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292212a30108
+DECL|struct|__anon27e8a3390108
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -722,7 +722,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292212a30208
+DECL|struct|__anon27e8a3390208
 block|{
 DECL|member|schema
 specifier|const
@@ -2000,11 +2000,11 @@ name|gchar
 modifier|*
 name|filename
 decl_stmt|;
-name|guchar
+name|gchar
 modifier|*
 name|buffer
 decl_stmt|;
-name|gssize
+name|gsize
 name|buffer_length
 decl_stmt|;
 name|GError
