@@ -1901,7 +1901,7 @@ decl_stmt|;
 name|gchar
 name|num_test
 decl_stmt|;
-name|guchar
+name|gchar
 name|mem_testval
 index|[
 literal|256
