@@ -442,7 +442,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2882bb880103
+DECL|enum|__anon29ff50f90103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1483,7 +1483,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2882bb880208
+DECL|struct|__anon29ff50f90208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1560,7 +1560,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2882bb880308
+DECL|struct|__anon29ff50f90308
 block|{
 DECL|member|ncolors
 name|long
@@ -1745,7 +1745,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2882bb880408
+DECL|struct|__anon29ff50f90408
 block|{
 DECL|member|used_count
 name|signed
@@ -2806,7 +2806,7 @@ decl_stmt|;
 name|double
 name|v1
 init|=
-name|GIMP_RGB_INTENSITY
+name|GIMP_RGB_LUMINANCE
 argument_list|(
 name|color1
 operator|->
@@ -2824,7 +2824,7 @@ decl_stmt|;
 name|double
 name|v2
 init|=
-name|GIMP_RGB_INTENSITY
+name|GIMP_RGB_LUMINANCE
 argument_list|(
 name|color2
 operator|->

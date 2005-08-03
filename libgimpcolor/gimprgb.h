@@ -112,7 +112,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon291299d90103
+DECL|enum|__anon2c7223ff0103
 block|{
 DECL|enumerator|GIMP_RGB_COMPOSITE_NONE
 name|GIMP_RGB_COMPOSITE_NONE
@@ -379,6 +379,36 @@ end_function_decl
 
 begin_function_decl
 name|gdouble
+name|gimp_rgb_luminance
+parameter_list|(
+specifier|const
+name|GimpRGB
+modifier|*
+name|rgb
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|guchar
+name|gimp_rgb_luminance_uchar
+parameter_list|(
+specifier|const
+name|GimpRGB
+modifier|*
+name|rgb
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|GIMP_DISABLE_DEPRECATED
+end_ifndef
+
+begin_function_decl
+name|gdouble
 name|gimp_rgb_intensity
 parameter_list|(
 specifier|const
@@ -400,6 +430,11 @@ name|rgb
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_function_decl
 name|void
@@ -603,12 +638,65 @@ begin_comment
 comment|/*  Map RGB to intensity  */
 end_comment
 
+begin_comment
+comment|/*  * The weights to compute true CIE luminance from linear red, green  * and blue, as defined by the ITU-R Recommendation BT.709, "Basic  * Parameter Values for the HDTV Standard for the Studio and for  * International Programme Exchange" (1990). Also suggested in the  * sRGB colorspace specification by the W3C.  */
+end_comment
+
+begin_define
+DECL|macro|GIMP_RGB_LUMINANCE_RED
+define|#
+directive|define
+name|GIMP_RGB_LUMINANCE_RED
+value|(0.2126)
+end_define
+
+begin_define
+DECL|macro|GIMP_RGB_LUMINANCE_GREEN
+define|#
+directive|define
+name|GIMP_RGB_LUMINANCE_GREEN
+value|(0.7152)
+end_define
+
+begin_define
+DECL|macro|GIMP_RGB_LUMINANCE_BLUE
+define|#
+directive|define
+name|GIMP_RGB_LUMINANCE_BLUE
+value|(0.0722)
+end_define
+
+begin_define
+DECL|macro|GIMP_RGB_LUMINANCE (r,g,b)
+define|#
+directive|define
+name|GIMP_RGB_LUMINANCE
+parameter_list|(
+name|r
+parameter_list|,
+name|g
+parameter_list|,
+name|b
+parameter_list|)
+value|((r) * GIMP_RGB_LUMINANCE_RED   + \ 			           (g) * GIMP_RGB_LUMINANCE_GREEN + \ 			           (b) * GIMP_RGB_LUMINANCE_BLUE)
+end_define
+
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|GIMP_DISABLE_DEPRECATED
+end_ifndef
+
+begin_comment
+comment|/*  * The coefficients below properly computed luminance for monitors  * having phosphors that were contemporary at the introduction of NTSC  * television in 1953. They are still appropriate for computing video  * luma. However, these coefficients do not accurately compute  * luminance for contemporary monitors. The use of these definitions  * is deprecated.  */
+end_comment
+
 begin_define
 DECL|macro|GIMP_RGB_INTENSITY_RED
 define|#
 directive|define
 name|GIMP_RGB_INTENSITY_RED
-value|0.30
+value|(0.30)
 end_define
 
 begin_define
@@ -616,7 +704,7 @@ DECL|macro|GIMP_RGB_INTENSITY_GREEN
 define|#
 directive|define
 name|GIMP_RGB_INTENSITY_GREEN
-value|0.59
+value|(0.59)
 end_define
 
 begin_define
@@ -624,7 +712,7 @@ DECL|macro|GIMP_RGB_INTENSITY_BLUE
 define|#
 directive|define
 name|GIMP_RGB_INTENSITY_BLUE
-value|0.11
+value|(0.11)
 end_define
 
 begin_define
@@ -641,6 +729,11 @@ name|b
 parameter_list|)
 value|((r) * GIMP_RGB_INTENSITY_RED   + \ 			           (g) * GIMP_RGB_INTENSITY_GREEN + \ 			           (b) * GIMP_RGB_INTENSITY_BLUE)
 end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_macro
 name|G_END_DECLS

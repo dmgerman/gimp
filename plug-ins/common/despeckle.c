@@ -353,7 +353,7 @@ begin_function_decl
 specifier|static
 specifier|inline
 name|guchar
-name|pixel_intensity
+name|pixel_luminance
 parameter_list|(
 specifier|const
 name|guchar
@@ -2511,7 +2511,7 @@ block|{
 name|guchar
 name|value
 init|=
-name|pixel_intensity
+name|pixel_luminance
 argument_list|(
 name|src
 operator|+
@@ -2731,7 +2731,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  * This Quickselect routine is based on the algorithm described in  * "Numerical recipes in C", Second Edition,  * Cambridge University Press, 1992, Section 8.5, ISBN 0-521-43108-5  * This code by Nicolas Devillard - 1998. Public domain.  *  * Modified to swap pointers: swap is done by comparing intensity  * value for the pointer to RGB.  */
+comment|/*  * This Quickselect routine is based on the algorithm described in  * "Numerical recipes in C", Second Edition,  * Cambridge University Press, 1992, Section 8.5, ISBN 0-521-43108-5  * This code by Nicolas Devillard - 1998. Public domain.  *  * Modified to swap pointers: swap is done by comparing luminance  * value for the pointer to RGB.  */
 end_comment
 
 begin_function
@@ -3156,8 +3156,8 @@ begin_function
 specifier|static
 specifier|inline
 name|guchar
-DECL|function|pixel_intensity (const guchar * p,gint bpp)
-name|pixel_intensity
+DECL|function|pixel_luminance (const guchar * p,gint bpp)
+name|pixel_luminance
 parameter_list|(
 specifier|const
 name|guchar
@@ -3192,7 +3192,7 @@ case|case
 literal|4
 case|:
 return|return
-name|GIMP_RGB_INTENSITY
+name|GIMP_RGB_LUMINANCE
 argument_list|(
 name|p
 index|[

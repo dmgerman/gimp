@@ -145,7 +145,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aa5f1d50108
+DECL|struct|__anon293526fe0108
 block|{
 DECL|member|color
 name|GimpRGB
@@ -849,7 +849,7 @@ index|]
 operator|=
 name|i
 operator|*
-name|GIMP_RGB_INTENSITY_RED
+name|GIMP_RGB_LUMINANCE_RED
 expr_stmt|;
 name|lum_green_lookup
 index|[
@@ -858,7 +858,7 @@ index|]
 operator|=
 name|i
 operator|*
-name|GIMP_RGB_INTENSITY_GREEN
+name|GIMP_RGB_LUMINANCE_GREEN
 expr_stmt|;
 name|lum_blue_lookup
 index|[
@@ -867,7 +867,7 @@ index|]
 operator|=
 name|i
 operator|*
-name|GIMP_RGB_INTENSITY_BLUE
+name|GIMP_RGB_LUMINANCE_BLUE
 expr_stmt|;
 name|final_red_lookup
 index|[

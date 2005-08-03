@@ -76,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29ec3c140103
+DECL|enum|__anon28949b130103
 block|{
 DECL|enumerator|CURL_COLORS_FG_BG
 name|CURL_COLORS_FG_BG
@@ -100,7 +100,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29ec3c140203
+DECL|enum|__anon28949b130203
 block|{
 DECL|enumerator|CURL_ORIENTATION_VERTICAL
 name|CURL_ORIENTATION_VERTICAL
@@ -121,7 +121,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29ec3c140303
+DECL|enum|__anon28949b130303
 block|{
 DECL|enumerator|CURL_EDGE_LOWER_RIGHT
 name|CURL_EDGE_LOWER_RIGHT
@@ -209,7 +209,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ec3c140408
+DECL|struct|__anon28949b130408
 block|{
 DECL|member|colors
 name|CurlColors
@@ -3264,7 +3264,7 @@ expr_stmt|;
 comment|/* Init shade_curl */
 name|fore_grayval
 operator|=
-name|GIMP_RGB_INTENSITY
+name|GIMP_RGB_LUMINANCE
 argument_list|(
 name|fore_color
 index|[
@@ -3286,7 +3286,7 @@ literal|0.5
 expr_stmt|;
 name|back_grayval
 operator|=
-name|GIMP_RGB_INTENSITY
+name|GIMP_RGB_LUMINANCE
 argument_list|(
 name|back_color
 index|[
@@ -4899,7 +4899,7 @@ index|[
 literal|0
 index|]
 operator|=
-name|GIMP_RGB_INTENSITY
+name|GIMP_RGB_LUMINANCE
 argument_list|(
 name|f_samp
 index|[

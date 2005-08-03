@@ -243,10 +243,10 @@ value|2
 end_define
 
 begin_define
-DECL|macro|CS_INTENSITY
+DECL|macro|CS_LUMINANCE
 define|#
 directive|define
-name|CS_INTENSITY
+name|CS_LUMINANCE
 value|3
 end_define
 
@@ -335,7 +335,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29020f2b0108
+DECL|struct|__anon2b65e1250108
 block|{
 DECL|member|name
 specifier|const
@@ -595,7 +595,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29020f2b0208
+DECL|struct|__anon2b65e1250208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -607,7 +607,7 @@ DECL|member|colourspace
 name|gint
 name|colourspace
 decl_stmt|;
-comment|/* 0: RGB, 1: CMYK, 2: Intensity */
+comment|/* 0: RGB, 1: CMYK, 2: Luminance */
 DECL|member|k_pullout
 name|gint
 name|k_pullout
@@ -668,7 +668,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29020f2b0308
+DECL|struct|__anon2b65e1250308
 block|{
 DECL|member|input_spi
 name|gdouble
@@ -702,7 +702,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29020f2b0408
+DECL|struct|__anon2b65e1250408
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -809,7 +809,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29020f2b0508
+DECL|struct|__anon2b65e1250508
 block|{
 DECL|member|pull_table
 name|GtkWidget
@@ -897,7 +897,7 @@ comment|/* cell width */
 comment|/* screen setup (default is the classic rosette pattern) */
 name|CS_RGB
 block|,
-comment|/* use RGB, not CMYK or Intensity */
+comment|/* use RGB, not CMYK or Luminance */
 literal|100
 block|,
 comment|/* max pullout */
@@ -977,7 +977,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29020f2b0608
+DECL|struct|__anon2b65e1250608
 block|{
 DECL|member|name
 specifier|const
@@ -1304,18 +1304,18 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|intensity_tmpl
+DECL|variable|luminance_tmpl
 specifier|static
 specifier|const
 name|chan_tmpl
-name|intensity_tmpl
+name|luminance_tmpl
 index|[]
 init|=
 block|{
 block|{
 name|N_
 argument_list|(
-literal|"Intensity"
+literal|"Luminance"
 argument_list|)
 block|,
 operator|&
@@ -1374,7 +1374,7 @@ name|rgb_tmpl
 block|,
 name|cmyk_tmpl
 block|,
-name|intensity_tmpl
+name|luminance_tmpl
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -1420,7 +1420,7 @@ argument_list|)
 block|,
 name|NCHANS
 argument_list|(
-argument|intensity_tmpl
+argument|luminance_tmpl
 argument_list|)
 block|}
 decl_stmt|;
@@ -1712,7 +1712,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"colorspace"
 block|,
-literal|"separate to 0:RGB, 1:CMYK, 2:Intensity"
+literal|"separate to 0:RGB, 1:CMYK, 2:Luminance"
 block|}
 block|,
 block|{
@@ -5630,7 +5630,7 @@ argument_list|,
 name|preview
 argument_list|)
 expr_stmt|;
-comment|/* RGB / CMYK / Intensity select */
+comment|/* RGB / CMYK / Luminance select */
 name|hbox
 operator|=
 name|gtk_hbox_new
@@ -5990,7 +5990,7 @@ name|pvals
 operator|.
 name|colourspace
 operator|==
-name|CS_INTENSITY
+name|CS_LUMINANCE
 operator|)
 argument_list|)
 expr_stmt|;
@@ -6037,7 +6037,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|CS_INTENSITY
+name|CS_LUMINANCE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -7040,7 +7040,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29020f2b0708
+DECL|struct|__anon2b65e1250708
 block|{
 DECL|member|index
 name|gint
@@ -7807,7 +7807,7 @@ literal|1
 operator|||
 name|colourspace
 operator|==
-name|CS_INTENSITY
+name|CS_LUMINANCE
 condition|)
 block|{
 name|rot
@@ -8491,7 +8491,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|CS_INTENSITY
+name|CS_LUMINANCE
 case|:
 name|data
 index|[
@@ -8509,7 +8509,7 @@ index|[
 literal|0
 index|]
 operator|=
-name|GIMP_RGB_INTENSITY
+name|GIMP_RGB_LUMINANCE
 argument_list|(
 name|data
 index|[
@@ -8892,7 +8892,7 @@ index|]
 expr_stmt|;
 break|break;
 case|case
-name|CS_INTENSITY
+name|CS_LUMINANCE
 case|:
 if|if
 condition|(

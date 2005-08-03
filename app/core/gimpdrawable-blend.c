@@ -126,7 +126,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3e87ad0108
+DECL|struct|__anon2aa1f8880108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -192,7 +192,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3e87ad0208
+DECL|struct|__anon2aa1f8880208
 block|{
 DECL|member|PR
 name|PixelRegion
@@ -3698,7 +3698,7 @@ comment|/* Convert to grayscale */
 name|gdouble
 name|gray
 init|=
-name|gimp_rgb_intensity
+name|gimp_rgb_luminance
 argument_list|(
 name|color
 argument_list|)
@@ -4968,7 +4968,7 @@ operator|*
 name|dest
 operator|++
 operator|=
-name|gimp_rgb_intensity_uchar
+name|gimp_rgb_luminance_uchar
 argument_list|(
 operator|&
 name|color
@@ -5114,7 +5114,7 @@ argument_list|)
 expr_stmt|;
 name|gray
 operator|=
-name|gimp_rgb_intensity
+name|gimp_rgb_luminance
 argument_list|(
 operator|&
 name|color

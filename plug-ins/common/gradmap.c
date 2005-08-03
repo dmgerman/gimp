@@ -27,28 +27,6 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|RCSID
-end_ifdef
-
-begin_decl_stmt
-DECL|variable|rcsid
-specifier|static
-name|char
-name|rcsid
-index|[]
-init|=
-literal|"$Id$"
-decl_stmt|;
-end_decl_stmt
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
 begin_comment
 comment|/* Some useful macros */
 end_comment
@@ -69,13 +47,13 @@ name|LUMINOSITY
 parameter_list|(
 name|X
 parameter_list|)
-value|(GIMP_RGB_INTENSITY (X[0], X[1], X[2]) + 0.5)
+value|(GIMP_RGB_LUMINANCE (X[0], X[1], X[2]) + 0.5)
 end_define
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29f3ad800103
+DECL|enum|__anon2b2f471b0103
 block|{
 DECL|enumerator|GRADIENT_MODE
 name|GRADIENT_MODE
@@ -604,7 +582,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f3ad800208
+DECL|struct|__anon2b2f471b0208
 block|{
 DECL|member|samples
 name|guchar
@@ -1285,7 +1263,7 @@ else|else
 operator|*
 name|b_samp
 operator|=
-name|gimp_rgb_intensity_uchar
+name|gimp_rgb_luminance_uchar
 argument_list|(
 operator|&
 name|color_sample

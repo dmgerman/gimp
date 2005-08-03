@@ -50,7 +50,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c228f010108
+DECL|struct|__anon2ba9c0700108
 block|{
 DECL|member|height
 name|gint
@@ -1128,7 +1128,7 @@ comment|/* Update progress */
 end_comment
 
 begin_comment
-unit|progress += src_rgn.w * src_rgn.h;               gimp_progress_update ((double) progress / (double) max_progress);             }            if (count> 0)             for (b = 0; b< bpp; b++)               average[b] = (guchar) (average[b] / count);            if (bpp< 3)             inten = average[0] / 254.0 * height;           else             inten = GIMP_RGB_INTENSITY (average[0],                                         average[1],                                         average[2]) / 254.0 * height;            gimp_pixel_rgn_init (&dest_rgn,                                drawable, x, y, 1, y_step, TRUE, TRUE);           for (pr = gimp_pixel_rgns_register (1,&dest_rgn);                pr != NULL;                pr = gimp_pixel_rgns_process(pr))             {               dest_row = dest_rgn.data;               for (row = 0; row< dest_rgn.h; row++)                 {                   dest = dest_row;                   v = inten> row ? 255 : 0;                   if (limit)                     {                       if (row == 0)                         v = 255;                       else if (row == height-1)                         v = 0;                     }                   for (b = 0; b< bpp; b++)                     dest[b] = v;                   dest_row += dest_rgn.rowstride;                 }
+unit|progress += src_rgn.w * src_rgn.h;               gimp_progress_update ((double) progress / (double) max_progress);             }            if (count> 0)             for (b = 0; b< bpp; b++)               average[b] = (guchar) (average[b] / count);            if (bpp< 3)             inten = average[0] / 254.0 * height;           else             inten = GIMP_RGB_LUMINANCE (average[0],                                         average[1],                                         average[2]) / 254.0 * height;            gimp_pixel_rgn_init (&dest_rgn,                                drawable, x, y, 1, y_step, TRUE, TRUE);           for (pr = gimp_pixel_rgns_register (1,&dest_rgn);                pr != NULL;                pr = gimp_pixel_rgns_process(pr))             {               dest_row = dest_rgn.data;               for (row = 0; row< dest_rgn.h; row++)                 {                   dest = dest_row;                   v = inten> row ? 255 : 0;                   if (limit)                     {                       if (row == 0)                         v = 255;                       else if (row == height-1)                         v = 0;                     }                   for (b = 0; b< bpp; b++)                     dest[b] = v;                   dest_row += dest_rgn.rowstride;                 }
 comment|/* Update progress */
 end_comment
 
@@ -1146,7 +1146,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c228f010208
+DECL|struct|__anon2ba9c0700208
 block|{
 DECL|member|x
 DECL|member|y
@@ -1912,7 +1912,7 @@ expr_stmt|;
 else|else
 name|inten
 operator|=
-name|GIMP_RGB_INTENSITY
+name|GIMP_RGB_LUMINANCE
 argument_list|(
 name|average
 index|[

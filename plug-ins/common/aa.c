@@ -1133,7 +1133,7 @@ name|x
 argument_list|,
 name|y
 argument_list|,
-name|GIMP_RGB_INTENSITY
+name|GIMP_RGB_LUMINANCE
 argument_list|(
 name|p
 index|[
@@ -1193,7 +1193,7 @@ call|(
 name|guchar
 call|)
 argument_list|(
-name|GIMP_RGB_INTENSITY
+name|GIMP_RGB_LUMINANCE
 argument_list|(
 name|p
 index|[

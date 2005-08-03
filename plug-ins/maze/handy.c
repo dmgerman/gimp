@@ -185,7 +185,7 @@ index|[
 literal|0
 index|]
 operator|=
-name|gimp_rgb_intensity_uchar
+name|gimp_rgb_luminance_uchar
 argument_list|(
 operator|&
 name|foreground
@@ -196,7 +196,7 @@ index|[
 literal|0
 index|]
 operator|=
-name|gimp_rgb_intensity_uchar
+name|gimp_rgb_luminance_uchar
 argument_list|(
 operator|&
 name|background
@@ -243,7 +243,7 @@ comment|/* Draws a solid color box in a GimpPixelRgn. */
 end_comment
 
 begin_comment
-comment|/* Optimization assumptions:  * (Or, "Why Maze is Faster Than Checkerboard.")  *   * Assuming calling memcpy is faster than using loops.  * Row buffers are nice...  *  * Assume allocating memory for row buffers takes a significant amount   * of time.  Assume drawbox will be called many times.  * Only allocate memory once.  *  * Do not assume the row buffer will always be the same size.  Allow  * for reallocating to make it bigger if needed.  However, I don't see   * reason to bother ever shrinking it again.  * (Under further investigation, assuming the row buffer never grows  * may be a safe assumption in this case.)  *  * Also assume that the program calling drawbox is short-lived, so  * memory leaks aren't of particular concern-- the memory allocated to   * the row buffer is never set free.  */
+comment|/* Optimization assumptions:  * (Or, "Why Maze is Faster Than Checkerboard.")  *  * Assuming calling memcpy is faster than using loops.  * Row buffers are nice...  *  * Assume allocating memory for row buffers takes a significant amount  * of time.  Assume drawbox will be called many times.  * Only allocate memory once.  *  * Do not assume the row buffer will always be the same size.  Allow  * for reallocating to make it bigger if needed.  However, I don't see  * reason to bother ever shrinking it again.  * (Under further investigation, assuming the row buffer never grows  * may be a safe assumption in this case.)  *  * Also assume that the program calling drawbox is short-lived, so  * memory leaks aren't of particular concern-- the memory allocated to  * the row buffer is never set free.  */
 end_comment
 
 begin_comment

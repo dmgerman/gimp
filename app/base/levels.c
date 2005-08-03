@@ -744,7 +744,7 @@ decl_stmt|;
 comment|/* Calculate lightness value */
 name|lightness
 operator|=
-name|GIMP_RGB_INTENSITY
+name|GIMP_RGB_LUMINANCE
 argument_list|(
 name|gray
 index|[

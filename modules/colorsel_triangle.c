@@ -1529,7 +1529,7 @@ argument_list|)
 expr_stmt|;
 name|col
 operator|=
-name|GIMP_RGB_INTENSITY
+name|GIMP_RGB_LUMINANCE
 argument_list|(
 name|buf
 index|[

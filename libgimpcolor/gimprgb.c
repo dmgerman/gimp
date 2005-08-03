@@ -27,6 +27,16 @@ directive|include
 file|"gimpcolortypes.h"
 end_include
 
+begin_undef
+undef|#
+directive|undef
+name|GIMP_DISABLE_DEPRECATED
+end_undef
+
+begin_comment
+comment|/*  for GIMP_RGB_INTENSITY()  */
+end_comment
+
 begin_include
 include|#
 directive|include
@@ -906,6 +916,105 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_rgb_luminance:  * @rgb:  *  * Return value: the luminous intensity of the range from 0.0 to 1.0.  *  * Since: GIMP 2.4  **/
+end_comment
+
+begin_function
+name|gdouble
+DECL|function|gimp_rgb_luminance (const GimpRGB * rgb)
+name|gimp_rgb_luminance
+parameter_list|(
+specifier|const
+name|GimpRGB
+modifier|*
+name|rgb
+parameter_list|)
+block|{
+name|gdouble
+name|luminance
+decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|rgb
+operator|!=
+name|NULL
+argument_list|,
+literal|0.0
+argument_list|)
+expr_stmt|;
+name|luminance
+operator|=
+name|GIMP_RGB_LUMINANCE
+argument_list|(
+name|rgb
+operator|->
+name|r
+argument_list|,
+name|rgb
+operator|->
+name|g
+argument_list|,
+name|rgb
+operator|->
+name|b
+argument_list|)
+expr_stmt|;
+return|return
+name|CLAMP
+argument_list|(
+name|luminance
+argument_list|,
+literal|0.0
+argument_list|,
+literal|1.0
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_rgb_luminance_uchar:  * @rgb:  *  * Return value: the luminous intensity in the range from 0 to 255.  *  * Since: GIMP 2.4  **/
+end_comment
+
+begin_function
+name|guchar
+DECL|function|gimp_rgb_luminance_uchar (const GimpRGB * rgb)
+name|gimp_rgb_luminance_uchar
+parameter_list|(
+specifier|const
+name|GimpRGB
+modifier|*
+name|rgb
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|rgb
+operator|!=
+name|NULL
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+return|return
+name|ROUND
+argument_list|(
+name|gimp_rgb_luminance
+argument_list|(
+name|rgb
+argument_list|)
+operator|*
+literal|255.0
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_rgb_intensity:  * @rgb:  *  * This function is deprecated! Use gimp_rgb_luminance() instead.  *  * Return value: the intensity in the range from 0.0 to 1.0.  **/
+end_comment
+
 begin_function
 name|gdouble
 DECL|function|gimp_rgb_intensity (const GimpRGB * rgb)
@@ -958,6 +1067,10 @@ argument_list|)
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_rgb_intensity_uchar:  * @rgb:  *  * This function is deprecated! Use gimp_rgb_luminance_uchar() instead.  *  * Return value: the intensity in the range from 0 to 255.  **/
+end_comment
 
 begin_function
 name|guchar

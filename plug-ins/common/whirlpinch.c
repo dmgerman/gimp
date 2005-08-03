@@ -86,7 +86,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f93eff0108
+DECL|struct|__anon27d690810108
 block|{
 DECL|member|whirl
 name|gdouble
@@ -2673,7 +2673,7 @@ index|[
 literal|2
 index|]
 operator|=
-name|gimp_rgb_intensity_uchar
+name|gimp_rgb_luminance_uchar
 argument_list|(
 operator|&
 name|background
@@ -2705,7 +2705,7 @@ index|[
 literal|2
 index|]
 operator|=
-name|gimp_rgb_intensity_uchar
+name|gimp_rgb_luminance_uchar
 argument_list|(
 operator|&
 name|background

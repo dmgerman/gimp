@@ -376,7 +376,7 @@ condition|)
 block|{
 name|pix
 operator|=
-name|GIMP_RGB_INTENSITY
+name|GIMP_RGB_LUMINANCE
 argument_list|(
 name|src
 index|[
@@ -431,7 +431,7 @@ condition|)
 block|{
 name|pix
 operator|=
-name|GIMP_RGB_INTENSITY
+name|GIMP_RGB_LUMINANCE
 argument_list|(
 name|src
 index|[

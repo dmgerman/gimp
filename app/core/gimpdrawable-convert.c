@@ -770,7 +770,7 @@ control|)
 block|{
 name|val
 operator|=
-name|GIMP_RGB_INTENSITY
+name|GIMP_RGB_LUMINANCE
 argument_list|(
 name|s
 index|[
@@ -923,7 +923,7 @@ literal|3
 expr_stmt|;
 name|val
 operator|=
-name|GIMP_RGB_INTENSITY
+name|GIMP_RGB_LUMINANCE
 argument_list|(
 name|cmap
 index|[

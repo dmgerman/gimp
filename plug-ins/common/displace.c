@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* Displace --- image filter plug-in for The Gimp image manipulation program  * Copyright (C) 1996 Stephen Robert Norris  * Much of the code taken from the pinch plug-in by 1996 Federico Mena Quintero  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * You can contact me at srn@flibble.cs.su.oz.au.  * Please send me any patches or enhancements to this code.  * You can contact the original The Gimp authors at gimp@xcf.berkeley.edu  *  * Extensive modifications to the dialog box, parameters, and some  * legibility stuff in displace() by Federico Mena Quintero ---  * federico@nuclecu.unam.mx.  If there are any bugs in these  * changes, they are my fault and not Stephen's.  *  * JTL: May 29th 1997  * Added (part of) the patch from Eiichi Takamori  *    -- the part which removes the border artefacts  * (http://ha1.seikyou.ne.jp/home/taka/gimp/displace/displace.html)  * Added ability to use transparency as the identity transformation  * (Full transparency is treated as if it was grey 0.5)  * and the possibility to use RGB/RGBA pictures where the intensity  * of the pixel is taken into account  *  * Joao S. O. Bueno, Dec. 2004:  *  * Added functionality to displace using polar coordinates -  * For a plain, non neutral map, works like whirl and pinch  */
+comment|/* Displace --- image filter plug-in for The Gimp image manipulation program  * Copyright (C) 1996 Stephen Robert Norris  * Much of the code taken from the pinch plug-in by 1996 Federico Mena Quintero  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * You can contact me at srn@flibble.cs.su.oz.au.  * Please send me any patches or enhancements to this code.  * You can contact the original The Gimp authors at gimp@xcf.berkeley.edu  *  * Extensive modifications to the dialog box, parameters, and some  * legibility stuff in displace() by Federico Mena Quintero ---  * federico@nuclecu.unam.mx.  If there are any bugs in these  * changes, they are my fault and not Stephen's.  *  * JTL: May 29th 1997  * Added (part of) the patch from Eiichi Takamori  *    -- the part which removes the border artefacts  * (http://ha1.seikyou.ne.jp/home/taka/gimp/displace/displace.html)  * Added ability to use transparency as the identity transformation  * (Full transparency is treated as if it was grey 0.5)  * and the possibility to use RGB/RGBA pictures where the luminance  * of the pixel is taken into account  *  * Joao S. O. Bueno, Dec. 2004:  *  * Added functionality to displace using polar coordinates -  * For a plain, non neutral map, works like whirl and pinch  */
 end_comment
 
 begin_comment
@@ -54,7 +54,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296c63620103
+DECL|enum|__anon291b337a0103
 block|{
 DECL|enumerator|CARTESIAN_MODE
 name|CARTESIAN_MODE
@@ -74,7 +74,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296c63620208
+DECL|struct|__anon291b337a0208
 block|{
 DECL|member|amount_x
 name|gdouble
@@ -532,7 +532,7 @@ literal|"Displace the contents of the specified drawable"
 argument_list|,
 literal|"Displaces the contents of the specified drawable "
 literal|"by the amounts specified by 'amount_x' and "
-literal|"'amount_y' multiplied by the intensity of "
+literal|"'amount_y' multiplied by the luminance of "
 literal|"corresponding pixels in the 'displace_map' "
 literal|"drawables.  If mode is polar coordinates"
 literal|"drawable is whirled and pinched according to map."
@@ -3448,7 +3448,7 @@ literal|3
 condition|)
 name|ret
 operator|=
-name|GIMP_RGB_INTENSITY
+name|GIMP_RGB_LUMINANCE
 argument_list|(
 name|pt
 index|[

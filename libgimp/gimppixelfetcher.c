@@ -498,7 +498,7 @@ index|[
 literal|0
 index|]
 operator|=
-name|gimp_rgb_intensity_uchar
+name|gimp_rgb_luminance_uchar
 argument_list|(
 name|color
 argument_list|)

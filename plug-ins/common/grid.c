@@ -227,7 +227,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296ccdc40108
+DECL|struct|__anon2a03256c0108
 block|{
 DECL|member|hwidth
 name|gint
@@ -1609,7 +1609,7 @@ index|[
 literal|0
 index|]
 operator|=
-name|gimp_rgb_intensity_uchar
+name|gimp_rgb_luminance_uchar
 argument_list|(
 operator|&
 name|grid_cfg
@@ -1622,7 +1622,7 @@ index|[
 literal|0
 index|]
 operator|=
-name|gimp_rgb_intensity_uchar
+name|gimp_rgb_luminance_uchar
 argument_list|(
 operator|&
 name|grid_cfg
@@ -1635,7 +1635,7 @@ index|[
 literal|0
 index|]
 operator|=
-name|gimp_rgb_intensity_uchar
+name|gimp_rgb_luminance_uchar
 argument_list|(
 operator|&
 name|grid_cfg

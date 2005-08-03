@@ -114,7 +114,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29eaec210108
+DECL|struct|__anon29b05d910108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -161,7 +161,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29eaec210208
+DECL|struct|__anon29b05d910208
 block|{
 DECL|member|run
 name|gboolean
@@ -4532,7 +4532,7 @@ name|background
 operator|.
 name|gray
 operator|=
-name|gimp_rgb_intensity_uchar
+name|gimp_rgb_luminance_uchar
 argument_list|(
 operator|&
 name|color

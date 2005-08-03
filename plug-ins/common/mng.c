@@ -225,7 +225,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2977a2600103
+DECL|enum|__anon28a03b3c0103
 block|{
 DECL|enumerator|CHUNKS_PNG_D
 name|CHUNKS_PNG_D
@@ -244,7 +244,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2977a2600203
+DECL|enum|__anon28a03b3c0203
 block|{
 DECL|enumerator|DISPOSE_COMBINE
 name|DISPOSE_COMBINE
@@ -2380,7 +2380,7 @@ if|#
 directive|if
 literal|0
 comment|/* how do we get this to work? */
-block|if (mng_data.bkgd)         {                 GimpRGB bgcolor;                 guchar red, green, blue;                  gimp_context_get_background(&bgcolor);                 gimp_rgb_get_uchar(&bgcolor,&red,&green,&blue);                  if ((ret = mng_putchunk_back(handle, red, green, blue, MNG_BACKGROUNDCOLOR_MANDATORY, 0, MNG_BACKGROUNDIMAGE_NOTILE)) != MNG_NOERROR)                 {                         g_warning("Unable to mng_putchunk_back() in mng_save_image()");                         mng_cleanup(&handle);                         fclose(userdata->fp);                         g_free(userdata);                         return 0;                 }                  if ((ret = mng_putchunk_bkgd(handle, MNG_FALSE, 2, 0, gimp_rgb_intensity_uchar(&bgcolor), red, green, blue)) != MNG_NOERROR)                 {                         g_warning("Unable to mng_putchunk_bkgd() in mng_save_image()");                         mng_cleanup(&handle);                         fclose(userdata->fp);                         g_free(userdata);                         return 0;                 }         }
+block|if (mng_data.bkgd)         {                 GimpRGB bgcolor;                 guchar red, green, blue;                  gimp_context_get_background(&bgcolor);                 gimp_rgb_get_uchar(&bgcolor,&red,&green,&blue);                  if ((ret = mng_putchunk_back(handle, red, green, blue,                                              MNG_BACKGROUNDCOLOR_MANDATORY,                                              0, MNG_BACKGROUNDIMAGE_NOTILE)) != MNG_NOERROR)                 {                         g_warning("Unable to mng_putchunk_back() in mng_save_image()");                         mng_cleanup(&handle);                         fclose(userdata->fp);                         g_free(userdata);                         return 0;                 }                  if ((ret = mng_putchunk_bkgd(handle, MNG_FALSE, 2, 0,                                              gimp_rgb_luminance_uchar(&bgcolor),                                              red, green, blue)) != MNG_NOERROR)                 {                         g_warning("Unable to mng_putchunk_bkgd() in mng_save_image()");                         mng_cleanup(&handle);                         fclose(userdata->fp);                         g_free(userdata);                         return 0;                 }         }
 endif|#
 directive|endif
 if|if

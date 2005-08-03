@@ -657,7 +657,7 @@ block|{
 name|gint
 name|luminosity
 init|=
-name|GIMP_RGB_INTENSITY
+name|GIMP_RGB_LUMINANCE
 argument_list|(
 name|s
 index|[

@@ -4083,10 +4083,10 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Intensity: %0.3f    Opacity: %0.3f"
+literal|"Luminance: %0.3f    Opacity: %0.3f"
 argument_list|)
 argument_list|,
-name|GIMP_RGB_INTENSITY
+name|GIMP_RGB_LUMINANCE
 argument_list|(
 name|rgb
 operator|.

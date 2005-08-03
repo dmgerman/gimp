@@ -95,7 +95,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8c04620103
+DECL|enum|__anon2b0bc0640103
 block|{
 DECL|enumerator|LINEAR
 name|LINEAR
@@ -113,7 +113,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8c04620203
+DECL|enum|__anon2b0bc0640203
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE
@@ -129,7 +129,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8c04620308
+DECL|struct|__anon2b0bc0640308
 block|{
 DECL|member|bumpmap_id
 name|gint32
@@ -188,7 +188,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8c04620408
+DECL|struct|__anon2b0bc0640408
 block|{
 DECL|member|lx
 DECL|member|ly
@@ -233,7 +233,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8c04620508
+DECL|struct|__anon2b0bc0640508
 block|{
 DECL|member|mouse_x
 name|gint
@@ -3154,7 +3154,7 @@ call|(
 name|gint
 call|)
 argument_list|(
-name|GIMP_RGB_INTENSITY
+name|GIMP_RGB_LUMINANCE
 argument_list|(
 name|row
 index|[
@@ -3201,7 +3201,7 @@ call|(
 name|gint
 call|)
 argument_list|(
-name|GIMP_RGB_INTENSITY
+name|GIMP_RGB_LUMINANCE
 argument_list|(
 name|row
 index|[
