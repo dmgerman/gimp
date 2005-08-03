@@ -1758,7 +1758,7 @@ block|}
 comment|/* marker in triangle */
 name|col
 operator|=
-name|gimp_rgb_intensity
+name|gimp_rgb_luminance
 argument_list|(
 operator|&
 name|selector
