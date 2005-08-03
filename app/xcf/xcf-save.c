@@ -6469,7 +6469,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c09324c0108
+DECL|struct|__anon277a402f0108
 block|{
 DECL|member|info
 name|XcfInfo
@@ -6743,12 +6743,6 @@ name|guint8
 name|state
 decl_stmt|;
 name|guint32
-name|num_points
-decl_stmt|;
-name|guint32
-name|closed
-decl_stmt|;
-name|guint32
 name|version
 decl_stmt|;
 name|guint32
@@ -6760,6 +6754,12 @@ decl_stmt|;
 name|GimpVectorsCompatPoint
 modifier|*
 name|points
+decl_stmt|;
+name|gint32
+name|num_points
+decl_stmt|;
+name|gint32
+name|closed
 decl_stmt|;
 name|gint
 name|i

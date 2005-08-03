@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27fcf0600103
+DECL|enum|__anon2b2cf15a0103
 block|{
 DECL|enumerator|GIMP_VECTORS_COMPAT_ANCHOR
 name|GIMP_VECTORS_COMPAT_ANCHOR
@@ -542,18 +542,18 @@ end_function
 begin_function
 name|GimpVectorsCompatPoint
 modifier|*
-DECL|function|gimp_vectors_compat_get_points (GimpVectors * vectors,guint32 * n_points,guint32 * closed)
+DECL|function|gimp_vectors_compat_get_points (GimpVectors * vectors,gint32 * n_points,gint32 * closed)
 name|gimp_vectors_compat_get_points
 parameter_list|(
 name|GimpVectors
 modifier|*
 name|vectors
 parameter_list|,
-name|guint32
+name|gint32
 modifier|*
 name|n_points
 parameter_list|,
-name|guint32
+name|gint32
 modifier|*
 name|closed
 parameter_list|)

@@ -93,11 +93,11 @@ name|GimpVectors
 modifier|*
 name|vectors
 parameter_list|,
-name|guint32
+name|gint32
 modifier|*
 name|n_points
 parameter_list|,
-name|guint32
+name|gint32
 modifier|*
 name|closed
 parameter_list|)
