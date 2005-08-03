@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bcae30d0103
+DECL|enum|__anon2c0c4f240103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -48,7 +48,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bcae30d0203
+DECL|enum|__anon2c0c4f240203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -646,7 +646,7 @@ literal|"tooltip"
 argument_list|,
 name|tooltip
 argument_list|,
-literal|"stock_id"
+literal|"stock-id"
 argument_list|,
 name|stock_id
 argument_list|,

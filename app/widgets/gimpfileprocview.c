@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b29fa7f0103
+DECL|enum|__anon27986d830103
 block|{
 DECL|enumerator|COLUMN_PROC
 name|COLUMN_PROC
@@ -93,7 +93,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b29fa7f0203
+DECL|enum|__anon27986d830203
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -488,7 +488,7 @@ literal|"model"
 argument_list|,
 name|store
 argument_list|,
-literal|"rules_hint"
+literal|"rules-hint"
 argument_list|,
 name|TRUE
 argument_list|,
@@ -848,7 +848,7 @@ name|column
 argument_list|,
 name|cell
 argument_list|,
-literal|"stock_id"
+literal|"stock-id"
 argument_list|,
 name|COLUMN_STOCK_ID
 argument_list|,

@@ -93,7 +93,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b519d6a0103
+DECL|enum|__anon2afca2d50103
 block|{
 DECL|enumerator|PATH_COLUMN
 name|PATH_COLUMN
@@ -985,7 +985,7 @@ name|gimp
 operator|->
 name|module_db
 argument_list|,
-literal|"module_modified"
+literal|"module-modified"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

@@ -649,11 +649,11 @@ name|g_object_new
 argument_list|(
 name|GIMP_TYPE_MESSAGE_BOX
 argument_list|,
-literal|"stock_id"
+literal|"stock-id"
 argument_list|,
 name|GIMP_STOCK_WILBER_EEK
 argument_list|,
-literal|"border_width"
+literal|"border-width"
 argument_list|,
 literal|12
 argument_list|,

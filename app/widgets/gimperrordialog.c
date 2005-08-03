@@ -907,7 +907,7 @@ name|g_object_new
 argument_list|(
 name|GIMP_TYPE_MESSAGE_BOX
 argument_list|,
-literal|"stock_id"
+literal|"stock-id"
 argument_list|,
 name|stock_id
 argument_list|,

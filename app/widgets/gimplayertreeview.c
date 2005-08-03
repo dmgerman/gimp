@@ -2280,12 +2280,12 @@ name|gtk_widget_style_get
 argument_list|(
 name|widget
 argument_list|,
-literal|"content_spacing"
+literal|"content-spacing"
 argument_list|,
 operator|&
 name|content_spacing
 argument_list|,
-literal|"button_spacing"
+literal|"button-spacing"
 argument_list|,
 operator|&
 name|button_spacing

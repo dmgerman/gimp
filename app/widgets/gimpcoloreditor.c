@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2acf40a10103
+DECL|enum|__anon2bb98a3c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -718,17 +718,17 @@ argument_list|(
 name|editor
 argument_list|)
 argument_list|,
-literal|"content_spacing"
+literal|"content-spacing"
 argument_list|,
 operator|&
 name|content_spacing
 argument_list|,
-literal|"button_spacing"
+literal|"button-spacing"
 argument_list|,
 operator|&
 name|button_spacing
 argument_list|,
-literal|"button_icon_size"
+literal|"button-icon-size"
 argument_list|,
 operator|&
 name|button_icon_size
@@ -1216,7 +1216,7 @@ name|g_signal_connect
 argument_list|(
 name|button
 argument_list|,
-literal|"color_picked"
+literal|"color-picked"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

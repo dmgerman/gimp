@@ -972,11 +972,11 @@ literal|"role"
 argument_list|,
 literal|"progress"
 argument_list|,
-literal|"skip_taskbar_hint"
+literal|"skip-taskbar-hint"
 argument_list|,
 name|TRUE
 argument_list|,
-literal|"skip_pager_hint"
+literal|"skip-pager-hint"
 argument_list|,
 name|TRUE
 argument_list|,

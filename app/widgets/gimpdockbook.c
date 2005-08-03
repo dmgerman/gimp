@@ -129,7 +129,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28939e060103
+DECL|enum|__anon2ae295d10103
 block|{
 DECL|enumerator|DOCKABLE_ADDED
 name|DOCKABLE_ADDED
@@ -488,25 +488,21 @@ block|{
 name|GObjectClass
 modifier|*
 name|object_class
-decl_stmt|;
-name|GtkWidgetClass
-modifier|*
-name|widget_class
-decl_stmt|;
-name|object_class
-operator|=
+init|=
 name|G_OBJECT_CLASS
 argument_list|(
 name|klass
 argument_list|)
-expr_stmt|;
+decl_stmt|;
+name|GtkWidgetClass
+modifier|*
 name|widget_class
-operator|=
+init|=
 name|GTK_WIDGET_CLASS
 argument_list|(
 name|klass
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|parent_class
 operator|=
 name|g_type_class_peek_parent
@@ -871,7 +867,7 @@ name|gtk_widget_style_get
 argument_list|(
 name|widget
 argument_list|,
-literal|"tab_border"
+literal|"tab-border"
 argument_list|,
 operator|&
 name|tab_border
@@ -883,7 +879,7 @@ name|g_object_set
 argument_list|(
 name|widget
 argument_list|,
-literal|"tab_border"
+literal|"tab-border"
 argument_list|,
 name|tab_border
 argument_list|,
@@ -1539,7 +1535,7 @@ argument_list|(
 name|dockbook
 argument_list|)
 argument_list|,
-literal|"tab_icon_size"
+literal|"tab-icon-size"
 argument_list|,
 operator|&
 name|tab_size
@@ -1655,7 +1651,7 @@ name|g_signal_connect
 argument_list|(
 name|tab_widget
 argument_list|,
-literal|"drag_begin"
+literal|"drag-begin"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1669,7 +1665,7 @@ name|g_signal_connect
 argument_list|(
 name|tab_widget
 argument_list|,
-literal|"drag_end"
+literal|"drag-end"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1704,7 +1700,7 @@ name|g_signal_connect
 argument_list|(
 name|dockable
 argument_list|,
-literal|"drag_begin"
+literal|"drag-begin"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1718,7 +1714,7 @@ name|g_signal_connect
 argument_list|(
 name|dockable
 argument_list|,
-literal|"drag_end"
+literal|"drag-end"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1751,7 +1747,7 @@ name|g_signal_connect
 argument_list|(
 name|tab_widget
 argument_list|,
-literal|"drag_drop"
+literal|"drag-drop"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

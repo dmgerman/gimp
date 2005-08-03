@@ -116,7 +116,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c69c2540103
+DECL|enum|__anon2baf367c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1652,11 +1652,11 @@ literal|"label"
 argument_list|,
 name|text
 argument_list|,
-literal|"use_markup"
+literal|"use-markup"
 argument_list|,
 name|TRUE
 argument_list|,
-literal|"use_underline"
+literal|"use-underline"
 argument_list|,
 name|TRUE
 argument_list|,

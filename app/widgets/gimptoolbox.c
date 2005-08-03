@@ -2093,12 +2093,12 @@ name|gtk_widget_style_get
 argument_list|(
 name|widget
 argument_list|,
-literal|"tool_icon_size"
+literal|"tool-icon-size"
 argument_list|,
 operator|&
 name|tool_icon_size
 argument_list|,
-literal|"button_relief"
+literal|"button-relief"
 argument_list|,
 operator|&
 name|relief

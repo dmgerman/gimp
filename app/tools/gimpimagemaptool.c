@@ -1152,11 +1152,11 @@ literal|"label"
 argument_list|,
 name|GTK_STOCK_OPEN
 argument_list|,
-literal|"use_stock"
+literal|"use-stock"
 argument_list|,
 name|TRUE
 argument_list|,
-literal|"use_underline"
+literal|"use-underline"
 argument_list|,
 name|TRUE
 argument_list|,
@@ -1185,7 +1185,7 @@ name|image_map_tool
 operator|->
 name|load_button
 argument_list|,
-literal|"extended_clicked"
+literal|"extended-clicked"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1296,7 +1296,7 @@ name|image_map_tool
 operator|->
 name|save_button
 argument_list|,
-literal|"extended_clicked"
+literal|"extended-clicked"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

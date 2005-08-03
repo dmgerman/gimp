@@ -647,7 +647,7 @@ operator|->
 name|scrolled_win
 argument_list|)
 argument_list|,
-literal|"scrollbar_spacing"
+literal|"scrollbar-spacing"
 argument_list|,
 operator|&
 name|scrollbar_width

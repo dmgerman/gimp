@@ -6000,7 +6000,7 @@ name|g_signal_connect_swapped
 argument_list|(
 name|sel_button
 argument_list|,
-literal|"extended_clicked"
+literal|"extended-clicked"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

@@ -1535,11 +1535,11 @@ literal|"label"
 argument_list|,
 name|stock_id
 argument_list|,
-literal|"use_stock"
+literal|"use-stock"
 argument_list|,
 name|TRUE
 argument_list|,
-literal|"draw_indicator"
+literal|"draw-indicator"
 argument_list|,
 name|FALSE
 argument_list|,

@@ -3018,7 +3018,7 @@ name|gtk_widget_style_get
 argument_list|(
 name|bbox
 argument_list|,
-literal|"child_internal_pad_x"
+literal|"child-internal-pad-x"
 argument_list|,
 operator|&
 name|padding

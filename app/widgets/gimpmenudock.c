@@ -1125,12 +1125,12 @@ name|gtk_widget_style_get
 argument_list|(
 name|widget
 argument_list|,
-literal|"minimal_width"
+literal|"minimal-width"
 argument_list|,
 operator|&
 name|minimal_width
 argument_list|,
-literal|"menu_preview_size"
+literal|"menu-preview-size"
 argument_list|,
 operator|&
 name|menu_preview_size
@@ -1169,12 +1169,12 @@ name|menu_dock
 operator|->
 name|auto_button
 argument_list|,
-literal|"focus_line_width"
+literal|"focus-line-width"
 argument_list|,
 operator|&
 name|focus_line_width
 argument_list|,
-literal|"focus_padding"
+literal|"focus-padding"
 argument_list|,
 operator|&
 name|focus_padding
@@ -1589,7 +1589,7 @@ name|g_signal_connect
 argument_list|(
 name|dockbook
 argument_list|,
-literal|"dockable_added"
+literal|"dockable-added"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1603,7 +1603,7 @@ name|g_signal_connect
 argument_list|(
 name|dockbook
 argument_list|,
-literal|"dockable_removed"
+literal|"dockable-removed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1617,7 +1617,7 @@ name|g_signal_connect
 argument_list|(
 name|dockbook
 argument_list|,
-literal|"dockable_reordered"
+literal|"dockable-reordered"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

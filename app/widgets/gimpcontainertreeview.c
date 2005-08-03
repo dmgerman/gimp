@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon298611570103
+DECL|enum|__anon2b8230c00103
 block|{
 DECL|enumerator|COLUMN_RENDERER
 name|COLUMN_RENDERER
@@ -1200,7 +1200,7 @@ name|tree_view
 operator|->
 name|view
 argument_list|,
-literal|"drag_leave"
+literal|"drag-leave"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1216,7 +1216,7 @@ name|tree_view
 operator|->
 name|view
 argument_list|,
-literal|"drag_motion"
+literal|"drag-motion"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1232,7 +1232,7 @@ name|tree_view
 operator|->
 name|view
 argument_list|,
-literal|"drag_drop"
+literal|"drag-drop"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1248,7 +1248,7 @@ name|tree_view
 operator|->
 name|view
 argument_list|,
-literal|"drag_data_received"
+literal|"drag-data-received"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

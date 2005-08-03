@@ -95,7 +95,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b31ec340103
+DECL|enum|__anon290adce80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -656,7 +656,7 @@ name|widget_class
 argument_list|,
 name|g_param_spec_int
 argument_list|(
-literal|"content_spacing"
+literal|"content-spacing"
 argument_list|,
 name|NULL
 argument_list|,
@@ -678,7 +678,7 @@ name|widget_class
 argument_list|,
 name|g_param_spec_int
 argument_list|(
-literal|"button_spacing"
+literal|"button-spacing"
 argument_list|,
 name|NULL
 argument_list|,
@@ -700,7 +700,7 @@ name|widget_class
 argument_list|,
 name|g_param_spec_enum
 argument_list|(
-literal|"button_icon_size"
+literal|"button-icon-size"
 argument_list|,
 name|NULL
 argument_list|,
@@ -1400,7 +1400,7 @@ name|gtk_widget_style_get
 argument_list|(
 name|widget
 argument_list|,
-literal|"content_spacing"
+literal|"content-spacing"
 argument_list|,
 operator|&
 name|content_spacing
@@ -1997,7 +1997,7 @@ name|g_signal_connect
 argument_list|(
 name|button
 argument_list|,
-literal|"extended_clicked"
+literal|"extended-clicked"
 argument_list|,
 name|extended_callback
 argument_list|,
@@ -2862,7 +2862,7 @@ name|g_signal_connect
 argument_list|(
 name|button
 argument_list|,
-literal|"extended_clicked"
+literal|"extended-clicked"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3030,12 +3030,12 @@ argument_list|(
 name|editor
 argument_list|)
 argument_list|,
-literal|"button_icon_size"
+literal|"button-icon-size"
 argument_list|,
 operator|&
 name|button_icon_size
 argument_list|,
-literal|"button_spacing"
+literal|"button-spacing"
 argument_list|,
 operator|&
 name|button_spacing
@@ -3178,12 +3178,12 @@ argument_list|(
 name|editor
 argument_list|)
 argument_list|,
-literal|"button_icon_size"
+literal|"button-icon-size"
 argument_list|,
 operator|&
 name|button_icon_size
 argument_list|,
-literal|"button_spacing"
+literal|"button-spacing"
 argument_list|,
 operator|&
 name|button_spacing

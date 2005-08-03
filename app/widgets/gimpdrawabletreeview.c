@@ -1162,7 +1162,7 @@ name|view
 operator|->
 name|gimage
 argument_list|,
-literal|"floating_selection_changed"
+literal|"floating-selection-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

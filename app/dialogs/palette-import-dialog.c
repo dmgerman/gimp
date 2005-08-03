@@ -140,7 +140,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29f4f2430103
+DECL|enum|__anon297e84070103
 block|{
 DECL|enumerator|GRADIENT_IMPORT
 name|GRADIENT_IMPORT
@@ -1277,12 +1277,12 @@ name|import_dialog
 operator|->
 name|gradient_combo
 argument_list|,
-literal|"focus_line_width"
+literal|"focus-line-width"
 argument_list|,
 operator|&
 name|focus_line_width
 argument_list|,
-literal|"focus_padding"
+literal|"focus-padding"
 argument_list|,
 operator|&
 name|focus_padding

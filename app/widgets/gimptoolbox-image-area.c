@@ -331,7 +331,7 @@ name|g_signal_connect
 argument_list|(
 name|image_view
 argument_list|,
-literal|"set_viewable"
+literal|"set-viewable"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

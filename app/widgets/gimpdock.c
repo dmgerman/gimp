@@ -129,7 +129,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b01a1770103
+DECL|enum|__anon2bddc3290103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -145,7 +145,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b01a1770203
+DECL|enum|__anon2bddc3290203
 block|{
 DECL|enumerator|BOOK_ADDED
 name|BOOK_ADDED
@@ -2876,7 +2876,7 @@ argument_list|(
 name|dock
 argument_list|)
 argument_list|,
-literal|"separator_height"
+literal|"separator-height"
 argument_list|,
 operator|&
 name|separator_height
@@ -2961,7 +2961,7 @@ name|g_signal_connect
 argument_list|(
 name|event_box
 argument_list|,
-literal|"drag_leave"
+literal|"drag-leave"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2975,7 +2975,7 @@ name|g_signal_connect
 argument_list|(
 name|event_box
 argument_list|,
-literal|"drag_motion"
+literal|"drag-motion"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2989,7 +2989,7 @@ name|g_signal_connect
 argument_list|(
 name|event_box
 argument_list|,
-literal|"drag_drop"
+literal|"drag-drop"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

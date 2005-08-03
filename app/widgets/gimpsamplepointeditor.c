@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a256860103
+DECL|enum|__anon275aeb840103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -602,7 +602,7 @@ argument_list|(
 name|editor
 argument_list|)
 argument_list|,
-literal|"content_spacing"
+literal|"content-spacing"
 argument_list|,
 operator|&
 name|content_spacing
@@ -1088,7 +1088,7 @@ name|gtk_widget_style_get
 argument_list|(
 name|widget
 argument_list|,
-literal|"content_spacing"
+literal|"content-spacing"
 argument_list|,
 operator|&
 name|content_spacing
