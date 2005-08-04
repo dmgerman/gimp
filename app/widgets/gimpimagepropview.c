@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon295161960103
+DECL|enum|__anon2a4187a30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -698,12 +698,24 @@ argument_list|(
 name|table
 argument_list|,
 name|row
-operator|++
 argument_list|,
 name|_
 argument_list|(
 literal|"Color space:"
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_table_set_row_spacing
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|view
+argument_list|)
+argument_list|,
+name|row
+operator|++
+argument_list|,
+literal|12
 argument_list|)
 expr_stmt|;
 name|view
@@ -749,12 +761,24 @@ argument_list|(
 name|table
 argument_list|,
 name|row
-operator|++
 argument_list|,
 name|_
 argument_list|(
 literal|"Redo steps:"
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_table_set_row_spacing
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|view
+argument_list|)
+argument_list|,
+name|row
+operator|++
+argument_list|,
+literal|12
 argument_list|)
 expr_stmt|;
 name|view
@@ -1702,18 +1726,6 @@ argument_list|,
 name|buf
 argument_list|)
 expr_stmt|;
-name|gtk_table_set_row_spacing
-argument_list|(
-name|GTK_TABLE
-argument_list|(
-name|view
-argument_list|)
-argument_list|,
-literal|3
-argument_list|,
-literal|6
-argument_list|)
-expr_stmt|;
 comment|/*  size in memory  */
 name|gimp_image_prop_view_label_set_memsize
 argument_list|(
@@ -1748,18 +1760,6 @@ argument_list|,
 name|image
 operator|->
 name|redo_stack
-argument_list|)
-expr_stmt|;
-name|gtk_table_set_row_spacing
-argument_list|(
-name|GTK_TABLE
-argument_list|(
-name|view
-argument_list|)
-argument_list|,
-literal|6
-argument_list|,
-literal|6
 argument_list|)
 expr_stmt|;
 comment|/*  number of layers  */
