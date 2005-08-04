@@ -196,7 +196,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"dummy_param"
+literal|"dummy-param"
 block|,
 literal|"dummy parameter"
 block|}
@@ -212,7 +212,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"raw_filename"
+literal|"raw-filename"
 block|,
 literal|"The basename of the file, in UTF-8"
 block|}
@@ -341,7 +341,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"dummy_param"
+literal|"dummy-param"
 block|,
 literal|"dummy parameter"
 block|}
