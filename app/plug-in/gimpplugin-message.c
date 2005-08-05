@@ -3201,7 +3201,7 @@ index|]
 operator|.
 name|name
 operator|=
-name|g_strdup
+name|gimp_canonicalize_identifier
 argument_list|(
 name|proc_install
 operator|->
@@ -3278,7 +3278,7 @@ index|]
 operator|.
 name|name
 operator|=
-name|g_strdup
+name|gimp_canonicalize_identifier
 argument_list|(
 name|proc_install
 operator|->
