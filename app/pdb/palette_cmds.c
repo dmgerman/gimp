@@ -1030,7 +1030,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"new_name"
+literal|"new-name"
 block|,
 literal|"The new name of the palette"
 block|}
@@ -1737,7 +1737,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_colors"
+literal|"num-colors"
 block|,
 literal|"The number of colors in the palette"
 block|}
@@ -1960,7 +1960,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_columns"
+literal|"num-columns"
 block|,
 literal|"The number of columns used to display this palette"
 block|}
@@ -2483,7 +2483,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"entry_name"
+literal|"entry-name"
 block|,
 literal|"The name of the entry"
 block|}
@@ -2510,7 +2510,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"entry_num"
+literal|"entry-num"
 block|,
 literal|"The index of the added entry"
 block|}
@@ -2764,7 +2764,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"entry_num"
+literal|"entry-num"
 block|,
 literal|"The index of the added entry"
 block|}
@@ -3036,7 +3036,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"entry_num"
+literal|"entry-num"
 block|,
 literal|"The entry to retrieve"
 block|}
@@ -3330,7 +3330,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"entry_num"
+literal|"entry-num"
 block|,
 literal|"The entry to retrieve"
 block|}
@@ -3604,7 +3604,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"entry_num"
+literal|"entry-num"
 block|,
 literal|"The entry to retrieve"
 block|}
@@ -3623,7 +3623,7 @@ block|{
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"entry_name"
+literal|"entry-name"
 block|,
 literal|"The name requested"
 block|}
@@ -3932,7 +3932,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"entry_num"
+literal|"entry-num"
 block|,
 literal|"The entry to retrieve"
 block|}
@@ -3940,7 +3940,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"entry_name"
+literal|"entry-name"
 block|,
 literal|"The new name"
 block|}

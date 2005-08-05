@@ -764,7 +764,7 @@ block|{
 block|{
 name|GIMP_PDB_IMAGE
 block|,
-literal|"old_image"
+literal|"old-image"
 block|,
 literal|"The old image (must have at least one display)"
 block|}
@@ -772,7 +772,7 @@ block|,
 block|{
 name|GIMP_PDB_IMAGE
 block|,
-literal|"new_image"
+literal|"new-image"
 block|,
 literal|"The new image (must not have a display)"
 block|}

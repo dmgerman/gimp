@@ -1138,7 +1138,7 @@ block|{
 block|{
 name|GIMP_PDB_CHANNEL
 block|,
-literal|"channel_copy"
+literal|"channel-copy"
 block|,
 literal|"The newly copied channel"
 block|}
@@ -1635,7 +1635,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"show_masked"
+literal|"show-masked"
 block|,
 literal|"The channel composite method"
 block|}
@@ -1821,7 +1821,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"show_masked"
+literal|"show-masked"
 block|,
 literal|"The new channel composite method"
 block|}

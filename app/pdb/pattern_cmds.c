@@ -692,7 +692,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_color_bytes"
+literal|"num-color-bytes"
 block|,
 literal|"Number of pattern bytes"
 block|}
@@ -700,7 +700,7 @@ block|,
 block|{
 name|GIMP_PDB_INT8ARRAY
 block|,
-literal|"color_bytes"
+literal|"color-bytes"
 block|,
 literal|"The pattern data."
 block|}

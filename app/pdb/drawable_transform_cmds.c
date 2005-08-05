@@ -633,7 +633,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"flip_type"
+literal|"flip-type"
 block|,
 literal|"Type of flip: GIMP_ORIENTATION_HORIZONTAL (0) or GIMP_ORIENTATION_VERTICAL (1)"
 block|}
@@ -641,7 +641,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"auto_center"
+literal|"auto-center"
 block|,
 literal|"Whether to automatically position the axis in the selection center"
 block|}
@@ -657,7 +657,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"clip_result"
+literal|"clip-result"
 block|,
 literal|"Whether to clip results"
 block|}
@@ -1196,7 +1196,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"transform_direction"
+literal|"transform-direction"
 block|,
 literal|"Direction of Transformation: { GIMP_TRANSFORM_FORWARD (0), GIMP_TRANSFORM_BACKWARD (1) }"
 block|}
@@ -1220,7 +1220,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"recursion_level"
+literal|"recursion-level"
 block|,
 literal|"Level of recursion (3 is a nice default)"
 block|}
@@ -1228,7 +1228,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"clip_result"
+literal|"clip-result"
 block|,
 literal|"Whether to clip results"
 block|}
@@ -1712,7 +1712,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"clip_result"
+literal|"clip-result"
 block|,
 literal|"Whether to clip results"
 block|}
@@ -2377,7 +2377,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"transform_direction"
+literal|"transform-direction"
 block|,
 literal|"Direction of Transformation: { GIMP_TRANSFORM_FORWARD (0), GIMP_TRANSFORM_BACKWARD (1) }"
 block|}
@@ -2401,7 +2401,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"recursion_level"
+literal|"recursion-level"
 block|,
 literal|"Level of recursion (3 is a nice default)"
 block|}
@@ -2409,7 +2409,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"clip_result"
+literal|"clip-result"
 block|,
 literal|"Whether to clip results"
 block|}
@@ -3019,7 +3019,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"clip_result"
+literal|"clip-result"
 block|,
 literal|"Whether to clip results"
 block|}
@@ -3383,7 +3383,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"rotate_type"
+literal|"rotate-type"
 block|,
 literal|"Type of rotation: GIMP_ROTATE_90 (0), GIMP_ROTATE_180 (1), GIMP_ROTATE_270 (2)"
 block|}
@@ -3391,7 +3391,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"auto_center"
+literal|"auto-center"
 block|,
 literal|"Whether to automatically rotate around the selection center"
 block|}
@@ -3399,7 +3399,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"center_x"
+literal|"center-x"
 block|,
 literal|"The hor. coordinate of the center of rotation"
 block|}
@@ -3407,7 +3407,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"center_y"
+literal|"center-y"
 block|,
 literal|"The vert. coordinate of the center of rotation"
 block|}
@@ -3415,7 +3415,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"clip_result"
+literal|"clip-result"
 block|,
 literal|"Whether to clip results"
 block|}
@@ -3945,7 +3945,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"auto_center"
+literal|"auto-center"
 block|,
 literal|"Whether to automatically rotate around the selection center"
 block|}
@@ -3953,7 +3953,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"center_x"
+literal|"center-x"
 block|,
 literal|"The hor. coordinate of the center of rotation"
 block|}
@@ -3961,7 +3961,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"center_y"
+literal|"center-y"
 block|,
 literal|"The vert. coordinate of the center of rotation"
 block|}
@@ -3969,7 +3969,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"transform_direction"
+literal|"transform-direction"
 block|,
 literal|"Direction of Transformation: { GIMP_TRANSFORM_FORWARD (0), GIMP_TRANSFORM_BACKWARD (1) }"
 block|}
@@ -3993,7 +3993,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"recursion_level"
+literal|"recursion-level"
 block|,
 literal|"Level of recursion (3 is a nice default)"
 block|}
@@ -4001,7 +4001,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"clip_result"
+literal|"clip-result"
 block|,
 literal|"Whether to clip results"
 block|}
@@ -4468,7 +4468,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"auto_center"
+literal|"auto-center"
 block|,
 literal|"Whether to automatically rotate around the selection center"
 block|}
@@ -4476,7 +4476,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"center_x"
+literal|"center-x"
 block|,
 literal|"The hor. coordinate of the center of rotation"
 block|}
@@ -4484,7 +4484,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"center_y"
+literal|"center-y"
 block|,
 literal|"The vert. coordinate of the center of rotation"
 block|}
@@ -4500,7 +4500,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"clip_result"
+literal|"clip-result"
 block|,
 literal|"Whether to clip results"
 block|}
@@ -5089,7 +5089,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"transform_direction"
+literal|"transform-direction"
 block|,
 literal|"Direction of Transformation: { GIMP_TRANSFORM_FORWARD (0), GIMP_TRANSFORM_BACKWARD (1) }"
 block|}
@@ -5113,7 +5113,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"recursion_level"
+literal|"recursion-level"
 block|,
 literal|"Level of recursion (3 is a nice default)"
 block|}
@@ -5121,7 +5121,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"clip_result"
+literal|"clip-result"
 block|,
 literal|"Whether to clip results"
 block|}
@@ -5655,7 +5655,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"clip_result"
+literal|"clip-result"
 block|,
 literal|"Whether to clip results"
 block|}
@@ -6144,7 +6144,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"shear_type"
+literal|"shear-type"
 block|,
 literal|"Type of shear: GIMP_ORIENTATION_HORIZONTAL (0) or GIMP_ORIENTATION_VERTICAL (1)"
 block|}
@@ -6160,7 +6160,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"transform_direction"
+literal|"transform-direction"
 block|,
 literal|"Direction of Transformation: { GIMP_TRANSFORM_FORWARD (0), GIMP_TRANSFORM_BACKWARD (1) }"
 block|}
@@ -6184,7 +6184,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"recursion_level"
+literal|"recursion-level"
 block|,
 literal|"Level of recursion (3 is a nice default)"
 block|}
@@ -6192,7 +6192,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"clip_result"
+literal|"clip-result"
 block|,
 literal|"Whether to clip results"
 block|}
@@ -6618,7 +6618,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"shear_type"
+literal|"shear-type"
 block|,
 literal|"Type of shear: GIMP_ORIENTATION_HORIZONTAL (0) or GIMP_ORIENTATION_VERTICAL (1)"
 block|}
@@ -6642,7 +6642,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"clip_result"
+literal|"clip-result"
 block|,
 literal|"Whether to clip results"
 block|}
@@ -7209,7 +7209,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"source_x"
+literal|"source-x"
 block|,
 literal|"X coordinate of the transformation center"
 block|}
@@ -7217,7 +7217,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"source_y"
+literal|"source-y"
 block|,
 literal|"Y coordinate of the transformation center"
 block|}
@@ -7225,7 +7225,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"scale_x"
+literal|"scale-x"
 block|,
 literal|"Amount to scale in x direction"
 block|}
@@ -7233,7 +7233,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"scale_y"
+literal|"scale-y"
 block|,
 literal|"Amount to scale in y direction"
 block|}
@@ -7249,7 +7249,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"dest_x"
+literal|"dest-x"
 block|,
 literal|"X coordinate of where the center goes"
 block|}
@@ -7257,7 +7257,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"dest_y"
+literal|"dest-y"
 block|,
 literal|"Y coordinate of where the center goes"
 block|}
@@ -7265,7 +7265,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"transform_direction"
+literal|"transform-direction"
 block|,
 literal|"Direction of Transformation: { GIMP_TRANSFORM_FORWARD (0), GIMP_TRANSFORM_BACKWARD (1) }"
 block|}
@@ -7289,7 +7289,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"recursion_level"
+literal|"recursion-level"
 block|,
 literal|"Level of recursion (3 is a nice default)"
 block|}
@@ -7297,7 +7297,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"clip_result"
+literal|"clip-result"
 block|,
 literal|"Whether to clip results"
 block|}
@@ -7801,7 +7801,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"source_x"
+literal|"source-x"
 block|,
 literal|"X coordinate of the transformation center"
 block|}
@@ -7809,7 +7809,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"source_y"
+literal|"source-y"
 block|,
 literal|"Y coordinate of the transformation center"
 block|}
@@ -7817,7 +7817,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"scale_x"
+literal|"scale-x"
 block|,
 literal|"Amount to scale in x direction"
 block|}
@@ -7825,7 +7825,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"scale_y"
+literal|"scale-y"
 block|,
 literal|"Amount to scale in y direction"
 block|}
@@ -7841,7 +7841,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"dest_x"
+literal|"dest-x"
 block|,
 literal|"X coordinate of where the center goes"
 block|}
@@ -7849,7 +7849,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"dest_y"
+literal|"dest-y"
 block|,
 literal|"Y coordinate of where the center goes"
 block|}
@@ -7865,7 +7865,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"clip_result"
+literal|"clip-result"
 block|,
 literal|"Whether to clip results"
 block|}
@@ -8522,7 +8522,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"coeff_0_0"
+literal|"coeff-0-0"
 block|,
 literal|"coefficient (0,0) of the transformation matrix"
 block|}
@@ -8530,7 +8530,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"coeff_0_1"
+literal|"coeff-0-1"
 block|,
 literal|"coefficient (0,1) of the transformation matrix"
 block|}
@@ -8538,7 +8538,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"coeff_0_2"
+literal|"coeff-0-2"
 block|,
 literal|"coefficient (0,2) of the transformation matrix"
 block|}
@@ -8546,7 +8546,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"coeff_1_0"
+literal|"coeff-1-0"
 block|,
 literal|"coefficient (1,0) of the transformation matrix"
 block|}
@@ -8554,7 +8554,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"coeff_1_1"
+literal|"coeff-1-1"
 block|,
 literal|"coefficient (1,1) of the transformation matrix"
 block|}
@@ -8562,7 +8562,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"coeff_1_2"
+literal|"coeff-1-2"
 block|,
 literal|"coefficient (1,2) of the transformation matrix"
 block|}
@@ -8570,7 +8570,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"coeff_2_0"
+literal|"coeff-2-0"
 block|,
 literal|"coefficient (2,0) of the transformation matrix"
 block|}
@@ -8578,7 +8578,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"coeff_2_1"
+literal|"coeff-2-1"
 block|,
 literal|"coefficient (2,1) of the transformation matrix"
 block|}
@@ -8586,7 +8586,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"coeff_2_2"
+literal|"coeff-2-2"
 block|,
 literal|"coefficient (2,2) of the transformation matrix"
 block|}
@@ -8594,7 +8594,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"transform_direction"
+literal|"transform-direction"
 block|,
 literal|"Direction of Transformation: { GIMP_TRANSFORM_FORWARD (0), GIMP_TRANSFORM_BACKWARD (1) }"
 block|}
@@ -8618,7 +8618,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"recursion_level"
+literal|"recursion-level"
 block|,
 literal|"Level of recursion (3 is a nice default)"
 block|}
@@ -8626,7 +8626,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"clip_result"
+literal|"clip-result"
 block|,
 literal|"Whether to clip results"
 block|}
@@ -9220,7 +9220,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"coeff_0_0"
+literal|"coeff-0-0"
 block|,
 literal|"coefficient (0,0) of the transformation matrix"
 block|}
@@ -9228,7 +9228,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"coeff_0_1"
+literal|"coeff-0-1"
 block|,
 literal|"coefficient (0,1) of the transformation matrix"
 block|}
@@ -9236,7 +9236,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"coeff_0_2"
+literal|"coeff-0-2"
 block|,
 literal|"coefficient (0,2) of the transformation matrix"
 block|}
@@ -9244,7 +9244,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"coeff_1_0"
+literal|"coeff-1-0"
 block|,
 literal|"coefficient (1,0) of the transformation matrix"
 block|}
@@ -9252,7 +9252,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"coeff_1_1"
+literal|"coeff-1-1"
 block|,
 literal|"coefficient (1,1) of the transformation matrix"
 block|}
@@ -9260,7 +9260,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"coeff_1_2"
+literal|"coeff-1-2"
 block|,
 literal|"coefficient (1,2) of the transformation matrix"
 block|}
@@ -9268,7 +9268,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"coeff_2_0"
+literal|"coeff-2-0"
 block|,
 literal|"coefficient (2,0) of the transformation matrix"
 block|}
@@ -9276,7 +9276,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"coeff_2_1"
+literal|"coeff-2-1"
 block|,
 literal|"coefficient (2,1) of the transformation matrix"
 block|}
@@ -9284,7 +9284,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"coeff_2_2"
+literal|"coeff-2-2"
 block|,
 literal|"coefficient (2,2) of the transformation matrix"
 block|}
@@ -9300,7 +9300,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"clip_result"
+literal|"clip-result"
 block|,
 literal|"Whether to clip results"
 block|}

@@ -416,7 +416,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_palettes"
+literal|"num-palettes"
 block|,
 literal|"The number of palettes in the list"
 block|}
@@ -424,7 +424,7 @@ block|,
 block|{
 name|GIMP_PDB_STRINGARRAY
 block|,
-literal|"palette_list"
+literal|"palette-list"
 block|,
 literal|"The list of palette names"
 block|}
@@ -597,7 +597,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_colors"
+literal|"num-colors"
 block|,
 literal|"The palette num_colors"
 block|}
@@ -926,7 +926,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"entry_num"
+literal|"entry-num"
 block|,
 literal|"The entry to retrieve"
 block|}
@@ -953,7 +953,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_colors"
+literal|"num-colors"
 block|,
 literal|"The palette num_colors"
 block|}

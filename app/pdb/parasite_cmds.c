@@ -883,7 +883,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_parasites"
+literal|"num-parasites"
 block|,
 literal|"The number of attached parasites"
 block|}
@@ -1824,7 +1824,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_parasites"
+literal|"num-parasites"
 block|,
 literal|"The number of attached parasites"
 block|}
@@ -2693,7 +2693,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_parasites"
+literal|"num-parasites"
 block|,
 literal|"The number of attached parasites"
 block|}

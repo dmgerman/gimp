@@ -1242,7 +1242,7 @@ block|,
 block|{
 name|GIMP_PDB_IMAGE
 block|,
-literal|"dest_image"
+literal|"dest-image"
 block|,
 literal|"The destination image to which to add the layer"
 block|}
@@ -1261,7 +1261,7 @@ block|{
 block|{
 name|GIMP_PDB_LAYER
 block|,
-literal|"layer_copy"
+literal|"layer-copy"
 block|,
 literal|"The newly copied layer"
 block|}
@@ -1501,7 +1501,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"add_alpha"
+literal|"add-alpha"
 block|,
 literal|"Add an alpha channel to the copied layer"
 block|}
@@ -1520,7 +1520,7 @@ block|{
 block|{
 name|GIMP_PDB_LAYER
 block|,
-literal|"layer_copy"
+literal|"layer-copy"
 block|,
 literal|"The newly copied layer"
 block|}
@@ -1943,7 +1943,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"new_width"
+literal|"new-width"
 block|,
 literal|"New layer width: (0< new_width)"
 block|}
@@ -1951,7 +1951,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"new_height"
+literal|"new-height"
 block|,
 literal|"New layer height: (0< new_height)"
 block|}
@@ -1959,7 +1959,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"local_origin"
+literal|"local-origin"
 block|,
 literal|"Use a local origin (as opposed to the image origin)"
 block|}
@@ -2230,7 +2230,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"new_width"
+literal|"new-width"
 block|,
 literal|"New layer width: (0< new_width)"
 block|}
@@ -2238,7 +2238,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"new_height"
+literal|"new-height"
 block|,
 literal|"New layer height: (0< new_height)"
 block|}
@@ -3218,7 +3218,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"mask_type"
+literal|"mask-type"
 block|,
 literal|"The type of mask: { GIMP_ADD_WHITE_MASK (0), GIMP_ADD_BLACK_MASK (1), GIMP_ADD_ALPHA_MASK (2), GIMP_ADD_ALPHA_TRANSFER_MASK (3), GIMP_ADD_SELECTION_MASK (4), GIMP_ADD_COPY_MASK (5) }"
 block|}
@@ -4305,7 +4305,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"is_floating_sel"
+literal|"is-floating-sel"
 block|,
 literal|"Non-zero if the layer is a floating selection"
 block|}
@@ -4499,7 +4499,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"lock_alpha"
+literal|"lock-alpha"
 block|,
 literal|"The layer's lock alpha channel setting"
 block|}
@@ -4687,7 +4687,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"lock_alpha"
+literal|"lock-alpha"
 block|,
 literal|"The new layer's lock alpha channel setting"
 block|}
@@ -4881,7 +4881,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"apply_mask"
+literal|"apply-mask"
 block|,
 literal|"The layer apply mask"
 block|}
@@ -5067,7 +5067,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"apply_mask"
+literal|"apply-mask"
 block|,
 literal|"The new layer apply mask"
 block|}
@@ -5261,7 +5261,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"show_mask"
+literal|"show-mask"
 block|,
 literal|"The layer show mask"
 block|}
@@ -5447,7 +5447,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"show_mask"
+literal|"show-mask"
 block|,
 literal|"The new layer show mask"
 block|}
@@ -5641,7 +5641,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"edit_mask"
+literal|"edit-mask"
 block|,
 literal|"The layer edit mask"
 block|}
@@ -5827,7 +5827,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"edit_mask"
+literal|"edit-mask"
 block|,
 literal|"The new layer edit mask"
 block|}

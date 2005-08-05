@@ -1033,7 +1033,7 @@ block|{
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"theme_dir"
+literal|"theme-dir"
 block|,
 literal|"The GUI theme dir"
 block|}
@@ -1301,7 +1301,7 @@ block|{
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"load_inhibit"
+literal|"load-inhibit"
 block|,
 literal|"The list of modules"
 block|}

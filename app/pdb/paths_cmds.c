@@ -537,7 +537,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_paths"
+literal|"num-paths"
 block|,
 literal|"The number of paths returned."
 block|}
@@ -545,7 +545,7 @@ block|,
 block|{
 name|GIMP_PDB_STRINGARRAY
 block|,
-literal|"path_list"
+literal|"path-list"
 block|,
 literal|"List of the paths belonging to this image."
 block|}
@@ -1632,7 +1632,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"path_type"
+literal|"path-type"
 block|,
 literal|"The type of the path. Currently only one type (1 = Bezier) is supported"
 block|}
@@ -1640,7 +1640,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"path_closed"
+literal|"path-closed"
 block|,
 literal|"Return if the path is closed. (0 = path open, 1 = path closed)"
 block|}
@@ -1648,7 +1648,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_path_point_details"
+literal|"num-path-point-details"
 block|,
 literal|"The number of points returned. Each point is made up of (x, y, pnt_type) of floats."
 block|}
@@ -1656,7 +1656,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOATARRAY
 block|,
-literal|"points_pairs"
+literal|"points-pairs"
 block|,
 literal|"The points in the path represented as 3 floats. The first is the x pos, next is the y pos, last is the type of the pnt. The type field is dependant on the path type. For beziers (type 1 paths) the type can either be (1.0 = BEZIER_ANCHOR, 2.0 = BEZIER_CONTROL, 3.0 = BEZIER_MOVE). Note all points are returned in pixel resolution."
 block|}
@@ -2095,7 +2095,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_path_points"
+literal|"num-path-points"
 block|,
 literal|"The number of elements in the array, i.e. the number of points in the path * 3. Each point is made up of (x, y, type) of floats. Currently only the creation of bezier curves is allowed. The type parameter must be set to (1) to indicate a BEZIER type curve. Note that for BEZIER curves, points must be given in the following order: ACCACCAC... If the path is not closed the last control point is missed off. Points consist of three control points (control/anchor/control) so for a curve that is not closed there must be at least two points passed (2 x,y pairs). If (num_path_points/3) % 3 = 0 then the path is assumed to be closed and the points are ACCACCACCACC."
 block|}
@@ -2103,7 +2103,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOATARRAY
 block|,
-literal|"points_pairs"
+literal|"points-pairs"
 block|,
 literal|"The points in the path represented as 3 floats. The first is the x pos, next is the y pos, last is the type of the pnt. The type field is dependant on the path type. For beziers (type 1 paths) the type can either be (1.0 = BEZIER_ANCHOR, 2.0 = BEZIER_CONTROL, 3.0= BEZIER_MOVE). Note all points are returned in pixel resolution."
 block|}
@@ -2725,7 +2725,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"x_point"
+literal|"x-point"
 block|,
 literal|"The x position of the point."
 block|}
@@ -2733,7 +2733,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"y_point"
+literal|"y-point"
 block|,
 literal|"The y position of the point."
 block|}
@@ -4373,7 +4373,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"feather_radius_x"
+literal|"feather-radius-x"
 block|,
 literal|"Feather radius x."
 block|}
@@ -4381,7 +4381,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"feather_radius_y"
+literal|"feather-radius-y"
 block|,
 literal|"Feather radius y."
 block|}

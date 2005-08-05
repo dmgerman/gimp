@@ -320,7 +320,7 @@ block|{
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"pattern_callback"
+literal|"pattern-callback"
 block|,
 literal|"The callback PDB proc to call when pattern selection is made"
 block|}
@@ -328,7 +328,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"popup_title"
+literal|"popup-title"
 block|,
 literal|"Title to give the pattern popup window"
 block|}
@@ -336,7 +336,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"initial_pattern"
+literal|"initial-pattern"
 block|,
 literal|"The name of the pattern to set as the first selected"
 block|}
@@ -516,7 +516,7 @@ block|{
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"pattern_callback"
+literal|"pattern-callback"
 block|,
 literal|"The name of the callback registered for this popup"
 block|}
@@ -740,7 +740,7 @@ block|{
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"pattern_callback"
+literal|"pattern-callback"
 block|,
 literal|"The name of the callback registered for this popup"
 block|}
@@ -748,7 +748,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"pattern_name"
+literal|"pattern-name"
 block|,
 literal|"The name of the pattern to set as selected"
 block|}

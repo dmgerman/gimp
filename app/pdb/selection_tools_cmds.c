@@ -489,7 +489,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"feather_radius"
+literal|"feather-radius"
 block|,
 literal|"Radius for feather operation"
 block|}
@@ -497,7 +497,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"sample_merged"
+literal|"sample-merged"
 block|,
 literal|"Use the composite image, not the drawable"
 block|}
@@ -891,7 +891,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"feather_radius"
+literal|"feather-radius"
 block|,
 literal|"Radius for feather operation"
 block|}
@@ -1197,7 +1197,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_segs"
+literal|"num-segs"
 block|,
 literal|"Number of points (count 1 coordinate as two points)"
 block|}
@@ -1237,7 +1237,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"feather_radius"
+literal|"feather-radius"
 block|,
 literal|"Radius for feather operation"
 block|}
@@ -1645,7 +1645,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"feather_radius"
+literal|"feather-radius"
 block|,
 literal|"Radius for feather operation"
 block|}
@@ -1653,7 +1653,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"sample_merged"
+literal|"sample-merged"
 block|,
 literal|"Use the composite image, not the drawable"
 block|}
@@ -2020,7 +2020,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"feather_radius"
+literal|"feather-radius"
 block|,
 literal|"Radius for feather operation"
 block|}

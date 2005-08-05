@@ -358,7 +358,7 @@ block|{
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"gradient_callback"
+literal|"gradient-callback"
 block|,
 literal|"The callback PDB proc to call when gradient selection is made"
 block|}
@@ -366,7 +366,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"popup_title"
+literal|"popup-title"
 block|,
 literal|"Title to give the gradient popup window"
 block|}
@@ -374,7 +374,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"initial_gradient"
+literal|"initial-gradient"
 block|,
 literal|"The name of the pattern to set as the first selected"
 block|}
@@ -382,7 +382,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"sample_size"
+literal|"sample-size"
 block|,
 literal|"Size of the sample to return when the gradient is changed (0< sample_size<= 10000)"
 block|}
@@ -562,7 +562,7 @@ block|{
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"gradient_callback"
+literal|"gradient-callback"
 block|,
 literal|"The name of the callback registered for this popup"
 block|}
@@ -786,7 +786,7 @@ block|{
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"gradient_callback"
+literal|"gradient-callback"
 block|,
 literal|"The name of the callback registered for this popup"
 block|}
@@ -794,7 +794,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"gradient_name"
+literal|"gradient-name"
 block|,
 literal|"The name of the gradient to set as selected"
 block|}

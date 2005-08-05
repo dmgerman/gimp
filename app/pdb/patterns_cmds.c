@@ -416,7 +416,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_patterns"
+literal|"num-patterns"
 block|,
 literal|"The number of patterns in the pattern list"
 block|}
@@ -424,7 +424,7 @@ block|,
 block|{
 name|GIMP_PDB_STRINGARRAY
 block|,
-literal|"pattern_list"
+literal|"pattern-list"
 block|,
 literal|"The list of pattern names"
 block|}
@@ -1011,7 +1011,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"mask_bpp"
+literal|"mask-bpp"
 block|,
 literal|"Pattern bytes per pixel"
 block|}
@@ -1027,7 +1027,7 @@ block|,
 block|{
 name|GIMP_PDB_INT8ARRAY
 block|,
-literal|"mask_data"
+literal|"mask-data"
 block|,
 literal|"The pattern mask data"
 block|}

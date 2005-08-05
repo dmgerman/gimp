@@ -426,7 +426,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_gradients"
+literal|"num-gradients"
 block|,
 literal|"The number of loaded gradients"
 block|}
@@ -434,7 +434,7 @@ block|,
 block|{
 name|GIMP_PDB_STRINGARRAY
 block|,
-literal|"gradient_list"
+literal|"gradient-list"
 block|,
 literal|"The list of gradient names"
 block|}
@@ -750,7 +750,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_samples"
+literal|"num-samples"
 block|,
 literal|"The number of samples to take"
 block|}
@@ -777,7 +777,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"array_length"
+literal|"array-length"
 block|,
 literal|"Length of the color_samples array (4 * num_samples)"
 block|}
@@ -785,7 +785,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOATARRAY
 block|,
-literal|"color_samples"
+literal|"color-samples"
 block|,
 literal|"Color samples: { R1, G1, B1, A1, ..., Rn, Gn, Bn, An }"
 block|}
@@ -1101,7 +1101,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_samples"
+literal|"num-samples"
 block|,
 literal|"The number of samples to take"
 block|}
@@ -1136,7 +1136,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"array_length"
+literal|"array-length"
 block|,
 literal|"Length of the color_samples array (4 * num_samples)"
 block|}
@@ -1144,7 +1144,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOATARRAY
 block|,
-literal|"color_samples"
+literal|"color-samples"
 block|,
 literal|"Color samples: { R1, G1, B1, A1, ..., Rn, Gn, Bn, An }"
 block|}
@@ -1573,7 +1573,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"sample_size"
+literal|"sample-size"
 block|,
 literal|"Size of the sample to return when the gradient is changed (0< sample_size<= 10000)"
 block|}
@@ -1616,7 +1616,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOATARRAY
 block|,
-literal|"grad_data"
+literal|"grad-data"
 block|,
 literal|"The gradient sample data"
 block|}

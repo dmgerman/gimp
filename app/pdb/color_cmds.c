@@ -1182,7 +1182,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"low_input"
+literal|"low-input"
 block|,
 literal|"Intensity of lowest input: (0<= low_input<= 255)"
 block|}
@@ -1190,7 +1190,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"high_input"
+literal|"high-input"
 block|,
 literal|"Intensity of highest input: (0<= high_input<= 255)"
 block|}
@@ -1206,7 +1206,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"low_output"
+literal|"low-output"
 block|,
 literal|"Intensity of lowest output: (0<= low_output<= 255)"
 block|}
@@ -1214,7 +1214,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"high_output"
+literal|"high-output"
 block|,
 literal|"Intensity of highest output: (0<= high_output<= 255)"
 block|}
@@ -2358,7 +2358,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"desaturate_mode"
+literal|"desaturate-mode"
 block|,
 literal|"The formula to use to desaturate"
 block|}
@@ -2570,7 +2570,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"mask_only"
+literal|"mask-only"
 block|,
 literal|"Equalization option"
 block|}
@@ -3344,7 +3344,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_points"
+literal|"num-points"
 block|,
 literal|"The number of values in the control point array (3< num_points<= 34)"
 block|}
@@ -3352,7 +3352,7 @@ block|,
 block|{
 name|GIMP_PDB_INT8ARRAY
 block|,
-literal|"control_pts"
+literal|"control-pts"
 block|,
 literal|"The spline control points: { cp1.x, cp1.y, cp2.x, cp2.y, ... }"
 block|}
@@ -3862,7 +3862,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_bytes"
+literal|"num-bytes"
 block|,
 literal|"The number of bytes in the new curve (always 256)"
 block|}
@@ -4362,7 +4362,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"transfer_mode"
+literal|"transfer-mode"
 block|,
 literal|"Transfer mode: { GIMP_SHADOWS (0), GIMP_MIDTONES (1), GIMP_HIGHLIGHTS (2) }"
 block|}
@@ -4370,7 +4370,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"preserve_lum"
+literal|"preserve-lum"
 block|,
 literal|"Preserve luminosity values at each pixel"
 block|}
@@ -4378,7 +4378,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"cyan_red"
+literal|"cyan-red"
 block|,
 literal|"Cyan-Red color balance: (-100<= cyan_red<= 100)"
 block|}
@@ -4386,7 +4386,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"magenta_green"
+literal|"magenta-green"
 block|,
 literal|"Magenta-Green color balance: (-100<= magenta_green<= 100)"
 block|}
@@ -4394,7 +4394,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"yellow_blue"
+literal|"yellow-blue"
 block|,
 literal|"Yellow-Blue color balance: (-100<= yellow_blue<= 100)"
 block|}
@@ -5348,7 +5348,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"start_range"
+literal|"start-range"
 block|,
 literal|"Start of the intensity measurement range"
 block|}
@@ -5356,7 +5356,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"end_range"
+literal|"end-range"
 block|,
 literal|"End of the intensity measurement range"
 block|}
@@ -5383,7 +5383,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"std_dev"
+literal|"std-dev"
 block|,
 literal|"Standard deviation of intensity values"
 block|}
@@ -5884,7 +5884,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"hue_range"
+literal|"hue-range"
 block|,
 literal|"Range of affected hues: { GIMP_ALL_HUES (0), GIMP_RED_HUES (1), GIMP_YELLOW_HUES (2), GIMP_GREEN_HUES (3), GIMP_CYAN_HUES (4), GIMP_BLUE_HUES (5), GIMP_MAGENTA_HUES (6) }"
 block|}
@@ -5892,7 +5892,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"hue_offset"
+literal|"hue-offset"
 block|,
 literal|"Hue offset in degrees: (-180<= hue_offset<= 180)"
 block|}
@@ -6305,7 +6305,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"low_threshold"
+literal|"low-threshold"
 block|,
 literal|"The low threshold value: 0<= low_threshold<= 255"
 block|}
@@ -6313,7 +6313,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"high_threshold"
+literal|"high-threshold"
 block|,
 literal|"The high threshold value: 0<= high_threshold<= 255"
 block|}

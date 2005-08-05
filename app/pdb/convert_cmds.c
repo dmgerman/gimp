@@ -828,7 +828,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"dither_type"
+literal|"dither-type"
 block|,
 literal|"The dither type to use: { GIMP_NO_DITHER (0), GIMP_FS_DITHER (1), GIMP_FSLOWBLEED_DITHER (2), GIMP_FIXED_DITHER (3) }"
 block|}
@@ -836,7 +836,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"palette_type"
+literal|"palette-type"
 block|,
 literal|"The type of palette to use: { GIMP_MAKE_PALETTE (0), GIMP_REUSE_PALETTE (1), GIMP_WEB_PALETTE (2), GIMP_MONO_PALETTE (3), GIMP_CUSTOM_PALETTE (4) }"
 block|}
@@ -844,7 +844,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_cols"
+literal|"num-cols"
 block|,
 literal|"The number of colors to quantize to, ignored unless (palette_type == GIMP_MAKE_PALETTE)"
 block|}
@@ -852,7 +852,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"alpha_dither"
+literal|"alpha-dither"
 block|,
 literal|"Dither transparency to fake partial opacity"
 block|}
@@ -860,7 +860,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"remove_unused"
+literal|"remove-unused"
 block|,
 literal|"Remove unused or duplicate colour entries from final palette, ignored if (palette_type == GIMP_MAKE_PALETTE)"
 block|}

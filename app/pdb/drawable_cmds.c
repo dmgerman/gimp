@@ -1211,7 +1211,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"layer_mask"
+literal|"layer-mask"
 block|,
 literal|"Non-zero if the drawable is a layer mask"
 block|}
@@ -1797,7 +1797,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"type_with_alpha"
+literal|"type-with-alpha"
 block|,
 literal|"The drawable's type with alpha: { GIMP_RGB_IMAGE (0), GIMP_RGBA_IMAGE (1), GIMP_GRAY_IMAGE (2), GIMP_GRAYA_IMAGE (3), GIMP_INDEXED_IMAGE (4), GIMP_INDEXEDA_IMAGE (5) }"
 block|}
@@ -1991,7 +1991,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"has_alpha"
+literal|"has-alpha"
 block|,
 literal|"Does the drawable have an alpha channel?"
 block|}
@@ -2185,7 +2185,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"is_rgb"
+literal|"is-rgb"
 block|,
 literal|"non-zero if the drawable is an RGB type"
 block|}
@@ -2379,7 +2379,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"is_gray"
+literal|"is-gray"
 block|,
 literal|"non-zero if the drawable is a grayscale type"
 block|}
@@ -2573,7 +2573,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"is_indexed"
+literal|"is-indexed"
 block|,
 literal|"non-zero if the drawable is an indexed type"
 block|}
@@ -3389,7 +3389,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"offset_x"
+literal|"offset-x"
 block|,
 literal|"x offset of drawable"
 block|}
@@ -3397,7 +3397,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"offset_y"
+literal|"offset-y"
 block|,
 literal|"y offset of drawable"
 block|}
@@ -5684,7 +5684,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"non_empty"
+literal|"non-empty"
 block|,
 literal|"TRUE if there is a selection"
 block|}
@@ -5993,7 +5993,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"non_empty"
+literal|"non-empty"
 block|,
 literal|"TRUE if the returned area is not empty"
 block|}
@@ -6907,7 +6907,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"x_coord"
+literal|"x-coord"
 block|,
 literal|"The x coordinate"
 block|}
@@ -6915,7 +6915,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"y_coord"
+literal|"y-coord"
 block|,
 literal|"The y coordinate"
 block|}
@@ -6934,7 +6934,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_channels"
+literal|"num-channels"
 block|,
 literal|"The number of channels for the pixel"
 block|}
@@ -7298,7 +7298,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"x_coord"
+literal|"x-coord"
 block|,
 literal|"The x coordinate"
 block|}
@@ -7306,7 +7306,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"y_coord"
+literal|"y-coord"
 block|,
 literal|"The y coordinate"
 block|}
@@ -7314,7 +7314,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_channels"
+literal|"num-channels"
 block|,
 literal|"The number of channels for the pixel"
 block|}
@@ -7523,7 +7523,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"fill_type"
+literal|"fill-type"
 block|,
 literal|"The type of fill: GIMP_FOREGROUND_FILL (0), GIMP_BACKGROUND_FILL (1), GIMP_WHITE_FILL (2), GIMP_TRANSPARENT_FILL (3), GIMP_PATTERN_FILL (4)"
 block|}
@@ -7789,7 +7789,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"wrap_around"
+literal|"wrap-around"
 block|,
 literal|"wrap image around or fill vacated regions"
 block|}
@@ -7797,7 +7797,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"fill_type"
+literal|"fill-type"
 block|,
 literal|"fill vacated regions of drawable with background or transparent: GIMP_OFFSET_BACKGROUND (0) or GIMP_OFFSET_TRANSPARENT (1)"
 block|}
@@ -7805,7 +7805,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"offset_x"
+literal|"offset-x"
 block|,
 literal|"offset by this amount in X direction"
 block|}
@@ -7813,7 +7813,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"offset_y"
+literal|"offset-y"
 block|,
 literal|"offset by this amount in Y direction"
 block|}
@@ -8367,7 +8367,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"thumbnail_data_count"
+literal|"thumbnail-data-count"
 block|,
 literal|"The number of bytes in thumbnail data"
 block|}
@@ -8375,7 +8375,7 @@ block|,
 block|{
 name|GIMP_PDB_INT8ARRAY
 block|,
-literal|"thumbnail_data"
+literal|"thumbnail-data"
 block|,
 literal|"The thumbnail data"
 block|}
@@ -8954,7 +8954,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"src_x"
+literal|"src-x"
 block|,
 literal|"The x coordinate of the area"
 block|}
@@ -8962,7 +8962,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"src_y"
+literal|"src-y"
 block|,
 literal|"The y coordinate of the area"
 block|}
@@ -8970,7 +8970,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"src_width"
+literal|"src-width"
 block|,
 literal|"The width of the area"
 block|}
@@ -8978,7 +8978,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"src_height"
+literal|"src-height"
 block|,
 literal|"The height of the area"
 block|}
@@ -8986,7 +8986,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"dest_width"
+literal|"dest-width"
 block|,
 literal|"The thumbnail width"
 block|}
@@ -8994,7 +8994,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"dest_height"
+literal|"dest-height"
 block|,
 literal|"The thumbnail height"
 block|}
@@ -9037,7 +9037,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"thumbnail_data_count"
+literal|"thumbnail-data-count"
 block|,
 literal|"The number of bytes in thumbnail data"
 block|}
@@ -9045,7 +9045,7 @@ block|,
 block|{
 name|GIMP_PDB_INT8ARRAY
 block|,
-literal|"thumbnail_data"
+literal|"thumbnail-data"
 block|,
 literal|"The thumbnail data"
 block|}

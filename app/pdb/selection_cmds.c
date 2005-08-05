@@ -579,7 +579,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"non_empty"
+literal|"non-empty"
 block|,
 literal|"True if there is a selection"
 block|}
@@ -1026,7 +1026,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"is_empty"
+literal|"is-empty"
 block|,
 literal|"Is the selection empty?"
 block|}

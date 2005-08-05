@@ -626,7 +626,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"size_type"
+literal|"size-type"
 block|,
 literal|"The units of specified size: GIMP_PIXELS (0) or GIMP_POINTS (1)"
 block|}
@@ -653,7 +653,7 @@ block|{
 block|{
 name|GIMP_PDB_LAYER
 block|,
-literal|"text_layer"
+literal|"text-layer"
 block|,
 literal|"The new text layer or -1 if no layer was created."
 block|}
@@ -1023,7 +1023,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"size_type"
+literal|"size-type"
 block|,
 literal|"The units of specified size: GIMP_PIXELS (0) or GIMP_POINTS (1)"
 block|}
@@ -1804,7 +1804,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"size_type"
+literal|"size-type"
 block|,
 literal|"The units of specified size: GIMP_PIXELS (0) or GIMP_POINTS (1)"
 block|}
@@ -1844,7 +1844,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"set_width"
+literal|"set-width"
 block|,
 literal|"The font set-width"
 block|}
@@ -1887,7 +1887,7 @@ block|{
 block|{
 name|GIMP_PDB_LAYER
 block|,
-literal|"text_layer"
+literal|"text-layer"
 block|,
 literal|"The new text layer or -1 if no layer was created."
 block|}
@@ -2449,7 +2449,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"size_type"
+literal|"size-type"
 block|,
 literal|"The units of specified size: GIMP_PIXELS (0) or GIMP_POINTS (1)"
 block|}
@@ -2489,7 +2489,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"set_width"
+literal|"set-width"
 block|,
 literal|"The font set-width"
 block|}

@@ -280,7 +280,7 @@ block|{
 block|{
 name|GIMP_PDB_LAYER
 block|,
-literal|"floating_sel"
+literal|"floating-sel"
 block|,
 literal|"The floating selection"
 block|}
@@ -452,7 +452,7 @@ block|{
 block|{
 name|GIMP_PDB_LAYER
 block|,
-literal|"floating_sel"
+literal|"floating-sel"
 block|,
 literal|"The floating selection"
 block|}
@@ -624,7 +624,7 @@ block|{
 block|{
 name|GIMP_PDB_LAYER
 block|,
-literal|"floating_sel"
+literal|"floating-sel"
 block|,
 literal|"The floating selection"
 block|}
@@ -1047,7 +1047,7 @@ block|{
 block|{
 name|GIMP_PDB_LAYER
 block|,
-literal|"floating_sel"
+literal|"floating-sel"
 block|,
 literal|"The floating selection"
 block|}
@@ -1247,7 +1247,7 @@ block|{
 block|{
 name|GIMP_PDB_LAYER
 block|,
-literal|"floating_sel"
+literal|"floating-sel"
 block|,
 literal|"The floating selection"
 block|}

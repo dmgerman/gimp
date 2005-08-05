@@ -423,7 +423,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"flip_type"
+literal|"flip-type"
 block|,
 literal|"Type of flip: GIMP_ORIENTATION_HORIZONTAL (0) or GIMP_ORIENTATION_VERTICAL (1)"
 block|}
@@ -2317,7 +2317,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"shear_type"
+literal|"shear-type"
 block|,
 literal|"Type of shear: GIMP_ORIENTATION_HORIZONTAL (0) or GIMP_ORIENTATION_VERTICAL (1)"
 block|}
@@ -2819,7 +2819,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"source_x"
+literal|"source-x"
 block|,
 literal|"X coordinate of the transformation center"
 block|}
@@ -2827,7 +2827,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"source_y"
+literal|"source-y"
 block|,
 literal|"Y coordinate of the transformation center"
 block|}
@@ -2835,7 +2835,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"scale_x"
+literal|"scale-x"
 block|,
 literal|"Amount to scale in x direction"
 block|}
@@ -2843,7 +2843,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"scale_y"
+literal|"scale-y"
 block|,
 literal|"Amount to scale in y direction"
 block|}
@@ -2859,7 +2859,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"dest_x"
+literal|"dest-x"
 block|,
 literal|"X coordinate of where the centre goes"
 block|}
@@ -2867,7 +2867,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"dest_y"
+literal|"dest-y"
 block|,
 literal|"Y coordinate of where the centre goes"
 block|}

@@ -292,7 +292,7 @@ block|{
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"temp_name"
+literal|"temp-name"
 block|,
 literal|"A unique temporary name for a temporary PDB entry"
 block|}
@@ -868,7 +868,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"proc_type"
+literal|"proc-type"
 block|,
 literal|"The regex for procedure type: { 'Internal GIMP procedure', 'GIMP Plug-In', 'GIMP Extension', 'Temporary Procedure' }"
 block|}
@@ -887,7 +887,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_matches"
+literal|"num-matches"
 block|,
 literal|"The number of matching procedures"
 block|}
@@ -895,7 +895,7 @@ block|,
 block|{
 name|GIMP_PDB_STRINGARRAY
 block|,
-literal|"procedure_names"
+literal|"procedure-names"
 block|,
 literal|"The list of procedure names"
 block|}
@@ -1291,7 +1291,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"proc_type"
+literal|"proc-type"
 block|,
 literal|"The procedure type: { GIMP_INTERNAL (0), GIMP_PLUGIN (1), GIMP_EXTENSION (2), GIMP_TEMPORARY (3) }"
 block|}
@@ -1299,7 +1299,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_args"
+literal|"num-args"
 block|,
 literal|"The number of input arguments"
 block|}
@@ -1307,7 +1307,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_values"
+literal|"num-values"
 block|,
 literal|"The number of return values"
 block|}
@@ -1638,7 +1638,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"arg_num"
+literal|"arg-num"
 block|,
 literal|"The argument number"
 block|}
@@ -1657,7 +1657,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"arg_type"
+literal|"arg-type"
 block|,
 literal|"The type of argument { GIMP_PDB_INT32 (0), GIMP_PDB_INT16 (1), GIMP_PDB_INT8 (2), GIMP_PDB_FLOAT (3), GIMP_PDB_STRING (4), GIMP_PDB_INT32ARRAY (5), GIMP_PDB_INT16ARRAY (6), GIMP_PDB_INT8ARRAY (7), GIMP_PDB_FLOATARRAY (8), GIMP_PDB_STRINGARRAY (9), GIMP_PDB_COLOR (10), GIMP_PDB_REGION (11), GIMP_PDB_DISPLAY (12), GIMP_PDB_IMAGE (13), GIMP_PDB_LAYER (14), GIMP_PDB_CHANNEL (15), GIMP_PDB_DRAWABLE (16), GIMP_PDB_SELECTION (17), GIMP_PDB_BOUNDARY (18), GIMP_PDB_PATH (19), GIMP_PDB_PARASITE (20), GIMP_PDB_STATUS (21) }"
 block|}
@@ -1665,7 +1665,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"arg_name"
+literal|"arg-name"
 block|,
 literal|"The name of the argument"
 block|}
@@ -1673,7 +1673,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"arg_desc"
+literal|"arg-desc"
 block|,
 literal|"A description of the argument"
 block|}
@@ -2004,7 +2004,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"val_num"
+literal|"val-num"
 block|,
 literal|"The return value number"
 block|}
@@ -2023,7 +2023,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"val_type"
+literal|"val-type"
 block|,
 literal|"The type of return value { GIMP_PDB_INT32 (0), GIMP_PDB_INT16 (1), GIMP_PDB_INT8 (2), GIMP_PDB_FLOAT (3), GIMP_PDB_STRING (4), GIMP_PDB_INT32ARRAY (5), GIMP_PDB_INT16ARRAY (6), GIMP_PDB_INT8ARRAY (7), GIMP_PDB_FLOATARRAY (8), GIMP_PDB_STRINGARRAY (9), GIMP_PDB_COLOR (10), GIMP_PDB_REGION (11), GIMP_PDB_DISPLAY (12), GIMP_PDB_IMAGE (13), GIMP_PDB_LAYER (14), GIMP_PDB_CHANNEL (15), GIMP_PDB_DRAWABLE (16), GIMP_PDB_SELECTION (17), GIMP_PDB_BOUNDARY (18), GIMP_PDB_PATH (19), GIMP_PDB_PARASITE (20), GIMP_PDB_STATUS (21) }"
 block|}
@@ -2031,7 +2031,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"val_name"
+literal|"val-name"
 block|,
 literal|"The name of the return value"
 block|}
@@ -2039,7 +2039,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"val_desc"
+literal|"val-desc"
 block|,
 literal|"A description of the return value"
 block|}

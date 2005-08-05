@@ -1393,7 +1393,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"new_name"
+literal|"new-name"
 block|,
 literal|"The new name of the brush"
 block|}
@@ -2171,7 +2171,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"mask_bpp"
+literal|"mask-bpp"
 block|,
 literal|"The brush mask bpp"
 block|}
@@ -2179,7 +2179,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"color_bpp"
+literal|"color-bpp"
 block|,
 literal|"The brush color bpp"
 block|}
@@ -2618,7 +2618,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"mask_bpp"
+literal|"mask-bpp"
 block|,
 literal|"The brush mask bpp"
 block|}
@@ -2626,7 +2626,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_mask_bytes"
+literal|"num-mask-bytes"
 block|,
 literal|"Length of brush mask data"
 block|}
@@ -2634,7 +2634,7 @@ block|,
 block|{
 name|GIMP_PDB_INT8ARRAY
 block|,
-literal|"mask_bytes"
+literal|"mask-bytes"
 block|,
 literal|"The brush mask data"
 block|}
@@ -2642,7 +2642,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"color_bpp"
+literal|"color-bpp"
 block|,
 literal|"The brush color bpp"
 block|}
@@ -2650,7 +2650,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_color_bytes"
+literal|"num-color-bytes"
 block|,
 literal|"Length of brush color data"
 block|}
@@ -2658,7 +2658,7 @@ block|,
 block|{
 name|GIMP_PDB_INT8ARRAY
 block|,
-literal|"color_bytes"
+literal|"color-bytes"
 block|,
 literal|"The brush color data"
 block|}
@@ -4267,7 +4267,7 @@ block|{
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"aspect_ratio"
+literal|"aspect-ratio"
 block|,
 literal|"The aspect ratio of the brush."
 block|}
@@ -4750,7 +4750,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"shape_in"
+literal|"shape-in"
 block|,
 literal|"An enumerated value representing the desired brush shape"
 block|}
@@ -4769,7 +4769,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"shape_out"
+literal|"shape-out"
 block|,
 literal|"The brush shape actually assigned"
 block|}
@@ -5021,7 +5021,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"radius_in"
+literal|"radius-in"
 block|,
 literal|"The desired brush radius"
 block|}
@@ -5040,7 +5040,7 @@ block|{
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"radius_out"
+literal|"radius-out"
 block|,
 literal|"The brush radius actually assigned"
 block|}
@@ -5292,7 +5292,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"spikes_in"
+literal|"spikes-in"
 block|,
 literal|"The desired number of spikes"
 block|}
@@ -5311,7 +5311,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"spikes_out"
+literal|"spikes-out"
 block|,
 literal|"The number of spikes actually assigned"
 block|}
@@ -5563,7 +5563,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"hardness_in"
+literal|"hardness-in"
 block|,
 literal|"The desired brush hardness"
 block|}
@@ -5582,7 +5582,7 @@ block|{
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"hardness_out"
+literal|"hardness-out"
 block|,
 literal|"The brush hardness actually assigned"
 block|}
@@ -5834,7 +5834,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"aspect_ratio_in"
+literal|"aspect-ratio-in"
 block|,
 literal|"The desired brush aspect ratio"
 block|}
@@ -5853,7 +5853,7 @@ block|{
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"aspect_ratio_out"
+literal|"aspect-ratio-out"
 block|,
 literal|"The brush aspect ratio actually assigned"
 block|}
@@ -6105,7 +6105,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"angle_in"
+literal|"angle-in"
 block|,
 literal|"The desired brush rotation angle"
 block|}
@@ -6124,7 +6124,7 @@ block|{
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"angle_out"
+literal|"angle-out"
 block|,
 literal|"The brush rotation angle actually assigned"
 block|}

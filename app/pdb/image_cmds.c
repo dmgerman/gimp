@@ -1431,7 +1431,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_images"
+literal|"num-images"
 block|,
 literal|"The number of images currently open"
 block|}
@@ -1439,7 +1439,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32ARRAY
 block|,
-literal|"image_ids"
+literal|"image-ids"
 block|,
 literal|"The list of images currently open"
 block|}
@@ -1915,7 +1915,7 @@ block|{
 block|{
 name|GIMP_PDB_IMAGE
 block|,
-literal|"new_image"
+literal|"new-image"
 block|,
 literal|"The new, duplicated image"
 block|}
@@ -2265,7 +2265,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"base_type"
+literal|"base-type"
 block|,
 literal|"The image's base type: { GIMP_RGB (0), GIMP_GRAY (1), GIMP_INDEXED (2) }"
 block|}
@@ -3005,7 +3005,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"new_width"
+literal|"new-width"
 block|,
 literal|"New image width: 0< new_width"
 block|}
@@ -3013,7 +3013,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"new_height"
+literal|"new-height"
 block|,
 literal|"New image height: 0< new_height"
 block|}
@@ -3391,7 +3391,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"new_width"
+literal|"new-width"
 block|,
 literal|"New image width: 0< new_width"
 block|}
@@ -3399,7 +3399,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"new_height"
+literal|"new-height"
 block|,
 literal|"New image height: 0< new_height"
 block|}
@@ -3705,7 +3705,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"new_width"
+literal|"new-width"
 block|,
 literal|"New image width: (0< new_width<= width)"
 block|}
@@ -3713,7 +3713,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"new_height"
+literal|"new-height"
 block|,
 literal|"New image height: (0< new_height<= height)"
 block|}
@@ -3916,7 +3916,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"flip_type"
+literal|"flip-type"
 block|,
 literal|"Type of flip: GIMP_ORIENTATION_HORIZONTAL (0) or GIMP_ORIENTATION_VERTICAL (1)"
 block|}
@@ -4103,7 +4103,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"rotate_type"
+literal|"rotate-type"
 block|,
 literal|"Angle of rotation: GIMP_ROTATE_90 (0), GIMP_ROTATE_180 (1), GIMP_ROTATE_270 (2)"
 block|}
@@ -4386,7 +4386,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_layers"
+literal|"num-layers"
 block|,
 literal|"The number of layers contained in the image"
 block|}
@@ -4394,7 +4394,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32ARRAY
 block|,
-literal|"layer_ids"
+literal|"layer-ids"
 block|,
 literal|"The list of layers contained in the image"
 block|}
@@ -4677,7 +4677,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_channels"
+literal|"num-channels"
 block|,
 literal|"The number of channels contained in the image"
 block|}
@@ -4685,7 +4685,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32ARRAY
 block|,
-literal|"channel_ids"
+literal|"channel-ids"
 block|,
 literal|"The list of channels contained in the image"
 block|}
@@ -4968,7 +4968,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_vectors"
+literal|"num-vectors"
 block|,
 literal|"The number of vectors contained in the image"
 block|}
@@ -4976,7 +4976,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32ARRAY
 block|,
-literal|"vector_ids"
+literal|"vector-ids"
 block|,
 literal|"The list of vectors contained in the image"
 block|}
@@ -5528,7 +5528,7 @@ block|{
 block|{
 name|GIMP_PDB_LAYER
 block|,
-literal|"floating_sel"
+literal|"floating-sel"
 block|,
 literal|"The image's floating selection"
 block|}
@@ -6137,7 +6137,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"sample_merged"
+literal|"sample-merged"
 block|,
 literal|"Use the composite image, not the drawable"
 block|}
@@ -6145,7 +6145,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"sample_average"
+literal|"sample-average"
 block|,
 literal|"Average the color of all the pixels in a specified radius"
 block|}
@@ -6153,7 +6153,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"average_radius"
+literal|"average-radius"
 block|,
 literal|"The radius of pixels to average"
 block|}
@@ -8984,7 +8984,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"merge_type"
+literal|"merge-type"
 block|,
 literal|"The type of merge: { GIMP_EXPAND_AS_NECESSARY (0), GIMP_CLIP_TO_IMAGE (1), GIMP_CLIP_TO_BOTTOM_LAYER (2) }"
 block|}
@@ -9280,7 +9280,7 @@ block|,
 block|{
 name|GIMP_PDB_LAYER
 block|,
-literal|"merge_layer"
+literal|"merge-layer"
 block|,
 literal|"The layer to merge down from"
 block|}
@@ -9288,7 +9288,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"merge_type"
+literal|"merge-type"
 block|,
 literal|"The type of merge: { GIMP_EXPAND_AS_NECESSARY (0), GIMP_CLIP_TO_IMAGE (1), GIMP_CLIP_TO_BOTTOM_LAYER (2) }"
 block|}
@@ -10035,7 +10035,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_bytes"
+literal|"num-bytes"
 block|,
 literal|"Number of bytes in the colormap array: 0< num_bytes"
 block|}
@@ -10249,7 +10249,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_bytes"
+literal|"num-bytes"
 block|,
 literal|"Number of bytes in the colormap array: 0<= num_bytes<= 768"
 block|}
@@ -11123,7 +11123,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"thumbnail_data_count"
+literal|"thumbnail-data-count"
 block|,
 literal|"The number of bytes in thumbnail data"
 block|}
@@ -11131,7 +11131,7 @@ block|,
 block|{
 name|GIMP_PDB_INT8ARRAY
 block|,
-literal|"thumbnail_data"
+literal|"thumbnail-data"
 block|,
 literal|"The thumbnail data"
 block|}
@@ -11335,7 +11335,7 @@ block|{
 block|{
 name|GIMP_PDB_LAYER
 block|,
-literal|"active_layer"
+literal|"active-layer"
 block|,
 literal|"The active layer"
 block|}
@@ -11541,7 +11541,7 @@ block|,
 block|{
 name|GIMP_PDB_LAYER
 block|,
-literal|"active_layer"
+literal|"active-layer"
 block|,
 literal|"The new image active layer"
 block|}
@@ -11745,7 +11745,7 @@ block|{
 block|{
 name|GIMP_PDB_CHANNEL
 block|,
-literal|"active_channel"
+literal|"active-channel"
 block|,
 literal|"The active channel"
 block|}
@@ -11951,7 +11951,7 @@ block|,
 block|{
 name|GIMP_PDB_CHANNEL
 block|,
-literal|"active_channel"
+literal|"active-channel"
 block|,
 literal|"The new image active channel"
 block|}
@@ -14835,7 +14835,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"tattoo_state"
+literal|"tattoo-state"
 block|,
 literal|"The tattoo_state"
 block|}
@@ -15002,7 +15002,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"tattoo_state"
+literal|"tattoo-state"
 block|,
 literal|"The new image tattoo_state"
 block|}

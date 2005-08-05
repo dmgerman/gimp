@@ -251,7 +251,7 @@ block|{
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"help_domain"
+literal|"help-domain"
 block|,
 literal|"The help domain in which help_id is registered"
 block|}
@@ -259,7 +259,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"help_id"
+literal|"help-id"
 block|,
 literal|"The help page's ID"
 block|}

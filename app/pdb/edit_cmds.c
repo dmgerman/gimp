@@ -447,7 +447,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"non_empty"
+literal|"non-empty"
 block|,
 literal|"TRUE if the cut was successful, FALSE if the selection contained only transparent pixels"
 block|}
@@ -690,7 +690,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"non_empty"
+literal|"non-empty"
 block|,
 literal|"TRUE if the copy was successful, FALSE if the selection contained only transparent pixels"
 block|}
@@ -888,7 +888,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"non_empty"
+literal|"non-empty"
 block|,
 literal|"TRUE if the copy was successful, FALSE if the selection contained only transparent pixels"
 block|}
@@ -1170,7 +1170,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"paste_into"
+literal|"paste-into"
 block|,
 literal|"Clear selection, or paste behind it?"
 block|}
@@ -1189,7 +1189,7 @@ block|{
 block|{
 name|GIMP_PDB_LAYER
 block|,
-literal|"floating_sel"
+literal|"floating-sel"
 block|,
 literal|"The new floating selection"
 block|}
@@ -1618,7 +1618,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"fill_type"
+literal|"fill-type"
 block|,
 literal|"The type of fill: GIMP_FOREGROUND_FILL (0), GIMP_BACKGROUND_FILL (1), GIMP_WHITE_FILL (2), GIMP_TRANSPARENT_FILL (3), GIMP_PATTERN_FILL (4)"
 block|}
@@ -2008,7 +2008,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"fill_mode"
+literal|"fill-mode"
 block|,
 literal|"The type of fill: { GIMP_FG_BUCKET_FILL (0), GIMP_BG_BUCKET_FILL (1), GIMP_PATTERN_BUCKET_FILL (2) }"
 block|}
@@ -2016,7 +2016,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"paint_mode"
+literal|"paint-mode"
 block|,
 literal|"The paint application mode: { GIMP_NORMAL_MODE (0), GIMP_DISSOLVE_MODE (1), GIMP_BEHIND_MODE (2), GIMP_MULTIPLY_MODE (3), GIMP_SCREEN_MODE (4), GIMP_OVERLAY_MODE (5), GIMP_DIFFERENCE_MODE (6), GIMP_ADDITION_MODE (7), GIMP_SUBTRACT_MODE (8), GIMP_DARKEN_ONLY_MODE (9), GIMP_LIGHTEN_ONLY_MODE (10), GIMP_HUE_MODE (11), GIMP_SATURATION_MODE (12), GIMP_COLOR_MODE (13), GIMP_VALUE_MODE (14), GIMP_DIVIDE_MODE (15), GIMP_DODGE_MODE (16), GIMP_BURN_MODE (17), GIMP_HARDLIGHT_MODE (18), GIMP_SOFTLIGHT_MODE (19), GIMP_GRAIN_EXTRACT_MODE (20), GIMP_GRAIN_MERGE_MODE (21), GIMP_COLOR_ERASE_MODE (22) }"
 block|}
@@ -2040,7 +2040,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"sample_merged"
+literal|"sample-merged"
 block|,
 literal|"Use the composite image, not the drawable"
 block|}
@@ -2639,7 +2639,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"blend_mode"
+literal|"blend-mode"
 block|,
 literal|"The type of blend: { GIMP_FG_BG_RGB_MODE (0), GIMP_FG_BG_HSV_MODE (1), GIMP_FG_TRANSPARENT_MODE (2), GIMP_CUSTOM_MODE (3) }"
 block|}
@@ -2647,7 +2647,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"paint_mode"
+literal|"paint-mode"
 block|,
 literal|"The paint application mode: { GIMP_NORMAL_MODE (0), GIMP_DISSOLVE_MODE (1), GIMP_BEHIND_MODE (2), GIMP_MULTIPLY_MODE (3), GIMP_SCREEN_MODE (4), GIMP_OVERLAY_MODE (5), GIMP_DIFFERENCE_MODE (6), GIMP_ADDITION_MODE (7), GIMP_SUBTRACT_MODE (8), GIMP_DARKEN_ONLY_MODE (9), GIMP_LIGHTEN_ONLY_MODE (10), GIMP_HUE_MODE (11), GIMP_SATURATION_MODE (12), GIMP_COLOR_MODE (13), GIMP_VALUE_MODE (14), GIMP_DIVIDE_MODE (15), GIMP_DODGE_MODE (16), GIMP_BURN_MODE (17), GIMP_HARDLIGHT_MODE (18), GIMP_SOFTLIGHT_MODE (19), GIMP_GRAIN_EXTRACT_MODE (20), GIMP_GRAIN_MERGE_MODE (21), GIMP_COLOR_ERASE_MODE (22) }"
 block|}
@@ -2655,7 +2655,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"gradient_type"
+literal|"gradient-type"
 block|,
 literal|"The type of gradient: { GIMP_GRADIENT_LINEAR (0), GIMP_GRADIENT_BILINEAR (1), GIMP_GRADIENT_RADIAL (2), GIMP_GRADIENT_SQUARE (3), GIMP_GRADIENT_CONICAL_SYMMETRIC (4), GIMP_GRADIENT_CONICAL_ASYMMETRIC (5), GIMP_GRADIENT_SHAPEBURST_ANGULAR (6), GIMP_GRADIENT_SHAPEBURST_SPHERICAL (7), GIMP_GRADIENT_SHAPEBURST_DIMPLED (8), GIMP_GRADIENT_SPIRAL_CLOCKWISE (9), GIMP_GRADIENT_SPIRAL_ANTICLOCKWISE (10) }"
 block|}
@@ -2703,7 +2703,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"max_depth"
+literal|"max-depth"
 block|,
 literal|"Maximum recursion levels for supersampling"
 block|}

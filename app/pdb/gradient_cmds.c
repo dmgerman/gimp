@@ -1523,7 +1523,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"new_name"
+literal|"new-name"
 block|,
 literal|"The new name of the gradient"
 block|}
@@ -2158,7 +2158,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_samples"
+literal|"num-samples"
 block|,
 literal|"The number of samples to take"
 block|}
@@ -2185,7 +2185,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_color_samples"
+literal|"num-color-samples"
 block|,
 literal|"Length of the color_samples array (4 * num_samples)"
 block|}
@@ -2193,7 +2193,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOATARRAY
 block|,
-literal|"color_samples"
+literal|"color-samples"
 block|,
 literal|"Color samples: { R1, G1, B1, A1, ..., Rn, Gn, Bn, An }"
 block|}
@@ -2578,7 +2578,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_samples"
+literal|"num-samples"
 block|,
 literal|"The number of samples to take"
 block|}
@@ -2613,7 +2613,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_color_samples"
+literal|"num-color-samples"
 block|,
 literal|"Length of the color_samples array (4 * num_samples)"
 block|}
@@ -2621,7 +2621,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOATARRAY
 block|,
-literal|"color_samples"
+literal|"color-samples"
 block|,
 literal|"Color samples: { R1, G1, B1, A1, ..., Rn, Gn, Bn, An }"
 block|}
@@ -4541,7 +4541,7 @@ block|{
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"final_pos"
+literal|"final-pos"
 block|,
 literal|"The return position"
 block|}
@@ -5171,7 +5171,7 @@ block|{
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"final_pos"
+literal|"final-pos"
 block|,
 literal|"The return position"
 block|}
@@ -5801,7 +5801,7 @@ block|{
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"final_pos"
+literal|"final-pos"
 block|,
 literal|"The return position"
 block|}
@@ -6097,7 +6097,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"blend_func"
+literal|"blend-func"
 block|,
 literal|"The blending function of the segment: { GIMP_GRADIENT_SEGMENT_LINEAR (0), GIMP_GRADIENT_SEGMENT_CURVED (1), GIMP_GRADIENT_SEGMENT_SINE (2), GIMP_GRADIENT_SEGMENT_SPHERE_INCREASING (3), GIMP_GRADIENT_SEGMENT_SPHERE_DECREASING (4) }"
 block|}
@@ -6393,7 +6393,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"coloring_type"
+literal|"coloring-type"
 block|,
 literal|"The coloring type of the segment: { GIMP_GRADIENT_SEGMENT_RGB (0), GIMP_GRADIENT_SEGMENT_HSV_CCW (1), GIMP_GRADIENT_SEGMENT_HSV_CW (2) }"
 block|}
@@ -6737,7 +6737,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"start_segment"
+literal|"start-segment"
 block|,
 literal|"The index of the first segment to operate on"
 block|}
@@ -6745,7 +6745,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"end_segment"
+literal|"end-segment"
 block|,
 literal|"The index of the last segment to operate on. If negative, the selection will extend to the end of the string."
 block|}
@@ -6753,7 +6753,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"blending_function"
+literal|"blending-function"
 block|,
 literal|"The Blending Function: { GIMP_GRADIENT_SEGMENT_LINEAR (0), GIMP_GRADIENT_SEGMENT_CURVED (1), GIMP_GRADIENT_SEGMENT_SINE (2), GIMP_GRADIENT_SEGMENT_SPHERE_INCREASING (3), GIMP_GRADIENT_SEGMENT_SPHERE_DECREASING (4) }"
 block|}
@@ -7097,7 +7097,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"start_segment"
+literal|"start-segment"
 block|,
 literal|"The index of the first segment to operate on"
 block|}
@@ -7105,7 +7105,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"end_segment"
+literal|"end-segment"
 block|,
 literal|"The index of the last segment to operate on. If negative, the selection will extend to the end of the string."
 block|}
@@ -7113,7 +7113,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"coloring_type"
+literal|"coloring-type"
 block|,
 literal|"The Coloring Type: { GIMP_GRADIENT_SEGMENT_RGB (0), GIMP_GRADIENT_SEGMENT_HSV_CCW (1), GIMP_GRADIENT_SEGMENT_HSV_CW (2) }"
 block|}
@@ -7431,7 +7431,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"start_segment"
+literal|"start-segment"
 block|,
 literal|"The index of the first segment to operate on"
 block|}
@@ -7439,7 +7439,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"end_segment"
+literal|"end-segment"
 block|,
 literal|"The index of the last segment to operate on. If negative, the selection will extend to the end of the string."
 block|}
@@ -7787,7 +7787,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"start_segment"
+literal|"start-segment"
 block|,
 literal|"The index of the first segment to operate on"
 block|}
@@ -7795,7 +7795,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"end_segment"
+literal|"end-segment"
 block|,
 literal|"The index of the last segment to operate on. If negative, the selection will extend to the end of the string."
 block|}
@@ -7803,7 +7803,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"replicate_times"
+literal|"replicate-times"
 block|,
 literal|"The number of times to replicate"
 block|}
@@ -8121,7 +8121,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"start_segment"
+literal|"start-segment"
 block|,
 literal|"The index of the first segment to operate on"
 block|}
@@ -8129,7 +8129,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"end_segment"
+literal|"end-segment"
 block|,
 literal|"The index of the last segment to operate on. If negative, the selection will extend to the end of the string."
 block|}
@@ -8477,7 +8477,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"start_segment"
+literal|"start-segment"
 block|,
 literal|"The index of the first segment to operate on"
 block|}
@@ -8485,7 +8485,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"end_segment"
+literal|"end-segment"
 block|,
 literal|"The index of the last segment to operate on. If negative, the selection will extend to the end of the string."
 block|}
@@ -8493,7 +8493,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"split_parts"
+literal|"split-parts"
 block|,
 literal|"The number of uniform divisions to split each segment to"
 block|}
@@ -8811,7 +8811,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"start_segment"
+literal|"start-segment"
 block|,
 literal|"The index of the first segment to operate on"
 block|}
@@ -8819,7 +8819,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"end_segment"
+literal|"end-segment"
 block|,
 literal|"The index of the last segment to operate on. If negative, the selection will extend to the end of the string."
 block|}
@@ -9133,7 +9133,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"start_segment"
+literal|"start-segment"
 block|,
 literal|"The index of the first segment to operate on"
 block|}
@@ -9141,7 +9141,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"end_segment"
+literal|"end-segment"
 block|,
 literal|"The index of the last segment to operate on. If negative, the selection will extend to the end of the string."
 block|}
@@ -9469,7 +9469,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"start_segment"
+literal|"start-segment"
 block|,
 literal|"The index of the first segment to operate on"
 block|}
@@ -9477,7 +9477,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"end_segment"
+literal|"end-segment"
 block|,
 literal|"The index of the last segment to operate on. If negative, the selection will extend to the end of the string."
 block|}
@@ -9805,7 +9805,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"start_segment"
+literal|"start-segment"
 block|,
 literal|"The index of the first segment to operate on"
 block|}
@@ -9813,7 +9813,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"end_segment"
+literal|"end-segment"
 block|,
 literal|"The index of the last segment to operate on. If negative, the selection will extend to the end of the string."
 block|}
@@ -10208,7 +10208,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"start_segment"
+literal|"start-segment"
 block|,
 literal|"The index of the first segment to operate on"
 block|}
@@ -10216,7 +10216,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"end_segment"
+literal|"end-segment"
 block|,
 literal|"The index of the last segment to operate on. If negative, the selection will extend to the end of the string."
 block|}
@@ -10232,7 +10232,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"control_compress"
+literal|"control-compress"
 block|,
 literal|"Whether or not to compress the neighboring segments"
 block|}
@@ -10251,7 +10251,7 @@ block|{
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"final_delta"
+literal|"final-delta"
 block|,
 literal|"The final delta by which the range moved"
 block|}

@@ -317,7 +317,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_units"
+literal|"num-units"
 block|,
 literal|"The number of units"
 block|}
@@ -436,7 +436,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_units"
+literal|"num-units"
 block|,
 literal|"The number of built-in units"
 block|}
@@ -886,7 +886,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"unit_id"
+literal|"unit-id"
 block|,
 literal|"The new unit's ID"
 block|}
@@ -1047,7 +1047,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"unit_id"
+literal|"unit-id"
 block|,
 literal|"The unit's integer ID"
 block|}
@@ -1066,7 +1066,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"deletion_flag"
+literal|"deletion-flag"
 block|,
 literal|"The unit's deletion flag"
 block|}
@@ -1230,7 +1230,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"unit_id"
+literal|"unit-id"
 block|,
 literal|"The unit's integer ID"
 block|}
@@ -1238,7 +1238,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"deletion_flag"
+literal|"deletion-flag"
 block|,
 literal|"The new deletion flag of the unit"
 block|}
@@ -1402,7 +1402,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"unit_id"
+literal|"unit-id"
 block|,
 literal|"The unit's integer ID"
 block|}
@@ -1582,7 +1582,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"unit_id"
+literal|"unit-id"
 block|,
 literal|"The unit's integer ID"
 block|}
@@ -1762,7 +1762,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"unit_id"
+literal|"unit-id"
 block|,
 literal|"The unit's integer ID"
 block|}
@@ -1945,7 +1945,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"unit_id"
+literal|"unit-id"
 block|,
 literal|"The unit's integer ID"
 block|}
@@ -2128,7 +2128,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"unit_id"
+literal|"unit-id"
 block|,
 literal|"The unit's integer ID"
 block|}
@@ -2311,7 +2311,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"unit_id"
+literal|"unit-id"
 block|,
 literal|"The unit's integer ID"
 block|}
@@ -2494,7 +2494,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"unit_id"
+literal|"unit-id"
 block|,
 literal|"The unit's integer ID"
 block|}

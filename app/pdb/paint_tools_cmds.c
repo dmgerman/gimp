@@ -806,7 +806,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_strokes"
+literal|"num-strokes"
 block|,
 literal|"Number of stroke control points (count each coordinate as 2 points)"
 block|}
@@ -1091,7 +1091,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_strokes"
+literal|"num-strokes"
 block|,
 literal|"Number of stroke control points (count each coordinate as 2 points)"
 block|}
@@ -1504,7 +1504,7 @@ block|,
 block|{
 name|GIMP_PDB_DRAWABLE
 block|,
-literal|"src_drawable"
+literal|"src-drawable"
 block|,
 literal|"The source drawable"
 block|}
@@ -1512,7 +1512,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"clone_type"
+literal|"clone-type"
 block|,
 literal|"The type of clone: { GIMP_IMAGE_CLONE (0), GIMP_PATTERN_CLONE (1) }"
 block|}
@@ -1520,7 +1520,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"src_x"
+literal|"src-x"
 block|,
 literal|"The x coordinate in the source image"
 block|}
@@ -1528,7 +1528,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"src_y"
+literal|"src-y"
 block|,
 literal|"The y coordinate in the source image"
 block|}
@@ -1536,7 +1536,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_strokes"
+literal|"num-strokes"
 block|,
 literal|"Number of stroke control points (count each coordinate as 2 points)"
 block|}
@@ -1821,7 +1821,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_strokes"
+literal|"num-strokes"
 block|,
 literal|"Number of stroke control points (count each coordinate as 2 points)"
 block|}
@@ -2185,7 +2185,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"convolve_type"
+literal|"convolve-type"
 block|,
 literal|"Convolve type: { GIMP_BLUR_CONVOLVE (0), GIMP_SHARPEN_CONVOLVE (1) }"
 block|}
@@ -2193,7 +2193,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_strokes"
+literal|"num-strokes"
 block|,
 literal|"Number of stroke control points (count each coordinate as 2 points)"
 block|}
@@ -2478,7 +2478,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_strokes"
+literal|"num-strokes"
 block|,
 literal|"Number of stroke control points (count each coordinate as 2 points)"
 block|}
@@ -2874,7 +2874,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"dodgeburn_type"
+literal|"dodgeburn-type"
 block|,
 literal|"The type either dodge or burn: { GIMP_DODGE (0), GIMP_BURN (1) }"
 block|}
@@ -2882,7 +2882,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"dodgeburn_mode"
+literal|"dodgeburn-mode"
 block|,
 literal|"The mode: { GIMP_SHADOWS (0), GIMP_MIDTONES (1), GIMP_HIGHLIGHTS (2) }"
 block|}
@@ -2890,7 +2890,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_strokes"
+literal|"num-strokes"
 block|,
 literal|"Number of stroke control points (count each coordinate as 2 points)"
 block|}
@@ -3175,7 +3175,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_strokes"
+literal|"num-strokes"
 block|,
 literal|"Number of stroke control points (count each coordinate as 2 points)"
 block|}
@@ -3531,7 +3531,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_strokes"
+literal|"num-strokes"
 block|,
 literal|"Number of stroke control points (count each coordinate as 2 points)"
 block|}
@@ -3832,7 +3832,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_strokes"
+literal|"num-strokes"
 block|,
 literal|"Number of stroke control points (count each coordinate as 2 points)"
 block|}
@@ -4224,7 +4224,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"fade_out"
+literal|"fade-out"
 block|,
 literal|"Fade out parameter: 0<= fade_out"
 block|}
@@ -4232,7 +4232,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_strokes"
+literal|"num-strokes"
 block|,
 literal|"Number of stroke control points (count each coordinate as 2 points)"
 block|}
@@ -4256,7 +4256,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"gradient_length"
+literal|"gradient-length"
 block|,
 literal|"Length of gradient to draw: 0<= gradient_length"
 block|}
@@ -4533,7 +4533,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_strokes"
+literal|"num-strokes"
 block|,
 literal|"Number of stroke control points (count each coordinate as 2 points)"
 block|}
@@ -4818,7 +4818,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_strokes"
+literal|"num-strokes"
 block|,
 literal|"Number of stroke control points (count each coordinate as 2 points)"
 block|}
@@ -5150,7 +5150,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_strokes"
+literal|"num-strokes"
 block|,
 literal|"Number of stroke control points (count each coordinate as 2 points)"
 block|}
@@ -5435,7 +5435,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_strokes"
+literal|"num-strokes"
 block|,
 literal|"Number of stroke control points (count each coordinate as 2 points)"
 block|}

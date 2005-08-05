@@ -953,7 +953,7 @@ block|{
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"progress_callback"
+literal|"progress-callback"
 block|,
 literal|"The callback PDB proc to call"
 block|}
@@ -1129,7 +1129,7 @@ block|{
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"progress_callback"
+literal|"progress-callback"
 block|,
 literal|"The name of the callback registered for this progress"
 block|}
@@ -1305,7 +1305,7 @@ block|{
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"progress_callback"
+literal|"progress-callback"
 block|,
 literal|"The name of the callback registered for this progress"
 block|}

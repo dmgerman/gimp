@@ -356,7 +356,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_fonts"
+literal|"num-fonts"
 block|,
 literal|"The number of available fonts"
 block|}
@@ -364,7 +364,7 @@ block|,
 block|{
 name|GIMP_PDB_STRINGARRAY
 block|,
-literal|"font_list"
+literal|"font-list"
 block|,
 literal|"The list of font names"
 block|}

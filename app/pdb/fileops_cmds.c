@@ -575,7 +575,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"The run mode: GIMP_RUN_INTERACTIVE (0) or GIMP_RUN_NONINTERACTIVE (1)"
 block|}
@@ -591,7 +591,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"raw_filename"
+literal|"raw-filename"
 block|,
 literal|"The name as entered by the user"
 block|}
@@ -907,7 +907,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"The run mode: GIMP_RUN_INTERACTIVE (0) or GIMP_RUN_NONINTERACTIVE (1)"
 block|}
@@ -939,7 +939,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"raw_filename"
+literal|"raw-filename"
 block|,
 literal|"The name as entered by the user"
 block|}
@@ -1381,7 +1381,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"thumbnail_data_count"
+literal|"thumbnail-data-count"
 block|,
 literal|"The number of bytes in thumbnail data"
 block|}
@@ -1389,7 +1389,7 @@ block|,
 block|{
 name|GIMP_PDB_INT8ARRAY
 block|,
-literal|"thumb_data"
+literal|"thumb-data"
 block|,
 literal|"The thumbnail data"
 block|}
@@ -2337,7 +2337,7 @@ block|{
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"procedure_name"
+literal|"procedure-name"
 block|,
 literal|"The name of the procedure to be used for loading"
 block|}
@@ -2513,7 +2513,7 @@ block|{
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"procedure_name"
+literal|"procedure-name"
 block|,
 literal|"The name of the procedure to be used for loading"
 block|}
@@ -2906,7 +2906,7 @@ block|{
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"procedure_name"
+literal|"procedure-name"
 block|,
 literal|"The name of the procedure to be used for saving"
 block|}
@@ -3141,7 +3141,7 @@ block|{
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"procedure_name"
+literal|"procedure-name"
 block|,
 literal|"The name of the procedure to associate a MIME type with."
 block|}
@@ -3149,7 +3149,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"mime_type"
+literal|"mime-type"
 block|,
 literal|"A single MIME type, like for example \"image/jpeg\"."
 block|}
@@ -3368,7 +3368,7 @@ block|{
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"load_proc"
+literal|"load-proc"
 block|,
 literal|"The name of the procedure the thumbnail loader with."
 block|}
@@ -3376,7 +3376,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"thumb_proc"
+literal|"thumb-proc"
 block|,
 literal|"The name of the thumbnail load procedure."
 block|}

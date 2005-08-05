@@ -1184,7 +1184,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"next_guide"
+literal|"next-guide"
 block|,
 literal|"The next guide's ID"
 block|}

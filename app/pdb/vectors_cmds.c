@@ -403,7 +403,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_strokes"
+literal|"num-strokes"
 block|,
 literal|"The number of strokes returned."
 block|}
@@ -411,7 +411,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32ARRAY
 block|,
-literal|"stroke_ids"
+literal|"stroke-ids"
 block|,
 literal|"List of the strokes belonging to the path."
 block|}
@@ -617,7 +617,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"stroke_id"
+literal|"stroke-id"
 block|,
 literal|"The stroke ID"
 block|}
@@ -898,7 +898,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"stroke_id"
+literal|"stroke-id"
 block|,
 literal|"The stroke ID"
 block|}
@@ -1306,7 +1306,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"stroke_id"
+literal|"stroke-id"
 block|,
 literal|"The stroke ID"
 block|}
@@ -1341,7 +1341,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_coords"
+literal|"num-coords"
 block|,
 literal|"The number of floats returned."
 block|}

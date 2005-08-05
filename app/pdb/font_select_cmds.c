@@ -312,7 +312,7 @@ block|{
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"font_callback"
+literal|"font-callback"
 block|,
 literal|"The callback PDB proc to call when font selection is made"
 block|}
@@ -320,7 +320,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"popup_title"
+literal|"popup-title"
 block|,
 literal|"Title to give the font popup window"
 block|}
@@ -328,7 +328,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"initial_font"
+literal|"initial-font"
 block|,
 literal|"The name of the font to set as the first selected"
 block|}
@@ -506,7 +506,7 @@ block|{
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"font_callback"
+literal|"font-callback"
 block|,
 literal|"The name of the callback registered for this popup"
 block|}
@@ -728,7 +728,7 @@ block|{
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"font_callback"
+literal|"font-callback"
 block|,
 literal|"The name of the callback registered for this popup"
 block|}
@@ -736,7 +736,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"font_name"
+literal|"font-name"
 block|,
 literal|"The name of the font to set as selected"
 block|}

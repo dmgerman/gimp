@@ -473,7 +473,7 @@ block|{
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"search_string"
+literal|"search-string"
 block|,
 literal|"If not an empty string then use this as a search pattern"
 block|}
@@ -492,7 +492,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_plugins"
+literal|"num-plugins"
 block|,
 literal|"The number of plugins"
 block|}
@@ -500,7 +500,7 @@ block|,
 block|{
 name|GIMP_PDB_STRINGARRAY
 block|,
-literal|"menu_path"
+literal|"menu-path"
 block|,
 literal|"The menu path of the plugin"
 block|}
@@ -508,7 +508,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_plugins"
+literal|"num-plugins"
 block|,
 literal|"The number of plugins"
 block|}
@@ -516,7 +516,7 @@ block|,
 block|{
 name|GIMP_PDB_STRINGARRAY
 block|,
-literal|"plugin_accelerator"
+literal|"plugin-accelerator"
 block|,
 literal|"String representing keyboard accelerator (could be empty string)"
 block|}
@@ -524,7 +524,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_plugins"
+literal|"num-plugins"
 block|,
 literal|"The number of plugins"
 block|}
@@ -532,7 +532,7 @@ block|,
 block|{
 name|GIMP_PDB_STRINGARRAY
 block|,
-literal|"plugin_location"
+literal|"plugin-location"
 block|,
 literal|"Location of the plugin program"
 block|}
@@ -540,7 +540,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_plugins"
+literal|"num-plugins"
 block|,
 literal|"The number of plugins"
 block|}
@@ -548,7 +548,7 @@ block|,
 block|{
 name|GIMP_PDB_STRINGARRAY
 block|,
-literal|"plugin_image_type"
+literal|"plugin-image-type"
 block|,
 literal|"Type of image that this plugin will work on"
 block|}
@@ -556,7 +556,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_plugins"
+literal|"num-plugins"
 block|,
 literal|"The number of plugins"
 block|}
@@ -564,7 +564,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32ARRAY
 block|,
-literal|"plugin_install_time"
+literal|"plugin-install-time"
 block|,
 literal|"Time that the plugin was installed"
 block|}
@@ -572,7 +572,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_plugins"
+literal|"num-plugins"
 block|,
 literal|"The number of plugins"
 block|}
@@ -580,7 +580,7 @@ block|,
 block|{
 name|GIMP_PDB_STRINGARRAY
 block|,
-literal|"plugin_real_name"
+literal|"plugin-real-name"
 block|,
 literal|"The internal name of the plugin"
 block|}
@@ -788,7 +788,7 @@ block|{
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"domain_name"
+literal|"domain-name"
 block|,
 literal|"The name of the textdomain (must be unique)"
 block|}
@@ -796,7 +796,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"domain_path"
+literal|"domain-path"
 block|,
 literal|"The absolute path to the compiled message catalog (may be NULL)"
 block|}
@@ -1025,7 +1025,7 @@ block|{
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"domain_name"
+literal|"domain-name"
 block|,
 literal|"The XML namespace of the plug-in's help pages"
 block|}
@@ -1033,7 +1033,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"domain_uri"
+literal|"domain-uri"
 block|,
 literal|"The root URI of the plug-in's help pages"
 block|}
@@ -1530,7 +1530,7 @@ block|{
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"procedure_name"
+literal|"procedure-name"
 block|,
 literal|"The procedure for which to install the menu path"
 block|}
@@ -1538,7 +1538,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"menu_path"
+literal|"menu-path"
 block|,
 literal|"The procedure's additional menu path"
 block|}
@@ -1783,7 +1783,7 @@ block|{
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"menu_path"
+literal|"menu-path"
 block|,
 literal|"The sub-menu's menu path"
 block|}
@@ -1791,7 +1791,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"menu_name"
+literal|"menu-name"
 block|,
 literal|"The name of the sub-menu"
 block|}
@@ -2084,7 +2084,7 @@ block|{
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"procedure_name"
+literal|"procedure-name"
 block|,
 literal|"The procedure for which to install the icon"
 block|}
@@ -2092,7 +2092,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"icon_type"
+literal|"icon-type"
 block|,
 literal|"The type of the icon"
 block|}
@@ -2100,7 +2100,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"icon_data_length"
+literal|"icon-data-length"
 block|,
 literal|"The length of 'icon_data': 0< icon_data_length"
 block|}
@@ -2108,7 +2108,7 @@ block|,
 block|{
 name|GIMP_PDB_INT8ARRAY
 block|,
-literal|"icon_data"
+literal|"icon-data"
 block|,
 literal|"The procedure's icon. The format depends on the 'icon_type' parameter"
 block|}
