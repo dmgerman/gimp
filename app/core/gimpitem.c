@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c470da0103
+DECL|enum|__anon274cbc370103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -3920,7 +3920,15 @@ name|item
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*  only set the dirty bit manually if we can be saved and the new    *  parasite differs from the current one and we aren't undoable    */
+if|if
+condition|(
+name|gimp_item_is_attached
+argument_list|(
+name|item
+argument_list|)
+condition|)
+block|{
+comment|/*  only set the dirty bit manually if we can be saved and the new        *  parasite differs from the current one and we aren't undoable        */
 if|if
 condition|(
 name|gimp_parasite_is_undoable
@@ -3929,17 +3937,7 @@ name|parasite
 argument_list|)
 condition|)
 block|{
-comment|/*  skip undo if it is disabled, for example while loading an XCF  */
-if|if
-condition|(
-name|gimp_image_undo_is_enabled
-argument_list|(
-name|item
-operator|->
-name|gimage
-argument_list|)
-condition|)
-block|{
+comment|/* do a group in case we have attach_parent set */
 name|gimp_image_undo_group_start
 argument_list|(
 name|item
@@ -3967,7 +3965,6 @@ argument_list|,
 name|parasite
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 elseif|else
 if|if
@@ -4006,6 +4003,7 @@ literal|"Attach Parasite to Item"
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 name|gimp_parasite_list_add
 argument_list|(
@@ -4076,16 +4074,14 @@ expr_stmt|;
 block|}
 if|if
 condition|(
+name|gimp_item_is_attached
+argument_list|(
+name|item
+argument_list|)
+operator|&&
 name|gimp_parasite_is_undoable
 argument_list|(
 name|parasite
-argument_list|)
-operator|&&
-name|gimp_image_undo_is_enabled
-argument_list|(
-name|item
-operator|->
-name|gimage
 argument_list|)
 condition|)
 block|{
