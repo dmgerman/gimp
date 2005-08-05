@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2781a4070103
+DECL|enum|__anon29c470da0103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -3920,7 +3920,7 @@ name|item
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*  only set the dirty bit manually if we can be saved and the new    *  parasite differs from the current one and we arn't undoable    */
+comment|/*  only set the dirty bit manually if we can be saved and the new    *  parasite differs from the current one and we aren't undoable    */
 if|if
 condition|(
 name|gimp_parasite_is_undoable
@@ -3929,7 +3929,17 @@ name|parasite
 argument_list|)
 condition|)
 block|{
-comment|/* do a group in case we have attach_parent set */
+comment|/*  skip undo if it is disabled, for example while loading an XCF  */
+if|if
+condition|(
+name|gimp_image_undo_is_enabled
+argument_list|(
+name|item
+operator|->
+name|gimage
+argument_list|)
+condition|)
+block|{
 name|gimp_image_undo_group_start
 argument_list|(
 name|item
@@ -3957,6 +3967,7 @@ argument_list|,
 name|parasite
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 elseif|else
 if|if
@@ -4068,6 +4079,13 @@ condition|(
 name|gimp_parasite_is_undoable
 argument_list|(
 name|parasite
+argument_list|)
+operator|&&
+name|gimp_image_undo_is_enabled
+argument_list|(
+name|item
+operator|->
+name|gimage
 argument_list|)
 condition|)
 block|{

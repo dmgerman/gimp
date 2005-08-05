@@ -680,6 +680,11 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+name|gimp_image_undo_disable
+argument_list|(
+name|gimage
+argument_list|)
+expr_stmt|;
 comment|/* read the image properties */
 if|if
 condition|(
@@ -1057,6 +1062,11 @@ operator|->
 name|tattoo_state
 argument_list|)
 expr_stmt|;
+name|gimp_image_undo_enable
+argument_list|(
+name|gimage
+argument_list|)
+expr_stmt|;
 return|return
 name|gimage
 return|;
@@ -1075,6 +1085,11 @@ name|g_message
 argument_list|(
 literal|"XCF: This file is corrupt!  I have loaded as much\n"
 literal|"of it as I can, but it is incomplete."
+argument_list|)
+expr_stmt|;
+name|gimp_image_undo_enable
+argument_list|(
+name|gimage
 argument_list|)
 expr_stmt|;
 return|return
