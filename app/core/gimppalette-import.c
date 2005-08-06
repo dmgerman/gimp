@@ -1625,7 +1625,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29857fad0103
+DECL|enum|__anon2bb1b2440103
 block|{
 DECL|enumerator|GIMP_PALETTE_FILE_FORMAT_UNKNOWN
 name|GIMP_PALETTE_FILE_FORMAT_UNKNOWN
@@ -1671,7 +1671,7 @@ decl_stmt|;
 name|gint
 name|fd
 decl_stmt|;
-name|guchar
+name|gchar
 name|header
 index|[
 literal|16

@@ -496,7 +496,7 @@ parameter_list|(
 name|gdouble
 name|sigma
 parameter_list|,
-name|guint
+name|gint
 modifier|*
 name|length
 parameter_list|)
@@ -1267,13 +1267,13 @@ begin_function
 specifier|static
 name|gint
 modifier|*
-DECL|function|make_curve (gdouble sigma,guint * length)
+DECL|function|make_curve (gdouble sigma,gint * length)
 name|make_curve
 parameter_list|(
 name|gdouble
 name|sigma
 parameter_list|,
-name|guint
+name|gint
 modifier|*
 name|length
 parameter_list|)
@@ -11559,7 +11559,7 @@ name|guchar
 modifier|*
 name|data
 decl_stmt|;
-name|gint
+name|guint
 modifier|*
 name|buf
 decl_stmt|,
@@ -11685,7 +11685,7 @@ name|buf
 operator|=
 name|g_new
 argument_list|(
-name|gint
+name|guint
 argument_list|,
 name|MAX
 argument_list|(
