@@ -195,6 +195,34 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/* This is a variant of gimp_scan_convert_render() that composes the  * (unaliased) scan conversion with the existing drawable content.  */
+end_comment
+
+begin_function_decl
+name|void
+name|gimp_scan_convert_compose
+parameter_list|(
+name|GimpScanConvert
+modifier|*
+name|sc
+parameter_list|,
+name|GimpChannelOps
+name|op
+parameter_list|,
+name|TileManager
+modifier|*
+name|tile_manager
+parameter_list|,
+name|gint
+name|off_x
+parameter_list|,
+name|gint
+name|off_y
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
