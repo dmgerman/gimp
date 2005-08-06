@@ -112,6 +112,10 @@ DECL|member|parent_instance
 name|GimpFreeSelectTool
 name|parent_instance
 decl_stmt|;
+DECL|member|idle_id
+name|guint
+name|idle_id
+decl_stmt|;
 DECL|member|stroke
 name|GArray
 modifier|*

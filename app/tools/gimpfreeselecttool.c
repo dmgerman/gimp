@@ -249,7 +249,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_free_select_tool_select
+name|gimp_free_select_tool_real_select
 parameter_list|(
 name|GimpFreeSelectTool
 modifier|*
@@ -456,6 +456,51 @@ return|;
 block|}
 end_function
 
+begin_function
+name|void
+DECL|function|gimp_free_select_tool_select (GimpFreeSelectTool * free_sel,GimpDisplay * gdisp)
+name|gimp_free_select_tool_select
+parameter_list|(
+name|GimpFreeSelectTool
+modifier|*
+name|free_sel
+parameter_list|,
+name|GimpDisplay
+modifier|*
+name|gdisp
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_FREE_SELECT_TOOL
+argument_list|(
+name|free_sel
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY
+argument_list|(
+name|gdisp
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|GIMP_FREE_SELECT_TOOL_GET_CLASS
+argument_list|(
+name|free_sel
+argument_list|)
+operator|->
+name|select
+argument_list|(
+name|free_sel
+argument_list|,
+name|gdisp
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
 begin_comment
 comment|/*  private functions  */
 end_comment
@@ -545,7 +590,7 @@ name|klass
 operator|->
 name|select
 operator|=
-name|gimp_free_select_tool_select
+name|gimp_free_select_tool_real_select
 expr_stmt|;
 block|}
 end_function
@@ -1265,8 +1310,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_free_select_tool_select (GimpFreeSelectTool * free_sel,GimpDisplay * gdisp)
-name|gimp_free_select_tool_select
+DECL|function|gimp_free_select_tool_real_select (GimpFreeSelectTool * free_sel,GimpDisplay * gdisp)
+name|gimp_free_select_tool_real_select
 parameter_list|(
 name|GimpFreeSelectTool
 modifier|*

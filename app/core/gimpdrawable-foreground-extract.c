@@ -427,9 +427,9 @@ name|width
 argument_list|,
 name|height
 argument_list|,
-name|limits
+name|smoothness
 argument_list|,
-literal|3
+name|limits
 argument_list|,
 operator|(
 name|SioxProgressFunc

@@ -186,6 +186,21 @@ name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
 
+begin_function_decl
+name|void
+name|gimp_free_select_tool_select
+parameter_list|(
+name|GimpFreeSelectTool
+modifier|*
+name|free_sel
+parameter_list|,
+name|GimpDisplay
+modifier|*
+name|gdisp
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

@@ -104,7 +104,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6333d80108
+DECL|struct|__anon2c9883280108
 block|{
 DECL|member|l
 name|gfloat
@@ -3323,7 +3323,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|siox_foreground_extract (TileManager * pixels,const guchar * colormap,gint offset_x,gint offset_y,TileManager * mask,gint x,gint y,gint width,gint height,const gdouble limits[SIOX_DIMS],gint smoothness,SioxProgressFunc progress_callback,gpointer progress_data)
+DECL|function|siox_foreground_extract (TileManager * pixels,const guchar * colormap,gint offset_x,gint offset_y,TileManager * mask,gint x,gint y,gint width,gint height,gint smoothness,const gdouble limits[SIOX_DIMS],SioxProgressFunc progress_callback,gpointer progress_data)
 name|siox_foreground_extract
 parameter_list|(
 name|TileManager
@@ -3357,15 +3357,15 @@ parameter_list|,
 name|gint
 name|height
 parameter_list|,
+name|gint
+name|smoothness
+parameter_list|,
 specifier|const
 name|gdouble
 name|limits
 index|[
 name|SIOX_DIMS
 index|]
-parameter_list|,
-name|gint
-name|smoothness
 parameter_list|,
 name|SioxProgressFunc
 name|progress_callback
@@ -3493,6 +3493,13 @@ name|tile_manager_height
 argument_list|(
 name|mask
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|smoothness
+operator|>=
+literal|0
 argument_list|)
 expr_stmt|;
 name|g_return_if_fail
