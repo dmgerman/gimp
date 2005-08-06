@@ -166,9 +166,6 @@ name|context
 parameter_list|,
 name|GimpActiveColor
 name|active
-parameter_list|,
-name|gint
-name|width
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1316,6 +1313,9 @@ name|GdkGC
 modifier|*
 name|gc
 decl_stmt|;
+name|GdkGCValues
+name|values
+decl_stmt|;
 name|GdkPoint
 modifier|*
 name|coords
@@ -1427,8 +1427,27 @@ argument_list|,
 name|context
 argument_list|,
 name|color
+argument_list|)
+expr_stmt|;
+name|values
+operator|.
+name|line_width
+operator|=
+name|MAX
+argument_list|(
+literal|1
 argument_list|,
 name|width
+argument_list|)
+expr_stmt|;
+name|gdk_gc_set_values
+argument_list|(
+name|gc
+argument_list|,
+operator|&
+name|values
+argument_list|,
+name|GDK_GC_LINE_WIDTH
 argument_list|)
 expr_stmt|;
 name|gimp_canvas_set_custom_gc
@@ -2782,7 +2801,7 @@ begin_function
 specifier|static
 name|GdkGC
 modifier|*
-DECL|function|gimp_display_shell_get_pen_gc (GimpDisplayShell * shell,GimpContext * context,GimpActiveColor active,gint width)
+DECL|function|gimp_display_shell_get_pen_gc (GimpDisplayShell * shell,GimpContext * context,GimpActiveColor active)
 name|gimp_display_shell_get_pen_gc
 parameter_list|(
 name|GimpDisplayShell
@@ -2795,9 +2814,6 @@ name|context
 parameter_list|,
 name|GimpActiveColor
 name|active
-parameter_list|,
-name|gint
-name|width
 parameter_list|)
 block|{
 name|GdkGCValues
@@ -2820,17 +2836,6 @@ name|shell
 operator|->
 name|pen_gc
 return|;
-name|values
-operator|.
-name|line_width
-operator|=
-name|MAX
-argument_list|(
-literal|1
-argument_list|,
-name|width
-argument_list|)
-expr_stmt|;
 name|values
 operator|.
 name|line_style
@@ -2865,8 +2870,6 @@ operator|&
 name|values
 argument_list|,
 operator|(
-name|GDK_GC_LINE_WIDTH
-operator||
 name|GDK_GC_LINE_STYLE
 operator||
 name|GDK_GC_CAP_STYLE
