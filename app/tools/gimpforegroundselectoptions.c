@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2bee300103
+DECL|enum|__anon29f8b8220103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -317,9 +317,9 @@ argument_list|)
 argument_list|,
 literal|1
 argument_list|,
-literal|32
+literal|80
 argument_list|,
-literal|12
+literal|24
 argument_list|,
 literal|0
 argument_list|)
@@ -772,6 +772,10 @@ decl_stmt|;
 name|GtkWidget
 modifier|*
 name|table
+decl_stmt|;
+name|GtkObject
+modifier|*
+name|adj
 decl_stmt|;
 name|gint
 name|row
@@ -1245,7 +1249,7 @@ argument_list|(
 name|table
 argument_list|)
 expr_stmt|;
-name|scale
+name|adj
 operator|=
 name|gimp_prop_opacity_entry_new
 argument_list|(
@@ -1272,14 +1276,14 @@ name|GTK_RANGE
 argument_list|(
 name|GIMP_SCALE_ENTRY_SCALE
 argument_list|(
-name|scale
+name|adj
 argument_list|)
 argument_list|)
 argument_list|,
 name|GTK_UPDATE_DELAYED
 argument_list|)
 expr_stmt|;
-name|scale
+name|adj
 operator|=
 name|gimp_prop_opacity_entry_new
 argument_list|(
@@ -1306,14 +1310,14 @@ name|GTK_RANGE
 argument_list|(
 name|GIMP_SCALE_ENTRY_SCALE
 argument_list|(
-name|scale
+name|adj
 argument_list|)
 argument_list|)
 argument_list|,
 name|GTK_UPDATE_DELAYED
 argument_list|)
 expr_stmt|;
-name|scale
+name|adj
 operator|=
 name|gimp_prop_opacity_entry_new
 argument_list|(
@@ -1340,7 +1344,7 @@ name|GTK_RANGE
 argument_list|(
 name|GIMP_SCALE_ENTRY_SCALE
 argument_list|(
-name|scale
+name|adj
 argument_list|)
 argument_list|)
 argument_list|,
