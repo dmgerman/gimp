@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f8b8220103
+DECL|enum|__anon27ed052a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1267,7 +1267,7 @@ argument_list|,
 name|row
 operator|++
 argument_list|,
-literal|"L:"
+literal|"L"
 argument_list|)
 expr_stmt|;
 name|gtk_range_set_update_policy
@@ -1301,7 +1301,7 @@ argument_list|,
 name|row
 operator|++
 argument_list|,
-literal|"a:"
+literal|"a"
 argument_list|)
 expr_stmt|;
 name|gtk_range_set_update_policy
@@ -1335,7 +1335,7 @@ argument_list|,
 name|row
 operator|++
 argument_list|,
-literal|"b:"
+literal|"b"
 argument_list|)
 expr_stmt|;
 name|gtk_range_set_update_policy
