@@ -156,7 +156,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0bca420103
+DECL|enum|__anon2b88b1bb0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -169,7 +169,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0bca420203
+DECL|enum|__anon2b88b1bb0203
 block|{
 DECL|enumerator|COLUMN_ICON
 name|COLUMN_ICON
@@ -692,7 +692,7 @@ name|GType
 modifier|*
 name|controller_types
 decl_stmt|;
-name|gint
+name|guint
 name|n_controller_types
 decl_stmt|;
 name|gint
