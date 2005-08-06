@@ -68,7 +68,7 @@ DECL|macro|BATCH_DEFAULT_EVAL_PROC
 define|#
 directive|define
 name|BATCH_DEFAULT_EVAL_PROC
-value|"plug_in_script_fu_eval"
+value|"plug-in-script-fu-eval"
 end_define
 
 begin_function_decl
@@ -192,7 +192,7 @@ name|strcmp
 argument_list|(
 name|batch_interpreter
 argument_list|,
-literal|"plug_in_script_fu_eval"
+literal|"plug-in-script-fu-eval"
 argument_list|)
 operator|==
 literal|0
@@ -215,7 +215,7 @@ name|gchar
 modifier|*
 name|proc_name
 init|=
-literal|"plug_in_script_fu_text_console"
+literal|"plug-in-script-fu-text-console"
 decl_stmt|;
 name|ProcRecord
 modifier|*

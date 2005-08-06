@@ -40,7 +40,7 @@ file|"core/gimp-utils.h"
 end_include
 
 begin_comment
-comment|/*  FIXME  */
+comment|/*  FIXME (gimp_rectangle_intersect) */
 end_comment
 
 begin_include
@@ -102,7 +102,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b757b700108
+DECL|struct|__anon293e8ce40108
 block|{
 DECL|member|l
 name|gfloat
@@ -3316,12 +3316,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * siox_foreground_extract:  * @pixels:     the tiles to extract the foreground from  * @colormap:   colormap in case @pixels are indexed, %NULL otherwise  * @offset_x:   horizontal offset of @pixels with respect to the @mask  * @offset_y:   vertical offset of @pixels with respect to the @mask   * @mask:       a mask indicating sure foreground (255), sure background (0)  *              and undecided regions ([1..254]).  * @limits:     a three dimensional float array specifing the accuracy,  *              a good value is: { 0.66, 1.25, 2.5 }  * @smoothness: boundary smoothness (a good value is 3)  *  * Writes the resulting segmentation into @mask.  */
+comment|/**  * siox_foreground_extract:  * @pixels:     the tiles to extract the foreground from  * @colormap:   colormap in case @pixels are indexed, %NULL otherwise  * @offset_x:   horizontal offset of @pixels with respect to the @mask  * @offset_y:   vertical offset of @pixels with respect to the @mask   * @mask:       a mask indicating sure foreground (255), sure background (0)  *              and undecided regions ([1..254]).  * @x:          horizontal offset into the mask  * @y:          vertical offset into the mask  * @width:      width of working area on mask  * @height:     height of working area on mask  * @limits:     a three dimensional float array specifing the accuracy,  *              a good value is: { 0.66, 1.25, 2.5 }  * @smoothness: boundary smoothness (a good value is 3)  *  * Writes the resulting segmentation into @mask.  */
 end_comment
 
 begin_function
 name|void
-DECL|function|siox_foreground_extract (TileManager * pixels,const guchar * colormap,gint offset_x,gint offset_y,TileManager * mask,const gfloat limits[SIOX_DIMS],gint smoothness,SioxProgressFunc progress_callback,gpointer progress_data)
+DECL|function|siox_foreground_extract (TileManager * pixels,const guchar * colormap,gint offset_x,gint offset_y,TileManager * mask,gint x,gint y,gint width,gint height,const gfloat limits[SIOX_DIMS],gint smoothness,SioxProgressFunc progress_callback,gpointer progress_data)
 name|siox_foreground_extract
 parameter_list|(
 name|TileManager
@@ -3342,6 +3342,18 @@ parameter_list|,
 name|TileManager
 modifier|*
 name|mask
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
+parameter_list|,
+name|gint
+name|width
+parameter_list|,
+name|gint
+name|height
 parameter_list|,
 specifier|const
 name|gfloat
@@ -3371,16 +3383,6 @@ name|pr
 decl_stmt|;
 name|gboolean
 name|intersect
-decl_stmt|;
-name|gint
-name|x
-decl_stmt|,
-name|y
-decl_stmt|;
-name|gint
-name|width
-decl_stmt|,
-name|height
 decl_stmt|;
 name|gint
 name|bpp
@@ -3458,6 +3460,44 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
+name|x
+operator|>=
+literal|0
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|y
+operator|>=
+literal|0
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|x
+operator|+
+name|width
+operator|<=
+name|tile_manager_width
+argument_list|(
+name|mask
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|y
+operator|+
+name|height
+operator|<=
+name|tile_manager_height
+argument_list|(
+name|mask
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
 name|progress_data
 operator|==
 name|NULL
@@ -3466,9 +3506,6 @@ name|progress_callback
 operator|!=
 name|NULL
 argument_list|)
-expr_stmt|;
-name|cpercep_init
-argument_list|()
 expr_stmt|;
 name|intersect
 operator|=
@@ -3488,19 +3525,13 @@ argument_list|(
 name|pixels
 argument_list|)
 argument_list|,
-literal|0
+name|x
 argument_list|,
-literal|0
+name|y
 argument_list|,
-name|tile_manager_width
-argument_list|(
-name|mask
-argument_list|)
+name|width
 argument_list|,
-name|tile_manager_height
-argument_list|(
-name|mask
-argument_list|)
+name|height
 argument_list|,
 operator|&
 name|x
@@ -3522,6 +3553,9 @@ operator|!
 name|intersect
 condition|)
 return|return;
+name|cpercep_init
+argument_list|()
+expr_stmt|;
 name|siox_progress_update
 argument_list|(
 name|progress_callback
@@ -3697,7 +3731,7 @@ argument_list|(
 name|pixels
 argument_list|)
 expr_stmt|;
-comment|/* create inputs for colorsignatures */
+comment|/* create inputs for color signatures */
 name|pixel_region_init
 argument_list|(
 operator|&
