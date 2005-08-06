@@ -138,7 +138,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27841ce20108
+DECL|struct|__anon2b9d56000108
 block|{
 DECL|member|width
 name|gint
@@ -1102,11 +1102,25 @@ case|:
 case|case
 name|SELECTION_ANCHOR
 case|:
+if|if
+condition|(
+name|fg_select
+operator|->
+name|strokes
+condition|)
 name|status
 operator|=
 name|_
 argument_list|(
-literal|"Press Enter to apply selection"
+literal|"Press Enter to apply the selection"
+argument_list|)
+expr_stmt|;
+else|else
+name|status
+operator|=
+name|_
+argument_list|(
+literal|"Refine the selection by drawing on the object"
 argument_list|)
 expr_stmt|;
 break|break;
