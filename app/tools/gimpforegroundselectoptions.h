@@ -116,7 +116,7 @@ name|gboolean
 name|background
 decl_stmt|;
 DECL|member|stroke_width
-name|gdouble
+name|gint
 name|stroke_width
 decl_stmt|;
 block|}

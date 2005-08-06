@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c0633a0103
+DECL|enum|__anon29a06a0e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -266,7 +266,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
+name|GIMP_CONFIG_INSTALL_PROP_INT
 argument_list|(
 name|object_class
 argument_list|,
@@ -276,11 +276,11 @@ literal|"stroke-width"
 argument_list|,
 name|NULL
 argument_list|,
-literal|0.0
+literal|1
 argument_list|,
-literal|2000.0
+literal|100
 argument_list|,
-literal|6.0
+literal|6
 argument_list|,
 literal|0
 argument_list|)
@@ -345,7 +345,7 @@ name|options
 operator|->
 name|stroke_width
 operator|=
-name|g_value_get_double
+name|g_value_get_int
 argument_list|(
 name|value
 argument_list|)
@@ -418,7 +418,7 @@ break|break;
 case|case
 name|PROP_STROKE_WIDTH
 case|:
-name|g_value_set_double
+name|g_value_set_int
 argument_list|(
 name|value
 argument_list|,

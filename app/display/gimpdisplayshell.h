@@ -372,6 +372,12 @@ modifier|*
 name|grid_gc
 decl_stmt|;
 comment|/*  GC for grid drawing                */
+DECL|member|pen_gc
+name|GdkGC
+modifier|*
+name|pen_gc
+decl_stmt|;
+comment|/*  GC for felt pen drawing            */
 DECL|member|hsbdata
 name|GtkAdjustment
 modifier|*

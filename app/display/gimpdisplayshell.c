@@ -263,7 +263,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1122a10103
+DECL|enum|__anon2791e8b70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -279,7 +279,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1122a10203
+DECL|enum|__anon2791e8b70203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1008,6 +1008,12 @@ name|NULL
 expr_stmt|;
 name|shell
 operator|->
+name|pen_gc
+operator|=
+name|NULL
+expr_stmt|;
+name|shell
+operator|->
 name|hsbdata
 operator|=
 name|NULL
@@ -1082,8 +1088,10 @@ name|shell
 operator|->
 name|render_buf
 operator|=
-name|g_malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 name|GIMP_RENDER_BUF_WIDTH
 operator|*
 name|GIMP_RENDER_BUF_HEIGHT
