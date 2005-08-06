@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e2c2820103
+DECL|enum|__anon275dd9af0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -105,7 +105,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e2c2820203
+DECL|enum|__anon275dd9af0203
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -2059,7 +2059,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e2c2820308
+DECL|struct|__anon275dd9af0308
 block|{
 DECL|member|x
 name|guint
@@ -2277,6 +2277,15 @@ operator|=
 literal|0
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|current_event
+condition|)
+name|gdk_event_free
+argument_list|(
+name|current_event
+argument_list|)
+expr_stmt|;
 name|menu_pos
 operator|=
 name|g_object_get_data
