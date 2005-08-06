@@ -16,16 +16,36 @@ directive|define
 name|__SIOX_H__
 end_define
 
-begin_comment
-comment|/* Amount of color dimensions in one point */
-end_comment
-
 begin_define
-DECL|macro|SIOX_DIMS
+DECL|macro|SIOX_DEFAULT_SMOOTHNESS
 define|#
 directive|define
-name|SIOX_DIMS
+name|SIOX_DEFAULT_SMOOTHNESS
 value|3
+end_define
+
+begin_define
+DECL|macro|SIOX_DEFAULT_GRANULARITY_L
+define|#
+directive|define
+name|SIOX_DEFAULT_GRANULARITY_L
+value|0.66
+end_define
+
+begin_define
+DECL|macro|SIOX_DEFAULT_GRANULARITY_A
+define|#
+directive|define
+name|SIOX_DEFAULT_GRANULARITY_A
+value|1.25
+end_define
+
+begin_define
+DECL|macro|SIOX_DEFAULT_GRANULARITY_B
+define|#
+directive|define
+name|SIOX_DEFAULT_GRANULARITY_B
+value|2.5
 end_define
 
 begin_typedef
@@ -82,10 +102,10 @@ name|gint
 name|height
 parameter_list|,
 specifier|const
-name|gfloat
+name|gdouble
 name|limits
 index|[
-name|SIOX_DIMS
+literal|3
 index|]
 parameter_list|,
 name|gint

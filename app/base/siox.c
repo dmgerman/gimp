@@ -58,22 +58,34 @@ file|"tile-manager.h"
 end_include
 
 begin_comment
+comment|/* Amount of color dimensions in one point */
+end_comment
+
+begin_define
+DECL|macro|SIOX_DIMS
+define|#
+directive|define
+name|SIOX_DIMS
+value|3
+end_define
+
+begin_comment
 comment|/* Thresholds in the mask:  *   pixels< LOW are known background  *   pixels> HIGH are known foreground  */
 end_comment
 
 begin_define
-DECL|macro|LOW
+DECL|macro|SIOX_LOW
 define|#
 directive|define
-name|LOW
+name|SIOX_LOW
 value|1
 end_define
 
 begin_define
-DECL|macro|HIGH
+DECL|macro|SIOX_HIGH
 define|#
 directive|define
-name|HIGH
+name|SIOX_HIGH
 value|254
 end_define
 
@@ -92,7 +104,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2745a2350108
+DECL|struct|__anon2c6333d80108
 block|{
 DECL|member|l
 name|gfloat
@@ -3306,12 +3318,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * siox_foreground_extract:  * @pixels:     the tiles to extract the foreground from  * @colormap:   colormap in case @pixels are indexed, %NULL otherwise  * @offset_x:   horizontal offset of @pixels with respect to the @mask  * @offset_y:   vertical offset of @pixels with respect to the @mask   * @mask:       a mask indicating sure foreground (255), sure background (0)  *              and undecided regions ([1..254]).  * @x:          horizontal offset into the mask  * @y:          vertical offset into the mask  * @width:      width of working area on mask  * @height:     height of working area on mask  * @limits:     a three dimensional float array specifing the accuracy,  *              a good value is: { 0.66, 1.25, 2.5 }  * @smoothness: boundary smoothness (a good value is 3)  *  * Writes the resulting segmentation into @mask.  */
+comment|/**  * siox_foreground_extract:  * @pixels:     the tiles to extract the foreground from  * @colormap:   colormap in case @pixels are indexed, %NULL otherwise  * @offset_x:   horizontal offset of @pixels with respect to the @mask  * @offset_y:   vertical offset of @pixels with respect to the @mask   * @mask:       a mask indicating sure foreground (255), sure background (0)  *              and undecided regions ([1..254]).  * @x:          horizontal offset into the mask  * @y:          vertical offset into the mask  * @width:      width of working area on mask  * @height:     height of working area on mask  * @limits:     a double array with three entries specifing the accuracy,  *              a good value is: { 0.66, 1.25, 2.5 }  * @smoothness: boundary smoothness (a good value is 3)  *  * Writes the resulting segmentation into @mask.  */
 end_comment
 
 begin_function
 name|void
-DECL|function|siox_foreground_extract (TileManager * pixels,const guchar * colormap,gint offset_x,gint offset_y,TileManager * mask,gint x,gint y,gint width,gint height,const gfloat limits[SIOX_DIMS],gint smoothness,SioxProgressFunc progress_callback,gpointer progress_data)
+DECL|function|siox_foreground_extract (TileManager * pixels,const guchar * colormap,gint offset_x,gint offset_y,TileManager * mask,gint x,gint y,gint width,gint height,const gdouble limits[SIOX_DIMS],gint smoothness,SioxProgressFunc progress_callback,gpointer progress_data)
 name|siox_foreground_extract
 parameter_list|(
 name|TileManager
@@ -3346,7 +3358,7 @@ name|gint
 name|height
 parameter_list|,
 specifier|const
-name|gfloat
+name|gdouble
 name|limits
 index|[
 name|SIOX_DIMS
@@ -3379,14 +3391,8 @@ name|row
 decl_stmt|,
 name|col
 decl_stmt|;
-specifier|const
 name|gfloat
 name|clustersize
-init|=
-name|get_clustersize
-argument_list|(
-name|limits
-argument_list|)
 decl_stmt|;
 name|gint
 name|surebgcount
@@ -3423,6 +3429,12 @@ decl_stmt|;
 name|lab
 modifier|*
 name|fgsig
+decl_stmt|;
+name|gfloat
+name|flimits
+index|[
+literal|3
+index|]
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -3504,6 +3516,43 @@ argument_list|,
 name|progress_data
 argument_list|,
 literal|0.0
+argument_list|)
+expr_stmt|;
+name|flimits
+index|[
+literal|0
+index|]
+operator|=
+name|limits
+index|[
+literal|0
+index|]
+expr_stmt|;
+name|flimits
+index|[
+literal|1
+index|]
+operator|=
+name|limits
+index|[
+literal|1
+index|]
+expr_stmt|;
+name|flimits
+index|[
+literal|2
+index|]
+operator|=
+name|limits
+index|[
+literal|2
+index|]
+expr_stmt|;
+name|clustersize
+operator|=
+name|get_clustersize
+argument_list|(
+name|flimits
 argument_list|)
 expr_stmt|;
 comment|/* count given foreground and background pixels */
@@ -3605,7 +3654,7 @@ condition|(
 operator|*
 name|m
 operator|<
-name|LOW
+name|SIOX_LOW
 condition|)
 name|surebgcount
 operator|++
@@ -3616,7 +3665,7 @@ condition|(
 operator|*
 name|m
 operator|>
-name|HIGH
+name|SIOX_HIGH
 condition|)
 name|surefgcount
 operator|++
@@ -3816,7 +3865,7 @@ condition|(
 operator|*
 name|m
 operator|<
-name|LOW
+name|SIOX_LOW
 condition|)
 block|{
 name|calc_lab
@@ -3842,7 +3891,7 @@ condition|(
 operator|*
 name|m
 operator|>
-name|HIGH
+name|SIOX_HIGH
 condition|)
 block|{
 name|calc_lab
@@ -3895,7 +3944,7 @@ name|surebg
 argument_list|,
 name|surebgcount
 argument_list|,
-name|limits
+name|flimits
 argument_list|,
 operator|&
 name|bgsiglen
@@ -3938,7 +3987,7 @@ name|surefg
 argument_list|,
 name|surefgcount
 argument_list|,
-name|limits
+name|flimits
 argument_list|,
 operator|&
 name|fgsiglen
@@ -4113,12 +4162,12 @@ condition|(
 operator|*
 name|m
 operator|<
-name|LOW
+name|SIOX_LOW
 operator|||
 operator|*
 name|m
 operator|>
-name|HIGH
+name|SIOX_HIGH
 condition|)
 continue|continue;
 name|calc_lab

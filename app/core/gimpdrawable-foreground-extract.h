@@ -38,16 +38,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/*  variant for SIOX that gives more control over the segmentation  */
+end_comment
+
 begin_function_decl
 name|void
-name|gimp_drawable_foreground_extract_rect
+name|gimp_drawable_foreground_extract_siox
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
-parameter_list|,
-name|GimpForegroundExtractMode
-name|mode
 parameter_list|,
 name|GimpDrawable
 modifier|*
@@ -64,6 +65,16 @@ name|width
 parameter_list|,
 name|gint
 name|height
+parameter_list|,
+name|gint
+name|smoothness
+parameter_list|,
+specifier|const
+name|gdouble
+name|limits
+index|[
+literal|3
+index|]
 parameter_list|,
 name|GimpProgress
 modifier|*
