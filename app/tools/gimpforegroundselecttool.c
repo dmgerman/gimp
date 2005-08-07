@@ -144,7 +144,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29dea4fa0108
+DECL|struct|__anon2c661ebb0108
 block|{
 DECL|member|width
 name|gint
@@ -2332,6 +2332,10 @@ operator|/=
 literal|2
 expr_stmt|;
 comment|/*  warn if the user is drawing outside of the working area  */
+if|if
+condition|(
+name|FALSE
+condition|)
 block|{
 name|gint
 name|x1
@@ -2407,7 +2411,7 @@ name|y2
 operator|-
 name|y1
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -2440,7 +2444,7 @@ literal|360
 operator|*
 literal|64
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
