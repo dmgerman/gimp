@@ -1073,6 +1073,14 @@ value|"gimp-layer-alpha-add"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_LAYER_ALPHA_REMOVE
+define|#
+directive|define
+name|GIMP_HELP_LAYER_ALPHA_REMOVE
+value|"gimp-layer-alpha-remove"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_LAYER_ALPHA_SELECTION_REPLACE
 define|#
 directive|define
