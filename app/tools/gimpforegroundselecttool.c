@@ -144,7 +144,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f9b2630108
+DECL|struct|__anon29dea4fa0108
 block|{
 DECL|member|width
 name|gint
@@ -1349,6 +1349,15 @@ condition|(
 name|fg_select
 operator|->
 name|mask
+operator|&&
+name|GIMP_DISPLAY_SHELL
+argument_list|(
+name|gdisp
+operator|->
+name|shell
+argument_list|)
+operator|->
+name|proximity
 condition|)
 name|gimp_draw_tool_start
 argument_list|(
