@@ -144,7 +144,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c661ebb0108
+DECL|struct|__anon2bf476220108
 block|{
 DECL|member|width
 name|gint
@@ -1279,7 +1279,7 @@ name|status
 operator|=
 name|_
 argument_list|(
-literal|"Press Enter to apply the selection"
+literal|"Add more strokes or press Enter to accept the selection"
 argument_list|)
 expr_stmt|;
 else|else
@@ -1287,7 +1287,7 @@ name|status
 operator|=
 name|_
 argument_list|(
-literal|"Refine the selection by drawing on the object"
+literal|"Mark foreground by painting on the object to extract"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1323,7 +1323,7 @@ name|status
 operator|=
 name|_
 argument_list|(
-literal|"Draw a rough outline around the object to extract"
+literal|"Draw a rough circle around the object to extract"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1346,10 +1346,6 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|fg_select
-operator|->
-name|mask
-operator|&&
 name|GIMP_DISPLAY_SHELL
 argument_list|(
 name|gdisp
@@ -2521,20 +2517,6 @@ name|GimpChannel
 modifier|*
 name|mask
 decl_stmt|;
-name|GList
-modifier|*
-name|list
-decl_stmt|;
-name|gint
-name|x1
-decl_stmt|,
-name|y1
-decl_stmt|;
-name|gint
-name|x2
-decl_stmt|,
-name|y2
-decl_stmt|;
 name|fg_select
 operator|=
 name|GIMP_FOREGROUND_SELECT_TOOL
@@ -2580,13 +2562,6 @@ operator|!
 name|drawable
 condition|)
 return|return;
-name|gimp_set_busy
-argument_list|(
-name|gimage
-operator|->
-name|gimp
-argument_list|)
-expr_stmt|;
 name|scan_convert
 operator|=
 name|gimp_scan_convert_new
@@ -2644,12 +2619,40 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-literal|127
+literal|128
 argument_list|)
 expr_stmt|;
 name|gimp_scan_convert_free
 argument_list|(
 name|scan_convert
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|fg_select
+operator|->
+name|strokes
+condition|)
+block|{
+name|GList
+modifier|*
+name|list
+decl_stmt|;
+name|gint
+name|x1
+decl_stmt|,
+name|y1
+decl_stmt|;
+name|gint
+name|x2
+decl_stmt|,
+name|y2
+decl_stmt|;
+name|gimp_set_busy
+argument_list|(
+name|gimage
+operator|->
+name|gimp
 argument_list|)
 expr_stmt|;
 comment|/*  restrict working area to double the size of the bounding box  */
@@ -2731,12 +2734,31 @@ name|gdisp
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gimp_unset_busy
+argument_list|(
+name|gimage
+operator|->
+name|gimp
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|g_object_set
+argument_list|(
+name|options
+argument_list|,
+literal|"background"
+argument_list|,
+name|FALSE
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+block|}
 name|gimp_foreground_select_tool_set_mask
 argument_list|(
-name|GIMP_FOREGROUND_SELECT_TOOL
-argument_list|(
-name|free_sel
-argument_list|)
+name|fg_select
 argument_list|,
 name|gdisp
 argument_list|,
@@ -2746,13 +2768,6 @@ expr_stmt|;
 name|g_object_unref
 argument_list|(
 name|mask
-argument_list|)
-expr_stmt|;
-name|gimp_unset_busy
-argument_list|(
-name|gimage
-operator|->
-name|gimp
 argument_list|)
 expr_stmt|;
 block|}
