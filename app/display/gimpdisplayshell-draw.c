@@ -2879,7 +2879,7 @@ name|values
 operator|.
 name|join_style
 operator|=
-name|GDK_JOIN_MITER
+name|GDK_JOIN_ROUND
 expr_stmt|;
 name|shell
 operator|->

@@ -144,7 +144,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf476220108
+DECL|struct|__anon297f8a7a0108
 block|{
 DECL|member|width
 name|gint
@@ -3177,7 +3177,7 @@ name|stroke
 operator|->
 name|width
 argument_list|,
-name|GIMP_JOIN_MITER
+name|GIMP_JOIN_ROUND
 argument_list|,
 name|GIMP_CAP_ROUND
 argument_list|,
