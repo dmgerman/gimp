@@ -59,6 +59,29 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_scan_convert_set_clip_rectangle
+parameter_list|(
+name|GimpScanConvert
+modifier|*
+name|sc
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
+parameter_list|,
+name|gint
+name|width
+parameter_list|,
+name|gint
+name|height
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/* Add "npoints" from "pointlist" to the polygon currently being  * described by "scan_converter". DEPRECATED.  */
 end_comment
