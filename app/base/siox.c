@@ -70,7 +70,7 @@ value|3
 end_define
 
 begin_comment
-comment|/* Thresholds in the mask:  *   pixels< LOW are known background  *   pixels> HIGH are known foreground  */
+comment|/* Thresholds in the mask:  *   pixels< SIOX_LOW  are known background  *   pixels> SIOX_HIGH are known foreground  */
 end_comment
 
 begin_define
@@ -90,7 +90,7 @@ value|254
 end_define
 
 begin_comment
-comment|/* #define DEBUG */
+comment|/* #define SIOX_DEBUG */
 end_comment
 
 begin_comment
@@ -104,7 +104,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29905eed0108
+DECL|struct|__anon28c8c5fc0108
 block|{
 DECL|member|l
 name|gfloat
@@ -1197,7 +1197,7 @@ literal|2.0
 decl_stmt|;
 ifdef|#
 directive|ifdef
-name|DEBUG
+name|SIOX_DEBUG
 name|g_printerr
 argument_list|(
 literal|"max=%f min=%f pivot=%f\n"
@@ -1499,7 +1499,7 @@ name|length
 expr_stmt|;
 ifdef|#
 directive|ifdef
-name|DEBUG
+name|SIOX_DEBUG
 name|g_printerr
 argument_list|(
 literal|"cluster=%f, %f, %f sum=%d\n"
@@ -1922,7 +1922,7 @@ expr_stmt|;
 block|}
 ifdef|#
 directive|ifdef
-name|DEBUG
+name|SIOX_DEBUG
 name|g_printerr
 argument_list|(
 literal|"step #1 -> %d clusters\n"
@@ -1978,7 +1978,7 @@ argument_list|)
 expr_stmt|;
 ifdef|#
 directive|ifdef
-name|DEBUG
+name|SIOX_DEBUG
 name|g_printerr
 argument_list|(
 literal|"step #2 -> %d clusters\n"
