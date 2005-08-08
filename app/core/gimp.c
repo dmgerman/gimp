@@ -261,7 +261,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29107d3e0103
+DECL|enum|__anon295a92f70103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -1156,7 +1156,7 @@ name|GIMP_OBJECT
 argument_list|(
 name|gimp
 operator|->
-name|tool_info_list
+name|templates
 argument_list|)
 argument_list|,
 literal|"templates"

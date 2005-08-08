@@ -104,7 +104,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a48d250108
+DECL|struct|__anon27e514920108
 block|{
 DECL|member|l
 name|gfloat
@@ -3893,7 +3893,7 @@ name|progress_callback
 argument_list|,
 name|progress_data
 argument_list|,
-literal|0.9
+literal|0.8
 argument_list|)
 expr_stmt|;
 comment|/* smooth a bit for error killing */
@@ -3936,6 +3936,15 @@ argument_list|,
 name|width
 argument_list|,
 name|height
+argument_list|)
+expr_stmt|;
+name|siox_progress_update
+argument_list|(
+name|progress_callback
+argument_list|,
+name|progress_data
+argument_list|,
+literal|0.9
 argument_list|)
 expr_stmt|;
 comment|/* smooth again - as user specified */
