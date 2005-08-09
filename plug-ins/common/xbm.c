@@ -713,12 +713,12 @@ name|prefix
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/* Strip any extension. */
 if|if
 condition|(
 name|prefix
 condition|)
 block|{
+comment|/* Strip any extension. */
 name|p
 operator|=
 name|strrchr
@@ -1638,18 +1638,20 @@ name|temp
 argument_list|)
 expr_stmt|;
 comment|/* Change any non-alphanumeric prefix characters to underscores. */
+for|for
+control|(
 name|temp
 operator|=
 name|xsvals
 operator|.
 name|prefix
-expr_stmt|;
-while|while
-condition|(
+init|;
 operator|*
 name|temp
-condition|)
-block|{
+condition|;
+name|temp
+operator|++
+control|)
 if|if
 condition|(
 operator|!
@@ -1664,10 +1666,6 @@ name|temp
 operator|=
 literal|'_'
 expr_stmt|;
-name|temp
-operator|++
-expr_stmt|;
-block|}
 name|mask_prefix
 operator|=
 name|g_strdup_printf
@@ -1682,6 +1680,32 @@ name|xsvals
 operator|.
 name|mask_ext
 argument_list|)
+expr_stmt|;
+for|for
+control|(
+name|temp
+operator|=
+name|mask_prefix
+init|;
+operator|*
+name|temp
+condition|;
+name|temp
+operator|++
+control|)
+if|if
+condition|(
+operator|!
+name|g_ascii_isalnum
+argument_list|(
+operator|*
+name|temp
+argument_list|)
+condition|)
+operator|*
+name|temp
+operator|=
+literal|'_'
 expr_stmt|;
 if|if
 condition|(
@@ -3555,6 +3579,12 @@ decl_stmt|,
 modifier|*
 name|intfmt
 decl_stmt|;
+if|#
+directive|if
+literal|0
+block|if (save_mask)     g_printerr ("%s: save_mask '%s'\n", G_STRFUNC, prefix);   else     g_printerr ("%s: save_image '%s'\n", G_STRFUNC, prefix);
+endif|#
+directive|endif
 name|drawable
 operator|=
 name|gimp_drawable_get
