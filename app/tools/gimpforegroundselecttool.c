@@ -144,7 +144,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297f8a7a0108
+DECL|struct|__anon275d9e720108
 block|{
 DECL|member|width
 name|gint
@@ -2726,7 +2726,7 @@ name|smoothness
 argument_list|,
 name|options
 operator|->
-name|limits
+name|sensitivity
 argument_list|,
 name|GIMP_PROGRESS
 argument_list|(
@@ -3450,11 +3450,11 @@ name|pspec
 operator|->
 name|name
 argument_list|,
-literal|"granularity"
+literal|"sensitivity"
 argument_list|,
 name|strlen
 argument_list|(
-literal|"granularity"
+literal|"sensitivity"
 argument_list|)
 argument_list|)
 operator|==

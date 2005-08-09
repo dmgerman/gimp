@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3cc5aa0103
+DECL|enum|__anon2c4c263f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -82,14 +82,14 @@ block|,
 DECL|enumerator|PROP_SMOOTHNESS
 name|PROP_SMOOTHNESS
 block|,
-DECL|enumerator|PROP_GRANULARITY_L
-name|PROP_GRANULARITY_L
+DECL|enumerator|PROP_SENSITIVITY_L
+name|PROP_SENSITIVITY_L
 block|,
-DECL|enumerator|PROP_GRANULARITY_A
-name|PROP_GRANULARITY_A
+DECL|enumerator|PROP_SENSITIVITY_A
+name|PROP_SENSITIVITY_A
 block|,
-DECL|enumerator|PROP_GRANULARITY_B
-name|PROP_GRANULARITY_B
+DECL|enumerator|PROP_SENSITIVITY_B
+name|PROP_SENSITIVITY_B
 block|}
 enum|;
 end_enum
@@ -352,20 +352,20 @@ name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
 argument_list|(
 name|object_class
 argument_list|,
-name|PROP_GRANULARITY_L
+name|PROP_SENSITIVITY_L
 argument_list|,
-literal|"granularity-l"
+literal|"sensitivity-l"
 argument_list|,
 name|_
 argument_list|(
-literal|"Resolution for brightness component"
+literal|"Sensitivity for brightness component"
 argument_list|)
 argument_list|,
 literal|0.0
 argument_list|,
 literal|10.0
 argument_list|,
-name|SIOX_DEFAULT_GRANULARITY_L
+name|SIOX_DEFAULT_SENSITIVITY_L
 argument_list|,
 literal|0
 argument_list|)
@@ -374,20 +374,20 @@ name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
 argument_list|(
 name|object_class
 argument_list|,
-name|PROP_GRANULARITY_A
+name|PROP_SENSITIVITY_A
 argument_list|,
-literal|"granularity-a"
+literal|"sensitivity-a"
 argument_list|,
 name|_
 argument_list|(
-literal|"Resolution for red/green component"
+literal|"Sensitivity for red/green component"
 argument_list|)
 argument_list|,
 literal|0.0
 argument_list|,
 literal|10.0
 argument_list|,
-name|SIOX_DEFAULT_GRANULARITY_A
+name|SIOX_DEFAULT_SENSITIVITY_A
 argument_list|,
 literal|0
 argument_list|)
@@ -396,20 +396,20 @@ name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
 argument_list|(
 name|object_class
 argument_list|,
-name|PROP_GRANULARITY_B
+name|PROP_SENSITIVITY_B
 argument_list|,
-literal|"granularity-b"
+literal|"sensitivity-b"
 argument_list|,
 name|_
 argument_list|(
-literal|"Resolution for yellow/blue component"
+literal|"Sensitivity for yellow/blue component"
 argument_list|)
 argument_list|,
 literal|0.0
 argument_list|,
 literal|10.0
 argument_list|,
-name|SIOX_DEFAULT_GRANULARITY_B
+name|SIOX_DEFAULT_SENSITIVITY_B
 argument_list|,
 literal|0
 argument_list|)
@@ -507,11 +507,11 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PROP_GRANULARITY_L
+name|PROP_SENSITIVITY_L
 case|:
 name|options
 operator|->
-name|limits
+name|sensitivity
 index|[
 literal|0
 index|]
@@ -523,11 +523,11 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PROP_GRANULARITY_A
+name|PROP_SENSITIVITY_A
 case|:
 name|options
 operator|->
-name|limits
+name|sensitivity
 index|[
 literal|1
 index|]
@@ -539,11 +539,11 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PROP_GRANULARITY_B
+name|PROP_SENSITIVITY_B
 case|:
 name|options
 operator|->
-name|limits
+name|sensitivity
 index|[
 literal|2
 index|]
@@ -658,7 +658,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PROP_GRANULARITY_L
+name|PROP_SENSITIVITY_L
 case|:
 name|g_value_set_double
 argument_list|(
@@ -666,7 +666,7 @@ name|value
 argument_list|,
 name|options
 operator|->
-name|limits
+name|sensitivity
 index|[
 literal|0
 index|]
@@ -674,7 +674,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PROP_GRANULARITY_A
+name|PROP_SENSITIVITY_A
 case|:
 name|g_value_set_double
 argument_list|(
@@ -682,7 +682,7 @@ name|value
 argument_list|,
 name|options
 operator|->
-name|limits
+name|sensitivity
 index|[
 literal|1
 index|]
@@ -690,7 +690,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PROP_GRANULARITY_B
+name|PROP_SENSITIVITY_B
 case|:
 name|g_value_set_double
 argument_list|(
@@ -698,7 +698,7 @@ name|value
 argument_list|,
 name|options
 operator|->
-name|limits
+name|sensitivity
 index|[
 literal|2
 index|]
@@ -1156,7 +1156,7 @@ literal|"expanded"
 argument_list|,
 name|_
 argument_list|(
-literal|"Granularity"
+literal|"Color Sensitivity"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1255,7 +1255,7 @@ name|gimp_prop_opacity_entry_new
 argument_list|(
 name|config
 argument_list|,
-literal|"granularity-l"
+literal|"sensitivity-l"
 argument_list|,
 name|GTK_TABLE
 argument_list|(
@@ -1289,7 +1289,7 @@ name|gimp_prop_opacity_entry_new
 argument_list|(
 name|config
 argument_list|,
-literal|"granularity-a"
+literal|"sensitivity-a"
 argument_list|,
 name|GTK_TABLE
 argument_list|(
@@ -1323,7 +1323,7 @@ name|gimp_prop_opacity_entry_new
 argument_list|(
 name|config
 argument_list|,
-literal|"granularity-b"
+literal|"sensitivity-b"
 argument_list|,
 name|GTK_TABLE
 argument_list|(

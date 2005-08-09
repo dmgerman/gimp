@@ -127,9 +127,9 @@ DECL|member|smoothness
 name|gint
 name|smoothness
 decl_stmt|;
-DECL|member|limits
+DECL|member|sensitivity
 name|gdouble
-name|limits
+name|sensitivity
 index|[
 literal|3
 index|]

@@ -104,7 +104,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6ecb3d0108
+DECL|struct|__anon27aff42f0108
 block|{
 DECL|member|l
 name|gfloat
@@ -2983,7 +2983,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|siox_foreground_extract (TileManager * pixels,const guchar * colormap,gint offset_x,gint offset_y,TileManager * mask,gint x,gint y,gint width,gint height,gint smoothness,const gdouble limits[SIOX_DIMS],SioxProgressFunc progress_callback,gpointer progress_data)
+DECL|function|siox_foreground_extract (TileManager * pixels,const guchar * colormap,gint offset_x,gint offset_y,TileManager * mask,gint x,gint y,gint width,gint height,gint smoothness,const gdouble sensitivity[SIOX_DIMS],SioxProgressFunc progress_callback,gpointer progress_data)
 name|siox_foreground_extract
 parameter_list|(
 name|TileManager
@@ -3022,7 +3022,7 @@ name|smoothness
 parameter_list|,
 specifier|const
 name|gdouble
-name|limits
+name|sensitivity
 index|[
 name|SIOX_DIMS
 index|]
@@ -3091,7 +3091,7 @@ modifier|*
 name|fgsig
 decl_stmt|;
 name|gfloat
-name|flimits
+name|limits
 index|[
 literal|3
 index|]
@@ -3185,32 +3185,32 @@ argument_list|,
 literal|0.0
 argument_list|)
 expr_stmt|;
-name|flimits
-index|[
-literal|0
-index|]
-operator|=
 name|limits
 index|[
 literal|0
 index|]
-expr_stmt|;
-name|flimits
-index|[
-literal|1
-index|]
 operator|=
+name|sensitivity
+index|[
+literal|0
+index|]
+expr_stmt|;
 name|limits
 index|[
 literal|1
 index|]
+operator|=
+name|sensitivity
+index|[
+literal|1
+index|]
 expr_stmt|;
-name|flimits
+name|limits
 index|[
 literal|2
 index|]
 operator|=
-name|limits
+name|sensitivity
 index|[
 literal|2
 index|]
@@ -3219,7 +3219,7 @@ name|clustersize
 operator|=
 name|get_clustersize
 argument_list|(
-name|flimits
+name|limits
 argument_list|)
 expr_stmt|;
 comment|/* count given foreground and background pixels */
@@ -3611,7 +3611,7 @@ name|surebg
 argument_list|,
 name|surebgcount
 argument_list|,
-name|flimits
+name|limits
 argument_list|,
 operator|&
 name|bgsiglen
@@ -3654,7 +3654,7 @@ name|surefg
 argument_list|,
 name|surefgcount
 argument_list|,
-name|flimits
+name|limits
 argument_list|,
 operator|&
 name|fgsiglen

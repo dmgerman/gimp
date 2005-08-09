@@ -120,17 +120,17 @@ name|SIOX_DEFAULT_SMOOTHNESS
 decl_stmt|;
 specifier|const
 name|gdouble
-name|limits
+name|sensitivity
 index|[
 literal|3
 index|]
 init|=
 block|{
-name|SIOX_DEFAULT_GRANULARITY_L
+name|SIOX_DEFAULT_SENSITIVITY_L
 block|,
-name|SIOX_DEFAULT_GRANULARITY_A
+name|SIOX_DEFAULT_SENSITIVITY_A
 block|,
-name|SIOX_DEFAULT_GRANULARITY_B
+name|SIOX_DEFAULT_SENSITIVITY_B
 block|}
 decl_stmt|;
 name|g_return_if_fail
@@ -176,7 +176,7 @@ argument_list|)
 argument_list|,
 name|smoothness
 argument_list|,
-name|limits
+name|sensitivity
 argument_list|,
 name|progress
 argument_list|)
@@ -186,7 +186,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_foreground_extract_siox (GimpDrawable * drawable,GimpDrawable * mask,gint x,gint y,gint width,gint height,gint smoothness,const gdouble limits[3],GimpProgress * progress)
+DECL|function|gimp_drawable_foreground_extract_siox (GimpDrawable * drawable,GimpDrawable * mask,gint x,gint y,gint width,gint height,gint smoothness,const gdouble sensitivity[3],GimpProgress * progress)
 name|gimp_drawable_foreground_extract_siox
 parameter_list|(
 name|GimpDrawable
@@ -214,7 +214,7 @@ name|smoothness
 parameter_list|,
 specifier|const
 name|gdouble
-name|limits
+name|sensitivity
 index|[
 literal|3
 index|]
@@ -429,7 +429,7 @@ name|height
 argument_list|,
 name|smoothness
 argument_list|,
-name|limits
+name|sensitivity
 argument_list|,
 operator|(
 name|SioxProgressFunc

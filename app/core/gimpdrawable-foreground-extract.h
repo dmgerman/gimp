@@ -71,7 +71,7 @@ name|smoothness
 parameter_list|,
 specifier|const
 name|gdouble
-name|limits
+name|sensitivity
 index|[
 literal|3
 index|]

@@ -25,26 +25,26 @@ value|3
 end_define
 
 begin_define
-DECL|macro|SIOX_DEFAULT_GRANULARITY_L
+DECL|macro|SIOX_DEFAULT_SENSITIVITY_L
 define|#
 directive|define
-name|SIOX_DEFAULT_GRANULARITY_L
+name|SIOX_DEFAULT_SENSITIVITY_L
 value|0.66
 end_define
 
 begin_define
-DECL|macro|SIOX_DEFAULT_GRANULARITY_A
+DECL|macro|SIOX_DEFAULT_SENSITIVITY_A
 define|#
 directive|define
-name|SIOX_DEFAULT_GRANULARITY_A
+name|SIOX_DEFAULT_SENSITIVITY_A
 value|1.25
 end_define
 
 begin_define
-DECL|macro|SIOX_DEFAULT_GRANULARITY_B
+DECL|macro|SIOX_DEFAULT_SENSITIVITY_B
 define|#
 directive|define
-name|SIOX_DEFAULT_GRANULARITY_B
+name|SIOX_DEFAULT_SENSITIVITY_B
 value|2.5
 end_define
 
@@ -106,7 +106,7 @@ name|smoothness
 parameter_list|,
 specifier|const
 name|gdouble
-name|limits
+name|sensitivity
 index|[
 literal|3
 index|]
