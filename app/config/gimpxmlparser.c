@@ -341,7 +341,7 @@ block|{
 name|GIOStatus
 name|status
 decl_stmt|;
-name|guchar
+name|gchar
 name|buffer
 index|[
 literal|4096
@@ -739,6 +739,9 @@ literal|"UTF8"
 argument_list|)
 condition|)
 block|{
+name|gsize
+name|written
+decl_stmt|;
 name|conv
 operator|=
 name|g_convert
@@ -754,7 +757,7 @@ argument_list|,
 name|NULL
 argument_list|,
 operator|&
-name|len
+name|written
 argument_list|,
 name|error
 argument_list|)
@@ -774,6 +777,10 @@ return|return
 name|FALSE
 return|;
 block|}
+name|len
+operator|=
+name|written
+expr_stmt|;
 block|}
 name|g_free
 argument_list|(
