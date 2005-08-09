@@ -1937,6 +1937,11 @@ name|gdk_bitmap_create_from_data
 argument_list|(
 name|NULL
 argument_list|,
+operator|(
+specifier|const
+name|gchar
+operator|*
+operator|)
 name|cursor
 operator|->
 name|bits
@@ -1996,6 +2001,11 @@ name|gdk_bitmap_create_from_data
 argument_list|(
 name|NULL
 argument_list|,
+operator|(
+specifier|const
+name|gchar
+operator|*
+operator|)
 name|cursor
 operator|->
 name|mask_bits
