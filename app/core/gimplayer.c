@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon296e14c70103
+DECL|enum|__anon2c0a3b440103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -177,7 +177,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon296e14c70203
+DECL|enum|__anon2c0a3b440203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -714,7 +714,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|GimpImageBaseType
+name|GimpImageType
 name|src_type
 parameter_list|)
 function_decl|;
@@ -2780,7 +2780,10 @@ name|layerPR
 argument_list|,
 name|NULL
 argument_list|,
-name|old_base_type
+name|gimp_drawable_type
+argument_list|(
+name|drawable
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -3915,7 +3918,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_layer_transform_color (GimpImage * gimage,PixelRegion * layerPR,PixelRegion * bufPR,GimpDrawable * drawable,GimpImageBaseType src_type)
+DECL|function|gimp_layer_transform_color (GimpImage * gimage,PixelRegion * layerPR,PixelRegion * bufPR,GimpDrawable * drawable,GimpImageType src_type)
 name|gimp_layer_transform_color
 parameter_list|(
 name|GimpImage
@@ -3934,10 +3937,26 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|GimpImageBaseType
+name|GimpImageType
 name|src_type
 parameter_list|)
 block|{
+name|GimpImageBaseType
+name|base_type
+init|=
+name|GIMP_IMAGE_TYPE_BASE_TYPE
+argument_list|(
+name|src_type
+argument_list|)
+decl_stmt|;
+name|gboolean
+name|alpha
+init|=
+name|GIMP_IMAGE_TYPE_HAS_ALPHA
+argument_list|(
+name|src_type
+argument_list|)
+decl_stmt|;
 name|gpointer
 name|pr
 decl_stmt|;
@@ -4036,12 +4055,12 @@ name|drawable
 argument_list|,
 name|d
 argument_list|,
-name|src_type
+name|base_type
 argument_list|,
 name|s
 argument_list|)
 expr_stmt|;
-comment|/*  copy alpha channel  */
+comment|/*  alpha channel  */
 name|d
 index|[
 name|layerPR
@@ -4051,6 +4070,9 @@ operator|-
 literal|1
 index|]
 operator|=
+operator|(
+name|alpha
+condition|?
 name|s
 index|[
 name|bufPR
@@ -4059,6 +4081,9 @@ name|bytes
 operator|-
 literal|1
 index|]
+else|:
+name|OPAQUE_OPACITY
+operator|)
 expr_stmt|;
 name|s
 operator|+=
@@ -4800,6 +4825,9 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
+name|GIMP_GRAY_IMAGE
+case|:
+case|case
 name|GIMP_GRAYA_IMAGE
 case|:
 name|gimp_layer_transform_color
@@ -4816,7 +4844,7 @@ argument_list|(
 name|new_layer
 argument_list|)
 argument_list|,
-name|GIMP_GRAY
+name|src_type
 argument_list|)
 expr_stmt|;
 break|break;
@@ -4871,6 +4899,9 @@ name|src_type
 condition|)
 block|{
 case|case
+name|GIMP_RGB_IMAGE
+case|:
+case|case
 name|GIMP_RGBA_IMAGE
 case|:
 name|gimp_layer_transform_color
@@ -4887,7 +4918,7 @@ argument_list|(
 name|new_layer
 argument_list|)
 argument_list|,
-name|GIMP_RGB
+name|src_type
 argument_list|)
 expr_stmt|;
 break|break;
@@ -4946,6 +4977,9 @@ name|src_type
 condition|)
 block|{
 case|case
+name|GIMP_RGB_IMAGE
+case|:
+case|case
 name|GIMP_RGBA_IMAGE
 case|:
 name|gimp_layer_transform_color
@@ -4962,10 +4996,13 @@ argument_list|(
 name|new_layer
 argument_list|)
 argument_list|,
-name|GIMP_RGB
+name|src_type
 argument_list|)
 expr_stmt|;
 break|break;
+case|case
+name|GIMP_GRAY_IMAGE
+case|:
 case|case
 name|GIMP_GRAYA_IMAGE
 case|:
@@ -4983,7 +5020,7 @@ argument_list|(
 name|new_layer
 argument_list|)
 argument_list|,
-name|GIMP_GRAY
+name|src_type
 argument_list|)
 expr_stmt|;
 break|break;
