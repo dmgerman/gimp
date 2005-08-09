@@ -992,10 +992,10 @@ name|guint
 name|length
 parameter_list|,
 name|guint
-name|bytes
+name|src_bytes
 parameter_list|,
-name|gboolean
-name|has_alpha
+name|guint
+name|dest_bytes
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1038,10 +1038,10 @@ name|guint
 name|length
 parameter_list|,
 name|guint
-name|bytes
+name|src_bytes
 parameter_list|,
-name|gboolean
-name|has_alpha
+name|guint
+name|dest_bytes
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1266,9 +1266,6 @@ name|bg
 parameter_list|,
 name|GimpImageBaseType
 name|type
-parameter_list|,
-name|gboolean
-name|has_alpha
 parameter_list|,
 name|gboolean
 name|cut

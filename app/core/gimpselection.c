@@ -3091,11 +3091,6 @@ name|bg_color
 argument_list|,
 name|base_type
 argument_list|,
-name|gimp_drawable_has_alpha
-argument_list|(
-name|drawable
-argument_list|)
-argument_list|,
 name|cut_image
 argument_list|)
 expr_stmt|;
@@ -3169,11 +3164,6 @@ argument_list|,
 name|bg_color
 argument_list|,
 name|base_type
-argument_list|,
-name|gimp_drawable_has_alpha
-argument_list|(
-name|drawable
-argument_list|)
 argument_list|,
 name|FALSE
 argument_list|)

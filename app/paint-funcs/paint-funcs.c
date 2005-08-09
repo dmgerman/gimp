@@ -8161,7 +8161,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|extract_from_inten_pixels (guchar * src,guchar * dest,const guchar * mask,const guchar * bg,gboolean cut,guint length,guint bytes,gboolean has_alpha)
+DECL|function|extract_from_inten_pixels (guchar * src,guchar * dest,const guchar * mask,const guchar * bg,gboolean cut,guint length,guint src_bytes,guint dest_bytes)
 name|extract_from_inten_pixels
 parameter_list|(
 name|guchar
@@ -8189,19 +8189,16 @@ name|guint
 name|length
 parameter_list|,
 name|guint
-name|bytes
+name|src_bytes
 parameter_list|,
-name|gboolean
-name|has_alpha
+name|guint
+name|dest_bytes
 parameter_list|)
 block|{
 name|gint
 name|b
 decl_stmt|,
 name|alpha
-decl_stmt|;
-name|gint
-name|dest_bytes
 decl_stmt|;
 specifier|const
 name|guchar
@@ -8227,27 +8224,16 @@ name|no_mask
 expr_stmt|;
 name|alpha
 operator|=
-operator|(
-name|has_alpha
-operator|)
+name|HAS_ALPHA
+argument_list|(
+name|src_bytes
+argument_list|)
 condition|?
-name|bytes
+name|src_bytes
 operator|-
 literal|1
 else|:
-name|bytes
-expr_stmt|;
-name|dest_bytes
-operator|=
-operator|(
-name|has_alpha
-operator|)
-condition|?
-name|bytes
-else|:
-name|bytes
-operator|+
-literal|1
+name|src_bytes
 expr_stmt|;
 while|while
 condition|(
@@ -8280,7 +8266,10 @@ index|]
 expr_stmt|;
 if|if
 condition|(
-name|has_alpha
+name|HAS_ALPHA
+argument_list|(
+name|src_bytes
+argument_list|)
 condition|)
 block|{
 name|dest
@@ -8330,6 +8319,13 @@ expr_stmt|;
 block|}
 else|else
 block|{
+if|if
+condition|(
+name|HAS_ALPHA
+argument_list|(
+name|dest_bytes
+argument_list|)
+condition|)
 name|dest
 index|[
 name|alpha
@@ -8350,7 +8346,7 @@ literal|0
 init|;
 name|b
 operator|<
-name|bytes
+name|src_bytes
 condition|;
 name|b
 operator|++
@@ -8388,7 +8384,7 @@ operator|++
 expr_stmt|;
 name|src
 operator|+=
-name|bytes
+name|src_bytes
 expr_stmt|;
 name|dest
 operator|+=
@@ -8400,7 +8396,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|extract_from_indexed_pixels (guchar * src,guchar * dest,const guchar * mask,const guchar * cmap,const guchar * bg,gboolean cut,guint length,guint bytes,gboolean has_alpha)
+DECL|function|extract_from_indexed_pixels (guchar * src,guchar * dest,const guchar * mask,const guchar * cmap,const guchar * bg,gboolean cut,guint length,guint src_bytes,guint dest_bytes)
 name|extract_from_indexed_pixels
 parameter_list|(
 name|guchar
@@ -8433,10 +8429,10 @@ name|guint
 name|length
 parameter_list|,
 name|guint
-name|bytes
+name|src_bytes
 parameter_list|,
-name|gboolean
-name|has_alpha
+name|guint
+name|dest_bytes
 parameter_list|)
 block|{
 name|gint
@@ -8509,7 +8505,10 @@ index|]
 expr_stmt|;
 if|if
 condition|(
-name|has_alpha
+name|HAS_ALPHA
+argument_list|(
+name|src_bytes
+argument_list|)
 condition|)
 block|{
 name|dest
@@ -8559,6 +8558,13 @@ expr_stmt|;
 block|}
 else|else
 block|{
+if|if
+condition|(
+name|HAS_ALPHA
+argument_list|(
+name|dest_bytes
+argument_list|)
+condition|)
 name|dest
 index|[
 literal|3
@@ -8603,11 +8609,11 @@ operator|++
 expr_stmt|;
 name|src
 operator|+=
-name|bytes
+name|src_bytes
 expr_stmt|;
 name|dest
 operator|+=
-literal|4
+name|dest_bytes
 expr_stmt|;
 block|}
 block|}
@@ -10046,7 +10052,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|extract_from_region (PixelRegion * src,PixelRegion * dest,PixelRegion * mask,const guchar * cmap,const guchar * bg,GimpImageBaseType type,gboolean has_alpha,gboolean cut)
+DECL|function|extract_from_region (PixelRegion * src,PixelRegion * dest,PixelRegion * mask,const guchar * cmap,const guchar * bg,GimpImageBaseType type,gboolean cut)
 name|extract_from_region
 parameter_list|(
 name|PixelRegion
@@ -10073,9 +10079,6 @@ name|bg
 parameter_list|,
 name|GimpImageBaseType
 name|type
-parameter_list|,
-name|gboolean
-name|has_alpha
 parameter_list|,
 name|gboolean
 name|cut
@@ -10192,7 +10195,9 @@ name|src
 operator|->
 name|bytes
 argument_list|,
-name|has_alpha
+name|dest
+operator|->
+name|bytes
 argument_list|)
 expr_stmt|;
 break|break;
@@ -10221,7 +10226,9 @@ name|src
 operator|->
 name|bytes
 argument_list|,
-name|has_alpha
+name|dest
+operator|->
+name|bytes
 argument_list|)
 expr_stmt|;
 break|break;
