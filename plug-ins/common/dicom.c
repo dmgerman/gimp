@@ -2884,7 +2884,8 @@ literal|0x0040
 argument_list|,
 literal|"CS"
 argument_list|,
-literal|"?"
+literal|""
+comment|/* unknown */
 argument_list|)
 expr_stmt|;
 name|write_group_to_file
