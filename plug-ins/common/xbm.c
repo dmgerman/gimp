@@ -5371,7 +5371,7 @@ name|memset
 argument_list|(
 name|xsvals
 operator|.
-name|prefix
+name|mask_ext
 argument_list|,
 literal|0
 argument_list|,
