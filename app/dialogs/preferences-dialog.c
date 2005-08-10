@@ -8803,7 +8803,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2c5dc44d0108
+DECL|struct|__anon2bb0824f0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -9901,6 +9901,15 @@ argument_list|,
 name|entry
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|size_group
+argument_list|)
+expr_stmt|;
+name|size_group
+operator|=
+name|NULL
+expr_stmt|;
 comment|/**********************/
 comment|/*  Color Management  */
 comment|/**********************/
@@ -9956,7 +9965,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c5dc44d0208
+DECL|struct|__anon2bb0824f0208
 block|{
 DECL|member|label
 specifier|const
@@ -10156,6 +10165,12 @@ name|row
 operator|++
 control|)
 block|{
+if|#
+directive|if
+literal|0
+block|button = gimp_prop_file_entry_new (color_config,                                            profiles[i].property_name,                                            gettext (profiles[i].fs_label),                                            FALSE, TRUE);
+else|#
+directive|else
 name|button
 operator|=
 name|gimp_prop_file_chooser_button_new
@@ -10182,6 +10197,8 @@ argument_list|,
 name|GTK_FILE_CHOOSER_ACTION_OPEN
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 name|gimp_table_attach_aligned
 argument_list|(
 name|GTK_TABLE
@@ -10855,7 +10872,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c5dc44d0308
+DECL|struct|__anon2bb0824f0308
 block|{
 DECL|member|label
 specifier|const
@@ -11012,7 +11029,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c5dc44d0408
+DECL|struct|__anon2bb0824f0408
 block|{
 DECL|member|tree_label
 specifier|const
