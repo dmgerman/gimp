@@ -140,7 +140,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296650cd0108
+DECL|struct|__anon2b1d146b0108
 block|{
 DECL|member|cinfo
 name|struct
@@ -2746,7 +2746,7 @@ argument_list|(
 literal|"Save as JPEG"
 argument_list|)
 argument_list|,
-literal|"jpeg"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -2754,7 +2754,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"file-jpeg-save"
+name|SAVE_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
@@ -4773,7 +4773,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296650cd0208
+DECL|struct|__anon2b1d146b0208
 block|{
 DECL|member|pub
 name|struct

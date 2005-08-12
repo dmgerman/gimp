@@ -148,11 +148,19 @@ value|1
 end_define
 
 begin_define
-DECL|macro|HELP_ID
+DECL|macro|PLUG_IN_PROC
 define|#
 directive|define
-name|HELP_ID
+name|PLUG_IN_PROC
 value|"plug-in-gflare"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"gflare"
 end_define
 
 begin_define
@@ -383,7 +391,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a0c4f670103
+DECL|enum|__anon27dc6ba60103
 block|{
 DECL|enumerator|GF_NORMAL
 name|GF_NORMAL
@@ -410,7 +418,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a0c4f670203
+DECL|enum|__anon27dc6ba60203
 block|{
 DECL|enumerator|GF_CIRCLE
 name|GF_CIRCLE
@@ -431,7 +439,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0c4f670308
+DECL|struct|__anon27dc6ba60308
 block|{
 DECL|member|name
 name|gchar
@@ -572,7 +580,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0c4f670408
+DECL|struct|__anon27dc6ba60408
 block|{
 DECL|member|fp
 name|FILE
@@ -592,7 +600,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a0c4f670503
+DECL|enum|__anon27dc6ba60503
 block|{
 DECL|enumerator|PAGE_SETTINGS
 name|PAGE_SETTINGS
@@ -620,7 +628,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0c4f670608
+DECL|struct|__anon27dc6ba60608
 block|{
 DECL|member|init
 name|gint
@@ -642,7 +650,7 @@ modifier|*
 name|preview
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2a0c4f670708
+DECL|struct|__anon27dc6ba60708
 block|{
 DECL|member|x0
 DECL|member|y0
@@ -721,7 +729,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0c4f670808
+DECL|struct|__anon27dc6ba60808
 block|{
 DECL|member|init
 name|gint
@@ -791,7 +799,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0c4f670908
+DECL|struct|__anon27dc6ba60908
 block|{
 DECL|member|x0
 name|gdouble
@@ -818,7 +826,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0c4f670a08
+DECL|struct|__anon27dc6ba60a08
 block|{
 DECL|member|init
 name|gint
@@ -988,7 +996,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0c4f670b08
+DECL|struct|__anon27dc6ba60b08
 block|{
 DECL|member|xcenter
 name|gdouble
@@ -1015,7 +1023,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0c4f670c08
+DECL|struct|__anon27dc6ba60c08
 block|{
 DECL|member|is_color
 name|gint
@@ -1256,7 +1264,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0c4f670d08
+DECL|struct|__anon27dc6ba60d08
 block|{
 DECL|member|tag
 name|gint
@@ -1333,7 +1341,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0c4f670e08
+DECL|struct|__anon27dc6ba60e08
 block|{
 DECL|member|xcenter
 name|gint
@@ -3860,7 +3868,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -3884,7 +3892,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"gflare_name"
+literal|"gflare-name"
 block|,
 literal|"The name of GFlare"
 block|}
@@ -3948,7 +3956,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"use_asupsample"
+literal|"use-asupsample"
 block|,
 literal|"Whether it uses or not adaptive supersampling while rendering (boolean)"
 block|}
@@ -3956,7 +3964,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"asupsample_max_depth"
+literal|"asupsample-max-depth"
 block|,
 literal|"Max depth for adaptive supersampling"
 block|}
@@ -3964,7 +3972,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"asupsample_threshold"
+literal|"asupsample-threshold"
 block|,
 literal|"Threshold for adaptive supersampling"
 block|}
@@ -3984,7 +3992,7 @@ literal|"which has been stored in gflare-path already."
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_gflare"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"Produce lense flare effect using custom gradients"
 argument_list|,
@@ -4019,7 +4027,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_gflare"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Light and Shadow/Light"
 argument_list|)
@@ -4342,7 +4350,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_gflare"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|pvals
@@ -4547,7 +4555,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_gflare"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|pvals
@@ -4611,7 +4619,7 @@ name|GIMP_RUN_INTERACTIVE
 condition|)
 name|gimp_set_data
 argument_list|(
-literal|"plug_in_gflare"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|pvals
@@ -8527,7 +8535,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-DECL|struct|__anon2a0c4f670f08
+DECL|struct|__anon27dc6ba60f08
 specifier|static
 struct|struct
 block|{
@@ -11533,7 +11541,7 @@ name|FALSE
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"gflare"
+name|PLUG_IN_BINARY
 argument_list|,
 name|TRUE
 argument_list|)
@@ -11608,7 +11616,7 @@ argument_list|(
 literal|"GFlare"
 argument_list|)
 argument_list|,
-literal|"gflare"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -11616,7 +11624,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-name|HELP_ID
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
@@ -14485,7 +14493,7 @@ name|i
 decl_stmt|;
 specifier|static
 struct|struct
-DECL|struct|__anon2a0c4f671008
+DECL|struct|__anon27dc6ba61008
 block|{
 DECL|member|label
 specifier|const
@@ -15073,7 +15081,7 @@ argument_list|)
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-name|HELP_ID
+name|PLUG_IN_PROC
 argument_list|,
 name|_
 argument_list|(
@@ -15380,7 +15388,7 @@ argument_list|)
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-name|HELP_ID
+name|PLUG_IN_PROC
 argument_list|,
 name|_
 argument_list|(
@@ -15633,7 +15641,7 @@ name|shell
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-name|HELP_ID
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_DIALOG_QUESTION
 argument_list|,
@@ -16046,7 +16054,7 @@ argument_list|(
 literal|"GFlare Editor"
 argument_list|)
 argument_list|,
-literal|"gflare"
+name|PLUG_IN_BINARY
 argument_list|,
 name|GTK_WIDGET
 argument_list|(
@@ -16057,7 +16065,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-name|HELP_ID
+name|PLUG_IN_PROC
 argument_list|,
 name|_
 argument_list|(

@@ -58,19 +58,19 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_define
+DECL|macro|PLUG_IN_PROC
+define|#
+directive|define
+name|PLUG_IN_PROC
+value|"plug-in-flame"
+end_define
+
+begin_define
 DECL|macro|VARIATION_SAME
 define|#
 directive|define
 name|VARIATION_SAME
 value|(-2)
-end_define
-
-begin_define
-DECL|macro|HELP_ID
-define|#
-directive|define
-name|HELP_ID
-value|"plug-in-flame"
 end_define
 
 begin_define
@@ -139,7 +139,7 @@ end_define
 
 begin_struct
 struct|struct
-DECL|struct|__anon2af7280b0108
+DECL|struct|__anon28b5a01f0108
 block|{
 DECL|member|randomize
 name|gint
@@ -513,7 +513,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -537,7 +537,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_flame"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"Creates cosmic recursive fractal flames"
 argument_list|,
@@ -572,7 +572,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_flame"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Render/Nature"
 argument_list|)
@@ -849,7 +849,7 @@ else|else
 block|{
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_flame"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|config
@@ -993,7 +993,7 @@ argument_list|()
 expr_stmt|;
 name|gimp_set_data
 argument_list|(
-literal|"plug_in_flame"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|config
@@ -2931,7 +2931,7 @@ name|GTK_DIALOG_DESTROY_WITH_PARENT
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-name|HELP_ID
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
@@ -4417,7 +4417,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-name|HELP_ID
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

@@ -78,6 +78,22 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_define
+DECL|macro|LOAD_PROC
+define|#
+directive|define
+name|LOAD_PROC
+value|"file-uri-load"
+end_define
+
+begin_define
+DECL|macro|SAVE_PROC
+define|#
+directive|define
+name|SAVE_PROC
+value|"file-uri-save"
+end_define
+
 begin_function_decl
 specifier|static
 name|void
@@ -232,7 +248,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -248,7 +264,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"raw_filename"
+literal|"raw-filename"
 block|,
 literal|"The name entered"
 block|}
@@ -278,7 +294,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -310,7 +326,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"raw_filename"
+literal|"raw-filename"
 block|,
 literal|"The name of the file to save the image in"
 block|}
@@ -355,7 +371,7 @@ condition|)
 block|{
 name|gimp_install_procedure
 argument_list|(
-literal|"file_uri_load"
+name|LOAD_PROC
 argument_list|,
 literal|"loads files given an URI"
 argument_list|,
@@ -393,7 +409,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_icon_register
 argument_list|(
-literal|"file_uri_load"
+name|LOAD_PROC
 argument_list|,
 name|GIMP_ICON_TYPE_STOCK_ID
 argument_list|,
@@ -402,7 +418,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_load_handler
 argument_list|(
-literal|"file_uri_load"
+name|LOAD_PROC
 argument_list|,
 literal|""
 argument_list|,
@@ -419,7 +435,7 @@ condition|)
 block|{
 name|gimp_install_procedure
 argument_list|(
-literal|"file_uri_save"
+name|SAVE_PROC
 argument_list|,
 literal|"saves files given an URI"
 argument_list|,
@@ -454,7 +470,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_icon_register
 argument_list|(
-literal|"file_uri_save"
+name|SAVE_PROC
 argument_list|,
 name|GIMP_ICON_TYPE_STOCK_ID
 argument_list|,
@@ -463,7 +479,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_save_handler
 argument_list|(
-literal|"file_uri_save"
+name|SAVE_PROC
 argument_list|,
 literal|""
 argument_list|,
@@ -604,7 +620,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_uri_load"
+name|LOAD_PROC
 argument_list|)
 operator|&&
 name|uri_backend_get_load_protocols
@@ -674,7 +690,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_uri_save"
+name|SAVE_PROC
 argument_list|)
 operator|&&
 name|uri_backend_get_save_protocols

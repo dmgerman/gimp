@@ -130,6 +130,22 @@ file|"xjpeg.h"
 end_include
 
 begin_define
+DECL|macro|LOAD_PROC
+define|#
+directive|define
+name|LOAD_PROC
+value|"file-xjt-load"
+end_define
+
+begin_define
+DECL|macro|SAVE_PROC
+define|#
+directive|define
+name|SAVE_PROC
+value|"file-xjt-save"
+end_define
+
+begin_define
 DECL|macro|GIMP_XJ_IMAGE
 define|#
 directive|define
@@ -206,7 +222,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27dc14d00103
+DECL|enum|__anon2b7ef3230103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -406,7 +422,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27dc14d00203
+DECL|enum|__anon2b7ef3230203
 block|{
 DECL|enumerator|PTYP_NOT_SUPPORTED
 name|PTYP_NOT_SUPPORTED
@@ -466,7 +482,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27dc14d00303
+DECL|enum|__anon2b7ef3230303
 block|{
 DECL|enumerator|XJT_IMAGE_PARASITE
 name|XJT_IMAGE_PARASITE
@@ -496,7 +512,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27dc14d00403
+DECL|enum|__anon2b7ef3230403
 block|{
 DECL|enumerator|XJT_RGB
 name|XJT_RGB
@@ -518,7 +534,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27dc14d00503
+DECL|enum|__anon2b7ef3230503
 block|{
 DECL|enumerator|XJT_PATHTYPE_UNDEF
 name|XJT_PATHTYPE_UNDEF
@@ -538,7 +554,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27dc14d00603
+DECL|enum|__anon2b7ef3230603
 block|{
 DECL|enumerator|XJT_UNIT_PIXEL
 name|XJT_UNIT_PIXEL
@@ -573,7 +589,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27dc14d00703
+DECL|enum|__anon2b7ef3230703
 block|{
 DECL|enumerator|XJT_NORMAL_MODE
 name|XJT_NORMAL_MODE
@@ -698,7 +714,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dc14d00808
+DECL|struct|__anon2b7ef3230808
 block|{
 DECL|member|prop_id
 name|t_proptype
@@ -734,7 +750,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dc14d00908
+DECL|struct|__anon2b7ef3230908
 block|{
 DECL|member|int_val1
 name|gint32
@@ -783,7 +799,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dc14d00a08
+DECL|struct|__anon2b7ef3230a08
 block|{
 DECL|member|parasite_type
 name|t_parasitetype
@@ -820,7 +836,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dc14d00b08
+DECL|struct|__anon2b7ef3230b08
 block|{
 DECL|member|path_type
 name|gint32
@@ -870,7 +886,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dc14d00c08
+DECL|struct|__anon2b7ef3230c08
 block|{
 DECL|member|active_channel
 name|gint
@@ -944,7 +960,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dc14d00d08
+DECL|struct|__anon2b7ef3230d08
 block|{
 DECL|member|active_layer
 name|gint
@@ -1029,7 +1045,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dc14d00e08
+DECL|struct|__anon2b7ef3230e08
 block|{
 DECL|member|position
 name|gint32
@@ -1053,7 +1069,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dc14d00f08
+DECL|struct|__anon2b7ef3230f08
 block|{
 DECL|member|version
 name|gchar
@@ -1909,7 +1925,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -1925,7 +1941,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"raw_filename"
+literal|"raw-filename"
 block|,
 literal|"The name of the file to load"
 block|}
@@ -1955,7 +1971,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -1987,7 +2003,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"raw_filename"
+literal|"raw-filename"
 block|,
 literal|"The name of the file to save the image in"
 block|}
@@ -2019,7 +2035,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"clr_transparent"
+literal|"clr-transparent"
 block|,
 literal|"set all full-transparent pixels to 0"
 block|}
@@ -2027,7 +2043,7 @@ block|,   }
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"file_xjt_load"
+name|LOAD_PROC
 argument_list|,
 literal|"loads files of the jpeg-tar file format"
 argument_list|,
@@ -2065,7 +2081,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_magic_load_handler
 argument_list|(
-literal|"file_xjt_load"
+name|LOAD_PROC
 argument_list|,
 literal|"xjt,xjtgz,xjtbz2"
 argument_list|,
@@ -2076,7 +2092,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"file_xjt_save"
+name|SAVE_PROC
 argument_list|,
 literal|"saves files in the jpeg-tar file format"
 argument_list|,
@@ -2111,7 +2127,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_save_handler
 argument_list|(
-literal|"file_xjt_save"
+name|SAVE_PROC
 argument_list|,
 literal|"xjt,xjtgz,xjtbz2"
 argument_list|,
@@ -2266,7 +2282,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_xjt_load"
+name|LOAD_PROC
 argument_list|)
 operator|==
 literal|0
@@ -2335,7 +2351,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_xjt_save"
+name|SAVE_PROC
 argument_list|)
 operator|==
 literal|0
@@ -2352,7 +2368,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"file_xjt_save"
+name|SAVE_PROC
 argument_list|,
 operator|&
 name|jsvals
@@ -2491,7 +2507,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"file_xjt_save"
+name|SAVE_PROC
 argument_list|,
 operator|&
 name|jsvals
@@ -2553,7 +2569,7 @@ block|{
 comment|/*  Store mvals data  */
 name|gimp_set_data
 argument_list|(
-literal|"file_xjt_save"
+name|SAVE_PROC
 argument_list|,
 operator|&
 name|jsvals

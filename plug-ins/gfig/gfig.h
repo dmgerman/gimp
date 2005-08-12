@@ -47,7 +47,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c656ba40108
+DECL|struct|__anon2a0beb400108
 block|{
 DECL|member|gridspacing
 name|gint
@@ -102,7 +102,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c656ba40208
+DECL|struct|__anon2a0beb400208
 block|{
 DECL|member|type
 name|SelectionType
@@ -229,11 +229,19 @@ value|8
 end_define
 
 begin_define
-DECL|macro|HELP_ID
+DECL|macro|PLUG_IN_PROC
 define|#
 directive|define
-name|HELP_ID
+name|PLUG_IN_PROC
 value|"plug-in-gfig"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"gfig"
 end_define
 
 begin_decl_stmt
@@ -302,7 +310,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c656ba40308
+DECL|struct|__anon2a0beb400308
 block|{
 DECL|member|opts
 name|GfigOpts
@@ -497,7 +505,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c656ba40408
+DECL|struct|__anon2a0beb400408
 block|{
 DECL|member|debug_styles
 name|gboolean

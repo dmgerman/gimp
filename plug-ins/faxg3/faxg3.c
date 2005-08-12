@@ -121,6 +121,14 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_define
+DECL|macro|LOAD_PROC
+define|#
+directive|define
+name|LOAD_PROC
+value|"file-faxg3-load"
+end_define
+
+begin_define
 DECL|macro|VERSION
 define|#
 directive|define
@@ -256,7 +264,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -272,7 +280,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"raw_filename"
+literal|"raw-filename"
 block|,
 literal|"The name of the file to load"
 block|}
@@ -295,7 +303,7 @@ block|,   }
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"file_faxg3_load"
+name|LOAD_PROC
 argument_list|,
 literal|"loads g3 fax files"
 argument_list|,
@@ -333,14 +341,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_file_handler_mime
 argument_list|(
-literal|"file_faxg3_load"
+name|LOAD_PROC
 argument_list|,
 literal|"image/g3-fax"
 argument_list|)
 expr_stmt|;
 name|gimp_register_magic_load_handler
 argument_list|(
-literal|"file_faxg3_load"
+name|LOAD_PROC
 argument_list|,
 literal|"g3"
 argument_list|,
@@ -441,7 +449,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_faxg3_load"
+name|LOAD_PROC
 argument_list|)
 operator|==
 literal|0

@@ -57,8 +57,24 @@ directive|include
 file|"glib.h"
 end_include
 
+begin_define
+DECL|macro|PLUG_IN_PROC
+define|#
+directive|define
+name|PLUG_IN_PROC
+value|"plug-in-maze"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"maze"
+end_define
+
 begin_typedef
-DECL|enum|__anon2a17d2750103
+DECL|enum|__anon2778e2af0103
 typedef|typedef
 enum|enum
 block|{
@@ -74,7 +90,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a17d2750208
+DECL|struct|__anon2778e2af0208
 typedef|typedef
 struct|struct
 block|{

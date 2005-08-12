@@ -304,7 +304,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -335,7 +335,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -359,7 +359,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"align_threshold"
+literal|"align-threshold"
 block|,
 literal|"align_threshold"
 block|}
@@ -367,7 +367,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"corner_always_threshold"
+literal|"corner-always-threshold"
 block|,
 literal|"corner_always_threshold"
 block|}
@@ -375,7 +375,7 @@ block|,
 block|{
 name|GIMP_PDB_INT8
 block|,
-literal|"corner_surround"
+literal|"corner-surround"
 block|,
 literal|"corner_surround"
 block|}
@@ -383,7 +383,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"corner_threshold"
+literal|"corner-threshold"
 block|,
 literal|"corner_threshold"
 block|}
@@ -391,7 +391,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"error_threshold"
+literal|"error-threshold"
 block|,
 literal|"error_threshold"
 block|}
@@ -399,7 +399,7 @@ block|,
 block|{
 name|GIMP_PDB_INT8
 block|,
-literal|"filter_alternative_surround"
+literal|"filter-alternative-surround"
 block|,
 literal|"filter_alternative_surround"
 block|}
@@ -407,7 +407,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"filter_epsilon"
+literal|"filter-epsilon"
 block|,
 literal|"filter_epsilon"
 block|}
@@ -415,7 +415,7 @@ block|,
 block|{
 name|GIMP_PDB_INT8
 block|,
-literal|"filter_iteration_count"
+literal|"filter-iteration-count"
 block|,
 literal|"filter_iteration_count"
 block|}
@@ -423,7 +423,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"filter_percent"
+literal|"filter-percent"
 block|,
 literal|"filter_percent"
 block|}
@@ -431,7 +431,7 @@ block|,
 block|{
 name|GIMP_PDB_INT8
 block|,
-literal|"filter_secondary_surround"
+literal|"filter-secondary-surround"
 block|,
 literal|"filter_secondary_surround"
 block|}
@@ -439,7 +439,7 @@ block|,
 block|{
 name|GIMP_PDB_INT8
 block|,
-literal|"filter_surround"
+literal|"filter-surround"
 block|,
 literal|"filter_surround"
 block|}
@@ -447,7 +447,7 @@ block|,
 block|{
 name|GIMP_PDB_INT8
 block|,
-literal|"keep_knees"
+literal|"keep-knees"
 block|,
 literal|"{1-Yes, 0-No}"
 block|}
@@ -455,7 +455,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"line_reversion_threshold"
+literal|"line-reversion-threshold"
 block|,
 literal|"line_reversion_threshold"
 block|}
@@ -463,7 +463,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"line_threshold"
+literal|"line-threshold"
 block|,
 literal|"line_threshold"
 block|}
@@ -471,7 +471,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"reparameterize_improvement"
+literal|"reparameterize-improvement"
 block|,
 literal|"reparameterize_improvement"
 block|}
@@ -479,7 +479,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"reparameterize_threshold"
+literal|"reparameterize-threshold"
 block|,
 literal|"reparameterize_threshold"
 block|}
@@ -487,7 +487,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"subdivide_search"
+literal|"subdivide-search"
 block|,
 literal|"subdivide_search"
 block|}
@@ -495,7 +495,7 @@ block|,
 block|{
 name|GIMP_PDB_INT8
 block|,
-literal|"subdivide_surround"
+literal|"subdivide-surround"
 block|,
 literal|"subdivide_surround"
 block|}
@@ -503,7 +503,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"subdivide_threshold"
+literal|"subdivide-threshold"
 block|,
 literal|"subdivide_threshold"
 block|}
@@ -511,7 +511,7 @@ block|,
 block|{
 name|GIMP_PDB_INT8
 block|,
-literal|"tangent_surround"
+literal|"tangent-surround"
 block|,
 literal|"tangent_surround"
 block|}
@@ -519,7 +519,7 @@ block|,   }
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_sel2path"
+literal|"plug-in-sel2path"
 argument_list|,
 literal|"Converts a selection to a path"
 argument_list|,
@@ -551,7 +551,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_sel2path_advanced"
+literal|"plug-in-sel2path-advanced"
 argument_list|,
 literal|"Converts a selection to a path (with advanced user menu)"
 argument_list|,
@@ -655,7 +655,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"plug_in_sel2path"
+literal|"plug-in-sel2path"
 argument_list|)
 operator|==
 literal|0
@@ -711,7 +711,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"plug_in_sel2path needs a valid image ID"
+literal|"plug-in-sel2path needs a valid image ID"
 argument_list|)
 expr_stmt|;
 return|return;
@@ -758,7 +758,7 @@ if|if
 condition|(
 name|gimp_get_data_size
 argument_list|(
-literal|"plug_in_sel2path_advanced"
+literal|"plug-in-sel2path-advanced"
 argument_list|)
 operator|>
 literal|0
@@ -766,7 +766,7 @@ condition|)
 block|{
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_sel2path_advanced"
+literal|"plug-in-sel2path-advanced"
 argument_list|,
 operator|&
 name|selVals
@@ -1086,7 +1086,7 @@ if|if
 condition|(
 name|gimp_get_data_size
 argument_list|(
-literal|"plug_in_sel2path_advanced"
+literal|"plug-in-sel2path-advanced"
 argument_list|)
 operator|>
 literal|0
@@ -1094,7 +1094,7 @@ condition|)
 block|{
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_sel2path_advanced"
+literal|"plug-in-sel2path-advanced"
 argument_list|,
 operator|&
 name|selVals
@@ -1153,7 +1153,7 @@ name|no_dialog
 condition|)
 name|gimp_set_data
 argument_list|(
-literal|"plug_in_sel2path_advanced"
+literal|"plug-in-sel2path-advanced"
 argument_list|,
 operator|&
 name|selVals
@@ -1593,9 +1593,9 @@ name|is_newcurve
 parameter_list|)
 block|{
 comment|/*   printf("TYPE: %s X: %d Y: %d\n",  */
-comment|/* 	 (is_newcurve)?"3":"1",  */
-comment|/* 	 sel_x1+(int)RINT(x),  */
-comment|/* 	 sel_y1 + sel_height - (int)RINT(y)+1); */
+comment|/*       (is_newcurve)?"3":"1",  */
+comment|/*       sel_x1+(int)RINT(x),  */
+comment|/*       sel_y1 + sel_height - (int)RINT(y)+1); */
 operator|*
 name|p
 operator|++
@@ -1662,8 +1662,8 @@ name|y
 parameter_list|)
 block|{
 comment|/*   printf("TYPE: 2 X: %d Y: %d\n",  */
-comment|/*  	 sel_x1+(int)RINT(x),  */
-comment|/*  	 sel_y1 + sel_height - (int)RINT(y)+1);  */
+comment|/*       sel_x1+(int)RINT(x),  */
+comment|/*       sel_y1 + sel_height - (int)RINT(y)+1);  */
 operator|*
 name|p
 operator|++
@@ -1857,7 +1857,7 @@ name|this_list
 argument_list|)
 decl_stmt|;
 comment|/*       if(seg_count> 0&& point_count> 0)   */
-comment|/* 	gen_anchor(last_x,last_y,0);   */
+comment|/*      gen_anchor(last_x,last_y,0);   */
 name|point_count
 operator|=
 literal|0

@@ -3388,7 +3388,7 @@ expr_stmt|;
 comment|/* init GTK and install colormap */
 name|gimp_ui_init
 argument_list|(
-literal|"rcm"
+name|PLUG_IN_BINARY
 argument_list|,
 name|TRUE
 argument_list|)
@@ -3407,7 +3407,7 @@ argument_list|(
 literal|"Colormap Rotation"
 argument_list|)
 argument_list|,
-literal|"rcm"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -3415,7 +3415,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"plug-in-rotate-colormap"
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

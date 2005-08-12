@@ -158,10 +158,6 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
-begin_comment
-comment|/***** Magic numbers *****/
-end_comment
-
 begin_define
 DECL|macro|GFIG_HEADER
 define|#
@@ -440,7 +436,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_gfig"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"Create Geometrical shapes with the Gimp"
 argument_list|,
@@ -481,7 +477,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_gfig"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Render"
 argument_list|)
@@ -840,7 +836,7 @@ case|:
 case|case
 name|GIMP_RUN_WITH_LAST_VALS
 case|:
-comment|/*gimp_get_data ("plug_in_gfig",&selvals);*/
+comment|/*gimp_get_data (PLUG_IN_PROC,&selvals);*/
 if|if
 condition|(
 operator|!
@@ -897,7 +893,7 @@ else|else
 if|#
 directive|if
 literal|0
-else|if (run_mode == GIMP_RUN_INTERACTIVE)     gimp_set_data ("plug_in_gfig",&selvals, sizeof (SelectItVals));   else
+else|if (run_mode == GIMP_RUN_INTERACTIVE)     gimp_set_data (PLUG_IN_PROC,&selvals, sizeof (SelectItVals));   else
 endif|#
 directive|endif
 comment|/* 0 */

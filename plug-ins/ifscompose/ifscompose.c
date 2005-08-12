@@ -128,25 +128,17 @@ value|"ifscompose-parasite"
 end_define
 
 begin_define
-DECL|macro|IFSCOMPOSE_DATA
+DECL|macro|IFSCOMPOSE_PROC
 define|#
 directive|define
-name|IFSCOMPOSE_DATA
-value|"plug_in_ifscompose"
-end_define
-
-begin_define
-DECL|macro|HELP_ID
-define|#
-directive|define
-name|HELP_ID
-value|"plug-in-ifs-compose"
+name|IFSCOMPOSE_PROC
+value|"plug-in-ifscompose"
 end_define
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c1946270103
+DECL|enum|__anon28f761dc0103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -166,7 +158,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c1946270203
+DECL|enum|__anon28f761dc0203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -182,7 +174,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1946270308
+DECL|struct|__anon28f761dc0308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -204,7 +196,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon2c194627040a
+DECL|union|__anon28f761dc040a
 block|{
 DECL|member|d
 name|gdouble
@@ -229,7 +221,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1946270508
+DECL|struct|__anon28f761dc0508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -259,7 +251,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1946270608
+DECL|struct|__anon28f761dc0608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -294,7 +286,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1946270708
+DECL|struct|__anon28f761dc0708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -330,7 +322,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1946270808
+DECL|struct|__anon28f761dc0808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -397,7 +389,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1946270908
+DECL|struct|__anon28f761dc0908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -546,7 +538,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1946270a08
+DECL|struct|__anon28f761dc0a08
 block|{
 DECL|member|run
 name|gboolean
@@ -1438,7 +1430,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -1475,7 +1467,7 @@ literal|0
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_ifs_compose"
+name|IFSCOMPOSE_PROC
 argument_list|,
 literal|"Create an Iterated Function System (IFS) Fractal"
 argument_list|,
@@ -1517,7 +1509,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_ifs_compose"
+name|IFSCOMPOSE_PROC
 argument_list|,
 literal|"<Image>/Filters/Render/Nature"
 argument_list|)
@@ -1714,7 +1706,7 @@ name|length
 init|=
 name|gimp_get_data_size
 argument_list|(
-name|IFSCOMPOSE_DATA
+name|IFSCOMPOSE_PROC
 argument_list|)
 decl_stmt|;
 if|if
@@ -1737,7 +1729,7 @@ argument_list|)
 decl_stmt|;
 name|gimp_get_data
 argument_list|(
-name|IFSCOMPOSE_DATA
+name|IFSCOMPOSE_PROC
 argument_list|,
 name|data
 argument_list|)
@@ -1795,7 +1787,7 @@ name|length
 init|=
 name|gimp_get_data_size
 argument_list|(
-name|IFSCOMPOSE_DATA
+name|IFSCOMPOSE_PROC
 argument_list|)
 decl_stmt|;
 if|if
@@ -1818,7 +1810,7 @@ argument_list|)
 decl_stmt|;
 name|gimp_get_data
 argument_list|(
-name|IFSCOMPOSE_DATA
+name|IFSCOMPOSE_PROC
 argument_list|,
 name|data
 argument_list|)
@@ -1940,7 +1932,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_set_data
 argument_list|(
-name|IFSCOMPOSE_DATA
+name|IFSCOMPOSE_PROC
 argument_list|,
 name|str
 argument_list|,
@@ -4057,7 +4049,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-name|HELP_ID
+name|IFSCOMPOSE_PROC
 argument_list|,
 name|GTK_STOCK_OPEN
 argument_list|,

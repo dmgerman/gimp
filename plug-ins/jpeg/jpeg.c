@@ -191,7 +191,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -207,7 +207,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"raw_filename"
+literal|"raw-filename"
 block|,
 literal|"The name of the file to load"
 block|}
@@ -248,7 +248,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"thumb_size"
+literal|"thumb-size"
 block|,
 literal|"Preferred thumbnail size"
 block|}
@@ -271,7 +271,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"image_width"
+literal|"image-width"
 block|,
 literal|"Width of full-sized image"
 block|}
@@ -279,7 +279,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"image_height"
+literal|"image-height"
 block|,
 literal|"Height of full-sized image"
 block|}
@@ -297,7 +297,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -329,7 +329,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"raw_filename"
+literal|"raw-filename"
 block|,
 literal|"The name of the file to save the image in"
 block|}
@@ -409,7 +409,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"file_jpeg_load"
+name|LOAD_PROC
 argument_list|,
 literal|"loads files in the JPEG file format"
 argument_list|,
@@ -447,14 +447,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_file_handler_mime
 argument_list|(
-literal|"file_jpeg_load"
+name|LOAD_PROC
 argument_list|,
 literal|"image/jpeg"
 argument_list|)
 expr_stmt|;
 name|gimp_register_magic_load_handler
 argument_list|(
-literal|"file_jpeg_load"
+name|LOAD_PROC
 argument_list|,
 literal|"jpg,jpeg,jpe"
 argument_list|,
@@ -468,7 +468,7 @@ directive|ifdef
 name|HAVE_EXIF
 name|gimp_install_procedure
 argument_list|(
-literal|"file_jpeg_load_thumb"
+name|LOAD_THUMB_PROC
 argument_list|,
 literal|"Loads a thumbnail from a JPEG image"
 argument_list|,
@@ -503,9 +503,9 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_thumbnail_loader
 argument_list|(
-literal|"file_jpeg_load"
+name|LOAD_PROC
 argument_list|,
-literal|"file_jpeg_load_thumb"
+name|LOAD_THUMB_PROC
 argument_list|)
 expr_stmt|;
 endif|#
@@ -513,7 +513,7 @@ directive|endif
 comment|/* HAVE_EXIF */
 name|gimp_install_procedure
 argument_list|(
-literal|"file_jpeg_save"
+name|SAVE_PROC
 argument_list|,
 literal|"saves files in the JPEG file format"
 argument_list|,
@@ -548,14 +548,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_file_handler_mime
 argument_list|(
-literal|"file_jpeg_save"
+name|SAVE_PROC
 argument_list|,
 literal|"image/jpeg"
 argument_list|)
 expr_stmt|;
 name|gimp_register_save_handler
 argument_list|(
-literal|"file_jpeg_save"
+name|SAVE_PROC
 argument_list|,
 literal|"jpg,jpeg,jpe"
 argument_list|,
@@ -680,7 +680,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_jpeg_load"
+name|LOAD_PROC
 argument_list|)
 operator|==
 literal|0
@@ -699,7 +699,7 @@ name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|gimp_ui_init
 argument_list|(
-literal|"jpeg"
+name|PLUG_IN_BINARY
 argument_list|,
 name|FALSE
 argument_list|)
@@ -786,7 +786,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_jpeg_load_thumb"
+name|LOAD_THUMB_PROC
 argument_list|)
 operator|==
 literal|0
@@ -939,7 +939,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_jpeg_save"
+name|SAVE_PROC
 argument_list|)
 operator|==
 literal|0
@@ -983,7 +983,7 @@ name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|gimp_ui_init
 argument_list|(
-literal|"jpeg"
+name|PLUG_IN_BINARY
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1260,7 +1260,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"file_jpeg_save"
+name|SAVE_PROC
 argument_list|,
 operator|&
 name|jsvals
@@ -1706,7 +1706,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"file_jpeg_save"
+name|SAVE_PROC
 argument_list|,
 operator|&
 name|jsvals
@@ -1849,7 +1849,7 @@ block|{
 comment|/*  Store mvals data  */
 name|gimp_set_data
 argument_list|(
-literal|"file_jpeg_save"
+name|SAVE_PROC
 argument_list|,
 operator|&
 name|jsvals

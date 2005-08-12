@@ -171,7 +171,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -195,7 +195,7 @@ block|,   }
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_rotate_colormap"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"Colormap rotation as in xv"
 argument_list|,
@@ -232,7 +232,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_rotate_colormap"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Colors/Map"
 argument_list|)

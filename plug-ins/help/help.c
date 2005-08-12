@@ -60,25 +60,25 @@ comment|/*  defines  */
 end_comment
 
 begin_define
-DECL|macro|GIMP_HELP_EXT_NAME
+DECL|macro|GIMP_HELP_EXT_PROC
 define|#
 directive|define
-name|GIMP_HELP_EXT_NAME
-value|"extension_gimp_help"
+name|GIMP_HELP_EXT_PROC
+value|"extension-gimp-help"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_TEMP_EXT_NAME
+DECL|macro|GIMP_HELP_TEMP_EXT_PROC
 define|#
 directive|define
-name|GIMP_HELP_TEMP_EXT_NAME
-value|"extension_gimp_help_temp"
+name|GIMP_HELP_TEMP_EXT_PROC
+value|"extension-gimp-help-temp"
 end_define
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27de84940108
+DECL|struct|__anon2a07ce0f0108
 block|{
 DECL|member|procedure
 name|gchar
@@ -309,7 +309,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_domain_names"
+literal|"num-domain-names"
 block|,
 literal|""
 block|}
@@ -317,7 +317,7 @@ block|,
 block|{
 name|GIMP_PDB_STRINGARRAY
 block|,
-literal|"domain_names"
+literal|"domain-names"
 block|,
 literal|""
 block|}
@@ -325,7 +325,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_domain_uris"
+literal|"num-domain-uris"
 block|,
 literal|""
 block|}
@@ -333,7 +333,7 @@ block|,
 block|{
 name|GIMP_PDB_STRINGARRAY
 block|,
-literal|"domain_uris"
+literal|"domain-uris"
 block|,
 literal|""
 block|}
@@ -341,7 +341,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-name|GIMP_HELP_EXT_NAME
+name|GIMP_HELP_EXT_PROC
 argument_list|,
 literal|""
 argument_list|,
@@ -666,7 +666,7 @@ name|NULL
 expr_stmt|;
 name|gimp_uninstall_temp_proc
 argument_list|(
-name|GIMP_HELP_TEMP_EXT_NAME
+name|GIMP_HELP_TEMP_EXT_PROC
 argument_list|)
 expr_stmt|;
 block|}
@@ -729,7 +729,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"help_domain"
+literal|"help-domain"
 block|,
 literal|"Help domain to use"
 block|}
@@ -737,7 +737,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"help_locales"
+literal|"help-locales"
 block|,
 literal|"Language to use"
 block|}
@@ -745,7 +745,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"help_id"
+literal|"help-id"
 block|,
 literal|"Help ID to open"
 block|}
@@ -753,7 +753,7 @@ block|}
 decl_stmt|;
 name|gimp_install_temp_proc
 argument_list|(
-name|GIMP_HELP_TEMP_EXT_NAME
+name|GIMP_HELP_TEMP_EXT_PROC
 argument_list|,
 literal|"DON'T USE THIS ONE"
 argument_list|,

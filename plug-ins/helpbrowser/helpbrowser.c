@@ -48,19 +48,19 @@ comment|/*  defines  */
 end_comment
 
 begin_define
-DECL|macro|GIMP_HELP_BROWSER_EXT_NAME
+DECL|macro|GIMP_HELP_BROWSER_EXT_PROC
 define|#
 directive|define
-name|GIMP_HELP_BROWSER_EXT_NAME
-value|"extension_gimp_help_browser"
+name|GIMP_HELP_BROWSER_EXT_PROC
+value|"extension-gimp-help-browser"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_BROWSER_TEMP_EXT_NAME
+DECL|macro|GIMP_HELP_BROWSER_TEMP_EXT_PROC
 define|#
 directive|define
-name|GIMP_HELP_BROWSER_TEMP_EXT_NAME
-value|"extension_gimp_help_browser_temp"
+name|GIMP_HELP_BROWSER_TEMP_EXT_PROC
+value|"extension-gimp-help-browser-temp"
 end_define
 
 begin_comment
@@ -196,7 +196,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive"
 block|}
@@ -204,7 +204,7 @@ block|,   }
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-name|GIMP_HELP_BROWSER_EXT_NAME
+name|GIMP_HELP_BROWSER_EXT_PROC
 argument_list|,
 literal|"Browse the GIMP help pages"
 argument_list|,
@@ -421,7 +421,7 @@ block|}
 decl_stmt|;
 name|gimp_install_temp_proc
 argument_list|(
-name|GIMP_HELP_BROWSER_TEMP_EXT_NAME
+name|GIMP_HELP_BROWSER_TEMP_EXT_PROC
 argument_list|,
 literal|"DON'T USE THIS ONE"
 argument_list|,

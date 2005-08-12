@@ -384,7 +384,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -392,7 +392,7 @@ block|,
 block|{
 name|GIMP_PDB_IMAGE
 block|,
-literal|"image_ID"
+literal|"image"
 block|,
 literal|"(unused)"
 block|}
@@ -400,7 +400,7 @@ block|,
 block|{
 name|GIMP_PDB_DRAWABLE
 block|,
-literal|"drawable_ID"
+literal|"drawable"
 block|,
 literal|"ID of drawable"
 block|}
@@ -466,7 +466,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_maze"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"Draws a maze."
 argument_list|,
@@ -503,7 +503,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_maze"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Render/Pattern"
 argument_list|)
@@ -655,7 +655,7 @@ case|:
 comment|/* Possibly retrieve data */
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_maze"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|mvals
@@ -862,7 +862,7 @@ case|:
 comment|/* Possibly retrieve data */
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_maze"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|mvals
@@ -938,7 +938,7 @@ operator|)
 condition|)
 name|gimp_set_data
 argument_list|(
-literal|"plug_in_maze"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|mvals

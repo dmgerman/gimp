@@ -48,6 +48,30 @@ comment|/*  * Constants...  */
 end_comment
 
 begin_define
+DECL|macro|LOAD_PROC
+define|#
+directive|define
+name|LOAD_PROC
+value|"file-sgi-load"
+end_define
+
+begin_define
+DECL|macro|SAVE_PROC
+define|#
+directive|define
+name|SAVE_PROC
+value|"file-sgi-save"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"sgi"
+end_define
+
+begin_define
 DECL|macro|PLUG_IN_VERSION
 define|#
 directive|define
@@ -200,7 +224,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -216,7 +240,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"raw_filename"
+literal|"raw-filename"
 block|,
 literal|"The name of the file to load"
 block|}
@@ -246,7 +270,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -278,7 +302,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"raw_filename"
+literal|"raw-filename"
 block|,
 literal|"The name of the file to save the image in"
 block|}
@@ -294,7 +318,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"file_sgi_load"
+name|LOAD_PROC
 argument_list|,
 literal|"Loads files in SGI image file format"
 argument_list|,
@@ -332,14 +356,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_file_handler_mime
 argument_list|(
-literal|"file_sgi_load"
+name|LOAD_PROC
 argument_list|,
 literal|"image/x-sgi"
 argument_list|)
 expr_stmt|;
 name|gimp_register_magic_load_handler
 argument_list|(
-literal|"file_sgi_load"
+name|LOAD_PROC
 argument_list|,
 literal|"sgi,rgb,bw,icon"
 argument_list|,
@@ -350,7 +374,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"file_sgi_save"
+name|SAVE_PROC
 argument_list|,
 literal|"Saves files in SGI image file format"
 argument_list|,
@@ -385,14 +409,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_file_handler_mime
 argument_list|(
-literal|"file_sgi_save"
+name|SAVE_PROC
 argument_list|,
 literal|"image/x-sgi"
 argument_list|)
 expr_stmt|;
 name|gimp_register_save_handler
 argument_list|(
-literal|"file_sgi_save"
+name|SAVE_PROC
 argument_list|,
 literal|"sgi,rgb,bw,icon"
 argument_list|,
@@ -507,7 +531,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_sgi_load"
+name|LOAD_PROC
 argument_list|)
 operator|==
 literal|0
@@ -576,7 +600,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_sgi_save"
+name|LOAD_PROC
 argument_list|)
 operator|==
 literal|0
@@ -618,7 +642,7 @@ name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|gimp_ui_init
 argument_list|(
-literal|"sgi"
+name|PLUG_IN_BINARY
 argument_list|,
 name|FALSE
 argument_list|)
@@ -676,16 +700,16 @@ block|{
 case|case
 name|GIMP_RUN_INTERACTIVE
 case|:
-comment|/* 	   * Possibly retrieve data... 	   */
+comment|/*            * Possibly retrieve data...            */
 name|gimp_get_data
 argument_list|(
-literal|"file_sgi_save"
+name|SAVE_PROC
 argument_list|,
 operator|&
 name|compression
 argument_list|)
 expr_stmt|;
-comment|/* 	   * Then acquire information with a dialog... 	   */
+comment|/*            * Then acquire information with a dialog...            */
 if|if
 condition|(
 operator|!
@@ -700,7 +724,7 @@ break|break;
 case|case
 name|GIMP_RUN_NONINTERACTIVE
 case|:
-comment|/* 	   * Make sure all the arguments are there! 	   */
+comment|/*            * Make sure all the arguments are there!            */
 if|if
 condition|(
 name|nparams
@@ -746,10 +770,10 @@ break|break;
 case|case
 name|GIMP_RUN_WITH_LAST_VALS
 case|:
-comment|/* 	   * Possibly retrieve data... 	   */
+comment|/*            * Possibly retrieve data...            */
 name|gimp_get_data
 argument_list|(
-literal|"file_sgi_save"
+name|SAVE_PROC
 argument_list|,
 operator|&
 name|compression
@@ -788,7 +812,7 @@ condition|)
 block|{
 name|gimp_set_data
 argument_list|(
-literal|"file_sgi_save"
+name|SAVE_PROC
 argument_list|,
 operator|&
 name|compression
@@ -1426,7 +1450,7 @@ operator|==
 literal|1
 condition|)
 block|{
-comment|/* 	   * 8-bit (unsigned) pixels... 	   */
+comment|/*            * 8-bit (unsigned) pixels...            */
 for|for
 control|(
 name|x
@@ -1479,7 +1503,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/* 	   * 16-bit (unsigned) pixels... 	   */
+comment|/*            * 16-bit (unsigned) pixels...            */
 for|for
 control|(
 name|x
@@ -2201,7 +2225,7 @@ argument_list|(
 literal|"Save as SGI"
 argument_list|)
 argument_list|,
-literal|"sgi"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -2209,7 +2233,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"file-sgi-save"
+name|SAVE_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

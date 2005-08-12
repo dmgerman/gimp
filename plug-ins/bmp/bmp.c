@@ -157,6 +157,22 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_define
+DECL|macro|LOAD_PROC
+define|#
+directive|define
+name|LOAD_PROC
+value|"file-bmp-load"
+end_define
+
+begin_define
+DECL|macro|SAVE_PROC
+define|#
+directive|define
+name|SAVE_PROC
+value|"file-bmp-save"
+end_define
+
 begin_decl_stmt
 DECL|variable|filename
 specifier|const
@@ -280,7 +296,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -296,7 +312,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"raw_filename"
+literal|"raw-filename"
 block|,
 literal|"The name entered"
 block|}
@@ -326,7 +342,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -358,7 +374,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"raw_filename"
+literal|"raw-filename"
 block|,
 literal|"The name entered"
 block|}
@@ -366,7 +382,7 @@ block|,   }
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"file_bmp_load"
+name|LOAD_PROC
 argument_list|,
 literal|"Loads files of Windows BMP file format"
 argument_list|,
@@ -404,14 +420,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_file_handler_mime
 argument_list|(
-literal|"file_bmp_load"
+name|LOAD_PROC
 argument_list|,
 literal|"image/bmp"
 argument_list|)
 expr_stmt|;
 name|gimp_register_magic_load_handler
 argument_list|(
-literal|"file_bmp_load"
+name|LOAD_PROC
 argument_list|,
 literal|"bmp"
 argument_list|,
@@ -422,7 +438,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"file_bmp_save"
+name|SAVE_PROC
 argument_list|,
 literal|"Saves files in Windows BMP file format"
 argument_list|,
@@ -457,14 +473,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_file_handler_mime
 argument_list|(
-literal|"file_bmp_save"
+name|SAVE_PROC
 argument_list|,
 literal|"image/bmp"
 argument_list|)
 expr_stmt|;
 name|gimp_register_save_handler
 argument_list|(
-literal|"file_bmp_save"
+name|SAVE_PROC
 argument_list|,
 literal|"bmp"
 argument_list|,
@@ -579,7 +595,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_bmp_load"
+name|LOAD_PROC
 argument_list|)
 operator|==
 literal|0
@@ -691,7 +707,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_bmp_save"
+name|SAVE_PROC
 argument_list|)
 operator|==
 literal|0

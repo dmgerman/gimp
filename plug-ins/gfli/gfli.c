@@ -55,6 +55,38 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_define
+DECL|macro|LOAD_PROC
+define|#
+directive|define
+name|LOAD_PROC
+value|"file-fli-load"
+end_define
+
+begin_define
+DECL|macro|SAVE_PROC
+define|#
+directive|define
+name|SAVE_PROC
+value|"file-fli-save"
+end_define
+
+begin_define
+DECL|macro|INFO_PROC
+define|#
+directive|define
+name|INFO_PROC
+value|"file-fli-info"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"gfli"
+end_define
+
 begin_function_decl
 specifier|static
 name|void
@@ -434,7 +466,7 @@ block|{
 comment|/*    * Load/save procedures    */
 name|gimp_install_procedure
 argument_list|(
-literal|"file_fli_load"
+name|LOAD_PROC
 argument_list|,
 literal|"load FLI-movies"
 argument_list|,
@@ -474,14 +506,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_file_handler_mime
 argument_list|(
-literal|"file_fli_load"
+name|LOAD_PROC
 argument_list|,
 literal|"image/x-flic"
 argument_list|)
 expr_stmt|;
 name|gimp_register_magic_load_handler
 argument_list|(
-literal|"file_fli_load"
+name|LOAD_PROC
 argument_list|,
 literal|"fli,flc"
 argument_list|,
@@ -492,7 +524,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"file_fli_save"
+name|SAVE_PROC
 argument_list|,
 literal|"save FLI-movies"
 argument_list|,
@@ -527,14 +559,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_file_handler_mime
 argument_list|(
-literal|"file_fli_save"
+name|SAVE_PROC
 argument_list|,
 literal|"image/x-flic"
 argument_list|)
 expr_stmt|;
 name|gimp_register_save_handler
 argument_list|(
-literal|"file_fli_save"
+name|SAVE_PROC
 argument_list|,
 literal|"fli,flc"
 argument_list|,
@@ -544,7 +576,7 @@ expr_stmt|;
 comment|/*    * Utility functions:    */
 name|gimp_install_procedure
 argument_list|(
-literal|"file_fli_info"
+name|INFO_PROC
 argument_list|,
 literal|"Get info about a Fli movie"
 argument_list|,
@@ -694,7 +726,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_fli_load"
+name|LOAD_PROC
 argument_list|)
 operator|==
 literal|0
@@ -1032,7 +1064,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_fli_save"
+name|SAVE_PROC
 argument_list|)
 operator|==
 literal|0
@@ -1175,7 +1207,7 @@ name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|gimp_ui_init
 argument_list|(
-literal|"gfli"
+name|PLUG_IN_BINARY
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1288,7 +1320,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_fli_info"
+name|INFO_PROC
 argument_list|)
 operator|==
 literal|0
@@ -3369,7 +3401,7 @@ name|nframes
 expr_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"gfli"
+name|PLUG_IN_BINARY
 argument_list|,
 name|FALSE
 argument_list|)
@@ -3383,7 +3415,7 @@ argument_list|(
 literal|"GFLI 1.3 - Load framestack"
 argument_list|)
 argument_list|,
-literal|"gfli"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -3391,7 +3423,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"file-gfli-load"
+name|LOAD_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
@@ -3709,7 +3741,7 @@ argument_list|(
 literal|"GFLI 1.3 - Save framestack"
 argument_list|)
 argument_list|,
-literal|"gfli"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -3717,7 +3749,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"file-gfli-save"
+name|SAVE_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
