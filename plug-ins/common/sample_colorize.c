@@ -341,7 +341,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c8f55b0108
+DECL|struct|__anon28b41f140108
 block|{
 DECL|member|dst_id
 name|gint32
@@ -410,7 +410,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c8f55b0208
+DECL|struct|__anon28b41f140208
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -518,7 +518,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c8f55b0308
+DECL|struct|__anon28b41f140308
 block|{
 DECL|member|color
 name|guchar
@@ -547,7 +547,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c8f55b0408
+DECL|struct|__anon28b41f140408
 block|{
 DECL|member|all_samples
 name|gint32
@@ -574,7 +574,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c8f55b0508
+DECL|struct|__anon28b41f140508
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -1544,6 +1544,27 @@ argument_list|,
 operator|&
 name|g_values
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|g_values
+operator|.
+name|sample_id
+operator|==
+name|SMP_GRADIENT
+operator|||
+name|g_values
+operator|.
+name|sample_id
+operator|==
+name|SMP_INV_GRADIENT
+condition|)
+name|g_values
+operator|.
+name|sample_id
+operator|=
+operator|-
+literal|1
 expr_stmt|;
 comment|/* fix value */
 name|g_values
