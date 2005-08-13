@@ -32,6 +32,22 @@ comment|/* Some useful macros */
 end_comment
 
 begin_define
+DECL|macro|PLUG_IN_PROC
+define|#
+directive|define
+name|PLUG_IN_PROC
+value|"plug-in-engrave"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"engrave"
+end_define
+
+begin_define
 DECL|macro|SCALE_WIDTH
 define|#
 directive|define
@@ -50,7 +66,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba9c0700108
+DECL|struct|__anon27b37d8b0108
 block|{
 DECL|member|height
 name|gint
@@ -259,7 +275,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -299,7 +315,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_engrave"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"Engrave the contents of the specified drawable"
 argument_list|,
@@ -334,7 +350,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_engrave"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Distorts"
 argument_list|)
@@ -465,7 +481,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_engrave"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|pvals
@@ -568,7 +584,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_engrave"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|pvals
@@ -618,7 +634,7 @@ name|GIMP_RUN_INTERACTIVE
 condition|)
 name|gimp_set_data
 argument_list|(
-literal|"plug_in_engrave"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|pvals
@@ -689,7 +705,7 @@ name|run
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"engrave"
+name|PLUG_IN_BINARY
 argument_list|,
 name|FALSE
 argument_list|)
@@ -703,7 +719,7 @@ argument_list|(
 literal|"Engrave"
 argument_list|)
 argument_list|,
-literal|"engrave"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -711,7 +727,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"plug-in-engrave"
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
@@ -1146,7 +1162,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba9c0700208
+DECL|struct|__anon27b37d8b0208
 block|{
 DECL|member|x
 DECL|member|y

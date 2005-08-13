@@ -27,6 +27,22 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_define
+DECL|macro|PLUG_IN_PROC
+define|#
+directive|define
+name|PLUG_IN_PROC
+value|"plug-in-diffraction"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"diffraction"
+end_define
+
 begin_comment
 comment|/***** Magic numbers *****/
 end_comment
@@ -94,7 +110,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbc459b0108
+DECL|struct|__anon2922e3d10108
 block|{
 DECL|member|lam_r
 name|gdouble
@@ -153,7 +169,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbc459b0208
+DECL|struct|__anon2922e3d10208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -500,7 +516,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -524,7 +540,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"lam_r"
+literal|"lam-r"
 block|,
 literal|"Light frequency (red)"
 block|}
@@ -532,7 +548,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"lam_g"
+literal|"lam-g"
 block|,
 literal|"Light frequency (green)"
 block|}
@@ -540,7 +556,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"lam_b"
+literal|"lam-b"
 block|,
 literal|"Light frequency (blue)"
 block|}
@@ -548,7 +564,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"contour_r"
+literal|"contour-r"
 block|,
 literal|"Number of contours (red)"
 block|}
@@ -556,7 +572,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"contour_g"
+literal|"contour-g"
 block|,
 literal|"Number of contours (green)"
 block|}
@@ -564,7 +580,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"contour_b"
+literal|"contour-b"
 block|,
 literal|"Number of contours (blue)"
 block|}
@@ -572,7 +588,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"edges_r"
+literal|"edges-r"
 block|,
 literal|"Number of sharp edges (red)"
 block|}
@@ -580,7 +596,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"edges_g"
+literal|"edges-g"
 block|,
 literal|"Number of sharp edges (green)"
 block|}
@@ -588,7 +604,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"edges_b"
+literal|"edges-b"
 block|,
 literal|"Number of sharp edges (blue)"
 block|}
@@ -620,13 +636,12 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_diffraction"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"Generate diffraction patterns"
 argument_list|,
 literal|"Help?  What help?  Real men do not need help :-)"
 argument_list|,
-comment|/* FIXME */
 literal|"Federico Mena Quintero"
 argument_list|,
 literal|"Federico Mena Quintero& David Bleecker"
@@ -656,7 +671,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_diffraction"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Render/Pattern"
 argument_list|)
@@ -773,7 +788,7 @@ case|:
 comment|/* Possibly retrieve data */
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_diffraction"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|dvals
@@ -973,7 +988,7 @@ case|:
 comment|/* Possibly retrieve data */
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_diffraction"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|dvals
@@ -1058,7 +1073,7 @@ name|GIMP_RUN_INTERACTIVE
 condition|)
 name|gimp_set_data
 argument_list|(
-literal|"plug_in_diffraction"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|dvals
@@ -1077,10 +1092,12 @@ name|status
 operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
+block|{
 name|status
 operator|=
 name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
+block|}
 name|values
 index|[
 literal|0
@@ -1101,7 +1118,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2bbc459b0308
+DECL|struct|__anon2922e3d10308
 typedef|typedef
 struct|struct
 block|{
@@ -1840,7 +1857,7 @@ name|run
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"diffraction"
+name|PLUG_IN_BINARY
 argument_list|,
 name|TRUE
 argument_list|)
@@ -1854,7 +1871,7 @@ argument_list|(
 literal|"Diffraction Patterns"
 argument_list|)
 argument_list|,
-literal|"diffraction"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -1862,7 +1879,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"plug-in-diffraction"
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

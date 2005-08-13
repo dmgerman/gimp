@@ -49,6 +49,30 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_define
+DECL|macro|LOAD_PROC
+define|#
+directive|define
+name|LOAD_PROC
+value|"file-dicom-load"
+end_define
+
+begin_define
+DECL|macro|SAVE_PROC
+define|#
+directive|define
+name|SAVE_PROC
+value|"file-dicom-save"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"dicom"
+end_define
+
 begin_comment
 comment|/* A lot of Dicom images are wrongly encoded. By guessing the endian  * we can get around this problem.  */
 end_comment
@@ -374,7 +398,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -390,7 +414,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"raw_filename"
+literal|"raw-filename"
 block|,
 literal|"The name of the file to load"
 block|}
@@ -420,7 +444,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -452,7 +476,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"raw_filename"
+literal|"raw-filename"
 block|,
 literal|"The name of the file to save"
 block|}
@@ -460,7 +484,7 @@ block|,   }
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"file_dicom_load"
+name|LOAD_PROC
 argument_list|,
 literal|"loads files of the dicom file format"
 argument_list|,
@@ -502,14 +526,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_file_handler_mime
 argument_list|(
-literal|"file_dicom_load"
+name|LOAD_PROC
 argument_list|,
 literal|"image/x-dcm"
 argument_list|)
 expr_stmt|;
 name|gimp_register_magic_load_handler
 argument_list|(
-literal|"file_dicom_load"
+name|LOAD_PROC
 argument_list|,
 literal|"dcm,dicom"
 argument_list|,
@@ -520,7 +544,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"file_dicom_save"
+name|SAVE_PROC
 argument_list|,
 literal|"Save file in the DICOM file format"
 argument_list|,
@@ -560,14 +584,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_file_handler_mime
 argument_list|(
-literal|"file_dicom_save"
+name|SAVE_PROC
 argument_list|,
 literal|"image/x-dcm"
 argument_list|)
 expr_stmt|;
 name|gimp_register_save_handler
 argument_list|(
-literal|"file_dicom_save"
+name|SAVE_PROC
 argument_list|,
 literal|"dcm,dicom"
 argument_list|,
@@ -682,7 +706,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_dicom_load"
+name|LOAD_PROC
 argument_list|)
 operator|==
 literal|0
@@ -751,7 +775,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_dicom_save"
+name|SAVE_PROC
 argument_list|)
 operator|==
 literal|0
@@ -792,7 +816,7 @@ name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|gimp_ui_init
 argument_list|(
-literal|"dicom"
+name|PLUG_IN_BINARY
 argument_list|,
 name|FALSE
 argument_list|)

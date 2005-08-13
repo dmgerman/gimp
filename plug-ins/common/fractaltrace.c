@@ -4,11 +4,19 @@ comment|/***********************************************************************
 end_comment
 
 begin_define
-DECL|macro|PLUG_IN_NAME
+DECL|macro|PLUG_IN_PROC
 define|#
 directive|define
-name|PLUG_IN_NAME
-value|"plug_in_fractal_trace"
+name|PLUG_IN_PROC
+value|"plug-in-fractal-trace"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"fractaltrace"
 end_define
 
 begin_define
@@ -17,14 +25,6 @@ define|#
 directive|define
 name|PLUG_IN_VERSION
 value|"v0.4 test version (Dec. 25 1997)"
-end_define
-
-begin_define
-DECL|macro|HELP_ID
-define|#
-directive|define
-name|HELP_ID
-value|"plug-in-fractal-trace"
 end_define
 
 begin_comment
@@ -183,7 +183,7 @@ name|MAIN
 argument_list|()
 comment|/******************************************************************************/
 expr|enum
-DECL|enum|__anon2b6da97e0103
+DECL|enum|__anon2c6446140103
 block|{
 DECL|enumerator|OUTSIDE_TYPE_WRAP
 name|OUTSIDE_TYPE_WRAP
@@ -203,7 +203,7 @@ end_expr_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6da97e0208
+DECL|struct|__anon2c6446140208
 block|{
 DECL|member|x1
 name|gdouble
@@ -356,7 +356,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 literal|"transform image with the Mandelbrot Fractal"
 argument_list|,
@@ -391,7 +391,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Map"
 argument_list|)
@@ -406,7 +406,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6da97e0308
+DECL|struct|__anon2c6446140308
 block|{
 DECL|member|x1
 name|gint
@@ -449,7 +449,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6da97e0408
+DECL|struct|__anon2c6446140408
 block|{
 DECL|member|width
 name|gint
@@ -739,7 +739,7 @@ name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|gimp_get_data
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|parameters
@@ -751,7 +751,7 @@ name|GIMP_RUN_INTERACTIVE
 case|:
 name|gimp_get_data
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|parameters
@@ -772,7 +772,7 @@ break|break;
 block|}
 name|gimp_set_data
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|parameters
@@ -1004,7 +1004,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6da97e0508
+DECL|struct|__anon2c6446140508
 block|{
 DECL|member|r
 name|guchar
@@ -2882,7 +2882,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6da97e0608
+DECL|struct|__anon2c6446140608
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -3830,7 +3830,7 @@ name|run
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"fractaltrace"
+name|PLUG_IN_BINARY
 argument_list|,
 name|TRUE
 argument_list|)
@@ -3844,7 +3844,7 @@ argument_list|(
 literal|"Fractal Trace"
 argument_list|)
 argument_list|,
-literal|"fractaltrace"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -3852,7 +3852,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-name|HELP_ID
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

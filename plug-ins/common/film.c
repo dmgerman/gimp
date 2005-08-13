@@ -37,6 +37,22 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_define
+DECL|macro|PLUG_IN_PROC
+define|#
+directive|define
+name|PLUG_IN_PROC
+value|"plug-in-film"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"film"
+end_define
+
 begin_comment
 comment|/* Maximum number of pictures per film */
 end_comment
@@ -84,7 +100,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1a801e0108
+DECL|struct|__anon27ca840e0108
 block|{
 DECL|member|film_height
 name|gint
@@ -188,7 +204,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1a801e0208
+DECL|struct|__anon27ca840e0208
 block|{
 DECL|member|advanced_adj
 name|GtkObject
@@ -760,7 +776,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -784,7 +800,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"film_height"
+literal|"film-height"
 block|,
 literal|"Height of film (0: fit to images)"
 block|}
@@ -792,7 +808,7 @@ block|,
 block|{
 name|GIMP_PDB_COLOR
 block|,
-literal|"film_color"
+literal|"film-color"
 block|,
 literal|"Color of the film"
 block|}
@@ -800,7 +816,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"number_start"
+literal|"number-start"
 block|,
 literal|"Start index for numbering"
 block|}
@@ -808,7 +824,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"number_font"
+literal|"number-font"
 block|,
 literal|"Font for drawing numbers"
 block|}
@@ -816,7 +832,7 @@ block|,
 block|{
 name|GIMP_PDB_COLOR
 block|,
-literal|"number_color"
+literal|"number-color"
 block|,
 literal|"Color for numbers"
 block|}
@@ -824,7 +840,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"at_top"
+literal|"at-top"
 block|,
 literal|"Flag for drawing numbers at top of film"
 block|}
@@ -832,7 +848,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"at_bottom"
+literal|"at-bottom"
 block|,
 literal|"Flag for drawing numbers at bottom of film"
 block|}
@@ -840,7 +856,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_images"
+literal|"num-images"
 block|,
 literal|"Number of images to be used for film"
 block|}
@@ -848,7 +864,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32ARRAY
 block|,
-literal|"image_ids"
+literal|"image-ids"
 block|,
 literal|"num_images image IDs to be used for film"
 block|}
@@ -863,7 +879,7 @@ block|{
 block|{
 name|GIMP_PDB_IMAGE
 block|,
-literal|"new_image"
+literal|"new-image"
 block|,
 literal|"Output image"
 block|}
@@ -871,7 +887,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_film"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"Compose several images to a roll film"
 argument_list|,
@@ -909,7 +925,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_film"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Effects/Combine"
 argument_list|)
@@ -1040,7 +1056,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_film"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|filmvals
@@ -1294,7 +1310,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_film"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|filmvals
@@ -1390,7 +1406,7 @@ name|GIMP_RUN_INTERACTIVE
 condition|)
 name|gimp_set_data
 argument_list|(
-literal|"plug_in_film"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|filmvals
@@ -7026,7 +7042,7 @@ name|run
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"film"
+name|PLUG_IN_BINARY
 argument_list|,
 name|TRUE
 argument_list|)
@@ -7040,7 +7056,7 @@ argument_list|(
 literal|"Filmstrip"
 argument_list|)
 argument_list|,
-literal|"film"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -7048,7 +7064,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"plug-in-film"
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

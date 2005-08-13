@@ -38,11 +38,19 @@ comment|/*  * Constants...  */
 end_comment
 
 begin_define
-DECL|macro|PLUG_IN_NAME
+DECL|macro|PLUG_IN_PROC
 define|#
 directive|define
-name|PLUG_IN_NAME
-value|"plug_in_destripe"
+name|PLUG_IN_PROC
+value|"plug-in-destripe"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"destripe"
 end_define
 
 begin_define
@@ -51,14 +59,6 @@ define|#
 directive|define
 name|PLUG_IN_VERSION
 value|"0.2"
-end_define
-
-begin_define
-DECL|macro|HELP_ID
-define|#
-directive|define
-name|HELP_ID
-value|"plug-in-destripe"
 end_define
 
 begin_define
@@ -177,7 +177,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f308b00108
+DECL|struct|__anon279434610108
 block|{
 DECL|member|histogram
 name|gboolean
@@ -239,7 +239,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -263,7 +263,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"avg_width"
+literal|"avg-width"
 block|,
 literal|"Averaging filter width (default = 36)"
 block|}
@@ -271,7 +271,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 literal|"Destripe filter, used to remove vertical stripes "
 literal|"caused by cheap scanners."
@@ -308,7 +308,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Enhance"
 argument_list|)
@@ -441,7 +441,7 @@ case|:
 comment|/*        * Possibly retrieve data...        */
 name|gimp_get_data
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|vals
@@ -493,7 +493,7 @@ case|:
 comment|/*        * Possibly retrieve data...        */
 name|gimp_get_data
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|vals
@@ -580,7 +580,7 @@ name|GIMP_RUN_INTERACTIVE
 condition|)
 name|gimp_set_data
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|vals
@@ -1526,7 +1526,7 @@ name|run
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"destripe"
+name|PLUG_IN_BINARY
 argument_list|,
 name|TRUE
 argument_list|)
@@ -1540,7 +1540,7 @@ argument_list|(
 literal|"Destripe"
 argument_list|)
 argument_list|,
-literal|"destripe"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -1548,7 +1548,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-name|HELP_ID
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

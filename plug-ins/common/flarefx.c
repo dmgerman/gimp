@@ -37,6 +37,22 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_define
+DECL|macro|PLUG_IN_PROC
+define|#
+directive|define
+name|PLUG_IN_PROC
+value|"plug-in-flarefx"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"flarefx"
+end_define
+
 begin_comment
 comment|/* --- Typedefs --- */
 end_comment
@@ -44,7 +60,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d224a40108
+DECL|struct|__anon2797f65d0108
 block|{
 DECL|member|posx
 name|gint
@@ -99,7 +115,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d224a40208
+DECL|struct|__anon2797f65d0208
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -695,7 +711,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -719,7 +735,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"posx"
+literal|"pos-x"
 block|,
 literal|"X-position"
 block|}
@@ -727,7 +743,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"posy"
+literal|"pos-y"
 block|,
 literal|"Y-position"
 block|}
@@ -735,7 +751,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_flarefx"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"Add lens flare effects"
 argument_list|,
@@ -774,7 +790,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_flarefx"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Light and Shadow/Light"
 argument_list|)
@@ -900,7 +916,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_flarefx"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|fvals
@@ -985,7 +1001,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_flarefx"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|fvals
@@ -1069,7 +1085,7 @@ name|GIMP_RUN_INTERACTIVE
 condition|)
 name|gimp_set_data
 argument_list|(
-literal|"plug_in_flarefx"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|fvals
@@ -1141,7 +1157,7 @@ name|run
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"flarefx"
+name|PLUG_IN_BINARY
 argument_list|,
 name|TRUE
 argument_list|)
@@ -1155,7 +1171,7 @@ argument_list|(
 literal|"FlareFX"
 argument_list|)
 argument_list|,
-literal|"flarefx"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -1163,7 +1179,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"plug-in-flarefx"
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

@@ -36,6 +36,22 @@ comment|/* Some useful macros */
 end_comment
 
 begin_define
+DECL|macro|PLUG_IN_PROC
+define|#
+directive|define
+name|PLUG_IN_PROC
+value|"plug-in-displace"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"displace"
+end_define
+
+begin_define
 DECL|macro|ENTRY_WIDTH
 define|#
 directive|define
@@ -54,7 +70,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon291b337a0103
+DECL|enum|__anon2b9ae8490103
 block|{
 DECL|enumerator|CARTESIAN_MODE
 name|CARTESIAN_MODE
@@ -74,7 +90,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291b337a0208
+DECL|struct|__anon2b9ae8490208
 block|{
 DECL|member|amount_x
 name|gdouble
@@ -438,7 +454,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -462,7 +478,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"amount_x"
+literal|"amount-x"
 block|,
 literal|"Displace multiplier for X or radial direction"
 block|}
@@ -470,7 +486,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"amount_y"
+literal|"amount-y"
 block|,
 literal|"Displace multiplier for Y or tangent (degrees) direction"
 block|}
@@ -478,7 +494,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"do_x"
+literal|"do-x"
 block|,
 literal|"Displace in X or radial direction?"
 block|}
@@ -486,7 +502,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"do_y"
+literal|"do-y"
 block|,
 literal|"Displace in Y or tangent direction?"
 block|}
@@ -494,7 +510,7 @@ block|,
 block|{
 name|GIMP_PDB_DRAWABLE
 block|,
-literal|"displace_map_x"
+literal|"displace-map-x"
 block|,
 literal|"Displacement map for X or radial direction"
 block|}
@@ -502,7 +518,7 @@ block|,
 block|{
 name|GIMP_PDB_DRAWABLE
 block|,
-literal|"displace_map_y"
+literal|"displace-map-y"
 block|,
 literal|"Displacement map for Y or tangent direction"
 block|}
@@ -510,7 +526,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"displace_type"
+literal|"displace-type"
 block|,
 literal|"Edge behavior: { WRAP (0), SMEAR (1), BLACK (2) }"
 block|}
@@ -526,7 +542,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_displace"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"Displace the contents of the specified drawable"
 argument_list|,
@@ -567,7 +583,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_displace"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Map"
 argument_list|)
@@ -699,7 +715,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_displace"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|dvals
@@ -864,7 +880,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_displace"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|dvals
@@ -925,7 +941,7 @@ name|GIMP_RUN_INTERACTIVE
 condition|)
 name|gimp_set_data
 argument_list|(
-literal|"plug_in_displace"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|dvals
@@ -1016,7 +1032,7 @@ name|run
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"displace"
+name|PLUG_IN_BINARY
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1030,7 +1046,7 @@ argument_list|(
 literal|"Displace"
 argument_list|)
 argument_list|,
-literal|"displace"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -1038,7 +1054,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"plug-in-displace"
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

@@ -34,6 +34,22 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_define
+DECL|macro|PLUG_IN_PROC
+define|#
+directive|define
+name|PLUG_IN_PROC
+value|"plug-in-filter-pack"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"fp"
+end_define
+
+begin_define
 DECL|macro|MAX_PREVIEW_SIZE
 define|#
 directive|define
@@ -82,25 +98,17 @@ value|4
 end_define
 
 begin_define
-DECL|macro|HELP_ID
-define|#
-directive|define
-name|HELP_ID
-value|"plug-in-filter-pack"
-end_define
-
-begin_define
 DECL|macro|RANGE_ADJUST_MASK
 define|#
 directive|define
 name|RANGE_ADJUST_MASK
-value|GDK_EXPOSURE_MASK | \                         GDK_ENTER_NOTIFY_MASK | \                         GDK_BUTTON_PRESS_MASK | \                         GDK_BUTTON_RELEASE_MASK | \                         GDK_BUTTON1_MOTION_MASK | \                         GDK_POINTER_MOTION_HINT_MASK
+value|GDK_EXPOSURE_MASK | \                           GDK_ENTER_NOTIFY_MASK | \                           GDK_BUTTON_PRESS_MASK | \                           GDK_BUTTON_RELEASE_MASK | \                           GDK_BUTTON1_MOTION_MASK | \                           GDK_POINTER_MOTION_HINT_MASK
 end_define
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b087be50108
+DECL|struct|__anon28b197da0108
 block|{
 DECL|member|run
 name|gint
@@ -115,7 +123,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b087be50208
+DECL|struct|__anon28b197da0208
 block|{
 DECL|member|width
 name|gint
@@ -149,7 +157,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b087be50303
+DECL|enum|__anon28b197da0303
 block|{
 DECL|enumerator|SHADOWS
 name|SHADOWS
@@ -170,7 +178,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b087be50403
+DECL|enum|__anon28b197da0403
 block|{
 DECL|enumerator|NONEATALL
 name|NONEATALL
@@ -202,7 +210,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b087be50503
+DECL|enum|__anon28b197da0503
 block|{
 DECL|enumerator|BY_HUE
 name|BY_HUE
@@ -221,7 +229,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b087be50603
+DECL|enum|__anon28b197da0603
 block|{
 DECL|enumerator|RED
 name|RED
@@ -249,7 +257,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b087be50703
+DECL|enum|__anon28b197da0703
 block|{
 DECL|enumerator|DOWN
 name|DOWN
@@ -268,7 +276,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b087be50808
+DECL|struct|__anon28b197da0808
 block|{
 DECL|member|window
 name|GtkWidget
@@ -299,7 +307,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b087be50908
+DECL|struct|__anon28b197da0908
 block|{
 DECL|member|roughness
 name|gdouble
@@ -400,7 +408,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b087be50a08
+DECL|struct|__anon28b197da0a08
 block|{
 DECL|member|roughness_scale
 name|GtkWidget
@@ -1311,7 +1319,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b087be50b08
+DECL|struct|__anon28b197da0b08
 block|{
 DECL|member|bna
 name|GtkWidget
@@ -1538,7 +1546,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -1558,11 +1566,11 @@ literal|"drawable"
 block|,
 literal|"Input drawable"
 block|}
-block|,   }
+block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_filter_pack"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"Allows the user to change H, S, or C with many previews"
 argument_list|,
@@ -1597,7 +1605,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_filter_pack"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Colors"
 argument_list|)
@@ -1741,7 +1749,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_filter_pack"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|fpvals
@@ -1813,7 +1821,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_filter_pack"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|fpvals
@@ -1879,7 +1887,7 @@ name|GIMP_RUN_INTERACTIVE
 condition|)
 name|gimp_set_data
 argument_list|(
-literal|"plug_in_filter_pack"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|fpvals
@@ -2843,7 +2851,7 @@ name|win
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-name|HELP_ID
+name|PLUG_IN_PROC
 argument_list|,
 name|NULL
 argument_list|)
@@ -3828,7 +3836,7 @@ name|win
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-name|HELP_ID
+name|PLUG_IN_PROC
 argument_list|,
 name|NULL
 argument_list|)
@@ -4121,7 +4129,7 @@ name|win
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-name|HELP_ID
+name|PLUG_IN_PROC
 argument_list|,
 name|NULL
 argument_list|)
@@ -6188,7 +6196,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"fp"
+name|PLUG_IN_BINARY
 argument_list|,
 name|TRUE
 argument_list|)
@@ -6202,7 +6210,7 @@ argument_list|(
 literal|"Filter Pack Simulation"
 argument_list|)
 argument_list|,
-literal|"fp"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -6210,7 +6218,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-name|HELP_ID
+name|PLUG_IN_PROC
 argument_list|,
 name|GIMP_STOCK_RESET
 argument_list|,
@@ -6879,7 +6887,7 @@ name|window
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-name|HELP_ID
+name|PLUG_IN_PROC
 argument_list|,
 name|NULL
 argument_list|)

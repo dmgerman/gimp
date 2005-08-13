@@ -27,9 +27,25 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_define
+DECL|macro|PLUG_IN_PROC
+define|#
+directive|define
+name|PLUG_IN_PROC
+value|"plug-in-deinterlace"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"deinterlace"
+end_define
+
 begin_enum
 enum|enum
-DECL|enum|__anon2a9557600103
+DECL|enum|__anon27b009740103
 block|{
 DECL|enumerator|ODD_FIELDS
 name|ODD_FIELDS
@@ -43,7 +59,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9557600208
+DECL|struct|__anon27b009740208
 block|{
 DECL|member|evenness
 name|gint
@@ -192,7 +208,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -224,7 +240,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_deinterlace"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"Deinterlace"
 argument_list|,
@@ -263,7 +279,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_deinterlace"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Enhance"
 argument_list|)
@@ -358,7 +374,7 @@ name|GIMP_RUN_INTERACTIVE
 case|:
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_deinterlace"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|devals
@@ -415,7 +431,7 @@ name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_deinterlace"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|devals
@@ -498,7 +514,7 @@ name|GIMP_RUN_INTERACTIVE
 condition|)
 name|gimp_set_data
 argument_list|(
-literal|"plug_in_deinterlace"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|devals
@@ -1251,7 +1267,7 @@ name|run
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"deinterlace"
+name|PLUG_IN_BINARY
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1265,7 +1281,7 @@ argument_list|(
 literal|"Deinterlace"
 argument_list|)
 argument_list|,
-literal|"deinterlace"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -1273,7 +1289,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"plug-in-deinterlace"
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

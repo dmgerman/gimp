@@ -32,6 +32,22 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_define
+DECL|macro|PLUG_IN_PROC
+define|#
+directive|define
+name|PLUG_IN_PROC
+value|"plug-in-exchange"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"exchange"
+end_define
+
+begin_define
 DECL|macro|SCALE_WIDTH
 define|#
 directive|define
@@ -54,7 +70,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dd40a30108
+DECL|struct|__anon2a1b53d90108
 block|{
 DECL|member|from
 name|GimpRGB
@@ -306,7 +322,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive"
 block|}
@@ -330,7 +346,7 @@ block|,
 block|{
 name|GIMP_PDB_INT8
 block|,
-literal|"fromred"
+literal|"from-red"
 block|,
 literal|"Red value (from)"
 block|}
@@ -338,7 +354,7 @@ block|,
 block|{
 name|GIMP_PDB_INT8
 block|,
-literal|"fromgreen"
+literal|"from-green"
 block|,
 literal|"Green value (from)"
 block|}
@@ -346,7 +362,7 @@ block|,
 block|{
 name|GIMP_PDB_INT8
 block|,
-literal|"fromblue"
+literal|"from-blue"
 block|,
 literal|"Blue value (from)"
 block|}
@@ -354,7 +370,7 @@ block|,
 block|{
 name|GIMP_PDB_INT8
 block|,
-literal|"tored"
+literal|"to-red"
 block|,
 literal|"Red value (to)"
 block|}
@@ -362,7 +378,7 @@ block|,
 block|{
 name|GIMP_PDB_INT8
 block|,
-literal|"togreen"
+literal|"to-green"
 block|,
 literal|"Green value (to)"
 block|}
@@ -370,7 +386,7 @@ block|,
 block|{
 name|GIMP_PDB_INT8
 block|,
-literal|"toblue"
+literal|"to-blue"
 block|,
 literal|"Blue value (to)"
 block|}
@@ -378,7 +394,7 @@ block|,
 block|{
 name|GIMP_PDB_INT8
 block|,
-literal|"red_threshold"
+literal|"red-threshold"
 block|,
 literal|"Red threshold"
 block|}
@@ -386,7 +402,7 @@ block|,
 block|{
 name|GIMP_PDB_INT8
 block|,
-literal|"green_threshold"
+literal|"green-threshold"
 block|,
 literal|"Green threshold"
 block|}
@@ -394,7 +410,7 @@ block|,
 block|{
 name|GIMP_PDB_INT8
 block|,
-literal|"blue_threshold"
+literal|"blue-threshold"
 block|,
 literal|"Blue threshold"
 block|}
@@ -402,7 +418,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_exchange"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"Color Exchange"
 argument_list|,
@@ -438,7 +454,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_exchange"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Colors/Map"
 argument_list|)
@@ -567,7 +583,7 @@ case|:
 comment|/* retrieve stored arguments (if any) */
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_exchange"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|xargs
@@ -597,7 +613,7 @@ name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_exchange"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|xargs
@@ -802,7 +818,7 @@ name|GIMP_RUN_INTERACTIVE
 condition|)
 name|gimp_set_data
 argument_list|(
-literal|"plug_in_exchange"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|xargs
@@ -1061,12 +1077,11 @@ name|run
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"exchange"
+name|PLUG_IN_BINARY
 argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-comment|/* set up the dialog */
 name|dialog
 operator|=
 name|gimp_dialog_new
@@ -1076,7 +1091,7 @@ argument_list|(
 literal|"Color Exchange"
 argument_list|)
 argument_list|,
-literal|"exchange"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -1084,7 +1099,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"plug-in-exchange"
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
