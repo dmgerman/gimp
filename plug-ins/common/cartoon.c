@@ -42,6 +42,22 @@ comment|/* Some useful macros */
 end_comment
 
 begin_define
+DECL|macro|PLUG_IN_PROC
+define|#
+directive|define
+name|PLUG_IN_PROC
+value|"plug-in-cartoon"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"cartoon"
+end_define
+
+begin_define
 DECL|macro|TILE_CACHE_SIZE
 define|#
 directive|define
@@ -52,7 +68,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0a76e50108
+DECL|struct|__anon29c76f620108
 block|{
 DECL|member|mask_radius
 name|gdouble
@@ -313,7 +329,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -345,7 +361,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"pct_black"
+literal|"pct-black"
 block|,
 literal|"Percentage of darkened pixels to set to black (0.0 - 1.0)"
 block|}
@@ -375,7 +391,7 @@ literal|"noticable; larger values achieve the opposite effect."
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_cartoon"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"Propagates dark values in an image to achieve cartoon rendering"
 argument_list|,
@@ -410,7 +426,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_cartoon"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Artistic"
 argument_list|)
@@ -542,7 +558,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_cartoon"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|cvals
@@ -595,7 +611,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_cartoon"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|cvals
@@ -660,7 +676,7 @@ name|GIMP_RUN_INTERACTIVE
 condition|)
 name|gimp_set_data
 argument_list|(
-literal|"plug_in_cartoon"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|cvals
@@ -4405,7 +4421,7 @@ name|run
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"cartoon"
+name|PLUG_IN_BINARY
 argument_list|,
 name|FALSE
 argument_list|)
@@ -4419,7 +4435,7 @@ argument_list|(
 literal|"Cartoon"
 argument_list|)
 argument_list|,
-literal|"cartoon"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -4427,7 +4443,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"plug-in-cartoon"
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

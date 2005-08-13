@@ -74,6 +74,30 @@ comment|/***** Magic numbers *****/
 end_comment
 
 begin_define
+DECL|macro|PLUG_IN_PROC
+define|#
+directive|define
+name|PLUG_IN_PROC
+value|"plug-in-bump-map"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_TILED_PROC
+define|#
+directive|define
+name|PLUG_IN_TILED_PROC
+value|"plug-in-bump-map-tiled"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"bumpmap"
+end_define
+
+begin_define
 DECL|macro|PLUG_IN_VERSION
 define|#
 directive|define
@@ -95,7 +119,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0bc0640103
+DECL|enum|__anon2c09a85b0103
 block|{
 DECL|enumerator|LINEAR
 name|LINEAR
@@ -113,7 +137,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0bc0640203
+DECL|enum|__anon2c09a85b0203
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE
@@ -129,7 +153,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0bc0640308
+DECL|struct|__anon2c09a85b0308
 block|{
 DECL|member|bumpmap_id
 name|gint32
@@ -188,7 +212,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0bc0640408
+DECL|struct|__anon2c09a85b0408
 block|{
 DECL|member|lx
 DECL|member|ly
@@ -233,7 +257,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0bc0640508
+DECL|struct|__anon2c09a85b0508
 block|{
 DECL|member|mouse_x
 name|gint
@@ -855,7 +879,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -929,7 +953,8 @@ name|GIMP_PDB_INT32
 block|,
 literal|"waterlevel"
 block|,
-literal|"Level that full transparency should represent"
+literal|"Level that full transparency "
+literal|"should represent"
 block|}
 block|,
 block|{
@@ -961,13 +986,14 @@ name|GIMP_PDB_INT32
 block|,
 literal|"type"
 block|,
-literal|"Type of map (LINEAR (0), SPHERICAL (1), SINUSOIDAL (2))"
+literal|"Type of map (LINEAR (0), "
+literal|"SPHERICAL (1), SINUSOIDAL (2))"
 block|}
 block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_bump_map"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"Create an embossing effect using an image as a "
 literal|"bump map"
@@ -1008,14 +1034,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_bump_map"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Map"
 argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_bump_map_tiled"
+name|PLUG_IN_TILED_PROC
 argument_list|,
 literal|"Create an embossing effect using a tiled image "
 literal|"as a bump map"
@@ -1417,7 +1443,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"plug_in_bump_map_tiled"
+name|PLUG_IN_TILED_PROC
 argument_list|)
 operator|==
 literal|0
@@ -3351,7 +3377,7 @@ literal|0
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"bumpmap"
+name|PLUG_IN_BINARY
 argument_list|,
 name|TRUE
 argument_list|)
@@ -3365,7 +3391,7 @@ argument_list|(
 literal|"Bump Map"
 argument_list|)
 argument_list|,
-literal|"bumpmap"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -3373,7 +3399,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"plug-in-bump-map"
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

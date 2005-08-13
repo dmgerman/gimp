@@ -40,6 +40,22 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_define
+DECL|macro|PLUG_IN_PROC
+define|#
+directive|define
+name|PLUG_IN_PROC
+value|"plug-in-convmatrix"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"convmatrix"
+end_define
+
+begin_define
 DECL|macro|RESPONSE_RESET
 define|#
 directive|define
@@ -50,7 +66,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c53e7060103
+DECL|enum|__anon28efdad70103
 block|{
 DECL|enumerator|EXTEND
 name|EXTEND
@@ -274,7 +290,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c53e7060208
+DECL|struct|__anon28efdad70208
 block|{
 DECL|member|matrix
 name|gfloat
@@ -431,7 +447,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon2c53e7060308
+DECL|struct|__anon28efdad70308
 block|{
 DECL|member|matrix
 name|GtkWidget
@@ -509,7 +525,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -533,7 +549,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"argc_matrix"
+literal|"argc-matrix"
 block|,
 literal|"The number of elements in the following array. Should be always 25."
 block|}
@@ -549,7 +565,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"alpha_alg"
+literal|"alpha-alg"
 block|,
 literal|"Enable weighting by alpha channel"
 block|}
@@ -573,7 +589,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"argc_channels"
+literal|"argc-channels"
 block|,
 literal|"The number of elements in following array. Should be always 5."
 block|}
@@ -597,7 +613,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_convmatrix"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"A generic 5x5 convolution matrix"
 argument_list|,
@@ -632,7 +648,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_convmatrix"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Effects/Generic"
 argument_list|)
@@ -999,7 +1015,7 @@ else|else
 block|{
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_convmatrix"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|my_config
@@ -1108,7 +1124,7 @@ name|GIMP_RUN_INTERACTIVE
 condition|)
 name|gimp_set_data
 argument_list|(
-literal|"plug_in_convmatrix"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|my_config
@@ -3826,7 +3842,7 @@ name|group
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"convmatrix"
+name|PLUG_IN_BINARY
 argument_list|,
 name|FALSE
 argument_list|)
@@ -3840,7 +3856,7 @@ argument_list|(
 literal|"Convolution Matrix"
 argument_list|)
 argument_list|,
-literal|"convmatrix"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -3848,7 +3864,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"plug-in-convmatrix"
+name|PLUG_IN_PROC
 argument_list|,
 name|GIMP_STOCK_RESET
 argument_list|,

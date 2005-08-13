@@ -41,6 +41,38 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_define
+DECL|macro|COMPOSE_PROC
+define|#
+directive|define
+name|COMPOSE_PROC
+value|"plug-in-compose"
+end_define
+
+begin_define
+DECL|macro|DRAWABLE_COMPOSE_PROC
+define|#
+directive|define
+name|DRAWABLE_COMPOSE_PROC
+value|"plug-in-drawable-compose"
+end_define
+
+begin_define
+DECL|macro|RECOMPOSE_PROC
+define|#
+directive|define
+name|RECOMPOSE_PROC
+value|"plug-in-recompose"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"compose"
+end_define
+
 begin_comment
 comment|/* Declare local functions  */
 end_comment
@@ -511,7 +543,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298d48ee0108
+DECL|struct|__anon29a079120108
 block|{
 DECL|member|compose_type
 specifier|const
@@ -1008,7 +1040,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298d48ee0208
+DECL|struct|__anon29a079120208
 block|{
 DECL|member|compose_ID
 name|gint32
@@ -1048,7 +1080,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298d48ee0308
+DECL|struct|__anon29a079120308
 block|{
 DECL|member|width
 DECL|member|height
@@ -1228,7 +1260,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -1276,7 +1308,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"compose_type"
+literal|"compose-type"
 block|,
 literal|"What to compose: RGB, RGBA, HSV, CMY, CMYK"
 block|}
@@ -1306,7 +1338,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -1354,7 +1386,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"compose_type"
+literal|"compose-type"
 block|,
 literal|"What to compose: RGB, RGBA, HSV, CMY, CMYK"
 block|}
@@ -1384,7 +1416,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -1408,7 +1440,7 @@ block|,   }
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_compose"
+name|COMPOSE_PROC
 argument_list|,
 literal|"Compose an image from multiple gray images"
 argument_list|,
@@ -1447,21 +1479,21 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_compose"
+name|COMPOSE_PROC
 argument_list|,
 literal|"<Image>/Filters/Colors"
 argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_compose"
+name|COMPOSE_PROC
 argument_list|,
 literal|"<Image>/Image/Mode"
 argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_drawable_compose"
+name|DRAWABLE_COMPOSE_PROC
 argument_list|,
 literal|"Compose an image from multiple drawables of gray images"
 argument_list|,
@@ -1498,7 +1530,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_recompose"
+name|RECOMPOSE_PROC
 argument_list|,
 literal|"Recompose a layer from multiple drawables of gray images"
 argument_list|,
@@ -1536,14 +1568,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_recompose"
+name|RECOMPOSE_PROC
 argument_list|,
 literal|"<Image>/Filters/Colors"
 argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_recompose"
+name|RECOMPOSE_PROC
 argument_list|,
 literal|"<Image>/Image/Mode"
 argument_list|)
@@ -1625,7 +1657,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"plug_in_drawable_compose"
+name|DRAWABLE_COMPOSE_PROC
 argument_list|)
 operator|==
 literal|0
@@ -1688,7 +1720,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"plug_in_recompose"
+name|RECOMPOSE_PROC
 argument_list|)
 operator|==
 literal|0
@@ -1854,7 +1886,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"plug_in_compose"
+name|COMPOSE_PROC
 argument_list|)
 operator|==
 literal|0
@@ -6715,7 +6747,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"compose"
+name|PLUG_IN_BINARY
 argument_list|,
 name|TRUE
 argument_list|)
@@ -6742,7 +6774,7 @@ argument_list|(
 literal|"Compose"
 argument_list|)
 argument_list|,
-literal|"compose"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -6750,7 +6782,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"plug-in-compose"
+name|COMPOSE_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

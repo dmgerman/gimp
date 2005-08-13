@@ -39,10 +39,26 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_define
+DECL|macro|SAVE_PROC
+define|#
+directive|define
+name|SAVE_PROC
+value|"file-csource-save"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"csource"
+end_define
+
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c072b180108
+DECL|struct|__anon2a06dfaa0108
 block|{
 DECL|member|file_name
 name|gchar
@@ -257,7 +273,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive"
 block|}
@@ -289,7 +305,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"raw_filename"
+literal|"raw-filename"
 block|,
 literal|"The name of the file to save the image in"
 block|}
@@ -297,7 +313,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"file_csource_save"
+name|SAVE_PROC
 argument_list|,
 literal|"Dump image data in RGB(A) format for C source"
 argument_list|,
@@ -332,14 +348,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_file_handler_mime
 argument_list|(
-literal|"file_csource_save"
+name|SAVE_PROC
 argument_list|,
 literal|"text/x-csrc"
 argument_list|)
 expr_stmt|;
 name|gimp_register_save_handler
 argument_list|(
-literal|"file_csource_save"
+name|SAVE_PROC
 argument_list|,
 literal|"c"
 argument_list|,
@@ -452,7 +468,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_csource_save"
+name|SAVE_PROC
 argument_list|)
 operator|==
 literal|0
@@ -500,7 +516,7 @@ argument_list|)
 decl_stmt|;
 name|gimp_get_data
 argument_list|(
-literal|"file_csource_save"
+name|SAVE_PROC
 argument_list|,
 operator|&
 name|config
@@ -594,7 +610,7 @@ name|comment
 expr_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"csource"
+name|PLUG_IN_BINARY
 argument_list|,
 name|FALSE
 argument_list|)
@@ -759,7 +775,7 @@ else|else
 block|{
 name|gimp_set_data
 argument_list|(
-literal|"file_csource_save"
+name|SAVE_PROC
 argument_list|,
 operator|&
 name|config
@@ -3016,7 +3032,7 @@ argument_list|(
 literal|"Save as C-Source"
 argument_list|)
 argument_list|,
-literal|"csource"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -3024,7 +3040,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"file-csource-save"
+name|SAVE_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

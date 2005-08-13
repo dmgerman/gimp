@@ -21,6 +21,14 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_define
+DECL|macro|PLUG_IN_PROC
+define|#
+directive|define
+name|PLUG_IN_PROC
+value|"plug-in-c-astretch"
+end_define
+
 begin_comment
 comment|/* Declare local functions.  */
 end_comment
@@ -133,7 +141,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -157,7 +165,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_c_astretch"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"Automatically stretch the contrast of the "
 literal|"specified drawable to cover all possible ranges."
@@ -199,7 +207,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_c_astretch"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Layer/Colors/Auto"
 argument_list|)
@@ -383,7 +391,6 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/* gimp_message ("c_astretch: cannot operate on indexed color images"); */
 name|status
 operator|=
 name|GIMP_PDB_EXECUTION_ERROR
@@ -800,7 +807,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2b1cf5aa0108
+DECL|struct|__anon2b0e2a6a0108
 typedef|typedef
 struct|struct
 block|{

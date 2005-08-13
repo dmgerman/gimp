@@ -42,6 +42,22 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_define
+DECL|macro|PLUG_IN_PROC
+define|#
+directive|define
+name|PLUG_IN_PROC
+value|"plug-in-animationplay"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"animationplay"
+end_define
+
+begin_define
 DECL|macro|DITHERTYPE
 define|#
 directive|define
@@ -52,7 +68,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon279f49150103
+DECL|enum|__anon2756480b0103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -599,7 +615,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279f49150208
+DECL|struct|__anon2756480b0208
 block|{
 DECL|member|x
 DECL|member|y
@@ -676,7 +692,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -700,9 +716,10 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_animationplay"
+name|PLUG_IN_PROC
 argument_list|,
-literal|"This plugin allows you to preview a GIMP layer-based animation."
+literal|"This plugin allows you to preview a GIMP "
+literal|"layer-based animation."
 argument_list|,
 literal|""
 argument_list|,
@@ -735,7 +752,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_animationplay"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Animation"
 argument_list|)
@@ -1640,7 +1657,7 @@ name|cursor
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"animationplay"
+name|PLUG_IN_BINARY
 argument_list|,
 name|TRUE
 argument_list|)
@@ -1667,7 +1684,7 @@ name|gimp_dialog_new
 argument_list|(
 name|windowname
 argument_list|,
-literal|"animationplay"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -1675,7 +1692,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"plug-in-animationplay"
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CLOSE
 argument_list|,

@@ -31,6 +31,22 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_define
+DECL|macro|AUTOCROP_PROC
+define|#
+directive|define
+name|AUTOCROP_PROC
+value|"plug-in-autocrop"
+end_define
+
+begin_define
+DECL|macro|AUTOCROP_LAYER_PROC
+define|#
+directive|define
+name|AUTOCROP_LAYER_PROC
+value|"plug-in-autocrop-layer"
+end_define
+
 begin_comment
 comment|/* Declare local functions. */
 end_comment
@@ -195,7 +211,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -219,7 +235,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_autocrop"
+name|AUTOCROP_PROC
 argument_list|,
 literal|"Automagically crops an image."
 argument_list|,
@@ -254,14 +270,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_autocrop"
+name|AUTOCROP_PROC
 argument_list|,
 literal|"<Image>/Image/Crop"
 argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_autocrop_layer"
+name|AUTOCROP_LAYER_PROC
 argument_list|,
 literal|"Automagically crops a layer."
 argument_list|,
@@ -296,7 +312,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_autocrop_layer"
+name|AUTOCROP_LAYER_PROC
 argument_list|,
 literal|"<Image>/Layer/Crop"
 argument_list|)
@@ -502,7 +518,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"plug_in_autocrop_layer"
+name|AUTOCROP_LAYER_PROC
 argument_list|)
 operator|==
 literal|0

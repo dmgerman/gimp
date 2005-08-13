@@ -34,6 +34,22 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_define
+DECL|macro|PLUG_IN_PROC
+define|#
+directive|define
+name|PLUG_IN_PROC
+value|"plug-in-cubism"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"cubism"
+end_define
+
+begin_define
 DECL|macro|SCALE_WIDTH
 define|#
 directive|define
@@ -100,7 +116,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275e794c0108
+DECL|struct|__anon28e317d10108
 block|{
 DECL|member|npts
 name|gint
@@ -122,7 +138,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275e794c0208
+DECL|struct|__anon28e317d10208
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -479,7 +495,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -503,7 +519,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"tile_size"
+literal|"tile-size"
 block|,
 literal|"Average diameter of each tile (in pixels)"
 block|}
@@ -511,7 +527,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"tile_saturation"
+literal|"tile-saturation"
 block|,
 literal|"Expand tiles by this amount"
 block|}
@@ -519,7 +535,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"bg_color"
+literal|"bg-color"
 block|,
 literal|"Background color: { BLACK (0), BG (1) }"
 block|}
@@ -527,9 +543,10 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_cubism"
+name|PLUG_IN_PROC
 argument_list|,
-literal|"Convert the input drawable into a collection of rotated squares"
+literal|"Convert the input drawable into a collection "
+literal|"of rotated squares"
 argument_list|,
 literal|"Help not yet written for this plug-in"
 argument_list|,
@@ -562,7 +579,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_cubism"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Artistic"
 argument_list|)
@@ -703,7 +720,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_cubism"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|cvals
@@ -812,7 +829,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_cubism"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|cvals
@@ -874,7 +891,7 @@ name|GIMP_RUN_INTERACTIVE
 condition|)
 name|gimp_set_data
 argument_list|(
-literal|"plug_in_cubism"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|cvals
@@ -959,7 +976,7 @@ name|run
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"cubism"
+name|PLUG_IN_BINARY
 argument_list|,
 name|FALSE
 argument_list|)
@@ -973,7 +990,7 @@ argument_list|(
 literal|"Cubism"
 argument_list|)
 argument_list|,
-literal|"cubism"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -981,7 +998,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"plug-in-cubism"
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

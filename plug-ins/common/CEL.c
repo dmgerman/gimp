@@ -45,6 +45,30 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_define
+DECL|macro|LOAD_PROC
+define|#
+directive|define
+name|LOAD_PROC
+value|"file-cel-load"
+end_define
+
+begin_define
+DECL|macro|SAVE_PROC
+define|#
+directive|define
+name|SAVE_PROC
+value|"file-cel-save"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"CEL"
+end_define
+
 begin_function_decl
 specifier|static
 name|void
@@ -247,7 +271,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -263,7 +287,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"raw_filename"
+literal|"raw-filename"
 block|,
 literal|"Name entered"
 block|}
@@ -271,7 +295,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"palette_filename"
+literal|"palette-filename"
 block|,
 literal|"Filename to load palette from"
 block|}
@@ -301,7 +325,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -333,7 +357,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"raw_filename"
+literal|"raw-filename"
 block|,
 literal|"Name entered"
 block|}
@@ -341,7 +365,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"palette_filename"
+literal|"palette-filename"
 block|,
 literal|"Filename to save palette to"
 block|}
@@ -349,7 +373,7 @@ block|,   }
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"file_cel_load"
+name|LOAD_PROC
 argument_list|,
 literal|"Loads files in KISS CEL file format"
 argument_list|,
@@ -387,7 +411,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_magic_load_handler
 argument_list|(
-literal|"file_cel_load"
+name|LOAD_PROC
 argument_list|,
 literal|"cel"
 argument_list|,
@@ -398,7 +422,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"file_cel_save"
+name|SAVE_PROC
 argument_list|,
 literal|"Saves files in KISS CEL file format"
 argument_list|,
@@ -433,7 +457,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_save_handler
 argument_list|(
-literal|"file_cel_save"
+name|SAVE_PROC
 argument_list|,
 literal|"cel"
 argument_list|,
@@ -553,7 +577,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_cel_load"
+name|LOAD_PROC
 argument_list|)
 operator|==
 literal|0
@@ -566,12 +590,11 @@ operator|!=
 name|GIMP_RUN_NONINTERACTIVE
 condition|)
 block|{
-name|gimp_get_data
-argument_list|(
-literal|"file_cel_save:length"
-argument_list|,
-operator|&
 name|data_length
+operator|=
+name|gimp_get_data_size
+argument_list|(
+name|SAVE_PROC
 argument_list|)
 expr_stmt|;
 if|if
@@ -590,7 +613,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_get_data
 argument_list|(
-literal|"file_cel_save:data"
+name|SAVE_PROC
 argument_list|,
 name|palette_file
 argument_list|)
@@ -677,20 +700,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_set_data
 argument_list|(
-literal|"file_cel_save:length"
-argument_list|,
-operator|&
-name|data_length
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|gsize
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_set_data
-argument_list|(
-literal|"file_cel_save:data"
+name|SAVE_PROC
 argument_list|,
 name|palette_file
 argument_list|,
@@ -770,7 +780,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_cel_save"
+name|SAVE_PROC
 argument_list|)
 operator|==
 literal|0
@@ -892,20 +902,7 @@ condition|)
 block|{
 name|gimp_set_data
 argument_list|(
-literal|"file_cel_save:length"
-argument_list|,
-operator|&
-name|data_length
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|gsize
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_set_data
-argument_list|(
-literal|"file_cel_save:data"
+name|SAVE_PROC
 argument_list|,
 name|palette_file
 argument_list|,
@@ -3259,7 +3256,7 @@ name|dialog
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"CEL"
+name|PLUG_IN_BINARY
 argument_list|,
 name|FALSE
 argument_list|)

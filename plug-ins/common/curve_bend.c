@@ -64,11 +64,19 @@ comment|/* Defines */
 end_comment
 
 begin_define
-DECL|macro|PLUG_IN_NAME
+DECL|macro|PLUG_IN_PROC
 define|#
 directive|define
-name|PLUG_IN_NAME
-value|"plug_in_curve_bend"
+name|PLUG_IN_PROC
+value|"plug-in-curve-bend"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"curve_bend"
 end_define
 
 begin_define
@@ -109,14 +117,6 @@ define|#
 directive|define
 name|PLUG_IN_DESCRIPTION
 value|"Bends a layer using 2 spline-curves"
-end_define
-
-begin_define
-DECL|macro|HELP_ID
-define|#
-directive|define
-name|HELP_ID
-value|"plug-in-curve-bend"
 end_define
 
 begin_define
@@ -688,7 +688,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b44750f0108
+DECL|struct|__anon27dcd2200108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -742,7 +742,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b44750f0208
+DECL|struct|__anon27dcd2200208
 block|{
 DECL|member|y
 name|gint32
@@ -2355,7 +2355,7 @@ decl_stmt|;
 comment|/* the actual installation of the bend plugin */
 name|gimp_install_procedure
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 name|PLUG_IN_DESCRIPTION
 argument_list|,
@@ -2409,7 +2409,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Distorts"
 argument_list|)
@@ -2804,7 +2804,7 @@ name|current_step
 expr_stmt|;
 name|gimp_set_data
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|bval
@@ -3009,7 +3009,7 @@ case|case
 name|GIMP_RUN_INTERACTIVE
 case|:
 comment|/* Possibly retrieve data from a previous run */
-comment|/* gimp_get_data (PLUG_IN_NAME,&g_bndvals); */
+comment|/* gimp_get_data (PLUG_IN_PROC,&g_bndvals); */
 comment|/* Get information from the dialog */
 name|cd
 operator|=
@@ -4538,7 +4538,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_set_data
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|l_bval
@@ -4582,7 +4582,7 @@ expr_stmt|;
 comment|/* init with an invalid  dummy value */
 name|gimp_get_data
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|l_bval
@@ -5069,7 +5069,7 @@ decl_stmt|;
 comment|/* Init GTK  */
 name|gimp_ui_init
 argument_list|(
-literal|"curve_bend"
+name|PLUG_IN_BINARY
 argument_list|,
 name|TRUE
 argument_list|)
@@ -5569,7 +5569,7 @@ argument_list|(
 literal|"Curve Bend"
 argument_list|)
 argument_list|,
-literal|"curve_bend"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -5577,7 +5577,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-name|HELP_ID
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

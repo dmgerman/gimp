@@ -43,6 +43,42 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_define
+DECL|macro|PLUG_IN_PROC
+define|#
+directive|define
+name|PLUG_IN_PROC
+value|"plug-in-ccanalyze"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"ccanalyze"
+end_define
+
+begin_comment
+comment|/* size of histogram image */
+end_comment
+
+begin_define
+DECL|macro|PREWIDTH
+define|#
+directive|define
+name|PREWIDTH
+value|256
+end_define
+
+begin_define
+DECL|macro|PREHEIGHT
+define|#
+directive|define
+name|PREHEIGHT
+value|150
+end_define
+
 begin_comment
 comment|/* lets prototype */
 end_comment
@@ -280,32 +316,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/* size of histogram image */
-end_comment
-
-begin_decl_stmt
-DECL|variable|PREWIDTH
-specifier|static
-specifier|const
-name|int
-name|PREWIDTH
-init|=
-literal|256
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|PREHEIGHT
-specifier|static
-specifier|const
-name|int
-name|PREHEIGHT
-init|=
-literal|150
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
 comment|/* lets declare what we want to do */
 end_comment
 
@@ -362,7 +372,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -393,7 +403,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_colors"
+literal|"num-colors"
 block|,
 literal|"Number of colors in the image"
 block|}
@@ -401,7 +411,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_ccanalyze"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"Colorcube analysis"
 argument_list|,
@@ -440,14 +450,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_ccanalyze"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Colors"
 argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_ccanalyze"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Layer/Colors/Info"
 argument_list|)
@@ -1560,7 +1570,7 @@ name|st
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"ccanalyze"
+name|PLUG_IN_BINARY
 argument_list|,
 name|TRUE
 argument_list|)
@@ -1574,7 +1584,7 @@ argument_list|(
 literal|"Colorcube Analysis"
 argument_list|)
 argument_list|,
-literal|"ccanalyze"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -1582,7 +1592,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"plug-in-ccanalyze"
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CLOSE
 argument_list|,

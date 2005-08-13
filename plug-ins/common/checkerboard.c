@@ -28,6 +28,22 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_define
+DECL|macro|PLUG_IN_PROC
+define|#
+directive|define
+name|PLUG_IN_PROC
+value|"plug-in-checkerboard"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"checkerboard"
+end_define
+
+begin_define
 DECL|macro|SPIN_BUTTON_WIDTH
 define|#
 directive|define
@@ -217,7 +233,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -241,7 +257,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"check_mode"
+literal|"check-mode"
 block|,
 literal|"Regular or Psychobilly"
 block|}
@@ -249,7 +265,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"check_size"
+literal|"check-size"
 block|,
 literal|"Size of the checks"
 block|}
@@ -257,7 +273,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_checkerboard"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"Adds a checkerboard pattern to an image"
 argument_list|,
@@ -292,7 +308,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_checkerboard"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Render/Pattern"
 argument_list|)
@@ -430,7 +446,7 @@ name|GIMP_RUN_INTERACTIVE
 case|:
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_checkerboard"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|cvals
@@ -508,7 +524,7 @@ name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_checkerboard"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|cvals
@@ -567,7 +583,7 @@ name|GIMP_RUN_INTERACTIVE
 condition|)
 name|gimp_set_data
 argument_list|(
-literal|"plug_in_checkerboard"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|cvals
@@ -608,7 +624,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf470ca0108
+DECL|struct|__anon2c99a0220108
 block|{
 DECL|member|fg
 name|guchar
@@ -1279,7 +1295,7 @@ name|run
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"checkerboard"
+name|PLUG_IN_BINARY
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1293,7 +1309,7 @@ argument_list|(
 literal|"Checkerboard"
 argument_list|)
 argument_list|,
-literal|"checkerboard"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -1301,7 +1317,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"plug-in-checkerboard"
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

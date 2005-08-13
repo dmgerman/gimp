@@ -32,6 +32,22 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_define
+DECL|macro|PLUG_IN_PROC
+define|#
+directive|define
+name|PLUG_IN_PROC
+value|"plug-in-alienmap2"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"AlienMap2"
+end_define
+
+begin_define
 DECL|macro|SCALE_WIDTH
 define|#
 directive|define
@@ -54,7 +70,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b54bca00103
+DECL|enum|__anon2c8535eb0103
 block|{
 DECL|enumerator|RGB_MODEL
 name|RGB_MODEL
@@ -78,7 +94,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b54bca00208
+DECL|struct|__anon2c8535eb0208
 block|{
 DECL|member|redfrequency
 name|gdouble
@@ -727,7 +743,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -831,7 +847,7 @@ block|,   }
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_alienmap2"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"AlienMap2 Color Transformation Plug-In"
 argument_list|,
@@ -866,7 +882,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_alienmap2"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Colors/Map"
 argument_list|)
@@ -1341,7 +1357,7 @@ case|:
 comment|/* Possibly retrieve data */
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_alienmap2"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|wvals
@@ -1527,7 +1543,7 @@ case|:
 comment|/* Possibly retrieve data */
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_alienmap2"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|wvals
@@ -1604,7 +1620,7 @@ name|GIMP_RUN_INTERACTIVE
 condition|)
 name|gimp_set_data
 argument_list|(
-literal|"plug_in_alienmap2"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|wvals
@@ -1822,7 +1838,7 @@ name|run
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"alienmap2"
+name|PLUG_IN_BINARY
 argument_list|,
 name|TRUE
 argument_list|)
@@ -1836,7 +1852,7 @@ argument_list|(
 literal|"AlienMap2"
 argument_list|)
 argument_list|,
-literal|"alienmap2"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -1844,7 +1860,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"plug-in-alienmap2"
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

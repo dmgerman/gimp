@@ -32,6 +32,22 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_define
+DECL|macro|PLUG_IN_PROC
+define|#
+directive|define
+name|PLUG_IN_PROC
+value|"plug-in-applylens"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"apply_lens"
+end_define
+
+begin_define
 DECL|macro|ENTRY_WIDTH
 define|#
 directive|define
@@ -136,7 +152,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7336af0108
+DECL|struct|__anon2ae5d7460108
 block|{
 DECL|member|refraction
 name|gdouble
@@ -203,7 +219,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -235,7 +251,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"keep_surroundings"
+literal|"keep-surroundings"
 block|,
 literal|"Keep lens surroundings"
 block|}
@@ -243,15 +259,15 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"set_background"
+literal|"set-background"
 block|,
-literal|"Set lens surroundings to bkgr value"
+literal|"Set lens surroundings to BG value"
 block|}
 block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"set_transparent"
+literal|"set-transparent"
 block|,
 literal|"Set lens surroundings transparent"
 block|}
@@ -259,11 +275,12 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_applylens"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"Apply a lens effect"
 argument_list|,
-literal|"This plug-in uses Snell's law to draw an ellipsoid lens over the image"
+literal|"This plug-in uses Snell's law to draw "
+literal|"an ellipsoid lens over the image"
 argument_list|,
 literal|"Morten Eriksen"
 argument_list|,
@@ -294,7 +311,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_applylens"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Light and Shadow/Glass"
 argument_list|)
@@ -418,7 +435,7 @@ name|GIMP_RUN_INTERACTIVE
 case|:
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_applylens"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|lvals
@@ -531,7 +548,7 @@ name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_applylens"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|lvals
@@ -589,7 +606,7 @@ name|GIMP_RUN_INTERACTIVE
 condition|)
 name|gimp_set_data
 argument_list|(
-literal|"plug_in_applylens"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|lvals
@@ -1701,7 +1718,7 @@ name|run
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"apply_lens"
+name|PLUG_IN_BINARY
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1715,7 +1732,7 @@ argument_list|(
 literal|"Lens Effect"
 argument_list|)
 argument_list|,
-literal|"apply_lens"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -1723,7 +1740,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"plug-in-applylens"
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

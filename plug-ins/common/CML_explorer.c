@@ -60,27 +60,19 @@ value|1.0
 end_define
 
 begin_define
-DECL|macro|PLUG_IN_NAME
+DECL|macro|PLUG_IN_PROC
 define|#
 directive|define
-name|PLUG_IN_NAME
-value|"plug_in_cml_explorer"
-end_define
-
-begin_define
-DECL|macro|SHORT_NAME
-define|#
-directive|define
-name|SHORT_NAME
-value|"CML_explorer"
-end_define
-
-begin_define
-DECL|macro|HELP_ID
-define|#
-directive|define
-name|HELP_ID
+name|PLUG_IN_PROC
 value|"plug-in-cml-explorer"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"CML_explorer"
 end_define
 
 begin_define
@@ -218,7 +210,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c83ecae0103
+DECL|enum|__anon2bed5d7a0103
 block|{
 DECL|enumerator|CML_KEEP_VALUES
 name|CML_KEEP_VALUES
@@ -347,7 +339,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c83ecae0203
+DECL|enum|__anon2bed5d7a0203
 block|{
 DECL|enumerator|COMP_NONE
 name|COMP_NONE
@@ -492,7 +484,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c83ecae0303
+DECL|enum|__anon2bed5d7a0303
 block|{
 DECL|enumerator|STANDARD
 name|STANDARD
@@ -597,7 +589,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c83ecae0403
+DECL|enum|__anon2bed5d7a0403
 block|{
 DECL|enumerator|CML_INITIAL_RANDOM_INDEPENDENT
 name|CML_INITIAL_RANDOM_INDEPENDENT
@@ -695,7 +687,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c83ecae0508
+DECL|struct|__anon2bed5d7a0508
 block|{
 DECL|member|function
 name|gint
@@ -768,7 +760,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c83ecae0608
+DECL|struct|__anon2bed5d7a0608
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -1580,7 +1572,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c83ecae0708
+DECL|struct|__anon2bed5d7a0708
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -1835,7 +1827,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 literal|"Make an image of Coupled-Map Lattice"
 argument_list|,
@@ -1876,7 +1868,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Render/Pattern"
 argument_list|)
@@ -1993,7 +1985,7 @@ name|GIMP_RUN_INTERACTIVE
 case|:
 name|gimp_get_data
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|VALS
@@ -2042,7 +2034,7 @@ name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|gimp_get_data
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|VALS
@@ -2083,7 +2075,7 @@ name|GIMP_PDB_SUCCESS
 condition|)
 name|gimp_set_data
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|VALS
@@ -6571,7 +6563,7 @@ name|run
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-name|SHORT_NAME
+name|PLUG_IN_BINARY
 argument_list|,
 name|TRUE
 argument_list|)
@@ -6585,7 +6577,7 @@ argument_list|(
 literal|"Coupled-Map-Lattice Explorer"
 argument_list|)
 argument_list|,
-literal|"cml_explorer"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -6593,7 +6585,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-name|HELP_ID
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
@@ -10437,7 +10429,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-name|HELP_ID
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CLOSE
 argument_list|,
@@ -11776,7 +11768,7 @@ name|GTK_DIALOG_MODAL
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-name|HELP_ID
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

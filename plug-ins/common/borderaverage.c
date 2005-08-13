@@ -27,6 +27,22 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_define
+DECL|macro|PLUG_IN_PROC
+define|#
+directive|define
+name|PLUG_IN_PROC
+value|"plug-in-borderaverage"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"borderaverage"
+end_define
+
 begin_comment
 comment|/* Declare local functions.  */
 end_comment
@@ -231,7 +247,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -263,7 +279,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"bucket_exponent"
+literal|"bucket-exponent"
 block|,
 literal|"Bits for bucket size (default=4: 16 Levels)"
 block|}
@@ -286,7 +302,7 @@ block|,   }
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_borderaverage"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"Borderaverage"
 argument_list|,
@@ -324,7 +340,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_borderaverage"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Colors"
 argument_list|)
@@ -436,7 +452,7 @@ name|GIMP_RUN_INTERACTIVE
 case|:
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_borderaverage"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|borderaverage_data
@@ -518,7 +534,7 @@ name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_borderaverage"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|borderaverage_data
@@ -609,7 +625,7 @@ name|borderaverage_bucket_exponent
 expr_stmt|;
 name|gimp_set_data
 argument_list|(
-literal|"plug_in_borderaverage"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|borderaverage_data
@@ -689,7 +705,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2953197f0108
+DECL|struct|__anon275871460108
 typedef|typedef
 struct|struct
 block|{
@@ -1494,7 +1510,7 @@ block|}
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"borderaverage"
+name|PLUG_IN_BINARY
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1508,7 +1524,7 @@ argument_list|(
 literal|"Borderaverage"
 argument_list|)
 argument_list|,
-literal|"borderaverage"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -1516,7 +1532,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"plug-in-borderaverage"
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

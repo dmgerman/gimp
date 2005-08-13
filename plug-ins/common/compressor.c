@@ -482,7 +482,7 @@ literal|".xcfgz"
 block|,
 literal|".gz"
 block|,
-literal|"file_gz_load"
+literal|"file-gz-load"
 block|,
 literal|"loads files compressed with gzip"
 block|,
@@ -494,7 +494,7 @@ literal|"-cfd"
 block|,
 literal|"minigzip -d"
 block|,
-literal|"file_gz_save"
+literal|"file-gz-save"
 block|,
 literal|"saves files compressed with gzip"
 block|,
@@ -523,7 +523,7 @@ literal|".xcfbz2"
 block|,
 literal|".bz2"
 block|,
-literal|"file_bz2_load"
+literal|"file-bz2-load"
 block|,
 literal|"loads files compressed with bzip2"
 block|,
@@ -535,7 +535,7 @@ literal|"-cfd"
 block|,
 literal|"bzip2 -cfd"
 block|,
-literal|"file_bz2_save"
+literal|"file-bz2-save"
 block|,
 literal|"saves files compressed with bzip2"
 block|,
@@ -596,7 +596,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -612,7 +612,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"raw_filename"
+literal|"raw-filename"
 block|,
 literal|"The name entered"
 block|}
@@ -642,7 +642,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -668,17 +668,18 @@ name|GIMP_PDB_STRING
 block|,
 literal|"filename"
 block|,
-literal|"The name of the file to save the image in"
+literal|"The name of the file to "
+literal|"save the image in"
 block|}
 block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"raw_filename"
+literal|"raw-filename"
 block|,
-literal|"The name of the file to save the image in"
+literal|"The name entered"
 block|}
-block|}
+block|,   }
 decl_stmt|;
 name|gint
 name|i

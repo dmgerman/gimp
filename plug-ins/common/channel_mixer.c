@@ -46,11 +46,19 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_define
-DECL|macro|PLUG_IN_NAME
+DECL|macro|PLUG_IN_PROC
 define|#
 directive|define
-name|PLUG_IN_NAME
-value|"plug_in_colors_channel_mixer"
+name|PLUG_IN_PROC
+value|"plug-in-colors-channel-mixer"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"channel_mixer"
 end_define
 
 begin_define
@@ -59,14 +67,6 @@ define|#
 directive|define
 name|PLUG_IN_VERSION
 value|"Channel Mixer 0.8"
-end_define
-
-begin_define
-DECL|macro|HELP_ID
-define|#
-directive|define
-name|HELP_ID
-value|"plug-in-colors-channel-mixer"
 end_define
 
 begin_define
@@ -88,7 +88,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b5392540103
+DECL|enum|__anon2a230a0d0103
 block|{
 DECL|enumerator|CM_RED_CHANNEL
 name|CM_RED_CHANNEL
@@ -107,7 +107,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5392540208
+DECL|struct|__anon2a230a0d0208
 block|{
 DECL|member|red_gain
 name|gdouble
@@ -130,7 +130,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5392540308
+DECL|struct|__anon2a230a0d0308
 block|{
 DECL|member|red
 name|CmChannelType
@@ -637,7 +637,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -669,7 +669,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"rr_gain"
+literal|"rr-gain"
 block|,
 literal|"Set the red gain for the red channel"
 block|}
@@ -677,7 +677,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"rg_gain"
+literal|"rg-gain"
 block|,
 literal|"Set the green gain for the red channel"
 block|}
@@ -685,7 +685,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"rb_gain"
+literal|"rb-gain"
 block|,
 literal|"Set the blue gain for the red channel"
 block|}
@@ -693,7 +693,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"gr_gain"
+literal|"gr-gain"
 block|,
 literal|"Set the red gain for the green channel"
 block|}
@@ -701,7 +701,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"gg_gain"
+literal|"gg-gain"
 block|,
 literal|"Set the green gain for the green channel"
 block|}
@@ -709,7 +709,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"gb_gain"
+literal|"gb-gain"
 block|,
 literal|"Set the blue gain for the green channel"
 block|}
@@ -717,7 +717,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"br_gain"
+literal|"br-gain"
 block|,
 literal|"Set the red gain for the blue channel"
 block|}
@@ -725,7 +725,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"bg_gain"
+literal|"bg-gain"
 block|,
 literal|"Set the green gain for the blue channel"
 block|}
@@ -733,7 +733,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"bb_gain"
+literal|"bb-gain"
 block|,
 literal|"Set the blue gain for the blue channel"
 block|}
@@ -741,7 +741,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 literal|"Mix RGB Channels."
 argument_list|,
@@ -776,7 +776,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Colors"
 argument_list|)
@@ -926,7 +926,7 @@ name|GIMP_RUN_INTERACTIVE
 case|:
 name|gimp_get_data
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|mix
@@ -1164,7 +1164,7 @@ name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|gimp_get_data
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|mix
@@ -1212,7 +1212,7 @@ name|GIMP_RUN_INTERACTIVE
 condition|)
 name|gimp_set_data
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|mix
@@ -2053,7 +2053,7 @@ name|run
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"channel_mixer"
+name|PLUG_IN_BINARY
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2234,7 +2234,7 @@ argument_list|(
 literal|"Channel Mixer"
 argument_list|)
 argument_list|,
-literal|"mixer"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -2242,7 +2242,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-name|HELP_ID
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
@@ -5273,7 +5273,7 @@ argument_list|(
 literal|"Channel Mixer File Operation Warning"
 argument_list|)
 argument_list|,
-literal|"channel_mixer"
+name|PLUG_IN_BINARY
 argument_list|,
 name|parent
 argument_list|,
@@ -5281,7 +5281,7 @@ name|GTK_DIALOG_MODAL
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-name|HELP_ID
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

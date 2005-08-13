@@ -21,6 +21,14 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_define
+DECL|macro|PLUG_IN_PROC
+define|#
+directive|define
+name|PLUG_IN_PROC
+value|"plug-in-color-enhance"
+end_define
+
 begin_comment
 comment|/* Declare local functions.  */
 end_comment
@@ -133,7 +141,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -157,7 +165,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_color_enhance"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"Automatically stretch the saturation of the "
 literal|"specified drawable to cover all possible ranges."
@@ -200,7 +208,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_color_enhance"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Layer/Colors/Auto"
 argument_list|)
@@ -974,9 +982,9 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2b31bed70108
 typedef|typedef
 struct|struct
+DECL|struct|__anon2966e8070108
 block|{
 DECL|member|vhi
 name|gdouble

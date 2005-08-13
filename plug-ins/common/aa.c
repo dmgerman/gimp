@@ -43,6 +43,22 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_define
+DECL|macro|SAVE_PROC
+define|#
+directive|define
+name|SAVE_PROC
+value|"file-aa-save"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"aa"
+end_define
+
 begin_comment
 comment|/*  * Declare some local functions.  */
 end_comment
@@ -180,7 +196,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -212,7 +228,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"raw_filename"
+literal|"raw-filename"
 block|,
 literal|"The name entered"
 block|}
@@ -220,7 +236,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"file_type"
+literal|"file-type"
 block|,
 literal|"File type to use"
 block|}
@@ -228,7 +244,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"file_aa_save"
+name|SAVE_PROC
 argument_list|,
 literal|"Saves grayscale image in various text formats"
 argument_list|,
@@ -264,14 +280,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_file_handler_mime
 argument_list|(
-literal|"file_aa_save"
+name|SAVE_PROC
 argument_list|,
 literal|"text/plain"
 argument_list|)
 expr_stmt|;
 name|gimp_register_save_handler
 argument_list|(
-literal|"file_aa_save"
+name|SAVE_PROC
 argument_list|,
 literal|"txt,ansi,text"
 argument_list|,
@@ -497,7 +513,7 @@ name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|gimp_ui_init
 argument_list|(
-literal|"aa"
+name|PLUG_IN_BINARY
 argument_list|,
 name|FALSE
 argument_list|)
@@ -585,7 +601,7 @@ name|GIMP_RUN_INTERACTIVE
 case|:
 name|gimp_get_data
 argument_list|(
-literal|"file_aa_save"
+name|SAVE_PROC
 argument_list|,
 operator|&
 name|output_type
@@ -658,7 +674,7 @@ name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|gimp_get_data
 argument_list|(
-literal|"file_aa_save"
+name|SAVE_PROC
 argument_list|,
 operator|&
 name|output_type
@@ -697,7 +713,7 @@ condition|)
 block|{
 name|gimp_set_data
 argument_list|(
-literal|"file_aa_save"
+name|SAVE_PROC
 argument_list|,
 operator|&
 name|output_type
@@ -1314,7 +1330,7 @@ argument_list|(
 literal|"Save as Text"
 argument_list|)
 argument_list|,
-literal|"aa"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -1322,7 +1338,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"file-aa-save"
+name|SAVE_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
