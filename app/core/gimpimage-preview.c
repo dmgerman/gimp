@@ -993,6 +993,17 @@ argument_list|,
 name|height
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|x2
+operator|==
+name|x1
+operator|||
+name|y2
+operator|==
+name|y1
+condition|)
+continue|continue;
 name|src1PR
 operator|.
 name|bytes
