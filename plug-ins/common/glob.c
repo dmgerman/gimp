@@ -26,11 +26,11 @@ file|"libgimp/gimp.h"
 end_include
 
 begin_define
-DECL|macro|PROCEDURE_NAME
+DECL|macro|PLUG_IN_PROC
 define|#
 directive|define
-name|PROCEDURE_NAME
-value|"file_glob"
+name|PLUG_IN_PROC
+value|"file-glob"
 end_define
 
 begin_function_decl
@@ -181,7 +181,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_files"
+literal|"num-files"
 block|,
 literal|"The number of returned names"
 block|}
@@ -197,7 +197,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-name|PROCEDURE_NAME
+name|PLUG_IN_PROC
 argument_list|,
 literal|"Returns a list of matching filenames"
 argument_list|,
@@ -309,7 +309,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-name|PROCEDURE_NAME
+name|PLUG_IN_PROC
 argument_list|)
 operator|==
 literal|0

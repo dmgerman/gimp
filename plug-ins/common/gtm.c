@@ -49,6 +49,22 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_define
+DECL|macro|SAVE_PROC
+define|#
+directive|define
+name|SAVE_PROC
+value|"file-gtm-save"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"gtm"
+end_define
+
 begin_comment
 comment|/* Typedefs */
 end_comment
@@ -56,7 +72,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af7833b0108
+DECL|struct|__anon2c6d512d0108
 block|{
 DECL|member|captiontxt
 name|gchar
@@ -360,7 +376,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive"
 block|}
@@ -392,7 +408,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"raw_filename"
+literal|"raw-filename"
 block|,
 literal|"The name of the file to save the image in"
 block|}
@@ -400,7 +416,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"file_gtm_save"
+name|SAVE_PROC
 argument_list|,
 literal|"GIMP Table Magic"
 argument_list|,
@@ -435,14 +451,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_file_handler_mime
 argument_list|(
-literal|"file_gtm_save"
+name|SAVE_PROC
 argument_list|,
 literal|"text/html"
 argument_list|)
 expr_stmt|;
 name|gimp_register_save_handler
 argument_list|(
-literal|"file_gtm_save"
+name|SAVE_PROC
 argument_list|,
 literal|"html,htm"
 argument_list|,
@@ -546,7 +562,7 @@ name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 name|gimp_get_data
 argument_list|(
-literal|"file_gtm_save"
+name|SAVE_PROC
 argument_list|,
 operator|&
 name|gtmvals
@@ -586,7 +602,7 @@ condition|)
 block|{
 name|gimp_set_data
 argument_list|(
-literal|"file_gtm_save"
+name|SAVE_PROC
 argument_list|,
 operator|&
 name|gtmvals
@@ -1577,7 +1593,7 @@ name|run
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"gtm"
+name|PLUG_IN_BINARY
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1591,7 +1607,7 @@ argument_list|(
 literal|"GIMP Table Magic"
 argument_list|)
 argument_list|,
-literal|"gtm"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -1599,7 +1615,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"file-gtm-save"
+name|SAVE_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

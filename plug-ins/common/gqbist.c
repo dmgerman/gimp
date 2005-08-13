@@ -87,11 +87,19 @@ value|64
 end_define
 
 begin_define
-DECL|macro|PLUG_IN_NAME
+DECL|macro|PLUG_IN_PROC
 define|#
 directive|define
-name|PLUG_IN_NAME
-value|"plug_in_qbist"
+name|PLUG_IN_PROC
+value|"plug-in-qbist"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"gqbist"
 end_define
 
 begin_define
@@ -100,14 +108,6 @@ define|#
 directive|define
 name|PLUG_IN_VERSION
 value|"January 2001, 1.12"
-end_define
-
-begin_define
-DECL|macro|HELP_ID
-define|#
-directive|define
-name|HELP_ID
-value|"plug-in-qbist"
 end_define
 
 begin_comment
@@ -132,7 +132,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c0b853a0103
+DECL|enum|__anon2987c58b0103
 block|{
 DECL|enumerator|PROJECTION
 name|PROJECTION
@@ -177,7 +177,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0b853a0208
+DECL|struct|__anon2987c58b0208
 block|{
 DECL|member|transformSequence
 name|TransformType
@@ -216,7 +216,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0b853a0308
+DECL|struct|__anon2987c58b0308
 block|{
 DECL|member|info
 name|ExpInfo
@@ -2221,7 +2221,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -2245,11 +2245,14 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 literal|"Create images based on a random genetic formula"
 argument_list|,
-literal|"This Plug-in is based on an article by JÃ¶rn Loviscach (appeared in c't 10/95, page 326). It generates modern art pictures from a random genetic formula."
+literal|"This Plug-in is based on an article by "
+literal|"JÃ¶rn Loviscach (appeared in c't 10/95, page 326). "
+literal|"It generates modern art pictures from a random "
+literal|"genetic formula."
 argument_list|,
 literal|"JÃ¶rn Loviscach, Jens Ch. Restemeier"
 argument_list|,
@@ -2280,7 +2283,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Render/Pattern"
 argument_list|)
@@ -2538,7 +2541,7 @@ case|:
 comment|/* Possibly retrieve data */
 name|gimp_get_data
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|qbist_info
@@ -2557,7 +2560,7 @@ name|GIMP_PDB_SUCCESS
 expr_stmt|;
 name|gimp_set_data
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|qbist_info
@@ -2589,7 +2592,7 @@ case|:
 comment|/* Possibly retrieve data */
 name|gimp_get_data
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|qbist_info
@@ -4029,7 +4032,7 @@ name|run
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"gqbist"
+name|PLUG_IN_BINARY
 argument_list|,
 name|TRUE
 argument_list|)
@@ -4043,7 +4046,7 @@ argument_list|(
 literal|"G-Qbist"
 argument_list|)
 argument_list|,
-literal|"gqbist"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -4051,7 +4054,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-name|HELP_ID
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

@@ -45,10 +45,26 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_define
+DECL|macro|PLUG_IN_PROC
+define|#
+directive|define
+name|PLUG_IN_PROC
+value|"plug-in-hot"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"hot"
+end_define
+
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c23bcd90108
+DECL|struct|__anon2ad892070108
 block|{
 DECL|member|image
 name|gint32
@@ -79,7 +95,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c23bcd90203
+DECL|enum|__anon2ad892070203
 block|{
 DECL|enumerator|ACT_LREDUX
 name|ACT_LREDUX
@@ -98,7 +114,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c23bcd90303
+DECL|enum|__anon2ad892070303
 block|{
 DECL|enumerator|MODE_NTSC
 name|MODE_NTSC
@@ -143,7 +159,7 @@ end_comment
 
 begin_struct
 struct|struct
-DECL|struct|__anon2c23bcd90408
+DECL|struct|__anon2ad892070408
 block|{
 DECL|member|pedestal
 name|gdouble
@@ -540,7 +556,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -580,15 +596,15 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"new_layerp"
+literal|"new-layer"
 block|,
-literal|"Create a new layer iff True"
+literal|"Create a new layer if True"
 block|}
 block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_hot"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"Look for hot NTSC or PAL pixels "
 argument_list|,
@@ -628,7 +644,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_hot"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Colors"
 argument_list|)
@@ -713,7 +729,7 @@ literal|1
 expr_stmt|;
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_hot"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|args
@@ -836,7 +852,7 @@ expr_stmt|;
 block|}
 name|gimp_set_data
 argument_list|(
-literal|"plug_in_hot"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|args
@@ -2323,7 +2339,7 @@ name|run
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"hot"
+name|PLUG_IN_BINARY
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2337,7 +2353,7 @@ argument_list|(
 literal|"Hot"
 argument_list|)
 argument_list|,
-literal|"hot"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -2345,7 +2361,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"plug-in-hot"
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

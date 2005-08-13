@@ -34,11 +34,19 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_define
-DECL|macro|PLUG_IN_NAME
+DECL|macro|PLUG_IN_PROC
 define|#
 directive|define
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 value|"plug_in_illusion"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"illusion"
 end_define
 
 begin_define
@@ -47,14 +55,6 @@ define|#
 directive|define
 name|PLUG_IN_VERSION
 value|"v0.8 (May 14 2000)"
-end_define
-
-begin_define
-DECL|macro|HELP_ID
-define|#
-directive|define
-name|HELP_ID
-value|"plug-in-illusion"
 end_define
 
 begin_function_decl
@@ -140,7 +140,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbdb3d40108
+DECL|struct|__anon2c047f070108
 block|{
 DECL|member|division
 name|gint32
@@ -230,7 +230,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"interactive / non-interactive"
 block|}
@@ -270,7 +270,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 literal|"produce illusion"
 argument_list|,
@@ -305,7 +305,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Map"
 argument_list|)
@@ -411,7 +411,7 @@ name|GIMP_RUN_INTERACTIVE
 case|:
 name|gimp_get_data
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|parameters
@@ -428,7 +428,7 @@ condition|)
 return|return;
 name|gimp_set_data
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|parameters
@@ -519,7 +519,7 @@ name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|gimp_get_data
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|parameters
@@ -627,7 +627,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2bbdb3d40208
+DECL|struct|__anon2c047f070208
 typedef|typedef
 struct|struct
 block|{
@@ -1951,7 +1951,7 @@ name|run
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"illusion"
+name|PLUG_IN_BINARY
 argument_list|,
 name|TRUE
 argument_list|)
@@ -1965,7 +1965,7 @@ argument_list|(
 literal|"Illusion"
 argument_list|)
 argument_list|,
-literal|"illusion"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -1973,7 +1973,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-name|HELP_ID
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

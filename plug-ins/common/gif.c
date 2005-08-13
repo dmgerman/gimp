@@ -81,6 +81,22 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_define
+DECL|macro|SAVE_PROC
+define|#
+directive|define
+name|SAVE_PROC
+value|"file-gif-save"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"gif"
+end_define
+
 begin_comment
 comment|/* Define only one of these to determine which kind of gif's you would like.  * GIF_UN means use uncompressed gifs.  These will be large, but no  * patent problems.  * GIF_RLE uses Run-length-encoding, which should not be covered by the  * patent, but this is not legal advice.  */
 end_comment
@@ -119,7 +135,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fb793e0103
+DECL|enum|__anon27dd64a70103
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -136,7 +152,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fb793e0208
+DECL|struct|__anon27dd64a70208
 block|{
 DECL|member|interlace
 name|gint
@@ -395,7 +411,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -427,7 +443,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"raw_filename"
+literal|"raw-filename"
 block|,
 literal|"The name entered"
 block|}
@@ -451,7 +467,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"default_delay"
+literal|"default-delay"
 block|,
 literal|"(animated gif) Default delay between framese in milliseconds"
 block|}
@@ -459,7 +475,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"default_dispose"
+literal|"default-dispose"
 block|,
 literal|"(animated gif) Default disposal type (0=`don't care`, 1=combine, 2=replace)"
 block|}
@@ -467,7 +483,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"file_gif_save"
+name|SAVE_PROC
 argument_list|,
 literal|"saves files in Compuserve GIF file format"
 argument_list|,
@@ -508,14 +524,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_file_handler_mime
 argument_list|(
-literal|"file_gif_save"
+name|SAVE_PROC
 argument_list|,
 literal|"image/gif"
 argument_list|)
 expr_stmt|;
 name|gimp_register_save_handler
 argument_list|(
-literal|"file_gif_save"
+name|SAVE_PROC
 argument_list|,
 literal|"gif"
 argument_list|,
@@ -630,7 +646,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_gif_save"
+name|SAVE_PROC
 argument_list|)
 operator|==
 literal|0
@@ -674,7 +690,7 @@ name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|gimp_ui_init
 argument_list|(
-literal|"gif"
+name|PLUG_IN_BINARY
 argument_list|,
 name|FALSE
 argument_list|)
@@ -746,7 +762,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"file_gif_save"
+name|SAVE_PROC
 argument_list|,
 operator|&
 name|gsvals
@@ -863,7 +879,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"file_gif_save"
+name|SAVE_PROC
 argument_list|,
 operator|&
 name|gsvals
@@ -904,7 +920,7 @@ block|{
 comment|/*  Store psvals data  */
 name|gimp_set_data
 argument_list|(
-literal|"file_gif_save"
+name|SAVE_PROC
 argument_list|,
 operator|&
 name|gsvals
@@ -3958,7 +3974,7 @@ argument_list|(
 literal|"Save as GIF"
 argument_list|)
 argument_list|,
-literal|"gif"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -3966,7 +3982,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"file-gif-save"
+name|SAVE_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
@@ -3977,6 +3993,21 @@ argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_dialog_set_alternative_button_order
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|dlg
+argument_list|)
+argument_list|,
+name|GTK_RESPONSE_OK
+argument_list|,
+name|GTK_RESPONSE_CANCEL
+argument_list|,
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 name|main_vbox

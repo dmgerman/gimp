@@ -38,6 +38,22 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_define
+DECL|macro|PLUG_IN_PROC
+define|#
+directive|define
+name|PLUG_IN_PROC
+value|"plug-in-grid"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"grid"
+end_define
+
+begin_define
 DECL|macro|SPIN_BUTTON_WIDTH
 define|#
 directive|define
@@ -227,7 +243,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a03256c0108
+DECL|struct|__anon29fb70f30108
 block|{
 DECL|member|hwidth
 name|gint
@@ -367,7 +383,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -511,7 +527,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_grid"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"Draws a grid."
 argument_list|,
@@ -547,7 +563,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_grid"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Render/Pattern"
 argument_list|)
@@ -994,7 +1010,7 @@ expr_stmt|;
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_grid"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|grid_cfg
@@ -1103,7 +1119,7 @@ name|GIMP_RUN_INTERACTIVE
 condition|)
 name|gimp_set_data
 argument_list|(
-literal|"plug_in_grid"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|grid_cfg
@@ -3022,7 +3038,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"grid"
+name|PLUG_IN_BINARY
 argument_list|,
 name|TRUE
 argument_list|)
@@ -3038,7 +3054,7 @@ argument_list|(
 literal|"Grid"
 argument_list|)
 argument_list|,
-literal|"grid"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -3046,7 +3062,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"plug-in-grid"
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

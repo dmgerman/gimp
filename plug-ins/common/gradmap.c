@@ -32,6 +32,30 @@ comment|/* Some useful macros */
 end_comment
 
 begin_define
+DECL|macro|GRADMAP_PROC
+define|#
+directive|define
+name|GRADMAP_PROC
+value|"plug-in-gradmap"
+end_define
+
+begin_define
+DECL|macro|PALETTEMAP_PROC
+define|#
+directive|define
+name|PALETTEMAP_PROC
+value|"plug-in-palettemap"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"gradmap"
+end_define
+
+begin_define
 DECL|macro|NSAMPLES
 define|#
 directive|define
@@ -53,7 +77,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b2f471b0103
+DECL|enum|__anon2c8787c10103
 block|{
 DECL|enumerator|GRADIENT_MODE
 name|GRADIENT_MODE
@@ -221,7 +245,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -245,7 +269,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_gradmap"
+name|GRADMAP_PROC
 argument_list|,
 literal|"Map the contents of the specified drawable with "
 literal|"active gradient"
@@ -289,14 +313,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_gradmap"
+name|GRADMAP_PROC
 argument_list|,
 literal|"<Image>/Filters/Colors/Map"
 argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_palettemap"
+name|PALETTEMAP_PROC
 argument_list|,
 literal|"Map the contents of the specified drawable with "
 literal|"the active palette"
@@ -340,7 +364,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_palettemap"
+name|PALETTEMAP_PROC
 argument_list|,
 literal|"<Image>/Filters/Colors/Map"
 argument_list|)
@@ -485,7 +509,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"plug_in_gradmap"
+name|GRADMAP_PROC
 argument_list|)
 condition|)
 block|{
@@ -510,7 +534,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"plug_in_palettemap"
+name|PALETTEMAP_PROC
 argument_list|)
 condition|)
 block|{
@@ -528,10 +552,19 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
+block|{
 name|status
 operator|=
-name|GIMP_PDB_EXECUTION_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
+block|}
+if|if
+condition|(
+name|status
+operator|==
+name|GIMP_PDB_SUCCESS
+condition|)
+block|{
 if|if
 condition|(
 name|mode
@@ -552,6 +585,7 @@ condition|)
 name|gimp_displays_flush
 argument_list|()
 expr_stmt|;
+block|}
 block|}
 else|else
 block|{
@@ -582,7 +616,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2f471b0208
+DECL|struct|__anon2c8787c10208
 block|{
 DECL|member|samples
 name|guchar

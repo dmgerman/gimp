@@ -43,6 +43,22 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_define
+DECL|macro|PLUG_IN_PROC
+define|#
+directive|define
+name|PLUG_IN_PROC
+value|"plug-in-the-old-egg"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"gee_zoom"
+end_define
+
 begin_comment
 comment|/* Declare local functions. */
 end_comment
@@ -408,7 +424,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Must be interactive (1)"
 block|}
@@ -432,7 +448,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_the_old_egg"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"A big hello from the GIMP team!"
 argument_list|,
@@ -657,7 +673,7 @@ name|tmp
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"gee_zoom"
+name|PLUG_IN_BINARY
 argument_list|,
 name|TRUE
 argument_list|)
@@ -671,7 +687,7 @@ argument_list|(
 literal|"Gee Zoom"
 argument_list|)
 argument_list|,
-literal|"gee_zoom"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -679,7 +695,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"plug-in-the-old-egg"
+name|PLUG_IN_PROC
 argument_list|,
 name|NULL
 argument_list|)

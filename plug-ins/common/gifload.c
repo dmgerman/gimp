@@ -75,6 +75,14 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_define
+DECL|macro|LOAD_PROC
+define|#
+directive|define
+name|LOAD_PROC
+value|"file-gif-load"
+end_define
+
 begin_comment
 comment|/* uncomment the line below for a little debugging info */
 end_comment
@@ -273,7 +281,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -289,7 +297,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"raw_filename"
+literal|"raw-filename"
 block|,
 literal|"The name entered"
 block|}
@@ -312,7 +320,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"file_gif_load"
+name|LOAD_PROC
 argument_list|,
 literal|"loads files of Compuserve GIF file format"
 argument_list|,
@@ -350,14 +358,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_file_handler_mime
 argument_list|(
-literal|"file_gif_load"
+name|LOAD_PROC
 argument_list|,
 literal|"image/gif"
 argument_list|)
 expr_stmt|;
 name|gimp_register_magic_load_handler
 argument_list|(
-literal|"file_gif_load"
+name|LOAD_PROC
 argument_list|,
 literal|"gif"
 argument_list|,
@@ -463,7 +471,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_gif_load"
+name|LOAD_PROC
 argument_list|)
 operator|==
 literal|0
@@ -708,7 +716,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28dc29a40108
+DECL|struct|__anon2ae86e190108
 block|{
 DECL|member|Width
 name|unsigned
@@ -758,7 +766,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28dc29a40208
+DECL|struct|__anon2ae86e190208
 block|{
 DECL|member|transparent
 name|int

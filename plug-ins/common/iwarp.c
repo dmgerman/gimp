@@ -38,6 +38,22 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_define
+DECL|macro|PLUG_IN_PROC
+define|#
+directive|define
+name|PLUG_IN_PROC
+value|"plug-in-iwarp"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"iwarp"
+end_define
+
+begin_define
 DECL|macro|RESPONSE_RESET
 define|#
 directive|define
@@ -88,7 +104,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a950bce0103
+DECL|enum|__anon293099000103
 block|{
 DECL|enumerator|GROW
 name|GROW
@@ -116,7 +132,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a950bce0208
+DECL|struct|__anon293099000208
 block|{
 DECL|member|run
 name|gboolean
@@ -131,7 +147,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a950bce0308
+DECL|struct|__anon293099000308
 block|{
 DECL|member|deform_area_radius
 name|gint
@@ -940,7 +956,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -964,7 +980,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_iwarp"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"Interactive warping of the specified drawable"
 argument_list|,
@@ -999,7 +1015,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_iwarp"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Distorts"
 argument_list|)
@@ -1121,7 +1137,7 @@ name|GIMP_RUN_INTERACTIVE
 case|:
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_iwarp"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|iwarp_vals
@@ -1156,7 +1172,7 @@ argument_list|()
 expr_stmt|;
 name|gimp_set_data
 argument_list|(
-literal|"plug_in_iwarp"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|iwarp_vals
@@ -6015,7 +6031,7 @@ name|notebook
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"iwarp"
+name|PLUG_IN_BINARY
 argument_list|,
 name|TRUE
 argument_list|)
@@ -6032,7 +6048,7 @@ argument_list|(
 literal|"IWarp"
 argument_list|)
 argument_list|,
-literal|"iwarp"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -6040,7 +6056,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"plug-in-iwarp"
+name|PLUG_IN_PROC
 argument_list|,
 name|GIMP_STOCK_RESET
 argument_list|,

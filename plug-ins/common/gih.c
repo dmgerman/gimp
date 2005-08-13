@@ -151,6 +151,30 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_define
+DECL|macro|LOAD_PROC
+define|#
+directive|define
+name|LOAD_PROC
+value|"file-gih-load"
+end_define
+
+begin_define
+DECL|macro|SAVE_PROC
+define|#
+directive|define
+name|SAVE_PROC
+value|"file-gih-save"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"gih"
+end_define
+
+begin_define
 DECL|macro|DUMMY_PATTERN_NAME
 define|#
 directive|define
@@ -173,7 +197,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2af8e6920108
+DECL|struct|__anon2ad93cd50108
 block|{
 DECL|member|spacing
 name|guint
@@ -246,7 +270,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af8e6920208
+DECL|struct|__anon2ad93cd50208
 block|{
 DECL|member|orientation
 name|GimpOrientationType
@@ -505,7 +529,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -537,7 +561,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"raw_filename"
+literal|"raw-filename"
 block|,
 literal|"The name of the file to save the brush pipe in"
 block|}
@@ -561,7 +585,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"cell_width"
+literal|"cell-width"
 block|,
 literal|"Width of the brush cells"
 block|}
@@ -569,7 +593,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"cell_height"
+literal|"cell-height"
 block|,
 literal|"Width of the brush cells"
 block|}
@@ -577,7 +601,7 @@ block|,
 block|{
 name|GIMP_PDB_INT8
 block|,
-literal|"display_cols"
+literal|"display-cols"
 block|,
 literal|"Display column number"
 block|}
@@ -585,7 +609,7 @@ block|,
 block|{
 name|GIMP_PDB_INT8
 block|,
-literal|"display_rows"
+literal|"display-rows"
 block|,
 literal|"Display row number"
 block|}
@@ -633,7 +657,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -649,7 +673,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"raw_filename"
+literal|"raw-filename"
 block|,
 literal|"The name of the file to load"
 block|}
@@ -672,7 +696,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"file_gih_load"
+name|LOAD_PROC
 argument_list|,
 literal|"loads images in GIMP brush pipe format"
 argument_list|,
@@ -710,7 +734,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_icon_register
 argument_list|(
-literal|"file_gih_load"
+name|LOAD_PROC
 argument_list|,
 name|GIMP_ICON_TYPE_STOCK_ID
 argument_list|,
@@ -719,14 +743,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_file_handler_mime
 argument_list|(
-literal|"file_gih_load"
+name|LOAD_PROC
 argument_list|,
 literal|"image/x-gimp-gih"
 argument_list|)
 expr_stmt|;
 name|gimp_register_magic_load_handler
 argument_list|(
-literal|"file_gih_load"
+name|LOAD_PROC
 argument_list|,
 literal|"gih"
 argument_list|,
@@ -737,7 +761,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"file_gih_save"
+name|SAVE_PROC
 argument_list|,
 literal|"saves images in GIMP brush pipe format"
 argument_list|,
@@ -772,7 +796,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_icon_register
 argument_list|(
-literal|"file_gih_save"
+name|SAVE_PROC
 argument_list|,
 name|GIMP_ICON_TYPE_STOCK_ID
 argument_list|,
@@ -788,7 +812,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_save_handler
 argument_list|(
-literal|"file_gih_save"
+name|SAVE_PROC
 argument_list|,
 literal|"gih"
 argument_list|,
@@ -926,7 +950,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_gih_load"
+name|LOAD_PROC
 argument_list|)
 operator|==
 literal|0
@@ -995,7 +1019,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_gih_save"
+name|SAVE_PROC
 argument_list|)
 operator|==
 literal|0
@@ -1039,7 +1063,7 @@ name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|gimp_ui_init
 argument_list|(
-literal|"gih"
+name|PLUG_IN_BINARY
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1172,7 +1196,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"file_gih_save"
+name|SAVE_PROC
 argument_list|,
 operator|&
 name|info
@@ -1540,7 +1564,7 @@ name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|gimp_get_data
 argument_list|(
-literal|"file_gih_save"
+name|SAVE_PROC
 argument_list|,
 operator|&
 name|info
@@ -1608,7 +1632,7 @@ condition|)
 block|{
 name|gimp_set_data
 argument_list|(
-literal|"file_gih_save"
+name|SAVE_PROC
 argument_list|,
 operator|&
 name|info
@@ -3860,7 +3884,7 @@ argument_list|(
 literal|"Save as Brush Pipe"
 argument_list|)
 argument_list|,
-literal|"gih"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -3868,7 +3892,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"file-gih-save"
+name|SAVE_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

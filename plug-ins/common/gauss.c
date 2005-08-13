@@ -33,10 +33,58 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_define
+DECL|macro|GAUSS_PROC
+define|#
+directive|define
+name|GAUSS_PROC
+value|"plug-in-gauss"
+end_define
+
+begin_define
+DECL|macro|GAUSS_IIR_PROC
+define|#
+directive|define
+name|GAUSS_IIR_PROC
+value|"plug-in-gauss-iir"
+end_define
+
+begin_define
+DECL|macro|GAUSS_IIR2_PROC
+define|#
+directive|define
+name|GAUSS_IIR2_PROC
+value|"plug-in-gauss-iir2"
+end_define
+
+begin_define
+DECL|macro|GAUSS_RLE_PROC
+define|#
+directive|define
+name|GAUSS_RLE_PROC
+value|"plug-in-gauss-rle"
+end_define
+
+begin_define
+DECL|macro|GAUSS_RLE2_PROC
+define|#
+directive|define
+name|GAUSS_RLE2_PROC
+value|"plug-in-gauss-rle2"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"gauss"
+end_define
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be4112c0103
+DECL|enum|__anon293f1e680103
 block|{
 DECL|enumerator|BLUR_IIR
 name|BLUR_IIR
@@ -52,7 +100,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be4112c0208
+DECL|struct|__anon293f1e680208
 block|{
 DECL|member|horizontal
 name|gdouble
@@ -342,7 +390,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -397,7 +445,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -452,7 +500,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -492,7 +540,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_gauss"
+name|GAUSS_PROC
 argument_list|,
 literal|"Applies a gaussian blur to the specified drawable."
 argument_list|,
@@ -535,7 +583,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_gauss_iir"
+name|GAUSS_IIR_PROC
 argument_list|,
 literal|"Applies a gaussian blur to the specified drawable."
 argument_list|,
@@ -575,7 +623,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_gauss_iir2"
+name|GAUSS_IIR2_PROC
 argument_list|,
 literal|"Applies a gaussian blur to the specified drawable."
 argument_list|,
@@ -615,7 +663,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_gauss_rle"
+name|GAUSS_RLE_PROC
 argument_list|,
 literal|"Applies a gaussian blur to the specified drawable."
 argument_list|,
@@ -655,7 +703,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_gauss_rle2"
+name|GAUSS_RLE2_PROC
 argument_list|,
 literal|"Applies a gaussian blur to the specified drawable."
 argument_list|,
@@ -695,7 +743,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_gauss"
+name|GAUSS_PROC
 argument_list|,
 literal|"<Image>/Filters/Blur"
 argument_list|)
@@ -859,7 +907,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"plug_in_gauss"
+name|GAUSS_PROC
 argument_list|)
 operator|==
 literal|0
@@ -876,7 +924,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_gauss"
+name|GAUSS_PROC
 argument_list|,
 operator|&
 name|bvals
@@ -987,7 +1035,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_gauss"
+name|GAUSS_PROC
 argument_list|,
 operator|&
 name|bvals
@@ -1005,7 +1053,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"plug_in_gauss_iir"
+name|GAUSS_IIR_PROC
 argument_list|)
 operator|==
 literal|0
@@ -1121,7 +1169,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"plug_in_gauss_iir2"
+name|GAUSS_IIR2_PROC
 argument_list|)
 operator|==
 literal|0
@@ -1222,7 +1270,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"plug_in_gauss_rle"
+name|GAUSS_RLE_PROC
 argument_list|)
 operator|==
 literal|0
@@ -1338,7 +1386,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"plug_in_gauss_rle2"
+name|GAUSS_RLE2_PROC
 argument_list|)
 operator|==
 literal|0
@@ -1499,7 +1547,7 @@ name|GIMP_RUN_INTERACTIVE
 condition|)
 name|gimp_set_data
 argument_list|(
-literal|"plug_in_gauss"
+name|GAUSS_PROC
 argument_list|,
 operator|&
 name|bvals
@@ -1611,7 +1659,7 @@ name|run
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"gaussian_blur"
+name|PLUG_IN_BINARY
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1625,7 +1673,7 @@ argument_list|(
 literal|"Gaussian Blur"
 argument_list|)
 argument_list|,
-literal|"gaussian_blur"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -1633,7 +1681,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"plug-in-gauss"
+name|GAUSS_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
