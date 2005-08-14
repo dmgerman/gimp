@@ -61,17 +61,25 @@ value|40
 end_define
 
 begin_define
-DECL|macro|HELP_ID
+DECL|macro|PLUG_IN_PROC
 define|#
 directive|define
-name|HELP_ID
+name|PLUG_IN_PROC
 value|"plug-in-lic"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"lic"
 end_define
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bf183630103
+DECL|enum|__anon2782aab50103
 block|{
 DECL|enumerator|LIC_HUE
 name|LIC_HUE
@@ -119,7 +127,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf183630208
+DECL|struct|__anon2782aab50208
 block|{
 DECL|member|filtlen
 name|gdouble
@@ -2904,7 +2912,7 @@ name|run
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"lic"
+name|PLUG_IN_BINARY
 argument_list|,
 name|TRUE
 argument_list|)
@@ -2918,7 +2926,7 @@ argument_list|(
 literal|"Van Gogh (LIC)"
 argument_list|)
 argument_list|,
-literal|"lic"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -2926,7 +2934,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-name|HELP_ID
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
@@ -3825,7 +3833,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive"
 block|}
@@ -3849,7 +3857,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_lic"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"Creates a Van Gogh effect (Line Integral Convolution)"
 argument_list|,
@@ -3884,7 +3892,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_lic"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Artistic"
 argument_list|)
@@ -3993,7 +4001,7 @@ comment|/* Possibly retrieve data */
 comment|/* ====================== */
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_lic"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|licvals
@@ -4072,7 +4080,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_set_data
 argument_list|(
-literal|"plug_in_lic"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|licvals

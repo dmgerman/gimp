@@ -97,6 +97,22 @@ comment|/*#define TIMINGS*/
 end_comment
 
 begin_define
+DECL|macro|PLUG_IN_PROC
+define|#
+directive|define
+name|PLUG_IN_PROC
+value|"plug-in-newsprint"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"newsprint"
+end_define
+
+begin_define
 DECL|macro|TILE_CACHE_SIZE
 define|#
 directive|define
@@ -335,7 +351,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b65e1250108
+DECL|struct|__anon27a0b5f20108
 block|{
 DECL|member|name
 specifier|const
@@ -595,7 +611,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b65e1250208
+DECL|struct|__anon27a0b5f20208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -668,7 +684,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b65e1250308
+DECL|struct|__anon27a0b5f20308
 block|{
 DECL|member|input_spi
 name|gdouble
@@ -702,7 +718,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b65e1250408
+DECL|struct|__anon27a0b5f20408
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -809,7 +825,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b65e1250508
+DECL|struct|__anon27a0b5f20508
 block|{
 DECL|member|pull_table
 name|GtkWidget
@@ -977,7 +993,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b65e1250608
+DECL|struct|__anon27a0b5f20608
 block|{
 DECL|member|name
 specifier|const
@@ -1678,7 +1694,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -1702,7 +1718,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"cell_width"
+literal|"cell-width"
 block|,
 literal|"screen cell width, in pixels"
 block|}
@@ -1718,7 +1734,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"k_pullout"
+literal|"k-pullout"
 block|,
 literal|"Percentage of black to pullout (CMYK only)"
 block|}
@@ -1726,7 +1742,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"gry_ang"
+literal|"gry-ang"
 block|,
 literal|"Grey/black screen angle (degrees)"
 block|}
@@ -1734,7 +1750,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"gry_spotfn"
+literal|"gry-spotfn"
 block|,
 literal|"Grey/black spot function (0=dots, 1=lines, 2=diamonds, 3=euclidean dot, 4=PS diamond)"
 block|}
@@ -1742,7 +1758,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"red_ang"
+literal|"red-ang"
 block|,
 literal|"Red/cyan screen angle (degrees)"
 block|}
@@ -1750,7 +1766,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"red_spotfn"
+literal|"red-spotfn"
 block|,
 literal|"Red/cyan spot function (values as gry_spotfn)"
 block|}
@@ -1758,7 +1774,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"grn_ang"
+literal|"grn-ang"
 block|,
 literal|"Green/magenta screen angle (degrees)"
 block|}
@@ -1766,7 +1782,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"grn_spotfn"
+literal|"grn-spotfn"
 block|,
 literal|"Green/magenta spot function (values as gry_spotfn)"
 block|}
@@ -1774,7 +1790,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"blu_ang"
+literal|"blu-ang"
 block|,
 literal|"Blue/yellow screen angle (degrees)"
 block|}
@@ -1782,7 +1798,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"blu_spotfn"
+literal|"blu-spotfn"
 block|,
 literal|"Blue/yellow spot function (values as gry_spotfn)"
 block|}
@@ -1794,12 +1810,11 @@ literal|"oversample"
 block|,
 literal|"how many times to oversample spot fn"
 block|}
-comment|/* 15 args */
 block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_newsprint"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"Re-sample the image to give a newspaper-like effect"
 argument_list|,
@@ -1840,7 +1855,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_newsprint"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Distorts"
 argument_list|)
@@ -1975,7 +1990,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_newsprint"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|pvals
@@ -1983,7 +1998,8 @@ argument_list|)
 expr_stmt|;
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_newsprint_ui"
+name|PLUG_IN_PROC
+literal|"-ui"
 argument_list|,
 operator|&
 name|pvals_ui
@@ -2248,7 +2264,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_newsprint"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|pvals
@@ -2324,7 +2340,7 @@ condition|)
 block|{
 name|gimp_set_data
 argument_list|(
-literal|"plug_in_newsprint"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|pvals
@@ -2337,7 +2353,8 @@ argument_list|)
 expr_stmt|;
 name|gimp_set_data
 argument_list|(
-literal|"plug_in_newsprint_ui"
+name|PLUG_IN_PROC
+literal|"-ui"
 argument_list|,
 operator|&
 name|pvals_ui
@@ -4709,7 +4726,7 @@ name|run
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"newsprint"
+name|PLUG_IN_BINARY
 argument_list|,
 name|TRUE
 argument_list|)
@@ -4803,7 +4820,7 @@ argument_list|(
 literal|"Newsprint"
 argument_list|)
 argument_list|,
-literal|"newsprint"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -4811,7 +4828,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"plug-in-newsprint"
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
@@ -7040,7 +7057,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b65e1250708
+DECL|struct|__anon27a0b5f20708
 block|{
 DECL|member|index
 name|gint

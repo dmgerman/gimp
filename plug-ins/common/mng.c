@@ -216,6 +216,22 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_define
+DECL|macro|SAVE_PROC
+define|#
+directive|define
+name|SAVE_PROC
+value|"file-mng-save"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"mng"
+end_define
+
+begin_define
 DECL|macro|SCALE_WIDTH
 define|#
 directive|define
@@ -225,7 +241,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a03b3c0103
+DECL|enum|__anon28e429c60103
 block|{
 DECL|enumerator|CHUNKS_PNG_D
 name|CHUNKS_PNG_D
@@ -244,7 +260,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a03b3c0203
+DECL|enum|__anon28e429c60203
 block|{
 DECL|enumerator|DISPOSE_COMBINE
 name|DISPOSE_COMBINE
@@ -5118,7 +5134,7 @@ argument_list|(
 literal|"Save as MNG"
 argument_list|)
 argument_list|,
-literal|"mng"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -5126,7 +5142,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"file-mng-save"
+name|SAVE_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
@@ -6523,7 +6539,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -6555,7 +6571,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"raw_filename"
+literal|"raw-filename"
 block|,
 literal|"The name of the file to save the image in"
 block|}
@@ -6603,7 +6619,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"default_delay"
+literal|"default-delay"
 block|,
 literal|"(ANIMATED MNG) Default delay between frames in milliseconds"
 block|}
@@ -6611,7 +6627,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"default_chunks"
+literal|"default-chunks"
 block|,
 literal|"(ANIMATED MNG) Default chunks type (0 = PNG + Delta PNG; 1 = JNG + Delta PNG; 2 = All PNG; 3 = All JNG)"
 block|}
@@ -6619,7 +6635,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"default_dispose"
+literal|"default-dispose"
 block|,
 literal|"(ANIMATED MNG) Default dispose type (0 = combine; 1 = replace)"
 block|}
@@ -6659,7 +6675,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"file_mng_save"
+name|SAVE_PROC
 argument_list|,
 literal|"Saves images in the MNG file format"
 argument_list|,
@@ -6696,14 +6712,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_file_handler_mime
 argument_list|(
-literal|"file_mng_save"
+name|SAVE_PROC
 argument_list|,
 literal|"image/x-mng"
 argument_list|)
 expr_stmt|;
 name|gimp_register_save_handler
 argument_list|(
-literal|"file_mng_save"
+name|SAVE_PROC
 argument_list|,
 literal|"mng"
 argument_list|,
@@ -6788,7 +6804,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_mng_save"
+name|SAVE_PROC
 argument_list|)
 operator|==
 literal|0
@@ -6862,7 +6878,7 @@ condition|)
 block|{
 name|gimp_procedural_db_get_data
 argument_list|(
-literal|"file_mng_save"
+name|SAVE_PROC
 argument_list|,
 operator|&
 name|mng_data
@@ -6870,7 +6886,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"mng"
+name|PLUG_IN_BINARY
 argument_list|,
 name|FALSE
 argument_list|)
@@ -7378,7 +7394,7 @@ literal|0
 condition|)
 name|gimp_set_data
 argument_list|(
-literal|"file_mng_save"
+name|SAVE_PROC
 argument_list|,
 operator|&
 name|mng_data

@@ -28,27 +28,19 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_define
-DECL|macro|PLUG_IN_NAME
+DECL|macro|PLUG_IN_PROC
 define|#
 directive|define
-name|PLUG_IN_NAME
-value|"plug_in_max_rgb"
-end_define
-
-begin_define
-DECL|macro|SHORT_NAME
-define|#
-directive|define
-name|SHORT_NAME
-value|"max_rgb"
-end_define
-
-begin_define
-DECL|macro|HELP_ID
-define|#
-directive|define
-name|HELP_ID
+name|PLUG_IN_PROC
 value|"plug-in-max-rgb"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"max_rgb"
 end_define
 
 begin_function_decl
@@ -143,7 +135,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1abaa40103
+DECL|enum|__anon298d4abd0103
 block|{
 DECL|enumerator|MIN_CHANNELS
 name|MIN_CHANNELS
@@ -161,7 +153,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1abaa40208
+DECL|struct|__anon298d4abd0208
 block|{
 DECL|member|max_p
 name|gint
@@ -214,7 +206,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -238,7 +230,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"max_p"
+literal|"max-p"
 block|,
 literal|"1 for maximizing, 0 for minimizing"
 block|}
@@ -246,7 +238,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 literal|"Return an image in which each pixel holds only "
 literal|"the channel that has the maximum value in three "
@@ -284,7 +276,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Colors"
 argument_list|)
@@ -408,7 +400,7 @@ name|GIMP_RUN_INTERACTIVE
 case|:
 name|gimp_get_data
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|pvals
@@ -469,7 +461,7 @@ name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|gimp_get_data
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|pvals
@@ -507,7 +499,7 @@ name|GIMP_PDB_SUCCESS
 condition|)
 name|gimp_set_data
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|pvals
@@ -533,9 +525,9 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2c1abaa40308
 typedef|typedef
 struct|struct
+DECL|struct|__anon298d4abd0308
 block|{
 DECL|member|init_value
 name|gint
@@ -1009,7 +1001,7 @@ name|run
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"max_rgb"
+name|PLUG_IN_BINARY
 argument_list|,
 name|TRUE
 argument_list|)
@@ -1023,7 +1015,7 @@ argument_list|(
 literal|"Max RGB"
 argument_list|)
 argument_list|,
-literal|"max_rgb"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -1031,7 +1023,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"plug-in-max-rgb"
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

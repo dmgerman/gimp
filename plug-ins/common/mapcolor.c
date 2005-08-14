@@ -57,6 +57,30 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_define
+DECL|macro|COLOR_MAP_PROC
+define|#
+directive|define
+name|COLOR_MAP_PROC
+value|"plug-in-color-map"
+end_define
+
+begin_define
+DECL|macro|COLOR_ADJUST_PROC
+define|#
+directive|define
+name|COLOR_ADJUST_PROC
+value|"plug-in-color-adjust"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"mapcolor"
+end_define
+
+begin_define
 DECL|macro|PRV_WIDTH
 define|#
 directive|define
@@ -75,7 +99,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bac96340108
+DECL|struct|__anon29cfd7820108
 block|{
 DECL|member|colors
 name|GimpRGB
@@ -496,7 +520,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_color_adjust"
+name|COLOR_ADJUST_PROC
 argument_list|,
 literal|"Adjust color range given by foreground/background "
 literal|"color to black/white"
@@ -535,14 +559,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_color_adjust"
+name|COLOR_ADJUST_PROC
 argument_list|,
 literal|"<Image>/Filters/Colors/Map"
 argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_color_map"
+name|COLOR_MAP_PROC
 argument_list|,
 literal|"Map color range specified by two colors"
 literal|"to color range specified by two other color."
@@ -580,7 +604,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_color_map"
+name|COLOR_MAP_PROC
 argument_list|,
 literal|"<Image>/Filters/Colors/Map"
 argument_list|)
@@ -751,7 +775,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"plug_in_color_adjust"
+name|COLOR_ADJUST_PROC
 argument_list|)
 operator|==
 literal|0
@@ -844,7 +868,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"plug_in_color_map"
+name|COLOR_MAP_PROC
 argument_list|)
 operator|==
 literal|0
@@ -1363,7 +1387,7 @@ name|run
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"mapcolor"
+name|PLUG_IN_BINARY
 argument_list|,
 name|TRUE
 argument_list|)
@@ -1377,7 +1401,7 @@ argument_list|(
 literal|"Map Color Range"
 argument_list|)
 argument_list|,
-literal|"mapcolor"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -1385,7 +1409,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"plug-in-color-map"
+name|COLOR_MAP_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

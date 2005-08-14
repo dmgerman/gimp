@@ -38,6 +38,30 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_define
+DECL|macro|RGB_NOISE_PROC
+define|#
+directive|define
+name|RGB_NOISE_PROC
+value|"plug-in-rgb-noise"
+end_define
+
+begin_define
+DECL|macro|NOISIFY_PROC
+define|#
+directive|define
+name|NOISIFY_PROC
+value|"plug-in-noisify"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"noisify"
+end_define
+
+begin_define
 DECL|macro|SCALE_WIDTH
 define|#
 directive|define
@@ -56,7 +80,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2754f9120108
+DECL|struct|__anon27f5c3700108
 block|{
 DECL|member|independent
 name|gboolean
@@ -83,7 +107,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2754f9120208
+DECL|struct|__anon27f5c3700208
 block|{
 DECL|member|channels
 name|gint
@@ -329,7 +353,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -369,7 +393,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"noise_1"
+literal|"noise-1"
 block|,
 literal|"Noise in the first channel (red, gray)"
 block|}
@@ -377,7 +401,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"noise_2"
+literal|"noise-2"
 block|,
 literal|"Noise in the second channel (green, gray_alpha)"
 block|}
@@ -385,7 +409,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"noise_3"
+literal|"noise-3"
 block|,
 literal|"Noise in the third channel (blue)"
 block|}
@@ -393,7 +417,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"noise_4"
+literal|"noise-4"
 block|,
 literal|"Noise in the fourth channel (alpha)"
 block|}
@@ -408,7 +432,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -440,7 +464,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"noise_1"
+literal|"noise-1"
 block|,
 literal|"Noise in the first channel (red, gray)"
 block|}
@@ -448,7 +472,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"noise_2"
+literal|"noise-2"
 block|,
 literal|"Noise in the second channel (green, gray_alpha)"
 block|}
@@ -456,7 +480,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"noise_3"
+literal|"noise-3"
 block|,
 literal|"Noise in the third channel (blue)"
 block|}
@@ -464,7 +488,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"noise_4"
+literal|"noise-4"
 block|,
 literal|"Noise in the fourth channel (alpha)"
 block|}
@@ -472,7 +496,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_rgb_noise"
+name|RGB_NOISE_PROC
 argument_list|,
 literal|"Adds random noise to image channels "
 argument_list|,
@@ -512,14 +536,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_rgb_noise"
+name|RGB_NOISE_PROC
 argument_list|,
 literal|"<Image>/Filters/Noise"
 argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_noisify"
+name|NOISIFY_PROC
 argument_list|,
 literal|"Adds random noise to image channels "
 argument_list|,
@@ -701,7 +725,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_scatter_rgb"
+name|RGB_NOISE_PROC
 argument_list|,
 operator|&
 name|nvals
@@ -743,7 +767,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"plug_in_noisify"
+name|NOISIFY_PROC
 argument_list|)
 operator|==
 literal|0
@@ -860,7 +884,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"plug_in_scatter_rgb"
+name|RGB_NOISE_PROC
 argument_list|)
 operator|==
 literal|0
@@ -994,7 +1018,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_scatter_rgb"
+name|RGB_NOISE_PROC
 argument_list|,
 operator|&
 name|nvals
@@ -1064,7 +1088,7 @@ name|GIMP_RUN_INTERACTIVE
 condition|)
 name|gimp_set_data
 argument_list|(
-literal|"plug_in_scatter_rgb"
+name|RGB_NOISE_PROC
 argument_list|,
 operator|&
 name|nvals
@@ -1826,7 +1850,7 @@ name|run
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"noisify"
+name|PLUG_IN_BINARY
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1837,10 +1861,10 @@ name|gimp_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Scatter RGB"
+literal|"RGB Noise"
 argument_list|)
 argument_list|,
-literal|"noisify"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -1848,7 +1872,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"plug-in-noisify"
+name|RGB_NOISE_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

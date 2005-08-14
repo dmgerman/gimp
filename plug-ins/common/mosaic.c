@@ -38,6 +38,22 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_define
+DECL|macro|PLUG_IN_PROC
+define|#
+directive|define
+name|PLUG_IN_PROC
+value|"plug-in-mosaic"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"mosaic"
+end_define
+
+begin_define
 DECL|macro|SCALE_WIDTH
 define|#
 directive|define
@@ -152,7 +168,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b13a66a0108
+DECL|struct|__anon28e8fba60108
 block|{
 DECL|member|x
 DECL|member|y
@@ -170,7 +186,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b13a66a0208
+DECL|struct|__anon28e8fba60208
 block|{
 DECL|member|npts
 name|guint
@@ -192,7 +208,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b13a66a0308
+DECL|struct|__anon28e8fba60308
 block|{
 DECL|member|base_x
 DECL|member|base_y
@@ -221,7 +237,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b13a66a0408
+DECL|struct|__anon28e8fba60408
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -1414,7 +1430,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -1438,7 +1454,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"tile_size"
+literal|"tile-size"
 block|,
 literal|"Average diameter of each tile (in pixels)"
 block|}
@@ -1446,7 +1462,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"tile_height"
+literal|"tile-height"
 block|,
 literal|"Apparent height of each tile (in pixels)"
 block|}
@@ -1454,7 +1470,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"tile_spacing"
+literal|"tile-spacing"
 block|,
 literal|"Inter-tile spacing (in pixels)"
 block|}
@@ -1462,7 +1478,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"tile_neatness"
+literal|"tile-neatness"
 block|,
 literal|"Deviation from perfectly formed tiles (0.0 - 1.0)"
 block|}
@@ -1470,7 +1486,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"tile_allow_split"
+literal|"tile-allow-split"
 block|,
 literal|"Allows splitting tiles at hard edges"
 block|}
@@ -1478,7 +1494,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"light_dir"
+literal|"light-dir"
 block|,
 literal|"Direction of light-source (in degrees)"
 block|}
@@ -1486,7 +1502,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"color_variation"
+literal|"color-variation"
 block|,
 literal|"Magnitude of random color variations (0.0 - 1.0)"
 block|}
@@ -1502,7 +1518,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"color_averaging"
+literal|"color-averaging"
 block|,
 literal|"Tile color based on average of subsumed pixels"
 block|}
@@ -1510,7 +1526,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"tile_type"
+literal|"tile-type"
 block|,
 literal|"Tile geometry: { SQUARES (0), HEXAGONS (1), OCTAGONS (2) }"
 block|}
@@ -1518,7 +1534,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"tile_surface"
+literal|"tile-surface"
 block|,
 literal|"Surface characteristics: { SMOOTH (0), ROUGH (1) }"
 block|}
@@ -1526,28 +1542,15 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"grout_color"
+literal|"grout-color"
 block|,
 literal|"Grout color (black/white or fore/background): { BW (0), FG_BG (1) }"
 block|}
 block|}
 decl_stmt|;
-specifier|static
-name|GimpParamDef
-modifier|*
-name|return_vals
-init|=
-name|NULL
-decl_stmt|;
-specifier|static
-name|int
-name|nreturn_vals
-init|=
-literal|0
-decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_mosaic"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"Convert the input drawable into a collection of tiles"
 argument_list|,
@@ -1573,16 +1576,16 @@ argument_list|(
 name|args
 argument_list|)
 argument_list|,
-name|nreturn_vals
+literal|0
 argument_list|,
 name|args
 argument_list|,
-name|return_vals
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_mosaic"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Distorts"
 argument_list|)
@@ -1732,7 +1735,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_mosaic"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|mvals
@@ -2024,7 +2027,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_mosaic"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|mvals
@@ -2087,7 +2090,7 @@ name|GIMP_RUN_INTERACTIVE
 condition|)
 name|gimp_set_data
 argument_list|(
-literal|"plug_in_mosaic"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|mvals
@@ -2636,7 +2639,7 @@ name|run
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"mosaic"
+name|PLUG_IN_BINARY
 argument_list|,
 name|TRUE
 argument_list|)
@@ -2650,7 +2653,7 @@ argument_list|(
 literal|"Mosaic"
 argument_list|)
 argument_list|,
-literal|"mosaic"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -2658,7 +2661,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"plug-in-mosaic"
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

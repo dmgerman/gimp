@@ -229,7 +229,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b60e5750103
+DECL|enum|__anon2b00e8430103
 block|{
 DECL|enumerator|ENCAPSULATION_UUENCODE
 name|ENCAPSULATION_UUENCODE
@@ -249,25 +249,25 @@ value|256
 end_define
 
 begin_define
-DECL|macro|PLUG_IN_NAME
+DECL|macro|PLUG_IN_PROC
 define|#
 directive|define
-name|PLUG_IN_NAME
-value|"plug_in_mail_image"
+name|PLUG_IN_PROC
+value|"plug-in-mail-image"
 end_define
 
 begin_define
-DECL|macro|HELP_ID
+DECL|macro|PLUG_IN_BINARY
 define|#
 directive|define
-name|HELP_ID
-value|"plug-in-mail-image"
+name|PLUG_IN_BINARY
+value|"mail"
 end_define
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b60e5750208
+DECL|struct|__anon2b00e8430208
 block|{
 DECL|member|receipt
 name|gchar
@@ -608,7 +608,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -680,7 +680,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 literal|"pipe files to uuencode then mail them"
 argument_list|,
@@ -716,14 +716,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/File/Send"
 argument_list|)
 expr_stmt|;
 name|gimp_plugin_icon_register
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 name|GIMP_ICON_TYPE_INLINE_PIXBUF
 argument_list|,
@@ -855,7 +855,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|)
 operator|==
 literal|0
@@ -871,7 +871,7 @@ name|GIMP_RUN_INTERACTIVE
 case|:
 name|gimp_get_data
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|mail_info
@@ -1073,7 +1073,7 @@ name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|gimp_get_data
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|mail_info
@@ -1113,7 +1113,7 @@ name|GIMP_PDB_SUCCESS
 condition|)
 name|gimp_set_data
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|mail_info
@@ -1621,7 +1621,7 @@ name|run
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"mail"
+name|PLUG_IN_BINARY
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1665,7 +1665,7 @@ argument_list|(
 literal|"Send as Mail"
 argument_list|)
 argument_list|,
-literal|"mail"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -1673,7 +1673,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-name|HELP_ID
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

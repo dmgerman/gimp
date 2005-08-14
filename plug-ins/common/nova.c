@@ -38,6 +38,22 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_define
+DECL|macro|PLUG_IN_PROC
+define|#
+directive|define
+name|PLUG_IN_PROC
+value|"plug-in-nova"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"nova"
+end_define
+
+begin_define
 DECL|macro|ENTRY_WIDTH
 define|#
 directive|define
@@ -56,7 +72,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bba48920108
+DECL|struct|__anon2b16cb600108
 block|{
 DECL|member|xcenter
 name|gint
@@ -95,7 +111,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bba48920208
+DECL|struct|__anon2b16cb600208
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -415,7 +431,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -487,7 +503,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_nova"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"Produce Supernova effect to the specified drawable"
 argument_list|,
@@ -526,7 +542,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_nova"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Light and Shadow/Light"
 argument_list|)
@@ -652,7 +668,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_nova"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|pvals
@@ -801,7 +817,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_nova"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|pvals
@@ -885,7 +901,7 @@ name|GIMP_RUN_INTERACTIVE
 condition|)
 name|gimp_set_data
 argument_list|(
-literal|"plug_in_nova"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|pvals
@@ -981,7 +997,7 @@ name|run
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"nova"
+name|PLUG_IN_BINARY
 argument_list|,
 name|TRUE
 argument_list|)
@@ -995,7 +1011,7 @@ argument_list|(
 literal|"SuperNova"
 argument_list|)
 argument_list|,
-literal|"nova"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -1003,7 +1019,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"plug-in-nova"
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

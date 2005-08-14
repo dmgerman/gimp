@@ -34,6 +34,22 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_define
+DECL|macro|PLUG_IN_PROC
+define|#
+directive|define
+name|PLUG_IN_PROC
+value|"plug-in-oilify"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"oilify"
+end_define
+
+begin_define
 DECL|macro|SCALE_WIDTH
 define|#
 directive|define
@@ -79,7 +95,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2945f2930108
+DECL|struct|__anon29a336b90108
 block|{
 DECL|member|mask_size
 name|gdouble
@@ -267,7 +283,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -291,7 +307,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"mask_size"
+literal|"mask-size"
 block|,
 literal|"Oil paint mask size"
 block|}
@@ -307,7 +323,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_oilify"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"Modify the specified drawable to resemble an oil "
 literal|"painting"
@@ -345,7 +361,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_oilify"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Artistic"
 argument_list|)
@@ -480,7 +496,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_oilify"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|ovals
@@ -587,7 +603,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_oilify"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|ovals
@@ -656,7 +672,7 @@ name|GIMP_RUN_INTERACTIVE
 condition|)
 name|gimp_set_data
 argument_list|(
-literal|"plug_in_oilify"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|ovals
@@ -2123,7 +2139,7 @@ name|run
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"oilify"
+name|PLUG_IN_BINARY
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2137,7 +2153,7 @@ argument_list|(
 literal|"Oilify"
 argument_list|)
 argument_list|,
-literal|"oilify"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -2145,7 +2161,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"plug-in-oilify"
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

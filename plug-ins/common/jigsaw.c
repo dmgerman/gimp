@@ -33,10 +33,26 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_define
+DECL|macro|PLUG_IN_PROC
+define|#
+directive|define
+name|PLUG_IN_PROC
+value|"plug-in-jigsaw"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"jigsaw"
+end_define
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ab97c960103
+DECL|enum|__anon2781cd9f0103
 block|{
 DECL|enumerator|BEZIER_1
 name|BEZIER_1
@@ -52,7 +68,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ab97c960203
+DECL|enum|__anon2781cd9f0203
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -1185,14 +1201,6 @@ function_decl|;
 end_function_decl
 
 begin_define
-DECL|macro|PLUG_IN_NAME
-define|#
-directive|define
-name|PLUG_IN_NAME
-value|"jigsaw"
-end_define
-
-begin_define
 DECL|macro|XFACTOR2
 define|#
 directive|define
@@ -1801,7 +1809,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, Non-interactive, Last-Vals"
 block|}
@@ -1849,7 +1857,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"blend_lines"
+literal|"blend-lines"
 block|,
 literal|"Number of lines for shading bevels>= 0"
 block|}
@@ -1857,7 +1865,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"blend_amount"
+literal|"blend-amount"
 block|,
 literal|"The power of the light highlights 0 =< 5"
 block|}
@@ -1865,7 +1873,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_jigsaw"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"Renders a jigsaw puzzle look"
 argument_list|,
@@ -1900,7 +1908,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_jigsaw"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Render/Pattern"
 argument_list|)
@@ -2097,7 +2105,7 @@ name|GIMP_RUN_INTERACTIVE
 case|:
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_jigsaw"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|config
@@ -2135,7 +2143,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_set_data
 argument_list|(
-literal|"plug_in_jigsaw"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|config
@@ -2155,7 +2163,7 @@ name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_jigsaw"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|config
@@ -14060,7 +14068,7 @@ name|run
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"jigsaw"
+name|PLUG_IN_BINARY
 argument_list|,
 name|TRUE
 argument_list|)
@@ -14074,7 +14082,7 @@ argument_list|(
 literal|"Jigsaw"
 argument_list|)
 argument_list|,
-literal|"jigsaw"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -14082,7 +14090,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"plug-in-jigsaw"
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
