@@ -60,6 +60,62 @@ comment|/*  * Constants...  */
 end_comment
 
 begin_define
+DECL|macro|LOAD_PROC
+define|#
+directive|define
+name|LOAD_PROC
+value|"file-png-load"
+end_define
+
+begin_define
+DECL|macro|SAVE_PROC
+define|#
+directive|define
+name|SAVE_PROC
+value|"file-png-save"
+end_define
+
+begin_define
+DECL|macro|SAVE2_PROC
+define|#
+directive|define
+name|SAVE2_PROC
+value|"file-png-save2"
+end_define
+
+begin_define
+DECL|macro|SAVE_DEFAULTS_PROC
+define|#
+directive|define
+name|SAVE_DEFAULTS_PROC
+value|"file-png-save-defaults"
+end_define
+
+begin_define
+DECL|macro|GET_DEFAULTS_PROC
+define|#
+directive|define
+name|GET_DEFAULTS_PROC
+value|"file-png-get-defaults"
+end_define
+
+begin_define
+DECL|macro|SET_DEFAULTS_PROC
+define|#
+directive|define
+name|SET_DEFAULTS_PROC
+value|"file-png-set-defaults"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"png"
+end_define
+
+begin_define
 DECL|macro|PLUG_IN_VERSION
 define|#
 directive|define
@@ -114,7 +170,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b05d910108
+DECL|struct|__anon29b12d2b0108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -161,7 +217,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b05d910208
+DECL|struct|__anon29b12d2b0208
 block|{
 DECL|member|run
 name|gboolean
@@ -504,7 +560,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -520,7 +576,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"raw_filename"
+literal|"raw-filename"
 block|,
 literal|"The name of the file to load"
 block|}
@@ -546,19 +602,19 @@ define|#
 directive|define
 name|COMMON_SAVE_ARGS
 define|\
-value|{GIMP_PDB_INT32, "run_mode", "Interactive, non-interactive"}, \     {GIMP_PDB_IMAGE, "image", "Input image"},                     \     {GIMP_PDB_DRAWABLE, "drawable", "Drawable to save"},          \     {GIMP_PDB_STRING, "filename",                                 \      "The name of the file to save the image in"},                \     {GIMP_PDB_STRING, "raw_filename",                             \      "The name of the file to save the image in"}
+value|{ GIMP_PDB_INT32,    "run_mode",     "Interactive, non-interactive" }, \     { GIMP_PDB_IMAGE,    "image",        "Input image"                  }, \     { GIMP_PDB_DRAWABLE, "drawable",     "Drawable to save"             }, \     { GIMP_PDB_STRING,   "filename",     "The name of the file to save the image in"}, \     { GIMP_PDB_STRING,   "raw_filename", "The name of the file to save the image in"}
 DECL|macro|OLD_CONFIG_ARGS
 define|#
 directive|define
 name|OLD_CONFIG_ARGS
 define|\
-value|{GIMP_PDB_INT32, "interlace", "Use Adam7 interlacing?"},              \     {GIMP_PDB_INT32, "compression", "Deflate Compression factor (0--9)"}, \     {GIMP_PDB_INT32, "bkgd", "Write bKGD chunk?"},                        \     {GIMP_PDB_INT32, "gama", "Write gAMA chunk?"},                        \     {GIMP_PDB_INT32, "offs", "Write oFFs chunk?"},                        \     {GIMP_PDB_INT32, "phys", "Write pHYs chunk?"},                        \     {GIMP_PDB_INT32, "time", "Write tIME chunk?"}
+value|{ GIMP_PDB_INT32, "interlace",   "Use Adam7 interlacing?"            }, \     { GIMP_PDB_INT32, "compression", "Deflate Compression factor (0--9)" }, \     { GIMP_PDB_INT32, "bkgd",        "Write bKGD chunk?"                 }, \     { GIMP_PDB_INT32, "gama",        "Write gAMA chunk?"                 }, \     { GIMP_PDB_INT32, "offs",        "Write oFFs chunk?"                 }, \     { GIMP_PDB_INT32, "phys",        "Write pHYs chunk?"                 }, \     { GIMP_PDB_INT32, "time",        "Write tIME chunk?"                 }
 DECL|macro|FULL_CONFIG_ARGS
 define|#
 directive|define
 name|FULL_CONFIG_ARGS
 define|\
-value|OLD_CONFIG_ARGS,                                                      \     {GIMP_PDB_INT32, "comment", "Write comment?"},                        \     {GIMP_PDB_INT32, "svtrans", "Preserve color of transparent pixels?"}
+value|OLD_CONFIG_ARGS,                                                        \     { GIMP_PDB_INT32, "comment", "Write comment?"                        }, \     { GIMP_PDB_INT32, "svtrans", "Preserve color of transparent pixels?" }
 specifier|static
 name|GimpParamDef
 name|save_args
@@ -610,15 +666,19 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"file_png_load"
+name|LOAD_PROC
 argument_list|,
 literal|"Loads files in PNG file format"
 argument_list|,
-literal|"This plug-in loads Portable Network Graphics (PNG) files."
+literal|"This plug-in loads Portable Network Graphics "
+literal|"(PNG) files."
 argument_list|,
-literal|"Michael Sweet<mike@easysw.com>, Daniel Skarda<0rfelyus@atrey.karlin.mff.cuni.cz>"
+literal|"Michael Sweet<mike@easysw.com>, "
+literal|"Daniel Skarda<0rfelyus@atrey.karlin.mff.cuni.cz>"
 argument_list|,
-literal|"Michael Sweet<mike@easysw.com>, Daniel Skarda<0rfelyus@atrey.karlin.mff.cuni.cz>, Nick Lamb<njl195@zepler.org.uk>"
+literal|"Michael Sweet<mike@easysw.com>, "
+literal|"Daniel Skarda<0rfelyus@atrey.karlin.mff.cuni.cz>, "
+literal|"Nick Lamb<njl195@zepler.org.uk>"
 argument_list|,
 name|PLUG_IN_VERSION
 argument_list|,
@@ -648,14 +708,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_file_handler_mime
 argument_list|(
-literal|"file_png_load"
+name|LOAD_PROC
 argument_list|,
 literal|"image/png"
 argument_list|)
 expr_stmt|;
 name|gimp_register_magic_load_handler
 argument_list|(
-literal|"file_png_load"
+name|LOAD_PROC
 argument_list|,
 literal|"png"
 argument_list|,
@@ -666,15 +726,19 @@ argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"file_png_save"
+name|SAVE_PROC
 argument_list|,
 literal|"Saves files in PNG file format"
 argument_list|,
-literal|"This plug-in saves Portable Network Graphics (PNG) files."
+literal|"This plug-in saves Portable Network Graphics "
+literal|"(PNG) files."
 argument_list|,
-literal|"Michael Sweet<mike@easysw.com>, Daniel Skarda<0rfelyus@atrey.karlin.mff.cuni.cz>"
+literal|"Michael Sweet<mike@easysw.com>, "
+literal|"Daniel Skarda<0rfelyus@atrey.karlin.mff.cuni.cz>"
 argument_list|,
-literal|"Michael Sweet<mike@easysw.com>, Daniel Skarda<0rfelyus@atrey.karlin.mff.cuni.cz>, Nick Lamb<njl195@zepler.org.uk>"
+literal|"Michael Sweet<mike@easysw.com>, "
+literal|"Daniel Skarda<0rfelyus@atrey.karlin.mff.cuni.cz>, "
+literal|"Nick Lamb<njl195@zepler.org.uk>"
 argument_list|,
 name|PLUG_IN_VERSION
 argument_list|,
@@ -701,23 +765,30 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_file_handler_mime
 argument_list|(
-literal|"file_png_save"
+name|SAVE_PROC
 argument_list|,
 literal|"image/png"
 argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"file_png_save2"
+name|SAVE2_PROC
 argument_list|,
 literal|"Saves files in PNG file format"
 argument_list|,
-literal|"This plug-in saves Portable Network Graphics (PNG) files. "
-literal|"This procedure adds 2 extra parameters to file_png_save that allows to control whether image comments are saved and whether transparent pixels are saved or nullified."
+literal|"This plug-in saves Portable Network Graphics "
+literal|"(PNG) files. "
+literal|"This procedure adds 2 extra parameters to "
+literal|"file_png_save that allows to control whether "
+literal|"image comments are saved and whether transparent "
+literal|"pixels are saved or nullified."
 argument_list|,
-literal|"Michael Sweet<mike@easysw.com>, Daniel Skarda<0rfelyus@atrey.karlin.mff.cuni.cz>"
+literal|"Michael Sweet<mike@easysw.com>, "
+literal|"Daniel Skarda<0rfelyus@atrey.karlin.mff.cuni.cz>"
 argument_list|,
-literal|"Michael Sweet<mike@easysw.com>, Daniel Skarda<0rfelyus@atrey.karlin.mff.cuni.cz>, Nick Lamb<njl195@zepler.org.uk>"
+literal|"Michael Sweet<mike@easysw.com>, "
+literal|"Daniel Skarda<0rfelyus@atrey.karlin.mff.cuni.cz>, "
+literal|"Nick Lamb<njl195@zepler.org.uk>"
 argument_list|,
 name|PLUG_IN_VERSION
 argument_list|,
@@ -744,22 +815,27 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_file_handler_mime
 argument_list|(
-literal|"file_png_save2"
+name|SAVE2_PROC
 argument_list|,
 literal|"image/png"
 argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"file_png_save_defaults"
+name|SAVE_DEFAULTS_PROC
 argument_list|,
 literal|"Saves files in PNG file format"
 argument_list|,
-literal|"This plug-in saves Portable Network Graphics (PNG) files, using the default settings stored as a parasite."
+literal|"This plug-in saves Portable Network Graphics (PNG) "
+literal|"files, using the default settings stored as "
+literal|"a parasite."
 argument_list|,
-literal|"Michael Sweet<mike@easysw.com>, Daniel Skarda<0rfelyus@atrey.karlin.mff.cuni.cz>"
+literal|"Michael Sweet<mike@easysw.com>, "
+literal|"Daniel Skarda<0rfelyus@atrey.karlin.mff.cuni.cz>"
 argument_list|,
-literal|"Michael Sweet<mike@easysw.com>, Daniel Skarda<0rfelyus@atrey.karlin.mff.cuni.cz>, Nick Lamb<njl195@zepler.org.uk>"
+literal|"Michael Sweet<mike@easysw.com>, "
+literal|"Daniel Skarda<0rfelyus@atrey.karlin.mff.cuni.cz>, "
+literal|"Nick Lamb<njl195@zepler.org.uk>"
 argument_list|,
 name|PLUG_IN_VERSION
 argument_list|,
@@ -786,14 +862,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_file_handler_mime
 argument_list|(
-literal|"file_png_save_defaults"
+name|SAVE_DEFAULTS_PROC
 argument_list|,
 literal|"image/png"
 argument_list|)
 expr_stmt|;
 name|gimp_register_save_handler
 argument_list|(
-literal|"file_png_save_defaults"
+name|SAVE_DEFAULTS_PROC
 argument_list|,
 literal|"png"
 argument_list|,
@@ -802,16 +878,24 @@ argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"file_png_get_defaults"
+name|GET_DEFAULTS_PROC
 argument_list|,
-literal|"Get the current set of defaults used by the PNG file save plug-in"
+literal|"Get the current set of defaults used by the "
+literal|"PNG file save plug-in"
 argument_list|,
-literal|"This procedure returns the current set of defaults stored as a parasite for the PNG save plug-in. "
-literal|"These defaults are used to seed the UI, by the file_png_save_defaults procedure, and by gimp_file_save when it detects to use PNG."
+literal|"This procedure returns the current set of "
+literal|"defaults stored as a parasite for the PNG "
+literal|"save plug-in. "
+literal|"These defaults are used to seed the UI, by the "
+literal|"file_png_save_defaults procedure, and by "
+literal|"gimp_file_save when it detects to use PNG."
 argument_list|,
-literal|"Michael Sweet<mike@easysw.com>, Daniel Skarda<0rfelyus@atrey.karlin.mff.cuni.cz>"
+literal|"Michael Sweet<mike@easysw.com>, "
+literal|"Daniel Skarda<0rfelyus@atrey.karlin.mff.cuni.cz>"
 argument_list|,
-literal|"Michael Sweet<mike@easysw.com>, Daniel Skarda<0rfelyus@atrey.karlin.mff.cuni.cz>, Nick Lamb<njl195@zepler.org.uk>"
+literal|"Michael Sweet<mike@easysw.com>, "
+literal|"Daniel Skarda<0rfelyus@atrey.karlin.mff.cuni.cz>, "
+literal|"Nick Lamb<njl195@zepler.org.uk>"
 argument_list|,
 name|PLUG_IN_VERSION
 argument_list|,
@@ -835,16 +919,23 @@ argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"file_png_set_defaults"
+name|SET_DEFAULTS_PROC
 argument_list|,
-literal|"Set the current set of defaults used by the PNG file save plug-in"
+literal|"Set the current set of defaults used by the "
+literal|"PNG file save plug-in"
 argument_list|,
-literal|"This procedure set the current set of defaults stored as a parasite for the PNG save plug-in. "
-literal|"These defaults are used to seed the UI, by the file_png_save_defaults procedure, and by gimp_file_save when it detects to use PNG."
+literal|"This procedure set the current set of defaults "
+literal|"stored as a parasite for the PNG save plug-in. "
+literal|"These defaults are used to seed the UI, by the "
+literal|"file_png_save_defaults procedure, and by "
+literal|"gimp_file_save when it detects to use PNG."
 argument_list|,
-literal|"Michael Sweet<mike@easysw.com>, Daniel Skarda<0rfelyus@atrey.karlin.mff.cuni.cz>"
+literal|"Michael Sweet<mike@easysw.com>, "
+literal|"Daniel Skarda<0rfelyus@atrey.karlin.mff.cuni.cz>"
 argument_list|,
-literal|"Michael Sweet<mike@easysw.com>, Daniel Skarda<0rfelyus@atrey.karlin.mff.cuni.cz>, Nick Lamb<njl195@zepler.org.uk>"
+literal|"Michael Sweet<mike@easysw.com>, "
+literal|"Daniel Skarda<0rfelyus@atrey.karlin.mff.cuni.cz>, "
+literal|"Nick Lamb<njl195@zepler.org.uk>"
 argument_list|,
 name|PLUG_IN_VERSION
 argument_list|,
@@ -970,7 +1061,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_png_load"
+name|LOAD_PROC
 argument_list|)
 operator|==
 literal|0
@@ -1054,7 +1145,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_png_save"
+name|SAVE_PROC
 argument_list|)
 operator|==
 literal|0
@@ -1063,7 +1154,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_png_save2"
+name|SAVE2_PROC
 argument_list|)
 operator|==
 literal|0
@@ -1072,7 +1163,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_png_save_defaults"
+name|SAVE_DEFAULTS_PROC
 argument_list|)
 operator|==
 literal|0
@@ -1133,7 +1224,7 @@ name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|gimp_ui_init
 argument_list|(
-literal|"png"
+name|PLUG_IN_BINARY
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1201,7 +1292,7 @@ case|:
 comment|/*            * Possibly retrieve data...            */
 name|gimp_get_data
 argument_list|(
-literal|"file_png_save"
+name|SAVE_PROC
 argument_list|,
 operator|&
 name|pngvals
@@ -1438,7 +1529,7 @@ case|:
 comment|/*            * Possibly retrieve data...            */
 name|gimp_get_data
 argument_list|(
-literal|"file_png_save"
+name|SAVE_PROC
 argument_list|,
 operator|&
 name|pngvals
@@ -1478,7 +1569,7 @@ condition|)
 block|{
 name|gimp_set_data
 argument_list|(
-literal|"file_png_save"
+name|SAVE_PROC
 argument_list|,
 operator|&
 name|pngvals
@@ -1517,7 +1608,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_png_get_defaults"
+name|GET_DEFAULTS_PROC
 argument_list|)
 operator|==
 literal|0
@@ -1615,7 +1706,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_png_set_defaults"
+name|GET_DEFAULTS_PROC
 argument_list|)
 operator|==
 literal|0
@@ -5840,7 +5931,7 @@ argument_list|(
 literal|"Save as PNG"
 argument_list|)
 argument_list|,
-literal|"png"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -5848,7 +5939,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"file-png-save-defaults"
+name|SAVE_PROC
 argument_list|,
 name|_
 argument_list|(

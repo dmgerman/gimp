@@ -65,6 +65,22 @@ begin_comment
 comment|/* *** DEFINES *** */
 end_comment
 
+begin_define
+DECL|macro|SAVE_PROC
+define|#
+directive|define
+name|SAVE_PROC
+value|"file-psd-save"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"psd_save"
+end_define
+
 begin_comment
 comment|/* set to TRUE if you want debugging, FALSE otherwise */
 end_comment
@@ -558,7 +574,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -590,7 +606,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"raw_filename"
+literal|"raw-filename"
 block|,
 literal|"The name of the file to save the image in"
 block|}
@@ -606,7 +622,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"fillorder"
+literal|"fill-order"
 block|,
 literal|"Fill Order: { MSB to LSB (0), LSB to MSB (1)"
 block|}
@@ -614,7 +630,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"file_psd_save"
+name|SAVE_PROC
 argument_list|,
 literal|"saves files in the Photoshop(tm) PSD file format"
 argument_list|,
@@ -649,14 +665,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_file_handler_mime
 argument_list|(
-literal|"file_psd_save"
+name|SAVE_PROC
 argument_list|,
 literal|"image/x-psd"
 argument_list|)
 expr_stmt|;
 name|gimp_register_save_handler
 argument_list|(
-literal|"file_psd_save"
+name|SAVE_PROC
 argument_list|,
 literal|"psd"
 argument_list|,
@@ -752,7 +768,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_psd_save"
+name|SAVE_PROC
 argument_list|)
 operator|==
 literal|0
@@ -819,7 +835,7 @@ name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|gimp_ui_init
 argument_list|(
-literal|"psd_save"
+name|PLUG_IN_BINARY
 argument_list|,
 name|FALSE
 argument_list|)

@@ -57,6 +57,30 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_define
+DECL|macro|LOAD_PROC
+define|#
+directive|define
+name|LOAD_PROC
+value|"file-pix-load"
+end_define
+
+begin_define
+DECL|macro|SAVE_PROC
+define|#
+directive|define
+name|SAVE_PROC
+value|"file-pix-save"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"pix"
+end_define
+
 begin_comment
 comment|/* #define PIX_DEBUG */
 end_comment
@@ -263,7 +287,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -279,7 +303,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"raw_filename"
+literal|"raw-filename"
 block|,
 literal|"The name entered"
 block|}
@@ -309,7 +333,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -341,7 +365,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"raw_filename"
+literal|"raw-filename"
 block|,
 literal|"The name of the file to save the image in"
 block|}
@@ -349,7 +373,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"file_pix_load"
+name|LOAD_PROC
 argument_list|,
 literal|"loads files of the PIX file format"
 argument_list|,
@@ -387,7 +411,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_load_handler
 argument_list|(
-literal|"file_pix_load"
+name|LOAD_PROC
 argument_list|,
 literal|"pix,matte,mask,alpha,als"
 argument_list|,
@@ -396,7 +420,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"file_pix_save"
+name|SAVE_PROC
 argument_list|,
 literal|"save file in the Alias|Wavefront pix/matte file format"
 argument_list|,
@@ -431,7 +455,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_save_handler
 argument_list|(
-literal|"file_pix_save"
+name|SAVE_PROC
 argument_list|,
 literal|"pix,matte,mask,alpha,als"
 argument_list|,
@@ -550,7 +574,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_pix_load"
+name|LOAD_PROC
 argument_list|)
 operator|==
 literal|0
@@ -622,7 +646,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_pix_save"
+name|LOAD_PROC
 argument_list|)
 operator|==
 literal|0
@@ -664,7 +688,7 @@ name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|gimp_ui_init
 argument_list|(
-literal|"pix"
+name|PLUG_IN_BINARY
 argument_list|,
 name|FALSE
 argument_list|)
@@ -960,7 +984,6 @@ argument_list|,
 name|filename
 argument_list|)
 expr_stmt|;
-comment|/* Open the file */
 name|file
 operator|=
 name|g_fopen

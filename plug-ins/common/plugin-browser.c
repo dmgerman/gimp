@@ -46,6 +46,22 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_define
+DECL|macro|PLUG_IN_PROC
+define|#
+directive|define
+name|PLUG_IN_PROC
+value|"plug-in-plug-in-details"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"plugin-browser"
+end_define
+
+begin_define
 DECL|macro|DBL_LIST_WIDTH
 define|#
 directive|define
@@ -71,7 +87,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c638a440103
+DECL|enum|__anon28a727d90103
 block|{
 DECL|enumerator|LIST_COLUMN_NAME
 name|LIST_COLUMN_NAME
@@ -96,7 +112,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c638a440203
+DECL|enum|__anon28a727d90203
 block|{
 DECL|enumerator|TREE_COLUMN_PATH_NAME
 name|TREE_COLUMN_PATH_NAME
@@ -122,7 +138,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c638a440308
+DECL|struct|__anon28a727d90308
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -153,7 +169,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c638a440408
+DECL|struct|__anon28a727d90408
 block|{
 DECL|member|menu
 name|gchar
@@ -333,17 +349,6 @@ function_decl|;
 end_function_decl
 
 begin_decl_stmt
-DECL|variable|browser
-specifier|static
-name|PluginBrowser
-modifier|*
-name|browser
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
 name|GimpPlugInInfo
 name|PLUG_IN_INFO
@@ -388,7 +393,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, [non-interactive]"
 block|}
@@ -396,7 +401,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_plug_in_details"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"Displays plug-in details"
 argument_list|,
@@ -436,14 +441,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_plug_in_details"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Toolbox>/Xtns/Extensions"
 argument_list|)
 expr_stmt|;
 name|gimp_plugin_icon_register
 argument_list|(
-literal|"plug_in_plug_in_details"
+name|PLUG_IN_PROC
 argument_list|,
 name|GIMP_ICON_TYPE_STOCK_ID
 argument_list|,
@@ -542,16 +547,12 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"plug_in_plug_in_details"
+name|PLUG_IN_PROC
 argument_list|)
 operator|==
 literal|0
 condition|)
 block|{
-name|GtkWidget
-modifier|*
-name|plugin_dialog
-decl_stmt|;
 operator|*
 name|nreturn_vals
 operator|=
@@ -568,8 +569,6 @@ name|d_status
 operator|=
 name|GIMP_PDB_SUCCESS
 expr_stmt|;
-name|plugin_dialog
-operator|=
 name|browser_dialog_new
 argument_list|()
 expr_stmt|;
@@ -2007,6 +2006,10 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
+name|PluginBrowser
+modifier|*
+name|browser
+decl_stmt|;
 name|GtkWidget
 modifier|*
 name|label
@@ -2051,7 +2054,7 @@ name|iter
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"plugindetails"
+name|PLUG_IN_BINARY
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2076,7 +2079,7 @@ argument_list|(
 literal|"Plug-In Browser"
 argument_list|)
 argument_list|,
-literal|"plugindetails"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -2084,7 +2087,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"plug-in-plug-in-details"
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CLOSE
 argument_list|,

@@ -46,6 +46,30 @@ comment|/* Some useful macros */
 end_comment
 
 begin_define
+DECL|macro|PIXELIZE_PROC
+define|#
+directive|define
+name|PIXELIZE_PROC
+value|"plug-in-pixelize"
+end_define
+
+begin_define
+DECL|macro|PIXELIZE2_PROC
+define|#
+directive|define
+name|PIXELIZE2_PROC
+value|"plug-in-pixelize2"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"pixelize"
+end_define
+
+begin_define
 DECL|macro|TILE_CACHE_SIZE
 define|#
 directive|define
@@ -72,7 +96,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d640840108
+DECL|struct|__anon29e718440108
 block|{
 DECL|member|pixelwidth
 name|gint
@@ -91,7 +115,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d640840208
+DECL|struct|__anon29e718440208
 block|{
 DECL|member|x
 DECL|member|y
@@ -353,7 +377,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -377,7 +401,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"pixelwidth"
+literal|"pixel-width"
 block|,
 literal|"Pixel width (the decrease in resolution)"
 block|}
@@ -392,7 +416,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -416,7 +440,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"pixelwidth"
+literal|"pixel-width"
 block|,
 literal|"Pixel width (the decrease in horizontal resolution)"
 block|}
@@ -424,7 +448,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"pixelheight"
+literal|"pixel-height"
 block|,
 literal|"Pixel height (the decrease in vertical resolution)"
 block|}
@@ -432,7 +456,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_pixelize"
+name|PIXELIZE_PROC
 argument_list|,
 literal|"Pixelize the contents of the specified drawable"
 argument_list|,
@@ -469,14 +493,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_pixelize"
+name|PIXELIZE_PROC
 argument_list|,
 literal|"<Image>/Filters/Blur"
 argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_pixelize2"
+name|PIXELIZE2_PROC
 argument_list|,
 literal|"Pixelize the contents of the specified drawable"
 argument_list|,
@@ -629,7 +653,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_pixelize"
+name|PIXELIZE_PROC
 argument_list|,
 operator|&
 name|pvals
@@ -665,7 +689,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"plug_in_pixelize"
+name|PIXELIZE_PROC
 argument_list|)
 operator|&&
 name|nparams
@@ -679,7 +703,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"plug_in_pixelize2"
+name|PIXELIZE2_PROC
 argument_list|)
 operator|&&
 name|nparams
@@ -783,7 +807,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_pixelize"
+name|PIXELIZE_PROC
 argument_list|,
 operator|&
 name|pvals
@@ -858,7 +882,7 @@ name|GIMP_RUN_INTERACTIVE
 condition|)
 name|gimp_set_data
 argument_list|(
-literal|"plug_in_pixelize"
+name|PIXELIZE_PROC
 argument_list|,
 operator|&
 name|pvals
@@ -941,7 +965,7 @@ name|run
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"pixelize"
+name|PLUG_IN_BINARY
 argument_list|,
 name|FALSE
 argument_list|)
@@ -955,7 +979,7 @@ argument_list|(
 literal|"Pixelize"
 argument_list|)
 argument_list|,
-literal|"pixelize"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -963,7 +987,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"plug-in-pixelize"
+name|PIXELIZE_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

@@ -46,19 +46,19 @@ comment|/*======================================================================
 end_comment
 
 begin_define
-DECL|macro|PLUGIN_PROCEDURE_NAME
+DECL|macro|PLUG_IN_PROC
 define|#
 directive|define
-name|PLUGIN_PROCEDURE_NAME
-value|"plug_in_papertile"
+name|PLUG_IN_PROC
+value|"plug-in-papertile"
 end_define
 
 begin_define
-DECL|macro|HELP_ID
+DECL|macro|PLUG_IN_BINARY
 define|#
 directive|define
-name|HELP_ID
-value|"plug-in-papertile"
+name|PLUG_IN_BINARY
+value|"papertile"
 end_define
 
 begin_comment
@@ -76,7 +76,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bd296770103
+DECL|enum|__anon2b69d89e0103
 block|{
 DECL|enumerator|BACKGROUND_TYPE_TRANSPARENT
 name|BACKGROUND_TYPE_TRANSPARENT
@@ -104,7 +104,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bd296770203
+DECL|enum|__anon2b69d89e0203
 block|{
 DECL|enumerator|FRACTIONAL_TYPE_BACKGROUND
 name|FRACTIONAL_TYPE_BACKGROUND
@@ -192,7 +192,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2bd296770308
+DECL|struct|__anon2b69d89e0308
 block|{
 DECL|member|params
 name|PluginParams
@@ -212,7 +212,7 @@ name|gboolean
 name|drawable_has_alpha
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2bd296770408
+DECL|struct|__anon2b69d89e0408
 block|{
 DECL|member|x0
 name|gint
@@ -340,7 +340,7 @@ parameter_list|)
 block|{
 name|gimp_set_data
 argument_list|(
-name|PLUGIN_PROCEDURE_NAME
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|p
@@ -367,7 +367,7 @@ parameter_list|)
 block|{
 name|gimp_get_data
 argument_list|(
-name|PLUGIN_PROCEDURE_NAME
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|p
@@ -579,7 +579,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2bd296770508
+DECL|struct|__anon2b69d89e0508
 block|{
 DECL|member|tile_size_adj
 name|GtkObject
@@ -984,7 +984,7 @@ name|color_button
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"papertile"
+name|PLUG_IN_BINARY
 argument_list|,
 name|TRUE
 argument_list|)
@@ -998,7 +998,7 @@ argument_list|(
 literal|"Paper Tile"
 argument_list|)
 argument_list|,
-literal|"papertile"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -1006,7 +1006,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-name|HELP_ID
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
@@ -4570,7 +4570,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"run mode"
 block|}
@@ -4594,7 +4594,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"tile_size"
+literal|"tile-size"
 block|,
 literal|"tile size (pixels)"
 block|}
@@ -4602,7 +4602,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"move_max"
+literal|"move-max"
 block|,
 literal|"max move rate (%)"
 block|}
@@ -4610,7 +4610,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"fractional_type"
+literal|"fractional-type"
 block|,
 literal|"0:Background 1:Ignore 2:Force"
 block|}
@@ -4618,7 +4618,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"wrap_around"
+literal|"wrap-around"
 block|,
 literal|"wrap around (bool)"
 block|}
@@ -4634,7 +4634,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"background_type"
+literal|"background-type"
 block|,
 literal|"0:Transparent 1:Inverted 2:Image? 3:FG 4:BG 5:Color"
 block|}
@@ -4642,7 +4642,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"background_color"
+literal|"background-color"
 block|,
 literal|"background color (for bg-type 5)"
 block|}
@@ -4650,7 +4650,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"background_alpha"
+literal|"background-alpha"
 block|,
 literal|"opacity (for bg-type 5)"
 block|}
@@ -4658,7 +4658,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-name|PLUGIN_PROCEDURE_NAME
+name|PLUG_IN_PROC
 argument_list|,
 literal|"Cuts an image into paper tiles, and slides each "
 literal|"paper tile."
@@ -4698,7 +4698,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-name|PLUGIN_PROCEDURE_NAME
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Map"
 argument_list|)

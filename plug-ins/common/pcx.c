@@ -49,49 +49,29 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
-begin_comment
-comment|/* Declare plug-in functions.  */
-end_comment
+begin_define
+DECL|macro|LOAD_PROC
+define|#
+directive|define
+name|LOAD_PROC
+value|"file-pcx-load"
+end_define
 
-begin_function_decl
-specifier|static
-name|void
-name|query
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
+begin_define
+DECL|macro|SAVE_PROC
+define|#
+directive|define
+name|SAVE_PROC
+value|"file-pcx-save"
+end_define
 
-begin_function_decl
-specifier|static
-name|void
-name|run
-parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|name
-parameter_list|,
-name|gint
-name|nparams
-parameter_list|,
-specifier|const
-name|GimpParam
-modifier|*
-name|param
-parameter_list|,
-name|gint
-modifier|*
-name|nreturn_vals
-parameter_list|,
-name|GimpParam
-modifier|*
-modifier|*
-name|return_vals
-parameter_list|)
-function_decl|;
-end_function_decl
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"pcx"
+end_define
 
 begin_if
 if|#
@@ -179,248 +159,49 @@ parameter_list|)
 value|qtohs(x)
 end_define
 
-begin_decl_stmt
-DECL|variable|PLUG_IN_INFO
-name|GimpPlugInInfo
-name|PLUG_IN_INFO
-init|=
-block|{
-name|NULL
-block|,
-comment|/* init_proc  */
-name|NULL
-block|,
-comment|/* quit_proc  */
-name|query
-block|,
-comment|/* query_proc */
-name|run
-block|,
-comment|/* run_proc   */
-block|}
-decl_stmt|;
-end_decl_stmt
+begin_comment
+comment|/* Declare loacl functions.  */
+end_comment
 
-begin_macro
-DECL|function|MAIN ()
-name|MAIN
-argument_list|()
-end_macro
-
-begin_function
+begin_function_decl
 specifier|static
 name|void
 name|query
 parameter_list|(
 name|void
 parameter_list|)
-block|{
-specifier|static
-name|GimpParamDef
-name|load_args
-index|[]
-init|=
-block|{
-block|{
-name|GIMP_PDB_INT32
-block|,
-literal|"run_mode"
-block|,
-literal|"Interactive, non-interactive"
-block|}
-block|,
-block|{
-name|GIMP_PDB_STRING
-block|,
-literal|"filename"
-block|,
-literal|"The name of the file to load"
-block|}
-block|,
-block|{
-name|GIMP_PDB_STRING
-block|,
-literal|"raw_filename"
-block|,
-literal|"The name entered"
-block|}
-block|}
-decl_stmt|;
-specifier|static
-name|GimpParamDef
-name|load_return_vals
-index|[]
-init|=
-block|{
-block|{
-name|GIMP_PDB_IMAGE
-block|,
-literal|"image"
-block|,
-literal|"Output image"
-block|}
-block|}
-decl_stmt|;
-specifier|static
-name|GimpParamDef
-name|save_args
-index|[]
-init|=
-block|{
-block|{
-name|GIMP_PDB_INT32
-block|,
-literal|"run_mode"
-block|,
-literal|"Interactive, non-interactive"
-block|}
-block|,
-block|{
-name|GIMP_PDB_IMAGE
-block|,
-literal|"image"
-block|,
-literal|"Input image"
-block|}
-block|,
-block|{
-name|GIMP_PDB_DRAWABLE
-block|,
-literal|"drawable"
-block|,
-literal|"Drawable to save"
-block|}
-block|,
-block|{
-name|GIMP_PDB_STRING
-block|,
-literal|"filename"
-block|,
-literal|"The name of the file to save the image in"
-block|}
-block|,
-block|{
-name|GIMP_PDB_STRING
-block|,
-literal|"raw_filename"
-block|,
-literal|"The name entered"
-block|}
-block|}
-decl_stmt|;
-name|gimp_install_procedure
-argument_list|(
-literal|"file_pcx_load"
-argument_list|,
-literal|"Loads files in Zsoft PCX file format"
-argument_list|,
-literal|"FIXME: write help for pcx_load"
-argument_list|,
-literal|"Francisco Bustamante& Nick Lamb"
-argument_list|,
-literal|"Nick Lamb<njl195@zepler.org.uk>"
-argument_list|,
-literal|"January 1997"
-argument_list|,
-name|N_
-argument_list|(
-literal|"ZSoft PCX image"
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|,
-name|GIMP_PLUGIN
-argument_list|,
-name|G_N_ELEMENTS
-argument_list|(
-name|load_args
-argument_list|)
-argument_list|,
-name|G_N_ELEMENTS
-argument_list|(
-name|load_return_vals
-argument_list|)
-argument_list|,
-name|load_args
-argument_list|,
-name|load_return_vals
-argument_list|)
-expr_stmt|;
-name|gimp_register_file_handler_mime
-argument_list|(
-literal|"file_pcx_load"
-argument_list|,
-literal|"image/x-pcx"
-argument_list|)
-expr_stmt|;
-name|gimp_register_magic_load_handler
-argument_list|(
-literal|"file_pcx_load"
-argument_list|,
-literal|"pcx,pcc"
-argument_list|,
-literal|""
-argument_list|,
-literal|"0&,byte,10,2&,byte,1,3&,byte,>0,3,byte,<9"
-argument_list|)
-expr_stmt|;
-name|gimp_install_procedure
-argument_list|(
-literal|"file_pcx_save"
-argument_list|,
-literal|"Saves files in ZSoft PCX file format"
-argument_list|,
-literal|"FIXME: write help for pcx_save"
-argument_list|,
-literal|"Francisco Bustamante& Nick Lamb"
-argument_list|,
-literal|"Nick Lamb<njl195@zepler.org.uk>"
-argument_list|,
-literal|"January 1997"
-argument_list|,
-name|N_
-argument_list|(
-literal|"ZSoft PCX image"
-argument_list|)
-argument_list|,
-literal|"INDEXED, RGB, GRAY"
-argument_list|,
-name|GIMP_PLUGIN
-argument_list|,
-name|G_N_ELEMENTS
-argument_list|(
-name|save_args
-argument_list|)
-argument_list|,
-literal|0
-argument_list|,
-name|save_args
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_register_file_handler_mime
-argument_list|(
-literal|"file_pcx_save"
-argument_list|,
-literal|"image/x-pcx"
-argument_list|)
-expr_stmt|;
-name|gimp_register_save_handler
-argument_list|(
-literal|"file_pcx_save"
-argument_list|,
-literal|"pcx,pcc"
-argument_list|,
-literal|""
-argument_list|)
-expr_stmt|;
-block|}
-end_function
+function_decl|;
+end_function_decl
 
-begin_comment
-comment|/* Declare internal functions. */
-end_comment
+begin_function_decl
+specifier|static
+name|void
+name|run
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|name
+parameter_list|,
+name|gint
+name|nparams
+parameter_list|,
+specifier|const
+name|GimpParam
+modifier|*
+name|param
+parameter_list|,
+name|gint
+modifier|*
+name|nreturn_vals
+parameter_list|,
+name|GimpParam
+modifier|*
+modifier|*
+name|return_vals
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 specifier|static
@@ -636,9 +417,244 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/* Plug-in implementation */
-end_comment
+begin_decl_stmt
+DECL|variable|PLUG_IN_INFO
+name|GimpPlugInInfo
+name|PLUG_IN_INFO
+init|=
+block|{
+name|NULL
+block|,
+comment|/* init_proc  */
+name|NULL
+block|,
+comment|/* quit_proc  */
+name|query
+block|,
+comment|/* query_proc */
+name|run
+block|,
+comment|/* run_proc   */
+block|}
+decl_stmt|;
+end_decl_stmt
+
+begin_macro
+DECL|function|MAIN ()
+name|MAIN
+argument_list|()
+end_macro
+
+begin_function
+specifier|static
+name|void
+name|query
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+specifier|static
+name|GimpParamDef
+name|load_args
+index|[]
+init|=
+block|{
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"run-mode"
+block|,
+literal|"Interactive, non-interactive"
+block|}
+block|,
+block|{
+name|GIMP_PDB_STRING
+block|,
+literal|"filename"
+block|,
+literal|"The name of the file to load"
+block|}
+block|,
+block|{
+name|GIMP_PDB_STRING
+block|,
+literal|"raw-filename"
+block|,
+literal|"The name entered"
+block|}
+block|}
+decl_stmt|;
+specifier|static
+name|GimpParamDef
+name|load_return_vals
+index|[]
+init|=
+block|{
+block|{
+name|GIMP_PDB_IMAGE
+block|,
+literal|"image"
+block|,
+literal|"Output image"
+block|}
+block|}
+decl_stmt|;
+specifier|static
+name|GimpParamDef
+name|save_args
+index|[]
+init|=
+block|{
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"run-mode"
+block|,
+literal|"Interactive, non-interactive"
+block|}
+block|,
+block|{
+name|GIMP_PDB_IMAGE
+block|,
+literal|"image"
+block|,
+literal|"Input image"
+block|}
+block|,
+block|{
+name|GIMP_PDB_DRAWABLE
+block|,
+literal|"drawable"
+block|,
+literal|"Drawable to save"
+block|}
+block|,
+block|{
+name|GIMP_PDB_STRING
+block|,
+literal|"filename"
+block|,
+literal|"The name of the file to save the image in"
+block|}
+block|,
+block|{
+name|GIMP_PDB_STRING
+block|,
+literal|"raw-filename"
+block|,
+literal|"The name entered"
+block|}
+block|}
+decl_stmt|;
+name|gimp_install_procedure
+argument_list|(
+name|LOAD_PROC
+argument_list|,
+literal|"Loads files in Zsoft PCX file format"
+argument_list|,
+literal|"FIXME: write help for pcx_load"
+argument_list|,
+literal|"Francisco Bustamante& Nick Lamb"
+argument_list|,
+literal|"Nick Lamb<njl195@zepler.org.uk>"
+argument_list|,
+literal|"January 1997"
+argument_list|,
+name|N_
+argument_list|(
+literal|"ZSoft PCX image"
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_PLUGIN
+argument_list|,
+name|G_N_ELEMENTS
+argument_list|(
+name|load_args
+argument_list|)
+argument_list|,
+name|G_N_ELEMENTS
+argument_list|(
+name|load_return_vals
+argument_list|)
+argument_list|,
+name|load_args
+argument_list|,
+name|load_return_vals
+argument_list|)
+expr_stmt|;
+name|gimp_register_file_handler_mime
+argument_list|(
+name|LOAD_PROC
+argument_list|,
+literal|"image/x-pcx"
+argument_list|)
+expr_stmt|;
+name|gimp_register_magic_load_handler
+argument_list|(
+name|LOAD_PROC
+argument_list|,
+literal|"pcx,pcc"
+argument_list|,
+literal|""
+argument_list|,
+literal|"0&,byte,10,2&,byte,1,3&,byte,>0,3,byte,<9"
+argument_list|)
+expr_stmt|;
+name|gimp_install_procedure
+argument_list|(
+name|SAVE_PROC
+argument_list|,
+literal|"Saves files in ZSoft PCX file format"
+argument_list|,
+literal|"FIXME: write help for pcx_save"
+argument_list|,
+literal|"Francisco Bustamante& Nick Lamb"
+argument_list|,
+literal|"Nick Lamb<njl195@zepler.org.uk>"
+argument_list|,
+literal|"January 1997"
+argument_list|,
+name|N_
+argument_list|(
+literal|"ZSoft PCX image"
+argument_list|)
+argument_list|,
+literal|"INDEXED, RGB, GRAY"
+argument_list|,
+name|GIMP_PLUGIN
+argument_list|,
+name|G_N_ELEMENTS
+argument_list|(
+name|save_args
+argument_list|)
+argument_list|,
+literal|0
+argument_list|,
+name|save_args
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_register_file_handler_mime
+argument_list|(
+name|SAVE_PROC
+argument_list|,
+literal|"image/x-pcx"
+argument_list|)
+expr_stmt|;
+name|gimp_register_save_handler
+argument_list|(
+name|SAVE_PROC
+argument_list|,
+literal|"pcx,pcc"
+argument_list|,
+literal|""
+argument_list|)
+expr_stmt|;
+block|}
+end_function
 
 begin_function
 specifier|static
@@ -745,7 +761,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_pcx_load"
+name|LOAD_PROC
 argument_list|)
 operator|==
 literal|0
@@ -814,7 +830,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_pcx_save"
+name|SAVE_PROC
 argument_list|)
 operator|==
 literal|0
@@ -856,7 +872,7 @@ name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|gimp_ui_init
 argument_list|(
-literal|"pcx"
+name|PLUG_IN_BINARY
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1029,7 +1045,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c6410b80108
+DECL|struct|__anon2bd0da590108
 block|{
 DECL|member|manufacturer
 name|guint8
@@ -2438,7 +2454,8 @@ modifier|*
 name|cmap
 init|=
 name|NULL
-decl_stmt|,
+decl_stmt|;
+name|guchar
 modifier|*
 name|pixels
 decl_stmt|;
@@ -2451,7 +2468,7 @@ name|width
 decl_stmt|,
 name|height
 decl_stmt|;
-name|int
+name|gint
 name|colors
 decl_stmt|,
 name|i

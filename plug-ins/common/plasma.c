@@ -54,6 +54,22 @@ comment|/* Some useful macros */
 end_comment
 
 begin_define
+DECL|macro|PLUG_IN_PROC
+define|#
+directive|define
+name|PLUG_IN_PROC
+value|"plug-in-plasma"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"plasma"
+end_define
+
+begin_define
 DECL|macro|SCALE_WIDTH
 define|#
 directive|define
@@ -72,7 +88,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c619e480108
+DECL|struct|__anon27af1bbf0108
 block|{
 DECL|member|seed
 name|guint32
@@ -498,7 +514,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -538,7 +554,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_plasma"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"Create a plasma cloud like image on the "
 literal|"specified drawable"
@@ -574,7 +590,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_plasma"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Render/Clouds"
 argument_list|)
@@ -700,7 +716,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_plasma"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|pvals
@@ -794,7 +810,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_plasma"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|pvals
@@ -886,7 +902,7 @@ operator|)
 condition|)
 name|gimp_set_data
 argument_list|(
-literal|"plug_in_plasma"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|pvals
@@ -966,7 +982,7 @@ name|run
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"plasma"
+name|PLUG_IN_BINARY
 argument_list|,
 name|TRUE
 argument_list|)
@@ -980,7 +996,7 @@ argument_list|(
 literal|"Plasma"
 argument_list|)
 argument_list|,
-literal|"plasma"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -988,7 +1004,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"plug-in-plasma"
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

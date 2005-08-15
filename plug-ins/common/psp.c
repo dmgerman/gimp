@@ -7,6 +7,30 @@ begin_comment
 comment|/*  *  * Work in progress! Doesn't handle saving yet.  *  * For a copy of the PSP file format documentation, surf to  * http://www.jasc.com.  *  */
 end_comment
 
+begin_define
+DECL|macro|LOAD_PROC
+define|#
+directive|define
+name|LOAD_PROC
+value|"file-psp-load"
+end_define
+
+begin_define
+DECL|macro|SAVE_PROC
+define|#
+directive|define
+name|SAVE_PROC
+value|"file-psp-save"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"psp"
+end_define
+
 begin_comment
 comment|/* set to the level of debugging output you want, 0 for none */
 end_comment
@@ -109,7 +133,7 @@ comment|/* Block identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b9a76580103
+DECL|enum|__anon2a471e050103
 typedef|typedef
 enum|enum
 block|{
@@ -173,7 +197,7 @@ comment|/* Bitmap type.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b9a76580203
+DECL|enum|__anon2a471e050203
 typedef|typedef
 enum|enum
 block|{
@@ -213,7 +237,7 @@ comment|/* Channel types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b9a76580303
+DECL|enum|__anon2a471e050303
 typedef|typedef
 enum|enum
 block|{
@@ -245,7 +269,7 @@ comment|/* Possible metrics used to measure resolution.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b9a76580403
+DECL|enum|__anon2a471e050403
 typedef|typedef
 enum|enum
 block|{
@@ -273,7 +297,7 @@ comment|/* Possible types of compression.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b9a76580503
+DECL|enum|__anon2a471e050503
 typedef|typedef
 enum|enum
 block|{
@@ -301,7 +325,7 @@ comment|/* Picture tube placement mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b9a76580603
+DECL|enum|__anon2a471e050603
 typedef|typedef
 enum|enum
 block|{
@@ -323,7 +347,7 @@ comment|/* Picture tube selection mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b9a76580703
+DECL|enum|__anon2a471e050703
 typedef|typedef
 enum|enum
 block|{
@@ -359,7 +383,7 @@ comment|/* Extended data field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b9a76580803
+DECL|enum|__anon2a471e050803
 typedef|typedef
 enum|enum
 block|{
@@ -379,7 +403,7 @@ comment|/* Creator field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b9a76580903
+DECL|enum|__anon2a471e050903
 typedef|typedef
 enum|enum
 block|{
@@ -427,7 +451,7 @@ comment|/* Creator application identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b9a76580a03
+DECL|enum|__anon2a471e050a03
 typedef|typedef
 enum|enum
 block|{
@@ -451,7 +475,7 @@ comment|/* Layer types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b9a76580b03
+DECL|enum|__anon2a471e050b03
 typedef|typedef
 enum|enum
 block|{
@@ -512,7 +536,7 @@ comment|/* The following have been reverse engineered.  * If a new version of th
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b9a76580c03
+DECL|enum|__anon2a471e050c03
 typedef|typedef
 enum|enum
 block|{
@@ -585,7 +609,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9a76580d08
+DECL|struct|__anon2a471e050d08
 block|{
 DECL|member|width
 DECL|member|height
@@ -737,7 +761,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9a76580e08
+DECL|struct|__anon2a471e050e08
 block|{
 DECL|member|compression
 name|PSPCompression
@@ -795,7 +819,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -811,7 +835,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"raw_filename"
+literal|"raw-filename"
 block|,
 literal|"The name of the file to load"
 block|}
@@ -832,19 +856,15 @@ literal|"Output image"
 block|}
 block|}
 decl_stmt|;
-comment|/*    static GimpParamDef save_args[] = */
-comment|/*    { */
-comment|/*      { GIMP_PDB_INT32, "run_mode", "Interactive, non-interactive" }, */
-comment|/*      { GIMP_PDB_IMAGE, "image", "Input image" }, */
-comment|/*      { GIMP_PDB_DRAWABLE, "drawable", "Drawable to save" }, */
-comment|/*      { GIMP_PDB_STRING, "filename", "The name of the file to save the image in" }, */
-comment|/*      { GIMP_PDB_STRING, "raw_filename", "The name of the file to save the image in" }, */
-comment|/*      { GIMP_PDB_INT32, "compression", "Specify 0 for no compression, " */
-comment|/*        "1 for RLE, and 2 for LZ77" } */
-comment|/*    }; */
+if|#
+directive|if
+literal|0
+block|static GimpParamDef save_args[] =   {     { GIMP_PDB_INT32,    "run-mode",     "Interactive, non-interactive" },     { GIMP_PDB_IMAGE,    "image",        "Input image" },     { GIMP_PDB_DRAWABLE, "drawable",     "Drawable to save" },     { GIMP_PDB_STRING,   "filename",     "The name of the file to save the image in" },     { GIMP_PDB_STRING,   "raw-filename", "The name of the file to save the image in" },     { GIMP_PDB_INT32,    "compression",  "Specify 0 for no compression, 1 for RLE, and 2 for LZ77" }   };
+endif|#
+directive|endif
 name|gimp_install_procedure
 argument_list|(
-literal|"file_psp_load"
+name|LOAD_PROC
 argument_list|,
 literal|"loads images from the Paint Shop Pro PSP file format"
 argument_list|,
@@ -885,14 +905,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_file_handler_mime
 argument_list|(
-literal|"file_psp_load"
+name|LOAD_PROC
 argument_list|,
 literal|"image/x-psp"
 argument_list|)
 expr_stmt|;
 name|gimp_register_magic_load_handler
 argument_list|(
-literal|"file_psp_load"
+name|LOAD_PROC
 argument_list|,
 literal|"psp,tub"
 argument_list|,
@@ -901,7 +921,13 @@ argument_list|,
 literal|"0,string,Paint\\040Shop\\040Pro\\040Image\\040File\n\032"
 argument_list|)
 expr_stmt|;
-comment|/* Removed until Saving is implemented -- njl195@zepler.org   gimp_install_procedure ("file_psp_save",                           "saves images in the Paint Shop Pro PSP file format",                           "This plug-in loads and saves images in " 			  "Paint Shop Pro's native PSP format. " 			  "Vector layers aren't handled. Saving isn't " 			  "yet implemented.",                           "Tor Lillqvist",                           "Tor Lillqvist",                           "1999",                           N_("Paint Shop Pro image"), 			  "RGB*, GRAY*, INDEXED*",                           GIMP_PLUGIN,                           G_N_ELEMENTS (save_args), 0,                           save_args, NULL);    gimp_register_save_handler ("file_psp_save", "psp,tub", ""); */
+comment|/* Removed until Saving is implemented -- njl195@zepler.org */
+if|#
+directive|if
+literal|0
+block|gimp_install_procedure (SAVE_PROC,                           "saves images in the Paint Shop Pro PSP file format",                           "This plug-in loads and saves images in " 			  "Paint Shop Pro's native PSP format. " 			  "Vector layers aren't handled. Saving isn't " 			  "yet implemented.",                           "Tor Lillqvist",                           "Tor Lillqvist",                           "1999",                           N_("Paint Shop Pro image"), 			  "RGB*, GRAY*, INDEXED*",                           GIMP_PLUGIN,                           G_N_ELEMENTS (save_args), 0,                           save_args, NULL);    gimp_register_save_handler (SAVE_PROC, "psp,tub", "");
+endif|#
+directive|endif
 block|}
 end_function
 
@@ -934,7 +960,7 @@ argument_list|(
 literal|"Save as PSP"
 argument_list|)
 argument_list|,
-literal|"psp"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -942,7 +968,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"file-psp-load"
+name|SAVE_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
@@ -6886,7 +6912,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_psp_load"
+name|LOAD_PROC
 argument_list|)
 operator|==
 literal|0
@@ -6955,7 +6981,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_psp_save"
+name|SAVE_PROC
 argument_list|)
 operator|==
 literal|0
@@ -6997,7 +7023,7 @@ name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|gimp_ui_init
 argument_list|(
-literal|"psp"
+name|PLUG_IN_BINARY
 argument_list|,
 name|FALSE
 argument_list|)
@@ -7014,7 +7040,6 @@ name|drawable_ID
 argument_list|,
 literal|"PSP"
 argument_list|,
-operator|(
 name|GIMP_EXPORT_CAN_HANDLE_RGB
 operator||
 name|GIMP_EXPORT_CAN_HANDLE_GRAY
@@ -7024,7 +7049,6 @@ operator||
 name|GIMP_EXPORT_CAN_HANDLE_ALPHA
 operator||
 name|GIMP_EXPORT_CAN_HANDLE_LAYERS
-operator|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -7062,7 +7086,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"file_pnm_save"
+name|SAVE_PROC
 argument_list|,
 operator|&
 name|psvals
@@ -7151,7 +7175,7 @@ name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|gimp_get_data
 argument_list|(
-literal|"file_psp_save"
+name|SAVE_PROC
 argument_list|,
 operator|&
 name|psvals
@@ -7189,7 +7213,7 @@ condition|)
 block|{
 name|gimp_set_data
 argument_list|(
-literal|"file_psp_save"
+name|SAVE_PROC
 argument_list|,
 operator|&
 name|psvals

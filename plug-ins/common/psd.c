@@ -23,6 +23,22 @@ begin_comment
 comment|/* *** USER DEFINES *** */
 end_comment
 
+begin_define
+DECL|macro|LOAD_PROC
+define|#
+directive|define
+name|LOAD_PROC
+value|"file-psd-load"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"psd"
+end_define
+
 begin_comment
 comment|/* set to TRUE if you want debugging, FALSE otherwise */
 end_comment
@@ -120,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2aded26a0103
+DECL|enum|__anon2961f1b40103
 block|{
 DECL|enumerator|PSD_UNKNOWN_IMAGE
 name|PSD_UNKNOWN_IMAGE
@@ -308,7 +324,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aded26a0208
+DECL|struct|__anon2961f1b40208
 block|{
 DECL|member|hRes
 name|Fixed
@@ -557,7 +573,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2aded26a0308
+DECL|struct|__anon2961f1b40308
 block|{
 DECL|member|signature
 name|gchar
@@ -1064,7 +1080,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -1080,7 +1096,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"raw_filename"
+literal|"raw-filename"
 block|,
 literal|"The name of the file to load"
 block|}
@@ -1103,11 +1119,14 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"file_psd_load"
+name|LOAD_PROC
 argument_list|,
 literal|"loads files of the Photoshop(tm) PSD file format"
 argument_list|,
-literal|"This filter loads files of Adobe Photoshop(tm) native PSD format.  These files may be of any image type supported by GIMP, with or without layers, layer masks, aux channels and guides."
+literal|"This filter loads files of Adobe Photoshop(tm) "
+literal|"native PSD format.  These files may be of any "
+literal|"image type supported by GIMP, with or without "
+literal|"layers, layer masks, aux channels and guides."
 argument_list|,
 literal|"Adam D. Moss& Torsten Martinsen"
 argument_list|,
@@ -1138,14 +1157,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_file_handler_mime
 argument_list|(
-literal|"file_psd_load"
+name|LOAD_PROC
 argument_list|,
 literal|"image/x-psd"
 argument_list|)
 expr_stmt|;
 name|gimp_register_magic_load_handler
 argument_list|(
-literal|"file_psd_load"
+name|LOAD_PROC
 argument_list|,
 literal|"psd"
 argument_list|,
@@ -1196,7 +1215,6 @@ decl_stmt|;
 name|GimpRunMode
 name|run_mode
 decl_stmt|;
-comment|/*  GimpPDBStatusType status = GIMP_PDB_SUCCESS;*/
 name|gint32
 name|image_ID
 decl_stmt|;
@@ -1247,7 +1265,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_psd_load"
+name|LOAD_PROC
 argument_list|)
 operator|==
 literal|0
@@ -1326,20 +1344,6 @@ operator|=
 name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
-block|}
-else|else
-block|{
-name|values
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
-operator|=
-name|GIMP_PDB_CALLING_ERROR
-expr_stmt|;
 block|}
 block|}
 end_function
