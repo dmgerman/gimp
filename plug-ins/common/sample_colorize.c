@@ -341,7 +341,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b41f140108
+DECL|struct|__anon2c40ad030108
 block|{
 DECL|member|dst_id
 name|gint32
@@ -410,7 +410,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b41f140208
+DECL|struct|__anon2c40ad030208
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -518,7 +518,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b41f140308
+DECL|struct|__anon2c40ad030308
 block|{
 DECL|member|color
 name|guchar
@@ -547,7 +547,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b41f140408
+DECL|struct|__anon2c40ad030408
 block|{
 DECL|member|all_samples
 name|gint32
@@ -574,7 +574,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b41f140508
+DECL|struct|__anon2c40ad030508
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -2321,7 +2321,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|smp_constrain (gint32 image_id,gint32 drawable_id)
+DECL|function|smp_constrain (gint32 image_id,gint32 drawable_id,gpointer data)
 name|smp_constrain
 parameter_list|(
 name|gint32
@@ -2329,6 +2329,9 @@ name|image_id
 parameter_list|,
 name|gint32
 name|drawable_id
+parameter_list|,
+name|gpointer
+name|data
 parameter_list|)
 block|{
 if|if
