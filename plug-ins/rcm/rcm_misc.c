@@ -1550,20 +1550,20 @@ end_comment
 
 begin_function
 name|void
-DECL|function|rcm_render_preview (GtkWidget * preview,gint version)
+DECL|function|rcm_render_preview (GtkWidget * preview)
 name|rcm_render_preview
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|preview
-parameter_list|,
-name|gint
-name|version
 parameter_list|)
 block|{
 name|ReducedImage
 modifier|*
 name|reduced
+decl_stmt|;
+name|gint
+name|version
 decl_stmt|;
 name|gint
 name|RW
@@ -1575,7 +1575,8 @@ decl_stmt|,
 name|i
 decl_stmt|,
 name|j
-decl_stmt|,
+decl_stmt|;
+name|gboolean
 name|unchanged
 decl_stmt|,
 name|skip
@@ -1607,12 +1608,26 @@ decl_stmt|;
 name|gfloat
 name|degree
 decl_stmt|;
-comment|/* init some variables */
 name|g_return_if_fail
 argument_list|(
 name|preview
 operator|!=
 name|NULL
+argument_list|)
+expr_stmt|;
+name|version
+operator|=
+name|GPOINTER_TO_INT
+argument_list|(
+name|g_object_get_data
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|preview
+argument_list|)
+argument_list|,
+literal|"mode"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|reduced
@@ -1703,14 +1718,12 @@ control|)
 block|{
 name|unchanged
 operator|=
-literal|1
+name|TRUE
 expr_stmt|;
-comment|/* TRUE */
 name|skip
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
-comment|/* FALSE */
 name|H
 operator|=
 name|hsv_array
@@ -1837,7 +1850,7 @@ block|}
 else|else
 name|skip
 operator|=
-literal|1
+name|TRUE
 expr_stmt|;
 break|break;
 case|case
@@ -1845,11 +1858,11 @@ name|GRAY_TO
 case|:
 name|unchanged
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 name|skip
 operator|=
-literal|1
+name|TRUE
 expr_stmt|;
 name|gimp_hsv_to_rgb4
 argument_list|(
@@ -1885,7 +1898,7 @@ condition|)
 block|{
 name|unchanged
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 name|H
 operator|=

@@ -93,13 +93,17 @@ name|rcm_reduce_image
 parameter_list|(
 name|GimpDrawable
 modifier|*
+name|drawable
 parameter_list|,
 name|GimpDrawable
 modifier|*
+name|mask
 parameter_list|,
 name|gint
+name|longer_size
 parameter_list|,
 name|gint
+name|selection
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -110,8 +114,7 @@ name|rcm_render_preview
 parameter_list|(
 name|GtkWidget
 modifier|*
-parameter_list|,
-name|gint
+name|preview
 parameter_list|)
 function_decl|;
 end_function_decl
