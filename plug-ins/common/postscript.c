@@ -174,6 +174,70 @@ directive|endif
 end_endif
 
 begin_define
+DECL|macro|LOAD_PS_PROC
+define|#
+directive|define
+name|LOAD_PS_PROC
+value|"file-ps-load"
+end_define
+
+begin_define
+DECL|macro|LOAD_EPS_PROC
+define|#
+directive|define
+name|LOAD_EPS_PROC
+value|"file-eps-load"
+end_define
+
+begin_define
+DECL|macro|LOAD_PDF_PROC
+define|#
+directive|define
+name|LOAD_PDF_PROC
+value|"file-pdf-load"
+end_define
+
+begin_define
+DECL|macro|LOAD_PS_SETARGS_PROC
+define|#
+directive|define
+name|LOAD_PS_SETARGS_PROC
+value|"file-ps-load-setargs"
+end_define
+
+begin_define
+DECL|macro|LOAD_PS_THUMB_PROC
+define|#
+directive|define
+name|LOAD_PS_THUMB_PROC
+value|"file-ps-load-thumb"
+end_define
+
+begin_define
+DECL|macro|SAVE_PS_PROC
+define|#
+directive|define
+name|SAVE_PS_PROC
+value|"file-ps-save"
+end_define
+
+begin_define
+DECL|macro|SAVE_EPS_PROC
+define|#
+directive|define
+name|SAVE_EPS_PROC
+value|"file-eps-save"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"postscript"
+end_define
+
+begin_define
 DECL|macro|STR_LENGTH
 define|#
 directive|define
@@ -224,7 +288,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a05a0ef0108
+DECL|struct|__anon2759a61d0108
 block|{
 DECL|member|resolution
 name|guint
@@ -313,7 +377,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a05a0ef0208
+DECL|struct|__anon2759a61d0208
 block|{
 DECL|member|width
 DECL|member|height
@@ -906,7 +970,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a05a0ef0308
+DECL|struct|__anon2759a61d0308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1772,7 +1836,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a05a0ef0408
+DECL|struct|__anon2759a61d0408
 block|{
 DECL|member|eol
 name|long
@@ -2009,7 +2073,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -2025,7 +2089,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"raw_filename"
+literal|"raw-filename"
 block|,
 literal|"The name of the file to load"
 block|}
@@ -2079,7 +2143,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"check_bbox"
+literal|"check-bbox"
 block|,
 literal|"0: Use width/height, 1: Use BoundingBox"
 block|}
@@ -2134,7 +2198,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"thumb_size"
+literal|"thumb-size"
 block|,
 literal|"Preferred thumbnail size"
 block|}
@@ -2164,7 +2228,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -2196,7 +2260,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"raw_filename"
+literal|"raw-filename"
 block|,
 literal|"The name of the file to save the image in"
 block|}
@@ -2220,7 +2284,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"x_offset"
+literal|"x-offset"
 block|,
 literal|"X-offset to image from lower left corner"
 block|}
@@ -2228,7 +2292,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"y_offset"
+literal|"y-offset"
 block|,
 literal|"Y-offset to image from lower left corner"
 block|}
@@ -2244,7 +2308,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"keep_ratio"
+literal|"keep-ratio"
 block|,
 literal|"0: use width/height, 1: keep aspect ratio"
 block|}
@@ -2260,7 +2324,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"eps_flag"
+literal|"eps-flag"
 block|,
 literal|"0: PostScript, 1: Encapsulated PostScript"
 block|}
@@ -2284,7 +2348,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"file_ps_load"
+name|LOAD_PS_PROC
 argument_list|,
 literal|"load PostScript documents"
 argument_list|,
@@ -2322,14 +2386,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_file_handler_mime
 argument_list|(
-literal|"file_ps_load"
+name|LOAD_PS_PROC
 argument_list|,
 literal|"application/postscript"
 argument_list|)
 expr_stmt|;
 name|gimp_register_magic_load_handler
 argument_list|(
-literal|"file_ps_load"
+name|LOAD_PS_PROC
 argument_list|,
 literal|"ps"
 argument_list|,
@@ -2340,7 +2404,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"file_eps_load"
+name|LOAD_EPS_PROC
 argument_list|,
 literal|"load Encapsulated PostScript images"
 argument_list|,
@@ -2378,14 +2442,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_file_handler_mime
 argument_list|(
-literal|"file_eps_load"
+name|LOAD_EPS_PROC
 argument_list|,
 literal|"image/x-eps"
 argument_list|)
 expr_stmt|;
 name|gimp_register_magic_load_handler
 argument_list|(
-literal|"file_eps_load"
+name|LOAD_EPS_PROC
 argument_list|,
 literal|"eps"
 argument_list|,
@@ -2399,7 +2463,7 @@ directive|ifndef
 name|HAVE_POPPLER
 name|gimp_install_procedure
 argument_list|(
-literal|"file_pdf_load"
+name|LOAD_PDF_PROC
 argument_list|,
 literal|"load PDF documents"
 argument_list|,
@@ -2437,14 +2501,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_file_handler_mime
 argument_list|(
-literal|"file_pdf_load"
+name|LOAD_PDF_PROC
 argument_list|,
 literal|"application/pdf"
 argument_list|)
 expr_stmt|;
 name|gimp_register_magic_load_handler
 argument_list|(
-literal|"file_pdf_load"
+name|LOAD_PDF_PROC
 argument_list|,
 literal|"pdf"
 argument_list|,
@@ -2457,7 +2521,7 @@ endif|#
 directive|endif
 name|gimp_install_procedure
 argument_list|(
-literal|"file_ps_load_setargs"
+name|LOAD_PS_SETARGS_PROC
 argument_list|,
 literal|"set additional parameters for procedure file_ps_load"
 argument_list|,
@@ -2489,7 +2553,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"file_ps_load_thumb"
+name|LOAD_PS_THUMB_PROC
 argument_list|,
 literal|"Loads a small preview from a Postscript or PDF document"
 argument_list|,
@@ -2524,16 +2588,16 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_thumbnail_loader
 argument_list|(
-literal|"file_ps_load"
+name|LOAD_PS_PROC
 argument_list|,
-literal|"file_ps_load_thumb"
+name|LOAD_PS_THUMB_PROC
 argument_list|)
 expr_stmt|;
 name|gimp_register_thumbnail_loader
 argument_list|(
-literal|"file_eps_load"
+name|LOAD_EPS_PROC
 argument_list|,
-literal|"file_ps_load_thumb"
+name|LOAD_PS_THUMB_PROC
 argument_list|)
 expr_stmt|;
 ifndef|#
@@ -2541,20 +2605,21 @@ directive|ifndef
 name|HAVE_POPPLER
 name|gimp_register_thumbnail_loader
 argument_list|(
-literal|"file_pdf_load"
+name|LOAD_PDF_PROC
 argument_list|,
-literal|"file_ps_load_thumb"
+name|LOAD_PS_THUMB_PROC
 argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
 name|gimp_install_procedure
 argument_list|(
-literal|"file_ps_save"
+name|SAVE_PS_PROC
 argument_list|,
 literal|"save image as PostScript docuement"
 argument_list|,
-literal|"PostScript saving handles all image types except those with alpha channels."
+literal|"PostScript saving handles all image types except "
+literal|"those with alpha channels."
 argument_list|,
 literal|"Peter Kirchgessner<peter@kirchgessner.net>"
 argument_list|,
@@ -2585,14 +2650,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_file_handler_mime
 argument_list|(
-literal|"file_ps_save"
+name|SAVE_PS_PROC
 argument_list|,
 literal|"application/postscript"
 argument_list|)
 expr_stmt|;
 name|gimp_register_save_handler
 argument_list|(
-literal|"file_ps_save"
+name|SAVE_PS_PROC
 argument_list|,
 literal|"ps"
 argument_list|,
@@ -2601,11 +2666,12 @@ argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"file_eps_save"
+name|SAVE_EPS_PROC
 argument_list|,
 literal|"save image as Encapsulated PostScript image"
 argument_list|,
-literal|"PostScript saving handles all image types except those with alpha channels."
+literal|"PostScript saving handles all image types except "
+literal|"those with alpha channels."
 argument_list|,
 literal|"Peter Kirchgessner<peter@kirchgessner.net>"
 argument_list|,
@@ -2636,14 +2702,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_file_handler_mime
 argument_list|(
-literal|"file_eps_save"
+name|SAVE_EPS_PROC
 argument_list|,
 literal|"application/x-eps"
 argument_list|)
 expr_stmt|;
 name|gimp_register_save_handler
 argument_list|(
-literal|"file_eps_save"
+name|SAVE_EPS_PROC
 argument_list|,
 literal|"eps"
 argument_list|,
@@ -2936,7 +3002,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_ps_load"
+name|LOAD_PS_PROC
 argument_list|)
 operator|==
 literal|0
@@ -2945,7 +3011,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_eps_load"
+name|LOAD_EPS_PROC
 argument_list|)
 operator|==
 literal|0
@@ -2954,7 +3020,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_pdf_load"
+name|LOAD_PDF_PROC
 argument_list|)
 operator|==
 literal|0
@@ -2971,7 +3037,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"file_ps_load"
+name|LOAD_PS_PROC
 argument_list|,
 operator|&
 name|plvals
@@ -2996,7 +3062,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_pdf_load"
+name|LOAD_PDF_PROC
 argument_list|)
 argument_list|)
 condition|)
@@ -3023,7 +3089,7 @@ else|else
 comment|/* Get additional interpretation arguments */
 name|gimp_get_data
 argument_list|(
-literal|"file_ps_load"
+name|LOAD_PS_PROC
 argument_list|,
 operator|&
 name|plvals
@@ -3036,7 +3102,7 @@ case|:
 comment|/* Possibly retrieve data */
 name|gimp_get_data
 argument_list|(
-literal|"file_ps_load"
+name|LOAD_PS_PROC
 argument_list|,
 operator|&
 name|plvals
@@ -3121,7 +3187,7 @@ name|GIMP_PDB_SUCCESS
 condition|)
 name|gimp_set_data
 argument_list|(
-literal|"file_ps_load"
+name|LOAD_PS_PROC
 argument_list|,
 operator|&
 name|plvals
@@ -3140,7 +3206,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_ps_load_thumb"
+name|LOAD_PS_THUMB_PROC
 argument_list|)
 operator|==
 literal|0
@@ -3269,7 +3335,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_ps_save"
+name|SAVE_PS_PROC
 argument_list|)
 operator|==
 literal|0
@@ -3278,7 +3344,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_eps_save"
+name|SAVE_EPS_PROC
 argument_list|)
 operator|==
 literal|0
@@ -3292,7 +3358,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_ps_save"
+name|SAVE_PS_PROC
 argument_list|)
 expr_stmt|;
 name|image_ID
@@ -3333,7 +3399,7 @@ name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|gimp_ui_init
 argument_list|(
-literal|"ps"
+name|PLUG_IN_BINARY
 argument_list|,
 name|FALSE
 argument_list|)
@@ -3714,7 +3780,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_ps_load_setargs"
+name|LOAD_PS_SETARGS_PROC
 argument_list|)
 operator|==
 literal|0
@@ -3893,7 +3959,7 @@ argument_list|()
 expr_stmt|;
 name|gimp_set_data
 argument_list|(
-literal|"file_ps_load"
+name|LOAD_PS_PROC
 argument_list|,
 operator|&
 name|plvals
@@ -14456,7 +14522,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"ps"
+name|PLUG_IN_BINARY
 argument_list|,
 name|FALSE
 argument_list|)
@@ -14470,7 +14536,7 @@ argument_list|(
 literal|"Load PostScript"
 argument_list|)
 argument_list|,
-literal|"ps"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -14478,7 +14544,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"file-ps-load"
+name|LOAD_PS_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
@@ -15762,7 +15828,7 @@ argument_list|(
 literal|"Save as PostScript"
 argument_list|)
 argument_list|,
-literal|"ps"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -15770,7 +15836,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"file-ps-save"
+name|SAVE_PS_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
@@ -15781,6 +15847,21 @@ argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_dialog_set_alternative_button_order
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|,
+name|GTK_RESPONSE_OK
+argument_list|,
+name|GTK_RESPONSE_CANCEL
+argument_list|,
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 comment|/* Main hbox */

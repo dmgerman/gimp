@@ -39,6 +39,30 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_define
+DECL|macro|LOAD_PROC
+define|#
+directive|define
+name|LOAD_PROC
+value|"file-pdf-load"
+end_define
+
+begin_define
+DECL|macro|LOAD_THUMB_PROC
+define|#
+directive|define
+name|LOAD_THUMB_PROC
+value|"file-pdf-load-thumb"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"poppler"
+end_define
+
 begin_comment
 comment|/* Structs for the load dialog */
 end_comment
@@ -46,7 +70,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d7a57a0108
+DECL|struct|__anon29c000380108
 block|{
 DECL|member|resolution
 name|gdouble
@@ -81,7 +105,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d7a57a0208
+DECL|struct|__anon29c000380208
 block|{
 DECL|member|n_pages
 name|gint
@@ -292,7 +316,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -308,7 +332,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"raw_filename"
+literal|"raw-filename"
 block|,
 literal|"The name entered"
 block|}
@@ -332,7 +356,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"n_pages"
+literal|"n-pages"
 block|,
 literal|"Number of pages to load (0 for all)"
 block|}
@@ -378,7 +402,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"thumb_size"
+literal|"thumb-size"
 block|,
 literal|"Preferred thumbnail size"
 block|}
@@ -401,7 +425,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"image_width"
+literal|"image-width"
 block|,
 literal|"Width of full-sized image"
 block|}
@@ -409,7 +433,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"image_height"
+literal|"image-height"
 block|,
 literal|"Height of full-sized image"
 block|}
@@ -417,7 +441,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"file_pdf_load"
+name|LOAD_PROC
 argument_list|,
 literal|"Load file in PDF format."
 argument_list|,
@@ -459,14 +483,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_file_handler_mime
 argument_list|(
-literal|"file_pdf_load"
+name|LOAD_PROC
 argument_list|,
 literal|"application/pdf"
 argument_list|)
 expr_stmt|;
 name|gimp_register_magic_load_handler
 argument_list|(
-literal|"file_pdf_load"
+name|LOAD_PROC
 argument_list|,
 literal|"pdf"
 argument_list|,
@@ -477,7 +501,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"file_pdf_load_thumb"
+name|LOAD_THUMB_PROC
 argument_list|,
 literal|"Loads a preview from a PDF file."
 argument_list|,
@@ -514,9 +538,9 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_thumbnail_loader
 argument_list|(
-literal|"file_pdf_load"
+name|LOAD_PROC
 argument_list|,
-literal|"file_pdf_load_thumb"
+name|LOAD_THUMB_PROC
 argument_list|)
 expr_stmt|;
 block|}
@@ -639,7 +663,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_pdf_load"
+name|LOAD_PROC
 argument_list|)
 operator|==
 literal|0
@@ -667,7 +691,7 @@ case|:
 comment|/* Possibly retrieve last settings */
 name|gimp_get_data
 argument_list|(
-literal|"file_pdf_load"
+name|LOAD_PROC
 argument_list|,
 operator|&
 name|loadvals
@@ -710,7 +734,7 @@ argument_list|)
 condition|)
 name|gimp_set_data
 argument_list|(
-literal|"file_pdf_load"
+name|LOAD_PROC
 argument_list|,
 operator|&
 name|loadvals
@@ -844,7 +868,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_pdf_load_thumb"
+name|LOAD_THUMB_PROC
 argument_list|)
 operator|==
 literal|0
@@ -892,7 +916,7 @@ decl_stmt|;
 comment|/* Possibly retrieve last settings */
 name|gimp_get_data
 argument_list|(
-literal|"file_pdf_load"
+name|LOAD_PROC
 argument_list|,
 operator|&
 name|loadvals
@@ -991,6 +1015,11 @@ argument_list|,
 name|GIMP_RGB
 argument_list|)
 expr_stmt|;
+name|gimp_image_undo_disable
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
 name|layer_from_pixbuf
 argument_list|(
 name|image
@@ -1004,6 +1033,16 @@ argument_list|,
 literal|0.0
 argument_list|,
 literal|1.0
+argument_list|)
+expr_stmt|;
+name|gimp_image_undo_enable
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
+name|gimp_image_clean_all
+argument_list|(
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -1594,37 +1633,13 @@ name|image
 init|=
 literal|0
 decl_stmt|;
-name|double
-name|scale
-decl_stmt|;
-name|PopplerPage
-modifier|*
-name|page
-decl_stmt|;
-name|gchar
-modifier|*
-name|page_label
-decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
-name|double
-name|page_width
+name|gdouble
+name|scale
 decl_stmt|;
-name|double
-name|page_height
-decl_stmt|;
-name|GdkPixbuf
-modifier|*
-name|buf
-decl_stmt|;
-name|gint
-name|width
-decl_stmt|;
-name|gint
-name|height
-decl_stmt|;
-name|double
+name|gdouble
 name|doc_progress
 init|=
 literal|0
@@ -1679,6 +1694,30 @@ name|i
 operator|++
 control|)
 block|{
+name|PopplerPage
+modifier|*
+name|page
+decl_stmt|;
+name|gchar
+modifier|*
+name|page_label
+decl_stmt|;
+name|gdouble
+name|page_width
+decl_stmt|;
+name|gdouble
+name|page_height
+decl_stmt|;
+name|GdkPixbuf
+modifier|*
+name|buf
+decl_stmt|;
+name|gint
+name|width
+decl_stmt|;
+name|gint
+name|height
+decl_stmt|;
 name|page
 operator|=
 name|poppler_document_get_page
@@ -1722,6 +1761,10 @@ operator|!
 name|image
 condition|)
 block|{
+name|gchar
+modifier|*
+name|name
+decl_stmt|;
 name|image
 operator|=
 name|gimp_image_new
@@ -1733,11 +1776,33 @@ argument_list|,
 name|GIMP_RGB
 argument_list|)
 expr_stmt|;
+name|gimp_image_undo_disable
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
+name|name
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"%s-pages"
+argument_list|)
+argument_list|,
+name|filename
+argument_list|)
+expr_stmt|;
 name|gimp_image_set_filename
 argument_list|(
 name|image
 argument_list|,
-name|filename
+name|name
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|name
 argument_list|)
 expr_stmt|;
 name|gimp_image_set_resolution
@@ -1825,6 +1890,11 @@ argument_list|(
 name|page_label
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|buf
+argument_list|)
+expr_stmt|;
 name|doc_progress
 operator|=
 call|(
@@ -1845,9 +1915,20 @@ argument_list|(
 name|doc_progress
 argument_list|)
 expr_stmt|;
-name|g_object_unref
+block|}
+if|if
+condition|(
+name|image
+condition|)
+block|{
+name|gimp_image_undo_enable
 argument_list|(
-name|buf
+name|image
+argument_list|)
+expr_stmt|;
+name|gimp_image_clean_all
+argument_list|(
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -2004,7 +2085,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d7a57a0308
+DECL|struct|__anon29c000380308
 block|{
 DECL|member|document
 name|PopplerDocument
@@ -2029,7 +2110,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d7a57a0408
+DECL|struct|__anon29c000380408
 block|{
 DECL|member|selector
 name|GimpPageSelector
@@ -2274,7 +2355,7 @@ name|run
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"file-pdf-load"
+name|PLUG_IN_BINARY
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2288,7 +2369,7 @@ argument_list|(
 literal|"Load PDF"
 argument_list|)
 argument_list|,
-literal|"pdf"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -2296,7 +2377,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"file-pdf-load"
+name|LOAD_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
