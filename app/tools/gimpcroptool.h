@@ -16,29 +16,6 @@ directive|define
 name|__GIMP_CROP_TOOL_H__
 end_define
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__GNUC__
-end_ifdef
-
-begin_warning
-warning|#
-directive|warning
-warning|FIXME #include "gui/gui-types.h"
-end_warning
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_include
-include|#
-directive|include
-file|"gui/gui-types.h"
-end_include
-
 begin_include
 include|#
 directive|include
@@ -87,14 +64,25 @@ value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_CROP_TOOL))
 end_define
 
 begin_define
-DECL|macro|GIMP_CROP_TOOL_CLASS (klass)
+DECL|macro|GIMP_IS_CROP_TOOL_CLASS (klass)
 define|#
 directive|define
-name|GIMP_CROP_TOOL_CLASS
+name|GIMP_IS_CROP_TOOL_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_CROP_TOOL, GimpCropToolClass))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_CROP_TOOL))
+end_define
+
+begin_define
+DECL|macro|GIMP_CROP_TOOL_GET_CLASS (obj)
+define|#
+directive|define
+name|GIMP_CROP_TOOL_GET_CLASS
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_CROP_TOOL, GimpCropToolClass))
 end_define
 
 begin_typedef
@@ -124,6 +112,16 @@ DECL|member|parent_instance
 name|GimpDrawTool
 name|parent_instance
 decl_stmt|;
+DECL|member|controls
+name|GtkWidget
+modifier|*
+name|controls
+decl_stmt|;
+DECL|member|dimensions_entry
+name|GtkWidget
+modifier|*
+name|dimensions_entry
+decl_stmt|;
 DECL|member|startx
 name|gint
 name|startx
@@ -144,6 +142,16 @@ name|gint
 name|lasty
 decl_stmt|;
 comment|/*  previous y coord            */
+DECL|member|pressx
+name|gint
+name|pressx
+decl_stmt|;
+comment|/*  x where button pressed      */
+DECL|member|pressy
+name|gint
+name|pressy
+decl_stmt|;
+comment|/*  y where button pressed      */
 DECL|member|x1
 DECL|member|y1
 name|gint
@@ -188,49 +196,20 @@ name|dcw
 decl_stmt|,
 name|dch
 decl_stmt|;
-comment|/*  width and height of corners */
-comment|/* the crop dialog */
-DECL|member|crop_info
-name|InfoDialog
-modifier|*
-name|crop_info
-decl_stmt|;
-DECL|member|orig_vals
+comment|/*  width and height of edges   */
+DECL|member|origx
+DECL|member|origy
 name|gdouble
-name|orig_vals
-index|[
-literal|2
-index|]
+name|origx
+decl_stmt|,
+name|origy
 decl_stmt|;
-DECL|member|size_vals
+DECL|member|sizew
+DECL|member|sizeh
 name|gdouble
-name|size_vals
-index|[
-literal|2
-index|]
-decl_stmt|;
-DECL|member|aspect_ratio
-name|gdouble
-name|aspect_ratio
-decl_stmt|;
-DECL|member|change_aspect_ratio
-name|gboolean
-name|change_aspect_ratio
-decl_stmt|;
-comment|/* Boolean for the crop_info_update function */
-comment|/* aspect_ratio should not be chaget whith   */
-comment|/* crop_info_update when is called from      */
-comment|/* crop_aspect_changed, due to the innacurate*/
-comment|/* decimal precision                         */
-DECL|member|origin_sizeentry
-name|GtkWidget
-modifier|*
-name|origin_sizeentry
-decl_stmt|;
-DECL|member|size_sizeentry
-name|GtkWidget
-modifier|*
-name|size_sizeentry
+name|sizew
+decl_stmt|,
+name|sizeh
 decl_stmt|;
 block|}
 struct|;

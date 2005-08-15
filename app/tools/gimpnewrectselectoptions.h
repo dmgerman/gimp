@@ -6,119 +6,111 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_CROP_OPTIONS_H__
+name|__GIMP_NEW_RECT_SELECT_OPTIONS_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_CROP_OPTIONS_H__
+DECL|macro|__GIMP_NEW_RECT_SELECT_OPTIONS_H__
 define|#
 directive|define
-name|__GIMP_CROP_OPTIONS_H__
+name|__GIMP_NEW_RECT_SELECT_OPTIONS_H__
 end_define
 
 begin_include
 include|#
 directive|include
-file|"core/gimptooloptions.h"
+file|"gimpselectionoptions.h"
 end_include
 
 begin_define
-DECL|macro|GIMP_TYPE_CROP_OPTIONS
+DECL|macro|GIMP_TYPE_NEW_RECT_SELECT_OPTIONS
 define|#
 directive|define
-name|GIMP_TYPE_CROP_OPTIONS
-value|(gimp_crop_options_get_type ())
+name|GIMP_TYPE_NEW_RECT_SELECT_OPTIONS
+value|(gimp_new_rect_select_options_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_CROP_OPTIONS (obj)
+DECL|macro|GIMP_NEW_RECT_SELECT_OPTIONS (obj)
 define|#
 directive|define
-name|GIMP_CROP_OPTIONS
+name|GIMP_NEW_RECT_SELECT_OPTIONS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_CROP_OPTIONS, GimpCropOptions))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_NEW_RECT_SELECT_OPTIONS, GimpNewRectSelectOptions))
 end_define
 
 begin_define
-DECL|macro|GIMP_CROP_OPTIONS_CLASS (klass)
+DECL|macro|GIMP_NEW_RECT_SELECT_OPTIONS_CLASS (klass)
 define|#
 directive|define
-name|GIMP_CROP_OPTIONS_CLASS
+name|GIMP_NEW_RECT_SELECT_OPTIONS_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_CROP_OPTIONS, GimpCropOptionsClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_NEW_RECT_SELECT_OPTIONS, GimpNewRectSelectOptionsClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_CROP_OPTIONS (obj)
+DECL|macro|GIMP_IS_NEW_RECT_SELECT_OPTIONS (obj)
 define|#
 directive|define
-name|GIMP_IS_CROP_OPTIONS
+name|GIMP_IS_NEW_RECT_SELECT_OPTIONS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_CROP_OPTIONS))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_NEW_RECT_SELECT_OPTIONS))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_CROP_OPTIONS_CLASS (klass)
+DECL|macro|GIMP_IS_NEW_RECT_SELECT_OPTIONS_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_CROP_OPTIONS_CLASS
+name|GIMP_IS_NEW_RECT_SELECT_OPTIONS_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_CROP_OPTIONS))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_NEW_RECT_SELECT_OPTIONS))
 end_define
 
 begin_define
-DECL|macro|GIMP_CROP_OPTIONS_GET_CLASS (obj)
+DECL|macro|GIMP_NEW_RECT_SELECT_OPTIONS_GET_CLASS (obj)
 define|#
 directive|define
-name|GIMP_CROP_OPTIONS_GET_CLASS
+name|GIMP_NEW_RECT_SELECT_OPTIONS_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_CROP_OPTIONS, GimpCropOptionsClass))
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_NEW_RECT_SELECT_OPTIONS, GimpNewRectSelectOptionsClass))
 end_define
 
 begin_typedef
-DECL|typedef|GimpCropOptions
+DECL|typedef|GimpNewRectSelectOptions
 typedef|typedef
 name|struct
-name|_GimpCropOptions
-name|GimpCropOptions
+name|_GimpNewRectSelectOptions
+name|GimpNewRectSelectOptions
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpCropOptionsClass
+DECL|typedef|GimpNewRectSelectOptionsClass
 typedef|typedef
 name|struct
 name|_GimpToolOptionsClass
-name|GimpCropOptionsClass
+name|GimpNewRectSelectOptionsClass
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpCropOptions
+DECL|struct|_GimpNewRectSelectOptions
 struct|struct
-name|_GimpCropOptions
+name|_GimpNewRectSelectOptions
 block|{
 DECL|member|parent_instence
-name|GimpToolOptions
+name|GimpSelectionOptions
 name|parent_instence
-decl_stmt|;
-DECL|member|layer_only
-name|gboolean
-name|layer_only
-decl_stmt|;
-DECL|member|crop_mode
-name|GimpCropMode
-name|crop_mode
 decl_stmt|;
 DECL|member|highlight
 name|gboolean
@@ -170,7 +162,7 @@ end_struct
 
 begin_decl_stmt
 name|GType
-name|gimp_crop_options_get_type
+name|gimp_new_rect_select_options_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -181,7 +173,7 @@ end_decl_stmt
 begin_function_decl
 name|GtkWidget
 modifier|*
-name|gimp_crop_options_gui
+name|gimp_new_rect_select_options_gui
 parameter_list|(
 name|GimpToolOptions
 modifier|*
@@ -196,7 +188,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMP_CROP_OPTIONS_H__ */
+comment|/* __GIMP_NEW_RECT_SELECT_OPTIONS_H__ */
 end_comment
 
 end_unit

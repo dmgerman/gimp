@@ -54,7 +54,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpcropoptions.h"
+file|"gimpnewrectselectoptions.h"
 end_include
 
 begin_include
@@ -71,16 +71,10 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a203dd40103
+DECL|enum|__anon29b18e2c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
-block|,
-DECL|enumerator|PROP_LAYER_ONLY
-name|PROP_LAYER_ONLY
-block|,
-DECL|enumerator|PROP_CROP_MODE
-name|PROP_CROP_MODE
 block|,
 DECL|enumerator|PROP_HIGHLIGHT
 name|PROP_HIGHLIGHT
@@ -121,9 +115,9 @@ end_enum
 begin_function_decl
 specifier|static
 name|void
-name|gimp_crop_options_class_init
+name|gimp_new_rect_select_options_class_init
 parameter_list|(
-name|GimpCropOptionsClass
+name|GimpNewRectSelectOptionsClass
 modifier|*
 name|klass
 parameter_list|)
@@ -133,7 +127,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_crop_options_rectangle_options_iface_init
+name|gimp_new_rect_select_options_rectangle_options_iface_init
 parameter_list|(
 name|GimpRectangleOptionsInterface
 modifier|*
@@ -145,7 +139,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_crop_options_set_property
+name|gimp_new_rect_select_options_set_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -169,7 +163,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_crop_options_get_property
+name|gimp_new_rect_select_options_get_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -191,7 +185,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_crop_options_set_highlight
+name|gimp_new_rect_select_options_set_highlight
 parameter_list|(
 name|GimpRectangleOptions
 modifier|*
@@ -205,7 +199,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_crop_options_get_highlight
+name|gimp_new_rect_select_options_get_highlight
 parameter_list|(
 name|GimpRectangleOptions
 modifier|*
@@ -216,7 +210,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_crop_options_set_fixed_width
+name|gimp_new_rect_select_options_set_fixed_width
 parameter_list|(
 name|GimpRectangleOptions
 modifier|*
@@ -230,7 +224,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_crop_options_get_fixed_width
+name|gimp_new_rect_select_options_get_fixed_width
 parameter_list|(
 name|GimpRectangleOptions
 modifier|*
@@ -241,7 +235,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_crop_options_set_width
+name|gimp_new_rect_select_options_set_width
 parameter_list|(
 name|GimpRectangleOptions
 modifier|*
@@ -255,7 +249,7 @@ end_function_decl
 
 begin_function_decl
 name|gdouble
-name|gimp_crop_options_get_width
+name|gimp_new_rect_select_options_get_width
 parameter_list|(
 name|GimpRectangleOptions
 modifier|*
@@ -266,7 +260,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_crop_options_set_fixed_height
+name|gimp_new_rect_select_options_set_fixed_height
 parameter_list|(
 name|GimpRectangleOptions
 modifier|*
@@ -280,7 +274,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_crop_options_get_fixed_height
+name|gimp_new_rect_select_options_get_fixed_height
 parameter_list|(
 name|GimpRectangleOptions
 modifier|*
@@ -291,7 +285,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_crop_options_set_height
+name|gimp_new_rect_select_options_set_height
 parameter_list|(
 name|GimpRectangleOptions
 modifier|*
@@ -305,7 +299,7 @@ end_function_decl
 
 begin_function_decl
 name|gdouble
-name|gimp_crop_options_get_height
+name|gimp_new_rect_select_options_get_height
 parameter_list|(
 name|GimpRectangleOptions
 modifier|*
@@ -316,7 +310,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_crop_options_set_fixed_aspect
+name|gimp_new_rect_select_options_set_fixed_aspect
 parameter_list|(
 name|GimpRectangleOptions
 modifier|*
@@ -330,7 +324,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_crop_options_get_fixed_aspect
+name|gimp_new_rect_select_options_get_fixed_aspect
 parameter_list|(
 name|GimpRectangleOptions
 modifier|*
@@ -341,7 +335,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_crop_options_set_aspect
+name|gimp_new_rect_select_options_set_aspect
 parameter_list|(
 name|GimpRectangleOptions
 modifier|*
@@ -355,7 +349,7 @@ end_function_decl
 
 begin_function_decl
 name|gdouble
-name|gimp_crop_options_get_aspect
+name|gimp_new_rect_select_options_get_aspect
 parameter_list|(
 name|GimpRectangleOptions
 modifier|*
@@ -366,7 +360,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_crop_options_set_fixed_center
+name|gimp_new_rect_select_options_set_fixed_center
 parameter_list|(
 name|GimpRectangleOptions
 modifier|*
@@ -380,7 +374,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_crop_options_get_fixed_center
+name|gimp_new_rect_select_options_get_fixed_center
 parameter_list|(
 name|GimpRectangleOptions
 modifier|*
@@ -391,7 +385,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_crop_options_set_center_x
+name|gimp_new_rect_select_options_set_center_x
 parameter_list|(
 name|GimpRectangleOptions
 modifier|*
@@ -405,7 +399,7 @@ end_function_decl
 
 begin_function_decl
 name|gdouble
-name|gimp_crop_options_get_center_x
+name|gimp_new_rect_select_options_get_center_x
 parameter_list|(
 name|GimpRectangleOptions
 modifier|*
@@ -416,7 +410,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_crop_options_set_center_y
+name|gimp_new_rect_select_options_set_center_y
 parameter_list|(
 name|GimpRectangleOptions
 modifier|*
@@ -430,7 +424,7 @@ end_function_decl
 
 begin_function_decl
 name|gdouble
-name|gimp_crop_options_get_center_y
+name|gimp_new_rect_select_options_get_center_y
 parameter_list|(
 name|GimpRectangleOptions
 modifier|*
@@ -441,7 +435,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_crop_options_set_unit
+name|gimp_new_rect_select_options_set_unit
 parameter_list|(
 name|GimpRectangleOptions
 modifier|*
@@ -455,7 +449,7 @@ end_function_decl
 
 begin_function_decl
 name|GimpUnit
-name|gimp_crop_options_get_unit
+name|gimp_new_rect_select_options_get_unit
 parameter_list|(
 name|GimpRectangleOptions
 modifier|*
@@ -467,7 +461,7 @@ end_function_decl
 begin_decl_stmt
 DECL|variable|parent_class
 specifier|static
-name|GimpToolOptionsClass
+name|GimpSelectionOptionsClass
 modifier|*
 name|parent_class
 init|=
@@ -477,8 +471,8 @@ end_decl_stmt
 
 begin_function
 name|GType
-DECL|function|gimp_crop_options_get_type (void)
-name|gimp_crop_options_get_type
+DECL|function|gimp_new_rect_select_options_get_type (void)
+name|gimp_new_rect_select_options_get_type
 parameter_list|(
 name|void
 parameter_list|)
@@ -503,7 +497,7 @@ init|=
 block|{
 sizeof|sizeof
 argument_list|(
-name|GimpCropOptionsClass
+name|GimpNewRectSelectOptionsClass
 argument_list|)
 block|,
 operator|(
@@ -519,7 +513,7 @@ block|,
 operator|(
 name|GClassInitFunc
 operator|)
-name|gimp_crop_options_class_init
+name|gimp_new_rect_select_options_class_init
 block|,
 name|NULL
 block|,
@@ -529,7 +523,7 @@ block|,
 comment|/* class_data     */
 sizeof|sizeof
 argument_list|(
-name|GimpCropOptions
+name|GimpNewRectSelectOptions
 argument_list|)
 block|,
 literal|0
@@ -550,7 +544,7 @@ block|{
 operator|(
 name|GInterfaceInitFunc
 operator|)
-name|gimp_crop_options_rectangle_options_iface_init
+name|gimp_new_rect_select_options_rectangle_options_iface_init
 block|,
 comment|/* interface_init */
 name|NULL
@@ -564,9 +558,9 @@ name|type
 operator|=
 name|g_type_register_static
 argument_list|(
-name|GIMP_TYPE_TOOL_OPTIONS
+name|GIMP_TYPE_SELECTION_OPTIONS
 argument_list|,
-literal|"GimpCropOptions"
+literal|"GimpNewRectSelectOptions"
 argument_list|,
 operator|&
 name|info
@@ -594,10 +588,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_crop_options_class_init (GimpCropOptionsClass * klass)
-name|gimp_crop_options_class_init
+DECL|function|gimp_new_rect_select_options_class_init (GimpNewRectSelectOptionsClass * klass)
+name|gimp_new_rect_select_options_class_init
 parameter_list|(
-name|GimpCropOptionsClass
+name|GimpNewRectSelectOptionsClass
 modifier|*
 name|klass
 parameter_list|)
@@ -622,45 +616,13 @@ name|object_class
 operator|->
 name|set_property
 operator|=
-name|gimp_crop_options_set_property
+name|gimp_new_rect_select_options_set_property
 expr_stmt|;
 name|object_class
 operator|->
 name|get_property
 operator|=
-name|gimp_crop_options_get_property
-expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
-argument_list|(
-name|object_class
-argument_list|,
-name|PROP_LAYER_ONLY
-argument_list|,
-literal|"layer-only"
-argument_list|,
-name|NULL
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_ENUM
-argument_list|(
-name|object_class
-argument_list|,
-name|PROP_CROP_MODE
-argument_list|,
-literal|"crop-mode"
-argument_list|,
-name|NULL
-argument_list|,
-name|GIMP_TYPE_CROP_MODE
-argument_list|,
-name|GIMP_CROP_MODE_CROP
-argument_list|,
-literal|0
-argument_list|)
+name|gimp_new_rect_select_options_get_property
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
 argument_list|(
@@ -887,8 +849,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_crop_options_rectangle_options_iface_init (GimpRectangleOptionsInterface * rectangle_iface)
-name|gimp_crop_options_rectangle_options_iface_init
+DECL|function|gimp_new_rect_select_options_rectangle_options_iface_init (GimpRectangleOptionsInterface * rectangle_iface)
+name|gimp_new_rect_select_options_rectangle_options_iface_init
 parameter_list|(
 name|GimpRectangleOptionsInterface
 modifier|*
@@ -899,133 +861,133 @@ name|rectangle_iface
 operator|->
 name|set_highlight
 operator|=
-name|gimp_crop_options_set_highlight
+name|gimp_new_rect_select_options_set_highlight
 expr_stmt|;
 name|rectangle_iface
 operator|->
 name|get_highlight
 operator|=
-name|gimp_crop_options_get_highlight
+name|gimp_new_rect_select_options_get_highlight
 expr_stmt|;
 name|rectangle_iface
 operator|->
 name|set_fixed_width
 operator|=
-name|gimp_crop_options_set_fixed_width
+name|gimp_new_rect_select_options_set_fixed_width
 expr_stmt|;
 name|rectangle_iface
 operator|->
 name|get_fixed_width
 operator|=
-name|gimp_crop_options_get_fixed_width
+name|gimp_new_rect_select_options_get_fixed_width
 expr_stmt|;
 name|rectangle_iface
 operator|->
 name|set_width
 operator|=
-name|gimp_crop_options_set_width
+name|gimp_new_rect_select_options_set_width
 expr_stmt|;
 name|rectangle_iface
 operator|->
 name|get_width
 operator|=
-name|gimp_crop_options_get_width
+name|gimp_new_rect_select_options_get_width
 expr_stmt|;
 name|rectangle_iface
 operator|->
 name|set_fixed_height
 operator|=
-name|gimp_crop_options_set_fixed_height
+name|gimp_new_rect_select_options_set_fixed_height
 expr_stmt|;
 name|rectangle_iface
 operator|->
 name|get_fixed_height
 operator|=
-name|gimp_crop_options_get_fixed_height
+name|gimp_new_rect_select_options_get_fixed_height
 expr_stmt|;
 name|rectangle_iface
 operator|->
 name|set_height
 operator|=
-name|gimp_crop_options_set_height
+name|gimp_new_rect_select_options_set_height
 expr_stmt|;
 name|rectangle_iface
 operator|->
 name|get_height
 operator|=
-name|gimp_crop_options_get_height
+name|gimp_new_rect_select_options_get_height
 expr_stmt|;
 name|rectangle_iface
 operator|->
 name|set_fixed_aspect
 operator|=
-name|gimp_crop_options_set_fixed_aspect
+name|gimp_new_rect_select_options_set_fixed_aspect
 expr_stmt|;
 name|rectangle_iface
 operator|->
 name|get_fixed_aspect
 operator|=
-name|gimp_crop_options_get_fixed_aspect
+name|gimp_new_rect_select_options_get_fixed_aspect
 expr_stmt|;
 name|rectangle_iface
 operator|->
 name|set_aspect
 operator|=
-name|gimp_crop_options_set_aspect
+name|gimp_new_rect_select_options_set_aspect
 expr_stmt|;
 name|rectangle_iface
 operator|->
 name|get_aspect
 operator|=
-name|gimp_crop_options_get_aspect
+name|gimp_new_rect_select_options_get_aspect
 expr_stmt|;
 name|rectangle_iface
 operator|->
 name|set_fixed_center
 operator|=
-name|gimp_crop_options_set_fixed_center
+name|gimp_new_rect_select_options_set_fixed_center
 expr_stmt|;
 name|rectangle_iface
 operator|->
 name|get_fixed_center
 operator|=
-name|gimp_crop_options_get_fixed_center
+name|gimp_new_rect_select_options_get_fixed_center
 expr_stmt|;
 name|rectangle_iface
 operator|->
 name|set_center_x
 operator|=
-name|gimp_crop_options_set_center_x
+name|gimp_new_rect_select_options_set_center_x
 expr_stmt|;
 name|rectangle_iface
 operator|->
 name|get_center_x
 operator|=
-name|gimp_crop_options_get_center_x
+name|gimp_new_rect_select_options_get_center_x
 expr_stmt|;
 name|rectangle_iface
 operator|->
 name|set_center_y
 operator|=
-name|gimp_crop_options_set_center_y
+name|gimp_new_rect_select_options_set_center_y
 expr_stmt|;
 name|rectangle_iface
 operator|->
 name|get_center_y
 operator|=
-name|gimp_crop_options_get_center_y
+name|gimp_new_rect_select_options_get_center_y
 expr_stmt|;
 name|rectangle_iface
 operator|->
 name|set_unit
 operator|=
-name|gimp_crop_options_set_unit
+name|gimp_new_rect_select_options_set_unit
 expr_stmt|;
 name|rectangle_iface
 operator|->
 name|get_unit
 operator|=
-name|gimp_crop_options_get_unit
+name|gimp_new_rect_select_options_get_unit
 expr_stmt|;
 block|}
 end_function
@@ -1033,8 +995,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_crop_options_set_property (GObject * object,guint property_id,const GValue * value,GParamSpec * pspec)
-name|gimp_crop_options_set_property
+DECL|function|gimp_new_rect_select_options_set_property (GObject * object,guint property_id,const GValue * value,GParamSpec * pspec)
+name|gimp_new_rect_select_options_set_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -1053,11 +1015,11 @@ modifier|*
 name|pspec
 parameter_list|)
 block|{
-name|GimpCropOptions
+name|GimpNewRectSelectOptions
 modifier|*
 name|options
 init|=
-name|GIMP_CROP_OPTIONS
+name|GIMP_NEW_RECT_SELECT_OPTIONS
 argument_list|(
 name|object
 argument_list|)
@@ -1076,32 +1038,6 @@ condition|(
 name|property_id
 condition|)
 block|{
-case|case
-name|PROP_LAYER_ONLY
-case|:
-name|options
-operator|->
-name|layer_only
-operator|=
-name|g_value_get_boolean
-argument_list|(
-name|value
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
-name|PROP_CROP_MODE
-case|:
-name|options
-operator|->
-name|crop_mode
-operator|=
-name|g_value_get_enum
-argument_list|(
-name|value
-argument_list|)
-expr_stmt|;
-break|break;
 case|case
 name|PROP_HIGHLIGHT
 case|:
@@ -1274,8 +1210,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_crop_options_get_property (GObject * object,guint property_id,GValue * value,GParamSpec * pspec)
-name|gimp_crop_options_get_property
+DECL|function|gimp_new_rect_select_options_get_property (GObject * object,guint property_id,GValue * value,GParamSpec * pspec)
+name|gimp_new_rect_select_options_get_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -1293,11 +1229,11 @@ modifier|*
 name|pspec
 parameter_list|)
 block|{
-name|GimpCropOptions
+name|GimpNewRectSelectOptions
 modifier|*
 name|options
 init|=
-name|GIMP_CROP_OPTIONS
+name|GIMP_NEW_RECT_SELECT_OPTIONS
 argument_list|(
 name|object
 argument_list|)
@@ -1316,32 +1252,6 @@ condition|(
 name|property_id
 condition|)
 block|{
-case|case
-name|PROP_LAYER_ONLY
-case|:
-name|g_value_set_boolean
-argument_list|(
-name|value
-argument_list|,
-name|options
-operator|->
-name|layer_only
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
-name|PROP_CROP_MODE
-case|:
-name|g_value_set_enum
-argument_list|(
-name|value
-argument_list|,
-name|options
-operator|->
-name|crop_mode
-argument_list|)
-expr_stmt|;
-break|break;
 case|case
 name|PROP_HIGHLIGHT
 case|:
@@ -1513,8 +1423,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_crop_options_set_highlight (GimpRectangleOptions * options,gboolean highlight)
-name|gimp_crop_options_set_highlight
+DECL|function|gimp_new_rect_select_options_set_highlight (GimpRectangleOptions * options,gboolean highlight)
+name|gimp_new_rect_select_options_set_highlight
 parameter_list|(
 name|GimpRectangleOptions
 modifier|*
@@ -1524,16 +1434,16 @@ name|gboolean
 name|highlight
 parameter_list|)
 block|{
-name|GimpCropOptions
+name|GimpNewRectSelectOptions
 modifier|*
-name|crop_options
+name|new_rect_select_options
 init|=
-name|GIMP_CROP_OPTIONS
+name|GIMP_NEW_RECT_SELECT_OPTIONS
 argument_list|(
 name|options
 argument_list|)
 decl_stmt|;
-name|crop_options
+name|new_rect_select_options
 operator|->
 name|highlight
 operator|=
@@ -1544,25 +1454,25 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_crop_options_get_highlight (GimpRectangleOptions * options)
-name|gimp_crop_options_get_highlight
+DECL|function|gimp_new_rect_select_options_get_highlight (GimpRectangleOptions * options)
+name|gimp_new_rect_select_options_get_highlight
 parameter_list|(
 name|GimpRectangleOptions
 modifier|*
 name|options
 parameter_list|)
 block|{
-name|GimpCropOptions
+name|GimpNewRectSelectOptions
 modifier|*
-name|crop_options
+name|new_rect_select_options
 init|=
-name|GIMP_CROP_OPTIONS
+name|GIMP_NEW_RECT_SELECT_OPTIONS
 argument_list|(
 name|options
 argument_list|)
 decl_stmt|;
 return|return
-name|crop_options
+name|new_rect_select_options
 operator|->
 name|highlight
 return|;
@@ -1571,8 +1481,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_crop_options_set_fixed_width (GimpRectangleOptions * options,gboolean fixed_width)
-name|gimp_crop_options_set_fixed_width
+DECL|function|gimp_new_rect_select_options_set_fixed_width (GimpRectangleOptions * options,gboolean fixed_width)
+name|gimp_new_rect_select_options_set_fixed_width
 parameter_list|(
 name|GimpRectangleOptions
 modifier|*
@@ -1582,16 +1492,16 @@ name|gboolean
 name|fixed_width
 parameter_list|)
 block|{
-name|GimpCropOptions
+name|GimpNewRectSelectOptions
 modifier|*
-name|crop_options
+name|new_rect_select_options
 init|=
-name|GIMP_CROP_OPTIONS
+name|GIMP_NEW_RECT_SELECT_OPTIONS
 argument_list|(
 name|options
 argument_list|)
 decl_stmt|;
-name|crop_options
+name|new_rect_select_options
 operator|->
 name|fixed_width
 operator|=
@@ -1602,25 +1512,25 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_crop_options_get_fixed_width (GimpRectangleOptions * options)
-name|gimp_crop_options_get_fixed_width
+DECL|function|gimp_new_rect_select_options_get_fixed_width (GimpRectangleOptions * options)
+name|gimp_new_rect_select_options_get_fixed_width
 parameter_list|(
 name|GimpRectangleOptions
 modifier|*
 name|options
 parameter_list|)
 block|{
-name|GimpCropOptions
+name|GimpNewRectSelectOptions
 modifier|*
-name|crop_options
+name|new_rect_select_options
 init|=
-name|GIMP_CROP_OPTIONS
+name|GIMP_NEW_RECT_SELECT_OPTIONS
 argument_list|(
 name|options
 argument_list|)
 decl_stmt|;
 return|return
-name|crop_options
+name|new_rect_select_options
 operator|->
 name|fixed_width
 return|;
@@ -1629,8 +1539,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_crop_options_set_width (GimpRectangleOptions * options,gdouble width)
-name|gimp_crop_options_set_width
+DECL|function|gimp_new_rect_select_options_set_width (GimpRectangleOptions * options,gdouble width)
+name|gimp_new_rect_select_options_set_width
 parameter_list|(
 name|GimpRectangleOptions
 modifier|*
@@ -1640,16 +1550,16 @@ name|gdouble
 name|width
 parameter_list|)
 block|{
-name|GimpCropOptions
+name|GimpNewRectSelectOptions
 modifier|*
-name|crop_options
+name|new_rect_select_options
 init|=
-name|GIMP_CROP_OPTIONS
+name|GIMP_NEW_RECT_SELECT_OPTIONS
 argument_list|(
 name|options
 argument_list|)
 decl_stmt|;
-name|crop_options
+name|new_rect_select_options
 operator|->
 name|width
 operator|=
@@ -1660,25 +1570,25 @@ end_function
 
 begin_function
 name|gdouble
-DECL|function|gimp_crop_options_get_width (GimpRectangleOptions * options)
-name|gimp_crop_options_get_width
+DECL|function|gimp_new_rect_select_options_get_width (GimpRectangleOptions * options)
+name|gimp_new_rect_select_options_get_width
 parameter_list|(
 name|GimpRectangleOptions
 modifier|*
 name|options
 parameter_list|)
 block|{
-name|GimpCropOptions
+name|GimpNewRectSelectOptions
 modifier|*
-name|crop_options
+name|new_rect_select_options
 init|=
-name|GIMP_CROP_OPTIONS
+name|GIMP_NEW_RECT_SELECT_OPTIONS
 argument_list|(
 name|options
 argument_list|)
 decl_stmt|;
 return|return
-name|crop_options
+name|new_rect_select_options
 operator|->
 name|width
 return|;
@@ -1687,8 +1597,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_crop_options_set_fixed_height (GimpRectangleOptions * options,gboolean fixed_height)
-name|gimp_crop_options_set_fixed_height
+DECL|function|gimp_new_rect_select_options_set_fixed_height (GimpRectangleOptions * options,gboolean fixed_height)
+name|gimp_new_rect_select_options_set_fixed_height
 parameter_list|(
 name|GimpRectangleOptions
 modifier|*
@@ -1698,16 +1608,16 @@ name|gboolean
 name|fixed_height
 parameter_list|)
 block|{
-name|GimpCropOptions
+name|GimpNewRectSelectOptions
 modifier|*
-name|crop_options
+name|new_rect_select_options
 init|=
-name|GIMP_CROP_OPTIONS
+name|GIMP_NEW_RECT_SELECT_OPTIONS
 argument_list|(
 name|options
 argument_list|)
 decl_stmt|;
-name|crop_options
+name|new_rect_select_options
 operator|->
 name|fixed_height
 operator|=
@@ -1718,25 +1628,25 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_crop_options_get_fixed_height (GimpRectangleOptions * options)
-name|gimp_crop_options_get_fixed_height
+DECL|function|gimp_new_rect_select_options_get_fixed_height (GimpRectangleOptions * options)
+name|gimp_new_rect_select_options_get_fixed_height
 parameter_list|(
 name|GimpRectangleOptions
 modifier|*
 name|options
 parameter_list|)
 block|{
-name|GimpCropOptions
+name|GimpNewRectSelectOptions
 modifier|*
-name|crop_options
+name|new_rect_select_options
 init|=
-name|GIMP_CROP_OPTIONS
+name|GIMP_NEW_RECT_SELECT_OPTIONS
 argument_list|(
 name|options
 argument_list|)
 decl_stmt|;
 return|return
-name|crop_options
+name|new_rect_select_options
 operator|->
 name|fixed_height
 return|;
@@ -1745,8 +1655,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_crop_options_set_height (GimpRectangleOptions * options,gdouble height)
-name|gimp_crop_options_set_height
+DECL|function|gimp_new_rect_select_options_set_height (GimpRectangleOptions * options,gdouble height)
+name|gimp_new_rect_select_options_set_height
 parameter_list|(
 name|GimpRectangleOptions
 modifier|*
@@ -1756,16 +1666,16 @@ name|gdouble
 name|height
 parameter_list|)
 block|{
-name|GimpCropOptions
+name|GimpNewRectSelectOptions
 modifier|*
-name|crop_options
+name|new_rect_select_options
 init|=
-name|GIMP_CROP_OPTIONS
+name|GIMP_NEW_RECT_SELECT_OPTIONS
 argument_list|(
 name|options
 argument_list|)
 decl_stmt|;
-name|crop_options
+name|new_rect_select_options
 operator|->
 name|height
 operator|=
@@ -1776,25 +1686,25 @@ end_function
 
 begin_function
 name|gdouble
-DECL|function|gimp_crop_options_get_height (GimpRectangleOptions * options)
-name|gimp_crop_options_get_height
+DECL|function|gimp_new_rect_select_options_get_height (GimpRectangleOptions * options)
+name|gimp_new_rect_select_options_get_height
 parameter_list|(
 name|GimpRectangleOptions
 modifier|*
 name|options
 parameter_list|)
 block|{
-name|GimpCropOptions
+name|GimpNewRectSelectOptions
 modifier|*
-name|crop_options
+name|new_rect_select_options
 init|=
-name|GIMP_CROP_OPTIONS
+name|GIMP_NEW_RECT_SELECT_OPTIONS
 argument_list|(
 name|options
 argument_list|)
 decl_stmt|;
 return|return
-name|crop_options
+name|new_rect_select_options
 operator|->
 name|height
 return|;
@@ -1803,8 +1713,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_crop_options_set_fixed_aspect (GimpRectangleOptions * options,gboolean fixed_aspect)
-name|gimp_crop_options_set_fixed_aspect
+DECL|function|gimp_new_rect_select_options_set_fixed_aspect (GimpRectangleOptions * options,gboolean fixed_aspect)
+name|gimp_new_rect_select_options_set_fixed_aspect
 parameter_list|(
 name|GimpRectangleOptions
 modifier|*
@@ -1814,16 +1724,16 @@ name|gboolean
 name|fixed_aspect
 parameter_list|)
 block|{
-name|GimpCropOptions
+name|GimpNewRectSelectOptions
 modifier|*
-name|crop_options
+name|new_rect_select_options
 init|=
-name|GIMP_CROP_OPTIONS
+name|GIMP_NEW_RECT_SELECT_OPTIONS
 argument_list|(
 name|options
 argument_list|)
 decl_stmt|;
-name|crop_options
+name|new_rect_select_options
 operator|->
 name|fixed_aspect
 operator|=
@@ -1834,25 +1744,25 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_crop_options_get_fixed_aspect (GimpRectangleOptions * options)
-name|gimp_crop_options_get_fixed_aspect
+DECL|function|gimp_new_rect_select_options_get_fixed_aspect (GimpRectangleOptions * options)
+name|gimp_new_rect_select_options_get_fixed_aspect
 parameter_list|(
 name|GimpRectangleOptions
 modifier|*
 name|options
 parameter_list|)
 block|{
-name|GimpCropOptions
+name|GimpNewRectSelectOptions
 modifier|*
-name|crop_options
+name|new_rect_select_options
 init|=
-name|GIMP_CROP_OPTIONS
+name|GIMP_NEW_RECT_SELECT_OPTIONS
 argument_list|(
 name|options
 argument_list|)
 decl_stmt|;
 return|return
-name|crop_options
+name|new_rect_select_options
 operator|->
 name|fixed_aspect
 return|;
@@ -1861,8 +1771,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_crop_options_set_aspect (GimpRectangleOptions * options,gdouble aspect)
-name|gimp_crop_options_set_aspect
+DECL|function|gimp_new_rect_select_options_set_aspect (GimpRectangleOptions * options,gdouble aspect)
+name|gimp_new_rect_select_options_set_aspect
 parameter_list|(
 name|GimpRectangleOptions
 modifier|*
@@ -1872,16 +1782,16 @@ name|gdouble
 name|aspect
 parameter_list|)
 block|{
-name|GimpCropOptions
+name|GimpNewRectSelectOptions
 modifier|*
-name|crop_options
+name|new_rect_select_options
 init|=
-name|GIMP_CROP_OPTIONS
+name|GIMP_NEW_RECT_SELECT_OPTIONS
 argument_list|(
 name|options
 argument_list|)
 decl_stmt|;
-name|crop_options
+name|new_rect_select_options
 operator|->
 name|aspect
 operator|=
@@ -1892,25 +1802,25 @@ end_function
 
 begin_function
 name|gdouble
-DECL|function|gimp_crop_options_get_aspect (GimpRectangleOptions * options)
-name|gimp_crop_options_get_aspect
+DECL|function|gimp_new_rect_select_options_get_aspect (GimpRectangleOptions * options)
+name|gimp_new_rect_select_options_get_aspect
 parameter_list|(
 name|GimpRectangleOptions
 modifier|*
 name|options
 parameter_list|)
 block|{
-name|GimpCropOptions
+name|GimpNewRectSelectOptions
 modifier|*
-name|crop_options
+name|new_rect_select_options
 init|=
-name|GIMP_CROP_OPTIONS
+name|GIMP_NEW_RECT_SELECT_OPTIONS
 argument_list|(
 name|options
 argument_list|)
 decl_stmt|;
 return|return
-name|crop_options
+name|new_rect_select_options
 operator|->
 name|aspect
 return|;
@@ -1919,8 +1829,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_crop_options_set_fixed_center (GimpRectangleOptions * options,gboolean fixed_center)
-name|gimp_crop_options_set_fixed_center
+DECL|function|gimp_new_rect_select_options_set_fixed_center (GimpRectangleOptions * options,gboolean fixed_center)
+name|gimp_new_rect_select_options_set_fixed_center
 parameter_list|(
 name|GimpRectangleOptions
 modifier|*
@@ -1930,16 +1840,16 @@ name|gboolean
 name|fixed_center
 parameter_list|)
 block|{
-name|GimpCropOptions
+name|GimpNewRectSelectOptions
 modifier|*
-name|crop_options
+name|new_rect_select_options
 init|=
-name|GIMP_CROP_OPTIONS
+name|GIMP_NEW_RECT_SELECT_OPTIONS
 argument_list|(
 name|options
 argument_list|)
 decl_stmt|;
-name|crop_options
+name|new_rect_select_options
 operator|->
 name|fixed_center
 operator|=
@@ -1950,25 +1860,25 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_crop_options_get_fixed_center (GimpRectangleOptions * options)
-name|gimp_crop_options_get_fixed_center
+DECL|function|gimp_new_rect_select_options_get_fixed_center (GimpRectangleOptions * options)
+name|gimp_new_rect_select_options_get_fixed_center
 parameter_list|(
 name|GimpRectangleOptions
 modifier|*
 name|options
 parameter_list|)
 block|{
-name|GimpCropOptions
+name|GimpNewRectSelectOptions
 modifier|*
-name|crop_options
+name|new_rect_select_options
 init|=
-name|GIMP_CROP_OPTIONS
+name|GIMP_NEW_RECT_SELECT_OPTIONS
 argument_list|(
 name|options
 argument_list|)
 decl_stmt|;
 return|return
-name|crop_options
+name|new_rect_select_options
 operator|->
 name|fixed_center
 return|;
@@ -1977,8 +1887,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_crop_options_set_center_x (GimpRectangleOptions * options,gdouble center_x)
-name|gimp_crop_options_set_center_x
+DECL|function|gimp_new_rect_select_options_set_center_x (GimpRectangleOptions * options,gdouble center_x)
+name|gimp_new_rect_select_options_set_center_x
 parameter_list|(
 name|GimpRectangleOptions
 modifier|*
@@ -1988,16 +1898,16 @@ name|gdouble
 name|center_x
 parameter_list|)
 block|{
-name|GimpCropOptions
+name|GimpNewRectSelectOptions
 modifier|*
-name|crop_options
+name|new_rect_select_options
 init|=
-name|GIMP_CROP_OPTIONS
+name|GIMP_NEW_RECT_SELECT_OPTIONS
 argument_list|(
 name|options
 argument_list|)
 decl_stmt|;
-name|crop_options
+name|new_rect_select_options
 operator|->
 name|center_x
 operator|=
@@ -2008,25 +1918,25 @@ end_function
 
 begin_function
 name|gdouble
-DECL|function|gimp_crop_options_get_center_x (GimpRectangleOptions * options)
-name|gimp_crop_options_get_center_x
+DECL|function|gimp_new_rect_select_options_get_center_x (GimpRectangleOptions * options)
+name|gimp_new_rect_select_options_get_center_x
 parameter_list|(
 name|GimpRectangleOptions
 modifier|*
 name|options
 parameter_list|)
 block|{
-name|GimpCropOptions
+name|GimpNewRectSelectOptions
 modifier|*
-name|crop_options
+name|new_rect_select_options
 init|=
-name|GIMP_CROP_OPTIONS
+name|GIMP_NEW_RECT_SELECT_OPTIONS
 argument_list|(
 name|options
 argument_list|)
 decl_stmt|;
 return|return
-name|crop_options
+name|new_rect_select_options
 operator|->
 name|center_x
 return|;
@@ -2035,8 +1945,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_crop_options_set_center_y (GimpRectangleOptions * options,gdouble center_y)
-name|gimp_crop_options_set_center_y
+DECL|function|gimp_new_rect_select_options_set_center_y (GimpRectangleOptions * options,gdouble center_y)
+name|gimp_new_rect_select_options_set_center_y
 parameter_list|(
 name|GimpRectangleOptions
 modifier|*
@@ -2046,16 +1956,16 @@ name|gdouble
 name|center_y
 parameter_list|)
 block|{
-name|GimpCropOptions
+name|GimpNewRectSelectOptions
 modifier|*
-name|crop_options
+name|new_rect_select_options
 init|=
-name|GIMP_CROP_OPTIONS
+name|GIMP_NEW_RECT_SELECT_OPTIONS
 argument_list|(
 name|options
 argument_list|)
 decl_stmt|;
-name|crop_options
+name|new_rect_select_options
 operator|->
 name|center_y
 operator|=
@@ -2066,25 +1976,25 @@ end_function
 
 begin_function
 name|gdouble
-DECL|function|gimp_crop_options_get_center_y (GimpRectangleOptions * options)
-name|gimp_crop_options_get_center_y
+DECL|function|gimp_new_rect_select_options_get_center_y (GimpRectangleOptions * options)
+name|gimp_new_rect_select_options_get_center_y
 parameter_list|(
 name|GimpRectangleOptions
 modifier|*
 name|options
 parameter_list|)
 block|{
-name|GimpCropOptions
+name|GimpNewRectSelectOptions
 modifier|*
-name|crop_options
+name|new_rect_select_options
 init|=
-name|GIMP_CROP_OPTIONS
+name|GIMP_NEW_RECT_SELECT_OPTIONS
 argument_list|(
 name|options
 argument_list|)
 decl_stmt|;
 return|return
-name|crop_options
+name|new_rect_select_options
 operator|->
 name|center_y
 return|;
@@ -2093,8 +2003,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_crop_options_set_unit (GimpRectangleOptions * options,GimpUnit unit)
-name|gimp_crop_options_set_unit
+DECL|function|gimp_new_rect_select_options_set_unit (GimpRectangleOptions * options,GimpUnit unit)
+name|gimp_new_rect_select_options_set_unit
 parameter_list|(
 name|GimpRectangleOptions
 modifier|*
@@ -2104,16 +2014,16 @@ name|GimpUnit
 name|unit
 parameter_list|)
 block|{
-name|GimpCropOptions
+name|GimpNewRectSelectOptions
 modifier|*
-name|crop_options
+name|new_rect_select_options
 init|=
-name|GIMP_CROP_OPTIONS
+name|GIMP_NEW_RECT_SELECT_OPTIONS
 argument_list|(
 name|options
 argument_list|)
 decl_stmt|;
-name|crop_options
+name|new_rect_select_options
 operator|->
 name|unit
 operator|=
@@ -2124,25 +2034,25 @@ end_function
 
 begin_function
 name|GimpUnit
-DECL|function|gimp_crop_options_get_unit (GimpRectangleOptions * options)
-name|gimp_crop_options_get_unit
+DECL|function|gimp_new_rect_select_options_get_unit (GimpRectangleOptions * options)
+name|gimp_new_rect_select_options_get_unit
 parameter_list|(
 name|GimpRectangleOptions
 modifier|*
 name|options
 parameter_list|)
 block|{
-name|GimpCropOptions
+name|GimpNewRectSelectOptions
 modifier|*
-name|crop_options
+name|new_rect_select_options
 init|=
-name|GIMP_CROP_OPTIONS
+name|GIMP_NEW_RECT_SELECT_OPTIONS
 argument_list|(
 name|options
 argument_list|)
 decl_stmt|;
 return|return
-name|crop_options
+name|new_rect_select_options
 operator|->
 name|unit
 return|;
@@ -2152,23 +2062,15 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_crop_options_gui (GimpToolOptions * tool_options)
-name|gimp_crop_options_gui
+DECL|function|gimp_new_rect_select_options_gui (GimpToolOptions * tool_options)
+name|gimp_new_rect_select_options_gui
 parameter_list|(
 name|GimpToolOptions
 modifier|*
 name|tool_options
 parameter_list|)
 block|{
-name|GObject
-modifier|*
-name|config
-init|=
-name|G_OBJECT
-argument_list|(
-name|tool_options
-argument_list|)
-decl_stmt|;
+comment|//GObject   *config = G_OBJECT (tool_options);
 name|GtkWidget
 modifier|*
 name|vbox
@@ -2177,116 +2079,14 @@ name|GtkWidget
 modifier|*
 name|vbox_rectangle
 decl_stmt|;
-name|GtkWidget
-modifier|*
-name|frame
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|button
-decl_stmt|;
-name|gchar
-modifier|*
-name|str
-decl_stmt|;
+comment|//GtkWidget *frame;
+comment|//GtkWidget *button;
+comment|//gchar     *str;
 name|vbox
 operator|=
-name|gimp_tool_options_gui
+name|gimp_selection_options_gui
 argument_list|(
 name|tool_options
-argument_list|)
-expr_stmt|;
-comment|/*  tool toggle  */
-name|str
-operator|=
-name|g_strdup_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"Tool Toggle  %s"
-argument_list|)
-argument_list|,
-name|gimp_get_mod_string
-argument_list|(
-name|GDK_CONTROL_MASK
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|frame
-operator|=
-name|gimp_prop_enum_radio_frame_new
-argument_list|(
-name|config
-argument_list|,
-literal|"crop-mode"
-argument_list|,
-name|str
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|vbox
-argument_list|)
-argument_list|,
-name|frame
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|frame
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|str
-argument_list|)
-expr_stmt|;
-comment|/*  layer toggle  */
-name|button
-operator|=
-name|gimp_prop_check_button_new
-argument_list|(
-name|config
-argument_list|,
-literal|"layer-only"
-argument_list|,
-name|_
-argument_list|(
-literal|"Current layer only"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|vbox
-argument_list|)
-argument_list|,
-name|button
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
 argument_list|)
 expr_stmt|;
 comment|/*  rectangle options  */
