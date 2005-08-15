@@ -139,7 +139,7 @@ end_define
 
 begin_struct
 struct|struct
-DECL|struct|__anon28b5a01f0108
+DECL|struct|__anon2c6d6c450108
 block|{
 DECL|member|randomize
 name|gint

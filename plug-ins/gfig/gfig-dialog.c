@@ -437,7 +437,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba84cf10108
+DECL|struct|__anon29fc20590108
 block|{
 DECL|member|gridspacing
 name|GtkAdjustment

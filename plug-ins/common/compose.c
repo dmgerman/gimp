@@ -543,7 +543,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a079120108
+DECL|struct|__anon2a9074680108
 block|{
 DECL|member|compose_type
 specifier|const
@@ -1040,7 +1040,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a079120208
+DECL|struct|__anon2a9074680208
 block|{
 DECL|member|compose_ID
 name|gint32
@@ -1080,7 +1080,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a079120308
+DECL|struct|__anon2a9074680308
 block|{
 DECL|member|width
 DECL|member|height

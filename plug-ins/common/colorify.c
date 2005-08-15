@@ -145,7 +145,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3a2b540108
+DECL|struct|__anon2c244ebe0108
 block|{
 DECL|member|color
 name|GimpRGB
