@@ -4751,7 +4751,7 @@ name|rledata
 operator|=
 name|g_new
 argument_list|(
-name|gchar
+name|guchar
 argument_list|,
 operator|(
 name|MIN
