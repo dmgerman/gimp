@@ -53,6 +53,30 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_define
+DECL|macro|LOAD_PROC
+define|#
+directive|define
+name|LOAD_PROC
+value|"file-xwd-load"
+end_define
+
+begin_define
+DECL|macro|SAVE_PROC
+define|#
+directive|define
+name|SAVE_PROC
+value|"file-xwd-save"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"xwd"
+end_define
+
 begin_typedef
 DECL|typedef|L_CARD32
 typedef|typedef
@@ -80,7 +104,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2892f0a80108
+DECL|struct|__anon2c7d65ad0108
 block|{
 DECL|member|l_header_size
 name|L_CARD32
@@ -214,7 +238,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2892f0a80208
+DECL|struct|__anon2c7d65ad0208
 block|{
 DECL|member|l_pixel
 name|L_CARD32
@@ -272,7 +296,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2892f0a80308
+DECL|struct|__anon2c7d65ad0308
 block|{
 DECL|member|pixel_val
 name|L_CARD32
@@ -299,7 +323,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2892f0a80408
+DECL|struct|__anon2c7d65ad0408
 block|{
 DECL|member|npixel
 name|gint
@@ -866,7 +890,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -882,7 +906,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"raw_filename"
+literal|"raw-filename"
 block|,
 literal|"The name of the file to load"
 block|}
@@ -912,7 +936,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -944,7 +968,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"raw_filename"
+literal|"raw-filename"
 block|,
 literal|"The name of the file to save the image in"
 block|}
@@ -952,7 +976,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"file_xwd_load"
+name|LOAD_PROC
 argument_list|,
 literal|"Loads files in the XWD (X Window Dump) format"
 argument_list|,
@@ -992,14 +1016,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_file_handler_mime
 argument_list|(
-literal|"file_xwd_load"
+name|LOAD_PROC
 argument_list|,
 literal|"image/x-xwindowdump"
 argument_list|)
 expr_stmt|;
 name|gimp_register_magic_load_handler
 argument_list|(
-literal|"file_xwd_load"
+name|LOAD_PROC
 argument_list|,
 literal|"xwd"
 argument_list|,
@@ -1010,7 +1034,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"file_xwd_save"
+name|SAVE_PROC
 argument_list|,
 literal|"Saves files in the XWD (X Window Dump) format"
 argument_list|,
@@ -1046,14 +1070,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_file_handler_mime
 argument_list|(
-literal|"file_xwd_save"
+name|SAVE_PROC
 argument_list|,
 literal|"image/x-xwindowdump"
 argument_list|)
 expr_stmt|;
 name|gimp_register_save_handler
 argument_list|(
-literal|"file_xwd_save"
+name|SAVE_PROC
 argument_list|,
 literal|"xwd"
 argument_list|,
@@ -1170,7 +1194,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_xwd_load"
+name|LOAD_PROC
 argument_list|)
 operator|==
 literal|0
@@ -1239,7 +1263,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_xwd_save"
+name|SAVE_PROC
 argument_list|)
 operator|==
 literal|0
@@ -1281,7 +1305,7 @@ name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|gimp_ui_init
 argument_list|(
-literal|"xwd"
+name|PLUG_IN_BINARY
 argument_list|,
 name|FALSE
 argument_list|)

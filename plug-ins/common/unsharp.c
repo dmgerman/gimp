@@ -34,6 +34,22 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_define
+DECL|macro|PLUG_IN_PROC
+define|#
+directive|define
+name|PLUG_IN_PROC
+value|"plug-in-unsharp-mask"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"unsharp"
+end_define
+
+begin_define
 DECL|macro|PLUG_IN_VERSION
 define|#
 directive|define
@@ -68,7 +84,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a6a7d70108
+DECL|struct|__anon2c6dc6a10108
 block|{
 DECL|member|radius
 name|gdouble
@@ -95,7 +111,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a6a7d70208
+DECL|struct|__anon2c6dc6a10208
 block|{
 DECL|member|run
 name|gboolean
@@ -425,7 +441,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_unsharp_mask"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"An unsharp mask filter"
 argument_list|,
@@ -465,7 +481,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_unsharp_mask"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Enhance"
 argument_list|)
@@ -618,7 +634,7 @@ name|GIMP_RUN_INTERACTIVE
 case|:
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_unsharp_mask"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|unsharp_params
@@ -722,7 +738,7 @@ name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_unsharp_mask"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|unsharp_params
@@ -773,7 +789,7 @@ expr_stmt|;
 comment|/* set data for next use of filter */
 name|gimp_set_data
 argument_list|(
-literal|"plug_in_unsharp_mask"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|unsharp_params
@@ -2617,7 +2633,7 @@ name|run
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"unsharp"
+name|PLUG_IN_BINARY
 argument_list|,
 name|TRUE
 argument_list|)
@@ -2631,7 +2647,7 @@ argument_list|(
 literal|"Unsharp Mask"
 argument_list|)
 argument_list|,
-literal|"unsharp"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -2639,7 +2655,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"plug-in-unsharp-mask"
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

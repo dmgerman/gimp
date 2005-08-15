@@ -37,10 +37,26 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_define
+DECL|macro|PLUG_IN_PROC
+define|#
+directive|define
+name|PLUG_IN_PROC
+value|"plug-in-tile"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"tile"
+end_define
+
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287d9aa60108
+DECL|struct|__anon2a529d5a0108
 block|{
 DECL|member|new_width
 name|gint
@@ -207,7 +223,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -231,7 +247,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"new_width"
+literal|"new-width"
 block|,
 literal|"New (tiled) image width"
 block|}
@@ -239,7 +255,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"new_height"
+literal|"new-height"
 block|,
 literal|"New (tiled) image height"
 block|}
@@ -247,7 +263,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"new_image"
+literal|"new-image"
 block|,
 literal|"Create a new image?"
 block|}
@@ -262,23 +278,23 @@ block|{
 block|{
 name|GIMP_PDB_IMAGE
 block|,
-literal|"new_image"
+literal|"new-image"
 block|,
-literal|"Output image (N/A if new_image == FALSE)"
+literal|"Output image (N/A if new-image == FALSE)"
 block|}
 block|,
 block|{
 name|GIMP_PDB_LAYER
 block|,
-literal|"new_layer"
+literal|"new-layer"
 block|,
-literal|"Output layer (N/A if new_image == FALSE)"
+literal|"Output layer (N/A if new-image == FALSE)"
 block|}
 block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_tile"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"Create a new image which is a tiled version of the "
 literal|"input drawable"
@@ -322,7 +338,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_tile"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Map"
 argument_list|)
@@ -487,7 +503,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_tile"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|tvals
@@ -607,7 +623,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_tile"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|tvals
@@ -700,7 +716,7 @@ name|GIMP_RUN_INTERACTIVE
 condition|)
 name|gimp_set_data
 argument_list|(
-literal|"plug_in_tile"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|tvals
@@ -1463,7 +1479,7 @@ name|run
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"tile"
+name|PLUG_IN_BINARY
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1521,7 +1537,7 @@ argument_list|(
 literal|"Tile"
 argument_list|)
 argument_list|,
-literal|"tile"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -1529,7 +1545,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"plug-in-tile"
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

@@ -44,11 +44,35 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_define
-DECL|macro|DEFAULT_PLUG_IN_NAME
+DECL|macro|VPROPAGATE_PROC
 define|#
 directive|define
-name|DEFAULT_PLUG_IN_NAME
-value|"plug_in_vpropagate"
+name|VPROPAGATE_PROC
+value|"plug-in-vpropagate"
+end_define
+
+begin_define
+DECL|macro|ERODE_PROC
+define|#
+directive|define
+name|ERODE_PROC
+value|"plug-in-erode"
+end_define
+
+begin_define
+DECL|macro|DILATE_PROC
+define|#
+directive|define
+name|DILATE_PROC
+value|"plug-in-dilate"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"vpropagate"
 end_define
 
 begin_define
@@ -57,38 +81,6 @@ define|#
 directive|define
 name|PLUG_IN_IMAGE_TYPES
 value|"RGB*, GRAY*"
-end_define
-
-begin_define
-DECL|macro|SHORT_NAME
-define|#
-directive|define
-name|SHORT_NAME
-value|"vpropagate"
-end_define
-
-begin_define
-DECL|macro|HELP_ID
-define|#
-directive|define
-name|HELP_ID
-value|"plug-in-vpropagate"
-end_define
-
-begin_define
-DECL|macro|ERODE_PLUG_IN_NAME
-define|#
-directive|define
-name|ERODE_PLUG_IN_NAME
-value|"plug_in_erode"
-end_define
-
-begin_define
-DECL|macro|DILATE_PLUG_IN_NAME
-define|#
-directive|define
-name|DILATE_PLUG_IN_NAME
-value|"plug_in_dilate"
 end_define
 
 begin_define
@@ -719,7 +711,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d8f56a0108
+DECL|struct|__anon2bcf9d830108
 block|{
 DECL|member|propagate_mode
 name|gint
@@ -887,7 +879,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d8f56a0208
+DECL|struct|__anon2bcf9d830208
 block|{
 DECL|member|applicable_image_type
 name|gint
@@ -1175,7 +1167,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -1247,7 +1239,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-name|DEFAULT_PLUG_IN_NAME
+name|VPROPAGATE_PROC
 argument_list|,
 literal|"Propagate values of the layer"
 argument_list|,
@@ -1282,7 +1274,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-name|ERODE_PLUG_IN_NAME
+name|ERODE_PROC
 argument_list|,
 literal|"Erode image"
 argument_list|,
@@ -1317,7 +1309,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-name|DILATE_PLUG_IN_NAME
+name|DILATE_PROC
 argument_list|,
 literal|"Dilate image"
 argument_list|,
@@ -1352,21 +1344,21 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-name|DEFAULT_PLUG_IN_NAME
+name|VPROPAGATE_PROC
 argument_list|,
 literal|"<Image>/Filters/Distorts"
 argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-name|ERODE_PLUG_IN_NAME
+name|ERODE_PROC
 argument_list|,
 literal|"<Image>/Filters/Effects/Generic"
 argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-name|DILATE_PLUG_IN_NAME
+name|DILATE_PROC
 argument_list|,
 literal|"<Image>/Filters/Effects/Generic"
 argument_list|)
@@ -1494,7 +1486,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-name|DEFAULT_PLUG_IN_NAME
+name|VPROPAGATE_PROC
 argument_list|)
 operator|==
 literal|0
@@ -1502,7 +1494,7 @@ condition|)
 block|{
 name|gimp_get_data
 argument_list|(
-name|DEFAULT_PLUG_IN_NAME
+name|VPROPAGATE_PROC
 argument_list|,
 operator|&
 name|vpvals
@@ -1593,7 +1585,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-name|ERODE_PLUG_IN_NAME
+name|ERODE_PROC
 argument_list|)
 operator|==
 literal|0
@@ -1602,7 +1594,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-name|DILATE_PLUG_IN_NAME
+name|DILATE_PROC
 argument_list|)
 operator|==
 literal|0
@@ -1644,7 +1636,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-name|ERODE_PLUG_IN_NAME
+name|ERODE_PROC
 argument_list|)
 operator|==
 literal|0
@@ -1662,7 +1654,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-name|DILATE_PLUG_IN_NAME
+name|DILATE_PROC
 argument_list|)
 operator|==
 literal|0
@@ -1684,7 +1676,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-name|DEFAULT_PLUG_IN_NAME
+name|VPROPAGATE_PROC
 argument_list|)
 operator|==
 literal|0
@@ -1776,7 +1768,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-name|ERODE_PLUG_IN_NAME
+name|ERODE_PROC
 argument_list|)
 operator|==
 literal|0
@@ -1785,7 +1777,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-name|DILATE_PLUG_IN_NAME
+name|DILATE_PROC
 argument_list|)
 operator|==
 literal|0
@@ -1827,7 +1819,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-name|ERODE_PLUG_IN_NAME
+name|ERODE_PROC
 argument_list|)
 operator|==
 literal|0
@@ -1845,7 +1837,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-name|DILATE_PLUG_IN_NAME
+name|DILATE_PROC
 argument_list|)
 operator|==
 literal|0
@@ -4040,7 +4032,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d8f56a0308
+DECL|struct|__anon2bcf9d830308
 block|{
 DECL|member|min_modified
 name|gshort
@@ -5735,7 +5727,7 @@ name|run
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"vpropagate"
+name|PLUG_IN_BINARY
 argument_list|,
 name|FALSE
 argument_list|)
@@ -5749,7 +5741,7 @@ argument_list|(
 literal|"Value Propagate"
 argument_list|)
 argument_list|,
-literal|"vpropagate"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -5757,7 +5749,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-name|HELP_ID
+name|VPROPAGATE_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

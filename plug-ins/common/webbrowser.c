@@ -55,11 +55,11 @@ directive|endif
 end_endif
 
 begin_define
-DECL|macro|PLUG_IN_NAME
+DECL|macro|PLUG_IN_PROC
 define|#
 directive|define
-name|PLUG_IN_NAME
-value|"plug_in_web_browser"
+name|PLUG_IN_PROC
+value|"plug-in-web-browser"
 end_define
 
 begin_function_decl
@@ -202,7 +202,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 literal|"Open an URL in the user specified web browser"
 argument_list|,

@@ -27,6 +27,14 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_define
+DECL|macro|PLUG_IN_PROC
+define|#
+directive|define
+name|PLUG_IN_PROC
+value|"plug-in-make-seamless"
+end_define
+
 begin_comment
 comment|/* Declare local functions.  */
 end_comment
@@ -152,7 +160,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_make_seamless"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"Seamless tile creation"
 argument_list|,
@@ -188,7 +196,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_make_seamless"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Map"
 argument_list|)

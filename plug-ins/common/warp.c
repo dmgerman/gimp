@@ -32,6 +32,22 @@ comment|/* Some useful macros */
 end_comment
 
 begin_define
+DECL|macro|PLUG_IN_PROC
+define|#
+directive|define
+name|PLUG_IN_PROC
+value|"plug-in-warp"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"warp"
+end_define
+
+begin_define
 DECL|macro|ENTRY_WIDTH
 define|#
 directive|define
@@ -67,7 +83,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2920a4c50103
+DECL|enum|__anon294296be0103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -87,7 +103,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2920a4c50208
+DECL|struct|__anon294296be0208
 block|{
 DECL|member|amount
 name|gdouble
@@ -608,7 +624,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -640,7 +656,7 @@ block|,
 block|{
 name|GIMP_PDB_DRAWABLE
 block|,
-literal|"warp_map"
+literal|"warp-map"
 block|,
 literal|"Displacement control map"
 block|}
@@ -672,7 +688,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"wrap_type"
+literal|"wrap-type"
 block|,
 literal|"Edge behavior: { WRAP (0), SMEAR (1), BLACK (2), COLOR (3) }"
 block|}
@@ -680,7 +696,7 @@ block|,
 block|{
 name|GIMP_PDB_DRAWABLE
 block|,
-literal|"mag_map"
+literal|"mag-map"
 block|,
 literal|"Magnitude control map"
 block|}
@@ -688,7 +704,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"mag_use"
+literal|"mag-use"
 block|,
 literal|"Use magnitude map: { FALSE (0), TRUE (1) }"
 block|}
@@ -704,7 +720,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"grad_map"
+literal|"grad-map"
 block|,
 literal|"Gradient control map"
 block|}
@@ -712,7 +728,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"grad_scale"
+literal|"grad-scale"
 block|,
 literal|"Scaling factor for gradient map (0=don't use)"
 block|}
@@ -720,7 +736,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"vector_map"
+literal|"vector-map"
 block|,
 literal|"Fixed vector control map"
 block|}
@@ -728,7 +744,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"vector_scale"
+literal|"vector-scale"
 block|,
 literal|"Scaling factor for fixed vector map (0=don't use)"
 block|}
@@ -736,7 +752,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"vector_angle"
+literal|"vector-angle"
 block|,
 literal|"Angle for fixed vector map"
 block|}
@@ -744,7 +760,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_warp"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"Twist or smear an image. (only first six "
 literal|"arguments are required)"
@@ -783,7 +799,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_warp"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Map"
 argument_list|)
@@ -972,7 +988,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_warp"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|dvals
@@ -1279,7 +1295,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_warp"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|dvals
@@ -1323,7 +1339,7 @@ name|GIMP_RUN_INTERACTIVE
 condition|)
 name|gimp_set_data
 argument_list|(
-literal|"plug_in_warp"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|dvals
@@ -1462,7 +1478,7 @@ name|run
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"warp"
+name|PLUG_IN_BINARY
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1476,7 +1492,7 @@ argument_list|(
 literal|"Warp"
 argument_list|)
 argument_list|,
-literal|"warp"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -1484,7 +1500,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"plug-in-warp"
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

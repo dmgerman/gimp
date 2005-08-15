@@ -40,10 +40,18 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_define
-DECL|macro|PLUG_IN_NAME
+DECL|macro|PLUG_IN_PROC
 define|#
 directive|define
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
+value|"plug-in-wind"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
 value|"wind"
 end_define
 
@@ -98,7 +106,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29262d700103
+DECL|enum|__anon2c1e9f850103
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -114,7 +122,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29262d700203
+DECL|enum|__anon2c1e9f850203
 block|{
 DECL|enumerator|RENDER_WIND
 name|RENDER_WIND
@@ -130,7 +138,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29262d700303
+DECL|enum|__anon2c1e9f850303
 block|{
 DECL|enumerator|BOTH
 name|BOTH
@@ -528,7 +536,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -576,7 +584,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"alg"
+literal|"algorithm"
 block|,
 literal|"WIND, BLAST"
 block|}
@@ -592,7 +600,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_wind"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"Renders a wind effect."
 argument_list|,
@@ -627,7 +635,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_wind"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Distorts"
 argument_list|)
@@ -837,7 +845,7 @@ name|GIMP_RUN_INTERACTIVE
 case|:
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_wind"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|config
@@ -879,7 +887,7 @@ break|break;
 block|}
 name|gimp_set_data
 argument_list|(
-literal|"plug_in_wind"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|config
@@ -899,7 +907,7 @@ name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_wind"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|config
@@ -3772,7 +3780,7 @@ name|run
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"wind"
+name|PLUG_IN_BINARY
 argument_list|,
 name|TRUE
 argument_list|)
@@ -3786,7 +3794,7 @@ argument_list|(
 literal|"Wind"
 argument_list|)
 argument_list|,
-literal|"wind"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -3794,7 +3802,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"plug-in-wind"
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

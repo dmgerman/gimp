@@ -27,9 +27,25 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_define
+DECL|macro|PLUG_IN_PROC
+define|#
+directive|define
+name|PLUG_IN_PROC
+value|"plug-in-waves"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"waves"
+end_define
+
 begin_enum
 enum|enum
-DECL|enum|__anon29676c310103
+DECL|enum|__anon28944d930103
 block|{
 DECL|enumerator|MODE_SMEAR
 name|MODE_SMEAR
@@ -43,7 +59,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29676c310208
+DECL|struct|__anon28944d930208
 block|{
 DECL|member|amplitude
 name|gdouble
@@ -289,7 +305,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -353,7 +369,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_waves"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"Distort the image with waves"
 argument_list|,
@@ -388,7 +404,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_waves"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Distorts"
 argument_list|)
@@ -505,7 +521,7 @@ name|GIMP_RUN_INTERACTIVE
 case|:
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_waves"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|wvals
@@ -610,7 +626,7 @@ name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_waves"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|wvals
@@ -634,7 +650,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_set_data
 argument_list|(
-literal|"plug_in_waves"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|wvals
@@ -953,7 +969,7 @@ name|run
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"waves"
+name|PLUG_IN_BINARY
 argument_list|,
 name|TRUE
 argument_list|)
@@ -967,7 +983,7 @@ argument_list|(
 literal|"Waves"
 argument_list|)
 argument_list|,
-literal|"waves"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -975,7 +991,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"plug-in-waves"
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

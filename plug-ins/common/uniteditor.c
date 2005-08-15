@@ -34,6 +34,22 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_define
+DECL|macro|PLUG_IN_PROC
+define|#
+directive|define
+name|PLUG_IN_PROC
+value|"plug-in-unit-editor"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"uniteditor"
+end_define
+
+begin_define
 DECL|macro|RESPONSE_REFRESH
 define|#
 directive|define
@@ -43,7 +59,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad7e1f80103
+DECL|enum|__anon2baaad2c0103
 block|{
 DECL|enumerator|SAVE
 name|SAVE
@@ -87,7 +103,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad7e1f80208
+DECL|struct|__anon2baaad2c0208
 block|{
 DECL|member|title
 specifier|const
@@ -482,7 +498,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive"
 block|}
@@ -490,7 +506,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_unit_editor"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"The GIMP unit editor (runs in interactive mode only)"
 argument_list|,
@@ -525,14 +541,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_unit_editor"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Toolbox>/Xtns/Extensions"
 argument_list|)
 expr_stmt|;
 name|gimp_plugin_icon_register
 argument_list|(
-literal|"plug_in_unit_editor"
+name|PLUG_IN_PROC
 argument_list|,
 name|GIMP_ICON_TYPE_STOCK_ID
 argument_list|,
@@ -636,7 +652,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"plug_in_unit_editor"
+name|PLUG_IN_PROC
 argument_list|)
 operator|==
 literal|0
@@ -732,7 +748,7 @@ argument_list|(
 literal|"New Unit"
 argument_list|)
 argument_list|,
-literal|"uniteditor"
+name|PLUG_IN_BINARY
 argument_list|,
 name|main_dialog
 argument_list|,
@@ -740,7 +756,7 @@ name|GTK_DIALOG_MODAL
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"plug-in-unit-editor"
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
@@ -1690,7 +1706,7 @@ name|i
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"uniteditor"
+name|PLUG_IN_BINARY
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1759,7 +1775,7 @@ argument_list|(
 literal|"Unit Editor"
 argument_list|)
 argument_list|,
-literal|"uniteditor"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -1767,7 +1783,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"plug-in-unit-editor"
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_REFRESH
 argument_list|,

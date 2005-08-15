@@ -38,19 +38,19 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_define
-DECL|macro|NAME_PRINT
+DECL|macro|PRINT_PROC
 define|#
 directive|define
-name|NAME_PRINT
-value|"file_print"
+name|PRINT_PROC
+value|"file-print"
 end_define
 
 begin_define
-DECL|macro|NAME_PAGE_SETUP
+DECL|macro|PAGE_SETUP_PROC
 define|#
 directive|define
-name|NAME_PAGE_SETUP
-value|"file_page_setup"
+name|PAGE_SETUP_PROC
+value|"file-page-setup"
 end_define
 
 begin_define
@@ -65,7 +65,7 @@ end_define
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b26d8860108
+DECL|struct|__anon275cb3560108
 block|{
 DECL|member|prDlg
 name|PRINTDLG
@@ -811,7 +811,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-name|NAME_PRINT
+name|PRINT_PROC
 argument_list|,
 literal|"This plug-in prints images from the GIMP."
 argument_list|,
@@ -846,7 +846,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-name|NAME_PAGE_SETUP
+name|PAGE_SETUP_PROC
 argument_list|,
 literal|"This plug-in sets up the page for printing from the GIMP."
 argument_list|,
@@ -881,14 +881,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-name|NAME_PRINT
+name|PRINT_PROC
 argument_list|,
 literal|"<Image>/File/Send"
 argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-name|NAME_PAGE_SETUP
+name|PAGE_SETUP_PROC
 argument_list|,
 literal|"<Image>/File/Send"
 argument_list|)
@@ -1110,7 +1110,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-name|NAME_PRINT
+name|PRINT_PROC
 argument_list|)
 operator|==
 literal|0
@@ -1128,7 +1128,7 @@ if|if
 condition|(
 name|gimp_get_data_size
 argument_list|(
-name|NAME_PRINT
+name|PRINT_PROC
 argument_list|)
 operator|>
 literal|0
@@ -1138,7 +1138,7 @@ name|g_assert
 argument_list|(
 name|gimp_get_data_size
 argument_list|(
-name|NAME_PRINT
+name|PRINT_PROC
 argument_list|)
 operator|==
 sizeof|sizeof
@@ -1149,7 +1149,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_get_data
 argument_list|(
-name|NAME_PRINT
+name|PRINT_PROC
 argument_list|,
 operator|&
 name|vars
@@ -1169,7 +1169,7 @@ name|g_assert
 argument_list|(
 name|gimp_get_data_size
 argument_list|(
-name|NAME_PRINT
+name|PRINT_PROC
 literal|"devmode"
 argument_list|)
 operator|==
@@ -1212,7 +1212,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_get_data
 argument_list|(
-name|NAME_PRINT
+name|PRINT_PROC
 literal|"devmode"
 argument_list|,
 name|dmp
@@ -2490,7 +2490,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-name|NAME_PAGE_SETUP
+name|PAGE_SETUP_PROC
 argument_list|)
 operator|==
 literal|0
@@ -2508,7 +2508,7 @@ if|if
 condition|(
 name|gimp_get_data_size
 argument_list|(
-name|NAME_PRINT
+name|PRINT_PROC
 argument_list|)
 operator|>
 literal|0
@@ -2518,7 +2518,7 @@ name|g_assert
 argument_list|(
 name|gimp_get_data_size
 argument_list|(
-name|NAME_PRINT
+name|PRINT_PROC
 argument_list|)
 operator|==
 sizeof|sizeof
@@ -2529,7 +2529,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_get_data
 argument_list|(
-name|NAME_PRINT
+name|PRINT_PROC
 argument_list|,
 operator|&
 name|vars
@@ -2549,7 +2549,7 @@ name|g_assert
 argument_list|(
 name|gimp_get_data_size
 argument_list|(
-name|NAME_PRINT
+name|PRINT_PROC
 literal|"devmode"
 argument_list|)
 operator|==
@@ -2592,7 +2592,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_get_data
 argument_list|(
-name|NAME_PRINT
+name|PRINT_PROC
 literal|"devmode"
 argument_list|,
 name|dmp
@@ -2772,7 +2772,7 @@ endif|#
 directive|endif
 name|gimp_set_data
 argument_list|(
-name|NAME_PRINT
+name|PRINT_PROC
 literal|"devmode"
 argument_list|,
 name|dmp
@@ -2789,7 +2789,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_set_data
 argument_list|(
-name|NAME_PRINT
+name|PRINT_PROC
 argument_list|,
 operator|&
 name|vars

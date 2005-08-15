@@ -57,6 +57,30 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_define
+DECL|macro|LOAD_PROC
+define|#
+directive|define
+name|LOAD_PROC
+value|"file-xbm-load"
+end_define
+
+begin_define
+DECL|macro|SAVE_PROC
+define|#
+directive|define
+name|SAVE_PROC
+value|"file-xbm-save"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"xbm"
+end_define
+
 begin_comment
 comment|/* Wear your GIMP with pride! */
 end_comment
@@ -419,7 +443,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -435,7 +459,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"raw_filename"
+literal|"raw-filename"
 block|,
 literal|"The name entered"
 block|}
@@ -465,7 +489,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -497,7 +521,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"raw_filename"
+literal|"raw-filename"
 block|,
 literal|"The name entered"
 block|}
@@ -521,7 +545,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"x_hot"
+literal|"x-hot"
 block|,
 literal|"X coordinate of hotspot"
 block|}
@@ -529,7 +553,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"y_hot"
+literal|"y-hot"
 block|,
 literal|"Y coordinate of hotspot"
 block|}
@@ -545,7 +569,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"write_mask"
+literal|"write-mask"
 block|,
 literal|"(0 = ignore, 1 = save as extra file)"
 block|}
@@ -553,7 +577,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"mask_extension"
+literal|"mask-extension"
 block|,
 literal|"Extension of the mask file"
 block|}
@@ -561,7 +585,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"file_xbm_load"
+name|LOAD_PROC
 argument_list|,
 literal|"Load a file in X10 or X11 bitmap (XBM) file format"
 argument_list|,
@@ -599,14 +623,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_file_handler_mime
 argument_list|(
-literal|"file_xbm_load"
+name|LOAD_PROC
 argument_list|,
 literal|"image/x-xbitmap"
 argument_list|)
 expr_stmt|;
 name|gimp_register_load_handler
 argument_list|(
-literal|"file_xbm_load"
+name|LOAD_PROC
 argument_list|,
 literal|"xbm,icon,bitmap"
 argument_list|,
@@ -615,7 +639,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"file_xbm_save"
+name|SAVE_PROC
 argument_list|,
 literal|"Save a file in X10 or X11 bitmap (XBM) file format"
 argument_list|,
@@ -650,14 +674,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_file_handler_mime
 argument_list|(
-literal|"file_xbm_save"
+name|SAVE_PROC
 argument_list|,
 literal|"image/x-xbitmap"
 argument_list|)
 expr_stmt|;
 name|gimp_register_save_handler
 argument_list|(
-literal|"file_xbm_save"
+name|SAVE_PROC
 argument_list|,
 literal|"xbm,icon,bitmap"
 argument_list|,
@@ -924,7 +948,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_xbm_load"
+name|LOAD_PROC
 argument_list|)
 operator|==
 literal|0
@@ -993,7 +1017,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_xbm_save"
+name|SAVE_PROC
 argument_list|)
 operator|==
 literal|0
@@ -1034,7 +1058,7 @@ name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|gimp_ui_init
 argument_list|(
-literal|"xbm"
+name|PLUG_IN_BINARY
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1094,7 +1118,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"file_xbm_save"
+name|SAVE_PROC
 argument_list|,
 operator|&
 name|xsvals
@@ -1763,7 +1787,7 @@ block|{
 comment|/*  Store xsvals data  */
 name|gimp_set_data
 argument_list|(
-literal|"file_xbm_save"
+name|SAVE_PROC
 argument_list|,
 operator|&
 name|xsvals
@@ -4432,7 +4456,7 @@ argument_list|(
 literal|"Save as XBM"
 argument_list|)
 argument_list|,
-literal|"xbm"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -4440,7 +4464,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"file-xbm-save"
+name|SAVE_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

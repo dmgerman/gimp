@@ -21,6 +21,14 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_define
+DECL|macro|PLUG_IN_PROC
+define|#
+directive|define
+name|PLUG_IN_PROC
+value|"plug-in-zealouscrop"
+end_define
+
 begin_comment
 comment|/* Declare local functions. */
 end_comment
@@ -215,7 +223,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -239,7 +247,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_zealouscrop"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"Automagically crops unused space from the edges "
 literal|"and middle of a picture."
@@ -275,7 +283,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_zealouscrop"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Image/Crop"
 argument_list|)

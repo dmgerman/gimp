@@ -32,6 +32,22 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_define
+DECL|macro|PLUG_IN_PROC
+define|#
+directive|define
+name|PLUG_IN_PROC
+value|"plug-in-video"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"video"
+end_define
+
+begin_define
 DECL|macro|MAX_PATTERNS
 define|#
 directive|define
@@ -60884,7 +60900,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2960a35c0108
+DECL|struct|__anon2772ac5a0108
 block|{
 DECL|member|pattern_number
 name|gint
@@ -61093,7 +61109,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -61117,7 +61133,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"pattern_number"
+literal|"pattern-number"
 block|,
 literal|"Type of RGB pattern to use"
 block|}
@@ -61141,7 +61157,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_video"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"Apply low-dotpitch RGB simulation to the "
 literal|"specified drawable"
@@ -61179,7 +61195,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_video"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Distorts"
 argument_list|)
@@ -61290,7 +61306,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_video"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|vvals
@@ -61373,7 +61389,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_video"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|vvals
@@ -61463,7 +61479,7 @@ name|GIMP_RUN_INTERACTIVE
 condition|)
 name|gimp_set_data
 argument_list|(
-literal|"plug_in_video"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|vvals
@@ -62033,7 +62049,7 @@ name|run
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"video"
+name|PLUG_IN_BINARY
 argument_list|,
 name|TRUE
 argument_list|)
@@ -62047,7 +62063,7 @@ argument_list|(
 literal|"Video"
 argument_list|)
 argument_list|,
-literal|"video"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -62055,7 +62071,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"plug-in-video"
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

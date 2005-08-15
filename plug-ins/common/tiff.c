@@ -49,10 +49,42 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_define
+DECL|macro|LOAD_PROC
+define|#
+directive|define
+name|LOAD_PROC
+value|"file-tiff-load"
+end_define
+
+begin_define
+DECL|macro|SAVE_PROC
+define|#
+directive|define
+name|SAVE_PROC
+value|"file-tiff-save"
+end_define
+
+begin_define
+DECL|macro|SAVE2_PROC
+define|#
+directive|define
+name|SAVE2_PROC
+value|"file-tiff-save2"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"tiff"
+end_define
+
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274ce6870108
+DECL|struct|__anon2b2aafa50108
 block|{
 DECL|member|compression
 name|gint
@@ -75,7 +107,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274ce6870208
+DECL|struct|__anon2b2aafa50208
 block|{
 DECL|member|ID
 name|gint32
@@ -620,7 +652,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -636,7 +668,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"raw_filename"
+literal|"raw-filename"
 block|,
 literal|"The name of the file to load"
 block|}
@@ -662,7 +694,7 @@ define|#
 directive|define
 name|COMMON_SAVE_ARGS
 define|\
-value|{ GIMP_PDB_INT32, "run_mode", "Interactive, non-interactive" },\     { GIMP_PDB_IMAGE, "image", "Input image" },\     { GIMP_PDB_DRAWABLE, "drawable", "Drawable to save" },\     { GIMP_PDB_STRING, "filename", "The name of the file to save the image in" },\     { GIMP_PDB_STRING, "raw_filename", "The name of the file to save the image in" },\     { GIMP_PDB_INT32, "compression", "Compression type: { NONE (0), LZW (1), PACKBITS (2), DEFLATE (3), JPEG (4)" }
+value|{ GIMP_PDB_INT32,    "run-mode",     "Interactive, non-interactive" },\     { GIMP_PDB_IMAGE,    "image",        "Input image" },\     { GIMP_PDB_DRAWABLE, "drawable",     "Drawable to save" },\     { GIMP_PDB_STRING,   "filename",     "The name of the file to save the image in" },\     { GIMP_PDB_STRING,   "raw-filename", "The name of the file to save the image in" },\     { GIMP_PDB_INT32,    "compression",  "Compression type: { NONE (0), LZW (1), PACKBITS (2), DEFLATE (3), JPEG (4)" }
 specifier|static
 name|GimpParamDef
 name|save_args_old
@@ -683,7 +715,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"save_transp_pixels"
+literal|"save-transp-pixels"
 block|,
 literal|"Keep the color data masked by an alpha channel intact"
 block|}
@@ -691,7 +723,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"file_tiff_load"
+name|LOAD_PROC
 argument_list|,
 literal|"loads files of the tiff file format"
 argument_list|,
@@ -729,14 +761,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_file_handler_mime
 argument_list|(
-literal|"file_tiff_load"
+name|LOAD_PROC
 argument_list|,
 literal|"image/tiff"
 argument_list|)
 expr_stmt|;
 name|gimp_register_magic_load_handler
 argument_list|(
-literal|"file_tiff_load"
+name|LOAD_PROC
 argument_list|,
 literal|"tif,tiff"
 argument_list|,
@@ -747,7 +779,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"file_tiff_save"
+name|SAVE_PROC
 argument_list|,
 literal|"saves files in the tiff file format"
 argument_list|,
@@ -784,14 +816,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_file_handler_mime
 argument_list|(
-literal|"file_tiff_save"
+name|SAVE_PROC
 argument_list|,
 literal|"image/tiff"
 argument_list|)
 expr_stmt|;
 name|gimp_register_save_handler
 argument_list|(
-literal|"file_tiff_save"
+name|SAVE_PROC
 argument_list|,
 literal|"tif,tiff"
 argument_list|,
@@ -800,7 +832,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"file_tiff_save2"
+name|SAVE2_PROC
 argument_list|,
 literal|"saves files in the tiff file format"
 argument_list|,
@@ -837,7 +869,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_file_handler_mime
 argument_list|(
-literal|"file_tiff_save2"
+name|SAVE2_PROC
 argument_list|,
 literal|"image/tiff"
 argument_list|)
@@ -954,7 +986,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_tiff_load"
+name|LOAD_PROC
 argument_list|)
 operator|==
 literal|0
@@ -1023,7 +1055,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_tiff_save"
+name|SAVE_PROC
 argument_list|)
 operator|==
 literal|0
@@ -1032,7 +1064,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_tiff_save2"
+name|SAVE2_PROC
 argument_list|)
 operator|==
 literal|0
@@ -1078,7 +1110,7 @@ name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|gimp_ui_init
 argument_list|(
-literal|"tiff"
+name|PLUG_IN_BINARY
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1176,7 +1208,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"file_tiff_save"
+name|SAVE_PROC
 argument_list|,
 operator|&
 name|tsvals
@@ -1370,7 +1402,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"file_tiff_save"
+name|SAVE_PROC
 argument_list|,
 operator|&
 name|tsvals
@@ -1457,7 +1489,7 @@ block|{
 comment|/*  Store mvals data  */
 name|gimp_set_data
 argument_list|(
-literal|"file_tiff_save"
+name|SAVE_PROC
 argument_list|,
 operator|&
 name|tsvals
@@ -9504,7 +9536,7 @@ argument_list|(
 literal|"Save as TIFF"
 argument_list|)
 argument_list|,
-literal|"tiff"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -9512,7 +9544,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"file-tiff-save"
+name|SAVE_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
