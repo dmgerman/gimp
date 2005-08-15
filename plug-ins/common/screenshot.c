@@ -240,19 +240,19 @@ comment|/* Defines */
 end_comment
 
 begin_define
-DECL|macro|PLUG_IN_NAME
+DECL|macro|PLUG_IN_PROC
 define|#
 directive|define
-name|PLUG_IN_NAME
-value|"plug_in_screenshot"
+name|PLUG_IN_PROC
+value|"plug-in-screenshot"
 end_define
 
 begin_define
-DECL|macro|HELP_ID
+DECL|macro|PLUG_IN_BINARY
 define|#
 directive|define
-name|HELP_ID
-value|"plug-in-screenshot"
+name|PLUG_IN_BINARY
+value|"screenshot"
 end_define
 
 begin_ifdef
@@ -299,7 +299,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon289da5180103
+DECL|enum|__anon28cb15bb0103
 block|{
 DECL|enumerator|SHOOT_ROOT
 name|SHOOT_ROOT
@@ -318,7 +318,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289da5180208
+DECL|struct|__anon28cb15bb0208
 block|{
 DECL|member|shoot_type
 name|ShootType
@@ -553,7 +553,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -569,7 +569,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"window_id"
+literal|"window-id"
 block|,
 literal|"Window id"
 block|}
@@ -605,7 +605,7 @@ literal|"y2"
 block|,
 literal|"(optional) Region bottom y coord"
 block|}
-block|,   }
+block|}
 decl_stmt|;
 specifier|static
 name|GimpParamDef
@@ -624,7 +624,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 literal|"Take a screenshot"
 argument_list|,
@@ -670,15 +670,15 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Toolbox>/File/Acquire"
 argument_list|)
 expr_stmt|;
-comment|/* gimp_plugin_menu_register (PLUG_IN_NAME, "<Image>/File/Acquire"); */
+comment|/* gimp_plugin_menu_register (PLUG_IN_PROC, "<Image>/File/Acquire"); */
 name|gimp_plugin_icon_register
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 name|GIMP_ICON_TYPE_INLINE_PIXBUF
 argument_list|,
@@ -796,7 +796,7 @@ case|:
 comment|/* Possibly retrieve data from a previous run */
 name|gimp_get_data
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|shootvals
@@ -995,7 +995,7 @@ case|:
 comment|/* Possibly retrieve data from a previous run */
 name|gimp_get_data
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|shootvals
@@ -1065,7 +1065,7 @@ block|{
 comment|/* Store variable states for next run */
 name|gimp_set_data
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|shootvals
@@ -2999,7 +2999,7 @@ expr_stmt|;
 block|}
 name|gimp_ui_init
 argument_list|(
-literal|"screenshot"
+name|PLUG_IN_BINARY
 argument_list|,
 name|FALSE
 argument_list|)
@@ -3013,7 +3013,7 @@ argument_list|(
 literal|"Screenshot"
 argument_list|)
 argument_list|,
-literal|"screenshot"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -3021,7 +3021,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-name|HELP_ID
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

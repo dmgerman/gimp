@@ -98,6 +98,30 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_define
+DECL|macro|LOAD_PROC
+define|#
+directive|define
+name|LOAD_PROC
+value|"file-raw-load"
+end_define
+
+begin_define
+DECL|macro|SAVE_PROC
+define|#
+directive|define
+name|SAVE_PROC
+value|"file-raw-save"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"raw"
+end_define
+
+begin_define
 DECL|macro|PREVIEW_SIZE
 define|#
 directive|define
@@ -108,7 +132,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b88eb200103
+DECL|enum|__anon2acfc6170103
 block|{
 DECL|enumerator|RAW_RGB
 name|RAW_RGB
@@ -134,7 +158,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b88eb200203
+DECL|enum|__anon2acfc6170203
 block|{
 DECL|enumerator|RAW_PALETTE_RGB
 name|RAW_PALETTE_RGB
@@ -152,7 +176,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b88eb200308
+DECL|struct|__anon2acfc6170308
 block|{
 DECL|member|file_offset
 name|gint32
@@ -193,7 +217,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b88eb200408
+DECL|struct|__anon2acfc6170408
 block|{
 DECL|member|fp
 name|FILE
@@ -582,7 +606,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive"
 block|}
@@ -598,7 +622,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"raw_filename"
+literal|"raw-filename"
 block|,
 literal|"The name entered"
 block|}
@@ -628,7 +652,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -660,7 +684,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"raw_filename"
+literal|"raw-filename"
 block|,
 literal|"The name entered"
 block|}
@@ -668,7 +692,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"file_raw_load"
+name|LOAD_PROC
 argument_list|,
 literal|"Load raw images, specifying image information"
 argument_list|,
@@ -706,7 +730,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_load_handler
 argument_list|(
-literal|"file_raw_load"
+name|LOAD_PROC
 argument_list|,
 literal|""
 argument_list|,
@@ -715,7 +739,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"file_raw_save"
+name|SAVE_PROC
 argument_list|,
 literal|"Dump images to disk in raw format"
 argument_list|,
@@ -750,7 +774,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_save_handler
 argument_list|(
-literal|"file_raw_save"
+name|SAVE_PROC
 argument_list|,
 literal|""
 argument_list|,
@@ -897,7 +921,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_raw_load"
+name|LOAD_PROC
 argument_list|)
 operator|==
 literal|0
@@ -912,7 +936,7 @@ condition|)
 block|{
 name|gimp_get_data
 argument_list|(
-literal|"file_raw_load"
+name|LOAD_PROC
 argument_list|,
 name|runtime
 argument_list|)
@@ -1040,7 +1064,7 @@ condition|)
 block|{
 name|gimp_set_data
 argument_list|(
-literal|"file_raw_load"
+name|LOAD_PROC
 argument_list|,
 name|runtime
 argument_list|,
@@ -1092,7 +1116,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_raw_save"
+name|SAVE_PROC
 argument_list|)
 operator|==
 literal|0
@@ -1129,7 +1153,7 @@ condition|)
 block|{
 name|gimp_get_data
 argument_list|(
-literal|"file_raw_save"
+name|SAVE_PROC
 argument_list|,
 name|runtime
 argument_list|)
@@ -4172,7 +4196,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"raw"
+name|PLUG_IN_BINARY
 argument_list|,
 name|TRUE
 argument_list|)
@@ -4186,7 +4210,7 @@ argument_list|(
 literal|"Raw Image Loader"
 argument_list|)
 argument_list|,
-literal|"raw"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -4194,7 +4218,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"file-load-raw"
+name|LOAD_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
@@ -5131,7 +5155,7 @@ name|run
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"raw"
+name|PLUG_IN_BINARY
 argument_list|,
 name|TRUE
 argument_list|)
@@ -5145,7 +5169,7 @@ argument_list|(
 literal|"Raw Image Save"
 argument_list|)
 argument_list|,
-literal|"raw"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -5153,7 +5177,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"file-raw-save"
+name|SAVE_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
@@ -5164,6 +5188,21 @@ argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_dialog_set_alternative_button_order
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|,
+name|GTK_RESPONSE_OK
+argument_list|,
+name|GTK_RESPONSE_CANCEL
+argument_list|,
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 name|main_vbox

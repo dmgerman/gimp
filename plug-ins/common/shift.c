@@ -32,6 +32,22 @@ comment|/* Some useful macros */
 end_comment
 
 begin_define
+DECL|macro|PLUG_IN_PROC
+define|#
+directive|define
+name|PLUG_IN_PROC
+value|"plug-in-shift"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"shift"
+end_define
+
+begin_define
 DECL|macro|SPIN_BUTTON_WIDTH
 define|#
 directive|define
@@ -66,7 +82,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2911f6510108
+DECL|struct|__anon2800cfd30108
 block|{
 DECL|member|shift_amount
 name|gint
@@ -248,7 +264,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -272,7 +288,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"shift_amount"
+literal|"shift-amount"
 block|,
 literal|"shift amount (0<= shift_amount_x<= 200)"
 block|}
@@ -288,7 +304,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_shift"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"Shift the contents of the specified drawable"
 argument_list|,
@@ -325,7 +341,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_shift"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Distorts"
 argument_list|)
@@ -471,7 +487,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_shift"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|shvals
@@ -566,7 +582,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_shift"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|shvals
@@ -635,7 +651,7 @@ name|GIMP_RUN_INTERACTIVE
 condition|)
 name|gimp_set_data
 argument_list|(
-literal|"plug_in_shift"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|shvals
@@ -1299,7 +1315,7 @@ name|run
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"shift"
+name|PLUG_IN_BINARY
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1313,7 +1329,7 @@ argument_list|(
 literal|"Shift"
 argument_list|)
 argument_list|,
-literal|"shift"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -1321,7 +1337,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"plug-in-shift"
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

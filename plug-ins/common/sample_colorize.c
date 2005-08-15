@@ -70,11 +70,19 @@ value|2
 end_define
 
 begin_define
-DECL|macro|PLUG_IN_NAME
+DECL|macro|PLUG_IN_PROC
 define|#
 directive|define
-name|PLUG_IN_NAME
-value|"plug_in_sample_colorize"
+name|PLUG_IN_PROC
+value|"plug-in-sample-colorize"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"sample_colorize"
 end_define
 
 begin_define
@@ -83,14 +91,6 @@ define|#
 directive|define
 name|NUMBER_IN_ARGS
 value|13
-end_define
-
-begin_define
-DECL|macro|HELP_ID
-define|#
-directive|define
-name|HELP_ID
-value|"plug-in-sample-colorize"
 end_define
 
 begin_define
@@ -341,7 +341,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c40ad030108
+DECL|struct|__anon2be493920108
 block|{
 DECL|member|dst_id
 name|gint32
@@ -410,7 +410,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c40ad030208
+DECL|struct|__anon2be493920208
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -518,7 +518,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c40ad030308
+DECL|struct|__anon2be493920308
 block|{
 DECL|member|color
 name|guchar
@@ -547,7 +547,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c40ad030408
+DECL|struct|__anon2be493920408
 block|{
 DECL|member|all_samples
 name|gint32
@@ -574,7 +574,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c40ad030508
+DECL|struct|__anon2be493920508
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -1321,7 +1321,7 @@ literal|" The sample_drawable should be of type RGB or RGBA"
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 literal|"Colorize the contents of the specified drawable "
 literal|"similar to sample drawable"
@@ -1357,7 +1357,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Colors/Map"
 argument_list|)
@@ -1539,7 +1539,7 @@ expr_stmt|;
 comment|/* Possibly retrieve data from a previous run */
 name|gimp_get_data
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|g_values
@@ -1638,7 +1638,7 @@ argument_list|()
 expr_stmt|;
 name|gimp_set_data
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|g_values
@@ -6012,7 +6012,7 @@ expr_stmt|;
 comment|/* Init GTK  */
 name|gimp_ui_init
 argument_list|(
-literal|"sample_colorize"
+name|PLUG_IN_BINARY
 argument_list|,
 name|TRUE
 argument_list|)
@@ -6031,7 +6031,7 @@ argument_list|(
 literal|"Sample Colorize"
 argument_list|)
 argument_list|,
-literal|"sample_colorize"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -6039,7 +6039,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-name|HELP_ID
+name|PLUG_IN_PROC
 argument_list|,
 name|GIMP_STOCK_RESET
 argument_list|,

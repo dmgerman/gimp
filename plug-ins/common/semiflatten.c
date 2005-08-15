@@ -25,6 +25,14 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_define
+DECL|macro|PLUG_IN_PROC
+define|#
+directive|define
+name|PLUG_IN_PROC
+value|"plug-in-semiflatten"
+end_define
+
 begin_comment
 comment|/* Declare local functions.  */
 end_comment
@@ -140,7 +148,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -150,7 +158,7 @@ name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
-literal|"  Input image (unused)"
+literal|"Input image (unused)"
 block|}
 block|,
 block|{
@@ -164,7 +172,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_semiflatten"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"Flatten pixels in an RGBA image that aren't "
 literal|"completely transparent against the current GIMP "
@@ -203,14 +211,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_semiflatten"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Colors"
 argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_semiflatten"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Layer/Transparency/Modify"
 argument_list|)
@@ -269,16 +277,6 @@ decl_stmt|;
 name|GimpRunMode
 name|run_mode
 decl_stmt|;
-operator|*
-name|nreturn_vals
-operator|=
-literal|1
-expr_stmt|;
-operator|*
-name|return_vals
-operator|=
-name|values
-expr_stmt|;
 name|run_mode
 operator|=
 name|param
@@ -289,6 +287,16 @@ operator|.
 name|data
 operator|.
 name|d_int32
+expr_stmt|;
+operator|*
+name|nreturn_vals
+operator|=
+literal|1
+expr_stmt|;
+operator|*
+name|return_vals
+operator|=
+name|values
 expr_stmt|;
 name|values
 index|[

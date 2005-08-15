@@ -40,6 +40,22 @@ comment|/*---- Defines ----*/
 end_comment
 
 begin_define
+DECL|macro|PLUG_IN_PROC
+define|#
+directive|define
+name|PLUG_IN_PROC
+value|"plug-in-solid-noise"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"snoise"
+end_define
+
+begin_define
 DECL|macro|TABLE_SIZE
 define|#
 directive|define
@@ -89,7 +105,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1b52b50108
+DECL|struct|__anon2b2575a10108
 block|{
 DECL|member|tilable
 name|gboolean
@@ -414,7 +430,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -486,7 +502,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_solid_noise"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"Creates a grayscale noise texture"
 argument_list|,
@@ -522,7 +538,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_solid_noise"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Render/Clouds"
 argument_list|)
@@ -651,7 +667,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_solid_noise"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|snvals
@@ -785,7 +801,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_solid_noise"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|snvals
@@ -884,7 +900,7 @@ condition|)
 block|{
 name|gimp_set_data
 argument_list|(
-literal|"plug_in_solid_noise"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|snvals
@@ -2274,7 +2290,7 @@ name|run
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"snoise"
+name|PLUG_IN_BINARY
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2289,7 +2305,7 @@ argument_list|(
 literal|"Solid Noise"
 argument_list|)
 argument_list|,
-literal|"snoise"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -2297,7 +2313,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"plug-in-solid-noise"
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

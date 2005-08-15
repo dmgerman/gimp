@@ -47,10 +47,26 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_define
+DECL|macro|PLUG_IN_PROC
+define|#
+directive|define
+name|PLUG_IN_PROC
+value|"plug-in-sobel"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"sobel"
+end_define
+
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8180a70108
+DECL|struct|__anon27dff6370108
 block|{
 DECL|member|horizontal
 name|gboolean
@@ -260,7 +276,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -300,7 +316,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"keep_sign"
+literal|"keep-sign"
 block|,
 literal|"Keep sign of result (one direction only)"
 block|}
@@ -308,7 +324,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_sobel"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"Edge Detection with Sobel Operation"
 argument_list|,
@@ -351,7 +367,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_sobel"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Edge-Detect"
 argument_list|)
@@ -486,7 +502,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_sobel"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|bvals
@@ -586,7 +602,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_sobel"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|bvals
@@ -651,7 +667,7 @@ name|GIMP_RUN_INTERACTIVE
 condition|)
 name|gimp_set_data
 argument_list|(
-literal|"plug_in_sobel"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|bvals
@@ -722,7 +738,7 @@ name|run
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"sobel"
+name|PLUG_IN_BINARY
 argument_list|,
 name|FALSE
 argument_list|)
@@ -736,7 +752,7 @@ argument_list|(
 literal|"Sobel Edge Detection"
 argument_list|)
 argument_list|,
-literal|"sobel"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -744,7 +760,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"plug-in-sobel"
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

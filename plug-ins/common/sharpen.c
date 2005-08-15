@@ -38,11 +38,19 @@ comment|/*  * Constants...  */
 end_comment
 
 begin_define
-DECL|macro|PLUG_IN_NAME
+DECL|macro|PLUG_IN_PROC
 define|#
 directive|define
-name|PLUG_IN_NAME
-value|"plug_in_sharpen"
+name|PLUG_IN_PROC
+value|"plug-in-sharpen"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"sharpen"
 end_define
 
 begin_define
@@ -51,14 +59,6 @@ define|#
 directive|define
 name|PLUG_IN_VERSION
 value|"1.4.2 - 3 June 1998"
-end_define
-
-begin_define
-DECL|macro|HELP_ID
-define|#
-directive|define
-name|HELP_ID
-value|"plug-in-sharpen"
 end_define
 
 begin_define
@@ -327,7 +327,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292e6b900108
+DECL|struct|__anon2b2e1b7a0108
 block|{
 DECL|member|sharpen_percent
 name|gint
@@ -412,7 +412,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -444,7 +444,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 literal|"Sharpen filter, typically used to 'sharpen' a "
 literal|"photographic image."
@@ -481,7 +481,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Enhance"
 argument_list|)
@@ -630,7 +630,7 @@ case|:
 comment|/*        * Possibly retrieve data...        */
 name|gimp_get_data
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|sharpen_params
@@ -682,7 +682,7 @@ case|:
 comment|/*        * Possibly retrieve data...        */
 name|gimp_get_data
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|sharpen_params
@@ -748,7 +748,7 @@ name|GIMP_RUN_INTERACTIVE
 condition|)
 name|gimp_set_data
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|sharpen_params
@@ -1655,7 +1655,7 @@ name|run
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"sharpen"
+name|PLUG_IN_BINARY
 argument_list|,
 name|TRUE
 argument_list|)
@@ -1669,7 +1669,7 @@ argument_list|(
 literal|"Sharpen"
 argument_list|)
 argument_list|,
-literal|"Sharpen"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -1677,7 +1677,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-name|HELP_ID
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

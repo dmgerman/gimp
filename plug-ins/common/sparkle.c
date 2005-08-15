@@ -38,6 +38,22 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_define
+DECL|macro|PLUG_IN_PROC
+define|#
+directive|define
+name|PLUG_IN_PROC
+value|"plug-in-sparkle"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"sparkle"
+end_define
+
+begin_define
 DECL|macro|SCALE_WIDTH
 define|#
 directive|define
@@ -109,7 +125,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299233700108
+DECL|struct|__anon2a319ba80108
 block|{
 DECL|member|lum_threshold
 name|gdouble
@@ -506,7 +522,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -530,7 +546,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"lum_threshold"
+literal|"lum-threshold"
 block|,
 literal|"Luminosity threshold (0.0 - 1.0)"
 block|}
@@ -538,7 +554,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"flare_inten"
+literal|"flare-inten"
 block|,
 literal|"Flare intensity (0.0 - 1.0)"
 block|}
@@ -546,7 +562,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"spike_len"
+literal|"spike-len"
 block|,
 literal|"Spike length (in pixels)"
 block|}
@@ -554,7 +570,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"spike_pts"
+literal|"spike-pts"
 block|,
 literal|"# of spike points"
 block|}
@@ -562,7 +578,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"spike_angle"
+literal|"spike-angle"
 block|,
 literal|"Spike angle (0-360 degrees, -1: random)"
 block|}
@@ -586,7 +602,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"random_hue"
+literal|"random-hue"
 block|,
 literal|"Random hue (0.0 - 1.0)"
 block|}
@@ -594,7 +610,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"random_saturation"
+literal|"random-saturation"
 block|,
 literal|"Random saturation (0.0 - 1.0)"
 block|}
@@ -602,7 +618,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"preserve_luminosity"
+literal|"preserve-luminosity"
 block|,
 literal|"Preserve luminosity (TRUE/FALSE)"
 block|}
@@ -626,7 +642,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"colortype"
+literal|"color-type"
 block|,
 literal|"Color of sparkles: { NATURAL (0), FOREGROUND (1), BACKGROUND (2) }"
 block|}
@@ -634,7 +650,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_sparkle"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"Simulates pixel bloom and diffraction effects"
 argument_list|,
@@ -672,7 +688,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_sparkle"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Light and Shadow/Light"
 argument_list|)
@@ -856,7 +872,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_sparkle"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|svals
@@ -1264,7 +1280,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_sparkle"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|svals
@@ -1325,7 +1341,7 @@ name|GIMP_RUN_INTERACTIVE
 condition|)
 name|gimp_set_data
 argument_list|(
-literal|"plug_in_sparkle"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|svals
@@ -1422,7 +1438,7 @@ name|run
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"sparkle"
+name|PLUG_IN_BINARY
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1436,7 +1452,7 @@ argument_list|(
 literal|"Sparkle"
 argument_list|)
 argument_list|,
-literal|"sparkle"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -1444,7 +1460,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"plug-in-sparkle"
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

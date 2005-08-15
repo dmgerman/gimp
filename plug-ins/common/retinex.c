@@ -34,6 +34,22 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_define
+DECL|macro|PLUG_IN_PROC
+define|#
+directive|define
+name|PLUG_IN_PROC
+value|"plug-in-retinex"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"retinex"
+end_define
+
+begin_define
 DECL|macro|MAX_RETINEX_SCALES
 define|#
 directive|define
@@ -76,7 +92,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2781d8600108
+DECL|struct|__anon275fa8f90108
 block|{
 DECL|member|scale
 name|gint
@@ -107,7 +123,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2781d8600203
+DECL|enum|__anon275fa8f90203
 block|{
 DECL|enumerator|filter_uniform
 name|filter_uniform
@@ -165,7 +181,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2781d8600308
+DECL|struct|__anon275fa8f90308
 block|{
 DECL|member|N
 name|gint
@@ -463,7 +479,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -503,7 +519,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"scales_mode"
+literal|"scales-mode"
 block|,
 literal|"Retinex distribution through scales"
 block|}
@@ -519,7 +535,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_retinex"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"Retinex Image Enhancement Algorithm"
 argument_list|,
@@ -559,7 +575,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_retinex"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Colors"
 argument_list|)
@@ -762,7 +778,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_retinex"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|rvals
@@ -864,7 +880,7 @@ name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_retinex"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|rvals
@@ -933,7 +949,7 @@ name|GIMP_RUN_INTERACTIVE
 condition|)
 name|gimp_set_data
 argument_list|(
-literal|"plug_in_retinex"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|rvals
@@ -1027,7 +1043,7 @@ name|run
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"retinex"
+name|PLUG_IN_BINARY
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1041,7 +1057,7 @@ argument_list|(
 literal|"Retinex Image Enhancement"
 argument_list|)
 argument_list|,
-literal|"retinex"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -1049,7 +1065,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"plug-in-retinex"
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

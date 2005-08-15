@@ -34,27 +34,43 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_define
-DECL|macro|PLUG_IN_NAME
+DECL|macro|HSV_NOISE_PROC
 define|#
 directive|define
-name|PLUG_IN_NAME
-value|"plug_in_scatter_hsv"
+name|HSV_NOISE_PROC
+value|"plug-in-hsv-noise"
 end_define
 
 begin_define
-DECL|macro|SHORT_NAME
+DECL|macro|SCATTER_HSV_PROC
 define|#
 directive|define
-name|SHORT_NAME
+name|SCATTER_HSV_PROC
+value|"plug-in-scatter-hsv"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
 value|"scatter_hsv"
 end_define
 
 begin_define
-DECL|macro|HELP_ID
+DECL|macro|SCALE_WIDTH
 define|#
 directive|define
-name|HELP_ID
-value|"plug-in-scatter-hsv"
+name|SCALE_WIDTH
+value|100
+end_define
+
+begin_define
+DECL|macro|ENTRY_WIDTH
+define|#
+directive|define
+name|ENTRY_WIDTH
+value|3
 end_define
 
 begin_function_decl
@@ -176,22 +192,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_define
-DECL|macro|SCALE_WIDTH
-define|#
-directive|define
-name|SCALE_WIDTH
-value|100
-end_define
-
-begin_define
-DECL|macro|ENTRY_WIDTH
-define|#
-directive|define
-name|ENTRY_WIDTH
-value|3
-end_define
-
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
 name|GimpPlugInInfo
@@ -217,7 +217,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b01d6650108
+DECL|struct|__anon2c1b83100108
 block|{
 DECL|member|holdness
 name|gint
@@ -288,7 +288,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -320,7 +320,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"hue_distance"
+literal|"hue-distance"
 block|,
 literal|"distribution distance on hue axis [0,255]"
 block|}
@@ -328,7 +328,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"saturation_distance"
+literal|"saturation-distance"
 block|,
 literal|"distribution distance on saturation axis [0,255]"
 block|}
@@ -336,7 +336,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"value_distance"
+literal|"value-distance"
 block|,
 literal|"distribution distance on value axis [0,255]"
 block|}
@@ -344,7 +344,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_hsv_noise"
+name|HSV_NOISE_PROC
 argument_list|,
 literal|"Scattering pixel values in HSV space"
 argument_list|,
@@ -379,14 +379,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_hsv_noise"
+name|HSV_NOISE_PROC
 argument_list|,
 literal|"<Image>/Filters/Noise"
 argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-name|PLUG_IN_NAME
+name|SCATTER_HSV_PROC
 argument_list|,
 literal|"Scattering pixel values in HSV space"
 argument_list|,
@@ -535,7 +535,7 @@ name|GIMP_RUN_INTERACTIVE
 case|:
 name|gimp_get_data
 argument_list|(
-name|PLUG_IN_NAME
+name|HSV_NOISE_PROC
 argument_list|,
 operator|&
 name|VALS
@@ -630,7 +630,7 @@ name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|gimp_get_data
 argument_list|(
-name|PLUG_IN_NAME
+name|HSV_NOISE_PROC
 argument_list|,
 operator|&
 name|VALS
@@ -664,7 +664,7 @@ name|GIMP_PDB_SUCCESS
 condition|)
 name|gimp_set_data
 argument_list|(
-name|PLUG_IN_NAME
+name|HSV_NOISE_PROC
 argument_list|,
 operator|&
 name|VALS
@@ -1519,7 +1519,7 @@ name|run
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-name|SHORT_NAME
+name|PLUG_IN_BINARY
 argument_list|,
 name|TRUE
 argument_list|)
@@ -1533,7 +1533,7 @@ argument_list|(
 literal|"Scatter HSV"
 argument_list|)
 argument_list|,
-name|SHORT_NAME
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -1541,7 +1541,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-name|HELP_ID
+name|HSV_NOISE_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

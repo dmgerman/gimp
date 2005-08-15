@@ -28,6 +28,22 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_define
+DECL|macro|PLUG_IN_PROC
+define|#
+directive|define
+name|PLUG_IN_PROC
+value|"plug-in-spread"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"spread"
+end_define
+
+begin_define
 DECL|macro|TILE_CACHE_SIZE
 define|#
 directive|define
@@ -38,7 +54,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275b0e140108
+DECL|struct|__anon277d63070108
 block|{
 DECL|member|spread_amount_x
 name|gdouble
@@ -217,7 +233,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -241,7 +257,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"spread_amount_x"
+literal|"spread-amount-x"
 block|,
 literal|"Horizontal spread amount (0<= spread_amount_x<= 200)"
 block|}
@@ -249,7 +265,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"spread_amount_y"
+literal|"spread-amount-y"
 block|,
 literal|"Vertical spread amount (0<= spread_amount_y<= 200)"
 block|}
@@ -257,7 +273,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_spread"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"Spread the contents of the specified drawable"
 argument_list|,
@@ -296,7 +312,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_spread"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Noise"
 argument_list|)
@@ -442,7 +458,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_spread"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|spvals
@@ -553,7 +569,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_spread"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|spvals
@@ -620,7 +636,7 @@ name|GIMP_RUN_INTERACTIVE
 condition|)
 name|gimp_set_data
 argument_list|(
-literal|"plug_in_spread"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|spvals
@@ -663,7 +679,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275b0e140208
+DECL|struct|__anon277d63070208
 block|{
 DECL|member|pft
 name|GimpPixelFetcher
@@ -1315,7 +1331,7 @@ name|run
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"spread"
+name|PLUG_IN_BINARY
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1329,7 +1345,7 @@ argument_list|(
 literal|"Spread"
 argument_list|)
 argument_list|,
-literal|"spread"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -1337,7 +1353,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"plug-in-spread"
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

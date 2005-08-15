@@ -46,6 +46,14 @@ comment|/* Defines */
 end_comment
 
 begin_define
+DECL|macro|PLUG_IN_PROC
+define|#
+directive|define
+name|PLUG_IN_PROC
+value|"plug-in-rotate"
+end_define
+
+begin_define
 DECL|macro|PLUG_IN_VERSION
 define|#
 directive|define
@@ -80,7 +88,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af6a2d10108
+DECL|struct|__anon28d0f4210108
 block|{
 DECL|member|angle
 name|gint
@@ -99,7 +107,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af6a2d10208
+DECL|struct|__anon28d0f4210208
 block|{
 DECL|member|ID
 name|gint32
@@ -303,7 +311,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -343,7 +351,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_rotate"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"Rotates a layer or the whole image by 90, 180 or 270 degrees"
 argument_list|,
@@ -408,7 +416,6 @@ modifier|*
 name|return_vals
 parameter_list|)
 block|{
-comment|/* Get the runmode from the in-parameters */
 name|GimpRunMode
 name|run_mode
 init|=
@@ -421,13 +428,11 @@ name|data
 operator|.
 name|d_int32
 decl_stmt|;
-comment|/* status variable, use it to check for errors in invocation usualy only      during non-interactive calling */
 name|GimpPDBStatusType
 name|status
 init|=
 name|GIMP_PDB_SUCCESS
 decl_stmt|;
-comment|/*always return at least the status to the caller. */
 specifier|static
 name|GimpParam
 name|values
@@ -435,7 +440,16 @@ index|[
 literal|1
 index|]
 decl_stmt|;
-comment|/* initialize the return of the status */
+operator|*
+name|nreturn_vals
+operator|=
+literal|1
+expr_stmt|;
+operator|*
+name|return_vals
+operator|=
+name|values
+expr_stmt|;
 name|values
 index|[
 literal|0
@@ -456,20 +470,9 @@ name|d_status
 operator|=
 name|status
 expr_stmt|;
-operator|*
-name|nreturn_vals
-operator|=
-literal|1
-expr_stmt|;
-operator|*
-name|return_vals
-operator|=
-name|values
-expr_stmt|;
 name|INIT_I18N
 argument_list|()
 expr_stmt|;
-comment|/* get image and drawable */
 name|image_ID
 operator|=
 name|param
@@ -495,14 +498,13 @@ operator|.
 name|d_drawable
 argument_list|)
 expr_stmt|;
-comment|/* Check the procedure name we were called with, to decide      what needs to be done. */
 if|if
 condition|(
 name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"plug_in_rotate"
+name|PLUG_IN_PROC
 argument_list|)
 operator|==
 literal|0
@@ -572,7 +574,7 @@ expr_stmt|;
 comment|/* Store variable states for next run */
 name|gimp_set_data
 argument_list|(
-literal|"plug_in_rotate"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|rotvals
@@ -596,7 +598,7 @@ case|:
 comment|/* Possibly retrieve data from a previous run */
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_rotate"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|rotvals

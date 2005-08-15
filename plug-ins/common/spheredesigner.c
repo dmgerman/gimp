@@ -7,14 +7,6 @@ begin_comment
 comment|/*  * SphereDesigner v0.4 - creates textured spheres  * by Vidar Madsen<vidar@prosalg.no>  *  * Status: Last updated 1999-09-11  *  * Known issues:  * - Might crash if you click OK or Cancel before first preview is rendered  * - Phong might look weird with transparent textures  *  * Todo:  * - Saving / Loading of presets needs an overhaul  * - Antialiasing  * - Global controls: Gamma, ++  * - Beautification of GUI  * - Clean up messy source (lots of Glade remnants)  * - (Probably more. ;-)  */
 end_comment
 
-begin_define
-DECL|macro|PLUG_IN_NAME
-define|#
-directive|define
-name|PLUG_IN_NAME
-value|"SphereDesigner"
-end_define
-
 begin_include
 include|#
 directive|include
@@ -56,6 +48,22 @@ include|#
 directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
+
+begin_define
+DECL|macro|PLUG_IN_PROC
+define|#
+directive|define
+name|PLUG_IN_PROC
+value|"plug-in-spheredesigner"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"spheredesigner"
+end_define
 
 begin_define
 DECL|macro|RESPONSE_RESET
@@ -205,7 +213,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon29125e140103
+DECL|enum|__anon296569ab0103
 block|{
 DECL|enumerator|TRIANGLE
 name|TRIANGLE
@@ -230,7 +238,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29125e140203
+DECL|enum|__anon296569ab0203
 block|{
 DECL|enumerator|SOLID
 name|SOLID
@@ -279,7 +287,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29125e140303
+DECL|enum|__anon296569ab0303
 block|{
 DECL|enumerator|PERSPECTIVE
 name|PERSPECTIVE
@@ -295,7 +303,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29125e140403
+DECL|enum|__anon296569ab0403
 block|{
 DECL|enumerator|FOG
 name|FOG
@@ -305,7 +313,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29125e140503
+DECL|enum|__anon296569ab0503
 block|{
 DECL|enumerator|TYPE
 name|TYPE
@@ -358,7 +366,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29125e140608
+DECL|struct|__anon296569ab0608
 block|{
 DECL|member|xsize
 DECL|member|ysize
@@ -381,7 +389,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29125e140708
+DECL|struct|__anon296569ab0708
 block|{
 DECL|member|numcol
 name|gshort
@@ -410,7 +418,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29125e140808
+DECL|struct|__anon296569ab0808
 block|{
 DECL|member|majtype
 name|gint
@@ -505,7 +513,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29125e140908
+DECL|struct|__anon296569ab0908
 block|{
 DECL|member|type
 name|gshort
@@ -532,7 +540,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29125e140a08
+DECL|struct|__anon296569ab0a08
 block|{
 DECL|member|type
 name|gshort
@@ -573,7 +581,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29125e140b08
+DECL|struct|__anon296569ab0b08
 block|{
 DECL|member|com
 name|common
@@ -598,7 +606,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29125e140c08
+DECL|struct|__anon296569ab0c08
 block|{
 DECL|member|com
 name|common
@@ -624,7 +632,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29125e140d08
+DECL|struct|__anon296569ab0d08
 block|{
 DECL|member|com
 name|common
@@ -647,7 +655,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29125e140e08
+DECL|struct|__anon296569ab0e08
 block|{
 DECL|member|com
 name|common
@@ -672,7 +680,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29125e140f08
+DECL|struct|__anon296569ab0f08
 block|{
 DECL|member|com
 name|common
@@ -695,7 +703,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29125e141008
+DECL|struct|__anon296569ab1008
 block|{
 DECL|member|com
 name|common
@@ -718,7 +726,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29125e141108
+DECL|struct|__anon296569ab1108
 block|{
 DECL|member|v1
 DECL|member|v2
@@ -744,7 +752,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon29125e14120a
+DECL|union|__anon296569ab120a
 block|{
 DECL|member|com
 name|common
@@ -1060,7 +1068,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon29125e141308
+DECL|struct|__anon296569ab1308
 block|{
 DECL|member|solid
 DECL|member|phong
@@ -14500,7 +14508,7 @@ argument_list|(
 literal|"Sphere Designer"
 argument_list|)
 argument_list|,
-literal|"spheredesigner"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -14508,7 +14516,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"plug-in-spheredesigner"
+name|PLUG_IN_PROC
 argument_list|,
 name|GIMP_STOCK_RESET
 argument_list|,
@@ -17629,7 +17637,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -17653,7 +17661,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_spheredesigner"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"Renders textures spheres"
 argument_list|,
@@ -17690,7 +17698,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_spheredesigner"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Render"
 argument_list|)
@@ -17714,7 +17722,7 @@ argument_list|()
 expr_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"spheredesigner"
+name|PLUG_IN_BINARY
 argument_list|,
 name|TRUE
 argument_list|)
@@ -17931,7 +17939,7 @@ literal|0
 expr_stmt|;
 name|gimp_get_data
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|s
@@ -17967,7 +17975,7 @@ literal|0
 expr_stmt|;
 name|gimp_get_data
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|s
@@ -18006,7 +18014,7 @@ return|return;
 block|}
 name|gimp_set_data
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|s

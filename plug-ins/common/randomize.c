@@ -41,6 +41,14 @@ begin_comment
 comment|/*********************************  *  *  PLUGIN-SPECIFIC CONSTANTS  *  ********************************/
 end_comment
 
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"randomize"
+end_define
+
 begin_comment
 comment|/*  *  progress meter update frequency  */
 end_comment
@@ -54,18 +62,18 @@ value|((row % 10) == 0)
 end_define
 
 begin_decl_stmt
-DECL|variable|PLUG_IN_NAME
+DECL|variable|PLUG_IN_PROC
 name|gchar
 modifier|*
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 index|[]
 init|=
 block|{
-literal|"plug_in_randomize_hurl"
+literal|"plug-in-randomize-hurl"
 block|,
-literal|"plug_in_randomize_pick"
+literal|"plug-in-randomize-pick"
 block|,
-literal|"plug_in_randomize_slur"
+literal|"plug-in-randomize-slur"
 block|, }
 decl_stmt|;
 end_decl_stmt
@@ -92,23 +100,6 @@ name|N_
 argument_list|(
 literal|"Random Slur 1.7"
 argument_list|)
-block|, }
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|HELP_ID
-name|gchar
-modifier|*
-name|HELP_ID
-index|[]
-init|=
-block|{
-literal|"plug-in-randomize-hurl"
-block|,
-literal|"plug-in-randomize-pick"
-block|,
-literal|"plug-in-randomize-slur"
 block|, }
 decl_stmt|;
 end_decl_stmt
@@ -182,7 +173,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a4ae990108
+DECL|struct|__anon29ad645b0108
 block|{
 DECL|member|rndm_pct
 name|gdouble
@@ -504,7 +495,7 @@ literal|"1995-1998"
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 index|[
 literal|0
 index|]
@@ -542,7 +533,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 index|[
 literal|1
 index|]
@@ -580,7 +571,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 index|[
 literal|2
 index|]
@@ -618,7 +609,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 index|[
 literal|0
 index|]
@@ -628,7 +619,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 index|[
 literal|1
 index|]
@@ -638,7 +629,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 index|[
 literal|2
 index|]
@@ -723,7 +714,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 index|[
 literal|0
 index|]
@@ -742,7 +733,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 index|[
 literal|1
 index|]
@@ -761,7 +752,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 index|[
 literal|2
 index|]
@@ -869,7 +860,7 @@ name|GIMP_RUN_INTERACTIVE
 case|:
 name|gimp_get_data
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 index|[
 name|rndm_type
 operator|-
@@ -1042,7 +1033,7 @@ name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|gimp_get_data
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 index|[
 name|rndm_type
 operator|-
@@ -1189,7 +1180,7 @@ condition|)
 block|{
 name|gimp_set_data
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 index|[
 name|rndm_type
 operator|-
@@ -2438,7 +2429,7 @@ name|run
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"randomize"
+name|PLUG_IN_BINARY
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2457,7 +2448,7 @@ literal|1
 index|]
 argument_list|)
 argument_list|,
-literal|"randomize"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -2465,7 +2456,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-name|HELP_ID
+name|PLUG_IN_PROC
 index|[
 name|rndm_type
 operator|-

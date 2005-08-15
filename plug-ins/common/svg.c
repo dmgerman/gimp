@@ -50,6 +50,30 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_define
+DECL|macro|LOAD_PROC
+define|#
+directive|define
+name|LOAD_PROC
+value|"file-svg-load"
+end_define
+
+begin_define
+DECL|macro|LOAD_THUMB_PROC
+define|#
+directive|define
+name|LOAD_THUMB_PROC
+value|"file-svg-load-thumb"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"svg"
+end_define
+
+begin_define
 DECL|macro|SVG_VERSION
 define|#
 directive|define
@@ -84,7 +108,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279595510108
+DECL|struct|__anon2a4399f30108
 block|{
 DECL|member|resolution
 name|gdouble
@@ -283,7 +307,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -299,7 +323,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"raw_filename"
+literal|"raw-filename"
 block|,
 literal|"The name of the file to load"
 block|}
@@ -372,7 +396,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"thumb_size"
+literal|"thumb-size"
 block|,
 literal|"Preferred thumbnail size"
 block|}
@@ -395,7 +419,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"image_width"
+literal|"image-width"
 block|,
 literal|"Width of full-sized image"
 block|}
@@ -403,7 +427,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"image_height"
+literal|"image-height"
 block|,
 literal|"Height of full-sized image"
 block|}
@@ -411,7 +435,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"file_svg_load"
+name|LOAD_PROC
 argument_list|,
 literal|"Loads files in the SVG file format"
 argument_list|,
@@ -449,14 +473,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_file_handler_mime
 argument_list|(
-literal|"file_svg_load"
+name|LOAD_PROC
 argument_list|,
 literal|"image/svg+xml"
 argument_list|)
 expr_stmt|;
 name|gimp_register_magic_load_handler
 argument_list|(
-literal|"file_svg_load"
+name|LOAD_PROC
 argument_list|,
 literal|"svg"
 argument_list|,
@@ -467,7 +491,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"file_svg_load_thumb"
+name|LOAD_THUMB_PROC
 argument_list|,
 literal|"Loads a small preview from an SVG image"
 argument_list|,
@@ -502,9 +526,9 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_thumbnail_loader
 argument_list|(
-literal|"file_svg_load"
+name|LOAD_PROC
 argument_list|,
-literal|"file_svg_load_thumb"
+name|LOAD_THUMB_PROC
 argument_list|)
 expr_stmt|;
 block|}
@@ -608,7 +632,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_svg_load"
+name|LOAD_PROC
 argument_list|)
 operator|==
 literal|0
@@ -616,7 +640,7 @@ condition|)
 block|{
 name|gimp_get_data
 argument_list|(
-literal|"file_svg_load"
+name|LOAD_PROC
 argument_list|,
 operator|&
 name|load_vals
@@ -867,7 +891,7 @@ expr_stmt|;
 block|}
 name|gimp_set_data
 argument_list|(
-literal|"file_svg_load"
+name|LOAD_PROC
 argument_list|,
 operator|&
 name|load_vals
@@ -887,7 +911,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_svg_load_thumb"
+name|LOAD_THUMB_PROC
 argument_list|)
 operator|==
 literal|0
@@ -2920,7 +2944,7 @@ return|;
 block|}
 name|gimp_ui_init
 argument_list|(
-literal|"svg"
+name|PLUG_IN_BINARY
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2935,7 +2959,7 @@ argument_list|(
 literal|"Render Scalable Vector Graphics"
 argument_list|)
 argument_list|,
-literal|"svg"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -2943,7 +2967,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"file-svg-load"
+name|LOAD_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
