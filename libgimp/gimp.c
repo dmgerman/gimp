@@ -414,7 +414,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b5739150103
+DECL|enum|__anon28d81d4b0103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -943,7 +943,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|write_buffer
 specifier|static
-name|guint8
+name|gchar
 name|write_buffer
 index|[
 name|WRITE_BUFFER_SIZE
@@ -954,7 +954,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|write_buffer_index
 specifier|static
-name|guint
+name|gulong
 name|write_buffer_index
 init|=
 literal|0

@@ -630,6 +630,8 @@ name|Maps
 decl_stmt|;
 name|gboolean
 name|Grey
+init|=
+name|FALSE
 decl_stmt|;
 name|guchar
 name|ColorMap

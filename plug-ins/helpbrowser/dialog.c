@@ -155,7 +155,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon27f0fba90103
+DECL|enum|__anon296db5e60103
 block|{
 DECL|enumerator|HISTORY_TITLE
 name|HISTORY_TITLE
@@ -3249,6 +3249,10 @@ name|target
 argument_list|,
 literal|8
 argument_list|,
+operator|(
+name|guchar
+operator|*
+operator|)
 name|current_uri
 argument_list|,
 name|strlen

@@ -542,10 +542,10 @@ name|GType
 modifier|*
 name|selector_types
 decl_stmt|;
-name|gint
+name|guint
 name|n_selector_types
 decl_stmt|;
-name|gint
+name|guint
 name|i
 decl_stmt|;
 name|notebook

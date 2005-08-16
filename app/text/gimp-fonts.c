@@ -430,6 +430,11 @@ name|FcConfigParseAndLoad
 argument_list|(
 name|config
 argument_list|,
+operator|(
+specifier|const
+name|guchar
+operator|*
+operator|)
 name|fonts_conf
 argument_list|,
 name|FcFalse
@@ -527,7 +532,8 @@ argument_list|(
 name|config
 argument_list|,
 operator|(
-name|gchar
+specifier|const
+name|guchar
 operator|*
 operator|)
 name|list
