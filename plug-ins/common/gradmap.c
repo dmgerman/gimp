@@ -77,7 +77,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c8787c10103
+DECL|enum|__anon291b94080103
 block|{
 DECL|enumerator|GRADIENT_MODE
 name|GRADIENT_MODE
@@ -315,7 +315,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 name|GRADMAP_PROC
 argument_list|,
-literal|"<Image>/Filters/Colors/Map"
+literal|"<Image>/Colors/Map"
 argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
@@ -366,7 +366,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 name|PALETTEMAP_PROC
 argument_list|,
-literal|"<Image>/Filters/Colors/Map"
+literal|"<Image>/Colors/Map"
 argument_list|)
 expr_stmt|;
 block|}
@@ -616,7 +616,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8787c10208
+DECL|struct|__anon291b94080208
 block|{
 DECL|member|samples
 name|guchar

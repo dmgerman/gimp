@@ -145,7 +145,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c244ebe0108
+DECL|struct|__anon2b6442af0108
 block|{
 DECL|member|color
 name|GimpRGB
@@ -451,7 +451,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"<Image>/Filters/Colors"
+literal|"<Image>/Colors"
 argument_list|)
 expr_stmt|;
 block|}

@@ -220,7 +220,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"<Image>/Layer/Colors/Auto"
+literal|"<Image>/Colors/Auto"
 argument_list|)
 expr_stmt|;
 block|}
@@ -789,7 +789,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon273cb7890108
+DECL|struct|__anon2bf9e36f0108
 block|{
 DECL|member|lut
 name|guchar

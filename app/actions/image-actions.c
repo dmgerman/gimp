@@ -187,7 +187,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"_Mode"
+literal|"_Image Mode"
 argument_list|)
 block|}
 block|,

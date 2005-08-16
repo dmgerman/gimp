@@ -543,7 +543,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9074680108
+DECL|struct|__anon29ecd9a30108
 block|{
 DECL|member|compose_type
 specifier|const
@@ -1040,7 +1040,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9074680208
+DECL|struct|__anon29ecd9a30208
 block|{
 DECL|member|compose_ID
 name|gint32
@@ -1080,7 +1080,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9074680308
+DECL|struct|__anon29ecd9a30308
 block|{
 DECL|member|width
 DECL|member|height
@@ -1481,14 +1481,14 @@ name|gimp_plugin_menu_register
 argument_list|(
 name|COMPOSE_PROC
 argument_list|,
-literal|"<Image>/Filters/Colors"
+literal|"<Image>/Colors"
 argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
 name|COMPOSE_PROC
 argument_list|,
-literal|"<Image>/Image/Mode"
+literal|"<Image>/Colors/Image Mode"
 argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
@@ -1570,14 +1570,14 @@ name|gimp_plugin_menu_register
 argument_list|(
 name|RECOMPOSE_PROC
 argument_list|,
-literal|"<Image>/Filters/Colors"
+literal|"<Image>/Colors"
 argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
 name|RECOMPOSE_PROC
 argument_list|,
-literal|"<Image>/Image/Mode"
+literal|"<Image>/Colors/Image Mode"
 argument_list|)
 expr_stmt|;
 block|}

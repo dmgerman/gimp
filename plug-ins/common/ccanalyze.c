@@ -452,14 +452,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"<Image>/Filters/Colors"
-argument_list|)
-expr_stmt|;
-name|gimp_plugin_menu_register
-argument_list|(
-name|PLUG_IN_PROC
-argument_list|,
-literal|"<Image>/Layer/Colors/Info"
+literal|"<Image>/Colors/Info"
 argument_list|)
 expr_stmt|;
 block|}

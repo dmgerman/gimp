@@ -70,7 +70,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c8535eb0103
+DECL|enum|__anon2c50659f0103
 block|{
 DECL|enumerator|RGB_MODEL
 name|RGB_MODEL
@@ -94,7 +94,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8535eb0208
+DECL|struct|__anon2c50659f0208
 block|{
 DECL|member|redfrequency
 name|gdouble
@@ -884,7 +884,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"<Image>/Filters/Colors/Map"
+literal|"<Image>/Colors/Map"
 argument_list|)
 expr_stmt|;
 block|}

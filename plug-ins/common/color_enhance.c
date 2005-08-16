@@ -210,7 +210,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"<Image>/Layer/Colors/Auto"
+literal|"<Image>/Colors/Auto"
 argument_list|)
 expr_stmt|;
 block|}
@@ -984,7 +984,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2966e8070108
+DECL|struct|__anon2bab97dd0108
 block|{
 DECL|member|vhi
 name|gdouble
