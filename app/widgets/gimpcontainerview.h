@@ -16,9 +16,10 @@ directive|define
 name|__GIMP_CONTAINER_VIEW_H__
 end_define
 
-begin_enum
+begin_typedef
+typedef|typedef
 enum|enum
-DECL|enum|__anon2a3f1fa20103
+DECL|enum|__anon29aa44d60103
 block|{
 DECL|enumerator|GIMP_CONTAINER_VIEW_PROP_0
 name|GIMP_CONTAINER_VIEW_PROP_0
@@ -37,9 +38,16 @@ name|GIMP_CONTAINER_VIEW_PROP_PREVIEW_SIZE
 block|,
 DECL|enumerator|GIMP_CONTAINER_VIEW_PROP_PREVIEW_BORDER_WIDTH
 name|GIMP_CONTAINER_VIEW_PROP_PREVIEW_BORDER_WIDTH
+block|,
+DECL|enumerator|GIMP_CONTAINER_VIEW_PROP_LAST
+name|GIMP_CONTAINER_VIEW_PROP_LAST
+init|=
+name|GIMP_CONTAINER_VIEW_PROP_PREVIEW_BORDER_WIDTH
+DECL|typedef|GimpContainerViewProp
 block|}
-enum|;
-end_enum
+name|GimpContainerViewProp
+typedef|;
+end_typedef
 
 begin_define
 DECL|macro|GIMP_TYPE_CONTAINER_VIEW
@@ -565,6 +573,17 @@ end_function_decl
 begin_comment
 comment|/*  convenience functions  */
 end_comment
+
+begin_function_decl
+name|void
+name|gimp_container_view_install_properties
+parameter_list|(
+name|GObjectClass
+modifier|*
+name|klass
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 name|void
