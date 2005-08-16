@@ -222,6 +222,17 @@ argument_list|)
 block|}
 block|,
 block|{
+literal|"plug-in-colors-components-menu"
+block|,
+name|NULL
+block|,
+name|N_
+argument_list|(
+literal|"_Components"
+argument_list|)
+block|}
+block|,
+block|{
 literal|"plug-in-noise-menu"
 block|,
 name|NULL
