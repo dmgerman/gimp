@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c938510103
+DECL|enum|__anon2c41a1230103
 block|{
 DECL|enumerator|ENTRY_CLICKED
 name|ENTRY_CLICKED
@@ -1352,7 +1352,9 @@ case|:
 case|case
 name|GTK_DIR_TAB_BACKWARD
 case|:
-break|break;
+return|return
+name|FALSE
+return|;
 block|}
 if|if
 condition|(
