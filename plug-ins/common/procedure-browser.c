@@ -313,6 +313,8 @@ argument_list|,
 name|GTK_RESPONSE_CLOSE
 argument_list|)
 expr_stmt|;
+while|while
+condition|(
 name|gtk_dialog_run
 argument_list|(
 name|GTK_DIALOG
@@ -320,7 +322,10 @@ argument_list|(
 name|dialog
 argument_list|)
 argument_list|)
-expr_stmt|;
+operator|!=
+name|GTK_RESPONSE_CLOSE
+condition|)
+empty_stmt|;
 name|gtk_widget_destroy
 argument_list|(
 name|dialog
@@ -336,7 +341,8 @@ name|GIMP_RUN_NONINTERACTIVE
 case|:
 name|g_warning
 argument_list|(
-literal|"dbbrowser allows only interactive invocation"
+name|PLUG_IN_PROC
+literal|" allows only interactive invocation"
 argument_list|)
 expr_stmt|;
 name|values
