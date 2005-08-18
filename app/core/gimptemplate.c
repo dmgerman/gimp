@@ -18,12 +18,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<langinfo.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<glib-object.h>
 end_include
 
@@ -135,7 +129,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0ce1c60103
+DECL|enum|__anon2c303ff20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -256,16 +250,6 @@ parameter_list|,
 name|GParamSpec
 modifier|*
 name|pspec
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|GimpUnit
-name|gimp_template_unit_from_locale
-parameter_list|(
-name|void
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -573,8 +557,7 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
-name|gimp_template_unit_from_locale
-argument_list|()
+name|GIMP_UNIT_INCH
 argument_list|,
 literal|0
 argument_list|)
@@ -1247,63 +1230,6 @@ name|object
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|GimpUnit
-DECL|function|gimp_template_unit_from_locale (void)
-name|gimp_template_unit_from_locale
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-ifdef|#
-directive|ifdef
-name|HAVE__NL_MEASUREMENT_MEASUREMENT
-specifier|const
-name|gchar
-modifier|*
-name|measurement
-init|=
-name|nl_langinfo
-argument_list|(
-name|_NL_MEASUREMENT_MEASUREMENT
-argument_list|)
-decl_stmt|;
-switch|switch
-condition|(
-operator|*
-operator|(
-operator|(
-name|guchar
-operator|*
-operator|)
-name|measurement
-operator|)
-condition|)
-block|{
-case|case
-literal|1
-case|:
-comment|/* metric   */
-return|return
-name|GIMP_UNIT_MM
-return|;
-case|case
-literal|2
-case|:
-comment|/* imperial */
-return|return
-name|GIMP_UNIT_INCH
-return|;
-block|}
-endif|#
-directive|endif
-return|return
-name|GIMP_UNIT_INCH
-return|;
 block|}
 end_function
 

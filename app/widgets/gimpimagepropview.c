@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimagepropview.h"
 end_include
 
@@ -77,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4187a30103
+DECL|enum|__anon2b1c1a0a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1435,18 +1441,10 @@ name|buf
 argument_list|)
 expr_stmt|;
 comment|/*  print size  */
-if|#
-directive|if
-literal|0
-block|unit = GIMP_DISPLAY_SHELL (gdisp->shell)->unit;    if (unit == GIMP_UNIT_PIXEL)
-endif|#
-directive|endif
 name|unit
 operator|=
-name|gimp_image_get_unit
-argument_list|(
-name|image
-argument_list|)
+name|gimp_get_default_unit
+argument_list|()
 expr_stmt|;
 name|unit_factor
 operator|=
