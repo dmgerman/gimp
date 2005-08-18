@@ -4887,7 +4887,7 @@ name|GIMP_TOOL_CURSOR_PATHS_SEGMENT
 expr_stmt|;
 name|cmodifier
 operator|=
-name|GIMP_CURSOR_MODIFIER_PLUS
+name|GIMP_CURSOR_MODIFIER_JOIN
 expr_stmt|;
 break|break;
 default|default:
