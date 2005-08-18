@@ -313,8 +313,6 @@ argument_list|,
 name|GTK_RESPONSE_CLOSE
 argument_list|)
 expr_stmt|;
-while|while
-condition|(
 name|gtk_dialog_run
 argument_list|(
 name|GTK_DIALOG
@@ -322,10 +320,7 @@ argument_list|(
 name|dialog
 argument_list|)
 argument_list|)
-operator|!=
-name|GTK_RESPONSE_CLOSE
-condition|)
-empty_stmt|;
+expr_stmt|;
 name|gtk_widget_destroy
 argument_list|(
 name|dialog

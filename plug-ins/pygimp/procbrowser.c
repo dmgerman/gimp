@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29198c880108
+DECL|struct|__anon29a0f6e60108
 block|{
 DECL|member|func
 name|PyObject
@@ -75,8 +75,8 @@ end_typedef
 begin_function
 specifier|static
 name|void
-DECL|function|proxy_apply_callback (GtkWidget * widget,gint response_id,ProxyData * proxy_data)
-name|proxy_apply_callback
+DECL|function|proxy_response (GtkWidget * widget,gint response_id,ProxyData * proxy_data)
+name|proxy_response
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -414,6 +414,27 @@ end_function
 
 begin_function
 specifier|static
+name|void
+DECL|function|proxy_row_activated (GtkDialog * dialog)
+name|proxy_row_activated
+parameter_list|(
+name|GtkDialog
+modifier|*
+name|dialog
+parameter_list|)
+block|{
+name|gtk_dialog_response
+argument_list|(
+name|dialog
+argument_list|,
+name|GTK_RESPONSE_APPLY
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
 name|PyObject
 modifier|*
 DECL|function|proc_browser_dialog_new (PyObject * self,PyObject * args,PyObject * kwargs)
@@ -622,7 +643,7 @@ literal|"response"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|proxy_apply_callback
+name|proxy_response
 argument_list|)
 argument_list|,
 name|proxy_data
@@ -630,6 +651,20 @@ argument_list|,
 name|proxy_cleanup
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|g_signal_connect
+argument_list|(
+name|dlg
+argument_list|,
+literal|"row-activated"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|proxy_row_activated
+argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

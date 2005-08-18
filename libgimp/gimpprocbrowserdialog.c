@@ -3,10 +3,6 @@ begin_comment
 comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimpprocbrowserdialog.c  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
 
-begin_comment
-comment|/*  * dbbrowser_utils.c  * 0.08  26th sept 97  by Thomas NOEL<thomas@minet.net>  *  * 98/12/13  Sven Neumann<sven@gimp.org> : added help display  */
-end_comment
-
 begin_include
 include|#
 directive|include
@@ -87,10 +83,13 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon278f3f320103
+DECL|enum|__anon2c60c9890103
 block|{
 DECL|enumerator|SELECTION_CHANGED
 name|SELECTION_CHANGED
+block|,
+DECL|enumerator|ROW_ACTIVATED
+name|ROW_ACTIVATED
 block|,
 DECL|enumerator|LAST_SIGNAL
 name|LAST_SIGNAL
@@ -101,7 +100,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon278f3f320203
+DECL|enum|__anon2c60c9890203
 block|{
 DECL|enumerator|SEARCH_TYPE_ALL
 name|SEARCH_TYPE_ALL
@@ -134,7 +133,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon278f3f320303
+DECL|enum|__anon2c60c9890303
 block|{
 DECL|enumerator|COLUMN_PROC_NAME
 name|COLUMN_PROC_NAME
@@ -381,6 +380,7 @@ argument_list|(
 name|klass
 argument_list|)
 expr_stmt|;
+comment|/**    * GimpProcBrowserDialog::selection-changed:    * @dialog: the object that received the signal    *    * Emitted when the selection in the contained #GtkTreeView changes.    */
 name|dialog_signals
 index|[
 name|SELECTION_CHANGED
@@ -415,9 +415,50 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+comment|/**    * GimpProcBrowserDialog::row-activated:    * @dialog: the object that received the signal    *    * Emitted when one of the rows in the contained #GtkTreeView is activated.    */
+name|dialog_signals
+index|[
+name|ROW_ACTIVATED
+index|]
+operator|=
+name|g_signal_new
+argument_list|(
+literal|"row-activated"
+argument_list|,
+name|G_TYPE_FROM_CLASS
+argument_list|(
+name|klass
+argument_list|)
+argument_list|,
+name|G_SIGNAL_RUN_LAST
+argument_list|,
+name|G_STRUCT_OFFSET
+argument_list|(
+name|GimpProcBrowserDialogClass
+argument_list|,
+name|row_activated
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|g_cclosure_marshal_VOID__VOID
+argument_list|,
+name|G_TYPE_NONE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
 name|klass
 operator|->
 name|selection_changed
+operator|=
+name|NULL
+expr_stmt|;
+name|klass
+operator|->
+name|row_activated
 operator|=
 name|NULL
 expr_stmt|;
@@ -1033,14 +1074,16 @@ modifier|*
 name|dialog
 parameter_list|)
 block|{
-name|gtk_dialog_response
-argument_list|(
-name|GTK_DIALOG
+name|g_signal_emit
 argument_list|(
 name|dialog
-argument_list|)
 argument_list|,
-name|GTK_RESPONSE_APPLY
+name|dialog_signals
+index|[
+name|ROW_ACTIVATED
+index|]
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 block|}

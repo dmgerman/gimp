@@ -151,6 +151,18 @@ modifier|*
 name|dialog
 parameter_list|)
 function_decl|;
+DECL|member|row_activated
+name|void
+function_decl|(
+modifier|*
+name|row_activated
+function_decl|)
+parameter_list|(
+name|GimpProcBrowserDialog
+modifier|*
+name|dialog
+parameter_list|)
+function_decl|;
 comment|/* Padding for future expansion */
 DECL|member|_gimp_reserved1
 name|void
