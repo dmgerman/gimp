@@ -144,7 +144,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275d9e720108
+DECL|struct|__anon2b7923f40108
 block|{
 DECL|member|width
 name|gint
@@ -558,7 +558,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Extract foreground using SIOX algorithm"
+literal|"Extract a single foreground object"
 argument_list|)
 argument_list|,
 name|N_
