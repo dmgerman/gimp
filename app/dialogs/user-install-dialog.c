@@ -163,7 +163,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5054f50103
+DECL|enum|__anon2c90c4840103
 block|{
 DECL|enumerator|GPL_PAGE
 name|GPL_PAGE
@@ -188,7 +188,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5054f50203
+DECL|enum|__anon2c90c4840203
 block|{
 DECL|enumerator|DIRENT_COLUMN
 name|DIRENT_COLUMN
@@ -400,7 +400,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c5054f50303
+DECL|enum|__anon2c90c4840303
 block|{
 DECL|enumerator|TREE_ITEM_DO_NOTHING
 name|TREE_ITEM_DO_NOTHING
@@ -422,7 +422,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c5054f50408
+DECL|struct|__anon2c90c4840408
 block|{
 DECL|member|directory
 name|gboolean
@@ -2998,7 +2998,7 @@ argument_list|,
 name|_
 argument_list|(
 literal|"<b>The GIMP - GNU Image Manipulation Program</b>\n"
-literal|"Copyright (C) 1995-2004\n"
+literal|"Copyright (C) 1995-2005\n"
 literal|"Spencer Kimball, Peter Mattis and the GIMP Development Team."
 argument_list|)
 argument_list|)

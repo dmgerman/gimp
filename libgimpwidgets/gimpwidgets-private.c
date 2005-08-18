@@ -131,13 +131,13 @@ name|inline_pixbufs
 index|[]
 init|=
 block|{
-name|stock_wilber_16
-block|,
-name|stock_wilber_32
+name|stock_wilber_64
 block|,
 name|stock_wilber_48
 block|,
-name|stock_wilber_64
+name|stock_wilber_32
+block|,
+name|stock_wilber_16
 block|}
 decl_stmt|;
 name|g_return_if_fail
