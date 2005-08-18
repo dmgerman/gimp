@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"metadata.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"xmp-encode.h"
 end_include
 
@@ -83,14 +89,6 @@ define|#
 directive|define
 name|METADATA_MARKER_LEN
 value|(sizeof (METADATA_MARKER) - 1)
-end_define
-
-begin_define
-DECL|macro|HELP_ID
-define|#
-directive|define
-name|HELP_ID
-value|"plug-in-metadata"
 end_define
 
 begin_comment
@@ -190,7 +188,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -265,7 +263,7 @@ literal|"XMP packet"
 block|}
 block|}
 decl_stmt|;
-comment|/* FIXME: uncomment when these are working   static GimpParamDef decode_exif_args[] =   {     { GIMP_PDB_IMAGE,       "image",     "Input image"                  },     { GIMP_PDB_INT32,       "exif_size", "size of the EXIF block"       },     { GIMP_PDB_INT8ARRAY,   "exif",      "EXIF block"                   }   };    static GimpParamDef encode_exif_args[] =   {     { GIMP_PDB_IMAGE,       "image",     "Input image"                  }   };   static GimpParamDef encode_exif_return_vals[] =   {     { GIMP_PDB_INT32,       "exif_size", "size of the EXIF block"       },     { GIMP_PDB_INT8ARRAY,   "exif",      "EXIF block"                   }   }; */
+comment|/* FIXME: uncomment when these are working   static GimpParamDef decode_exif_args[] =   {     { GIMP_PDB_IMAGE,       "image",     "Input image"                  },     { GIMP_PDB_INT32,       "exif-size", "size of the EXIF block"       },     { GIMP_PDB_INT8ARRAY,   "exif",      "EXIF block"                   }   };    static GimpParamDef encode_exif_args[] =   {     { GIMP_PDB_IMAGE,       "image",     "Input image"                  }   };   static GimpParamDef encode_exif_return_vals[] =   {     { GIMP_PDB_INT32,       "exif-size", "size of the EXIF block"       },     { GIMP_PDB_INT8ARRAY,   "exif",      "EXIF block"                   }   }; */
 specifier|static
 name|GimpParamDef
 name|get_args
@@ -314,7 +312,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_vals"
+literal|"num-vals"
 block|,
 literal|"number of values"
 block|}
@@ -369,7 +367,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_vals"
+literal|"num-vals"
 block|,
 literal|"number of values"
 block|}
@@ -525,7 +523,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_metadata_editor"
+name|EDITOR_PROC
 argument_list|,
 literal|"View and edit metadata (EXIF, IPTC, XMP)"
 argument_list|,
@@ -564,14 +562,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_metadata_editor"
+name|EDITOR_PROC
 argument_list|,
 literal|"<Image>/File/Info"
 argument_list|)
 expr_stmt|;
 name|gimp_plugin_icon_register
 argument_list|(
-literal|"plug_in_metadata_editor"
+name|EDITOR_PROC
 argument_list|,
 name|GIMP_ICON_TYPE_STOCK_ID
 argument_list|,
@@ -581,7 +579,7 @@ expr_stmt|;
 comment|/* FIXME: The GNOME HIG recommends using the accel Alt+Return for this */
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_metadata_decode_xmp"
+name|DECODE_XMP_PROC
 argument_list|,
 literal|"Decode an XMP packet"
 argument_list|,
@@ -616,7 +614,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_metadata_encode_xmp"
+name|ENCODE_XMP_PROC
 argument_list|,
 literal|"Encode metadata into an XMP packet"
 argument_list|,
@@ -651,10 +649,10 @@ argument_list|,
 name|encode_xmp_return_vals
 argument_list|)
 expr_stmt|;
-comment|/* FIXME: uncomment when these are working   gimp_install_procedure ("plug_in_metadata_decode_exif", 			  "Decode an EXIF block",                           "Parse an EXIF block and merge the results with "                           "any metadata already attached to the image.  This "                           "should be used when an EXIF block is read from an "                           "image file.", 			  "RaphaÃ«l Quinet<raphael@gimp.org>", 			  "RaphaÃ«l Quinet<raphael@gimp.org>", 			  "2005",                           NULL,                           NULL,                           GIMP_PLUGIN,                           G_N_ELEMENTS (decode_exif_args), 0,                           decode_exif_args, NULL);    gimp_install_procedure ("plug_in_metadata_encode_exif", 			  "Encode metadata into an EXIF block",                           "Generate an EXIF block from the metadata "                           "information attached to the image.  The new EXIF "                           "block can then be saved into a file.", 			  "RaphaÃ«l Quinet<raphael@gimp.org>", 			  "RaphaÃ«l Quinet<raphael@gimp.org>", 			  "2005",                           NULL,                           NULL,                           GIMP_PLUGIN,                           G_N_ELEMENTS (encode_exif_args),                           G_N_ELEMENTS (encode_exif_return_vals),                           encode_exif_args, encode_exif_return_vals); */
+comment|/* FIXME: uncomment when these are working   gimp_install_procedure (DECODE_EXIF_PROC, 			  "Decode an EXIF block",                           "Parse an EXIF block and merge the results with "                           "any metadata already attached to the image.  This "                           "should be used when an EXIF block is read from an "                           "image file.", 			  "RaphaÃ«l Quinet<raphael@gimp.org>", 			  "RaphaÃ«l Quinet<raphael@gimp.org>", 			  "2005",                           NULL,                           NULL,                           GIMP_PLUGIN,                           G_N_ELEMENTS (decode_exif_args), 0,                           decode_exif_args, NULL);    gimp_install_procedure (ENCODE_EXIF_PROC, 			  "Encode metadata into an EXIF block",                           "Generate an EXIF block from the metadata "                           "information attached to the image.  The new EXIF "                           "block can then be saved into a file.", 			  "RaphaÃ«l Quinet<raphael@gimp.org>", 			  "RaphaÃ«l Quinet<raphael@gimp.org>", 			  "2005",                           NULL,                           NULL,                           GIMP_PLUGIN,                           G_N_ELEMENTS (encode_exif_args),                           G_N_ELEMENTS (encode_exif_return_vals),                           encode_exif_args, encode_exif_return_vals); */
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_metadata_get"
+name|GET_PROC
 argument_list|,
 literal|"Retrieve the values of an XMP property"
 argument_list|,
@@ -690,7 +688,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_metadata_set"
+name|SET_PROC
 argument_list|,
 literal|"Set the values of an XMP property"
 argument_list|,
@@ -724,7 +722,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_metadata_get_simple"
+name|GET_SIMPLE_PROC
 argument_list|,
 literal|"Retrieve the value of an XMP property"
 argument_list|,
@@ -763,7 +761,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_metadata_set_simple"
+name|SET_SIMPLE_PROC
 argument_list|,
 literal|"Set the value of an XMP property"
 argument_list|,
@@ -798,7 +796,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_metadata_import"
+name|IMPORT_PROC
 argument_list|,
 literal|"Import XMP from a file into the current image"
 argument_list|,
@@ -833,7 +831,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_metadata_export"
+name|EXPORT_PROC
 argument_list|,
 literal|"Export XMP from the current image to a file"
 argument_list|,
@@ -965,7 +963,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"plug_in_metadata_editor"
+name|EDITOR_PROC
 argument_list|)
 condition|)
 name|image_ID
@@ -1091,7 +1089,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"plug_in_metadata_decode_xmp"
+name|DECODE_XMP_PROC
 argument_list|)
 condition|)
 block|{
@@ -1142,7 +1140,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"plug_in_metadata_editor"
+name|EDITOR_PROC
 argument_list|)
 condition|)
 block|{
@@ -1192,7 +1190,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"plug_in_metadata_decode_xmp"
+name|DECODE_XMP_PROC
 argument_list|)
 condition|)
 block|{
@@ -1251,7 +1249,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"plug_in_metadata_encode_xmp"
+name|ENCODE_XMP_PROC
 argument_list|)
 condition|)
 block|{
@@ -1265,7 +1263,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"plug_in_metadata_get"
+name|GET_PROC
 argument_list|)
 condition|)
 block|{
@@ -1288,7 +1286,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"plug_in_metadata_set"
+name|SET_PROC
 argument_list|)
 condition|)
 block|{
@@ -1311,7 +1309,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"plug_in_metadata_get_simple"
+name|GET_SIMPLE_PROC
 argument_list|)
 condition|)
 block|{
@@ -1411,7 +1409,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"plug_in_metadata_set_simple"
+name|SET_SIMPLE_PROC
 argument_list|)
 condition|)
 block|{
@@ -1490,7 +1488,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"plug_in_metadata_import"
+name|IMPORT_PROC
 argument_list|)
 condition|)
 block|{
@@ -1594,7 +1592,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"plug_in_metadata_export"
+name|EXPORT_PROC
 argument_list|)
 condition|)
 block|{
@@ -1677,7 +1675,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"plug_in_metadata_encode_xmp"
+name|ENCODE_XMP_PROC
 argument_list|)
 condition|)
 block|{

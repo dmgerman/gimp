@@ -31,10 +31,50 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_define
+DECL|macro|OPTIMIZE_PROC
+define|#
+directive|define
+name|OPTIMIZE_PROC
+value|"plug-in-animationoptimize"
+end_define
+
+begin_define
+DECL|macro|OPTIMIZE_DIFF_PROC
+define|#
+directive|define
+name|OPTIMIZE_DIFF_PROC
+value|"plug-in-animationoptimize-diff"
+end_define
+
+begin_define
+DECL|macro|UNOPTIMIZE_PROC
+define|#
+directive|define
+name|UNOPTIMIZE_PROC
+value|"plug-in-animationunoptimize"
+end_define
+
+begin_define
+DECL|macro|REMOVE_BACKDROP_PROC
+define|#
+directive|define
+name|REMOVE_BACKDROP_PROC
+value|"plug-in-animation-remove-backdrop"
+end_define
+
+begin_define
+DECL|macro|FIND_BACKDROP_PROC
+define|#
+directive|define
+name|FIND_BACKDROP_PROC
+value|"plug-in-animation-find-backdrop"
+end_define
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2948690c0103
+DECL|enum|__anon27c575560103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -59,7 +99,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2948690c0203
+DECL|enum|__anon27c575560203
 block|{
 DECL|enumerator|OPOPTIMIZE
 name|OPOPTIMIZE
@@ -421,7 +461,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -460,7 +500,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_animationoptimize"
+name|OPTIMIZE_PROC
 argument_list|,
 literal|"This procedure applies various optimizations to"
 literal|" a GIMP layer-based animation in an attempt to"
@@ -505,7 +545,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_animationoptimize_diff"
+name|OPTIMIZE_DIFF_PROC
 argument_list|,
 literal|"This procedure applies various optimizations to"
 literal|" a GIMP layer-based animation in an attempt to"
@@ -548,7 +588,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_animationunoptimize"
+name|UNOPTIMIZE_PROC
 argument_list|,
 literal|"This procedure 'simplifies' a GIMP layer-based"
 literal|" animation that has been AnimationOptimized.  This"
@@ -590,21 +630,21 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_animationoptimize"
+name|OPTIMIZE_PROC
 argument_list|,
 literal|"<Image>/Filters/Animation"
 argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_animationoptimize_diff"
+name|OPTIMIZE_DIFF_PROC
 argument_list|,
 literal|"<Image>/Filters/Animation"
 argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_animationunoptimize"
+name|UNOPTIMIZE_PROC
 argument_list|,
 literal|"<Image>/Filters/Animation"
 argument_list|)
@@ -614,7 +654,7 @@ directive|ifdef
 name|EXPERIMENTAL_BACKDROP_CODE
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_animation_remove_backdrop"
+name|REMOVE_BACKDROP_PROC
 argument_list|,
 literal|"This procedure attempts to remove the backdrop"
 literal|" from a GIMP layer-based animation, leaving"
@@ -654,7 +694,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_animation_find_backdrop"
+name|FIND_BACKDROP_PROC
 argument_list|,
 literal|"This procedure attempts to remove the foreground"
 literal|" from a GIMP layer-based animation, leaving"
@@ -695,14 +735,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_animation_remove_backdrop"
+name|REMOVE_BACKDROP_PROC
 argument_list|,
 literal|"<Image>/Filters/Animation"
 argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_animation_find_backdrop"
+name|FIND_BACKDROP_PROC
 argument_list|,
 literal|"<Image>/Filters/Animation"
 argument_list|)
@@ -808,7 +848,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"plug_in_animationoptimize"
+name|OPTIMIZE_PROC
 argument_list|)
 operator|==
 literal|0
@@ -824,7 +864,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"plug_in_animationoptimize_diff"
+name|OPTIMIZE_DIFF_PROC
 argument_list|)
 operator|==
 literal|0
@@ -846,7 +886,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"plug_in_animationunoptimize"
+name|UNOPTIMIZE_PROC
 argument_list|)
 operator|==
 literal|0
@@ -862,7 +902,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"plug_in_animation_find_backdrop"
+name|FIND_BACKDROP_PROC
 argument_list|)
 operator|==
 literal|0
@@ -878,7 +918,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"plug_in_animation_remove_backdrop"
+name|REMOVE_BACKDROP_PROC
 argument_list|)
 operator|==
 literal|0

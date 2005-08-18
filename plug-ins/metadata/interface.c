@@ -137,6 +137,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"metadata.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"xmp-schemas.h"
 end_include
 
@@ -165,7 +171,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e8a3390108
+DECL|struct|__anon2c0a255e0108
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -722,7 +728,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e8a3390208
+DECL|struct|__anon2c0a255e0208
 block|{
 DECL|member|schema
 specifier|const
@@ -2755,7 +2761,7 @@ name|notebook
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"metadata"
+name|PLUG_IN_BINARY
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2771,7 +2777,7 @@ argument_list|(
 literal|"Image Properties"
 argument_list|)
 argument_list|,
-literal|"metadata"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -2779,7 +2785,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"plug-in-metadata"
+name|EDITOR_PROC
 argument_list|,
 name|_
 argument_list|(
