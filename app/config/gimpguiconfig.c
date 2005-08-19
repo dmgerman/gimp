@@ -170,7 +170,7 @@ DECL|macro|DEFAULT_WEB_BROWSER
 define|#
 directive|define
 name|DEFAULT_WEB_BROWSER
-value|"mozilla %s"
+value|"mozilla-firefox %s"
 end_define
 
 begin_endif
@@ -180,7 +180,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2949dfa20103
+DECL|enum|__anon277b5d7c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
