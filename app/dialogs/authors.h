@@ -402,7 +402,9 @@ block|,
 literal|"Matthew Wilson"
 block|,
 literal|"Shirasaki Yasuhiro"
-block|,  }
+block|,
+name|NULL
+block|}
 decl_stmt|;
 end_decl_stmt
 
