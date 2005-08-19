@@ -126,7 +126,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a227b730108
+DECL|struct|__anon29b6595f0108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -628,6 +628,14 @@ operator|=
 name|g_object_new
 argument_list|(
 name|GTK_TYPE_ABOUT_DIALOG
+argument_list|,
+literal|"role"
+argument_list|,
+literal|"about-dialog"
+argument_list|,
+literal|"window-position"
+argument_list|,
+name|GTK_WIN_POS_CENTER
 argument_list|,
 literal|"version"
 argument_list|,
