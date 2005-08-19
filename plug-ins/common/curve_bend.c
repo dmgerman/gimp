@@ -688,7 +688,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dcd2200108
+DECL|struct|__anon278105bb0108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -742,7 +742,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dcd2200208
+DECL|struct|__anon278105bb0208
 block|{
 DECL|member|y
 name|gint32
@@ -1728,7 +1728,7 @@ name|gchar
 modifier|*
 name|l_rotate_proc
 init|=
-literal|"gimp_rotate"
+literal|"gimp-rotate"
 decl_stmt|;
 name|GimpParam
 modifier|*
@@ -1754,7 +1754,7 @@ name|gchar
 modifier|*
 name|l_rotate_proc2
 init|=
-literal|"plug_in_rotate"
+literal|"plug-in-rotate"
 decl_stmt|;
 name|gint32
 name|l_angle_step

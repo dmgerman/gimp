@@ -1228,7 +1228,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_procedural_db_set_data"
+literal|"gimp-procedural-db-set-data"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1342,7 +1342,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_procedural_db_get_data"
+literal|"gimp-procedural-db-get-data"
 argument_list|,
 operator|&
 name|nreturn_vals

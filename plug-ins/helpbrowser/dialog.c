@@ -155,7 +155,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon296db5e60103
+DECL|enum|__anon2996da0f0103
 block|{
 DECL|enumerator|HISTORY_TITLE
 name|HISTORY_TITLE
@@ -3968,7 +3968,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"plug_in_web_browser"
+literal|"plug-in-web-browser"
 argument_list|,
 operator|&
 name|nreturn_vals

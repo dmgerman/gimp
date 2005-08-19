@@ -1137,7 +1137,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"plug_in_metadata_decode_xmp"
+literal|"plug-in-metadata-decode-xmp"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1835,7 +1835,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3f9f020108
+DECL|struct|__anon28eb84610108
 block|{
 DECL|member|pub
 name|struct
