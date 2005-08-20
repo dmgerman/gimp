@@ -31,7 +31,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d32a4c0103
+DECL|enum|__anon29e5a7d50103
 block|{
 DECL|enumerator|BOUNDARY_WITHIN_BOUNDS
 name|BOUNDARY_WITHIN_BOUNDS
@@ -142,7 +142,7 @@ name|boundary_simplify
 parameter_list|(
 name|BoundSeg
 modifier|*
-name|stroke_segs
+name|sorted_segs
 parameter_list|,
 name|gint
 name|num_groups
