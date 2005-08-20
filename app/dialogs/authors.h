@@ -195,8 +195,6 @@ literal|"Robert L Krawitz"
 block|,
 literal|"Tuomas Kuosmanen"
 block|,
-literal|"Karin Kylander"
-block|,
 literal|"Olof S Kylander"
 block|,
 literal|"Karl La Rocca"
@@ -402,6 +400,44 @@ block|,
 literal|"Matthew Wilson"
 block|,
 literal|"Shirasaki Yasuhiro"
+block|,
+name|NULL
+block|}
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|artists
+specifier|static
+specifier|const
+name|gchar
+modifier|*
+name|artists
+index|[]
+init|=
+block|{
+literal|"Tuomas Kuosmanen"
+block|,
+literal|"Jakub Steiner"
+block|,
+name|NULL
+block|}
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|documenters
+specifier|static
+specifier|const
+name|gchar
+modifier|*
+name|documenters
+index|[]
+init|=
+block|{
+literal|"Karin Kylander"
+block|,
+literal|"Olof S Kylander"
 block|,
 name|NULL
 block|}
