@@ -5015,9 +5015,12 @@ argument_list|(
 name|n_bound_segs
 operator|>
 literal|0
-operator|||
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
 name|bound_segs
-operator|==
+operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
