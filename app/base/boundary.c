@@ -2037,7 +2037,7 @@ name|gboolean
 name|empty
 init|=
 operator|(
-name|num_segs
+name|ns
 operator|==
 literal|0
 operator|)
