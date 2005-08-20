@@ -1677,14 +1677,12 @@ argument_list|)
 expr_stmt|;
 name|bsegs
 operator|=
-name|find_mask_boundary
+name|boundary_find
 argument_list|(
 operator|&
 name|maskPR
 argument_list|,
-name|num_segs
-argument_list|,
-name|WithinBounds
+name|BOUNDARY_WITHIN_BOUNDS
 argument_list|,
 literal|0
 argument_list|,
@@ -1710,7 +1708,9 @@ name|fuzzy_mask
 argument_list|)
 argument_list|)
 argument_list|,
-name|HALF_WAY
+name|BOUNDARY_HALF_WAY
+argument_list|,
+name|num_segs
 argument_list|)
 expr_stmt|;
 name|segs

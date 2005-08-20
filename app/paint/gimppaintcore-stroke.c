@@ -419,7 +419,7 @@ argument_list|)
 expr_stmt|;
 name|stroke_segs
 operator|=
-name|sort_boundary
+name|boundary_sort
 argument_list|(
 name|bound_segs
 argument_list|,

@@ -21,23 +21,23 @@ comment|/* half intensity for mask */
 end_comment
 
 begin_define
-DECL|macro|HALF_WAY
+DECL|macro|BOUNDARY_HALF_WAY
 define|#
 directive|define
-name|HALF_WAY
+name|BOUNDARY_HALF_WAY
 value|127
 end_define
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a2dec840103
+DECL|enum|__anon29d32a4c0103
 block|{
-DECL|enumerator|WithinBounds
-name|WithinBounds
+DECL|enumerator|BOUNDARY_WITHIN_BOUNDS
+name|BOUNDARY_WITHIN_BOUNDS
 block|,
-DECL|enumerator|IgnoreBounds
-name|IgnoreBounds
+DECL|enumerator|BOUNDARY_IGNORE_BOUNDS
+name|BOUNDARY_IGNORE_BOUNDS
 DECL|typedef|BoundaryType
 block|}
 name|BoundaryType
@@ -84,15 +84,11 @@ end_struct
 begin_function_decl
 name|BoundSeg
 modifier|*
-name|find_mask_boundary
+name|boundary_find
 parameter_list|(
 name|PixelRegion
 modifier|*
 name|maskPR
-parameter_list|,
-name|gint
-modifier|*
-name|num_elems
 parameter_list|,
 name|BoundaryType
 name|type
@@ -111,6 +107,10 @@ name|y2
 parameter_list|,
 name|guchar
 name|threshold
+parameter_list|,
+name|gint
+modifier|*
+name|num_segs
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -118,7 +118,7 @@ end_function_decl
 begin_function_decl
 name|BoundSeg
 modifier|*
-name|sort_boundary
+name|boundary_sort
 parameter_list|(
 specifier|const
 name|BoundSeg
@@ -138,7 +138,7 @@ end_function_decl
 begin_function_decl
 name|BoundSeg
 modifier|*
-name|simplify_boundary
+name|boundary_simplify
 parameter_list|(
 name|BoundSeg
 modifier|*

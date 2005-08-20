@@ -1175,7 +1175,7 @@ name|edit_select
 operator|->
 name|segs_in
 operator|=
-name|sort_boundary
+name|boundary_sort
 argument_list|(
 name|segs_in
 argument_list|,
@@ -1197,7 +1197,7 @@ name|edit_select
 operator|->
 name|segs_out
 operator|=
-name|sort_boundary
+name|boundary_sort
 argument_list|(
 name|segs_out
 argument_list|,

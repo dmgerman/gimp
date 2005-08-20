@@ -2534,19 +2534,12 @@ name|fs
 operator|.
 name|segs
 operator|=
-name|find_mask_boundary
+name|boundary_find
 argument_list|(
 operator|&
 name|bPR
 argument_list|,
-operator|&
-name|layer
-operator|->
-name|fs
-operator|.
-name|num_segs
-argument_list|,
-name|WithinBounds
+name|BOUNDARY_WITHIN_BOUNDS
 argument_list|,
 literal|0
 argument_list|,
@@ -2566,7 +2559,14 @@ argument_list|)
 operator|->
 name|height
 argument_list|,
-name|HALF_WAY
+name|BOUNDARY_HALF_WAY
+argument_list|,
+operator|&
+name|layer
+operator|->
+name|fs
+operator|.
+name|num_segs
 argument_list|)
 expr_stmt|;
 comment|/*  offset the segments  */
