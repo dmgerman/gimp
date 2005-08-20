@@ -2149,7 +2149,7 @@ end_comment
 begin_function
 specifier|static
 name|gint
-DECL|function|find_segment (const BoundSeg * segs,gint ns,gint x,gint y)
+DECL|function|find_segment (const BoundSeg * segs,gint num_segs,gint x,gint y)
 name|find_segment
 parameter_list|(
 specifier|const
@@ -2158,7 +2158,7 @@ modifier|*
 name|segs
 parameter_list|,
 name|gint
-name|ns
+name|num_segs
 parameter_list|,
 name|gint
 name|x
@@ -2178,7 +2178,7 @@ literal|0
 init|;
 name|index
 operator|<
-name|ns
+name|num_segs
 condition|;
 name|index
 operator|++
@@ -2249,7 +2249,7 @@ end_function
 begin_function
 name|BoundSeg
 modifier|*
-DECL|function|sort_boundary (const BoundSeg * segs,gint ns,gint * num_groups)
+DECL|function|sort_boundary (const BoundSeg * segs,gint num_segs,gint * num_groups)
 name|sort_boundary
 parameter_list|(
 specifier|const
@@ -2258,7 +2258,7 @@ modifier|*
 name|segs
 parameter_list|,
 name|gint
-name|ns
+name|num_segs
 parameter_list|,
 name|gint
 modifier|*
@@ -2289,7 +2289,7 @@ name|gboolean
 name|empty
 init|=
 operator|(
-name|ns
+name|num_segs
 operator|==
 literal|0
 operator|)
@@ -2323,7 +2323,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|ns
+name|num_segs
 condition|;
 name|i
 operator|++
@@ -2373,7 +2373,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|ns
+name|num_segs
 condition|;
 name|i
 operator|++
@@ -2400,7 +2400,7 @@ name|FALSE
 expr_stmt|;
 name|i
 operator|=
-name|ns
+name|num_segs
 expr_stmt|;
 block|}
 if|if
@@ -2509,7 +2509,7 @@ name|find_segment
 argument_list|(
 name|segs
 argument_list|,
-name|ns
+name|num_segs
 argument_list|,
 name|x
 argument_list|,
