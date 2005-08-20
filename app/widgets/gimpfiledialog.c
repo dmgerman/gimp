@@ -2969,6 +2969,24 @@ argument_list|,
 literal|'.'
 argument_list|)
 decl_stmt|;
+comment|/*  if the dot is before the last slash, ignore it  */
+if|if
+condition|(
+name|last_dot
+operator|&&
+name|strrchr
+argument_list|(
+name|uri
+argument_list|,
+literal|'/'
+argument_list|)
+operator|>
+name|last_dot
+condition|)
+name|last_dot
+operator|=
+name|NULL
+expr_stmt|;
 comment|/*  check if the uri has a "meta extension" (e.g. foo.bar.gz)                *  and try to truncate both extensions away.                */
 if|if
 condition|(
