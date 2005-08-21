@@ -22,18 +22,6 @@ directive|include
 file|"gimpdrawable.h"
 end_include
 
-begin_comment
-comment|/*  Half way point where a region is no longer visible in a selection  */
-end_comment
-
-begin_define
-DECL|macro|HALF_WAY
-define|#
-directive|define
-name|HALF_WAY
-value|127
-end_define
-
 begin_define
 DECL|macro|GIMP_TYPE_CHANNEL
 define|#
