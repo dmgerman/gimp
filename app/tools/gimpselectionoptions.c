@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2876c5550103
+DECL|enum|__anon28d8d0020103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1585,18 +1585,6 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/*  the antialias toggle button  */
-if|if
-condition|(
-operator|!
-name|tool_options
-operator|->
-name|tool_info
-operator|->
-name|tool_type
-operator|==
-name|GIMP_TYPE_FOREGROUND_SELECT_TOOL
-condition|)
-block|{
 name|button
 operator|=
 name|gimp_prop_check_button_new
@@ -1649,7 +1637,16 @@ operator|->
 name|tool_type
 operator|==
 name|GIMP_TYPE_NEW_RECT_SELECT_TOOL
+operator|||
+name|tool_options
+operator|->
+name|tool_info
+operator|->
+name|tool_type
+operator|==
+name|GIMP_TYPE_FOREGROUND_SELECT_TOOL
 condition|)
+block|{
 name|gtk_widget_set_sensitive
 argument_list|(
 name|button
