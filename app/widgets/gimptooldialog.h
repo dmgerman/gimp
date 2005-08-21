@@ -94,6 +94,19 @@ name|GimpToolDialogClass
 typedef|;
 end_typedef
 
+begin_struct
+DECL|struct|_GimpToolDialog
+struct|struct
+name|_GimpToolDialog
+block|{
+DECL|member|parent_instance
+name|GimpViewableDialog
+name|parent_instance
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
 begin_decl_stmt
 name|GType
 name|gimp_tool_dialog_get_type

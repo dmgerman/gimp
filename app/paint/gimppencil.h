@@ -89,7 +89,7 @@ begin_typedef
 DECL|typedef|GimpPencil
 typedef|typedef
 name|struct
-name|_GimpPaintbrush
+name|_GimpPencil
 name|GimpPencil
 typedef|;
 end_typedef
@@ -102,6 +102,19 @@ name|_GimpPaintbrushClass
 name|GimpPencilClass
 typedef|;
 end_typedef
+
+begin_struct
+DECL|struct|_GimpPencil
+struct|struct
+name|_GimpPencil
+block|{
+DECL|member|parent_instance
+name|GimpPaintbrush
+name|parent_instance
+decl_stmt|;
+block|}
+struct|;
+end_struct
 
 begin_function_decl
 name|void

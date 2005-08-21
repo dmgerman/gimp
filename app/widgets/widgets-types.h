@@ -673,7 +673,7 @@ begin_typedef
 DECL|typedef|GimpToolDialog
 typedef|typedef
 name|struct
-name|_GimpViewableDialog
+name|_GimpToolDialog
 name|GimpToolDialog
 typedef|;
 end_typedef

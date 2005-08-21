@@ -89,7 +89,7 @@ begin_typedef
 DECL|typedef|GimpPencilOptions
 typedef|typedef
 name|struct
-name|_GimpPaintOptions
+name|_GimpPencilOptions
 name|GimpPencilOptions
 typedef|;
 end_typedef
@@ -102,6 +102,19 @@ name|_GimpPaintOptionsClass
 name|GimpPencilOptionsClass
 typedef|;
 end_typedef
+
+begin_struct
+DECL|struct|_GimpPencilOptions
+struct|struct
+name|_GimpPencilOptions
+block|{
+DECL|member|parent_instance
+name|GimpPaintOptions
+name|parent_instance
+decl_stmt|;
+block|}
+struct|;
+end_struct
 
 begin_decl_stmt
 name|GType
