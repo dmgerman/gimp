@@ -43,7 +43,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f4e55d0103
+DECL|enum|__anon27d8468d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -291,11 +291,11 @@ modifier|*
 name|pspec
 parameter_list|)
 block|{
-name|GimpPencilOptions
+name|GimpPaintOptions
 modifier|*
 name|options
 init|=
-name|GIMP_PENCIL_OPTIONS
+name|GIMP_PAINT_OPTIONS
 argument_list|(
 name|object
 argument_list|)
@@ -355,11 +355,11 @@ modifier|*
 name|pspec
 parameter_list|)
 block|{
-name|GimpPencilOptions
+name|GimpPaintOptions
 modifier|*
 name|options
 init|=
-name|GIMP_PENCIL_OPTIONS
+name|GIMP_PAINT_OPTIONS
 argument_list|(
 name|object
 argument_list|)
