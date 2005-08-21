@@ -764,7 +764,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"A network error occured: %s"
+literal|"A network error occurred: %s"
 argument_list|)
 argument_list|,
 name|buf
@@ -882,7 +882,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"A network error occured: %s"
+literal|"A network error occurred: %s"
 argument_list|)
 argument_list|,
 name|buf

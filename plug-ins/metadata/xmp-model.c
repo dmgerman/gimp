@@ -3748,7 +3748,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * xmp_model_set_scalar_property:  * @xmp_model: pointer to an #XMPModel  * @schema_name: full URI or usual prefix of the schema  * @property_name: name of the property to store  * @property_value: value to store  *  * Store a new value for the specified XMP property.  *  * Return value: %TRUE if the property was set, %FALSE if an error occured (for example, the @schema_name is invalid)  **/
+comment|/**  * xmp_model_set_scalar_property:  * @xmp_model: pointer to an #XMPModel  * @schema_name: full URI or usual prefix of the schema  * @property_name: name of the property to store  * @property_value: value to store  *  * Store a new value for the specified XMP property.  *  * Return value: %TRUE if the property was set, %FALSE if an error occurred (for example, the @schema_name is invalid)  **/
 end_comment
 
 begin_function

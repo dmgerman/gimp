@@ -7824,7 +7824,7 @@ comment|/* The number of transformed pixels is returned. If the returned value i
 end_comment
 
 begin_comment
-comment|/* less than npix (or even -1), an error has occured.                        */
+comment|/* less than npix (or even -1), an error has occurred.                       */
 end_comment
 
 begin_comment

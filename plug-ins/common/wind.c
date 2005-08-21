@@ -106,7 +106,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c1e9f850103
+DECL|enum|__anon296d84000103
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -122,7 +122,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c1e9f850203
+DECL|enum|__anon296d84000203
 block|{
 DECL|enumerator|RENDER_WIND
 name|RENDER_WIND
@@ -138,7 +138,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c1e9f850303
+DECL|enum|__anon296d84000303
 block|{
 DECL|enumerator|BOTH
 name|BOTH
@@ -932,7 +932,7 @@ name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 name|gimp_message
 argument_list|(
-literal|"An execution error occured."
+literal|"An execution error occurred."
 argument_list|)
 expr_stmt|;
 block|}

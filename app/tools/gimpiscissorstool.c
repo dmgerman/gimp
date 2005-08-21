@@ -1930,7 +1930,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-comment|/*  Check if the mouse click occured on a vertex or the curve itself  */
+comment|/*  Check if the mouse click occurred on a vertex or the curve itself  */
 if|if
 condition|(
 name|clicked_on_vertex

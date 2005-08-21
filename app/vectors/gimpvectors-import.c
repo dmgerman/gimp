@@ -96,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2fe4d00108
+DECL|struct|__anon27dee5960108
 block|{
 DECL|member|stack
 name|GQueue
@@ -216,7 +216,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2fe4d00208
+DECL|struct|__anon27dee5960208
 block|{
 DECL|member|id
 name|gchar
@@ -735,7 +735,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_vectors_import_file:  * @image:    the #GimpImage to add the paths to  * @filename: name of a SVG file  * @merge:    should multiple paths be merged into a single #GimpVectors object  * @scale:    should the SVG be scaled to fit the image dimensions  * @position: position in the image's vectors stack where to add the vectors  * @error:    location to store possible errors  *  * Imports one or more paths and basic shapes from a SVG file.  *  * Return value: %TRUE on success, %FALSE if an error occured  **/
+comment|/**  * gimp_vectors_import_file:  * @image:    the #GimpImage to add the paths to  * @filename: name of a SVG file  * @merge:    should multiple paths be merged into a single #GimpVectors object  * @scale:    should the SVG be scaled to fit the image dimensions  * @position: position in the image's vectors stack where to add the vectors  * @error:    location to store possible errors  *  * Imports one or more paths and basic shapes from a SVG file.  *  * Return value: %TRUE on success, %FALSE if an error occurred  **/
 end_comment
 
 begin_function
@@ -824,7 +824,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_import_string:  * @image:  the #GimpImage to add the paths to  * @buffer: a character buffer to parse  * @len:    number of bytes in @str or -1 if @str is %NUL-terminated  * @merge:  should multiple paths be merged into a single #GimpVectors object  * @scale:  should the SVG be scaled to fit the image dimensions  * @error:  location to store possible errors  *  * Imports one or more paths and basic shapes from a SVG file.  *  * Return value: %TRUE on success, %FALSE if an error occured  **/
+comment|/**  * gimp_vectors_import_string:  * @image:  the #GimpImage to add the paths to  * @buffer: a character buffer to parse  * @len:    number of bytes in @str or -1 if @str is %NUL-terminated  * @merge:  should multiple paths be merged into a single #GimpVectors object  * @scale:  should the SVG be scaled to fit the image dimensions  * @error:  location to store possible errors  *  * Imports one or more paths and basic shapes from a SVG file.  *  * Return value: %TRUE on success, %FALSE if an error occurred  **/
 end_comment
 
 begin_function
@@ -5947,7 +5947,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2fe4d00308
+DECL|struct|__anon27dee5960308
 block|{
 DECL|member|strokes
 name|GList

@@ -144,7 +144,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a6b4df0103
+DECL|enum|__anon2be871950103
 block|{
 DECL|enumerator|CONVOLVE_NCLIP
 name|CONVOLVE_NCLIP
@@ -1384,7 +1384,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/* TempBuf clipping has occured on at least one edge...        * Edge case: expand area under brush margin px on near edge(s), convolve        * expanded buffers. copy src -> ovrsz1 convolve ovrsz1 -> ovrsz2        * copy-with-crop ovrsz2 -> dest        */
+comment|/* TempBuf clipping has occurred on at least one edge...        * Edge case: expand area under brush margin px on near edge(s), convolve        * expanded buffers. copy src -> ovrsz1 convolve ovrsz1 -> ovrsz2        * copy-with-crop ovrsz2 -> dest        */
 name|PixelRegion
 name|ovrsz1PR
 decl_stmt|;
