@@ -171,7 +171,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0a255e0108
+DECL|struct|__anon2935fce60108
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -728,7 +728,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0a255e0208
+DECL|struct|__anon2935fce60208
 block|{
 DECL|member|schema
 specifier|const
@@ -2789,14 +2789,14 @@ name|EDITOR_PROC
 argument_list|,
 name|_
 argument_list|(
-literal|"_Import XMP"
+literal|"_Import XMP..."
 argument_list|)
 argument_list|,
 name|RESPONSE_IMPORT
 argument_list|,
 name|_
 argument_list|(
-literal|"_Export XMP"
+literal|"_Export XMP..."
 argument_list|)
 argument_list|,
 name|RESPONSE_EXPORT

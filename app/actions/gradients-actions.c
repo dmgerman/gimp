@@ -190,7 +190,7 @@ name|GTK_STOCK_DELETE
 block|,
 name|N_
 argument_list|(
-literal|"_Delete Gradient..."
+literal|"_Delete Gradient"
 argument_list|)
 block|,
 literal|""

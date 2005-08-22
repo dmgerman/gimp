@@ -184,7 +184,7 @@ name|GTK_STOCK_DELETE
 block|,
 name|N_
 argument_list|(
-literal|"_Delete Pattern..."
+literal|"_Delete Pattern"
 argument_list|)
 block|,
 literal|""
