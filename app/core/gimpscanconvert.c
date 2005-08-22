@@ -278,6 +278,10 @@ begin_comment
 comment|/*  public functions  */
 end_comment
 
+begin_comment
+comment|/**  * gimp_scan_convert_new:  *  * Create a new scan conversion context.  *  * Return value: a newly allocated #GimpScanConvert context.  */
+end_comment
+
 begin_function
 name|GimpScanConvert
 modifier|*
@@ -311,6 +315,10 @@ name|sc
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_scan_convert_free:  * @sc: a #GimpScanConvert context  *  * Frees the resources allocated for @sc.  */
+end_comment
 
 begin_function
 name|void
@@ -364,7 +372,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* set the Pixel-Ratio (width / height) for the pixels.  */
+comment|/**  * gimp_scan_convert_set_pixel_ratio:  * @sc:       a #GimpScanConvert context  * @ratio_xy: the aspect ratio of the major coordinate axes  *  * Sets the pixel aspect ratio.  */
 end_comment
 
 begin_function
@@ -396,6 +404,10 @@ name|ratio_xy
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_scan_convert_set_clip_rectangle  * @sc:     a #GimpScanConvert context  * @x:      horizontal offset of clip rectangle  * @y:      vertical offset of clip rectangle  * @width:  width of clip rectangle  * @height: height of clip rectangle  *  * Sets a clip rectangle on @sc. Subsequent render operations will be  * restricted to this area.  */
+end_comment
 
 begin_function
 name|void
@@ -460,7 +472,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* Add "n_points" from "points" to the polygon currently being  * described by "scan_converter". DEPRECATED.  */
+comment|/**  * gimp_scan_convert_add_points:  * @sc:          a #GimpScanConvert context  * @n_points:    number of points to add  * @points:      array of points to add  * @new_polygon: whether to start a new polygon or append to the last one  *  * Adds @n_points from @points to the polygon currently being  * described by @sc. This function is DEPRECATED, please use  * gimp_scan_convert_add_polyline() instead.  */
 end_comment
 
 begin_function
@@ -932,7 +944,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* Add a polygon with "npoints" "points" that may be open or closed.  * It is not recommended to mix gimp_scan_convert_add_polyline with  * gimp_scan_convert_add_points.  *  * Please note that you should use gimp_scan_convert_stroke() if you  * specify open polygons.  */
+comment|/**  * gimp_scan_convert_add_polyline:  * @sc:       a #GimpScanConvert context  * @n_points: number of points to add  * @points:   array of points to add  * @closed:   whether to close the polyline and make it a polygon  *  * Add a polyline with @n_points @points that may be open or closed.  * It is not recommended to mix gimp_scan_convert_add_polyline() with  * gimp_scan_convert_add_points().  *  * Please note that you should use gimp_scan_convert_stroke() if you  * specify open polygons.  */
 end_comment
 
 begin_function
@@ -1297,7 +1309,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* Stroke the content of a GimpScanConvert. The next  * gimp_scan_convert_render() will result in the outline of the polygon  * defined with the commands above.  *  * You cannot add additional polygons after this command.  */
+comment|/**  * gimp_scan_convert_stroke:  * @sc:          a #GimpScanConvert context  * @width:       line width in pixels  * @join:        how lines should be joined  * @cap:         how to render the end of lines  * @miter:       convert a mitered join to a bevelled join if the miter would  *               extend to a distance of more than @miter times @width from  *               the actual join point  * @dash_offset: offset to apply on the dash pattern  * @dash_info:   dash pattern or %NULL for a solid line  *  * Stroke the content of a GimpScanConvert. The next  * gimp_scan_convert_render() will result in the outline of the  * polygon defined with the commands above.  *  * You cannot add additional polygons after this command.  *  * Note that if you have nonstandard resolution, "width" gives the  * width (in pixels) for a vertical stroke, i.e. use the X resolution  * to calculate the width of a stroke when operating with real world  * units.  */
 end_comment
 
 begin_function
@@ -1941,7 +1953,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* This is a more low level version. Expects a tile manager of depth 1.  *  * You cannot add additional polygons after this command.  */
+comment|/**  * gimp_scan_convert_render:  * @sc:           a #GimpScanConvert context  * @tile_manager: the #TileManager to render to  * @off_x:        horizontal offset into the @tile_manager  * @off_y:        vertical offset into the @tile_manager  * @antialias:    whether to apply antialiasiing  *  * Actually renders the @sc to a mask. This function expects a tile  * manager of depth 1.  *  * You cannot add additional polygons after this command.  */
 end_comment
 
 begin_function
@@ -2001,6 +2013,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_scan_convert_render_value:  * @sc:           a #GimpScanConvert context  * @tile_manager: the #TileManager to render to  * @off_x:        horizontal offset into the @tile_manager  * @off_y:        vertical offset into the @tile_manager  * @value:        value to use for covered pixels  *  * A variant of gimp_scan_convert_render() that doesn't do  * antialiasing but gives control over the value that should be used  * for pixels covered by the scan conversion . Uncovered pixels are  * set to zero.  *  * You cannot add additional polygons after this command.  */
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_scan_convert_render_value (GimpScanConvert * sc,TileManager * tile_manager,gint off_x,gint off_y,guchar value)
@@ -2057,6 +2073,10 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_scan_convert_compose:  * @sc:           a #GimpScanConvert context  * @tile_manager: the #TileManager to render to  * @off_x:        horizontal offset into the @tile_manager  * @off_y:        vertical offset into the @tile_manager  * @value:        value to use for covered pixels  *  * This is a variant of gimp_scan_convert_render() that composes the  * (aliased) scan conversion with the content of the @tile_manager.  *  * You cannot add additional polygons after this command.  */
+end_comment
 
 begin_function
 name|void

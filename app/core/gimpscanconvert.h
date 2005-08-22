@@ -16,10 +16,6 @@ directive|define
 name|__GIMP_SCAN_CONVERT_H__
 end_define
 
-begin_comment
-comment|/* Create a new scan conversion context.  */
-end_comment
-
 begin_function_decl
 name|GimpScanConvert
 modifier|*
@@ -36,14 +32,10 @@ name|gimp_scan_convert_free
 parameter_list|(
 name|GimpScanConvert
 modifier|*
-name|scan_converter
+name|sc
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_comment
-comment|/* set the Pixel-Ratio (width / height) for the pixels.  */
-end_comment
 
 begin_function_decl
 name|void
@@ -82,17 +74,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/* Add "npoints" from "pointlist" to the polygon currently being  * described by "scan_converter". DEPRECATED.  */
-end_comment
-
 begin_function_decl
 name|void
 name|gimp_scan_convert_add_points
 parameter_list|(
 name|GimpScanConvert
 modifier|*
-name|scan_converter
+name|sc
 parameter_list|,
 name|guint
 name|n_points
@@ -106,10 +94,6 @@ name|new_polygon
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_comment
-comment|/* Add a polygon with "npoints" "points" that may be open or closed.  * It is not recommended to mix gimp_scan_convert_add_polyline with  * gimp_scan_convert_add_points.  *  * Please note that you should use gimp_scan_convert_stroke() if you  * specify open polygons.  */
-end_comment
 
 begin_function_decl
 name|void
@@ -131,10 +115,6 @@ name|closed
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_comment
-comment|/* Stroke the content of a GimpScanConvert. The next  * gimp_scan_convert_to_channel will result in the outline of the polygon  * defined with the commands above.  *  * You cannot add additional polygons after this command.  *  * Note that if you have nonstandard resolution, "width" gives the  * width (in pixels) for a vertical stroke, i.e. use the X-resolution  * to calculate the width of a stroke when operating with real world  * units.  */
-end_comment
 
 begin_function_decl
 name|void
@@ -166,17 +146,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/* These are more low level version. Expects a tile manager of depth 1.  *  * You cannot add additional polygons after this command.  */
-end_comment
-
 begin_function_decl
 name|void
 name|gimp_scan_convert_render
 parameter_list|(
 name|GimpScanConvert
 modifier|*
-name|scan_converter
+name|sc
 parameter_list|,
 name|TileManager
 modifier|*
@@ -217,10 +193,6 @@ name|value
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_comment
-comment|/* This is a variant of gimp_scan_convert_render() that composes the  * (unaliased) scan conversion with the existing drawable content.  */
-end_comment
 
 begin_function_decl
 name|void
