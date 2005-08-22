@@ -68,6 +68,12 @@ directive|include
 file|<gtk/gtk.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimpbase/gimpversion.h"
+end_include
+
 begin_typedef
 DECL|typedef|CopyData
 typedef|typedef
@@ -100,6 +106,17 @@ decl_stmt|;
 block|}
 struct|;
 end_struct
+
+begin_decl_stmt
+specifier|static
+name|void
+name|test_clipboard_show_version
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_NORETURN
+decl_stmt|;
+end_decl_stmt
 
 begin_function_decl
 specifier|static
@@ -399,6 +416,22 @@ block|,
 literal|"Paste clipoard into<file>"
 block|,
 literal|"<file>"
+block|}
+block|,
+block|{
+literal|"version"
+block|,
+literal|'v'
+block|,
+literal|0
+block|,
+name|G_OPTION_ARG_CALLBACK
+block|,
+name|test_clipboard_show_version
+block|,
+literal|"Show version information and exit"
+block|,
+name|NULL
 block|}
 block|,
 block|{
@@ -721,6 +754,30 @@ block|}
 return|return
 name|EXIT_SUCCESS
 return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|test_clipboard_show_version (void)
+name|test_clipboard_show_version
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+name|g_print
+argument_list|(
+literal|"test-clipboard (GIMP clipboard testbed) version %s\n"
+argument_list|,
+name|GIMP_VERSION
+argument_list|)
+expr_stmt|;
+name|exit
+argument_list|(
+name|EXIT_SUCCESS
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
