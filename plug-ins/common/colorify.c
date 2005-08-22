@@ -145,7 +145,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6442af0108
+DECL|struct|__anon29a4e9870108
 block|{
 DECL|member|color
 name|GimpRGB
@@ -1264,7 +1264,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Custom Color:"
+literal|"Custom color:"
 argument_list|)
 argument_list|)
 expr_stmt|;

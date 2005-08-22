@@ -1857,7 +1857,7 @@ literal|8
 argument_list|,
 name|_
 argument_list|(
-literal|"Dither Algorithm:"
+literal|"Dither algorithm:"
 argument_list|)
 argument_list|,
 literal|0.0

@@ -96,7 +96,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e718440108
+DECL|struct|__anon27cd04580108
 block|{
 DECL|member|pixelwidth
 name|gint
@@ -115,7 +115,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e718440208
+DECL|struct|__anon27cd04580208
 block|{
 DECL|member|x
 DECL|member|y
@@ -1141,7 +1141,7 @@ name|FALSE
 argument_list|,
 name|_
 argument_list|(
-literal|"Pixel _Width:"
+literal|"Pixel _width:"
 argument_list|)
 argument_list|,
 name|pvals
@@ -1164,7 +1164,7 @@ name|width
 argument_list|,
 name|_
 argument_list|(
-literal|"Pixel _Height:"
+literal|"Pixel _height:"
 argument_list|)
 argument_list|,
 name|pvals

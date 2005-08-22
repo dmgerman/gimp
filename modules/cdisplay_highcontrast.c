@@ -162,7 +162,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon291bd34b0103
+DECL|enum|__anon2b82d14d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -839,7 +839,7 @@ name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Contrast C_ycles:"
+literal|"Contrast c_ycles:"
 argument_list|)
 argument_list|)
 expr_stmt|;

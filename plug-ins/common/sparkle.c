@@ -125,7 +125,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a319ba80108
+DECL|struct|__anon2ad4694e0108
 block|{
 DECL|member|lum_threshold
 name|gdouble
@@ -1635,7 +1635,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Luminosity _Threshold:"
+literal|"Luminosity _threshold:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH

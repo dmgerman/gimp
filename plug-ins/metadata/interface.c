@@ -171,7 +171,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2935fce60108
+DECL|struct|__anon2a327e7e0108
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -728,7 +728,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2935fce60208
+DECL|struct|__anon2a327e7e0208
 block|{
 DECL|member|schema
 specifier|const
@@ -1159,7 +1159,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Image _Title:"
+literal|"Image _title:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -1345,7 +1345,7 @@ literal|3
 argument_list|,
 name|_
 argument_list|(
-literal|"Description _Writer:"
+literal|"Description _writer:"
 argument_list|)
 argument_list|,
 literal|0.0

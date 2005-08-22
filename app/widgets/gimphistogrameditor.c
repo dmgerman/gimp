@@ -503,7 +503,7 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Std Dev:"
+literal|"Std dev:"
 argument_list|)
 block|,
 name|N_

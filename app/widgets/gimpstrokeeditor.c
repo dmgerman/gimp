@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc1e9960103
+DECL|enum|__anon27cb4e8d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -723,7 +723,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Line Width:"
+literal|"Line width:"
 argument_list|)
 argument_list|)
 expr_stmt|;

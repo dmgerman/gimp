@@ -304,7 +304,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"_Fill Opacity:"
+literal|"_Fill opacity:"
 argument_list|)
 argument_list|,
 name|FALSE
@@ -425,7 +425,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"_Fill Opacity:"
+literal|"_Fill opacity:"
 argument_list|)
 argument_list|,
 name|TRUE

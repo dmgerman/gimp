@@ -52,7 +52,7 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon27ed986a0108
+DECL|struct|__anon2b4c34df0108
 typedef|typedef
 struct|struct
 block|{
@@ -957,7 +957,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"_Left Start at:"
+literal|"_Left start at:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1069,7 +1069,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"_Top Start at:"
+literal|"_Top start at:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1125,7 +1125,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"_Horz. Spacing:"
+literal|"_Horz. spacing:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1181,7 +1181,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"_No. Across:"
+literal|"_No. across:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1237,7 +1237,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"_Vert. Spacing:"
+literal|"_Vert. spacing:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1293,7 +1293,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"No. _Down:"
+literal|"No. _down:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1598,7 +1598,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon27ed986a0208
+DECL|struct|__anon2b4c34df0208
 typedef|typedef
 struct|struct
 block|{

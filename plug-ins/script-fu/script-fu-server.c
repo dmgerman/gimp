@@ -413,7 +413,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b28790f0108
+DECL|struct|__anon2b876df10108
 block|{
 DECL|member|command
 name|gchar
@@ -437,7 +437,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b28790f0208
+DECL|struct|__anon2b876df10208
 block|{
 DECL|member|port_entry
 name|GtkWidget
@@ -2655,7 +2655,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Server Port:"
+literal|"Server port:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -2692,7 +2692,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Server Logfile:"
+literal|"Server logfile:"
 argument_list|)
 argument_list|,
 literal|0.0

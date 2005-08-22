@@ -104,7 +104,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon293099000103
+DECL|enum|__anon2ba8dacb0103
 block|{
 DECL|enumerator|GROW
 name|GROW
@@ -132,7 +132,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293099000208
+DECL|struct|__anon2ba8dacb0208
 block|{
 DECL|member|run
 name|gboolean
@@ -147,7 +147,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293099000308
+DECL|struct|__anon2ba8dacb0308
 block|{
 DECL|member|deform_area_radius
 name|gint
@@ -4926,7 +4926,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Number of _Frames:"
+literal|"Number of _frames:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH

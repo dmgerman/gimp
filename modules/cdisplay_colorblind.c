@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac25dab0103
+DECL|enum|__anon275bc4fb0103
 block|{
 DECL|enumerator|COLORBLIND_DEFICIENCY_PROTANOPIA
 name|COLORBLIND_DEFICIENCY_PROTANOPIA
@@ -345,7 +345,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac25dab0203
+DECL|enum|__anon275bc4fb0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1947,7 +1947,7 @@ name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Color _Deficiency Type:"
+literal|"Color _deficiency type:"
 argument_list|)
 argument_list|)
 expr_stmt|;

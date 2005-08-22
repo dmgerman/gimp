@@ -100,7 +100,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ca840e0108
+DECL|struct|__anon2b0c132b0108
 block|{
 DECL|member|film_height
 name|gint
@@ -204,7 +204,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ca840e0208
+DECL|struct|__anon2b0c132b0208
 block|{
 DECL|member|advanced_adj
 name|GtkObject
@@ -4895,12 +4895,12 @@ name|add_box_flag
 condition|?
 name|_
 argument_list|(
-literal|"Available Images:"
+literal|"Available images:"
 argument_list|)
 else|:
 name|_
 argument_list|(
-literal|"On Film:"
+literal|"On film:"
 argument_list|)
 argument_list|)
 expr_stmt|;

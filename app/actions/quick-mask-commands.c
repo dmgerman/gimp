@@ -334,7 +334,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"_Mask Opacity:"
+literal|"_Mask opacity:"
 argument_list|)
 argument_list|,
 name|FALSE

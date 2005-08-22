@@ -137,7 +137,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ae943e0108
+DECL|struct|__anon28e326fc0108
 block|{
 DECL|member|scalex
 name|gdouble
@@ -246,7 +246,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ae943e0208
+DECL|struct|__anon28e326fc0208
 block|{
 DECL|member|height
 DECL|member|width
@@ -328,7 +328,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ae943e0308
+DECL|struct|__anon28e326fc0308
 block|{
 DECL|member|width
 name|gint
@@ -3711,7 +3711,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"_X Scale:"
+literal|"_X scale:"
 argument_list|)
 argument_list|,
 literal|140
@@ -3775,7 +3775,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"_Y Scale:"
+literal|"_Y scale:"
 argument_list|)
 argument_list|,
 literal|140
@@ -4670,7 +4670,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"F_irst Color:"
+literal|"F_irst color:"
 argument_list|)
 argument_list|,
 literal|0
@@ -4751,7 +4751,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"S_econd Color:"
+literal|"S_econd color:"
 argument_list|)
 argument_list|,
 literal|0

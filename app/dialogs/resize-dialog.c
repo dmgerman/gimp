@@ -1407,7 +1407,7 @@ name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Resize _Layers:"
+literal|"Resize _layers:"
 argument_list|)
 argument_list|)
 expr_stmt|;

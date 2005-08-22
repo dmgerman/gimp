@@ -79,7 +79,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2782aab50103
+DECL|enum|__anon28ac12b50103
 block|{
 DECL|enumerator|LIC_HUE
 name|LIC_HUE
@@ -127,7 +127,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2782aab50208
+DECL|struct|__anon28ac12b50208
 block|{
 DECL|member|filtlen
 name|gdouble
@@ -3310,7 +3310,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"_Effect Image:"
+literal|"_Effect image:"
 argument_list|)
 argument_list|,
 literal|0.0

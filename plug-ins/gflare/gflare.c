@@ -391,7 +391,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27dc6ba60103
+DECL|enum|__anon2b6649d10103
 block|{
 DECL|enumerator|GF_NORMAL
 name|GF_NORMAL
@@ -418,7 +418,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27dc6ba60203
+DECL|enum|__anon2b6649d10203
 block|{
 DECL|enumerator|GF_CIRCLE
 name|GF_CIRCLE
@@ -439,7 +439,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dc6ba60308
+DECL|struct|__anon2b6649d10308
 block|{
 DECL|member|name
 name|gchar
@@ -580,7 +580,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dc6ba60408
+DECL|struct|__anon2b6649d10408
 block|{
 DECL|member|fp
 name|FILE
@@ -600,7 +600,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27dc6ba60503
+DECL|enum|__anon2b6649d10503
 block|{
 DECL|enumerator|PAGE_SETTINGS
 name|PAGE_SETTINGS
@@ -628,7 +628,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dc6ba60608
+DECL|struct|__anon2b6649d10608
 block|{
 DECL|member|init
 name|gint
@@ -650,7 +650,7 @@ modifier|*
 name|preview
 decl_stmt|;
 struct|struct
-DECL|struct|__anon27dc6ba60708
+DECL|struct|__anon2b6649d10708
 block|{
 DECL|member|x0
 DECL|member|y0
@@ -729,7 +729,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dc6ba60808
+DECL|struct|__anon2b6649d10808
 block|{
 DECL|member|init
 name|gint
@@ -799,7 +799,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dc6ba60908
+DECL|struct|__anon2b6649d10908
 block|{
 DECL|member|x0
 name|gdouble
@@ -826,7 +826,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dc6ba60a08
+DECL|struct|__anon2b6649d10a08
 block|{
 DECL|member|init
 name|gint
@@ -996,7 +996,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dc6ba60b08
+DECL|struct|__anon2b6649d10b08
 block|{
 DECL|member|xcenter
 name|gdouble
@@ -1023,7 +1023,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dc6ba60c08
+DECL|struct|__anon2b6649d10c08
 block|{
 DECL|member|is_color
 name|gint
@@ -1264,7 +1264,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dc6ba60d08
+DECL|struct|__anon2b6649d10d08
 block|{
 DECL|member|tag
 name|gint
@@ -1341,7 +1341,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dc6ba60e08
+DECL|struct|__anon2b6649d10e08
 block|{
 DECL|member|xcenter
 name|gint
@@ -8535,7 +8535,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-DECL|struct|__anon27dc6ba60f08
+DECL|struct|__anon2b6649d10f08
 specifier|static
 struct|struct
 block|{
@@ -13859,7 +13859,7 @@ operator|++
 argument_list|,
 name|_
 argument_list|(
-literal|"Vector _Angle:"
+literal|"Vector _angle:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -13938,7 +13938,7 @@ operator|++
 argument_list|,
 name|_
 argument_list|(
-literal|"Vector _Length:"
+literal|"Vector _length:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -14171,7 +14171,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"_Max Depth:"
+literal|"_Max depth:"
 argument_list|)
 argument_list|,
 operator|-
@@ -14493,7 +14493,7 @@ name|i
 decl_stmt|;
 specifier|static
 struct|struct
-DECL|struct|__anon27dc6ba61008
+DECL|struct|__anon2b6649d11008
 block|{
 DECL|member|label
 specifier|const
@@ -16789,7 +16789,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Paint Mode:"
+literal|"Paint mode:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -16982,7 +16982,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Paint Mode:"
+literal|"Paint mode:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -17175,7 +17175,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Paint Mode:"
+literal|"Paint mode:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -17399,7 +17399,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Radial Gradient:"
+literal|"Radial gradient:"
 argument_list|)
 argument_list|,
 name|gm
@@ -17434,7 +17434,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Angular Gradient:"
+literal|"Angular gradient:"
 argument_list|)
 argument_list|,
 name|gm
@@ -17469,7 +17469,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"Angular Size Gradient:"
+literal|"Angular size gradient:"
 argument_list|)
 argument_list|,
 name|gm
@@ -17732,7 +17732,7 @@ operator|++
 argument_list|,
 name|_
 argument_list|(
-literal|"Hue Rotation:"
+literal|"Hue rotation:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -18016,7 +18016,7 @@ operator|++
 argument_list|,
 name|_
 argument_list|(
-literal|"Radial Gradient:"
+literal|"Radial gradient:"
 argument_list|)
 argument_list|,
 name|gm
@@ -18052,7 +18052,7 @@ operator|++
 argument_list|,
 name|_
 argument_list|(
-literal|"Angular Gradient:"
+literal|"Angular gradient:"
 argument_list|)
 argument_list|,
 name|gm
@@ -18088,7 +18088,7 @@ operator|++
 argument_list|,
 name|_
 argument_list|(
-literal|"Angular Size Gradient:"
+literal|"Angular size gradient:"
 argument_list|)
 argument_list|,
 name|gm
@@ -18351,7 +18351,7 @@ operator|++
 argument_list|,
 name|_
 argument_list|(
-literal|"Hue Rotation:"
+literal|"Hue rotation:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -18510,7 +18510,7 @@ operator|++
 argument_list|,
 name|_
 argument_list|(
-literal|"Spike Thickness:"
+literal|"Spike thickness:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -18828,7 +18828,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Radial Gradient:"
+literal|"Radial gradient:"
 argument_list|)
 argument_list|,
 name|gm
@@ -18863,7 +18863,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Size Factor Gradient:"
+literal|"Size factor gradient:"
 argument_list|)
 argument_list|,
 name|gm
@@ -18898,7 +18898,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"Probability Gradient:"
+literal|"Probability gradient:"
 argument_list|)
 argument_list|,
 name|gm
@@ -19161,7 +19161,7 @@ operator|++
 argument_list|,
 name|_
 argument_list|(
-literal|"Hue Rotation:"
+literal|"Hue rotation:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -19641,7 +19641,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Random Seed:"
+literal|"Random seed:"
 argument_list|)
 argument_list|)
 expr_stmt|;

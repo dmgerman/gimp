@@ -438,7 +438,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Layer _Name:"
+literal|"Layer _name:"
 argument_list|)
 argument_list|,
 literal|0.0

@@ -138,7 +138,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28f761dc0103
+DECL|enum|__anon2af012de0103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -158,7 +158,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28f761dc0203
+DECL|enum|__anon2af012de0203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -174,7 +174,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f761dc0308
+DECL|struct|__anon2af012de0308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -196,7 +196,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon28f761dc040a
+DECL|union|__anon2af012de040a
 block|{
 DECL|member|d
 name|gdouble
@@ -221,7 +221,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f761dc0508
+DECL|struct|__anon2af012de0508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -251,7 +251,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f761dc0608
+DECL|struct|__anon2af012de0608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -286,7 +286,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f761dc0708
+DECL|struct|__anon2af012de0708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -322,7 +322,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f761dc0808
+DECL|struct|__anon2af012de0808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -389,7 +389,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f761dc0908
+DECL|struct|__anon2af012de0908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -538,7 +538,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f761dc0a08
+DECL|struct|__anon2af012de0a08
 block|{
 DECL|member|run
 name|gboolean
@@ -3180,7 +3180,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Scale Hue by:"
+literal|"Scale hue by:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3333,7 +3333,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Scale Value by:"
+literal|"Scale value by:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5992,7 +5992,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Max. Memory:"
+literal|"Max. memory:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6333,7 +6333,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Spot Radius:"
+literal|"Spot radius:"
 argument_list|)
 argument_list|)
 expr_stmt|;

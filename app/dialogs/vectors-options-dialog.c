@@ -489,7 +489,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Path Name:"
+literal|"Path name:"
 argument_list|)
 argument_list|,
 literal|0.0

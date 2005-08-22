@@ -93,7 +93,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2afca2d50103
+DECL|enum|__anon2c5261150103
 block|{
 DECL|enumerator|PATH_COLUMN
 name|PATH_COLUMN
@@ -2241,12 +2241,12 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Last Error:"
+literal|"Last error:"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Available Types:"
+literal|"Available types:"
 argument_list|)
 block|}
 decl_stmt|;

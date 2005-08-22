@@ -341,7 +341,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2796bedf0108
+DECL|struct|__anon2c5e0ff30108
 block|{
 DECL|member|dst_id
 name|gint32
@@ -410,7 +410,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2796bedf0208
+DECL|struct|__anon2c5e0ff30208
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -518,7 +518,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2796bedf0308
+DECL|struct|__anon2c5e0ff30308
 block|{
 DECL|member|color
 name|guchar
@@ -547,7 +547,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2796bedf0408
+DECL|struct|__anon2c5e0ff30408
 block|{
 DECL|member|all_samples
 name|gint32
@@ -574,7 +574,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2796bedf0508
+DECL|struct|__anon2c5e0ff30508
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -7749,7 +7749,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Output Levels:"
+literal|"Output levels:"
 argument_list|)
 argument_list|)
 expr_stmt|;

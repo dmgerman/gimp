@@ -94,7 +94,7 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon291a91ee0108
+DECL|struct|__anon2bf4cac90108
 typedef|typedef
 struct|struct
 block|{
@@ -2275,7 +2275,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Number of _Undo levels (1 - 99):"
+literal|"Number of _undo levels (1 - 99):"
 argument_list|)
 argument_list|)
 expr_stmt|;

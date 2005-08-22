@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd6b72f0103
+DECL|enum|__anon2b9fc7fe0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1123,7 +1123,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Max Depth:"
+literal|"Max depth:"
 argument_list|)
 argument_list|,
 literal|1.0
