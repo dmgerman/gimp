@@ -341,7 +341,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b12efbf0108
+DECL|struct|__anon2796bedf0108
 block|{
 DECL|member|dst_id
 name|gint32
@@ -410,7 +410,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b12efbf0208
+DECL|struct|__anon2796bedf0208
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -518,7 +518,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b12efbf0308
+DECL|struct|__anon2796bedf0308
 block|{
 DECL|member|color
 name|guchar
@@ -547,7 +547,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b12efbf0408
+DECL|struct|__anon2796bedf0408
 block|{
 DECL|member|all_samples
 name|gint32
@@ -574,7 +574,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b12efbf0508
+DECL|struct|__anon2796bedf0508
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -6047,7 +6047,7 @@ name|RESPONSE_RESET
 argument_list|,
 name|_
 argument_list|(
-literal|"Get _sample colors"
+literal|"Get _Sample Colors"
 argument_list|)
 argument_list|,
 name|RESPONSE_GET_COLORS
@@ -6056,10 +6056,7 @@ name|GTK_STOCK_CLOSE
 argument_list|,
 name|GTK_RESPONSE_CLOSE
 argument_list|,
-name|_
-argument_list|(
-literal|"_Apply"
-argument_list|)
+name|GTK_STOCK_APPLY
 argument_list|,
 name|GTK_RESPONSE_APPLY
 argument_list|,
