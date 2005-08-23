@@ -99,7 +99,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4ddf910108
+DECL|struct|__anon278f4e060108
 block|{
 DECL|member|colors
 name|GimpRGB
@@ -1540,12 +1540,12 @@ operator|)
 condition|?
 name|_
 argument_list|(
-literal|"Source color range"
+literal|"Source Color Range"
 argument_list|)
 else|:
 name|_
 argument_list|(
-literal|"Destination color range"
+literal|"Destination Color Range"
 argument_list|)
 argument_list|)
 expr_stmt|;

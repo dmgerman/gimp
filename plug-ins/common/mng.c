@@ -241,7 +241,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e429c60103
+DECL|enum|__anon2b9633840103
 block|{
 DECL|enumerator|CHUNKS_PNG_D
 name|CHUNKS_PNG_D
@@ -260,7 +260,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e429c60203
+DECL|enum|__anon2b9633840203
 block|{
 DECL|enumerator|DISPOSE_COMBINE
 name|DISPOSE_COMBINE
@@ -6208,7 +6208,7 @@ name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Animated MNG options"
+literal|"Animated MNG Options"
 argument_list|)
 argument_list|)
 expr_stmt|;

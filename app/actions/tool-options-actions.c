@@ -157,7 +157,7 @@ name|GTK_STOCK_SAVE
 block|,
 name|N_
 argument_list|(
-literal|"_Save Options to"
+literal|"_Save Options To"
 argument_list|)
 block|,
 literal|""
@@ -176,7 +176,7 @@ name|GTK_STOCK_REVERT_TO_SAVED
 block|,
 name|N_
 argument_list|(
-literal|"_Restore Options from"
+literal|"_Restore Options From"
 argument_list|)
 block|,
 literal|""

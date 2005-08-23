@@ -169,7 +169,7 @@ name|INTENT_RELATIVE_COLORIMETRIC
 block|,
 name|N_
 argument_list|(
-literal|"Relative Colorimetric"
+literal|"Relative colorimetric"
 argument_list|)
 block|,
 name|NULL
@@ -191,7 +191,7 @@ name|INTENT_ABSOLUTE_COLORIMETRIC
 block|,
 name|N_
 argument_list|(
-literal|"Absolute Colorimetric"
+literal|"Absolute colorimetric"
 argument_list|)
 block|,
 name|NULL
@@ -323,7 +323,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f51c920103
+DECL|enum|__anon29d8f02c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

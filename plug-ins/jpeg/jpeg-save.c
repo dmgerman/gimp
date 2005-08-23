@@ -140,7 +140,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1d146b0108
+DECL|struct|__anon294949c10108
 block|{
 DECL|member|cinfo
 name|struct
@@ -3024,7 +3024,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Show _Preview in image window"
+literal|"Show _preview in image window"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4773,7 +4773,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1d146b0208
+DECL|struct|__anon294949c10208
 block|{
 DECL|member|pub
 name|struct

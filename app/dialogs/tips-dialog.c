@@ -1070,7 +1070,7 @@ name|tips_button_new
 argument_list|(
 name|_
 argument_list|(
-literal|"_Previous tip"
+literal|"_Previous Tip"
 argument_list|)
 argument_list|,
 name|TRUE
@@ -1122,7 +1122,7 @@ name|tips_button_new
 argument_list|(
 name|_
 argument_list|(
-literal|"_Next tip"
+literal|"_Next Tip"
 argument_list|)
 argument_list|,
 name|FALSE

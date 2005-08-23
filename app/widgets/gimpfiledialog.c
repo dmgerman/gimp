@@ -1892,7 +1892,7 @@ name|gimp_message_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"File exists"
+literal|"File Exists"
 argument_list|)
 argument_list|,
 name|GIMP_STOCK_WARNING

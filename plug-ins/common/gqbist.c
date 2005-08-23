@@ -132,7 +132,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2987c58b0103
+DECL|enum|__anon2781fcb80103
 block|{
 DECL|enumerator|PROJECTION
 name|PROJECTION
@@ -177,7 +177,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2987c58b0208
+DECL|struct|__anon2781fcb80208
 block|{
 DECL|member|transformSequence
 name|TransformType
@@ -216,7 +216,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2987c58b0308
+DECL|struct|__anon2781fcb80308
 block|{
 DECL|member|info
 name|ExpInfo
@@ -3687,7 +3687,7 @@ name|gtk_file_chooser_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Load QBE file"
+literal|"Load QBE File"
 argument_list|)
 argument_list|,
 name|GTK_WINDOW
@@ -3849,7 +3849,7 @@ name|gtk_file_chooser_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Save (middle transform) as QBE file"
+literal|"Save (middle transform) as QBE File"
 argument_list|)
 argument_list|,
 name|GTK_WINDOW

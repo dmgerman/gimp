@@ -70,7 +70,7 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_typedef
-DECL|enum|__anon2a04d4790103
+DECL|enum|__anon28a778cd0103
 DECL|enumerator|GRID_HIDDEN
 DECL|enumerator|GRID_LINES
 DECL|enumerator|GRID_CROSSES
@@ -89,7 +89,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a04d4790208
+DECL|struct|__anon28a778cd0208
 typedef|typedef
 struct|struct
 block|{
@@ -944,7 +944,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"_Snap-To Grid Enabled"
+literal|"_Snap-to grid enabled"
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -5074,7 +5074,7 @@ name|gtk_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Setup printer..."
+literal|"Setup Printer..."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5150,7 +5150,7 @@ name|gtk_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"New printer..."
+literal|"New Printer..."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -7635,7 +7635,7 @@ name|gtk_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Adjust output..."
+literal|"Adjust Output..."
 argument_list|)
 argument_list|)
 expr_stmt|;

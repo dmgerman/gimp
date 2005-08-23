@@ -711,7 +711,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bcf9d830108
+DECL|struct|__anon290e14e30108
 block|{
 DECL|member|propagate_mode
 name|gint
@@ -879,7 +879,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bcf9d830208
+DECL|struct|__anon290e14e30208
 block|{
 DECL|member|applicable_image_type
 name|gint
@@ -4032,7 +4032,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bcf9d830308
+DECL|struct|__anon290e14e30308
 block|{
 DECL|member|min_modified
 name|gshort
@@ -6533,7 +6533,7 @@ name|table
 argument_list|,
 name|_
 argument_list|(
-literal|"Propagating _Alpha Channel"
+literal|"Propagating _alpha channel"
 argument_list|)
 argument_list|,
 literal|0
@@ -6585,7 +6585,7 @@ name|table
 argument_list|,
 name|_
 argument_list|(
-literal|"Propagating Value Channel"
+literal|"Propagating value channel"
 argument_list|)
 argument_list|,
 literal|0

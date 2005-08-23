@@ -158,7 +158,7 @@ name|GIMP_STOCK_CONVERT_GRAYSCALE
 argument_list|,
 name|_
 argument_list|(
-literal|"Remove colors"
+literal|"Remove Colors"
 argument_list|)
 argument_list|,
 name|parent

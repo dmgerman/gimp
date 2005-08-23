@@ -265,7 +265,7 @@ literal|"gimp-by-color-select-tool"
 argument_list|,
 name|_
 argument_list|(
-literal|"Select By Color"
+literal|"Select by Color"
 argument_list|)
 argument_list|,
 name|_

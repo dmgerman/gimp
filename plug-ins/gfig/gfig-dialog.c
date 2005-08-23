@@ -437,7 +437,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fc20590108
+DECL|struct|__anon27840ada0108
 block|{
 DECL|member|gridspacing
 name|GtkAdjustment
@@ -1546,7 +1546,7 @@ name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Tool options"
+literal|"Tool Options"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2026,21 +2026,21 @@ name|FILL_PATTERN
 argument_list|,
 name|_
 argument_list|(
-literal|"Shape Gradient"
+literal|"Shape gradient"
 argument_list|)
 argument_list|,
 name|FILL_GRADIENT
 argument_list|,
 name|_
 argument_list|(
-literal|"Vertical Gradient"
+literal|"Vertical gradient"
 argument_list|)
 argument_list|,
 name|FILL_VERTICAL
 argument_list|,
 name|_
 argument_list|(
-literal|"Horizontal Gradient"
+literal|"Horizontal gradient"
 argument_list|)
 argument_list|,
 name|FILL_HORIZONTAL
@@ -2962,7 +2962,7 @@ name|gtk_file_chooser_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Load Gfig object collection"
+literal|"Load Gfig Object Collection"
 argument_list|)
 argument_list|,
 name|GTK_WINDOW

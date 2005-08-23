@@ -57,7 +57,7 @@ name|STOCK_COLORMAP_SWITCH_CLOCKWISE
 block|,
 name|N_
 argument_list|(
-literal|"Switch to clockwise"
+literal|"Switch to Clockwise"
 argument_list|)
 block|,
 literal|0
@@ -72,7 +72,7 @@ name|STOCK_COLORMAP_SWITCH_COUNTERCLOCKWISE
 block|,
 name|N_
 argument_list|(
-literal|"Switch to c/clockwise"
+literal|"Switch to C/Clockwise"
 argument_list|)
 block|,
 literal|0
@@ -87,7 +87,7 @@ name|STOCK_COLORMAP_CHANGE_ORDER
 block|,
 name|N_
 argument_list|(
-literal|"Change order of arrows"
+literal|"Change Order of Arrows"
 argument_list|)
 block|,
 literal|0
@@ -102,7 +102,7 @@ name|STOCK_COLORMAP_SELECT_ALL
 block|,
 name|N_
 argument_list|(
-literal|"Select all"
+literal|"Select All"
 argument_list|)
 block|,
 literal|0

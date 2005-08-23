@@ -129,7 +129,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bddc3290103
+DECL|enum|__anon2b13f4140103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -145,7 +145,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bddc3290203
+DECL|enum|__anon2b13f4140203
 block|{
 DECL|enumerator|BOOK_ADDED
 name|BOOK_ADDED
@@ -1388,7 +1388,7 @@ name|gimp_message_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Close all tabs?"
+literal|"Close all Tabs?"
 argument_list|)
 argument_list|,
 name|GIMP_STOCK_WARNING

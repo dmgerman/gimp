@@ -171,7 +171,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a327e7e0108
+DECL|struct|__anon27ff82790108
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -728,7 +728,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a327e7e0208
+DECL|struct|__anon27ff82790208
 block|{
 DECL|member|schema
 specifier|const
@@ -2192,7 +2192,7 @@ name|gtk_file_chooser_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Import XMP from file"
+literal|"Import XMP from File"
 argument_list|)
 argument_list|,
 name|GTK_WINDOW
@@ -2573,7 +2573,7 @@ name|gtk_file_chooser_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Export XMP to file"
+literal|"Export XMP to File"
 argument_list|)
 argument_list|,
 name|GTK_WINDOW

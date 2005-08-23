@@ -104,7 +104,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ba8dacb0103
+DECL|enum|__anon27392e2a0103
 block|{
 DECL|enumerator|GROW
 name|GROW
@@ -132,7 +132,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba8dacb0208
+DECL|struct|__anon27392e2a0208
 block|{
 DECL|member|run
 name|gboolean
@@ -147,7 +147,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba8dacb0308
+DECL|struct|__anon27392e2a0308
 block|{
 DECL|member|deform_area_radius
 name|gint
@@ -5037,7 +5037,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"_Ping Pong"
+literal|"_Ping pong"
 argument_list|)
 argument_list|)
 expr_stmt|;

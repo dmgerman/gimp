@@ -1899,7 +1899,7 @@ name|FALSE
 argument_list|,
 name|_
 argument_list|(
-literal|"Select Target"
+literal|"Select target"
 argument_list|)
 argument_list|,
 name|FALSE
@@ -1908,7 +1908,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Select Reference (Ctrl)"
+literal|"Select reference (Ctrl)"
 argument_list|)
 argument_list|,
 name|TRUE

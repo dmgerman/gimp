@@ -256,7 +256,7 @@ name|GIMP_COLOR_RENDERING_INTENT_RELATIVE_COLORIMETRIC
 block|,
 name|N_
 argument_list|(
-literal|"Relative Colorimetric"
+literal|"Relative colorimetric"
 argument_list|)
 block|,
 name|NULL
@@ -278,7 +278,7 @@ name|GIMP_COLOR_RENDERING_INTENT_ABSOLUTE_COLORIMETRIC
 block|,
 name|N_
 argument_list|(
-literal|"Absolute Colorimetric"
+literal|"Absolute colorimetric"
 argument_list|)
 block|,
 name|NULL

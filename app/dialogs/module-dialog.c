@@ -93,7 +93,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5261150103
+DECL|enum|__anon2c6ff1840103
 block|{
 DECL|enumerator|PATH_COLUMN
 name|PATH_COLUMN
@@ -699,7 +699,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Module path"
+literal|"Module Path"
 argument_list|)
 argument_list|,
 name|gtk_cell_renderer_text_new

@@ -638,7 +638,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Thank you for choosing GIMP"
+literal|"Thank You for Choosing GIMP"
 argument_list|)
 argument_list|,
 name|GTK_RESPONSE_OK

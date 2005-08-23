@@ -1229,7 +1229,7 @@ name|gimp_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Selection To Path Advanced Settings"
+literal|"Selection to Path Advanced Settings"
 argument_list|)
 argument_list|,
 literal|"sel2path"

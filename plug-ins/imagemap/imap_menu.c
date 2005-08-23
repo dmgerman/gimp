@@ -864,7 +864,7 @@ literal|"SaveAs"
 block|,
 name|GTK_STOCK_SAVE_AS
 block|,
-literal|"Save _as..."
+literal|"Save _As..."
 block|,
 literal|"<shift><control>S"
 block|,
@@ -1406,7 +1406,7 @@ name|NULL
 block|,
 literal|1
 block|}
-block|,   }
+block|, }
 decl_stmt|;
 end_decl_stmt
 

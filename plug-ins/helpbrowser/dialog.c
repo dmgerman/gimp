@@ -155,7 +155,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2996da0f0103
+DECL|enum|__anon2978bb0c0103
 block|{
 DECL|enumerator|HISTORY_TITLE
 name|HISTORY_TITLE
@@ -831,7 +831,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"GIMP Help browser"
+literal|"GIMP Help Browser"
 argument_list|)
 argument_list|)
 expr_stmt|;

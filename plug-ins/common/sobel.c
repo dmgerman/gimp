@@ -66,7 +66,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dff6370108
+DECL|struct|__anon27f2d1fe0108
 block|{
 DECL|member|horizontal
 name|gboolean
@@ -877,7 +877,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Sobel _Horizontally"
+literal|"Sobel _horizontally"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -951,7 +951,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Sobel _Vertically"
+literal|"Sobel _vertically"
 argument_list|)
 argument_list|)
 expr_stmt|;

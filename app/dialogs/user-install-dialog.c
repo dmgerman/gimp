@@ -163,7 +163,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c90c4840103
+DECL|enum|__anon29c8e9de0103
 block|{
 DECL|enumerator|GPL_PAGE
 name|GPL_PAGE
@@ -188,7 +188,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c90c4840203
+DECL|enum|__anon29c8e9de0203
 block|{
 DECL|enumerator|DIRENT_COLUMN
 name|DIRENT_COLUMN
@@ -400,7 +400,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c90c4840303
+DECL|enum|__anon29c8e9de0303
 block|{
 DECL|enumerator|TREE_ITEM_DO_NOTHING
 name|TREE_ITEM_DO_NOTHING
@@ -422,7 +422,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c90c4840408
+DECL|struct|__anon29c8e9de0408
 block|{
 DECL|member|directory
 name|gboolean
@@ -5824,7 +5824,7 @@ literal|"swap-path"
 argument_list|,
 name|_
 argument_list|(
-literal|"Select swap dir"
+literal|"Select Swap Dir"
 argument_list|)
 argument_list|,
 name|TRUE

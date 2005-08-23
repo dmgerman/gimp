@@ -210,7 +210,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a349bd0103
+DECL|enum|__anon2baa59500103
 block|{
 DECL|enumerator|CML_KEEP_VALUES
 name|CML_KEEP_VALUES
@@ -339,7 +339,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a349bd0203
+DECL|enum|__anon2baa59500203
 block|{
 DECL|enumerator|COMP_NONE
 name|COMP_NONE
@@ -484,7 +484,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a349bd0303
+DECL|enum|__anon2baa59500303
 block|{
 DECL|enumerator|STANDARD
 name|STANDARD
@@ -589,7 +589,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a349bd0403
+DECL|enum|__anon2baa59500403
 block|{
 DECL|enumerator|CML_INITIAL_RANDOM_INDEPENDENT
 name|CML_INITIAL_RANDOM_INDEPENDENT
@@ -687,7 +687,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a349bd0508
+DECL|struct|__anon2baa59500508
 block|{
 DECL|member|function
 name|gint
@@ -760,7 +760,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a349bd0608
+DECL|struct|__anon2baa59500608
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -1572,7 +1572,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a349bd0708
+DECL|struct|__anon2baa59500708
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -6819,7 +6819,7 @@ name|gtk_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"New seed"
+literal|"New Seed"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6877,7 +6877,7 @@ name|gtk_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Fix seed"
+literal|"Fix Seed"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6935,7 +6935,7 @@ name|gtk_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Random seed"
+literal|"Random Seed"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -7811,7 +7811,7 @@ name|gtk_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Switch to \"From seed\" with the last seed"
+literal|"Switch to \"From seed\" With the Last Seed"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -8195,7 +8195,7 @@ name|gtk_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Copy parameters"
+literal|"Copy Parameters"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -9535,7 +9535,7 @@ name|gtk_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Plot a graph of the settings"
+literal|"Plot a Graph of the Settings"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -10415,7 +10415,7 @@ name|gimp_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Graph of the current settings"
+literal|"Graph of the Current Settings"
 argument_list|)
 argument_list|,
 literal|"cml_explorer"
@@ -11026,7 +11026,7 @@ name|gtk_file_chooser_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Save Parameters to"
+literal|"Save Parameters To"
 argument_list|)
 argument_list|,
 name|GTK_WINDOW
@@ -12037,7 +12037,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Load Parameters from"
+literal|"Load Parameters From"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -12051,7 +12051,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Selective Load from"
+literal|"Selective Load From"
 argument_list|)
 argument_list|)
 expr_stmt|;

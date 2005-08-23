@@ -56,7 +56,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a1f2370108
+DECL|struct|__anon29dbaa8b0108
 block|{
 DECL|member|inner
 name|gdouble
@@ -1095,7 +1095,7 @@ name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Smoothing parameters"
+literal|"Smoothing Parameters"
 argument_list|)
 argument_list|)
 expr_stmt|;

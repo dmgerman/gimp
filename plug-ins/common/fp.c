@@ -108,7 +108,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b019e440108
+DECL|struct|__anon27a28c490108
 block|{
 DECL|member|run
 name|gint
@@ -123,7 +123,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b019e440208
+DECL|struct|__anon27a28c490208
 block|{
 DECL|member|width
 name|gint
@@ -157,7 +157,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b019e440303
+DECL|enum|__anon27a28c490303
 block|{
 DECL|enumerator|SHADOWS
 name|SHADOWS
@@ -178,7 +178,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b019e440403
+DECL|enum|__anon27a28c490403
 block|{
 DECL|enumerator|NONEATALL
 name|NONEATALL
@@ -210,7 +210,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b019e440503
+DECL|enum|__anon27a28c490503
 block|{
 DECL|enumerator|BY_HUE
 name|BY_HUE
@@ -229,7 +229,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b019e440603
+DECL|enum|__anon27a28c490603
 block|{
 DECL|enumerator|RED
 name|RED
@@ -257,7 +257,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b019e440703
+DECL|enum|__anon27a28c490703
 block|{
 DECL|enumerator|DOWN
 name|DOWN
@@ -276,7 +276,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b019e440808
+DECL|struct|__anon27a28c490808
 block|{
 DECL|member|window
 name|GtkWidget
@@ -307,7 +307,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b019e440908
+DECL|struct|__anon27a28c490908
 block|{
 DECL|member|roughness
 name|gdouble
@@ -408,7 +408,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b019e440a08
+DECL|struct|__anon27a28c490a08
 block|{
 DECL|member|roughness_scale
 name|GtkWidget
@@ -1319,7 +1319,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b019e440b08
+DECL|struct|__anon27a28c490b08
 block|{
 DECL|member|bna
 name|GtkWidget
@@ -4464,7 +4464,7 @@ name|TRUE
 argument_list|,
 name|_
 argument_list|(
-literal|"Select Pixels by"
+literal|"Select Pixels By"
 argument_list|)
 argument_list|,
 name|G_CALLBACK
@@ -4601,7 +4601,7 @@ name|selection_only
 argument_list|,
 name|_
 argument_list|(
-literal|"_Entire Image"
+literal|"_Entire image"
 argument_list|)
 argument_list|,
 literal|0
@@ -4610,7 +4610,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Se_lection Only"
+literal|"Se_lection only"
 argument_list|)
 argument_list|,
 literal|1
@@ -4619,7 +4619,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Selec_tion In Context"
+literal|"Selec_tion in context"
 argument_list|)
 argument_list|,
 literal|2

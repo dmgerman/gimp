@@ -2192,7 +2192,7 @@ name|gtk_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"R_eset channel"
+literal|"R_eset Channel"
 argument_list|)
 argument_list|)
 expr_stmt|;

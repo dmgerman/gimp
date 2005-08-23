@@ -5251,7 +5251,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Select custom canvas padding color"
+literal|"Select Custom Canvas Padding Color"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -7492,7 +7492,7 @@ literal|"web-browser"
 argument_list|,
 name|_
 argument_list|(
-literal|"Select web browser"
+literal|"Select Web Browser"
 argument_list|)
 argument_list|,
 name|FALSE
@@ -7695,7 +7695,7 @@ name|prefs_frame_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Guide and Grid Snapping"
+literal|"Guide& Grid Snapping"
 argument_list|)
 argument_list|,
 name|GTK_CONTAINER
@@ -8803,7 +8803,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon297d34bf0108
+DECL|struct|__anon2b15cfec0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -9965,7 +9965,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon297d34bf0208
+DECL|struct|__anon2b15cfec0208
 block|{
 DECL|member|label
 specifier|const
@@ -9998,7 +9998,7 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Select RGB color profile"
+literal|"Select RGB Color Profile"
 argument_list|)
 block|,
 literal|"rgb-profile"
@@ -10012,7 +10012,7 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Select CMYK color profile"
+literal|"Select CMYK Color Profile"
 argument_list|)
 block|,
 literal|"cmyk-profile"
@@ -10026,7 +10026,7 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Select monitor color profile"
+literal|"Select Monitor Color Profile"
 argument_list|)
 block|,
 literal|"display-profile"
@@ -10040,7 +10040,7 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Select printer color profile"
+literal|"Select Printer Color Profile"
 argument_list|)
 block|,
 literal|"printer-profile"
@@ -10872,7 +10872,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon297d34bf0308
+DECL|struct|__anon2b15cfec0308
 block|{
 DECL|member|label
 specifier|const
@@ -11029,7 +11029,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon297d34bf0408
+DECL|struct|__anon2b15cfec0408
 block|{
 DECL|member|tree_label
 specifier|const

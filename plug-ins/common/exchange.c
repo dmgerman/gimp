@@ -70,7 +70,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1221ee0108
+DECL|struct|__anon299cb9b30108
 block|{
 DECL|member|from
 name|GimpRGB
@@ -1173,7 +1173,7 @@ name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Middle-click inside preview to pick \"From Color\""
+literal|"Middle-Click Inside Preview to Pick \"From Color\""
 argument_list|)
 argument_list|)
 expr_stmt|;

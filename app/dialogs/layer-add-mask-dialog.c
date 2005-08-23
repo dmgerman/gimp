@@ -341,7 +341,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"In_vert Mask"
+literal|"In_vert mask"
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -572,7 +572,7 @@ name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Icon details"
+literal|"Icon Details"
 argument_list|)
 argument_list|)
 expr_stmt|;

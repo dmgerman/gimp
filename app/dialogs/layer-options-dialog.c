@@ -999,7 +999,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Set Name from _Text"
+literal|"Set name from _text"
 argument_list|)
 argument_list|)
 expr_stmt|;

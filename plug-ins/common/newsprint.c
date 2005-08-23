@@ -351,7 +351,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a0b5f20108
+DECL|struct|__anon2bf61f840108
 block|{
 DECL|member|name
 specifier|const
@@ -611,7 +611,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a0b5f20208
+DECL|struct|__anon2bf61f840208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -684,7 +684,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a0b5f20308
+DECL|struct|__anon2bf61f840308
 block|{
 DECL|member|input_spi
 name|gdouble
@@ -718,7 +718,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a0b5f20408
+DECL|struct|__anon2bf61f840408
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -825,7 +825,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a0b5f20508
+DECL|struct|__anon2bf61f840508
 block|{
 DECL|member|pull_table
 name|GtkWidget
@@ -993,7 +993,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a0b5f20608
+DECL|struct|__anon2bf61f840608
 block|{
 DECL|member|name
 specifier|const
@@ -6196,7 +6196,7 @@ name|gtk_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"_Factory defaults"
+literal|"_Factory Defaults"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -7057,7 +7057,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a0b5f20708
+DECL|struct|__anon2bf61f840708
 block|{
 DECL|member|index
 name|gint

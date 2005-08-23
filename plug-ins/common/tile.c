@@ -56,7 +56,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a529d5a0108
+DECL|struct|__anon28fd8bca0108
 block|{
 DECL|member|new_width
 name|gint
@@ -1749,7 +1749,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"C_reate New Image"
+literal|"C_reate new image"
 argument_list|)
 argument_list|)
 expr_stmt|;

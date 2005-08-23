@@ -558,7 +558,7 @@ name|shell_desc
 operator|=
 name|_
 argument_list|(
-literal|"Scaling information"
+literal|"Scaling Information"
 argument_list|)
 expr_stmt|;
 name|tr_tool

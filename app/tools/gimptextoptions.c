@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c76d1c30103
+DECL|enum|__anon2b6332680103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2168,7 +2168,7 @@ name|gtk_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Create path from text"
+literal|"Create Path from Text"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2218,7 +2218,7 @@ name|gtk_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Text along path"
+literal|"Text along Path"
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -110,7 +110,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2922e3d10108
+DECL|struct|__anon2bd26d0c0108
 block|{
 DECL|member|lam_r
 name|gdouble
@@ -169,7 +169,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2922e3d10208
+DECL|struct|__anon2bd26d0c0208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -1118,7 +1118,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2922e3d10308
+DECL|struct|__anon2bd26d0c0308
 typedef|typedef
 struct|struct
 block|{
@@ -2958,7 +2958,7 @@ name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Sharp edges"
+literal|"Sharp Edges"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3220,7 +3220,7 @@ name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Other options"
+literal|"Other Options"
 argument_list|)
 argument_list|)
 expr_stmt|;

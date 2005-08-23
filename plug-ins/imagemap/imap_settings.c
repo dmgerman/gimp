@@ -58,7 +58,7 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon2b3b42eb0108
+DECL|struct|__anon297e3b820108
 typedef|typedef
 struct|struct
 block|{
@@ -721,7 +721,7 @@ name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Map file format"
+literal|"Map File Format"
 argument_list|)
 argument_list|)
 expr_stmt|;

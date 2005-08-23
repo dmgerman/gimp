@@ -137,7 +137,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e326fc0108
+DECL|struct|__anon29ebe2bc0108
 block|{
 DECL|member|scalex
 name|gdouble
@@ -246,7 +246,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e326fc0208
+DECL|struct|__anon29ebe2bc0208
 block|{
 DECL|member|height
 DECL|member|width
@@ -328,7 +328,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e326fc0308
+DECL|struct|__anon29ebe2bc0308
 block|{
 DECL|member|width
 name|gint
@@ -5680,7 +5680,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Do _Preview"
+literal|"Do _preview"
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -70,7 +70,7 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon2933a4120108
+DECL|struct|__anon2883ee900108
 typedef|typedef
 struct|struct
 block|{
@@ -880,7 +880,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"L_eft Border"
+literal|"L_eft border"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -911,7 +911,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"_Right Border"
+literal|"_Right border"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -942,7 +942,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"_Upper Border"
+literal|"_Upper border"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -973,7 +973,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Lo_wer Border"
+literal|"Lo_wer border"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1220,7 +1220,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2933a4120208
+DECL|struct|__anon2883ee900208
 typedef|typedef
 struct|struct
 block|{

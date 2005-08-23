@@ -688,7 +688,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278105bb0108
+DECL|struct|__anon289101a00108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -742,7 +742,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278105bb0208
+DECL|struct|__anon289101a00208
 block|{
 DECL|member|y
 name|gint32
@@ -5908,7 +5908,7 @@ name|gtk_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"_Preview once"
+literal|"_Preview Once"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -10565,7 +10565,7 @@ name|gtk_file_chooser_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Load Curve Points from file"
+literal|"Load Curve Points from File"
 argument_list|)
 argument_list|,
 name|GTK_WINDOW
@@ -10698,7 +10698,7 @@ name|gtk_file_chooser_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Save Curve Points to file"
+literal|"Save Curve Points to File"
 argument_list|)
 argument_list|,
 name|GTK_WINDOW

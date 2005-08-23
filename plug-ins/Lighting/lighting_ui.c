@@ -1311,7 +1311,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"High _Quality preview"
+literal|"High _quality preview"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3036,7 +3036,7 @@ name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Material properties"
+literal|"Material Properties"
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -1107,7 +1107,7 @@ name|GIMP_CHECK_TYPE_LIGHT_CHECKS
 block|,
 name|N_
 argument_list|(
-literal|"Light Checks"
+literal|"Light checks"
 argument_list|)
 block|,
 name|NULL
@@ -1118,7 +1118,7 @@ name|GIMP_CHECK_TYPE_GRAY_CHECKS
 block|,
 name|N_
 argument_list|(
-literal|"Mid-Tone Checks"
+literal|"Mid-tone checks"
 argument_list|)
 block|,
 name|NULL
@@ -1129,7 +1129,7 @@ name|GIMP_CHECK_TYPE_DARK_CHECKS
 block|,
 name|N_
 argument_list|(
-literal|"Dark Checks"
+literal|"Dark checks"
 argument_list|)
 block|,
 name|NULL
@@ -1140,7 +1140,7 @@ name|GIMP_CHECK_TYPE_WHITE_ONLY
 block|,
 name|N_
 argument_list|(
-literal|"White Only"
+literal|"White only"
 argument_list|)
 block|,
 name|NULL
@@ -1151,7 +1151,7 @@ name|GIMP_CHECK_TYPE_GRAY_ONLY
 block|,
 name|N_
 argument_list|(
-literal|"Gray Only"
+literal|"Gray only"
 argument_list|)
 block|,
 name|NULL
@@ -1162,7 +1162,7 @@ name|GIMP_CHECK_TYPE_BLACK_ONLY
 block|,
 name|N_
 argument_list|(
-literal|"Black Only"
+literal|"Black only"
 argument_list|)
 block|,
 name|NULL

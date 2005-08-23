@@ -96,7 +96,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7ffea20103
+DECL|enum|__anon2b07a8160103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -109,7 +109,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7ffea20203
+DECL|enum|__anon2b07a8160203
 block|{
 DECL|enumerator|COLUMN_EVENT
 name|COLUMN_EVENT
@@ -1838,7 +1838,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"_Grab Event"
+literal|"_Grab event"
 argument_list|)
 argument_list|)
 expr_stmt|;
