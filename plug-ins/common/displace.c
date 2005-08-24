@@ -16,6 +16,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimp.h>
 end_include
 
@@ -70,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9ae8490103
+DECL|enum|__anon29fd962d0103
 block|{
 DECL|enumerator|CARTESIAN_MODE
 name|CARTESIAN_MODE
@@ -90,7 +96,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9ae8490208
+DECL|struct|__anon29fd962d0208
 block|{
 DECL|member|amount_x
 name|gdouble
@@ -530,14 +536,6 @@ literal|"displace-type"
 block|,
 literal|"Edge behavior: { WRAP (0), SMEAR (1), BLACK (2) }"
 block|}
-block|,
-block|{
-name|GIMP_PDB_INT32
-block|,
-literal|"mode"
-block|,
-literal|"Mode of displacement: { CARTESIAN (0), POLAR (1) }"
-block|}
 block|}
 decl_stmt|;
 name|gimp_install_procedure
@@ -550,8 +548,7 @@ literal|"Displaces the contents of the specified drawable "
 literal|"by the amounts specified by 'amount_x' and "
 literal|"'amount_y' multiplied by the luminance of "
 literal|"corresponding pixels in the 'displace_map' "
-literal|"drawables.  If mode is polar coordinates"
-literal|"drawable is whirled and pinched according to map."
+literal|"drawables."
 argument_list|,
 literal|"Stephen Robert Norris& (ported to 1.0 by) "
 literal|"Spencer Kimball"
@@ -586,6 +583,41 @@ argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Map"
+argument_list|)
+expr_stmt|;
+name|gimp_install_procedure
+argument_list|(
+literal|"plug-in-displace-polar"
+argument_list|,
+literal|"Displace the contents of the specified drawable"
+argument_list|,
+literal|"Just like plug-in-displace but working in "
+literal|"polar coordinates. The drawable is whirled and "
+literal|"pinched according to the map."
+argument_list|,
+literal|"Stephen Robert Norris& (ported to 1.0 by) "
+literal|"Spencer Kimball"
+argument_list|,
+literal|"Stephen Robert Norris"
+argument_list|,
+literal|"1996"
+argument_list|,
+literal|"Displace Polar"
+argument_list|,
+literal|"RGB*, GRAY*"
+argument_list|,
+name|GIMP_PLUGIN
+argument_list|,
+name|G_N_ELEMENTS
+argument_list|(
+name|args
+argument_list|)
+argument_list|,
+literal|0
+argument_list|,
+name|args
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -736,16 +768,11 @@ case|case
 name|GIMP_RUN_NONINTERACTIVE
 case|:
 comment|/*  Make sure all the arguments are there!  */
-comment|/* The mode argument is optional to ensure backwards compatibility */
 if|if
 condition|(
 name|nparams
 operator|!=
 literal|10
-operator|&&
-name|nparams
-operator|!=
-literal|11
 condition|)
 block|{
 name|status
@@ -846,31 +873,24 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
-if|if
-condition|(
-name|nparams
+name|dvals
+operator|.
+name|mode
+operator|=
+operator|(
+name|strcmp
+argument_list|(
+name|name
+argument_list|,
+literal|"plug-in-displace-polar"
+argument_list|)
 operator|==
-literal|11
-condition|)
-name|dvals
-operator|.
-name|mode
-operator|=
-name|param
-index|[
-literal|10
-index|]
-operator|.
-name|data
-operator|.
-name|d_int32
-expr_stmt|;
-else|else
-name|dvals
-operator|.
-name|mode
-operator|=
+literal|0
+condition|?
+name|POLAR_MODE
+else|:
 name|CARTESIAN_MODE
+operator|)
 expr_stmt|;
 block|}
 break|break;
