@@ -1020,6 +1020,10 @@ block|}
 block|}
 end_function
 
+begin_comment
+comment|/*   * blend_pixels patched 8-24-05 to fix bug #163721.  Note that this change  * causes the function to treat src1 and src2 asymmetrically.  This gives the  * right behavior for the smudge tool, which is the only user of this function  * at the time of patching.  If you want to use the function for something  * else, caveat emptor.  */
+end_comment
+
 begin_function
 specifier|inline
 name|void
@@ -1065,7 +1069,7 @@ specifier|const
 name|guint
 name|blend1
 init|=
-literal|256
+literal|255
 operator|-
 name|blend
 decl_stmt|;
@@ -1165,6 +1169,11 @@ index|[
 name|b
 index|]
 operator|=
+name|src1
+index|[
+name|b
+index|]
+operator|+
 operator|(
 name|src1
 index|[
@@ -1179,6 +1188,13 @@ name|b
 index|]
 operator|*
 name|a2
+operator|-
+name|a
+operator|*
+name|src1
+index|[
+name|b
+index|]
 operator|)
 operator|/
 name|a
@@ -1241,6 +1257,11 @@ index|[
 name|b
 index|]
 operator|=
+name|src1
+index|[
+name|b
+index|]
+operator|+
 operator|(
 name|src1
 index|[
@@ -1255,6 +1276,13 @@ name|b
 index|]
 operator|*
 name|blend
+operator|-
+name|src1
+index|[
+name|b
+index|]
+operator|*
+literal|255
 operator|)
 operator|/
 literal|255
