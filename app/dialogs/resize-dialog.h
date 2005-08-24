@@ -39,6 +39,9 @@ parameter_list|,
 name|gint
 name|height
 parameter_list|,
+name|GimpUnit
+name|unit
+parameter_list|,
 name|gint
 name|offset_x
 parameter_list|,

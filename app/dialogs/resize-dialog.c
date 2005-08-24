@@ -1528,6 +1528,9 @@ operator|->
 name|offset
 argument_list|)
 decl_stmt|;
+name|GimpUnit
+name|unit
+decl_stmt|;
 name|gint
 name|width
 decl_stmt|;
@@ -1567,6 +1570,11 @@ argument_list|,
 operator|&
 name|height
 argument_list|,
+literal|"unit"
+argument_list|,
+operator|&
+name|unit
+argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
@@ -1583,6 +1591,8 @@ argument_list|,
 name|width
 argument_list|,
 name|height
+argument_list|,
+name|unit
 argument_list|,
 name|gimp_size_entry_get_refval
 argument_list|(
