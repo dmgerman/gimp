@@ -2050,6 +2050,8 @@ init|=
 literal|0
 decl_stmt|,
 name|black_index
+init|=
+literal|0
 decl_stmt|;
 name|guchar
 modifier|*

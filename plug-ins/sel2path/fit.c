@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* fit.c: turn a bitmap representation of a curve into a list of splines.    Some of the ideas, but not the code, comes from the Phoenix thesis.     See README for the reference.  Copyright (C) 1992 Free Software Foundation, Inc.  This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2, or (at your option) any later version.  This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.  You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  */
+comment|/* fit.c: turn a bitmap representation of a curve into a list of splines.    Some of the ideas, but not the code, comes from the Phoenix thesis.    See README for the reference.  Copyright (C) 1992 Free Software Foundation, Inc.  This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2, or (at your option) any later version.  This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.  You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  */
 end_comment
 
 begin_include
@@ -77,7 +77,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/* If the angle defined by a point and its predecessors and successors    is smaller than this, it's a corner, even if it's within    `corner_surround' pixels of a point with a smaller angle.     (-corner-always-threshold)  */
+comment|/* If the angle defined by a point and its predecessors and successors    is smaller than this, it's a corner, even if it's within    `corner_surround' pixels of a point with a smaller angle.    (-corner-always-threshold)  */
 end_comment
 
 begin_decl_stmt
@@ -103,7 +103,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/* If a point, its predecessors, and its successors define an angle      smaller than this, it's a corner.  Should be in range 0..180.    (-corner-threshold)  */
+comment|/* If a point, its predecessors, and its successors define an angle     smaller than this, it's a corner.  Should be in range 0..180.    (-corner-threshold)  */
 end_comment
 
 begin_decl_stmt
@@ -215,7 +215,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/* Says whether or not to remove ``knee'' points after finding the outline.     (See the comments at `remove_knee_points'.)  (-remove-knees).  */
+comment|/* Says whether or not to remove ``knee'' points after finding the outline.    (See the comments at `remove_knee_points'.)  (-remove-knees).  */
 end_comment
 
 begin_decl_stmt
@@ -1446,7 +1446,7 @@ begin_escape
 end_escape
 
 begin_comment
-comment|/* As mentioned above, the first step is to find the corners in    PIXEL_LIST, the list of points.  (Presumably we can't fit a single    spline around a corner.)  The general strategy is to look through all    the points, remembering which we want to consider corners.  Then go    through that list, producing the curve_list.  This is dictated by the    fact that PIXEL_LIST does not necessarily start on a corner---it just    starts at the character's first outline pixel, going left-to-right,    top-to-bottom.  But we want all our splines to start and end on real    corners.     For example, consider the top of a capital `C' (this is in cmss20):                      x                      ***********                   ******************     PIXEL_LIST will start at the pixel below the `x'.  If we considered    this pixel a corner, we would wind up matching a very small segment    from there to the end of the line, probably as a straight line, which    is certainly not what we want.       PIXEL_LIST has one element for each closed outline on the character.    To preserve this information, we return an array of curve_lists, one    element (which in turn consists of several curves, one between each    pair of corners) for each element in PIXEL_LIST.  */
+comment|/* As mentioned above, the first step is to find the corners in    PIXEL_LIST, the list of points.  (Presumably we can't fit a single    spline around a corner.)  The general strategy is to look through all    the points, remembering which we want to consider corners.  Then go    through that list, producing the curve_list.  This is dictated by the    fact that PIXEL_LIST does not necessarily start on a corner---it just    starts at the character's first outline pixel, going left-to-right,    top-to-bottom.  But we want all our splines to start and end on real    corners.     For example, consider the top of a capital `C' (this is in cmss20):                      x                      ***********                   ******************     PIXEL_LIST will start at the pixel below the `x'.  If we considered    this pixel a corner, we would wind up matching a very small segment    from there to the end of the line, probably as a straight line, which    is certainly not what we want.     PIXEL_LIST has one element for each closed outline on the character.    To preserve this information, we return an array of curve_lists, one    element (which in turn consists of several curves, one between each    pair of corners) for each element in PIXEL_LIST.  */
 end_comment
 
 begin_function
@@ -1540,6 +1540,7 @@ literal|2
 operator|+
 literal|2
 condition|)
+block|{
 name|corner_list
 operator|=
 name|find_corners
@@ -1547,13 +1548,22 @@ argument_list|(
 name|pixel_o
 argument_list|)
 expr_stmt|;
+block|}
 else|else
+block|{
+name|corner_list
+operator|.
+name|data
+operator|=
+name|NULL
+expr_stmt|;
 name|corner_list
 operator|.
 name|length
 operator|=
 literal|0
 expr_stmt|;
+block|}
 comment|/* Remember the first curve so we can make it be the `next' of the          last one.  (And vice versa.)  */
 name|first_curve
 operator|=
@@ -2381,7 +2391,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* Remove adjacent points from the index list LIST.  We do this by first    sorting the list and then running through it.  Since these lists are    quite short, a straight selection sort (e.g., p.139 of the Art of    Computer Programming, vol.3) is good enough.  LAST_INDEX is the index    of the last pixel on the outline, i.e., the next one is the first    pixel.  We need this for checking the adjacency of the last corner.        We need to do this because the adjacent corners turn into    two-pixel-long curves, which can only be fit by straight lines.  */
+comment|/* Remove adjacent points from the index list LIST.  We do this by first    sorting the list and then running through it.  Since these lists are    quite short, a straight selection sort (e.g., p.139 of the Art of    Computer Programming, vol.3) is good enough.  LAST_INDEX is the index    of the last pixel on the outline, i.e., the next one is the first    pixel.  We need this for checking the adjacency of the last corner.     We need to do this because the adjacent corners turn into    two-pixel-long curves, which can only be fit by straight lines.  */
 end_comment
 
 begin_function
@@ -2672,7 +2682,7 @@ begin_escape
 end_escape
 
 begin_comment
-comment|/* A ``knee'' is a point which forms a ``right angle'' with its    predecessor and successor.  See the documentation (the `Removing    knees' section) for an example and more details.     The argument CLOCKWISE tells us which direction we're moving.  (We    can't figure that information out from just the single segment with    which we are given to work.)        We should never find two consecutive knees.        Since the first and last points are corners (unless the curve is    cyclic), it doesn't make sense to remove those.  */
+comment|/* A ``knee'' is a point which forms a ``right angle'' with its    predecessor and successor.  See the documentation (the `Removing    knees' section) for an example and more details.     The argument CLOCKWISE tells us which direction we're moving.  (We    can't figure that information out from just the single segment with    which we are given to work.)     We should never find two consecutive knees.     Since the first and last points are corners (unless the curve is    cyclic), it doesn't make sense to remove those.  */
 end_comment
 
 begin_comment
@@ -4241,7 +4251,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* Our job here is to find alpha1 (and alpha2), where t1_hat (t2_hat) is    the tangent to CURVE at the starting (ending) point, such that:     control1 = alpha1*t1_hat + starting point    control2 = alpha2*t2_hat + ending_point     and the resulting spline (starting_point .. control1 and control2 ..    ending_point) minimizes the least-square error from CURVE.        See pp.57--59 of the Phoenix thesis.        The B?(t) here corresponds to B_i^3(U_i) there.    The Bernshte\u in polynomials of degree n are defined by    B_i^n(t) = { n \choose i } t^i (1-t)^{n-i}, i = 0..n  */
+comment|/* Our job here is to find alpha1 (and alpha2), where t1_hat (t2_hat) is    the tangent to CURVE at the starting (ending) point, such that:     control1 = alpha1*t1_hat + starting point    control2 = alpha2*t2_hat + ending_point     and the resulting spline (starting_point .. control1 and control2 ..    ending_point) minimizes the least-square error from CURVE.     See pp.57--59 of the Phoenix thesis.     The B?(t) here corresponds to B_i^3(U_i) there.    The Bernshte\u in polynomials of degree n are defined by    B_i^n(t) = { n \choose i } t^i (1-t)^{n-i}, i = 0..n  */
 end_comment
 
 begin_define
@@ -5433,7 +5443,7 @@ begin_escape
 end_escape
 
 begin_comment
-comment|/* This routine finds the best place to subdivide the curve CURVE,    somewhere near to the point whose index is INITIAL.  Originally,    curves were always subdivided at the point of worst error, which is    intuitively appealing, but doesn't always give the best results.  For    example, at the end of a serif that tapers into the stem, the best    subdivision point is at the point where they join, even if the worst    point is a little ways into the serif.        We return the index of the point at which to subdivide.  */
+comment|/* This routine finds the best place to subdivide the curve CURVE,    somewhere near to the point whose index is INITIAL.  Originally,    curves were always subdivided at the point of worst error, which is    intuitively appealing, but doesn't always give the best results.  For    example, at the end of a serif that tapers into the stem, the best    subdivision point is at the point where they join, even if the worst    point is a little ways into the serif.     We return the index of the point at which to subdivide.  */
 end_comment
 
 begin_function

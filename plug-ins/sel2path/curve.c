@@ -351,6 +351,12 @@ name|data
 operator|=
 name|NULL
 expr_stmt|;
+name|curve_list
+operator|.
+name|clockwise
+operator|=
+name|FALSE
+expr_stmt|;
 return|return
 name|curve_list
 return|;
