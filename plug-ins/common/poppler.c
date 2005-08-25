@@ -70,7 +70,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be75b770108
+DECL|struct|__anon2c0507ca0108
 block|{
 DECL|member|target
 name|GimpPageSelectorTarget
@@ -101,7 +101,7 @@ name|GIMP_PAGE_SELECTOR_TARGET_LAYERS
 block|,
 literal|100.00
 block|,
-comment|/* 100 dpi */
+comment|/* 100 dpi   */
 name|TRUE
 comment|/* antialias */
 block|}
@@ -111,7 +111,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be75b770208
+DECL|struct|__anon2c0507ca0208
 block|{
 DECL|member|n_pages
 name|gint
@@ -1927,6 +1927,13 @@ name|height
 argument_list|,
 name|scale
 argument_list|,
+ifdef|#
+directive|ifdef
+name|HAVE_POPPLER_0_4_1
+literal|0
+argument_list|,
+endif|#
+directive|endif
 name|buf
 ifndef|#
 directive|ifndef
@@ -2219,6 +2226,13 @@ name|height
 argument_list|,
 name|scale
 argument_list|,
+ifdef|#
+directive|ifdef
+name|HAVE_POPPLER_0_4_1
+literal|0
+argument_list|,
+endif|#
+directive|endif
 name|pixbuf
 ifndef|#
 directive|ifndef
@@ -2246,7 +2260,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be75b770308
+DECL|struct|__anon2c0507ca0308
 block|{
 DECL|member|document
 name|PopplerDocument
@@ -2271,7 +2285,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be75b770408
+DECL|struct|__anon2c0507ca0408
 block|{
 DECL|member|selector
 name|GimpPageSelector
