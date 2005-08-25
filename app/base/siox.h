@@ -87,7 +87,7 @@ name|offset_y
 parameter_list|,
 name|TileManager
 modifier|*
-name|map
+name|mask
 parameter_list|,
 name|gint
 name|x
