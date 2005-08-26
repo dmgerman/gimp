@@ -414,6 +414,22 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_if
+if|#
+directive|if
+operator|!
+name|defined
+argument_list|(
+name|G_OS_WIN32
+argument_list|)
+operator|&&
+operator|!
+name|defined
+argument_list|(
+name|G_WITH_CYGWIN
+argument_list|)
+end_if
+
 begin_function_decl
 specifier|static
 name|void
@@ -424,6 +440,11 @@ name|data
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_function
 name|void
@@ -1214,16 +1235,7 @@ block|}
 block|}
 end_function
 
-begin_function
-specifier|static
-name|void
-DECL|function|plug_in_prep_for_exec (gpointer data)
-name|plug_in_prep_for_exec
-parameter_list|(
-name|gpointer
-name|data
-parameter_list|)
-block|{
+begin_if
 if|#
 directive|if
 operator|!
@@ -1237,6 +1249,18 @@ name|defined
 argument_list|(
 name|G_WITH_CYGWIN
 argument_list|)
+end_if
+
+begin_function
+specifier|static
+name|void
+DECL|function|plug_in_prep_for_exec (gpointer data)
+name|plug_in_prep_for_exec
+parameter_list|(
+name|gpointer
+name|data
+parameter_list|)
+block|{
 name|PlugIn
 modifier|*
 name|plug_in
@@ -1269,10 +1293,26 @@ name|my_write
 operator|=
 name|NULL
 expr_stmt|;
-endif|#
-directive|endif
 block|}
 end_function
+
+begin_else
+else|#
+directive|else
+end_else
+
+begin_define
+DECL|macro|plug_in_prep_for_exec
+define|#
+directive|define
+name|plug_in_prep_for_exec
+value|NULL
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_function
 name|gboolean
