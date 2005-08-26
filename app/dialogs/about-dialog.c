@@ -126,7 +126,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be6d8ea0108
+DECL|struct|__anon2c49760a0108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -1026,6 +1026,18 @@ argument_list|,
 name|FALSE
 argument_list|,
 name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_box_reorder_child
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|vbox
+argument_list|)
+argument_list|,
+name|align
 argument_list|,
 literal|0
 argument_list|)
