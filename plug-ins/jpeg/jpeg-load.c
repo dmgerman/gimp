@@ -478,6 +478,18 @@ operator|.
 name|output_components
 argument_list|)
 expr_stmt|;
+name|gimp_tile_cache_ntiles
+argument_list|(
+literal|1
+operator|+
+name|cinfo
+operator|.
+name|output_width
+operator|/
+name|gimp_tile_width
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|rowbuf
 operator|=
 name|g_new
@@ -1835,7 +1847,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28eb84610108
+DECL|struct|__anon2a0da8590108
 block|{
 DECL|member|pub
 name|struct

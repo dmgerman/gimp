@@ -140,7 +140,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294949c10108
+DECL|struct|__anon27f91e410108
 block|{
 DECL|member|cinfo
 name|struct
@@ -2121,6 +2121,18 @@ name|gimp_tile_height
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|gimp_tile_cache_ntiles
+argument_list|(
+literal|1
+operator|+
+name|cinfo
+operator|.
+name|image_width
+operator|/
+name|gimp_tile_width
+argument_list|()
+argument_list|)
+expr_stmt|;
 comment|/* fault if cinfo.next_scanline isn't initially a multiple of    * gimp_tile_height */
 name|src
 operator|=
@@ -2424,7 +2436,7 @@ name|cinfo
 operator|.
 name|next_scanline
 operator|%
-literal|5
+literal|16
 operator|)
 operator|==
 literal|0
@@ -4773,7 +4785,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294949c10208
+DECL|struct|__anon27f91e410208
 block|{
 DECL|member|pub
 name|struct
