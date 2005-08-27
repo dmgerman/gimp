@@ -51,6 +51,14 @@ directive|include
 file|"gimpviewrendererpalette.h"
 end_include
 
+begin_define
+DECL|macro|COLUMNS
+define|#
+directive|define
+name|COLUMNS
+value|16
+end_define
+
 begin_function_decl
 specifier|static
 name|void
@@ -270,6 +278,12 @@ operator|->
 name|draw_grid
 operator|=
 name|FALSE
+expr_stmt|;
+name|renderer
+operator|->
+name|columns
+operator|=
+name|COLUMNS
 expr_stmt|;
 block|}
 end_function
