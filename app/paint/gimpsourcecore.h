@@ -116,10 +116,10 @@ DECL|member|set_source
 name|gboolean
 name|set_source
 decl_stmt|;
-DECL|member|src_drawable
-name|GimpDrawable
+DECL|member|src_pickable
+name|GimpPickable
 modifier|*
-name|src_drawable
+name|src_pickable
 decl_stmt|;
 DECL|member|src_x
 name|gint

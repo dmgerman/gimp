@@ -120,6 +120,10 @@ DECL|member|align_mode
 name|GimpCloneAlignMode
 name|align_mode
 decl_stmt|;
+DECL|member|sample_merged
+name|gboolean
+name|sample_merged
+decl_stmt|;
 block|}
 struct|;
 end_struct

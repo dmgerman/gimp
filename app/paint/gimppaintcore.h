@@ -107,37 +107,37 @@ DECL|member|ID
 name|gint
 name|ID
 decl_stmt|;
-comment|/*  unique instance ID               */
+comment|/*  unique instance ID                  */
 DECL|member|start_coords
 name|GimpCoords
 name|start_coords
 decl_stmt|;
-comment|/*  starting coords (for undo only)  */
+comment|/*  starting coords (for undo only)     */
 DECL|member|cur_coords
 name|GimpCoords
 name|cur_coords
 decl_stmt|;
-comment|/*  current coords                   */
+comment|/*  current coords                      */
 DECL|member|last_coords
 name|GimpCoords
 name|last_coords
 decl_stmt|;
-comment|/*  last coords                      */
+comment|/*  last coords                         */
 DECL|member|last_paint
 name|GimpVector2
 name|last_paint
 decl_stmt|;
-comment|/*  last point that was painted      */
+comment|/*  last point that was painted         */
 DECL|member|distance
 name|gdouble
 name|distance
 decl_stmt|;
-comment|/*  distance traveled by brush       */
+comment|/*  distance traveled by brush          */
 DECL|member|pixel_dist
 name|gdouble
 name|pixel_dist
 decl_stmt|;
-comment|/*  distance in pixels               */
+comment|/*  distance in pixels                  */
 DECL|member|x1
 DECL|member|y1
 name|gint
@@ -145,7 +145,7 @@ name|x1
 decl_stmt|,
 name|y1
 decl_stmt|;
-comment|/*  undo extents in image coords     */
+comment|/*  undo extents in image coords        */
 DECL|member|x2
 DECL|member|y2
 name|gint
@@ -153,36 +153,53 @@ name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
-comment|/*  undo extents in image coords     */
+comment|/*  undo extents in image coords        */
 DECL|member|use_pressure
 name|gboolean
 name|use_pressure
 decl_stmt|;
-comment|/*  look at coords->pressure         */
+comment|/*  look at coords->pressure            */
+DECL|member|use_saved_proj
+name|gboolean
+name|use_saved_proj
+decl_stmt|;
+comment|/*  keep the unmodified proj around     */
 DECL|member|undo_tiles
 name|TileManager
 modifier|*
 name|undo_tiles
 decl_stmt|;
-comment|/*  tiles which have been modified   */
+comment|/*  tiles which have been modified      */
+DECL|member|saved_proj_tiles
+name|TileManager
+modifier|*
+name|saved_proj_tiles
+decl_stmt|;
+comment|/*  proj tiles which have been modified */
 DECL|member|canvas_tiles
 name|TileManager
 modifier|*
 name|canvas_tiles
 decl_stmt|;
-comment|/*  the buffer to paint the mask to  */
+comment|/*  the buffer to paint the mask to     */
 DECL|member|orig_buf
 name|TempBuf
 modifier|*
 name|orig_buf
 decl_stmt|;
-comment|/*  the unmodified drawable pixels   */
+comment|/*  the unmodified drawable pixels      */
+DECL|member|orig_proj_buf
+name|TempBuf
+modifier|*
+name|orig_proj_buf
+decl_stmt|;
+comment|/*  the unmodified projection pixels    */
 DECL|member|canvas_buf
 name|TempBuf
 modifier|*
 name|canvas_buf
 decl_stmt|;
-comment|/*  the buffer to paint pixels to    */
+comment|/*  the buffer to paint pixels to       */
 block|}
 struct|;
 end_struct
@@ -542,6 +559,34 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|TempBuf
+modifier|*
+name|gimp_paint_core_get_orig_proj
+parameter_list|(
+name|GimpPaintCore
+modifier|*
+name|core
+parameter_list|,
+name|GimpPickable
+modifier|*
+name|pickable
+parameter_list|,
+name|gint
+name|x1
+parameter_list|,
+name|gint
+name|y1
+parameter_list|,
+name|gint
+name|x2
+parameter_list|,
+name|gint
+name|y2
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_paint_core_paste
 parameter_list|(
@@ -611,6 +656,33 @@ parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
+parameter_list|,
+name|gint
+name|w
+parameter_list|,
+name|gint
+name|h
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_paint_core_validate_saved_proj_tiles
+parameter_list|(
+name|GimpPaintCore
+modifier|*
+name|core
+parameter_list|,
+name|GimpPickable
+modifier|*
+name|pickable
 parameter_list|,
 name|gint
 name|x
