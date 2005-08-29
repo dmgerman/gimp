@@ -70,7 +70,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0507ca0108
+DECL|struct|__anon2b8cd1e40108
 block|{
 DECL|member|target
 name|GimpPageSelectorTarget
@@ -111,7 +111,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0507ca0208
+DECL|struct|__anon2b8cd1e40208
 block|{
 DECL|member|n_pages
 name|gint
@@ -2260,7 +2260,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0507ca0308
+DECL|struct|__anon2b8cd1e40308
 block|{
 DECL|member|document
 name|PopplerDocument
@@ -2285,7 +2285,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0507ca0408
+DECL|struct|__anon2b8cd1e40408
 block|{
 DECL|member|selector
 name|GimpPageSelector
@@ -2541,7 +2541,7 @@ name|gimp_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Load PDF"
+literal|"Import from PDF"
 argument_list|)
 argument_list|,
 name|PLUG_IN_BINARY
@@ -2558,7 +2558,10 @@ name|GTK_STOCK_CANCEL
 argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|,
-name|GTK_STOCK_OK
+name|_
+argument_list|(
+literal|"_Import"
+argument_list|)
 argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,
