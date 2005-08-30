@@ -4260,7 +4260,7 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|prefs_check_button_add_with_icon (GObject * config,const gchar * property_name,const gchar * label,const gchar * stock_id,GtkBox * vbox)
+DECL|function|prefs_check_button_add_with_icon (GObject * config,const gchar * property_name,const gchar * label,const gchar * stock_id,GtkBox * vbox,GtkSizeGroup * group)
 name|prefs_check_button_add_with_icon
 parameter_list|(
 name|GObject
@@ -4285,6 +4285,10 @@ parameter_list|,
 name|GtkBox
 modifier|*
 name|vbox
+parameter_list|,
+name|GtkSizeGroup
+modifier|*
+name|group
 parameter_list|)
 block|{
 name|GtkWidget
@@ -4406,6 +4410,17 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|button
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|group
+condition|)
+name|gtk_size_group_add_widget
+argument_list|(
+name|group
+argument_list|,
+name|image
 argument_list|)
 expr_stmt|;
 return|return
@@ -7800,6 +7815,18 @@ argument_list|,
 name|size_group
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|size_group
+argument_list|)
+expr_stmt|;
+name|size_group
+operator|=
+name|gtk_size_group_new
+argument_list|(
+name|GTK_SIZE_GROUP_HORIZONTAL
+argument_list|)
+expr_stmt|;
 comment|/*  Global Brush, Pattern, ...  */
 name|vbox2
 operator|=
@@ -7835,6 +7862,8 @@ name|GTK_BOX
 argument_list|(
 name|vbox2
 argument_list|)
+argument_list|,
+name|size_group
 argument_list|)
 expr_stmt|;
 name|prefs_check_button_add_with_icon
@@ -7854,6 +7883,8 @@ name|GTK_BOX
 argument_list|(
 name|vbox2
 argument_list|)
+argument_list|,
+name|size_group
 argument_list|)
 expr_stmt|;
 name|prefs_check_button_add_with_icon
@@ -7873,6 +7904,8 @@ name|GTK_BOX
 argument_list|(
 name|vbox2
 argument_list|)
+argument_list|,
+name|size_group
 argument_list|)
 expr_stmt|;
 name|vbox2
@@ -7909,6 +7942,8 @@ name|GTK_BOX
 argument_list|(
 name|vbox2
 argument_list|)
+argument_list|,
+name|size_group
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -7959,6 +7994,13 @@ name|page_index
 operator|++
 argument_list|)
 expr_stmt|;
+name|size_group
+operator|=
+name|gtk_size_group_new
+argument_list|(
+name|GTK_SIZE_GROUP_HORIZONTAL
+argument_list|)
+expr_stmt|;
 comment|/*  Appearance  */
 name|vbox2
 operator|=
@@ -7994,6 +8036,8 @@ name|GTK_BOX
 argument_list|(
 name|vbox2
 argument_list|)
+argument_list|,
+name|size_group
 argument_list|)
 expr_stmt|;
 name|prefs_check_button_add_with_icon
@@ -8013,6 +8057,8 @@ name|GTK_BOX
 argument_list|(
 name|vbox2
 argument_list|)
+argument_list|,
+name|size_group
 argument_list|)
 expr_stmt|;
 name|prefs_check_button_add_with_icon
@@ -8032,7 +8078,18 @@ name|GTK_BOX
 argument_list|(
 name|vbox2
 argument_list|)
+argument_list|,
+name|size_group
 argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|size_group
+argument_list|)
+expr_stmt|;
+name|size_group
+operator|=
+name|NULL
 expr_stmt|;
 comment|/***********************/
 comment|/*  Default New Image  */
@@ -8803,7 +8860,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2b15cfec0108
+DECL|struct|__anon289a5a810108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -9965,7 +10022,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b15cfec0208
+DECL|struct|__anon289a5a810208
 block|{
 DECL|member|label
 specifier|const
@@ -10872,7 +10929,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b15cfec0308
+DECL|struct|__anon289a5a810308
 block|{
 DECL|member|label
 specifier|const
@@ -11029,7 +11086,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b15cfec0408
+DECL|struct|__anon289a5a810408
 block|{
 DECL|member|tree_label
 specifier|const
