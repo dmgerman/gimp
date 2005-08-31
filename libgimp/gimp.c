@@ -414,7 +414,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27f907810103
+DECL|enum|__anon29f94c850103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -2532,7 +2532,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_run_procedure:  * @name:          the name of the procedure to run  * @n_return_vals: return location for the number of return values  * @Varargs:       list of procedure parameters  *  * This function calls a GIMP procedure and returns its return values.  *  * The procedure's parameters are given by a va_list in the format  * (type, value, type, value) and must be terminated by #GIMP_PDB_END.  *  * This function converts the va_list of parameters into an array  * and passes them to gimp_run_procedure2().  *  * Return value: the procedure's return values.  **/
+comment|/**  * gimp_run_procedure:  * @name:          the name of the procedure to run  * @n_return_vals: return location for the number of return values  * @Varargs:       list of procedure parameters  *  * This function calls a GIMP procedure and returns its return values.  *  * The procedure's parameters are given by a va_list in the format  * (type, value, type, value) and must be terminated by #GIMP_PDB_END.  *  * This function converts the va_list of parameters into an array and  * passes them to gimp_run_procedure2(). Please look there for further  * information.  *  * Return value: the procedure's return values.  **/
 end_comment
 
 begin_function
@@ -3569,7 +3569,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_run_procedure2:  * @name:          the name of the procedure to run  * @n_return_vals: return location for the number of return values  * @n_params:      the number of parameters the procedure takes.  * @params:        the procedure's parameters array.  *  * This function calls a GIMP procedure and returns its return values.  *  * Return value: the procedure's return values.  **/
+comment|/**  * gimp_run_procedure2:  * @name:          the name of the procedure to run  * @n_return_vals: return location for the number of return values  * @n_params:      the number of parameters the procedure takes.  * @params:        the procedure's parameters array.  *  * This function calls a GIMP procedure and returns its return values.  * To get more information about the available procedures and the  * parameters they expect, please have a look at the Procedure Browser  * as found in the Xtns menu in the GIMP's Toolbox.  *  * As soon as you don't need the return values any longer, you should  * free them using gimp_destroy_params().  *  * Return value: the procedure's return values.  **/
 end_comment
 
 begin_function
@@ -3750,7 +3750,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_destroy_params:  * @params:   the #GimpParam array to destroy  * @n_params: the number of elements in the array  *  * Destroys a #GimpParam array as returned by gimp_run_procedure()  **/
+comment|/**  * gimp_destroy_params:  * @params:   the #GimpParam array to destroy  * @n_params: the number of elements in the array  *  * Destroys a #GimpParam array as returned by gimp_run_procedure() or  * gimp_run_procedure2().  **/
 end_comment
 
 begin_function
