@@ -689,33 +689,36 @@ argument_list|(
 name|button
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|num_images
-operator|==
-literal|1
-condition|)
-name|gimp_message_box_set_primary_text
+name|gchar
+modifier|*
+name|text
+decl_stmt|;
+name|text
+operator|=
+name|g_strdup_printf
 argument_list|(
-name|box
+name|ngettext
+argument_list|(
+literal|"There is %d image with unsaved changes:"
 argument_list|,
-name|_
-argument_list|(
-literal|"There is one image with unsaved changes:"
+literal|"There are %d images with unsaved changes:"
+argument_list|,
+name|num_images
 argument_list|)
+argument_list|,
+name|num_images
 argument_list|)
 expr_stmt|;
-else|else
 name|gimp_message_box_set_primary_text
 argument_list|(
 name|box
 argument_list|,
-name|_
-argument_list|(
-literal|"There are %d images with unsaved changes:"
+name|text
 argument_list|)
-argument_list|,
-name|num_images
+expr_stmt|;
+name|g_free
+argument_list|(
+name|text
 argument_list|)
 expr_stmt|;
 if|if

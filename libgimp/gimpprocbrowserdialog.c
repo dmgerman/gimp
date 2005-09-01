@@ -83,7 +83,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c60c9890103
+DECL|enum|__anon2ba62d520103
 block|{
 DECL|enumerator|SELECTION_CHANGED
 name|SELECTION_CHANGED
@@ -100,7 +100,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c60c9890203
+DECL|enum|__anon2ba62d520203
 block|{
 DECL|enumerator|SEARCH_TYPE_ALL
 name|SEARCH_TYPE_ALL
@@ -133,7 +133,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c60c9890303
+DECL|enum|__anon2ba62d520303
 block|{
 DECL|enumerator|COLUMN_PROC_NAME
 name|COLUMN_PROC_NAME
@@ -1734,28 +1734,21 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
-case|case
-literal|1
-case|:
-name|str
-operator|=
-name|g_strdup
-argument_list|(
-name|_
-argument_list|(
-literal|"1 procedure matches your query"
-argument_list|)
-argument_list|)
-expr_stmt|;
-break|break;
 default|default:
 name|str
 operator|=
 name|g_strdup_printf
 argument_list|(
-name|_
+name|dngettext
 argument_list|(
+name|GETTEXT_PACKAGE
+literal|"-libgimp"
+argument_list|,
+literal|"%d procedure matches your query"
+argument_list|,
 literal|"%d procedures match your query"
+argument_list|,
+name|num_procs
 argument_list|)
 argument_list|,
 name|num_procs
