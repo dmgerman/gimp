@@ -1559,6 +1559,29 @@ operator|++
 name|count
 control|)
 block|{
+name|gchar
+name|name
+index|[
+literal|256
+index|]
+decl_stmt|;
+name|g_snprintf
+argument_list|(
+name|name
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|name
+argument_list|)
+argument_list|,
+name|_
+argument_list|(
+literal|"Index %d"
+argument_list|)
+argument_list|,
+name|count
+argument_list|)
+expr_stmt|;
 name|gimp_rgba_set_uchar
 argument_list|(
 operator|&
@@ -1605,7 +1628,7 @@ argument_list|,
 operator|-
 literal|1
 argument_list|,
-name|NULL
+name|name
 argument_list|,
 operator|&
 name|color
@@ -1625,7 +1648,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bb1b2440103
+DECL|enum|__anon27939fc90103
 block|{
 DECL|enumerator|GIMP_PALETTE_FILE_FORMAT_UNKNOWN
 name|GIMP_PALETTE_FILE_FORMAT_UNKNOWN
