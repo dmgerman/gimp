@@ -45,15 +45,11 @@ literal|"Roberto Boyd"
 block|,
 literal|"Stanislav Brabec"
 block|,
-literal|"Robert Brady"
-block|,
 literal|"Hans Breuer"
 block|,
 literal|"Simon Budig"
 block|,
 literal|"JoÃ£o S. O. Bueno Calligaris"
-block|,
-literal|"Carey Bunks"
 block|,
 literal|"Seth Burgess"
 block|,
@@ -68,8 +64,6 @@ block|,
 literal|"Sean Cier"
 block|,
 literal|"Winston Chang"
-block|,
-literal|"Kenneth Christiansen"
 block|,
 literal|"Zbigniew Chyla"
 block|,
@@ -89,8 +83,6 @@ literal|"Brian Degenhardt"
 block|,
 literal|"Karine Delvare"
 block|,
-literal|"Gert Dewit"
-block|,
 literal|"Andreas Dilger"
 block|,
 literal|"Austin Donnelly"
@@ -109,8 +101,6 @@ literal|"Larry Ewing"
 block|,
 literal|"Nick Fetchak"
 block|,
-literal|"Valek Filippov"
-block|,
 literal|"Shlomi Fish"
 block|,
 literal|"David Forsyth"
@@ -120,8 +110,6 @@ block|,
 literal|"Jochen Friedrich"
 block|,
 literal|"Jordi Gay"
-block|,
-literal|"Sami Gerdt"
 block|,
 literal|"Jim Geuther"
 block|,
@@ -145,10 +133,6 @@ literal|"Dov Grobgeld"
 block|,
 literal|"Michael Hammel"
 block|,
-literal|"Henrik Hansen"
-block|,
-literal|"Ville HautamÃ¤ki"
-block|,
 literal|"James Henstridge"
 block|,
 literal|"Eric Hernes"
@@ -163,17 +147,9 @@ literal|"Alan Horkan"
 block|,
 literal|"Jan HubiÄka"
 block|,
-literal|"Andreas Hyden"
-block|,
 literal|"Ben Jackson"
 block|,
-literal|"Krzysztof Jakubowski"
-block|,
-literal|"Simon Janes"
-block|,
 literal|"Tim Janik"
-block|,
-literal|"Fellmann Joaquim"
 block|,
 literal|"RÃ³man Joost"
 block|,
@@ -245,8 +221,6 @@ literal|"Gordon Matzigkeit"
 block|,
 literal|"Gregory McLean"
 block|,
-literal|"Daniele Medri"
-block|,
 literal|"Federico Mena Quintero"
 block|,
 literal|"Jim Meyer"
@@ -262,8 +236,6 @@ block|,
 literal|"Balazs Nagy"
 block|,
 literal|"Yukihiro Nakai"
-block|,
-literal|"Sung-Hyun Nam"
 block|,
 literal|"Shuji Narazaki"
 block|,
@@ -285,7 +257,7 @@ literal|"Erik Nygren"
 block|,
 literal|"Miles O'Neal"
 block|,
-literal|"David Odin "
+literal|"David Odin"
 block|,
 literal|"Robert Ãgren"
 block|,
@@ -297,8 +269,6 @@ literal|"Alan Paeth"
 block|,
 literal|"Jay Painter"
 block|,
-literal|"Sergey Panov"
-block|,
 literal|"Ville PÃ¤tsi"
 block|,
 literal|"Akkana Peck"
@@ -307,15 +277,11 @@ literal|"Asbjorn Pettersen"
 block|,
 literal|"Mike Phillips"
 block|,
-literal|"Artur Polaczynski"
-block|,
 literal|"Ari Pollak"
 block|,
 literal|"RaphaÃ«l Quinet"
 block|,
 literal|"Tom Rathborne"
-block|,
-literal|"Vincent Renardias"
 block|,
 literal|"Jens Restemeier"
 block|,
@@ -328,8 +294,6 @@ block|,
 literal|"Guillermo S. Romero"
 block|,
 literal|"Tim Rowley"
-block|,
-literal|"Pablo Saratxaga"
 block|,
 literal|"Mike Schaeffer"
 block|,
@@ -355,8 +319,6 @@ literal|"William Skaggs"
 block|,
 literal|"Daniel Skarda"
 block|,
-literal|"Carol Spears"
-block|,
 literal|"Adam Spiers"
 block|,
 literal|"Jakub Steiner"
@@ -364,8 +326,6 @@ block|,
 literal|"Nathan Summers"
 block|,
 literal|"Mike Sweet"
-block|,
-literal|"Yuri Syrota"
 block|,
 literal|"Eiichi Takamori"
 block|,
@@ -418,6 +378,12 @@ init|=
 block|{
 literal|"Tuomas Kuosmanen"
 block|,
+literal|"Karl La Rocca"
+block|,
+literal|"Mike Schaeffer"
+block|,
+literal|"Carol Spears"
+block|,
 literal|"Jakub Steiner"
 block|,
 name|NULL
@@ -435,9 +401,21 @@ name|documenters
 index|[]
 init|=
 block|{
+literal|"Carey Bunks"
+block|,
+literal|"Michael Hammel"
+block|,
+literal|"Simon Janes"
+block|,
 literal|"Karin Kylander"
 block|,
 literal|"Olof S Kylander"
+block|,
+literal|"Ed Mackey"
+block|,
+literal|"Ian Main"
+block|,
+literal|"James Robinson"
 block|,
 name|NULL
 block|}
