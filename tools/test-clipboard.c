@@ -1569,19 +1569,18 @@ argument_list|(
 name|buf
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|option_store_filename
-condition|)
-name|gtk_main_quit
-argument_list|()
-expr_stmt|;
 name|copy_data
 operator|->
 name|file_copied
 operator|=
 name|TRUE
+expr_stmt|;
+name|g_print
+argument_list|(
+literal|"%s: data transfer in progress, hit<ctrl>+c when pasted..."
+argument_list|,
+name|G_STRFUNC
+argument_list|)
 expr_stmt|;
 block|}
 end_function
