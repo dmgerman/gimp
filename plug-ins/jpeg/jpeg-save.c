@@ -140,7 +140,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27f91e410108
+DECL|struct|__anon2894cb0e0108
 block|{
 DECL|member|cinfo
 name|struct
@@ -2118,18 +2118,6 @@ argument_list|,
 name|rowstride
 operator|*
 name|gimp_tile_height
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|gimp_tile_cache_ntiles
-argument_list|(
-literal|1
-operator|+
-name|cinfo
-operator|.
-name|image_width
-operator|/
-name|gimp_tile_width
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -4785,7 +4773,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27f91e410208
+DECL|struct|__anon2894cb0e0208
 block|{
 DECL|member|pub
 name|struct
