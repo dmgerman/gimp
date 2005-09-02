@@ -170,7 +170,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b12d2b0108
+DECL|struct|__anon2a5752ec0108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -217,7 +217,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b12d2b0208
+DECL|struct|__anon2a5752ec0208
 block|{
 DECL|member|run
 name|gboolean
@@ -5959,7 +5959,7 @@ name|GTK_STOCK_CANCEL
 argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|,
-name|GTK_STOCK_OK
+name|GTK_STOCK_SAVE
 argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,

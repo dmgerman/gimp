@@ -127,7 +127,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bcd470d0108
+DECL|struct|__anon27f2513e0108
 block|{
 DECL|member|l_ras_magic
 name|L_CARD32
@@ -216,7 +216,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bcd470d0208
+DECL|struct|__anon27f2513e0208
 block|{
 DECL|member|val
 name|gint
@@ -811,7 +811,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bcd470d0308
+DECL|struct|__anon27f2513e0308
 block|{
 DECL|member|rle
 name|gboolean
@@ -7732,7 +7732,7 @@ name|GTK_STOCK_CANCEL
 argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|,
-name|GTK_STOCK_OK
+name|GTK_STOCK_SAVE
 argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,

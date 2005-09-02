@@ -229,7 +229,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b00e8430103
+DECL|enum|__anon2b79217f0103
 block|{
 DECL|enumerator|ENCAPSULATION_UUENCODE
 name|ENCAPSULATION_UUENCODE
@@ -267,7 +267,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b00e8430208
+DECL|struct|__anon2b79217f0208
 block|{
 DECL|member|receipt
 name|gchar
@@ -1679,7 +1679,10 @@ name|GTK_STOCK_CANCEL
 argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|,
-name|GTK_STOCK_OK
+name|_
+argument_list|(
+literal|"_Send"
+argument_list|)
 argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,

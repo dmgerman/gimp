@@ -58,7 +58,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a027560108
+DECL|struct|__anon2af6444b0108
 block|{
 DECL|member|file_name
 name|gchar
@@ -3046,7 +3046,7 @@ name|GTK_STOCK_CANCEL
 argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|,
-name|GTK_STOCK_OK
+name|GTK_STOCK_SAVE
 argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,

@@ -288,7 +288,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2759a61d0108
+DECL|struct|__anon288a62900108
 block|{
 DECL|member|resolution
 name|guint
@@ -377,7 +377,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2759a61d0208
+DECL|struct|__anon288a62900208
 block|{
 DECL|member|width
 DECL|member|height
@@ -970,7 +970,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2759a61d0308
+DECL|struct|__anon288a62900308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1836,7 +1836,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2759a61d0408
+DECL|struct|__anon288a62900408
 block|{
 DECL|member|eol
 name|long
@@ -14533,7 +14533,7 @@ name|gimp_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Load PostScript"
+literal|"Import from PostScript"
 argument_list|)
 argument_list|,
 name|PLUG_IN_BINARY
@@ -14550,7 +14550,10 @@ name|GTK_STOCK_CANCEL
 argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|,
-name|GTK_STOCK_OK
+name|_
+argument_list|(
+literal|"_Import"
+argument_list|)
 argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,
@@ -15842,7 +15845,7 @@ name|GTK_STOCK_CANCEL
 argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|,
-name|GTK_STOCK_OK
+name|GTK_STOCK_SAVE
 argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,

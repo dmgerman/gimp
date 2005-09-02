@@ -241,7 +241,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9633840103
+DECL|enum|__anon2932da210103
 block|{
 DECL|enumerator|CHUNKS_PNG_D
 name|CHUNKS_PNG_D
@@ -260,7 +260,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9633840203
+DECL|enum|__anon2932da210203
 block|{
 DECL|enumerator|DISPOSE_COMBINE
 name|DISPOSE_COMBINE
@@ -5148,7 +5148,7 @@ name|GTK_STOCK_CANCEL
 argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|,
-name|GTK_STOCK_OK
+name|GTK_STOCK_SAVE
 argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,

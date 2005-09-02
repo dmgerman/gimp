@@ -72,7 +72,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6d512d0108
+DECL|struct|__anon29b45d800108
 block|{
 DECL|member|captiontxt
 name|gchar
@@ -1604,7 +1604,7 @@ name|gimp_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"GIMP Table Magic"
+literal|"Save as HTML table"
 argument_list|)
 argument_list|,
 name|PLUG_IN_BINARY
@@ -1621,7 +1621,7 @@ name|GTK_STOCK_CANCEL
 argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|,
-name|GTK_STOCK_OK
+name|GTK_STOCK_SAVE
 argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,

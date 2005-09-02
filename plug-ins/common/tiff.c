@@ -84,7 +84,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2aafa50108
+DECL|struct|__anon27794c6c0108
 block|{
 DECL|member|compression
 name|gint
@@ -107,7 +107,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2aafa50208
+DECL|struct|__anon27794c6c0208
 block|{
 DECL|member|ID
 name|gint32
@@ -9550,7 +9550,7 @@ name|GTK_STOCK_CANCEL
 argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|,
-name|GTK_STOCK_OK
+name|GTK_STOCK_SAVE
 argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,

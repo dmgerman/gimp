@@ -154,7 +154,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28afbc860108
+DECL|struct|__anon292405aa0108
 block|{
 DECL|member|threshold
 name|gint
@@ -169,7 +169,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28afbc860208
+DECL|struct|__anon292405aa0208
 block|{
 DECL|member|r
 name|guchar
@@ -3079,7 +3079,7 @@ name|GTK_STOCK_CANCEL
 argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|,
-name|GTK_STOCK_OK
+name|GTK_STOCK_SAVE
 argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,

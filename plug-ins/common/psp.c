@@ -133,7 +133,7 @@ comment|/* Block identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a471e050103
+DECL|enum|__anon2bf5e1b60103
 typedef|typedef
 enum|enum
 block|{
@@ -197,7 +197,7 @@ comment|/* Bitmap type.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a471e050203
+DECL|enum|__anon2bf5e1b60203
 typedef|typedef
 enum|enum
 block|{
@@ -237,7 +237,7 @@ comment|/* Channel types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a471e050303
+DECL|enum|__anon2bf5e1b60303
 typedef|typedef
 enum|enum
 block|{
@@ -269,7 +269,7 @@ comment|/* Possible metrics used to measure resolution.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a471e050403
+DECL|enum|__anon2bf5e1b60403
 typedef|typedef
 enum|enum
 block|{
@@ -297,7 +297,7 @@ comment|/* Possible types of compression.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a471e050503
+DECL|enum|__anon2bf5e1b60503
 typedef|typedef
 enum|enum
 block|{
@@ -325,7 +325,7 @@ comment|/* Picture tube placement mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a471e050603
+DECL|enum|__anon2bf5e1b60603
 typedef|typedef
 enum|enum
 block|{
@@ -347,7 +347,7 @@ comment|/* Picture tube selection mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a471e050703
+DECL|enum|__anon2bf5e1b60703
 typedef|typedef
 enum|enum
 block|{
@@ -383,7 +383,7 @@ comment|/* Extended data field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a471e050803
+DECL|enum|__anon2bf5e1b60803
 typedef|typedef
 enum|enum
 block|{
@@ -403,7 +403,7 @@ comment|/* Creator field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a471e050903
+DECL|enum|__anon2bf5e1b60903
 typedef|typedef
 enum|enum
 block|{
@@ -451,7 +451,7 @@ comment|/* Creator application identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a471e050a03
+DECL|enum|__anon2bf5e1b60a03
 typedef|typedef
 enum|enum
 block|{
@@ -475,7 +475,7 @@ comment|/* Layer types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a471e050b03
+DECL|enum|__anon2bf5e1b60b03
 typedef|typedef
 enum|enum
 block|{
@@ -536,7 +536,7 @@ comment|/* The following have been reverse engineered.  * If a new version of th
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a471e050c03
+DECL|enum|__anon2bf5e1b60c03
 typedef|typedef
 enum|enum
 block|{
@@ -609,7 +609,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a471e050d08
+DECL|struct|__anon2bf5e1b60d08
 block|{
 DECL|member|width
 DECL|member|height
@@ -761,7 +761,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a471e050e08
+DECL|struct|__anon2bf5e1b60e08
 block|{
 DECL|member|compression
 name|PSPCompression
@@ -974,7 +974,7 @@ name|GTK_STOCK_CANCEL
 argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|,
-name|GTK_STOCK_OK
+name|GTK_STOCK_SAVE
 argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,

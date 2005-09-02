@@ -165,7 +165,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0c95970108
+DECL|struct|__anon2b68c1140108
 block|{
 DECL|member|description
 name|gchar
@@ -1986,7 +1986,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon2b0c9597020a
+DECL|union|__anon2b68c114020a
 block|{
 DECL|member|u
 name|guint16
@@ -2825,7 +2825,7 @@ name|GTK_STOCK_CANCEL
 argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|,
-name|GTK_STOCK_OK
+name|GTK_STOCK_SAVE
 argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,

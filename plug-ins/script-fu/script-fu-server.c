@@ -413,7 +413,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b876df10108
+DECL|struct|__anon2c4aad9d0108
 block|{
 DECL|member|command
 name|gchar
@@ -437,7 +437,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b876df10208
+DECL|struct|__anon2c4aad9d0208
 block|{
 DECL|member|port_entry
 name|GtkWidget
@@ -2509,7 +2509,10 @@ name|GTK_STOCK_CANCEL
 argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|,
-name|GTK_STOCK_OK
+name|_
+argument_list|(
+literal|"_Start Server"
+argument_list|)
 argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,

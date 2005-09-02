@@ -86,7 +86,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ff25a40108
+DECL|struct|__anon2aba1c220108
 block|{
 DECL|member|replace
 name|gint
@@ -4361,7 +4361,7 @@ name|GTK_STOCK_CANCEL
 argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|,
-name|GTK_STOCK_OK
+name|GTK_STOCK_OPEN
 argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,

@@ -132,7 +132,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2acfc6170103
+DECL|enum|__anon2c0777f80103
 block|{
 DECL|enumerator|RAW_RGB
 name|RAW_RGB
@@ -158,7 +158,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2acfc6170203
+DECL|enum|__anon2c0777f80203
 block|{
 DECL|enumerator|RAW_PALETTE_RGB
 name|RAW_PALETTE_RGB
@@ -176,7 +176,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acfc6170308
+DECL|struct|__anon2c0777f80308
 block|{
 DECL|member|file_offset
 name|gint32
@@ -217,7 +217,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acfc6170408
+DECL|struct|__anon2c0777f80408
 block|{
 DECL|member|fp
 name|FILE
@@ -4207,7 +4207,7 @@ name|gimp_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Raw Image Loader"
+literal|"Load Image from Raw Data"
 argument_list|)
 argument_list|,
 name|PLUG_IN_BINARY
@@ -4224,7 +4224,7 @@ name|GTK_STOCK_CANCEL
 argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|,
-name|GTK_STOCK_OK
+name|GTK_STOCK_OPEN
 argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,

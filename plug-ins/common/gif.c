@@ -135,7 +135,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8034300103
+DECL|enum|__anon2b09ddce0103
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -152,7 +152,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8034300208
+DECL|struct|__anon2b09ddce0208
 block|{
 DECL|member|interlace
 name|gint
@@ -4011,7 +4011,7 @@ name|GTK_STOCK_CANCEL
 argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|,
-name|GTK_STOCK_OK
+name|GTK_STOCK_SAVE
 argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,

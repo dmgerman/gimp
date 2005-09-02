@@ -140,7 +140,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2894cb0e0108
+DECL|struct|__anon2b69d8b30108
 block|{
 DECL|member|cinfo
 name|struct
@@ -2760,7 +2760,7 @@ name|GTK_STOCK_CANCEL
 argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|,
-name|GTK_STOCK_OK
+name|GTK_STOCK_SAVE
 argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,
@@ -4773,7 +4773,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2894cb0e0208
+DECL|struct|__anon2b69d8b30208
 block|{
 DECL|member|pub
 name|struct
