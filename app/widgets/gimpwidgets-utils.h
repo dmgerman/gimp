@@ -75,10 +75,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|label_text
-parameter_list|,
-name|gdouble
-name|yalign
+name|stock_id
 parameter_list|,
 name|GtkWidget
 modifier|*
@@ -87,10 +84,8 @@ parameter_list|,
 name|gint
 name|colspan
 parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|stock_id
+name|gboolean
+name|left_align
 parameter_list|)
 function_decl|;
 end_function_decl
