@@ -180,7 +180,7 @@ name|GTK_STOCK_CANCEL
 argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|,
-name|GTK_STOCK_OK
+name|GTK_STOCK_ADD
 argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,

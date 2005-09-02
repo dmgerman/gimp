@@ -114,7 +114,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b92d6d60108
+DECL|struct|__anon2a22e8950108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -492,7 +492,10 @@ name|GTK_STOCK_CANCEL
 argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|,
-name|GTK_STOCK_OK
+name|_
+argument_list|(
+literal|"C_onvert"
+argument_list|)
 argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,
