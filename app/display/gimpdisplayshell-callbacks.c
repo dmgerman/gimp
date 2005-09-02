@@ -1598,12 +1598,6 @@ argument_list|(
 name|shell
 argument_list|)
 expr_stmt|;
-comment|/* draw the guides */
-name|gimp_display_shell_draw_guides
-argument_list|(
-name|shell
-argument_list|)
-expr_stmt|;
 comment|/* draw the grid */
 name|gimp_display_shell_draw_grid
 argument_list|(
@@ -1613,6 +1607,12 @@ operator|&
 name|eevent
 operator|->
 name|area
+argument_list|)
+expr_stmt|;
+comment|/* draw the guides */
+name|gimp_display_shell_draw_guides
+argument_list|(
+name|shell
 argument_list|)
 expr_stmt|;
 comment|/* draw the sample points */
