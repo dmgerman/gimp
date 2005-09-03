@@ -161,7 +161,7 @@ argument_list|)
 expr_stmt|;
 name|ps
 operator|->
-name|row_stride
+name|rowstride
 operator|=
 literal|0
 expr_stmt|;
@@ -273,7 +273,7 @@ condition|)
 block|{
 name|ps
 operator|->
-name|row_stride
+name|rowstride
 operator|=
 name|tile_ewidth
 argument_list|(
@@ -480,7 +480,7 @@ block|}
 block|}
 name|ps
 operator|->
-name|row_stride
+name|rowstride
 operator|=
 name|ps
 operator|->
@@ -511,7 +511,7 @@ block|{
 return|return
 name|ps
 operator|->
-name|row_stride
+name|rowstride
 return|;
 block|}
 end_function

@@ -64,9 +64,9 @@ index|[
 name|MAX_CHANNELS
 index|]
 decl_stmt|;
-DECL|member|row_stride
+DECL|member|rowstride
 name|gint
-name|row_stride
+name|rowstride
 decl_stmt|;
 DECL|typedef|PixelSurround
 block|}
