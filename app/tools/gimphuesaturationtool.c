@@ -1005,7 +1005,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon299d44490108
+DECL|struct|__anon29bdc7830108
 block|{
 DECL|member|label
 specifier|const
@@ -1146,7 +1146,7 @@ name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Select Primary Color to Modify"
+literal|"Select Primary Color to Adjust"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1381,7 +1381,7 @@ name|button
 argument_list|,
 name|_
 argument_list|(
-literal|"Modify all colors"
+literal|"Adjust all colors"
 argument_list|)
 argument_list|,
 name|NULL
@@ -1811,7 +1811,7 @@ name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Modify Selected Color"
+literal|"Adjust Selected Color"
 argument_list|)
 argument_list|)
 expr_stmt|;

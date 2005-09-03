@@ -1184,7 +1184,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Select Range to Modify"
+literal|"Select Range to Adjust"
 argument_list|)
 argument_list|)
 argument_list|,
@@ -1228,7 +1228,7 @@ name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Modify Selected Range's Color Levels"
+literal|"Adjust Color Levels"
 argument_list|)
 argument_list|)
 expr_stmt|;

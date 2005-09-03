@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1c44420103
+DECL|enum|__anon292a96060103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -647,7 +647,7 @@ literal|"line-spacing"
 argument_list|,
 name|N_
 argument_list|(
-literal|"Modify line spacing"
+literal|"Adjust line spacing"
 argument_list|)
 argument_list|,
 operator|-
@@ -670,7 +670,7 @@ literal|"letter-spacing"
 argument_list|,
 name|N_
 argument_list|(
-literal|"Modify letter spacing"
+literal|"Adjust letter spacing"
 argument_list|)
 argument_list|,
 operator|-
