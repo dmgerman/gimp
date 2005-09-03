@@ -1248,9 +1248,6 @@ name|gint
 name|height
 parameter_list|)
 block|{
-name|gint
-name|size
-decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|width
@@ -1264,16 +1261,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/*  calculate the requested size  */
-name|size
-operator|=
-name|width
-operator|*
-name|height
-operator|*
-name|bytes
-expr_stmt|;
-comment|/*  First, configure the canvas buffer  */
 if|if
 condition|(
 operator|!
@@ -1300,9 +1287,20 @@ expr_stmt|;
 block|}
 else|else
 block|{
+name|gint
+name|new_size
+decl_stmt|;
+name|new_size
+operator|=
+name|width
+operator|*
+name|height
+operator|*
+name|bytes
+expr_stmt|;
 if|if
 condition|(
-name|size
+name|new_size
 operator|!=
 operator|(
 name|buf
@@ -1331,11 +1329,10 @@ name|buf
 operator|->
 name|data
 argument_list|,
-name|size
+name|new_size
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  Make sure the temp buf fields are valid  */
 name|buf
 operator|->
 name|x
