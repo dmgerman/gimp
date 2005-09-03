@@ -1042,7 +1042,7 @@ argument_list|(
 name|slider
 argument_list|)
 argument_list|,
-name|GTK_UPDATE_DELAYED
+name|GTK_UPDATE_CONTINUOUS
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -1129,7 +1129,7 @@ argument_list|(
 name|slider
 argument_list|)
 argument_list|,
-name|GTK_UPDATE_DELAYED
+name|GTK_UPDATE_CONTINUOUS
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -1219,7 +1219,7 @@ argument_list|(
 name|slider
 argument_list|)
 argument_list|,
-name|GTK_UPDATE_DELAYED
+name|GTK_UPDATE_CONTINUOUS
 argument_list|)
 expr_stmt|;
 name|g_signal_connect

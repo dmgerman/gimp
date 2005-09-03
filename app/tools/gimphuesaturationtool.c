@@ -1005,7 +1005,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon2c4ba6810108
+DECL|struct|__anon299d44490108
 block|{
 DECL|member|label
 specifier|const
@@ -1788,7 +1788,7 @@ argument_list|(
 name|slider
 argument_list|)
 argument_list|,
-name|GTK_UPDATE_DELAYED
+name|GTK_UPDATE_CONTINUOUS
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -2006,7 +2006,7 @@ argument_list|(
 name|slider
 argument_list|)
 argument_list|,
-name|GTK_UPDATE_DELAYED
+name|GTK_UPDATE_CONTINUOUS
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -2114,7 +2114,7 @@ argument_list|(
 name|slider
 argument_list|)
 argument_list|,
-name|GTK_UPDATE_DELAYED
+name|GTK_UPDATE_CONTINUOUS
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -2222,7 +2222,7 @@ argument_list|(
 name|slider
 argument_list|)
 argument_list|,
-name|GTK_UPDATE_DELAYED
+name|GTK_UPDATE_CONTINUOUS
 argument_list|)
 expr_stmt|;
 name|g_signal_connect

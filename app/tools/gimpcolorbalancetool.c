@@ -990,7 +990,7 @@ argument_list|(
 name|slider
 argument_list|)
 argument_list|,
-name|GTK_UPDATE_DELAYED
+name|GTK_UPDATE_CONTINUOUS
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_size_request
