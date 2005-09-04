@@ -291,7 +291,7 @@ name|NULL
 argument_list|,
 literal|0.0
 argument_list|,
-literal|666.0
+name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|0.0
 argument_list|,
@@ -331,7 +331,7 @@ name|NULL
 argument_list|,
 literal|0.0
 argument_list|,
-literal|666.0
+name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|0.0
 argument_list|,
@@ -371,7 +371,7 @@ name|NULL
 argument_list|,
 literal|0.0
 argument_list|,
-literal|666.0
+name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|0.0
 argument_list|,
@@ -411,7 +411,7 @@ name|NULL
 argument_list|,
 literal|0.0
 argument_list|,
-literal|666.0
+name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|0.0
 argument_list|,
@@ -433,7 +433,7 @@ name|NULL
 argument_list|,
 literal|0.0
 argument_list|,
-literal|666.0
+name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|0.0
 argument_list|,
