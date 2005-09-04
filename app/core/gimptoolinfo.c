@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8a134e0103
+DECL|enum|__anon28fd1a190103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1198,23 +1198,6 @@ operator|->
 name|context_props
 argument_list|,
 name|FALSE
-argument_list|)
-expr_stmt|;
-name|gimp_context_copy_properties
-argument_list|(
-name|gimp_get_user_context
-argument_list|(
-name|gimp
-argument_list|)
-argument_list|,
-name|GIMP_CONTEXT
-argument_list|(
-name|tool_info
-operator|->
-name|tool_options
-argument_list|)
-argument_list|,
-name|GIMP_CONTEXT_ALL_PROPS_MASK
 argument_list|)
 expr_stmt|;
 block|}

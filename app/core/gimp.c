@@ -88,6 +88,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimp-contexts.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-documents.h"
 end_include
 
@@ -261,7 +267,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon295a92f70103
+DECL|enum|__anon2bedb8ec0103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -1322,18 +1328,9 @@ argument_list|(
 literal|"EXIT: gimp_finalize\n"
 argument_list|)
 expr_stmt|;
-name|gimp_set_user_context
+name|gimp_contexts_exit
 argument_list|(
 name|gimp
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_set_default_context
-argument_list|(
-name|gimp
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -2233,10 +2230,6 @@ name|GimpInitStatusFunc
 name|status_callback
 parameter_list|)
 block|{
-name|GimpContext
-modifier|*
-name|context
-decl_stmt|;
 name|gchar
 modifier|*
 name|path
@@ -2575,52 +2568,10 @@ name|have_current_cut_buffer
 operator|=
 name|FALSE
 expr_stmt|;
-comment|/*  the default context contains the user's saved preferences    *    *  TODO: load from disk    */
-name|context
-operator|=
-name|gimp_context_new
+comment|/*  create user and default context  */
+name|gimp_contexts_init
 argument_list|(
 name|gimp
-argument_list|,
-literal|"Default"
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_set_default_context
-argument_list|(
-name|gimp
-argument_list|,
-name|context
-argument_list|)
-expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|context
-argument_list|)
-expr_stmt|;
-comment|/*  the initial user_context is a straight copy of the default context    */
-name|context
-operator|=
-name|gimp_context_new
-argument_list|(
-name|gimp
-argument_list|,
-literal|"User"
-argument_list|,
-name|context
-argument_list|)
-expr_stmt|;
-name|gimp_set_user_context
-argument_list|(
-name|gimp
-argument_list|,
-name|context
-argument_list|)
-expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|context
 argument_list|)
 expr_stmt|;
 comment|/*  add the builtin FG -> BG etc. gradients  */
@@ -4197,8 +4148,9 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-operator|!
 name|context
+operator|==
+name|NULL
 operator|||
 name|GIMP_IS_CONTEXT
 argument_list|(
@@ -4206,6 +4158,15 @@ name|context
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|context
+operator|!=
+name|gimp
+operator|->
+name|default_context
+condition|)
+block|{
 if|if
 condition|(
 name|gimp
@@ -4238,6 +4199,7 @@ operator|->
 name|default_context
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -4294,8 +4256,9 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-operator|!
 name|context
+operator|==
+name|NULL
 operator|||
 name|GIMP_IS_CONTEXT
 argument_list|(
@@ -4303,6 +4266,15 @@ name|context
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|context
+operator|!=
+name|gimp
+operator|->
+name|user_context
+condition|)
+block|{
 if|if
 condition|(
 name|gimp
@@ -4335,6 +4307,7 @@ operator|->
 name|user_context
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
