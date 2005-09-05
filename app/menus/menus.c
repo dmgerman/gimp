@@ -771,6 +771,12 @@ literal|"edit"
 argument_list|,
 name|NULL
 argument_list|,
+literal|"/undo-editor-popup"
+argument_list|,
+literal|"undo-editor-menu.xml"
+argument_list|,
+name|NULL
+argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;

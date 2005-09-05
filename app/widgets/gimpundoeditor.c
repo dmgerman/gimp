@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a102c540103
+DECL|enum|__anon2a07e08e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -835,6 +835,10 @@ argument_list|,
 literal|"menu-identifier"
 argument_list|,
 literal|"<UndoEditor>"
+argument_list|,
+literal|"ui-path"
+argument_list|,
+literal|"/undo-editor-popup"
 argument_list|,
 literal|"preview-size"
 argument_list|,

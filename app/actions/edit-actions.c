@@ -208,6 +208,25 @@ argument_list|)
 block|}
 block|,
 block|{
+literal|"undo-editor-popup"
+block|,
+name|GTK_STOCK_UNDO
+block|,
+name|N_
+argument_list|(
+literal|"Undo Editor Menu"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|GIMP_HELP_UNDO_DIALOG
+block|}
+block|,
+block|{
 literal|"edit-undo"
 block|,
 name|GTK_STOCK_UNDO
