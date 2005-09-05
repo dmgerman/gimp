@@ -208,6 +208,17 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GdkNativeWindow
+name|gimp_display_get_window
+parameter_list|(
+name|GimpDisplay
+modifier|*
+name|gdisp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpDisplay
 modifier|*
 name|gimp_display_get_by_ID

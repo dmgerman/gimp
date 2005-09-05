@@ -43,6 +43,16 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gint
+name|gimp_display_get_window_handle
+parameter_list|(
+name|gint32
+name|display_ID
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_displays_flush
 parameter_list|(
