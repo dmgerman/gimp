@@ -460,6 +460,29 @@ name|GIMP_HELP_BUFFER_COPY
 block|}
 block|,
 block|{
+literal|"edit-named-copy-visible"
+block|,
+name|NULL
+block|,
+comment|/* GIMP_STOCK_COPY_VISIBLE, */
+name|N_
+argument_list|(
+literal|"Copy _Visible Named..."
+argument_list|)
+block|,
+literal|""
+block|,
+name|NULL
+block|,
+name|G_CALLBACK
+argument_list|(
+name|edit_named_copy_visible_cmd_callback
+argument_list|)
+block|,
+name|GIMP_HELP_BUFFER_COPY
+block|}
+block|,
+block|{
 literal|"edit-named-paste"
 block|,
 name|GTK_STOCK_PASTE
@@ -1011,6 +1034,13 @@ expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"edit-named-copy"
+argument_list|,
+name|drawable
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"edit-named-copy-visible"
 argument_list|,
 name|drawable
 argument_list|)
