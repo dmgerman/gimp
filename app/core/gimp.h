@@ -387,10 +387,6 @@ name|GimpTemplate
 modifier|*
 name|image_new_last_template
 decl_stmt|;
-DECL|member|have_current_cut_buffer
-name|gboolean
-name|have_current_cut_buffer
-decl_stmt|;
 comment|/*  the list of all contexts  */
 DECL|member|context_list
 name|GList

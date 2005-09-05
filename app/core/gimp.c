@@ -267,7 +267,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bedb8ec0103
+DECL|enum|__anon2c510a950103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -1173,12 +1173,6 @@ operator|->
 name|image_new_last_template
 operator|=
 name|NULL
-expr_stmt|;
-name|gimp
-operator|->
-name|have_current_cut_buffer
-operator|=
-name|FALSE
 expr_stmt|;
 name|gimp
 operator|->
@@ -2562,12 +2556,6 @@ name|default_image
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp
-operator|->
-name|have_current_cut_buffer
-operator|=
-name|FALSE
-expr_stmt|;
 comment|/*  create user and default context  */
 name|gimp_contexts_init
 argument_list|(
@@ -3930,16 +3918,6 @@ name|gimp
 operator|->
 name|global_buffer
 argument_list|)
-expr_stmt|;
-name|gimp
-operator|->
-name|have_current_cut_buffer
-operator|=
-operator|(
-name|buffer
-operator|!=
-name|NULL
-operator|)
 expr_stmt|;
 name|g_signal_emit
 argument_list|(
