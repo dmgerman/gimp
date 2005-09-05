@@ -110,7 +110,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd26d0c0108
+DECL|struct|__anon2a532c4d0108
 block|{
 DECL|member|lam_r
 name|gdouble
@@ -169,7 +169,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd26d0c0208
+DECL|struct|__anon2a532c4d0208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -1118,7 +1118,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2bd26d0c0308
+DECL|struct|__anon2a532c4d0308
 typedef|typedef
 struct|struct
 block|{
@@ -1905,6 +1905,14 @@ name|GTK_RESPONSE_CANCEL
 argument_list|,
 operator|-
 literal|1
+argument_list|)
+expr_stmt|;
+name|gimp_window_set_transient_for_default_display
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|dialog
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|hbox

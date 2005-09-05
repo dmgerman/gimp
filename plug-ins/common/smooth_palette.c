@@ -294,7 +294,7 @@ end_function
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c48b9930108
+DECL|struct|__anon27aa81fc0108
 block|{
 DECL|member|width
 name|gint
@@ -2061,6 +2061,14 @@ name|GTK_RESPONSE_CANCEL
 argument_list|,
 operator|-
 literal|1
+argument_list|)
+expr_stmt|;
+name|gimp_window_set_transient_for_default_display
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|dlg
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|image_id

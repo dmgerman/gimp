@@ -66,7 +66,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28efdad70103
+DECL|enum|__anon290e69440103
 block|{
 DECL|enumerator|EXTEND
 name|EXTEND
@@ -290,7 +290,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28efdad70208
+DECL|struct|__anon290e69440208
 block|{
 DECL|member|matrix
 name|gfloat
@@ -447,7 +447,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon28efdad70308
+DECL|struct|__anon290e69440308
 block|{
 DECL|member|matrix
 name|GtkWidget
@@ -3896,6 +3896,14 @@ name|GTK_RESPONSE_CANCEL
 argument_list|,
 operator|-
 literal|1
+argument_list|)
+expr_stmt|;
+name|gimp_window_set_transient_for_default_display
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|dialog
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|main_vbox

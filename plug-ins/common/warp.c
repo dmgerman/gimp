@@ -83,7 +83,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon294296be0103
+DECL|enum|__anon2ac487700103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -103,7 +103,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294296be0208
+DECL|struct|__anon2ac487700208
 block|{
 DECL|member|amount
 name|gdouble
@@ -1526,6 +1526,14 @@ name|GTK_RESPONSE_CANCEL
 argument_list|,
 operator|-
 literal|1
+argument_list|)
+expr_stmt|;
+name|gimp_window_set_transient_for_default_display
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|dlg
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|vbox

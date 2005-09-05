@@ -243,7 +243,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2919f2d80108
+DECL|struct|__anon2bf4edcf0108
 block|{
 DECL|member|hwidth
 name|gint
@@ -3094,6 +3094,14 @@ name|GTK_RESPONSE_CANCEL
 argument_list|,
 operator|-
 literal|1
+argument_list|)
+expr_stmt|;
+name|gimp_window_set_transient_for_default_display
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|dlg
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  Get the image resolution and unit  */

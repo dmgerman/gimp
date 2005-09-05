@@ -140,7 +140,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c047f070108
+DECL|struct|__anon2b1cbdd90108
 block|{
 DECL|member|division
 name|gint32
@@ -627,7 +627,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2c047f070208
+DECL|struct|__anon2b1cbdd90208
 typedef|typedef
 struct|struct
 block|{
@@ -1999,6 +1999,14 @@ name|GTK_RESPONSE_CANCEL
 argument_list|,
 operator|-
 literal|1
+argument_list|)
+expr_stmt|;
+name|gimp_window_set_transient_for_default_display
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|dialog
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|main_vbox

@@ -66,7 +66,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b37d8b0108
+DECL|struct|__anon2b4ec6810108
 block|{
 DECL|member|height
 name|gint
@@ -755,6 +755,14 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
+name|gimp_window_set_transient_for_default_display
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|main_vbox
 operator|=
 name|gtk_vbox_new
@@ -1162,7 +1170,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b37d8b0208
+DECL|struct|__anon2b4ec6810208
 block|{
 DECL|member|x
 DECL|member|y

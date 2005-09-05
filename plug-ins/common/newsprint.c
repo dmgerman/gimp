@@ -351,7 +351,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf61f840108
+DECL|struct|__anon2b0472f70108
 block|{
 DECL|member|name
 specifier|const
@@ -611,7 +611,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf61f840208
+DECL|struct|__anon2b0472f70208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -684,7 +684,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf61f840308
+DECL|struct|__anon2b0472f70308
 block|{
 DECL|member|input_spi
 name|gdouble
@@ -718,7 +718,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf61f840408
+DECL|struct|__anon2b0472f70408
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -825,7 +825,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf61f840508
+DECL|struct|__anon2b0472f70508
 block|{
 DECL|member|pull_table
 name|GtkWidget
@@ -993,7 +993,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf61f840608
+DECL|struct|__anon2b0472f70608
 block|{
 DECL|member|name
 specifier|const
@@ -4856,6 +4856,14 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
+name|gimp_window_set_transient_for_default_display
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|paned
 operator|=
 name|gtk_hpaned_new
@@ -7057,7 +7065,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf61f840708
+DECL|struct|__anon2b0472f70708
 block|{
 DECL|member|index
 name|gint

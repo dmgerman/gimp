@@ -543,7 +543,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e366220108
+DECL|struct|__anon27a832230108
 block|{
 DECL|member|compose_type
 specifier|const
@@ -1040,7 +1040,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e366220208
+DECL|struct|__anon27a832230208
 block|{
 DECL|member|compose_ID
 name|gint32
@@ -1080,7 +1080,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e366220308
+DECL|struct|__anon27a832230308
 block|{
 DECL|member|width
 DECL|member|height
@@ -6794,6 +6794,14 @@ name|GTK_RESPONSE_CANCEL
 argument_list|,
 operator|-
 literal|1
+argument_list|)
+expr_stmt|;
+name|gimp_window_set_transient_for_default_display
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|dlg
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  parameter settings  */

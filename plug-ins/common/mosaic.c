@@ -168,7 +168,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e8fba60108
+DECL|struct|__anon2a11bd630108
 block|{
 DECL|member|x
 DECL|member|y
@@ -186,7 +186,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e8fba60208
+DECL|struct|__anon2a11bd630208
 block|{
 DECL|member|npts
 name|guint
@@ -208,7 +208,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e8fba60308
+DECL|struct|__anon2a11bd630308
 block|{
 DECL|member|base_x
 DECL|member|base_y
@@ -237,7 +237,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e8fba60408
+DECL|struct|__anon2a11bd630408
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -2687,6 +2687,14 @@ name|GTK_RESPONSE_CANCEL
 argument_list|,
 operator|-
 literal|1
+argument_list|)
+expr_stmt|;
+name|gimp_window_set_transient_for_default_display
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|dialog
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|main_vbox

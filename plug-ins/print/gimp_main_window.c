@@ -2439,6 +2439,11 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|plug_in_name
+argument_list|)
+expr_stmt|;
 name|gtk_dialog_set_alternative_button_order
 argument_list|(
 name|GTK_DIALOG
@@ -2460,9 +2465,12 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-name|g_free
+name|gimp_window_set_transient_for_default_display
 argument_list|(
-name|plug_in_name
+name|GTK_WINDOW
+argument_list|(
+name|print_dialog
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_signal_connect

@@ -171,7 +171,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ff82790108
+DECL|struct|__anon275ab76c0108
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -728,7 +728,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ff82790208
+DECL|struct|__anon275ab76c0208
 block|{
 DECL|member|schema
 specifier|const
@@ -2831,6 +2831,16 @@ name|GTK_RESPONSE_CANCEL
 argument_list|,
 operator|-
 literal|1
+argument_list|)
+expr_stmt|;
+name|gimp_window_set_transient_for_default_display
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|mgui
+operator|.
+name|dlg
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
