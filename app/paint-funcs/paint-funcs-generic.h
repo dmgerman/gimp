@@ -1095,7 +1095,7 @@ name|w
 operator|--
 condition|)
 block|{
-name|guint
+name|gint
 name|a1
 init|=
 name|blend1
@@ -1105,7 +1105,7 @@ index|[
 name|c
 index|]
 decl_stmt|;
-name|guint
+name|gint
 name|a2
 init|=
 name|blend2
@@ -1115,7 +1115,7 @@ index|[
 name|c
 index|]
 decl_stmt|;
-name|guint
+name|gint
 name|a
 init|=
 name|a1
