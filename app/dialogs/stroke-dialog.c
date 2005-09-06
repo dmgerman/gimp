@@ -566,9 +566,12 @@ argument_list|,
 name|paint_radio
 argument_list|)
 expr_stmt|;
-name|gtk_widget_destroy
+name|gtk_object_sink
+argument_list|(
+name|GTK_OBJECT
 argument_list|(
 name|radio_box
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|{
