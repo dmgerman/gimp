@@ -161,11 +161,6 @@ specifier|const
 name|gchar
 modifier|*
 name|title
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|stock_id
 parameter_list|)
 function_decl|;
 end_function_decl

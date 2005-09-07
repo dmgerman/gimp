@@ -628,8 +628,6 @@ name|_
 argument_list|(
 literal|"GIMP Message"
 argument_list|)
-argument_list|,
-name|GIMP_STOCK_WARNING
 argument_list|)
 return|;
 block|}
