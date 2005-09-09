@@ -60,7 +60,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2943b1890108
+DECL|struct|__anon2989b6160108
 block|{
 DECL|member|xblock
 name|gint
@@ -88,7 +88,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2943b1890208
+DECL|struct|__anon2989b6160208
 block|{
 DECL|member|gval
 name|GlassValues
@@ -847,7 +847,7 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-name|gimp_window_set_transient_for_default_display
+name|gimp_window_set_transient
 argument_list|(
 name|GTK_WINDOW
 argument_list|(

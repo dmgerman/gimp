@@ -137,7 +137,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be39d320108
+DECL|struct|__anon2c8a7a670108
 block|{
 DECL|member|scalex
 name|gdouble
@@ -246,7 +246,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be39d320208
+DECL|struct|__anon2c8a7a670208
 block|{
 DECL|member|height
 DECL|member|width
@@ -328,7 +328,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be39d320308
+DECL|struct|__anon2c8a7a670308
 block|{
 DECL|member|width
 name|gint
@@ -3479,7 +3479,7 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-name|gimp_window_set_transient_for_default_display
+name|gimp_window_set_transient
 argument_list|(
 name|GTK_WINDOW
 argument_list|(

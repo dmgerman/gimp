@@ -705,7 +705,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon299ce3370108
+DECL|struct|__anon2b03338e0108
 typedef|typedef
 struct|struct
 block|{
@@ -1560,7 +1560,7 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-name|gimp_window_set_transient_for_default_display
+name|gimp_window_set_transient
 argument_list|(
 name|GTK_WINDOW
 argument_list|(

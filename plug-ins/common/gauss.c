@@ -84,7 +84,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2980a4c40103
+DECL|enum|__anon29c07d4c0103
 block|{
 DECL|enumerator|BLUR_IIR
 name|BLUR_IIR
@@ -100,7 +100,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2980a4c40208
+DECL|struct|__anon29c07d4c0208
 block|{
 DECL|member|horizontal
 name|gdouble
@@ -1709,7 +1709,7 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-name|gimp_window_set_transient_for_default_display
+name|gimp_window_set_transient
 argument_list|(
 name|GTK_WINDOW
 argument_list|(

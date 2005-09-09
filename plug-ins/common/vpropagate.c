@@ -711,7 +711,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbfe7590108
+DECL|struct|__anon2a2f6e640108
 block|{
 DECL|member|propagate_mode
 name|gint
@@ -879,7 +879,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbfe7590208
+DECL|struct|__anon2a2f6e640208
 block|{
 DECL|member|applicable_image_type
 name|gint
@@ -4032,7 +4032,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbfe7590308
+DECL|struct|__anon2a2f6e640308
 block|{
 DECL|member|min_modified
 name|gshort
@@ -5777,7 +5777,7 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-name|gimp_window_set_transient_for_default_display
+name|gimp_window_set_transient
 argument_list|(
 name|GTK_WINDOW
 argument_list|(

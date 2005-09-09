@@ -135,7 +135,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e3d3ba0103
+DECL|enum|__anon29b44ea30103
 block|{
 DECL|enumerator|MIN_CHANNELS
 name|MIN_CHANNELS
@@ -153,7 +153,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e3d3ba0208
+DECL|struct|__anon29b44ea30208
 block|{
 DECL|member|max_p
 name|gint
@@ -527,7 +527,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e3d3ba0308
+DECL|struct|__anon29b44ea30308
 block|{
 DECL|member|init_value
 name|gint
@@ -1051,7 +1051,7 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-name|gimp_window_set_transient_for_default_display
+name|gimp_window_set_transient
 argument_list|(
 name|GTK_WINDOW
 argument_list|(

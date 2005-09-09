@@ -159,6 +159,16 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GdkWindow
+modifier|*
+name|gimp_ui_get_progress_window
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_window_set_transient_for_display
 parameter_list|(
@@ -174,7 +184,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_window_set_transient_for_default_display
+name|gimp_window_set_transient
 parameter_list|(
 name|GtkWindow
 modifier|*

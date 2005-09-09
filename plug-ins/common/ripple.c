@@ -122,7 +122,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c87e8b0108
+DECL|struct|__anon28db1d680108
 block|{
 DECL|member|period
 name|gint
@@ -923,7 +923,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon29c87e8b0208
+DECL|struct|__anon28db1d680208
 typedef|typedef
 struct|struct
 block|{
@@ -2148,7 +2148,7 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-name|gimp_window_set_transient_for_default_display
+name|gimp_window_set_transient
 argument_list|(
 name|GTK_WINDOW
 argument_list|(

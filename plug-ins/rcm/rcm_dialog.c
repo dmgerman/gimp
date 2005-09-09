@@ -3418,11 +3418,13 @@ parameter_list|)
 block|{
 name|GtkWidget
 modifier|*
-name|dlg
-decl_stmt|,
+name|dialog
+decl_stmt|;
+name|GtkWidget
 modifier|*
 name|hbox
-decl_stmt|,
+decl_stmt|;
+name|GtkWidget
 modifier|*
 name|notebook
 decl_stmt|;
@@ -3444,7 +3446,6 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-comment|/* init GTK and install colormap */
 name|gimp_ui_init
 argument_list|(
 name|PLUG_IN_BINARY
@@ -3452,12 +3453,10 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-comment|/* init stock icons */
 name|rcm_stock_init
 argument_list|()
 expr_stmt|;
-comment|/* Create dialog */
-name|dlg
+name|dialog
 operator|=
 name|gimp_dialog_new
 argument_list|(
@@ -3491,7 +3490,7 @@ name|gtk_dialog_set_alternative_button_order
 argument_list|(
 name|GTK_DIALOG
 argument_list|(
-name|dlg
+name|dialog
 argument_list|)
 argument_list|,
 name|GTK_RESPONSE_OK
@@ -3502,11 +3501,11 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-name|gimp_window_set_transient_for_default_display
+name|gimp_window_set_transient
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
-name|dlg
+name|dialog
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3516,7 +3515,7 @@ name|Bna
 operator|->
 name|dlg
 operator|=
-name|dlg
+name|dialog
 expr_stmt|;
 comment|/* Create sub-dialogs */
 name|Current
@@ -3577,7 +3576,7 @@ name|GTK_BOX
 argument_list|(
 name|GTK_DIALOG
 argument_list|(
-name|dlg
+name|dialog
 argument_list|)
 operator|->
 name|vbox
@@ -3709,7 +3708,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|dlg
+name|dialog
 argument_list|)
 expr_stmt|;
 name|rcm_render_circle
@@ -3758,7 +3757,7 @@ name|gimp_dialog_run
 argument_list|(
 name|GIMP_DIALOG
 argument_list|(
-name|dlg
+name|dialog
 argument_list|)
 argument_list|)
 operator|==
@@ -3767,7 +3766,7 @@ operator|)
 expr_stmt|;
 name|gtk_widget_destroy
 argument_list|(
-name|dlg
+name|dialog
 argument_list|)
 expr_stmt|;
 return|return

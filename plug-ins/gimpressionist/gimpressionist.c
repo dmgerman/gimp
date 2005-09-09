@@ -114,11 +114,11 @@ value|1
 end_define
 
 begin_decl_stmt
-DECL|variable|dlg
+DECL|variable|dialog
 specifier|static
 name|GtkWidget
 modifier|*
-name|dlg
+name|dialog
 init|=
 name|NULL
 decl_stmt|;
@@ -807,7 +807,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|dlg
+name|dialog
 operator|=
 name|gimp_dialog_new
 argument_list|(
@@ -848,7 +848,7 @@ name|gtk_dialog_set_alternative_button_order
 argument_list|(
 name|GTK_DIALOG
 argument_list|(
-name|dlg
+name|dialog
 argument_list|)
 argument_list|,
 name|RESPONSE_ABOUT
@@ -861,17 +861,17 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-name|gimp_window_set_transient_for_default_display
+name|gimp_window_set_transient
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
-name|dlg
+name|dialog
 argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|dlg
+name|dialog
 argument_list|,
 literal|"response"
 argument_list|,
@@ -885,7 +885,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|dlg
+name|dialog
 argument_list|,
 literal|"destroy"
 argument_list|,
@@ -922,7 +922,7 @@ name|GTK_CONTAINER
 argument_list|(
 name|GTK_DIALOG
 argument_list|(
-name|dlg
+name|dialog
 argument_list|)
 operator|->
 name|vbox
@@ -1065,11 +1065,11 @@ argument_list|()
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|dlg
+name|dialog
 argument_list|)
 expr_stmt|;
 return|return
-name|dlg
+name|dialog
 return|;
 block|}
 end_function

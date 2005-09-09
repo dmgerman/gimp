@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c414e830103
+DECL|enum|__anon2c59fde10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -273,6 +273,18 @@ begin_function_decl
 specifier|static
 name|void
 name|gimp_pdb_progress_progress_pulse
+parameter_list|(
+name|GimpProgress
+modifier|*
+name|progress
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|guint32
+name|gimp_pdb_progress_progress_get_window
 parameter_list|(
 name|GimpProgress
 modifier|*
@@ -589,6 +601,12 @@ name|pulse
 operator|=
 name|gimp_pdb_progress_progress_pulse
 expr_stmt|;
+name|progress_iface
+operator|->
+name|get_window
+operator|=
+name|gimp_pdb_progress_progress_get_window
+expr_stmt|;
 block|}
 end_function
 
@@ -888,7 +906,7 @@ end_function
 
 begin_function
 specifier|static
-name|void
+name|gdouble
 DECL|function|gimp_pdb_progress_run_callback (GimpPdbProgress * progress,GimpProgressCommand command,const gchar * text,gdouble value)
 name|gimp_pdb_progress_run_callback
 parameter_list|(
@@ -908,6 +926,11 @@ name|gdouble
 name|value
 parameter_list|)
 block|{
+name|gdouble
+name|retval
+init|=
+literal|0
+decl_stmt|;
 if|if
 condition|(
 name|progress
@@ -1006,6 +1029,35 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+elseif|else
+if|if
+condition|(
+name|n_return_vals
+operator|>=
+literal|2
+operator|&&
+name|return_vals
+index|[
+literal|1
+index|]
+operator|.
+name|arg_type
+operator|==
+name|GIMP_PDB_FLOAT
+condition|)
+block|{
+name|retval
+operator|=
+name|return_vals
+index|[
+literal|1
+index|]
+operator|.
+name|value
+operator|.
+name|pdb_float
+expr_stmt|;
+block|}
 if|if
 condition|(
 name|return_vals
@@ -1024,6 +1076,9 @@ operator|=
 name|FALSE
 expr_stmt|;
 block|}
+return|return
+name|retval
+return|;
 block|}
 end_function
 
@@ -1340,6 +1395,44 @@ argument_list|,
 literal|0.0
 argument_list|)
 expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|guint32
+DECL|function|gimp_pdb_progress_progress_get_window (GimpProgress * progress)
+name|gimp_pdb_progress_progress_get_window
+parameter_list|(
+name|GimpProgress
+modifier|*
+name|progress
+parameter_list|)
+block|{
+name|GimpPdbProgress
+modifier|*
+name|pdb_progress
+init|=
+name|GIMP_PDB_PROGRESS
+argument_list|(
+name|progress
+argument_list|)
+decl_stmt|;
+return|return
+operator|(
+name|guint32
+operator|)
+name|gimp_pdb_progress_run_callback
+argument_list|(
+name|pdb_progress
+argument_list|,
+name|GIMP_PROGRESS_COMMAND_GET_WINDOW
+argument_list|,
+name|NULL
+argument_list|,
+literal|0.0
+argument_list|)
+return|;
 block|}
 end_function
 

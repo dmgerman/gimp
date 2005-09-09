@@ -138,7 +138,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c147110103
+DECL|enum|__anon274d5de30103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -158,7 +158,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c147110203
+DECL|enum|__anon274d5de30203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -174,7 +174,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c147110308
+DECL|struct|__anon274d5de30308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -196,7 +196,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon29c14711040a
+DECL|union|__anon274d5de3040a
 block|{
 DECL|member|d
 name|gdouble
@@ -221,7 +221,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c147110508
+DECL|struct|__anon274d5de30508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -251,7 +251,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c147110608
+DECL|struct|__anon274d5de30608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -286,7 +286,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c147110708
+DECL|struct|__anon274d5de30708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -322,7 +322,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c147110808
+DECL|struct|__anon274d5de30808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -389,7 +389,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c147110908
+DECL|struct|__anon274d5de30908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -538,7 +538,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c147110a08
+DECL|struct|__anon274d5de30a08
 block|{
 DECL|member|run
 name|gboolean
@@ -4095,7 +4095,7 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-name|gimp_window_set_transient_for_default_display
+name|gimp_window_set_transient
 argument_list|(
 name|GTK_WINDOW
 argument_list|(

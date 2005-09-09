@@ -139,7 +139,7 @@ end_define
 
 begin_struct
 struct|struct
-DECL|struct|__anon29b551e20108
+DECL|struct|__anon2b7412dd0108
 block|{
 DECL|member|randomize
 name|gint
@@ -223,7 +223,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|dialog
+name|flame_dialog
 parameter_list|(
 name|void
 parameter_list|)
@@ -346,11 +346,11 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|dlg
+DECL|variable|dialog
 specifier|static
 name|GtkWidget
 modifier|*
-name|dlg
+name|dialog
 decl_stmt|;
 end_decl_stmt
 
@@ -377,11 +377,11 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|file_dlg
+DECL|variable|file_dialog
 specifier|static
 name|GtkWidget
 modifier|*
-name|file_dlg
+name|file_dialog
 init|=
 name|NULL
 decl_stmt|;
@@ -396,11 +396,11 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|edit_dlg
+DECL|variable|edit_dialog
 specifier|static
 name|GtkWidget
 modifier|*
-name|edit_dlg
+name|edit_dialog
 init|=
 name|NULL
 decl_stmt|;
@@ -902,7 +902,7 @@ block|{
 if|if
 condition|(
 operator|!
-name|dialog
+name|flame_dialog
 argument_list|()
 condition|)
 block|{
@@ -2046,7 +2046,7 @@ name|config
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/* gtk_widget_destroy(dlg); */
+comment|/* gtk_widget_destroy(dialog); */
 name|set_flame_preview
 argument_list|()
 expr_stmt|;
@@ -2167,8 +2167,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|make_file_dlg (const gchar * title,GtkWidget * parent)
-name|make_file_dlg
+DECL|function|make_file_dialog (const gchar * title,GtkWidget * parent)
+name|make_file_dialog
 parameter_list|(
 specifier|const
 name|gchar
@@ -2180,7 +2180,7 @@ modifier|*
 name|parent
 parameter_list|)
 block|{
-name|file_dlg
+name|file_dialog
 operator|=
 name|gtk_file_chooser_dialog_new
 argument_list|(
@@ -2216,7 +2216,7 @@ name|gtk_dialog_set_alternative_button_order
 argument_list|(
 name|GTK_DIALOG
 argument_list|(
-name|file_dlg
+name|file_dialog
 argument_list|)
 argument_list|,
 name|GTK_RESPONSE_OK
@@ -2231,21 +2231,21 @@ name|g_object_add_weak_pointer
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|file_dlg
+name|file_dialog
 argument_list|)
 argument_list|,
 operator|(
 name|gpointer
 operator|)
 operator|&
-name|file_dlg
+name|file_dialog
 argument_list|)
 expr_stmt|;
 name|gtk_dialog_set_default_response
 argument_list|(
 name|GTK_DIALOG
 argument_list|(
-name|file_dlg
+name|file_dialog
 argument_list|)
 argument_list|,
 name|GTK_RESPONSE_OK
@@ -2255,7 +2255,7 @@ name|gtk_window_set_destroy_with_parent
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
-name|file_dlg
+name|file_dialog
 argument_list|)
 argument_list|,
 name|TRUE
@@ -2263,7 +2263,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|file_dlg
+name|file_dialog
 argument_list|,
 literal|"delete-event"
 argument_list|,
@@ -2277,7 +2277,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|file_dlg
+name|file_dialog
 argument_list|,
 literal|"response"
 argument_list|,
@@ -2868,7 +2868,7 @@ name|cp
 expr_stmt|;
 if|if
 condition|(
-name|edit_dlg
+name|edit_dialog
 operator|==
 name|NULL
 condition|)
@@ -2914,7 +2914,7 @@ name|i
 decl_stmt|,
 name|j
 decl_stmt|;
-name|edit_dlg
+name|edit_dialog
 operator|=
 name|gimp_dialog_new
 argument_list|(
@@ -2948,7 +2948,7 @@ name|gtk_dialog_set_alternative_button_order
 argument_list|(
 name|GTK_DIALOG
 argument_list|(
-name|edit_dlg
+name|edit_dialog
 argument_list|)
 argument_list|,
 name|GTK_RESPONSE_OK
@@ -2961,7 +2961,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|edit_dlg
+name|edit_dialog
 argument_list|,
 literal|"response"
 argument_list|,
@@ -2970,7 +2970,7 @@ argument_list|(
 name|edit_response
 argument_list|)
 argument_list|,
-name|edit_dlg
+name|edit_dialog
 argument_list|)
 expr_stmt|;
 name|main_vbox
@@ -2998,7 +2998,7 @@ name|GTK_BOX
 argument_list|(
 name|GTK_DIALOG
 argument_list|(
-name|edit_dlg
+name|edit_dialog
 argument_list|)
 operator|->
 name|vbox
@@ -3680,7 +3680,7 @@ name|gtk_window_present
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
-name|edit_dlg
+name|edit_dialog
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3704,14 +3704,14 @@ block|{
 if|if
 condition|(
 operator|!
-name|file_dlg
+name|file_dialog
 condition|)
 block|{
 name|load_save
 operator|=
 literal|1
 expr_stmt|;
-name|make_file_dlg
+name|make_file_dialog
 argument_list|(
 name|_
 argument_list|(
@@ -3736,7 +3736,7 @@ name|gtk_window_present
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
-name|file_dlg
+name|file_dialog
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3760,14 +3760,14 @@ block|{
 if|if
 condition|(
 operator|!
-name|file_dlg
+name|file_dialog
 condition|)
 block|{
 name|load_save
 operator|=
 literal|0
 expr_stmt|;
-name|make_file_dlg
+name|make_file_dialog
 argument_list|(
 name|_
 argument_list|(
@@ -3792,7 +3792,7 @@ name|gtk_window_present
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
-name|file_dlg
+name|file_dialog
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4348,8 +4348,8 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|dialog (void)
-name|dialog
+DECL|function|flame_dialog (void)
+name|flame_dialog
 parameter_list|(
 name|void
 parameter_list|)
@@ -4400,7 +4400,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|dlg
+name|dialog
 operator|=
 name|gimp_dialog_new
 argument_list|(
@@ -4434,7 +4434,7 @@ name|gtk_dialog_set_alternative_button_order
 argument_list|(
 name|GTK_DIALOG
 argument_list|(
-name|dlg
+name|dialog
 argument_list|)
 argument_list|,
 name|GTK_RESPONSE_OK
@@ -4445,11 +4445,11 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-name|gimp_window_set_transient_for_default_display
+name|gimp_window_set_transient
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
-name|dlg
+name|dialog
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4478,7 +4478,7 @@ name|GTK_BOX
 argument_list|(
 name|GTK_DIALOG
 argument_list|(
-name|dlg
+name|dialog
 argument_list|)
 operator|->
 name|vbox
@@ -4812,7 +4812,7 @@ argument_list|(
 name|edit_callback
 argument_list|)
 argument_list|,
-name|dlg
+name|dialog
 argument_list|)
 expr_stmt|;
 name|load_button
@@ -6124,7 +6124,7 @@ argument_list|()
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|dlg
+name|dialog
 argument_list|)
 expr_stmt|;
 name|run
@@ -6134,7 +6134,7 @@ name|gimp_dialog_run
 argument_list|(
 name|GIMP_DIALOG
 argument_list|(
-name|dlg
+name|dialog
 argument_list|)
 argument_list|)
 operator|==
@@ -6143,7 +6143,7 @@ operator|)
 expr_stmt|;
 name|gtk_widget_destroy
 argument_list|(
-name|dlg
+name|dialog
 argument_list|)
 expr_stmt|;
 return|return

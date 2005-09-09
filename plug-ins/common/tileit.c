@@ -112,7 +112,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon286d3cee0108
+DECL|struct|__anon2901e4960108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -494,7 +494,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon286d3cee0203
+DECL|enum|__anon2901e4960203
 block|{
 DECL|enumerator|ALL
 name|ALL
@@ -513,7 +513,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon286d3cee0308
+DECL|struct|__anon2901e4960308
 block|{
 DECL|member|type
 name|AppliedTo
@@ -583,7 +583,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon286d3cee0408
+DECL|struct|__anon2901e4960408
 block|{
 DECL|member|htoggle
 name|GtkWidget
@@ -1364,7 +1364,7 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-name|gimp_window_set_transient_for_default_display
+name|gimp_window_set_transient
 argument_list|(
 name|GTK_WINDOW
 argument_list|(

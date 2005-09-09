@@ -119,7 +119,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b508c2e0103
+DECL|enum|__anon29410b420103
 block|{
 DECL|enumerator|LINEAR
 name|LINEAR
@@ -137,7 +137,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b508c2e0203
+DECL|enum|__anon29410b420203
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE
@@ -153,7 +153,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b508c2e0308
+DECL|struct|__anon29410b420308
 block|{
 DECL|member|bumpmap_id
 name|gint32
@@ -212,7 +212,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b508c2e0408
+DECL|struct|__anon29410b420408
 block|{
 DECL|member|lx
 DECL|member|ly
@@ -257,7 +257,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b508c2e0508
+DECL|struct|__anon29410b420508
 block|{
 DECL|member|mouse_x
 name|gint
@@ -3427,7 +3427,7 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-name|gimp_window_set_transient_for_default_display
+name|gimp_window_set_transient
 argument_list|(
 name|GTK_WINDOW
 argument_list|(

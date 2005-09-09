@@ -183,7 +183,7 @@ name|MAIN
 argument_list|()
 comment|/******************************************************************************/
 expr|enum
-DECL|enum|__anon28dc25610103
+DECL|enum|__anon2ac213b20103
 block|{
 DECL|enumerator|OUTSIDE_TYPE_WRAP
 name|OUTSIDE_TYPE_WRAP
@@ -203,7 +203,7 @@ end_expr_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dc25610208
+DECL|struct|__anon2ac213b20208
 block|{
 DECL|member|x1
 name|gdouble
@@ -406,7 +406,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dc25610308
+DECL|struct|__anon2ac213b20308
 block|{
 DECL|member|x1
 name|gint
@@ -449,7 +449,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dc25610408
+DECL|struct|__anon2ac213b20408
 block|{
 DECL|member|width
 name|gint
@@ -1004,7 +1004,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dc25610508
+DECL|struct|__anon2ac213b20508
 block|{
 DECL|member|r
 name|guchar
@@ -2882,7 +2882,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dc25610608
+DECL|struct|__anon2ac213b20608
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -3880,7 +3880,7 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-name|gimp_window_set_transient_for_default_display
+name|gimp_window_set_transient
 argument_list|(
 name|GTK_WINDOW
 argument_list|(

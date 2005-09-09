@@ -269,6 +269,17 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GdkNativeWindow
+name|gimp_window_get_native
+parameter_list|(
+name|GtkWindow
+modifier|*
+name|window
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_dialog_set_sensitive
 parameter_list|(

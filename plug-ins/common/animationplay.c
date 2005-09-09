@@ -68,7 +68,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon297c00040103
+DECL|enum|__anon2bac36a20103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -615,7 +615,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297c00040208
+DECL|struct|__anon2bac36a20208
 block|{
 DECL|member|x
 DECL|member|y
@@ -1706,7 +1706,7 @@ argument_list|(
 name|windowname
 argument_list|)
 expr_stmt|;
-name|gimp_window_set_transient_for_default_display
+name|gimp_window_set_transient
 argument_list|(
 name|GTK_WINDOW
 argument_list|(

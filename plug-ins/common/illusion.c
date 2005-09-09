@@ -140,7 +140,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1cbdd90108
+DECL|struct|__anon28e3e68f0108
 block|{
 DECL|member|division
 name|gint32
@@ -627,7 +627,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2b1cbdd90208
+DECL|struct|__anon28e3e68f0208
 typedef|typedef
 struct|struct
 block|{
@@ -2001,7 +2001,7 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-name|gimp_window_set_transient_for_default_display
+name|gimp_window_set_transient
 argument_list|(
 name|GTK_WINDOW
 argument_list|(

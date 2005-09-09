@@ -66,7 +66,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon290e69440103
+DECL|enum|__anon2b15f54e0103
 block|{
 DECL|enumerator|EXTEND
 name|EXTEND
@@ -290,7 +290,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290e69440208
+DECL|struct|__anon2b15f54e0208
 block|{
 DECL|member|matrix
 name|gfloat
@@ -447,7 +447,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon290e69440308
+DECL|struct|__anon2b15f54e0308
 block|{
 DECL|member|matrix
 name|GtkWidget
@@ -3898,7 +3898,7 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-name|gimp_window_set_transient_for_default_display
+name|gimp_window_set_transient
 argument_list|(
 name|GTK_WINDOW
 argument_list|(

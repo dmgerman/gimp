@@ -60,7 +60,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a7346b0108
+DECL|struct|__anon2c75e8760108
 block|{
 DECL|member|posx
 name|gint
@@ -115,7 +115,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a7346b0208
+DECL|struct|__anon2c75e8760208
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -1207,7 +1207,7 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-name|gimp_window_set_transient_for_default_display
+name|gimp_window_set_transient
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
