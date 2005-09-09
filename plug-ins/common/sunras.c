@@ -127,7 +127,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27f2513e0108
+DECL|struct|__anon276f80ce0108
 block|{
 DECL|member|l_ras_magic
 name|L_CARD32
@@ -216,7 +216,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27f2513e0208
+DECL|struct|__anon276f80ce0208
 block|{
 DECL|member|val
 name|gint
@@ -811,7 +811,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27f2513e0308
+DECL|struct|__anon276f80ce0308
 block|{
 DECL|member|rle
 name|gboolean
@@ -7700,7 +7700,7 @@ parameter_list|)
 block|{
 name|GtkWidget
 modifier|*
-name|dlg
+name|dialog
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -7709,7 +7709,7 @@ decl_stmt|;
 name|gboolean
 name|run
 decl_stmt|;
-name|dlg
+name|dialog
 operator|=
 name|gimp_dialog_new
 argument_list|(
@@ -7743,7 +7743,7 @@ name|gtk_dialog_set_alternative_button_order
 argument_list|(
 name|GTK_DIALOG
 argument_list|(
-name|dlg
+name|dialog
 argument_list|)
 argument_list|,
 name|GTK_RESPONSE_OK
@@ -7752,6 +7752,14 @@ name|GTK_RESPONSE_CANCEL
 argument_list|,
 operator|-
 literal|1
+argument_list|)
+expr_stmt|;
+name|gimp_window_set_transient
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|dialog
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  file save type  */
@@ -7817,7 +7825,7 @@ name|GTK_BOX
 argument_list|(
 name|GTK_DIALOG
 argument_list|(
-name|dlg
+name|dialog
 argument_list|)
 operator|->
 name|vbox
@@ -7839,7 +7847,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|dlg
+name|dialog
 argument_list|)
 expr_stmt|;
 name|run
@@ -7849,7 +7857,7 @@ name|gimp_dialog_run
 argument_list|(
 name|GIMP_DIALOG
 argument_list|(
-name|dlg
+name|dialog
 argument_list|)
 argument_list|)
 operator|==
@@ -7858,7 +7866,7 @@ operator|)
 expr_stmt|;
 name|gtk_widget_destroy
 argument_list|(
-name|dlg
+name|dialog
 argument_list|)
 expr_stmt|;
 return|return

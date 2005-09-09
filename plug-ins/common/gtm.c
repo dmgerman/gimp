@@ -72,7 +72,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b45d800108
+DECL|struct|__anon2921bd250108
 block|{
 DECL|member|captiontxt
 name|gchar
@@ -1554,7 +1554,7 @@ parameter_list|)
 block|{
 name|GtkWidget
 modifier|*
-name|dlg
+name|dialog
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -1598,7 +1598,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|dlg
+name|dialog
 operator|=
 name|gimp_dialog_new
 argument_list|(
@@ -1632,7 +1632,7 @@ name|gtk_dialog_set_alternative_button_order
 argument_list|(
 name|GTK_DIALOG
 argument_list|(
-name|dlg
+name|dialog
 argument_list|)
 argument_list|,
 name|GTK_RESPONSE_OK
@@ -1641,6 +1641,14 @@ name|GTK_RESPONSE_CANCEL
 argument_list|,
 operator|-
 literal|1
+argument_list|)
+expr_stmt|;
+name|gimp_window_set_transient
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|dialog
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|main_vbox
@@ -1668,7 +1676,7 @@ name|GTK_BOX
 argument_list|(
 name|GTK_DIALOG
 argument_list|(
-name|dlg
+name|dialog
 argument_list|)
 operator|->
 name|vbox
@@ -2969,7 +2977,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|dlg
+name|dialog
 argument_list|)
 expr_stmt|;
 name|run
@@ -2979,7 +2987,7 @@ name|gimp_dialog_run
 argument_list|(
 name|GIMP_DIALOG
 argument_list|(
-name|dlg
+name|dialog
 argument_list|)
 argument_list|)
 operator|==
@@ -2988,7 +2996,7 @@ operator|)
 expr_stmt|;
 name|gtk_widget_destroy
 argument_list|(
-name|dlg
+name|dialog
 argument_list|)
 expr_stmt|;
 return|return

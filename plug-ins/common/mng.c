@@ -241,7 +241,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2932da210103
+DECL|enum|__anon29ade4f50103
 block|{
 DECL|enumerator|CHUNKS_PNG_D
 name|CHUNKS_PNG_D
@@ -260,7 +260,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2932da210203
+DECL|enum|__anon29ade4f50203
 block|{
 DECL|enumerator|DISPOSE_COMBINE
 name|DISPOSE_COMBINE
@@ -5069,7 +5069,7 @@ parameter_list|)
 block|{
 name|GtkWidget
 modifier|*
-name|dlg
+name|dialog
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -5125,7 +5125,7 @@ decl_stmt|;
 name|gboolean
 name|run
 decl_stmt|;
-name|dlg
+name|dialog
 operator|=
 name|gimp_dialog_new
 argument_list|(
@@ -5159,7 +5159,7 @@ name|gtk_dialog_set_alternative_button_order
 argument_list|(
 name|GTK_DIALOG
 argument_list|(
-name|dlg
+name|dialog
 argument_list|)
 argument_list|,
 name|GTK_RESPONSE_OK
@@ -5168,6 +5168,14 @@ name|GTK_RESPONSE_CANCEL
 argument_list|,
 operator|-
 literal|1
+argument_list|)
+expr_stmt|;
+name|gimp_window_set_transient
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|dialog
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|main_vbox
@@ -5195,7 +5203,7 @@ name|GTK_CONTAINER
 argument_list|(
 name|GTK_DIALOG
 argument_list|(
-name|dlg
+name|dialog
 argument_list|)
 operator|->
 name|vbox
@@ -6489,7 +6497,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|dlg
+name|dialog
 argument_list|)
 expr_stmt|;
 name|run
@@ -6499,7 +6507,7 @@ name|gimp_dialog_run
 argument_list|(
 name|GIMP_DIALOG
 argument_list|(
-name|dlg
+name|dialog
 argument_list|)
 argument_list|)
 operator|==
@@ -6508,7 +6516,7 @@ operator|)
 expr_stmt|;
 name|gtk_widget_destroy
 argument_list|(
-name|dlg
+name|dialog
 argument_list|)
 expr_stmt|;
 return|return

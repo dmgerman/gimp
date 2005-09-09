@@ -132,7 +132,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c0777f80103
+DECL|enum|__anon295422f60103
 block|{
 DECL|enumerator|RAW_RGB
 name|RAW_RGB
@@ -158,7 +158,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c0777f80203
+DECL|enum|__anon295422f60203
 block|{
 DECL|enumerator|RAW_PALETTE_RGB
 name|RAW_PALETTE_RGB
@@ -176,7 +176,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0777f80308
+DECL|struct|__anon295422f60308
 block|{
 DECL|member|file_offset
 name|gint32
@@ -217,7 +217,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0777f80408
+DECL|struct|__anon295422f60408
 block|{
 DECL|member|fp
 name|FILE
@@ -5203,6 +5203,14 @@ name|GTK_RESPONSE_CANCEL
 argument_list|,
 operator|-
 literal|1
+argument_list|)
+expr_stmt|;
+name|gimp_window_set_transient
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|dialog
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|main_vbox

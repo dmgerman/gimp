@@ -140,7 +140,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b69d8b30108
+DECL|struct|__anon29a328460108
 block|{
 DECL|member|cinfo
 name|struct
@@ -2792,6 +2792,14 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+name|gimp_window_set_transient
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|vbox
 operator|=
 name|gtk_vbox_new
@@ -4773,7 +4781,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b69d8b30208
+DECL|struct|__anon29a328460208
 block|{
 DECL|member|pub
 name|struct

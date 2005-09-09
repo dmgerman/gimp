@@ -520,6 +520,14 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
+name|gimp_window_set_transient
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/* We store an array that holds each icon's requested bit depth      with the dialog. It's queried when the dialog is closed so the      save routine knows what colormaps etc to generate in the saved      file. We store twice the number necessary because in the second      set, the color depths that are automatically suggested are stored      for later comparison.   */
 name|icon_depths
 operator|=

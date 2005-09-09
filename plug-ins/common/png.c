@@ -170,7 +170,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a5752ec0108
+DECL|struct|__anon2a4ebc1c0108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -217,7 +217,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a5752ec0208
+DECL|struct|__anon2a4ebc1c0208
 block|{
 DECL|member|run
 name|gboolean
@@ -5904,7 +5904,7 @@ name|pg
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|dlg
+name|dialog
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -5922,7 +5922,7 @@ name|GimpParasite
 modifier|*
 name|parasite
 decl_stmt|;
-name|dlg
+name|dialog
 operator|=
 name|gimp_dialog_new
 argument_list|(
@@ -5970,7 +5970,7 @@ name|gtk_dialog_set_alternative_button_order
 argument_list|(
 name|GTK_DIALOG
 argument_list|(
-name|dlg
+name|dialog
 argument_list|)
 argument_list|,
 name|RESPONSE_LOAD_DEFAULTS
@@ -5985,9 +5985,17 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
+name|gimp_window_set_transient
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|dlg
+name|dialog
 argument_list|,
 literal|"response"
 argument_list|,
@@ -6002,7 +6010,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|dlg
+name|dialog
 argument_list|,
 literal|"destroy"
 argument_list|,
@@ -6061,7 +6069,7 @@ name|GTK_BOX
 argument_list|(
 name|GTK_DIALOG
 argument_list|(
-name|dlg
+name|dialog
 argument_list|)
 operator|->
 name|vbox
@@ -6795,7 +6803,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|dlg
+name|dialog
 argument_list|)
 expr_stmt|;
 name|pg
