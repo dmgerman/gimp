@@ -3426,7 +3426,7 @@ endif|#
 directive|endif
 if|if
 condition|(
-name|strcasecmp
+name|g_ascii_strcasecmp
 argument_list|(
 literal|"current-printer"
 argument_list|,
@@ -3456,7 +3456,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|strcasecmp
+name|g_ascii_strcasecmp
 argument_list|(
 literal|"printer"
 argument_list|,
@@ -3513,7 +3513,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|strcasecmp
+name|g_ascii_strcasecmp
 argument_list|(
 literal|"destination"
 argument_list|,
@@ -3536,7 +3536,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|strcasecmp
+name|g_ascii_strcasecmp
 argument_list|(
 literal|"driver"
 argument_list|,
@@ -3559,7 +3559,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|strcasecmp
+name|g_ascii_strcasecmp
 argument_list|(
 literal|"ppd-file"
 argument_list|,
@@ -3582,7 +3582,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|strcasecmp
+name|g_ascii_strcasecmp
 argument_list|(
 literal|"output-type"
 argument_list|,
@@ -3608,7 +3608,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|strcasecmp
+name|g_ascii_strcasecmp
 argument_list|(
 literal|"resolution"
 argument_list|,
@@ -3631,7 +3631,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|strcasecmp
+name|g_ascii_strcasecmp
 argument_list|(
 literal|"media-size"
 argument_list|,
@@ -3654,7 +3654,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|strcasecmp
+name|g_ascii_strcasecmp
 argument_list|(
 literal|"media-type"
 argument_list|,
@@ -3677,7 +3677,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|strcasecmp
+name|g_ascii_strcasecmp
 argument_list|(
 literal|"media-source"
 argument_list|,
@@ -3700,7 +3700,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|strcasecmp
+name|g_ascii_strcasecmp
 argument_list|(
 literal|"brightness"
 argument_list|,
@@ -3726,7 +3726,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|strcasecmp
+name|g_ascii_strcasecmp
 argument_list|(
 literal|"scaling"
 argument_list|,
@@ -3752,7 +3752,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|strcasecmp
+name|g_ascii_strcasecmp
 argument_list|(
 literal|"orientation"
 argument_list|,
@@ -3778,7 +3778,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|strcasecmp
+name|g_ascii_strcasecmp
 argument_list|(
 literal|"left"
 argument_list|,
@@ -3804,7 +3804,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|strcasecmp
+name|g_ascii_strcasecmp
 argument_list|(
 literal|"top"
 argument_list|,
@@ -3830,7 +3830,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|strcasecmp
+name|g_ascii_strcasecmp
 argument_list|(
 literal|"gamma"
 argument_list|,
@@ -3856,7 +3856,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|strcasecmp
+name|g_ascii_strcasecmp
 argument_list|(
 literal|"contrast"
 argument_list|,
@@ -3882,7 +3882,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|strcasecmp
+name|g_ascii_strcasecmp
 argument_list|(
 literal|"cyan"
 argument_list|,
@@ -3908,7 +3908,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|strcasecmp
+name|g_ascii_strcasecmp
 argument_list|(
 literal|"magenta"
 argument_list|,
@@ -3934,7 +3934,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|strcasecmp
+name|g_ascii_strcasecmp
 argument_list|(
 literal|"yellow"
 argument_list|,
@@ -3960,7 +3960,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|strcasecmp
+name|g_ascii_strcasecmp
 argument_list|(
 literal|"linear"
 argument_list|,
@@ -3975,7 +3975,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|strcasecmp
+name|g_ascii_strcasecmp
 argument_list|(
 literal|"image-type"
 argument_list|,
@@ -4001,7 +4001,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|strcasecmp
+name|g_ascii_strcasecmp
 argument_list|(
 literal|"saturation"
 argument_list|,
@@ -4027,7 +4027,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|strcasecmp
+name|g_ascii_strcasecmp
 argument_list|(
 literal|"density"
 argument_list|,
@@ -4053,7 +4053,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|strcasecmp
+name|g_ascii_strcasecmp
 argument_list|(
 literal|"ink-type"
 argument_list|,
@@ -4076,7 +4076,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|strcasecmp
+name|g_ascii_strcasecmp
 argument_list|(
 literal|"dither-algorithm"
 argument_list|,
@@ -4099,7 +4099,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|strcasecmp
+name|g_ascii_strcasecmp
 argument_list|(
 literal|"unit"
 argument_list|,
@@ -4125,7 +4125,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|strcasecmp
+name|g_ascii_strcasecmp
 argument_list|(
 literal|"custom-page-width"
 argument_list|,
@@ -4151,7 +4151,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|strcasecmp
+name|g_ascii_strcasecmp
 argument_list|(
 literal|"custom-page-height"
 argument_list|,
