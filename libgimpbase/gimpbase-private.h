@@ -17,18 +17,18 @@ name|__GIMP_BASE_PRIVATE_H__
 end_define
 
 begin_typedef
-DECL|typedef|GimpUnitVTable
+DECL|typedef|GimpUnitVtable
 typedef|typedef
 name|struct
-name|_GimpUnitVTable
-name|GimpUnitVTable
+name|_GimpUnitVtable
+name|GimpUnitVtable
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpUnitVTable
+DECL|struct|_GimpUnitVtable
 struct|struct
-name|_GimpUnitVTable
+name|_GimpUnitVtable
 block|{
 DECL|member|unit_get_number_of_units
 name|gint
@@ -242,7 +242,7 @@ end_struct
 
 begin_decl_stmt
 specifier|extern
-name|GimpUnitVTable
+name|GimpUnitVtable
 name|_gimp_unit_vtable
 decl_stmt|;
 end_decl_stmt
@@ -252,7 +252,7 @@ name|G_BEGIN_DECLS
 name|void
 name|gimp_base_init
 parameter_list|(
-name|GimpUnitVTable
+name|GimpUnitVtable
 modifier|*
 name|vtable
 parameter_list|)

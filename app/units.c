@@ -364,7 +364,7 @@ modifier|*
 name|gimp
 parameter_list|)
 block|{
-name|GimpUnitVTable
+name|GimpUnitVtable
 name|vtable
 decl_stmt|;
 name|g_return_if_fail

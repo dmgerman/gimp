@@ -35,7 +35,7 @@ end_include
 
 begin_decl_stmt
 DECL|variable|_gimp_unit_vtable
-name|GimpUnitVTable
+name|GimpUnitVtable
 name|_gimp_unit_vtable
 init|=
 block|{
@@ -46,10 +46,10 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|gimp_base_init (GimpUnitVTable * vtable)
+DECL|function|gimp_base_init (GimpUnitVtable * vtable)
 name|gimp_base_init
 parameter_list|(
-name|GimpUnitVTable
+name|GimpUnitVtable
 modifier|*
 name|vtable
 parameter_list|)

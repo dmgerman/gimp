@@ -414,7 +414,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29f94c850103
+DECL|enum|__anon2b604e8a0103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -1634,7 +1634,7 @@ argument_list|()
 expr_stmt|;
 comment|/*  initialize units  */
 block|{
-name|GimpUnitVTable
+name|GimpUnitVtable
 name|vtable
 decl_stmt|;
 name|vtable
