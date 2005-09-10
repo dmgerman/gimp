@@ -122,7 +122,7 @@ name|GimpViewType
 name|popup_view_type
 decl_stmt|;
 DECL|member|popup_preview_size
-name|GimpViewType
+name|gint
 name|popup_preview_size
 decl_stmt|;
 DECL|member|preview_size
