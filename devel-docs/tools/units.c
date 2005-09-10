@@ -32,7 +32,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b52f88c0108
+DECL|struct|__anon299ad90a0108
 block|{
 DECL|member|factor
 name|gdouble
@@ -339,7 +339,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|GimpUnitVTable
+name|GimpUnitVtable
 name|vtable
 decl_stmt|;
 name|vtable
