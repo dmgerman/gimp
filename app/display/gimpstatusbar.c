@@ -48,12 +48,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpmarshal.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpprogress.h"
 end_include
 
@@ -566,7 +560,7 @@ name|widget_class
 argument_list|,
 name|g_param_spec_enum
 argument_list|(
-literal|"shadow_type"
+literal|"shadow-type"
 argument_list|,
 name|_
 argument_list|(
