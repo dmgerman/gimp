@@ -4176,7 +4176,7 @@ name|GIMP_UNDO_GROUP_IMAGE_VECTORS_MERGE
 block|,
 name|N_
 argument_list|(
-literal|"Merge vectors"
+literal|"Merge paths"
 argument_list|)
 block|,
 name|NULL
@@ -4231,7 +4231,7 @@ name|GIMP_UNDO_GROUP_DRAWABLE
 block|,
 name|N_
 argument_list|(
-literal|"Drawable"
+literal|"Layer/Channel"
 argument_list|)
 block|,
 name|NULL
@@ -4242,7 +4242,7 @@ name|GIMP_UNDO_GROUP_DRAWABLE_MOD
 block|,
 name|N_
 argument_list|(
-literal|"Drawable mod"
+literal|"Layer/Channel modification"
 argument_list|)
 block|,
 name|NULL
@@ -4275,7 +4275,7 @@ name|GIMP_UNDO_GROUP_ITEM_LINKED
 block|,
 name|N_
 argument_list|(
-literal|"Linked item"
+literal|"Link/Unlink item"
 argument_list|)
 block|,
 name|NULL
@@ -4517,7 +4517,7 @@ name|GIMP_UNDO_IMAGE_RESOLUTION
 block|,
 name|N_
 argument_list|(
-literal|"Resolution change"
+literal|"Image resolution change"
 argument_list|)
 block|,
 name|NULL
@@ -4572,7 +4572,7 @@ name|GIMP_UNDO_DRAWABLE
 block|,
 name|N_
 argument_list|(
-literal|"Drawable"
+literal|"Layer/Channel"
 argument_list|)
 block|,
 name|NULL
@@ -4583,7 +4583,7 @@ name|GIMP_UNDO_DRAWABLE_MOD
 block|,
 name|N_
 argument_list|(
-literal|"Drawable mod"
+literal|"Layer/Channel modification"
 argument_list|)
 block|,
 name|NULL
@@ -4638,7 +4638,7 @@ name|GIMP_UNDO_ITEM_LINKED
 block|,
 name|N_
 argument_list|(
-literal|"Set item linked"
+literal|"Link/Unlink item"
 argument_list|)
 block|,
 name|NULL
@@ -4715,7 +4715,7 @@ name|GIMP_UNDO_TEXT_LAYER
 block|,
 name|N_
 argument_list|(
-literal|"Text"
+literal|"Text layer"
 argument_list|)
 block|,
 name|NULL
@@ -4726,7 +4726,7 @@ name|GIMP_UNDO_TEXT_LAYER_MODIFIED
 block|,
 name|N_
 argument_list|(
-literal|"Text modified"
+literal|"Text layer modification"
 argument_list|)
 block|,
 name|NULL
@@ -4825,7 +4825,7 @@ name|GIMP_UNDO_VECTORS_ADD
 block|,
 name|N_
 argument_list|(
-literal|"New vectors"
+literal|"New path"
 argument_list|)
 block|,
 name|NULL
@@ -4836,7 +4836,7 @@ name|GIMP_UNDO_VECTORS_REMOVE
 block|,
 name|N_
 argument_list|(
-literal|"Delete vectors"
+literal|"Delete path"
 argument_list|)
 block|,
 name|NULL
@@ -4847,7 +4847,7 @@ name|GIMP_UNDO_VECTORS_MOD
 block|,
 name|N_
 argument_list|(
-literal|"Vectors mod"
+literal|"Path modification"
 argument_list|)
 block|,
 name|NULL
@@ -4858,7 +4858,7 @@ name|GIMP_UNDO_VECTORS_REPOSITION
 block|,
 name|N_
 argument_list|(
-literal|"Reposition vectors"
+literal|"Reposition path"
 argument_list|)
 block|,
 name|NULL
@@ -4869,7 +4869,7 @@ name|GIMP_UNDO_FS_TO_LAYER
 block|,
 name|N_
 argument_list|(
-literal|"FS to layer"
+literal|"Floating selection to layer"
 argument_list|)
 block|,
 name|NULL
@@ -4933,7 +4933,10 @@ block|,
 block|{
 name|GIMP_UNDO_FOREGROUND_SELECT
 block|,
-literal|"GIMP_UNDO_FOREGROUND_SELECT"
+name|N_
+argument_list|(
+literal|"Select foreground"
+argument_list|)
 block|,
 name|NULL
 block|}
