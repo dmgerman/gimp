@@ -181,6 +181,17 @@ argument_list|)
 block|}
 block|,
 block|{
+literal|"image-mode-menu"
+block|,
+name|NULL
+block|,
+name|N_
+argument_list|(
+literal|"_Mode"
+argument_list|)
+block|}
+block|,
+block|{
 literal|"image-transform-menu"
 block|,
 name|NULL
@@ -210,17 +221,6 @@ block|,
 name|N_
 argument_list|(
 literal|"_Colors"
-argument_list|)
-block|}
-block|,
-block|{
-literal|"colors-image-mode-menu"
-block|,
-name|NULL
-block|,
-name|N_
-argument_list|(
-literal|"_Image Mode"
 argument_list|)
 block|}
 block|,
