@@ -88,6 +88,20 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpDockSeparator
+typedef|typedef
+name|struct
+name|_GimpDockSeparator
+name|GimpDockSeparator
+typedef|;
+end_typedef
+
+begin_comment
+DECL|typedef|GimpDockSeparator
+comment|/* not a dock */
+end_comment
+
+begin_typedef
 DECL|typedef|GimpImageDock
 typedef|typedef
 name|struct
