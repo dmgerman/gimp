@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpwidgets-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -80,7 +86,6 @@ modifier|*
 name|name
 decl_stmt|;
 DECL|member|blurb
-specifier|const
 name|gchar
 modifier|*
 name|blurb
@@ -192,7 +197,6 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|keyboard_events
 specifier|static
-specifier|const
 name|KeyboardEvent
 name|keyboard_events
 index|[]
@@ -211,7 +215,7 @@ literal|"key-up-shift-control-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Cursor Up (Shift + Control + Alt)"
+literal|"Cursor Up"
 argument_list|)
 block|}
 block|,
@@ -226,7 +230,7 @@ literal|"key-up-control-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Cursor Up (Control + Alt)"
+literal|"Cursor Up"
 argument_list|)
 block|}
 block|,
@@ -241,7 +245,7 @@ literal|"key-up-shift-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Cursor Up (Shift + Alt)"
+literal|"Cursor Up"
 argument_list|)
 block|}
 block|,
@@ -256,7 +260,7 @@ literal|"key-up-shift-control"
 block|,
 name|N_
 argument_list|(
-literal|"Cursor Up (Shift + Control)"
+literal|"Cursor Up"
 argument_list|)
 block|}
 block|,
@@ -269,7 +273,7 @@ literal|"key-up-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Cursor Up (Alt)"
+literal|"Cursor Up"
 argument_list|)
 block|}
 block|,
@@ -282,7 +286,7 @@ literal|"key-up-control"
 block|,
 name|N_
 argument_list|(
-literal|"Cursor Up (Control)"
+literal|"Cursor Up"
 argument_list|)
 block|}
 block|,
@@ -295,7 +299,7 @@ literal|"key-up-shift"
 block|,
 name|N_
 argument_list|(
-literal|"Cursor Up (Shift)"
+literal|"Cursor Up"
 argument_list|)
 block|}
 block|,
@@ -325,7 +329,7 @@ literal|"key-down-shift-control-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Cursor Down (Shift + Control + Alt)"
+literal|"Cursor Down"
 argument_list|)
 block|}
 block|,
@@ -340,7 +344,7 @@ literal|"key-down-control-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Cursor Down (Control + Alt)"
+literal|"Cursor Down"
 argument_list|)
 block|}
 block|,
@@ -355,7 +359,7 @@ literal|"key-down-shift-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Cursor Down (Shift + Alt)"
+literal|"Cursor Down"
 argument_list|)
 block|}
 block|,
@@ -370,7 +374,7 @@ literal|"key-down-shift-control"
 block|,
 name|N_
 argument_list|(
-literal|"Cursor Down (Shift + Control)"
+literal|"Cursor Down"
 argument_list|)
 block|}
 block|,
@@ -383,7 +387,7 @@ literal|"key-down-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Cursor Down (Alt)"
+literal|"Cursor Down"
 argument_list|)
 block|}
 block|,
@@ -396,7 +400,7 @@ literal|"key-down-control"
 block|,
 name|N_
 argument_list|(
-literal|"Cursor Down (Control)"
+literal|"Cursor Down"
 argument_list|)
 block|}
 block|,
@@ -409,7 +413,7 @@ literal|"key-down-shift"
 block|,
 name|N_
 argument_list|(
-literal|"Cursor Down (Shift)"
+literal|"Cursor Down"
 argument_list|)
 block|}
 block|,
@@ -439,7 +443,7 @@ literal|"key-left-shift-control-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Cursor Left (Shift + Control + Alt)"
+literal|"Cursor Left"
 argument_list|)
 block|}
 block|,
@@ -454,7 +458,7 @@ literal|"key-left-control-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Cursor Left (Control + Alt)"
+literal|"Cursor Left"
 argument_list|)
 block|}
 block|,
@@ -469,7 +473,7 @@ literal|"key-left-shift-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Cursor Left (Shift + Alt)"
+literal|"Cursor Left"
 argument_list|)
 block|}
 block|,
@@ -484,7 +488,7 @@ literal|"key-left-shift-control"
 block|,
 name|N_
 argument_list|(
-literal|"Cursor Left (Shift + Control)"
+literal|"Cursor Left"
 argument_list|)
 block|}
 block|,
@@ -497,7 +501,7 @@ literal|"key-left-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Cursor Left (Alt)"
+literal|"Cursor Left"
 argument_list|)
 block|}
 block|,
@@ -510,7 +514,7 @@ literal|"key-left-control"
 block|,
 name|N_
 argument_list|(
-literal|"Cursor Left (Control)"
+literal|"Cursor Left"
 argument_list|)
 block|}
 block|,
@@ -523,7 +527,7 @@ literal|"key-left-shift"
 block|,
 name|N_
 argument_list|(
-literal|"Cursor Left (Shift)"
+literal|"Cursor Left"
 argument_list|)
 block|}
 block|,
@@ -553,7 +557,7 @@ literal|"key-right-shift-control-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Cursor Right (Shift + Control + Alt)"
+literal|"Cursor Right"
 argument_list|)
 block|}
 block|,
@@ -568,7 +572,7 @@ literal|"key-right-control-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Cursor Right (Control + Alt)"
+literal|"Cursor Right"
 argument_list|)
 block|}
 block|,
@@ -583,7 +587,7 @@ literal|"key-right-shift-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Cursor Right (Shift + Alt)"
+literal|"Cursor Right"
 argument_list|)
 block|}
 block|,
@@ -598,7 +602,7 @@ literal|"key-right-shift-control"
 block|,
 name|N_
 argument_list|(
-literal|"Cursor Right (Shift + Control)"
+literal|"Cursor Right"
 argument_list|)
 block|}
 block|,
@@ -611,7 +615,7 @@ literal|"key-right-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Cursor Right (Alt)"
+literal|"Cursor Right"
 argument_list|)
 block|}
 block|,
@@ -624,7 +628,7 @@ literal|"key-right-control"
 block|,
 name|N_
 argument_list|(
-literal|"Cursor Right (Control)"
+literal|"Cursor Right"
 argument_list|)
 block|}
 block|,
@@ -637,7 +641,7 @@ literal|"key-right-shift"
 block|,
 name|N_
 argument_list|(
-literal|"Cursor Right (Shift)"
+literal|"Cursor Right"
 argument_list|)
 block|}
 block|,
@@ -832,7 +836,89 @@ name|GimpControllerKeyboard
 modifier|*
 name|keyboard
 parameter_list|)
-block|{ }
+block|{
+specifier|static
+name|gboolean
+name|event_names_initialized
+init|=
+name|FALSE
+decl_stmt|;
+if|if
+condition|(
+operator|!
+name|event_names_initialized
+condition|)
+block|{
+name|gint
+name|i
+decl_stmt|;
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+name|G_N_ELEMENTS
+argument_list|(
+name|keyboard_events
+argument_list|)
+condition|;
+name|i
+operator|++
+control|)
+block|{
+name|KeyboardEvent
+modifier|*
+name|kevent
+init|=
+operator|&
+name|keyboard_events
+index|[
+name|i
+index|]
+decl_stmt|;
+if|if
+condition|(
+name|kevent
+operator|->
+name|modifiers
+operator|!=
+literal|0
+condition|)
+block|{
+name|kevent
+operator|->
+name|blurb
+operator|=
+name|g_strdup_printf
+argument_list|(
+literal|"%s (%s)"
+argument_list|,
+name|gettext
+argument_list|(
+name|kevent
+operator|->
+name|blurb
+argument_list|)
+argument_list|,
+name|gimp_get_mod_string
+argument_list|(
+name|kevent
+operator|->
+name|modifiers
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+name|event_names_initialized
+operator|=
+name|TRUE
+expr_stmt|;
+block|}
+block|}
 end_function
 
 begin_function

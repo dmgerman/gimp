@@ -95,7 +95,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon290adce80103
+DECL|enum|__anon289b26f60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2788,14 +2788,14 @@ name|g_strconcat
 argument_list|(
 name|tooltip
 argument_list|,
-literal|"\n"
+literal|"\n("
 argument_list|,
 name|gimp_get_mod_string
 argument_list|(
 name|mod_mask
 argument_list|)
 argument_list|,
-literal|"  "
+literal|")  "
 argument_list|,
 name|ext_tooltip
 argument_list|,

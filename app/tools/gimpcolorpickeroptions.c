@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a110ed0103
+DECL|enum|__anon27949cae0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -589,7 +589,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Pick Mode  %s"
+literal|"Pick Mode  (%s)"
 argument_list|)
 argument_list|,
 name|gimp_get_mod_string
@@ -648,7 +648,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Add to palette  %s"
+literal|"Add to palette  (%s)"
 argument_list|)
 argument_list|,
 name|gimp_get_mod_string

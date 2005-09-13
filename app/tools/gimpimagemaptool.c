@@ -1209,7 +1209,7 @@ init|=
 name|g_strdup_printf
 argument_list|(
 literal|"%s\n"
-literal|"%s  %s"
+literal|"(%s)  %s"
 argument_list|,
 name|klass
 operator|->
@@ -1320,7 +1320,7 @@ init|=
 name|g_strdup_printf
 argument_list|(
 literal|"%s\n"
-literal|"%s  %s"
+literal|"(%s)  %s"
 argument_list|,
 name|klass
 operator|->

@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ef3ff50103
+DECL|enum|__anon27ba90780103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -815,7 +815,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Fill Type  %s"
+literal|"Fill Type  (%s)"
 argument_list|)
 argument_list|,
 name|gimp_get_mod_string
@@ -898,7 +898,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Affected Area  %s"
+literal|"Affected Area  (%s)"
 argument_list|)
 argument_list|,
 name|gimp_get_mod_string

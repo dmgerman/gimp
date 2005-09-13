@@ -641,7 +641,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Type  %s"
+literal|"Type  (%s)"
 argument_list|)
 argument_list|,
 name|gimp_get_mod_string

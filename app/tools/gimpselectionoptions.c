@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d8d0020103
+DECL|enum|__anon2c6705390103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1476,7 +1476,7 @@ name|tip
 init|=
 name|g_strdup_printf
 argument_list|(
-literal|"%s  %s"
+literal|"%s  (%s)"
 argument_list|,
 name|data
 operator|->

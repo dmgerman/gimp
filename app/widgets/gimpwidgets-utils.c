@@ -1539,18 +1539,6 @@ return|;
 block|}
 end_function
 
-begin_comment
-comment|/*  The format string which is used to display modifier names  *<Shift>,<Ctrl> and<Alt>  */
-end_comment
-
-begin_define
-DECL|macro|GIMP_MOD_NAME_FORMAT_STRING
-define|#
-directive|define
-name|GIMP_MOD_NAME_FORMAT_STRING
-value|N_("<%s>")
-end_define
-
 begin_function
 specifier|const
 name|gchar
@@ -1587,13 +1575,8 @@ argument_list|)
 expr_stmt|;
 name|mod_name_shift
 operator|=
-name|g_strdup_printf
+name|g_strdup
 argument_list|(
-name|gettext
-argument_list|(
-name|GIMP_MOD_NAME_FORMAT_STRING
-argument_list|)
-argument_list|,
 name|accel_label_class
 operator|->
 name|mod_name_shift
@@ -1652,13 +1635,8 @@ argument_list|)
 expr_stmt|;
 name|mod_name_control
 operator|=
-name|g_strdup_printf
+name|g_strdup
 argument_list|(
-name|gettext
-argument_list|(
-name|GIMP_MOD_NAME_FORMAT_STRING
-argument_list|)
-argument_list|,
 name|accel_label_class
 operator|->
 name|mod_name_control
@@ -1717,13 +1695,8 @@ argument_list|)
 expr_stmt|;
 name|mod_name_alt
 operator|=
-name|g_strdup_printf
+name|g_strdup
 argument_list|(
-name|gettext
-argument_list|(
-name|GIMP_MOD_NAME_FORMAT_STRING
-argument_list|)
-argument_list|,
 name|accel_label_class
 operator|->
 name|mod_name_alt
@@ -1819,7 +1792,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon2b76fd740108
+DECL|struct|__anon2ac427a10108
 block|{
 DECL|member|modifiers
 name|GdkModifierType
