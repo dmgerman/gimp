@@ -108,6 +108,11 @@ name|GimpDock
 modifier|*
 name|dock
 decl_stmt|;
+DECL|member|frame
+name|GtkWidget
+modifier|*
+name|frame
+decl_stmt|;
 DECL|member|label
 name|GtkWidget
 modifier|*

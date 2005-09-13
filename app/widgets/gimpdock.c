@@ -60,12 +60,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdnd.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdock.h"
 end_include
 
@@ -85,12 +79,6 @@ begin_include
 include|#
 directive|include
 file|"gimpdockseparator.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimphelp-ids.h"
 end_include
 
 begin_include
@@ -127,7 +115,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon277a43210103
+DECL|enum|__anon28da89910103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -143,7 +131,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon277a43210203
+DECL|enum|__anon28da89910203
 block|{
 DECL|enumerator|BOOK_ADDED
 name|BOOK_ADDED
@@ -719,6 +707,12 @@ expr_stmt|;
 name|dock
 operator|->
 name|dialog_factory
+operator|=
+name|NULL
+expr_stmt|;
+name|dock
+operator|->
+name|dockbooks
 operator|=
 name|NULL
 expr_stmt|;

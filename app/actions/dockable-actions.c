@@ -716,6 +716,11 @@ name|n_pages
 init|=
 literal|0
 decl_stmt|;
+name|gint
+name|n_books
+init|=
+literal|0
+decl_stmt|;
 if|if
 condition|(
 name|GIMP_IS_DOCKBOOK
@@ -971,6 +976,17 @@ name|dockbook
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|n_books
+operator|=
+name|g_list_length
+argument_list|(
+name|dockbook
+operator|->
+name|dock
+operator|->
+name|dockbooks
+argument_list|)
+expr_stmt|;
 DECL|macro|SET_ACTIVE (action,active)
 define|#
 directive|define
@@ -1009,6 +1025,10 @@ argument_list|(
 literal|"dockable-detach-tab"
 argument_list|,
 name|n_pages
+operator|>
+literal|1
+operator|||
+name|n_books
 operator|>
 literal|1
 argument_list|)
@@ -1194,14 +1214,12 @@ block|{
 name|GimpDockedInterface
 modifier|*
 name|docked_iface
-decl_stmt|;
-name|docked_iface
-operator|=
+init|=
 name|GIMP_DOCKED_GET_INTERFACE
 argument_list|(
 name|docked
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|tab_style
