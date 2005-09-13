@@ -498,21 +498,25 @@ name|cmyk_labels
 index|[]
 init|=
 block|{
+comment|/* Cyan        */
 name|N_
 argument_list|(
 literal|"_C"
 argument_list|)
 block|,
+comment|/* Magenta     */
 name|N_
 argument_list|(
 literal|"_M"
 argument_list|)
 block|,
+comment|/* Yellow      */
 name|N_
 argument_list|(
 literal|"_Y"
 argument_list|)
 block|,
+comment|/* Key (Black) */
 name|N_
 argument_list|(
 literal|"_K"
