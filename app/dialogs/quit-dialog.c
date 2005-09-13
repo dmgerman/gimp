@@ -699,7 +699,7 @@ name|g_strdup_printf
 argument_list|(
 name|ngettext
 argument_list|(
-literal|"There is %d image with unsaved changes:"
+literal|"There is one image with unsaved changes:"
 argument_list|,
 literal|"There are %d images with unsaved changes:"
 argument_list|,

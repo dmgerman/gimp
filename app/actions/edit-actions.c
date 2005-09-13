@@ -214,7 +214,7 @@ name|GTK_STOCK_UNDO
 block|,
 name|N_
 argument_list|(
-literal|"Undo Editor Menu"
+literal|"Undo History Menu"
 argument_list|)
 block|,
 name|NULL
@@ -290,7 +290,7 @@ literal|""
 block|,
 name|N_
 argument_list|(
-literal|"Clear undo history..."
+literal|"Clear undo history"
 argument_list|)
 block|,
 name|G_CALLBACK

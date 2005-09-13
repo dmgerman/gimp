@@ -397,6 +397,7 @@ name|GTK_STOCK_CANCEL
 argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|,
+comment|/*  offset, used as a verb  */
 name|_
 argument_list|(
 literal|"_Offset"
