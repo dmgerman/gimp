@@ -1231,18 +1231,13 @@ name|title_len
 argument_list|,
 name|i
 argument_list|,
-name|num
-operator|==
-literal|1
-condition|?
-name|_
+name|ngettext
 argument_list|(
-literal|"1 layer"
-argument_list|)
-else|:
-name|_
-argument_list|(
+literal|"%d layer"
+argument_list|,
 literal|"%d layers"
+argument_list|,
+name|num
 argument_list|)
 argument_list|,
 name|num

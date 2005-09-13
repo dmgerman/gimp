@@ -163,7 +163,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c8e9de0103
+DECL|enum|__anon2c3ed8f10103
 block|{
 DECL|enumerator|GPL_PAGE
 name|GPL_PAGE
@@ -188,7 +188,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c8e9de0203
+DECL|enum|__anon2c3ed8f10203
 block|{
 DECL|enumerator|DIRENT_COLUMN
 name|DIRENT_COLUMN
@@ -400,7 +400,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c8e9de0303
+DECL|enum|__anon2c3ed8f10303
 block|{
 DECL|enumerator|TREE_ITEM_DO_NOTHING
 name|TREE_ITEM_DO_NOTHING
@@ -422,7 +422,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29c8e9de0408
+DECL|struct|__anon2c3ed8f10408
 block|{
 DECL|member|directory
 name|gboolean
@@ -505,7 +505,7 @@ block|,
 name|N_
 argument_list|(
 literal|"Key shortcuts can be dynamically redefined. "
-literal|"The menurc is a dump of your configuration so it can. "
+literal|"The menurc is a dump of your configuration so it can "
 literal|"be remembered for the next session.  You may edit this "
 literal|"file if you wish, but it is much easier to define the "
 literal|"keys from within GIMP.  Deleting this file will "
