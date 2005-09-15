@@ -409,7 +409,8 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-literal|0.0
+operator|-
+name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
@@ -431,7 +432,8 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-literal|0.0
+operator|-
+name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
