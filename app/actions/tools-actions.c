@@ -2104,7 +2104,7 @@ name|tooltip
 operator|=
 name|tool_info
 operator|->
-name|blurb
+name|help
 expr_stmt|;
 name|entry
 operator|.
