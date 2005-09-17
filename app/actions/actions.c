@@ -766,7 +766,7 @@ literal|"qmask"
 block|,
 name|N_
 argument_list|(
-literal|"QuickMask"
+literal|"Quick Mask"
 argument_list|)
 block|,
 name|GIMP_STOCK_QMASK_ON
