@@ -951,6 +951,13 @@ name|name
 argument_list|,
 literal|"-popup"
 argument_list|)
+operator|||
+name|name
+index|[
+literal|0
+index|]
+operator|==
+literal|'<'
 condition|)
 continue|continue;
 name|g_object_get
@@ -1489,9 +1496,9 @@ name|select_path
 argument_list|,
 name|NULL
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
-literal|0.0
+literal|0.5
 argument_list|,
 literal|0.0
 argument_list|)
@@ -1781,7 +1788,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275e7a5f0108
+DECL|struct|__anon279012020108
 block|{
 DECL|member|accel_path
 name|gchar

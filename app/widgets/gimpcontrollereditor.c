@@ -96,7 +96,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b07a8160103
+DECL|enum|__anon27bafca20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -109,7 +109,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b07a8160203
+DECL|enum|__anon27bafca20203
 block|{
 DECL|enumerator|COLUMN_EVENT
 name|COLUMN_EVENT
@@ -2855,6 +2855,12 @@ name|NULL
 decl_stmt|;
 name|gchar
 modifier|*
+name|event_blurb
+init|=
+name|NULL
+decl_stmt|;
+name|gchar
+modifier|*
 name|action_name
 init|=
 name|NULL
@@ -2897,6 +2903,11 @@ argument_list|,
 operator|&
 name|event_name
 argument_list|,
+name|COLUMN_BLURB
+argument_list|,
+operator|&
+name|event_blurb
+argument_list|,
 name|COLUMN_ACTION
 argument_list|,
 operator|&
@@ -2919,6 +2930,22 @@ name|GtkWidget
 modifier|*
 name|view
 decl_stmt|;
+name|gchar
+modifier|*
+name|title
+decl_stmt|;
+name|title
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Select Action for Event '%s'"
+argument_list|)
+argument_list|,
+name|event_blurb
+argument_list|)
+expr_stmt|;
 name|editor
 operator|->
 name|edit_dialog
@@ -2941,14 +2968,14 @@ literal|"gimp-controller-action-dialog"
 argument_list|,
 name|GIMP_STOCK_EDIT
 argument_list|,
-name|_
-argument_list|(
-literal|"Select Controller Event Action"
-argument_list|)
+name|title
 argument_list|,
+name|gtk_widget_get_toplevel
+argument_list|(
 name|GTK_WIDGET
 argument_list|(
 name|editor
+argument_list|)
 argument_list|)
 argument_list|,
 name|gimp_standard_help_func
@@ -2964,6 +2991,11 @@ argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|title
 argument_list|)
 expr_stmt|;
 name|gtk_dialog_set_alternative_button_order

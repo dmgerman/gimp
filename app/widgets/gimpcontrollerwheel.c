@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpwidgets-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -74,7 +80,6 @@ modifier|*
 name|name
 decl_stmt|;
 DECL|member|blurb
-specifier|const
 name|gchar
 modifier|*
 name|blurb
@@ -186,7 +191,6 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|wheel_events
 specifier|static
-specifier|const
 name|WheelEvent
 name|wheel_events
 index|[]
@@ -205,7 +209,7 @@ literal|"scroll-up-shift-control-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Scroll Up (Shift + Control + Alt)"
+literal|"Scroll Up"
 argument_list|)
 block|}
 block|,
@@ -220,7 +224,7 @@ literal|"scroll-up-control-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Scroll Up (Control + Alt)"
+literal|"Scroll Up"
 argument_list|)
 block|}
 block|,
@@ -235,7 +239,7 @@ literal|"scroll-up-shift-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Scroll Up (Shift + Alt)"
+literal|"Scroll Up"
 argument_list|)
 block|}
 block|,
@@ -250,7 +254,7 @@ literal|"scroll-up-shift-control"
 block|,
 name|N_
 argument_list|(
-literal|"Scroll Up (Shift + Control)"
+literal|"Scroll Up"
 argument_list|)
 block|}
 block|,
@@ -263,7 +267,7 @@ literal|"scroll-up-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Scroll Up (Alt)"
+literal|"Scroll Up"
 argument_list|)
 block|}
 block|,
@@ -276,7 +280,7 @@ literal|"scroll-up-control"
 block|,
 name|N_
 argument_list|(
-literal|"Scroll Up (Control)"
+literal|"Scroll Up"
 argument_list|)
 block|}
 block|,
@@ -289,7 +293,7 @@ literal|"scroll-up-shift"
 block|,
 name|N_
 argument_list|(
-literal|"Scroll Up (Shift)"
+literal|"Scroll Up"
 argument_list|)
 block|}
 block|,
@@ -319,7 +323,7 @@ literal|"scroll-down-shift-control-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Scroll Down (Shift + Control + Alt)"
+literal|"Scroll Down"
 argument_list|)
 block|}
 block|,
@@ -334,7 +338,7 @@ literal|"scroll-down-control-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Scroll Down (Control + Alt)"
+literal|"Scroll Down"
 argument_list|)
 block|}
 block|,
@@ -349,7 +353,7 @@ literal|"scroll-down-shift-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Scroll Down (Shift + Alt)"
+literal|"Scroll Down"
 argument_list|)
 block|}
 block|,
@@ -364,7 +368,7 @@ literal|"scroll-down-shift-control"
 block|,
 name|N_
 argument_list|(
-literal|"Scroll Down (Shift + Control)"
+literal|"Scroll Down"
 argument_list|)
 block|}
 block|,
@@ -377,7 +381,7 @@ literal|"scroll-down-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Scroll Down (Alt)"
+literal|"Scroll Down"
 argument_list|)
 block|}
 block|,
@@ -390,7 +394,7 @@ literal|"scroll-down-control"
 block|,
 name|N_
 argument_list|(
-literal|"Scroll Down (Control)"
+literal|"Scroll Down"
 argument_list|)
 block|}
 block|,
@@ -403,7 +407,7 @@ literal|"scroll-down-shift"
 block|,
 name|N_
 argument_list|(
-literal|"Scroll Down (Shift)"
+literal|"Scroll Down"
 argument_list|)
 block|}
 block|,
@@ -433,7 +437,7 @@ literal|"scroll-left-shift-control-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Scroll Left (Shift + Control + Alt)"
+literal|"Scroll Left"
 argument_list|)
 block|}
 block|,
@@ -448,7 +452,7 @@ literal|"scroll-left-control-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Scroll Left (Control + Alt)"
+literal|"Scroll Left"
 argument_list|)
 block|}
 block|,
@@ -463,7 +467,7 @@ literal|"scroll-left-shift-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Scroll Left (Shift + Alt)"
+literal|"Scroll Left"
 argument_list|)
 block|}
 block|,
@@ -478,7 +482,7 @@ literal|"scroll-left-shift-control"
 block|,
 name|N_
 argument_list|(
-literal|"Scroll Left (Shift + Control)"
+literal|"Scroll Left"
 argument_list|)
 block|}
 block|,
@@ -491,7 +495,7 @@ literal|"scroll-left-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Scroll Left (Alt)"
+literal|"Scroll Left"
 argument_list|)
 block|}
 block|,
@@ -504,7 +508,7 @@ literal|"scroll-left-control"
 block|,
 name|N_
 argument_list|(
-literal|"Scroll Left (Control)"
+literal|"Scroll Left"
 argument_list|)
 block|}
 block|,
@@ -517,7 +521,7 @@ literal|"scroll-left-shift"
 block|,
 name|N_
 argument_list|(
-literal|"Scroll Left (Shift)"
+literal|"Scroll Left"
 argument_list|)
 block|}
 block|,
@@ -547,7 +551,7 @@ literal|"scroll-right-shift-control-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Scroll Right (Shift + Control + Alt)"
+literal|"Scroll Right"
 argument_list|)
 block|}
 block|,
@@ -562,7 +566,7 @@ literal|"scroll-right-control-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Scroll Right (Control + Alt)"
+literal|"Scroll Right"
 argument_list|)
 block|}
 block|,
@@ -577,7 +581,7 @@ literal|"scroll-right-shift-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Scroll Right (Shift + Alt)"
+literal|"Scroll Right"
 argument_list|)
 block|}
 block|,
@@ -592,7 +596,7 @@ literal|"scroll-right-shift-control"
 block|,
 name|N_
 argument_list|(
-literal|"Scroll Right (Shift + Control)"
+literal|"Scroll Right"
 argument_list|)
 block|}
 block|,
@@ -605,7 +609,7 @@ literal|"scroll-right-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Scroll Right (Alt)"
+literal|"Scroll Right"
 argument_list|)
 block|}
 block|,
@@ -618,7 +622,7 @@ literal|"scroll-right-control"
 block|,
 name|N_
 argument_list|(
-literal|"Scroll Right (Control)"
+literal|"Scroll Right"
 argument_list|)
 block|}
 block|,
@@ -631,7 +635,7 @@ literal|"scroll-right-shift"
 block|,
 name|N_
 argument_list|(
-literal|"Scroll Right (Shift)"
+literal|"Scroll Right"
 argument_list|)
 block|}
 block|,
@@ -826,7 +830,89 @@ name|GimpControllerWheel
 modifier|*
 name|wheel
 parameter_list|)
-block|{ }
+block|{
+specifier|static
+name|gboolean
+name|event_names_initialized
+init|=
+name|FALSE
+decl_stmt|;
+if|if
+condition|(
+operator|!
+name|event_names_initialized
+condition|)
+block|{
+name|gint
+name|i
+decl_stmt|;
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+name|G_N_ELEMENTS
+argument_list|(
+name|wheel_events
+argument_list|)
+condition|;
+name|i
+operator|++
+control|)
+block|{
+name|WheelEvent
+modifier|*
+name|wevent
+init|=
+operator|&
+name|wheel_events
+index|[
+name|i
+index|]
+decl_stmt|;
+if|if
+condition|(
+name|wevent
+operator|->
+name|modifiers
+operator|!=
+literal|0
+condition|)
+block|{
+name|wevent
+operator|->
+name|blurb
+operator|=
+name|g_strdup_printf
+argument_list|(
+literal|"%s (%s)"
+argument_list|,
+name|gettext
+argument_list|(
+name|wevent
+operator|->
+name|blurb
+argument_list|)
+argument_list|,
+name|gimp_get_mod_string
+argument_list|(
+name|wevent
+operator|->
+name|modifiers
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+name|event_names_initialized
+operator|=
+name|TRUE
+expr_stmt|;
+block|}
+block|}
 end_function
 
 begin_function
@@ -990,15 +1076,12 @@ return|return
 name|NULL
 return|;
 return|return
-name|gettext
-argument_list|(
 name|wheel_events
 index|[
 name|event_id
 index|]
 operator|.
 name|blurb
-argument_list|)
 return|;
 block|}
 end_function

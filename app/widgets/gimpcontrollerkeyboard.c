@@ -1082,15 +1082,12 @@ return|return
 name|NULL
 return|;
 return|return
-name|gettext
-argument_list|(
 name|keyboard_events
 index|[
 name|event_id
 index|]
 operator|.
 name|blurb
-argument_list|)
 return|;
 block|}
 end_function
