@@ -891,7 +891,7 @@ block|,
 block|{
 literal|"view-zoom-out-accel"
 block|,
-name|NULL
+name|GTK_STOCK_ZOOM_OUT
 block|,
 name|N_
 argument_list|(
@@ -909,13 +909,13 @@ name|GIMP_ACTION_SELECT_PREVIOUS
 block|,
 name|FALSE
 block|,
-name|NULL
+name|GIMP_HELP_VIEW_ZOOM_OUT
 block|}
 block|,
 block|{
 literal|"view-zoom-in-accel"
 block|,
-name|NULL
+name|GTK_STOCK_ZOOM_IN
 block|,
 name|N_
 argument_list|(
@@ -933,7 +933,7 @@ name|GIMP_ACTION_SELECT_NEXT
 block|,
 name|FALSE
 block|,
-name|NULL
+name|GIMP_HELP_VIEW_ZOOM_IN
 block|}
 block|,
 block|{
