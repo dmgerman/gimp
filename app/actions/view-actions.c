@@ -889,6 +889,54 @@ name|GIMP_HELP_VIEW_ZOOM_IN
 block|}
 block|,
 block|{
+literal|"view-zoom-out-accel"
+block|,
+name|NULL
+block|,
+name|N_
+argument_list|(
+literal|"Zoom Out"
+argument_list|)
+block|,
+literal|"KP_Subtract"
+block|,
+name|N_
+argument_list|(
+literal|"Zoom out"
+argument_list|)
+block|,
+name|GIMP_ACTION_SELECT_PREVIOUS
+block|,
+name|FALSE
+block|,
+name|NULL
+block|}
+block|,
+block|{
+literal|"view-zoom-in-accel"
+block|,
+name|NULL
+block|,
+name|N_
+argument_list|(
+literal|"Zoom in"
+argument_list|)
+block|,
+literal|"KP_Add"
+block|,
+name|N_
+argument_list|(
+literal|"Zoom in"
+argument_list|)
+block|,
+name|GIMP_ACTION_SELECT_NEXT
+block|,
+name|FALSE
+block|,
+name|NULL
+block|}
+block|,
+block|{
 literal|"view-zoom-out-skip"
 block|,
 name|GTK_STOCK_ZOOM_OUT
