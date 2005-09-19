@@ -171,7 +171,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295639620108
+DECL|struct|__anon2c70afc90108
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -728,7 +728,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295639620208
+DECL|struct|__anon2c70afc90208
 block|{
 DECL|member|schema
 specifier|const
@@ -2935,7 +2935,7 @@ name|mgui
 operator|.
 name|dlg
 argument_list|,
-name|GIMP_STOCK_EDIT
+name|GTK_STOCK_EDIT
 argument_list|,
 name|GTK_ICON_SIZE_MENU
 argument_list|,

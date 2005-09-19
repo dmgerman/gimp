@@ -826,10 +826,7 @@ name|gimp_standard_help_func
 argument_list|,
 name|HELP_ID
 argument_list|,
-name|_
-argument_list|(
-literal|"A_bout"
-argument_list|)
+name|GTK_STOCK_ABOUT
 argument_list|,
 name|RESPONSE_ABOUT
 argument_list|,

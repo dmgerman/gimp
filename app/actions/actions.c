@@ -559,7 +559,7 @@ argument_list|(
 literal|"Edit"
 argument_list|)
 block|,
-name|GIMP_STOCK_EDIT
+name|GTK_STOCK_EDIT
 block|,
 name|edit_actions_setup
 block|,
@@ -589,7 +589,7 @@ argument_list|(
 literal|"File"
 argument_list|)
 block|,
-name|GTK_STOCK_OPEN
+name|GTK_STOCK_FILE
 block|,
 name|file_actions_setup
 block|,
@@ -829,7 +829,7 @@ argument_list|(
 literal|"Text Editor"
 argument_list|)
 block|,
-name|GIMP_STOCK_EDIT
+name|GTK_STOCK_EDIT
 block|,
 name|text_editor_actions_setup
 block|,

@@ -96,7 +96,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27bafca20103
+DECL|enum|__anon28e9b9930103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -109,7 +109,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27bafca20203
+DECL|enum|__anon28e9b9930203
 block|{
 DECL|enumerator|COLUMN_EVENT
 name|COLUMN_EVENT
@@ -1916,7 +1916,7 @@ name|edit_button
 operator|=
 name|gtk_button_new_from_stock
 argument_list|(
-name|GIMP_STOCK_EDIT
+name|GTK_STOCK_EDIT
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2966,7 +2966,7 @@ argument_list|)
 argument_list|,
 literal|"gimp-controller-action-dialog"
 argument_list|,
-name|GIMP_STOCK_EDIT
+name|GTK_STOCK_EDIT
 argument_list|,
 name|title
 argument_list|,

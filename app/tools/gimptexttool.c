@@ -3666,7 +3666,7 @@ name|GTK_STOCK_CANCEL
 argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|,
-name|GIMP_STOCK_EDIT
+name|GTK_STOCK_EDIT
 argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,

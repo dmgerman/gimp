@@ -723,7 +723,7 @@ block|,
 block|{
 literal|"dialogs-about"
 block|,
-name|GIMP_STOCK_WILBER
+name|GTK_STOCK_ABOUT
 block|,
 name|N_
 argument_list|(

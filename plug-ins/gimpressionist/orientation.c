@@ -953,7 +953,7 @@ name|tmpw
 operator|=
 name|gtk_button_new_from_stock
 argument_list|(
-name|GIMP_STOCK_EDIT
+name|GTK_STOCK_EDIT
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

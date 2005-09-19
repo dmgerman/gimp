@@ -528,7 +528,7 @@ argument_list|)
 argument_list|,
 literal|"gimp-vectors-edit"
 argument_list|,
-name|GIMP_STOCK_EDIT
+name|GTK_STOCK_EDIT
 argument_list|,
 name|_
 argument_list|(

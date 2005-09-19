@@ -156,7 +156,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b88b1bb0103
+DECL|enum|__anon2bb7537c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -169,7 +169,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b88b1bb0203
+DECL|enum|__anon2bb7537c0203
 block|{
 DECL|enumerator|COLUMN_ICON
 name|COLUMN_ICON
@@ -1499,7 +1499,7 @@ operator|->
 name|dest
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_EDIT
+name|GTK_STOCK_EDIT
 argument_list|,
 name|_
 argument_list|(
@@ -2662,7 +2662,7 @@ argument_list|)
 argument_list|,
 literal|"gimp-controller-editor-dialog"
 argument_list|,
-name|GIMP_STOCK_EDIT
+name|GTK_STOCK_EDIT
 argument_list|,
 name|_
 argument_list|(

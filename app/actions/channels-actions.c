@@ -111,7 +111,7 @@ block|,
 block|{
 literal|"channels-edit-attributes"
 block|,
-name|GIMP_STOCK_EDIT
+name|GTK_STOCK_EDIT
 block|,
 name|N_
 argument_list|(

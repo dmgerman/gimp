@@ -74,7 +74,7 @@ block|{
 block|{
 literal|"text-editor-toolbar"
 block|,
-name|GIMP_STOCK_EDIT
+name|GTK_STOCK_EDIT
 block|,
 literal|"Text Editor Toolbar"
 block|,

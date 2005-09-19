@@ -2407,10 +2407,7 @@ name|gimp_standard_help_func
 argument_list|,
 literal|"file-print-gimp"
 argument_list|,
-name|_
-argument_list|(
-literal|"About"
-argument_list|)
+name|GTK_STOCK_ABOUT
 argument_list|,
 name|RESPONSE_ABOUT
 argument_list|,
@@ -3745,7 +3742,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"file-print-gimp"
+name|NULL
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
@@ -4533,7 +4530,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"file-print-gimp"
+name|NULL
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
@@ -4729,7 +4726,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"file-print-gimp"
+name|NULL
 argument_list|,
 name|GTK_STOCK_CLOSE
 argument_list|,

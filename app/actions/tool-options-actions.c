@@ -191,7 +191,7 @@ block|,
 block|{
 literal|"tool-options-rename-menu"
 block|,
-name|GIMP_STOCK_EDIT
+name|GTK_STOCK_EDIT
 block|,
 name|N_
 argument_list|(
@@ -499,7 +499,7 @@ argument_list|(
 name|tool_options_rename_saved_cmd_callback
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_EDIT
+name|GTK_STOCK_EDIT
 argument_list|,
 name|GIMP_HELP_TOOL_OPTIONS_RENAME
 argument_list|,
