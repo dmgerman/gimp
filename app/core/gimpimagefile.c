@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon294390270103
+DECL|enum|__anon2a1636b50103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -1823,7 +1823,7 @@ name|GIMP_THUMB_STATE_FOLDER
 case|:
 name|stock_id
 operator|=
-literal|"gtk-open"
+literal|"gtk-directory"
 expr_stmt|;
 break|break;
 case|case
