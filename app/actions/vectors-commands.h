@@ -262,7 +262,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|vectors_import_cmd_callback
+name|vectors_export_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -276,7 +276,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|vectors_export_cmd_callback
+name|vectors_import_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*

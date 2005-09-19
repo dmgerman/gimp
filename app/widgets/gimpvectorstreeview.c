@@ -1249,8 +1249,6 @@ name|strlen
 argument_list|(
 name|svg_data
 argument_list|)
-operator|+
-literal|1
 expr_stmt|;
 block|}
 return|return
