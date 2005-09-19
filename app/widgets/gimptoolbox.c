@@ -2612,7 +2612,7 @@ literal|"title"
 argument_list|,
 name|_
 argument_list|(
-literal|"The GIMP"
+literal|"GIMP"
 argument_list|)
 argument_list|,
 literal|"context"

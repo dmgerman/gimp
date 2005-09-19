@@ -1074,7 +1074,7 @@ name|g_set_application_name
 argument_list|(
 name|_
 argument_list|(
-literal|"The GIMP"
+literal|"GNU Image Manipulation Program"
 argument_list|)
 argument_list|)
 expr_stmt|;
