@@ -271,6 +271,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimpwidgets/gimpzoommodel.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimpwidgets/gimpoldwidgets.h>
 end_include
 

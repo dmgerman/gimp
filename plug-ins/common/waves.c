@@ -45,7 +45,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2900cc0103
+DECL|enum|__anon2bed1bb80103
 block|{
 DECL|enumerator|MODE_SMEAR
 name|MODE_SMEAR
@@ -59,7 +59,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2900cc0208
+DECL|struct|__anon2bed1bb80208
 block|{
 DECL|member|amplitude
 name|gdouble
@@ -80,10 +80,6 @@ decl_stmt|;
 DECL|member|reflective
 name|gboolean
 name|reflective
-decl_stmt|;
-DECL|member|preview
-name|gboolean
-name|preview
 decl_stmt|;
 DECL|typedef|piArgs
 block|}
@@ -111,10 +107,7 @@ name|MODE_SMEAR
 block|,
 comment|/* type       */
 name|FALSE
-block|,
 comment|/* reflective */
-name|TRUE
-comment|/* preview    */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -1068,14 +1061,9 @@ argument_list|)
 expr_stmt|;
 name|preview
 operator|=
-name|gimp_aspect_preview_new
+name|gimp_zoom_preview_new
 argument_list|(
 name|drawable
-argument_list|,
-operator|&
-name|wvals
-operator|.
-name|preview
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start_defaults
@@ -1624,24 +1612,14 @@ decl_stmt|;
 name|gint
 name|bpp
 decl_stmt|;
-name|gimp_preview_get_size
-argument_list|(
-name|preview
-argument_list|,
-operator|&
-name|width
-argument_list|,
-operator|&
-name|height
-argument_list|)
-expr_stmt|;
 name|src
 operator|=
-name|gimp_drawable_get_thumbnail_data
+name|gimp_zoom_preview_get_data
 argument_list|(
-name|drawable
-operator|->
-name|drawable_id
+name|GIMP_ZOOM_PREVIEW
+argument_list|(
+name|preview
+argument_list|)
 argument_list|,
 operator|&
 name|width

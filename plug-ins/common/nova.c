@@ -72,7 +72,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cdd1930108
+DECL|struct|__anon2b9e32d60108
 block|{
 DECL|member|xcenter
 name|gint
@@ -98,10 +98,6 @@ DECL|member|randomhue
 name|gint
 name|randomhue
 decl_stmt|;
-DECL|member|preview
-name|gboolean
-name|preview
-decl_stmt|;
 DECL|typedef|NovaValues
 block|}
 name|NovaValues
@@ -111,7 +107,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cdd1930208
+DECL|struct|__anon2b9e32d60208
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -390,10 +386,7 @@ literal|100
 block|,
 comment|/* nspoke */
 literal|0
-block|,
 comment|/* random hue */
-name|TRUE
-comment|/* preview */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -1096,14 +1089,9 @@ argument_list|)
 expr_stmt|;
 name|preview
 operator|=
-name|gimp_aspect_preview_new
+name|gimp_zoom_preview_new
 argument_list|(
 name|drawable
-argument_list|,
-operator|&
-name|pvals
-operator|.
-name|preview
 argument_list|)
 expr_stmt|;
 name|gtk_widget_add_events
@@ -3054,33 +3042,14 @@ condition|(
 name|preview
 condition|)
 block|{
-name|gimp_preview_get_size
-argument_list|(
-name|preview
-argument_list|,
-operator|&
-name|width
-argument_list|,
-operator|&
-name|height
-argument_list|)
-expr_stmt|;
-name|bpp
-operator|=
-name|gimp_drawable_bpp
-argument_list|(
-name|drawable
-operator|->
-name|drawable_id
-argument_list|)
-expr_stmt|;
 name|cache
 operator|=
-name|gimp_drawable_get_thumbnail_data
+name|gimp_zoom_preview_get_data
 argument_list|(
-name|drawable
-operator|->
-name|drawable_id
+name|GIMP_ZOOM_PREVIEW
+argument_list|(
+name|preview
+argument_list|)
 argument_list|,
 operator|&
 name|width

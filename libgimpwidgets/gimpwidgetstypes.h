@@ -370,6 +370,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpZoomModel
+typedef|typedef
+name|struct
+name|_GimpZoomModel
+name|GimpZoomModel
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpHelpFunc
 typedef|typedef
 name|void

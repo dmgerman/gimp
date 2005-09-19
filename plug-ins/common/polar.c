@@ -101,7 +101,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5ee3fe0108
+DECL|struct|__anon2c1c759a0108
 block|{
 DECL|member|circle
 name|gdouble
@@ -122,10 +122,6 @@ decl_stmt|;
 DECL|member|polrec
 name|gboolean
 name|polrec
-decl_stmt|;
-DECL|member|preview
-name|gboolean
-name|preview
 decl_stmt|;
 DECL|typedef|polarize_vals_t
 block|}
@@ -284,10 +280,7 @@ name|TRUE
 block|,
 comment|/* inverse */
 name|TRUE
-block|,
 comment|/* polar to rectangular? */
-name|TRUE
-comment|/* preview */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -2607,14 +2600,9 @@ expr_stmt|;
 comment|/* Preview */
 name|preview
 operator|=
-name|gimp_aspect_preview_new
+name|gimp_zoom_preview_new
 argument_list|(
 name|drawable
-argument_list|,
-operator|&
-name|pcvals
-operator|.
-name|preview
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start_defaults
@@ -3318,33 +3306,14 @@ name|top
 operator|=
 name|sel_y1
 expr_stmt|;
-name|gimp_preview_get_size
-argument_list|(
-name|preview
-argument_list|,
-operator|&
-name|width
-argument_list|,
-operator|&
-name|height
-argument_list|)
-expr_stmt|;
-name|bpp
-operator|=
-name|gimp_drawable_bpp
-argument_list|(
-name|drawable
-operator|->
-name|drawable_id
-argument_list|)
-expr_stmt|;
 name|preview_cache
 operator|=
-name|gimp_drawable_get_thumbnail_data
+name|gimp_zoom_preview_get_data
 argument_list|(
-name|drawable
-operator|->
-name|drawable_id
+name|GIMP_ZOOM_PREVIEW
+argument_list|(
+name|preview
+argument_list|)
 argument_list|,
 operator|&
 name|width

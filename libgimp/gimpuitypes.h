@@ -67,6 +67,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpZoomPreview
+typedef|typedef
+name|struct
+name|_GimpZoomPreview
+name|GimpZoomPreview
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpDrawableComboBox
 typedef|typedef
 name|struct

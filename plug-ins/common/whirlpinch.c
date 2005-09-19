@@ -86,7 +86,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c9520310108
+DECL|struct|__anon2989caf90108
 block|{
 DECL|member|whirl
 name|gdouble
@@ -99,10 +99,6 @@ decl_stmt|;
 DECL|member|radius
 name|gdouble
 name|radius
-decl_stmt|;
-DECL|member|preview
-name|gboolean
-name|preview
 decl_stmt|;
 DECL|typedef|whirl_pinch_vals_t
 block|}
@@ -261,10 +257,7 @@ literal|0.0
 block|,
 comment|/* pinch   */
 literal|1.0
-block|,
 comment|/* radius  */
-name|TRUE
-comment|/* preview */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -2201,14 +2194,9 @@ argument_list|)
 expr_stmt|;
 name|preview
 operator|=
-name|gimp_aspect_preview_new
+name|gimp_zoom_preview_new
 argument_list|(
 name|drawable
-argument_list|,
-operator|&
-name|wpvals
-operator|.
-name|preview
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start_defaults
@@ -2817,24 +2805,14 @@ name|top
 operator|=
 name|sel_y1
 expr_stmt|;
-name|gimp_preview_get_size
-argument_list|(
-name|preview
-argument_list|,
-operator|&
-name|width
-argument_list|,
-operator|&
-name|height
-argument_list|)
-expr_stmt|;
 name|src
 operator|=
-name|gimp_drawable_get_thumbnail_data
+name|gimp_zoom_preview_get_data
 argument_list|(
-name|drawable
-operator|->
-name|drawable_id
+name|GIMP_ZOOM_PREVIEW
+argument_list|(
+name|preview
+argument_list|)
 argument_list|,
 operator|&
 name|width

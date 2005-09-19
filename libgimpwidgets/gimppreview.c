@@ -57,7 +57,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e8c3820103
+DECL|enum|__anon2b92b45a0103
 block|{
 DECL|enumerator|INVALIDATED
 name|INVALIDATED
@@ -70,7 +70,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e8c3820203
+DECL|enum|__anon2b92b45a0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1030,7 +1030,7 @@ operator|->
 name|update_preview
 argument_list|)
 expr_stmt|;
-name|gtk_box_pack_start
+name|gtk_box_pack_end
 argument_list|(
 name|GTK_BOX
 argument_list|(

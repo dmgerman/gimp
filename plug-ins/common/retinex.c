@@ -92,7 +92,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a901cac0108
+DECL|struct|__anon2bb8fb380108
 block|{
 DECL|member|scale
 name|gint
@@ -110,10 +110,6 @@ DECL|member|cvar
 name|gfloat
 name|cvar
 decl_stmt|;
-DECL|member|preview
-name|gboolean
-name|preview
-decl_stmt|;
 DECL|typedef|RetinexParams
 block|}
 name|RetinexParams
@@ -123,7 +119,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a901cac0203
+DECL|enum|__anon2bb8fb380203
 block|{
 DECL|enumerator|filter_uniform
 name|filter_uniform
@@ -181,7 +177,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a901cac0308
+DECL|struct|__anon2bb8fb380308
 block|{
 DECL|member|N
 name|gint
@@ -425,10 +421,7 @@ name|RETINEX_UNIFORM
 block|,
 comment|/* Echelles reparties uniformement */
 literal|1.2
-block|,
 comment|/* A voir */
-name|TRUE
-comment|/* default is to update the preview */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -1142,14 +1135,9 @@ argument_list|)
 expr_stmt|;
 name|preview
 operator|=
-name|gimp_aspect_preview_new
+name|gimp_zoom_preview_new
 argument_list|(
 name|drawable
-argument_list|,
-operator|&
-name|rvals
-operator|.
-name|preview
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start_defaults
@@ -1731,24 +1719,14 @@ condition|(
 name|preview
 condition|)
 block|{
-name|gimp_preview_get_size
-argument_list|(
-name|preview
-argument_list|,
-operator|&
-name|width
-argument_list|,
-operator|&
-name|height
-argument_list|)
-expr_stmt|;
 name|src
 operator|=
-name|gimp_drawable_get_thumbnail_data
+name|gimp_zoom_preview_get_data
 argument_list|(
-name|drawable
-operator|->
-name|drawable_id
+name|GIMP_ZOOM_PREVIEW
+argument_list|(
+name|preview
+argument_list|)
 argument_list|,
 operator|&
 name|width

@@ -140,7 +140,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e3e68f0108
+DECL|struct|__anon298f3ecc0108
 block|{
 DECL|member|division
 name|gint32
@@ -153,10 +153,6 @@ decl_stmt|;
 DECL|member|type2
 name|gboolean
 name|type2
-decl_stmt|;
-DECL|member|preview
-name|gboolean
-name|preview
 decl_stmt|;
 DECL|typedef|IllValues
 block|}
@@ -199,10 +195,7 @@ name|TRUE
 block|,
 comment|/* type 1 */
 name|FALSE
-block|,
 comment|/* type 2 */
-name|TRUE
-comment|/* preview */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -627,7 +620,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon28e3e68f0208
+DECL|struct|__anon298f3ecc0208
 typedef|typedef
 struct|struct
 block|{
@@ -1290,33 +1283,14 @@ name|angle
 decl_stmt|,
 name|offset
 decl_stmt|;
-name|gimp_preview_get_size
-argument_list|(
-name|preview
-argument_list|,
-operator|&
-name|width
-argument_list|,
-operator|&
-name|height
-argument_list|)
-expr_stmt|;
-name|bpp
-operator|=
-name|gimp_drawable_bpp
-argument_list|(
-name|drawable
-operator|->
-name|drawable_id
-argument_list|)
-expr_stmt|;
 name|preview_cache
 operator|=
-name|gimp_drawable_get_thumbnail_data
+name|gimp_zoom_preview_get_data
 argument_list|(
-name|drawable
-operator|->
-name|drawable_id
+name|GIMP_ZOOM_PREVIEW
+argument_list|(
+name|preview
+argument_list|)
 argument_list|,
 operator|&
 name|width
@@ -2050,14 +2024,9 @@ argument_list|)
 expr_stmt|;
 name|preview
 operator|=
-name|gimp_aspect_preview_new
+name|gimp_zoom_preview_new
 argument_list|(
 name|drawable
-argument_list|,
-operator|&
-name|parameters
-operator|.
-name|preview
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start_defaults
