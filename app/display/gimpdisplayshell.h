@@ -417,12 +417,12 @@ modifier|*
 name|origin_button
 decl_stmt|;
 comment|/*  NW: origin button                  */
-DECL|member|qmask_button
+DECL|member|quick_mask_button
 name|GtkWidget
 modifier|*
-name|qmask_button
+name|quick_mask_button
 decl_stmt|;
-comment|/*  SW: qmask button                   */
+comment|/*  SW: quick mask button              */
 DECL|member|zoom_button
 name|GtkWidget
 modifier|*

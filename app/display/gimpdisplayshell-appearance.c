@@ -714,7 +714,7 @@ name|gtk_widget_show
 argument_list|(
 name|shell
 operator|->
-name|qmask_button
+name|quick_mask_button
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -766,7 +766,7 @@ name|gtk_widget_hide
 argument_list|(
 name|shell
 operator|->
-name|qmask_button
+name|quick_mask_button
 argument_list|)
 expr_stmt|;
 name|gtk_widget_hide

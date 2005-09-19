@@ -126,7 +126,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpimage-qmask.h"
+file|"gimpimage-quick-mask.h"
 end_include
 
 begin_include
@@ -197,7 +197,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba508690103
+DECL|enum|__anon290dc1db0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -1838,7 +1838,7 @@ condition|(
 operator|!
 name|strcmp
 argument_list|(
-name|GIMP_IMAGE_QMASK_NAME
+name|GIMP_IMAGE_QUICK_MASK_NAME
 argument_list|,
 name|gimp_object_get_name
 argument_list|(

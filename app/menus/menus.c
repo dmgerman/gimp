@@ -291,7 +291,7 @@ literal|"dialogs"
 argument_list|,
 literal|"plug-in"
 argument_list|,
-literal|"qmask"
+literal|"quick-mask"
 argument_list|,
 name|NULL
 argument_list|,
@@ -307,9 +307,9 @@ literal|"image-menu.xml"
 argument_list|,
 name|image_menu_setup
 argument_list|,
-literal|"/qmask-popup"
+literal|"/quick-mask-popup"
 argument_list|,
-literal|"qmask-menu.xml"
+literal|"quick-mask-menu.xml"
 argument_list|,
 name|NULL
 argument_list|,
@@ -350,7 +350,7 @@ literal|"dialogs"
 argument_list|,
 literal|"plug-in"
 argument_list|,
-literal|"qmask"
+literal|"quick-mask"
 argument_list|,
 name|NULL
 argument_list|,
@@ -393,7 +393,7 @@ literal|"dialogs"
 argument_list|,
 literal|"plug-in"
 argument_list|,
-literal|"qmask"
+literal|"quick-mask"
 argument_list|,
 literal|"dock"
 argument_list|,

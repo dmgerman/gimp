@@ -263,7 +263,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2791e8b70103
+DECL|enum|__anon28e476b90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -279,7 +279,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2791e8b70203
+DECL|enum|__anon28e476b90203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1056,7 +1056,7 @@ name|NULL
 expr_stmt|;
 name|shell
 operator|->
-name|qmask_button
+name|quick_mask_button
 operator|=
 name|NULL
 expr_stmt|;
@@ -2770,7 +2770,7 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*  GtkTable widgets are not able to shrink a row/column correctly if    *  widgets are attached with GTK_EXPAND even if those widgets have    *  other rows/columns in their rowspan/colspan where they could    *  nicely expand without disturbing the row/column which is supposed    *  to shrink. --Mitch    *    *  Changed the packing to use hboxes and vboxes which behave nicer:    *    *  main_vbox    *     |    *     +-- menubar    *     |    *     +-- disp_vbox    *     |      |    *     |      +-- upper_hbox    *     |      |      |    *     |      |      +-- inner_table    *     |      |      |      |    *     |      |      |      +-- origin    *     |      |      |      +-- hruler    *     |      |      |      +-- vruler    *     |      |      |      +-- canvas    *     |      |      |    *     |      |      +-- right_vbox    *     |      |             |    *     |      |             +-- zoom_on_resize_button    *     |      |             +-- vscrollbar    *     |      |    *     |      +-- lower_hbox    *     |             |    *     |             +-- qmask    *     |             +-- hscrollbar    *     |             +-- navbutton    *     |    *     +-- statusbar    */
+comment|/*  GtkTable widgets are not able to shrink a row/column correctly if    *  widgets are attached with GTK_EXPAND even if those widgets have    *  other rows/columns in their rowspan/colspan where they could    *  nicely expand without disturbing the row/column which is supposed    *  to shrink. --Mitch    *    *  Changed the packing to use hboxes and vboxes which behave nicer:    *    *  main_vbox    *     |    *     +-- menubar    *     |    *     +-- disp_vbox    *     |      |    *     |      +-- upper_hbox    *     |      |      |    *     |      |      +-- inner_table    *     |      |      |      |    *     |      |      |      +-- origin    *     |      |      |      +-- hruler    *     |      |      |      +-- vruler    *     |      |      |      +-- canvas    *     |      |      |    *     |      |      +-- right_vbox    *     |      |             |    *     |      |             +-- zoom_on_resize_button    *     |      |             +-- vscrollbar    *     |      |    *     |      +-- lower_hbox    *     |             |    *     |             +-- quick_mask    *     |             +-- hscrollbar    *     |             +-- navbutton    *     |    *     +-- statusbar    */
 comment|/*  first, set up the container hierarchy  *********************************/
 comment|/*  the vbox containing all widgets  */
 name|main_vbox
@@ -3073,7 +3073,7 @@ argument_list|(
 name|right_vbox
 argument_list|)
 expr_stmt|;
-comment|/*  the hbox containing qmask button, vertical scrollbar and nav button  */
+comment|/*  the hbox containing quickmask button, vertical scrollbar and nav button  */
 name|lower_hbox
 operator|=
 name|gtk_hbox_new
@@ -3808,10 +3808,10 @@ name|zoom_on_resize
 argument_list|)
 expr_stmt|;
 comment|/*  create the contents of the lower_hbox  *********************************/
-comment|/*  the qmask button  */
+comment|/*  the quick mask button  */
 name|shell
 operator|->
-name|qmask_button
+name|quick_mask_button
 operator|=
 name|gtk_check_button_new
 argument_list|()
@@ -3822,7 +3822,7 @@ name|GTK_TOGGLE_BUTTON
 argument_list|(
 name|shell
 operator|->
-name|qmask_button
+name|quick_mask_button
 argument_list|)
 argument_list|,
 name|FALSE
@@ -3834,7 +3834,7 @@ name|GTK_WIDGET
 argument_list|(
 name|shell
 operator|->
-name|qmask_button
+name|quick_mask_button
 argument_list|)
 argument_list|,
 literal|16
@@ -3846,7 +3846,7 @@ name|GTK_WIDGET_UNSET_FLAGS
 argument_list|(
 name|shell
 operator|->
-name|qmask_button
+name|quick_mask_button
 argument_list|,
 name|GTK_CAN_FOCUS
 argument_list|)
@@ -3855,7 +3855,7 @@ name|image
 operator|=
 name|gtk_image_new_from_stock
 argument_list|(
-name|GIMP_STOCK_QMASK_OFF
+name|GIMP_STOCK_QUICK_MASK_OFF
 argument_list|,
 name|GTK_ICON_SIZE_MENU
 argument_list|)
@@ -3866,7 +3866,7 @@ name|GTK_CONTAINER
 argument_list|(
 name|shell
 operator|->
-name|qmask_button
+name|quick_mask_button
 argument_list|)
 argument_list|,
 name|image
@@ -3881,27 +3881,27 @@ name|gimp_help_set_help_data
 argument_list|(
 name|shell
 operator|->
-name|qmask_button
+name|quick_mask_button
 argument_list|,
 name|_
 argument_list|(
 literal|"Toggle Quick Mask"
 argument_list|)
 argument_list|,
-name|GIMP_HELP_IMAGE_WINDOW_QMASK_BUTTON
+name|GIMP_HELP_IMAGE_WINDOW_QUICK_MASK_BUTTON
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
 name|shell
 operator|->
-name|qmask_button
+name|quick_mask_button
 argument_list|,
 literal|"toggled"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_display_shell_qmask_toggled
+name|gimp_display_shell_quick_mask_toggled
 argument_list|)
 argument_list|,
 name|shell
@@ -3911,13 +3911,13 @@ name|g_signal_connect
 argument_list|(
 name|shell
 operator|->
-name|qmask_button
+name|quick_mask_button
 argument_list|,
 literal|"button-press-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_display_shell_qmask_button_press
+name|gimp_display_shell_quick_mask_button_press
 argument_list|)
 argument_list|,
 name|shell
@@ -4183,7 +4183,7 @@ argument_list|)
 argument_list|,
 name|shell
 operator|->
-name|qmask_button
+name|quick_mask_button
 argument_list|,
 name|FALSE
 argument_list|,
@@ -4322,7 +4322,7 @@ name|gtk_widget_show
 argument_list|(
 name|shell
 operator|->
-name|qmask_button
+name|quick_mask_button
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

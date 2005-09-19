@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_IMAGE_QMASK_H__
+name|__GIMP_IMAGE_QUICK_MASK_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_IMAGE_QMASK_H__
+DECL|macro|__GIMP_IMAGE_QUICK_MASK_H__
 define|#
 directive|define
-name|__GIMP_IMAGE_QMASK_H__
+name|__GIMP_IMAGE_QUICK_MASK_H__
 end_define
 
 begin_comment
@@ -21,30 +21,30 @@ comment|/*  don't change this string, it's used to identify the Quick Mask  *  w
 end_comment
 
 begin_define
-DECL|macro|GIMP_IMAGE_QMASK_NAME
+DECL|macro|GIMP_IMAGE_QUICK_MASK_NAME
 define|#
 directive|define
-name|GIMP_IMAGE_QMASK_NAME
+name|GIMP_IMAGE_QUICK_MASK_NAME
 value|"Qmask"
 end_define
 
 begin_function_decl
 name|void
-name|gimp_image_set_qmask_state
+name|gimp_image_set_quick_mask_state
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
 name|gboolean
-name|qmask_state
+name|quick_mask_state
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_image_get_qmask_state
+name|gimp_image_get_quick_mask_state
 parameter_list|(
 specifier|const
 name|GimpImage
@@ -56,7 +56,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_image_set_qmask_color
+name|gimp_image_set_quick_mask_color
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -72,7 +72,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_image_get_qmask_color
+name|gimp_image_get_quick_mask_color
 parameter_list|(
 specifier|const
 name|GimpImage
@@ -89,7 +89,7 @@ end_function_decl
 begin_function_decl
 name|GimpChannel
 modifier|*
-name|gimp_image_get_qmask
+name|gimp_image_get_quick_mask
 parameter_list|(
 specifier|const
 name|GimpImage
@@ -101,7 +101,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_image_qmask_invert
+name|gimp_image_quick_mask_invert
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -116,7 +116,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMP_IMAGE_QMASK_H__ */
+comment|/* __GIMP_IMAGE_QUICK_MASK_H__ */
 end_comment
 
 end_unit

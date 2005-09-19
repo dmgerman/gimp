@@ -577,11 +577,11 @@ value|"gimp-image-window-zoom-follow-button"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_IMAGE_WINDOW_QMASK_BUTTON
+DECL|macro|GIMP_HELP_IMAGE_WINDOW_QUICK_MASK_BUTTON
 define|#
 directive|define
-name|GIMP_HELP_IMAGE_WINDOW_QMASK_BUTTON
-value|"gimp-image-window-qmask-button"
+name|GIMP_HELP_IMAGE_WINDOW_QUICK_MASK_BUTTON
+value|"gimp-image-window-quick-mask-button"
 end_define
 
 begin_define
@@ -1305,35 +1305,35 @@ value|"gimp-channel-edit"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_QMASK
+DECL|macro|GIMP_HELP_QUICK_MASK
 define|#
 directive|define
-name|GIMP_HELP_QMASK
-value|"gimp-qmask"
+name|GIMP_HELP_QUICK_MASK
+value|"gimp-quick-mask"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_QMASK_TOGGLE
+DECL|macro|GIMP_HELP_QUICK_MASK_TOGGLE
 define|#
 directive|define
-name|GIMP_HELP_QMASK_TOGGLE
-value|"gimp-qmask-toggle"
+name|GIMP_HELP_QUICK_MASK_TOGGLE
+value|"gimp-quick-mask-toggle"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_QMASK_INVERT
+DECL|macro|GIMP_HELP_QUICK_MASK_INVERT
 define|#
 directive|define
-name|GIMP_HELP_QMASK_INVERT
-value|"gimp-qmask-invert"
+name|GIMP_HELP_QUICK_MASK_INVERT
+value|"gimp-quick-mask-invert"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_QMASK_EDIT
+DECL|macro|GIMP_HELP_QUICK_MASK_EDIT
 define|#
 directive|define
-name|GIMP_HELP_QMASK_EDIT
-value|"gimp-qmask-edit"
+name|GIMP_HELP_QUICK_MASK_EDIT
+value|"gimp-quick-mask-edit"
 end_define
 
 begin_define

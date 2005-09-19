@@ -48,7 +48,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpimage-qmask.h"
+file|"gimpimage-quick-mask.h"
 end_include
 
 begin_include
@@ -93,15 +93,15 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_image_set_qmask_state (GimpImage * gimage,gboolean qmask_state)
-name|gimp_image_set_qmask_state
+DECL|function|gimp_image_set_quick_mask_state (GimpImage * gimage,gboolean quick_mask_state)
+name|gimp_image_set_quick_mask_state
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
 name|gboolean
-name|qmask_state
+name|quick_mask_state
 parameter_list|)
 block|{
 name|GimpChannel
@@ -122,19 +122,19 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|qmask_state
+name|quick_mask_state
 operator|==
 name|gimage
 operator|->
-name|qmask_state
+name|quick_mask_state
 condition|)
 return|return;
-comment|/*  set image->qmask_state early so we can return early when    *  being called recursively    */
+comment|/*  set image->quick_mask_state early so we can return early when    *  being called recursively    */
 name|gimage
 operator|->
-name|qmask_state
+name|quick_mask_state
 operator|=
-name|qmask_state
+name|quick_mask_state
 condition|?
 name|TRUE
 else|:
@@ -149,14 +149,14 @@ argument_list|)
 expr_stmt|;
 name|mask
 operator|=
-name|gimp_image_get_qmask
+name|gimp_image_get_quick_mask
 argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|qmask_state
+name|quick_mask_state
 condition|)
 block|{
 if|if
@@ -169,7 +169,7 @@ name|gimp_image_undo_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|GIMP_UNDO_GROUP_IMAGE_QMASK
+name|GIMP_UNDO_GROUP_IMAGE_QUICK_MASK
 argument_list|,
 name|_
 argument_list|(
@@ -218,12 +218,12 @@ name|gimage
 operator|->
 name|height
 argument_list|,
-name|GIMP_IMAGE_QMASK_NAME
+name|GIMP_IMAGE_QUICK_MASK_NAME
 argument_list|,
 operator|&
 name|gimage
 operator|->
-name|qmask_color
+name|quick_mask_color
 argument_list|)
 expr_stmt|;
 comment|/* Clear the mask */
@@ -274,7 +274,7 @@ argument_list|,
 operator|&
 name|gimage
 operator|->
-name|qmask_color
+name|quick_mask_color
 argument_list|,
 name|FALSE
 argument_list|)
@@ -286,7 +286,7 @@ argument_list|(
 name|mask
 argument_list|)
 argument_list|,
-name|GIMP_IMAGE_QMASK_NAME
+name|GIMP_IMAGE_QUICK_MASK_NAME
 argument_list|)
 expr_stmt|;
 block|}
@@ -294,7 +294,7 @@ if|if
 condition|(
 name|gimage
 operator|->
-name|qmask_inverted
+name|quick_mask_inverted
 condition|)
 name|gimp_channel_invert
 argument_list|(
@@ -339,7 +339,7 @@ name|gimp_image_undo_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|GIMP_UNDO_GROUP_IMAGE_QMASK
+name|GIMP_UNDO_GROUP_IMAGE_QUICK_MASK
 argument_list|,
 name|_
 argument_list|(
@@ -351,7 +351,7 @@ if|if
 condition|(
 name|gimage
 operator|->
-name|qmask_inverted
+name|quick_mask_inverted
 condition|)
 name|gimp_channel_invert
 argument_list|(
@@ -404,7 +404,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|gimp_image_qmask_changed
+name|gimp_image_quick_mask_changed
 argument_list|(
 name|gimage
 argument_list|)
@@ -414,8 +414,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_get_qmask_state (const GimpImage * gimage)
-name|gimp_image_get_qmask_state
+DECL|function|gimp_image_get_quick_mask_state (const GimpImage * gimage)
+name|gimp_image_get_quick_mask_state
 parameter_list|(
 specifier|const
 name|GimpImage
@@ -436,15 +436,15 @@ expr_stmt|;
 return|return
 name|gimage
 operator|->
-name|qmask_state
+name|quick_mask_state
 return|;
 block|}
 end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_set_qmask_color (GimpImage * gimage,const GimpRGB * color)
-name|gimp_image_set_qmask_color
+DECL|function|gimp_image_set_quick_mask_color (GimpImage * gimage,const GimpRGB * color)
+name|gimp_image_set_quick_mask_color
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -458,7 +458,7 @@ parameter_list|)
 block|{
 name|GimpChannel
 modifier|*
-name|qmask
+name|quick_mask
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -477,25 +477,25 @@ argument_list|)
 expr_stmt|;
 name|gimage
 operator|->
-name|qmask_color
+name|quick_mask_color
 operator|=
 operator|*
 name|color
 expr_stmt|;
-name|qmask
+name|quick_mask
 operator|=
-name|gimp_image_get_qmask
+name|gimp_image_get_quick_mask
 argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|qmask
+name|quick_mask
 condition|)
 name|gimp_channel_set_color
 argument_list|(
-name|qmask
+name|quick_mask
 argument_list|,
 name|color
 argument_list|,
@@ -507,8 +507,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_get_qmask_color (const GimpImage * gimage,GimpRGB * color)
-name|gimp_image_get_qmask_color
+DECL|function|gimp_image_get_quick_mask_color (const GimpImage * gimage,GimpRGB * color)
+name|gimp_image_get_quick_mask_color
 parameter_list|(
 specifier|const
 name|GimpImage
@@ -540,7 +540,7 @@ name|color
 operator|=
 name|gimage
 operator|->
-name|qmask_color
+name|quick_mask_color
 expr_stmt|;
 block|}
 end_function
@@ -548,8 +548,8 @@ end_function
 begin_function
 name|GimpChannel
 modifier|*
-DECL|function|gimp_image_get_qmask (const GimpImage * gimage)
-name|gimp_image_get_qmask
+DECL|function|gimp_image_get_quick_mask (const GimpImage * gimage)
+name|gimp_image_get_quick_mask
 parameter_list|(
 specifier|const
 name|GimpImage
@@ -572,7 +572,7 @@ name|gimp_image_get_channel_by_name
 argument_list|(
 name|gimage
 argument_list|,
-name|GIMP_IMAGE_QMASK_NAME
+name|GIMP_IMAGE_QUICK_MASK_NAME
 argument_list|)
 return|;
 block|}
@@ -580,8 +580,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_qmask_invert (GimpImage * gimage)
-name|gimp_image_qmask_invert
+DECL|function|gimp_image_quick_mask_invert (GimpImage * gimage)
+name|gimp_image_quick_mask_invert
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -600,25 +600,25 @@ if|if
 condition|(
 name|gimage
 operator|->
-name|qmask_state
+name|quick_mask_state
 condition|)
 block|{
 name|GimpChannel
 modifier|*
-name|qmask
+name|quick_mask
 init|=
-name|gimp_image_get_qmask
+name|gimp_image_get_quick_mask
 argument_list|(
 name|gimage
 argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|qmask
+name|quick_mask
 condition|)
 name|gimp_channel_invert
 argument_list|(
-name|qmask
+name|quick_mask
 argument_list|,
 name|TRUE
 argument_list|)
@@ -626,12 +626,12 @@ expr_stmt|;
 block|}
 name|gimage
 operator|->
-name|qmask_inverted
+name|quick_mask_inverted
 operator|=
 operator|!
 name|gimage
 operator|->
-name|qmask_inverted
+name|quick_mask_inverted
 expr_stmt|;
 block|}
 end_function

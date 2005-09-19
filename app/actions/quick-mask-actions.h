@@ -6,19 +6,19 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__QMASK_ACTIONS_H__
+name|__QUICK_MASK_ACTIONS_H__
 end_ifndef
 
 begin_define
-DECL|macro|__QMASK_ACTIONS_H__
+DECL|macro|__QUICK_MASK_ACTIONS_H__
 define|#
 directive|define
-name|__QMASK_ACTIONS_H__
+name|__QUICK_MASK_ACTIONS_H__
 end_define
 
 begin_function_decl
 name|void
-name|qmask_actions_setup
+name|quick_mask_actions_setup
 parameter_list|(
 name|GimpActionGroup
 modifier|*
@@ -29,7 +29,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|qmask_actions_update
+name|quick_mask_actions_update
 parameter_list|(
 name|GimpActionGroup
 modifier|*
@@ -47,7 +47,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __QMASK_ACTIONS_H__ */
+comment|/* __QUICK_MASK_ACTIONS_H__ */
 end_comment
 
 end_unit

@@ -96,7 +96,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpimage-qmask.h"
+file|"core/gimpimage-quick-mask.h"
 end_include
 
 begin_include
@@ -5094,8 +5094,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_display_shell_qmask_button_press (GtkWidget * widget,GdkEventButton * bevent,GimpDisplayShell * shell)
-name|gimp_display_shell_qmask_button_press
+DECL|function|gimp_display_shell_quick_mask_button_press (GtkWidget * widget,GdkEventButton * bevent,GimpDisplayShell * shell)
+name|gimp_display_shell_quick_mask_button_press
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -5135,7 +5135,7 @@ name|shell
 operator|->
 name|menubar_manager
 argument_list|,
-literal|"/qmask-popup"
+literal|"/quick-mask-popup"
 argument_list|,
 name|GTK_WIDGET
 argument_list|(
@@ -5163,8 +5163,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_qmask_toggled (GtkWidget * widget,GimpDisplayShell * shell)
-name|gimp_display_shell_qmask_toggled
+DECL|function|gimp_display_shell_quick_mask_toggled (GtkWidget * widget,GimpDisplayShell * shell)
+name|gimp_display_shell_quick_mask_toggled
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -5184,7 +5184,7 @@ argument_list|)
 operator|->
 name|active
 operator|!=
-name|gimp_image_get_qmask_state
+name|gimp_image_get_quick_mask_state
 argument_list|(
 name|shell
 operator|->
@@ -5194,7 +5194,7 @@ name|gimage
 argument_list|)
 condition|)
 block|{
-name|gimp_image_set_qmask_state
+name|gimp_image_set_quick_mask_state
 argument_list|(
 name|shell
 operator|->

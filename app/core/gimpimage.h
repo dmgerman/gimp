@@ -449,21 +449,21 @@ name|MAX_CHANNELS
 index|]
 decl_stmt|;
 comment|/*  active channels              */
-DECL|member|qmask_state
+DECL|member|quick_mask_state
 name|gboolean
-name|qmask_state
+name|quick_mask_state
 decl_stmt|;
-comment|/*  TRUE if qmask is on          */
-DECL|member|qmask_inverted
+comment|/*  TRUE if quick mask is on       */
+DECL|member|quick_mask_inverted
 name|gboolean
-name|qmask_inverted
+name|quick_mask_inverted
 decl_stmt|;
-comment|/*  TRUE if qmask is inverted    */
-DECL|member|qmask_color
+comment|/*  TRUE if quick mask is inverted */
+DECL|member|quick_mask_color
 name|GimpRGB
-name|qmask_color
+name|quick_mask_color
 decl_stmt|;
-comment|/*  rgba triplet of the color    */
+comment|/*  rgba triplet of the color      */
 comment|/*  Undo apparatus  */
 DECL|member|undo_stack
 name|GimpUndoStack
@@ -656,11 +656,11 @@ modifier|*
 name|gimage
 parameter_list|)
 function_decl|;
-DECL|member|qmask_changed
+DECL|member|quick_mask_changed
 name|void
 function_decl|(
 modifier|*
-name|qmask_changed
+name|quick_mask_changed
 function_decl|)
 parameter_list|(
 name|GimpImage
@@ -1428,7 +1428,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_image_qmask_changed
+name|gimp_image_quick_mask_changed
 parameter_list|(
 name|GimpImage
 modifier|*

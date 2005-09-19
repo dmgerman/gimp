@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2782a3bd0103
+DECL|enum|__anon2bf9e5a20103
 block|{
 DECL|enumerator|POP
 name|POP
@@ -99,7 +99,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2782a3bd0203
+DECL|enum|__anon2bf9e5a20203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1856,7 +1856,7 @@ name|undo_type
 condition|)
 block|{
 case|case
-name|GIMP_UNDO_GROUP_IMAGE_QMASK
+name|GIMP_UNDO_GROUP_IMAGE_QUICK_MASK
 case|:
 case|case
 name|GIMP_UNDO_GROUP_MASK

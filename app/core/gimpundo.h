@@ -43,9 +43,9 @@ DECL|member|unit_changed
 name|gboolean
 name|unit_changed
 decl_stmt|;
-DECL|member|qmask_changed
+DECL|member|quick_mask_changed
 name|gboolean
-name|qmask_changed
+name|quick_mask_changed
 decl_stmt|;
 DECL|member|alpha_changed
 name|gboolean

@@ -1164,9 +1164,9 @@ if|if
 condition|(
 name|accum
 operator|.
-name|qmask_changed
+name|quick_mask_changed
 condition|)
-name|gimp_image_qmask_changed
+name|gimp_image_quick_mask_changed
 argument_list|(
 name|gimage
 argument_list|)
@@ -1583,7 +1583,7 @@ operator||
 name|GIMP_DIRTY_VECTORS
 return|;
 case|case
-name|GIMP_UNDO_GROUP_IMAGE_QMASK
+name|GIMP_UNDO_GROUP_IMAGE_QUICK_MASK
 case|:
 comment|/* FIXME */
 return|return

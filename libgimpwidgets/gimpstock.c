@@ -1654,7 +1654,7 @@ name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
-name|GIMP_STOCK_QMASK_OFF
+name|GIMP_STOCK_QUICK_MASK_OFF
 block|,
 name|NULL
 block|,
@@ -1666,8 +1666,34 @@ name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
-name|GIMP_STOCK_QMASK_ON
+name|GIMP_STOCK_QUICK_MASK_ON
 block|,
+name|NULL
+block|,
+literal|0
+block|,
+literal|0
+block|,
+name|LIBGIMP_DOMAIN
+block|}
+block|,
+block|{
+literal|"gimp-qmask-off"
+block|,
+comment|/* compat */
+name|NULL
+block|,
+literal|0
+block|,
+literal|0
+block|,
+name|LIBGIMP_DOMAIN
+block|}
+block|,
+block|{
+literal|"gimp-qmask-on"
+block|,
+comment|/* compat */
 name|NULL
 block|,
 literal|0
@@ -2442,7 +2468,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c661f380108
+DECL|struct|__anon2ad41a500108
 block|{
 DECL|member|stock_id
 specifier|const
@@ -3168,7 +3194,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c661f380208
+DECL|struct|__anon2ad41a500208
 block|{
 DECL|member|stock_id
 specifier|const
@@ -3517,15 +3543,29 @@ name|stock_navigation_16
 block|}
 block|,
 block|{
-name|GIMP_STOCK_QMASK_OFF
+name|GIMP_STOCK_QUICK_MASK_OFF
 block|,
-name|stock_qmask_off_16
+name|stock_quick_mask_off_16
 block|}
 block|,
 block|{
-name|GIMP_STOCK_QMASK_ON
+name|GIMP_STOCK_QUICK_MASK_ON
 block|,
-name|stock_qmask_on_16
+name|stock_quick_mask_on_16
+block|}
+block|,
+block|{
+literal|"gimp-qmask-off"
+block|,
+comment|/* compat */
+name|stock_quick_mask_off_16
+block|}
+block|,
+block|{
+literal|"gimp-qmask-on"
+block|,
+comment|/* compat */
+name|stock_quick_mask_on_16
 block|}
 block|,
 block|{
@@ -3972,7 +4012,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c661f380308
+DECL|struct|__anon2ad41a500308
 block|{
 DECL|member|stock_id
 specifier|const
@@ -4068,7 +4108,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c661f380408
+DECL|struct|__anon2ad41a500408
 block|{
 DECL|member|stock_id
 specifier|const
@@ -4212,7 +4252,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c661f380508
+DECL|struct|__anon2ad41a500508
 block|{
 DECL|member|stock_id
 specifier|const

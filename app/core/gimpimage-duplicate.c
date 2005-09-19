@@ -1016,22 +1016,30 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/*  Copy the qmask info  */
+comment|/*  Copy the quick mask info  */
 name|new_gimage
 operator|->
-name|qmask_state
+name|quick_mask_state
 operator|=
 name|gimage
 operator|->
-name|qmask_state
+name|quick_mask_state
 expr_stmt|;
 name|new_gimage
 operator|->
-name|qmask_color
+name|quick_mask_inverted
 operator|=
 name|gimage
 operator|->
-name|qmask_color
+name|quick_mask_inverted
+expr_stmt|;
+name|new_gimage
+operator|->
+name|quick_mask_color
+operator|=
+name|gimage
+operator|->
+name|quick_mask_color
 expr_stmt|;
 comment|/*  Copy parasites  */
 if|if

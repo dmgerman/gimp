@@ -144,7 +144,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpimage-qmask.h"
+file|"gimpimage-quick-mask.h"
 end_include
 
 begin_include
@@ -282,7 +282,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc020650103
+DECL|enum|__anon2b9ed7ea0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -317,8 +317,8 @@ block|,
 DECL|enumerator|UNIT_CHANGED
 name|UNIT_CHANGED
 block|,
-DECL|enumerator|QMASK_CHANGED
-name|QMASK_CHANGED
+DECL|enumerator|QUICK_MASK_CHANGED
+name|QUICK_MASK_CHANGED
 block|,
 DECL|enumerator|SELECTION_CONTROL
 name|SELECTION_CONTROL
@@ -361,7 +361,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc020650203
+DECL|enum|__anon2b9ed7ea0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1470,12 +1470,12 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_signals
 index|[
-name|QMASK_CHANGED
+name|QUICK_MASK_CHANGED
 index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"qmask-changed"
+literal|"quick-mask-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -1488,7 +1488,7 @@ name|G_STRUCT_OFFSET
 argument_list|(
 name|GimpImageClass
 argument_list|,
-name|qmask_changed
+name|quick_mask_changed
 argument_list|)
 argument_list|,
 name|NULL
@@ -2700,13 +2700,13 @@ expr_stmt|;
 block|}
 name|gimage
 operator|->
-name|qmask_state
+name|quick_mask_state
 operator|=
 name|FALSE
 expr_stmt|;
 name|gimage
 operator|->
-name|qmask_inverted
+name|quick_mask_inverted
 operator|=
 name|FALSE
 expr_stmt|;
@@ -2715,7 +2715,7 @@ argument_list|(
 operator|&
 name|gimage
 operator|->
-name|qmask_color
+name|quick_mask_color
 argument_list|,
 literal|1.0
 argument_list|,
@@ -5102,7 +5102,7 @@ condition|(
 operator|!
 name|strcmp
 argument_list|(
-name|GIMP_IMAGE_QMASK_NAME
+name|GIMP_IMAGE_QUICK_MASK_NAME
 argument_list|,
 name|gimp_object_get_name
 argument_list|(
@@ -5114,7 +5114,7 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
-name|gimp_image_set_qmask_state
+name|gimp_image_set_quick_mask_state
 argument_list|(
 name|gimage
 argument_list|,
@@ -5172,7 +5172,7 @@ condition|(
 operator|!
 name|strcmp
 argument_list|(
-name|GIMP_IMAGE_QMASK_NAME
+name|GIMP_IMAGE_QUICK_MASK_NAME
 argument_list|,
 name|gimp_object_get_name
 argument_list|(
@@ -5184,7 +5184,7 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
-name|gimp_image_set_qmask_state
+name|gimp_image_set_quick_mask_state
 argument_list|(
 name|gimage
 argument_list|,
@@ -5215,7 +5215,7 @@ condition|(
 operator|!
 name|strcmp
 argument_list|(
-name|GIMP_IMAGE_QMASK_NAME
+name|GIMP_IMAGE_QUICK_MASK_NAME
 argument_list|,
 name|gimp_object_get_name
 argument_list|(
@@ -5227,7 +5227,7 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
-name|gimp_image_set_qmask_state
+name|gimp_image_set_quick_mask_state
 argument_list|(
 name|gimage
 argument_list|,
@@ -5238,19 +5238,19 @@ block|}
 elseif|else
 if|if
 condition|(
-name|gimp_image_get_qmask_state
+name|gimp_image_get_quick_mask_state
 argument_list|(
 name|gimage
 argument_list|)
 operator|&&
 operator|!
-name|gimp_image_get_qmask
+name|gimp_image_get_quick_mask
 argument_list|(
 name|gimage
 argument_list|)
 condition|)
 block|{
-name|gimp_image_set_qmask_state
+name|gimp_image_set_quick_mask_state
 argument_list|(
 name|gimage
 argument_list|,
@@ -5281,7 +5281,7 @@ condition|(
 operator|!
 name|strcmp
 argument_list|(
-name|GIMP_IMAGE_QMASK_NAME
+name|GIMP_IMAGE_QUICK_MASK_NAME
 argument_list|,
 name|gimp_object_get_name
 argument_list|(
@@ -5295,7 +5295,7 @@ condition|)
 block|{
 name|gimage
 operator|->
-name|qmask_color
+name|quick_mask_color
 operator|=
 name|channel
 operator|->
@@ -7266,8 +7266,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_qmask_changed (GimpImage * gimage)
-name|gimp_image_qmask_changed
+DECL|function|gimp_image_quick_mask_changed (GimpImage * gimage)
+name|gimp_image_quick_mask_changed
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -7288,7 +7288,7 @@ name|gimage
 argument_list|,
 name|gimp_image_signals
 index|[
-name|QMASK_CHANGED
+name|QUICK_MASK_CHANGED
 index|]
 argument_list|,
 literal|0

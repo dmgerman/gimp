@@ -174,7 +174,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_display_shell_qmask_button_press
+name|gimp_display_shell_quick_mask_button_press
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -193,7 +193,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_display_shell_qmask_toggled
+name|gimp_display_shell_quick_mask_toggled
 parameter_list|(
 name|GtkWidget
 modifier|*

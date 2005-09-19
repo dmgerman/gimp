@@ -54,7 +54,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpimage-qmask.h"
+file|"core/gimpimage-quick-mask.h"
 end_include
 
 begin_include
@@ -78,7 +78,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"qmask-commands.h"
+file|"quick-mask-commands.h"
 end_include
 
 begin_include
@@ -94,7 +94,7 @@ end_comment
 begin_function_decl
 specifier|static
 name|void
-name|qmask_configure_response
+name|quick_mask_configure_response
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -116,8 +116,8 @@ end_comment
 
 begin_function
 name|void
-DECL|function|qmask_toggle_cmd_callback (GtkAction * action,gpointer data)
-name|qmask_toggle_cmd_callback
+DECL|function|quick_mask_toggle_cmd_callback (GtkAction * action,gpointer data)
+name|quick_mask_toggle_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -155,13 +155,13 @@ if|if
 condition|(
 name|active
 operator|!=
-name|gimp_image_get_qmask_state
+name|gimp_image_get_quick_mask_state
 argument_list|(
 name|gimage
 argument_list|)
 condition|)
 block|{
-name|gimp_image_set_qmask_state
+name|gimp_image_set_quick_mask_state
 argument_list|(
 name|gimage
 argument_list|,
@@ -179,8 +179,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|qmask_invert_cmd_callback (GtkAction * action,GtkAction * current,gpointer data)
-name|qmask_invert_cmd_callback
+DECL|function|quick_mask_invert_cmd_callback (GtkAction * action,GtkAction * current,gpointer data)
+name|quick_mask_invert_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -224,10 +224,10 @@ name|value
 operator|!=
 name|gimage
 operator|->
-name|qmask_inverted
+name|quick_mask_inverted
 condition|)
 block|{
-name|gimp_image_qmask_invert
+name|gimp_image_quick_mask_invert
 argument_list|(
 name|gimage
 argument_list|)
@@ -243,8 +243,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|qmask_configure_cmd_callback (GtkAction * action,gpointer data)
-name|qmask_configure_cmd_callback
+DECL|function|quick_mask_configure_cmd_callback (GtkAction * action,gpointer data)
+name|quick_mask_configure_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -283,7 +283,7 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
-name|gimp_image_get_qmask_color
+name|gimp_image_get_quick_mask_color
 argument_list|(
 name|gimage
 argument_list|,
@@ -316,16 +316,16 @@ argument_list|(
 literal|"Quick Mask Attributes"
 argument_list|)
 argument_list|,
-literal|"gimp-qmask-edit"
+literal|"gimp-quick-mask-edit"
 argument_list|,
-name|GIMP_STOCK_QMASK_ON
+name|GIMP_STOCK_QUICK_MASK_ON
 argument_list|,
 name|_
 argument_list|(
 literal|"Edit Quick Mask Attributes"
 argument_list|)
 argument_list|,
-name|GIMP_HELP_QMASK_EDIT
+name|GIMP_HELP_QUICK_MASK_EDIT
 argument_list|,
 name|_
 argument_list|(
@@ -350,7 +350,7 @@ literal|"response"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|qmask_configure_response
+name|quick_mask_configure_response
 argument_list|)
 argument_list|,
 name|options
@@ -373,8 +373,8 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|qmask_configure_response (GtkWidget * widget,gint response_id,ChannelOptionsDialog * options)
-name|qmask_configure_response
+DECL|function|quick_mask_configure_response (GtkWidget * widget,gint response_id,ChannelOptionsDialog * options)
+name|quick_mask_configure_response
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -401,7 +401,7 @@ decl_stmt|;
 name|GimpRGB
 name|new_color
 decl_stmt|;
-name|gimp_image_get_qmask_color
+name|gimp_image_get_quick_mask_color
 argument_list|(
 name|options
 operator|->
@@ -438,7 +438,7 @@ operator|>
 literal|0.0001
 condition|)
 block|{
-name|gimp_image_set_qmask_color
+name|gimp_image_set_quick_mask_color
 argument_list|(
 name|options
 operator|->

@@ -3481,11 +3481,11 @@ literal|"group-image-vectors-merge"
 block|}
 block|,
 block|{
-name|GIMP_UNDO_GROUP_IMAGE_QMASK
+name|GIMP_UNDO_GROUP_IMAGE_QUICK_MASK
 block|,
-literal|"GIMP_UNDO_GROUP_IMAGE_QMASK"
+literal|"GIMP_UNDO_GROUP_IMAGE_QUICK_MASK"
 block|,
-literal|"group-image-qmask"
+literal|"group-image-quick-mask"
 block|}
 block|,
 block|{
@@ -4183,7 +4183,7 @@ name|NULL
 block|}
 block|,
 block|{
-name|GIMP_UNDO_GROUP_IMAGE_QMASK
+name|GIMP_UNDO_GROUP_IMAGE_QUICK_MASK
 block|,
 name|N_
 argument_list|(

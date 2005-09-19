@@ -288,7 +288,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"qmask-actions.h"
+file|"quick-mask-actions.h"
 end_include
 
 begin_include
@@ -762,18 +762,18 @@ name|plug_in_actions_update
 block|}
 block|,
 block|{
-literal|"qmask"
+literal|"quick-mask"
 block|,
 name|N_
 argument_list|(
 literal|"Quick Mask"
 argument_list|)
 block|,
-name|GIMP_STOCK_QMASK_ON
+name|GIMP_STOCK_QUICK_MASK_ON
 block|,
-name|qmask_actions_setup
+name|quick_mask_actions_setup
 block|,
-name|qmask_actions_update
+name|quick_mask_actions_update
 block|}
 block|,
 block|{

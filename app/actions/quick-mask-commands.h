@@ -6,19 +6,19 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__QMASK_COMMANDS_H__
+name|__QUICK_MASK_COMMANDS_H__
 end_ifndef
 
 begin_define
-DECL|macro|__QMASK_COMMANDS_H__
+DECL|macro|__QUICK_MASK_COMMANDS_H__
 define|#
 directive|define
-name|__QMASK_COMMANDS_H__
+name|__QUICK_MASK_COMMANDS_H__
 end_define
 
 begin_function_decl
 name|void
-name|qmask_toggle_cmd_callback
+name|quick_mask_toggle_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -32,7 +32,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|qmask_invert_cmd_callback
+name|quick_mask_invert_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -50,7 +50,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|qmask_configure_cmd_callback
+name|quick_mask_configure_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -68,7 +68,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __QMASK_COMMANDS_H__ */
+comment|/* __QUICK_MASK_COMMANDS_H__ */
 end_comment
 
 end_unit

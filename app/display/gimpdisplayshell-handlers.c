@@ -261,7 +261,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_display_shell_qmask_changed_handler
+name|gimp_display_shell_quick_mask_changed_handler
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -738,11 +738,11 @@ name|g_signal_connect
 argument_list|(
 name|gimage
 argument_list|,
-literal|"qmask-changed"
+literal|"quick-mask-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_display_shell_qmask_changed_handler
+name|gimp_display_shell_quick_mask_changed_handler
 argument_list|)
 argument_list|,
 name|shell
@@ -1115,7 +1115,7 @@ argument_list|,
 name|shell
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_qmask_changed_handler
+name|gimp_display_shell_quick_mask_changed_handler
 argument_list|(
 name|gimage
 argument_list|,
@@ -1428,7 +1428,7 @@ name|g_signal_handlers_disconnect_by_func
 argument_list|(
 name|gimage
 argument_list|,
-name|gimp_display_shell_qmask_changed_handler
+name|gimp_display_shell_quick_mask_changed_handler
 argument_list|,
 name|shell
 argument_list|)
@@ -1753,8 +1753,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_display_shell_qmask_changed_handler (GimpImage * gimage,GimpDisplayShell * shell)
-name|gimp_display_shell_qmask_changed_handler
+DECL|function|gimp_display_shell_quick_mask_changed_handler (GimpImage * gimage,GimpDisplayShell * shell)
+name|gimp_display_shell_quick_mask_changed_handler
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -1777,7 +1777,7 @@ name|GTK_BIN
 argument_list|(
 name|shell
 operator|->
-name|qmask_button
+name|quick_mask_button
 argument_list|)
 operator|->
 name|child
@@ -1787,9 +1787,9 @@ name|g_signal_handlers_block_by_func
 argument_list|(
 name|shell
 operator|->
-name|qmask_button
+name|quick_mask_button
 argument_list|,
-name|gimp_display_shell_qmask_toggled
+name|gimp_display_shell_quick_mask_toggled
 argument_list|,
 name|shell
 argument_list|)
@@ -1800,7 +1800,7 @@ name|GTK_TOGGLE_BUTTON
 argument_list|(
 name|shell
 operator|->
-name|qmask_button
+name|quick_mask_button
 argument_list|)
 argument_list|,
 name|shell
@@ -1809,7 +1809,7 @@ name|gdisp
 operator|->
 name|gimage
 operator|->
-name|qmask_state
+name|quick_mask_state
 argument_list|)
 expr_stmt|;
 if|if
@@ -1820,13 +1820,13 @@ name|gdisp
 operator|->
 name|gimage
 operator|->
-name|qmask_state
+name|quick_mask_state
 condition|)
 name|gtk_image_set_from_stock
 argument_list|(
 name|image
 argument_list|,
-name|GIMP_STOCK_QMASK_ON
+name|GIMP_STOCK_QUICK_MASK_ON
 argument_list|,
 name|GTK_ICON_SIZE_MENU
 argument_list|)
@@ -1836,7 +1836,7 @@ name|gtk_image_set_from_stock
 argument_list|(
 name|image
 argument_list|,
-name|GIMP_STOCK_QMASK_OFF
+name|GIMP_STOCK_QUICK_MASK_OFF
 argument_list|,
 name|GTK_ICON_SIZE_MENU
 argument_list|)
@@ -1845,9 +1845,9 @@ name|g_signal_handlers_unblock_by_func
 argument_list|(
 name|shell
 operator|->
-name|qmask_button
+name|quick_mask_button
 argument_list|,
-name|gimp_display_shell_qmask_toggled
+name|gimp_display_shell_quick_mask_toggled
 argument_list|,
 name|shell
 argument_list|)
