@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1636b50103
+DECL|enum|__anon2c4d46d80103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -2419,32 +2419,19 @@ argument_list|,
 literal|2
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|thumbnail
-operator|->
-name|image_num_layers
-operator|==
-literal|1
-condition|)
-name|g_string_append
-argument_list|(
-name|str
-argument_list|,
-name|_
-argument_list|(
-literal|"1 Layer"
-argument_list|)
-argument_list|)
-expr_stmt|;
-else|else
 name|g_string_append_printf
 argument_list|(
 name|str
 argument_list|,
-name|_
+name|ngettext
 argument_list|(
+literal|"%d Layer"
+argument_list|,
 literal|"%d Layers"
+argument_list|,
+name|thumbnail
+operator|->
+name|image_num_layers
 argument_list|)
 argument_list|,
 name|thumbnail
