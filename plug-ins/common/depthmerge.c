@@ -305,6 +305,7 @@ typedef|;
 end_typedef
 
 begin_function_decl
+specifier|static
 name|void
 name|DepthMerge_initParams
 parameter_list|(
@@ -316,6 +317,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|static
 name|void
 name|DepthMerge_construct
 parameter_list|(
@@ -327,6 +329,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|static
 name|void
 name|DepthMerge_destroy
 parameter_list|(
@@ -338,6 +341,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|static
 name|gint32
 name|DepthMerge_execute
 parameter_list|(
@@ -349,6 +353,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|static
 name|void
 name|DepthMerge_executeRegion
 parameter_list|(
@@ -395,6 +400,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|static
 name|void
 name|DepthMerge_buildPreviewSourceImage
 parameter_list|(
@@ -406,6 +412,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|static
 name|void
 name|DepthMerge_updatePreview
 parameter_list|(
@@ -498,6 +505,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|static
 name|void
 name|dialogValueScaleUpdateCallback
 parameter_list|(
@@ -512,20 +520,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
-name|dialogValueEntryUpdateCallback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
+specifier|static
 name|void
 name|util_fillReducedBuffer
 parameter_list|(
@@ -565,6 +560,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|static
 name|void
 name|util_convertColorspace
 parameter_list|(
@@ -1272,6 +1268,7 @@ comment|/* ----- DepthMerge ----- */
 end_comment
 
 begin_function
+specifier|static
 name|void
 DECL|function|DepthMerge_initParams (DepthMerge * dm)
 name|DepthMerge_initParams
@@ -1362,6 +1359,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|DepthMerge_construct (DepthMerge * dm)
 name|DepthMerge_construct
@@ -1651,6 +1649,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|DepthMerge_destroy (DepthMerge * dm)
 name|DepthMerge_destroy
@@ -1792,6 +1791,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|gint32
 DECL|function|DepthMerge_execute (DepthMerge * dm)
 name|DepthMerge_execute
@@ -2738,6 +2738,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|DepthMerge_executeRegion (DepthMerge * dm,guchar * source1Row,guchar * source2Row,guchar * depthMap1Row,guchar * depthMap2Row,guchar * resultRow,gint length)
 name|DepthMerge_executeRegion
@@ -2770,7 +2771,7 @@ name|gint
 name|length
 parameter_list|)
 block|{
-name|float
+name|gfloat
 name|scale1
 decl_stmt|,
 name|scale2
@@ -2779,15 +2780,14 @@ name|offset255
 decl_stmt|,
 name|invOverlap255
 decl_stmt|;
-name|float
+name|gfloat
 name|frac
 decl_stmt|,
 name|depth1
 decl_stmt|,
 name|depth2
 decl_stmt|;
-name|unsigned
-name|short
+name|gushort
 name|c1
 index|[
 literal|4
@@ -2815,7 +2815,7 @@ index|]
 decl_stmt|,
 name|temp
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|tempInt
@@ -2882,7 +2882,7 @@ block|{
 name|depth1
 operator|=
 operator|(
-name|float
+name|gfloat
 operator|)
 name|depthMap1Row
 index|[
@@ -2892,7 +2892,7 @@ expr_stmt|;
 name|depth2
 operator|=
 operator|(
-name|float
+name|gfloat
 operator|)
 name|depthMap2Row
 index|[
@@ -4902,6 +4902,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|DepthMerge_buildPreviewSourceImage (DepthMerge * dm)
 name|DepthMerge_buildPreviewSourceImage
@@ -5195,6 +5196,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|DepthMerge_updatePreview (DepthMerge * dm)
 name|DepthMerge_updatePreview
@@ -6035,6 +6037,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|dialogValueScaleUpdateCallback (GtkAdjustment * adjustment,gpointer data)
 name|dialogValueScaleUpdateCallback
@@ -6081,6 +6084,7 @@ comment|/* ----- Utility routines ----- */
 end_comment
 
 begin_function
+specifier|static
 name|void
 DECL|function|util_fillReducedBuffer (guchar * dest,gint destWidth,gint destHeight,gint destBPP,gint destHasAlpha,GimpDrawable * sourceDrawable,gint x0,gint y0,gint sourceWidth,gint sourceHeight)
 name|util_fillReducedBuffer
@@ -6477,6 +6481,7 @@ comment|/* Utterly pathetic kludge to convert between color spaces;    likes gra
 end_comment
 
 begin_function
+specifier|static
 name|void
 DECL|function|util_convertColorspace (guchar * dest,gint destBPP,gint destHasAlpha,guchar * source,gint sourceBPP,gint sourceHasAlpha,gint length)
 name|util_convertColorspace
