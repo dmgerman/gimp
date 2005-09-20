@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4d46d80103
+DECL|enum|__anon2b3a78660103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -2425,9 +2425,9 @@ name|str
 argument_list|,
 name|ngettext
 argument_list|(
-literal|"%d Layer"
+literal|"%d layer"
 argument_list|,
-literal|"%d Layers"
+literal|"%d layers"
 argument_list|,
 name|thumbnail
 operator|->
