@@ -132,7 +132,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295422f60103
+DECL|enum|__anon2c3a37a80103
 block|{
 DECL|enumerator|RAW_RGB
 name|RAW_RGB
@@ -158,7 +158,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295422f60203
+DECL|enum|__anon2c3a37a80203
 block|{
 DECL|enumerator|RAW_PALETTE_RGB
 name|RAW_PALETTE_RGB
@@ -176,7 +176,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295422f60308
+DECL|struct|__anon2c3a37a80308
 block|{
 DECL|member|file_offset
 name|gint32
@@ -217,7 +217,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295422f60408
+DECL|struct|__anon2c3a37a80408
 block|{
 DECL|member|fp
 name|FILE
@@ -706,7 +706,7 @@ literal|"Aug 2004"
 argument_list|,
 name|N_
 argument_list|(
-literal|"Raw Image Data"
+literal|"Raw image data"
 argument_list|)
 argument_list|,
 name|NULL
@@ -753,7 +753,7 @@ literal|"Aug 2004"
 argument_list|,
 name|N_
 argument_list|(
-literal|"Raw Image Data"
+literal|"Raw image data"
 argument_list|)
 argument_list|,
 literal|"INDEXED, GRAY, RGB, RGBA"
@@ -1360,10 +1360,10 @@ end_comment
 begin_function
 specifier|static
 name|gint
-DECL|function|mmap_read (int fd,void * buf,gint32 len,gint32 pos,gint rowstride)
+DECL|function|mmap_read (gint fd,void * buf,gint32 len,gint32 pos,gint rowstride)
 name|mmap_read
 parameter_list|(
-name|int
+name|gint
 name|fd
 parameter_list|,
 name|void
@@ -2001,6 +2001,8 @@ index|[
 name|i
 operator|*
 literal|4
+operator|+
+literal|0
 index|]
 expr_stmt|;
 block|}
@@ -2526,6 +2528,8 @@ operator|=
 name|cmap
 index|[
 name|i
+operator|+
+literal|0
 index|]
 expr_stmt|;
 name|temp
@@ -2649,6 +2653,8 @@ operator|=
 name|buf
 index|[
 name|i
+operator|+
+literal|0
 index|]
 expr_stmt|;
 name|green
@@ -3995,6 +4001,8 @@ name|x
 index|]
 operator|*
 literal|3
+operator|+
+literal|0
 index|]
 expr_stmt|;
 operator|*
@@ -4077,6 +4085,8 @@ name|x
 index|]
 operator|*
 literal|4
+operator|+
+literal|0
 index|]
 expr_stmt|;
 break|break;
@@ -4875,7 +4885,7 @@ name|RAW_PALETTE_RGB
 argument_list|,
 name|_
 argument_list|(
-literal|"B, G, R, X (bmp style)"
+literal|"B, G, R, X (BMP style)"
 argument_list|)
 argument_list|,
 name|RAW_PALETTE_BGR
@@ -5361,7 +5371,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"B, G, R, X (bmp style)"
+literal|"B, G, R, X (BMP style)"
 argument_list|)
 argument_list|,
 name|RAW_PALETTE_BGR
