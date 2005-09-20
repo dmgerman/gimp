@@ -1530,7 +1530,7 @@ name|widget
 operator|->
 name|style
 operator|->
-name|mid_gc
+name|dark_gc
 index|[
 name|GTK_STATE_INSENSITIVE
 index|]
@@ -1695,7 +1695,7 @@ name|widget
 operator|->
 name|style
 operator|->
-name|mid_gc
+name|light_gc
 index|[
 name|GTK_STATE_INSENSITIVE
 index|]
