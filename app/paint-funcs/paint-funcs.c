@@ -15901,7 +15901,7 @@ index|]
 argument_list|,
 name|buf
 index|[
-literal|2
+literal|0
 index|]
 argument_list|,
 name|width
@@ -16374,7 +16374,7 @@ index|]
 argument_list|,
 name|buf
 index|[
-literal|2
+literal|0
 index|]
 argument_list|,
 name|width
