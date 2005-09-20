@@ -118,7 +118,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279683820108
+DECL|struct|__anon2bc13e820108
 block|{
 DECL|member|resolution
 name|gdouble
@@ -1826,10 +1826,10 @@ operator|==
 literal|2
 operator|&&
 name|LIBRSVG_MINOR_VERSION
-operator|>=
-literal|11
+operator|<
+literal|99
 operator|)
-name|rsvg_handle_set_dpi
+name|rsvg_handle_set_dpi_x_y
 argument_list|(
 name|handle
 argument_list|,
@@ -1844,7 +1844,7 @@ argument_list|)
 expr_stmt|;
 else|#
 directive|else
-name|rsvg_handle_set_dpi_x_y
+name|rsvg_handle_set_dpi
 argument_list|(
 name|handle
 argument_list|,
@@ -2218,10 +2218,10 @@ operator|==
 literal|2
 operator|&&
 name|LIBRSVG_MINOR_VERSION
-operator|>=
-literal|11
+operator|<
+literal|99
 operator|)
-name|rsvg_handle_set_dpi
+name|rsvg_handle_set_dpi_x_y
 argument_list|(
 name|handle
 argument_list|,
@@ -2236,7 +2236,7 @@ argument_list|)
 expr_stmt|;
 else|#
 directive|else
-name|rsvg_handle_set_dpi_x_y
+name|rsvg_handle_set_dpi
 argument_list|(
 name|handle
 argument_list|,
