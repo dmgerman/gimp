@@ -52,7 +52,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bb1989c0103
+DECL|enum|__anon28a49f020103
 block|{
 DECL|enumerator|BEZIER_1
 name|BEZIER_1
@@ -68,7 +68,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bb1989c0203
+DECL|enum|__anon28a49f020203
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -2261,7 +2261,7 @@ condition|)
 block|{
 name|src
 operator|=
-name|gimp_zoom_preview_get_data
+name|gimp_zoom_preview_get_source
 argument_list|(
 name|GIMP_ZOOM_PREVIEW
 argument_list|(

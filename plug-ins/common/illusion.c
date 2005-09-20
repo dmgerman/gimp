@@ -140,7 +140,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298f3ecc0108
+DECL|struct|__anon2c70cd730108
 block|{
 DECL|member|division
 name|gint32
@@ -620,7 +620,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon298f3ecc0208
+DECL|struct|__anon2c70cd730208
 typedef|typedef
 struct|struct
 block|{
@@ -1285,7 +1285,7 @@ name|offset
 decl_stmt|;
 name|preview_cache
 operator|=
-name|gimp_zoom_preview_get_data
+name|gimp_zoom_preview_get_source
 argument_list|(
 name|GIMP_ZOOM_PREVIEW
 argument_list|(

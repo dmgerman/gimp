@@ -45,7 +45,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bed1bb80103
+DECL|enum|__anon2926430b0103
 block|{
 DECL|enumerator|MODE_SMEAR
 name|MODE_SMEAR
@@ -59,7 +59,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bed1bb80208
+DECL|struct|__anon2926430b0208
 block|{
 DECL|member|amplitude
 name|gdouble
@@ -1614,7 +1614,7 @@ name|bpp
 decl_stmt|;
 name|src
 operator|=
-name|gimp_zoom_preview_get_data
+name|gimp_zoom_preview_get_source
 argument_list|(
 name|GIMP_ZOOM_PREVIEW
 argument_list|(

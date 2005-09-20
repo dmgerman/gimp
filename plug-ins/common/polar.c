@@ -101,7 +101,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1c759a0108
+DECL|struct|__anon2c4e5de90108
 block|{
 DECL|member|circle
 name|gdouble
@@ -3308,7 +3308,7 @@ name|sel_y1
 expr_stmt|;
 name|preview_cache
 operator|=
-name|gimp_zoom_preview_get_data
+name|gimp_zoom_preview_get_source
 argument_list|(
 name|GIMP_ZOOM_PREVIEW
 argument_list|(

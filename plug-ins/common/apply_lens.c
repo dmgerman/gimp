@@ -152,7 +152,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2900f1470108
+DECL|struct|__anon28c6cbd30108
 block|{
 DECL|member|refraction
 name|gdouble
@@ -988,7 +988,7 @@ condition|)
 block|{
 name|src
 operator|=
-name|gimp_zoom_preview_get_data
+name|gimp_zoom_preview_get_source
 argument_list|(
 name|GIMP_ZOOM_PREVIEW
 argument_list|(

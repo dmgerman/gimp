@@ -60,7 +60,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf9addd0108
+DECL|struct|__anon2bbd17db0108
 block|{
 DECL|member|posx
 name|gint
@@ -111,7 +111,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf9addd0208
+DECL|struct|__anon2bbd17db0208
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -579,10 +579,7 @@ block|{
 literal|128
 block|,
 literal|128
-block|,
 comment|/* posx, posy */
-name|TRUE
-comment|/* preview    */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -1453,7 +1450,7 @@ condition|)
 block|{
 name|src
 operator|=
-name|gimp_zoom_preview_get_data
+name|gimp_zoom_preview_get_source
 argument_list|(
 name|GIMP_ZOOM_PREVIEW
 argument_list|(

@@ -135,7 +135,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon275876780103
+DECL|enum|__anon28ecf8160103
 block|{
 DECL|enumerator|MIN_CHANNELS
 name|MIN_CHANNELS
@@ -153,7 +153,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275876780208
+DECL|struct|__anon28ecf8160208
 block|{
 DECL|member|max_p
 name|gint
@@ -521,7 +521,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275876780308
+DECL|struct|__anon28ecf8160308
 block|{
 DECL|member|init_value
 name|gint
@@ -817,7 +817,7 @@ name|bpp
 decl_stmt|;
 name|src
 operator|=
-name|gimp_zoom_preview_get_data
+name|gimp_zoom_preview_get_source
 argument_list|(
 name|GIMP_ZOOM_PREVIEW
 argument_list|(

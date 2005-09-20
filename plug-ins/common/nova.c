@@ -72,7 +72,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9e32d60108
+DECL|struct|__anon293737250108
 block|{
 DECL|member|xcenter
 name|gint
@@ -107,7 +107,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9e32d60208
+DECL|struct|__anon293737250208
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -3044,7 +3044,7 @@ condition|)
 block|{
 name|cache
 operator|=
-name|gimp_zoom_preview_get_data
+name|gimp_zoom_preview_get_source
 argument_list|(
 name|GIMP_ZOOM_PREVIEW
 argument_list|(

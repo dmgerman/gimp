@@ -1934,7 +1934,7 @@ name|bpp
 decl_stmt|;
 name|cache
 operator|=
-name|gimp_zoom_preview_get_data
+name|gimp_zoom_preview_get_source
 argument_list|(
 name|GIMP_ZOOM_PREVIEW
 argument_list|(

@@ -70,7 +70,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a0da7240103
+DECL|enum|__anon2a3373bd0103
 block|{
 DECL|enumerator|RGB_MODEL
 name|RGB_MODEL
@@ -94,7 +94,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0da7240208
+DECL|struct|__anon2a3373bd0208
 block|{
 DECL|member|redfrequency
 name|gdouble
@@ -374,8 +374,6 @@ block|,
 literal|0.0
 block|,
 name|RGB_MODEL
-block|,
-name|TRUE
 block|,
 name|TRUE
 block|,
@@ -2914,7 +2912,7 @@ name|i
 decl_stmt|;
 name|src
 operator|=
-name|gimp_zoom_preview_get_data
+name|gimp_zoom_preview_get_source
 argument_list|(
 name|GIMP_ZOOM_PREVIEW
 argument_list|(

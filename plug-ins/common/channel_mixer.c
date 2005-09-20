@@ -88,7 +88,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9c472c0103
+DECL|enum|__anon295143cf0103
 block|{
 DECL|enumerator|CM_RED_CHANNEL
 name|CM_RED_CHANNEL
@@ -107,7 +107,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9c472c0208
+DECL|struct|__anon295143cf0208
 block|{
 DECL|member|red_gain
 name|gdouble
@@ -130,7 +130,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9c472c0308
+DECL|struct|__anon295143cf0308
 block|{
 DECL|member|red
 name|CmChannelType
@@ -3660,14 +3660,17 @@ decl_stmt|;
 name|GimpDrawable
 modifier|*
 name|drawable
-init|=
+decl_stmt|;
+name|drawable
+operator|=
+name|gimp_zoom_preview_get_drawable
+argument_list|(
 name|GIMP_ZOOM_PREVIEW
 argument_list|(
 name|preview
 argument_list|)
-operator|->
-name|drawable
-decl_stmt|;
+argument_list|)
+expr_stmt|;
 name|red_norm
 operator|=
 name|cm_calculate_norm
@@ -3718,7 +3721,7 @@ argument_list|)
 expr_stmt|;
 name|src
 operator|=
-name|gimp_zoom_preview_get_data
+name|gimp_zoom_preview_get_source
 argument_list|(
 name|GIMP_ZOOM_PREVIEW
 argument_list|(

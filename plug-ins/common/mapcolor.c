@@ -99,7 +99,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae207330108
+DECL|struct|__anon2ba289180108
 block|{
 DECL|member|colors
 name|GimpRGB
@@ -1184,7 +1184,7 @@ argument_list|)
 expr_stmt|;
 name|src
 operator|=
-name|gimp_zoom_preview_get_data
+name|gimp_zoom_preview_get_source
 argument_list|(
 name|GIMP_ZOOM_PREVIEW
 argument_list|(
