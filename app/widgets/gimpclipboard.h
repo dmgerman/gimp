@@ -50,9 +50,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpBuffer
-modifier|*
-name|gimp_clipboard_get_buffer
+name|gboolean
+name|gimp_clipboard_has_svg
 parameter_list|(
 name|Gimp
 modifier|*
@@ -62,8 +61,9 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
-name|gimp_clipboard_has_svg
+name|GimpBuffer
+modifier|*
+name|gimp_clipboard_get_buffer
 parameter_list|(
 name|Gimp
 modifier|*
@@ -84,6 +84,21 @@ parameter_list|,
 name|gsize
 modifier|*
 name|svg_length
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_clipboard_set_buffer
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
+name|GimpBuffer
+modifier|*
+name|buffer
 parameter_list|)
 function_decl|;
 end_function_decl
