@@ -136,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296848000103
+DECL|enum|__anon28e5e2cf0103
 block|{
 DECL|enumerator|PSD_UNKNOWN_IMAGE
 name|PSD_UNKNOWN_IMAGE
@@ -324,7 +324,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296848000208
+DECL|struct|__anon28e5e2cf0208
 block|{
 DECL|member|hRes
 name|Fixed
@@ -573,7 +573,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon296848000308
+DECL|struct|__anon28e5e2cf0308
 block|{
 DECL|member|signature
 name|gchar
@@ -7747,13 +7747,23 @@ literal|2
 condition|)
 comment|/* px/cm */
 block|{
+name|gdouble
+name|factor
+init|=
+name|gimp_unit_get_factor
+argument_list|(
+name|GIMP_UNIT_MM
+argument_list|)
+operator|/
+literal|10.0
+decl_stmt|;
 name|psd_image
 operator|.
 name|resolution
 operator|.
 name|hRes
 operator|*=
-literal|2.54
+name|factor
 expr_stmt|;
 name|psd_image
 operator|.
@@ -7761,7 +7771,7 @@ name|resolution
 operator|.
 name|vRes
 operator|*=
-literal|2.54
+name|factor
 expr_stmt|;
 block|}
 name|gimp_image_set_resolution
