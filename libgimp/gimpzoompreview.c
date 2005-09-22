@@ -388,7 +388,7 @@ name|priv
 operator|->
 name|zoom
 argument_list|,
-literal|"notify::zoom-factor"
+literal|"notify::value"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
