@@ -692,6 +692,7 @@ block|}
 block|,   }
 decl_stmt|;
 specifier|static
+specifier|const
 name|gchar
 modifier|*
 name|blurb
@@ -699,6 +700,7 @@ init|=
 literal|"This plug-in prints images from The GIMP."
 decl_stmt|;
 specifier|static
+specifier|const
 name|gchar
 modifier|*
 name|help
@@ -706,6 +708,7 @@ init|=
 literal|"Prints images to PostScript, PCL, or ESC/P2 printers."
 decl_stmt|;
 specifier|static
+specifier|const
 name|gchar
 modifier|*
 name|auth
@@ -713,6 +716,7 @@ init|=
 literal|"Michael Sweet<mike@easysw.com> and Robert Krawitz<rlk@alum.mit.edu>"
 decl_stmt|;
 specifier|static
+specifier|const
 name|gchar
 modifier|*
 name|copy
@@ -720,6 +724,7 @@ init|=
 literal|"Copyright 1997-2000 by Michael Sweet and Robert Krawitz"
 decl_stmt|;
 specifier|static
+specifier|const
 name|gchar
 modifier|*
 name|types
