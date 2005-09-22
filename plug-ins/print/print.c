@@ -92,6 +92,14 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_define
+DECL|macro|PROC_NAME
+define|#
+directive|define
+name|PROC_NAME
+value|"file-print-gimp"
+end_define
+
 begin_comment
 comment|/*  * Local functions...  */
 end_comment
@@ -485,7 +493,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"output_to"
+literal|"output-to"
 block|,
 literal|"Print command or filename (| to pipe to command)"
 block|}
@@ -501,7 +509,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"ppd_file"
+literal|"ppd-file"
 block|,
 literal|"PPD file"
 block|}
@@ -509,7 +517,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"output_type"
+literal|"output-type"
 block|,
 literal|"Output type (0 = gray, 1 = color)"
 block|}
@@ -525,7 +533,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"media_size"
+literal|"media-size"
 block|,
 literal|"Media size (\"Letter\", \"A4\", etc.)"
 block|}
@@ -533,7 +541,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"media_type"
+literal|"media-type"
 block|,
 literal|"Media type (\"Plain\", \"Glossy\", etc.)"
 block|}
@@ -541,7 +549,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"media_source"
+literal|"media-source"
 block|,
 literal|"Media source (\"Tray1\", \"Manual\", etc.)"
 block|}
@@ -637,7 +645,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"image_type"
+literal|"image-type"
 block|,
 literal|"Image type (0 = line art, 1 = solid tones, 2 = continuous tone, 3 = monochrome)"
 block|}
@@ -661,7 +669,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"ink_type"
+literal|"ink-type"
 block|,
 literal|"Type of ink or cartridge"
 block|}
@@ -669,7 +677,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"dither_algorithm"
+literal|"dither-algorithm"
 block|,
 literal|"Dither algorithm"
 block|}
@@ -720,7 +728,7 @@ literal|"RGB*,GRAY*,INDEXED*"
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"file_print_gimp"
+name|PROC_NAME
 argument_list|,
 name|blurb
 argument_list|,
@@ -755,14 +763,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"file_print_gimp"
+name|PROC_NAME
 argument_list|,
 literal|"<Image>/File/Send"
 argument_list|)
 expr_stmt|;
 name|gimp_plugin_icon_register
 argument_list|(
-literal|"file_print_gimp"
+name|PROC_NAME
 argument_list|,
 name|GIMP_ICON_TYPE_STOCK_ID
 argument_list|,
