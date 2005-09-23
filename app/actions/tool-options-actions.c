@@ -320,17 +320,17 @@ value|gimp_action_group_set_action_visible (group, action, (condition) != 0)
 end_define
 
 begin_define
-DECL|macro|SET_IMPORTANT (action,condition)
+DECL|macro|SET_HIDE_EMPTY (action,condition)
 define|#
 directive|define
-name|SET_IMPORTANT
+name|SET_HIDE_EMPTY
 parameter_list|(
 name|action
 parameter_list|,
 name|condition
 parameter_list|)
 define|\
-value|gimp_action_group_set_action_important (group, action, (condition) != 0)
+value|gimp_action_group_set_action_hide_empty (group, action, (condition) != 0)
 end_define
 
 begin_function
@@ -355,25 +355,25 @@ name|tool_options_actions
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|SET_IMPORTANT
+name|SET_HIDE_EMPTY
 argument_list|(
 literal|"tool-options-restore-menu"
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|)
 expr_stmt|;
-name|SET_IMPORTANT
+name|SET_HIDE_EMPTY
 argument_list|(
 literal|"tool-options-rename-menu"
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|)
 expr_stmt|;
-name|SET_IMPORTANT
+name|SET_HIDE_EMPTY
 argument_list|(
 literal|"tool-options-delete-menu"
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -817,7 +817,7 @@ end_undef
 begin_undef
 undef|#
 directive|undef
-name|SET_IMPORTANT
+name|SET_HIDE_EMPTY
 end_undef
 
 end_unit

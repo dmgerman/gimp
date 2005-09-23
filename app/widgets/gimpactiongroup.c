@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28960cd90103
+DECL|enum|__anon2b08160c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3281,8 +3281,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_action_group_set_action_important (GimpActionGroup * group,const gchar * action_name,gboolean is_important)
-name|gimp_action_group_set_action_important
+DECL|function|gimp_action_group_set_action_hide_empty (GimpActionGroup * group,const gchar * action_name,gboolean hide_empty)
+name|gimp_action_group_set_action_hide_empty
 parameter_list|(
 name|GimpActionGroup
 modifier|*
@@ -3294,7 +3294,7 @@ modifier|*
 name|action_name
 parameter_list|,
 name|gboolean
-name|is_important
+name|hide_empty
 parameter_list|)
 block|{
 name|GtkAction
@@ -3336,7 +3336,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"%s: Unable to set \"is-important\" of action "
+literal|"%s: Unable to set \"hide-if-empty\" of action "
 literal|"which doesn't exist: %s"
 argument_list|,
 name|G_STRFUNC
@@ -3350,9 +3350,9 @@ name|g_object_set
 argument_list|(
 name|action
 argument_list|,
-literal|"is-important"
+literal|"hide-if-empty"
 argument_list|,
-name|is_important
+name|hide_empty
 condition|?
 name|TRUE
 else|:

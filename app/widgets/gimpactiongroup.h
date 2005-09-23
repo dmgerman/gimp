@@ -777,7 +777,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_action_group_set_action_important
+name|gimp_action_group_set_action_hide_empty
 parameter_list|(
 name|GimpActionGroup
 modifier|*
