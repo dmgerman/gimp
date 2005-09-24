@@ -18,7 +18,7 @@ end_define
 
 begin_function_decl
 name|void
-name|view_new_view_cmd_callback
+name|view_new_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -32,7 +32,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|view_close_view_cmd_callback
+name|view_close_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*

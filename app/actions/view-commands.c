@@ -215,8 +215,8 @@ end_comment
 
 begin_function
 name|void
-DECL|function|view_new_view_cmd_callback (GtkAction * action,gpointer data)
-name|view_new_view_cmd_callback
+DECL|function|view_new_cmd_callback (GtkAction * action,gpointer data)
+name|view_new_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -276,8 +276,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_close_view_cmd_callback (GtkAction * action,gpointer data)
-name|view_close_view_cmd_callback
+DECL|function|view_close_cmd_callback (GtkAction * action,gpointer data)
+name|view_close_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*

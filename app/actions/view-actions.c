@@ -257,7 +257,7 @@ name|NULL
 block|,
 name|G_CALLBACK
 argument_list|(
-name|view_new_view_cmd_callback
+name|view_new_cmd_callback
 argument_list|)
 block|,
 name|GIMP_HELP_VIEW_NEW
@@ -279,7 +279,7 @@ name|NULL
 block|,
 name|G_CALLBACK
 argument_list|(
-name|view_close_view_cmd_callback
+name|view_close_cmd_callback
 argument_list|)
 block|,
 name|GIMP_HELP_FILE_CLOSE
