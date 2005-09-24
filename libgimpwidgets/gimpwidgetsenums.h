@@ -36,7 +36,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27bb8d040103
+DECL|enum|__anon2ad3dc3f0103
 block|{
 DECL|enumerator|GIMP_CHAIN_TOP
 name|GIMP_CHAIN_TOP
@@ -76,7 +76,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27bb8d040203
+DECL|enum|__anon2ad3dc3f0203
 block|{
 DECL|enumerator|GIMP_COLOR_AREA_FLAT
 name|GIMP_COLOR_AREA_FLAT
@@ -115,7 +115,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27bb8d040303
+DECL|enum|__anon2ad3dc3f0303
 block|{
 DECL|enumerator|GIMP_COLOR_SELECTOR_HUE
 name|GIMP_COLOR_SELECTOR_HUE
@@ -171,7 +171,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27bb8d040403
+DECL|enum|__anon2ad3dc3f0403
 block|{
 DECL|enumerator|GIMP_PAGE_SELECTOR_TARGET_LAYERS
 name|GIMP_PAGE_SELECTOR_TARGET_LAYERS
@@ -207,7 +207,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27bb8d040503
+DECL|enum|__anon2ad3dc3f0503
 block|{
 DECL|enumerator|GIMP_SIZE_ENTRY_UPDATE_NONE
 name|GIMP_SIZE_ENTRY_UPDATE_NONE
@@ -250,16 +250,13 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27bb8d040603
+DECL|enum|__anon2ad3dc3f0603
 block|{
 DECL|enumerator|GIMP_ZOOM_IN_BUTTON
 name|GIMP_ZOOM_IN_BUTTON
 block|,
 DECL|enumerator|GIMP_ZOOM_OUT_BUTTON
 name|GIMP_ZOOM_OUT_BUTTON
-block|,
-DECL|enumerator|GIMP_ZOOM_LABEL
-name|GIMP_ZOOM_LABEL
 DECL|typedef|GimpZoomWidgetType
 block|}
 name|GimpZoomWidgetType
@@ -287,7 +284,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27bb8d040703
+DECL|enum|__anon2ad3dc3f0703
 block|{
 DECL|enumerator|GIMP_ZOOM_IN
 name|GIMP_ZOOM_IN
