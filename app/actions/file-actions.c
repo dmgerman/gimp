@@ -407,7 +407,7 @@ argument_list|(
 literal|"Close all"
 argument_list|)
 block|,
-name|NULL
+literal|""
 block|,
 name|NULL
 block|,
