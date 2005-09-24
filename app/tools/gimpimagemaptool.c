@@ -1001,8 +1001,6 @@ name|gtk_dialog_set_alternative_button_order
 argument_list|(
 name|GTK_DIALOG
 argument_list|(
-name|image_map_tool
-operator|->
 name|shell
 argument_list|)
 argument_list|,
