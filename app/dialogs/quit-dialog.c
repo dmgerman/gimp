@@ -107,8 +107,24 @@ end_include
 
 begin_function_decl
 specifier|static
+name|GtkWidget
+modifier|*
+name|quit_close_all_dialog_new
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
+name|gboolean
+name|do_quit
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
 name|void
-name|quit_dialog_response
+name|quit_close_all_dialog_response
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -127,7 +143,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|quit_dialog_container_changed
+name|quit_close_all_dialog_container_changed
 parameter_list|(
 name|GimpContainer
 modifier|*
@@ -147,7 +163,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|quit_dialog_image_activated
+name|quit_close_all_dialog_image_activated
 parameter_list|(
 name|GimpContainerView
 modifier|*
@@ -180,6 +196,54 @@ parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|)
+block|{
+return|return
+name|quit_close_all_dialog_new
+argument_list|(
+name|gimp
+argument_list|,
+name|TRUE
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_function
+name|GtkWidget
+modifier|*
+DECL|function|close_all_dialog_new (Gimp * gimp)
+name|close_all_dialog_new
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|)
+block|{
+return|return
+name|quit_close_all_dialog_new
+argument_list|(
+name|gimp
+argument_list|,
+name|FALSE
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|GtkWidget
+modifier|*
+DECL|function|quit_close_all_dialog_new (Gimp * gimp,gboolean do_quit)
+name|quit_close_all_dialog_new
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
+name|gboolean
+name|do_quit
 parameter_list|)
 block|{
 name|GimpContainer
@@ -301,7 +365,7 @@ literal|"response"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|quit_dialog_response
+name|quit_close_all_dialog_response
 argument_list|)
 argument_list|,
 name|gimp
@@ -342,6 +406,21 @@ argument_list|,
 name|button
 argument_list|)
 expr_stmt|;
+name|g_object_set_data
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|box
+argument_list|)
+argument_list|,
+literal|"do-quit"
+argument_list|,
+name|GINT_TO_POINTER
+argument_list|(
+name|do_quit
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|g_signal_connect_object
 argument_list|(
 name|images
@@ -350,7 +429,7 @@ literal|"add"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|quit_dialog_container_changed
+name|quit_close_all_dialog_container_changed
 argument_list|)
 argument_list|,
 name|box
@@ -366,7 +445,7 @@ literal|"remove"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|quit_dialog_container_changed
+name|quit_close_all_dialog_container_changed
 argument_list|)
 argument_list|,
 name|box
@@ -472,7 +551,7 @@ literal|"activate-item"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|quit_dialog_image_activated
+name|quit_close_all_dialog_image_activated
 argument_list|)
 argument_list|,
 name|gimp
@@ -500,6 +579,10 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|do_quit
+condition|)
 name|label
 operator|=
 name|gtk_label_new
@@ -508,6 +591,18 @@ name|_
 argument_list|(
 literal|"If you quit GIMP now, "
 literal|"these changes will be lost."
+argument_list|)
+argument_list|)
+expr_stmt|;
+else|else
+name|label
+operator|=
+name|gtk_label_new
+argument_list|(
+name|_
+argument_list|(
+literal|"If close these files now, "
+literal|"changes will be lost."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -566,7 +661,7 @@ argument_list|,
 name|label
 argument_list|)
 expr_stmt|;
-name|quit_dialog_container_changed
+name|quit_close_all_dialog_container_changed
 argument_list|(
 name|images
 argument_list|,
@@ -589,8 +684,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|quit_dialog_response (GtkWidget * dialog,gint response_id,Gimp * gimp)
-name|quit_dialog_response
+DECL|function|quit_close_all_dialog_response (GtkWidget * dialog,gint response_id,Gimp * gimp)
+name|quit_close_all_dialog_response
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -604,6 +699,33 @@ modifier|*
 name|gimp
 parameter_list|)
 block|{
+name|GimpMessageBox
+modifier|*
+name|box
+init|=
+name|GIMP_MESSAGE_DIALOG
+argument_list|(
+name|dialog
+argument_list|)
+operator|->
+name|box
+decl_stmt|;
+name|gboolean
+name|do_quit
+init|=
+name|GPOINTER_TO_INT
+argument_list|(
+name|g_object_get_data
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|box
+argument_list|)
+argument_list|,
+literal|"do-quit"
+argument_list|)
+argument_list|)
+decl_stmt|;
 name|gtk_widget_destroy
 argument_list|(
 name|dialog
@@ -615,6 +737,11 @@ name|response_id
 operator|==
 name|GTK_RESPONSE_OK
 condition|)
+block|{
+if|if
+condition|(
+name|do_quit
+condition|)
 name|gimp_exit
 argument_list|(
 name|gimp
@@ -622,14 +749,21 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+else|else
+name|gimp_displays_delete
+argument_list|(
+name|gimp
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 
 begin_function
 specifier|static
 name|void
-DECL|function|quit_dialog_container_changed (GimpContainer * images,GimpObject * image,GimpMessageBox * box)
-name|quit_dialog_container_changed
+DECL|function|quit_close_all_dialog_container_changed (GimpContainer * images,GimpObject * image,GimpMessageBox * box)
+name|quit_close_all_dialog_container_changed
 parameter_list|(
 name|GimpContainer
 modifier|*
@@ -689,6 +823,22 @@ argument_list|(
 name|button
 argument_list|)
 decl_stmt|;
+name|gboolean
+name|do_quit
+init|=
+name|GPOINTER_TO_INT
+argument_list|(
+name|g_object_get_data
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|box
+argument_list|)
+argument_list|,
+literal|"do-quit"
+argument_list|)
+argument_list|)
+decl_stmt|;
 name|gchar
 modifier|*
 name|text
@@ -739,7 +889,11 @@ name|button
 argument_list|,
 literal|"label"
 argument_list|,
+name|do_quit
+condition|?
 name|GTK_STOCK_QUIT
+else|:
+name|GTK_STOCK_CLOSE
 argument_list|,
 literal|"use-stock"
 argument_list|,
@@ -815,8 +969,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|quit_dialog_image_activated (GimpContainerView * view,GimpImage * image,gpointer insert_data,Gimp * gimp)
-name|quit_dialog_image_activated
+DECL|function|quit_close_all_dialog_image_activated (GimpContainerView * view,GimpImage * image,gpointer insert_data,Gimp * gimp)
+name|quit_close_all_dialog_image_activated
 parameter_list|(
 name|GimpContainerView
 modifier|*

@@ -129,6 +129,14 @@ value|"gimp-file-close"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_FILE_CLOSE_ALL
+define|#
+directive|define
+name|GIMP_HELP_FILE_CLOSE_ALL
+value|"gimp-file-close-all"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_FILE_QUIT
 define|#
 directive|define
