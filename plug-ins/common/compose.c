@@ -76,10 +76,10 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a07bcf00108
+DECL|struct|__anon2b1791180108
 block|{
 union|union
-DECL|union|__anon2a07bcf0020a
+DECL|union|__anon2b179118020a
 block|{
 DECL|member|ID
 name|gint32
@@ -624,7 +624,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a07bcf00308
+DECL|struct|__anon2b1791180308
 block|{
 DECL|member|compose_type
 specifier|const
@@ -664,7 +664,7 @@ modifier|*
 name|filename
 decl_stmt|;
 comment|/*  Name of new image                        */
-comment|/*  Compose functon                          */
+comment|/*  Compose functon  */
 DECL|member|compose_fun
 name|void
 function_decl|(
@@ -960,7 +960,7 @@ name|compose_lab
 block|}
 block|,
 block|{
-literal|"YCbCr ITU R470"
+literal|"YCbCr_ITU_R470"
 block|,
 literal|3
 block|,
@@ -999,7 +999,7 @@ name|compose_ycbcr470
 block|}
 block|,
 block|{
-literal|"YCbCr ITU R709"
+literal|"YCbCr_ITU_R709"
 block|,
 literal|3
 block|,
@@ -1038,7 +1038,7 @@ name|compose_ycbcr709
 block|}
 block|,
 block|{
-literal|"YCbCr ITU R470 256"
+literal|"YCbCr_ITU_R470_256"
 block|,
 literal|3
 block|,
@@ -1077,7 +1077,7 @@ name|compose_ycbcr470f
 block|}
 block|,
 block|{
-literal|"YCbCr ITU R709 256"
+literal|"YCbCr_ITU_R709_256"
 block|,
 literal|3
 block|,
@@ -1121,7 +1121,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a07bcf00408
+DECL|struct|__anon2b1791180408
 block|{
 DECL|member|inputs
 name|ComposeInput
@@ -1161,7 +1161,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a07bcf00508
+DECL|struct|__anon2b1791180508
 block|{
 DECL|member|width
 DECL|member|height
@@ -1224,9 +1224,9 @@ name|MAX_COMPOSE_IMAGES
 index|]
 decl_stmt|;
 comment|/* Image Ids or mask values from menus */
-DECL|member|compose_type
+DECL|member|compose_idx
 name|gint
-name|compose_type
+name|compose_idx
 decl_stmt|;
 comment|/* Compose type */
 DECL|typedef|ComposeInterface
@@ -2432,6 +2432,7 @@ name|d_int8
 expr_stmt|;
 block|}
 else|else
+block|{
 name|composevals
 operator|.
 name|inputs
@@ -2443,6 +2444,7 @@ name|is_ID
 operator|=
 name|TRUE
 expr_stmt|;
+block|}
 block|}
 block|}
 break|break;
@@ -2954,9 +2956,6 @@ condition|(
 operator|(
 name|width
 operator|!=
-operator|(
-name|gint
-operator|)
 name|gimp_drawable_width
 argument_list|(
 name|inputs
@@ -2973,9 +2972,6 @@ operator|||
 operator|(
 name|height
 operator|!=
-operator|(
-name|gint
-operator|)
 name|gimp_drawable_height
 argument_list|(
 name|inputs
@@ -7221,16 +7217,13 @@ decl_stmt|;
 name|gint
 name|j
 decl_stmt|;
-name|gint
-name|compose_idx
-decl_stmt|;
 name|gboolean
 name|run
 decl_stmt|;
 comment|/* Check default compose type */
 name|composeint
 operator|.
-name|compose_type
+name|compose_idx
 operator|=
 literal|0
 expr_stmt|;
@@ -7270,19 +7263,13 @@ condition|)
 block|{
 name|composeint
 operator|.
-name|compose_type
+name|compose_idx
 operator|=
 name|j
 expr_stmt|;
 break|break;
 block|}
 block|}
-name|compose_idx
-operator|=
-name|composeint
-operator|.
-name|compose_type
-expr_stmt|;
 comment|/* Save original image width/height */
 name|composeint
 operator|.
@@ -7497,7 +7484,7 @@ name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Color _Model:"
+literal|"Color _model:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -7572,15 +7559,12 @@ name|j
 operator|++
 control|)
 block|{
-name|gimp_int_combo_box_append
+name|gchar
+modifier|*
+name|label
+init|=
+name|g_strdup
 argument_list|(
-name|GIMP_INT_COMBO_BOX
-argument_list|(
-name|combo
-argument_list|)
-argument_list|,
-name|GIMP_INT_STORE_LABEL
-argument_list|,
 name|gettext
 argument_list|(
 name|compose_dsc
@@ -7590,6 +7574,51 @@ index|]
 operator|.
 name|compose_type
 argument_list|)
+argument_list|)
+decl_stmt|;
+name|gchar
+modifier|*
+name|l
+decl_stmt|;
+for|for
+control|(
+name|l
+operator|=
+name|label
+init|;
+operator|*
+name|l
+condition|;
+name|l
+operator|++
+control|)
+if|if
+condition|(
+operator|*
+name|l
+operator|==
+literal|'-'
+operator|||
+operator|*
+name|l
+operator|==
+literal|'_'
+condition|)
+operator|*
+name|l
+operator|=
+literal|' '
+expr_stmt|;
+name|gimp_int_combo_box_append
+argument_list|(
+name|GIMP_INT_COMBO_BOX
+argument_list|(
+name|combo
+argument_list|)
+argument_list|,
+name|GIMP_INT_STORE_LABEL
+argument_list|,
+name|label
 argument_list|,
 name|GIMP_INT_STORE_VALUE
 argument_list|,
@@ -7597,6 +7626,11 @@ name|j
 argument_list|,
 operator|-
 literal|1
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|label
 argument_list|)
 expr_stmt|;
 block|}
@@ -7915,6 +7949,8 @@ name|nlayers
 operator|>=
 name|compose_dsc
 index|[
+name|composeint
+operator|.
 name|compose_idx
 index|]
 operator|.
@@ -8251,7 +8287,7 @@ argument_list|)
 argument_list|,
 name|composeint
 operator|.
-name|compose_type
+name|compose_idx
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -8390,6 +8426,8 @@ name|compose_type
 argument_list|,
 name|compose_dsc
 index|[
+name|composeint
+operator|.
 name|compose_idx
 index|]
 operator|.
@@ -8505,7 +8543,7 @@ name|compose_dsc
 index|[
 name|composeint
 operator|.
-name|compose_type
+name|compose_idx
 index|]
 operator|.
 name|num_images
@@ -8817,7 +8855,7 @@ argument_list|,
 operator|&
 name|composeint
 operator|.
-name|compose_type
+name|compose_idx
 argument_list|)
 condition|)
 block|{
@@ -8841,7 +8879,7 @@ name|compose_idx
 operator|=
 name|composeint
 operator|.
-name|compose_type
+name|compose_idx
 expr_stmt|;
 for|for
 control|(
