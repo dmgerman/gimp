@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpwidgets/gimpwidgets.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpbase/gimpbase.h"
 end_include
 
@@ -85,12 +91,6 @@ begin_include
 include|#
 directive|include
 file|"gimpdisplayshell.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpdisplayshell-scale.h"
 end_include
 
 begin_include
@@ -590,7 +590,7 @@ name|image
 operator|->
 name|gimp
 expr_stmt|;
-name|gimp_display_shell_scale_get_fraction
+name|gimp_zoom_model_get_fraction
 argument_list|(
 name|shell
 operator|->

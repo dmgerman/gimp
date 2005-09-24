@@ -968,7 +968,7 @@ condition|)
 block|{
 name|new_scale
 operator|=
-name|gimp_display_shell_scale_zoom_step
+name|gimp_zoom_model_zoom_step
 argument_list|(
 name|options
 operator|->

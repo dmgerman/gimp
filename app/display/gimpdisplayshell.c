@@ -263,7 +263,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e476b90103
+DECL|enum|__anon28ee939e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -279,7 +279,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e476b90203
+DECL|enum|__anon28ee939e0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -2642,7 +2642,7 @@ argument_list|)
 expr_stmt|;
 name|new_scale
 operator|=
-name|gimp_display_shell_scale_zoom_step
+name|gimp_zoom_model_zoom_step
 argument_list|(
 name|GIMP_ZOOM_OUT
 argument_list|,
@@ -2654,7 +2654,7 @@ name|shell
 operator|->
 name|scale
 operator|=
-name|gimp_display_shell_scale_zoom_step
+name|gimp_zoom_model_zoom_step
 argument_list|(
 name|GIMP_ZOOM_IN
 argument_list|,

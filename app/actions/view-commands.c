@@ -503,7 +503,7 @@ name|GIMP_ACTION_SELECT_SKIP_PREVIOUS
 case|:
 name|scale
 operator|=
-name|gimp_display_shell_scale_zoom_step
+name|gimp_zoom_model_zoom_step
 argument_list|(
 name|GIMP_ZOOM_OUT
 argument_list|,
@@ -512,7 +512,7 @@ argument_list|)
 expr_stmt|;
 name|scale
 operator|=
-name|gimp_display_shell_scale_zoom_step
+name|gimp_zoom_model_zoom_step
 argument_list|(
 name|GIMP_ZOOM_OUT
 argument_list|,
@@ -521,7 +521,7 @@ argument_list|)
 expr_stmt|;
 name|scale
 operator|=
-name|gimp_display_shell_scale_zoom_step
+name|gimp_zoom_model_zoom_step
 argument_list|(
 name|GIMP_ZOOM_OUT
 argument_list|,
@@ -543,7 +543,7 @@ name|GIMP_ACTION_SELECT_SKIP_NEXT
 case|:
 name|scale
 operator|=
-name|gimp_display_shell_scale_zoom_step
+name|gimp_zoom_model_zoom_step
 argument_list|(
 name|GIMP_ZOOM_IN
 argument_list|,
@@ -552,7 +552,7 @@ argument_list|)
 expr_stmt|;
 name|scale
 operator|=
-name|gimp_display_shell_scale_zoom_step
+name|gimp_zoom_model_zoom_step
 argument_list|(
 name|GIMP_ZOOM_IN
 argument_list|,
@@ -561,7 +561,7 @@ argument_list|)
 expr_stmt|;
 name|scale
 operator|=
-name|gimp_display_shell_scale_zoom_step
+name|gimp_zoom_model_zoom_step
 argument_list|(
 name|GIMP_ZOOM_IN
 argument_list|,

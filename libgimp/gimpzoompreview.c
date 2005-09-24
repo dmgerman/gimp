@@ -364,9 +364,7 @@ operator|->
 name|zoom
 operator|=
 name|gimp_zoom_model_new
-argument_list|(
-literal|1.1
-argument_list|)
+argument_list|()
 expr_stmt|;
 name|gimp_zoom_model_set_range
 argument_list|(

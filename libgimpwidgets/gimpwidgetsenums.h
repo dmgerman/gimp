@@ -36,7 +36,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9bad000103
+DECL|enum|__anon27bb8d040103
 block|{
 DECL|enumerator|GIMP_CHAIN_TOP
 name|GIMP_CHAIN_TOP
@@ -76,7 +76,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9bad000203
+DECL|enum|__anon27bb8d040203
 block|{
 DECL|enumerator|GIMP_COLOR_AREA_FLAT
 name|GIMP_COLOR_AREA_FLAT
@@ -115,7 +115,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9bad000303
+DECL|enum|__anon27bb8d040303
 block|{
 DECL|enumerator|GIMP_COLOR_SELECTOR_HUE
 name|GIMP_COLOR_SELECTOR_HUE
@@ -171,7 +171,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9bad000403
+DECL|enum|__anon27bb8d040403
 block|{
 DECL|enumerator|GIMP_PAGE_SELECTOR_TARGET_LAYERS
 name|GIMP_PAGE_SELECTOR_TARGET_LAYERS
@@ -207,7 +207,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9bad000503
+DECL|enum|__anon27bb8d040503
 block|{
 DECL|enumerator|GIMP_SIZE_ENTRY_UPDATE_NONE
 name|GIMP_SIZE_ENTRY_UPDATE_NONE
@@ -250,7 +250,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9bad000603
+DECL|enum|__anon27bb8d040603
 block|{
 DECL|enumerator|GIMP_ZOOM_IN_BUTTON
 name|GIMP_ZOOM_IN_BUTTON
@@ -263,6 +263,46 @@ name|GIMP_ZOOM_LABEL
 DECL|typedef|GimpZoomWidgetType
 block|}
 name|GimpZoomWidgetType
+typedef|;
+end_typedef
+
+begin_define
+DECL|macro|GIMP_TYPE_ZOOM_TYPE
+define|#
+directive|define
+name|GIMP_TYPE_ZOOM_TYPE
+value|(gimp_zoom_type_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_zoom_type_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon27bb8d040703
+block|{
+DECL|enumerator|GIMP_ZOOM_IN
+name|GIMP_ZOOM_IN
+block|,
+comment|/*< desc="Zoom in">*/
+DECL|enumerator|GIMP_ZOOM_OUT
+name|GIMP_ZOOM_OUT
+block|,
+comment|/*< desc="Zoom out">*/
+DECL|enumerator|GIMP_ZOOM_TO
+name|GIMP_ZOOM_TO
+comment|/*< skip>*/
+DECL|typedef|GimpZoomType
+block|}
+name|GimpZoomType
 typedef|;
 end_typedef
 
