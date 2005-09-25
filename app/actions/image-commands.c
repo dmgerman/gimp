@@ -1401,9 +1401,12 @@ name|shell
 operator|->
 name|unit
 argument_list|,
+name|gimp_zoom_model_get_factor
+argument_list|(
 name|shell
 operator|->
-name|scale
+name|zoom
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_object_unref

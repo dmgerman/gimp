@@ -756,6 +756,9 @@ name|GimpDisplayShell
 modifier|*
 name|shell
 decl_stmt|;
+name|gdouble
+name|current
+decl_stmt|;
 name|options
 operator|=
 name|GIMP_MAGNIFY_OPTIONS
@@ -936,6 +939,15 @@ name|shell
 operator|->
 name|disp_height
 expr_stmt|;
+name|current
+operator|=
+name|gimp_zoom_model_get_factor
+argument_list|(
+name|shell
+operator|->
+name|zoom
+argument_list|)
+expr_stmt|;
 comment|/* we need to compute the mouse movement in screen coordinates */
 if|if
 condition|(
@@ -974,9 +986,7 @@ name|options
 operator|->
 name|zoom_type
 argument_list|,
-name|shell
-operator|->
-name|scale
+name|current
 argument_list|)
 expr_stmt|;
 block|}
@@ -1083,16 +1093,12 @@ operator|)
 argument_list|)
 expr_stmt|;
 break|break;
-case|case
-name|GIMP_ZOOM_TO
-case|:
+default|default:
 break|break;
 block|}
 name|new_scale
 operator|=
-name|shell
-operator|->
-name|scale
+name|current
 operator|*
 name|scale
 expr_stmt|;

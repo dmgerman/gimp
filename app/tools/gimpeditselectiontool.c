@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpwidgets/gimpwidgets.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tools-types.h"
 end_include
 
@@ -4180,8 +4186,11 @@ return|;
 comment|/*  adapt arrow velocity to the zoom factor  */
 name|velocity
 operator|=
+operator|(
 name|ARROW_VELOCITY
 operator|/
+name|gimp_zoom_model_get_factor
+argument_list|(
 name|GIMP_DISPLAY_SHELL
 argument_list|(
 name|gdisp
@@ -4189,13 +4198,15 @@ operator|->
 name|shell
 argument_list|)
 operator|->
-name|scale
+name|zoom
+argument_list|)
+operator|)
 expr_stmt|;
 name|velocity
 operator|=
 name|MAX
 argument_list|(
-literal|1
+literal|1.0
 argument_list|,
 name|velocity
 argument_list|)

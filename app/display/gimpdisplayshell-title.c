@@ -594,7 +594,7 @@ name|gimp_zoom_model_get_fraction
 argument_list|(
 name|shell
 operator|->
-name|scale
+name|zoom
 argument_list|,
 operator|&
 name|num
@@ -939,6 +939,17 @@ case|case
 literal|'z'
 case|:
 comment|/* user zoom factor (percentage) */
+block|{
+name|gdouble
+name|scale
+init|=
+name|gimp_zoom_model_get_factor
+argument_list|(
+name|shell
+operator|->
+name|zoom
+argument_list|)
+decl_stmt|;
 name|i
 operator|+=
 name|print
@@ -949,8 +960,6 @@ name|title_len
 argument_list|,
 name|i
 argument_list|,
-name|shell
-operator|->
 name|scale
 operator|>=
 literal|0.15
@@ -959,13 +968,12 @@ literal|"%.0f"
 else|:
 literal|"%.2f"
 argument_list|,
-literal|100
+literal|100.0
 operator|*
-name|shell
-operator|->
 name|scale
 argument_list|)
 expr_stmt|;
+block|}
 break|break;
 case|case
 literal|'D'

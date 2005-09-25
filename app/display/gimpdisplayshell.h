@@ -22,6 +22,12 @@ directive|include
 file|<gtk/gtkwindow.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimpwidgets/gimpwidgets.h"
+end_include
+
 begin_comment
 comment|/* Apply to a float the same rounding mode used in the renderer */
 end_comment
@@ -49,7 +55,7 @@ name|SCREEN_XRES
 parameter_list|(
 name|s
 parameter_list|)
-value|(s->dot_for_dot ? \                            s->gdisp->gimage->xresolution : s->monitor_xres)
+value|((s)->dot_for_dot ? \                            (s)->gdisp->gimage->xresolution : (s)->monitor_xres)
 end_define
 
 begin_define
@@ -60,7 +66,7 @@ name|SCREEN_YRES
 parameter_list|(
 name|s
 parameter_list|)
-value|(s->dot_for_dot ? \                            s->gdisp->gimage->yresolution : s->monitor_yres)
+value|((s)->dot_for_dot ? \                            (s)->gdisp->gimage->yresolution : (s)->monitor_yres)
 end_define
 
 begin_comment
@@ -75,7 +81,7 @@ name|SCALEFACTOR_X
 parameter_list|(
 name|s
 parameter_list|)
-value|(s->scale * SCREEN_XRES(s) / \ 			   s->gdisp->gimage->xresolution)
+value|(gimp_zoom_model_get_factor ((s)->zoom) \                            * SCREEN_XRES(s) / (s)->gdisp->gimage->xresolution)
 end_define
 
 begin_define
@@ -86,7 +92,7 @@ name|SCALEFACTOR_Y
 parameter_list|(
 name|s
 parameter_list|)
-value|(s->scale * SCREEN_YRES(s) / \ 			   s->gdisp->gimage->yresolution)
+value|(gimp_zoom_model_get_factor ((s)->zoom) \                            * SCREEN_YRES(s) / (s)->gdisp->gimage->yresolution)
 end_define
 
 begin_comment
@@ -103,7 +109,7 @@ name|s
 parameter_list|,
 name|x
 parameter_list|)
-value|PROJ_ROUND (x * SCALEFACTOR_X(s))
+value|PROJ_ROUND ((x) * SCALEFACTOR_X(s))
 end_define
 
 begin_define
@@ -116,7 +122,7 @@ name|s
 parameter_list|,
 name|y
 parameter_list|)
-value|PROJ_ROUND (y * SCALEFACTOR_Y(s))
+value|PROJ_ROUND ((y) * SCALEFACTOR_Y(s))
 end_define
 
 begin_comment
@@ -133,7 +139,7 @@ name|s
 parameter_list|,
 name|x
 parameter_list|)
-value|((gint) (x / SCALEFACTOR_X(s)))
+value|((gint) ((x) / SCALEFACTOR_X(s)))
 end_define
 
 begin_define
@@ -146,7 +152,7 @@ name|s
 parameter_list|,
 name|y
 parameter_list|)
-value|((gint) (y / SCALEFACTOR_Y(s)))
+value|((gint) ((y) / SCALEFACTOR_Y(s)))
 end_define
 
 begin_comment
@@ -163,7 +169,7 @@ name|s
 parameter_list|,
 name|x
 parameter_list|)
-value|(x / SCALEFACTOR_X(s))
+value|((x) / SCALEFACTOR_X(s))
 end_define
 
 begin_define
@@ -176,7 +182,7 @@ name|s
 parameter_list|,
 name|y
 parameter_list|)
-value|(y / SCALEFACTOR_Y(s))
+value|((y) / SCALEFACTOR_Y(s))
 end_define
 
 begin_define
@@ -287,11 +293,11 @@ DECL|member|unit
 name|GimpUnit
 name|unit
 decl_stmt|;
-DECL|member|scale
-name|gdouble
-name|scale
+DECL|member|zoom
+name|GimpZoomModel
+modifier|*
+name|zoom
 decl_stmt|;
-comment|/*  scale factor from original raw image    */
 DECL|member|other_scale
 name|gdouble
 name|other_scale
