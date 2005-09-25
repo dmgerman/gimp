@@ -285,7 +285,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"<Image>/Colors"
+literal|"<Image>/Colors/Info"
 argument_list|)
 expr_stmt|;
 block|}
@@ -294,7 +294,7 @@ end_function
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon277ad5060108
+DECL|struct|__anon2b0b82a30108
 block|{
 DECL|member|width
 name|gint
