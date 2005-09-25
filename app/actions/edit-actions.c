@@ -197,6 +197,17 @@ argument_list|)
 block|}
 block|,
 block|{
+literal|"edit-paste-as-menu"
+block|,
+name|NULL
+block|,
+name|N_
+argument_list|(
+literal|"_Paste as"
+argument_list|)
+block|}
+block|,
+block|{
 literal|"edit-buffer-menu"
 block|,
 name|NULL
@@ -419,7 +430,7 @@ name|GIMP_STOCK_PASTE_AS_NEW
 block|,
 name|N_
 argument_list|(
-literal|"Paste as _New"
+literal|"_New Image"
 argument_list|)
 block|,
 name|NULL
