@@ -135,7 +135,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon287f068b0103
+DECL|enum|__anon28edab4d0103
 block|{
 DECL|enumerator|MIN_CHANNELS
 name|MIN_CHANNELS
@@ -153,7 +153,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287f068b0208
+DECL|struct|__anon28edab4d0208
 block|{
 DECL|member|max_p
 name|gint
@@ -239,7 +239,7 @@ literal|"the channel that has the maximum value in three "
 literal|"(red, green, blue) channels, and other channels "
 literal|"are zero-cleared"
 argument_list|,
-literal|"the help is not yet written for this plug-in since none is needed."
+literal|"There's no help yet."
 argument_list|,
 literal|"Shuji Narazaki (narazaki@InetQ.or.jp)"
 argument_list|,
@@ -249,7 +249,7 @@ literal|"May 2000"
 argument_list|,
 name|N_
 argument_list|(
-literal|"_Max RGB..."
+literal|"_Maximum RGB..."
 argument_list|)
 argument_list|,
 literal|"RGB*"
@@ -272,7 +272,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"<Image>/Colors/Info"
+literal|"<Image>/Colors"
 argument_list|)
 expr_stmt|;
 block|}
@@ -521,7 +521,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287f068b0308
+DECL|struct|__anon28edab4d0308
 block|{
 DECL|member|init_value
 name|gint
@@ -996,7 +996,7 @@ name|gimp_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Max RGB"
+literal|"Maximum RGB Value"
 argument_list|)
 argument_list|,
 name|PLUG_IN_BINARY
