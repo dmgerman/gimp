@@ -891,7 +891,7 @@ block|,
 block|{
 literal|"view-zoom-out-accel"
 block|,
-name|GTK_STOCK_ZOOM_OUT
+name|GIMP_STOCK_CHAR_PICKER
 block|,
 name|N_
 argument_list|(
@@ -915,7 +915,7 @@ block|,
 block|{
 literal|"view-zoom-in-accel"
 block|,
-name|GTK_STOCK_ZOOM_IN
+name|GIMP_STOCK_CHAR_PICKER
 block|,
 name|N_
 argument_list|(
