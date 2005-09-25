@@ -180,16 +180,18 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GtkWidget
-modifier|*
-name|gimp_zoom_widget_new
+name|void
+name|gimp_zoom_model_set_range
 parameter_list|(
 name|GimpZoomModel
 modifier|*
 name|model
 parameter_list|,
-name|GimpZoomWidgetType
-name|widget
+name|gdouble
+name|min
+parameter_list|,
+name|gdouble
+name|max
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -206,18 +208,16 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
-name|gimp_zoom_model_set_range
+name|GtkWidget
+modifier|*
+name|gimp_zoom_widget_new
 parameter_list|(
 name|GimpZoomModel
 modifier|*
 name|model
 parameter_list|,
-name|gdouble
-name|min
-parameter_list|,
-name|gdouble
-name|max
+name|GimpZoomWidgetType
+name|type
 parameter_list|)
 function_decl|;
 end_function_decl
