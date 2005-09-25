@@ -597,7 +597,7 @@ literal|"version"
 block|,
 literal|'v'
 block|,
-literal|0
+name|G_OPTION_FLAG_NO_ARG
 block|,
 name|G_OPTION_ARG_CALLBACK
 block|,
@@ -919,7 +919,7 @@ literal|"debug-handlers"
 block|,
 literal|0
 block|,
-literal|0
+name|G_OPTION_FLAG_NO_ARG
 block|,
 name|G_OPTION_ARG_NONE
 block|,
@@ -939,7 +939,7 @@ literal|"g-fatal-warnings"
 block|,
 literal|0
 block|,
-literal|0
+name|G_OPTION_FLAG_NO_ARG
 block|,
 name|G_OPTION_ARG_CALLBACK
 block|,
@@ -958,7 +958,7 @@ literal|"dump-gimprc"
 block|,
 literal|0
 block|,
-literal|0
+name|G_OPTION_FLAG_NO_ARG
 block|,
 name|G_OPTION_ARG_CALLBACK
 block|,
@@ -977,6 +977,8 @@ literal|"dump-gimprc-system"
 block|,
 literal|0
 block|,
+name|G_OPTION_FLAG_NO_ARG
+operator||
 name|G_OPTION_FLAG_HIDDEN
 block|,
 name|G_OPTION_ARG_CALLBACK
@@ -993,6 +995,8 @@ literal|"dump-gimprc-manpage"
 block|,
 literal|0
 block|,
+name|G_OPTION_FLAG_NO_ARG
+operator||
 name|G_OPTION_FLAG_HIDDEN
 block|,
 name|G_OPTION_ARG_CALLBACK
