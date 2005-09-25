@@ -29,7 +29,7 @@ DECL|macro|SIOX_DEFAULT_SENSITIVITY_L
 define|#
 directive|define
 name|SIOX_DEFAULT_SENSITIVITY_L
-value|0.66
+value|0.64
 end_define
 
 begin_define
@@ -37,7 +37,7 @@ DECL|macro|SIOX_DEFAULT_SENSITIVITY_A
 define|#
 directive|define
 name|SIOX_DEFAULT_SENSITIVITY_A
-value|1.25
+value|1.28
 end_define
 
 begin_define
@@ -45,7 +45,7 @@ DECL|macro|SIOX_DEFAULT_SENSITIVITY_B
 define|#
 directive|define
 name|SIOX_DEFAULT_SENSITIVITY_B
-value|2.5
+value|2.56
 end_define
 
 begin_typedef
