@@ -429,13 +429,15 @@ expr_stmt|;
 comment|/* zoom out */
 name|button
 operator|=
-name|gimp_zoom_widget_new
+name|gimp_zoom_button_new
 argument_list|(
 name|priv
 operator|->
 name|zoom
 argument_list|,
-name|GIMP_ZOOM_OUT_BUTTON
+name|GIMP_ZOOM_OUT
+argument_list|,
+name|GTK_ICON_SIZE_SMALL_TOOLBAR
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -462,13 +464,15 @@ expr_stmt|;
 comment|/* zoom in */
 name|button
 operator|=
-name|gimp_zoom_widget_new
+name|gimp_zoom_button_new
 argument_list|(
 name|priv
 operator|->
 name|zoom
 argument_list|,
-name|GIMP_ZOOM_IN_BUTTON
+name|GIMP_ZOOM_IN
+argument_list|,
+name|GTK_ICON_SIZE_SMALL_TOOLBAR
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

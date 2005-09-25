@@ -36,7 +36,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad48f100103
+DECL|enum|__anon2c02c2430103
 block|{
 DECL|enumerator|GIMP_CHAIN_TOP
 name|GIMP_CHAIN_TOP
@@ -76,7 +76,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad48f100203
+DECL|enum|__anon2c02c2430203
 block|{
 DECL|enumerator|GIMP_COLOR_AREA_FLAT
 name|GIMP_COLOR_AREA_FLAT
@@ -115,7 +115,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad48f100303
+DECL|enum|__anon2c02c2430303
 block|{
 DECL|enumerator|GIMP_COLOR_SELECTOR_HUE
 name|GIMP_COLOR_SELECTOR_HUE
@@ -171,7 +171,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad48f100403
+DECL|enum|__anon2c02c2430403
 block|{
 DECL|enumerator|GIMP_PAGE_SELECTOR_TARGET_LAYERS
 name|GIMP_PAGE_SELECTOR_TARGET_LAYERS
@@ -207,7 +207,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad48f100503
+DECL|enum|__anon2c02c2430503
 block|{
 DECL|enumerator|GIMP_SIZE_ENTRY_UPDATE_NONE
 name|GIMP_SIZE_ENTRY_UPDATE_NONE
@@ -226,40 +226,6 @@ literal|2
 DECL|typedef|GimpSizeEntryUpdatePolicy
 block|}
 name|GimpSizeEntryUpdatePolicy
-typedef|;
-end_typedef
-
-begin_define
-DECL|macro|GIMP_TYPE_ZOOM_WIDGET_TYPE
-define|#
-directive|define
-name|GIMP_TYPE_ZOOM_WIDGET_TYPE
-value|(gimp_zoom_model_widget_type_get_type ())
-end_define
-
-begin_decl_stmt
-name|GType
-name|gimp_zoom_widget_type_get_type
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
-
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon2ad48f100603
-block|{
-DECL|enumerator|GIMP_ZOOM_IN_BUTTON
-name|GIMP_ZOOM_IN_BUTTON
-block|,
-DECL|enumerator|GIMP_ZOOM_OUT_BUTTON
-name|GIMP_ZOOM_OUT_BUTTON
-DECL|typedef|GimpZoomWidgetType
-block|}
-name|GimpZoomWidgetType
 typedef|;
 end_typedef
 
@@ -284,7 +250,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad48f100703
+DECL|enum|__anon2c02c2430603
 block|{
 DECL|enumerator|GIMP_ZOOM_IN
 name|GIMP_ZOOM_IN
