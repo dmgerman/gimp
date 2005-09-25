@@ -108,7 +108,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a350ba30108
+DECL|struct|__anon299a80390108
 block|{
 DECL|member|run
 name|gint
@@ -123,7 +123,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a350ba30208
+DECL|struct|__anon299a80390208
 block|{
 DECL|member|width
 name|gint
@@ -157,7 +157,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a350ba30303
+DECL|enum|__anon299a80390303
 block|{
 DECL|enumerator|SHADOWS
 name|SHADOWS
@@ -178,7 +178,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a350ba30403
+DECL|enum|__anon299a80390403
 block|{
 DECL|enumerator|NONEATALL
 name|NONEATALL
@@ -210,7 +210,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a350ba30503
+DECL|enum|__anon299a80390503
 block|{
 DECL|enumerator|BY_HUE
 name|BY_HUE
@@ -229,7 +229,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a350ba30603
+DECL|enum|__anon299a80390603
 block|{
 DECL|enumerator|RED
 name|RED
@@ -257,7 +257,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a350ba30703
+DECL|enum|__anon299a80390703
 block|{
 DECL|enumerator|DOWN
 name|DOWN
@@ -276,7 +276,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a350ba30808
+DECL|struct|__anon299a80390808
 block|{
 DECL|member|window
 name|GtkWidget
@@ -307,7 +307,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a350ba30908
+DECL|struct|__anon299a80390908
 block|{
 DECL|member|roughness
 name|gdouble
@@ -408,7 +408,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a350ba30a08
+DECL|struct|__anon299a80390a08
 block|{
 DECL|member|roughness_scale
 name|GtkWidget
@@ -1319,7 +1319,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2a350ba30b08
+DECL|struct|__anon299a80390b08
 block|{
 DECL|member|bna
 name|GtkWidget
@@ -1607,7 +1607,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"<Image>/Colors"
+literal|"<Image>/Colors/Modify"
 argument_list|)
 expr_stmt|;
 block|}

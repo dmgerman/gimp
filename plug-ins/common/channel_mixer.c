@@ -88,7 +88,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295143cf0103
+DECL|enum|__anon29cf1b120103
 block|{
 DECL|enumerator|CM_RED_CHANNEL
 name|CM_RED_CHANNEL
@@ -107,7 +107,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295143cf0208
+DECL|struct|__anon29cf1b120208
 block|{
 DECL|member|red_gain
 name|gdouble
@@ -130,7 +130,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295143cf0308
+DECL|struct|__anon29cf1b120308
 block|{
 DECL|member|red
 name|CmChannelType
@@ -778,7 +778,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"<Image>/Colors"
+literal|"<Image>/Colors/Modify"
 argument_list|)
 expr_stmt|;
 block|}
