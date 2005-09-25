@@ -76,10 +76,10 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1791180108
+DECL|struct|__anon2b7a8b760108
 block|{
 union|union
-DECL|union|__anon2b179118020a
+DECL|union|__anon2b7a8b76020a
 block|{
 DECL|member|ID
 name|gint32
@@ -624,7 +624,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1791180308
+DECL|struct|__anon2b7a8b760308
 block|{
 DECL|member|compose_type
 specifier|const
@@ -1121,7 +1121,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1791180408
+DECL|struct|__anon2b7a8b760408
 block|{
 DECL|member|inputs
 name|ComposeInput
@@ -1161,7 +1161,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1791180508
+DECL|struct|__anon2b7a8b760508
 block|{
 DECL|member|width
 DECL|member|height
@@ -1888,12 +1888,6 @@ operator|==
 literal|0
 condition|)
 block|{
-name|gint
-name|nlayers
-decl_stmt|;
-name|gint
-name|nret
-decl_stmt|;
 name|GimpParasite
 modifier|*
 name|parasite
@@ -1922,20 +1916,29 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"You can only run 'Recompose' if the active image"
-literal|" was originally produced by 'Decompose'."
+literal|"You can only run 'Recompose' if the active image "
+literal|"was originally produced by 'Decompose'."
 argument_list|)
 argument_list|)
 expr_stmt|;
-return|return;
+name|status
+operator|=
+name|GIMP_PDB_EXECUTION_ERROR
+expr_stmt|;
 block|}
+else|else
+block|{
+name|gint
+name|nret
+decl_stmt|;
 name|nret
 operator|=
 name|sscanf
 argument_list|(
+name|gimp_parasite_data
+argument_list|(
 name|parasite
-operator|->
-name|data
+argument_list|)
 argument_list|,
 literal|"source=%d type=%s %d %d %d %d"
 argument_list|,
@@ -1997,6 +2000,11 @@ operator|.
 name|ID
 argument_list|)
 expr_stmt|;
+name|gimp_parasite_free
+argument_list|(
+name|parasite
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|i
@@ -2019,7 +2027,7 @@ index|]
 operator|.
 name|is_ID
 operator|=
-name|FALSE
+name|TRUE
 expr_stmt|;
 if|if
 condition|(
@@ -2037,14 +2045,13 @@ literal|"too few layers found"
 argument_list|)
 argument_list|)
 expr_stmt|;
-return|return;
-block|}
-name|nlayers
+name|status
 operator|=
-name|nret
-operator|-
-literal|2
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
+block|}
+else|else
+block|{
 name|composevals
 operator|.
 name|do_recompose
@@ -2055,6 +2062,8 @@ name|compose_by_drawable
 operator|=
 name|TRUE
 expr_stmt|;
+block|}
+block|}
 block|}
 else|else
 block|{
