@@ -18,12 +18,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdlib.h>
 end_include
 
@@ -73,6 +67,12 @@ directive|include
 file|<glib-object.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|<glib/gstdio.h>
+end_include
+
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -91,19 +91,6 @@ define|#
 directive|define
 name|R_OK
 value|4
-end_define
-
-begin_define
-DECL|macro|access (f,p)
-define|#
-directive|define
-name|access
-parameter_list|(
-name|f
-parameter_list|,
-name|p
-parameter_list|)
-value|_access(f,p)
 end_define
 
 begin_endif
@@ -464,7 +451,7 @@ return|;
 block|}
 if|if
 condition|(
-name|access
+name|g_access
 argument_list|(
 name|filename
 argument_list|,

@@ -483,7 +483,7 @@ else|else
 block|{
 name|fd
 operator|=
-name|creat
+name|g_creat
 argument_list|(
 name|filename
 argument_list|,

@@ -244,7 +244,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2950f7620103
+DECL|enum|__anon295cdd190103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3279,7 +3279,7 @@ directive|endif
 name|success
 operator|=
 operator|(
-name|chmod
+name|g_chmod
 argument_list|(
 name|filename
 argument_list|,
@@ -4578,7 +4578,7 @@ block|{
 name|success
 operator|=
 operator|(
-name|chmod
+name|g_chmod
 argument_list|(
 name|name
 argument_list|,

@@ -404,7 +404,7 @@ operator|==
 literal|0
 condition|)
 block|{
-name|chmod
+name|g_chmod
 argument_list|(
 name|dest
 argument_list|,

@@ -99,7 +99,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb9c37c0103
+DECL|enum|__anon27842e5f0103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY
@@ -112,7 +112,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb9c37c0203
+DECL|enum|__anon27842e5f0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1611,7 +1611,7 @@ decl_stmt|;
 if|if
 condition|(
 operator|(
-name|access
+name|g_access
 argument_list|(
 name|filename
 argument_list|,
@@ -1621,7 +1621,7 @@ operator|==
 literal|0
 operator|&&
 comment|/* check if the file exists    */
-name|access
+name|g_access
 argument_list|(
 name|filename
 argument_list|,
@@ -1633,7 +1633,7 @@ operator|)
 operator|||
 comment|/* and is writable             */
 operator|(
-name|access
+name|g_access
 argument_list|(
 name|filename
 argument_list|,
@@ -1643,7 +1643,7 @@ operator|!=
 literal|0
 operator|&&
 comment|/* OR doesn't exist            */
-name|access
+name|g_access
 argument_list|(
 name|dirname
 argument_list|,

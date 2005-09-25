@@ -71,13 +71,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib/gstdio.h>
+file|<glib-object.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<glib-object.h>
+file|<glib/gstdio.h>
 end_include
 
 begin_ifndef
@@ -153,7 +153,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5f6a5f0108
+DECL|struct|__anon2ae0321a0108
 block|{
 DECL|member|states
 name|GSList
@@ -179,7 +179,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b5f6a5f0203
+DECL|enum|__anon2ae0321a0203
 block|{
 DECL|enumerator|STATE_START
 name|STATE_START
@@ -2004,7 +2004,7 @@ condition|)
 block|{
 name|fd
 operator|=
-name|creat
+name|g_creat
 argument_list|(
 name|filename
 argument_list|,
