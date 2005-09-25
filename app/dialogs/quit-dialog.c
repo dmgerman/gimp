@@ -318,9 +318,16 @@ name|dialog
 operator|=
 name|gimp_message_dialog_new
 argument_list|(
+name|do_quit
+condition|?
 name|_
 argument_list|(
 literal|"Quit The GIMP"
+argument_list|)
+else|:
+name|_
+argument_list|(
+literal|"Close All Images"
 argument_list|)
 argument_list|,
 name|GIMP_STOCK_WILBER_EEK
@@ -331,7 +338,11 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-name|NULL
+name|do_quit
+condition|?
+name|GIMP_HELP_FILE_QUIT
+else|:
+name|GIMP_HELP_FILE_CLOSE_ALL
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
