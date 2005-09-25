@@ -1792,7 +1792,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon299ca3ab0108
+DECL|struct|__anon295641fb0108
 block|{
 DECL|member|modifiers
 name|GdkModifierType
@@ -2749,6 +2749,9 @@ name|window
 argument_list|)
 condition|)
 return|return
+operator|(
+name|GdkNativeWindow
+operator|)
 name|GDK_WINDOW_HWND
 argument_list|(
 name|GTK_WIDGET
@@ -2787,6 +2790,9 @@ return|;
 endif|#
 directive|endif
 return|return
+operator|(
+name|GdkNativeWindow
+operator|)
 literal|0
 return|;
 block|}

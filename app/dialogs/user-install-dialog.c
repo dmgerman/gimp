@@ -163,7 +163,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3ed8f10103
+DECL|enum|__anon2b4287d30103
 block|{
 DECL|enumerator|GPL_PAGE
 name|GPL_PAGE
@@ -188,7 +188,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3ed8f10203
+DECL|enum|__anon2b4287d30203
 block|{
 DECL|enumerator|DIRENT_COLUMN
 name|DIRENT_COLUMN
@@ -400,7 +400,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c3ed8f10303
+DECL|enum|__anon2b4287d30303
 block|{
 DECL|enumerator|TREE_ITEM_DO_NOTHING
 name|TREE_ITEM_DO_NOTHING
@@ -422,7 +422,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c3ed8f10408
+DECL|struct|__anon2b4287d30408
 block|{
 DECL|member|directory
 name|gboolean
@@ -3078,6 +3078,12 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  MIGRATION_PAGE  */
+if|if
+condition|(
+name|version
+operator|&&
+name|migrate
+condition|)
 block|{
 name|GtkWidget
 modifier|*

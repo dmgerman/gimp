@@ -640,6 +640,10 @@ argument_list|,
 name|G_STRFUNC
 argument_list|,
 name|save_proc
+operator|&&
+name|save_proc
+operator|->
+name|menu_label
 condition|?
 name|save_proc
 operator|->
@@ -670,6 +674,10 @@ argument_list|,
 name|G_STRFUNC
 argument_list|,
 name|basename_proc
+operator|&&
+name|basename_proc
+operator|->
+name|menu_label
 condition|?
 name|basename_proc
 operator|->
@@ -1024,6 +1032,12 @@ argument_list|,
 name|uri_proc
 operator|->
 name|menu_label
+condition|?
+name|uri_proc
+operator|->
+name|menu_label
+else|:
+literal|"?"
 argument_list|)
 expr_stmt|;
 comment|/*  use the URI's proc if no save proc was selected  */

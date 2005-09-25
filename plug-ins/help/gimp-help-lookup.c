@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpenv.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"domain.h"
 end_include
 
@@ -101,7 +107,6 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|help_root
 specifier|static
-specifier|const
 name|gchar
 modifier|*
 name|help_root
@@ -275,9 +280,17 @@ argument_list|)
 expr_stmt|;
 name|help_root
 operator|=
-name|DATADIR
+name|g_build_path
+argument_list|(
 name|G_DIR_SEPARATOR_S
+argument_list|,
+name|gimp_data_directory
+argument_list|()
+argument_list|,
 name|GIMP_HELP_PREFIX
+argument_list|,
+name|NULL
+argument_list|)
 expr_stmt|;
 name|context
 operator|=
@@ -411,6 +424,11 @@ block|}
 name|g_option_context_free
 argument_list|(
 name|context
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|help_root
 argument_list|)
 expr_stmt|;
 return|return
