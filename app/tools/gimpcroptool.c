@@ -866,7 +866,7 @@ operator|->
 name|height
 expr_stmt|;
 name|rectangle_exists
-operator|==
+operator|=
 operator|(
 name|x
 operator|<=
