@@ -136,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28e5e2cf0103
+DECL|enum|__anon2998b9910103
 block|{
 DECL|enumerator|PSD_UNKNOWN_IMAGE
 name|PSD_UNKNOWN_IMAGE
@@ -195,7 +195,7 @@ DECL|member|fpos
 name|fpos_t
 name|fpos
 decl_stmt|;
-comment|/* Remember where the data is in the file, so we can 		  come back to it! */
+comment|/* Remember where the data is in the file, so we can                     come back to it! */
 comment|/* We can't just assume that the channel's width and height are the   * same as those of the layer that owns the channel, since this   * channel may be a layer mask, which Photoshop allows to have a   * different size from the layer which it applies to.   */
 DECL|member|width
 name|guint32
@@ -324,7 +324,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e5e2cf0208
+DECL|struct|__anon2998b9910208
 block|{
 DECL|member|hRes
 name|Fixed
@@ -573,7 +573,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28e5e2cf0308
+DECL|struct|__anon2998b9910308
 block|{
 DECL|member|signature
 name|gchar
@@ -671,18 +671,6 @@ literal|"Lab Colour"
 block|,
 literal|"<invalid>"
 block|}
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|prog_name
-specifier|static
-specifier|const
-name|gchar
-modifier|*
-name|prog_name
-init|=
-literal|"PSD"
 decl_stmt|;
 end_decl_stmt
 
@@ -1391,12 +1379,9 @@ return|return
 name|rtn
 return|;
 block|}
-else|else
-block|{
 return|return
 name|NULL
 return|;
-block|}
 block|}
 end_function
 
@@ -1419,63 +1404,47 @@ case|case
 name|PSD_RGBA_IMAGE
 case|:
 return|return
-operator|(
 name|GIMP_RGBA_IMAGE
-operator|)
 return|;
 case|case
 name|PSD_RGB_IMAGE
 case|:
 return|return
-operator|(
 name|GIMP_RGB_IMAGE
-operator|)
 return|;
 case|case
 name|PSD_GRAYA_IMAGE
 case|:
 return|return
-operator|(
 name|GIMP_GRAYA_IMAGE
-operator|)
 return|;
 case|case
 name|PSD_GRAY_IMAGE
 case|:
 return|return
-operator|(
 name|GIMP_GRAY_IMAGE
-operator|)
 return|;
 case|case
 name|PSD_INDEXEDA_IMAGE
 case|:
 return|return
-operator|(
 name|GIMP_INDEXEDA_IMAGE
-operator|)
 return|;
 case|case
 name|PSD_INDEXED_IMAGE
 case|:
 return|return
-operator|(
 name|GIMP_INDEXED_IMAGE
-operator|)
 return|;
 case|case
 name|PSD_BITMAP_IMAGE
 case|:
 return|return
-operator|(
 name|GIMP_GRAY_IMAGE
-operator|)
 return|;
 default|default:
 return|return
-operator|(
 name|GIMP_RGB_IMAGE
-operator|)
 return|;
 block|}
 block|}
@@ -1508,9 +1477,7 @@ operator|==
 literal|0
 condition|)
 return|return
-operator|(
 name|GIMP_NORMAL_MODE
-operator|)
 return|;
 if|if
 condition|(
@@ -1526,9 +1493,7 @@ operator|==
 literal|0
 condition|)
 return|return
-operator|(
 name|GIMP_DARKEN_ONLY_MODE
-operator|)
 return|;
 if|if
 condition|(
@@ -1544,9 +1509,7 @@ operator|==
 literal|0
 condition|)
 return|return
-operator|(
 name|GIMP_LIGHTEN_ONLY_MODE
-operator|)
 return|;
 if|if
 condition|(
@@ -1562,9 +1525,7 @@ operator|==
 literal|0
 condition|)
 return|return
-operator|(
 name|GIMP_HUE_MODE
-operator|)
 return|;
 if|if
 condition|(
@@ -1580,9 +1541,7 @@ operator|==
 literal|0
 condition|)
 return|return
-operator|(
 name|GIMP_SATURATION_MODE
-operator|)
 return|;
 if|if
 condition|(
@@ -1598,9 +1557,7 @@ operator|==
 literal|0
 condition|)
 return|return
-operator|(
 name|GIMP_COLOR_MODE
-operator|)
 return|;
 if|if
 condition|(
@@ -1616,9 +1573,7 @@ operator|==
 literal|0
 condition|)
 return|return
-operator|(
 name|GIMP_MULTIPLY_MODE
-operator|)
 return|;
 if|if
 condition|(
@@ -1634,9 +1589,7 @@ operator|==
 literal|0
 condition|)
 return|return
-operator|(
 name|GIMP_SCREEN_MODE
-operator|)
 return|;
 if|if
 condition|(
@@ -1652,9 +1605,7 @@ operator|==
 literal|0
 condition|)
 return|return
-operator|(
 name|GIMP_DISSOLVE_MODE
-operator|)
 return|;
 if|if
 condition|(
@@ -1670,9 +1621,7 @@ operator|==
 literal|0
 condition|)
 return|return
-operator|(
 name|GIMP_DIFFERENCE_MODE
-operator|)
 return|;
 if|if
 condition|(
@@ -1688,9 +1637,7 @@ operator|==
 literal|0
 condition|)
 return|return
-operator|(
 name|GIMP_VALUE_MODE
-operator|)
 return|;
 if|if
 condition|(
@@ -1706,9 +1653,7 @@ operator|==
 literal|0
 condition|)
 return|return
-operator|(
 name|GIMP_HARDLIGHT_MODE
-operator|)
 return|;
 if|if
 condition|(
@@ -1724,9 +1669,7 @@ operator|==
 literal|0
 condition|)
 return|return
-operator|(
 name|GIMP_SOFTLIGHT_MODE
-operator|)
 return|;
 if|if
 condition|(
@@ -1742,19 +1685,15 @@ operator|==
 literal|0
 condition|)
 return|return
-operator|(
 name|GIMP_OVERLAY_MODE
-operator|)
 return|;
-name|printf
+name|g_printerr
 argument_list|(
 literal|"PSD: Warning - UNKNOWN layer-blend mode, reverting to 'normal'\n"
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 name|GIMP_NORMAL_MODE
-operator|)
 return|;
 block|}
 end_function
@@ -1781,9 +1720,7 @@ case|case
 name|PSD_RGB_IMAGE
 case|:
 return|return
-operator|(
 name|GIMP_RGB
-operator|)
 return|;
 case|case
 name|PSD_BITMAP_IMAGE
@@ -1795,9 +1732,7 @@ case|case
 name|PSD_GRAY_IMAGE
 case|:
 return|return
-operator|(
 name|GIMP_GRAY
-operator|)
 return|;
 case|case
 name|PSD_INDEXEDA_IMAGE
@@ -1806,9 +1741,7 @@ case|case
 name|PSD_INDEXED_IMAGE
 case|:
 return|return
-operator|(
 name|GIMP_INDEXED
-operator|)
 return|;
 default|default:
 name|g_message
@@ -1820,9 +1753,7 @@ name|gimp_quit
 argument_list|()
 expr_stmt|;
 return|return
-operator|(
 name|GIMP_RGB
-operator|)
 return|;
 block|}
 block|}
@@ -1952,7 +1883,7 @@ name|guchar
 modifier|*
 name|tmpmap
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|tmpmap
@@ -4250,7 +4181,7 @@ name|extradatasize
 argument_list|)
 decl_stmt|;
 comment|/* FIXME: should do something with this data */
-comment|/*throwchunk(extradatasize, fd, "layer extradata throw");   (*offset) += extradatasize;*/
+comment|/*throwchunk (extradatasize, fd, "layer extradata throw");   (*offset) += extradatasize;*/
 name|totaloff
 operator|=
 operator|(
@@ -4633,10 +4564,8 @@ name|layermaskdatasize
 condition|)
 block|{
 name|IFDBG
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"Setting layer mask data layer\n"
 argument_list|)
 decl_stmt|;
@@ -4891,7 +4820,7 @@ name|psd_image
 operator|.
 name|layer
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|PSDlayer
 argument_list|,
@@ -5280,7 +5209,7 @@ if|#
 directive|if
 literal|0
 comment|/* Pad raw data to multiple of 2? */
-block|if ((height * width)& 1) 	  { 	    getguchar(fd, "raw channel padding"); 	    offset++; 	  }
+block|if ((height * width)& 1) 	  { 	    getguchar (fd, "raw channel padding"); 	    offset++; 	  }
 endif|#
 directive|endif
 block|}
@@ -5896,7 +5825,7 @@ operator|++
 expr_stmt|;
 block|}
 block|}
-comment|/*  if (offset != PSDheader.imgreslen)     {       printf("\tSucking imageres byte...\n");       throwchunk(1, fd, "imageres suck");       offset ++;     }*/
+comment|/*  if (offset != PSDheader.imgreslen)     {       printf("\tSucking imageres byte...\n");       throwchunk (1, fd, "imageres suck");       offset ++;     }*/
 block|}
 end_function
 
@@ -6535,8 +6464,8 @@ end_function
 
 begin_function
 specifier|static
-DECL|function|psd_layer_has_alpha (PSDlayer * layer)
 name|gboolean
+DECL|function|psd_layer_has_alpha (PSDlayer * layer)
 name|psd_layer_has_alpha
 parameter_list|(
 name|PSDlayer
@@ -6591,8 +6520,8 @@ end_function
 
 begin_function
 specifier|static
-DECL|function|validate_aux_channel_name (gint aux_index)
 name|void
+DECL|function|validate_aux_channel_name (gint aux_index)
 name|validate_aux_channel_name
 parameter_list|(
 name|gint
@@ -6656,8 +6585,8 @@ end_function
 
 begin_function
 specifier|static
-DECL|function|extract_data_and_channels (guchar * src,gint gimpstep,gint psstep,gint32 image_ID,GimpDrawable * drawable,gint width,gint height)
 name|void
+DECL|function|extract_data_and_channels (guchar * src,gint gimpstep,gint psstep,gint32 image_ID,GimpDrawable * drawable,gint width,gint height)
 name|extract_data_and_channels
 parameter_list|(
 name|guchar
@@ -7391,7 +7320,7 @@ name|gint32
 name|dest_h
 parameter_list|)
 block|{
-name|int
+name|gint
 name|x
 decl_stmt|,
 name|y
@@ -8100,9 +8029,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-empty_stmt|;
 break|break;
-comment|/* case GIMP_GRAY */
 case|case
 name|GIMP_RGB
 case|:
@@ -8590,9 +8517,6 @@ argument_list|,
 operator|(
 literal|100.0
 operator|*
-operator|(
-name|double
-operator|)
 name|psd_image
 operator|.
 name|layer
@@ -8627,11 +8551,8 @@ literal|"YAH2\n"
 argument_list|)
 decl_stmt|;
 block|}
-empty_stmt|;
 break|break;
-comment|/* case GIMP_RGB */
 default|default:
-block|{
 name|g_message
 argument_list|(
 literal|"Error: Sorry, can't deal with a layered image of this type.\n"
@@ -8640,10 +8561,7 @@ expr_stmt|;
 name|gimp_quit
 argument_list|()
 expr_stmt|;
-block|}
-empty_stmt|;
 break|break;
-comment|/* default */
 block|}
 name|gimp_image_add_layer
 argument_list|(
@@ -9264,16 +9182,12 @@ break|break;
 default|default:
 name|printf
 argument_list|(
-literal|"%s: cannot handle CMYK with more than 5 channels\n"
-argument_list|,
-name|prog_name
+literal|"PSD: cannot handle CMYK with more than 5 channels\n"
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 operator|-
 literal|1
-operator|)
 return|;
 break|break;
 block|}
@@ -9302,9 +9216,7 @@ condition|)
 block|{
 name|printf
 argument_list|(
-literal|"%s: Image type %d (%s) is not supported in this data format\n"
-argument_list|,
-name|prog_name
+literal|"PSD: Image type %d (%s) is not supported in this data format\n"
 argument_list|,
 name|PSDheader
 operator|.
@@ -9329,10 +9241,8 @@ index|]
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 operator|-
 literal|1
-operator|)
 return|;
 block|}
 if|if
@@ -9356,17 +9266,13 @@ condition|)
 block|{
 name|printf
 argument_list|(
-literal|"%s: The GIMP only supports 8-bit or 1-bit deep PSD images "
+literal|"PSD: The GIMP only supports 8-bit or 1-bit deep PSD images "
 literal|"at this time.\n"
-argument_list|,
-name|prog_name
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 operator|-
 literal|1
-operator|)
 return|;
 block|}
 name|IFDBG
@@ -9734,10 +9640,7 @@ condition|)
 block|{
 name|gimp_progress_update
 argument_list|(
-operator|(
-name|double
-operator|)
-literal|1.00
+literal|1.0
 argument_list|)
 expr_stmt|;
 if|if
@@ -9902,10 +9805,7 @@ condition|)
 block|{
 name|gimp_progress_update
 argument_list|(
-operator|(
-name|double
-operator|)
-literal|1.00
+literal|1.0
 argument_list|)
 expr_stmt|;
 name|xfread_interlaced
@@ -9928,10 +9828,7 @@ else|else
 block|{
 name|gimp_progress_update
 argument_list|(
-operator|(
-name|double
-operator|)
-literal|1.00
+literal|10
 argument_list|)
 expr_stmt|;
 name|cmykbuf
@@ -10018,10 +9915,7 @@ else|else
 block|{
 name|gimp_progress_update
 argument_list|(
-operator|(
-name|double
-operator|)
-literal|1.00
+literal|1.0
 argument_list|)
 expr_stmt|;
 if|if
@@ -10654,9 +10548,7 @@ condition|)
 block|{
 name|printf
 argument_list|(
-literal|"%s: unexpected EOF while reading image data\n"
-argument_list|,
-name|prog_name
+literal|"PSD: unexpected EOF while reading image data\n"
 argument_list|)
 expr_stmt|;
 name|gimp_quit
@@ -10766,7 +10658,7 @@ name|n
 operator|+
 literal|1
 expr_stmt|;
-comment|/*	    upremain -= n;*/
+comment|/* upremain -= n;*/
 name|b
 operator|=
 name|getguchar
@@ -10869,7 +10761,7 @@ name|upremain
 operator|--
 expr_stmt|;
 block|}
-comment|/*	    upremain -= n;*/
+comment|/* upremain -= n;*/
 block|}
 block|}
 if|if
@@ -11043,17 +10935,11 @@ literal|0
 condition|)
 name|gimp_progress_update
 argument_list|(
-call|(
-name|double
-call|)
-argument_list|(
+operator|(
 literal|2.0
 operator|*
-operator|(
-name|double
-operator|)
 name|height
-argument_list|)
+operator|)
 operator|/
 operator|(
 operator|(
@@ -11279,17 +11165,11 @@ literal|0
 condition|)
 name|gimp_progress_update
 argument_list|(
-call|(
-name|double
-call|)
-argument_list|(
+operator|(
 literal|2.0
 operator|*
-operator|(
-name|double
-operator|)
 name|height
-argument_list|)
+operator|)
 operator|/
 operator|(
 operator|(
@@ -11499,7 +11379,7 @@ block|{
 if|#
 directive|if
 literal|0
-block|guchar *tmpchunk;    if (n==0)     {       return;     }    tmpchunk = g_malloc(n);   xfread(fd, tmpchunk, n, why);   g_free(tmpchunk);
+block|guchar *tmpchunk;    if (n == 0)     return;    tmpchunk = g_malloc (n);   xfread (fd, tmpchunk, n, why);   g_free (tmpchunk);
 else|#
 directive|else
 if|if
@@ -11508,9 +11388,7 @@ name|n
 operator|==
 literal|0
 condition|)
-block|{
 return|return;
-block|}
 if|if
 condition|(
 name|fseek
@@ -11527,9 +11405,7 @@ condition|)
 block|{
 name|printf
 argument_list|(
-literal|"%s: unable to seek forward while reading '%s' chunk\n"
-argument_list|,
-name|prog_name
+literal|"PSD: unable to seek forward while reading '%s' chunk\n"
 argument_list|,
 name|why
 argument_list|)
@@ -11641,11 +11517,9 @@ name|len
 operator|==
 literal|0
 condition|)
-block|{
 return|return
 name|NULL
 return|;
-block|}
 name|tmpchunk
 operator|=
 name|g_malloc
@@ -11718,9 +11592,7 @@ condition|)
 block|{
 name|printf
 argument_list|(
-literal|"%s: unexpected EOF while reading '%s' chunk\n"
-argument_list|,
-name|prog_name
+literal|"PSD: unexpected EOF while reading '%s' chunk\n"
 argument_list|,
 name|why
 argument_list|)
@@ -11925,9 +11797,7 @@ condition|)
 block|{
 name|printf
 argument_list|(
-literal|"%s: unexpected EOF while reading '%s' chunk\n"
-argument_list|,
-name|prog_name
+literal|"PSD: unexpected EOF while reading '%s' chunk\n"
 argument_list|,
 name|why
 argument_list|)
@@ -12440,9 +12310,7 @@ condition|)
 block|{
 name|printf
 argument_list|(
-literal|"%s: not an Adobe Photoshop PSD file\n"
-argument_list|,
-name|prog_name
+literal|"PSD: not an Adobe Photoshop PSD file\n"
 argument_list|)
 expr_stmt|;
 name|gimp_quit
@@ -12460,9 +12328,7 @@ condition|)
 block|{
 name|printf
 argument_list|(
-literal|"%s: bad version number '%d', not 1\n"
-argument_list|,
-name|prog_name
+literal|"PSD: bad version number '%d', not 1\n"
 argument_list|,
 name|PSDheader
 operator|.
