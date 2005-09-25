@@ -932,26 +932,6 @@ literal|"_Render"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_plugin_menu_branch_register
-argument_list|(
-literal|"<Image>/Filters"
-argument_list|,
-name|N_
-argument_list|(
-literal|"_Selection"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_plugin_menu_branch_register
-argument_list|(
-literal|"<Image>/Filters/Decor"
-argument_list|,
-name|N_
-argument_list|(
-literal|"Stencil _Ops"
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|gimp_install_temp_proc
 argument_list|(
 literal|"script-fu-refresh"
