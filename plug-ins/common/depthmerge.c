@@ -808,7 +808,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
-literal|"<Image>/Filters/Effects/Combine"
+literal|"<Image>/Filters/Combine"
 argument_list|)
 expr_stmt|;
 block|}

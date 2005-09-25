@@ -66,7 +66,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b15f54e0103
+DECL|enum|__anon2974dd260103
 block|{
 DECL|enumerator|EXTEND
 name|EXTEND
@@ -290,7 +290,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b15f54e0208
+DECL|struct|__anon2974dd260208
 block|{
 DECL|member|matrix
 name|gfloat
@@ -447,7 +447,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon2b15f54e0308
+DECL|struct|__anon2974dd260308
 block|{
 DECL|member|matrix
 name|GtkWidget
@@ -650,7 +650,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"<Image>/Filters/Effects/Generic"
+literal|"<Image>/Filters/Generic"
 argument_list|)
 expr_stmt|;
 block|}
