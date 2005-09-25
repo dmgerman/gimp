@@ -427,7 +427,7 @@ argument_list|(
 literal|"Close all"
 argument_list|)
 block|,
-literal|""
+literal|"<shift><control>W"
 block|,
 name|NULL
 block|,
