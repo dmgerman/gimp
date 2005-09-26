@@ -351,7 +351,7 @@ comment|/* Data structure holding data between runs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon275b24c20108
+DECL|struct|__anon2be0993c0108
 typedef|typedef
 struct|struct
 block|{
@@ -398,7 +398,7 @@ comment|/* The dialog information */
 end_comment
 
 begin_typedef
-DECL|struct|__anon275b24c20208
+DECL|struct|__anon2be0993c0208
 typedef|typedef
 struct|struct
 block|{
@@ -3465,7 +3465,13 @@ argument_list|,
 literal|"<Toolbox>/File/Acquire"
 argument_list|)
 expr_stmt|;
-comment|/* gimp_plugin_menu_register (PLUG_IN_NAME, "<Image>/File/Acquire"); */
+name|gimp_plugin_menu_register
+argument_list|(
+name|PLUG_IN_NAME
+argument_list|,
+literal|"<Image>/File/Acquire"
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

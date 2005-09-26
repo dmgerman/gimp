@@ -2855,28 +2855,6 @@ name|arg_type
 operator|!=
 name|GIMP_PDB_INT32
 operator|)
-operator|||
-operator|(
-name|args
-index|[
-literal|1
-index|]
-operator|.
-name|arg_type
-operator|!=
-name|GIMP_PDB_IMAGE
-operator|)
-operator|||
-operator|(
-name|args
-index|[
-literal|2
-index|]
-operator|.
-name|arg_type
-operator|!=
-name|GIMP_PDB_DRAWABLE
-operator|)
 condition|)
 block|{
 name|g_set_error
@@ -2891,7 +2869,7 @@ literal|"Plug-In \"%s\"\n(%s)\n\n"
 literal|"attempted to install<Image> procedure \"%s\" "
 literal|"which does not take the standard<Image> Plug-In "
 literal|"args.\n"
-literal|"(INT32, IMAGE, DRAWABLE)"
+literal|"(INT32)"
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
