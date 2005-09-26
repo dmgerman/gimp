@@ -187,7 +187,7 @@ literal|"version"
 block|,
 literal|'v'
 block|,
-literal|0
+name|G_OPTION_FLAG_NO_ARG
 block|,
 name|G_OPTION_ARG_CALLBACK
 block|,
