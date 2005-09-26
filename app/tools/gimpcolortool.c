@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon292378e70103
+DECL|enum|__anon2c9a0fdd0103
 block|{
 DECL|enumerator|PICKED
 name|PICKED
@@ -2200,6 +2200,14 @@ case|:
 name|modifier
 operator|=
 name|GIMP_CURSOR_MODIFIER_BACKGROUND
+expr_stmt|;
+break|break;
+case|case
+name|GIMP_COLOR_PICK_MODE_PALETTE
+case|:
+name|modifier
+operator|=
+name|GIMP_CURSOR_MODIFIER_PLUS
 expr_stmt|;
 break|break;
 block|}

@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27949cae0103
+DECL|enum|__anon2b02a2c60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -67,6 +67,9 @@ name|PROP_PICK_MODE
 block|,
 DECL|enumerator|PROP_ADD_TO_PALETTE
 name|PROP_ADD_TO_PALETTE
+block|,
+DECL|enumerator|PROP_USE_INFO_WINDOW
+name|PROP_USE_INFO_WINDOW
 block|}
 enum|;
 end_enum
@@ -313,6 +316,21 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+argument_list|(
+name|object_class
+argument_list|,
+name|PROP_USE_INFO_WINDOW
+argument_list|,
+literal|"use-info-window"
+argument_list|,
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -388,6 +406,19 @@ case|:
 name|options
 operator|->
 name|add_to_palette
+operator|=
+name|g_value_get_boolean
+argument_list|(
+name|value
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|PROP_USE_INFO_WINDOW
+case|:
+name|options
+operator|->
+name|use_info_window
 operator|=
 name|g_value_get_boolean
 argument_list|(
@@ -485,6 +516,19 @@ argument_list|,
 name|options
 operator|->
 name|add_to_palette
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|PROP_USE_INFO_WINDOW
+case|:
+name|g_value_set_boolean
+argument_list|(
+name|value
+argument_list|,
+name|options
+operator|->
+name|use_info_window
 argument_list|)
 expr_stmt|;
 break|break;
@@ -641,14 +685,14 @@ argument_list|(
 name|frame
 argument_list|)
 expr_stmt|;
-comment|/*  the add to palette toggle  */
+comment|/*  the use_info_window toggle button  */
 name|str
 operator|=
 name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Add to palette  (%s)"
+literal|"Use info window  (%s)"
 argument_list|)
 argument_list|,
 name|gimp_get_mod_string
@@ -663,7 +707,7 @@ name|gimp_prop_check_button_new
 argument_list|(
 name|config
 argument_list|,
-literal|"add-to-palette"
+literal|"use-info-window"
 argument_list|,
 name|str
 argument_list|)
@@ -682,9 +726,9 @@ argument_list|)
 argument_list|,
 name|button
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)

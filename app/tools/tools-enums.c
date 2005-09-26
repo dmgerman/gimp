@@ -83,6 +83,14 @@ literal|"background"
 block|}
 block|,
 block|{
+name|GIMP_COLOR_PICK_MODE_PALETTE
+block|,
+literal|"GIMP_COLOR_PICK_MODE_PALETTE"
+block|,
+literal|"palette"
+block|}
+block|,
+block|{
 literal|0
 block|,
 name|NULL
@@ -126,6 +134,17 @@ block|,
 name|N_
 argument_list|(
 literal|"Set background color"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_COLOR_PICK_MODE_PALETTE
+block|,
+name|N_
+argument_list|(
+literal|"Add to palette"
 argument_list|)
 block|,
 name|NULL

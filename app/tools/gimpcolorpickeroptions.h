@@ -120,6 +120,11 @@ DECL|member|add_to_palette
 name|gboolean
 name|add_to_palette
 decl_stmt|;
+comment|/* unused */
+DECL|member|use_info_window
+name|gboolean
+name|use_info_window
+decl_stmt|;
 block|}
 struct|;
 end_struct
