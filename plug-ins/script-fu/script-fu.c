@@ -808,16 +808,6 @@ literal|"<Toolbox>/Xtns/Script-Fu"
 argument_list|,
 name|N_
 argument_list|(
-literal|"Make Br_ush"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_plugin_menu_branch_register
-argument_list|(
-literal|"<Toolbox>/Xtns/Script-Fu"
-argument_list|,
-name|N_
-argument_list|(
 literal|"_Misc"
 argument_list|)
 argument_list|)
