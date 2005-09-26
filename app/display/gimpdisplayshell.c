@@ -263,7 +263,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c78b7190103
+DECL|enum|__anon290f37f50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -276,7 +276,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c78b7190203
+DECL|enum|__anon290f37f50203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -3383,6 +3383,25 @@ argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_HELP_IMAGE_WINDOW_RULER
+argument_list|)
+expr_stmt|;
+comment|/* Workaround for GTK+ Wintab bug on Windows when creating guides by    * dragging from the rulers. See bug #168516. */
+name|gtk_widget_set_extension_events
+argument_list|(
+name|shell
+operator|->
+name|hrule
+argument_list|,
+name|GDK_EXTENSION_EVENTS_ALL
+argument_list|)
+expr_stmt|;
+name|gtk_widget_set_extension_events
+argument_list|(
+name|shell
+operator|->
+name|vrule
+argument_list|,
+name|GDK_EXTENSION_EVENTS_ALL
 argument_list|)
 expr_stmt|;
 comment|/*  the canvas  */
