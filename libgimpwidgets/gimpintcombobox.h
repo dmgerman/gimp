@@ -193,23 +193,24 @@ name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
 
-begin_function_decl
+begin_decl_stmt
 name|GtkWidget
 modifier|*
 name|gimp_int_combo_box_new
-parameter_list|(
+argument_list|(
 specifier|const
 name|gchar
-modifier|*
+operator|*
 name|first_label
-parameter_list|,
+argument_list|,
 name|gint
 name|first_value
-parameter_list|,
-modifier|...
-parameter_list|)
-function_decl|;
-end_function_decl
+argument_list|,
+operator|...
+argument_list|)
+name|G_GNUC_NULL_TERMINATED
+decl_stmt|;
+end_decl_stmt
 
 begin_function_decl
 name|GtkWidget

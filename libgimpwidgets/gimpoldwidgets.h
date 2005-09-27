@@ -26,31 +26,32 @@ directive|ifndef
 name|GIMP_DISABLE_DEPRECATED
 end_ifndef
 
-begin_function_decl
+begin_decl_stmt
 name|G_BEGIN_DECLS
 comment|/*  *  Widget Constructors  */
 name|GtkWidget
 modifier|*
 name|gimp_int_option_menu_new
-parameter_list|(
+argument_list|(
 name|gboolean
 name|menu_only
-parameter_list|,
+argument_list|,
 name|GCallback
 name|menu_item_callback
-parameter_list|,
+argument_list|,
 name|gpointer
 name|menu_item_callback_data
-parameter_list|,
+argument_list|,
 name|gint
 name|initial
-parameter_list|,
+argument_list|,
 comment|/* item_data */
 comment|/* specify menu items as va_list:                                                *  gchar      *label,                                                *  gint        item_data,                                                *  GtkWidget **widget_ptr,                                                */
-modifier|...
-parameter_list|)
-function_decl|;
-end_function_decl
+operator|...
+argument_list|)
+name|G_GNUC_NULL_TERMINATED
+decl_stmt|;
+end_decl_stmt
 
 begin_function_decl
 name|void
@@ -101,43 +102,45 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
+begin_decl_stmt
 name|GtkWidget
 modifier|*
 name|gimp_option_menu_new
-parameter_list|(
+argument_list|(
 name|gboolean
 name|menu_only
-parameter_list|,
+argument_list|,
 comment|/* specify menu items as va_list:                                        *  gchar       *label,                                        *  GCallback    callback,                                        *  gpointer     callback_data,                                        *  gpointer     item_data,                                        *  GtkWidget  **widget_ptr,                                        *  gboolean     active                                        */
-modifier|...
-parameter_list|)
-function_decl|;
-end_function_decl
+operator|...
+argument_list|)
+name|G_GNUC_NULL_TERMINATED
+decl_stmt|;
+end_decl_stmt
 
-begin_function_decl
+begin_decl_stmt
 name|GtkWidget
 modifier|*
 name|gimp_option_menu_new2
-parameter_list|(
+argument_list|(
 name|gboolean
 name|menu_only
-parameter_list|,
+argument_list|,
 name|GCallback
 name|menu_item_callback
-parameter_list|,
+argument_list|,
 name|gpointer
 name|menu_item_callback_data
-parameter_list|,
+argument_list|,
 name|gpointer
 name|initial
-parameter_list|,
+argument_list|,
 comment|/* item_data */
 comment|/* specify menu items as va_list:                                        *  gchar        *label,                                        *  gpointer      item_data,                                        *  GtkWidget   **widget_ptr,                                        */
-modifier|...
-parameter_list|)
-function_decl|;
-end_function_decl
+operator|...
+argument_list|)
+name|G_GNUC_NULL_TERMINATED
+decl_stmt|;
+end_decl_stmt
 
 begin_function_decl
 name|void

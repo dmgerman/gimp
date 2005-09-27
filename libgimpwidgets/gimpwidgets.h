@@ -280,37 +280,38 @@ directive|include
 file|<libgimpwidgets/gimpoldwidgets.h>
 end_include
 
-begin_function_decl
+begin_decl_stmt
 name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
 comment|/*  *  Widget Constructors  */
 name|GtkWidget
 modifier|*
 name|gimp_int_radio_group_new
-parameter_list|(
+argument_list|(
 name|gboolean
 name|in_frame
-parameter_list|,
+argument_list|,
 specifier|const
 name|gchar
-modifier|*
+operator|*
 name|frame_title
-parameter_list|,
+argument_list|,
 name|GCallback
 name|radio_button_callback
-parameter_list|,
+argument_list|,
 name|gpointer
 name|radio_button_callback_data
-parameter_list|,
+argument_list|,
 name|gint
 name|initial
-parameter_list|,
+argument_list|,
 comment|/* item_data */
 comment|/* specify radio buttons as va_list: 				       *  const gchar  *label, 				       *  gint          item_data, 				       *  GtkWidget   **widget_ptr, 				       */
-modifier|...
-parameter_list|)
-function_decl|;
-end_function_decl
+operator|...
+argument_list|)
+name|G_GNUC_NULL_TERMINATED
+decl_stmt|;
+end_decl_stmt
 
 begin_function_decl
 name|void
@@ -326,53 +327,55 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
+begin_decl_stmt
 name|GtkWidget
 modifier|*
 name|gimp_radio_group_new
-parameter_list|(
+argument_list|(
 name|gboolean
 name|in_frame
-parameter_list|,
+argument_list|,
 specifier|const
 name|gchar
-modifier|*
+operator|*
 name|frame_title
-parameter_list|,
+argument_list|,
 comment|/* specify radio buttons as va_list: 				     *  const gchar    *label, 				     *  GCallback       callback, 				     *  gpointer        callback_data, 				     *  gpointer        item_data, 				     *  GtkWidget     **widget_ptr, 				     *  gboolean        active, 				     */
-modifier|...
-parameter_list|)
-function_decl|;
-end_function_decl
+operator|...
+argument_list|)
+name|G_GNUC_NULL_TERMINATED
+decl_stmt|;
+end_decl_stmt
 
-begin_function_decl
+begin_decl_stmt
 name|GtkWidget
 modifier|*
 name|gimp_radio_group_new2
-parameter_list|(
+argument_list|(
 name|gboolean
 name|in_frame
-parameter_list|,
+argument_list|,
 specifier|const
 name|gchar
-modifier|*
+operator|*
 name|frame_title
-parameter_list|,
+argument_list|,
 name|GCallback
 name|radio_button_callback
-parameter_list|,
+argument_list|,
 name|gpointer
 name|radio_button_callback_data
-parameter_list|,
+argument_list|,
 name|gpointer
 name|initial
-parameter_list|,
+argument_list|,
 comment|/* item_data */
 comment|/* specify radio buttons as va_list: 				     *  const gchar    *label, 				     *  gpointer        item_data, 				     *  GtkWidget     **widget_ptr, 				     */
-modifier|...
-parameter_list|)
-function_decl|;
-end_function_decl
+operator|...
+argument_list|)
+name|G_GNUC_NULL_TERMINATED
+decl_stmt|;
+end_decl_stmt
 
 begin_function_decl
 name|void
