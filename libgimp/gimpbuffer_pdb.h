@@ -25,6 +25,24 @@ name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
 name|gchar
 modifier|*
+modifier|*
+name|gimp_buffers_get_list
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|filter
+parameter_list|,
+name|gint
+modifier|*
+name|num_buffers
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gchar
+modifier|*
 name|gimp_buffer_rename
 parameter_list|(
 specifier|const
