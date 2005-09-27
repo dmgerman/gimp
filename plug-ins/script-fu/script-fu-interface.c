@@ -108,7 +108,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3672d50108
+DECL|struct|__anon275e8ae00108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -854,7 +854,7 @@ name|sf_interface
 operator|->
 name|help_id
 argument_list|,
-name|GTK_STOCK_HELP
+name|GTK_STOCK_ABOUT
 argument_list|,
 name|GTK_RESPONSE_HELP
 argument_list|,
