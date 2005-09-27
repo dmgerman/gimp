@@ -76,10 +76,10 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7a8b760108
+DECL|struct|__anon292731320108
 block|{
 union|union
-DECL|union|__anon2b7a8b76020a
+DECL|union|__anon29273132020a
 block|{
 DECL|member|ID
 name|gint32
@@ -624,7 +624,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7a8b760308
+DECL|struct|__anon292731320308
 block|{
 DECL|member|compose_type
 specifier|const
@@ -1121,7 +1121,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7a8b760408
+DECL|struct|__anon292731320408
 block|{
 DECL|member|inputs
 name|ComposeInput
@@ -1161,7 +1161,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7a8b760508
+DECL|struct|__anon292731320508
 block|{
 DECL|member|width
 DECL|member|height
@@ -7544,11 +7544,11 @@ argument_list|)
 expr_stmt|;
 name|combo
 operator|=
-name|gimp_int_combo_box_new
+name|g_object_new
 argument_list|(
-name|NULL
+name|GIMP_TYPE_INT_COMBO_BOX
 argument_list|,
-literal|0
+name|NULL
 argument_list|)
 expr_stmt|;
 for|for

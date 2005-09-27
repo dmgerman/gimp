@@ -76,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28dc34da0103
+DECL|enum|__anon2bafc09c0103
 block|{
 DECL|enumerator|CURL_COLORS_FG_BG
 name|CURL_COLORS_FG_BG
@@ -100,7 +100,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28dc34da0203
+DECL|enum|__anon2bafc09c0203
 block|{
 DECL|enumerator|CURL_ORIENTATION_VERTICAL
 name|CURL_ORIENTATION_VERTICAL
@@ -121,7 +121,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28dc34da0303
+DECL|enum|__anon2bafc09c0303
 block|{
 DECL|enumerator|CURL_EDGE_LOWER_RIGHT
 name|CURL_EDGE_LOWER_RIGHT
@@ -209,7 +209,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dc34da0408
+DECL|struct|__anon2bafc09c0408
 block|{
 DECL|member|colors
 name|CurlColors
@@ -2228,12 +2228,11 @@ argument_list|)
 expr_stmt|;
 name|combo
 operator|=
-name|gimp_int_combo_box_new
+name|g_object_new
 argument_list|(
-name|NULL
+name|GIMP_TYPE_INT_COMBO_BOX
 argument_list|,
-operator|-
-literal|1
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_int_combo_box_prepend

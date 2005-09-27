@@ -811,7 +811,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b26c2050108
+DECL|struct|__anon28cf352c0108
 block|{
 DECL|member|type
 name|gchar
@@ -1431,7 +1431,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b26c2050208
+DECL|struct|__anon28cf352c0208
 block|{
 DECL|member|extract_type
 name|gchar
@@ -7081,11 +7081,11 @@ argument_list|)
 expr_stmt|;
 name|combo
 operator|=
-name|gimp_int_combo_box_new
+name|g_object_new
 argument_list|(
-name|NULL
+name|GIMP_TYPE_INT_COMBO_BOX
 argument_list|,
-literal|0
+name|NULL
 argument_list|)
 expr_stmt|;
 for|for

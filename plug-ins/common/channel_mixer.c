@@ -88,7 +88,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29cf1b120103
+DECL|enum|__anon2c3c70f30103
 block|{
 DECL|enumerator|CM_RED_CHANNEL
 name|CM_RED_CHANNEL
@@ -107,7 +107,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29cf1b120208
+DECL|struct|__anon2c3c70f30208
 block|{
 DECL|member|red_gain
 name|gdouble
@@ -130,7 +130,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29cf1b120308
+DECL|struct|__anon2c3c70f30308
 block|{
 DECL|member|red
 name|CmChannelType
@@ -2441,11 +2441,11 @@ name|mix
 operator|.
 name|combo
 operator|=
-name|gimp_int_combo_box_new
+name|g_object_new
 argument_list|(
-name|NULL
+name|GIMP_TYPE_INT_COMBO_BOX
 argument_list|,
-literal|0
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_int_combo_box_append

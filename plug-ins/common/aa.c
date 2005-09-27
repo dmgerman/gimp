@@ -1452,11 +1452,11 @@ argument_list|)
 expr_stmt|;
 name|combo
 operator|=
-name|gimp_int_combo_box_new
+name|g_object_new
 argument_list|(
-name|NULL
+name|GIMP_TYPE_INT_COMBO_BOX
 argument_list|,
-literal|0
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

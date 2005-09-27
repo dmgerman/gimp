@@ -351,7 +351,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ac2a6b0108
+DECL|struct|__anon27bb393a0108
 block|{
 DECL|member|name
 specifier|const
@@ -611,7 +611,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ac2a6b0208
+DECL|struct|__anon27bb393a0208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -684,7 +684,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ac2a6b0308
+DECL|struct|__anon27bb393a0308
 block|{
 DECL|member|input_spi
 name|gdouble
@@ -718,7 +718,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ac2a6b0408
+DECL|struct|__anon27bb393a0408
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -825,7 +825,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ac2a6b0508
+DECL|struct|__anon27bb393a0508
 block|{
 DECL|member|pull_table
 name|GtkWidget
@@ -993,7 +993,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ac2a6b0608
+DECL|struct|__anon27bb393a0608
 block|{
 DECL|member|name
 specifier|const
@@ -4120,11 +4120,11 @@ name|chst
 operator|->
 name|combo
 operator|=
-name|gimp_int_combo_box_new
+name|g_object_new
 argument_list|(
-name|NULL
+name|GIMP_TYPE_INT_COMBO_BOX
 argument_list|,
-literal|0
+name|NULL
 argument_list|)
 expr_stmt|;
 for|for
@@ -7065,7 +7065,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ac2a6b0708
+DECL|struct|__anon27bb393a0708
 block|{
 DECL|member|index
 name|gint
