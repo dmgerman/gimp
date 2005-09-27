@@ -120,7 +120,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b2feb20108
+DECL|struct|__anon29beb5590108
 block|{
 DECL|member|bgdist
 name|gfloat
@@ -147,7 +147,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b2feb20208
+DECL|struct|__anon29beb5590208
 block|{
 DECL|member|l
 name|gfloat
@@ -807,6 +807,7 @@ name|min
 operator|=
 name|curval
 expr_stmt|;
+elseif|else
 if|if
 condition|(
 name|max
@@ -841,11 +842,6 @@ name|biggerpoints
 decl_stmt|;
 name|gint
 name|countsm
-init|=
-literal|0
-decl_stmt|;
-name|gint
-name|countgr
 init|=
 literal|0
 decl_stmt|;
@@ -905,10 +901,6 @@ condition|)
 name|countsm
 operator|++
 expr_stmt|;
-else|else
-name|countgr
-operator|++
-expr_stmt|;
 block|}
 comment|/* FIXME: consider to sort the array and split in place instead        *        of allocating memory here        */
 name|smallerpoints
@@ -926,7 +918,9 @@ name|g_new
 argument_list|(
 name|lab
 argument_list|,
-name|countgr
+name|length
+operator|-
+name|countsm
 argument_list|)
 expr_stmt|;
 for|for
@@ -1028,7 +1022,9 @@ name|clusters
 argument_list|,
 name|limits
 argument_list|,
-name|countgr
+name|length
+operator|-
+name|countsm
 argument_list|)
 expr_stmt|;
 block|}
@@ -1213,11 +1209,6 @@ init|=
 literal|0
 decl_stmt|;
 name|gint
-name|countgr
-init|=
-literal|0
-decl_stmt|;
-name|gint
 name|smallc
 init|=
 literal|0
@@ -1289,10 +1280,6 @@ condition|)
 name|countsm
 operator|++
 expr_stmt|;
-else|else
-name|countgr
-operator|++
-expr_stmt|;
 block|}
 comment|/* FIXME: consider to sort the array and split in place instead        *        of allocating memory here        */
 name|smallerpoints
@@ -1310,7 +1297,9 @@ name|g_new
 argument_list|(
 name|lab
 argument_list|,
-name|countgr
+name|length
+operator|-
+name|countsm
 argument_list|)
 expr_stmt|;
 comment|/* do actual split */
@@ -1410,7 +1399,9 @@ name|clusters
 argument_list|,
 name|limits
 argument_list|,
-name|countgr
+name|length
+operator|-
+name|countsm
 argument_list|,
 name|total
 argument_list|,
@@ -2001,7 +1992,7 @@ name|size
 argument_list|,
 name|length
 argument_list|,
-literal|0.1
+literal|0.1f
 comment|/* magic constant, see paper by tomasi */
 argument_list|)
 expr_stmt|;
@@ -2725,7 +2716,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  * This method finds the biggest connected component in mask, it  * clears everything in mask except the biggest component Pixels that  * should be considererd set in incoming mask, must fullfil (pixel&  * 0x1) the method uses no further memory, except a queue, it finds  * the biggest component by a 2 phase algorithm 1. in the first phase  * the coordinates of an element of the biggest component are  * identified, during this phase all pixels are visited. In the  * second phase first visitation flags are reset, and afterwards a  * connected component starting at the found coordinates is  * determined. This is the biggest component, the result is written  * into mask, all pixels that belong to the biggest component, are set  * to 255 any other to 0.  */
+comment|/*  * This method finds the biggest connected components in mask, it  * clears everything in mask except the biggest components' Pixels that  * should be considererd set in incoming mask, must fulfill (pixel&  * 0x1) the method uses no further memory, except a queue, it finds  * the biggest components by a 2 phase algorithm 1. in the first phase  * the coordinates of an element of the biggest components are  * identified, during this phase all pixels are visited. In the  * second phase first visitation flags are reset, and afterwards  * connected components starting at the found coordinates are  * determined. These are the biggest components, the result is written  * into mask, all pixels that belong to the biggest components are set  * to 255, any other to 0.  */
 end_comment
 
 begin_function
@@ -2838,6 +2829,14 @@ name|region
 operator|.
 name|y
 decl_stmt|;
+name|guchar
+modifier|*
+name|data
+init|=
+name|region
+operator|.
+name|data
+decl_stmt|;
 for|for
 control|(
 name|row
@@ -2857,12 +2856,11 @@ name|pos_y
 operator|++
 control|)
 block|{
-name|gint
-name|pos_x
+name|guchar
+modifier|*
+name|d
 init|=
-name|region
-operator|.
-name|x
+name|data
 decl_stmt|;
 for|for
 control|(
@@ -2879,21 +2877,14 @@ condition|;
 name|col
 operator|++
 operator|,
-name|pos_x
+name|d
 operator|++
 control|)
 block|{
-name|read_pixel_data_1
-argument_list|(
-name|mask
-argument_list|,
-name|pos_x
-argument_list|,
-name|pos_y
-argument_list|,
-operator|&
 name|val
-argument_list|)
+operator|=
+operator|*
+name|d
 expr_stmt|;
 if|if
 condition|(
@@ -2923,7 +2914,11 @@ name|b
 operator|->
 name|seedx
 operator|=
-name|pos_x
+name|region
+operator|.
+name|x
+operator|+
+name|col
 expr_stmt|;
 name|b
 operator|->
@@ -2989,6 +2984,12 @@ name|size
 expr_stmt|;
 block|}
 block|}
+name|data
+operator|+=
+name|region
+operator|.
+name|rowstride
+expr_stmt|;
 block|}
 block|}
 while|while
@@ -4834,6 +4835,9 @@ operator|->
 name|fgdist
 argument_list|)
 decl_stmt|;
+name|gfloat
+name|alpha
+decl_stmt|;
 if|if
 condition|(
 name|brushmode
@@ -4841,9 +4845,6 @@ operator|==
 name|SIOX_DRB_ADD
 condition|)
 block|{
-name|gfloat
-name|alpha
-decl_stmt|;
 if|if
 condition|(
 operator|*
@@ -4875,41 +4876,10 @@ argument_list|,
 literal|1.0
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|alpha
-operator|<
-name|threshold
-condition|)
-block|{
-comment|/* background with a certain confidence                        * to be decided by user.                        */
-name|alpha
-operator|=
-literal|0.0
-expr_stmt|;
 block|}
-operator|*
-name|m
-operator|=
-operator|(
-name|gint
-operator|)
-literal|255
-operator|*
-name|alpha
-expr_stmt|;
-block|}
-elseif|else
-if|if
-condition|(
-name|brushmode
-operator|==
-name|SIOX_DRB_SUBTRACT
-condition|)
+else|else
+comment|/*if (brushmode == SIOX_DRB_SUBTRACT)*/
 block|{
-name|gfloat
-name|alpha
-decl_stmt|;
 if|if
 condition|(
 operator|*
@@ -4943,6 +4913,7 @@ argument_list|,
 literal|1.0
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|alpha
@@ -4950,6 +4921,7 @@ operator|<
 name|threshold
 condition|)
 block|{
+comment|/* background with a certain confidence                    * to be decided by user.                    */
 name|alpha
 operator|=
 literal|0.0
@@ -4965,7 +4937,6 @@ literal|255
 operator|*
 name|alpha
 expr_stmt|;
-block|}
 block|}
 name|src
 operator|+=
