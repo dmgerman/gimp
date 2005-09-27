@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a0f6e60108
+DECL|struct|__anon2957003b0108
 block|{
 DECL|member|func
 name|PyObject
@@ -592,7 +592,17 @@ operator|=
 name|G_OBJECT
 argument_list|(
 name|gimp_proc_browser_dialog_new
-argument_list|()
+argument_list|(
+literal|"Python Procedure Browser"
+argument_list|,
+literal|"python-fu-procedure-browser"
+argument_list|,
+name|gimp_standard_help_func
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if

@@ -69,10 +69,18 @@ name|BUFSIZE
 value|256
 end_define
 
+begin_define
+DECL|macro|PROC_NAME
+define|#
+directive|define
+name|PROC_NAME
+value|"plug-in-script-fu-console"
+end_define
+
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289d03420108
+DECL|struct|__anon28c3df010108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -524,7 +532,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"plug-in-script-fu-console"
+name|PROC_NAME
 argument_list|,
 name|GTK_STOCK_CLOSE
 argument_list|,
@@ -1156,16 +1164,17 @@ operator|->
 name|proc_browser
 operator|=
 name|gimp_proc_browser_dialog_new
-argument_list|()
-expr_stmt|;
-name|gtk_dialog_add_buttons
 argument_list|(
-name|GTK_DIALOG
+name|_
 argument_list|(
-name|console
-operator|->
-name|proc_browser
+literal|"Script-Fu Procedure Browser"
 argument_list|)
+argument_list|,
+literal|"script-fu-procedure-browser"
+argument_list|,
+name|gimp_standard_help_func
+argument_list|,
+name|PROC_NAME
 argument_list|,
 name|GTK_STOCK_APPLY
 argument_list|,
