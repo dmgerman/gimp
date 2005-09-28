@@ -132,7 +132,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b78f2ae0103
+DECL|enum|__anon29d5a5880103
 block|{
 DECL|enumerator|PROJECTION
 name|PROJECTION
@@ -177,7 +177,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b78f2ae0208
+DECL|struct|__anon29d5a5880208
 block|{
 DECL|member|transformSequence
 name|TransformType
@@ -216,7 +216,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b78f2ae0308
+DECL|struct|__anon29d5a5880308
 block|{
 DECL|member|info
 name|ExpInfo
@@ -347,6 +347,17 @@ name|qbist_info
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+DECL|variable|gr
+specifier|static
+name|GRand
+modifier|*
+name|gr
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
 begin_comment
 comment|/** qbist functions *********************************************************/
 end_comment
@@ -365,15 +376,6 @@ block|{
 name|gint
 name|k
 decl_stmt|;
-name|GRand
-modifier|*
-name|gr
-decl_stmt|;
-name|gr
-operator|=
-name|g_rand_new
-argument_list|()
-expr_stmt|;
 for|for
 control|(
 name|k
@@ -453,11 +455,6 @@ name|NUM_REGISTERS
 argument_list|)
 expr_stmt|;
 block|}
-name|g_rand_free
-argument_list|(
-name|gr
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -481,15 +478,6 @@ name|k
 decl_stmt|,
 name|n
 decl_stmt|;
-name|GRand
-modifier|*
-name|gr
-decl_stmt|;
-name|gr
-operator|=
-name|g_rand_new
-argument_list|()
-expr_stmt|;
 operator|*
 name|n_info
 operator|=
@@ -643,11 +631,6 @@ expr_stmt|;
 break|break;
 block|}
 block|}
-name|g_rand_free
-argument_list|(
-name|gr
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -2503,6 +2486,11 @@ operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
 block|{
+name|gr
+operator|=
+name|g_rand_new
+argument_list|()
+expr_stmt|;
 name|memset
 argument_list|(
 operator|&
@@ -2833,6 +2821,11 @@ name|gimp_displays_flush
 argument_list|()
 expr_stmt|;
 block|}
+name|g_rand_free
+argument_list|(
+name|gr
+argument_list|)
+expr_stmt|;
 block|}
 name|values
 index|[
