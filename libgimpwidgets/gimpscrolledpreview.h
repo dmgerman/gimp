@@ -246,6 +246,23 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_scrolled_preview_set_policy
+parameter_list|(
+name|GimpScrolledPreview
+modifier|*
+name|preview
+parameter_list|,
+name|GtkPolicyType
+name|hscrollbar_policy
+parameter_list|,
+name|GtkPolicyType
+name|vscrollbar_policy
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_macro
 name|G_END_DECLS
 end_macro
