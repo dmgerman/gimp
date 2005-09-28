@@ -130,14 +130,6 @@ name|GtkWidget
 modifier|*
 name|proc_view
 decl_stmt|;
-DECL|member|progress_active
-name|gboolean
-name|progress_active
-decl_stmt|;
-DECL|member|progress_cancelable
-name|gboolean
-name|progress_cancelable
-decl_stmt|;
 DECL|member|progress
 name|GtkWidget
 modifier|*
