@@ -235,7 +235,7 @@ name|gimp_scrolled_preview_set_position
 parameter_list|(
 name|GimpScrolledPreview
 modifier|*
-name|scr
+name|preview
 parameter_list|,
 name|gint
 name|x
