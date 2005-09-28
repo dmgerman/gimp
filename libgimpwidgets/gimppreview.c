@@ -57,7 +57,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba8131c0103
+DECL|enum|__anon2c192e590103
 block|{
 DECL|enumerator|INVALIDATED
 name|INVALIDATED
@@ -70,7 +70,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba8131c0203
+DECL|enum|__anon2c192e590203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -84,12 +84,12 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba8131c0308
+DECL|struct|__anon2c192e590308
 block|{
-DECL|member|control_box
+DECL|member|controls
 name|GtkWidget
 modifier|*
-name|control_box
+name|controls
 decl_stmt|;
 DECL|typedef|GimpPreviewPrivate
 block|}
@@ -779,7 +779,7 @@ argument_list|)
 argument_list|,
 literal|1
 argument_list|,
-literal|2
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -1065,7 +1065,7 @@ argument_list|)
 expr_stmt|;
 name|priv
 operator|->
-name|control_box
+name|controls
 operator|=
 name|gtk_hbox_new
 argument_list|(
@@ -1085,7 +1085,7 @@ argument_list|)
 argument_list|,
 name|priv
 operator|->
-name|control_box
+name|controls
 argument_list|,
 literal|0
 argument_list|,
@@ -1110,7 +1110,7 @@ name|gtk_widget_show
 argument_list|(
 name|priv
 operator|->
-name|control_box
+name|controls
 argument_list|)
 expr_stmt|;
 comment|/*  toggle button to (des)activate the instant preview  */
@@ -1146,7 +1146,7 @@ name|GTK_BOX
 argument_list|(
 name|priv
 operator|->
-name|control_box
+name|controls
 argument_list|)
 argument_list|,
 name|preview
@@ -2520,14 +2520,14 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_preview_get_control_box:  * @preview: a #GimpPreview widget  *  * Gives access to the #GtkHBox at the bottom of the preview that  * contains the update toggle. Derived widgets can use this function  * if they need to add controls to this area.  *  * Return value: the #GtkHBox at the bottom of the preview.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_preview_get_controls:  * @preview: a #GimpPreview widget  *  * Gives access to the #GtkHBox at the bottom of the preview that  * contains the update toggle. Derived widgets can use this function  * if they need to add controls to this area.  *  * Return value: the #GtkHBox at the bottom of the preview.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_preview_get_control_box (GimpPreview * preview)
-name|gimp_preview_get_control_box
+DECL|function|gimp_preview_get_controls (GimpPreview * preview)
+name|gimp_preview_get_controls
 parameter_list|(
 name|GimpPreview
 modifier|*
@@ -2550,7 +2550,7 @@ argument_list|(
 name|preview
 argument_list|)
 operator|->
-name|control_box
+name|controls
 return|;
 block|}
 end_function

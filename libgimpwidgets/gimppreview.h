@@ -483,7 +483,7 @@ end_function_decl
 begin_function_decl
 name|GtkWidget
 modifier|*
-name|gimp_preview_get_control_box
+name|gimp_preview_get_controls
 parameter_list|(
 name|GimpPreview
 modifier|*

@@ -398,7 +398,7 @@ argument_list|)
 expr_stmt|;
 name|box
 operator|=
-name|gimp_preview_get_control_box
+name|gimp_preview_get_controls
 argument_list|(
 name|GIMP_PREVIEW
 argument_list|(
