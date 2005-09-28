@@ -503,7 +503,7 @@ literal|"<control>P"
 block|,
 name|NULL
 block|,
-literal|"gimp-palette-list|gimp-palette-list"
+literal|"gimp-palette-list|gimp-palette-grid"
 block|,
 name|GIMP_HELP_PALETTE_DIALOG
 block|}
