@@ -927,6 +927,27 @@ operator|+=
 literal|1
 expr_stmt|;
 comment|/* to make y2 - y1 == height */
+comment|/* The coordinates are now the first rows which DON'T match    * the color. Crop instead to one row larger:    */
+if|if
+condition|(
+name|y1
+operator|>
+literal|0
+condition|)
+operator|--
+name|y1
+expr_stmt|;
+if|if
+condition|(
+name|y2
+operator|<
+name|height
+operator|-
+literal|1
+condition|)
+operator|++
+name|y2
+expr_stmt|;
 if|if
 condition|(
 name|show_progress
@@ -1098,6 +1119,27 @@ operator|+=
 literal|1
 expr_stmt|;
 comment|/* to make x2 - x1 == width */
+comment|/* The coordinates are now the first columns which DON'T match    * the color. Crop instead to one column larger:    */
+if|if
+condition|(
+name|x1
+operator|>
+literal|0
+condition|)
+operator|--
+name|x1
+expr_stmt|;
+if|if
+condition|(
+name|x2
+operator|<
+name|width
+operator|-
+literal|1
+condition|)
+operator|++
+name|x2
+expr_stmt|;
 name|g_free
 argument_list|(
 name|buffer
