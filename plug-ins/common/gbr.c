@@ -165,7 +165,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab2102a0108
+DECL|struct|__anon2a29f7870108
 block|{
 DECL|member|description
 name|gchar
@@ -1247,12 +1247,7 @@ operator|-
 literal|1
 return|;
 block|}
-name|gimp_progress_init
-argument_list|(
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_progress_set_text
+name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
@@ -1986,7 +1981,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon2ab2102a020a
+DECL|union|__anon2a29f787020a
 block|{
 DECL|member|u
 name|guint16
@@ -2415,12 +2410,7 @@ return|return
 name|FALSE
 return|;
 block|}
-name|gimp_progress_init
-argument_list|(
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_progress_set_text
+name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(

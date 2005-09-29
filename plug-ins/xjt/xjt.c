@@ -241,7 +241,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ace16640103
+DECL|enum|__anon2ba69aab0103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -441,7 +441,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ace16640203
+DECL|enum|__anon2ba69aab0203
 block|{
 DECL|enumerator|PTYP_NOT_SUPPORTED
 name|PTYP_NOT_SUPPORTED
@@ -501,7 +501,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ace16640303
+DECL|enum|__anon2ba69aab0303
 block|{
 DECL|enumerator|XJT_IMAGE_PARASITE
 name|XJT_IMAGE_PARASITE
@@ -531,7 +531,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ace16640403
+DECL|enum|__anon2ba69aab0403
 block|{
 DECL|enumerator|XJT_RGB
 name|XJT_RGB
@@ -553,7 +553,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ace16640503
+DECL|enum|__anon2ba69aab0503
 block|{
 DECL|enumerator|XJT_PATHTYPE_UNDEF
 name|XJT_PATHTYPE_UNDEF
@@ -573,7 +573,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ace16640603
+DECL|enum|__anon2ba69aab0603
 block|{
 DECL|enumerator|XJT_UNIT_PIXEL
 name|XJT_UNIT_PIXEL
@@ -608,7 +608,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ace16640703
+DECL|enum|__anon2ba69aab0703
 block|{
 DECL|enumerator|XJT_NORMAL_MODE
 name|XJT_NORMAL_MODE
@@ -733,7 +733,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ace16640808
+DECL|struct|__anon2ba69aab0808
 block|{
 DECL|member|prop_id
 name|t_proptype
@@ -769,7 +769,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ace16640908
+DECL|struct|__anon2ba69aab0908
 block|{
 DECL|member|int_val1
 name|gint32
@@ -818,7 +818,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ace16640a08
+DECL|struct|__anon2ba69aab0a08
 block|{
 DECL|member|parasite_type
 name|t_parasitetype
@@ -855,7 +855,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ace16640b08
+DECL|struct|__anon2ba69aab0b08
 block|{
 DECL|member|path_type
 name|gint32
@@ -905,7 +905,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ace16640c08
+DECL|struct|__anon2ba69aab0c08
 block|{
 DECL|member|active_channel
 name|gint
@@ -979,7 +979,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ace16640d08
+DECL|struct|__anon2ba69aab0d08
 block|{
 DECL|member|active_layer
 name|gint
@@ -1064,7 +1064,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ace16640e08
+DECL|struct|__anon2ba69aab0e08
 block|{
 DECL|member|position
 name|gint32
@@ -1088,7 +1088,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ace16640f08
+DECL|struct|__anon2ba69aab0f08
 block|{
 DECL|member|version
 name|gchar
@@ -7406,12 +7406,7 @@ literal|1
 return|;
 break|break;
 block|}
-name|gimp_progress_init
-argument_list|(
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_progress_set_text
+name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
@@ -14142,12 +14137,7 @@ operator|-
 literal|1
 expr_stmt|;
 comment|/* -1  assume there is no floating selection */
-name|gimp_progress_init
-argument_list|(
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_progress_set_text
+name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(

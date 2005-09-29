@@ -288,7 +288,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c932860108
+DECL|struct|__anon29bf54980108
 block|{
 DECL|member|resolution
 name|guint
@@ -377,7 +377,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c932860208
+DECL|struct|__anon29bf54980208
 block|{
 DECL|member|width
 DECL|member|height
@@ -970,7 +970,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c932860308
+DECL|struct|__anon29bf54980308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1836,7 +1836,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c932860408
+DECL|struct|__anon29bf54980408
 block|{
 DECL|member|eol
 name|long
@@ -4160,12 +4160,7 @@ argument_list|(
 name|ifp
 argument_list|)
 expr_stmt|;
-name|gimp_progress_init
-argument_list|(
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_progress_set_text
+name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
@@ -4867,12 +4862,7 @@ return|return
 name|FALSE
 return|;
 block|}
-name|gimp_progress_init
-argument_list|(
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_progress_set_text
+name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(

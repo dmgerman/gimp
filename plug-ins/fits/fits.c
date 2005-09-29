@@ -86,7 +86,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aba1c220108
+DECL|struct|__anon289eb2a10108
 block|{
 DECL|member|replace
 name|gint
@@ -1643,12 +1643,7 @@ name|FALSE
 operator|)
 return|;
 block|}
-name|gimp_progress_init
-argument_list|(
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_progress_set_text
+name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(

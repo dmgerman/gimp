@@ -764,12 +764,7 @@ argument_list|(
 name|file_size
 argument_list|)
 expr_stmt|;
-name|gimp_progress_init
-argument_list|(
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_progress_set_text
+name|gimp_progress_init_printf
 argument_list|(
 name|file_size
 operator|>

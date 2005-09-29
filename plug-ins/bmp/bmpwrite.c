@@ -448,10 +448,6 @@ decl_stmt|;
 name|gint
 name|colors
 decl_stmt|;
-name|gchar
-modifier|*
-name|temp_buf
-decl_stmt|;
 name|guchar
 modifier|*
 name|pixels
@@ -846,9 +842,7 @@ name|height
 argument_list|)
 expr_stmt|;
 comment|/* And let's begin the progress */
-name|temp_buf
-operator|=
-name|g_strdup_printf
+name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
@@ -859,16 +853,6 @@ name|gimp_filename_to_utf8
 argument_list|(
 name|filename
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_progress_init
-argument_list|(
-name|temp_buf
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|temp_buf
 argument_list|)
 expr_stmt|;
 name|cur_progress

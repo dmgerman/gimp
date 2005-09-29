@@ -100,7 +100,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c58fc60108
+DECL|struct|__anon2771bda00108
 block|{
 DECL|member|resolution
 name|gdouble
@@ -4631,12 +4631,7 @@ name|gimp_quit
 argument_list|()
 expr_stmt|;
 block|}
-name|gimp_progress_init
-argument_list|(
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_progress_set_text
+name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(

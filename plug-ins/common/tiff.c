@@ -84,7 +84,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c11d15f0108
+DECL|struct|__anon27b165bc0108
 block|{
 DECL|member|compression
 name|gint
@@ -107,7 +107,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c11d15f0208
+DECL|struct|__anon27b165bc0208
 block|{
 DECL|member|ID
 name|gint32
@@ -1891,12 +1891,7 @@ name|gimp_quit
 argument_list|()
 expr_stmt|;
 block|}
-name|gimp_progress_init
-argument_list|(
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_progress_set_text
+name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
@@ -8062,12 +8057,7 @@ return|return
 name|FALSE
 return|;
 block|}
-name|gimp_progress_init
-argument_list|(
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_progress_set_text
+name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(

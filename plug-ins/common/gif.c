@@ -135,7 +135,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon297c1b5d0103
+DECL|enum|__anon2bbd291d0103
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -152,7 +152,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297c1b5d0208
+DECL|struct|__anon2bbd291d0208
 block|{
 DECL|member|interlace
 name|gint
@@ -2476,10 +2476,6 @@ decl_stmt|;
 name|gint
 name|colors
 decl_stmt|;
-name|gchar
-modifier|*
-name|temp_buf
-decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
@@ -3021,9 +3017,7 @@ name|FALSE
 return|;
 block|}
 comment|/* init the progress meter */
-name|temp_buf
-operator|=
-name|g_strdup_printf
+name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
@@ -3034,16 +3028,6 @@ name|gimp_filename_to_utf8
 argument_list|(
 name|filename
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_progress_init
-argument_list|(
-name|temp_buf
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|temp_buf
 argument_list|)
 expr_stmt|;
 comment|/* write the GIFheader */

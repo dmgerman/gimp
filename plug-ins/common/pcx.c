@@ -1045,7 +1045,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2bd0da590108
+DECL|struct|__anon2c8810ef0108
 block|{
 DECL|member|manufacturer
 name|guint8
@@ -1205,12 +1205,7 @@ operator|-
 literal|1
 return|;
 block|}
-name|gimp_progress_init
-argument_list|(
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_progress_set_text
+name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
@@ -2530,12 +2525,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimp_progress_init
-argument_list|(
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_progress_set_text
+name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(

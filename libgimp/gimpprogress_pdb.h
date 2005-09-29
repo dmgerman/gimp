@@ -55,7 +55,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|_gimp_progress_set_text
+name|gimp_progress_set_text
 parameter_list|(
 specifier|const
 name|gchar

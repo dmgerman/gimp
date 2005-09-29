@@ -173,7 +173,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a19b1b90108
+DECL|struct|__anon2baafb690108
 block|{
 DECL|member|rndm_pct
 name|gdouble
@@ -1100,12 +1100,7 @@ literal|"slur"
 expr_stmt|;
 break|break;
 block|}
-name|gimp_progress_init
-argument_list|(
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_progress_set_text
+name|gimp_progress_init_printf
 argument_list|(
 literal|"%s (%s)..."
 argument_list|,

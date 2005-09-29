@@ -138,7 +138,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon274d5de30103
+DECL|enum|__anon2992ae790103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -158,7 +158,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon274d5de30203
+DECL|enum|__anon2992ae790203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -174,7 +174,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274d5de30308
+DECL|struct|__anon2992ae790308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -196,7 +196,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon274d5de3040a
+DECL|union|__anon2992ae79040a
 block|{
 DECL|member|d
 name|gdouble
@@ -221,7 +221,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274d5de30508
+DECL|struct|__anon2992ae790508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -251,7 +251,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274d5de30608
+DECL|struct|__anon2992ae790608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -286,7 +286,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274d5de30708
+DECL|struct|__anon2992ae790708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -322,7 +322,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274d5de30808
+DECL|struct|__anon2992ae790808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -389,7 +389,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274d5de30908
+DECL|struct|__anon2992ae790908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -538,7 +538,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274d5de30a08
+DECL|struct|__anon2992ae790a08
 block|{
 DECL|member|run
 name|gboolean
@@ -6744,11 +6744,6 @@ operator|&
 name|bc
 argument_list|)
 expr_stmt|;
-name|gimp_progress_init
-argument_list|(
-name|NULL
-argument_list|)
-expr_stmt|;
 for|for
 control|(
 name|band_no
@@ -6779,12 +6774,7 @@ decl_stmt|;
 name|gint
 name|max_progress
 decl_stmt|;
-name|gimp_progress_update
-argument_list|(
-literal|0.0
-argument_list|)
-expr_stmt|;
-name|gimp_progress_set_text
+name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
@@ -6883,12 +6873,7 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/* transfer the image to the drawable */
-name|gimp_progress_update
-argument_list|(
-literal|0.0
-argument_list|)
-expr_stmt|;
-name|gimp_progress_set_text
+name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(

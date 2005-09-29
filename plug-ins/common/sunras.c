@@ -127,7 +127,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276f80ce0108
+DECL|struct|__anon2c518f890108
 block|{
 DECL|member|l_ras_magic
 name|L_CARD32
@@ -216,7 +216,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276f80ce0208
+DECL|struct|__anon2c518f890208
 block|{
 DECL|member|val
 name|gint
@@ -811,7 +811,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276f80ce0308
+DECL|struct|__anon2c518f890308
 block|{
 DECL|member|rle
 name|gboolean
@@ -1849,12 +1849,7 @@ name|SEEK_SET
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_progress_init
-argument_list|(
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_progress_set_text
+name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
@@ -2124,12 +2119,7 @@ return|return
 name|FALSE
 return|;
 block|}
-name|gimp_progress_init
-argument_list|(
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_progress_set_text
+name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(

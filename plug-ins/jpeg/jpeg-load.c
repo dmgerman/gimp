@@ -300,13 +300,7 @@ condition|(
 operator|!
 name|preview
 condition|)
-block|{
-name|gimp_progress_init
-argument_list|(
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_progress_set_text
+name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
@@ -319,7 +313,6 @@ name|filename
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
 name|image_ID
 operator|=
 operator|-
@@ -1835,7 +1828,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28de32c00108
+DECL|struct|__anon274bd08c0108
 block|{
 DECL|member|pub
 name|struct
@@ -2178,12 +2171,7 @@ name|output_message
 operator|=
 name|my_output_message
 expr_stmt|;
-name|gimp_progress_init
-argument_list|(
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_progress_set_text
+name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(

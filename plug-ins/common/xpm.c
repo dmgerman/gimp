@@ -154,7 +154,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c797d7e0108
+DECL|struct|__anon289cc7b00108
 block|{
 DECL|member|threshold
 name|gint
@@ -169,7 +169,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c797d7e0208
+DECL|struct|__anon289cc7b00208
 block|{
 DECL|member|r
 name|guchar
@@ -1077,12 +1077,7 @@ decl_stmt|;
 name|gint32
 name|image_ID
 decl_stmt|;
-name|gimp_progress_init
-argument_list|(
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_progress_set_text
+name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
@@ -2341,12 +2336,7 @@ operator|)
 name|compare
 argument_list|)
 expr_stmt|;
-name|gimp_progress_init
-argument_list|(
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_progress_set_text
+name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(

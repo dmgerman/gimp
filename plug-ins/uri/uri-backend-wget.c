@@ -597,12 +597,7 @@ argument_list|,
 name|TIMEOUT
 argument_list|)
 expr_stmt|;
-name|gimp_progress_init
-argument_list|(
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_progress_set_text
+name|gimp_progress_init_printf
 argument_list|(
 literal|"%s %s"
 argument_list|,

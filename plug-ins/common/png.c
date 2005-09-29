@@ -170,7 +170,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4ebc1c0108
+DECL|struct|__anon2c30e0650108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -217,7 +217,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4ebc1c0208
+DECL|struct|__anon2c30e0650208
 block|{
 DECL|member|run
 name|gboolean
@@ -2306,12 +2306,7 @@ argument_list|,
 name|fp
 argument_list|)
 expr_stmt|;
-name|gimp_progress_init
-argument_list|(
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_progress_set_text
+name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
@@ -4267,12 +4262,7 @@ argument_list|,
 name|fp
 argument_list|)
 expr_stmt|;
-name|gimp_progress_init
-argument_list|(
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_progress_set_text
+name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(

@@ -223,13 +223,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_progress_set_text:  * @message: Message to use in the progress dialog.  *  * Changes the text in the progress bar for the current plug-in.  *  * This function allows to change the text in the progress bar for the  * current plug-in. Unlike gimp_progress_init() it does not change the  * displayed value.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_progress_set_text:  * @message: Message to use in the progress dialog.  *  * Changes the text in the progress bar for the current plug-in.  *  * This function allows to change the text in the progress bar for the  * current plug-in. Unlike gimp_progress_init() it does not change the  * displayed value.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|_gimp_progress_set_text (const gchar * message)
-name|_gimp_progress_set_text
+DECL|function|gimp_progress_set_text (const gchar * message)
+name|gimp_progress_set_text
 parameter_list|(
 specifier|const
 name|gchar

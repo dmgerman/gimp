@@ -70,7 +70,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8cd1e40108
+DECL|struct|__anon27e063b70108
 block|{
 DECL|member|target
 name|GimpPageSelectorTarget
@@ -111,7 +111,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8cd1e40208
+DECL|struct|__anon27e063b70208
 block|{
 DECL|member|n_pages
 name|gint
@@ -1691,12 +1691,7 @@ operator|->
 name|n_pages
 argument_list|)
 expr_stmt|;
-name|gimp_progress_init
-argument_list|(
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_progress_set_text
+name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
@@ -2260,7 +2255,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8cd1e40308
+DECL|struct|__anon27e063b70308
 block|{
 DECL|member|document
 name|PopplerDocument
@@ -2285,7 +2280,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8cd1e40408
+DECL|struct|__anon27e063b70408
 block|{
 DECL|member|selector
 name|GimpPageSelector

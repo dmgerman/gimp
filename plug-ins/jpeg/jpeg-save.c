@@ -140,7 +140,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28815bda0108
+DECL|struct|__anon2b429dd70108
 block|{
 DECL|member|cinfo
 name|struct
@@ -922,13 +922,7 @@ condition|(
 operator|!
 name|preview
 condition|)
-block|{
-name|gimp_progress_init
-argument_list|(
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_progress_set_text
+name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
@@ -941,7 +935,6 @@ name|filename
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
 comment|/* Step 1: allocate and initialize JPEG compression object */
 comment|/* We have to set up the error handler first, in case the initialization    * step fails.  (Unlikely, but it could happen if you are out of memory.)    * This routine fills in the contents of struct jerr, and returns jerr's    * address which we place into the link field in cinfo.    */
 name|cinfo
@@ -4808,7 +4801,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28815bda0208
+DECL|struct|__anon2b429dd70208
 block|{
 DECL|member|pub
 name|struct

@@ -2689,12 +2689,7 @@ operator|-
 literal|1
 return|;
 block|}
-name|gimp_progress_init
-argument_list|(
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_progress_set_text
+name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
@@ -3598,9 +3593,6 @@ name|cmap
 decl_stmt|;
 name|gchar
 modifier|*
-name|name_buf
-decl_stmt|,
-modifier|*
 name|intfmt
 decl_stmt|;
 if|#
@@ -3845,9 +3837,7 @@ return|return
 name|FALSE
 return|;
 block|}
-name|name_buf
-operator|=
-name|g_strdup_printf
+name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
@@ -3858,16 +3848,6 @@ name|gimp_filename_to_utf8
 argument_list|(
 name|filename
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_progress_init
-argument_list|(
-name|name_buf
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|name_buf
 argument_list|)
 expr_stmt|;
 comment|/* Maybe write the image comment. */

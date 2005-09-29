@@ -636,13 +636,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_progress_set_text:  * @format: a standard printf() format string  * @Varargs: arguments for @format  *  * Changes the text in the progress bar for the current plug-in.  *  * This function allows to change the text in the progress bar for the  * current plug-in. Unlike gimp_progress_init() it does not change the  * displayed value.  *  * Returns: %TRUE on success.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_progress_init_printf:  * @format: a standard printf() format string  * @Varargs: arguments for @format  *  * Initializes the progress bar for the current plug-in.  *  * Initializes the progress bar for the current plug-in. It is only  * valid to call this procedure from a plug-in.  *  * Returns: %TRUE on success.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_progress_set_text (const gchar * format,...)
-name|gimp_progress_set_text
+DECL|function|gimp_progress_init_printf (const gchar * format,...)
+name|gimp_progress_init_printf
 parameter_list|(
 specifier|const
 name|gchar
@@ -694,7 +694,82 @@ argument_list|)
 expr_stmt|;
 name|retval
 operator|=
-name|_gimp_progress_set_text
+name|gimp_progress_init
+argument_list|(
+name|text
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|text
+argument_list|)
+expr_stmt|;
+return|return
+name|retval
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_progress_set_text_printf:  * @format: a standard printf() format string  * @Varargs: arguments for @format  *  * Changes the text in the progress bar for the current plug-in.  *  * This function allows to change the text in the progress bar for the  * current plug-in. Unlike gimp_progress_init() it does not change the  * displayed value.  *  * Returns: %TRUE on success.  *  * Since: GIMP 2.4  **/
+end_comment
+
+begin_function
+name|gboolean
+DECL|function|gimp_progress_set_text_printf (const gchar * format,...)
+name|gimp_progress_set_text_printf
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|format
+parameter_list|,
+modifier|...
+parameter_list|)
+block|{
+name|gchar
+modifier|*
+name|text
+decl_stmt|;
+name|gboolean
+name|retval
+decl_stmt|;
+name|va_list
+name|args
+decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|format
+operator|!=
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|va_start
+argument_list|(
+name|args
+argument_list|,
+name|format
+argument_list|)
+expr_stmt|;
+name|text
+operator|=
+name|g_strdup_vprintf
+argument_list|(
+name|format
+argument_list|,
+name|args
+argument_list|)
+expr_stmt|;
+name|va_end
+argument_list|(
+name|args
+argument_list|)
+expr_stmt|;
+name|retval
+operator|=
+name|gimp_progress_set_text
 argument_list|(
 name|text
 argument_list|)
