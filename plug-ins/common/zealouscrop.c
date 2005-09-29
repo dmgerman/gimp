@@ -795,6 +795,8 @@ condition|(
 name|y
 operator|%
 literal|20
+operator|==
+literal|0
 condition|)
 name|gimp_progress_update
 argument_list|(
@@ -905,6 +907,8 @@ condition|(
 name|x
 operator|%
 literal|20
+operator|==
+literal|0
 condition|)
 name|gimp_progress_update
 argument_list|(
@@ -1021,6 +1025,8 @@ condition|(
 name|y
 operator|%
 literal|20
+operator|==
+literal|0
 condition|)
 name|gimp_progress_update
 argument_list|(
@@ -1124,6 +1130,8 @@ condition|(
 name|x
 operator|%
 literal|20
+operator|==
+literal|0
 condition|)
 name|gimp_progress_update
 argument_list|(
