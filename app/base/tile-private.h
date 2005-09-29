@@ -105,6 +105,11 @@ name|gushort
 name|eheight
 decl_stmt|;
 comment|/* the effective height of the tile 		         *  a tile's effective width and height may be smaller 		         *  (but not larger) than TILE_WIDTH and TILE_HEIGHT. 		         *  this is to handle edge tiles of a drawable. 		         */
+DECL|member|size
+name|gint
+name|size
+decl_stmt|;
+comment|/* size of the tile data (ewidth * eheight * bpp) */
 DECL|member|rowhint
 name|TileRowHint
 modifier|*
@@ -229,38 +234,6 @@ begin_endif
 endif|#
 directive|endif
 end_endif
-
-begin_comment
-comment|/*  an inlined version of tile_size()  */
-end_comment
-
-begin_function
-specifier|static
-specifier|inline
-name|gint
-DECL|function|tile_size_inline (Tile * tile)
-name|tile_size_inline
-parameter_list|(
-name|Tile
-modifier|*
-name|tile
-parameter_list|)
-block|{
-return|return
-name|tile
-operator|->
-name|ewidth
-operator|*
-name|tile
-operator|->
-name|eheight
-operator|*
-name|tile
-operator|->
-name|bpp
-return|;
-block|}
-end_function
 
 begin_endif
 endif|#

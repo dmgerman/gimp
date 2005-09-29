@@ -2183,9 +2183,6 @@ name|tile
 parameter_list|)
 block|{
 name|gint
-name|bytes
-decl_stmt|;
-name|gint
 name|err
 decl_stmt|;
 name|gint
@@ -2266,13 +2263,6 @@ expr_stmt|;
 return|return;
 block|}
 block|}
-name|bytes
-operator|=
-name|tile_size_inline
-argument_list|(
-name|tile
-argument_list|)
-expr_stmt|;
 name|tile_alloc
 argument_list|(
 name|tile
@@ -2280,7 +2270,9 @@ argument_list|)
 expr_stmt|;
 name|nleft
 operator|=
-name|bytes
+name|tile
+operator|->
+name|size
 expr_stmt|;
 while|while
 condition|(
@@ -2301,7 +2293,9 @@ name|tile
 operator|->
 name|data
 operator|+
-name|bytes
+name|tile
+operator|->
+name|size
 operator|-
 name|nleft
 argument_list|,
@@ -2373,7 +2367,9 @@ name|def_swap_file
 operator|->
 name|cur_position
 operator|+=
-name|bytes
+name|tile
+operator|->
+name|size
 expr_stmt|;
 comment|/*  Do not delete the swap from the file  */
 comment|/*  tile_swap_default_delete (def_swap_file, fd, tile);  */
@@ -2408,9 +2404,6 @@ name|gint
 name|bytes
 decl_stmt|;
 name|gint
-name|rbytes
-decl_stmt|;
-name|gint
 name|err
 decl_stmt|;
 name|gint
@@ -2431,13 +2424,6 @@ operator|*
 name|tile
 operator|->
 name|bpp
-expr_stmt|;
-name|rbytes
-operator|=
-name|tile_size_inline
-argument_list|(
-name|tile
-argument_list|)
 expr_stmt|;
 comment|/*  If there is already a valid swap_offset, use it  */
 if|if
@@ -2524,7 +2510,9 @@ expr_stmt|;
 block|}
 name|nleft
 operator|=
-name|rbytes
+name|tile
+operator|->
+name|size
 expr_stmt|;
 while|while
 condition|(
@@ -2543,7 +2531,9 @@ name|tile
 operator|->
 name|data
 operator|+
-name|rbytes
+name|tile
+operator|->
+name|size
 operator|-
 name|nleft
 argument_list|,
@@ -2590,7 +2580,9 @@ name|def_swap_file
 operator|->
 name|cur_position
 operator|+=
-name|rbytes
+name|tile
+operator|->
+name|size
 expr_stmt|;
 comment|/* Do NOT free tile->data because we may be pre-swapping.    * tile->data is freed in tile_cache_zorch_next    */
 name|tile
@@ -3422,9 +3414,6 @@ name|tile
 parameter_list|)
 block|{
 name|gint
-name|bytes
-decl_stmt|;
-name|gint
 name|err
 decl_stmt|;
 name|gint
@@ -3508,13 +3497,6 @@ literal|1
 condition|)
 return|return;
 block|}
-name|bytes
-operator|=
-name|tile_size_inline
-argument_list|(
-name|tile
-argument_list|)
-expr_stmt|;
 name|tile_alloc
 argument_list|(
 name|tile
@@ -3522,7 +3504,9 @@ argument_list|)
 expr_stmt|;
 name|nleft
 operator|=
-name|bytes
+name|tile
+operator|->
+name|size
 expr_stmt|;
 while|while
 condition|(
@@ -3543,7 +3527,9 @@ name|tile
 operator|->
 name|data
 operator|+
-name|bytes
+name|tile
+operator|->
+name|size
 operator|-
 name|nleft
 argument_list|,
