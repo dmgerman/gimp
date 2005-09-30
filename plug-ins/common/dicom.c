@@ -991,10 +991,6 @@ modifier|*
 name|DICOM
 decl_stmt|;
 name|gchar
-modifier|*
-name|temp
-decl_stmt|;
-name|gchar
 name|buf
 index|[
 literal|500
@@ -1075,29 +1071,17 @@ operator|-
 literal|1
 return|;
 block|}
-name|temp
-operator|=
-name|g_strdup_printf
+name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Opening '%s'..."
+literal|"Opening '%s'"
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
 name|filename
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_progress_init
-argument_list|(
-name|temp
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|temp
 argument_list|)
 expr_stmt|;
 comment|/* allocate the necessary structures */

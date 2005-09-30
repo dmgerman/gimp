@@ -299,7 +299,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2759049b0103
+DECL|enum|__anon29e20ada0103
 block|{
 DECL|enumerator|SHOOT_ROOT
 name|SHOOT_ROOT
@@ -318,7 +318,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2759049b0208
+DECL|struct|__anon29e20ada0208
 block|{
 DECL|member|shoot_type
 name|ShootType
@@ -2230,7 +2230,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Loading Screenshot..."
+literal|"Importing screenshot"
 argument_list|)
 argument_list|)
 expr_stmt|;

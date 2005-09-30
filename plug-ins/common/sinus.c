@@ -137,7 +137,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8a7a670108
+DECL|struct|__anon2c4a9a8e0108
 block|{
 DECL|member|scalex
 name|gdouble
@@ -246,7 +246,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8a7a670208
+DECL|struct|__anon2c4a9a8e0208
 block|{
 DECL|member|height
 DECL|member|width
@@ -328,7 +328,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8a7a670308
+DECL|struct|__anon2c4a9a8e0308
 block|{
 DECL|member|width
 name|gint
@@ -1318,7 +1318,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Sinus: rendering..."
+literal|"Sinus: rendering"
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -66,7 +66,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bafb1010108
+DECL|struct|__anon2b804fd20108
 block|{
 DECL|member|horizontal
 name|gboolean
@@ -1471,7 +1471,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Sobel Edge Detecting..."
+literal|"Sobel edge detecting"
 argument_list|)
 argument_list|)
 expr_stmt|;

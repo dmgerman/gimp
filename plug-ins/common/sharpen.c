@@ -327,7 +327,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299995b70108
+DECL|struct|__anon27936b7e0108
 block|{
 DECL|member|sharpen_percent
 name|gint
@@ -1045,7 +1045,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Sharpening..."
+literal|"Sharpening"
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -168,7 +168,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292fe7040108
+DECL|struct|__anon27e57a510108
 block|{
 DECL|member|x
 DECL|member|y
@@ -186,7 +186,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292fe7040208
+DECL|struct|__anon27e57a510208
 block|{
 DECL|member|npts
 name|guint
@@ -208,7 +208,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292fe7040308
+DECL|struct|__anon27e57a510308
 block|{
 DECL|member|base_x
 DECL|member|base_y
@@ -237,7 +237,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292fe7040408
+DECL|struct|__anon27e57a510408
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -2253,7 +2253,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Finding Edges..."
+literal|"Finding edges"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2502,7 +2502,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Rendering Tiles..."
+literal|"Rendering tiles"
 argument_list|)
 argument_list|)
 expr_stmt|;

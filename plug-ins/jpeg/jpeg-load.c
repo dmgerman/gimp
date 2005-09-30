@@ -304,7 +304,7 @@ name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Opening '%s'..."
+literal|"Opening '%s'"
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
@@ -1828,7 +1828,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274bd08c0108
+DECL|struct|__anon2b2d1be30108
 block|{
 DECL|member|pub
 name|struct
@@ -2175,7 +2175,7 @@ name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Opening thumbnail for '%s'..."
+literal|"Opening thumbnail for '%s'"
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8

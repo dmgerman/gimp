@@ -177,7 +177,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0c15720108
+DECL|struct|__anon2b8a201f0108
 block|{
 DECL|member|histogram
 name|gboolean
@@ -760,7 +760,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Destriping..."
+literal|"Destriping"
 argument_list|)
 argument_list|)
 expr_stmt|;

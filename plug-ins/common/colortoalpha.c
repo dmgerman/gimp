@@ -66,7 +66,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27573d290108
+DECL|struct|__anon2949367d0108
 block|{
 DECL|member|color
 name|GimpRGB
@@ -623,7 +623,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Removing color..."
+literal|"Removing color"
 argument_list|)
 argument_list|)
 expr_stmt|;

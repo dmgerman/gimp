@@ -106,7 +106,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2768e0ab0103
+DECL|enum|__anon2be4b9780103
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -122,7 +122,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2768e0ab0203
+DECL|enum|__anon2be4b9780203
 block|{
 DECL|enumerator|RENDER_WIND
 name|RENDER_WIND
@@ -138,7 +138,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2768e0ab0303
+DECL|enum|__anon2be4b9780303
 block|{
 DECL|enumerator|BOTH
 name|BOTH
@@ -1227,7 +1227,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Rendering Blast..."
+literal|"Rendering blast"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1782,7 +1782,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Rendering Wind..."
+literal|"Rendering wind"
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -91,7 +91,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba555200103
+DECL|enum|__anon2793aef30103
 block|{
 DECL|enumerator|SOBEL
 name|SOBEL
@@ -117,7 +117,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba555200208
+DECL|struct|__anon2793aef30208
 block|{
 DECL|member|amount
 name|gdouble
@@ -736,7 +736,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Edge Detection..."
+literal|"Edge detection"
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -72,7 +72,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27fcc2010108
+DECL|struct|__anon2bc311050108
 block|{
 DECL|member|captiontxt
 name|gchar
@@ -822,7 +822,7 @@ name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Saving '%s'..."
+literal|"Saving '%s'"
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8

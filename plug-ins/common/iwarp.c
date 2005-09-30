@@ -104,7 +104,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon290646870103
+DECL|enum|__anon2bf848cf0103
 block|{
 DECL|enumerator|GROW
 name|GROW
@@ -132,7 +132,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290646870208
+DECL|struct|__anon2bf848cf0208
 block|{
 DECL|member|run
 name|gboolean
@@ -147,7 +147,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290646870308
+DECL|struct|__anon2bf848cf0308
 block|{
 DECL|member|deform_area_radius
 name|gint
@@ -3528,7 +3528,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Warping..."
+literal|"Warping"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4074,7 +4074,7 @@ name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Warping Frame No. %d..."
+literal|"Warping Frame %d"
 argument_list|)
 argument_list|,
 name|frame_number

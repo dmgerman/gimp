@@ -58,7 +58,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2767abc40103
+DECL|enum|__anon2b0bf44f0103
 block|{
 DECL|enumerator|MBLUR_LINEAR
 name|MBLUR_LINEAR
@@ -82,7 +82,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2767abc40208
+DECL|struct|__anon2b0bf44f0208
 block|{
 DECL|member|mblur_type
 name|gint32
@@ -3514,7 +3514,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Motion Blurring..."
+literal|"Motion blurring"
 argument_list|)
 argument_list|)
 expr_stmt|;

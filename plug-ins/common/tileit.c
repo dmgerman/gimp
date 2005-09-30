@@ -112,7 +112,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2901e4960108
+DECL|struct|__anon298001190108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -494,7 +494,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2901e4960203
+DECL|enum|__anon298001190203
 block|{
 DECL|enumerator|ALL
 name|ALL
@@ -513,7 +513,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2901e4960308
+DECL|struct|__anon298001190308
 block|{
 DECL|member|type
 name|AppliedTo
@@ -583,7 +583,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2901e4960408
+DECL|struct|__anon298001190408
 block|{
 DECL|member|htoggle
 name|GtkWidget
@@ -1176,7 +1176,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Tiling..."
+literal|"Tiling"
 argument_list|)
 argument_list|)
 expr_stmt|;

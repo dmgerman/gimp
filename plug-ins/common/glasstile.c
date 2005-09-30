@@ -60,7 +60,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2989b6160108
+DECL|struct|__anon2a97fc950108
 block|{
 DECL|member|xblock
 name|gint
@@ -88,7 +88,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2989b6160208
+DECL|struct|__anon2a97fc950208
 block|{
 DECL|member|gval
 name|GlassValues
@@ -665,7 +665,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Glass Tile..."
+literal|"Glass Tile"
 argument_list|)
 argument_list|)
 expr_stmt|;

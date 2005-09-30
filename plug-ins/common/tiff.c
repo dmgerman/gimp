@@ -84,7 +84,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b165bc0108
+DECL|struct|__anon2c08b23e0108
 block|{
 DECL|member|compression
 name|gint
@@ -107,7 +107,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b165bc0208
+DECL|struct|__anon2c08b23e0208
 block|{
 DECL|member|ID
 name|gint32
@@ -1895,7 +1895,7 @@ name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Opening '%s'..."
+literal|"Opening '%s'"
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
@@ -8061,7 +8061,7 @@ name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Saving '%s'..."
+literal|"Saving '%s'"
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8

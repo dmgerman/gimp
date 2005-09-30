@@ -100,7 +100,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae965d40108
+DECL|struct|__anon29f897ad0108
 block|{
 DECL|member|film_height
 name|gint
@@ -204,7 +204,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae965d40208
+DECL|struct|__anon29f897ad0208
 block|{
 DECL|member|advanced_adj
 name|GtkObject
@@ -1341,7 +1341,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Composing Images..."
+literal|"Composing images"
 argument_list|)
 argument_list|)
 expr_stmt|;

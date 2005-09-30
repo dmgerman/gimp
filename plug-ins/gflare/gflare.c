@@ -391,7 +391,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be2b6030103
+DECL|enum|__anon276193990103
 block|{
 DECL|enumerator|GF_NORMAL
 name|GF_NORMAL
@@ -418,7 +418,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be2b6030203
+DECL|enum|__anon276193990203
 block|{
 DECL|enumerator|GF_CIRCLE
 name|GF_CIRCLE
@@ -439,7 +439,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be2b6030308
+DECL|struct|__anon276193990308
 block|{
 DECL|member|name
 name|gchar
@@ -580,7 +580,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be2b6030408
+DECL|struct|__anon276193990408
 block|{
 DECL|member|fp
 name|FILE
@@ -600,7 +600,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be2b6030503
+DECL|enum|__anon276193990503
 block|{
 DECL|enumerator|PAGE_SETTINGS
 name|PAGE_SETTINGS
@@ -628,7 +628,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be2b6030608
+DECL|struct|__anon276193990608
 block|{
 DECL|member|init
 name|gint
@@ -650,7 +650,7 @@ modifier|*
 name|preview
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2be2b6030708
+DECL|struct|__anon276193990708
 block|{
 DECL|member|x0
 DECL|member|y0
@@ -729,7 +729,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be2b6030808
+DECL|struct|__anon276193990808
 block|{
 DECL|member|init
 name|gint
@@ -799,7 +799,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be2b6030908
+DECL|struct|__anon276193990908
 block|{
 DECL|member|x0
 name|gdouble
@@ -826,7 +826,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be2b6030a08
+DECL|struct|__anon276193990a08
 block|{
 DECL|member|init
 name|gint
@@ -996,7 +996,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be2b6030b08
+DECL|struct|__anon276193990b08
 block|{
 DECL|member|xcenter
 name|gdouble
@@ -1023,7 +1023,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be2b6030c08
+DECL|struct|__anon276193990c08
 block|{
 DECL|member|is_color
 name|gint
@@ -1264,7 +1264,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be2b6030d08
+DECL|struct|__anon276193990d08
 block|{
 DECL|member|tag
 name|gint
@@ -1341,7 +1341,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be2b6030e08
+DECL|struct|__anon276193990e08
 block|{
 DECL|member|xcenter
 name|gint
@@ -4006,7 +4006,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"_GFlare..."
+literal|"_Gradient Flare..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
@@ -4594,7 +4594,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Gradient Flare..."
+literal|"Gradient Flare"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -8535,7 +8535,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-DECL|struct|__anon2be2b6030f08
+DECL|struct|__anon276193990f08
 specifier|static
 struct|struct
 block|{
@@ -11613,7 +11613,7 @@ name|gimp_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"GFlare"
+literal|"Gradient Flare"
 argument_list|)
 argument_list|,
 name|PLUG_IN_BINARY
@@ -14493,7 +14493,7 @@ name|i
 decl_stmt|;
 specifier|static
 struct|struct
-DECL|struct|__anon2be2b6031008
+DECL|struct|__anon276193991008
 block|{
 DECL|member|label
 specifier|const
@@ -15071,7 +15071,7 @@ name|gimp_query_string_box
 argument_list|(
 name|_
 argument_list|(
-literal|"New GFlare"
+literal|"New Gradient Flare"
 argument_list|)
 argument_list|,
 name|gtk_widget_get_toplevel
@@ -15378,7 +15378,7 @@ name|gimp_query_string_box
 argument_list|(
 name|_
 argument_list|(
-literal|"Copy GFlare"
+literal|"Copy Gradient Flare"
 argument_list|)
 argument_list|,
 name|gtk_widget_get_toplevel
@@ -15632,7 +15632,7 @@ name|gimp_query_boolean_box
 argument_list|(
 name|_
 argument_list|(
-literal|"Delete GFlare"
+literal|"Delete Gradient Flare"
 argument_list|)
 argument_list|,
 name|dlg
@@ -16051,7 +16051,7 @@ name|gimp_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"GFlare Editor"
+literal|"Gradient Flare Editor"
 argument_list|)
 argument_list|,
 name|PLUG_IN_BINARY

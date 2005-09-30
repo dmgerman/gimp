@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* $Id$  * Contains routines for generating mazes, somewhat intertwined with   * Gimp plug-in-maze specific stuff.  *  * Kevin Turner<acapnotic@users.sourceforge.net>  * http://gimp-plug-ins.sourceforge.net/maze/  */
+comment|/* $Id$  * Contains routines for generating mazes, somewhat intertwined with  * Gimp plug-in-maze specific stuff.  *  * Kevin Turner<acapnotic@users.sourceforge.net>  * http://gimp-plug-ins.sourceforge.net/maze/  */
 end_comment
 
 begin_comment
@@ -8,7 +8,7 @@ comment|/* mazegen code from rec.games.programmer's maze-faq:  * * maz.c - gener
 end_comment
 
 begin_comment
-comment|/* I've put a HTMLized version of the FAQ up at   * http://www.poboxes.com/kevint/gimp/maze-faq/maze-faq.html  */
+comment|/* I've put a HTMLized version of the FAQ up at  * http://www.poboxes.com/kevint/gimp/maze-faq/maze-faq.html  */
 end_comment
 
 begin_comment
@@ -1141,7 +1141,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Constructing maze using Prim's Algorithm..."
+literal|"Constructing maze using Prim's Algorithm"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1162,7 +1162,7 @@ index|]
 operator|=
 name|IN
 expr_stmt|;
-comment|/* For now, repeating everything four times seems manageable.  But when  	Gimp is extended to drawings in n-dimensional space instead of 2D,         this will require a bit of a re-write. */
+comment|/* For now, repeating everything four times seems manageable.  But when 	Gimp is extended to drawings in n-dimensional space instead of 2D,         this will require a bit of a re-write. */
 comment|/* Add frontier. */
 name|up
 operator|=
@@ -1889,7 +1889,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Constructing tileable maze using Prim's Algorithm..."
+literal|"Constructing tileable maze using Prim's Algorithm"
 argument_list|)
 argument_list|)
 expr_stmt|;

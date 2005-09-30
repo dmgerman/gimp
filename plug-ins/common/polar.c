@@ -101,7 +101,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4e5de90108
+DECL|struct|__anon297954500108
 block|{
 DECL|member|circle
 name|gdouble
@@ -1263,7 +1263,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Polarizing..."
+literal|"Polarizing"
 argument_list|)
 argument_list|)
 expr_stmt|;

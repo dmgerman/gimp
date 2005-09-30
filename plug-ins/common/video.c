@@ -60900,7 +60900,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4c83aa0108
+DECL|struct|__anon27b985030108
 block|{
 DECL|member|pattern_number
 name|gint
@@ -61436,7 +61436,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Video/RGB..."
+literal|"Video"
 argument_list|)
 argument_list|)
 expr_stmt|;

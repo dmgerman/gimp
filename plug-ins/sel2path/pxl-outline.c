@@ -259,7 +259,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Selection to Path..."
+literal|"Selection to Path"
 argument_list|)
 argument_list|)
 expr_stmt|;

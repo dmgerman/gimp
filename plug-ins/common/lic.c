@@ -79,7 +79,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29eaf5270103
+DECL|enum|__anon2c111b750103
 block|{
 DECL|enumerator|LIC_HUE
 name|LIC_HUE
@@ -127,7 +127,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29eaf5270208
+DECL|struct|__anon2c111b750208
 block|{
 DECL|member|filtlen
 name|gdouble
@@ -2635,7 +2635,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Van Gogh (LIC)..."
+literal|"Van Gogh (LIC)"
 argument_list|)
 argument_list|)
 expr_stmt|;

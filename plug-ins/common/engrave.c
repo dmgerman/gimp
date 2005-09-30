@@ -66,7 +66,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f4f90b0108
+DECL|struct|__anon2c0066160108
 block|{
 DECL|member|height
 name|gint
@@ -605,7 +605,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Engraving..."
+literal|"Engraving"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1170,7 +1170,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f4f90b0208
+DECL|struct|__anon2c0066160208
 block|{
 DECL|member|x
 DECL|member|y

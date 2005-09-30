@@ -45,7 +45,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb061820103
+DECL|enum|__anon2a06a4d90103
 block|{
 DECL|enumerator|ODD_FIELDS
 name|ODD_FIELDS
@@ -59,7 +59,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb061820208
+DECL|struct|__anon2a06a4d90208
 block|{
 DECL|member|evenness
 name|gint
@@ -470,7 +470,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Deinterlace..."
+literal|"Deinterlace"
 argument_list|)
 argument_list|)
 expr_stmt|;

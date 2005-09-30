@@ -60,7 +60,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbd17db0108
+DECL|struct|__anon28fbd3340108
 block|{
 DECL|member|posx
 name|gint
@@ -111,7 +111,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbd17db0208
+DECL|struct|__anon28fbd3340208
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -1033,7 +1033,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Render Flare..."
+literal|"Render flare"
 argument_list|)
 argument_list|)
 expr_stmt|;

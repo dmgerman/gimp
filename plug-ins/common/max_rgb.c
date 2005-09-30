@@ -135,7 +135,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e2c8eb0103
+DECL|enum|__anon2993b03e0103
 block|{
 DECL|enumerator|MIN_CHANNELS
 name|MIN_CHANNELS
@@ -153,7 +153,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e2c8eb0208
+DECL|struct|__anon2993b03e0208
 block|{
 DECL|member|max_p
 name|gint
@@ -521,7 +521,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e2c8eb0308
+DECL|struct|__anon2993b03e0308
 block|{
 DECL|member|init_value
 name|gint
@@ -912,7 +912,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Max RGB..."
+literal|"Max RGB"
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -54,7 +54,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b997fdf0108
+DECL|struct|__anon297bb6390108
 block|{
 DECL|member|spread_amount_x
 name|gdouble
@@ -608,7 +608,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Spreading..."
+literal|"Spreading"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -679,7 +679,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b997fdf0208
+DECL|struct|__anon297bb6390208
 block|{
 DECL|member|pft
 name|GimpPixelFetcher

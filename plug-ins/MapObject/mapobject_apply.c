@@ -1306,7 +1306,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Map to Plane..."
+literal|"Map to plane"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1318,7 +1318,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Map to Sphere..."
+literal|"Map to sphere"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1330,7 +1330,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Map to Box..."
+literal|"Map to box"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1342,7 +1342,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Map to Cylinder..."
+literal|"Map to cylinder"
 argument_list|)
 argument_list|)
 expr_stmt|;

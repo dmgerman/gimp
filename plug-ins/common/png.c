@@ -170,7 +170,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c30e0650108
+DECL|struct|__anon277e96b00108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -217,7 +217,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c30e0650208
+DECL|struct|__anon277e96b00208
 block|{
 DECL|member|run
 name|gboolean
@@ -2310,7 +2310,7 @@ name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Opening '%s'..."
+literal|"Opening '%s'"
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
@@ -4266,7 +4266,7 @@ name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Saving '%s'..."
+literal|"Saving '%s'"
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8

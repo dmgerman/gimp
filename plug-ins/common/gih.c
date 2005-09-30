@@ -197,7 +197,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2bd42cef0108
+DECL|struct|__anon27e7ef8a0108
 block|{
 DECL|member|spacing
 name|guint
@@ -270,7 +270,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd42cef0208
+DECL|struct|__anon27e7ef8a0208
 block|{
 DECL|member|orientation
 name|GimpOrientationType
@@ -2792,7 +2792,7 @@ name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Opening '%s'..."
+literal|"Opening '%s'"
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
@@ -6094,7 +6094,7 @@ name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Saving '%s'..."
+literal|"Saving '%s'"
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8

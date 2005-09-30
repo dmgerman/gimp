@@ -50,7 +50,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ec185d0108
+DECL|struct|__anon27a31c2c0108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -1465,7 +1465,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Printing..."
+literal|"Printing"
 argument_list|)
 argument_list|)
 expr_stmt|;

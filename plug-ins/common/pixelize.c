@@ -96,7 +96,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4fc1ea0108
+DECL|struct|__anon2b4d1cef0108
 block|{
 DECL|member|pixelwidth
 name|gint
@@ -115,7 +115,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4fc1ea0208
+DECL|struct|__anon2b4d1cef0208
 block|{
 DECL|member|x
 DECL|member|y
@@ -846,7 +846,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Pixelizing..."
+literal|"Pixelizing"
 argument_list|)
 argument_list|)
 expr_stmt|;

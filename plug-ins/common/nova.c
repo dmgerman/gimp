@@ -72,7 +72,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293737250108
+DECL|struct|__anon275344610108
 block|{
 DECL|member|xcenter
 name|gint
@@ -107,7 +107,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293737250208
+DECL|struct|__anon275344610208
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -849,7 +849,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Rendering SuperNova..."
+literal|"Rendering SuperNova"
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -92,7 +92,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b40ce70108
+DECL|struct|__anon28e5b7600108
 block|{
 DECL|member|scale
 name|gint
@@ -119,7 +119,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27b40ce70203
+DECL|enum|__anon28e5b7600203
 block|{
 DECL|enumerator|filter_uniform
 name|filter_uniform
@@ -177,7 +177,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b40ce70308
+DECL|struct|__anon28e5b7600308
 block|{
 DECL|member|N
 name|gint
@@ -905,7 +905,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Retinex..."
+literal|"Retinex"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -914,14 +914,6 @@ argument_list|(
 name|drawable
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_progress_init
-argument_list|(
-name|_
-argument_list|(
-literal|"Retinex (4/4): updated..."
-argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -2961,7 +2953,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Retinex: Filtering..."
+literal|"Retinex: filtering"
 argument_list|)
 argument_list|)
 expr_stmt|;

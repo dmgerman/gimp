@@ -76,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bafc09c0103
+DECL|enum|__anon2af4630b0103
 block|{
 DECL|enumerator|CURL_COLORS_FG_BG
 name|CURL_COLORS_FG_BG
@@ -100,7 +100,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bafc09c0203
+DECL|enum|__anon2af4630b0203
 block|{
 DECL|enumerator|CURL_ORIENTATION_VERTICAL
 name|CURL_ORIENTATION_VERTICAL
@@ -121,7 +121,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bafc09c0303
+DECL|enum|__anon2af4630b0303
 block|{
 DECL|enumerator|CURL_EDGE_LOWER_RIGHT
 name|CURL_EDGE_LOWER_RIGHT
@@ -209,7 +209,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bafc09c0408
+DECL|struct|__anon2af4630b0408
 block|{
 DECL|member|colors
 name|CurlColors
@@ -4681,7 +4681,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Page Curl..."
+literal|"Page Curl"
 argument_list|)
 argument_list|)
 expr_stmt|;

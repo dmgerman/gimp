@@ -88,7 +88,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d0f4210108
+DECL|struct|__anon2c63c44f0108
 block|{
 DECL|member|angle
 name|gint
@@ -107,7 +107,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d0f4210208
+DECL|struct|__anon2c63c44f0208
 block|{
 DECL|member|ID
 name|gint32
@@ -1750,7 +1750,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Rotating..."
+literal|"Rotating"
 argument_list|)
 argument_list|)
 expr_stmt|;

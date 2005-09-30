@@ -74,7 +74,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27c575560103
+DECL|enum|__anon2779608d0103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -99,7 +99,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27c575560203
+DECL|enum|__anon2779608d0203
 block|{
 DECL|enumerator|OPOPTIMIZE
 name|OPOPTIMIZE
@@ -1518,7 +1518,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"UnOptimizing Animation..."
+literal|"Unoptimizing animation"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1530,7 +1530,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Removing Animation Background..."
+literal|"Removing animation background"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1542,7 +1542,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Finding Animation Background..."
+literal|"Finding animation background"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1555,7 +1555,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Optimizing Animation..."
+literal|"Optimizing animation"
 argument_list|)
 argument_list|)
 expr_stmt|;

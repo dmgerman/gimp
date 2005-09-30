@@ -122,7 +122,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28db1d680108
+DECL|struct|__anon27862e1d0108
 block|{
 DECL|member|period
 name|gint
@@ -852,7 +852,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Rippling..."
+literal|"Rippling"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -923,7 +923,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon28db1d680208
+DECL|struct|__anon27862e1d0208
 typedef|typedef
 struct|struct
 block|{

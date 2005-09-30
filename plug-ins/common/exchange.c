@@ -70,7 +70,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cedf170108
+DECL|struct|__anon2b7630530108
 block|{
 DECL|member|from
 name|GimpRGB
@@ -777,7 +777,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Color Exchange..."
+literal|"Color Exchange"
 argument_list|)
 argument_list|)
 expr_stmt|;

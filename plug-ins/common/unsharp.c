@@ -84,7 +84,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27818f310108
+DECL|struct|__anon28e58a0e0108
 block|{
 DECL|member|radius
 name|gdouble
@@ -111,7 +111,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27818f310208
+DECL|struct|__anon28e58a0e0208
 block|{
 DECL|member|run
 name|gboolean
@@ -1691,7 +1691,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Blurring..."
+literal|"Blurring"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1933,7 +1933,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Merging..."
+literal|"Merging"
 argument_list|)
 argument_list|)
 expr_stmt|;

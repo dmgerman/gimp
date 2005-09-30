@@ -119,7 +119,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29410b420103
+DECL|enum|__anon291cd8ab0103
 block|{
 DECL|enumerator|LINEAR
 name|LINEAR
@@ -137,7 +137,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29410b420203
+DECL|enum|__anon291cd8ab0203
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE
@@ -153,7 +153,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29410b420308
+DECL|struct|__anon291cd8ab0308
 block|{
 DECL|member|bumpmap_id
 name|gint32
@@ -212,7 +212,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29410b420408
+DECL|struct|__anon291cd8ab0408
 block|{
 DECL|member|lx
 DECL|member|ly
@@ -257,7 +257,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29410b420508
+DECL|struct|__anon291cd8ab0508
 block|{
 DECL|member|mouse_x
 name|gint
@@ -1630,7 +1630,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Bump-mapping..."
+literal|"Bump-mapping"
 argument_list|)
 argument_list|)
 expr_stmt|;

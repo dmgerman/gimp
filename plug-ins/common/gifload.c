@@ -716,7 +716,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2922bd830108
+DECL|struct|__anon2a314f790108
 block|{
 DECL|member|Width
 name|unsigned
@@ -766,7 +766,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2922bd830208
+DECL|struct|__anon2a314f790208
 block|{
 DECL|member|transparent
 name|int
@@ -1049,7 +1049,7 @@ name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Opening '%s'..."
+literal|"Opening '%s'"
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8

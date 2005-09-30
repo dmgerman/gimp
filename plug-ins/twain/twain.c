@@ -418,7 +418,7 @@ comment|/* Currently unused... Eventually may be used  * to track dialog data.  
 end_comment
 
 begin_typedef
-DECL|struct|__anon2bc0c3610108
+DECL|struct|__anon2b14359c0108
 typedef|typedef
 struct|struct
 block|{
@@ -1414,7 +1414,7 @@ comment|/* Data used to carry data between each of  * the callback function call
 end_comment
 
 begin_typedef
-DECL|struct|__anon2bc0c3610208
+DECL|struct|__anon2b14359c0208
 typedef|typedef
 struct|struct
 block|{
@@ -1476,7 +1476,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Transferring TWAIN data..."
+literal|"Transferring TWAIN data"
 argument_list|)
 argument_list|)
 expr_stmt|;

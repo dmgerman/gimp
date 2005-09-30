@@ -118,7 +118,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc13e820108
+DECL|struct|__anon27b226950108
 block|{
 DECL|member|resolution
 name|gdouble
@@ -1245,7 +1245,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Rendering SVG..."
+literal|"Rendering SVG"
 argument_list|)
 argument_list|)
 expr_stmt|;

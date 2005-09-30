@@ -70,7 +70,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bfa394d0103
+DECL|enum|__anon2bf7456b0103
 block|{
 DECL|enumerator|RGB_MODEL
 name|RGB_MODEL
@@ -94,7 +94,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bfa394d0208
+DECL|struct|__anon2bf7456b0208
 block|{
 DECL|member|redfrequency
 name|gdouble
@@ -1569,7 +1569,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"AlienMap2: Transforming..."
+literal|"AlienMap2: Transforming"
 argument_list|)
 argument_list|)
 expr_stmt|;

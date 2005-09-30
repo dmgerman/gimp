@@ -40883,7 +40883,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d2b79e0103
+DECL|enum|__anon297f9d450103
 block|{
 DECL|enumerator|TOP_RIGHT
 name|TOP_RIGHT
@@ -40903,7 +40903,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d2b79e0208
+DECL|struct|__anon297f9d450208
 block|{
 DECL|member|direction
 name|gint
@@ -41426,7 +41426,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Applying Canvas..."
+literal|"Applying canvas"
 argument_list|)
 argument_list|)
 expr_stmt|;

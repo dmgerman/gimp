@@ -328,7 +328,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Auto-Stretching Contrast..."
+literal|"Auto-stretching contrast"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -807,7 +807,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon29328bc90108
+DECL|struct|__anon2893109f0108
 typedef|typedef
 struct|struct
 block|{

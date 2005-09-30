@@ -294,7 +294,7 @@ end_function
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b0b82a30108
+DECL|struct|__anon286c92380108
 block|{
 DECL|member|width
 name|gint
@@ -630,7 +630,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Deriving Smooth Palette..."
+literal|"Deriving smooth palette"
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -56,7 +56,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6110be0108
+DECL|struct|__anon2756804e0108
 block|{
 DECL|member|alpha
 name|gdouble
@@ -83,7 +83,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c6110be0203
+DECL|enum|__anon2756804e0203
 block|{
 DECL|enumerator|filter_alpha_trim
 name|filter_alpha_trim
@@ -5672,7 +5672,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"NL Filter..."
+literal|"NL Filter"
 argument_list|)
 argument_list|)
 expr_stmt|;

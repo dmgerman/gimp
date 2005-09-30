@@ -82,7 +82,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3c1d830108
+DECL|struct|__anon2ac431010108
 block|{
 DECL|member|shift_amount
 name|gint
@@ -621,7 +621,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Shifting..."
+literal|"Shifting"
 argument_list|)
 argument_list|)
 expr_stmt|;

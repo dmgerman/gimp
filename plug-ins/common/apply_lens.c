@@ -152,7 +152,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c6cbd30108
+DECL|struct|__anon295a4ea10108
 block|{
 DECL|member|refraction
 name|gdouble
@@ -578,7 +578,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Applying lens..."
+literal|"Applying lens"
 argument_list|)
 argument_list|)
 expr_stmt|;

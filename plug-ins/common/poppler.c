@@ -70,7 +70,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e063b70108
+DECL|struct|__anon2c01a6f90108
 block|{
 DECL|member|target
 name|GimpPageSelectorTarget
@@ -111,7 +111,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e063b70208
+DECL|struct|__anon2c01a6f90208
 block|{
 DECL|member|n_pages
 name|gint
@@ -1695,7 +1695,7 @@ name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Opening '%s'..."
+literal|"Opening '%s'"
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
@@ -2255,7 +2255,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e063b70308
+DECL|struct|__anon2c01a6f90308
 block|{
 DECL|member|document
 name|PopplerDocument
@@ -2280,7 +2280,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e063b70408
+DECL|struct|__anon2c01a6f90408
 block|{
 DECL|member|selector
 name|GimpPageSelector

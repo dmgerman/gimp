@@ -62,14 +62,6 @@ value|"channel_mixer"
 end_define
 
 begin_define
-DECL|macro|PLUG_IN_VERSION
-define|#
-directive|define
-name|PLUG_IN_VERSION
-value|"Channel Mixer 0.8"
-end_define
-
-begin_define
 DECL|macro|PROGRESS_UPDATE_NUM
 define|#
 directive|define
@@ -88,7 +80,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c3c70f30103
+DECL|enum|__anon291136e10103
 block|{
 DECL|enumerator|CM_RED_CHANNEL
 name|CM_RED_CHANNEL
@@ -107,7 +99,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3c70f30208
+DECL|struct|__anon291136e10208
 block|{
 DECL|member|red_gain
 name|gdouble
@@ -130,7 +122,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3c70f30308
+DECL|struct|__anon291136e10308
 block|{
 DECL|member|red
 name|CmChannelType
@@ -1186,7 +1178,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-name|PLUG_IN_VERSION
+literal|"Channel Mixer"
 argument_list|)
 argument_list|)
 expr_stmt|;

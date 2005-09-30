@@ -165,7 +165,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a29f7870108
+DECL|struct|__anon2af9305c0108
 block|{
 DECL|member|description
 name|gchar
@@ -1251,7 +1251,7 @@ name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Opening '%s'..."
+literal|"Opening '%s'"
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
@@ -1981,7 +1981,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon2a29f787020a
+DECL|union|__anon2af9305c020a
 block|{
 DECL|member|u
 name|guint16
@@ -2414,7 +2414,7 @@ name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Saving '%s'..."
+literal|"Saving '%s'"
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8

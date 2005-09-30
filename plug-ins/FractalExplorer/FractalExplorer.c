@@ -1604,7 +1604,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Rendering Fractal..."
+literal|"Rendering fractal"
 argument_list|)
 argument_list|)
 expr_stmt|;

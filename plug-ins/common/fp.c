@@ -108,7 +108,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299a80390108
+DECL|struct|__anon29db1b2b0108
 block|{
 DECL|member|run
 name|gint
@@ -123,7 +123,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299a80390208
+DECL|struct|__anon29db1b2b0208
 block|{
 DECL|member|width
 name|gint
@@ -157,7 +157,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon299a80390303
+DECL|enum|__anon29db1b2b0303
 block|{
 DECL|enumerator|SHADOWS
 name|SHADOWS
@@ -178,7 +178,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon299a80390403
+DECL|enum|__anon29db1b2b0403
 block|{
 DECL|enumerator|NONEATALL
 name|NONEATALL
@@ -210,7 +210,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon299a80390503
+DECL|enum|__anon29db1b2b0503
 block|{
 DECL|enumerator|BY_HUE
 name|BY_HUE
@@ -229,7 +229,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon299a80390603
+DECL|enum|__anon29db1b2b0603
 block|{
 DECL|enumerator|RED
 name|RED
@@ -257,7 +257,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon299a80390703
+DECL|enum|__anon29db1b2b0703
 block|{
 DECL|enumerator|DOWN
 name|DOWN
@@ -276,7 +276,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299a80390808
+DECL|struct|__anon29db1b2b0808
 block|{
 DECL|member|window
 name|GtkWidget
@@ -307,7 +307,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299a80390908
+DECL|struct|__anon29db1b2b0908
 block|{
 DECL|member|roughness
 name|gdouble
@@ -408,7 +408,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299a80390a08
+DECL|struct|__anon29db1b2b0a08
 block|{
 DECL|member|roughness_scale
 name|GtkWidget
@@ -1319,7 +1319,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon299a80390b08
+DECL|struct|__anon29db1b2b0b08
 block|{
 DECL|member|bna
 name|GtkWidget
@@ -1853,7 +1853,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Applying Filter Pack..."
+literal|"Applying filter pack"
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -217,7 +217,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ee82670108
+DECL|struct|__anon2c6286750108
 block|{
 DECL|member|holdness
 name|gint
@@ -831,7 +831,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Scattering HSV..."
+literal|"HSV Noise"
 argument_list|)
 argument_list|)
 expr_stmt|;

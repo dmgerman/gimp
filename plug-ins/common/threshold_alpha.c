@@ -152,7 +152,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274dd4640108
+DECL|struct|__anon291df99f0108
 block|{
 DECL|member|threshold
 name|gint
@@ -539,7 +539,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Threshold Alpha: Coloring Transparency..."
+literal|"Coloring transparency"
 argument_list|)
 argument_list|)
 expr_stmt|;

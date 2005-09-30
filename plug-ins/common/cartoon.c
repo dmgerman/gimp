@@ -68,7 +68,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b11cd660108
+DECL|struct|__anon279cb47c0108
 block|{
 DECL|member|mask_radius
 name|gdouble
@@ -648,7 +648,7 @@ condition|)
 block|{
 name|gimp_progress_init
 argument_list|(
-literal|"Cartoon..."
+literal|"Cartoon"
 argument_list|)
 expr_stmt|;
 name|cartoon

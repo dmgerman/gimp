@@ -56,7 +56,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2a2a700108
+DECL|struct|__anon2a3b07680108
 block|{
 DECL|member|new_width
 name|gint
@@ -645,7 +645,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Tiling..."
+literal|"Tiling"
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -76,10 +76,10 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292731320108
+DECL|struct|__anon275fd2af0108
 block|{
 union|union
-DECL|union|__anon29273132020a
+DECL|union|__anon275fd2af020a
 block|{
 DECL|member|ID
 name|gint32
@@ -624,7 +624,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292731320308
+DECL|struct|__anon275fd2af0308
 block|{
 DECL|member|compose_type
 specifier|const
@@ -1121,7 +1121,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292731320408
+DECL|struct|__anon275fd2af0408
 block|{
 DECL|member|inputs
 name|ComposeInput
@@ -1161,7 +1161,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292731320508
+DECL|struct|__anon275fd2af0508
 block|{
 DECL|member|width
 DECL|member|height
@@ -2485,7 +2485,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Composing..."
+literal|"Composing"
 argument_list|)
 argument_list|)
 expr_stmt|;

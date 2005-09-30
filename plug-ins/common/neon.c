@@ -56,7 +56,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf6bcc80108
+DECL|struct|__anon2a4dba630108
 block|{
 DECL|member|radius
 name|gdouble
@@ -657,7 +657,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Neon..."
+literal|"Neon"
 argument_list|)
 argument_list|)
 expr_stmt|;

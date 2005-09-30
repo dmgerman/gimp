@@ -99,7 +99,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c941a70108
+DECL|struct|__anon2b9b1b660108
 block|{
 DECL|member|glow_radius
 name|gdouble
@@ -663,7 +663,7 @@ condition|)
 block|{
 name|gimp_progress_init
 argument_list|(
-literal|"Softglow..."
+literal|"Softglow"
 argument_list|)
 expr_stmt|;
 name|softglow

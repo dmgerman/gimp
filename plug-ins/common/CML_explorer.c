@@ -210,7 +210,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon287112070103
+DECL|enum|__anon277e0a7d0103
 block|{
 DECL|enumerator|CML_KEEP_VALUES
 name|CML_KEEP_VALUES
@@ -339,7 +339,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon287112070203
+DECL|enum|__anon277e0a7d0203
 block|{
 DECL|enumerator|COMP_NONE
 name|COMP_NONE
@@ -484,7 +484,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon287112070303
+DECL|enum|__anon277e0a7d0303
 block|{
 DECL|enumerator|STANDARD
 name|STANDARD
@@ -589,7 +589,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon287112070403
+DECL|enum|__anon277e0a7d0403
 block|{
 DECL|enumerator|CML_INITIAL_RANDOM_INDEPENDENT
 name|CML_INITIAL_RANDOM_INDEPENDENT
@@ -687,7 +687,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287112070508
+DECL|struct|__anon277e0a7d0508
 block|{
 DECL|member|function
 name|gint
@@ -760,7 +760,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287112070608
+DECL|struct|__anon277e0a7d0608
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -1572,7 +1572,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287112070708
+DECL|struct|__anon277e0a7d0708
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -3471,7 +3471,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"CML_explorer: evoluting..."
+literal|"CML Explorer: evoluting"
 argument_list|)
 argument_list|)
 expr_stmt|;

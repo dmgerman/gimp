@@ -1048,11 +1048,6 @@ modifier|*
 name|fp
 decl_stmt|;
 comment|/* Read file pointer */
-name|gchar
-modifier|*
-name|progress
-decl_stmt|;
-comment|/* Title for progress display */
 name|guchar
 name|header
 index|[
@@ -1154,29 +1149,17 @@ operator|-
 literal|1
 return|;
 block|}
-name|progress
-operator|=
-name|g_strdup_printf
+name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Opening '%s'..."
+literal|"Opening '%s'"
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
 name|brief
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_progress_init
-argument_list|(
-name|progress
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|progress
 argument_list|)
 expr_stmt|;
 comment|/* Get the image dimensions and create the image... */
@@ -2465,11 +2448,6 @@ modifier|*
 name|fp
 decl_stmt|;
 comment|/* Write file pointer */
-name|char
-modifier|*
-name|progress
-decl_stmt|;
-comment|/* Title for progress display */
 name|guchar
 name|header
 index|[
@@ -2601,29 +2579,17 @@ return|return
 name|FALSE
 return|;
 block|}
-name|progress
-operator|=
-name|g_strdup_printf
+name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Saving '%s'..."
+literal|"Saving '%s'"
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
 name|brief
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_progress_init
-argument_list|(
-name|progress
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|progress
 argument_list|)
 expr_stmt|;
 comment|/* Headers */

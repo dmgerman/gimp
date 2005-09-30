@@ -45,7 +45,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2926430b0103
+DECL|enum|__anon2c1d26880103
 block|{
 DECL|enumerator|MODE_SMEAR
 name|MODE_SMEAR
@@ -59,7 +59,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2926430b0208
+DECL|struct|__anon2c1d26880208
 block|{
 DECL|member|amplitude
 name|gdouble
@@ -1902,7 +1902,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Waving..."
+literal|"Waving"
 argument_list|)
 argument_list|)
 expr_stmt|;

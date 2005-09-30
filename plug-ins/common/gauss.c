@@ -84,7 +84,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c07d4c0103
+DECL|enum|__anon2bdbebbc0103
 block|{
 DECL|enumerator|BLUR_IIR
 name|BLUR_IIR
@@ -100,7 +100,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c07d4c0208
+DECL|struct|__anon2bdbebbc0208
 block|{
 DECL|member|horizontal
 name|gdouble
@@ -1514,7 +1514,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Gaussian Blur..."
+literal|"Gaussian Blur"
 argument_list|)
 argument_list|)
 expr_stmt|;

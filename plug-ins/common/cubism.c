@@ -116,7 +116,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dc40200108
+DECL|struct|__anon27d2d51c0108
 block|{
 DECL|member|npts
 name|gint
@@ -138,7 +138,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dc40200208
+DECL|struct|__anon27d2d51c0208
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -1800,7 +1800,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Cubistic Transformation..."
+literal|"Cubistic transformation"
 argument_list|)
 argument_list|)
 expr_stmt|;

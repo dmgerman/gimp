@@ -243,7 +243,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b71de10108
+DECL|struct|__anon2b53accf0108
 block|{
 DECL|member|hwidth
 name|gint
@@ -1073,7 +1073,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Drawing Grid..."
+literal|"Drawing grid"
 argument_list|)
 argument_list|)
 expr_stmt|;

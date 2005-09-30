@@ -65,7 +65,7 @@ end_define
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon275cb3560108
+DECL|struct|__anon29c5cbe00108
 block|{
 DECL|member|prDlg
 name|PRINTDLG
@@ -1675,7 +1675,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Printing..."
+literal|"Printing"
 argument_list|)
 argument_list|)
 expr_stmt|;

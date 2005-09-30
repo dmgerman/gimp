@@ -88,7 +88,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27724a230108
+DECL|struct|__anon2b083cb70108
 block|{
 DECL|member|seed
 name|guint32
@@ -862,7 +862,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Plasma..."
+literal|"Plasma"
 argument_list|)
 argument_list|)
 expr_stmt|;

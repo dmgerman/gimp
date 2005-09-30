@@ -140,7 +140,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c70cd730108
+DECL|struct|__anon2c139e6d0108
 block|{
 DECL|member|division
 name|gint32
@@ -564,7 +564,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Illusion..."
+literal|"Illusion"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -620,7 +620,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2c70cd730208
+DECL|struct|__anon2c139e6d0208
 typedef|typedef
 struct|struct
 block|{

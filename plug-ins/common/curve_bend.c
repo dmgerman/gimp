@@ -688,7 +688,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290217500108
+DECL|struct|__anon299c17280108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -742,7 +742,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290217500208
+DECL|struct|__anon299c17280208
 block|{
 DECL|member|y
 name|gint32
@@ -3055,7 +3055,7 @@ name|cd
 operator|->
 name|show_progress
 operator|=
-name|FALSE
+name|TRUE
 expr_stmt|;
 name|cd
 operator|->
@@ -15000,7 +15000,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Curve Bend..."
+literal|"Curve Bend"
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -105,7 +105,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28cbc3fd0108
+DECL|struct|__anon2c18019d0108
 block|{
 DECL|member|tilable
 name|gboolean
@@ -1068,7 +1068,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Solid Noise..."
+literal|"Solid Noise"
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -330,7 +330,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Auto-Stretching HSV..."
+literal|"Auto-Stretching HSV"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -438,7 +438,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2ad71d080108
+DECL|struct|__anon293707cd0108
 typedef|typedef
 struct|struct
 block|{

@@ -138,7 +138,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2992ae790103
+DECL|enum|__anon2b4b62170103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -158,7 +158,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2992ae790203
+DECL|enum|__anon2b4b62170203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -174,7 +174,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2992ae790308
+DECL|struct|__anon2b4b62170308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -196,7 +196,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon2992ae79040a
+DECL|union|__anon2b4b6217040a
 block|{
 DECL|member|d
 name|gdouble
@@ -221,7 +221,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2992ae790508
+DECL|struct|__anon2b4b62170508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -251,7 +251,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2992ae790608
+DECL|struct|__anon2b4b62170608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -286,7 +286,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2992ae790708
+DECL|struct|__anon2b4b62170708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -322,7 +322,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2992ae790808
+DECL|struct|__anon2b4b62170808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -389,7 +389,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2992ae790908
+DECL|struct|__anon2b4b62170908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -538,7 +538,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2992ae790a08
+DECL|struct|__anon2b4b62170a08
 block|{
 DECL|member|run
 name|gboolean
@@ -6778,7 +6778,7 @@ name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Rendering IFS (%d/%d)..."
+literal|"Rendering IFS (%d/%d)"
 argument_list|)
 argument_list|,
 name|band_no
@@ -6877,7 +6877,7 @@ name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Copying IFS to image (%d/%d)..."
+literal|"Copying IFS to image (%d/%d)"
 argument_list|)
 argument_list|,
 name|band_no

@@ -83,7 +83,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon276d34380103
+DECL|enum|__anon292620380103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -103,7 +103,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276d34380208
+DECL|struct|__anon292620380208
 block|{
 DECL|member|amount
 name|gdouble
@@ -6524,7 +6524,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Smoothing X gradient..."
+literal|"Smoothing X gradient"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6537,7 +6537,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Smoothing Y gradient..."
+literal|"Smoothing Y gradient"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6732,7 +6732,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Finding XY gradient..."
+literal|"Finding XY gradient"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6843,13 +6843,11 @@ name|warp_iter
 operator|++
 control|)
 block|{
-name|string
-operator|=
-name|g_strdup_printf
+name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Flow Step %d..."
+literal|"Flow step %d"
 argument_list|)
 argument_list|,
 name|warp_iter
@@ -6857,24 +6855,9 @@ operator|+
 literal|1
 argument_list|)
 expr_stmt|;
-name|gimp_progress_init
-argument_list|(
-name|string
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|string
-argument_list|)
-expr_stmt|;
 name|progress
 operator|=
 literal|0
-expr_stmt|;
-name|gimp_progress_update
-argument_list|(
-literal|0
-argument_list|)
 expr_stmt|;
 name|warp_one
 argument_list|(

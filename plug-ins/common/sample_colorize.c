@@ -341,7 +341,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3261350108
+DECL|struct|__anon29c7760b0108
 block|{
 DECL|member|dst_id
 name|gint32
@@ -410,7 +410,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3261350208
+DECL|struct|__anon29c7760b0208
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -518,7 +518,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3261350308
+DECL|struct|__anon29c7760b0308
 block|{
 DECL|member|color
 name|guchar
@@ -547,7 +547,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3261350408
+DECL|struct|__anon29c7760b0408
 block|{
 DECL|member|all_samples
 name|gint32
@@ -574,7 +574,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3261350508
+DECL|struct|__anon29c7760b0508
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -12912,7 +12912,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Sample Analyze..."
+literal|"Sample analyze"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -14544,7 +14544,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Remap Colorized..."
+literal|"Remap colorized"
 argument_list|)
 argument_list|)
 expr_stmt|;

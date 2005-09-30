@@ -99,7 +99,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba289180108
+DECL|struct|__anon2b27dac20108
 block|{
 DECL|member|colors
 name|GimpRGB
@@ -851,7 +851,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Adjusting Foreground/Background..."
+literal|"Adjusting FG-BG"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1013,7 +1013,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Mapping colors..."
+literal|"Mapping colors"
 argument_list|)
 argument_list|)
 expr_stmt|;

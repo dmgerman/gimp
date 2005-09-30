@@ -603,7 +603,7 @@ literal|"%s %s"
 argument_list|,
 name|_
 argument_list|(
-literal|"Connecting to server..."
+literal|"Connecting to server"
 argument_list|)
 argument_list|,
 name|timeout_msg
@@ -699,7 +699,7 @@ literal|"%s %s"
 argument_list|,
 name|_
 argument_list|(
-literal|"Opening URI..."
+literal|"Opening URI"
 argument_list|)
 argument_list|,
 name|timeout_msg
@@ -1041,7 +1041,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Downloading %s of image data..."
+literal|"Downloading %s of image data"
 argument_list|)
 argument_list|,
 name|memsize
@@ -1056,7 +1056,7 @@ name|g_strdup
 argument_list|(
 name|_
 argument_list|(
-literal|"Downloading unknown amount of image data..."
+literal|"Downloading unknown amount of image data"
 argument_list|)
 argument_list|)
 expr_stmt|;

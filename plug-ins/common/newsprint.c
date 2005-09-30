@@ -351,7 +351,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27bb393a0108
+DECL|struct|__anon28d219d60108
 block|{
 DECL|member|name
 specifier|const
@@ -611,7 +611,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27bb393a0208
+DECL|struct|__anon28d219d60208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -684,7 +684,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27bb393a0308
+DECL|struct|__anon28d219d60308
 block|{
 DECL|member|input_spi
 name|gdouble
@@ -718,7 +718,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27bb393a0408
+DECL|struct|__anon28d219d60408
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -825,7 +825,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27bb393a0508
+DECL|struct|__anon28d219d60508
 block|{
 DECL|member|pull_table
 name|GtkWidget
@@ -993,7 +993,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27bb393a0608
+DECL|struct|__anon28d219d60608
 block|{
 DECL|member|name
 specifier|const
@@ -2303,7 +2303,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Newsprint..."
+literal|"Newsprint"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -7065,7 +7065,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27bb393a0708
+DECL|struct|__anon28d219d60708
 block|{
 DECL|member|index
 name|gint

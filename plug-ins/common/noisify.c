@@ -80,7 +80,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2923f6960108
+DECL|struct|__anon2a3238a10108
 block|{
 DECL|member|independent
 name|gboolean
@@ -107,7 +107,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2923f6960208
+DECL|struct|__anon2a3238a10208
 block|{
 DECL|member|channels
 name|gint
@@ -1053,7 +1053,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Adding Noise..."
+literal|"Adding noise"
 argument_list|)
 argument_list|)
 expr_stmt|;

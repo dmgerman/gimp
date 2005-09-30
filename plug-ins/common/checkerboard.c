@@ -555,7 +555,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Adding Checkerboard..."
+literal|"Adding checkerboard"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -624,7 +624,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ed4cb00108
+DECL|struct|__anon2a1fbf250108
 block|{
 DECL|member|fg
 name|guchar

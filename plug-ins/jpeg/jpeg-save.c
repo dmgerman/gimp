@@ -140,7 +140,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b429dd70108
+DECL|struct|__anon2bafdcdd0108
 block|{
 DECL|member|cinfo
 name|struct
@@ -926,7 +926,7 @@ name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Saving '%s'..."
+literal|"Saving '%s'"
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
@@ -4801,7 +4801,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b429dd70208
+DECL|struct|__anon2bafdcdd0208
 block|{
 DECL|member|pub
 name|struct

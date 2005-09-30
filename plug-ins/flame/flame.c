@@ -139,7 +139,7 @@ end_define
 
 begin_struct
 struct|struct
-DECL|struct|__anon2798a76d0108
+DECL|struct|__anon2a0926120108
 block|{
 DECL|member|randomize
 name|gint
@@ -957,7 +957,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Drawing Flame..."
+literal|"Drawing flame"
 argument_list|)
 argument_list|)
 expr_stmt|;
