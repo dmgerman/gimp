@@ -343,15 +343,6 @@ argument_list|)
 block|,
 name|FOREIGN
 argument_list|(
-literal|"gimp-keyboard-shortcuts-dialog"
-argument_list|,
-name|TRUE
-argument_list|,
-name|TRUE
-argument_list|)
-block|,
-name|FOREIGN
-argument_list|(
 literal|"gimp-controller-editor-dialog"
 argument_list|,
 name|FALSE
