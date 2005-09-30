@@ -685,7 +685,7 @@ block|,
 block|{
 literal|"dialogs-keyboard-shortcuts"
 block|,
-name|NULL
+name|GIMP_STOCK_CHAR_PICKER
 block|,
 name|N_
 argument_list|(
