@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0dadf50103
+DECL|enum|__anon2af5e8ea0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1919,7 +1919,7 @@ end_function
 
 begin_function
 name|gdouble
-DECL|function|gimp_stroke_nearest_intersection_get (const GimpStroke * stroke,const GimpCoords * coords1,const GimpCoords * coords2,gdouble precision,GimpCoords * nearest,GimpAnchor ** ret_segment_start,GimpAnchor ** ret_segment_end,gdouble * ret_pos)
+DECL|function|gimp_stroke_nearest_intersection_get (const GimpStroke * stroke,const GimpCoords * coords1,const GimpCoords * direction,gdouble precision,GimpCoords * nearest,GimpAnchor ** ret_segment_start,GimpAnchor ** ret_segment_end,gdouble * ret_pos)
 name|gimp_stroke_nearest_intersection_get
 parameter_list|(
 specifier|const
@@ -1935,7 +1935,7 @@ parameter_list|,
 specifier|const
 name|GimpCoords
 modifier|*
-name|coords2
+name|direction
 parameter_list|,
 name|gdouble
 name|precision

@@ -973,7 +973,7 @@ parameter_list|,
 specifier|const
 name|GimpCoords
 modifier|*
-name|coords2
+name|direction
 parameter_list|,
 name|gdouble
 name|precision
