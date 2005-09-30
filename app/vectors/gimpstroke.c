@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af5e8ea0103
+DECL|enum|__anon2bcabe780103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1980,7 +1980,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|coords2
+name|direction
 operator|!=
 name|NULL
 argument_list|,
