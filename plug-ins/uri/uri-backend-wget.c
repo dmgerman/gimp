@@ -693,7 +693,7 @@ name|buf
 argument_list|)
 expr_stmt|;
 comment|/*  The fourth line is either the network request or an error  */
-name|gimp_progress_set_text
+name|gimp_progress_set_text_printf
 argument_list|(
 literal|"%s %s"
 argument_list|,
@@ -1065,7 +1065,7 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
-name|gimp_progress_set_text
+name|gimp_progress_set_text_printf
 argument_list|(
 literal|"%s %s"
 argument_list|,
@@ -1170,9 +1170,7 @@ operator|*
 literal|1024
 argument_list|)
 expr_stmt|;
-name|message
-operator|=
-name|g_strdup_printf
+name|gimp_progress_set_text_printf
 argument_list|(
 name|_
 argument_list|(
@@ -1182,22 +1180,12 @@ argument_list|,
 name|memsize
 argument_list|)
 expr_stmt|;
-name|g_free
-argument_list|(
-name|memsize
-argument_list|)
-expr_stmt|;
-name|gimp_progress_set_text
-argument_list|(
-name|message
-argument_list|)
-expr_stmt|;
 name|gimp_progress_pulse
 argument_list|()
 expr_stmt|;
 name|g_free
 argument_list|(
-name|message
+name|memsize
 argument_list|)
 expr_stmt|;
 block|}
