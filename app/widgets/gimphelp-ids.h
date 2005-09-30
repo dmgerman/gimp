@@ -2865,6 +2865,14 @@ value|"gimp-prefs-folders-themes"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_KEYBOARD_SHORTCUTS
+define|#
+directive|define
+name|GIMP_HELP_KEYBOARD_SHORTCUTS
+value|"gimp-help-keyboard-shortcuts"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_INDEXED_PALETTE_DIALOG
 define|#
 directive|define
