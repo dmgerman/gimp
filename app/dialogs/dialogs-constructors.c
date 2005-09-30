@@ -312,6 +312,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"keyboard-shortcuts-dialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"module-dialog.h"
 end_include
 
@@ -514,6 +520,31 @@ name|context
 operator|->
 name|gimp
 argument_list|)
+return|;
+block|}
+end_function
+
+begin_function
+name|GtkWidget
+modifier|*
+DECL|function|dialogs_keyboard_shortcuts_get (GimpDialogFactory * factory,GimpContext * context,gint preview_size)
+name|dialogs_keyboard_shortcuts_get
+parameter_list|(
+name|GimpDialogFactory
+modifier|*
+name|factory
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
+name|gint
+name|preview_size
+parameter_list|)
+block|{
+return|return
+name|keyboard_shortcuts_dialog_new
+argument_list|()
 return|;
 block|}
 end_function

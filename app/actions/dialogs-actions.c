@@ -683,6 +683,25 @@ name|GIMP_HELP_PREFS_DIALOG
 block|}
 block|,
 block|{
+literal|"dialogs-keyboard-shortcuts"
+block|,
+name|NULL
+block|,
+name|N_
+argument_list|(
+literal|"_Keyboard Shortcuts"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+literal|"gimp-keyboard-shortcuts-dialog"
+block|,
+name|GIMP_HELP_KEYBOARD_SHORTCUTS
+block|}
+block|,
+block|{
 literal|"dialogs-module-dialog"
 block|,
 name|GTK_STOCK_EXECUTE

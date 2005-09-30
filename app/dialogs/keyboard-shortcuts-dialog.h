@@ -21,12 +21,7 @@ name|GtkWidget
 modifier|*
 name|keyboard_shortcuts_dialog_new
 parameter_list|(
-name|GtkWidget
-modifier|*
-name|parent
-parameter_list|,
-name|GtkDialogFlags
-name|flags
+name|void
 parameter_list|)
 function_decl|;
 end_function_decl
