@@ -3281,7 +3281,7 @@ name|size
 argument_list|,
 name|_
 argument_list|(
-literal|"Creating Preview ..."
+literal|"Creating preview..."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3321,7 +3321,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Creating Preview ..."
+literal|"Creating preview..."
 argument_list|)
 argument_list|)
 expr_stmt|;

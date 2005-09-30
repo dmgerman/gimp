@@ -567,7 +567,7 @@ name|progress_text
 operator|=
 name|_
 argument_list|(
-literal|"Scaling..."
+literal|"Scaling"
 argument_list|)
 expr_stmt|;
 block|}

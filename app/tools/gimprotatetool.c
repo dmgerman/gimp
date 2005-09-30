@@ -596,7 +596,7 @@ name|progress_text
 operator|=
 name|_
 argument_list|(
-literal|"Rotating..."
+literal|"Rotating"
 argument_list|)
 expr_stmt|;
 block|}

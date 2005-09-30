@@ -497,7 +497,7 @@ name|progress_text
 operator|=
 name|_
 argument_list|(
-literal|"Perspective..."
+literal|"Perspective"
 argument_list|)
 expr_stmt|;
 block|}

@@ -395,7 +395,7 @@ name|progress
 argument_list|,
 name|_
 argument_list|(
-literal|"Foreground Extraction..."
+literal|"Foreground Extraction"
 argument_list|)
 argument_list|,
 name|FALSE

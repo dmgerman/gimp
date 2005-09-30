@@ -3878,7 +3878,7 @@ name|progress
 argument_list|,
 name|_
 argument_list|(
-literal|"Scaling..."
+literal|"Scaling"
 argument_list|)
 argument_list|,
 name|FALSE

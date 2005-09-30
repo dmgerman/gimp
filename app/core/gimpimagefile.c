@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3a78660103
+DECL|enum|__anon294828460103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -2272,7 +2272,7 @@ name|str
 argument_list|,
 name|_
 argument_list|(
-literal|"Loading preview ..."
+literal|"Loading preview..."
 argument_list|)
 argument_list|)
 expr_stmt|;

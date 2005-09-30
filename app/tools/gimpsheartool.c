@@ -581,7 +581,7 @@ name|progress_text
 operator|=
 name|_
 argument_list|(
-literal|"Shearing..."
+literal|"Shearing"
 argument_list|)
 expr_stmt|;
 block|}

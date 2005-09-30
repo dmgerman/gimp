@@ -855,7 +855,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Resizing..."
+literal|"Resizing"
 argument_list|)
 argument_list|,
 name|FALSE
@@ -1112,7 +1112,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Flipping..."
+literal|"Flipping"
 argument_list|)
 argument_list|,
 name|FALSE
@@ -1198,7 +1198,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Rotating..."
+literal|"Rotating"
 argument_list|)
 argument_list|,
 name|FALSE
@@ -1905,7 +1905,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Resizing..."
+literal|"Resizing"
 argument_list|)
 argument_list|,
 name|FALSE
@@ -2198,7 +2198,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Scaling..."
+literal|"Scaling"
 argument_list|)
 argument_list|,
 name|FALSE

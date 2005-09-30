@@ -1066,7 +1066,7 @@ name|progress
 argument_list|,
 name|_
 argument_list|(
-literal|"Flip..."
+literal|"Flipping"
 argument_list|)
 argument_list|,
 name|FALSE
@@ -1574,7 +1574,7 @@ name|progress
 argument_list|,
 name|_
 argument_list|(
-literal|"Flip..."
+literal|"Flipping"
 argument_list|)
 argument_list|,
 name|FALSE
@@ -2215,7 +2215,7 @@ name|progress
 argument_list|,
 name|_
 argument_list|(
-literal|"Perspective..."
+literal|"Perspective"
 argument_list|)
 argument_list|,
 name|FALSE
@@ -2849,7 +2849,7 @@ name|progress
 argument_list|,
 name|_
 argument_list|(
-literal|"Perspective..."
+literal|"Perspective"
 argument_list|)
 argument_list|,
 name|FALSE
@@ -3839,7 +3839,7 @@ name|progress
 argument_list|,
 name|_
 argument_list|(
-literal|"Rotating..."
+literal|"Rotating"
 argument_list|)
 argument_list|,
 name|FALSE
@@ -4362,7 +4362,7 @@ name|progress
 argument_list|,
 name|_
 argument_list|(
-literal|"Rotating..."
+literal|"Rotating"
 argument_list|)
 argument_list|,
 name|FALSE
@@ -4959,7 +4959,7 @@ name|progress
 argument_list|,
 name|_
 argument_list|(
-literal|"Scaling..."
+literal|"Scaling"
 argument_list|)
 argument_list|,
 name|FALSE
@@ -5517,7 +5517,7 @@ name|progress
 argument_list|,
 name|_
 argument_list|(
-literal|"Scaling..."
+literal|"Scaling"
 argument_list|)
 argument_list|,
 name|FALSE
@@ -6046,7 +6046,7 @@ name|progress
 argument_list|,
 name|_
 argument_list|(
-literal|"Shearing..."
+literal|"Shearing"
 argument_list|)
 argument_list|,
 name|FALSE
@@ -6520,7 +6520,7 @@ name|progress
 argument_list|,
 name|_
 argument_list|(
-literal|"Shearing..."
+literal|"Shearing"
 argument_list|)
 argument_list|,
 name|FALSE
@@ -7111,7 +7111,7 @@ name|progress
 argument_list|,
 name|_
 argument_list|(
-literal|"2D Transform..."
+literal|"2D Transform"
 argument_list|)
 argument_list|,
 name|FALSE
@@ -7703,7 +7703,7 @@ name|progress
 argument_list|,
 name|_
 argument_list|(
-literal|"2D Transform..."
+literal|"2D Transforming"
 argument_list|)
 argument_list|,
 name|FALSE
@@ -8424,7 +8424,7 @@ name|progress
 argument_list|,
 name|_
 argument_list|(
-literal|"2D Transform..."
+literal|"2D Transforming"
 argument_list|)
 argument_list|,
 name|FALSE
@@ -9122,7 +9122,7 @@ name|progress
 argument_list|,
 name|_
 argument_list|(
-literal|"2D Transform..."
+literal|"2D Transforming"
 argument_list|)
 argument_list|,
 name|FALSE

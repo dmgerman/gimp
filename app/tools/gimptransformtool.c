@@ -1139,7 +1139,7 @@ name|progress_text
 operator|=
 name|_
 argument_list|(
-literal|"Transforming..."
+literal|"Transforming"
 argument_list|)
 expr_stmt|;
 name|tr_tool

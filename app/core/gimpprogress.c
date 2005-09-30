@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ec00ba0103
+DECL|enum|__anon29666ba20103
 block|{
 DECL|enumerator|CANCEL
 name|CANCEL
@@ -272,7 +272,7 @@ name|message
 operator|=
 name|_
 argument_list|(
-literal|"Please wait..."
+literal|"Please wait"
 argument_list|)
 expr_stmt|;
 name|progress_iface
@@ -444,7 +444,7 @@ name|message
 operator|=
 name|_
 argument_list|(
-literal|"Please wait..."
+literal|"Please wait"
 argument_list|)
 expr_stmt|;
 name|progress_iface

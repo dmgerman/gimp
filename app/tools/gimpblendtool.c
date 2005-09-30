@@ -892,7 +892,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Blending..."
+literal|"Blending"
 argument_list|)
 argument_list|,
 name|FALSE

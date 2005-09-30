@@ -442,7 +442,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon29ff50f90103
+DECL|enum|__anon2bbe1f690103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1483,7 +1483,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ff50f90208
+DECL|struct|__anon2bbe1f690208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1560,7 +1560,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ff50f90308
+DECL|struct|__anon2bbe1f690308
 block|{
 DECL|member|ncolors
 name|long
@@ -1745,7 +1745,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ff50f90408
+DECL|struct|__anon2bbe1f690408
 block|{
 DECL|member|used_count
 name|signed
@@ -3323,7 +3323,7 @@ name|progress
 argument_list|,
 name|_
 argument_list|(
-literal|"Converting to indexed (stage 2)..."
+literal|"Converting to indexed (stage 2)"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3488,7 +3488,7 @@ name|progress
 argument_list|,
 name|_
 argument_list|(
-literal|"Converting to indexed (stage 3)..."
+literal|"Converting to indexed (stage 3)"
 argument_list|)
 argument_list|)
 expr_stmt|;

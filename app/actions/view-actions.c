@@ -2536,7 +2536,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Othe_r (%s) ..."
+literal|"Othe_r (%s)..."
 argument_list|)
 argument_list|,
 name|str

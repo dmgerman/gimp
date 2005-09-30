@@ -114,7 +114,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ad69280108
+DECL|struct|__anon2ab28b5a0108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -1267,7 +1267,7 @@ name|progress
 argument_list|,
 name|_
 argument_list|(
-literal|"Converting to indexed..."
+literal|"Converting to indexed"
 argument_list|)
 argument_list|,
 name|FALSE
