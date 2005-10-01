@@ -114,6 +114,24 @@ DECL|member|parent_class
 name|GObjectClass
 name|parent_class
 decl_stmt|;
+DECL|member|zoomed
+name|void
+function_decl|(
+modifier|*
+name|zoomed
+function_decl|)
+parameter_list|(
+name|GimpZoomModel
+modifier|*
+name|model
+parameter_list|,
+name|gdouble
+name|old_factor
+parameter_list|,
+name|gdouble
+name|new_factor
+parameter_list|)
+function_decl|;
 comment|/* Padding for future expansion */
 DECL|member|_gimp_reserved1
 name|void
