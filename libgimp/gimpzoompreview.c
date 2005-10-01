@@ -717,6 +717,11 @@ argument_list|(
 name|adj
 argument_list|)
 expr_stmt|;
+name|gtk_adjustment_value_changed
+argument_list|(
+name|adj
+argument_list|)
+expr_stmt|;
 name|adj
 operator|=
 name|gtk_range_get_adjustment
@@ -806,6 +811,11 @@ name|page_size
 argument_list|)
 expr_stmt|;
 name|gtk_adjustment_changed
+argument_list|(
+name|adj
+argument_list|)
+expr_stmt|;
+name|gtk_adjustment_value_changed
 argument_list|(
 name|adj
 argument_list|)
