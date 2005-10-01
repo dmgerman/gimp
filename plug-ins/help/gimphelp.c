@@ -1161,7 +1161,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29fc0ec60103
+DECL|enum|__anon2b4e73640103
 block|{
 DECL|enumerator|DOMAIN_START
 name|DOMAIN_START
@@ -1186,7 +1186,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fc0ec60208
+DECL|struct|__anon2b4e73640208
 block|{
 DECL|member|filename
 specifier|const
@@ -2753,18 +2753,9 @@ name|gchar
 modifier|*
 name|name
 init|=
-name|g_filename_to_utf8
+name|g_filename_display_name
 argument_list|(
 name|filename
-argument_list|,
-operator|-
-literal|1
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|)
 decl_stmt|;
 name|gchar

@@ -318,7 +318,7 @@ name|filename
 decl_stmt|;
 name|filename
 operator|=
-name|file_utils_uri_to_utf8_filename
+name|file_utils_uri_display_name
 argument_list|(
 name|uri
 argument_list|)

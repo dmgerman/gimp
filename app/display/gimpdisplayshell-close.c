@@ -356,7 +356,7 @@ return|return;
 block|}
 name|name
 operator|=
-name|file_utils_uri_to_utf8_basename
+name|file_utils_uri_display_basename
 argument_list|(
 name|gimp_image_get_uri
 argument_list|(
@@ -647,7 +647,7 @@ name|name
 decl_stmt|;
 name|name
 operator|=
-name|file_utils_uri_to_utf8_basename
+name|file_utils_uri_display_basename
 argument_list|(
 name|gimp_image_get_uri
 argument_list|(

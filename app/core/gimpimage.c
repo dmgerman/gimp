@@ -282,7 +282,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9ed7ea0103
+DECL|enum|__anon275e57600103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -361,7 +361,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9ed7ea0203
+DECL|enum|__anon275e57600203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4567,7 +4567,7 @@ argument_list|)
 expr_stmt|;
 name|basename
 operator|=
-name|file_utils_uri_to_utf8_basename
+name|file_utils_uri_display_basename
 argument_list|(
 name|uri
 argument_list|)
@@ -4579,7 +4579,7 @@ condition|)
 operator|*
 name|tooltip
 operator|=
-name|file_utils_uri_to_utf8_filename
+name|file_utils_uri_display_name
 argument_list|(
 name|uri
 argument_list|)

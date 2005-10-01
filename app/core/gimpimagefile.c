@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon294828460103
+DECL|enum|__anon2bf4cb960103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -1925,7 +1925,7 @@ name|desc
 decl_stmt|;
 name|filename
 operator|=
-name|file_utils_uri_to_utf8_filename
+name|file_utils_uri_display_name
 argument_list|(
 name|thumbnail
 operator|->
@@ -1973,7 +1973,7 @@ block|}
 block|}
 name|basename
 operator|=
-name|file_utils_uri_to_utf8_basename
+name|file_utils_uri_display_basename
 argument_list|(
 name|thumbnail
 operator|->

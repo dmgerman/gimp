@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b4a5ef0103
+DECL|enum|__anon28eabaac0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1375,7 +1375,7 @@ name|name
 expr_stmt|;
 name|basename
 operator|=
-name|file_utils_uri_to_utf8_basename
+name|file_utils_uri_display_basename
 argument_list|(
 name|uri
 argument_list|)

@@ -1874,7 +1874,7 @@ argument_list|)
 expr_stmt|;
 name|filename
 operator|=
-name|file_utils_uri_to_utf8_filename
+name|file_utils_uri_display_name
 argument_list|(
 name|uri
 argument_list|)
@@ -3089,7 +3089,7 @@ argument_list|)
 expr_stmt|;
 name|basename
 operator|=
-name|file_utils_uri_to_utf8_basename
+name|file_utils_uri_display_basename
 argument_list|(
 name|s
 operator|->

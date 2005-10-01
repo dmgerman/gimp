@@ -2170,14 +2170,12 @@ block|{
 name|gchar
 modifier|*
 name|basename
-decl_stmt|;
-name|basename
-operator|=
-name|file_utils_uri_to_utf8_basename
+init|=
+name|file_utils_uri_display_basename
 argument_list|(
 name|uri
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL
@@ -3049,7 +3047,7 @@ name|thumbnail
 expr_stmt|;
 name|basename
 operator|=
-name|file_utils_uri_to_utf8_basename
+name|file_utils_uri_display_basename
 argument_list|(
 name|uri
 argument_list|)

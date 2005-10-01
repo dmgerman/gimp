@@ -570,7 +570,7 @@ name|gchar
 modifier|*
 name|filename
 init|=
-name|file_utils_uri_to_utf8_filename
+name|file_utils_uri_display_name
 argument_list|(
 name|uri
 argument_list|)
