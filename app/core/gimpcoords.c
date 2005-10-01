@@ -606,7 +606,7 @@ literal|0
 decl_stmt|;
 name|dist
 operator|+=
-name|fabs
+name|ABS
 argument_list|(
 name|a
 operator|->
@@ -619,7 +619,7 @@ argument_list|)
 expr_stmt|;
 name|dist
 operator|+=
-name|fabs
+name|ABS
 argument_list|(
 name|a
 operator|->
@@ -632,7 +632,7 @@ argument_list|)
 expr_stmt|;
 name|dist
 operator|+=
-name|fabs
+name|ABS
 argument_list|(
 name|a
 operator|->
@@ -645,7 +645,7 @@ argument_list|)
 expr_stmt|;
 name|dist
 operator|+=
-name|fabs
+name|ABS
 argument_list|(
 name|a
 operator|->
@@ -662,7 +662,7 @@ name|INPUT_RESOLUTION
 expr_stmt|;
 name|dist
 operator|+=
-name|fabs
+name|ABS
 argument_list|(
 name|a
 operator|->
@@ -675,7 +675,7 @@ argument_list|)
 expr_stmt|;
 name|dist
 operator|+=
-name|fabs
+name|ABS
 argument_list|(
 name|a
 operator|->
