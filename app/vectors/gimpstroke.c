@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c471750103
+DECL|enum|__anon2bf137cc0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2005,7 +2005,7 @@ argument_list|(
 name|stroke
 argument_list|)
 operator|->
-name|nearest_tangent_get
+name|nearest_intersection_get
 condition|)
 return|return
 name|GIMP_STROKE_GET_CLASS
@@ -2013,7 +2013,7 @@ argument_list|(
 name|stroke
 argument_list|)
 operator|->
-name|nearest_tangent_get
+name|nearest_intersection_get
 argument_list|(
 name|stroke
 argument_list|,
