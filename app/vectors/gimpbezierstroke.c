@@ -4506,7 +4506,7 @@ for|for
 control|(
 name|i
 operator|=
-literal|1
+literal|2
 init|;
 name|i
 operator|<
@@ -4528,8 +4528,6 @@ argument_list|,
 name|GimpCoords
 argument_list|,
 name|i
-operator|+
-literal|1
 argument_list|)
 argument_list|,
 operator|&
@@ -4540,6 +4538,8 @@ argument_list|,
 name|GimpCoords
 argument_list|,
 name|i
+operator|-
+literal|1
 argument_list|)
 argument_list|,
 operator|&
