@@ -72,10 +72,10 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-DECL|member|zoom
+DECL|member|model
 name|GimpZoomModel
 modifier|*
-name|zoom
+name|model
 decl_stmt|;
 DECL|member|extents
 name|GdkRectangle
@@ -367,7 +367,7 @@ argument_list|)
 decl_stmt|;
 name|priv
 operator|->
-name|zoom
+name|model
 operator|=
 name|gimp_zoom_model_new
 argument_list|()
@@ -378,7 +378,7 @@ name|GIMP_ZOOM_MODEL
 argument_list|(
 name|priv
 operator|->
-name|zoom
+name|model
 argument_list|)
 argument_list|,
 literal|1.0
@@ -390,7 +390,7 @@ name|g_signal_connect_swapped
 argument_list|(
 name|priv
 operator|->
-name|zoom
+name|model
 argument_list|,
 literal|"zoomed"
 argument_list|,
@@ -454,7 +454,7 @@ comment|/* label */
 if|#
 directive|if
 literal|0
-block|{     GtkWidget *label;      label = gimp_prop_label_new (G_OBJECT (priv->zoom), "fraction");     gtk_misc_set_padding (GTK_MISC (label), 3, 3);     gtk_box_pack_start (GTK_BOX (button_bar), label, FALSE, FALSE, 0);     gtk_widget_show (label);   }
+block|{     GtkWidget *label;      label = gimp_prop_label_new (G_OBJECT (priv->model), "fraction");     gtk_misc_set_padding (GTK_MISC (label), 3, 3);     gtk_box_pack_start (GTK_BOX (button_bar), label, FALSE, FALSE, 0);     gtk_widget_show (label);   }
 endif|#
 directive|endif
 comment|/* zoom out */
@@ -464,7 +464,7 @@ name|gimp_zoom_button_new
 argument_list|(
 name|priv
 operator|->
-name|zoom
+name|model
 argument_list|,
 name|GIMP_ZOOM_OUT
 argument_list|,
@@ -499,7 +499,7 @@ name|gimp_zoom_button_new
 argument_list|(
 name|priv
 operator|->
-name|zoom
+name|model
 argument_list|,
 name|GIMP_ZOOM_IN
 argument_list|,
@@ -952,7 +952,7 @@ name|gimp_zoom_model_get_factor
 argument_list|(
 name|priv
 operator|->
-name|zoom
+name|model
 argument_list|)
 expr_stmt|;
 name|gimp_zoom_preview_set_adjustments
@@ -1220,7 +1220,7 @@ name|gimp_zoom_model_get_factor
 argument_list|(
 name|priv
 operator|->
-name|zoom
+name|model
 argument_list|)
 expr_stmt|;
 operator|*
@@ -1410,7 +1410,7 @@ name|gimp_zoom_model_get_factor
 argument_list|(
 name|priv
 operator|->
-name|zoom
+name|model
 argument_list|)
 expr_stmt|;
 name|width
@@ -2454,6 +2454,36 @@ return|return
 name|priv
 operator|->
 name|drawable
+return|;
+block|}
+end_function
+
+begin_function
+name|gdouble
+DECL|function|gimp_zoom_preview_get_factor (GimpZoomPreview * preview)
+name|gimp_zoom_preview_get_factor
+parameter_list|(
+name|GimpZoomPreview
+modifier|*
+name|preview
+parameter_list|)
+block|{
+name|GimpZoomPreviewPrivate
+modifier|*
+name|priv
+init|=
+name|GIMP_ZOOM_PREVIEW_GET_PRIVATE
+argument_list|(
+name|preview
+argument_list|)
+decl_stmt|;
+return|return
+name|gimp_zoom_model_get_factor
+argument_list|(
+name|priv
+operator|->
+name|model
+argument_list|)
 return|;
 block|}
 end_function

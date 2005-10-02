@@ -227,6 +227,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|gdouble
+name|gimp_zoom_preview_get_factor
+parameter_list|(
+name|GimpZoomPreview
+modifier|*
+name|preview
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_macro
 name|G_END_DECLS
 end_macro
