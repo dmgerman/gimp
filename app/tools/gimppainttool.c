@@ -3520,10 +3520,6 @@ name|pick_mode
 condition|)
 block|{
 case|case
-name|GIMP_COLOR_PICK_MODE_NONE
-case|:
-break|break;
-case|case
 name|GIMP_COLOR_PICK_MODE_FOREGROUND
 case|:
 name|gimp_context_set_foreground
@@ -3544,6 +3540,8 @@ argument_list|,
 name|color
 argument_list|)
 expr_stmt|;
+break|break;
+default|default:
 break|break;
 block|}
 block|}
