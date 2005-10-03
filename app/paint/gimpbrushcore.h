@@ -231,6 +231,10 @@ DECL|member|cache_invalid
 name|gboolean
 name|cache_invalid
 decl_stmt|;
+DECL|member|jitter
+name|gdouble
+name|jitter
+decl_stmt|;
 comment|/*  don't use these...  */
 DECL|member|brush_bound_segs
 name|BoundSeg
