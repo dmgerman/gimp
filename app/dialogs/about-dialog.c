@@ -92,6 +92,14 @@ value|"This program is free software; you can redistribute it and/or modify\n" \
 end_define
 
 begin_define
+DECL|macro|NAME
+define|#
+directive|define
+name|NAME
+value|"GIMP"
+end_define
+
+begin_define
 DECL|macro|COMMENTS
 define|#
 directive|define
@@ -126,7 +134,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c49760a0108
+DECL|struct|__anon2926425b0108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -462,6 +470,10 @@ argument_list|,
 literal|"window-position"
 argument_list|,
 name|GTK_WIN_POS_CENTER
+argument_list|,
+literal|"name"
+argument_list|,
+name|NAME
 argument_list|,
 literal|"version"
 argument_list|,
