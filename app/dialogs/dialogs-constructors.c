@@ -544,7 +544,11 @@ parameter_list|)
 block|{
 return|return
 name|keyboard_shortcuts_dialog_new
-argument_list|()
+argument_list|(
+name|context
+operator|->
+name|gimp
+argument_list|)
 return|;
 block|}
 end_function
