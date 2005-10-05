@@ -2222,6 +2222,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_zoom_preview_new:  * @drawable: a #GimpDrawable  *  * Creates a new #GimpZoomPreview widget for @drawable.  *  * Since: GIMP 2.4  **/
+end_comment
+
 begin_function
 name|GtkWidget
 modifier|*
@@ -2430,6 +2434,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_zoom_get_drawable:  * @preview: a #GimpZoomPreview widget  *  * Return Value: the #GimpDrawable that was passed to gimp_zoom_preview_new().  *  * Since: GIMP 2.4  **/
+end_comment
+
 begin_function
 name|GimpDrawable
 modifier|*
@@ -2457,6 +2465,10 @@ name|drawable
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_zoom_get_factor:  * @preview: a #GimpZoomPreview widget  *  * Return Value: the current zoom factor  *  * Since: GIMP 2.4  **/
+end_comment
 
 begin_function
 name|gdouble

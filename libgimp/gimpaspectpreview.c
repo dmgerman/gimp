@@ -778,6 +778,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_aspect_preview_new:  * @drawable: a #GimpDrawable  * @toggle:   pointer to a #gboolean variable to sync with the "Preview"  *            check-button or %NULL  *  * Creates a new #GimpAspectPreview widget for @drawable. See also  * gimp_drawable_preview_new().  *  * Since: GIMP 2.2  **/
+end_comment
+
 begin_function
 name|GtkWidget
 modifier|*
