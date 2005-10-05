@@ -83,7 +83,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon288a34120103
+DECL|enum|__anon2bcf32d20103
 block|{
 DECL|enumerator|SELECTION_CHANGED
 name|SELECTION_CHANGED
@@ -100,7 +100,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon288a34120203
+DECL|enum|__anon2bcf32d20203
 block|{
 DECL|enumerator|SEARCH_TYPE_ALL
 name|SEARCH_TYPE_ALL
@@ -133,7 +133,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon288a34120303
+DECL|enum|__anon2bcf32d20303
 block|{
 DECL|enumerator|COLUMN_PROC_NAME
 name|COLUMN_PROC_NAME
@@ -1358,12 +1358,51 @@ name|gchar
 modifier|*
 name|str
 decl_stmt|;
-if|if
+switch|switch
 condition|(
 name|search_type
-operator|==
-name|SEARCH_TYPE_NAME
 condition|)
+block|{
+case|case
+name|SEARCH_TYPE_ALL
+case|:
+name|gimp_browser_show_message
+argument_list|(
+name|browser
+argument_list|,
+name|_
+argument_list|(
+literal|"Searching"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_procedural_db_query
+argument_list|(
+literal|".*"
+argument_list|,
+literal|".*"
+argument_list|,
+literal|".*"
+argument_list|,
+literal|".*"
+argument_list|,
+literal|".*"
+argument_list|,
+literal|".*"
+argument_list|,
+literal|".*"
+argument_list|,
+operator|&
+name|num_procs
+argument_list|,
+operator|&
+name|proc_list
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|SEARCH_TYPE_NAME
+case|:
 block|{
 name|GString
 modifier|*
@@ -1387,7 +1426,7 @@ name|browser
 argument_list|,
 name|_
 argument_list|(
-literal|"Searching by name - please wait"
+literal|"Searching by name"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1466,21 +1505,17 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
-elseif|else
-if|if
-condition|(
-name|search_type
-operator|==
+break|break;
+case|case
 name|SEARCH_TYPE_BLURB
-condition|)
-block|{
+case|:
 name|gimp_browser_show_message
 argument_list|(
 name|browser
 argument_list|,
 name|_
 argument_list|(
-literal|"Searching by description - please wait"
+literal|"Searching by description"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1507,22 +1542,17 @@ operator|&
 name|proc_list
 argument_list|)
 expr_stmt|;
-block|}
-elseif|else
-if|if
-condition|(
-name|search_type
-operator|==
+break|break;
+case|case
 name|SEARCH_TYPE_HELP
-condition|)
-block|{
+case|:
 name|gimp_browser_show_message
 argument_list|(
 name|browser
 argument_list|,
 name|_
 argument_list|(
-literal|"Searching by help - please wait"
+literal|"Searching by help"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1549,22 +1579,17 @@ operator|&
 name|proc_list
 argument_list|)
 expr_stmt|;
-block|}
-elseif|else
-if|if
-condition|(
-name|search_type
-operator|==
+break|break;
+case|case
 name|SEARCH_TYPE_AUTHOR
-condition|)
-block|{
+case|:
 name|gimp_browser_show_message
 argument_list|(
 name|browser
 argument_list|,
 name|_
 argument_list|(
-literal|"Searching by author - please wait"
+literal|"Searching by author"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1591,22 +1616,17 @@ operator|&
 name|proc_list
 argument_list|)
 expr_stmt|;
-block|}
-elseif|else
-if|if
-condition|(
-name|search_type
-operator|==
+break|break;
+case|case
 name|SEARCH_TYPE_COPYRIGHT
-condition|)
-block|{
+case|:
 name|gimp_browser_show_message
 argument_list|(
 name|browser
 argument_list|,
 name|_
 argument_list|(
-literal|"Searching by copyright - please wait"
+literal|"Searching by copyright"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1633,22 +1653,17 @@ operator|&
 name|proc_list
 argument_list|)
 expr_stmt|;
-block|}
-elseif|else
-if|if
-condition|(
-name|search_type
-operator|==
+break|break;
+case|case
 name|SEARCH_TYPE_DATE
-condition|)
-block|{
+case|:
 name|gimp_browser_show_message
 argument_list|(
 name|browser
 argument_list|,
 name|_
 argument_list|(
-literal|"Searching by date - please wait"
+literal|"Searching by date"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1675,22 +1690,17 @@ operator|&
 name|proc_list
 argument_list|)
 expr_stmt|;
-block|}
-elseif|else
-if|if
-condition|(
-name|search_type
-operator|==
+break|break;
+case|case
 name|SEARCH_TYPE_PROC_TYPE
-condition|)
-block|{
+case|:
 name|gimp_browser_show_message
 argument_list|(
 name|browser
 argument_list|,
 name|_
 argument_list|(
-literal|"Searching by type - please wait"
+literal|"Searching by type"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1717,42 +1727,7 @@ operator|&
 name|proc_list
 argument_list|)
 expr_stmt|;
-block|}
-else|else
-block|{
-name|gimp_browser_show_message
-argument_list|(
-name|browser
-argument_list|,
-name|_
-argument_list|(
-literal|"Searching - please wait"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_procedural_db_query
-argument_list|(
-literal|".*"
-argument_list|,
-literal|".*"
-argument_list|,
-literal|".*"
-argument_list|,
-literal|".*"
-argument_list|,
-literal|".*"
-argument_list|,
-literal|".*"
-argument_list|,
-literal|".*"
-argument_list|,
-operator|&
-name|num_procs
-argument_list|,
-operator|&
-name|proc_list
-argument_list|)
-expr_stmt|;
+break|break;
 block|}
 if|if
 condition|(
@@ -1773,7 +1748,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"%d Procedures"
+literal|"%d procedures"
 argument_list|)
 argument_list|,
 name|num_procs

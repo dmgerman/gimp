@@ -87,7 +87,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a676190103
+DECL|enum|__anon2b04a3330103
 block|{
 DECL|enumerator|LIST_COLUMN_NAME
 name|LIST_COLUMN_NAME
@@ -112,7 +112,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a676190203
+DECL|enum|__anon2b04a3330203
 block|{
 DECL|enumerator|TREE_COLUMN_PATH_NAME
 name|TREE_COLUMN_PATH_NAME
@@ -138,7 +138,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a676190308
+DECL|struct|__anon2b04a3330308
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -169,7 +169,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a676190408
+DECL|struct|__anon2b04a3330408
 block|{
 DECL|member|menu
 name|gchar
@@ -1271,7 +1271,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Searching by name - please wait"
+literal|"Searching by name"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1339,7 +1339,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"%d Plug-ins"
+literal|"%d plug-ins"
 argument_list|)
 argument_list|,
 name|num_plugins
@@ -1367,28 +1367,18 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
-case|case
-literal|1
-case|:
-name|str
-operator|=
-name|g_strdup
-argument_list|(
-name|_
-argument_list|(
-literal|"1 plug-in matches your query"
-argument_list|)
-argument_list|)
-expr_stmt|;
-break|break;
 default|default:
 name|str
 operator|=
 name|g_strdup_printf
 argument_list|(
-name|_
+name|ngettext
 argument_list|(
+literal|"%d plug-in matches your query"
+argument_list|,
 literal|"%d plug-ins match your query"
+argument_list|,
+name|num_plugins
 argument_list|)
 argument_list|,
 name|num_plugins

@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27de33d50103
+DECL|enum|__anon293370bc0103
 block|{
 DECL|enumerator|SEARCH
 name|SEARCH
@@ -505,7 +505,10 @@ name|count_label
 operator|=
 name|gtk_label_new
 argument_list|(
-literal|"0 Matches"
+name|_
+argument_list|(
+literal|"No matches"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -1088,14 +1091,35 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gimp_browser_set_widget
-argument_list|(
-name|browser
-argument_list|,
+name|GtkWidget
+modifier|*
+name|label
+init|=
 name|gtk_label_new
 argument_list|(
 name|message
 argument_list|)
+decl_stmt|;
+name|gimp_label_set_attributes
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
+name|PANGO_ATTR_STYLE
+argument_list|,
+name|PANGO_STYLE_ITALIC
+argument_list|,
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
+name|gimp_browser_set_widget
+argument_list|(
+name|browser
+argument_list|,
+name|label
 argument_list|)
 expr_stmt|;
 block|}
