@@ -612,7 +612,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"If close these files now, "
+literal|"If you close these images now, "
 literal|"changes will be lost."
 argument_list|)
 argument_list|)
