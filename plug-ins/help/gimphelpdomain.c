@@ -662,11 +662,6 @@ name|error
 argument_list|)
 condition|)
 block|{
-specifier|const
-name|gchar
-modifier|*
-name|msg
-decl_stmt|;
 if|if
 condition|(
 name|error
@@ -675,26 +670,34 @@ name|code
 operator|==
 name|G_FILE_ERROR_NOENT
 condition|)
-name|msg
-operator|=
+block|{
+name|g_message
+argument_list|(
+literal|"%s\n\n%s"
+argument_list|,
 name|_
 argument_list|(
-literal|"The GIMP help files are not installed."
+literal|"The GIMP help files are not found."
+argument_list|)
+argument_list|,
+name|_
+argument_list|(
+literal|"Please install the additional help package or use "
+literal|"the online user manual at http://docs.gimp.org/."
+argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 else|else
-name|msg
-operator|=
-name|_
-argument_list|(
-literal|"There is a problem with the GIMP help files."
-argument_list|)
-expr_stmt|;
+block|{
 name|g_message
 argument_list|(
 literal|"%s\n\n%s\n\n%s"
 argument_list|,
-name|msg
+name|_
+argument_list|(
+literal|"There is a problem with the GIMP help files."
+argument_list|)
 argument_list|,
 name|error
 operator|->
@@ -706,6 +709,7 @@ literal|"Please check your installation."
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 name|g_error_free
 argument_list|(
 name|error
@@ -1161,7 +1165,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b4e73640103
+DECL|enum|__anon28de1db40103
 block|{
 DECL|enumerator|DOMAIN_START
 name|DOMAIN_START
@@ -1186,7 +1190,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4e73640208
+DECL|struct|__anon28de1db40208
 block|{
 DECL|member|filename
 specifier|const
