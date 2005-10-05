@@ -809,7 +809,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_canonicalize_identifier:  * @identifier: The identifier string to canonicalize.  *  * Turns any input string into a canonicalized string.  *  * Canonical identifiers are e.g. expected by the PDB for procedure  * and parameter names.  *  * Every character of the input string that is not either '-', 'a-z',  * 'A-Z' or '0-9' will be replaced by a '-'.  *  * Return value: The canonicalized identifier. This is a newly  *               allocated string that should be freed with g_free()  *               when no longer needed.  **/
+comment|/**  * gimp_canonicalize_identifier:  * @identifier: The identifier string to canonicalize.  *  * Turns any input string into a canonicalized string.  *  * Canonical identifiers are e.g. expected by the PDB for procedure  * and parameter names. Every character of the input string that is  * not either '-', 'a-z', 'A-Z' or '0-9' will be replaced by a '-'.  *  * Return value: The canonicalized identifier. This is a newly  *               allocated string that should be freed with g_free()  *               when no longer needed.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
