@@ -4883,7 +4883,7 @@ name|set_preset_description_text
 argument_list|(
 name|_
 argument_list|(
-literal|"The Gimpressionist Defaults"
+literal|"Gimpressionist Defaults"
 argument_list|)
 argument_list|)
 expr_stmt|;
