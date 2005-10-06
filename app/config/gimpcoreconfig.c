@@ -254,12 +254,12 @@ DECL|macro|DEFAULT_COMMENT
 define|#
 directive|define
 name|DEFAULT_COMMENT
-value|"Created with The GIMP"
+value|"Created with GIMP"
 end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a5af8d0103
+DECL|enum|__anon2b8cab950103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

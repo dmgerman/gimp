@@ -877,10 +877,7 @@ name|xsvals
 operator|.
 name|comment
 argument_list|,
-name|_
-argument_list|(
-literal|"Created with The GIMP"
-argument_list|)
+literal|"Created with GIMP"
 argument_list|,
 name|MAX_COMMENT
 argument_list|)
