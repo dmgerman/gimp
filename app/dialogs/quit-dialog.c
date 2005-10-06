@@ -322,7 +322,7 @@ name|do_quit
 condition|?
 name|_
 argument_list|(
-literal|"Quit The GIMP"
+literal|"Quit GIMP"
 argument_list|)
 else|:
 name|_
