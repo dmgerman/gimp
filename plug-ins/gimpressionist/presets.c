@@ -3220,10 +3220,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|create_save_preset (void)
+DECL|function|create_save_preset (GtkWidget * parent)
 name|create_save_preset
 parameter_list|(
-name|void
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 block|{
 specifier|static
@@ -3277,13 +3279,16 @@ argument_list|)
 argument_list|,
 literal|"gimpressionist"
 argument_list|,
-name|NULL
+name|gtk_widget_get_toplevel
+argument_list|(
+name|parent
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-name|HELP_ID
+name|PLUG_IN_NAME
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
@@ -4969,9 +4974,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|presets_list_select_preset (GtkTreeSelection * selection,gpointer data)
 specifier|static
 name|void
+DECL|function|presets_list_select_preset (GtkTreeSelection * selection,gpointer data)
 name|presets_list_select_preset
 parameter_list|(
 name|GtkTreeSelection
@@ -5043,7 +5048,7 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-comment|/* TODO : Maybe make the factory defaults behavior in regards        * to the preset's object name and filename more robust?        * */
+comment|/* TODO : Maybe make the factory defaults behavior in regards        * to the preset's object name and filename more robust?        *        */
 if|if
 condition|(
 name|strcmp
@@ -5199,7 +5204,7 @@ name|gtk_widget_set_size_request
 argument_list|(
 name|swin
 argument_list|,
-literal|150
+literal|200
 argument_list|,
 operator|-
 literal|1
@@ -5456,7 +5461,7 @@ name|gtk_widget_set_size_request
 argument_list|(
 name|tmpw
 argument_list|,
-literal|150
+literal|200
 argument_list|,
 operator|-
 literal|1
@@ -5869,7 +5874,7 @@ name|gtk_widget_set_size_request
 argument_list|(
 name|tmpw
 argument_list|,
-literal|200
+literal|240
 argument_list|,
 operator|-
 literal|1

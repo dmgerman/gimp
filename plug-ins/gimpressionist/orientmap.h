@@ -16,7 +16,9 @@ begin_function_decl
 name|void
 name|create_orientmap_dialog
 parameter_list|(
-name|void
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 function_decl|;
 end_function_decl

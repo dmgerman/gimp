@@ -1350,6 +1350,18 @@ name|pcvals
 operator|.
 name|general_shadow_blur
 decl_stmt|;
+name|atmp
+operator|.
+name|col
+operator|=
+literal|0
+expr_stmt|;
+name|atmp
+operator|.
+name|width
+operator|=
+literal|0
+expr_stmt|;
 name|tmp
 operator|=
 operator|*
@@ -7334,7 +7346,7 @@ name|preview_set_button_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Update"
+literal|"_Update"
 argument_list|)
 argument_list|)
 expr_stmt|;

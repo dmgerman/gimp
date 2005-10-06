@@ -408,10 +408,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|show_about (void)
+DECL|function|show_about (GtkWidget * parent)
 name|show_about
 parameter_list|(
-name|void
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 block|{
 specifier|static
@@ -466,18 +468,21 @@ name|gimp_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"The GIMPressionist"
+literal|"About GIMPressionist"
 argument_list|)
 argument_list|,
 literal|"gimpressionist"
 argument_list|,
-name|NULL
+name|gtk_widget_get_toplevel
+argument_list|(
+name|parent
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-name|HELP_ID
+name|NULL
 argument_list|,
 name|GTK_STOCK_CLOSE
 argument_list|,
@@ -746,7 +751,9 @@ case|case
 name|RESPONSE_ABOUT
 case|:
 name|show_about
-argument_list|()
+argument_list|(
+name|widget
+argument_list|)
 expr_stmt|;
 break|break;
 case|case
@@ -813,7 +820,7 @@ name|gimp_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Gimpressionist"
+literal|"GIMPressionist"
 argument_list|)
 argument_list|,
 literal|"gimpressionist"
@@ -824,7 +831,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-name|HELP_ID
+name|PLUG_IN_NAME
 argument_list|,
 name|GTK_STOCK_ABOUT
 argument_list|,

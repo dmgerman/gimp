@@ -76,28 +76,29 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-DECL|function|preview_set_button_label (gchar * text)
 name|void
+DECL|function|preview_set_button_label (const gchar * text)
 name|preview_set_button_label
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|text
 parameter_list|)
 block|{
-name|gtk_label_set_text
-argument_list|(
-name|GTK_LABEL
-argument_list|(
-name|GTK_BIN
+name|g_object_set
 argument_list|(
 name|previewbutton
-argument_list|)
-operator|->
-name|child
-argument_list|)
+argument_list|,
+literal|"label"
 argument_list|,
 name|text
+argument_list|,
+literal|"use-underline"
+argument_list|,
+name|TRUE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}

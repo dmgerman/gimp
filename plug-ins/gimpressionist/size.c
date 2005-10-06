@@ -227,10 +227,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|create_sizemap_dialog_helper (void)
+DECL|function|create_sizemap_dialog_helper (GtkWidget * widget)
 name|create_sizemap_dialog_helper
 parameter_list|(
-name|void
+name|GtkWidget
+modifier|*
+name|widget
 parameter_list|)
 block|{
 name|gtk_toggle_button_set_active
@@ -247,7 +249,9 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 name|create_sizemap_dialog
-argument_list|()
+argument_list|(
+name|widget
+argument_list|)
 expr_stmt|;
 block|}
 end_function

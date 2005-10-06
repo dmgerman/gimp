@@ -2651,10 +2651,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|create_orientmap_dialog (void)
+DECL|function|create_orientmap_dialog (GtkWidget * parent)
 name|create_orientmap_dialog
 parameter_list|(
-name|void
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 block|{
 name|GtkWidget
@@ -2717,13 +2719,16 @@ argument_list|)
 argument_list|,
 literal|"gimpressionist"
 argument_list|,
-name|NULL
+name|gtk_widget_get_toplevel
+argument_list|(
+name|parent
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-name|HELP_ID
+name|PLUG_IN_NAME
 argument_list|,
 name|GTK_STOCK_APPLY
 argument_list|,
