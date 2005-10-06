@@ -84,7 +84,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bdbebbc0103
+DECL|enum|__anon2c514a9f0103
 block|{
 DECL|enumerator|BLUR_IIR
 name|BLUR_IIR
@@ -100,7 +100,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bdbebbc0208
+DECL|struct|__anon2c514a9f0208
 block|{
 DECL|member|horizontal
 name|gdouble
@@ -2668,6 +2668,21 @@ name|preview_buffer2
 init|=
 name|NULL
 decl_stmt|;
+comment|/*    * IIR goes wrong if the blur radius is less than 1, so we silently    * switch to RLE in this case.  See bug #315953    */
+if|if
+condition|(
+name|horz
+operator|<=
+literal|1.0
+operator|||
+name|vert
+operator|<=
+literal|1.0
+condition|)
+name|method
+operator|=
+name|BLUR_RLE
+expr_stmt|;
 if|if
 condition|(
 name|horz
