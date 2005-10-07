@@ -273,13 +273,13 @@ name|gimage
 decl_stmt|;
 name|gdouble
 name|xspacing
+init|=
+literal|0
 decl_stmt|;
 name|gdouble
 name|yspacing
-decl_stmt|;
-name|GimpGrid
-modifier|*
-name|grid
+init|=
+literal|0
 decl_stmt|;
 name|gimage
 operator|=
@@ -314,13 +314,15 @@ condition|(
 name|success
 condition|)
 block|{
+name|GimpGrid
+modifier|*
 name|grid
-operator|=
+init|=
 name|gimp_image_get_grid
 argument_list|(
 name|gimage
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|grid
@@ -450,9 +452,9 @@ literal|"Gets the spacing of an image's grid."
 block|,
 literal|"This procedure retrieves the horizontal and vertical spacing of an image's grid. It takes the image as parameter."
 block|,
-literal|"Sylvain FORET"
+literal|"Sylvain Foret"
 block|,
-literal|"Sylvain FORET"
+literal|"Sylvain Foret"
 block|,
 literal|"2005"
 block|,
@@ -516,10 +518,6 @@ decl_stmt|;
 name|gdouble
 name|yspacing
 decl_stmt|;
-name|GimpGrid
-modifier|*
-name|grid
-decl_stmt|;
 name|gimage
 operator|=
 name|gimp_image_get_by_ID
@@ -575,18 +573,19 @@ condition|(
 name|success
 condition|)
 block|{
+name|GimpGrid
+modifier|*
 name|grid
-operator|=
+init|=
 name|gimp_image_get_grid
 argument_list|(
 name|gimage
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|grid
 condition|)
-block|{
 name|g_object_set
 argument_list|(
 name|grid
@@ -602,7 +601,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-block|}
 else|else
 name|success
 operator|=
@@ -671,9 +669,9 @@ literal|"Sets the spacing of an image's grid."
 block|,
 literal|"This procedure sets the horizontal and vertical spacing of an image's grid."
 block|,
-literal|"Sylvain FORET"
+literal|"Sylvain Foret"
 block|,
-literal|"Sylvain FORET"
+literal|"Sylvain Foret"
 block|,
 literal|"2005"
 block|,
@@ -737,13 +735,13 @@ name|gimage
 decl_stmt|;
 name|gdouble
 name|xoffset
+init|=
+literal|0
 decl_stmt|;
 name|gdouble
 name|yoffset
-decl_stmt|;
-name|GimpGrid
-modifier|*
-name|grid
+init|=
+literal|0
 decl_stmt|;
 name|gimage
 operator|=
@@ -778,13 +776,15 @@ condition|(
 name|success
 condition|)
 block|{
+name|GimpGrid
+modifier|*
 name|grid
-operator|=
+init|=
 name|gimp_image_get_grid
 argument_list|(
 name|gimage
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|grid
@@ -914,9 +914,9 @@ literal|"Gets the offset of an image's grid."
 block|,
 literal|"This procedure retrieves the horizontal and vertical offset of an image's grid. It takes the image as parameter."
 block|,
-literal|"Sylvain FORET"
+literal|"Sylvain Foret"
 block|,
-literal|"Sylvain FORET"
+literal|"Sylvain Foret"
 block|,
 literal|"2005"
 block|,
@@ -980,10 +980,6 @@ decl_stmt|;
 name|gdouble
 name|yoffset
 decl_stmt|;
-name|GimpGrid
-modifier|*
-name|grid
-decl_stmt|;
 name|gimage
 operator|=
 name|gimp_image_get_by_ID
@@ -1039,18 +1035,19 @@ condition|(
 name|success
 condition|)
 block|{
+name|GimpGrid
+modifier|*
 name|grid
-operator|=
+init|=
 name|gimp_image_get_grid
 argument_list|(
 name|gimage
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|grid
 condition|)
-block|{
 name|g_object_set
 argument_list|(
 name|grid
@@ -1066,7 +1063,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-block|}
 else|else
 name|success
 operator|=
@@ -1135,9 +1131,9 @@ literal|"Sets the offset of an image's grid."
 block|,
 literal|"This procedure sets the horizontal and vertical offset of an image's grid."
 block|,
-literal|"Sylvain FORET"
+literal|"Sylvain Foret"
 block|,
-literal|"Sylvain FORET"
+literal|"Sylvain Foret"
 block|,
 literal|"2005"
 block|,
@@ -1202,10 +1198,6 @@ decl_stmt|;
 name|GimpRGB
 name|fgcolor
 decl_stmt|;
-name|GimpGrid
-modifier|*
-name|grid
-decl_stmt|;
 name|gimage
 operator|=
 name|gimp_image_get_by_ID
@@ -1239,25 +1231,25 @@ condition|(
 name|success
 condition|)
 block|{
+name|GimpGrid
+modifier|*
 name|grid
-operator|=
+init|=
 name|gimp_image_get_grid
 argument_list|(
 name|gimage
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|grid
 condition|)
-block|{
 name|fgcolor
 operator|=
 name|grid
 operator|->
 name|fgcolor
 expr_stmt|;
-block|}
 else|else
 name|success
 operator|=
@@ -1348,9 +1340,9 @@ literal|"Sets the foreground color of an image's grid."
 block|,
 literal|"This procedure gets the foreground color of an image's grid."
 block|,
-literal|"Sylvain FORET"
+literal|"Sylvain Foret"
 block|,
-literal|"Sylvain FORET"
+literal|"Sylvain Foret"
 block|,
 literal|"2005"
 block|,
@@ -1411,10 +1403,6 @@ decl_stmt|;
 name|GimpRGB
 name|fgcolor
 decl_stmt|;
-name|GimpGrid
-modifier|*
-name|grid
-decl_stmt|;
 name|gimage
 operator|=
 name|gimp_image_get_by_ID
@@ -1459,13 +1447,15 @@ condition|(
 name|success
 condition|)
 block|{
+name|GimpGrid
+modifier|*
 name|grid
-operator|=
+init|=
 name|gimp_image_get_grid
 argument_list|(
 name|gimage
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|grid
@@ -1542,9 +1532,9 @@ literal|"Gets the foreground color of an image's grid."
 block|,
 literal|"This procedure sets the foreground color of an image's grid."
 block|,
-literal|"Sylvain FORET"
+literal|"Sylvain Foret"
 block|,
-literal|"Sylvain FORET"
+literal|"Sylvain Foret"
 block|,
 literal|"2005"
 block|,
@@ -1609,10 +1599,6 @@ decl_stmt|;
 name|GimpRGB
 name|bgcolor
 decl_stmt|;
-name|GimpGrid
-modifier|*
-name|grid
-decl_stmt|;
 name|gimage
 operator|=
 name|gimp_image_get_by_ID
@@ -1646,25 +1632,25 @@ condition|(
 name|success
 condition|)
 block|{
+name|GimpGrid
+modifier|*
 name|grid
-operator|=
+init|=
 name|gimp_image_get_grid
 argument_list|(
 name|gimage
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|grid
 condition|)
-block|{
 name|bgcolor
 operator|=
 name|grid
 operator|->
 name|bgcolor
 expr_stmt|;
-block|}
 else|else
 name|success
 operator|=
@@ -1755,9 +1741,9 @@ literal|"Sets the background color of an image's grid."
 block|,
 literal|"This procedure gets the background color of an image's grid."
 block|,
-literal|"Sylvain FORET"
+literal|"Sylvain Foret"
 block|,
-literal|"Sylvain FORET"
+literal|"Sylvain Foret"
 block|,
 literal|"2005"
 block|,
@@ -1818,10 +1804,6 @@ decl_stmt|;
 name|GimpRGB
 name|bgcolor
 decl_stmt|;
-name|GimpGrid
-modifier|*
-name|grid
-decl_stmt|;
 name|gimage
 operator|=
 name|gimp_image_get_by_ID
@@ -1866,13 +1848,15 @@ condition|(
 name|success
 condition|)
 block|{
+name|GimpGrid
+modifier|*
 name|grid
-operator|=
+init|=
 name|gimp_image_get_grid
 argument_list|(
 name|gimage
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|grid
@@ -1949,9 +1933,9 @@ literal|"Gets the background color of an image's grid."
 block|,
 literal|"This procedure sets the background color of an image's grid."
 block|,
-literal|"Sylvain FORET"
+literal|"Sylvain Foret"
 block|,
-literal|"Sylvain FORET"
+literal|"Sylvain Foret"
 block|,
 literal|"2005"
 block|,
@@ -2015,10 +1999,8 @@ name|gimage
 decl_stmt|;
 name|gint32
 name|style
-decl_stmt|;
-name|GimpGrid
-modifier|*
-name|grid
+init|=
+literal|0
 decl_stmt|;
 name|gimage
 operator|=
@@ -2053,13 +2035,15 @@ condition|(
 name|success
 condition|)
 block|{
+name|GimpGrid
+modifier|*
 name|grid
-operator|=
+init|=
 name|gimp_image_get_grid
 argument_list|(
 name|gimage
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|grid
@@ -2162,9 +2146,9 @@ literal|"Gets the style of an image's grid."
 block|,
 literal|"This procedure retrieves the style of an image's grid."
 block|,
-literal|"Sylvain FORET"
+literal|"Sylvain Foret"
 block|,
-literal|"Sylvain FORET"
+literal|"Sylvain Foret"
 block|,
 literal|"2005"
 block|,
@@ -2225,10 +2209,6 @@ decl_stmt|;
 name|gint32
 name|style
 decl_stmt|;
-name|GimpGrid
-modifier|*
-name|grid
-decl_stmt|;
 name|gimage
 operator|=
 name|gimp_image_get_by_ID
@@ -2287,13 +2267,15 @@ condition|(
 name|success
 condition|)
 block|{
+name|GimpGrid
+modifier|*
 name|grid
-operator|=
+init|=
 name|gimp_image_get_grid
 argument_list|(
 name|gimage
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|grid
@@ -2369,9 +2351,9 @@ literal|"Sets the style unit of an image's grid."
 block|,
 literal|"This procedure sets the style of an image's grid. It takes the image and the new style as parameters."
 block|,
-literal|"Sylvain FORET"
+literal|"Sylvain Foret"
 block|,
-literal|"Sylvain FORET"
+literal|"Sylvain Foret"
 block|,
 literal|"2005"
 block|,
