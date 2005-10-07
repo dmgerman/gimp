@@ -140,7 +140,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28c688b70103
+DECL|enum|__anon29bf15460103
 block|{
 DECL|enumerator|GRADIENT_IMPORT
 name|GRADIENT_IMPORT
@@ -275,7 +275,7 @@ name|response_id
 parameter_list|,
 name|ImportDialog
 modifier|*
-name|import_dialog
+name|dialog
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -295,7 +295,7 @@ name|gradient
 parameter_list|,
 name|ImportDialog
 modifier|*
-name|import_dialog
+name|dialog
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -315,7 +315,7 @@ name|gimage
 parameter_list|,
 name|ImportDialog
 modifier|*
-name|import_dialog
+name|dialog
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -331,7 +331,7 @@ name|file_entry
 parameter_list|,
 name|ImportDialog
 modifier|*
-name|import_dialog
+name|dialog
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -372,7 +372,7 @@ name|widget
 parameter_list|,
 name|ImportDialog
 modifier|*
-name|import_dialog
+name|dialog
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -388,7 +388,7 @@ name|widget
 parameter_list|,
 name|ImportDialog
 modifier|*
-name|import_dialog
+name|dialog
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -404,7 +404,7 @@ name|widget
 parameter_list|,
 name|ImportDialog
 modifier|*
-name|import_dialog
+name|dialog
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -420,7 +420,7 @@ name|adjustment
 parameter_list|,
 name|ImportDialog
 modifier|*
-name|import_dialog
+name|dialog
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -440,7 +440,7 @@ name|gimage
 parameter_list|,
 name|ImportDialog
 modifier|*
-name|import_dialog
+name|dialog
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -460,7 +460,7 @@ name|gimage
 parameter_list|,
 name|ImportDialog
 modifier|*
-name|import_dialog
+name|dialog
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -472,7 +472,7 @@ name|palette_import_make_palette
 parameter_list|(
 name|ImportDialog
 modifier|*
-name|import_dialog
+name|dialog
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -581,7 +581,7 @@ parameter_list|)
 block|{
 name|ImportDialog
 modifier|*
-name|import_dialog
+name|dialog
 decl_stmt|;
 name|GimpGradient
 modifier|*
@@ -625,7 +625,7 @@ name|gimp
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|import_dialog
+name|dialog
 operator|=
 name|g_new0
 argument_list|(
@@ -634,13 +634,13 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-name|import_dialog
+name|dialog
 operator|->
 name|import_type
 operator|=
 name|GRADIENT_IMPORT
 expr_stmt|;
-name|import_dialog
+name|dialog
 operator|->
 name|context
 operator|=
@@ -656,7 +656,7 @@ name|gimp
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|import_dialog
+name|dialog
 operator|->
 name|dialog
 operator|=
@@ -697,7 +697,7 @@ name|gtk_dialog_add_button
 argument_list|(
 name|GTK_DIALOG
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|dialog
 argument_list|)
@@ -729,7 +729,7 @@ name|gtk_dialog_set_alternative_button_order
 argument_list|(
 name|GTK_DIALOG
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|dialog
 argument_list|)
@@ -744,7 +744,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|dialog
 argument_list|,
@@ -755,12 +755,12 @@ argument_list|(
 name|palette_import_response
 argument_list|)
 argument_list|,
-name|import_dialog
+name|dialog
 argument_list|)
 expr_stmt|;
 name|gimp_dnd_viewable_dest_add
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|dialog
 argument_list|,
@@ -768,12 +768,12 @@ name|GIMP_TYPE_GRADIENT
 argument_list|,
 name|import_dialog_drop_callback
 argument_list|,
-name|import_dialog
+name|dialog
 argument_list|)
 expr_stmt|;
 name|gimp_dnd_viewable_dest_add
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|dialog
 argument_list|,
@@ -781,7 +781,7 @@ name|GIMP_TYPE_IMAGE
 argument_list|,
 name|import_dialog_drop_callback
 argument_list|,
-name|import_dialog
+name|dialog
 argument_list|)
 expr_stmt|;
 name|main_hbox
@@ -809,7 +809,7 @@ name|GTK_CONTAINER
 argument_list|(
 name|GTK_DIALOG
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|dialog
 argument_list|)
@@ -933,7 +933,7 @@ argument_list|(
 name|table
 argument_list|)
 expr_stmt|;
-name|import_dialog
+name|dialog
 operator|->
 name|gradient_radio
 operator|=
@@ -954,7 +954,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-name|import_dialog
+name|dialog
 operator|->
 name|gradient_radio
 argument_list|,
@@ -969,14 +969,14 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|gradient_radio
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|gradient_radio
 argument_list|,
@@ -987,7 +987,7 @@ argument_list|(
 name|palette_import_grad_callback
 argument_list|)
 argument_list|,
-name|import_dialog
+name|dialog
 argument_list|)
 expr_stmt|;
 name|group
@@ -996,13 +996,13 @@ name|gtk_radio_button_get_group
 argument_list|(
 name|GTK_RADIO_BUTTON
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|gradient_radio
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|import_dialog
+name|dialog
 operator|->
 name|image_radio
 operator|=
@@ -1023,7 +1023,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-name|import_dialog
+name|dialog
 operator|->
 name|image_radio
 argument_list|,
@@ -1038,14 +1038,14 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|image_radio
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|image_radio
 argument_list|,
@@ -1056,12 +1056,12 @@ argument_list|(
 name|palette_import_image_callback
 argument_list|)
 argument_list|,
-name|import_dialog
+name|dialog
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_sensitive
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|image_radio
 argument_list|,
@@ -1080,13 +1080,13 @@ name|gtk_radio_button_get_group
 argument_list|(
 name|GTK_RADIO_BUTTON
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|image_radio
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|import_dialog
+name|dialog
 operator|->
 name|palettefile_radio
 operator|=
@@ -1107,7 +1107,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-name|import_dialog
+name|dialog
 operator|->
 name|palettefile_radio
 argument_list|,
@@ -1122,14 +1122,14 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|palettefile_radio
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|palettefile_radio
 argument_list|,
@@ -1140,11 +1140,11 @@ argument_list|(
 name|palette_import_file_callback
 argument_list|)
 argument_list|,
-name|import_dialog
+name|dialog
 argument_list|)
 expr_stmt|;
 comment|/*  The gradient menu  */
-name|import_dialog
+name|dialog
 operator|->
 name|gradient_combo
 operator|=
@@ -1156,7 +1156,7 @@ name|gradient_factory
 operator|->
 name|container
 argument_list|,
-name|import_dialog
+name|dialog
 operator|->
 name|context
 argument_list|,
@@ -1182,7 +1182,7 @@ literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
-name|import_dialog
+name|dialog
 operator|->
 name|gradient_combo
 argument_list|,
@@ -1192,7 +1192,7 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/*  The image menu  */
-name|import_dialog
+name|dialog
 operator|->
 name|image_combo
 operator|=
@@ -1202,7 +1202,7 @@ name|gimp
 operator|->
 name|images
 argument_list|,
-name|import_dialog
+name|dialog
 operator|->
 name|context
 argument_list|,
@@ -1228,7 +1228,7 @@ literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
-name|import_dialog
+name|dialog
 operator|->
 name|image_combo
 argument_list|,
@@ -1238,7 +1238,7 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/*  Palette file name entry  */
-name|import_dialog
+name|dialog
 operator|->
 name|filename_entry
 operator|=
@@ -1273,7 +1273,7 @@ literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
-name|import_dialog
+name|dialog
 operator|->
 name|filename_entry
 argument_list|,
@@ -1284,7 +1284,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|filename_entry
 argument_list|)
@@ -1304,7 +1304,7 @@ name|ysize
 decl_stmt|;
 name|gtk_widget_style_get
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|gradient_combo
 argument_list|,
@@ -1323,7 +1323,7 @@ argument_list|)
 expr_stmt|;
 name|ythickness
 operator|=
-name|import_dialog
+name|dialog
 operator|->
 name|gradient_combo
 operator|->
@@ -1352,7 +1352,7 @@ operator|)
 expr_stmt|;
 name|gtk_widget_set_size_request
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|gradient_combo
 argument_list|,
@@ -1364,7 +1364,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_set_size_request
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|image_combo
 argument_list|,
@@ -1454,7 +1454,7 @@ name|table
 argument_list|)
 expr_stmt|;
 comment|/*  The source's name  */
-name|import_dialog
+name|dialog
 operator|->
 name|entry
 operator|=
@@ -1465,7 +1465,7 @@ name|gtk_entry_set_text
 argument_list|(
 name|GTK_ENTRY
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|entry
 argument_list|)
@@ -1505,7 +1505,7 @@ literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
-name|import_dialog
+name|dialog
 operator|->
 name|entry
 argument_list|,
@@ -1515,7 +1515,7 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/*  The # of colors  */
-name|import_dialog
+name|dialog
 operator|->
 name|num_colors
 operator|=
@@ -1568,7 +1568,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect_swapped
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|num_colors
 argument_list|,
@@ -1579,11 +1579,11 @@ argument_list|(
 name|palette_import_make_palette
 argument_list|)
 argument_list|,
-name|import_dialog
+name|dialog
 argument_list|)
 expr_stmt|;
 comment|/*  The columns  */
-name|import_dialog
+name|dialog
 operator|->
 name|columns
 operator|=
@@ -1636,7 +1636,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|columns
 argument_list|,
@@ -1647,11 +1647,11 @@ argument_list|(
 name|palette_import_columns_changed
 argument_list|)
 argument_list|,
-name|import_dialog
+name|dialog
 argument_list|)
 expr_stmt|;
 comment|/*  The interval  */
-name|import_dialog
+name|dialog
 operator|->
 name|threshold
 operator|=
@@ -1706,7 +1706,7 @@ name|gimp_scale_entry_set_sensitive
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|threshold
 argument_list|)
@@ -1716,7 +1716,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect_swapped
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|threshold
 argument_list|,
@@ -1727,7 +1727,7 @@ argument_list|(
 name|palette_import_make_palette
 argument_list|)
 argument_list|,
-name|import_dialog
+name|dialog
 argument_list|)
 expr_stmt|;
 comment|/*  The "Preview" frame  */
@@ -1790,7 +1790,7 @@ argument_list|(
 name|abox
 argument_list|)
 expr_stmt|;
-name|import_dialog
+name|dialog
 operator|->
 name|preview
 operator|=
@@ -1820,14 +1820,14 @@ argument_list|(
 name|abox
 argument_list|)
 argument_list|,
-name|import_dialog
+name|dialog
 operator|->
 name|preview
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|preview
 argument_list|)
@@ -1846,7 +1846,7 @@ argument_list|(
 name|palette_import_image_add
 argument_list|)
 argument_list|,
-name|import_dialog
+name|dialog
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -1862,12 +1862,12 @@ argument_list|(
 name|palette_import_image_remove
 argument_list|)
 argument_list|,
-name|import_dialog
+name|dialog
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|context
 argument_list|,
@@ -1878,12 +1878,12 @@ argument_list|(
 name|palette_import_gradient_changed
 argument_list|)
 argument_list|,
-name|import_dialog
+name|dialog
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|context
 argument_list|,
@@ -1894,12 +1894,12 @@ argument_list|(
 name|palette_import_image_changed
 argument_list|)
 argument_list|,
-name|import_dialog
+name|dialog
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|filename_entry
 argument_list|,
@@ -1910,25 +1910,25 @@ argument_list|(
 name|palette_import_filename_changed
 argument_list|)
 argument_list|,
-name|import_dialog
+name|dialog
 argument_list|)
 expr_stmt|;
 name|palette_import_make_palette
 argument_list|(
-name|import_dialog
+name|dialog
 argument_list|)
 expr_stmt|;
 name|palette_import_grad_callback
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|gradient_radio
 argument_list|,
-name|import_dialog
+name|dialog
 argument_list|)
 expr_stmt|;
 return|return
-name|import_dialog
+name|dialog
 return|;
 block|}
 end_function
@@ -1940,7 +1940,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|palette_import_response (GtkWidget * widget,gint response_id,ImportDialog * import_dialog)
+DECL|function|palette_import_response (GtkWidget * widget,gint response_id,ImportDialog * dialog)
 name|palette_import_response
 parameter_list|(
 name|GtkWidget
@@ -1952,14 +1952,14 @@ name|response_id
 parameter_list|,
 name|ImportDialog
 modifier|*
-name|import_dialog
+name|dialog
 parameter_list|)
 block|{
 name|Gimp
 modifier|*
 name|gimp
 init|=
-name|import_dialog
+name|dialog
 operator|->
 name|context
 operator|->
@@ -1973,7 +1973,7 @@ name|images
 argument_list|,
 name|palette_import_image_add
 argument_list|,
-name|import_dialog
+name|dialog
 argument_list|)
 expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
@@ -1984,7 +1984,7 @@ name|images
 argument_list|,
 name|palette_import_image_remove
 argument_list|,
-name|import_dialog
+name|dialog
 argument_list|)
 expr_stmt|;
 if|if
@@ -1993,7 +1993,7 @@ name|response_id
 operator|==
 name|GTK_RESPONSE_OK
 operator|&&
-name|import_dialog
+name|dialog
 operator|->
 name|palette
 condition|)
@@ -2007,7 +2007,7 @@ name|gtk_entry_get_text
 argument_list|(
 name|GTK_ENTRY
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|entry
 argument_list|)
@@ -2024,7 +2024,7 @@ name|gimp_object_set_name
 argument_list|(
 name|GIMP_OBJECT
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|palette
 argument_list|)
@@ -2042,7 +2042,7 @@ name|container
 argument_list|,
 name|GIMP_OBJECT
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|palette
 argument_list|)
@@ -2051,34 +2051,34 @@ expr_stmt|;
 block|}
 name|g_object_unref
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|context
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|import_dialog
+name|dialog
 operator|->
 name|palette
 condition|)
 name|g_object_unref
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|palette
 argument_list|)
 expr_stmt|;
 name|gtk_widget_destroy
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|dialog
 argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
-name|import_dialog
+name|dialog
 argument_list|)
 expr_stmt|;
 name|the_import_dialog
@@ -2095,7 +2095,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|palette_import_gradient_changed (GimpContext * context,GimpGradient * gradient,ImportDialog * import_dialog)
+DECL|function|palette_import_gradient_changed (GimpContext * context,GimpGradient * gradient,ImportDialog * dialog)
 name|palette_import_gradient_changed
 parameter_list|(
 name|GimpContext
@@ -2108,14 +2108,14 @@ name|gradient
 parameter_list|,
 name|ImportDialog
 modifier|*
-name|import_dialog
+name|dialog
 parameter_list|)
 block|{
 if|if
 condition|(
 name|gradient
 operator|&&
-name|import_dialog
+name|dialog
 operator|->
 name|import_type
 operator|==
@@ -2126,7 +2126,7 @@ name|gtk_entry_set_text
 argument_list|(
 name|GTK_ENTRY
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|entry
 argument_list|)
@@ -2141,7 +2141,7 @@ argument_list|)
 expr_stmt|;
 name|palette_import_make_palette
 argument_list|(
-name|import_dialog
+name|dialog
 argument_list|)
 expr_stmt|;
 block|}
@@ -2151,7 +2151,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|palette_import_image_changed (GimpContext * context,GimpImage * gimage,ImportDialog * import_dialog)
+DECL|function|palette_import_image_changed (GimpContext * context,GimpImage * gimage,ImportDialog * dialog)
 name|palette_import_image_changed
 parameter_list|(
 name|GimpContext
@@ -2164,14 +2164,14 @@ name|gimage
 parameter_list|,
 name|ImportDialog
 modifier|*
-name|import_dialog
+name|dialog
 parameter_list|)
 block|{
 if|if
 condition|(
 name|gimage
 operator|&&
-name|import_dialog
+name|dialog
 operator|->
 name|import_type
 operator|==
@@ -2219,7 +2219,7 @@ name|gtk_entry_set_text
 argument_list|(
 name|GTK_ENTRY
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|entry
 argument_list|)
@@ -2234,7 +2234,7 @@ argument_list|)
 expr_stmt|;
 name|palette_import_make_palette
 argument_list|(
-name|import_dialog
+name|dialog
 argument_list|)
 expr_stmt|;
 block|}
@@ -2244,7 +2244,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|palette_import_filename_changed (GimpFileEntry * file_entry,ImportDialog * import_dialog)
+DECL|function|palette_import_filename_changed (GimpFileEntry * file_entry,ImportDialog * dialog)
 name|palette_import_filename_changed
 parameter_list|(
 name|GimpFileEntry
@@ -2253,7 +2253,7 @@ name|file_entry
 parameter_list|,
 name|ImportDialog
 modifier|*
-name|import_dialog
+name|dialog
 parameter_list|)
 block|{
 name|gchar
@@ -2262,7 +2262,7 @@ name|filename
 decl_stmt|;
 if|if
 condition|(
-name|import_dialog
+name|dialog
 operator|->
 name|import_type
 operator|!=
@@ -2298,7 +2298,7 @@ name|gtk_entry_set_text
 argument_list|(
 name|GTK_ENTRY
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|entry
 argument_list|)
@@ -2318,7 +2318,7 @@ name|gtk_entry_set_text
 argument_list|(
 name|GTK_ENTRY
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|entry
 argument_list|)
@@ -2334,7 +2334,7 @@ argument_list|)
 expr_stmt|;
 name|palette_import_make_palette
 argument_list|(
-name|import_dialog
+name|dialog
 argument_list|)
 expr_stmt|;
 block|}
@@ -2366,13 +2366,13 @@ parameter_list|)
 block|{
 name|ImportDialog
 modifier|*
-name|import_dialog
+name|dialog
 init|=
 name|data
 decl_stmt|;
 name|gimp_context_set_by_type
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|context
 argument_list|,
@@ -2394,7 +2394,7 @@ argument_list|(
 name|viewable
 argument_list|)
 operator|&&
-name|import_dialog
+name|dialog
 operator|->
 name|import_type
 operator|!=
@@ -2405,7 +2405,7 @@ name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|gradient_radio
 argument_list|)
@@ -2422,7 +2422,7 @@ argument_list|(
 name|viewable
 argument_list|)
 operator|&&
-name|import_dialog
+name|dialog
 operator|->
 name|import_type
 operator|!=
@@ -2433,7 +2433,7 @@ name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|image_radio
 argument_list|)
@@ -2452,7 +2452,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|palette_import_grad_callback (GtkWidget * widget,ImportDialog * import_dialog)
+DECL|function|palette_import_grad_callback (GtkWidget * widget,ImportDialog * dialog)
 name|palette_import_grad_callback
 parameter_list|(
 name|GtkWidget
@@ -2461,7 +2461,7 @@ name|widget
 parameter_list|,
 name|ImportDialog
 modifier|*
-name|import_dialog
+name|dialog
 parameter_list|)
 block|{
 name|GimpGradient
@@ -2480,7 +2480,7 @@ argument_list|)
 argument_list|)
 condition|)
 return|return;
-name|import_dialog
+name|dialog
 operator|->
 name|import_type
 operator|=
@@ -2490,14 +2490,14 @@ name|gradient
 operator|=
 name|gimp_context_get_gradient
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|context
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_sensitive
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|gradient_combo
 argument_list|,
@@ -2506,7 +2506,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_set_sensitive
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|image_combo
 argument_list|,
@@ -2515,7 +2515,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_set_sensitive
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|filename_entry
 argument_list|,
@@ -2526,7 +2526,7 @@ name|gtk_entry_set_text
 argument_list|(
 name|GTK_ENTRY
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|entry
 argument_list|)
@@ -2543,7 +2543,7 @@ name|gimp_scale_entry_set_sensitive
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|threshold
 argument_list|)
@@ -2555,7 +2555,7 @@ name|gimp_scale_entry_set_sensitive
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|num_colors
 argument_list|)
@@ -2567,7 +2567,7 @@ name|gimp_scale_entry_set_sensitive
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|columns
 argument_list|)
@@ -2577,7 +2577,7 @@ argument_list|)
 expr_stmt|;
 name|palette_import_make_palette
 argument_list|(
-name|import_dialog
+name|dialog
 argument_list|)
 expr_stmt|;
 block|}
@@ -2586,7 +2586,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|palette_import_image_callback (GtkWidget * widget,ImportDialog * import_dialog)
+DECL|function|palette_import_image_callback (GtkWidget * widget,ImportDialog * dialog)
 name|palette_import_image_callback
 parameter_list|(
 name|GtkWidget
@@ -2595,7 +2595,7 @@ name|widget
 parameter_list|,
 name|ImportDialog
 modifier|*
-name|import_dialog
+name|dialog
 parameter_list|)
 block|{
 name|GimpImage
@@ -2614,7 +2614,7 @@ argument_list|)
 argument_list|)
 condition|)
 return|return;
-name|import_dialog
+name|dialog
 operator|->
 name|import_type
 operator|=
@@ -2624,7 +2624,7 @@ name|gimage
 operator|=
 name|gimp_context_get_image
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|context
 argument_list|)
@@ -2642,7 +2642,7 @@ operator|*
 operator|)
 name|gimp_container_get_child_by_index
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|context
 operator|->
@@ -2655,7 +2655,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_set_sensitive
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|gradient_combo
 argument_list|,
@@ -2664,7 +2664,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_set_sensitive
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|image_combo
 argument_list|,
@@ -2673,7 +2673,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_set_sensitive
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|filename_entry
 argument_list|,
@@ -2682,20 +2682,20 @@ argument_list|)
 expr_stmt|;
 name|palette_import_image_changed
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|context
 argument_list|,
 name|gimage
 argument_list|,
-name|import_dialog
+name|dialog
 argument_list|)
 expr_stmt|;
 name|gimp_scale_entry_set_sensitive
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|threshold
 argument_list|)
@@ -2707,7 +2707,7 @@ name|gimp_scale_entry_set_sensitive
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|num_colors
 argument_list|)
@@ -2719,7 +2719,7 @@ name|gimp_scale_entry_set_sensitive
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|columns
 argument_list|)
@@ -2733,7 +2733,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|palette_import_file_callback (GtkWidget * widget,ImportDialog * import_dialog)
+DECL|function|palette_import_file_callback (GtkWidget * widget,ImportDialog * dialog)
 name|palette_import_file_callback
 parameter_list|(
 name|GtkWidget
@@ -2742,7 +2742,7 @@ name|widget
 parameter_list|,
 name|ImportDialog
 modifier|*
-name|import_dialog
+name|dialog
 parameter_list|)
 block|{
 name|gchar
@@ -2761,7 +2761,7 @@ argument_list|)
 argument_list|)
 condition|)
 return|return;
-name|import_dialog
+name|dialog
 operator|->
 name|import_type
 operator|=
@@ -2769,7 +2769,7 @@ name|FILE_IMPORT
 expr_stmt|;
 name|gtk_widget_set_sensitive
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|gradient_combo
 argument_list|,
@@ -2778,7 +2778,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_set_sensitive
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|image_combo
 argument_list|,
@@ -2787,7 +2787,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_set_sensitive
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|filename_entry
 argument_list|,
@@ -2800,7 +2800,7 @@ name|gimp_file_entry_get_filename
 argument_list|(
 name|GIMP_FILE_ENTRY
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|filename_entry
 argument_list|)
@@ -2828,7 +2828,7 @@ name|gtk_entry_set_text
 argument_list|(
 name|GTK_ENTRY
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|entry
 argument_list|)
@@ -2848,7 +2848,7 @@ name|gtk_entry_set_text
 argument_list|(
 name|GTK_ENTRY
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|entry
 argument_list|)
@@ -2866,7 +2866,7 @@ name|gimp_scale_entry_set_sensitive
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|threshold
 argument_list|)
@@ -2878,7 +2878,7 @@ name|gimp_scale_entry_set_sensitive
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|num_colors
 argument_list|)
@@ -2890,7 +2890,7 @@ name|gimp_scale_entry_set_sensitive
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|columns
 argument_list|)
@@ -2904,7 +2904,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|palette_import_columns_changed (GtkAdjustment * adj,ImportDialog * import_dialog)
+DECL|function|palette_import_columns_changed (GtkAdjustment * adj,ImportDialog * dialog)
 name|palette_import_columns_changed
 parameter_list|(
 name|GtkAdjustment
@@ -2913,18 +2913,18 @@ name|adj
 parameter_list|,
 name|ImportDialog
 modifier|*
-name|import_dialog
+name|dialog
 parameter_list|)
 block|{
 if|if
 condition|(
-name|import_dialog
+name|dialog
 operator|->
 name|palette
 condition|)
 name|gimp_palette_set_columns
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|palette
 argument_list|,
@@ -2946,7 +2946,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|palette_import_image_add (GimpContainer * container,GimpImage * gimage,ImportDialog * import_dialog)
+DECL|function|palette_import_image_add (GimpContainer * container,GimpImage * gimage,ImportDialog * dialog)
 name|palette_import_image_add
 parameter_list|(
 name|GimpContainer
@@ -2959,7 +2959,7 @@ name|gimage
 parameter_list|,
 name|ImportDialog
 modifier|*
-name|import_dialog
+name|dialog
 parameter_list|)
 block|{
 if|if
@@ -2967,7 +2967,7 @@ condition|(
 operator|!
 name|GTK_WIDGET_IS_SENSITIVE
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|image_radio
 argument_list|)
@@ -2975,7 +2975,7 @@ condition|)
 block|{
 name|gtk_widget_set_sensitive
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|image_radio
 argument_list|,
@@ -2984,7 +2984,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_context_set_image
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|context
 argument_list|,
@@ -2998,7 +2998,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|palette_import_image_remove (GimpContainer * container,GimpImage * gimage,ImportDialog * import_dialog)
+DECL|function|palette_import_image_remove (GimpContainer * container,GimpImage * gimage,ImportDialog * dialog)
 name|palette_import_image_remove
 parameter_list|(
 name|GimpContainer
@@ -3011,7 +3011,7 @@ name|gimage
 parameter_list|,
 name|ImportDialog
 modifier|*
-name|import_dialog
+name|dialog
 parameter_list|)
 block|{
 if|if
@@ -3019,7 +3019,7 @@ condition|(
 operator|!
 name|gimp_container_num_children
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|context
 operator|->
@@ -3035,7 +3035,7 @@ name|gtk_toggle_button_get_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|image_radio
 argument_list|)
@@ -3045,7 +3045,7 @@ name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|gradient_radio
 argument_list|)
@@ -3055,7 +3055,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_set_sensitive
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|image_radio
 argument_list|,
@@ -3069,12 +3069,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|palette_import_make_palette (ImportDialog * import_dialog)
+DECL|function|palette_import_make_palette (ImportDialog * dialog)
 name|palette_import_make_palette
 parameter_list|(
 name|ImportDialog
 modifier|*
-name|import_dialog
+name|dialog
 parameter_list|)
 block|{
 name|GimpPalette
@@ -3103,7 +3103,7 @@ name|gtk_entry_get_text
 argument_list|(
 name|GTK_ENTRY
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|entry
 argument_list|)
@@ -3131,7 +3131,7 @@ name|n_colors
 operator|=
 name|ROUND
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|num_colors
 operator|->
@@ -3142,7 +3142,7 @@ name|n_columns
 operator|=
 name|ROUND
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|columns
 operator|->
@@ -3153,7 +3153,7 @@ name|threshold
 operator|=
 name|ROUND
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|threshold
 operator|->
@@ -3162,7 +3162,7 @@ argument_list|)
 expr_stmt|;
 switch|switch
 condition|(
-name|import_dialog
+name|dialog
 operator|->
 name|import_type
 condition|)
@@ -3179,7 +3179,7 @@ name|gradient
 operator|=
 name|gimp_context_get_gradient
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|context
 argument_list|)
@@ -3209,7 +3209,7 @@ name|gimage
 init|=
 name|gimp_context_get_image
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|context
 argument_list|)
@@ -3260,7 +3260,7 @@ name|GtkWidget
 modifier|*
 name|entry
 init|=
-name|import_dialog
+name|dialog
 operator|->
 name|filename_entry
 decl_stmt|;
@@ -3330,13 +3330,13 @@ condition|)
 block|{
 if|if
 condition|(
-name|import_dialog
+name|dialog
 operator|->
 name|palette
 condition|)
 name|g_object_unref
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|palette
 argument_list|)
@@ -3351,7 +3351,7 @@ name|gimp_view_set_viewable
 argument_list|(
 name|GIMP_VIEW
 argument_list|(
-name|import_dialog
+name|dialog
 operator|->
 name|preview
 argument_list|)
@@ -3362,7 +3362,7 @@ name|palette
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|import_dialog
+name|dialog
 operator|->
 name|palette
 operator|=
