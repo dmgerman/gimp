@@ -197,7 +197,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon290dc1db0103
+DECL|enum|__anon2bf655db0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -1850,15 +1850,6 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
-if|if
-condition|(
-name|tooltip
-condition|)
-operator|*
-name|tooltip
-operator|=
-name|NULL
-expr_stmt|;
 return|return
 name|g_strdup
 argument_list|(

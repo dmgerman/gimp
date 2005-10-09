@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f4e34e0103
+DECL|enum|__anon298f341b0103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -1224,15 +1224,6 @@ argument_list|(
 name|viewable
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|tooltip
-condition|)
-operator|*
-name|tooltip
-operator|=
-name|NULL
-expr_stmt|;
 return|return
 name|g_strdup_printf
 argument_list|(

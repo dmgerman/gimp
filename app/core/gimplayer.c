@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon278e32aa0103
+DECL|enum|__anon2b094cce0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -177,7 +177,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon278e32aa0203
+DECL|enum|__anon2b094cce0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2081,15 +2081,6 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
-if|if
-condition|(
-name|tooltip
-condition|)
-operator|*
-name|tooltip
-operator|=
-name|NULL
-expr_stmt|;
 return|return
 name|g_strdup_printf
 argument_list|(

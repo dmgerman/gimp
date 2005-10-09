@@ -1069,15 +1069,6 @@ argument_list|(
 name|viewable
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|tooltip
-condition|)
-operator|*
-name|tooltip
-operator|=
-name|NULL
-expr_stmt|;
 return|return
 name|g_strdup_printf
 argument_list|(

@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28eda3320103
+DECL|enum|__anon290fc4870103
 block|{
 DECL|enumerator|DISCONNECT
 name|DISCONNECT
@@ -69,7 +69,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28eda3320203
+DECL|enum|__anon290fc4870203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -330,14 +330,12 @@ block|{
 name|GObjectClass
 modifier|*
 name|object_class
-decl_stmt|;
-name|object_class
-operator|=
+init|=
 name|G_OBJECT_CLASS
 argument_list|(
 name|klass
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|parent_class
 operator|=
 name|g_type_class_peek_parent
@@ -524,10 +522,7 @@ name|GPOINTER_TO_INT
 argument_list|(
 name|g_object_get_data
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|object
-argument_list|)
 argument_list|,
 literal|"disconnected"
 argument_list|)
@@ -553,10 +548,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_set_data
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|object
-argument_list|)
 argument_list|,
 literal|"disconnected"
 argument_list|,
@@ -819,6 +811,16 @@ argument_list|(
 name|object
 argument_list|)
 expr_stmt|;
+name|g_object_notify
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|object
+argument_list|)
+argument_list|,
+literal|"name"
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -901,6 +903,16 @@ argument_list|(
 name|object
 argument_list|)
 expr_stmt|;
+name|g_object_notify
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|object
+argument_list|)
+argument_list|,
+literal|"name"
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -940,7 +952,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_object_name_changed:  * @object: a #GimpObject  *  * Causes the "name_changed" signal to be emitted.  **/
+comment|/**  * gimp_object_name_changed:  * @object: a #GimpObject  *  * Causes the "name-changed" signal to be emitted.  **/
 end_comment
 
 begin_function
@@ -977,7 +989,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_object_name_free:  * @object: a #GimpObject  *  * Frees the name of @object and sets the name pointer to %NULL. Also  * takes care of the normalized name that the object might be caching.  *  * In general you should be using gimp_object_set_name() instead. But  * if you ever need to free the object name but don't want the  * "name_changed" signal to be emitted, then use this function. Never  * ever free the object name directly!  **/
+comment|/**  * gimp_object_name_free:  * @object: a #GimpObject  *  * Frees the name of @object and sets the name pointer to %NULL. Also  * takes care of the normalized name that the object might be caching.  *  * In general you should be using gimp_object_set_name() instead. But  * if you ever need to free the object name but don't want the  * "name-changed" signal to be emitted, then use this function. Never  * ever free the object name directly!  **/
 end_comment
 
 begin_function

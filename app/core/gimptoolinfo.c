@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fd1a190103
+DECL|enum|__anon28b40b7a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -819,15 +819,6 @@ argument_list|(
 name|viewable
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|tooltip
-condition|)
-operator|*
-name|tooltip
-operator|=
-name|NULL
-expr_stmt|;
 return|return
 name|g_strdup
 argument_list|(
