@@ -87,13 +87,16 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b04a3330103
+DECL|enum|__anon2888c5eb0103
 block|{
 DECL|enumerator|LIST_COLUMN_NAME
 name|LIST_COLUMN_NAME
 block|,
 DECL|enumerator|LIST_COLUMN_DATE
 name|LIST_COLUMN_DATE
+block|,
+DECL|enumerator|LIST_COLUMN_DATE_STRING
+name|LIST_COLUMN_DATE_STRING
 block|,
 DECL|enumerator|LIST_COLUMN_PATH
 name|LIST_COLUMN_PATH
@@ -112,13 +115,16 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b04a3330203
+DECL|enum|__anon2888c5eb0203
 block|{
 DECL|enumerator|TREE_COLUMN_PATH_NAME
 name|TREE_COLUMN_PATH_NAME
 block|,
 DECL|enumerator|TREE_COLUMN_DATE
 name|TREE_COLUMN_DATE
+block|,
+DECL|enumerator|TREE_COLUMN_DATE_STRING
+name|TREE_COLUMN_DATE_STRING
 block|,
 DECL|enumerator|TREE_COLUMN_IMAGE_TYPES
 name|TREE_COLUMN_IMAGE_TYPES
@@ -138,7 +144,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b04a3330308
+DECL|struct|__anon2888c5eb0308
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -169,7 +175,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b04a3330408
+DECL|struct|__anon2888c5eb0408
 block|{
 DECL|member|menu
 name|gchar
@@ -1019,25 +1025,32 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|insert_into_tree_view (PluginBrowser * browser,gchar * name,gchar * xtimestr,gchar * menu_str,gchar * types_str,PInfo * pinfo)
+DECL|function|insert_into_tree_view (PluginBrowser * browser,const gchar * name,gint64 xtime,const gchar * xtimestr,const gchar * menu_str,const gchar * types_str,PInfo * pinfo)
 name|insert_into_tree_view
 parameter_list|(
 name|PluginBrowser
 modifier|*
 name|browser
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|name
 parameter_list|,
+name|gint64
+name|xtime
+parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|xtimestr
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|menu_str
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|types_str
@@ -1201,6 +1214,10 @@ argument_list|,
 name|types_str
 argument_list|,
 name|TREE_COLUMN_DATE
+argument_list|,
+name|xtime
+argument_list|,
+name|TREE_COLUMN_DATE_STRING
 argument_list|,
 name|xtimestr
 argument_list|,
@@ -1835,6 +1852,13 @@ name|name
 argument_list|,
 name|LIST_COLUMN_DATE
 argument_list|,
+operator|(
+name|gint64
+operator|)
+name|tx
+argument_list|,
+name|LIST_COLUMN_DATE_STRING
+argument_list|,
 name|xtimestr
 argument_list|,
 name|LIST_COLUMN_PATH
@@ -1865,6 +1889,11 @@ argument_list|(
 name|browser
 argument_list|,
 name|name
+argument_list|,
+operator|(
+name|gint64
+operator|)
+name|tx
 argument_list|,
 name|xtimestr
 argument_list|,
@@ -2201,6 +2230,8 @@ name|N_LIST_COLUMNS
 argument_list|,
 name|G_TYPE_STRING
 argument_list|,
+name|G_TYPE_INT64
+argument_list|,
 name|G_TYPE_STRING
 argument_list|,
 name|G_TYPE_STRING
@@ -2372,7 +2403,7 @@ name|renderer
 argument_list|,
 literal|"text"
 argument_list|,
-name|LIST_COLUMN_DATE
+name|LIST_COLUMN_DATE_STRING
 argument_list|,
 name|NULL
 argument_list|)
@@ -2526,6 +2557,8 @@ name|N_LIST_COLUMNS
 argument_list|,
 name|G_TYPE_STRING
 argument_list|,
+name|G_TYPE_INT64
+argument_list|,
 name|G_TYPE_STRING
 argument_list|,
 name|G_TYPE_STRING
@@ -2657,7 +2690,7 @@ name|renderer
 argument_list|,
 literal|"text"
 argument_list|,
-name|TREE_COLUMN_DATE
+name|TREE_COLUMN_DATE_STRING
 argument_list|,
 name|NULL
 argument_list|)
