@@ -233,6 +233,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|SioxState
+typedef|typedef
+name|struct
+name|_SioxState
+name|SioxState
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|TempBuf
 typedef|typedef
 name|struct
