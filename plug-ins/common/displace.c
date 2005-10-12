@@ -76,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2946eb130103
+DECL|enum|__anon290737e60103
 block|{
 DECL|enumerator|CARTESIAN_MODE
 name|CARTESIAN_MODE
@@ -96,7 +96,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2946eb130208
+DECL|struct|__anon290737e60208
 block|{
 DECL|member|amount_x
 name|gdouble
@@ -545,9 +545,9 @@ argument_list|,
 literal|"Displace the contents of the specified drawable"
 argument_list|,
 literal|"Displaces the contents of the specified drawable "
-literal|"by the amounts specified by 'amount_x' and "
-literal|"'amount_y' multiplied by the luminance of "
-literal|"corresponding pixels in the 'displace_map' "
+literal|"by the amounts specified by 'amount-x' and "
+literal|"'amount-y' multiplied by the luminance of "
+literal|"corresponding pixels in the 'displace-map' "
 literal|"drawables."
 argument_list|,
 literal|"Stephen Robert Norris& (ported to 1.0 by) "
@@ -909,6 +909,96 @@ expr_stmt|;
 break|break;
 default|default:
 break|break;
+block|}
+if|if
+condition|(
+name|status
+operator|==
+name|GIMP_PDB_SUCCESS
+condition|)
+block|{
+if|if
+condition|(
+name|dvals
+operator|.
+name|displace_map_x
+operator|!=
+operator|-
+literal|1
+operator|&&
+operator|(
+name|gimp_drawable_width
+argument_list|(
+name|dvals
+operator|.
+name|displace_map_x
+argument_list|)
+operator|!=
+name|drawable
+operator|->
+name|width
+operator|||
+name|gimp_drawable_height
+argument_list|(
+name|dvals
+operator|.
+name|displace_map_x
+argument_list|)
+operator|!=
+name|drawable
+operator|->
+name|height
+operator|)
+condition|)
+name|status
+operator|=
+name|GIMP_PDB_CALLING_ERROR
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|status
+operator|==
+name|GIMP_PDB_SUCCESS
+condition|)
+block|{
+if|if
+condition|(
+name|dvals
+operator|.
+name|displace_map_y
+operator|!=
+operator|-
+literal|1
+operator|&&
+operator|(
+name|gimp_drawable_width
+argument_list|(
+name|dvals
+operator|.
+name|displace_map_y
+argument_list|)
+operator|!=
+name|drawable
+operator|->
+name|width
+operator|||
+name|gimp_drawable_height
+argument_list|(
+name|dvals
+operator|.
+name|displace_map_y
+argument_list|)
+operator|!=
+name|drawable
+operator|->
+name|height
+operator|)
+condition|)
+name|status
+operator|=
+name|GIMP_PDB_CALLING_ERROR
+expr_stmt|;
 block|}
 if|if
 condition|(
@@ -2139,10 +2229,14 @@ block|{
 name|GimpDrawable
 modifier|*
 name|map_x
+init|=
+name|NULL
 decl_stmt|;
 name|GimpDrawable
 modifier|*
 name|map_y
+init|=
+name|NULL
 decl_stmt|;
 name|GimpPixelRgn
 name|dest_rgn
@@ -2532,11 +2626,6 @@ name|drawable_id
 argument_list|)
 expr_stmt|;
 block|}
-else|else
-name|map_x
-operator|=
-name|NULL
-expr_stmt|;
 if|if
 condition|(
 name|dvals
@@ -2603,11 +2692,6 @@ name|drawable_id
 argument_list|)
 expr_stmt|;
 block|}
-else|else
-name|map_y
-operator|=
-name|NULL
-expr_stmt|;
 name|gimp_pixel_rgn_init
 argument_list|(
 operator|&
