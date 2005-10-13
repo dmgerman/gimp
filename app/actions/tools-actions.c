@@ -380,7 +380,7 @@ name|NULL
 block|,
 name|NULL
 block|,
-literal|"gimp-rotate-tool"
+literal|"gimp-rotate-layer"
 block|,
 name|GIMP_HELP_TOOL_ROTATE
 block|}
