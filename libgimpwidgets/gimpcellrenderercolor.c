@@ -49,7 +49,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bae57580103
+DECL|enum|__anon2adeedb80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1082,6 +1082,20 @@ expr_stmt|;
 name|_gimp_color_area_render_buf
 argument_list|(
 name|widget
+argument_list|,
+operator|(
+name|GTK_WIDGET_STATE
+argument_list|(
+name|widget
+argument_list|)
+operator|==
+name|GTK_STATE_INSENSITIVE
+operator|||
+operator|!
+name|cell
+operator|->
+name|sensitive
+operator|)
 argument_list|,
 operator|(
 name|color

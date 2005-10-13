@@ -57,7 +57,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae753ab0103
+DECL|enum|__anon2bd3a4060103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -70,7 +70,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae753ab0203
+DECL|enum|__anon2bd3a4060203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1791,12 +1791,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|_gimp_color_area_render_buf (GtkWidget * widget,GimpColorAreaType type,guchar * buf,guint width,guint height,guint rowstride,GimpRGB * color)
+DECL|function|_gimp_color_area_render_buf (GtkWidget * widget,gboolean insensitive,GimpColorAreaType type,guchar * buf,guint width,guint height,guint rowstride,GimpRGB * color)
 name|_gimp_color_area_render_buf
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|gboolean
+name|insensitive
 parameter_list|,
 name|GimpColorAreaType
 name|type
@@ -1848,7 +1851,7 @@ literal|3
 index|]
 decl_stmt|;
 name|guchar
-name|insensitive
+name|insens
 index|[
 literal|3
 index|]
@@ -1927,7 +1930,7 @@ operator|+
 literal|2
 argument_list|)
 expr_stmt|;
-name|insensitive
+name|insens
 index|[
 literal|0
 index|]
@@ -1945,7 +1948,7 @@ name|red
 operator|>>
 literal|8
 expr_stmt|;
-name|insensitive
+name|insens
 index|[
 literal|1
 index|]
@@ -1963,7 +1966,7 @@ name|green
 operator|>>
 literal|8
 expr_stmt|;
-name|insensitive
+name|insens
 index|[
 literal|2
 index|]
@@ -1983,6 +1986,8 @@ literal|8
 expr_stmt|;
 if|if
 condition|(
+name|insensitive
+operator|||
 name|check_size
 operator|==
 literal|0
@@ -1992,12 +1997,6 @@ operator|->
 name|a
 operator|==
 literal|1.0
-operator|||
-operator|!
-name|GTK_WIDGET_IS_SENSITIVE
-argument_list|(
-name|widget
-argument_list|)
 condition|)
 block|{
 for|for
@@ -2038,13 +2037,7 @@ control|)
 block|{
 if|if
 condition|(
-operator|(
-operator|!
-name|GTK_WIDGET_IS_SENSITIVE
-argument_list|(
-name|widget
-argument_list|)
-operator|)
+name|insensitive
 operator|&&
 operator|(
 operator|(
@@ -2061,7 +2054,7 @@ operator|*
 name|p
 operator|++
 operator|=
-name|insensitive
+name|insens
 index|[
 literal|0
 index|]
@@ -2070,7 +2063,7 @@ operator|*
 name|p
 operator|++
 operator|=
-name|insensitive
+name|insens
 index|[
 literal|1
 index|]
@@ -2079,7 +2072,7 @@ operator|*
 name|p
 operator|++
 operator|=
-name|insensitive
+name|insens
 index|[
 literal|2
 index|]
@@ -2667,6 +2660,12 @@ return|return;
 name|_gimp_color_area_render_buf
 argument_list|(
 name|GTK_WIDGET
+argument_list|(
+name|area
+argument_list|)
+argument_list|,
+operator|!
+name|GTK_WIDGET_IS_SENSITIVE
 argument_list|(
 name|area
 argument_list|)

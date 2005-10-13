@@ -330,6 +330,9 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
+name|gboolean
+name|insensitive
+parameter_list|,
 name|GimpColorAreaType
 name|type
 parameter_list|,
