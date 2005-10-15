@@ -1033,7 +1033,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-name|gimp_tool_replace_status
+name|gimp_tool_push_status
 argument_list|(
 name|tool
 argument_list|,
