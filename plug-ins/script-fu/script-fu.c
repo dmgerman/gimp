@@ -366,7 +366,7 @@ literal|"plug-in-script-fu-console"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Toolbox>/Xtns/Script-Fu"
+literal|"<Toolbox>/Xtns/Languages/Script-Fu"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -445,7 +445,7 @@ literal|"plug-in-script-fu-server"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Toolbox>/Xtns/Script-Fu"
+literal|"<Toolbox>/Xtns/Languages/Script-Fu"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -774,7 +774,7 @@ block|}
 decl_stmt|;
 name|gimp_plugin_menu_branch_register
 argument_list|(
-literal|"<Toolbox>/Xtns"
+literal|"<Toolbox>/Xtns/Languages"
 argument_list|,
 name|N_
 argument_list|(
@@ -784,7 +784,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_branch_register
 argument_list|(
-literal|"<Toolbox>/Xtns/Script-Fu"
+literal|"<Toolbox>/Xtns"
 argument_list|,
 name|N_
 argument_list|(
@@ -794,7 +794,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_branch_register
 argument_list|(
-literal|"<Toolbox>/Xtns/Script-Fu"
+literal|"<Toolbox>/Xtns"
 argument_list|,
 name|N_
 argument_list|(
@@ -804,7 +804,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_branch_register
 argument_list|(
-literal|"<Toolbox>/Xtns/Script-Fu"
+literal|"<Toolbox>/Xtns"
 argument_list|,
 name|N_
 argument_list|(
@@ -814,7 +814,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_branch_register
 argument_list|(
-literal|"<Toolbox>/Xtns/Script-Fu"
+literal|"<Toolbox>/Xtns"
 argument_list|,
 name|N_
 argument_list|(
@@ -824,7 +824,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_branch_register
 argument_list|(
-literal|"<Toolbox>/Xtns/Script-Fu"
+literal|"<Toolbox>/Xtns/Languages/Script-Fu"
 argument_list|,
 name|N_
 argument_list|(
@@ -834,7 +834,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_branch_register
 argument_list|(
-literal|"<Toolbox>/Xtns/Script-Fu"
+literal|"<Toolbox>/Xtns"
 argument_list|,
 name|N_
 argument_list|(
@@ -844,7 +844,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_branch_register
 argument_list|(
-literal|"<Toolbox>/Xtns/Script-Fu"
+literal|"<Toolbox>/Xtns"
 argument_list|,
 name|N_
 argument_list|(
@@ -854,7 +854,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_branch_register
 argument_list|(
-literal|"<Toolbox>/Xtns/Script-Fu/Web Page Themes"
+literal|"<Toolbox>/Xtns/Web Page Themes"
 argument_list|,
 name|N_
 argument_list|(
@@ -864,7 +864,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_branch_register
 argument_list|(
-literal|"<Toolbox>/Xtns/Script-Fu/Web Page Themes"
+literal|"<Toolbox>/Xtns/Web Page Themes"
 argument_list|,
 name|N_
 argument_list|(
@@ -874,7 +874,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_branch_register
 argument_list|(
-literal|"<Toolbox>/Xtns/Script-Fu/Web Page Themes"
+literal|"<Toolbox>/Xtns/Web Page Themes"
 argument_list|,
 name|N_
 argument_list|(
@@ -965,7 +965,7 @@ literal|"script_fu_refresh"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Toolbox>/Xtns/Script-Fu"
+literal|"<Toolbox>/Xtns/Languages/Script-Fu"
 argument_list|)
 argument_list|)
 expr_stmt|;
