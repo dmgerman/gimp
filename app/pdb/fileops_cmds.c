@@ -140,6 +140,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"file/file-open.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"file/file-utils.h"
 end_include
 
