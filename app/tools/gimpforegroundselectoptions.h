@@ -119,6 +119,10 @@ DECL|member|background
 name|gboolean
 name|background
 decl_stmt|;
+DECL|member|multiblob
+name|gboolean
+name|multiblob
+decl_stmt|;
 DECL|member|stroke_width
 name|gint
 name|stroke_width

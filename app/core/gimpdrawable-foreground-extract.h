@@ -66,6 +66,9 @@ parameter_list|,
 name|gint
 name|height
 parameter_list|,
+name|gboolean
+name|multiblob
+parameter_list|,
 name|gint
 name|smoothness
 parameter_list|,

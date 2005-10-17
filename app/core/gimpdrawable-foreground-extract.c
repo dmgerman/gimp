@@ -113,12 +113,6 @@ name|progress
 parameter_list|)
 block|{
 specifier|const
-name|gint
-name|smoothness
-init|=
-name|SIOX_DEFAULT_SMOOTHNESS
-decl_stmt|;
-specifier|const
 name|gdouble
 name|sensitivity
 index|[
@@ -174,7 +168,9 @@ name|mask
 argument_list|)
 argument_list|)
 argument_list|,
-name|smoothness
+name|FALSE
+argument_list|,
+name|SIOX_DEFAULT_SMOOTHNESS
 argument_list|,
 name|sensitivity
 argument_list|,
@@ -186,7 +182,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_foreground_extract_siox (GimpDrawable * drawable,GimpDrawable * mask,gint x,gint y,gint width,gint height,gint smoothness,const gdouble sensitivity[3],GimpProgress * progress)
+DECL|function|gimp_drawable_foreground_extract_siox (GimpDrawable * drawable,GimpDrawable * mask,gint x,gint y,gint width,gint height,gboolean multiblob,gint smoothness,const gdouble sensitivity[3],GimpProgress * progress)
 name|gimp_drawable_foreground_extract_siox
 parameter_list|(
 name|GimpDrawable
@@ -208,6 +204,9 @@ name|width
 parameter_list|,
 name|gint
 name|height
+parameter_list|,
+name|gboolean
+name|multiblob
 parameter_list|,
 name|gint
 name|smoothness
@@ -449,7 +448,7 @@ name|smoothness
 argument_list|,
 name|sensitivity
 argument_list|,
-name|TRUE
+name|multiblob
 argument_list|,
 literal|255
 argument_list|)

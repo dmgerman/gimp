@@ -144,7 +144,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c75f2630108
+DECL|struct|__anon2be799b90108
 block|{
 DECL|member|width
 name|gint
@@ -2722,6 +2722,10 @@ name|y1
 argument_list|,
 name|options
 operator|->
+name|multiblob
+argument_list|,
+name|options
+operator|->
 name|smoothness
 argument_list|,
 name|options
@@ -3440,6 +3444,17 @@ operator|->
 name|name
 argument_list|,
 literal|"smoothness"
+argument_list|)
+operator|==
+literal|0
+operator|||
+name|strcmp
+argument_list|(
+name|pspec
+operator|->
+name|name
+argument_list|,
+literal|"multiblob"
 argument_list|)
 operator|==
 literal|0
