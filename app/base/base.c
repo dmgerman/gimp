@@ -368,7 +368,7 @@ argument_list|,
 name|G_FILE_TEST_EXISTS
 argument_list|)
 condition|)
-name|g_mkdir
+name|g_mkdir_with_parents
 argument_list|(
 name|temp_dir
 argument_list|,
