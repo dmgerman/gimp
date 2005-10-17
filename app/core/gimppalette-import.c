@@ -827,7 +827,6 @@ name|color_tab
 init|=
 name|data
 decl_stmt|;
-empty_stmt|;
 name|gint
 name|n_colors
 decl_stmt|;
@@ -1807,7 +1806,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon274ddb1c0103
+DECL|enum|__anon28b611ca0103
 block|{
 DECL|enumerator|GIMP_PALETTE_FILE_FORMAT_UNKNOWN
 name|GIMP_PALETTE_FILE_FORMAT_UNKNOWN
