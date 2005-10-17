@@ -43,6 +43,24 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gint32
+name|gimp_file_load_layer
+parameter_list|(
+name|GimpRunMode
+name|run_mode
+parameter_list|,
+name|gint32
+name|image_ID
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|filename
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_file_save
 parameter_list|(

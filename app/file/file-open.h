@@ -213,6 +213,9 @@ name|gchar
 modifier|*
 name|uri
 parameter_list|,
+name|GimpRunMode
+name|run_mode
+parameter_list|,
 name|GimpPDBStatusType
 modifier|*
 name|status
