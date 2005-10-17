@@ -124,7 +124,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288ad9740108
+DECL|struct|__anon273accd80108
 block|{
 DECL|member|l
 name|gfloat
@@ -234,7 +234,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288ad9740208
+DECL|struct|__anon273accd80208
 block|{
 DECL|member|bgdist
 name|gfloat
@@ -4721,6 +4721,15 @@ name|classresult
 modifier|*
 name|cr
 decl_stmt|;
+name|gfloat
+name|mindistbg
+decl_stmt|;
+name|gfloat
+name|mindistfg
+decl_stmt|;
+name|gfloat
+name|alpha
+decl_stmt|;
 name|key
 operator|=
 name|create_key
@@ -4757,9 +4766,8 @@ name|cr
 condition|)
 continue|continue;
 comment|/* Unknown color -                              can only be sure background or sure forground */
-name|gfloat
 name|mindistbg
-init|=
+operator|=
 operator|(
 name|gfloat
 operator|)
@@ -4769,10 +4777,9 @@ name|cr
 operator|->
 name|bgdist
 argument_list|)
-decl_stmt|;
-name|gfloat
+expr_stmt|;
 name|mindistfg
-init|=
+operator|=
 operator|(
 name|gfloat
 operator|)
@@ -4782,10 +4789,7 @@ name|cr
 operator|->
 name|fgdist
 argument_list|)
-decl_stmt|;
-name|gfloat
-name|alpha
-decl_stmt|;
+expr_stmt|;
 if|if
 condition|(
 name|brushmode
