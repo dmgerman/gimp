@@ -131,6 +131,15 @@ name|GimpChannel
 modifier|*
 name|mask
 decl_stmt|;
+DECL|member|state
+name|SioxState
+modifier|*
+name|state
+decl_stmt|;
+DECL|member|refinement
+name|SioxRefinementType
+name|refinement
+decl_stmt|;
 block|}
 struct|;
 end_struct

@@ -16,6 +16,10 @@ directive|define
 name|__GIMP_DRAWABLE_FOREGROUND_EXTRACT_H__
 end_define
 
+begin_comment
+comment|/*  general API (as seen from the PDB)  */
+end_comment
+
 begin_function_decl
 name|void
 name|gimp_drawable_foreground_extract
@@ -39,20 +43,17 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*  variant for SIOX that gives more control over the segmentation  */
+comment|/*  SIOX specific API  */
 end_comment
 
 begin_function_decl
-name|void
-name|gimp_drawable_foreground_extract_siox
+name|SioxState
+modifier|*
+name|gimp_drawable_foreground_extract_siox_init
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
-parameter_list|,
-name|GimpDrawable
-modifier|*
-name|mask
 parameter_list|,
 name|gint
 name|x
@@ -65,9 +66,24 @@ name|width
 parameter_list|,
 name|gint
 name|height
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_drawable_foreground_extract_siox
+parameter_list|(
+name|GimpDrawable
+modifier|*
+name|mask
 parameter_list|,
-name|gboolean
-name|multiblob
+name|SioxState
+modifier|*
+name|state
+parameter_list|,
+name|SioxRefinementType
+name|refinemane
 parameter_list|,
 name|gint
 name|smoothness
@@ -79,9 +95,23 @@ index|[
 literal|3
 index|]
 parameter_list|,
+name|gboolean
+name|multiblob
+parameter_list|,
 name|GimpProgress
 modifier|*
 name|progress
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_drawable_foreground_extract_siox_done
+parameter_list|(
+name|SioxState
+modifier|*
+name|state
 parameter_list|)
 function_decl|;
 end_function_decl

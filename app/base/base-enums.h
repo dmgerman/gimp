@@ -69,7 +69,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon277a68be0103
+DECL|enum|__anon2870a8750103
 block|{
 DECL|enumerator|GIMP_CURVE_SMOOTH
 name|GIMP_CURVE_SMOOTH
@@ -105,7 +105,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon277a68be0203
+DECL|enum|__anon2870a8750203
 block|{
 DECL|enumerator|GIMP_HISTOGRAM_VALUE
 name|GIMP_HISTOGRAM_VALUE
@@ -169,7 +169,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon277a68be0303
+DECL|enum|__anon2870a8750303
 block|{
 DECL|enumerator|GIMP_NORMAL_MODE
 name|GIMP_NORMAL_MODE
@@ -288,7 +288,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon277a68be0403
+DECL|enum|__anon2870a8750403
 block|{
 DECL|enumerator|GIMP_NORMAL_CONVOL
 name|GIMP_NORMAL_CONVOL
@@ -311,7 +311,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon277a68be0503
+DECL|enum|__anon2870a8750503
 block|{
 DECL|enumerator|GIMP_ALL_HUES
 name|GIMP_ALL_HUES
@@ -336,6 +336,72 @@ name|GIMP_MAGENTA_HUES
 DECL|typedef|GimpHueRange
 block|}
 name|GimpHueRange
+typedef|;
+end_typedef
+
+begin_typedef
+typedef|typedef
+enum|enum
+comment|/*< pdb-skip, skip>*/
+DECL|enum|__anon2870a8750603
+block|{
+DECL|enumerator|SIOX_REFINEMENT_NO_CHANGE
+name|SIOX_REFINEMENT_NO_CHANGE
+init|=
+literal|0
+block|,
+DECL|enumerator|SIOX_REFINEMENT_ADD_FOREGROUND
+name|SIOX_REFINEMENT_ADD_FOREGROUND
+init|=
+operator|(
+literal|1
+operator|<<
+literal|0
+operator|)
+block|,
+DECL|enumerator|SIOX_REFINEMENT_ADD_BACKGROUND
+name|SIOX_REFINEMENT_ADD_BACKGROUND
+init|=
+operator|(
+literal|1
+operator|<<
+literal|1
+operator|)
+block|,
+DECL|enumerator|SIOX_REFINEMENT_CHANGE_SENSITIVITY
+name|SIOX_REFINEMENT_CHANGE_SENSITIVITY
+init|=
+operator|(
+literal|1
+operator|<<
+literal|2
+operator|)
+block|,
+DECL|enumerator|SIOX_REFINEMENT_CHANGE_SMOOTHNESS
+name|SIOX_REFINEMENT_CHANGE_SMOOTHNESS
+init|=
+operator|(
+literal|1
+operator|<<
+literal|3
+operator|)
+block|,
+DECL|enumerator|SIOX_REFINEMENT_CHANGE_MULTIBLOB
+name|SIOX_REFINEMENT_CHANGE_MULTIBLOB
+init|=
+operator|(
+literal|1
+operator|<<
+literal|4
+operator|)
+block|,
+DECL|enumerator|SIOX_REFINEMENT_RECALCULATE
+name|SIOX_REFINEMENT_RECALCULATE
+init|=
+literal|0xFF
+DECL|typedef|SioxRefinementType
+block|}
+name|SioxRefinementType
 typedef|;
 end_typedef
 
