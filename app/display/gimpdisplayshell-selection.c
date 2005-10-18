@@ -2816,10 +2816,6 @@ name|Selection
 modifier|*
 name|select
 init|=
-operator|(
-name|Selection
-operator|*
-operator|)
 name|data
 decl_stmt|;
 name|select
