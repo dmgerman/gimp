@@ -85,6 +85,14 @@ parameter_list|)
 value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_ALIGN_TOOL, GimpAlignToolClass))
 end_define
 
+begin_define
+DECL|macro|ALIGN_TOOL_NUM_BUTTONS
+define|#
+directive|define
+name|ALIGN_TOOL_NUM_BUTTONS
+value|6
+end_define
+
 begin_typedef
 DECL|typedef|GimpAlignTool
 typedef|typedef
@@ -116,6 +124,14 @@ DECL|member|controls
 name|GtkWidget
 modifier|*
 name|controls
+decl_stmt|;
+DECL|member|button
+name|GtkWidget
+modifier|*
+name|button
+index|[
+name|ALIGN_TOOL_NUM_BUTTONS
+index|]
 decl_stmt|;
 DECL|member|target_item
 name|GimpItem
