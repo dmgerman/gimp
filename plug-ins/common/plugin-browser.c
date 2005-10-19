@@ -87,7 +87,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2888c5eb0103
+DECL|enum|__anon2c095def0103
 block|{
 DECL|enumerator|LIST_COLUMN_NAME
 name|LIST_COLUMN_NAME
@@ -115,7 +115,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2888c5eb0203
+DECL|enum|__anon2c095def0203
 block|{
 DECL|enumerator|TREE_COLUMN_PATH_NAME
 name|TREE_COLUMN_PATH_NAME
@@ -144,7 +144,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2888c5eb0308
+DECL|struct|__anon2c095def0308
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -175,7 +175,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2888c5eb0408
+DECL|struct|__anon2c095def0408
 block|{
 DECL|member|menu
 name|gchar
@@ -343,6 +343,7 @@ name|GtkTreeModel
 modifier|*
 name|model
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|mpath
@@ -585,22 +586,10 @@ block|}
 block|}
 end_function
 
-begin_if
-if|#
-directive|if
-literal|0
-end_if
-
-begin_endif
-unit|static void pinfo_free (gpointer p) {   PInfo *pinfo = p;    g_free (pinfo->menu);   g_free (pinfo->accel);   g_free (pinfo->prog);   g_free (pinfo->types);   g_free (pinfo->realname);   g_free (pinfo); }
-endif|#
-directive|endif
-end_endif
-
 begin_function
 specifier|static
 name|gboolean
-DECL|function|find_existing_mpath_helper (GtkTreeModel * model,GtkTreeIter * iter,GtkTreePath * path,gchar * mpath,GtkTreeIter * return_iter)
+DECL|function|find_existing_mpath_helper (GtkTreeModel * model,GtkTreeIter * iter,GtkTreePath * path,const gchar * mpath,GtkTreeIter * return_iter)
 name|find_existing_mpath_helper
 parameter_list|(
 name|GtkTreeModel
@@ -615,6 +604,7 @@ name|GtkTreePath
 modifier|*
 name|path
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|mpath
@@ -754,13 +744,14 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|find_existing_mpath (GtkTreeModel * model,gchar * mpath,GtkTreeIter * return_iter)
+DECL|function|find_existing_mpath (GtkTreeModel * model,const gchar * mpath,GtkTreeIter * return_iter)
 name|find_existing_mpath
 parameter_list|(
 name|GtkTreeModel
 modifier|*
 name|model
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|mpath
@@ -773,6 +764,9 @@ block|{
 name|GtkTreePath
 modifier|*
 name|path
+init|=
+name|gtk_tree_path_new_first
+argument_list|()
 decl_stmt|;
 name|GtkTreeIter
 name|parent
@@ -780,11 +774,6 @@ decl_stmt|;
 name|gboolean
 name|found
 decl_stmt|;
-name|path
-operator|=
-name|gtk_tree_path_new_first
-argument_list|()
-expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -838,13 +827,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|get_parent (PluginBrowser * browser,gchar * mpath,GtkTreeIter * parent)
+DECL|function|get_parent (PluginBrowser * browser,const gchar * mpath,GtkTreeIter * parent)
 name|get_parent
 parameter_list|(
 name|PluginBrowser
 modifier|*
 name|browser
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|mpath
@@ -865,6 +855,7 @@ name|gchar
 modifier|*
 name|str_ptr
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|leaf_ptr
@@ -875,9 +866,8 @@ name|tree_store
 decl_stmt|;
 if|if
 condition|(
+operator|!
 name|mpath
-operator|==
-name|NULL
 condition|)
 return|return;
 name|tree_store
@@ -908,13 +898,44 @@ name|parent
 argument_list|)
 condition|)
 return|return;
-comment|/* Next one up */
 name|tmp_ptr
 operator|=
 name|g_strdup
 argument_list|(
 name|mpath
 argument_list|)
+expr_stmt|;
+comment|/* Strip off trailing ellipsis */
+name|str_ptr
+operator|=
+name|strstr
+argument_list|(
+name|mpath
+argument_list|,
+literal|"..."
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|str_ptr
+operator|&&
+name|str_ptr
+operator|==
+operator|(
+name|mpath
+operator|+
+name|strlen
+argument_list|(
+name|mpath
+argument_list|)
+operator|-
+literal|3
+operator|)
+condition|)
+operator|*
+name|str_ptr
+operator|=
+literal|'\0'
 expr_stmt|;
 name|str_ptr
 operator|=
@@ -1603,9 +1624,50 @@ decl_stmt|;
 name|time_t
 name|tx
 decl_stmt|;
-name|int
+name|gint
 name|ret
 decl_stmt|;
+comment|/* Strip off trailing ellipsis */
+name|name
+operator|=
+name|strstr
+argument_list|(
+name|menu_strs
+index|[
+name|i
+index|]
+argument_list|,
+literal|"..."
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|name
+operator|&&
+name|name
+operator|==
+operator|(
+name|menu_strs
+index|[
+name|i
+index|]
+operator|+
+name|strlen
+argument_list|(
+name|menu_strs
+index|[
+name|i
+index|]
+argument_list|)
+operator|-
+literal|3
+operator|)
+condition|)
+operator|*
+name|name
+operator|=
+literal|'\0'
+expr_stmt|;
 name|name
 operator|=
 name|strrchr
@@ -1622,13 +1684,21 @@ if|if
 condition|(
 name|name
 condition|)
+block|{
+operator|*
+name|name
+operator|=
+literal|'\0'
+expr_stmt|;
 name|name
 operator|=
 name|name
 operator|+
 literal|1
 expr_stmt|;
+block|}
 else|else
+block|{
 name|name
 operator|=
 name|menu_strs
@@ -1636,6 +1706,7 @@ index|[
 name|i
 index|]
 expr_stmt|;
+block|}
 name|tx
 operator|=
 name|time_ints
@@ -2603,7 +2674,7 @@ name|gtk_tree_view_column_new_with_attributes
 argument_list|(
 name|_
 argument_list|(
-literal|"Menu Path/Name"
+literal|"Menu Path"
 argument_list|)
 argument_list|,
 name|renderer
