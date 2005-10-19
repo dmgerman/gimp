@@ -83,7 +83,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon292620380103
+DECL|enum|__anon2b5645520103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -103,7 +103,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292620380208
+DECL|struct|__anon2b5645520208
 block|{
 DECL|member|amount
 name|gdouble
@@ -6659,11 +6659,6 @@ modifier|*
 name|mag_draw
 decl_stmt|;
 comment|/* Magnitude multiplier factor map */
-name|gchar
-modifier|*
-name|string
-decl_stmt|;
-comment|/* string to hold title of progress bar window */
 name|gint
 name|first_time
 init|=
@@ -7230,7 +7225,7 @@ comment|/* Get selection area */
 if|if
 condition|(
 operator|!
-name|gimp_drawable_mask_bounds
+name|gimp_drawable_mask_intersect
 argument_list|(
 name|draw
 operator|->
