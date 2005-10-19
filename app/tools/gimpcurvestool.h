@@ -124,9 +124,9 @@ DECL|member|channel
 name|GimpHistogramChannel
 name|channel
 decl_stmt|;
-DECL|member|grab_point
+DECL|member|selected
 name|gint
-name|grab_point
+name|selected
 decl_stmt|;
 DECL|member|last
 name|gint
@@ -146,6 +146,10 @@ name|col_value
 index|[
 literal|5
 index|]
+decl_stmt|;
+DECL|member|grabbed
+name|gboolean
+name|grabbed
 decl_stmt|;
 DECL|member|hist
 name|GimpHistogram
