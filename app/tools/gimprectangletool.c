@@ -295,18 +295,6 @@ end_comment
 begin_function_decl
 specifier|static
 name|void
-name|rectangle_recalc
-parameter_list|(
-name|GimpRectangleTool
-modifier|*
-name|rectangle
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
 name|rectangle_tool_start
 parameter_list|(
 name|GimpRectangleTool
@@ -325,25 +313,6 @@ specifier|static
 name|void
 name|rectangle_info_update
 parameter_list|(
-name|GimpRectangleTool
-modifier|*
-name|rectangle
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|rectangle_response
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gint
-name|response_id
-parameter_list|,
 name|GimpRectangleTool
 modifier|*
 name|rectangle
@@ -4631,69 +4600,6 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_rectangle_tool_control (GimpTool * tool,GimpToolAction action,GimpDisplay * gdisp)
-name|gimp_rectangle_tool_control
-parameter_list|(
-name|GimpTool
-modifier|*
-name|tool
-parameter_list|,
-name|GimpToolAction
-name|action
-parameter_list|,
-name|GimpDisplay
-modifier|*
-name|gdisp
-parameter_list|)
-block|{
-name|GimpRectangleTool
-modifier|*
-name|rectangle
-init|=
-name|GIMP_RECTANGLE_TOOL
-argument_list|(
-name|tool
-argument_list|)
-decl_stmt|;
-switch|switch
-condition|(
-name|action
-condition|)
-block|{
-case|case
-name|PAUSE
-case|:
-break|break;
-case|case
-name|RESUME
-case|:
-name|rectangle_recalc
-argument_list|(
-name|rectangle
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
-name|HALT
-case|:
-name|rectangle_response
-argument_list|(
-name|NULL
-argument_list|,
-name|GIMP_RECTANGLE_MODE_EXECUTE
-argument_list|,
-name|rectangle
-argument_list|)
-expr_stmt|;
-break|break;
-default|default:
-break|break;
-block|}
-block|}
-end_function
-
-begin_function
-name|void
 DECL|function|gimp_rectangle_tool_button_press (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
 name|gimp_rectangle_tool_button_press
 parameter_list|(
@@ -4751,21 +4657,6 @@ operator|->
 name|gdisp
 condition|)
 block|{
-if|if
-condition|(
-name|tool
-operator|->
-name|gdisp
-condition|)
-name|rectangle_response
-argument_list|(
-name|NULL
-argument_list|,
-name|GIMP_RECTANGLE_MODE_EXECUTE
-argument_list|,
-name|rectangle
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|gimp_draw_tool_is_active
@@ -5064,7 +4955,7 @@ operator|==
 name|pressy
 condition|)
 block|{
-name|rectangle_response
+name|gimp_rectangle_tool_response
 argument_list|(
 name|NULL
 argument_list|,
@@ -6601,7 +6492,7 @@ break|break;
 block|}
 block|}
 comment|/*  recalculate the coordinates for rectangle_draw based on the new values  */
-name|rectangle_recalc
+name|gimp_rectangle_tool_configure
 argument_list|(
 name|rectangle
 argument_list|)
@@ -7138,7 +7029,7 @@ case|:
 case|case
 name|GDK_Return
 case|:
-name|rectangle_response
+name|gimp_rectangle_tool_response
 argument_list|(
 name|NULL
 argument_list|,
@@ -7153,7 +7044,7 @@ return|;
 case|case
 name|GDK_Escape
 case|:
-name|rectangle_response
+name|gimp_rectangle_tool_response
 argument_list|(
 name|NULL
 argument_list|,
@@ -7277,7 +7168,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|rectangle_recalc
+name|gimp_rectangle_tool_configure
 argument_list|(
 name|rectangle
 argument_list|)
@@ -8386,10 +8277,9 @@ block|}
 end_function
 
 begin_function
-specifier|static
 name|void
-DECL|function|rectangle_recalc (GimpRectangleTool * rectangle)
-name|rectangle_recalc
+DECL|function|gimp_rectangle_tool_configure (GimpRectangleTool * rectangle)
+name|gimp_rectangle_tool_configure
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
@@ -8696,7 +8586,7 @@ argument_list|(
 name|rectangle
 argument_list|)
 decl_stmt|;
-name|rectangle_recalc
+name|gimp_rectangle_tool_configure
 argument_list|(
 name|rectangle
 argument_list|)
@@ -8852,10 +8742,9 @@ block|}
 end_function
 
 begin_function
-specifier|static
 name|void
-DECL|function|rectangle_response (GtkWidget * widget,gint response_id,GimpRectangleTool * rectangle)
-name|rectangle_response
+DECL|function|gimp_rectangle_tool_response (GtkWidget * widget,gint response_id,GimpRectangleTool * rectangle)
+name|gimp_rectangle_tool_response
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -8956,7 +8845,7 @@ operator|-
 name|y1
 argument_list|)
 expr_stmt|;
-name|rectangle_recalc
+name|gimp_rectangle_tool_configure
 argument_list|(
 name|rectangle
 argument_list|)
@@ -9177,7 +9066,7 @@ name|NULL
 argument_list|)
 expr_stmt|;
 block|}
-name|rectangle_recalc
+name|gimp_rectangle_tool_configure
 argument_list|(
 name|rectangle
 argument_list|)
@@ -9439,7 +9328,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|rectangle_recalc
+name|gimp_rectangle_tool_configure
 argument_list|(
 name|rectangle
 argument_list|)
