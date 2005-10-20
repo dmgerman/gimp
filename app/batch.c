@@ -240,7 +240,7 @@ name|proc_name
 argument_list|,
 name|proc
 argument_list|,
-name|GIMP_RUN_INTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 argument_list|,
 name|NULL
 argument_list|)
