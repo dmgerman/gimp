@@ -144,7 +144,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27bbb37e0108
+DECL|struct|__anon2b2cc72d0108
 block|{
 DECL|member|width
 name|gint
@@ -2736,7 +2736,7 @@ name|sensitivity
 argument_list|,
 name|options
 operator|->
-name|multiblob
+name|discontinuous
 argument_list|,
 name|GIMP_PROGRESS
 argument_list|(
@@ -3548,7 +3548,7 @@ name|pspec
 operator|->
 name|name
 argument_list|,
-literal|"multiblob"
+literal|"discontinuous"
 argument_list|)
 operator|==
 literal|0
