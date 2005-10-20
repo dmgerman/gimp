@@ -418,7 +418,7 @@ comment|/* Currently unused... Eventually may be used  * to track dialog data.  
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b14359c0108
+DECL|struct|__anon2c5174da0108
 typedef|typedef
 struct|struct
 block|{
@@ -965,10 +965,7 @@ name|PLUG_IN_COPYRIGHT
 argument_list|,
 name|PLUG_IN_VERSION
 argument_list|,
-name|N_
-argument_list|(
 literal|"TWAIN (Dump)..."
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -1021,10 +1018,7 @@ name|PLUG_IN_COPYRIGHT
 argument_list|,
 name|PLUG_IN_VERSION
 argument_list|,
-name|N_
-argument_list|(
 literal|"TWAIN (Read)..."
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -1076,7 +1070,7 @@ name|PLUG_IN_VERSION
 argument_list|,
 name|N_
 argument_list|(
-literal|"_TWAIN..."
+literal|"_Scanner/Camera..."
 argument_list|)
 argument_list|,
 name|NULL
@@ -1414,7 +1408,7 @@ comment|/* Data used to carry data between each of  * the callback function call
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b14359c0208
+DECL|struct|__anon2c5174da0208
 typedef|typedef
 struct|struct
 block|{
@@ -1476,7 +1470,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Transferring TWAIN data"
+literal|"Transferring data from scanner/camera"
 argument_list|)
 argument_list|)
 expr_stmt|;
