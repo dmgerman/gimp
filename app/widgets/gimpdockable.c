@@ -1692,7 +1692,7 @@ name|attributes
 operator|.
 name|window_type
 operator|=
-name|GDK_WINDOW_TEMP
+name|GDK_WINDOW_CHILD
 expr_stmt|;
 name|attributes
 operator|.
