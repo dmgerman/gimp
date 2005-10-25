@@ -1309,12 +1309,16 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_brush_editor_new (Gimp * gimp)
+DECL|function|gimp_brush_editor_new (Gimp * gimp,GimpMenuFactory * menu_factory)
 name|gimp_brush_editor_new
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpMenuFactory
+modifier|*
+name|menu_factory
 parameter_list|)
 block|{
 name|GimpBrush
@@ -1345,6 +1349,18 @@ return|return
 name|g_object_new
 argument_list|(
 name|GIMP_TYPE_BRUSH_EDITOR
+argument_list|,
+literal|"menu-factory"
+argument_list|,
+name|menu_factory
+argument_list|,
+literal|"menu-identifier"
+argument_list|,
+literal|"<BrushEditor>"
+argument_list|,
+literal|"ui-path"
+argument_list|,
+literal|"/brush-editor-popup"
 argument_list|,
 literal|"data-factory"
 argument_list|,

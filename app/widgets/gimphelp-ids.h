@@ -1977,6 +1977,14 @@ value|"gimp-brush-editor-dialog"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_BRUSH_EDITOR_EDIT_ACTIVE
+define|#
+directive|define
+name|GIMP_HELP_BRUSH_EDITOR_EDIT_ACTIVE
+value|"gimp-brush-editor-edit-active"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_PATTERN_DIALOG
 define|#
 directive|define
@@ -2257,6 +2265,14 @@ value|"gimp-gradient-editor-zoom-all"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_GRADIENT_EDITOR_EDIT_ACTIVE
+define|#
+directive|define
+name|GIMP_HELP_GRADIENT_EDITOR_EDIT_ACTIVE
+value|"gimp-gradient-editor-edit-active"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_PALETTE_DIALOG
 define|#
 directive|define
@@ -2374,6 +2390,14 @@ define|#
 directive|define
 name|GIMP_HELP_PALETTE_EDITOR_ZOOM_ALL
 value|"gimp-palette-editor-zoom-all"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_PALETTE_EDITOR_EDIT_ACTIVE
+define|#
+directive|define
+name|GIMP_HELP_PALETTE_EDITOR_EDIT_ACTIVE
+value|"gimp-palette-editor-edit-active"
 end_define
 
 begin_define

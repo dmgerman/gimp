@@ -132,6 +132,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"brush-editor-actions.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"brushes-actions.h"
 end_include
 
@@ -371,6 +377,21 @@ name|action_groups
 index|[]
 init|=
 block|{
+block|{
+literal|"brush-editor"
+block|,
+name|N_
+argument_list|(
+literal|"Brush Editor"
+argument_list|)
+block|,
+name|GIMP_STOCK_BRUSH
+block|,
+name|brush_editor_actions_setup
+block|,
+name|brush_editor_actions_update
+block|}
+block|,
 block|{
 literal|"brushes"
 block|,

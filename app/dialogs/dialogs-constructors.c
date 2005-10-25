@@ -2395,6 +2395,10 @@ argument_list|(
 name|context
 operator|->
 name|gimp
+argument_list|,
+name|factory
+operator|->
+name|menu_factory
 argument_list|)
 return|;
 block|}

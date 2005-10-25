@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"data-editor-commands.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"palette-editor-actions.h"
 end_include
 
@@ -150,6 +156,41 @@ name|palette_editor_delete_color_cmd_callback
 argument_list|)
 block|,
 name|GIMP_HELP_PALETTE_EDITOR_DELETE
+block|}
+block|}
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|palette_editor_toggle_actions
+specifier|static
+name|GimpToggleActionEntry
+name|palette_editor_toggle_actions
+index|[]
+init|=
+block|{
+block|{
+literal|"palette-editor-edit-active"
+block|,
+name|GIMP_STOCK_LINKED
+block|,
+name|N_
+argument_list|(
+literal|"Edit Active Palette"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|G_CALLBACK
+argument_list|(
+name|data_editor_edit_active_cmd_callback
+argument_list|)
+block|,
+name|FALSE
+block|,
+name|GIMP_HELP_PALETTE_EDITOR_EDIT_ACTIVE
 block|}
 block|}
 decl_stmt|;
@@ -320,6 +361,18 @@ name|palette_editor_actions
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gimp_action_group_add_toggle_actions
+argument_list|(
+name|group
+argument_list|,
+name|palette_editor_toggle_actions
+argument_list|,
+name|G_N_ELEMENTS
+argument_list|(
+name|palette_editor_toggle_actions
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
@@ -407,6 +460,11 @@ decl_stmt|;
 name|GimpRGB
 name|bg
 decl_stmt|;
+name|gboolean
+name|edit_active
+init|=
+name|FALSE
+decl_stmt|;
 name|context
 operator|=
 name|gimp_get_user_context
@@ -460,6 +518,13 @@ name|bg
 argument_list|)
 expr_stmt|;
 block|}
+name|edit_active
+operator|=
+name|gimp_data_editor_get_edit_active
+argument_list|(
+name|data_editor
+argument_list|)
+expr_stmt|;
 DECL|macro|SET_SENSITIVE (action,condition)
 define|#
 directive|define
@@ -471,6 +536,17 @@ name|condition
 parameter_list|)
 define|\
 value|gimp_action_group_set_action_sensitive (group, action, (condition) != 0)
+DECL|macro|SET_ACTIVE (action,condition)
+define|#
+directive|define
+name|SET_ACTIVE
+parameter_list|(
+name|action
+parameter_list|,
+name|condition
+parameter_list|)
+define|\
+value|gimp_action_group_set_action_active (group, action, (condition) != 0)
 DECL|macro|SET_COLOR (action,color)
 define|#
 directive|define
@@ -563,9 +639,19 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
+name|SET_ACTIVE
+argument_list|(
+literal|"palette-editor-edit-active"
+argument_list|,
+name|edit_active
+argument_list|)
+expr_stmt|;
 undef|#
 directive|undef
 name|SET_SENSITIVE
+undef|#
+directive|undef
+name|SET_ACTIVE
 undef|#
 directive|undef
 name|SET_COLOR
