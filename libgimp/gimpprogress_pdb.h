@@ -74,29 +74,31 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
+begin_decl_stmt
 name|gboolean
 name|_gimp_progress_install
-parameter_list|(
+argument_list|(
 specifier|const
 name|gchar
-modifier|*
+operator|*
 name|progress_callback
-parameter_list|)
-function_decl|;
-end_function_decl
+argument_list|)
+name|G_GNUC_INTERNAL
+decl_stmt|;
+end_decl_stmt
 
-begin_function_decl
+begin_decl_stmt
 name|gboolean
 name|_gimp_progress_uninstall
-parameter_list|(
+argument_list|(
 specifier|const
 name|gchar
-modifier|*
+operator|*
 name|progress_callback
-parameter_list|)
-function_decl|;
-end_function_decl
+argument_list|)
+name|G_GNUC_INTERNAL
+decl_stmt|;
+end_decl_stmt
 
 begin_function_decl
 name|gboolean

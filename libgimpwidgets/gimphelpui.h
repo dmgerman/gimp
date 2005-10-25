@@ -16,16 +16,17 @@ directive|define
 name|__GIMP_HELP_UI_H__
 end_define
 
-begin_function_decl
+begin_decl_stmt
 name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
 name|void
 name|_gimp_help_init
-parameter_list|(
+argument_list|(
 name|void
-parameter_list|)
-function_decl|;
-end_function_decl
+argument_list|)
+name|G_GNUC_INTERNAL
+decl_stmt|;
+end_decl_stmt
 
 begin_function_decl
 name|void

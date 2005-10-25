@@ -20,37 +20,38 @@ directive|define
 name|__GIMP_LAYER_PDB_H__
 end_define
 
-begin_function_decl
+begin_decl_stmt
 name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
 name|gint32
 name|_gimp_layer_new
-parameter_list|(
+argument_list|(
 name|gint32
 name|image_ID
-parameter_list|,
+argument_list|,
 name|gint
 name|width
-parameter_list|,
+argument_list|,
 name|gint
 name|height
-parameter_list|,
+argument_list|,
 name|GimpImageType
 name|type
-parameter_list|,
+argument_list|,
 specifier|const
 name|gchar
-modifier|*
+operator|*
 name|name
-parameter_list|,
+argument_list|,
 name|gdouble
 name|opacity
-parameter_list|,
+argument_list|,
 name|GimpLayerModeEffects
 name|mode
-parameter_list|)
-function_decl|;
-end_function_decl
+argument_list|)
+name|G_GNUC_INTERNAL
+decl_stmt|;
+end_decl_stmt
 
 begin_function_decl
 name|gint32
@@ -65,18 +66,19 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
+begin_decl_stmt
 name|gint32
 name|_gimp_layer_copy
-parameter_list|(
+argument_list|(
 name|gint32
 name|layer_ID
-parameter_list|,
+argument_list|,
 name|gboolean
 name|add_alpha
-parameter_list|)
-function_decl|;
-end_function_decl
+argument_list|)
+name|G_GNUC_INTERNAL
+decl_stmt|;
+end_decl_stmt
 
 begin_function_decl
 name|gboolean

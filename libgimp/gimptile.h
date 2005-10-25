@@ -155,16 +155,17 @@ begin_comment
 comment|/*  private function  */
 end_comment
 
-begin_function_decl
+begin_decl_stmt
 name|void
 name|_gimp_tile_cache_flush_drawable
-parameter_list|(
+argument_list|(
 name|GimpDrawable
-modifier|*
+operator|*
 name|drawable
-parameter_list|)
-function_decl|;
-end_function_decl
+argument_list|)
+name|G_GNUC_INTERNAL
+decl_stmt|;
+end_decl_stmt
 
 begin_macro
 name|G_END_DECLS

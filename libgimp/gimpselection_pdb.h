@@ -94,21 +94,22 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
+begin_decl_stmt
 name|gint32
 name|_gimp_selection_float
-parameter_list|(
+argument_list|(
 name|gint32
 name|drawable_ID
-parameter_list|,
+argument_list|,
 name|gint
 name|offx
-parameter_list|,
+argument_list|,
 name|gint
 name|offy
-parameter_list|)
-function_decl|;
-end_function_decl
+argument_list|)
+name|G_GNUC_INTERNAL
+decl_stmt|;
+end_decl_stmt
 
 begin_function_decl
 name|gboolean
