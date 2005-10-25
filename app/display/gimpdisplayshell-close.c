@@ -588,6 +588,11 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|g_source_unref
+argument_list|(
+name|source
+argument_list|)
+expr_stmt|;
 comment|/*  The dialog is destroyed with the shell, so it should be safe    *  to hold an image pointer for the lifetime of the dialog.    */
 name|g_object_set_data
 argument_list|(

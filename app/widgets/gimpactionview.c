@@ -671,6 +671,11 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|g_source_unref
+argument_list|(
+name|source
+argument_list|)
+expr_stmt|;
 block|}
 return|return
 name|TRUE
@@ -1788,7 +1793,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279012020108
+DECL|struct|__anon2c07b07d0108
 block|{
 DECL|member|accel_path
 name|gchar

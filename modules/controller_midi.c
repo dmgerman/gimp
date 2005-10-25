@@ -114,7 +114,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291147d10108
+DECL|struct|__anon29fd1c5a0108
 block|{
 DECL|member|name
 name|gchar
@@ -134,7 +134,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon291147d10203
+DECL|enum|__anon29fd1c5a0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1961,6 +1961,11 @@ operator|)
 name|event_source
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|g_source_unref
+argument_list|(
+name|event_source
 argument_list|)
 expr_stmt|;
 return|return
