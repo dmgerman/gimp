@@ -66,7 +66,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2949367d0108
+DECL|struct|__anon29d51fa60108
 block|{
 DECL|member|color
 name|GimpRGB
@@ -339,7 +339,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug_in_colortoalpha"
 argument_list|,
-literal|"<Image>/Colors"
+literal|"<Image>/Colors/Modify"
 argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
