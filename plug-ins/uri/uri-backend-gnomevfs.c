@@ -1231,10 +1231,14 @@ directive|ifdef
 name|HAVE_GNOME_KEYRING
 end_ifdef
 
+begin_comment
+comment|/* gnome-keyring code copied from  * libgnomeui/libgnomeui/gnome-authentication-manager.c CVS version 1.13  */
+end_comment
+
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3c2a010108
+DECL|struct|__anon2c8918e60108
 block|{
 DECL|member|in_args
 specifier|const
