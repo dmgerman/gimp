@@ -20,6 +20,17 @@ begin_function_decl
 name|gboolean
 name|uri_backend_init
 parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|plugin_name
+parameter_list|,
+name|gboolean
+name|run
+parameter_list|,
+name|GimpRunMode
+name|run_mode
+parameter_list|,
 name|GError
 modifier|*
 modifier|*

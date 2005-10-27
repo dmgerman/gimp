@@ -94,6 +94,14 @@ name|SAVE_PROC
 value|"file-uri-save"
 end_define
 
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"uri"
+end_define
+
 begin_function_decl
 specifier|static
 name|void
@@ -343,6 +351,12 @@ condition|(
 operator|!
 name|uri_backend_init
 argument_list|(
+name|PLUG_IN_BINARY
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
+argument_list|,
 operator|&
 name|error
 argument_list|)
@@ -593,6 +607,12 @@ condition|(
 operator|!
 name|uri_backend_init
 argument_list|(
+name|PLUG_IN_BINARY
+argument_list|,
+name|TRUE
+argument_list|,
+name|run_mode
+argument_list|,
 operator|&
 name|error
 argument_list|)
@@ -728,14 +748,7 @@ name|data
 operator|.
 name|d_int32
 argument_list|,
-name|param
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_int32
+name|run_mode
 argument_list|)
 expr_stmt|;
 block|}

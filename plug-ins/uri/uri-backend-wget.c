@@ -102,9 +102,20 @@ end_define
 
 begin_function
 name|gboolean
-DECL|function|uri_backend_init (GError ** error)
+DECL|function|uri_backend_init (const gchar * plugin_name,gboolean run,GimpRunMode run_mode,GError ** error)
 name|uri_backend_init
 parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|plugin_name
+parameter_list|,
+name|gboolean
+name|run
+parameter_list|,
+name|GimpRunMode
+name|run_mode
+parameter_list|,
 name|GError
 modifier|*
 modifier|*
