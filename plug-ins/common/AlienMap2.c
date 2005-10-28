@@ -70,7 +70,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bf7456b0103
+DECL|enum|__anon27ecfad60103
 block|{
 DECL|enumerator|RGB_MODEL
 name|RGB_MODEL
@@ -94,7 +94,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf7456b0208
+DECL|struct|__anon27ecfad60208
 block|{
 DECL|member|redfrequency
 name|gdouble
@@ -843,7 +843,7 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"AlienMap2 Color Transformation Plug-In"
+literal|"Alien Map Color Transformation Plug-In"
 argument_list|,
 literal|"No help yet. Just try it and you'll see!"
 argument_list|,
@@ -855,7 +855,7 @@ literal|"24th April 1998"
 argument_list|,
 name|N_
 argument_list|(
-literal|"Alien Map _2..."
+literal|"_Alien Map..."
 argument_list|)
 argument_list|,
 literal|"RGB*"
@@ -1569,7 +1569,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"AlienMap2: Transforming"
+literal|"Alien Map: Transforming"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1843,7 +1843,7 @@ name|gimp_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"AlienMap2"
+literal|"Alien Map"
 argument_list|)
 argument_list|,
 name|PLUG_IN_BINARY
