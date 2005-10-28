@@ -269,13 +269,13 @@ argument_list|)
 block|}
 block|,
 block|{
-literal|"colors-modify-menu"
+literal|"colors-transform-menu"
 block|,
 name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Mo_dify"
+literal|"Trans_form"
 argument_list|)
 block|}
 block|,
