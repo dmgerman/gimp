@@ -132,6 +132,18 @@ modifier|*
 name|selector
 parameter_list|)
 function_decl|;
+DECL|member|activate
+name|void
+function_decl|(
+modifier|*
+name|activate
+function_decl|)
+parameter_list|(
+name|GimpPageSelector
+modifier|*
+name|selector
+parameter_list|)
+function_decl|;
 comment|/* Padding for future expansion */
 DECL|member|_gimp_reserved1
 name|void

@@ -288,7 +288,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c14860f0108
+DECL|struct|__anon2a29874c0108
 block|{
 DECL|member|resolution
 name|guint
@@ -377,7 +377,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c14860f0208
+DECL|struct|__anon2a29874c0208
 block|{
 DECL|member|width
 DECL|member|height
@@ -970,7 +970,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c14860f0308
+DECL|struct|__anon2a29874c0308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1079,13 +1079,15 @@ DECL|variable|ascii85_buf
 specifier|static
 name|guint32
 name|ascii85_buf
+init|=
+literal|0
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|ascii85_len
 specifier|static
-name|int
+name|gint
 name|ascii85_len
 init|=
 literal|0
@@ -1095,7 +1097,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|ascii85_linewidth
 specifier|static
-name|int
+name|gint
 name|ascii85_linewidth
 init|=
 literal|0
@@ -1836,7 +1838,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c14860f0408
+DECL|struct|__anon2a29874c0408
 block|{
 DECL|member|eol
 name|long
@@ -14663,6 +14665,20 @@ argument_list|(
 name|selector
 argument_list|)
 expr_stmt|;
+name|g_signal_connect_swapped
+argument_list|(
+name|selector
+argument_list|,
+literal|"activate"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|gtk_window_activate_default
+argument_list|)
+argument_list|,
+name|dialog
+argument_list|)
+expr_stmt|;
 block|}
 name|hbox
 operator|=
@@ -15530,9 +15546,7 @@ operator|)
 expr_stmt|;
 if|if
 condition|(
-name|page_count
-operator|>
-literal|1
+name|selector
 condition|)
 block|{
 name|range

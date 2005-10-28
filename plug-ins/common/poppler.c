@@ -63,6 +63,14 @@ name|PLUG_IN_BINARY
 value|"poppler"
 end_define
 
+begin_define
+DECL|macro|THUMBNAIL_SIZE
+define|#
+directive|define
+name|THUMBNAIL_SIZE
+value|128
+end_define
+
 begin_comment
 comment|/* Structs for the load dialog */
 end_comment
@@ -70,7 +78,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c01a6f90108
+DECL|struct|__anon2a20dbdb0108
 block|{
 DECL|member|target
 name|GimpPageSelectorTarget
@@ -111,7 +119,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c01a6f90208
+DECL|struct|__anon2a20dbdb0208
 block|{
 DECL|member|n_pages
 name|gint
@@ -2100,17 +2108,17 @@ begin_function
 specifier|static
 name|GdkPixbuf
 modifier|*
-DECL|function|get_thumbnail (PopplerDocument * doc,int page_num,int preferred_size)
+DECL|function|get_thumbnail (PopplerDocument * doc,gint page_num,gint preferred_size)
 name|get_thumbnail
 parameter_list|(
 name|PopplerDocument
 modifier|*
 name|doc
 parameter_list|,
-name|int
+name|gint
 name|page_num
 parameter_list|,
-name|int
+name|gint
 name|preferred_size
 parameter_list|)
 block|{
@@ -2255,7 +2263,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c01a6f90308
+DECL|struct|__anon2a20dbdb0308
 block|{
 DECL|member|document
 name|PopplerDocument
@@ -2280,7 +2288,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c01a6f90408
+DECL|struct|__anon2a20dbdb0408
 block|{
 DECL|member|selector
 name|GimpPageSelector
@@ -2434,7 +2442,7 @@ name|document
 argument_list|,
 name|i
 argument_list|,
-literal|128
+name|THUMBNAIL_SIZE
 argument_list|)
 expr_stmt|;
 name|g_idle_add
@@ -2776,6 +2784,20 @@ name|label
 argument_list|)
 expr_stmt|;
 block|}
+name|g_signal_connect_swapped
+argument_list|(
+name|selector
+argument_list|,
+literal|"activate"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|gtk_window_activate_default
+argument_list|)
+argument_list|,
+name|dialog
+argument_list|)
+expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|selector
