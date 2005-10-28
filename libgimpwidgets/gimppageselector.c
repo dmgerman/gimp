@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8d500c0103
+DECL|enum|__anon2b7737ed0103
 block|{
 DECL|enumerator|SELECTION_CHANGED
 name|SELECTION_CHANGED
@@ -81,7 +81,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8d500c0203
+DECL|enum|__anon2b7737ed0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -97,7 +97,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8d500c0303
+DECL|enum|__anon2b7737ed0303
 block|{
 DECL|enumerator|COLUMN_PAGE_NO
 name|COLUMN_PAGE_NO
@@ -670,7 +670,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-comment|/**    * GimpPageSelector::activate:    * @widget: the object which received the signal.    *    * The "activate" signal on GimpPageSelector is an action signal. It    * is emitted when a user double-clicks an item in the page selection.    */
+comment|/**    * GimpPageSelector::activate:    * @widget: the object which received the signal.    *    * The "activate" signal on GimpPageSelector is an action signal. It    * is emitted when a user double-clicks an item in the page selection.    *    * Since: GIMP 2.4    */
 name|selector_signals
 index|[
 name|ACTIVATE
