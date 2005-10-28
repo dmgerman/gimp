@@ -269,17 +269,6 @@ argument_list|)
 block|}
 block|,
 block|{
-literal|"colors-transform-menu"
-block|,
-name|NULL
-block|,
-name|N_
-argument_list|(
-literal|"Trans_form"
-argument_list|)
-block|}
-block|,
-block|{
 literal|"image-new"
 block|,
 name|GTK_STOCK_NEW
