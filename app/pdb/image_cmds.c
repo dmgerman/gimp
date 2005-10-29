@@ -10421,7 +10421,7 @@ literal|"gimp-image-clean-all"
 block|,
 literal|"Set the image dirty count to 0."
 block|,
-literal|"This procedure sets the specified image's dirty count to 0, allowing operations to occur without having a 'dirtied' image. This is especially useful for creating and loading images which should not initially be considered dirty, even though layers must be created, filled, and installed in the image."
+literal|"This procedure sets the specified image's dirty count to 0, allowing operations to occur without having a 'dirtied' image. This is especially useful for creating and loading images which should not initially be considered dirty, even though layers must be created, filled, and installed in the image. Note that save plug-ins must NOT call this function themselves after saving the image."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -10616,7 +10616,7 @@ literal|"gimp-image-is-dirty"
 block|,
 literal|"Checks if the image has unsaved changes."
 block|,
-literal|"This procedure checks the specified image's dirty count to see if it needs to be saved."
+literal|"This procedure checks the specified image's dirty count to see if it needs to be saved. Note that saving the image does not automatically set the dirty count to 0, you need to call gimp-image-clean-all after calling a save procedure to make the image clean."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
