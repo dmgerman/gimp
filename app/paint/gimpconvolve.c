@@ -144,7 +144,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bdac7850103
+DECL|enum|__anon298050750103
 block|{
 DECL|enumerator|CONVOLVE_NCLIP
 name|CONVOLVE_NCLIP
@@ -1468,7 +1468,7 @@ operator|)
 operator|*
 name|bytes
 expr_stmt|;
-name|ovrsz2_data
+name|ovrsz1_data
 operator|=
 name|g_malloc
 argument_list|(
@@ -1490,9 +1490,9 @@ argument_list|(
 operator|(
 name|area
 operator|->
-name|width
+name|height
 operator|+
-name|marginx
+name|marginy
 operator|)
 operator|*
 name|rowstride
