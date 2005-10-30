@@ -263,7 +263,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon290f37f50103
+DECL|enum|__anon2b8b4bd10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -276,7 +276,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon290f37f50203
+DECL|enum|__anon2b8b4bd10203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -2288,6 +2288,10 @@ name|GdkScreen
 modifier|*
 name|screen
 decl_stmt|;
+name|GtkAction
+modifier|*
+name|action
+decl_stmt|;
 name|gint
 name|image_width
 decl_stmt|,
@@ -3385,7 +3389,7 @@ argument_list|,
 name|GIMP_HELP_IMAGE_WINDOW_RULER
 argument_list|)
 expr_stmt|;
-comment|/* Workaround for GTK+ Wintab bug on Windows when creating guides by    * dragging from the rulers. See bug #168516. */
+comment|/*  Workaround for GTK+ Wintab bug on Windows when creating guides by    *  dragging from the rulers. See bug #168516.    */
 name|gtk_widget_set_extension_events
 argument_list|(
 name|shell
@@ -3855,6 +3859,33 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
+name|action
+operator|=
+name|gimp_ui_manager_find_action
+argument_list|(
+name|shell
+operator|->
+name|menubar_manager
+argument_list|,
+literal|"quick-mask"
+argument_list|,
+literal|"quick-mask-toggle"
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|action
+condition|)
+name|gimp_widget_set_accel_help
+argument_list|(
+name|shell
+operator|->
+name|quick_mask_button
+argument_list|,
+name|action
+argument_list|)
+expr_stmt|;
+else|else
 name|gimp_help_set_help_data
 argument_list|(
 name|shell

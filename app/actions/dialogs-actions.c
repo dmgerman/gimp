@@ -197,7 +197,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Tool Options"
+argument_list|)
 block|,
 literal|"gimp-tool-options"
 block|,
@@ -216,7 +219,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Device Status"
+argument_list|)
 block|,
 literal|"gimp-device-status"
 block|,
@@ -235,7 +241,10 @@ argument_list|)
 block|,
 literal|"<control>L"
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Layers"
+argument_list|)
 block|,
 literal|"gimp-layer-list"
 block|,
@@ -254,7 +263,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Channels"
+argument_list|)
 block|,
 literal|"gimp-channel-list"
 block|,
@@ -273,7 +285,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Paths"
+argument_list|)
 block|,
 literal|"gimp-vectors-list"
 block|,
@@ -292,7 +307,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Colormap"
+argument_list|)
 block|,
 literal|"gimp-indexed-palette"
 block|,
@@ -311,7 +329,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Histogram"
+argument_list|)
 block|,
 literal|"gimp-histogram-editor"
 block|,
@@ -330,7 +351,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Selection Editor"
+argument_list|)
 block|,
 literal|"gimp-selection-editor"
 block|,
@@ -349,7 +373,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Display Navigation"
+argument_list|)
 block|,
 literal|"gimp-navigation-view"
 block|,
@@ -368,7 +395,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Undo History"
+argument_list|)
 block|,
 literal|"gimp-undo-history"
 block|,
@@ -387,7 +417,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Cursor Info"
+argument_list|)
 block|,
 literal|"gimp-cursor-view"
 block|,
@@ -406,7 +439,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Sample Points"
+argument_list|)
 block|,
 literal|"gimp-sample-point-editor"
 block|,
@@ -425,7 +461,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"FG/BG Color"
+argument_list|)
 block|,
 literal|"gimp-color-editor"
 block|,
@@ -444,7 +483,10 @@ argument_list|)
 block|,
 literal|"<control><shift>B"
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Brushes"
+argument_list|)
 block|,
 literal|"gimp-brush-grid|gimp-brush-list"
 block|,
@@ -463,7 +505,10 @@ argument_list|)
 block|,
 literal|"<control><shift>P"
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Patterns"
+argument_list|)
 block|,
 literal|"gimp-pattern-grid|gimp-pattern-list"
 block|,
@@ -482,7 +527,10 @@ argument_list|)
 block|,
 literal|"<control>G"
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Gradients"
+argument_list|)
 block|,
 literal|"gimp-gradient-list|gimp-gradient-grid"
 block|,
@@ -501,7 +549,10 @@ argument_list|)
 block|,
 literal|"<control>P"
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Palettes"
+argument_list|)
 block|,
 literal|"gimp-palette-list|gimp-palette-grid"
 block|,
@@ -520,7 +571,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Fonts"
+argument_list|)
 block|,
 literal|"gimp-font-list|gimp-font-grid"
 block|,
@@ -539,7 +593,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Buffers"
+argument_list|)
 block|,
 literal|"gimp-buffer-list|gimp-buffer-grid"
 block|,
@@ -558,7 +615,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Images"
+argument_list|)
 block|,
 literal|"gimp-image-list|gimp-image-grid"
 block|,
@@ -577,7 +637,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Document History"
+argument_list|)
 block|,
 literal|"gimp-document-list|gimp-document-grid"
 block|,
@@ -596,7 +659,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Image Templates"
+argument_list|)
 block|,
 literal|"gimp-template-list|gimp-template-grid"
 block|,
@@ -615,7 +681,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Tools"
+argument_list|)
 block|,
 literal|"gimp-tool-list|gimp-tool-grid"
 block|,
@@ -634,7 +703,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Error Console"
+argument_list|)
 block|,
 literal|"gimp-error-console"
 block|,

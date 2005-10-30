@@ -1792,7 +1792,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon295641fb0108
+DECL|struct|__anon27dea1260108
 block|{
 DECL|member|modifiers
 name|GdkModifierType
@@ -3941,7 +3941,7 @@ name|g_object_get_qdata
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|tooltip
+name|action
 argument_list|)
 argument_list|,
 name|GIMP_HELP_ID

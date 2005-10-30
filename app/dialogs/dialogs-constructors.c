@@ -911,6 +911,21 @@ argument_list|(
 name|widget
 argument_list|)
 expr_stmt|;
+comment|/* EEK */
+name|g_object_set_data
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|dockable
+argument_list|)
+argument_list|,
+literal|"gimp-dialog-identifier"
+argument_list|,
+name|entry
+operator|->
+name|identifier
+argument_list|)
+expr_stmt|;
 block|}
 return|return
 name|dockable
