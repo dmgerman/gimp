@@ -195,7 +195,7 @@ argument_list|(
 literal|"Tool _Options"
 argument_list|)
 block|,
-literal|"<control><shift>T"
+name|NULL
 block|,
 name|NULL
 block|,
