@@ -1792,7 +1792,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon27dea1260108
+DECL|struct|__anon2a0ea3350108
 block|{
 DECL|member|modifiers
 name|GdkModifierType
@@ -3760,14 +3760,10 @@ operator|&
 name|GTK_ACCEL_VISIBLE
 condition|)
 block|{
-name|tooltip
-operator|=
-name|g_strconcat
-argument_list|(
-name|orig_tooltip
-argument_list|,
-literal|"     "
-argument_list|,
+name|gchar
+modifier|*
+name|tmp
+init|=
 name|gimp_get_accel_string
 argument_list|(
 name|accel_key
@@ -3778,8 +3774,23 @@ name|accel_key
 operator|->
 name|accel_mods
 argument_list|)
+decl_stmt|;
+name|tooltip
+operator|=
+name|g_strconcat
+argument_list|(
+name|orig_tooltip
+argument_list|,
+literal|"     "
+argument_list|,
+name|tmp
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|tmp
 argument_list|)
 expr_stmt|;
 block|}

@@ -19,13 +19,23 @@ end_define
 begin_include
 include|#
 directive|include
+file|<time.h>
+end_include
+
+begin_comment
+comment|/* time_t */
+end_comment
+
+begin_include
+include|#
+directive|include
 file|"gimpviewable.h"
 end_include
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b7902860103
+DECL|enum|__anon2933df900103
 block|{
 DECL|enumerator|GIMP_DATA_ERROR_OPEN
 name|GIMP_DATA_ERROR_OPEN
@@ -165,6 +175,10 @@ decl_stmt|;
 DECL|member|freeze_count
 name|gint
 name|freeze_count
+decl_stmt|;
+DECL|member|mtime
+name|time_t
+name|mtime
 decl_stmt|;
 block|}
 struct|;

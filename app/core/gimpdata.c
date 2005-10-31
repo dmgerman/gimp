@@ -99,7 +99,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27842e5f0103
+DECL|enum|__anon2c375c6d0103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY
@@ -112,7 +112,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27842e5f0203
+DECL|enum|__anon2c375c6d0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -635,6 +635,12 @@ expr_stmt|;
 name|data
 operator|->
 name|freeze_count
+operator|=
+literal|0
+expr_stmt|;
+name|data
+operator|->
+name|mtime
 operator|=
 literal|0
 expr_stmt|;
@@ -1192,12 +1198,36 @@ if|if
 condition|(
 name|success
 condition|)
+block|{
+name|struct
+name|stat
+name|filestat
+decl_stmt|;
+name|g_stat
+argument_list|(
+name|data
+operator|->
+name|filename
+argument_list|,
+operator|&
+name|filestat
+argument_list|)
+expr_stmt|;
+name|data
+operator|->
+name|mtime
+operator|=
+name|filestat
+operator|.
+name|st_mtime
+expr_stmt|;
 name|data
 operator|->
 name|dirty
 operator|=
 name|FALSE
 expr_stmt|;
+block|}
 return|return
 name|success
 return|;
