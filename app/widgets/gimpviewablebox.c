@@ -120,6 +120,9 @@ parameter_list|,
 name|gint
 name|spacing
 parameter_list|,
+name|GimpViewType
+name|view_type
+parameter_list|,
 name|GimpViewSize
 name|view_size
 parameter_list|,
@@ -231,6 +234,8 @@ name|context
 argument_list|,
 name|spacing
 argument_list|,
+name|GIMP_VIEW_TYPE_GRID
+argument_list|,
 name|GIMP_VIEW_SIZE_SMALL
 argument_list|,
 literal|"gimp-brush-grid|gimp-brush-list"
@@ -311,6 +316,8 @@ argument_list|,
 name|context
 argument_list|,
 name|spacing
+argument_list|,
+name|GIMP_VIEW_TYPE_GRID
 argument_list|,
 name|GIMP_VIEW_SIZE_SMALL
 argument_list|,
@@ -413,6 +420,8 @@ argument_list|(
 name|container
 argument_list|,
 name|context
+argument_list|,
+name|GIMP_VIEW_TYPE_LIST
 argument_list|,
 name|GIMP_VIEW_SIZE_LARGE
 argument_list|,
@@ -650,6 +659,8 @@ name|context
 argument_list|,
 name|spacing
 argument_list|,
+name|GIMP_VIEW_TYPE_LIST
+argument_list|,
 name|GIMP_VIEW_SIZE_MEDIUM
 argument_list|,
 literal|"gimp-palette-list|gimp-palette-grid"
@@ -729,6 +740,8 @@ name|context
 argument_list|,
 name|spacing
 argument_list|,
+name|GIMP_VIEW_TYPE_LIST
+argument_list|,
 name|GIMP_VIEW_SIZE_SMALL
 argument_list|,
 literal|"gimp-font-list|gimp-font-grid"
@@ -752,7 +765,7 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|gimp_viewable_box_new (GimpContainer * container,GimpContext * context,gint spacing,GimpViewSize view_size,const gchar * dialog_identifier,const gchar * dialog_stock_id,const gchar * dialog_tooltip)
+DECL|function|gimp_viewable_box_new (GimpContainer * container,GimpContext * context,gint spacing,GimpViewType view_type,GimpViewSize view_size,const gchar * dialog_identifier,const gchar * dialog_stock_id,const gchar * dialog_tooltip)
 name|gimp_viewable_box_new
 parameter_list|(
 name|GimpContainer
@@ -765,6 +778,9 @@ name|context
 parameter_list|,
 name|gint
 name|spacing
+parameter_list|,
+name|GimpViewType
+name|view_type
 parameter_list|,
 name|GimpViewSize
 name|view_size
@@ -813,6 +829,8 @@ argument_list|(
 name|container
 argument_list|,
 name|context
+argument_list|,
+name|view_type
 argument_list|,
 name|view_size
 argument_list|,

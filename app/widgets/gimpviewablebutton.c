@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6651e80103
+DECL|enum|__anon2985783b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1077,7 +1077,7 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_viewable_button_new (GimpContainer * container,GimpContext * context,gint preview_size,gint preview_border_width,GimpDialogFactory * dialog_factory,const gchar * dialog_identifier,const gchar * dialog_stock_id,const gchar * dialog_tooltip)
+DECL|function|gimp_viewable_button_new (GimpContainer * container,GimpContext * context,GimpViewType view_type,gint preview_size,gint preview_border_width,GimpDialogFactory * dialog_factory,const gchar * dialog_identifier,const gchar * dialog_stock_id,const gchar * dialog_tooltip)
 name|gimp_viewable_button_new
 parameter_list|(
 name|GimpContainer
@@ -1087,6 +1087,9 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpViewType
+name|view_type
 parameter_list|,
 name|gint
 name|preview_size
@@ -1221,6 +1224,14 @@ operator|=
 name|g_object_new
 argument_list|(
 name|GIMP_TYPE_VIEWABLE_BUTTON
+argument_list|,
+literal|"popup-view-type"
+argument_list|,
+name|view_type
+argument_list|,
+literal|"popup-preview-size"
+argument_list|,
+name|preview_size
 argument_list|,
 name|NULL
 argument_list|)
