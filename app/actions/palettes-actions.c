@@ -209,6 +209,31 @@ name|GIMP_HELP_PALETTE_MERGE
 block|}
 block|,
 block|{
+literal|"palettes-copy-location"
+block|,
+name|GTK_STOCK_COPY
+block|,
+name|N_
+argument_list|(
+literal|"Copy Palette _Location"
+argument_list|)
+block|,
+literal|""
+block|,
+name|N_
+argument_list|(
+literal|"Copy palette file location to clipboard"
+argument_list|)
+block|,
+name|G_CALLBACK
+argument_list|(
+name|data_copy_location_cmd_callback
+argument_list|)
+block|,
+name|GIMP_HELP_PALETTE_COPY_LOCATION
+block|}
+block|,
+block|{
 literal|"palettes-delete"
 block|,
 name|GTK_STOCK_DELETE
@@ -434,6 +459,17 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/* FIXME palette&& GIMP_IS_CONTAINER_LIST_VIEW (editor->view)); */
+name|SET_SENSITIVE
+argument_list|(
+literal|"palettes-copy-location"
+argument_list|,
+name|palette
+operator|&&
+name|data
+operator|->
+name|filename
+argument_list|)
+expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"palettes-delete"

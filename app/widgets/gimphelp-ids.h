@@ -1953,6 +1953,14 @@ value|"gimp-brush-duplicate"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_BRUSH_COPY_LOCATION
+define|#
+directive|define
+name|GIMP_HELP_BRUSH_COPY_LOCATION
+value|"gimp-brush-copy-location"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_BRUSH_DELETE
 define|#
 directive|define
@@ -2025,6 +2033,14 @@ value|"gimp-pattern-duplicate"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_PATTERN_COPY_LOCATION
+define|#
+directive|define
+name|GIMP_HELP_PATTERN_COPY_LOCATION
+value|"gimp-pattern-copy-location"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_PATTERN_DELETE
 define|#
 directive|define
@@ -2070,6 +2086,14 @@ define|#
 directive|define
 name|GIMP_HELP_GRADIENT_DUPLICATE
 value|"gimp-gradient-duplicate"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_GRADIENT_COPY_LOCATION
+define|#
+directive|define
+name|GIMP_HELP_GRADIENT_COPY_LOCATION
+value|"gimp-gradient-copy-location"
 end_define
 
 begin_define
@@ -2302,6 +2326,14 @@ define|#
 directive|define
 name|GIMP_HELP_PALETTE_DUPLICATE
 value|"gimp-palette-duplicate"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_PALETTE_COPY_LOCATION
+define|#
+directive|define
+name|GIMP_HELP_PALETTE_COPY_LOCATION
+value|"gimp-palette-copy-location"
 end_define
 
 begin_define
