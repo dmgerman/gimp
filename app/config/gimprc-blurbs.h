@@ -659,6 +659,15 @@ value|N_("Remember the current tool, pattern, color, and brush across GIMP " \  
 end_define
 
 begin_define
+DECL|macro|SAVE_DOCUMENT_HISTORY_BLURB
+define|#
+directive|define
+name|SAVE_DOCUMENT_HISTORY_BLURB
+define|\
+value|N_("Add all opened and saved files to the document history on disk.")
+end_define
+
+begin_define
 DECL|macro|SAVE_SESSION_INFO_BLURB
 define|#
 directive|define

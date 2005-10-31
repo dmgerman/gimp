@@ -267,7 +267,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c510a950103
+DECL|enum|__anon29aa5be70103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -2793,6 +2793,14 @@ argument_list|(
 name|gimp
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|gimp
+operator|->
+name|config
+operator|->
+name|save_document_history
+condition|)
 name|gimp_documents_save
 argument_list|(
 name|gimp

@@ -107,6 +107,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpcoreconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimp.h"
 end_include
 
@@ -1445,6 +1451,14 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+if|if
+condition|(
+name|gimp
+operator|->
+name|config
+operator|->
+name|save_document_history
+condition|)
 name|gimp_recent_list_add_uri
 argument_list|(
 name|uri
@@ -1791,6 +1805,14 @@ argument_list|,
 name|mime_type
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|gimp
+operator|->
+name|config
+operator|->
+name|save_document_history
+condition|)
 name|gimp_recent_list_add_uri
 argument_list|(
 name|uri
