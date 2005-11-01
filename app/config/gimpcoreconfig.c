@@ -259,7 +259,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3fb1d00103
+DECL|enum|__anon279eb3040103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
