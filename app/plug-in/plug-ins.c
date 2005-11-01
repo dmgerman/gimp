@@ -465,10 +465,7 @@ literal|"pluginrc"
 argument_list|)
 expr_stmt|;
 block|}
-call|(
-modifier|*
 name|status_callback
-call|)
 argument_list|(
 name|_
 argument_list|(
@@ -520,11 +517,8 @@ name|error
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  Query any plug-ins that have changed since we last wrote out    *  the pluginrc file.    */
-call|(
-modifier|*
+comment|/*  query any plug-ins that have changed since we last wrote out    *  the pluginrc file    */
 name|status_callback
-call|)
 argument_list|(
 name|_
 argument_list|(
@@ -635,10 +629,7 @@ operator|->
 name|prog
 argument_list|)
 expr_stmt|;
-call|(
-modifier|*
 name|status_callback
-call|)
 argument_list|(
 name|NULL
 argument_list|,
@@ -692,10 +683,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-call|(
-modifier|*
 name|status_callback
-call|)
 argument_list|(
 name|NULL
 argument_list|,
@@ -705,10 +693,7 @@ literal|1.0
 argument_list|)
 expr_stmt|;
 comment|/* initialize the plug-ins */
-call|(
-modifier|*
 name|status_callback
-call|)
 argument_list|(
 name|_
 argument_list|(
@@ -813,10 +798,7 @@ operator|->
 name|prog
 argument_list|)
 expr_stmt|;
-call|(
-modifier|*
 name|status_callback
-call|)
 argument_list|(
 name|NULL
 argument_list|,
@@ -870,10 +852,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-call|(
-modifier|*
 name|status_callback
-call|)
 argument_list|(
 name|NULL
 argument_list|,
@@ -1354,10 +1333,7 @@ name|GList
 modifier|*
 name|list
 decl_stmt|;
-call|(
-modifier|*
 name|status_callback
-call|)
 argument_list|(
 name|_
 argument_list|(
@@ -1420,10 +1396,7 @@ operator|.
 name|name
 argument_list|)
 expr_stmt|;
-call|(
-modifier|*
 name|status_callback
-call|)
 argument_list|(
 name|NULL
 argument_list|,
@@ -1470,10 +1443,7 @@ literal|1
 argument_list|)
 expr_stmt|;
 block|}
-call|(
-modifier|*
 name|status_callback
-call|)
 argument_list|(
 name|NULL
 argument_list|,
@@ -3655,17 +3625,11 @@ block|{
 name|PlugInProcDef
 modifier|*
 name|proc_def
-decl_stmt|;
-name|proc_def
-operator|=
-operator|(
-name|PlugInProcDef
-operator|*
-operator|)
+init|=
 name|list
 operator|->
 name|data
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|proc_rec
@@ -4211,10 +4175,6 @@ name|plug_in_name
 decl_stmt|;
 name|plug_in_def
 operator|=
-operator|(
-name|PlugInDef
-operator|*
-operator|)
 name|list
 operator|->
 name|data
