@@ -102,7 +102,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e82d550103
+DECL|enum|__anon28d5527e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2538,15 +2538,6 @@ name|spacing
 operator|=
 literal|20
 expr_stmt|;
-comment|/* render brush mask */
-name|gimp_data_dirty
-argument_list|(
-name|GIMP_DATA
-argument_list|(
-name|brush
-argument_list|)
-argument_list|)
-expr_stmt|;
 return|return
 name|GIMP_DATA
 argument_list|(
@@ -3189,42 +3180,23 @@ argument_list|(
 name|file
 argument_list|)
 expr_stmt|;
-comment|/* create new brush */
 name|brush
 operator|=
-name|g_object_new
+name|gimp_brush_generated_new
 argument_list|(
-name|GIMP_TYPE_BRUSH_GENERATED
-argument_list|,
-literal|"name"
-argument_list|,
 name|name
-argument_list|,
-literal|"shape"
 argument_list|,
 name|shape
 argument_list|,
-literal|"radius"
-argument_list|,
 name|radius
-argument_list|,
-literal|"spikes"
 argument_list|,
 name|spikes
 argument_list|,
-literal|"hardness"
-argument_list|,
 name|hardness
-argument_list|,
-literal|"aspect-ratio"
 argument_list|,
 name|aspect_ratio
 argument_list|,
-literal|"angle"
-argument_list|,
 name|angle
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -3240,15 +3212,6 @@ operator|->
 name|spacing
 operator|=
 name|spacing
-expr_stmt|;
-comment|/* render brush mask */
-name|gimp_data_dirty
-argument_list|(
-name|GIMP_DATA
-argument_list|(
-name|brush
-argument_list|)
-argument_list|)
 expr_stmt|;
 return|return
 name|g_list_prepend
