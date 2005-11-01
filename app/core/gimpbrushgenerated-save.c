@@ -102,7 +102,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d5527e0103
+DECL|enum|__anon2ba863140103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2564,7 +2564,7 @@ modifier|*
 name|error
 parameter_list|)
 block|{
-name|GimpBrushGenerated
+name|GimpBrush
 modifier|*
 name|brush
 decl_stmt|;
@@ -3182,6 +3182,8 @@ argument_list|)
 expr_stmt|;
 name|brush
 operator|=
+name|GIMP_BRUSH
+argument_list|(
 name|gimp_brush_generated_new
 argument_list|(
 name|name
@@ -3198,16 +3200,14 @@ name|aspect_ratio
 argument_list|,
 name|angle
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
 name|name
 argument_list|)
 expr_stmt|;
-name|GIMP_BRUSH
-argument_list|(
 name|brush
-argument_list|)
 operator|->
 name|spacing
 operator|=

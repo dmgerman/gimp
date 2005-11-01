@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon290fc4870103
+DECL|enum|__anon2b9f91090103
 block|{
 DECL|enumerator|DISCONNECT
 name|DISCONNECT
@@ -69,7 +69,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon290fc4870203
+DECL|enum|__anon2b9f91090203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -470,6 +470,8 @@ argument_list|,
 name|NULL
 argument_list|,
 name|G_PARAM_READWRITE
+operator||
+name|G_PARAM_CONSTRUCT
 argument_list|)
 argument_list|)
 expr_stmt|;
