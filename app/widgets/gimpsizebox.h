@@ -101,6 +101,11 @@ DECL|member|parent_instance
 name|GtkVBox
 name|parent_instance
 decl_stmt|;
+DECL|member|size_group
+name|GtkSizeGroup
+modifier|*
+name|size_group
+decl_stmt|;
 DECL|member|width
 name|gint
 name|width
