@@ -83,7 +83,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bcf32d20103
+DECL|enum|__anon2bbfbc8b0103
 block|{
 DECL|enumerator|SELECTION_CHANGED
 name|SELECTION_CHANGED
@@ -100,7 +100,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bcf32d20203
+DECL|enum|__anon2bbfbc8b0203
 block|{
 DECL|enumerator|SEARCH_TYPE_ALL
 name|SEARCH_TYPE_ALL
@@ -133,7 +133,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bcf32d20303
+DECL|enum|__anon2bbfbc8b0303
 block|{
 DECL|enumerator|COLUMN_PROC_NAME
 name|COLUMN_PROC_NAME
@@ -1742,6 +1742,7 @@ operator|==
 literal|0
 condition|)
 block|{
+comment|/* translate with the appropriate plural form for a *lot* of procedures */
 name|str
 operator|=
 name|g_strdup_printf
