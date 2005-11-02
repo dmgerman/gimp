@@ -1595,6 +1595,14 @@ name|clipboard
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
+name|GIMP_IS_GIMP
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
 name|text
 operator|!=
 name|NULL
