@@ -474,18 +474,30 @@ operator|<
 literal|1024
 condition|)
 block|{
-return|return
-name|g_strdup_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"%d Bytes"
-argument_list|)
-argument_list|,
+name|gint
+name|bytes
+init|=
 operator|(
 name|gint
 operator|)
 name|memsize
+decl_stmt|;
+return|return
+name|g_strdup_printf
+argument_list|(
+name|dngettext
+argument_list|(
+name|GETTEXT_PACKAGE
+literal|"-libgimp"
+argument_list|,
+literal|"%d Byte"
+argument_list|,
+literal|"%d Bytes"
+argument_list|,
+name|bytes
+argument_list|)
+argument_list|,
+name|bytes
 argument_list|)
 return|;
 block|}
