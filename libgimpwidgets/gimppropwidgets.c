@@ -5840,7 +5840,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_prop_text_buffer_new:  * @config:        Object to which property is attached.  * @property_name: Name of string property.  * @max_len:       Maximum allowed length of text.  *  * Creates a #GtkTextBuffer to set and display the value of the  * specified string property.  Unless the string is expected to  * contain multiple lines or a large amount of text, use  * gimp_prop_entry_new() instead.  See #GtkTextView for information on  * how to insert a text buffer into a visible widget.  *  * Return value:  A new #GtkTextBuffer.  *  * Since GIMP 2.4  */
+comment|/**  * gimp_prop_text_buffer_new:  * @config:        Object to which property is attached.  * @property_name: Name of string property.  * @max_len:       Maximum allowed length of text (in characters).  *  * Creates a #GtkTextBuffer to set and display the value of the  * specified string property.  Unless the string is expected to  * contain multiple lines or a large amount of text, use  * gimp_prop_entry_new() instead.  See #GtkTextView for information on  * how to insert a text buffer into a visible widget.  *  * If @max_len is 0 or negative, the text buffer allows an unlimited  * number of characters to be entered.  *  * Return value:  A new #GtkTextBuffer.  *  * Since GIMP 2.4  */
 end_comment
 
 begin_function
@@ -6114,9 +6114,12 @@ name|max_len
 operator|>
 literal|0
 operator|&&
-name|strlen
+name|g_utf8_strlen
 argument_list|(
 name|text
+argument_list|,
+operator|-
+literal|1
 argument_list|)
 operator|>
 name|max_len
@@ -6159,7 +6162,7 @@ operator|&
 name|end_iter
 argument_list|)
 expr_stmt|;
-comment|/*  this calls us recursivaly, but in the else branch  */
+comment|/*  this calls us recursively, but in the else branch  */
 name|gtk_text_buffer_delete
 argument_list|(
 name|text_buffer

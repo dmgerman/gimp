@@ -616,19 +616,15 @@ name|buf
 argument_list|)
 expr_stmt|;
 comment|/*  The third line is "Connecting to..."  */
-comment|/* translate with the appropriate plural form for many seconds */
 name|timeout_msg
 operator|=
 name|g_strdup_printf
 argument_list|(
-name|dngettext
+name|ngettext
 argument_list|(
-name|GETTEXT_PACKAGE
-literal|"-std-plug-ins"
+literal|"(timeout is %s second)"
 argument_list|,
-literal|"(timeout is %d second)"
-argument_list|,
-literal|"(timeout is %d seconds)"
+literal|"(timeout is %s seconds)"
 argument_list|,
 name|TIMEOUT
 argument_list|)
