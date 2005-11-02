@@ -6122,12 +6122,18 @@ operator|>
 name|max_len
 condition|)
 block|{
-comment|/* translate with the appropriate plural form for many characters */
 name|g_message
 argument_list|(
-name|_
+name|dngettext
 argument_list|(
+name|GETTEXT_PACKAGE
+literal|"-libgimp"
+argument_list|,
+literal|"This text input field is limited to %d character."
+argument_list|,
 literal|"This text input field is limited to %d characters."
+argument_list|,
+name|max_len
 argument_list|)
 argument_list|,
 name|max_len

@@ -89,7 +89,7 @@ DECL|macro|TIMEOUT
 define|#
 directive|define
 name|TIMEOUT
-value|"300"
+value|300
 end_define
 
 begin_define
@@ -273,6 +273,12 @@ operator|==
 literal|0
 condition|)
 block|{
+name|gchar
+name|timeout_str
+index|[
+literal|16
+index|]
+decl_stmt|;
 name|close
 argument_list|(
 name|p
@@ -323,6 +329,20 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
+name|g_snprintf
+argument_list|(
+name|timeout_str
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|timeout_str
+argument_list|)
+argument_list|,
+literal|"%d"
+argument_list|,
+name|TIMEOUT
+argument_list|)
+expr_stmt|;
 name|execlp
 argument_list|(
 literal|"wget"
@@ -335,7 +355,7 @@ literal|"server-response=off"
 argument_list|,
 literal|"-T"
 argument_list|,
-name|TIMEOUT
+name|timeout_str
 argument_list|,
 name|uri
 argument_list|,
@@ -601,9 +621,16 @@ name|timeout_msg
 operator|=
 name|g_strdup_printf
 argument_list|(
-name|_
+name|dngettext
 argument_list|(
-literal|"(timeout is %s seconds)"
+name|GETTEXT_PACKAGE
+literal|"-std-plug-ins"
+argument_list|,
+literal|"(timeout is %d second)"
+argument_list|,
+literal|"(timeout is %d seconds)"
+argument_list|,
+name|TIMEOUT
 argument_list|)
 argument_list|,
 name|TIMEOUT
