@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29bdcefc0103
+DECL|enum|__anon29410bef0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1873,14 +1873,18 @@ block|{
 name|gchar
 modifier|*
 name|text
-decl_stmt|;
-name|text
-operator|=
+init|=
 name|g_strdup_printf
 argument_list|(
-name|_
+name|ngettext
 argument_list|(
+literal|"%d x %d pixel"
+argument_list|,
 literal|"%d x %d pixels"
+argument_list|,
+name|box
+operator|->
+name|height
 argument_list|)
 argument_list|,
 name|box
@@ -1891,7 +1895,7 @@ name|box
 operator|->
 name|height
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL

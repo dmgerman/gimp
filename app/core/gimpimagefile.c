@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf4cb960103
+DECL|enum|__anon28ee266a0103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -2355,9 +2355,15 @@ name|g_string_append_printf
 argument_list|(
 name|str
 argument_list|,
-name|_
+name|ngettext
 argument_list|(
+literal|"%d x %d pixel"
+argument_list|,
 literal|"%d x %d pixels"
+argument_list|,
+name|thumbnail
+operator|->
+name|image_height
 argument_list|)
 argument_list|,
 name|thumbnail

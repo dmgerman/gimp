@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1c1a0a0103
+DECL|enum|__anon2a2bb6110103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1414,9 +1414,15 @@ argument_list|(
 name|buf
 argument_list|)
 argument_list|,
-name|_
+name|ngettext
 argument_list|(
+literal|"%d x %d pixel"
+argument_list|,
 literal|"%d x %d pixels"
+argument_list|,
+name|image
+operator|->
+name|height
 argument_list|)
 argument_list|,
 name|image
