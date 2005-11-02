@@ -1262,25 +1262,12 @@ argument_list|,
 name|_
 argument_list|(
 literal|"Fatal parse error in pattern file '%s': "
-literal|"Could not read %d bytes: %s"
+literal|"File appears truncated."
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
 name|filename
-argument_list|)
-argument_list|,
-operator|(
-name|gint
-operator|)
-sizeof|sizeof
-argument_list|(
-name|header
-argument_list|)
-argument_list|,
-name|g_strerror
-argument_list|(
-name|errno
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1512,19 +1499,12 @@ argument_list|,
 name|_
 argument_list|(
 literal|"Fatal parse error in pattern file '%s': "
-literal|"Could not read %d bytes: %s"
+literal|"File appears truncated."
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
 name|filename
-argument_list|)
-argument_list|,
-name|bn_size
-argument_list|,
-name|g_strerror
-argument_list|(
-name|errno
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1679,29 +1659,12 @@ argument_list|,
 name|_
 argument_list|(
 literal|"Fatal parse error in pattern file '%s': "
-literal|"Could not read %d bytes: %s"
+literal|"File appears truncated."
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
 name|filename
-argument_list|)
-argument_list|,
-name|header
-operator|.
-name|width
-operator|*
-name|header
-operator|.
-name|height
-operator|*
-name|header
-operator|.
-name|bytes
-argument_list|,
-name|g_strerror
-argument_list|(
-name|errno
 argument_list|)
 argument_list|)
 expr_stmt|;
