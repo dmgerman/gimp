@@ -138,6 +138,18 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
+name|gimp_clipboard_clear
+parameter_list|(
+name|GimpClipboard
+modifier|*
+name|gimp_clip
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
 name|gimp_clipboard_free
 parameter_list|(
 name|GimpClipboard
@@ -153,6 +165,10 @@ name|GdkAtom
 modifier|*
 name|gimp_clipboard_wait_for_targets
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|gint
 modifier|*
 name|n_targets
@@ -500,7 +516,7 @@ name|be_verbose
 condition|)
 name|g_print
 argument_list|(
-literal|"GimpClipboard: writable pixbuf format: %s\n"
+literal|"clipboard: writable pixbuf format: %s\n"
 argument_list|,
 name|mime_type
 argument_list|)
@@ -1330,48 +1346,11 @@ argument_list|(
 name|gimp
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|gimp_clip
-operator|->
-name|buffer
-condition|)
-block|{
-name|g_object_unref
+name|gimp_clipboard_clear
 argument_list|(
 name|gimp_clip
-operator|->
-name|buffer
 argument_list|)
 expr_stmt|;
-name|gimp_clip
-operator|->
-name|buffer
-operator|=
-name|NULL
-expr_stmt|;
-block|}
-if|if
-condition|(
-name|gimp_clip
-operator|->
-name|svg
-condition|)
-block|{
-name|g_free
-argument_list|(
-name|gimp_clip
-operator|->
-name|svg
-argument_list|)
-expr_stmt|;
-name|gimp_clip
-operator|->
-name|svg
-operator|=
-name|NULL
-expr_stmt|;
-block|}
 if|if
 condition|(
 name|buffer
@@ -1451,7 +1430,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_clipboard_set_svg:  * @gimp: pointer to #Gimp  * @svg:  a string containing the SVG data  *  * Offers SVG data in %GDK_SELECTION_CLIPBOARD.  **/
+comment|/**  * gimp_clipboard_set_svg:  * @gimp: pointer to #Gimp  * @svg: a string containing the SVG data, or %NULL  *  * Offers SVG data in %GDK_SELECTION_CLIPBOARD.  **/
 end_comment
 
 begin_function
@@ -1508,48 +1487,11 @@ argument_list|(
 name|gimp
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|gimp_clip
-operator|->
-name|buffer
-condition|)
-block|{
-name|g_object_unref
+name|gimp_clipboard_clear
 argument_list|(
 name|gimp_clip
-operator|->
-name|buffer
 argument_list|)
 expr_stmt|;
-name|gimp_clip
-operator|->
-name|buffer
-operator|=
-name|NULL
-expr_stmt|;
-block|}
-if|if
-condition|(
-name|gimp_clip
-operator|->
-name|svg
-condition|)
-block|{
-name|g_free
-argument_list|(
-name|gimp_clip
-operator|->
-name|svg
-argument_list|)
-expr_stmt|;
-name|gimp_clip
-operator|->
-name|svg
-operator|=
-name|NULL
-expr_stmt|;
-block|}
 if|if
 condition|(
 name|svg
@@ -1629,14 +1571,18 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_clipboard_set_text:  * @text: a %NULL-terminated string in UTF-8 encoding  *  * Offers @text in %GDK_SELECTION_CLIPBOARD and GDK_SELECTION_PRIMARY.  **/
+comment|/**  * gimp_clipboard_set_text:  * @gimp: pointer to #Gimp  * @text: a %NULL-terminated string in UTF-8 encoding  *  * Offers @text in %GDK_SELECTION_CLIPBOARD and %GDK_SELECTION_PRIMARY.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_clipboard_set_text (const gchar * text)
+DECL|function|gimp_clipboard_set_text (Gimp * gimp,const gchar * text)
 name|gimp_clipboard_set_text
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -1654,6 +1600,14 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
+name|gimp_clipboard_clear
+argument_list|(
+name|gimp_clipboard_get
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|clipboard
 operator|=
 name|gtk_clipboard_get_for_display
@@ -1664,6 +1618,10 @@ argument_list|,
 name|GDK_SELECTION_CLIPBOARD
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|clipboard
+condition|)
 name|gtk_clipboard_set_text
 argument_list|(
 name|clipboard
@@ -1684,6 +1642,10 @@ argument_list|,
 name|GDK_SELECTION_PRIMARY
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|clipboard
+condition|)
 name|gtk_clipboard_set_text
 argument_list|(
 name|clipboard
@@ -1730,6 +1692,62 @@ end_function
 begin_function
 specifier|static
 name|void
+DECL|function|gimp_clipboard_clear (GimpClipboard * gimp_clip)
+name|gimp_clipboard_clear
+parameter_list|(
+name|GimpClipboard
+modifier|*
+name|gimp_clip
+parameter_list|)
+block|{
+if|if
+condition|(
+name|gimp_clip
+operator|->
+name|buffer
+condition|)
+block|{
+name|g_object_unref
+argument_list|(
+name|gimp_clip
+operator|->
+name|buffer
+argument_list|)
+expr_stmt|;
+name|gimp_clip
+operator|->
+name|buffer
+operator|=
+name|NULL
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|gimp_clip
+operator|->
+name|svg
+condition|)
+block|{
+name|g_free
+argument_list|(
+name|gimp_clip
+operator|->
+name|svg
+argument_list|)
+expr_stmt|;
+name|gimp_clip
+operator|->
+name|svg
+operator|=
+name|NULL
+expr_stmt|;
+block|}
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
 DECL|function|gimp_clipboard_free (GimpClipboard * gimp_clip)
 name|gimp_clipboard_free
 parameter_list|(
@@ -1741,6 +1759,11 @@ block|{
 name|gint
 name|i
 decl_stmt|;
+name|gimp_clipboard_clear
+argument_list|(
+name|gimp_clip
+argument_list|)
+expr_stmt|;
 name|g_slist_free
 argument_list|(
 name|gimp_clip
@@ -1816,32 +1839,6 @@ operator|->
 name|svg_target_entries
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|gimp_clip
-operator|->
-name|buffer
-condition|)
-name|g_object_unref
-argument_list|(
-name|gimp_clip
-operator|->
-name|buffer
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|gimp_clip
-operator|->
-name|svg
-condition|)
-name|g_free
-argument_list|(
-name|gimp_clip
-operator|->
-name|svg
-argument_list|)
-expr_stmt|;
 name|g_free
 argument_list|(
 name|gimp_clip
@@ -1854,9 +1851,13 @@ begin_function
 specifier|static
 name|GdkAtom
 modifier|*
-DECL|function|gimp_clipboard_wait_for_targets (gint * n_targets)
+DECL|function|gimp_clipboard_wait_for_targets (Gimp * gimp,gint * n_targets)
 name|gimp_clipboard_wait_for_targets
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|gint
 modifier|*
 name|n_targets
@@ -1933,6 +1934,13 @@ condition|(
 name|success
 condition|)
 block|{
+if|if
+condition|(
+name|gimp
+operator|->
+name|be_verbose
+condition|)
+block|{
 name|gint
 name|i
 decl_stmt|;
@@ -1952,7 +1960,7 @@ operator|++
 control|)
 name|g_printerr
 argument_list|(
-literal|"offered type: %s\n"
+literal|"clipboard: offered type: %s\n"
 argument_list|,
 name|gdk_atom_name
 argument_list|(
@@ -1968,6 +1976,7 @@ argument_list|(
 literal|"\n"
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|targets
 return|;
@@ -2016,6 +2025,8 @@ name|targets
 operator|=
 name|gimp_clipboard_wait_for_targets
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|n_targets
 argument_list|)
@@ -2065,9 +2076,15 @@ modifier|*
 modifier|*
 name|type
 decl_stmt|;
+if|if
+condition|(
+name|gimp
+operator|->
+name|be_verbose
+condition|)
 name|g_printerr
 argument_list|(
-literal|"checking pixbuf format '%s'\n"
+literal|"clipboard: checking pixbuf format '%s'\n"
 argument_list|,
 name|gdk_pixbuf_format_get_name
 argument_list|(
@@ -2115,9 +2132,15 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
+if|if
+condition|(
+name|gimp
+operator|->
+name|be_verbose
+condition|)
 name|g_printerr
 argument_list|(
-literal|" - checking mime type '%s'\n"
+literal|"  - checking mime type '%s'\n"
 argument_list|,
 name|mime_type
 argument_list|)
@@ -2213,6 +2236,8 @@ name|targets
 operator|=
 name|gimp_clipboard_wait_for_targets
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|n_targets
 argument_list|)
@@ -2376,9 +2401,15 @@ condition|(
 name|pixbuf
 condition|)
 block|{
+if|if
+condition|(
+name|gimp
+operator|->
+name|be_verbose
+condition|)
 name|g_printerr
 argument_list|(
-literal|"sending pixbuf data as '%s'\n"
+literal|"clipboard: sending pixbuf data as '%s'\n"
 argument_list|,
 name|gimp_clip
 operator|->
@@ -2459,9 +2490,15 @@ operator|->
 name|svg
 condition|)
 block|{
+if|if
+condition|(
+name|gimp
+operator|->
+name|be_verbose
+condition|)
 name|g_printerr
 argument_list|(
-literal|"sending svg data as '%s'\n"
+literal|"clipboard: sending SVG data as '%s'\n"
 argument_list|,
 name|gimp_clip
 operator|->

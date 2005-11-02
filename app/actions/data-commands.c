@@ -698,6 +698,10 @@ condition|)
 block|{
 name|gimp_clipboard_set_text
 argument_list|(
+name|context
+operator|->
+name|gimp
+argument_list|,
 name|uri
 argument_list|)
 expr_stmt|;

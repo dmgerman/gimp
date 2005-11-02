@@ -592,6 +592,10 @@ name|imagefile
 condition|)
 name|gimp_clipboard_set_text
 argument_list|(
+name|context
+operator|->
+name|gimp
+argument_list|,
 name|gimp_object_get_name
 argument_list|(
 name|GIMP_OBJECT
