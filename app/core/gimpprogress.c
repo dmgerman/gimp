@@ -30,13 +30,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpmarshal.h"
+file|"gimp.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimp-gui.h"
+file|"gimpmarshal.h"
 end_include
 
 begin_include
@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29666ba20103
+DECL|enum|__anon28e530490103
 block|{
 DECL|enumerator|CANCEL
 name|CANCEL
