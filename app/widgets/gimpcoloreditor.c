@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb98a3c0103
+DECL|enum|__anon29e133dd0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1485,25 +1485,16 @@ name|GtkIconSize
 name|size
 parameter_list|)
 block|{
-name|GdkScreen
+name|GtkSettings
 modifier|*
-name|screen
+name|settings
 init|=
-name|gtk_widget_get_screen
+name|gtk_widget_get_settings
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
 name|docked
 argument_list|)
-argument_list|)
-decl_stmt|;
-name|GtkSettings
-modifier|*
-name|settings
-init|=
-name|gtk_settings_get_for_screen
-argument_list|(
-name|screen
 argument_list|)
 decl_stmt|;
 name|GtkWidget

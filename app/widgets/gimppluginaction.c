@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b853abd0103
+DECL|enum|__anon2ba454a30103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -54,7 +54,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b853abd0203
+DECL|enum|__anon2ba454a30203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -642,22 +642,13 @@ condition|(
 name|pixbuf
 condition|)
 block|{
-name|GdkScreen
-modifier|*
-name|screen
-init|=
-name|gtk_widget_get_screen
-argument_list|(
-name|proxy
-argument_list|)
-decl_stmt|;
 name|GtkSettings
 modifier|*
 name|settings
 init|=
-name|gtk_settings_get_for_screen
+name|gtk_widget_get_settings
 argument_list|(
-name|screen
+name|proxy
 argument_list|)
 decl_stmt|;
 name|gint

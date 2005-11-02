@@ -156,7 +156,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb7537c0103
+DECL|enum|__anon2a408dee0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -169,7 +169,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb7537c0203
+DECL|enum|__anon2a408dee0203
 block|{
 DECL|enumerator|COLUMN_ICON
 name|COLUMN_ICON
@@ -1351,14 +1351,11 @@ argument_list|)
 expr_stmt|;
 name|gtk_icon_size_lookup_for_settings
 argument_list|(
-name|gtk_settings_get_for_screen
-argument_list|(
-name|gtk_widget_get_screen
+name|gtk_widget_get_settings
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
 name|list
-argument_list|)
 argument_list|)
 argument_list|)
 argument_list|,
