@@ -6122,6 +6122,7 @@ operator|>
 name|max_len
 condition|)
 block|{
+comment|/* translate with the appropriate plural form for many characters */
 name|g_message
 argument_list|(
 name|_

@@ -596,6 +596,7 @@ name|buf
 argument_list|)
 expr_stmt|;
 comment|/*  The third line is "Connecting to..."  */
+comment|/* translate with the appropriate plural form for many seconds */
 name|timeout_msg
 operator|=
 name|g_strdup_printf
