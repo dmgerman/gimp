@@ -554,7 +554,7 @@ literal|"The personal gimp directory which is set to the value of the environmen
 literal|"variable GIMP2_DIRECTORY or to ~/@gimpdir@.\n"
 literal|".TP\n"
 literal|".I gimp_data_dir\n"
-literal|"Nase for paths to shareable data, which is set to the value of the\n"
+literal|"Base for paths to shareable data, which is set to the value of the\n"
 literal|"environment variable GIMP2_DATADIR or to the compiled-in default value\n"
 literal|"@gimpdatadir@.\n"
 literal|".TP\n"
