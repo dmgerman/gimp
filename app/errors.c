@@ -198,7 +198,7 @@ directive|ifdef
 name|GIMP_UNSTABLE
 name|g_printerr
 argument_list|(
-literal|"This is a development version of The GIMP.\n"
+literal|"This is a development version of GIMP.  "
 literal|"Debug messages may appear here.\n\n"
 argument_list|)
 expr_stmt|;

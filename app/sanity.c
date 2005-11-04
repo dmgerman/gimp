@@ -200,10 +200,10 @@ return|return
 name|g_strdup_printf
 argument_list|(
 literal|"%s\n\n"
-literal|"The GIMP requires GLib version %d.%d.%d or later.\n"
+literal|"GIMP requires GLib version %d.%d.%d or later.\n"
 literal|"Installed GLib version is %d.%d.%d.\n\n"
 literal|"Somehow you or your software packager managed\n"
-literal|"to install The GIMP with an older GLib version.\n\n"
+literal|"to install GIMP with an older GLib version.\n\n"
 literal|"Please upgrade to GLib version %d.%d.%d or later."
 argument_list|,
 name|mismatch
@@ -328,8 +328,8 @@ return|return
 name|g_strdup_printf
 argument_list|(
 literal|"The Fontconfig version being used is too old!\n\n"
-literal|"The GIMP requires Fontconfig version %d.%d.%d or later.\n"
-literal|"The Fontconfig version loaded by The GIMP is %d.%d.%d.\n\n"
+literal|"GIMP requires Fontconfig version %d.%d.%d or later.\n"
+literal|"The Fontconfig version loaded by GIMP is %d.%d.%d.\n\n"
 literal|"This may be caused by another instance of libfontconfig.so.1\n"
 literal|"being installed in the system, probably in /usr/X11R6/lib.\n"
 literal|"Please correct the situation or report it to someone who can."
@@ -491,10 +491,10 @@ return|return
 name|g_strdup_printf
 argument_list|(
 literal|"FreeType version too old!\n\n"
-literal|"The GIMP requires FreeType version %d.%d.%d or later.\n"
+literal|"GIMP requires FreeType version %d.%d.%d or later.\n"
 literal|"Installed FreeType version is %d.%d.%d.\n\n"
 literal|"Somehow you or your software packager managed\n"
-literal|"to install The GIMP with an older FreeType version.\n\n"
+literal|"to install GIMP with an older FreeType version.\n\n"
 literal|"Please upgrade to FreeType version %d.%d.%d or later."
 argument_list|,
 name|FT_REQUIRED_MAJOR
