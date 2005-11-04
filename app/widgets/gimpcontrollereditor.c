@@ -96,7 +96,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e9b9930103
+DECL|enum|__anon2b4438e60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -109,7 +109,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e9b9930203
+DECL|enum|__anon2b4438e60203
 block|{
 DECL|enumerator|COLUMN_EVENT
 name|COLUMN_EVENT
@@ -575,6 +575,16 @@ operator|->
 name|info
 operator|=
 name|NULL
+expr_stmt|;
+name|gtk_box_set_spacing
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|editor
+argument_list|)
+argument_list|,
+literal|12
+argument_list|)
 expr_stmt|;
 block|}
 end_function
