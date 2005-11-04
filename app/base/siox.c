@@ -130,7 +130,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af546140108
+DECL|struct|__anon2be60dff0108
 block|{
 DECL|member|l
 name|gfloat
@@ -240,7 +240,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af546140208
+DECL|struct|__anon2be60dff0208
 block|{
 DECL|member|bgdist
 name|gfloat
@@ -2865,14 +2865,14 @@ block|}
 end_function
 
 begin_comment
-comment|/* Needed for clearing hashtable as defined by glib*/
+comment|/* Clear hashtable entries that get invalid due to refinement */
 end_comment
 
 begin_function
 specifier|static
 name|gboolean
-DECL|function|dummy_remove_hash (gpointer key,gpointer value,gpointer user_data)
-name|dummy_remove_hash
+DECL|function|siox_cache_remove_fg (gpointer key,gpointer value,gpointer user_data)
+name|siox_cache_remove_fg
 parameter_list|(
 name|gpointer
 name|key
@@ -2884,8 +2884,58 @@ name|gpointer
 name|user_data
 parameter_list|)
 block|{
+name|classresult
+modifier|*
+name|cr
+init|=
+name|value
+decl_stmt|;
 return|return
-name|TRUE
+operator|(
+name|cr
+operator|->
+name|bgdist
+operator|<
+name|cr
+operator|->
+name|fgdist
+operator|)
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|gboolean
+DECL|function|siox_cache_remove_bg (gpointer key,gpointer value,gpointer user_data)
+name|siox_cache_remove_bg
+parameter_list|(
+name|gpointer
+name|key
+parameter_list|,
+name|gpointer
+name|value
+parameter_list|,
+name|gpointer
+name|user_data
+parameter_list|)
+block|{
+name|classresult
+modifier|*
+name|cr
+init|=
+name|value
+decl_stmt|;
+return|return
+operator|(
+name|cr
+operator|->
+name|fgdist
+operator|<
+name|cr
+operator|->
+name|bgdist
+operator|)
 return|;
 block|}
 end_function
@@ -3381,10 +3431,13 @@ name|state
 operator|->
 name|cache
 argument_list|,
-operator|(
-name|GHRFunc
-operator|)
-name|dummy_remove_hash
+name|refinement
+operator|&
+name|SIOX_REFINEMENT_ADD_FOREGROUND
+condition|?
+name|siox_cache_remove_fg
+else|:
+name|siox_cache_remove_bg
 argument_list|,
 name|NULL
 argument_list|)
