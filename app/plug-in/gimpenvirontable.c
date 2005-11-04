@@ -876,9 +876,6 @@ modifier|*
 name|separator
 decl_stmt|,
 modifier|*
-name|expanded
-decl_stmt|,
-modifier|*
 name|p
 decl_stmt|,
 modifier|*
