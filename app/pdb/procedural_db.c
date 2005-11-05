@@ -296,21 +296,18 @@ end_function
 
 begin_function
 name|void
-DECL|function|procedural_db_init_procs (Gimp * gimp,GimpInitStatusFunc status_callback)
+DECL|function|procedural_db_init_procs (Gimp * gimp)
 name|procedural_db_init_procs
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
-parameter_list|,
-name|GimpInitStatusFunc
-name|status_callback
 parameter_list|)
 block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon291309e80108
+DECL|struct|__anon2b738a250108
 block|{
 DECL|member|old_name
 specifier|const
@@ -688,18 +685,9 @@ name|gimp
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|status_callback
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
 name|internal_procs_init
 argument_list|(
 name|gimp
-argument_list|,
-name|status_callback
 argument_list|)
 expr_stmt|;
 if|if

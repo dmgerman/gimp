@@ -267,7 +267,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d0e9fa0103
+DECL|enum|__anon2c10578b0103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -2377,6 +2377,18 @@ argument_list|(
 literal|"INIT: gimp_real_initialize\n"
 argument_list|)
 expr_stmt|;
+name|status_callback
+argument_list|(
+name|_
+argument_list|(
+literal|"Initialization"
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|,
+literal|0.0
+argument_list|)
+expr_stmt|;
 name|gimp_fonts_init
 argument_list|(
 name|gimp
@@ -2571,33 +2583,31 @@ expr_stmt|;
 comment|/*  register all internal procedures  */
 name|status_callback
 argument_list|(
-name|_
-argument_list|(
-literal|"Procedural Database"
-argument_list|)
-argument_list|,
 name|NULL
 argument_list|,
-literal|0.0
+name|_
+argument_list|(
+literal|"Internal Procedures"
+argument_list|)
+argument_list|,
+literal|0.2
 argument_list|)
 expr_stmt|;
 name|procedural_db_init_procs
 argument_list|(
 name|gimp
-argument_list|,
-name|status_callback
 argument_list|)
 expr_stmt|;
 name|status_callback
 argument_list|(
+name|NULL
+argument_list|,
 name|_
 argument_list|(
 literal|"Plug-In Interpreters"
 argument_list|)
 argument_list|,
-literal|""
-argument_list|,
-literal|0.0
+literal|0.8
 argument_list|)
 expr_stmt|;
 name|path
@@ -2631,14 +2641,14 @@ argument_list|)
 expr_stmt|;
 name|status_callback
 argument_list|(
+name|NULL
+argument_list|,
 name|_
 argument_list|(
 literal|"Plug-In Environment"
 argument_list|)
 argument_list|,
-literal|""
-argument_list|,
-literal|0.0
+literal|0.9
 argument_list|)
 expr_stmt|;
 name|path
@@ -2668,6 +2678,15 @@ expr_stmt|;
 name|g_free
 argument_list|(
 name|path
+argument_list|)
+expr_stmt|;
+name|status_callback
+argument_list|(
+name|NULL
+argument_list|,
+literal|""
+argument_list|,
+literal|1.0
 argument_list|)
 expr_stmt|;
 block|}
