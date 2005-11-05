@@ -598,9 +598,6 @@ operator|=
 name|list
 operator|->
 name|next
-operator|,
-name|nth
-operator|++
 control|)
 block|{
 name|PlugInDef
@@ -638,6 +635,7 @@ operator|(
 name|gdouble
 operator|)
 name|nth
+operator|++
 operator|/
 operator|(
 name|gdouble
@@ -758,9 +756,6 @@ operator|=
 name|list
 operator|->
 name|next
-operator|,
-name|nth
-operator|++
 control|)
 block|{
 name|PlugInDef
@@ -798,6 +793,7 @@ operator|(
 name|gdouble
 operator|)
 name|nth
+operator|++
 operator|/
 operator|(
 name|gdouble

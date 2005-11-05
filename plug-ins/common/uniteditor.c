@@ -59,7 +59,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2baaad2c0103
+DECL|enum|__anon29e974f30103
 block|{
 DECL|enumerator|SAVE
 name|SAVE
@@ -103,7 +103,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2baaad2c0208
+DECL|struct|__anon29e974f30208
 block|{
 DECL|member|title
 specifier|const
@@ -438,7 +438,7 @@ name|GTK_STOCK_NEW
 block|,
 name|NULL
 block|,
-name|NULL
+literal|"<control>N"
 block|,
 name|N_
 argument_list|(
@@ -458,12 +458,11 @@ name|GIMP_STOCK_DUPLICATE
 block|,
 name|NULL
 block|,
-name|NULL
+literal|"<control>D"
 block|,
 name|N_
 argument_list|(
-literal|"Create a new unit with the currently "
-literal|"selected unit as template."
+literal|"Create a new unit using the currently selected unit as template."
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -508,9 +507,9 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"The GIMP unit editor (runs in interactive mode only)"
+literal|"The GIMP unit editor"
 argument_list|,
-literal|"The GIMP unit editor (runs in interactive mode only)"
+literal|"The GIMP unit editor"
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -745,7 +744,7 @@ name|gimp_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"New Unit"
+literal|"Add a New Unit"
 argument_list|)
 argument_list|,
 name|PLUG_IN_BINARY
@@ -762,7 +761,7 @@ name|GTK_STOCK_CANCEL
 argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|,
-name|GTK_STOCK_OK
+name|GTK_STOCK_ADD
 argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,
@@ -1433,23 +1432,22 @@ argument_list|)
 expr_stmt|;
 name|factor
 operator|=
+name|gtk_adjustment_get_value
+argument_list|(
 name|GTK_ADJUSTMENT
 argument_list|(
 name|factor_adj
 argument_list|)
-operator|->
-name|value
+argument_list|)
 expr_stmt|;
 name|digits
 operator|=
-name|ROUND
+name|gtk_adjustment_get_value
 argument_list|(
 name|GTK_ADJUSTMENT
 argument_list|(
 name|digits_adj
 argument_list|)
-operator|->
-name|value
 argument_list|)
 expr_stmt|;
 name|symbol
@@ -1541,23 +1539,6 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|factor
-operator|<
-name|GIMP_MIN_RESOLUTION
-condition|)
-block|{
-name|g_message
-argument_list|(
-name|_
-argument_list|(
-literal|"Unit factor must not be 0."
-argument_list|)
-argument_list|)
-expr_stmt|;
-continue|continue;
-block|}
-if|if
-condition|(
 operator|!
 name|strlen
 argument_list|(
@@ -1589,12 +1570,53 @@ name|plural
 argument_list|)
 condition|)
 block|{
-name|g_message
+name|GtkWidget
+modifier|*
+name|msg
+init|=
+name|gtk_message_dialog_new
 argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|,
+literal|0
+argument_list|,
+name|GTK_MESSAGE_ERROR
+argument_list|,
+name|GTK_BUTTONS_OK
+argument_list|,
 name|_
 argument_list|(
-literal|"All text fields must contain a value."
+literal|"Incomplete input"
 argument_list|)
+argument_list|)
+decl_stmt|;
+name|gtk_message_dialog_format_secondary_text
+argument_list|(
+name|GTK_MESSAGE_DIALOG
+argument_list|(
+name|msg
+argument_list|)
+argument_list|,
+name|_
+argument_list|(
+literal|"Please fill in all text fields."
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_dialog_run
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|msg
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_widget_destroy
+argument_list|(
+name|msg
 argument_list|)
 expr_stmt|;
 continue|continue;
@@ -1667,7 +1689,7 @@ parameter_list|)
 block|{
 name|GtkWidget
 modifier|*
-name|main_dialog
+name|dialog
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -1766,7 +1788,7 @@ argument_list|(
 name|list_store
 argument_list|)
 expr_stmt|;
-name|main_dialog
+name|dialog
 operator|=
 name|gimp_dialog_new
 argument_list|(
@@ -1800,7 +1822,7 @@ name|gtk_dialog_set_default_response
 argument_list|(
 name|GTK_DIALOG
 argument_list|(
-name|main_dialog
+name|dialog
 argument_list|)
 argument_list|,
 name|GTK_RESPONSE_CLOSE
@@ -1808,7 +1830,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|main_dialog
+name|dialog
 argument_list|,
 literal|"response"
 argument_list|,
@@ -1822,7 +1844,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|main_dialog
+name|dialog
 argument_list|,
 literal|"destroy"
 argument_list|,
@@ -1866,6 +1888,27 @@ name|actions
 argument_list|)
 argument_list|,
 name|tv
+argument_list|)
+expr_stmt|;
+name|gtk_window_add_accel_group
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|,
+name|gtk_ui_manager_get_accel_group
+argument_list|(
+name|ui_manager
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_accel_group_lock
+argument_list|(
+name|gtk_ui_manager_get_accel_group
+argument_list|(
+name|ui_manager
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_ui_manager_insert_action_group
@@ -1915,7 +1958,7 @@ name|GTK_BOX
 argument_list|(
 name|GTK_DIALOG
 argument_list|(
-name|main_dialog
+name|dialog
 argument_list|)
 operator|->
 name|vbox
@@ -1982,7 +2025,7 @@ name|GTK_CONTAINER
 argument_list|(
 name|GTK_DIALOG
 argument_list|(
-name|main_dialog
+name|dialog
 argument_list|)
 operator|->
 name|vbox
@@ -2192,7 +2235,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|main_dialog
+name|dialog
 argument_list|)
 expr_stmt|;
 name|gtk_main
@@ -2740,16 +2783,14 @@ control|)
 block|{
 name|gboolean
 name|user_unit
-decl_stmt|;
-name|user_unit
-operator|=
+init|=
 operator|(
 name|unit
 operator|>=
 name|gimp_unit_get_number_of_built_in_units
 argument_list|()
 operator|)
-expr_stmt|;
+decl_stmt|;
 name|gtk_list_store_append
 argument_list|(
 name|list_store
