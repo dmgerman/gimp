@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0049540108
+DECL|struct|__anon27a8a08f0108
 block|{
 DECL|member|window
 name|GtkWidget
@@ -1189,16 +1189,15 @@ modifier|*
 name|splash
 parameter_list|)
 block|{
-name|gdk_gc_set_clip_rectangle
+name|gdk_gc_set_clip_region
 argument_list|(
 name|splash
 operator|->
 name|gc
 argument_list|,
-operator|&
 name|event
 operator|->
-name|area
+name|region
 argument_list|)
 expr_stmt|;
 name|gdk_draw_layout
