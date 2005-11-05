@@ -114,7 +114,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fd1c5a0108
+DECL|struct|__anon288dcedb0108
 block|{
 DECL|member|name
 name|gchar
@@ -134,7 +134,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fd1c5a0203
+DECL|enum|__anon288dcedb0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1747,7 +1747,7 @@ literal|"alsa"
 argument_list|)
 condition|)
 block|{
-name|GAlsaSource
+name|GSource
 modifier|*
 name|event_source
 decl_stmt|;
@@ -1927,10 +1927,6 @@ argument_list|)
 expr_stmt|;
 name|event_source
 operator|=
-operator|(
-name|GAlsaSource
-operator|*
-operator|)
 name|g_source_new
 argument_list|(
 operator|&
@@ -1942,7 +1938,13 @@ name|GAlsaSource
 argument_list|)
 argument_list|)
 expr_stmt|;
+operator|(
+operator|(
+name|GAlsaSource
+operator|*
+operator|)
 name|event_source
+operator|)
 operator|->
 name|controller
 operator|=
@@ -1954,10 +1956,6 @@ name|seq_id
 operator|=
 name|g_source_attach
 argument_list|(
-operator|(
-name|GSource
-operator|*
-operator|)
 name|event_source
 argument_list|,
 name|NULL
