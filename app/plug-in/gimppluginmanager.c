@@ -526,7 +526,7 @@ argument_list|)
 argument_list|,
 literal|""
 argument_list|,
-literal|0
+literal|0.0
 argument_list|)
 expr_stmt|;
 for|for
@@ -682,15 +682,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|status_callback
-argument_list|(
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-literal|1.0
-argument_list|)
-expr_stmt|;
 comment|/* initialize the plug-ins */
 name|status_callback
 argument_list|(
@@ -701,7 +692,7 @@ argument_list|)
 argument_list|,
 literal|""
 argument_list|,
-literal|0
+literal|0.0
 argument_list|)
 expr_stmt|;
 for|for
@@ -855,7 +846,7 @@ name|status_callback
 argument_list|(
 name|NULL
 argument_list|,
-name|NULL
+literal|""
 argument_list|,
 literal|1.0
 argument_list|)
@@ -1341,7 +1332,7 @@ argument_list|)
 argument_list|,
 literal|""
 argument_list|,
-literal|0
+literal|0.0
 argument_list|)
 expr_stmt|;
 for|for
@@ -1442,21 +1433,21 @@ literal|1
 argument_list|)
 expr_stmt|;
 block|}
-name|status_callback
-argument_list|(
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-literal|1.0
-argument_list|)
-expr_stmt|;
 name|g_list_free
 argument_list|(
 name|extensions
 argument_list|)
 expr_stmt|;
 block|}
+name|status_callback
+argument_list|(
+literal|""
+argument_list|,
+literal|""
+argument_list|,
+literal|1.0
+argument_list|)
+expr_stmt|;
 comment|/* free up stuff */
 for|for
 control|(
