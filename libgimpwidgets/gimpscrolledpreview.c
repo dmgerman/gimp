@@ -58,7 +58,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4196f90108
+DECL|struct|__anon2b8ab42a0108
 block|{
 DECL|member|hscr_policy
 name|GtkPolicyType
@@ -3084,7 +3084,9 @@ name|h
 operator|>=
 literal|1.0
 condition|)
-return|return;
+return|return
+name|FALSE
+return|;
 name|gdk_gc_set_clip_rectangle
 argument_list|(
 name|preview
