@@ -477,8 +477,7 @@ argument_list|(
 name|filename
 argument_list|)
 argument_list|,
-operator|-
-literal|1
+literal|0.0
 argument_list|)
 expr_stmt|;
 if|if

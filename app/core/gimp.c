@@ -267,7 +267,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29aa5be70103
+DECL|enum|__anon28d0e9fa0103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -2569,10 +2569,7 @@ name|gimp
 argument_list|)
 expr_stmt|;
 comment|/*  register all internal procedures  */
-call|(
-modifier|*
 name|status_callback
-call|)
 argument_list|(
 name|_
 argument_list|(
@@ -2581,8 +2578,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-operator|-
-literal|1
+literal|0.0
 argument_list|)
 expr_stmt|;
 name|procedural_db_init_procs
@@ -2592,10 +2588,7 @@ argument_list|,
 name|status_callback
 argument_list|)
 expr_stmt|;
-call|(
-modifier|*
 name|status_callback
-call|)
 argument_list|(
 name|_
 argument_list|(
@@ -2604,8 +2597,7 @@ argument_list|)
 argument_list|,
 literal|""
 argument_list|,
-operator|-
-literal|1
+literal|0.0
 argument_list|)
 expr_stmt|;
 name|path
@@ -2637,10 +2629,7 @@ argument_list|(
 name|path
 argument_list|)
 expr_stmt|;
-call|(
-modifier|*
 name|status_callback
-call|)
 argument_list|(
 name|_
 argument_list|(
@@ -2649,8 +2638,7 @@ argument_list|)
 argument_list|,
 literal|""
 argument_list|,
-operator|-
-literal|1
+literal|0.0
 argument_list|)
 expr_stmt|;
 name|path
@@ -3550,10 +3538,7 @@ literal|"INIT: gimp_restore\n"
 argument_list|)
 expr_stmt|;
 comment|/*  initialize  the global parasite table  */
-call|(
-modifier|*
 name|status_callback
-call|)
 argument_list|(
 name|_
 argument_list|(
@@ -3574,10 +3559,7 @@ name|gimp
 argument_list|)
 expr_stmt|;
 comment|/*  initialize the list of gimp brushes    */
-call|(
-modifier|*
 name|status_callback
-call|)
 argument_list|(
 name|NULL
 argument_list|,
@@ -3601,10 +3583,7 @@ name|no_data
 argument_list|)
 expr_stmt|;
 comment|/*  initialize the list of gimp patterns   */
-call|(
-modifier|*
 name|status_callback
-call|)
 argument_list|(
 name|NULL
 argument_list|,
@@ -3628,10 +3607,7 @@ name|no_data
 argument_list|)
 expr_stmt|;
 comment|/*  initialize the list of gimp palettes   */
-call|(
-modifier|*
 name|status_callback
-call|)
 argument_list|(
 name|NULL
 argument_list|,
@@ -3655,10 +3631,7 @@ name|no_data
 argument_list|)
 expr_stmt|;
 comment|/*  initialize the list of gimp gradients  */
-call|(
-modifier|*
 name|status_callback
-call|)
 argument_list|(
 name|NULL
 argument_list|,
@@ -3682,10 +3655,7 @@ name|no_data
 argument_list|)
 expr_stmt|;
 comment|/*  initialize the list of gimp fonts  */
-call|(
-modifier|*
 name|status_callback
-call|)
 argument_list|(
 name|NULL
 argument_list|,
@@ -3710,10 +3680,7 @@ name|gimp
 argument_list|)
 expr_stmt|;
 comment|/*  initialize the document history  */
-call|(
-modifier|*
 name|status_callback
-call|)
 argument_list|(
 name|NULL
 argument_list|,
@@ -3731,10 +3698,7 @@ name|gimp
 argument_list|)
 expr_stmt|;
 comment|/*  initialize the template list  */
-call|(
-modifier|*
 name|status_callback
-call|)
 argument_list|(
 name|NULL
 argument_list|,
@@ -3752,10 +3716,7 @@ name|gimp
 argument_list|)
 expr_stmt|;
 comment|/*  initialize the module list  */
-call|(
-modifier|*
 name|status_callback
-call|)
 argument_list|(
 name|NULL
 argument_list|,
