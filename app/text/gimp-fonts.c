@@ -211,6 +211,17 @@ argument_list|(
 name|gimp
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|gimp
+operator|->
+name|be_verbose
+condition|)
+name|g_print
+argument_list|(
+literal|"Loading fonts\n"
+argument_list|)
+expr_stmt|;
 name|gimp_container_freeze
 argument_list|(
 name|GIMP_CONTAINER

@@ -1737,7 +1737,9 @@ name|splash_destroy
 argument_list|()
 expr_stmt|;
 name|color_history_restore
-argument_list|()
+argument_list|(
+name|gimp
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -1841,7 +1843,9 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 name|color_history_save
-argument_list|()
+argument_list|(
+name|gimp
+argument_list|)
 expr_stmt|;
 if|if
 condition|(

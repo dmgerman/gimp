@@ -42,12 +42,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"color-history.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e3d68a0103
+DECL|enum|__anon2bbd08c70103
 block|{
 DECL|enumerator|COLOR_HISTORY
 name|COLOR_HISTORY
@@ -102,10 +108,12 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|color_history_save (void)
+DECL|function|color_history_save (Gimp * gimp)
 name|color_history_save
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|GimpConfigWriter
@@ -119,11 +127,35 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_GIMP
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|filename
 operator|=
 name|gimp_personal_rc_file
 argument_list|(
 literal|"colorrc"
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|gimp
+operator|->
+name|be_verbose
+condition|)
+name|g_print
+argument_list|(
+literal|"Writing '%s'\n"
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|writer
@@ -325,10 +357,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|color_history_restore (void)
+DECL|function|color_history_restore (Gimp * gimp)
 name|color_history_restore
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|gchar
@@ -342,11 +376,35 @@ decl_stmt|;
 name|GTokenType
 name|token
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_GIMP
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|filename
 operator|=
 name|gimp_personal_rc_file
 argument_list|(
 literal|"colorrc"
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|gimp
+operator|->
+name|be_verbose
+condition|)
+name|g_print
+argument_list|(
+literal|"Parsing '%s'\n"
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|scanner

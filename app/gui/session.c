@@ -129,7 +129,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d225380103
+DECL|enum|__anon296d34830103
 block|{
 DECL|enumerator|SESSION_INFO
 name|SESSION_INFO
@@ -289,6 +289,22 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
+if|if
+condition|(
+name|gimp
+operator|->
+name|be_verbose
+condition|)
+name|g_print
+argument_list|(
+literal|"Parsing '%s'\n"
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|g_scanner_scope_add_symbol
 argument_list|(
 name|scanner
@@ -624,6 +640,22 @@ operator|=
 name|session_filename
 argument_list|(
 name|gimp
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|gimp
+operator|->
+name|be_verbose
+condition|)
+name|g_print
+argument_list|(
+literal|"Writing '%s'\n"
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|writer

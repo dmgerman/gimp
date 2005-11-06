@@ -108,6 +108,22 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|gimp
+operator|->
+name|be_verbose
+condition|)
+name|g_print
+argument_list|(
+literal|"Parsing '%s'\n"
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|)
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
 operator|!
 name|gimp_config_deserialize_file
 argument_list|(
@@ -222,6 +238,22 @@ operator|=
 name|gimp_personal_rc_file
 argument_list|(
 literal|"documents"
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|gimp
+operator|->
+name|be_verbose
+condition|)
+name|g_print
+argument_list|(
+literal|"Writing '%s'\n"
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if

@@ -482,6 +482,25 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|gimp
+operator|->
+name|be_verbose
+condition|)
+name|g_print
+argument_list|(
+name|_
+argument_list|(
+literal|"Parsing '%s'\n"
+argument_list|)
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|)
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
 operator|!
 name|plug_in_rc_parse
 argument_list|(

@@ -148,7 +148,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3f7c680103
+DECL|enum|__anon2c517b300103
 block|{
 DECL|enumerator|UNIT_INFO
 name|UNIT_INFO
@@ -216,6 +216,22 @@ operator|=
 name|gimp_personal_rc_file
 argument_list|(
 literal|"unitrc"
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|gimp
+operator|->
+name|be_verbose
+condition|)
+name|g_print
+argument_list|(
+literal|"Parsing '%s'\n"
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|scanner
@@ -587,6 +603,22 @@ operator|=
 name|gimp_personal_rc_file
 argument_list|(
 literal|"unitrc"
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|gimp
+operator|->
+name|be_verbose
+condition|)
+name|g_print
+argument_list|(
+literal|"Writing '%s'\n"
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|writer

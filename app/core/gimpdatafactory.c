@@ -802,7 +802,7 @@ argument_list|)
 decl_stmt|;
 name|g_print
 argument_list|(
-literal|"%s: loading data\n"
+literal|"Loading '%s' data\n"
 argument_list|,
 name|name
 condition|?
@@ -833,7 +833,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0521a00108
+DECL|struct|__anon2bc8e4dd0108
 block|{
 DECL|member|factory
 name|GimpDataFactory
@@ -848,15 +848,6 @@ decl_stmt|;
 DECL|typedef|GimpDataLoadContext
 block|}
 name|GimpDataLoadContext
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|data_load_context
-typedef|typedef
-name|struct
-name|data_load_context_struct
-name|data_load_context
 typedef|;
 end_typedef
 
@@ -876,30 +867,16 @@ name|gpointer
 name|user_data
 parameter_list|)
 block|{
-name|GList
-modifier|*
-name|list
-decl_stmt|;
-for|for
-control|(
-name|list
-operator|=
+name|g_list_foreach
+argument_list|(
 name|value
-init|;
-name|list
-condition|;
-name|list
-operator|=
-name|g_list_next
-argument_list|(
-name|list
-argument_list|)
-control|)
+argument_list|,
+operator|(
+name|GFunc
+operator|)
 name|g_object_unref
-argument_list|(
-name|list
-operator|->
-name|data
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_list_free

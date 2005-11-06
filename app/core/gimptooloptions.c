@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimptoolinfo.h"
 end_include
 
@@ -47,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ec13110103
+DECL|enum|__anon27f892780103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -725,6 +731,26 @@ argument_list|,
 name|extension
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|tool_options
+operator|->
+name|tool_info
+operator|->
+name|gimp
+operator|->
+name|be_verbose
+condition|)
+name|g_print
+argument_list|(
+literal|"Writing '%s'\n"
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|header
 operator|=
 name|g_strdup_printf
@@ -856,6 +882,26 @@ argument_list|(
 name|tool_options
 argument_list|,
 name|extension
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|tool_options
+operator|->
+name|tool_info
+operator|->
+name|gimp
+operator|->
+name|be_verbose
+condition|)
+name|g_print
+argument_list|(
+literal|"Parsing '%s'\n"
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|retval
