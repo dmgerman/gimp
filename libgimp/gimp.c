@@ -414,7 +414,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b604e8a0103
+DECL|enum|__anon28a3ba040103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -1313,6 +1313,11 @@ return|return
 literal|1
 return|;
 block|}
+name|gimp_env_init
+argument_list|(
+name|TRUE
+argument_list|)
+expr_stmt|;
 name|progname
 operator|=
 name|argv

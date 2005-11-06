@@ -162,6 +162,20 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/*  should be considered private, don't use!  */
+end_comment
+
+begin_function_decl
+name|void
+name|gimp_env_init
+parameter_list|(
+name|gboolean
+name|library
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_macro
 name|G_END_DECLS
 end_macro

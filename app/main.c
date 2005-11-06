@@ -1071,6 +1071,11 @@ decl_stmt|;
 name|gimp_init_malloc
 argument_list|()
 expr_stmt|;
+name|gimp_env_init
+argument_list|(
+name|FALSE
+argument_list|)
+expr_stmt|;
 name|gimp_init_i18n
 argument_list|()
 expr_stmt|;
