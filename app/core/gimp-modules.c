@@ -202,6 +202,22 @@ argument_list|(
 literal|"modulerc"
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|gimp
+operator|->
+name|be_verbose
+condition|)
+name|g_print
+argument_list|(
+literal|"Parsing '%s'\n"
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|scanner
 operator|=
 name|gimp_scanner_new_file
@@ -606,6 +622,22 @@ operator|=
 name|gimp_personal_rc_file
 argument_list|(
 literal|"modulerc"
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|gimp
+operator|->
+name|be_verbose
+condition|)
+name|g_print
+argument_list|(
+literal|"Writing '%s'\n"
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|writer
