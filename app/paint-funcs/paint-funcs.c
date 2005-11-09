@@ -3391,7 +3391,7 @@ parameter_list|,
 name|new_alpha
 parameter_list|)
 define|\
-value|if (! affect[alpha]) \           { \             b = alpha; \             do { b--; dest[b] = src2[b]; } while(b); \           } \         else if (src2_alpha != 0&& new_alpha != 0)                                                        \           {                                                                                        \             b = alpha; \             if (src2_alpha == new_alpha){                                                        \               do { \               b--; dest [b] = affect [b] ? src2 [b] : src1 [b];} while (b);        \             } else {                                                                                \               ratio = (float) src2_alpha / new_alpha;                                                \               compl_ratio = 1.0 - ratio;                                                        \                                                                                                   \               do { b--; \                 dest[b] = affect[b] ?                                                                \                   (guchar) (src2[b] * ratio + src1[b] * compl_ratio + EPSILON) : src1[b];\                    } while (b); \             }    \           }
+value|if (src2_alpha != 0&& new_alpha != 0)                                                        \           {                                                                                        \             b = alpha; \             if (src2_alpha == new_alpha){                                                        \               do { \               b--; dest [b] = affect [b] ? src2 [b] : src1 [b];} while (b);        \             } else {                                                                                \               ratio = (float) src2_alpha / new_alpha;                                                \               compl_ratio = 1.0 - ratio;                                                        \                                                                                                   \               do { b--; \                 dest[b] = affect[b] ?                                                                \                   (guchar) (src2[b] * ratio + src1[b] * compl_ratio + EPSILON) : src1[b];\                    } while (b); \             }    \           }
 end_define
 
 begin_comment
@@ -3858,16 +3858,6 @@ block|}
 block|}
 end_function
 
-begin_define
-DECL|macro|copy_bytes1 ()
-define|#
-directive|define
-name|copy_bytes1
-parameter_list|()
-define|\
-value|j = bytes * sizeof(int); \                       if (affect[alpha]) \                         { \                           src2 += j; \                           while (j--) \                             { \                               *(dest++) = *(src1++); \                             } \                         } \                       else \                         { \                           src1 += j; \                           while (j--) \                             { \                               *(dest++) = *(src2++); \                             }                        \                         }
-end_define
-
 begin_function
 name|void
 DECL|function|combine_inten_a_and_inten_a_pixels (const guchar * src1,const guchar * src2,guchar * dest,const guchar * mask,guint opacity,const gboolean * affect,gboolean mode_affect,guint length,guint bytes)
@@ -4330,9 +4320,38 @@ block|}
 block|}
 else|else
 block|{
-name|copy_bytes1
-argument_list|()
+name|j
+operator|=
+name|bytes
+operator|*
+sizeof|sizeof
+argument_list|(
+name|int
+argument_list|)
 expr_stmt|;
+name|src2
+operator|+=
+name|j
+expr_stmt|;
+while|while
+condition|(
+name|j
+operator|--
+condition|)
+block|{
+operator|*
+operator|(
+name|dest
+operator|++
+operator|)
+operator|=
+operator|*
+operator|(
+name|src1
+operator|++
+operator|)
+expr_stmt|;
+block|}
 block|}
 name|mask_ip
 operator|++
@@ -4858,9 +4877,38 @@ block|}
 block|}
 else|else
 block|{
-name|copy_bytes1
-argument_list|()
+name|j
+operator|=
+name|bytes
+operator|*
+sizeof|sizeof
+argument_list|(
+name|int
+argument_list|)
 expr_stmt|;
+name|src2
+operator|+=
+name|j
+expr_stmt|;
+while|while
+condition|(
+name|j
+operator|--
+condition|)
+block|{
+operator|*
+operator|(
+name|dest
+operator|++
+operator|)
+operator|=
+operator|*
+operator|(
+name|src1
+operator|++
+operator|)
+expr_stmt|;
+block|}
 block|}
 name|mask_ip
 operator|++
@@ -5264,12 +5312,6 @@ block|}
 block|}
 block|}
 end_function
-
-begin_undef
-undef|#
-directive|undef
-name|copy_bytes1
-end_undef
 
 begin_undef
 undef|#
