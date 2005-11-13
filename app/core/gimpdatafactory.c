@@ -833,7 +833,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc8e4dd0108
+DECL|struct|__anon27cbe69c0108
 block|{
 DECL|member|factory
 name|GimpDataFactory
@@ -1690,7 +1690,14 @@ modifier|*
 name|factory
 parameter_list|)
 block|{
-return|return
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_DATA_FACTORY
+argument_list|(
+name|factory
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gimp_data_factory_data_foreach
 argument_list|(
 name|factory
@@ -1699,7 +1706,7 @@ name|gimp_data_factory_remove_cb
 argument_list|,
 name|NULL
 argument_list|)
-return|;
+expr_stmt|;
 block|}
 end_function
 
