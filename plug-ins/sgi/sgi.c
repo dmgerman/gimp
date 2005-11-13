@@ -600,7 +600,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-name|LOAD_PROC
+name|SAVE_PROC
 argument_list|)
 operator|==
 literal|0
