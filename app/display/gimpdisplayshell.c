@@ -263,7 +263,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8b4bd10103
+DECL|enum|__anon2be26d570103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -276,7 +276,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8b4bd10203
+DECL|enum|__anon2be26d570203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -5020,12 +5020,6 @@ name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
-name|gint
-name|off_x
-decl_stmt|;
-name|gint
-name|off_y
-decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY_SHELL
@@ -5089,6 +5083,12 @@ argument_list|)
 operator|)
 condition|)
 block|{
+name|gint
+name|off_x
+decl_stmt|;
+name|gint
+name|off_y
+decl_stmt|;
 name|gimp_item_offsets
 argument_list|(
 name|GIMP_ITEM
@@ -5353,7 +5353,29 @@ name|disp_height
 argument_list|)
 expr_stmt|;
 return|return
-name|TRUE
+operator|(
+operator|(
+operator|*
+name|x2
+operator|-
+operator|*
+name|x1
+operator|)
+operator|>
+literal|0
+operator|)
+operator|&&
+operator|(
+operator|(
+operator|*
+name|y2
+operator|-
+operator|*
+name|y1
+operator|)
+operator|>
+literal|0
+operator|)
 return|;
 block|}
 end_function
