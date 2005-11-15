@@ -1635,6 +1635,8 @@ argument_list|(
 name|view_zoom_explicit_actions
 argument_list|)
 argument_list|,
+name|NULL
+argument_list|,
 literal|10000
 argument_list|,
 name|G_CALLBACK

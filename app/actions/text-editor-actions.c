@@ -228,6 +228,8 @@ argument_list|(
 name|text_editor_direction_actions
 argument_list|)
 argument_list|,
+name|NULL
+argument_list|,
 name|GIMP_TEXT_DIRECTION_LTR
 argument_list|,
 name|G_CALLBACK

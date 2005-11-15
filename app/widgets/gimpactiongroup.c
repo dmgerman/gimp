@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b08160c0103
+DECL|enum|__anon29488a310103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1673,8 +1673,9 @@ block|}
 end_function
 
 begin_function
-name|void
-DECL|function|gimp_action_group_add_radio_actions (GimpActionGroup * group,GimpRadioActionEntry * entries,guint n_entries,gint value,GCallback callback)
+name|GSList
+modifier|*
+DECL|function|gimp_action_group_add_radio_actions (GimpActionGroup * group,GimpRadioActionEntry * entries,guint n_entries,GSList * radio_group,gint value,GCallback callback)
 name|gimp_action_group_add_radio_actions
 parameter_list|(
 name|GimpActionGroup
@@ -1687,6 +1688,10 @@ name|entries
 parameter_list|,
 name|guint
 name|n_entries
+parameter_list|,
+name|GSList
+modifier|*
+name|radio_group
 parameter_list|,
 name|gint
 name|value
@@ -1701,21 +1706,17 @@ name|first_action
 init|=
 name|NULL
 decl_stmt|;
-name|GSList
-modifier|*
-name|radio_group
-init|=
-name|NULL
-decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_ACTION_GROUP
 argument_list|(
 name|group
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 for|for
@@ -1949,6 +1950,9 @@ operator|->
 name|user_data
 argument_list|)
 expr_stmt|;
+return|return
+name|radio_group
+return|;
 block|}
 end_function
 

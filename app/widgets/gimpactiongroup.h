@@ -567,7 +567,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
+name|GSList
+modifier|*
 name|gimp_action_group_add_radio_actions
 parameter_list|(
 name|GimpActionGroup
@@ -581,11 +582,15 @@ parameter_list|,
 name|guint
 name|n_entries
 parameter_list|,
+name|GSList
+modifier|*
+name|radio_group
+parameter_list|,
 name|gint
 name|value
 parameter_list|,
 name|GCallback
-name|on_change
+name|callback
 parameter_list|)
 function_decl|;
 end_function_decl

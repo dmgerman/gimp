@@ -253,6 +253,8 @@ argument_list|(
 name|quick_mask_invert_actions
 argument_list|)
 argument_list|,
+name|NULL
+argument_list|,
 name|FALSE
 argument_list|,
 name|G_CALLBACK

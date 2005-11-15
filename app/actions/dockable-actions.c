@@ -601,6 +601,8 @@ argument_list|(
 name|dockable_preview_size_actions
 argument_list|)
 argument_list|,
+name|NULL
+argument_list|,
 name|GIMP_VIEW_SIZE_MEDIUM
 argument_list|,
 name|G_CALLBACK
@@ -620,6 +622,8 @@ argument_list|(
 name|dockable_tab_style_actions
 argument_list|)
 argument_list|,
+name|NULL
+argument_list|,
 name|GIMP_TAB_STYLE_PREVIEW
 argument_list|,
 name|G_CALLBACK
@@ -638,6 +642,8 @@ name|G_N_ELEMENTS
 argument_list|(
 name|dockable_view_type_actions
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|,
 name|GIMP_VIEW_TYPE_LIST
 argument_list|,

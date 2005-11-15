@@ -257,6 +257,8 @@ name|entries
 argument_list|,
 name|n_entries
 argument_list|,
+name|NULL
+argument_list|,
 literal|0
 argument_list|,
 name|G_CALLBACK

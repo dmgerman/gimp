@@ -1460,6 +1460,8 @@ argument_list|(
 name|gradient_editor_blending_actions
 argument_list|)
 argument_list|,
+name|NULL
+argument_list|,
 literal|0
 argument_list|,
 name|G_CALLBACK
@@ -1478,6 +1480,8 @@ name|G_N_ELEMENTS
 argument_list|(
 name|gradient_editor_coloring_actions
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|,
 literal|0
 argument_list|,
