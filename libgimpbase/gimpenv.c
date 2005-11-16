@@ -541,7 +541,7 @@ operator|*
 name|p
 condition|)
 block|{
-comment|/* Replace funny characters in the user name with an 	       * underscore. The code below also replaces some 	       * characters that in fact are legal in file names, but 	       * who cares, as long as the definitely illegal ones are 	       * caught. 	       */
+comment|/* Replace funny characters in the user name with an                * underscore. The code below also replaces some                * characters that in fact are legal in file names, but                * who cares, as long as the definitely illegal ones are                * caught.                */
 if|if
 condition|(
 operator|!
@@ -654,6 +654,8 @@ block|}
 end_function
 
 begin_function
+specifier|static
+specifier|const
 name|gchar
 modifier|*
 DECL|function|gimp_toplevel_directory (void)
@@ -662,10 +664,6 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-ifdef|#
-directive|ifdef
-name|G_OS_WIN32
-comment|/* Figure it out from the executable name */
 specifier|static
 name|gchar
 modifier|*
@@ -673,6 +671,18 @@ name|toplevel
 init|=
 name|NULL
 decl_stmt|;
+if|if
+condition|(
+name|toplevel
+condition|)
+return|return
+name|toplevel
+return|;
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
+block|{
+comment|/* Figure it out from the executable name */
 name|gchar
 modifier|*
 name|filename
@@ -684,13 +694,6 @@ decl_stmt|,
 modifier|*
 name|sep2
 decl_stmt|;
-if|if
-condition|(
-name|toplevel
-condition|)
-return|return
-name|toplevel
-return|;
 if|if
 condition|(
 name|G_WIN32_HAVE_WIDECHAR_API
@@ -809,7 +812,7 @@ literal|"Converting module filename to UTF-8 failed"
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* If the executable file name is of the format    *<foobar>\bin\*.exe or    *<foobar>\lib\gimp\GIMP_API_VERSION\plug-ins\*.exe, use<foobar>.    * Otherwise, use the directory where the executable is.    */
+comment|/* If the executable file name is of the format      *<foobar>\bin\*.exe or      *<foobar>\lib\gimp\GIMP_API_VERSION\plug-ins\*.exe, use<foobar>.      * Otherwise, use the directory where the executable is.      */
 name|sep1
 operator|=
 name|strrchr
@@ -938,19 +941,21 @@ name|toplevel
 operator|=
 name|filename
 expr_stmt|;
-return|return
-name|toplevel
-return|;
+block|}
 else|#
 directive|else
-return|return
+name|toplevel
+operator|=
 name|_gimp_reloc_find_prefix
 argument_list|(
 name|PREFIX
 argument_list|)
-return|;
+expr_stmt|;
 endif|#
 directive|endif
+return|return
+name|toplevel
+return|;
 block|}
 end_function
 

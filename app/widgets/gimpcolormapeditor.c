@@ -164,7 +164,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2886509d0103
+DECL|enum|__anon286d3d150103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -2162,10 +2162,8 @@ name|cellsize
 expr_stmt|;
 name|row
 operator|=
-name|g_new
+name|g_alloca
 argument_list|(
-name|guchar
-argument_list|,
 name|cellsize
 operator|*
 literal|3
