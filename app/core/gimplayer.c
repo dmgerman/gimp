@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b094cce0103
+DECL|enum|__anon28c631bf0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -177,7 +177,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b094cce0203
+DECL|enum|__anon28c631bf0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2758,10 +2758,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_layer_transform_color
 argument_list|(
-name|gimp_item_get_image
-argument_list|(
-name|item
-argument_list|)
+name|dest_image
 argument_list|,
 operator|&
 name|newPR
