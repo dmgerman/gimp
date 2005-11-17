@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"window-commands.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -118,7 +124,7 @@ name|NULL
 block|,
 name|G_CALLBACK
 argument_list|(
-name|dock_close_cmd_callback
+name|window_close_cmd_callback
 argument_list|)
 block|,
 name|GIMP_HELP_DOCK_CLOSE
@@ -225,11 +231,6 @@ argument_list|(
 name|group
 argument_list|,
 name|GIMP_HELP_DOCK_CHANGE_SCREEN
-argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|dock_move_to_screen_cmd_callback
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

@@ -138,6 +138,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"window-commands.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -279,7 +285,7 @@ name|NULL
 block|,
 name|G_CALLBACK
 argument_list|(
-name|view_close_cmd_callback
+name|window_close_cmd_callback
 argument_list|)
 block|,
 name|GIMP_HELP_FILE_CLOSE
@@ -1701,11 +1707,6 @@ argument_list|(
 name|group
 argument_list|,
 name|GIMP_HELP_VIEW_CHANGE_SCREEN
-argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|view_move_to_screen_cmd_callback
-argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  connect "activate" of view-zoom-other manually so it can be    *  selected even if it's the active item of the radio group    */

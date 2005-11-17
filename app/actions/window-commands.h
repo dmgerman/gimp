@@ -6,43 +6,44 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__WINDOW_ACTIONS_H__
+name|__WINDOW_COMMANDS_H__
 end_ifndef
 
 begin_define
-DECL|macro|__WINDOW_ACTIONS_H__
+DECL|macro|__WINDOW_COMMANDS_H__
 define|#
 directive|define
-name|__WINDOW_ACTIONS_H__
+name|__WINDOW_COMMANDS_H__
 end_define
 
 begin_function_decl
 name|void
-name|window_actions_setup
+name|window_close_cmd_callback
 parameter_list|(
-name|GimpActionGroup
+name|GtkAction
 modifier|*
-name|group
+name|action
 parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|move_to_screen_help_id
+name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|void
-name|window_actions_update
+name|window_move_to_screen_cmd_callback
 parameter_list|(
-name|GimpActionGroup
+name|GtkAction
 modifier|*
-name|group
+name|action
 parameter_list|,
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|window
+name|current
+parameter_list|,
+name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -53,7 +54,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __WINDOW_ACTIONS_H__ */
+comment|/* __WINDOW_COMMANDS_H__ */
 end_comment
 
 end_unit
