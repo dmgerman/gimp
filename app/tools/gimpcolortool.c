@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c9a0fdd0103
+DECL|enum|__anon2a99c1ee0103
 block|{
 DECL|enumerator|PICKED
 name|PICKED
@@ -2094,7 +2094,7 @@ name|tool
 argument_list|,
 name|gdisp
 argument_list|,
-name|GIMP_CURSOR_COLOR_PICKER
+name|GIMP_CURSOR_MOUSE
 argument_list|,
 name|GIMP_TOOL_CURSOR_COLOR_PICKER
 argument_list|,
@@ -2168,7 +2168,7 @@ condition|)
 block|{
 name|cursor
 operator|=
-name|GIMP_CURSOR_COLOR_PICKER
+name|GIMP_CURSOR_MOUSE
 expr_stmt|;
 block|}
 switch|switch
@@ -2917,7 +2917,7 @@ name|tool
 argument_list|,
 name|gdisp
 argument_list|,
-name|GIMP_CURSOR_COLOR_PICKER
+name|GIMP_CURSOR_MOUSE
 argument_list|,
 name|GIMP_TOOL_CURSOR_COLOR_PICKER
 argument_list|,

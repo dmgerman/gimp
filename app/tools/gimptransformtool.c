@@ -2696,7 +2696,7 @@ decl_stmt|;
 name|GimpCursorType
 name|cursor
 init|=
-name|GDK_TOP_LEFT_ARROW
+name|GIMP_CURSOR_MOUSE
 decl_stmt|;
 name|GimpCursorModifier
 name|modifier

@@ -2802,7 +2802,7 @@ condition|)
 block|{
 name|cursor
 operator|=
-name|GDK_HAND2
+name|GIMP_CURSOR_MOUSE
 expr_stmt|;
 name|tool_cursor
 operator|=
@@ -2940,7 +2940,7 @@ condition|)
 block|{
 name|cursor
 operator|=
-name|GDK_HAND2
+name|GIMP_CURSOR_MOUSE
 expr_stmt|;
 name|tool_cursor
 operator|=
@@ -3026,7 +3026,7 @@ else|else
 block|{
 name|cursor
 operator|=
-name|GDK_HAND2
+name|GIMP_CURSOR_MOUSE
 expr_stmt|;
 name|tool_cursor
 operator|=
@@ -3397,7 +3397,7 @@ name|tool
 argument_list|,
 name|gdisp
 argument_list|,
-name|GDK_HAND2
+name|GIMP_CURSOR_MOUSE
 argument_list|,
 name|GIMP_TOOL_CURSOR_HAND
 argument_list|,

@@ -4748,10 +4748,6 @@ block|{
 case|case
 name|VECTORS_SELECT_VECTOR
 case|:
-name|cursor
-operator|=
-name|GDK_HAND2
-expr_stmt|;
 name|tool_cursor
 operator|=
 name|GIMP_TOOL_CURSOR_HAND
