@@ -65,13 +65,13 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad3e6df0103
+DECL|enum|__anon29e580350103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
 block|,
-DECL|enumerator|PROP_DISCONTINUOUS
-name|PROP_DISCONTINUOUS
+DECL|enumerator|PROP_CONTIGUOUS
+name|PROP_CONTIGUOUS
 block|,
 DECL|enumerator|PROP_BACKGROUND
 name|PROP_BACKGROUND
@@ -279,17 +279,16 @@ name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
-name|PROP_DISCONTINUOUS
+name|PROP_CONTIGUOUS
 argument_list|,
-literal|"discontinuous"
+literal|"contiguous"
 argument_list|,
 name|_
 argument_list|(
-literal|"Allow to select multiple disjoint "
-literal|"objects"
+literal|"Select a single contiguous area"
 argument_list|)
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 literal|0
 argument_list|)
@@ -477,11 +476,11 @@ name|property_id
 condition|)
 block|{
 case|case
-name|PROP_DISCONTINUOUS
+name|PROP_CONTIGUOUS
 case|:
 name|options
 operator|->
-name|discontinuous
+name|contiguous
 operator|=
 name|g_value_get_boolean
 argument_list|(
@@ -641,7 +640,7 @@ name|property_id
 condition|)
 block|{
 case|case
-name|PROP_DISCONTINUOUS
+name|PROP_CONTIGUOUS
 case|:
 name|g_value_set_boolean
 argument_list|(
@@ -649,7 +648,7 @@ name|value
 argument_list|,
 name|options
 operator|->
-name|discontinuous
+name|contiguous
 argument_list|)
 expr_stmt|;
 break|break;
@@ -841,11 +840,11 @@ name|gimp_prop_check_button_new
 argument_list|(
 name|config
 argument_list|,
-literal|"discontinuous"
+literal|"contiguous"
 argument_list|,
 name|_
 argument_list|(
-literal|"Discontinuous"
+literal|"Contiguous"
 argument_list|)
 argument_list|)
 expr_stmt|;

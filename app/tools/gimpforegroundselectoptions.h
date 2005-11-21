@@ -111,9 +111,9 @@ DECL|member|parent_instance
 name|GimpSelectionOptions
 name|parent_instance
 decl_stmt|;
-DECL|member|discontinuous
+DECL|member|contiguous
 name|gboolean
-name|discontinuous
+name|contiguous
 decl_stmt|;
 DECL|member|background
 name|gboolean
