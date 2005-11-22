@@ -57,7 +57,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c192e590103
+DECL|enum|__anon2b8b1f480103
 block|{
 DECL|enumerator|INVALIDATED
 name|INVALIDATED
@@ -70,7 +70,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c192e590203
+DECL|enum|__anon2b8b1f480203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -84,7 +84,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c192e590308
+DECL|struct|__anon2b8b1f480308
 block|{
 DECL|member|controls
 name|GtkWidget
@@ -779,7 +779,7 @@ argument_list|)
 argument_list|,
 literal|1
 argument_list|,
-literal|6
+literal|3
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
