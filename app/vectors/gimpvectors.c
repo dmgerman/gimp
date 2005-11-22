@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28eec1c30103
+DECL|enum|__anon2bbf8cfb0103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE
@@ -2368,6 +2368,7 @@ name|retval
 init|=
 name|FALSE
 decl_stmt|;
+comment|/*  return successfully on an empty path, there's nothing to stroke  */
 if|if
 condition|(
 operator|!
@@ -2375,19 +2376,9 @@ name|vectors
 operator|->
 name|strokes
 condition|)
-block|{
-name|g_message
-argument_list|(
-name|_
-argument_list|(
-literal|"Cannot stroke empty path."
-argument_list|)
-argument_list|)
-expr_stmt|;
 return|return
-name|FALSE
+name|TRUE
 return|;
-block|}
 switch|switch
 condition|(
 name|stroke_desc
