@@ -657,7 +657,7 @@ argument_list|(
 name|measure_tool
 argument_list|)
 decl_stmt|;
-name|gimp_tool_control_set_handles_empty_image
+name|gimp_tool_control_set_handle_empty_image
 argument_list|(
 name|tool
 operator|->

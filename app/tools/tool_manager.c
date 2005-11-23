@@ -1910,7 +1910,7 @@ condition|(
 name|active_tool
 operator|&&
 operator|!
-name|gimp_tool_control_preserve
+name|gimp_tool_control_get_preserve
 argument_list|(
 name|active_tool
 operator|->
@@ -1918,7 +1918,7 @@ name|control
 argument_list|)
 operator|&&
 operator|(
-name|gimp_tool_control_dirty_mask
+name|gimp_tool_control_get_dirty_mask
 argument_list|(
 name|active_tool
 operator|->

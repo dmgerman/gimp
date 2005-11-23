@@ -1913,7 +1913,7 @@ if|if
 condition|(
 name|active_tool
 operator|&&
-name|gimp_tool_control_auto_snap_to
+name|gimp_tool_control_get_snap_to
 argument_list|(
 name|active_tool
 operator|->
@@ -1930,7 +1930,7 @@ name|width
 decl_stmt|,
 name|height
 decl_stmt|;
-name|gimp_tool_control_snap_offsets
+name|gimp_tool_control_get_snap_offsets
 argument_list|(
 name|active_tool
 operator|->
@@ -2307,7 +2307,7 @@ argument_list|(
 name|gimage
 argument_list|)
 operator|||
-name|gimp_tool_control_handles_empty_image
+name|gimp_tool_control_get_handle_empty_image
 argument_list|(
 name|active_tool
 operator|->
@@ -2358,7 +2358,7 @@ name|gimage
 argument_list|)
 operator|&&
 operator|!
-name|gimp_tool_control_handles_empty_image
+name|gimp_tool_control_get_handle_empty_image
 argument_list|(
 name|active_tool
 operator|->
@@ -2470,7 +2470,7 @@ operator|->
 name|perfect_mouse
 operator|||
 operator|(
-name|gimp_tool_control_motion_mode
+name|gimp_tool_control_get_motion_mode
 argument_list|(
 name|active_tool
 operator|->
@@ -2555,7 +2555,7 @@ argument_list|(
 name|gimage
 argument_list|)
 operator|||
-name|gimp_tool_control_handles_empty_image
+name|gimp_tool_control_get_handle_empty_image
 argument_list|(
 name|active_tool
 operator|->
@@ -2603,7 +2603,7 @@ argument_list|)
 operator|)
 operator|&&
 operator|!
-name|gimp_tool_control_preserve
+name|gimp_tool_control_get_preserve
 argument_list|(
 name|active_tool
 operator|->
@@ -2841,7 +2841,7 @@ argument_list|(
 name|gimage
 argument_list|)
 operator|||
-name|gimp_tool_control_handles_empty_image
+name|gimp_tool_control_get_handle_empty_image
 argument_list|(
 name|active_tool
 operator|->
@@ -3314,7 +3314,7 @@ if|if
 condition|(
 name|active_tool
 operator|&&
-name|gimp_tool_control_auto_snap_to
+name|gimp_tool_control_get_snap_to
 argument_list|(
 name|active_tool
 operator|->
@@ -3331,7 +3331,7 @@ name|width
 decl_stmt|,
 name|height
 decl_stmt|;
-name|gimp_tool_control_snap_offsets
+name|gimp_tool_control_get_snap_offsets
 argument_list|(
 name|active_tool
 operator|->
@@ -3436,7 +3436,7 @@ if|if
 condition|(
 name|active_tool
 operator|&&
-name|gimp_tool_control_motion_mode
+name|gimp_tool_control_get_motion_mode
 argument_list|(
 name|active_tool
 operator|->
@@ -3515,7 +3515,7 @@ if|if
 condition|(
 name|active_tool
 operator|&&
-name|gimp_tool_control_auto_snap_to
+name|gimp_tool_control_get_snap_to
 argument_list|(
 name|active_tool
 operator|->
@@ -3532,7 +3532,7 @@ name|width
 decl_stmt|,
 name|height
 decl_stmt|;
-name|gimp_tool_control_snap_offsets
+name|gimp_tool_control_get_snap_offsets
 argument_list|(
 name|active_tool
 operator|->
@@ -3642,7 +3642,7 @@ argument_list|(
 name|gimage
 argument_list|)
 operator|||
-name|gimp_tool_control_handles_empty_image
+name|gimp_tool_control_get_handle_empty_image
 argument_list|(
 name|active_tool
 operator|->
@@ -3693,7 +3693,7 @@ name|disp_height
 operator|)
 operator|&&
 operator|!
-name|gimp_tool_control_scroll_lock
+name|gimp_tool_control_get_scroll_lock
 argument_list|(
 name|active_tool
 operator|->
@@ -3713,7 +3713,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|gimp_tool_control_motion_mode
+name|gimp_tool_control_get_motion_mode
 argument_list|(
 name|active_tool
 operator|->
@@ -3796,7 +3796,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimp_tool_control_auto_snap_to
+name|gimp_tool_control_get_snap_to
 argument_list|(
 name|active_tool
 operator|->
@@ -3813,7 +3813,7 @@ name|width
 decl_stmt|,
 name|height
 decl_stmt|;
-name|gimp_tool_control_snap_offsets
+name|gimp_tool_control_get_snap_offsets
 argument_list|(
 name|active_tool
 operator|->
@@ -4587,7 +4587,7 @@ argument_list|(
 name|gimage
 argument_list|)
 operator|||
-name|gimp_tool_control_handles_empty_image
+name|gimp_tool_control_get_handle_empty_image
 argument_list|(
 name|active_tool
 operator|->
@@ -4631,7 +4631,7 @@ name|gimage
 argument_list|)
 operator|&&
 operator|!
-name|gimp_tool_control_handles_empty_image
+name|gimp_tool_control_get_handle_empty_image
 argument_list|(
 name|active_tool
 operator|->

@@ -710,7 +710,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimp_tool_control_set_handles_empty_image
+name|gimp_tool_control_set_handle_empty_image
 argument_list|(
 name|tool
 operator|->

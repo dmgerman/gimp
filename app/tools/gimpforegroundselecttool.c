@@ -144,7 +144,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28eadc3b0108
+DECL|struct|__anon2b3257580108
 block|{
 DECL|member|width
 name|gint
@@ -1452,7 +1452,7 @@ operator|->
 name|tool_options
 argument_list|)
 expr_stmt|;
-name|gimp_tool_control_set_toggle
+name|gimp_tool_control_set_toggled
 argument_list|(
 name|tool
 operator|->
@@ -2973,7 +2973,7 @@ argument_list|,
 name|GIMP_TOOL_CURSOR_ERASER
 argument_list|)
 expr_stmt|;
-name|gimp_tool_control_set_toggle
+name|gimp_tool_control_set_toggled
 argument_list|(
 name|tool
 operator|->
@@ -3005,7 +3005,7 @@ argument_list|,
 name|GIMP_TOOL_CURSOR_FREE_SELECT
 argument_list|)
 expr_stmt|;
-name|gimp_tool_control_set_toggle
+name|gimp_tool_control_set_toggled
 argument_list|(
 name|tool
 operator|->

@@ -107,22 +107,42 @@ DECL|member|active
 name|gboolean
 name|active
 decl_stmt|;
-comment|/*  state of tool activity               */
+comment|/*  state of tool activity          */
 DECL|member|paused_count
 name|gint
 name|paused_count
 decl_stmt|;
-comment|/*  paused control count                 */
+comment|/*  paused control count            */
+DECL|member|preserve
+name|gboolean
+name|preserve
+decl_stmt|;
+comment|/*  Preserve this tool across       *                                           *  drawable changes                */
 DECL|member|scroll_lock
 name|gboolean
 name|scroll_lock
 decl_stmt|;
-comment|/*  allow scrolling or not               */
+comment|/*  allow scrolling or not          */
+DECL|member|handle_empty_image
+name|gboolean
+name|handle_empty_image
+decl_stmt|;
+comment|/*  invoke the tool on images       *                                           *  without active drawable         */
+DECL|member|dirty_mask
+name|GimpDirtyMask
+name|dirty_mask
+decl_stmt|;
+comment|/*  if preserve is FALSE, cancel    *                                           *  the tool on these events        */
+DECL|member|motion_mode
+name|GimpMotionMode
+name|motion_mode
+decl_stmt|;
+comment|/*  how to process motion events    *                                           *  before they go to the tool      */
 DECL|member|auto_snap_to
 name|gboolean
 name|auto_snap_to
 decl_stmt|;
-comment|/*  snap to guides automatically         */
+comment|/*  snap to guides automatically    */
 DECL|member|snap_offset_x
 name|gint
 name|snap_offset_x
@@ -139,26 +159,10 @@ DECL|member|snap_height
 name|gint
 name|snap_height
 decl_stmt|;
-DECL|member|preserve
+DECL|member|toggled
 name|gboolean
-name|preserve
+name|toggled
 decl_stmt|;
-comment|/*  Preserve this tool across drawable   *                                       *  changes                              */
-DECL|member|dirty_mask
-name|GimpDirtyMask
-name|dirty_mask
-decl_stmt|;
-comment|/*  if preserve is FALSE, cancel the     *                                       *  tool on these events                 */
-DECL|member|handle_empty_image
-name|gboolean
-name|handle_empty_image
-decl_stmt|;
-comment|/*  invoke the tool on images without    *                                       *  active drawable                      */
-DECL|member|motion_mode
-name|GimpMotionMode
-name|motion_mode
-decl_stmt|;
-comment|/*  how to process motion events before  *                                       *  they are forwarded to the tool       */
 DECL|member|cursor
 name|GimpCursorType
 name|cursor
@@ -182,10 +186,6 @@ decl_stmt|;
 DECL|member|toggle_cursor_modifier
 name|GimpCursorModifier
 name|toggle_cursor_modifier
-decl_stmt|;
-DECL|member|toggled
-name|gboolean
-name|toggled
 decl_stmt|;
 DECL|member|action_value_1
 name|gchar
@@ -246,39 +246,6 @@ end_decl_stmt
 
 begin_function_decl
 name|void
-name|gimp_tool_control_pause
-parameter_list|(
-name|GimpToolControl
-modifier|*
-name|control
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_tool_control_resume
-parameter_list|(
-name|GimpToolControl
-modifier|*
-name|control
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gboolean
-name|gimp_tool_control_is_paused
-parameter_list|(
-name|GimpToolControl
-modifier|*
-name|control
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|gimp_tool_control_activate
 parameter_list|(
 name|GimpToolControl
@@ -312,21 +279,29 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_tool_control_set_toggle
+name|gimp_tool_control_pause
 parameter_list|(
 name|GimpToolControl
 modifier|*
 name|control
-parameter_list|,
-name|gboolean
-name|toggled
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_tool_control_resume
+parameter_list|(
+name|GimpToolControl
+modifier|*
+name|control
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_tool_control_is_toggled
+name|gimp_tool_control_is_paused
 parameter_list|(
 name|GimpToolControl
 modifier|*
@@ -351,32 +326,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_tool_control_preserve
-parameter_list|(
-name|GimpToolControl
-modifier|*
-name|control
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_tool_control_set_dirty_mask
-parameter_list|(
-name|GimpToolControl
-modifier|*
-name|control
-parameter_list|,
-name|GimpDirtyMask
-name|dirty_mask
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|GimpDirtyMask
-name|gimp_tool_control_dirty_mask
+name|gimp_tool_control_get_preserve
 parameter_list|(
 name|GimpToolControl
 modifier|*
@@ -401,7 +351,57 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_tool_control_scroll_lock
+name|gimp_tool_control_get_scroll_lock
+parameter_list|(
+name|GimpToolControl
+modifier|*
+name|control
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_tool_control_set_handle_empty_image
+parameter_list|(
+name|GimpToolControl
+modifier|*
+name|control
+parameter_list|,
+name|gboolean
+name|handle_empty
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|gimp_tool_control_get_handle_empty_image
+parameter_list|(
+name|GimpToolControl
+modifier|*
+name|control
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_tool_control_set_dirty_mask
+parameter_list|(
+name|GimpToolControl
+modifier|*
+name|control
+parameter_list|,
+name|GimpDirtyMask
+name|dirty_mask
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GimpDirtyMask
+name|gimp_tool_control_get_dirty_mask
 parameter_list|(
 name|GimpToolControl
 modifier|*
@@ -426,32 +426,7 @@ end_function_decl
 
 begin_function_decl
 name|GimpMotionMode
-name|gimp_tool_control_motion_mode
-parameter_list|(
-name|GimpToolControl
-modifier|*
-name|control
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_tool_control_set_handles_empty_image
-parameter_list|(
-name|GimpToolControl
-modifier|*
-name|control
-parameter_list|,
-name|gboolean
-name|handle_empty
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gboolean
-name|gimp_tool_control_handles_empty_image
+name|gimp_tool_control_get_motion_mode
 parameter_list|(
 name|GimpToolControl
 modifier|*
@@ -476,7 +451,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_tool_control_auto_snap_to
+name|gimp_tool_control_get_snap_to
 parameter_list|(
 name|GimpToolControl
 modifier|*
@@ -510,7 +485,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_tool_control_snap_offsets
+name|gimp_tool_control_get_snap_offsets
 parameter_list|(
 name|GimpToolControl
 modifier|*
@@ -531,6 +506,31 @@ parameter_list|,
 name|gint
 modifier|*
 name|height
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_tool_control_set_toggled
+parameter_list|(
+name|GimpToolControl
+modifier|*
+name|control
+parameter_list|,
+name|gboolean
+name|toggled
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|gimp_tool_control_get_toggled
+parameter_list|(
+name|GimpToolControl
+modifier|*
+name|control
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -663,7 +663,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|action_desc
+name|action
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -692,7 +692,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|action_desc
+name|action
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -721,7 +721,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|action_desc
+name|action
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -750,7 +750,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|action_desc
+name|action
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -779,7 +779,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|action_desc
+name|action
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -808,7 +808,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|action_desc
+name|action
 parameter_list|)
 function_decl|;
 end_function_decl

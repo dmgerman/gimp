@@ -106,7 +106,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c169fe0108
+DECL|struct|__anon2c525c970108
 block|{
 DECL|member|mevent
 name|GdkEventMotion
@@ -521,7 +521,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimp_tool_control_auto_snap_to
+name|gimp_tool_control_get_snap_to
 argument_list|(
 name|active_tool
 operator|->
@@ -538,7 +538,7 @@ name|width
 decl_stmt|,
 name|height
 decl_stmt|;
-name|gimp_tool_control_snap_offsets
+name|gimp_tool_control_get_snap_offsets
 argument_list|(
 name|active_tool
 operator|->

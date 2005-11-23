@@ -550,7 +550,7 @@ operator|->
 name|tool_options
 argument_list|)
 expr_stmt|;
-name|gimp_tool_control_set_toggle
+name|gimp_tool_control_set_toggled
 argument_list|(
 name|tool
 operator|->
