@@ -190,8 +190,9 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|static
 name|gboolean
-name|do_sel2path
+name|sel2path
 parameter_list|(
 name|gint32
 name|image_ID
@@ -1113,7 +1114,7 @@ default|default:
 break|break;
 block|}
 block|}
-name|do_sel2path
+name|sel2path
 argument_list|(
 name|image_ID
 argument_list|)
@@ -1530,7 +1531,7 @@ block|}
 end_function
 
 begin_function
-name|gint
+name|gboolean
 DECL|function|sel_valid_pixel (gint row,gint col)
 name|sel_valid_pixel
 parameter_list|(
@@ -1574,6 +1575,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|gen_anchor (gdouble * p,gdouble x,gdouble y,gboolean is_newcurve)
 name|gen_anchor
@@ -1646,6 +1648,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|gen_control (gdouble * p,gdouble x,gdouble y)
 name|gen_control
@@ -1706,6 +1709,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|do_points (spline_list_array_type in_splines,gint32 image_ID)
 name|do_points
@@ -1805,17 +1809,11 @@ literal|9
 expr_stmt|;
 name|cur_parray
 operator|=
-operator|(
-name|gdouble
-operator|*
-operator|)
 name|g_new0
 argument_list|(
 name|gdouble
 argument_list|,
-name|point_count
-operator|*
-literal|9
+name|path_point_count
 argument_list|)
 expr_stmt|;
 name|parray
@@ -2130,7 +2128,10 @@ name|gimp_path_set_points
 argument_list|(
 name|image_ID
 argument_list|,
-literal|"selection_to_path"
+name|_
+argument_list|(
+literal|"Selection"
+argument_list|)
 argument_list|,
 literal|1
 argument_list|,
@@ -2143,9 +2144,10 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|gboolean
-DECL|function|do_sel2path (gint32 image_ID)
-name|do_sel2path
+DECL|function|sel2path (gint32 image_ID)
+name|sel2path
 parameter_list|(
 name|gint32
 name|image_ID
@@ -2321,13 +2323,6 @@ modifier|*
 name|item
 parameter_list|)
 block|{
-name|g_return_if_fail
-argument_list|(
-name|item
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
 name|g_free
 argument_list|(
 operator|*
