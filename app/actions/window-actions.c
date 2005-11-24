@@ -328,6 +328,15 @@ operator|>
 literal|1
 operator|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|GIMP_UNSTABLE
+name|show_menu
+operator|=
+name|TRUE
+expr_stmt|;
+endif|#
+directive|endif
 if|if
 condition|(
 operator|!
