@@ -1724,13 +1724,6 @@ name|view_scroll_vertical_cmd_callback
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|window_actions_setup
-argument_list|(
-name|group
-argument_list|,
-name|GIMP_HELP_VIEW_CHANGE_SCREEN
-argument_list|)
-expr_stmt|;
 comment|/*  connect "activate" of view-zoom-other manually so it can be    *  selected even if it's the active item of the radio group    */
 name|action
 operator|=
@@ -1796,6 +1789,32 @@ argument_list|,
 name|group
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|GIMP_IS_DISPLAY
+argument_list|(
+name|group
+operator|->
+name|user_data
+argument_list|)
+operator|||
+name|GIMP_IS_GIMP
+argument_list|(
+name|group
+operator|->
+name|user_data
+argument_list|)
+condition|)
+block|{
+comment|/*  add window actions only if the context of the group is        *  the display itself or the global popup (not if the context        *  is a dock)        *  (see dock-actions.c)        */
+name|window_actions_setup
+argument_list|(
+name|group
+argument_list|,
+name|GIMP_HELP_VIEW_CHANGE_SCREEN
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -2368,6 +2387,24 @@ operator|&&
 name|fullscreen
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|GIMP_IS_DISPLAY
+argument_list|(
+name|group
+operator|->
+name|user_data
+argument_list|)
+operator|||
+name|GIMP_IS_GIMP
+argument_list|(
+name|group
+operator|->
+name|user_data
+argument_list|)
+condition|)
+block|{
+comment|/*  see view_actions_setup()  */
 name|window_actions_update
 argument_list|(
 name|group
@@ -2381,6 +2418,7 @@ else|:
 name|NULL
 argument_list|)
 expr_stmt|;
+block|}
 undef|#
 directive|undef
 name|SET_ACTIVE
