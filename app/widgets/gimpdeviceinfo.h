@@ -126,6 +126,11 @@ name|GdkDevice
 modifier|*
 name|device
 decl_stmt|;
+DECL|member|display
+name|GdkDisplay
+modifier|*
+name|display
+decl_stmt|;
 comment|/*  either "device" or the options below are set  */
 DECL|member|mode
 name|GdkInputMode
@@ -217,6 +222,10 @@ parameter_list|,
 name|GdkDevice
 modifier|*
 name|device
+parameter_list|,
+name|GdkDisplay
+modifier|*
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl

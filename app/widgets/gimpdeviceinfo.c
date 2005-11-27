@@ -73,7 +73,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon294975940103
+DECL|enum|__anon290d91790103
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -86,7 +86,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon294975940203
+DECL|enum|__anon290d91790203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -522,6 +522,12 @@ name|NULL
 expr_stmt|;
 name|device_info
 operator|->
+name|display
+operator|=
+name|NULL
+expr_stmt|;
+name|device_info
+operator|->
 name|mode
 operator|=
 name|GDK_MODE_DISABLED
@@ -849,14 +855,10 @@ name|PROP_MODE
 case|:
 if|if
 condition|(
-name|device_info
-operator|->
 name|device
 condition|)
 name|gdk_device_set_mode
 argument_list|(
-name|device_info
-operator|->
 name|device
 argument_list|,
 name|g_value_get_enum
@@ -1578,10 +1580,6 @@ modifier|*
 name|name
 parameter_list|)
 block|{
-name|GimpDeviceInfo
-modifier|*
-name|device_info
-decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_GIMP
@@ -1601,8 +1599,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|device_info
-operator|=
+return|return
 name|g_object_new
 argument_list|(
 name|GIMP_TYPE_DEVICE_INFO
@@ -1617,9 +1614,6 @@ name|gimp
 argument_list|,
 name|NULL
 argument_list|)
-expr_stmt|;
-return|return
-name|device_info
 return|;
 block|}
 end_function
@@ -1627,7 +1621,7 @@ end_function
 begin_function
 name|GimpDeviceInfo
 modifier|*
-DECL|function|gimp_device_info_set_from_device (GimpDeviceInfo * device_info,GdkDevice * device)
+DECL|function|gimp_device_info_set_from_device (GimpDeviceInfo * device_info,GdkDevice * device,GdkDisplay * display)
 name|gimp_device_info_set_from_device
 parameter_list|(
 name|GimpDeviceInfo
@@ -1637,6 +1631,10 @@ parameter_list|,
 name|GdkDevice
 modifier|*
 name|device
+parameter_list|,
+name|GdkDisplay
+modifier|*
+name|display
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -1659,6 +1657,16 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GDK_IS_DISPLAY
+argument_list|(
+name|display
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|g_object_set_data
 argument_list|(
 name|G_OBJECT
@@ -1676,6 +1684,12 @@ operator|->
 name|device
 operator|=
 name|device
+expr_stmt|;
+name|device_info
+operator|->
+name|display
+operator|=
+name|display
 expr_stmt|;
 name|device_info
 operator|->
@@ -1811,14 +1825,9 @@ argument_list|)
 expr_stmt|;
 name|device_info
 operator|=
-name|g_object_get_data
-argument_list|(
-name|G_OBJECT
+name|gimp_device_info_get_by_device
 argument_list|(
 name|device
-argument_list|)
-argument_list|,
-name|GIMP_DEVICE_INFO_DATA_KEY
 argument_list|)
 expr_stmt|;
 if|if

@@ -41,7 +41,7 @@ modifier|*
 name|gimp
 parameter_list|,
 name|GimpDeviceChangeNotify
-name|change_notify
+name|callback
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -94,6 +94,18 @@ name|GError
 modifier|*
 modifier|*
 name|error
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GimpContainer
+modifier|*
+name|gimp_devices_get_list
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 function_decl|;
 end_function_decl
