@@ -95,7 +95,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon289b26f60103
+DECL|enum|__anon28a428140103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1933,8 +1933,16 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gimp_button_new
-argument_list|()
+name|g_object_new
+argument_list|(
+name|GIMP_TYPE_BUTTON
+argument_list|,
+literal|"use-stock"
+argument_list|,
+name|TRUE
+argument_list|,
+name|NULL
+argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
@@ -2552,8 +2560,16 @@ else|else
 block|{
 name|button
 operator|=
-name|gimp_button_new
-argument_list|()
+name|g_object_new
+argument_list|(
+name|GIMP_TYPE_BUTTON
+argument_list|,
+literal|"use-stock"
+argument_list|,
+name|TRUE
+argument_list|,
+name|NULL
+argument_list|)
 expr_stmt|;
 block|}
 name|gtk_action_connect_proxy
