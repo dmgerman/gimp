@@ -622,9 +622,9 @@ name|g_strdup_printf
 argument_list|(
 name|ngettext
 argument_list|(
-literal|"(timeout is %s second)"
+literal|"(timeout is %d second)"
 argument_list|,
-literal|"(timeout is %s seconds)"
+literal|"(timeout is %d seconds)"
 argument_list|,
 name|TIMEOUT
 argument_list|)
