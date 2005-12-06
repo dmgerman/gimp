@@ -91,7 +91,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2793aef30103
+DECL|enum|__anon2b80359d0103
 block|{
 DECL|enumerator|SOBEL
 name|SOBEL
@@ -117,7 +117,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2793aef30208
+DECL|struct|__anon2b80359d0208
 block|{
 DECL|member|amount
 name|gdouble
@@ -1822,6 +1822,7 @@ modifier|*
 name|data
 parameter_list|)
 block|{
+specifier|const
 name|gint
 name|v_kernel
 index|[
@@ -1851,6 +1852,7 @@ block|,
 literal|1
 block|}
 decl_stmt|;
+specifier|const
 name|gint
 name|h_kernel
 index|[
@@ -1888,17 +1890,17 @@ name|v_grad
 decl_stmt|,
 name|h_grad
 decl_stmt|;
-name|v_grad
-operator|=
-literal|0
-expr_stmt|;
-name|h_grad
-operator|=
-literal|0
-expr_stmt|;
 for|for
 control|(
 name|i
+operator|=
+literal|0
+operator|,
+name|v_grad
+operator|=
+literal|0
+operator|,
+name|h_grad
 operator|=
 literal|0
 init|;
@@ -1959,7 +1961,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  * Edge detector via template matting  *   -- Prewitt  */
+comment|/*  * Edge detector via template matting  *   -- Prewitt Compass  */
 end_comment
 
 begin_function
@@ -2404,13 +2406,13 @@ index|[
 literal|8
 index|]
 expr_stmt|;
-name|max
-operator|=
-literal|0
-expr_stmt|;
 for|for
 control|(
 name|k
+operator|=
+literal|0
+operator|,
+name|max
 operator|=
 literal|0
 init|;
@@ -2463,6 +2465,7 @@ modifier|*
 name|data
 parameter_list|)
 block|{
+specifier|const
 name|gint
 name|v_kernel
 index|[
@@ -2490,6 +2493,7 @@ block|,
 literal|0
 block|}
 decl_stmt|;
+specifier|const
 name|gint
 name|h_kernel
 index|[
@@ -2525,17 +2529,17 @@ name|v_grad
 decl_stmt|,
 name|h_grad
 decl_stmt|;
-name|v_grad
-operator|=
-literal|0
-expr_stmt|;
-name|h_grad
-operator|=
-literal|0
-expr_stmt|;
 for|for
 control|(
 name|i
+operator|=
+literal|0
+operator|,
+name|v_grad
+operator|=
+literal|0
+operator|,
+name|h_grad
 operator|=
 literal|0
 init|;
@@ -2611,6 +2615,7 @@ modifier|*
 name|data
 parameter_list|)
 block|{
+specifier|const
 name|gint
 name|v_kernel
 index|[
@@ -2638,6 +2643,7 @@ operator|-
 literal|4
 block|}
 decl_stmt|;
+specifier|const
 name|gint
 name|h_kernel
 index|[
@@ -2673,17 +2679,17 @@ name|v_grad
 decl_stmt|,
 name|h_grad
 decl_stmt|;
-name|v_grad
-operator|=
-literal|0
-expr_stmt|;
-name|h_grad
-operator|=
-literal|0
-expr_stmt|;
 for|for
 control|(
 name|i
+operator|=
+literal|0
+operator|,
+name|v_grad
+operator|=
+literal|0
+operator|,
+name|h_grad
 operator|=
 literal|0
 init|;
@@ -2759,6 +2765,7 @@ modifier|*
 name|data
 parameter_list|)
 block|{
+specifier|const
 name|gint
 name|v_kernel
 index|[
@@ -2787,6 +2794,7 @@ operator|-
 literal|2
 block|}
 decl_stmt|;
+specifier|const
 name|gint
 name|h_kernel
 index|[
@@ -2823,17 +2831,17 @@ name|v_grad
 decl_stmt|,
 name|h_grad
 decl_stmt|;
-name|v_grad
-operator|=
-literal|0
-expr_stmt|;
-name|h_grad
-operator|=
-literal|0
-expr_stmt|;
 for|for
 control|(
 name|i
+operator|=
+literal|0
+operator|,
+name|v_grad
+operator|=
+literal|0
+operator|,
+name|h_grad
 operator|=
 literal|0
 init|;
@@ -2909,6 +2917,7 @@ modifier|*
 name|data
 parameter_list|)
 block|{
+specifier|const
 name|gint
 name|kernel
 index|[
@@ -2942,13 +2951,13 @@ decl_stmt|;
 name|gint
 name|grad
 decl_stmt|;
-name|grad
-operator|=
-literal|0
-expr_stmt|;
 for|for
 control|(
 name|i
+operator|=
+literal|0
+operator|,
+name|grad
 operator|=
 literal|0
 init|;
@@ -2959,7 +2968,6 @@ condition|;
 name|i
 operator|++
 control|)
-block|{
 name|grad
 operator|+=
 name|kernel
@@ -2972,7 +2980,6 @@ index|[
 name|i
 index|]
 expr_stmt|;
-block|}
 return|return
 name|grad
 operator|*
@@ -3285,7 +3292,7 @@ name|SOBEL
 argument_list|,
 name|_
 argument_list|(
-literal|"Prewitt"
+literal|"Prewitt compass"
 argument_list|)
 argument_list|,
 name|PREWITT
