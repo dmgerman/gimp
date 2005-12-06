@@ -50,7 +50,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27988d660108
+DECL|struct|__anon2782e06f0108
 block|{
 DECL|member|x
 DECL|member|y
@@ -465,6 +465,12 @@ operator|+
 name|preview
 operator|->
 name|ymin
+expr_stmt|;
+name|settings
+operator|.
+name|update
+operator|=
+name|TRUE
 expr_stmt|;
 name|data_name
 operator|=
@@ -2066,7 +2072,6 @@ operator|&
 name|settings
 argument_list|)
 condition|)
-block|{
 name|gimp_scrolled_preview_set_position
 argument_list|(
 name|GIMP_SCROLLED_PREVIEW
@@ -2083,7 +2088,6 @@ operator|.
 name|y
 argument_list|)
 expr_stmt|;
-block|}
 name|g_free
 argument_list|(
 name|data_name
