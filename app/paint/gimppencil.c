@@ -39,6 +39,18 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
+begin_expr_stmt
+name|G_DEFINE_TYPE
+argument_list|(
+name|GimpPencil
+argument_list|,
+name|gimp_pencil
+argument_list|,
+name|GIMP_TYPE_PAINTBRUSH
+argument_list|)
+expr_stmt|;
+end_expr_stmt
+
 begin_function
 name|void
 DECL|function|gimp_pencil_register (Gimp * gimp,GimpPaintRegisterCallback callback)
@@ -73,86 +85,29 @@ block|}
 end_function
 
 begin_function
-name|GType
-DECL|function|gimp_pencil_get_type (void)
-name|gimp_pencil_get_type
-parameter_list|(
+specifier|static
 name|void
-parameter_list|)
-block|{
-specifier|static
-name|GType
-name|type
-init|=
-literal|0
-decl_stmt|;
-if|if
-condition|(
-operator|!
-name|type
-condition|)
-block|{
-specifier|static
-specifier|const
-name|GTypeInfo
-name|info
-init|=
-block|{
-sizeof|sizeof
-argument_list|(
+DECL|function|gimp_pencil_class_init (GimpPencilClass * klass)
+name|gimp_pencil_class_init
+parameter_list|(
 name|GimpPencilClass
-argument_list|)
-block|,
-operator|(
-name|GBaseInitFunc
-operator|)
-name|NULL
-block|,
-operator|(
-name|GBaseFinalizeFunc
-operator|)
-name|NULL
-block|,
-name|NULL
-block|,
-comment|/* class_init     */
-name|NULL
-block|,
-comment|/* class_finalize */
-name|NULL
-block|,
-comment|/* class_data     */
-sizeof|sizeof
-argument_list|(
+modifier|*
+name|klass
+parameter_list|)
+block|{ }
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_pencil_init (GimpPencil * pencil)
+name|gimp_pencil_init
+parameter_list|(
 name|GimpPencil
-argument_list|)
-block|,
-literal|0
-block|,
-comment|/* n_preallocs    */
-name|NULL
-comment|/* instance_init  */
-block|}
-decl_stmt|;
-name|type
-operator|=
-name|g_type_register_static
-argument_list|(
-name|GIMP_TYPE_PAINTBRUSH
-argument_list|,
-literal|"GimpPencil"
-argument_list|,
-operator|&
-name|info
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-block|}
-return|return
-name|type
-return|;
-block|}
+modifier|*
+name|pencil
+parameter_list|)
+block|{ }
 end_function
 
 end_unit
