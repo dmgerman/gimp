@@ -1587,6 +1587,15 @@ argument_list|(
 name|paint_options
 argument_list|)
 argument_list|,
+comment|/* In fixed mode, paint incremental so the                                  * individual brushes are properly applied                                  * on top of each other.                                  * Otherwise the stuff we paint is seamless                                  * and we don't need intermediate masking.                                  */
+name|options
+operator|->
+name|align_mode
+operator|==
+name|GIMP_CLONE_ALIGN_FIXED
+condition|?
+name|GIMP_PAINT_INCREMENTAL
+else|:
 name|GIMP_PAINT_CONSTANT
 argument_list|)
 expr_stmt|;
