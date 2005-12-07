@@ -69,7 +69,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon28b8fec60103
+DECL|enum|__anon29b0ae740103
 block|{
 DECL|enumerator|GIMP_CLONE_ALIGN_NO
 name|GIMP_CLONE_ALIGN_NO
@@ -81,7 +81,11 @@ block|,
 comment|/*< desc="Aligned">*/
 DECL|enumerator|GIMP_CLONE_ALIGN_REGISTERED
 name|GIMP_CLONE_ALIGN_REGISTERED
+block|,
 comment|/*< desc="Registered">*/
+DECL|enumerator|GIMP_CLONE_ALIGN_FIXED
+name|GIMP_CLONE_ALIGN_FIXED
+comment|/*< desc="Fixed">*/
 DECL|typedef|GimpCloneAlignMode
 block|}
 name|GimpCloneAlignMode
@@ -109,7 +113,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b8fec60203
+DECL|enum|__anon29b0ae740203
 block|{
 DECL|enumerator|GIMP_BLUR_CONVOLVE
 name|GIMP_BLUR_CONVOLVE
@@ -150,7 +154,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon28b8fec60303
+DECL|enum|__anon29b0ae740303
 block|{
 DECL|enumerator|GIMP_INK_BLOB_TYPE_ELLIPSE
 name|GIMP_INK_BLOB_TYPE_ELLIPSE
@@ -174,7 +178,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon28b8fec60403
+DECL|enum|__anon29b0ae740403
 block|{
 DECL|enumerator|GIMP_BRUSH_HARD
 name|GIMP_BRUSH_HARD
@@ -195,7 +199,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip, pdb-skip>*/
-DECL|enum|__anon28b8fec60503
+DECL|enum|__anon29b0ae740503
 block|{
 DECL|enumerator|GIMP_PAINT_STATE_INIT
 name|GIMP_PAINT_STATE_INIT
