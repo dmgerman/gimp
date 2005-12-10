@@ -50,11 +50,9 @@ specifier|static
 name|void
 name|gimp_document_list_config_iface_init
 parameter_list|(
-name|gpointer
+name|GimpConfigInterface
+modifier|*
 name|iface
-parameter_list|,
-name|gpointer
-name|iface_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -100,6 +98,25 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_expr_stmt
+name|G_DEFINE_TYPE_WITH_CODE
+argument_list|(
+name|GimpDocumentList
+argument_list|,
+name|gimp_document_list
+argument_list|,
+name|GIMP_TYPE_LIST
+argument_list|,
+name|G_IMPLEMENT_INTERFACE
+argument_list|(
+name|GIMP_TYPE_CONFIG
+argument_list|,
+name|gimp_document_list_config_iface_init
+argument_list|)
+argument_list|)
+expr_stmt|;
+end_expr_stmt
+
 begin_decl_stmt
 DECL|variable|document_symbol
 specifier|static
@@ -113,139 +130,49 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-name|GType
-DECL|function|gimp_document_list_get_type (void)
-name|gimp_document_list_get_type
-parameter_list|(
+specifier|static
 name|void
-parameter_list|)
-block|{
-specifier|static
-name|GType
-name|document_list_type
-init|=
-literal|0
-decl_stmt|;
-if|if
-condition|(
-operator|!
-name|document_list_type
-condition|)
-block|{
-specifier|static
-specifier|const
-name|GTypeInfo
-name|document_list_info
-init|=
-block|{
-sizeof|sizeof
-argument_list|(
+DECL|function|gimp_document_list_class_init (GimpDocumentListClass * klass)
+name|gimp_document_list_class_init
+parameter_list|(
 name|GimpDocumentListClass
-argument_list|)
-block|,
-name|NULL
-block|,
-comment|/* base_init      */
-name|NULL
-block|,
-comment|/* base_finalize  */
-name|NULL
-block|,
-comment|/* class_init     */
-name|NULL
-block|,
-comment|/* class_finalize */
-name|NULL
-block|,
-comment|/* class_data     */
-sizeof|sizeof
-argument_list|(
-name|GimpDocumentList
-argument_list|)
-block|,
-literal|0
-block|,
-comment|/* n_preallocs    */
-name|NULL
-comment|/* instance_init  */
-block|}
-decl_stmt|;
-specifier|static
-specifier|const
-name|GInterfaceInfo
-name|document_list_iface_info
-init|=
-block|{
-name|gimp_document_list_config_iface_init
-block|,
-name|NULL
-block|,
-comment|/* iface_finalize */
-name|NULL
-comment|/* iface_data     */
-block|}
-decl_stmt|;
-name|document_list_type
-operator|=
-name|g_type_register_static
-argument_list|(
-name|GIMP_TYPE_LIST
-argument_list|,
-literal|"GimpDocumentList"
-argument_list|,
-operator|&
-name|document_list_info
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|g_type_add_interface_static
-argument_list|(
-name|document_list_type
-argument_list|,
-name|GIMP_TYPE_CONFIG
-argument_list|,
-operator|&
-name|document_list_iface_info
-argument_list|)
-expr_stmt|;
-block|}
-return|return
-name|document_list_type
-return|;
-block|}
+modifier|*
+name|klass
+parameter_list|)
+block|{ }
 end_function
 
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_document_list_config_iface_init (gpointer iface,gpointer iface_data)
+DECL|function|gimp_document_list_init (GimpDocumentList * list)
+name|gimp_document_list_init
+parameter_list|(
+name|GimpDocumentList
+modifier|*
+name|list
+parameter_list|)
+block|{ }
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_document_list_config_iface_init (GimpConfigInterface * iface)
 name|gimp_document_list_config_iface_init
 parameter_list|(
-name|gpointer
-name|iface
-parameter_list|,
-name|gpointer
-name|iface_data
-parameter_list|)
-block|{
 name|GimpConfigInterface
 modifier|*
-name|config_iface
-init|=
-operator|(
-name|GimpConfigInterface
-operator|*
-operator|)
 name|iface
-decl_stmt|;
-name|config_iface
+parameter_list|)
+block|{
+name|iface
 operator|->
 name|serialize
 operator|=
 name|gimp_document_list_serialize
 expr_stmt|;
-name|config_iface
+name|iface
 operator|->
 name|deserialize
 operator|=

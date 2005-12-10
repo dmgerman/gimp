@@ -263,7 +263,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4bf6f30103
+DECL|enum|__anon28db95690103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -276,7 +276,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4bf6f30203
+DECL|enum|__anon28db95690203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -296,30 +296,6 @@ end_enum
 begin_comment
 comment|/*  local function prototypes  */
 end_comment
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_display_shell_class_init
-parameter_list|(
-name|GimpDisplayShellClass
-modifier|*
-name|klass
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_display_shell_init
-parameter_list|(
-name|GimpDisplayShell
-modifier|*
-name|shell
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_function_decl
 specifier|static
@@ -483,6 +459,26 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_expr_stmt
+name|G_DEFINE_TYPE
+argument_list|(
+name|GimpDisplayShell
+argument_list|,
+name|gimp_display_shell
+argument_list|,
+name|GTK_TYPE_WINDOW
+argument_list|)
+expr_stmt|;
+end_expr_stmt
+
+begin_define
+DECL|macro|parent_class
+define|#
+directive|define
+name|parent_class
+value|gimp_display_shell_parent_class
+end_define
+
 begin_decl_stmt
 DECL|variable|display_shell_signals
 specifier|static
@@ -495,17 +491,6 @@ init|=
 block|{
 literal|0
 block|}
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|parent_class
-specifier|static
-name|GtkWindowClass
-modifier|*
-name|parent_class
-init|=
-name|NULL
 decl_stmt|;
 end_decl_stmt
 
@@ -525,93 +510,6 @@ literal|"}\n"
 literal|"widget \"*.gimp-menubar-fullscreen\" style \"fullscreen-menubar-style\""
 decl_stmt|;
 end_decl_stmt
-
-begin_function
-name|GType
-DECL|function|gimp_display_shell_get_type (void)
-name|gimp_display_shell_get_type
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-specifier|static
-name|GType
-name|shell_type
-init|=
-literal|0
-decl_stmt|;
-if|if
-condition|(
-operator|!
-name|shell_type
-condition|)
-block|{
-specifier|static
-specifier|const
-name|GTypeInfo
-name|shell_info
-init|=
-block|{
-sizeof|sizeof
-argument_list|(
-name|GimpDisplayShellClass
-argument_list|)
-block|,
-operator|(
-name|GBaseInitFunc
-operator|)
-name|NULL
-block|,
-operator|(
-name|GBaseFinalizeFunc
-operator|)
-name|NULL
-block|,
-operator|(
-name|GClassInitFunc
-operator|)
-name|gimp_display_shell_class_init
-block|,
-name|NULL
-block|,
-comment|/* class_finalize */
-name|NULL
-block|,
-comment|/* class_data     */
-sizeof|sizeof
-argument_list|(
-name|GimpDisplayShell
-argument_list|)
-block|,
-literal|0
-block|,
-comment|/* n_preallocs    */
-operator|(
-name|GInstanceInitFunc
-operator|)
-name|gimp_display_shell_init
-block|,       }
-decl_stmt|;
-name|shell_type
-operator|=
-name|g_type_register_static
-argument_list|(
-name|GTK_TYPE_WINDOW
-argument_list|,
-literal|"GimpDisplayShell"
-argument_list|,
-operator|&
-name|shell_info
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-block|}
-return|return
-name|shell_type
-return|;
-block|}
-end_function
 
 begin_function
 specifier|static
@@ -651,13 +549,6 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
-name|parent_class
-operator|=
-name|g_type_class_peek_parent
-argument_list|(
-name|klass
-argument_list|)
-expr_stmt|;
 name|display_shell_signals
 index|[
 name|SCALED

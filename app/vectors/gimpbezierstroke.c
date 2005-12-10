@@ -46,32 +46,8 @@ file|"gimpbezierstroke.h"
 end_include
 
 begin_comment
-comment|/* local prototypes */
+comment|/*  local prototypes  */
 end_comment
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_bezier_stroke_class_init
-parameter_list|(
-name|GimpBezierStrokeClass
-modifier|*
-name|klass
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_bezier_stroke_init
-parameter_list|(
-name|GimpBezierStroke
-modifier|*
-name|bezier_stroke
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_function_decl
 specifier|static
@@ -619,107 +595,25 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/*  private variables  */
-end_comment
-
-begin_decl_stmt
-DECL|variable|parent_class
-specifier|static
-name|GimpStrokeClass
-modifier|*
-name|parent_class
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_function
-name|GType
-DECL|function|gimp_bezier_stroke_get_type (void)
-name|gimp_bezier_stroke_get_type
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-specifier|static
-name|GType
-name|bezier_stroke_type
-init|=
-literal|0
-decl_stmt|;
-if|if
-condition|(
-operator|!
-name|bezier_stroke_type
-condition|)
-block|{
-specifier|static
-specifier|const
-name|GTypeInfo
-name|bezier_stroke_info
-init|=
-block|{
-sizeof|sizeof
-argument_list|(
-name|GimpBezierStrokeClass
-argument_list|)
-block|,
-operator|(
-name|GBaseInitFunc
-operator|)
-name|NULL
-block|,
-operator|(
-name|GBaseFinalizeFunc
-operator|)
-name|NULL
-block|,
-operator|(
-name|GClassInitFunc
-operator|)
-name|gimp_bezier_stroke_class_init
-block|,
-name|NULL
-block|,
-comment|/* class_finalize */
-name|NULL
-block|,
-comment|/* class_data     */
-sizeof|sizeof
+begin_expr_stmt
+name|G_DEFINE_TYPE
 argument_list|(
 name|GimpBezierStroke
-argument_list|)
-block|,
-literal|0
-block|,
-comment|/* n_preallocs    */
-operator|(
-name|GInstanceInitFunc
-operator|)
-name|gimp_bezier_stroke_init
-block|,       }
-decl_stmt|;
-name|bezier_stroke_type
-operator|=
-name|g_type_register_static
-argument_list|(
+argument_list|,
+name|gimp_bezier_stroke
+argument_list|,
 name|GIMP_TYPE_STROKE
-argument_list|,
-literal|"GimpBezierStroke"
-argument_list|,
-operator|&
-name|bezier_stroke_info
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
-block|}
-return|return
-name|bezier_stroke_type
-return|;
-block|}
-end_function
+end_expr_stmt
+
+begin_define
+DECL|macro|parent_class
+define|#
+directive|define
+name|parent_class
+value|gimp_bezier_stroke_parent_class
+end_define
 
 begin_function
 specifier|static
@@ -735,32 +629,21 @@ block|{
 name|GObjectClass
 modifier|*
 name|object_class
-decl_stmt|;
-name|GimpStrokeClass
-modifier|*
-name|stroke_class
-decl_stmt|;
-name|object_class
-operator|=
+init|=
 name|G_OBJECT_CLASS
 argument_list|(
 name|klass
 argument_list|)
-expr_stmt|;
+decl_stmt|;
+name|GimpStrokeClass
+modifier|*
 name|stroke_class
-operator|=
+init|=
 name|GIMP_STROKE_CLASS
 argument_list|(
 name|klass
 argument_list|)
-expr_stmt|;
-name|parent_class
-operator|=
-name|g_type_class_peek_parent
-argument_list|(
-name|klass
-argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|object_class
 operator|->
 name|finalize
@@ -881,16 +764,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_bezier_stroke_init (GimpBezierStroke * bezier_stroke)
+DECL|function|gimp_bezier_stroke_init (GimpBezierStroke * stroke)
 name|gimp_bezier_stroke_init
 parameter_list|(
 name|GimpBezierStroke
 modifier|*
-name|bezier_stroke
+name|stroke
 parameter_list|)
-block|{
-comment|/* pass */
-block|}
+block|{ }
 end_function
 
 begin_function

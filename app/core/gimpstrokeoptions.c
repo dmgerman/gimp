@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3f672d0103
+DECL|enum|__anon2c4bca440103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -99,7 +99,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3f672d0203
+DECL|enum|__anon2c4bca440203
 block|{
 DECL|enumerator|DASH_INFO_CHANGED
 name|DASH_INFO_CHANGED
@@ -109,18 +109,6 @@ name|LAST_SIGNAL
 block|}
 enum|;
 end_enum
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_stroke_options_class_init
-parameter_list|(
-name|GimpStrokeOptionsClass
-modifier|*
-name|klass
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_function_decl
 specifier|static
@@ -169,6 +157,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_expr_stmt
+name|G_DEFINE_TYPE
+argument_list|(
+name|GimpStrokeOptions
+argument_list|,
+name|gimp_stroke_options
+argument_list|,
+name|GIMP_TYPE_CONTEXT
+argument_list|)
+expr_stmt|;
+end_expr_stmt
+
 begin_decl_stmt
 DECL|variable|stroke_options_signals
 specifier|static
@@ -183,102 +183,6 @@ literal|0
 block|}
 decl_stmt|;
 end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|parent_class
-specifier|static
-name|GimpContextClass
-modifier|*
-name|parent_class
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_function
-name|GType
-DECL|function|gimp_stroke_options_get_type (void)
-name|gimp_stroke_options_get_type
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-specifier|static
-name|GType
-name|type
-init|=
-literal|0
-decl_stmt|;
-if|if
-condition|(
-operator|!
-name|type
-condition|)
-block|{
-specifier|static
-specifier|const
-name|GTypeInfo
-name|info
-init|=
-block|{
-sizeof|sizeof
-argument_list|(
-name|GimpStrokeOptionsClass
-argument_list|)
-block|,
-operator|(
-name|GBaseInitFunc
-operator|)
-name|NULL
-block|,
-operator|(
-name|GBaseFinalizeFunc
-operator|)
-name|NULL
-block|,
-operator|(
-name|GClassInitFunc
-operator|)
-name|gimp_stroke_options_class_init
-block|,
-name|NULL
-block|,
-comment|/* class_finalize */
-name|NULL
-block|,
-comment|/* class_data     */
-sizeof|sizeof
-argument_list|(
-name|GimpStrokeOptions
-argument_list|)
-block|,
-literal|0
-block|,
-comment|/* n_preallocs    */
-name|NULL
-comment|/* instance_init  */
-block|}
-decl_stmt|;
-name|type
-operator|=
-name|g_type_register_static
-argument_list|(
-name|GIMP_TYPE_CONTEXT
-argument_list|,
-literal|"GimpStrokeOptions"
-argument_list|,
-operator|&
-name|info
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-block|}
-return|return
-name|type
-return|;
-block|}
-end_function
 
 begin_function
 specifier|static
@@ -304,13 +208,6 @@ name|GParamSpec
 modifier|*
 name|array_spec
 decl_stmt|;
-name|parent_class
-operator|=
-name|g_type_class_peek_parent
-argument_list|(
-name|klass
-argument_list|)
-expr_stmt|;
 name|object_class
 operator|->
 name|set_property
@@ -553,6 +450,19 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_stroke_options_init (GimpStrokeOptions * options)
+name|gimp_stroke_options_init
+parameter_list|(
+name|GimpStrokeOptions
+modifier|*
+name|options
+parameter_list|)
+block|{ }
 end_function
 
 begin_function
