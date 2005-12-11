@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpcontainer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpcontext.h"
 end_include
 
@@ -83,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27dd71f00103
+DECL|enum|__anon27b765290103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -891,6 +897,26 @@ operator|=
 name|tool_info
 operator|->
 name|paint_info
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|paint_info
+condition|)
+name|paint_info
+operator|=
+operator|(
+name|GimpPaintInfo
+operator|*
+operator|)
+name|gimp_container_get_child_by_name
+argument_list|(
+name|gimp
+operator|->
+name|paint_info_list
+argument_list|,
+literal|"GimpPaintbrush"
+argument_list|)
 expr_stmt|;
 block|}
 name|desc
