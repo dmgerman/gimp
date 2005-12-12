@@ -5245,6 +5245,10 @@ operator|*
 literal|17
 operator|)
 operator|^
+operator|(
+name|unsigned
+name|char
+operator|)
 name|c
 operator|)
 operator|%
