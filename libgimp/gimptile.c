@@ -61,7 +61,7 @@ begin_function_decl
 name|void
 name|gimp_read_expect_msg
 parameter_list|(
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|,
@@ -559,7 +559,7 @@ name|GPTileData
 modifier|*
 name|tile_data
 decl_stmt|;
-name|WireMessage
+name|GimpWireMessage
 name|msg
 decl_stmt|;
 name|tile_req
@@ -740,7 +740,7 @@ condition|)
 name|gimp_quit
 argument_list|()
 expr_stmt|;
-name|wire_destroy
+name|gimp_wire_destroy
 argument_list|(
 operator|&
 name|msg
@@ -775,7 +775,7 @@ name|GPTileData
 modifier|*
 name|tile_info
 decl_stmt|;
-name|WireMessage
+name|GimpWireMessage
 name|msg
 decl_stmt|;
 name|tile_req
@@ -944,7 +944,7 @@ condition|)
 name|gimp_quit
 argument_list|()
 expr_stmt|;
-name|wire_destroy
+name|gimp_wire_destroy
 argument_list|(
 operator|&
 name|msg
@@ -958,7 +958,7 @@ argument_list|,
 name|GP_TILE_ACK
 argument_list|)
 expr_stmt|;
-name|wire_destroy
+name|gimp_wire_destroy
 argument_list|(
 operator|&
 name|msg

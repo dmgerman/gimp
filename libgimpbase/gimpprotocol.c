@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<glib-object.h>
 end_include
 
@@ -42,7 +48,7 @@ name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|,
@@ -61,7 +67,7 @@ name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|,
@@ -76,7 +82,7 @@ specifier|static
 name|void
 name|_gp_quit_destroy
 parameter_list|(
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|)
@@ -92,7 +98,7 @@ name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|,
@@ -111,7 +117,7 @@ name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|,
@@ -126,7 +132,7 @@ specifier|static
 name|void
 name|_gp_config_destroy
 parameter_list|(
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|)
@@ -142,7 +148,7 @@ name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|,
@@ -161,7 +167,7 @@ name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|,
@@ -176,7 +182,7 @@ specifier|static
 name|void
 name|_gp_tile_req_destroy
 parameter_list|(
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|)
@@ -192,7 +198,7 @@ name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|,
@@ -211,7 +217,7 @@ name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|,
@@ -226,7 +232,7 @@ specifier|static
 name|void
 name|_gp_tile_ack_destroy
 parameter_list|(
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|)
@@ -242,7 +248,7 @@ name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|,
@@ -261,7 +267,7 @@ name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|,
@@ -276,7 +282,7 @@ specifier|static
 name|void
 name|_gp_tile_data_destroy
 parameter_list|(
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|)
@@ -292,7 +298,7 @@ name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|,
@@ -311,7 +317,7 @@ name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|,
@@ -326,7 +332,7 @@ specifier|static
 name|void
 name|_gp_proc_run_destroy
 parameter_list|(
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|)
@@ -342,7 +348,7 @@ name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|,
@@ -361,7 +367,7 @@ name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|,
@@ -376,7 +382,7 @@ specifier|static
 name|void
 name|_gp_proc_return_destroy
 parameter_list|(
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|)
@@ -392,7 +398,7 @@ name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|,
@@ -411,7 +417,7 @@ name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|,
@@ -426,7 +432,7 @@ specifier|static
 name|void
 name|_gp_temp_proc_run_destroy
 parameter_list|(
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|)
@@ -442,7 +448,7 @@ name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|,
@@ -461,7 +467,7 @@ name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|,
@@ -476,7 +482,7 @@ specifier|static
 name|void
 name|_gp_temp_proc_return_destroy
 parameter_list|(
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|)
@@ -492,7 +498,7 @@ name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|,
@@ -511,7 +517,7 @@ name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|,
@@ -526,7 +532,7 @@ specifier|static
 name|void
 name|_gp_proc_install_destroy
 parameter_list|(
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|)
@@ -542,7 +548,7 @@ name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|,
@@ -561,7 +567,7 @@ name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|,
@@ -576,7 +582,7 @@ specifier|static
 name|void
 name|_gp_proc_uninstall_destroy
 parameter_list|(
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|)
@@ -592,7 +598,7 @@ name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|,
@@ -611,7 +617,7 @@ name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|,
@@ -626,7 +632,7 @@ specifier|static
 name|void
 name|_gp_extension_ack_destroy
 parameter_list|(
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|)
@@ -685,7 +691,7 @@ end_comment
 
 begin_function_decl
 name|void
-name|_gp_params_destroy
+name|gp_params_destroy
 parameter_list|(
 name|GPParam
 modifier|*
@@ -706,7 +712,7 @@ name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|,
@@ -725,7 +731,7 @@ name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|,
@@ -740,7 +746,7 @@ specifier|static
 name|void
 name|_gp_has_init_destroy
 parameter_list|(
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|)
@@ -755,7 +761,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|wire_register
+name|gimp_wire_register
 argument_list|(
 name|GP_QUIT
 argument_list|,
@@ -766,7 +772,7 @@ argument_list|,
 name|_gp_quit_destroy
 argument_list|)
 expr_stmt|;
-name|wire_register
+name|gimp_wire_register
 argument_list|(
 name|GP_CONFIG
 argument_list|,
@@ -777,7 +783,7 @@ argument_list|,
 name|_gp_config_destroy
 argument_list|)
 expr_stmt|;
-name|wire_register
+name|gimp_wire_register
 argument_list|(
 name|GP_TILE_REQ
 argument_list|,
@@ -788,7 +794,7 @@ argument_list|,
 name|_gp_tile_req_destroy
 argument_list|)
 expr_stmt|;
-name|wire_register
+name|gimp_wire_register
 argument_list|(
 name|GP_TILE_ACK
 argument_list|,
@@ -799,7 +805,7 @@ argument_list|,
 name|_gp_tile_ack_destroy
 argument_list|)
 expr_stmt|;
-name|wire_register
+name|gimp_wire_register
 argument_list|(
 name|GP_TILE_DATA
 argument_list|,
@@ -810,7 +816,7 @@ argument_list|,
 name|_gp_tile_data_destroy
 argument_list|)
 expr_stmt|;
-name|wire_register
+name|gimp_wire_register
 argument_list|(
 name|GP_PROC_RUN
 argument_list|,
@@ -821,7 +827,7 @@ argument_list|,
 name|_gp_proc_run_destroy
 argument_list|)
 expr_stmt|;
-name|wire_register
+name|gimp_wire_register
 argument_list|(
 name|GP_PROC_RETURN
 argument_list|,
@@ -832,7 +838,7 @@ argument_list|,
 name|_gp_proc_return_destroy
 argument_list|)
 expr_stmt|;
-name|wire_register
+name|gimp_wire_register
 argument_list|(
 name|GP_TEMP_PROC_RUN
 argument_list|,
@@ -843,7 +849,7 @@ argument_list|,
 name|_gp_temp_proc_run_destroy
 argument_list|)
 expr_stmt|;
-name|wire_register
+name|gimp_wire_register
 argument_list|(
 name|GP_TEMP_PROC_RETURN
 argument_list|,
@@ -854,7 +860,7 @@ argument_list|,
 name|_gp_temp_proc_return_destroy
 argument_list|)
 expr_stmt|;
-name|wire_register
+name|gimp_wire_register
 argument_list|(
 name|GP_PROC_INSTALL
 argument_list|,
@@ -865,7 +871,7 @@ argument_list|,
 name|_gp_proc_install_destroy
 argument_list|)
 expr_stmt|;
-name|wire_register
+name|gimp_wire_register
 argument_list|(
 name|GP_PROC_UNINSTALL
 argument_list|,
@@ -876,7 +882,7 @@ argument_list|,
 name|_gp_proc_uninstall_destroy
 argument_list|)
 expr_stmt|;
-name|wire_register
+name|gimp_wire_register
 argument_list|(
 name|GP_EXTENSION_ACK
 argument_list|,
@@ -887,7 +893,7 @@ argument_list|,
 name|_gp_extension_ack_destroy
 argument_list|)
 expr_stmt|;
-name|wire_register
+name|gimp_wire_register
 argument_list|(
 name|GP_HAS_INIT
 argument_list|,
@@ -914,7 +920,7 @@ name|gpointer
 name|user_data
 parameter_list|)
 block|{
-name|WireMessage
+name|GimpWireMessage
 name|msg
 decl_stmt|;
 name|msg
@@ -932,7 +938,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|wire_write_msg
+name|gimp_wire_write_msg
 argument_list|(
 name|channel
 argument_list|,
@@ -948,7 +954,7 @@ return|;
 if|if
 condition|(
 operator|!
-name|wire_flush
+name|gimp_wire_flush
 argument_list|(
 name|channel
 argument_list|,
@@ -981,7 +987,7 @@ name|gpointer
 name|user_data
 parameter_list|)
 block|{
-name|WireMessage
+name|GimpWireMessage
 name|msg
 decl_stmt|;
 name|msg
@@ -999,7 +1005,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|wire_write_msg
+name|gimp_wire_write_msg
 argument_list|(
 name|channel
 argument_list|,
@@ -1015,7 +1021,7 @@ return|;
 if|if
 condition|(
 operator|!
-name|wire_flush
+name|gimp_wire_flush
 argument_list|(
 name|channel
 argument_list|,
@@ -1048,7 +1054,7 @@ name|gpointer
 name|user_data
 parameter_list|)
 block|{
-name|WireMessage
+name|GimpWireMessage
 name|msg
 decl_stmt|;
 name|msg
@@ -1066,7 +1072,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|wire_write_msg
+name|gimp_wire_write_msg
 argument_list|(
 name|channel
 argument_list|,
@@ -1082,7 +1088,7 @@ return|;
 if|if
 condition|(
 operator|!
-name|wire_flush
+name|gimp_wire_flush
 argument_list|(
 name|channel
 argument_list|,
@@ -1111,7 +1117,7 @@ name|gpointer
 name|user_data
 parameter_list|)
 block|{
-name|WireMessage
+name|GimpWireMessage
 name|msg
 decl_stmt|;
 name|msg
@@ -1129,7 +1135,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|wire_write_msg
+name|gimp_wire_write_msg
 argument_list|(
 name|channel
 argument_list|,
@@ -1145,7 +1151,7 @@ return|;
 if|if
 condition|(
 operator|!
-name|wire_flush
+name|gimp_wire_flush
 argument_list|(
 name|channel
 argument_list|,
@@ -1178,7 +1184,7 @@ name|gpointer
 name|user_data
 parameter_list|)
 block|{
-name|WireMessage
+name|GimpWireMessage
 name|msg
 decl_stmt|;
 name|msg
@@ -1196,7 +1202,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|wire_write_msg
+name|gimp_wire_write_msg
 argument_list|(
 name|channel
 argument_list|,
@@ -1212,7 +1218,7 @@ return|;
 if|if
 condition|(
 operator|!
-name|wire_flush
+name|gimp_wire_flush
 argument_list|(
 name|channel
 argument_list|,
@@ -1245,7 +1251,7 @@ name|gpointer
 name|user_data
 parameter_list|)
 block|{
-name|WireMessage
+name|GimpWireMessage
 name|msg
 decl_stmt|;
 name|msg
@@ -1263,7 +1269,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|wire_write_msg
+name|gimp_wire_write_msg
 argument_list|(
 name|channel
 argument_list|,
@@ -1279,7 +1285,7 @@ return|;
 if|if
 condition|(
 operator|!
-name|wire_flush
+name|gimp_wire_flush
 argument_list|(
 name|channel
 argument_list|,
@@ -1312,7 +1318,7 @@ name|gpointer
 name|user_data
 parameter_list|)
 block|{
-name|WireMessage
+name|GimpWireMessage
 name|msg
 decl_stmt|;
 name|msg
@@ -1330,7 +1336,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|wire_write_msg
+name|gimp_wire_write_msg
 argument_list|(
 name|channel
 argument_list|,
@@ -1346,7 +1352,7 @@ return|;
 if|if
 condition|(
 operator|!
-name|wire_flush
+name|gimp_wire_flush
 argument_list|(
 name|channel
 argument_list|,
@@ -1379,7 +1385,7 @@ name|gpointer
 name|user_data
 parameter_list|)
 block|{
-name|WireMessage
+name|GimpWireMessage
 name|msg
 decl_stmt|;
 name|msg
@@ -1397,7 +1403,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|wire_write_msg
+name|gimp_wire_write_msg
 argument_list|(
 name|channel
 argument_list|,
@@ -1413,7 +1419,7 @@ return|;
 if|if
 condition|(
 operator|!
-name|wire_flush
+name|gimp_wire_flush
 argument_list|(
 name|channel
 argument_list|,
@@ -1446,7 +1452,7 @@ name|gpointer
 name|user_data
 parameter_list|)
 block|{
-name|WireMessage
+name|GimpWireMessage
 name|msg
 decl_stmt|;
 name|msg
@@ -1464,7 +1470,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|wire_write_msg
+name|gimp_wire_write_msg
 argument_list|(
 name|channel
 argument_list|,
@@ -1480,7 +1486,7 @@ return|;
 if|if
 condition|(
 operator|!
-name|wire_flush
+name|gimp_wire_flush
 argument_list|(
 name|channel
 argument_list|,
@@ -1513,7 +1519,7 @@ name|gpointer
 name|user_data
 parameter_list|)
 block|{
-name|WireMessage
+name|GimpWireMessage
 name|msg
 decl_stmt|;
 name|msg
@@ -1531,7 +1537,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|wire_write_msg
+name|gimp_wire_write_msg
 argument_list|(
 name|channel
 argument_list|,
@@ -1547,7 +1553,7 @@ return|;
 if|if
 condition|(
 operator|!
-name|wire_flush
+name|gimp_wire_flush
 argument_list|(
 name|channel
 argument_list|,
@@ -1580,7 +1586,7 @@ name|gpointer
 name|user_data
 parameter_list|)
 block|{
-name|WireMessage
+name|GimpWireMessage
 name|msg
 decl_stmt|;
 name|msg
@@ -1598,7 +1604,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|wire_write_msg
+name|gimp_wire_write_msg
 argument_list|(
 name|channel
 argument_list|,
@@ -1614,7 +1620,7 @@ return|;
 if|if
 condition|(
 operator|!
-name|wire_flush
+name|gimp_wire_flush
 argument_list|(
 name|channel
 argument_list|,
@@ -1643,7 +1649,7 @@ name|gpointer
 name|user_data
 parameter_list|)
 block|{
-name|WireMessage
+name|GimpWireMessage
 name|msg
 decl_stmt|;
 name|msg
@@ -1661,7 +1667,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|wire_write_msg
+name|gimp_wire_write_msg
 argument_list|(
 name|channel
 argument_list|,
@@ -1677,7 +1683,7 @@ return|;
 if|if
 condition|(
 operator|!
-name|wire_flush
+name|gimp_wire_flush
 argument_list|(
 name|channel
 argument_list|,
@@ -1706,7 +1712,7 @@ name|gpointer
 name|user_data
 parameter_list|)
 block|{
-name|WireMessage
+name|GimpWireMessage
 name|msg
 decl_stmt|;
 name|msg
@@ -1724,7 +1730,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|wire_write_msg
+name|gimp_wire_write_msg
 argument_list|(
 name|channel
 argument_list|,
@@ -1740,7 +1746,7 @@ return|;
 if|if
 condition|(
 operator|!
-name|wire_flush
+name|gimp_wire_flush
 argument_list|(
 name|channel
 argument_list|,
@@ -1763,14 +1769,14 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_quit_read (GIOChannel * channel,WireMessage * msg,gpointer user_data)
+DECL|function|_gp_quit_read (GIOChannel * channel,GimpWireMessage * msg,gpointer user_data)
 name|_gp_quit_read
 parameter_list|(
 name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|,
@@ -1783,14 +1789,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_quit_write (GIOChannel * channel,WireMessage * msg,gpointer user_data)
+DECL|function|_gp_quit_write (GIOChannel * channel,GimpWireMessage * msg,gpointer user_data)
 name|_gp_quit_write
 parameter_list|(
 name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|,
@@ -1803,10 +1809,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_quit_destroy (WireMessage * msg)
+DECL|function|_gp_quit_destroy (GimpWireMessage * msg)
 name|_gp_quit_destroy
 parameter_list|(
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|)
@@ -1820,14 +1826,14 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_config_read (GIOChannel * channel,WireMessage * msg,gpointer user_data)
+DECL|function|_gp_config_read (GIOChannel * channel,GimpWireMessage * msg,gpointer user_data)
 name|_gp_config_read
 parameter_list|(
 name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|,
@@ -1838,20 +1844,18 @@ block|{
 name|GPConfig
 modifier|*
 name|config
-decl_stmt|;
-name|config
-operator|=
+init|=
 name|g_new0
 argument_list|(
 name|GPConfig
 argument_list|,
 literal|1
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 operator|!
-name|wire_read_int32
+name|_gimp_wire_read_int32
 argument_list|(
 name|channel
 argument_list|,
@@ -1871,7 +1875,7 @@ goto|;
 if|if
 condition|(
 operator|!
-name|wire_read_int32
+name|_gimp_wire_read_int32
 argument_list|(
 name|channel
 argument_list|,
@@ -1891,7 +1895,7 @@ goto|;
 if|if
 condition|(
 operator|!
-name|wire_read_int32
+name|_gimp_wire_read_int32
 argument_list|(
 name|channel
 argument_list|,
@@ -1911,7 +1915,7 @@ goto|;
 if|if
 condition|(
 operator|!
-name|wire_read_int32
+name|_gimp_wire_read_int32
 argument_list|(
 name|channel
 argument_list|,
@@ -1935,7 +1939,7 @@ goto|;
 if|if
 condition|(
 operator|!
-name|wire_read_int8
+name|_gimp_wire_read_int8
 argument_list|(
 name|channel
 argument_list|,
@@ -1959,7 +1963,7 @@ goto|;
 if|if
 condition|(
 operator|!
-name|wire_read_int8
+name|_gimp_wire_read_int8
 argument_list|(
 name|channel
 argument_list|,
@@ -1983,7 +1987,7 @@ goto|;
 if|if
 condition|(
 operator|!
-name|wire_read_int8
+name|_gimp_wire_read_int8
 argument_list|(
 name|channel
 argument_list|,
@@ -2007,7 +2011,7 @@ goto|;
 if|if
 condition|(
 operator|!
-name|wire_read_int8
+name|_gimp_wire_read_int8
 argument_list|(
 name|channel
 argument_list|,
@@ -2031,7 +2035,7 @@ goto|;
 if|if
 condition|(
 operator|!
-name|wire_read_int8
+name|_gimp_wire_read_int8
 argument_list|(
 name|channel
 argument_list|,
@@ -2055,7 +2059,7 @@ goto|;
 if|if
 condition|(
 operator|!
-name|wire_read_int8
+name|_gimp_wire_read_int8
 argument_list|(
 name|channel
 argument_list|,
@@ -2079,7 +2083,7 @@ goto|;
 if|if
 condition|(
 operator|!
-name|wire_read_int8
+name|_gimp_wire_read_int8
 argument_list|(
 name|channel
 argument_list|,
@@ -2103,7 +2107,7 @@ goto|;
 if|if
 condition|(
 operator|!
-name|wire_read_int8
+name|_gimp_wire_read_int8
 argument_list|(
 name|channel
 argument_list|,
@@ -2127,7 +2131,7 @@ goto|;
 if|if
 condition|(
 operator|!
-name|wire_read_int8
+name|_gimp_wire_read_int8
 argument_list|(
 name|channel
 argument_list|,
@@ -2151,7 +2155,7 @@ goto|;
 if|if
 condition|(
 operator|!
-name|wire_read_int8
+name|_gimp_wire_read_int8
 argument_list|(
 name|channel
 argument_list|,
@@ -2175,7 +2179,7 @@ goto|;
 if|if
 condition|(
 operator|!
-name|wire_read_int32
+name|_gimp_wire_read_int32
 argument_list|(
 name|channel
 argument_list|,
@@ -2199,7 +2203,7 @@ goto|;
 if|if
 condition|(
 operator|!
-name|wire_read_int32
+name|_gimp_wire_read_int32
 argument_list|(
 name|channel
 argument_list|,
@@ -2223,7 +2227,7 @@ goto|;
 if|if
 condition|(
 operator|!
-name|wire_read_string
+name|_gimp_wire_read_string
 argument_list|(
 name|channel
 argument_list|,
@@ -2243,7 +2247,7 @@ goto|;
 if|if
 condition|(
 operator|!
-name|wire_read_string
+name|_gimp_wire_read_string
 argument_list|(
 name|channel
 argument_list|,
@@ -2263,7 +2267,7 @@ goto|;
 if|if
 condition|(
 operator|!
-name|wire_read_string
+name|_gimp_wire_read_string
 argument_list|(
 name|channel
 argument_list|,
@@ -2283,7 +2287,7 @@ goto|;
 if|if
 condition|(
 operator|!
-name|wire_read_int32
+name|_gimp_wire_read_int32
 argument_list|(
 name|channel
 argument_list|,
@@ -2345,14 +2349,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_config_write (GIOChannel * channel,WireMessage * msg,gpointer user_data)
+DECL|function|_gp_config_write (GIOChannel * channel,GimpWireMessage * msg,gpointer user_data)
 name|_gp_config_write
 parameter_list|(
 name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|,
@@ -2371,7 +2375,7 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
-name|wire_write_int32
+name|_gimp_wire_write_int32
 argument_list|(
 name|channel
 argument_list|,
@@ -2389,7 +2393,7 @@ return|return;
 if|if
 condition|(
 operator|!
-name|wire_write_int32
+name|_gimp_wire_write_int32
 argument_list|(
 name|channel
 argument_list|,
@@ -2407,7 +2411,7 @@ return|return;
 if|if
 condition|(
 operator|!
-name|wire_write_int32
+name|_gimp_wire_write_int32
 argument_list|(
 name|channel
 argument_list|,
@@ -2425,11 +2429,12 @@ return|return;
 if|if
 condition|(
 operator|!
-name|wire_write_int32
+name|_gimp_wire_write_int32
 argument_list|(
 name|channel
 argument_list|,
 operator|(
+specifier|const
 name|guint32
 operator|*
 operator|)
@@ -2447,11 +2452,12 @@ return|return;
 if|if
 condition|(
 operator|!
-name|wire_write_int8
+name|_gimp_wire_write_int8
 argument_list|(
 name|channel
 argument_list|,
 operator|(
+specifier|const
 name|guint8
 operator|*
 operator|)
@@ -2469,11 +2475,12 @@ return|return;
 if|if
 condition|(
 operator|!
-name|wire_write_int8
+name|_gimp_wire_write_int8
 argument_list|(
 name|channel
 argument_list|,
 operator|(
+specifier|const
 name|guint8
 operator|*
 operator|)
@@ -2491,11 +2498,12 @@ return|return;
 if|if
 condition|(
 operator|!
-name|wire_write_int8
+name|_gimp_wire_write_int8
 argument_list|(
 name|channel
 argument_list|,
 operator|(
+specifier|const
 name|guint8
 operator|*
 operator|)
@@ -2513,11 +2521,12 @@ return|return;
 if|if
 condition|(
 operator|!
-name|wire_write_int8
+name|_gimp_wire_write_int8
 argument_list|(
 name|channel
 argument_list|,
 operator|(
+specifier|const
 name|guint8
 operator|*
 operator|)
@@ -2535,11 +2544,12 @@ return|return;
 if|if
 condition|(
 operator|!
-name|wire_write_int8
+name|_gimp_wire_write_int8
 argument_list|(
 name|channel
 argument_list|,
 operator|(
+specifier|const
 name|guint8
 operator|*
 operator|)
@@ -2557,11 +2567,12 @@ return|return;
 if|if
 condition|(
 operator|!
-name|wire_write_int8
+name|_gimp_wire_write_int8
 argument_list|(
 name|channel
 argument_list|,
 operator|(
+specifier|const
 name|guint8
 operator|*
 operator|)
@@ -2579,11 +2590,12 @@ return|return;
 if|if
 condition|(
 operator|!
-name|wire_write_int8
+name|_gimp_wire_write_int8
 argument_list|(
 name|channel
 argument_list|,
 operator|(
+specifier|const
 name|guint8
 operator|*
 operator|)
@@ -2601,11 +2613,12 @@ return|return;
 if|if
 condition|(
 operator|!
-name|wire_write_int8
+name|_gimp_wire_write_int8
 argument_list|(
 name|channel
 argument_list|,
 operator|(
+specifier|const
 name|guint8
 operator|*
 operator|)
@@ -2623,11 +2636,12 @@ return|return;
 if|if
 condition|(
 operator|!
-name|wire_write_int8
+name|_gimp_wire_write_int8
 argument_list|(
 name|channel
 argument_list|,
 operator|(
+specifier|const
 name|guint8
 operator|*
 operator|)
@@ -2645,11 +2659,12 @@ return|return;
 if|if
 condition|(
 operator|!
-name|wire_write_int8
+name|_gimp_wire_write_int8
 argument_list|(
 name|channel
 argument_list|,
 operator|(
+specifier|const
 name|guint8
 operator|*
 operator|)
@@ -2667,11 +2682,12 @@ return|return;
 if|if
 condition|(
 operator|!
-name|wire_write_int32
+name|_gimp_wire_write_int32
 argument_list|(
 name|channel
 argument_list|,
 operator|(
+specifier|const
 name|guint32
 operator|*
 operator|)
@@ -2689,11 +2705,12 @@ return|return;
 if|if
 condition|(
 operator|!
-name|wire_write_int32
+name|_gimp_wire_write_int32
 argument_list|(
 name|channel
 argument_list|,
 operator|(
+specifier|const
 name|guint32
 operator|*
 operator|)
@@ -2711,7 +2728,7 @@ return|return;
 if|if
 condition|(
 operator|!
-name|wire_write_string
+name|_gimp_wire_write_string
 argument_list|(
 name|channel
 argument_list|,
@@ -2729,7 +2746,7 @@ return|return;
 if|if
 condition|(
 operator|!
-name|wire_write_string
+name|_gimp_wire_write_string
 argument_list|(
 name|channel
 argument_list|,
@@ -2747,7 +2764,7 @@ return|return;
 if|if
 condition|(
 operator|!
-name|wire_write_string
+name|_gimp_wire_write_string
 argument_list|(
 name|channel
 argument_list|,
@@ -2765,11 +2782,12 @@ return|return;
 if|if
 condition|(
 operator|!
-name|wire_write_int32
+name|_gimp_wire_write_int32
 argument_list|(
 name|channel
 argument_list|,
 operator|(
+specifier|const
 name|guint32
 operator|*
 operator|)
@@ -2790,10 +2808,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_config_destroy (WireMessage * msg)
+DECL|function|_gp_config_destroy (GimpWireMessage * msg)
 name|_gp_config_destroy
 parameter_list|(
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|)
@@ -2842,14 +2860,14 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_tile_req_read (GIOChannel * channel,WireMessage * msg,gpointer user_data)
+DECL|function|_gp_tile_req_read (GIOChannel * channel,GimpWireMessage * msg,gpointer user_data)
 name|_gp_tile_req_read
 parameter_list|(
 name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|,
@@ -2860,20 +2878,18 @@ block|{
 name|GPTileReq
 modifier|*
 name|tile_req
-decl_stmt|;
-name|tile_req
-operator|=
+init|=
 name|g_new0
 argument_list|(
 name|GPTileReq
 argument_list|,
 literal|1
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 operator|!
-name|wire_read_int32
+name|_gimp_wire_read_int32
 argument_list|(
 name|channel
 argument_list|,
@@ -2897,7 +2913,7 @@ goto|;
 if|if
 condition|(
 operator|!
-name|wire_read_int32
+name|_gimp_wire_read_int32
 argument_list|(
 name|channel
 argument_list|,
@@ -2917,7 +2933,7 @@ goto|;
 if|if
 condition|(
 operator|!
-name|wire_read_int32
+name|_gimp_wire_read_int32
 argument_list|(
 name|channel
 argument_list|,
@@ -2954,14 +2970,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_tile_req_write (GIOChannel * channel,WireMessage * msg,gpointer user_data)
+DECL|function|_gp_tile_req_write (GIOChannel * channel,GimpWireMessage * msg,gpointer user_data)
 name|_gp_tile_req_write
 parameter_list|(
 name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|,
@@ -2980,11 +2996,12 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
-name|wire_write_int32
+name|_gimp_wire_write_int32
 argument_list|(
 name|channel
 argument_list|,
 operator|(
+specifier|const
 name|guint32
 operator|*
 operator|)
@@ -3002,7 +3019,7 @@ return|return;
 if|if
 condition|(
 operator|!
-name|wire_write_int32
+name|_gimp_wire_write_int32
 argument_list|(
 name|channel
 argument_list|,
@@ -3020,7 +3037,7 @@ return|return;
 if|if
 condition|(
 operator|!
-name|wire_write_int32
+name|_gimp_wire_write_int32
 argument_list|(
 name|channel
 argument_list|,
@@ -3041,10 +3058,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_tile_req_destroy (WireMessage * msg)
+DECL|function|_gp_tile_req_destroy (GimpWireMessage * msg)
 name|_gp_tile_req_destroy
 parameter_list|(
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|)
@@ -3066,14 +3083,14 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_tile_ack_read (GIOChannel * channel,WireMessage * msg,gpointer user_data)
+DECL|function|_gp_tile_ack_read (GIOChannel * channel,GimpWireMessage * msg,gpointer user_data)
 name|_gp_tile_ack_read
 parameter_list|(
 name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|,
@@ -3086,14 +3103,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_tile_ack_write (GIOChannel * channel,WireMessage * msg,gpointer user_data)
+DECL|function|_gp_tile_ack_write (GIOChannel * channel,GimpWireMessage * msg,gpointer user_data)
 name|_gp_tile_ack_write
 parameter_list|(
 name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|,
@@ -3106,10 +3123,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_tile_ack_destroy (WireMessage * msg)
+DECL|function|_gp_tile_ack_destroy (GimpWireMessage * msg)
 name|_gp_tile_ack_destroy
 parameter_list|(
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|)
@@ -3123,14 +3140,14 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_tile_data_read (GIOChannel * channel,WireMessage * msg,gpointer user_data)
+DECL|function|_gp_tile_data_read (GIOChannel * channel,GimpWireMessage * msg,gpointer user_data)
 name|_gp_tile_data_read
 parameter_list|(
 name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|,
@@ -3141,20 +3158,18 @@ block|{
 name|GPTileData
 modifier|*
 name|tile_data
-decl_stmt|;
-name|tile_data
-operator|=
+init|=
 name|g_new0
 argument_list|(
 name|GPTileData
 argument_list|,
 literal|1
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 operator|!
-name|wire_read_int32
+name|_gimp_wire_read_int32
 argument_list|(
 name|channel
 argument_list|,
@@ -3178,7 +3193,7 @@ goto|;
 if|if
 condition|(
 operator|!
-name|wire_read_int32
+name|_gimp_wire_read_int32
 argument_list|(
 name|channel
 argument_list|,
@@ -3198,7 +3213,7 @@ goto|;
 if|if
 condition|(
 operator|!
-name|wire_read_int32
+name|_gimp_wire_read_int32
 argument_list|(
 name|channel
 argument_list|,
@@ -3218,7 +3233,7 @@ goto|;
 if|if
 condition|(
 operator|!
-name|wire_read_int32
+name|_gimp_wire_read_int32
 argument_list|(
 name|channel
 argument_list|,
@@ -3238,7 +3253,7 @@ goto|;
 if|if
 condition|(
 operator|!
-name|wire_read_int32
+name|_gimp_wire_read_int32
 argument_list|(
 name|channel
 argument_list|,
@@ -3258,7 +3273,7 @@ goto|;
 if|if
 condition|(
 operator|!
-name|wire_read_int32
+name|_gimp_wire_read_int32
 argument_list|(
 name|channel
 argument_list|,
@@ -3278,7 +3293,7 @@ goto|;
 if|if
 condition|(
 operator|!
-name|wire_read_int32
+name|_gimp_wire_read_int32
 argument_list|(
 name|channel
 argument_list|,
@@ -3332,7 +3347,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|wire_read_int8
+name|_gimp_wire_read_int8
 argument_list|(
 name|channel
 argument_list|,
@@ -3380,14 +3395,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_tile_data_write (GIOChannel * channel,WireMessage * msg,gpointer user_data)
+DECL|function|_gp_tile_data_write (GIOChannel * channel,GimpWireMessage * msg,gpointer user_data)
 name|_gp_tile_data_write
 parameter_list|(
 name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|,
@@ -3406,11 +3421,12 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
-name|wire_write_int32
+name|_gimp_wire_write_int32
 argument_list|(
 name|channel
 argument_list|,
 operator|(
+specifier|const
 name|guint32
 operator|*
 operator|)
@@ -3428,7 +3444,7 @@ return|return;
 if|if
 condition|(
 operator|!
-name|wire_write_int32
+name|_gimp_wire_write_int32
 argument_list|(
 name|channel
 argument_list|,
@@ -3446,7 +3462,7 @@ return|return;
 if|if
 condition|(
 operator|!
-name|wire_write_int32
+name|_gimp_wire_write_int32
 argument_list|(
 name|channel
 argument_list|,
@@ -3464,7 +3480,7 @@ return|return;
 if|if
 condition|(
 operator|!
-name|wire_write_int32
+name|_gimp_wire_write_int32
 argument_list|(
 name|channel
 argument_list|,
@@ -3482,7 +3498,7 @@ return|return;
 if|if
 condition|(
 operator|!
-name|wire_write_int32
+name|_gimp_wire_write_int32
 argument_list|(
 name|channel
 argument_list|,
@@ -3500,7 +3516,7 @@ return|return;
 if|if
 condition|(
 operator|!
-name|wire_write_int32
+name|_gimp_wire_write_int32
 argument_list|(
 name|channel
 argument_list|,
@@ -3518,7 +3534,7 @@ return|return;
 if|if
 condition|(
 operator|!
-name|wire_write_int32
+name|_gimp_wire_write_int32
 argument_list|(
 name|channel
 argument_list|,
@@ -3559,11 +3575,12 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
-name|wire_write_int8
+name|_gimp_wire_write_int8
 argument_list|(
 name|channel
 argument_list|,
 operator|(
+specifier|const
 name|guint8
 operator|*
 operator|)
@@ -3584,10 +3601,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_tile_data_destroy (WireMessage * msg)
+DECL|function|_gp_tile_data_destroy (GimpWireMessage * msg)
 name|_gp_tile_data_destroy
 parameter_list|(
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|)
@@ -3622,14 +3639,14 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_proc_run_read (GIOChannel * channel,WireMessage * msg,gpointer user_data)
+DECL|function|_gp_proc_run_read (GIOChannel * channel,GimpWireMessage * msg,gpointer user_data)
 name|_gp_proc_run_read
 parameter_list|(
 name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|,
@@ -3640,20 +3657,18 @@ block|{
 name|GPProcRun
 modifier|*
 name|proc_run
-decl_stmt|;
-name|proc_run
-operator|=
+init|=
 name|g_new0
 argument_list|(
 name|GPProcRun
 argument_list|,
 literal|1
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 operator|!
-name|wire_read_string
+name|_gimp_wire_read_string
 argument_list|(
 name|channel
 argument_list|,
@@ -3711,14 +3726,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_proc_run_write (GIOChannel * channel,WireMessage * msg,gpointer user_data)
+DECL|function|_gp_proc_run_write (GIOChannel * channel,GimpWireMessage * msg,gpointer user_data)
 name|_gp_proc_run_write
 parameter_list|(
 name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|,
@@ -3737,7 +3752,7 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
-name|wire_write_string
+name|_gimp_wire_write_string
 argument_list|(
 name|channel
 argument_list|,
@@ -3773,10 +3788,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_proc_run_destroy (WireMessage * msg)
+DECL|function|_gp_proc_run_destroy (GimpWireMessage * msg)
 name|_gp_proc_run_destroy
 parameter_list|(
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|)
@@ -3789,7 +3804,7 @@ name|msg
 operator|->
 name|data
 decl_stmt|;
-name|_gp_params_destroy
+name|gp_params_destroy
 argument_list|(
 name|proc_run
 operator|->
@@ -3822,14 +3837,14 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_proc_return_read (GIOChannel * channel,WireMessage * msg,gpointer user_data)
+DECL|function|_gp_proc_return_read (GIOChannel * channel,GimpWireMessage * msg,gpointer user_data)
 name|_gp_proc_return_read
 parameter_list|(
 name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|,
@@ -3840,20 +3855,18 @@ block|{
 name|GPProcReturn
 modifier|*
 name|proc_return
-decl_stmt|;
-name|proc_return
-operator|=
+init|=
 name|g_new0
 argument_list|(
 name|GPProcReturn
 argument_list|,
 literal|1
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 operator|!
-name|wire_read_string
+name|_gimp_wire_read_string
 argument_list|(
 name|channel
 argument_list|,
@@ -3911,14 +3924,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_proc_return_write (GIOChannel * channel,WireMessage * msg,gpointer user_data)
+DECL|function|_gp_proc_return_write (GIOChannel * channel,GimpWireMessage * msg,gpointer user_data)
 name|_gp_proc_return_write
 parameter_list|(
 name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|,
@@ -3937,7 +3950,7 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
-name|wire_write_string
+name|_gimp_wire_write_string
 argument_list|(
 name|channel
 argument_list|,
@@ -3973,10 +3986,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_proc_return_destroy (WireMessage * msg)
+DECL|function|_gp_proc_return_destroy (GimpWireMessage * msg)
 name|_gp_proc_return_destroy
 parameter_list|(
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|)
@@ -3989,7 +4002,7 @@ name|msg
 operator|->
 name|data
 decl_stmt|;
-name|_gp_params_destroy
+name|gp_params_destroy
 argument_list|(
 name|proc_return
 operator|->
@@ -4022,14 +4035,14 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_temp_proc_run_read (GIOChannel * channel,WireMessage * msg,gpointer user_data)
+DECL|function|_gp_temp_proc_run_read (GIOChannel * channel,GimpWireMessage * msg,gpointer user_data)
 name|_gp_temp_proc_run_read
 parameter_list|(
 name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|,
@@ -4052,14 +4065,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_temp_proc_run_write (GIOChannel * channel,WireMessage * msg,gpointer user_data)
+DECL|function|_gp_temp_proc_run_write (GIOChannel * channel,GimpWireMessage * msg,gpointer user_data)
 name|_gp_temp_proc_run_write
 parameter_list|(
 name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|,
@@ -4082,10 +4095,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_temp_proc_run_destroy (WireMessage * msg)
+DECL|function|_gp_temp_proc_run_destroy (GimpWireMessage * msg)
 name|_gp_temp_proc_run_destroy
 parameter_list|(
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|)
@@ -4105,14 +4118,14 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_temp_proc_return_read (GIOChannel * channel,WireMessage * msg,gpointer user_data)
+DECL|function|_gp_temp_proc_return_read (GIOChannel * channel,GimpWireMessage * msg,gpointer user_data)
 name|_gp_temp_proc_return_read
 parameter_list|(
 name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|,
@@ -4135,14 +4148,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_temp_proc_return_write (GIOChannel * channel,WireMessage * msg,gpointer user_data)
+DECL|function|_gp_temp_proc_return_write (GIOChannel * channel,GimpWireMessage * msg,gpointer user_data)
 name|_gp_temp_proc_return_write
 parameter_list|(
 name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|,
@@ -4165,10 +4178,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_temp_proc_return_destroy (WireMessage * msg)
+DECL|function|_gp_temp_proc_return_destroy (GimpWireMessage * msg)
 name|_gp_temp_proc_return_destroy
 parameter_list|(
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|)
@@ -4188,14 +4201,14 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_proc_install_read (GIOChannel * channel,WireMessage * msg,gpointer user_data)
+DECL|function|_gp_proc_install_read (GIOChannel * channel,GimpWireMessage * msg,gpointer user_data)
 name|_gp_proc_install_read
 parameter_list|(
 name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|,
@@ -4206,23 +4219,21 @@ block|{
 name|GPProcInstall
 modifier|*
 name|proc_install
-decl_stmt|;
-name|gint
-name|i
-decl_stmt|;
-name|proc_install
-operator|=
+init|=
 name|g_new0
 argument_list|(
 name|GPProcInstall
 argument_list|,
 literal|1
 argument_list|)
-expr_stmt|;
+decl_stmt|;
+name|gint
+name|i
+decl_stmt|;
 if|if
 condition|(
 operator|!
-name|wire_read_string
+name|_gimp_wire_read_string
 argument_list|(
 name|channel
 argument_list|,
@@ -4242,7 +4253,7 @@ goto|;
 if|if
 condition|(
 operator|!
-name|wire_read_string
+name|_gimp_wire_read_string
 argument_list|(
 name|channel
 argument_list|,
@@ -4262,7 +4273,7 @@ goto|;
 if|if
 condition|(
 operator|!
-name|wire_read_string
+name|_gimp_wire_read_string
 argument_list|(
 name|channel
 argument_list|,
@@ -4282,7 +4293,7 @@ goto|;
 if|if
 condition|(
 operator|!
-name|wire_read_string
+name|_gimp_wire_read_string
 argument_list|(
 name|channel
 argument_list|,
@@ -4302,7 +4313,7 @@ goto|;
 if|if
 condition|(
 operator|!
-name|wire_read_string
+name|_gimp_wire_read_string
 argument_list|(
 name|channel
 argument_list|,
@@ -4322,7 +4333,7 @@ goto|;
 if|if
 condition|(
 operator|!
-name|wire_read_string
+name|_gimp_wire_read_string
 argument_list|(
 name|channel
 argument_list|,
@@ -4342,7 +4353,7 @@ goto|;
 if|if
 condition|(
 operator|!
-name|wire_read_string
+name|_gimp_wire_read_string
 argument_list|(
 name|channel
 argument_list|,
@@ -4362,7 +4373,7 @@ goto|;
 if|if
 condition|(
 operator|!
-name|wire_read_string
+name|_gimp_wire_read_string
 argument_list|(
 name|channel
 argument_list|,
@@ -4382,7 +4393,7 @@ goto|;
 if|if
 condition|(
 operator|!
-name|wire_read_int32
+name|_gimp_wire_read_int32
 argument_list|(
 name|channel
 argument_list|,
@@ -4402,7 +4413,7 @@ goto|;
 if|if
 condition|(
 operator|!
-name|wire_read_int32
+name|_gimp_wire_read_int32
 argument_list|(
 name|channel
 argument_list|,
@@ -4422,7 +4433,7 @@ goto|;
 if|if
 condition|(
 operator|!
-name|wire_read_int32
+name|_gimp_wire_read_int32
 argument_list|(
 name|channel
 argument_list|,
@@ -4471,7 +4482,7 @@ block|{
 if|if
 condition|(
 operator|!
-name|wire_read_int32
+name|_gimp_wire_read_int32
 argument_list|(
 name|channel
 argument_list|,
@@ -4500,7 +4511,7 @@ goto|;
 if|if
 condition|(
 operator|!
-name|wire_read_string
+name|_gimp_wire_read_string
 argument_list|(
 name|channel
 argument_list|,
@@ -4525,7 +4536,7 @@ goto|;
 if|if
 condition|(
 operator|!
-name|wire_read_string
+name|_gimp_wire_read_string
 argument_list|(
 name|channel
 argument_list|,
@@ -4580,7 +4591,7 @@ block|{
 if|if
 condition|(
 operator|!
-name|wire_read_int32
+name|_gimp_wire_read_int32
 argument_list|(
 name|channel
 argument_list|,
@@ -4609,7 +4620,7 @@ goto|;
 if|if
 condition|(
 operator|!
-name|wire_read_string
+name|_gimp_wire_read_string
 argument_list|(
 name|channel
 argument_list|,
@@ -4634,7 +4645,7 @@ goto|;
 if|if
 condition|(
 operator|!
-name|wire_read_string
+name|_gimp_wire_read_string
 argument_list|(
 name|channel
 argument_list|,
@@ -4871,14 +4882,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_proc_install_write (GIOChannel * channel,WireMessage * msg,gpointer user_data)
+DECL|function|_gp_proc_install_write (GIOChannel * channel,GimpWireMessage * msg,gpointer user_data)
 name|_gp_proc_install_write
 parameter_list|(
 name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|,
@@ -4900,7 +4911,7 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
-name|wire_write_string
+name|_gimp_wire_write_string
 argument_list|(
 name|channel
 argument_list|,
@@ -4918,7 +4929,7 @@ return|return;
 if|if
 condition|(
 operator|!
-name|wire_write_string
+name|_gimp_wire_write_string
 argument_list|(
 name|channel
 argument_list|,
@@ -4936,7 +4947,7 @@ return|return;
 if|if
 condition|(
 operator|!
-name|wire_write_string
+name|_gimp_wire_write_string
 argument_list|(
 name|channel
 argument_list|,
@@ -4954,7 +4965,7 @@ return|return;
 if|if
 condition|(
 operator|!
-name|wire_write_string
+name|_gimp_wire_write_string
 argument_list|(
 name|channel
 argument_list|,
@@ -4972,7 +4983,7 @@ return|return;
 if|if
 condition|(
 operator|!
-name|wire_write_string
+name|_gimp_wire_write_string
 argument_list|(
 name|channel
 argument_list|,
@@ -4990,7 +5001,7 @@ return|return;
 if|if
 condition|(
 operator|!
-name|wire_write_string
+name|_gimp_wire_write_string
 argument_list|(
 name|channel
 argument_list|,
@@ -5008,7 +5019,7 @@ return|return;
 if|if
 condition|(
 operator|!
-name|wire_write_string
+name|_gimp_wire_write_string
 argument_list|(
 name|channel
 argument_list|,
@@ -5026,7 +5037,7 @@ return|return;
 if|if
 condition|(
 operator|!
-name|wire_write_string
+name|_gimp_wire_write_string
 argument_list|(
 name|channel
 argument_list|,
@@ -5044,7 +5055,7 @@ return|return;
 if|if
 condition|(
 operator|!
-name|wire_write_int32
+name|_gimp_wire_write_int32
 argument_list|(
 name|channel
 argument_list|,
@@ -5062,7 +5073,7 @@ return|return;
 if|if
 condition|(
 operator|!
-name|wire_write_int32
+name|_gimp_wire_write_int32
 argument_list|(
 name|channel
 argument_list|,
@@ -5080,7 +5091,7 @@ return|return;
 if|if
 condition|(
 operator|!
-name|wire_write_int32
+name|_gimp_wire_write_int32
 argument_list|(
 name|channel
 argument_list|,
@@ -5114,7 +5125,7 @@ block|{
 if|if
 condition|(
 operator|!
-name|wire_write_int32
+name|_gimp_wire_write_int32
 argument_list|(
 name|channel
 argument_list|,
@@ -5141,7 +5152,7 @@ return|return;
 if|if
 condition|(
 operator|!
-name|wire_write_string
+name|_gimp_wire_write_string
 argument_list|(
 name|channel
 argument_list|,
@@ -5164,7 +5175,7 @@ return|return;
 if|if
 condition|(
 operator|!
-name|wire_write_string
+name|_gimp_wire_write_string
 argument_list|(
 name|channel
 argument_list|,
@@ -5204,7 +5215,7 @@ block|{
 if|if
 condition|(
 operator|!
-name|wire_write_int32
+name|_gimp_wire_write_int32
 argument_list|(
 name|channel
 argument_list|,
@@ -5231,7 +5242,7 @@ return|return;
 if|if
 condition|(
 operator|!
-name|wire_write_string
+name|_gimp_wire_write_string
 argument_list|(
 name|channel
 argument_list|,
@@ -5254,7 +5265,7 @@ return|return;
 if|if
 condition|(
 operator|!
-name|wire_write_string
+name|_gimp_wire_write_string
 argument_list|(
 name|channel
 argument_list|,
@@ -5281,10 +5292,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_proc_install_destroy (WireMessage * msg)
+DECL|function|_gp_proc_install_destroy (GimpWireMessage * msg)
 name|_gp_proc_install_destroy
 parameter_list|(
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|)
@@ -5467,14 +5478,14 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_proc_uninstall_read (GIOChannel * channel,WireMessage * msg,gpointer user_data)
+DECL|function|_gp_proc_uninstall_read (GIOChannel * channel,GimpWireMessage * msg,gpointer user_data)
 name|_gp_proc_uninstall_read
 parameter_list|(
 name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|,
@@ -5485,20 +5496,18 @@ block|{
 name|GPProcUninstall
 modifier|*
 name|proc_uninstall
-decl_stmt|;
-name|proc_uninstall
-operator|=
+init|=
 name|g_new0
 argument_list|(
 name|GPProcUninstall
 argument_list|,
 literal|1
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 operator|!
-name|wire_read_string
+name|_gimp_wire_read_string
 argument_list|(
 name|channel
 argument_list|,
@@ -5535,14 +5544,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_proc_uninstall_write (GIOChannel * channel,WireMessage * msg,gpointer user_data)
+DECL|function|_gp_proc_uninstall_write (GIOChannel * channel,GimpWireMessage * msg,gpointer user_data)
 name|_gp_proc_uninstall_write
 parameter_list|(
 name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|,
@@ -5561,7 +5570,7 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
-name|wire_write_string
+name|_gimp_wire_write_string
 argument_list|(
 name|channel
 argument_list|,
@@ -5582,10 +5591,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_proc_uninstall_destroy (WireMessage * msg)
+DECL|function|_gp_proc_uninstall_destroy (GimpWireMessage * msg)
 name|_gp_proc_uninstall_destroy
 parameter_list|(
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|)
@@ -5620,14 +5629,14 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_extension_ack_read (GIOChannel * channel,WireMessage * msg,gpointer user_data)
+DECL|function|_gp_extension_ack_read (GIOChannel * channel,GimpWireMessage * msg,gpointer user_data)
 name|_gp_extension_ack_read
 parameter_list|(
 name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|,
@@ -5640,14 +5649,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_extension_ack_write (GIOChannel * channel,WireMessage * msg,gpointer user_data)
+DECL|function|_gp_extension_ack_write (GIOChannel * channel,GimpWireMessage * msg,gpointer user_data)
 name|_gp_extension_ack_write
 parameter_list|(
 name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|,
@@ -5660,10 +5669,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_extension_ack_destroy (WireMessage * msg)
+DECL|function|_gp_extension_ack_destroy (GimpWireMessage * msg)
 name|_gp_extension_ack_destroy
 parameter_list|(
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|)
@@ -5705,7 +5714,7 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
-name|wire_read_int32
+name|_gimp_wire_read_int32
 argument_list|(
 name|channel
 argument_list|,
@@ -5765,7 +5774,7 @@ block|{
 if|if
 condition|(
 operator|!
-name|wire_read_int32
+name|_gimp_wire_read_int32
 argument_list|(
 name|channel
 argument_list|,
@@ -5811,7 +5820,7 @@ case|:
 if|if
 condition|(
 operator|!
-name|wire_read_int32
+name|_gimp_wire_read_int32
 argument_list|(
 name|channel
 argument_list|,
@@ -5847,7 +5856,7 @@ case|:
 if|if
 condition|(
 operator|!
-name|wire_read_int16
+name|_gimp_wire_read_int16
 argument_list|(
 name|channel
 argument_list|,
@@ -5883,7 +5892,7 @@ case|:
 if|if
 condition|(
 operator|!
-name|wire_read_int8
+name|_gimp_wire_read_int8
 argument_list|(
 name|channel
 argument_list|,
@@ -5919,7 +5928,7 @@ case|:
 if|if
 condition|(
 operator|!
-name|wire_read_double
+name|_gimp_wire_read_double
 argument_list|(
 name|channel
 argument_list|,
@@ -5951,7 +5960,7 @@ case|:
 if|if
 condition|(
 operator|!
-name|wire_read_string
+name|_gimp_wire_read_string
 argument_list|(
 name|channel
 argument_list|,
@@ -6047,7 +6056,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|wire_read_int32
+name|_gimp_wire_read_int32
 argument_list|(
 name|channel
 argument_list|,
@@ -6175,7 +6184,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|wire_read_int16
+name|_gimp_wire_read_int16
 argument_list|(
 name|channel
 argument_list|,
@@ -6303,7 +6312,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|wire_read_int8
+name|_gimp_wire_read_int8
 argument_list|(
 name|channel
 argument_list|,
@@ -6431,7 +6440,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|wire_read_double
+name|_gimp_wire_read_double
 argument_list|(
 name|channel
 argument_list|,
@@ -6556,7 +6565,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|wire_read_string
+name|_gimp_wire_read_string
 argument_list|(
 name|channel
 argument_list|,
@@ -6661,7 +6670,7 @@ case|:
 if|if
 condition|(
 operator|!
-name|wire_read_double
+name|_gimp_wire_read_double
 argument_list|(
 name|channel
 argument_list|,
@@ -6691,7 +6700,7 @@ goto|;
 if|if
 condition|(
 operator|!
-name|wire_read_double
+name|_gimp_wire_read_double
 argument_list|(
 name|channel
 argument_list|,
@@ -6721,7 +6730,7 @@ goto|;
 if|if
 condition|(
 operator|!
-name|wire_read_double
+name|_gimp_wire_read_double
 argument_list|(
 name|channel
 argument_list|,
@@ -6751,7 +6760,7 @@ goto|;
 if|if
 condition|(
 operator|!
-name|wire_read_double
+name|_gimp_wire_read_double
 argument_list|(
 name|channel
 argument_list|,
@@ -6789,7 +6798,7 @@ case|:
 if|if
 condition|(
 operator|!
-name|wire_read_int32
+name|_gimp_wire_read_int32
 argument_list|(
 name|channel
 argument_list|,
@@ -6825,7 +6834,7 @@ case|:
 if|if
 condition|(
 operator|!
-name|wire_read_int32
+name|_gimp_wire_read_int32
 argument_list|(
 name|channel
 argument_list|,
@@ -6861,7 +6870,7 @@ case|:
 if|if
 condition|(
 operator|!
-name|wire_read_int32
+name|_gimp_wire_read_int32
 argument_list|(
 name|channel
 argument_list|,
@@ -6897,7 +6906,7 @@ case|:
 if|if
 condition|(
 operator|!
-name|wire_read_int32
+name|_gimp_wire_read_int32
 argument_list|(
 name|channel
 argument_list|,
@@ -6933,7 +6942,7 @@ case|:
 if|if
 condition|(
 operator|!
-name|wire_read_int32
+name|_gimp_wire_read_int32
 argument_list|(
 name|channel
 argument_list|,
@@ -6969,7 +6978,7 @@ case|:
 if|if
 condition|(
 operator|!
-name|wire_read_int32
+name|_gimp_wire_read_int32
 argument_list|(
 name|channel
 argument_list|,
@@ -7005,7 +7014,7 @@ case|:
 if|if
 condition|(
 operator|!
-name|wire_read_int32
+name|_gimp_wire_read_int32
 argument_list|(
 name|channel
 argument_list|,
@@ -7041,7 +7050,7 @@ case|:
 if|if
 condition|(
 operator|!
-name|wire_read_int32
+name|_gimp_wire_read_int32
 argument_list|(
 name|channel
 argument_list|,
@@ -7077,7 +7086,7 @@ case|:
 if|if
 condition|(
 operator|!
-name|wire_read_string
+name|_gimp_wire_read_string
 argument_list|(
 name|channel
 argument_list|,
@@ -7145,7 +7154,7 @@ block|}
 if|if
 condition|(
 operator|!
-name|wire_read_int32
+name|_gimp_wire_read_int32
 argument_list|(
 name|channel
 argument_list|,
@@ -7177,7 +7186,7 @@ goto|;
 if|if
 condition|(
 operator|!
-name|wire_read_int32
+name|_gimp_wire_read_int32
 argument_list|(
 name|channel
 argument_list|,
@@ -7259,7 +7268,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|wire_read_int8
+name|_gimp_wire_read_int8
 argument_list|(
 name|channel
 argument_list|,
@@ -7341,7 +7350,7 @@ case|:
 if|if
 condition|(
 operator|!
-name|wire_read_int32
+name|_gimp_wire_read_int32
 argument_list|(
 name|channel
 argument_list|,
@@ -7426,11 +7435,12 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
-name|wire_write_int32
+name|_gimp_wire_write_int32
 argument_list|(
 name|channel
 argument_list|,
 operator|(
+specifier|const
 name|guint32
 operator|*
 operator|)
@@ -7460,11 +7470,12 @@ block|{
 if|if
 condition|(
 operator|!
-name|wire_write_int32
+name|_gimp_wire_write_int32
 argument_list|(
 name|channel
 argument_list|,
 operator|(
+specifier|const
 name|guint32
 operator|*
 operator|)
@@ -7498,11 +7509,12 @@ case|:
 if|if
 condition|(
 operator|!
-name|wire_write_int32
+name|_gimp_wire_write_int32
 argument_list|(
 name|channel
 argument_list|,
 operator|(
+specifier|const
 name|guint32
 operator|*
 operator|)
@@ -7529,11 +7541,12 @@ case|:
 if|if
 condition|(
 operator|!
-name|wire_write_int16
+name|_gimp_wire_write_int16
 argument_list|(
 name|channel
 argument_list|,
 operator|(
+specifier|const
 name|guint16
 operator|*
 operator|)
@@ -7560,11 +7573,12 @@ case|:
 if|if
 condition|(
 operator|!
-name|wire_write_int8
+name|_gimp_wire_write_int8
 argument_list|(
 name|channel
 argument_list|,
 operator|(
+specifier|const
 name|guint8
 operator|*
 operator|)
@@ -7591,7 +7605,7 @@ case|:
 if|if
 condition|(
 operator|!
-name|wire_write_double
+name|_gimp_wire_write_double
 argument_list|(
 name|channel
 argument_list|,
@@ -7618,7 +7632,7 @@ case|:
 if|if
 condition|(
 operator|!
-name|wire_write_string
+name|_gimp_wire_write_string
 argument_list|(
 name|channel
 argument_list|,
@@ -7645,11 +7659,12 @@ case|:
 if|if
 condition|(
 operator|!
-name|wire_write_int32
+name|_gimp_wire_write_int32
 argument_list|(
 name|channel
 argument_list|,
 operator|(
+specifier|const
 name|guint32
 operator|*
 operator|)
@@ -7684,11 +7699,12 @@ case|:
 if|if
 condition|(
 operator|!
-name|wire_write_int16
+name|_gimp_wire_write_int16
 argument_list|(
 name|channel
 argument_list|,
 operator|(
+specifier|const
 name|guint16
 operator|*
 operator|)
@@ -7723,11 +7739,12 @@ case|:
 if|if
 condition|(
 operator|!
-name|wire_write_int8
+name|_gimp_wire_write_int8
 argument_list|(
 name|channel
 argument_list|,
 operator|(
+specifier|const
 name|guint8
 operator|*
 operator|)
@@ -7762,7 +7779,7 @@ case|:
 if|if
 condition|(
 operator|!
-name|wire_write_double
+name|_gimp_wire_write_double
 argument_list|(
 name|channel
 argument_list|,
@@ -7797,7 +7814,7 @@ case|:
 if|if
 condition|(
 operator|!
-name|wire_write_string
+name|_gimp_wire_write_string
 argument_list|(
 name|channel
 argument_list|,
@@ -7851,7 +7868,7 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
-name|wire_write_double
+name|_gimp_wire_write_double
 argument_list|(
 name|channel
 argument_list|,
@@ -7869,7 +7886,7 @@ return|return;
 if|if
 condition|(
 operator|!
-name|wire_write_double
+name|_gimp_wire_write_double
 argument_list|(
 name|channel
 argument_list|,
@@ -7887,7 +7904,7 @@ return|return;
 if|if
 condition|(
 operator|!
-name|wire_write_double
+name|_gimp_wire_write_double
 argument_list|(
 name|channel
 argument_list|,
@@ -7905,7 +7922,7 @@ return|return;
 if|if
 condition|(
 operator|!
-name|wire_write_double
+name|_gimp_wire_write_double
 argument_list|(
 name|channel
 argument_list|,
@@ -7932,11 +7949,12 @@ case|:
 if|if
 condition|(
 operator|!
-name|wire_write_int32
+name|_gimp_wire_write_int32
 argument_list|(
 name|channel
 argument_list|,
 operator|(
+specifier|const
 name|guint32
 operator|*
 operator|)
@@ -7963,11 +7981,12 @@ case|:
 if|if
 condition|(
 operator|!
-name|wire_write_int32
+name|_gimp_wire_write_int32
 argument_list|(
 name|channel
 argument_list|,
 operator|(
+specifier|const
 name|guint32
 operator|*
 operator|)
@@ -7994,11 +8013,12 @@ case|:
 if|if
 condition|(
 operator|!
-name|wire_write_int32
+name|_gimp_wire_write_int32
 argument_list|(
 name|channel
 argument_list|,
 operator|(
+specifier|const
 name|guint32
 operator|*
 operator|)
@@ -8025,11 +8045,12 @@ case|:
 if|if
 condition|(
 operator|!
-name|wire_write_int32
+name|_gimp_wire_write_int32
 argument_list|(
 name|channel
 argument_list|,
 operator|(
+specifier|const
 name|guint32
 operator|*
 operator|)
@@ -8056,11 +8077,12 @@ case|:
 if|if
 condition|(
 operator|!
-name|wire_write_int32
+name|_gimp_wire_write_int32
 argument_list|(
 name|channel
 argument_list|,
 operator|(
+specifier|const
 name|guint32
 operator|*
 operator|)
@@ -8087,11 +8109,12 @@ case|:
 if|if
 condition|(
 operator|!
-name|wire_write_int32
+name|_gimp_wire_write_int32
 argument_list|(
 name|channel
 argument_list|,
 operator|(
+specifier|const
 name|guint32
 operator|*
 operator|)
@@ -8118,11 +8141,12 @@ case|:
 if|if
 condition|(
 operator|!
-name|wire_write_int32
+name|_gimp_wire_write_int32
 argument_list|(
 name|channel
 argument_list|,
 operator|(
+specifier|const
 name|guint32
 operator|*
 operator|)
@@ -8149,11 +8173,12 @@ case|:
 if|if
 condition|(
 operator|!
-name|wire_write_int32
+name|_gimp_wire_write_int32
 argument_list|(
 name|channel
 argument_list|,
 operator|(
+specifier|const
 name|guint32
 operator|*
 operator|)
@@ -8205,8 +8230,8 @@ operator|==
 name|NULL
 condition|)
 block|{
-comment|/* write a null string to signifly a null parasite */
-name|wire_write_string
+comment|/* write a null string to signal a null parasite */
+name|_gimp_wire_write_string
 argument_list|(
 name|channel
 argument_list|,
@@ -8225,7 +8250,7 @@ block|}
 if|if
 condition|(
 operator|!
-name|wire_write_string
+name|_gimp_wire_write_string
 argument_list|(
 name|channel
 argument_list|,
@@ -8243,7 +8268,7 @@ return|return;
 if|if
 condition|(
 operator|!
-name|wire_write_int32
+name|_gimp_wire_write_int32
 argument_list|(
 name|channel
 argument_list|,
@@ -8261,7 +8286,7 @@ return|return;
 if|if
 condition|(
 operator|!
-name|wire_write_int32
+name|_gimp_wire_write_int32
 argument_list|(
 name|channel
 argument_list|,
@@ -8288,7 +8313,7 @@ block|{
 if|if
 condition|(
 operator|!
-name|wire_write_int8
+name|_gimp_wire_write_int8
 argument_list|(
 name|channel
 argument_list|,
@@ -8313,11 +8338,12 @@ case|:
 if|if
 condition|(
 operator|!
-name|wire_write_int32
+name|_gimp_wire_write_int32
 argument_list|(
 name|channel
 argument_list|,
 operator|(
+specifier|const
 name|guint32
 operator|*
 operator|)
@@ -8349,8 +8375,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|_gp_params_destroy (GPParam * params,gint nparams)
-name|_gp_params_destroy
+DECL|function|gp_params_destroy (GPParam * params,gint nparams)
+name|gp_params_destroy
 parameter_list|(
 name|GPParam
 modifier|*
@@ -8677,14 +8703,14 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_has_init_read (GIOChannel * channel,WireMessage * msg,gpointer user_data)
+DECL|function|_gp_has_init_read (GIOChannel * channel,GimpWireMessage * msg,gpointer user_data)
 name|_gp_has_init_read
 parameter_list|(
 name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|,
@@ -8697,14 +8723,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_has_init_write (GIOChannel * channel,WireMessage * msg,gpointer user_data)
+DECL|function|_gp_has_init_write (GIOChannel * channel,GimpWireMessage * msg,gpointer user_data)
 name|_gp_has_init_write
 parameter_list|(
 name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|,
@@ -8717,10 +8743,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_has_init_destroy (WireMessage * msg)
+DECL|function|_gp_has_init_destroy (GimpWireMessage * msg)
 name|_gp_has_init_destroy
 parameter_list|(
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|)

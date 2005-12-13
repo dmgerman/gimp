@@ -12,95 +12,14 @@ end_include
 begin_include
 include|#
 directive|include
-file|<errno.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
 end_include
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|HAVE_SYS_PARAM_H
-end_ifdef
-
-begin_include
-include|#
-directive|include
-file|<sys/param.h>
-end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_include
-include|#
-directive|include
-file|<sys/types.h>
-end_include
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|HAVE_UNISTD_H
-end_ifdef
-
-begin_include
-include|#
-directive|include
-file|<unistd.h>
-end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_include
 include|#
 directive|include
 file|<glib.h>
 end_include
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|G_OS_WIN32
-end_ifdef
-
-begin_include
-include|#
-directive|include
-file|<process.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<io.h>
-end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_include
 include|#
@@ -109,76 +28,38 @@ file|"gimpwire.h"
 end_include
 
 begin_typedef
-DECL|typedef|WireHandler
+DECL|typedef|GimpWireHandler
 typedef|typedef
 name|struct
-name|_WireHandler
-name|WireHandler
+name|_GimpWireHandler
+name|GimpWireHandler
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_WireHandler
+DECL|struct|_GimpWireHandler
 struct|struct
-name|_WireHandler
+name|_GimpWireHandler
 block|{
 DECL|member|type
 name|guint32
 name|type
 decl_stmt|;
 DECL|member|read_func
-name|WireReadFunc
+name|GimpWireReadFunc
 name|read_func
 decl_stmt|;
 DECL|member|write_func
-name|WireWriteFunc
+name|GimpWireWriteFunc
 name|write_func
 decl_stmt|;
 DECL|member|destroy_func
-name|WireDestroyFunc
+name|GimpWireDestroyFunc
 name|destroy_func
 decl_stmt|;
 block|}
 struct|;
 end_struct
-
-begin_function_decl
-specifier|static
-name|void
-name|wire_init
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|guint
-name|wire_hash
-parameter_list|(
-name|guint32
-modifier|*
-name|key
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|gboolean
-name|wire_compare
-parameter_list|(
-name|guint32
-modifier|*
-name|a
-parameter_list|,
-name|guint32
-modifier|*
-name|b
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_decl_stmt
 DECL|variable|wire_ht
@@ -194,7 +75,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|wire_read_func
 specifier|static
-name|WireIOFunc
+name|GimpWireIOFunc
 name|wire_read_func
 init|=
 name|NULL
@@ -204,7 +85,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|wire_write_func
 specifier|static
-name|WireIOFunc
+name|GimpWireIOFunc
 name|wire_write_func
 init|=
 name|NULL
@@ -214,7 +95,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|wire_flush_func
 specifier|static
-name|WireFlushFunc
+name|GimpWireFlushFunc
 name|wire_flush_func
 init|=
 name|NULL
@@ -231,25 +112,35 @@ name|FALSE
 decl_stmt|;
 end_decl_stmt
 
+begin_function_decl
+specifier|static
+name|void
+name|gimp_wire_init
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_function
 name|void
-DECL|function|wire_register (guint32 type,WireReadFunc read_func,WireWriteFunc write_func,WireDestroyFunc destroy_func)
-name|wire_register
+DECL|function|gimp_wire_register (guint32 type,GimpWireReadFunc read_func,GimpWireWriteFunc write_func,GimpWireDestroyFunc destroy_func)
+name|gimp_wire_register
 parameter_list|(
 name|guint32
 name|type
 parameter_list|,
-name|WireReadFunc
+name|GimpWireReadFunc
 name|read_func
 parameter_list|,
-name|WireWriteFunc
+name|GimpWireWriteFunc
 name|write_func
 parameter_list|,
-name|WireDestroyFunc
+name|GimpWireDestroyFunc
 name|destroy_func
 parameter_list|)
 block|{
-name|WireHandler
+name|GimpWireHandler
 modifier|*
 name|handler
 decl_stmt|;
@@ -258,7 +149,7 @@ condition|(
 operator|!
 name|wire_ht
 condition|)
-name|wire_init
+name|gimp_wire_init
 argument_list|()
 expr_stmt|;
 name|handler
@@ -280,7 +171,7 @@ name|handler
 operator|=
 name|g_new0
 argument_list|(
-name|WireHandler
+name|GimpWireHandler
 argument_list|,
 literal|1
 argument_list|)
@@ -326,10 +217,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|wire_set_reader (WireIOFunc read_func)
-name|wire_set_reader
+DECL|function|gimp_wire_set_reader (GimpWireIOFunc read_func)
+name|gimp_wire_set_reader
 parameter_list|(
-name|WireIOFunc
+name|GimpWireIOFunc
 name|read_func
 parameter_list|)
 block|{
@@ -342,10 +233,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|wire_set_writer (WireIOFunc write_func)
-name|wire_set_writer
+DECL|function|gimp_wire_set_writer (GimpWireIOFunc write_func)
+name|gimp_wire_set_writer
 parameter_list|(
-name|WireIOFunc
+name|GimpWireIOFunc
 name|write_func
 parameter_list|)
 block|{
@@ -358,10 +249,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|wire_set_flusher (WireFlushFunc flush_func)
-name|wire_set_flusher
+DECL|function|gimp_wire_set_flusher (GimpWireFlushFunc flush_func)
+name|gimp_wire_set_flusher
 parameter_list|(
-name|WireFlushFunc
+name|GimpWireFlushFunc
 name|flush_func
 parameter_list|)
 block|{
@@ -374,8 +265,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|wire_read (GIOChannel * channel,guint8 * buf,gsize count,gpointer user_data)
-name|wire_read
+DECL|function|gimp_wire_read (GIOChannel * channel,guint8 * buf,gsize count,gpointer user_data)
+name|gimp_wire_read
 parameter_list|(
 name|GIOChannel
 modifier|*
@@ -587,13 +478,14 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|wire_write (GIOChannel * channel,guint8 * buf,gsize count,gpointer user_data)
-name|wire_write
+DECL|function|gimp_wire_write (GIOChannel * channel,const guint8 * buf,gsize count,gpointer user_data)
+name|gimp_wire_write
 parameter_list|(
 name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
+specifier|const
 name|guint8
 modifier|*
 name|buf
@@ -629,6 +521,10 @@ call|)
 argument_list|(
 name|channel
 argument_list|,
+operator|(
+name|guint8
+operator|*
+operator|)
 name|buf
 argument_list|,
 name|count
@@ -688,6 +584,7 @@ argument_list|(
 name|channel
 argument_list|,
 operator|(
+specifier|const
 name|gchar
 operator|*
 operator|)
@@ -777,8 +674,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|wire_flush (GIOChannel * channel,gpointer user_data)
-name|wire_flush
+DECL|function|gimp_wire_flush (GIOChannel * channel,gpointer user_data)
+name|gimp_wire_flush
 parameter_list|(
 name|GIOChannel
 modifier|*
@@ -811,8 +708,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|wire_error (void)
-name|wire_error
+DECL|function|gimp_wire_error (void)
+name|gimp_wire_error
 parameter_list|(
 name|void
 parameter_list|)
@@ -825,8 +722,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|wire_clear_error (void)
-name|wire_clear_error
+DECL|function|gimp_wire_clear_error (void)
+name|gimp_wire_clear_error
 parameter_list|(
 name|void
 parameter_list|)
@@ -840,14 +737,14 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|wire_read_msg (GIOChannel * channel,WireMessage * msg,gpointer user_data)
-name|wire_read_msg
+DECL|function|gimp_wire_read_msg (GIOChannel * channel,GimpWireMessage * msg,gpointer user_data)
+name|gimp_wire_read_msg
 parameter_list|(
 name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|,
@@ -855,7 +752,7 @@ name|gpointer
 name|user_data
 parameter_list|)
 block|{
-name|WireHandler
+name|GimpWireHandler
 modifier|*
 name|handler
 decl_stmt|;
@@ -870,7 +767,7 @@ return|;
 if|if
 condition|(
 operator|!
-name|wire_read_int32
+name|_gimp_wire_read_int32
 argument_list|(
 name|channel
 argument_list|,
@@ -936,14 +833,14 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|wire_write_msg (GIOChannel * channel,WireMessage * msg,gpointer user_data)
-name|wire_write_msg
+DECL|function|gimp_wire_write_msg (GIOChannel * channel,GimpWireMessage * msg,gpointer user_data)
+name|gimp_wire_write_msg
 parameter_list|(
 name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|,
@@ -951,7 +848,7 @@ name|gpointer
 name|user_data
 parameter_list|)
 block|{
-name|WireHandler
+name|GimpWireHandler
 modifier|*
 name|handler
 decl_stmt|;
@@ -992,7 +889,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|wire_write_int32
+name|_gimp_wire_write_int32
 argument_list|(
 name|channel
 argument_list|,
@@ -1032,15 +929,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|wire_destroy (WireMessage * msg)
-name|wire_destroy
+DECL|function|gimp_wire_destroy (GimpWireMessage * msg)
+name|gimp_wire_destroy
 parameter_list|(
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|)
 block|{
-name|WireHandler
+name|GimpWireHandler
 modifier|*
 name|handler
 decl_stmt|;
@@ -1085,8 +982,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|wire_read_int32 (GIOChannel * channel,guint32 * data,gint count,gpointer user_data)
-name|wire_read_int32
+DECL|function|_gimp_wire_read_int32 (GIOChannel * channel,guint32 * data,gint count,gpointer user_data)
+name|_gimp_wire_read_int32
 parameter_list|(
 name|GIOChannel
 modifier|*
@@ -1122,7 +1019,7 @@ block|{
 if|if
 condition|(
 operator|!
-name|wire_read_int8
+name|_gimp_wire_read_int8
 argument_list|(
 name|channel
 argument_list|,
@@ -1170,8 +1067,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|wire_read_int16 (GIOChannel * channel,guint16 * data,gint count,gpointer user_data)
-name|wire_read_int16
+DECL|function|_gimp_wire_read_int16 (GIOChannel * channel,guint16 * data,gint count,gpointer user_data)
+name|_gimp_wire_read_int16
 parameter_list|(
 name|GIOChannel
 modifier|*
@@ -1207,7 +1104,7 @@ block|{
 if|if
 condition|(
 operator|!
-name|wire_read_int8
+name|_gimp_wire_read_int8
 argument_list|(
 name|channel
 argument_list|,
@@ -1255,8 +1152,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|wire_read_int8 (GIOChannel * channel,guint8 * data,gint count,gpointer user_data)
-name|wire_read_int8
+DECL|function|_gimp_wire_read_int8 (GIOChannel * channel,guint8 * data,gint count,gpointer user_data)
+name|_gimp_wire_read_int8
 parameter_list|(
 name|GIOChannel
 modifier|*
@@ -1283,7 +1180,7 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 return|return
-name|wire_read
+name|gimp_wire_read
 argument_list|(
 name|channel
 argument_list|,
@@ -1299,8 +1196,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|wire_read_double (GIOChannel * channel,gdouble * data,gint count,gpointer user_data)
-name|wire_read_double
+DECL|function|_gimp_wire_read_double (GIOChannel * channel,gdouble * data,gint count,gpointer user_data)
+name|_gimp_wire_read_double
 parameter_list|(
 name|GIOChannel
 modifier|*
@@ -1379,7 +1276,7 @@ block|{
 if|if
 condition|(
 operator|!
-name|wire_read_int8
+name|_gimp_wire_read_int8
 argument_list|(
 name|channel
 argument_list|,
@@ -1462,8 +1359,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|wire_read_string (GIOChannel * channel,gchar ** data,gint count,gpointer user_data)
-name|wire_read_string
+DECL|function|_gimp_wire_read_string (GIOChannel * channel,gchar ** data,gint count,gpointer user_data)
+name|_gimp_wire_read_string
 parameter_list|(
 name|GIOChannel
 modifier|*
@@ -1513,7 +1410,7 @@ block|{
 if|if
 condition|(
 operator|!
-name|wire_read_int32
+name|_gimp_wire_read_int32
 argument_list|(
 name|channel
 argument_list|,
@@ -1550,7 +1447,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|wire_read_int8
+name|_gimp_wire_read_int8
 argument_list|(
 name|channel
 argument_list|,
@@ -1601,13 +1498,14 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|wire_write_int32 (GIOChannel * channel,guint32 * data,gint count,gpointer user_data)
-name|wire_write_int32
+DECL|function|_gimp_wire_write_int32 (GIOChannel * channel,const guint32 * data,gint count,gpointer user_data)
+name|_gimp_wire_write_int32
 parameter_list|(
 name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
+specifier|const
 name|guint32
 modifier|*
 name|data
@@ -1668,11 +1566,12 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|wire_write_int8
+name|_gimp_wire_write_int8
 argument_list|(
 name|channel
 argument_list|,
 operator|(
+specifier|const
 name|guint8
 operator|*
 operator|)
@@ -1697,13 +1596,14 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|wire_write_int16 (GIOChannel * channel,guint16 * data,gint count,gpointer user_data)
-name|wire_write_int16
+DECL|function|_gimp_wire_write_int16 (GIOChannel * channel,const guint16 * data,gint count,gpointer user_data)
+name|_gimp_wire_write_int16
 parameter_list|(
 name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
+specifier|const
 name|guint16
 modifier|*
 name|data
@@ -1764,11 +1664,12 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|wire_write_int8
+name|_gimp_wire_write_int8
 argument_list|(
 name|channel
 argument_list|,
 operator|(
+specifier|const
 name|guint8
 operator|*
 operator|)
@@ -1793,13 +1694,14 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|wire_write_int8 (GIOChannel * channel,guint8 * data,gint count,gpointer user_data)
-name|wire_write_int8
+DECL|function|_gimp_wire_write_int8 (GIOChannel * channel,const guint8 * data,gint count,gpointer user_data)
+name|_gimp_wire_write_int8
 parameter_list|(
 name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
+specifier|const
 name|guint8
 modifier|*
 name|data
@@ -1821,7 +1723,7 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 return|return
-name|wire_write
+name|gimp_wire_write
 argument_list|(
 name|channel
 argument_list|,
@@ -1837,13 +1739,14 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|wire_write_double (GIOChannel * channel,gdouble * data,gint count,gpointer user_data)
-name|wire_write_double
+DECL|function|_gimp_wire_write_double (GIOChannel * channel,const gdouble * data,gint count,gpointer user_data)
+name|_gimp_wire_write_double
 parameter_list|(
 name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
+specifier|const
 name|gdouble
 modifier|*
 name|data
@@ -1977,7 +1880,7 @@ directive|endif
 if|if
 condition|(
 operator|!
-name|wire_write_int8
+name|_gimp_wire_write_int8
 argument_list|(
 name|channel
 argument_list|,
@@ -2006,8 +1909,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|wire_write_string (GIOChannel * channel,gchar ** data,gint count,gpointer user_data)
-name|wire_write_string
+DECL|function|_gimp_wire_write_string (GIOChannel * channel,gchar ** data,gint count,gpointer user_data)
+name|_gimp_wire_write_string
 parameter_list|(
 name|GIOChannel
 modifier|*
@@ -2081,7 +1984,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|wire_write_int32
+name|_gimp_wire_write_int32
 argument_list|(
 name|channel
 argument_list|,
@@ -2105,11 +2008,12 @@ condition|)
 if|if
 condition|(
 operator|!
-name|wire_write_int8
+name|_gimp_wire_write_int8
 argument_list|(
 name|channel
 argument_list|,
 operator|(
+specifier|const
 name|guint8
 operator|*
 operator|)
@@ -2135,9 +2039,57 @@ end_function
 
 begin_function
 specifier|static
+name|guint
+DECL|function|gimp_wire_hash (const guint32 * key)
+name|gimp_wire_hash
+parameter_list|(
+specifier|const
+name|guint32
+modifier|*
+name|key
+parameter_list|)
+block|{
+return|return
+operator|*
+name|key
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|gboolean
+DECL|function|gimp_wire_compare (const guint32 * a,const guint32 * b)
+name|gimp_wire_compare
+parameter_list|(
+specifier|const
+name|guint32
+modifier|*
+name|a
+parameter_list|,
+specifier|const
+name|guint32
+modifier|*
+name|b
+parameter_list|)
+block|{
+return|return
+operator|(
+operator|*
+name|a
+operator|==
+operator|*
+name|b
+operator|)
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
 name|void
-DECL|function|wire_init (void)
-name|wire_init
+DECL|function|gimp_wire_init (void)
+name|gimp_wire_init
 parameter_list|(
 name|void
 parameter_list|)
@@ -2154,59 +2106,14 @@ argument_list|(
 operator|(
 name|GHashFunc
 operator|)
-name|wire_hash
+name|gimp_wire_hash
 argument_list|,
 operator|(
 name|GCompareFunc
 operator|)
-name|wire_compare
+name|gimp_wire_compare
 argument_list|)
 expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|guint
-DECL|function|wire_hash (guint32 * key)
-name|wire_hash
-parameter_list|(
-name|guint32
-modifier|*
-name|key
-parameter_list|)
-block|{
-return|return
-operator|*
-name|key
-return|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|gboolean
-DECL|function|wire_compare (guint32 * a,guint32 * b)
-name|wire_compare
-parameter_list|(
-name|guint32
-modifier|*
-name|a
-parameter_list|,
-name|guint32
-modifier|*
-name|b
-parameter_list|)
-block|{
-return|return
-operator|(
-operator|*
-name|a
-operator|==
-operator|*
-name|b
-operator|)
-return|;
 block|}
 end_function
 

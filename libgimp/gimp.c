@@ -414,7 +414,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a3ba040103
+DECL|enum|__anon2c3d7d630103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -484,7 +484,7 @@ begin_function_decl
 name|void
 name|gimp_read_expect_msg
 parameter_list|(
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|,
@@ -666,7 +666,7 @@ specifier|static
 name|void
 name|gimp_process_message
 parameter_list|(
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|)
@@ -1621,12 +1621,12 @@ expr_stmt|;
 name|gp_init
 argument_list|()
 expr_stmt|;
-name|wire_set_writer
+name|gimp_wire_set_writer
 argument_list|(
 name|gimp_write
 argument_list|)
 expr_stmt|;
-name|wire_set_flusher
+name|gimp_wire_set_flusher
 argument_list|(
 name|gimp_flush
 argument_list|)
@@ -3490,10 +3490,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_read_expect_msg (WireMessage * msg,gint type)
+DECL|function|gimp_read_expect_msg (GimpWireMessage * msg,gint type)
 name|gimp_read_expect_msg
 parameter_list|(
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|,
@@ -3509,7 +3509,7 @@ block|{
 if|if
 condition|(
 operator|!
-name|wire_read_msg
+name|gimp_wire_read_msg
 argument_list|(
 name|_readchannel
 argument_list|,
@@ -3564,7 +3564,7 @@ name|type
 argument_list|)
 expr_stmt|;
 block|}
-name|wire_destroy
+name|gimp_wire_destroy
 argument_list|(
 name|msg
 argument_list|)
@@ -3608,7 +3608,7 @@ name|GPProcReturn
 modifier|*
 name|proc_return
 decl_stmt|;
-name|WireMessage
+name|GimpWireMessage
 name|msg
 decl_stmt|;
 name|GimpParam
@@ -3773,7 +3773,7 @@ parameter_list|)
 block|{
 specifier|extern
 name|void
-name|_gp_params_destroy
+name|gp_params_destroy
 argument_list|(
 name|GPParam
 operator|*
@@ -3783,7 +3783,7 @@ name|gint
 name|n_params
 argument_list|)
 decl_stmt|;
-name|_gp_params_destroy
+name|gp_params_destroy
 argument_list|(
 operator|(
 name|GPParam
@@ -4918,7 +4918,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|wire_flush
+name|gimp_wire_flush
 argument_list|(
 name|channel
 argument_list|,
@@ -5124,7 +5124,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|WireMessage
+name|GimpWireMessage
 name|msg
 decl_stmt|;
 while|while
@@ -5135,7 +5135,7 @@ block|{
 if|if
 condition|(
 operator|!
-name|wire_read_msg
+name|gimp_wire_read_msg
 argument_list|(
 name|_readchannel
 argument_list|,
@@ -5161,7 +5161,7 @@ block|{
 case|case
 name|GP_QUIT
 case|:
-name|wire_destroy
+name|gimp_wire_destroy
 argument_list|(
 operator|&
 name|msg
@@ -5207,7 +5207,7 @@ operator|.
 name|data
 argument_list|)
 expr_stmt|;
-name|wire_destroy
+name|gimp_wire_destroy
 argument_list|(
 operator|&
 name|msg
@@ -5263,7 +5263,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
-name|wire_destroy
+name|gimp_wire_destroy
 argument_list|(
 operator|&
 name|msg
@@ -5937,10 +5937,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_process_message (WireMessage * msg)
+DECL|function|gimp_process_message (GimpWireMessage * msg)
 name|gimp_process_message
 parameter_list|(
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|)
@@ -6054,14 +6054,14 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|WireMessage
+name|GimpWireMessage
 name|msg
 decl_stmt|;
 comment|/* Run a temp function */
 if|if
 condition|(
 operator|!
-name|wire_read_msg
+name|gimp_wire_read_msg
 argument_list|(
 name|_readchannel
 argument_list|,
@@ -6080,7 +6080,7 @@ operator|&
 name|msg
 argument_list|)
 expr_stmt|;
-name|wire_destroy
+name|gimp_wire_destroy
 argument_list|(
 operator|&
 name|msg

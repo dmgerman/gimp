@@ -309,14 +309,14 @@ end_comment
 
 begin_function
 name|void
-DECL|function|plug_in_handle_message (PlugIn * plug_in,WireMessage * msg)
+DECL|function|plug_in_handle_message (PlugIn * plug_in,GimpWireMessage * msg)
 name|plug_in_handle_message
 parameter_list|(
 name|PlugIn
 modifier|*
 name|plug_in
 parameter_list|,
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|)
@@ -608,7 +608,7 @@ name|GPTileData
 modifier|*
 name|tile_info
 decl_stmt|;
-name|WireMessage
+name|GimpWireMessage
 name|msg
 decl_stmt|;
 name|GimpDrawable
@@ -737,7 +737,7 @@ block|}
 if|if
 condition|(
 operator|!
-name|wire_read_msg
+name|gimp_wire_read_msg
 argument_list|(
 name|plug_in
 operator|->
@@ -979,7 +979,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|wire_destroy
+name|gimp_wire_destroy
 argument_list|(
 operator|&
 name|msg
@@ -1289,7 +1289,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|wire_read_msg
+name|gimp_wire_read_msg
 argument_list|(
 name|plug_in
 operator|->
@@ -1343,7 +1343,7 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-name|wire_destroy
+name|gimp_wire_destroy
 argument_list|(
 operator|&
 name|msg

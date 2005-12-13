@@ -606,7 +606,7 @@ name|plug_in
 argument_list|)
 operator|||
 operator|!
-name|wire_flush
+name|gimp_wire_flush
 argument_list|(
 name|plug_in
 operator|->
@@ -1131,7 +1131,7 @@ name|plug_in
 argument_list|)
 operator|||
 operator|!
-name|wire_flush
+name|gimp_wire_flush
 argument_list|(
 name|plug_in
 operator|->

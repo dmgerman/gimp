@@ -24,7 +24,7 @@ name|PlugIn
 modifier|*
 name|plug_in
 parameter_list|,
-name|WireMessage
+name|GimpWireMessage
 modifier|*
 name|msg
 parameter_list|)
