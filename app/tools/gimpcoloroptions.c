@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bdfb3f40103
+DECL|enum|__anon292628430103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -75,18 +75,6 @@ name|PROP_AVERAGE_RADIUS
 block|}
 enum|;
 end_enum
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_color_options_class_init
-parameter_list|(
-name|GimpColorOptionsClass
-modifier|*
-name|klass
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_function_decl
 specifier|static
@@ -135,92 +123,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function
-name|GType
-DECL|function|gimp_color_options_get_type (void)
-name|gimp_color_options_get_type
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-specifier|static
-name|GType
-name|type
-init|=
-literal|0
-decl_stmt|;
-if|if
-condition|(
-operator|!
-name|type
-condition|)
-block|{
-specifier|static
-specifier|const
-name|GTypeInfo
-name|info
-init|=
-block|{
-sizeof|sizeof
-argument_list|(
-name|GimpColorOptionsClass
-argument_list|)
-block|,
-operator|(
-name|GBaseInitFunc
-operator|)
-name|NULL
-block|,
-operator|(
-name|GBaseFinalizeFunc
-operator|)
-name|NULL
-block|,
-operator|(
-name|GClassInitFunc
-operator|)
-name|gimp_color_options_class_init
-block|,
-name|NULL
-block|,
-comment|/* class_finalize */
-name|NULL
-block|,
-comment|/* class_data     */
-sizeof|sizeof
+begin_expr_stmt
+name|G_DEFINE_TYPE
 argument_list|(
 name|GimpColorOptions
-argument_list|)
-block|,
-literal|0
-block|,
-comment|/* n_preallocs    */
-operator|(
-name|GInstanceInitFunc
-operator|)
-name|NULL
-block|}
-decl_stmt|;
-name|type
-operator|=
-name|g_type_register_static
-argument_list|(
+argument_list|,
+name|gimp_color_options
+argument_list|,
 name|GIMP_TYPE_IMAGE_MAP_OPTIONS
-argument_list|,
-literal|"GimpColorOptions"
-argument_list|,
-operator|&
-name|info
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
-block|}
-return|return
-name|type
-return|;
-block|}
-end_function
+end_expr_stmt
 
 begin_function
 specifier|static
@@ -304,6 +217,19 @@ literal|0
 argument_list|)
 expr_stmt|;
 block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_color_options_init (GimpColorOptions * options)
+name|gimp_color_options_init
+parameter_list|(
+name|GimpColorOptions
+modifier|*
+name|options
+parameter_list|)
+block|{ }
 end_function
 
 begin_function

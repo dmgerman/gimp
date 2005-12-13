@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b3167f0103
+DECL|enum|__anon29f8d1eb0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -48,18 +48,6 @@ name|PROP_SETTINGS
 block|}
 enum|;
 end_enum
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_image_map_options_class_init
-parameter_list|(
-name|GimpImageMapOptionsClass
-modifier|*
-name|klass
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_function_decl
 specifier|static
@@ -120,101 +108,25 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_decl_stmt
-DECL|variable|parent_class
-specifier|static
-name|GimpToolOptionsClass
-modifier|*
-name|parent_class
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_function
-name|GType
-DECL|function|gimp_image_map_options_get_type (void)
-name|gimp_image_map_options_get_type
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-specifier|static
-name|GType
-name|type
-init|=
-literal|0
-decl_stmt|;
-if|if
-condition|(
-operator|!
-name|type
-condition|)
-block|{
-specifier|static
-specifier|const
-name|GTypeInfo
-name|info
-init|=
-block|{
-sizeof|sizeof
-argument_list|(
-name|GimpImageMapOptionsClass
-argument_list|)
-block|,
-operator|(
-name|GBaseInitFunc
-operator|)
-name|NULL
-block|,
-operator|(
-name|GBaseFinalizeFunc
-operator|)
-name|NULL
-block|,
-operator|(
-name|GClassInitFunc
-operator|)
-name|gimp_image_map_options_class_init
-block|,
-name|NULL
-block|,
-comment|/* class_finalize */
-name|NULL
-block|,
-comment|/* class_data     */
-sizeof|sizeof
+begin_expr_stmt
+name|G_DEFINE_TYPE
 argument_list|(
 name|GimpImageMapOptions
-argument_list|)
-block|,
-literal|0
-block|,
-comment|/* n_preallocs    */
-name|NULL
-comment|/* instance_init  */
-block|}
-decl_stmt|;
-name|type
-operator|=
-name|g_type_register_static
-argument_list|(
+argument_list|,
+name|gimp_image_map_options
+argument_list|,
 name|GIMP_TYPE_TOOL_OPTIONS
-argument_list|,
-literal|"GimpImageMapOptions"
-argument_list|,
-operator|&
-name|info
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
-block|}
-return|return
-name|type
-return|;
-block|}
-end_function
+end_expr_stmt
+
+begin_define
+DECL|macro|parent_class
+define|#
+directive|define
+name|parent_class
+value|gimp_image_map_options_parent_class
+end_define
 
 begin_function
 specifier|static
@@ -236,13 +148,6 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
-name|parent_class
-operator|=
-name|g_type_class_peek_parent
-argument_list|(
-name|klass
-argument_list|)
-expr_stmt|;
 name|object_class
 operator|->
 name|finalize
@@ -297,6 +202,19 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_image_map_options_init (GimpImageMapOptions * options)
+name|gimp_image_map_options_init
+parameter_list|(
+name|GimpImageMapOptions
+modifier|*
+name|options
+parameter_list|)
+block|{ }
 end_function
 
 begin_function

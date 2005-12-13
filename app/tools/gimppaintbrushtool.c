@@ -63,17 +63,17 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
-begin_function_decl
-specifier|static
-name|void
-name|gimp_paintbrush_tool_init
-parameter_list|(
+begin_expr_stmt
+name|G_DEFINE_TYPE
+argument_list|(
 name|GimpPaintbrushTool
-modifier|*
-name|tool
-parameter_list|)
-function_decl|;
-end_function_decl
+argument_list|,
+name|gimp_paintbrush_tool
+argument_list|,
+name|GIMP_TYPE_PAINT_TOOL
+argument_list|)
+expr_stmt|;
+end_expr_stmt
 
 begin_function
 name|void
@@ -134,88 +134,16 @@ block|}
 end_function
 
 begin_function
-name|GType
-DECL|function|gimp_paintbrush_tool_get_type (void)
-name|gimp_paintbrush_tool_get_type
-parameter_list|(
+specifier|static
 name|void
-parameter_list|)
-block|{
-specifier|static
-name|GType
-name|tool_type
-init|=
-literal|0
-decl_stmt|;
-if|if
-condition|(
-operator|!
-name|tool_type
-condition|)
-block|{
-specifier|static
-specifier|const
-name|GTypeInfo
-name|tool_info
-init|=
-block|{
-sizeof|sizeof
-argument_list|(
+DECL|function|gimp_paintbrush_tool_class_init (GimpPaintbrushToolClass * klass)
+name|gimp_paintbrush_tool_class_init
+parameter_list|(
 name|GimpPaintbrushToolClass
-argument_list|)
-block|,
-operator|(
-name|GBaseInitFunc
-operator|)
-name|NULL
-block|,
-operator|(
-name|GBaseFinalizeFunc
-operator|)
-name|NULL
-block|,
-name|NULL
-block|,
-comment|/* class_init     */
-name|NULL
-block|,
-comment|/* class_finalize */
-name|NULL
-block|,
-comment|/* class_data     */
-sizeof|sizeof
-argument_list|(
-name|GimpPaintbrushTool
-argument_list|)
-block|,
-literal|0
-block|,
-comment|/* n_preallocs    */
-operator|(
-name|GInstanceInitFunc
-operator|)
-name|gimp_paintbrush_tool_init
-block|,       }
-decl_stmt|;
-name|tool_type
-operator|=
-name|g_type_register_static
-argument_list|(
-name|GIMP_TYPE_PAINT_TOOL
-argument_list|,
-literal|"GimpPaintbrushTool"
-argument_list|,
-operator|&
-name|tool_info
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-block|}
-return|return
-name|tool_type
-return|;
-block|}
+modifier|*
+name|klass
+parameter_list|)
+block|{ }
 end_function
 
 begin_function

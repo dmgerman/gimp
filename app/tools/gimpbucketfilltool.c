@@ -111,44 +111,9 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
-begin_decl_stmt
-DECL|variable|parent_class
-specifier|static
-name|GimpToolClass
-modifier|*
-name|parent_class
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
 begin_comment
 comment|/*  local function prototypes  */
 end_comment
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_bucket_fill_tool_class_init
-parameter_list|(
-name|GimpBucketFillToolClass
-modifier|*
-name|klass
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_bucket_fill_tool_init
-parameter_list|(
-name|GimpBucketFillTool
-modifier|*
-name|bucket_fill_tool
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_function_decl
 specifier|static
@@ -250,9 +215,25 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/*  public functions  */
-end_comment
+begin_expr_stmt
+name|G_DEFINE_TYPE
+argument_list|(
+name|GimpBucketFillTool
+argument_list|,
+name|gimp_bucket_fill_tool
+argument_list|,
+name|GIMP_TYPE_TOOL
+argument_list|)
+expr_stmt|;
+end_expr_stmt
+
+begin_define
+DECL|macro|parent_class
+define|#
+directive|define
+name|parent_class
+value|gimp_bucket_fill_tool_parent_class
+end_define
 
 begin_function
 name|void
@@ -319,97 +300,6 @@ block|}
 end_function
 
 begin_function
-name|GType
-DECL|function|gimp_bucket_fill_tool_get_type (void)
-name|gimp_bucket_fill_tool_get_type
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-specifier|static
-name|GType
-name|tool_type
-init|=
-literal|0
-decl_stmt|;
-if|if
-condition|(
-operator|!
-name|tool_type
-condition|)
-block|{
-specifier|static
-specifier|const
-name|GTypeInfo
-name|tool_info
-init|=
-block|{
-sizeof|sizeof
-argument_list|(
-name|GimpBucketFillToolClass
-argument_list|)
-block|,
-operator|(
-name|GBaseInitFunc
-operator|)
-name|NULL
-block|,
-operator|(
-name|GBaseFinalizeFunc
-operator|)
-name|NULL
-block|,
-operator|(
-name|GClassInitFunc
-operator|)
-name|gimp_bucket_fill_tool_class_init
-block|,
-name|NULL
-block|,
-comment|/* class_finalize */
-name|NULL
-block|,
-comment|/* class_data     */
-sizeof|sizeof
-argument_list|(
-name|GimpBucketFillTool
-argument_list|)
-block|,
-literal|0
-block|,
-comment|/* n_preallocs    */
-operator|(
-name|GInstanceInitFunc
-operator|)
-name|gimp_bucket_fill_tool_init
-block|,       }
-decl_stmt|;
-name|tool_type
-operator|=
-name|g_type_register_static
-argument_list|(
-name|GIMP_TYPE_TOOL
-argument_list|,
-literal|"GimpBucketFillTool"
-argument_list|,
-operator|&
-name|tool_info
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-block|}
-return|return
-name|tool_type
-return|;
-block|}
-end_function
-
-begin_comment
-comment|/*  private functions  */
-end_comment
-
-begin_function
 specifier|static
 name|void
 DECL|function|gimp_bucket_fill_tool_class_init (GimpBucketFillToolClass * klass)
@@ -429,13 +319,6 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
-name|parent_class
-operator|=
-name|g_type_class_peek_parent
-argument_list|(
-name|klass
-argument_list|)
-expr_stmt|;
 name|tool_class
 operator|->
 name|button_press
