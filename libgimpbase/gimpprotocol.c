@@ -685,24 +685,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/* used by gimp.c:gimp_destroy_params() */
-end_comment
-
-begin_function_decl
-name|void
-name|gp_params_destroy
-parameter_list|(
-name|GPParam
-modifier|*
-name|params
-parameter_list|,
-name|gint
-name|nparams
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_function_decl
 specifier|static
 name|void
@@ -8387,12 +8369,7 @@ name|nparams
 parameter_list|)
 block|{
 name|gint
-name|count
-decl_stmt|;
-name|gint
 name|i
-decl_stmt|,
-name|j
 decl_stmt|;
 for|for
 control|(
@@ -8569,8 +8546,9 @@ name|GIMP_PDB_INT32
 operator|)
 condition|)
 block|{
+name|gint
 name|count
-operator|=
+init|=
 name|params
 index|[
 name|i
@@ -8581,7 +8559,10 @@ operator|.
 name|data
 operator|.
 name|d_int32
-expr_stmt|;
+decl_stmt|;
+name|gint
+name|j
+decl_stmt|;
 for|for
 control|(
 name|j

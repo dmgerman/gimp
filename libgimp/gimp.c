@@ -414,7 +414,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c3d7d630103
+DECL|enum|__anon2c0921b40103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -3771,18 +3771,6 @@ name|gint
 name|n_params
 parameter_list|)
 block|{
-specifier|extern
-name|void
-name|gp_params_destroy
-argument_list|(
-name|GPParam
-operator|*
-name|params
-argument_list|,
-name|gint
-name|n_params
-argument_list|)
-decl_stmt|;
 name|gp_params_destroy
 argument_list|(
 operator|(
