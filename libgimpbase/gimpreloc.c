@@ -79,7 +79,7 @@ file|"gimpreloc.h"
 end_include
 
 begin_comment
-comment|/** @internal  * Find the canonical filename of the executable. Returns the filename  * (which must be freed) or NULL on error. If the parameter 'error' is  * not NULL, the error code will be stored there, if an error occured.  */
+comment|/*  * Find the canonical filename of the executable. Returns the filename  * (which must be freed) or NULL on error. If the parameter 'error' is  * not NULL, the error code will be stored there, if an error occured.  */
 end_comment
 
 begin_function
@@ -282,7 +282,7 @@ index|]
 operator|=
 literal|'\0'
 expr_stmt|;
-comment|/* Check whether the symlink's target is also a symlink. 		 * We want to get the final target. */
+comment|/* Check whether the symlink's target is also a symlink.                  * We want to get the final target. */
 name|i
 operator|=
 name|stat
@@ -344,7 +344,7 @@ literal|1
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* readlink() or stat() failed; this can happen when the program is 	 * running in Valgrind 2.2. Read from /proc/self/maps as fallback. */
+comment|/* readlink() or stat() failed; this can happen when the program is          * running in Valgrind 2.2. Read from /proc/self/maps as fallback. */
 name|buf_size
 operator|=
 name|PATH_MAX
@@ -605,7 +605,7 @@ block|}
 end_function
 
 begin_comment
-comment|/** @internal  * Find the canonical filename of the executable which owns symbol.  * Returns a filename which must be freed, or NULL on error.  */
+comment|/*  * Find the canonical filename of the executable which owns symbol.  * Returns a filename which must be freed, or NULL on error.  */
 end_comment
 
 begin_function
@@ -959,7 +959,7 @@ name|end_addr
 argument_list|)
 condition|)
 continue|continue;
-comment|/* Transform the addresses into a string in the form of 0xdeadbeef, 		 * then transform that into a pointer. */
+comment|/* Transform the addresses into a string in the form of 0xdeadbeef,                  * then transform that into a pointer. */
 if|if
 condition|(
 name|address_string_len
@@ -1149,7 +1149,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/** Initialize the BinReloc library (for applications).  *  * This function must be called before using any other BinReloc functions.  * It attempts to locate the application's canonical filename.  *  * @note If you want to use BinReloc for a library, then you should call  *       _gimp_reloc_init_lib() instead.  * @note Initialization failure is not fatal. BinReloc functions will just  *       fallback to the supplied default path.  *  * @param error  If BinReloc failed to initialize, then the error report will  *               be stored in this variable. Set to NULL if you don't want an  *               error report. See the #GimpBinrelocInitError for a list of error  *               codes.  *  * @returns TRUE on success, FALSE if BinReloc failed to initialize.  */
+comment|/* Initialize the BinReloc library (for applications).  *  * This function must be called before using any other BinReloc functions.  * It attempts to locate the application's canonical filename.  *  * @note If you want to use BinReloc for a library, then you should call  *       _gimp_reloc_init_lib() instead.  * @note Initialization failure is not fatal. BinReloc functions will just  *       fallback to the supplied default path.  *  * @param error  If BinReloc failed to initialize, then the error report will  *               be stored in this variable. Set to NULL if you don't want an  *               error report. See the #GimpBinrelocInitError for a list of error  *               codes.  *  * @returns TRUE on success, FALSE if BinReloc failed to initialize.  */
 end_comment
 
 begin_function
@@ -1208,7 +1208,7 @@ block|}
 end_function
 
 begin_comment
-comment|/** Initialize the BinReloc library (for libraries).  *  * This function must be called before using any other BinReloc functions.  * It attempts to locate the calling library's canonical filename.  *  * @note The BinReloc source code MUST be included in your library, or this  *       function won't work correctly.  * @note Initialization failure is not fatal. BinReloc functions will just  *       fallback to the supplied default path.  *  * @returns TRUE on success, FALSE if a filename cannot be found.  */
+comment|/* Initialize the BinReloc library (for libraries).  *  * This function must be called before using any other BinReloc functions.  * It attempts to locate the calling library's canonical filename.  *  * @note The BinReloc source code MUST be included in your library, or this  *       function won't work correctly.  * @note Initialization failure is not fatal. BinReloc functions will just  *       fallback to the supplied default path.  *  * @returns TRUE on success, FALSE if a filename cannot be found.  */
 end_comment
 
 begin_function
@@ -1373,7 +1373,7 @@ block|}
 end_function
 
 begin_comment
-comment|/** Find the canonical filename of the current application.  *  * @param default_exe  A default filename which will be used as fallback.  * @returns A string containing the application's canonical filename,  *          which must be freed when no longer necessary. If BinReloc is  *          not initialized, or if the initialization function failed,  *          then a copy of default_exe will be returned. If default_exe  *          is NULL, then NULL will be returned.  */
+comment|/* Find the canonical filename of the current application.  *  * @param default_exe  A default filename which will be used as fallback.  * @returns A string containing the application's canonical filename,  *          which must be freed when no longer necessary. If BinReloc is  *          not initialized, or if the initialization function failed,  *          then a copy of default_exe will be returned. If default_exe  *          is NULL, then NULL will be returned.  */
 end_comment
 
 begin_function
@@ -1423,7 +1423,7 @@ block|}
 end_function
 
 begin_comment
-comment|/** Locate the directory in which the current application is installed.  *  * The prefix is generated by the following pseudo-code evaluation:  * \code  * dirname(exename)  * \endcode  *  * @param default_dir  A default directory which will used as fallback.  * @return A string containing the directory, which must be freed when no  *         longer necessary. If BinReloc is not initialized, or if the  *         initialization function failed, then a copy of default_dir  *         will be returned. If default_dir is NULL, then NULL will be  *         returned.  */
+comment|/* Locate the directory in which the current application is installed.  *  * The prefix is generated by the following pseudo-code evaluation:  * \code  * dirname(exename)  * \endcode  *  * @param default_dir  A default directory which will used as fallback.  * @return A string containing the directory, which must be freed when no  *         longer necessary. If BinReloc is not initialized, or if the  *         initialization function failed, then a copy of default_dir  *         will be returned. If default_dir is NULL, then NULL will be  *         returned.  */
 end_comment
 
 begin_function
@@ -1473,7 +1473,7 @@ block|}
 end_function
 
 begin_comment
-comment|/** Locate the prefix in which the current application is installed.  *  * The prefix is generated by the following pseudo-code evaluation:  * \code  * dirname(dirname(exename))  * \endcode  *  * @param default_prefix  A default prefix which will used as fallback.  * @return A string containing the prefix, which must be freed when no  *         longer necessary. If BinReloc is not initialized, or if the  *         initialization function failed, then a copy of default_prefix  *         will be returned. If default_prefix is NULL, then NULL will be  *         returned.  */
+comment|/* Locate the prefix in which the current application is installed.  *  * The prefix is generated by the following pseudo-code evaluation:  * \code  * dirname(dirname(exename))  * \endcode  *  * @param default_prefix  A default prefix which will used as fallback.  * @return A string containing the prefix, which must be freed when no  *         longer necessary. If BinReloc is not initialized, or if the  *         initialization function failed, then a copy of default_prefix  *         will be returned. If default_prefix is NULL, then NULL will be  *         returned.  */
 end_comment
 
 begin_function
@@ -1546,7 +1546,7 @@ block|}
 end_function
 
 begin_comment
-comment|/** Locate the application's binary folder.  *  * The path is generated by the following pseudo-code evaluation:  * \code  * prefix + "/bin"  * \endcode  *  * @param default_bin_dir  A default path which will used as fallback.  * @return A string containing the bin folder's path, which must be freed when  *         no longer necessary. If BinReloc is not initialized, or if the  *         initialization function failed, then a copy of default_bin_dir will  *         be returned. If default_bin_dir is NULL, then NULL will be returned.  */
+comment|/* Locate the application's binary folder.  *  * The path is generated by the following pseudo-code evaluation:  * \code  * prefix + "/bin"  * \endcode  *  * @param default_bin_dir  A default path which will used as fallback.  * @return A string containing the bin folder's path, which must be freed when  *         no longer necessary. If BinReloc is not initialized, or if the  *         initialization function failed, then a copy of default_bin_dir will  *         be returned. If default_bin_dir is NULL, then NULL will be returned.  */
 end_comment
 
 begin_function
@@ -1623,7 +1623,7 @@ block|}
 end_function
 
 begin_comment
-comment|/** Locate the application's data folder.  *  * The path is generated by the following pseudo-code evaluation:  * \code  * prefix + "/share/" + GIMP_PACKAGE + "/" + GIMP_DATA_VERSION  * \endcode  *  * @param default_data_dir  A default path which will used as fallback.  * @return A string containing the data folder's path, which must be freed when  *         no longer necessary. If BinReloc is not initialized, or if the  *         initialization function failed, then a copy of default_data_dir  *         will be returned. If default_data_dir is NULL, then NULL will be  *         returned.  */
+comment|/* Locate the application's data folder.  *  * The path is generated by the following pseudo-code evaluation:  * \code  * prefix + "/share/" + GIMP_PACKAGE + "/" + GIMP_DATA_VERSION  * \endcode  *  * @param default_data_dir  A default path which will used as fallback.  * @return A string containing the data folder's path, which must be freed when  *         no longer necessary. If BinReloc is not initialized, or if the  *         initialization function failed, then a copy of default_data_dir  *         will be returned. If default_data_dir is NULL, then NULL will be  *         returned.  */
 end_comment
 
 begin_function
@@ -1779,7 +1779,7 @@ block|}
 end_function
 
 begin_comment
-comment|/** Locate the application's localization folder.  *  * The path is generated by the following pseudo-code evaluation:  * \code  * prefix + "/share/locale"  * \endcode  *  * @param default_locale_dir  A default path which will used as fallback.  * @return A string containing the localization folder's path, which must be freed when  *         no longer necessary. If BinReloc is not initialized, or if the  *         initialization function failed, then a copy of default_locale_dir will be returned.  *         If default_locale_dir is NULL, then NULL will be returned.  */
+comment|/* Locate the application's localization folder.  *  * The path is generated by the following pseudo-code evaluation:  * \code  * prefix + "/share/locale"  * \endcode  *  * @param default_locale_dir  A default path which will used as fallback.  * @return A string containing the localization folder's path, which must be freed when  *         no longer necessary. If BinReloc is not initialized, or if the  *         initialization function failed, then a copy of default_locale_dir will be returned.  *         If default_locale_dir is NULL, then NULL will be returned.  */
 end_comment
 
 begin_function
@@ -1856,7 +1856,7 @@ block|}
 end_function
 
 begin_comment
-comment|/** Locate the application's library folder.  *  * The path is generated by the following pseudo-code evaluation:  * \code  * prefix + "/lib"  * \endcode  *  * @param default_lib_dir  A default path which will used as fallback.  * @return A string containing the library folder's path, which must be freed when  *         no longer necessary. If BinReloc is not initialized, or if the  *         initialization function failed, then a copy of default_lib_dir will be returned.  *         If default_lib_dir is NULL, then NULL will be returned.  */
+comment|/* Locate the application's library folder.  *  * The path is generated by the following pseudo-code evaluation:  * \code  * prefix + "/lib"  * \endcode  *  * @param default_lib_dir  A default path which will used as fallback.  * @return A string containing the library folder's path, which must be freed when  *         no longer necessary. If BinReloc is not initialized, or if the  *         initialization function failed, then a copy of default_lib_dir will be returned.  *         If default_lib_dir is NULL, then NULL will be returned.  */
 end_comment
 
 begin_function
@@ -1933,7 +1933,7 @@ block|}
 end_function
 
 begin_comment
-comment|/** Locate the application's libexec folder.  *  * The path is generated by the following pseudo-code evaluation:  * \code  * prefix + "/libexec"  * \endcode  *  * @param default_libexec_dir  A default path which will used as fallback.  * @return A string containing the libexec folder's path, which must be freed when  *         no longer necessary. If BinReloc is not initialized, or if the initialization  *         function failed, then a copy of default_libexec_dir will be returned.  *         If default_libexec_dir is NULL, then NULL will be returned.  */
+comment|/* Locate the application's libexec folder.  *  * The path is generated by the following pseudo-code evaluation:  * \code  * prefix + "/libexec"  * \endcode  *  * @param default_libexec_dir  A default path which will used as fallback.  * @return A string containing the libexec folder's path, which must be freed when  *         no longer necessary. If BinReloc is not initialized, or if the initialization  *         function failed, then a copy of default_libexec_dir will be returned.  *         If default_libexec_dir is NULL, then NULL will be returned.  */
 end_comment
 
 begin_function
@@ -2010,7 +2010,7 @@ block|}
 end_function
 
 begin_comment
-comment|/** Locate the application's configuration files folder.  *  * The path is generated by the following pseudo-code evaluation:  * \code  * prefix + "/etc/" + GIMP_PACKAGE + "/" + GIMP_SYSCONF_VERSION  * \endcode  *  * @param default_etc_dir  A default path which will used as fallback.  * @return A string containing the etc folder's path, which must be freed when  *         no longer necessary. If BinReloc is not initialized, or if the initialization  *         function failed, then a copy of default_etc_dir will be returned.  *         If default_etc_dir is NULL, then NULL will be returned.  */
+comment|/* Locate the application's configuration files folder.  *  * The path is generated by the following pseudo-code evaluation:  * \code  * prefix + "/etc/" + GIMP_PACKAGE + "/" + GIMP_SYSCONF_VERSION  * \endcode  *  * @param default_etc_dir  A default path which will used as fallback.  * @return A string containing the etc folder's path, which must be freed when  *         no longer necessary. If BinReloc is not initialized, or if the  *         initialization function failed, then a copy of default_etc_dir  *         will be returned. If default_etc_dir is NULL, then NULL will be  *         returned.  */
 end_comment
 
 begin_function

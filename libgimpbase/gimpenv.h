@@ -171,7 +171,7 @@ name|void
 name|gimp_env_init
 parameter_list|(
 name|gboolean
-name|library
+name|plug_in
 parameter_list|)
 function_decl|;
 end_function_decl
