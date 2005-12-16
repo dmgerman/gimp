@@ -105,7 +105,7 @@ name|GIMP_CLONE_ALIGN_NO
 block|,
 name|N_
 argument_list|(
-literal|"Non-aligned"
+literal|"None"
 argument_list|)
 block|,
 name|NULL
