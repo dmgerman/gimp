@@ -36,10 +36,10 @@ name|short
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon29d6320a010a
+DECL|union|__anon2c11e44a010a
 block|{
 struct|struct
-DECL|struct|__anon29d6320a0208
+DECL|struct|__anon2c11e44a0208
 block|{
 DECL|member|car
 name|struct
@@ -58,7 +58,7 @@ DECL|member|cons
 name|cons
 struct|;
 struct|struct
-DECL|struct|__anon29d6320a0308
+DECL|struct|__anon2c11e44a0308
 block|{
 DECL|member|data
 name|double
@@ -69,7 +69,7 @@ DECL|member|flonum
 name|flonum
 struct|;
 struct|struct
-DECL|struct|__anon29d6320a0408
+DECL|struct|__anon2c11e44a0408
 block|{
 DECL|member|pname
 name|char
@@ -87,7 +87,7 @@ DECL|member|symbol
 name|symbol
 struct|;
 struct|struct
-DECL|struct|__anon29d6320a0508
+DECL|struct|__anon2c11e44a0508
 block|{
 DECL|member|name
 name|char
@@ -111,7 +111,7 @@ DECL|member|subr0
 name|subr0
 struct|;
 struct|struct
-DECL|struct|__anon29d6320a0608
+DECL|struct|__anon2c11e44a0608
 block|{
 DECL|member|name
 name|char
@@ -137,7 +137,7 @@ DECL|member|subr1
 name|subr1
 struct|;
 struct|struct
-DECL|struct|__anon29d6320a0708
+DECL|struct|__anon2c11e44a0708
 block|{
 DECL|member|name
 name|char
@@ -167,7 +167,7 @@ DECL|member|subr2
 name|subr2
 struct|;
 struct|struct
-DECL|struct|__anon29d6320a0808
+DECL|struct|__anon2c11e44a0808
 block|{
 DECL|member|name
 name|char
@@ -201,7 +201,7 @@ DECL|member|subr3
 name|subr3
 struct|;
 struct|struct
-DECL|struct|__anon29d6320a0908
+DECL|struct|__anon2c11e44a0908
 block|{
 DECL|member|name
 name|char
@@ -239,7 +239,7 @@ DECL|member|subr4
 name|subr4
 struct|;
 struct|struct
-DECL|struct|__anon29d6320a0a08
+DECL|struct|__anon2c11e44a0a08
 block|{
 DECL|member|name
 name|char
@@ -281,7 +281,7 @@ DECL|member|subr5
 name|subr5
 struct|;
 struct|struct
-DECL|struct|__anon29d6320a0b08
+DECL|struct|__anon2c11e44a0b08
 block|{
 DECL|member|name
 name|char
@@ -313,7 +313,7 @@ DECL|member|subrm
 name|subrm
 struct|;
 struct|struct
-DECL|struct|__anon29d6320a0c08
+DECL|struct|__anon2c11e44a0c08
 block|{
 DECL|member|name
 name|char
@@ -340,7 +340,7 @@ DECL|member|subr
 name|subr
 struct|;
 struct|struct
-DECL|struct|__anon29d6320a0d08
+DECL|struct|__anon2c11e44a0d08
 block|{
 DECL|member|env
 name|struct
@@ -359,7 +359,7 @@ DECL|member|closure
 name|closure
 struct|;
 struct|struct
-DECL|struct|__anon29d6320a0e08
+DECL|struct|__anon2c11e44a0e08
 block|{
 DECL|member|dim
 name|long
@@ -375,7 +375,7 @@ DECL|member|long_array
 name|long_array
 struct|;
 struct|struct
-DECL|struct|__anon29d6320a0f08
+DECL|struct|__anon2c11e44a0f08
 block|{
 DECL|member|dim
 name|long
@@ -391,7 +391,7 @@ DECL|member|double_array
 name|double_array
 struct|;
 struct|struct
-DECL|struct|__anon29d6320a1008
+DECL|struct|__anon2c11e44a1008
 block|{
 DECL|member|dim
 name|long
@@ -407,24 +407,7 @@ DECL|member|string
 name|string
 struct|;
 struct|struct
-DECL|struct|__anon29d6320a1108
-block|{
-DECL|member|dim
-name|long
-name|dim
-decl_stmt|;
-DECL|member|data
-name|char
-modifier|*
-modifier|*
-name|data
-decl_stmt|;
-block|}
-DECL|member|string_array
-name|string_array
-struct|;
-struct|struct
-DECL|struct|__anon29d6320a1208
+DECL|struct|__anon2c11e44a1108
 block|{
 DECL|member|dim
 name|long
@@ -442,7 +425,7 @@ DECL|member|lisp_array
 name|lisp_array
 struct|;
 struct|struct
-DECL|struct|__anon29d6320a1308
+DECL|struct|__anon2c11e44a1208
 block|{
 DECL|member|f
 name|FILE
@@ -607,17 +590,6 @@ parameter_list|(
 name|x
 parameter_list|)
 value|((*x).storage_as.flonum.data)
-end_define
-
-begin_define
-DECL|macro|STRING (x)
-define|#
-directive|define
-name|STRING
-parameter_list|(
-name|x
-parameter_list|)
-value|((*x).storage_as.string.data)
 end_define
 
 begin_define
@@ -890,14 +862,6 @@ value|21
 end_define
 
 begin_define
-DECL|macro|tc_string_array
-define|#
-directive|define
-name|tc_string_array
-value|22
-end_define
-
-begin_define
 DECL|macro|FO_comment
 define|#
 directive|define
@@ -1019,28 +983,6 @@ value|TYPEP(x,tc_symbol)
 end_define
 
 begin_define
-DECL|macro|STRINGP (x)
-define|#
-directive|define
-name|STRINGP
-parameter_list|(
-name|x
-parameter_list|)
-value|TYPEP(x,tc_string)
-end_define
-
-begin_define
-DECL|macro|STRARYP (x)
-define|#
-directive|define
-name|STRARYP
-parameter_list|(
-name|x
-parameter_list|)
-value|TYPEP(x,tc_string_array)
-end_define
-
-begin_define
 DECL|macro|NCONSP (x)
 define|#
 directive|define
@@ -1071,28 +1013,6 @@ parameter_list|(
 name|x
 parameter_list|)
 value|NTYPEP(x,tc_symbol)
-end_define
-
-begin_define
-DECL|macro|NSTRINGP (x)
-define|#
-directive|define
-name|NSTRINGP
-parameter_list|(
-name|x
-parameter_list|)
-value|NTYPEP(x,tc_string)
-end_define
-
-begin_define
-DECL|macro|NSTRARYP (x)
-define|#
-directive|define
-name|NSTRARYP
-parameter_list|(
-name|x
-parameter_list|)
-value|NTYPEP(x,tc_string_array)
 end_define
 
 begin_define
