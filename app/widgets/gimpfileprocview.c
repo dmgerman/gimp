@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27986d830103
+DECL|enum|__anon2af9d3f70103
 block|{
 DECL|enumerator|COLUMN_PROC
 name|COLUMN_PROC
@@ -93,7 +93,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27986d830203
+DECL|enum|__anon2af9d3f70203
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -103,18 +103,6 @@ name|LAST_SIGNAL
 block|}
 enum|;
 end_enum
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_file_proc_view_class_init
-parameter_list|(
-name|GimpFileProcViewClass
-modifier|*
-name|klass
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_function_decl
 specifier|static
@@ -144,16 +132,25 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_decl_stmt
-DECL|variable|parent_class
-specifier|static
-name|GtkTreeViewClass
-modifier|*
+begin_expr_stmt
+name|G_DEFINE_TYPE
+argument_list|(
+name|GimpFileProcView
+argument_list|,
+name|gimp_file_proc_view
+argument_list|,
+name|GTK_TYPE_TREE_VIEW
+argument_list|)
+expr_stmt|;
+end_expr_stmt
+
+begin_define
+DECL|macro|parent_class
+define|#
+directive|define
 name|parent_class
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
+value|gimp_file_proc_view_parent_class
+end_define
 
 begin_decl_stmt
 DECL|variable|view_signals
@@ -169,87 +166,6 @@ literal|0
 block|}
 decl_stmt|;
 end_decl_stmt
-
-begin_function
-name|GType
-DECL|function|gimp_file_proc_view_get_type (void)
-name|gimp_file_proc_view_get_type
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-specifier|static
-name|GType
-name|view_type
-init|=
-literal|0
-decl_stmt|;
-if|if
-condition|(
-operator|!
-name|view_type
-condition|)
-block|{
-specifier|static
-specifier|const
-name|GTypeInfo
-name|view_info
-init|=
-block|{
-sizeof|sizeof
-argument_list|(
-name|GimpFileProcViewClass
-argument_list|)
-block|,
-name|NULL
-block|,
-comment|/* base_init      */
-name|NULL
-block|,
-comment|/* base_finalize  */
-operator|(
-name|GClassInitFunc
-operator|)
-name|gimp_file_proc_view_class_init
-block|,
-name|NULL
-block|,
-comment|/* class_finalize */
-name|NULL
-block|,
-comment|/* class_data     */
-sizeof|sizeof
-argument_list|(
-name|GimpFileProcView
-argument_list|)
-block|,
-literal|0
-block|,
-comment|/* n_preallocs    */
-name|NULL
-comment|/* instance_init  */
-block|}
-decl_stmt|;
-name|view_type
-operator|=
-name|g_type_register_static
-argument_list|(
-name|GTK_TYPE_TREE_VIEW
-argument_list|,
-literal|"GimpFileProcView"
-argument_list|,
-operator|&
-name|view_info
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-block|}
-return|return
-name|view_type
-return|;
-block|}
-end_function
 
 begin_function
 specifier|static
@@ -271,18 +187,17 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
-name|parent_class
-operator|=
-name|g_type_class_peek_parent
-argument_list|(
-name|klass
-argument_list|)
-expr_stmt|;
 name|object_class
 operator|->
 name|finalize
 operator|=
 name|gimp_file_proc_view_finalize
+expr_stmt|;
+name|klass
+operator|->
+name|changed
+operator|=
+name|NULL
 expr_stmt|;
 name|view_signals
 index|[
@@ -318,13 +233,20 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|klass
-operator|->
-name|changed
-operator|=
-name|NULL
-expr_stmt|;
 block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_file_proc_view_init (GimpFileProcView * view)
+name|gimp_file_proc_view_init
+parameter_list|(
+name|GimpFileProcView
+modifier|*
+name|view
+parameter_list|)
+block|{ }
 end_function
 
 begin_function

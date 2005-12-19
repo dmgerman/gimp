@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c77894b0103
+DECL|enum|__anon2c361dd60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -105,18 +105,6 @@ name|PROP_SPACING
 block|}
 enum|;
 end_enum
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_brush_select_class_init
-parameter_list|(
-name|GimpBrushSelectClass
-modifier|*
-name|klass
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_function_decl
 specifier|static
@@ -271,101 +259,25 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_decl_stmt
-DECL|variable|parent_class
-specifier|static
-name|GimpPdbDialogClass
-modifier|*
-name|parent_class
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_function
-name|GType
-DECL|function|gimp_brush_select_get_type (void)
-name|gimp_brush_select_get_type
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-specifier|static
-name|GType
-name|dialog_type
-init|=
-literal|0
-decl_stmt|;
-if|if
-condition|(
-operator|!
-name|dialog_type
-condition|)
-block|{
-specifier|static
-specifier|const
-name|GTypeInfo
-name|dialog_info
-init|=
-block|{
-sizeof|sizeof
-argument_list|(
-name|GimpBrushSelectClass
-argument_list|)
-block|,
-operator|(
-name|GBaseInitFunc
-operator|)
-name|NULL
-block|,
-operator|(
-name|GBaseFinalizeFunc
-operator|)
-name|NULL
-block|,
-operator|(
-name|GClassInitFunc
-operator|)
-name|gimp_brush_select_class_init
-block|,
-name|NULL
-block|,
-comment|/* class_finalize */
-name|NULL
-block|,
-comment|/* class_data     */
-sizeof|sizeof
+begin_expr_stmt
+name|G_DEFINE_TYPE
 argument_list|(
 name|GimpBrushSelect
-argument_list|)
-block|,
-literal|0
-block|,
-comment|/* n_preallocs    */
-name|NULL
-comment|/* instance_init  */
-block|}
-decl_stmt|;
-name|dialog_type
-operator|=
-name|g_type_register_static
-argument_list|(
+argument_list|,
+name|gimp_brush_select
+argument_list|,
 name|GIMP_TYPE_PDB_DIALOG
-argument_list|,
-literal|"GimpBrushSelect"
-argument_list|,
-operator|&
-name|dialog_info
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
-block|}
-return|return
-name|dialog_type
-return|;
-block|}
-end_function
+end_expr_stmt
+
+begin_define
+DECL|macro|parent_class
+define|#
+directive|define
+name|parent_class
+value|gimp_brush_select_parent_class
+end_define
 
 begin_function
 specifier|static
@@ -396,13 +308,6 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
-name|parent_class
-operator|=
-name|g_type_class_peek_parent
-argument_list|(
-name|klass
-argument_list|)
-expr_stmt|;
 name|object_class
 operator|->
 name|constructor
@@ -500,6 +405,19 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_brush_select_init (GimpBrushSelect * select)
+name|gimp_brush_select_init
+parameter_list|(
+name|GimpBrushSelect
+modifier|*
+name|select
+parameter_list|)
+block|{ }
 end_function
 
 begin_function

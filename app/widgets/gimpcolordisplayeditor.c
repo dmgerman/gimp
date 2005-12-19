@@ -63,7 +63,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon274310880103
+DECL|enum|__anon2b36a4770103
 block|{
 DECL|enumerator|SRC_COLUMN_NAME
 name|SRC_COLUMN_NAME
@@ -79,7 +79,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon274310880203
+DECL|enum|__anon2b36a4770203
 block|{
 DECL|enumerator|DEST_COLUMN_ENABLED
 name|DEST_COLUMN_ENABLED
@@ -95,30 +95,6 @@ name|N_DEST_COLUMNS
 block|}
 enum|;
 end_enum
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_color_display_editor_class_init
-parameter_list|(
-name|GimpColorDisplayEditorClass
-modifier|*
-name|klass
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_color_display_editor_init
-parameter_list|(
-name|GimpColorDisplayEditor
-modifier|*
-name|editor
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_function_decl
 specifier|static
@@ -363,99 +339,25 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_decl_stmt
-DECL|variable|parent_class
-specifier|static
-name|GtkVBoxClass
-modifier|*
-name|parent_class
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_function
-name|GType
-DECL|function|gimp_color_display_editor_get_type (void)
-name|gimp_color_display_editor_get_type
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-specifier|static
-name|GType
-name|type
-init|=
-literal|0
-decl_stmt|;
-if|if
-condition|(
-operator|!
-name|type
-condition|)
-block|{
-specifier|static
-specifier|const
-name|GTypeInfo
-name|editor_info
-init|=
-block|{
-sizeof|sizeof
-argument_list|(
-name|GimpColorDisplayEditorClass
-argument_list|)
-block|,
-name|NULL
-block|,
-comment|/* base_init */
-name|NULL
-block|,
-comment|/* base_finalize */
-operator|(
-name|GClassInitFunc
-operator|)
-name|gimp_color_display_editor_class_init
-block|,
-name|NULL
-block|,
-comment|/* class_finalize */
-name|NULL
-block|,
-comment|/* class_tool */
-sizeof|sizeof
+begin_expr_stmt
+name|G_DEFINE_TYPE
 argument_list|(
 name|GimpColorDisplayEditor
-argument_list|)
-block|,
-literal|0
-block|,
-comment|/* n_preallocs */
-operator|(
-name|GInstanceInitFunc
-operator|)
-name|gimp_color_display_editor_init
-block|,       }
-decl_stmt|;
-name|type
-operator|=
-name|g_type_register_static
-argument_list|(
+argument_list|,
+name|gimp_color_display_editor
+argument_list|,
 name|GTK_TYPE_VBOX
-argument_list|,
-literal|"GimpColorDisplayEditor"
-argument_list|,
-operator|&
-name|editor_info
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
-block|}
-return|return
-name|type
-return|;
-block|}
-end_function
+end_expr_stmt
+
+begin_define
+DECL|macro|parent_class
+define|#
+directive|define
+name|parent_class
+value|gimp_color_display_editor_parent_class
+end_define
 
 begin_function
 specifier|static
@@ -477,13 +379,6 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
-name|parent_class
-operator|=
-name|g_type_class_peek_parent
-argument_list|(
-name|klass
-argument_list|)
-expr_stmt|;
 name|object_class
 operator|->
 name|destroy

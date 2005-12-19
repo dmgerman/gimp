@@ -147,7 +147,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2c52d60103
+DECL|enum|__anon2ae6b9030103
 block|{
 DECL|enumerator|DOCKABLE_ADDED
 name|DOCKABLE_ADDED
@@ -163,30 +163,6 @@ name|LAST_SIGNAL
 block|}
 enum|;
 end_enum
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_dockbook_class_init
-parameter_list|(
-name|GimpDockbookClass
-modifier|*
-name|klass
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_dockbook_init
-parameter_list|(
-name|GimpDockbook
-modifier|*
-name|dockbook
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_function_decl
 specifier|static
@@ -370,16 +346,25 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_decl_stmt
-DECL|variable|parent_class
-specifier|static
-name|GtkNotebookClass
-modifier|*
+begin_expr_stmt
+name|G_DEFINE_TYPE
+argument_list|(
+name|GimpDockbook
+argument_list|,
+name|gimp_dockbook
+argument_list|,
+name|GTK_TYPE_NOTEBOOK
+argument_list|)
+expr_stmt|;
+end_expr_stmt
+
+begin_define
+DECL|macro|parent_class
+define|#
+directive|define
 name|parent_class
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
+value|gimp_dockbook_parent_class
+end_define
 
 begin_decl_stmt
 DECL|variable|dockbook_signals
@@ -410,89 +395,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-name|GType
-DECL|function|gimp_dockbook_get_type (void)
-name|gimp_dockbook_get_type
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-specifier|static
-name|GType
-name|dockbook_type
-init|=
-literal|0
-decl_stmt|;
-if|if
-condition|(
-operator|!
-name|dockbook_type
-condition|)
-block|{
-specifier|static
-specifier|const
-name|GTypeInfo
-name|dockbook_info
-init|=
-block|{
-sizeof|sizeof
-argument_list|(
-name|GimpDockbookClass
-argument_list|)
-block|,
-name|NULL
-block|,
-comment|/* base_init */
-name|NULL
-block|,
-comment|/* base_finalize */
-operator|(
-name|GClassInitFunc
-operator|)
-name|gimp_dockbook_class_init
-block|,
-name|NULL
-block|,
-comment|/* class_finalize */
-name|NULL
-block|,
-comment|/* class_data */
-sizeof|sizeof
-argument_list|(
-name|GimpDockbook
-argument_list|)
-block|,
-literal|0
-block|,
-comment|/* n_preallocs */
-operator|(
-name|GInstanceInitFunc
-operator|)
-name|gimp_dockbook_init
-block|,       }
-decl_stmt|;
-name|dockbook_type
-operator|=
-name|g_type_register_static
-argument_list|(
-name|GTK_TYPE_NOTEBOOK
-argument_list|,
-literal|"GimpDockbook"
-argument_list|,
-operator|&
-name|dockbook_info
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-block|}
-return|return
-name|dockbook_type
-return|;
-block|}
-end_function
-
-begin_function
 specifier|static
 name|void
 DECL|function|gimp_dockbook_class_init (GimpDockbookClass * klass)
@@ -521,13 +423,6 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
-name|parent_class
-operator|=
-name|g_type_class_peek_parent
-argument_list|(
-name|klass
-argument_list|)
-expr_stmt|;
 name|dockbook_signals
 index|[
 name|DOCKABLE_ADDED

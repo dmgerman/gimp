@@ -115,7 +115,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28da89910103
+DECL|enum|__anon273c86af0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -131,7 +131,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28da89910203
+DECL|enum|__anon273c86af0203
 block|{
 DECL|enumerator|BOOK_ADDED
 name|BOOK_ADDED
@@ -144,30 +144,6 @@ name|LAST_SIGNAL
 block|}
 enum|;
 end_enum
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_dock_class_init
-parameter_list|(
-name|GimpDockClass
-modifier|*
-name|klass
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_dock_init
-parameter_list|(
-name|GimpDock
-modifier|*
-name|dock
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_function_decl
 specifier|static
@@ -327,16 +303,25 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_decl_stmt
-DECL|variable|parent_class
-specifier|static
-name|GtkWindowClass
-modifier|*
+begin_expr_stmt
+name|G_DEFINE_TYPE
+argument_list|(
+name|GimpDock
+argument_list|,
+name|gimp_dock
+argument_list|,
+name|GTK_TYPE_WINDOW
+argument_list|)
+expr_stmt|;
+end_expr_stmt
+
+begin_define
+DECL|macro|parent_class
+define|#
+directive|define
 name|parent_class
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
+value|gimp_dock_parent_class
+end_define
 
 begin_decl_stmt
 DECL|variable|dock_signals
@@ -352,89 +337,6 @@ literal|0
 block|}
 decl_stmt|;
 end_decl_stmt
-
-begin_function
-name|GType
-DECL|function|gimp_dock_get_type (void)
-name|gimp_dock_get_type
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-specifier|static
-name|GType
-name|dock_type
-init|=
-literal|0
-decl_stmt|;
-if|if
-condition|(
-operator|!
-name|dock_type
-condition|)
-block|{
-specifier|static
-specifier|const
-name|GTypeInfo
-name|dock_info
-init|=
-block|{
-sizeof|sizeof
-argument_list|(
-name|GimpDockClass
-argument_list|)
-block|,
-name|NULL
-block|,
-comment|/* base_init */
-name|NULL
-block|,
-comment|/* base_finalize */
-operator|(
-name|GClassInitFunc
-operator|)
-name|gimp_dock_class_init
-block|,
-name|NULL
-block|,
-comment|/* class_finalize */
-name|NULL
-block|,
-comment|/* class_data */
-sizeof|sizeof
-argument_list|(
-name|GimpDock
-argument_list|)
-block|,
-literal|0
-block|,
-comment|/* n_preallocs */
-operator|(
-name|GInstanceInitFunc
-operator|)
-name|gimp_dock_init
-block|,       }
-decl_stmt|;
-name|dock_type
-operator|=
-name|g_type_register_static
-argument_list|(
-name|GTK_TYPE_WINDOW
-argument_list|,
-literal|"GimpDock"
-argument_list|,
-operator|&
-name|dock_info
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-block|}
-return|return
-name|dock_type
-return|;
-block|}
-end_function
 
 begin_function
 specifier|static
@@ -474,13 +376,6 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
-name|parent_class
-operator|=
-name|g_type_class_peek_parent
-argument_list|(
-name|klass
-argument_list|)
-expr_stmt|;
 name|dock_signals
 index|[
 name|BOOK_ADDED

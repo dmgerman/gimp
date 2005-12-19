@@ -39,87 +39,42 @@ directive|include
 file|"gimpmessagedialog.h"
 end_include
 
-begin_function
-name|GType
-DECL|function|gimp_message_dialog_get_type (void)
-name|gimp_message_dialog_get_type
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-specifier|static
-name|GType
-name|dialog_type
-init|=
-literal|0
-decl_stmt|;
-if|if
-condition|(
-operator|!
-name|dialog_type
-condition|)
-block|{
-specifier|static
-specifier|const
-name|GTypeInfo
-name|dialog_info
-init|=
-block|{
-sizeof|sizeof
-argument_list|(
-name|GimpMessageDialogClass
-argument_list|)
-block|,
-operator|(
-name|GBaseInitFunc
-operator|)
-name|NULL
-block|,
-operator|(
-name|GBaseFinalizeFunc
-operator|)
-name|NULL
-block|,
-name|NULL
-block|,
-comment|/* class_init     */
-name|NULL
-block|,
-comment|/* class_finalize */
-name|NULL
-block|,
-comment|/* class_data     */
-sizeof|sizeof
+begin_expr_stmt
+name|G_DEFINE_TYPE
 argument_list|(
 name|GimpMessageDialog
-argument_list|)
-block|,
-literal|0
-block|,
-comment|/* n_preallocs    */
-name|NULL
-comment|/* instance_init  */
-block|}
-decl_stmt|;
-name|dialog_type
-operator|=
-name|g_type_register_static
-argument_list|(
+argument_list|,
+name|gimp_message_dialog
+argument_list|,
 name|GIMP_TYPE_DIALOG
-argument_list|,
-literal|"GimpMessageDialog"
-argument_list|,
-operator|&
-name|dialog_info
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
-block|}
-return|return
-name|dialog_type
-return|;
-block|}
+end_expr_stmt
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_message_dialog_class_init (GimpMessageDialogClass * klass)
+name|gimp_message_dialog_class_init
+parameter_list|(
+name|GimpMessageDialogClass
+modifier|*
+name|klass
+parameter_list|)
+block|{ }
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_message_dialog_init (GimpMessageDialog * dialog)
+name|gimp_message_dialog_init
+parameter_list|(
+name|GimpMessageDialog
+modifier|*
+name|dialog
+parameter_list|)
+block|{ }
 end_function
 
 begin_comment

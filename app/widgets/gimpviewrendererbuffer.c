@@ -48,18 +48,6 @@ end_include
 begin_function_decl
 specifier|static
 name|void
-name|gimp_view_renderer_buffer_class_init
-parameter_list|(
-name|GimpViewRendererBufferClass
-modifier|*
-name|klass
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
 name|gimp_view_renderer_buffer_render
 parameter_list|(
 name|GimpViewRenderer
@@ -73,97 +61,25 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_decl_stmt
-DECL|variable|parent_class
-specifier|static
-name|GimpViewRendererClass
-modifier|*
-name|parent_class
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_function
-name|GType
-DECL|function|gimp_view_renderer_buffer_get_type (void)
-name|gimp_view_renderer_buffer_get_type
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-specifier|static
-name|GType
-name|renderer_type
-init|=
-literal|0
-decl_stmt|;
-if|if
-condition|(
-operator|!
-name|renderer_type
-condition|)
-block|{
-specifier|static
-specifier|const
-name|GTypeInfo
-name|renderer_info
-init|=
-block|{
-sizeof|sizeof
-argument_list|(
-name|GimpViewRendererBufferClass
-argument_list|)
-block|,
-name|NULL
-block|,
-comment|/* base_init */
-name|NULL
-block|,
-comment|/* base_finalize */
-operator|(
-name|GClassInitFunc
-operator|)
-name|gimp_view_renderer_buffer_class_init
-block|,
-name|NULL
-block|,
-comment|/* class_finalize */
-name|NULL
-block|,
-comment|/* class_data */
-sizeof|sizeof
+begin_expr_stmt
+name|G_DEFINE_TYPE
 argument_list|(
 name|GimpViewRendererBuffer
-argument_list|)
-block|,
-literal|0
-block|,
-comment|/* n_preallocs */
-name|NULL
-comment|/* instance_init */
-block|}
-decl_stmt|;
-name|renderer_type
-operator|=
-name|g_type_register_static
-argument_list|(
+argument_list|,
+name|gimp_view_renderer_buffer
+argument_list|,
 name|GIMP_TYPE_VIEW_RENDERER
-argument_list|,
-literal|"GimpViewRendererBuffer"
-argument_list|,
-operator|&
-name|renderer_info
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
-block|}
-return|return
-name|renderer_type
-return|;
-block|}
-end_function
+end_expr_stmt
+
+begin_define
+DECL|macro|parent_class
+define|#
+directive|define
+name|parent_class
+value|gimp_view_renderer_buffer_class_init
+end_define
 
 begin_function
 specifier|static
@@ -185,13 +101,6 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
-name|parent_class
-operator|=
-name|g_type_class_peek_parent
-argument_list|(
-name|klass
-argument_list|)
-expr_stmt|;
 name|renderer_class
 operator|->
 name|render
@@ -199,6 +108,19 @@ operator|=
 name|gimp_view_renderer_buffer_render
 expr_stmt|;
 block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_view_renderer_buffer_init (GimpViewRendererBuffer * renderer)
+name|gimp_view_renderer_buffer_init
+parameter_list|(
+name|GimpViewRendererBuffer
+modifier|*
+name|renderer
+parameter_list|)
+block|{ }
 end_function
 
 begin_function

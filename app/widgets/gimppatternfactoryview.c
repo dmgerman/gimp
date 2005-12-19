@@ -63,83 +63,42 @@ directive|include
 file|"gimpviewrenderer.h"
 end_include
 
-begin_function
-name|GType
-DECL|function|gimp_pattern_factory_view_get_type (void)
-name|gimp_pattern_factory_view_get_type
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-specifier|static
-name|GType
-name|view_type
-init|=
-literal|0
-decl_stmt|;
-if|if
-condition|(
-operator|!
-name|view_type
-condition|)
-block|{
-specifier|static
-specifier|const
-name|GTypeInfo
-name|view_info
-init|=
-block|{
-sizeof|sizeof
-argument_list|(
-name|GimpPatternFactoryViewClass
-argument_list|)
-block|,
-name|NULL
-block|,
-comment|/* base_init      */
-name|NULL
-block|,
-comment|/* base_finalize  */
-name|NULL
-block|,
-comment|/* class_init     */
-name|NULL
-block|,
-comment|/* class_finalize */
-name|NULL
-block|,
-comment|/* class_data     */
-sizeof|sizeof
+begin_expr_stmt
+name|G_DEFINE_TYPE
 argument_list|(
 name|GimpPatternFactoryView
-argument_list|)
-block|,
-literal|0
-block|,
-comment|/* n_preallocs    */
-name|NULL
-comment|/* instance_init  */
-block|}
-decl_stmt|;
-name|view_type
-operator|=
-name|g_type_register_static
-argument_list|(
+argument_list|,
+name|gimp_pattern_factory_view
+argument_list|,
 name|GIMP_TYPE_DATA_FACTORY_VIEW
-argument_list|,
-literal|"GimpPatternFactoryView"
-argument_list|,
-operator|&
-name|view_info
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
-block|}
-return|return
-name|view_type
-return|;
-block|}
+end_expr_stmt
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_pattern_factory_view_class_init (GimpPatternFactoryViewClass * klass)
+name|gimp_pattern_factory_view_class_init
+parameter_list|(
+name|GimpPatternFactoryViewClass
+modifier|*
+name|klass
+parameter_list|)
+block|{ }
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_pattern_factory_view_init (GimpPatternFactoryView * view)
+name|gimp_pattern_factory_view_init
+parameter_list|(
+name|GimpPatternFactoryView
+modifier|*
+name|view
+parameter_list|)
+block|{ }
 end_function
 
 begin_function
