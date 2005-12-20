@@ -58,7 +58,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b56d3ec0108
+DECL|struct|__anon2a2363ef0108
 block|{
 DECL|member|hscr_policy
 name|GtkPolicyType
@@ -2974,16 +2974,6 @@ case|case
 name|GDK_MOTION_NOTIFY
 case|:
 block|{
-name|GdkEventMotion
-modifier|*
-name|motion_event
-init|=
-operator|(
-name|GdkEventMotion
-operator|*
-operator|)
-name|event
-decl_stmt|;
 name|GtkAdjustment
 modifier|*
 name|hadj
