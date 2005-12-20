@@ -36,18 +36,6 @@ end_include
 begin_function_decl
 specifier|static
 name|void
-name|gimp_enum_store_class_init
-parameter_list|(
-name|GimpEnumStoreClass
-modifier|*
-name|klass
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
 name|gimp_enum_store_finalize
 parameter_list|(
 name|GObject
@@ -73,97 +61,25 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_decl_stmt
-DECL|variable|parent_class
-specifier|static
-name|GimpEnumStoreClass
-modifier|*
-name|parent_class
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_function
-name|GType
-DECL|function|gimp_enum_store_get_type (void)
-name|gimp_enum_store_get_type
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-specifier|static
-name|GType
-name|enum_store_type
-init|=
-literal|0
-decl_stmt|;
-if|if
-condition|(
-operator|!
-name|enum_store_type
-condition|)
-block|{
-specifier|static
-specifier|const
-name|GTypeInfo
-name|enum_store_info
-init|=
-block|{
-sizeof|sizeof
-argument_list|(
-name|GimpEnumStoreClass
-argument_list|)
-block|,
-name|NULL
-block|,
-comment|/* base_init      */
-name|NULL
-block|,
-comment|/* base_finalize  */
-operator|(
-name|GClassInitFunc
-operator|)
-name|gimp_enum_store_class_init
-block|,
-name|NULL
-block|,
-comment|/* class_finalize */
-name|NULL
-block|,
-comment|/* class_data     */
-sizeof|sizeof
+begin_expr_stmt
+name|G_DEFINE_TYPE
 argument_list|(
 name|GimpEnumStore
-argument_list|)
-block|,
-literal|0
-block|,
-comment|/* n_preallocs    */
-name|NULL
-comment|/* instance_init  */
-block|}
-decl_stmt|;
-name|enum_store_type
-operator|=
-name|g_type_register_static
-argument_list|(
+argument_list|,
+name|gimp_enum_store
+argument_list|,
 name|GIMP_TYPE_INT_STORE
-argument_list|,
-literal|"GimpEnumStore"
-argument_list|,
-operator|&
-name|enum_store_info
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
-block|}
-return|return
-name|enum_store_type
-return|;
-block|}
-end_function
+end_expr_stmt
+
+begin_define
+DECL|macro|parent_class
+define|#
+directive|define
+name|parent_class
+value|gimp_enum_store_parent_class
+end_define
 
 begin_function
 specifier|static
@@ -185,13 +101,6 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
-name|parent_class
-operator|=
-name|g_type_class_peek_parent
-argument_list|(
-name|klass
-argument_list|)
-expr_stmt|;
 name|object_class
 operator|->
 name|finalize
@@ -199,6 +108,19 @@ operator|=
 name|gimp_enum_store_finalize
 expr_stmt|;
 block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_enum_store_init (GimpEnumStore * store)
+name|gimp_enum_store_init
+parameter_list|(
+name|GimpEnumStore
+modifier|*
+name|store
+parameter_list|)
+block|{ }
 end_function
 
 begin_function

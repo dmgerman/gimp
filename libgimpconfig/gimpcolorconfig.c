@@ -158,7 +158,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7e78310103
+DECL|enum|__anon2967fda90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -198,18 +198,6 @@ directive|endif
 block|}
 enum|;
 end_enum
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_color_config_class_init
-parameter_list|(
-name|GimpColorConfigClass
-modifier|*
-name|klass
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_function_decl
 specifier|static
@@ -270,131 +258,39 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_decl_stmt
-DECL|variable|parent_class
-specifier|static
-name|GObjectClass
-modifier|*
-name|parent_class
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_function
-name|GType
-DECL|function|gimp_color_config_get_type (void)
-name|gimp_color_config_get_type
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-specifier|static
-name|GType
-name|config_type
-init|=
-literal|0
-decl_stmt|;
-if|if
-condition|(
-operator|!
-name|config_type
-condition|)
-block|{
-specifier|static
-specifier|const
-name|GTypeInfo
-name|config_info
-init|=
-block|{
-sizeof|sizeof
-argument_list|(
-name|GimpColorConfigClass
-argument_list|)
-block|,
-name|NULL
-block|,
-comment|/* base_init      */
-name|NULL
-block|,
-comment|/* base_finalize  */
-operator|(
-name|GClassInitFunc
-operator|)
-name|gimp_color_config_class_init
-block|,
-name|NULL
-block|,
-comment|/* class_finalize */
-name|NULL
-block|,
-comment|/* class_data     */
-sizeof|sizeof
+begin_expr_stmt
+name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
 name|GimpColorConfig
-argument_list|)
-block|,
-literal|0
-block|,
-comment|/* n_preallocs    */
-name|NULL
-comment|/* instance_init  */
-block|}
-decl_stmt|;
-specifier|static
-specifier|const
-name|GInterfaceInfo
-name|config_iface_info
-init|=
-block|{
-name|NULL
-block|,
-comment|/* iface_init     */
-name|NULL
-block|,
-comment|/* iface_finalize */
-name|NULL
-comment|/* iface_data     */
-block|}
-decl_stmt|;
-name|config_type
-operator|=
-name|g_type_register_static
-argument_list|(
+argument_list|,
+name|gimp_color_config
+argument_list|,
 name|G_TYPE_OBJECT
 argument_list|,
-literal|"GimpColorConfig"
-argument_list|,
-operator|&
-name|config_info
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|g_type_add_interface_static
+name|G_IMPLEMENT_INTERFACE
 argument_list|(
-name|config_type
+argument|GIMP_TYPE_CONFIG
 argument_list|,
-name|GIMP_TYPE_CONFIG
-argument_list|,
-operator|&
-name|config_iface_info
+argument|NULL
 argument_list|)
-expr_stmt|;
 name|gimp_type_set_translation_domain
 argument_list|(
-name|config_type
+name|g_define_type_id
 argument_list|,
 name|GETTEXT_PACKAGE
 literal|"-libgimp"
 argument_list|)
+argument_list|)
 expr_stmt|;
-block|}
-return|return
-name|config_type
-return|;
-block|}
-end_function
+end_expr_stmt
+
+begin_define
+DECL|macro|parent_class
+define|#
+directive|define
+name|parent_class
+value|gimp_color_config_parent_class
+end_define
 
 begin_function
 specifier|static
@@ -410,21 +306,12 @@ block|{
 name|GObjectClass
 modifier|*
 name|object_class
-decl_stmt|;
-name|parent_class
-operator|=
-name|g_type_class_peek_parent
-argument_list|(
-name|klass
-argument_list|)
-expr_stmt|;
-name|object_class
-operator|=
+init|=
 name|G_OBJECT_CLASS
 argument_list|(
 name|klass
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|object_class
 operator|->
 name|finalize
@@ -599,6 +486,19 @@ block|GIMP_CONFIG_INSTALL_PROP_ENUM (object_class, PROP_OPEN_BEHAVIOUR_NO_PROFIL
 endif|#
 directive|endif
 block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_color_config_init (GimpColorConfig * config)
+name|gimp_color_config_init
+parameter_list|(
+name|GimpColorConfig
+modifier|*
+name|config
+parameter_list|)
+block|{ }
 end_function
 
 begin_function

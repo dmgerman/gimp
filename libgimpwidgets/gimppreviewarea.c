@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1bf9b90103
+DECL|enum|__anon276701830103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -77,29 +77,21 @@ name|DEFAULT_CHECK_TYPE
 value|GIMP_CHECK_TYPE_GRAY_CHECKS
 end_define
 
-begin_function_decl
-specifier|static
-name|void
-name|gimp_preview_area_class_init
+begin_define
+DECL|macro|CHECK_COLOR (area,row,col)
+define|#
+directive|define
+name|CHECK_COLOR
 parameter_list|(
-name|GimpPreviewAreaClass
-modifier|*
-name|klass
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_preview_area_init
-parameter_list|(
-name|GimpPreviewArea
-modifier|*
 name|area
+parameter_list|,
+name|row
+parameter_list|,
+name|col
 parameter_list|)
-function_decl|;
-end_function_decl
+define|\
+value|(((((area)->offset_y + (row))& size) ^  \     (((area)->offset_x + (col))& size)) ? dark : light)
+end_define
 
 begin_function_decl
 specifier|static
@@ -227,115 +219,25 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_decl_stmt
-DECL|variable|parent_class
-specifier|static
-name|GtkDrawingAreaClass
-modifier|*
-name|parent_class
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_define
-DECL|macro|CHECK_COLOR (area,row,col)
-define|#
-directive|define
-name|CHECK_COLOR
-parameter_list|(
-name|area
-parameter_list|,
-name|row
-parameter_list|,
-name|col
-parameter_list|)
-define|\
-value|(((((area)->offset_y + (row))& size) ^  \     (((area)->offset_x + (col))& size)) ? dark : light)
-end_define
-
-begin_function
-name|GType
-DECL|function|gimp_preview_area_get_type (void)
-name|gimp_preview_area_get_type
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-specifier|static
-name|GType
-name|view_type
-init|=
-literal|0
-decl_stmt|;
-if|if
-condition|(
-operator|!
-name|view_type
-condition|)
-block|{
-specifier|static
-specifier|const
-name|GTypeInfo
-name|view_info
-init|=
-block|{
-sizeof|sizeof
-argument_list|(
-name|GimpPreviewAreaClass
-argument_list|)
-block|,
-name|NULL
-block|,
-comment|/* base_init */
-name|NULL
-block|,
-comment|/* base_finalize */
-operator|(
-name|GClassInitFunc
-operator|)
-name|gimp_preview_area_class_init
-block|,
-name|NULL
-block|,
-comment|/* class_finalize */
-name|NULL
-block|,
-comment|/* class_data */
-sizeof|sizeof
+begin_expr_stmt
+name|G_DEFINE_TYPE
 argument_list|(
 name|GimpPreviewArea
-argument_list|)
-block|,
-literal|0
-block|,
-comment|/* n_preallocs */
-operator|(
-name|GInstanceInitFunc
-operator|)
-name|gimp_preview_area_init
-block|,       }
-decl_stmt|;
-name|view_type
-operator|=
-name|g_type_register_static
-argument_list|(
+argument_list|,
+name|gimp_preview_area
+argument_list|,
 name|GTK_TYPE_DRAWING_AREA
-argument_list|,
-literal|"GimpPreviewArea"
-argument_list|,
-operator|&
-name|view_info
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
-block|}
-return|return
-name|view_type
-return|;
-block|}
-end_function
+end_expr_stmt
+
+begin_define
+DECL|macro|parent_class
+define|#
+directive|define
+name|parent_class
+value|gimp_preview_area_parent_class
+end_define
 
 begin_function
 specifier|static
@@ -366,13 +268,6 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
-name|parent_class
-operator|=
-name|g_type_class_peek_parent
-argument_list|(
-name|klass
-argument_list|)
-expr_stmt|;
 name|object_class
 operator|->
 name|finalize

@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c97a8a0103
+DECL|enum|__anon29322a6b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -66,7 +66,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c97a8a0203
+DECL|enum|__anon29322a6b0203
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -76,18 +76,6 @@ name|LAST_SIGNAL
 block|}
 enum|;
 end_enum
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_color_display_class_init
-parameter_list|(
-name|GimpColorDisplayClass
-modifier|*
-name|klass
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_function_decl
 specifier|static
@@ -136,16 +124,32 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_decl_stmt
-DECL|variable|parent_class
-specifier|static
-name|GObjectClass
-modifier|*
-name|parent_class
-init|=
+begin_expr_stmt
+name|G_DEFINE_TYPE_WITH_CODE
+argument_list|(
+name|GimpColorDisplay
+argument_list|,
+name|gimp_color_display
+argument_list|,
+name|G_TYPE_OBJECT
+argument_list|,
+name|G_IMPLEMENT_INTERFACE
+argument_list|(
+name|GIMP_TYPE_CONFIG
+argument_list|,
 name|NULL
-decl_stmt|;
-end_decl_stmt
+argument_list|)
+argument_list|)
+expr_stmt|;
+end_expr_stmt
+
+begin_define
+DECL|macro|parent_class
+define|#
+directive|define
+name|parent_class
+value|gimp_color_display_parent_class
+end_define
 
 begin_decl_stmt
 DECL|variable|display_signals
@@ -161,117 +165,6 @@ literal|0
 block|}
 decl_stmt|;
 end_decl_stmt
-
-begin_function
-name|GType
-DECL|function|gimp_color_display_get_type (void)
-name|gimp_color_display_get_type
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-specifier|static
-name|GType
-name|display_type
-init|=
-literal|0
-decl_stmt|;
-if|if
-condition|(
-operator|!
-name|display_type
-condition|)
-block|{
-specifier|static
-specifier|const
-name|GTypeInfo
-name|display_info
-init|=
-block|{
-sizeof|sizeof
-argument_list|(
-name|GimpColorDisplayClass
-argument_list|)
-block|,
-operator|(
-name|GBaseInitFunc
-operator|)
-name|NULL
-block|,
-operator|(
-name|GBaseFinalizeFunc
-operator|)
-name|NULL
-block|,
-operator|(
-name|GClassInitFunc
-operator|)
-name|gimp_color_display_class_init
-block|,
-name|NULL
-block|,
-comment|/* class_finalize */
-name|NULL
-block|,
-comment|/* class_data     */
-sizeof|sizeof
-argument_list|(
-name|GimpColorDisplay
-argument_list|)
-block|,
-literal|0
-block|,
-comment|/* n_preallocs    */
-name|NULL
-comment|/* instance_init  */
-block|}
-decl_stmt|;
-specifier|static
-specifier|const
-name|GInterfaceInfo
-name|display_iface_info
-init|=
-block|{
-name|NULL
-block|,
-comment|/* iface_init     */
-name|NULL
-block|,
-comment|/* iface_finalize */
-name|NULL
-comment|/* iface_data     */
-block|}
-decl_stmt|;
-name|display_type
-operator|=
-name|g_type_register_static
-argument_list|(
-name|G_TYPE_OBJECT
-argument_list|,
-literal|"GimpColorDisplay"
-argument_list|,
-operator|&
-name|display_info
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|g_type_add_interface_static
-argument_list|(
-name|display_type
-argument_list|,
-name|GIMP_TYPE_CONFIG
-argument_list|,
-operator|&
-name|display_iface_info
-argument_list|)
-expr_stmt|;
-block|}
-return|return
-name|display_type
-return|;
-block|}
-end_function
 
 begin_function
 specifier|static
@@ -293,13 +186,6 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
-name|parent_class
-operator|=
-name|g_type_class_peek_parent
-argument_list|(
-name|klass
-argument_list|)
-expr_stmt|;
 name|object_class
 operator|->
 name|set_property
@@ -423,6 +309,19 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_color_display_init (GimpColorDisplay * display)
+name|gimp_color_display_init
+parameter_list|(
+name|GimpColorDisplay
+modifier|*
+name|display
+parameter_list|)
+block|{ }
 end_function
 
 begin_function

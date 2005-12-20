@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3d2df50103
+DECL|enum|__anon2c8a960e0103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -67,30 +67,6 @@ end_enum
 begin_comment
 comment|/*  #define DUMP_DB 1  */
 end_comment
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_module_db_class_init
-parameter_list|(
-name|GimpModuleDBClass
-modifier|*
-name|klass
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_module_db_init
-parameter_list|(
-name|GimpModuleDB
-modifier|*
-name|db
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_function_decl
 specifier|static
@@ -207,16 +183,25 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_decl_stmt
-DECL|variable|parent_class
-specifier|static
-name|GObjectClass
-modifier|*
+begin_expr_stmt
+name|G_DEFINE_TYPE
+argument_list|(
+name|GimpModuleDB
+argument_list|,
+name|gimp_module_db
+argument_list|,
+name|G_TYPE_OBJECT
+argument_list|)
+expr_stmt|;
+end_expr_stmt
+
+begin_define
+DECL|macro|parent_class
+define|#
+directive|define
 name|parent_class
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
+value|gimp_module_db_parent_class
+end_define
 
 begin_decl_stmt
 DECL|variable|db_signals
@@ -232,89 +217,6 @@ literal|0
 block|}
 decl_stmt|;
 end_decl_stmt
-
-begin_function
-name|GType
-DECL|function|gimp_module_db_get_type (void)
-name|gimp_module_db_get_type
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-specifier|static
-name|GType
-name|db_type
-init|=
-literal|0
-decl_stmt|;
-if|if
-condition|(
-operator|!
-name|db_type
-condition|)
-block|{
-specifier|static
-specifier|const
-name|GTypeInfo
-name|db_info
-init|=
-block|{
-sizeof|sizeof
-argument_list|(
-name|GimpModuleDBClass
-argument_list|)
-block|,
-name|NULL
-block|,
-comment|/* base_init */
-name|NULL
-block|,
-comment|/* base_finalize */
-operator|(
-name|GClassInitFunc
-operator|)
-name|gimp_module_db_class_init
-block|,
-name|NULL
-block|,
-comment|/* class_finalize */
-name|NULL
-block|,
-comment|/* class_data */
-sizeof|sizeof
-argument_list|(
-name|GimpModuleDB
-argument_list|)
-block|,
-literal|0
-block|,
-comment|/* n_preallocs */
-operator|(
-name|GInstanceInitFunc
-operator|)
-name|gimp_module_db_init
-block|,       }
-decl_stmt|;
-name|db_type
-operator|=
-name|g_type_register_static
-argument_list|(
-name|G_TYPE_OBJECT
-argument_list|,
-literal|"GimpModuleDB"
-argument_list|,
-operator|&
-name|db_info
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-block|}
-return|return
-name|db_type
-return|;
-block|}
-end_function
 
 begin_function
 specifier|static
@@ -336,13 +238,6 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
-name|parent_class
-operator|=
-name|g_type_class_peek_parent
-argument_list|(
-name|klass
-argument_list|)
-expr_stmt|;
 name|db_signals
 index|[
 name|ADD
