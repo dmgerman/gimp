@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af9d3f70103
+DECL|enum|__anon275dee740103
 block|{
 DECL|enumerator|COLUMN_PROC
 name|COLUMN_PROC
@@ -75,12 +75,6 @@ name|COLUMN_LABEL
 block|,
 DECL|enumerator|COLUMN_EXTENSIONS
 name|COLUMN_EXTENSIONS
-block|,
-DECL|enumerator|COLUMN_STOCK_ID
-name|COLUMN_STOCK_ID
-block|,
-DECL|enumerator|COLUMN_PIXBUF
-name|COLUMN_PIXBUF
 block|,
 DECL|enumerator|COLUMN_HELP_ID
 name|COLUMN_HELP_ID
@@ -93,7 +87,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af9d3f70203
+DECL|enum|__anon275dee740203
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -383,23 +377,17 @@ name|NUM_COLUMNS
 argument_list|,
 name|G_TYPE_POINTER
 argument_list|,
-comment|/* COLUMN_PROC       */
+comment|/*  COLUMN_PROC        */
 name|G_TYPE_STRING
 argument_list|,
-comment|/* COLUMN_LABEL      */
+comment|/*  COLUMN_LABEL       */
 name|G_TYPE_STRING
 argument_list|,
-comment|/* COLUMN_EXTENSIONS */
-name|G_TYPE_STRING
-argument_list|,
-comment|/* COLUMN_STOCK_ID   */
-name|GDK_TYPE_PIXBUF
-argument_list|,
-comment|/* COLUMN_PIXBUF     */
+comment|/*  COLUMN_EXTENSIONS  */
 name|G_TYPE_STRING
 argument_list|)
 expr_stmt|;
-comment|/* COLUMN_HELP_ID    */
+comment|/*  COLUMN_HELP_ID     */
 name|view
 operator|=
 name|g_object_new
@@ -473,15 +461,6 @@ name|gchar
 modifier|*
 name|help_id
 decl_stmt|;
-specifier|const
-name|gchar
-modifier|*
-name|stock_id
-decl_stmt|;
-name|GdkPixbuf
-modifier|*
-name|pixbuf
-decl_stmt|;
 name|GSList
 modifier|*
 name|list2
@@ -530,20 +509,6 @@ argument_list|,
 name|help_domain
 argument_list|)
 expr_stmt|;
-name|stock_id
-operator|=
-name|plug_in_proc_def_get_stock_id
-argument_list|(
-name|proc
-argument_list|)
-expr_stmt|;
-name|pixbuf
-operator|=
-name|plug_in_proc_def_get_pixbuf
-argument_list|(
-name|proc
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|label
@@ -578,14 +543,6 @@ name|proc
 operator|->
 name|extensions
 argument_list|,
-name|COLUMN_STOCK_ID
-argument_list|,
-name|stock_id
-argument_list|,
-name|COLUMN_PIXBUF
-argument_list|,
-name|pixbuf
-argument_list|,
 name|COLUMN_HELP_ID
 argument_list|,
 name|help_id
@@ -603,15 +560,6 @@ block|}
 name|g_free
 argument_list|(
 name|help_id
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|pixbuf
-condition|)
-name|g_object_unref
-argument_list|(
-name|pixbuf
 argument_list|)
 expr_stmt|;
 for|for
@@ -748,37 +696,6 @@ argument_list|(
 name|column
 argument_list|,
 name|TRUE
-argument_list|)
-expr_stmt|;
-name|cell
-operator|=
-name|gtk_cell_renderer_pixbuf_new
-argument_list|()
-expr_stmt|;
-name|gtk_tree_view_column_pack_start
-argument_list|(
-name|column
-argument_list|,
-name|cell
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
-name|gtk_tree_view_column_set_attributes
-argument_list|(
-name|column
-argument_list|,
-name|cell
-argument_list|,
-literal|"stock-id"
-argument_list|,
-name|COLUMN_STOCK_ID
-argument_list|,
-literal|"pixbuf"
-argument_list|,
-name|COLUMN_PIXBUF
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|cell
