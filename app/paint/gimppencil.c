@@ -75,10 +75,14 @@ name|GIMP_TYPE_PENCIL
 argument_list|,
 name|GIMP_TYPE_PENCIL_OPTIONS
 argument_list|,
+literal|"gimp-pencil"
+argument_list|,
 name|_
 argument_list|(
 literal|"Pencil"
 argument_list|)
+argument_list|,
+literal|"gimp-tool-pencil"
 argument_list|)
 expr_stmt|;
 block|}

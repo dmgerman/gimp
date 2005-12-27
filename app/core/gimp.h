@@ -182,6 +182,11 @@ name|GimpContainer
 modifier|*
 name|paint_info_list
 decl_stmt|;
+DECL|member|standard_paint_info
+name|GimpPaintInfo
+modifier|*
+name|standard_paint_info
+decl_stmt|;
 DECL|member|module_db
 name|GimpModuleDB
 modifier|*

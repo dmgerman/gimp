@@ -200,10 +200,14 @@ name|GIMP_TYPE_AIRBRUSH
 argument_list|,
 name|GIMP_TYPE_AIRBRUSH_OPTIONS
 argument_list|,
+literal|"gimp-airbrush"
+argument_list|,
 name|_
 argument_list|(
 literal|"Airbrush"
 argument_list|)
+argument_list|,
+literal|"gimp-tool-airbrush"
 argument_list|)
 expr_stmt|;
 block|}

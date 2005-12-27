@@ -157,10 +157,14 @@ name|GIMP_TYPE_ERASER
 argument_list|,
 name|GIMP_TYPE_ERASER_OPTIONS
 argument_list|,
+literal|"gimp-eraser"
+argument_list|,
 name|_
 argument_list|(
 literal|"Eraser"
 argument_list|)
+argument_list|,
+literal|"gimp-tool-eraser"
 argument_list|)
 expr_stmt|;
 block|}

@@ -161,10 +161,14 @@ name|GIMP_TYPE_PAINTBRUSH
 argument_list|,
 name|GIMP_TYPE_PAINT_OPTIONS
 argument_list|,
+literal|"gimp-paintbrush"
+argument_list|,
 name|_
 argument_list|(
 literal|"Paintbrush"
 argument_list|)
+argument_list|,
+literal|"gimp-tool-paintbrush"
 argument_list|)
 expr_stmt|;
 block|}

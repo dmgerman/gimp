@@ -85,7 +85,17 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
+name|identifier
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
 name|blurb
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|stock_id
 parameter_list|)
 function_decl|;
 end_typedef

@@ -243,10 +243,14 @@ name|GIMP_TYPE_SMUDGE
 argument_list|,
 name|GIMP_TYPE_SMUDGE_OPTIONS
 argument_list|,
+literal|"gimp-smudge"
+argument_list|,
 name|_
 argument_list|(
 literal|"Smudge"
 argument_list|)
+argument_list|,
+literal|"gimp-tool-smudge"
 argument_list|)
 expr_stmt|;
 block|}

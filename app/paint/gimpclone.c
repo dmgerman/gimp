@@ -286,10 +286,14 @@ name|GIMP_TYPE_CLONE
 argument_list|,
 name|GIMP_TYPE_CLONE_OPTIONS
 argument_list|,
+literal|"gimp-clone"
+argument_list|,
 name|_
 argument_list|(
 literal|"Clone"
 argument_list|)
+argument_list|,
+literal|"gimp-tool-clone"
 argument_list|)
 expr_stmt|;
 block|}

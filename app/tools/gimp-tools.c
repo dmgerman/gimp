@@ -1859,7 +1859,7 @@ condition|)
 block|{
 name|paint_core_name
 operator|=
-literal|"GimpPencil"
+literal|"gimp-pencil"
 expr_stmt|;
 block|}
 elseif|else
@@ -1872,7 +1872,7 @@ condition|)
 block|{
 name|paint_core_name
 operator|=
-literal|"GimpPaintbrush"
+literal|"gimp-paintbrush"
 expr_stmt|;
 block|}
 elseif|else
@@ -1885,7 +1885,7 @@ condition|)
 block|{
 name|paint_core_name
 operator|=
-literal|"GimpEraser"
+literal|"gimp-eraser"
 expr_stmt|;
 block|}
 elseif|else
@@ -1898,7 +1898,7 @@ condition|)
 block|{
 name|paint_core_name
 operator|=
-literal|"GimpAirbrush"
+literal|"gimp-airbrush"
 expr_stmt|;
 block|}
 elseif|else
@@ -1911,7 +1911,7 @@ condition|)
 block|{
 name|paint_core_name
 operator|=
-literal|"GimpClone"
+literal|"gimp-clone"
 expr_stmt|;
 block|}
 elseif|else
@@ -1924,7 +1924,7 @@ condition|)
 block|{
 name|paint_core_name
 operator|=
-literal|"GimpConvolve"
+literal|"gimp-convolve"
 expr_stmt|;
 block|}
 elseif|else
@@ -1937,7 +1937,7 @@ condition|)
 block|{
 name|paint_core_name
 operator|=
-literal|"GimpSmudge"
+literal|"gimp-smudge"
 expr_stmt|;
 block|}
 elseif|else
@@ -1950,7 +1950,7 @@ condition|)
 block|{
 name|paint_core_name
 operator|=
-literal|"GimpDodgeBurn"
+literal|"gimp-dodge-burn"
 expr_stmt|;
 block|}
 elseif|else
@@ -1963,14 +1963,14 @@ condition|)
 block|{
 name|paint_core_name
 operator|=
-literal|"GimpInk"
+literal|"gimp-ink"
 expr_stmt|;
 block|}
 else|else
 block|{
 name|paint_core_name
 operator|=
-literal|"GimpPaintbrush"
+literal|"gimp-paintbrush"
 expr_stmt|;
 block|}
 name|tool_info

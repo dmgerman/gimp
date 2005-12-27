@@ -368,10 +368,14 @@ name|GIMP_TYPE_INK
 argument_list|,
 name|GIMP_TYPE_INK_OPTIONS
 argument_list|,
+literal|"gimp-ink"
+argument_list|,
 name|_
 argument_list|(
 literal|"Ink"
 argument_list|)
+argument_list|,
+literal|"gimp-tool-ink"
 argument_list|)
 expr_stmt|;
 block|}
@@ -2400,7 +2404,7 @@ comment|/* Some of this stuff should probably be combined with the  * code it wa
 end_comment
 
 begin_enum
-DECL|enum|__anon298786380103
+DECL|enum|__anon2a3516320103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum

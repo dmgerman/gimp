@@ -144,7 +144,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac02d8e0103
+DECL|enum|__anon29a02ed20103
 block|{
 DECL|enumerator|CONVOLVE_NCLIP
 name|CONVOLVE_NCLIP
@@ -500,10 +500,14 @@ name|GIMP_TYPE_CONVOLVE
 argument_list|,
 name|GIMP_TYPE_CONVOLVE_OPTIONS
 argument_list|,
+literal|"gimp-convolve"
+argument_list|,
 name|_
 argument_list|(
 literal|"Convolve"
 argument_list|)
+argument_list|,
+literal|"gimp-tool-convolve"
 argument_list|)
 expr_stmt|;
 block|}

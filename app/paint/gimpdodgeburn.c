@@ -274,10 +274,14 @@ name|GIMP_TYPE_DODGE_BURN
 argument_list|,
 name|GIMP_TYPE_DODGE_BURN_OPTIONS
 argument_list|,
+literal|"gimp-dodge-burn"
+argument_list|,
 name|_
 argument_list|(
 literal|"Dodge/Burn"
 argument_list|)
+argument_list|,
+literal|"gimp-tool-dodge-burn"
 argument_list|)
 expr_stmt|;
 block|}

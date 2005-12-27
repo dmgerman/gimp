@@ -127,7 +127,17 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
+name|identifier
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
 name|blurb
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|stock_id
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -204,6 +214,13 @@ argument_list|,
 literal|"paint infos"
 argument_list|)
 expr_stmt|;
+name|gimp_container_freeze
+argument_list|(
+name|gimp
+operator|->
+name|paint_info_list
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|i
@@ -232,6 +249,13 @@ name|gimp_paint_register
 operator|)
 expr_stmt|;
 block|}
+name|gimp_container_thaw
+argument_list|(
+name|gimp
+operator|->
+name|paint_info_list
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -251,6 +275,13 @@ name|GIMP_IS_GIMP
 argument_list|(
 name|gimp
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_paint_info_set_standard
+argument_list|(
+name|gimp
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -284,7 +315,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_paint_register (Gimp * gimp,GType paint_type,GType paint_options_type,const gchar * blurb)
+DECL|function|gimp_paint_register (Gimp * gimp,GType paint_type,GType paint_options_type,const gchar * identifier,const gchar * blurb,const gchar * stock_id)
 name|gimp_paint_register
 parameter_list|(
 name|Gimp
@@ -300,7 +331,17 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
+name|identifier
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
 name|blurb
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|stock_id
 parameter_list|)
 block|{
 name|GimpPaintInfo
@@ -352,7 +393,11 @@ name|paint_type
 argument_list|,
 name|paint_options_type
 argument_list|,
+name|identifier
+argument_list|,
 name|blurb
+argument_list|,
+name|stock_id
 argument_list|)
 expr_stmt|;
 name|gimp_container_add
@@ -369,6 +414,19 @@ argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(
+name|paint_info
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|paint_type
+operator|==
+name|GIMP_TYPE_PAINTBRUSH
+condition|)
+name|gimp_paint_info_set_standard
+argument_list|(
+name|gimp
+argument_list|,
 name|paint_info
 argument_list|)
 expr_stmt|;
