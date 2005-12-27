@@ -281,7 +281,7 @@ argument_list|(
 literal|"Dodge/Burn"
 argument_list|)
 argument_list|,
-literal|"gimp-tool-dodge-burn"
+literal|"gimp-tool-dodge"
 argument_list|)
 expr_stmt|;
 block|}
