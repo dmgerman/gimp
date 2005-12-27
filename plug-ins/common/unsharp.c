@@ -84,7 +84,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e58a0e0108
+DECL|struct|__anon28e631590108
 block|{
 DECL|member|radius
 name|gdouble
@@ -111,7 +111,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e58a0e0208
+DECL|struct|__anon28e631590208
 block|{
 DECL|member|run
 name|gboolean
@@ -431,11 +431,11 @@ literal|"Strength of effect"
 block|}
 block|,
 block|{
-name|GIMP_PDB_FLOAT
+name|GIMP_PDB_INT32
 block|,
 literal|"threshold"
 block|,
-literal|"Threshold"
+literal|"Threshold (0-255)"
 block|}
 block|}
 decl_stmt|;
