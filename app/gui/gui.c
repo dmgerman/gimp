@@ -1010,7 +1010,7 @@ DECL|macro|GTK_REQUIRED_MINOR
 define|#
 directive|define
 name|GTK_REQUIRED_MINOR
-value|6
+value|8
 DECL|macro|GTK_REQUIRED_MICRO
 define|#
 directive|define
