@@ -896,7 +896,7 @@ condition|)
 block|{
 name|accel_closure
 operator|=
-name|gimp_action_get_accel_closure
+name|gtk_action_get_accel_closure
 argument_list|(
 name|action
 argument_list|)
@@ -1688,7 +1688,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ca54e50108
+DECL|struct|__anon2b1bab770108
 block|{
 DECL|member|accel_path
 name|gchar
