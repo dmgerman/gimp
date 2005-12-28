@@ -78,17 +78,13 @@ define|\
 value|"Copyright (C) 1995-2005\n" \   "Spencer Kimball, Peter Mattis and the GIMP Development Team"
 end_define
 
-begin_comment
-comment|/* FIXME: let GTK+ do the wrapping (requires GTK+ 2.8) */
-end_comment
-
 begin_define
 DECL|macro|LICENSE
 define|#
 directive|define
 name|LICENSE
 define|\
-value|"This program is free software; you can redistribute it and/or modify\n" \   "it under the terms of the GNU General Public License as published by\n" \   "the Free Software Foundation; either version 2 of the License, or\n"    \   "(at your option) any later version.\n"                                  \   "\n"                                                                     \   "This program is distributed in the hope that it will be useful,\n"      \   "but WITHOUT ANY WARRANTY; without even the implied warranty of\n"       \   "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n"                 \   "See the GNU General Public License for more details.\n"                 \   "\n"                                                                     \   "You should have received a copy of the GNU General Public License\n"    \   "along with this program; if not, write to the Free Software\n"          \   "Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA."
+value|"This program is free software; you can redistribute it and/or modify "  \   "it under the terms of the GNU General Public License as published by "  \   "the Free Software Foundation; either version 2 of the License, or "     \   "(at your option) any later version.\n"                                  \   "\n"                                                                     \   "This program is distributed in the hope that it will be useful, "       \   "but WITHOUT ANY WARRANTY; without even the implied warranty of "        \   "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. "                  \   "See the GNU General Public License for more details.\n"                 \   "\n"                                                                     \   "You should have received a copy of the GNU General Public License "     \   "along with this program; if not, write to the Free Software "           \   "Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, " \   "USA."
 end_define
 
 begin_define
@@ -134,7 +130,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2926425b0108
+DECL|struct|__anon27a62e970108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -490,6 +486,10 @@ argument_list|,
 literal|"license"
 argument_list|,
 name|LICENSE
+argument_list|,
+literal|"wrap-license"
+argument_list|,
+name|TRUE
 argument_list|,
 literal|"website"
 argument_list|,
