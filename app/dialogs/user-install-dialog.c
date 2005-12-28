@@ -130,6 +130,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"about.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"user-install-dialog.h"
 end_include
 
@@ -163,7 +169,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29bd7f3d0103
+DECL|enum|__anon2bb0e7b10103
 block|{
 DECL|enumerator|GPL_PAGE
 name|GPL_PAGE
@@ -188,7 +194,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29bd7f3d0203
+DECL|enum|__anon2bb0e7b10203
 block|{
 DECL|enumerator|DIRENT_COLUMN
 name|DIRENT_COLUMN
@@ -420,7 +426,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29bd7f3d0303
+DECL|enum|__anon2bb0e7b10303
 block|{
 DECL|enumerator|TREE_ITEM_DO_NOTHING
 name|TREE_ITEM_DO_NOTHING
@@ -442,7 +448,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29bd7f3d0408
+DECL|struct|__anon2bb0e7b10408
 block|{
 DECL|member|directory
 name|gboolean
@@ -1915,6 +1921,10 @@ name|gchar
 modifier|*
 name|title
 decl_stmt|;
+name|gchar
+modifier|*
+name|tmp
+decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
@@ -3006,8 +3016,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Welcome to\n"
-literal|"The GIMP %d.%d User Installation"
+literal|"Welcome to GIMP %d.%d"
 argument_list|)
 argument_list|,
 name|GIMP_MAJOR_VERSION
@@ -3036,6 +3045,23 @@ literal|12
 argument_list|)
 expr_stmt|;
 comment|/*  do not free title yet!  */
+name|tmp
+operator|=
+name|g_strconcat
+argument_list|(
+literal|"<b>"
+argument_list|,
+name|GIMP_NAME
+argument_list|,
+literal|"</b>"
+argument_list|,
+literal|"\n"
+argument_list|,
+name|GIMP_COPYRIGHT
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|add_label
 argument_list|(
 name|GTK_BOX
@@ -3043,12 +3069,12 @@ argument_list|(
 name|page
 argument_list|)
 argument_list|,
-name|_
-argument_list|(
-literal|"<b>The GIMP - GNU Image Manipulation Program</b>\n"
-literal|"Copyright (C) 1995-2005\n"
-literal|"Spencer Kimball, Peter Mattis and the GIMP Development Team."
+name|tmp
 argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|tmp
 argument_list|)
 expr_stmt|;
 name|sep
@@ -3084,45 +3110,7 @@ argument_list|(
 name|page
 argument_list|)
 argument_list|,
-name|_
-argument_list|(
-literal|"This program is free software; you can redistribute it and/or modify "
-literal|"it under the terms of the GNU General Public License as published by "
-literal|"the Free Software Foundation; either version 2 of the License, or "
-literal|"(at your option) any later version."
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|add_label
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|page
-argument_list|)
-argument_list|,
-name|_
-argument_list|(
-literal|"This program is distributed in the hope that it will be useful, "
-literal|"but WITHOUT ANY WARRANTY; without even the implied warranty of "
-literal|"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. "
-literal|"See the GNU General Public License for more details."
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|add_label
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|page
-argument_list|)
-argument_list|,
-name|_
-argument_list|(
-literal|"You should have received a copy of the GNU General Public License "
-literal|"along with this program; if not, write to the Free Software "
-literal|"Foundation, Inc., 59 Temple Place - Suite 330, Boston, "
-literal|"MA 02111-1307, USA."
-argument_list|)
+name|GIMP_LICENSE
 argument_list|)
 expr_stmt|;
 comment|/*  MIGRATION_PAGE  */

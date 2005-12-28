@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"about.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"about-dialog.h"
 end_include
 
@@ -70,56 +76,6 @@ file|"gimp-intl.h"
 end_include
 
 begin_define
-DECL|macro|COPYRIGHT
-define|#
-directive|define
-name|COPYRIGHT
-define|\
-value|"Copyright (C) 1995-2005\n" \   "Spencer Kimball, Peter Mattis and the GIMP Development Team"
-end_define
-
-begin_define
-DECL|macro|LICENSE
-define|#
-directive|define
-name|LICENSE
-define|\
-value|"This program is free software; you can redistribute it and/or modify "  \   "it under the terms of the GNU General Public License as published by "  \   "the Free Software Foundation; either version 2 of the License, or "     \   "(at your option) any later version.\n"                                  \   "\n"                                                                     \   "This program is distributed in the hope that it will be useful, "       \   "but WITHOUT ANY WARRANTY; without even the implied warranty of "        \   "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. "                  \   "See the GNU General Public License for more details.\n"                 \   "\n"                                                                     \   "You should have received a copy of the GNU General Public License "     \   "along with this program; if not, write to the Free Software "           \   "Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, " \   "USA."
-end_define
-
-begin_define
-DECL|macro|NAME
-define|#
-directive|define
-name|NAME
-value|"GIMP"
-end_define
-
-begin_define
-DECL|macro|COMMENTS
-define|#
-directive|define
-name|COMMENTS
-value|_("GNU Image Manipulation Program")
-end_define
-
-begin_define
-DECL|macro|WEBSITE
-define|#
-directive|define
-name|WEBSITE
-value|"http://www.gimp.org/"
-end_define
-
-begin_define
-DECL|macro|WEBSITE_LABEL
-define|#
-directive|define
-name|WEBSITE_LABEL
-value|_("Visit the GIMP website")
-end_define
-
-begin_define
 DECL|macro|PDB_URL_LOAD
 define|#
 directive|define
@@ -130,7 +86,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a62e970108
+DECL|struct|__anon29379bb50108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -469,7 +425,7 @@ name|GTK_WIN_POS_CENTER
 argument_list|,
 literal|"name"
 argument_list|,
-name|NAME
+name|GIMP_ACRONYM
 argument_list|,
 literal|"version"
 argument_list|,
@@ -477,15 +433,15 @@ name|GIMP_VERSION
 argument_list|,
 literal|"copyright"
 argument_list|,
-name|COPYRIGHT
+name|GIMP_COPYRIGHT
 argument_list|,
 literal|"comments"
 argument_list|,
-name|COMMENTS
+name|GIMP_NAME
 argument_list|,
 literal|"license"
 argument_list|,
-name|LICENSE
+name|GIMP_LICENSE
 argument_list|,
 literal|"wrap-license"
 argument_list|,
@@ -493,11 +449,14 @@ name|TRUE
 argument_list|,
 literal|"website"
 argument_list|,
-name|WEBSITE
+literal|"http://www.gimp.org/"
 argument_list|,
 literal|"website-label"
 argument_list|,
-name|WEBSITE_LABEL
+name|_
+argument_list|(
+literal|"Visit the GIMP website"
+argument_list|)
 argument_list|,
 literal|"authors"
 argument_list|,

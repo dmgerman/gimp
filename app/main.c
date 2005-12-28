@@ -112,6 +112,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"about.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"app_procs.h"
 end_include
 
@@ -1081,10 +1087,7 @@ argument_list|()
 expr_stmt|;
 name|g_set_application_name
 argument_list|(
-name|_
-argument_list|(
-literal|"GNU Image Manipulation Program"
-argument_list|)
+name|GIMP_NAME
 argument_list|)
 expr_stmt|;
 name|basename
