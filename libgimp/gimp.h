@@ -568,9 +568,9 @@ DECL|member|d_boundary
 name|gint32
 name|d_boundary
 decl_stmt|;
-DECL|member|d_path
+DECL|member|d_vectors
 name|gint32
-name|d_path
+name|d_vectors
 decl_stmt|;
 DECL|member|d_unit
 name|gint32
@@ -660,7 +660,7 @@ directive|define
 name|MAIN
 parameter_list|()
 define|\
-value|struct HINSTANCE__;					\    int _stdcall						\    WinMain (struct HINSTANCE__ *hInstance, 		\ 	    struct HINSTANCE__ *hPrevInstance,		\ 	    char *lpszCmdLine,				\ 	    int   nCmdShow)				\    {							\      return gimp_main (&PLUG_IN_INFO, __argc, __argv);	\    }							\ 							\    int							\    main (int argc, char *argv[])			\    {							\      return gimp_main (&PLUG_IN_INFO, argc, argv);	\    }
+value|struct HINSTANCE__;                                  \    int _stdcall                                         \    WinMain (struct HINSTANCE__ *hInstance,              \             struct HINSTANCE__ *hPrevInstance,          \             char *lpszCmdLine,                          \             int   nCmdShow)                             \    {                                                    \      return gimp_main (&PLUG_IN_INFO, __argc, __argv);  \    }                                                    \                                                         \    int                                                  \    main (int argc, char *argv[])                        \    {                                                    \      return gimp_main (&PLUG_IN_INFO, argc, argv);      \    }
 end_define
 
 begin_else
@@ -675,7 +675,7 @@ directive|define
 name|MAIN
 parameter_list|()
 define|\
-value|int							\    main (int argc, char *argv[])			\    {							\      return gimp_main (&PLUG_IN_INFO, argc, argv);	\    }
+value|int                                                  \    main (int argc, char *argv[])                        \    {                                                    \      return gimp_main (&PLUG_IN_INFO, argc, argv);      \    }
 end_define
 
 begin_endif

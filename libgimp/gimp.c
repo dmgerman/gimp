@@ -414,7 +414,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c0921b40103
+DECL|enum|__anon2b5011d90103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -1157,7 +1157,7 @@ operator|==
 literal|0
 condition|)
 block|{
-comment|/* Found the end of the executable name, most probably. 	       * Splice the parts of the name back together. 	       */
+comment|/* Found the end of the executable name, most probably.                * Splice the parts of the name back together.                */
 name|GString
 modifier|*
 name|s
@@ -3308,7 +3308,7 @@ index|]
 operator|.
 name|data
 operator|.
-name|d_path
+name|d_vectors
 operator|=
 name|va_arg
 argument_list|(
