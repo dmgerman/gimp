@@ -60,7 +60,7 @@ comment|/* Declarations for objects of type pdb */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2996a7a80108
+DECL|struct|__anon297b30750108
 typedef|typedef
 struct|struct
 block|{
@@ -80,7 +80,7 @@ comment|/* Declarations for objects of type pdbFunc */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2996a7a80208
+DECL|struct|__anon297b30750208
 typedef|typedef
 struct|struct
 block|{
@@ -1542,7 +1542,7 @@ index|]
 operator|.
 name|data
 operator|.
-name|d_path
+name|d_vectors
 argument_list|)
 expr_stmt|;
 break|break;
@@ -3132,7 +3132,7 @@ index|]
 operator|.
 name|data
 operator|.
-name|d_path
+name|d_vectors
 operator|=
 name|PyInt_AsLong
 argument_list|(
