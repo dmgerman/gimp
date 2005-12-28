@@ -706,7 +706,7 @@ name|gimp
 operator|->
 name|paint_info_list
 argument_list|,
-literal|"GimpAirbrush"
+literal|"gimp-airbrush"
 argument_list|)
 decl_stmt|;
 name|success
@@ -1010,7 +1010,7 @@ name|gimp
 operator|->
 name|paint_info_list
 argument_list|,
-literal|"GimpAirbrush"
+literal|"gimp-airbrush"
 argument_list|)
 decl_stmt|;
 name|success
@@ -1398,7 +1398,7 @@ name|gimp
 operator|->
 name|paint_info_list
 argument_list|,
-literal|"GimpClone"
+literal|"gimp-clone"
 argument_list|)
 decl_stmt|;
 name|success
@@ -1740,7 +1740,7 @@ name|gimp
 operator|->
 name|paint_info_list
 argument_list|,
-literal|"GimpClone"
+literal|"gimp-clone"
 argument_list|)
 decl_stmt|;
 name|success
@@ -2081,7 +2081,7 @@ name|gimp
 operator|->
 name|paint_info_list
 argument_list|,
-literal|"GimpConvolve"
+literal|"gimp-convolve"
 argument_list|)
 decl_stmt|;
 name|success
@@ -2397,7 +2397,7 @@ name|gimp
 operator|->
 name|paint_info_list
 argument_list|,
-literal|"GimpConvolve"
+literal|"gimp-convolve"
 argument_list|)
 decl_stmt|;
 name|success
@@ -2766,7 +2766,7 @@ name|gimp
 operator|->
 name|paint_info_list
 argument_list|,
-literal|"GimpDodgeBurn"
+literal|"gimp-dodge-burn"
 argument_list|)
 decl_stmt|;
 name|success
@@ -3094,7 +3094,7 @@ name|gimp
 operator|->
 name|paint_info_list
 argument_list|,
-literal|"GimpDodgeBurn"
+literal|"gimp-dodge-burn"
 argument_list|)
 decl_stmt|;
 name|success
@@ -3435,7 +3435,7 @@ name|gimp
 operator|->
 name|paint_info_list
 argument_list|,
-literal|"GimpEraser"
+literal|"gimp-eraser"
 argument_list|)
 decl_stmt|;
 name|success
@@ -3751,7 +3751,7 @@ name|gimp
 operator|->
 name|paint_info_list
 argument_list|,
-literal|"GimpEraser"
+literal|"gimp-eraser"
 argument_list|)
 decl_stmt|;
 name|success
@@ -4112,7 +4112,7 @@ name|gimp
 operator|->
 name|paint_info_list
 argument_list|,
-literal|"GimpPaintbrush"
+literal|"gimp-paintbrush"
 argument_list|)
 decl_stmt|;
 name|success
@@ -4452,7 +4452,7 @@ name|gimp
 operator|->
 name|paint_info_list
 argument_list|,
-literal|"GimpPaintbrush"
+literal|"gimp-paintbrush"
 argument_list|)
 decl_stmt|;
 name|success
@@ -4737,7 +4737,7 @@ name|gimp
 operator|->
 name|paint_info_list
 argument_list|,
-literal|"GimpPencil"
+literal|"gimp-pencil"
 argument_list|)
 decl_stmt|;
 name|success
@@ -5050,7 +5050,7 @@ name|gimp
 operator|->
 name|paint_info_list
 argument_list|,
-literal|"GimpSmudge"
+literal|"gimp-smudge"
 argument_list|)
 decl_stmt|;
 name|success
@@ -5354,7 +5354,7 @@ name|gimp
 operator|->
 name|paint_info_list
 argument_list|,
-literal|"GimpSmudge"
+literal|"gimp-smudge"
 argument_list|)
 decl_stmt|;
 name|success
