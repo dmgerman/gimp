@@ -53,7 +53,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b53f7c0103
+DECL|enum|__anon2b76337d0103
 block|{
 DECL|enumerator|H_NONE
 name|H_NONE
@@ -75,7 +75,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b53f7c0203
+DECL|enum|__anon2b76337d0203
 block|{
 DECL|enumerator|H_BASE_LEFT
 name|H_BASE_LEFT
@@ -91,7 +91,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b53f7c0303
+DECL|enum|__anon2b76337d0303
 block|{
 DECL|enumerator|V_NONE
 name|V_NONE
@@ -113,7 +113,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b53f7c0403
+DECL|enum|__anon2b76337d0403
 block|{
 DECL|enumerator|V_BASE_TOP
 name|V_BASE_TOP
@@ -236,7 +236,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b53f7c0508
+DECL|struct|__anon2b76337d0508
 block|{
 DECL|member|h_style
 name|gint
@@ -396,7 +396,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"<Image>/Layer"
+literal|"<Image>/Image/Arrange"
 argument_list|)
 expr_stmt|;
 block|}
