@@ -179,7 +179,7 @@ DECL|macro|GLIB_REQUIRED_MICRO
 define|#
 directive|define
 name|GLIB_REQUIRED_MICRO
-value|0
+value|2
 name|mismatch
 operator|=
 name|glib_check_version
