@@ -160,6 +160,15 @@ DECL|member|blink_counter
 name|gint
 name|blink_counter
 decl_stmt|;
+comment|/*  coordinates of last button press event  */
+DECL|member|button_x
+name|gint
+name|button_x
+decl_stmt|;
+DECL|member|button_y
+name|gint
+name|button_y
+decl_stmt|;
 block|}
 struct|;
 end_struct

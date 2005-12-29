@@ -147,7 +147,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae6b9030103
+DECL|enum|__anon295cb9a90103
 block|{
 DECL|enumerator|DOCKABLE_ADDED
 name|DOCKABLE_ADDED
@@ -2128,11 +2128,13 @@ name|context
 argument_list|,
 name|window
 argument_list|,
-operator|-
-literal|8
+name|dockable
+operator|->
+name|button_x
 argument_list|,
-operator|-
-literal|8
+name|dockable
+operator|->
+name|button_y
 argument_list|)
 expr_stmt|;
 block|}
