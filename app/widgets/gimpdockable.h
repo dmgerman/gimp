@@ -160,14 +160,14 @@ DECL|member|blink_counter
 name|gint
 name|blink_counter
 decl_stmt|;
-comment|/*  coordinates of last button press event  */
-DECL|member|button_x
+comment|/*  drag icon hotspot  */
+DECL|member|drag_x
 name|gint
-name|button_x
+name|drag_x
 decl_stmt|;
-DECL|member|button_y
+DECL|member|drag_y
 name|gint
-name|button_y
+name|drag_y
 decl_stmt|;
 block|}
 struct|;
