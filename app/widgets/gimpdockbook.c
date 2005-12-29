@@ -147,7 +147,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc4b9060103
+DECL|enum|__anon2a21a28b0103
 block|{
 DECL|enumerator|DOCKABLE_ADDED
 name|DOCKABLE_ADDED
@@ -948,6 +948,27 @@ argument_list|(
 name|dockbook
 argument_list|,
 name|TRUE
+argument_list|)
+expr_stmt|;
+name|gtk_notebook_set_current_page
+argument_list|(
+name|GTK_NOTEBOOK
+argument_list|(
+name|dockbook
+argument_list|)
+argument_list|,
+name|gtk_notebook_page_num
+argument_list|(
+name|GTK_NOTEBOOK
+argument_list|(
+name|dockbook
+argument_list|)
+argument_list|,
+name|GTK_WIDGET
+argument_list|(
+name|dockable
+argument_list|)
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
