@@ -503,6 +503,22 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
+name|gimp_image_add_vectors
+parameter_list|(
+name|gint32
+name|image_ID
+parameter_list|,
+name|gint32
+name|vectors_ID
+parameter_list|,
+name|gint
+name|position
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
 name|gimp_image_remove_vectors
 parameter_list|(
 name|gint32
