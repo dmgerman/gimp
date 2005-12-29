@@ -43,23 +43,26 @@ name|PLUG_IN_BINARY
 value|"waves"
 end_define
 
-begin_enum
+begin_typedef
+typedef|typedef
 enum|enum
-DECL|enum|__anon2c1d26880103
+DECL|enum|__anon29873e1a0103
 block|{
 DECL|enumerator|MODE_SMEAR
 name|MODE_SMEAR
 block|,
 DECL|enumerator|MODE_BLACKEN
 name|MODE_BLACKEN
+DECL|typedef|BorderType
 block|}
-enum|;
-end_enum
+name|BorderType
+typedef|;
+end_typedef
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1d26880208
+DECL|struct|__anon29873e1a0208
 block|{
 DECL|member|amplitude
 name|gdouble
@@ -74,7 +77,7 @@ name|gdouble
 name|wavelength
 decl_stmt|;
 DECL|member|type
-name|gint32
+name|BorderType
 name|type
 decl_stmt|;
 DECL|member|reflective
@@ -212,7 +215,7 @@ name|gint
 name|height
 parameter_list|,
 name|gint
-name|bypp
+name|bpp
 parameter_list|,
 name|gboolean
 name|has_alpha
@@ -226,7 +229,7 @@ parameter_list|,
 name|gdouble
 name|phase
 parameter_list|,
-name|gint
+name|gboolean
 name|smear
 parameter_list|,
 name|gboolean
@@ -840,7 +843,7 @@ name|wvals
 operator|.
 name|type
 operator|==
-literal|0
+name|MODE_SMEAR
 argument_list|,
 name|wvals
 operator|.
@@ -1692,7 +1695,7 @@ name|wvals
 operator|.
 name|type
 operator|==
-literal|0
+name|MODE_SMEAR
 argument_list|,
 name|wvals
 operator|.
@@ -1732,7 +1735,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|wave (guchar * src,guchar * dst,gint width,gint height,gint bypp,gboolean has_alpha,gdouble amplitude,gdouble wavelength,gdouble phase,gint smear,gboolean reflective,gboolean verbose)
+DECL|function|wave (guchar * src,guchar * dst,gint width,gint height,gint bypp,gboolean has_alpha,gdouble amplitude,gdouble wavelength,gdouble phase,gboolean smear,gboolean reflective,gboolean verbose)
 name|wave
 parameter_list|(
 name|guchar
@@ -1764,7 +1767,7 @@ parameter_list|,
 name|gdouble
 name|phase
 parameter_list|,
-name|gint
+name|gboolean
 name|smear
 parameter_list|,
 name|gboolean
@@ -1885,7 +1888,7 @@ name|phase
 operator|*
 name|G_PI
 operator|/
-literal|180
+literal|180.0
 expr_stmt|;
 name|rowsiz
 operator|=
