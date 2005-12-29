@@ -459,11 +459,9 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gimp_dialog_factories_toggle
+name|gimp_dialog_factory_show_toolbox
 argument_list|(
 name|global_toolbox_factory
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
