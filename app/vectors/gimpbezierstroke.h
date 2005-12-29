@@ -282,6 +282,9 @@ name|radius_x
 parameter_list|,
 name|gdouble
 name|radius_y
+parameter_list|,
+name|gdouble
+name|angle
 parameter_list|)
 function_decl|;
 end_function_decl

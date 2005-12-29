@@ -96,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dee5960108
+DECL|struct|__anon2afb7def0108
 block|{
 DECL|member|stack
 name|GQueue
@@ -216,7 +216,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dee5960208
+DECL|struct|__anon2afb7def0208
 block|{
 DECL|member|id
 name|gchar
@@ -3928,6 +3928,8 @@ argument_list|,
 name|rx
 argument_list|,
 name|ry
+argument_list|,
+literal|0.0
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5947,7 +5949,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dee5960308
+DECL|struct|__anon2afb7def0308
 block|{
 DECL|member|strokes
 name|GList
@@ -6364,7 +6366,7 @@ operator|.
 name|rel
 condition|)
 block|{
-comment|/* Handle relative coordinates. This switch statement attempts 		 to determine _what_ the coords are relative to. This is 		 underspecified in the 12 Apr working draft. */
+comment|/* Handle relative coordinates. This switch statement attempts                  to determine _what_ the coords are relative to. This is                  underspecified in the 12 Apr working draft. */
 switch|switch
 condition|(
 name|ctx
@@ -6390,7 +6392,7 @@ case|:
 case|case
 literal|'t'
 case|:
-comment|/* rule: even-numbered params are x-relative, odd-numbered 		     are y-relative */
+comment|/* rule: even-numbered params are x-relative, odd-numbered                      are y-relative */
 if|if
 condition|(
 operator|(
@@ -6432,7 +6434,7 @@ break|break;
 case|case
 literal|'a'
 case|:
-comment|/* rule: sixth and seventh are x and y, rest are not 		     relative */
+comment|/* rule: sixth and seventh are x and y, rest are not                      relative */
 if|if
 condition|(
 name|ctx
