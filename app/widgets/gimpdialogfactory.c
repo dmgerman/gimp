@@ -4705,7 +4705,10 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
+name|GTK_WIDGET
+argument_list|(
 name|window
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
