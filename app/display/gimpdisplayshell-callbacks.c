@@ -4276,15 +4276,6 @@ block|{
 name|gimp_dialog_factories_toggle
 argument_list|()
 expr_stmt|;
-name|gdk_window_focus
-argument_list|(
-name|canvas
-operator|->
-name|window
-argument_list|,
-name|time
-argument_list|)
-expr_stmt|;
 block|}
 name|return_val
 operator|=
