@@ -307,7 +307,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b738a250108
+DECL|struct|__anon2c71c35a0108
 block|{
 DECL|member|old_name
 specifier|const
@@ -1912,7 +1912,7 @@ case|case
 name|GIMP_PDB_BOUNDARY
 case|:
 case|case
-name|GIMP_PDB_PATH
+name|GIMP_PDB_VECTORS
 case|:
 name|params
 index|[
@@ -2329,7 +2329,7 @@ case|case
 name|GIMP_PDB_BOUNDARY
 case|:
 case|case
-name|GIMP_PDB_PATH
+name|GIMP_PDB_VECTORS
 case|:
 break|break;
 case|case

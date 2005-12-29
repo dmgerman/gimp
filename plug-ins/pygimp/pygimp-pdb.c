@@ -60,7 +60,7 @@ comment|/* Declarations for objects of type pdb */
 end_comment
 
 begin_typedef
-DECL|struct|__anon297b30750108
+DECL|struct|__anon2b3a880f0108
 typedef|typedef
 struct|struct
 block|{
@@ -80,7 +80,7 @@ comment|/* Declarations for objects of type pdbFunc */
 end_comment
 
 begin_typedef
-DECL|struct|__anon297b30750208
+DECL|struct|__anon2b3a880f0208
 typedef|typedef
 struct|struct
 block|{
@@ -1529,7 +1529,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_PDB_PATH
+name|GIMP_PDB_VECTORS
 case|:
 name|value
 operator|=
@@ -3114,7 +3114,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_PDB_PATH
+name|GIMP_PDB_VECTORS
 case|:
 name|check
 argument_list|(

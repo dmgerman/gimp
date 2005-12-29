@@ -7027,7 +7027,7 @@ name|cleanup
 goto|;
 break|break;
 case|case
-name|GIMP_PDB_PATH
+name|GIMP_PDB_VECTORS
 case|:
 if|if
 condition|(
@@ -7051,7 +7051,7 @@ index|]
 operator|.
 name|data
 operator|.
-name|d_path
+name|d_vectors
 argument_list|,
 literal|1
 argument_list|,
@@ -8150,7 +8150,7 @@ condition|)
 return|return;
 break|break;
 case|case
-name|GIMP_PDB_PATH
+name|GIMP_PDB_VECTORS
 case|:
 if|if
 condition|(
@@ -8172,7 +8172,7 @@ index|]
 operator|.
 name|data
 operator|.
-name|d_path
+name|d_vectors
 argument_list|,
 literal|1
 argument_list|,
@@ -8435,7 +8435,7 @@ case|case
 name|GIMP_PDB_BOUNDARY
 case|:
 case|case
-name|GIMP_PDB_PATH
+name|GIMP_PDB_VECTORS
 case|:
 case|case
 name|GIMP_PDB_STATUS

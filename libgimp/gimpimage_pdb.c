@@ -2558,7 +2558,7 @@ name|GIMP_PDB_IMAGE
 argument_list|,
 name|image_ID
 argument_list|,
-name|GIMP_PDB_PATH
+name|GIMP_PDB_VECTORS
 argument_list|,
 name|vectors_ID
 argument_list|,
@@ -2632,7 +2632,7 @@ name|GIMP_PDB_IMAGE
 argument_list|,
 name|image_ID
 argument_list|,
-name|GIMP_PDB_PATH
+name|GIMP_PDB_VECTORS
 argument_list|,
 name|vectors_ID
 argument_list|,
@@ -2706,7 +2706,7 @@ name|GIMP_PDB_IMAGE
 argument_list|,
 name|image_ID
 argument_list|,
-name|GIMP_PDB_PATH
+name|GIMP_PDB_VECTORS
 argument_list|,
 name|vectors_ID
 argument_list|,
@@ -2780,7 +2780,7 @@ name|GIMP_PDB_IMAGE
 argument_list|,
 name|image_ID
 argument_list|,
-name|GIMP_PDB_PATH
+name|GIMP_PDB_VECTORS
 argument_list|,
 name|vectors_ID
 argument_list|,
@@ -3009,7 +3009,7 @@ name|GIMP_PDB_IMAGE
 argument_list|,
 name|image_ID
 argument_list|,
-name|GIMP_PDB_PATH
+name|GIMP_PDB_VECTORS
 argument_list|,
 name|vectors_ID
 argument_list|,
@@ -4441,7 +4441,7 @@ name|GIMP_PDB_IMAGE
 argument_list|,
 name|image_ID
 argument_list|,
-name|GIMP_PDB_PATH
+name|GIMP_PDB_VECTORS
 argument_list|,
 name|active_vectors_ID
 argument_list|,

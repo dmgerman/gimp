@@ -920,7 +920,7 @@ name|d_boundary
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_PDB_PATH
+name|GIMP_PDB_VECTORS
 case|:
 name|args
 index|[
@@ -938,7 +938,7 @@ index|]
 operator|.
 name|data
 operator|.
-name|d_path
+name|d_vectors
 expr_stmt|;
 break|break;
 case|case
@@ -1916,7 +1916,7 @@ name|pdb_int
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_PDB_PATH
+name|GIMP_PDB_VECTORS
 case|:
 name|params
 index|[
@@ -1925,7 +1925,7 @@ index|]
 operator|.
 name|data
 operator|.
-name|d_path
+name|d_vectors
 operator|=
 name|args
 index|[
@@ -2422,7 +2422,7 @@ case|case
 name|GIMP_PDB_BOUNDARY
 case|:
 case|case
-name|GIMP_PDB_PATH
+name|GIMP_PDB_VECTORS
 case|:
 break|break;
 case|case

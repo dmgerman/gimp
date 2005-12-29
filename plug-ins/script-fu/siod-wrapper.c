@@ -4677,7 +4677,7 @@ argument_list|)
 return|;
 break|break;
 case|case
-name|GIMP_PDB_PATH
+name|GIMP_PDB_VECTORS
 case|:
 if|if
 condition|(
@@ -4708,7 +4708,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|GIMP_PDB_PATH
+name|GIMP_PDB_VECTORS
 expr_stmt|;
 name|args
 index|[
@@ -6045,7 +6045,7 @@ argument_list|)
 return|;
 break|break;
 case|case
-name|GIMP_PDB_PATH
+name|GIMP_PDB_VECTORS
 case|:
 name|return_val
 operator|=

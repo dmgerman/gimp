@@ -564,7 +564,7 @@ index|[]
 init|=
 block|{
 block|{
-name|GIMP_PDB_PATH
+name|GIMP_PDB_VECTORS
 block|,
 literal|"vectors"
 block|,
@@ -788,7 +788,7 @@ index|[]
 init|=
 block|{
 block|{
-name|GIMP_PDB_PATH
+name|GIMP_PDB_VECTORS
 block|,
 literal|"vectors"
 block|,
@@ -1000,7 +1000,7 @@ index|[]
 init|=
 block|{
 block|{
-name|GIMP_PDB_PATH
+name|GIMP_PDB_VECTORS
 block|,
 literal|"vectors"
 block|,
@@ -1206,7 +1206,7 @@ index|[]
 init|=
 block|{
 block|{
-name|GIMP_PDB_PATH
+name|GIMP_PDB_VECTORS
 block|,
 literal|"vectors"
 block|,
@@ -1407,7 +1407,7 @@ index|[]
 init|=
 block|{
 block|{
-name|GIMP_PDB_PATH
+name|GIMP_PDB_VECTORS
 block|,
 literal|"vectors"
 block|,
@@ -1613,7 +1613,7 @@ index|[]
 init|=
 block|{
 block|{
-name|GIMP_PDB_PATH
+name|GIMP_PDB_VECTORS
 block|,
 literal|"vectors"
 block|,
@@ -1818,7 +1818,7 @@ index|[]
 init|=
 block|{
 block|{
-name|GIMP_PDB_PATH
+name|GIMP_PDB_VECTORS
 block|,
 literal|"vectors"
 block|,
@@ -2051,7 +2051,7 @@ index|[]
 init|=
 block|{
 block|{
-name|GIMP_PDB_PATH
+name|GIMP_PDB_VECTORS
 block|,
 literal|"vectors"
 block|,
@@ -2252,7 +2252,7 @@ index|[]
 init|=
 block|{
 block|{
-name|GIMP_PDB_PATH
+name|GIMP_PDB_VECTORS
 block|,
 literal|"vectors"
 block|,
@@ -2452,7 +2452,7 @@ index|[]
 init|=
 block|{
 block|{
-name|GIMP_PDB_PATH
+name|GIMP_PDB_VECTORS
 block|,
 literal|"vectors"
 block|,
@@ -2705,7 +2705,7 @@ index|[]
 init|=
 block|{
 block|{
-name|GIMP_PDB_PATH
+name|GIMP_PDB_VECTORS
 block|,
 literal|"vectors"
 block|,
@@ -2938,7 +2938,7 @@ index|[]
 init|=
 block|{
 block|{
-name|GIMP_PDB_PATH
+name|GIMP_PDB_VECTORS
 block|,
 literal|"vectors"
 block|,
@@ -3219,7 +3219,7 @@ index|[]
 init|=
 block|{
 block|{
-name|GIMP_PDB_PATH
+name|GIMP_PDB_VECTORS
 block|,
 literal|"vectors"
 block|,
@@ -3516,7 +3516,7 @@ index|[]
 init|=
 block|{
 block|{
-name|GIMP_PDB_PATH
+name|GIMP_PDB_VECTORS
 block|,
 literal|"vectors"
 block|,
@@ -3924,7 +3924,7 @@ index|[]
 init|=
 block|{
 block|{
-name|GIMP_PDB_PATH
+name|GIMP_PDB_VECTORS
 block|,
 literal|"vectors"
 block|,

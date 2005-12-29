@@ -414,7 +414,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b5011d90103
+DECL|enum|__anon296bd57e0103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -2653,7 +2653,7 @@ case|case
 name|GIMP_PDB_BOUNDARY
 case|:
 case|case
-name|GIMP_PDB_PATH
+name|GIMP_PDB_VECTORS
 case|:
 case|case
 name|GIMP_PDB_STATUS
@@ -3299,7 +3299,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_PDB_PATH
+name|GIMP_PDB_VECTORS
 case|:
 name|params
 index|[

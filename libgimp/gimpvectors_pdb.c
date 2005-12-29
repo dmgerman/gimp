@@ -65,7 +65,7 @@ argument_list|,
 operator|&
 name|nreturn_vals
 argument_list|,
-name|GIMP_PDB_PATH
+name|GIMP_PDB_VECTORS
 argument_list|,
 name|vectors_ID
 argument_list|,
@@ -184,7 +184,7 @@ argument_list|,
 operator|&
 name|nreturn_vals
 argument_list|,
-name|GIMP_PDB_PATH
+name|GIMP_PDB_VECTORS
 argument_list|,
 name|vectors_ID
 argument_list|,
@@ -262,7 +262,7 @@ argument_list|,
 operator|&
 name|nreturn_vals
 argument_list|,
-name|GIMP_PDB_PATH
+name|GIMP_PDB_VECTORS
 argument_list|,
 name|vectors_ID
 argument_list|,
@@ -343,7 +343,7 @@ argument_list|,
 operator|&
 name|nreturn_vals
 argument_list|,
-name|GIMP_PDB_PATH
+name|GIMP_PDB_VECTORS
 argument_list|,
 name|vectors_ID
 argument_list|,
@@ -414,7 +414,7 @@ argument_list|,
 operator|&
 name|nreturn_vals
 argument_list|,
-name|GIMP_PDB_PATH
+name|GIMP_PDB_VECTORS
 argument_list|,
 name|vectors_ID
 argument_list|,
@@ -495,7 +495,7 @@ argument_list|,
 operator|&
 name|nreturn_vals
 argument_list|,
-name|GIMP_PDB_PATH
+name|GIMP_PDB_VECTORS
 argument_list|,
 name|vectors_ID
 argument_list|,
@@ -568,7 +568,7 @@ argument_list|,
 operator|&
 name|nreturn_vals
 argument_list|,
-name|GIMP_PDB_PATH
+name|GIMP_PDB_VECTORS
 argument_list|,
 name|vectors_ID
 argument_list|,
@@ -654,7 +654,7 @@ argument_list|,
 operator|&
 name|nreturn_vals
 argument_list|,
-name|GIMP_PDB_PATH
+name|GIMP_PDB_VECTORS
 argument_list|,
 name|vectors_ID
 argument_list|,
@@ -725,7 +725,7 @@ argument_list|,
 operator|&
 name|nreturn_vals
 argument_list|,
-name|GIMP_PDB_PATH
+name|GIMP_PDB_VECTORS
 argument_list|,
 name|vectors_ID
 argument_list|,
@@ -806,7 +806,7 @@ argument_list|,
 operator|&
 name|nreturn_vals
 argument_list|,
-name|GIMP_PDB_PATH
+name|GIMP_PDB_VECTORS
 argument_list|,
 name|vectors_ID
 argument_list|,
@@ -883,7 +883,7 @@ argument_list|,
 operator|&
 name|nreturn_vals
 argument_list|,
-name|GIMP_PDB_PATH
+name|GIMP_PDB_VECTORS
 argument_list|,
 name|vectors_ID
 argument_list|,
@@ -972,7 +972,7 @@ argument_list|,
 operator|&
 name|nreturn_vals
 argument_list|,
-name|GIMP_PDB_PATH
+name|GIMP_PDB_VECTORS
 argument_list|,
 name|vectors_ID
 argument_list|,
@@ -1052,7 +1052,7 @@ argument_list|,
 operator|&
 name|nreturn_vals
 argument_list|,
-name|GIMP_PDB_PATH
+name|GIMP_PDB_VECTORS
 argument_list|,
 name|vectors_ID
 argument_list|,
@@ -1140,7 +1140,7 @@ argument_list|,
 operator|&
 name|nreturn_vals
 argument_list|,
-name|GIMP_PDB_PATH
+name|GIMP_PDB_VECTORS
 argument_list|,
 name|vectors_ID
 argument_list|,
@@ -1234,7 +1234,7 @@ argument_list|,
 operator|&
 name|nreturn_vals
 argument_list|,
-name|GIMP_PDB_PATH
+name|GIMP_PDB_VECTORS
 argument_list|,
 name|vectors_ID
 argument_list|,

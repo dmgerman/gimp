@@ -8031,7 +8031,7 @@ literal|"The image"
 block|}
 block|,
 block|{
-name|GIMP_PDB_PATH
+name|GIMP_PDB_VECTORS
 block|,
 literal|"vectors"
 block|,
@@ -8233,7 +8233,7 @@ literal|"The image"
 block|}
 block|,
 block|{
-name|GIMP_PDB_PATH
+name|GIMP_PDB_VECTORS
 block|,
 literal|"vectors"
 block|,
@@ -8435,7 +8435,7 @@ literal|"The image"
 block|}
 block|,
 block|{
-name|GIMP_PDB_PATH
+name|GIMP_PDB_VECTORS
 block|,
 literal|"vectors"
 block|,
@@ -8637,7 +8637,7 @@ literal|"The image"
 block|}
 block|,
 block|{
-name|GIMP_PDB_PATH
+name|GIMP_PDB_VECTORS
 block|,
 literal|"vectors"
 block|,
@@ -9285,7 +9285,7 @@ literal|"The image"
 block|}
 block|,
 block|{
-name|GIMP_PDB_PATH
+name|GIMP_PDB_VECTORS
 block|,
 literal|"vectors"
 block|,
@@ -13295,7 +13295,7 @@ index|[]
 init|=
 block|{
 block|{
-name|GIMP_PDB_PATH
+name|GIMP_PDB_VECTORS
 block|,
 literal|"active-vectors"
 block|,
@@ -13501,7 +13501,7 @@ literal|"The image"
 block|}
 block|,
 block|{
-name|GIMP_PDB_PATH
+name|GIMP_PDB_VECTORS
 block|,
 literal|"active-vectors"
 block|,
@@ -17275,7 +17275,7 @@ index|[]
 init|=
 block|{
 block|{
-name|GIMP_PDB_PATH
+name|GIMP_PDB_VECTORS
 block|,
 literal|"vectors"
 block|,
