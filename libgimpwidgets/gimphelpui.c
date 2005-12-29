@@ -48,7 +48,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c4ef7760103
+DECL|enum|__anon2b06c5f70103
 block|{
 DECL|enumerator|GIMP_WIDGET_HELP_TYPE_HELP
 name|GIMP_WIDGET_HELP_TYPE_HELP
@@ -500,10 +500,6 @@ name|widget
 argument_list|)
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|tooltip
-condition|)
 name|gtk_tooltips_set_tip
 argument_list|(
 name|tool_tips
@@ -515,7 +511,11 @@ argument_list|,
 name|help_id
 argument_list|)
 expr_stmt|;
-else|else
+if|if
+condition|(
+operator|!
+name|tooltip
+condition|)
 name|g_object_set_qdata
 argument_list|(
 name|G_OBJECT

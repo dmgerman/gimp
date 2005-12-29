@@ -91,6 +91,14 @@ name|LABEL_PADDING
 value|4
 end_define
 
+begin_define
+DECL|macro|HELP_TEXT
+define|#
+directive|define
+name|HELP_TEXT
+value|_("You can drop dockable dialogs here.")
+end_define
+
 begin_function_decl
 specifier|static
 name|void
@@ -370,10 +378,7 @@ argument_list|(
 name|separator
 argument_list|)
 argument_list|,
-name|_
-argument_list|(
-literal|"You can drop dockable dialogs here."
-argument_list|)
+name|HELP_TEXT
 argument_list|,
 name|GIMP_HELP_DOCK_SEPARATOR
 argument_list|)
@@ -1085,10 +1090,7 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
-name|_
-argument_list|(
-literal|"You can drop dockable dialogs here."
-argument_list|)
+name|HELP_TEXT
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_padding
@@ -1167,6 +1169,18 @@ operator|->
 name|label
 argument_list|)
 expr_stmt|;
+name|gimp_help_set_help_data
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|separator
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_HELP_DOCK_SEPARATOR
+argument_list|)
+expr_stmt|;
 block|}
 elseif|else
 if|if
@@ -1198,6 +1212,18 @@ operator|->
 name|label
 operator|=
 name|NULL
+expr_stmt|;
+name|gimp_help_set_help_data
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|separator
+argument_list|)
+argument_list|,
+name|HELP_TEXT
+argument_list|,
+name|GIMP_HELP_DOCK_SEPARATOR
+argument_list|)
 expr_stmt|;
 block|}
 block|}
