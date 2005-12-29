@@ -147,7 +147,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2baffa000103
+DECL|enum|__anon2bc4b9060103
 block|{
 DECL|enumerator|DOCKABLE_ADDED
 name|DOCKABLE_ADDED
@@ -277,8 +277,9 @@ name|GdkDragContext
 modifier|*
 name|context
 parameter_list|,
-name|gpointer
-name|data
+name|GimpDockable
+modifier|*
+name|dockable
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -296,8 +297,9 @@ name|GdkDragContext
 modifier|*
 name|context
 parameter_list|,
-name|gpointer
-name|data
+name|GimpDockable
+modifier|*
+name|dockable
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -323,9 +325,6 @@ name|y
 parameter_list|,
 name|guint
 name|time
-parameter_list|,
-name|gpointer
-name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1977,7 +1976,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dockbook_tab_drag_begin (GtkWidget * widget,GdkDragContext * context,gpointer data)
+DECL|function|gimp_dockbook_tab_drag_begin (GtkWidget * widget,GdkDragContext * context,GimpDockable * dockable)
 name|gimp_dockbook_tab_drag_begin
 parameter_list|(
 name|GtkWidget
@@ -1988,22 +1987,19 @@ name|GdkDragContext
 modifier|*
 name|context
 parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
 name|GimpDockable
 modifier|*
 name|dockable
-init|=
-name|GIMP_DOCKABLE
-argument_list|(
-name|data
-argument_list|)
-decl_stmt|;
+parameter_list|)
+block|{
 name|GtkWidget
 modifier|*
 name|window
+init|=
+name|gtk_window_new
+argument_list|(
+name|GTK_WINDOW_POPUP
+argument_list|)
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -2012,13 +2008,6 @@ decl_stmt|;
 name|GtkRequisition
 name|requisition
 decl_stmt|;
-name|window
-operator|=
-name|gtk_window_new
-argument_list|(
-name|GTK_WINDOW_POPUP
-argument_list|)
-expr_stmt|;
 name|view
 operator|=
 name|gimp_dockable_get_tab_widget
@@ -2181,13 +2170,24 @@ operator|->
 name|drag_y
 argument_list|)
 expr_stmt|;
+comment|/*    * Set the source dockable insensitive to give a visual clue that    * it's the dockable that's being dragged around    */
+name|gtk_widget_set_sensitive
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|dockable
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dockbook_tab_drag_end (GtkWidget * widget,GdkDragContext * context,gpointer data)
+DECL|function|gimp_dockbook_tab_drag_end (GtkWidget * widget,GdkDragContext * context,GimpDockable * dockable)
 name|gimp_dockbook_tab_drag_end
 parameter_list|(
 name|GtkWidget
@@ -2198,27 +2198,15 @@ name|GdkDragContext
 modifier|*
 name|context
 parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
 name|GimpDockable
 modifier|*
 name|dockable
-decl_stmt|;
+parameter_list|)
+block|{
 name|GtkWidget
 modifier|*
 name|drag_widget
-decl_stmt|;
-name|dockable
-operator|=
-name|GIMP_DOCKABLE
-argument_list|(
-name|data
-argument_list|)
-expr_stmt|;
-name|drag_widget
-operator|=
+init|=
 name|g_object_get_data
 argument_list|(
 name|G_OBJECT
@@ -2228,7 +2216,7 @@ argument_list|)
 argument_list|,
 literal|"gimp-dock-drag-widget"
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 comment|/*  finding the drag_widget means the drop was not successful, so    *  pop up a new dock and move the dockable there    */
 if|if
 condition|(
@@ -2253,13 +2241,23 @@ name|dockable
 argument_list|)
 expr_stmt|;
 block|}
+name|gtk_widget_set_sensitive
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|dockable
+argument_list|)
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_dockbook_tab_drag_drop (GtkWidget * widget,GdkDragContext * context,gint x,gint y,guint time,gpointer data)
+DECL|function|gimp_dockbook_tab_drag_drop (GtkWidget * widget,GdkDragContext * context,gint x,gint y,guint time)
 name|gimp_dockbook_tab_drag_drop
 parameter_list|(
 name|GtkWidget
@@ -2278,9 +2276,6 @@ name|y
 parameter_list|,
 name|guint
 name|time
-parameter_list|,
-name|gpointer
-name|data
 parameter_list|)
 block|{
 name|GimpDockable
