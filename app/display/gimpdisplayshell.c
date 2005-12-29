@@ -263,7 +263,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28db95690103
+DECL|enum|__anon2978fa530103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -276,7 +276,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28db95690203
+DECL|enum|__anon2978fa530203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -2344,10 +2344,7 @@ name|g_object_new
 argument_list|(
 name|GIMP_TYPE_DISPLAY_SHELL
 argument_list|,
-literal|"gravity"
-argument_list|,
-name|GDK_GRAVITY_CENTER
-argument_list|,
+comment|/* "gravity", GDK_GRAVITY_CENTER, */
 literal|"unit"
 argument_list|,
 name|unit
