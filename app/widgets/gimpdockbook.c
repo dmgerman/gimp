@@ -147,7 +147,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a21a28b0103
+DECL|enum|__anon2a2efb120103
 block|{
 DECL|enumerator|DOCKABLE_ADDED
 name|DOCKABLE_ADDED
@@ -2262,6 +2262,18 @@ name|dockable
 argument_list|)
 expr_stmt|;
 block|}
+name|dockable
+operator|->
+name|drag_x
+operator|=
+name|GIMP_DOCKABLE_DRAG_OFFSET
+expr_stmt|;
+name|dockable
+operator|->
+name|drag_y
+operator|=
+name|GIMP_DOCKABLE_DRAG_OFFSET
+expr_stmt|;
 name|gtk_widget_set_sensitive
 argument_list|(
 name|GTK_WIDGET

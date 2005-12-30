@@ -93,14 +93,6 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
-begin_define
-DECL|macro|DRAG_OFFSET
-define|#
-directive|define
-name|DRAG_OFFSET
-value|(-6)
-end_define
-
 begin_function_decl
 specifier|static
 name|void
@@ -702,13 +694,13 @@ name|dockable
 operator|->
 name|drag_x
 operator|=
-name|DRAG_OFFSET
+name|GIMP_DOCKABLE_DRAG_OFFSET
 expr_stmt|;
 name|dockable
 operator|->
 name|drag_y
 operator|=
-name|DRAG_OFFSET
+name|GIMP_DOCKABLE_DRAG_OFFSET
 expr_stmt|;
 name|gtk_widget_push_composite_child
 argument_list|()
@@ -2540,7 +2532,7 @@ name|dockable
 operator|->
 name|drag_x
 operator|=
-name|DRAG_OFFSET
+name|GIMP_DOCKABLE_DRAG_OFFSET
 expr_stmt|;
 return|return
 name|FALSE

@@ -23,6 +23,14 @@ file|<gtk/gtkbin.h>
 end_include
 
 begin_define
+DECL|macro|GIMP_DOCKABLE_DRAG_OFFSET
+define|#
+directive|define
+name|GIMP_DOCKABLE_DRAG_OFFSET
+value|(-6)
+end_define
+
+begin_define
 DECL|macro|GIMP_TYPE_DOCKABLE
 define|#
 directive|define
