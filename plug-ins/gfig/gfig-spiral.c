@@ -230,6 +230,12 @@ name|loop
 decl_stmt|;
 name|GdkPoint
 name|start_pnt
+init|=
+block|{
+literal|0
+block|,
+literal|0
+block|}
 decl_stmt|;
 name|GdkPoint
 name|first_pnt
@@ -649,6 +655,12 @@ name|loop
 decl_stmt|;
 name|GdkPoint
 name|last_pnt
+init|=
+block|{
+literal|0
+block|,
+literal|0
+block|}
 decl_stmt|;
 name|gint
 name|clock_wise

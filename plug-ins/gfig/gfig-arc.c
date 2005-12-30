@@ -2012,6 +2012,12 @@ name|GdkPoint
 name|first_pnt
 decl_stmt|,
 name|last_pnt
+init|=
+block|{
+literal|0
+block|,
+literal|0
+block|}
 decl_stmt|;
 name|gboolean
 name|first

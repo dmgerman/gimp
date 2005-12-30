@@ -203,7 +203,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad0dab00108
+DECL|struct|__anon2ae5621e0108
 block|{
 DECL|member|product
 name|gint
@@ -355,7 +355,7 @@ index|]
 operator|==
 literal|0
 condition|)
-comment|// divisible
+comment|/* divisible */
 block|{
 name|this
 operator|->
