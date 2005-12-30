@@ -3805,8 +3805,7 @@ operator|/
 literal|2
 expr_stmt|;
 break|break;
-name|deafult
-label|:
+default|default:
 break|break;
 block|}
 name|value
