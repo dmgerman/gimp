@@ -42,7 +42,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2f0dfb0108
+DECL|struct|__anon2937d0ad0108
 block|{
 DECL|member|point
 name|GdkPoint
@@ -226,7 +226,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|aff2_scale (Aff2 * naff,gdouble s,gint flip)
+DECL|function|aff2_scale (Aff2 * naff,gdouble s,gboolean flip)
 name|aff2_scale
 parameter_list|(
 name|Aff2
@@ -236,7 +236,7 @@ parameter_list|,
 name|gdouble
 name|s
 parameter_list|,
-name|gint
+name|gboolean
 name|flip
 parameter_list|)
 block|{
@@ -2115,7 +2115,7 @@ operator|.
 name|b
 argument_list|)
 expr_stmt|;
-comment|/* For mag2 == 0, the transformation blows up in general 	 but is well defined for hue_scale == value_scale, so 	 we assume that special case. */
+comment|/* For mag2 == 0, the transformation blows up in general          but is well defined for hue_scale == value_scale, so          we assume that special case. */
 if|if
 condition|(
 name|mag2
@@ -4130,7 +4130,7 @@ name|gint
 name|num_elements
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|IPolygon
@@ -5214,9 +5214,13 @@ name|NULL
 decl_stmt|;
 name|gint
 name|brush_size
+init|=
+literal|1
 decl_stmt|;
 name|gdouble
 name|brush_offset
+init|=
+literal|0.0
 decl_stmt|;
 if|if
 condition|(
@@ -5338,7 +5342,7 @@ operator|.
 name|a21
 argument_list|)
 expr_stmt|;
-comment|/* As a heuristic, if the determinant is really small, it's 	 probably a line element, so increase the probability so 	 it gets rendered */
+comment|/* As a heuristic, if the determinant is really small, it's          probably a line element, so increase the probability so          it gets rendered */
 comment|/* FIXME: figure out what 0.01 really should be */
 if|if
 condition|(
