@@ -513,7 +513,7 @@ block|,
 block|{
 literal|"image-properties"
 block|,
-name|GTK_STOCK_PROPERTIES
+name|GTK_STOCK_INFO
 block|,
 name|N_
 argument_list|(

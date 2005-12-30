@@ -782,7 +782,7 @@ block|,
 block|{
 literal|"view-fullscreen"
 block|,
-name|NULL
+name|GTK_STOCK_FULLSCREEN
 block|,
 name|N_
 argument_list|(

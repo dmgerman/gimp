@@ -130,7 +130,7 @@ argument_list|)
 argument_list|,
 literal|"gimp-image-properties"
 argument_list|,
-name|GTK_STOCK_PROPERTIES
+name|GTK_STOCK_INFO
 argument_list|,
 name|_
 argument_list|(
