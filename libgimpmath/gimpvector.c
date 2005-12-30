@@ -2916,6 +2916,12 @@ operator|)
 name|h
 expr_stmt|;
 block|}
+name|result
+operator|.
+name|z
+operator|=
+literal|0
+expr_stmt|;
 return|return
 name|result
 return|;

@@ -674,6 +674,8 @@ decl_stmt|;
 name|GimpConfigInterface
 modifier|*
 name|parent_iface
+init|=
+name|NULL
 decl_stmt|;
 name|GParamSpec
 modifier|*
