@@ -4,7 +4,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/*  * 2004-12-12 - Use a slower but much nicer technique for finding the  *  two best colours to dither between when using fixed/positional  *  dither methods.  Makes positional dither much less lame.  [adam@gimp.org]  *  * 2002-02-10 - Quantizer version 3.0 (the rest of the commit started  *  a year ago -- whoops).  Divide colours within CIE L*a*b* space using  *  CPercep module (cpercep.[ch]), colour-match and dither likewise,  *  change the underlying box selection criteria and division point  *  logic, bump luminance precision upwards, etc.etc.  Generally  *  chooses a much richer colour set, especially for low numbers of  *  colours.  n.b.: Less luminance-sloppy in straight remapping which is  *  good for colour but a bit worse for high-frequency detail (that's  *  partly what fs-dithering is for -- use it).  [adam@gimp.org]  *  * 2001-03-25 - Define accessor function/macro for histogram reads and  *  writes.  This slows us down a little because we avoid some of the  *  dirty tricks we used when we knew that the histogram was a straight  *  3d array, so I've recovered some of the speed loss by implementing  *  a 5d accessor function with good locality of reference.  This change  *  is the first step towards quantizing in a more interesting colourspace  *  than frumpy old RGB.  [Adam]  *  * 2000/01/30 - Use palette_selector instead of option_menu for custom  *  palette. Use libgimp callback functions.  [Sven]  *  * 99/09/01 - Created a low-bleed FS-dither option.  [Adam]  *  * 99/08/29 - Deterministic colour dithering to arbitrary palettes.  *  Ideal for animations that are going to be delta-optimized or simply  *  don't want to look 'busy' in static areas.  Also a bunch of bugfixes  *  and tweaks.  [Adam]  *  * 99/08/28 - Deterministic alpha dithering over layers, reduced bleeding  *  of transparent values into opaque values, added optional stage to  *  remove duplicate or unused colour entries from final colourmap. [Adam]  *  * 99/02/24 - Many revisions to the box-cut quantizer used in RGB->INDEXED  *  conversion.  Box to be cut is chosen on the basis of posessing an axis  *  with the largest sum of weighted perceptible error, rather than based on  *  volume or population.  The box is split along this axis rather than its  *  longest axis, at the point of error mean rather than simply at its centre.  *  Error-limiting in the F-S dither has been disabled - it may become optional  *  again later.  If you're convinced that you have an image where the old  *  dither looks better, let me know.  [Adam]  *  * 99/01/10 - Hourglass... [Adam]  *  * 98/07/25 - Convert-to-indexed now remembers the last invocation's  *  settings.  Also, GRAY->INDEXED is more flexible.  [Adam]  *  * 98/07/05 - Sucked the warning about quantizing to too many colours into  *  a text widget embedded in the dialog, improved intelligence of dialog  *  to default 'custom palette' selection to 'Web' if available, and  *  in this case not bother to present the native WWW-palette radio  *  button.  [Adam]  *  * 98/04/13 - avoid a division by zero when converting an empty gray-scale  *  image (who would like to do such a thing anyway??)  [Sven ]  *  * 98/03/23 - fixed a longstanding fencepost - hopefully the *right*  *  way, *again*.  [Adam]  *  * 97/11/14 - added a proper pdb interface and support for dithering  *  to custom palettes (based on a patch by Eric Hernes) [Yosh]  *  * 97/11/04 - fixed the accidental use of the colour-counting case  *  when palette_type is WEB or MONO. [Adam]  *  * 97/10/25 - colour-counting implemented (could use some hashing, but  *  performance actually seems okay) - now RGB->INDEXED conversion isn't  *  destructive if it doesn't have to be. [Adam]  *  * 97/10/14 - fixed divide-by-zero when converting a completely transparent  *  RGB image to indexed. [Adam]  *  * 97/07/01 - started todo/revision log.  Put code back in to  *  eliminate full-alpha pixels from RGB histogram.  *  [Adam D. Moss - adam@gimp.org]  */
+comment|/*  * 2005-09-04 - Switch 'positional' dither matrix to a 32x32 Bayer,  *  which generates results that compress somewhat better (and may look  *  worse or better depending on what you enjoy...).  [adam@gimp.org]  *  * 2004-12-12 - Use a slower but much nicer technique for finding the  *  two best colours to dither between when using fixed/positional  *  dither methods.  Makes positional dither much less lame.  [adam@gimp.org]  *  * 2002-02-10 - Quantizer version 3.0 (the rest of the commit started  *  a year ago -- whoops).  Divide colours within CIE L*a*b* space using  *  CPercep module (cpercep.[ch]), colour-match and dither likewise,  *  change the underlying box selection criteria and division point  *  logic, bump luminance precision upwards, etc.etc.  Generally  *  chooses a much richer colour set, especially for low numbers of  *  colours.  n.b.: Less luminance-sloppy in straight remapping which is  *  good for colour but a bit worse for high-frequency detail (that's  *  partly what fs-dithering is for -- use it).  [adam@gimp.org]  *  * 2001-03-25 - Define accessor function/macro for histogram reads and  *  writes.  This slows us down a little because we avoid some of the  *  dirty tricks we used when we knew that the histogram was a straight  *  3d array, so I've recovered some of the speed loss by implementing  *  a 5d accessor function with good locality of reference.  This change  *  is the first step towards quantizing in a more interesting colourspace  *  than frumpy old RGB.  [Adam]  *  * 2000/01/30 - Use palette_selector instead of option_menu for custom  *  palette. Use libgimp callback functions.  [Sven]  *  * 99/09/01 - Created a low-bleed FS-dither option.  [Adam]  *  * 99/08/29 - Deterministic colour dithering to arbitrary palettes.  *  Ideal for animations that are going to be delta-optimized or simply  *  don't want to look 'busy' in static areas.  Also a bunch of bugfixes  *  and tweaks.  [Adam]  *  * 99/08/28 - Deterministic alpha dithering over layers, reduced bleeding  *  of transparent values into opaque values, added optional stage to  *  remove duplicate or unused colour entries from final colourmap. [Adam]  *  * 99/02/24 - Many revisions to the box-cut quantizer used in RGB->INDEXED  *  conversion.  Box to be cut is chosen on the basis of posessing an axis  *  with the largest sum of weighted perceptible error, rather than based on  *  volume or population.  The box is split along this axis rather than its  *  longest axis, at the point of error mean rather than simply at its centre.  *  Error-limiting in the F-S dither has been disabled - it may become optional  *  again later.  If you're convinced that you have an image where the old  *  dither looks better, let me know.  [Adam]  *  * 99/01/10 - Hourglass... [Adam]  *  * 98/07/25 - Convert-to-indexed now remembers the last invocation's  *  settings.  Also, GRAY->INDEXED is more flexible.  [Adam]  *  * 98/07/05 - Sucked the warning about quantizing to too many colours into  *  a text widget embedded in the dialog, improved intelligence of dialog  *  to default 'custom palette' selection to 'Web' if available, and  *  in this case not bother to present the native WWW-palette radio  *  button.  [Adam]  *  * 98/04/13 - avoid a division by zero when converting an empty gray-scale  *  image (who would like to do such a thing anyway??)  [Sven ]  *  * 98/03/23 - fixed a longstanding fencepost - hopefully the *right*  *  way, *again*.  [Adam]  *  * 97/11/14 - added a proper pdb interface and support for dithering  *  to custom palettes (based on a patch by Eric Hernes) [Yosh]  *  * 97/11/04 - fixed the accidental use of the colour-counting case  *  when palette_type is WEB or MONO. [Adam]  *  * 97/10/25 - colour-counting implemented (could use some hashing, but  *  performance actually seems okay) - now RGB->INDEXED conversion isn't  *  destructive if it doesn't have to be. [Adam]  *  * 97/10/14 - fixed divide-by-zero when converting a completely transparent  *  RGB image to indexed. [Adam]  *  * 97/07/01 - started todo/revision log.  Put code back in to  *  eliminate full-alpha pixels from RGB histogram.  *  [Adam D. Moss - adam@gimp.org]  */
 end_comment
 
 begin_comment
@@ -176,25 +176,6 @@ include|#
 directive|include
 file|"gimp-intl.h"
 end_include
-
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|DM_RANGE
-end_ifndef
-
-begin_define
-DECL|macro|DM_RANGE
-define|#
-directive|define
-name|DM_RANGE
-value|63
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_comment
 comment|/* basic memory/quality tradeoff */
@@ -442,7 +423,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2bbe1f690103
+DECL|enum|__anon2b8c5fce0103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1483,7 +1464,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbe1f690208
+DECL|struct|__anon2b8c5fce0208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1560,7 +1541,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbe1f690308
+DECL|struct|__anon2b8c5fce0308
 block|{
 DECL|member|ncolors
 name|long
@@ -1745,7 +1726,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbe1f690408
+DECL|struct|__anon2b8c5fce0408
 block|{
 DECL|member|used_count
 name|signed
@@ -4664,13 +4645,9 @@ name|data
 index|[
 name|ALPHA_PIX
 index|]
-operator|<<
-literal|6
 operator|)
 operator|>
 operator|(
-literal|255
-operator|*
 name|DM
 index|[
 name|col
@@ -4867,13 +4844,9 @@ name|data
 index|[
 name|ALPHA_PIX
 index|]
-operator|<<
-literal|6
 operator|)
 operator|>
 operator|(
-literal|255
-operator|*
 name|DM
 index|[
 name|col
@@ -10943,13 +10916,9 @@ name|src
 index|[
 name|ALPHA_G_PIX
 index|]
-operator|<<
-literal|6
 operator|)
 operator|>
 operator|(
-literal|255
-operator|*
 name|DM
 index|[
 operator|(
@@ -11598,7 +11567,7 @@ init|=
 operator|(
 literal|256
 operator|*
-name|DM_RANGE
+literal|255
 operator|*
 name|err2
 operator|)
@@ -12075,13 +12044,9 @@ name|src
 index|[
 name|alpha_pix
 index|]
-operator|<<
-literal|6
 operator|)
 operator|>
 operator|(
-literal|255
-operator|*
 name|DM
 index|[
 operator|(
@@ -13201,7 +13166,7 @@ name|int
 name|proportion2
 init|=
 operator|(
-name|DM_RANGE
+literal|255
 operator|*
 name|err2
 operator|)
@@ -13561,13 +13526,9 @@ name|src
 index|[
 name|alpha_pix
 index|]
-operator|<<
-literal|6
 operator|)
 operator|>
 operator|(
-literal|255
-operator|*
 name|DM
 index|[
 operator|(
@@ -14674,13 +14635,9 @@ name|src
 index|[
 name|ALPHA_G_PIX
 index|]
-operator|<<
-literal|6
 operator|)
 operator|>
 operator|(
-literal|255
-operator|*
 name|DM
 index|[
 operator|(
@@ -14766,13 +14723,9 @@ name|src
 index|[
 name|ALPHA_G_PIX
 index|]
-operator|<<
-literal|6
 operator|)
 operator|>
 operator|(
-literal|255
-operator|*
 name|DM
 index|[
 operator|(
@@ -16142,13 +16095,9 @@ name|src
 index|[
 name|alpha_pix
 index|]
-operator|<<
-literal|6
 operator|)
 operator|>
 operator|(
-literal|255
-operator|*
 name|DM
 index|[
 operator|(
@@ -16260,13 +16209,9 @@ name|src
 index|[
 name|alpha_pix
 index|]
-operator|<<
-literal|6
 operator|)
 operator|>
 operator|(
-literal|255
-operator|*
 name|DM
 index|[
 operator|(
