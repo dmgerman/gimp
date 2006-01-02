@@ -144,6 +144,153 @@ block|}
 end_function
 
 begin_comment
+comment|/**  * gimp_context_get_paint_method:  *  * Retrieve the currently active paint method.  *  * This procedure returns the name of the currently active paint  * method.  *  * Returns: The name of the active paint method.  *  * Since: GIMP 2.4  */
+end_comment
+
+begin_function
+name|gchar
+modifier|*
+DECL|function|gimp_context_get_paint_method (void)
+name|gimp_context_get_paint_method
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+name|GimpParam
+modifier|*
+name|return_vals
+decl_stmt|;
+name|gint
+name|nreturn_vals
+decl_stmt|;
+name|gchar
+modifier|*
+name|name
+init|=
+name|NULL
+decl_stmt|;
+name|return_vals
+operator|=
+name|gimp_run_procedure
+argument_list|(
+literal|"gimp-context-get-paint-method"
+argument_list|,
+operator|&
+name|nreturn_vals
+argument_list|,
+name|GIMP_PDB_END
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|GIMP_PDB_SUCCESS
+condition|)
+name|name
+operator|=
+name|g_strdup
+argument_list|(
+name|return_vals
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_string
+argument_list|)
+expr_stmt|;
+name|gimp_destroy_params
+argument_list|(
+name|return_vals
+argument_list|,
+name|nreturn_vals
+argument_list|)
+expr_stmt|;
+return|return
+name|name
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_context_set_paint_method:  * @name: The name of the paint method.  *  * Set the specified paint method as the active paint method.  *  * This procedure allows the active paint method to be set by  * specifying its name. The name is simply a string which corresponds  * to one of the names of the available paint methods. If there is no  * matching method found, this procedure will return an error.  * Otherwise, the specified method becomes active and will be used in  * all subsequent paint operations.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  */
+end_comment
+
+begin_function
+name|gboolean
+DECL|function|gimp_context_set_paint_method (const gchar * name)
+name|gimp_context_set_paint_method
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|name
+parameter_list|)
+block|{
+name|GimpParam
+modifier|*
+name|return_vals
+decl_stmt|;
+name|gint
+name|nreturn_vals
+decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|TRUE
+decl_stmt|;
+name|return_vals
+operator|=
+name|gimp_run_procedure
+argument_list|(
+literal|"gimp-context-set-paint-method"
+argument_list|,
+operator|&
+name|nreturn_vals
+argument_list|,
+name|GIMP_PDB_STRING
+argument_list|,
+name|name
+argument_list|,
+name|GIMP_PDB_END
+argument_list|)
+expr_stmt|;
+name|success
+operator|=
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|GIMP_PDB_SUCCESS
+expr_stmt|;
+name|gimp_destroy_params
+argument_list|(
+name|return_vals
+argument_list|,
+name|nreturn_vals
+argument_list|)
+expr_stmt|;
+return|return
+name|success
+return|;
+block|}
+end_function
+
+begin_comment
 comment|/**  * gimp_context_get_foreground:  * @foreground: The foreground color.  *  * Get the current GIMP foreground color.  *  * This procedure returns the current GIMP foreground color. The  * foreground color is used in a variety of tools such as paint tools,  * blending, and bucket fill.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
 end_comment
 
@@ -846,7 +993,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_brush:  *  * Retrieve the currently active brush.  *  * This procedure returns the nme of the currently active brush. All  * paint operations and stroke operations use this brush to control the  * application of paint to the image.  *  * Returns: The name of the active brush.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_context_get_brush:  *  * Retrieve the currently active brush.  *  * This procedure returns the name of the currently active brush. All  * paint operations and stroke operations use this brush to control the  * application of paint to the image.  *  * Returns: The name of the active brush.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function
@@ -924,7 +1071,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_brush:  * @name: The name o the brush.  *  * Set the specified brush as the active brush.  *  * This procedure allows the active brush to be set by specifying its  * name. The name is simply a string which corresponds to one of the  * names of the installed brushes. If there is no matching brush found,  * this procedure will return an error. Otherwise, the specified brush  * becomes active and will be used in all subsequent paint operations.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_context_set_brush:  * @name: The name of the brush.  *  * Set the specified brush as the active brush.  *  * This procedure allows the active brush to be set by specifying its  * name. The name is simply a string which corresponds to one of the  * names of the installed brushes. If there is no matching brush found,  * this procedure will return an error. Otherwise, the specified brush  * becomes active and will be used in all subsequent paint operations.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function
