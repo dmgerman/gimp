@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon299a5d120103
+DECL|enum|__anon28fcfd7e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -988,7 +988,7 @@ name|gtk_button_get_focus_on_click
 argument_list|(
 name|GTK_BUTTON
 argument_list|(
-name|button
+name|widget
 argument_list|)
 argument_list|)
 condition|)
@@ -1441,7 +1441,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299a5d120208
+DECL|struct|__anon28fcfd7e0208
 block|{
 DECL|member|dialog
 name|GtkDialog
