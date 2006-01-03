@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3c39140103
+DECL|enum|__anon299a5d120103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -976,11 +976,29 @@ operator|==
 name|response_id
 condition|)
 block|{
+if|if
+condition|(
+operator|!
+name|GTK_IS_BUTTON
+argument_list|(
+name|widget
+argument_list|)
+operator|||
+name|gtk_button_get_focus_on_click
+argument_list|(
+name|GTK_BUTTON
+argument_list|(
+name|button
+argument_list|)
+argument_list|)
+condition|)
+block|{
 name|gtk_widget_grab_focus
 argument_list|(
 name|widget
 argument_list|)
 expr_stmt|;
+block|}
 break|break;
 block|}
 block|}
@@ -1423,7 +1441,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3c39140208
+DECL|struct|__anon299a5d120208
 block|{
 DECL|member|dialog
 name|GtkDialog
