@@ -554,7 +554,7 @@ literal|"gimp-context-push"
 block|,
 literal|"Pushes a context to the top of the plug-in's context stack."
 block|,
-literal|"This procedure creates a new context by copying the current context. This copy becomes the new current context for the calling plug-in until it is popped again."
+literal|"This procedure creates a new context by copying the current context. This copy becomes the new current context for the calling plug-in until it is popped again using gimp-context-pop."
 block|,
 literal|"Michael Natterer<mitch@gimp.org>& Sven Neumann<sven@gimp.org>"
 block|,
@@ -667,7 +667,7 @@ literal|"gimp-context-pop"
 block|,
 literal|"Pops the topmost context from the plug-in's context stack."
 block|,
-literal|"This procedure creates a new context and makes it the current context for the calling plug-in."
+literal|"This procedure removes the topmost context from the plug-in's context stack. The context that was active before the corresponding call to gimp-context-push becomes the new current context of the plug-in."
 block|,
 literal|"Michael Natterer<mitch@gimp.org>& Sven Neumann<sven@gimp.org>"
 block|,
