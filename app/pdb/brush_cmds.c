@@ -3060,13 +3060,6 @@ expr_stmt|;
 if|if
 condition|(
 name|brush
-operator|&&
-name|GIMP_DATA
-argument_list|(
-name|brush
-argument_list|)
-operator|->
-name|writable
 condition|)
 name|gimp_brush_set_spacing
 argument_list|(
