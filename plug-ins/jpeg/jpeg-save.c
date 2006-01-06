@@ -140,7 +140,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295968690108
+DECL|struct|__anon296d5f210108
 block|{
 DECL|member|cinfo
 name|struct
@@ -2284,6 +2284,19 @@ operator|.
 name|error_exit
 operator|=
 name|background_error_exit
+expr_stmt|;
+name|gtk_label_set_text
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|preview_size
+argument_list|)
+argument_list|,
+name|_
+argument_list|(
+literal|"Calculating file size..."
+argument_list|)
+argument_list|)
 expr_stmt|;
 name|g_idle_add
 argument_list|(
@@ -4859,7 +4872,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295968690208
+DECL|struct|__anon296d5f210208
 block|{
 DECL|member|pub
 name|struct
