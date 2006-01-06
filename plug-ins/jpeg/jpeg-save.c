@@ -140,7 +140,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7fd2590108
+DECL|struct|__anon295968690108
 block|{
 DECL|member|cinfo
 name|struct
@@ -892,6 +892,12 @@ name|gint
 name|thumbnail_buffer_length
 init|=
 literal|0
+decl_stmt|;
+name|ExifData
+modifier|*
+name|exif_data_tmp
+init|=
+name|NULL
 decl_stmt|;
 endif|#
 directive|endif
@@ -1671,10 +1677,15 @@ operator|!
 name|exif_data
 operator|)
 condition|)
-name|exif_data
+name|exif_data_tmp
 operator|=
 name|exif_data_new
 argument_list|()
+expr_stmt|;
+else|else
+name|exif_data_tmp
+operator|=
+name|exif_data
 expr_stmt|;
 comment|/* avoid saving markers longer than 65533, gradually decrease        * quality in steps of 5 until exif_buf_len is lower than that.        */
 for|for
@@ -1716,13 +1727,13 @@ operator|&
 name|thumbnail_buffer
 argument_list|)
 expr_stmt|;
-name|exif_data
+name|exif_data_tmp
 operator|->
 name|data
 operator|=
 name|thumbnail_buffer
 expr_stmt|;
-name|exif_data
+name|exif_data_tmp
 operator|->
 name|size
 operator|=
@@ -1739,7 +1750,7 @@ argument_list|)
 expr_stmt|;
 name|exif_data_save_data
 argument_list|(
-name|exif_data
+name|exif_data_tmp
 argument_list|,
 operator|&
 name|exif_buf
@@ -1777,13 +1788,13 @@ operator|&
 name|thumbnail_buffer
 argument_list|)
 expr_stmt|;
-name|exif_data
+name|exif_data_tmp
 operator|->
 name|data
 operator|=
 name|thumbnail_buffer
 expr_stmt|;
-name|exif_data
+name|exif_data_tmp
 operator|->
 name|size
 operator|=
@@ -1800,7 +1811,7 @@ argument_list|)
 expr_stmt|;
 name|exif_data_save_data
 argument_list|(
-name|exif_data
+name|exif_data_tmp
 argument_list|,
 operator|&
 name|exif_buf
@@ -1818,13 +1829,13 @@ literal|65533
 condition|)
 block|{
 comment|/* still no go? save without thumbnail */
-name|exif_data
+name|exif_data_tmp
 operator|->
 name|data
 operator|=
 name|NULL
 expr_stmt|;
-name|exif_data
+name|exif_data_tmp
 operator|->
 name|size
 operator|=
@@ -1841,7 +1852,7 @@ argument_list|)
 expr_stmt|;
 name|exif_data_save_data
 argument_list|(
-name|exif_data
+name|exif_data_tmp
 argument_list|,
 operator|&
 name|exif_buf
@@ -4848,7 +4859,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7fd2590208
+DECL|struct|__anon295968690208
 block|{
 DECL|member|pub
 name|struct
