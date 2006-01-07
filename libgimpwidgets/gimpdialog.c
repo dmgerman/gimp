@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fcfd7e0103
+DECL|enum|__anon29db01a40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -123,6 +123,18 @@ parameter_list|,
 name|GParamSpec
 modifier|*
 name|pspec
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_dialog_hide
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -273,6 +285,12 @@ operator|->
 name|get_property
 operator|=
 name|gimp_dialog_get_property
+expr_stmt|;
+name|widget_class
+operator|->
+name|hide
+operator|=
+name|gimp_dialog_hide
 expr_stmt|;
 name|widget_class
 operator|->
@@ -770,6 +788,41 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_dialog_hide (GtkWidget * widget)
+name|gimp_dialog_hide
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|)
+block|{
+comment|/*  set focus to NULL so focus_out callbacks are invoked synchronously  */
+name|gtk_window_set_focus
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|widget
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|GTK_WIDGET_CLASS
+argument_list|(
+name|parent_class
+argument_list|)
+operator|->
+name|hide
+argument_list|(
+name|widget
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -1441,7 +1494,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fcfd7e0208
+DECL|struct|__anon29db01a40208
 block|{
 DECL|member|dialog
 name|GtkDialog

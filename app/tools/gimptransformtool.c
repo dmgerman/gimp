@@ -4795,8 +4795,10 @@ operator|->
 name|use_grid
 condition|)
 return|return;
-name|g_return_if_fail
-argument_list|(
+comment|/*  we might be called as the result of cancelling the transform    *  tool dialog, return silently because the draw tool may have    *  already been stopped by gimp_transform_tool_halt()    */
+if|if
+condition|(
+operator|!
 name|gimp_draw_tool_is_active
 argument_list|(
 name|GIMP_DRAW_TOOL
@@ -4804,8 +4806,8 @@ argument_list|(
 name|tr_tool
 argument_list|)
 argument_list|)
-argument_list|)
-expr_stmt|;
+condition|)
+return|return;
 name|shell
 operator|=
 name|GIMP_DISPLAY_SHELL
