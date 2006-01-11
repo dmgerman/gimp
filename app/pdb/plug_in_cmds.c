@@ -1453,13 +1453,13 @@ else|else
 block|{
 name|g_message
 argument_list|(
-literal|"Plug-In \"%s\"\n(%s)\n\n"
-literal|"attempted to install additional menu_path \"%s\"\n"
+literal|"Plug-in \"%s\"\n(%s)\n\n"
+literal|"attempted to register the menu item \"%s\" "
 literal|"for procedure \"%s\".\n"
-literal|"However the menu_path given in "
-literal|"gimp_install_procedure() already contained "
-literal|"a path. To make this work, pass just the menu's "
-literal|"label to gimp_install_procedure()."
+literal|"The menu label given in gimp_install_procedure() "
+literal|"already contained a path.  To make this work, "
+literal|"pass just the menu's label to "
+literal|"gimp_install_procedure()."
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
@@ -1491,10 +1491,43 @@ expr_stmt|;
 block|}
 block|}
 else|else
+block|{
+name|g_message
+argument_list|(
+literal|"Plug-in \"%s\"\n(%s)\n\n"
+literal|"attempted to register the menu item \"%s\" "
+literal|"for the procedure \"%s\"\n."
+literal|"It has however not installed that procedure.  This "
+literal|"is not allowed."
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|gimp
+operator|->
+name|current_plug_in
+operator|->
+name|name
+argument_list|)
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|gimp
+operator|->
+name|current_plug_in
+operator|->
+name|prog
+argument_list|)
+argument_list|,
+name|menu_path
+argument_list|,
+name|canonical
+argument_list|)
+expr_stmt|;
 name|success
 operator|=
 name|FALSE
 expr_stmt|;
+block|}
 name|g_free
 argument_list|(
 name|canonical
