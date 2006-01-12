@@ -162,7 +162,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b82d14d0103
+DECL|enum|__anon2c5dfeb00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -315,7 +315,7 @@ argument_list|(
 literal|"High Contrast color display filter"
 argument_list|)
 block|,
-literal|"Jay Cox<jaycox@earthlink.net>"
+literal|"Jay Cox<jaycox@gimp.org>"
 block|,
 literal|"v0.2"
 block|,
