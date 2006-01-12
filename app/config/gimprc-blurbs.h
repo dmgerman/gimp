@@ -88,7 +88,7 @@ define|#
 directive|define
 name|CURSOR_FORMAT_BLURB
 define|\
-value|N_("Sets the pixel format of cursors the GIMP will use.")
+value|N_("Sets the pixel format to use for mouse pointers.")
 end_define
 
 begin_define
@@ -97,7 +97,7 @@ define|#
 directive|define
 name|CURSOR_MODE_BLURB
 define|\
-value|N_("Sets the mode of cursor the GIMP will use.")
+value|N_("Sets the type of mouse pointers to use.")
 end_define
 
 begin_define
@@ -106,7 +106,7 @@ define|#
 directive|define
 name|CURSOR_UPDATING_BLURB
 define|\
-value|N_("Context-dependent cursors are cool.  They are enabled by default. " \    "However, they require overhead that you may want to do without.")
+value|N_("Context-dependent mouse pointers are helpful.  They are enabled by " \    "default.  However, they require overhead that you may want to do without.")
 end_define
 
 begin_define
@@ -718,7 +718,7 @@ define|#
 directive|define
 name|SHOW_PAINT_TOOL_CURSOR_BLURB
 define|\
-value|N_("When enabled, the cursor will be shown over the image while " \     "using a paint tool.")
+value|N_("When enabled, the mouse pointer will be shown over the image while " \     "using a paint tool.")
 end_define
 
 begin_define

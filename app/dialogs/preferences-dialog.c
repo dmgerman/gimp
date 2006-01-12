@@ -8095,14 +8095,14 @@ argument_list|,
 name|size_group
 argument_list|)
 expr_stmt|;
-comment|/*  Mouse Cursors  */
+comment|/*  Mouse Pointers  */
 name|vbox2
 operator|=
 name|prefs_frame_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Mouse Cursors"
+literal|"Mouse Pointers"
 argument_list|)
 argument_list|,
 name|GTK_CONTAINER
@@ -8138,7 +8138,7 @@ literal|"show-paint-tool-cursor"
 argument_list|,
 name|_
 argument_list|(
-literal|"Show paint _tool cursor"
+literal|"Show pointer for paint _tools"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -8171,7 +8171,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Cursor _mode:"
+literal|"Pointer _mode:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -8196,7 +8196,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Cursor re_ndering:"
+literal|"Pointer re_ndering:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -8401,7 +8401,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon27ec0f480108
+DECL|struct|__anon2ac5255b0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -9563,7 +9563,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27ec0f480208
+DECL|struct|__anon2ac5255b0208
 block|{
 DECL|member|label
 specifier|const
@@ -10470,7 +10470,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27ec0f480308
+DECL|struct|__anon2ac5255b0308
 block|{
 DECL|member|label
 specifier|const
@@ -10627,7 +10627,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27ec0f480408
+DECL|struct|__anon2ac5255b0408
 block|{
 DECL|member|tree_label
 specifier|const

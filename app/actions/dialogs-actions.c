@@ -412,19 +412,19 @@ name|GIMP_STOCK_CURSOR
 block|,
 name|N_
 argument_list|(
-literal|"_Cursor"
+literal|"Pointer"
 argument_list|)
 block|,
 name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Cursor Info"
+literal|"Pointer Info"
 argument_list|)
 block|,
 literal|"gimp-cursor-view"
 block|,
-name|GIMP_HELP_CURSOR_INFO_DIALOG
+name|GIMP_HELP_POINTER_INFO_DIALOG
 block|}
 block|,
 block|{

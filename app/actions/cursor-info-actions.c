@@ -78,7 +78,7 @@ name|GIMP_STOCK_CURSOR
 block|,
 name|N_
 argument_list|(
-literal|"Cursor Info Menu"
+literal|"Pointer Information Menu"
 argument_list|)
 block|,
 name|NULL
@@ -87,7 +87,7 @@ name|NULL
 block|,
 name|NULL
 block|,
-name|GIMP_HELP_CURSOR_INFO_DIALOG
+name|GIMP_HELP_POINTER_INFO_DIALOG
 block|}
 block|}
 decl_stmt|;
@@ -125,7 +125,7 @@ argument_list|)
 block|,
 name|TRUE
 block|,
-name|GIMP_HELP_CURSOR_INFO_SAMPLE_MERGED
+name|GIMP_HELP_POINTER_INFO_SAMPLE_MERGED
 block|}
 block|}
 decl_stmt|;

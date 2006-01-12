@@ -472,7 +472,7 @@ literal|"cursor-info"
 block|,
 name|N_
 argument_list|(
-literal|"Cursor Info"
+literal|"Pointer Information"
 argument_list|)
 block|,
 name|NULL

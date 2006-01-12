@@ -656,17 +656,17 @@ literal|"gimp-cursor-view"
 argument_list|,
 name|N_
 argument_list|(
-literal|"Cursor"
+literal|"Pointer"
 argument_list|)
 argument_list|,
 name|N_
 argument_list|(
-literal|"Cursor Info"
+literal|"Pointer Information"
 argument_list|)
 argument_list|,
 name|GIMP_STOCK_CURSOR
 argument_list|,
-name|GIMP_HELP_CURSOR_INFO_DIALOG
+name|GIMP_HELP_POINTER_INFO_DIALOG
 argument_list|,
 name|dialogs_cursor_view_new
 argument_list|,

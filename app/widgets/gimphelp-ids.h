@@ -2953,19 +2953,19 @@ value|"gimp-indexed-palette-add"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_CURSOR_INFO_DIALOG
+DECL|macro|GIMP_HELP_POINTER_INFO_DIALOG
 define|#
 directive|define
-name|GIMP_HELP_CURSOR_INFO_DIALOG
-value|"gimp-cursor-info-dialog"
+name|GIMP_HELP_POINTER_INFO_DIALOG
+value|"gimp-pointer-info-dialog"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_CURSOR_INFO_SAMPLE_MERGED
+DECL|macro|GIMP_HELP_POINTER_INFO_SAMPLE_MERGED
 define|#
 directive|define
-name|GIMP_HELP_CURSOR_INFO_SAMPLE_MERGED
-value|"gimp-cursor-info-sample-merged"
+name|GIMP_HELP_POINTER_INFO_SAMPLE_MERGED
+value|"gimp-pointer-info-sample-merged"
 end_define
 
 begin_define
