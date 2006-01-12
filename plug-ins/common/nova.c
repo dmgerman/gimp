@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * SuperNova plug-in  * Copyright (C) 1997 Eiichi Takamori<taka@ma1.seikyou.ne.jp>,  *                    Spencer Kimball, Federico Mena Quintero  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * Supernova plug-in  * Copyright (C) 1997 Eiichi Takamori<taka@ma1.seikyou.ne.jp>,  *                    Spencer Kimball, Federico Mena Quintero  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_comment
@@ -72,7 +72,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ace03240108
+DECL|struct|__anon2bd5e6730108
 block|{
 DECL|member|xcenter
 name|gint
@@ -107,7 +107,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ace03240208
+DECL|struct|__anon2bd5e6730208
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -514,7 +514,7 @@ literal|"May 2000"
 argument_list|,
 name|N_
 argument_list|(
-literal|"Su_perNova..."
+literal|"Su_pernova..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
@@ -849,7 +849,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Rendering SuperNova"
+literal|"Rendering supernova"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1001,7 +1001,7 @@ name|gimp_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"SuperNova"
+literal|"Supernova"
 argument_list|)
 argument_list|,
 name|PLUG_IN_BINARY
@@ -1243,7 +1243,7 @@ name|gimp_color_button_new
 argument_list|(
 name|_
 argument_list|(
-literal|"SuperNova Color Picker"
+literal|"Supernova Color Picker"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -1699,7 +1699,7 @@ name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Center of SuperNova"
+literal|"Center of Nova"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1894,7 +1894,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"S_how cursor"
+literal|"Show _position"
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -60,7 +60,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fbd3340108
+DECL|struct|__anon2c193a7a0108
 block|{
 DECL|member|posx
 name|gint
@@ -111,7 +111,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fbd3340208
+DECL|struct|__anon2c193a7a0208
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -762,7 +762,7 @@ literal|"May 2000"
 argument_list|,
 name|N_
 argument_list|(
-literal|"_FlareFX..."
+literal|"Lens _Flare..."
 argument_list|)
 argument_list|,
 literal|"RGB*"
@@ -1033,7 +1033,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Render flare"
+literal|"Render lens flare"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1092,7 +1092,6 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/* gimp_message ("FlareFX: cannot operate on indexed color images"); */
 name|status
 operator|=
 name|GIMP_PDB_EXECUTION_ERROR
@@ -1161,7 +1160,7 @@ name|gimp_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"FlareFX"
+literal|"Lens Flare"
 argument_list|)
 argument_list|,
 name|PLUG_IN_BINARY
@@ -4905,7 +4904,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"_Show cursor"
+literal|"Show _position"
 argument_list|)
 argument_list|)
 expr_stmt|;
