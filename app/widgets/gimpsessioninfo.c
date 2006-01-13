@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4b94760103
+DECL|enum|__anon27a89c510103
 block|{
 DECL|enumerator|SESSION_INFO_POSITION
 name|SESSION_INFO_POSITION
@@ -3146,15 +3146,6 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-operator|(
-name|book_info
-operator|->
-name|current_page
-operator|>
-literal|0
-operator|)
-operator|&&
-operator|(
 name|book_info
 operator|->
 name|current_page
@@ -3166,7 +3157,6 @@ argument_list|(
 name|dockbook
 argument_list|)
 argument_list|)
-operator|)
 condition|)
 block|{
 name|gtk_notebook_set_current_page
@@ -3179,6 +3169,19 @@ argument_list|,
 name|book_info
 operator|->
 name|current_page
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|gtk_notebook_set_current_page
+argument_list|(
+name|GTK_NOTEBOOK
+argument_list|(
+name|dockbook
+argument_list|)
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 block|}
