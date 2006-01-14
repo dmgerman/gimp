@@ -125,9 +125,9 @@ DECL|member|popup_preview_size
 name|gint
 name|popup_preview_size
 decl_stmt|;
-DECL|member|preview_size
+DECL|member|button_preview_size
 name|gint
-name|preview_size
+name|button_preview_size
 decl_stmt|;
 DECL|member|preview_border_width
 name|gint
@@ -200,6 +200,9 @@ name|context
 parameter_list|,
 name|GimpViewType
 name|view_type
+parameter_list|,
+name|gint
+name|button_preview_size
 parameter_list|,
 name|gint
 name|preview_size

@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2759f10a0103
+DECL|enum|__anon277208250103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -362,7 +362,7 @@ name|GIMP_VIEW_SIZE_SMALL
 expr_stmt|;
 name|button
 operator|->
-name|preview_size
+name|button_preview_size
 operator|=
 name|GIMP_VIEW_SIZE_SMALL
 expr_stmt|;
@@ -852,7 +852,7 @@ name|popup_view_type
 argument_list|,
 name|viewable_button
 operator|->
-name|preview_size
+name|button_preview_size
 argument_list|,
 name|viewable_button
 operator|->
@@ -968,7 +968,7 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_viewable_button_new (GimpContainer * container,GimpContext * context,GimpViewType view_type,gint preview_size,gint preview_border_width,GimpDialogFactory * dialog_factory,const gchar * dialog_identifier,const gchar * dialog_stock_id,const gchar * dialog_tooltip)
+DECL|function|gimp_viewable_button_new (GimpContainer * container,GimpContext * context,GimpViewType view_type,gint button_preview_size,gint preview_size,gint preview_border_width,GimpDialogFactory * dialog_factory,const gchar * dialog_identifier,const gchar * dialog_stock_id,const gchar * dialog_tooltip)
 name|gimp_viewable_button_new
 parameter_list|(
 name|GimpContainer
@@ -981,6 +981,9 @@ name|context
 parameter_list|,
 name|GimpViewType
 name|view_type
+parameter_list|,
+name|gint
+name|button_preview_size
 parameter_list|,
 name|gint
 name|preview_size
@@ -1141,15 +1144,9 @@ name|context
 expr_stmt|;
 name|button
 operator|->
-name|popup_preview_size
+name|button_preview_size
 operator|=
-name|preview_size
-expr_stmt|;
-name|button
-operator|->
-name|preview_size
-operator|=
-name|preview_size
+name|button_preview_size
 expr_stmt|;
 name|button
 operator|->
@@ -1220,7 +1217,7 @@ name|prop_name
 argument_list|,
 name|button
 operator|->
-name|preview_size
+name|button_preview_size
 argument_list|)
 expr_stmt|;
 name|gtk_container_add

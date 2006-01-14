@@ -523,7 +523,7 @@ condition|)
 block|{
 name|button
 operator|=
-name|gimp_brush_box_new
+name|gimp_prop_brush_box_new
 argument_list|(
 name|NULL
 argument_list|,
@@ -533,6 +533,10 @@ name|tool_options
 argument_list|)
 argument_list|,
 literal|2
+argument_list|,
+literal|"brush-view-type"
+argument_list|,
+literal|"brush-view-size"
 argument_list|)
 expr_stmt|;
 name|gimp_table_attach_aligned
@@ -574,7 +578,7 @@ condition|)
 block|{
 name|button
 operator|=
-name|gimp_gradient_box_new
+name|gimp_prop_gradient_box_new
 argument_list|(
 name|NULL
 argument_list|,
@@ -583,9 +587,13 @@ argument_list|(
 name|tool_options
 argument_list|)
 argument_list|,
-literal|"gradient-reverse"
-argument_list|,
 literal|2
+argument_list|,
+literal|"gradient-view-type"
+argument_list|,
+literal|"gradient-view-size"
+argument_list|,
+literal|"gradient-reverse"
 argument_list|)
 expr_stmt|;
 name|gimp_table_attach_aligned
@@ -2067,7 +2075,7 @@ block|}
 comment|/*  the gradient view  */
 name|button
 operator|=
-name|gimp_gradient_box_new
+name|gimp_prop_gradient_box_new
 argument_list|(
 name|NULL
 argument_list|,
@@ -2076,9 +2084,13 @@ argument_list|(
 name|config
 argument_list|)
 argument_list|,
-literal|"gradient-reverse"
-argument_list|,
 literal|2
+argument_list|,
+literal|"gradient-view-type"
+argument_list|,
+literal|"gradient-view-size"
+argument_list|,
+literal|"gradient-reverse"
 argument_list|)
 expr_stmt|;
 name|gimp_table_attach_aligned

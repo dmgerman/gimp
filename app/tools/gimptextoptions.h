@@ -157,6 +157,14 @@ DECL|member|letter_spacing
 name|gdouble
 name|letter_spacing
 decl_stmt|;
+DECL|member|font_view_type
+name|GimpViewType
+name|font_view_type
+decl_stmt|;
+DECL|member|font_view_size
+name|GimpViewSize
+name|font_view_size
+decl_stmt|;
 DECL|member|size_entry
 name|GimpSizeEntry
 modifier|*

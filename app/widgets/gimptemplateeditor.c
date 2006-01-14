@@ -116,7 +116,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon279399f10103
+DECL|enum|__anon29085d500103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2930,6 +2930,8 @@ operator|->
 name|stock_id_context
 argument_list|,
 name|GIMP_VIEW_TYPE_LIST
+argument_list|,
+name|GIMP_VIEW_SIZE_SMALL
 argument_list|,
 name|GIMP_VIEW_SIZE_SMALL
 argument_list|,

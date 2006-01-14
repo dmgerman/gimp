@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ecd71b0103
+DECL|enum|__anon2bc18a0e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -783,7 +783,7 @@ argument_list|)
 expr_stmt|;
 name|hbox
 operator|=
-name|gimp_pattern_box_new
+name|gimp_prop_pattern_box_new
 argument_list|(
 name|NULL
 argument_list|,
@@ -793,6 +793,10 @@ name|tool_options
 argument_list|)
 argument_list|,
 literal|2
+argument_list|,
+literal|"pattern-view-type"
+argument_list|,
+literal|"pattern-view-size"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_radio_frame_add
