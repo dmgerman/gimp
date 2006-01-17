@@ -278,7 +278,7 @@ name|gint
 name|rows
 decl_stmt|;
 name|gint
-name|preview_size
+name|view_size
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -479,7 +479,7 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-name|preview_size
+name|view_size
 operator|=
 name|gimp
 operator|->
@@ -509,7 +509,7 @@ name|images
 argument_list|,
 name|NULL
 argument_list|,
-name|preview_size
+name|view_size
 argument_list|,
 literal|1
 argument_list|)
@@ -527,7 +527,7 @@ argument_list|,
 name|rows
 operator|*
 operator|(
-name|preview_size
+name|view_size
 operator|+
 literal|2
 operator|)
