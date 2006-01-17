@@ -208,7 +208,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  * twainError  *   * Return the TWAIN error message associated  * with the specified error code.  */
+comment|/*  * twainError  *  * Return the TWAIN error message associated  * with the specified error code.  */
 end_comment
 
 begin_function
@@ -317,7 +317,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  * getImage  *   * This is a "high-level" function that can be called in order  * to take all of the steps necessary to kick off an image-transfer  * from a user-specified TWAIN datasource.  The data will be passed  * back to the callback function specified in the session structure.  */
+comment|/*  * getImage  *  * This is a "high-level" function that can be called in order  * to take all of the steps necessary to kick off an image-transfer  * from a user-specified TWAIN datasource.  The data will be passed  * back to the callback function specified in the session structure.  */
 end_comment
 
 begin_function
@@ -1319,7 +1319,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  * closeDS  *  * Close the datasource associated with the   * specified session.  */
+comment|/*  * closeDS  *  * Close the datasource associated with the  * specified session.  */
 end_comment
 
 begin_function
@@ -1679,7 +1679,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  * transferImage  *  * The Source indicated it is ready to transfer data. It is   * waiting for the application to inquire about the image details,   * initiate the actual transfer, and, hence, transition the session   * from State 6 to 7.  Return the reason for exiting the transfer.  */
+comment|/*  * transferImage  *  * The Source indicated it is ready to transfer data. It is  * waiting for the application to inquire about the image details,  * initiate the actual transfer, and, hence, transition the session  * from State 6 to 7.  Return the reason for exiting the transfer.  */
 end_comment
 
 begin_function

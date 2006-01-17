@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2957003b0108
+DECL|struct|__anon2b0273540108
 block|{
 DECL|member|func
 name|PyObject

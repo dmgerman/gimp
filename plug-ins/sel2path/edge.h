@@ -23,13 +23,13 @@ file|"bitmap.h"
 end_include
 
 begin_comment
-comment|/* We consider each pixel to consist of four edges, and we travel along    edges, instead of through pixel centers.  This is necessary for those    unfortunate times when a single pixel is on both an inside and an    outside outline.        The numbers chosen here are not arbitrary; the code that figures out    which edge to move to depends on particular values.  See the    `TRY_PIXEL' macro in `edge.c'.  To emphasize this, I've written in the    numbers we need for each edge value.  */
+comment|/* We consider each pixel to consist of four edges, and we travel along    edges, instead of through pixel centers.  This is necessary for those    unfortunate times when a single pixel is on both an inside and an    outside outline.     The numbers chosen here are not arbitrary; the code that figures out    which edge to move to depends on particular values.  See the    `TRY_PIXEL' macro in `edge.c'.  To emphasize this, I've written in the    numbers we need for each edge value.  */
 end_comment
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e12c360103
+DECL|enum|__anon27c74cec0103
 block|{
 DECL|enumerator|top
 DECL|enumerator|left

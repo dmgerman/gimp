@@ -2946,7 +2946,7 @@ operator|.
 name|selected_brush
 argument_list|)
 expr_stmt|;
-comment|/*     * This is so the "changed signal won't get sent to the brushes' list    * and reset the gamma and stuff.    * */
+comment|/*    * This is so the "changed signal won't get sent to the brushes' list    * and reset the gamma and stuff.    * */
 name|gtk_widget_grab_focus
 argument_list|(
 name|brush_list

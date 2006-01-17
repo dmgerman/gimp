@@ -23,7 +23,7 @@ file|<libgimp/gimp.h>
 end_include
 
 begin_typedef
-DECL|struct|__anon29f80d290108
+DECL|struct|__anon2b4c8c8b0108
 typedef|typedef
 struct|struct
 block|{

@@ -603,7 +603,7 @@ function_decl|;
 end_function_decl
 
 begin_enum
-DECL|enum|__anon288835060103
+DECL|enum|__anon293788020103
 DECL|enumerator|UNDEFINED
 DECL|enumerator|RECTANGLE
 DECL|enumerator|CIRCLE

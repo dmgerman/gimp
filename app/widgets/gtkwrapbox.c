@@ -20,7 +20,7 @@ comment|/* --- properties --- */
 end_comment
 
 begin_enum
-DECL|enum|__anon2baafea30103
+DECL|enum|__anon2b4eb9070103
 enum|enum
 block|{
 DECL|enumerator|PROP_0
@@ -54,7 +54,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon2baafea30203
+DECL|enum|__anon2b4eb9070203
 enum|enum
 block|{
 DECL|enumerator|CHILD_PROP_0

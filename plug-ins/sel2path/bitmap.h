@@ -61,7 +61,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e83eb20108
+DECL|struct|__anon2bcb777e0108
 block|{
 DECL|member|dimensions
 name|dimensions_type
@@ -255,7 +255,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* Return the pixels in the bitmap B enclosed by the bounding box BB.     The result is put in newly allocated storage.  */
+comment|/* Return the pixels in the bitmap B enclosed by the bounding box BB.    The result is put in newly allocated storage.  */
 end_comment
 
 begin_function_decl

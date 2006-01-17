@@ -84,7 +84,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2900daf80108
+DECL|struct|__anon2a3deca70108
 typedef|typedef
 struct|struct
 block|{
@@ -124,7 +124,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2900daf80208
+DECL|struct|__anon2a3deca70208
 typedef|typedef
 struct|struct
 block|{
@@ -201,7 +201,7 @@ name|double
 name|sample_density
 decl_stmt|;
 comment|/* samples per pixel (not bucket) */
-comment|/* in order to motion blur more accurately we compute the logs of the        sample density many times and average the results.  we interplate       only this many times. */
+comment|/* in order to motion blur more accurately we compute the logs of the       sample density many times and average the results.  we interplate       only this many times. */
 DECL|member|nbatches
 name|int
 name|nbatches

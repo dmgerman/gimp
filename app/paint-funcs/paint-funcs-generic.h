@@ -1021,7 +1021,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*   * blend_pixels patched 8-24-05 to fix bug #163721.  Note that this change  * causes the function to treat src1 and src2 asymmetrically.  This gives the  * right behavior for the smudge tool, which is the only user of this function  * at the time of patching.  If you want to use the function for something  * else, caveat emptor.  */
+comment|/*  * blend_pixels patched 8-24-05 to fix bug #163721.  Note that this change  * causes the function to treat src1 and src2 asymmetrically.  This gives the  * right behavior for the smudge tool, which is the only user of this function  * at the time of patching.  If you want to use the function for something  * else, caveat emptor.  */
 end_comment
 
 begin_function

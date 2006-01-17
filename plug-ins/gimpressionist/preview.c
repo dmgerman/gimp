@@ -436,7 +436,7 @@ comment|/* It seems that infile.col must be true here. (after grabarea() that is
 if|#
 directive|if
 literal|0
-block|if (!PPM_IS_INITED (&infile)&& !d) {     guchar *buffer;      buffer = g_new0 (guchar, 3*PREVIEWSIZE*PREVIEWSIZE);     gimp_preview_area_draw (GIMP_PREVIEW_AREA (preview),                             0, 0, PREVIEWSIZE, PREVIEWSIZE,                             GIMP_RGB_IMAGE,                             buffer,                             PREVIEWSIZE * 3);          g_free (buffer);   }   else
+block|if (!PPM_IS_INITED (&infile)&& !d) {     guchar *buffer;      buffer = g_new0 (guchar, 3*PREVIEWSIZE*PREVIEWSIZE);     gimp_preview_area_draw (GIMP_PREVIEW_AREA (preview),                             0, 0, PREVIEWSIZE, PREVIEWSIZE,                             GIMP_RGB_IMAGE,                             buffer,                             PREVIEWSIZE * 3);      g_free (buffer);   }   else
 endif|#
 directive|endif
 block|{

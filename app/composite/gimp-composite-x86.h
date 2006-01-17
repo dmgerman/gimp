@@ -321,7 +321,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a061eb00108
+DECL|struct|__anon2bc871c60108
 DECL|member|__uint64
 DECL|typedef|uint128
 typedef|typedef

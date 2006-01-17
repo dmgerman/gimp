@@ -40,7 +40,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29269b830103
+DECL|enum|__anon2bae487c0103
 block|{
 DECL|enumerator|north
 DECL|enumerator|northwest
@@ -147,7 +147,7 @@ value|((dir) / 2)
 end_define
 
 begin_comment
-comment|/* Find how to move in direction DIR on the axis AXIS (either `ROW' or   `COL').   We are in the ``display'' coordinate system, with y   increasing downward and x increasing to the right.  Therefore, we are   implementing the following table:      direction  row delta  col delta     north       -1          0       south	+1	    0     east	 0	   +1     west	 0	   +1        with the other four directions (e.g., northwest) being the sum of   their components (e.g., north + west).      The first macro, `COMPUTE_DELTA', handles splitting up the latter   cases, all of which have been assigned odd numbers.  */
+comment|/* Find how to move in direction DIR on the axis AXIS (either `ROW' or   `COL').   We are in the ``display'' coordinate system, with y   increasing downward and x increasing to the right.  Therefore, we are   implementing the following table:    direction  row delta  col delta     north       -1          0     south	+1	    0     east	 0	   +1     west	 0	   +1    with the other four directions (e.g., northwest) being the sum of   their components (e.g., north + west).    The first macro, `COMPUTE_DELTA', handles splitting up the latter   cases, all of which have been assigned odd numbers.  */
 end_comment
 
 begin_define
@@ -209,7 +209,7 @@ value|{									\     int delta_r = COMPUTE_DELTA (ROW, dir);				\     int delta
 end_define
 
 begin_comment
-comment|/* Finally, we are ready to implement the routine that finds the next    edge on the outline.  We look first for an adjacent edge that is not    on the current pixel.  We want to go around outside outlines    counterclockwise, and inside outlines clockwise (because that is how    both Metafont and Adobe Type 1 format want their curves to be drawn).        The very first outline (an outside one) on each character starts on a    top edge (STARTING_EDGE in edge.h defines this); so, if we're at a    top edge, we want to go only to the left (on the pixel to the west)    or down (on the same pixel), to begin with.  Then, when we're on a    left edge, we want to go to the top edge (on the southwest pixel) or    to the left edge (on the south pixel).        All well and good. But if you draw a rasterized circle (or whatever),    eventually we have to come back around to the beginning; at that    point, we'll be on a top edge, and we'll have to go to the right edge    on the northwest pixel.  Draw pictures.        The upshot is, if we find an edge on another pixel, we return (in ROW    and COL) the position of the new pixel, and (in EDGE) the kind of    edge it is.  If we don't find such an edge, we return (in EDGE) the    next (in a counterclockwise direction) edge on the current pixel.  */
+comment|/* Finally, we are ready to implement the routine that finds the next    edge on the outline.  We look first for an adjacent edge that is not    on the current pixel.  We want to go around outside outlines    counterclockwise, and inside outlines clockwise (because that is how    both Metafont and Adobe Type 1 format want their curves to be drawn).     The very first outline (an outside one) on each character starts on a    top edge (STARTING_EDGE in edge.h defines this); so, if we're at a    top edge, we want to go only to the left (on the pixel to the west)    or down (on the same pixel), to begin with.  Then, when we're on a    left edge, we want to go to the top edge (on the southwest pixel) or    to the left edge (on the south pixel).     All well and good. But if you draw a rasterized circle (or whatever),    eventually we have to come back around to the beginning; at that    point, we'll be on a top edge, and we'll have to go to the right edge    on the northwest pixel.  Draw pictures.     The upshot is, if we find an edge on another pixel, we return (in ROW    and COL) the position of the new pixel, and (in EDGE) the kind of    edge it is.  If we don't find such an edge, we return (in EDGE) the    next (in a counterclockwise direction) edge on the current pixel.  */
 end_comment
 
 begin_function

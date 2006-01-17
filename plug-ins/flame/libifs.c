@@ -147,7 +147,7 @@ index|[
 literal|2
 index|]
 expr_stmt|;
-comment|/*     * first, set up xform, which is an array that converts a uniform random     * variable into one with the distribution dictated by the density     * fields      */
+comment|/*     * first, set up xform, which is an array that converts a uniform random     * variable into one with the distribution dictated by the density     * fields     */
 name|dr
 operator|=
 literal|0.0
@@ -1665,7 +1665,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* diagonalize the linear part of a 3x2 matrix.  the evalues are returned     in r as either reals on the diagonal, or a complex pair.  the evectors    are returned as a change of coords matrix.  does not handle shearing    transforms.    */
+comment|/* diagonalize the linear part of a 3x2 matrix.  the evalues are returned    in r as either reals on the diagonal, or a complex pair.  the evectors    are returned as a change of coords matrix.  does not handle shearing    transforms.    */
 end_comment
 
 begin_function

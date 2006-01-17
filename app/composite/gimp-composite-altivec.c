@@ -2691,7 +2691,7 @@ operator|.
 name|blend
 decl_stmt|;
 union|union
-DECL|union|__anon29376e5c010a
+DECL|union|__anon2b264bb6010a
 block|{
 DECL|member|v
 name|vector
@@ -2801,7 +2801,7 @@ argument_list|(
 name|B
 argument_list|)
 expr_stmt|;
-comment|/* dest[b] = (src1[b] * blend2 + src2[b] * blend) / 255;         * to divide by 255 we use ((n+1)+(n+1)>>8)>>8         * It works for all value but 0xffff        * happily blending formula can't give this value */
+comment|/* dest[b] = (src1[b] * blend2 + src2[b] * blend) / 255;        * to divide by 255 we use ((n+1)+(n+1)>>8)>>8        * It works for all value but 0xffff        * happily blending formula can't give this value */
 name|al
 operator|=
 name|vec_mule
@@ -4644,7 +4644,7 @@ literal|1
 argument_list|)
 decl_stmt|;
 union|union
-DECL|union|__anon29376e5c020a
+DECL|union|__anon2b264bb6020a
 block|{
 DECL|member|v
 name|vector
@@ -5715,7 +5715,7 @@ literal|1
 argument_list|)
 decl_stmt|;
 union|union
-DECL|union|__anon29376e5c030a
+DECL|union|__anon2b264bb6030a
 block|{
 DECL|member|v
 name|vector

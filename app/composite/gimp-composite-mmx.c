@@ -1710,7 +1710,7 @@ condition|)
 block|{
 asm|asm
 specifier|volatile
-asm|("  movd         %1,%%mm2\n"                     "\tmovd         %2,%%mm3\n"                      "\tpcmpeqb   %%mm4,%%mm4\n"                     "\tpsubb     %%mm2,%%mm4\n"                     "\tpcmpeqb   %%mm5,%%mm5\n"                     "\tpsubb     %%mm3,%%mm5\n"                      "\tpunpcklbw %%mm6,%%mm4\n"                     "\tpunpcklbw %%mm6,%%mm5\n"                     "\tpmullw    %%mm4,%%mm5\n"                     "\tpaddw     %%mm7,%%mm5\n"                     "\tmovq      %%mm5,%%mm1\n"                     "\tpsrlw       $ 8,%%mm1\n"                     "\tpaddw     %%mm5,%%mm1\n"                     "\tpsrlw       $ 8,%%mm1\n"                      "\tpcmpeqb   %%mm4,%%mm4\n"                     "\tpsubb     %%mm2,%%mm4\n"                     "\tpcmpeqb   %%mm5,%%mm5\n"                     "\tpsubb     %%mm3,%%mm5\n"                      "\tpunpckhbw %%mm6,%%mm4\n"                     "\tpunpckhbw %%mm6,%%mm5\n"                     "\tpmullw    %%mm4,%%mm5\n"                     "\tpaddw     %%mm7,%%mm5\n"                     "\tmovq      %%mm5,%%mm4\n"                     "\tpsrlw       $ 8,%%mm4\n"                     "\tpaddw     %%mm5,%%mm4\n"                     "\tpsrlw       $ 8,%%mm4\n"                      "\tpackuswb  %%mm4,%%mm1\n"                      "\tpcmpeqb   %%mm4,%%mm4\n"                     "\tpsubb     %%mm1,%%mm4\n"                      "\tmovq      %%mm0,%%mm1\n"                     "\tpandn     %%mm4,%%mm1\n"                      "\t" pminub(mm2,mm3,mm4) "\n"                     "\tpand      %%mm0,%%mm3\n"                      "\tpor       %%mm3,%%mm1\n"                                          "\tmovd      %%mm1,%0\n"                     : "=m" (*d)                     : "m" (*a), "m" (*b)                     : "%mm1", "%mm2", "%mm3", "%mm4", "%mm5");
+asm|("  movd         %1,%%mm2\n"                     "\tmovd         %2,%%mm3\n"                      "\tpcmpeqb   %%mm4,%%mm4\n"                     "\tpsubb     %%mm2,%%mm4\n"                     "\tpcmpeqb   %%mm5,%%mm5\n"                     "\tpsubb     %%mm3,%%mm5\n"                      "\tpunpcklbw %%mm6,%%mm4\n"                     "\tpunpcklbw %%mm6,%%mm5\n"                     "\tpmullw    %%mm4,%%mm5\n"                     "\tpaddw     %%mm7,%%mm5\n"                     "\tmovq      %%mm5,%%mm1\n"                     "\tpsrlw       $ 8,%%mm1\n"                     "\tpaddw     %%mm5,%%mm1\n"                     "\tpsrlw       $ 8,%%mm1\n"                      "\tpcmpeqb   %%mm4,%%mm4\n"                     "\tpsubb     %%mm2,%%mm4\n"                     "\tpcmpeqb   %%mm5,%%mm5\n"                     "\tpsubb     %%mm3,%%mm5\n"                      "\tpunpckhbw %%mm6,%%mm4\n"                     "\tpunpckhbw %%mm6,%%mm5\n"                     "\tpmullw    %%mm4,%%mm5\n"                     "\tpaddw     %%mm7,%%mm5\n"                     "\tmovq      %%mm5,%%mm4\n"                     "\tpsrlw       $ 8,%%mm4\n"                     "\tpaddw     %%mm5,%%mm4\n"                     "\tpsrlw       $ 8,%%mm4\n"                      "\tpackuswb  %%mm4,%%mm1\n"                      "\tpcmpeqb   %%mm4,%%mm4\n"                     "\tpsubb     %%mm1,%%mm4\n"                      "\tmovq      %%mm0,%%mm1\n"                     "\tpandn     %%mm4,%%mm1\n"                      "\t" pminub(mm2,mm3,mm4) "\n"                     "\tpand      %%mm0,%%mm3\n"                      "\tpor       %%mm3,%%mm1\n"                      "\tmovd      %%mm1,%0\n"                     : "=m" (*d)                     : "m" (*a), "m" (*b)                     : "%mm1", "%mm2", "%mm3", "%mm4", "%mm5");
 block|}
 asm|asm
 specifier|volatile
@@ -1871,7 +1871,7 @@ control|)
 block|{
 asm|asm
 specifier|volatile
-asm|("  movq       %0,%%mm2\n"                     "\tmovq       %1,%%mm3\n"                     "\tmovntq  %%mm3,%0\n"                     "\tmovntq  %%mm2,%1\n"                     : "+m" (*a), "+m" (*b)                     :                      : "%mm2", "%mm3");
+asm|("  movq       %0,%%mm2\n"                     "\tmovq       %1,%%mm3\n"                     "\tmovntq  %%mm3,%0\n"                     "\tmovntq  %%mm2,%1\n"                     : "+m" (*a), "+m" (*b)                     :                     : "%mm2", "%mm3");
 name|a
 operator|++
 expr_stmt|;
@@ -1949,7 +1949,7 @@ name|n_pixels
 decl_stmt|;
 asm|asm
 specifier|volatile
-asm|("movq    %0,%%mm0"                 :                  : "m" (*va8_alpha_mask_64)                 : "%mm0");
+asm|("movq    %0,%%mm0"                 :                 : "m" (*va8_alpha_mask_64)                 : "%mm0");
 for|for
 control|(
 init|;
@@ -2144,7 +2144,7 @@ name|n_pixels
 decl_stmt|;
 asm|asm
 specifier|volatile
-asm|("movq    %0,%%mm0"                 :                  : "m" (*va8_alpha_mask_64)                 : "%mm0");
+asm|("movq    %0,%%mm0"                 :                 : "m" (*va8_alpha_mask_64)                 : "%mm0");
 for|for
 control|(
 init|;

@@ -35,7 +35,7 @@ file|"imap_preferences.h"
 end_include
 
 begin_typedef
-DECL|enum|__anon2c04440c0103
+DECL|enum|__anon2b41a1d80103
 DECL|enumerator|NCSA
 DECL|enumerator|CERN
 DECL|enumerator|CSIM
@@ -54,7 +54,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c04440c0208
+DECL|struct|__anon2b41a1d80208
 typedef|typedef
 struct|struct
 block|{

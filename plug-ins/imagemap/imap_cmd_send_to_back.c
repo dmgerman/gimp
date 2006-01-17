@@ -61,7 +61,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon28b31ae80108
+DECL|struct|__anon297a14090108
 typedef|typedef
 struct|struct
 block|{

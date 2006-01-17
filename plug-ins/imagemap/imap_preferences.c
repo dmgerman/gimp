@@ -94,7 +94,7 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon2bf4cac90108
+DECL|struct|__anon2c511c510108
 typedef|typedef
 struct|struct
 block|{

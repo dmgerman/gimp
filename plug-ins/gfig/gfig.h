@@ -47,7 +47,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0beb400108
+DECL|struct|__anon288eb4cc0108
 block|{
 DECL|member|gridspacing
 name|gint
@@ -102,7 +102,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0beb400208
+DECL|struct|__anon288eb4cc0208
 block|{
 DECL|member|type
 name|SelectionType
@@ -310,7 +310,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0beb400308
+DECL|struct|__anon288eb4cc0308
 block|{
 DECL|member|opts
 name|GfigOpts
@@ -505,7 +505,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0beb400408
+DECL|struct|__anon288eb4cc0408
 block|{
 DECL|member|debug_styles
 name|gboolean

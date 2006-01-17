@@ -993,7 +993,7 @@ value|((obj)->class->get_stock_icon_name())
 end_define
 
 begin_typedef
-DECL|struct|__anon275a9f180108
+DECL|struct|__anon2bc1d49f0108
 typedef|typedef
 struct|struct
 block|{
@@ -1097,7 +1097,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon275a9f180208
+DECL|struct|__anon2bc1d49f0208
 typedef|typedef
 struct|struct
 block|{

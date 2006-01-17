@@ -268,7 +268,7 @@ name|YYSTYPE
 end_ifndef
 
 begin_typedef
-DECL|union|__anon28942ebc010a
+DECL|union|__anon276b1d29010a
 typedef|typedef
 union|union
 block|{

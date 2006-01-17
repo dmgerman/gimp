@@ -23,7 +23,7 @@ file|"imap_object.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon2acdf3f70108
+DECL|struct|__anon278389350108
 typedef|typedef
 struct|struct
 block|{

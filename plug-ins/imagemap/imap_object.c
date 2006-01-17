@@ -52,7 +52,7 @@ file|"imap_string.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon294ab25d0108
+DECL|struct|__anon2a084d640108
 typedef|typedef
 struct|struct
 block|{

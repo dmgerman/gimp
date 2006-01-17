@@ -29,7 +29,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon280455c00108
+DECL|struct|__anon2bbc1ccb0108
 block|{
 DECL|member|data
 name|coordinate_type
@@ -134,7 +134,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon280455c00208
+DECL|struct|__anon2bbc1ccb0208
 block|{
 DECL|member|data
 name|pixel_outline_type

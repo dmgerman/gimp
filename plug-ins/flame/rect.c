@@ -31,7 +31,7 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/* if you use longs instead of shorts, you     get higher quality, and spend more memory */
+comment|/* if you use longs instead of shorts, you    get higher quality, and spend more memory */
 end_comment
 
 begin_if
