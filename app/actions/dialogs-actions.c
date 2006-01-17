@@ -419,7 +419,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Pointer Info"
+literal|"Pointer Information"
 argument_list|)
 block|,
 literal|"gimp-cursor-view"

@@ -39,7 +39,7 @@ define|#
 directive|define
 name|GIMP_COPYRIGHT
 define|\
-value|_("Copyright (C) 1995-2005\n" \     "Spencer Kimball, Peter Mattis and the GIMP Development Team")
+value|_("Copyright (C) 1995-2006\n" \     "Spencer Kimball, Peter Mattis and the GIMP Development Team")
 end_define
 
 begin_define
