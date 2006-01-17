@@ -171,7 +171,7 @@ modifier|*
 name|context
 parameter_list|,
 name|gint
-name|preview_size
+name|view_size
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1045,7 +1045,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_dialog_factory_register_entry (GimpDialogFactory * factory,const gchar * identifier,const gchar * name,const gchar * blurb,const gchar * stock_id,const gchar * help_id,GimpDialogNewFunc new_func,gint preview_size,gboolean singleton,gboolean session_managed,gboolean remember_size,gboolean remember_if_open)
+DECL|function|gimp_dialog_factory_register_entry (GimpDialogFactory * factory,const gchar * identifier,const gchar * name,const gchar * blurb,const gchar * stock_id,const gchar * help_id,GimpDialogNewFunc new_func,gint view_size,gboolean singleton,gboolean session_managed,gboolean remember_size,gboolean remember_if_open)
 name|gimp_dialog_factory_register_entry
 parameter_list|(
 name|GimpDialogFactory
@@ -1081,7 +1081,7 @@ name|GimpDialogNewFunc
 name|new_func
 parameter_list|,
 name|gint
-name|preview_size
+name|view_size
 parameter_list|,
 name|gboolean
 name|singleton
@@ -1177,9 +1177,9 @@ name|new_func
 expr_stmt|;
 name|entry
 operator|->
-name|preview_size
+name|view_size
 operator|=
-name|preview_size
+name|view_size
 expr_stmt|;
 name|entry
 operator|->
@@ -1443,7 +1443,7 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|gimp_dialog_factory_dialog_new_internal (GimpDialogFactory * factory,GdkScreen * screen,GimpContext * context,const gchar * identifier,gint preview_size,gboolean return_existing,gboolean present)
+DECL|function|gimp_dialog_factory_dialog_new_internal (GimpDialogFactory * factory,GdkScreen * screen,GimpContext * context,const gchar * identifier,gint view_size,gboolean return_existing,gboolean present)
 name|gimp_dialog_factory_dialog_new_internal
 parameter_list|(
 name|GimpDialogFactory
@@ -1464,7 +1464,7 @@ modifier|*
 name|identifier
 parameter_list|,
 name|gint
-name|preview_size
+name|view_size
 parameter_list|,
 name|gboolean
 name|return_existing
@@ -1650,15 +1650,15 @@ block|}
 comment|/*  Create the new dialog in the appropriate context which is        *  - the passed context if not NULL        *  - the newly created dock's context if we just created it        *  - the factory's context, which happens when raising a toplevel        *    dialog was the original request.        */
 if|if
 condition|(
-name|preview_size
+name|view_size
 operator|<
 name|GIMP_VIEW_SIZE_TINY
 condition|)
-name|preview_size
+name|view_size
 operator|=
 name|entry
 operator|->
-name|preview_size
+name|view_size
 expr_stmt|;
 if|if
 condition|(
@@ -1676,7 +1676,7 @@ name|entry
 argument_list|,
 name|context
 argument_list|,
-name|preview_size
+name|view_size
 argument_list|)
 expr_stmt|;
 elseif|else
@@ -1701,7 +1701,7 @@ argument_list|)
 operator|->
 name|context
 argument_list|,
-name|preview_size
+name|view_size
 argument_list|)
 expr_stmt|;
 else|else
@@ -1719,7 +1719,7 @@ name|factory
 operator|->
 name|context
 argument_list|,
-name|preview_size
+name|view_size
 argument_list|)
 expr_stmt|;
 if|if
@@ -1989,13 +1989,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_dialog_factory_dialog_new:  * @factory:      a #GimpDialogFactory  * @screen:       the #GdkScreen the dialog should appear on  * @identifier:   the identifier of the dialog as registered with  *                gimp_dialog_factory_register_entry()  * @preview_size:  * @present:      whether gtk_window_present() should be called  *  * Creates a new toplevel dialog or a #GimpDockable, depending on whether  * %factory is a toplevel of dockable factory.  *  * Return value: the newly created dialog or an already existing singleton  *               dialog.  **/
+comment|/**  * gimp_dialog_factory_dialog_new:  * @factory:      a #GimpDialogFactory  * @screen:       the #GdkScreen the dialog should appear on  * @identifier:   the identifier of the dialog as registered with  *                gimp_dialog_factory_register_entry()  * @view_size:  * @present:      whether gtk_window_present() should be called  *  * Creates a new toplevel dialog or a #GimpDockable, depending on whether  * %factory is a toplevel of dockable factory.  *  * Return value: the newly created dialog or an already existing singleton  *               dialog.  **/
 end_comment
 
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_dialog_factory_dialog_new (GimpDialogFactory * factory,GdkScreen * screen,const gchar * identifier,gint preview_size,gboolean present)
+DECL|function|gimp_dialog_factory_dialog_new (GimpDialogFactory * factory,GdkScreen * screen,const gchar * identifier,gint view_size,gboolean present)
 name|gimp_dialog_factory_dialog_new
 parameter_list|(
 name|GimpDialogFactory
@@ -2012,7 +2012,7 @@ modifier|*
 name|identifier
 parameter_list|,
 name|gint
-name|preview_size
+name|view_size
 parameter_list|,
 name|gboolean
 name|present
@@ -2060,7 +2060,7 @@ name|context
 argument_list|,
 name|identifier
 argument_list|,
-name|preview_size
+name|view_size
 argument_list|,
 name|FALSE
 argument_list|,
@@ -2071,13 +2071,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_dialog_factory_dialog_raise:  * @factory:      a #GimpDialogFactory  * @screen:       the #GdkScreen the dialog should appear on  * @identifiers:  a '|' separated list of identifiers of dialogs as  *                registered with gimp_dialog_factory_register_entry()  * @preview_size:  *  * Raises any of a list of already existing toplevel dialog or  * #GimpDockable if it was already created by this %facory.  *  * Implicitly creates the first dialog in the list if none of the dialogs  * were found.  *  * Return value: the raised or newly created dialog.  **/
+comment|/**  * gimp_dialog_factory_dialog_raise:  * @factory:      a #GimpDialogFactory  * @screen:       the #GdkScreen the dialog should appear on  * @identifiers:  a '|' separated list of identifiers of dialogs as  *                registered with gimp_dialog_factory_register_entry()  * @view_size:  *  * Raises any of a list of already existing toplevel dialog or  * #GimpDockable if it was already created by this %facory.  *  * Implicitly creates the first dialog in the list if none of the dialogs  * were found.  *  * Return value: the raised or newly created dialog.  **/
 end_comment
 
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_dialog_factory_dialog_raise (GimpDialogFactory * factory,GdkScreen * screen,const gchar * identifiers,gint preview_size)
+DECL|function|gimp_dialog_factory_dialog_raise (GimpDialogFactory * factory,GdkScreen * screen,const gchar * identifiers,gint view_size)
 name|gimp_dialog_factory_dialog_raise
 parameter_list|(
 name|GimpDialogFactory
@@ -2094,7 +2094,7 @@ modifier|*
 name|identifiers
 parameter_list|,
 name|gint
-name|preview_size
+name|view_size
 parameter_list|)
 block|{
 name|GtkWidget
@@ -2224,7 +2224,7 @@ index|[
 literal|0
 index|]
 argument_list|,
-name|preview_size
+name|view_size
 argument_list|,
 name|TRUE
 argument_list|,
@@ -2251,7 +2251,7 @@ name|NULL
 argument_list|,
 name|identifiers
 argument_list|,
-name|preview_size
+name|view_size
 argument_list|,
 name|TRUE
 argument_list|,
@@ -2266,13 +2266,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_dialog_factory_dockable_new:  * @factory:      a #GimpDialogFactory  * @dock:         a #GimpDock crated by this %factory.  * @identifier:   the identifier of the dialog as registered with  *                gimp_dialog_factory_register_entry()  * @preview_size:  *  * Creates a new #GimpDockable in the context of the #GimpDock it will be  * added to.  *  * Implicitly raises& returns an already existing singleton dockable,  * so callers should check that dockable->dockbook is NULL before trying  * to add it to it's #GimpDockbook.  *  * Return value: the newly created #GimpDockable or an already existing  *               singleton dockable.  **/
+comment|/**  * gimp_dialog_factory_dockable_new:  * @factory:      a #GimpDialogFactory  * @dock:         a #GimpDock crated by this %factory.  * @identifier:   the identifier of the dialog as registered with  *                gimp_dialog_factory_register_entry()  * @view_size:  *  * Creates a new #GimpDockable in the context of the #GimpDock it will be  * added to.  *  * Implicitly raises& returns an already existing singleton dockable,  * so callers should check that dockable->dockbook is NULL before trying  * to add it to it's #GimpDockbook.  *  * Return value: the newly created #GimpDockable or an already existing  *               singleton dockable.  **/
 end_comment
 
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_dialog_factory_dockable_new (GimpDialogFactory * factory,GimpDock * dock,const gchar * identifier,gint preview_size)
+DECL|function|gimp_dialog_factory_dockable_new (GimpDialogFactory * factory,GimpDock * dock,const gchar * identifier,gint view_size)
 name|gimp_dialog_factory_dockable_new
 parameter_list|(
 name|GimpDialogFactory
@@ -2289,7 +2289,7 @@ modifier|*
 name|identifier
 parameter_list|,
 name|gint
-name|preview_size
+name|view_size
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -2340,7 +2340,7 @@ name|context
 argument_list|,
 name|identifier
 argument_list|,
-name|preview_size
+name|view_size
 argument_list|,
 name|FALSE
 argument_list|,
@@ -3877,7 +3877,7 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|gimp_dialog_factory_default_constructor (GimpDialogFactory * factory,GimpDialogFactoryEntry * entry,GimpContext * context,gint preview_size)
+DECL|function|gimp_dialog_factory_default_constructor (GimpDialogFactory * factory,GimpDialogFactoryEntry * entry,GimpContext * context,gint view_size)
 name|gimp_dialog_factory_default_constructor
 parameter_list|(
 name|GimpDialogFactory
@@ -3893,7 +3893,7 @@ modifier|*
 name|context
 parameter_list|,
 name|gint
-name|preview_size
+name|view_size
 parameter_list|)
 block|{
 return|return
@@ -3905,7 +3905,7 @@ name|factory
 argument_list|,
 name|context
 argument_list|,
-name|preview_size
+name|view_size
 argument_list|)
 return|;
 block|}

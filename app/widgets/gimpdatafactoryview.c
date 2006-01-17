@@ -267,7 +267,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_data_factory_view_new (GimpViewType view_type,GimpDataFactory * factory,GimpContext * context,gint preview_size,gint preview_border_width,GimpMenuFactory * menu_factory,const gchar * menu_identifier,const gchar * ui_identifier,const gchar * action_group)
+DECL|function|gimp_data_factory_view_new (GimpViewType view_type,GimpDataFactory * factory,GimpContext * context,gint view_size,gint view_border_width,GimpMenuFactory * menu_factory,const gchar * menu_identifier,const gchar * ui_identifier,const gchar * action_group)
 name|gimp_data_factory_view_new
 parameter_list|(
 name|GimpViewType
@@ -282,10 +282,10 @@ modifier|*
 name|context
 parameter_list|,
 name|gint
-name|preview_size
+name|view_size
 parameter_list|,
 name|gint
-name|preview_border_width
+name|view_border_width
 parameter_list|,
 name|GimpMenuFactory
 modifier|*
@@ -333,9 +333,9 @@ name|factory
 argument_list|,
 name|context
 argument_list|,
-name|preview_size
+name|view_size
 argument_list|,
-name|preview_border_width
+name|view_border_width
 argument_list|,
 name|menu_factory
 argument_list|,
@@ -367,7 +367,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_data_factory_view_construct (GimpDataFactoryView * factory_view,GimpViewType view_type,GimpDataFactory * factory,GimpContext * context,gint preview_size,gint preview_border_width,GimpMenuFactory * menu_factory,const gchar * menu_identifier,const gchar * ui_identifier,const gchar * action_group)
+DECL|function|gimp_data_factory_view_construct (GimpDataFactoryView * factory_view,GimpViewType view_type,GimpDataFactory * factory,GimpContext * context,gint view_size,gint view_border_width,GimpMenuFactory * menu_factory,const gchar * menu_identifier,const gchar * ui_identifier,const gchar * action_group)
 name|gimp_data_factory_view_construct
 parameter_list|(
 name|GimpDataFactoryView
@@ -386,10 +386,10 @@ modifier|*
 name|context
 parameter_list|,
 name|gint
-name|preview_size
+name|view_size
 parameter_list|,
 name|gint
-name|preview_border_width
+name|view_border_width
 parameter_list|,
 name|GimpMenuFactory
 modifier|*
@@ -441,11 +441,11 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|preview_size
+name|view_size
 operator|>
 literal|0
 operator|&&
-name|preview_size
+name|view_size
 operator|<=
 name|GIMP_VIEWABLE_MAX_PREVIEW_SIZE
 argument_list|,
@@ -454,11 +454,11 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|preview_border_width
+name|view_border_width
 operator|>=
 literal|0
 operator|&&
-name|preview_border_width
+name|view_border_width
 operator|<=
 name|GIMP_VIEW_MAX_BORDER_WIDTH
 argument_list|,
@@ -489,9 +489,9 @@ name|container
 argument_list|,
 name|context
 argument_list|,
-name|preview_size
+name|view_size
 argument_list|,
-name|preview_border_width
+name|view_border_width
 argument_list|,
 name|menu_factory
 argument_list|,

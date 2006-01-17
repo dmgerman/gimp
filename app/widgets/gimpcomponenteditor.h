@@ -103,9 +103,9 @@ DECL|member|parent_instance
 name|GimpImageEditor
 name|parent_instance
 decl_stmt|;
-DECL|member|preview_size
+DECL|member|view_size
 name|gint
-name|preview_size
+name|view_size
 decl_stmt|;
 DECL|member|model
 name|GtkTreeModel
@@ -174,7 +174,7 @@ modifier|*
 name|gimp_component_editor_new
 parameter_list|(
 name|gint
-name|preview_size
+name|view_size
 parameter_list|,
 name|GimpMenuFactory
 modifier|*
@@ -185,14 +185,14 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_component_editor_set_preview_size
+name|gimp_component_editor_set_view_size
 parameter_list|(
 name|GimpComponentEditor
 modifier|*
 name|editor
 parameter_list|,
 name|gint
-name|preview_size
+name|view_size
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -196,7 +196,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|gimp_selection_preview_button_press
+name|gimp_selection_view_button_press
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -374,7 +374,7 @@ argument_list|)
 expr_stmt|;
 name|editor
 operator|->
-name|preview
+name|view
 operator|=
 name|gimp_view_new_by_types
 argument_list|(
@@ -395,7 +395,7 @@ name|GIMP_VIEW
 argument_list|(
 name|editor
 operator|->
-name|preview
+name|view
 argument_list|)
 operator|->
 name|renderer
@@ -407,7 +407,7 @@ name|gtk_widget_set_size_request
 argument_list|(
 name|editor
 operator|->
-name|preview
+name|view
 argument_list|,
 name|GIMP_VIEW_SIZE_HUGE
 argument_list|,
@@ -420,7 +420,7 @@ name|GIMP_VIEW
 argument_list|(
 name|editor
 operator|->
-name|preview
+name|view
 argument_list|)
 argument_list|,
 name|TRUE
@@ -435,27 +435,27 @@ argument_list|)
 argument_list|,
 name|editor
 operator|->
-name|preview
+name|view
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|editor
 operator|->
-name|preview
+name|view
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
 name|editor
 operator|->
-name|preview
+name|view
 argument_list|,
 literal|"button-press-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_selection_preview_button_press
+name|gimp_selection_view_button_press
 argument_list|)
 argument_list|,
 name|editor
@@ -465,7 +465,7 @@ name|gimp_dnd_color_dest_add
 argument_list|(
 name|editor
 operator|->
-name|preview
+name|view
 argument_list|,
 name|gimp_selection_editor_drop_color
 argument_list|,
@@ -736,7 +736,7 @@ name|GIMP_VIEW
 argument_list|(
 name|editor
 operator|->
-name|preview
+name|view
 argument_list|)
 argument_list|,
 name|GIMP_VIEWABLE
@@ -757,7 +757,7 @@ name|GIMP_VIEW
 argument_list|(
 name|editor
 operator|->
-name|preview
+name|view
 argument_list|)
 argument_list|,
 name|NULL
@@ -818,8 +818,8 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_selection_preview_button_press (GtkWidget * widget,GdkEventButton * bevent,GimpSelectionEditor * editor)
-name|gimp_selection_preview_button_press
+DECL|function|gimp_selection_view_button_press (GtkWidget * widget,GdkEventButton * bevent,GimpSelectionEditor * editor)
+name|gimp_selection_view_button_press
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -888,7 +888,7 @@ name|GIMP_VIEW
 argument_list|(
 name|editor
 operator|->
-name|preview
+name|view
 argument_list|)
 operator|->
 name|renderer
@@ -1294,7 +1294,7 @@ name|GIMP_VIEW
 argument_list|(
 name|editor
 operator|->
-name|preview
+name|view
 argument_list|)
 operator|->
 name|renderer

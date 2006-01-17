@@ -227,10 +227,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_define
-DECL|macro|PREVIEW_SIZE (action,label,size)
+DECL|macro|VIEW_SIZE (action,label,size)
 define|#
 directive|define
-name|PREVIEW_SIZE
+name|VIEW_SIZE
 parameter_list|(
 name|action
 parameter_list|,
@@ -259,14 +259,14 @@ value|{ "dockable-tab-style-" action, NULL, \     (label), NULL, NULL, \     (st
 end_define
 
 begin_decl_stmt
-DECL|variable|dockable_preview_size_actions
+DECL|variable|dockable_view_size_actions
 specifier|static
 name|GimpRadioActionEntry
-name|dockable_preview_size_actions
+name|dockable_view_size_actions
 index|[]
 init|=
 block|{
-name|PREVIEW_SIZE
+name|VIEW_SIZE
 argument_list|(
 literal|"tiny"
 argument_list|,
@@ -278,7 +278,7 @@ argument_list|,
 name|GIMP_VIEW_SIZE_TINY
 argument_list|)
 block|,
-name|PREVIEW_SIZE
+name|VIEW_SIZE
 argument_list|(
 literal|"extra-small"
 argument_list|,
@@ -290,7 +290,7 @@ argument_list|,
 name|GIMP_VIEW_SIZE_EXTRA_SMALL
 argument_list|)
 block|,
-name|PREVIEW_SIZE
+name|VIEW_SIZE
 argument_list|(
 literal|"small"
 argument_list|,
@@ -302,7 +302,7 @@ argument_list|,
 name|GIMP_VIEW_SIZE_SMALL
 argument_list|)
 block|,
-name|PREVIEW_SIZE
+name|VIEW_SIZE
 argument_list|(
 literal|"medium"
 argument_list|,
@@ -314,7 +314,7 @@ argument_list|,
 name|GIMP_VIEW_SIZE_MEDIUM
 argument_list|)
 block|,
-name|PREVIEW_SIZE
+name|VIEW_SIZE
 argument_list|(
 literal|"large"
 argument_list|,
@@ -326,7 +326,7 @@ argument_list|,
 name|GIMP_VIEW_SIZE_LARGE
 argument_list|)
 block|,
-name|PREVIEW_SIZE
+name|VIEW_SIZE
 argument_list|(
 literal|"extra-large"
 argument_list|,
@@ -338,7 +338,7 @@ argument_list|,
 name|GIMP_VIEW_SIZE_EXTRA_LARGE
 argument_list|)
 block|,
-name|PREVIEW_SIZE
+name|VIEW_SIZE
 argument_list|(
 literal|"huge"
 argument_list|,
@@ -350,7 +350,7 @@ argument_list|,
 name|GIMP_VIEW_SIZE_HUGE
 argument_list|)
 block|,
-name|PREVIEW_SIZE
+name|VIEW_SIZE
 argument_list|(
 literal|"enormous"
 argument_list|,
@@ -362,7 +362,7 @@ argument_list|,
 name|GIMP_VIEW_SIZE_ENORMOUS
 argument_list|)
 block|,
-name|PREVIEW_SIZE
+name|VIEW_SIZE
 argument_list|(
 literal|"gigantic"
 argument_list|,
@@ -449,7 +449,7 @@ end_decl_stmt
 begin_undef
 undef|#
 directive|undef
-name|PREVIEW_SIZE
+name|VIEW_SIZE
 end_undef
 
 begin_undef
@@ -594,11 +594,11 @@ name|gimp_action_group_add_radio_actions
 argument_list|(
 name|group
 argument_list|,
-name|dockable_preview_size_actions
+name|dockable_view_size_actions
 argument_list|,
 name|G_N_ELEMENTS
 argument_list|(
-name|dockable_preview_size_actions
+name|dockable_view_size_actions
 argument_list|)
 argument_list|,
 name|NULL
@@ -607,7 +607,7 @@ name|GIMP_VIEW_SIZE_MEDIUM
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|dockable_preview_size_cmd_callback
+name|dockable_view_size_cmd_callback
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -706,7 +706,7 @@ init|=
 name|FALSE
 decl_stmt|;
 name|GimpViewSize
-name|preview_size
+name|view_size
 init|=
 operator|-
 literal|1
@@ -957,9 +957,9 @@ if|if
 condition|(
 name|view
 condition|)
-name|preview_size
+name|view_size
 operator|=
-name|gimp_container_view_get_preview_size
+name|gimp_container_view_get_view_size
 argument_list|(
 name|view
 argument_list|,
@@ -1043,7 +1043,7 @@ name|SET_VISIBLE
 argument_list|(
 literal|"dockable-preview-size-menu"
 argument_list|,
-name|preview_size
+name|view_size
 operator|!=
 operator|-
 literal|1
@@ -1051,7 +1051,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|preview_size
+name|view_size
 operator|!=
 operator|-
 literal|1
@@ -1059,7 +1059,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|preview_size
+name|view_size
 operator|>=
 name|GIMP_VIEW_SIZE_GIGANTIC
 condition|)
@@ -1075,7 +1075,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|preview_size
+name|view_size
 operator|>=
 name|GIMP_VIEW_SIZE_ENORMOUS
 condition|)
@@ -1091,7 +1091,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|preview_size
+name|view_size
 operator|>=
 name|GIMP_VIEW_SIZE_HUGE
 condition|)
@@ -1107,7 +1107,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|preview_size
+name|view_size
 operator|>=
 name|GIMP_VIEW_SIZE_EXTRA_LARGE
 condition|)
@@ -1123,7 +1123,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|preview_size
+name|view_size
 operator|>=
 name|GIMP_VIEW_SIZE_LARGE
 condition|)
@@ -1139,7 +1139,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|preview_size
+name|view_size
 operator|>=
 name|GIMP_VIEW_SIZE_MEDIUM
 condition|)
@@ -1155,7 +1155,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|preview_size
+name|view_size
 operator|>=
 name|GIMP_VIEW_SIZE_SMALL
 condition|)
@@ -1171,7 +1171,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|preview_size
+name|view_size
 operator|>=
 name|GIMP_VIEW_SIZE_EXTRA_SMALL
 condition|)
@@ -1187,7 +1187,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|preview_size
+name|view_size
 operator|>=
 name|GIMP_VIEW_SIZE_TINY
 condition|)

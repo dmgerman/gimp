@@ -103,10 +103,10 @@ DECL|member|parent_instance
 name|GimpContainerEditor
 name|parent_instance
 decl_stmt|;
-DECL|member|global_preview
+DECL|member|global_view
 name|GtkWidget
 modifier|*
-name|global_preview
+name|global_view
 decl_stmt|;
 DECL|member|global_label
 name|GtkWidget
@@ -177,10 +177,10 @@ modifier|*
 name|context
 parameter_list|,
 name|gint
-name|preview_size
+name|view_size
 parameter_list|,
 name|gint
-name|preview_border_width
+name|view_border_width
 parameter_list|,
 name|GimpMenuFactory
 modifier|*

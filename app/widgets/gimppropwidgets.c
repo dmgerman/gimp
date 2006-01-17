@@ -870,7 +870,7 @@ comment|/*************/
 end_comment
 
 begin_comment
-comment|/*  preview  */
+comment|/*  view  */
 end_comment
 
 begin_comment
@@ -880,7 +880,7 @@ end_comment
 begin_function_decl
 specifier|static
 name|void
-name|gimp_prop_preview_drop
+name|gimp_prop_view_drop
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -905,7 +905,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_prop_preview_notify
+name|gimp_prop_view_notify
 parameter_list|(
 name|GObject
 modifier|*
@@ -917,20 +917,20 @@ name|param_spec
 parameter_list|,
 name|GtkWidget
 modifier|*
-name|preview
+name|view
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_prop_preview_new:  * @config:             #GimpConfig object to which property is attached.  * @property_name:      Name of Unit property.  * @size:               Width and height of preview display.  *  * Creates a widget to display the value of a Preview property.  *  * Return value:  A new #GimpView widget.  *  * Since GIMP 2.4  */
+comment|/**  * gimp_prop_view_new:  * @config:             #GimpConfig object to which property is attached.  * @property_name:      Name of Unit property.  * @size:               Width and height of preview display.  *  * Creates a widget to display the value of a Preview property.  *  * Return value:  A new #GimpView widget.  *  * Since GIMP 2.4  */
 end_comment
 
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_prop_preview_new (GObject * config,const gchar * property_name,gint size)
-name|gimp_prop_preview_new
+DECL|function|gimp_prop_view_new (GObject * config,const gchar * property_name,gint size)
+name|gimp_prop_view_new
 parameter_list|(
 name|GObject
 modifier|*
@@ -951,7 +951,7 @@ name|param_spec
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|preview
+name|view
 decl_stmt|;
 name|GimpViewable
 modifier|*
@@ -1012,7 +1012,7 @@ return|return
 name|NULL
 return|;
 block|}
-name|preview
+name|view
 operator|=
 name|gimp_view_new_by_types
 argument_list|(
@@ -1032,12 +1032,12 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|preview
+name|view
 condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"%s: cannot create preview for type '%s'"
+literal|"%s: cannot create view for type '%s'"
 argument_list|,
 name|G_STRFUNC
 argument_list|,
@@ -1074,7 +1074,7 @@ name|gimp_view_set_viewable
 argument_list|(
 name|GIMP_VIEW
 argument_list|(
-name|preview
+name|view
 argument_list|)
 argument_list|,
 name|viewable
@@ -1090,23 +1090,23 @@ name|set_param_spec
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|preview
+name|view
 argument_list|)
 argument_list|,
-name|preview
+name|view
 argument_list|,
 name|param_spec
 argument_list|)
 expr_stmt|;
 name|gimp_dnd_viewable_dest_add
 argument_list|(
-name|preview
+name|view
 argument_list|,
 name|param_spec
 operator|->
 name|value_type
 argument_list|,
-name|gimp_prop_preview_drop
+name|gimp_prop_view_drop
 argument_list|,
 name|config
 argument_list|)
@@ -1119,14 +1119,14 @@ name|property_name
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_prop_preview_notify
+name|gimp_prop_view_notify
 argument_list|)
 argument_list|,
-name|preview
+name|view
 argument_list|)
 expr_stmt|;
 return|return
-name|preview
+name|view
 return|;
 block|}
 end_function
@@ -1134,12 +1134,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_prop_preview_drop (GtkWidget * preview,gint x,gint y,GimpViewable * viewable,gpointer data)
-name|gimp_prop_preview_drop
+DECL|function|gimp_prop_view_drop (GtkWidget * view,gint x,gint y,GimpViewable * viewable,gpointer data)
+name|gimp_prop_view_drop
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|preview
+name|view
 parameter_list|,
 name|gint
 name|x
@@ -1169,7 +1169,7 @@ name|get_param_spec
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|preview
+name|view
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1205,8 +1205,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_prop_preview_notify (GObject * config,GParamSpec * param_spec,GtkWidget * preview)
-name|gimp_prop_preview_notify
+DECL|function|gimp_prop_view_notify (GObject * config,GParamSpec * param_spec,GtkWidget * view)
+name|gimp_prop_view_notify
 parameter_list|(
 name|GObject
 modifier|*
@@ -1218,7 +1218,7 @@ name|param_spec
 parameter_list|,
 name|GtkWidget
 modifier|*
-name|preview
+name|view
 parameter_list|)
 block|{
 name|GimpViewable
@@ -1243,7 +1243,7 @@ name|gimp_view_set_viewable
 argument_list|(
 name|GIMP_VIEW
 argument_list|(
-name|preview
+name|view
 argument_list|)
 argument_list|,
 name|viewable

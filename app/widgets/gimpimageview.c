@@ -181,7 +181,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_image_view_new (GimpViewType view_type,GimpContainer * container,GimpContext * context,gint preview_size,gint preview_border_width,GimpMenuFactory * menu_factory)
+DECL|function|gimp_image_view_new (GimpViewType view_type,GimpContainer * container,GimpContext * context,gint view_size,gint view_border_width,GimpMenuFactory * menu_factory)
 name|gimp_image_view_new
 parameter_list|(
 name|GimpViewType
@@ -196,10 +196,10 @@ modifier|*
 name|context
 parameter_list|,
 name|gint
-name|preview_size
+name|view_size
 parameter_list|,
 name|gint
-name|preview_border_width
+name|view_border_width
 parameter_list|,
 name|GimpMenuFactory
 modifier|*
@@ -239,9 +239,9 @@ name|container
 argument_list|,
 name|context
 argument_list|,
-name|preview_size
+name|view_size
 argument_list|,
-name|preview_border_width
+name|view_border_width
 argument_list|,
 name|menu_factory
 argument_list|,

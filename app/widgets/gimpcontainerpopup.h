@@ -122,17 +122,17 @@ DECL|member|view_type
 name|GimpViewType
 name|view_type
 decl_stmt|;
-DECL|member|default_preview_size
+DECL|member|default_view_size
 name|gint
-name|default_preview_size
+name|default_view_size
 decl_stmt|;
-DECL|member|preview_size
+DECL|member|view_size
 name|gint
-name|preview_size
+name|view_size
 decl_stmt|;
-DECL|member|preview_border_width
+DECL|member|view_border_width
 name|gint
-name|preview_border_width
+name|view_border_width
 decl_stmt|;
 DECL|member|frame
 name|GtkWidget
@@ -232,13 +232,13 @@ name|GimpViewType
 name|view_type
 parameter_list|,
 name|gint
-name|default_preview_size
+name|default_view_size
 parameter_list|,
 name|gint
-name|preview_size
+name|view_size
 parameter_list|,
 name|gint
-name|preview_border_width
+name|view_border_width
 parameter_list|,
 name|GimpDialogFactory
 modifier|*
@@ -304,7 +304,7 @@ end_function_decl
 
 begin_function_decl
 name|gint
-name|gimp_container_popup_get_preview_size
+name|gimp_container_popup_get_view_size
 parameter_list|(
 name|GimpContainerPopup
 modifier|*
@@ -315,14 +315,14 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_container_popup_set_preview_size
+name|gimp_container_popup_set_view_size
 parameter_list|(
 name|GimpContainerPopup
 modifier|*
 name|popup
 parameter_list|,
 name|gint
-name|preview_size
+name|view_size
 parameter_list|)
 function_decl|;
 end_function_decl

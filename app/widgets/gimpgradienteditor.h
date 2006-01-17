@@ -33,7 +33,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28db6f2f0103
+DECL|enum|__anon2b8662060103
 block|{
 DECL|enumerator|GRAD_DRAG_NONE
 name|GRAD_DRAG_NONE
@@ -160,10 +160,10 @@ name|GtkWidget
 modifier|*
 name|scrollbar
 decl_stmt|;
-DECL|member|preview
+DECL|member|view
 name|GtkWidget
 modifier|*
-name|preview
+name|view
 decl_stmt|;
 DECL|member|control
 name|GtkWidget
@@ -191,14 +191,14 @@ name|GtkWidget
 modifier|*
 name|color_dialog
 decl_stmt|;
-comment|/*  Gradient preview  */
-DECL|member|preview_last_x
+comment|/*  Gradient view  */
+DECL|member|view_last_x
 name|gint
-name|preview_last_x
+name|view_last_x
 decl_stmt|;
-DECL|member|preview_button_down
+DECL|member|view_button_down
 name|gboolean
-name|preview_button_down
+name|view_button_down
 decl_stmt|;
 comment|/*  Gradient control  */
 DECL|member|control_pixmap

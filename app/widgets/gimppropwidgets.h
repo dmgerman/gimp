@@ -82,7 +82,7 @@ end_comment
 begin_function_decl
 name|GtkWidget
 modifier|*
-name|gimp_prop_preview_new
+name|gimp_prop_view_new
 parameter_list|(
 name|GObject
 modifier|*

@@ -533,7 +533,7 @@ modifier|*
 name|new_dockable
 decl_stmt|;
 name|gint
-name|preview_size
+name|view_size
 init|=
 operator|-
 literal|1
@@ -580,9 +580,9 @@ if|if
 condition|(
 name|old_view
 condition|)
-name|preview_size
+name|view_size
 operator|=
-name|gimp_container_view_get_preview_size
+name|gimp_container_view_get_view_size
 argument_list|(
 name|old_view
 argument_list|,
@@ -605,7 +605,7 @@ name|dock
 argument_list|,
 name|identifier
 argument_list|,
-name|preview_size
+name|view_size
 argument_list|)
 expr_stmt|;
 if|if
@@ -716,8 +716,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|dockable_preview_size_cmd_callback (GtkAction * action,GtkAction * current,gpointer data)
-name|dockable_preview_size_cmd_callback
+DECL|function|dockable_view_size_cmd_callback (GtkAction * action,GtkAction * current,gpointer data)
+name|dockable_view_size_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -745,12 +745,12 @@ modifier|*
 name|dockable
 decl_stmt|;
 name|gint
-name|preview_size
+name|view_size
 decl_stmt|;
 name|gint
 name|page_num
 decl_stmt|;
-name|preview_size
+name|view_size
 operator|=
 name|gtk_radio_action_get_current_value
 argument_list|(
@@ -813,7 +813,7 @@ name|border_width
 decl_stmt|;
 name|old_size
 operator|=
-name|gimp_container_view_get_preview_size
+name|gimp_container_view_get_view_size
 argument_list|(
 name|view
 argument_list|,
@@ -825,13 +825,13 @@ if|if
 condition|(
 name|old_size
 operator|!=
-name|preview_size
+name|view_size
 condition|)
-name|gimp_container_view_set_preview_size
+name|gimp_container_view_set_view_size
 argument_list|(
 name|view
 argument_list|,
-name|preview_size
+name|view_size
 argument_list|,
 name|border_width
 argument_list|)

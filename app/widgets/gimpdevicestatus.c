@@ -138,7 +138,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9d572d0103
+DECL|enum|__anon2c6e277e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -338,7 +338,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_device_status_preview_clicked
+name|gimp_device_status_view_clicked
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -1279,7 +1279,7 @@ name|entry
 operator|->
 name|tool
 operator|=
-name|gimp_prop_preview_new
+name|gimp_prop_view_new
 argument_list|(
 name|G_OBJECT
 argument_list|(
@@ -1349,7 +1349,7 @@ literal|"clicked"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_device_status_preview_clicked
+name|gimp_device_status_view_clicked
 argument_list|)
 argument_list|,
 literal|"gimp-tool-list|gimp-tool-grid"
@@ -1498,7 +1498,7 @@ name|entry
 operator|->
 name|brush
 operator|=
-name|gimp_prop_preview_new
+name|gimp_prop_view_new
 argument_list|(
 name|G_OBJECT
 argument_list|(
@@ -1579,7 +1579,7 @@ literal|"clicked"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_device_status_preview_clicked
+name|gimp_device_status_view_clicked
 argument_list|)
 argument_list|,
 literal|"gimp-brush-grid|gimp-brush-list"
@@ -1590,7 +1590,7 @@ name|entry
 operator|->
 name|pattern
 operator|=
-name|gimp_prop_preview_new
+name|gimp_prop_view_new
 argument_list|(
 name|G_OBJECT
 argument_list|(
@@ -1671,7 +1671,7 @@ literal|"clicked"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_device_status_preview_clicked
+name|gimp_device_status_view_clicked
 argument_list|)
 argument_list|,
 literal|"gimp-pattern-grid|gimp-pattern-list"
@@ -1682,7 +1682,7 @@ name|entry
 operator|->
 name|gradient
 operator|=
-name|gimp_prop_preview_new
+name|gimp_prop_view_new
 argument_list|(
 name|G_OBJECT
 argument_list|(
@@ -1765,7 +1765,7 @@ literal|"clicked"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_device_status_preview_clicked
+name|gimp_device_status_view_clicked
 argument_list|)
 argument_list|,
 literal|"gimp-gradient-list|gimp-gradient-grid"
@@ -2225,8 +2225,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_device_status_preview_clicked (GtkWidget * widget,GdkModifierType state,const gchar * identifier)
-name|gimp_device_status_preview_clicked
+DECL|function|gimp_device_status_view_clicked (GtkWidget * widget,GdkModifierType state,const gchar * identifier)
+name|gimp_device_status_view_clicked
 parameter_list|(
 name|GtkWidget
 modifier|*

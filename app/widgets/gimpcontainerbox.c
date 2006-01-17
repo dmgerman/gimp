@@ -369,7 +369,7 @@ name|GtkRequisition
 name|req
 decl_stmt|;
 name|gint
-name|preview_size
+name|view_size
 decl_stmt|;
 name|gint
 name|scrollbar_width
@@ -395,9 +395,9 @@ argument_list|(
 name|box
 argument_list|)
 expr_stmt|;
-name|preview_size
+name|view_size
 operator|=
-name|gimp_container_view_get_preview_size
+name|gimp_container_view_get_view_size
 argument_list|(
 name|view
 argument_list|,
@@ -412,7 +412,7 @@ literal|0
 operator|||
 name|width
 operator|>=
-name|preview_size
+name|view_size
 argument_list|)
 expr_stmt|;
 name|g_return_if_fail
@@ -423,7 +423,7 @@ literal|0
 operator|||
 name|height
 operator|>=
-name|preview_size
+name|view_size
 argument_list|)
 expr_stmt|;
 name|sw_class
@@ -699,7 +699,7 @@ argument_list|)
 expr_stmt|;
 name|preview
 operator|=
-name|gimp_prop_preview_new
+name|gimp_prop_view_new
 argument_list|(
 name|G_OBJECT
 argument_list|(
@@ -723,7 +723,7 @@ operator|=
 operator|-
 literal|1
 expr_stmt|;
-name|gimp_container_view_get_preview_size
+name|gimp_container_view_get_view_size
 argument_list|(
 name|view
 argument_list|,

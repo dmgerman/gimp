@@ -121,9 +121,9 @@ DECL|member|tab_style
 name|GimpTabStyle
 name|tab_style
 decl_stmt|;
-DECL|member|preview_size
+DECL|member|view_size
 name|gint
-name|preview_size
+name|view_size
 decl_stmt|;
 comment|/*  dialog specific list of GimpSessionInfoAux  */
 DECL|member|aux_info

@@ -103,10 +103,10 @@ DECL|member|parent_instance
 name|GimpImageEditor
 name|parent_instance
 decl_stmt|;
-DECL|member|preview
+DECL|member|view
 name|GtkWidget
 modifier|*
-name|preview
+name|view
 decl_stmt|;
 DECL|member|all_button
 name|GtkWidget

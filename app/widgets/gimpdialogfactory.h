@@ -33,7 +33,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29733df60103
+DECL|enum|__anon293604e60103
 block|{
 DECL|enumerator|GIMP_DIALOG_VISIBILITY_UNKNOWN
 name|GIMP_DIALOG_VISIBILITY_UNKNOWN
@@ -70,7 +70,7 @@ modifier|*
 name|context
 parameter_list|,
 name|gint
-name|preview_size
+name|view_size
 parameter_list|)
 function_decl|;
 end_typedef
@@ -98,7 +98,7 @@ modifier|*
 name|context
 parameter_list|,
 name|gint
-name|preview_size
+name|view_size
 parameter_list|)
 function_decl|;
 end_typedef
@@ -137,9 +137,9 @@ DECL|member|new_func
 name|GimpDialogNewFunc
 name|new_func
 decl_stmt|;
-DECL|member|preview_size
+DECL|member|view_size
 name|gint
-name|preview_size
+name|view_size
 decl_stmt|;
 DECL|member|singleton
 name|gboolean
@@ -396,7 +396,7 @@ name|GimpDialogNewFunc
 name|new_func
 parameter_list|,
 name|gint
-name|preview_size
+name|view_size
 parameter_list|,
 name|gboolean
 name|singleton
@@ -466,7 +466,7 @@ modifier|*
 name|identifier
 parameter_list|,
 name|gint
-name|preview_size
+name|view_size
 parameter_list|,
 name|gboolean
 name|present
@@ -493,7 +493,7 @@ modifier|*
 name|identifiers
 parameter_list|,
 name|gint
-name|preview_size
+name|view_size
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -517,7 +517,7 @@ modifier|*
 name|identifier
 parameter_list|,
 name|gint
-name|preview_size
+name|view_size
 parameter_list|)
 function_decl|;
 end_function_decl

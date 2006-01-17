@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a89c510103
+DECL|enum|__anon28b7584f0103
 block|{
 DECL|enumerator|SESSION_INFO_POSITION
 name|SESSION_INFO_POSITION
@@ -115,8 +115,8 @@ block|,
 DECL|enumerator|SESSION_INFO_DOCKABLE_TAB_STYLE
 name|SESSION_INFO_DOCKABLE_TAB_STYLE
 block|,
-DECL|enumerator|SESSION_INFO_DOCKABLE_PREVIEW_SIZE
-name|SESSION_INFO_DOCKABLE_PREVIEW_SIZE
+DECL|enumerator|SESSION_INFO_DOCKABLE_VIEW_SIZE
+name|SESSION_INFO_DOCKABLE_VIEW_SIZE
 block|,
 DECL|enumerator|SESSION_INFO_DOCKABLE_AUX
 name|SESSION_INFO_DOCKABLE_AUX
@@ -1682,7 +1682,7 @@ init|=
 literal|"icon"
 decl_stmt|;
 name|gint
-name|preview_size
+name|view_size
 init|=
 operator|-
 literal|1
@@ -1761,9 +1761,9 @@ if|if
 condition|(
 name|view
 condition|)
-name|preview_size
+name|view_size
 operator|=
-name|gimp_container_view_get_preview_size
+name|gimp_container_view_get_view_size
 argument_list|(
 name|view
 argument_list|,
@@ -1772,15 +1772,15 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|preview_size
+name|view_size
 operator|>
 literal|0
 operator|&&
-name|preview_size
+name|view_size
 operator|!=
 name|entry
 operator|->
-name|preview_size
+name|view_size
 condition|)
 block|{
 name|gimp_config_writer_open
@@ -1796,7 +1796,7 @@ name|writer
 argument_list|,
 literal|"%d"
 argument_list|,
-name|preview_size
+name|view_size
 argument_list|)
 expr_stmt|;
 name|gimp_config_writer_close
@@ -2141,7 +2141,7 @@ literal|"preview-size"
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|SESSION_INFO_DOCKABLE_PREVIEW_SIZE
+name|SESSION_INFO_DOCKABLE_VIEW_SIZE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2894,7 +2894,7 @@ name|info
 operator|->
 name|toplevel_entry
 operator|->
-name|preview_size
+name|view_size
 argument_list|,
 name|TRUE
 argument_list|)
@@ -3057,19 +3057,19 @@ if|if
 condition|(
 name|dockable_info
 operator|->
-name|preview_size
+name|view_size
 operator|<
 name|GIMP_VIEW_SIZE_TINY
 operator|||
 name|dockable_info
 operator|->
-name|preview_size
+name|view_size
 operator|>
 name|GIMP_VIEW_SIZE_GIGANTIC
 condition|)
 name|dockable_info
 operator|->
-name|preview_size
+name|view_size
 operator|=
 operator|-
 literal|1
@@ -3091,7 +3091,7 @@ name|identifier
 argument_list|,
 name|dockable_info
 operator|->
-name|preview_size
+name|view_size
 argument_list|)
 expr_stmt|;
 if|if
@@ -4301,7 +4301,7 @@ name|value
 expr_stmt|;
 break|break;
 case|case
-name|SESSION_INFO_DOCKABLE_PREVIEW_SIZE
+name|SESSION_INFO_DOCKABLE_VIEW_SIZE
 case|:
 name|token
 operator|=
@@ -4317,7 +4317,7 @@ argument_list|,
 operator|&
 name|dockable
 operator|->
-name|preview_size
+name|view_size
 argument_list|)
 condition|)
 goto|goto

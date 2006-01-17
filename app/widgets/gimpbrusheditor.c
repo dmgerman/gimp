@@ -279,7 +279,7 @@ argument_list|)
 expr_stmt|;
 name|editor
 operator|->
-name|preview
+name|view
 operator|=
 name|gimp_view_new_full_by_types
 argument_list|(
@@ -304,7 +304,7 @@ name|gtk_widget_set_size_request
 argument_list|(
 name|editor
 operator|->
-name|preview
+name|view
 argument_list|,
 name|BRUSH_VIEW_WIDTH
 argument_list|,
@@ -317,7 +317,7 @@ name|GIMP_VIEW
 argument_list|(
 name|editor
 operator|->
-name|preview
+name|view
 argument_list|)
 argument_list|,
 name|TRUE
@@ -332,14 +332,14 @@ argument_list|)
 argument_list|,
 name|editor
 operator|->
-name|preview
+name|view
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|editor
 operator|->
-name|preview
+name|view
 argument_list|)
 expr_stmt|;
 name|editor
@@ -1030,7 +1030,7 @@ name|GIMP_VIEW
 argument_list|(
 name|brush_editor
 operator|->
-name|preview
+name|view
 argument_list|)
 argument_list|,
 operator|(

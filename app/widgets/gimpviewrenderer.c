@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5ccbc70103
+DECL|enum|__anon2b8d1fba0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -357,6 +357,12 @@ operator|->
 name|finalize
 operator|=
 name|gimp_view_renderer_finalize
+expr_stmt|;
+name|klass
+operator|->
+name|update
+operator|=
+name|NULL
 expr_stmt|;
 name|klass
 operator|->
@@ -1022,8 +1028,9 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-operator|!
 name|viewable
+operator|==
+name|NULL
 operator|||
 name|GIMP_IS_VIEWABLE
 argument_list|(
@@ -1261,7 +1268,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_view_renderer_set_size (GimpViewRenderer * renderer,gint preview_size,gint border_width)
+DECL|function|gimp_view_renderer_set_size (GimpViewRenderer * renderer,gint view_size,gint border_width)
 name|gimp_view_renderer_set_size
 parameter_list|(
 name|GimpViewRenderer
@@ -1269,7 +1276,7 @@ modifier|*
 name|renderer
 parameter_list|,
 name|gint
-name|preview_size
+name|view_size
 parameter_list|,
 name|gint
 name|border_width
@@ -1290,11 +1297,11 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|preview_size
+name|view_size
 operator|>
 literal|0
 operator|&&
-name|preview_size
+name|view_size
 operator|<=
 name|GIMP_VIEWABLE_MAX_PREVIEW_SIZE
 argument_list|)
@@ -1314,7 +1321,7 @@ name|renderer
 operator|->
 name|size
 operator|=
-name|preview_size
+name|view_size
 expr_stmt|;
 if|if
 condition|(
@@ -1329,7 +1336,7 @@ name|renderer
 operator|->
 name|viewable
 argument_list|,
-name|preview_size
+name|view_size
 argument_list|,
 name|renderer
 operator|->
@@ -1351,11 +1358,11 @@ else|else
 block|{
 name|width
 operator|=
-name|preview_size
+name|view_size
 expr_stmt|;
 name|height
 operator|=
-name|preview_size
+name|view_size
 expr_stmt|;
 block|}
 name|gimp_view_renderer_set_size_full

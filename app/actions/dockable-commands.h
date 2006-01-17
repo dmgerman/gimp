@@ -83,7 +83,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|dockable_preview_size_cmd_callback
+name|dockable_view_size_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*

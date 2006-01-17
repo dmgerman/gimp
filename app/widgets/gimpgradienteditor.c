@@ -1139,22 +1139,22 @@ argument_list|(
 name|vbox
 argument_list|)
 expr_stmt|;
-comment|/* Gradient preview */
+comment|/* Gradient view */
 name|editor
 operator|->
-name|preview_last_x
+name|view_last_x
 operator|=
 literal|0
 expr_stmt|;
 name|editor
 operator|->
-name|preview_button_down
+name|view_button_down
 operator|=
 name|FALSE
 expr_stmt|;
 name|editor
 operator|->
-name|preview
+name|view
 operator|=
 name|gimp_view_new_full_by_types
 argument_list|(
@@ -1179,7 +1179,7 @@ name|gtk_widget_set_size_request
 argument_list|(
 name|editor
 operator|->
-name|preview
+name|view
 argument_list|,
 name|GRAD_VIEW_WIDTH
 argument_list|,
@@ -1190,7 +1190,7 @@ name|gtk_widget_set_events
 argument_list|(
 name|editor
 operator|->
-name|preview
+name|view
 argument_list|,
 name|GRAD_VIEW_EVENT_MASK
 argument_list|)
@@ -1201,7 +1201,7 @@ name|GIMP_VIEW
 argument_list|(
 name|editor
 operator|->
-name|preview
+name|view
 argument_list|)
 argument_list|,
 name|TRUE
@@ -1216,7 +1216,7 @@ argument_list|)
 argument_list|,
 name|editor
 operator|->
-name|preview
+name|view
 argument_list|,
 name|TRUE
 argument_list|,
@@ -1229,14 +1229,14 @@ name|gtk_widget_show
 argument_list|(
 name|editor
 operator|->
-name|preview
+name|view
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
 name|editor
 operator|->
-name|preview
+name|view
 argument_list|,
 literal|"event"
 argument_list|,
@@ -1254,7 +1254,7 @@ name|GTK_WIDGET
 argument_list|(
 name|editor
 operator|->
-name|preview
+name|view
 argument_list|)
 argument_list|,
 name|GIMP_TYPE_GRADIENT
@@ -1270,7 +1270,7 @@ name|GTK_WIDGET
 argument_list|(
 name|editor
 operator|->
-name|preview
+name|view
 argument_list|)
 argument_list|,
 name|gradient_editor_drop_color
@@ -2248,7 +2248,7 @@ name|GIMP_VIEW
 argument_list|(
 name|gradient_editor
 operator|->
-name|preview
+name|view
 argument_list|)
 argument_list|,
 name|GIMP_VIEWABLE
@@ -3259,7 +3259,7 @@ name|GIMP_VIEW
 argument_list|(
 name|editor
 operator|->
-name|preview
+name|view
 argument_list|)
 operator|->
 name|renderer
@@ -3527,7 +3527,7 @@ name|gtk_widget_get_pointer
 argument_list|(
 name|editor
 operator|->
-name|preview
+name|view
 argument_list|,
 operator|&
 name|x
@@ -3542,12 +3542,12 @@ name|x
 operator|!=
 name|editor
 operator|->
-name|preview_last_x
+name|view_last_x
 condition|)
 block|{
 name|editor
 operator|->
-name|preview_last_x
+name|view_last_x
 operator|=
 name|x
 expr_stmt|;
@@ -3555,7 +3555,7 @@ if|if
 condition|(
 name|editor
 operator|->
-name|preview_button_down
+name|view_button_down
 condition|)
 block|{
 if|if
@@ -3613,7 +3613,7 @@ name|gtk_widget_get_pointer
 argument_list|(
 name|editor
 operator|->
-name|preview
+name|view
 argument_list|,
 operator|&
 name|x
@@ -3634,13 +3634,13 @@ literal|1
 case|:
 name|editor
 operator|->
-name|preview_last_x
+name|view_last_x
 operator|=
 name|x
 expr_stmt|;
 name|editor
 operator|->
-name|preview_button_down
+name|view_button_down
 operator|=
 name|TRUE
 expr_stmt|;
@@ -3844,7 +3844,7 @@ if|if
 condition|(
 name|editor
 operator|->
-name|preview_button_down
+name|view_button_down
 condition|)
 block|{
 name|GdkEventButton
@@ -3861,7 +3861,7 @@ name|gtk_widget_get_pointer
 argument_list|(
 name|editor
 operator|->
-name|preview
+name|view
 argument_list|,
 operator|&
 name|x
@@ -3872,13 +3872,13 @@ argument_list|)
 expr_stmt|;
 name|editor
 operator|->
-name|preview_last_x
+name|view_last_x
 operator|=
 name|x
 expr_stmt|;
 name|editor
 operator|->
-name|preview_button_down
+name|view_button_down
 operator|=
 name|FALSE
 expr_stmt|;
@@ -6892,7 +6892,7 @@ name|cwidth
 operator|=
 name|editor
 operator|->
-name|preview
+name|view
 operator|->
 name|allocation
 operator|.

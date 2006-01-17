@@ -106,10 +106,10 @@ name|GtkWidget
 modifier|*
 name|shell
 decl_stmt|;
-DECL|member|preview
+DECL|member|view
 name|GtkWidget
 modifier|*
-name|preview
+name|view
 decl_stmt|;
 DECL|member|label
 name|GtkWidget
@@ -149,7 +149,7 @@ modifier|*
 name|layer
 parameter_list|,
 name|gint
-name|preview_size
+name|view_size
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -338,7 +338,7 @@ begin_function
 specifier|static
 name|LayerSelect
 modifier|*
-DECL|function|layer_select_new (GimpImage * gimage,GimpLayer * layer,gint preview_size)
+DECL|function|layer_select_new (GimpImage * gimage,GimpLayer * layer,gint view_size)
 name|layer_select_new
 parameter_list|(
 name|GimpImage
@@ -350,7 +350,7 @@ modifier|*
 name|layer
 parameter_list|,
 name|gint
-name|preview_size
+name|view_size
 parameter_list|)
 block|{
 name|LayerSelect
@@ -573,7 +573,7 @@ argument_list|(
 name|hbox
 argument_list|)
 expr_stmt|;
-comment|/*  The preview  */
+comment|/*  The view  */
 name|alignment
 operator|=
 name|gtk_alignment_new
@@ -610,7 +610,7 @@ argument_list|)
 expr_stmt|;
 name|layer_select
 operator|->
-name|preview
+name|view
 operator|=
 name|gimp_view_new_by_types
 argument_list|(
@@ -618,7 +618,7 @@ name|GIMP_TYPE_VIEW
 argument_list|,
 name|GIMP_TYPE_LAYER
 argument_list|,
-name|preview_size
+name|view_size
 argument_list|,
 literal|1
 argument_list|,
@@ -631,7 +631,7 @@ name|GIMP_VIEW
 argument_list|(
 name|layer_select
 operator|->
-name|preview
+name|view
 argument_list|)
 argument_list|,
 name|GIMP_VIEWABLE
@@ -649,14 +649,14 @@ argument_list|)
 argument_list|,
 name|layer_select
 operator|->
-name|preview
+name|view
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|layer_select
 operator|->
-name|preview
+name|view
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -930,7 +930,7 @@ name|GIMP_VIEW
 argument_list|(
 name|layer_select
 operator|->
-name|preview
+name|view
 argument_list|)
 argument_list|,
 name|GIMP_VIEWABLE

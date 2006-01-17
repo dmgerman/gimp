@@ -535,15 +535,15 @@ name|stock_id
 parameter_list|,
 name|help_id
 parameter_list|,\
-DECL|macro|DOCKABLE (id,name,blurb,stock_id,help_id,\\\nnew_func,preview_size,singleton)
+DECL|macro|DOCKABLE (id,name,blurb,stock_id,help_id,\\\nnew_func,view_size,singleton)
 name|new_func
 parameter_list|,
-name|preview_size
+name|view_size
 parameter_list|,
 name|singleton
 parameter_list|)
 define|\
-value|{ id, name, blurb, stock_id, help_id, \     new_func, preview_size, singleton, FALSE, FALSE, TRUE }
+value|{ id, name, blurb, stock_id, help_id, \     new_func, view_size, singleton, FALSE, FALSE, TRUE }
 end_define
 
 begin_define
@@ -561,11 +561,11 @@ name|stock_id
 parameter_list|,
 name|help_id
 parameter_list|,\
-DECL|macro|LISTGRID (id,name,blurb,stock_id,help_id,\\\npreview_size)
-name|preview_size
+DECL|macro|LISTGRID (id,name,blurb,stock_id,help_id,\\\nview_size)
+name|view_size
 parameter_list|)
 define|\
-value|{ "gimp-"#id"-list", name, blurb, stock_id, help_id, \     dialogs_##id##_list_view_new, preview_size, FALSE, FALSE, FALSE, TRUE }, \   { "gimp-"#id"-grid", name, blurb, stock_id, help_id, \     dialogs_##id##_grid_view_new, preview_size, FALSE, FALSE, FALSE, TRUE }
+value|{ "gimp-"#id"-list", name, blurb, stock_id, help_id, \     dialogs_##id##_list_view_new, view_size, FALSE, FALSE, FALSE, TRUE }, \   { "gimp-"#id"-grid", name, blurb, stock_id, help_id, \     dialogs_##id##_grid_view_new, view_size, FALSE, FALSE, FALSE, TRUE }
 end_define
 
 begin_decl_stmt
@@ -1341,7 +1341,7 @@ index|[
 name|i
 index|]
 operator|.
-name|preview_size
+name|view_size
 argument_list|,
 name|toplevel_entries
 index|[
@@ -1445,7 +1445,7 @@ index|[
 name|i
 index|]
 operator|.
-name|preview_size
+name|view_size
 argument_list|,
 name|dock_entries
 index|[

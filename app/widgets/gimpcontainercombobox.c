@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c843dc10103
+DECL|enum|__anon292ec45a0103
 block|{
 DECL|enumerator|COLUMN_RENDERER
 name|COLUMN_RENDERER
@@ -222,7 +222,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_container_combo_box_set_preview_size
+name|gimp_container_combo_box_set_view_size
 parameter_list|(
 name|GimpContainerView
 modifier|*
@@ -568,9 +568,9 @@ name|gimp_container_combo_box_clear_items
 expr_stmt|;
 name|iface
 operator|->
-name|set_preview_size
+name|set_view_size
 operator|=
-name|gimp_container_combo_box_set_preview_size
+name|gimp_container_combo_box_set_view_size
 expr_stmt|;
 name|iface
 operator|->
@@ -587,7 +587,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_container_combo_box_new (GimpContainer * container,GimpContext * context,gint preview_size,gint preview_border_width)
+DECL|function|gimp_container_combo_box_new (GimpContainer * container,GimpContext * context,gint view_size,gint view_border_width)
 name|gimp_container_combo_box_new
 parameter_list|(
 name|GimpContainer
@@ -599,10 +599,10 @@ modifier|*
 name|context
 parameter_list|,
 name|gint
-name|preview_size
+name|view_size
 parameter_list|,
 name|gint
-name|preview_border_width
+name|view_border_width
 parameter_list|)
 block|{
 name|GtkWidget
@@ -657,13 +657,13 @@ argument_list|(
 name|combo_box
 argument_list|)
 expr_stmt|;
-name|gimp_container_view_set_preview_size
+name|gimp_container_view_set_view_size
 argument_list|(
 name|view
 argument_list|,
-name|preview_size
+name|view_size
 argument_list|,
-name|preview_border_width
+name|view_border_width
 argument_list|)
 expr_stmt|;
 if|if
@@ -735,7 +735,7 @@ modifier|*
 name|name
 decl_stmt|;
 name|gint
-name|preview_size
+name|view_size
 decl_stmt|;
 name|gint
 name|border_width
@@ -750,9 +750,9 @@ name|combo_box
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|preview_size
+name|view_size
 operator|=
-name|gimp_container_view_get_preview_size
+name|gimp_container_view_get_view_size
 argument_list|(
 name|view
 argument_list|,
@@ -778,7 +778,7 @@ argument_list|(
 name|viewable
 argument_list|)
 argument_list|,
-name|preview_size
+name|view_size
 argument_list|,
 name|border_width
 argument_list|,
@@ -1544,8 +1544,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_container_combo_box_set_preview_size (GimpContainerView * view)
-name|gimp_container_combo_box_set_preview_size
+DECL|function|gimp_container_combo_box_set_view_size (GimpContainerView * view)
+name|gimp_container_combo_box_set_view_size
 parameter_list|(
 name|GimpContainerView
 modifier|*
@@ -1571,14 +1571,14 @@ name|gboolean
 name|iter_valid
 decl_stmt|;
 name|gint
-name|preview_size
+name|view_size
 decl_stmt|;
 name|gint
 name|border_width
 decl_stmt|;
-name|preview_size
+name|view_size
 operator|=
-name|gimp_container_view_get_preview_size
+name|gimp_container_view_get_view_size
 argument_list|(
 name|view
 argument_list|,
@@ -1635,7 +1635,7 @@ name|gimp_view_renderer_set_size
 argument_list|(
 name|renderer
 argument_list|,
-name|preview_size
+name|view_size
 argument_list|,
 name|border_width
 argument_list|)

@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a7e8000103
+DECL|enum|__anon2c302d160103
 block|{
 DECL|enumerator|MOVE_CURSOR
 name|MOVE_CURSOR
@@ -288,7 +288,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_container_grid_view_set_preview_size
+name|gimp_container_grid_view_set_view_size
 parameter_list|(
 name|GimpContainerView
 modifier|*
@@ -906,9 +906,9 @@ name|gimp_container_grid_view_clear_items
 expr_stmt|;
 name|iface
 operator|->
-name|set_preview_size
+name|set_view_size
 operator|=
-name|gimp_container_grid_view_set_preview_size
+name|gimp_container_grid_view_set_view_size
 expr_stmt|;
 block|}
 end_function
@@ -1012,7 +1012,7 @@ argument_list|(
 name|grid_view
 argument_list|)
 expr_stmt|;
-name|gimp_container_view_set_preview_size
+name|gimp_container_view_set_view_size
 argument_list|(
 name|view
 argument_list|,
@@ -1668,12 +1668,12 @@ end_function
 begin_function
 specifier|static
 name|gpointer
-DECL|function|gimp_container_grid_view_insert_item (GimpContainerView * view,GimpViewable * viewable,gint index)
+DECL|function|gimp_container_grid_view_insert_item (GimpContainerView * container_view,GimpViewable * viewable,gint index)
 name|gimp_container_grid_view_insert_item
 parameter_list|(
 name|GimpContainerView
 modifier|*
-name|view
+name|container_view
 parameter_list|,
 name|GimpViewable
 modifier|*
@@ -1689,34 +1689,34 @@ name|grid_view
 init|=
 name|GIMP_CONTAINER_GRID_VIEW
 argument_list|(
-name|view
+name|container_view
 argument_list|)
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|preview
+name|view
 decl_stmt|;
 name|gint
-name|preview_size
+name|view_size
 decl_stmt|;
-name|preview_size
+name|view_size
 operator|=
-name|gimp_container_view_get_preview_size
+name|gimp_container_view_get_view_size
 argument_list|(
-name|view
+name|container_view
 argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|preview
+name|view
 operator|=
 name|gimp_view_new_full
 argument_list|(
 name|viewable
 argument_list|,
-name|preview_size
+name|view_size
 argument_list|,
-name|preview_size
+name|view_size
 argument_list|,
 literal|1
 argument_list|,
@@ -1731,7 +1731,7 @@ name|gimp_view_renderer_set_border_type
 argument_list|(
 name|GIMP_VIEW
 argument_list|(
-name|preview
+name|view
 argument_list|)
 operator|->
 name|renderer
@@ -1743,7 +1743,7 @@ name|gimp_view_renderer_remove_idle
 argument_list|(
 name|GIMP_VIEW
 argument_list|(
-name|preview
+name|view
 argument_list|)
 operator|->
 name|renderer
@@ -1758,7 +1758,7 @@ operator|->
 name|wrap_box
 argument_list|)
 argument_list|,
-name|preview
+name|view
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1785,19 +1785,19 @@ operator|->
 name|wrap_box
 argument_list|)
 argument_list|,
-name|preview
+name|view
 argument_list|,
 name|index
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|preview
+name|view
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|preview
+name|view
 argument_list|,
 literal|"button-press-event"
 argument_list|,
@@ -1806,12 +1806,12 @@ argument_list|(
 name|gimp_container_grid_view_item_selected
 argument_list|)
 argument_list|,
-name|view
+name|container_view
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|preview
+name|view
 argument_list|,
 literal|"double-clicked"
 argument_list|,
@@ -1820,12 +1820,12 @@ argument_list|(
 name|gimp_container_grid_view_item_activated
 argument_list|)
 argument_list|,
-name|view
+name|container_view
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|preview
+name|view
 argument_list|,
 literal|"context"
 argument_list|,
@@ -1834,14 +1834,14 @@ argument_list|(
 name|gimp_container_grid_view_item_context
 argument_list|)
 argument_list|,
-name|view
+name|container_view
 argument_list|)
 expr_stmt|;
 return|return
 operator|(
 name|gpointer
 operator|)
-name|preview
+name|view
 return|;
 block|}
 end_function
@@ -1849,12 +1849,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_container_grid_view_remove_item (GimpContainerView * view,GimpViewable * viewable,gpointer insert_data)
+DECL|function|gimp_container_grid_view_remove_item (GimpContainerView * container_view,GimpViewable * viewable,gpointer insert_data)
 name|gimp_container_grid_view_remove_item
 parameter_list|(
 name|GimpContainerView
 modifier|*
-name|view
+name|container_view
 parameter_list|,
 name|GimpViewable
 modifier|*
@@ -1870,12 +1870,12 @@ name|grid_view
 init|=
 name|GIMP_CONTAINER_GRID_VIEW
 argument_list|(
-name|view
+name|container_view
 argument_list|)
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|preview
+name|view
 init|=
 name|GTK_WIDGET
 argument_list|(
@@ -1884,7 +1884,7 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|preview
+name|view
 operator|==
 operator|(
 name|GtkWidget
@@ -1909,7 +1909,7 @@ operator|->
 name|wrap_box
 argument_list|)
 argument_list|,
-name|preview
+name|view
 argument_list|)
 expr_stmt|;
 block|}
@@ -1918,12 +1918,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_container_grid_view_reorder_item (GimpContainerView * view,GimpViewable * viewable,gint new_index,gpointer insert_data)
+DECL|function|gimp_container_grid_view_reorder_item (GimpContainerView * container_view,GimpViewable * viewable,gint new_index,gpointer insert_data)
 name|gimp_container_grid_view_reorder_item
 parameter_list|(
 name|GimpContainerView
 modifier|*
-name|view
+name|container_view
 parameter_list|,
 name|GimpViewable
 modifier|*
@@ -1942,12 +1942,12 @@ name|grid_view
 init|=
 name|GIMP_CONTAINER_GRID_VIEW
 argument_list|(
-name|view
+name|container_view
 argument_list|)
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|preview
+name|view
 init|=
 name|GTK_WIDGET
 argument_list|(
@@ -1963,7 +1963,7 @@ operator|->
 name|wrap_box
 argument_list|)
 argument_list|,
-name|preview
+name|view
 argument_list|,
 name|new_index
 argument_list|)
@@ -1974,12 +1974,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_container_grid_view_rename_item (GimpContainerView * view,GimpViewable * viewable,gpointer insert_data)
+DECL|function|gimp_container_grid_view_rename_item (GimpContainerView * container_view,GimpViewable * viewable,gpointer insert_data)
 name|gimp_container_grid_view_rename_item
 parameter_list|(
 name|GimpContainerView
 modifier|*
-name|view
+name|container_view
 parameter_list|,
 name|GimpViewable
 modifier|*
@@ -1995,12 +1995,12 @@ name|grid_view
 init|=
 name|GIMP_CONTAINER_GRID_VIEW
 argument_list|(
-name|view
+name|container_view
 argument_list|)
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|preview
+name|view
 init|=
 name|GTK_WIDGET
 argument_list|(
@@ -2009,7 +2009,7 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|preview
+name|view
 operator|==
 operator|(
 name|GtkWidget
@@ -2035,7 +2035,7 @@ name|gimp_editor_set_name
 argument_list|(
 name|GIMP_EDITOR
 argument_list|(
-name|view
+name|container_view
 argument_list|)
 argument_list|,
 name|name
@@ -2154,8 +2154,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_container_grid_view_set_preview_size (GimpContainerView * view)
-name|gimp_container_grid_view_set_preview_size
+DECL|function|gimp_container_grid_view_set_view_size (GimpContainerView * view)
+name|gimp_container_grid_view_set_view_size
 parameter_list|(
 name|GimpContainerView
 modifier|*
@@ -2176,11 +2176,11 @@ modifier|*
 name|child
 decl_stmt|;
 name|gint
-name|preview_size
+name|view_size
 decl_stmt|;
-name|preview_size
+name|view_size
 operator|=
-name|gimp_container_view_get_preview_size
+name|gimp_container_view_get_view_size
 argument_list|(
 name|view
 argument_list|,
@@ -2226,7 +2226,7 @@ name|view
 operator|->
 name|renderer
 argument_list|,
-name|preview_size
+name|view_size
 argument_list|,
 name|view
 operator|->
@@ -2419,12 +2419,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_container_grid_view_highlight_item (GimpContainerView * view,GimpViewable * viewable,gpointer insert_data)
+DECL|function|gimp_container_grid_view_highlight_item (GimpContainerView * container_view,GimpViewable * viewable,gpointer insert_data)
 name|gimp_container_grid_view_highlight_item
 parameter_list|(
 name|GimpContainerView
 modifier|*
-name|view
+name|container_view
 parameter_list|,
 name|GimpViewable
 modifier|*
@@ -2440,7 +2440,7 @@ name|grid_view
 init|=
 name|GIMP_CONTAINER_GRID_VIEW
 argument_list|(
-name|view
+name|container_view
 argument_list|)
 decl_stmt|;
 name|GimpContainerBox
@@ -2449,7 +2449,7 @@ name|box
 init|=
 name|GIMP_CONTAINER_BOX
 argument_list|(
-name|view
+name|container_view
 argument_list|)
 decl_stmt|;
 name|GimpContainer
@@ -2458,7 +2458,7 @@ name|container
 decl_stmt|;
 name|GimpView
 modifier|*
-name|preview
+name|view
 init|=
 name|NULL
 decl_stmt|;
@@ -2466,14 +2466,14 @@ name|container
 operator|=
 name|gimp_container_view_get_container
 argument_list|(
-name|view
+name|container_view
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
 name|insert_data
 condition|)
-name|preview
+name|view
 operator|=
 name|GIMP_VIEW
 argument_list|(
@@ -2490,7 +2490,7 @@ name|grid_view
 operator|->
 name|selected_item
 operator|!=
-name|preview
+name|view
 condition|)
 block|{
 name|gimp_view_renderer_set_border_type
@@ -2516,11 +2516,11 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|preview
+name|view
 condition|)
 block|{
 name|GtkRequisition
-name|preview_requisition
+name|view_requisition
 decl_stmt|;
 name|GtkAdjustment
 modifier|*
@@ -2555,16 +2555,16 @@ name|gtk_widget_size_request
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
-name|preview
+name|view
 argument_list|)
 argument_list|,
 operator|&
-name|preview_requisition
+name|view_requisition
 argument_list|)
 expr_stmt|;
 name|item_height
 operator|=
-name|preview_requisition
+name|view_requisition
 operator|.
 name|height
 expr_stmt|;
@@ -2649,7 +2649,7 @@ expr_stmt|;
 block|}
 name|gimp_view_renderer_set_border_type
 argument_list|(
-name|preview
+name|view
 operator|->
 name|renderer
 argument_list|,
@@ -2658,7 +2658,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_view_renderer_update
 argument_list|(
-name|preview
+name|view
 operator|->
 name|renderer
 argument_list|)
@@ -2667,7 +2667,7 @@ name|name
 operator|=
 name|gimp_viewable_get_description
 argument_list|(
-name|preview
+name|view
 operator|->
 name|renderer
 operator|->
@@ -2709,7 +2709,7 @@ name|grid_view
 operator|->
 name|selected_item
 operator|=
-name|preview
+name|view
 expr_stmt|;
 block|}
 end_function
@@ -2735,7 +2735,7 @@ parameter_list|)
 block|{
 name|GimpContainerView
 modifier|*
-name|view
+name|container_view
 init|=
 name|GIMP_CONTAINER_VIEW
 argument_list|(
@@ -2746,7 +2746,7 @@ if|if
 condition|(
 name|gimp_container_view_get_container
 argument_list|(
-name|view
+name|container_view
 argument_list|)
 condition|)
 block|{
@@ -2782,7 +2782,7 @@ name|children
 condition|)
 block|{
 name|GtkRequisition
-name|preview_requisition
+name|view_requisition
 decl_stmt|;
 name|gint
 name|columns
@@ -2800,7 +2800,7 @@ name|data
 argument_list|)
 argument_list|,
 operator|&
-name|preview_requisition
+name|view_requisition
 argument_list|)
 expr_stmt|;
 name|g_list_free
@@ -2818,7 +2818,7 @@ name|allocation
 operator|->
 name|width
 operator|/
-name|preview_requisition
+name|view_requisition
 operator|.
 name|width
 argument_list|)
@@ -2877,13 +2877,13 @@ name|wrap_box
 argument_list|,
 name|columns
 operator|*
-name|preview_requisition
+name|view_requisition
 operator|.
 name|width
 argument_list|,
 name|rows
 operator|*
-name|preview_requisition
+name|view_requisition
 operator|.
 name|height
 argument_list|)
@@ -2898,7 +2898,7 @@ name|allocation
 operator|->
 name|height
 operator|/
-name|preview_requisition
+name|view_requisition
 operator|.
 name|height
 operator|)
@@ -2913,7 +2913,7 @@ condition|)
 block|{
 name|GimpView
 modifier|*
-name|preview
+name|view
 init|=
 name|grid_view
 operator|->
@@ -2921,13 +2921,13 @@ name|selected_item
 decl_stmt|;
 name|gimp_container_grid_view_highlight_item
 argument_list|(
-name|view
+name|container_view
 argument_list|,
-name|preview
+name|view
 operator|->
 name|viewable
 argument_list|,
-name|preview
+name|view
 argument_list|)
 expr_stmt|;
 block|}
@@ -2938,7 +2938,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_container_grid_view_button_press (GtkWidget * widget,GdkEventButton * bevent,GimpContainerGridView * view)
+DECL|function|gimp_container_grid_view_button_press (GtkWidget * widget,GdkEventButton * bevent,GimpContainerGridView * grid_view)
 name|gimp_container_grid_view_button_press
 parameter_list|(
 name|GtkWidget
@@ -2951,7 +2951,7 @@ name|bevent
 parameter_list|,
 name|GimpContainerGridView
 modifier|*
-name|view
+name|grid_view
 parameter_list|)
 block|{
 switch|switch
@@ -2968,7 +2968,7 @@ name|gimp_editor_popup_menu
 argument_list|(
 name|GIMP_EDITOR
 argument_list|(
-name|view
+name|grid_view
 argument_list|)
 argument_list|,
 name|NULL

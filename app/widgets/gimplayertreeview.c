@@ -299,7 +299,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_layer_tree_view_set_preview_size
+name|gimp_layer_tree_view_set_view_size
 parameter_list|(
 name|GimpContainerView
 modifier|*
@@ -1625,9 +1625,9 @@ name|gimp_layer_tree_view_select_item
 expr_stmt|;
 name|iface
 operator|->
-name|set_preview_size
+name|set_view_size
 operator|=
-name|gimp_layer_tree_view_set_preview_size
+name|gimp_layer_tree_view_set_view_size
 expr_stmt|;
 block|}
 end_function
@@ -2649,8 +2649,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_layer_tree_view_set_preview_size (GimpContainerView * view)
-name|gimp_layer_tree_view_set_preview_size
+DECL|function|gimp_layer_tree_view_set_view_size (GimpContainerView * view)
+name|gimp_layer_tree_view_set_view_size
 parameter_list|(
 name|GimpContainerView
 modifier|*
@@ -2689,14 +2689,14 @@ name|gboolean
 name|iter_valid
 decl_stmt|;
 name|gint
-name|preview_size
+name|view_size
 decl_stmt|;
 name|gint
 name|border_width
 decl_stmt|;
-name|preview_size
+name|view_size
 operator|=
-name|gimp_container_view_get_preview_size
+name|gimp_container_view_get_view_size
 argument_list|(
 name|view
 argument_list|,
@@ -2766,7 +2766,7 @@ name|gimp_view_renderer_set_size
 argument_list|(
 name|renderer
 argument_list|,
-name|preview_size
+name|view_size
 argument_list|,
 name|border_width
 argument_list|)
@@ -2781,7 +2781,7 @@ block|}
 block|}
 name|parent_view_iface
 operator|->
-name|set_preview_size
+name|set_view_size
 argument_list|(
 name|view
 argument_list|)
@@ -4835,14 +4835,14 @@ modifier|*
 name|closure
 decl_stmt|;
 name|gint
-name|preview_size
+name|view_size
 decl_stmt|;
 name|gint
 name|border_width
 decl_stmt|;
-name|preview_size
+name|view_size
 operator|=
-name|gimp_container_view_get_preview_size
+name|gimp_container_view_get_view_size
 argument_list|(
 name|view
 argument_list|,
@@ -4863,7 +4863,7 @@ argument_list|(
 name|mask
 argument_list|)
 argument_list|,
-name|preview_size
+name|view_size
 argument_list|,
 name|border_width
 argument_list|,

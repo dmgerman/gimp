@@ -873,7 +873,7 @@ argument_list|)
 expr_stmt|;
 name|view
 operator|=
-name|gimp_prop_preview_new
+name|gimp_prop_view_new
 argument_list|(
 name|G_OBJECT
 argument_list|(

@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon277208250103
+DECL|enum|__anon27974d7d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -91,8 +91,8 @@ block|,
 DECL|enumerator|PROP_POPUP_VIEW_TYPE
 name|PROP_POPUP_VIEW_TYPE
 block|,
-DECL|enumerator|PROP_POPUP_PREVIEW_SIZE
-name|PROP_POPUP_PREVIEW_SIZE
+DECL|enumerator|PROP_POPUP_VIEW_SIZE
+name|PROP_POPUP_VIEW_SIZE
 block|}
 enum|;
 end_enum
@@ -314,11 +314,11 @@ name|g_object_class_install_property
 argument_list|(
 name|object_class
 argument_list|,
-name|PROP_POPUP_PREVIEW_SIZE
+name|PROP_POPUP_VIEW_SIZE
 argument_list|,
 name|g_param_spec_int
 argument_list|(
-literal|"popup-preview-size"
+literal|"popup-view-size"
 argument_list|,
 name|NULL
 argument_list|,
@@ -356,19 +356,19 @@ name|GIMP_VIEW_TYPE_LIST
 expr_stmt|;
 name|button
 operator|->
-name|popup_preview_size
+name|popup_view_size
 operator|=
 name|GIMP_VIEW_SIZE_SMALL
 expr_stmt|;
 name|button
 operator|->
-name|button_preview_size
+name|button_view_size
 operator|=
 name|GIMP_VIEW_SIZE_SMALL
 expr_stmt|;
 name|button
 operator|->
-name|preview_border_width
+name|view_border_width
 operator|=
 literal|1
 expr_stmt|;
@@ -523,9 +523,9 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PROP_POPUP_PREVIEW_SIZE
+name|PROP_POPUP_VIEW_SIZE
 case|:
-name|gimp_viewable_button_set_preview_size
+name|gimp_viewable_button_set_view_size
 argument_list|(
 name|button
 argument_list|,
@@ -601,7 +601,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PROP_POPUP_PREVIEW_SIZE
+name|PROP_POPUP_VIEW_SIZE
 case|:
 name|g_value_set_int
 argument_list|(
@@ -609,7 +609,7 @@ name|value
 argument_list|,
 name|button
 operator|->
-name|popup_preview_size
+name|popup_view_size
 argument_list|)
 expr_stmt|;
 break|break;
@@ -852,15 +852,15 @@ name|popup_view_type
 argument_list|,
 name|viewable_button
 operator|->
-name|button_preview_size
+name|button_view_size
 argument_list|,
 name|viewable_button
 operator|->
-name|popup_preview_size
+name|popup_view_size
 argument_list|,
 name|viewable_button
 operator|->
-name|preview_border_width
+name|view_border_width
 argument_list|,
 name|viewable_button
 operator|->
@@ -948,11 +948,11 @@ name|popup
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_viewable_button_set_preview_size
+name|gimp_viewable_button_set_view_size
 argument_list|(
 name|button
 argument_list|,
-name|gimp_container_popup_get_preview_size
+name|gimp_container_popup_get_view_size
 argument_list|(
 name|popup
 argument_list|)
@@ -968,7 +968,7 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_viewable_button_new (GimpContainer * container,GimpContext * context,GimpViewType view_type,gint button_preview_size,gint preview_size,gint preview_border_width,GimpDialogFactory * dialog_factory,const gchar * dialog_identifier,const gchar * dialog_stock_id,const gchar * dialog_tooltip)
+DECL|function|gimp_viewable_button_new (GimpContainer * container,GimpContext * context,GimpViewType view_type,gint button_view_size,gint view_size,gint view_border_width,GimpDialogFactory * dialog_factory,const gchar * dialog_identifier,const gchar * dialog_stock_id,const gchar * dialog_tooltip)
 name|gimp_viewable_button_new
 parameter_list|(
 name|GimpContainer
@@ -983,13 +983,13 @@ name|GimpViewType
 name|view_type
 parameter_list|,
 name|gint
-name|button_preview_size
+name|button_view_size
 parameter_list|,
 name|gint
-name|preview_size
+name|view_size
 parameter_list|,
 name|gint
-name|preview_border_width
+name|view_border_width
 parameter_list|,
 name|GimpDialogFactory
 modifier|*
@@ -1042,11 +1042,11 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|preview_size
+name|view_size
 operator|>
 literal|0
 operator|&&
-name|preview_size
+name|view_size
 operator|<=
 name|GIMP_VIEWABLE_MAX_BUTTON_SIZE
 argument_list|,
@@ -1055,11 +1055,11 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|preview_border_width
+name|view_border_width
 operator|>=
 literal|0
 operator|&&
-name|preview_border_width
+name|view_border_width
 operator|<=
 name|GIMP_VIEW_MAX_BORDER_WIDTH
 argument_list|,
@@ -1123,9 +1123,9 @@ literal|"popup-view-type"
 argument_list|,
 name|view_type
 argument_list|,
-literal|"popup-preview-size"
+literal|"popup-view-size"
 argument_list|,
-name|preview_size
+name|view_size
 argument_list|,
 name|NULL
 argument_list|)
@@ -1144,15 +1144,15 @@ name|context
 expr_stmt|;
 name|button
 operator|->
-name|button_preview_size
+name|button_view_size
 operator|=
-name|button_preview_size
+name|button_view_size
 expr_stmt|;
 name|button
 operator|->
-name|preview_border_width
+name|view_border_width
 operator|=
-name|preview_border_width
+name|view_border_width
 expr_stmt|;
 if|if
 condition|(
@@ -1204,9 +1204,9 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|->
-name|preview
+name|view
 operator|=
-name|gimp_prop_preview_new
+name|gimp_prop_view_new
 argument_list|(
 name|G_OBJECT
 argument_list|(
@@ -1217,7 +1217,7 @@ name|prop_name
 argument_list|,
 name|button
 operator|->
-name|button_preview_size
+name|button_view_size
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -1229,14 +1229,14 @@ argument_list|)
 argument_list|,
 name|button
 operator|->
-name|preview
+name|view
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|button
 operator|->
-name|preview
+name|view
 argument_list|)
 expr_stmt|;
 return|return
@@ -1328,8 +1328,8 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_viewable_button_get_preview_size (GimpViewableButton * button)
-name|gimp_viewable_button_get_preview_size
+DECL|function|gimp_viewable_button_get_view_size (GimpViewableButton * button)
+name|gimp_viewable_button_get_view_size
 parameter_list|(
 name|GimpViewableButton
 modifier|*
@@ -1349,22 +1349,22 @@ expr_stmt|;
 return|return
 name|button
 operator|->
-name|popup_preview_size
+name|popup_view_size
 return|;
 block|}
 end_function
 
 begin_function
 name|void
-DECL|function|gimp_viewable_button_set_preview_size (GimpViewableButton * button,gint preview_size)
-name|gimp_viewable_button_set_preview_size
+DECL|function|gimp_viewable_button_set_view_size (GimpViewableButton * button,gint view_size)
+name|gimp_viewable_button_set_view_size
 parameter_list|(
 name|GimpViewableButton
 modifier|*
 name|button
 parameter_list|,
 name|gint
-name|preview_size
+name|view_size
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -1377,18 +1377,18 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|preview_size
+name|view_size
 operator|!=
 name|button
 operator|->
-name|popup_preview_size
+name|popup_view_size
 condition|)
 block|{
 name|button
 operator|->
-name|popup_preview_size
+name|popup_view_size
 operator|=
-name|preview_size
+name|view_size
 expr_stmt|;
 name|g_object_notify
 argument_list|(
@@ -1397,7 +1397,7 @@ argument_list|(
 name|button
 argument_list|)
 argument_list|,
-literal|"popup-preview-size"
+literal|"popup-view-size"
 argument_list|)
 expr_stmt|;
 block|}

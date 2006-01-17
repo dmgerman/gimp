@@ -483,10 +483,10 @@ name|GType
 name|view_type
 parameter_list|,
 name|gint
-name|preview_size
+name|view_size
 parameter_list|,
 name|gint
-name|preview_border_width
+name|view_border_width
 parameter_list|,
 name|GimpImage
 modifier|*

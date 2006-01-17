@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aeb34c00103
+DECL|enum|__anon2977bb6b0103
 block|{
 DECL|enumerator|COLUMN_CHANNEL
 name|COLUMN_CHANNEL
@@ -1061,7 +1061,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_component_editor_set_preview_size
+name|gimp_component_editor_set_view_size
 argument_list|(
 name|editor
 argument_list|,
@@ -1079,8 +1079,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_component_editor_set_preview_size (GimpComponentEditor * editor,gint view_size)
-name|gimp_component_editor_set_preview_size
+DECL|function|gimp_component_editor_set_view_size (GimpComponentEditor * editor,gint view_size)
+name|gimp_component_editor_set_view_size
 parameter_list|(
 name|GimpComponentEditor
 modifier|*
@@ -1243,7 +1243,7 @@ expr_stmt|;
 block|}
 name|editor
 operator|->
-name|preview_size
+name|view_size
 operator|=
 name|view_size
 expr_stmt|;
@@ -1445,7 +1445,7 @@ argument_list|)
 argument_list|,
 name|editor
 operator|->
-name|preview_size
+name|view_size
 argument_list|,
 literal|1
 argument_list|,

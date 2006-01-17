@@ -146,7 +146,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_buffer_view_preview_notify
+name|gimp_buffer_view_view_notify
 parameter_list|(
 name|GimpContainerView
 modifier|*
@@ -433,7 +433,7 @@ argument_list|)
 expr_stmt|;
 name|buffer_view
 operator|->
-name|global_preview
+name|global_view
 operator|=
 name|gimp_view_new_full_by_types
 argument_list|(
@@ -463,7 +463,7 @@ argument_list|)
 argument_list|,
 name|buffer_view
 operator|->
-name|global_preview
+name|global_view
 argument_list|,
 name|FALSE
 argument_list|,
@@ -476,7 +476,7 @@ name|gtk_widget_show
 argument_list|(
 name|buffer_view
 operator|->
-name|global_preview
+name|global_view
 argument_list|)
 expr_stmt|;
 name|g_signal_connect_object
@@ -485,11 +485,11 @@ name|editor
 operator|->
 name|view
 argument_list|,
-literal|"notify::preview-size"
+literal|"notify::view-size"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_buffer_view_preview_notify
+name|gimp_buffer_view_view_notify
 argument_list|)
 argument_list|,
 name|buffer_view
@@ -503,11 +503,11 @@ name|editor
 operator|->
 name|view
 argument_list|,
-literal|"notify::preview-border-width"
+literal|"notify::view-border-width"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_buffer_view_preview_notify
+name|gimp_buffer_view_view_notify
 argument_list|)
 argument_list|,
 name|buffer_view
@@ -857,7 +857,7 @@ name|GIMP_VIEW
 argument_list|(
 name|buffer_view
 operator|->
-name|global_preview
+name|global_view
 argument_list|)
 argument_list|,
 operator|(
@@ -936,8 +936,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_buffer_view_preview_notify (GimpContainerView * container_view,GParamSpec * pspec,GimpBufferView * buffer_view)
-name|gimp_buffer_view_preview_notify
+DECL|function|gimp_buffer_view_view_notify (GimpContainerView * container_view,GParamSpec * pspec,GimpBufferView * buffer_view)
+name|gimp_buffer_view_view_notify
 parameter_list|(
 name|GimpContainerView
 modifier|*
@@ -960,7 +960,7 @@ name|GIMP_VIEW
 argument_list|(
 name|buffer_view
 operator|->
-name|global_preview
+name|global_view
 argument_list|)
 decl_stmt|;
 name|gint
@@ -971,7 +971,7 @@ name|view_border_width
 decl_stmt|;
 name|view_size
 operator|=
-name|gimp_container_view_get_preview_size
+name|gimp_container_view_get_view_size
 argument_list|(
 name|container_view
 argument_list|,

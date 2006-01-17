@@ -24,7 +24,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b2036b0103
+DECL|enum|__anon297448ac0103
 block|{
 DECL|enumerator|GIMP_CONTAINER_ENTRY_COLUMN_RENDERER
 name|GIMP_CONTAINER_ENTRY_COLUMN_RENDERER
@@ -160,10 +160,10 @@ modifier|*
 name|context
 parameter_list|,
 name|gint
-name|preview_size
+name|view_size
 parameter_list|,
 name|gint
-name|preview_border_width
+name|view_border_width
 parameter_list|)
 function_decl|;
 end_function_decl

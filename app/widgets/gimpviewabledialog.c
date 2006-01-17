@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6221750103
+DECL|enum|__anon27b7e8da0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -748,7 +748,7 @@ if|if
 condition|(
 name|dialog
 operator|->
-name|preview
+name|view
 condition|)
 name|gimp_viewable_dialog_set_viewable
 argument_list|(
@@ -983,7 +983,7 @@ if|if
 condition|(
 name|dialog
 operator|->
-name|preview
+name|view
 condition|)
 block|{
 name|GimpViewable
@@ -996,7 +996,7 @@ name|GIMP_VIEW
 argument_list|(
 name|dialog
 operator|->
-name|preview
+name|view
 argument_list|)
 operator|->
 name|viewable
@@ -1012,7 +1012,7 @@ name|gtk_widget_destroy
 argument_list|(
 name|dialog
 operator|->
-name|preview
+name|view
 argument_list|)
 expr_stmt|;
 if|if
@@ -1068,7 +1068,7 @@ argument_list|)
 expr_stmt|;
 name|dialog
 operator|->
-name|preview
+name|view
 operator|=
 name|gimp_view_new
 argument_list|(
@@ -1094,7 +1094,7 @@ argument_list|)
 argument_list|,
 name|dialog
 operator|->
-name|preview
+name|view
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1107,7 +1107,7 @@ name|gtk_widget_show
 argument_list|(
 name|dialog
 operator|->
-name|preview
+name|view
 argument_list|)
 expr_stmt|;
 name|g_object_add_weak_pointer
@@ -1116,7 +1116,7 @@ name|G_OBJECT
 argument_list|(
 name|dialog
 operator|->
-name|preview
+name|view
 argument_list|)
 argument_list|,
 operator|(
@@ -1126,7 +1126,7 @@ operator|)
 operator|&
 name|dialog
 operator|->
-name|preview
+name|view
 argument_list|)
 expr_stmt|;
 name|gimp_viewable_dialog_name_changed

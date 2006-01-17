@@ -132,10 +132,10 @@ value|250
 end_define
 
 begin_define
-DECL|macro|DEFAULT_MENU_PREVIEW_SIZE
+DECL|macro|DEFAULT_MENU_VIEW_SIZE
 define|#
 directive|define
-name|DEFAULT_MENU_PREVIEW_SIZE
+name|DEFAULT_MENU_VIEW_SIZE
 value|GTK_ICON_SIZE_SMALL_TOOLBAR
 end_define
 
@@ -523,7 +523,7 @@ name|NULL
 argument_list|,
 name|GTK_TYPE_ICON_SIZE
 argument_list|,
-name|DEFAULT_MENU_PREVIEW_SIZE
+name|DEFAULT_MENU_VIEW_SIZE
 argument_list|,
 name|G_PARAM_READABLE
 argument_list|)
@@ -963,19 +963,19 @@ name|gint
 name|minimal_width
 decl_stmt|;
 name|GtkIconSize
-name|menu_preview_size
+name|menu_view_size
 decl_stmt|;
 name|GtkSettings
 modifier|*
 name|settings
 decl_stmt|;
 name|gint
-name|menu_preview_width
+name|menu_view_width
 init|=
 literal|18
 decl_stmt|;
 name|gint
-name|menu_preview_height
+name|menu_view_height
 init|=
 literal|18
 decl_stmt|;
@@ -1028,7 +1028,7 @@ argument_list|,
 literal|"menu-preview-size"
 argument_list|,
 operator|&
-name|menu_preview_size
+name|menu_view_size
 argument_list|,
 name|NULL
 argument_list|)
@@ -1046,13 +1046,13 @@ name|gtk_icon_size_lookup_for_settings
 argument_list|(
 name|settings
 argument_list|,
-name|menu_preview_size
+name|menu_view_size
 argument_list|,
 operator|&
-name|menu_preview_width
+name|menu_view_width
 argument_list|,
 operator|&
-name|menu_preview_height
+name|menu_view_height
 argument_list|)
 expr_stmt|;
 name|gtk_widget_style_get
@@ -1094,7 +1094,7 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-name|gimp_container_view_set_preview_size
+name|gimp_container_view_set_view_size
 argument_list|(
 name|GIMP_CONTAINER_VIEW
 argument_list|(
@@ -1103,7 +1103,7 @@ operator|->
 name|image_combo
 argument_list|)
 argument_list|,
-name|menu_preview_height
+name|menu_view_height
 argument_list|,
 literal|1
 argument_list|)
@@ -1117,7 +1117,7 @@ argument_list|,
 operator|-
 literal|1
 argument_list|,
-name|menu_preview_height
+name|menu_view_height
 operator|+
 literal|2
 operator|*
@@ -1621,10 +1621,10 @@ modifier|*
 name|settings
 decl_stmt|;
 name|gint
-name|menu_preview_width
+name|menu_view_width
 decl_stmt|;
 name|gint
-name|menu_preview_height
+name|menu_view_height
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -1845,13 +1845,13 @@ name|gtk_icon_size_lookup_for_settings
 argument_list|(
 name|settings
 argument_list|,
-name|DEFAULT_MENU_PREVIEW_SIZE
+name|DEFAULT_MENU_VIEW_SIZE
 argument_list|,
 operator|&
-name|menu_preview_width
+name|menu_view_width
 argument_list|,
 operator|&
-name|menu_preview_height
+name|menu_view_height
 argument_list|)
 expr_stmt|;
 name|g_object_set

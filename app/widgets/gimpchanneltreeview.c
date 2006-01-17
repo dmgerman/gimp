@@ -247,7 +247,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_channel_tree_view_set_preview_size
+name|gimp_channel_tree_view_set_view_size
 parameter_list|(
 name|GimpContainerView
 modifier|*
@@ -569,9 +569,9 @@ argument_list|)
 expr_stmt|;
 name|view_iface
 operator|->
-name|set_preview_size
+name|set_view_size
 operator|=
-name|gimp_channel_tree_view_set_preview_size
+name|gimp_channel_tree_view_set_view_size
 expr_stmt|;
 block|}
 end_function
@@ -1204,11 +1204,11 @@ name|item_view
 argument_list|)
 decl_stmt|;
 name|gint
-name|preview_size
+name|view_size
 decl_stmt|;
-name|preview_size
+name|view_size
 operator|=
-name|gimp_container_view_get_preview_size
+name|gimp_container_view_get_view_size
 argument_list|(
 name|view
 argument_list|,
@@ -1221,7 +1221,7 @@ name|component_editor
 operator|=
 name|gimp_component_editor_new
 argument_list|(
-name|preview_size
+name|view_size
 argument_list|,
 name|GIMP_EDITOR
 argument_list|(
@@ -1431,8 +1431,8 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_channel_tree_view_set_preview_size (GimpContainerView * view)
-name|gimp_channel_tree_view_set_preview_size
+DECL|function|gimp_channel_tree_view_set_view_size (GimpContainerView * view)
+name|gimp_channel_tree_view_set_view_size
 parameter_list|(
 name|GimpContainerView
 modifier|*
@@ -1449,18 +1449,18 @@ name|view
 argument_list|)
 decl_stmt|;
 name|gint
-name|preview_size
+name|view_size
 decl_stmt|;
 name|parent_view_iface
 operator|->
-name|set_preview_size
+name|set_view_size
 argument_list|(
 name|view
 argument_list|)
 expr_stmt|;
-name|preview_size
+name|view_size
 operator|=
-name|gimp_container_view_get_preview_size
+name|gimp_container_view_get_view_size
 argument_list|(
 name|view
 argument_list|,
@@ -1473,7 +1473,7 @@ name|channel_view
 operator|->
 name|component_editor
 condition|)
-name|gimp_component_editor_set_preview_size
+name|gimp_component_editor_set_view_size
 argument_list|(
 name|GIMP_COMPONENT_EDITOR
 argument_list|(
@@ -1482,7 +1482,7 @@ operator|->
 name|component_editor
 argument_list|)
 argument_list|,
-name|preview_size
+name|view_size
 argument_list|)
 expr_stmt|;
 block|}

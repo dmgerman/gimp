@@ -113,9 +113,9 @@ name|GtkWidget
 modifier|*
 name|view
 decl_stmt|;
-DECL|member|preview_size
+DECL|member|view_size
 name|GimpViewSize
-name|preview_size
+name|view_size
 decl_stmt|;
 DECL|member|base_item
 name|GimpUndo

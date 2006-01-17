@@ -765,7 +765,7 @@ argument_list|(
 name|button
 argument_list|)
 operator|->
-name|button_preview_size
+name|button_view_size
 operator|=
 name|GIMP_VIEW_SIZE_SMALL
 expr_stmt|;
@@ -813,7 +813,7 @@ name|toggle
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|preview
+name|view
 decl_stmt|;
 name|gchar
 modifier|*
@@ -857,7 +857,7 @@ argument_list|(
 name|toggle
 argument_list|)
 expr_stmt|;
-name|preview
+name|view
 operator|=
 name|GTK_BIN
 argument_list|(
@@ -890,7 +890,7 @@ argument_list|)
 argument_list|,
 name|G_OBJECT
 argument_list|(
-name|preview
+name|view
 argument_list|)
 argument_list|,
 literal|0
@@ -912,7 +912,7 @@ name|NULL
 argument_list|,
 name|GIMP_VIEW
 argument_list|(
-name|preview
+name|view
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1810,7 +1810,7 @@ argument_list|)
 argument_list|,
 name|view_size_prop
 argument_list|,
-literal|"popup-preview-size"
+literal|"popup-view-size"
 argument_list|)
 expr_stmt|;
 return|return

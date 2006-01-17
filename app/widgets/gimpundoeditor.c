@@ -101,13 +101,13 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2947adf20103
+DECL|enum|__anon291ec6510103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
 block|,
-DECL|enumerator|PROP_PREVIEW_SIZE
-name|PROP_PREVIEW_SIZE
+DECL|enumerator|PROP_VIEW_SIZE
+name|PROP_VIEW_SIZE
 block|}
 enum|;
 end_enum
@@ -312,11 +312,11 @@ name|g_object_class_install_property
 argument_list|(
 name|object_class
 argument_list|,
-name|PROP_PREVIEW_SIZE
+name|PROP_VIEW_SIZE
 argument_list|,
 name|g_param_spec_enum
 argument_list|(
-literal|"preview-size"
+literal|"view-size"
 argument_list|,
 name|NULL
 argument_list|,
@@ -409,7 +409,7 @@ name|NULL
 argument_list|,
 name|undo_editor
 operator|->
-name|preview_size
+name|view_size
 argument_list|,
 literal|1
 argument_list|)
@@ -547,11 +547,11 @@ name|property_id
 condition|)
 block|{
 case|case
-name|PROP_PREVIEW_SIZE
+name|PROP_VIEW_SIZE
 case|:
 name|undo_editor
 operator|->
-name|preview_size
+name|view_size
 operator|=
 name|g_value_get_enum
 argument_list|(
@@ -731,7 +731,7 @@ literal|"ui-path"
 argument_list|,
 literal|"/undo-editor-popup"
 argument_list|,
-literal|"preview-size"
+literal|"view-size"
 argument_list|,
 name|config
 operator|->

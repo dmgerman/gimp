@@ -112,10 +112,10 @@ name|GtkWidget
 modifier|*
 name|icon
 decl_stmt|;
-DECL|member|preview
+DECL|member|view
 name|GtkWidget
 modifier|*
-name|preview
+name|view
 decl_stmt|;
 DECL|member|desc_label
 name|GtkWidget
