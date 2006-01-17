@@ -134,7 +134,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc2606d0108
+DECL|struct|__anon2ac4cdbb0108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -514,11 +514,11 @@ name|gimp
 operator|->
 name|templates
 argument_list|,
-literal|"preview-size"
+literal|"view-size"
 argument_list|,
 literal|16
 argument_list|,
-literal|"preview-border-width"
+literal|"view-border-width"
 argument_list|,
 literal|0
 argument_list|,
