@@ -51,7 +51,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b61180a0103
+DECL|enum|__anon2c23de7c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -172,7 +172,7 @@ literal|150.0
 argument_list|,
 name|AIRBRUSH_DEFAULT_RATE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
@@ -191,7 +191,7 @@ literal|100.0
 argument_list|,
 name|AIRBRUSH_DEFAULT_PRESSURE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 block|}

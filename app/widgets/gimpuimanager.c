@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2addb68b0103
+DECL|enum|__anon27ecc60c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -105,7 +105,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2addb68b0203
+DECL|enum|__anon27ecc60c0203
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -606,7 +606,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT_ONLY
 argument_list|)
@@ -628,7 +628,7 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_GIMP
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT_ONLY
 argument_list|)
@@ -1954,7 +1954,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2addb68b0308
+DECL|struct|__anon27ecc60c0308
 block|{
 DECL|member|x
 name|guint

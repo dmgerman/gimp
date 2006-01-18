@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fde6fb0103
+DECL|enum|__anon2bd1f9fc0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -173,7 +173,7 @@ name|NULL
 argument_list|,
 name|FALSE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 block|}

@@ -282,7 +282,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2cfdac0103
+DECL|enum|__anon2c70d6200103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -361,7 +361,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2cfdac0203
+DECL|enum|__anon2c70d6200203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2021,7 +2021,7 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_GIMP
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT_ONLY
 argument_list|)
@@ -2047,7 +2047,7 @@ name|G_MAXINT
 argument_list|,
 literal|0
 argument_list|,
-name|G_PARAM_READABLE
+name|GIMP_PARAM_READABLE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2071,7 +2071,7 @@ name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|1
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT
 argument_list|)
@@ -2097,7 +2097,7 @@ name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|1
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT
 argument_list|)
@@ -2121,7 +2121,7 @@ name|GIMP_TYPE_IMAGE_BASE_TYPE
 argument_list|,
 name|GIMP_RGB
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT
 argument_list|)

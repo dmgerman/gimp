@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4bca440103
+DECL|enum|__anon2950bc9c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -99,7 +99,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4bca440203
+DECL|enum|__anon2950bc9c0203
 block|{
 DECL|enumerator|DASH_INFO_CHANGED
 name|DASH_INFO_CHANGED
@@ -276,7 +276,7 @@ name|GIMP_TYPE_STROKE_STYLE
 argument_list|,
 name|GIMP_STROKE_STYLE_SOLID
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
@@ -295,7 +295,7 @@ literal|2000.0
 argument_list|,
 literal|6.0
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_UNIT
@@ -314,7 +314,7 @@ name|FALSE
 argument_list|,
 name|GIMP_UNIT_PIXEL
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_ENUM
@@ -331,7 +331,7 @@ name|GIMP_TYPE_CAP_STYLE
 argument_list|,
 name|GIMP_CAP_BUTT
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_ENUM
@@ -348,7 +348,7 @@ name|GIMP_TYPE_JOIN_STYLE
 argument_list|,
 name|GIMP_JOIN_MITER
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
@@ -373,7 +373,7 @@ literal|100.0
 argument_list|,
 literal|10.0
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -388,7 +388,7 @@ name|NULL
 argument_list|,
 name|TRUE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
@@ -407,7 +407,7 @@ literal|2000.0
 argument_list|,
 literal|0.0
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|array_spec
@@ -426,7 +426,7 @@ literal|2000.0
 argument_list|,
 literal|1.0
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 argument_list|)
 expr_stmt|;
 name|g_object_class_install_property
@@ -445,6 +445,8 @@ name|NULL
 argument_list|,
 name|array_spec
 argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+operator||
 name|GIMP_CONFIG_PARAM_FLAGS
 argument_list|)
 argument_list|)

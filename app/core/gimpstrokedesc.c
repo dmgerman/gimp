@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4003cd0103
+DECL|enum|__anon2b55341f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -271,7 +271,7 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_GIMP
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT_ONLY
 argument_list|)
@@ -291,7 +291,7 @@ name|GIMP_TYPE_STROKE_METHOD
 argument_list|,
 name|GIMP_STROKE_METHOD_LIBART
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_OBJECT
@@ -306,6 +306,8 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_STROKE_OPTIONS
 argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+operator||
 name|GIMP_CONFIG_PARAM_AGGREGATE
 argument_list|)
 expr_stmt|;
@@ -321,7 +323,7 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_PAINT_INFO
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_OBJECT
@@ -336,7 +338,7 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_PAINT_OPTIONS
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 block|}

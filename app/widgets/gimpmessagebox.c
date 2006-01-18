@@ -55,7 +55,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf739e80103
+DECL|enum|__anon2c49f64e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -352,7 +352,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT_ONLY
 argument_list|)

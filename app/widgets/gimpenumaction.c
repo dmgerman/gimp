@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b73906a0103
+DECL|enum|__anon2936972b0103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -48,7 +48,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b73906a0203
+DECL|enum|__anon2936972b0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -223,7 +223,7 @@ name|G_MAXINT
 argument_list|,
 literal|0
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -243,7 +243,7 @@ name|NULL
 argument_list|,
 name|FALSE
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;

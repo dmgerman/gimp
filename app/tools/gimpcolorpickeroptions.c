@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon298545d90103
+DECL|enum|__anon275f7ed20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -178,7 +178,7 @@ name|NULL
 argument_list|,
 name|FALSE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_ENUM
@@ -195,7 +195,7 @@ name|GIMP_TYPE_COLOR_PICK_MODE
 argument_list|,
 name|GIMP_COLOR_PICK_MODE_FOREGROUND
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -210,7 +210,7 @@ name|NULL
 argument_list|,
 name|FALSE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -225,7 +225,7 @@ name|NULL
 argument_list|,
 name|FALSE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 block|}

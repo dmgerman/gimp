@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon288e37a00103
+DECL|enum|__anon2ad4a41b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -81,7 +81,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon288e37a00203
+DECL|enum|__anon2ad4a41b0203
 block|{
 DECL|enumerator|COLOR_CLICKED
 name|COLOR_CLICKED
@@ -95,7 +95,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon288e37a00303
+DECL|enum|__anon2ad4a41b0303
 block|{
 DECL|enumerator|INVALID_AREA
 name|INVALID_AREA
@@ -461,7 +461,7 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_CONTEXT
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -483,7 +483,7 @@ name|GIMP_TYPE_ACTIVE_COLOR
 argument_list|,
 name|GIMP_ACTIVE_COLOR_FOREGROUND
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;

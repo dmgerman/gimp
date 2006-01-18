@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f8d1eb0103
+DECL|enum|__anon2aaa15cb0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -178,7 +178,7 @@ name|NULL
 argument_list|,
 name|TRUE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|g_object_class_install_property
@@ -197,7 +197,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;

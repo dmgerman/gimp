@@ -147,7 +147,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2efb120103
+DECL|enum|__anon28f78a260103
 block|{
 DECL|enumerator|DOCKABLE_ADDED
 name|DOCKABLE_ADDED
@@ -600,7 +600,7 @@ name|G_MAXINT
 argument_list|,
 name|DEFAULT_TAB_BORDER
 argument_list|,
-name|G_PARAM_READABLE
+name|GIMP_PARAM_READABLE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -620,7 +620,7 @@ name|GTK_TYPE_ICON_SIZE
 argument_list|,
 name|DEFAULT_TAB_ICON_SIZE
 argument_list|,
-name|G_PARAM_READABLE
+name|GIMP_PARAM_READABLE
 argument_list|)
 argument_list|)
 expr_stmt|;

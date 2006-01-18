@@ -263,7 +263,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2978fa530103
+DECL|enum|__anon27c0a2940103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -276,7 +276,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2978fa530203
+DECL|enum|__anon27c0a2940203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -737,7 +737,7 @@ name|FALSE
 argument_list|,
 name|GIMP_UNIT_PIXEL
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;

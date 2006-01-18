@@ -79,7 +79,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b11e0410103
+DECL|enum|__anon2bc3fd0a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -359,7 +359,7 @@ name|GIMP_TYPE_CHECK_SIZE
 argument_list|,
 name|GIMP_CHECK_SIZE_MEDIUM_CHECKS
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_ENUM
@@ -376,7 +376,7 @@ name|GIMP_TYPE_CHECK_TYPE
 argument_list|,
 name|GIMP_CHECK_TYPE_GRAY_CHECKS
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_INT
@@ -395,7 +395,7 @@ literal|255
 argument_list|,
 literal|8
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_INT
@@ -414,7 +414,7 @@ name|G_MAXINT
 argument_list|,
 literal|300
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -429,7 +429,7 @@ name|RESIZE_WINDOWS_ON_ZOOM_BLURB
 argument_list|,
 name|FALSE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -444,7 +444,7 @@ name|RESIZE_WINDOWS_ON_RESIZE_BLURB
 argument_list|,
 name|FALSE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -459,7 +459,7 @@ name|DEFAULT_DOT_FOR_DOT_BLURB
 argument_list|,
 name|TRUE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -468,13 +468,13 @@ name|object_class
 argument_list|,
 name|PROP_INITIAL_ZOOM_TO_FIT
 argument_list|,
-literal|"initial_zoom_to_fit"
+literal|"initial-zoom-to-fit"
 argument_list|,
 name|INITIAL_ZOOM_TO_FIT_BLURB
 argument_list|,
 name|TRUE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -489,7 +489,7 @@ name|PERFECT_MOUSE_BLURB
 argument_list|,
 name|TRUE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_ENUM
@@ -506,7 +506,7 @@ name|GIMP_TYPE_CURSOR_MODE
 argument_list|,
 name|GIMP_CURSOR_MODE_TOOL_ICON
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -521,7 +521,7 @@ name|CURSOR_UPDATING_BLURB
 argument_list|,
 name|TRUE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -536,7 +536,7 @@ name|SHOW_BRUSH_OUTLINE_BLURB
 argument_list|,
 name|TRUE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -551,7 +551,7 @@ name|SHOW_PAINT_TOOL_CURSOR_BLURB
 argument_list|,
 name|TRUE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_STRING
@@ -566,7 +566,7 @@ name|IMAGE_TITLE_FORMAT_BLURB
 argument_list|,
 name|GIMP_CONFIG_DEFAULT_IMAGE_TITLE_FORMAT
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_STRING
@@ -581,7 +581,7 @@ name|IMAGE_STATUS_FORMAT_BLURB
 argument_list|,
 name|GIMP_CONFIG_DEFAULT_IMAGE_STATUS_FORMAT
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -596,7 +596,7 @@ name|CONFIRM_ON_CLOSE_BLURB
 argument_list|,
 name|TRUE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_RESOLUTION
@@ -611,7 +611,7 @@ name|MONITOR_XRESOLUTION_BLURB
 argument_list|,
 literal|72.0
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_RESOLUTION
@@ -626,7 +626,7 @@ name|MONITOR_YRESOLUTION_BLURB
 argument_list|,
 literal|72.0
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -641,7 +641,7 @@ name|MONITOR_RES_FROM_GDK_BLURB
 argument_list|,
 name|TRUE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_ENUM
@@ -658,7 +658,7 @@ name|GIMP_TYPE_VIEW_SIZE
 argument_list|,
 name|GIMP_VIEW_SIZE_MEDIUM
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_OBJECT
@@ -673,6 +673,8 @@ name|DEFAULT_VIEW_BLURB
 argument_list|,
 name|GIMP_TYPE_DISPLAY_OPTIONS
 argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+operator||
 name|GIMP_CONFIG_PARAM_AGGREGATE
 argument_list|)
 expr_stmt|;
@@ -688,6 +690,8 @@ name|DEFAULT_FULLSCREEN_VIEW_BLURB
 argument_list|,
 name|GIMP_TYPE_DISPLAY_OPTIONS
 argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+operator||
 name|GIMP_CONFIG_PARAM_AGGREGATE
 argument_list|)
 expr_stmt|;
@@ -703,7 +707,7 @@ name|ACTIVATE_ON_FOCUS_BLURB
 argument_list|,
 name|DEFAULT_ACTIVATE_ON_FOCUS
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 block|}

@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc18a0e0103
+DECL|enum|__anon29ec0e880103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -278,7 +278,7 @@ name|GIMP_TYPE_BUCKET_FILL_MODE
 argument_list|,
 name|GIMP_FG_BUCKET_FILL
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -293,7 +293,7 @@ name|NULL
 argument_list|,
 name|FALSE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -312,7 +312,7 @@ argument_list|)
 argument_list|,
 name|TRUE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -331,7 +331,7 @@ argument_list|)
 argument_list|,
 name|FALSE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
@@ -353,7 +353,7 @@ literal|255.0
 argument_list|,
 literal|15.0
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 block|}

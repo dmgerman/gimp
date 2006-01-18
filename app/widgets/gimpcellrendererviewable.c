@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2de7100103
+DECL|enum|__anon275f7d380103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -66,7 +66,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2de7100203
+DECL|enum|__anon275f7d380203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -403,7 +403,7 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_VIEW_RENDERER
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;

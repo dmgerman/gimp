@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c251e470103
+DECL|enum|__anon2881339f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -181,7 +181,7 @@ name|GIMP_TYPE_HISTOGRAM_SCALE
 argument_list|,
 name|GIMP_HISTOGRAM_SCALE_LINEAR
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 block|}

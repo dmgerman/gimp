@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae4f2ef0103
+DECL|enum|__anon27bb16910103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -190,7 +190,7 @@ name|GIMP_TYPE_VECTOR_MODE
 argument_list|,
 name|GIMP_VECTOR_MODE_DESIGN
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -208,7 +208,7 @@ argument_list|)
 argument_list|,
 name|FALSE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 block|}

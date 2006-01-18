@@ -569,7 +569,7 @@ name|NULL
 argument_list|,
 name|GTK_TYPE_WIDGET
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -587,7 +587,7 @@ name|NULL
 argument_list|,
 name|GTK_TYPE_WIDGET
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -610,7 +610,7 @@ name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|0
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -633,7 +633,7 @@ name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|0
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -656,7 +656,7 @@ name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|0
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -679,7 +679,7 @@ name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|0
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -701,7 +701,7 @@ name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|0
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -723,7 +723,7 @@ name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|0
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -746,7 +746,7 @@ name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|0
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -769,7 +769,7 @@ name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|0
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -792,7 +792,7 @@ name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|0
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -815,7 +815,7 @@ name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|0
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -837,7 +837,7 @@ name|RECT_EXECUTING
 argument_list|,
 literal|0
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -860,7 +860,7 @@ name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|0
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -883,7 +883,7 @@ name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|0
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -906,7 +906,7 @@ name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|0
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -929,7 +929,7 @@ name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|0
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -951,7 +951,7 @@ name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|0
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -973,7 +973,7 @@ name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|0
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -996,7 +996,7 @@ name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|0.0
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1019,7 +1019,7 @@ name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|0.0
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1041,7 +1041,7 @@ name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|0.0
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1063,7 +1063,7 @@ name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|0.0
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;

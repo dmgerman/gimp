@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6111590103
+DECL|enum|__anon295a9aa00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -198,7 +198,7 @@ name|GTK_TYPE_ORIENTATION
 argument_list|,
 name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
-name|G_PARAM_WRITABLE
+name|GIMP_PARAM_WRITABLE
 operator||
 name|G_PARAM_CONSTRUCT_ONLY
 argument_list|)
@@ -221,7 +221,7 @@ argument_list|,
 operator|&
 name|white
 argument_list|,
-name|G_PARAM_WRITABLE
+name|GIMP_PARAM_WRITABLE
 operator||
 name|G_PARAM_CONSTRUCT
 argument_list|)
@@ -245,7 +245,7 @@ name|GIMP_TYPE_HISTOGRAM_CHANNEL
 argument_list|,
 name|GIMP_HISTOGRAM_VALUE
 argument_list|,
-name|G_PARAM_WRITABLE
+name|GIMP_PARAM_WRITABLE
 argument_list|)
 argument_list|)
 expr_stmt|;

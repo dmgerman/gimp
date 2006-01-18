@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a067cea0103
+DECL|enum|__anon2b457bc00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -236,7 +236,7 @@ literal|10000
 argument_list|,
 literal|84
 argument_list|,
-name|G_PARAM_WRITABLE
+name|GIMP_PARAM_WRITABLE
 operator||
 name|G_PARAM_CONSTRUCT_ONLY
 argument_list|)

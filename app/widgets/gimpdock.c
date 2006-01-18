@@ -115,7 +115,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon273c86af0103
+DECL|enum|__anon2ae4bc4d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -131,7 +131,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon273c86af0203
+DECL|enum|__anon2ae4bc4d0203
 block|{
 DECL|enumerator|BOOK_ADDED
 name|BOOK_ADDED
@@ -524,7 +524,7 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_CONTEXT
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT_ONLY
 argument_list|)
@@ -546,7 +546,7 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_DIALOG_FACTORY
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT_ONLY
 argument_list|)
@@ -571,7 +571,7 @@ name|G_MAXINT
 argument_list|,
 name|DEFAULT_DOCK_HEIGHT
 argument_list|,
-name|G_PARAM_READABLE
+name|GIMP_PARAM_READABLE
 argument_list|)
 argument_list|)
 expr_stmt|;

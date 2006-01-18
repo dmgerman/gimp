@@ -129,7 +129,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon291a1f1a0103
+DECL|enum|__anon27dace790103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -344,7 +344,7 @@ name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 name|DEFAULT_IMAGE_WIDTH
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_INT
@@ -363,7 +363,7 @@ name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 name|DEFAULT_IMAGE_HEIGHT
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_UNIT
@@ -386,7 +386,7 @@ name|FALSE
 argument_list|,
 name|GIMP_UNIT_PIXEL
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_RESOLUTION
@@ -404,7 +404,7 @@ argument_list|)
 argument_list|,
 literal|72.0
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_RESOLUTION
@@ -422,7 +422,7 @@ argument_list|)
 argument_list|,
 literal|72.0
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_UNIT
@@ -441,7 +441,7 @@ name|FALSE
 argument_list|,
 name|GIMP_UNIT_INCH
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_ENUM
@@ -458,7 +458,7 @@ name|GIMP_TYPE_IMAGE_BASE_TYPE
 argument_list|,
 name|GIMP_RGB
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_ENUM
@@ -475,7 +475,7 @@ name|GIMP_TYPE_FILL_TYPE
 argument_list|,
 name|GIMP_BACKGROUND_FILL
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_STRING
@@ -490,7 +490,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_STRING
@@ -505,7 +505,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 block|}

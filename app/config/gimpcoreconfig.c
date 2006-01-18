@@ -119,7 +119,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon292e75c90103
+DECL|enum|__anon278676450103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -436,7 +436,7 @@ name|GIMP_TYPE_INTERPOLATION_TYPE
 argument_list|,
 name|GIMP_INTERPOLATION_LINEAR
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|path
@@ -460,6 +460,8 @@ name|GIMP_CONFIG_PATH_DIR_LIST
 argument_list|,
 name|path
 argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+operator||
 name|GIMP_CONFIG_PARAM_RESTART
 argument_list|)
 expr_stmt|;
@@ -489,6 +491,8 @@ name|GIMP_CONFIG_PATH_DIR_LIST
 argument_list|,
 name|path
 argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+operator||
 name|GIMP_CONFIG_PARAM_RESTART
 argument_list|)
 expr_stmt|;
@@ -518,6 +522,8 @@ name|GIMP_CONFIG_PATH_DIR_LIST
 argument_list|,
 name|path
 argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+operator||
 name|GIMP_CONFIG_PARAM_RESTART
 argument_list|)
 expr_stmt|;
@@ -547,6 +553,8 @@ name|GIMP_CONFIG_PATH_DIR_LIST
 argument_list|,
 name|path
 argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+operator||
 name|GIMP_CONFIG_PARAM_RESTART
 argument_list|)
 expr_stmt|;
@@ -576,6 +584,8 @@ name|GIMP_CONFIG_PATH_DIR_LIST
 argument_list|,
 name|path
 argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+operator||
 name|GIMP_CONFIG_PARAM_RESTART
 argument_list|)
 expr_stmt|;
@@ -605,6 +615,8 @@ name|GIMP_CONFIG_PATH_DIR_LIST
 argument_list|,
 name|path
 argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+operator||
 name|GIMP_CONFIG_PARAM_RESTART
 argument_list|)
 expr_stmt|;
@@ -634,6 +646,8 @@ name|GIMP_CONFIG_PATH_DIR_LIST
 argument_list|,
 name|path
 argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+operator||
 name|GIMP_CONFIG_PARAM_RESTART
 argument_list|)
 expr_stmt|;
@@ -663,6 +677,8 @@ name|GIMP_CONFIG_PATH_DIR_LIST
 argument_list|,
 name|path
 argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+operator||
 name|GIMP_CONFIG_PARAM_RESTART
 argument_list|)
 expr_stmt|;
@@ -692,6 +708,8 @@ name|GIMP_CONFIG_PATH_DIR_LIST
 argument_list|,
 name|path
 argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+operator||
 name|GIMP_CONFIG_PARAM_RESTART
 argument_list|)
 expr_stmt|;
@@ -721,6 +739,8 @@ name|GIMP_CONFIG_PATH_DIR_LIST
 argument_list|,
 name|path
 argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+operator||
 name|GIMP_CONFIG_PARAM_RESTART
 argument_list|)
 expr_stmt|;
@@ -750,6 +770,8 @@ name|GIMP_CONFIG_PATH_DIR_LIST
 argument_list|,
 name|path
 argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+operator||
 name|GIMP_CONFIG_PARAM_RESTART
 argument_list|)
 expr_stmt|;
@@ -779,6 +801,8 @@ name|GIMP_CONFIG_PATH_DIR_LIST
 argument_list|,
 name|path
 argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+operator||
 name|GIMP_CONFIG_PARAM_RESTART
 argument_list|)
 expr_stmt|;
@@ -808,6 +832,8 @@ name|GIMP_CONFIG_PATH_DIR_LIST
 argument_list|,
 name|path
 argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+operator||
 name|GIMP_CONFIG_PARAM_CONFIRM
 argument_list|)
 expr_stmt|;
@@ -830,6 +856,8 @@ name|GIMP_CONFIG_PATH_DIR_LIST
 argument_list|,
 name|NULL
 argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+operator||
 name|GIMP_CONFIG_PARAM_IGNORE
 argument_list|)
 expr_stmt|;
@@ -845,7 +873,7 @@ name|DEFAULT_BRUSH_BLURB
 argument_list|,
 name|DEFAULT_BRUSH
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_STRING
@@ -860,7 +888,7 @@ name|DEFAULT_PATTERN_BLURB
 argument_list|,
 name|DEFAULT_PATTERN
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_STRING
@@ -875,7 +903,7 @@ name|DEFAULT_PALETTE_BLURB
 argument_list|,
 name|DEFAULT_PALETTE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_STRING
@@ -890,7 +918,7 @@ name|DEFAULT_GRADIENT_BLURB
 argument_list|,
 name|DEFAULT_GRADIENT
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_STRING
@@ -905,7 +933,7 @@ name|DEFAULT_FONT_BLURB
 argument_list|,
 name|DEFAULT_FONT
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -920,7 +948,7 @@ name|GLOBAL_BRUSH_BLURB
 argument_list|,
 name|TRUE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -935,7 +963,7 @@ name|GLOBAL_PATTERN_BLURB
 argument_list|,
 name|TRUE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -950,7 +978,7 @@ name|GLOBAL_PALETTE_BLURB
 argument_list|,
 name|TRUE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -965,7 +993,7 @@ name|GLOBAL_GRADIENT_BLURB
 argument_list|,
 name|TRUE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -980,7 +1008,7 @@ name|GLOBAL_FONT_BLURB
 argument_list|,
 name|TRUE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_OBJECT
@@ -995,6 +1023,8 @@ name|DEFAULT_IMAGE_BLURB
 argument_list|,
 name|GIMP_TYPE_TEMPLATE
 argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+operator||
 name|GIMP_CONFIG_PARAM_AGGREGATE
 argument_list|)
 expr_stmt|;
@@ -1010,6 +1040,8 @@ name|DEFAULT_GRID_BLURB
 argument_list|,
 name|GIMP_TYPE_GRID
 argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+operator||
 name|GIMP_CONFIG_PARAM_AGGREGATE
 argument_list|)
 expr_stmt|;
@@ -1029,6 +1061,8 @@ name|G_MAXINT
 argument_list|,
 literal|5
 argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+operator||
 name|GIMP_CONFIG_PARAM_CONFIRM
 argument_list|)
 expr_stmt|;
@@ -1051,6 +1085,8 @@ operator|<<
 literal|24
 argument_list|,
 comment|/* 16MB */
+name|GIMP_PARAM_STATIC_STRINGS
+operator||
 name|GIMP_CONFIG_PARAM_CONFIRM
 argument_list|)
 expr_stmt|;
@@ -1068,6 +1104,8 @@ name|GIMP_TYPE_VIEW_SIZE
 argument_list|,
 name|GIMP_VIEW_SIZE_LARGE
 argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+operator||
 name|GIMP_CONFIG_PARAM_RESTART
 argument_list|)
 expr_stmt|;
@@ -1087,6 +1125,8 @@ literal|"${gimp_dir}"
 name|G_DIR_SEPARATOR_S
 literal|"pluginrc"
 argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+operator||
 name|GIMP_CONFIG_PARAM_RESTART
 argument_list|)
 expr_stmt|;
@@ -1102,7 +1142,7 @@ name|LAYER_PREVIEWS_BLURB
 argument_list|,
 name|TRUE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_ENUM
@@ -1119,7 +1159,7 @@ name|GIMP_TYPE_VIEW_SIZE
 argument_list|,
 name|GIMP_VIEW_SIZE_MEDIUM
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_ENUM
@@ -1136,7 +1176,7 @@ name|GIMP_TYPE_THUMBNAIL_SIZE
 argument_list|,
 name|GIMP_THUMBNAIL_SIZE_NORMAL
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_MEMSIZE
@@ -1157,7 +1197,7 @@ literal|1
 operator|<<
 literal|22
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -1172,6 +1212,8 @@ name|INSTALL_COLORMAP_BLURB
 argument_list|,
 name|FALSE
 argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+operator||
 name|GIMP_CONFIG_PARAM_RESTART
 argument_list|)
 expr_stmt|;
@@ -1191,6 +1233,8 @@ literal|256
 argument_list|,
 literal|144
 argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+operator||
 name|GIMP_CONFIG_PARAM_RESTART
 argument_list|)
 expr_stmt|;
@@ -1206,6 +1250,8 @@ name|COLOR_MANAGEMENT_BLURB
 argument_list|,
 name|GIMP_TYPE_COLOR_CONFIG
 argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+operator||
 name|GIMP_CONFIG_PARAM_AGGREGATE
 argument_list|)
 expr_stmt|;
@@ -1221,7 +1267,7 @@ name|SAVE_DOCUMENT_HISTORY_BLURB
 argument_list|,
 name|TRUE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 block|}

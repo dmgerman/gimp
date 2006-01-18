@@ -124,7 +124,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2955bc630103
+DECL|enum|__anon2b656c7e0103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -149,7 +149,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2955bc630203
+DECL|enum|__anon2b656c7e0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -657,13 +657,13 @@ name|PROP_CHILDREN_TYPE
 argument_list|,
 name|g_param_spec_pointer
 argument_list|(
-literal|"children_type"
+literal|"children-type"
 argument_list|,
 name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT_ONLY
 argument_list|)
@@ -687,7 +687,7 @@ name|GIMP_TYPE_CONTAINER_POLICY
 argument_list|,
 name|GIMP_CONTAINER_POLICY_STRONG
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT_ONLY
 argument_list|)
@@ -1127,7 +1127,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2955bc630308
+DECL|struct|__anon2b656c7e0308
 block|{
 DECL|member|writer
 name|GimpConfigWriter

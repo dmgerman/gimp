@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5b229f0103
+DECL|enum|__anon2ac5cdc20103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -177,7 +177,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5b229f0203
+DECL|enum|__anon2ac5cdc20203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1212,7 +1212,7 @@ name|GIMP_OPACITY_OPAQUE
 argument_list|,
 name|GIMP_OPACITY_OPAQUE
 argument_list|,
-name|G_PARAM_READABLE
+name|GIMP_PARAM_READABLE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1234,7 +1234,7 @@ name|GIMP_TYPE_LAYER_MODE_EFFECTS
 argument_list|,
 name|GIMP_NORMAL_MODE
 argument_list|,
-name|G_PARAM_READABLE
+name|GIMP_PARAM_READABLE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1254,7 +1254,7 @@ name|NULL
 argument_list|,
 name|FALSE
 argument_list|,
-name|G_PARAM_READABLE
+name|GIMP_PARAM_READABLE
 argument_list|)
 argument_list|)
 expr_stmt|;

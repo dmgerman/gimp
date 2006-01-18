@@ -63,7 +63,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4347360103
+DECL|enum|__anon2c23a5cf0103
 block|{
 DECL|enumerator|RANGE_CHANGED
 name|RANGE_CHANGED
@@ -76,7 +76,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4347360203
+DECL|enum|__anon2c23a5cf0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -428,7 +428,7 @@ name|GIMP_TYPE_HISTOGRAM_CHANNEL
 argument_list|,
 name|GIMP_HISTOGRAM_VALUE
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT
 argument_list|)
@@ -452,7 +452,7 @@ name|GIMP_TYPE_HISTOGRAM_SCALE
 argument_list|,
 name|GIMP_HISTOGRAM_SCALE_LINEAR
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT
 argument_list|)
@@ -478,7 +478,7 @@ literal|32
 argument_list|,
 literal|1
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT
 argument_list|)
@@ -504,7 +504,7 @@ literal|64
 argument_list|,
 literal|5
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT
 argument_list|)

@@ -446,7 +446,7 @@ name|GTK_TYPE_SHADOW_TYPE
 argument_list|,
 name|GTK_SHADOW_IN
 argument_list|,
-name|G_PARAM_READABLE
+name|GIMP_PARAM_READABLE
 argument_list|)
 argument_list|)
 expr_stmt|;

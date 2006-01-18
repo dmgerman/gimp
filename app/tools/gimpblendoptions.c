@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f3a0090103
+DECL|enum|__anon2b5590100103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -234,7 +234,7 @@ literal|100.0
 argument_list|,
 literal|0.0
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_ENUM
@@ -251,7 +251,7 @@ name|GIMP_TYPE_GRADIENT_TYPE
 argument_list|,
 name|GIMP_GRADIENT_LINEAR
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_ENUM
@@ -268,7 +268,7 @@ name|GIMP_TYPE_REPEAT_MODE
 argument_list|,
 name|GIMP_REPEAT_NONE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -283,7 +283,7 @@ name|NULL
 argument_list|,
 name|FALSE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_INT
@@ -302,7 +302,7 @@ literal|6
 argument_list|,
 literal|3
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
@@ -321,7 +321,7 @@ literal|4.0
 argument_list|,
 literal|0.2
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -336,7 +336,7 @@ name|NULL
 argument_list|,
 name|TRUE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 block|}

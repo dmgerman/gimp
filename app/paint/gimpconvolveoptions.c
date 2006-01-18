@@ -51,7 +51,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ff133f0103
+DECL|enum|__anon2be1088e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -170,7 +170,7 @@ name|GIMP_TYPE_CONVOLVE_TYPE
 argument_list|,
 name|DEFAULT_CONVOLVE_TYPE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
@@ -189,7 +189,7 @@ literal|100.0
 argument_list|,
 name|DEFAULT_CONVOLVE_RATE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 block|}

@@ -22,6 +22,38 @@ directive|include
 file|"libgimpconfig/gimpconfigtypes.h"
 end_include
 
+begin_define
+DECL|macro|GIMP_PARAM_STATIC_STRINGS
+define|#
+directive|define
+name|GIMP_PARAM_STATIC_STRINGS
+value|(G_PARAM_STATIC_NAME | \                                    G_PARAM_STATIC_NICK | \                                    G_PARAM_STATIC_BLURB)
+end_define
+
+begin_define
+DECL|macro|GIMP_PARAM_READABLE
+define|#
+directive|define
+name|GIMP_PARAM_READABLE
+value|(G_PARAM_READABLE    | \                                    GIMP_PARAM_STATIC_STRINGS)
+end_define
+
+begin_define
+DECL|macro|GIMP_PARAM_WRITABLE
+define|#
+directive|define
+name|GIMP_PARAM_WRITABLE
+value|(G_PARAM_WRITABLE    | \                                    GIMP_PARAM_STATIC_STRINGS)
+end_define
+
+begin_define
+DECL|macro|GIMP_PARAM_READWRITE
+define|#
+directive|define
+name|GIMP_PARAM_READWRITE
+value|(G_PARAM_READWRITE   | \                                    GIMP_PARAM_STATIC_STRINGS)
+end_define
+
 begin_typedef
 DECL|typedef|GimpBaseConfig
 typedef|typedef

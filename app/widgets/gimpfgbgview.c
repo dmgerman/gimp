@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ffa5b40103
+DECL|enum|__anon2980b8640103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -249,7 +249,7 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_CONTEXT
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;

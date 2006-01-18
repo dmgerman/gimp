@@ -59,7 +59,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd263240103
+DECL|enum|__anon29c33eb40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -181,7 +181,7 @@ name|GIMP_TYPE_DODGE_BURN_TYPE
 argument_list|,
 name|DODGE_BURN_DEFAULT_TYPE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_ENUM
@@ -198,7 +198,7 @@ name|GIMP_TYPE_TRANSFER_MODE
 argument_list|,
 name|DODGE_BURN_DEFAULT_MODE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
@@ -217,7 +217,7 @@ literal|100.0
 argument_list|,
 name|DODGE_BURN_DEFAULT_EXPOSURE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 block|}

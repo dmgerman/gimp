@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b4b21a0103
+DECL|enum|__anon2a08ab3a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -203,7 +203,7 @@ argument_list|)
 argument_list|,
 name|TRUE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -218,7 +218,7 @@ name|NULL
 argument_list|,
 name|FALSE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_INT
@@ -240,7 +240,7 @@ literal|80
 argument_list|,
 literal|18
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_INT
@@ -264,7 +264,7 @@ literal|8
 argument_list|,
 name|SIOX_DEFAULT_SMOOTHNESS
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -301,7 +301,7 @@ literal|10.0
 argument_list|,
 name|SIOX_DEFAULT_SENSITIVITY_L
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
@@ -323,7 +323,7 @@ literal|10.0
 argument_list|,
 name|SIOX_DEFAULT_SENSITIVITY_A
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
@@ -345,7 +345,7 @@ literal|10.0
 argument_list|,
 name|SIOX_DEFAULT_SENSITIVITY_B
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 block|}

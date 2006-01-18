@@ -505,7 +505,7 @@ name|G_MAXINT
 argument_list|,
 name|DEFAULT_MINIMAL_WIDTH
 argument_list|,
-name|G_PARAM_READABLE
+name|GIMP_PARAM_READABLE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -525,7 +525,7 @@ name|GTK_TYPE_ICON_SIZE
 argument_list|,
 name|DEFAULT_MENU_VIEW_SIZE
 argument_list|,
-name|G_PARAM_READABLE
+name|GIMP_PARAM_READABLE
 argument_list|)
 argument_list|)
 expr_stmt|;

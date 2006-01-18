@@ -77,7 +77,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b56140a0103
+DECL|enum|__anon28d6ae620103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -401,7 +401,7 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_STROKE_OPTIONS
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT_ONLY
 argument_list|)
@@ -427,7 +427,7 @@ literal|120
 argument_list|,
 name|DEFAULT_N_SEGMENTS
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT
 argument_list|)
@@ -455,7 +455,7 @@ literal|0.5
 operator|*
 name|DEFAULT_N_SEGMENTS
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT
 argument_list|)

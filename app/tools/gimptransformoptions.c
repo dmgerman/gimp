@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3da6be0103
+DECL|enum|__anon27afdf5f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -332,7 +332,7 @@ name|GIMP_TYPE_TRANSFORM_TYPE
 argument_list|,
 name|GIMP_TRANSFORM_TYPE_LAYER
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_ENUM
@@ -349,7 +349,7 @@ name|GIMP_TYPE_TRANSFORM_DIRECTION
 argument_list|,
 name|GIMP_TRANSFORM_FORWARD
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_ENUM
@@ -366,7 +366,7 @@ name|GIMP_TYPE_INTERPOLATION_TYPE
 argument_list|,
 name|GIMP_INTERPOLATION_LINEAR
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -381,13 +381,13 @@ name|NULL
 argument_list|,
 name|FALSE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 if|#
 directive|if
 literal|0
-block|GIMP_CONFIG_INSTALL_PROP_INT (object_class, PROP_RECURSION_LEVEL,                                 "recursion-level", NULL,                                 1, 5, 3,                                 0);
+block|GIMP_CONFIG_INSTALL_PROP_INT (object_class, PROP_RECURSION_LEVEL,                                 "recursion-level", NULL,                                 1, 5, 3,                                 GIMP_PARAM_STATIC_STRINGS);
 endif|#
 directive|endif
 name|g_object_class_install_property
@@ -410,7 +410,7 @@ literal|5
 argument_list|,
 literal|3
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT
 argument_list|)
@@ -428,7 +428,7 @@ name|NULL
 argument_list|,
 name|FALSE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_ENUM
@@ -445,7 +445,7 @@ name|GIMP_TYPE_TRANSFORM_PREVIEW_TYPE
 argument_list|,
 name|GIMP_TRANSFORM_PREVIEW_TYPE_IMAGE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_ENUM
@@ -462,7 +462,7 @@ name|GIMP_TYPE_TRANSFORM_GRID_TYPE
 argument_list|,
 name|GIMP_TRANSFORM_GRID_TYPE_N_LINES
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_INT
@@ -481,7 +481,7 @@ literal|128
 argument_list|,
 literal|15
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -496,7 +496,7 @@ name|NULL
 argument_list|,
 name|FALSE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -511,7 +511,7 @@ name|NULL
 argument_list|,
 name|FALSE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 block|}

@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c98de6e0103
+DECL|enum|__anon293619de0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -778,15 +778,7 @@ argument_list|)
 decl_stmt|;
 name|GParamSpec
 modifier|*
-name|anchor_param_spec
-decl_stmt|;
-name|GParamSpec
-modifier|*
-name|control_points_param_spec
-decl_stmt|;
-name|GParamSpec
-modifier|*
-name|close_param_spec
+name|param_spec
 decl_stmt|;
 name|object_class
 operator|->
@@ -1028,7 +1020,7 @@ name|control_points_get
 operator|=
 name|gimp_stroke_real_control_points_get
 expr_stmt|;
-name|anchor_param_spec
+name|param_spec
 operator|=
 name|g_param_spec_boxed
 argument_list|(
@@ -1040,13 +1032,17 @@ literal|"The control points of a Stroke"
 argument_list|,
 name|GIMP_TYPE_ANCHOR
 argument_list|,
-name|G_PARAM_WRITABLE
+name|GIMP_PARAM_WRITABLE
 operator||
 name|G_PARAM_CONSTRUCT_ONLY
 argument_list|)
 expr_stmt|;
-name|control_points_param_spec
-operator|=
+name|g_object_class_install_property
+argument_list|(
+name|object_class
+argument_list|,
+name|PROP_CONTROL_POINTS
+argument_list|,
 name|g_param_spec_value_array
 argument_list|(
 literal|"control-points"
@@ -1058,38 +1054,12 @@ literal|"with the initial "
 literal|"control points of "
 literal|"the new Stroke"
 argument_list|,
-name|anchor_param_spec
+name|param_spec
 argument_list|,
-name|G_PARAM_WRITABLE
+name|GIMP_PARAM_WRITABLE
 operator||
 name|G_PARAM_CONSTRUCT_ONLY
 argument_list|)
-expr_stmt|;
-name|close_param_spec
-operator|=
-name|g_param_spec_boolean
-argument_list|(
-literal|"closed"
-argument_list|,
-literal|"Close Flag"
-argument_list|,
-literal|"this flag indicates, if the "
-literal|"stroke is closed or not"
-argument_list|,
-name|FALSE
-argument_list|,
-name|G_PARAM_READWRITE
-operator||
-name|G_PARAM_CONSTRUCT_ONLY
-argument_list|)
-expr_stmt|;
-name|g_object_class_install_property
-argument_list|(
-name|object_class
-argument_list|,
-name|PROP_CONTROL_POINTS
-argument_list|,
-name|control_points_param_spec
 argument_list|)
 expr_stmt|;
 name|g_object_class_install_property
@@ -1098,7 +1068,22 @@ name|object_class
 argument_list|,
 name|PROP_CLOSED
 argument_list|,
-name|close_param_spec
+name|g_param_spec_boolean
+argument_list|(
+literal|"closed"
+argument_list|,
+literal|"Close Flag"
+argument_list|,
+literal|"this flag indicates "
+literal|"whether the stroke "
+literal|"is closed or not"
+argument_list|,
+name|FALSE
+argument_list|,
+name|GIMP_PARAM_READWRITE
+operator||
+name|G_PARAM_CONSTRUCT_ONLY
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

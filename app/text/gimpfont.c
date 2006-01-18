@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9ad41b0103
+DECL|enum|__anon2c6467b00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -336,7 +336,7 @@ name|NULL
 argument_list|,
 name|PANGO_TYPE_CONTEXT
 argument_list|,
-name|G_PARAM_WRITABLE
+name|GIMP_PARAM_WRITABLE
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon289bbbcd0103
+DECL|enum|__anon2b670c3a0103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -144,7 +144,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon289bbbcd0203
+DECL|enum|__anon2b670c3a0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -740,7 +740,7 @@ name|G_MAXINT
 argument_list|,
 literal|0
 argument_list|,
-name|G_PARAM_READABLE
+name|GIMP_PARAM_READABLE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -764,7 +764,7 @@ name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|1
 argument_list|,
-name|G_PARAM_READABLE
+name|GIMP_PARAM_READABLE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -788,7 +788,7 @@ name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|1
 argument_list|,
-name|G_PARAM_READABLE
+name|GIMP_PARAM_READABLE
 argument_list|)
 argument_list|)
 expr_stmt|;

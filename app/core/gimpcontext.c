@@ -1299,7 +1299,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d7a0c30103
+DECL|enum|__anon29e9d2b70103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1313,7 +1313,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d7a0c30203
+DECL|enum|__anon29e9d2b70203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0
@@ -2460,7 +2460,7 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_GIMP
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT_ONLY
 argument_list|)
@@ -2485,7 +2485,7 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2508,7 +2508,7 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_OBJECT
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2527,7 +2527,7 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_TOOL_INFO
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_OBJECT
@@ -2545,7 +2545,7 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_PAINT_INFO
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_RGB
@@ -2564,7 +2564,7 @@ argument_list|,
 operator|&
 name|black
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_RGB
@@ -2583,7 +2583,7 @@ argument_list|,
 operator|&
 name|white
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
@@ -2605,7 +2605,7 @@ name|GIMP_OPACITY_OPAQUE
 argument_list|,
 name|GIMP_OPACITY_OPAQUE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_ENUM
@@ -2625,7 +2625,7 @@ name|GIMP_TYPE_LAYER_MODE_EFFECTS
 argument_list|,
 name|GIMP_NORMAL_MODE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_OBJECT
@@ -2643,7 +2643,7 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_BRUSH
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_OBJECT
@@ -2661,7 +2661,7 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_PATTERN
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_OBJECT
@@ -2679,7 +2679,7 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_GRADIENT
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_OBJECT
@@ -2697,7 +2697,7 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_PALETTE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_OBJECT
@@ -2715,7 +2715,7 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_FONT
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|g_object_class_install_property
@@ -2737,7 +2737,7 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_BUFFER
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2760,7 +2760,7 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGEFILE
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2783,7 +2783,7 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_TEMPLATE
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;

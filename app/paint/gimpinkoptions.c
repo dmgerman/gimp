@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3ed68e0103
+DECL|enum|__anon295356e70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -204,7 +204,7 @@ literal|200.0
 argument_list|,
 literal|16.0
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
@@ -224,7 +224,7 @@ literal|90.0
 argument_list|,
 literal|0.0
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
@@ -243,7 +243,7 @@ literal|1.0
 argument_list|,
 literal|1.0
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
@@ -262,7 +262,7 @@ literal|1.0
 argument_list|,
 literal|0.8
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
@@ -281,7 +281,7 @@ literal|1.0
 argument_list|,
 literal|0.4
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_ENUM
@@ -298,7 +298,7 @@ name|GIMP_TYPE_INK_BLOB_TYPE
 argument_list|,
 name|GIMP_INK_BLOB_TYPE_ELLIPSE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
@@ -317,7 +317,7 @@ literal|10.0
 argument_list|,
 literal|1.0
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
@@ -337,7 +337,7 @@ literal|90.0
 argument_list|,
 literal|0.0
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 block|}

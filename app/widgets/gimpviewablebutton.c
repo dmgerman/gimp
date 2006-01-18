@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27974d7d0103
+DECL|enum|__anon29d37cb30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -306,7 +306,7 @@ name|GIMP_TYPE_VIEW_TYPE
 argument_list|,
 name|GIMP_VIEW_TYPE_LIST
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -330,7 +330,7 @@ name|GIMP_VIEW_SIZE_GIGANTIC
 argument_list|,
 name|GIMP_VIEW_SIZE_SMALL
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;

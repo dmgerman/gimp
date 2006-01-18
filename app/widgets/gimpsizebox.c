@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac1697a0103
+DECL|enum|__anon2920cbb80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -357,7 +357,7 @@ name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|256
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT
 argument_list|)
@@ -383,7 +383,7 @@ name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|256
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT
 argument_list|)
@@ -409,7 +409,7 @@ name|TRUE
 argument_list|,
 name|GIMP_UNIT_PIXEL
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT
 argument_list|)
@@ -435,7 +435,7 @@ name|GIMP_MAX_RESOLUTION
 argument_list|,
 literal|72.0
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT
 argument_list|)
@@ -461,7 +461,7 @@ name|GIMP_MAX_RESOLUTION
 argument_list|,
 literal|72.0
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT
 argument_list|)
@@ -487,7 +487,7 @@ name|FALSE
 argument_list|,
 name|GIMP_UNIT_INCH
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT
 argument_list|)
@@ -509,7 +509,7 @@ name|NULL
 argument_list|,
 name|TRUE
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -529,7 +529,7 @@ name|NULL
 argument_list|,
 name|FALSE
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT_ONLY
 argument_list|)

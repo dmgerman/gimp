@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2e0ba60103
+DECL|enum|__anon2c737b700103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -294,7 +294,7 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_STROKE_OPTIONS
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT_ONLY
 argument_list|)
@@ -320,7 +320,7 @@ name|GIMP_MAX_RESOLUTION
 argument_list|,
 literal|72.0
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT_ONLY
 argument_list|)

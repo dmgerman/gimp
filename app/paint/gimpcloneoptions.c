@@ -51,7 +51,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon291338c90103
+DECL|enum|__anon28c645b60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -173,7 +173,7 @@ name|GIMP_TYPE_CLONE_TYPE
 argument_list|,
 name|CLONE_DEFAULT_TYPE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_ENUM
@@ -190,7 +190,7 @@ name|GIMP_TYPE_CLONE_ALIGN_MODE
 argument_list|,
 name|CLONE_DEFAULT_ALIGN_MODE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -205,7 +205,7 @@ name|NULL
 argument_list|,
 name|FALSE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 block|}

@@ -102,7 +102,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon274e10d00103
+DECL|enum|__anon2ad6be760103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -337,7 +337,7 @@ name|GIMP_TYPE_BRUSH_GENERATED_SHAPE
 argument_list|,
 name|GIMP_BRUSH_GENERATED_CIRCLE
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT
 argument_list|)
@@ -363,7 +363,7 @@ literal|1000.0
 argument_list|,
 literal|5.0
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT
 argument_list|)
@@ -389,7 +389,7 @@ literal|20
 argument_list|,
 literal|2
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT
 argument_list|)
@@ -415,7 +415,7 @@ literal|1.0
 argument_list|,
 literal|0.0
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT
 argument_list|)
@@ -441,7 +441,7 @@ literal|20.0
 argument_list|,
 literal|1.0
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT
 argument_list|)
@@ -467,7 +467,7 @@ literal|180.0
 argument_list|,
 literal|0.0
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT
 argument_list|)

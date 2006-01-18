@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2888dcf60103
+DECL|enum|__anon2bc366440103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -232,7 +232,7 @@ name|NULL
 argument_list|,
 name|FALSE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_ENUM
@@ -249,7 +249,7 @@ name|GIMP_TYPE_ZOOM_TYPE
 argument_list|,
 name|GIMP_ZOOM_IN
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
@@ -268,7 +268,7 @@ literal|15.0
 argument_list|,
 literal|8.0
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 block|}

@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c361dd60103
+DECL|enum|__anon28c837020103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -346,7 +346,7 @@ name|GIMP_OPACITY_OPAQUE
 argument_list|,
 name|GIMP_OPACITY_OPAQUE
 argument_list|,
-name|G_PARAM_WRITABLE
+name|GIMP_PARAM_WRITABLE
 operator||
 name|G_PARAM_CONSTRUCT
 argument_list|)
@@ -370,7 +370,7 @@ name|GIMP_TYPE_LAYER_MODE_EFFECTS
 argument_list|,
 name|GIMP_NORMAL_MODE
 argument_list|,
-name|G_PARAM_WRITABLE
+name|GIMP_PARAM_WRITABLE
 operator||
 name|G_PARAM_CONSTRUCT
 argument_list|)
@@ -398,7 +398,7 @@ argument_list|,
 operator|-
 literal|1
 argument_list|,
-name|G_PARAM_WRITABLE
+name|GIMP_PARAM_WRITABLE
 operator||
 name|G_PARAM_CONSTRUCT
 argument_list|)

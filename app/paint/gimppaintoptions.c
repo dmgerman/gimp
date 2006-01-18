@@ -217,7 +217,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon276a03810103
+DECL|enum|__anon29af888f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -458,7 +458,7 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_PAINT_INFO
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT_ONLY
 argument_list|)
@@ -478,7 +478,7 @@ name|GIMP_TYPE_PAINT_APPLICATION_MODE
 argument_list|,
 name|DEFAULT_APPLICATION_MODE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -493,7 +493,7 @@ name|NULL
 argument_list|,
 name|DEFAULT_HARD
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -508,7 +508,7 @@ name|NULL
 argument_list|,
 name|DEFAULT_PRESSURE_EXPANDED
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -523,7 +523,7 @@ name|NULL
 argument_list|,
 name|DEFAULT_PRESSURE_OPACITY
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -538,7 +538,7 @@ name|NULL
 argument_list|,
 name|DEFAULT_PRESSURE_HARDNESS
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -553,7 +553,7 @@ name|NULL
 argument_list|,
 name|DEFAULT_PRESSURE_RATE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -568,7 +568,7 @@ name|NULL
 argument_list|,
 name|DEFAULT_PRESSURE_SIZE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -583,7 +583,7 @@ name|NULL
 argument_list|,
 name|DEFAULT_PRESSURE_COLOR
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -598,7 +598,7 @@ name|NULL
 argument_list|,
 name|DEFAULT_PRESSURE_INVERSE_SIZE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -613,7 +613,7 @@ name|NULL
 argument_list|,
 name|DEFAULT_USE_FADE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
@@ -632,7 +632,7 @@ literal|32767.0
 argument_list|,
 name|DEFAULT_FADE_LENGTH
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_UNIT
@@ -651,7 +651,7 @@ name|TRUE
 argument_list|,
 name|DEFAULT_FADE_UNIT
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -666,7 +666,7 @@ name|NULL
 argument_list|,
 name|DEFAULT_USE_JITTER
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
@@ -685,7 +685,7 @@ literal|50.0
 argument_list|,
 name|DEFAULT_JITTER_AMOUNT
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -700,7 +700,7 @@ name|NULL
 argument_list|,
 name|DEFAULT_USE_GRADIENT
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -715,7 +715,7 @@ name|NULL
 argument_list|,
 name|DEFAULT_GRADIENT_REVERSE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_ENUM
@@ -732,7 +732,7 @@ name|GIMP_TYPE_REPEAT_MODE
 argument_list|,
 name|DEFAULT_GRADIENT_REPEAT
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
@@ -751,7 +751,7 @@ literal|32767.0
 argument_list|,
 name|DEFAULT_GRADIENT_LENGTH
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_UNIT
@@ -770,7 +770,7 @@ name|TRUE
 argument_list|,
 name|DEFAULT_GRADIENT_UNIT
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_ENUM
@@ -787,7 +787,7 @@ name|GIMP_TYPE_VIEW_TYPE
 argument_list|,
 name|GIMP_VIEW_TYPE_GRID
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_INT
@@ -806,7 +806,7 @@ name|GIMP_VIEWABLE_MAX_BUTTON_SIZE
 argument_list|,
 name|GIMP_VIEW_SIZE_SMALL
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_ENUM
@@ -823,7 +823,7 @@ name|GIMP_TYPE_VIEW_TYPE
 argument_list|,
 name|GIMP_VIEW_TYPE_GRID
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_INT
@@ -842,7 +842,7 @@ name|GIMP_VIEWABLE_MAX_BUTTON_SIZE
 argument_list|,
 name|GIMP_VIEW_SIZE_SMALL
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_ENUM
@@ -859,7 +859,7 @@ name|GIMP_TYPE_VIEW_TYPE
 argument_list|,
 name|GIMP_VIEW_TYPE_LIST
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_INT
@@ -878,7 +878,7 @@ name|GIMP_VIEWABLE_MAX_BUTTON_SIZE
 argument_list|,
 name|GIMP_VIEW_SIZE_LARGE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 block|}

@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae2bfef0103
+DECL|enum|__anon29677ad60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -215,6 +215,8 @@ literal|"${gimp_dir}"
 name|G_DIR_SEPARATOR_S
 literal|"tmp"
 argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+operator||
 name|GIMP_CONFIG_PARAM_RESTART
 argument_list|)
 expr_stmt|;
@@ -232,6 +234,8 @@ name|GIMP_CONFIG_PATH_DIR
 argument_list|,
 literal|"${gimp_dir}"
 argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+operator||
 name|GIMP_CONFIG_PARAM_RESTART
 argument_list|)
 expr_stmt|;
@@ -266,7 +270,7 @@ name|GIMP_MAX_NUM_THREADS
 argument_list|,
 literal|2
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_MEMSIZE
@@ -293,6 +297,8 @@ operator|<<
 literal|28
 argument_list|,
 comment|/* 256MB */
+name|GIMP_PARAM_STATIC_STRINGS
+operator||
 name|GIMP_CONFIG_PARAM_CONFIRM
 argument_list|)
 expr_stmt|;

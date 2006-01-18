@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2944426a0103
+DECL|enum|__anon2c77d1db0103
 block|{
 DECL|enumerator|ACCEL_EDITED
 name|ACCEL_EDITED
@@ -72,7 +72,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2944426a0203
+DECL|enum|__anon2c77d1db0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -364,7 +364,7 @@ name|G_MAXINT
 argument_list|,
 literal|0
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT
 argument_list|)
@@ -388,7 +388,7 @@ name|GDK_TYPE_MODIFIER_TYPE
 argument_list|,
 literal|0
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT
 argument_list|)

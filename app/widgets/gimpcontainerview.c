@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3c26220103
+DECL|enum|__anon2985d3e40103
 block|{
 DECL|enumerator|SELECT_ITEM
 name|SELECT_ITEM
@@ -719,7 +719,7 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_CONTAINER
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -737,7 +737,7 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_CONTEXT
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -755,7 +755,7 @@ name|NULL
 argument_list|,
 name|FALSE
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -777,7 +777,7 @@ name|GIMP_VIEWABLE_MAX_PREVIEW_SIZE
 argument_list|,
 name|GIMP_VIEW_SIZE_MEDIUM
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT
 argument_list|)
@@ -801,7 +801,7 @@ name|GIMP_VIEW_MAX_BORDER_WIDTH
 argument_list|,
 literal|1
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT
 argument_list|)

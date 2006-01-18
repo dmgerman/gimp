@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2afa3e470103
+DECL|enum|__anon2aea118f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -355,7 +355,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_STRING
@@ -370,7 +370,7 @@ name|NULL
 argument_list|,
 literal|"Sans"
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
@@ -389,7 +389,7 @@ literal|8192.0
 argument_list|,
 literal|18.0
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 comment|/*    *  We use the name "font-size-unit" for backward compatibility.    *  The unit is also used for other sizes in the text object.    */
@@ -409,7 +409,7 @@ name|FALSE
 argument_list|,
 name|GIMP_UNIT_PIXEL
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -424,7 +424,7 @@ name|NULL
 argument_list|,
 name|TRUE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -439,6 +439,8 @@ name|NULL
 argument_list|,
 name|FALSE
 argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+operator||
 name|GIMP_CONFIG_PARAM_DEFAULTS
 argument_list|)
 expr_stmt|;
@@ -454,7 +456,7 @@ name|NULL
 argument_list|,
 name|TRUE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -469,6 +471,8 @@ name|NULL
 argument_list|,
 name|FALSE
 argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+operator||
 name|GIMP_CONFIG_PARAM_DEFAULTS
 argument_list|)
 expr_stmt|;
@@ -484,7 +488,7 @@ name|NULL
 argument_list|,
 name|language
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_ENUM
@@ -501,7 +505,7 @@ name|GIMP_TYPE_TEXT_DIRECTION
 argument_list|,
 name|GIMP_TEXT_DIRECTION_LTR
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_RGB
@@ -517,7 +521,7 @@ argument_list|,
 operator|&
 name|black
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_ENUM
@@ -534,6 +538,8 @@ name|GIMP_TYPE_TEXT_OUTLINE
 argument_list|,
 name|GIMP_TEXT_OUTLINE_NONE
 argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+operator||
 name|GIMP_CONFIG_PARAM_DEFAULTS
 argument_list|)
 expr_stmt|;
@@ -551,7 +557,7 @@ name|GIMP_TYPE_TEXT_JUSTIFICATION
 argument_list|,
 name|GIMP_TEXT_JUSTIFY_LEFT
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
@@ -571,6 +577,8 @@ literal|8192.0
 argument_list|,
 literal|0.0
 argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+operator||
 name|GIMP_CONFIG_PARAM_DEFAULTS
 argument_list|)
 expr_stmt|;
@@ -591,6 +599,8 @@ literal|8192.0
 argument_list|,
 literal|0.0
 argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+operator||
 name|GIMP_CONFIG_PARAM_DEFAULTS
 argument_list|)
 expr_stmt|;
@@ -611,6 +621,8 @@ literal|8192.0
 argument_list|,
 literal|0.0
 argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+operator||
 name|GIMP_CONFIG_PARAM_DEFAULTS
 argument_list|)
 expr_stmt|;
@@ -628,7 +640,7 @@ name|GIMP_TYPE_TEXT_BOX_MODE
 argument_list|,
 name|GIMP_TEXT_BOX_DYNAMIC
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
@@ -647,6 +659,8 @@ name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|0.0
 argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+operator||
 name|GIMP_CONFIG_PARAM_DEFAULTS
 argument_list|)
 expr_stmt|;
@@ -666,6 +680,8 @@ name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|0.0
 argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+operator||
 name|GIMP_CONFIG_PARAM_DEFAULTS
 argument_list|)
 expr_stmt|;
@@ -685,7 +701,7 @@ name|FALSE
 argument_list|,
 name|GIMP_UNIT_PIXEL
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_MATRIX2
@@ -701,6 +717,8 @@ argument_list|,
 operator|&
 name|identity
 argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+operator||
 name|GIMP_CONFIG_PARAM_DEFAULTS
 argument_list|)
 expr_stmt|;
@@ -721,6 +739,8 @@ name|G_MAXDOUBLE
 argument_list|,
 literal|0.0
 argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+operator||
 name|GIMP_CONFIG_PARAM_DEFAULTS
 argument_list|)
 expr_stmt|;
@@ -741,6 +761,8 @@ name|G_MAXDOUBLE
 argument_list|,
 literal|0.0
 argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+operator||
 name|GIMP_CONFIG_PARAM_DEFAULTS
 argument_list|)
 expr_stmt|;
@@ -767,7 +789,7 @@ literal|0
 argument_list|,
 name|G_PARAM_CONSTRUCT
 operator||
-name|G_PARAM_WRITABLE
+name|GIMP_PARAM_WRITABLE
 argument_list|)
 argument_list|)
 expr_stmt|;

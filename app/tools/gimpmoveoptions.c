@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c9220c20103
+DECL|enum|__anon2a4408370103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -184,7 +184,7 @@ name|GIMP_TYPE_TRANSFORM_TYPE
 argument_list|,
 name|GIMP_TRANSFORM_TYPE_LAYER
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -199,7 +199,7 @@ name|NULL
 argument_list|,
 name|FALSE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 block|}

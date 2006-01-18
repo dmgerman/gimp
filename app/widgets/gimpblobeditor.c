@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ec287b0103
+DECL|enum|__anon29562f4c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -303,7 +303,7 @@ name|GIMP_TYPE_INK_BLOB_TYPE
 argument_list|,
 name|GIMP_INK_BLOB_TYPE_ELLIPSE
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT
 argument_list|)
@@ -329,7 +329,7 @@ literal|10.0
 argument_list|,
 literal|1.0
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT
 argument_list|)
@@ -356,7 +356,7 @@ literal|90.0
 argument_list|,
 literal|0.0
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT
 argument_list|)

@@ -680,7 +680,7 @@ name|GTK_TYPE_ICON_SIZE
 argument_list|,
 name|DEFAULT_TOOL_ICON_SIZE
 argument_list|,
-name|G_PARAM_READABLE
+name|GIMP_PARAM_READABLE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -700,7 +700,7 @@ name|GTK_TYPE_RELIEF_STYLE
 argument_list|,
 name|DEFAULT_BUTTON_RELIEF
 argument_list|,
-name|G_PARAM_READABLE
+name|GIMP_PARAM_READABLE
 argument_list|)
 argument_list|)
 expr_stmt|;

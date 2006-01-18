@@ -69,7 +69,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc0acb40103
+DECL|enum|__anon28f5e4640103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -253,7 +253,7 @@ name|GIMP_TYPE_GRID_STYLE
 argument_list|,
 name|GIMP_GRID_INTERSECTIONS
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_RGB
@@ -272,7 +272,7 @@ argument_list|,
 operator|&
 name|black
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_RGB
@@ -292,7 +292,7 @@ argument_list|,
 operator|&
 name|white
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
@@ -314,7 +314,7 @@ name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|32.0
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
@@ -336,7 +336,7 @@ name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|32.0
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_UNIT
@@ -355,7 +355,7 @@ name|FALSE
 argument_list|,
 name|GIMP_UNIT_INCH
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
@@ -379,7 +379,7 @@ name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|0.0
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
@@ -403,7 +403,7 @@ name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|0.0
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_UNIT
@@ -422,7 +422,7 @@ name|FALSE
 argument_list|,
 name|GIMP_UNIT_INCH
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 block|}
