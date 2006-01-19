@@ -4462,11 +4462,6 @@ argument_list|(
 name|controls
 argument_list|)
 expr_stmt|;
-name|g_free
-argument_list|(
-name|controls
-argument_list|)
-expr_stmt|;
 name|g_object_set
 argument_list|(
 name|rectangle
