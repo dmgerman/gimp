@@ -7282,9 +7282,7 @@ name|gdisp
 operator|!=
 name|gdisp
 condition|)
-block|{
 return|return;
-block|}
 name|g_object_get
 argument_list|(
 name|rectangle
