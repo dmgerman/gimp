@@ -54,18 +54,10 @@ value|2
 end_define
 
 begin_typedef
-DECL|typedef|GimpZoomPreviewPrivate
+DECL|struct|GimpZoomPreviewPrivate
 typedef|typedef
-name|struct
-name|_GimpZoomPreviewPrivate
-name|GimpZoomPreviewPrivate
-typedef|;
-end_typedef
-
-begin_struct
-DECL|struct|_GimpZoomPreviewPrivate
 struct|struct
-name|_GimpZoomPreviewPrivate
+name|GimpZoomPreviewPrivate
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -81,9 +73,11 @@ DECL|member|extents
 name|GdkRectangle
 name|extents
 decl_stmt|;
+DECL|typedef|GimpZoomPreviewPrivate
 block|}
-struct|;
-end_struct
+name|GimpZoomPreviewPrivate
+typedef|;
+end_typedef
 
 begin_define
 DECL|macro|GIMP_ZOOM_PREVIEW_GET_PRIVATE (obj)
@@ -93,7 +87,8 @@ name|GIMP_ZOOM_PREVIEW_GET_PRIVATE
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_PRIVATE ((obj), GIMP_TYPE_ZOOM_PREVIEW, GimpZoomPreviewPrivate))
+define|\
+value|((GimpZoomPreviewPrivate *) ((GimpZoomPreview *) (obj))->priv)
 end_define
 
 begin_function_decl
@@ -357,6 +352,10 @@ modifier|*
 name|preview
 parameter_list|)
 block|{
+name|GimpZoomPreviewPrivate
+modifier|*
+name|priv
+decl_stmt|;
 name|GtkWidget
 modifier|*
 name|button_bar
@@ -369,15 +368,26 @@ name|GtkWidget
 modifier|*
 name|box
 decl_stmt|;
-name|GimpZoomPreviewPrivate
-modifier|*
+name|preview
+operator|->
 name|priv
-init|=
+operator|=
+name|G_TYPE_INSTANCE_GET_PRIVATE
+argument_list|(
+name|preview
+argument_list|,
+name|GIMP_TYPE_ZOOM_PREVIEW
+argument_list|,
+name|GimpZoomPreviewPrivate
+argument_list|)
+expr_stmt|;
+name|priv
+operator|=
 name|GIMP_ZOOM_PREVIEW_GET_PRIVATE
 argument_list|(
 name|preview
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|priv
 operator|->
 name|model

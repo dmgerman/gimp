@@ -111,6 +111,11 @@ DECL|member|parent_instance
 name|GimpScrolledPreview
 name|parent_instance
 decl_stmt|;
+comment|/*< private>*/
+DECL|member|priv
+name|gpointer
+name|priv
+decl_stmt|;
 block|}
 struct|;
 end_struct
