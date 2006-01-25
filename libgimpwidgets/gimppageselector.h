@@ -107,6 +107,10 @@ DECL|member|parent_instance
 name|GtkVBox
 name|parent_instance
 decl_stmt|;
+DECL|member|priv
+name|gpointer
+name|priv
+decl_stmt|;
 block|}
 struct|;
 end_struct

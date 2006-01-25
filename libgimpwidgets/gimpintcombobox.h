@@ -107,17 +107,12 @@ DECL|member|parent_instance
 name|GtkComboBox
 name|parent_instance
 decl_stmt|;
+comment|/*< private>*/
+DECL|member|priv
+name|gpointer
+name|priv
+decl_stmt|;
 comment|/* Padding for future expansion (should have gone to the class) */
-DECL|member|_gimp_reserved1
-name|void
-function_decl|(
-modifier|*
-name|_gimp_reserved1
-function_decl|)
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
 DECL|member|_gimp_reserved2
 name|void
 function_decl|(

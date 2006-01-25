@@ -96,15 +96,6 @@ name|GimpFontSelectButtonClass
 typedef|;
 end_typedef
 
-begin_typedef
-DECL|typedef|GimpFontSelectButtonPrivate
-typedef|typedef
-name|struct
-name|_GimpFontSelectButtonPrivate
-name|GimpFontSelectButtonPrivate
-typedef|;
-end_typedef
-
 begin_struct
 DECL|struct|_GimpFontSelectButton
 struct|struct
@@ -116,8 +107,7 @@ name|parent_instance
 decl_stmt|;
 comment|/*< private>*/
 DECL|member|priv
-name|GimpFontSelectButtonPrivate
-modifier|*
+name|gpointer
 name|priv
 decl_stmt|;
 block|}

@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a583d690103
+DECL|enum|__anon2b2a8cae0103
 block|{
 DECL|enumerator|SELECTION_CHANGED
 name|SELECTION_CHANGED
@@ -81,7 +81,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a583d690203
+DECL|enum|__anon2b2a8cae0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -97,7 +97,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a583d690303
+DECL|enum|__anon2b2a8cae0303
 block|{
 DECL|enumerator|COLUMN_PAGE_NO
 name|COLUMN_PAGE_NO
@@ -115,18 +115,9 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|typedef|GimpPageSelectorPrivate
 typedef|typedef
-name|struct
-name|_GimpPageSelectorPrivate
-name|GimpPageSelectorPrivate
-typedef|;
-end_typedef
-
-begin_struct
-DECL|struct|_GimpPageSelectorPrivate
 struct|struct
-name|_GimpPageSelectorPrivate
+DECL|struct|__anon2b2a8cae0408
 block|{
 DECL|member|n_pages
 name|gint
@@ -173,9 +164,11 @@ DECL|member|item_width_idle_id
 name|guint
 name|item_width_idle_id
 decl_stmt|;
+DECL|typedef|GimpPageSelectorPrivate
 block|}
-struct|;
-end_struct
+name|GimpPageSelectorPrivate
+typedef|;
+end_typedef
 
 begin_define
 DECL|macro|GIMP_PAGE_SELECTOR_GET_PRIVATE (obj)
@@ -185,7 +178,8 @@ name|GIMP_PAGE_SELECTOR_GET_PRIVATE
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_PRIVATE ((obj), GIMP_TYPE_PAGE_SELECTOR, GimpPageSelectorPrivate))
+define|\
+value|((GimpPageSelectorPrivate *) ((GimpPageSelector *) (obj))->priv)
 end_define
 
 begin_function_decl
@@ -682,11 +676,6 @@ block|{
 name|GimpPageSelectorPrivate
 modifier|*
 name|priv
-init|=
-name|GIMP_PAGE_SELECTOR_GET_PRIVATE
-argument_list|(
-name|selector
-argument_list|)
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -716,6 +705,26 @@ name|GtkWidget
 modifier|*
 name|combo
 decl_stmt|;
+name|selector
+operator|->
+name|priv
+operator|=
+name|G_TYPE_INSTANCE_GET_PRIVATE
+argument_list|(
+name|selector
+argument_list|,
+name|GIMP_TYPE_PAGE_SELECTOR
+argument_list|,
+name|GimpPageSelectorPrivate
+argument_list|)
+expr_stmt|;
+name|priv
+operator|=
+name|GIMP_PAGE_SELECTOR_GET_PRIVATE
+argument_list|(
+name|selector
+argument_list|)
+expr_stmt|;
 name|priv
 operator|->
 name|n_pages

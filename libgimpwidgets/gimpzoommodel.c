@@ -69,7 +69,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon289ea4040103
+DECL|enum|__anon27a0dd820103
 block|{
 DECL|enumerator|ZOOMED
 name|ZOOMED
@@ -82,7 +82,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon289ea4040203
+DECL|enum|__anon27a0dd820203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -106,18 +106,9 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|typedef|GimpZoomModelPrivate
 typedef|typedef
-name|struct
-name|_GimpZoomModelPrivate
-name|GimpZoomModelPrivate
-typedef|;
-end_typedef
-
-begin_struct
-DECL|struct|_GimpZoomModelPrivate
 struct|struct
-name|_GimpZoomModelPrivate
+DECL|struct|__anon27a0dd820308
 block|{
 DECL|member|value
 name|gdouble
@@ -131,9 +122,11 @@ DECL|member|maximum
 name|gdouble
 name|maximum
 decl_stmt|;
+DECL|typedef|GimpZoomModelPrivate
 block|}
-struct|;
-end_struct
+name|GimpZoomModelPrivate
+typedef|;
+end_typedef
 
 begin_define
 DECL|macro|GIMP_ZOOM_MODEL_GET_PRIVATE (obj)
@@ -143,7 +136,8 @@ name|GIMP_ZOOM_MODEL_GET_PRIVATE
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_PRIVATE ((obj), GIMP_TYPE_ZOOM_MODEL, GimpZoomModelPrivate))
+define|\
+value|((GimpZoomModelPrivate *) ((GimpZoomModel *) (obj))->priv)
 end_define
 
 begin_function_decl
@@ -438,12 +432,27 @@ block|{
 name|GimpZoomModelPrivate
 modifier|*
 name|priv
-init|=
+decl_stmt|;
+name|model
+operator|->
+name|priv
+operator|=
+name|G_TYPE_INSTANCE_GET_PRIVATE
+argument_list|(
+name|model
+argument_list|,
+name|GIMP_TYPE_ZOOM_MODEL
+argument_list|,
+name|GimpZoomModelPrivate
+argument_list|)
+expr_stmt|;
+name|priv
+operator|=
 name|GIMP_ZOOM_MODEL_GET_PRIVATE
 argument_list|(
 name|model
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|priv
 operator|->
 name|value

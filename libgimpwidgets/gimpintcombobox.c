@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2882d6850103
+DECL|enum|__anon278e945b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -55,7 +55,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2882d6850208
+DECL|struct|__anon278e945b0208
 block|{
 DECL|member|pixbuf_renderer
 name|GtkCellRenderer
@@ -93,7 +93,8 @@ name|GIMP_INT_COMBO_BOX_GET_PRIVATE
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_PRIVATE ((obj), GIMP_TYPE_INT_COMBO_BOX, GimpIntComboBoxPrivate))
+define|\
+value|((GimpIntComboBoxPrivate *) ((GimpIntComboBox *) (obj))->priv)
 end_define
 
 begin_function_decl
@@ -290,11 +291,6 @@ block|{
 name|GimpIntComboBoxPrivate
 modifier|*
 name|priv
-init|=
-name|GIMP_INT_COMBO_BOX_GET_PRIVATE
-argument_list|(
-name|combo_box
-argument_list|)
 decl_stmt|;
 name|GtkListStore
 modifier|*
@@ -304,6 +300,26 @@ name|GtkCellRenderer
 modifier|*
 name|cell
 decl_stmt|;
+name|combo_box
+operator|->
+name|priv
+operator|=
+name|G_TYPE_INSTANCE_GET_PRIVATE
+argument_list|(
+name|combo_box
+argument_list|,
+name|GIMP_TYPE_INT_COMBO_BOX
+argument_list|,
+name|GimpIntComboBoxPrivate
+argument_list|)
+expr_stmt|;
+name|priv
+operator|=
+name|GIMP_INT_COMBO_BOX_GET_PRIVATE
+argument_list|(
+name|combo_box
+argument_list|)
+expr_stmt|;
 name|store
 operator|=
 name|gimp_int_store_new
