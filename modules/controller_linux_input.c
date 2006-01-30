@@ -97,7 +97,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28eb38b80108
+DECL|struct|__anon2c5128820108
 block|{
 DECL|member|code
 name|guint16
@@ -437,7 +437,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon28eb38b80203
+DECL|enum|__anon2c5128820203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -969,8 +969,6 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_PARAM_STATIC_STRINGS
-operator||
 name|GIMP_CONFIG_PARAM_FLAGS
 argument_list|)
 argument_list|)

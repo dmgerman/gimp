@@ -180,7 +180,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon299fa2360103
+DECL|enum|__anon2a0532160103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -661,7 +661,7 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_COLOR_CONFIG
 argument_list|,
-name|GIMP_PARAM_STATIC_STRINGS
+literal|0
 argument_list|)
 expr_stmt|;
 name|display_class

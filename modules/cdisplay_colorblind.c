@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28db5eae0103
+DECL|enum|__anon275bc4fb0103
 block|{
 DECL|enumerator|COLORBLIND_DEFICIENCY_PROTANOPIA
 name|COLORBLIND_DEFICIENCY_PROTANOPIA
@@ -345,7 +345,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon28db5eae0203
+DECL|enum|__anon275bc4fb0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -890,7 +890,7 @@ name|CDISPLAY_TYPE_COLORBLIND_DEFICIENCY
 argument_list|,
 name|DEFAULT_DEFICIENCY
 argument_list|,
-name|GIMP_PARAM_STATIC_STRINGS
+literal|0
 argument_list|)
 expr_stmt|;
 name|display_class

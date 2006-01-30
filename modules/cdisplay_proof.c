@@ -323,7 +323,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2779e6be0103
+DECL|enum|__anon29d8f02c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -788,7 +788,7 @@ name|CDISPLAY_TYPE_PROOF_INTENT
 argument_list|,
 name|INTENT_PERCEPTUAL
 argument_list|,
-name|GIMP_PARAM_STATIC_STRINGS
+literal|0
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -803,7 +803,7 @@ name|NULL
 argument_list|,
 name|FALSE
 argument_list|,
-name|GIMP_PARAM_STATIC_STRINGS
+literal|0
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_PATH
@@ -820,7 +820,7 @@ name|GIMP_CONFIG_PATH_FILE
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_PARAM_STATIC_STRINGS
+literal|0
 argument_list|)
 expr_stmt|;
 name|display_class
