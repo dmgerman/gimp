@@ -56,6 +56,12 @@ directive|include
 file|<gdk-pixbuf/gdk-pixbuf.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimpbase/gimpparam.h"
+end_include
+
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -244,7 +250,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fc0f810103
+DECL|enum|__anon2a3e4a910103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -517,7 +523,7 @@ name|GIMP_TYPE_THUMB_STATE
 argument_list|,
 name|GIMP_THUMB_STATE_UNKNOWN
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -537,7 +543,7 @@ literal|"URI of the image file"
 argument_list|,
 name|NULL
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -561,7 +567,7 @@ name|G_MAXINT64
 argument_list|,
 literal|0
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -585,7 +591,7 @@ name|G_MAXINT64
 argument_list|,
 literal|0
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -606,7 +612,7 @@ literal|"Image mimetype"
 argument_list|,
 name|NULL
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -630,7 +636,7 @@ name|G_MAXINT
 argument_list|,
 literal|0
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -654,7 +660,7 @@ name|G_MAXINT
 argument_list|,
 literal|0
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -674,7 +680,7 @@ literal|"String describing the type of the image format"
 argument_list|,
 name|NULL
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -698,7 +704,7 @@ name|G_MAXINT
 argument_list|,
 literal|0
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -720,7 +726,7 @@ name|GIMP_TYPE_THUMB_STATE
 argument_list|,
 name|GIMP_THUMB_STATE_UNKNOWN
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;

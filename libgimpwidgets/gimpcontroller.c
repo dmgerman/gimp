@@ -54,7 +54,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon295ba56a0103
+DECL|enum|__anon2a3f576a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -70,7 +70,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon295ba56a0203
+DECL|enum|__anon2a3f576a0203
 block|{
 DECL|enumerator|EVENT
 name|EVENT
@@ -325,7 +325,7 @@ name|NULL
 argument_list|,
 literal|"Unnamed Controller"
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT
 argument_list|)
@@ -347,7 +347,7 @@ name|NULL
 argument_list|,
 literal|"Unknown"
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT
 argument_list|)

@@ -57,7 +57,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a786cd0103
+DECL|enum|__anon27cd13ad0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -70,7 +70,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a786cd0203
+DECL|enum|__anon27cd13ad0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -512,7 +512,7 @@ argument_list|,
 operator|&
 name|color
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT
 argument_list|)
@@ -537,7 +537,7 @@ name|GIMP_TYPE_COLOR_AREA_TYPE
 argument_list|,
 name|GIMP_COLOR_AREA_FLAT
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT
 argument_list|)
@@ -562,7 +562,7 @@ name|GDK_TYPE_MODIFIER_TYPE
 argument_list|,
 literal|0
 argument_list|,
-name|G_PARAM_WRITABLE
+name|GIMP_PARAM_WRITABLE
 operator||
 name|G_PARAM_CONSTRUCT_ONLY
 argument_list|)
@@ -585,7 +585,7 @@ name|NULL
 argument_list|,
 name|FALSE
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;

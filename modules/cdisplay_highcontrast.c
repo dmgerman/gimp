@@ -162,7 +162,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5dfeb00103
+DECL|enum|__anon275f8e930103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -537,7 +537,7 @@ literal|10.0
 argument_list|,
 name|DEFAULT_CONTRAST
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|display_class

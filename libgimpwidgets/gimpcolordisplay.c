@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29322a6b0103
+DECL|enum|__anon2759d4260103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -66,7 +66,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29322a6b0203
+DECL|enum|__anon2759d4260203
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -214,7 +214,7 @@ name|NULL
 argument_list|,
 name|TRUE
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT
 argument_list|)

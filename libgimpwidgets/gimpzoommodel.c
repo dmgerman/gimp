@@ -69,7 +69,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a0dd820103
+DECL|enum|__anon27edf6de0103
 block|{
 DECL|enumerator|ZOOMED
 name|ZOOMED
@@ -82,7 +82,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a0dd820203
+DECL|enum|__anon27edf6de0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -108,7 +108,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a0dd820308
+DECL|struct|__anon27edf6de0308
 block|{
 DECL|member|value
 name|gdouble
@@ -313,7 +313,7 @@ name|ZOOM_MAX
 argument_list|,
 literal|1.0
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -337,7 +337,7 @@ name|ZOOM_MAX
 argument_list|,
 name|ZOOM_MIN
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -361,7 +361,7 @@ name|ZOOM_MAX
 argument_list|,
 name|ZOOM_MAX
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -381,7 +381,7 @@ name|NULL
 argument_list|,
 literal|"1:1"
 argument_list|,
-name|G_PARAM_READABLE
+name|GIMP_PARAM_READABLE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -401,7 +401,7 @@ name|NULL
 argument_list|,
 literal|"100%"
 argument_list|,
-name|G_PARAM_READABLE
+name|GIMP_PARAM_READABLE
 argument_list|)
 argument_list|)
 expr_stmt|;

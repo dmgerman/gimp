@@ -159,7 +159,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c79a9cd0103
+DECL|enum|__anon2b02166a0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -172,7 +172,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c79a9cd0203
+DECL|enum|__anon2b02166a0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -824,7 +824,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT_ONLY
 argument_list|)
@@ -848,7 +848,7 @@ argument_list|,
 operator|&
 name|color
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT
 argument_list|)
@@ -873,7 +873,7 @@ name|GIMP_TYPE_COLOR_AREA_TYPE
 argument_list|,
 name|GIMP_COLOR_AREA_FLAT
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT
 argument_list|)

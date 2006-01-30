@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon278e945b0103
+DECL|enum|__anon2921ad940103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -55,7 +55,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278e945b0208
+DECL|struct|__anon2921ad940208
 block|{
 DECL|member|pixbuf_renderer
 name|GtkCellRenderer
@@ -260,7 +260,7 @@ name|PANGO_TYPE_ELLIPSIZE_MODE
 argument_list|,
 name|PANGO_ELLIPSIZE_NONE
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;

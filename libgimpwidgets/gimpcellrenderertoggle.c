@@ -43,7 +43,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be7a7cf0103
+DECL|enum|__anon29c656a20103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -56,7 +56,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be7a7cf0203
+DECL|enum|__anon29c656a20203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -406,7 +406,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT
 argument_list|)
@@ -432,7 +432,7 @@ name|G_MAXINT
 argument_list|,
 name|DEFAULT_ICON_SIZE
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT
 argument_list|)

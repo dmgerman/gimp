@@ -114,7 +114,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288dcedb0108
+DECL|struct|__anon2aed66b10108
 block|{
 DECL|member|name
 name|gchar
@@ -134,7 +134,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon288dcedb0203
+DECL|enum|__anon2aed66b10203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -897,6 +897,8 @@ name|blurb
 argument_list|,
 name|NULL
 argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+operator||
 name|GIMP_CONFIG_PARAM_FLAGS
 argument_list|)
 argument_list|)
@@ -934,6 +936,8 @@ argument_list|,
 operator|-
 literal|1
 argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+operator||
 name|GIMP_CONFIG_PARAM_FLAGS
 argument_list|)
 argument_list|)

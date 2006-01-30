@@ -36,7 +36,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2900282e0108
+DECL|struct|__anon2a0481ad0108
 block|{
 DECL|member|title
 name|gchar
@@ -85,7 +85,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2900282e0203
+DECL|enum|__anon2a0481ad0203
 block|{
 DECL|enumerator|FONT_SET
 name|FONT_SET
@@ -98,7 +98,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2900282e0303
+DECL|enum|__anon2a0481ad0303
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -396,7 +396,7 @@ argument_list|(
 literal|"Font Selection"
 argument_list|)
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT_ONLY
 argument_list|)
@@ -422,7 +422,7 @@ argument_list|(
 literal|"Sans"
 argument_list|)
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;

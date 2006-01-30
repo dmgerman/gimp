@@ -57,7 +57,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8b1f480103
+DECL|enum|__anon274815c50103
 block|{
 DECL|enumerator|INVALIDATED
 name|INVALIDATED
@@ -70,7 +70,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8b1f480203
+DECL|enum|__anon274815c50203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -84,7 +84,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8b1f480308
+DECL|struct|__anon274815c50308
 block|{
 DECL|member|controls
 name|GtkWidget
@@ -605,7 +605,7 @@ name|NULL
 argument_list|,
 name|TRUE
 argument_list|,
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT
 argument_list|)
@@ -629,7 +629,7 @@ literal|1024
 argument_list|,
 name|DEFAULT_SIZE
 argument_list|,
-name|G_PARAM_READABLE
+name|GIMP_PARAM_READABLE
 argument_list|)
 argument_list|)
 expr_stmt|;

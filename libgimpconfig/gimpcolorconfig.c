@@ -158,7 +158,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2967fda90103
+DECL|enum|__anon2b37bed20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -344,7 +344,7 @@ name|GIMP_TYPE_COLOR_MANAGEMENT_MODE
 argument_list|,
 name|GIMP_COLOR_MANAGEMENT_DISPLAY
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_PATH
@@ -361,7 +361,7 @@ name|GIMP_CONFIG_PATH_FILE
 argument_list|,
 name|NULL
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_PATH
@@ -378,7 +378,7 @@ name|GIMP_CONFIG_PATH_FILE
 argument_list|,
 name|NULL
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_PATH
@@ -395,7 +395,7 @@ name|GIMP_CONFIG_PATH_FILE
 argument_list|,
 name|NULL
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -410,7 +410,7 @@ name|DISPLAY_PROFILE_FROM_GDK_BLURB
 argument_list|,
 name|TRUE
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_PATH
@@ -427,7 +427,7 @@ name|GIMP_CONFIG_PATH_FILE
 argument_list|,
 name|NULL
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_ENUM
@@ -444,7 +444,7 @@ name|GIMP_TYPE_COLOR_RENDERING_INTENT
 argument_list|,
 name|GIMP_COLOR_RENDERING_INTENT_PERCEPTUAL
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_ENUM
@@ -461,7 +461,7 @@ name|GIMP_TYPE_COLOR_RENDERING_INTENT
 argument_list|,
 name|GIMP_COLOR_RENDERING_INTENT_PERCEPTUAL
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_STRING
@@ -476,13 +476,13 @@ name|NULL
 argument_list|,
 literal|"CdisplayLcms"
 argument_list|,
-literal|0
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 if|#
 directive|if
 literal|0
-block|GIMP_CONFIG_INSTALL_PROP_ENUM (object_class, PROP_OPEN_BEHAVIOUR_NO_PROFILE,                                  "open-behaviour-no-profile",                                  OPEN_BEHAVIOUR_NO_PROFILE_BLURB,                                  GIMP_TYPE_COLOR_FILE_OPEN_BEHAVIOUR,                                  GIMP_COLOR_FILE_OPEN_ASK,                                  0);   GIMP_CONFIG_INSTALL_PROP_ENUM (object_class, PROP_OPEN_BEHAVIOUR_RGB_PROFILE,                                  "open-behaviour-rgb-profile",                                  OPEN_BEHAVIOUR_RGB_PROFILE_BLURB,                                  GIMP_TYPE_COLOR_FILE_OPEN_BEHAVIOUR,                                  GIMP_COLOR_FILE_OPEN_ASK,                                  0);   GIMP_CONFIG_INSTALL_PROP_ENUM (object_class, PROP_OPEN_BEHAVIOUR_CMYK_PROFILE,                                  "open-behaviour-cmyk-profile",                                  OPEN_BEHAVIOUR_CMYK_PROFILE_BLURB,                                  GIMP_TYPE_COLOR_FILE_OPEN_BEHAVIOUR,                                  GIMP_COLOR_FILE_OPEN_ASK,                                  0);
+block|GIMP_CONFIG_INSTALL_PROP_ENUM (object_class, PROP_OPEN_BEHAVIOUR_NO_PROFILE,                                  "open-behaviour-no-profile",                                  OPEN_BEHAVIOUR_NO_PROFILE_BLURB,                                  GIMP_TYPE_COLOR_FILE_OPEN_BEHAVIOUR,                                  GIMP_COLOR_FILE_OPEN_ASK,                                  GIMP_PARAM_STATIC_STRINGS);   GIMP_CONFIG_INSTALL_PROP_ENUM (object_class, PROP_OPEN_BEHAVIOUR_RGB_PROFILE,                                  "open-behaviour-rgb-profile",                                  OPEN_BEHAVIOUR_RGB_PROFILE_BLURB,                                  GIMP_TYPE_COLOR_FILE_OPEN_BEHAVIOUR,                                  GIMP_COLOR_FILE_OPEN_ASK,                                  GIMP_PARAM_STATIC_STRINGS);   GIMP_CONFIG_INSTALL_PROP_ENUM (object_class, PROP_OPEN_BEHAVIOUR_CMYK_PROFILE,                                  "open-behaviour-cmyk-profile",                                  OPEN_BEHAVIOUR_CMYK_PROFILE_BLURB,                                  GIMP_TYPE_COLOR_FILE_OPEN_BEHAVIOUR,                                  GIMP_COLOR_FILE_OPEN_ASK,                                  GIMP_PARAM_STATIC_STRINGS);
 endif|#
 directive|endif
 block|}

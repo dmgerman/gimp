@@ -34,6 +34,12 @@ directive|include
 file|<libgimpbase/gimpbaseenums.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|<libgimpbase/gimpparam.h>
+end_include
+
 begin_macro
 name|G_BEGIN_DECLS
 end_macro
