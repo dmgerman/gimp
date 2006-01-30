@@ -1212,6 +1212,8 @@ operator|=
 name|coords
 operator|->
 name|x
+operator|+
+literal|0.5
 expr_stmt|;
 name|mtool
 operator|->
@@ -1223,6 +1225,8 @@ operator|=
 name|coords
 operator|->
 name|y
+operator|+
+literal|0.5
 expr_stmt|;
 name|mtool
 operator|->
