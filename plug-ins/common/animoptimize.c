@@ -74,7 +74,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2779608d0103
+DECL|enum|__anon2c3f276c0103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -99,7 +99,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2779608d0203
+DECL|enum|__anon2c3f276c0203
 block|{
 DECL|enumerator|OPOPTIMIZE
 name|OPOPTIMIZE
@@ -591,10 +591,8 @@ argument_list|(
 name|UNOPTIMIZE_PROC
 argument_list|,
 literal|"This procedure 'simplifies' a GIMP layer-based"
-literal|" animation that has been AnimationOptimized.  This"
-literal|" makes the animation much easier to work with if,"
-literal|" for example, the optimized version is all you"
-literal|" have."
+literal|" animation that has been optimized for animation. "
+literal|"This makes editing the animation much easier."
 argument_list|,
 literal|""
 argument_list|,
@@ -606,7 +604,7 @@ literal|"1997-2001"
 argument_list|,
 name|N_
 argument_list|(
-literal|"_UnOptimize"
+literal|"_Unoptimize"
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
