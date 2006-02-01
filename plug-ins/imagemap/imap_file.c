@@ -149,7 +149,7 @@ name|gtk_file_chooser_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Load Imagemap"
+literal|"Load Image Map"
 argument_list|)
 argument_list|,
 name|NULL
@@ -485,7 +485,7 @@ name|gtk_file_chooser_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Save Imagemap"
+literal|"Save Image Map"
 argument_list|)
 argument_list|,
 name|NULL

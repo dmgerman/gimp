@@ -70,7 +70,7 @@ argument_list|(
 name|dialog
 argument_list|)
 argument_list|,
-literal|"Imagemap plug-in"
+literal|"Image Map Plug-In"
 argument_list|)
 expr_stmt|;
 name|gtk_about_dialog_set_version

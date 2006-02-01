@@ -570,7 +570,7 @@ literal|"1998-2005"
 argument_list|,
 name|N_
 argument_list|(
-literal|"_ImageMap..."
+literal|"_Image Map..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
@@ -2776,7 +2776,7 @@ name|title
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"%s - ImageMap"
+literal|"%s - Image Map"
 argument_list|,
 name|p
 argument_list|)
@@ -3781,7 +3781,7 @@ name|output
 argument_list|(
 name|param
 argument_list|,
-literal|"-:Image Map file created by GIMP Imagemap Plugin\n"
+literal|"-:Image map file created by GIMP Image Map plug-in\n"
 argument_list|)
 expr_stmt|;
 name|write_cern_comment
@@ -3795,7 +3795,7 @@ name|output
 argument_list|(
 name|param
 argument_list|,
-literal|"-:GIMP Imagemap Plugin by Maurits Rijk\n"
+literal|"-:GIMP Image Map plug-in by Maurits Rijk\n"
 argument_list|)
 expr_stmt|;
 name|write_cern_comment
@@ -4020,14 +4020,14 @@ name|output
 argument_list|(
 name|param
 argument_list|,
-literal|"<!-- #$-:Image Map file created by GIMP Imagemap Plugin -->\n"
+literal|"<!-- #$-:Image map file created by GIMP Image Map plug-in -->\n"
 argument_list|)
 expr_stmt|;
 name|output
 argument_list|(
 name|param
 argument_list|,
-literal|"<!-- #$-:GIMP Imagemap Plugin by Maurits Rijk -->\n"
+literal|"<!-- #$-:GIMP Image Map plug-in by Maurits Rijk -->\n"
 argument_list|)
 expr_stmt|;
 name|output
@@ -4162,14 +4162,14 @@ name|output
 argument_list|(
 name|param
 argument_list|,
-literal|"#$-:Image Map file created by GIMP Imagemap Plugin\n"
+literal|"#$-:Image map file created by GIMP Image Map plug-in\n"
 argument_list|)
 expr_stmt|;
 name|output
 argument_list|(
 name|param
 argument_list|,
-literal|"#$-:GIMP Imagemap Plugin by Maurits Rijk\n"
+literal|"#$-:GIMP Image Map plug-in by Maurits Rijk\n"
 argument_list|)
 expr_stmt|;
 name|output

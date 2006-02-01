@@ -94,7 +94,7 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon2c511c510108
+DECL|struct|__anon27dda6880108
 typedef|typedef
 struct|struct
 block|{
@@ -923,7 +923,7 @@ name|fprintf
 argument_list|(
 name|out
 argument_list|,
-literal|"# Imagemap plug-in resource file\n\n"
+literal|"# Image map plug-in resource file\n\n"
 argument_list|)
 expr_stmt|;
 if|if
