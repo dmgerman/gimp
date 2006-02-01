@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * Polarize plug-in --- maps a rectangul to a circle or vice-versa  * Copyright (C) 1997 Daniel Dunbar  * Email: ddunbar@diads.com  * WWW:   http://millennium.diads.com/gimp/  * Copyright (C) 1997 Federico Mena Quintero  * federico@nuclecu.unam.mx  * Copyright (C) 1996 Marc Bless  * E-mail: bless@ai-lab.fh-furtwangen.de  * WWW:    www.ai-lab.fh-furtwangen.de/~bless  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * Polarize plug-in --- maps a rectangle to a circle or vice-versa  * Copyright (C) 1997 Daniel Dunbar  * Email: ddunbar@diads.com  * WWW:   http://millennium.diads.com/gimp/  * Copyright (C) 1997 Federico Mena Quintero  * federico@nuclecu.unam.mx  * Copyright (C) 1996 Marc Bless  * E-mail: bless@ai-lab.fh-furtwangen.de  * WWW:    www.ai-lab.fh-furtwangen.de/~bless  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_comment
@@ -101,7 +101,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297954500108
+DECL|struct|__anon2c3cc8c30108
 block|{
 DECL|member|circle
 name|gdouble
@@ -442,7 +442,7 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Converts and image to and from polar coords"
+literal|"Converts an image to and from polar coordinates"
 argument_list|,
 literal|"Remaps and image from rectangular coordinates "
 literal|"to polar coordinates "
@@ -456,7 +456,7 @@ name|PLUG_IN_VERSION
 argument_list|,
 name|N_
 argument_list|(
-literal|"P_olar Coords..."
+literal|"P_olar Coordinates..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
@@ -1263,7 +1263,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Polarizing"
+literal|"Polar coordinates"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2511,7 +2511,7 @@ name|gimp_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Polarize"
+literal|"Polar Coordinates"
 argument_list|)
 argument_list|,
 name|PLUG_IN_BINARY
