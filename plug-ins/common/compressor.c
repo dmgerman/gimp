@@ -1085,7 +1085,7 @@ if|if
 condition|(
 name|nparams
 operator|!=
-literal|4
+literal|5
 condition|)
 name|status
 operator|=
