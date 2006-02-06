@@ -57,7 +57,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon274815c50103
+DECL|enum|__anon29858a5d0103
 block|{
 DECL|enumerator|INVALIDATED
 name|INVALIDATED
@@ -70,7 +70,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon274815c50203
+DECL|enum|__anon29858a5d0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -84,7 +84,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274815c50308
+DECL|struct|__anon29858a5d0308
 block|{
 DECL|member|controls
 name|GtkWidget
@@ -272,6 +272,18 @@ end_function_decl
 
 begin_function_decl
 specifier|static
+name|void
+name|gimp_preview_area_set_cursor
+parameter_list|(
+name|GimpPreview
+modifier|*
+name|preview
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
 name|gboolean
 name|gimp_preview_area_event
 parameter_list|(
@@ -333,7 +345,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_preview_set_cursor
+name|gimp_preview_real_set_cursor
 parameter_list|(
 name|GimpPreview
 modifier|*
@@ -577,7 +589,7 @@ name|klass
 operator|->
 name|set_cursor
 operator|=
-name|gimp_preview_set_cursor
+name|gimp_preview_real_set_cursor
 expr_stmt|;
 name|g_type_class_add_private
 argument_list|(
@@ -1047,6 +1059,28 @@ argument_list|,
 name|preview
 argument_list|)
 expr_stmt|;
+name|g_signal_connect_data
+argument_list|(
+name|preview
+operator|->
+name|area
+argument_list|,
+literal|"realize"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|gimp_preview_area_set_cursor
+argument_list|)
+argument_list|,
+name|preview
+argument_list|,
+name|NULL
+argument_list|,
+name|G_CONNECT_AFTER
+operator||
+name|G_CONNECT_SWAPPED
+argument_list|)
+expr_stmt|;
 name|g_signal_connect
 argument_list|(
 name|preview
@@ -1061,6 +1095,28 @@ name|gimp_preview_area_size_allocate
 argument_list|)
 argument_list|,
 name|preview
+argument_list|)
+expr_stmt|;
+name|g_signal_connect_data
+argument_list|(
+name|preview
+operator|->
+name|area
+argument_list|,
+literal|"size-allocate"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|gimp_preview_area_set_cursor
+argument_list|)
+argument_list|,
+name|preview
+argument_list|,
+name|NULL
+argument_list|,
+name|G_CONNECT_AFTER
+operator||
+name|G_CONNECT_SWAPPED
 argument_list|)
 expr_stmt|;
 name|priv
@@ -1643,6 +1699,30 @@ end_function
 
 begin_function
 specifier|static
+name|void
+DECL|function|gimp_preview_area_set_cursor (GimpPreview * preview)
+name|gimp_preview_area_set_cursor
+parameter_list|(
+name|GimpPreview
+modifier|*
+name|preview
+parameter_list|)
+block|{
+name|GIMP_PREVIEW_GET_CLASS
+argument_list|(
+name|preview
+argument_list|)
+operator|->
+name|set_cursor
+argument_list|(
+name|preview
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
 name|gboolean
 DECL|function|gimp_preview_area_event (GtkWidget * area,GdkEvent * event,GimpPreview * preview)
 name|gimp_preview_area_event
@@ -1967,14 +2047,23 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_preview_set_cursor (GimpPreview * preview)
-name|gimp_preview_set_cursor
+DECL|function|gimp_preview_real_set_cursor (GimpPreview * preview)
+name|gimp_preview_real_set_cursor
 parameter_list|(
 name|GimpPreview
 modifier|*
 name|preview
 parameter_list|)
 block|{
+if|if
+condition|(
+name|GTK_WIDGET_REALIZED
+argument_list|(
+name|preview
+operator|->
+name|area
+argument_list|)
+condition|)
 name|gdk_window_set_cursor
 argument_list|(
 name|preview
