@@ -155,7 +155,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2980b14b0103
+DECL|enum|__anon2a2e30b90103
 block|{
 DECL|enumerator|HISTORY_TITLE
 name|HISTORY_TITLE
@@ -2090,6 +2090,7 @@ name|window
 parameter_list|)
 block|{
 specifier|static
+specifier|const
 name|GtkActionEntry
 name|actions
 index|[]
@@ -2222,7 +2223,7 @@ argument_list|(
 argument|close_callback
 argument_list|)
 block|}
-block|,   }
+block|}
 decl_stmt|;
 name|GtkUIManager
 modifier|*
