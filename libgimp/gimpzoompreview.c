@@ -42,16 +42,14 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpzoompreview.h"
+file|"gimpdrawablepreview.h"
 end_include
 
-begin_define
-DECL|macro|SELECTION_BORDER
-define|#
-directive|define
-name|SELECTION_BORDER
-value|2
-end_define
+begin_include
+include|#
+directive|include
+file|"gimpzoompreview.h"
+end_include
 
 begin_typedef
 DECL|struct|GimpZoomPreviewPrivate
