@@ -2736,7 +2736,7 @@ name|g_signal_connect_after
 argument_list|(
 name|notebook
 argument_list|,
-literal|"switch_page"
+literal|"switch-page"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

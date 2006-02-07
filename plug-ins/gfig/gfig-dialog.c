@@ -437,7 +437,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27840ada0108
+DECL|struct|__anon27e664ab0108
 block|{
 DECL|member|gridspacing
 name|GtkAdjustment
@@ -6279,7 +6279,7 @@ name|g_signal_connect
 argument_list|(
 name|sectors_data
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -6298,7 +6298,7 @@ name|g_signal_connect
 argument_list|(
 name|sectors_data
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -6415,7 +6415,7 @@ name|g_signal_connect
 argument_list|(
 name|radius_data
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -6434,7 +6434,7 @@ name|g_signal_connect
 argument_list|(
 name|radius_data
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

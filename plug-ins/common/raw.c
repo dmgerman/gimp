@@ -132,7 +132,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c96db510103
+DECL|enum|__anon2893bce90103
 block|{
 DECL|enumerator|RAW_RGB
 name|RAW_RGB
@@ -158,7 +158,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c96db510203
+DECL|enum|__anon2893bce90203
 block|{
 DECL|enumerator|RAW_PALETTE_RGB
 name|RAW_PALETTE_RGB
@@ -176,7 +176,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c96db510308
+DECL|struct|__anon2893bce90308
 block|{
 DECL|member|file_offset
 name|gint32
@@ -217,7 +217,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c96db510408
+DECL|struct|__anon2893bce90408
 block|{
 DECL|member|fp
 name|FILE
@@ -4361,7 +4361,7 @@ name|g_signal_connect_after
 argument_list|(
 name|preview
 argument_list|,
-literal|"size_allocate"
+literal|"size-allocate"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -5086,7 +5086,7 @@ name|g_signal_connect
 argument_list|(
 name|entry
 argument_list|,
-literal|"filename_changed"
+literal|"filename-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

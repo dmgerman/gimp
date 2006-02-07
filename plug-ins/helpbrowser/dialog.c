@@ -155,7 +155,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2e30b90103
+DECL|enum|__anon2b7743a70103
 block|{
 DECL|enumerator|HISTORY_TITLE
 name|HISTORY_TITLE
@@ -1234,7 +1234,7 @@ name|g_signal_connect
 argument_list|(
 name|drag_source
 argument_list|,
-literal|"drag_begin"
+literal|"drag-begin"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1248,7 +1248,7 @@ name|g_signal_connect
 argument_list|(
 name|drag_source
 argument_list|,
-literal|"drag_data_get"
+literal|"drag-data-get"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1542,7 +1542,7 @@ argument_list|)
 operator|->
 name|document
 argument_list|,
-literal|"title_changed"
+literal|"title-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1561,7 +1561,7 @@ argument_list|)
 operator|->
 name|document
 argument_list|,
-literal|"link_clicked"
+literal|"link-clicked"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1580,7 +1580,7 @@ argument_list|)
 operator|->
 name|document
 argument_list|,
-literal|"request_url"
+literal|"request-url"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

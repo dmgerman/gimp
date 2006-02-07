@@ -4025,7 +4025,7 @@ name|g_signal_connect
 argument_list|(
 name|printer_driver
 argument_list|,
-literal|"select_row"
+literal|"select-row"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

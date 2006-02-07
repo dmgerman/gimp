@@ -501,7 +501,7 @@ name|browse
 operator|->
 name|file
 argument_list|,
-literal|"drag_data_received"
+literal|"drag-data-received"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
