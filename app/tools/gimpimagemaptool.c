@@ -1153,11 +1153,11 @@ literal|"label"
 argument_list|,
 name|GTK_STOCK_SAVE
 argument_list|,
-literal|"use_stock"
+literal|"use-stock"
 argument_list|,
 name|TRUE
 argument_list|,
-literal|"use_underline"
+literal|"use-underline"
 argument_list|,
 name|TRUE
 argument_list|,
