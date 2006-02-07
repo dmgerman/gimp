@@ -156,6 +156,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"about.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -2516,10 +2522,7 @@ name|GIMP_TYPE_TOOLBOX
 argument_list|,
 literal|"title"
 argument_list|,
-name|_
-argument_list|(
-literal|"GIMP"
-argument_list|)
+name|GIMP_ACRONYM
 argument_list|,
 literal|"context"
 argument_list|,

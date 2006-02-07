@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimputils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core-types.h"
 end_include
 
@@ -60,7 +66,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpbase/gimputils.h"
+file|"about.h"
 end_include
 
 begin_include
@@ -607,10 +613,7 @@ name|domain
 condition|)
 name|domain
 operator|=
-name|_
-argument_list|(
-literal|"GIMP"
-argument_list|)
+name|GIMP_ACRONYM
 expr_stmt|;
 if|if
 condition|(
