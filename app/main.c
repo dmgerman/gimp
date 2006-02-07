@@ -1855,7 +1855,7 @@ argument_list|(
 literal|"%s version %s"
 argument_list|)
 argument_list|,
-literal|"GIMP"
+name|GIMP_NAME
 argument_list|,
 name|GIMP_VERSION
 argument_list|)
