@@ -36,12 +36,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp-intl.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdrawablepreview.h"
 end_include
 
