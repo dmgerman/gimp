@@ -9937,7 +9937,7 @@ name|y1
 expr_stmt|;
 if|if
 condition|(
-name|width
+name|height
 operator|>
 literal|0.01
 condition|)
@@ -9950,7 +9950,7 @@ expr_stmt|;
 else|else
 name|aspect
 operator|=
-literal|0
+literal|0.0
 expr_stmt|;
 name|center_x
 operator|=
@@ -9960,7 +9960,7 @@ operator|+
 name|x2
 operator|)
 operator|/
-literal|2
+literal|2.0
 expr_stmt|;
 name|center_y
 operator|=
@@ -9970,7 +9970,7 @@ operator|+
 name|y2
 operator|)
 operator|/
-literal|2
+literal|2.0
 expr_stmt|;
 name|g_signal_handlers_block_by_func
 argument_list|(
