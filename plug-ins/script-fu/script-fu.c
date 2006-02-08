@@ -774,6 +774,26 @@ block|}
 decl_stmt|;
 name|gimp_plugin_menu_branch_register
 argument_list|(
+literal|"<Toolbox>/Help"
+argument_list|,
+name|N_
+argument_list|(
+literal|"_GIMP Online"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_branch_register
+argument_list|(
+literal|"<Toolbox>/Help"
+argument_list|,
+name|N_
+argument_list|(
+literal|"_User Manual"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_branch_register
+argument_list|(
 literal|"<Toolbox>/Xtns/Languages"
 argument_list|,
 name|N_
