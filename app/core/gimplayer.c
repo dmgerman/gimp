@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac5cdc20103
+DECL|enum|__anon2c8446e40103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -177,7 +177,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac5cdc20203
+DECL|enum|__anon2c8446e40203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2334,7 +2334,6 @@ argument_list|(
 name|item
 argument_list|)
 decl_stmt|;
-empty_stmt|;
 name|GimpLayer
 modifier|*
 name|new_layer
