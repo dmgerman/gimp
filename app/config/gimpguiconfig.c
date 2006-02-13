@@ -52,6 +52,14 @@ file|"gimp-intl.h"
 end_include
 
 begin_define
+DECL|macro|DEFAULT_GIMP_HELP_BROWSER
+define|#
+directive|define
+name|DEFAULT_GIMP_HELP_BROWSER
+value|GIMP_HELP_BROWSER_GIMP
+end_define
+
+begin_define
 DECL|macro|DEFAULT_THEME
 define|#
 directive|define
@@ -66,14 +74,6 @@ name|G_OS_WIN32
 end_ifdef
 
 begin_define
-DECL|macro|DEFAULT_GIMP_HELP_BROWSER
-define|#
-directive|define
-name|DEFAULT_GIMP_HELP_BROWSER
-value|GIMP_HELP_BROWSER_WEB_BROWSER
-end_define
-
-begin_define
 DECL|macro|DEFAULT_WEB_BROWSER
 define|#
 directive|define
@@ -85,14 +85,6 @@ begin_else
 else|#
 directive|else
 end_else
-
-begin_define
-DECL|macro|DEFAULT_GIMP_HELP_BROWSER
-define|#
-directive|define
-name|DEFAULT_GIMP_HELP_BROWSER
-value|GIMP_HELP_BROWSER_GIMP
-end_define
 
 begin_define
 DECL|macro|DEFAULT_WEB_BROWSER
@@ -109,7 +101,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon274b150b0103
+DECL|enum|__anon2b3a91300103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
