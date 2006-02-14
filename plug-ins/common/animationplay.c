@@ -68,7 +68,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2af766f90103
+DECL|enum|__anon2a3e17260103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -617,7 +617,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af766f90208
+DECL|struct|__anon2a3e17260208
 block|{
 DECL|member|x
 DECL|member|y
@@ -2730,21 +2730,17 @@ comment|/* Lame attempt to catch the case that a user has closed the image. */
 if|if
 condition|(
 operator|!
-operator|(
 name|drawable
-operator|->
-name|width
-operator|>
-literal|0
-operator|&&
-name|drawable
-operator|->
-name|height
-operator|>
-literal|0
-operator|)
 condition|)
 block|{
+name|gimp_message
+argument_list|(
+name|_
+argument_list|(
+literal|"Tried to display an invalid layer."
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gtk_main_quit
 argument_list|()
 expr_stmt|;
