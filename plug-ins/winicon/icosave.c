@@ -1293,7 +1293,7 @@ operator|(
 literal|7
 operator|-
 operator|(
-name|bit_num
+name|offset
 operator|%
 literal|8
 operator|)
@@ -1394,7 +1394,7 @@ operator|(
 literal|1
 operator|-
 operator|(
-name|nibble_num
+name|offset
 operator|%
 literal|2
 operator|)

@@ -1446,7 +1446,7 @@ operator|(
 literal|7
 operator|-
 operator|(
-name|bit
+name|offset
 operator|%
 literal|8
 operator|)
@@ -1553,7 +1553,7 @@ operator|*
 operator|(
 literal|1
 operator|-
-name|nibble
+name|offset
 operator|%
 literal|2
 operator|)
@@ -1563,7 +1563,7 @@ operator|)
 expr_stmt|;
 if|if
 condition|(
-name|nibble
+name|offset
 operator|%
 literal|2
 operator|==
