@@ -2008,6 +2008,13 @@ name|width
 decl_stmt|,
 name|height
 decl_stmt|;
+name|preview
+operator|=
+name|GIMP_PREVIEW
+argument_list|(
+name|widget
+argument_list|)
+expr_stmt|;
 name|img_bpp
 operator|=
 name|gimp_drawable_bpp
@@ -2017,13 +2024,6 @@ operator|->
 name|drawable_id
 argument_list|)
 expr_stmt|;
-name|preview
-operator|=
-name|GIMP_PREVIEW
-argument_list|(
-name|widget
-argument_list|)
-expr_stmt|;
 name|width
 operator|=
 name|preview
@@ -2036,7 +2036,6 @@ name|preview
 operator|->
 name|height
 expr_stmt|;
-comment|/*    * Setup for filter...    */
 name|gimp_preview_get_position
 argument_list|(
 name|preview
@@ -2068,7 +2067,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/*    * Pre-load the preview rectangle...    */
 name|dst
 operator|=
 name|g_new
@@ -2128,7 +2126,6 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-comment|/*    * Update the screen...    */
 name|gimp_preview_draw_buffer
 argument_list|(
 name|preview
@@ -2142,12 +2139,12 @@ argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
-name|dst
+name|src
 argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
-name|src
+name|dst
 argument_list|)
 expr_stmt|;
 block|}
@@ -2476,7 +2473,7 @@ operator|=
 name|ymin
 init|;
 name|v
-operator|<=
+operator|<
 name|ymax
 condition|;
 name|v
@@ -2505,7 +2502,7 @@ operator|*
 name|bpp
 init|;
 name|u
-operator|<=
+operator|<
 name|xmax
 condition|;
 name|u
