@@ -125,7 +125,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b9481f0108
+DECL|struct|__anon27ea5bad0108
 block|{
 DECL|member|lum_threshold
 name|gdouble
@@ -151,9 +151,9 @@ DECL|member|density
 name|gdouble
 name|density
 decl_stmt|;
-DECL|member|opacity
+DECL|member|transparency
 name|gdouble
-name|opacity
+name|transparency
 decl_stmt|;
 DECL|member|random_hue
 name|gdouble
@@ -466,7 +466,7 @@ block|,
 comment|/* spike density        */
 literal|0.0
 block|,
-comment|/* opacity              */
+comment|/* transparency         */
 literal|0.0
 block|,
 comment|/* random hue           */
@@ -594,9 +594,9 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"opacity"
+literal|"transparency"
 block|,
-literal|"Opacity (0.0 - 1.0)"
+literal|"Transparency (0.0 - 1.0)"
 block|}
 block|,
 block|{
@@ -987,7 +987,7 @@ name|d_float
 expr_stmt|;
 name|svals
 operator|.
-name|opacity
+name|transparency
 operator|=
 name|param
 index|[
@@ -1201,13 +1201,13 @@ if|if
 condition|(
 name|svals
 operator|.
-name|opacity
+name|transparency
 operator|<
 literal|0.0
 operator|||
 name|svals
 operator|.
-name|opacity
+name|transparency
 operator|>
 literal|1.0
 condition|)
@@ -1672,7 +1672,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Adjust the Luminosity Threshold"
+literal|"Adjust the luminosity threshold"
 argument_list|)
 argument_list|,
 name|NULL
@@ -1753,7 +1753,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Adjust the Flare Intensity"
+literal|"Adjust the flare intensity"
 argument_list|)
 argument_list|,
 name|NULL
@@ -1834,7 +1834,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Adjust the Spike Length"
+literal|"Adjust the spike length"
 argument_list|)
 argument_list|,
 name|NULL
@@ -1915,7 +1915,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Adjust the Number of Spikes"
+literal|"Adjust the number of spikes"
 argument_list|)
 argument_list|,
 name|NULL
@@ -1997,8 +1997,8 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Adjust the Spike Angle "
-literal|"(-1 means a Random Angle is chosen)"
+literal|"Adjust the spike angle "
+literal|"(-1 causes a random angle to be chosen)"
 argument_list|)
 argument_list|,
 name|NULL
@@ -2079,7 +2079,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Adjust the Spike Density"
+literal|"Adjust the spike density"
 argument_list|)
 argument_list|,
 name|NULL
@@ -2131,7 +2131,7 @@ literal|6
 argument_list|,
 name|_
 argument_list|(
-literal|"Op_acity:"
+literal|"Tr_ansparency:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -2140,7 +2140,7 @@ name|ENTRY_WIDTH
 argument_list|,
 name|svals
 operator|.
-name|opacity
+name|transparency
 argument_list|,
 literal|0.0
 argument_list|,
@@ -2160,7 +2160,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Adjust the Opacity of the Spikes"
+literal|"Adjust the opacity of the spikes"
 argument_list|)
 argument_list|,
 name|NULL
@@ -2180,7 +2180,7 @@ argument_list|,
 operator|&
 name|svals
 operator|.
-name|opacity
+name|transparency
 argument_list|)
 expr_stmt|;
 name|g_signal_connect_swapped
@@ -2241,8 +2241,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Adjust the Value how much the Hue should "
-literal|"be changed randomly"
+literal|"Adjust how much the hue should be changed randomly"
 argument_list|)
 argument_list|,
 name|NULL
@@ -2323,8 +2322,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Adjust the Value how much the Saturation should "
-literal|"be changed randomly"
+literal|"Adjust how much the saturation should be changed randomly"
 argument_list|)
 argument_list|,
 name|NULL
@@ -2470,7 +2468,7 @@ name|toggle
 argument_list|,
 name|_
 argument_list|(
-literal|"Should the Luminosity be preserved?"
+literal|"Should the luminosity be preserved?"
 argument_list|)
 argument_list|,
 name|NULL
@@ -2556,7 +2554,7 @@ name|toggle
 argument_list|,
 name|_
 argument_list|(
-literal|"Should an Inverse Effect be done?"
+literal|"Should the effect be inversed?"
 argument_list|)
 argument_list|,
 name|NULL
@@ -2642,7 +2640,7 @@ name|toggle
 argument_list|,
 name|_
 argument_list|(
-literal|"Draw a Border of Spikes around the Image"
+literal|"Draw a border of spikes around the image"
 argument_list|)
 argument_list|,
 name|NULL
@@ -4803,7 +4801,7 @@ literal|1.0
 operator|-
 name|svals
 operator|.
-name|opacity
+name|transparency
 operator|)
 operator|)
 expr_stmt|;
@@ -4824,7 +4822,7 @@ literal|1.0
 operator|-
 name|svals
 operator|.
-name|opacity
+name|transparency
 operator|)
 expr_stmt|;
 if|if
@@ -4847,7 +4845,7 @@ name|val
 operator|*
 name|svals
 operator|.
-name|opacity
+name|transparency
 expr_stmt|;
 name|new
 operator|+=
