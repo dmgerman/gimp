@@ -327,7 +327,7 @@ argument_list|(
 literal|"_Crop& Resize"
 argument_list|)
 argument_list|,
-name|NULL
+literal|"<shift>C"
 argument_list|,
 name|NULL
 argument_list|,

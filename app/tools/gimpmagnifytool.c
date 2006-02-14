@@ -317,7 +317,7 @@ argument_list|(
 literal|"M_agnify"
 argument_list|)
 argument_list|,
-name|NULL
+literal|"Z"
 argument_list|,
 name|NULL
 argument_list|,

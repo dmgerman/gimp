@@ -332,7 +332,7 @@ argument_list|(
 literal|"Fu_zzy Select"
 argument_list|)
 argument_list|,
-literal|"Z"
+literal|"U"
 argument_list|,
 name|NULL
 argument_list|,

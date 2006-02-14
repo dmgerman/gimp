@@ -440,7 +440,7 @@ argument_list|(
 literal|"_Measure"
 argument_list|)
 argument_list|,
-name|NULL
+literal|"<shift>M"
 argument_list|,
 name|NULL
 argument_list|,
