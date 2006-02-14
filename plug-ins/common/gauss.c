@@ -84,7 +84,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c514a9f0103
+DECL|enum|__anon27afeb7c0103
 block|{
 DECL|enumerator|BLUR_IIR
 name|BLUR_IIR
@@ -100,7 +100,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c514a9f0208
+DECL|struct|__anon27afeb7c0208
 block|{
 DECL|member|horizontal
 name|gdouble
@@ -4266,7 +4266,7 @@ name|has_alpha
 condition|)
 name|multiply_alpha
 argument_list|(
-name|dest
+name|src
 argument_list|,
 name|width
 argument_list|,
