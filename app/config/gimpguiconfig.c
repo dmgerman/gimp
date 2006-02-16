@@ -101,7 +101,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3a91300103
+DECL|enum|__anon2c7ba7970103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -780,7 +780,7 @@ name|TOOLBOX_WINDOW_HINT_BLURB
 argument_list|,
 name|GIMP_TYPE_WINDOW_HINT
 argument_list|,
-name|GIMP_WINDOW_HINT_NORMAL
+name|GIMP_WINDOW_HINT_UTILITY
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 operator||
@@ -799,7 +799,7 @@ name|DOCK_WINDOW_HINT_BLURB
 argument_list|,
 name|GIMP_TYPE_WINDOW_HINT
 argument_list|,
-name|GIMP_WINDOW_HINT_NORMAL
+name|GIMP_WINDOW_HINT_UTILITY
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 operator||
