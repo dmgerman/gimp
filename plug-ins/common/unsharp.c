@@ -84,7 +84,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e631590108
+DECL|struct|__anon27d333370108
 block|{
 DECL|member|radius
 name|gdouble
@@ -111,7 +111,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e631590208
+DECL|struct|__anon27d333370208
 block|{
 DECL|member|run
 name|gboolean
@@ -612,7 +612,8 @@ name|gimp_tile_cache_ntiles
 argument_list|(
 literal|2
 operator|*
-operator|(
+name|MAX
+argument_list|(
 name|drawable
 operator|->
 name|width
@@ -621,7 +622,16 @@ name|gimp_tile_width
 argument_list|()
 operator|+
 literal|1
-operator|)
+argument_list|,
+name|drawable
+operator|->
+name|height
+operator|/
+name|gimp_tile_height
+argument_list|()
+operator|+
+literal|1
+argument_list|)
 argument_list|)
 expr_stmt|;
 switch|switch
