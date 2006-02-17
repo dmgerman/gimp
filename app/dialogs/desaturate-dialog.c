@@ -187,7 +187,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Desaturate"
+literal|"_Desaturate"
 argument_list|)
 argument_list|,
 name|GTK_RESPONSE_OK
