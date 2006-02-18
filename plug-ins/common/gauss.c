@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -84,7 +84,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a0a206d0103
+DECL|enum|__anon2ad816af0103
 block|{
 DECL|enumerator|BLUR_IIR
 name|BLUR_IIR
@@ -100,7 +100,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0a206d0208
+DECL|struct|__anon2ad816af0208
 block|{
 DECL|member|horizontal
 name|gdouble
@@ -340,7 +340,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 specifier|inline
-name|int
+name|gint
 name|run_length_encode
 parameter_list|(
 specifier|const
@@ -2499,13 +2499,13 @@ block|}
 end_function
 
 begin_comment
-comment|/*   * run_length_encode( src, rle, pix, dist, width, border, pack ) ;  *  * Copy 'width' 8bit pixels from 'src' to 'pix' and extend both sides   * by 'border' pixels so 'pix[]' is filled from '-border' to 'width+border-1'.   *  * 'dist' is the distance between the pixels in 'src'.  *   * If 'pack' is non-zero, then 'rle' is filled with a run-length encoding of   * the pixels. In plain english, that means that rle[i] gives the number of times  * the same pixel is found  pix[i], pix[i+1], ...  * A standalone pixel has a rle value of 1.  *   * The function returns the number of times 2 identical consecutive pixels   * were found.  *  * Note: The function must be inlined to insure that all tests on 'pack' are efficiently  *       resolved by the compiler (they are in the critical loop).   *       As a consequence, the function should only be called with known constant value  *       for 'pack'.   *       In the current implementation, 'pack' is always 1 but it might be more efficient  *       to have an 'adaptative' algotirhm that switches to 0 when the run-length   *       is innefficient  *        *   */
+comment|/*  * run_length_encode(src, rle, pix, dist, width, border, pack);  *  * Copy 'width' 8bit pixels from 'src' to 'pix' and extend both sides  * by 'border' pixels so 'pix[]' is filled from '-border' to 'width+border-1'.  *  * 'dist' is the distance between the pixels in 'src'.  *  * If 'pack' is non-zero, then 'rle' is filled with a run-length  * encoding of the pixels. In plain english, that means that rle[i]  * gives the number of times the same pixel is found pix[i], pix[i+1], ...  * A standalone pixel has a rle value of 1.  *  * The function returns the number of times 2 identical consecutive pixels  * were found.  *  * Note: The function must be inlined to insure that all tests on  *       'pack' are efficiently resolved by the compiler (they are in  *       the critical loop).  As a consequence, the function should  *       only be called with known constant value for 'pack'.  In the  *       current implementation, 'pack' is always 1 but it might be  *       more efficient to have an 'adaptative' algotirhm that  *       switches to 0 when the run-length is innefficient  *  *  */
 end_comment
 
 begin_function
 specifier|static
 specifier|inline
-name|int
+name|gint
 DECL|function|run_length_encode (const guchar * src,gint * rle,gint * pix,gint dist,gint width,gint border,gint pack)
 name|run_length_encode
 parameter_list|(
@@ -2568,7 +2568,6 @@ if|if
 condition|(
 name|pack
 condition|)
-block|{
 name|rle
 operator|+=
 name|width
@@ -2577,7 +2576,6 @@ name|border
 operator|-
 literal|1
 expr_stmt|;
-block|}
 name|pix
 operator|+=
 name|width
@@ -2623,14 +2621,12 @@ if|if
 condition|(
 name|pack
 condition|)
-block|{
 operator|*
 name|rle
 operator|--
 operator|=
 name|count
 expr_stmt|;
-block|}
 block|}
 comment|/* the real pixels */
 for|for
@@ -2705,14 +2701,12 @@ if|if
 condition|(
 name|pack
 condition|)
-block|{
 operator|*
 name|rle
 operator|--
 operator|=
 name|count
 expr_stmt|;
-block|}
 block|}
 block|}
 comment|/* the start pixels */
@@ -2743,14 +2737,12 @@ if|if
 condition|(
 name|pack
 condition|)
-block|{
 operator|*
 name|rle
 operator|--
 operator|=
 name|count
 expr_stmt|;
-block|}
 block|}
 return|return
 name|same
@@ -2889,7 +2881,7 @@ operator|<=
 name|length
 condition|)
 block|{
-name|int
+name|gint
 name|s2
 init|=
 name|csum
@@ -3055,7 +3047,7 @@ index|[
 name|col
 index|]
 expr_stmt|;
-comment|/* The central point is a special case since it should only be processed ONCE */
+comment|/* The central point is a special case since it should only be        * processed ONCE        */
 name|val
 operator|=
 name|x1
@@ -3084,7 +3076,7 @@ name|i
 operator|=
 name|length
 expr_stmt|;
-comment|/* Processing multiple points in a single iteration should be         * faster but is not strictly required.          * Some precise benchmarking will be needed to figure out        * if this is really interesting.         */
+comment|/* Processing multiple points in a single iteration should be        * faster but is not strictly required.        * Some precise benchmarking will be needed to figure out        * if this is really interesting.        */
 while|while
 condition|(
 name|i
@@ -3381,7 +3373,7 @@ operator|>=
 literal|1
 condition|)
 block|{
-comment|/* process the pixels at the distance i before and after the  	   * central point. They must have the same coefficient 	   */
+comment|/* process the pixels at the distance i before and after the            * central point. They must have the same coefficient            */
 name|val
 operator|+=
 operator|(
@@ -3805,7 +3797,7 @@ argument_list|)
 operator|)
 argument_list|)
 expr_stmt|;
-comment|/* We do not want too many progress updates because they         * can slow down the processing significantly for very         * large images        */
+comment|/* We do not want too many progress updates because they        * can slow down the processing significantly for very        * large images        */
 name|progress_step
 operator|=
 name|width
@@ -3818,12 +3810,10 @@ name|progress_step
 operator|<
 literal|5
 condition|)
-block|{
 name|progress_step
 operator|=
 literal|5
 expr_stmt|;
-block|}
 comment|/*  derive the constants for calculating the gaussian        *  from the std dev        */
 name|find_iir_constants
 argument_list|(
@@ -4373,7 +4363,7 @@ operator|>
 literal|0.0
 condition|)
 block|{
-comment|/* We do not want too many progress updates because they         * can slow down the processing significantly for very         * large images        */
+comment|/* We do not want too many progress updates because they        * can slow down the processing significantly for very        * large images        */
 name|progress_step
 operator|=
 name|height
@@ -4386,12 +4376,10 @@ name|progress_step
 operator|<
 literal|5
 condition|)
-block|{
 name|progress_step
 operator|=
 literal|5
 expr_stmt|;
-block|}
 name|horz
 operator|=
 name|fabs
@@ -4431,7 +4419,7 @@ argument_list|)
 operator|)
 argument_list|)
 expr_stmt|;
-comment|/*  derive the constants for calculating the gaussian 	   *  from the std dev 	   */
+comment|/*  derive the constants for calculating the gaussian            *  from the std dev            */
 name|find_iir_constants
 argument_list|(
 name|n_p
@@ -5134,7 +5122,6 @@ if|if
 condition|(
 name|direct
 condition|)
-block|{
 name|gimp_pixel_rgn_init
 argument_list|(
 operator|&
@@ -5159,7 +5146,6 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-block|}
 name|progress
 operator|=
 literal|0.0
@@ -5248,7 +5234,7 @@ argument_list|)
 operator|)
 argument_list|)
 expr_stmt|;
-comment|/* Insure that we do not have too many progress updates for         * images with a lot of rows or columns        */
+comment|/* Insure that we do not have too many progress updates for        * images with a lot of rows or columns        */
 name|progress_step
 operator|=
 name|width
@@ -5261,12 +5247,10 @@ name|progress_step
 operator|<
 literal|5
 condition|)
-block|{
 name|progress_step
 operator|=
 literal|5
 expr_stmt|;
-block|}
 name|make_rle_curve
 argument_list|(
 name|std_dev
@@ -5412,7 +5396,7 @@ operator|/
 literal|4
 condition|)
 block|{
-comment|/* encoded_rle is only fastest if there are a lot of repeating pixels */
+comment|/* encoded_rle is only fastest if there are a lot of 		   * repeating pixels 		   */
 name|do_encoded_lre
 argument_list|(
 name|rle
@@ -5643,7 +5627,7 @@ name|pix
 init|=
 name|NULL
 decl_stmt|;
-comment|/* Insure that we do not have too many progress updates for         * images with a lot of rows or columns        */
+comment|/* Insure that we do not have too many progress updates for        * images with a lot of rows or columns        */
 name|progress_step
 operator|=
 name|height
@@ -5891,7 +5875,7 @@ operator|/
 literal|4
 condition|)
 block|{
-comment|/* encoded_rle is only fastest if there are a lot of repeating pixels */
+comment|/* encoded_rle is only fastest if there are 		     a lot of repeating pixels 		   */
 name|do_encoded_lre
 argument_list|(
 name|rle
@@ -6265,7 +6249,6 @@ name|method
 operator|==
 name|BLUR_IIR
 condition|)
-block|{
 name|gauss_iir
 argument_list|(
 name|drawable
@@ -6287,9 +6270,7 @@ argument_list|,
 name|height
 argument_list|)
 expr_stmt|;
-block|}
 else|else
-block|{
 name|gauss_rle
 argument_list|(
 name|drawable
@@ -6311,7 +6292,6 @@ argument_list|,
 name|height
 argument_list|)
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|preview
@@ -6613,6 +6593,7 @@ index|[
 literal|1
 index|]
 operator|=
+operator|(
 name|exp
 argument_list|(
 name|x1
@@ -6665,6 +6646,7 @@ name|cos
 argument_list|(
 name|x2
 argument_list|)
+operator|)
 operator|)
 expr_stmt|;
 name|n_p
@@ -6672,6 +6654,7 @@ index|[
 literal|2
 index|]
 operator|=
+operator|(
 literal|2
 operator|*
 name|exp
@@ -6740,12 +6723,14 @@ literal|2
 operator|*
 name|x1
 argument_list|)
+operator|)
 expr_stmt|;
 name|n_p
 index|[
 literal|3
 index|]
 operator|=
+operator|(
 name|exp
 argument_list|(
 name|x1
@@ -6794,6 +6779,7 @@ name|cos
 argument_list|(
 name|x2
 argument_list|)
+operator|)
 operator|)
 expr_stmt|;
 name|n_p
@@ -6945,7 +6931,6 @@ condition|;
 name|i
 operator|++
 control|)
-block|{
 name|d_m
 index|[
 name|i
@@ -6956,7 +6941,6 @@ index|[
 name|i
 index|]
 expr_stmt|;
-block|}
 name|n_m
 index|[
 literal|0
@@ -6977,7 +6961,6 @@ condition|;
 name|i
 operator|++
 control|)
-block|{
 name|n_m
 index|[
 name|i
@@ -6998,7 +6981,6 @@ index|[
 literal|0
 index|]
 expr_stmt|;
-block|}
 block|{
 name|gdouble
 name|sum_n_p
@@ -7124,7 +7106,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  * make_rle_curve( sigma ,&curve ,&length ,&sum ,&total )   *  *   * Fill the Gauss curve.  *  *               g(r) = exp (- r^2 / (2 * sigma^2))  *                  r = sqrt (x^2 + y ^2)  *   * o length is filled with the length the curve (in both directions)  * o curve[-length .. length] is allocated and filled with the (scaled) gauss curve.   * o sum[-length .. length]   is allocated and filled with the 'summed' curve.   * o total is filled with the sum of all elements in the curve (for normalization).  *  *    *  */
+comment|/*  * make_rle_curve(sigma,&curve,&length,&sum,&total)  *  *  * Fill the Gauss curve.  *  *               g(r) = exp (- r^2 / (2 * sigma^2))  *                  r = sqrt (x^2 + y ^2)  *  * o length is filled with the length the curve (in both directions)  * o curve[-length .. length] is allocated and filled with the  *   (scaled) gauss curve.  * o sum[-length .. length]   is allocated and filled with the 'summed' curve.  * o total is filled with the sum of all elements in the curve (for  *   normalization).  *  *  *  */
 end_comment
 
 begin_function
