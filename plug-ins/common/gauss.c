@@ -84,7 +84,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad816af0103
+DECL|enum|__anon27c7bba00103
 block|{
 DECL|enumerator|BLUR_IIR
 name|BLUR_IIR
@@ -100,7 +100,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad816af0208
+DECL|struct|__anon27c7bba00208
 block|{
 DECL|member|horizontal
 name|gdouble
@@ -268,10 +268,12 @@ specifier|static
 name|void
 name|transfer_pixels
 parameter_list|(
+specifier|const
 name|gdouble
 modifier|*
 name|src1
 parameter_list|,
+specifier|const
 name|gdouble
 modifier|*
 name|src2
@@ -365,7 +367,7 @@ parameter_list|,
 name|gint
 name|border
 parameter_list|,
-name|gint
+name|gboolean
 name|pack
 parameter_list|)
 function_decl|;
@@ -2499,14 +2501,14 @@ block|}
 end_function
 
 begin_comment
-comment|/*  * run_length_encode(src, rle, pix, dist, width, border, pack);  *  * Copy 'width' 8bit pixels from 'src' to 'pix' and extend both sides  * by 'border' pixels so 'pix[]' is filled from '-border' to 'width+border-1'.  *  * 'dist' is the distance between the pixels in 'src'.  *  * If 'pack' is non-zero, then 'rle' is filled with a run-length  * encoding of the pixels. In plain english, that means that rle[i]  * gives the number of times the same pixel is found pix[i], pix[i+1], ...  * A standalone pixel has a rle value of 1.  *  * The function returns the number of times 2 identical consecutive pixels  * were found.  *  * Note: The function must be inlined to insure that all tests on  *       'pack' are efficiently resolved by the compiler (they are in  *       the critical loop).  As a consequence, the function should  *       only be called with known constant value for 'pack'.  In the  *       current implementation, 'pack' is always 1 but it might be  *       more efficient to have an 'adaptative' algotirhm that  *       switches to 0 when the run-length is innefficient  *  *  */
+comment|/*  * run_length_encode (src, rle, pix, dist, width, border, pack);  *  * Copy 'width' 8bit pixels from 'src' to 'pix' and extend both sides  * by 'border' pixels so 'pix[]' is filled from '-border' to 'width+border-1'.  *  * 'dist' is the distance between the pixels in 'src'.  *  * If 'pack' is TRUE, then 'rle' is filled with a run-length encoding  * of the pixels. In plain english, that means that rle[i] gives the  * number of times the same pixel is found pix[i], pix[i+1], ...  A  * standalone pixel has a rle value of 1.  *  * The function returns the number of times 2 identical consecutive pixels  * were found.  *  * Note: The function must be inlined to insure that all tests on  *       'pack' are efficiently resolved by the compiler (they are in  *       the critical loop).  As a consequence, the function should  *       only be called with known constant value for 'pack'.  In the  *       current implementation, 'pack' is always TRUE but it might be  *       more efficient to have an 'adaptive' algorithm that switches  *       to FALSE when the run-length is innefficient.  */
 end_comment
 
 begin_function
 specifier|static
 specifier|inline
 name|gint
-DECL|function|run_length_encode (const guchar * src,gint * rle,gint * pix,gint dist,gint width,gint border,gint pack)
+DECL|function|run_length_encode (const guchar * src,gint * rle,gint * pix,gint dist,gint width,gint border,gboolean pack)
 name|run_length_encode
 parameter_list|(
 specifier|const
@@ -2532,7 +2534,7 @@ parameter_list|,
 name|gint
 name|border
 parameter_list|,
-name|gint
+name|gboolean
 name|pack
 parameter_list|)
 block|{
@@ -2753,13 +2755,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|do_encoded_lre (gint * enc,gint * src,guchar * dest,gint width,gint length,gint dist,gint * curve,gint ctotal,gint * csum)
+DECL|function|do_encoded_lre (const gint * enc,const gint * src,guchar * dest,gint width,gint length,gint dist,const gint * curve,gint ctotal,const gint * csum)
 name|do_encoded_lre
 parameter_list|(
+specifier|const
 name|gint
 modifier|*
 name|enc
 parameter_list|,
+specifier|const
 name|gint
 modifier|*
 name|src
@@ -2777,6 +2781,7 @@ parameter_list|,
 name|gint
 name|dist
 parameter_list|,
+specifier|const
 name|gint
 modifier|*
 name|curve
@@ -2784,6 +2789,7 @@ parameter_list|,
 name|gint
 name|ctotal
 parameter_list|,
+specifier|const
 name|gint
 modifier|*
 name|csum
@@ -2806,10 +2812,12 @@ name|col
 operator|++
 control|)
 block|{
+specifier|const
 name|gint
 modifier|*
 name|rpt
 decl_stmt|;
+specifier|const
 name|gint
 modifier|*
 name|pix
@@ -2968,9 +2976,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|do_full_lre (gint * src,guchar * dest,gint width,gint length,gint dist,gint * curve,gint ctotal)
+DECL|function|do_full_lre (const gint * src,guchar * dest,gint width,gint length,gint dist,const gint * curve,gint ctotal)
 name|do_full_lre
 parameter_list|(
+specifier|const
 name|gint
 modifier|*
 name|src
@@ -2988,6 +2997,7 @@ parameter_list|,
 name|gint
 name|dist
 parameter_list|,
+specifier|const
 name|gint
 modifier|*
 name|curve
@@ -3013,14 +3023,17 @@ name|col
 operator|++
 control|)
 block|{
+specifier|const
 name|gint
 modifier|*
 name|x1
 decl_stmt|;
+specifier|const
 name|gint
 modifier|*
 name|x2
 decl_stmt|;
+specifier|const
 name|gint
 modifier|*
 name|c
@@ -5380,7 +5393,7 @@ name|height
 argument_list|,
 name|length
 argument_list|,
-literal|1
+name|TRUE
 argument_list|)
 decl_stmt|;
 if|if
@@ -5859,7 +5872,7 @@ name|width
 argument_list|,
 name|length
 argument_list|,
-literal|1
+name|TRUE
 argument_list|)
 decl_stmt|;
 if|if
@@ -5875,7 +5888,7 @@ operator|/
 literal|4
 condition|)
 block|{
-comment|/* encoded_rle is only fastest if there are 		     a lot of repeating pixels 		   */
+comment|/* encoded_rle is only fastest if there are a lot of 		   * repeating pixels 		   */
 name|do_encoded_lre
 argument_list|(
 name|rle
@@ -6021,10 +6034,7 @@ block|}
 if|if
 condition|(
 name|curve
-operator|!=
-name|NULL
 condition|)
-block|{
 name|free_rle_curve
 argument_list|(
 name|curve
@@ -6034,7 +6044,6 @@ argument_list|,
 name|sum
 argument_list|)
 expr_stmt|;
-block|}
 name|g_free
 argument_list|(
 name|src
@@ -6358,13 +6367,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|transfer_pixels (gdouble * src1,gdouble * src2,guchar * dest,gint bytes,gint width)
+DECL|function|transfer_pixels (const gdouble * src1,const gdouble * src2,guchar * dest,gint bytes,gint width)
 name|transfer_pixels
 parameter_list|(
+specifier|const
 name|gdouble
 modifier|*
 name|src1
 parameter_list|,
+specifier|const
 name|gdouble
 modifier|*
 name|src2
@@ -6454,32 +6465,32 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|find_iir_constants (gdouble n_p[],gdouble n_m[],gdouble d_p[],gdouble d_m[],gdouble bd_p[],gdouble bd_m[],gdouble std_dev)
+DECL|function|find_iir_constants (gdouble * n_p,gdouble * n_m,gdouble * d_p,gdouble * d_m,gdouble * bd_p,gdouble * bd_m,gdouble std_dev)
 name|find_iir_constants
 parameter_list|(
 name|gdouble
+modifier|*
 name|n_p
-index|[]
 parameter_list|,
 name|gdouble
+modifier|*
 name|n_m
-index|[]
 parameter_list|,
 name|gdouble
+modifier|*
 name|d_p
-index|[]
 parameter_list|,
 name|gdouble
+modifier|*
 name|d_m
-index|[]
 parameter_list|,
 name|gdouble
+modifier|*
 name|bd_p
-index|[]
 parameter_list|,
 name|gdouble
+modifier|*
 name|bd_m
-index|[]
 parameter_list|,
 name|gdouble
 name|std_dev
