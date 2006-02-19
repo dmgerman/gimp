@@ -135,7 +135,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb79bab0103
+DECL|enum|__anon275520150103
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -152,7 +152,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb79bab0208
+DECL|struct|__anon275520150208
 block|{
 DECL|member|interlace
 name|gint
@@ -3391,11 +3391,13 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
+block|{
 name|transparent
 operator|=
 operator|-
 literal|1
 expr_stmt|;
+block|}
 name|BitsPerPixel
 operator|=
 name|colorstobpp
@@ -3411,6 +3413,9 @@ name|liberalBPP
 condition|)
 block|{
 comment|/* We were able to re-use an index within the existing bitspace, 	     whereas the estimate in the header was pessimistic but still 	     needs to be upheld... */
+ifdef|#
+directive|ifdef
+name|GIFDEBUG
 specifier|static
 name|gboolean
 name|onceonly
@@ -3423,9 +3428,6 @@ operator|!
 name|onceonly
 condition|)
 block|{
-ifdef|#
-directive|ifdef
-name|GIFDEBUG
 name|g_warning
 argument_list|(
 literal|"Promised %d bpp, pondered writing chunk with %d bpp!"
@@ -3435,24 +3437,13 @@ argument_list|,
 name|BitsPerPixel
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
-name|g_message
-argument_list|(
-name|_
-argument_list|(
-literal|"Warning:\n"
-literal|"Transparent color in written file might be "
-literal|"incorrect on viewers which don't support "
-literal|"transparency."
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|onceonly
 operator|=
 name|TRUE
 expr_stmt|;
 block|}
+endif|#
+directive|endif
 block|}
 name|useBPP
 operator|=
@@ -3607,7 +3598,7 @@ argument_list|(
 name|_
 argument_list|(
 literal|"Delay inserted to prevent evil "
-literal|"CPU-sucking anim."
+literal|"CPU-sucking animation."
 argument_list|)
 argument_list|)
 expr_stmt|;
