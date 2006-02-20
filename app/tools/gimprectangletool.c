@@ -6243,7 +6243,7 @@ name|RECT_RESIZING_UPPER_LEFT
 case|:
 if|if
 condition|(
-name|inc_x
+name|inc_y
 operator|==
 literal|0
 operator|||
@@ -6291,7 +6291,7 @@ name|RECT_RESIZING_TOP
 case|:
 if|if
 condition|(
-name|inc_x
+name|inc_y
 operator|==
 literal|0
 operator|||
@@ -6339,7 +6339,7 @@ name|RECT_RESIZING_LEFT
 case|:
 if|if
 condition|(
-name|inc_x
+name|inc_y
 operator|==
 literal|0
 operator|||
@@ -6390,7 +6390,7 @@ name|RECT_RESIZING_BOTTOM
 case|:
 if|if
 condition|(
-name|inc_x
+name|inc_y
 operator|==
 literal|0
 operator|||
