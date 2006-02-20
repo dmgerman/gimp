@@ -587,7 +587,7 @@ index|]
 operator|.
 name|label
 operator|=
-name|NULL
+literal|""
 expr_stmt|;
 name|entries
 index|[
