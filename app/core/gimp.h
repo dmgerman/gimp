@@ -240,10 +240,10 @@ name|GSList
 modifier|*
 name|plug_in_stack
 decl_stmt|;
-DECL|member|last_plug_in
-name|PlugInProcDef
+DECL|member|last_plug_ins
+name|GSList
 modifier|*
-name|last_plug_in
+name|last_plug_ins
 decl_stmt|;
 DECL|member|plug_in_shm
 name|PlugInShm
@@ -480,11 +480,11 @@ modifier|*
 name|gimp
 parameter_list|)
 function_decl|;
-DECL|member|last_plug_in_changed
+DECL|member|last_plug_ins_changed
 name|void
 function_decl|(
 modifier|*
-name|last_plug_in_changed
+name|last_plug_ins_changed
 function_decl|)
 parameter_list|(
 name|Gimp

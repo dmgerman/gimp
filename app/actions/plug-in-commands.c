@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -540,6 +546,8 @@ name|drawable
 decl_stmt|;
 name|gboolean
 name|interactive
+init|=
+name|TRUE
 decl_stmt|;
 name|gdisp
 operator|=
@@ -569,12 +577,22 @@ operator|!
 name|drawable
 condition|)
 return|return;
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|gtk_action_get_name
+argument_list|(
+name|action
+argument_list|)
+argument_list|,
+literal|"plug-in-repeat"
+argument_list|)
+operator|==
+literal|0
+condition|)
 name|interactive
 operator|=
-name|value
-condition|?
-name|TRUE
-else|:
 name|FALSE
 expr_stmt|;
 name|plug_in_repeat
@@ -584,6 +602,8 @@ operator|->
 name|gimage
 operator|->
 name|gimp
+argument_list|,
+name|value
 argument_list|,
 name|gimp_get_user_context
 argument_list|(

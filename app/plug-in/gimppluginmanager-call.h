@@ -61,7 +61,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*  Run the last plug-in again with the same arguments. Extensions  *  are exempt from this "privelege".  */
+comment|/*  Run one of the last plug-ins from the plug-in history again with  *  the same arguments. Extensions are exempt from this "privelege".  */
 end_comment
 
 begin_function_decl
@@ -71,6 +71,9 @@ parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|gint
+name|index
 parameter_list|,
 name|GimpContext
 modifier|*

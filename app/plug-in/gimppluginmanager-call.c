@@ -818,12 +818,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|plug_in_repeat (Gimp * gimp,GimpContext * context,GimpProgress * progress,gint display_ID,gint image_ID,gint drawable_ID,gboolean with_interface)
+DECL|function|plug_in_repeat (Gimp * gimp,gint index,GimpContext * context,GimpProgress * progress,gint display_ID,gint image_ID,gint drawable_ID,gboolean with_interface)
 name|plug_in_repeat
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|gint
+name|index
 parameter_list|,
 name|GimpContext
 modifier|*
@@ -846,6 +849,10 @@ name|gboolean
 name|with_interface
 parameter_list|)
 block|{
+name|PlugInProcDef
+modifier|*
+name|proc_def
+decl_stmt|;
 name|Argument
 modifier|*
 name|args
@@ -859,6 +866,13 @@ name|GIMP_IS_GIMP
 argument_list|(
 name|gimp
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|index
+operator|>=
+literal|0
 argument_list|)
 expr_stmt|;
 name|g_return_if_fail
@@ -881,11 +895,20 @@ name|progress
 argument_list|)
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
+name|proc_def
+operator|=
+name|g_slist_nth_data
+argument_list|(
 name|gimp
 operator|->
-name|last_plug_in
+name|last_plug_ins
+argument_list|,
+name|index
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|proc_def
 condition|)
 block|{
 comment|/* construct the procedures arguments */
@@ -919,9 +942,7 @@ index|]
 operator|.
 name|arg_type
 operator|=
-name|gimp
-operator|->
-name|last_plug_in
+name|proc_def
 operator|->
 name|db_info
 operator|.
@@ -982,9 +1003,7 @@ argument_list|,
 name|progress
 argument_list|,
 operator|&
-name|gimp
-operator|->
-name|last_plug_in
+name|proc_def
 operator|->
 name|db_info
 argument_list|,

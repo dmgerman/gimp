@@ -240,6 +240,10 @@ DECL|member|undo_preview_size
 name|GimpViewSize
 name|undo_preview_size
 decl_stmt|;
+DECL|member|plug_in_history_size
+name|gint
+name|plug_in_history_size
+decl_stmt|;
 DECL|member|plug_in_rc_path
 name|gchar
 modifier|*
