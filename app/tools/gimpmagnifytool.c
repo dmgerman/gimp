@@ -300,11 +300,11 @@ name|gimp_magnify_options_gui
 argument_list|,
 literal|0
 argument_list|,
-literal|"gimp-magnify-tool"
+literal|"gimp-zoom-tool"
 argument_list|,
 name|_
 argument_list|(
-literal|"Magnify"
+literal|"Zoom"
 argument_list|)
 argument_list|,
 name|_
@@ -314,7 +314,7 @@ argument_list|)
 argument_list|,
 name|N_
 argument_list|(
-literal|"M_agnify"
+literal|"_Zoom"
 argument_list|)
 argument_list|,
 literal|"Z"
