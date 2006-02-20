@@ -76,6 +76,11 @@ name|icon_data_length
 operator|=
 name|strlen
 argument_list|(
+operator|(
+specifier|const
+name|gchar
+operator|*
+operator|)
 name|icon_data
 argument_list|)
 operator|+
