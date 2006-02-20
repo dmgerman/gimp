@@ -232,6 +232,18 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
+name|gimp_progress_init
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|message
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
 name|gimp_progress_init_printf
 parameter_list|(
 specifier|const
@@ -275,6 +287,16 @@ begin_empty_stmt
 unit|)
 empty_stmt|;
 end_empty_stmt
+
+begin_function_decl
+name|gboolean
+name|gimp_progress_update
+parameter_list|(
+name|gdouble
+name|percentage
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_ifndef
 ifndef|#

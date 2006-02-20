@@ -20,13 +20,13 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * gimp_progress_init:  * @message: Message to use in the progress dialog.   *  * Initializes the progress bar for the current plug-in.  *  * Initializes the progress bar for the current plug-in. It is only  * valid to call this procedure from a plug-in.  *  * Returns: TRUE on success.  */
+comment|/**  * _gimp_progress_init:  * @message: Message to use in the progress dialog.   *  * Initializes the progress bar for the current plug-in.  *  * Initializes the progress bar for the current plug-in. It is only  * valid to call this procedure from a plug-in.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_progress_init (const gchar * message)
-name|gimp_progress_init
+DECL|function|_gimp_progress_init (const gchar * message)
+name|_gimp_progress_init
 parameter_list|(
 specifier|const
 name|gchar
@@ -94,13 +94,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_progress_update:  * @percentage: Percentage of progress completed which must be between 0.0 and 1.0.  *  * Updates the progress bar for the current plug-in.  *  * Updates the progress bar for the current plug-in. It is only valid  * to call this procedure from a plug-in.  *  * Returns: TRUE on success.  */
+comment|/**  * _gimp_progress_update:  * @percentage: Percentage of progress completed which must be between 0.0 and 1.0.  *  * Updates the progress bar for the current plug-in.  *  * Updates the progress bar for the current plug-in. It is only valid  * to call this procedure from a plug-in.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_progress_update (gdouble percentage)
-name|gimp_progress_update
+DECL|function|_gimp_progress_update (gdouble percentage)
+name|_gimp_progress_update
 parameter_list|(
 name|gdouble
 name|percentage
