@@ -96,6 +96,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"plug-in-data.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"plug-in-def.h"
 end_include
 
@@ -1718,6 +1724,11 @@ operator|->
 name|plug_in_help_domains
 operator|=
 name|NULL
+expr_stmt|;
+name|plug_in_data_free
+argument_list|(
+name|gimp
+argument_list|)
 expr_stmt|;
 block|}
 end_function

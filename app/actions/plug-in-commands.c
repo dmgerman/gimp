@@ -66,7 +66,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb/procedural_db.h"
+file|"plug-in/plug-in-data.h"
 end_include
 
 begin_include
@@ -793,7 +793,7 @@ name|response_id
 operator|==
 name|GTK_RESPONSE_OK
 condition|)
-name|procedural_db_free_data
+name|plug_in_data_free
 argument_list|(
 name|gimp
 argument_list|)

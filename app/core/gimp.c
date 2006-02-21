@@ -267,7 +267,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6f97240103
+DECL|enum|__anon2761a1a70103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -816,6 +816,12 @@ expr_stmt|;
 name|gimp
 operator|->
 name|plug_in_debug
+operator|=
+name|NULL
+expr_stmt|;
+name|gimp
+operator|->
+name|plug_in_data_list
 operator|=
 name|NULL
 expr_stmt|;
@@ -1821,6 +1827,18 @@ argument_list|)
 expr_stmt|;
 name|memsize
 operator|+=
+name|gimp_g_list_get_memsize
+argument_list|(
+name|gimp
+operator|->
+name|plug_in_data_list
+argument_list|,
+literal|0
+comment|/* FIXME */
+argument_list|)
+expr_stmt|;
+name|memsize
+operator|+=
 name|gimp_g_hash_table_get_memsize
 argument_list|(
 name|gimp
@@ -1963,18 +1981,6 @@ argument_list|(
 name|gimp
 operator|->
 name|procedural_compat_ht
-argument_list|)
-expr_stmt|;
-name|memsize
-operator|+=
-name|gimp_g_list_get_memsize
-argument_list|(
-name|gimp
-operator|->
-name|procedural_db_data_list
-argument_list|,
-literal|0
-comment|/* FIXME */
 argument_list|)
 expr_stmt|;
 name|memsize

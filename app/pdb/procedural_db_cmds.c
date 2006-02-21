@@ -46,6 +46,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"plug-in/plug-in-data.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"procedural-db-query.h"
 end_include
 
@@ -2194,7 +2200,7 @@ argument_list|)
 expr_stmt|;
 name|data
 operator|=
-name|procedural_db_get_data
+name|plug_in_data_get
 argument_list|(
 name|gimp
 argument_list|,
@@ -2462,7 +2468,7 @@ argument_list|)
 expr_stmt|;
 name|data
 operator|=
-name|procedural_db_get_data
+name|plug_in_data_get
 argument_list|(
 name|gimp
 argument_list|,
@@ -2725,7 +2731,7 @@ argument_list|(
 name|identifier
 argument_list|)
 expr_stmt|;
-name|procedural_db_set_data
+name|plug_in_data_set
 argument_list|(
 name|gimp
 argument_list|,

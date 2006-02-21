@@ -265,6 +265,11 @@ name|GimpPlugInDebug
 modifier|*
 name|plug_in_debug
 decl_stmt|;
+DECL|member|plug_in_data_list
+name|GList
+modifier|*
+name|plug_in_data_list
+decl_stmt|;
 DECL|member|images
 name|GimpContainer
 modifier|*
@@ -349,11 +354,6 @@ DECL|member|procedural_compat_ht
 name|GHashTable
 modifier|*
 name|procedural_compat_ht
-decl_stmt|;
-DECL|member|procedural_db_data_list
-name|GList
-modifier|*
-name|procedural_db_data_list
 decl_stmt|;
 DECL|member|load_procs
 name|GSList
