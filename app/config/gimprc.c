@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4e2c0f0103
+DECL|enum|__anon2c2f00030103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1747,7 +1747,7 @@ modifier|*
 name|bottom
 init|=
 literal|"\n"
-literal|"Most values can be set within The GIMP by changing some options in "
+literal|"Most values can be set within GIMP by changing some options in "
 literal|"the Preferences dialog."
 decl_stmt|;
 specifier|const

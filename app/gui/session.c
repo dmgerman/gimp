@@ -129,7 +129,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon296d34830103
+DECL|enum|__anon27ba12900103
 block|{
 DECL|enumerator|SESSION_INFO
 name|SESSION_INFO
@@ -669,10 +669,10 @@ argument_list|,
 literal|"GIMP sessionrc\n\n"
 literal|"This file takes session-specific info "
 literal|"(that is info, you want to keep between "
-literal|"two GIMP sessions). You are not supposed "
+literal|"two GIMP sessions).  You are not supposed "
 literal|"to edit it manually, but of course you "
-literal|"can do. The sessionrc will be entirely "
-literal|"rewritten every time you quit The GIMP. "
+literal|"can do.  The sessionrc will be entirely "
+literal|"rewritten every time you quit GIMP.  "
 literal|"If this file isn't found, defaults are "
 literal|"used."
 argument_list|,
