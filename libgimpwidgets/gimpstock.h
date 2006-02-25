@@ -934,6 +934,11 @@ define|#
 directive|define
 name|GIMP_STOCK_BUFFER
 value|GTK_STOCK_PASTE
+DECL|macro|GIMP_STOCK_DETACH
+define|#
+directive|define
+name|GIMP_STOCK_DETACH
+value|GTK_STOCK_CONVERT
 DECL|macro|GIMP_STOCK_FONT
 define|#
 directive|define

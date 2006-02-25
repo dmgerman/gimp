@@ -68,7 +68,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3e17260103
+DECL|enum|__anon29c8cff80103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -170,9 +170,6 @@ parameter_list|(
 name|GtkAction
 modifier|*
 name|action
-parameter_list|,
-name|gpointer
-name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -185,9 +182,6 @@ parameter_list|(
 name|GtkAction
 modifier|*
 name|action
-parameter_list|,
-name|gpointer
-name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -200,9 +194,6 @@ parameter_list|(
 name|GtkAction
 modifier|*
 name|action
-parameter_list|,
-name|gpointer
-name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -617,7 +608,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3e17260208
+DECL|struct|__anon29c8cff80208
 block|{
 DECL|member|x
 DECL|member|y
@@ -638,6 +629,8 @@ specifier|static
 name|gchar
 modifier|*
 name|shape_preview_mask
+init|=
+name|NULL
 decl_stmt|;
 end_decl_stmt
 
@@ -647,16 +640,8 @@ specifier|static
 name|GtkWidget
 modifier|*
 name|shape_window
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|shaping
-specifier|static
-name|gint
-name|shaping
 init|=
-literal|0
+name|NULL
 decl_stmt|;
 end_decl_stmt
 
@@ -668,6 +653,16 @@ modifier|*
 name|root_win
 init|=
 name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|detached
+specifier|static
+name|gboolean
+name|detached
+init|=
+name|FALSE
 decl_stmt|;
 end_decl_stmt
 
@@ -903,9 +898,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|reshape_from_bitmap (gchar * bitmap)
+DECL|function|reshape_from_bitmap (const gchar * bitmap)
 name|reshape_from_bitmap
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|bitmap
@@ -985,7 +981,6 @@ condition|(
 operator|!
 name|prev_bitmap
 condition|)
-block|{
 name|prev_bitmap
 operator|=
 name|g_malloc
@@ -1001,7 +996,6 @@ operator|+
 name|height
 argument_list|)
 expr_stmt|;
-block|}
 name|memcpy
 argument_list|(
 name|prev_bitmap
@@ -1054,6 +1048,78 @@ condition|)
 return|return
 name|FALSE
 return|;
+if|if
+condition|(
+name|event
+operator|->
+name|button
+operator|==
+literal|3
+operator|&&
+name|event
+operator|->
+name|type
+operator|==
+name|GDK_BUTTON_PRESS
+condition|)
+block|{
+name|GtkWidget
+modifier|*
+name|menu
+init|=
+name|gtk_ui_manager_get_widget
+argument_list|(
+name|ui_manager
+argument_list|,
+literal|"/anim-play-popup"
+argument_list|)
+decl_stmt|;
+name|gtk_widget_grab_focus
+argument_list|(
+name|widget
+argument_list|)
+expr_stmt|;
+name|gtk_menu_set_screen
+argument_list|(
+name|GTK_MENU
+argument_list|(
+name|menu
+argument_list|)
+argument_list|,
+name|gtk_widget_get_screen
+argument_list|(
+name|widget
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_menu_popup
+argument_list|(
+name|GTK_MENU
+argument_list|(
+name|menu
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|event
+operator|->
+name|button
+argument_list|,
+name|event
+operator|->
+name|time
+argument_list|)
+expr_stmt|;
+return|return
+name|FALSE
+return|;
+block|}
 name|p
 operator|=
 name|g_object_get_data
@@ -1079,7 +1145,7 @@ operator|->
 name|x
 operator|=
 operator|(
-name|int
+name|gint
 operator|)
 name|event
 operator|->
@@ -1090,7 +1156,7 @@ operator|->
 name|y
 operator|=
 operator|(
-name|int
+name|gint
 operator|)
 name|event
 operator|->
@@ -1444,35 +1510,74 @@ end_function
 
 begin_function
 specifier|static
-name|gboolean
-DECL|function|preview_pressed (GtkWidget * widget,GdkEventButton * event)
-name|preview_pressed
+name|void
+DECL|function|close_callback (GtkAction * action,gpointer data)
+name|close_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
-name|GdkEventButton
-modifier|*
-name|event
+name|gpointer
+name|data
 parameter_list|)
 block|{
-name|gint
-name|xp
-decl_stmt|,
-name|yp
-decl_stmt|;
-name|GdkModifierType
-name|mask
+name|gtk_dialog_response
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|data
+argument_list|)
+argument_list|,
+name|GTK_RESPONSE_CLOSE
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|detach_callback (GtkToggleAction * action)
+name|detach_callback
+parameter_list|(
+name|GtkToggleAction
+modifier|*
+name|action
+parameter_list|)
+block|{
+name|gboolean
+name|active
+init|=
+name|gtk_toggle_action_get_active
+argument_list|(
+name|action
+argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|shaping
+name|active
+operator|==
+name|detached
 condition|)
-return|return
-name|FALSE
-return|;
-comment|/* Create a total-alpha buffer merely for the not-shaped      drawing area to now display. */
+block|{
+name|g_warning
+argument_list|(
+literal|"detached state and toggle action are out of sync"
+argument_list|)
+expr_stmt|;
+return|return;
+block|}
+name|detached
+operator|=
+name|active
+expr_stmt|;
+if|if
+condition|(
+name|detached
+condition|)
+block|{
+comment|/* Create a total-alpha buffer merely for the not-shaped          drawing area to now display. */
 name|drawing_area_data
 operator|=
 name|g_malloc
@@ -1489,18 +1594,43 @@ argument_list|(
 name|drawing_area_data
 argument_list|)
 expr_stmt|;
-name|gdk_window_get_pointer
+name|gtk_window_set_screen
 argument_list|(
-name|root_win
+name|GTK_WINDOW
+argument_list|(
+name|shape_window
+argument_list|)
+argument_list|,
+name|gtk_widget_get_screen
+argument_list|(
+name|drawing_area
+argument_list|)
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|GTK_WIDGET_REALIZED
+argument_list|(
+name|drawing_area
+argument_list|)
+condition|)
+block|{
+name|gint
+name|x
+decl_stmt|,
+name|y
+decl_stmt|;
+name|gdk_window_get_origin
+argument_list|(
+name|drawing_area
+operator|->
+name|window
 argument_list|,
 operator|&
-name|xp
+name|x
 argument_list|,
 operator|&
-name|yp
-argument_list|,
-operator|&
-name|mask
+name|y
 argument_list|)
 expr_stmt|;
 name|gtk_window_move
@@ -1510,33 +1640,15 @@ argument_list|(
 name|shape_window
 argument_list|)
 argument_list|,
-name|xp
-operator|-
-name|event
-operator|->
 name|x
 argument_list|,
-name|yp
-operator|-
-name|event
-operator|->
 name|y
 argument_list|)
 expr_stmt|;
+block|}
 name|gtk_widget_show
 argument_list|(
 name|shape_window
-argument_list|)
-expr_stmt|;
-name|gdk_window_set_back_pixmap
-argument_list|(
-name|shape_window
-operator|->
-name|window
-argument_list|,
-name|NULL
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
 name|gdk_window_set_back_pixmap
@@ -1547,15 +1659,8 @@ name|window
 argument_list|,
 name|NULL
 argument_list|,
-literal|1
+name|TRUE
 argument_list|)
-expr_stmt|;
-name|show_frame
-argument_list|()
-expr_stmt|;
-name|shaping
-operator|=
-literal|1
 expr_stmt|;
 name|memset
 argument_list|(
@@ -1579,27 +1684,34 @@ argument_list|(
 name|frame_number
 argument_list|)
 expr_stmt|;
-name|show_frame
-argument_list|()
-expr_stmt|;
-name|repaint_da
+block|}
+else|else
+block|{
+name|g_free
 argument_list|(
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
+name|drawing_area_data
 argument_list|)
 expr_stmt|;
-comment|/* mildly amusing hack */
-return|return
-name|shape_pressed
+name|drawing_area_data
+operator|=
+name|shape_drawing_area_data
+expr_stmt|;
+name|render_frame
+argument_list|(
+name|frame_number
+argument_list|)
+expr_stmt|;
+name|gtk_widget_hide
 argument_list|(
 name|shape_window
-argument_list|,
-name|event
 argument_list|)
-return|;
+expr_stmt|;
+block|}
+name|gtk_widget_queue_draw
+argument_list|(
+name|drawing_area
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -1621,6 +1733,23 @@ name|actions
 index|[]
 init|=
 block|{
+block|{
+literal|"close"
+block|,
+name|GTK_STOCK_CLOSE
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|G_CALLBACK
+argument_list|(
+argument|close_callback
+argument_list|)
+block|}
+block|,
 block|{
 literal|"play"
 block|,
@@ -1685,6 +1814,38 @@ argument_list|)
 block|}
 block|}
 decl_stmt|;
+specifier|static
+name|GtkToggleActionEntry
+name|toggle_actions
+index|[]
+init|=
+block|{
+block|{
+literal|"detach"
+block|,
+name|GIMP_STOCK_DETACH
+block|,
+name|N_
+argument_list|(
+literal|"Detach"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|N_
+argument_list|(
+literal|"Detach the animation from the dialog window"
+argument_list|)
+block|,
+name|G_CALLBACK
+argument_list|(
+name|detach_callback
+argument_list|)
+block|,
+name|FALSE
+block|}
+block|}
+decl_stmt|;
 name|GtkUIManager
 modifier|*
 name|ui_manager
@@ -1723,6 +1884,20 @@ argument_list|,
 name|G_N_ELEMENTS
 argument_list|(
 name|actions
+argument_list|)
+argument_list|,
+name|window
+argument_list|)
+expr_stmt|;
+name|gtk_action_group_add_toggle_actions
+argument_list|(
+name|group
+argument_list|,
+name|toggle_actions
+argument_list|,
+name|G_N_ELEMENTS
+argument_list|(
+name|toggle_actions
 argument_list|)
 argument_list|,
 name|NULL
@@ -1773,7 +1948,52 @@ literal|"<toolbar name=\"anim-play-toolbar\">"
 literal|"<toolitem action=\"play\" />"
 literal|"<toolitem action=\"step\" />"
 literal|"<toolitem action=\"rewind\" />"
+literal|"<separator />"
+literal|"<toolitem action=\"detach\" />"
 literal|"</toolbar>"
+literal|"</ui>"
+argument_list|,
+operator|-
+literal|1
+argument_list|,
+operator|&
+name|error
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|error
+condition|)
+block|{
+name|g_warning
+argument_list|(
+literal|"error parsing ui: %s"
+argument_list|,
+name|error
+operator|->
+name|message
+argument_list|)
+expr_stmt|;
+name|g_clear_error
+argument_list|(
+operator|&
+name|error
+argument_list|)
+expr_stmt|;
+block|}
+name|gtk_ui_manager_add_ui_from_string
+argument_list|(
+name|ui_manager
+argument_list|,
+literal|"<ui>"
+literal|"<popup name=\"anim-play-popup\">"
+literal|"<menuitem action=\"play\" />"
+literal|"<menuitem action=\"step\" />"
+literal|"<menuitem action=\"rewind\" />"
+literal|"<separator />"
+literal|"<menuitem action=\"detach\" />"
+literal|"<menuitem action=\"close\" />"
+literal|"</popup>"
 literal|"</ui>"
 argument_list|,
 operator|-
@@ -1824,10 +2044,6 @@ modifier|*
 name|imagename
 parameter_list|)
 block|{
-name|CursorOffset
-modifier|*
-name|icon_pos
-decl_stmt|;
 name|GtkWidget
 modifier|*
 name|toolbar
@@ -2301,7 +2517,7 @@ name|window
 argument_list|,
 name|NULL
 argument_list|,
-literal|0
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|cursor
@@ -2313,7 +2529,7 @@ argument_list|(
 name|shape_window
 argument_list|)
 argument_list|,
-name|GDK_CENTER_PTR
+name|GDK_HAND2
 argument_list|)
 expr_stmt|;
 name|gdk_window_set_cursor
@@ -2372,15 +2588,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|icon_pos
-operator|=
-name|g_new
-argument_list|(
-name|CursorOffset
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
 name|g_object_set_data
 argument_list|(
 name|G_OBJECT
@@ -2390,22 +2597,12 @@ argument_list|)
 argument_list|,
 literal|"cursor-offset"
 argument_list|,
-name|icon_pos
-argument_list|)
-expr_stmt|;
-comment|/*  gtk_widget_show (shape_window);*/
-name|g_signal_connect
+name|g_new0
 argument_list|(
-name|eventbox
+name|CursorOffset
 argument_list|,
-literal|"button-press-event"
-argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|preview_pressed
+literal|1
 argument_list|)
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -2419,7 +2616,7 @@ argument_list|(
 name|repaint_da
 argument_list|)
 argument_list|,
-name|drawing_area
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -2433,7 +2630,7 @@ argument_list|(
 name|maybeblocked_expose
 argument_list|)
 argument_list|,
-name|shape_drawing_area
+name|NULL
 argument_list|)
 expr_stmt|;
 name|root_win
@@ -3108,7 +3305,7 @@ block|}
 comment|/* calculate the shape mask */
 if|if
 condition|(
-name|shaping
+name|detached
 condition|)
 block|{
 name|srcptr
@@ -3229,7 +3426,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|shaping
+name|detached
 condition|)
 block|{
 comment|/* opacify the shape mask */
@@ -3255,7 +3452,7 @@ block|}
 comment|/* Display the preview buffer... finally. */
 if|if
 condition|(
-name|shaping
+name|detached
 condition|)
 block|{
 name|reshape_from_bitmap
@@ -3504,7 +3701,7 @@ block|}
 block|}
 if|if
 condition|(
-name|shaping
+name|detached
 condition|)
 block|{
 name|srcptr
@@ -3754,7 +3951,7 @@ block|}
 comment|/* Display the preview buffer... finally. */
 if|if
 condition|(
-name|shaping
+name|detached
 condition|)
 block|{
 if|if
@@ -4207,7 +4404,7 @@ block|}
 comment|/* calculate the shape mask */
 if|if
 condition|(
-name|shaping
+name|detached
 condition|)
 block|{
 name|srcptr
@@ -4379,7 +4576,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|shaping
+name|detached
 condition|)
 block|{
 comment|/* opacify the shape mask */
@@ -4405,7 +4602,7 @@ block|}
 comment|/* Display the preview buffer... finally. */
 if|if
 condition|(
-name|shaping
+name|detached
 condition|)
 block|{
 name|reshape_from_bitmap
@@ -4674,7 +4871,7 @@ block|}
 block|}
 if|if
 condition|(
-name|shaping
+name|detached
 condition|)
 block|{
 name|srcptr
@@ -4944,7 +5141,7 @@ block|}
 comment|/* Display the preview buffer... finally. */
 if|if
 condition|(
-name|shaping
+name|detached
 condition|)
 block|{
 if|if
@@ -5541,31 +5738,6 @@ modifier|*
 name|ptr
 parameter_list|)
 block|{
-if|if
-condition|(
-name|shaping
-condition|)
-block|{
-name|memset
-argument_list|(
-name|shape_preview_mask
-argument_list|,
-literal|0
-argument_list|,
-operator|(
-name|width
-operator|*
-name|height
-operator|)
-operator|/
-literal|8
-operator|+
-name|height
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
 name|gint
 name|i
 decl_stmt|;
@@ -5628,7 +5800,6 @@ operator|*
 name|width
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 block|}
 end_function
@@ -5793,15 +5964,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|play_callback (GtkAction * action,gpointer data)
+DECL|function|play_callback (GtkAction * action)
 name|play_callback
 parameter_list|(
 name|GtkAction
 modifier|*
 name|action
-parameter_list|,
-name|gpointer
-name|data
 parameter_list|)
 block|{
 name|GtkWidget
@@ -5882,15 +6050,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|step_callback (GtkAction * action,gpointer data)
+DECL|function|step_callback (GtkAction * action)
 name|step_callback
 parameter_list|(
 name|GtkAction
 modifier|*
 name|action
-parameter_list|,
-name|gpointer
-name|data
 parameter_list|)
 block|{
 if|if
@@ -5919,15 +6084,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|rewind_callback (GtkAction * action,gpointer data)
+DECL|function|rewind_callback (GtkAction * action)
 name|rewind_callback
 parameter_list|(
 name|GtkAction
 modifier|*
 name|action
-parameter_list|,
-name|gpointer
-name|data
 parameter_list|)
 block|{
 if|if
@@ -6102,7 +6264,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|is_ms_tag (const char * str,int * duration,int * taglength)
+DECL|function|is_ms_tag (const char * str,gint * duration,gint * taglength)
 name|is_ms_tag
 parameter_list|(
 specifier|const
@@ -6110,11 +6272,11 @@ name|char
 modifier|*
 name|str
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|duration
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|taglength
 parameter_list|)

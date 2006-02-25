@@ -204,7 +204,7 @@ block|,
 block|{
 literal|"dockable-detach-tab"
 block|,
-name|GTK_STOCK_CONVERT
+name|GIMP_STOCK_DETACH
 block|,
 name|N_
 argument_list|(
