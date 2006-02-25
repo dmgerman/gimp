@@ -963,14 +963,14 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_window_set_default
+name|gtk_dialog_set_default_response
 argument_list|(
-name|GTK_WINDOW
+name|GTK_DIALOG
 argument_list|(
 name|dialog
 argument_list|)
 argument_list|,
-name|NULL
+name|GTK_RESPONSE_CANCEL
 argument_list|)
 expr_stmt|;
 block|}
