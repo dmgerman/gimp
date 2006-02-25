@@ -423,7 +423,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon296bbd330103
+DECL|enum|__anon2a0f76540103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1464,7 +1464,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296bbd330208
+DECL|struct|__anon2a0f76540208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1541,7 +1541,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296bbd330308
+DECL|struct|__anon2a0f76540308
 block|{
 DECL|member|ncolors
 name|long
@@ -1726,7 +1726,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296bbd330408
+DECL|struct|__anon2a0f76540408
 block|{
 DECL|member|used_count
 name|signed
@@ -2617,6 +2617,7 @@ condition|(
 name|pixels
 operator|--
 condition|)
+block|{
 if|if
 condition|(
 name|src
@@ -2637,6 +2638,19 @@ name|INDEXED_PIX
 index|]
 index|]
 expr_stmt|;
+name|src
+operator|+=
+name|srcPR
+operator|.
+name|bytes
+expr_stmt|;
+name|dest
+operator|+=
+name|destPR
+operator|.
+name|bytes
+expr_stmt|;
+block|}
 block|}
 else|else
 block|{
@@ -2645,6 +2659,7 @@ condition|(
 name|pixels
 operator|--
 condition|)
+block|{
 name|dest
 index|[
 name|INDEXED_PIX
@@ -2658,7 +2673,6 @@ name|INDEXED_PIX
 index|]
 index|]
 expr_stmt|;
-block|}
 name|src
 operator|+=
 name|srcPR
@@ -2671,6 +2685,8 @@ name|destPR
 operator|.
 name|bytes
 expr_stmt|;
+block|}
+block|}
 block|}
 block|}
 end_function
@@ -3840,19 +3856,11 @@ name|list
 argument_list|)
 control|)
 block|{
-name|layer
-operator|=
-operator|(
-name|GimpLayer
-operator|*
-operator|)
+name|remap_indexed_layer
+argument_list|(
 name|list
 operator|->
 name|data
-expr_stmt|;
-name|remap_indexed_layer
-argument_list|(
-name|layer
 argument_list|,
 name|remap_table
 argument_list|,
