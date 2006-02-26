@@ -1128,7 +1128,7 @@ operator|>
 name|GIMP_MIN_RESOLUTION
 condition|)
 block|{
-comment|/*          * xresolution and yresolution are in dots per inch.          * the BMP spec says that biXPels and biYPels are in          * pixels per meter as long ints (actually, "DWORDS"),          * so...          *    n dots    inch     100 cm   m dots          *    ------ * ------- * ------ = ------          *     inch    2.54 cm     m       inch          */
+comment|/*          * xresolution and yresolution are in dots per inch.          * the BMP spec says that biXPels and biYPels are in          * pixels per meter as long ints (actually, "DWORDS"),          * so...          *    n dots    inch     100 cm   m dots          *    ------ * ------- * ------ = ------          *     inch    2.54 cm     m       inch          *          * We add 0.5 for proper rounding.          */
 name|Bitmap_Head
 operator|.
 name|biXPels
@@ -1143,6 +1143,8 @@ operator|*
 literal|100.0
 operator|/
 literal|2.54
+operator|+
+literal|0.5
 argument_list|)
 expr_stmt|;
 name|Bitmap_Head
@@ -1159,6 +1161,8 @@ operator|*
 literal|100.0
 operator|/
 literal|2.54
+operator|+
+literal|0.5
 argument_list|)
 expr_stmt|;
 block|}
