@@ -1732,7 +1732,7 @@ name|vbox
 argument_list|,
 name|_
 argument_list|(
-literal|"Image dimensions: %d x %d"
+literal|"Image dimensions: %d Ã %d"
 argument_list|)
 argument_list|,
 name|width

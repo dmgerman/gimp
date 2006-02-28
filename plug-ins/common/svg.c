@@ -118,7 +118,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e5fe4e0108
+DECL|struct|__anon27c201fc0108
 block|{
 DECL|member|resolution
 name|gdouble
@@ -2161,7 +2161,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"%d x %d"
+literal|"%d Ã %d"
 argument_list|)
 argument_list|,
 operator|*

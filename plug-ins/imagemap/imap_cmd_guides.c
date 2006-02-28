@@ -52,7 +52,7 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon2b4c34df0108
+DECL|struct|__anon2bf66c1a0108
 typedef|typedef
 struct|struct
 block|{
@@ -1469,7 +1469,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Image dimensions: %d x %d"
+literal|"Image dimensions: %d Ã %d"
 argument_list|)
 argument_list|,
 name|get_image_width
@@ -1598,7 +1598,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2b4c34df0208
+DECL|struct|__anon2bf66c1a0208
 typedef|typedef
 struct|struct
 block|{
