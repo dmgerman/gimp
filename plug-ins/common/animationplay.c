@@ -68,7 +68,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1d7d8f0103
+DECL|enum|__anon274f34f30103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -279,7 +279,7 @@ end_comment
 
 begin_function_decl
 specifier|static
-name|int
+name|gint
 name|parse_ms_tag
 parameter_list|(
 specifier|const
@@ -339,7 +339,7 @@ name|DisposeType
 modifier|*
 name|disposal
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|taglength
 parameter_list|)
@@ -356,11 +356,11 @@ name|gchar
 modifier|*
 name|str
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|duration
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|taglength
 parameter_list|)
@@ -602,7 +602,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1d7d8f0208
+DECL|struct|__anon274f34f30208
 block|{
 DECL|member|x
 DECL|member|y
@@ -901,10 +901,6 @@ modifier|*
 name|bitmap
 parameter_list|)
 block|{
-name|GdkBitmap
-modifier|*
-name|shape_mask
-decl_stmt|;
 specifier|static
 name|gchar
 modifier|*
@@ -939,6 +935,10 @@ argument_list|)
 operator|)
 condition|)
 block|{
+name|GdkBitmap
+modifier|*
+name|shape_mask
+decl_stmt|;
 name|shape_mask
 operator|=
 name|gdk_bitmap_create_from_data
@@ -1280,17 +1280,13 @@ modifier|*
 name|event
 parameter_list|)
 block|{
+name|GdkModifierType
+name|mask
+decl_stmt|;
 name|gint
 name|xp
 decl_stmt|,
 name|yp
-decl_stmt|;
-name|CursorOffset
-modifier|*
-name|p
-decl_stmt|;
-name|GdkModifierType
-name|mask
 decl_stmt|;
 name|gdk_window_get_pointer
 argument_list|(
@@ -1314,8 +1310,10 @@ operator|&
 name|GDK_BUTTON1_MASK
 condition|)
 block|{
+name|CursorOffset
+modifier|*
 name|p
-operator|=
+init|=
 name|g_object_get_data
 argument_list|(
 name|G_OBJECT
@@ -1325,7 +1323,7 @@ argument_list|)
 argument_list|,
 literal|"cursor-offset"
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 operator|!
@@ -3255,7 +3253,6 @@ name|drawable_id
 argument_list|)
 condition|)
 block|{
-comment|/* alpha */
 name|destptr
 operator|=
 name|preview_data
@@ -3446,7 +3443,6 @@ operator|==
 name|height
 operator|)
 condition|)
-block|{
 name|memcpy
 argument_list|(
 name|preview_data
@@ -3460,7 +3456,6 @@ operator|*
 literal|3
 argument_list|)
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|detached
@@ -3596,7 +3591,6 @@ name|drawable_id
 argument_list|)
 condition|)
 block|{
-comment|/* alpha */
 name|srcptr
 operator|=
 name|rawframe
@@ -4006,13 +4000,9 @@ literal|0
 operator|)
 condition|)
 block|{
-name|int
+name|gint
 name|top
-decl_stmt|,
-name|bottom
-decl_stmt|;
-name|top
-operator|=
+init|=
 operator|(
 name|rawy
 operator|<
@@ -4022,9 +4012,10 @@ condition|?
 literal|0
 else|:
 name|rawy
-expr_stmt|;
+decl_stmt|;
+name|gint
 name|bottom
-operator|=
+init|=
 operator|(
 operator|(
 name|rawy
@@ -4044,7 +4035,7 @@ name|height
 operator|-
 literal|1
 operator|)
-expr_stmt|;
+decl_stmt|;
 name|reshape_from_bitmap
 argument_list|(
 name|shape_preview_mask
@@ -4159,13 +4150,9 @@ literal|0
 operator|)
 condition|)
 block|{
-name|int
+name|gint
 name|top
-decl_stmt|,
-name|bottom
-decl_stmt|;
-name|top
-operator|=
+init|=
 operator|(
 name|rawy
 operator|<
@@ -4175,9 +4162,10 @@ condition|?
 literal|0
 else|:
 name|rawy
-expr_stmt|;
+decl_stmt|;
+name|gint
 name|bottom
-operator|=
+init|=
 operator|(
 operator|(
 name|rawy
@@ -4197,7 +4185,7 @@ name|height
 operator|-
 literal|1
 operator|)
-expr_stmt|;
+decl_stmt|;
 name|gdk_draw_rgb_image
 argument_list|(
 name|drawing_area
@@ -4333,7 +4321,6 @@ name|drawable_id
 argument_list|)
 condition|)
 block|{
-comment|/* alpha */
 name|destptr
 operator|=
 name|preview_data
@@ -4741,7 +4728,6 @@ name|drawable_id
 argument_list|)
 condition|)
 block|{
-comment|/* alpha */
 name|srcptr
 operator|=
 name|rawframe
@@ -5196,13 +5182,9 @@ literal|0
 operator|)
 condition|)
 block|{
-name|int
+name|gint
 name|top
-decl_stmt|,
-name|bottom
-decl_stmt|;
-name|top
-operator|=
+init|=
 operator|(
 name|rawy
 operator|<
@@ -5212,9 +5194,10 @@ condition|?
 literal|0
 else|:
 name|rawy
-expr_stmt|;
+decl_stmt|;
+name|gint
 name|bottom
-operator|=
+init|=
 operator|(
 operator|(
 name|rawy
@@ -5234,7 +5217,7 @@ name|height
 operator|-
 literal|1
 operator|)
-expr_stmt|;
+decl_stmt|;
 name|reshape_from_bitmap
 argument_list|(
 name|shape_preview_mask
@@ -5349,13 +5332,9 @@ literal|0
 operator|)
 condition|)
 block|{
-name|int
+name|gint
 name|top
-decl_stmt|,
-name|bottom
-decl_stmt|;
-name|top
-operator|=
+init|=
 operator|(
 name|rawy
 operator|<
@@ -5365,9 +5344,10 @@ condition|?
 literal|0
 else|:
 name|rawy
-expr_stmt|;
+decl_stmt|;
+name|gint
 name|bottom
-operator|=
+init|=
 operator|(
 operator|(
 name|rawy
@@ -5387,7 +5367,7 @@ name|height
 operator|-
 literal|1
 operator|)
-expr_stmt|;
+decl_stmt|;
 name|gdk_draw_rgb_image
 argument_list|(
 name|drawing_area
@@ -5507,12 +5487,12 @@ name|progress
 argument_list|,
 operator|(
 operator|(
-name|float
+name|gfloat
 operator|)
 name|frame_number
 operator|/
 call|(
-name|float
+name|gfloat
 call|)
 argument_list|(
 name|total_frames
@@ -5562,7 +5542,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|preview_data
@@ -6247,11 +6227,11 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|is_ms_tag (const char * str,gint * duration,gint * taglength)
+DECL|function|is_ms_tag (const gchar * str,gint * duration,gint * taglength)
 name|is_ms_tag
 parameter_list|(
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|str
 parameter_list|,
@@ -6512,35 +6492,27 @@ end_function
 
 begin_function
 specifier|static
-name|int
-DECL|function|parse_ms_tag (const char * str)
+name|gint
+DECL|function|parse_ms_tag (const gchar * str)
 name|parse_ms_tag
 parameter_list|(
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|str
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|;
-name|int
-name|rtn
-decl_stmt|;
-name|int
-name|dummy
-decl_stmt|;
-name|int
+name|gint
 name|length
-decl_stmt|;
-name|length
-operator|=
+init|=
 name|strlen
 argument_list|(
 name|str
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 for|for
 control|(
 name|i
@@ -6555,6 +6527,12 @@ name|i
 operator|++
 control|)
 block|{
+name|gint
+name|rtn
+decl_stmt|;
+name|gint
+name|dummy
+decl_stmt|;
 if|if
 condition|(
 name|is_ms_tag
@@ -6586,11 +6564,11 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|is_disposal_tag (const char * str,DisposeType * disposal,int * taglength)
+DECL|function|is_disposal_tag (const gchar * str,DisposeType * disposal,gint * taglength)
 name|is_disposal_tag
 parameter_list|(
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|str
 parameter_list|,
@@ -6598,7 +6576,7 @@ name|DisposeType
 modifier|*
 name|disposal
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|taglength
 parameter_list|)
@@ -6681,33 +6659,26 @@ end_function
 begin_function
 specifier|static
 name|DisposeType
-DECL|function|parse_disposal_tag (const char * str)
+DECL|function|parse_disposal_tag (const gchar * str)
 name|parse_disposal_tag
 parameter_list|(
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|str
 parameter_list|)
 block|{
-name|DisposeType
-name|rtn
-decl_stmt|;
-name|int
+name|gint
 name|i
-decl_stmt|,
-name|dummy
 decl_stmt|;
 name|gint
 name|length
-decl_stmt|;
-name|length
-operator|=
+init|=
 name|strlen
 argument_list|(
 name|str
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 for|for
 control|(
 name|i
@@ -6722,6 +6693,12 @@ name|i
 operator|++
 control|)
 block|{
+name|DisposeType
+name|rtn
+decl_stmt|;
+name|gint
+name|dummy
+decl_stmt|;
 if|if
 condition|(
 name|is_disposal_tag
