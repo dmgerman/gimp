@@ -85,11 +85,19 @@ argument_list|(
 name|ARCH_X86_64
 argument_list|)
 operator|||
+operator|(
 operator|!
 name|defined
 argument_list|(
 name|PIC
 argument_list|)
+operator|&&
+operator|!
+name|defined
+argument_list|(
+name|__PIC__
+argument_list|)
+operator|)
 end_if
 
 begin_define
@@ -123,7 +131,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  */
+comment|/* defined(ARCH_X86) */
 end_comment
 
 begin_endif
@@ -132,7 +140,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  */
+comment|/* defined(USE_SSE) */
 end_comment
 
 begin_endif

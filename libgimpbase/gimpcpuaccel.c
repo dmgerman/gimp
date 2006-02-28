@@ -77,7 +77,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b0f54150103
+DECL|enum|__anon29cfa2500103
 block|{
 DECL|enumerator|ARCH_X86_VENDOR_NONE
 name|ARCH_X86_VENDOR_NONE
@@ -124,7 +124,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0f54150203
+DECL|enum|__anon29cfa2500203
 block|{
 DECL|enumerator|ARCH_X86_INTEL_FEATURE_MMX
 name|ARCH_X86_INTEL_FEATURE_MMX
@@ -201,7 +201,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0f54150303
+DECL|enum|__anon29cfa2500303
 block|{
 DECL|enumerator|ARCH_X86_INTEL_FEATURE_PNI
 name|ARCH_X86_INTEL_FEATURE_PNI
@@ -222,10 +222,17 @@ argument_list|(
 name|ARCH_X86_64
 argument_list|)
 operator|&&
+operator|(
 name|defined
 argument_list|(
 name|PIC
 argument_list|)
+operator|||
+name|defined
+argument_list|(
+name|__PIC__
+argument_list|)
+operator|)
 end_if
 
 begin_define

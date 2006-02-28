@@ -80,11 +80,19 @@ argument_list|(
 name|ARCH_X86_64
 argument_list|)
 operator|||
+operator|(
 operator|!
 name|defined
 argument_list|(
 name|PIC
 argument_list|)
+operator|&&
+operator|!
+name|defined
+argument_list|(
+name|__PIC__
+argument_list|)
+operator|)
 end_if
 
 begin_define
@@ -101,7 +109,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* ARCH_X86_64 || !PIC */
+comment|/* ARCH_X86_64 || (!defined(PIC)&& !defined(__PIC__)) */
 end_comment
 
 begin_endif
