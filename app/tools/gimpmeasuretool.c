@@ -3415,7 +3415,7 @@ argument_list|(
 name|buf
 argument_list|)
 argument_list|,
-literal|"%.1f %s, %.2f \302\260 (%d x %d)"
+literal|"%.1f %s, %.2f \302\260 (%d Ã %d)"
 argument_list|,
 name|pixel_distance
 argument_list|,
@@ -3443,7 +3443,7 @@ argument_list|(
 name|format
 argument_list|)
 argument_list|,
-literal|"%%.%df %s, %%.2f \302\260 (%%.%df x %%.%df)"
+literal|"%%.%df %s, %%.2f \302\260 (%%.%df Ã %%.%df)"
 argument_list|,
 name|_gimp_unit_get_digits
 argument_list|(

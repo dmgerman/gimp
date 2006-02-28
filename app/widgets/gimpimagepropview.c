@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon298cb4330103
+DECL|enum|__anon2940f8130103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1311,9 +1311,9 @@ argument_list|)
 argument_list|,
 name|ngettext
 argument_list|(
-literal|"%d x %d pixel"
+literal|"%d Ã %d pixel"
 argument_list|,
-literal|"%d x %d pixels"
+literal|"%d Ã %d pixels"
 argument_list|,
 name|image
 operator|->
@@ -1378,7 +1378,7 @@ argument_list|(
 name|format_buf
 argument_list|)
 argument_list|,
-literal|"%%.%df x %%.%df %s"
+literal|"%%.%df Ã %%.%df %s"
 argument_list|,
 name|unit_digits
 operator|+
@@ -1496,7 +1496,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"%g x %g %s"
+literal|"%g Ã %g %s"
 argument_list|)
 argument_list|,
 name|image

@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c86b7e0103
+DECL|enum|__anon28e68ff90103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -1118,7 +1118,7 @@ decl_stmt|;
 return|return
 name|g_strdup_printf
 argument_list|(
-literal|"%s (%d x %d)"
+literal|"%s (%d Ã %d)"
 argument_list|,
 name|GIMP_OBJECT
 argument_list|(

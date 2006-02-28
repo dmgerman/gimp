@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2920cbb80103
+DECL|enum|__anon2bf7e9550103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1768,9 +1768,9 @@ name|g_strdup_printf
 argument_list|(
 name|ngettext
 argument_list|(
-literal|"%d x %d pixel"
+literal|"%d Ã %d pixel"
 argument_list|,
-literal|"%d x %d pixels"
+literal|"%d Ã %d pixels"
 argument_list|,
 name|box
 operator|->
@@ -1904,7 +1904,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"%d x %d dpi"
+literal|"%d Ã %d dpi"
 argument_list|)
 argument_list|,
 name|xres

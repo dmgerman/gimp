@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d2988d0103
+DECL|enum|__anon2c2377060103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -1896,7 +1896,7 @@ name|basename
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"%s (%d x %d)"
+literal|"%s (%d Ã %d)"
 argument_list|,
 name|tmp
 argument_list|,
@@ -2248,9 +2248,9 @@ name|str
 argument_list|,
 name|ngettext
 argument_list|(
-literal|"%d x %d pixel"
+literal|"%d Ã %d pixel"
 argument_list|,
-literal|"%d x %d pixels"
+literal|"%d Ã %d pixels"
 argument_list|,
 name|thumbnail
 operator|->

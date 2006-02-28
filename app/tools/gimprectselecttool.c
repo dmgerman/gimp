@@ -1512,7 +1512,7 @@ name|rect_sel
 operator|->
 name|w
 argument_list|,
-literal|" x "
+literal|" Ã "
 argument_list|,
 name|rect_sel
 operator|->

@@ -617,25 +617,30 @@ name|gint
 name|h
 parameter_list|)
 block|{
-name|char
+name|gchar
 name|scratch
 index|[
 literal|16
 index|]
 decl_stmt|;
-name|sprintf
+name|snprintf
 argument_list|(
 name|scratch
 argument_list|,
-literal|"%d x %d"
+sizeof|sizeof
+argument_list|(
+name|scratch
+argument_list|)
+argument_list|,
+literal|"%d Ã %d"
 argument_list|,
 operator|(
-name|int
+name|gint
 operator|)
 name|w
 argument_list|,
 operator|(
-name|int
+name|gint
 operator|)
 name|h
 argument_list|)

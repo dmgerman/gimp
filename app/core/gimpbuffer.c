@@ -963,7 +963,7 @@ decl_stmt|;
 return|return
 name|g_strdup_printf
 argument_list|(
-literal|"%s (%d x %d)"
+literal|"%s (%d Ã %d)"
 argument_list|,
 name|GIMP_OBJECT
 argument_list|(

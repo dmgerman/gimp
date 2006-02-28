@@ -6814,7 +6814,7 @@ else|:
 name|rx1
 operator|)
 argument_list|,
-literal|" x "
+literal|" Ã "
 argument_list|,
 operator|(
 name|ry2
