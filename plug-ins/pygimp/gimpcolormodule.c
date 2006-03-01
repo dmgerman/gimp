@@ -26,6 +26,12 @@ directive|include
 file|"pygimpcolor.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"pygimp-util.h"
+end_include
+
 begin_if
 if|#
 directive|if
@@ -766,7 +772,7 @@ decl_stmt|,
 modifier|*
 name|d
 decl_stmt|;
-name|init_pygobject
+name|pygimp_init_pygobject
 argument_list|()
 expr_stmt|;
 comment|/* Create the module and add the functions */

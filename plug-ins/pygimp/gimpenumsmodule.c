@@ -44,6 +44,12 @@ directive|include
 file|"pygimp-api.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"pygimp-util.h"
+end_include
+
 begin_function
 specifier|static
 name|void
@@ -344,7 +350,7 @@ name|PyObject
 modifier|*
 name|m
 decl_stmt|;
-name|init_pygobject
+name|pygimp_init_pygobject
 argument_list|()
 expr_stmt|;
 name|init_pygimp
