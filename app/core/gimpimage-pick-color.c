@@ -24,25 +24,25 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpdrawable.h"
+file|"gimpdrawable.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimpimage.h"
+file|"gimpimage.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimpimage-pick-color.h"
+file|"gimpimage-pick-color.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimppickable.h"
+file|"gimppickable.h"
 end_include
 
 begin_function
@@ -212,6 +212,7 @@ name|drawable
 argument_list|)
 expr_stmt|;
 block|}
+comment|/* Do *not* call gimp_pickable_flush() here because it's too expensive    * to call it unconditionally each time e.g. the cursor view is updated.    * Instead, call gimp_pickable_flush() in the callers if needed.    */
 if|if
 condition|(
 name|sample_type

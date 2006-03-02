@@ -180,12 +180,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpprojection.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpstrokedesc.h"
 end_include
 
@@ -197,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a35166b0103
+DECL|enum|__anon29c8d3950103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -7238,13 +7232,26 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|projection
-operator|=
-name|gimp_projection_get_tiles
+name|gimp_pickable_flush
+argument_list|(
+name|GIMP_PICKABLE
 argument_list|(
 name|gimage
 operator|->
 name|projection
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|projection
+operator|=
+name|gimp_pickable_get_tiles
+argument_list|(
+name|GIMP_PICKABLE
+argument_list|(
+name|gimage
+operator|->
+name|projection
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|width

@@ -84,7 +84,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b382d960108
+DECL|struct|__anon28877d890108
 block|{
 DECL|member|gimage
 name|GimpImage
@@ -432,6 +432,11 @@ operator|=
 name|GIMP_PICKABLE
 argument_list|(
 name|drawable
+argument_list|)
+expr_stmt|;
+name|gimp_pickable_flush
+argument_list|(
+name|pickable
 argument_list|)
 expr_stmt|;
 name|src_type
@@ -844,6 +849,11 @@ operator|=
 name|GIMP_PICKABLE
 argument_list|(
 name|drawable
+argument_list|)
+expr_stmt|;
+name|gimp_pickable_flush
+argument_list|(
+name|pickable
 argument_list|)
 expr_stmt|;
 name|cont

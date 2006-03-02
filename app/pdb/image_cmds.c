@@ -160,6 +160,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimppickable.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpunit.h"
 end_include
 
@@ -6180,6 +6186,30 @@ if|if
 condition|(
 name|success
 condition|)
+block|{
+if|if
+condition|(
+name|sample_merged
+condition|)
+name|gimp_pickable_flush
+argument_list|(
+name|GIMP_PICKABLE
+argument_list|(
+name|gimage
+operator|->
+name|projection
+argument_list|)
+argument_list|)
+expr_stmt|;
+else|else
+name|gimp_pickable_flush
+argument_list|(
+name|GIMP_PICKABLE
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|success
 operator|=
 name|gimp_image_pick_color
@@ -6212,6 +6242,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 name|return_args
 operator|=
@@ -6343,7 +6374,7 @@ literal|"gimp-image-pick-color"
 block|,
 literal|"Determine the color at the given drawable coordinates"
 block|,
-literal|"This tool determines the color at the specified coordinates. The returned color is an RGB triplet even for grayscale and indexed drawables. If the coordinates lie outside of the extents of the specified drawable, then an error is returned. If the drawable has an alpha channel, the algorithm examines the alpha value of the drawable at the coordinates. If the alpha value is completely transparent (0), then an error is returned. If the sample_merged parameter is non-zero, the data of the composite image will be used instead of that for the specified drawable. This is equivalent to sampling for colors after merging all visible layers. In the case of a merged sampling, the supplied drawable is ignored except for finding the image it belongs to."
+literal|"This tool determines the color at the specified coordinates. The returned color is an RGB triplet even for grayscale and indexed drawables. If the coordinates lie outside of the extents of the specified drawable, then an error is returned. If the drawable has an alpha channel, the algorithm examines the alpha value of the drawable at the coordinates. If the alpha value is completely transparent (0), then an error is returned. If the sample_merged parameter is non-zero, the data of the composite image will be used instead of that for the specified drawable. This is equivalent to sampling for colors after merging all visible layers. In the case of a merged sampling, the supplied drawable is ignored."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,

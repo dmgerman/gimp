@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ace13050103
+DECL|enum|__anon2a328b7c0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -128,6 +128,18 @@ parameter_list|,
 name|gint64
 modifier|*
 name|gui_size
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_projection_pickable_flush
+parameter_list|(
+name|GimpPickable
+modifier|*
+name|pickable
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -608,6 +620,12 @@ parameter_list|)
 block|{
 name|iface
 operator|->
+name|flush
+operator|=
+name|gimp_projection_pickable_flush
+expr_stmt|;
+name|iface
+operator|->
 name|get_image
 operator|=
 name|gimp_projection_get_image
@@ -617,6 +635,12 @@ operator|->
 name|get_image_type
 operator|=
 name|gimp_projection_get_image_type
+expr_stmt|;
+name|iface
+operator|->
+name|get_bytes
+operator|=
+name|gimp_projection_get_bytes
 expr_stmt|;
 name|iface
 operator|->
@@ -811,6 +835,39 @@ argument_list|,
 name|gui_size
 argument_list|)
 return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_projection_pickable_flush (GimpPickable * pickable)
+name|gimp_projection_pickable_flush
+parameter_list|(
+name|GimpPickable
+modifier|*
+name|pickable
+parameter_list|)
+block|{
+name|GimpProjection
+modifier|*
+name|proj
+init|=
+name|GIMP_PROJECTION
+argument_list|(
+name|pickable
+argument_list|)
+decl_stmt|;
+name|gimp_projection_finish_draw
+argument_list|(
+name|proj
+argument_list|)
+expr_stmt|;
+name|gimp_projection_flush_now
+argument_list|(
+name|proj
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -1364,6 +1421,12 @@ operator|.
 name|idle_id
 condition|)
 block|{
+if|#
+directive|if
+literal|0
+block|g_printerr ("%s: flushing idle render queue\n", G_STRFUNC);
+endif|#
+directive|endif
 name|g_source_remove
 argument_list|(
 name|proj

@@ -167,7 +167,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon289003b50103
+DECL|enum|__anon29782f190103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -959,6 +959,12 @@ operator|->
 name|get_image_type
 operator|=
 name|gimp_drawable_type
+expr_stmt|;
+name|iface
+operator|->
+name|get_bytes
+operator|=
+name|gimp_drawable_bytes
 expr_stmt|;
 name|iface
 operator|->

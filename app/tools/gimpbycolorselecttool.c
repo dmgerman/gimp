@@ -641,6 +641,11 @@ argument_list|(
 name|drawable
 argument_list|)
 expr_stmt|;
+name|gimp_pickable_flush
+argument_list|(
+name|pickable
+argument_list|)
+expr_stmt|;
 name|col
 operator|=
 name|gimp_pickable_get_color_at

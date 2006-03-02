@@ -90,12 +90,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpprojection.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpclone.h"
 end_include
 
@@ -1039,6 +1033,11 @@ operator|+=
 name|off_y
 expr_stmt|;
 block|}
+name|gimp_pickable_flush
+argument_list|(
+name|src_pickable
+argument_list|)
+expr_stmt|;
 block|}
 name|area
 operator|=
