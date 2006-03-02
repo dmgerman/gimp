@@ -282,7 +282,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c70d6200103
+DECL|enum|__anon2bb845d40103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -361,7 +361,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c70d6200203
+DECL|enum|__anon2bb845d40203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4567,6 +4567,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|gimp_image_real_flush (GimpImage * gimage)
 name|gimp_image_real_flush
