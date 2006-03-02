@@ -2222,7 +2222,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_raise_layer:  * @image_ID: The image.  * @layer_ID: The layer to raise.  *  * Raise the specified layer in the image's layer stack  *  * This procedure raises the specified layer one step in the existing  * layer stack. It will not move the layer if there is no layer above  * it, or the layer has no alpha channel.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_raise_layer:  * @image_ID: The image.  * @layer_ID: The layer to raise.  *  * Raise the specified layer in the image's layer stack  *  * This procedure raises the specified layer one step in the existing  * layer stack. It will not move the layer if there is no layer above  * it.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -2296,7 +2296,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_lower_layer:  * @image_ID: The image.  * @layer_ID: The layer to lower.  *  * Lower the specified layer in the image's layer stack  *  * This procedure lowers the specified layer one step in the existing  * layer stack. It will not move the layer if there is no layer below  * it, or the layer has no alpha channel.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_lower_layer:  * @image_ID: The image.  * @layer_ID: The layer to lower.  *  * Lower the specified layer in the image's layer stack  *  * This procedure lowers the specified layer one step in the existing  * layer stack. It will not move the layer if there is no layer below  * it.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -2370,7 +2370,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_raise_layer_to_top:  * @image_ID: The image.  * @layer_ID: The layer to raise to top.  *  * Raise the specified layer in the image's layer stack to top of stack  *  * This procedure raises the specified layer to top of the existing  * layer stack. It will not move the layer if there is no layer above  * it, or the layer has no alpha channel.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_raise_layer_to_top:  * @image_ID: The image.  * @layer_ID: The layer to raise to top.  *  * Raise the specified layer in the image's layer stack to top of stack  *  * This procedure raises the specified layer to top of the existing  * layer stack. It will not move the layer if there is no layer above  * it.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -2444,7 +2444,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_lower_layer_to_bottom:  * @image_ID: The image.  * @layer_ID: The layer to lower to bottom.  *  * Lower the specified layer in the image's layer stack to bottom of  * stack  *  * This procedure lowers the specified layer to bottom of the existing  * layer stack. It will not move the layer if there is no layer below  * it, or the layer has no alpha channel.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_lower_layer_to_bottom:  * @image_ID: The image.  * @layer_ID: The layer to lower to bottom.  *  * Lower the specified layer in the image's layer stack to bottom of  * stack  *  * This procedure lowers the specified layer to bottom of the existing  * layer stack. It will not move the layer if there is no layer below  * it.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -3198,7 +3198,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_lower_channel:  * @image_ID: The image.  * @layer_ID: The layer to lower.  *  * Lower the specified layer in the image's layer stack  *  * This procedure lowers the specified layer one step in the existing  * layer stack. It will not move the layer if there is no layer below  * it, or the layer has no alpha channel.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_lower_channel:  * @image_ID: The image.  * @layer_ID: The layer to lower.  *  * Lower the specified layer in the image's layer stack  *  * This procedure lowers the specified layer one step in the existing  * layer stack. It will not move the layer if there is no layer below  * it.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function

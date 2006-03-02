@@ -7262,7 +7262,7 @@ literal|"gimp-image-raise-layer"
 block|,
 literal|"Raise the specified layer in the image's layer stack"
 block|,
-literal|"This procedure raises the specified layer one step in the existing layer stack. It will not move the layer if there is no layer above it, or the layer has no alpha channel."
+literal|"This procedure raises the specified layer one step in the existing layer stack. It will not move the layer if there is no layer above it."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -7464,7 +7464,7 @@ literal|"gimp-image-lower-layer"
 block|,
 literal|"Lower the specified layer in the image's layer stack"
 block|,
-literal|"This procedure lowers the specified layer one step in the existing layer stack. It will not move the layer if there is no layer below it, or the layer has no alpha channel."
+literal|"This procedure lowers the specified layer one step in the existing layer stack. It will not move the layer if there is no layer below it."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -7666,7 +7666,7 @@ literal|"gimp-image-raise-layer-to-top"
 block|,
 literal|"Raise the specified layer in the image's layer stack to top of stack"
 block|,
-literal|"This procedure raises the specified layer to top of the existing layer stack. It will not move the layer if there is no layer above it, or the layer has no alpha channel."
+literal|"This procedure raises the specified layer to top of the existing layer stack. It will not move the layer if there is no layer above it."
 block|,
 literal|"Wolfgang Hofer, Sven Neumann"
 block|,
@@ -7868,7 +7868,7 @@ literal|"gimp-image-lower-layer-to-bottom"
 block|,
 literal|"Lower the specified layer in the image's layer stack to bottom of stack"
 block|,
-literal|"This procedure lowers the specified layer to bottom of the existing layer stack. It will not move the layer if there is no layer below it, or the layer has no alpha channel."
+literal|"This procedure lowers the specified layer to bottom of the existing layer stack. It will not move the layer if there is no layer below it."
 block|,
 literal|"Wolfgang Hofer, Sven Neumann"
 block|,
@@ -9962,7 +9962,7 @@ literal|"gimp-image-lower-channel"
 block|,
 literal|"Lower the specified layer in the image's layer stack"
 block|,
-literal|"This procedure lowers the specified layer one step in the existing layer stack. It will not move the layer if there is no layer below it, or the layer has no alpha channel."
+literal|"This procedure lowers the specified layer one step in the existing layer stack. It will not move the layer if there is no layer below it."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
