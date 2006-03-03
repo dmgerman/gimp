@@ -1883,7 +1883,7 @@ name|all
 argument_list|,
 name|_
 argument_list|(
-literal|"All Files"
+literal|"All files"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1915,7 +1915,7 @@ name|all
 argument_list|,
 name|_
 argument_list|(
-literal|"All Images"
+literal|"All images"
 argument_list|)
 argument_list|)
 expr_stmt|;
