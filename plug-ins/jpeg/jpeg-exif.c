@@ -925,7 +925,8 @@ name|GTK_RESPONSE_OK
 argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|,
-name|NULL
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 name|gtk_dialog_set_default_response
