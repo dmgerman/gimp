@@ -750,6 +750,8 @@ name|uri
 argument_list|,
 name|GIMP_RUN_INTERACTIVE
 argument_list|,
+name|load_proc
+argument_list|,
 operator|&
 name|status
 argument_list|,

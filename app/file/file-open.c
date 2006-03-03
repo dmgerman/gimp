@@ -1482,7 +1482,7 @@ end_function
 begin_function
 name|GimpLayer
 modifier|*
-DECL|function|file_open_layer (Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpImage * dest_image,const gchar * uri,GimpRunMode run_mode,GimpPDBStatusType * status,GError ** error)
+DECL|function|file_open_layer (Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpImage * dest_image,const gchar * uri,GimpRunMode run_mode,PlugInProcDef * file_proc,GimpPDBStatusType * status,GError ** error)
 name|file_open_layer
 parameter_list|(
 name|Gimp
@@ -1508,6 +1508,10 @@ name|uri
 parameter_list|,
 name|GimpRunMode
 name|run_mode
+parameter_list|,
+name|PlugInProcDef
+modifier|*
+name|file_proc
 parameter_list|,
 name|GimpPDBStatusType
 modifier|*
@@ -1626,7 +1630,7 @@ name|uri
 argument_list|,
 name|uri
 argument_list|,
-name|NULL
+name|file_proc
 argument_list|,
 name|run_mode
 argument_list|,

@@ -1695,6 +1695,8 @@ name|uri
 argument_list|,
 name|GIMP_RUN_INTERACTIVE
 argument_list|,
+name|NULL
+argument_list|,
 operator|&
 name|status
 argument_list|,

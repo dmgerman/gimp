@@ -216,6 +216,10 @@ parameter_list|,
 name|GimpRunMode
 name|run_mode
 parameter_list|,
+name|PlugInProcDef
+modifier|*
+name|file_proc
+parameter_list|,
 name|GimpPDBStatusType
 modifier|*
 name|status
