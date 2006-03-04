@@ -1279,11 +1279,11 @@ name|gimp_standard_help_func
 argument_list|,
 name|NULL
 argument_list|,
-name|GTK_STOCK_NO
+name|GTK_STOCK_CANCEL
 argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|,
-name|GTK_STOCK_YES
+name|GTK_STOCK_SAVE
 argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,
@@ -1332,7 +1332,8 @@ name|box
 argument_list|,
 name|_
 argument_list|(
-literal|"Do you want to use this name anyway?"
+literal|"Do you want to save the image using this "
+literal|"name anyway?"
 argument_list|)
 argument_list|)
 expr_stmt|;
