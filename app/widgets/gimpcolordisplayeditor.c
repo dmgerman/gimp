@@ -63,7 +63,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b36a4770103
+DECL|enum|__anon2948a51b0103
 block|{
 DECL|enumerator|SRC_COLUMN_NAME
 name|SRC_COLUMN_NAME
@@ -79,7 +79,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b36a4770203
+DECL|enum|__anon2948a51b0203
 block|{
 DECL|enumerator|DEST_COLUMN_ENABLED
 name|DEST_COLUMN_ENABLED
@@ -756,21 +756,6 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
-name|gimp_help_set_help_data
-argument_list|(
-name|editor
-operator|->
-name|add_button
-argument_list|,
-name|_
-argument_list|(
-literal|"Add the selected filter to the list of "
-literal|"active filters."
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 name|g_signal_connect
 argument_list|(
 name|editor
@@ -852,21 +837,6 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|image
-argument_list|)
-expr_stmt|;
-name|gimp_help_set_help_data
-argument_list|(
-name|editor
-operator|->
-name|remove_button
-argument_list|,
-name|_
-argument_list|(
-literal|"Remove the selected filter from the list of "
-literal|"active filters."
-argument_list|)
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -2092,6 +2062,12 @@ decl_stmt|;
 name|GtkTreeIter
 name|iter
 decl_stmt|;
+name|gchar
+modifier|*
+name|tip
+init|=
+name|NULL
+decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
@@ -2141,6 +2117,18 @@ operator|&
 name|val
 argument_list|)
 expr_stmt|;
+name|tip
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Add '%s' to the list of active filters"
+argument_list|)
+argument_list|,
+name|name
+argument_list|)
+expr_stmt|;
 name|g_value_unset
 argument_list|(
 operator|&
@@ -2157,6 +2145,22 @@ argument_list|,
 name|name
 operator|!=
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_help_set_help_data
+argument_list|(
+name|editor
+operator|->
+name|add_button
+argument_list|,
+name|tip
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|tip
 argument_list|)
 expr_stmt|;
 block|}
@@ -2187,6 +2191,12 @@ decl_stmt|;
 name|GimpColorDisplay
 modifier|*
 name|display
+init|=
+name|NULL
+decl_stmt|;
+name|gchar
+modifier|*
+name|tip
 init|=
 name|NULL
 decl_stmt|;
@@ -2270,7 +2280,40 @@ operator|&
 name|val
 argument_list|)
 expr_stmt|;
+name|tip
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Remove '%s' from the list of active filters"
+argument_list|)
+argument_list|,
+name|GIMP_COLOR_DISPLAY_GET_CLASS
+argument_list|(
+name|display
+argument_list|)
+operator|->
+name|name
+argument_list|)
+expr_stmt|;
 block|}
+name|gimp_help_set_help_data
+argument_list|(
+name|editor
+operator|->
+name|remove_button
+argument_list|,
+name|tip
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|tip
+argument_list|)
+expr_stmt|;
 name|gtk_widget_set_sensitive
 argument_list|(
 name|editor
