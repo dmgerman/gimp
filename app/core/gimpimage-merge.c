@@ -665,7 +665,7 @@ name|GimpLayer
 modifier|*
 name|layer
 init|=
-name|list
+name|layer_list
 operator|->
 name|data
 decl_stmt|;
