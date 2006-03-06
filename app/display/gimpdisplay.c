@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29516c0f0103
+DECL|enum|__anon2b63f91c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1664,6 +1664,10 @@ modifier|*
 name|gimage
 parameter_list|)
 block|{
+name|GimpImage
+modifier|*
+name|old_image
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY
@@ -1704,6 +1708,15 @@ name|shell
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|old_image
+operator|=
+name|g_object_ref
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+argument_list|)
+expr_stmt|;
 name|gimp_display_disconnect
 argument_list|(
 name|gdisp
@@ -1714,6 +1727,11 @@ argument_list|(
 name|gdisp
 argument_list|,
 name|gimage
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|old_image
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_reconnect
