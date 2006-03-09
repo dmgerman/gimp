@@ -5070,6 +5070,10 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
+if|if
+condition|(
+name|_button_press_func
+condition|)
 return|return
 name|_button_press_func
 argument_list|(
@@ -5079,6 +5083,9 @@ name|event
 argument_list|,
 name|_button_press_param
 argument_list|)
+return|;
+return|return
+name|NULL
 return|;
 block|}
 end_function
