@@ -4,10 +4,6 @@ comment|/*  * Animation Playback plug-in version 0.98.8  *  * (c) Adam D. Moss :
 end_comment
 
 begin_comment
-comment|/*  * BUGS:  *  Gets understandably upset if the source image is deleted  *    while the animation is playing.  Decent solution welcome.  *  *  In shaped mode, the shaped-window's mask and its pixmap contents  *    can get way out of sync (specifically, the mask changes but  *    the contents are frozen).  Starvation of GTK's redrawing thread?  *    How do I fix this?  *  *  Any more?  Let me know!  */
-end_comment
-
-begin_comment
 comment|/*  * TODO:  *  pdb interface - should we bother?  *  *  speedups (caching?  most bottlenecks seem to be in pixelrgns)  *    -> do pixelrgns properly!  *  *  write other half of the user interface (default timing, disposal&c)  */
 end_comment
 
@@ -68,7 +64,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b1b278f0103
+DECL|enum|__anon2b091b910103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -602,7 +598,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1b278f0208
+DECL|struct|__anon2b091b910208
 block|{
 DECL|member|x
 DECL|member|y
@@ -1023,8 +1019,8 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|shape_pressed (GtkWidget * widget,GdkEventButton * event)
-name|shape_pressed
+DECL|function|menu_popup (GtkWidget * widget,GdkEventButton * event)
+name|menu_popup
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -1035,22 +1031,6 @@ modifier|*
 name|event
 parameter_list|)
 block|{
-name|CursorOffset
-modifier|*
-name|p
-decl_stmt|;
-comment|/* ignore double and triple click */
-if|if
-condition|(
-name|event
-operator|->
-name|type
-operator|!=
-name|GDK_BUTTON_PRESS
-condition|)
-return|return
-name|FALSE
-return|;
 if|if
 condition|(
 name|event
@@ -1120,11 +1100,56 @@ name|time
 argument_list|)
 expr_stmt|;
 return|return
+name|TRUE
+return|;
+block|}
+return|return
 name|FALSE
 return|;
 block|}
+end_function
+
+begin_function
+specifier|static
+name|gboolean
+DECL|function|shape_pressed (GtkWidget * widget,GdkEventButton * event)
+name|shape_pressed
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|GdkEventButton
+modifier|*
+name|event
+parameter_list|)
+block|{
+if|if
+condition|(
+name|menu_popup
+argument_list|(
+name|widget
+argument_list|,
+name|event
+argument_list|)
+condition|)
+return|return
+name|TRUE
+return|;
+comment|/* ignore double and triple click */
+if|if
+condition|(
+name|event
+operator|->
+name|type
+operator|==
+name|GDK_BUTTON_PRESS
+condition|)
+block|{
+name|CursorOffset
+modifier|*
 name|p
-operator|=
+init|=
 name|g_object_get_data
 argument_list|(
 name|G_OBJECT
@@ -1134,7 +1159,7 @@ argument_list|)
 argument_list|,
 literal|"cursor-offset"
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 operator|!
@@ -1198,6 +1223,7 @@ operator|->
 name|window
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|FALSE
 return|;
@@ -2360,6 +2386,13 @@ argument_list|,
 name|height
 argument_list|)
 expr_stmt|;
+name|gtk_widget_add_events
+argument_list|(
+name|drawing_area
+argument_list|,
+name|GDK_BUTTON_PRESS_MASK
+argument_list|)
+expr_stmt|;
 name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
@@ -2373,6 +2406,20 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|drawing_area
+argument_list|)
+expr_stmt|;
+name|g_signal_connect
+argument_list|(
+name|drawing_area
+argument_list|,
+literal|"button-press-event"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|menu_popup
+argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|progress
