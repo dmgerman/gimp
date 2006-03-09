@@ -59,7 +59,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ec5a5d0108
+DECL|struct|__anon2bbc5abd0108
 block|{
 DECL|member|default_action
 name|ExportFunc
@@ -879,15 +879,15 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|export_action_merge_flat
+DECL|variable|export_action_merge_or_flatten
 specifier|static
 name|ExportAction
-name|export_action_merge_flat
+name|export_action_merge_or_flatten
 init|=
 block|{
 name|export_flatten
 block|,
-name|NULL
+name|export_merge
 block|,
 name|N_
 argument_list|(
@@ -900,10 +900,13 @@ argument_list|(
 literal|"Flatten Image"
 argument_list|)
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Merge Visible Layers"
+argument_list|)
 block|}
 block|,
-literal|0
+literal|1
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -2199,7 +2202,13 @@ argument_list|(
 name|button
 argument_list|)
 argument_list|,
-name|TRUE
+operator|(
+name|action
+operator|->
+name|choice
+operator|==
+literal|0
+operator|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -2263,6 +2272,22 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_toggle_button_set_active
+argument_list|(
+name|GTK_TOGGLE_BUTTON
+argument_list|(
+name|button
+argument_list|)
+argument_list|,
+operator|(
+name|action
+operator|->
+name|choice
+operator|==
+literal|1
+operator|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -3049,8 +3074,6 @@ condition|)
 block|{
 if|if
 condition|(
-name|background_has_alpha
-operator|||
 name|capabilities
 operator|&
 name|GIMP_EXPORT_NEEDS_ALPHA
@@ -3073,7 +3096,7 @@ argument_list|(
 name|actions
 argument_list|,
 operator|&
-name|export_action_merge_flat
+name|export_action_merge_or_flatten
 argument_list|)
 expr_stmt|;
 block|}
