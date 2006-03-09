@@ -136,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c1adaf80103
+DECL|enum|__anon2b1700460103
 block|{
 DECL|enumerator|PSD_UNKNOWN_IMAGE
 name|PSD_UNKNOWN_IMAGE
@@ -324,7 +324,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1adaf80208
+DECL|struct|__anon2b1700460208
 block|{
 DECL|member|hRes
 name|Fixed
@@ -573,7 +573,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c1adaf80308
+DECL|struct|__anon2b1700460308
 block|{
 DECL|member|signature
 name|gchar
@@ -7778,7 +7778,12 @@ name|layer
 operator|+
 name|lnum
 decl_stmt|;
-comment|/* 	   * since ps supports sloppy bounding boxes it is possible to 	   * have a 0x0 or Xx0 or 0xY layer.  Gimp doesn't support a 	   * 0x0 layer so we will just skip these.  We might be able 	   * to do something better here. 	   */
+name|gboolean
+name|empty
+init|=
+name|FALSE
+decl_stmt|;
+comment|/* 	   * Since PS supports sloppy bounding boxes it is possible to 	   * have a 0x0 or Xx0 or 0xY layer.  Gimp doesn't support a 	   * 0x0 layer so we insert an empty layer of image size 	   * instead. 	   */
 if|if
 condition|(
 operator|(
@@ -7798,13 +7803,40 @@ literal|0
 operator|)
 condition|)
 block|{
-name|IFDBG
-name|printf
+name|empty
+operator|=
+name|TRUE
+expr_stmt|;
+name|layer
+operator|->
+name|x
+operator|=
+literal|0
+expr_stmt|;
+name|layer
+operator|->
+name|y
+operator|=
+literal|0
+expr_stmt|;
+name|layer
+operator|->
+name|width
+operator|=
+name|gimp_image_width
 argument_list|(
-literal|"(bad layer dimensions -- skipping)"
+name|image_ID
 argument_list|)
-decl_stmt|;
-continue|continue;
+expr_stmt|;
+name|layer
+operator|->
+name|height
+operator|=
+name|gimp_image_height
+argument_list|(
+name|image_ID
+argument_list|)
+expr_stmt|;
 block|}
 name|numc
 operator|=
@@ -7835,6 +7867,12 @@ argument_list|(
 literal|"It's GRAY.\n"
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+operator|!
+name|empty
+condition|)
+block|{
 if|if
 condition|(
 operator|!
@@ -7977,6 +8015,7 @@ name|data
 argument_list|)
 expr_stmt|;
 block|}
+block|}
 name|layer_ID
 operator|=
 name|gimp_layer_new
@@ -8043,6 +8082,12 @@ operator|->
 name|height
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+operator|!
+name|empty
+condition|)
+block|{
 if|if
 condition|(
 operator|!
@@ -8202,7 +8247,7 @@ argument_list|,
 literal|3
 argument_list|)
 expr_stmt|;
-comment|/* Fix for unexpected layer data order for files                      * from PS files created by PanoTools. Rather 		     * than assuming an order, we find the actual order. 		     */
+comment|/* Fix for unexpected layer data order for files                          * from PS files created by PanoTools. Rather                          * than assuming an order, we find the actual order.                          */
 name|red_chan
 operator|=
 name|grn_chan
@@ -8453,6 +8498,7 @@ literal|"YAH0b\n"
 argument_list|)
 decl_stmt|;
 block|}
+block|}
 name|IFDBG
 name|fprintf
 argument_list|(
@@ -8582,6 +8628,9 @@ name|iter
 operator|=
 literal|0
 init|;
+operator|!
+name|empty
+operator|&&
 name|iter
 operator|<
 name|layer
@@ -8929,6 +8978,21 @@ operator|->
 name|bpp
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|empty
+condition|)
+block|{
+name|gimp_drawable_fill
+argument_list|(
+name|layer_ID
+argument_list|,
+name|GIMP_TRANSPARENT_FILL
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
 name|gimp_pixel_rgn_init
 argument_list|(
 operator|&
@@ -8981,6 +9045,7 @@ argument_list|,
 literal|"YAH6\n"
 argument_list|)
 decl_stmt|;
+block|}
 name|gimp_drawable_flush
 argument_list|(
 name|drawable
