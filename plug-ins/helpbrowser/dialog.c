@@ -155,7 +155,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7743a70103
+DECL|enum|__anon2c457fa30103
 block|{
 DECL|enumerator|HISTORY_TITLE
 name|HISTORY_TITLE
@@ -2411,6 +2411,8 @@ literal|"<menuitem action=\"index\" />"
 literal|"<separator />"
 literal|"<menuitem action=\"zoom-in\" />"
 literal|"<menuitem action=\"zoom-out\" />"
+literal|"<separator />"
+literal|"<menuitem action=\"close\" />"
 literal|"</popup>"
 literal|"</ui>"
 argument_list|,
