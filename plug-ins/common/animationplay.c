@@ -68,7 +68,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon274f34f30103
+DECL|enum|__anon2b1b278f0103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -473,7 +473,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|progress
 specifier|static
-name|GtkProgressBar
+name|GtkWidget
 modifier|*
 name|progress
 decl_stmt|;
@@ -602,7 +602,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274f34f30208
+DECL|struct|__anon2b1b278f0208
 block|{
 DECL|member|x
 DECL|member|y
@@ -746,6 +746,15 @@ argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Animation"
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_icon_register
+argument_list|(
+name|PLUG_IN_PROC
+argument_list|,
+name|GIMP_ICON_TYPE_STOCK_ID
+argument_list|,
+name|GTK_STOCK_MEDIA_PLAY
 argument_list|)
 expr_stmt|;
 block|}
@@ -1792,7 +1801,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Rewind animation"
+literal|"Rewind the animation"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -1836,7 +1845,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Start/Stop playback"
+literal|"Start playback"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -2089,10 +2098,6 @@ name|GtkWidget
 modifier|*
 name|abox
 decl_stmt|;
-name|GtkWidget
-modifier|*
-name|eventbox
-decl_stmt|;
 name|GtkToolItem
 modifier|*
 name|item
@@ -2341,36 +2346,6 @@ argument_list|(
 name|frame
 argument_list|)
 expr_stmt|;
-name|eventbox
-operator|=
-name|gtk_event_box_new
-argument_list|()
-expr_stmt|;
-name|gtk_widget_add_events
-argument_list|(
-name|eventbox
-argument_list|,
-name|GDK_BUTTON_PRESS_MASK
-argument_list|)
-expr_stmt|;
-name|gtk_container_add
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|frame
-argument_list|)
-argument_list|,
-name|GTK_WIDGET
-argument_list|(
-name|eventbox
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|eventbox
-argument_list|)
-expr_stmt|;
 name|drawing_area
 operator|=
 name|gtk_drawing_area_new
@@ -2389,13 +2364,10 @@ name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
-name|eventbox
+name|frame
 argument_list|)
 argument_list|,
-name|GTK_WIDGET
-argument_list|(
 name|drawing_area
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -2405,11 +2377,8 @@ argument_list|)
 expr_stmt|;
 name|progress
 operator|=
-name|GTK_PROGRESS_BAR
-argument_list|(
 name|gtk_progress_bar_new
 argument_list|()
-argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
@@ -2418,10 +2387,7 @@ argument_list|(
 name|vbox
 argument_list|)
 argument_list|,
-name|GTK_WIDGET
-argument_list|(
 name|progress
-argument_list|)
 argument_list|,
 name|FALSE
 argument_list|,
@@ -2432,10 +2398,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|GTK_WIDGET
-argument_list|(
 name|progress
-argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -5483,7 +5446,10 @@ decl_stmt|;
 comment|/* update the dialog's progress bar */
 name|gtk_progress_bar_set_fraction
 argument_list|(
+name|GTK_PROGRESS_BAR
+argument_list|(
 name|progress
+argument_list|)
 argument_list|,
 operator|(
 operator|(
@@ -5520,7 +5486,10 @@ argument_list|)
 expr_stmt|;
 name|gtk_progress_bar_set_text
 argument_list|(
+name|GTK_PROGRESS_BAR
+argument_list|(
 name|progress
+argument_list|)
 argument_list|,
 name|text
 argument_list|)
@@ -6003,6 +5972,27 @@ name|frame_number
 argument_list|)
 argument_list|,
 name|advance_frame_callback
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_object_set
+argument_list|(
+name|action
+argument_list|,
+literal|"tooltip"
+argument_list|,
+name|playing
+condition|?
+name|_
+argument_list|(
+literal|"Stop playback"
+argument_list|)
+else|:
+name|_
+argument_list|(
+literal|"Start playback"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
