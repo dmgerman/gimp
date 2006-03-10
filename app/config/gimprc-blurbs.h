@@ -821,12 +821,12 @@ value|N_("Enable displaying a handy GIMP tip on startup.")
 end_define
 
 begin_define
-DECL|macro|SHOW_TOOL_TIPS_BLURB
+DECL|macro|SHOW_TOOLTIPS_BLURB
 define|#
 directive|define
-name|SHOW_TOOL_TIPS_BLURB
+name|SHOW_TOOLTIPS_BLURB
 define|\
-value|N_("Enable tooltips display.")
+value|N_("Show a tooltip when the pointer hovers over an item.")
 end_define
 
 begin_define

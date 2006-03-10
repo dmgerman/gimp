@@ -477,11 +477,11 @@ name|install_cmap
 expr_stmt|;
 name|config
 operator|.
-name|show_tool_tips
+name|show_tooltips
 operator|=
 name|gui_config
 operator|->
-name|show_tool_tips
+name|show_tooltips
 expr_stmt|;
 name|config
 operator|.

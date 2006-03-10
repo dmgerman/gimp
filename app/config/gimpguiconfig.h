@@ -106,11 +106,6 @@ DECL|member|move_tool_changes_active
 name|gboolean
 name|move_tool_changes_active
 decl_stmt|;
-DECL|member|info_window_per_display
-name|gboolean
-name|info_window_per_display
-decl_stmt|;
-comment|/*  unused  */
 DECL|member|trust_dirty_flag
 name|gboolean
 name|trust_dirty_flag
@@ -135,9 +130,9 @@ DECL|member|show_tips
 name|gboolean
 name|show_tips
 decl_stmt|;
-DECL|member|show_tool_tips
+DECL|member|show_tooltips
 name|gboolean
-name|show_tool_tips
+name|show_tooltips
 decl_stmt|;
 DECL|member|tearoff_menus
 name|gboolean

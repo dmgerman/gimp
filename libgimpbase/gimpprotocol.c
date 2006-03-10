@@ -2148,7 +2148,7 @@ operator|)
 operator|&
 name|config
 operator|->
-name|show_tool_tips
+name|show_tooltips
 argument_list|,
 literal|1
 argument_list|,
@@ -2653,7 +2653,7 @@ operator|)
 operator|&
 name|config
 operator|->
-name|show_tool_tips
+name|show_tooltips
 argument_list|,
 literal|1
 argument_list|,

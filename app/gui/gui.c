@@ -1444,7 +1444,7 @@ condition|(
 operator|!
 name|gui_config
 operator|->
-name|show_tool_tips
+name|show_tooltips
 condition|)
 name|gimp_help_disable_tooltips
 argument_list|()
@@ -1453,7 +1453,7 @@ name|g_signal_connect
 argument_list|(
 name|gui_config
 argument_list|,
-literal|"notify::show-tool-tips"
+literal|"notify::show-tooltips"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2151,7 +2151,7 @@ if|if
 condition|(
 name|gui_config
 operator|->
-name|show_tool_tips
+name|show_tooltips
 condition|)
 name|gimp_help_enable_tooltips
 argument_list|()

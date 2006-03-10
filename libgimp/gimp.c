@@ -414,7 +414,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296bd57e0103
+DECL|enum|__anon28dae9330103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -5375,7 +5375,7 @@ name|_show_tool_tips
 operator|=
 name|config
 operator|->
-name|show_tool_tips
+name|show_tooltips
 expr_stmt|;
 name|_show_help_button
 operator|=

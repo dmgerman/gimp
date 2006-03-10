@@ -6917,11 +6917,11 @@ name|prefs_check_button_add
 argument_list|(
 name|object
 argument_list|,
-literal|"show-tool-tips"
+literal|"show-tooltips"
 argument_list|,
 name|_
 argument_list|(
-literal|"Show tool _tips"
+literal|"Show _tooltips"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -8415,7 +8415,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon298c86180108
+DECL|struct|__anon2b70ddb90108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -9577,7 +9577,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon298c86180208
+DECL|struct|__anon2b70ddb90208
 block|{
 DECL|member|label
 specifier|const
@@ -10484,7 +10484,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon298c86180308
+DECL|struct|__anon2b70ddb90308
 block|{
 DECL|member|label
 specifier|const
@@ -10641,7 +10641,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon298c86180408
+DECL|struct|__anon2b70ddb90408
 block|{
 DECL|member|tree_label
 specifier|const

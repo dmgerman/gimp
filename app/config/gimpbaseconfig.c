@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29677ad60103
+DECL|enum|__anon2b17039b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -70,14 +70,15 @@ block|,
 DECL|enumerator|PROP_SWAP_PATH
 name|PROP_SWAP_PATH
 block|,
-DECL|enumerator|PROP_STINGY_MEMORY_USE
-name|PROP_STINGY_MEMORY_USE
-block|,
 DECL|enumerator|PROP_NUM_PROCESSORS
 name|PROP_NUM_PROCESSORS
 block|,
 DECL|enumerator|PROP_TILE_CACHE_SIZE
 name|PROP_TILE_CACHE_SIZE
+block|,
+comment|/* ignored, only for backward compatibility: */
+DECL|enumerator|PROP_STINGY_MEMORY_USE
+name|PROP_STINGY_MEMORY_USE
 block|}
 enum|;
 end_enum
@@ -239,21 +240,6 @@ operator||
 name|GIMP_CONFIG_PARAM_RESTART
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
-argument_list|(
-name|object_class
-argument_list|,
-name|PROP_STINGY_MEMORY_USE
-argument_list|,
-literal|"stingy-memory-use"
-argument_list|,
-name|NULL
-argument_list|,
-name|FALSE
-argument_list|,
-name|GIMP_CONFIG_PARAM_IGNORE
-argument_list|)
-expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_UINT
 argument_list|(
 name|object_class
@@ -300,6 +286,22 @@ comment|/* 256MB */
 name|GIMP_PARAM_STATIC_STRINGS
 operator||
 name|GIMP_CONFIG_PARAM_CONFIRM
+argument_list|)
+expr_stmt|;
+comment|/*  only for backward compatibility:  */
+name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+argument_list|(
+name|object_class
+argument_list|,
+name|PROP_STINGY_MEMORY_USE
+argument_list|,
+literal|"stingy-memory-use"
+argument_list|,
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|,
+name|GIMP_CONFIG_PARAM_IGNORE
 argument_list|)
 expr_stmt|;
 block|}
@@ -443,19 +445,6 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PROP_STINGY_MEMORY_USE
-case|:
-name|base_config
-operator|->
-name|stingy_memory_use
-operator|=
-name|g_value_get_boolean
-argument_list|(
-name|value
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
 name|PROP_NUM_PROCESSORS
 case|:
 name|base_config
@@ -480,6 +469,11 @@ argument_list|(
 name|value
 argument_list|)
 expr_stmt|;
+break|break;
+case|case
+name|PROP_STINGY_MEMORY_USE
+case|:
+comment|/* ignored */
 break|break;
 default|default:
 name|G_OBJECT_WARN_INVALID_PROPERTY_ID
@@ -559,19 +553,6 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PROP_STINGY_MEMORY_USE
-case|:
-name|g_value_set_boolean
-argument_list|(
-name|value
-argument_list|,
-name|base_config
-operator|->
-name|stingy_memory_use
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
 name|PROP_NUM_PROCESSORS
 case|:
 name|g_value_set_uint
@@ -596,6 +577,11 @@ operator|->
 name|tile_cache_size
 argument_list|)
 expr_stmt|;
+break|break;
+case|case
+name|PROP_STINGY_MEMORY_USE
+case|:
+comment|/* ignored */
 break|break;
 default|default:
 name|G_OBJECT_WARN_INVALID_PROPERTY_ID

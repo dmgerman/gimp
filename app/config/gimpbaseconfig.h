@@ -102,11 +102,6 @@ name|gchar
 modifier|*
 name|swap_path
 decl_stmt|;
-DECL|member|stingy_memory_use
-name|gboolean
-name|stingy_memory_use
-decl_stmt|;
-comment|/*  unused  */
 DECL|member|num_processors
 name|guint
 name|num_processors
