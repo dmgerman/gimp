@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e465930103
+DECL|enum|__anon2bdcfff10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -105,7 +105,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e465930203
+DECL|enum|__anon2bdcfff10203
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -424,16 +424,12 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gboolean
-name|gimp_ui_manager_menu_item_enter
+name|void
+name|gimp_ui_manager_menu_item_select
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
-parameter_list|,
-name|GdkEvent
-modifier|*
-name|event
 parameter_list|,
 name|GimpUIManager
 modifier|*
@@ -444,16 +440,12 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gboolean
-name|gimp_ui_manager_menu_item_leave
+name|void
+name|gimp_ui_manager_menu_item_deselect
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
-parameter_list|,
-name|GdkEvent
-modifier|*
-name|event
 parameter_list|,
 name|GimpUIManager
 modifier|*
@@ -2072,7 +2064,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e465930308
+DECL|struct|__anon2bdcfff10308
 block|{
 DECL|member|x
 name|guint
@@ -3304,11 +3296,11 @@ name|g_signal_connect
 argument_list|(
 name|widget
 argument_list|,
-literal|"enter-notify-event"
+literal|"select"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_ui_manager_menu_item_enter
+name|gimp_ui_manager_menu_item_select
 argument_list|)
 argument_list|,
 name|manager
@@ -3318,11 +3310,11 @@ name|g_signal_connect
 argument_list|(
 name|widget
 argument_list|,
-literal|"leave-notify-event"
+literal|"deselect"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_ui_manager_menu_item_leave
+name|gimp_ui_manager_menu_item_deselect
 argument_list|)
 argument_list|,
 name|manager
@@ -3449,17 +3441,13 @@ end_function
 
 begin_function
 specifier|static
-name|gboolean
-DECL|function|gimp_ui_manager_menu_item_enter (GtkWidget * widget,GdkEvent * event,GimpUIManager * manager)
-name|gimp_ui_manager_menu_item_enter
+name|void
+DECL|function|gimp_ui_manager_menu_item_select (GtkWidget * widget,GimpUIManager * manager)
+name|gimp_ui_manager_menu_item_select
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
-parameter_list|,
-name|GdkEvent
-modifier|*
-name|event
 parameter_list|,
 name|GimpUIManager
 modifier|*
@@ -3527,25 +3515,18 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-return|return
-name|FALSE
-return|;
 block|}
 end_function
 
 begin_function
 specifier|static
-name|gboolean
-DECL|function|gimp_ui_manager_menu_item_leave (GtkWidget * widget,GdkEvent * event,GimpUIManager * manager)
-name|gimp_ui_manager_menu_item_leave
+name|void
+DECL|function|gimp_ui_manager_menu_item_deselect (GtkWidget * widget,GimpUIManager * manager)
+name|gimp_ui_manager_menu_item_deselect
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
-parameter_list|,
-name|GdkEvent
-modifier|*
-name|event
 parameter_list|,
 name|GimpUIManager
 modifier|*
@@ -3564,9 +3545,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-return|return
-name|FALSE
-return|;
 block|}
 end_function
 
