@@ -226,7 +226,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Activate the text tool on this text layer"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -250,7 +253,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Edit layer attributes"
+literal|"Edit attributes of this layer"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -275,7 +278,7 @@ literal|"<control><shift>N"
 block|,
 name|N_
 argument_list|(
-literal|"New layer..."
+literal|"Create a new layer"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -300,7 +303,7 @@ literal|""
 block|,
 name|N_
 argument_list|(
-literal|"New layer with last values"
+literal|"Create a new layer with last used values"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -325,7 +328,7 @@ literal|"<control><shift>D"
 block|,
 name|N_
 argument_list|(
-literal|"Duplicate layer"
+literal|"Create a duplicate of this layer and add it to the layer stack"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -350,7 +353,7 @@ literal|""
 block|,
 name|N_
 argument_list|(
-literal|"Delete layer"
+literal|"Delete this layer"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -375,7 +378,7 @@ literal|""
 block|,
 name|N_
 argument_list|(
-literal|"Raise layer"
+literal|"Raise this layer one step in the layer stack"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -400,7 +403,7 @@ literal|""
 block|,
 name|N_
 argument_list|(
-literal|"Raise layer to top"
+literal|"Move this layer to the top of the layer stack"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -425,7 +428,7 @@ literal|""
 block|,
 name|N_
 argument_list|(
-literal|"Lower layer"
+literal|"Lower this layer one step in the layer stack"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -450,7 +453,7 @@ literal|""
 block|,
 name|N_
 argument_list|(
-literal|"Lower layer to bottom"
+literal|"Move this layer to the bottom of the layer stack"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -475,7 +478,7 @@ literal|"<control>H"
 block|,
 name|N_
 argument_list|(
-literal|"Anchor floating layer"
+literal|"Anchor the floating layer"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -498,7 +501,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Merge this layer with the one below it"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -520,7 +526,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Merge all visible layers into one layer"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -542,7 +551,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Merge all layers into one and remove transparency"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(

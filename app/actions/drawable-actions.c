@@ -107,7 +107,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Turn colors into shades of gray"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -129,7 +132,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Automatic contrast enhancement"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -151,7 +157,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Invert the colors"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -173,7 +182,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Automatic white balance correction"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -195,7 +207,10 @@ argument_list|)
 block|,
 literal|"<control><shift>O"
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Shift the pixels, optionally wrapping them at the borders"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -228,7 +243,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Toggle the linked state"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -252,7 +270,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Toggle visibility"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -287,7 +308,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Flip horizontally"
+argument_list|)
 block|,
 name|GIMP_ORIENTATION_HORIZONTAL
 block|,
@@ -308,7 +332,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Flip vertically"
+argument_list|)
 block|,
 name|GIMP_ORIENTATION_VERTICAL
 block|,
@@ -335,12 +362,15 @@ name|GIMP_STOCK_ROTATE_90
 block|,
 name|N_
 argument_list|(
-literal|"Rotate 90 degrees _CW"
+literal|"Rotate 90Â° _clockwise"
 argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Rotate 90 degrees to the right"
+argument_list|)
 block|,
 name|GIMP_ROTATE_90
 block|,
@@ -356,12 +386,15 @@ name|GIMP_STOCK_ROTATE_180
 block|,
 name|N_
 argument_list|(
-literal|"Rotate _180 degrees"
+literal|"Rotate _180Â°"
 argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Turn upside-down"
+argument_list|)
 block|,
 name|GIMP_ROTATE_180
 block|,
@@ -377,12 +410,15 @@ name|GIMP_STOCK_ROTATE_270
 block|,
 name|N_
 argument_list|(
-literal|"Rotate 90 degrees CC_W"
+literal|"Rotate 90Â° counter-clock_wise"
 argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Rotate 90 degrees to the left"
+argument_list|)
 block|,
 name|GIMP_ROTATE_270
 block|,

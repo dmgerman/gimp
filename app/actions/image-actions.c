@@ -280,7 +280,10 @@ argument_list|)
 block|,
 literal|"<control>N"
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Create a new image"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -302,7 +305,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Create a new image"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -324,7 +330,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Adjust the image dimensions"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -346,7 +355,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Resize the image to enclose all layers"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -368,7 +380,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Adjust the print resolution"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -390,7 +405,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Change the number of pixels in the image"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -412,7 +430,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Crop the image to the bounding box of the selection"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -434,7 +455,10 @@ argument_list|)
 block|,
 literal|"<control>D"
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Create a duplicate of this image"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -456,7 +480,10 @@ argument_list|)
 block|,
 literal|"<control>M"
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Merge all visible layers into one layer"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -478,7 +505,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Merge all layers into one and remove transparency"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -500,7 +530,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Configure the grid for this image"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -522,7 +555,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Display information about this image"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -555,7 +591,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Convert the image to the RGB colorspace"
+argument_list|)
 block|,
 name|GIMP_RGB
 block|,
@@ -576,7 +615,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Convert the image to grayscale"
+argument_list|)
 block|,
 name|GIMP_GRAY
 block|,
@@ -597,7 +639,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Convert the image to indexed colors"
+argument_list|)
 block|,
 name|GIMP_INDEXED
 block|,
@@ -629,7 +674,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Flip image horizontally"
+argument_list|)
 block|,
 name|GIMP_ORIENTATION_HORIZONTAL
 block|,
@@ -650,7 +698,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Flip image vertically"
+argument_list|)
 block|,
 name|GIMP_ORIENTATION_VERTICAL
 block|,
@@ -675,15 +726,17 @@ literal|"image-rotate-90"
 block|,
 name|GIMP_STOCK_ROTATE_90
 block|,
-comment|/*  please use the degree symbol in the translation  */
 name|N_
 argument_list|(
-literal|"Rotate 90 degrees _CW"
+literal|"Rotate 90Â° _clockwise"
 argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Rotate the image 90 degrees to the right"
+argument_list|)
 block|,
 name|GIMP_ROTATE_90
 block|,
@@ -699,12 +752,15 @@ name|GIMP_STOCK_ROTATE_180
 block|,
 name|N_
 argument_list|(
-literal|"Rotate _180 degrees"
+literal|"Rotate _180Â°"
 argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Turn the image upside-down"
+argument_list|)
 block|,
 name|GIMP_ROTATE_180
 block|,
@@ -720,12 +776,15 @@ name|GIMP_STOCK_ROTATE_270
 block|,
 name|N_
 argument_list|(
-literal|"Rotate 90 degrees CC_W"
+literal|"Rotate 90Â° counter-clock_wise"
 argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Rotate the image 90 degrees to the left"
+argument_list|)
 block|,
 name|GIMP_ROTATE_270
 block|,
