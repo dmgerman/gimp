@@ -212,56 +212,26 @@ literal|"Input drawable"
 block|}
 block|,   }
 decl_stmt|;
-specifier|const
-name|gchar
-modifier|*
-name|blurb
-init|=
-literal|"Apply a 3x3 blurring convolution kernel to the specified drawable."
-decl_stmt|;
-specifier|const
-name|gchar
-modifier|*
-name|help
-init|=
-literal|"This plug-in blurs the specified drawable, using a 3x3 blur. "
-literal|"Indexed images are not supported."
-decl_stmt|;
-specifier|const
-name|gchar
-modifier|*
-name|author
-init|=
-literal|"Miles O'Neal<meo@rru.com>"
-decl_stmt|;
-specifier|const
-name|gchar
-modifier|*
-name|copyrights
-init|=
-literal|"Miles O'Neal, Spencer Kimball, Peter Mattis, Torsten Martinsen, "
-literal|"Brian Degenhardt, Federico Mena Quintero, Stephen Norris, Daniel Cotting"
-decl_stmt|;
-specifier|const
-name|gchar
-modifier|*
-name|copyright_date
-init|=
-literal|"1995-1998"
-decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-name|blurb
+name|N_
+argument_list|(
+literal|"Apply a 3x3 blurring convolution kernel"
+argument_list|)
 argument_list|,
-name|help
+literal|"This plug-in blurs the specified drawable, using "
+literal|"a 3x3 blur. Indexed images are not supported."
 argument_list|,
-name|author
+literal|"Miles O'Neal<meo@rru.com>"
 argument_list|,
-name|copyrights
+literal|"Miles O'Neal, Spencer Kimball, Peter Mattis, "
+literal|"Torsten Martinsen, Brian Degenhardt, "
+literal|"Federico Mena Quintero, Stephen Norris, "
+literal|"Daniel Cotting"
 argument_list|,
-name|copyright_date
+literal|"1995-1998"
 argument_list|,
 name|N_
 argument_list|(

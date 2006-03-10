@@ -1729,6 +1729,7 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
+block|{
 name|output_string
 argument_list|(
 name|file
@@ -1738,6 +1739,7 @@ operator|->
 name|name
 argument_list|)
 expr_stmt|;
+block|}
 name|type_desc
 operator|=
 name|gimp_enum_get_desc

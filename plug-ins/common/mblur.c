@@ -58,7 +58,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b62eb780103
+DECL|enum|__anon28957b670103
 block|{
 DECL|enumerator|MBLUR_LINEAR
 name|MBLUR_LINEAR
@@ -82,7 +82,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b62eb780208
+DECL|struct|__anon28957b670208
 block|{
 DECL|member|mblur_type
 name|gint32
@@ -511,7 +511,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Motion blur of image"
+name|N_
+argument_list|(
+literal|"Simulate movement by applying a blur effect"
+argument_list|)
 argument_list|,
 literal|"This plug-in simulates the effect seen when "
 literal|"photographing a moving object at a slow shutter "

@@ -84,7 +84,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27c7bba00103
+DECL|enum|__anon29d8613a0103
 block|{
 DECL|enumerator|BLUR_IIR
 name|BLUR_IIR
@@ -100,7 +100,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c7bba00208
+DECL|struct|__anon29d8613a0208
 block|{
 DECL|member|horizontal
 name|gdouble
@@ -588,7 +588,10 @@ name|gimp_install_procedure
 argument_list|(
 name|GAUSS_PROC
 argument_list|,
-literal|"Applies a gaussian blur to the specified drawable."
+name|N_
+argument_list|(
+literal|"Apply a gaussian blur"
+argument_list|)
 argument_list|,
 literal|"Applies a gaussian blur to the drawable, with "
 literal|"specified radius of affect.  The standard deviation "
@@ -631,7 +634,10 @@ name|gimp_install_procedure
 argument_list|(
 name|GAUSS_IIR_PROC
 argument_list|,
-literal|"Applies a gaussian blur to the specified drawable."
+name|N_
+argument_list|(
+literal|"Apply a gaussian blur"
+argument_list|)
 argument_list|,
 literal|"Applies a gaussian blur to the drawable, with "
 literal|"specified radius of affect.  The standard deviation "
@@ -671,7 +677,10 @@ name|gimp_install_procedure
 argument_list|(
 name|GAUSS_IIR2_PROC
 argument_list|,
-literal|"Applies a gaussian blur to the specified drawable."
+name|N_
+argument_list|(
+literal|"Apply a gaussian blur"
+argument_list|)
 argument_list|,
 literal|"Applies a gaussian blur to the drawable, with "
 literal|"specified radius of affect.  The standard deviation "
@@ -711,7 +720,10 @@ name|gimp_install_procedure
 argument_list|(
 name|GAUSS_RLE_PROC
 argument_list|,
-literal|"Applies a gaussian blur to the specified drawable."
+name|N_
+argument_list|(
+literal|"Apply a gaussian blur"
+argument_list|)
 argument_list|,
 literal|"Applies a gaussian blur to the drawable, with "
 literal|"specified radius of affect.  The standard deviation "
@@ -751,7 +763,10 @@ name|gimp_install_procedure
 argument_list|(
 name|GAUSS_RLE2_PROC
 argument_list|,
-literal|"Applies a gaussian blur to the specified drawable."
+name|N_
+argument_list|(
+literal|"Apply a gaussian blur"
+argument_list|)
 argument_list|,
 literal|"Applies a gaussian blur to the drawable, with "
 literal|"specified radius of affect.  The standard deviation "

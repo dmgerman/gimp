@@ -1144,7 +1144,14 @@ decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
-name|label_translated
+name|label
+decl_stmt|;
+specifier|const
+name|gchar
+modifier|*
+name|tooltip
+init|=
+name|NULL
 decl_stmt|;
 name|gchar
 modifier|*
@@ -1213,7 +1220,7 @@ operator|->
 name|menu_label
 condition|)
 block|{
-name|label_translated
+name|label
 operator|=
 name|dgettext
 argument_list|(
@@ -1310,13 +1317,34 @@ name|p2
 operator|=
 literal|'\0'
 expr_stmt|;
-name|label_translated
+name|label
 operator|=
 name|p2
 operator|+
 literal|1
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|proc_def
+operator|->
+name|db_info
+operator|.
+name|blurb
+condition|)
+name|tooltip
+operator|=
+name|dgettext
+argument_list|(
+name|locale_domain
+argument_list|,
+name|proc_def
+operator|->
+name|db_info
+operator|.
+name|blurb
+argument_list|)
+expr_stmt|;
 name|entry
 operator|.
 name|name
@@ -1340,7 +1368,7 @@ name|entry
 operator|.
 name|label
 operator|=
-name|label_translated
+name|label
 expr_stmt|;
 name|entry
 operator|.
@@ -1352,7 +1380,7 @@ name|entry
 operator|.
 name|tooltip
 operator|=
-name|NULL
+name|tooltip
 expr_stmt|;
 name|entry
 operator|.
@@ -1374,7 +1402,7 @@ expr_stmt|;
 if|#
 directive|if
 literal|0
-block|g_print ("adding plug-in action '%s' (%s)\n",            proc_def->db_info.name, label_translated);
+block|g_print ("adding plug-in action '%s' (%s)\n", proc_def->db_info.name, label);
 endif|#
 directive|endif
 name|gimp_action_group_add_plug_in_actions
