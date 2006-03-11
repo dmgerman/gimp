@@ -414,7 +414,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28dae9330103
+DECL|enum|__anon2754495e0103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -587,6 +587,7 @@ name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
+specifier|const
 name|guint8
 modifier|*
 name|buf
@@ -4841,13 +4842,14 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_write (GIOChannel * channel,guint8 * buf,gulong count,gpointer user_data)
+DECL|function|gimp_write (GIOChannel * channel,const guint8 * buf,gulong count,gpointer user_data)
 name|gimp_write
 parameter_list|(
 name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
+specifier|const
 name|guint8
 modifier|*
 name|buf

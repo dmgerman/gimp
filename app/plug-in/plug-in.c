@@ -368,6 +368,7 @@ name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
+specifier|const
 name|guint8
 modifier|*
 name|buf
@@ -550,17 +551,11 @@ block|{
 name|PlugIn
 modifier|*
 name|plug_in
-decl_stmt|;
-name|plug_in
-operator|=
-operator|(
-name|PlugIn
-operator|*
-operator|)
+init|=
 name|list
 operator|->
 name|data
-expr_stmt|;
+decl_stmt|;
 name|list
 operator|=
 name|list
@@ -3010,13 +3005,14 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|plug_in_write (GIOChannel * channel,guint8 * buf,gulong count,gpointer user_data)
+DECL|function|plug_in_write (GIOChannel * channel,const guint8 * buf,gulong count,gpointer user_data)
 name|plug_in_write
 parameter_list|(
 name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
+specifier|const
 name|guint8
 modifier|*
 name|buf

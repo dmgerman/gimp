@@ -108,6 +108,7 @@ name|GIOChannel
 modifier|*
 name|channel
 parameter_list|,
+specifier|const
 name|guint8
 modifier|*
 name|buf
