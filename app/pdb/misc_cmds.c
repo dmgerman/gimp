@@ -359,7 +359,7 @@ literal|"Returns the PID of the host gimp process."
 block|,
 literal|"This procedure returns the process ID of the currently running gimp."
 block|,
-literal|"Michael Natterer"
+literal|"Michael Natterer<mitch@gimp.org>"
 block|,
 literal|"Michael Natterer"
 block|,

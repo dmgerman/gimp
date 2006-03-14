@@ -2141,11 +2141,6 @@ name|data_copy
 init|=
 name|NULL
 decl_stmt|;
-specifier|const
-name|guint8
-modifier|*
-name|data
-decl_stmt|;
 name|identifier
 operator|=
 operator|(
@@ -2187,6 +2182,11 @@ condition|(
 name|success
 condition|)
 block|{
+specifier|const
+name|guint8
+modifier|*
+name|data
+decl_stmt|;
 name|gchar
 modifier|*
 name|canonical
@@ -2409,11 +2409,6 @@ decl_stmt|;
 name|gint32
 name|bytes
 decl_stmt|;
-specifier|const
-name|guint8
-modifier|*
-name|data
-decl_stmt|;
 name|identifier
 operator|=
 operator|(
@@ -2455,6 +2450,11 @@ condition|(
 name|success
 condition|)
 block|{
+specifier|const
+name|guint8
+modifier|*
+name|data
+decl_stmt|;
 name|gchar
 modifier|*
 name|canonical

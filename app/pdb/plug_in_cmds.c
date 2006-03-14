@@ -819,7 +819,7 @@ literal|"Registers a textdomain for localisation."
 block|,
 literal|"This procedure adds a textdomain to the list of domains Gimp searches for strings when translating its menu entries. There is no need to call this function for plug-ins that have their strings included in the gimp-std-plugins domain as that is used by default. If the compiled message catalog is not in the standard location, you may specify an absolute path to another location. This procedure can only be called in the query function of a plug-in and it has to be called before any procedure is installed."
 block|,
-literal|"Sven Neumann"
+literal|"Sven Neumann<sven@gimp.org>"
 block|,
 literal|"Sven Neumann"
 block|,
@@ -1058,7 +1058,7 @@ literal|"This procedure changes the help rootdir for the plug-in which calls it.
 block|,
 literal|"Michael Natterer<mitch@gimp.org>"
 block|,
-literal|"Michael Natterer<mitch@gimp.org>"
+literal|"Michael Natterer"
 block|,
 literal|"2000"
 block|,
@@ -1296,7 +1296,7 @@ literal|"This procedure installs an additional menu entry for the given procedur
 block|,
 literal|"Michael Natterer<mitch@gimp.org>"
 block|,
-literal|"Michael Natterer<mitch@gimp.org>"
+literal|"Michael Natterer"
 block|,
 literal|"2004"
 block|,
@@ -1549,7 +1549,7 @@ literal|"This procedure installs an sub-menu which does not belong to any proced
 block|,
 literal|"Michael Natterer<mitch@gimp.org>"
 block|,
-literal|"Michael Natterer<mitch@gimp.org>"
+literal|"Michael Natterer"
 block|,
 literal|"2005"
 block|,
@@ -1866,7 +1866,7 @@ literal|"This procedure installs an icon for the given procedure."
 block|,
 literal|"Michael Natterer<mitch@gimp.org>"
 block|,
-literal|"Michael Natterer<mitch@gimp.org>"
+literal|"Michael Natterer"
 block|,
 literal|"2004"
 block|,

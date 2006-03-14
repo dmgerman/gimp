@@ -5059,7 +5059,7 @@ name|GIMP_PDB_FLOAT
 block|,
 literal|"x0"
 block|,
-literal|"The new x coordinate of upper-left corner of newly scaled region"
+literal|"The new x coordinate of the upper-left corner of the scaled region"
 block|}
 block|,
 block|{
@@ -5067,7 +5067,7 @@ name|GIMP_PDB_FLOAT
 block|,
 literal|"y0"
 block|,
-literal|"The new y coordinate of upper-left corner of newly scaled region"
+literal|"The new y coordinate of the upper-left corner of the scaled region"
 block|}
 block|,
 block|{
@@ -5075,7 +5075,7 @@ name|GIMP_PDB_FLOAT
 block|,
 literal|"x1"
 block|,
-literal|"The new x coordinate of lower-right corner of newly scaled region"
+literal|"The new x coordinate of the lower-right corner of the scaled region"
 block|}
 block|,
 block|{
@@ -5083,7 +5083,7 @@ name|GIMP_PDB_FLOAT
 block|,
 literal|"y1"
 block|,
-literal|"The new y coordinate of lower-right corner of newly scaled region"
+literal|"The new y coordinate of the lower-right corner of the scaled region"
 block|}
 block|,
 block|{
@@ -5617,7 +5617,7 @@ name|GIMP_PDB_FLOAT
 block|,
 literal|"x0"
 block|,
-literal|"The new x coordinate of upper-left corner of newly scaled region"
+literal|"The new x coordinate of the upper-left corner of the scaled region"
 block|}
 block|,
 block|{
@@ -5625,7 +5625,7 @@ name|GIMP_PDB_FLOAT
 block|,
 literal|"y0"
 block|,
-literal|"The new y coordinate of upper-left corner of newly scaled region"
+literal|"The new y coordinate of the upper-left corner of the scaled region"
 block|}
 block|,
 block|{
@@ -5633,7 +5633,7 @@ name|GIMP_PDB_FLOAT
 block|,
 literal|"x1"
 block|,
-literal|"The new x coordinate of lower-right corner of newly scaled region"
+literal|"The new x coordinate of the lower-right corner of the scaled region"
 block|}
 block|,
 block|{
@@ -5641,7 +5641,7 @@ name|GIMP_PDB_FLOAT
 block|,
 literal|"y1"
 block|,
-literal|"The new y coordinate of lower-right corner of newly scaled region"
+literal|"The new y coordinate of the lower-right corner of the scaled region"
 block|}
 block|,
 block|{

@@ -214,7 +214,7 @@ literal|"Refresh current patterns. This function always succeeds."
 block|,
 literal|"This procedure retrieves all patterns currently in the user's pattern path and updates all pattern dialogs accordingly."
 block|,
-literal|"Michael Natterer"
+literal|"Michael Natterer<mitch@gimp.org>"
 block|,
 literal|"Michael Natterer"
 block|,

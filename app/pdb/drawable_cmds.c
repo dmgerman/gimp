@@ -9070,7 +9070,7 @@ literal|"This function gets data from which a thumbnail of a drawable preview ca
 block|,
 literal|"Michael Natterer<mitch@gimp.org>"
 block|,
-literal|"Michael Natterer<mitch@gimp.org>"
+literal|"Michael Natterer"
 block|,
 literal|"2004"
 block|,

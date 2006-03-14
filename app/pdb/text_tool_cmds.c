@@ -762,10 +762,6 @@ decl_stmt|;
 name|gint32
 name|descent
 decl_stmt|;
-name|gchar
-modifier|*
-name|real_fontname
-decl_stmt|;
 name|text
 operator|=
 operator|(
@@ -889,8 +885,10 @@ condition|(
 name|success
 condition|)
 block|{
+name|gchar
+modifier|*
 name|real_fontname
-operator|=
+init|=
 name|g_strdup_printf
 argument_list|(
 literal|"%s %d"
@@ -902,7 +900,7 @@ name|gint
 operator|)
 name|size
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|success
 operator|=
 name|text_get_extents
@@ -2024,10 +2022,6 @@ decl_stmt|;
 name|gint32
 name|descent
 decl_stmt|;
-name|gchar
-modifier|*
-name|real_fontname
-decl_stmt|;
 name|text
 operator|=
 operator|(
@@ -2315,8 +2309,10 @@ condition|(
 name|success
 condition|)
 block|{
+name|gchar
+modifier|*
 name|real_fontname
-operator|=
+init|=
 name|g_strdup_printf
 argument_list|(
 literal|"%s %d"
@@ -2328,7 +2324,7 @@ name|gint
 operator|)
 name|size
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|success
 operator|=
 name|text_get_extents

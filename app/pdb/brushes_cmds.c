@@ -629,9 +629,10 @@ name|value
 operator|.
 name|pdb_int
 operator|=
+name|gimp_brush_get_spacing
+argument_list|(
 name|brush
-operator|->
-name|spacing
+argument_list|)
 expr_stmt|;
 block|}
 return|return
@@ -1216,9 +1217,10 @@ name|value
 operator|.
 name|pdb_int
 operator|=
+name|gimp_brush_get_spacing
+argument_list|(
 name|brush
-operator|->
-name|spacing
+argument_list|)
 expr_stmt|;
 name|return_args
 index|[

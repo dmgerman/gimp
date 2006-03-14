@@ -208,10 +208,6 @@ decl_stmt|;
 name|gboolean
 name|sample_merged
 decl_stmt|;
-name|GimpImage
-modifier|*
-name|gimage
-decl_stmt|;
 name|drawable
 operator|=
 operator|(
@@ -377,8 +373,10 @@ condition|(
 name|success
 condition|)
 block|{
+name|GimpImage
+modifier|*
 name|gimage
-operator|=
+init|=
 name|gimp_item_get_image
 argument_list|(
 name|GIMP_ITEM
@@ -386,7 +384,7 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|gimp_channel_select_by_color
 argument_list|(
 name|gimp_image_get_mask
@@ -766,6 +764,7 @@ if|if
 condition|(
 name|success
 condition|)
+block|{
 name|gimp_channel_select_ellipse
 argument_list|(
 name|gimp_image_get_mask
@@ -804,6 +803,7 @@ argument_list|,
 name|feather_radius
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
@@ -1135,6 +1135,7 @@ if|if
 condition|(
 name|success
 condition|)
+block|{
 name|gimp_channel_select_polygon
 argument_list|(
 name|gimp_image_get_mask
@@ -1166,6 +1167,7 @@ argument_list|,
 name|feather_radius
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
@@ -1344,10 +1346,6 @@ decl_stmt|;
 name|gboolean
 name|sample_merged
 decl_stmt|;
-name|GimpImage
-modifier|*
-name|gimage
-decl_stmt|;
 name|drawable
 operator|=
 operator|(
@@ -1524,8 +1522,10 @@ condition|(
 name|success
 condition|)
 block|{
+name|GimpImage
+modifier|*
 name|gimage
-operator|=
+init|=
 name|gimp_item_get_image
 argument_list|(
 name|GIMP_ITEM
@@ -1533,7 +1533,7 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|gimp_channel_select_fuzzy
 argument_list|(
 name|gimp_image_get_mask
@@ -1905,6 +1905,7 @@ if|if
 condition|(
 name|success
 condition|)
+block|{
 name|gimp_channel_select_rectangle
 argument_list|(
 name|gimp_image_get_mask
@@ -1941,6 +1942,7 @@ argument_list|,
 name|feather_radius
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|procedural_db_return_args
 argument_list|(

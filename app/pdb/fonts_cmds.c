@@ -156,7 +156,7 @@ literal|"Refresh current fonts. This function always succeeds."
 block|,
 literal|"This procedure retrieves all fonts currently in the user's font path and updates the font dialogs accordingly."
 block|,
-literal|"Sven Neumann"
+literal|"Sven Neumann<sven@gimp.org>"
 block|,
 literal|"Sven Neumann"
 block|,
@@ -387,7 +387,7 @@ literal|"Retrieve the list of loaded fonts."
 block|,
 literal|"This procedure returns a list of the fonts that are currently available."
 block|,
-literal|"Sven Neumann"
+literal|"Sven Neumann<sven@gimp.org>"
 block|,
 literal|"Sven Neumann"
 block|,

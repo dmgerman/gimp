@@ -52,18 +52,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config/gimpcoreconfig.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config/gimpdisplayconfig.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"config/gimprc.h"
 end_include
 
@@ -1192,7 +1180,7 @@ literal|"Get a serialized version of the color management configuration."
 block|,
 literal|"Returns a string that can be deserialized into a GimpColorConfig object representing the current color management configuration."
 block|,
-literal|"Sven Neumann"
+literal|"Sven Neumann<sven@gimp.org>"
 block|,
 literal|"Sven Neumann"
 block|,

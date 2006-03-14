@@ -4863,9 +4863,9 @@ literal|"Render the drawable as a grayscale image seen through a colored glass."
 block|,
 literal|"Desatures the drawable, then tints it with the specified color. This tool is only valid on RGB color images. It will not operate on grayscale or indexed drawables."
 block|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|"Sven Neumann<sven@gimp.org>"
 block|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|"Sven Neumann"
 block|,
 literal|"2004"
 block|,
@@ -5902,7 +5902,7 @@ name|GIMP_PDB_FLOAT
 block|,
 literal|"lightness"
 block|,
-literal|"lightness modification: (-100<= lightness<= 100)"
+literal|"Lightness modification: (-100<= lightness<= 100)"
 block|}
 block|,
 block|{
@@ -5910,7 +5910,7 @@ name|GIMP_PDB_FLOAT
 block|,
 literal|"saturation"
 block|,
-literal|"saturation modification: (-100<= saturation<= 100)"
+literal|"Saturation modification: (-100<= saturation<= 100)"
 block|}
 block|}
 decl_stmt|;

@@ -398,7 +398,7 @@ literal|"This procedure returns a complete listing of available named buffers."
 block|,
 literal|"Michael Natterer<mitch@gimp.org>"
 block|,
-literal|"Michael Natterer<mitch@gimp.org>"
+literal|"Michael Natterer"
 block|,
 literal|"2005"
 block|,
@@ -550,9 +550,7 @@ block|{
 name|GimpBuffer
 modifier|*
 name|buffer
-decl_stmt|;
-name|buffer
-operator|=
+init|=
 operator|(
 name|GimpBuffer
 operator|*
@@ -565,7 +563,7 @@ name|named_buffers
 argument_list|,
 name|buffer_name
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|success
 operator|=
 operator|(
@@ -705,7 +703,7 @@ literal|"This procedure renames a named buffer."
 block|,
 literal|"Michael Natterer<mitch@gimp.org>"
 block|,
-literal|"Michael Natterer<mitch@gimp.org>"
+literal|"Michael Natterer"
 block|,
 literal|"2005"
 block|,
@@ -807,9 +805,7 @@ block|{
 name|GimpBuffer
 modifier|*
 name|buffer
-decl_stmt|;
-name|buffer
-operator|=
+init|=
 operator|(
 name|GimpBuffer
 operator|*
@@ -822,7 +818,7 @@ name|named_buffers
 argument_list|,
 name|buffer_name
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|success
 operator|=
 operator|(
@@ -960,11 +956,10 @@ name|gchar
 modifier|*
 name|buffer_name
 decl_stmt|;
-name|GimpBuffer
-modifier|*
-name|buffer
+name|gint32
+name|width
 init|=
-name|NULL
+literal|0
 decl_stmt|;
 name|buffer_name
 operator|=
@@ -1007,8 +1002,10 @@ condition|(
 name|success
 condition|)
 block|{
+name|GimpBuffer
+modifier|*
 name|buffer
-operator|=
+init|=
 operator|(
 name|GimpBuffer
 operator|*
@@ -1021,14 +1018,22 @@ name|named_buffers
 argument_list|,
 name|buffer_name
 argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|buffer
+condition|)
+name|width
+operator|=
+name|gimp_buffer_get_width
+argument_list|(
+name|buffer
+argument_list|)
 expr_stmt|;
+else|else
 name|success
 operator|=
-operator|(
-name|buffer
-operator|!=
-name|NULL
-operator|)
+name|FALSE
 expr_stmt|;
 block|}
 name|return_args
@@ -1054,10 +1059,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|gimp_buffer_get_width
-argument_list|(
-name|buffer
-argument_list|)
+name|width
 expr_stmt|;
 return|return
 name|return_args
@@ -1120,7 +1122,7 @@ literal|"This procedure retrieves the specified named buffer's width."
 block|,
 literal|"Michael Natterer<mitch@gimp.org>"
 block|,
-literal|"Michael Natterer<mitch@gimp.org>"
+literal|"Michael Natterer"
 block|,
 literal|"2005"
 block|,
@@ -1182,11 +1184,10 @@ name|gchar
 modifier|*
 name|buffer_name
 decl_stmt|;
-name|GimpBuffer
-modifier|*
-name|buffer
+name|gint32
+name|height
 init|=
-name|NULL
+literal|0
 decl_stmt|;
 name|buffer_name
 operator|=
@@ -1229,8 +1230,10 @@ condition|(
 name|success
 condition|)
 block|{
+name|GimpBuffer
+modifier|*
 name|buffer
-operator|=
+init|=
 operator|(
 name|GimpBuffer
 operator|*
@@ -1243,14 +1246,22 @@ name|named_buffers
 argument_list|,
 name|buffer_name
 argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|buffer
+condition|)
+name|height
+operator|=
+name|gimp_buffer_get_height
+argument_list|(
+name|buffer
+argument_list|)
 expr_stmt|;
+else|else
 name|success
 operator|=
-operator|(
-name|buffer
-operator|!=
-name|NULL
-operator|)
+name|FALSE
 expr_stmt|;
 block|}
 name|return_args
@@ -1276,10 +1287,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|gimp_buffer_get_height
-argument_list|(
-name|buffer
-argument_list|)
+name|height
 expr_stmt|;
 return|return
 name|return_args
@@ -1342,7 +1350,7 @@ literal|"This procedure retrieves the specified named buffer's height."
 block|,
 literal|"Michael Natterer<mitch@gimp.org>"
 block|,
-literal|"Michael Natterer<mitch@gimp.org>"
+literal|"Michael Natterer"
 block|,
 literal|"2005"
 block|,
@@ -1404,11 +1412,10 @@ name|gchar
 modifier|*
 name|buffer_name
 decl_stmt|;
-name|GimpBuffer
-modifier|*
-name|buffer
+name|gint32
+name|bytes
 init|=
-name|NULL
+literal|0
 decl_stmt|;
 name|buffer_name
 operator|=
@@ -1451,8 +1458,10 @@ condition|(
 name|success
 condition|)
 block|{
+name|GimpBuffer
+modifier|*
 name|buffer
-operator|=
+init|=
 operator|(
 name|GimpBuffer
 operator|*
@@ -1465,14 +1474,22 @@ name|named_buffers
 argument_list|,
 name|buffer_name
 argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|buffer
+condition|)
+name|bytes
+operator|=
+name|gimp_buffer_get_bytes
+argument_list|(
+name|buffer
+argument_list|)
 expr_stmt|;
+else|else
 name|success
 operator|=
-operator|(
-name|buffer
-operator|!=
-name|NULL
-operator|)
+name|FALSE
 expr_stmt|;
 block|}
 name|return_args
@@ -1498,10 +1515,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|gimp_buffer_get_bytes
-argument_list|(
-name|buffer
-argument_list|)
+name|bytes
 expr_stmt|;
 return|return
 name|return_args
@@ -1564,7 +1578,7 @@ literal|"This procedure retrieves the specified named buffer's bytes."
 block|,
 literal|"Michael Natterer<mitch@gimp.org>"
 block|,
-literal|"Michael Natterer<mitch@gimp.org>"
+literal|"Michael Natterer"
 block|,
 literal|"2005"
 block|,
@@ -1626,11 +1640,10 @@ name|gchar
 modifier|*
 name|buffer_name
 decl_stmt|;
-name|GimpBuffer
-modifier|*
-name|buffer
+name|gint32
+name|image_type
 init|=
-name|NULL
+literal|0
 decl_stmt|;
 name|buffer_name
 operator|=
@@ -1673,8 +1686,10 @@ condition|(
 name|success
 condition|)
 block|{
+name|GimpBuffer
+modifier|*
 name|buffer
-operator|=
+init|=
 operator|(
 name|GimpBuffer
 operator|*
@@ -1687,14 +1702,22 @@ name|named_buffers
 argument_list|,
 name|buffer_name
 argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|buffer
+condition|)
+name|image_type
+operator|=
+name|gimp_buffer_get_image_type
+argument_list|(
+name|buffer
+argument_list|)
 expr_stmt|;
+else|else
 name|success
 operator|=
-operator|(
-name|buffer
-operator|!=
-name|NULL
-operator|)
+name|FALSE
 expr_stmt|;
 block|}
 name|return_args
@@ -1720,10 +1743,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|gimp_buffer_get_image_type
-argument_list|(
-name|buffer
-argument_list|)
+name|image_type
 expr_stmt|;
 return|return
 name|return_args
@@ -1786,7 +1806,7 @@ literal|"This procedure retrieves the specified named buffer's image type."
 block|,
 literal|"Michael Natterer<mitch@gimp.org>"
 block|,
-literal|"Michael Natterer<mitch@gimp.org>"
+literal|"Michael Natterer"
 block|,
 literal|"2005"
 block|,

@@ -775,7 +775,7 @@ literal|"Creates a new gradient"
 block|,
 literal|"This procedure creates a new, uninitialized gradient"
 block|,
-literal|"Shlomi Fish"
+literal|"Shlomi Fish<shlomif@iglu.org.il>"
 block|,
 literal|"Shlomi Fish"
 block|,
@@ -1039,7 +1039,7 @@ literal|"Duplicates a gradient"
 block|,
 literal|"This procedure creates an identical gradient by a different name"
 block|,
-literal|"Shlomi Fish"
+literal|"Shlomi Fish<shlomif@iglu.org.il>"
 block|,
 literal|"Shlomi Fish"
 block|,
@@ -1270,7 +1270,7 @@ literal|"Tests if gradient can be edited"
 block|,
 literal|"Returns True if you have permission to change the gradient"
 block|,
-literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu"
+literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu>"
 block|,
 literal|"Bill Skaggs"
 block|,
@@ -1565,7 +1565,7 @@ literal|"Rename a gradient"
 block|,
 literal|"This procedure renames a gradient"
 block|,
-literal|"Shlomi Fish"
+literal|"Shlomi Fish<shlomif@iglu.org.il>"
 block|,
 literal|"Shlomi Fish"
 block|,
@@ -1799,7 +1799,7 @@ literal|"Deletes a gradient"
 block|,
 literal|"This procedure deletes a gradient"
 block|,
-literal|"Shlomi Fish"
+literal|"Shlomi Fish<shlomif@iglu.org.il>"
 block|,
 literal|"Shlomi Fish"
 block|,
@@ -2973,7 +2973,7 @@ literal|"Retrieves the left endpoint color of the specified gradient and segment
 block|,
 literal|"This procedure retrieves the left endpoint color of the specified segment of the specified gradient."
 block|,
-literal|"Shlomi Fish"
+literal|"Shlomi Fish<shlomif@iglu.org.il>"
 block|,
 literal|"Shlomi Fish"
 block|,
@@ -3289,7 +3289,7 @@ literal|"Retrieves the left endpoint color of the specified gradient and segment
 block|,
 literal|"This procedure retrieves the left endpoint color of the specified segment of the specified gradient."
 block|,
-literal|"Shlomi Fish"
+literal|"Shlomi Fish<shlomif@iglu.org.il>"
 block|,
 literal|"Shlomi Fish"
 block|,
@@ -3618,7 +3618,7 @@ literal|"Retrieves the right endpoint color of the specified gradient and segmen
 block|,
 literal|"This procedure retrieves the right endpoint color of the specified segment of the specified gradient."
 block|,
-literal|"Shlomi Fish"
+literal|"Shlomi Fish<shlomif@iglu.org.il>"
 block|,
 literal|"Shlomi Fish"
 block|,
@@ -3934,7 +3934,7 @@ literal|"Retrieves the right endpoint color of the specified gradient and segmen
 block|,
 literal|"This procedure retrieves the right endpoint color of the specified segment of the specified gradient."
 block|,
-literal|"Shlomi Fish"
+literal|"Shlomi Fish<shlomif@iglu.org.il>"
 block|,
 literal|"Shlomi Fish"
 block|,
@@ -4230,7 +4230,7 @@ literal|"Retrieves the left endpoint position of the specified gradient and segm
 block|,
 literal|"This procedure retrieves the left endpoint position of the specified segment of the specified gradient."
 block|,
-literal|"Shlomi Fish"
+literal|"Shlomi Fish<shlomif@iglu.org.il>"
 block|,
 literal|"Shlomi Fish"
 block|,
@@ -4564,7 +4564,7 @@ literal|"Sets the left endpoint position of the specified gradient and segment"
 block|,
 literal|"This procedure sets the left endpoint position of the specified segment of the specified gradient. The final position will be between the position of the middle point to the left to the middle point of the current segement. This procedure returns the final position."
 block|,
-literal|"Shlomi Fish"
+literal|"Shlomi Fish<shlomif@iglu.org.il>"
 block|,
 literal|"Shlomi Fish"
 block|,
@@ -4860,7 +4860,7 @@ literal|"Retrieves the middle point position of the specified gradient and segme
 block|,
 literal|"This procedure retrieves the middle point position of the specified segment of the specified gradient."
 block|,
-literal|"Shlomi Fish"
+literal|"Shlomi Fish<shlomif@iglu.org.il>"
 block|,
 literal|"Shlomi Fish"
 block|,
@@ -5194,7 +5194,7 @@ literal|"Sets the middle point position of the specified gradient and segment"
 block|,
 literal|"This procedure sets the middle point position of the specified segment of the specified gradient. The final position will be between the two endpoints of the segment. This procedure returns the final position."
 block|,
-literal|"Shlomi Fish"
+literal|"Shlomi Fish<shlomif@iglu.org.il>"
 block|,
 literal|"Shlomi Fish"
 block|,
@@ -5490,7 +5490,7 @@ literal|"Retrieves the right endpoint position of the specified gradient and seg
 block|,
 literal|"This procedure retrieves the right endpoint position of the specified segment of the specified gradient."
 block|,
-literal|"Shlomi Fish"
+literal|"Shlomi Fish<shlomif@iglu.org.il>"
 block|,
 literal|"Shlomi Fish"
 block|,
@@ -5824,7 +5824,7 @@ literal|"Sets the right endpoint position of the specified gradient and segment"
 block|,
 literal|"This procedure sets the right endpoint position of the specified segment of the specified gradient. The final position will be between the position of the middle point of the current segment and the middle point of the segment to the right. This procedure returns the final position."
 block|,
-literal|"Shlomi Fish"
+literal|"Shlomi Fish<shlomif@iglu.org.il>"
 block|,
 literal|"Shlomi Fish"
 block|,
@@ -6120,7 +6120,7 @@ literal|"Retrieves the gradient segment's blending function"
 block|,
 literal|"This procedure retrieves the blending function of the segment at the specified gradient name and segment index."
 block|,
-literal|"Shlomi Fish"
+literal|"Shlomi Fish<shlomif@iglu.org.il>"
 block|,
 literal|"Shlomi Fish"
 block|,
@@ -6416,7 +6416,7 @@ literal|"Retrieves the gradient segment's coloring type"
 block|,
 literal|"This procedure retrieves the coloring type of the segment at the specified gradient name and segment index."
 block|,
-literal|"Shlomi Fish"
+literal|"Shlomi Fish<shlomif@iglu.org.il>"
 block|,
 literal|"Shlomi Fish"
 block|,
@@ -6776,7 +6776,7 @@ literal|"Change the blending function of a segments range"
 block|,
 literal|"This function changes the blending function of a segment range to the specified blending function."
 block|,
-literal|"Shlomi Fish"
+literal|"Shlomi Fish<shlomif@iglu.org.il>"
 block|,
 literal|"Shlomi Fish"
 block|,
@@ -7136,7 +7136,7 @@ literal|"Change the coloring type of a segments range"
 block|,
 literal|"This function changes the coloring type of a segment range to the specified coloring type."
 block|,
-literal|"Shlomi Fish"
+literal|"Shlomi Fish<shlomif@iglu.org.il>"
 block|,
 literal|"Shlomi Fish"
 block|,
@@ -7462,7 +7462,7 @@ literal|"Flip the segment range"
 block|,
 literal|"This function flips a segment range."
 block|,
-literal|"Shlomi Fish"
+literal|"Shlomi Fish<shlomif@iglu.org.il>"
 block|,
 literal|"Shlomi Fish"
 block|,
@@ -7826,7 +7826,7 @@ literal|"Replicate the segment range"
 block|,
 literal|"This function replicates a segment range a given number of times. Instead of the original segment range, several smaller scaled copies of it will appear in equal widths."
 block|,
-literal|"Shlomi Fish"
+literal|"Shlomi Fish<shlomif@iglu.org.il>"
 block|,
 literal|"Shlomi Fish"
 block|,
@@ -8152,7 +8152,7 @@ literal|"Splits each segment in the segment range at midpoint"
 block|,
 literal|"This function splits each segment in the segment range at its midpoint."
 block|,
-literal|"Shlomi Fish"
+literal|"Shlomi Fish<shlomif@iglu.org.il>"
 block|,
 literal|"Shlomi Fish"
 block|,
@@ -8516,7 +8516,7 @@ literal|"Splits each segment in the segment range uniformly"
 block|,
 literal|"This function splits each segment in the segment range uniformly according to the number of times specified by the parameter."
 block|,
-literal|"Shlomi Fish"
+literal|"Shlomi Fish<shlomif@iglu.org.il>"
 block|,
 literal|"Shlomi Fish"
 block|,
@@ -8842,7 +8842,7 @@ literal|"Delete the segment range"
 block|,
 literal|"This function deletes a segment range."
 block|,
-literal|"Shlomi Fish"
+literal|"Shlomi Fish<shlomif@iglu.org.il>"
 block|,
 literal|"Shlomi Fish"
 block|,
@@ -9164,7 +9164,7 @@ literal|"Uniformly redistribute the segment range's handles"
 block|,
 literal|"This function redistributes the handles of the specified segment range of the specified gradient, so they'll be evenly spaced."
 block|,
-literal|"Shlomi Fish"
+literal|"Shlomi Fish<shlomif@iglu.org.il>"
 block|,
 literal|"Shlomi Fish"
 block|,
@@ -9500,7 +9500,7 @@ literal|"Blend the colors of the segment range."
 block|,
 literal|"This function blends the colors (but not the opacity) of the segments' range of the gradient. Using it, the colors' transition will be uniform across the range."
 block|,
-literal|"Shlomi Fish"
+literal|"Shlomi Fish<shlomif@iglu.org.il>"
 block|,
 literal|"Shlomi Fish"
 block|,
@@ -9836,7 +9836,7 @@ literal|"Blend the opacity of the segment range."
 block|,
 literal|"This function blends the opacity (but not the colors) of the segments' range of the gradient. Using it, the opacity's transition will be uniform across the range."
 block|,
-literal|"Shlomi Fish"
+literal|"Shlomi Fish<shlomif@iglu.org.il>"
 block|,
 literal|"Shlomi Fish"
 block|,
@@ -10274,7 +10274,7 @@ literal|"Move the position of an entire segment range by a delta."
 block|,
 literal|"This funtions moves the position of an entire segment range by a delta. The actual delta (which is returned) will be limited by the control points of the neighboring segments."
 block|,
-literal|"Shlomi Fish"
+literal|"Shlomi Fish<shlomif@iglu.org.il>"
 block|,
 literal|"Shlomi Fish"
 block|,

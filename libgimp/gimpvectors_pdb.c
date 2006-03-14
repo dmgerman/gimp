@@ -932,7 +932,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_stroke_get_length:  * @vectors_ID: The vectors object.  * @stroke_id: The stroke ID.  * @prescision: The prescision used for the approximation.  *  * measures the length of the given stroke.  *  * Measure the length of the given stroke.  *  * Returns: The length (in pixels) of the given stroke.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_vectors_stroke_get_length:  * @vectors_ID: The vectors object.  * @stroke_id: The stroke ID.  * @prescision: The prescision used for the approximation.  *  * Measure the length of the given stroke.  *  * Measure the length of the given stroke.  *  * Returns: The length (in pixels) of the given stroke.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function

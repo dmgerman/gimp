@@ -1290,7 +1290,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_hue_saturation:  * @drawable_ID: The drawable.  * @hue_range: Range of affected hues.  * @hue_offset: Hue offset in degrees.  * @lightness: lightness modification.  * @saturation: saturation modification.  *  * Modify hue, lightness, and saturation in the specified drawable.  *  * This procedures allows the hue, lightness, and saturation in the  * specified drawable to be modified. The 'hue_range' parameter  * provides the capability to limit range of affected hues.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_hue_saturation:  * @drawable_ID: The drawable.  * @hue_range: Range of affected hues.  * @hue_offset: Hue offset in degrees.  * @lightness: Lightness modification.  * @saturation: Saturation modification.  *  * Modify hue, lightness, and saturation in the specified drawable.  *  * This procedures allows the hue, lightness, and saturation in the  * specified drawable to be modified. The 'hue_range' parameter  * provides the capability to limit range of affected hues.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function

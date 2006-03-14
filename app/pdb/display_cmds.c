@@ -687,7 +687,7 @@ literal|"Get a handle to the native window for an image display."
 block|,
 literal|"This procedure returns a handle to the native window for a given image display. For example in the X backend of GDK, a native window handle is an Xlib XID. A value of 0 is returned for an invalid display or if this function is unimplemented for the windowing system that is being used."
 block|,
-literal|"Sven Neumann"
+literal|"Sven Neumann<sven@gimp.org>"
 block|,
 literal|"Sven Neumann"
 block|,

@@ -284,7 +284,7 @@ literal|"This procedure loads the specified help page into the helpbrowser or wh
 block|,
 literal|"Michael Natterer<mitch@gimp.org>"
 block|,
-literal|"Michael Natterer<mitch@gimp.org>"
+literal|"Michael Natterer"
 block|,
 literal|"2000"
 block|,

@@ -802,8 +802,8 @@ condition|(
 name|success
 condition|)
 block|{
-name|success
-operator|=
+if|if
+condition|(
 name|gimp_item_is_attached
 argument_list|(
 name|GIMP_ITEM
@@ -811,10 +811,6 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|success
 condition|)
 name|floating_sel_attach
 argument_list|(
@@ -822,6 +818,11 @@ name|layer
 argument_list|,
 name|drawable
 argument_list|)
+expr_stmt|;
+else|else
+name|success
+operator|=
+name|FALSE
 expr_stmt|;
 block|}
 return|return

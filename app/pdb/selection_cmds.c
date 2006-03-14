@@ -2950,10 +2950,6 @@ name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
-name|GimpImage
-modifier|*
-name|gimage
-decl_stmt|;
 name|layer
 operator|=
 operator|(
@@ -3002,8 +2998,10 @@ condition|(
 name|success
 condition|)
 block|{
+name|GimpImage
+modifier|*
 name|gimage
-operator|=
+init|=
 name|gimp_item_get_image
 argument_list|(
 name|GIMP_ITEM
@@ -3011,7 +3009,7 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|gimp_channel_select_alpha
 argument_list|(
 name|gimp_image_get_mask

@@ -738,13 +738,6 @@ name|layer
 init|=
 name|NULL
 decl_stmt|;
-name|GimpPDBStatusType
-name|status
-decl_stmt|;
-name|gchar
-modifier|*
-name|uri
-decl_stmt|;
 name|run_mode
 operator|=
 name|args
@@ -828,6 +821,13 @@ condition|(
 name|success
 condition|)
 block|{
+name|GimpPDBStatusType
+name|status
+decl_stmt|;
+name|gchar
+modifier|*
+name|uri
+decl_stmt|;
 name|uri
 operator|=
 name|file_utils_filename_to_uri
@@ -991,7 +991,7 @@ literal|"Loads an image file as a layer into an already opened image."
 block|,
 literal|"This procedure behaves like the file-load procedure but opens the specified image as a layer into an already opened image."
 block|,
-literal|"Sven Neumann"
+literal|"Sven Neumann<sven@gimp.org>"
 block|,
 literal|"Sven Neumann"
 block|,
@@ -1076,22 +1076,6 @@ name|thumb_data
 init|=
 name|NULL
 decl_stmt|;
-name|gchar
-modifier|*
-name|uri
-decl_stmt|;
-name|GimpThumbnail
-modifier|*
-name|thumbnail
-init|=
-name|NULL
-decl_stmt|;
-name|GdkPixbuf
-modifier|*
-name|pixbuf
-init|=
-name|NULL
-decl_stmt|;
 name|filename
 operator|=
 operator|(
@@ -1122,6 +1106,22 @@ condition|(
 name|success
 condition|)
 block|{
+name|GimpThumbnail
+modifier|*
+name|thumbnail
+init|=
+name|NULL
+decl_stmt|;
+name|GdkPixbuf
+modifier|*
+name|pixbuf
+init|=
+name|NULL
+decl_stmt|;
+name|gchar
+modifier|*
+name|uri
+decl_stmt|;
 name|uri
 operator|=
 name|g_filename_to_uri
@@ -1834,19 +1834,6 @@ name|gchar
 modifier|*
 name|filename
 decl_stmt|;
-name|GimpImagefile
-modifier|*
-name|imagefile
-decl_stmt|;
-name|gchar
-modifier|*
-name|uri
-decl_stmt|;
-specifier|const
-name|gchar
-modifier|*
-name|image_uri
-decl_stmt|;
 name|gimage
 operator|=
 name|gimp_image_get_by_ID
@@ -1905,8 +1892,11 @@ condition|(
 name|success
 condition|)
 block|{
+specifier|const
+name|gchar
+modifier|*
 name|image_uri
-operator|=
+init|=
 name|gimp_object_get_name
 argument_list|(
 name|GIMP_OBJECT
@@ -1914,7 +1904,7 @@ argument_list|(
 name|gimage
 argument_list|)
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 operator|!
@@ -1929,8 +1919,10 @@ condition|(
 name|success
 condition|)
 block|{
+name|gchar
+modifier|*
 name|uri
-operator|=
+init|=
 name|g_filename_to_uri
 argument_list|(
 name|filename
@@ -1939,7 +1931,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 operator|!
@@ -1972,6 +1964,10 @@ condition|(
 name|success
 condition|)
 block|{
+name|GimpImagefile
+modifier|*
+name|imagefile
+decl_stmt|;
 name|imagefile
 operator|=
 name|gimp_imagefile_new
@@ -2130,24 +2126,6 @@ name|name
 init|=
 name|NULL
 decl_stmt|;
-specifier|static
-name|gint
-name|id
-init|=
-literal|0
-decl_stmt|;
-specifier|static
-name|gint
-name|pid
-decl_stmt|;
-name|gchar
-modifier|*
-name|filename
-decl_stmt|;
-name|gchar
-modifier|*
-name|path
-decl_stmt|;
 name|extension
 operator|=
 operator|(
@@ -2178,6 +2156,24 @@ condition|(
 name|success
 condition|)
 block|{
+specifier|static
+name|gint
+name|id
+init|=
+literal|0
+decl_stmt|;
+specifier|static
+name|gint
+name|pid
+decl_stmt|;
+name|gchar
+modifier|*
+name|filename
+decl_stmt|;
+name|gchar
+modifier|*
+name|path
+decl_stmt|;
 if|if
 condition|(
 name|id
@@ -2399,14 +2395,6 @@ name|gchar
 modifier|*
 name|magics
 decl_stmt|;
-name|ProcRecord
-modifier|*
-name|proc
-decl_stmt|;
-name|PlugInProcDef
-modifier|*
-name|file_proc
-decl_stmt|;
 name|name
 operator|=
 operator|(
@@ -2493,6 +2481,14 @@ condition|(
 name|success
 condition|)
 block|{
+name|ProcRecord
+modifier|*
+name|proc
+decl_stmt|;
+name|PlugInProcDef
+modifier|*
+name|file_proc
+decl_stmt|;
 name|gchar
 modifier|*
 name|canonical
@@ -2978,14 +2974,6 @@ name|gchar
 modifier|*
 name|prefixes
 decl_stmt|;
-name|ProcRecord
-modifier|*
-name|proc
-decl_stmt|;
-name|PlugInProcDef
-modifier|*
-name|file_proc
-decl_stmt|;
 name|name
 operator|=
 operator|(
@@ -3057,6 +3045,14 @@ condition|(
 name|success
 condition|)
 block|{
+name|ProcRecord
+modifier|*
+name|proc
+decl_stmt|;
+name|PlugInProcDef
+modifier|*
+name|file_proc
+decl_stmt|;
 name|gchar
 modifier|*
 name|canonical
@@ -3530,7 +3526,7 @@ literal|"Associates a MIME type with a file handler procedure."
 block|,
 literal|"Registers a MIME type for a file handler procedure. This allows GIMP to determine the MIME type of the file opened or saved using this procedure."
 block|,
-literal|"Sven Neumann"
+literal|"Sven Neumann<sven@gimp.org>"
 block|,
 literal|"Sven Neumann"
 block|,
@@ -3757,7 +3753,7 @@ literal|"Associates a thumbnail loader with a file load procedure."
 block|,
 literal|"Some file formats allow for embedded thumbnails, other file formats contain a scalable image or provide the image data in different resolutions. A file plug-in for such a format may register a special procedure that allows GIMP to load a thumbnail preview of the image. This procedure is then associated with the standard load procedure using this function."
 block|,
-literal|"Sven Neumann"
+literal|"Sven Neumann<sven@gimp.org>"
 block|,
 literal|"Sven Neumann"
 block|,

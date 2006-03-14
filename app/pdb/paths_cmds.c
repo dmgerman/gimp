@@ -670,10 +670,6 @@ name|name
 init|=
 name|NULL
 decl_stmt|;
-name|GimpVectors
-modifier|*
-name|vectors
-decl_stmt|;
 name|gimage
 operator|=
 name|gimp_image_get_by_ID
@@ -707,13 +703,15 @@ condition|(
 name|success
 condition|)
 block|{
+name|GimpVectors
+modifier|*
 name|vectors
-operator|=
+init|=
 name|gimp_image_get_active_vectors
 argument_list|(
 name|gimage
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|vectors
@@ -885,10 +883,6 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|GimpVectors
-modifier|*
-name|vectors
-decl_stmt|;
 name|gimage
 operator|=
 name|gimp_image_get_by_ID
@@ -958,15 +952,17 @@ condition|(
 name|success
 condition|)
 block|{
+name|GimpVectors
+modifier|*
 name|vectors
-operator|=
+init|=
 name|gimp_image_get_vectors_by_name
 argument_list|(
 name|gimage
 argument_list|,
 name|name
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|vectors
@@ -1102,10 +1098,6 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|GimpVectors
-modifier|*
-name|vectors
-decl_stmt|;
 name|gimage
 operator|=
 name|gimp_image_get_by_ID
@@ -1175,15 +1167,17 @@ condition|(
 name|success
 condition|)
 block|{
+name|GimpVectors
+modifier|*
 name|vectors
-operator|=
+init|=
 name|gimp_image_get_vectors_by_name
 argument_list|(
 name|gimage
 argument_list|,
 name|name
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|vectors
@@ -1789,11 +1783,6 @@ name|gdouble
 modifier|*
 name|points_pairs
 decl_stmt|;
-name|gboolean
-name|closed
-init|=
-name|FALSE
-decl_stmt|;
 name|gimage
 operator|=
 name|gimp_image_get_by_ID
@@ -1910,6 +1899,11 @@ condition|(
 name|success
 condition|)
 block|{
+name|gboolean
+name|closed
+init|=
+name|FALSE
+decl_stmt|;
 if|if
 condition|(
 operator|(
@@ -2456,26 +2450,6 @@ name|slope
 init|=
 literal|0
 decl_stmt|;
-name|GimpVectors
-modifier|*
-name|vectors
-decl_stmt|;
-name|GimpStroke
-modifier|*
-name|stroke
-decl_stmt|;
-name|gdouble
-name|distance_along
-decl_stmt|;
-name|gdouble
-name|stroke_length
-decl_stmt|;
-name|gdouble
-name|stroke_distance
-decl_stmt|;
-name|GimpCoords
-name|position
-decl_stmt|;
 name|gimage
 operator|=
 name|gimp_image_get_by_ID
@@ -2520,6 +2494,26 @@ condition|(
 name|success
 condition|)
 block|{
+name|GimpVectors
+modifier|*
+name|vectors
+decl_stmt|;
+name|GimpStroke
+modifier|*
+name|stroke
+decl_stmt|;
+name|gdouble
+name|distance_along
+decl_stmt|;
+name|gdouble
+name|stroke_length
+decl_stmt|;
+name|gdouble
+name|stroke_distance
+decl_stmt|;
+name|GimpCoords
+name|position
+decl_stmt|;
 name|vectors
 operator|=
 name|gimp_image_get_active_vectors
@@ -2869,10 +2863,6 @@ name|tattoo
 init|=
 literal|0
 decl_stmt|;
-name|GimpVectors
-modifier|*
-name|vectors
-decl_stmt|;
 name|gimage
 operator|=
 name|gimp_image_get_by_ID
@@ -2942,15 +2932,17 @@ condition|(
 name|success
 condition|)
 block|{
+name|GimpVectors
+modifier|*
 name|vectors
-operator|=
+init|=
 name|gimp_image_get_vectors_by_name
 argument_list|(
 name|gimage
 argument_list|,
 name|name
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|vectors
@@ -3132,10 +3124,6 @@ name|tattovalue
 init|=
 literal|0
 decl_stmt|;
-name|GimpVectors
-modifier|*
-name|vectors
-decl_stmt|;
 name|gimage
 operator|=
 name|gimp_image_get_by_ID
@@ -3216,15 +3204,17 @@ condition|(
 name|success
 condition|)
 block|{
+name|GimpVectors
+modifier|*
 name|vectors
-operator|=
+init|=
 name|gimp_image_get_vectors_by_name
 argument_list|(
 name|gimage
 argument_list|,
 name|name
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|vectors
@@ -3380,10 +3370,6 @@ name|name
 init|=
 name|NULL
 decl_stmt|;
-name|GimpVectors
-modifier|*
-name|vectors
-decl_stmt|;
 name|gimage
 operator|=
 name|gimp_image_get_by_ID
@@ -3428,15 +3414,17 @@ condition|(
 name|success
 condition|)
 block|{
+name|GimpVectors
+modifier|*
 name|vectors
-operator|=
+init|=
 name|gimp_image_get_vectors_by_tattoo
 argument_list|(
 name|gimage
 argument_list|,
 name|tattoo
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|vectors
@@ -3625,10 +3613,6 @@ name|locked
 init|=
 name|FALSE
 decl_stmt|;
-name|GimpVectors
-modifier|*
-name|vectors
-decl_stmt|;
 name|gimage
 operator|=
 name|gimp_image_get_by_ID
@@ -3698,15 +3682,17 @@ condition|(
 name|success
 condition|)
 block|{
+name|GimpVectors
+modifier|*
 name|vectors
-operator|=
+init|=
 name|gimp_image_get_vectors_by_name
 argument_list|(
 name|gimage
 argument_list|,
 name|name
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|vectors
@@ -3888,10 +3874,6 @@ name|locked
 init|=
 name|FALSE
 decl_stmt|;
-name|GimpVectors
-modifier|*
-name|vectors
-decl_stmt|;
 name|gimage
 operator|=
 name|gimp_image_get_by_ID
@@ -3976,15 +3958,17 @@ condition|(
 name|success
 condition|)
 block|{
+name|GimpVectors
+modifier|*
 name|vectors
-operator|=
+init|=
 name|gimp_image_get_vectors_by_name
 argument_list|(
 name|gimage
 argument_list|,
 name|name
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|vectors
@@ -4142,10 +4126,6 @@ name|visible
 init|=
 name|FALSE
 decl_stmt|;
-name|GimpVectors
-modifier|*
-name|vectors
-decl_stmt|;
 name|gimage
 operator|=
 name|gimp_image_get_by_ID
@@ -4215,15 +4195,17 @@ condition|(
 name|success
 condition|)
 block|{
+name|GimpVectors
+modifier|*
 name|vectors
-operator|=
+init|=
 name|gimp_image_get_vectors_by_name
 argument_list|(
 name|gimage
 argument_list|,
 name|name
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|vectors
@@ -4405,10 +4387,6 @@ name|visible
 init|=
 name|FALSE
 decl_stmt|;
-name|GimpVectors
-modifier|*
-name|vectors
-decl_stmt|;
 name|gimage
 operator|=
 name|gimp_image_get_by_ID
@@ -4493,15 +4471,17 @@ condition|(
 name|success
 condition|)
 block|{
+name|GimpVectors
+modifier|*
 name|vectors
-operator|=
+init|=
 name|gimp_image_get_vectors_by_name
 argument_list|(
 name|gimage
 argument_list|,
 name|name
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|vectors
@@ -4586,7 +4566,7 @@ literal|"Sets the visibility of the named path."
 block|,
 literal|"This procedure sets the specified path's visibility."
 block|,
-literal|"Sven Neumann"
+literal|"Sven Neumann<sven@gimp.org>"
 block|,
 literal|"Sven Neumann"
 block|,
@@ -4664,10 +4644,6 @@ name|feather_radius_x
 decl_stmt|;
 name|gdouble
 name|feather_radius_y
-decl_stmt|;
-name|GimpVectors
-modifier|*
-name|vectors
 decl_stmt|;
 name|gimage
 operator|=
@@ -4815,15 +4791,17 @@ condition|(
 name|success
 condition|)
 block|{
+name|GimpVectors
+modifier|*
 name|vectors
-operator|=
+init|=
 name|gimp_image_get_vectors_by_name
 argument_list|(
 name|gimage
 argument_list|,
 name|name
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|vectors
@@ -4953,9 +4931,9 @@ literal|"Transforms the active path into a selection"
 block|,
 literal|"This procedure renders the desired path into the current selection."
 block|,
-literal|"Joao S. O. Bueno"
+literal|"Jo\xc3\xa3o S. O. Bueno Calligaris"
 block|,
-literal|"Joao S. O. Bueno"
+literal|"Jo\xc3\xa3o S. O. Bueno Calligaris"
 block|,
 literal|"2003"
 block|,
@@ -5198,7 +5176,7 @@ literal|"Import paths from an SVG file."
 block|,
 literal|"This procedure imports paths from an SVG file. SVG elements other than paths and basic shapes are ignored."
 block|,
-literal|"Sven Neumann"
+literal|"Sven Neumann<sven@gimp.org>"
 block|,
 literal|"Sven Neumann"
 block|,
@@ -5467,7 +5445,7 @@ literal|"Import paths from an SVG string."
 block|,
 literal|"This procedure works like gimp_path_import() but takes a string rather than reading the SVG from a file. This allows you to write scripts that generate SVG and feed it to GIMP."
 block|,
-literal|"Sven Neumann"
+literal|"Sven Neumann<sven@gimp.org>"
 block|,
 literal|"Sven Neumann"
 block|,

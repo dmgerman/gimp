@@ -1467,9 +1467,6 @@ name|list
 init|=
 name|NULL
 decl_stmt|;
-name|gint
-name|i
-decl_stmt|;
 name|list
 operator|=
 name|GIMP_LIST
@@ -1493,6 +1490,9 @@ condition|(
 name|num_images
 condition|)
 block|{
+name|gint
+name|i
+decl_stmt|;
 name|image_ids
 operator|=
 name|g_new
@@ -4282,7 +4282,7 @@ literal|"Rotates the image by the specified degrees."
 block|,
 literal|"This procedure rotates the image."
 block|,
-literal|"Michael Natterer"
+literal|"Michael Natterer<mitch@gimp.org>"
 block|,
 literal|"Michael Natterer"
 block|,
@@ -4357,15 +4357,6 @@ name|layer_ids
 init|=
 name|NULL
 decl_stmt|;
-name|GList
-modifier|*
-name|list
-init|=
-name|NULL
-decl_stmt|;
-name|gint
-name|i
-decl_stmt|;
 name|gimage
 operator|=
 name|gimp_image_get_by_ID
@@ -4399,6 +4390,12 @@ condition|(
 name|success
 condition|)
 block|{
+name|GList
+modifier|*
+name|list
+init|=
+name|NULL
+decl_stmt|;
 name|list
 operator|=
 name|GIMP_LIST
@@ -4422,6 +4419,9 @@ condition|(
 name|num_layers
 condition|)
 block|{
+name|gint
+name|i
+decl_stmt|;
 name|layer_ids
 operator|=
 name|g_new
@@ -4648,15 +4648,6 @@ name|channel_ids
 init|=
 name|NULL
 decl_stmt|;
-name|GList
-modifier|*
-name|list
-init|=
-name|NULL
-decl_stmt|;
-name|gint
-name|i
-decl_stmt|;
 name|gimage
 operator|=
 name|gimp_image_get_by_ID
@@ -4690,6 +4681,12 @@ condition|(
 name|success
 condition|)
 block|{
+name|GList
+modifier|*
+name|list
+init|=
+name|NULL
+decl_stmt|;
 name|list
 operator|=
 name|GIMP_LIST
@@ -4713,6 +4710,9 @@ condition|(
 name|num_channels
 condition|)
 block|{
+name|gint
+name|i
+decl_stmt|;
 name|channel_ids
 operator|=
 name|g_new
@@ -4939,15 +4939,6 @@ name|vector_ids
 init|=
 name|NULL
 decl_stmt|;
-name|GList
-modifier|*
-name|list
-init|=
-name|NULL
-decl_stmt|;
-name|gint
-name|i
-decl_stmt|;
 name|gimage
 operator|=
 name|gimp_image_get_by_ID
@@ -4981,6 +4972,12 @@ condition|(
 name|success
 condition|)
 block|{
+name|GList
+modifier|*
+name|list
+init|=
+name|NULL
+decl_stmt|;
 name|list
 operator|=
 name|GIMP_LIST
@@ -5004,6 +5001,9 @@ condition|(
 name|num_vectors
 condition|)
 block|{
+name|gint
+name|i
+decl_stmt|;
 name|vector_ids
 operator|=
 name|g_new
@@ -5777,10 +5777,6 @@ name|drawable
 init|=
 name|NULL
 decl_stmt|;
-name|GimpLayer
-modifier|*
-name|floating_sel
-decl_stmt|;
 name|gimage
 operator|=
 name|gimp_image_get_by_ID
@@ -5814,13 +5810,15 @@ condition|(
 name|success
 condition|)
 block|{
+name|GimpLayer
+modifier|*
 name|floating_sel
-operator|=
+init|=
 name|gimp_image_floating_sel
 argument_list|(
 name|gimage
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|floating_sel
@@ -8105,7 +8103,7 @@ literal|"This procedure raises the specified vectors one step in the existing ve
 block|,
 literal|"Simon Budig"
 block|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|"Simon Budig"
 block|,
 literal|"2005"
 block|,
@@ -8307,7 +8305,7 @@ literal|"This procedure lowers the specified vectors one step in the existing ve
 block|,
 literal|"Simon Budig"
 block|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|"Simon Budig"
 block|,
 literal|"2005"
 block|,
@@ -8509,7 +8507,7 @@ literal|"This procedure raises the specified vectors to top of the existing vect
 block|,
 literal|"Simon Budig"
 block|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|"Simon Budig"
 block|,
 literal|"2005"
 block|,
@@ -8711,7 +8709,7 @@ literal|"This procedure lowers the specified vectors to bottom of the existing v
 block|,
 literal|"Simon Budig"
 block|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|"Simon Budig"
 block|,
 literal|"2005"
 block|,
@@ -9593,7 +9591,7 @@ literal|"This procedure removes the specified path from the image. If the path d
 block|,
 literal|"Simon Budig"
 block|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|"Simon Budig"
 block|,
 literal|"2005"
 block|,
@@ -16328,7 +16326,7 @@ literal|"Returns the specified image's unit."
 block|,
 literal|"This procedure returns the specified image's unit. This value is independent of any of the layers in this image. See the gimp_unit_* procedure definitions for the valid range of unit IDs and a description of the unit system."
 block|,
-literal|"Michael Natterer"
+literal|"Michael Natterer<mitch@gimp.org>"
 block|,
 literal|"Michael Natterer"
 block|,
@@ -16512,7 +16510,7 @@ literal|"Sets the specified image's unit."
 block|,
 literal|"This procedure sets the specified image's unit. No scaling or resizing is performed. This value is independent of any of the layers in this image. See the gimp_unit_* procedure definitions for the valid range of unit IDs and a description of the unit system."
 block|,
-literal|"Michael Natterer"
+literal|"Michael Natterer<mitch@gimp.org>"
 block|,
 literal|"Michael Natterer"
 block|,

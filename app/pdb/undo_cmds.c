@@ -213,12 +213,6 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|gchar
-modifier|*
-name|undo_desc
-init|=
-name|NULL
-decl_stmt|;
 name|gimage
 operator|=
 name|gimp_image_get_by_ID
@@ -252,6 +246,12 @@ condition|(
 name|success
 condition|)
 block|{
+name|gchar
+modifier|*
+name|undo_desc
+init|=
+name|NULL
+decl_stmt|;
 if|if
 condition|(
 name|gimp

@@ -579,12 +579,6 @@ name|name
 decl_stmt|;
 name|GimpPalette
 modifier|*
-name|palette
-init|=
-name|NULL
-decl_stmt|;
-name|GimpPalette
-modifier|*
 name|palette_copy
 init|=
 name|NULL
@@ -630,8 +624,10 @@ condition|(
 name|success
 condition|)
 block|{
+name|GimpPalette
+modifier|*
 name|palette
-operator|=
+init|=
 operator|(
 name|GimpPalette
 operator|*
@@ -646,7 +642,7 @@ name|container
 argument_list|,
 name|name
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|palette
@@ -737,7 +733,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The palette name."
+literal|"The palette name"
 block|}
 block|}
 decl_stmt|;
@@ -1024,7 +1020,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The palette name."
+literal|"The palette name"
 block|}
 block|,
 block|{
@@ -1132,12 +1128,6 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|GimpPalette
-modifier|*
-name|palette
-init|=
-name|NULL
-decl_stmt|;
 name|name
 operator|=
 operator|(
@@ -1179,8 +1169,10 @@ condition|(
 name|success
 condition|)
 block|{
+name|GimpPalette
+modifier|*
 name|palette
-operator|=
+init|=
 operator|(
 name|GimpPalette
 operator|*
@@ -1195,7 +1187,7 @@ name|container
 argument_list|,
 name|name
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|palette
@@ -1285,7 +1277,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The palette name."
+literal|"The palette name"
 block|}
 block|}
 decl_stmt|;
@@ -1497,7 +1489,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The palette name."
+literal|"The palette name"
 block|}
 block|}
 decl_stmt|;
@@ -1537,7 +1529,7 @@ literal|"Tests if palette can be edited"
 block|,
 literal|"Returns True if you have permission to change the palette"
 block|,
-literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu"
+literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu>"
 block|,
 literal|"Bill Skaggs"
 block|,
@@ -1720,7 +1712,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The palette name."
+literal|"The palette name"
 block|}
 block|}
 decl_stmt|;
@@ -1943,7 +1935,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The palette name."
+literal|"The palette name"
 block|}
 block|}
 decl_stmt|;
@@ -2046,12 +2038,6 @@ decl_stmt|;
 name|gint32
 name|columns
 decl_stmt|;
-name|GimpPalette
-modifier|*
-name|palette
-init|=
-name|NULL
-decl_stmt|;
 name|name
 operator|=
 operator|(
@@ -2118,8 +2104,10 @@ condition|(
 name|success
 condition|)
 block|{
+name|GimpPalette
+modifier|*
 name|palette
-operator|=
+init|=
 operator|(
 name|GimpPalette
 operator|*
@@ -2134,7 +2122,7 @@ name|container
 argument_list|,
 name|name
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|palette
@@ -2184,7 +2172,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The palette name."
+literal|"The palette name"
 block|}
 block|,
 block|{
@@ -2284,12 +2272,6 @@ decl_stmt|;
 name|GimpRGB
 name|color
 decl_stmt|;
-name|GimpPalette
-modifier|*
-name|palette
-init|=
-name|NULL
-decl_stmt|;
 name|GimpPaletteEntry
 modifier|*
 name|entry
@@ -2382,8 +2364,10 @@ condition|(
 name|success
 condition|)
 block|{
+name|GimpPalette
+modifier|*
 name|palette
-operator|=
+init|=
 operator|(
 name|GimpPalette
 operator|*
@@ -2398,7 +2382,7 @@ name|container
 argument_list|,
 name|name
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|palette
@@ -2477,7 +2461,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The palette name."
+literal|"The palette name"
 block|}
 block|,
 block|{
@@ -2596,18 +2580,6 @@ decl_stmt|;
 name|gint32
 name|entry_num
 decl_stmt|;
-name|GimpPalette
-modifier|*
-name|palette
-init|=
-name|NULL
-decl_stmt|;
-name|GimpPaletteEntry
-modifier|*
-name|entry
-init|=
-name|NULL
-decl_stmt|;
 name|name
 operator|=
 operator|(
@@ -2660,8 +2632,10 @@ condition|(
 name|success
 condition|)
 block|{
+name|GimpPalette
+modifier|*
 name|palette
-operator|=
+init|=
 operator|(
 name|GimpPalette
 operator|*
@@ -2676,7 +2650,7 @@ name|container
 argument_list|,
 name|name
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|palette
@@ -2702,8 +2676,10 @@ operator|->
 name|n_colors
 condition|)
 block|{
+name|GimpPaletteEntry
+modifier|*
 name|entry
-operator|=
+init|=
 name|g_list_nth_data
 argument_list|(
 name|palette
@@ -2712,7 +2688,7 @@ name|colors
 argument_list|,
 name|entry_num
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|gimp_palette_delete_entry
 argument_list|(
 name|palette
@@ -2758,7 +2734,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The palette name."
+literal|"The palette name"
 block|}
 block|,
 block|{
@@ -2857,18 +2833,6 @@ decl_stmt|;
 name|GimpRGB
 name|color
 decl_stmt|;
-name|GimpPalette
-modifier|*
-name|palette
-init|=
-name|NULL
-decl_stmt|;
-name|GimpPaletteEntry
-modifier|*
-name|entry
-init|=
-name|NULL
-decl_stmt|;
 name|name
 operator|=
 operator|(
@@ -2921,8 +2885,10 @@ condition|(
 name|success
 condition|)
 block|{
+name|GimpPalette
+modifier|*
 name|palette
-operator|=
+init|=
 operator|(
 name|GimpPalette
 operator|*
@@ -2937,7 +2903,7 @@ name|container
 argument_list|,
 name|name
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|palette
@@ -2956,8 +2922,10 @@ operator|->
 name|n_colors
 condition|)
 block|{
+name|GimpPaletteEntry
+modifier|*
 name|entry
-operator|=
+init|=
 name|g_list_nth_data
 argument_list|(
 name|palette
@@ -2966,7 +2934,7 @@ name|colors
 argument_list|,
 name|entry_num
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|color
 operator|=
 name|entry
@@ -3030,7 +2998,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The palette name."
+literal|"The palette name"
 block|}
 block|,
 block|{
@@ -3144,18 +3112,6 @@ decl_stmt|;
 name|GimpRGB
 name|color
 decl_stmt|;
-name|GimpPalette
-modifier|*
-name|palette
-init|=
-name|NULL
-decl_stmt|;
-name|GimpPaletteEntry
-modifier|*
-name|entry
-init|=
-name|NULL
-decl_stmt|;
 name|name
 operator|=
 operator|(
@@ -3219,8 +3175,10 @@ condition|(
 name|success
 condition|)
 block|{
+name|GimpPalette
+modifier|*
 name|palette
-operator|=
+init|=
 operator|(
 name|GimpPalette
 operator|*
@@ -3235,7 +3193,7 @@ name|container
 argument_list|,
 name|name
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|palette
@@ -3261,8 +3219,10 @@ operator|->
 name|n_colors
 condition|)
 block|{
+name|GimpPaletteEntry
+modifier|*
 name|entry
-operator|=
+init|=
 name|g_list_nth_data
 argument_list|(
 name|palette
@@ -3271,7 +3231,7 @@ name|colors
 argument_list|,
 name|entry_num
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|entry
 operator|->
 name|color
@@ -3324,7 +3284,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The palette name."
+literal|"The palette name"
 block|}
 block|,
 block|{
@@ -3428,12 +3388,6 @@ decl_stmt|;
 name|gint32
 name|entry_num
 decl_stmt|;
-name|GimpPalette
-modifier|*
-name|palette
-init|=
-name|NULL
-decl_stmt|;
 name|GimpPaletteEntry
 modifier|*
 name|entry
@@ -3492,8 +3446,10 @@ condition|(
 name|success
 condition|)
 block|{
+name|GimpPalette
+modifier|*
 name|palette
-operator|=
+init|=
 operator|(
 name|GimpPalette
 operator|*
@@ -3508,7 +3464,7 @@ name|container
 argument_list|,
 name|name
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|palette
@@ -3598,7 +3554,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The palette name."
+literal|"The palette name"
 block|}
 block|,
 block|{
@@ -3713,18 +3669,6 @@ name|gchar
 modifier|*
 name|entry_name
 decl_stmt|;
-name|GimpPalette
-modifier|*
-name|palette
-init|=
-name|NULL
-decl_stmt|;
-name|GimpPaletteEntry
-modifier|*
-name|entry
-init|=
-name|NULL
-decl_stmt|;
 name|name
 operator|=
 operator|(
@@ -3811,8 +3755,10 @@ condition|(
 name|success
 condition|)
 block|{
+name|GimpPalette
+modifier|*
 name|palette
-operator|=
+init|=
 operator|(
 name|GimpPalette
 operator|*
@@ -3827,7 +3773,7 @@ name|container
 argument_list|,
 name|name
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|palette
@@ -3853,8 +3799,10 @@ operator|->
 name|n_colors
 condition|)
 block|{
+name|GimpPaletteEntry
+modifier|*
 name|entry
-operator|=
+init|=
 name|g_list_nth_data
 argument_list|(
 name|palette
@@ -3863,7 +3811,7 @@ name|colors
 argument_list|,
 name|entry_num
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|g_free
 argument_list|(
 name|entry
@@ -3926,7 +3874,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The palette name."
+literal|"The palette name"
 block|}
 block|,
 block|{

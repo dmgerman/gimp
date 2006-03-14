@@ -340,7 +340,7 @@ literal|"Returns the number of units."
 block|,
 literal|"This procedure returns the number of defined units."
 block|,
-literal|"Michael Natterer"
+literal|"Michael Natterer<mitch@gimp.org>"
 block|,
 literal|"Michael Natterer"
 block|,
@@ -459,7 +459,7 @@ literal|"Returns the number of built-in units."
 block|,
 literal|"This procedure returns the number of defined units built-in to the GIMP."
 block|,
-literal|"Michael Natterer"
+literal|"Michael Natterer<mitch@gimp.org>"
 block|,
 literal|"Michael Natterer"
 block|,
@@ -756,6 +756,7 @@ if|if
 condition|(
 name|success
 condition|)
+block|{
 name|unit
 operator|=
 name|_gimp_unit_new
@@ -777,6 +778,7 @@ argument_list|,
 name|plural
 argument_list|)
 expr_stmt|;
+block|}
 name|return_args
 operator|=
 name|procedural_db_return_args
@@ -909,7 +911,7 @@ literal|"Creates a new unit and returns it's integer ID."
 block|,
 literal|"This procedure creates a new unit and returns it's integer ID. Note that the new unit will have it's deletion flag set to TRUE, so you will have to set it to FALSE with gimp_unit_set_deletion_flag to make it persistent."
 block|,
-literal|"Michael Natterer"
+literal|"Michael Natterer<mitch@gimp.org>"
 block|,
 literal|"Michael Natterer"
 block|,
@@ -1089,7 +1091,7 @@ literal|"Returns the deletion flag of the unit."
 block|,
 literal|"This procedure returns the deletion flag of the unit. If this value is TRUE the unit's definition will not be saved in the user's unitrc file on gimp exit."
 block|,
-literal|"Michael Natterer"
+literal|"Michael Natterer<mitch@gimp.org>"
 block|,
 literal|"Michael Natterer"
 block|,
@@ -1261,7 +1263,7 @@ literal|"Sets the deletion flag of a unit."
 block|,
 literal|"This procedure sets the unit's deletion flag. If the deletion flag of a unit is TRUE on gimp exit, this unit's definition will not be saved in the user's unitrc."
 block|,
-literal|"Michael Natterer"
+literal|"Michael Natterer<mitch@gimp.org>"
 block|,
 literal|"Michael Natterer"
 block|,
@@ -1444,7 +1446,7 @@ literal|"Returns the textual identifier of the unit."
 block|,
 literal|"This procedure returns the textual identifier of the unit. For built-in units it will be the english singular form of the unit's name. For user-defined units this should equal to the singular form."
 block|,
-literal|"Michael Natterer"
+literal|"Michael Natterer<mitch@gimp.org>"
 block|,
 literal|"Michael Natterer"
 block|,
@@ -1624,7 +1626,7 @@ literal|"Returns the factor of the unit."
 block|,
 literal|"This procedure returns the unit's factor which indicates how many units make up an inch. Note that asking for the factor of \"pixels\" will produce an error."
 block|,
-literal|"Michael Natterer"
+literal|"Michael Natterer<mitch@gimp.org>"
 block|,
 literal|"Michael Natterer"
 block|,
@@ -1804,7 +1806,7 @@ literal|"Returns the number of digits of the unit."
 block|,
 literal|"This procedure returns the number of digits you should provide in input or output functions to get approximately the same accuracy as with two digits and inches. Note that asking for the digits of \"pixels\" will produce an error."
 block|,
-literal|"Michael Natterer"
+literal|"Michael Natterer<mitch@gimp.org>"
 block|,
 literal|"Michael Natterer"
 block|,
@@ -1987,7 +1989,7 @@ literal|"Returns the symbol of the unit."
 block|,
 literal|"This procedure returns the symbol of the unit (\"''\" for inches)."
 block|,
-literal|"Michael Natterer"
+literal|"Michael Natterer<mitch@gimp.org>"
 block|,
 literal|"Michael Natterer"
 block|,
@@ -2170,7 +2172,7 @@ literal|"Returns the abbreviation of the unit."
 block|,
 literal|"This procedure returns the abbreviation of the unit (\"in\" for inches)."
 block|,
-literal|"Michael Natterer"
+literal|"Michael Natterer<mitch@gimp.org>"
 block|,
 literal|"Michael Natterer"
 block|,
@@ -2353,7 +2355,7 @@ literal|"Returns the singular form of the unit."
 block|,
 literal|"This procedure returns the singular form of the unit."
 block|,
-literal|"Michael Natterer"
+literal|"Michael Natterer<mitch@gimp.org>"
 block|,
 literal|"Michael Natterer"
 block|,
@@ -2536,7 +2538,7 @@ literal|"Returns the plural form of the unit."
 block|,
 literal|"This procedure returns the plural form of the unit."
 block|,
-literal|"Michael Natterer"
+literal|"Michael Natterer<mitch@gimp.org>"
 block|,
 literal|"Michael Natterer"
 block|,

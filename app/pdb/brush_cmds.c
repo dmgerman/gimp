@@ -1140,7 +1140,7 @@ literal|"Tests if generated"
 block|,
 literal|"Returns True if this brush is parametric, False for other types"
 block|,
-literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu"
+literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu>"
 block|,
 literal|"Bill Skaggs"
 block|,
@@ -1900,7 +1900,7 @@ literal|"Tests if brush can be edited"
 block|,
 literal|"Returns True if you have permission to change the brush"
 block|,
-literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu"
+literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu>"
 block|,
 literal|"Bill Skaggs"
 block|,
@@ -3128,7 +3128,7 @@ literal|"Set the brush spacing."
 block|,
 literal|"This procedure modifies the spacing setting for the specified brush. The value should be a integer between 0 and 1000."
 block|,
-literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu"
+literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu>"
 block|,
 literal|"Bill Skaggs"
 block|,
@@ -3359,7 +3359,7 @@ literal|"Get the shape of a generated brush."
 block|,
 literal|"This procedure gets the shape value for a generated brush. If called for any other type of brush, it does not succeed. The current possibilities are Circle (GIMP_BRUSH_GENERATED_CIRCLE), Square (GIMP_BRUSH_GENERATED_SQUARE), and Diamond (GIMP_BRUSH_GENERATED_DIAMOND). Other shapes are likely to be added in the future."
 block|,
-literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu"
+literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu>"
 block|,
 literal|"Bill Skaggs"
 block|,
@@ -3590,7 +3590,7 @@ literal|"Get the radius of a generated brush."
 block|,
 literal|"This procedure gets the radius value for a generated brush. If called for any other type of brush, it does not succeed."
 block|,
-literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu"
+literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu>"
 block|,
 literal|"Bill Skaggs"
 block|,
@@ -3821,7 +3821,7 @@ literal|"Get the number of spikes for a generated brush."
 block|,
 literal|"This procedure gets the number of spikes for a generated brush. If called for any other type of brush, it does not succeed."
 block|,
-literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu"
+literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu>"
 block|,
 literal|"Bill Skaggs"
 block|,
@@ -4052,7 +4052,7 @@ literal|"Get the hardness of a generated brush."
 block|,
 literal|"This procedure gets the hardness of a generated brush. The hardness of a brush is the amount its intensity fades at the outside edge. If called for any other type of brush, the function does not succeed."
 block|,
-literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu"
+literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu>"
 block|,
 literal|"Bill Skaggs"
 block|,
@@ -4283,7 +4283,7 @@ literal|"Get the aspect ratio of a generated brush."
 block|,
 literal|"This procedure gets the aspect ratio of a generated brush. If called for any other type of brush, it does not succeed."
 block|,
-literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu"
+literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu>"
 block|,
 literal|"Bill Skaggs"
 block|,
@@ -4514,7 +4514,7 @@ literal|"Get the rotation angle of a generated brush."
 block|,
 literal|"This procedure gets the angle of rotation for a generated brush. If called for any other type of brush, it does not succeed."
 block|,
-literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu"
+literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu>"
 block|,
 literal|"Bill Skaggs"
 block|,
@@ -4785,7 +4785,7 @@ literal|"Set the shape of a generated brush."
 block|,
 literal|"This procedure sets the shape value for a generated brush. If called for any other type of brush, it does not succeed. The current possibilities are Circle (GIMP_BRUSH_GENERATED_CIRCLE), Square (GIMP_BRUSH_GENERATED_SQUARE), and Diamond (GIMP_BRUSH_GENERATED_DIAMOND). Other shapes are likely to be added in the future."
 block|,
-literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu"
+literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu>"
 block|,
 literal|"Bill Skaggs"
 block|,
@@ -5056,7 +5056,7 @@ literal|"Set the radius of a generated brush."
 block|,
 literal|"This procedure sets the radius for a generated brush. If called for any other type of brush, it does not succeed."
 block|,
-literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu"
+literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu>"
 block|,
 literal|"Bill Skaggs"
 block|,
@@ -5327,7 +5327,7 @@ literal|"Set the number of spikes for a generated brush."
 block|,
 literal|"This procedure sets the number of spikes for a generated brush. If called for any other type of brush, it does not succeed."
 block|,
-literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu"
+literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu>"
 block|,
 literal|"Bill Skaggs"
 block|,
@@ -5598,7 +5598,7 @@ literal|"Set the hardness of a generated brush."
 block|,
 literal|"This procedure sets the hardness for a generated brush. If called for any other type of brush, it does not succeed."
 block|,
-literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu"
+literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu>"
 block|,
 literal|"Bill Skaggs"
 block|,
@@ -5869,7 +5869,7 @@ literal|"Set the aspect ratio of a generated brush."
 block|,
 literal|"This procedure sets the aspect ratio for a generated brush. If called for any other type of brush, it does not succeed."
 block|,
-literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu"
+literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu>"
 block|,
 literal|"Bill Skaggs"
 block|,
@@ -6140,7 +6140,7 @@ literal|"Set the rotation angle of a generated brush."
 block|,
 literal|"This procedure sets the rotation angle for a generated brush. If called for any other type of brush, it does not succeed."
 block|,
-literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu"
+literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu>"
 block|,
 literal|"Bill Skaggs"
 block|,

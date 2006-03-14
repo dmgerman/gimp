@@ -1021,7 +1021,7 @@ literal|"If there is a selection in the image, then the area specified by the se
 block|,
 literal|"Michael Natterer<mitch@gimp.org>"
 block|,
-literal|"Michael Natterer<mitch@gimp.org>"
+literal|"Michael Natterer"
 block|,
 literal|"2004"
 block|,
@@ -1494,7 +1494,7 @@ literal|"This procedure pastes a copy of the internal GIMP edit buffer to a new 
 block|,
 literal|"Michael Natterer<mitch@gimp.org>"
 block|,
-literal|"Michael Natterer<mitch@gimp.org>"
+literal|"Michael Natterer"
 block|,
 literal|"2005"
 block|,
@@ -1815,7 +1815,7 @@ literal|"This procedure works like gimp-edit-cut, but additionally stores the cu
 block|,
 literal|"Michael Natterer<mitch@gimp.org>"
 block|,
-literal|"Michael Natterer<mitch@gimp.org>"
+literal|"Michael Natterer"
 block|,
 literal|"2005"
 block|,
@@ -2136,7 +2136,7 @@ literal|"This procedure works like gimp-edit-copy, but additionally stores the c
 block|,
 literal|"Michael Natterer<mitch@gimp.org>"
 block|,
-literal|"Michael Natterer<mitch@gimp.org>"
+literal|"Michael Natterer"
 block|,
 literal|"2005"
 block|,
@@ -2420,7 +2420,7 @@ literal|"This procedure works like gimp-edit-copy-visible, but additionally stor
 block|,
 literal|"Michael Natterer<mitch@gimp.org>"
 block|,
-literal|"Michael Natterer<mitch@gimp.org>"
+literal|"Michael Natterer"
 block|,
 literal|"2005"
 block|,
@@ -2784,7 +2784,7 @@ literal|"This procedure works like gimp-edit-paste but pastes a named buffer ins
 block|,
 literal|"Michael Natterer<mitch@gimp.org>"
 block|,
-literal|"Michael Natterer<mitch@gimp.org>"
+literal|"Michael Natterer"
 block|,
 literal|"2005"
 block|,
@@ -3036,7 +3036,7 @@ literal|"This procedure works like gimp-edit-paste-as-new but pastes a named buf
 block|,
 literal|"Michael Natterer<mitch@gimp.org>"
 block|,
-literal|"Michael Natterer<mitch@gimp.org>"
+literal|"Michael Natterer"
 block|,
 literal|"2005"
 block|,
