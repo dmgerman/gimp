@@ -253,7 +253,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Edit attributes of this layer"
+literal|"Edit the layer's name"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -328,7 +328,7 @@ literal|"<control><shift>D"
 block|,
 name|N_
 argument_list|(
-literal|"Create a duplicate of this layer and add it to the layer stack"
+literal|"Create a duplicate of the layer and add it to the image"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -642,7 +642,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Scale the layer's pixels"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -664,7 +667,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Crop the layer to the extents of the selection"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -686,7 +692,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Add a mask that allows non-destructive editing of transparency"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -708,7 +717,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Add transparency information to the layer"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -730,7 +742,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Remove transparency information from the layer"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -763,7 +778,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Keep transparency information on this layer from being modified"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -787,7 +805,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Work on the layer mask"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -835,7 +856,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Dismiss the effect of the layer mask"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -870,7 +894,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Apply the effect of the layer mask and remove it"
+argument_list|)
 block|,
 name|GIMP_MASK_APPLY
 block|,
@@ -891,7 +918,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Remove the layer mask and its effect"
+argument_list|)
 block|,
 name|GIMP_MASK_DISCARD
 block|,
@@ -923,7 +953,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Replace the selection with the layer mask"
+argument_list|)
 block|,
 name|GIMP_CHANNEL_OP_REPLACE
 block|,
@@ -944,7 +977,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Add the layer mask to the current selection"
+argument_list|)
 block|,
 name|GIMP_CHANNEL_OP_ADD
 block|,
@@ -965,7 +1001,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Subtract the layer mask from the current selection"
+argument_list|)
 block|,
 name|GIMP_CHANNEL_OP_SUBTRACT
 block|,
@@ -986,7 +1025,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Intersect the layer mask with the current selection"
+argument_list|)
 block|,
 name|GIMP_CHANNEL_OP_INTERSECT
 block|,
@@ -1018,7 +1060,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Replace the selection with the layer's alpha channel"
+argument_list|)
 block|,
 name|GIMP_CHANNEL_OP_REPLACE
 block|,
@@ -1039,7 +1084,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Add the layer's alpha channel to the current selection"
+argument_list|)
 block|,
 name|GIMP_CHANNEL_OP_ADD
 block|,
@@ -1060,7 +1108,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Subtract the layer's alpha channel from the current selection"
+argument_list|)
 block|,
 name|GIMP_CHANNEL_OP_SUBTRACT
 block|,
@@ -1081,7 +1132,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Intersect the layer's alpha channel with the current selection"
+argument_list|)
 block|,
 name|GIMP_CHANNEL_OP_INTERSECT
 block|,

@@ -432,7 +432,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Crop the image to the bounding box of the selection"
+literal|"Crop the image to the extents of the selection"
 argument_list|)
 block|,
 name|G_CALLBACK
