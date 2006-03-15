@@ -280,6 +280,8 @@ name|filter
 decl_stmt|;
 name|gint32
 name|num_palettes
+init|=
+literal|0
 decl_stmt|;
 name|gchar
 modifier|*
@@ -722,6 +724,16 @@ literal|0
 decl_stmt|;
 name|GimpRGB
 name|color
+init|=
+block|{
+literal|0.0
+block|,
+literal|0.0
+block|,
+literal|0.0
+block|,
+literal|1.0
+block|}
 decl_stmt|;
 name|name
 operator|=

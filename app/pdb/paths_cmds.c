@@ -443,6 +443,8 @@ name|gimage
 decl_stmt|;
 name|gint32
 name|num_paths
+init|=
+literal|0
 decl_stmt|;
 name|gchar
 modifier|*
@@ -1766,16 +1768,12 @@ decl_stmt|;
 name|gchar
 modifier|*
 name|name
-init|=
-name|NULL
 decl_stmt|;
 name|gint32
 name|ptype
 decl_stmt|;
 name|gint32
 name|num_path_points
-init|=
-literal|0
 decl_stmt|;
 name|gdouble
 modifier|*
@@ -2446,7 +2444,7 @@ decl_stmt|;
 name|gdouble
 name|slope
 init|=
-literal|0
+literal|0.0
 decl_stmt|;
 name|gimage
 operator|=
@@ -3119,8 +3117,6 @@ name|name
 decl_stmt|;
 name|gint32
 name|tattovalue
-init|=
-literal|0
 decl_stmt|;
 name|gimage
 operator|=
@@ -3869,8 +3865,6 @@ name|name
 decl_stmt|;
 name|gboolean
 name|locked
-init|=
-name|FALSE
 decl_stmt|;
 name|gimage
 operator|=
@@ -4382,8 +4376,6 @@ name|name
 decl_stmt|;
 name|gboolean
 name|visible
-init|=
-name|FALSE
 decl_stmt|;
 name|gimage
 operator|=

@@ -676,6 +676,8 @@ decl_stmt|;
 name|gchar
 modifier|*
 name|comment
+init|=
+name|NULL
 decl_stmt|;
 name|comment
 operator|=
@@ -808,9 +810,13 @@ name|return_args
 decl_stmt|;
 name|gdouble
 name|xres
+init|=
+literal|0.0
 decl_stmt|;
 name|gdouble
 name|yres
+init|=
+literal|0.0
 decl_stmt|;
 name|xres
 operator|=
@@ -972,6 +978,8 @@ decl_stmt|;
 name|gchar
 modifier|*
 name|theme_dir
+init|=
+name|NULL
 decl_stmt|;
 name|theme_dir
 operator|=
@@ -1102,6 +1110,8 @@ decl_stmt|;
 name|gchar
 modifier|*
 name|config
+init|=
+name|NULL
 decl_stmt|;
 name|config
 operator|=
@@ -1238,6 +1248,8 @@ decl_stmt|;
 name|gchar
 modifier|*
 name|load_inhibit
+init|=
+name|NULL
 decl_stmt|;
 name|load_inhibit
 operator|=

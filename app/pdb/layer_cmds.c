@@ -4221,6 +4221,8 @@ name|layer
 decl_stmt|;
 name|gboolean
 name|is_floating_sel
+init|=
+name|FALSE
 decl_stmt|;
 name|layer
 operator|=

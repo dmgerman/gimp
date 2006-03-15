@@ -312,6 +312,8 @@ name|filter
 decl_stmt|;
 name|gint32
 name|num_brushes
+init|=
+literal|0
 decl_stmt|;
 name|gchar
 modifier|*
@@ -1111,7 +1113,7 @@ decl_stmt|;
 name|gdouble
 name|opacity
 init|=
-literal|0
+literal|0.0
 decl_stmt|;
 name|gint32
 name|spacing

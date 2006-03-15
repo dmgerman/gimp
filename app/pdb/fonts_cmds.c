@@ -222,6 +222,8 @@ name|filter
 decl_stmt|;
 name|gint32
 name|num_fonts
+init|=
+literal|0
 decl_stmt|;
 name|gchar
 modifier|*

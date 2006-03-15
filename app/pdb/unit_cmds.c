@@ -278,6 +278,8 @@ name|return_args
 decl_stmt|;
 name|gint32
 name|num_units
+init|=
+literal|0
 decl_stmt|;
 name|num_units
 operator|=
@@ -404,6 +406,8 @@ name|return_args
 decl_stmt|;
 name|gint32
 name|num_units
+init|=
+literal|0
 decl_stmt|;
 name|num_units
 operator|=

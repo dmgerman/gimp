@@ -818,11 +818,15 @@ name|return_args
 decl_stmt|;
 name|gint32
 name|num_parasites
+init|=
+literal|0
 decl_stmt|;
 name|gchar
 modifier|*
 modifier|*
 name|parasites
+init|=
+name|NULL
 decl_stmt|;
 name|parasites
 operator|=
@@ -1682,6 +1686,8 @@ name|drawable
 decl_stmt|;
 name|gint32
 name|num_parasites
+init|=
+literal|0
 decl_stmt|;
 name|gchar
 modifier|*
@@ -2569,6 +2575,8 @@ name|gimage
 decl_stmt|;
 name|gint32
 name|num_parasites
+init|=
+literal|0
 decl_stmt|;
 name|gchar
 modifier|*

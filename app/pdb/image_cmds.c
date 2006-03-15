@@ -6023,6 +6023,16 @@ name|average_radius
 decl_stmt|;
 name|GimpRGB
 name|color
+init|=
+block|{
+literal|0.0
+block|,
+literal|0.0
+block|,
+literal|0.0
+block|,
+literal|1.0
+block|}
 decl_stmt|;
 name|gimage
 operator|=
