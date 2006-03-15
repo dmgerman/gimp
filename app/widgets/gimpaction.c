@@ -81,7 +81,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ab454510103
+DECL|enum|__anon29195d4d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -888,6 +888,9 @@ name|proxy
 argument_list|)
 condition|)
 return|return;
+ifdef|#
+directive|ifdef
+name|DISABLE_MENU_TOOLTIPS
 comment|/*  This is not quite the correct check, but works fine to enable    *  tooltips only for the "Open Recent" menu items, since they are    *  the only ones having both a viewable and a tooltip. --mitch    */
 if|if
 condition|(
@@ -904,6 +907,17 @@ name|proxy
 argument_list|)
 expr_stmt|;
 block|}
+else|#
+directive|else
+name|gimp_action_set_proxy_tooltip
+argument_list|(
+name|action
+argument_list|,
+name|proxy
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 if|if
 condition|(
 name|action
