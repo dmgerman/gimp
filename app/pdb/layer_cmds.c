@@ -46,12 +46,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpchannel.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpdrawable.h"
 end_include
 
@@ -89,12 +83,6 @@ begin_include
 include|#
 directive|include
 file|"gimp-intl.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"pdb_glue.h"
 end_include
 
 begin_decl_stmt
@@ -1656,11 +1644,13 @@ if|if
 condition|(
 name|success
 condition|)
+block|{
 name|gimp_layer_add_alpha
 argument_list|(
 name|layer
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
@@ -1986,7 +1976,7 @@ literal|"gimp-layer-scale"
 block|,
 literal|"Scale the layer to the specified extents."
 block|,
-literal|"This procedure scales the layer so that it's new width and height are equal to the supplied parameters. The \"local_origin\" parameter specifies whether to scale from the center of the layer, or from the image origin. This operation only works if the layer has been added to an image."
+literal|"This procedure scales the layer so that its new width and height are equal to the supplied parameters. The \"local_origin\" parameter specifies whether to scale from the center of the layer, or from the image origin. This operation only works if the layer has been added to an image."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -2281,7 +2271,7 @@ literal|"gimp-layer-resize"
 block|,
 literal|"Resize the layer to the specified extents."
 block|,
-literal|"This procedure resizes the layer so that it's new width and height are equal to the supplied parameters. Offsets are also provided which describe the position of the previous layer's content. This operation only works if the layer has been added to an image."
+literal|"This procedure resizes the layer so that its new width and height are equal to the supplied parameters. Offsets are also provided which describe the position of the previous layer's content. This operation only works if the layer has been added to an image."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -3330,7 +3320,7 @@ name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
-name|GimpChannel
+name|GimpLayerMask
 modifier|*
 name|mask
 init|=
@@ -4428,6 +4418,11 @@ name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
+name|gboolean
+name|lock_alpha
+init|=
+name|FALSE
+decl_stmt|;
 name|layer
 operator|=
 operator|(
@@ -4471,6 +4466,19 @@ name|success
 operator|=
 name|FALSE
 expr_stmt|;
+if|if
+condition|(
+name|success
+condition|)
+block|{
+name|lock_alpha
+operator|=
+name|gimp_layer_get_lock_alpha
+argument_list|(
+name|layer
+argument_list|)
+expr_stmt|;
+block|}
 name|return_args
 operator|=
 name|procedural_db_return_args
@@ -4494,10 +4502,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|gimp_layer_get_lock_alpha
-argument_list|(
-name|layer
-argument_list|)
+name|lock_alpha
 expr_stmt|;
 return|return
 name|return_args
@@ -4683,6 +4688,7 @@ if|if
 condition|(
 name|success
 condition|)
+block|{
 name|gimp_layer_set_lock_alpha
 argument_list|(
 name|layer
@@ -4692,6 +4698,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
@@ -4810,6 +4817,11 @@ name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
+name|gboolean
+name|apply_mask
+init|=
+name|FALSE
+decl_stmt|;
 name|layer
 operator|=
 operator|(
@@ -4853,6 +4865,32 @@ name|success
 operator|=
 name|FALSE
 expr_stmt|;
+if|if
+condition|(
+name|success
+condition|)
+block|{
+if|if
+condition|(
+name|layer
+operator|->
+name|mask
+condition|)
+name|apply_mask
+operator|=
+name|gimp_layer_mask_get_apply
+argument_list|(
+name|layer
+operator|->
+name|mask
+argument_list|)
+expr_stmt|;
+else|else
+name|apply_mask
+operator|=
+name|FALSE
+expr_stmt|;
+block|}
 name|return_args
 operator|=
 name|procedural_db_return_args
@@ -4876,10 +4914,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|gimp_layer_get_apply_mask
-argument_list|(
-name|layer
-argument_list|)
+name|apply_mask
 expr_stmt|;
 return|return
 name|return_args
@@ -4919,7 +4954,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"apply-mask"
 block|,
-literal|"The layer apply mask"
+literal|"The layer's apply mask setting"
 block|}
 block|}
 decl_stmt|;
@@ -4936,9 +4971,9 @@ literal|"gimp-layer-get-apply-mask"
 block|,
 literal|"gimp-layer-get-apply-mask"
 block|,
-literal|"Get the apply mask of the specified layer."
+literal|"Get the apply mask setting of the specified layer."
 block|,
-literal|"This procedure returns the specified layer's apply mask. If the value is non-zero, then the layer mask for this layer is currently being composited with the layer's alpha channel."
+literal|"This procedure returns the specified layer's apply mask setting. If the value is non-zero, then the layer mask for this layer is currently being composited with the layer's alpha channel."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -5065,13 +5100,30 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimp_layer_set_apply_mask
+block|{
+if|if
+condition|(
+name|layer
+operator|->
+name|mask
+condition|)
+name|gimp_layer_mask_set_apply
 argument_list|(
 name|layer
+operator|->
+name|mask
 argument_list|,
 name|apply_mask
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
+else|else
+name|success
+operator|=
+name|FALSE
+expr_stmt|;
+block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
@@ -5105,7 +5157,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"apply-mask"
 block|,
-literal|"The new layer apply mask"
+literal|"The new layer's apply mask setting"
 block|}
 block|}
 decl_stmt|;
@@ -5122,9 +5174,9 @@ literal|"gimp-layer-set-apply-mask"
 block|,
 literal|"gimp-layer-set-apply-mask"
 block|,
-literal|"Set the apply mask of the specified layer."
+literal|"Set the apply mask setting of the specified layer."
 block|,
-literal|"This procedure sets the specified layer's apply mask. This controls whether the layer's mask is currently affecting the alpha channel. If there is no layer mask, this function will return an error."
+literal|"This procedure sets the specified layer's apply mask setting. This controls whether the layer's mask is currently affecting the alpha channel. If there is no layer mask, this function will return an error."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -5190,6 +5242,11 @@ name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
+name|gboolean
+name|show_mask
+init|=
+name|FALSE
+decl_stmt|;
 name|layer
 operator|=
 operator|(
@@ -5233,6 +5290,32 @@ name|success
 operator|=
 name|FALSE
 expr_stmt|;
+if|if
+condition|(
+name|success
+condition|)
+block|{
+if|if
+condition|(
+name|layer
+operator|->
+name|mask
+condition|)
+name|show_mask
+operator|=
+name|gimp_layer_mask_get_show
+argument_list|(
+name|layer
+operator|->
+name|mask
+argument_list|)
+expr_stmt|;
+else|else
+name|show_mask
+operator|=
+name|FALSE
+expr_stmt|;
+block|}
 name|return_args
 operator|=
 name|procedural_db_return_args
@@ -5256,10 +5339,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|gimp_layer_get_show_mask
-argument_list|(
-name|layer
-argument_list|)
+name|show_mask
 expr_stmt|;
 return|return
 name|return_args
@@ -5299,7 +5379,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"show-mask"
 block|,
-literal|"The layer show mask"
+literal|"The layer's show mask setting"
 block|}
 block|}
 decl_stmt|;
@@ -5316,9 +5396,9 @@ literal|"gimp-layer-get-show-mask"
 block|,
 literal|"gimp-layer-get-show-mask"
 block|,
-literal|"Get the show mask of the specified layer."
+literal|"Get the show mask setting of the specified layer."
 block|,
-literal|"This procedure returns the specified layer's show mask. If the value is non-zero, then the layer mask for this layer is currently being shown instead of the layer."
+literal|"This procedure returns the specified layer's show mask setting. This controls whether the layer or its mask is visible. Non-zero values indicate that the mask should be visible. If the layer has no mask, then this function returns an error."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -5445,13 +5525,30 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimp_layer_set_show_mask
+block|{
+if|if
+condition|(
+name|layer
+operator|->
+name|mask
+condition|)
+name|gimp_layer_mask_set_show
 argument_list|(
 name|layer
+operator|->
+name|mask
 argument_list|,
 name|show_mask
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
+else|else
+name|success
+operator|=
+name|FALSE
+expr_stmt|;
+block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
@@ -5485,7 +5582,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"show-mask"
 block|,
-literal|"The new layer show mask"
+literal|"The new layer's show mask setting"
 block|}
 block|}
 decl_stmt|;
@@ -5502,9 +5599,9 @@ literal|"gimp-layer-set-show-mask"
 block|,
 literal|"gimp-layer-set-show-mask"
 block|,
-literal|"Set the show mask of the specified layer."
+literal|"Set the show mask setting of the specified layer."
 block|,
-literal|"This procedure sets the specified layer's show mask. This controls whether the layer or it's mask is visible. Non-zero values indicate that the mask should be visible. If the layer has no mask, then this function returns an error."
+literal|"This procedure sets the specified layer's show mask setting. This controls whether the layer's mask is currently affecting the alpha channel. If there is no layer mask, this function will return an error."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -5570,6 +5667,11 @@ name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
+name|gboolean
+name|edit_mask
+init|=
+name|FALSE
+decl_stmt|;
 name|layer
 operator|=
 operator|(
@@ -5613,6 +5715,32 @@ name|success
 operator|=
 name|FALSE
 expr_stmt|;
+if|if
+condition|(
+name|success
+condition|)
+block|{
+if|if
+condition|(
+name|layer
+operator|->
+name|mask
+condition|)
+name|edit_mask
+operator|=
+name|gimp_layer_mask_get_edit
+argument_list|(
+name|layer
+operator|->
+name|mask
+argument_list|)
+expr_stmt|;
+else|else
+name|edit_mask
+operator|=
+name|FALSE
+expr_stmt|;
+block|}
 name|return_args
 operator|=
 name|procedural_db_return_args
@@ -5636,10 +5764,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|gimp_layer_get_edit_mask
-argument_list|(
-name|layer
-argument_list|)
+name|edit_mask
 expr_stmt|;
 return|return
 name|return_args
@@ -5679,7 +5804,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"edit-mask"
 block|,
-literal|"The layer edit mask"
+literal|"The layer's edit mask setting"
 block|}
 block|}
 decl_stmt|;
@@ -5696,9 +5821,9 @@ literal|"gimp-layer-get-edit-mask"
 block|,
 literal|"gimp-layer-get-edit-mask"
 block|,
-literal|"Get the edit mask of the specified layer."
+literal|"Get the edit mask setting of the specified layer."
 block|,
-literal|"This procedure returns the specified layer's edit mask. If the value is non-zero, then the layer mask for this layer is currently active, and not the layer."
+literal|"This procedure returns the specified layer's edit mask setting. If the value is non-zero, then the layer mask for this layer is currently active, and not the layer."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -5825,13 +5950,28 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimp_layer_set_edit_mask
+block|{
+if|if
+condition|(
+name|layer
+operator|->
+name|mask
+condition|)
+name|gimp_layer_mask_set_edit
 argument_list|(
 name|layer
+operator|->
+name|mask
 argument_list|,
 name|edit_mask
 argument_list|)
 expr_stmt|;
+else|else
+name|success
+operator|=
+name|FALSE
+expr_stmt|;
+block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
@@ -5865,7 +6005,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"edit-mask"
 block|,
-literal|"The new layer edit mask"
+literal|"The new layer's edit mask setting"
 block|}
 block|}
 decl_stmt|;
@@ -5882,9 +6022,9 @@ literal|"gimp-layer-set-edit-mask"
 block|,
 literal|"gimp-layer-set-edit-mask"
 block|,
-literal|"Set the edit mask of the specified layer."
+literal|"Set the edit mask setting of the specified layer."
 block|,
-literal|"This procedure sets the specified layer's edit mask. This controls whether the layer or it's mask is currently active for editing. If the specified layer has no layer mask, then this procedure will return an error."
+literal|"This procedure sets the specified layer's edit mask setting. This controls whether the layer or it's mask is currently active for editing. If the specified layer has no layer mask, then this procedure will return an error."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -5950,6 +6090,11 @@ name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
+name|gdouble
+name|opacity
+init|=
+literal|0.0
+decl_stmt|;
 name|layer
 operator|=
 operator|(
@@ -5993,6 +6138,21 @@ name|success
 operator|=
 name|FALSE
 expr_stmt|;
+if|if
+condition|(
+name|success
+condition|)
+block|{
+name|opacity
+operator|=
+name|gimp_layer_get_opacity
+argument_list|(
+name|layer
+argument_list|)
+operator|*
+literal|100.0
+expr_stmt|;
+block|}
 name|return_args
 operator|=
 name|procedural_db_return_args
@@ -6016,12 +6176,7 @@ name|value
 operator|.
 name|pdb_float
 operator|=
-name|gimp_layer_get_opacity
-argument_list|(
-name|layer
-argument_list|)
-operator|*
-literal|100.0
+name|opacity
 expr_stmt|;
 return|return
 name|return_args
@@ -6217,6 +6372,7 @@ if|if
 condition|(
 name|success
 condition|)
+block|{
 name|gimp_layer_set_opacity
 argument_list|(
 name|layer
@@ -6228,6 +6384,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
@@ -6346,6 +6503,11 @@ name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
+name|gint32
+name|mode
+init|=
+literal|0
+decl_stmt|;
 name|layer
 operator|=
 operator|(
@@ -6389,6 +6551,19 @@ name|success
 operator|=
 name|FALSE
 expr_stmt|;
+if|if
+condition|(
+name|success
+condition|)
+block|{
+name|mode
+operator|=
+name|gimp_layer_get_mode
+argument_list|(
+name|layer
+argument_list|)
+expr_stmt|;
+block|}
 name|return_args
 operator|=
 name|procedural_db_return_args
@@ -6412,10 +6587,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|gimp_layer_get_mode
-argument_list|(
-name|layer
-argument_list|)
+name|mode
 expr_stmt|;
 return|return
 name|return_args
@@ -6611,6 +6783,7 @@ if|if
 condition|(
 name|success
 condition|)
+block|{
 name|gimp_layer_set_mode
 argument_list|(
 name|layer
@@ -6620,6 +6793,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
@@ -6653,7 +6827,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"mode"
 block|,
-literal|"The new layer combination mode"
+literal|"The new layer combination mode (GIMP_NORMAL_MODE (0), GIMP_DISSOLVE_MODE (1), GIMP_BEHIND_MODE (2), GIMP_MULTIPLY_MODE (3), GIMP_SCREEN_MODE (4), GIMP_OVERLAY_MODE (5), GIMP_DIFFERENCE_MODE (6), GIMP_ADDITION_MODE (7), GIMP_SUBTRACT_MODE (8), GIMP_DARKEN_ONLY_MODE (9), GIMP_LIGHTEN_ONLY_MODE (10), GIMP_HUE_MODE (11), GIMP_SATURATION_MODE (12), GIMP_COLOR_MODE (13), GIMP_VALUE_MODE (14), GIMP_DIVIDE_MODE (15), GIMP_DODGE_MODE (16), GIMP_BURN_MODE (17), GIMP_HARDLIGHT_MODE (18), GIMP_SOFTLIGHT_MODE (19), GIMP_GRAIN_EXTRACT_MODE (20), GIMP_GRAIN_MERGE_MODE (21), GIMP_COLOR_ERASE_MODE (22))"
 block|}
 block|}
 decl_stmt|;

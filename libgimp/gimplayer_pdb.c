@@ -382,7 +382,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_scale:  * @layer_ID: The layer.  * @new_width: New layer width.  * @new_height: New layer height.  * @local_origin: Use a local origin (as opposed to the image origin).  *  * Scale the layer to the specified extents.  *  * This procedure scales the layer so that it's new width and height  * are equal to the supplied parameters. The \"local_origin\" parameter  * specifies whether to scale from the center of the layer, or from the  * image origin. This operation only works if the layer has been added  * to an image.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_layer_scale:  * @layer_ID: The layer.  * @new_width: New layer width.  * @new_height: New layer height.  * @local_origin: Use a local origin (as opposed to the image origin).  *  * Scale the layer to the specified extents.  *  * This procedure scales the layer so that its new width and height are  * equal to the supplied parameters. The \"local_origin\" parameter  * specifies whether to scale from the center of the layer, or from the  * image origin. This operation only works if the layer has been added  * to an image.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -470,7 +470,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_resize:  * @layer_ID: The layer.  * @new_width: New layer width.  * @new_height: New layer height.  * @offx: x offset between upper left corner of old and new layers: (old - new).  * @offy: y offset between upper left corner of old and new layers: (old - new).  *  * Resize the layer to the specified extents.  *  * This procedure resizes the layer so that it's new width and height  * are equal to the supplied parameters. Offsets are also provided  * which describe the position of the previous layer's content. This  * operation only works if the layer has been added to an image.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_layer_resize:  * @layer_ID: The layer.  * @new_width: New layer width.  * @new_height: New layer height.  * @offx: x offset between upper left corner of old and new layers: (old - new).  * @offy: y offset between upper left corner of old and new layers: (old - new).  *  * Resize the layer to the specified extents.  *  * This procedure resizes the layer so that its new width and height  * are equal to the supplied parameters. Offsets are also provided  * which describe the position of the previous layer's content. This  * operation only works if the layer has been added to an image.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -943,7 +943,7 @@ index|]
 operator|.
 name|data
 operator|.
-name|d_channel
+name|d_layer_mask
 expr_stmt|;
 name|gimp_destroy_params
 argument_list|(
@@ -1416,7 +1416,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_get_apply_mask:  * @layer_ID: The layer.  *  * Get the apply mask of the specified layer.  *  * This procedure returns the specified layer's apply mask. If the  * value is non-zero, then the layer mask for this layer is currently  * being composited with the layer's alpha channel.  *  * Returns: The layer apply mask.  */
+comment|/**  * gimp_layer_get_apply_mask:  * @layer_ID: The layer.  *  * Get the apply mask setting of the specified layer.  *  * This procedure returns the specified layer's apply mask setting. If  * the value is non-zero, then the layer mask for this layer is  * currently being composited with the layer's alpha channel.  *  * Returns: The layer's apply mask setting.  */
 end_comment
 
 begin_function
@@ -1494,7 +1494,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_set_apply_mask:  * @layer_ID: The layer.  * @apply_mask: The new layer apply mask.  *  * Set the apply mask of the specified layer.  *  * This procedure sets the specified layer's apply mask. This controls  * whether the layer's mask is currently affecting the alpha channel.  * If there is no layer mask, this function will return an error.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_layer_set_apply_mask:  * @layer_ID: The layer.  * @apply_mask: The new layer's apply mask setting.  *  * Set the apply mask setting of the specified layer.  *  * This procedure sets the specified layer's apply mask setting. This  * controls whether the layer's mask is currently affecting the alpha  * channel. If there is no layer mask, this function will return an  * error.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -1568,7 +1568,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_get_show_mask:  * @layer_ID: The layer.  *  * Get the show mask of the specified layer.  *  * This procedure returns the specified layer's show mask. If the value  * is non-zero, then the layer mask for this layer is currently being  * shown instead of the layer.  *  * Returns: The layer show mask.  */
+comment|/**  * gimp_layer_get_show_mask:  * @layer_ID: The layer.  *  * Get the show mask setting of the specified layer.  *  * This procedure returns the specified layer's show mask setting. This  * controls whether the layer or its mask is visible. Non-zero values  * indicate that the mask should be visible. If the layer has no mask,  * then this function returns an error.  *  * Returns: The layer's show mask setting.  */
 end_comment
 
 begin_function
@@ -1646,7 +1646,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_set_show_mask:  * @layer_ID: The layer.  * @show_mask: The new layer show mask.  *  * Set the show mask of the specified layer.  *  * This procedure sets the specified layer's show mask. This controls  * whether the layer or it's mask is visible. Non-zero values indicate  * that the mask should be visible. If the layer has no mask, then this  * function returns an error.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_layer_set_show_mask:  * @layer_ID: The layer.  * @show_mask: The new layer's show mask setting.  *  * Set the show mask setting of the specified layer.  *  * This procedure sets the specified layer's show mask setting. This  * controls whether the layer's mask is currently affecting the alpha  * channel. If there is no layer mask, this function will return an  * error.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -1720,7 +1720,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_get_edit_mask:  * @layer_ID: The layer.  *  * Get the edit mask of the specified layer.  *  * This procedure returns the specified layer's edit mask. If the value  * is non-zero, then the layer mask for this layer is currently active,  * and not the layer.  *  * Returns: The layer edit mask.  */
+comment|/**  * gimp_layer_get_edit_mask:  * @layer_ID: The layer.  *  * Get the edit mask setting of the specified layer.  *  * This procedure returns the specified layer's edit mask setting. If  * the value is non-zero, then the layer mask for this layer is  * currently active, and not the layer.  *  * Returns: The layer's edit mask setting.  */
 end_comment
 
 begin_function
@@ -1798,7 +1798,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_set_edit_mask:  * @layer_ID: The layer.  * @edit_mask: The new layer edit mask.  *  * Set the edit mask of the specified layer.  *  * This procedure sets the specified layer's edit mask. This controls  * whether the layer or it's mask is currently active for editing. If  * the specified layer has no layer mask, then this procedure will  * return an error.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_layer_set_edit_mask:  * @layer_ID: The layer.  * @edit_mask: The new layer's edit mask setting.  *  * Set the edit mask setting of the specified layer.  *  * This procedure sets the specified layer's edit mask setting. This  * controls whether the layer or it's mask is currently active for  * editing. If the specified layer has no layer mask, then this  * procedure will return an error.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
