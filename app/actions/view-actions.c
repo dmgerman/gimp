@@ -281,7 +281,10 @@ argument_list|)
 block|,
 literal|"<control>W"
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Close this image window"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -399,7 +402,7 @@ literal|"<control>E"
 block|,
 name|N_
 argument_list|(
-literal|"Shrink wrap"
+literal|"Reduce the image window to the size of the image display"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -422,7 +425,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Connect to another display"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -455,7 +461,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"A Pixel on the screen represents an image pixel"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -479,7 +488,10 @@ argument_list|)
 block|,
 literal|"<control>T"
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Display the selection outline"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -503,7 +515,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Draw a border around the active layer"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -791,7 +806,10 @@ argument_list|)
 block|,
 literal|"F11"
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Toggle fullscreen view"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(

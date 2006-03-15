@@ -278,7 +278,7 @@ literal|"<control><shift>N"
 block|,
 name|N_
 argument_list|(
-literal|"Create a new layer"
+literal|"Create a new layer and add it to the image"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -576,7 +576,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Turn this text layer into a normal layer"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -598,7 +601,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Adjust the layer dimensions"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -620,7 +626,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Resize the layer to the size of the image"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -644,7 +653,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Scale the layer's pixels"
+literal|"Change the size of the layer content"
 argument_list|)
 block|,
 name|G_CALLBACK

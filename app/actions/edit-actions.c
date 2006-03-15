@@ -251,7 +251,7 @@ literal|"<control>Z"
 block|,
 name|N_
 argument_list|(
-literal|"Undo"
+literal|"Undo the last operation"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -276,7 +276,7 @@ literal|"<control>Y"
 block|,
 name|N_
 argument_list|(
-literal|"Redo"
+literal|"Redo the last operation that was undone"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -301,7 +301,7 @@ literal|""
 block|,
 name|N_
 argument_list|(
-literal|"Clear undo history"
+literal|"Remove all operations from the undo history"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -324,7 +324,10 @@ argument_list|)
 block|,
 literal|"<control>X"
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Move the selected pixels to the clipboard"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -346,7 +349,10 @@ argument_list|)
 block|,
 literal|"<control>C"
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Copy the selected pixels to the clipboard"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -369,7 +375,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Copy the selected region to the clipboard"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -391,7 +400,10 @@ argument_list|)
 block|,
 literal|"<control>V"
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Paste the content of the clipboard"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -413,7 +425,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Paste the content of the clipboard into the current selection"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -435,7 +450,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Create a new image from the content of the clipboard"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -457,7 +475,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Create a new image from the content of the clipboard"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -568,7 +589,10 @@ argument_list|)
 block|,
 literal|"Delete"
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Clear the selected pixels"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -601,7 +625,10 @@ argument_list|)
 block|,
 literal|"<control>comma"
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Fill the selection using the foreground color"
+argument_list|)
 block|,
 name|GIMP_FOREGROUND_FILL
 block|,
@@ -622,7 +649,10 @@ argument_list|)
 block|,
 literal|"<control>period"
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Fill the selection using the background color"
+argument_list|)
 block|,
 name|GIMP_BACKGROUND_FILL
 block|,
@@ -643,7 +673,10 @@ argument_list|)
 block|,
 literal|"<control>semicolon"
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Fill the selection using the active pattern"
+argument_list|)
 block|,
 name|GIMP_PATTERN_FILL
 block|,

@@ -385,7 +385,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Create a new template from this image"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -407,7 +410,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Reload the image file from disk"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -429,7 +435,10 @@ argument_list|)
 block|,
 literal|"<shift><control>W"
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Close all opened images"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -451,7 +460,10 @@ argument_list|)
 block|,
 literal|"<control>Q"
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Quit the GNU Image Manipulation Program"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(

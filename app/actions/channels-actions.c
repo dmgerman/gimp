@@ -122,7 +122,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Edit channel attributes"
+literal|"Edit the channel's name, color and opacity"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -147,7 +147,7 @@ literal|""
 block|,
 name|N_
 argument_list|(
-literal|"New channel..."
+literal|"Create a new channel"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -172,7 +172,7 @@ literal|""
 block|,
 name|N_
 argument_list|(
-literal|"New channel with last values"
+literal|"Create a new channel with last used values"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -197,7 +197,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Duplicate channel"
+literal|"Create a duplicate of this channel and add it to the image"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -222,7 +222,7 @@ literal|""
 block|,
 name|N_
 argument_list|(
-literal|"Delete channel"
+literal|"Delete this channel"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -247,7 +247,7 @@ literal|""
 block|,
 name|N_
 argument_list|(
-literal|"Raise channel"
+literal|"Raise this channel one step in the channel stack"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -272,7 +272,7 @@ literal|""
 block|,
 name|N_
 argument_list|(
-literal|"Raise channel to top"
+literal|"Raise this channel to the top of the channel stack"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -297,7 +297,7 @@ literal|""
 block|,
 name|N_
 argument_list|(
-literal|"Lower channel"
+literal|"Lower this channel one step in the channel stack"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -322,7 +322,7 @@ literal|""
 block|,
 name|N_
 argument_list|(
-literal|"Lower channel to bottom"
+literal|"Lower this channel to the bottom of the channel stack"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -358,7 +358,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Channel to selection"
+literal|"Replace the selection with this channel"
 argument_list|)
 block|,
 name|GIMP_CHANNEL_OP_REPLACE
@@ -382,7 +382,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Add"
+literal|"Add this channel to the current selection"
 argument_list|)
 block|,
 name|GIMP_CHANNEL_OP_ADD
@@ -406,7 +406,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Subtract"
+literal|"Subtract this channel from the current selection"
 argument_list|)
 block|,
 name|GIMP_CHANNEL_OP_SUBTRACT
@@ -430,7 +430,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Intersect"
+literal|"Intersect this channel with the current selection"
 argument_list|)
 block|,
 name|GIMP_CHANNEL_OP_INTERSECT

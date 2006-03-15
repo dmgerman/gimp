@@ -407,7 +407,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Change the number of pixels in the image"
+literal|"Change the size of the image content"
 argument_list|)
 block|,
 name|G_CALLBACK
