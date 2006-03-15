@@ -524,7 +524,7 @@ name|nreturn_vals
 decl_stmt|;
 name|gchar
 modifier|*
-name|ret_name
+name|actual_name
 init|=
 name|NULL
 decl_stmt|;
@@ -571,7 +571,7 @@ operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
 block|{
-name|ret_name
+name|actual_name
 operator|=
 name|g_strdup
 argument_list|(
@@ -640,7 +640,7 @@ name|nreturn_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|ret_name
+name|actual_name
 return|;
 block|}
 end_function
