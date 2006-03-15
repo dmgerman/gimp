@@ -87,7 +87,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c095def0103
+DECL|enum|__anon28d3a0cb0103
 block|{
 DECL|enumerator|LIST_COLUMN_NAME
 name|LIST_COLUMN_NAME
@@ -115,7 +115,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c095def0203
+DECL|enum|__anon28d3a0cb0203
 block|{
 DECL|enumerator|TREE_COLUMN_PATH_NAME
 name|TREE_COLUMN_PATH_NAME
@@ -144,7 +144,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c095def0308
+DECL|struct|__anon28d3a0cb0308
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -175,7 +175,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c095def0408
+DECL|struct|__anon28d3a0cb0408
 block|{
 DECL|member|menu
 name|gchar
@@ -410,7 +410,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Displays plug-in details"
+name|N_
+argument_list|(
+literal|"Display information about plug-ins."
+argument_list|)
 argument_list|,
 literal|"Allows to browse the plug-in menus system. You can "
 literal|"search for plug-in names, sort by name or menu "

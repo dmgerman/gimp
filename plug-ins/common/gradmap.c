@@ -77,7 +77,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ded0530103
+DECL|enum|__anon2ae665d80103
 block|{
 DECL|enumerator|GRADIENT_MODE
 name|GRADIENT_MODE
@@ -271,8 +271,10 @@ name|gimp_install_procedure
 argument_list|(
 name|GRADMAP_PROC
 argument_list|,
-literal|"Map the contents of the specified drawable with "
-literal|"active gradient"
+name|N_
+argument_list|(
+literal|"Recolor the image using colors from the active gradient."
+argument_list|)
 argument_list|,
 literal|"This plug-in maps the contents of the specified "
 literal|"drawable with active gradient. It calculates "
@@ -322,8 +324,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PALETTEMAP_PROC
 argument_list|,
-literal|"Map the contents of the specified drawable with "
-literal|"the active palette"
+name|N_
+argument_list|(
+literal|"Recolor the image using colors from the active palette."
+argument_list|)
 argument_list|,
 literal|"This plug-in maps the contents of the specified "
 literal|"drawable with the active palette. It calculates "
@@ -616,7 +620,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ded0530208
+DECL|struct|__anon2ae665d80208
 block|{
 DECL|member|samples
 name|guchar

@@ -66,7 +66,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d51fa60108
+DECL|struct|__anon28ff8e9a0108
 block|{
 DECL|member|color
 name|GimpRGB
@@ -302,7 +302,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Convert the color in an image to alpha"
+name|N_
+argument_list|(
+literal|"Convert a specified color to transparency."
+argument_list|)
 argument_list|,
 literal|"This replaces as much of a given color as possible "
 literal|"in each pixel with a corresponding amount of alpha, "

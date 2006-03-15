@@ -60,7 +60,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a97fc950108
+DECL|struct|__anon2becdfed0108
 block|{
 DECL|member|xblock
 name|gint
@@ -88,7 +88,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a97fc950208
+DECL|struct|__anon2becdfed0208
 block|{
 DECL|member|gval
 name|GlassValues
@@ -332,7 +332,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Divide the image into square glassblocks"
+name|N_
+argument_list|(
+literal|"Simulate distortion caused by square glass tiles."
+argument_list|)
 argument_list|,
 literal|"Divide the image into square glassblocks in "
 literal|"which the image is refracted."

@@ -165,9 +165,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Slice up the image into subimages, cutting along "
-literal|"the image's Guides.  Fooey to you and your "
-literal|"broccoli, Pokey."
+name|N_
+argument_list|(
+literal|"Slice the image into subimages using guides."
+argument_list|)
 argument_list|,
 literal|"This function takes an image and blah blah.  Hooray!"
 argument_list|,

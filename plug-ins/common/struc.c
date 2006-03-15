@@ -40883,7 +40883,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon297f9d450103
+DECL|enum|__anon2bb58f090103
 block|{
 DECL|enumerator|TOP_RIGHT
 name|TOP_RIGHT
@@ -40903,7 +40903,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297f9d450208
+DECL|struct|__anon2bb58f090208
 block|{
 DECL|member|direction
 name|gint
@@ -41108,7 +41108,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Adds a canvas texture map to the picture"
+name|N_
+argument_list|(
+literal|"Add a canvas texture to the image."
+argument_list|)
 argument_list|,
 literal|"This function applies a canvas texture map to the drawable."
 argument_list|,

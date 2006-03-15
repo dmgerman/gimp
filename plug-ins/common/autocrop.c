@@ -237,7 +237,10 @@ name|gimp_install_procedure
 argument_list|(
 name|AUTOCROP_PROC
 argument_list|,
-literal|"Automagically crops an image."
+name|N_
+argument_list|(
+literal|"Remove empty borders from the image."
+argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -279,7 +282,10 @@ name|gimp_install_procedure
 argument_list|(
 name|AUTOCROP_LAYER_PROC
 argument_list|,
-literal|"Automagically crops a layer."
+name|N_
+argument_list|(
+literal|"Remove empty borders from the layer."
+argument_list|)
 argument_list|,
 literal|""
 argument_list|,

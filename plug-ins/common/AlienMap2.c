@@ -70,7 +70,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27ecfad60103
+DECL|enum|__anon2bc133580103
 block|{
 DECL|enumerator|RGB_MODEL
 name|RGB_MODEL
@@ -94,7 +94,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ecfad60208
+DECL|struct|__anon2bc133580208
 block|{
 DECL|member|redfrequency
 name|gdouble
@@ -843,7 +843,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Alien Map Color Transformation Plug-In"
+name|N_
+argument_list|(
+literal|"Alter colors in various psychedelic ways."
+argument_list|)
 argument_list|,
 literal|"No help yet. Just try it and you'll see!"
 argument_list|,

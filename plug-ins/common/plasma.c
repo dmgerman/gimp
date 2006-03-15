@@ -88,7 +88,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b083cb70108
+DECL|struct|__anon27e92ccb0108
 block|{
 DECL|member|seed
 name|guint32
@@ -556,8 +556,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Create a plasma cloud like image on the "
-literal|"specified drawable"
+name|N_
+argument_list|(
+literal|"Create a random plasma texture."
+argument_list|)
 argument_list|,
 literal|"More help"
 argument_list|,

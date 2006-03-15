@@ -304,7 +304,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Borderaverage"
+name|N_
+argument_list|(
+literal|"Set foreground to the average color of the image border."
+argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -705,7 +708,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon27ce557b0108
+DECL|struct|__anon2911873e0108
 typedef|typedef
 struct|struct
 block|{

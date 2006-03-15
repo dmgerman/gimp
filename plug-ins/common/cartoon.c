@@ -68,7 +68,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279cb47c0108
+DECL|struct|__anon2784b6560108
 block|{
 DECL|member|mask_radius
 name|gdouble
@@ -393,7 +393,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Propagates dark values in an image to achieve cartoon rendering"
+name|N_
+argument_list|(
+literal|"Simulate a cartoon by enhancing edges."
+argument_list|)
 argument_list|,
 name|help_string
 argument_list|,

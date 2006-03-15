@@ -249,8 +249,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Automagically crops unused space from the edges "
-literal|"and middle of a picture."
+name|N_
+argument_list|(
+literal|"Autocrop unused space from edges and middle."
+argument_list|)
 argument_list|,
 literal|""
 argument_list|,

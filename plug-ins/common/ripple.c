@@ -128,7 +128,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bca5b430108
+DECL|struct|__anon2b2d356c0108
 block|{
 DECL|member|period
 name|gint
@@ -450,7 +450,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Ripple the contents of the specified drawable"
+name|N_
+argument_list|(
+literal|"Displace pixels in a ripple pattern."
+argument_list|)
 argument_list|,
 literal|"Ripples the pixels of the specified drawable. "
 literal|"Each row or column will be displaced a certain "
@@ -899,7 +902,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2bca5b430208
+DECL|struct|__anon2b2d356c0208
 typedef|typedef
 struct|struct
 block|{

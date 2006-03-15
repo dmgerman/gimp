@@ -76,7 +76,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27af22670103
+DECL|enum|__anon2bb120ac0103
 block|{
 DECL|enumerator|BACKGROUND_TYPE_TRANSPARENT
 name|BACKGROUND_TYPE_TRANSPARENT
@@ -104,7 +104,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27af22670203
+DECL|enum|__anon2bb120ac0203
 block|{
 DECL|enumerator|FRACTIONAL_TYPE_BACKGROUND
 name|FRACTIONAL_TYPE_BACKGROUND
@@ -192,7 +192,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27af22670308
+DECL|struct|__anon2bb120ac0308
 block|{
 DECL|member|params
 name|PluginParams
@@ -212,7 +212,7 @@ name|gboolean
 name|drawable_has_alpha
 decl_stmt|;
 struct|struct
-DECL|struct|__anon27af22670408
+DECL|struct|__anon2bb120ac0408
 block|{
 DECL|member|x0
 name|gint
@@ -579,7 +579,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27af22670508
+DECL|struct|__anon2bb120ac0508
 block|{
 DECL|member|tile_size_adj
 name|GtkObject
@@ -4668,8 +4668,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Cuts an image into paper tiles, and slides each "
-literal|"paper tile."
+name|N_
+argument_list|(
+literal|"Cut image into paper tiles, and slide them."
+argument_list|)
 argument_list|,
 literal|"This plug-in cuts an image into paper tiles and "
 literal|"slides each paper tile."

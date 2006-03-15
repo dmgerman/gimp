@@ -86,7 +86,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d22b0f0108
+DECL|struct|__anon288a26f00108
 block|{
 DECL|member|whirl
 name|gdouble
@@ -411,7 +411,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Distort an image by whirling and pinching"
+name|N_
+argument_list|(
+literal|"Distort an image by whirling and pinching."
+argument_list|)
 argument_list|,
 literal|"Distorts the image by whirling and pinching, which "
 literal|"are two common center-based, circular distortions.  "

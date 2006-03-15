@@ -101,7 +101,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3cc8c30108
+DECL|struct|__anon28d631020108
 block|{
 DECL|member|circle
 name|gdouble
@@ -442,7 +442,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Converts an image to and from polar coordinates"
+name|N_
+argument_list|(
+literal|"Convert image to or from polar coordinates."
+argument_list|)
 argument_list|,
 literal|"Remaps and image from rectangular coordinates "
 literal|"to polar coordinates "

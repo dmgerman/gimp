@@ -811,7 +811,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299e4e840108
+DECL|struct|__anon2a9d0f8c0108
 block|{
 DECL|member|type
 name|gchar
@@ -1431,7 +1431,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299e4e840208
+DECL|struct|__anon2a9d0f8c0208
 block|{
 DECL|member|extract_type
 name|gchar
@@ -1600,7 +1600,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Decompose an image into different types of channels"
+name|N_
+argument_list|(
+literal|"Decompose an image into separate colorspace components."
+argument_list|)
 argument_list|,
 literal|"This function creates new gray images with "
 literal|"different channel information in each of them"

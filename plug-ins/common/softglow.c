@@ -99,7 +99,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9b1b660108
+DECL|struct|__anon2c7863ca0108
 block|{
 DECL|member|glow_radius
 name|gdouble
@@ -394,8 +394,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Photographic 'softglow' effect by intensifying "
-literal|"the highlights"
+name|N_
+argument_list|(
+literal|"Simulate glow by making highlights intense and fuzzy."
+argument_list|)
 argument_list|,
 name|help_string
 argument_list|,

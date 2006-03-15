@@ -99,7 +99,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b27dac20108
+DECL|struct|__anon297b0e760108
 block|{
 DECL|member|colors
 name|GimpRGB
@@ -522,8 +522,10 @@ name|gimp_install_procedure
 argument_list|(
 name|COLOR_ADJUST_PROC
 argument_list|,
-literal|"Adjust color range given by foreground/background "
-literal|"color to black/white"
+name|N_
+argument_list|(
+literal|"Map colors sending foreground to black, background to white."
+argument_list|)
 argument_list|,
 literal|"The current foreground color is mapped to black "
 literal|"(black point), the current background color is "

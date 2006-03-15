@@ -299,7 +299,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c861ffd0103
+DECL|enum|__anon27ba97730103
 block|{
 DECL|enumerator|SHOOT_ROOT
 name|SHOOT_ROOT
@@ -318,7 +318,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c861ffd0208
+DECL|struct|__anon27ba97730208
 block|{
 DECL|member|shoot_type
 name|ShootType
@@ -637,7 +637,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Take a screenshot"
+name|N_
+argument_list|(
+literal|"Create an image from an area of the screen"
+argument_list|)
 argument_list|,
 literal|"The plug-in allows to take screenshots of a an "
 literal|"interactively selected window or of the desktop, "

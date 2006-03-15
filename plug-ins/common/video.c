@@ -60900,7 +60900,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b985030108
+DECL|struct|__anon27921f520108
 block|{
 DECL|member|pattern_number
 name|gint
@@ -61159,8 +61159,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Apply low-dotpitch RGB simulation to the "
-literal|"specified drawable"
+name|N_
+argument_list|(
+literal|"Simulate distortion produced by a fuzzy or low-res monitor."
+argument_list|)
 argument_list|,
 literal|"This function simulates the degradation of "
 literal|"being on an old low-dotpitch RGB video monitor "

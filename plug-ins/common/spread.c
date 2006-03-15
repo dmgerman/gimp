@@ -54,7 +54,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297bb6390108
+DECL|struct|__anon2907bd500108
 block|{
 DECL|member|spread_amount_x
 name|gdouble
@@ -275,7 +275,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Spread the contents of the specified drawable"
+name|N_
+argument_list|(
+literal|"Move pixels around randomly."
+argument_list|)
 argument_list|,
 literal|"Spreads the pixels of the specified drawable.  "
 literal|"Pixels are randomly moved to another location whose "
@@ -679,7 +682,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297bb6390208
+DECL|struct|__anon2907bd500208
 block|{
 DECL|member|pft
 name|GimpPixelFetcher

@@ -351,7 +351,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d219d60108
+DECL|struct|__anon2afa87e80108
 block|{
 DECL|member|name
 specifier|const
@@ -611,7 +611,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d219d60208
+DECL|struct|__anon2afa87e80208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -684,7 +684,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d219d60308
+DECL|struct|__anon2afa87e80308
 block|{
 DECL|member|input_spi
 name|gdouble
@@ -718,7 +718,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d219d60408
+DECL|struct|__anon2afa87e80408
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -825,7 +825,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d219d60508
+DECL|struct|__anon2afa87e80508
 block|{
 DECL|member|pull_table
 name|GtkWidget
@@ -993,7 +993,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d219d60608
+DECL|struct|__anon2afa87e80608
 block|{
 DECL|member|name
 specifier|const
@@ -1816,7 +1816,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Re-sample the image to give a newspaper-like effect"
+name|N_
+argument_list|(
+literal|"Halftone the image to give newspaper-like effect"
+argument_list|)
 argument_list|,
 literal|"Halftone the image, trading off resolution to "
 literal|"represent colors or grey levels using the process "
@@ -7065,7 +7068,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d219d60708
+DECL|struct|__anon2afa87e80708
 block|{
 DECL|member|index
 name|gint

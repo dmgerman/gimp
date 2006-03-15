@@ -135,7 +135,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2993b03e0103
+DECL|enum|__anon27948dd00103
 block|{
 DECL|enumerator|MIN_CHANNELS
 name|MIN_CHANNELS
@@ -153,7 +153,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2993b03e0208
+DECL|struct|__anon27948dd00208
 block|{
 DECL|member|max_p
 name|gint
@@ -234,10 +234,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Return an image in which each pixel holds only "
-literal|"the channel that has the maximum value in three "
-literal|"(red, green, blue) channels, and other channels "
-literal|"are zero-cleared"
+name|N_
+argument_list|(
+literal|"Reduce image to pure red, green, and blue."
+argument_list|)
 argument_list|,
 literal|"There's no help yet."
 argument_list|,
@@ -521,7 +521,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2993b03e0308
+DECL|struct|__anon27948dd00308
 block|{
 DECL|member|init_value
 name|gint

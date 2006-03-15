@@ -56,7 +56,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1f2ee00108
+DECL|struct|__anon2bd3b1ac0108
 block|{
 DECL|member|inner
 name|gdouble
@@ -429,7 +429,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Edge detection using difference of Gaussians."
+name|N_
+argument_list|(
+literal|"Edge detection with control of edge thickness."
+argument_list|)
 argument_list|,
 literal|"Applies two Gaussian blurs to the drawable, and "
 literal|"subtracts the results.  This is robust and widely "

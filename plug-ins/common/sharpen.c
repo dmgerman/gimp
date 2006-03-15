@@ -327,7 +327,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27936b7e0108
+DECL|struct|__anon2aafef460108
 block|{
 DECL|member|sharpen_percent
 name|gint
@@ -446,8 +446,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Sharpen filter, typically used to 'sharpen' a "
-literal|"photographic image."
+name|N_
+argument_list|(
+literal|"Make image sharper (less powerful than Unsharp Mask)."
+argument_list|)
 argument_list|,
 literal|"This plug-in selectively performs a convolution "
 literal|"filter on an image."

@@ -167,8 +167,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Automatically stretch the contrast of the "
-literal|"specified drawable to cover all possible ranges."
+name|N_
+argument_list|(
+literal|"Stretch contrast to cover the maximum possible range."
+argument_list|)
 argument_list|,
 literal|"This simple plug-in does an automatic contrast "
 literal|"stretch.  For each channel in the image, it finds "
@@ -807,7 +809,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2893109f0108
+DECL|struct|__anon2b8bc0840108
 typedef|typedef
 struct|struct
 block|{

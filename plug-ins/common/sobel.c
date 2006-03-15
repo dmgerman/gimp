@@ -66,7 +66,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b804fd20108
+DECL|struct|__anon2c5cf0560108
 block|{
 DECL|member|horizontal
 name|gboolean
@@ -326,7 +326,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Edge Detection with Sobel Operation"
+name|N_
+argument_list|(
+literal|"Specialized direction-dependent edge detection."
+argument_list|)
 argument_list|,
 literal|"This plugin calculates the gradient with a sobel "
 literal|"operator. The user can specify which direction to "

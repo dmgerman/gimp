@@ -65,7 +65,7 @@ end_define
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29c5cbe00108
+DECL|struct|__anon2b8d608f0108
 block|{
 DECL|member|prDlg
 name|PRINTDLG
@@ -813,9 +813,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PRINT_PROC
 argument_list|,
-literal|"This plug-in prints images from the GIMP."
-argument_list|,
-literal|"Prints images to any printer recognized by Windows."
+name|N_
+argument_list|(
+literal|"Print image to any recognized printer."
+argument_list|)
 argument_list|,
 literal|"Tor Lillqvist<tml@iki.fi>"
 argument_list|,
@@ -848,9 +849,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PAGE_SETUP_PROC
 argument_list|,
-literal|"This plug-in sets up the page for printing from the GIMP."
-argument_list|,
-literal|"Sets up the page parameters for printing to any Windows printer."
+name|N_
+argument_list|(
+literal|"Set up  page layout for printing."
+argument_list|)
 argument_list|,
 literal|"Tor Lillqvist<tml@iki.fi>"
 argument_list|,

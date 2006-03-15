@@ -64,7 +64,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274d621a0108
+DECL|struct|__anon296a21030108
 block|{
 DECL|member|image
 name|gint32
@@ -95,7 +95,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon274d621a0203
+DECL|enum|__anon296a21030203
 block|{
 DECL|enumerator|ACT_LREDUX
 name|ACT_LREDUX
@@ -114,7 +114,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon274d621a0303
+DECL|enum|__anon296a21030303
 block|{
 DECL|enumerator|MODE_NTSC
 name|MODE_NTSC
@@ -159,7 +159,7 @@ end_comment
 
 begin_struct
 struct|struct
-DECL|struct|__anon274d621a0408
+DECL|struct|__anon296a21030408
 block|{
 DECL|member|pedestal
 name|gdouble
@@ -606,7 +606,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Look for hot NTSC or PAL pixels "
+name|N_
+argument_list|(
+literal|"Find and fix pixels that may be unsafely bright."
+argument_list|)
 argument_list|,
 literal|"hot scans an image for pixels that will give unsave "
 literal|"values of chrominance or composite signale "

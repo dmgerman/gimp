@@ -60,7 +60,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c193a7a0108
+DECL|struct|__anon276022930108
 block|{
 DECL|member|posx
 name|gint
@@ -111,7 +111,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c193a7a0208
+DECL|struct|__anon276022930208
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -746,7 +746,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Add lens flare effects"
+name|N_
+argument_list|(
+literal|"Add a lens flare effect."
+argument_list|)
 argument_list|,
 literal|"Adds a lens flare effects.  Makes your image look "
 literal|"like it was snapped with a cheap camera with a lot "

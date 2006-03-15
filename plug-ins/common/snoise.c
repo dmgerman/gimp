@@ -105,7 +105,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c18019d0108
+DECL|struct|__anon28cb27900108
 block|{
 DECL|member|tilable
 name|gboolean
@@ -504,7 +504,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Creates a grayscale noise texture"
+name|N_
+argument_list|(
+literal|"Create a random cloud-like texture."
+argument_list|)
 argument_list|,
 literal|"Generates 2D textures using Perlin's classic "
 literal|"solid noise function."

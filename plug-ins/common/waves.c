@@ -46,7 +46,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29873e1a0103
+DECL|enum|__anon28f071610103
 block|{
 DECL|enumerator|MODE_SMEAR
 name|MODE_SMEAR
@@ -62,7 +62,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29873e1a0208
+DECL|struct|__anon28f071610208
 block|{
 DECL|member|amplitude
 name|gdouble
@@ -367,7 +367,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Distort the image with waves"
+name|N_
+argument_list|(
+literal|"Distort the image with waves."
+argument_list|)
 argument_list|,
 literal|"none yet"
 argument_list|,

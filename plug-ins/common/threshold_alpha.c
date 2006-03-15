@@ -152,7 +152,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291df99f0108
+DECL|struct|__anon2bfd43e10108
 block|{
 DECL|member|threshold
 name|gint
@@ -234,7 +234,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|""
+name|N_
+argument_list|(
+literal|"Make transparency all-or-nothing."
+argument_list|)
 argument_list|,
 literal|""
 argument_list|,

@@ -79,7 +79,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c111b750103
+DECL|enum|__anon27b760a50103
 block|{
 DECL|enumerator|LIC_HUE
 name|LIC_HUE
@@ -127,7 +127,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c111b750208
+DECL|struct|__anon27b760a50208
 block|{
 DECL|member|filtlen
 name|gdouble
@@ -3867,7 +3867,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Creates a Van Gogh effect (Line Integral Convolution)"
+name|N_
+argument_list|(
+literal|"Special effects that nobody understands."
+argument_list|)
 argument_list|,
 literal|"No help yet"
 argument_list|,

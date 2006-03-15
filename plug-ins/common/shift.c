@@ -82,7 +82,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac431010108
+DECL|struct|__anon2bd48ec80108
 block|{
 DECL|member|shift_amount
 name|gint
@@ -306,7 +306,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Shift the contents of the specified drawable"
+name|N_
+argument_list|(
+literal|"Shift each row of pixels by a random amount."
+argument_list|)
 argument_list|,
 literal|"Shifts the pixels of the specified drawable. "
 literal|"Each row will be displaced a random value of pixels."

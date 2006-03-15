@@ -96,7 +96,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4d1cef0108
+DECL|struct|__anon2c0be2e50108
 block|{
 DECL|member|pixelwidth
 name|gint
@@ -115,7 +115,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4d1cef0208
+DECL|struct|__anon2c0be2e50208
 block|{
 DECL|member|x
 DECL|member|y
@@ -458,7 +458,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PIXELIZE_PROC
 argument_list|,
-literal|"Pixelize the contents of the specified drawable"
+name|N_
+argument_list|(
+literal|"Simplify image into an array of solid-colored squares"
+argument_list|)
 argument_list|,
 literal|"Pixelize the contents of the specified drawable "
 literal|"with speficied pixelizing width."

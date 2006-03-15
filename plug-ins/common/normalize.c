@@ -177,8 +177,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Normalize the contrast of the specified drawable to "
-literal|"cover all possible ranges."
+name|N_
+argument_list|(
+literal|"Stretch brightness values to cover the full range."
+argument_list|)
 argument_list|,
 literal|"This plugin performs almost the same operation as "
 literal|"the 'contrast autostretch' plugin, except that it "
@@ -789,7 +791,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293ffd750108
+DECL|struct|__anon2a8f3f650108
 block|{
 DECL|member|lut
 name|guchar

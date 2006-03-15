@@ -84,7 +84,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7bf6ce0108
+DECL|struct|__anon2b6776330108
 block|{
 DECL|member|mask_radius
 name|gdouble
@@ -441,8 +441,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Propagates dark values and white regions in an "
-literal|"image to achieve photocopy effect"
+name|N_
+argument_list|(
+literal|"Simulate color distortion produced by a copy machine"
+argument_list|)
 argument_list|,
 name|help_string
 argument_list|,

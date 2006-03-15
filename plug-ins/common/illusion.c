@@ -140,7 +140,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c139e6d0108
+DECL|struct|__anon27ca4ec30108
 block|{
 DECL|member|division
 name|gint32
@@ -265,7 +265,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"produce illusion"
+name|N_
+argument_list|(
+literal|"Superimpose many altered copies of the image"
+argument_list|)
 argument_list|,
 literal|"produce illusion"
 argument_list|,
@@ -620,7 +623,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2c139e6d0208
+DECL|struct|__anon27ca4ec30208
 typedef|typedef
 struct|struct
 block|{

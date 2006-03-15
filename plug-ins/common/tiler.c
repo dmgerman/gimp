@@ -162,7 +162,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Seamless tile creation"
+name|N_
+argument_list|(
+literal|"Alters edges to make the image seamlessly tileable."
+argument_list|)
 argument_list|,
 literal|"This plugin creates a seamless tileable from "
 literal|"the input drawable"

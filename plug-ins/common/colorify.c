@@ -145,7 +145,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295b42030108
+DECL|struct|__anon2af3ce940108
 block|{
 DECL|member|color
 name|GimpRGB
@@ -409,7 +409,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Similar to the \"Color\" mode for layers."
+name|N_
+argument_list|(
+literal|"Replace all colors with shades of a specified color."
+argument_list|)
 argument_list|,
 literal|"Makes an average of the RGB channels and uses it "
 literal|"to set the color"

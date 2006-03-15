@@ -45,7 +45,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a06a4d90103
+DECL|enum|__anon275bbdf70103
 block|{
 DECL|enumerator|ODD_FIELDS
 name|ODD_FIELDS
@@ -59,7 +59,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a06a4d90208
+DECL|struct|__anon275bbdf70208
 block|{
 DECL|member|evenness
 name|gint
@@ -242,7 +242,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Deinterlace"
+name|N_
+argument_list|(
+literal|"Fix images where every other row is missing."
+argument_list|)
 argument_list|,
 literal|"Deinterlace is useful for processing images from "
 literal|"video capture cards. When only the odd or even "

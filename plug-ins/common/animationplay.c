@@ -64,7 +64,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296be3bd0103
+DECL|enum|__anon2bbe9cf50103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -598,7 +598,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296be3bd0208
+DECL|struct|__anon2bbe9cf50208
 block|{
 DECL|member|x
 DECL|member|y
@@ -705,8 +705,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"This plugin allows you to preview a GIMP "
-literal|"layer-based animation."
+name|N_
+argument_list|(
+literal|"Preview a GIMP layer-based animation."
+argument_list|)
 argument_list|,
 literal|""
 argument_list|,

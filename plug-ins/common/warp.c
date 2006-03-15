@@ -83,7 +83,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5645520103
+DECL|enum|__anon2bf6575a0103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -103,7 +103,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5645520208
+DECL|struct|__anon2bf6575a0208
 block|{
 DECL|member|amount
 name|gdouble
@@ -762,8 +762,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Twist or smear an image. (only first six "
-literal|"arguments are required)"
+name|N_
+argument_list|(
+literal|"Twist or smear image in many different ways."
+argument_list|)
 argument_list|,
 literal|"Smears an image along vector paths calculated as "
 literal|"the gradient of a separate control matrix. The "

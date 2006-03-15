@@ -177,7 +177,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8a201f0108
+DECL|struct|__anon29b7602f0108
 block|{
 DECL|member|histogram
 name|gboolean
@@ -273,8 +273,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Destripe filter, used to remove vertical stripes "
-literal|"caused by cheap scanners."
+name|N_
+argument_list|(
+literal|"Remove vertical stripe artifacts from the image."
+argument_list|)
 argument_list|,
 literal|"This plug-in tries to remove vertical stripes from "
 literal|"an image."

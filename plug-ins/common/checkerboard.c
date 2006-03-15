@@ -275,7 +275,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Adds a checkerboard pattern to an image"
+name|N_
+argument_list|(
+literal|"Create a checkerboard pattern."
+argument_list|)
 argument_list|,
 literal|"More here later"
 argument_list|,
@@ -624,7 +627,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1fbf250108
+DECL|struct|__anon2b05f8f40108
 block|{
 DECL|member|fg
 name|guchar

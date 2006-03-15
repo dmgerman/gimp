@@ -559,8 +559,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Despeckle filter, typically used to \'despeckle\' "
-literal|"a photographic image."
+name|N_
+argument_list|(
+literal|"Remove speckle noise from the image."
+argument_list|)
 argument_list|,
 literal|"This plug-in selectively performs a median or "
 literal|"adaptive box filter on an image."

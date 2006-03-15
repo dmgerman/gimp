@@ -52,7 +52,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296daa6e0103
+DECL|enum|__anon27466b3f0103
 block|{
 DECL|enumerator|BEZIER_1
 name|BEZIER_1
@@ -68,7 +68,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296daa6e0203
+DECL|enum|__anon27466b3f0203
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -1869,7 +1869,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Renders a jigsaw puzzle look"
+name|N_
+argument_list|(
+literal|"Add a jigsaw-puzzle pattern to the image."
+argument_list|)
 argument_list|,
 literal|"Jigsaw puzzle look"
 argument_list|,

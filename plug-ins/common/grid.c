@@ -243,7 +243,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b53accf0108
+DECL|struct|__anon2b671c420108
 block|{
 DECL|member|hwidth
 name|gint
@@ -529,7 +529,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Draws a grid."
+name|N_
+argument_list|(
+literal|"Draw a grid on the image."
+argument_list|)
 argument_list|,
 literal|"Draws a grid using the specified colors. "
 literal|"The grid origin is the upper left corner."

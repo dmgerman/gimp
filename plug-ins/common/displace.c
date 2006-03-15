@@ -76,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon290737e60103
+DECL|enum|__anon2c1a1aa10103
 block|{
 DECL|enumerator|CARTESIAN_MODE
 name|CARTESIAN_MODE
@@ -96,7 +96,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290737e60208
+DECL|struct|__anon2c1a1aa10208
 block|{
 DECL|member|amount_x
 name|gdouble
@@ -542,7 +542,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Displace the contents of the specified drawable"
+name|N_
+argument_list|(
+literal|"Displace pixels as indicated by displacment maps."
+argument_list|)
 argument_list|,
 literal|"Displaces the contents of the specified drawable "
 literal|"by the amounts specified by 'amount-x' and "

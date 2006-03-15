@@ -768,8 +768,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
-literal|"Combine two images using corresponding "
-literal|"depth maps (z-buffers)"
+name|N_
+argument_list|(
+literal|"Combine two images using depth maps (z-buffers)."
+argument_list|)
 argument_list|,
 literal|"Taking as input two full-color, full-alpha "
 literal|"images and two corresponding grayscale depth "

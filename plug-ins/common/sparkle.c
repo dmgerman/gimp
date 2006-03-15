@@ -125,7 +125,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ea5bad0108
+DECL|struct|__anon276c8f280108
 block|{
 DECL|member|lum_threshold
 name|gdouble
@@ -652,7 +652,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Simulates pixel bloom and diffraction effects"
+name|N_
+argument_list|(
+literal|"Turn bright spots into starry sparkles."
+argument_list|)
 argument_list|,
 literal|"Uses a percentage based luminoisty threhsold to find "
 literal|"candidate pixels for adding some sparkles (spikes). "

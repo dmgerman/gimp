@@ -132,7 +132,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon287b93010103
+DECL|enum|__anon2b9e80eb0103
 block|{
 DECL|enumerator|PROJECTION
 name|PROJECTION
@@ -177,7 +177,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287b93010208
+DECL|struct|__anon2b9e80eb0208
 block|{
 DECL|member|transformSequence
 name|TransformType
@@ -216,7 +216,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287b93010308
+DECL|struct|__anon2b9e80eb0308
 block|{
 DECL|member|info
 name|ExpInfo
@@ -2230,7 +2230,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Create images based on a random genetic formula"
+name|N_
+argument_list|(
+literal|"Generate a huge variety of abstract patterns."
+argument_list|)
 argument_list|,
 literal|"This Plug-in is based on an article by "
 literal|"JÃ¶rn Loviscach (appeared in c't 10/95, page 326). "

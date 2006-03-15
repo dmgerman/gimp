@@ -66,7 +66,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0066160108
+DECL|struct|__anon28ba15930108
 block|{
 DECL|member|height
 name|gint
@@ -317,7 +317,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Engrave the contents of the specified drawable"
+name|N_
+argument_list|(
+literal|"Simulate an antique engraving."
+argument_list|)
 argument_list|,
 literal|"Creates a black-and-white 'engraved' version of an image as seen in old illustrations"
 argument_list|,
@@ -1170,7 +1173,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0066160208
+DECL|struct|__anon28ba15930208
 block|{
 DECL|member|x
 DECL|member|y

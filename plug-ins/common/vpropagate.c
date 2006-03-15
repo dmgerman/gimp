@@ -711,7 +711,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4d03950108
+DECL|struct|__anon29747adf0108
 block|{
 DECL|member|propagate_mode
 name|gint
@@ -879,7 +879,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4d03950208
+DECL|struct|__anon29747adf0208
 block|{
 DECL|member|applicable_image_type
 name|gint
@@ -1241,7 +1241,10 @@ name|gimp_install_procedure
 argument_list|(
 name|VPROPAGATE_PROC
 argument_list|,
-literal|"Propagate values of the layer"
+name|N_
+argument_list|(
+literal|"Propagate certain colors to neighboring pixels"
+argument_list|)
 argument_list|,
 literal|"Propagate values of the layer"
 argument_list|,
@@ -1276,7 +1279,10 @@ name|gimp_install_procedure
 argument_list|(
 name|ERODE_PROC
 argument_list|,
-literal|"Erode image"
+name|N_
+argument_list|(
+literal|"Shrink darker areas of the image"
+argument_list|)
 argument_list|,
 literal|"Erode image"
 argument_list|,
@@ -1311,7 +1317,10 @@ name|gimp_install_procedure
 argument_list|(
 name|DILATE_PROC
 argument_list|,
-literal|"Dilate image"
+name|N_
+argument_list|(
+literal|"Grow darker areas of the image."
+argument_list|)
 argument_list|,
 literal|"Dilate image"
 argument_list|,
@@ -4032,7 +4041,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4d03950308
+DECL|struct|__anon29747adf0308
 block|{
 DECL|member|min_modified
 name|gshort

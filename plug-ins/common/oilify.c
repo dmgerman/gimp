@@ -95,7 +95,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c38284f0108
+DECL|struct|__anon2b505d1a0108
 block|{
 DECL|member|mask_size
 name|gdouble
@@ -293,8 +293,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Modify the specified drawable to resemble an oil "
-literal|"painting"
+name|N_
+argument_list|(
+literal|"Smear colors to simulate an oil painting"
+argument_list|)
 argument_list|,
 literal|"This function performs the well-known oil-paint "
 literal|"effect on the specified drawable.  The size of the "

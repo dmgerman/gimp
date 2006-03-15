@@ -280,7 +280,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PROC_NAME
 argument_list|,
-literal|"Prints an image using the GNOME Print architecture"
+name|N_
+argument_list|(
+literal|"Print the image using the GNOME Print system."
+argument_list|)
 argument_list|,
 literal|"FIXME: write help"
 argument_list|,

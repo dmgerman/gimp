@@ -72,7 +72,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd5e6730108
+DECL|struct|__anon2bdc2f920108
 block|{
 DECL|member|xcenter
 name|gint
@@ -107,7 +107,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd5e6730208
+DECL|struct|__anon2bdc2f920208
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -498,7 +498,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Produce Supernova effect to the specified drawable"
+name|N_
+argument_list|(
+literal|"Add a starburst to the image"
+argument_list|)
 argument_list|,
 literal|"This plug-in produces an effect like a supernova "
 literal|"burst. The amount of the light effect is "

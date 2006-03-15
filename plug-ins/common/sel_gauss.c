@@ -46,7 +46,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba4591c0108
+DECL|struct|__anon2b0b74b80108
 block|{
 DECL|member|radius
 name|gdouble
@@ -258,8 +258,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Applies a selective gaussian blur to the "
-literal|"specified drawable."
+name|N_
+argument_list|(
+literal|"Blur neighboring pixels, but only in low-contrast areas."
+argument_list|)
 argument_list|,
 literal|"This filter functions similar to the regular "
 literal|"gaussian blur filter except that neighbouring "

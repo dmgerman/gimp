@@ -217,7 +217,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6286750108
+DECL|struct|__anon2c8f8fd20108
 block|{
 DECL|member|holdness
 name|gint
@@ -346,7 +346,10 @@ name|gimp_install_procedure
 argument_list|(
 name|HSV_NOISE_PROC
 argument_list|,
-literal|"Scattering pixel values in HSV space"
+name|N_
+argument_list|(
+literal|"Randomize hue/saturation/value independently"
+argument_list|)
 argument_list|,
 literal|"Scattering pixel values in HSV space"
 argument_list|,

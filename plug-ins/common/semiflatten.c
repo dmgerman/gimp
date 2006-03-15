@@ -174,9 +174,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Flatten pixels in an RGBA image that aren't "
-literal|"completely transparent against the current GIMP "
-literal|"background color"
+name|N_
+argument_list|(
+literal|"Replace partial transparency with the current background color."
+argument_list|)
 argument_list|,
 literal|"This plugin flattens pixels in an RGBA image that "
 literal|"aren't completely transparent against the current "

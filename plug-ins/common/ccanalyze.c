@@ -413,7 +413,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Colorcube analysis"
+name|N_
+argument_list|(
+literal|"Analyze the set of colors in the image"
+argument_list|)
 argument_list|,
 literal|"Analyze colorcube and print some information about "
 literal|"the current image (also displays a color-histogram)"

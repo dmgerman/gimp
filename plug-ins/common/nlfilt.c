@@ -56,7 +56,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2756804e0108
+DECL|struct|__anon27bbf0240108
 block|{
 DECL|member|alpha
 name|gdouble
@@ -83,7 +83,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2756804e0203
+DECL|enum|__anon27bbf0240203
 block|{
 DECL|enumerator|filter_alpha_trim
 name|filter_alpha_trim
@@ -339,7 +339,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Nonlinear swiss army knife filter"
+name|N_
+argument_list|(
+literal|"Nonlinear swiss army knife filter."
+argument_list|)
 argument_list|,
 literal|"This is the pnmnlfilt, in gimp's clothing.  "
 literal|"See the pnmnlfilt manpage for details."

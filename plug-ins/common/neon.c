@@ -56,7 +56,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4dba630108
+DECL|struct|__anon29cfb3630108
 block|{
 DECL|member|radius
 name|gdouble
@@ -375,7 +375,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Resolution independent edge detection"
+name|N_
+argument_list|(
+literal|"Simulate the glowing boundary of a neon light"
+argument_list|)
 argument_list|,
 name|help_string
 argument_list|,

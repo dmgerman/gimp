@@ -51,7 +51,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2b2dd70103
+DECL|enum|__anon29b32f2d0103
 block|{
 DECL|enumerator|FUNCTION_BUMPMAP
 name|FUNCTION_BUMPMAP
@@ -69,7 +69,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2b2dd70208
+DECL|struct|__anon29b32f2d0208
 block|{
 DECL|member|azimuth
 name|gdouble
@@ -391,7 +391,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Emboss filter"
+name|N_
+argument_list|(
+literal|"Simulate an image created by embossing."
+argument_list|)
 argument_list|,
 literal|"Emboss or Bumpmap the given drawable, specifying "
 literal|"the angle and elevation for the light source."

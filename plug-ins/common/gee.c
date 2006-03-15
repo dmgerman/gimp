@@ -387,7 +387,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
+name|N_
+argument_list|(
 literal|"A big hello from the GIMP team!"
+argument_list|)
 argument_list|,
 literal|"Beyond help."
 argument_list|,

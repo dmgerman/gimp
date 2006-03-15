@@ -74,7 +74,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c3f276c0103
+DECL|enum|__anon2c7036e70103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -99,7 +99,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c3f276c0203
+DECL|enum|__anon2c7036e70203
 block|{
 DECL|enumerator|OPOPTIMIZE
 name|OPOPTIMIZE
@@ -502,6 +502,11 @@ name|gimp_install_procedure
 argument_list|(
 name|OPTIMIZE_PROC
 argument_list|,
+name|N_
+argument_list|(
+literal|"Modify image to reduce size when saved as GIF animation."
+argument_list|)
+argument_list|,
 literal|"This procedure applies various optimizations to"
 literal|" a GIMP layer-based animation in an attempt to"
 literal|" reduce the final file size.  If a frame of the"
@@ -510,8 +515,6 @@ literal|" procedure attempts to maximize the number of"
 literal|" ajdacent pixels having the same color, which"
 literal|" improves the compression for some image formats"
 literal|" such as GIF or MNG."
-argument_list|,
-literal|""
 argument_list|,
 literal|"Adam D. Moss<adam@gimp.org>"
 argument_list|,
@@ -547,14 +550,17 @@ name|gimp_install_procedure
 argument_list|(
 name|OPTIMIZE_DIFF_PROC
 argument_list|,
+name|N_
+argument_list|(
+literal|"Reduce file size where combining layers is possible."
+argument_list|)
+argument_list|,
 literal|"This procedure applies various optimizations to"
 literal|" a GIMP layer-based animation in an attempt to"
 literal|" reduce the final file size.  If a frame of the"
 literal|" animation can use the 'combine' mode, this"
 literal|" procedure uses a simple difference between the"
 literal|" frames."
-argument_list|,
-literal|""
 argument_list|,
 literal|"Adam D. Moss<adam@gimp.org>"
 argument_list|,
@@ -590,11 +596,14 @@ name|gimp_install_procedure
 argument_list|(
 name|UNOPTIMIZE_PROC
 argument_list|,
+name|N_
+argument_list|(
+literal|"Remove optimization to make editing easier."
+argument_list|)
+argument_list|,
 literal|"This procedure 'simplifies' a GIMP layer-based"
 literal|" animation that has been optimized for animation. "
 literal|"This makes editing the animation much easier."
-argument_list|,
-literal|""
 argument_list|,
 literal|"Adam D. Moss<adam@gimp.org>"
 argument_list|,

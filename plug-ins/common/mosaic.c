@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296e94bf0103
+DECL|enum|__anon2abae6fc0103
 block|{
 DECL|enumerator|SQUARES
 name|SQUARES
@@ -174,7 +174,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296e94bf0208
+DECL|struct|__anon2abae6fc0208
 block|{
 DECL|member|x
 DECL|member|y
@@ -192,7 +192,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296e94bf0308
+DECL|struct|__anon2abae6fc0308
 block|{
 DECL|member|npts
 name|guint
@@ -214,7 +214,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296e94bf0408
+DECL|struct|__anon2abae6fc0408
 block|{
 DECL|member|base_x
 DECL|member|base_y
@@ -243,7 +243,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296e94bf0508
+DECL|struct|__anon2abae6fc0508
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -1578,7 +1578,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Convert the input drawable into a collection of tiles"
+name|N_
+argument_list|(
+literal|"Convert the image into irregular tiles"
+argument_list|)
 argument_list|,
 literal|"Help not yet written for this plug-in"
 argument_list|,

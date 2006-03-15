@@ -80,7 +80,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b69352c0103
+DECL|enum|__anon292d38810103
 block|{
 DECL|enumerator|CM_RED_CHANNEL
 name|CM_RED_CHANNEL
@@ -99,7 +99,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b69352c0208
+DECL|struct|__anon292d38810208
 block|{
 DECL|member|red_gain
 name|gdouble
@@ -122,7 +122,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b69352c0308
+DECL|struct|__anon292d38810308
 block|{
 DECL|member|red
 name|CmChannelType
@@ -735,7 +735,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Mix RGB Channels."
+name|N_
+argument_list|(
+literal|"Alter colors by mixing RGB Channels."
+argument_list|)
 argument_list|,
 literal|"This plug-in mixes the RGB channels."
 argument_list|,

@@ -100,7 +100,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f897ad0108
+DECL|struct|__anon27b20bbf0108
 block|{
 DECL|member|film_height
 name|gint
@@ -204,7 +204,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f897ad0208
+DECL|struct|__anon27b20bbf0208
 block|{
 DECL|member|advanced_adj
 name|GtkObject
@@ -889,7 +889,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Compose several images to a roll film"
+name|N_
+argument_list|(
+literal|"Combine several images on a film strip."
+argument_list|)
 argument_list|,
 literal|"Compose several images to a roll film"
 argument_list|,

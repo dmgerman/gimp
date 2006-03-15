@@ -247,7 +247,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"derive smooth palette from image"
+name|N_
+argument_list|(
+literal|"Derive a smooth color palette from the image."
+argument_list|)
 argument_list|,
 literal|"help!"
 argument_list|,
@@ -294,7 +297,7 @@ end_function
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon286c92380108
+DECL|struct|__anon29580cc00108
 block|{
 DECL|member|width
 name|gint

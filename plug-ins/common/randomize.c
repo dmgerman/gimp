@@ -173,7 +173,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2895c8100108
+DECL|struct|__anon298adcc20108
 block|{
 DECL|member|rndm_pct
 name|gdouble
@@ -427,21 +427,30 @@ name|gchar
 modifier|*
 name|hurl_blurb
 init|=
-literal|"Add a random factor to the image by hurling random data at it."
+name|N_
+argument_list|(
+literal|"Completely randomize a fraction of pixels."
+argument_list|)
 decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
 name|pick_blurb
 init|=
-literal|"Add a random factor to the image by picking a random adjacent pixel."
+name|N_
+argument_list|(
+literal|"Randomly interchange some pixels with neighbors."
+argument_list|)
 decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
 name|slur_blurb
 init|=
-literal|"Add a random factor to the image by slurring (similar to melting)."
+name|N_
+argument_list|(
+literal|"Randomly slide some pixels downward (similar to melting)."
+argument_list|)
 decl_stmt|;
 specifier|const
 name|gchar

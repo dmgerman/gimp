@@ -76,10 +76,10 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275fd2af0108
+DECL|struct|__anon293d47410108
 block|{
 union|union
-DECL|union|__anon275fd2af020a
+DECL|union|__anon293d4741020a
 block|{
 DECL|member|ID
 name|gint32
@@ -624,7 +624,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275fd2af0308
+DECL|struct|__anon293d47410308
 block|{
 DECL|member|compose_type
 specifier|const
@@ -1121,7 +1121,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275fd2af0408
+DECL|struct|__anon293d47410408
 block|{
 DECL|member|inputs
 name|ComposeInput
@@ -1161,7 +1161,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275fd2af0508
+DECL|struct|__anon293d47410508
 block|{
 DECL|member|width
 DECL|member|height
@@ -1615,7 +1615,10 @@ name|gimp_install_procedure
 argument_list|(
 name|COMPOSE_PROC
 argument_list|,
-literal|"Compose an image from multiple gray images"
+name|N_
+argument_list|(
+literal|"Create an image using multiple gray images as color channels."
+argument_list|)
 argument_list|,
 literal|"This function creates a new image from "
 literal|"multiple gray images"
@@ -1698,7 +1701,10 @@ name|gimp_install_procedure
 argument_list|(
 name|RECOMPOSE_PROC
 argument_list|,
-literal|"Recompose a layer from multiple drawables of gray images"
+name|N_
+argument_list|(
+literal|"Recompose an image that was previously decomposed."
+argument_list|)
 argument_list|,
 literal|"This function recombines the grayscale layers produced "
 literal|"by Decompose into a single RGB or RGBA layer, and "

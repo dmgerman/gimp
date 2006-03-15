@@ -194,8 +194,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Invert the 'value' component of an indexed/RGB "
-literal|"image in HSV colorspace"
+name|N_
+argument_list|(
+literal|"Invert the brightness of each pixel."
+argument_list|)
 argument_list|,
 literal|"This function takes an indexed/RGB image and "
 literal|"inverts its 'value' in HSV space.  The upshot of "

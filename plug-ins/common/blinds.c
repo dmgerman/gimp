@@ -338,9 +338,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Adds a blinds effect to the image. Rather like "
-literal|"putting the image on a set of window blinds and "
-literal|"the closing or opening the blinds"
+name|N_
+argument_list|(
+literal|"Simulate an image painted on window blinds."
+argument_list|)
 argument_list|,
 literal|"More here later"
 argument_list|,

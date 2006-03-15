@@ -59,7 +59,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e974f30103
+DECL|enum|__anon296eec540103
 block|{
 DECL|enumerator|SAVE
 name|SAVE
@@ -103,7 +103,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e974f30208
+DECL|struct|__anon296eec540208
 block|{
 DECL|member|title
 specifier|const
@@ -507,7 +507,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"The GIMP unit editor"
+name|N_
+argument_list|(
+literal|"Create or alter units used in GIMP."
+argument_list|)
 argument_list|,
 literal|"The GIMP unit editor"
 argument_list|,

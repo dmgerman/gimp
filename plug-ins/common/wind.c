@@ -106,7 +106,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be4b9780103
+DECL|enum|__anon2b0046b70103
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -122,7 +122,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be4b9780203
+DECL|enum|__anon2b0046b70203
 block|{
 DECL|enumerator|RENDER_WIND
 name|RENDER_WIND
@@ -138,7 +138,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be4b9780303
+DECL|enum|__anon2b0046b70303
 block|{
 DECL|enumerator|BOTH
 name|BOTH
@@ -602,7 +602,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Renders a wind effect."
+name|N_
+argument_list|(
+literal|"Smear image to give windblown effect."
+argument_list|)
 argument_list|,
 literal|"Renders a wind effect."
 argument_list|,

@@ -104,7 +104,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c289ef10103
+DECL|enum|__anon297babe90103
 block|{
 DECL|enumerator|GROW
 name|GROW
@@ -132,7 +132,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c289ef10208
+DECL|struct|__anon297babe90208
 block|{
 DECL|member|run
 name|gboolean
@@ -147,7 +147,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c289ef10308
+DECL|struct|__anon297babe90308
 block|{
 DECL|member|deform_area_radius
 name|gint
@@ -1076,7 +1076,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Interactive warping of the specified drawable"
+name|N_
+argument_list|(
+literal|"Use mouse control to warp image areas."
+argument_list|)
 argument_list|,
 literal|"Interactive warping of the specified drawable"
 argument_list|,

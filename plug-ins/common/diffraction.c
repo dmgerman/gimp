@@ -110,7 +110,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28bf94e70108
+DECL|struct|__anon2b9710360108
 block|{
 DECL|member|lam_r
 name|gdouble
@@ -169,7 +169,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28bf94e70208
+DECL|struct|__anon2b9710360208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -638,7 +638,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Generate diffraction patterns"
+name|N_
+argument_list|(
+literal|"Generate diffraction patterns."
+argument_list|)
 argument_list|,
 literal|"Help?  What help?  Real men do not need help :-)"
 argument_list|,
@@ -1118,7 +1121,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon28bf94e70308
+DECL|struct|__anon2b9710360308
 typedef|typedef
 struct|struct
 block|{

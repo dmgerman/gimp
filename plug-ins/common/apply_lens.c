@@ -152,7 +152,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27573b8f0108
+DECL|struct|__anon298a73360108
 block|{
 DECL|member|refraction
 name|gdouble
@@ -277,7 +277,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Apply a lens effect"
+name|N_
+argument_list|(
+literal|"Simulate an elliptical lens over the image."
+argument_list|)
 argument_list|,
 literal|"This plug-in uses Snell's law to draw "
 literal|"an ellipsoid lens over the image"

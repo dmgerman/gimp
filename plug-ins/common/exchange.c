@@ -70,7 +70,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7630530108
+DECL|struct|__anon27cc9eef0108
 block|{
 DECL|member|from
 name|GimpRGB
@@ -420,7 +420,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Color Exchange"
+name|N_
+argument_list|(
+literal|"Swap one color with another."
+argument_list|)
 argument_list|,
 literal|"Exchange one color with another, optionally setting a threshold "
 literal|"to convert from one shade to another"

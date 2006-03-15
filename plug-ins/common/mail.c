@@ -229,7 +229,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d22f3e0103
+DECL|enum|__anon293603880103
 block|{
 DECL|enumerator|ENCAPSULATION_UUENCODE
 name|ENCAPSULATION_UUENCODE
@@ -267,7 +267,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d22f3e0208
+DECL|struct|__anon293603880208
 block|{
 DECL|member|receipt
 name|gchar
@@ -682,7 +682,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"pipe files to uuencode then mail them"
+name|N_
+argument_list|(
+literal|"Email the image."
+argument_list|)
 argument_list|,
 literal|"You need to have uuencode and mail installed"
 argument_list|,

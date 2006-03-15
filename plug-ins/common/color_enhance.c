@@ -167,8 +167,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Automatically stretch the saturation of the "
-literal|"specified drawable to cover all possible ranges."
+name|N_
+argument_list|(
+literal|"Stretch color saturation to cover maximum possible range."
+argument_list|)
 argument_list|,
 literal|"This simple plug-in does an automatic saturation "
 literal|"stretch.  For each channel in the image, it finds "
@@ -984,7 +986,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a227c8d0108
+DECL|struct|__anon2accec590108
 block|{
 DECL|member|vhi
 name|gdouble

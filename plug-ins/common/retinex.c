@@ -92,7 +92,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e5b7600108
+DECL|struct|__anon2c62e8670108
 block|{
 DECL|member|scale
 name|gint
@@ -119,7 +119,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28e5b7600203
+DECL|enum|__anon2c62e8670203
 block|{
 DECL|enumerator|filter_uniform
 name|filter_uniform
@@ -177,7 +177,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e5b7600308
+DECL|struct|__anon2c62e8670308
 block|{
 DECL|member|N
 name|gint
@@ -530,7 +530,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Retinex Image Enhancement Algorithm"
+name|N_
+argument_list|(
+literal|"Enhance contrast using the Retinex method."
+argument_list|)
 argument_list|,
 literal|"The Retinex Image Enhancement Algorithm is an "
 literal|"automatic image enhancement method that enhances "

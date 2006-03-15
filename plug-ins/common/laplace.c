@@ -199,7 +199,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Edge Detection with Laplace Operation"
+name|N_
+argument_list|(
+literal|"High-resolution edge detection"
+argument_list|)
 argument_list|,
 literal|"This plugin creates one-pixel wide edges from the "
 literal|"image, with the value proportional to the gradient. "

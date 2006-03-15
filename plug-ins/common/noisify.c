@@ -80,7 +80,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3238a10108
+DECL|struct|__anon294218a20108
 block|{
 DECL|member|independent
 name|gboolean
@@ -107,7 +107,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3238a10208
+DECL|struct|__anon294218a20208
 block|{
 DECL|member|channels
 name|gint
@@ -498,7 +498,10 @@ name|gimp_install_procedure
 argument_list|(
 name|RGB_NOISE_PROC
 argument_list|,
-literal|"Adds random noise to image channels "
+name|N_
+argument_list|(
+literal|"Distort colors by random amounts."
+argument_list|)
 argument_list|,
 literal|"Add normally distributed (zero mean) random values "
 literal|"to image channels.  Noise may be additive "
