@@ -1066,7 +1066,7 @@ init|=
 literal|0
 decl_stmt|;
 name|gint32
-name|num_bytes
+name|thumb_data_count
 init|=
 literal|0
 decl_stmt|;
@@ -1255,7 +1255,7 @@ operator|=
 name|tmp
 expr_stmt|;
 block|}
-name|num_bytes
+name|thumb_data_count
 operator|=
 literal|3
 operator|*
@@ -1272,7 +1272,7 @@ argument_list|(
 name|pixbuf
 argument_list|)
 argument_list|,
-name|num_bytes
+name|thumb_data_count
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -1344,7 +1344,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|num_bytes
+name|thumb_data_count
 expr_stmt|;
 name|return_args
 index|[
@@ -1410,7 +1410,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"thumbnail-data-count"
+literal|"thumb-data-count"
 block|,
 literal|"The number of bytes in thumbnail data"
 block|}
@@ -2381,7 +2381,7 @@ name|TRUE
 decl_stmt|;
 name|gchar
 modifier|*
-name|name
+name|procedure_name
 decl_stmt|;
 name|gchar
 modifier|*
@@ -2395,7 +2395,7 @@ name|gchar
 modifier|*
 name|magics
 decl_stmt|;
-name|name
+name|procedure_name
 operator|=
 operator|(
 name|gchar
@@ -2412,14 +2412,14 @@ name|pdb_pointer
 expr_stmt|;
 if|if
 condition|(
-name|name
+name|procedure_name
 operator|==
 name|NULL
 operator|||
 operator|!
 name|g_utf8_validate
 argument_list|(
-name|name
+name|procedure_name
 argument_list|,
 operator|-
 literal|1
@@ -2501,7 +2501,7 @@ name|canonical
 operator|=
 name|gimp_canonicalize_identifier
 argument_list|(
-name|name
+name|procedure_name
 argument_list|)
 expr_stmt|;
 name|proc
@@ -2964,7 +2964,7 @@ name|TRUE
 decl_stmt|;
 name|gchar
 modifier|*
-name|name
+name|procedure_name
 decl_stmt|;
 name|gchar
 modifier|*
@@ -2974,7 +2974,7 @@ name|gchar
 modifier|*
 name|prefixes
 decl_stmt|;
-name|name
+name|procedure_name
 operator|=
 operator|(
 name|gchar
@@ -2991,14 +2991,14 @@ name|pdb_pointer
 expr_stmt|;
 if|if
 condition|(
-name|name
+name|procedure_name
 operator|==
 name|NULL
 operator|||
 operator|!
 name|g_utf8_validate
 argument_list|(
-name|name
+name|procedure_name
 argument_list|,
 operator|-
 literal|1
@@ -3065,7 +3065,7 @@ name|canonical
 operator|=
 name|gimp_canonicalize_identifier
 argument_list|(
-name|name
+name|procedure_name
 argument_list|)
 expr_stmt|;
 name|proc
@@ -3357,13 +3357,13 @@ name|TRUE
 decl_stmt|;
 name|gchar
 modifier|*
-name|name
+name|procedure_name
 decl_stmt|;
 name|gchar
 modifier|*
 name|mime_type
 decl_stmt|;
-name|name
+name|procedure_name
 operator|=
 operator|(
 name|gchar
@@ -3380,14 +3380,14 @@ name|pdb_pointer
 expr_stmt|;
 if|if
 condition|(
-name|name
+name|procedure_name
 operator|==
 name|NULL
 operator|||
 operator|!
 name|g_utf8_validate
 argument_list|(
-name|name
+name|procedure_name
 argument_list|,
 operator|-
 literal|1
@@ -3448,7 +3448,7 @@ name|canonical
 operator|=
 name|gimp_canonicalize_identifier
 argument_list|(
-name|name
+name|procedure_name
 argument_list|)
 expr_stmt|;
 name|success

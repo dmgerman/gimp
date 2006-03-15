@@ -2305,7 +2305,7 @@ name|num_samples
 decl_stmt|;
 name|gdouble
 modifier|*
-name|pos
+name|positions
 decl_stmt|;
 name|gboolean
 name|reverse
@@ -2378,7 +2378,7 @@ name|success
 operator|=
 name|FALSE
 expr_stmt|;
-name|pos
+name|positions
 operator|=
 operator|(
 name|gdouble
@@ -2482,7 +2482,7 @@ argument_list|,
 name|seg
 argument_list|,
 operator|*
-name|pos
+name|positions
 argument_list|,
 name|reverse
 argument_list|,
@@ -2522,7 +2522,7 @@ name|color
 operator|.
 name|a
 expr_stmt|;
-name|pos
+name|positions
 operator|++
 expr_stmt|;
 block|}

@@ -518,7 +518,7 @@ modifier|*
 name|return_args
 decl_stmt|;
 name|gint32
-name|i
+name|num_samples
 decl_stmt|;
 name|gboolean
 name|reverse
@@ -534,7 +534,7 @@ name|color_samples
 init|=
 name|NULL
 decl_stmt|;
-name|i
+name|num_samples
 operator|=
 name|args
 index|[
@@ -547,7 +547,7 @@ name|pdb_int
 expr_stmt|;
 if|if
 condition|(
-name|i
+name|num_samples
 operator|<
 literal|2
 condition|)
@@ -606,14 +606,14 @@ operator|=
 literal|1.0
 operator|/
 operator|(
-name|i
+name|num_samples
 operator|-
 literal|1
 operator|)
 expr_stmt|;
 name|array_length
 operator|=
-name|i
+name|num_samples
 operator|*
 literal|4
 expr_stmt|;
@@ -637,7 +637,7 @@ argument_list|)
 expr_stmt|;
 while|while
 condition|(
-name|i
+name|num_samples
 operator|--
 condition|)
 block|{
@@ -869,11 +869,11 @@ modifier|*
 name|return_args
 decl_stmt|;
 name|gint32
-name|i
+name|num_samples
 decl_stmt|;
 name|gdouble
 modifier|*
-name|pos
+name|positions
 decl_stmt|;
 name|gboolean
 name|reverse
@@ -889,7 +889,7 @@ name|color_samples
 init|=
 name|NULL
 decl_stmt|;
-name|i
+name|num_samples
 operator|=
 name|args
 index|[
@@ -902,7 +902,7 @@ name|pdb_int
 expr_stmt|;
 if|if
 condition|(
-name|i
+name|num_samples
 operator|<=
 literal|0
 condition|)
@@ -910,7 +910,7 @@ name|success
 operator|=
 name|FALSE
 expr_stmt|;
-name|pos
+name|positions
 operator|=
 operator|(
 name|gdouble
@@ -964,7 +964,7 @@ name|pv
 decl_stmt|;
 name|array_length
 operator|=
-name|i
+name|num_samples
 operator|*
 literal|4
 expr_stmt|;
@@ -988,7 +988,7 @@ argument_list|)
 expr_stmt|;
 while|while
 condition|(
-name|i
+name|num_samples
 operator|--
 condition|)
 block|{
@@ -1001,7 +1001,7 @@ argument_list|,
 name|seg
 argument_list|,
 operator|*
-name|pos
+name|positions
 argument_list|,
 name|reverse
 argument_list|,
@@ -1041,7 +1041,7 @@ name|color
 operator|.
 name|a
 expr_stmt|;
-name|pos
+name|positions
 operator|++
 expr_stmt|;
 block|}
@@ -1250,7 +1250,7 @@ literal|0
 decl_stmt|;
 name|gdouble
 modifier|*
-name|values
+name|grad_data
 init|=
 name|NULL
 decl_stmt|;
@@ -1424,7 +1424,7 @@ operator|->
 name|name
 argument_list|)
 expr_stmt|;
-name|values
+name|grad_data
 operator|=
 name|g_new
 argument_list|(
@@ -1443,7 +1443,7 @@ literal|4
 expr_stmt|;
 name|pv
 operator|=
-name|values
+name|grad_data
 expr_stmt|;
 while|while
 condition|(
@@ -1556,7 +1556,7 @@ name|value
 operator|.
 name|pdb_pointer
 operator|=
-name|values
+name|grad_data
 expr_stmt|;
 block|}
 return|return

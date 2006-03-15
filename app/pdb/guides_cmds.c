@@ -196,7 +196,7 @@ modifier|*
 name|gimage
 decl_stmt|;
 name|gint32
-name|offset
+name|yposition
 decl_stmt|;
 name|gint32
 name|guide
@@ -231,7 +231,7 @@ name|success
 operator|=
 name|FALSE
 expr_stmt|;
-name|offset
+name|yposition
 operator|=
 name|args
 index|[
@@ -244,7 +244,7 @@ name|pdb_int
 expr_stmt|;
 if|if
 condition|(
-name|offset
+name|yposition
 operator|<
 literal|0
 condition|)
@@ -259,7 +259,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|offset
+name|yposition
 operator|<=
 name|gimage
 operator|->
@@ -276,7 +276,7 @@ name|gimp_image_add_hguide
 argument_list|(
 name|gimage
 argument_list|,
-name|offset
+name|yposition
 argument_list|,
 name|TRUE
 argument_list|)
@@ -451,7 +451,7 @@ modifier|*
 name|gimage
 decl_stmt|;
 name|gint32
-name|offset
+name|xposition
 decl_stmt|;
 name|gint32
 name|guide
@@ -486,7 +486,7 @@ name|success
 operator|=
 name|FALSE
 expr_stmt|;
-name|offset
+name|xposition
 operator|=
 name|args
 index|[
@@ -499,7 +499,7 @@ name|pdb_int
 expr_stmt|;
 if|if
 condition|(
-name|offset
+name|xposition
 operator|<
 literal|0
 condition|)
@@ -514,7 +514,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|offset
+name|xposition
 operator|<=
 name|gimage
 operator|->
@@ -531,7 +531,7 @@ name|gimp_image_add_vguide
 argument_list|(
 name|gimage
 argument_list|,
-name|offset
+name|xposition
 argument_list|,
 name|TRUE
 argument_list|)

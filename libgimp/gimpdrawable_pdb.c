@@ -2773,12 +2773,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_drawable_thumbnail:  * @drawable_ID: The drawable.  * @width: The thumbnail width.  * @height: The thumbnail height.  * @ret_width: The previews width.  * @ret_height: The previews height.  * @bpp: The previews bpp.  * @thumbnail_data_count: The number of bytes in thumbnail data.  * @thumbnail_data: The thumbnail data.  *  * Get a thumbnail of a drawable.  *  * This function gets data from which a thumbnail of a drawable preview  * can be created. Maximum x or y dimension is 512 pixels. The pixels  * are returned in RGB[A] or GRAY[A] format. The bpp return value gives  * the number of bytes in the image.  *  * Returns: TRUE on success.  */
+comment|/**  * _gimp_drawable_thumbnail:  * @drawable_ID: The drawable.  * @width: The requested thumbnail width.  * @height: The requested thumbnail height.  * @actual_width: The previews width.  * @actual_height: The previews height.  * @bpp: The previews bpp.  * @thumbnail_data_count: The number of bytes in thumbnail data.  * @thumbnail_data: The thumbnail data.  *  * Get a thumbnail of a drawable.  *  * This function gets data from which a thumbnail of a drawable preview  * can be created. Maximum x or y dimension is 512 pixels. The pixels  * are returned in RGB[A] or GRAY[A] format. The bpp return value gives  * the number of bytes in the image.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|_gimp_drawable_thumbnail (gint32 drawable_ID,gint width,gint height,gint * ret_width,gint * ret_height,gint * bpp,gint * thumbnail_data_count,guint8 ** thumbnail_data)
+DECL|function|_gimp_drawable_thumbnail (gint32 drawable_ID,gint width,gint height,gint * actual_width,gint * actual_height,gint * bpp,gint * thumbnail_data_count,guint8 ** thumbnail_data)
 name|_gimp_drawable_thumbnail
 parameter_list|(
 name|gint32
@@ -2792,11 +2792,11 @@ name|height
 parameter_list|,
 name|gint
 modifier|*
-name|ret_width
+name|actual_width
 parameter_list|,
 name|gint
 modifier|*
-name|ret_height
+name|actual_height
 parameter_list|,
 name|gint
 modifier|*
@@ -2849,12 +2849,12 @@ name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
 operator|*
-name|ret_width
+name|actual_width
 operator|=
 literal|0
 expr_stmt|;
 operator|*
-name|ret_height
+name|actual_height
 operator|=
 literal|0
 expr_stmt|;
@@ -2892,7 +2892,7 @@ name|success
 condition|)
 block|{
 operator|*
-name|ret_width
+name|actual_width
 operator|=
 name|return_vals
 index|[
@@ -2904,7 +2904,7 @@ operator|.
 name|d_int32
 expr_stmt|;
 operator|*
-name|ret_height
+name|actual_height
 operator|=
 name|return_vals
 index|[

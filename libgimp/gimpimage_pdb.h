@@ -665,11 +665,11 @@ name|height
 argument_list|,
 name|gint
 operator|*
-name|ret_width
+name|actual_width
 argument_list|,
 name|gint
 operator|*
-name|ret_height
+name|actual_height
 argument_list|,
 name|gint
 operator|*

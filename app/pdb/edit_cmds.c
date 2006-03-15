@@ -1088,7 +1088,7 @@ name|paste_into
 decl_stmt|;
 name|GimpLayer
 modifier|*
-name|layer
+name|floating_sel
 init|=
 name|NULL
 decl_stmt|;
@@ -1178,7 +1178,7 @@ condition|(
 name|success
 condition|)
 block|{
-name|layer
+name|floating_sel
 operator|=
 name|gimp_edit_paste
 argument_list|(
@@ -1214,7 +1214,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|layer
+name|floating_sel
 condition|)
 name|success
 operator|=
@@ -1249,7 +1249,7 @@ name|gimp_item_get_ID
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
-name|layer
+name|floating_sel
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2491,7 +2491,7 @@ name|paste_into
 decl_stmt|;
 name|GimpLayer
 modifier|*
-name|layer
+name|floating_sel
 init|=
 name|NULL
 decl_stmt|;
@@ -2634,7 +2634,7 @@ condition|(
 name|success
 condition|)
 block|{
-name|layer
+name|floating_sel
 operator|=
 name|gimp_edit_paste
 argument_list|(
@@ -2668,7 +2668,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|layer
+name|floating_sel
 condition|)
 name|success
 operator|=
@@ -2703,7 +2703,7 @@ name|gimp_item_get_ID
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
-name|layer
+name|floating_sel
 argument_list|)
 argument_list|)
 expr_stmt|;
