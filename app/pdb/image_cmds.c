@@ -1465,10 +1465,6 @@ name|GList
 modifier|*
 name|list
 init|=
-name|NULL
-decl_stmt|;
-name|list
-operator|=
 name|GIMP_LIST
 argument_list|(
 name|gimp
@@ -1477,7 +1473,7 @@ name|images
 argument_list|)
 operator|->
 name|list
-expr_stmt|;
+decl_stmt|;
 name|num_images
 operator|=
 name|g_list_length
@@ -2508,6 +2504,11 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
+name|gint32
+name|width
+init|=
+literal|0
+decl_stmt|;
 name|gimage
 operator|=
 name|gimp_image_get_by_ID
@@ -2536,6 +2537,19 @@ name|success
 operator|=
 name|FALSE
 expr_stmt|;
+if|if
+condition|(
+name|success
+condition|)
+block|{
+name|width
+operator|=
+name|gimp_image_get_width
+argument_list|(
+name|gimage
+argument_list|)
+expr_stmt|;
+block|}
 name|return_args
 operator|=
 name|procedural_db_return_args
@@ -2559,8 +2573,6 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|gimage
-operator|->
 name|width
 expr_stmt|;
 return|return
@@ -2686,6 +2698,11 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
+name|gint32
+name|height
+init|=
+literal|0
+decl_stmt|;
 name|gimage
 operator|=
 name|gimp_image_get_by_ID
@@ -2714,6 +2731,19 @@ name|success
 operator|=
 name|FALSE
 expr_stmt|;
+if|if
+condition|(
+name|success
+condition|)
+block|{
+name|height
+operator|=
+name|gimp_image_get_height
+argument_list|(
+name|gimage
+argument_list|)
+expr_stmt|;
+block|}
 name|return_args
 operator|=
 name|procedural_db_return_args
@@ -2737,8 +2767,6 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|gimage
-operator|->
 name|height
 expr_stmt|;
 return|return
@@ -4394,10 +4422,6 @@ name|GList
 modifier|*
 name|list
 init|=
-name|NULL
-decl_stmt|;
-name|list
-operator|=
 name|GIMP_LIST
 argument_list|(
 name|gimage
@@ -4406,7 +4430,7 @@ name|layers
 argument_list|)
 operator|->
 name|list
-expr_stmt|;
+decl_stmt|;
 name|num_layers
 operator|=
 name|g_list_length
@@ -4685,10 +4709,6 @@ name|GList
 modifier|*
 name|list
 init|=
-name|NULL
-decl_stmt|;
-name|list
-operator|=
 name|GIMP_LIST
 argument_list|(
 name|gimage
@@ -4697,7 +4717,7 @@ name|channels
 argument_list|)
 operator|->
 name|list
-expr_stmt|;
+decl_stmt|;
 name|num_channels
 operator|=
 name|g_list_length
@@ -4976,10 +4996,6 @@ name|GList
 modifier|*
 name|list
 init|=
-name|NULL
-decl_stmt|;
-name|list
-operator|=
 name|GIMP_LIST
 argument_list|(
 name|gimage
@@ -4988,7 +5004,7 @@ name|vectors
 argument_list|)
 operator|->
 name|list
-expr_stmt|;
+decl_stmt|;
 name|num_vectors
 operator|=
 name|g_list_length
@@ -5155,11 +5171,11 @@ literal|"Returns the list of vectors contained in the specified image."
 block|,
 literal|"This procedure returns the list of vectors contained in the specified image."
 block|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|"Simon Budig"
 block|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|"Simon Budig"
 block|,
-literal|"1995-1996"
+literal|"2005"
 block|,
 name|NULL
 block|,
@@ -7240,6 +7256,7 @@ if|if
 condition|(
 name|success
 condition|)
+block|{
 name|success
 operator|=
 name|gimp_image_raise_layer
@@ -7249,6 +7266,7 @@ argument_list|,
 name|layer
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
@@ -7442,6 +7460,7 @@ if|if
 condition|(
 name|success
 condition|)
+block|{
 name|success
 operator|=
 name|gimp_image_lower_layer
@@ -7451,6 +7470,7 @@ argument_list|,
 name|layer
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
@@ -7644,6 +7664,7 @@ if|if
 condition|(
 name|success
 condition|)
+block|{
 name|success
 operator|=
 name|gimp_image_raise_layer_to_top
@@ -7653,6 +7674,7 @@ argument_list|,
 name|layer
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
@@ -7846,6 +7868,7 @@ if|if
 condition|(
 name|success
 condition|)
+block|{
 name|success
 operator|=
 name|gimp_image_lower_layer_to_bottom
@@ -7855,6 +7878,7 @@ argument_list|,
 name|layer
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
@@ -8048,6 +8072,7 @@ if|if
 condition|(
 name|success
 condition|)
+block|{
 name|success
 operator|=
 name|gimp_image_raise_vectors
@@ -8057,6 +8082,7 @@ argument_list|,
 name|vectors
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
@@ -8250,6 +8276,7 @@ if|if
 condition|(
 name|success
 condition|)
+block|{
 name|success
 operator|=
 name|gimp_image_lower_vectors
@@ -8259,6 +8286,7 @@ argument_list|,
 name|vectors
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
@@ -8452,6 +8480,7 @@ if|if
 condition|(
 name|success
 condition|)
+block|{
 name|success
 operator|=
 name|gimp_image_raise_vectors_to_top
@@ -8461,6 +8490,7 @@ argument_list|,
 name|vectors
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
@@ -8654,6 +8684,7 @@ if|if
 condition|(
 name|success
 condition|)
+block|{
 name|success
 operator|=
 name|gimp_image_lower_vectors_to_bottom
@@ -8663,6 +8694,7 @@ argument_list|,
 name|vectors
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
@@ -9738,6 +9770,7 @@ if|if
 condition|(
 name|success
 condition|)
+block|{
 name|success
 operator|=
 name|gimp_image_raise_channel
@@ -9747,6 +9780,7 @@ argument_list|,
 name|channel
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
@@ -9861,9 +9895,9 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|GimpLayer
+name|GimpChannel
 modifier|*
-name|layer
+name|channel
 decl_stmt|;
 name|gimage
 operator|=
@@ -9893,10 +9927,10 @@ name|success
 operator|=
 name|FALSE
 expr_stmt|;
-name|layer
+name|channel
 operator|=
 operator|(
-name|GimpLayer
+name|GimpChannel
 operator|*
 operator|)
 name|gimp_item_get_by_ID
@@ -9917,9 +9951,9 @@ if|if
 condition|(
 operator|!
 operator|(
-name|GIMP_IS_LAYER
+name|GIMP_IS_CHANNEL
 argument_list|(
-name|layer
+name|channel
 argument_list|)
 operator|&&
 operator|!
@@ -9927,7 +9961,7 @@ name|gimp_item_is_removed
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
-name|layer
+name|channel
 argument_list|)
 argument_list|)
 operator|)
@@ -9940,15 +9974,17 @@ if|if
 condition|(
 name|success
 condition|)
+block|{
 name|success
 operator|=
-name|gimp_image_lower_layer
+name|gimp_image_lower_channel
 argument_list|(
 name|gimage
 argument_list|,
-name|layer
+name|channel
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
@@ -9978,11 +10014,11 @@ literal|"The image"
 block|}
 block|,
 block|{
-name|GIMP_PDB_LAYER
+name|GIMP_PDB_CHANNEL
 block|,
-literal|"layer"
+literal|"channel"
 block|,
-literal|"The layer to lower"
+literal|"The channel to lower"
 block|}
 block|}
 decl_stmt|;
@@ -9999,9 +10035,9 @@ literal|"gimp-image-lower-channel"
 block|,
 literal|"gimp-image-lower-channel"
 block|,
-literal|"Lower the specified layer in the image's layer stack"
+literal|"Lower the specified channel in the image's channel stack"
 block|,
-literal|"This procedure lowers the specified layer one step in the existing layer stack. It will not move the layer if there is no layer below it."
+literal|"This procedure lowers the specified channel one step in the existing channel stack. It will not move the channel if there is no channel below it."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,

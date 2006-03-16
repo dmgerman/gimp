@@ -3198,19 +3198,19 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_lower_channel:  * @image_ID: The image.  * @layer_ID: The layer to lower.  *  * Lower the specified layer in the image's layer stack  *  * This procedure lowers the specified layer one step in the existing  * layer stack. It will not move the layer if there is no layer below  * it.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_lower_channel:  * @image_ID: The image.  * @channel_ID: The channel to lower.  *  * Lower the specified channel in the image's channel stack  *  * This procedure lowers the specified channel one step in the existing  * channel stack. It will not move the channel if there is no channel  * below it.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_lower_channel (gint32 image_ID,gint32 layer_ID)
+DECL|function|gimp_image_lower_channel (gint32 image_ID,gint32 channel_ID)
 name|gimp_image_lower_channel
 parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
 name|gint32
-name|layer_ID
+name|channel_ID
 parameter_list|)
 block|{
 name|GimpParam
@@ -3238,9 +3238,9 @@ name|GIMP_PDB_IMAGE
 argument_list|,
 name|image_ID
 argument_list|,
-name|GIMP_PDB_LAYER
+name|GIMP_PDB_CHANNEL
 argument_list|,
-name|layer_ID
+name|channel_ID
 argument_list|,
 name|GIMP_PDB_END
 argument_list|)

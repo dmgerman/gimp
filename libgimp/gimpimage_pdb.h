@@ -551,7 +551,7 @@ name|gint32
 name|image_ID
 parameter_list|,
 name|gint32
-name|layer_ID
+name|channel_ID
 parameter_list|)
 function_decl|;
 end_function_decl
