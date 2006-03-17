@@ -3580,10 +3580,15 @@ name|value
 operator|.
 name|pdb_int
 operator|=
+name|gimage
+condition|?
 name|gimp_image_get_ID
 argument_list|(
 name|gimage
 argument_list|)
+else|:
+operator|-
+literal|1
 expr_stmt|;
 return|return
 name|return_args

@@ -279,12 +279,17 @@ name|value
 operator|.
 name|pdb_int
 operator|=
+name|display
+condition|?
 name|gimp_get_display_ID
 argument_list|(
 name|gimp
 argument_list|,
 name|display
 argument_list|)
+else|:
+operator|-
+literal|1
 expr_stmt|;
 return|return
 name|return_args

@@ -1513,6 +1513,8 @@ name|value
 operator|.
 name|pdb_int
 operator|=
+name|layer
+condition|?
 name|gimp_item_get_ID
 argument_list|(
 name|GIMP_ITEM
@@ -1520,6 +1522,9 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|)
+else|:
+operator|-
+literal|1
 expr_stmt|;
 return|return
 name|return_args
@@ -3472,6 +3477,8 @@ name|value
 operator|.
 name|pdb_int
 operator|=
+name|channel
+condition|?
 name|gimp_item_get_ID
 argument_list|(
 name|GIMP_ITEM
@@ -3479,6 +3486,9 @@ argument_list|(
 name|channel
 argument_list|)
 argument_list|)
+else|:
+operator|-
+literal|1
 expr_stmt|;
 return|return
 name|return_args
