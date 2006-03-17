@@ -239,7 +239,7 @@ name|AUTOCROP_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Remove empty borders from the image."
+literal|"Remove empty borders from the image"
 argument_list|)
 argument_list|,
 literal|""
@@ -284,7 +284,7 @@ name|AUTOCROP_LAYER_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Remove empty borders from the layer."
+literal|"Remove empty borders from the layer"
 argument_list|)
 argument_list|,
 literal|""

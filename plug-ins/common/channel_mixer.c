@@ -80,7 +80,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon292d38810103
+DECL|enum|__anon27d882350103
 block|{
 DECL|enumerator|CM_RED_CHANNEL
 name|CM_RED_CHANNEL
@@ -99,7 +99,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292d38810208
+DECL|struct|__anon27d882350208
 block|{
 DECL|member|red_gain
 name|gdouble
@@ -122,7 +122,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292d38810308
+DECL|struct|__anon27d882350308
 block|{
 DECL|member|red
 name|CmChannelType
@@ -737,7 +737,7 @@ name|PLUG_IN_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Alter colors by mixing RGB Channels."
+literal|"Alter colors by mixing RGB Channels"
 argument_list|)
 argument_list|,
 literal|"This plug-in mixes the RGB channels."

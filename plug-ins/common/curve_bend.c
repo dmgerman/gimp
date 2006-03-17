@@ -680,7 +680,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b651c420108
+DECL|struct|__anon275f56880108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -734,7 +734,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b651c420208
+DECL|struct|__anon275f56880208
 block|{
 DECL|member|y
 name|gint32
@@ -2291,7 +2291,7 @@ name|PLUG_IN_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Bend the image using two control curves."
+literal|"Bend the image using two control curves"
 argument_list|)
 argument_list|,
 literal|"This plug-in does bend the active layer "

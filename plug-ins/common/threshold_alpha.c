@@ -152,7 +152,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bfd43e10108
+DECL|struct|__anon2a2302970108
 block|{
 DECL|member|threshold
 name|gint
@@ -236,7 +236,7 @@ name|PLUG_IN_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Make transparency all-or-nothing."
+literal|"Make transparency all-or-nothing"
 argument_list|)
 argument_list|,
 literal|""

@@ -306,7 +306,7 @@ name|PLUG_IN_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Set foreground to the average color of the image border."
+literal|"Set foreground to the average color of the image border"
 argument_list|)
 argument_list|,
 literal|""
@@ -708,7 +708,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2911873e0108
+DECL|struct|__anon27a604bd0108
 typedef|typedef
 struct|struct
 block|{

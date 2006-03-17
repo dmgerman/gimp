@@ -249,7 +249,7 @@ name|PLUG_IN_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Derive a smooth color palette from the image."
+literal|"Derive a smooth color palette from the image"
 argument_list|)
 argument_list|,
 literal|"help!"
@@ -297,7 +297,7 @@ end_function
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29580cc00108
+DECL|struct|__anon287191020108
 block|{
 DECL|member|width
 name|gint

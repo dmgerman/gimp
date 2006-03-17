@@ -105,7 +105,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28cb27900108
+DECL|struct|__anon290c78740108
 block|{
 DECL|member|tilable
 name|gboolean
@@ -506,7 +506,7 @@ name|PLUG_IN_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Create a random cloud-like texture."
+literal|"Create a random cloud-like texture"
 argument_list|)
 argument_list|,
 literal|"Generates 2D textures using Perlin's classic "

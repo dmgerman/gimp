@@ -176,7 +176,7 @@ name|PLUG_IN_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Replace partial transparency with the current background color."
+literal|"Replace partial transparency with the current background color"
 argument_list|)
 argument_list|,
 literal|"This plugin flattens pixels in an RGBA image that "

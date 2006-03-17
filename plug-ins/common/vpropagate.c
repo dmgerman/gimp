@@ -711,7 +711,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29747adf0108
+DECL|struct|__anon2b0b57b00108
 block|{
 DECL|member|propagate_mode
 name|gint
@@ -879,7 +879,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29747adf0208
+DECL|struct|__anon2b0b57b00208
 block|{
 DECL|member|applicable_image_type
 name|gint
@@ -1319,7 +1319,7 @@ name|DILATE_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Grow darker areas of the image."
+literal|"Grow darker areas of the image"
 argument_list|)
 argument_list|,
 literal|"Dilate image"
@@ -4041,7 +4041,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29747adf0308
+DECL|struct|__anon2b0b57b00308
 block|{
 DECL|member|min_modified
 name|gshort

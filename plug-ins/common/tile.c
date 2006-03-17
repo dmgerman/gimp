@@ -56,7 +56,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ddc6f50108
+DECL|struct|__anon279f81510108
 block|{
 DECL|member|new_width
 name|gint
@@ -298,7 +298,7 @@ name|PLUG_IN_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Create an array of copies of the image."
+literal|"Create an array of copies of the image"
 argument_list|)
 argument_list|,
 literal|"This function creates a new image with a single "

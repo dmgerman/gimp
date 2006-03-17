@@ -179,7 +179,7 @@ name|PLUG_IN_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Stretch brightness values to cover the full range."
+literal|"Stretch brightness values to cover the full range"
 argument_list|)
 argument_list|,
 literal|"This plugin performs almost the same operation as "
@@ -791,7 +791,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a8f3f650108
+DECL|struct|__anon299a6ea30108
 block|{
 DECL|member|lut
 name|guchar

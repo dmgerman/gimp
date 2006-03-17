@@ -135,7 +135,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon27948dd00103
+DECL|enum|__anon2c3ec0f20103
 block|{
 DECL|enumerator|MIN_CHANNELS
 name|MIN_CHANNELS
@@ -153,7 +153,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27948dd00208
+DECL|struct|__anon2c3ec0f20208
 block|{
 DECL|member|max_p
 name|gint
@@ -236,7 +236,7 @@ name|PLUG_IN_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Reduce image to pure red, green, and blue."
+literal|"Reduce image to pure red, green, and blue"
 argument_list|)
 argument_list|,
 literal|"There's no help yet."
@@ -521,7 +521,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27948dd00308
+DECL|struct|__anon2c3ec0f20308
 block|{
 DECL|member|init_value
 name|gint

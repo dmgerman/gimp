@@ -167,7 +167,7 @@ name|PLUG_IN_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Slice the image into subimages using guides."
+literal|"Slice the image into subimages using guides"
 argument_list|)
 argument_list|,
 literal|"This function takes an image and blah blah.  Hooray!"

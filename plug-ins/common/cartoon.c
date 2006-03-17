@@ -68,7 +68,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2784b6560108
+DECL|struct|__anon2bac17780108
 block|{
 DECL|member|mask_radius
 name|gdouble
@@ -395,7 +395,7 @@ name|PLUG_IN_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Simulate a cartoon by enhancing edges."
+literal|"Simulate a cartoon by enhancing edges"
 argument_list|)
 argument_list|,
 name|help_string

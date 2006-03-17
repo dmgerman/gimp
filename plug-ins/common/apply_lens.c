@@ -152,7 +152,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298a73360108
+DECL|struct|__anon29d6d6d40108
 block|{
 DECL|member|refraction
 name|gdouble
@@ -279,7 +279,7 @@ name|PLUG_IN_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Simulate an elliptical lens over the image."
+literal|"Simulate an elliptical lens over the image"
 argument_list|)
 argument_list|,
 literal|"This plug-in uses Snell's law to draw "

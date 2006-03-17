@@ -218,7 +218,7 @@ name|PLUG_IN_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Simple blur, fast but not very strong."
+literal|"Simple blur, fast but not very strong"
 argument_list|)
 argument_list|,
 literal|"This plug-in blurs the specified drawable, using "

@@ -91,7 +91,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b89a8cc0103
+DECL|enum|__anon2ac3049f0103
 block|{
 DECL|enumerator|SOBEL
 name|SOBEL
@@ -117,7 +117,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b89a8cc0208
+DECL|struct|__anon2ac3049f0208
 block|{
 DECL|member|amount
 name|gdouble
@@ -450,7 +450,7 @@ name|PLUG_IN_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Several simple methods for detecting edges."
+literal|"Several simple methods for detecting edges"
 argument_list|)
 argument_list|,
 name|help_string

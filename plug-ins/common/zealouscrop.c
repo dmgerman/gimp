@@ -251,7 +251,7 @@ name|PLUG_IN_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Autocrop unused space from edges and middle."
+literal|"Autocrop unused space from edges and middle"
 argument_list|)
 argument_list|,
 literal|""

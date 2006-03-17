@@ -277,7 +277,7 @@ name|PLUG_IN_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Create a checkerboard pattern."
+literal|"Create a checkerboard pattern"
 argument_list|)
 argument_list|,
 literal|"More here later"
@@ -627,7 +627,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b05f8f40108
+DECL|struct|__anon28b0cd500108
 block|{
 DECL|member|fg
 name|guchar

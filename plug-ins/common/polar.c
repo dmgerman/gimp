@@ -101,7 +101,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d631020108
+DECL|struct|__anon2ad0f9fa0108
 block|{
 DECL|member|circle
 name|gdouble
@@ -444,7 +444,7 @@ name|PLUG_IN_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Convert image to or from polar coordinates."
+literal|"Convert image to or from polar coordinates"
 argument_list|)
 argument_list|,
 literal|"Remaps and image from rectangular coordinates "

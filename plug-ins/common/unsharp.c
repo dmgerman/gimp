@@ -84,7 +84,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d4a0b00108
+DECL|struct|__anon292ece510108
 block|{
 DECL|member|radius
 name|gdouble
@@ -111,7 +111,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d4a0b00208
+DECL|struct|__anon292ece510208
 block|{
 DECL|member|run
 name|gboolean
@@ -445,7 +445,7 @@ name|PLUG_IN_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"The most widely useful method for sharpening an image."
+literal|"The most widely useful method for sharpening an image"
 argument_list|)
 argument_list|,
 literal|"The unsharp mask is a sharpening filter that works "

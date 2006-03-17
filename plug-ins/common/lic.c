@@ -79,7 +79,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27b760a50103
+DECL|enum|__anon2a34418a0103
 block|{
 DECL|enumerator|LIC_HUE
 name|LIC_HUE
@@ -127,7 +127,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b760a50208
+DECL|struct|__anon2a34418a0208
 block|{
 DECL|member|filtlen
 name|gdouble
@@ -3869,7 +3869,7 @@ name|PLUG_IN_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Special effects that nobody understands."
+literal|"Special effects that nobody understands"
 argument_list|)
 argument_list|,
 literal|"No help yet"

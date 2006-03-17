@@ -108,7 +108,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29504ba80108
+DECL|struct|__anon2a0cf8460108
 block|{
 DECL|member|run
 name|gint
@@ -123,7 +123,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29504ba80208
+DECL|struct|__anon2a0cf8460208
 block|{
 DECL|member|width
 name|gint
@@ -157,7 +157,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29504ba80303
+DECL|enum|__anon2a0cf8460303
 block|{
 DECL|enumerator|SHADOWS
 name|SHADOWS
@@ -178,7 +178,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon29504ba80403
+DECL|enum|__anon2a0cf8460403
 block|{
 DECL|enumerator|NONEATALL
 name|NONEATALL
@@ -210,7 +210,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29504ba80503
+DECL|enum|__anon2a0cf8460503
 block|{
 DECL|enumerator|BY_HUE
 name|BY_HUE
@@ -229,7 +229,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29504ba80603
+DECL|enum|__anon2a0cf8460603
 block|{
 DECL|enumerator|RED
 name|RED
@@ -257,7 +257,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29504ba80703
+DECL|enum|__anon2a0cf8460703
 block|{
 DECL|enumerator|DOWN
 name|DOWN
@@ -276,7 +276,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29504ba80808
+DECL|struct|__anon2a0cf8460808
 block|{
 DECL|member|window
 name|GtkWidget
@@ -307,7 +307,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29504ba80908
+DECL|struct|__anon2a0cf8460908
 block|{
 DECL|member|roughness
 name|gdouble
@@ -408,7 +408,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29504ba80a08
+DECL|struct|__anon2a0cf8460a08
 block|{
 DECL|member|roughness_scale
 name|GtkWidget
@@ -1319,7 +1319,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29504ba80b08
+DECL|struct|__anon2a0cf8460b08
 block|{
 DECL|member|bna
 name|GtkWidget
@@ -1574,7 +1574,7 @@ name|PLUG_IN_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Interactively modify the image colors."
+literal|"Interactively modify the image colors"
 argument_list|)
 argument_list|,
 literal|"Interactively modify the image colors."

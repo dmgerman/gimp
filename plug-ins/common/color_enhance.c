@@ -169,7 +169,7 @@ name|PLUG_IN_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Stretch color saturation to cover maximum possible range."
+literal|"Stretch color saturation to cover maximum possible range"
 argument_list|)
 argument_list|,
 literal|"This simple plug-in does an automatic saturation "
@@ -986,7 +986,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2accec590108
+DECL|struct|__anon2b07b68a0108
 block|{
 DECL|member|vhi
 name|gdouble

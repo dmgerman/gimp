@@ -106,7 +106,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b0046b70103
+DECL|enum|__anon2a44d1ce0103
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -122,7 +122,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b0046b70203
+DECL|enum|__anon2a44d1ce0203
 block|{
 DECL|enumerator|RENDER_WIND
 name|RENDER_WIND
@@ -138,7 +138,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b0046b70303
+DECL|enum|__anon2a44d1ce0303
 block|{
 DECL|enumerator|BOTH
 name|BOTH
@@ -604,7 +604,7 @@ name|PLUG_IN_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Smear image to give windblown effect."
+literal|"Smear image to give windblown effect"
 argument_list|)
 argument_list|,
 literal|"Renders a wind effect."

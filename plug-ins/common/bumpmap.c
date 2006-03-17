@@ -119,7 +119,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b2dff90103
+DECL|enum|__anon291e38320103
 block|{
 DECL|enumerator|LINEAR
 name|LINEAR
@@ -137,7 +137,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b2dff90203
+DECL|enum|__anon291e38320203
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE
@@ -153,7 +153,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b2dff90308
+DECL|struct|__anon291e38320308
 block|{
 DECL|member|bumpmap_id
 name|gint32
@@ -212,7 +212,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b2dff90408
+DECL|struct|__anon291e38320408
 block|{
 DECL|member|lx
 DECL|member|ly
@@ -257,7 +257,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b2dff90508
+DECL|struct|__anon291e38320508
 block|{
 DECL|member|mouse_x
 name|gint
@@ -997,7 +997,7 @@ name|PLUG_IN_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Create an embossing effect using a bump map."
+literal|"Create an embossing effect using a bump map"
 argument_list|)
 argument_list|,
 literal|"This plug-in uses the algorithm described by John "

@@ -282,7 +282,7 @@ name|PROC_NAME
 argument_list|,
 name|N_
 argument_list|(
-literal|"Print the image using the GNOME Print system."
+literal|"Print the image using the GNOME Print system"
 argument_list|)
 argument_list|,
 literal|"FIXME: write help"

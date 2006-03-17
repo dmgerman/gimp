@@ -169,7 +169,7 @@ name|PLUG_IN_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Stretch image contrast to cover the maximum possible range."
+literal|"Stretch image contrast to cover the maximum possible range"
 argument_list|)
 argument_list|,
 literal|"This simple plug-in does an automatic contrast "
@@ -440,7 +440,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2ac6b5ea0108
+DECL|struct|__anon2ad36ba20108
 typedef|typedef
 struct|struct
 block|{

@@ -66,7 +66,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ff8e9a0108
+DECL|struct|__anon2c3a785c0108
 block|{
 DECL|member|color
 name|GimpRGB
@@ -304,7 +304,7 @@ name|PLUG_IN_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Convert a specified color to transparency."
+literal|"Convert a specified color to transparency"
 argument_list|)
 argument_list|,
 literal|"This replaces as much of a given color as possible "

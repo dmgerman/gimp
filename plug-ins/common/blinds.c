@@ -340,7 +340,7 @@ name|PLUG_IN_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Simulate an image painted on window blinds."
+literal|"Simulate an image painted on window blinds"
 argument_list|)
 argument_list|,
 literal|"More here later"

@@ -46,7 +46,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0b74b80108
+DECL|struct|__anon2c65e74d0108
 block|{
 DECL|member|radius
 name|gdouble
@@ -260,7 +260,7 @@ name|PLUG_IN_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Blur neighboring pixels, but only in low-contrast areas."
+literal|"Blur neighboring pixels, but only in low-contrast areas"
 argument_list|)
 argument_list|,
 literal|"This filter functions similar to the regular "

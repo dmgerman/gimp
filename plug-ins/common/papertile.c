@@ -76,7 +76,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bb120ac0103
+DECL|enum|__anon28a2d43a0103
 block|{
 DECL|enumerator|BACKGROUND_TYPE_TRANSPARENT
 name|BACKGROUND_TYPE_TRANSPARENT
@@ -104,7 +104,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bb120ac0203
+DECL|enum|__anon28a2d43a0203
 block|{
 DECL|enumerator|FRACTIONAL_TYPE_BACKGROUND
 name|FRACTIONAL_TYPE_BACKGROUND
@@ -192,7 +192,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2bb120ac0308
+DECL|struct|__anon28a2d43a0308
 block|{
 DECL|member|params
 name|PluginParams
@@ -212,7 +212,7 @@ name|gboolean
 name|drawable_has_alpha
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2bb120ac0408
+DECL|struct|__anon28a2d43a0408
 block|{
 DECL|member|x0
 name|gint
@@ -579,7 +579,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2bb120ac0508
+DECL|struct|__anon28a2d43a0508
 block|{
 DECL|member|tile_size_adj
 name|GtkObject
@@ -4670,7 +4670,7 @@ name|PLUG_IN_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Cut image into paper tiles, and slide them."
+literal|"Cut image into paper tiles, and slide them"
 argument_list|)
 argument_list|,
 literal|"This plug-in cuts an image into paper tiles and "

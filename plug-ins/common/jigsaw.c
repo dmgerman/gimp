@@ -52,7 +52,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27466b3f0103
+DECL|enum|__anon2c2fb5090103
 block|{
 DECL|enumerator|BEZIER_1
 name|BEZIER_1
@@ -68,7 +68,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27466b3f0203
+DECL|enum|__anon2c2fb5090203
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -1871,7 +1871,7 @@ name|PLUG_IN_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Add a jigsaw-puzzle pattern to the image."
+literal|"Add a jigsaw-puzzle pattern to the image"
 argument_list|)
 argument_list|,
 literal|"Jigsaw puzzle look"

@@ -88,7 +88,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e92ccb0108
+DECL|struct|__anon2c2f15250108
 block|{
 DECL|member|seed
 name|guint32
@@ -558,7 +558,7 @@ name|PLUG_IN_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Create a random plasma texture."
+literal|"Create a random plasma texture"
 argument_list|)
 argument_list|,
 literal|"More help"

@@ -76,10 +76,10 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293d47410108
+DECL|struct|__anon2c9984860108
 block|{
 union|union
-DECL|union|__anon293d4741020a
+DECL|union|__anon2c998486020a
 block|{
 DECL|member|ID
 name|gint32
@@ -624,7 +624,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293d47410308
+DECL|struct|__anon2c9984860308
 block|{
 DECL|member|compose_type
 specifier|const
@@ -1121,7 +1121,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293d47410408
+DECL|struct|__anon2c9984860408
 block|{
 DECL|member|inputs
 name|ComposeInput
@@ -1161,7 +1161,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293d47410508
+DECL|struct|__anon2c9984860508
 block|{
 DECL|member|width
 DECL|member|height
@@ -1617,7 +1617,7 @@ name|COMPOSE_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Create an image using multiple gray images as color channels."
+literal|"Create an image using multiple gray images as color channels"
 argument_list|)
 argument_list|,
 literal|"This function creates a new image from "
@@ -1703,7 +1703,7 @@ name|RECOMPOSE_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Recompose an image that was previously decomposed."
+literal|"Recompose an image that was previously decomposed"
 argument_list|)
 argument_list|,
 literal|"This function recombines the grayscale layers produced "

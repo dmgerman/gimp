@@ -66,7 +66,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5cf0560108
+DECL|struct|__anon2b9081770108
 block|{
 DECL|member|horizontal
 name|gboolean
@@ -328,7 +328,7 @@ name|PLUG_IN_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Specialized direction-dependent edge detection."
+literal|"Specialized direction-dependent edge detection"
 argument_list|)
 argument_list|,
 literal|"This plugin calculates the gradient with a sobel "

@@ -99,7 +99,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7863ca0108
+DECL|struct|__anon294b3f110108
 block|{
 DECL|member|glow_radius
 name|gdouble
@@ -396,7 +396,7 @@ name|PLUG_IN_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Simulate glow by making highlights intense and fuzzy."
+literal|"Simulate glow by making highlights intense and fuzzy"
 argument_list|)
 argument_list|,
 name|help_string

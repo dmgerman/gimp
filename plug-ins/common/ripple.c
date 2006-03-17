@@ -128,7 +128,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2d356c0108
+DECL|struct|__anon298fea890108
 block|{
 DECL|member|period
 name|gint
@@ -452,7 +452,7 @@ name|PLUG_IN_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Displace pixels in a ripple pattern."
+literal|"Displace pixels in a ripple pattern"
 argument_list|)
 argument_list|,
 literal|"Ripples the pixels of the specified drawable. "
@@ -902,7 +902,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2b2d356c0208
+DECL|struct|__anon298fea890208
 typedef|typedef
 struct|struct
 block|{

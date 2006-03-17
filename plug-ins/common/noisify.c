@@ -80,7 +80,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294218a20108
+DECL|struct|__anon298a2f7f0108
 block|{
 DECL|member|independent
 name|gboolean
@@ -107,7 +107,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294218a20208
+DECL|struct|__anon298a2f7f0208
 block|{
 DECL|member|channels
 name|gint
@@ -500,7 +500,7 @@ name|RGB_NOISE_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Distort colors by random amounts."
+literal|"Distort colors by random amounts"
 argument_list|)
 argument_list|,
 literal|"Add normally distributed (zero mean) random values "

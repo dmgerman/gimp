@@ -56,7 +56,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd3b1ac0108
+DECL|struct|__anon2bfa4ce10108
 block|{
 DECL|member|inner
 name|gdouble
@@ -431,7 +431,7 @@ name|PLUG_IN_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Edge detection with control of edge thickness."
+literal|"Edge detection with control of edge thickness"
 argument_list|)
 argument_list|,
 literal|"Applies two Gaussian blurs to the drawable, and "

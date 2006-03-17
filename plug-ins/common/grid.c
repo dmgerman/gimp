@@ -243,7 +243,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b671c420108
+DECL|struct|__anon2c3f8d7e0108
 block|{
 DECL|member|hwidth
 name|gint
@@ -531,7 +531,7 @@ name|PLUG_IN_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Draw a grid on the image."
+literal|"Draw a grid on the image"
 argument_list|)
 argument_list|,
 literal|"Draws a grid using the specified colors. "

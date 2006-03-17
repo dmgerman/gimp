@@ -64,7 +64,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296a21030108
+DECL|struct|__anon2786038f0108
 block|{
 DECL|member|image
 name|gint32
@@ -95,7 +95,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296a21030203
+DECL|enum|__anon2786038f0203
 block|{
 DECL|enumerator|ACT_LREDUX
 name|ACT_LREDUX
@@ -114,7 +114,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296a21030303
+DECL|enum|__anon2786038f0303
 block|{
 DECL|enumerator|MODE_NTSC
 name|MODE_NTSC
@@ -159,7 +159,7 @@ end_comment
 
 begin_struct
 struct|struct
-DECL|struct|__anon296a21030408
+DECL|struct|__anon2786038f0408
 block|{
 DECL|member|pedestal
 name|gdouble
@@ -608,7 +608,7 @@ name|PLUG_IN_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Find and fix pixels that may be unsafely bright."
+literal|"Find and fix pixels that may be unsafely bright"
 argument_list|)
 argument_list|,
 literal|"hot scans an image for pixels that will give unsave "

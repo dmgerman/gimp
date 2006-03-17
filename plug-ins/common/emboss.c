@@ -51,7 +51,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b32f2d0103
+DECL|enum|__anon299284900103
 block|{
 DECL|enumerator|FUNCTION_BUMPMAP
 name|FUNCTION_BUMPMAP
@@ -69,7 +69,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b32f2d0208
+DECL|struct|__anon299284900208
 block|{
 DECL|member|azimuth
 name|gdouble
@@ -393,7 +393,7 @@ name|PLUG_IN_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Simulate an image created by embossing."
+literal|"Simulate an image created by embossing"
 argument_list|)
 argument_list|,
 literal|"Emboss or Bumpmap the given drawable, specifying "

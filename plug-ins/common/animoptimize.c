@@ -74,7 +74,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c7036e70103
+DECL|enum|__anon2c1e22330103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -99,7 +99,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c7036e70203
+DECL|enum|__anon2c1e22330203
 block|{
 DECL|enumerator|OPOPTIMIZE
 name|OPOPTIMIZE
@@ -504,7 +504,7 @@ name|OPTIMIZE_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Modify image to reduce size when saved as GIF animation."
+literal|"Modify image to reduce size when saved as GIF animation"
 argument_list|)
 argument_list|,
 literal|"This procedure applies various optimizations to"
@@ -552,7 +552,7 @@ name|OPTIMIZE_DIFF_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Reduce file size where combining layers is possible."
+literal|"Reduce file size where combining layers is possible"
 argument_list|)
 argument_list|,
 literal|"This procedure applies various optimizations to"
@@ -598,7 +598,7 @@ name|UNOPTIMIZE_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Remove optimization to make editing easier."
+literal|"Remove optimization to make editing easier"
 argument_list|)
 argument_list|,
 literal|"This procedure 'simplifies' a GIMP layer-based"

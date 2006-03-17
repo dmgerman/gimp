@@ -60900,7 +60900,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27921f520108
+DECL|struct|__anon27f966de0108
 block|{
 DECL|member|pattern_number
 name|gint
@@ -61161,7 +61161,7 @@ name|PLUG_IN_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Simulate distortion produced by a fuzzy or low-res monitor."
+literal|"Simulate distortion produced by a fuzzy or low-res monitor"
 argument_list|)
 argument_list|,
 literal|"This function simulates the degradation of "

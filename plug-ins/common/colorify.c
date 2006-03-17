@@ -145,7 +145,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af3ce940108
+DECL|struct|__anon27ebe8ba0108
 block|{
 DECL|member|color
 name|GimpRGB
@@ -411,7 +411,7 @@ name|PLUG_IN_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Replace all colors with shades of a specified color."
+literal|"Replace all colors with shades of a specified color"
 argument_list|)
 argument_list|,
 literal|"Makes an average of the RGB channels and uses it "

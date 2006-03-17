@@ -196,7 +196,7 @@ name|PLUG_IN_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Invert the brightness of each pixel."
+literal|"Invert the brightness of each pixel"
 argument_list|)
 argument_list|,
 literal|"This function takes an indexed/RGB image and "

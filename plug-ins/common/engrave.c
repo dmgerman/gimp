@@ -66,7 +66,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ba15930108
+DECL|struct|__anon292452030108
 block|{
 DECL|member|height
 name|gint
@@ -319,7 +319,7 @@ name|PLUG_IN_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Simulate an antique engraving."
+literal|"Simulate an antique engraving"
 argument_list|)
 argument_list|,
 literal|"Creates a black-and-white 'engraved' version of an image as seen in old illustrations"
@@ -1173,7 +1173,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ba15930208
+DECL|struct|__anon292452030208
 block|{
 DECL|member|x
 DECL|member|y

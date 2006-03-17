@@ -58,7 +58,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c0a85030103
+DECL|enum|__anon29ae3e1c0103
 block|{
 DECL|enumerator|MBLUR_LINEAR
 name|MBLUR_LINEAR
@@ -82,7 +82,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0a85030208
+DECL|struct|__anon29ae3e1c0208
 block|{
 DECL|member|mblur_type
 name|gint32
@@ -513,7 +513,7 @@ name|PLUG_IN_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Simulate movement using directional blur."
+literal|"Simulate movement using directional blur"
 argument_list|)
 argument_list|,
 literal|"This plug-in simulates the effect seen when "

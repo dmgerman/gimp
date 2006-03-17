@@ -177,7 +177,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b7602f0108
+DECL|struct|__anon27dc064b0108
 block|{
 DECL|member|histogram
 name|gboolean
@@ -275,7 +275,7 @@ name|PLUG_IN_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Remove vertical stripe artifacts from the image."
+literal|"Remove vertical stripe artifacts from the image"
 argument_list|)
 argument_list|,
 literal|"This plug-in tries to remove vertical stripes from "

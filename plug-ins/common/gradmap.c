@@ -77,7 +77,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ae665d80103
+DECL|enum|__anon2ae299ff0103
 block|{
 DECL|enumerator|GRADIENT_MODE
 name|GRADIENT_MODE
@@ -273,7 +273,7 @@ name|GRADMAP_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Recolor the image using colors from the active gradient."
+literal|"Recolor the image using colors from the active gradient"
 argument_list|)
 argument_list|,
 literal|"This plug-in maps the contents of the specified "
@@ -326,7 +326,7 @@ name|PALETTEMAP_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Recolor the image using colors from the active palette."
+literal|"Recolor the image using colors from the active palette"
 argument_list|)
 argument_list|,
 literal|"This plug-in maps the contents of the specified "
@@ -620,7 +620,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae665d80208
+DECL|struct|__anon2ae299ff0208
 block|{
 DECL|member|samples
 name|guchar

@@ -53,7 +53,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3996c60103
+DECL|enum|__anon279d7fa60103
 block|{
 DECL|enumerator|H_NONE
 name|H_NONE
@@ -75,7 +75,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3996c60203
+DECL|enum|__anon279d7fa60203
 block|{
 DECL|enumerator|H_BASE_LEFT
 name|H_BASE_LEFT
@@ -91,7 +91,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3996c60303
+DECL|enum|__anon279d7fa60303
 block|{
 DECL|enumerator|V_NONE
 name|V_NONE
@@ -113,7 +113,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3996c60403
+DECL|enum|__anon279d7fa60403
 block|{
 DECL|enumerator|V_BASE_TOP
 name|V_BASE_TOP
@@ -236,7 +236,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3996c60508
+DECL|struct|__anon279d7fa60508
 block|{
 DECL|member|h_style
 name|gint
@@ -363,7 +363,7 @@ name|PLUG_IN_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Align all visible layers of the image."
+literal|"Align all visible layers of the image"
 argument_list|)
 argument_list|,
 literal|"Align visible layers"

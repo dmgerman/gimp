@@ -116,7 +116,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9196e00108
+DECL|struct|__anon27b6864a0108
 block|{
 DECL|member|npts
 name|gint
@@ -138,7 +138,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9196e00208
+DECL|struct|__anon27b6864a0208
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -547,7 +547,7 @@ name|PLUG_IN_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Convert the image into randomly rotated square blobs."
+literal|"Convert the image into randomly rotated square blobs"
 argument_list|)
 argument_list|,
 literal|"Help not yet written for this plug-in"

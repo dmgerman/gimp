@@ -66,7 +66,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon277391350103
+DECL|enum|__anon2b2411f40103
 block|{
 DECL|enumerator|EXTEND
 name|EXTEND
@@ -290,7 +290,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277391350208
+DECL|struct|__anon2b2411f40208
 block|{
 DECL|member|matrix
 name|gfloat
@@ -447,7 +447,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon277391350308
+DECL|struct|__anon2b2411f40308
 block|{
 DECL|member|matrix
 name|GtkWidget
@@ -617,7 +617,7 @@ name|PLUG_IN_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Apply a generic 5x5 convolution matrix."
+literal|"Apply a generic 5x5 convolution matrix"
 argument_list|)
 argument_list|,
 literal|""

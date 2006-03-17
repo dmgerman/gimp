@@ -84,7 +84,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon299c6ba20103
+DECL|enum|__anon2af87bfc0103
 block|{
 DECL|enumerator|BLUR_IIR
 name|BLUR_IIR
@@ -100,7 +100,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299c6ba20208
+DECL|struct|__anon2af87bfc0208
 block|{
 DECL|member|horizontal
 name|gdouble
@@ -590,7 +590,7 @@ name|GAUSS_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Simplest, most commonly used way of blurring."
+literal|"Simplest, most commonly used way of blurring"
 argument_list|)
 argument_list|,
 literal|"Applies a gaussian blur to the drawable, with "

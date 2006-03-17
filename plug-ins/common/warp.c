@@ -83,7 +83,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf6575a0103
+DECL|enum|__anon28817a350103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -103,7 +103,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf6575a0208
+DECL|struct|__anon28817a350208
 block|{
 DECL|member|amount
 name|gdouble
@@ -764,7 +764,7 @@ name|PLUG_IN_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Twist or smear image in many different ways."
+literal|"Twist or smear image in many different ways"
 argument_list|)
 argument_list|,
 literal|"Smears an image along vector paths calculated as "

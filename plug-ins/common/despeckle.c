@@ -561,7 +561,7 @@ name|PLUG_IN_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Remove speckle noise from the image."
+literal|"Remove speckle noise from the image"
 argument_list|)
 argument_list|,
 literal|"This plug-in selectively performs a median or "

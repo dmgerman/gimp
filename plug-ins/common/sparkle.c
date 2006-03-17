@@ -125,7 +125,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276c8f280108
+DECL|struct|__anon2a0896d50108
 block|{
 DECL|member|lum_threshold
 name|gdouble
@@ -654,7 +654,7 @@ name|PLUG_IN_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Turn bright spots into starry sparkles."
+literal|"Turn bright spots into starry sparkles"
 argument_list|)
 argument_list|,
 literal|"Uses a percentage based luminoisty threhsold to find "
