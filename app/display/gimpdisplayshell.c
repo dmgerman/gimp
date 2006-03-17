@@ -263,7 +263,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fd91460103
+DECL|enum|__anon296ce9cb0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -276,7 +276,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fd91460203
+DECL|enum|__anon296ce9cb0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -6964,12 +6964,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_set_mask:  * @shell: a #GimpDisplayShell  * @mask:  a #GimpDrawable (1 byte per pixel)  *  * Allows to preview a selection (used by the foreground selection  * tool).  Pixels that are not selected (> 127) in the mask are tinted  * with dark blue.  **/
+comment|/**  * gimp_display_shell_set_mask:  * @shell: a #GimpDisplayShell  * @mask:  a #GimpDrawable (1 byte per pixel)  * @color: the color to use for drawing the mask  *  * Allows to preview a selection (used by the foreground selection  * tool).  Pixels that are not selected (> 127) in the mask are tinted  * with dark blue.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_set_mask (GimpDisplayShell * shell,GimpDrawable * mask)
+DECL|function|gimp_display_shell_set_mask (GimpDisplayShell * shell,GimpDrawable * mask,GimpChannelType color)
 name|gimp_display_shell_set_mask
 parameter_list|(
 name|GimpDisplayShell
@@ -6979,6 +6979,9 @@ parameter_list|,
 name|GimpDrawable
 modifier|*
 name|mask
+parameter_list|,
+name|GimpChannelType
+name|color
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -7017,8 +7020,23 @@ operator|->
 name|mask
 operator|==
 name|mask
+operator|&&
+name|shell
+operator|->
+name|mask_color
+operator|==
+name|color
 condition|)
 return|return;
+if|if
+condition|(
+name|mask
+condition|)
+name|g_object_ref
+argument_list|(
+name|mask
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|shell
@@ -7037,13 +7055,12 @@ operator|->
 name|mask
 operator|=
 name|mask
-condition|?
-name|g_object_ref
-argument_list|(
-name|mask
-argument_list|)
-else|:
-name|NULL
+expr_stmt|;
+name|shell
+operator|->
+name|mask_color
+operator|=
+name|color
 expr_stmt|;
 name|gimp_display_shell_expose_full
 argument_list|(

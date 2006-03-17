@@ -127,6 +127,10 @@ DECL|member|smoothness
 name|gint
 name|smoothness
 decl_stmt|;
+DECL|member|mask_color
+name|GimpChannelType
+name|mask_color
+decl_stmt|;
 DECL|member|expanded
 name|gboolean
 name|expanded
