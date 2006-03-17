@@ -770,7 +770,7 @@ name|PLUG_IN_NAME
 argument_list|,
 name|N_
 argument_list|(
-literal|"Combine two images using depth maps (z-buffers)."
+literal|"Combine two images using depth maps (z-buffers)"
 argument_list|)
 argument_list|,
 literal|"Taking as input two full-color, full-alpha "

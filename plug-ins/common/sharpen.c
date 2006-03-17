@@ -327,7 +327,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aafef460108
+DECL|struct|__anon2924e6b30108
 block|{
 DECL|member|sharpen_percent
 name|gint
@@ -448,7 +448,8 @@ name|PLUG_IN_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Make image sharper (less powerful than Unsharp Mask)."
+literal|"Make image sharper "
+literal|"(less powerful than Unsharp Mask)"
 argument_list|)
 argument_list|,
 literal|"This plug-in selectively performs a convolution "

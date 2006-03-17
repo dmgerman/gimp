@@ -173,7 +173,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298adcc20108
+DECL|struct|__anon27613e710108
 block|{
 DECL|member|rndm_pct
 name|gdouble
@@ -429,7 +429,7 @@ name|hurl_blurb
 init|=
 name|N_
 argument_list|(
-literal|"Completely randomize a fraction of pixels."
+literal|"Completely randomize a fraction of pixels"
 argument_list|)
 decl_stmt|;
 specifier|const
@@ -439,7 +439,7 @@ name|pick_blurb
 init|=
 name|N_
 argument_list|(
-literal|"Randomly interchange some pixels with neighbors."
+literal|"Randomly interchange some pixels with neighbors"
 argument_list|)
 decl_stmt|;
 specifier|const
@@ -449,7 +449,7 @@ name|slur_blurb
 init|=
 name|N_
 argument_list|(
-literal|"Randomly slide some pixels downward (similar to melting)."
+literal|"Randomly slide some pixels downward (similar to melting)"
 argument_list|)
 decl_stmt|;
 specifier|const
