@@ -259,7 +259,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Create another view on this image"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -308,7 +311,7 @@ literal|"<control><shift>E"
 block|,
 name|N_
 argument_list|(
-literal|"Fit image in window"
+literal|"Adjust the zoom ratio so that the image becomes fully visible"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -333,7 +336,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Fit image to window"
+literal|"Adjust the zoom ratio so that the window is used optimally"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -356,7 +359,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Show an overview window for this image"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -378,7 +384,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Configure filters applied to this view"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -463,7 +472,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"A Pixel on the screen represents an image pixel"
+literal|"A pixel on the screen represents an image pixel"
 argument_list|)
 block|,
 name|G_CALLBACK

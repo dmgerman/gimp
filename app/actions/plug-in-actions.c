@@ -393,7 +393,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Set all plug-in to their default settings"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -426,7 +429,10 @@ argument_list|)
 block|,
 literal|"<control>F"
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Rerun the last used plug-in using the same settings"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -447,7 +453,10 @@ argument_list|)
 block|,
 literal|"<control><shift>F"
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Show the last used plug-in dialog again"
+argument_list|)
 block|,
 literal|0
 block|,

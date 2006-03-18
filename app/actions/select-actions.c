@@ -133,7 +133,7 @@ literal|"<control>A"
 block|,
 name|N_
 argument_list|(
-literal|"Select all"
+literal|"Select everything"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -158,7 +158,7 @@ literal|"<control><shift>A"
 block|,
 name|N_
 argument_list|(
-literal|"Select none"
+literal|"Dismiss the selection"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -183,7 +183,7 @@ literal|"<control>I"
 block|,
 name|N_
 argument_list|(
-literal|"Invert selection"
+literal|"Invert the selection"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -206,7 +206,10 @@ argument_list|)
 block|,
 literal|"<control><shift>L"
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Create a floating selection"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -228,7 +231,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Blur the selection border so that it fades out smoothly"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -250,7 +256,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Remove fuzzyness from the selection"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -272,7 +281,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Contract the selection"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -294,7 +306,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Enlarge the selection"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -316,7 +331,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Replace the selection by its border"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -340,7 +358,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Save selection to channel"
+literal|"Save the selection to a channel"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -365,7 +383,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Stroke selection..."
+literal|"Paint along the selection outline"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -390,7 +408,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Stroke selection with last values"
+literal|"Stroke the selection with last used values"
 argument_list|)
 block|,
 name|G_CALLBACK
