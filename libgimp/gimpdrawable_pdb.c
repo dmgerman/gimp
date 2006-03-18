@@ -1760,7 +1760,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_get_tattoo:  * @drawable_ID: The drawable.  *  * Get the tattoo of the specified drawable.  *  * This procedure returns the specified drawable's tattoo. A tattoo is  * a unique and permanent identifier attached to a drawable that can be  * used to uniquely identify a drawable within an image even between  * sessions  *  * Returns: The drawable tattoo.  */
+comment|/**  * gimp_drawable_get_tattoo:  * @drawable_ID: The drawable.  *  * Get the tattoo of the specified drawable.  *  * This procedure returns the specified drawable's tattoo. A tattoo is  * a unique and permanent identifier attached to a drawable that can be  * used to uniquely identify a drawable within an image even between  * sessions.  *  * Returns: The drawable tattoo.  */
 end_comment
 
 begin_function
@@ -1838,7 +1838,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_set_tattoo:  * @drawable_ID: The drawable.  * @tattoo: The new drawable tattoo.  *  * Set the tattoo of the specified drawable.  *  * This procedure sets the specified drawable's tattoo. A tattoo is a  * unique and permanent identifier attached to a drawable that can be  * used to uniquely identify a drawable within an image even between  * sessions  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_drawable_set_tattoo:  * @drawable_ID: The drawable.  * @tattoo: The new drawable tattoo.  *  * Set the tattoo of the specified drawable.  *  * This procedure sets the specified drawable's tattoo. A tattoo is a  * unique and permanent identifier attached to a drawable that can be  * used to uniquely identify a drawable within an image even between  * sessions.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
