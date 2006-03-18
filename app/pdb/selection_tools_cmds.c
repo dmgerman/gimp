@@ -1034,18 +1034,10 @@ name|pdb_int
 expr_stmt|;
 if|if
 condition|(
-operator|!
-operator|(
 name|num_segs
 operator|<
 literal|2
-operator|)
 condition|)
-name|num_segs
-operator|/=
-literal|2
-expr_stmt|;
-else|else
 name|success
 operator|=
 name|FALSE
@@ -1149,6 +1141,8 @@ literal|"Free Select"
 argument_list|)
 argument_list|,
 name|num_segs
+operator|/
+literal|2
 argument_list|,
 operator|(
 name|GimpVector2

@@ -273,9 +273,14 @@ name|pdb_int
 expr_stmt|;
 if|if
 condition|(
+name|success
+condition|)
+block|{
+if|if
+condition|(
 name|sample_size
-operator|<=
-literal|0
+operator|<
+literal|1
 operator|||
 name|sample_size
 operator|>
@@ -285,11 +290,6 @@ name|sample_size
 operator|=
 name|GIMP_GRADIENT_DEFAULT_SAMPLE_SIZE
 expr_stmt|;
-if|if
-condition|(
-name|success
-condition|)
-block|{
 if|if
 condition|(
 name|gimp
@@ -384,7 +384,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"sample-size"
 block|,
-literal|"Size of the sample to return when the gradient is changed (0< sample_size<= 10000)"
+literal|"Size of the sample to return when the gradient is changed (1<= sample_size<= 10000)"
 block|}
 block|}
 decl_stmt|;
