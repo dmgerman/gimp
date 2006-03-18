@@ -287,7 +287,10 @@ argument_list|)
 block|,
 literal|"D"
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Set foreground color to black, background color to white"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -309,7 +312,10 @@ argument_list|)
 block|,
 literal|"X"
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Exchange foreground and background colors"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
