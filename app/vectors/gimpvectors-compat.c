@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2cf15a0103
+DECL|enum|__anon29e8cca90103
 block|{
 DECL|enumerator|GIMP_VECTORS_COMPAT_ANCHOR
 name|GIMP_VECTORS_COMPAT_ANCHOR
@@ -78,6 +78,17 @@ literal|3
 block|}
 enum|;
 end_enum
+
+begin_decl_stmt
+DECL|variable|default_coords
+specifier|static
+specifier|const
+name|GimpCoords
+name|default_coords
+init|=
+name|GIMP_COORDS_DEFAULT_VALUES
+decl_stmt|;
+end_decl_stmt
 
 begin_function
 name|GimpVectors
@@ -213,6 +224,11 @@ name|i
 operator|++
 control|)
 block|{
+operator|*
+name|curr_coord
+operator|=
+name|default_coords
+expr_stmt|;
 name|curr_coord
 operator|->
 name|x
@@ -234,30 +250,6 @@ name|i
 index|]
 operator|.
 name|y
-expr_stmt|;
-name|curr_coord
-operator|->
-name|pressure
-operator|=
-name|GIMP_COORDS_DEFAULT_PRESSURE
-expr_stmt|;
-name|curr_coord
-operator|->
-name|xtilt
-operator|=
-name|GIMP_COORDS_DEFAULT_TILT
-expr_stmt|;
-name|curr_coord
-operator|->
-name|ytilt
-operator|=
-name|GIMP_COORDS_DEFAULT_TILT
-expr_stmt|;
-name|curr_coord
-operator|->
-name|wheel
-operator|=
-name|GIMP_COORDS_DEFAULT_WHEEL
 expr_stmt|;
 comment|/*  copy the first anchor to be the first control point  */
 if|if
