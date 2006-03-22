@@ -1032,19 +1032,19 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_selection_shrink:  * @image_ID: The image.  * @radius: Radius of shrink (in pixels).  *  * Shrink the image's selection  *  * This procedure shrinks the selection. Shrinking invovles trimming  * the existing selection boundary on all sides by the specified number  * of pixels.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_selection_shrink:  * @image_ID: The image.  * @steps: Steps of shrink (in pixels).  *  * Shrink the image's selection  *  * This procedure shrinks the selection. Shrinking invovles trimming  * the existing selection boundary on all sides by the specified number  * of pixels.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_selection_shrink (gint32 image_ID,gint radius)
+DECL|function|gimp_selection_shrink (gint32 image_ID,gint steps)
 name|gimp_selection_shrink
 parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
 name|gint
-name|radius
+name|steps
 parameter_list|)
 block|{
 name|GimpParam
@@ -1074,7 +1074,7 @@ name|image_ID
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
-name|radius
+name|steps
 argument_list|,
 name|GIMP_PDB_END
 argument_list|)

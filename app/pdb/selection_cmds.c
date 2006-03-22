@@ -1693,6 +1693,7 @@ if|if
 condition|(
 name|success
 condition|)
+block|{
 name|gimp_channel_invert
 argument_list|(
 name|gimp_image_get_mask
@@ -1703,6 +1704,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
@@ -1841,6 +1843,7 @@ if|if
 condition|(
 name|success
 condition|)
+block|{
 name|gimp_channel_sharpen
 argument_list|(
 name|gimp_image_get_mask
@@ -1851,6 +1854,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
@@ -1989,6 +1993,7 @@ if|if
 condition|(
 name|success
 condition|)
+block|{
 name|gimp_channel_all
 argument_list|(
 name|gimp_image_get_mask
@@ -1999,6 +2004,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
@@ -2137,6 +2143,7 @@ if|if
 condition|(
 name|success
 condition|)
+block|{
 name|gimp_channel_clear
 argument_list|(
 name|gimp_image_get_mask
@@ -2149,6 +2156,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
@@ -2311,6 +2319,7 @@ if|if
 condition|(
 name|success
 condition|)
+block|{
 name|gimp_channel_feather
 argument_list|(
 name|gimp_image_get_mask
@@ -2325,6 +2334,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
@@ -2495,6 +2505,7 @@ if|if
 condition|(
 name|success
 condition|)
+block|{
 name|gimp_channel_border
 argument_list|(
 name|gimp_image_get_mask
@@ -2509,6 +2520,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
@@ -2679,6 +2691,7 @@ if|if
 condition|(
 name|success
 condition|)
+block|{
 name|gimp_channel_grow
 argument_list|(
 name|gimp_image_get_mask
@@ -2693,6 +2706,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
@@ -2808,7 +2822,7 @@ modifier|*
 name|gimage
 decl_stmt|;
 name|gint32
-name|radius
+name|steps
 decl_stmt|;
 name|gimage
 operator|=
@@ -2838,7 +2852,7 @@ name|success
 operator|=
 name|FALSE
 expr_stmt|;
-name|radius
+name|steps
 operator|=
 name|args
 index|[
@@ -2851,7 +2865,7 @@ name|pdb_int
 expr_stmt|;
 if|if
 condition|(
-name|radius
+name|steps
 operator|<
 literal|0
 condition|)
@@ -2863,6 +2877,7 @@ if|if
 condition|(
 name|success
 condition|)
+block|{
 name|gimp_channel_shrink
 argument_list|(
 name|gimp_image_get_mask
@@ -2870,15 +2885,16 @@ argument_list|(
 name|gimage
 argument_list|)
 argument_list|,
-name|radius
+name|steps
 argument_list|,
-name|radius
+name|steps
 argument_list|,
 name|FALSE
 argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
@@ -2910,9 +2926,9 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"radius"
+literal|"steps"
 block|,
-literal|"Radius of shrink (in pixels)"
+literal|"Steps of shrink (in pixels)"
 block|}
 block|}
 decl_stmt|;
@@ -3438,9 +3454,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|success
-operator|=
-operator|(
+block|{
 name|channel
 operator|=
 name|gimp_selection_save
@@ -3450,10 +3464,17 @@ argument_list|(
 name|gimage
 argument_list|)
 argument_list|)
-operator|)
-operator|!=
-name|NULL
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|channel
+condition|)
+name|success
+operator|=
+name|FALSE
+expr_stmt|;
+block|}
 name|return_args
 operator|=
 name|procedural_db_return_args

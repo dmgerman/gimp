@@ -231,19 +231,14 @@ argument_list|,
 literal|1.0
 argument_list|)
 expr_stmt|;
-name|success
-operator|=
-operator|(
+if|if
+condition|(
 name|display
-operator|!=
-name|NULL
-operator|)
-expr_stmt|;
+condition|)
+block|{
 comment|/* the first display takes ownership of the image */
 if|if
 condition|(
-name|success
-operator|&&
 name|gimage
 operator|->
 name|disp_count
@@ -254,6 +249,12 @@ name|g_object_unref
 argument_list|(
 name|gimage
 argument_list|)
+expr_stmt|;
+block|}
+else|else
+name|success
+operator|=
+name|FALSE
 expr_stmt|;
 block|}
 name|return_args

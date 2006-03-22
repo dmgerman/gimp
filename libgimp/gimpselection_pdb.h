@@ -198,7 +198,7 @@ name|gint32
 name|image_ID
 parameter_list|,
 name|gint
-name|radius
+name|steps
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -2320,9 +2320,6 @@ name|gimp_drawable_desaturate
 argument_list|(
 name|drawable
 argument_list|,
-operator|(
-name|GimpDesaturateMode
-operator|)
 name|desaturate_mode
 argument_list|)
 expr_stmt|;

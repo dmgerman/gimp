@@ -3712,9 +3712,6 @@ condition|(
 name|success
 condition|)
 block|{
-name|success
-operator|=
-operator|(
 name|gimage
 operator|=
 name|gimp_item_get_image
@@ -3724,9 +3721,6 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|)
-operator|)
-operator|!=
-name|NULL
 expr_stmt|;
 block|}
 name|return_args
@@ -3961,11 +3955,10 @@ condition|(
 name|success
 condition|)
 block|{
-name|success
-operator|=
-operator|(
+if|if
+condition|(
 name|gimage
-operator|==
+operator|!=
 name|gimp_item_get_image
 argument_list|(
 name|GIMP_ITEM
@@ -3973,7 +3966,10 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|)
-operator|)
+condition|)
+name|success
+operator|=
+name|FALSE
 expr_stmt|;
 block|}
 return|return
