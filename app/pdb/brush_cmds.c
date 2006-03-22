@@ -3416,7 +3416,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"shape"
 block|,
-literal|"An enumerated value representing the brush shape"
+literal|"The brush shape"
 block|}
 block|}
 decl_stmt|;
@@ -4733,6 +4733,20 @@ name|pdb_int
 expr_stmt|;
 if|if
 condition|(
+name|shape_in
+operator|<
+name|GIMP_BRUSH_GENERATED_CIRCLE
+operator|||
+name|shape_in
+operator|>
+name|GIMP_BRUSH_GENERATED_DIAMOND
+condition|)
+name|success
+operator|=
+name|FALSE
+expr_stmt|;
+if|if
+condition|(
 name|success
 condition|)
 block|{
@@ -4757,7 +4771,10 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
+name|GIMP_IS_BRUSH_GENERATED
+argument_list|(
 name|brush
+argument_list|)
 operator|&&
 name|GIMP_DATA
 argument_list|(
@@ -4765,11 +4782,6 @@ name|brush
 argument_list|)
 operator|->
 name|writable
-operator|&&
-name|GIMP_IS_BRUSH_GENERATED
-argument_list|(
-name|brush
-argument_list|)
 condition|)
 block|{
 name|gimp_brush_generated_set_shape
@@ -4850,7 +4862,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"shape-in"
 block|,
-literal|"An enumerated value representing the desired brush shape"
+literal|"The brush shape: { GIMP_BRUSH_GENERATED_CIRCLE (0), GIMP_BRUSH_GENERATED_SQUARE (1), GIMP_BRUSH_GENERATED_DIAMOND (2) }"
 block|}
 block|}
 decl_stmt|;
@@ -5035,7 +5047,10 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
+name|GIMP_IS_BRUSH_GENERATED
+argument_list|(
 name|brush
+argument_list|)
 operator|&&
 name|GIMP_DATA
 argument_list|(
@@ -5043,11 +5058,6 @@ name|brush
 argument_list|)
 operator|->
 name|writable
-operator|&&
-name|GIMP_IS_BRUSH_GENERATED
-argument_list|(
-name|brush
-argument_list|)
 condition|)
 block|{
 name|gimp_brush_generated_set_radius
@@ -5313,7 +5323,10 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
+name|GIMP_IS_BRUSH_GENERATED
+argument_list|(
 name|brush
+argument_list|)
 operator|&&
 name|GIMP_DATA
 argument_list|(
@@ -5321,11 +5334,6 @@ name|brush
 argument_list|)
 operator|->
 name|writable
-operator|&&
-name|GIMP_IS_BRUSH_GENERATED
-argument_list|(
-name|brush
-argument_list|)
 condition|)
 block|{
 name|gimp_brush_generated_set_spikes
@@ -5591,7 +5599,10 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
+name|GIMP_IS_BRUSH_GENERATED
+argument_list|(
 name|brush
+argument_list|)
 operator|&&
 name|GIMP_DATA
 argument_list|(
@@ -5599,11 +5610,6 @@ name|brush
 argument_list|)
 operator|->
 name|writable
-operator|&&
-name|GIMP_IS_BRUSH_GENERATED
-argument_list|(
-name|brush
-argument_list|)
 condition|)
 block|{
 name|gimp_brush_generated_set_hardness
@@ -5869,7 +5875,10 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
+name|GIMP_IS_BRUSH_GENERATED
+argument_list|(
 name|brush
+argument_list|)
 operator|&&
 name|GIMP_DATA
 argument_list|(
@@ -5877,11 +5886,6 @@ name|brush
 argument_list|)
 operator|->
 name|writable
-operator|&&
-name|GIMP_IS_BRUSH_GENERATED
-argument_list|(
-name|brush
-argument_list|)
 condition|)
 block|{
 name|gimp_brush_generated_set_aspect_ratio
@@ -6147,7 +6151,10 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
+name|GIMP_IS_BRUSH_GENERATED
+argument_list|(
 name|brush
+argument_list|)
 operator|&&
 name|GIMP_DATA
 argument_list|(
@@ -6155,11 +6162,6 @@ name|brush
 argument_list|)
 operator|->
 name|writable
-operator|&&
-name|GIMP_IS_BRUSH_GENERATED
-argument_list|(
-name|brush
-argument_list|)
 condition|)
 block|{
 name|gimp_brush_generated_set_angle

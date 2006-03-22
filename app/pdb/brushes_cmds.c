@@ -360,6 +360,7 @@ if|if
 condition|(
 name|success
 condition|)
+block|{
 name|brush_list
 operator|=
 name|gimp_container_get_filtered_name_array
@@ -376,6 +377,7 @@ operator|&
 name|num_brushes
 argument_list|)
 expr_stmt|;
+block|}
 name|return_args
 operator|=
 name|procedural_db_return_args
@@ -984,6 +986,7 @@ if|if
 condition|(
 name|success
 condition|)
+block|{
 name|gimp_brush_set_spacing
 argument_list|(
 name|gimp_context_get_brush
@@ -994,6 +997,7 @@ argument_list|,
 name|spacing
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|procedural_db_return_args
 argument_list|(

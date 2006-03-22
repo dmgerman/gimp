@@ -338,6 +338,7 @@ if|if
 condition|(
 name|success
 condition|)
+block|{
 name|gradient_list
 operator|=
 name|gimp_container_get_filtered_name_array
@@ -354,6 +355,7 @@ operator|&
 name|num_gradients
 argument_list|)
 expr_stmt|;
+block|}
 name|return_args
 operator|=
 name|procedural_db_return_args

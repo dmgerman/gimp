@@ -208,7 +208,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint
+name|GimpBrushGeneratedShape
 name|gimp_brush_get_shape
 parameter_list|(
 specifier|const
@@ -280,7 +280,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint
+name|GimpBrushGeneratedShape
 name|gimp_brush_set_shape
 parameter_list|(
 specifier|const
@@ -288,7 +288,7 @@ name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|gint
+name|GimpBrushGeneratedShape
 name|shape_in
 parameter_list|)
 function_decl|;

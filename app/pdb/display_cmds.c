@@ -442,6 +442,7 @@ if|if
 condition|(
 name|success
 condition|)
+block|{
 name|gimp_delete_display
 argument_list|(
 name|gimp
@@ -449,6 +450,7 @@ argument_list|,
 name|display
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
@@ -596,6 +598,7 @@ if|if
 condition|(
 name|success
 condition|)
+block|{
 name|window
 operator|=
 operator|(
@@ -608,6 +611,7 @@ argument_list|,
 name|display
 argument_list|)
 expr_stmt|;
+block|}
 name|return_args
 operator|=
 name|procedural_db_return_args

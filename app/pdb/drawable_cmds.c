@@ -3711,6 +3711,7 @@ if|if
 condition|(
 name|success
 condition|)
+block|{
 name|success
 operator|=
 operator|(
@@ -3727,6 +3728,7 @@ operator|)
 operator|!=
 name|NULL
 expr_stmt|;
+block|}
 name|return_args
 operator|=
 name|procedural_db_return_args

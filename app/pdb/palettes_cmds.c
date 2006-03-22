@@ -328,6 +328,7 @@ if|if
 condition|(
 name|success
 condition|)
+block|{
 name|palette_list
 operator|=
 name|gimp_container_get_filtered_name_array
@@ -344,6 +345,7 @@ operator|&
 name|num_palettes
 argument_list|)
 expr_stmt|;
+block|}
 name|return_args
 operator|=
 name|procedural_db_return_args

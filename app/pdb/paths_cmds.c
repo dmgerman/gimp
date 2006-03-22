@@ -485,6 +485,7 @@ if|if
 condition|(
 name|success
 condition|)
+block|{
 name|path_list
 operator|=
 name|gimp_container_get_name_array
@@ -497,6 +498,7 @@ operator|&
 name|num_paths
 argument_list|)
 expr_stmt|;
+block|}
 name|return_args
 operator|=
 name|procedural_db_return_args
@@ -5078,6 +5080,7 @@ if|if
 condition|(
 name|success
 condition|)
+block|{
 name|success
 operator|=
 name|gimp_vectors_import_file
@@ -5096,6 +5099,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
@@ -5337,6 +5341,7 @@ if|if
 condition|(
 name|success
 condition|)
+block|{
 name|success
 operator|=
 name|gimp_vectors_import_buffer
@@ -5357,6 +5362,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|procedural_db_return_args
 argument_list|(

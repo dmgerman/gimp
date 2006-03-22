@@ -1137,11 +1137,11 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_brush_get_shape:  * @name: The brush name.  *  * Get the shape of a generated brush.  *  * This procedure gets the shape value for a generated brush. If called  * for any other type of brush, it does not succeed. The current  * possibilities are Circle (GIMP_BRUSH_GENERATED_CIRCLE), Square  * (GIMP_BRUSH_GENERATED_SQUARE), and Diamond  * (GIMP_BRUSH_GENERATED_DIAMOND). Other shapes are likely to be added  * in the future.  *  * Returns: An enumerated value representing the brush shape.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_brush_get_shape:  * @name: The brush name.  *  * Get the shape of a generated brush.  *  * This procedure gets the shape value for a generated brush. If called  * for any other type of brush, it does not succeed. The current  * possibilities are Circle (GIMP_BRUSH_GENERATED_CIRCLE), Square  * (GIMP_BRUSH_GENERATED_SQUARE), and Diamond  * (GIMP_BRUSH_GENERATED_DIAMOND). Other shapes are likely to be added  * in the future.  *  * Returns: The brush shape.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
-name|gint
+name|GimpBrushGeneratedShape
 DECL|function|gimp_brush_get_shape (const gchar * name)
 name|gimp_brush_get_shape
 parameter_list|(
@@ -1158,7 +1158,7 @@ decl_stmt|;
 name|gint
 name|nreturn_vals
 decl_stmt|;
-name|gint
+name|GimpBrushGeneratedShape
 name|shape
 init|=
 literal|0
@@ -1617,12 +1617,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_brush_set_shape:  * @name: The brush name.  * @shape_in: An enumerated value representing the desired brush shape.  *  * Set the shape of a generated brush.  *  * This procedure sets the shape value for a generated brush. If called  * for any other type of brush, it does not succeed. The current  * possibilities are Circle (GIMP_BRUSH_GENERATED_CIRCLE), Square  * (GIMP_BRUSH_GENERATED_SQUARE), and Diamond  * (GIMP_BRUSH_GENERATED_DIAMOND). Other shapes are likely to be added  * in the future.  *  * Returns: The brush shape actually assigned.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_brush_set_shape:  * @name: The brush name.  * @shape_in: The brush shape.  *  * Set the shape of a generated brush.  *  * This procedure sets the shape value for a generated brush. If called  * for any other type of brush, it does not succeed. The current  * possibilities are Circle (GIMP_BRUSH_GENERATED_CIRCLE), Square  * (GIMP_BRUSH_GENERATED_SQUARE), and Diamond  * (GIMP_BRUSH_GENERATED_DIAMOND). Other shapes are likely to be added  * in the future.  *  * Returns: The brush shape actually assigned.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
-name|gint
-DECL|function|gimp_brush_set_shape (const gchar * name,gint shape_in)
+name|GimpBrushGeneratedShape
+DECL|function|gimp_brush_set_shape (const gchar * name,GimpBrushGeneratedShape shape_in)
 name|gimp_brush_set_shape
 parameter_list|(
 specifier|const
@@ -1630,7 +1630,7 @@ name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|gint
+name|GimpBrushGeneratedShape
 name|shape_in
 parameter_list|)
 block|{
@@ -1641,7 +1641,7 @@ decl_stmt|;
 name|gint
 name|nreturn_vals
 decl_stmt|;
-name|gint
+name|GimpBrushGeneratedShape
 name|shape_out
 init|=
 literal|0
