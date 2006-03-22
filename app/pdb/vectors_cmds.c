@@ -76,12 +76,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"vectors/gimpvectors-compat.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"vectors/gimpvectors.h"
 end_include
 
@@ -691,7 +685,7 @@ literal|"gimp-vectors-new"
 block|,
 literal|"gimp-vectors-new"
 block|,
-literal|"Creates a new empty vectors object. Needs to be added to an image using gimp_image_add_vectors."
+literal|"Creates a new empty vectors object."
 block|,
 literal|"Creates a new empty vectors object. Needs to be added to an image using gimp_image_add_vectors."
 block|,

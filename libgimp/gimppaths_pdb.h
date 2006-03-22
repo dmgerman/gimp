@@ -23,6 +23,9 @@ end_define
 begin_function_decl
 name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
+ifndef|#
+directive|ifndef
+name|GIMP_DISABLE_DEPRECATED
 name|gchar
 modifier|*
 modifier|*
@@ -78,6 +81,15 @@ name|name
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* GIMP_DISABLE_DEPRECATED */
+end_comment
 
 begin_function_decl
 name|gint
@@ -164,6 +176,12 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|GIMP_DISABLE_DEPRECATED
+end_ifndef
+
 begin_function_decl
 name|gint
 name|gimp_path_get_tattoo
@@ -244,38 +262,14 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|gboolean
-name|gimp_path_get_visible
-parameter_list|(
-name|gint32
-name|image_ID
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|name
-parameter_list|)
-function_decl|;
-end_function_decl
+begin_endif
+endif|#
+directive|endif
+end_endif
 
-begin_function_decl
-name|gboolean
-name|gimp_path_set_visible
-parameter_list|(
-name|gint32
-name|image_ID
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|name
-parameter_list|,
-name|gboolean
-name|visible
-parameter_list|)
-function_decl|;
-end_function_decl
+begin_comment
+comment|/* GIMP_DISABLE_DEPRECATED */
+end_comment
 
 begin_function_decl
 name|gboolean

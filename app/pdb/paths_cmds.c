@@ -208,22 +208,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|path_get_visible_proc
-specifier|static
-name|ProcRecord
-name|path_get_visible_proc
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|path_set_visible_proc
-specifier|static
-name|ProcRecord
-name|path_set_visible_proc
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|path_to_selection_proc
 specifier|static
 name|ProcRecord
@@ -359,22 +343,6 @@ name|gimp
 argument_list|,
 operator|&
 name|path_set_locked_proc
-argument_list|)
-expr_stmt|;
-name|procedural_db_register
-argument_list|(
-name|gimp
-argument_list|,
-operator|&
-name|path_get_visible_proc
-argument_list|)
-expr_stmt|;
-name|procedural_db_register
-argument_list|(
-name|gimp
-argument_list|,
-operator|&
-name|path_set_visible_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
@@ -600,17 +568,17 @@ literal|"gimp-path-list"
 block|,
 literal|"gimp-path-list"
 block|,
-literal|"List the paths associated with the passed image."
+literal|"This procedure is deprecated! Use 'gimp-image-get-vectors' instead."
 block|,
-literal|"List the paths associated with the passed image."
+literal|"This procedure is deprecated! Use 'gimp-image-get-vectors' instead."
 block|,
-literal|"Andy Thomas"
+literal|""
 block|,
-literal|"Andy Thomas"
+literal|""
 block|,
-literal|"1999"
+literal|""
 block|,
-name|NULL
+literal|"gimp-image-get-vectors"
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -819,17 +787,17 @@ literal|"gimp-path-get-current"
 block|,
 literal|"gimp-path-get-current"
 block|,
-literal|"The name of the current path. Error if no paths."
+literal|"This procedure is deprecated! Use 'gimp-image-get-active-vectors' instead."
 block|,
-literal|"The name of the current path. Error if no paths."
+literal|"This procedure is deprecated! Use 'gimp-image-get-active-vectors' instead."
 block|,
-literal|"Andy Thomas"
+literal|""
 block|,
-literal|"Andy Thomas"
+literal|""
 block|,
-literal|"1999"
+literal|""
 block|,
-name|NULL
+literal|"gimp-image-get-active-vectors"
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -1034,17 +1002,17 @@ literal|"gimp-path-set-current"
 block|,
 literal|"gimp-path-set-current"
 block|,
-literal|"Sets the current path associated with the passed image."
+literal|"This procedure is deprecated! Use 'gimp-image-set-active-vectors' instead."
 block|,
-literal|"Sets a named path as the current path."
+literal|"This procedure is deprecated! Use 'gimp-image-set-active-vectors' instead."
 block|,
-literal|"Andy Thomas"
+literal|""
 block|,
-literal|"Andy Thomas"
+literal|""
 block|,
-literal|"1999"
+literal|""
 block|,
-name|NULL
+literal|"gimp-image-set-active-vectors"
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -1249,17 +1217,17 @@ literal|"gimp-path-delete"
 block|,
 literal|"gimp-path-delete"
 block|,
-literal|"Delete the named path associated with the passed image."
+literal|"This procedure is deprecated! Use 'gimp-image-remove-vectors' instead."
 block|,
-literal|"Delete the named path."
+literal|"This procedure is deprecated! Use 'gimp-image-remove-vectors' instead."
 block|,
-literal|"Andy Thomas"
+literal|""
 block|,
-literal|"Andy Thomas"
+literal|""
 block|,
-literal|"1999"
+literal|""
 block|,
-name|NULL
+literal|"gimp-image-remove-vectors"
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -3049,17 +3017,17 @@ literal|"gimp-path-get-tattoo"
 block|,
 literal|"gimp-path-get-tattoo"
 block|,
-literal|"Returns the tattoo associated with the name path."
+literal|"This procedure is deprecated! Use 'gimp-vectors-get-tattoo' instead."
 block|,
-literal|"This procedure returns the tattoo associated with the specified path. A tattoo is a unique and permanent identifier attached to a path that can be used to uniquely identify a path within an image even between sessions."
+literal|"This procedure is deprecated! Use 'gimp-vectors-get-tattoo' instead."
 block|,
-literal|"Andy Thomas"
+literal|""
 block|,
-literal|"Andy Thomas"
+literal|""
 block|,
-literal|"1999"
+literal|""
 block|,
-name|NULL
+literal|"gimp-vectors-get-tattoo"
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -3289,17 +3257,17 @@ literal|"gimp-path-set-tattoo"
 block|,
 literal|"gimp-path-set-tattoo"
 block|,
-literal|"Sets the tattoo associated with the named path."
+literal|"This procedure is deprecated! Use 'gimp-vectors-set-tattoo' instead."
 block|,
-literal|"This procedure sets the tattoo associated with the specified path. A tattoo is a unique and permenant identifier attached to a path that can be used to uniquely identify a path within an image even between sessions. Note that the value passed to this function must have been obtained from a previous call to path_get_tattoo."
+literal|"This procedure is deprecated! Use 'gimp-vectors-set-tattoo' instead."
 block|,
-literal|"Andy Thomas"
+literal|""
 block|,
-literal|"Andy Thomas"
+literal|""
 block|,
-literal|"1999"
+literal|""
 block|,
-name|NULL
+literal|"gimp-vectors-set-tattoo"
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -3532,17 +3500,17 @@ literal|"gimp-get-path-by-tattoo"
 block|,
 literal|"gimp-get-path-by-tattoo"
 block|,
-literal|"Return the name of the path with the given tattoo."
+literal|"This procedure is deprecated! Use 'gimp-image-get-vectors-by-tattoo' instead."
 block|,
-literal|"The procedure returns the name of the path in the specified image which has the passed tattoo. The tattoos are unique within the image and will be preserved across sessions and through renaming of the path. An error is returned if no path with the specified tattoo can be found."
+literal|"This procedure is deprecated! Use 'gimp-image-get-vectors-by-tattoo' instead."
 block|,
-literal|"Andy Thomas"
+literal|""
 block|,
-literal|"Andy Thomas"
+literal|""
 block|,
-literal|"1999"
+literal|""
 block|,
-name|NULL
+literal|"gimp-image-get-vectors-by-tattoo"
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -3797,17 +3765,17 @@ literal|"gimp-path-get-locked"
 block|,
 literal|"gimp-path-get-locked"
 block|,
-literal|"Returns the locked status associated with the named path."
+literal|"This procedure is deprecated! Use 'gimp-vectors-get-linked' instead."
 block|,
-literal|"This procedure returns the lock status associated with the specified path. A path can be \"locked\" which means that the transformation tool operations will also apply to the path."
+literal|"This procedure is deprecated! Use 'gimp-vectors-get-linked' instead."
 block|,
-literal|"Andy Thomas"
+literal|""
 block|,
-literal|"Andy Thomas"
+literal|""
 block|,
-literal|"1999"
+literal|""
 block|,
-name|NULL
+literal|"gimp-vectors-get-linked"
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -4043,17 +4011,17 @@ literal|"gimp-path-set-locked"
 block|,
 literal|"gimp-path-set-locked"
 block|,
-literal|"Set the locked status associated with the named path."
+literal|"This procedure is deprecated! Use 'gimp-vectors-set-linked' instead."
 block|,
-literal|"This procedure sets the lock status associated with the specified path. A path can be \"locked\" which means that the transformation tool operations will also apply to the path."
+literal|"This procedure is deprecated! Use 'gimp-vectors-set-linked' instead."
 block|,
-literal|"Andy Thomas"
+literal|""
 block|,
-literal|"Andy Thomas"
+literal|""
 block|,
-literal|"1999"
+literal|""
 block|,
-name|NULL
+literal|"gimp-vectors-set-linked"
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -4068,517 +4036,6 @@ block|,
 block|{
 block|{
 name|path_set_locked_invoker
-block|}
-block|}
-block|}
-decl_stmt|;
-end_decl_stmt
-
-begin_function
-specifier|static
-name|Argument
-modifier|*
-DECL|function|path_get_visible_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
-name|path_get_visible_invoker
-parameter_list|(
-name|Gimp
-modifier|*
-name|gimp
-parameter_list|,
-name|GimpContext
-modifier|*
-name|context
-parameter_list|,
-name|GimpProgress
-modifier|*
-name|progress
-parameter_list|,
-name|Argument
-modifier|*
-name|args
-parameter_list|)
-block|{
-name|gboolean
-name|success
-init|=
-name|TRUE
-decl_stmt|;
-name|Argument
-modifier|*
-name|return_args
-decl_stmt|;
-name|GimpImage
-modifier|*
-name|gimage
-decl_stmt|;
-name|gchar
-modifier|*
-name|name
-decl_stmt|;
-name|gboolean
-name|visible
-init|=
-name|FALSE
-decl_stmt|;
-name|gimage
-operator|=
-name|gimp_image_get_by_ID
-argument_list|(
-name|gimp
-argument_list|,
-name|args
-index|[
-literal|0
-index|]
-operator|.
-name|value
-operator|.
-name|pdb_int
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-operator|!
-name|GIMP_IS_IMAGE
-argument_list|(
-name|gimage
-argument_list|)
-condition|)
-name|success
-operator|=
-name|FALSE
-expr_stmt|;
-name|name
-operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
-name|args
-index|[
-literal|1
-index|]
-operator|.
-name|value
-operator|.
-name|pdb_pointer
-expr_stmt|;
-if|if
-condition|(
-name|name
-operator|==
-name|NULL
-operator|||
-operator|!
-name|g_utf8_validate
-argument_list|(
-name|name
-argument_list|,
-operator|-
-literal|1
-argument_list|,
-name|NULL
-argument_list|)
-condition|)
-name|success
-operator|=
-name|FALSE
-expr_stmt|;
-if|if
-condition|(
-name|success
-condition|)
-block|{
-name|GimpVectors
-modifier|*
-name|vectors
-init|=
-name|gimp_image_get_vectors_by_name
-argument_list|(
-name|gimage
-argument_list|,
-name|name
-argument_list|)
-decl_stmt|;
-if|if
-condition|(
-name|vectors
-condition|)
-name|visible
-operator|=
-name|gimp_item_get_visible
-argument_list|(
-name|GIMP_ITEM
-argument_list|(
-name|vectors
-argument_list|)
-argument_list|)
-expr_stmt|;
-else|else
-name|success
-operator|=
-name|FALSE
-expr_stmt|;
-block|}
-name|return_args
-operator|=
-name|procedural_db_return_args
-argument_list|(
-operator|&
-name|path_get_visible_proc
-argument_list|,
-name|success
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|success
-condition|)
-name|return_args
-index|[
-literal|1
-index|]
-operator|.
-name|value
-operator|.
-name|pdb_int
-operator|=
-name|visible
-expr_stmt|;
-return|return
-name|return_args
-return|;
-block|}
-end_function
-
-begin_decl_stmt
-DECL|variable|path_get_visible_inargs
-specifier|static
-name|ProcArg
-name|path_get_visible_inargs
-index|[]
-init|=
-block|{
-block|{
-name|GIMP_PDB_IMAGE
-block|,
-literal|"image"
-block|,
-literal|"The image"
-block|}
-block|,
-block|{
-name|GIMP_PDB_STRING
-block|,
-literal|"name"
-block|,
-literal|"The name of the path whose visibility should be obtained."
-block|}
-block|}
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|path_get_visible_outargs
-specifier|static
-name|ProcArg
-name|path_get_visible_outargs
-index|[]
-init|=
-block|{
-block|{
-name|GIMP_PDB_INT32
-block|,
-literal|"visible"
-block|,
-literal|"TRUE if the path is visible, FALSE otherwise"
-block|}
-block|}
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|path_get_visible_proc
-specifier|static
-name|ProcRecord
-name|path_get_visible_proc
-init|=
-block|{
-literal|"gimp-path-get-visible"
-block|,
-literal|"gimp-path-get-visible"
-block|,
-literal|"Get the visibility of the named path."
-block|,
-literal|"This procedure returns the visibility of the specified path."
-block|,
-literal|"Andy Thomas"
-block|,
-literal|"Andy Thomas"
-block|,
-literal|"1999"
-block|,
-name|NULL
-block|,
-name|GIMP_INTERNAL
-block|,
-literal|2
-block|,
-name|path_get_visible_inargs
-block|,
-literal|1
-block|,
-name|path_get_visible_outargs
-block|,
-block|{
-block|{
-name|path_get_visible_invoker
-block|}
-block|}
-block|}
-decl_stmt|;
-end_decl_stmt
-
-begin_function
-specifier|static
-name|Argument
-modifier|*
-DECL|function|path_set_visible_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
-name|path_set_visible_invoker
-parameter_list|(
-name|Gimp
-modifier|*
-name|gimp
-parameter_list|,
-name|GimpContext
-modifier|*
-name|context
-parameter_list|,
-name|GimpProgress
-modifier|*
-name|progress
-parameter_list|,
-name|Argument
-modifier|*
-name|args
-parameter_list|)
-block|{
-name|gboolean
-name|success
-init|=
-name|TRUE
-decl_stmt|;
-name|GimpImage
-modifier|*
-name|gimage
-decl_stmt|;
-name|gchar
-modifier|*
-name|name
-decl_stmt|;
-name|gboolean
-name|visible
-decl_stmt|;
-name|gimage
-operator|=
-name|gimp_image_get_by_ID
-argument_list|(
-name|gimp
-argument_list|,
-name|args
-index|[
-literal|0
-index|]
-operator|.
-name|value
-operator|.
-name|pdb_int
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-operator|!
-name|GIMP_IS_IMAGE
-argument_list|(
-name|gimage
-argument_list|)
-condition|)
-name|success
-operator|=
-name|FALSE
-expr_stmt|;
-name|name
-operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
-name|args
-index|[
-literal|1
-index|]
-operator|.
-name|value
-operator|.
-name|pdb_pointer
-expr_stmt|;
-if|if
-condition|(
-name|name
-operator|==
-name|NULL
-operator|||
-operator|!
-name|g_utf8_validate
-argument_list|(
-name|name
-argument_list|,
-operator|-
-literal|1
-argument_list|,
-name|NULL
-argument_list|)
-condition|)
-name|success
-operator|=
-name|FALSE
-expr_stmt|;
-name|visible
-operator|=
-name|args
-index|[
-literal|2
-index|]
-operator|.
-name|value
-operator|.
-name|pdb_int
-condition|?
-name|TRUE
-else|:
-name|FALSE
-expr_stmt|;
-if|if
-condition|(
-name|success
-condition|)
-block|{
-name|GimpVectors
-modifier|*
-name|vectors
-init|=
-name|gimp_image_get_vectors_by_name
-argument_list|(
-name|gimage
-argument_list|,
-name|name
-argument_list|)
-decl_stmt|;
-if|if
-condition|(
-name|vectors
-condition|)
-name|gimp_item_set_visible
-argument_list|(
-name|GIMP_ITEM
-argument_list|(
-name|vectors
-argument_list|)
-argument_list|,
-name|visible
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
-else|else
-name|success
-operator|=
-name|FALSE
-expr_stmt|;
-block|}
-return|return
-name|procedural_db_return_args
-argument_list|(
-operator|&
-name|path_set_visible_proc
-argument_list|,
-name|success
-argument_list|)
-return|;
-block|}
-end_function
-
-begin_decl_stmt
-DECL|variable|path_set_visible_inargs
-specifier|static
-name|ProcArg
-name|path_set_visible_inargs
-index|[]
-init|=
-block|{
-block|{
-name|GIMP_PDB_IMAGE
-block|,
-literal|"image"
-block|,
-literal|"The image"
-block|}
-block|,
-block|{
-name|GIMP_PDB_STRING
-block|,
-literal|"name"
-block|,
-literal|"The name of the path whose visibility should be set"
-block|}
-block|,
-block|{
-name|GIMP_PDB_INT32
-block|,
-literal|"visible"
-block|,
-literal|"The new path visibility"
-block|}
-block|}
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|path_set_visible_proc
-specifier|static
-name|ProcRecord
-name|path_set_visible_proc
-init|=
-block|{
-literal|"gimp-path-set-visible"
-block|,
-literal|"gimp-path-set-visible"
-block|,
-literal|"Sets the visibility of the named path."
-block|,
-literal|"This procedure sets the specified path's visibility."
-block|,
-literal|"Sven Neumann<sven@gimp.org>"
-block|,
-literal|"Sven Neumann"
-block|,
-literal|"2005"
-block|,
-name|NULL
-block|,
-name|GIMP_INTERNAL
-block|,
-literal|3
-block|,
-name|path_set_visible_inargs
-block|,
-literal|0
-block|,
-name|NULL
-block|,
-block|{
-block|{
-name|path_set_visible_invoker
 block|}
 block|}
 block|}

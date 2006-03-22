@@ -26,7 +26,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * gimp_path_list:  * @image_ID: The ID of the image to list the paths from.  * @num_paths: The number of paths returned.  *  * List the paths associated with the passed image.  *  * List the paths associated with the passed image.  *  * Returns: List of the paths belonging to this image.  */
+comment|/**  * gimp_path_list:  * @image_ID: The ID of the image to list the paths from.  * @num_paths: The number of paths returned.  *  * This procedure is deprecated! Use gimp_image_get_vectors() instead.  *  * Returns: List of the paths belonging to this image.  */
 end_comment
 
 begin_function
@@ -168,7 +168,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_path_get_current:  * @image_ID: The ID of the image to get the current path from.  *  * The name of the current path. Error if no paths.  *  * The name of the current path. Error if no paths.  *  * Returns: The name of the current path.  */
+comment|/**  * gimp_path_get_current:  * @image_ID: The ID of the image to get the current path from.  *  * This procedure is deprecated! Use gimp_image_get_active_vectors()  * instead.  *  * Returns: The name of the current path.  */
 end_comment
 
 begin_function
@@ -251,7 +251,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_path_set_current:  * @image_ID: The ID of the image in which a path will become current.  * @name: The name of the path to make current.  *  * Sets the current path associated with the passed image.  *  * Sets a named path as the current path.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_path_set_current:  * @image_ID: The ID of the image in which a path will become current.  * @name: The name of the path to make current.  *  * This procedure is deprecated! Use gimp_image_set_active_vectors()  * instead.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -327,7 +327,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_path_delete:  * @image_ID: The ID of the image to delete the path from.  * @name: The name of the path to delete.  *  * Delete the named path associated with the passed image.  *  * Delete the named path.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_path_delete:  * @image_ID: The ID of the image to delete the path from.  * @name: The name of the path to delete.  *  * This procedure is deprecated! Use gimp_image_remove_vectors()  * instead.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -853,7 +853,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_path_get_tattoo:  * @image_ID: The image.  * @name: The name of the path whose tattoo should be obtained.  *  * Returns the tattoo associated with the name path.  *  * This procedure returns the tattoo associated with the specified  * path. A tattoo is a unique and permanent identifier attached to a  * path that can be used to uniquely identify a path within an image  * even between sessions.  *  * Returns: The tattoo associated with the named path.  */
+comment|/**  * gimp_path_get_tattoo:  * @image_ID: The image.  * @name: The name of the path whose tattoo should be obtained.  *  * This procedure is deprecated! Use gimp_vectors_get_tattoo() instead.  *  * Returns: The tattoo associated with the named path.  */
 end_comment
 
 begin_function
@@ -940,7 +940,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_path_set_tattoo:  * @image_ID: The image.  * @name: the name of the path whose tattoo should be set.  * @tattovalue: The tattoo associated with the name path. Only values returned from 'path_get_tattoo' should be used here.  *  * Sets the tattoo associated with the named path.  *  * This procedure sets the tattoo associated with the specified path. A  * tattoo is a unique and permenant identifier attached to a path that  * can be used to uniquely identify a path within an image even between  * sessions. Note that the value passed to this function must have been  * obtained from a previous call to path_get_tattoo.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_path_set_tattoo:  * @image_ID: The image.  * @name: the name of the path whose tattoo should be set.  * @tattovalue: The tattoo associated with the name path. Only values returned from 'path_get_tattoo' should be used here.  *  * This procedure is deprecated! Use gimp_vectors_set_tattoo() instead.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -1023,7 +1023,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_get_path_by_tattoo:  * @image_ID: The image.  * @tattoo: The tattoo of the required path.  *  * Return the name of the path with the given tattoo.  *  * The procedure returns the name of the path in the specified image  * which has the passed tattoo. The tattoos are unique within the image  * and will be preserved across sessions and through renaming of the  * path. An error is returned if no path with the specified tattoo can  * be found.  *  * Returns: The name of the path with the specified tattoo.  */
+comment|/**  * gimp_get_path_by_tattoo:  * @image_ID: The image.  * @tattoo: The tattoo of the required path.  *  * This procedure is deprecated! Use gimp_image_get_vectors_by_tattoo()  * instead.  *  * Returns: The name of the path with the specified tattoo.  */
 end_comment
 
 begin_function
@@ -1113,7 +1113,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_path_get_locked:  * @image_ID: The image.  * @name: The name of the path whose locked status should be obtained.  *  * Returns the locked status associated with the named path.  *  * This procedure returns the lock status associated with the specified  * path. A path can be \"locked\" which means that the transformation  * tool operations will also apply to the path.  *  * Returns: TRUE if the path is locked, FALSE otherwise.  */
+comment|/**  * gimp_path_get_locked:  * @image_ID: The image.  * @name: The name of the path whose locked status should be obtained.  *  * This procedure is deprecated! Use gimp_vectors_get_linked() instead.  *  * Returns: TRUE if the path is locked, FALSE otherwise.  */
 end_comment
 
 begin_function
@@ -1200,7 +1200,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_path_set_locked:  * @image_ID: The image.  * @name: the name of the path whose locked status should be set.  * @locked: Whether the path is locked.  *  * Set the locked status associated with the named path.  *  * This procedure sets the lock status associated with the specified  * path. A path can be \"locked\" which means that the transformation  * tool operations will also apply to the path.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_path_set_locked:  * @image_ID: The image.  * @name: the name of the path whose locked status should be set.  * @locked: Whether the path is locked.  *  * This procedure is deprecated! Use gimp_vectors_set_linked() instead.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -1252,176 +1252,6 @@ argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
 name|locked
-argument_list|,
-name|GIMP_PDB_END
-argument_list|)
-expr_stmt|;
-name|success
-operator|=
-name|return_vals
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
-operator|==
-name|GIMP_PDB_SUCCESS
-expr_stmt|;
-name|gimp_destroy_params
-argument_list|(
-name|return_vals
-argument_list|,
-name|nreturn_vals
-argument_list|)
-expr_stmt|;
-return|return
-name|success
-return|;
-block|}
-end_function
-
-begin_comment
-comment|/**  * gimp_path_get_visible:  * @image_ID: The image.  * @name: The name of the path whose visibility should be obtained.  *  * Get the visibility of the named path.  *  * This procedure returns the visibility of the specified path.  *  * Returns: TRUE if the path is visible, FALSE otherwise.  */
-end_comment
-
-begin_function
-name|gboolean
-DECL|function|gimp_path_get_visible (gint32 image_ID,const gchar * name)
-name|gimp_path_get_visible
-parameter_list|(
-name|gint32
-name|image_ID
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|name
-parameter_list|)
-block|{
-name|GimpParam
-modifier|*
-name|return_vals
-decl_stmt|;
-name|gint
-name|nreturn_vals
-decl_stmt|;
-name|gboolean
-name|visible
-init|=
-name|FALSE
-decl_stmt|;
-name|return_vals
-operator|=
-name|gimp_run_procedure
-argument_list|(
-literal|"gimp-path-get-visible"
-argument_list|,
-operator|&
-name|nreturn_vals
-argument_list|,
-name|GIMP_PDB_IMAGE
-argument_list|,
-name|image_ID
-argument_list|,
-name|GIMP_PDB_STRING
-argument_list|,
-name|name
-argument_list|,
-name|GIMP_PDB_END
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|return_vals
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
-operator|==
-name|GIMP_PDB_SUCCESS
-condition|)
-name|visible
-operator|=
-name|return_vals
-index|[
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_int32
-expr_stmt|;
-name|gimp_destroy_params
-argument_list|(
-name|return_vals
-argument_list|,
-name|nreturn_vals
-argument_list|)
-expr_stmt|;
-return|return
-name|visible
-return|;
-block|}
-end_function
-
-begin_comment
-comment|/**  * gimp_path_set_visible:  * @image_ID: The image.  * @name: The name of the path whose visibility should be set.  * @visible: The new path visibility.  *  * Sets the visibility of the named path.  *  * This procedure sets the specified path's visibility.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  */
-end_comment
-
-begin_function
-name|gboolean
-DECL|function|gimp_path_set_visible (gint32 image_ID,const gchar * name,gboolean visible)
-name|gimp_path_set_visible
-parameter_list|(
-name|gint32
-name|image_ID
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|name
-parameter_list|,
-name|gboolean
-name|visible
-parameter_list|)
-block|{
-name|GimpParam
-modifier|*
-name|return_vals
-decl_stmt|;
-name|gint
-name|nreturn_vals
-decl_stmt|;
-name|gboolean
-name|success
-init|=
-name|TRUE
-decl_stmt|;
-name|return_vals
-operator|=
-name|gimp_run_procedure
-argument_list|(
-literal|"gimp-path-set-visible"
-argument_list|,
-operator|&
-name|nreturn_vals
-argument_list|,
-name|GIMP_PDB_IMAGE
-argument_list|,
-name|image_ID
-argument_list|,
-name|GIMP_PDB_STRING
-argument_list|,
-name|name
-argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|visible
 argument_list|,
 name|GIMP_PDB_END
 argument_list|)
