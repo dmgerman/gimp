@@ -2752,7 +2752,7 @@ literal|"gimp-path-get-point-at-dist"
 block|,
 literal|"gimp-path-get-point-at-dist"
 block|,
-literal|"Get point on a path at a specified distance along the path."
+literal|"This procedure is deprecated! Use 'gimp-vectors-stroke-get-point-at-dist' instead."
 block|,
 literal|"This will return the x,y position of a point at a given distance along the bezier curve. The distance will be obtained by first digitizing the curve internally and then walking along the curve. For a closed curve the start of the path is the first point on the path that was created. This might not be obvious. Note the current path is used."
 block|,
@@ -2762,7 +2762,7 @@ literal|"Andy Thomas"
 block|,
 literal|"1999"
 block|,
-name|NULL
+literal|"gimp-vectors-stroke-get-point-at-dist"
 block|,
 name|GIMP_INTERNAL
 block|,
