@@ -130,7 +130,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c97e6aa0108
+DECL|struct|__anon2a325f3e0108
 block|{
 DECL|member|l
 name|gfloat
@@ -240,7 +240,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c97e6aa0208
+DECL|struct|__anon2a325f3e0208
 block|{
 DECL|member|bgdist
 name|gfloat
@@ -3080,6 +3080,8 @@ argument_list|(
 literal|"siox.c: siox_init (bpp=%d, "
 literal|"x=%d, y=%d, width=%d, height=%d, offset_x=%d, offset_y=%d)\n"
 argument_list|,
+name|state
+operator|->
 name|bpp
 argument_list|,
 name|x
@@ -3206,8 +3208,11 @@ literal|0
 decl_stmt|;
 name|gint
 name|n
+decl_stmt|;
+name|gint
+name|pixels
 decl_stmt|,
-name|tiles
+name|total
 decl_stmt|;
 name|gfloat
 name|limits
@@ -3250,7 +3255,7 @@ operator|>
 name|x1
 operator|&&
 name|x2
-operator|<
+operator|<=
 name|tile_manager_width
 argument_list|(
 name|mask
@@ -3271,7 +3276,7 @@ operator|>
 name|y1
 operator|&&
 name|y2
-operator|<
+operator|<=
 name|tile_manager_height
 argument_list|(
 name|mask
@@ -4376,23 +4381,11 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|tiles
+name|total
 operator|=
-operator|(
-literal|1
-operator|+
 name|width
-operator|/
-name|TILE_WIDTH
-operator|)
 operator|*
-operator|(
-literal|1
-operator|+
 name|height
-operator|/
-name|TILE_HEIGHT
-operator|)
 expr_stmt|;
 for|for
 control|(
@@ -4410,6 +4403,10 @@ name|mapPR
 argument_list|)
 operator|,
 name|n
+operator|=
+literal|0
+operator|,
+name|pixels
 operator|=
 literal|0
 init|;
@@ -4820,6 +4817,16 @@ operator|.
 name|rowstride
 expr_stmt|;
 block|}
+name|pixels
+operator|+=
+name|mapPR
+operator|.
+name|w
+operator|*
+name|mapPR
+operator|.
+name|h
+expr_stmt|;
 if|if
 condition|(
 name|n
@@ -4842,12 +4849,12 @@ operator|(
 operator|(
 name|gdouble
 operator|)
-name|n
+name|pixels
 operator|/
 operator|(
 name|gdouble
 operator|)
-name|tiles
+name|total
 operator|)
 argument_list|)
 expr_stmt|;
