@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon275910a20103
+DECL|enum|__anon2791267a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -195,6 +195,14 @@ name|_GimpDisplayOptionsClass
 name|GimpDisplayOptionsFullscreenClass
 typedef|;
 end_typedef
+
+begin_define
+DECL|macro|gimp_display_options_fullscreen_init
+define|#
+directive|define
+name|gimp_display_options_fullscreen_init
+value|gimp_display_options_init
+end_define
 
 begin_expr_stmt
 name|G_DEFINE_TYPE_WITH_CODE
@@ -662,26 +670,6 @@ DECL|function|gimp_display_options_init (GimpDisplayOptions * options)
 name|gimp_display_options_init
 parameter_list|(
 name|GimpDisplayOptions
-modifier|*
-name|options
-parameter_list|)
-block|{
-name|options
-operator|->
-name|padding_mode_set
-operator|=
-name|FALSE
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|gimp_display_options_fullscreen_init (GimpDisplayOptionsFullscreen * options)
-name|gimp_display_options_fullscreen_init
-parameter_list|(
-name|GimpDisplayOptionsFullscreen
 modifier|*
 name|options
 parameter_list|)
