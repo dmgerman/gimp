@@ -26,7 +26,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * gimp_drawable_delete:  * @drawable_ID: The drawable to delete.  *  * Delete a drawable.  *  * This procedure deletes the specified drawable. This must not be done  * if the gimage containing this drawable was already deleted or if the  * drawable was already removed from the image. The only case in which  * this procedure is useful is if you want to get rid of a drawable  * which has not yet been added to an image.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_drawable_delete:  * @drawable_ID: The drawable to delete.  *  * Delete a drawable.  *  * This procedure deletes the specified drawable. This must not be done  * if the image containing this drawable was already deleted or if the  * drawable was already removed from the image. The only case in which  * this procedure is useful is if you want to get rid of a drawable  * which has not yet been added to an image.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function

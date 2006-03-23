@@ -173,7 +173,7 @@ name|return_args
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpDrawable
 modifier|*
@@ -211,7 +211,7 @@ name|text_layer
 init|=
 name|NULL
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -232,7 +232,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -483,7 +483,7 @@ name|text_layer
 operator|=
 name|text_render
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|drawable
 argument_list|,
@@ -1165,7 +1165,7 @@ name|return_args
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpDrawable
 modifier|*
@@ -1231,7 +1231,7 @@ name|text_layer
 init|=
 name|NULL
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -1252,7 +1252,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -1667,7 +1667,7 @@ name|text_layer
 operator|=
 name|text_render
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|drawable
 argument_list|,

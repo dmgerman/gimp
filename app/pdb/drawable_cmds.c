@@ -836,7 +836,7 @@ literal|"gimp-drawable-delete"
 block|,
 literal|"Delete a drawable."
 block|,
-literal|"This procedure deletes the specified drawable. This must not be done if the gimage containing this drawable was already deleted or if the drawable was already removed from the image. The only case in which this procedure is useful is if you want to get rid of a drawable which has not yet been added to an image."
+literal|"This procedure deletes the specified drawable. This must not be done if the image containing this drawable was already deleted or if the drawable was already removed from the image. The only case in which this procedure is useful is if you want to get rid of a drawable which has not yet been added to an image."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -3660,7 +3660,7 @@ name|drawable
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 init|=
 name|NULL
 decl_stmt|;
@@ -3712,7 +3712,7 @@ condition|(
 name|success
 condition|)
 block|{
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -3746,11 +3746,11 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|gimage
+name|image
 condition|?
 name|gimp_image_get_ID
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 else|:
 operator|-
@@ -3877,7 +3877,7 @@ name|drawable
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|drawable
 operator|=
@@ -3922,7 +3922,7 @@ name|success
 operator|=
 name|FALSE
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -3943,7 +3943,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -3957,7 +3957,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|gimage
+name|image
 operator|!=
 name|gimp_item_get_image
 argument_list|(
@@ -8302,7 +8302,7 @@ condition|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 init|=
 name|gimp_item_get_image
 argument_list|(
@@ -8381,7 +8381,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -8989,7 +8989,7 @@ condition|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 init|=
 name|gimp_item_get_image
 argument_list|(
@@ -9005,7 +9005,7 @@ name|buf
 decl_stmt|;
 if|if
 condition|(
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->

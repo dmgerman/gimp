@@ -1057,7 +1057,7 @@ name|return_args
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gchar
 modifier|*
@@ -1069,7 +1069,7 @@ name|parasite
 init|=
 name|NULL
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -1090,7 +1090,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -1144,7 +1144,7 @@ name|gimp_parasite_copy
 argument_list|(
 name|gimp_image_parasite_find
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|name
 argument_list|)
@@ -1310,13 +1310,13 @@ name|TRUE
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpParasite
 modifier|*
 name|parasite
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -1337,7 +1337,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -1395,7 +1395,7 @@ condition|)
 block|{
 name|gimp_image_parasite_attach
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|parasite
 argument_list|)
@@ -1513,13 +1513,13 @@ name|TRUE
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -1540,7 +1540,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -1590,7 +1590,7 @@ condition|)
 block|{
 name|gimp_image_parasite_detach
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|name
 argument_list|)
@@ -1712,7 +1712,7 @@ name|return_args
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gint32
 name|num_parasites
@@ -1726,7 +1726,7 @@ name|parasites
 init|=
 name|NULL
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -1747,7 +1747,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -1763,7 +1763,7 @@ name|parasites
 operator|=
 name|gimp_image_parasite_list
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 operator|&
 name|num_parasites

@@ -177,7 +177,7 @@ name|return_args
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpObject
 modifier|*
@@ -185,7 +185,7 @@ name|display
 init|=
 name|NULL
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -206,7 +206,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -224,7 +224,7 @@ name|gimp_create_display
 argument_list|(
 name|gimp
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|GIMP_UNIT_PIXEL
 argument_list|,
@@ -239,7 +239,7 @@ block|{
 comment|/* the first display takes ownership of the image */
 if|if
 condition|(
-name|gimage
+name|image
 operator|->
 name|disp_count
 operator|==
@@ -247,7 +247,7 @@ literal|1
 condition|)
 name|g_object_unref
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}

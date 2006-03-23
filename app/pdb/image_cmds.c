@@ -1956,7 +1956,7 @@ name|return_args
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpImage
 modifier|*
@@ -1964,7 +1964,7 @@ name|new_image
 init|=
 name|NULL
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -1985,7 +1985,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -2001,7 +2001,7 @@ name|new_image
 operator|=
 name|gimp_image_duplicate
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 if|if
@@ -2164,9 +2164,9 @@ name|TRUE
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -2187,7 +2187,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -2201,7 +2201,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|gimage
+name|image
 operator|->
 name|disp_count
 operator|==
@@ -2209,7 +2209,7 @@ literal|0
 condition|)
 name|g_object_unref
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 else|else
@@ -2326,14 +2326,14 @@ name|return_args
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gint32
 name|base_type
 init|=
 literal|0
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -2354,7 +2354,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -2370,7 +2370,7 @@ name|base_type
 operator|=
 name|gimp_image_base_type
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -2520,14 +2520,14 @@ name|return_args
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gint32
 name|width
 init|=
 literal|0
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -2548,7 +2548,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -2564,7 +2564,7 @@ name|width
 operator|=
 name|gimp_image_get_width
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -2714,14 +2714,14 @@ name|return_args
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gint32
 name|height
 init|=
 literal|0
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -2742,7 +2742,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -2758,7 +2758,7 @@ name|height
 operator|=
 name|gimp_image_get_height
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -2904,9 +2904,9 @@ name|TRUE
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -2927,7 +2927,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -2941,7 +2941,7 @@ condition|)
 block|{
 name|gimp_image_free_shadow
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -3049,7 +3049,7 @@ name|TRUE
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gint32
 name|new_width
@@ -3063,7 +3063,7 @@ decl_stmt|;
 name|gint32
 name|offy
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -3084,7 +3084,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -3162,7 +3162,7 @@ condition|)
 block|{
 name|gimp_image_resize
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|context
 argument_list|,
@@ -3314,9 +3314,9 @@ name|TRUE
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -3337,7 +3337,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -3351,7 +3351,7 @@ condition|)
 block|{
 name|gimp_image_resize_to_layers
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|context
 argument_list|,
@@ -3463,7 +3463,7 @@ name|TRUE
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gint32
 name|new_width
@@ -3471,7 +3471,7 @@ decl_stmt|;
 name|gint32
 name|new_height
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -3492,7 +3492,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -3548,7 +3548,7 @@ condition|)
 block|{
 name|gimp_image_scale
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|new_width
 argument_list|,
@@ -3684,7 +3684,7 @@ name|TRUE
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gint32
 name|new_width
@@ -3698,7 +3698,7 @@ decl_stmt|;
 name|gint32
 name|offy
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -3719,7 +3719,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -3819,20 +3819,20 @@ if|if
 condition|(
 name|new_width
 operator|>
-name|gimage
+name|image
 operator|->
 name|width
 operator|||
 name|new_height
 operator|>
-name|gimage
+name|image
 operator|->
 name|height
 operator|||
 name|offx
 operator|>
 operator|(
-name|gimage
+name|image
 operator|->
 name|width
 operator|-
@@ -3842,7 +3842,7 @@ operator|||
 name|offy
 operator|>
 operator|(
-name|gimage
+name|image
 operator|->
 name|height
 operator|-
@@ -3856,7 +3856,7 @@ expr_stmt|;
 else|else
 name|gimp_image_crop
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|context
 argument_list|,
@@ -4014,12 +4014,12 @@ name|TRUE
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gint32
 name|flip_type
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -4040,7 +4040,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -4079,7 +4079,7 @@ condition|)
 block|{
 name|gimp_image_flip
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|context
 argument_list|,
@@ -4201,12 +4201,12 @@ name|TRUE
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gint32
 name|rotate_type
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -4227,7 +4227,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -4266,7 +4266,7 @@ condition|)
 block|{
 name|gimp_image_rotate
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|context
 argument_list|,
@@ -4392,7 +4392,7 @@ name|return_args
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gint32
 name|num_layers
@@ -4405,7 +4405,7 @@ name|layer_ids
 init|=
 name|NULL
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -4426,7 +4426,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -4444,7 +4444,7 @@ name|list
 init|=
 name|GIMP_LIST
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|layers
 argument_list|)
@@ -4679,7 +4679,7 @@ name|return_args
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gint32
 name|num_channels
@@ -4692,7 +4692,7 @@ name|channel_ids
 init|=
 name|NULL
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -4713,7 +4713,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -4731,7 +4731,7 @@ name|list
 init|=
 name|GIMP_LIST
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|channels
 argument_list|)
@@ -4966,7 +4966,7 @@ name|return_args
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gint32
 name|num_vectors
@@ -4979,7 +4979,7 @@ name|vector_ids
 init|=
 name|NULL
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -5000,7 +5000,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -5018,7 +5018,7 @@ name|list
 init|=
 name|GIMP_LIST
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|vectors
 argument_list|)
@@ -5253,7 +5253,7 @@ name|return_args
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpDrawable
 modifier|*
@@ -5261,7 +5261,7 @@ name|drawable
 init|=
 name|NULL
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -5282,7 +5282,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -5298,7 +5298,7 @@ name|drawable
 operator|=
 name|gimp_image_active_drawable
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -5455,9 +5455,9 @@ name|TRUE
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -5478,7 +5478,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -5492,7 +5492,7 @@ condition|)
 block|{
 name|gimp_image_unset_active_channel
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -5604,7 +5604,7 @@ name|return_args
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpLayer
 modifier|*
@@ -5612,7 +5612,7 @@ name|floating_sel
 init|=
 name|NULL
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -5633,7 +5633,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -5649,7 +5649,7 @@ name|floating_sel
 operator|=
 name|gimp_image_floating_sel
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -5810,7 +5810,7 @@ name|return_args
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpDrawable
 modifier|*
@@ -5818,7 +5818,7 @@ name|drawable
 init|=
 name|NULL
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -5839,7 +5839,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -5857,7 +5857,7 @@ name|floating_sel
 init|=
 name|gimp_image_floating_sel
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 decl_stmt|;
 if|if
@@ -6041,7 +6041,7 @@ name|return_args
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpDrawable
 modifier|*
@@ -6075,7 +6075,7 @@ block|,
 literal|1.0
 block|}
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -6096,7 +6096,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -6210,7 +6210,7 @@ name|drawable
 argument_list|)
 argument_list|)
 operator|!=
-name|gimage
+name|image
 operator|)
 condition|)
 name|success
@@ -6248,7 +6248,7 @@ name|gimp_pickable_flush
 argument_list|(
 name|GIMP_PICKABLE
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|projection
 argument_list|)
@@ -6267,7 +6267,7 @@ name|success
 operator|=
 name|gimp_image_pick_color
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|drawable
 argument_list|,
@@ -6491,7 +6491,7 @@ name|return_args
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gint32
 name|x
@@ -6505,7 +6505,7 @@ name|layer
 init|=
 name|NULL
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -6526,7 +6526,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -6564,7 +6564,7 @@ name|layer
 operator|=
 name|gimp_image_pick_correlate_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|x
 argument_list|,
@@ -6741,7 +6741,7 @@ name|TRUE
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpLayer
 modifier|*
@@ -6750,7 +6750,7 @@ decl_stmt|;
 name|gint32
 name|position
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -6771,7 +6771,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -6861,7 +6861,7 @@ argument_list|)
 operator|!=
 name|gimp_image_base_type
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 block|{
@@ -6876,7 +6876,7 @@ name|success
 operator|=
 name|gimp_image_add_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|layer
 argument_list|,
@@ -6951,7 +6951,7 @@ literal|"gimp-image-add-layer"
 block|,
 literal|"Add the specified layer to the image."
 block|,
-literal|"This procedure adds the specified layer to the gimage at the given position. If the position is specified as -1, then the layer is inserted at the top of the layer stack. If the layer to be added has no alpha channel, it must be added at position 0. The layer type must be compatible with the image base type."
+literal|"This procedure adds the specified layer to the image at the given position. If the position is specified as -1, then the layer is inserted at the top of the layer stack. If the layer to be added has no alpha channel, it must be added at position 0. The layer type must be compatible with the image base type."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -7011,13 +7011,13 @@ name|TRUE
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -7038,7 +7038,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -7095,7 +7095,7 @@ condition|)
 block|{
 name|gimp_image_remove_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|layer
 argument_list|)
@@ -7213,13 +7213,13 @@ name|TRUE
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -7240,7 +7240,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -7299,7 +7299,7 @@ name|success
 operator|=
 name|gimp_image_raise_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|layer
 argument_list|)
@@ -7417,13 +7417,13 @@ name|TRUE
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -7444,7 +7444,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -7503,7 +7503,7 @@ name|success
 operator|=
 name|gimp_image_lower_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|layer
 argument_list|)
@@ -7621,13 +7621,13 @@ name|TRUE
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -7648,7 +7648,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -7707,7 +7707,7 @@ name|success
 operator|=
 name|gimp_image_raise_layer_to_top
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|layer
 argument_list|)
@@ -7825,13 +7825,13 @@ name|TRUE
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -7852,7 +7852,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -7911,7 +7911,7 @@ name|success
 operator|=
 name|gimp_image_lower_layer_to_bottom
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|layer
 argument_list|)
@@ -8029,7 +8029,7 @@ name|TRUE
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpChannel
 modifier|*
@@ -8038,7 +8038,7 @@ decl_stmt|;
 name|gint32
 name|position
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -8059,7 +8059,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -8143,7 +8143,7 @@ name|success
 operator|=
 name|gimp_image_add_channel
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|channel
 argument_list|,
@@ -8277,13 +8277,13 @@ name|TRUE
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpChannel
 modifier|*
 name|channel
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -8304,7 +8304,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -8361,7 +8361,7 @@ condition|)
 block|{
 name|gimp_image_remove_channel
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|channel
 argument_list|)
@@ -8479,13 +8479,13 @@ name|TRUE
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpChannel
 modifier|*
 name|channel
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -8506,7 +8506,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -8565,7 +8565,7 @@ name|success
 operator|=
 name|gimp_image_raise_channel
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|channel
 argument_list|)
@@ -8683,13 +8683,13 @@ name|TRUE
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpChannel
 modifier|*
 name|channel
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -8710,7 +8710,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -8769,7 +8769,7 @@ name|success
 operator|=
 name|gimp_image_lower_channel
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|channel
 argument_list|)
@@ -8887,7 +8887,7 @@ name|TRUE
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpVectors
 modifier|*
@@ -8896,7 +8896,7 @@ decl_stmt|;
 name|gint32
 name|position
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -8917,7 +8917,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -8987,7 +8987,7 @@ name|success
 operator|=
 name|gimp_image_add_vectors
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|vectors
 argument_list|,
@@ -9061,7 +9061,7 @@ literal|"gimp-image-add-vectors"
 block|,
 literal|"Add the specified vectors object to the image."
 block|,
-literal|"This procedure adds the specified vectors object to the gimage at the given position. If the position is specified as -1, then the vectors object is inserted at the top of the vectors stack."
+literal|"This procedure adds the specified vectors object to the image at the given position. If the position is specified as -1, then the vectors object is inserted at the top of the vectors stack."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -9121,13 +9121,13 @@ name|TRUE
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpVectors
 modifier|*
 name|vectors
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -9148,7 +9148,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -9205,7 +9205,7 @@ condition|)
 block|{
 name|gimp_image_remove_vectors
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|vectors
 argument_list|)
@@ -9323,13 +9323,13 @@ name|TRUE
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpVectors
 modifier|*
 name|vectors
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -9350,7 +9350,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -9409,7 +9409,7 @@ name|success
 operator|=
 name|gimp_image_raise_vectors
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|vectors
 argument_list|)
@@ -9527,13 +9527,13 @@ name|TRUE
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpVectors
 modifier|*
 name|vectors
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -9554,7 +9554,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -9613,7 +9613,7 @@ name|success
 operator|=
 name|gimp_image_lower_vectors
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|vectors
 argument_list|)
@@ -9731,13 +9731,13 @@ name|TRUE
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpVectors
 modifier|*
 name|vectors
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -9758,7 +9758,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -9817,7 +9817,7 @@ name|success
 operator|=
 name|gimp_image_raise_vectors_to_top
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|vectors
 argument_list|)
@@ -9935,13 +9935,13 @@ name|TRUE
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpVectors
 modifier|*
 name|vectors
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -9962,7 +9962,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -10021,7 +10021,7 @@ name|success
 operator|=
 name|gimp_image_lower_vectors_to_bottom
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|vectors
 argument_list|)
@@ -10143,7 +10143,7 @@ name|return_args
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpLayer
 modifier|*
@@ -10151,7 +10151,7 @@ name|layer
 init|=
 name|NULL
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -10172,7 +10172,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -10188,7 +10188,7 @@ name|layer
 operator|=
 name|gimp_image_flatten
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|context
 argument_list|)
@@ -10360,7 +10360,7 @@ name|return_args
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gint32
 name|merge_type
@@ -10371,7 +10371,7 @@ name|layer
 init|=
 name|NULL
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -10392,7 +10392,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -10433,18 +10433,21 @@ name|layer
 operator|=
 name|gimp_image_merge_visible_layers
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|context
 argument_list|,
 name|merge_type
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|layer
+condition|)
 name|success
 operator|=
-name|layer
-operator|!=
-name|NULL
+name|FALSE
 expr_stmt|;
 block|}
 name|return_args
@@ -10612,7 +10615,7 @@ name|return_args
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpLayer
 modifier|*
@@ -10627,7 +10630,7 @@ name|layer
 init|=
 name|NULL
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -10648,7 +10651,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -10732,7 +10735,7 @@ name|layer
 operator|=
 name|gimp_image_merge_down
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|merge_layer
 argument_list|,
@@ -10741,11 +10744,14 @@ argument_list|,
 name|merge_type
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|layer
+condition|)
 name|success
 operator|=
-name|layer
-operator|!=
-name|NULL
+name|FALSE
 expr_stmt|;
 block|}
 name|return_args
@@ -10917,7 +10923,7 @@ name|TRUE
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpLayer
 modifier|*
@@ -10927,7 +10933,7 @@ name|GimpLayerMask
 modifier|*
 name|mask
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -10948,7 +10954,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -11046,8 +11052,9 @@ condition|(
 name|success
 condition|)
 block|{
-name|success
-operator|=
+if|if
+condition|(
+operator|!
 name|gimp_layer_add_mask
 argument_list|(
 name|layer
@@ -11056,8 +11063,10 @@ name|mask
 argument_list|,
 name|TRUE
 argument_list|)
-operator|!=
-name|NULL
+condition|)
+name|success
+operator|=
+name|FALSE
 expr_stmt|;
 block|}
 return|return
@@ -11180,7 +11189,7 @@ name|TRUE
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpLayer
 modifier|*
@@ -11189,7 +11198,7 @@ decl_stmt|;
 name|gint32
 name|mode
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -11210,7 +11219,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -11424,7 +11433,7 @@ name|return_args
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gint32
 name|num_bytes
@@ -11437,7 +11446,7 @@ name|colormap
 init|=
 name|NULL
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -11458,7 +11467,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -11476,7 +11485,7 @@ literal|3
 operator|*
 name|gimp_image_get_colormap_size
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|colormap
@@ -11485,7 +11494,7 @@ name|g_memdup
 argument_list|(
 name|gimp_image_get_colormap
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|num_bytes
@@ -11655,7 +11664,7 @@ name|TRUE
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gint32
 name|num_bytes
@@ -11664,7 +11673,7 @@ name|guint8
 modifier|*
 name|colormap
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -11685,7 +11694,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -11739,7 +11748,7 @@ condition|)
 block|{
 name|gimp_image_set_colormap
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|colormap
 argument_list|,
@@ -11871,9 +11880,9 @@ name|TRUE
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -11894,7 +11903,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -11908,7 +11917,7 @@ condition|)
 block|{
 name|gimp_image_clean_all
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -12020,14 +12029,14 @@ name|return_args
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gboolean
 name|dirty
 init|=
 name|FALSE
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -12048,7 +12057,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -12063,7 +12072,7 @@ block|{
 name|dirty
 operator|=
 operator|(
-name|gimage
+name|image
 operator|->
 name|dirty
 operator|!=
@@ -12217,7 +12226,7 @@ name|return_args
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gint32
 name|width
@@ -12251,7 +12260,7 @@ name|thumbnail_data
 init|=
 name|NULL
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -12272,7 +12281,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -12355,14 +12364,14 @@ name|dwidth
 operator|=
 name|gimp_image_get_width
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|dheight
 operator|=
 name|gimp_image_get_height
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 if|if
@@ -12404,7 +12413,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -12418,7 +12427,7 @@ name|gimp_viewable_get_new_preview
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|width
@@ -12433,7 +12442,7 @@ name|gimp_viewable_get_dummy_preview
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|width
@@ -12442,7 +12451,7 @@ name|height
 argument_list|,
 name|gimp_image_has_alpha
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|?
 literal|4
@@ -12747,7 +12756,7 @@ name|return_args
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpLayer
 modifier|*
@@ -12755,7 +12764,7 @@ name|active_layer
 init|=
 name|NULL
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -12776,7 +12785,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -12792,7 +12801,7 @@ name|active_layer
 operator|=
 name|gimp_image_get_active_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -12949,13 +12958,13 @@ name|TRUE
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpLayer
 modifier|*
 name|active_layer
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -12976,7 +12985,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -13035,7 +13044,7 @@ if|if
 condition|(
 name|gimp_image_set_active_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|active_layer
 argument_list|)
@@ -13163,7 +13172,7 @@ name|return_args
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpChannel
 modifier|*
@@ -13171,7 +13180,7 @@ name|active_channel
 init|=
 name|NULL
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -13192,7 +13201,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -13208,7 +13217,7 @@ name|active_channel
 operator|=
 name|gimp_image_get_active_channel
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -13365,13 +13374,13 @@ name|TRUE
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpChannel
 modifier|*
 name|active_channel
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -13392,7 +13401,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -13451,7 +13460,7 @@ if|if
 condition|(
 name|gimp_image_set_active_channel
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|active_channel
 argument_list|)
@@ -13579,7 +13588,7 @@ name|return_args
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpVectors
 modifier|*
@@ -13587,7 +13596,7 @@ name|active_vectors
 init|=
 name|NULL
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -13608,7 +13617,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -13624,7 +13633,7 @@ name|active_vectors
 operator|=
 name|gimp_image_get_active_vectors
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -13781,13 +13790,13 @@ name|TRUE
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpVectors
 modifier|*
 name|active_vectors
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -13808,7 +13817,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -13867,7 +13876,7 @@ if|if
 condition|(
 name|gimp_image_set_active_vectors
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|active_vectors
 argument_list|)
@@ -13995,7 +14004,7 @@ name|return_args
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpChannel
 modifier|*
@@ -14003,7 +14012,7 @@ name|selection
 init|=
 name|NULL
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -14024,7 +14033,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -14040,7 +14049,7 @@ name|selection
 operator|=
 name|gimp_image_get_mask
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 if|if
@@ -14210,7 +14219,7 @@ name|return_args
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gint32
 name|component
@@ -14220,7 +14229,7 @@ name|active
 init|=
 name|FALSE
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -14241,7 +14250,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -14288,7 +14297,7 @@ name|success
 operator|=
 name|gimp_image_base_type
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 operator|==
 name|GIMP_GRAY
@@ -14304,7 +14313,7 @@ name|success
 operator|=
 name|gimp_image_base_type
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 operator|==
 name|GIMP_INDEXED
@@ -14314,7 +14323,7 @@ name|success
 operator|=
 name|gimp_image_base_type
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 operator|==
 name|GIMP_RGB
@@ -14327,7 +14336,7 @@ name|active
 operator|=
 name|gimp_image_get_component_active
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|component
 argument_list|)
@@ -14483,7 +14492,7 @@ name|TRUE
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gint32
 name|component
@@ -14491,7 +14500,7 @@ decl_stmt|;
 name|gboolean
 name|active
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -14512,7 +14521,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -14574,7 +14583,7 @@ name|success
 operator|=
 name|gimp_image_base_type
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 operator|==
 name|GIMP_GRAY
@@ -14590,7 +14599,7 @@ name|success
 operator|=
 name|gimp_image_base_type
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 operator|==
 name|GIMP_INDEXED
@@ -14600,7 +14609,7 @@ name|success
 operator|=
 name|gimp_image_base_type
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 operator|==
 name|GIMP_RGB
@@ -14611,7 +14620,7 @@ name|success
 condition|)
 name|gimp_image_set_component_active
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|component
 argument_list|,
@@ -14743,7 +14752,7 @@ name|return_args
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gint32
 name|component
@@ -14753,7 +14762,7 @@ name|visible
 init|=
 name|FALSE
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -14774,7 +14783,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -14821,7 +14830,7 @@ name|success
 operator|=
 name|gimp_image_base_type
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 operator|==
 name|GIMP_GRAY
@@ -14837,7 +14846,7 @@ name|success
 operator|=
 name|gimp_image_base_type
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 operator|==
 name|GIMP_INDEXED
@@ -14847,7 +14856,7 @@ name|success
 operator|=
 name|gimp_image_base_type
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 operator|==
 name|GIMP_RGB
@@ -14860,7 +14869,7 @@ name|visible
 operator|=
 name|gimp_image_get_component_visible
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|component
 argument_list|)
@@ -15016,7 +15025,7 @@ name|TRUE
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gint32
 name|component
@@ -15024,7 +15033,7 @@ decl_stmt|;
 name|gboolean
 name|visible
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -15045,7 +15054,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -15107,7 +15116,7 @@ name|success
 operator|=
 name|gimp_image_base_type
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 operator|==
 name|GIMP_GRAY
@@ -15123,7 +15132,7 @@ name|success
 operator|=
 name|gimp_image_base_type
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 operator|==
 name|GIMP_INDEXED
@@ -15133,7 +15142,7 @@ name|success
 operator|=
 name|gimp_image_base_type
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 operator|==
 name|GIMP_RGB
@@ -15144,7 +15153,7 @@ name|success
 condition|)
 name|gimp_image_set_component_visible
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|component
 argument_list|,
@@ -15276,7 +15285,7 @@ name|return_args
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gchar
 modifier|*
@@ -15284,7 +15293,7 @@ name|filename
 init|=
 name|NULL
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -15305,7 +15314,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -15321,7 +15330,7 @@ name|filename
 operator|=
 name|gimp_image_get_filename
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -15467,13 +15476,13 @@ name|TRUE
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gchar
 modifier|*
 name|filename
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -15494,7 +15503,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -15604,7 +15613,7 @@ name|success
 condition|)
 name|gimp_image_set_filename
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|filename
 argument_list|)
@@ -15726,7 +15735,7 @@ name|return_args
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gchar
 modifier|*
@@ -15734,7 +15743,7 @@ name|name
 init|=
 name|NULL
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -15755,7 +15764,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -15773,7 +15782,7 @@ name|filename
 init|=
 name|gimp_image_get_filename
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 decl_stmt|;
 if|if
@@ -15945,7 +15954,7 @@ name|return_args
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gdouble
 name|xresolution
@@ -15957,7 +15966,7 @@ name|yresolution
 init|=
 literal|0.0
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -15978,7 +15987,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -15992,7 +16001,7 @@ condition|)
 block|{
 name|gimp_image_get_resolution
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 operator|&
 name|xresolution
@@ -16165,7 +16174,7 @@ name|TRUE
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gdouble
 name|xresolution
@@ -16173,7 +16182,7 @@ decl_stmt|;
 name|gdouble
 name|yresolution
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -16194,7 +16203,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -16277,7 +16286,7 @@ else|else
 block|{
 name|gimp_image_set_resolution
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|xresolution
 argument_list|,
@@ -16410,14 +16419,14 @@ name|return_args
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpUnit
 name|unit
 init|=
 literal|0
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -16438,7 +16447,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -16454,7 +16463,7 @@ name|unit
 operator|=
 name|gimp_image_get_unit
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -16600,12 +16609,12 @@ name|TRUE
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpUnit
 name|unit
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -16626,7 +16635,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -16668,7 +16677,7 @@ condition|)
 block|{
 name|gimp_image_set_unit
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|unit
 argument_list|)
@@ -16790,14 +16799,14 @@ name|return_args
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gint32
 name|tattoo_state
 init|=
 literal|0
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -16818,7 +16827,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -16834,7 +16843,7 @@ name|tattoo_state
 operator|=
 name|gimp_image_get_tattoo_state
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -16980,12 +16989,12 @@ name|TRUE
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gint32
 name|tattoo_state
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -17006,7 +17015,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -17041,7 +17050,7 @@ condition|)
 block|{
 name|gimp_image_set_tattoo_state
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|tattoo_state
 argument_list|)
@@ -17163,7 +17172,7 @@ name|return_args
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gint32
 name|tattoo
@@ -17174,7 +17183,7 @@ name|layer
 init|=
 name|NULL
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -17195,7 +17204,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -17232,7 +17241,7 @@ name|layer
 operator|=
 name|gimp_image_get_layer_by_tattoo
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|tattoo
 argument_list|)
@@ -17403,7 +17412,7 @@ name|return_args
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gint32
 name|tattoo
@@ -17414,7 +17423,7 @@ name|channel
 init|=
 name|NULL
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -17435,7 +17444,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -17472,7 +17481,7 @@ name|channel
 operator|=
 name|gimp_image_get_channel_by_tattoo
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|tattoo
 argument_list|)
@@ -17643,7 +17652,7 @@ name|return_args
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gint32
 name|tattoo
@@ -17654,7 +17663,7 @@ name|vectors
 init|=
 name|NULL
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -17675,7 +17684,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -17712,7 +17721,7 @@ name|vectors
 operator|=
 name|gimp_image_get_vectors_by_tattoo
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|tattoo
 argument_list|)

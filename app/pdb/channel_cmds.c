@@ -263,7 +263,7 @@ name|return_args
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gint32
 name|width
@@ -287,7 +287,7 @@ name|channel
 init|=
 name|NULL
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -308,7 +308,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -451,7 +451,7 @@ name|channel
 operator|=
 name|gimp_channel_new
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|width
 argument_list|,
@@ -463,11 +463,14 @@ operator|&
 name|rgb_color
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|channel
+condition|)
 name|success
 operator|=
-name|channel
-operator|!=
-name|NULL
+name|FALSE
 expr_stmt|;
 block|}
 name|return_args
@@ -667,7 +670,7 @@ name|return_args
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gint32
 name|component
@@ -682,7 +685,7 @@ name|channel
 init|=
 name|NULL
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -703,7 +706,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -780,7 +783,7 @@ if|if
 condition|(
 name|gimp_image_get_component_index
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|component
 argument_list|)
@@ -792,7 +795,7 @@ name|channel
 operator|=
 name|gimp_channel_new_from_component
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|component
 argument_list|,

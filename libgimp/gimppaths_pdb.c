@@ -26,7 +26,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * gimp_path_list:  * @image_ID: The ID of the image to list the paths from.  * @num_paths: The number of paths returned.  *  * This procedure is deprecated! Use gimp_image_get_vectors() instead.  *  * Returns: List of the paths belonging to this image.  */
+comment|/**  * gimp_path_list:  * @image_ID: The image to list the paths from.  * @num_paths: The number of paths returned.  *  * This procedure is deprecated! Use gimp_image_get_vectors() instead.  *  * Returns: List of the paths belonging to this image.  */
 end_comment
 
 begin_function
@@ -168,7 +168,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_path_get_current:  * @image_ID: The ID of the image to get the current path from.  *  * This procedure is deprecated! Use gimp_image_get_active_vectors()  * instead.  *  * Returns: The name of the current path.  */
+comment|/**  * gimp_path_get_current:  * @image_ID: The image to get the current path from.  *  * This procedure is deprecated! Use gimp_image_get_active_vectors()  * instead.  *  * Returns: The name of the current path.  */
 end_comment
 
 begin_function
@@ -251,7 +251,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_path_set_current:  * @image_ID: The ID of the image in which a path will become current.  * @name: The name of the path to make current.  *  * This procedure is deprecated! Use gimp_image_set_active_vectors()  * instead.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_path_set_current:  * @image_ID: The image in which a path will become current.  * @name: The name of the path to make current.  *  * This procedure is deprecated! Use gimp_image_set_active_vectors()  * instead.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -327,7 +327,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_path_delete:  * @image_ID: The ID of the image to delete the path from.  * @name: The name of the path to delete.  *  * This procedure is deprecated! Use gimp_image_remove_vectors()  * instead.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_path_delete:  * @image_ID: The image to delete the path from.  * @name: The name of the path to delete.  *  * This procedure is deprecated! Use gimp_image_remove_vectors()  * instead.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -403,7 +403,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_path_get_points:  * @image_ID: The ID of the image to list the paths from.  * @name: The name of the path whose points should be listed.  * @path_closed: Return if the path is closed. (0 = path open, 1 = path closed).  * @num_path_point_details: The number of points returned. Each point is made up of (x, y, pnt_type) of floats.  * @points_pairs: The points in the path represented as 3 floats. The first is the x pos, next is the y pos, last is the type of the pnt. The type field is dependant on the path type. For beziers (type 1 paths) the type can either be (1.0 = BEZIER_ANCHOR, 2.0 = BEZIER_CONTROL, 3.0 = BEZIER_MOVE). Note all points are returned in pixel resolution.  *  * List the points associated with the named path.  *  * List the points associated with the named path.  *  * Returns: The type of the path. Currently only one type (1 = Bezier) is supported.  */
+comment|/**  * gimp_path_get_points:  * @image_ID: The image to list the paths from.  * @name: The name of the path whose points should be listed.  * @path_closed: Return if the path is closed. (0 = path open, 1 = path closed).  * @num_path_point_details: The number of points returned. Each point is made up of (x, y, pnt_type) of floats.  * @points_pairs: The points in the path represented as 3 floats. The first is the x pos, next is the y pos, last is the type of the pnt. The type field is dependant on the path type. For beziers (type 1 paths) the type can either be (1.0 = BEZIER_ANCHOR, 2.0 = BEZIER_CONTROL, 3.0 = BEZIER_MOVE). Note all points are returned in pixel resolution.  *  * List the points associated with the named path.  *  * List the points associated with the named path.  *  * Returns: The type of the path. Currently only one type (1 = Bezier) is supported.  */
 end_comment
 
 begin_function
@@ -568,7 +568,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_path_set_points:  * @image_ID: The ID of the image to set the paths in.  * @name: The name of the path to create. If it exists then a unique name will be created - query the list of paths if you want to make sure that the name of the path you create is unique. This will be set as the current path.  * @ptype: The type of the path. Currently only one type (1 = Bezier) is supported.  * @num_path_points: The number of elements in the array, i.e. the number of points in the path * 3. Each point is made up of (x, y, type) of floats. Currently only the creation of bezier curves is allowed. The type parameter must be set to (1) to indicate a BEZIER type curve. Note that for BEZIER curves, points must be given in the following order: ACCACCAC... If the path is not closed the last control point is missed off. Points consist of three control points (control/anchor/control) so for a curve that is not closed there must be at least two points passed (2 x,y pairs). If (num_path_points/3) % 3 = 0 then the path is assumed to be closed and the points are ACCACCACCACC.  * @points_pairs: The points in the path represented as 3 floats. The first is the x pos, next is the y pos, last is the type of the pnt. The type field is dependant on the path type. For beziers (type 1 paths) the type can either be (1.0 = BEZIER_ANCHOR, 2.0 = BEZIER_CONTROL, 3.0= BEZIER_MOVE). Note all points are returned in pixel resolution.  *  * Set the points associated with the named path.  *  * Set the points associated with the named path.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_path_set_points:  * @image_ID: The image to set the paths in.  * @name: The name of the path to create. If it exists then a unique name will be created - query the list of paths if you want to make sure that the name of the path you create is unique. This will be set as the current path.  * @ptype: The type of the path. Currently only one type (1 = Bezier) is supported.  * @num_path_points: The number of elements in the array, i.e. the number of points in the path * 3. Each point is made up of (x, y, type) of floats. Currently only the creation of bezier curves is allowed. The type parameter must be set to (1) to indicate a BEZIER type curve. Note that for BEZIER curves, points must be given in the following order: ACCACCAC... If the path is not closed the last control point is missed off. Points consist of three control points (control/anchor/control) so for a curve that is not closed there must be at least two points passed (2 x,y pairs). If (num_path_points/3) % 3 = 0 then the path is assumed to be closed and the points are ACCACCACCACC.  * @points_pairs: The points in the path represented as 3 floats. The first is the x pos, next is the y pos, last is the type of the pnt. The type field is dependant on the path type. For beziers (type 1 paths) the type can either be (1.0 = BEZIER_ANCHOR, 2.0 = BEZIER_CONTROL, 3.0= BEZIER_MOVE). Note all points are returned in pixel resolution.  *  * Set the points associated with the named path.  *  * Set the points associated with the named path.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -667,7 +667,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_path_stroke_current:  * @image_ID: The ID of the image which contains the path to stroke.  *  * Stroke the current path in the passed image.  *  * Stroke the current path in the passed image.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_path_stroke_current:  * @image_ID: The image which contains the path to stroke.  *  * Stroke the current path in the passed image.  *  * Stroke the current path in the passed image.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -734,7 +734,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_path_get_point_at_dist:  * @image_ID: The ID of the image the paths belongs to.  * @distance: The distance along the path.  * @y_point: The y position of the point.  * @slope: The slope (dy / dx) at the specified point.  *  * This procedure is deprecated! Use  * gimp_vectors_stroke_get_point_at_dist() instead.  *  * Returns: The x position of the point.  */
+comment|/**  * gimp_path_get_point_at_dist:  * @image_ID: The image the paths belongs to.  * @distance: The distance along the path.  * @y_point: The y position of the point.  * @slope: The slope (dy / dx) at the specified point.  *  * This procedure is deprecated! Use  * gimp_vectors_stroke_get_point_at_dist() instead.  *  * Returns: The x position of the point.  */
 end_comment
 
 begin_function

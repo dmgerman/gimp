@@ -193,7 +193,7 @@ name|return_args
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gint32
 name|yposition
@@ -203,7 +203,7 @@ name|guide
 init|=
 literal|0
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -224,7 +224,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -261,7 +261,7 @@ if|if
 condition|(
 name|yposition
 operator|<=
-name|gimage
+name|image
 operator|->
 name|height
 condition|)
@@ -274,7 +274,7 @@ name|g
 operator|=
 name|gimp_image_add_hguide
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|yposition
 argument_list|,
@@ -448,7 +448,7 @@ name|return_args
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gint32
 name|xposition
@@ -458,7 +458,7 @@ name|guide
 init|=
 literal|0
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -479,7 +479,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -516,7 +516,7 @@ if|if
 condition|(
 name|xposition
 operator|<=
-name|gimage
+name|image
 operator|->
 name|width
 condition|)
@@ -529,7 +529,7 @@ name|g
 operator|=
 name|gimp_image_add_vguide
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|xposition
 argument_list|,
@@ -699,12 +699,12 @@ name|TRUE
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gint32
 name|guide
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -725,7 +725,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -754,7 +754,7 @@ name|g
 init|=
 name|gimp_image_get_guide
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|guide
 argument_list|)
@@ -765,7 +765,7 @@ name|g
 condition|)
 name|gimp_image_remove_guide
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|g
 argument_list|,
@@ -894,7 +894,7 @@ name|return_args
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gint32
 name|guide
@@ -904,7 +904,7 @@ name|next_guide
 init|=
 literal|0
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -925,7 +925,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -954,7 +954,7 @@ name|g
 init|=
 name|gimp_image_get_next_guide
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|guide
 argument_list|,
@@ -1127,7 +1127,7 @@ name|return_args
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gint32
 name|guide
@@ -1137,7 +1137,7 @@ name|orientation
 init|=
 literal|0
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -1158,7 +1158,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -1187,7 +1187,7 @@ name|g
 init|=
 name|gimp_image_get_guide
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|guide
 argument_list|)
@@ -1362,7 +1362,7 @@ name|return_args
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gint32
 name|guide
@@ -1372,7 +1372,7 @@ name|position
 init|=
 literal|0
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -1393,7 +1393,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -1422,7 +1422,7 @@ name|g
 init|=
 name|gimp_image_get_guide
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|guide
 argument_list|)

@@ -2057,13 +2057,13 @@ name|TRUE
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gchar
 modifier|*
 name|filename
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -2084,7 +2084,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -2130,7 +2130,7 @@ name|gimp_object_get_name
 argument_list|(
 name|GIMP_OBJECT
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -2214,7 +2214,7 @@ name|imagefile
 argument_list|,
 name|NULL
 argument_list|,
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|g_object_unref

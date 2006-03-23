@@ -407,7 +407,7 @@ name|return_args
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gint32
 name|num_paths
@@ -421,7 +421,7 @@ name|path_list
 init|=
 name|NULL
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -442,7 +442,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -458,7 +458,7 @@ name|path_list
 operator|=
 name|gimp_container_get_name_array
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|vectors
 argument_list|,
@@ -524,7 +524,7 @@ name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
-literal|"The ID of the image to list the paths from"
+literal|"The image to list the paths from"
 block|}
 block|}
 decl_stmt|;
@@ -634,7 +634,7 @@ name|return_args
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gchar
 modifier|*
@@ -642,7 +642,7 @@ name|name
 init|=
 name|NULL
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -663,7 +663,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -681,7 +681,7 @@ name|vectors
 init|=
 name|gimp_image_get_active_vectors
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 decl_stmt|;
 if|if
@@ -751,7 +751,7 @@ name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
-literal|"The ID of the image to get the current path from."
+literal|"The image to get the current path from"
 block|}
 block|}
 decl_stmt|;
@@ -849,13 +849,13 @@ name|TRUE
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -876,7 +876,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -930,7 +930,7 @@ name|vectors
 init|=
 name|gimp_image_get_vectors_by_name
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|name
 argument_list|)
@@ -941,7 +941,7 @@ name|vectors
 condition|)
 name|gimp_image_set_active_vectors
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|vectors
 argument_list|)
@@ -977,7 +977,7 @@ name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
-literal|"The ID of the image in which a path will become current."
+literal|"The image in which a path will become current"
 block|}
 block|,
 block|{
@@ -1064,13 +1064,13 @@ name|TRUE
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -1091,7 +1091,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -1145,7 +1145,7 @@ name|vectors
 init|=
 name|gimp_image_get_vectors_by_name
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|name
 argument_list|)
@@ -1156,7 +1156,7 @@ name|vectors
 condition|)
 name|gimp_image_remove_vectors
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|vectors
 argument_list|)
@@ -1192,7 +1192,7 @@ name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
-literal|"The ID of the image to delete the path from."
+literal|"The image to delete the path from"
 block|}
 block|,
 block|{
@@ -1283,7 +1283,7 @@ name|return_args
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gchar
 modifier|*
@@ -1310,7 +1310,7 @@ name|points_pairs
 init|=
 name|NULL
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -1331,7 +1331,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -1385,7 +1385,7 @@ name|vectors
 init|=
 name|gimp_image_get_vectors_by_name
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|name
 argument_list|)
@@ -1603,7 +1603,7 @@ name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
-literal|"The ID of the image to list the paths from."
+literal|"The image to list the paths from"
 block|}
 block|,
 block|{
@@ -1733,7 +1733,7 @@ name|TRUE
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gchar
 modifier|*
@@ -1749,7 +1749,7 @@ name|gdouble
 modifier|*
 name|points_pairs
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -1770,7 +1770,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -2004,7 +2004,7 @@ name|vectors
 operator|=
 name|gimp_vectors_compat_new
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|name
 argument_list|,
@@ -2026,7 +2026,7 @@ name|vectors
 condition|)
 name|gimp_image_add_vectors
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|vectors
 argument_list|,
@@ -2065,7 +2065,7 @@ name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
-literal|"The ID of the image to set the paths in."
+literal|"The image to set the paths in"
 block|}
 block|,
 block|{
@@ -2176,9 +2176,9 @@ name|TRUE
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -2199,7 +2199,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -2217,7 +2217,7 @@ name|vectors
 init|=
 name|gimp_image_get_active_vectors
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 decl_stmt|;
 name|GimpDrawable
@@ -2226,7 +2226,7 @@ name|drawable
 init|=
 name|gimp_image_active_drawable
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 decl_stmt|;
 if|if
@@ -2313,7 +2313,7 @@ name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
-literal|"The ID of the image which contains the path to stroke."
+literal|"The image which contains the path to stroke"
 block|}
 block|}
 decl_stmt|;
@@ -2396,7 +2396,7 @@ name|return_args
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gdouble
 name|distance
@@ -2416,7 +2416,7 @@ name|slope
 init|=
 literal|0.0
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -2437,7 +2437,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -2484,7 +2484,7 @@ name|vectors
 operator|=
 name|gimp_image_get_active_vectors
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 if|if
@@ -2692,7 +2692,7 @@ name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
-literal|"The ID of the image the paths belongs to"
+literal|"The image the paths belongs to"
 block|}
 block|,
 block|{
@@ -2818,7 +2818,7 @@ name|return_args
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gchar
 modifier|*
@@ -2829,7 +2829,7 @@ name|tattoo
 init|=
 literal|0
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -2850,7 +2850,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -2904,7 +2904,7 @@ name|vectors
 init|=
 name|gimp_image_get_vectors_by_name
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|name
 argument_list|)
@@ -3079,7 +3079,7 @@ name|TRUE
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gchar
 modifier|*
@@ -3088,7 +3088,7 @@ decl_stmt|;
 name|gint32
 name|tattovalue
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -3109,7 +3109,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -3174,7 +3174,7 @@ name|vectors
 init|=
 name|gimp_image_get_vectors_by_name
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|name
 argument_list|)
@@ -3323,7 +3323,7 @@ name|return_args
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gint32
 name|tattoo
@@ -3334,7 +3334,7 @@ name|name
 init|=
 name|NULL
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -3355,7 +3355,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -3384,7 +3384,7 @@ name|vectors
 init|=
 name|gimp_image_get_vectors_by_tattoo
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|tattoo
 argument_list|)
@@ -3566,7 +3566,7 @@ name|return_args
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gchar
 modifier|*
@@ -3577,7 +3577,7 @@ name|locked
 init|=
 name|FALSE
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -3598,7 +3598,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -3652,7 +3652,7 @@ name|vectors
 init|=
 name|gimp_image_get_vectors_by_name
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|name
 argument_list|)
@@ -3827,7 +3827,7 @@ name|TRUE
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gchar
 modifier|*
@@ -3836,7 +3836,7 @@ decl_stmt|;
 name|gboolean
 name|locked
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -3857,7 +3857,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -3926,7 +3926,7 @@ name|vectors
 init|=
 name|gimp_image_get_vectors_by_name
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|name
 argument_list|)
@@ -4073,7 +4073,7 @@ name|TRUE
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gchar
 modifier|*
@@ -4094,7 +4094,7 @@ decl_stmt|;
 name|gdouble
 name|feather_radius_y
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -4115,7 +4115,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -4246,7 +4246,7 @@ name|vectors
 init|=
 name|gimp_image_get_vectors_by_name
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|name
 argument_list|)
@@ -4259,7 +4259,7 @@ name|gimp_channel_select_vectors
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|_
@@ -4438,7 +4438,7 @@ name|TRUE
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gchar
 modifier|*
@@ -4450,7 +4450,7 @@ decl_stmt|;
 name|gboolean
 name|scale
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -4471,7 +4471,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -4542,7 +4542,7 @@ name|success
 operator|=
 name|gimp_vectors_import_file
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|filename
 argument_list|,
@@ -4685,7 +4685,7 @@ name|TRUE
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gchar
 modifier|*
@@ -4700,7 +4700,7 @@ decl_stmt|;
 name|gboolean
 name|scale
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -4721,7 +4721,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -4803,7 +4803,7 @@ name|success
 operator|=
 name|gimp_vectors_import_buffer
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|string
 argument_list|,

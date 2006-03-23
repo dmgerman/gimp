@@ -565,7 +565,7 @@ name|return_args
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gint32
 name|width
@@ -592,7 +592,7 @@ name|layer
 init|=
 name|NULL
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -613,7 +613,7 @@ condition|(
 operator|!
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|success
@@ -780,7 +780,7 @@ name|layer
 operator|=
 name|gimp_layer_new
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|width
 argument_list|,
@@ -797,13 +797,14 @@ argument_list|,
 name|mode
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|layer
+condition|)
 name|success
 operator|=
-operator|(
-name|layer
-operator|!=
-name|NULL
-operator|)
+name|FALSE
 expr_stmt|;
 block|}
 name|return_args
@@ -2607,7 +2608,7 @@ condition|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 init|=
 name|gimp_item_get_image
 argument_list|(
@@ -2619,7 +2620,7 @@ argument_list|)
 decl_stmt|;
 name|gimp_image_undo_group_start
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_ITEM_DISPLACE
 argument_list|,
@@ -2669,7 +2670,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_undo_group_end
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -2873,7 +2874,7 @@ condition|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 init|=
 name|gimp_item_get_image
 argument_list|(
@@ -2885,7 +2886,7 @@ argument_list|)
 decl_stmt|;
 name|gimp_image_undo_group_start
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_ITEM_DISPLACE
 argument_list|,
@@ -2953,7 +2954,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_undo_group_end
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
