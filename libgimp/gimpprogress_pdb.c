@@ -59,7 +59,7 @@ name|GIMP_PDB_STRING
 argument_list|,
 name|message
 argument_list|,
-name|GIMP_PDB_INT32
+name|GIMP_PDB_DISPLAY
 argument_list|,
 name|gimp_default_display
 argument_list|()

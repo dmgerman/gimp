@@ -223,7 +223,8 @@ name|gchar
 modifier|*
 name|message
 decl_stmt|;
-name|gint32
+name|GimpObject
+modifier|*
 name|gdisplay
 decl_stmt|;
 name|message
@@ -262,6 +263,10 @@ name|FALSE
 expr_stmt|;
 name|gdisplay
 operator|=
+name|gimp_get_display_by_ID
+argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|1
@@ -270,6 +275,7 @@ operator|.
 name|value
 operator|.
 name|pdb_int
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -343,7 +349,7 @@ literal|"Message to use in the progress dialog"
 block|}
 block|,
 block|{
-name|GIMP_PDB_INT32
+name|GIMP_PDB_DISPLAY
 block|,
 literal|"gdisplay"
 block|,

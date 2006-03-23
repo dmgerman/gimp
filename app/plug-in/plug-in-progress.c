@@ -83,7 +83,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|plug_in_progress_start (PlugIn * plug_in,const gchar * message,gint display_ID)
+DECL|function|plug_in_progress_start (PlugIn * plug_in,const gchar * message,GimpObject * display)
 name|plug_in_progress_start
 parameter_list|(
 name|PlugIn
@@ -95,8 +95,9 @@ name|gchar
 modifier|*
 name|message
 parameter_list|,
-name|gint
-name|display_ID
+name|GimpObject
+modifier|*
+name|display
 parameter_list|)
 block|{
 name|PlugInProcFrame
@@ -108,6 +109,18 @@ argument_list|(
 name|plug_in
 operator|!=
 name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|display
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_OBJECT
+argument_list|(
+name|display
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|proc_frame
@@ -135,7 +148,7 @@ name|plug_in
 operator|->
 name|gimp
 argument_list|,
-name|display_ID
+name|display
 argument_list|)
 expr_stmt|;
 if|if
@@ -481,8 +494,7 @@ name|plug_in
 argument_list|,
 name|NULL
 argument_list|,
-operator|-
-literal|1
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -566,8 +578,7 @@ name|plug_in
 argument_list|,
 name|NULL
 argument_list|,
-operator|-
-literal|1
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}

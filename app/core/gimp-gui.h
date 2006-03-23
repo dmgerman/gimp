@@ -358,8 +358,9 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|gint
-name|display_ID
+name|GimpObject
+modifier|*
+name|display
 parameter_list|)
 function_decl|;
 DECL|member|progress_free
@@ -781,8 +782,9 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|gint
-name|display_ID
+name|GimpObject
+modifier|*
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
