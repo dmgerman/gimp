@@ -136,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b1700460103
+DECL|enum|__anon2b9414b10103
 block|{
 DECL|enumerator|PSD_UNKNOWN_IMAGE
 name|PSD_UNKNOWN_IMAGE
@@ -324,7 +324,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1700460208
+DECL|struct|__anon2b9414b10208
 block|{
 DECL|member|hRes
 name|Fixed
@@ -381,7 +381,7 @@ name|gint
 name|type
 decl_stmt|;
 DECL|member|colmaplen
-name|gulong
+name|guint
 name|colmaplen
 decl_stmt|;
 DECL|member|colmapdata
@@ -573,7 +573,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b1700460308
+DECL|struct|__anon2b9414b10308
 block|{
 DECL|member|signature
 name|gchar
@@ -583,7 +583,7 @@ literal|4
 index|]
 decl_stmt|;
 DECL|member|version
-name|gushort
+name|guint16
 name|version
 decl_stmt|;
 DECL|member|reserved
@@ -594,44 +594,44 @@ literal|6
 index|]
 decl_stmt|;
 DECL|member|channels
-name|gushort
+name|guint16
 name|channels
 decl_stmt|;
 DECL|member|rows
-name|gulong
+name|guint32
 name|rows
 decl_stmt|;
 DECL|member|columns
-name|gulong
+name|guint32
 name|columns
 decl_stmt|;
 DECL|member|bpp
-name|gushort
+name|guint16
 name|bpp
 decl_stmt|;
 DECL|member|mode
-name|gushort
+name|guint16
 name|mode
 decl_stmt|;
 DECL|member|imgreslen
-name|gulong
+name|guint32
 name|imgreslen
 decl_stmt|;
 DECL|member|miscsizelen
-name|gulong
+name|guint32
 name|miscsizelen
 decl_stmt|;
 DECL|member|compression
-name|gushort
+name|guint16
 name|compression
 decl_stmt|;
 DECL|member|rowlength
-name|gushort
+name|guint16
 modifier|*
 name|rowlength
 decl_stmt|;
 DECL|member|imgdatalen
-name|long
+name|glong
 name|imgdatalen
 decl_stmt|;
 DECL|variable|PSDheader
@@ -838,8 +838,8 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gshort
-name|getgshort
+name|gint16
+name|getgint16
 parameter_list|(
 name|FILE
 modifier|*
@@ -854,8 +854,8 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|glong
-name|getglong
+name|gint32
+name|getgint32
 parameter_list|(
 name|FILE
 modifier|*
@@ -1822,10 +1822,10 @@ end_function
 begin_function
 specifier|static
 name|GimpImageBaseType
-DECL|function|psd_mode_to_gimp_base_type (gushort psdtype)
+DECL|function|psd_mode_to_gimp_base_type (guint16 psdtype)
 name|psd_mode_to_gimp_base_type
 parameter_list|(
-name|gushort
+name|guint16
 name|psdtype
 parameter_list|)
 block|{
@@ -2644,7 +2644,7 @@ name|psd_image
 operator|.
 name|active_layer_num
 operator|=
-name|getgshort
+name|getgint16
 argument_list|(
 name|fd
 argument_list|,
@@ -2765,7 +2765,7 @@ operator|>
 literal|0
 condition|)
 block|{
-name|gshort
+name|gint16
 name|magic1
 decl_stmt|,
 name|magic2
@@ -2778,7 +2778,7 @@ name|magic5
 decl_stmt|,
 name|magic6
 decl_stmt|;
-name|glong
+name|gint32
 name|num_guides
 decl_stmt|;
 name|PSDguide
@@ -2787,7 +2787,7 @@ name|guide
 decl_stmt|;
 name|magic1
 operator|=
-name|getgshort
+name|getgint16
 argument_list|(
 name|fd
 argument_list|,
@@ -2803,7 +2803,7 @@ literal|2
 expr_stmt|;
 name|magic2
 operator|=
-name|getgshort
+name|getgint16
 argument_list|(
 name|fd
 argument_list|,
@@ -2819,7 +2819,7 @@ literal|2
 expr_stmt|;
 name|magic3
 operator|=
-name|getgshort
+name|getgint16
 argument_list|(
 name|fd
 argument_list|,
@@ -2835,7 +2835,7 @@ literal|2
 expr_stmt|;
 name|magic4
 operator|=
-name|getgshort
+name|getgint16
 argument_list|(
 name|fd
 argument_list|,
@@ -2851,7 +2851,7 @@ literal|2
 expr_stmt|;
 name|magic5
 operator|=
-name|getgshort
+name|getgint16
 argument_list|(
 name|fd
 argument_list|,
@@ -2867,7 +2867,7 @@ literal|2
 expr_stmt|;
 name|magic6
 operator|=
-name|getgshort
+name|getgint16
 argument_list|(
 name|fd
 argument_list|,
@@ -2931,7 +2931,7 @@ argument_list|)
 decl_stmt|;
 name|num_guides
 operator|=
-name|getglong
+name|getgint32
 argument_list|(
 name|fd
 argument_list|,
@@ -2973,7 +2973,7 @@ block|}
 name|IFDBG
 name|printf
 argument_list|(
-literal|"\t\t\tNumber of guides is %ld\n"
+literal|"\t\t\tNumber of guides is %d\n"
 argument_list|,
 name|num_guides
 argument_list|)
@@ -3022,7 +3022,7 @@ name|guide
 operator|->
 name|position
 operator|=
-name|getglong
+name|getgint32
 argument_list|(
 name|fd
 argument_list|,
@@ -3234,7 +3234,7 @@ name|resolution
 operator|.
 name|hRes
 operator|=
-name|getglong
+name|getgint32
 argument_list|(
 name|fd
 argument_list|,
@@ -3247,7 +3247,7 @@ name|resolution
 operator|.
 name|hRes_unit
 operator|=
-name|getgshort
+name|getgint16
 argument_list|(
 name|fd
 argument_list|,
@@ -3260,7 +3260,7 @@ name|resolution
 operator|.
 name|widthUnit
 operator|=
-name|getgshort
+name|getgint16
 argument_list|(
 name|fd
 argument_list|,
@@ -3273,7 +3273,7 @@ name|resolution
 operator|.
 name|vRes
 operator|=
-name|getglong
+name|getgint32
 argument_list|(
 name|fd
 argument_list|,
@@ -3286,7 +3286,7 @@ name|resolution
 operator|.
 name|vRes_unit
 operator|=
-name|getgshort
+name|getgint16
 argument_list|(
 name|fd
 argument_list|,
@@ -3299,7 +3299,7 @@ name|resolution
 operator|.
 name|heightUnit
 operator|=
-name|getgshort
+name|getgint16
 argument_list|(
 name|fd
 argument_list|,
@@ -3627,7 +3627,7 @@ expr_stmt|;
 comment|/* table 11-12 */
 name|top
 operator|=
-name|getglong
+name|getgint32
 argument_list|(
 name|fd
 argument_list|,
@@ -3643,7 +3643,7 @@ literal|4
 expr_stmt|;
 name|left
 operator|=
-name|getglong
+name|getgint32
 argument_list|(
 name|fd
 argument_list|,
@@ -3659,7 +3659,7 @@ literal|4
 expr_stmt|;
 name|bottom
 operator|=
-name|getglong
+name|getgint32
 argument_list|(
 name|fd
 argument_list|,
@@ -3675,7 +3675,7 @@ literal|4
 expr_stmt|;
 name|right
 operator|=
-name|getglong
+name|getgint32
 argument_list|(
 name|fd
 argument_list|,
@@ -3735,7 +3735,7 @@ name|layer
 operator|->
 name|num_channels
 operator|=
-name|getgshort
+name|getgint16
 argument_list|(
 name|fd
 argument_list|,
@@ -3821,7 +3821,7 @@ name|channel
 operator|->
 name|type
 operator|=
-name|getgshort
+name|getgint16
 argument_list|(
 name|fd
 argument_list|,
@@ -3849,7 +3849,7 @@ name|channel
 operator|->
 name|compressedsize
 operator|=
-name|getglong
+name|getgint32
 argument_list|(
 name|fd
 argument_list|,
@@ -4158,7 +4158,7 @@ operator|++
 expr_stmt|;
 name|extradatasize
 operator|=
-name|getglong
+name|getgint32
 argument_list|(
 name|fd
 argument_list|,
@@ -4194,7 +4194,7 @@ expr_stmt|;
 comment|/* table 11-14 */
 name|layermaskdatasize
 operator|=
-name|getglong
+name|getgint32
 argument_list|(
 name|fd
 argument_list|,
@@ -4234,7 +4234,7 @@ literal|0
 decl_stmt|;
 name|top
 operator|=
-name|getglong
+name|getgint32
 argument_list|(
 name|fd
 argument_list|,
@@ -4247,7 +4247,7 @@ literal|4
 expr_stmt|;
 name|left
 operator|=
-name|getglong
+name|getgint32
 argument_list|(
 name|fd
 argument_list|,
@@ -4260,7 +4260,7 @@ literal|4
 expr_stmt|;
 name|bottom
 operator|=
-name|getglong
+name|getgint32
 argument_list|(
 name|fd
 argument_list|,
@@ -4273,7 +4273,7 @@ literal|4
 expr_stmt|;
 name|right
 operator|=
-name|getglong
+name|getgint32
 argument_list|(
 name|fd
 argument_list|,
@@ -4445,7 +4445,7 @@ expr_stmt|;
 block|}
 name|layerrangesdatasize
 operator|=
-name|getglong
+name|getgint32
 argument_list|(
 name|fd
 argument_list|,
@@ -4732,7 +4732,7 @@ name|psd_image
 operator|.
 name|num_layers
 operator|=
-name|getgshort
+name|getgint16
 argument_list|(
 name|fd
 argument_list|,
@@ -5074,7 +5074,7 @@ argument_list|)
 expr_stmt|;
 name|compression
 operator|=
-name|getgshort
+name|getgint16
 argument_list|(
 name|fd
 argument_list|,
@@ -5364,7 +5364,7 @@ name|section_length
 decl_stmt|;
 name|section_length
 operator|=
-name|getglong
+name|getgint32
 argument_list|(
 name|fd
 argument_list|,
@@ -5627,7 +5627,7 @@ expr_stmt|;
 comment|/* generic information about a block ID */
 name|ID
 operator|=
-name|getgshort
+name|getgint16
 argument_list|(
 name|fd
 argument_list|,
@@ -5727,7 +5727,7 @@ expr_stmt|;
 block|}
 name|Size
 operator|=
-name|getglong
+name|getgint32
 argument_list|(
 name|fd
 argument_list|,
@@ -9469,7 +9469,7 @@ literal|768
 condition|)
 name|printf
 argument_list|(
-literal|"PSD: Warning: Indexed image is %ld!=256 colours.\n"
+literal|"PSD: Warning: Indexed image is %d!=256 colours.\n"
 argument_list|,
 name|psd_image
 operator|.
@@ -10232,8 +10232,7 @@ operator|.
 name|num_layers
 argument_list|,
 operator|(
-name|long
-name|int
+name|glong
 operator|)
 name|ftell
 argument_list|(
@@ -10283,7 +10282,7 @@ decl_stmt|;
 name|gint32
 name|l
 decl_stmt|;
-name|gushort
+name|guint16
 modifier|*
 name|w
 decl_stmt|;
@@ -10328,11 +10327,8 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"decode: %ld should be zero\n"
+literal|"decode: %d should be zero\n"
 argument_list|,
-operator|(
-name|long
-operator|)
 name|l
 argument_list|)
 expr_stmt|;
@@ -11669,9 +11665,9 @@ end_function
 
 begin_function
 specifier|static
-name|gshort
-DECL|function|getgshort (FILE * fd,gchar * why)
-name|getgshort
+name|gint16
+DECL|function|getgint16 (FILE * fd,gchar * why)
+name|getgint16
 parameter_list|(
 name|FILE
 modifier|*
@@ -11707,7 +11703,7 @@ argument_list|)
 expr_stmt|;
 return|return
 call|(
-name|gshort
+name|gint16
 call|)
 argument_list|(
 operator|(
@@ -11724,9 +11720,9 @@ end_function
 
 begin_function
 specifier|static
-name|glong
-DECL|function|getglong (FILE * fd,gchar * why)
-name|getglong
+name|gint32
+DECL|function|getgint32 (FILE * fd,gchar * why)
+name|getgint32
 parameter_list|(
 name|FILE
 modifier|*
@@ -11784,7 +11780,7 @@ argument_list|)
 expr_stmt|;
 return|return
 call|(
-name|glong
+name|gint32
 call|)
 argument_list|(
 operator|(
@@ -12023,7 +12019,7 @@ name|PSDheader
 operator|.
 name|version
 operator|=
-name|getgshort
+name|getgint16
 argument_list|(
 name|fd
 argument_list|,
@@ -12046,7 +12042,7 @@ name|PSDheader
 operator|.
 name|channels
 operator|=
-name|getgshort
+name|getgint16
 argument_list|(
 name|fd
 argument_list|,
@@ -12057,7 +12053,7 @@ name|PSDheader
 operator|.
 name|rows
 operator|=
-name|getglong
+name|getgint32
 argument_list|(
 name|fd
 argument_list|,
@@ -12068,7 +12064,7 @@ name|PSDheader
 operator|.
 name|columns
 operator|=
-name|getglong
+name|getgint32
 argument_list|(
 name|fd
 argument_list|,
@@ -12079,7 +12075,7 @@ name|PSDheader
 operator|.
 name|bpp
 operator|=
-name|getgshort
+name|getgint16
 argument_list|(
 name|fd
 argument_list|,
@@ -12090,7 +12086,7 @@ name|PSDheader
 operator|.
 name|mode
 operator|=
-name|getgshort
+name|getgint16
 argument_list|(
 name|fd
 argument_list|,
@@ -12133,7 +12129,7 @@ name|psd_image
 operator|.
 name|colmaplen
 operator|=
-name|getglong
+name|getgint32
 argument_list|(
 name|fd
 argument_list|,
@@ -12180,7 +12176,7 @@ name|PSDheader
 operator|.
 name|imgreslen
 operator|=
-name|getglong
+name|getgint32
 argument_list|(
 name|fd
 argument_list|,
@@ -12206,7 +12202,7 @@ name|PSDheader
 operator|.
 name|miscsizelen
 operator|=
-name|getglong
+name|getgint32
 argument_list|(
 name|fd
 argument_list|,
@@ -12232,7 +12228,7 @@ name|PSDheader
 operator|.
 name|compression
 operator|=
-name|getgshort
+name|getgint16
 argument_list|(
 name|fd
 argument_list|,
@@ -12278,7 +12274,7 @@ name|channels
 operator|*
 sizeof|sizeof
 argument_list|(
-name|gushort
+name|guint16
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -12308,7 +12304,7 @@ index|[
 name|i
 index|]
 operator|=
-name|getgshort
+name|getgint16
 argument_list|(
 name|fd
 argument_list|,
@@ -12409,8 +12405,8 @@ name|IFDBG
 name|printf
 argument_list|(
 literal|"HEAD:\n"
-literal|"\tChannels %d\n\tRows %ld\n\tColumns %ld\n\tDepth %d\n\tMode %d (%s)\n"
-literal|"\tColour data %ld guchars\n"
+literal|"\tChannels %d\n\tRows %d\n\tColumns %d\n\tDepth %d\n\tMode %d (%s)\n"
+literal|"\tColour data %d guchars\n"
 argument_list|,
 name|PSDheader
 operator|.
@@ -12450,7 +12446,7 @@ comment|/*    printf("\tImage resource length: %lu\n", PSDheader.imgreslen);*/
 name|IFDBG
 name|printf
 argument_list|(
-literal|"\tLayer/Mask Data length: %lu\n"
+literal|"\tLayer/Mask Data length: %u\n"
 argument_list|,
 name|PSDheader
 operator|.

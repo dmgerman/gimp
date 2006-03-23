@@ -474,8 +474,7 @@ name|FILE
 modifier|*
 name|fd
 parameter_list|,
-name|unsigned
-name|char
+name|guchar
 name|val
 parameter_list|,
 name|gchar
@@ -488,13 +487,13 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|write_gshort
+name|write_gint16
 parameter_list|(
 name|FILE
 modifier|*
 name|fd
 parameter_list|,
-name|gshort
+name|gint16
 name|val
 parameter_list|,
 name|gchar
@@ -507,13 +506,13 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|write_glong
+name|write_gint32
 parameter_list|(
 name|FILE
 modifier|*
 name|fd
 parameter_list|,
-name|glong
+name|gint32
 name|val
 parameter_list|,
 name|gchar
@@ -539,7 +538,7 @@ name|gint32
 modifier|*
 name|ChanLenPosition
 parameter_list|,
-name|glong
+name|gint32
 name|rowlenOffset
 parameter_list|)
 function_decl|;
@@ -1287,7 +1286,7 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
-name|write_gshort
+name|write_gint16
 argument_list|(
 name|fd
 argument_list|,
@@ -1401,15 +1400,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|write_gchar (FILE * fd,unsigned char val,gchar * why)
+DECL|function|write_gchar (FILE * fd,guchar val,gchar * why)
 name|write_gchar
 parameter_list|(
 name|FILE
 modifier|*
 name|fd
 parameter_list|,
-name|unsigned
-name|char
+name|guchar
 name|val
 parameter_list|,
 name|gchar
@@ -1494,14 +1492,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|write_gshort (FILE * fd,gshort val,gchar * why)
-name|write_gshort
+DECL|function|write_gint16 (FILE * fd,gint16 val,gchar * why)
+name|write_gint16
 parameter_list|(
 name|FILE
 modifier|*
 name|fd
 parameter_list|,
-name|gshort
+name|gint16
 name|val
 parameter_list|,
 name|gchar
@@ -1559,7 +1557,7 @@ block|{
 name|IFDBG
 name|printf
 argument_list|(
-literal|" Function: write_gshort: Error while writing '%s'\n"
+literal|" Function: write_gint16: Error while writing '%s'\n"
 argument_list|,
 name|why
 argument_list|)
@@ -1574,14 +1572,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|write_glong (FILE * fd,glong val,gchar * why)
-name|write_glong
+DECL|function|write_gint32 (FILE * fd,gint32 val,gchar * why)
+name|write_gint32
 parameter_list|(
 name|FILE
 modifier|*
 name|fd
 parameter_list|,
-name|glong
+name|gint32
 name|val
 parameter_list|,
 name|gchar
@@ -1664,7 +1662,7 @@ block|{
 name|IFDBG
 name|printf
 argument_list|(
-literal|" Function: write_glong: Error while writing '%s'\n"
+literal|" Function: write_gint32: Error while writing '%s'\n"
 argument_list|,
 name|why
 argument_list|)
@@ -1678,18 +1676,18 @@ end_function
 
 begin_function
 specifier|static
-name|glong
-DECL|function|pack_pb_line (guchar * start,glong length,glong stride,guchar * dest_ptr)
+name|gint32
+DECL|function|pack_pb_line (guchar * start,gint32 length,gint32 stride,guchar * dest_ptr)
 name|pack_pb_line
 parameter_list|(
 name|guchar
 modifier|*
 name|start
 parameter_list|,
-name|glong
+name|gint32
 name|length
 parameter_list|,
-name|glong
+name|gint32
 name|stride
 parameter_list|,
 name|guchar
@@ -1702,7 +1700,7 @@ name|i
 decl_stmt|,
 name|j
 decl_stmt|;
-name|glong
+name|gint32
 name|remaining
 decl_stmt|;
 name|remaining
@@ -2277,7 +2275,7 @@ argument_list|,
 literal|"signature"
 argument_list|)
 expr_stmt|;
-name|write_gshort
+name|write_gint16
 argument_list|(
 name|fd
 argument_list|,
@@ -2286,7 +2284,7 @@ argument_list|,
 literal|"version"
 argument_list|)
 expr_stmt|;
-name|write_glong
+name|write_gint32
 argument_list|(
 name|fd
 argument_list|,
@@ -2296,7 +2294,7 @@ literal|"reserved 1"
 argument_list|)
 expr_stmt|;
 comment|/* 6 for the 'reserved' field + 4 bytes for a long */
-name|write_gshort
+name|write_gint16
 argument_list|(
 name|fd
 argument_list|,
@@ -2306,7 +2304,7 @@ literal|"reserved 1"
 argument_list|)
 expr_stmt|;
 comment|/* and 2 bytes for a short */
-name|write_gshort
+name|write_gint16
 argument_list|(
 name|fd
 argument_list|,
@@ -2328,7 +2326,7 @@ argument_list|,
 literal|"channels"
 argument_list|)
 expr_stmt|;
-name|write_glong
+name|write_gint32
 argument_list|(
 name|fd
 argument_list|,
@@ -2339,7 +2337,7 @@ argument_list|,
 literal|"rows"
 argument_list|)
 expr_stmt|;
-name|write_glong
+name|write_gint32
 argument_list|(
 name|fd
 argument_list|,
@@ -2350,7 +2348,7 @@ argument_list|,
 literal|"columns"
 argument_list|)
 expr_stmt|;
-name|write_gshort
+name|write_gint16
 argument_list|(
 name|fd
 argument_list|,
@@ -2360,7 +2358,7 @@ literal|"depth"
 argument_list|)
 expr_stmt|;
 comment|/* Apparently GIMP only supports 8 bit deep                                      PSD images.  */
-name|write_gshort
+name|write_gint16
 argument_list|(
 name|fd
 argument_list|,
@@ -2458,7 +2456,7 @@ argument_list|(
 literal|"      The indexed image lacks a colormap\n"
 argument_list|)
 decl_stmt|;
-name|write_glong
+name|write_gint32
 argument_list|(
 name|fd
 argument_list|,
@@ -2490,7 +2488,7 @@ argument_list|(
 literal|"      Padding with zeros up to 256\n"
 argument_list|)
 decl_stmt|;
-name|write_glong
+name|write_gint32
 argument_list|(
 name|fd
 argument_list|,
@@ -2580,7 +2578,7 @@ block|}
 else|else
 comment|/* nColors equals 256 */
 block|{
-name|write_glong
+name|write_gint32
 argument_list|(
 name|fd
 argument_list|,
@@ -2616,7 +2614,7 @@ argument_list|(
 literal|"      Image type: Not INDEXED\n"
 argument_list|)
 decl_stmt|;
-name|write_glong
+name|write_gint32
 argument_list|(
 name|fd
 argument_list|,
@@ -2788,7 +2786,7 @@ argument_list|(
 name|fd
 argument_list|)
 expr_stmt|;
-name|write_glong
+name|write_gint32
 argument_list|(
 name|fd
 argument_list|,
@@ -2818,7 +2816,7 @@ argument_list|,
 literal|"imageresources signature"
 argument_list|)
 expr_stmt|;
-name|write_gshort
+name|write_gint16
 argument_list|(
 name|fd
 argument_list|,
@@ -2828,7 +2826,7 @@ literal|"0x03EE Id"
 argument_list|)
 expr_stmt|;
 comment|/* write_pascalstring (fd, Name, "Id name"); */
-name|write_gshort
+name|write_gint16
 argument_list|(
 name|fd
 argument_list|,
@@ -2846,7 +2844,7 @@ argument_list|(
 name|fd
 argument_list|)
 expr_stmt|;
-name|write_glong
+name|write_gint32
 argument_list|(
 name|fd
 argument_list|,
@@ -2920,7 +2918,7 @@ argument_list|,
 name|SEEK_SET
 argument_list|)
 expr_stmt|;
-name|write_glong
+name|write_gint32
 argument_list|(
 name|fd
 argument_list|,
@@ -2930,7 +2928,7 @@ name|name_sec
 operator|-
 sizeof|sizeof
 argument_list|(
-name|glong
+name|gint32
 argument_list|)
 argument_list|,
 literal|"0x03EE resource size"
@@ -2951,7 +2949,7 @@ name|name_sec
 operator|-
 sizeof|sizeof
 argument_list|(
-name|glong
+name|gint32
 argument_list|)
 argument_list|)
 argument_list|)
@@ -2976,7 +2974,7 @@ name|name_sec
 operator|-
 sizeof|sizeof
 argument_list|(
-name|glong
+name|gint32
 argument_list|)
 operator|)
 operator|&
@@ -3041,7 +3039,7 @@ argument_list|,
 literal|"imageresources signature"
 argument_list|)
 expr_stmt|;
-name|write_gshort
+name|write_gint16
 argument_list|(
 name|fd
 argument_list|,
@@ -3051,7 +3049,7 @@ literal|"0x0408 Id (Guides)"
 argument_list|)
 expr_stmt|;
 comment|/* write_pascalstring (fd, Name, "Id name"); */
-name|write_gshort
+name|write_gint16
 argument_list|(
 name|fd
 argument_list|,
@@ -3061,7 +3059,7 @@ literal|"Id name"
 argument_list|)
 expr_stmt|;
 comment|/* Set to null string (two zeros) */
-name|write_glong
+name|write_gint32
 argument_list|(
 name|fd
 argument_list|,
@@ -3075,7 +3073,7 @@ literal|"0x0408 resource size"
 argument_list|)
 expr_stmt|;
 comment|/* Save grid and guide header */
-name|write_glong
+name|write_gint32
 argument_list|(
 name|fd
 argument_list|,
@@ -3084,7 +3082,7 @@ argument_list|,
 literal|"grid/guide header version"
 argument_list|)
 expr_stmt|;
-name|write_glong
+name|write_gint32
 argument_list|(
 name|fd
 argument_list|,
@@ -3094,7 +3092,7 @@ literal|"grid custom spacing horizontal"
 argument_list|)
 expr_stmt|;
 comment|/* dpi*32/4??*/
-name|write_glong
+name|write_gint32
 argument_list|(
 name|fd
 argument_list|,
@@ -3104,7 +3102,7 @@ literal|"grid custom spacing vertical"
 argument_list|)
 expr_stmt|;
 comment|/* dpi*32/4??*/
-name|write_glong
+name|write_gint32
 argument_list|(
 name|fd
 argument_list|,
@@ -3131,7 +3129,7 @@ block|{
 name|gchar
 name|orientation
 decl_stmt|;
-name|glong
+name|gint32
 name|position
 decl_stmt|;
 name|orientation
@@ -3159,7 +3157,7 @@ operator|^=
 literal|1
 expr_stmt|;
 comment|/* in the psd vert =0 , horiz = 1 */
-name|write_glong
+name|write_gint32
 argument_list|(
 name|fd
 argument_list|,
@@ -3222,7 +3220,7 @@ name|int
 operator|)
 sizeof|sizeof
 argument_list|(
-name|gshort
+name|gint16
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -3246,7 +3244,7 @@ decl_stmt|;
 name|GimpUnit
 name|g_unit
 decl_stmt|;
-name|gshort
+name|gint16
 name|psd_unit
 decl_stmt|;
 name|g_unit
@@ -3333,7 +3331,7 @@ argument_list|,
 literal|"imageresources signature (for resolution)"
 argument_list|)
 expr_stmt|;
-name|write_gshort
+name|write_gint16
 argument_list|(
 name|fd
 argument_list|,
@@ -3342,7 +3340,7 @@ argument_list|,
 literal|"0x03ed Id (resolution)"
 argument_list|)
 expr_stmt|;
-name|write_gshort
+name|write_gint16
 argument_list|(
 name|fd
 argument_list|,
@@ -3352,7 +3350,7 @@ literal|"Id name"
 argument_list|)
 expr_stmt|;
 comment|/* Set to null string (two zeros) */
-name|write_glong
+name|write_gint32
 argument_list|(
 name|fd
 argument_list|,
@@ -3361,7 +3359,7 @@ argument_list|,
 literal|"0x0400 resource size"
 argument_list|)
 expr_stmt|;
-name|write_glong
+name|write_gint32
 argument_list|(
 name|fd
 argument_list|,
@@ -3370,7 +3368,7 @@ argument_list|,
 literal|"hRes (16.16 fixed point)"
 argument_list|)
 expr_stmt|;
-name|write_gshort
+name|write_gint16
 argument_list|(
 name|fd
 argument_list|,
@@ -3379,7 +3377,7 @@ argument_list|,
 literal|"hRes unit"
 argument_list|)
 expr_stmt|;
-name|write_gshort
+name|write_gint16
 argument_list|(
 name|fd
 argument_list|,
@@ -3388,7 +3386,7 @@ argument_list|,
 literal|"width unit"
 argument_list|)
 expr_stmt|;
-name|write_glong
+name|write_gint32
 argument_list|(
 name|fd
 argument_list|,
@@ -3397,7 +3395,7 @@ argument_list|,
 literal|"vRes (16.16 fixed point)"
 argument_list|)
 expr_stmt|;
-name|write_gshort
+name|write_gint16
 argument_list|(
 name|fd
 argument_list|,
@@ -3406,7 +3404,7 @@ argument_list|,
 literal|"vRes unit"
 argument_list|)
 expr_stmt|;
-name|write_gshort
+name|write_gint16
 argument_list|(
 name|fd
 argument_list|,
@@ -3433,7 +3431,7 @@ argument_list|,
 literal|"imageresources signature"
 argument_list|)
 expr_stmt|;
-name|write_gshort
+name|write_gint16
 argument_list|(
 name|fd
 argument_list|,
@@ -3443,7 +3441,7 @@ literal|"0x0400 Id"
 argument_list|)
 expr_stmt|;
 comment|/* write_pascalstring (fd, Name, "Id name"); */
-name|write_gshort
+name|write_gint16
 argument_list|(
 name|fd
 argument_list|,
@@ -3453,20 +3451,20 @@ literal|"Id name"
 argument_list|)
 expr_stmt|;
 comment|/* Set to null string (two zeros) */
-name|write_glong
+name|write_gint32
 argument_list|(
 name|fd
 argument_list|,
 sizeof|sizeof
 argument_list|(
-name|gshort
+name|gint16
 argument_list|)
 argument_list|,
 literal|"0x0400 resource size"
 argument_list|)
 expr_stmt|;
-comment|/* Save title as gshort (length always even) */
-name|write_gshort
+comment|/* Save title as gint16 (length always even) */
+name|write_gint16
 argument_list|(
 name|fd
 argument_list|,
@@ -3485,7 +3483,7 @@ name|int
 operator|)
 sizeof|sizeof
 argument_list|(
-name|gshort
+name|gint16
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -3507,7 +3505,7 @@ argument_list|,
 name|SEEK_SET
 argument_list|)
 expr_stmt|;
-name|write_glong
+name|write_gint32
 argument_list|(
 name|fd
 argument_list|,
@@ -3517,7 +3515,7 @@ name|rsc_pos
 operator|-
 sizeof|sizeof
 argument_list|(
-name|glong
+name|gint32
 argument_list|)
 argument_list|,
 literal|"image resources length"
@@ -3538,7 +3536,7 @@ name|rsc_pos
 operator|-
 sizeof|sizeof
 argument_list|(
-name|glong
+name|gint32
 argument_list|)
 argument_list|)
 argument_list|)
@@ -3559,7 +3557,7 @@ end_function
 begin_function
 specifier|static
 name|int
-DECL|function|get_compress_channel_data (guchar * channel_data,gint32 channel_cols,gint32 channel_rows,gint32 stride,gshort * LengthsTable,guchar * remdata)
+DECL|function|get_compress_channel_data (guchar * channel_data,gint32 channel_cols,gint32 channel_rows,gint32 stride,gint16 * LengthsTable,guchar * remdata)
 name|get_compress_channel_data
 parameter_list|(
 name|guchar
@@ -3575,7 +3573,7 @@ parameter_list|,
 name|gint32
 name|stride
 parameter_list|,
-name|gshort
+name|gint16
 modifier|*
 name|LengthsTable
 parameter_list|,
@@ -3666,7 +3664,7 @@ name|i
 index|]
 expr_stmt|;
 block|}
-comment|/*  return((len + channel_rows * sizeof (gshort)) + sizeof (gshort));*/
+comment|/*  return((len + channel_rows * sizeof (gint16)) + sizeof (gint16));*/
 return|return
 name|len
 return|;
@@ -3788,7 +3786,7 @@ argument_list|(
 name|fd
 argument_list|)
 expr_stmt|;
-name|write_glong
+name|write_gint32
 argument_list|(
 name|fd
 argument_list|,
@@ -3805,7 +3803,7 @@ argument_list|(
 name|fd
 argument_list|)
 expr_stmt|;
-name|write_glong
+name|write_gint32
 argument_list|(
 name|fd
 argument_list|,
@@ -3815,7 +3813,7 @@ literal|"layers info section length"
 argument_list|)
 expr_stmt|;
 comment|/* Layer structure section */
-name|write_gshort
+name|write_gint16
 argument_list|(
 name|fd
 argument_list|,
@@ -3998,7 +3996,7 @@ operator|.
 name|height
 argument_list|)
 decl_stmt|;
-name|write_glong
+name|write_gint32
 argument_list|(
 name|fd
 argument_list|,
@@ -4014,7 +4012,7 @@ argument_list|,
 literal|"Layer top"
 argument_list|)
 expr_stmt|;
-name|write_glong
+name|write_gint32
 argument_list|(
 name|fd
 argument_list|,
@@ -4030,7 +4028,7 @@ argument_list|,
 literal|"Layer left"
 argument_list|)
 expr_stmt|;
-name|write_glong
+name|write_gint32
 argument_list|(
 name|fd
 argument_list|,
@@ -4057,7 +4055,7 @@ argument_list|,
 literal|"Layer bottom"
 argument_list|)
 expr_stmt|;
-name|write_glong
+name|write_gint32
 argument_list|(
 name|fd
 argument_list|,
@@ -4103,7 +4101,7 @@ index|]
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|write_gshort
+name|write_gint16
 argument_list|(
 name|fd
 argument_list|,
@@ -4171,7 +4169,7 @@ name|idChannel
 operator|=
 name|j
 expr_stmt|;
-name|write_gshort
+name|write_gint16
 argument_list|(
 name|fd
 argument_list|,
@@ -4206,7 +4204,7 @@ name|ChanSize
 operator|=
 sizeof|sizeof
 argument_list|(
-name|gshort
+name|gint16
 argument_list|)
 operator|+
 operator|(
@@ -4229,7 +4227,7 @@ operator|.
 name|height
 operator|)
 expr_stmt|;
-name|write_glong
+name|write_gint32
 argument_list|(
 name|fd
 argument_list|,
@@ -4406,7 +4404,7 @@ name|fd
 argument_list|)
 expr_stmt|;
 comment|/* Position of Extra Data size */
-name|write_glong
+name|write_gint32
 argument_list|(
 name|fd
 argument_list|,
@@ -4437,7 +4435,7 @@ operator|>=
 literal|0
 condition|)
 block|{
-name|write_glong
+name|write_gint32
 argument_list|(
 name|fd
 argument_list|,
@@ -4446,7 +4444,7 @@ argument_list|,
 literal|"Layer mask size"
 argument_list|)
 expr_stmt|;
-name|write_glong
+name|write_gint32
 argument_list|(
 name|fd
 argument_list|,
@@ -4455,7 +4453,7 @@ argument_list|,
 literal|"Layer mask top"
 argument_list|)
 expr_stmt|;
-name|write_glong
+name|write_gint32
 argument_list|(
 name|fd
 argument_list|,
@@ -4464,7 +4462,7 @@ argument_list|,
 literal|"Layer mask left"
 argument_list|)
 expr_stmt|;
-name|write_glong
+name|write_gint32
 argument_list|(
 name|fd
 argument_list|,
@@ -4476,7 +4474,7 @@ argument_list|,
 literal|"Layer mask bottom"
 argument_list|)
 expr_stmt|;
-name|write_glong
+name|write_gint32
 argument_list|(
 name|fd
 argument_list|,
@@ -4530,7 +4528,7 @@ argument_list|,
 literal|"layer mask flags"
 argument_list|)
 expr_stmt|;
-name|write_gshort
+name|write_gint16
 argument_list|(
 name|fd
 argument_list|,
@@ -4544,7 +4542,7 @@ else|else
 else|#
 directive|else
 comment|/* NOTE Writing empty Layer mask / adjustment layer data */
-name|write_glong
+name|write_gint32
 argument_list|(
 name|fd
 argument_list|,
@@ -4564,7 +4562,7 @@ decl_stmt|;
 endif|#
 directive|endif
 comment|/* NOTE Writing empty Layer blending ranges data */
-name|write_glong
+name|write_gint32
 argument_list|(
 name|fd
 argument_list|,
@@ -4629,7 +4627,7 @@ argument_list|,
 name|SEEK_SET
 argument_list|)
 expr_stmt|;
-name|write_glong
+name|write_gint32
 argument_list|(
 name|fd
 argument_list|,
@@ -4639,7 +4637,7 @@ name|ExtraDataPos
 operator|-
 sizeof|sizeof
 argument_list|(
-name|glong
+name|gint32
 argument_list|)
 argument_list|,
 literal|"Extra data size"
@@ -4660,7 +4658,7 @@ name|ExtraDataPos
 operator|-
 sizeof|sizeof
 argument_list|(
-name|glong
+name|gint32
 argument_list|)
 argument_list|)
 argument_list|)
@@ -4733,7 +4731,7 @@ argument_list|,
 name|SEEK_SET
 argument_list|)
 expr_stmt|;
-name|write_glong
+name|write_gint32
 argument_list|(
 name|fd
 argument_list|,
@@ -4743,7 +4741,7 @@ name|LayerInfoPos
 operator|-
 sizeof|sizeof
 argument_list|(
-name|glong
+name|gint32
 argument_list|)
 argument_list|,
 literal|"layers info section length"
@@ -4764,7 +4762,7 @@ name|LayerInfoPos
 operator|-
 sizeof|sizeof
 argument_list|(
-name|glong
+name|gint32
 argument_list|)
 argument_list|)
 argument_list|)
@@ -4779,7 +4777,7 @@ argument_list|,
 name|SEEK_SET
 argument_list|)
 expr_stmt|;
-name|write_glong
+name|write_gint32
 argument_list|(
 name|fd
 argument_list|,
@@ -4789,7 +4787,7 @@ name|LayerMaskPos
 operator|-
 sizeof|sizeof
 argument_list|(
-name|glong
+name|gint32
 argument_list|)
 argument_list|,
 literal|"layers& mask information length"
@@ -4810,7 +4808,7 @@ name|LayerMaskPos
 operator|-
 sizeof|sizeof
 argument_list|(
-name|glong
+name|gint32
 argument_list|)
 argument_list|)
 argument_list|)
@@ -4831,7 +4829,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|write_pixel_data (FILE * fd,gint32 drawableID,gint32 * ChanLenPosition,glong ltable_offset)
+DECL|function|write_pixel_data (FILE * fd,gint32 drawableID,gint32 * ChanLenPosition,gint32 ltable_offset)
 name|write_pixel_data
 parameter_list|(
 name|FILE
@@ -4845,7 +4843,7 @@ name|gint32
 modifier|*
 name|ChanLenPosition
 parameter_list|,
-name|glong
+name|gint32
 name|ltable_offset
 parameter_list|)
 block|{
@@ -4903,11 +4901,11 @@ comment|/* fixed up down below */
 name|gint32
 name|y
 decl_stmt|;
-name|glong
+name|gint32
 name|len
 decl_stmt|;
 comment|/* Length of compressed data */
-name|gshort
+name|gint16
 modifier|*
 name|LengthsTable
 decl_stmt|;
@@ -4963,7 +4961,7 @@ name|LengthsTable
 operator|=
 name|g_new
 argument_list|(
-name|gshort
+name|gint16
 argument_list|,
 name|height
 argument_list|)
@@ -5102,7 +5100,7 @@ condition|(
 name|ChanLenPosition
 condition|)
 block|{
-name|write_gshort
+name|write_gint16
 argument_list|(
 name|fd
 argument_list|,
@@ -5153,7 +5151,7 @@ name|height
 operator|*
 sizeof|sizeof
 argument_list|(
-name|gshort
+name|gint16
 argument_list|)
 argument_list|,
 literal|"Dummy RLE length"
@@ -5279,7 +5277,7 @@ name|j
 operator|++
 control|)
 comment|/* write real length table */
-name|write_gshort
+name|write_gint16
 argument_list|(
 name|fd
 argument_list|,
@@ -5309,7 +5307,7 @@ argument_list|,
 name|SEEK_SET
 argument_list|)
 expr_stmt|;
-name|write_glong
+name|write_gint32
 argument_list|(
 name|fd
 argument_list|,
@@ -5381,7 +5379,7 @@ name|gint32
 name|imageHeight
 decl_stmt|;
 comment|/* Height of image */
-name|glong
+name|gint32
 name|offset
 decl_stmt|;
 comment|/* offset in file of rle lengths */
@@ -5442,7 +5440,7 @@ name|nChannel
 operator|=
 literal|0
 expr_stmt|;
-name|write_gshort
+name|write_gint16
 argument_list|(
 name|fd
 argument_list|,
@@ -5486,7 +5484,7 @@ condition|;
 name|j
 operator|++
 control|)
-name|write_gshort
+name|write_gint16
 argument_list|(
 name|fd
 argument_list|,
@@ -6104,7 +6102,7 @@ name|baseType
 operator|==
 name|GIMP_INDEXED
 condition|)
-name|write_glong
+name|write_gint32
 argument_list|(
 name|fd
 argument_list|,
