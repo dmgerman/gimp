@@ -58,7 +58,7 @@ DECL|macro|PROG_UPDATE_TIME
 define|#
 directive|define
 name|PROG_UPDATE_TIME
-value|((row % 10) == 0)
+value|((row % 12) == 0)
 end_define
 
 begin_decl_stmt
@@ -79,26 +79,26 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|RNDM_VERSION
+DECL|variable|RNDM_NAME
 name|gchar
 modifier|*
-name|RNDM_VERSION
+name|RNDM_NAME
 index|[]
 init|=
 block|{
 name|N_
 argument_list|(
-literal|"Random Hurl 1.7"
+literal|"Random Hurl"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Random Pick 1.7"
+literal|"Random Pick"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Random Slur 1.7"
+literal|"Random Slur"
 argument_list|)
 block|, }
 decl_stmt|;
@@ -173,7 +173,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27613e710108
+DECL|struct|__anon274b521f0108
 block|{
 DECL|member|rndm_pct
 name|gdouble
@@ -695,12 +695,6 @@ init|=
 name|GIMP_PDB_SUCCESS
 decl_stmt|;
 comment|/* assume the best! */
-name|gchar
-modifier|*
-name|rndm_type_str
-init|=
-literal|""
-decl_stmt|;
 specifier|static
 name|GimpParam
 name|values
@@ -1078,57 +1072,6 @@ operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
 block|{
-comment|/* 	   *  JUST DO IT! 	   */
-switch|switch
-condition|(
-name|rndm_type
-condition|)
-block|{
-case|case
-name|RNDM_HURL
-case|:
-name|rndm_type_str
-operator|=
-literal|"hurl"
-expr_stmt|;
-break|break;
-case|case
-name|RNDM_PICK
-case|:
-name|rndm_type_str
-operator|=
-literal|"pick"
-expr_stmt|;
-break|break;
-case|case
-name|RNDM_SLUR
-case|:
-name|rndm_type_str
-operator|=
-literal|"slur"
-expr_stmt|;
-break|break;
-block|}
-name|gimp_progress_init_printf
-argument_list|(
-literal|"%s (%s)"
-argument_list|,
-name|gettext
-argument_list|(
-name|RNDM_VERSION
-index|[
-name|rndm_type
-operator|-
-literal|1
-index|]
-argument_list|)
-argument_list|,
-name|gettext
-argument_list|(
-name|rndm_type_str
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|gimp_tile_cache_ntiles
 argument_list|(
 literal|2
@@ -1143,6 +1086,21 @@ argument_list|()
 operator|+
 literal|1
 operator|)
+argument_list|)
+expr_stmt|;
+name|gimp_progress_init_printf
+argument_list|(
+literal|"%s"
+argument_list|,
+name|gettext
+argument_list|(
+name|RNDM_NAME
+index|[
+name|rndm_type
+operator|-
+literal|1
+index|]
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* 	   *  Initialize the g_rand() function seed 	   */
@@ -2256,6 +2214,11 @@ condition|)
 name|gimp_progress_update
 argument_list|(
 operator|(
+name|cnt
+operator|-
+literal|1
+operator|+
+operator|(
 name|double
 operator|)
 name|row
@@ -2268,6 +2231,11 @@ name|y2
 operator|-
 name|y1
 argument_list|)
+operator|)
+operator|/
+name|pivals
+operator|.
+name|rndm_rcount
 argument_list|)
 expr_stmt|;
 block|}
@@ -2323,10 +2291,7 @@ block|}
 block|}
 name|gimp_progress_update
 argument_list|(
-operator|(
-name|double
-operator|)
-literal|100
+literal|1.0
 argument_list|)
 expr_stmt|;
 comment|/*    *  update the randomized region    */
@@ -2444,7 +2409,7 @@ name|gimp_dialog_new
 argument_list|(
 name|gettext
 argument_list|(
-name|RNDM_VERSION
+name|RNDM_NAME
 index|[
 name|rndm_type
 operator|-
