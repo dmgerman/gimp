@@ -1828,7 +1828,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2d1be30108
+DECL|struct|__anon2795e1ed0108
 block|{
 DECL|member|pub
 name|struct
@@ -3263,6 +3263,11 @@ name|jpeg_destroy_decompress
 argument_list|(
 operator|&
 name|cinfo
+argument_list|)
+expr_stmt|;
+name|fclose
+argument_list|(
+name|infile
 argument_list|)
 expr_stmt|;
 if|if
