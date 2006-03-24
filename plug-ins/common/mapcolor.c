@@ -99,7 +99,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2993b8cf0108
+DECL|struct|__anon29d36a5f0108
 block|{
 DECL|member|colors
 name|GimpRGB
@@ -540,7 +540,7 @@ name|dversio
 argument_list|,
 name|N_
 argument_list|(
-literal|"Adjust _FG-BG"
+literal|"Adjust _Foreground& Background"
 argument_list|)
 argument_list|,
 literal|"RGB*"
@@ -853,7 +853,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Adjusting FG-BG"
+literal|"Adjusting foreground and background colors"
 argument_list|)
 argument_list|)
 expr_stmt|;

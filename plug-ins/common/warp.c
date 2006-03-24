@@ -83,7 +83,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28817a350103
+DECL|enum|__anon28b51b640103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -103,7 +103,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28817a350208
+DECL|struct|__anon28b51b640208
 block|{
 DECL|member|amount
 name|gdouble
@@ -2052,7 +2052,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -2361,7 +2361,7 @@ name|group
 argument_list|,
 name|_
 argument_list|(
-literal|"FG color"
+literal|"Foreground color"
 argument_list|)
 argument_list|)
 expr_stmt|;
