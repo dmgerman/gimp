@@ -1186,7 +1186,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_is_floating_sel:  * @layer_ID: The layer.  *  * Is the specified layer a floating selection?  *  * This procedure returns whether the layer is a floating selection.  * Floating selections are special cases of layers which are attached  * to a specific drawable.  *  * Returns: Non-zero if the layer is a floating selection.  */
+comment|/**  * gimp_layer_is_floating_sel:  * @layer_ID: The layer.  *  * Is the specified layer a floating selection?  *  * This procedure returns whether the layer is a floating selection.  * Floating selections are special cases of layers which are attached  * to a specific drawable.  *  * Returns: TRUE if the layer is a floating selection.  */
 end_comment
 
 begin_function
@@ -1416,7 +1416,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_get_apply_mask:  * @layer_ID: The layer.  *  * Get the apply mask setting of the specified layer.  *  * This procedure returns the specified layer's apply mask setting. If  * the value is non-zero, then the layer mask for this layer is  * currently being composited with the layer's alpha channel.  *  * Returns: The layer's apply mask setting.  */
+comment|/**  * gimp_layer_get_apply_mask:  * @layer_ID: The layer.  *  * Get the apply mask setting of the specified layer.  *  * This procedure returns the specified layer's apply mask setting. If  * the value is TRUE, then the layer mask for this layer is currently  * being composited with the layer's alpha channel.  *  * Returns: The layer's apply mask setting.  */
 end_comment
 
 begin_function
@@ -1568,7 +1568,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_get_show_mask:  * @layer_ID: The layer.  *  * Get the show mask setting of the specified layer.  *  * This procedure returns the specified layer's show mask setting. This  * controls whether the layer or its mask is visible. Non-zero values  * indicate that the mask should be visible. If the layer has no mask,  * then this function returns an error.  *  * Returns: The layer's show mask setting.  */
+comment|/**  * gimp_layer_get_show_mask:  * @layer_ID: The layer.  *  * Get the show mask setting of the specified layer.  *  * This procedure returns the specified layer's show mask setting. This  * controls whether the layer or its mask is visible. TRUE indicates  * that the mask should be visible. If the layer has no mask, then this  * function returns an error.  *  * Returns: The layer's show mask setting.  */
 end_comment
 
 begin_function
@@ -1720,7 +1720,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_get_edit_mask:  * @layer_ID: The layer.  *  * Get the edit mask setting of the specified layer.  *  * This procedure returns the specified layer's edit mask setting. If  * the value is non-zero, then the layer mask for this layer is  * currently active, and not the layer.  *  * Returns: The layer's edit mask setting.  */
+comment|/**  * gimp_layer_get_edit_mask:  * @layer_ID: The layer.  *  * Get the edit mask setting of the specified layer.  *  * This procedure returns the specified layer's edit mask setting. If  * the value is TRUE, then the layer mask for this layer is currently  * active, and not the layer.  *  * Returns: The layer's edit mask setting.  */
 end_comment
 
 begin_function

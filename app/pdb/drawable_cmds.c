@@ -769,8 +769,8 @@ condition|(
 name|success
 condition|)
 block|{
-name|success
-operator|=
+if|if
+condition|(
 name|gimp_item_is_floating
 argument_list|(
 name|GIMP_ITEM
@@ -778,10 +778,6 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|success
 condition|)
 name|gimp_item_sink
 argument_list|(
@@ -790,6 +786,11 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|)
+expr_stmt|;
+else|else
+name|success
+operator|=
+name|FALSE
 expr_stmt|;
 block|}
 return|return
@@ -1026,7 +1027,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"layer"
 block|,
-literal|"Non-zero if the drawable is a layer"
+literal|"TRUE if the drawable is a layer"
 block|}
 block|}
 decl_stmt|;
@@ -1045,7 +1046,7 @@ literal|"gimp-drawable-is-layer"
 block|,
 literal|"Returns whether the drawable is a layer."
 block|,
-literal|"This procedure returns non-zero if the specified drawable is a layer."
+literal|"This procedure returns TRUE if the specified drawable is a layer."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -1235,7 +1236,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"layer-mask"
 block|,
-literal|"Non-zero if the drawable is a layer mask"
+literal|"TRUE if the drawable is a layer mask"
 block|}
 block|}
 decl_stmt|;
@@ -1254,7 +1255,7 @@ literal|"gimp-drawable-is-layer-mask"
 block|,
 literal|"Returns whether the drawable is a layer mask."
 block|,
-literal|"This procedure returns non-zero if the specified drawable is a layer mask."
+literal|"This procedure returns TRUE if the specified drawable is a layer mask."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -1444,7 +1445,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"channel"
 block|,
-literal|"Non-zero if the drawable is a channel"
+literal|"TRUE if the drawable is a channel"
 block|}
 block|}
 decl_stmt|;
@@ -1463,7 +1464,7 @@ literal|"gimp-drawable-is-channel"
 block|,
 literal|"Returns whether the drawable is a channel."
 block|,
-literal|"This procedure returns non-zero if the specified drawable is a channel."
+literal|"This procedure returns TRUE if the specified drawable is a channel."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -2088,7 +2089,7 @@ literal|"gimp-drawable-has-alpha"
 block|,
 literal|"gimp-drawable-has-alpha"
 block|,
-literal|"Returns non-zero if the drawable has an alpha channel."
+literal|"Returns TRUE if the drawable has an alpha channel."
 block|,
 literal|"This procedure returns whether the specified drawable has an alpha channel. This can only be true for layers, and the associated type will be one of: { RGBA , GRAYA, INDEXEDA }."
 block|,
@@ -2280,7 +2281,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"is-rgb"
 block|,
-literal|"non-zero if the drawable is an RGB type"
+literal|"TRUE if the drawable is an RGB type"
 block|}
 block|}
 decl_stmt|;
@@ -2299,7 +2300,7 @@ literal|"gimp-drawable-is-rgb"
 block|,
 literal|"Returns whether the drawable is an RGB type."
 block|,
-literal|"This procedure returns non-zero if the specified drawable is of type { RGB, RGBA }."
+literal|"This procedure returns TRUE if the specified drawable is of type { RGB, RGBA }."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -2489,7 +2490,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"is-gray"
 block|,
-literal|"non-zero if the drawable is a grayscale type"
+literal|"TRUE if the drawable is a grayscale type"
 block|}
 block|}
 decl_stmt|;
@@ -2508,7 +2509,7 @@ literal|"gimp-drawable-is-gray"
 block|,
 literal|"Returns whether the drawable is a grayscale type."
 block|,
-literal|"This procedure returns non-zero if the specified drawable is of type { Gray, GrayA }."
+literal|"This procedure returns TRUE if the specified drawable is of type { Gray, GrayA }."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -2698,7 +2699,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"is-indexed"
 block|,
-literal|"non-zero if the drawable is an indexed type"
+literal|"TRUE if the drawable is an indexed type"
 block|}
 block|}
 decl_stmt|;
@@ -2717,7 +2718,7 @@ literal|"gimp-drawable-is-indexed"
 block|,
 literal|"Returns whether the drawable is an indexed type."
 block|,
-literal|"This procedure returns non-zero if the specified drawable is of type { Indexed, IndexedA }."
+literal|"This procedure returns TRUE if the specified drawable is of type { Indexed, IndexedA }."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -6440,8 +6441,8 @@ condition|(
 name|success
 condition|)
 block|{
-name|success
-operator|=
+if|if
+condition|(
 name|gimp_item_is_attached
 argument_list|(
 name|GIMP_ITEM
@@ -6449,10 +6450,6 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|success
 condition|)
 block|{
 name|gchar
@@ -6506,6 +6503,11 @@ name|undo_desc
 argument_list|)
 expr_stmt|;
 block|}
+else|else
+name|success
+operator|=
+name|FALSE
+expr_stmt|;
 block|}
 return|return
 name|procedural_db_return_args
@@ -7795,7 +7797,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"fill-type"
 block|,
-literal|"The type of fill: GIMP_FOREGROUND_FILL (0), GIMP_BACKGROUND_FILL (1), GIMP_WHITE_FILL (2), GIMP_TRANSPARENT_FILL (3), GIMP_PATTERN_FILL (4)"
+literal|"The type of fill: { GIMP_FOREGROUND_FILL (0), GIMP_BACKGROUND_FILL (1), GIMP_WHITE_FILL (2), GIMP_TRANSPARENT_FILL (3), GIMP_PATTERN_FILL (4) }"
 block|}
 block|}
 decl_stmt|;
@@ -7998,8 +8000,8 @@ condition|(
 name|success
 condition|)
 block|{
-name|success
-operator|=
+if|if
+condition|(
 name|gimp_item_is_attached
 argument_list|(
 name|GIMP_ITEM
@@ -8007,10 +8009,6 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|success
 condition|)
 name|gimp_drawable_offset
 argument_list|(
@@ -8026,6 +8024,11 @@ name|offset_x
 argument_list|,
 name|offset_y
 argument_list|)
+expr_stmt|;
+else|else
+name|success
+operator|=
+name|FALSE
 expr_stmt|;
 block|}
 return|return
@@ -8069,7 +8072,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"fill-type"
 block|,
-literal|"fill vacated regions of drawable with background or transparent: GIMP_OFFSET_BACKGROUND (0) or GIMP_OFFSET_TRANSPARENT (1)"
+literal|"fill vacated regions of drawable with background or transparent: { GIMP_OFFSET_BACKGROUND (0), GIMP_OFFSET_TRANSPARENT (1) }"
 block|}
 block|,
 block|{
@@ -8950,9 +8953,8 @@ condition|(
 name|success
 condition|)
 block|{
-name|success
-operator|=
-operator|(
+if|if
+condition|(
 operator|(
 name|src_x
 operator|+
@@ -8980,11 +8982,6 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|)
-operator|)
-expr_stmt|;
-if|if
-condition|(
-name|success
 condition|)
 block|{
 name|GimpImage
@@ -9112,13 +9109,16 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
-block|{
 name|success
 operator|=
 name|FALSE
 expr_stmt|;
 block|}
-block|}
+else|else
+name|success
+operator|=
+name|FALSE
+expr_stmt|;
 block|}
 name|return_args
 operator|=
@@ -9509,8 +9509,8 @@ condition|(
 name|success
 condition|)
 block|{
-name|success
-operator|=
+if|if
+condition|(
 name|gimp_item_is_attached
 argument_list|(
 name|GIMP_ITEM
@@ -9518,10 +9518,6 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|success
 condition|)
 name|gimp_drawable_foreground_extract
 argument_list|(
@@ -9533,6 +9529,11 @@ name|mask
 argument_list|,
 name|progress
 argument_list|)
+expr_stmt|;
+else|else
+name|success
+operator|=
+name|FALSE
 expr_stmt|;
 block|}
 return|return
@@ -9568,7 +9569,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"mode"
 block|,
-literal|"The algorithm to use: GIMP_FOREGROUND_EXTRACT_SIOX (0)"
+literal|"The algorithm to use: { GIMP_FOREGROUND_EXTRACT_SIOX (0) }"
 block|}
 block|,
 block|{

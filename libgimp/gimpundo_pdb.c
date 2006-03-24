@@ -154,7 +154,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_undo_is_enabled:  * @image_ID: The image.  *  * Check if the image's undo stack is enabled.  *  * This procedure checks if the image's undo stack is currently enabled  * or disabled. This is useful when several plugins or scripts call  * each other and want to check if their caller has already used  * 'gimp_image_undo_disable' or 'gimp_image_undo_freeze'.  *  * Returns: True if undo is enabled for this image.  */
+comment|/**  * gimp_image_undo_is_enabled:  * @image_ID: The image.  *  * Check if the image's undo stack is enabled.  *  * This procedure checks if the image's undo stack is currently enabled  * or disabled. This is useful when several plugins or scripts call  * each other and want to check if their caller has already used  * 'gimp_image_undo_disable' or 'gimp_image_undo_freeze'.  *  * Returns: TRUE if undo is enabled for this image.  */
 end_comment
 
 begin_function
@@ -232,7 +232,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_undo_disable:  * @image_ID: The image.  *  * Disable the image's undo stack.  *  * This procedure disables the image's undo stack, allowing subsequent  * operations to ignore their undo steps. This is generally called in  * conjunction with 'gimp_image_undo_enable' to temporarily disable an  * image undo stack. This is advantageous because saving undo steps can  * be time and memory intensive.  *  * Returns: True if the image undo has been disabled.  */
+comment|/**  * gimp_image_undo_disable:  * @image_ID: The image.  *  * Disable the image's undo stack.  *  * This procedure disables the image's undo stack, allowing subsequent  * operations to ignore their undo steps. This is generally called in  * conjunction with 'gimp_image_undo_enable' to temporarily disable an  * image undo stack. This is advantageous because saving undo steps can  * be time and memory intensive.  *  * Returns: TRUE if the image undo has been disabled.  */
 end_comment
 
 begin_function
@@ -310,7 +310,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_undo_enable:  * @image_ID: The image.  *  * Enable the image's undo stack.  *  * This procedure enables the image's undo stack, allowing subsequent  * operations to store their undo steps. This is generally called in  * conjunction with 'gimp_image_undo_disable' to temporarily disable an  * image undo stack.  *  * Returns: True if the image undo has been enabled.  */
+comment|/**  * gimp_image_undo_enable:  * @image_ID: The image.  *  * Enable the image's undo stack.  *  * This procedure enables the image's undo stack, allowing subsequent  * operations to store their undo steps. This is generally called in  * conjunction with 'gimp_image_undo_disable' to temporarily disable an  * image undo stack.  *  * Returns: TRUE if the image undo has been enabled.  */
 end_comment
 
 begin_function
@@ -388,7 +388,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_undo_freeze:  * @image_ID: The image.  *  * Freeze the image's undo stack.  *  * This procedure freezes the image's undo stack, allowing subsequent  * operations to ignore their undo steps. This is generally called in  * conjunction with 'gimp_image_undo_thaw' to temporarily disable an  * image undo stack. This is advantageous because saving undo steps can  * be time and memory intensive. 'gimp_image_undo_{freeze,thaw}' and  * 'gimp_image_undo_{disable,enable}' differ in that the former does  * not free up all undo steps when undo is thawed, so is more suited to  * interactive in-situ previews. It is important in this case that the  * image is back to the same state it was frozen in before thawing,  * else 'undo' behaviour is undefined.  *  * Returns: True if the image undo has been frozen.  */
+comment|/**  * gimp_image_undo_freeze:  * @image_ID: The image.  *  * Freeze the image's undo stack.  *  * This procedure freezes the image's undo stack, allowing subsequent  * operations to ignore their undo steps. This is generally called in  * conjunction with 'gimp_image_undo_thaw' to temporarily disable an  * image undo stack. This is advantageous because saving undo steps can  * be time and memory intensive. 'gimp_image_undo_{freeze,thaw}' and  * 'gimp_image_undo_{disable,enable}' differ in that the former does  * not free up all undo steps when undo is thawed, so is more suited to  * interactive in-situ previews. It is important in this case that the  * image is back to the same state it was frozen in before thawing,  * else 'undo' behaviour is undefined.  *  * Returns: TRUE if the image undo has been frozen.  */
 end_comment
 
 begin_function
@@ -466,7 +466,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_undo_thaw:  * @image_ID: The image.  *  * Thaw the image's undo stack.  *  * This procedure thaws the image's undo stack, allowing subsequent  * operations to store their undo steps. This is generally called in  * conjunction with 'gimp_image_undo_freeze' to temporarily freeze an  * image undo stack. 'gimp_image_undo_thaw' does NOT free the undo  * stack as 'gimp_image_undo_enable' does, so is suited for situations  * where one wishes to leave the undo stack in the same state in which  * one found it despite non-destructively playing with the image in the  * meantime. An example would be in-situ plugin previews. Balancing  * freezes and thaws and ensuring image consistancy is the  * responsibility of the caller.  *  * Returns: True if the image undo has been thawed.  */
+comment|/**  * gimp_image_undo_thaw:  * @image_ID: The image.  *  * Thaw the image's undo stack.  *  * This procedure thaws the image's undo stack, allowing subsequent  * operations to store their undo steps. This is generally called in  * conjunction with 'gimp_image_undo_freeze' to temporarily freeze an  * image undo stack. 'gimp_image_undo_thaw' does NOT free the undo  * stack as 'gimp_image_undo_enable' does, so is suited for situations  * where one wishes to leave the undo stack in the same state in which  * one found it despite non-destructively playing with the image in the  * meantime. An example would be in-situ plugin previews. Balancing  * freezes and thaws and ensuring image consistancy is the  * responsibility of the caller.  *  * Returns: TRUE if the image undo has been thawed.  */
 end_comment
 
 begin_function

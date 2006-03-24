@@ -20,7 +20,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * gimp_selection_bounds:  * @image_ID: The image.  * @non_empty: True if there is a selection.  * @x1: x coordinate of upper left corner of selection bounds.  * @y1: y coordinate of upper left corner of selection bounds.  * @x2: x coordinate of lower right corner of selection bounds.  * @y2: y coordinate of lower right corner of selection bounds.  *  * Find the bounding box of the current selection.  *  * This procedure returns whether there is a selection for the  * specified image. If there is one, the upper left and lower right  * corners of the bounding box are returned. These coordinates are  * relative to the image. Please note that the pixel specified by the  * lower righthand coordinate of the bounding box is not part of the  * selection. The selection ends at the upper left corner of this  * pixel. This means the width of the selection can be calculated as  * (x2 - x1), its height as (y2 - y1).  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_selection_bounds:  * @image_ID: The image.  * @non_empty: TRUE if there is a selection.  * @x1: x coordinate of upper left corner of selection bounds.  * @y1: y coordinate of upper left corner of selection bounds.  * @x2: x coordinate of lower right corner of selection bounds.  * @y2: y coordinate of lower right corner of selection bounds.  *  * Find the bounding box of the current selection.  *  * This procedure returns whether there is a selection for the  * specified image. If there is one, the upper left and lower right  * corners of the bounding box are returned. These coordinates are  * relative to the image. Please note that the pixel specified by the  * lower righthand coordinate of the bounding box is not part of the  * selection. The selection ends at the upper left corner of this  * pixel. This means the width of the selection can be calculated as  * (x2 - x1), its height as (y2 - y1).  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -290,7 +290,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_selection_is_empty:  * @image_ID: The image.  *  * Determine whether the selection is empty.  *  * This procedure returns non-zero if the selection for the specified  * image is not empty.  *  * Returns: Is the selection empty?  */
+comment|/**  * gimp_selection_is_empty:  * @image_ID: The image.  *  * Determine whether the selection is empty.  *  * This procedure returns TRUE if the selection for the specified image  * is not empty.  *  * Returns: Is the selection empty?  */
 end_comment
 
 begin_function

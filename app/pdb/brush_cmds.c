@@ -557,12 +557,13 @@ name|actual_name
 operator|=
 name|g_strdup
 argument_list|(
+name|gimp_object_get_name
+argument_list|(
 name|GIMP_OBJECT
 argument_list|(
 name|data
 argument_list|)
-operator|->
-name|name
+argument_list|)
 argument_list|)
 expr_stmt|;
 else|else
@@ -824,12 +825,13 @@ name|copy_name
 operator|=
 name|g_strdup
 argument_list|(
+name|gimp_object_get_name
+argument_list|(
 name|GIMP_OBJECT
 argument_list|(
 name|brush_copy
 argument_list|)
-operator|->
-name|name
+argument_list|)
 argument_list|)
 expr_stmt|;
 else|else
@@ -1137,7 +1139,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"generated"
 block|,
-literal|"True if the brush is generated"
+literal|"TRUE if the brush is generated"
 block|}
 block|}
 decl_stmt|;
@@ -1154,9 +1156,9 @@ literal|"gimp-brush-is-generated"
 block|,
 literal|"gimp-brush-is-generated"
 block|,
-literal|"Tests if generated"
+literal|"Tests if brush is generated"
 block|,
-literal|"Returns True if this brush is parametric, False for other types"
+literal|"Returns TRUE if this brush is parametric, FALSE for other types"
 block|,
 literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu>"
 block|,
@@ -1354,12 +1356,13 @@ name|actual_name
 operator|=
 name|g_strdup
 argument_list|(
+name|gimp_object_get_name
+argument_list|(
 name|GIMP_OBJECT
 argument_list|(
 name|brush
 argument_list|)
-operator|->
-name|name
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -1902,7 +1905,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"editable"
 block|,
-literal|"True if the brush can be edited"
+literal|"TRUE if the brush can be edited"
 block|}
 block|}
 decl_stmt|;
@@ -1921,7 +1924,7 @@ literal|"gimp-brush-is-editable"
 block|,
 literal|"Tests if brush can be edited"
 block|,
-literal|"Returns True if you have permission to change the brush"
+literal|"Returns TRUE if you have permission to change the brush"
 block|,
 literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu>"
 block|,
@@ -3416,7 +3419,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"shape"
 block|,
-literal|"The brush shape"
+literal|"The brush shape: { GIMP_BRUSH_GENERATED_CIRCLE (0), GIMP_BRUSH_GENERATED_SQUARE (1), GIMP_BRUSH_GENERATED_DIAMOND (2) }"
 block|}
 block|}
 decl_stmt|;
@@ -4881,7 +4884,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"shape-out"
 block|,
-literal|"The brush shape actually assigned"
+literal|"The brush shape actually assigned: { GIMP_BRUSH_GENERATED_CIRCLE (0), GIMP_BRUSH_GENERATED_SQUARE (1), GIMP_BRUSH_GENERATED_DIAMOND (2) }"
 block|}
 block|}
 decl_stmt|;

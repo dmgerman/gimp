@@ -567,7 +567,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_dodgeburn:  * @drawable_ID: The affected drawable.  * @exposure: The exposer of the strokes.  * @dodgeburn_type: The type either dodge or burn.  * @dodgeburn_mode: The mode.  * @num_strokes: Number of stroke control points (count each coordinate as 2 points).  * @strokes: Array of stroke coordinates: { s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y }.  *  * Dodgeburn image with varying exposure.  *  * Dodgeburn. More details here later.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_dodgeburn:  * @drawable_ID: The affected drawable.  * @exposure: The exposure of the strokes.  * @dodgeburn_type: The type either dodge or burn.  * @dodgeburn_mode: The mode.  * @num_strokes: Number of stroke control points (count each coordinate as 2 points).  * @strokes: Array of stroke coordinates: { s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y }.  *  * Dodgeburn image with varying exposure.  *  * Dodgeburn. More details here later.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function

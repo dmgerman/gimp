@@ -4327,7 +4327,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"op"
 block|,
-literal|"The desired operation with current selection."
+literal|"The desired operation with current selection: { GIMP_CHANNEL_OP_ADD (0), GIMP_CHANNEL_OP_SUBTRACT (1), GIMP_CHANNEL_OP_REPLACE (2), GIMP_CHANNEL_OP_INTERSECT (3) }"
 block|}
 block|,
 block|{

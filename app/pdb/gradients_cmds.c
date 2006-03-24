@@ -1420,12 +1420,13 @@ name|actual_name
 operator|=
 name|g_strdup
 argument_list|(
+name|gimp_object_get_name
+argument_list|(
 name|GIMP_OBJECT
 argument_list|(
 name|gradient
 argument_list|)
-operator|->
-name|name
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|grad_data
@@ -1590,7 +1591,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"sample-size"
 block|,
-literal|"Size of the sample to return when the gradient is changed (1<= sample_size<= 10000)"
+literal|"Size of the sample to return when the gradient is changed: (1<= sample_size<= 10000)"
 block|}
 block|,
 block|{

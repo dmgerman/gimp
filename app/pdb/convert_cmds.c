@@ -860,7 +860,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"remove-unused"
 block|,
-literal|"Remove unused or duplicate colour entries from final palette, ignored if (palette_type == GIMP_MAKE_PALETTE)"
+literal|"Remove unused or duplicate color entries from final palette, ignored if (palette_type == GIMP_MAKE_PALETTE)"
 block|}
 block|,
 block|{

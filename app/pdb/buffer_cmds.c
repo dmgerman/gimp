@@ -1779,7 +1779,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"image-type"
 block|,
-literal|"The buffer image type"
+literal|"The buffer image type: { GIMP_RGB (0), GIMP_GRAY (1), GIMP_INDEXED (2) }"
 block|}
 block|}
 decl_stmt|;

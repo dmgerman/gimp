@@ -650,7 +650,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"enabled"
 block|,
-literal|"True if undo is enabled for this image"
+literal|"TRUE if undo is enabled for this image"
 block|}
 block|}
 decl_stmt|;
@@ -844,7 +844,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"disabled"
 block|,
-literal|"True if the image undo has been disabled"
+literal|"TRUE if the image undo has been disabled"
 block|}
 block|}
 decl_stmt|;
@@ -1038,7 +1038,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"enabled"
 block|,
-literal|"True if the image undo has been enabled"
+literal|"TRUE if the image undo has been enabled"
 block|}
 block|}
 decl_stmt|;
@@ -1232,7 +1232,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"frozen"
 block|,
-literal|"True if the image undo has been frozen"
+literal|"TRUE if the image undo has been frozen"
 block|}
 block|}
 decl_stmt|;
@@ -1426,7 +1426,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"thawed"
 block|,
-literal|"True if the image undo has been thawed"
+literal|"TRUE if the image undo has been thawed"
 block|}
 block|}
 decl_stmt|;

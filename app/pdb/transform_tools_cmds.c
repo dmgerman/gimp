@@ -430,7 +430,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"flip-type"
 block|,
-literal|"Type of flip: GIMP_ORIENTATION_HORIZONTAL (0) or GIMP_ORIENTATION_VERTICAL (1)"
+literal|"Type of flip: { GIMP_ORIENTATION_HORIZONTAL (0), GIMP_ORIENTATION_VERTICAL (1) }"
 block|}
 block|}
 decl_stmt|;
@@ -2278,7 +2278,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"shear-type"
 block|,
-literal|"Type of shear: GIMP_ORIENTATION_HORIZONTAL (0) or GIMP_ORIENTATION_VERTICAL (1)"
+literal|"Type of shear: { GIMP_ORIENTATION_HORIZONTAL (0), GIMP_ORIENTATION_VERTICAL (1) }"
 block|}
 block|,
 block|{

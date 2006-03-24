@@ -1839,7 +1839,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"icon-type"
 block|,
-literal|"The type of the icon"
+literal|"The type of the icon: { GIMP_ICON_TYPE_STOCK_ID (0), GIMP_ICON_TYPE_INLINE_PIXBUF (1), GIMP_ICON_TYPE_IMAGE_FILE (2) }"
 block|}
 block|,
 block|{

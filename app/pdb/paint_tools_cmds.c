@@ -779,7 +779,7 @@ name|GIMP_PDB_FLOAT
 block|,
 literal|"pressure"
 block|,
-literal|"The pressure of the airbrush strokes (0<= pressure<= 100)"
+literal|"The pressure of the airbrush strokes: (0<= pressure<= 100)"
 block|}
 block|,
 block|{
@@ -2799,7 +2799,7 @@ name|GIMP_PDB_FLOAT
 block|,
 literal|"exposure"
 block|,
-literal|"The exposer of the strokes (0<= exposure<= 100)"
+literal|"The exposure of the strokes: (0<= exposure<= 100)"
 block|}
 block|,
 block|{
@@ -3464,7 +3464,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"hardness"
 block|,
-literal|"GIMP_BRUSH_HARD (0) or GIMP_BRUSH_SOFT (1)"
+literal|"{ GIMP_BRUSH_HARD (0), GIMP_BRUSH_SOFT (1) }"
 block|}
 block|,
 block|{
@@ -3472,7 +3472,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"method"
 block|,
-literal|"GIMP_PAINT_CONSTANT (0) or GIMP_PAINT_INCREMENTAL (1)"
+literal|"{ GIMP_PAINT_CONSTANT (0), GIMP_PAINT_INCREMENTAL (1) }"
 block|}
 block|}
 decl_stmt|;
@@ -4149,7 +4149,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"method"
 block|,
-literal|"GIMP_PAINT_CONSTANT (0) or GIMP_PAINT_INCREMENTAL (1)"
+literal|"{ GIMP_PAINT_CONSTANT (0), GIMP_PAINT_INCREMENTAL (1) }"
 block|}
 block|,
 block|{
@@ -5019,7 +5019,7 @@ name|GIMP_PDB_FLOAT
 block|,
 literal|"pressure"
 block|,
-literal|"The pressure of the smudge strokes (0<= pressure<= 100)"
+literal|"The pressure of the smudge strokes: (0<= pressure<= 100)"
 block|}
 block|,
 block|{

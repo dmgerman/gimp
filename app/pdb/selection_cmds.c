@@ -591,7 +591,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"non-empty"
 block|,
-literal|"True if there is a selection"
+literal|"TRUE if there is a selection"
 block|}
 block|,
 block|{
@@ -1087,7 +1087,7 @@ literal|"gimp-selection-is-empty"
 block|,
 literal|"Determine whether the selection is empty."
 block|,
-literal|"This procedure returns non-zero if the selection for the specified image is not empty."
+literal|"This procedure returns TRUE if the selection for the specified image is not empty."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -1436,8 +1436,8 @@ condition|(
 name|success
 condition|)
 block|{
-name|success
-operator|=
+if|if
+condition|(
 name|gimp_item_is_attached
 argument_list|(
 name|GIMP_ITEM
@@ -1445,10 +1445,6 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|success
 condition|)
 block|{
 name|GimpImage
@@ -1493,6 +1489,11 @@ operator|=
 name|FALSE
 expr_stmt|;
 block|}
+else|else
+name|success
+operator|=
+name|FALSE
+expr_stmt|;
 block|}
 name|return_args
 operator|=

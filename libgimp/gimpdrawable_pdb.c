@@ -93,7 +93,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_is_layer:  * @drawable_ID: The drawable.  *  * Returns whether the drawable is a layer.  *  * This procedure returns non-zero if the specified drawable is a  * layer.  *  * Returns: Non-zero if the drawable is a layer.  */
+comment|/**  * gimp_drawable_is_layer:  * @drawable_ID: The drawable.  *  * Returns whether the drawable is a layer.  *  * This procedure returns TRUE if the specified drawable is a layer.  *  * Returns: TRUE if the drawable is a layer.  */
 end_comment
 
 begin_function
@@ -171,7 +171,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_is_layer_mask:  * @drawable_ID: The drawable.  *  * Returns whether the drawable is a layer mask.  *  * This procedure returns non-zero if the specified drawable is a layer  * mask.  *  * Returns: Non-zero if the drawable is a layer mask.  */
+comment|/**  * gimp_drawable_is_layer_mask:  * @drawable_ID: The drawable.  *  * Returns whether the drawable is a layer mask.  *  * This procedure returns TRUE if the specified drawable is a layer  * mask.  *  * Returns: TRUE if the drawable is a layer mask.  */
 end_comment
 
 begin_function
@@ -249,7 +249,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_is_channel:  * @drawable_ID: The drawable.  *  * Returns whether the drawable is a channel.  *  * This procedure returns non-zero if the specified drawable is a  * channel.  *  * Returns: Non-zero if the drawable is a channel.  */
+comment|/**  * gimp_drawable_is_channel:  * @drawable_ID: The drawable.  *  * Returns whether the drawable is a channel.  *  * This procedure returns TRUE if the specified drawable is a channel.  *  * Returns: TRUE if the drawable is a channel.  */
 end_comment
 
 begin_function
@@ -483,7 +483,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_has_alpha:  * @drawable_ID: The drawable.  *  * Returns non-zero if the drawable has an alpha channel.  *  * This procedure returns whether the specified drawable has an alpha  * channel. This can only be true for layers, and the associated type  * will be one of: { RGBA , GRAYA, INDEXEDA }.  *  * Returns: Does the drawable have an alpha channel?  */
+comment|/**  * gimp_drawable_has_alpha:  * @drawable_ID: The drawable.  *  * Returns TRUE if the drawable has an alpha channel.  *  * This procedure returns whether the specified drawable has an alpha  * channel. This can only be true for layers, and the associated type  * will be one of: { RGBA , GRAYA, INDEXEDA }.  *  * Returns: Does the drawable have an alpha channel?  */
 end_comment
 
 begin_function
@@ -561,7 +561,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_is_rgb:  * @drawable_ID: The drawable.  *  * Returns whether the drawable is an RGB type.  *  * This procedure returns non-zero if the specified drawable is of type  * { RGB, RGBA }.  *  * Returns: non-zero if the drawable is an RGB type.  */
+comment|/**  * gimp_drawable_is_rgb:  * @drawable_ID: The drawable.  *  * Returns whether the drawable is an RGB type.  *  * This procedure returns TRUE if the specified drawable is of type {  * RGB, RGBA }.  *  * Returns: TRUE if the drawable is an RGB type.  */
 end_comment
 
 begin_function
@@ -639,7 +639,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_is_gray:  * @drawable_ID: The drawable.  *  * Returns whether the drawable is a grayscale type.  *  * This procedure returns non-zero if the specified drawable is of type  * { Gray, GrayA }.  *  * Returns: non-zero if the drawable is a grayscale type.  */
+comment|/**  * gimp_drawable_is_gray:  * @drawable_ID: The drawable.  *  * Returns whether the drawable is a grayscale type.  *  * This procedure returns TRUE if the specified drawable is of type {  * Gray, GrayA }.  *  * Returns: TRUE if the drawable is a grayscale type.  */
 end_comment
 
 begin_function
@@ -717,7 +717,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_is_indexed:  * @drawable_ID: The drawable.  *  * Returns whether the drawable is an indexed type.  *  * This procedure returns non-zero if the specified drawable is of type  * { Indexed, IndexedA }.  *  * Returns: non-zero if the drawable is an indexed type.  */
+comment|/**  * gimp_drawable_is_indexed:  * @drawable_ID: The drawable.  *  * Returns whether the drawable is an indexed type.  *  * This procedure returns TRUE if the specified drawable is of type {  * Indexed, IndexedA }.  *  * Returns: TRUE if the drawable is an indexed type.  */
 end_comment
 
 begin_function

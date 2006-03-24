@@ -875,12 +875,13 @@ name|actual_name
 operator|=
 name|g_strdup
 argument_list|(
+name|gimp_object_get_name
+argument_list|(
 name|GIMP_OBJECT
 argument_list|(
 name|data
 argument_list|)
-operator|->
-name|name
+argument_list|)
 argument_list|)
 expr_stmt|;
 else|else
@@ -1142,12 +1143,13 @@ name|copy_name
 operator|=
 name|g_strdup
 argument_list|(
+name|gimp_object_get_name
+argument_list|(
 name|GIMP_OBJECT
 argument_list|(
 name|gradient_copy
 argument_list|)
-operator|->
-name|name
+argument_list|)
 argument_list|)
 expr_stmt|;
 else|else
@@ -1457,7 +1459,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"editable"
 block|,
-literal|"True if the gradient can be edited"
+literal|"TRUE if the gradient can be edited"
 block|}
 block|}
 decl_stmt|;
@@ -1674,12 +1676,13 @@ name|actual_name
 operator|=
 name|g_strdup
 argument_list|(
+name|gimp_object_get_name
+argument_list|(
 name|GIMP_OBJECT
 argument_list|(
 name|gradient
 argument_list|)
-operator|->
-name|name
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

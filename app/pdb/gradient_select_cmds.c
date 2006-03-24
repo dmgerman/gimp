@@ -384,7 +384,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"sample-size"
 block|,
-literal|"Size of the sample to return when the gradient is changed (1<= sample_size<= 10000)"
+literal|"Size of the sample to return when the gradient is changed: (1<= sample_size<= 10000)"
 block|}
 block|}
 decl_stmt|;

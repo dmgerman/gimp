@@ -4122,7 +4122,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"flip-type"
 block|,
-literal|"Type of flip: GIMP_ORIENTATION_HORIZONTAL (0) or GIMP_ORIENTATION_VERTICAL (1)"
+literal|"Type of flip: { GIMP_ORIENTATION_HORIZONTAL (0), GIMP_ORIENTATION_VERTICAL (1) }"
 block|}
 block|}
 decl_stmt|;
@@ -4309,7 +4309,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"rotate-type"
 block|,
-literal|"Angle of rotation: GIMP_ROTATE_90 (0), GIMP_ROTATE_180 (1), GIMP_ROTATE_270 (2)"
+literal|"Angle of rotation: { GIMP_ROTATE_90 (0), GIMP_ROTATE_180 (1), GIMP_ROTATE_270 (2) }"
 block|}
 block|}
 decl_stmt|;
@@ -6427,7 +6427,7 @@ literal|"gimp-image-pick-color"
 block|,
 literal|"Determine the color at the given drawable coordinates"
 block|,
-literal|"This tool determines the color at the specified coordinates. The returned color is an RGB triplet even for grayscale and indexed drawables. If the coordinates lie outside of the extents of the specified drawable, then an error is returned. If the drawable has an alpha channel, the algorithm examines the alpha value of the drawable at the coordinates. If the alpha value is completely transparent (0), then an error is returned. If the sample_merged parameter is non-zero, the data of the composite image will be used instead of that for the specified drawable. This is equivalent to sampling for colors after merging all visible layers. In the case of a merged sampling, the supplied drawable is ignored."
+literal|"This tool determines the color at the specified coordinates. The returned color is an RGB triplet even for grayscale and indexed drawables. If the coordinates lie outside of the extents of the specified drawable, then an error is returned. If the drawable has an alpha channel, the algorithm examines the alpha value of the drawable at the coordinates. If the alpha value is completely transparent (0), then an error is returned. If the sample_merged parameter is TRUE, the data of the composite image will be used instead of that for the specified drawable. This is equivalent to sampling for colors after merging all visible layers. In the case of a merged sampling, the supplied drawable is ignored."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -8125,8 +8125,8 @@ condition|(
 name|success
 condition|)
 block|{
-name|success
-operator|=
+if|if
+condition|(
 name|gimp_item_is_floating
 argument_list|(
 name|GIMP_ITEM
@@ -8134,10 +8134,6 @@ argument_list|(
 name|channel
 argument_list|)
 argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|success
 condition|)
 name|success
 operator|=
@@ -8155,6 +8151,11 @@ operator|-
 literal|1
 argument_list|)
 argument_list|)
+expr_stmt|;
+else|else
+name|success
+operator|=
+name|FALSE
 expr_stmt|;
 block|}
 return|return
@@ -8983,6 +8984,16 @@ condition|(
 name|success
 condition|)
 block|{
+if|if
+condition|(
+name|gimp_item_is_floating
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|vectors
+argument_list|)
+argument_list|)
+condition|)
 name|success
 operator|=
 name|gimp_image_add_vectors
@@ -8999,6 +9010,11 @@ operator|-
 literal|1
 argument_list|)
 argument_list|)
+expr_stmt|;
+else|else
+name|success
+operator|=
+name|FALSE
 expr_stmt|;
 block|}
 return|return
@@ -12143,7 +12159,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"dirty"
 block|,
-literal|"True if the image has unsaved changes."
+literal|"TRUE if the image has unsaved changes."
 block|}
 block|}
 decl_stmt|;
@@ -12509,12 +12525,10 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
-block|{
 name|success
 operator|=
 name|FALSE
 expr_stmt|;
-block|}
 block|}
 name|return_args
 operator|=

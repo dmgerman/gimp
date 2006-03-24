@@ -196,7 +196,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_brush_is_generated:  * @name: The brush name.  *  * Tests if generated  *  * Returns True if this brush is parametric, False for other types  *  * Returns: True if the brush is generated.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_brush_is_generated:  * @name: The brush name.  *  * Tests if brush is generated  *  * Returns TRUE if this brush is parametric, FALSE for other types  *  * Returns: TRUE if the brush is generated.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
@@ -439,7 +439,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_brush_is_editable:  * @name: The brush name.  *  * Tests if brush can be edited  *  * Returns True if you have permission to change the brush  *  * Returns: True if the brush can be edited.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_brush_is_editable:  * @name: The brush name.  *  * Tests if brush can be edited  *  * Returns TRUE if you have permission to change the brush  *  * Returns: TRUE if the brush can be edited.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function

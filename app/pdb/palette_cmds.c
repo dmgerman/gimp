@@ -423,12 +423,13 @@ name|actual_name
 operator|=
 name|g_strdup
 argument_list|(
+name|gimp_object_get_name
+argument_list|(
 name|GIMP_OBJECT
 argument_list|(
 name|data
 argument_list|)
-operator|->
-name|name
+argument_list|)
 argument_list|)
 expr_stmt|;
 else|else
@@ -690,12 +691,13 @@ name|copy_name
 operator|=
 name|g_strdup
 argument_list|(
+name|gimp_object_get_name
+argument_list|(
 name|GIMP_OBJECT
 argument_list|(
 name|palette_copy
 argument_list|)
-operator|->
-name|name
+argument_list|)
 argument_list|)
 expr_stmt|;
 else|else
@@ -990,12 +992,13 @@ name|actual_name
 operator|=
 name|g_strdup
 argument_list|(
+name|gimp_object_get_name
+argument_list|(
 name|GIMP_OBJECT
 argument_list|(
 name|palette
 argument_list|)
-operator|->
-name|name
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -1538,7 +1541,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"editable"
 block|,
-literal|"True if the palette can be edited"
+literal|"TRUE if the palette can be edited"
 block|}
 block|}
 decl_stmt|;
@@ -1557,7 +1560,7 @@ literal|"gimp-palette-is-editable"
 block|,
 literal|"Tests if palette can be edited"
 block|,
-literal|"Returns True if you have permission to change the palette"
+literal|"Returns TRUE if you have permission to change the palette"
 block|,
 literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu>"
 block|,

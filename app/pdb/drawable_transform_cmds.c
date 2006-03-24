@@ -640,7 +640,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"flip-type"
 block|,
-literal|"Type of flip: GIMP_ORIENTATION_HORIZONTAL (0) or GIMP_ORIENTATION_VERTICAL (1)"
+literal|"Type of flip: { GIMP_ORIENTATION_HORIZONTAL (0), GIMP_ORIENTATION_VERTICAL (1) }"
 block|}
 block|,
 block|{
@@ -702,7 +702,7 @@ literal|"gimp-drawable-transform-flip-simple"
 block|,
 literal|"Flip the specified drawable either vertically or horizontally."
 block|,
-literal|"This procedure flips the specified drawable if no selection exists. If a selection exists, the portion of the drawable which lies under the selection is cut from the drawable and made into a floating selection which is then flipped. If auto_center is set to true, the flip is around the selection's center. Otherwise, the coordinate of the axis needs to be specified. The return value is the ID of the flipped drawable. If there was no selection, this will be equal to the drawable ID supplied as input. Otherwise, this will be the newly created and flipped drawable."
+literal|"This procedure flips the specified drawable if no selection exists. If a selection exists, the portion of the drawable which lies under the selection is cut from the drawable and made into a floating selection which is then flipped. If auto_center is set to TRUE, the flip is around the selection's center. Otherwise, the coordinate of the axis needs to be specified. The return value is the ID of the flipped drawable. If there was no selection, this will be equal to the drawable ID supplied as input. Otherwise, this will be the newly created and flipped drawable."
 block|,
 literal|"Jo\xc3\xa3o S. O. Bueno Calligaris"
 block|,
@@ -3355,7 +3355,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"rotate-type"
 block|,
-literal|"Type of rotation: GIMP_ROTATE_90 (0), GIMP_ROTATE_180 (1), GIMP_ROTATE_270 (2)"
+literal|"Type of rotation: { GIMP_ROTATE_90 (0), GIMP_ROTATE_180 (1), GIMP_ROTATE_270 (2) }"
 block|}
 block|,
 block|{
@@ -6069,7 +6069,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"shear-type"
 block|,
-literal|"Type of shear: GIMP_ORIENTATION_HORIZONTAL (0) or GIMP_ORIENTATION_VERTICAL (1)"
+literal|"Type of shear: { GIMP_ORIENTATION_HORIZONTAL (0), GIMP_ORIENTATION_VERTICAL (1) }"
 block|}
 block|,
 block|{
@@ -6548,7 +6548,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"shear-type"
 block|,
-literal|"Type of shear: GIMP_ORIENTATION_HORIZONTAL (0) or GIMP_ORIENTATION_VERTICAL (1)"
+literal|"Type of shear: { GIMP_ORIENTATION_HORIZONTAL (0), GIMP_ORIENTATION_VERTICAL (1) }"
 block|}
 block|,
 block|{

@@ -1892,8 +1892,8 @@ condition|(
 name|success
 condition|)
 block|{
-name|success
-operator|=
+if|if
+condition|(
 name|gimp_item_is_attached
 argument_list|(
 name|GIMP_ITEM
@@ -1901,10 +1901,6 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|success
 condition|)
 name|gimp_item_scale_by_origin
 argument_list|(
@@ -1927,6 +1923,11 @@ name|NULL
 argument_list|,
 name|local_origin
 argument_list|)
+expr_stmt|;
+else|else
+name|success
+operator|=
+name|FALSE
 expr_stmt|;
 block|}
 return|return
@@ -2183,8 +2184,8 @@ condition|(
 name|success
 condition|)
 block|{
-name|success
-operator|=
+if|if
+condition|(
 name|gimp_item_is_attached
 argument_list|(
 name|GIMP_ITEM
@@ -2192,10 +2193,6 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|success
 condition|)
 name|gimp_item_resize
 argument_list|(
@@ -2214,6 +2211,11 @@ name|offx
 argument_list|,
 name|offy
 argument_list|)
+expr_stmt|;
+else|else
+name|success
+operator|=
+name|FALSE
 expr_stmt|;
 block|}
 return|return
@@ -2402,8 +2404,8 @@ condition|(
 name|success
 condition|)
 block|{
-name|success
-operator|=
+if|if
+condition|(
 name|gimp_item_is_attached
 argument_list|(
 name|GIMP_ITEM
@@ -2411,10 +2413,6 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|success
 condition|)
 name|gimp_layer_resize_to_image
 argument_list|(
@@ -2422,6 +2420,11 @@ name|layer
 argument_list|,
 name|context
 argument_list|)
+expr_stmt|;
+else|else
+name|success
+operator|=
+name|FALSE
 expr_stmt|;
 block|}
 return|return
@@ -3888,8 +3891,8 @@ condition|(
 name|success
 condition|)
 block|{
-name|success
-operator|=
+if|if
+condition|(
 name|gimp_item_is_attached
 argument_list|(
 name|GIMP_ITEM
@@ -3897,10 +3900,6 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|success
 condition|)
 name|gimp_layer_add_mask
 argument_list|(
@@ -3910,6 +3909,11 @@ name|mask
 argument_list|,
 name|TRUE
 argument_list|)
+expr_stmt|;
+else|else
+name|success
+operator|=
+name|FALSE
 expr_stmt|;
 block|}
 return|return
@@ -4102,8 +4106,8 @@ condition|(
 name|success
 condition|)
 block|{
-name|success
-operator|=
+if|if
+condition|(
 name|gimp_item_is_attached
 argument_list|(
 name|GIMP_ITEM
@@ -4111,10 +4115,6 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|success
 condition|)
 name|gimp_layer_apply_mask
 argument_list|(
@@ -4124,6 +4124,11 @@ name|mode
 argument_list|,
 name|TRUE
 argument_list|)
+expr_stmt|;
+else|else
+name|success
+operator|=
+name|FALSE
 expr_stmt|;
 block|}
 return|return
@@ -4368,7 +4373,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"is-floating-sel"
 block|,
-literal|"Non-zero if the layer is a floating selection"
+literal|"TRUE if the layer is a floating selection"
 block|}
 block|}
 decl_stmt|;
@@ -5008,7 +5013,7 @@ literal|"gimp-layer-get-apply-mask"
 block|,
 literal|"Get the apply mask setting of the specified layer."
 block|,
-literal|"This procedure returns the specified layer's apply mask setting. If the value is non-zero, then the layer mask for this layer is currently being composited with the layer's alpha channel."
+literal|"This procedure returns the specified layer's apply mask setting. If the value is TRUE, then the layer mask for this layer is currently being composited with the layer's alpha channel."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -5433,7 +5438,7 @@ literal|"gimp-layer-get-show-mask"
 block|,
 literal|"Get the show mask setting of the specified layer."
 block|,
-literal|"This procedure returns the specified layer's show mask setting. This controls whether the layer or its mask is visible. Non-zero values indicate that the mask should be visible. If the layer has no mask, then this function returns an error."
+literal|"This procedure returns the specified layer's show mask setting. This controls whether the layer or its mask is visible. TRUE indicates that the mask should be visible. If the layer has no mask, then this function returns an error."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -5858,7 +5863,7 @@ literal|"gimp-layer-get-edit-mask"
 block|,
 literal|"Get the edit mask setting of the specified layer."
 block|,
-literal|"This procedure returns the specified layer's edit mask setting. If the value is non-zero, then the layer mask for this layer is currently active, and not the layer."
+literal|"This procedure returns the specified layer's edit mask setting. If the value is TRUE, then the layer mask for this layer is currently active, and not the layer."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -6662,7 +6667,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"mode"
 block|,
-literal|"The layer combination mode"
+literal|"The layer combination mode: { GIMP_NORMAL_MODE (0), GIMP_DISSOLVE_MODE (1), GIMP_BEHIND_MODE (2), GIMP_MULTIPLY_MODE (3), GIMP_SCREEN_MODE (4), GIMP_OVERLAY_MODE (5), GIMP_DIFFERENCE_MODE (6), GIMP_ADDITION_MODE (7), GIMP_SUBTRACT_MODE (8), GIMP_DARKEN_ONLY_MODE (9), GIMP_LIGHTEN_ONLY_MODE (10), GIMP_HUE_MODE (11), GIMP_SATURATION_MODE (12), GIMP_COLOR_MODE (13), GIMP_VALUE_MODE (14), GIMP_DIVIDE_MODE (15), GIMP_DODGE_MODE (16), GIMP_BURN_MODE (17), GIMP_HARDLIGHT_MODE (18), GIMP_SOFTLIGHT_MODE (19), GIMP_GRAIN_EXTRACT_MODE (20), GIMP_GRAIN_MERGE_MODE (21), GIMP_COLOR_ERASE_MODE (22) }"
 block|}
 block|}
 decl_stmt|;
@@ -6862,7 +6867,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"mode"
 block|,
-literal|"The new layer combination mode (GIMP_NORMAL_MODE (0), GIMP_DISSOLVE_MODE (1), GIMP_BEHIND_MODE (2), GIMP_MULTIPLY_MODE (3), GIMP_SCREEN_MODE (4), GIMP_OVERLAY_MODE (5), GIMP_DIFFERENCE_MODE (6), GIMP_ADDITION_MODE (7), GIMP_SUBTRACT_MODE (8), GIMP_DARKEN_ONLY_MODE (9), GIMP_LIGHTEN_ONLY_MODE (10), GIMP_HUE_MODE (11), GIMP_SATURATION_MODE (12), GIMP_COLOR_MODE (13), GIMP_VALUE_MODE (14), GIMP_DIVIDE_MODE (15), GIMP_DODGE_MODE (16), GIMP_BURN_MODE (17), GIMP_HARDLIGHT_MODE (18), GIMP_SOFTLIGHT_MODE (19), GIMP_GRAIN_EXTRACT_MODE (20), GIMP_GRAIN_MERGE_MODE (21), GIMP_COLOR_ERASE_MODE (22))"
+literal|"The new layer combination mode: { GIMP_NORMAL_MODE (0), GIMP_DISSOLVE_MODE (1), GIMP_BEHIND_MODE (2), GIMP_MULTIPLY_MODE (3), GIMP_SCREEN_MODE (4), GIMP_OVERLAY_MODE (5), GIMP_DIFFERENCE_MODE (6), GIMP_ADDITION_MODE (7), GIMP_SUBTRACT_MODE (8), GIMP_DARKEN_ONLY_MODE (9), GIMP_LIGHTEN_ONLY_MODE (10), GIMP_HUE_MODE (11), GIMP_SATURATION_MODE (12), GIMP_COLOR_MODE (13), GIMP_VALUE_MODE (14), GIMP_DIVIDE_MODE (15), GIMP_DODGE_MODE (16), GIMP_BURN_MODE (17), GIMP_HARDLIGHT_MODE (18), GIMP_SOFTLIGHT_MODE (19), GIMP_GRAIN_EXTRACT_MODE (20), GIMP_GRAIN_MERGE_MODE (21), GIMP_COLOR_ERASE_MODE (22) }"
 block|}
 block|}
 decl_stmt|;

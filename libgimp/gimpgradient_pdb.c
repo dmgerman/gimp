@@ -196,7 +196,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_is_editable:  * @name: The gradient name.  *  * Tests if gradient can be edited  *  * Returns TRUE if you have permission to change the gradient  *  * Returns: True if the gradient can be edited.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_gradient_is_editable:  * @name: The gradient name.  *  * Tests if gradient can be edited  *  * Returns TRUE if you have permission to change the gradient  *  * Returns: TRUE if the gradient can be edited.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function

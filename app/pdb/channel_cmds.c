@@ -1690,7 +1690,7 @@ literal|"gimp-channel-get-show-masked"
 block|,
 literal|"Get the composite method of the specified channel."
 block|,
-literal|"This procedure returns the specified channel's composite method. If it is non-zero, then the channel is composited with the image so that masked regions are shown. Otherwise, selected regions are shown."
+literal|"This procedure returns the specified channel's composite method. If it is TRUE, then the channel is composited with the image so that masked regions are shown. Otherwise, selected regions are shown."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -1878,7 +1878,7 @@ literal|"gimp-channel-set-show-masked"
 block|,
 literal|"Set the composite method of the specified channel."
 block|,
-literal|"This procedure sets the specified channel's composite method. If it is non-zero, then the channel is composited with the image so that masked regions are shown. Otherwise, selected regions are shown."
+literal|"This procedure sets the specified channel's composite method. If it is TRUE, then the channel is composited with the image so that masked regions are shown. Otherwise, selected regions are shown."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,

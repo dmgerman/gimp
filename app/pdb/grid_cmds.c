@@ -2155,7 +2155,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"style"
 block|,
-literal|"The image's grid style"
+literal|"The image's grid style: { GIMP_GRID_DOTS (0), GIMP_GRID_INTERSECTIONS (1), GIMP_GRID_ON_OFF_DASH (2), GIMP_GRID_DOUBLE_DASH (3), GIMP_GRID_SOLID (4) }"
 block|}
 block|}
 decl_stmt|;
@@ -2360,7 +2360,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"style"
 block|,
-literal|"The image's grid style"
+literal|"The image's grid style: { GIMP_GRID_DOTS (0), GIMP_GRID_INTERSECTIONS (1), GIMP_GRID_ON_OFF_DASH (2), GIMP_GRID_DOUBLE_DASH (3), GIMP_GRID_SOLID (4) }"
 block|}
 block|}
 decl_stmt|;
