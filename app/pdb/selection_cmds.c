@@ -871,7 +871,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"value"
 block|,
-literal|"Value of the selection: (0<= value<= 255)"
+literal|"Value of the selection (0<= value<= 255)"
 block|}
 block|}
 decl_stmt|;

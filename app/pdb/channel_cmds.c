@@ -536,7 +536,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"width"
 block|,
-literal|"The channel width: (1<= width)"
+literal|"The channel width (1<= width)"
 block|}
 block|,
 block|{
@@ -544,7 +544,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"height"
 block|,
-literal|"The channel height: (1<= height)"
+literal|"The channel height (1<= height)"
 block|}
 block|,
 block|{
@@ -560,7 +560,7 @@ name|GIMP_PDB_FLOAT
 block|,
 literal|"opacity"
 block|,
-literal|"The channel opacity: (0<= opacity<= 100)"
+literal|"The channel opacity (0<= opacity<= 100)"
 block|}
 block|,
 block|{

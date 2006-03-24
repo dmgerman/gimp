@@ -467,7 +467,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"threshold"
 block|,
-literal|"Threshold in intensity levels: 0<= threshold<= 255"
+literal|"Threshold in intensity levels (0<= threshold<= 255)"
 block|}
 block|,
 block|{
@@ -873,7 +873,7 @@ name|GIMP_PDB_FLOAT
 block|,
 literal|"width"
 block|,
-literal|"The width of the ellipse: 0< width"
+literal|"The width of the ellipse (0< width)"
 block|}
 block|,
 block|{
@@ -881,7 +881,7 @@ name|GIMP_PDB_FLOAT
 block|,
 literal|"height"
 block|,
-literal|"The height of the ellipse: 0< height"
+literal|"The height of the ellipse (0< height)"
 block|}
 block|,
 block|{
@@ -1649,7 +1649,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"threshold"
 block|,
-literal|"Threshold in intensity levels: 0<= threshold<= 255"
+literal|"Threshold in intensity levels (0<= threshold<= 255)"
 block|}
 block|,
 block|{
@@ -2036,7 +2036,7 @@ name|GIMP_PDB_FLOAT
 block|,
 literal|"width"
 block|,
-literal|"The width of the rectangle: 0< width"
+literal|"The width of the rectangle (0< width)"
 block|}
 block|,
 block|{
@@ -2044,7 +2044,7 @@ name|GIMP_PDB_FLOAT
 block|,
 literal|"height"
 block|,
-literal|"The height of the rectangle: 0< height"
+literal|"The height of the rectangle (0< height)"
 block|}
 block|,
 block|{

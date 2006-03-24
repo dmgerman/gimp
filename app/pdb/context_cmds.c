@@ -1807,7 +1807,7 @@ name|GIMP_PDB_FLOAT
 block|,
 literal|"opacity"
 block|,
-literal|"The opacity: 0<= opacity<= 100"
+literal|"The opacity (0<= opacity<= 100)"
 block|}
 block|}
 decl_stmt|;
@@ -1952,7 +1952,7 @@ name|GIMP_PDB_FLOAT
 block|,
 literal|"opacity"
 block|,
-literal|"The opacity: 0<= opacity<= 100"
+literal|"The opacity (0<= opacity<= 100)"
 block|}
 block|}
 decl_stmt|;

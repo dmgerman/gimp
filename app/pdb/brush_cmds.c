@@ -2965,7 +2965,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"spacing"
 block|,
-literal|"The brush spacing: 0<= spacing<= 1000"
+literal|"The brush spacing (0<= spacing<= 1000)"
 block|}
 block|}
 decl_stmt|;
@@ -3184,7 +3184,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"spacing"
 block|,
-literal|"The brush spacing: 0<= spacing<= 1000"
+literal|"The brush spacing (0<= spacing<= 1000)"
 block|}
 block|}
 decl_stmt|;

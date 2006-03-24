@@ -1058,7 +1058,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"undo"
 block|,
-literal|"TRUE or FALSE"
+literal|"(TRUE or FALSE)"
 block|}
 block|}
 decl_stmt|;
@@ -1258,7 +1258,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"undo"
 block|,
-literal|"TRUE or FALSE"
+literal|"(TRUE or FALSE)"
 block|}
 block|}
 decl_stmt|;

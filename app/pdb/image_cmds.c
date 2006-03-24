@@ -3211,7 +3211,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"new-width"
 block|,
-literal|"New image width: 1<= new_width"
+literal|"New image width (1<= new_width)"
 block|}
 block|,
 block|{
@@ -3219,7 +3219,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"new-height"
 block|,
-literal|"New image height: 1<= new_height"
+literal|"New image height (1<= new_height)"
 block|}
 block|,
 block|{
@@ -3597,7 +3597,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"new-width"
 block|,
-literal|"New image width: 1<= new_width"
+literal|"New image width (1<= new_width)"
 block|}
 block|,
 block|{
@@ -3605,7 +3605,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"new-height"
 block|,
-literal|"New image height: 1<= new_height"
+literal|"New image height (1<= new_height)"
 block|}
 block|}
 decl_stmt|;
@@ -11593,7 +11593,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"num-bytes"
 block|,
-literal|"Number of bytes in the colormap array: 0< num_bytes"
+literal|"Number of bytes in the colormap array (0< num_bytes)"
 block|}
 block|,
 block|{
@@ -11809,7 +11809,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"num-bytes"
 block|,
-literal|"Number of bytes in the colormap array: 0<= num_bytes<= 768"
+literal|"Number of bytes in the colormap array (0<= num_bytes<= 768)"
 block|}
 block|,
 block|{

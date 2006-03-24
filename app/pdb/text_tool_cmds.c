@@ -604,7 +604,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"border"
 block|,
-literal|"The size of the border: -1<= border"
+literal|"The size of the border (-1<= border)"
 block|}
 block|,
 block|{
@@ -1788,7 +1788,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"border"
 block|,
-literal|"The size of the border: -1<= border"
+literal|"The size of the border (-1<= border)"
 block|}
 block|,
 block|{

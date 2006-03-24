@@ -767,7 +767,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"brightness"
 block|,
-literal|"Brightness adjustment: (-127<= brightness<= 127)"
+literal|"Brightness adjustment (-127<= brightness<= 127)"
 block|}
 block|,
 block|{
@@ -775,7 +775,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"contrast"
 block|,
-literal|"Contrast adjustment: (-127<= contrast<= 127)"
+literal|"Contrast adjustment (-127<= contrast<= 127)"
 block|}
 block|}
 decl_stmt|;
@@ -1184,7 +1184,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"low-input"
 block|,
-literal|"Intensity of lowest input: (0<= low_input<= 255)"
+literal|"Intensity of lowest input (0<= low_input<= 255)"
 block|}
 block|,
 block|{
@@ -1192,7 +1192,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"high-input"
 block|,
-literal|"Intensity of highest input: (0<= high_input<= 255)"
+literal|"Intensity of highest input (0<= high_input<= 255)"
 block|}
 block|,
 block|{
@@ -1200,7 +1200,7 @@ name|GIMP_PDB_FLOAT
 block|,
 literal|"gamma"
 block|,
-literal|"Gamma correction factor: (0.1<= gamma<= 10)"
+literal|"Gamma correction factor (0.1<= gamma<= 10)"
 block|}
 block|,
 block|{
@@ -1208,7 +1208,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"low-output"
 block|,
-literal|"Intensity of lowest output: (0<= low_output<= 255)"
+literal|"Intensity of lowest output (0<= low_output<= 255)"
 block|}
 block|,
 block|{
@@ -1216,7 +1216,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"high-output"
 block|,
-literal|"Intensity of highest output: (0<= high_output<= 255)"
+literal|"Intensity of highest output (0<= high_output<= 255)"
 block|}
 block|}
 decl_stmt|;
@@ -1947,7 +1947,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"levels"
 block|,
-literal|"Levels of posterization: (2<= levels<= 255)"
+literal|"Levels of posterization (2<= levels<= 255)"
 block|}
 block|}
 decl_stmt|;
@@ -4377,7 +4377,7 @@ name|GIMP_PDB_FLOAT
 block|,
 literal|"cyan-red"
 block|,
-literal|"Cyan-Red color balance: (-100<= cyan_red<= 100)"
+literal|"Cyan-Red color balance (-100<= cyan_red<= 100)"
 block|}
 block|,
 block|{
@@ -4385,7 +4385,7 @@ name|GIMP_PDB_FLOAT
 block|,
 literal|"magenta-green"
 block|,
-literal|"Magenta-Green color balance: (-100<= magenta_green<= 100)"
+literal|"Magenta-Green color balance (-100<= magenta_green<= 100)"
 block|}
 block|,
 block|{
@@ -4393,7 +4393,7 @@ name|GIMP_PDB_FLOAT
 block|,
 literal|"yellow-blue"
 block|,
-literal|"Yellow-Blue color balance: (-100<= yellow_blue<= 100)"
+literal|"Yellow-Blue color balance (-100<= yellow_blue<= 100)"
 block|}
 block|}
 decl_stmt|;
@@ -4823,7 +4823,7 @@ name|GIMP_PDB_FLOAT
 block|,
 literal|"hue"
 block|,
-literal|"Hue in degrees: (0<= hue<= 360)"
+literal|"Hue in degrees (0<= hue<= 360)"
 block|}
 block|,
 block|{
@@ -4831,7 +4831,7 @@ name|GIMP_PDB_FLOAT
 block|,
 literal|"saturation"
 block|,
-literal|"Saturation in percent: (0<= saturation<= 100)"
+literal|"Saturation in percent (0<= saturation<= 100)"
 block|}
 block|,
 block|{
@@ -4839,7 +4839,7 @@ name|GIMP_PDB_FLOAT
 block|,
 literal|"lightness"
 block|,
-literal|"Lightness in percent: (-100<= lightness<= 100)"
+literal|"Lightness in percent (-100<= lightness<= 100)"
 block|}
 block|}
 decl_stmt|;
@@ -5891,7 +5891,7 @@ name|GIMP_PDB_FLOAT
 block|,
 literal|"hue-offset"
 block|,
-literal|"Hue offset in degrees: (-180<= hue_offset<= 180)"
+literal|"Hue offset in degrees (-180<= hue_offset<= 180)"
 block|}
 block|,
 block|{
@@ -5899,7 +5899,7 @@ name|GIMP_PDB_FLOAT
 block|,
 literal|"lightness"
 block|,
-literal|"Lightness modification: (-100<= lightness<= 100)"
+literal|"Lightness modification (-100<= lightness<= 100)"
 block|}
 block|,
 block|{
@@ -5907,7 +5907,7 @@ name|GIMP_PDB_FLOAT
 block|,
 literal|"saturation"
 block|,
-literal|"Saturation modification: (-100<= saturation<= 100)"
+literal|"Saturation modification (-100<= saturation<= 100)"
 block|}
 block|}
 decl_stmt|;
@@ -6304,7 +6304,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"low-threshold"
 block|,
-literal|"The low threshold value: 0<= low_threshold<= 255"
+literal|"The low threshold value (0<= low_threshold<= 255)"
 block|}
 block|,
 block|{
@@ -6312,7 +6312,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"high-threshold"
 block|,
-literal|"The high threshold value: 0<= high_threshold<= 255"
+literal|"The high threshold value (0<= high_threshold<= 255)"
 block|}
 block|}
 decl_stmt|;

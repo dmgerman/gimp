@@ -332,7 +332,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_plugin_icon_register:  * @procedure_name: The procedure for which to install the icon.  * @icon_type: The type of the icon.  * @icon_data_length: The length of 'icon_data'.  * @icon_data: The procedure's icon. The format depends on the 'icon_type' parameter.  *  * Register an icon for a plug-in procedure.  *  * This procedure installs an icon for the given procedure.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * _gimp_plugin_icon_register:  * @procedure_name: The procedure for which to install the icon.  * @icon_type: The type of the icon.  * @icon_data_length: The length of 'icon-data'.  * @icon_data: The procedure's icon. The format depends on the 'icon_type' parameter.  *  * Register an icon for a plug-in procedure.  *  * This procedure installs an icon for the given procedure.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function

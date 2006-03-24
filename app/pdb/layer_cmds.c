@@ -870,7 +870,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"width"
 block|,
-literal|"The layer width: (1<= width)"
+literal|"The layer width (1<= width)"
 block|}
 block|,
 block|{
@@ -878,7 +878,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"height"
 block|,
-literal|"The layer height: (1<= height)"
+literal|"The layer height (1<= height)"
 block|}
 block|,
 block|{
@@ -902,7 +902,7 @@ name|GIMP_PDB_FLOAT
 block|,
 literal|"opacity"
 block|,
-literal|"The layer opacity: (0<= opacity<= 100)"
+literal|"The layer opacity (0<= opacity<= 100)"
 block|}
 block|,
 block|{
@@ -1963,7 +1963,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"new-width"
 block|,
-literal|"New layer width: (1<= new_width)"
+literal|"New layer width (1<= new_width)"
 block|}
 block|,
 block|{
@@ -1971,7 +1971,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"new-height"
 block|,
-literal|"New layer height: (1<= new_height)"
+literal|"New layer height (1<= new_height)"
 block|}
 block|,
 block|{
@@ -2251,7 +2251,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"new-width"
 block|,
-literal|"New layer width: (1<= new_width)"
+literal|"New layer width (1<= new_width)"
 block|}
 block|,
 block|{
@@ -2259,7 +2259,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"new-height"
 block|,
-literal|"New layer height: (1<= new_height)"
+literal|"New layer height (1<= new_height)"
 block|}
 block|,
 block|{

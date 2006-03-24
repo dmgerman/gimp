@@ -779,7 +779,7 @@ name|GIMP_PDB_FLOAT
 block|,
 literal|"pressure"
 block|,
-literal|"The pressure of the airbrush strokes: (0<= pressure<= 100)"
+literal|"The pressure of the airbrush strokes (0<= pressure<= 100)"
 block|}
 block|,
 block|{
@@ -2126,7 +2126,7 @@ name|GIMP_PDB_FLOAT
 block|,
 literal|"pressure"
 block|,
-literal|"The pressure: 0<= pressure<= 100"
+literal|"The pressure (0<= pressure<= 100)"
 block|}
 block|,
 block|{
@@ -2799,7 +2799,7 @@ name|GIMP_PDB_FLOAT
 block|,
 literal|"exposure"
 block|,
-literal|"The exposure of the strokes: (0<= exposure<= 100)"
+literal|"The exposure of the strokes (0<= exposure<= 100)"
 block|}
 block|,
 block|{
@@ -4125,7 +4125,7 @@ name|GIMP_PDB_FLOAT
 block|,
 literal|"fade-out"
 block|,
-literal|"Fade out parameter: 0<= fade_out"
+literal|"Fade out parameter (0<= fade_out)"
 block|}
 block|,
 block|{
@@ -4157,7 +4157,7 @@ name|GIMP_PDB_FLOAT
 block|,
 literal|"gradient-length"
 block|,
-literal|"Length of gradient to draw: 0<= gradient_length"
+literal|"Length of gradient to draw (0<= gradient_length)"
 block|}
 block|}
 decl_stmt|;
@@ -5019,7 +5019,7 @@ name|GIMP_PDB_FLOAT
 block|,
 literal|"pressure"
 block|,
-literal|"The pressure of the smudge strokes: (0<= pressure<= 100)"
+literal|"The pressure of the smudge strokes (0<= pressure<= 100)"
 block|}
 block|,
 block|{

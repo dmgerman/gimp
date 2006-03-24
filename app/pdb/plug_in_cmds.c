@@ -1847,7 +1847,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"icon-data-length"
 block|,
-literal|"The length of 'icon_data': 1<= icon_data_length"
+literal|"The length of 'icon-data' (1<= icon_data_length)"
 block|}
 block|,
 block|{
