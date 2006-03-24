@@ -1704,8 +1704,8 @@ expr_stmt|;
 if|if
 condition|(
 name|icon_data_length
-operator|<=
-literal|0
+operator|<
+literal|1
 condition|)
 name|success
 operator|=
@@ -1847,7 +1847,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"icon-data-length"
 block|,
-literal|"The length of 'icon_data': 0< icon_data_length"
+literal|"The length of 'icon_data': 1<= icon_data_length"
 block|}
 block|,
 block|{

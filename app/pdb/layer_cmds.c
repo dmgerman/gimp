@@ -634,8 +634,8 @@ expr_stmt|;
 if|if
 condition|(
 name|width
-operator|<=
-literal|0
+operator|<
+literal|1
 condition|)
 name|success
 operator|=
@@ -655,8 +655,8 @@ expr_stmt|;
 if|if
 condition|(
 name|height
-operator|<=
-literal|0
+operator|<
+literal|1
 condition|)
 name|success
 operator|=
@@ -870,7 +870,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"width"
 block|,
-literal|"The layer width: (0< width)"
+literal|"The layer width: (1<= width)"
 block|}
 block|,
 block|{
@@ -878,7 +878,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"height"
 block|,
-literal|"The layer height: (0< height)"
+literal|"The layer height: (1<= height)"
 block|}
 block|,
 block|{
@@ -1844,8 +1844,8 @@ expr_stmt|;
 if|if
 condition|(
 name|new_width
-operator|<=
-literal|0
+operator|<
+literal|1
 condition|)
 name|success
 operator|=
@@ -1865,8 +1865,8 @@ expr_stmt|;
 if|if
 condition|(
 name|new_height
-operator|<=
-literal|0
+operator|<
+literal|1
 condition|)
 name|success
 operator|=
@@ -1963,7 +1963,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"new-width"
 block|,
-literal|"New layer width: (0< new_width)"
+literal|"New layer width: (1<= new_width)"
 block|}
 block|,
 block|{
@@ -1971,7 +1971,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"new-height"
 block|,
-literal|"New layer height: (0< new_height)"
+literal|"New layer height: (1<= new_height)"
 block|}
 block|,
 block|{
@@ -2129,8 +2129,8 @@ expr_stmt|;
 if|if
 condition|(
 name|new_width
-operator|<=
-literal|0
+operator|<
+literal|1
 condition|)
 name|success
 operator|=
@@ -2150,8 +2150,8 @@ expr_stmt|;
 if|if
 condition|(
 name|new_height
-operator|<=
-literal|0
+operator|<
+literal|1
 condition|)
 name|success
 operator|=
@@ -2251,7 +2251,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"new-width"
 block|,
-literal|"New layer width: (0< new_width)"
+literal|"New layer width: (1<= new_width)"
 block|}
 block|,
 block|{
@@ -2259,7 +2259,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"new-height"
 block|,
-literal|"New layer height: (0< new_height)"
+literal|"New layer height: (1<= new_height)"
 block|}
 block|,
 block|{

@@ -961,8 +961,8 @@ expr_stmt|;
 if|if
 condition|(
 name|recursion_level
-operator|<=
-literal|0
+operator|<
+literal|1
 condition|)
 name|success
 operator|=
@@ -2082,8 +2082,8 @@ expr_stmt|;
 if|if
 condition|(
 name|recursion_level
-operator|<=
-literal|0
+operator|<
+literal|1
 condition|)
 name|success
 operator|=
@@ -3688,8 +3688,8 @@ expr_stmt|;
 if|if
 condition|(
 name|recursion_level
-operator|<=
-literal|0
+operator|<
+literal|1
 condition|)
 name|success
 operator|=
@@ -4779,8 +4779,8 @@ expr_stmt|;
 if|if
 condition|(
 name|recursion_level
-operator|<=
-literal|0
+operator|<
+literal|1
 condition|)
 name|success
 operator|=
@@ -5858,8 +5858,8 @@ expr_stmt|;
 if|if
 condition|(
 name|recursion_level
-operator|<=
-literal|0
+operator|<
+literal|1
 condition|)
 name|success
 operator|=
@@ -6911,8 +6911,8 @@ expr_stmt|;
 if|if
 condition|(
 name|recursion_level
-operator|<=
-literal|0
+operator|<
+literal|1
 condition|)
 name|success
 operator|=
@@ -8172,8 +8172,8 @@ expr_stmt|;
 if|if
 condition|(
 name|recursion_level
-operator|<=
-literal|0
+operator|<
+literal|1
 condition|)
 name|success
 operator|=

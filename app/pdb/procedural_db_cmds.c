@@ -2769,8 +2769,8 @@ expr_stmt|;
 if|if
 condition|(
 name|bytes
-operator|<=
-literal|0
+operator|<
+literal|1
 condition|)
 name|success
 operator|=

@@ -2926,8 +2926,8 @@ expr_stmt|;
 if|if
 condition|(
 name|num_points
-operator|<=
-literal|3
+operator|<
+literal|4
 operator|||
 name|num_points
 operator|>
@@ -3343,7 +3343,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"num-points"
 block|,
-literal|"The number of values in the control point array (3< num_points<= 34)"
+literal|"The number of values in the control point array (4<= num_points<= 34)"
 block|}
 block|,
 block|{

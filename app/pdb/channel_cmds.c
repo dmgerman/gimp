@@ -329,8 +329,8 @@ expr_stmt|;
 if|if
 condition|(
 name|width
-operator|<=
-literal|0
+operator|<
+literal|1
 condition|)
 name|success
 operator|=
@@ -350,8 +350,8 @@ expr_stmt|;
 if|if
 condition|(
 name|height
-operator|<=
-literal|0
+operator|<
+literal|1
 condition|)
 name|success
 operator|=
@@ -536,7 +536,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"width"
 block|,
-literal|"The channel width: (0< width)"
+literal|"The channel width: (1<= width)"
 block|}
 block|,
 block|{
@@ -544,7 +544,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"height"
 block|,
-literal|"The channel height: (0< height)"
+literal|"The channel height: (1<= height)"
 block|}
 block|,
 block|{

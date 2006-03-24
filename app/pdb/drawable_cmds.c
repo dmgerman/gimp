@@ -8262,8 +8262,8 @@ expr_stmt|;
 if|if
 condition|(
 name|width
-operator|<=
-literal|0
+operator|<
+literal|1
 operator|||
 name|width
 operator|>
@@ -8287,8 +8287,8 @@ expr_stmt|;
 if|if
 condition|(
 name|height
-operator|<=
-literal|0
+operator|<
+literal|1
 operator|||
 name|height
 operator|>
@@ -8870,8 +8870,8 @@ expr_stmt|;
 if|if
 condition|(
 name|src_width
-operator|<=
-literal|0
+operator|<
+literal|1
 condition|)
 name|success
 operator|=
@@ -8891,8 +8891,8 @@ expr_stmt|;
 if|if
 condition|(
 name|src_height
-operator|<=
-literal|0
+operator|<
+literal|1
 condition|)
 name|success
 operator|=
@@ -8912,8 +8912,8 @@ expr_stmt|;
 if|if
 condition|(
 name|dest_width
-operator|<=
-literal|0
+operator|<
+literal|1
 operator|||
 name|dest_width
 operator|>
@@ -8937,8 +8937,8 @@ expr_stmt|;
 if|if
 condition|(
 name|dest_height
-operator|<=
-literal|0
+operator|<
+literal|1
 operator|||
 name|dest_height
 operator|>

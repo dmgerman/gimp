@@ -1703,8 +1703,8 @@ expr_stmt|;
 if|if
 condition|(
 name|width
-operator|<=
-literal|0
+operator|<
+literal|1
 condition|)
 name|success
 operator|=
@@ -1724,8 +1724,8 @@ expr_stmt|;
 if|if
 condition|(
 name|height
-operator|<=
-literal|0
+operator|<
+literal|1
 condition|)
 name|success
 operator|=
@@ -3105,8 +3105,8 @@ expr_stmt|;
 if|if
 condition|(
 name|new_width
-operator|<=
-literal|0
+operator|<
+literal|1
 condition|)
 name|success
 operator|=
@@ -3126,8 +3126,8 @@ expr_stmt|;
 if|if
 condition|(
 name|new_height
-operator|<=
-literal|0
+operator|<
+literal|1
 condition|)
 name|success
 operator|=
@@ -3211,7 +3211,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"new-width"
 block|,
-literal|"New image width: 0< new_width"
+literal|"New image width: 1<= new_width"
 block|}
 block|,
 block|{
@@ -3219,7 +3219,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"new-height"
 block|,
-literal|"New image height: 0< new_height"
+literal|"New image height: 1<= new_height"
 block|}
 block|,
 block|{
@@ -3513,8 +3513,8 @@ expr_stmt|;
 if|if
 condition|(
 name|new_width
-operator|<=
-literal|0
+operator|<
+literal|1
 condition|)
 name|success
 operator|=
@@ -3534,8 +3534,8 @@ expr_stmt|;
 if|if
 condition|(
 name|new_height
-operator|<=
-literal|0
+operator|<
+literal|1
 condition|)
 name|success
 operator|=
@@ -3597,7 +3597,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"new-width"
 block|,
-literal|"New image width: 0< new_width"
+literal|"New image width: 1<= new_width"
 block|}
 block|,
 block|{
@@ -3605,7 +3605,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"new-height"
 block|,
-literal|"New image height: 0< new_height"
+literal|"New image height: 1<= new_height"
 block|}
 block|}
 decl_stmt|;
@@ -3740,8 +3740,8 @@ expr_stmt|;
 if|if
 condition|(
 name|new_width
-operator|<=
-literal|0
+operator|<
+literal|1
 condition|)
 name|success
 operator|=
@@ -3761,8 +3761,8 @@ expr_stmt|;
 if|if
 condition|(
 name|new_height
-operator|<=
-literal|0
+operator|<
+literal|1
 condition|)
 name|success
 operator|=
@@ -12318,8 +12318,8 @@ expr_stmt|;
 if|if
 condition|(
 name|width
-operator|<=
-literal|0
+operator|<
+literal|1
 operator|||
 name|width
 operator|>
@@ -12343,8 +12343,8 @@ expr_stmt|;
 if|if
 condition|(
 name|height
-operator|<=
-literal|0
+operator|<
+literal|1
 operator|||
 name|height
 operator|>
