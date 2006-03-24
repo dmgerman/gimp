@@ -1898,7 +1898,7 @@ name|undo_desc
 operator|=
 name|_
 argument_list|(
-literal|"Fill with FG Color"
+literal|"Fill with Foreground Color"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1909,7 +1909,7 @@ name|undo_desc
 operator|=
 name|_
 argument_list|(
-literal|"Fill with BG Color"
+literal|"Fill with Background Color"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1961,18 +1961,18 @@ argument_list|,
 name|G_STRFUNC
 argument_list|)
 expr_stmt|;
-name|fill_type
-operator|=
-name|GIMP_BACKGROUND_FILL
-expr_stmt|;
-name|undo_desc
-operator|=
-name|_
+return|return
+name|gimp_edit_fill
 argument_list|(
-literal|"Fill with BG Color"
+name|gimage
+argument_list|,
+name|drawable
+argument_list|,
+name|context
+argument_list|,
+name|GIMP_BACKGROUND_FILL
 argument_list|)
-expr_stmt|;
-break|break;
+return|;
 block|}
 return|return
 name|gimp_edit_fill_internal

@@ -218,7 +218,7 @@ literal|""
 block|,
 name|N_
 argument_list|(
-literal|"New color from FG"
+literal|"New color from foreground color"
 argument_list|)
 block|,
 name|FALSE
@@ -242,7 +242,7 @@ literal|""
 block|,
 name|N_
 argument_list|(
-literal|"New color from BG"
+literal|"New color from background color"
 argument_list|)
 block|,
 name|TRUE

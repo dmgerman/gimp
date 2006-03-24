@@ -552,7 +552,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"_FG Color"
+literal|"_Foreground Color"
 argument_list|)
 block|,
 name|NULL
@@ -573,7 +573,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"_BG Color"
+literal|"_Background Color"
 argument_list|)
 block|,
 name|NULL
@@ -817,7 +817,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"_FG Color"
+literal|"_Foreground Color"
 argument_list|)
 block|,
 name|NULL
@@ -838,7 +838,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"_BG Color"
+literal|"_Background Color"
 argument_list|)
 block|,
 name|NULL

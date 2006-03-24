@@ -152,7 +152,7 @@ literal|""
 block|,
 name|N_
 argument_list|(
-literal|"Add color from FG"
+literal|"Add current foreground color"
 argument_list|)
 block|,
 name|FALSE
@@ -176,7 +176,7 @@ literal|""
 block|,
 name|N_
 argument_list|(
-literal|"Add color from BG"
+literal|"Add current background color"
 argument_list|)
 block|,
 name|TRUE
