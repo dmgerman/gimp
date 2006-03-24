@@ -118,7 +118,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c201fc0108
+DECL|struct|__anon277f58a70108
 block|{
 DECL|member|resolution
 name|gdouble
@@ -459,7 +459,7 @@ name|SVG_VERSION
 argument_list|,
 name|N_
 argument_list|(
-literal|"Scalable SVG image"
+literal|"SVG image"
 argument_list|)
 argument_list|,
 name|NULL

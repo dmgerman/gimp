@@ -138,7 +138,7 @@ name|channel
 argument_list|,
 name|_
 argument_list|(
-literal|"Rect Select"
+literal|"Select rectangular region"
 argument_list|)
 argument_list|)
 expr_stmt|;

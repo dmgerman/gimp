@@ -308,7 +308,7 @@ literal|"gimp-rect-select-tool"
 argument_list|,
 name|_
 argument_list|(
-literal|"Rect Select"
+literal|"Rectangle Select"
 argument_list|)
 argument_list|,
 name|_
@@ -318,7 +318,7 @@ argument_list|)
 argument_list|,
 name|N_
 argument_list|(
-literal|"_Rect Select"
+literal|"_Rectangle Select"
 argument_list|)
 argument_list|,
 literal|"R"
