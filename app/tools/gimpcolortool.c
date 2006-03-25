@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3b87c40103
+DECL|enum|__anon29573fac0103
 block|{
 DECL|enumerator|PICKED
 name|PICKED
@@ -270,6 +270,9 @@ name|coords
 parameter_list|,
 name|GdkModifierType
 name|state
+parameter_list|,
+name|gboolean
+name|proximity
 parameter_list|,
 name|GimpDisplay
 modifier|*
@@ -1772,7 +1775,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_color_tool_oper_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_color_tool_oper_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,gboolean proximity,GimpDisplay * gdisp)
 name|gimp_color_tool_oper_update
 parameter_list|(
 name|GimpTool
@@ -1785,6 +1788,9 @@ name|coords
 parameter_list|,
 name|GdkModifierType
 name|state
+parameter_list|,
+name|gboolean
+name|proximity
 parameter_list|,
 name|GimpDisplay
 modifier|*
@@ -1828,8 +1834,6 @@ argument_list|(
 name|shell
 argument_list|)
 operator|&&
-name|shell
-operator|->
 name|proximity
 condition|)
 block|{

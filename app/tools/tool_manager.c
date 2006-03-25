@@ -1343,7 +1343,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|tool_manager_oper_update_active (Gimp * gimp,GimpCoords * coords,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|tool_manager_oper_update_active (Gimp * gimp,GimpCoords * coords,GdkModifierType state,gboolean proximity,GimpDisplay * gdisp)
 name|tool_manager_oper_update_active
 parameter_list|(
 name|Gimp
@@ -1356,6 +1356,9 @@ name|coords
 parameter_list|,
 name|GdkModifierType
 name|state
+parameter_list|,
+name|gboolean
+name|proximity
 parameter_list|,
 name|GimpDisplay
 modifier|*
@@ -1397,6 +1400,8 @@ argument_list|,
 name|coords
 argument_list|,
 name|state
+argument_list|,
+name|proximity
 argument_list|,
 name|gdisp
 argument_list|)

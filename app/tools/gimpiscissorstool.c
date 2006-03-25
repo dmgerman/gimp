@@ -537,6 +537,9 @@ parameter_list|,
 name|GdkModifierType
 name|state
 parameter_list|,
+name|gboolean
+name|proximity
+parameter_list|,
 name|GimpDisplay
 modifier|*
 name|gdisp
@@ -3806,7 +3809,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_iscissors_tool_oper_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_iscissors_tool_oper_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,gboolean proximity,GimpDisplay * gdisp)
 name|gimp_iscissors_tool_oper_update
 parameter_list|(
 name|GimpTool
@@ -3819,6 +3822,9 @@ name|coords
 parameter_list|,
 name|GdkModifierType
 name|state
+parameter_list|,
+name|gboolean
+name|proximity
 parameter_list|,
 name|GimpDisplay
 modifier|*
@@ -3846,6 +3852,8 @@ argument_list|,
 name|coords
 argument_list|,
 name|state
+argument_list|,
+name|proximity
 argument_list|,
 name|gdisp
 argument_list|)

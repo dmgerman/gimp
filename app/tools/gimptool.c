@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af303dc0103
+DECL|enum|__anon2b1404630103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -314,6 +314,9 @@ name|coords
 parameter_list|,
 name|GdkModifierType
 name|state
+parameter_list|,
+name|gboolean
+name|proximity
 parameter_list|,
 name|GimpDisplay
 modifier|*
@@ -974,7 +977,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tool_real_oper_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_tool_real_oper_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,gboolean proximity,GimpDisplay * gdisp)
 name|gimp_tool_real_oper_update
 parameter_list|(
 name|GimpTool
@@ -987,6 +990,9 @@ name|coords
 parameter_list|,
 name|GdkModifierType
 name|state
+parameter_list|,
+name|gboolean
+name|proximity
 parameter_list|,
 name|GimpDisplay
 modifier|*
@@ -1893,7 +1899,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_tool_oper_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_tool_oper_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,gboolean proximity,GimpDisplay * gdisp)
 name|gimp_tool_oper_update
 parameter_list|(
 name|GimpTool
@@ -1906,6 +1912,9 @@ name|coords
 parameter_list|,
 name|GdkModifierType
 name|state
+parameter_list|,
+name|gboolean
+name|proximity
 parameter_list|,
 name|GimpDisplay
 modifier|*
@@ -1947,6 +1956,8 @@ argument_list|,
 name|coords
 argument_list|,
 name|state
+argument_list|,
+name|proximity
 argument_list|,
 name|gdisp
 argument_list|)

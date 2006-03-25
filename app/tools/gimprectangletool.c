@@ -5348,7 +5348,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_rectangle_tool_oper_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_rectangle_tool_oper_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,gboolean proximity,GimpDisplay * gdisp)
 name|gimp_rectangle_tool_oper_update
 parameter_list|(
 name|GimpTool
@@ -5361,6 +5361,9 @@ name|coords
 parameter_list|,
 name|GdkModifierType
 name|state
+parameter_list|,
+name|gboolean
+name|proximity
 parameter_list|,
 name|GimpDisplay
 modifier|*

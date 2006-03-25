@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27af66e40103
+DECL|enum|__anon29c90fb10103
 block|{
 DECL|enumerator|GIMP_RECTANGLE_TOOL_PROP_0
 name|GIMP_RECTANGLE_TOOL_PROP_0
@@ -156,7 +156,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27af66e40203
+DECL|enum|__anon29c90fb10203
 block|{
 DECL|enumerator|RECT_CREATING
 name|RECT_CREATING
@@ -428,6 +428,9 @@ name|coords
 parameter_list|,
 name|GdkModifierType
 name|state
+parameter_list|,
+name|gboolean
+name|proximity
 parameter_list|,
 name|GimpDisplay
 modifier|*

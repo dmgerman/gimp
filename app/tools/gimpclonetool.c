@@ -90,12 +90,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpdisplayshell.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpclonetool.h"
 end_include
 
@@ -223,6 +217,9 @@ name|coords
 parameter_list|,
 name|GdkModifierType
 name|state
+parameter_list|,
+name|gboolean
+name|proximity
 parameter_list|,
 name|GimpDisplay
 modifier|*
@@ -917,7 +914,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_clone_tool_oper_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_clone_tool_oper_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,gboolean proximity,GimpDisplay * gdisp)
 name|gimp_clone_tool_oper_update
 parameter_list|(
 name|GimpTool
@@ -930,6 +927,9 @@ name|coords
 parameter_list|,
 name|GdkModifierType
 name|state
+parameter_list|,
+name|gboolean
+name|proximity
 parameter_list|,
 name|GimpDisplay
 modifier|*
@@ -959,6 +959,8 @@ name|coords
 argument_list|,
 name|state
 argument_list|,
+name|proximity
+argument_list|,
 name|gdisp
 argument_list|)
 expr_stmt|;
@@ -987,13 +989,6 @@ name|src_drawable
 operator|==
 name|NULL
 operator|&&
-name|GIMP_DISPLAY_SHELL
-argument_list|(
-name|gdisp
-operator|->
-name|shell
-argument_list|)
-operator|->
 name|proximity
 condition|)
 block|{

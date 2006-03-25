@@ -266,6 +266,9 @@ parameter_list|,
 name|GdkModifierType
 name|state
 parameter_list|,
+name|gboolean
+name|proximity
+parameter_list|,
 name|GimpDisplay
 modifier|*
 name|gdisp

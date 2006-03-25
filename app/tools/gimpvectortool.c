@@ -365,6 +365,9 @@ parameter_list|,
 name|GdkModifierType
 name|state
 parameter_list|,
+name|gboolean
+name|proximity
+parameter_list|,
 name|GimpDisplay
 modifier|*
 name|gdisp
@@ -384,6 +387,9 @@ parameter_list|,
 name|GimpDisplay
 modifier|*
 name|gdisp
+parameter_list|,
+name|gboolean
+name|proximity
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -3406,7 +3412,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_vector_tool_oper_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_vector_tool_oper_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,gboolean proximity,GimpDisplay * gdisp)
 name|gimp_vector_tool_oper_update
 parameter_list|(
 name|GimpTool
@@ -3419,6 +3425,9 @@ name|coords
 parameter_list|,
 name|GdkModifierType
 name|state
+parameter_list|,
+name|gboolean
+name|proximity
 parameter_list|,
 name|GimpDisplay
 modifier|*
@@ -4260,6 +4269,8 @@ argument_list|(
 name|tool
 argument_list|,
 name|gdisp
+argument_list|,
+name|proximity
 argument_list|)
 expr_stmt|;
 block|}
@@ -4268,7 +4279,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_vector_tool_status_update (GimpTool * tool,GimpDisplay * gdisp)
+DECL|function|gimp_vector_tool_status_update (GimpTool * tool,GimpDisplay * gdisp,gboolean proximity)
 name|gimp_vector_tool_status_update
 parameter_list|(
 name|GimpTool
@@ -4278,6 +4289,9 @@ parameter_list|,
 name|GimpDisplay
 modifier|*
 name|gdisp
+parameter_list|,
+name|gboolean
+name|proximity
 parameter_list|)
 block|{
 name|GimpVectorTool
@@ -4298,13 +4312,6 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|GIMP_DISPLAY_SHELL
-argument_list|(
-name|gdisp
-operator|->
-name|shell
-argument_list|)
-operator|->
 name|proximity
 condition|)
 block|{
