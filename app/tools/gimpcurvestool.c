@@ -150,6 +150,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplayshell.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcurvestool.h"
 end_include
 
@@ -1602,6 +1608,15 @@ expr_stmt|;
 if|if
 condition|(
 name|status
+operator|&&
+name|GIMP_DISPLAY_SHELL
+argument_list|(
+name|gdisp
+operator|->
+name|shell
+argument_list|)
+operator|->
+name|proximity
 condition|)
 name|gimp_tool_push_status
 argument_list|(

@@ -144,7 +144,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b61ec3c0108
+DECL|struct|__anon2c912aae0108
 block|{
 DECL|member|width
 name|gint
@@ -1250,6 +1250,18 @@ block|}
 block|}
 if|if
 condition|(
+name|GIMP_DISPLAY_SHELL
+argument_list|(
+name|gdisp
+operator|->
+name|shell
+argument_list|)
+operator|->
+name|proximity
+condition|)
+block|{
+if|if
+condition|(
 name|status
 condition|)
 name|gimp_tool_replace_status
@@ -1261,17 +1273,6 @@ argument_list|,
 name|status
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|GIMP_DISPLAY_SHELL
-argument_list|(
-name|gdisp
-operator|->
-name|shell
-argument_list|)
-operator|->
-name|proximity
-condition|)
 name|gimp_draw_tool_start
 argument_list|(
 name|draw_tool
@@ -1279,6 +1280,7 @@ argument_list|,
 name|gdisp
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 

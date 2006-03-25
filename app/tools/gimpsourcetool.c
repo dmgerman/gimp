@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplayshell.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpclonetool.h"
 end_include
 
@@ -980,6 +986,15 @@ operator|->
 name|src_drawable
 operator|==
 name|NULL
+operator|&&
+name|GIMP_DISPLAY_SHELL
+argument_list|(
+name|gdisp
+operator|->
+name|shell
+argument_list|)
+operator|->
+name|proximity
 condition|)
 block|{
 name|gimp_tool_replace_status
