@@ -20,18 +20,21 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * _gimp_progress_init:  * @message: Message to use in the progress dialog.   *  * Initializes the progress bar for the current plug-in.  *  * Initializes the progress bar for the current plug-in. It is only  * valid to call this procedure from a plug-in.  *  * Returns: TRUE on success.  */
+comment|/**  * _gimp_progress_init:  * @message: Message to use in the progress dialog.  * @gdisplay_ID: GimpDisplay to update progressbar in, or -1 for a seperate window.  *  * Initializes the progress bar for the current plug-in.  *  * Initializes the progress bar for the current plug-in. It is only  * valid to call this procedure from a plug-in.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|_gimp_progress_init (const gchar * message)
+DECL|function|_gimp_progress_init (const gchar * message,gint32 gdisplay_ID)
 name|_gimp_progress_init
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
 name|message
+parameter_list|,
+name|gint32
+name|gdisplay_ID
 parameter_list|)
 block|{
 name|GimpParam
@@ -61,8 +64,7 @@ name|message
 argument_list|,
 name|GIMP_PDB_DISPLAY
 argument_list|,
-name|gimp_default_display
-argument_list|()
+name|gdisplay_ID
 argument_list|,
 name|GIMP_PDB_END
 argument_list|)

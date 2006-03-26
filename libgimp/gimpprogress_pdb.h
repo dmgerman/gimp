@@ -30,6 +30,9 @@ specifier|const
 name|gchar
 operator|*
 name|message
+argument_list|,
+name|gint32
+name|gdisplay_ID
 argument_list|)
 name|G_GNUC_INTERNAL
 decl_stmt|;

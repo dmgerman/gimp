@@ -683,6 +683,9 @@ return|return
 name|_gimp_progress_init
 argument_list|(
 name|message
+argument_list|,
+name|gimp_default_display
+argument_list|()
 argument_list|)
 return|;
 block|}
