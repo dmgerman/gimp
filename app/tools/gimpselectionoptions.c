@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimprectselecttool.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpfuzzyselecttool.h"
 end_include
 
@@ -119,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c85251d0103
+DECL|enum|__anon293dd3870103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2032,6 +2038,14 @@ name|tool_info
 operator|->
 name|tool_type
 operator|==
+name|GIMP_TYPE_NEW_RECT_SELECT_TOOL
+operator|||
+name|tool_options
+operator|->
+name|tool_info
+operator|->
+name|tool_type
+operator|==
 name|GIMP_TYPE_ELLIPSE_SELECT_TOOL
 condition|)
 block|{
@@ -2201,6 +2215,17 @@ argument_list|(
 name|button
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|tool_options
+operator|->
+name|tool_info
+operator|->
+name|tool_type
+operator|==
+name|GIMP_TYPE_RECT_SELECT_TOOL
+condition|)
+block|{
 name|frame
 operator|=
 name|gimp_frame_new
@@ -2502,6 +2527,7 @@ argument_list|(
 name|table
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 return|return
 name|vbox

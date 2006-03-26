@@ -71,7 +71,7 @@ name|GIMP_IS_NEW_RECT_SELECT_TOOL_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_NEW_RECT_SELECT_TOOL))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_NEW_RECT_SELECT_TOOL))
 end_define
 
 begin_define
@@ -125,6 +125,30 @@ DECL|member|parent_class
 name|GimpSelectionToolClass
 name|parent_class
 decl_stmt|;
+DECL|member|rect_select
+name|void
+function_decl|(
+modifier|*
+name|rect_select
+function_decl|)
+parameter_list|(
+name|GimpNewRectSelectTool
+modifier|*
+name|rect_select
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
+parameter_list|,
+name|gint
+name|w
+parameter_list|,
+name|gint
+name|h
+parameter_list|)
+function_decl|;
 block|}
 struct|;
 end_struct

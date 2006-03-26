@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gimprectselecttool.h"
+file|"gimpnewrectselecttool.h"
 end_include
 
 begin_define
@@ -109,7 +109,7 @@ struct|struct
 name|_GimpEllipseSelectTool
 block|{
 DECL|member|parent_instance
-name|GimpRectSelectTool
+name|GimpNewRectSelectTool
 name|parent_instance
 decl_stmt|;
 block|}
@@ -122,7 +122,7 @@ struct|struct
 name|_GimpEllipseSelectToolClass
 block|{
 DECL|member|parent_class
-name|GimpRectSelectToolClass
+name|GimpNewRectSelectToolClass
 name|parent_class
 decl_stmt|;
 block|}

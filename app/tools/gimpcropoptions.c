@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4356140103
+DECL|enum|__anon278c61000103
 block|{
 DECL|enumerator|PROP_LAYER_ONLY
 name|PROP_LAYER_ONLY
@@ -332,6 +332,9 @@ case|:
 case|case
 name|GIMP_RECTANGLE_OPTIONS_PROP_UNIT
 case|:
+case|case
+name|GIMP_RECTANGLE_OPTIONS_PROP_DIMENSIONS_ENTRY
+case|:
 name|gimp_rectangle_options_set_property
 argument_list|(
 name|object
@@ -453,6 +456,9 @@ name|GIMP_RECTANGLE_OPTIONS_PROP_CENTER_Y
 case|:
 case|case
 name|GIMP_RECTANGLE_OPTIONS_PROP_UNIT
+case|:
+case|case
+name|GIMP_RECTANGLE_OPTIONS_PROP_DIMENSIONS_ENTRY
 case|:
 name|gimp_rectangle_options_get_property
 argument_list|(
