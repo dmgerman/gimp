@@ -264,7 +264,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a1003ba0108
+DECL|struct|__anon274d01110108
 block|{
 DECL|member|old_name
 specifier|const
@@ -2000,7 +2000,7 @@ name|arg_type
 operator|=
 name|procedure
 operator|->
-name|values
+name|args
 index|[
 name|i
 index|]
