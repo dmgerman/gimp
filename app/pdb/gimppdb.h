@@ -131,15 +131,6 @@ name|TempExec
 typedef|;
 end_typedef
 
-begin_typedef
-DECL|typedef|NetExec
-typedef|typedef
-name|struct
-name|_NetExec
-name|NetExec
-typedef|;
-end_typedef
-
 begin_struct
 DECL|struct|_IntExec
 struct|struct
@@ -195,26 +186,6 @@ modifier|*
 name|plug_in
 decl_stmt|;
 comment|/*  Plug-in that registered this temp proc  */
-block|}
-struct|;
-end_struct
-
-begin_struct
-DECL|struct|_NetExec
-struct|struct
-name|_NetExec
-block|{
-DECL|member|host
-name|gchar
-modifier|*
-name|host
-decl_stmt|;
-comment|/*  Host responsible for procedure execution  */
-DECL|member|port
-name|gint32
-name|port
-decl_stmt|;
-comment|/*  Port on host to send data to  */
 block|}
 struct|;
 end_struct
