@@ -2153,7 +2153,7 @@ literal|0.0
 argument_list|,
 literal|0.0
 argument_list|,
-literal|0.0
+literal|1.0
 argument_list|)
 expr_stmt|;
 block|}
@@ -2516,15 +2516,6 @@ name|GimpParamSpecRGB
 modifier|*
 name|cspec
 decl_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|default_value
-operator|!=
-name|NULL
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 name|cspec
 operator|=
 name|g_param_spec_internal
@@ -2540,6 +2531,10 @@ argument_list|,
 name|flags
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|default_value
+condition|)
 name|cspec
 operator|->
 name|default_value
