@@ -48,6 +48,44 @@ comment|/*  * these enums that are registered with the type system  */
 end_comment
 
 begin_define
+DECL|macro|GIMP_TYPE_BRUSH_APPLICATION_MODE
+define|#
+directive|define
+name|GIMP_TYPE_BRUSH_APPLICATION_MODE
+value|(gimp_brush_application_mode_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_brush_application_mode_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2c0ceca30103
+block|{
+DECL|enumerator|GIMP_BRUSH_HARD
+name|GIMP_BRUSH_HARD
+block|,
+DECL|enumerator|GIMP_BRUSH_SOFT
+name|GIMP_BRUSH_SOFT
+block|,
+DECL|enumerator|GIMP_BRUSH_PRESSURE
+name|GIMP_BRUSH_PRESSURE
+comment|/*< pdb-skip, skip>*/
+DECL|typedef|GimpBrushApplicationMode
+block|}
+name|GimpBrushApplicationMode
+typedef|;
+end_typedef
+
+begin_define
 DECL|macro|GIMP_TYPE_CLONE_ALIGN_MODE
 define|#
 directive|define
@@ -69,7 +107,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2ad4a8b90103
+DECL|enum|__anon2c0ceca30203
 block|{
 DECL|enumerator|GIMP_CLONE_ALIGN_NO
 name|GIMP_CLONE_ALIGN_NO
@@ -113,7 +151,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad4a8b90203
+DECL|enum|__anon2c0ceca30303
 block|{
 DECL|enumerator|GIMP_BLUR_CONVOLVE
 name|GIMP_BLUR_CONVOLVE
@@ -154,7 +192,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2ad4a8b90303
+DECL|enum|__anon2c0ceca30403
 block|{
 DECL|enumerator|GIMP_INK_BLOB_TYPE_ELLIPSE
 name|GIMP_INK_BLOB_TYPE_ELLIPSE
@@ -177,29 +215,8 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-comment|/*< skip>*/
-DECL|enum|__anon2ad4a8b90403
-block|{
-DECL|enumerator|GIMP_BRUSH_HARD
-name|GIMP_BRUSH_HARD
-block|,
-DECL|enumerator|GIMP_BRUSH_SOFT
-name|GIMP_BRUSH_SOFT
-block|,
-DECL|enumerator|GIMP_BRUSH_PRESSURE
-name|GIMP_BRUSH_PRESSURE
-comment|/*< pdb-skip, skip>*/
-DECL|typedef|GimpBrushApplicationMode
-block|}
-name|GimpBrushApplicationMode
-typedef|;
-end_typedef
-
-begin_typedef
-typedef|typedef
-enum|enum
 comment|/*< skip, pdb-skip>*/
-DECL|enum|__anon2ad4a8b90503
+DECL|enum|__anon2c0ceca30503
 block|{
 DECL|enumerator|GIMP_PAINT_STATE_INIT
 name|GIMP_PAINT_STATE_INIT
