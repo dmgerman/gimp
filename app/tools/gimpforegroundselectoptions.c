@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpwidgets-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpforegroundselectoptions.h"
 end_include
 
@@ -65,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon273ce8640103
+DECL|enum|__anon2b5427270103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -804,6 +810,10 @@ name|GtkObject
 modifier|*
 name|adj
 decl_stmt|;
+name|gchar
+modifier|*
+name|title
+decl_stmt|;
 name|gint
 name|row
 init|=
@@ -846,6 +856,21 @@ name|button
 argument_list|)
 expr_stmt|;
 comment|/*  foreground / background  */
+name|title
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Interactive refinement  (%s)"
+argument_list|)
+argument_list|,
+name|gimp_get_mod_string
+argument_list|(
+name|GDK_CONTROL_MASK
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|frame
 operator|=
 name|gimp_prop_boolean_radio_frame_new
@@ -854,10 +879,7 @@ name|config
 argument_list|,
 literal|"background"
 argument_list|,
-name|_
-argument_list|(
-literal|"Interactive refinement"
-argument_list|)
+name|title
 argument_list|,
 name|_
 argument_list|(
@@ -868,6 +890,11 @@ name|_
 argument_list|(
 literal|"Mark foreground"
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|title
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
