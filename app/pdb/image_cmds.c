@@ -1426,9 +1426,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_list_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_list_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_list_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -1538,8 +1542,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_list_proc
+name|proc_record
 argument_list|,
 name|TRUE
 argument_list|)
@@ -1645,9 +1648,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_new_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_new_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_new_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -1790,8 +1797,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_new_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -1925,9 +1931,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_duplicate_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_duplicate_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_duplicate_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -2018,8 +2028,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_duplicate_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -2137,9 +2146,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_delete_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_delete_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_delete_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -2221,8 +2234,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_delete_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -2295,9 +2307,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_base_type_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_base_type_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_base_type_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -2378,8 +2394,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_base_type_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -2489,9 +2504,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_width_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_width_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_width_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -2572,8 +2591,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_width_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -2683,9 +2701,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_height_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_height_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_height_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -2766,8 +2788,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_height_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -2877,9 +2898,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_free_shadow_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_free_shadow_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_free_shadow_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -2948,8 +2973,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_free_shadow_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -3022,9 +3046,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_resize_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_resize_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_resize_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -3181,8 +3209,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_resize_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -3287,9 +3314,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_resize_to_layers_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_resize_to_layers_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_resize_to_layers_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -3362,8 +3393,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_resize_to_layers_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -3436,9 +3466,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_scale_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_scale_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_scale_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -3567,8 +3601,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_scale_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -3657,9 +3690,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_crop_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_crop_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_crop_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -3881,8 +3918,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_crop_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -3987,9 +4023,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_flip_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_flip_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_flip_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -4092,8 +4132,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_flip_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -4174,9 +4213,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_rotate_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_rotate_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_rotate_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -4279,8 +4322,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_rotate_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -4361,9 +4403,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_get_layers_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_get_layers_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_get_layers_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -4516,8 +4562,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_get_layers_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -4648,9 +4693,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_get_channels_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_get_channels_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_get_channels_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -4803,8 +4852,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_get_channels_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -4935,9 +4983,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_get_vectors_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_get_vectors_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_get_vectors_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -5090,8 +5142,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_get_vectors_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -5222,9 +5273,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_get_active_drawable_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_get_active_drawable_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_get_active_drawable_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -5306,8 +5361,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_get_active_drawable_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -5428,9 +5482,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_unset_active_channel_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_unset_active_channel_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_unset_active_channel_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -5499,8 +5557,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_unset_active_channel_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -5573,9 +5630,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_get_floating_sel_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_get_floating_sel_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_get_floating_sel_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -5657,8 +5718,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_get_floating_sel_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -5779,9 +5839,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_floating_sel_attached_to_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_floating_sel_attached_to_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_floating_sel_attached_to_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -5888,8 +5952,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_floating_sel_attached_to_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -6010,9 +6073,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_pick_color_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_pick_color_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_pick_color_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -6301,8 +6368,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_pick_color_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -6460,9 +6526,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_pick_correlate_layer_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_pick_correlate_layer_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_pick_correlate_layer_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -6576,8 +6646,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_pick_correlate_layer_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -6714,9 +6783,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_add_layer_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_add_layer_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_add_layer_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -6894,8 +6967,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_add_layer_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -6984,9 +7056,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_remove_layer_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_remove_layer_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_remove_layer_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -7104,8 +7180,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_remove_layer_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -7186,9 +7261,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_raise_layer_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_raise_layer_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_raise_layer_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -7308,8 +7387,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_raise_layer_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -7390,9 +7468,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_lower_layer_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_lower_layer_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_lower_layer_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -7512,8 +7594,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_lower_layer_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -7594,9 +7675,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_raise_layer_to_top_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_raise_layer_to_top_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_raise_layer_to_top_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -7716,8 +7801,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_raise_layer_to_top_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -7798,9 +7882,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_lower_layer_to_bottom_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_lower_layer_to_bottom_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_lower_layer_to_bottom_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -7920,8 +8008,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_lower_layer_to_bottom_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -8002,9 +8089,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_add_channel_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_add_channel_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_add_channel_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -8161,8 +8252,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_add_channel_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -8251,9 +8341,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_remove_channel_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_remove_channel_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_remove_channel_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -8371,8 +8465,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_remove_channel_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -8453,9 +8546,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_raise_channel_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_raise_channel_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_raise_channel_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -8575,8 +8672,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_raise_channel_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -8657,9 +8753,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_lower_channel_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_lower_channel_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_lower_channel_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -8779,8 +8879,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_lower_channel_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -8861,9 +8960,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_add_vectors_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_add_vectors_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_add_vectors_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -9020,8 +9123,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_add_vectors_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -9110,9 +9212,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_remove_vectors_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_remove_vectors_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_remove_vectors_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -9230,8 +9336,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_remove_vectors_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -9312,9 +9417,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_raise_vectors_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_raise_vectors_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_raise_vectors_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -9434,8 +9543,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_raise_vectors_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -9516,9 +9624,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_lower_vectors_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_lower_vectors_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_lower_vectors_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -9638,8 +9750,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_lower_vectors_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -9720,9 +9831,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_raise_vectors_to_top_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_raise_vectors_to_top_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_raise_vectors_to_top_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -9842,8 +9957,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_raise_vectors_to_top_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -9924,9 +10038,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_lower_vectors_to_bottom_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_lower_vectors_to_bottom_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_lower_vectors_to_bottom_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -10046,8 +10164,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_lower_vectors_to_bottom_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -10128,9 +10245,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_flatten_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_flatten_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_flatten_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -10223,8 +10344,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_flatten_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -10345,9 +10465,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_merge_visible_layers_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_merge_visible_layers_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_merge_visible_layers_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -10470,8 +10594,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_merge_visible_layers_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -10600,9 +10723,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_merge_down_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_merge_down_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_merge_down_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -10774,8 +10901,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_merge_down_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -10912,9 +11038,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_add_layer_mask_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_add_layer_mask_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_add_layer_mask_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -11088,8 +11218,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_add_layer_mask_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -11178,9 +11307,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_remove_layer_mask_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_remove_layer_mask_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_remove_layer_mask_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -11328,8 +11461,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_remove_layer_mask_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -11418,9 +11550,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_get_colormap_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_get_colormap_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_get_colormap_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -11521,8 +11657,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_get_colormap_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -11653,9 +11788,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_set_colormap_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_set_colormap_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_set_colormap_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -11779,8 +11918,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_set_colormap_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -11869,9 +12007,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_clean_all_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_clean_all_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_clean_all_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -11940,8 +12082,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_clean_all_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -12014,9 +12155,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_is_dirty_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_is_dirty_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_is_dirty_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -12100,8 +12245,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_is_dirty_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -12211,9 +12355,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_thumbnail_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_thumbnail_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_thumbnail_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -12534,8 +12682,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_thumbnail_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -12739,9 +12886,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_get_active_layer_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_get_active_layer_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_get_active_layer_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -12823,8 +12974,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_get_active_layer_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -12945,9 +13095,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_set_active_layer_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_set_active_layer_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_set_active_layer_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -13073,8 +13227,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_set_active_layer_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -13155,9 +13308,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_get_active_channel_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_get_active_channel_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_get_active_channel_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -13239,8 +13396,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_get_active_channel_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -13361,9 +13517,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_set_active_channel_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_set_active_channel_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_set_active_channel_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -13489,8 +13649,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_set_active_channel_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -13571,9 +13730,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_get_active_vectors_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_get_active_vectors_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_get_active_vectors_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -13655,8 +13818,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_get_active_vectors_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -13777,9 +13939,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_set_active_vectors_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_set_active_vectors_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_set_active_vectors_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -13905,8 +14071,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_set_active_vectors_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -13987,9 +14152,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_get_selection_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_get_selection_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_get_selection_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -14080,8 +14249,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_get_selection_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -14202,9 +14370,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_get_component_active_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_get_component_active_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_get_component_active_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -14360,8 +14532,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_get_component_active_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -14479,9 +14650,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_set_component_active_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_set_component_active_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_set_component_active_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -14645,8 +14820,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_set_component_active_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -14735,9 +14909,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_get_component_visible_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_get_component_visible_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_get_component_visible_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -14893,8 +15071,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_get_component_visible_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -15012,9 +15189,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_set_component_visible_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_set_component_visible_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_set_component_visible_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -15178,8 +15359,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_set_component_visible_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -15268,9 +15448,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_get_filename_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_get_filename_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_get_filename_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -15352,8 +15536,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_get_filename_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -15463,9 +15646,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_set_filename_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_set_filename_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_set_filename_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -15636,8 +15823,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_set_filename_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -15718,9 +15904,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_get_name_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_get_name_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_get_name_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -15826,8 +16016,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_get_name_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -15937,9 +16126,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_get_resolution_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_get_resolution_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_get_resolution_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -16029,8 +16222,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_get_resolution_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -16161,9 +16353,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_set_resolution_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_set_resolution_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_set_resolution_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -16312,8 +16508,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_set_resolution_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -16402,9 +16597,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_get_unit_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_get_unit_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_get_unit_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -16485,8 +16684,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_get_unit_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -16596,9 +16794,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_set_unit_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_set_unit_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_set_unit_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -16700,8 +16902,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_set_unit_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -16782,9 +16983,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_get_tattoo_state_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_get_tattoo_state_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_get_tattoo_state_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -16865,8 +17070,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_get_tattoo_state_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -16976,9 +17180,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_set_tattoo_state_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_set_tattoo_state_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_set_tattoo_state_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -17073,8 +17281,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_set_tattoo_state_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -17155,9 +17362,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_get_layer_by_tattoo_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_get_layer_by_tattoo_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_get_layer_by_tattoo_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -17265,8 +17476,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_get_layer_by_tattoo_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -17395,9 +17605,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_get_channel_by_tattoo_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_get_channel_by_tattoo_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_get_channel_by_tattoo_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -17505,8 +17719,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_get_channel_by_tattoo_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -17635,9 +17848,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_get_vectors_by_tattoo_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_get_vectors_by_tattoo_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_get_vectors_by_tattoo_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -17745,8 +17962,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_get_vectors_by_tattoo_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)

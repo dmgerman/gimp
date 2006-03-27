@@ -122,9 +122,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|pattern_get_info_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|pattern_get_info_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|pattern_get_info_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -270,8 +274,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|pattern_get_info_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -421,9 +424,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|pattern_get_pixels_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|pattern_get_pixels_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|pattern_get_pixels_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -614,8 +621,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|pattern_get_pixels_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)

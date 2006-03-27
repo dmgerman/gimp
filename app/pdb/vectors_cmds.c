@@ -464,9 +464,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|vectors_new_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|vectors_new_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|vectors_new_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -590,8 +594,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|vectors_new_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -720,9 +723,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|vectors_get_image_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|vectors_get_image_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|vectors_get_image_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -822,8 +829,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|vectors_get_image_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -941,9 +947,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|vectors_get_name_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|vectors_get_name_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|vectors_get_name_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -1046,8 +1056,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|vectors_get_name_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -1157,9 +1166,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|vectors_set_name_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|vectors_set_name_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|vectors_set_name_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -1290,8 +1303,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|vectors_set_name_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -1372,9 +1384,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|vectors_get_visible_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|vectors_get_visible_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|vectors_get_visible_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -1473,8 +1489,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|vectors_get_visible_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -1584,9 +1599,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|vectors_set_visible_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|vectors_set_visible_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|vectors_set_visible_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -1695,8 +1714,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|vectors_set_visible_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -1777,9 +1795,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|vectors_get_linked_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|vectors_get_linked_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|vectors_get_linked_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -1878,8 +1900,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|vectors_get_linked_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -1989,9 +2010,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|vectors_set_linked_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|vectors_set_linked_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|vectors_set_linked_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -2100,8 +2125,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|vectors_set_linked_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -2182,9 +2206,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|vectors_get_tattoo_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|vectors_get_tattoo_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|vectors_get_tattoo_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -2283,8 +2311,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|vectors_get_tattoo_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -2394,9 +2421,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|vectors_set_tattoo_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|vectors_set_tattoo_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|vectors_set_tattoo_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -2499,8 +2530,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|vectors_set_tattoo_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -2581,9 +2611,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|vectors_get_strokes_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|vectors_get_strokes_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|vectors_get_strokes_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -2746,8 +2780,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|vectors_get_strokes_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -2878,9 +2911,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|vectors_stroke_get_length_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|vectors_stroke_get_length_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|vectors_stroke_get_length_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -3026,8 +3063,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|vectors_stroke_get_length_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -3153,9 +3189,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|vectors_stroke_get_point_at_dist_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|vectors_stroke_get_point_at_dist_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|vectors_stroke_get_point_at_dist_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -3363,8 +3403,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|vectors_stroke_get_point_at_dist_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -3557,9 +3596,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|vectors_stroke_remove_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|vectors_stroke_remove_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|vectors_stroke_remove_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -3679,8 +3722,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|vectors_stroke_remove_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -3761,9 +3803,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|vectors_stroke_close_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|vectors_stroke_close_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|vectors_stroke_close_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -3881,8 +3927,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|vectors_stroke_close_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -3963,9 +4008,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|vectors_stroke_translate_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|vectors_stroke_translate_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|vectors_stroke_translate_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -4115,8 +4164,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|vectors_stroke_translate_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -4213,9 +4261,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|vectors_stroke_scale_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|vectors_stroke_scale_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|vectors_stroke_scale_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -4365,8 +4417,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|vectors_stroke_scale_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -4463,9 +4514,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|vectors_stroke_interpolate_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|vectors_stroke_interpolate_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|vectors_stroke_interpolate_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -4726,8 +4781,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|vectors_stroke_interpolate_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -4893,9 +4947,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|vectors_bezier_stroke_new_moveto_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|vectors_bezier_stroke_new_moveto_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|vectors_bezier_stroke_new_moveto_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -5055,8 +5113,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|vectors_bezier_stroke_new_moveto_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -5182,9 +5239,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|vectors_bezier_stroke_lineto_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|vectors_bezier_stroke_lineto_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|vectors_bezier_stroke_lineto_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -5352,8 +5413,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|vectors_bezier_stroke_lineto_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -5450,9 +5510,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|vectors_bezier_stroke_conicto_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|vectors_bezier_stroke_conicto_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|vectors_bezier_stroke_conicto_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -5668,8 +5732,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|vectors_bezier_stroke_conicto_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -5782,9 +5845,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|vectors_bezier_stroke_cubicto_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|vectors_bezier_stroke_cubicto_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|vectors_bezier_stroke_cubicto_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -6048,8 +6115,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|vectors_bezier_stroke_cubicto_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -6178,9 +6244,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|vectors_bezier_stroke_new_ellipse_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|vectors_bezier_stroke_new_ellipse_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|vectors_bezier_stroke_new_ellipse_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -6388,8 +6458,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|vectors_bezier_stroke_new_ellipse_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)

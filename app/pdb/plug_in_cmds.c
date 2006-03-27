@@ -210,9 +210,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|plugins_query_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|plugins_query_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|plugins_query_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -330,8 +334,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|plugins_query_proc
+name|proc_record
 argument_list|,
 name|TRUE
 argument_list|)
@@ -646,9 +649,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|plugin_domain_register_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|plugin_domain_register_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|plugin_domain_register_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -780,8 +787,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|plugin_domain_register_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -862,9 +868,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|plugin_help_register_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|plugin_help_register_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|plugin_help_register_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -1017,8 +1027,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|plugin_help_register_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -1099,9 +1108,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|plugin_menu_register_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|plugin_menu_register_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|plugin_menu_register_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -1255,8 +1268,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|plugin_menu_register_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -1337,9 +1349,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|plugin_menu_branch_register_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|plugin_menu_branch_register_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|plugin_menu_branch_register_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -1508,8 +1524,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|plugin_menu_branch_register_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -1590,9 +1605,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|plugin_icon_register_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|plugin_icon_register_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|plugin_icon_register_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -1809,8 +1828,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|plugin_icon_register_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)

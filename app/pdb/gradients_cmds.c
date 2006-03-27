@@ -170,9 +170,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradients_refresh_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|gradients_refresh_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradients_refresh_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -200,8 +204,7 @@ expr_stmt|;
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|gradients_refresh_proc
+name|proc_record
 argument_list|,
 name|TRUE
 argument_list|)
@@ -255,9 +258,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradients_get_list_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|gradients_get_list_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradients_get_list_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -360,8 +367,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|gradients_get_list_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -492,9 +498,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradients_sample_uniform_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|gradients_sample_uniform_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradients_sample_uniform_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -703,8 +713,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|gradients_sample_uniform_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -843,9 +852,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradients_sample_custom_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|gradients_sample_custom_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradients_sample_custom_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -1054,8 +1067,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|gradients_sample_custom_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -1202,9 +1214,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradients_get_gradient_data_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|gradients_get_gradient_data_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradients_get_gradient_data_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -1519,8 +1535,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|gradients_get_gradient_data_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)

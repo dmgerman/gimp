@@ -376,9 +376,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|path_list_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|path_list_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|path_list_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -471,8 +475,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|path_list_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -603,9 +606,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|path_get_current_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|path_get_current_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|path_get_current_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -711,8 +718,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|path_get_current_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -822,9 +828,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|path_set_current_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|path_set_current_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|path_set_current_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -955,8 +965,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|path_set_current_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -1037,9 +1046,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|path_delete_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|path_delete_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|path_delete_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -1170,8 +1183,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|path_delete_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -1252,9 +1264,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|path_get_points_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|path_get_points_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|path_get_points_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -1528,8 +1544,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|path_get_points_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -1706,9 +1721,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|path_set_points_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|path_set_points_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|path_set_points_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -2043,8 +2062,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|path_set_points_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -2149,9 +2167,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|path_stroke_current_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|path_stroke_current_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|path_stroke_current_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -2291,8 +2313,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|path_stroke_current_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -2365,9 +2386,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|path_get_point_at_dist_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|path_get_point_at_dist_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|path_get_point_at_dist_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -2628,8 +2653,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|path_get_point_at_dist_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -2787,9 +2811,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|path_get_tattoo_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|path_get_tattoo_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|path_get_tattoo_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -2933,8 +2961,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|path_get_tattoo_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -3052,9 +3079,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|path_set_tattoo_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|path_set_tattoo_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|path_set_tattoo_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -3202,8 +3233,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|path_set_tattoo_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -3292,9 +3322,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|get_path_by_tattoo_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|get_path_by_tattoo_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|get_path_by_tattoo_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -3416,8 +3450,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|get_path_by_tattoo_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -3535,9 +3568,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|path_get_locked_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|path_get_locked_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|path_get_locked_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -3681,8 +3718,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|path_get_locked_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -3800,9 +3836,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|path_set_locked_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|path_set_locked_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|path_set_locked_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -3956,8 +3996,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|path_set_locked_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -4046,9 +4085,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|path_to_selection_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|path_to_selection_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|path_to_selection_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -4289,8 +4332,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|path_to_selection_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -4411,9 +4453,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|path_import_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|path_import_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|path_import_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -4560,8 +4606,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|path_import_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -4658,9 +4703,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|path_import_string_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|path_import_string_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|path_import_string_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -4823,8 +4872,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|path_import_string_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)

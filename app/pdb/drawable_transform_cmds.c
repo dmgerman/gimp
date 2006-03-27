@@ -358,9 +358,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_transform_flip_simple_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|drawable_transform_flip_simple_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|drawable_transform_flip_simple_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -581,8 +585,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|drawable_transform_flip_simple_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -735,9 +738,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_transform_flip_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|drawable_transform_flip_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|drawable_transform_flip_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -1117,8 +1124,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|drawable_transform_flip_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -1311,9 +1317,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_transform_flip_default_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|drawable_transform_flip_default_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|drawable_transform_flip_default_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -1630,8 +1640,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|drawable_transform_flip_default_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -1800,9 +1809,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_transform_perspective_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|drawable_transform_perspective_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|drawable_transform_perspective_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -2246,8 +2259,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|drawable_transform_perspective_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -2472,9 +2484,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_transform_perspective_default_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|drawable_transform_perspective_default_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|drawable_transform_perspective_default_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -2855,8 +2871,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|drawable_transform_perspective_default_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -3057,9 +3072,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_transform_rotate_simple_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|drawable_transform_rotate_simple_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|drawable_transform_rotate_simple_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -3296,8 +3315,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|drawable_transform_rotate_simple_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -3458,9 +3476,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_transform_rotate_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|drawable_transform_rotate_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|drawable_transform_rotate_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -3855,8 +3877,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|drawable_transform_rotate_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -4049,9 +4070,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_transform_rotate_default_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|drawable_transform_rotate_default_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|drawable_transform_rotate_default_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -4383,8 +4408,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|drawable_transform_rotate_default_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -4553,9 +4577,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_transform_scale_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|drawable_transform_scale_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|drawable_transform_scale_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -4949,8 +4977,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|drawable_transform_scale_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -5143,9 +5170,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_transform_scale_default_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|drawable_transform_scale_default_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|drawable_transform_scale_default_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -5476,8 +5507,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|drawable_transform_scale_default_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -5646,9 +5676,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_transform_shear_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|drawable_transform_shear_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|drawable_transform_shear_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -6010,8 +6044,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|drawable_transform_shear_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -6188,9 +6221,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_transform_shear_default_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|drawable_transform_shear_default_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|drawable_transform_shear_default_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -6489,8 +6526,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|drawable_transform_shear_default_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -6643,9 +6679,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_transform_2d_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|drawable_transform_2d_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|drawable_transform_2d_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -7085,8 +7125,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|drawable_transform_2d_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -7303,9 +7342,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_transform_2d_default_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|drawable_transform_2d_default_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|drawable_transform_2d_default_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -7682,8 +7725,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|drawable_transform_2d_default_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -7876,9 +7918,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_transform_matrix_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|drawable_transform_matrix_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|drawable_transform_matrix_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -8408,8 +8454,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|drawable_transform_matrix_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -8642,9 +8687,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_transform_matrix_default_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|drawable_transform_matrix_default_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|drawable_transform_matrix_default_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -9111,8 +9160,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|drawable_transform_matrix_default_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)

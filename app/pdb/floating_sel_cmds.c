@@ -162,9 +162,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|floating_sel_remove_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|floating_sel_remove_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|floating_sel_remove_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -260,8 +264,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|floating_sel_remove_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -334,9 +337,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|floating_sel_anchor_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|floating_sel_anchor_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|floating_sel_anchor_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -432,8 +439,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|floating_sel_anchor_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -506,9 +512,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|floating_sel_to_layer_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|floating_sel_to_layer_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|floating_sel_to_layer_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -604,8 +614,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|floating_sel_to_layer_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -678,9 +687,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|floating_sel_attach_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|floating_sel_attach_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|floating_sel_attach_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -828,8 +841,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|floating_sel_attach_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -910,9 +922,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|floating_sel_rigor_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|floating_sel_rigor_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|floating_sel_rigor_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -1028,8 +1044,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|floating_sel_rigor_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -1110,9 +1125,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|floating_sel_relax_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|floating_sel_relax_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|floating_sel_relax_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -1228,8 +1247,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|floating_sel_relax_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)

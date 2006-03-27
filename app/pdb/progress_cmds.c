@@ -194,9 +194,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|progress_init_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|progress_init_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|progress_init_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -323,8 +327,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|progress_init_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -405,9 +408,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|progress_update_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|progress_update_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|progress_update_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -482,8 +489,7 @@ expr_stmt|;
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|progress_update_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -556,9 +562,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|progress_pulse_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|progress_pulse_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|progress_pulse_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -617,8 +627,7 @@ expr_stmt|;
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|progress_pulse_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -672,9 +681,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|progress_set_text_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|progress_set_text_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|progress_set_text_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -779,8 +792,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|progress_set_text_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -853,9 +865,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|progress_get_window_handle_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|progress_get_window_handle_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|progress_get_window_handle_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -926,8 +942,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|progress_get_window_handle_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -1018,9 +1033,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|progress_install_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|progress_install_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|progress_install_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -1120,8 +1139,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|progress_install_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -1194,9 +1212,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|progress_uninstall_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|progress_uninstall_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|progress_uninstall_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -1296,8 +1318,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|progress_uninstall_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -1370,9 +1391,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|progress_cancel_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|progress_cancel_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|progress_cancel_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -1472,8 +1497,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|progress_cancel_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)

@@ -142,9 +142,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|text_fontname_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|text_fontname_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|text_fontname_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -513,8 +517,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|text_fontname_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -707,9 +710,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|text_get_extents_fontname_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|text_get_extents_fontname_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|text_get_extents_fontname_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -940,8 +947,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|text_get_extents_fontname_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -1134,9 +1140,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|text_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|text_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|text_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -1697,8 +1707,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|text_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -1947,9 +1956,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|text_get_extents_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|text_get_extents_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|text_get_extents_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -2372,8 +2385,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|text_get_extents_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)

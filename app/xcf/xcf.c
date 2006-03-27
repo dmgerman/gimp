@@ -141,6 +141,10 @@ name|Argument
 modifier|*
 name|xcf_load_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|procedure
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -166,6 +170,10 @@ name|Argument
 modifier|*
 name|xcf_save_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|procedure
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -597,9 +605,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|xcf_load_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|xcf_load_invoker (ProcRecord * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|xcf_load_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|procedure
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -939,10 +951,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|xcf_plug_in_load_proc
-operator|.
-name|db_info
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -980,9 +989,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|xcf_save_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|xcf_save_invoker (ProcRecord * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|xcf_save_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|procedure
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -1203,10 +1216,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|xcf_plug_in_save_proc
-operator|.
-name|db_info
+name|procedure
 argument_list|,
 name|success
 argument_list|)

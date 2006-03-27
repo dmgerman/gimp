@@ -264,7 +264,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon295bce330108
+DECL|struct|__anon2ad4ec370108
 block|{
 DECL|member|old_name
 specifier|const
@@ -1254,6 +1254,8 @@ operator|.
 name|marshal_func
 call|)
 argument_list|(
+name|procedure
+argument_list|,
 name|gimp
 argument_list|,
 name|context

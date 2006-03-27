@@ -198,9 +198,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|flip_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|flip_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|flip_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -371,8 +375,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|flip_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -501,9 +504,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|perspective_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|perspective_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|perspective_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -866,8 +873,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|perspective_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -1060,9 +1066,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|rotate_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|rotate_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|rotate_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -1313,8 +1323,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|rotate_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -1451,9 +1460,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|scale_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|scale_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|scale_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -1766,8 +1779,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|scale_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -1928,9 +1940,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|shear_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|shear_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|shear_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -2211,8 +2227,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|shear_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -2357,9 +2372,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|transform_2d_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|transform_2d_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|transform_2d_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -2718,8 +2737,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|transform_2d_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)

@@ -216,9 +216,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|procedural_db_temp_name_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|procedural_db_temp_name_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|procedural_db_temp_name_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -266,8 +270,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|procedural_db_temp_name_proc
+name|proc_record
 argument_list|,
 name|TRUE
 argument_list|)
@@ -354,9 +357,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|procedural_db_dump_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|procedural_db_dump_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|procedural_db_dump_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -426,8 +433,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|procedural_db_dump_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -500,9 +506,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|procedural_db_query_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|procedural_db_query_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|procedural_db_query_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -781,8 +791,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|procedural_db_query_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -961,9 +970,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|procedural_db_proc_info_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|procedural_db_proc_info_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|procedural_db_proc_info_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -1141,8 +1154,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|procedural_db_proc_info_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -1387,9 +1399,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|procedural_db_proc_arg_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|procedural_db_proc_arg_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|procedural_db_proc_arg_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -1621,8 +1637,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|procedural_db_proc_arg_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -1780,9 +1795,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|procedural_db_proc_val_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|procedural_db_proc_val_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|procedural_db_proc_val_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -2014,8 +2033,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|procedural_db_proc_val_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -2173,9 +2191,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|procedural_db_get_data_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|procedural_db_get_data_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|procedural_db_get_data_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -2314,8 +2336,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|procedural_db_get_data_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -2446,9 +2467,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|procedural_db_get_data_size_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|procedural_db_get_data_size_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|procedural_db_get_data_size_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -2572,8 +2597,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|procedural_db_get_data_size_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -2683,9 +2707,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|procedural_db_set_data_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|procedural_db_set_data_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|procedural_db_set_data_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -2827,8 +2855,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|procedural_db_set_data_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)

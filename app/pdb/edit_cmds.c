@@ -366,9 +366,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|edit_cut_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|edit_cut_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|edit_cut_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -499,8 +503,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|edit_cut_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -610,9 +613,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|edit_copy_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|edit_copy_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|edit_copy_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -743,8 +750,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|edit_copy_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -854,9 +860,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|edit_copy_visible_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|edit_copy_visible_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|edit_copy_visible_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -941,8 +951,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|edit_copy_visible_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -1052,9 +1061,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|edit_paste_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|edit_paste_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|edit_paste_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -1225,8 +1238,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|edit_paste_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -1355,9 +1367,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|edit_paste_as_new_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|edit_paste_as_new_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|edit_paste_as_new_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -1429,8 +1445,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|edit_paste_as_new_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -1529,9 +1544,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|edit_named_cut_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|edit_named_cut_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|edit_named_cut_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -1728,8 +1747,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|edit_named_cut_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -1847,9 +1865,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|edit_named_copy_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|edit_named_copy_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|edit_named_copy_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -2046,8 +2068,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|edit_named_copy_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -2165,9 +2186,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|edit_named_copy_visible_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|edit_named_copy_visible_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|edit_named_copy_visible_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -2327,8 +2352,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|edit_named_copy_visible_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -2446,9 +2470,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|edit_named_paste_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|edit_named_paste_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|edit_named_paste_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -2672,8 +2700,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|edit_named_paste_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -2810,9 +2837,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|edit_named_paste_as_new_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|edit_named_paste_as_new_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|edit_named_paste_as_new_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -2943,8 +2974,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|edit_named_paste_as_new_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -3062,9 +3092,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|edit_clear_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|edit_clear_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|edit_clear_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -3183,8 +3217,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|edit_clear_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -3257,9 +3290,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|edit_fill_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|edit_fill_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|edit_fill_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -3411,8 +3448,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|edit_fill_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -3493,9 +3529,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|edit_bucket_fill_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|edit_bucket_fill_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|edit_bucket_fill_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -3802,8 +3842,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|edit_bucket_fill_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -3932,9 +3971,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|edit_blend_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|edit_blend_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|edit_blend_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -4433,8 +4476,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|edit_blend_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -4627,9 +4669,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|edit_stroke_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|edit_stroke_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|edit_stroke_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -4785,8 +4831,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|edit_stroke_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)

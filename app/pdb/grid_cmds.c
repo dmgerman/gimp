@@ -238,9 +238,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_grid_get_spacing_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_grid_get_spacing_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_grid_get_spacing_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -354,8 +358,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_grid_get_spacing_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -486,9 +489,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_grid_set_spacing_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_grid_set_spacing_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_grid_set_spacing_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -613,8 +620,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_grid_set_spacing_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -703,9 +709,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_grid_get_offset_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_grid_get_offset_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_grid_get_offset_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -819,8 +829,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_grid_get_offset_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -951,9 +960,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_grid_set_offset_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_grid_set_offset_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_grid_set_offset_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -1078,8 +1091,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_grid_set_offset_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -1168,9 +1180,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_grid_get_foreground_color_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_grid_get_foreground_color_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_grid_get_foreground_color_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -1276,8 +1292,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_grid_get_foreground_color_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -1387,9 +1402,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_grid_set_foreground_color_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_grid_set_foreground_color_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_grid_set_foreground_color_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -1497,8 +1516,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_grid_set_foreground_color_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -1579,9 +1597,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_grid_get_background_color_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_grid_get_background_color_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_grid_get_background_color_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -1687,8 +1709,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_grid_get_background_color_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -1798,9 +1819,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_grid_set_background_color_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_grid_set_background_color_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_grid_set_background_color_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -1908,8 +1933,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_grid_set_background_color_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -1990,9 +2014,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_grid_get_style_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_grid_get_style_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_grid_get_style_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -2096,8 +2124,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_grid_get_style_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -2207,9 +2234,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_grid_set_style_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_grid_set_style_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_grid_set_style_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -2330,8 +2361,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_grid_set_style_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)

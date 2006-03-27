@@ -102,9 +102,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|fonts_popup_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|fonts_popup_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|fonts_popup_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -292,8 +296,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|fonts_popup_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -382,9 +385,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|fonts_close_popup_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|fonts_close_popup_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|fonts_close_popup_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -486,8 +493,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|fonts_close_popup_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -560,9 +566,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|fonts_set_popup_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|fonts_set_popup_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|fonts_set_popup_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -708,8 +718,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|fonts_set_popup_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)

@@ -126,9 +126,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|message_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|message_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|message_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -225,8 +229,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|message_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -299,9 +302,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|message_get_handler_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|message_get_handler_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|message_get_handler_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -338,8 +345,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|message_get_handler_proc
+name|proc_record
 argument_list|,
 name|TRUE
 argument_list|)
@@ -426,9 +432,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|message_set_handler_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|message_set_handler_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|message_set_handler_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -494,8 +504,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|message_set_handler_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)

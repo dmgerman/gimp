@@ -104,9 +104,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|fonts_refresh_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|fonts_refresh_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|fonts_refresh_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -132,8 +136,7 @@ expr_stmt|;
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|fonts_refresh_proc
+name|proc_record
 argument_list|,
 name|TRUE
 argument_list|)
@@ -187,9 +190,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|fonts_get_list_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|fonts_get_list_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|fonts_get_list_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -290,8 +297,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|fonts_get_list_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)

@@ -72,6 +72,10 @@ modifier|*
 name|ArgMarshal
 function_decl|)
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|procedure
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp

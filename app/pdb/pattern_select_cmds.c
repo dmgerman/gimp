@@ -108,9 +108,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|patterns_popup_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|patterns_popup_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|patterns_popup_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -300,8 +304,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|patterns_popup_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -390,9 +393,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|patterns_close_popup_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|patterns_close_popup_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|patterns_close_popup_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -496,8 +503,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|patterns_close_popup_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -570,9 +576,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|patterns_set_popup_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|patterns_set_popup_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|patterns_set_popup_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -720,8 +730,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|patterns_set_popup_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)

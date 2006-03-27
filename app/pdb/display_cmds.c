@@ -146,9 +146,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|display_new_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|display_new_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|display_new_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -261,8 +265,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|display_new_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -382,9 +385,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|display_delete_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|display_delete_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|display_delete_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -455,8 +462,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|display_delete_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -529,9 +535,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|display_get_window_handle_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|display_get_window_handle_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|display_get_window_handle_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -617,8 +627,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|display_get_window_handle_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -728,9 +737,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|displays_flush_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|displays_flush_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|displays_flush_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -765,8 +778,7 @@ expr_stmt|;
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|displays_flush_proc
+name|proc_record
 argument_list|,
 name|TRUE
 argument_list|)
@@ -820,9 +832,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|displays_reconnect_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|displays_reconnect_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|displays_reconnect_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -967,8 +983,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|displays_reconnect_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)

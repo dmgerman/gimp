@@ -448,9 +448,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|brush_new_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|brush_new_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|brush_new_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -582,8 +586,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|brush_new_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -693,9 +696,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|brush_duplicate_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|brush_duplicate_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|brush_duplicate_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -850,8 +857,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|brush_duplicate_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -961,9 +967,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|brush_is_generated_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|brush_is_generated_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|brush_is_generated_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -1080,8 +1090,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|brush_is_generated_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -1191,9 +1200,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|brush_rename_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|brush_rename_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|brush_rename_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -1376,8 +1389,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|brush_rename_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -1495,9 +1507,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|brush_delete_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|brush_delete_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|brush_delete_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -1651,8 +1667,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|brush_delete_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -1725,9 +1740,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|brush_is_editable_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|brush_is_editable_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|brush_is_editable_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -1846,8 +1865,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|brush_is_editable_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -1957,9 +1975,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|brush_get_info_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|brush_get_info_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|brush_get_info_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -2124,8 +2146,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|brush_get_info_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -2294,9 +2315,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|brush_get_pixels_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|brush_get_pixels_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|brush_get_pixels_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -2541,8 +2566,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|brush_get_pixels_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -2787,9 +2811,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|brush_get_spacing_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|brush_get_spacing_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|brush_get_spacing_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -2906,8 +2934,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|brush_get_spacing_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -3017,9 +3044,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|brush_set_spacing_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|brush_set_spacing_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|brush_set_spacing_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -3154,8 +3185,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|brush_set_spacing_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -3236,9 +3266,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|brush_get_shape_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|brush_get_shape_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|brush_get_shape_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -3360,8 +3394,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|brush_get_shape_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -3471,9 +3504,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|brush_get_radius_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|brush_get_radius_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|brush_get_radius_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -3595,8 +3632,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|brush_get_radius_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -3706,9 +3742,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|brush_get_spikes_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|brush_get_spikes_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|brush_get_spikes_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -3830,8 +3870,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|brush_get_spikes_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -3941,9 +3980,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|brush_get_hardness_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|brush_get_hardness_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|brush_get_hardness_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -4065,8 +4108,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|brush_get_hardness_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -4176,9 +4218,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|brush_get_aspect_ratio_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|brush_get_aspect_ratio_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|brush_get_aspect_ratio_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -4300,8 +4346,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|brush_get_aspect_ratio_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -4411,9 +4456,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|brush_get_angle_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|brush_get_angle_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|brush_get_angle_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -4535,8 +4584,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|brush_get_angle_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -4646,9 +4694,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|brush_set_shape_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|brush_set_shape_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|brush_set_shape_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -4817,8 +4869,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|brush_set_shape_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -4936,9 +4987,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|brush_set_radius_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|brush_set_radius_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|brush_set_radius_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -5093,8 +5148,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|brush_set_radius_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -5212,9 +5266,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|brush_set_spikes_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|brush_set_spikes_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|brush_set_spikes_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -5369,8 +5427,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|brush_set_spikes_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -5488,9 +5545,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|brush_set_hardness_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|brush_set_hardness_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|brush_set_hardness_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -5645,8 +5706,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|brush_set_hardness_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -5764,9 +5824,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|brush_set_aspect_ratio_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|brush_set_aspect_ratio_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|brush_set_aspect_ratio_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -5921,8 +5985,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|brush_set_aspect_ratio_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -6040,9 +6103,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|brush_set_angle_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|brush_set_angle_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|brush_set_angle_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -6197,8 +6264,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|brush_set_angle_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)

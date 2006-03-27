@@ -232,9 +232,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|channel_new_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|channel_new_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|channel_new_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -477,8 +481,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|channel_new_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -639,9 +642,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|channel_new_from_component_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|channel_new_from_component_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|channel_new_from_component_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -830,8 +837,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|channel_new_from_component_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -968,9 +974,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|channel_copy_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|channel_copy_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|channel_copy_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -1089,8 +1099,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|channel_copy_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -1211,9 +1220,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|channel_combine_masks_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|channel_combine_masks_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|channel_combine_masks_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -1408,8 +1421,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|channel_combine_masks_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -1514,9 +1526,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|channel_get_show_masked_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|channel_get_show_masked_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|channel_get_show_masked_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -1612,8 +1628,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|channel_get_show_masked_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -1723,9 +1738,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|channel_set_show_masked_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|channel_set_show_masked_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|channel_set_show_masked_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -1829,8 +1848,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|channel_set_show_masked_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -1911,9 +1929,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|channel_get_opacity_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|channel_get_opacity_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|channel_get_opacity_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -2011,8 +2033,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|channel_get_opacity_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -2122,9 +2143,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|channel_set_opacity_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|channel_set_opacity_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|channel_set_opacity_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -2242,8 +2267,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|channel_set_opacity_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -2324,9 +2348,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|channel_get_color_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|channel_get_color_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|channel_get_color_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -2431,8 +2459,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|channel_get_color_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -2542,9 +2569,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|channel_set_color_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|channel_set_color_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|channel_set_color_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -2662,8 +2693,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|channel_set_color_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)

@@ -334,9 +334,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|parasite_find_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|parasite_find_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|parasite_find_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -440,8 +444,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|parasite_find_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -551,9 +554,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|parasite_attach_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|parasite_attach_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|parasite_attach_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -640,8 +647,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|parasite_attach_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -714,9 +720,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|parasite_detach_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|parasite_detach_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|parasite_detach_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -795,8 +805,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|parasite_detach_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -869,9 +878,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|parasite_list_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|parasite_list_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|parasite_list_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -919,8 +932,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|parasite_list_proc
+name|proc_record
 argument_list|,
 name|TRUE
 argument_list|)
@@ -1026,9 +1038,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_parasite_find_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_parasite_find_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_parasite_find_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -1164,8 +1180,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_parasite_find_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -1283,9 +1298,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_parasite_attach_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_parasite_attach_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_parasite_attach_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -1404,8 +1423,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_parasite_attach_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -1486,9 +1504,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_parasite_detach_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_parasite_detach_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_parasite_detach_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -1599,8 +1621,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_parasite_detach_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -1681,9 +1702,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_parasite_list_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_parasite_list_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_parasite_list_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -1774,8 +1799,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_parasite_list_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -1906,9 +1930,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_parasite_find_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|drawable_parasite_find_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|drawable_parasite_find_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -2062,8 +2090,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|drawable_parasite_find_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -2181,9 +2208,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_parasite_attach_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|drawable_parasite_attach_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|drawable_parasite_attach_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -2320,8 +2351,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|drawable_parasite_attach_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -2402,9 +2432,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_parasite_detach_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|drawable_parasite_detach_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|drawable_parasite_detach_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -2533,8 +2567,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|drawable_parasite_detach_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -2615,9 +2648,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_parasite_list_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|drawable_parasite_list_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|drawable_parasite_list_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -2726,8 +2763,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|drawable_parasite_list_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -2858,9 +2894,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|vectors_parasite_find_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|vectors_parasite_find_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|vectors_parasite_find_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -3014,8 +3054,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|vectors_parasite_find_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -3133,9 +3172,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|vectors_parasite_attach_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|vectors_parasite_attach_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|vectors_parasite_attach_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -3272,8 +3315,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|vectors_parasite_attach_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -3354,9 +3396,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|vectors_parasite_detach_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|vectors_parasite_detach_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|vectors_parasite_detach_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -3485,8 +3531,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|vectors_parasite_detach_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -3567,9 +3612,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|vectors_parasite_list_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|vectors_parasite_list_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|vectors_parasite_list_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -3678,8 +3727,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|vectors_parasite_list_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)

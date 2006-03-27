@@ -132,9 +132,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_convert_rgb_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_convert_rgb_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_convert_rgb_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -233,8 +237,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_convert_rgb_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -307,9 +310,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_convert_grayscale_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_convert_grayscale_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_convert_grayscale_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -408,8 +415,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_convert_grayscale_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -482,9 +488,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_convert_indexed_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_convert_indexed_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_convert_indexed_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -798,8 +808,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_convert_indexed_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)

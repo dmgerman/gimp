@@ -162,9 +162,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_add_hguide_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_add_hguide_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_add_hguide_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -298,8 +302,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_add_hguide_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -417,9 +420,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_add_vguide_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_add_vguide_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_add_vguide_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -553,8 +560,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_add_vguide_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -672,9 +678,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_delete_guide_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_delete_guide_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_delete_guide_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -781,8 +791,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_delete_guide_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -863,9 +872,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_find_next_guide_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_find_next_guide_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_find_next_guide_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -977,8 +990,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_find_next_guide_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -1096,9 +1108,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_get_guide_orientation_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_get_guide_orientation_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_get_guide_orientation_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -1212,8 +1228,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_get_guide_orientation_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -1331,9 +1346,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_get_guide_position_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_get_guide_position_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_get_guide_position_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -1447,8 +1466,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|image_get_guide_position_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)

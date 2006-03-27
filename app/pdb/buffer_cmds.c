@@ -196,9 +196,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|buffers_get_list_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|buffers_get_list_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|buffers_get_list_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -299,8 +303,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|buffers_get_list_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -431,9 +434,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|buffer_rename_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|buffer_rename_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|buffer_rename_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -612,8 +619,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|buffer_rename_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -731,9 +737,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|buffer_delete_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|buffer_delete_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|buffer_delete_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -845,8 +855,7 @@ block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|buffer_delete_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -919,9 +928,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|buffer_get_width_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|buffer_get_width_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|buffer_get_width_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -1036,8 +1049,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|buffer_get_width_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -1147,9 +1159,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|buffer_get_height_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|buffer_get_height_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|buffer_get_height_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -1264,8 +1280,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|buffer_get_height_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -1375,9 +1390,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|buffer_get_bytes_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|buffer_get_bytes_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|buffer_get_bytes_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -1492,8 +1511,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|buffer_get_bytes_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
@@ -1603,9 +1621,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|buffer_get_image_type_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|buffer_get_image_type_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|buffer_get_image_type_invoker
 parameter_list|(
+name|ProcRecord
+modifier|*
+name|proc_record
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -1720,8 +1742,7 @@ name|return_args
 operator|=
 name|procedural_db_return_args
 argument_list|(
-operator|&
-name|buffer_get_image_type_proc
+name|proc_record
 argument_list|,
 name|success
 argument_list|)
