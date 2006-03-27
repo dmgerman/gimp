@@ -236,7 +236,7 @@ parameter_list|)
 block|{
 name|Argument
 modifier|*
-name|return_args
+name|return_vals
 decl_stmt|;
 name|gchar
 modifier|*
@@ -330,16 +330,16 @@ operator|&
 name|plugin_install_time
 argument_list|)
 expr_stmt|;
-name|return_args
+name|return_vals
 operator|=
-name|procedural_db_return_args
+name|procedural_db_return_values
 argument_list|(
 name|proc_record
 argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|return_args
+name|return_vals
 index|[
 literal|1
 index|]
@@ -350,7 +350,7 @@ name|pdb_int
 operator|=
 name|num_plugins
 expr_stmt|;
-name|return_args
+name|return_vals
 index|[
 literal|2
 index|]
@@ -361,7 +361,7 @@ name|pdb_pointer
 operator|=
 name|menu_path
 expr_stmt|;
-name|return_args
+name|return_vals
 index|[
 literal|3
 index|]
@@ -372,7 +372,7 @@ name|pdb_int
 operator|=
 name|num_plugins
 expr_stmt|;
-name|return_args
+name|return_vals
 index|[
 literal|4
 index|]
@@ -383,7 +383,7 @@ name|pdb_pointer
 operator|=
 name|plugin_accelerator
 expr_stmt|;
-name|return_args
+name|return_vals
 index|[
 literal|5
 index|]
@@ -394,7 +394,7 @@ name|pdb_int
 operator|=
 name|num_plugins
 expr_stmt|;
-name|return_args
+name|return_vals
 index|[
 literal|6
 index|]
@@ -405,7 +405,7 @@ name|pdb_pointer
 operator|=
 name|plugin_location
 expr_stmt|;
-name|return_args
+name|return_vals
 index|[
 literal|7
 index|]
@@ -416,7 +416,7 @@ name|pdb_int
 operator|=
 name|num_plugins
 expr_stmt|;
-name|return_args
+name|return_vals
 index|[
 literal|8
 index|]
@@ -427,7 +427,7 @@ name|pdb_pointer
 operator|=
 name|plugin_image_type
 expr_stmt|;
-name|return_args
+name|return_vals
 index|[
 literal|9
 index|]
@@ -438,7 +438,7 @@ name|pdb_int
 operator|=
 name|num_plugins
 expr_stmt|;
-name|return_args
+name|return_vals
 index|[
 literal|10
 index|]
@@ -449,7 +449,7 @@ name|pdb_pointer
 operator|=
 name|plugin_install_time
 expr_stmt|;
-name|return_args
+name|return_vals
 index|[
 literal|11
 index|]
@@ -460,7 +460,7 @@ name|pdb_int
 operator|=
 name|num_plugins
 expr_stmt|;
-name|return_args
+name|return_vals
 index|[
 literal|12
 index|]
@@ -472,7 +472,7 @@ operator|=
 name|plugin_real_name
 expr_stmt|;
 return|return
-name|return_args
+name|return_vals
 return|;
 block|}
 end_function
@@ -785,7 +785,7 @@ name|FALSE
 expr_stmt|;
 block|}
 return|return
-name|procedural_db_return_args
+name|procedural_db_return_values
 argument_list|(
 name|proc_record
 argument_list|,
@@ -1025,7 +1025,7 @@ name|FALSE
 expr_stmt|;
 block|}
 return|return
-name|procedural_db_return_args
+name|procedural_db_return_values
 argument_list|(
 name|proc_record
 argument_list|,
@@ -1266,7 +1266,7 @@ expr_stmt|;
 block|}
 block|}
 return|return
-name|procedural_db_return_args
+name|procedural_db_return_values
 argument_list|(
 name|proc_record
 argument_list|,
@@ -1522,7 +1522,7 @@ name|FALSE
 expr_stmt|;
 block|}
 return|return
-name|procedural_db_return_args
+name|procedural_db_return_values
 argument_list|(
 name|proc_record
 argument_list|,
@@ -1826,7 +1826,7 @@ name|FALSE
 expr_stmt|;
 block|}
 return|return
-name|procedural_db_return_args
+name|procedural_db_return_values
 argument_list|(
 name|proc_record
 argument_list|,

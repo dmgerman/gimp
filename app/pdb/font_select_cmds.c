@@ -294,7 +294,7 @@ name|FALSE
 expr_stmt|;
 block|}
 return|return
-name|procedural_db_return_args
+name|procedural_db_return_values
 argument_list|(
 name|proc_record
 argument_list|,
@@ -491,7 +491,7 @@ name|FALSE
 expr_stmt|;
 block|}
 return|return
-name|procedural_db_return_args
+name|procedural_db_return_values
 argument_list|(
 name|proc_record
 argument_list|,
@@ -716,7 +716,7 @@ name|FALSE
 expr_stmt|;
 block|}
 return|return
-name|procedural_db_return_args
+name|procedural_db_return_values
 argument_list|(
 name|proc_record
 argument_list|,

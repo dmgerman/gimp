@@ -134,7 +134,7 @@ name|gimp
 argument_list|)
 expr_stmt|;
 return|return
-name|procedural_db_return_args
+name|procedural_db_return_values
 argument_list|(
 name|proc_record
 argument_list|,
@@ -221,7 +221,7 @@ name|TRUE
 decl_stmt|;
 name|Argument
 modifier|*
-name|return_args
+name|return_vals
 decl_stmt|;
 name|gchar
 modifier|*
@@ -293,9 +293,9 @@ name|num_fonts
 argument_list|)
 expr_stmt|;
 block|}
-name|return_args
+name|return_vals
 operator|=
-name|procedural_db_return_args
+name|procedural_db_return_values
 argument_list|(
 name|proc_record
 argument_list|,
@@ -307,7 +307,7 @@ condition|(
 name|success
 condition|)
 block|{
-name|return_args
+name|return_vals
 index|[
 literal|1
 index|]
@@ -318,7 +318,7 @@ name|pdb_int
 operator|=
 name|num_fonts
 expr_stmt|;
-name|return_args
+name|return_vals
 index|[
 literal|2
 index|]
@@ -331,7 +331,7 @@ name|font_list
 expr_stmt|;
 block|}
 return|return
-name|return_args
+name|return_vals
 return|;
 block|}
 end_function

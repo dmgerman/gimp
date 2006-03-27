@@ -192,7 +192,7 @@ name|pattern_factory
 argument_list|)
 expr_stmt|;
 return|return
-name|procedural_db_return_args
+name|procedural_db_return_values
 argument_list|(
 name|proc_record
 argument_list|,
@@ -279,7 +279,7 @@ name|TRUE
 decl_stmt|;
 name|Argument
 modifier|*
-name|return_args
+name|return_vals
 decl_stmt|;
 name|gchar
 modifier|*
@@ -353,9 +353,9 @@ name|num_patterns
 argument_list|)
 expr_stmt|;
 block|}
-name|return_args
+name|return_vals
 operator|=
-name|procedural_db_return_args
+name|procedural_db_return_values
 argument_list|(
 name|proc_record
 argument_list|,
@@ -367,7 +367,7 @@ condition|(
 name|success
 condition|)
 block|{
-name|return_args
+name|return_vals
 index|[
 literal|1
 index|]
@@ -378,7 +378,7 @@ name|pdb_int
 operator|=
 name|num_patterns
 expr_stmt|;
-name|return_args
+name|return_vals
 index|[
 literal|2
 index|]
@@ -391,7 +391,7 @@ name|pattern_list
 expr_stmt|;
 block|}
 return|return
-name|return_args
+name|return_vals
 return|;
 block|}
 end_function
@@ -519,7 +519,7 @@ name|TRUE
 decl_stmt|;
 name|Argument
 modifier|*
-name|return_args
+name|return_vals
 decl_stmt|;
 name|gchar
 modifier|*
@@ -586,9 +586,9 @@ name|success
 operator|=
 name|FALSE
 expr_stmt|;
-name|return_args
+name|return_vals
 operator|=
-name|procedural_db_return_args
+name|procedural_db_return_values
 argument_list|(
 name|proc_record
 argument_list|,
@@ -600,7 +600,7 @@ condition|(
 name|success
 condition|)
 block|{
-name|return_args
+name|return_vals
 index|[
 literal|1
 index|]
@@ -611,7 +611,7 @@ name|pdb_pointer
 operator|=
 name|name
 expr_stmt|;
-name|return_args
+name|return_vals
 index|[
 literal|2
 index|]
@@ -622,7 +622,7 @@ name|pdb_int
 operator|=
 name|width
 expr_stmt|;
-name|return_args
+name|return_vals
 index|[
 literal|3
 index|]
@@ -635,7 +635,7 @@ name|height
 expr_stmt|;
 block|}
 return|return
-name|return_args
+name|return_vals
 return|;
 block|}
 end_function
@@ -752,7 +752,7 @@ name|TRUE
 decl_stmt|;
 name|Argument
 modifier|*
-name|return_args
+name|return_vals
 decl_stmt|;
 name|gchar
 modifier|*
@@ -954,9 +954,9 @@ operator|=
 name|FALSE
 expr_stmt|;
 block|}
-name|return_args
+name|return_vals
 operator|=
-name|procedural_db_return_args
+name|procedural_db_return_values
 argument_list|(
 name|proc_record
 argument_list|,
@@ -968,7 +968,7 @@ condition|(
 name|success
 condition|)
 block|{
-name|return_args
+name|return_vals
 index|[
 literal|1
 index|]
@@ -979,7 +979,7 @@ name|pdb_pointer
 operator|=
 name|actual_name
 expr_stmt|;
-name|return_args
+name|return_vals
 index|[
 literal|2
 index|]
@@ -990,7 +990,7 @@ name|pdb_int
 operator|=
 name|width
 expr_stmt|;
-name|return_args
+name|return_vals
 index|[
 literal|3
 index|]
@@ -1001,7 +1001,7 @@ name|pdb_int
 operator|=
 name|height
 expr_stmt|;
-name|return_args
+name|return_vals
 index|[
 literal|4
 index|]
@@ -1012,7 +1012,7 @@ name|pdb_int
 operator|=
 name|mask_bpp
 expr_stmt|;
-name|return_args
+name|return_vals
 index|[
 literal|5
 index|]
@@ -1023,7 +1023,7 @@ name|pdb_int
 operator|=
 name|length
 expr_stmt|;
-name|return_args
+name|return_vals
 index|[
 literal|6
 index|]
@@ -1036,7 +1036,7 @@ name|mask_data
 expr_stmt|;
 block|}
 return|return
-name|return_args
+name|return_vals
 return|;
 block|}
 end_function

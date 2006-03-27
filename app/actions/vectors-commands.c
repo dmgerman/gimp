@@ -1241,21 +1241,10 @@ expr_stmt|;
 comment|/*  plug-in arguments as if called by<Image>/Filters/...  */
 name|args
 operator|=
-name|g_new
+name|procedural_db_arguments
 argument_list|(
-name|Argument
-argument_list|,
-literal|3
+name|proc_rec
 argument_list|)
-expr_stmt|;
-name|args
-index|[
-literal|0
-index|]
-operator|.
-name|arg_type
-operator|=
-name|GIMP_PDB_INT32
 expr_stmt|;
 name|args
 index|[
@@ -1273,15 +1262,6 @@ index|[
 literal|1
 index|]
 operator|.
-name|arg_type
-operator|=
-name|GIMP_PDB_IMAGE
-expr_stmt|;
-name|args
-index|[
-literal|1
-index|]
-operator|.
 name|value
 operator|.
 name|pdb_int
@@ -1293,15 +1273,6 @@ name|gimp_image_get_ID
 argument_list|(
 name|gimage
 argument_list|)
-expr_stmt|;
-name|args
-index|[
-literal|2
-index|]
-operator|.
-name|arg_type
-operator|=
-name|GIMP_PDB_DRAWABLE
 expr_stmt|;
 name|args
 index|[
@@ -1337,6 +1308,7 @@ argument_list|,
 name|args
 argument_list|,
 literal|3
+comment|/* not proc_rec->num_args */
 argument_list|,
 name|FALSE
 argument_list|,

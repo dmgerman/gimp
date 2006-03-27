@@ -173,7 +173,7 @@ name|TRUE
 decl_stmt|;
 name|Argument
 modifier|*
-name|return_args
+name|return_vals
 decl_stmt|;
 name|GimpImage
 modifier|*
@@ -513,9 +513,9 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|return_args
+name|return_vals
 operator|=
-name|procedural_db_return_args
+name|procedural_db_return_values
 argument_list|(
 name|proc_record
 argument_list|,
@@ -526,7 +526,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|return_args
+name|return_vals
 index|[
 literal|1
 index|]
@@ -549,7 +549,7 @@ operator|-
 literal|1
 expr_stmt|;
 return|return
-name|return_args
+name|return_vals
 return|;
 block|}
 end_function
@@ -741,7 +741,7 @@ name|TRUE
 decl_stmt|;
 name|Argument
 modifier|*
-name|return_args
+name|return_vals
 decl_stmt|;
 name|gchar
 modifier|*
@@ -943,9 +943,9 @@ name|real_fontname
 argument_list|)
 expr_stmt|;
 block|}
-name|return_args
+name|return_vals
 operator|=
-name|procedural_db_return_args
+name|procedural_db_return_values
 argument_list|(
 name|proc_record
 argument_list|,
@@ -957,7 +957,7 @@ condition|(
 name|success
 condition|)
 block|{
-name|return_args
+name|return_vals
 index|[
 literal|1
 index|]
@@ -968,7 +968,7 @@ name|pdb_int
 operator|=
 name|width
 expr_stmt|;
-name|return_args
+name|return_vals
 index|[
 literal|2
 index|]
@@ -979,7 +979,7 @@ name|pdb_int
 operator|=
 name|height
 expr_stmt|;
-name|return_args
+name|return_vals
 index|[
 literal|3
 index|]
@@ -990,7 +990,7 @@ name|pdb_int
 operator|=
 name|ascent
 expr_stmt|;
-name|return_args
+name|return_vals
 index|[
 literal|4
 index|]
@@ -1003,7 +1003,7 @@ name|descent
 expr_stmt|;
 block|}
 return|return
-name|return_args
+name|return_vals
 return|;
 block|}
 end_function
@@ -1171,7 +1171,7 @@ name|TRUE
 decl_stmt|;
 name|Argument
 modifier|*
-name|return_args
+name|return_vals
 decl_stmt|;
 name|GimpImage
 modifier|*
@@ -1703,9 +1703,9 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|return_args
+name|return_vals
 operator|=
-name|procedural_db_return_args
+name|procedural_db_return_values
 argument_list|(
 name|proc_record
 argument_list|,
@@ -1716,7 +1716,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|return_args
+name|return_vals
 index|[
 literal|1
 index|]
@@ -1739,7 +1739,7 @@ operator|-
 literal|1
 expr_stmt|;
 return|return
-name|return_args
+name|return_vals
 return|;
 block|}
 end_function
@@ -1987,7 +1987,7 @@ name|TRUE
 decl_stmt|;
 name|Argument
 modifier|*
-name|return_args
+name|return_vals
 decl_stmt|;
 name|gchar
 modifier|*
@@ -2381,9 +2381,9 @@ name|real_fontname
 argument_list|)
 expr_stmt|;
 block|}
-name|return_args
+name|return_vals
 operator|=
-name|procedural_db_return_args
+name|procedural_db_return_values
 argument_list|(
 name|proc_record
 argument_list|,
@@ -2395,7 +2395,7 @@ condition|(
 name|success
 condition|)
 block|{
-name|return_args
+name|return_vals
 index|[
 literal|1
 index|]
@@ -2406,7 +2406,7 @@ name|pdb_int
 operator|=
 name|width
 expr_stmt|;
-name|return_args
+name|return_vals
 index|[
 literal|2
 index|]
@@ -2417,7 +2417,7 @@ name|pdb_int
 operator|=
 name|height
 expr_stmt|;
-name|return_args
+name|return_vals
 index|[
 literal|3
 index|]
@@ -2428,7 +2428,7 @@ name|pdb_int
 operator|=
 name|ascent
 expr_stmt|;
-name|return_args
+name|return_vals
 index|[
 literal|4
 index|]
@@ -2441,7 +2441,7 @@ name|descent
 expr_stmt|;
 block|}
 return|return
-name|return_args
+name|return_vals
 return|;
 block|}
 end_function

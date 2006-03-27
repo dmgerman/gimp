@@ -227,7 +227,7 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
-name|procedural_db_return_args
+name|procedural_db_return_values
 argument_list|(
 name|proc_record
 argument_list|,
@@ -328,7 +328,7 @@ parameter_list|)
 block|{
 name|Argument
 modifier|*
-name|return_args
+name|return_vals
 decl_stmt|;
 name|gint32
 name|handler
@@ -341,16 +341,16 @@ name|gimp
 operator|->
 name|message_handler
 expr_stmt|;
-name|return_args
+name|return_vals
 operator|=
-name|procedural_db_return_args
+name|procedural_db_return_values
 argument_list|(
 name|proc_record
 argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|return_args
+name|return_vals
 index|[
 literal|1
 index|]
@@ -362,7 +362,7 @@ operator|=
 name|handler
 expr_stmt|;
 return|return
-name|return_args
+name|return_vals
 return|;
 block|}
 end_function
@@ -502,7 +502,7 @@ name|handler
 expr_stmt|;
 block|}
 return|return
-name|procedural_db_return_args
+name|procedural_db_return_values
 argument_list|(
 name|proc_record
 argument_list|,

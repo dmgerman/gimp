@@ -229,7 +229,7 @@ name|TRUE
 decl_stmt|;
 name|Argument
 modifier|*
-name|return_args
+name|return_vals
 decl_stmt|;
 name|GimpDrawable
 modifier|*
@@ -371,9 +371,9 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|return_args
+name|return_vals
 operator|=
-name|procedural_db_return_args
+name|procedural_db_return_values
 argument_list|(
 name|proc_record
 argument_list|,
@@ -384,7 +384,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|return_args
+name|return_vals
 index|[
 literal|1
 index|]
@@ -407,7 +407,7 @@ operator|-
 literal|1
 expr_stmt|;
 return|return
-name|return_args
+name|return_vals
 return|;
 block|}
 end_function
@@ -535,7 +535,7 @@ name|TRUE
 decl_stmt|;
 name|Argument
 modifier|*
-name|return_args
+name|return_vals
 decl_stmt|;
 name|GimpDrawable
 modifier|*
@@ -869,9 +869,9 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|return_args
+name|return_vals
 operator|=
-name|procedural_db_return_args
+name|procedural_db_return_values
 argument_list|(
 name|proc_record
 argument_list|,
@@ -882,7 +882,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|return_args
+name|return_vals
 index|[
 literal|1
 index|]
@@ -905,7 +905,7 @@ operator|-
 literal|1
 expr_stmt|;
 return|return
-name|return_args
+name|return_vals
 return|;
 block|}
 end_function
@@ -1097,7 +1097,7 @@ name|TRUE
 decl_stmt|;
 name|Argument
 modifier|*
-name|return_args
+name|return_vals
 decl_stmt|;
 name|GimpDrawable
 modifier|*
@@ -1319,9 +1319,9 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|return_args
+name|return_vals
 operator|=
-name|procedural_db_return_args
+name|procedural_db_return_values
 argument_list|(
 name|proc_record
 argument_list|,
@@ -1332,7 +1332,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|return_args
+name|return_vals
 index|[
 literal|1
 index|]
@@ -1355,7 +1355,7 @@ operator|-
 literal|1
 expr_stmt|;
 return|return
-name|return_args
+name|return_vals
 return|;
 block|}
 end_function
@@ -1491,7 +1491,7 @@ name|TRUE
 decl_stmt|;
 name|Argument
 modifier|*
-name|return_args
+name|return_vals
 decl_stmt|;
 name|GimpDrawable
 modifier|*
@@ -1775,9 +1775,9 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|return_args
+name|return_vals
 operator|=
-name|procedural_db_return_args
+name|procedural_db_return_values
 argument_list|(
 name|proc_record
 argument_list|,
@@ -1788,7 +1788,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|return_args
+name|return_vals
 index|[
 literal|1
 index|]
@@ -1811,7 +1811,7 @@ operator|-
 literal|1
 expr_stmt|;
 return|return
-name|return_args
+name|return_vals
 return|;
 block|}
 end_function
@@ -1971,7 +1971,7 @@ name|TRUE
 decl_stmt|;
 name|Argument
 modifier|*
-name|return_args
+name|return_vals
 decl_stmt|;
 name|GimpDrawable
 modifier|*
@@ -2223,9 +2223,9 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|return_args
+name|return_vals
 operator|=
-name|procedural_db_return_args
+name|procedural_db_return_values
 argument_list|(
 name|proc_record
 argument_list|,
@@ -2236,7 +2236,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|return_args
+name|return_vals
 index|[
 literal|1
 index|]
@@ -2259,7 +2259,7 @@ operator|-
 literal|1
 expr_stmt|;
 return|return
-name|return_args
+name|return_vals
 return|;
 block|}
 end_function
@@ -2403,7 +2403,7 @@ name|TRUE
 decl_stmt|;
 name|Argument
 modifier|*
-name|return_args
+name|return_vals
 decl_stmt|;
 name|GimpDrawable
 modifier|*
@@ -2733,9 +2733,9 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|return_args
+name|return_vals
 operator|=
-name|procedural_db_return_args
+name|procedural_db_return_values
 argument_list|(
 name|proc_record
 argument_list|,
@@ -2746,7 +2746,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|return_args
+name|return_vals
 index|[
 literal|1
 index|]
@@ -2769,7 +2769,7 @@ operator|-
 literal|1
 expr_stmt|;
 return|return
-name|return_args
+name|return_vals
 return|;
 block|}
 end_function

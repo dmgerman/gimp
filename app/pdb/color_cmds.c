@@ -739,7 +739,7 @@ block|}
 block|}
 block|}
 return|return
-name|procedural_db_return_args
+name|procedural_db_return_values
 argument_list|(
 name|proc_record
 argument_list|,
@@ -1151,7 +1151,7 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
-name|procedural_db_return_args
+name|procedural_db_return_values
 argument_list|(
 name|proc_record
 argument_list|,
@@ -1388,7 +1388,7 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
-name|procedural_db_return_args
+name|procedural_db_return_values
 argument_list|(
 name|proc_record
 argument_list|,
@@ -1577,7 +1577,7 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
-name|procedural_db_return_args
+name|procedural_db_return_values
 argument_list|(
 name|proc_record
 argument_list|,
@@ -1931,7 +1931,7 @@ block|}
 block|}
 block|}
 return|return
-name|procedural_db_return_args
+name|procedural_db_return_values
 argument_list|(
 name|proc_record
 argument_list|,
@@ -2129,7 +2129,7 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
-name|procedural_db_return_args
+name|procedural_db_return_values
 argument_list|(
 name|proc_record
 argument_list|,
@@ -2347,7 +2347,7 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
-name|procedural_db_return_args
+name|procedural_db_return_values
 argument_list|(
 name|proc_record
 argument_list|,
@@ -2562,7 +2562,7 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
-name|procedural_db_return_args
+name|procedural_db_return_values
 argument_list|(
 name|proc_record
 argument_list|,
@@ -2757,7 +2757,7 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
-name|procedural_db_return_args
+name|procedural_db_return_values
 argument_list|(
 name|proc_record
 argument_list|,
@@ -3334,7 +3334,7 @@ block|}
 block|}
 block|}
 return|return
-name|procedural_db_return_args
+name|procedural_db_return_values
 argument_list|(
 name|proc_record
 argument_list|,
@@ -3855,7 +3855,7 @@ block|}
 block|}
 block|}
 return|return
-name|procedural_db_return_args
+name|procedural_db_return_values
 argument_list|(
 name|proc_record
 argument_list|,
@@ -4366,7 +4366,7 @@ block|}
 block|}
 block|}
 return|return
-name|procedural_db_return_args
+name|procedural_db_return_values
 argument_list|(
 name|proc_record
 argument_list|,
@@ -4831,7 +4831,7 @@ block|}
 block|}
 block|}
 return|return
-name|procedural_db_return_args
+name|procedural_db_return_values
 argument_list|(
 name|proc_record
 argument_list|,
@@ -4961,7 +4961,7 @@ name|TRUE
 decl_stmt|;
 name|Argument
 modifier|*
-name|return_args
+name|return_vals
 decl_stmt|;
 name|GimpDrawable
 modifier|*
@@ -5273,9 +5273,9 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|return_args
+name|return_vals
 operator|=
-name|procedural_db_return_args
+name|procedural_db_return_values
 argument_list|(
 name|proc_record
 argument_list|,
@@ -5287,7 +5287,7 @@ condition|(
 name|success
 condition|)
 block|{
-name|return_args
+name|return_vals
 index|[
 literal|1
 index|]
@@ -5298,7 +5298,7 @@ name|pdb_float
 operator|=
 name|mean
 expr_stmt|;
-name|return_args
+name|return_vals
 index|[
 literal|2
 index|]
@@ -5309,7 +5309,7 @@ name|pdb_float
 operator|=
 name|std_dev
 expr_stmt|;
-name|return_args
+name|return_vals
 index|[
 literal|3
 index|]
@@ -5320,7 +5320,7 @@ name|pdb_float
 operator|=
 name|median
 expr_stmt|;
-name|return_args
+name|return_vals
 index|[
 literal|4
 index|]
@@ -5331,7 +5331,7 @@ name|pdb_float
 operator|=
 name|pixels
 expr_stmt|;
-name|return_args
+name|return_vals
 index|[
 literal|5
 index|]
@@ -5342,7 +5342,7 @@ name|pdb_float
 operator|=
 name|count
 expr_stmt|;
-name|return_args
+name|return_vals
 index|[
 literal|6
 index|]
@@ -5355,7 +5355,7 @@ name|percentile
 expr_stmt|;
 block|}
 return|return
-name|return_args
+name|return_vals
 return|;
 block|}
 end_function
@@ -5897,7 +5897,7 @@ block|}
 block|}
 block|}
 return|return
-name|procedural_db_return_args
+name|procedural_db_return_values
 argument_list|(
 name|proc_record
 argument_list|,
@@ -6321,7 +6321,7 @@ block|}
 block|}
 block|}
 return|return
-name|procedural_db_return_args
+name|procedural_db_return_values
 argument_list|(
 name|proc_record
 argument_list|,

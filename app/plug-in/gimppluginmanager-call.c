@@ -144,7 +144,7 @@ modifier|*
 name|args
 parameter_list|,
 name|gint
-name|argc
+name|n_args
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -173,7 +173,7 @@ end_comment
 begin_function
 name|Argument
 modifier|*
-DECL|function|plug_in_run (Gimp * gimp,GimpContext * context,GimpProgress * progress,ProcRecord * proc_rec,Argument * args,gint argc,gboolean synchronous,gboolean destroy_return_vals,gint gdisp_ID)
+DECL|function|plug_in_run (Gimp * gimp,GimpContext * context,GimpProgress * progress,ProcRecord * proc_rec,Argument * args,gint n_args,gboolean synchronous,gboolean destroy_return_vals,gint gdisp_ID)
 name|plug_in_run
 parameter_list|(
 name|Gimp
@@ -197,7 +197,7 @@ modifier|*
 name|args
 parameter_list|,
 name|gint
-name|argc
+name|n_args
 parameter_list|,
 name|gboolean
 name|synchronous
@@ -264,7 +264,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|argc
+name|n_args
 operator|==
 literal|0
 operator|||
@@ -296,7 +296,7 @@ name|progress
 argument_list|,
 name|args
 argument_list|,
-name|argc
+name|n_args
 argument_list|)
 expr_stmt|;
 goto|goto
@@ -562,7 +562,7 @@ name|proc_run
 operator|.
 name|nparams
 operator|=
-name|argc
+name|n_args
 expr_stmt|;
 name|proc_run
 operator|.
@@ -572,7 +572,7 @@ name|plug_in_args_to_params
 argument_list|(
 name|args
 argument_list|,
-name|argc
+name|n_args
 argument_list|,
 name|FALSE
 argument_list|)
@@ -618,7 +618,7 @@ condition|)
 block|{
 name|return_vals
 operator|=
-name|procedural_db_return_args
+name|procedural_db_return_values
 argument_list|(
 name|proc_rec
 argument_list|,
@@ -857,9 +857,6 @@ name|Argument
 modifier|*
 name|args
 decl_stmt|;
-name|gint
-name|i
-decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_GIMP
@@ -914,46 +911,14 @@ block|{
 comment|/* construct the procedures arguments */
 name|args
 operator|=
-name|g_new
+name|procedural_db_arguments
 argument_list|(
-name|Argument
-argument_list|,
-literal|3
-argument_list|)
-expr_stmt|;
-comment|/* initialize the first three argument types */
-for|for
-control|(
-name|i
-operator|=
-literal|0
-init|;
-name|i
-operator|<
-literal|3
-condition|;
-name|i
-operator|++
-control|)
-name|args
-index|[
-name|i
-index|]
-operator|.
-name|arg_type
-operator|=
+operator|&
 name|proc_def
 operator|->
 name|db_info
-operator|.
-name|args
-index|[
-name|i
-index|]
-operator|.
-name|arg_type
+argument_list|)
 expr_stmt|;
-comment|/* initialize the first three plug-in arguments  */
 name|args
 index|[
 literal|0
@@ -1010,6 +975,7 @@ argument_list|,
 name|args
 argument_list|,
 literal|3
+comment|/* not proc_def->db_info.num_args */
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1035,7 +1001,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|plug_in_temp_run (ProcRecord * proc_rec,GimpContext * context,GimpProgress * progress,Argument * args,gint argc)
+DECL|function|plug_in_temp_run (ProcRecord * proc_rec,GimpContext * context,GimpProgress * progress,Argument * args,gint n_args)
 name|plug_in_temp_run
 parameter_list|(
 name|ProcRecord
@@ -1055,7 +1021,7 @@ modifier|*
 name|args
 parameter_list|,
 name|gint
-name|argc
+name|n_args
 parameter_list|)
 block|{
 name|Argument
@@ -1119,7 +1085,7 @@ name|proc_run
 operator|.
 name|nparams
 operator|=
-name|argc
+name|n_args
 expr_stmt|;
 name|proc_run
 operator|.
@@ -1129,7 +1095,7 @@ name|plug_in_args_to_params
 argument_list|(
 name|args
 argument_list|,
-name|argc
+name|n_args
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1162,7 +1128,7 @@ condition|)
 block|{
 name|return_vals
 operator|=
-name|procedural_db_return_args
+name|procedural_db_return_values
 argument_list|(
 name|proc_rec
 argument_list|,
@@ -1320,7 +1286,7 @@ block|{
 comment|/* Allocate new return values of the correct size. */
 name|return_vals
 operator|=
-name|procedural_db_return_args
+name|procedural_db_return_values
 argument_list|(
 name|proc_frame
 operator|->
@@ -1367,7 +1333,7 @@ block|{
 comment|/* Just return a dummy set of values. */
 name|return_vals
 operator|=
-name|procedural_db_return_args
+name|procedural_db_return_values
 argument_list|(
 name|proc_frame
 operator|->

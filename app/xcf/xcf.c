@@ -634,7 +634,7 @@ name|info
 decl_stmt|;
 name|Argument
 modifier|*
-name|return_args
+name|return_vals
 decl_stmt|;
 name|GimpImage
 modifier|*
@@ -947,9 +947,9 @@ name|errno
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|return_args
+name|return_vals
 operator|=
-name|procedural_db_return_args
+name|procedural_db_return_values
 argument_list|(
 name|procedure
 argument_list|,
@@ -960,7 +960,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|return_args
+name|return_vals
 index|[
 literal|1
 index|]
@@ -980,7 +980,7 @@ name|gimp
 argument_list|)
 expr_stmt|;
 return|return
-name|return_args
+name|return_vals
 return|;
 block|}
 end_function
@@ -1018,7 +1018,7 @@ name|info
 decl_stmt|;
 name|Argument
 modifier|*
-name|return_args
+name|return_vals
 decl_stmt|;
 name|GimpImage
 modifier|*
@@ -1212,9 +1212,9 @@ name|errno
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|return_args
+name|return_vals
 operator|=
-name|procedural_db_return_args
+name|procedural_db_return_values
 argument_list|(
 name|procedure
 argument_list|,
@@ -1227,7 +1227,7 @@ name|gimp
 argument_list|)
 expr_stmt|;
 return|return
-name|return_args
+name|return_vals
 return|;
 block|}
 end_function
