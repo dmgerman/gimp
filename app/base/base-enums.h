@@ -69,7 +69,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2870a8750103
+DECL|enum|__anon2a0d811f0103
 block|{
 DECL|enumerator|GIMP_CURVE_SMOOTH
 name|GIMP_CURVE_SMOOTH
@@ -105,7 +105,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2870a8750203
+DECL|enum|__anon2a0d811f0203
 block|{
 DECL|enumerator|GIMP_HISTOGRAM_VALUE
 name|GIMP_HISTOGRAM_VALUE
@@ -169,7 +169,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2870a8750303
+DECL|enum|__anon2a0d811f0303
 block|{
 DECL|enumerator|GIMP_NORMAL_MODE
 name|GIMP_NORMAL_MODE
@@ -280,38 +280,28 @@ name|GimpLayerModeEffects
 typedef|;
 end_typedef
 
-begin_comment
-comment|/*  * non-registered enums; register them if needed  */
-end_comment
+begin_define
+DECL|macro|GIMP_TYPE_HUE_RANGE
+define|#
+directive|define
+name|GIMP_TYPE_HUE_RANGE
+value|(gimp_hue_range_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_hue_range_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
 
 begin_typedef
 typedef|typedef
 enum|enum
-comment|/*< skip>*/
-DECL|enum|__anon2870a8750403
-block|{
-DECL|enumerator|GIMP_NORMAL_CONVOL
-name|GIMP_NORMAL_CONVOL
-block|,
-comment|/*  Negative numbers truncated  */
-DECL|enumerator|GIMP_ABSOLUTE_CONVOL
-name|GIMP_ABSOLUTE_CONVOL
-block|,
-comment|/*  Absolute value              */
-DECL|enumerator|GIMP_NEGATIVE_CONVOL
-name|GIMP_NEGATIVE_CONVOL
-comment|/*  add 127 to values           */
-DECL|typedef|GimpConvolutionType
-block|}
-name|GimpConvolutionType
-typedef|;
-end_typedef
-
-begin_typedef
-typedef|typedef
-enum|enum
-comment|/*< skip>*/
-DECL|enum|__anon2870a8750503
+DECL|enum|__anon2a0d811f0403
 block|{
 DECL|enumerator|GIMP_ALL_HUES
 name|GIMP_ALL_HUES
@@ -339,11 +329,38 @@ name|GimpHueRange
 typedef|;
 end_typedef
 
+begin_comment
+comment|/*  * non-registered enums; register them if needed  */
+end_comment
+
+begin_typedef
+typedef|typedef
+enum|enum
+comment|/*< skip>*/
+DECL|enum|__anon2a0d811f0503
+block|{
+DECL|enumerator|GIMP_NORMAL_CONVOL
+name|GIMP_NORMAL_CONVOL
+block|,
+comment|/*  Negative numbers truncated  */
+DECL|enumerator|GIMP_ABSOLUTE_CONVOL
+name|GIMP_ABSOLUTE_CONVOL
+block|,
+comment|/*  Absolute value              */
+DECL|enumerator|GIMP_NEGATIVE_CONVOL
+name|GIMP_NEGATIVE_CONVOL
+comment|/*  add 127 to values           */
+DECL|typedef|GimpConvolutionType
+block|}
+name|GimpConvolutionType
+typedef|;
+end_typedef
+
 begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip, skip>*/
-DECL|enum|__anon2870a8750603
+DECL|enum|__anon2a0d811f0603
 block|{
 DECL|enumerator|SIOX_REFINEMENT_NO_CHANGE
 name|SIOX_REFINEMENT_NO_CHANGE
