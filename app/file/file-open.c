@@ -569,9 +569,7 @@ name|procedural_db_destroy_args
 argument_list|(
 name|return_vals
 argument_list|,
-name|proc
-operator|->
-name|num_values
+name|n_return_vals
 argument_list|)
 expr_stmt|;
 if|if
@@ -991,9 +989,7 @@ name|procedural_db_destroy_args
 argument_list|(
 name|return_vals
 argument_list|,
-name|proc
-operator|->
-name|num_values
+name|n_return_vals
 argument_list|)
 expr_stmt|;
 if|if
