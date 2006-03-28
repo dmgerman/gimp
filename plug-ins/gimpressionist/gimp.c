@@ -317,7 +317,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
-literal|"Performs various artistic operations on an image"
+name|N_
+argument_list|(
+literal|"Performs various artistic operations"
+argument_list|)
 argument_list|,
 literal|"Performs various artistic operations on an image"
 argument_list|,

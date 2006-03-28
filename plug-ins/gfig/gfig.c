@@ -438,11 +438,14 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Create Geometrical shapes with the Gimp"
+name|N_
+argument_list|(
+literal|"Create geometric shapes"
+argument_list|)
 argument_list|,
 literal|"Draw Vector Graphics and paint them onto your images.  "
 literal|"Gfig allows you to draw many types of objects "
-literal|"inlcuding Lines, Circles, Ellipses, Curves, Polygons, "
+literal|"including Lines, Circles, Ellipses, Curves, Polygons, "
 literal|"pointed stars, Bezier curves, and Spirals.  "
 literal|"Objects can be painted using Brushes or other tools"
 literal|"or filled using colours or patterns.  "

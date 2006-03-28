@@ -197,7 +197,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Colormap rotation as in xv"
+name|N_
+argument_list|(
+literal|"Replace a range of colors with another"
+argument_list|)
 argument_list|,
 literal|"Exchanges two color ranges. "
 literal|"Based on code from Pavel Grinfeld (pavel@ml.com). "

@@ -695,14 +695,6 @@ specifier|static
 specifier|const
 name|gchar
 modifier|*
-name|blurb
-init|=
-literal|"This plug-in prints images from The GIMP."
-decl_stmt|;
-specifier|static
-specifier|const
-name|gchar
-modifier|*
 name|help
 init|=
 literal|"Prints images to PostScript, PCL, or ESC/P2 printers."
@@ -723,19 +715,14 @@ name|copy
 init|=
 literal|"Copyright 1997-2000 by Michael Sweet and Robert Krawitz"
 decl_stmt|;
-specifier|static
-specifier|const
-name|gchar
-modifier|*
-name|types
-init|=
-literal|"RGB*,GRAY*,INDEXED*"
-decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
 name|PROC_NAME
 argument_list|,
-name|blurb
+name|N_
+argument_list|(
+literal|"Print the image using the gimp-print drivers"
+argument_list|)
 argument_list|,
 name|help
 argument_list|,
@@ -750,7 +737,7 @@ argument_list|(
 literal|"_Print..."
 argument_list|)
 argument_list|,
-name|types
+literal|"*"
 argument_list|,
 name|GIMP_PLUGIN
 argument_list|,

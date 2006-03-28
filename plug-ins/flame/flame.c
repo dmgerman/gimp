@@ -139,7 +139,7 @@ end_define
 
 begin_struct
 struct|struct
-DECL|struct|__anon2a0926120108
+DECL|struct|__anon2a07b7000108
 block|{
 DECL|member|randomize
 name|gint
@@ -539,9 +539,12 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Creates cosmic recursive fractal flames"
+name|N_
+argument_list|(
+literal|"Create cosmic recursive fractal flames"
+argument_list|)
 argument_list|,
-literal|"Creates cosmic recursive fractal flames"
+literal|"Create cosmic recursive fractal flames"
 argument_list|,
 literal|"Scott Draves"
 argument_list|,

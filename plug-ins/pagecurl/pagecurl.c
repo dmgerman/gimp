@@ -76,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2af4630b0103
+DECL|enum|__anon28eae69f0103
 block|{
 DECL|enumerator|CURL_COLORS_FG_BG
 name|CURL_COLORS_FG_BG
@@ -100,7 +100,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2af4630b0203
+DECL|enum|__anon28eae69f0203
 block|{
 DECL|enumerator|CURL_ORIENTATION_VERTICAL
 name|CURL_ORIENTATION_VERTICAL
@@ -121,7 +121,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2af4630b0303
+DECL|enum|__anon28eae69f0303
 block|{
 DECL|enumerator|CURL_EDGE_LOWER_RIGHT
 name|CURL_EDGE_LOWER_RIGHT
@@ -209,7 +209,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af4630b0408
+DECL|struct|__anon28eae69f0408
 block|{
 DECL|member|colors
 name|CurlColors
@@ -719,7 +719,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Pagecurl effect"
+name|N_
+argument_list|(
+literal|"Curl up one of the image corners"
+argument_list|)
 argument_list|,
 literal|"This plug-in creates a pagecurl-effect."
 argument_list|,

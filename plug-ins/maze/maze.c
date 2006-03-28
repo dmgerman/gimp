@@ -468,7 +468,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"Draws a maze."
+name|N_
+argument_list|(
+literal|"Draw a labyrinth"
+argument_list|)
 argument_list|,
 literal|"Generates a maze using either the depth-first "
 literal|"search method or Prim's algorithm.  Can make "

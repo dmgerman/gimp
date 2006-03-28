@@ -558,7 +558,10 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_imagemap"
 argument_list|,
-literal|"Creates a clickable imagemap."
+name|N_
+argument_list|(
+literal|"Create a clickable imagemap"
+argument_list|)
 argument_list|,
 literal|""
 argument_list|,

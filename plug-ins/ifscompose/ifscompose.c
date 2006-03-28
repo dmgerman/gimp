@@ -138,7 +138,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c3a29060103
+DECL|enum|__anon27b0b8a40103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -158,7 +158,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c3a29060203
+DECL|enum|__anon27b0b8a40203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -174,7 +174,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3a29060308
+DECL|struct|__anon27b0b8a40308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -196,7 +196,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon2c3a2906040a
+DECL|union|__anon27b0b8a4040a
 block|{
 DECL|member|d
 name|gdouble
@@ -221,7 +221,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3a29060508
+DECL|struct|__anon27b0b8a40508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -251,7 +251,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3a29060608
+DECL|struct|__anon27b0b8a40608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -286,7 +286,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3a29060708
+DECL|struct|__anon27b0b8a40708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -322,7 +322,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3a29060808
+DECL|struct|__anon27b0b8a40808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -389,7 +389,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3a29060908
+DECL|struct|__anon27b0b8a40908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -538,7 +538,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3a29060a08
+DECL|struct|__anon27b0b8a40a08
 block|{
 DECL|member|run
 name|gboolean
@@ -1469,7 +1469,10 @@ name|gimp_install_procedure
 argument_list|(
 name|IFSCOMPOSE_PROC
 argument_list|,
-literal|"Create an Iterated Function System (IFS) Fractal"
+name|N_
+argument_list|(
+literal|"Create an Iterated Function System (IFS) fractal"
+argument_list|)
 argument_list|,
 literal|"Interactively create an Iterated Function System "
 literal|"fractal. Use the window on the upper left to adjust "

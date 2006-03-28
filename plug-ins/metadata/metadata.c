@@ -525,7 +525,10 @@ name|gimp_install_procedure
 argument_list|(
 name|EDITOR_PROC
 argument_list|,
+name|N_
+argument_list|(
 literal|"View and edit metadata (EXIF, IPTC, XMP)"
+argument_list|)
 argument_list|,
 literal|"View and edit metadata information attached to the "
 literal|"current image.  This can include EXIF, IPTC and/or "

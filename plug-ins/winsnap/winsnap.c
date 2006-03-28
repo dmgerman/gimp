@@ -90,14 +90,6 @@ value|"WinSnap"
 end_define
 
 begin_define
-DECL|macro|PLUG_IN_DESCRIPTION
-define|#
-directive|define
-name|PLUG_IN_DESCRIPTION
-value|"Capture a Win32 window or desktop image"
-end_define
-
-begin_define
 DECL|macro|PLUG_IN_HELP
 define|#
 directive|define
@@ -351,7 +343,7 @@ comment|/* Data structure holding data between runs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2be0993c0108
+DECL|struct|__anon2956817f0108
 typedef|typedef
 struct|struct
 block|{
@@ -398,7 +390,7 @@ comment|/* The dialog information */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2be0993c0208
+DECL|struct|__anon2956817f0208
 typedef|typedef
 struct|struct
 block|{
@@ -3430,7 +3422,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
-name|PLUG_IN_DESCRIPTION
+name|N_
+argument_list|(
+literal|"Capture a window or desktop image"
+argument_list|)
 argument_list|,
 name|PLUG_IN_HELP
 argument_list|,
