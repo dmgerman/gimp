@@ -56,7 +56,7 @@ name|gimp_image_add_sample_point_at_pos
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gint
 name|x
@@ -99,7 +99,7 @@ name|gimp_image_add_sample_point
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpSamplePoint
 modifier|*
@@ -120,7 +120,7 @@ name|gimp_image_remove_sample_point
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpSamplePoint
 modifier|*
@@ -138,7 +138,7 @@ name|gimp_image_move_sample_point
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpSamplePoint
 modifier|*
@@ -163,7 +163,7 @@ name|gimp_image_find_sample_point
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gdouble
 name|x

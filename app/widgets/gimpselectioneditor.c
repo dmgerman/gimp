@@ -188,7 +188,7 @@ name|editor
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -246,7 +246,7 @@ name|gimp_selection_editor_mask_changed
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpSelectionEditor
 modifier|*
@@ -659,7 +659,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_selection_editor_set_image (GimpImageEditor * image_editor,GimpImage * gimage)
+DECL|function|gimp_selection_editor_set_image (GimpImageEditor * image_editor,GimpImage * image)
 name|gimp_selection_editor_set_image
 parameter_list|(
 name|GimpImageEditor
@@ -668,7 +668,7 @@ name|image_editor
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 block|{
 name|GimpSelectionEditor
@@ -684,14 +684,14 @@ if|if
 condition|(
 name|image_editor
 operator|->
-name|gimage
+name|image
 condition|)
 block|{
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
 name|image_editor
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|gimp_selection_editor_mask_changed
 argument_list|,
@@ -708,17 +708,17 @@ name|set_image
 argument_list|(
 name|image_editor
 argument_list|,
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimage
+name|image
 condition|)
 block|{
 name|g_signal_connect
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 literal|"mask-changed"
 argument_list|,
@@ -743,7 +743,7 @@ name|GIMP_VIEWABLE
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 argument_list|)
@@ -877,7 +877,7 @@ condition|(
 operator|!
 name|image_editor
 operator|->
-name|gimage
+name|image
 condition|)
 return|return
 name|TRUE
@@ -903,7 +903,7 @@ name|gimp_container_get_child_by_name
 argument_list|(
 name|image_editor
 operator|->
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -935,7 +935,7 @@ name|gimp_image_active_drawable
 argument_list|(
 name|image_editor
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 if|if
@@ -996,7 +996,7 @@ name|x
 operator|=
 name|image_editor
 operator|->
-name|gimage
+name|image
 operator|->
 name|width
 operator|*
@@ -1012,7 +1012,7 @@ name|y
 operator|=
 name|image_editor
 operator|->
-name|gimage
+name|image
 operator|->
 name|height
 operator|*
@@ -1030,7 +1030,7 @@ name|gimp_image_pick_color
 argument_list|(
 name|image_editor
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|drawable
 argument_list|,
@@ -1061,7 +1061,7 @@ name|gimp_image_get_mask
 argument_list|(
 name|image_editor
 operator|->
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|drawable
@@ -1104,7 +1104,7 @@ name|gimp_image_flush
 argument_list|(
 name|image_editor
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -1165,7 +1165,7 @@ condition|(
 operator|!
 name|editor
 operator|->
-name|gimage
+name|image
 condition|)
 return|return;
 name|tool_info
@@ -1178,7 +1178,7 @@ name|gimp_container_get_child_by_name
 argument_list|(
 name|editor
 operator|->
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -1208,7 +1208,7 @@ name|gimp_image_active_drawable
 argument_list|(
 name|editor
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 if|if
@@ -1223,7 +1223,7 @@ name|gimp_image_get_mask
 argument_list|(
 name|editor
 operator|->
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|drawable
@@ -1267,7 +1267,7 @@ name|gimp_image_flush
 argument_list|(
 name|editor
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -1276,12 +1276,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_selection_editor_mask_changed (GimpImage * gimage,GimpSelectionEditor * editor)
+DECL|function|gimp_selection_editor_mask_changed (GimpImage * image,GimpSelectionEditor * editor)
 name|gimp_selection_editor_mask_changed
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpSelectionEditor
 modifier|*

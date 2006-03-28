@@ -205,17 +205,17 @@ value|context = action_data_get_context (data); \   if (! context) \     return
 end_define
 
 begin_define
-DECL|macro|return_if_no_image (gimage,data)
+DECL|macro|return_if_no_image (image,data)
 define|#
 directive|define
 name|return_if_no_image
 parameter_list|(
-name|gimage
+name|image
 parameter_list|,
 name|data
 parameter_list|)
 define|\
-value|gimage = action_data_get_image (data); \   if (! gimage) \     return
+value|image = action_data_get_image (data); \   if (! image) \     return
 end_define
 
 begin_define
@@ -247,67 +247,67 @@ value|widget = action_data_get_widget (data); \   if (! widget) \     return
 end_define
 
 begin_define
-DECL|macro|return_if_no_drawable (gimage,drawable,data)
+DECL|macro|return_if_no_drawable (image,drawable,data)
 define|#
 directive|define
 name|return_if_no_drawable
 parameter_list|(
-name|gimage
+name|image
 parameter_list|,
 name|drawable
 parameter_list|,
 name|data
 parameter_list|)
 define|\
-value|return_if_no_image (gimage,data); \   drawable = gimp_image_active_drawable (gimage); \   if (! drawable) \     return
+value|return_if_no_image (image,data); \   drawable = gimp_image_active_drawable (image); \   if (! drawable) \     return
 end_define
 
 begin_define
-DECL|macro|return_if_no_layer (gimage,layer,data)
+DECL|macro|return_if_no_layer (image,layer,data)
 define|#
 directive|define
 name|return_if_no_layer
 parameter_list|(
-name|gimage
+name|image
 parameter_list|,
 name|layer
 parameter_list|,
 name|data
 parameter_list|)
 define|\
-value|return_if_no_image (gimage,data); \   layer = gimp_image_get_active_layer (gimage); \   if (! layer) \     return
+value|return_if_no_image (image,data); \   layer = gimp_image_get_active_layer (image); \   if (! layer) \     return
 end_define
 
 begin_define
-DECL|macro|return_if_no_channel (gimage,channel,data)
+DECL|macro|return_if_no_channel (image,channel,data)
 define|#
 directive|define
 name|return_if_no_channel
 parameter_list|(
-name|gimage
+name|image
 parameter_list|,
 name|channel
 parameter_list|,
 name|data
 parameter_list|)
 define|\
-value|return_if_no_image (gimage,data); \   channel = gimp_image_get_active_channel (gimage); \   if (! channel) \     return
+value|return_if_no_image (image,data); \   channel = gimp_image_get_active_channel (image); \   if (! channel) \     return
 end_define
 
 begin_define
-DECL|macro|return_if_no_vectors (gimage,vectors,data)
+DECL|macro|return_if_no_vectors (image,vectors,data)
 define|#
 directive|define
 name|return_if_no_vectors
 parameter_list|(
-name|gimage
+name|image
 parameter_list|,
 name|vectors
 parameter_list|,
 name|data
 parameter_list|)
 define|\
-value|return_if_no_image (gimage,data); \   vectors = gimp_image_get_active_vectors (gimage); \   if (! vectors) \     return
+value|return_if_no_image (image,data); \   vectors = gimp_image_get_active_vectors (image); \   if (! vectors) \     return
 end_define
 
 begin_endif

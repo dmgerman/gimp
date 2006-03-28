@@ -129,7 +129,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon27dace790103
+DECL|enum|__anon27b50c8f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1168,7 +1168,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_template_set_from_image (GimpTemplate * template,GimpImage * gimage)
+DECL|function|gimp_template_set_from_image (GimpTemplate * template,GimpImage * image)
 name|gimp_template_set_from_image
 parameter_list|(
 name|GimpTemplate
@@ -1177,7 +1177,7 @@ name|template
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 block|{
 name|gdouble
@@ -1211,13 +1211,13 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_image_get_resolution
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 operator|&
 name|xresolution
@@ -1230,7 +1230,7 @@ name|image_type
 operator|=
 name|gimp_image_base_type
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 if|if
@@ -1247,7 +1247,7 @@ name|parasite
 operator|=
 name|gimp_image_parasite_find
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 literal|"gimp-comment"
 argument_list|)
@@ -1279,14 +1279,14 @@ literal|"width"
 argument_list|,
 name|gimp_image_get_width
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 literal|"height"
 argument_list|,
 name|gimp_image_get_height
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 literal|"xresolution"
@@ -1301,7 +1301,7 @@ literal|"resolution-unit"
 argument_list|,
 name|gimp_image_get_unit
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 literal|"image-type"
@@ -1348,7 +1348,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpLayer
 modifier|*
@@ -1392,7 +1392,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_create_image
 argument_list|(
@@ -1415,7 +1415,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_undo_disable
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 if|if
@@ -1453,7 +1453,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_parasite_attach
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|parasite
 argument_list|)
@@ -1466,7 +1466,7 @@ expr_stmt|;
 block|}
 name|gimp_image_set_resolution
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|template
 operator|->
@@ -1479,7 +1479,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_set_unit
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|template
 operator|->
@@ -1490,14 +1490,14 @@ name|width
 operator|=
 name|gimp_image_get_width
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|height
 operator|=
 name|gimp_image_get_height
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -1550,7 +1550,7 @@ name|layer
 operator|=
 name|gimp_layer_new
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|width
 argument_list|,
@@ -1584,7 +1584,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_add_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|layer
 argument_list|,
@@ -1593,19 +1593,19 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_undo_enable
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|gimp_image_clean_all
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|gimp_create_display
 argument_list|(
 name|gimp
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|template
 operator|->
@@ -1616,11 +1616,11 @@ argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 return|return
-name|gimage
+name|image
 return|;
 block|}
 end_function

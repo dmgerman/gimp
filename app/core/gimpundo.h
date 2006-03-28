@@ -136,10 +136,10 @@ DECL|member|parent_instance
 name|GimpViewable
 name|parent_instance
 decl_stmt|;
-DECL|member|gimage
+DECL|member|image
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 comment|/* the image this undo is part of     */
 DECL|member|time

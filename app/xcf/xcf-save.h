@@ -26,7 +26,7 @@ name|info
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -41,7 +41,7 @@ name|info
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl

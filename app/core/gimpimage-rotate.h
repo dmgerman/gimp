@@ -22,7 +22,7 @@ name|gimp_image_rotate
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpContext
 modifier|*

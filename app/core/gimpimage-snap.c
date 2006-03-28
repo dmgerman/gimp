@@ -75,12 +75,12 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_snap_x (GimpImage * gimage,gdouble x,gdouble * tx,gdouble epsilon_x,gboolean snap_to_guides,gboolean snap_to_grid,gboolean snap_to_canvas)
+DECL|function|gimp_image_snap_x (GimpImage * image,gdouble x,gdouble * tx,gdouble epsilon_x,gboolean snap_to_guides,gboolean snap_to_grid,gboolean snap_to_canvas)
 name|gimp_image_snap_x
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gdouble
 name|x
@@ -119,7 +119,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|FALSE
@@ -142,7 +142,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimage
+name|image
 operator|->
 name|guides
 condition|)
@@ -153,7 +153,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimage
+name|image
 operator|->
 name|grid
 condition|)
@@ -185,7 +185,7 @@ operator|||
 name|x
 operator|>=
 operator|(
-name|gimage
+name|image
 operator|->
 name|width
 operator|+
@@ -208,7 +208,7 @@ for|for
 control|(
 name|list
 operator|=
-name|gimage
+name|image
 operator|->
 name|guides
 init|;
@@ -301,7 +301,7 @@ name|grid
 init|=
 name|gimp_image_get_grid
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 decl_stmt|;
 name|gdouble
@@ -338,7 +338,7 @@ name|xoffset
 init|;
 name|i
 operator|<=
-name|gimage
+name|image
 operator|->
 name|width
 condition|;
@@ -433,7 +433,7 @@ name|dist
 operator|=
 name|ABS
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|width
 operator|-
@@ -459,7 +459,7 @@ expr_stmt|;
 operator|*
 name|tx
 operator|=
-name|gimage
+name|image
 operator|->
 name|width
 expr_stmt|;
@@ -477,12 +477,12 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_snap_y (GimpImage * gimage,gdouble y,gdouble * ty,gdouble epsilon_y,gboolean snap_to_guides,gboolean snap_to_grid,gboolean snap_to_canvas)
+DECL|function|gimp_image_snap_y (GimpImage * image,gdouble y,gdouble * ty,gdouble epsilon_y,gboolean snap_to_guides,gboolean snap_to_grid,gboolean snap_to_canvas)
 name|gimp_image_snap_y
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gdouble
 name|y
@@ -521,7 +521,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|FALSE
@@ -544,7 +544,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimage
+name|image
 operator|->
 name|guides
 condition|)
@@ -555,7 +555,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimage
+name|image
 operator|->
 name|grid
 condition|)
@@ -587,7 +587,7 @@ operator|||
 name|y
 operator|>=
 operator|(
-name|gimage
+name|image
 operator|->
 name|height
 operator|+
@@ -610,7 +610,7 @@ for|for
 control|(
 name|list
 operator|=
-name|gimage
+name|image
 operator|->
 name|guides
 init|;
@@ -703,7 +703,7 @@ name|grid
 init|=
 name|gimp_image_get_grid
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 decl_stmt|;
 name|gdouble
@@ -740,7 +740,7 @@ name|yoffset
 init|;
 name|i
 operator|<=
-name|gimage
+name|image
 operator|->
 name|height
 condition|;
@@ -835,7 +835,7 @@ name|dist
 operator|=
 name|ABS
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|height
 operator|-
@@ -861,7 +861,7 @@ expr_stmt|;
 operator|*
 name|ty
 operator|=
-name|gimage
+name|image
 operator|->
 name|height
 expr_stmt|;
@@ -879,12 +879,12 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_snap_point (GimpImage * gimage,gdouble x,gdouble y,gdouble * tx,gdouble * ty,gdouble epsilon_x,gdouble epsilon_y,gboolean snap_to_guides,gboolean snap_to_grid,gboolean snap_to_canvas,gboolean snap_to_vectors)
+DECL|function|gimp_image_snap_point (GimpImage * image,gdouble x,gdouble y,gdouble * tx,gdouble * ty,gdouble epsilon_x,gdouble epsilon_y,gboolean snap_to_guides,gboolean snap_to_grid,gboolean snap_to_canvas,gboolean snap_to_vectors)
 name|gimp_image_snap_point
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gdouble
 name|x
@@ -941,7 +941,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|FALSE
@@ -978,7 +978,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimage
+name|image
 operator|->
 name|guides
 condition|)
@@ -989,7 +989,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimage
+name|image
 operator|->
 name|grid
 condition|)
@@ -1000,7 +1000,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimage
+name|image
 operator|->
 name|active_vectors
 condition|)
@@ -1034,7 +1034,7 @@ operator|||
 name|x
 operator|>=
 operator|(
-name|gimage
+name|image
 operator|->
 name|width
 operator|+
@@ -1049,7 +1049,7 @@ operator|||
 name|y
 operator|>=
 operator|(
-name|gimage
+name|image
 operator|->
 name|height
 operator|+
@@ -1074,7 +1074,7 @@ for|for
 control|(
 name|list
 operator|=
-name|gimage
+name|image
 operator|->
 name|guides
 init|;
@@ -1214,7 +1214,7 @@ name|grid
 init|=
 name|gimp_image_get_grid
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 decl_stmt|;
 name|gdouble
@@ -1265,7 +1265,7 @@ name|xoffset
 init|;
 name|i
 operator|<=
-name|gimage
+name|image
 operator|->
 name|width
 condition|;
@@ -1325,7 +1325,7 @@ name|yoffset
 init|;
 name|i
 operator|<=
-name|gimage
+name|image
 operator|->
 name|height
 condition|;
@@ -1420,7 +1420,7 @@ name|dist
 operator|=
 name|ABS
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|width
 operator|-
@@ -1446,7 +1446,7 @@ expr_stmt|;
 operator|*
 name|tx
 operator|=
-name|gimage
+name|image
 operator|->
 name|width
 expr_stmt|;
@@ -1492,7 +1492,7 @@ name|dist
 operator|=
 name|ABS
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|height
 operator|-
@@ -1518,7 +1518,7 @@ expr_stmt|;
 operator|*
 name|ty
 operator|=
-name|gimage
+name|image
 operator|->
 name|height
 expr_stmt|;
@@ -1539,7 +1539,7 @@ name|vectors
 init|=
 name|gimp_image_get_active_vectors
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 decl_stmt|;
 name|GimpStroke
@@ -1705,12 +1705,12 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_snap_rectangle (GimpImage * gimage,gdouble x1,gdouble y1,gdouble x2,gdouble y2,gdouble * tx1,gdouble * ty1,gdouble epsilon_x,gdouble epsilon_y,gboolean snap_to_guides,gboolean snap_to_grid,gboolean snap_to_canvas,gboolean snap_to_vectors)
+DECL|function|gimp_image_snap_rectangle (GimpImage * image,gdouble x1,gdouble y1,gdouble x2,gdouble y2,gdouble * tx1,gdouble * ty1,gdouble epsilon_x,gdouble epsilon_y,gboolean snap_to_guides,gboolean snap_to_grid,gboolean snap_to_canvas,gboolean snap_to_vectors)
 name|gimp_image_snap_rectangle
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gdouble
 name|x1
@@ -1775,7 +1775,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|FALSE
@@ -1812,7 +1812,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimage
+name|image
 operator|->
 name|guides
 condition|)
@@ -1823,7 +1823,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimage
+name|image
 operator|->
 name|grid
 condition|)
@@ -1834,7 +1834,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimage
+name|image
 operator|->
 name|active_vectors
 condition|)
@@ -1863,7 +1863,7 @@ if|if
 condition|(
 name|gimp_image_snap_x
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|x1
 argument_list|,
@@ -1909,7 +1909,7 @@ if|if
 condition|(
 name|gimp_image_snap_x
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|x2
 argument_list|,
@@ -1964,7 +1964,7 @@ if|if
 condition|(
 name|gimp_image_snap_y
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|y1
 argument_list|,
@@ -2010,7 +2010,7 @@ if|if
 condition|(
 name|gimp_image_snap_y
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|y2
 argument_list|,
@@ -2071,7 +2071,7 @@ name|vectors
 init|=
 name|gimp_image_get_active_vectors
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 decl_stmt|;
 name|GimpStroke

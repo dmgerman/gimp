@@ -140,7 +140,7 @@ name|gimp_image_get_width
 argument_list|(
 name|item
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|yscale
@@ -156,7 +156,7 @@ name|gimp_image_get_height
 argument_list|(
 name|item
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|temp_buf

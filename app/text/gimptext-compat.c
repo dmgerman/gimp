@@ -114,12 +114,12 @@ end_include
 begin_function
 name|GimpLayer
 modifier|*
-DECL|function|text_render (GimpImage * gimage,GimpDrawable * drawable,GimpContext * context,gint text_x,gint text_y,const gchar * fontname,const gchar * text,gint border,gboolean antialias)
+DECL|function|text_render (GimpImage * image,GimpDrawable * drawable,GimpContext * context,gint text_x,gint text_y,const gchar * fontname,const gchar * text,gint border,gboolean antialias)
 name|text_render
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpDrawable
 modifier|*
@@ -178,7 +178,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|NULL
@@ -340,7 +340,7 @@ name|layer
 operator|=
 name|gimp_text_layer_new
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|gtext
 argument_list|)
@@ -361,7 +361,7 @@ return|;
 comment|/*  Start a group undo  */
 name|gimp_image_undo_group_start
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_TEXT
 argument_list|,
@@ -398,7 +398,7 @@ name|gimp_channel_is_empty
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 condition|)
@@ -406,7 +406,7 @@ name|gimp_channel_clear
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|NULL
@@ -423,7 +423,7 @@ name|NULL
 condition|)
 name|gimp_image_add_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|layer
 argument_list|,
@@ -443,7 +443,7 @@ expr_stmt|;
 comment|/*  end the group undo  */
 name|gimp_image_undo_group_end
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 return|return

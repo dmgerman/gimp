@@ -2180,7 +2180,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 decl_stmt|;
 name|gdouble
 name|unit_factor
@@ -2345,7 +2345,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 decl_stmt|;
 name|gdouble
 name|resolution
@@ -2936,7 +2936,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|width
 operator|||
@@ -2948,7 +2948,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|height
 condition|)
@@ -3042,7 +3042,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 decl_stmt|;
 name|GtkTreeModel
 modifier|*

@@ -114,17 +114,17 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab28b5a0108
+DECL|struct|__anon289e72d30108
 block|{
 DECL|member|dialog
 name|GtkWidget
 modifier|*
 name|dialog
 decl_stmt|;
-DECL|member|gimage
+DECL|member|image
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 DECL|member|progress
 name|GimpProgress
@@ -312,12 +312,12 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|convert_dialog_new (GimpImage * gimage,GtkWidget * parent,GimpProgress * progress)
+DECL|function|convert_dialog_new (GimpImage * image,GtkWidget * parent,GimpProgress * progress)
 name|convert_dialog_new
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GtkWidget
 modifier|*
@@ -380,7 +380,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|NULL
@@ -421,9 +421,9 @@ argument_list|)
 expr_stmt|;
 name|dialog
 operator|->
-name|gimage
+name|image
 operator|=
-name|gimage
+name|image
 expr_stmt|;
 name|dialog
 operator|->
@@ -469,7 +469,7 @@ name|gimp_viewable_dialog_new
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|_
@@ -781,7 +781,7 @@ literal|256
 operator|&&
 name|gimp_image_has_alpha
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|dialog
@@ -1278,7 +1278,7 @@ name|gimp_image_convert
 argument_list|(
 name|dialog
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|GIMP_INDEXED
 argument_list|,
@@ -1322,7 +1322,7 @@ name|gimp_image_flush
 argument_list|(
 name|dialog
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 comment|/* Save defaults for next time */
@@ -1391,7 +1391,7 @@ name|gimp
 init|=
 name|dialog
 operator|->
-name|gimage
+name|image
 operator|->
 name|gimp
 decl_stmt|;

@@ -177,14 +177,14 @@ name|sel_mask
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gint
 name|off_x
 decl_stmt|,
 name|off_y
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -198,7 +198,7 @@ name|sel_mask
 operator|=
 name|gimp_image_get_mask
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|gimp_item_offsets

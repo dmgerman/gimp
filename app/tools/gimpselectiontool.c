@@ -609,7 +609,7 @@ name|gimp_image_get_mask
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|layer
@@ -618,7 +618,7 @@ name|gimp_image_pick_correlate_layer
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|coords
 operator|->
@@ -635,7 +635,7 @@ name|gimp_image_floating_sel
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 if|if

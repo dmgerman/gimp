@@ -155,10 +155,10 @@ DECL|member|parent_instance
 name|GimpObject
 name|parent_instance
 decl_stmt|;
-DECL|member|gimage
+DECL|member|image
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 DECL|member|type
 name|GimpImageType
@@ -208,7 +208,7 @@ function_decl|)
 parameter_list|(
 name|GimpProjection
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gboolean
 name|now
@@ -247,7 +247,7 @@ name|gimp_projection_new
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl

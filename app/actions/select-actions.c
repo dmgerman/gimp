@@ -462,7 +462,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 init|=
 name|action_data_get_image
 argument_list|(
@@ -487,14 +487,14 @@ name|FALSE
 decl_stmt|;
 if|if
 condition|(
-name|gimage
+name|image
 condition|)
 block|{
 name|drawable
 operator|=
 name|gimp_image_active_drawable
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|fs
@@ -502,7 +502,7 @@ operator|=
 operator|(
 name|gimp_image_floating_sel
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 operator|!=
 name|NULL
@@ -515,7 +515,7 @@ name|gimp_channel_is_empty
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;

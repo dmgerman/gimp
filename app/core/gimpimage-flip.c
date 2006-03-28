@@ -89,12 +89,12 @@ end_include
 
 begin_function
 name|void
-DECL|function|gimp_image_flip (GimpImage * gimage,GimpContext * context,GimpOrientationType flip_type,GimpProgress * progress)
+DECL|function|gimp_image_flip (GimpImage * image,GimpContext * context,GimpOrientationType flip_type,GimpProgress * progress)
 name|gimp_image_flip
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpContext
 modifier|*
@@ -131,7 +131,7 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -157,7 +157,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_set_busy
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|)
@@ -175,7 +175,7 @@ operator|=
 operator|(
 name|gdouble
 operator|)
-name|gimage
+name|image
 operator|->
 name|width
 operator|/
@@ -190,7 +190,7 @@ operator|=
 operator|(
 name|gdouble
 operator|)
-name|gimage
+name|image
 operator|->
 name|height
 operator|/
@@ -210,19 +210,19 @@ block|}
 name|progress_max
 operator|=
 operator|(
-name|gimage
+name|image
 operator|->
 name|channels
 operator|->
 name|num_children
 operator|+
-name|gimage
+name|image
 operator|->
 name|layers
 operator|->
 name|num_children
 operator|+
-name|gimage
+name|image
 operator|->
 name|vectors
 operator|->
@@ -234,7 +234,7 @@ operator|)
 expr_stmt|;
 name|gimp_image_undo_group_start
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_IMAGE_FLIP
 argument_list|,
@@ -248,7 +248,7 @@ name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|channels
 argument_list|)
@@ -310,7 +310,7 @@ name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|vectors
 argument_list|)
@@ -372,7 +372,7 @@ name|GIMP_ITEM
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 argument_list|,
@@ -406,7 +406,7 @@ name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|layers
 argument_list|)
@@ -466,7 +466,7 @@ for|for
 control|(
 name|list
 operator|=
-name|gimage
+name|image
 operator|->
 name|guides
 init|;
@@ -506,11 +506,11 @@ name|GIMP_ORIENTATION_VERTICAL
 condition|)
 name|gimp_image_move_guide
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|guide
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|height
 operator|-
@@ -533,11 +533,11 @@ name|GIMP_ORIENTATION_HORIZONTAL
 condition|)
 name|gimp_image_move_guide
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|guide
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|width
 operator|-
@@ -558,7 +558,7 @@ for|for
 control|(
 name|list
 operator|=
-name|gimage
+name|image
 operator|->
 name|sample_points
 init|;
@@ -588,7 +588,7 @@ name|GIMP_ORIENTATION_VERTICAL
 condition|)
 name|gimp_image_move_sample_point
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|sample_point
 argument_list|,
@@ -596,7 +596,7 @@ name|sample_point
 operator|->
 name|x
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|height
 operator|-
@@ -615,11 +615,11 @@ name|GIMP_ORIENTATION_HORIZONTAL
 condition|)
 name|gimp_image_move_sample_point
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|sample_point
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|width
 operator|-
@@ -637,12 +637,12 @@ expr_stmt|;
 block|}
 name|gimp_image_undo_group_end
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|gimp_unset_busy
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|)

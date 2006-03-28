@@ -1095,7 +1095,7 @@ name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -1141,7 +1141,7 @@ literal|0
 comment|/*  evil hack i'm thinking about...  --mitch  */
 block|{
 comment|/*  HALT means the current display is going to go away (TM),          *  so try to find another display of the same image to make          *  straight line drawing continue to work...          */
-block|GSList *list;          for (list = display_list; list; list = g_slist_next (list))           {             GimpDisplay *tmp_disp = list->data;              if (tmp_disp != gdisp&& tmp_disp->gimage == gdisp->gimage)               {                 tool->gdisp = tmp_disp;                 break;               }           }       }
+block|GSList *list;          for (list = display_list; list; list = g_slist_next (list))           {             GimpDisplay *tmp_disp = list->data;              if (tmp_disp != gdisp&& tmp_disp->image == gdisp->image)               {                 tool->gdisp = tmp_disp;                 break;               }           }       }
 endif|#
 directive|endif
 break|break;
@@ -1389,7 +1389,7 @@ name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|curr_coords
@@ -1451,11 +1451,11 @@ name|tool
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|==
 name|gdisp
 operator|->
-name|gimage
+name|image
 condition|)
 block|{
 comment|/*  if this is a different display, but the same image, HACK around        *  in tool internals AFTER stopping the current draw_tool, so        *  straight line drawing works across different views of the        *  same image.        */
@@ -1484,7 +1484,7 @@ name|gimp_devices_get_current
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|)
@@ -1633,7 +1633,7 @@ name|gimp_image_selection_control
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|GIMP_SELECTION_PAUSE
 argument_list|)
@@ -1692,7 +1692,7 @@ name|gimp_projection_flush_now
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|projection
 argument_list|)
@@ -1781,7 +1781,7 @@ name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_pause
@@ -1811,7 +1811,7 @@ name|gimp_image_selection_control
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|GIMP_SELECTION_RESUME
 argument_list|)
@@ -1860,7 +1860,7 @@ name|gimp_image_flush
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_resume
@@ -1948,7 +1948,7 @@ name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|core
@@ -2040,7 +2040,7 @@ name|gimp_projection_flush_now
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|projection
 argument_list|)
@@ -2155,7 +2155,7 @@ name|tool_info_list
 operator|=
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -2387,11 +2387,11 @@ name|tool
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|==
 name|gdisp
 operator|->
-name|gimage
+name|image
 condition|)
 block|{
 comment|/*  if this is a different display, but the same image, HACK around        *  in tool internals AFTER stopping the current draw_tool, so        *  straight line drawing works across different views of the        *  same image.        */
@@ -2408,7 +2408,7 @@ name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 if|if
@@ -2593,7 +2593,7 @@ name|image
 init|=
 name|gdisp
 operator|->
-name|gimage
+name|image
 decl_stmt|;
 name|gchar
 name|format_str
@@ -3400,7 +3400,7 @@ name|tool
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|)

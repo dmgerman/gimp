@@ -1538,7 +1538,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_file_dialog_set_image (GimpFileDialog * dialog,GimpImage * gimage,gboolean save_a_copy)
+DECL|function|gimp_file_dialog_set_image (GimpFileDialog * dialog,GimpImage * image,gboolean save_a_copy)
 name|gimp_file_dialog_set_image
 parameter_list|(
 name|GimpFileDialog
@@ -1547,7 +1547,7 @@ name|dialog
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gboolean
 name|save_a_copy
@@ -1577,15 +1577,15 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
 name|dialog
 operator|->
-name|gimage
+name|image
 operator|=
-name|gimage
+name|image
 expr_stmt|;
 name|dialog
 operator|->
@@ -1603,7 +1603,7 @@ name|g_object_get_data
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 literal|"gimp-image-save-a-copy"
@@ -1620,7 +1620,7 @@ name|gimp_object_get_name
 argument_list|(
 name|GIMP_OBJECT
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1660,7 +1660,7 @@ name|name
 init|=
 name|gimp_image_get_uri
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 decl_stmt|;
 name|gchar

@@ -157,12 +157,12 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|grid_dialog_new (GimpImage * gimage,GtkWidget * parent)
+DECL|function|grid_dialog_new (GimpImage * image,GtkWidget * parent)
 name|grid_dialog_new
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GtkWidget
 modifier|*
@@ -189,7 +189,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|NULL
@@ -215,7 +215,7 @@ name|gimp_image_get_grid
 argument_list|(
 name|GIMP_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -235,7 +235,7 @@ name|gimp_viewable_dialog_new
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|_
@@ -320,11 +320,11 @@ name|gimp_grid_editor_new
 argument_list|(
 name|grid
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|xresolution
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|yresolution
 argument_list|)
@@ -366,9 +366,9 @@ argument_list|(
 name|dialog
 argument_list|)
 argument_list|,
-literal|"gimage"
+literal|"image"
 argument_list|,
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|g_object_set_data
@@ -430,7 +430,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpImage
 modifier|*
@@ -440,7 +440,7 @@ name|GimpGrid
 modifier|*
 name|grid_backup
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|g_object_get_data
 argument_list|(
@@ -449,7 +449,7 @@ argument_list|(
 name|dialog
 argument_list|)
 argument_list|,
-literal|"gimage"
+literal|"image"
 argument_list|)
 expr_stmt|;
 name|grid
@@ -488,7 +488,7 @@ name|gimp_config_sync
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -528,7 +528,7 @@ condition|)
 block|{
 name|gimp_image_undo_push_image_grid
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|_
 argument_list|(
@@ -550,7 +550,7 @@ name|gimp_image_set_grid
 argument_list|(
 name|GIMP_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|grid_backup

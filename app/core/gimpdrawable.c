@@ -167,7 +167,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29782f190103
+DECL|enum|__anon29c50a170103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1491,7 +1491,7 @@ argument_list|)
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 init|=
 name|gimp_item_get_image
 argument_list|(
@@ -1509,7 +1509,7 @@ name|floating_sel_relax
 argument_list|(
 name|gimp_image_floating_sel
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|FALSE
@@ -1542,7 +1542,7 @@ name|floating_sel_rigor
 argument_list|(
 name|gimp_image_floating_sel
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|FALSE
@@ -2503,7 +2503,7 @@ argument_list|)
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 init|=
 name|gimp_item_get_image
 argument_list|(
@@ -2601,7 +2601,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_get_color
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|gimp_drawable_type
 argument_list|(
@@ -3345,7 +3345,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_drawable_configure (GimpDrawable * drawable,GimpImage * gimage,gint offset_x,gint offset_y,gint width,gint height,GimpImageType type,const gchar * name)
+DECL|function|gimp_drawable_configure (GimpDrawable * drawable,GimpImage * image,gint offset_x,gint offset_y,gint width,gint height,GimpImageType type,const gchar * name)
 name|gimp_drawable_configure
 parameter_list|(
 name|GimpDrawable
@@ -3354,7 +3354,7 @@ name|drawable
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gint
 name|offset_x
@@ -3389,7 +3389,7 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3411,7 +3411,7 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|offset_x
 argument_list|,
@@ -4001,7 +4001,7 @@ name|item
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -4038,7 +4038,7 @@ argument_list|(
 name|drawable
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -4122,7 +4122,7 @@ name|floating_sel_relax
 argument_list|(
 name|gimp_image_floating_sel
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|FALSE
@@ -4161,7 +4161,7 @@ name|floating_sel_rigor
 argument_list|(
 name|gimp_image_floating_sel
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|FALSE
@@ -4545,7 +4545,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gint
 name|x
@@ -4575,7 +4575,7 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -4587,7 +4587,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|shadow
 operator|!=
@@ -4623,7 +4623,7 @@ argument_list|(
 operator|&
 name|shadowPR
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|shadow
 argument_list|,
@@ -4690,7 +4690,7 @@ name|item
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpImageType
 name|drawable_type
@@ -4736,7 +4736,7 @@ argument_list|(
 name|drawable
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -4825,7 +4825,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_transform_color
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|drawable
 argument_list|,
@@ -4891,7 +4891,7 @@ name|pat_buf
 operator|=
 name|gimp_image_transform_temp_buf
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|drawable
 argument_list|,
@@ -5124,7 +5124,7 @@ name|item
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpChannel
 modifier|*
@@ -5219,7 +5219,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -5230,7 +5230,7 @@ name|selection
 operator|=
 name|gimp_image_get_mask
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 if|if
@@ -5412,7 +5412,7 @@ name|item
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpChannel
 modifier|*
@@ -5507,7 +5507,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -5518,7 +5518,7 @@ name|selection
 operator|=
 name|gimp_image_get_mask
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 if|if
@@ -5998,7 +5998,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpLayer
 modifier|*
@@ -6014,7 +6014,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -6028,7 +6028,7 @@ name|floating_sel
 operator|=
 name|gimp_image_floating_sel
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 return|return
@@ -6091,7 +6091,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -6103,7 +6103,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -6115,10 +6115,10 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimage
+name|image
 condition|)
 return|return
-name|gimage
+name|image
 operator|->
 name|cmap
 return|;

@@ -1255,7 +1255,7 @@ name|paint_info
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -1284,7 +1284,7 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -1326,7 +1326,7 @@ operator|*
 operator|)
 name|gimp_container_get_child_by_name
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -1343,7 +1343,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_undo_group_start
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_PAINT
 argument_list|,
@@ -1368,7 +1368,7 @@ name|push_undo
 argument_list|(
 name|core
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|NULL
 argument_list|)
@@ -1417,7 +1417,7 @@ name|NULL
 expr_stmt|;
 name|gimp_image_undo_group_end
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 if|if
@@ -1454,7 +1454,7 @@ name|gimp_viewable_invalidate_preview
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2944,7 +2944,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|PixelRegion
 name|srcPR
@@ -2961,7 +2961,7 @@ decl_stmt|;
 name|gint
 name|offy
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -3016,7 +3016,7 @@ name|pickable
 init|=
 name|GIMP_PICKABLE
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|projection
 argument_list|)
@@ -3189,7 +3189,7 @@ operator|->
 name|height
 argument_list|)
 expr_stmt|;
-comment|/*  apply the paint area to the gimage  */
+comment|/*  apply the paint area to the image  */
 name|gimp_drawable_apply_region
 argument_list|(
 name|drawable
@@ -3302,7 +3302,7 @@ operator|->
 name|height
 argument_list|)
 expr_stmt|;
-comment|/*  Update the gimage -- It is important to call gimp_image_update()    *  instead of gimp_drawable_update() because we don't want the    *  drawable and image previews to be constantly invalidated    */
+comment|/*  Update the image -- It is important to call gimp_image_update()    *  instead of gimp_drawable_update() because we don't want the    *  drawable and image previews to be constantly invalidated    */
 name|gimp_item_offsets
 argument_list|(
 name|GIMP_ITEM
@@ -3319,7 +3319,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_update
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|core
 operator|->
@@ -3386,7 +3386,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|PixelRegion
 name|srcPR
@@ -3425,7 +3425,7 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -3595,7 +3595,7 @@ operator|->
 name|height
 argument_list|)
 expr_stmt|;
-comment|/*  apply the paint area to the gimage  */
+comment|/*  apply the paint area to the image  */
 name|gimp_drawable_replace_region
 argument_list|(
 name|drawable
@@ -3705,7 +3705,7 @@ operator|->
 name|height
 argument_list|)
 expr_stmt|;
-comment|/*  Update the gimage -- It is important to call gimp_image_update()    *  instead of gimp_drawable_update() because we don't want the    *  drawable and image previews to be constantly invalidated    */
+comment|/*  Update the image -- It is important to call gimp_image_update()    *  instead of gimp_drawable_update() because we don't want the    *  drawable and image previews to be constantly invalidated    */
 name|gimp_item_offsets
 argument_list|(
 name|GIMP_ITEM
@@ -3722,7 +3722,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_update
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|core
 operator|->

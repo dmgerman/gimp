@@ -973,7 +973,7 @@ argument_list|)
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|Blob
 modifier|*
@@ -998,7 +998,7 @@ decl_stmt|;
 name|PixelRegion
 name|blob_maskPR
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -1386,7 +1386,7 @@ condition|)
 return|return;
 name|gimp_image_get_foreground
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|drawable
 argument_list|,
@@ -2404,7 +2404,7 @@ comment|/* Some of this stuff should probably be combined with the  * code it wa
 end_comment
 
 begin_enum
-DECL|enum|__anon2a3516320103
+DECL|enum|__anon277008390103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum

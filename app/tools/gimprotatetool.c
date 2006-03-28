@@ -910,7 +910,7 @@ literal|0
 argument_list|,
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|xresolution
 argument_list|,
@@ -930,7 +930,7 @@ literal|1
 argument_list|,
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|yresolution
 argument_list|,
@@ -955,7 +955,7 @@ literal|65536
 operator|+
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|width
 argument_list|)
@@ -978,7 +978,7 @@ literal|65536
 operator|+
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|height
 argument_list|)

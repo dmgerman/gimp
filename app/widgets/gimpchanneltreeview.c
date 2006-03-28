@@ -200,7 +200,7 @@ name|tree_view
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpChannelType
 name|component
@@ -226,7 +226,7 @@ name|item_view
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -850,7 +850,7 @@ operator|&&
 operator|(
 name|item_view
 operator|->
-name|gimage
+name|image
 operator|!=
 name|gimp_item_get_image
 argument_list|(
@@ -892,7 +892,7 @@ name|gimp_image_get_channel_index
 argument_list|(
 name|item_view
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|GIMP_CHANNEL
 argument_list|(
@@ -921,7 +921,7 @@ argument_list|)
 argument_list|,
 name|item_view
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|item_view_class
 operator|->
@@ -936,7 +936,7 @@ name|add_item
 argument_list|(
 name|item_view
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|new_item
 argument_list|,
@@ -947,7 +947,7 @@ name|gimp_image_flush
 argument_list|(
 name|item_view
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 return|return;
@@ -1035,7 +1035,7 @@ name|gimp_image_get_channel_index
 argument_list|(
 name|item_view
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|GIMP_CHANNEL
 argument_list|(
@@ -1118,7 +1118,7 @@ name|src_image
 operator|!=
 name|item_view
 operator|->
-name|gimage
+name|image
 condition|)
 name|GIMP_ITEM_GET_CLASS
 argument_list|(
@@ -1131,14 +1131,14 @@ name|new_item
 argument_list|,
 name|item_view
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|gimp_image_add_channel
 argument_list|(
 name|item_view
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|GIMP_CHANNEL
 argument_list|(
@@ -1152,7 +1152,7 @@ name|gimp_image_flush
 argument_list|(
 name|item_view
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -1165,7 +1165,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_channel_tree_view_set_image (GimpItemTreeView * item_view,GimpImage * gimage)
+DECL|function|gimp_channel_tree_view_set_image (GimpItemTreeView * item_view,GimpImage * image)
 name|gimp_channel_tree_view_set_image
 parameter_list|(
 name|GimpItemTreeView
@@ -1174,7 +1174,7 @@ name|item_view
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 block|{
 name|GimpChannelTreeView
@@ -1281,7 +1281,7 @@ block|}
 if|if
 condition|(
 operator|!
-name|gimage
+name|image
 condition|)
 name|gtk_widget_hide
 argument_list|(
@@ -1299,7 +1299,7 @@ operator|->
 name|component_editor
 argument_list|)
 argument_list|,
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|GIMP_ITEM_TREE_VIEW_CLASS
@@ -1311,14 +1311,14 @@ name|set_image
 argument_list|(
 name|item_view
 argument_list|,
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
 name|item_view
 operator|->
-name|gimage
+name|image
 condition|)
 name|gtk_widget_show
 argument_list|(

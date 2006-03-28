@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ab0ba490103
+DECL|enum|__anon277b02720103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -254,7 +254,7 @@ name|view
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -266,7 +266,7 @@ name|gimp_item_tree_view_image_flush
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpItemTreeView
 modifier|*
@@ -456,7 +456,7 @@ name|gimp_item_tree_view_item_changed
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpItemTreeView
 modifier|*
@@ -472,7 +472,7 @@ name|gimp_item_tree_view_size_changed
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpItemTreeView
 modifier|*
@@ -990,7 +990,7 @@ name|NULL
 expr_stmt|;
 name|view
 operator|->
-name|gimage
+name|image
 operator|=
 name|NULL
 expr_stmt|;
@@ -1112,7 +1112,7 @@ argument_list|)
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 init|=
 name|NULL
 decl_stmt|;
@@ -1181,7 +1181,7 @@ argument_list|,
 name|view
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_context_get_image
 argument_list|(
@@ -1193,7 +1193,7 @@ name|gimp_item_tree_view_set_image
 argument_list|(
 name|view
 argument_list|,
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -1769,7 +1769,7 @@ if|if
 condition|(
 name|view
 operator|->
-name|gimage
+name|image
 condition|)
 name|gimp_item_tree_view_set_image
 argument_list|(
@@ -1794,7 +1794,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_item_tree_view_new (GType view_type,gint view_size,gint view_border_width,GimpImage * gimage,GimpMenuFactory * menu_factory,const gchar * menu_identifier,const gchar * ui_path)
+DECL|function|gimp_item_tree_view_new (GType view_type,gint view_size,gint view_border_width,GimpImage * image,GimpMenuFactory * menu_factory,const gchar * menu_identifier,const gchar * ui_path)
 name|gimp_item_tree_view_new
 parameter_list|(
 name|GType
@@ -1808,7 +1808,7 @@ name|view_border_width
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpMenuFactory
 modifier|*
@@ -1869,13 +1869,13 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|gimage
+name|image
 operator|==
 name|NULL
 operator|||
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|NULL
@@ -1950,7 +1950,7 @@ name|gimp_item_tree_view_set_image
 argument_list|(
 name|item_view
 argument_list|,
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 return|return
@@ -1964,7 +1964,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_item_tree_view_set_image (GimpItemTreeView * view,GimpImage * gimage)
+DECL|function|gimp_item_tree_view_set_image (GimpItemTreeView * view,GimpImage * image)
 name|gimp_item_tree_view_set_image
 parameter_list|(
 name|GimpItemTreeView
@@ -1973,7 +1973,7 @@ name|view
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -1986,13 +1986,13 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|gimage
+name|image
 operator|==
 name|NULL
 operator|||
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2007,7 +2007,7 @@ index|]
 argument_list|,
 literal|0
 argument_list|,
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|gimp_ui_manager_update
@@ -2028,7 +2028,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_item_tree_view_real_set_image (GimpItemTreeView * view,GimpImage * gimage)
+DECL|function|gimp_item_tree_view_real_set_image (GimpItemTreeView * view,GimpImage * image)
 name|gimp_item_tree_view_real_set_image
 parameter_list|(
 name|GimpItemTreeView
@@ -2037,30 +2037,30 @@ name|view
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 block|{
 if|if
 condition|(
 name|view
 operator|->
-name|gimage
+name|image
 operator|==
-name|gimage
+name|image
 condition|)
 return|return;
 if|if
 condition|(
 name|view
 operator|->
-name|gimage
+name|image
 condition|)
 block|{
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
 name|view
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|gimp_item_tree_view_item_changed
 argument_list|,
@@ -2071,7 +2071,7 @@ name|g_signal_handlers_disconnect_by_func
 argument_list|(
 name|view
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|gimp_item_tree_view_size_changed
 argument_list|,
@@ -2092,7 +2092,7 @@ name|g_signal_handlers_disconnect_by_func
 argument_list|(
 name|view
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|gimp_item_tree_view_image_flush
 argument_list|,
@@ -2102,15 +2102,15 @@ expr_stmt|;
 block|}
 name|view
 operator|->
-name|gimage
+name|image
 operator|=
-name|gimage
+name|image
 expr_stmt|;
 if|if
 condition|(
 name|view
 operator|->
-name|gimage
+name|image
 condition|)
 block|{
 name|GimpContainer
@@ -2128,7 +2128,7 @@ name|get_container
 argument_list|(
 name|view
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|gimp_container_view_set_container
@@ -2145,7 +2145,7 @@ name|g_signal_connect
 argument_list|(
 name|view
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|GIMP_ITEM_TREE_VIEW_GET_CLASS
 argument_list|(
@@ -2166,7 +2166,7 @@ name|g_signal_connect
 argument_list|(
 name|view
 operator|->
-name|gimage
+name|image
 argument_list|,
 literal|"size-changed"
 argument_list|,
@@ -2182,7 +2182,7 @@ name|g_signal_connect
 argument_list|(
 name|view
 operator|->
-name|gimage
+name|image
 argument_list|,
 literal|"flush"
 argument_list|,
@@ -2198,7 +2198,7 @@ name|gimp_item_tree_view_item_changed
 argument_list|(
 name|view
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|view
 argument_list|)
@@ -2210,12 +2210,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_item_tree_view_image_flush (GimpImage * gimage,GimpItemTreeView * view)
+DECL|function|gimp_item_tree_view_image_flush (GimpImage * image,GimpItemTreeView * view)
 name|gimp_item_tree_view_image_flush
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpItemTreeView
 modifier|*
@@ -2538,7 +2538,7 @@ name|get_active_item
 argument_list|(
 name|tree_view
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 if|if
@@ -2558,7 +2558,7 @@ name|set_active_item
 argument_list|(
 name|tree_view
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|GIMP_ITEM
 argument_list|(
@@ -2570,7 +2570,7 @@ name|gimp_image_flush
 argument_list|(
 name|tree_view
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -2930,7 +2930,7 @@ if|if
 condition|(
 name|item_view
 operator|->
-name|gimage
+name|image
 operator|!=
 name|gimp_item_get_image
 argument_list|(
@@ -3006,7 +3006,7 @@ argument_list|)
 argument_list|,
 name|item_view
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|item_type
 argument_list|,
@@ -3019,7 +3019,7 @@ name|add_item
 argument_list|(
 name|item_view
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|new_item
 argument_list|,
@@ -3085,7 +3085,7 @@ name|reorder_item
 argument_list|(
 name|item_view
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|GIMP_ITEM
 argument_list|(
@@ -3106,7 +3106,7 @@ name|gimp_image_flush
 argument_list|(
 name|item_view
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -3259,12 +3259,12 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_item_tree_view_item_changed (GimpImage * gimage,GimpItemTreeView * view)
+DECL|function|gimp_item_tree_view_item_changed (GimpImage * image,GimpItemTreeView * view)
 name|gimp_item_tree_view_item_changed
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpItemTreeView
 modifier|*
@@ -3286,7 +3286,7 @@ name|get_active_item
 argument_list|(
 name|view
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|gimp_container_view_select_item
@@ -3309,12 +3309,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_item_tree_view_size_changed (GimpImage * gimage,GimpItemTreeView * tree_view)
+DECL|function|gimp_item_tree_view_size_changed (GimpImage * image,GimpItemTreeView * tree_view)
 name|gimp_item_tree_view_size_changed
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpItemTreeView
 modifier|*
@@ -3912,7 +3912,7 @@ function_decl|)
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -4018,7 +4018,7 @@ name|item
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gboolean
 name|active
@@ -4069,7 +4069,7 @@ argument_list|(
 name|renderer
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -4243,7 +4243,7 @@ name|undo
 operator|=
 name|gimp_image_undo_can_compress
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_TYPE_UNDO_STACK
 argument_list|,
@@ -4286,7 +4286,7 @@ if|if
 condition|(
 name|gimp_image_undo_group_start
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|group_type
 argument_list|,
@@ -4298,7 +4298,7 @@ name|undo
 operator|=
 name|gimp_image_undo_can_compress
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_TYPE_UNDO_STACK
 argument_list|,
@@ -4329,7 +4329,7 @@ expr_stmt|;
 block|}
 name|pusher
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|NULL
 argument_list|,
@@ -4353,7 +4353,7 @@ argument_list|)
 control|)
 name|pusher
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|NULL
 argument_list|,
@@ -4379,7 +4379,7 @@ argument_list|)
 control|)
 name|pusher
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|NULL
 argument_list|,
@@ -4390,7 +4390,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_undo_group_end
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -4509,7 +4509,7 @@ name|undo
 operator|=
 name|gimp_image_undo_can_compress
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_TYPE_ITEM_UNDO
 argument_list|,
@@ -4556,7 +4556,7 @@ expr_stmt|;
 block|}
 name|gimp_image_flush
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}

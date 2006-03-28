@@ -22,7 +22,7 @@ name|gimp_foreground_select_tool_push_undo
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 specifier|const
 name|gchar

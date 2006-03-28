@@ -176,7 +176,7 @@ name|drawable
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|drawable
 operator|=
@@ -185,7 +185,7 @@ argument_list|(
 name|viewable
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -198,7 +198,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -225,15 +225,15 @@ name|height
 operator|<=
 name|PREVIEW_CACHE_PRIME_HEIGHT
 operator|&&
-name|gimage
+name|image
 operator|&&
-name|gimage
+name|image
 operator|->
 name|width
 operator|>
 name|PREVIEW_CACHE_PRIME_WIDTH
 operator|&&
-name|gimage
+name|image
 operator|->
 name|height
 operator|>
@@ -396,7 +396,7 @@ name|item
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|TempBuf
 modifier|*
@@ -517,7 +517,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -527,7 +527,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -655,7 +655,7 @@ argument_list|)
 argument_list|,
 name|gimp_image_get_colormap
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 operator|&

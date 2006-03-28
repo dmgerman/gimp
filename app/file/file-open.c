@@ -213,7 +213,7 @@ name|file_open_sanitize_image
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -590,7 +590,7 @@ condition|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 init|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -601,7 +601,7 @@ argument_list|)
 decl_stmt|;
 name|file_open_sanitize_image
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 if|if
@@ -616,7 +616,7 @@ operator|->
 name|mime_type
 expr_stmt|;
 return|return
-name|gimage
+name|image
 return|;
 block|}
 else|else
@@ -1151,7 +1151,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 specifier|const
 name|gchar
@@ -1203,7 +1203,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|file_open_image
 argument_list|(
@@ -1231,7 +1231,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimage
+name|image
 condition|)
 block|{
 name|GimpDocumentList
@@ -1251,11 +1251,11 @@ name|imagefile
 decl_stmt|;
 name|gimp_create_display
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|GIMP_UNIT_PIXEL
 argument_list|,
@@ -1282,7 +1282,7 @@ name|uri
 argument_list|,
 name|gimp_image_get_uri
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 operator|==
@@ -1305,7 +1305,7 @@ name|imagefile
 argument_list|,
 name|mime_type
 argument_list|,
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -1328,12 +1328,12 @@ expr_stmt|;
 comment|/*  the display owns the image now  */
 name|g_object_unref
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
 return|return
-name|gimage
+name|image
 return|;
 block|}
 end_function
@@ -1726,53 +1726,53 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|file_open_sanitize_image (GimpImage * gimage)
+DECL|function|file_open_sanitize_image (GimpImage * image)
 name|file_open_sanitize_image
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 block|{
 comment|/* clear all undo steps */
 name|gimp_image_undo_free
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 comment|/* make sure that undo is enabled */
 while|while
 condition|(
-name|gimage
+name|image
 operator|->
 name|undo_freeze_count
 condition|)
 name|gimp_image_undo_thaw
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 comment|/* set the image to clean  */
 name|gimp_image_clean_all
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|gimp_image_invalidate_layer_previews
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|gimp_image_invalidate_channel_previews
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|gimp_viewable_invalidate_preview
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;

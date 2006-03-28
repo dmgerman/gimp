@@ -48,7 +48,7 @@ name|gimp_image_add_hguide
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gint
 name|position
@@ -66,7 +66,7 @@ name|gimp_image_add_vguide
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gint
 name|position
@@ -106,7 +106,7 @@ name|gimp_image_add_guide
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpGuide
 modifier|*
@@ -124,7 +124,7 @@ name|gimp_image_remove_guide
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpGuide
 modifier|*
@@ -142,7 +142,7 @@ name|gimp_image_move_guide
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpGuide
 modifier|*
@@ -164,7 +164,7 @@ name|gimp_image_get_guide
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|guint32
 name|id
@@ -179,7 +179,7 @@ name|gimp_image_get_next_guide
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|guint32
 name|id
@@ -198,7 +198,7 @@ name|gimp_image_find_guide
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gdouble
 name|x

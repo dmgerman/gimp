@@ -160,12 +160,12 @@ end_comment
 begin_function
 name|GimpLayer
 modifier|*
-DECL|function|gimp_image_merge_visible_layers (GimpImage * gimage,GimpContext * context,GimpMergeType merge_type)
+DECL|function|gimp_image_merge_visible_layers (GimpImage * image,GimpContext * context,GimpMergeType merge_type)
 name|gimp_image_merge_visible_layers
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpContext
 modifier|*
@@ -200,7 +200,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|NULL
@@ -221,13 +221,13 @@ if|if
 condition|(
 name|gimp_image_floating_sel
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 block|{
 name|floating_sel_anchor
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|floating_sel
 argument_list|)
@@ -243,7 +243,7 @@ name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|layers
 argument_list|)
@@ -301,7 +301,7 @@ condition|)
 block|{
 name|gimp_set_busy
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|)
@@ -310,7 +310,7 @@ name|layer
 operator|=
 name|gimp_image_merge_layers
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|merge_list
 argument_list|,
@@ -331,7 +331,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_unset_busy
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|)
@@ -353,7 +353,7 @@ condition|(
 name|had_floating_sel
 condition|)
 return|return
-name|gimage
+name|image
 operator|->
 name|active_layer
 return|;
@@ -377,12 +377,12 @@ end_function
 begin_function
 name|GimpLayer
 modifier|*
-DECL|function|gimp_image_flatten (GimpImage * gimage,GimpContext * context)
+DECL|function|gimp_image_flatten (GimpImage * image,GimpContext * context)
 name|gimp_image_flatten
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpContext
 modifier|*
@@ -407,7 +407,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|NULL
@@ -425,7 +425,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_set_busy
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|)
@@ -435,12 +435,12 @@ if|if
 condition|(
 name|gimp_image_floating_sel
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|floating_sel_anchor
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|floating_sel
 argument_list|)
@@ -451,7 +451,7 @@ name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|layers
 argument_list|)
@@ -498,7 +498,7 @@ name|layer
 operator|=
 name|gimp_image_merge_layers
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|merge_list
 argument_list|,
@@ -519,12 +519,12 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_alpha_changed
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|gimp_unset_busy
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|)
@@ -538,12 +538,12 @@ end_function
 begin_function
 name|GimpLayer
 modifier|*
-DECL|function|gimp_image_merge_down (GimpImage * gimage,GimpLayer * current_layer,GimpContext * context,GimpMergeType merge_type)
+DECL|function|gimp_image_merge_down (GimpImage * image,GimpLayer * current_layer,GimpContext * context,GimpMergeType merge_type)
 name|gimp_image_merge_down
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpLayer
 modifier|*
@@ -573,7 +573,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|NULL
@@ -595,7 +595,7 @@ name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|layers
 argument_list|)
@@ -709,7 +709,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_set_busy
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|)
@@ -718,7 +718,7 @@ name|layer
 operator|=
 name|gimp_image_merge_layers
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|merge_list
 argument_list|,
@@ -739,7 +739,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_unset_busy
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|)
@@ -768,12 +768,12 @@ end_function
 begin_function
 name|GimpLayer
 modifier|*
-DECL|function|gimp_image_merge_layers (GimpImage * gimage,GSList * merge_list,GimpContext * context,GimpMergeType merge_type,const gchar * undo_desc)
+DECL|function|gimp_image_merge_layers (GimpImage * image,GSList * merge_list,GimpContext * context,GimpMergeType merge_type,const gchar * undo_desc)
 name|gimp_image_merge_layers
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GSList
 modifier|*
@@ -900,7 +900,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|NULL
@@ -1118,7 +1118,7 @@ name|x1
 argument_list|,
 literal|0
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|width
 argument_list|)
@@ -1131,7 +1131,7 @@ name|y1
 argument_list|,
 literal|0
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|height
 argument_list|)
@@ -1144,7 +1144,7 @@ name|x2
 argument_list|,
 literal|0
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|width
 argument_list|)
@@ -1157,7 +1157,7 @@ name|y2
 argument_list|,
 literal|0
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|height
 argument_list|)
@@ -1232,13 +1232,13 @@ literal|0
 expr_stmt|;
 name|x2
 operator|=
-name|gimage
+name|image
 operator|->
 name|width
 expr_stmt|;
 name|y2
 operator|=
-name|gimage
+name|image
 operator|->
 name|height
 expr_stmt|;
@@ -1289,7 +1289,7 @@ return|;
 comment|/*  Start a merge undo group. */
 name|gimp_image_undo_group_start
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_IMAGE_LAYERS_MERGE
 argument_list|,
@@ -1332,7 +1332,7 @@ name|GIMP_IMAGE_TYPE_FROM_BASE_TYPE
 argument_list|(
 name|gimp_image_base_type
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1340,7 +1340,7 @@ name|merge_layer
 operator|=
 name|gimp_layer_new
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 operator|(
 name|x2
@@ -1407,7 +1407,7 @@ expr_stmt|;
 comment|/*  get the background for compositing  */
 name|gimp_image_get_background
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_DRAWABLE
 argument_list|(
@@ -1437,11 +1437,11 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|width
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|height
 argument_list|,
@@ -1469,7 +1469,7 @@ name|merge_layer
 operator|=
 name|gimp_layer_new
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 operator|(
 name|x2
@@ -1586,14 +1586,14 @@ name|position
 operator|=
 name|gimp_container_num_children
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|layers
 argument_list|)
 operator|-
 name|gimp_container_get_child_index
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|layers
 argument_list|,
@@ -1981,7 +1981,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_remove_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|layer
 argument_list|)
@@ -2011,7 +2011,7 @@ name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|layers
 argument_list|)
@@ -2038,7 +2038,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_remove_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|layer
 argument_list|)
@@ -2046,7 +2046,7 @@ expr_stmt|;
 block|}
 name|gimp_image_add_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|merge_layer
 argument_list|,
@@ -2056,16 +2056,16 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/*  Add the layer to the gimage  */
+comment|/*  Add the layer to the image  */
 name|gimp_image_add_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|merge_layer
 argument_list|,
 name|gimp_container_num_children
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|layers
 argument_list|)
@@ -2107,7 +2107,7 @@ expr_stmt|;
 comment|/*  End the merge undo group  */
 name|gimp_image_undo_group_end
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_update
@@ -2151,12 +2151,12 @@ end_comment
 begin_function
 name|GimpVectors
 modifier|*
-DECL|function|gimp_image_merge_visible_vectors (GimpImage * gimage)
+DECL|function|gimp_image_merge_visible_vectors (GimpImage * image)
 name|gimp_image_merge_visible_vectors
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 block|{
 name|GList
@@ -2204,7 +2204,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|NULL
@@ -2216,7 +2216,7 @@ name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|vectors
 argument_list|)
@@ -2270,14 +2270,14 @@ condition|)
 block|{
 name|gimp_set_busy
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|)
 expr_stmt|;
 name|gimp_image_undo_group_start
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_IMAGE_VECTORS_MERGE
 argument_list|,
@@ -2334,14 +2334,14 @@ name|pos
 operator|=
 name|gimp_image_get_vectors_index
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|vectors
 argument_list|)
 expr_stmt|;
 name|gimp_image_remove_vectors
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|vectors
 argument_list|)
@@ -2375,7 +2375,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_remove_vectors
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|vectors
 argument_list|)
@@ -2410,7 +2410,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_add_vectors
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|target_vectors
 argument_list|,
@@ -2419,14 +2419,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_unset_busy
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|)
 expr_stmt|;
 name|gimp_image_undo_group_end
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 return|return

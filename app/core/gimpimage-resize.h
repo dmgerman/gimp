@@ -22,7 +22,7 @@ name|gimp_image_resize
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpContext
 modifier|*
@@ -53,7 +53,7 @@ name|gimp_image_resize_with_layers
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpContext
 modifier|*
@@ -87,7 +87,7 @@ name|gimp_image_resize_to_layers
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpContext
 modifier|*

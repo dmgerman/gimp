@@ -158,12 +158,12 @@ end_function_decl
 
 begin_function
 name|gboolean
-DECL|function|gimp_transform_tool_push_undo (GimpImage * gimage,const gchar * undo_desc,gint tool_ID,GType tool_type,gdouble * trans_info,TileManager * original)
+DECL|function|gimp_transform_tool_push_undo (GimpImage * image,const gchar * undo_desc,gint tool_ID,GType tool_type,gdouble * trans_info,TileManager * original)
 name|gimp_transform_tool_push_undo
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -196,7 +196,7 @@ name|new
 operator|=
 name|gimp_image_undo_push
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_TYPE_UNDO
 argument_list|,
@@ -324,7 +324,7 @@ name|tool_manager_get_active
 argument_list|(
 name|undo
 operator|->
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|)

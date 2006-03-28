@@ -789,7 +789,7 @@ name|gimp_image_floating_sel
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 condition|)
 block|{
@@ -799,7 +799,7 @@ name|gimp_image_floating_sel
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -813,7 +813,7 @@ name|gimp_image_get_mask
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|NULL
@@ -842,7 +842,7 @@ name|gimp_image_flush
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -1243,7 +1243,7 @@ name|gimp_image_get_mask
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|tool

@@ -22,7 +22,7 @@ name|gimp_image_snap_x
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gdouble
 name|x
@@ -52,7 +52,7 @@ name|gimp_image_snap_y
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gdouble
 name|y
@@ -82,7 +82,7 @@ name|gimp_image_snap_point
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gdouble
 name|x
@@ -125,7 +125,7 @@ name|gimp_image_snap_rectangle
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gdouble
 name|x1

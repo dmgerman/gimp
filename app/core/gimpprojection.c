@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a328b7c0103
+DECL|enum|__anon2a3ff0030103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -341,7 +341,7 @@ name|gimp_projection_image_update
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gint
 name|x
@@ -369,7 +369,7 @@ name|gimp_projection_image_size_changed
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpProjection
 modifier|*
@@ -385,7 +385,7 @@ name|gimp_projection_image_mode_changed
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpProjection
 modifier|*
@@ -401,7 +401,7 @@ name|gimp_projection_image_flush
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpProjection
 modifier|*
@@ -553,7 +553,7 @@ parameter_list|)
 block|{
 name|proj
 operator|->
-name|gimage
+name|image
 operator|=
 name|NULL
 expr_stmt|;
@@ -924,7 +924,7 @@ name|x
 operator|>=
 name|proj
 operator|->
-name|gimage
+name|image
 operator|->
 name|width
 operator|||
@@ -932,7 +932,7 @@ name|y
 operator|>=
 name|proj
 operator|->
-name|gimage
+name|image
 operator|->
 name|height
 condition|)
@@ -985,7 +985,7 @@ name|gimp_image_get_color
 argument_list|(
 name|proj
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|gimp_projection_get_image_type
 argument_list|(
@@ -1043,12 +1043,12 @@ end_function
 begin_function
 name|GimpProjection
 modifier|*
-DECL|function|gimp_projection_new (GimpImage * gimage)
+DECL|function|gimp_projection_new (GimpImage * image)
 name|gimp_projection_new
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 block|{
 name|GimpProjection
@@ -1059,7 +1059,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|NULL
@@ -1076,13 +1076,13 @@ argument_list|)
 expr_stmt|;
 name|proj
 operator|->
-name|gimage
+name|image
 operator|=
-name|gimage
+name|image
 expr_stmt|;
 name|g_signal_connect_object
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 literal|"update"
 argument_list|,
@@ -1098,7 +1098,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect_object
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 literal|"size-changed"
 argument_list|,
@@ -1114,7 +1114,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect_object
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 literal|"mode-changed"
 argument_list|,
@@ -1130,7 +1130,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect_object
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 literal|"flush"
 argument_list|,
@@ -1188,7 +1188,7 @@ argument_list|)
 operator|!=
 name|proj
 operator|->
-name|gimage
+name|image
 operator|->
 name|width
 operator|||
@@ -1201,7 +1201,7 @@ argument_list|)
 operator|!=
 name|proj
 operator|->
-name|gimage
+name|image
 operator|->
 name|height
 condition|)
@@ -1245,7 +1245,7 @@ expr_stmt|;
 return|return
 name|proj
 operator|->
-name|gimage
+name|image
 return|;
 block|}
 end_function
@@ -1496,7 +1496,7 @@ name|gimp_image_base_type
 argument_list|(
 name|proj
 operator|->
-name|gimage
+name|image
 argument_list|)
 condition|)
 block|{
@@ -1555,7 +1555,7 @@ name|bytes
 operator|||
 name|proj
 operator|->
-name|gimage
+name|image
 operator|->
 name|width
 operator|!=
@@ -1568,7 +1568,7 @@ argument_list|)
 operator|||
 name|proj
 operator|->
-name|gimage
+name|image
 operator|->
 name|height
 operator|!=
@@ -1623,13 +1623,13 @@ name|tile_manager_new
 argument_list|(
 name|proj
 operator|->
-name|gimage
+name|image
 operator|->
 name|width
 argument_list|,
 name|proj
 operator|->
-name|gimage
+name|image
 operator|->
 name|height
 argument_list|,
@@ -1707,7 +1707,7 @@ literal|0
 argument_list|,
 name|proj
 operator|->
-name|gimage
+name|image
 operator|->
 name|width
 argument_list|)
@@ -1720,7 +1720,7 @@ literal|0
 argument_list|,
 name|proj
 operator|->
-name|gimage
+name|image
 operator|->
 name|height
 argument_list|)
@@ -1735,7 +1735,7 @@ literal|0
 argument_list|,
 name|proj
 operator|->
-name|gimage
+name|image
 operator|->
 name|width
 argument_list|)
@@ -1750,7 +1750,7 @@ literal|0
 argument_list|,
 name|proj
 operator|->
-name|gimage
+name|image
 operator|->
 name|height
 argument_list|)
@@ -2553,7 +2553,7 @@ literal|0
 argument_list|,
 name|proj
 operator|->
-name|gimage
+name|image
 operator|->
 name|width
 argument_list|)
@@ -2568,7 +2568,7 @@ literal|0
 argument_list|,
 name|proj
 operator|->
-name|gimage
+name|image
 operator|->
 name|height
 argument_list|)
@@ -2585,7 +2585,7 @@ literal|0
 argument_list|,
 name|proj
 operator|->
-name|gimage
+name|image
 operator|->
 name|width
 argument_list|)
@@ -2602,7 +2602,7 @@ literal|0
 argument_list|,
 name|proj
 operator|->
-name|gimage
+name|image
 operator|->
 name|height
 argument_list|)
@@ -2881,12 +2881,12 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_projection_image_update (GimpImage * gimage,gint x,gint y,gint w,gint h,GimpProjection * proj)
+DECL|function|gimp_projection_image_update (GimpImage * image,gint x,gint y,gint w,gint h,GimpProjection * proj)
 name|gimp_projection_image_update
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gint
 name|x
@@ -2924,12 +2924,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_projection_image_size_changed (GimpImage * gimage,GimpProjection * proj)
+DECL|function|gimp_projection_image_size_changed (GimpImage * image,GimpProjection * proj)
 name|gimp_projection_image_size_changed
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpProjection
 modifier|*
@@ -2949,11 +2949,11 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|width
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|height
 argument_list|)
@@ -2964,12 +2964,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_projection_image_mode_changed (GimpImage * gimage,GimpProjection * proj)
+DECL|function|gimp_projection_image_mode_changed (GimpImage * image,GimpProjection * proj)
 name|gimp_projection_image_mode_changed
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpProjection
 modifier|*
@@ -2989,11 +2989,11 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|width
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|height
 argument_list|)
@@ -3004,12 +3004,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_projection_image_flush (GimpImage * gimage,GimpProjection * proj)
+DECL|function|gimp_projection_image_flush (GimpImage * image,GimpProjection * proj)
 name|gimp_projection_image_flush
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpProjection
 modifier|*

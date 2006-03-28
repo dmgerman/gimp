@@ -194,7 +194,7 @@ name|tool_manager_image_clean_dirty
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpDirtyMask
 name|dirty_mask
@@ -821,7 +821,7 @@ name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 return|return
@@ -1887,12 +1887,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|tool_manager_image_clean_dirty (GimpImage * gimage,GimpDirtyMask dirty_mask,GimpToolManager * tool_manager)
+DECL|function|tool_manager_image_clean_dirty (GimpImage * image,GimpDirtyMask dirty_mask,GimpToolManager * tool_manager)
 name|tool_manager_image_clean_dirty
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpDirtyMask
 name|dirty_mask
@@ -1949,9 +1949,9 @@ name|gdisp
 operator|||
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|!=
-name|gimage
+name|image
 condition|)
 if|if
 condition|(
@@ -1975,15 +1975,15 @@ name|gdisp
 operator|&&
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|==
-name|gimage
+name|image
 condition|)
 name|gimp_context_tool_changed
 argument_list|(
 name|gimp_get_user_context
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|)

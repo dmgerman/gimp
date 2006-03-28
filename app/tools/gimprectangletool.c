@@ -2358,7 +2358,7 @@ name|gimp_image_get_width
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 decl_stmt|;
 name|gint
@@ -2368,7 +2368,7 @@ name|gimp_image_get_height
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 decl_stmt|;
 name|GimpUnit
@@ -2472,7 +2472,7 @@ name|gimp_image_get_resolution
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 operator|&
 name|xres
@@ -3152,7 +3152,7 @@ name|max_x
 operator|=
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|width
 expr_stmt|;
@@ -3160,7 +3160,7 @@ name|max_y
 operator|=
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|height
 expr_stmt|;
@@ -4804,7 +4804,7 @@ name|max_x
 operator|=
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|width
 expr_stmt|;
@@ -4812,7 +4812,7 @@ name|max_y
 operator|=
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|height
 expr_stmt|;
@@ -6422,7 +6422,7 @@ name|tool
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|tool
@@ -6495,7 +6495,7 @@ name|gimp_image_get_mask
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 operator|&
@@ -6554,7 +6554,7 @@ literal|"x2"
 argument_list|,
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|width
 argument_list|,
@@ -6562,7 +6562,7 @@ literal|"y2"
 argument_list|,
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|height
 argument_list|,
@@ -6658,7 +6658,7 @@ name|width
 operator|=
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|width
 expr_stmt|;
@@ -6666,7 +6666,7 @@ name|height
 operator|=
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|height
 expr_stmt|;
@@ -6767,7 +6767,7 @@ name|gimp_image_crop_auto_shrink
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|x1
 argument_list|,

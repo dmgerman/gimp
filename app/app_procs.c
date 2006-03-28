@@ -924,12 +924,12 @@ else|else
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpPDBStatusType
 name|status
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|file_open_with_display
 argument_list|(
@@ -954,7 +954,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimage
+name|image
 operator|&&
 name|status
 operator|!=

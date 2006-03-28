@@ -1161,7 +1161,7 @@ name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|gimp_text_tool_set_drawable
@@ -2883,7 +2883,7 @@ name|tool
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 expr_stmt|;
 name|layer
 operator|=

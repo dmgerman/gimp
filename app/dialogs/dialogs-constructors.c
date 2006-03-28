@@ -2519,7 +2519,7 @@ if|if
 condition|(
 name|image_editor
 operator|->
-name|gimage
+name|image
 condition|)
 block|{
 name|GimpRGB
@@ -2539,7 +2539,7 @@ name|gimp_image_get_colormap_entry
 argument_list|(
 name|image_editor
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|index
 argument_list|,

@@ -323,7 +323,7 @@ name|pressure_options
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gdouble
 name|opacity
@@ -338,7 +338,7 @@ index|[
 name|MAX_CHANNELS
 index|]
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -354,7 +354,7 @@ name|gimp_paint_options_get_fade
 argument_list|(
 name|paint_options
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|paint_core
 operator|->
@@ -387,7 +387,7 @@ condition|)
 return|return;
 name|gimp_image_get_background
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|drawable
 argument_list|,

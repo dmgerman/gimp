@@ -808,7 +808,7 @@ name|gimp_image_floating_sel
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 condition|)
 block|{
@@ -832,7 +832,7 @@ name|gimp_image_get_active_layer
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 decl_stmt|;
 if|if
@@ -869,7 +869,7 @@ name|gimp_image_get_active_vectors
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -882,7 +882,7 @@ name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -940,7 +940,7 @@ name|gimp_image_undo_group_start
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|edit_select
 operator|->
@@ -1022,7 +1022,7 @@ name|gimp_image_get_mask
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1127,7 +1127,7 @@ name|x2
 operator|=
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|width
 expr_stmt|;
@@ -1137,7 +1137,7 @@ name|y2
 operator|=
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|height
 expr_stmt|;
@@ -1279,7 +1279,7 @@ name|gimp_image_get_mask
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 operator|&
@@ -1744,7 +1744,7 @@ name|tool_manager_push_tool
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|,
@@ -1874,7 +1874,7 @@ name|tool_manager_pop_tool
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|)
@@ -1895,7 +1895,7 @@ name|gimp_image_get_active_vectors
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1908,7 +1908,7 @@ name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1946,7 +1946,7 @@ name|gimp_image_get_mask
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 argument_list|,
@@ -2113,7 +2113,7 @@ name|gimp_image_undo_group_end
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 if|if
@@ -2129,7 +2129,7 @@ name|gimp_image_undo
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -2137,7 +2137,7 @@ name|gimp_image_flush
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -2188,7 +2188,7 @@ name|tool_manager_get_active
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|)
@@ -2198,7 +2198,7 @@ name|tool_manager_button_release_active
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|,
@@ -2295,7 +2295,7 @@ name|gimp_image_get_active_vectors
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2308,7 +2308,7 @@ name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2574,7 +2574,7 @@ name|gimp_image_get_mask
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|GIMP_DRAWABLE
@@ -2586,7 +2586,7 @@ name|gimp_get_user_context
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|)
@@ -2672,7 +2672,7 @@ name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2712,7 +2712,7 @@ name|gimp_projection_flush
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|projection
 argument_list|)
@@ -2811,7 +2811,7 @@ name|gimp_image_get_active_vectors
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2824,7 +2824,7 @@ name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2877,7 +2877,7 @@ name|gimp_image_get_active_layer
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 decl_stmt|;
 if|if
@@ -3080,7 +3080,7 @@ name|gimp_image_get_active_layer
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3297,7 +3297,7 @@ name|gimp_image_get_active_vectors
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4204,7 +4204,7 @@ name|gimp_image_get_mask
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4334,7 +4334,7 @@ name|gimp_image_get_active_vectors
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|edit_mode
@@ -4447,7 +4447,7 @@ name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 if|if
@@ -4557,7 +4557,7 @@ name|gimp_image_undo_can_compress
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|GIMP_TYPE_UNDO_STACK
 argument_list|,
@@ -4630,7 +4630,7 @@ name|gimp_image_undo_group_start
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|undo_type
 argument_list|,
@@ -4644,7 +4644,7 @@ name|gimp_image_undo_can_compress
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|GIMP_TYPE_UNDO_STACK
 argument_list|,
@@ -4793,7 +4793,7 @@ name|gimp_image_undo_group_end
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 else|else
@@ -4806,7 +4806,7 @@ name|gimp_image_flush
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 return|return

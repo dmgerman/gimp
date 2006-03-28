@@ -1038,7 +1038,7 @@ if|if
 condition|(
 name|display
 operator|->
-name|gimage
+name|image
 operator|==
 name|image
 condition|)

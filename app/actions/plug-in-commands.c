@@ -294,7 +294,7 @@ name|gimp_image_get_ID
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|n_args
@@ -330,7 +330,7 @@ name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 if|if
@@ -528,7 +528,7 @@ name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 if|if
@@ -559,7 +559,7 @@ name|plug_in_repeat
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|,
@@ -569,7 +569,7 @@ name|gimp_get_user_context
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|)
@@ -588,7 +588,7 @@ name|gimp_image_get_ID
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|gimp_item_get_ID

@@ -854,7 +854,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 init|=
 name|action_data_get_image
 argument_list|(
@@ -876,7 +876,7 @@ name|i
 decl_stmt|;
 if|if
 condition|(
-name|gimage
+name|image
 condition|)
 block|{
 name|GimpDrawable
@@ -885,7 +885,7 @@ name|drawable
 init|=
 name|gimp_image_active_drawable
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 decl_stmt|;
 if|if

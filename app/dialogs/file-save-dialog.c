@@ -193,7 +193,7 @@ name|save_dialog
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -463,7 +463,7 @@ name|save_dialog
 argument_list|,
 name|dialog
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|uri
 argument_list|,
@@ -1399,7 +1399,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|file_save_dialog_save_image (GtkWidget * save_dialog,GimpImage * gimage,const gchar * uri,PlugInProcDef * save_proc,gboolean save_a_copy)
+DECL|function|file_save_dialog_save_image (GtkWidget * save_dialog,GimpImage * image,const gchar * uri,PlugInProcDef * save_proc,gboolean save_a_copy)
 name|file_save_dialog_save_image
 parameter_list|(
 name|GtkWidget
@@ -1408,7 +1408,7 @@ name|save_dialog
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -1474,18 +1474,18 @@ expr_stmt|;
 block|}
 name|g_object_ref
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|status
 operator|=
 name|file_save
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|gimp_get_user_context
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|)
@@ -1517,7 +1517,7 @@ name|g_object_set_data_full
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|)
@@ -1537,7 +1537,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 if|if

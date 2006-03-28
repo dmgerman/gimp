@@ -22,7 +22,7 @@ name|gimp_image_scale
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gint
 name|new_width
@@ -47,7 +47,7 @@ parameter_list|(
 specifier|const
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gint
 name|new_width

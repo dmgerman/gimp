@@ -34,7 +34,7 @@ name|gimp_image_set_quick_mask_state
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gboolean
 name|quick_mask_state
@@ -49,7 +49,7 @@ parameter_list|(
 specifier|const
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -60,7 +60,7 @@ name|gimp_image_set_quick_mask_color
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 specifier|const
 name|GimpRGB
@@ -77,7 +77,7 @@ parameter_list|(
 specifier|const
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpRGB
 modifier|*
@@ -94,7 +94,7 @@ parameter_list|(
 specifier|const
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -105,7 +105,7 @@ name|gimp_image_quick_mask_invert
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl

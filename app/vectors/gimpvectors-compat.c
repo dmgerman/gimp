@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e8cca90103
+DECL|enum|__anon277afb400103
 block|{
 DECL|enumerator|GIMP_VECTORS_COMPAT_ANCHOR
 name|GIMP_VECTORS_COMPAT_ANCHOR
@@ -93,12 +93,12 @@ end_decl_stmt
 begin_function
 name|GimpVectors
 modifier|*
-DECL|function|gimp_vectors_compat_new (GimpImage * gimage,const gchar * name,GimpVectorsCompatPoint * points,gint n_points,gboolean closed)
+DECL|function|gimp_vectors_compat_new (GimpImage * image,const gchar * name,GimpVectorsCompatPoint * points,gint n_points,gboolean closed)
 name|gimp_vectors_compat_new
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -143,7 +143,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|NULL
@@ -184,7 +184,7 @@ name|vectors
 operator|=
 name|gimp_vectors_new
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|name
 argument_list|)
@@ -390,18 +390,19 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_vectors_compat_is_compatible (GimpImage * gimage)
+DECL|function|gimp_vectors_compat_is_compatible (GimpImage * image)
 name|gimp_vectors_compat_is_compatible
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 block|{
 name|GList
 modifier|*
 name|list
-decl_stmt|,
+decl_stmt|;
+name|GList
 modifier|*
 name|strokes
 decl_stmt|;
@@ -422,7 +423,7 @@ name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|vectors
 argument_list|)

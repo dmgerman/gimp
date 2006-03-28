@@ -260,7 +260,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|width
 argument_list|,
@@ -268,7 +268,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|height
 argument_list|,
@@ -473,7 +473,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|guides
 init|;
@@ -604,7 +604,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|grid
 argument_list|)
@@ -668,7 +668,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|width
 expr_stmt|;
@@ -678,7 +678,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|height
 expr_stmt|;
@@ -1840,7 +1840,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|sample_points
 argument_list|,
@@ -1891,7 +1891,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|sample_points
 init|;
@@ -2171,7 +2171,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|vectors
 argument_list|)
@@ -2347,7 +2347,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|width
 argument_list|)
@@ -2362,7 +2362,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|height
 argument_list|)
@@ -2628,7 +2628,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|j
 operator|-

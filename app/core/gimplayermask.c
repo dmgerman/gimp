@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bcad5cc0103
+DECL|enum|__anon29cdb1fb0103
 block|{
 DECL|enumerator|APPLY_CHANGED
 name|APPLY_CHANGED
@@ -422,7 +422,7 @@ name|GIMP_IS_IMAGE
 argument_list|(
 name|item
 operator|->
-name|gimage
+name|image
 argument_list|)
 operator|&&
 name|GIMP_IS_LAYER
@@ -587,12 +587,12 @@ end_function
 begin_function
 name|GimpLayerMask
 modifier|*
-DECL|function|gimp_layer_mask_new (GimpImage * gimage,gint width,gint height,const gchar * name,const GimpRGB * color)
+DECL|function|gimp_layer_mask_new (GimpImage * image,gint width,gint height,const gchar * name,const GimpRGB * color)
 name|gimp_layer_mask_new
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gint
 name|width
@@ -631,7 +631,7 @@ argument_list|(
 name|layer_mask
 argument_list|)
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 literal|0
 argument_list|,
@@ -870,14 +870,14 @@ condition|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 init|=
 name|GIMP_ITEM
 argument_list|(
 name|layer_mask
 argument_list|)
 operator|->
-name|gimage
+name|image
 decl_stmt|;
 if|if
 condition|(
@@ -885,7 +885,7 @@ name|push_undo
 condition|)
 name|gimp_image_undo_push_layer_mask_apply
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|_
 argument_list|(
@@ -1114,14 +1114,14 @@ condition|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 init|=
 name|GIMP_ITEM
 argument_list|(
 name|layer_mask
 argument_list|)
 operator|->
-name|gimage
+name|image
 decl_stmt|;
 if|if
 condition|(
@@ -1129,7 +1129,7 @@ name|push_undo
 condition|)
 name|gimp_image_undo_push_layer_mask_show
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|_
 argument_list|(

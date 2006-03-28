@@ -327,7 +327,7 @@ name|context
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpDock
 modifier|*
@@ -347,7 +347,7 @@ name|context
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpDock
 modifier|*
@@ -2268,7 +2268,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_menu_dock_factory_image_changed (GimpContext * context,GimpImage * gimage,GimpDock * dock)
+DECL|function|gimp_menu_dock_factory_image_changed (GimpContext * context,GimpImage * image,GimpDock * dock)
 name|gimp_menu_dock_factory_image_changed
 parameter_list|(
 name|GimpContext
@@ -2277,7 +2277,7 @@ name|context
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpDock
 modifier|*
@@ -2296,7 +2296,7 @@ decl_stmt|;
 comment|/*  won't do anything if we already set the display above  */
 if|if
 condition|(
-name|gimage
+name|image
 operator|&&
 name|menu_dock
 operator|->
@@ -2308,7 +2308,7 @@ name|dock
 operator|->
 name|context
 argument_list|,
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -2317,7 +2317,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_menu_dock_image_changed (GimpContext * context,GimpImage * gimage,GimpDock * dock)
+DECL|function|gimp_menu_dock_image_changed (GimpContext * context,GimpImage * image,GimpDock * dock)
 name|gimp_menu_dock_image_changed
 parameter_list|(
 name|GimpContext
@@ -2326,7 +2326,7 @@ name|context
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpDock
 modifier|*
@@ -2360,7 +2360,7 @@ name|display_container
 decl_stmt|;
 if|if
 condition|(
-name|gimage
+name|image
 operator|==
 name|NULL
 operator|&&
@@ -2371,7 +2371,7 @@ name|image_container
 argument_list|)
 condition|)
 block|{
-name|gimage
+name|image
 operator|=
 name|GIMP_IMAGE
 argument_list|(
@@ -2385,7 +2385,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimage
+name|image
 condition|)
 block|{
 comment|/*  this invokes this function recursively but we don't enter 	   *  the if() branch the second time 	   */
@@ -2393,7 +2393,7 @@ name|gimp_context_set_image
 argument_list|(
 name|context
 argument_list|,
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 comment|/*  stop the emission of the original signal (the emission of 	   *  the recursive signal is finished) 	   */
@@ -2409,7 +2409,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|gimage
+name|image
 operator|!=
 name|NULL
 operator|&&
@@ -2426,7 +2426,7 @@ name|gdisp
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gdisp_gimage
+name|gdisp_image
 decl_stmt|;
 name|gboolean
 name|find_display
@@ -2452,26 +2452,26 @@ argument_list|,
 literal|"image"
 argument_list|,
 operator|&
-name|gdisp_gimage
+name|gdisp_image
 argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gdisp_gimage
+name|gdisp_image
 condition|)
 block|{
 name|g_object_unref
 argument_list|(
-name|gdisp_gimage
+name|gdisp_image
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gdisp_gimage
+name|gdisp_image
 operator|==
-name|gimage
+name|image
 condition|)
 name|find_display
 operator|=
@@ -2525,26 +2525,26 @@ argument_list|,
 literal|"image"
 argument_list|,
 operator|&
-name|gdisp_gimage
+name|gdisp_image
 argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gdisp_gimage
+name|gdisp_image
 condition|)
 block|{
 name|g_object_unref
 argument_list|(
-name|gdisp_gimage
+name|gdisp_image
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gdisp_gimage
+name|gdisp_image
 operator|==
-name|gimage
+name|image
 condition|)
 block|{
 comment|/*  this invokes this function recursively but we                        *  don't enter the if(find_display) branch the                        *  second time                        */

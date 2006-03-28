@@ -422,7 +422,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|gimp
 expr_stmt|;
@@ -929,7 +929,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|gimp
 decl_stmt|;
@@ -993,7 +993,7 @@ name|GIMP_DISPLAY_CONFIG
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -1679,7 +1679,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|)
@@ -1720,7 +1720,7 @@ name|gdisp
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|Gimp
 modifier|*
@@ -1812,15 +1812,15 @@ name|shell
 operator|->
 name|gdisp
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|gdisp
 operator|->
-name|gimage
+name|image
 expr_stmt|;
 name|gimp
 operator|=
-name|gimage
+name|image
 operator|->
 name|gimp
 expr_stmt|;
@@ -2332,7 +2332,7 @@ operator|(
 operator|!
 name|gimp_image_is_empty
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 operator|||
 name|gimp_tool_control_get_handle_empty_image
@@ -2382,7 +2382,7 @@ if|if
 condition|(
 name|gimp_image_is_empty
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 operator|&&
 operator|!
@@ -2580,7 +2580,7 @@ operator|(
 operator|!
 name|gimp_image_is_empty
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 operator|||
 name|gimp_tool_control_get_handle_empty_image
@@ -2626,7 +2626,7 @@ name|drawable
 operator|!=
 name|gimp_image_active_drawable
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 operator|)
 operator|&&
@@ -2866,7 +2866,7 @@ operator|(
 operator|!
 name|gimp_image_is_empty
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 operator|||
 name|gimp_tool_control_get_handle_empty_image
@@ -3679,7 +3679,7 @@ operator|(
 operator|!
 name|gimp_image_is_empty
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 operator|||
 name|gimp_tool_control_get_handle_empty_image
@@ -4091,7 +4091,7 @@ if|if
 condition|(
 name|gimp_image_is_empty
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 operator|||
 operator|!
@@ -4277,7 +4277,7 @@ condition|(
 operator|!
 name|gimp_image_is_empty
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 block|{
@@ -4368,7 +4368,7 @@ condition|(
 operator|!
 name|gimp_image_is_empty
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|tool_manager_modifier_state_active
@@ -4543,7 +4543,7 @@ condition|(
 operator|!
 name|gimp_image_is_empty
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|tool_manager_modifier_state_active
@@ -4620,7 +4620,7 @@ operator|(
 operator|!
 name|gimp_image_is_empty
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 operator|||
 name|gimp_tool_control_get_handle_empty_image
@@ -4663,7 +4663,7 @@ if|if
 condition|(
 name|gimp_image_is_empty
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 operator|&&
 operator|!
@@ -4784,7 +4784,7 @@ if|if
 condition|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -4821,7 +4821,7 @@ name|tool_manager_get_active
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|)
@@ -4875,7 +4875,7 @@ name|gimp_container_get_child_by_name
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -4898,7 +4898,7 @@ name|gimp_get_user_context
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|)
@@ -4913,7 +4913,7 @@ name|tool_manager_get_active
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|)
@@ -5093,7 +5093,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -5229,7 +5229,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 condition|)
 block|{
@@ -5239,7 +5239,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -5255,7 +5255,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}

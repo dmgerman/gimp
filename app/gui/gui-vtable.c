@@ -447,7 +447,7 @@ name|gui_display_create
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpUnit
 name|unit
@@ -1511,12 +1511,12 @@ begin_function
 specifier|static
 name|GimpObject
 modifier|*
-DECL|function|gui_display_create (GimpImage * gimage,GimpUnit unit,gdouble scale)
+DECL|function|gui_display_create (GimpImage * image,GimpUnit unit,gdouble scale)
 name|gui_display_create
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpUnit
 name|unit
@@ -1544,7 +1544,7 @@ name|gdisp
 operator|=
 name|gimp_display_new
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|unit
 argument_list|,
@@ -1561,7 +1561,7 @@ name|gimp_context_set_display
 argument_list|(
 name|gimp_get_user_context
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|)

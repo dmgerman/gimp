@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6f6af10103
+DECL|enum|__anon2b32d9ff0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1182,7 +1182,7 @@ argument_list|)
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 init|=
 name|gimp_item_get_image
 argument_list|(
@@ -1203,7 +1203,7 @@ name|modified
 condition|)
 name|gimp_image_undo_group_start
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_DRAWABLE_MOD
 argument_list|,
@@ -1244,7 +1244,7 @@ condition|)
 block|{
 name|gimp_image_undo_push_text_layer_modified
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|NULL
 argument_list|,
@@ -1264,7 +1264,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_undo_group_end
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -1317,7 +1317,7 @@ argument_list|)
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 init|=
 name|gimp_item_get_image
 argument_list|(
@@ -1336,7 +1336,7 @@ name|modified
 condition|)
 name|gimp_image_undo_group_start
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_DRAWABLE
 argument_list|,
@@ -1377,7 +1377,7 @@ condition|)
 block|{
 name|gimp_image_undo_push_text_layer_modified
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|NULL
 argument_list|,
@@ -1397,7 +1397,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_undo_group_end
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}

@@ -2266,7 +2266,7 @@ name|BoundSeg
 modifier|*
 name|segs_layer
 decl_stmt|;
-comment|/*  Ask the gimage for the boundary of its selected region...    *  Then transform that information into a new buffer of GdkSegments    */
+comment|/*  Ask the image for the boundary of its selected region...    *  Then transform that information into a new buffer of GdkSegments    */
 name|gimp_channel_boundary
 argument_list|(
 name|gimp_image_get_mask
@@ -2277,7 +2277,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 operator|&
@@ -2415,7 +2415,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 operator|&
 name|segs_layer
@@ -2672,7 +2672,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->

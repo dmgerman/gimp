@@ -510,7 +510,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpLayer
 modifier|*
@@ -526,7 +526,7 @@ name|active_tool
 decl_stmt|;
 name|return_if_no_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|layer
 argument_list|,
@@ -565,7 +565,7 @@ name|active_tool
 operator|=
 name|tool_manager_get_active
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|)
@@ -591,7 +591,7 @@ operator|*
 operator|)
 name|gimp_container_get_child_by_name
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -622,7 +622,7 @@ name|active_tool
 operator|=
 name|tool_manager_get_active
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|)
@@ -668,7 +668,7 @@ name|dialog
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpLayer
 modifier|*
@@ -680,7 +680,7 @@ name|widget
 decl_stmt|;
 name|return_if_no_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|layer
 argument_list|,
@@ -787,7 +787,7 @@ name|dialog
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -799,7 +799,7 @@ name|floating_sel
 decl_stmt|;
 name|return_if_no_image
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|data
 argument_list|)
@@ -819,7 +819,7 @@ name|floating_sel
 operator|=
 name|gimp_image_floating_sel
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 operator|)
 condition|)
@@ -831,7 +831,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 return|return;
@@ -840,7 +840,7 @@ name|dialog
 operator|=
 name|layer_options_dialog_new
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|action_data_get_context
 argument_list|(
@@ -920,7 +920,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpLayer
 modifier|*
@@ -948,7 +948,7 @@ name|mode
 decl_stmt|;
 name|return_if_no_image
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|data
 argument_list|)
@@ -961,7 +961,7 @@ name|floating_sel
 operator|=
 name|gimp_image_floating_sel
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 operator|)
 condition|)
@@ -973,7 +973,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 return|return;
@@ -1058,14 +1058,14 @@ name|width
 operator|=
 name|gimp_image_get_width
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|height
 operator|=
 name|gimp_image_get_height
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|off_x
@@ -1087,7 +1087,7 @@ expr_stmt|;
 block|}
 name|gimp_image_undo_group_start
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_EDIT_PASTE
 argument_list|,
@@ -1101,7 +1101,7 @@ name|new_layer
 operator|=
 name|gimp_layer_new
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|width
 argument_list|,
@@ -1109,7 +1109,7 @@ name|height
 argument_list|,
 name|gimp_image_base_type_with_alpha
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|layer_name
@@ -1157,7 +1157,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_add_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|new_layer
 argument_list|,
@@ -1167,12 +1167,12 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_undo_group_end
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -1196,7 +1196,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpLayer
 modifier|*
@@ -1208,7 +1208,7 @@ name|new_layer
 decl_stmt|;
 name|return_if_no_image
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|data
 argument_list|)
@@ -1217,7 +1217,7 @@ name|layer
 operator|=
 name|gimp_image_get_active_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|new_layer
@@ -1233,7 +1233,7 @@ name|GimpActionSelectType
 operator|)
 name|value
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|layers
 argument_list|,
@@ -1255,14 +1255,14 @@ condition|)
 block|{
 name|gimp_image_set_active_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|new_layer
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -1284,7 +1284,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpLayer
 modifier|*
@@ -1292,7 +1292,7 @@ name|layer
 decl_stmt|;
 name|return_if_no_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|layer
 argument_list|,
@@ -1301,14 +1301,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_raise_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|layer
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -1329,7 +1329,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpLayer
 modifier|*
@@ -1337,7 +1337,7 @@ name|layer
 decl_stmt|;
 name|return_if_no_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|layer
 argument_list|,
@@ -1346,14 +1346,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_raise_layer_to_top
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|layer
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -1374,7 +1374,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpLayer
 modifier|*
@@ -1382,7 +1382,7 @@ name|layer
 decl_stmt|;
 name|return_if_no_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|layer
 argument_list|,
@@ -1391,14 +1391,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_lower_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|layer
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -1419,7 +1419,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpLayer
 modifier|*
@@ -1427,7 +1427,7 @@ name|layer
 decl_stmt|;
 name|return_if_no_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|layer
 argument_list|,
@@ -1436,14 +1436,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_lower_layer_to_bottom
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|layer
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -1464,7 +1464,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpLayer
 modifier|*
@@ -1476,7 +1476,7 @@ name|new_layer
 decl_stmt|;
 name|return_if_no_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|layer
 argument_list|,
@@ -1505,7 +1505,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_add_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|new_layer
 argument_list|,
@@ -1515,7 +1515,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -1536,7 +1536,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpLayer
 modifier|*
@@ -1544,7 +1544,7 @@ name|layer
 decl_stmt|;
 name|return_if_no_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|layer
 argument_list|,
@@ -1566,7 +1566,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -1588,7 +1588,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpLayer
 modifier|*
@@ -1596,7 +1596,7 @@ name|layer
 decl_stmt|;
 name|return_if_no_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|layer
 argument_list|,
@@ -1605,7 +1605,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_merge_down
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|layer
 argument_list|,
@@ -1619,7 +1619,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -1640,7 +1640,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpLayer
 modifier|*
@@ -1648,7 +1648,7 @@ name|layer
 decl_stmt|;
 name|return_if_no_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|layer
 argument_list|,
@@ -1670,14 +1670,14 @@ expr_stmt|;
 else|else
 name|gimp_image_remove_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|layer
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -1698,7 +1698,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpLayer
 modifier|*
@@ -1706,7 +1706,7 @@ name|layer
 decl_stmt|;
 name|return_if_no_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|layer
 argument_list|,
@@ -1884,7 +1884,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpLayer
 modifier|*
@@ -1892,7 +1892,7 @@ name|layer
 decl_stmt|;
 name|return_if_no_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|layer
 argument_list|,
@@ -1911,7 +1911,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -2071,7 +2071,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpLayer
 modifier|*
@@ -2093,7 +2093,7 @@ name|off_y
 decl_stmt|;
 name|return_if_no_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|layer
 argument_list|,
@@ -2107,7 +2107,7 @@ name|gimp_channel_bounds
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 operator|&
@@ -2158,7 +2158,7 @@ name|y1
 expr_stmt|;
 name|gimp_image_undo_group_start
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_ITEM_RESIZE
 argument_list|,
@@ -2195,12 +2195,12 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_undo_group_end
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -2225,7 +2225,7 @@ name|dialog
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpLayer
 modifier|*
@@ -2237,7 +2237,7 @@ name|widget
 decl_stmt|;
 name|return_if_no_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|layer
 argument_list|,
@@ -2308,7 +2308,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpLayer
 modifier|*
@@ -2319,7 +2319,7 @@ name|mode
 decl_stmt|;
 name|return_if_no_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|layer
 argument_list|,
@@ -2352,7 +2352,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -2374,7 +2374,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpLayer
 modifier|*
@@ -2386,7 +2386,7 @@ name|mask
 decl_stmt|;
 name|return_if_no_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|layer
 argument_list|,
@@ -2427,7 +2427,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -2449,7 +2449,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpLayer
 modifier|*
@@ -2461,7 +2461,7 @@ name|mask
 decl_stmt|;
 name|return_if_no_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|layer
 argument_list|,
@@ -2504,7 +2504,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -2526,7 +2526,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpLayer
 modifier|*
@@ -2538,7 +2538,7 @@ name|mask
 decl_stmt|;
 name|return_if_no_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|layer
 argument_list|,
@@ -2582,7 +2582,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -2610,7 +2610,7 @@ name|op
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpLayer
 modifier|*
@@ -2622,7 +2622,7 @@ name|mask
 decl_stmt|;
 name|return_if_no_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|layer
 argument_list|,
@@ -2671,7 +2671,7 @@ name|gimp_channel_select_channel
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|_
@@ -2699,7 +2699,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -2721,7 +2721,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpLayer
 modifier|*
@@ -2729,7 +2729,7 @@ name|layer
 decl_stmt|;
 name|return_if_no_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|layer
 argument_list|,
@@ -2755,7 +2755,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -2777,7 +2777,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpLayer
 modifier|*
@@ -2785,7 +2785,7 @@ name|layer
 decl_stmt|;
 name|return_if_no_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|layer
 argument_list|,
@@ -2815,7 +2815,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -2843,7 +2843,7 @@ name|op
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpLayer
 modifier|*
@@ -2851,7 +2851,7 @@ name|layer
 decl_stmt|;
 name|return_if_no_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|layer
 argument_list|,
@@ -2869,7 +2869,7 @@ name|gimp_channel_select_alpha
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|GIMP_DRAWABLE
@@ -2888,7 +2888,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -2912,7 +2912,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpLayer
 modifier|*
@@ -2932,7 +2932,7 @@ name|TRUE
 decl_stmt|;
 name|return_if_no_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|layer
 argument_list|,
@@ -2943,7 +2943,7 @@ name|undo
 operator|=
 name|gimp_image_undo_can_compress
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_TYPE_ITEM_UNDO
 argument_list|,
@@ -3006,7 +3006,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -3030,7 +3030,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpLayer
 modifier|*
@@ -3053,7 +3053,7 @@ name|TRUE
 decl_stmt|;
 name|return_if_no_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|layer
 argument_list|,
@@ -3064,7 +3064,7 @@ name|undo
 operator|=
 name|gimp_image_undo_can_compress
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_TYPE_ITEM_UNDO
 argument_list|,
@@ -3142,7 +3142,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -3163,7 +3163,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpLayer
 modifier|*
@@ -3174,7 +3174,7 @@ name|lock_alpha
 decl_stmt|;
 name|return_if_no_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|layer
 argument_list|,
@@ -3214,7 +3214,7 @@ name|undo
 operator|=
 name|gimp_image_undo_can_compress
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_TYPE_ITEM_UNDO
 argument_list|,
@@ -3252,7 +3252,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -3366,7 +3366,7 @@ name|gimp_layer_new
 argument_list|(
 name|dialog
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|dialog
 operator|->
@@ -3380,7 +3380,7 @@ name|gimp_image_base_type_with_alpha
 argument_list|(
 name|dialog
 operator|->
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|layer_name
@@ -3413,7 +3413,7 @@ name|gimp_image_add_layer
 argument_list|(
 name|dialog
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|layer
 argument_list|,
@@ -3425,7 +3425,7 @@ name|gimp_image_flush
 argument_list|(
 name|dialog
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -3529,7 +3529,7 @@ name|gimp_image_flush
 argument_list|(
 name|dialog
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -3613,7 +3613,7 @@ name|layer
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 init|=
 name|gimp_item_get_image
 argument_list|(
@@ -3641,7 +3641,7 @@ name|invert
 expr_stmt|;
 name|gimp_image_undo_group_start
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_LAYER_ADD_MASK
 argument_list|,
@@ -3701,12 +3701,12 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_undo_group_end
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}

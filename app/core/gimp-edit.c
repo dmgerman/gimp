@@ -159,7 +159,7 @@ name|gimp_edit_extract
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpDrawable
 modifier|*
@@ -183,7 +183,7 @@ name|gimp_edit_extract_visible
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpContext
 modifier|*
@@ -219,7 +219,7 @@ name|gimp_edit_fill_internal
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpDrawable
 modifier|*
@@ -254,12 +254,12 @@ begin_function
 specifier|const
 name|GimpBuffer
 modifier|*
-DECL|function|gimp_edit_cut (GimpImage * gimage,GimpDrawable * drawable,GimpContext * context)
+DECL|function|gimp_edit_cut (GimpImage * image,GimpDrawable * drawable,GimpContext * context)
 name|gimp_edit_cut
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpDrawable
 modifier|*
@@ -278,7 +278,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|NULL
@@ -321,7 +321,7 @@ name|buffer
 operator|=
 name|gimp_edit_extract
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|drawable
 argument_list|,
@@ -337,7 +337,7 @@ condition|)
 block|{
 name|gimp_set_global_buffer
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|,
@@ -350,7 +350,7 @@ name|buffer
 argument_list|)
 expr_stmt|;
 return|return
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -367,12 +367,12 @@ begin_function
 specifier|const
 name|GimpBuffer
 modifier|*
-DECL|function|gimp_edit_copy (GimpImage * gimage,GimpDrawable * drawable,GimpContext * context)
+DECL|function|gimp_edit_copy (GimpImage * image,GimpDrawable * drawable,GimpContext * context)
 name|gimp_edit_copy
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpDrawable
 modifier|*
@@ -391,7 +391,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|NULL
@@ -434,7 +434,7 @@ name|buffer
 operator|=
 name|gimp_edit_extract
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|drawable
 argument_list|,
@@ -450,7 +450,7 @@ condition|)
 block|{
 name|gimp_set_global_buffer
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|,
@@ -463,7 +463,7 @@ name|buffer
 argument_list|)
 expr_stmt|;
 return|return
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -480,12 +480,12 @@ begin_function
 specifier|const
 name|GimpBuffer
 modifier|*
-DECL|function|gimp_edit_copy_visible (GimpImage * gimage,GimpContext * context)
+DECL|function|gimp_edit_copy_visible (GimpImage * image,GimpContext * context)
 name|gimp_edit_copy_visible
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpContext
 modifier|*
@@ -500,7 +500,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|NULL
@@ -520,7 +520,7 @@ name|buffer
 operator|=
 name|gimp_edit_extract_visible
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|context
 argument_list|)
@@ -532,7 +532,7 @@ condition|)
 block|{
 name|gimp_set_global_buffer
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|,
@@ -545,7 +545,7 @@ name|buffer
 argument_list|)
 expr_stmt|;
 return|return
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -561,12 +561,12 @@ end_function
 begin_function
 name|GimpLayer
 modifier|*
-DECL|function|gimp_edit_paste (GimpImage * gimage,GimpDrawable * drawable,GimpBuffer * paste,gboolean paste_into,gint viewport_x,gint viewport_y,gint viewport_width,gint viewport_height)
+DECL|function|gimp_edit_paste (GimpImage * image,GimpDrawable * drawable,GimpBuffer * paste,gboolean paste_into,gint viewport_x,gint viewport_y,gint viewport_width,gint viewport_height)
 name|gimp_edit_paste
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpDrawable
 modifier|*
@@ -621,7 +621,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|NULL
@@ -685,7 +685,7 @@ name|type
 operator|=
 name|gimp_image_base_type_with_alpha
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|layer
@@ -696,7 +696,7 @@ name|paste
 operator|->
 name|tiles
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|type
 argument_list|,
@@ -913,7 +913,7 @@ block|{
 comment|/*  otherwise the offsets to the center of the image  */
 name|center_x
 operator|=
-name|gimage
+name|image
 operator|->
 name|width
 operator|/
@@ -921,7 +921,7 @@ literal|2
 expr_stmt|;
 name|center_y
 operator|=
-name|gimage
+name|image
 operator|->
 name|height
 operator|/
@@ -971,7 +971,7 @@ name|MIN
 argument_list|(
 name|offset_x
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|width
 operator|-
@@ -984,7 +984,7 @@ name|MIN
 argument_list|(
 name|offset_y
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|height
 operator|-
@@ -1030,7 +1030,7 @@ expr_stmt|;
 comment|/*  Start a group undo  */
 name|gimp_image_undo_group_start
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_EDIT_PASTE
 argument_list|,
@@ -1048,7 +1048,7 @@ name|gimp_channel_is_empty
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 operator|&&
@@ -1059,7 +1059,7 @@ name|gimp_channel_clear
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|NULL
@@ -1082,7 +1082,7 @@ expr_stmt|;
 else|else
 name|gimp_image_add_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|layer
 argument_list|,
@@ -1092,7 +1092,7 @@ expr_stmt|;
 comment|/*  end the group undo  */
 name|gimp_image_undo_group_end
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 return|return
@@ -1122,7 +1122,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpLayer
 modifier|*
@@ -1216,7 +1216,7 @@ expr_stmt|;
 break|break;
 block|}
 comment|/*  create a new image  (always of type GIMP_RGB)  */
-name|gimage
+name|image
 operator|=
 name|gimp_create_image
 argument_list|(
@@ -1242,7 +1242,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_undo_disable
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 if|if
@@ -1252,7 +1252,7 @@ condition|)
 block|{
 name|gimp_image_set_resolution
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|invoke
 operator|->
@@ -1265,7 +1265,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_set_unit
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|gimp_image_get_unit
 argument_list|(
@@ -1282,7 +1282,7 @@ name|paste
 operator|->
 name|tiles
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|type
 argument_list|,
@@ -1304,7 +1304,7 @@ condition|)
 block|{
 name|g_object_unref
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 return|return
@@ -1313,7 +1313,7 @@ return|;
 block|}
 name|gimp_image_add_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|layer
 argument_list|,
@@ -1322,11 +1322,11 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_undo_enable
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 return|return
-name|gimage
+name|image
 return|;
 block|}
 end_function
@@ -1335,12 +1335,12 @@ begin_function
 specifier|const
 name|gchar
 modifier|*
-DECL|function|gimp_edit_named_cut (GimpImage * gimage,const gchar * name,GimpDrawable * drawable,GimpContext * context)
+DECL|function|gimp_edit_named_cut (GimpImage * image,const gchar * name,GimpDrawable * drawable,GimpContext * context)
 name|gimp_edit_named_cut
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -1364,7 +1364,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|NULL
@@ -1416,7 +1416,7 @@ name|buffer
 operator|=
 name|gimp_edit_extract
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|drawable
 argument_list|,
@@ -1442,7 +1442,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_container_add
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -1479,12 +1479,12 @@ begin_function
 specifier|const
 name|gchar
 modifier|*
-DECL|function|gimp_edit_named_copy (GimpImage * gimage,const gchar * name,GimpDrawable * drawable,GimpContext * context)
+DECL|function|gimp_edit_named_copy (GimpImage * image,const gchar * name,GimpDrawable * drawable,GimpContext * context)
 name|gimp_edit_named_copy
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -1508,7 +1508,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|NULL
@@ -1560,7 +1560,7 @@ name|buffer
 operator|=
 name|gimp_edit_extract
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|drawable
 argument_list|,
@@ -1586,7 +1586,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_container_add
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -1623,12 +1623,12 @@ begin_function
 specifier|const
 name|gchar
 modifier|*
-DECL|function|gimp_edit_named_copy_visible (GimpImage * gimage,const gchar * name,GimpContext * context)
+DECL|function|gimp_edit_named_copy_visible (GimpImage * image,const gchar * name,GimpContext * context)
 name|gimp_edit_named_copy_visible
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -1648,7 +1648,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|NULL
@@ -1677,7 +1677,7 @@ name|buffer
 operator|=
 name|gimp_edit_extract_visible
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|context
 argument_list|)
@@ -1699,7 +1699,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_container_add
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -1734,12 +1734,12 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_edit_clear (GimpImage * gimage,GimpDrawable * drawable,GimpContext * context)
+DECL|function|gimp_edit_clear (GimpImage * image,GimpDrawable * drawable,GimpContext * context)
 name|gimp_edit_clear
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpDrawable
 modifier|*
@@ -1754,7 +1754,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|FALSE
@@ -1796,7 +1796,7 @@ expr_stmt|;
 return|return
 name|gimp_edit_fill_internal
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|drawable
 argument_list|,
@@ -1819,12 +1819,12 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_edit_fill (GimpImage * gimage,GimpDrawable * drawable,GimpContext * context,GimpFillType fill_type)
+DECL|function|gimp_edit_fill (GimpImage * image,GimpDrawable * drawable,GimpContext * context,GimpFillType fill_type)
 name|gimp_edit_fill
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpDrawable
 modifier|*
@@ -1847,7 +1847,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|FALSE
@@ -1964,7 +1964,7 @@ expr_stmt|;
 return|return
 name|gimp_edit_fill
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|drawable
 argument_list|,
@@ -1977,7 +1977,7 @@ block|}
 return|return
 name|gimp_edit_fill_internal
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|drawable
 argument_list|,
@@ -2003,12 +2003,12 @@ begin_function
 specifier|static
 name|GimpBuffer
 modifier|*
-DECL|function|gimp_edit_extract (GimpImage * gimage,GimpDrawable * drawable,GimpContext * context,gboolean cut_pixels)
+DECL|function|gimp_edit_extract (GimpImage * image,GimpDrawable * drawable,GimpContext * context,gboolean cut_pixels)
 name|gimp_edit_extract
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpDrawable
 modifier|*
@@ -2029,14 +2029,14 @@ decl_stmt|;
 name|gboolean
 name|empty
 decl_stmt|;
-comment|/*  See if the gimage mask is empty  */
+comment|/*  See if the image mask is empty  */
 name|empty
 operator|=
 name|gimp_channel_is_empty
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2046,7 +2046,7 @@ name|cut_pixels
 condition|)
 name|gimp_image_undo_group_start
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_EDIT_CUT
 argument_list|,
@@ -2056,14 +2056,14 @@ literal|"Cut"
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*  Cut/copy the mask portion from the gimage  */
+comment|/*  Cut/copy the mask portion from the image  */
 name|tiles
 operator|=
 name|gimp_selection_extract
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|drawable
@@ -2083,13 +2083,13 @@ name|cut_pixels
 condition|)
 name|gimp_image_undo_group_end
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 return|return
 name|gimp_edit_make_buffer
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|,
@@ -2105,12 +2105,12 @@ begin_function
 specifier|static
 name|GimpBuffer
 modifier|*
-DECL|function|gimp_edit_extract_visible (GimpImage * gimage,GimpContext * context)
+DECL|function|gimp_edit_extract_visible (GimpImage * image,GimpContext * context)
 name|gimp_edit_extract_visible
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpContext
 modifier|*
@@ -2148,7 +2148,7 @@ name|gimp_channel_bounds
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 operator|&
@@ -2196,7 +2196,7 @@ name|pickable
 operator|=
 name|GIMP_PICKABLE
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|projection
 argument_list|)
@@ -2293,7 +2293,7 @@ expr_stmt|;
 return|return
 name|gimp_edit_make_buffer
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|,
@@ -2325,7 +2325,7 @@ name|gboolean
 name|mask_empty
 parameter_list|)
 block|{
-comment|/*  Only crop if the gimage mask wasn't empty  */
+comment|/*  Only crop if the image mask wasn't empty  */
 if|if
 condition|(
 name|tiles
@@ -2389,12 +2389,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_edit_fill_internal (GimpImage * gimage,GimpDrawable * drawable,GimpContext * context,GimpFillType fill_type,gdouble opacity,GimpLayerModeEffects paint_mode,const gchar * undo_desc)
+DECL|function|gimp_edit_fill_internal (GimpImage * image,GimpDrawable * drawable,GimpContext * context,GimpFillType fill_type,gdouble opacity,GimpLayerModeEffects paint_mode,const gchar * undo_desc)
 name|gimp_edit_fill_internal
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpDrawable
 modifier|*
@@ -2494,7 +2494,7 @@ name|GIMP_FOREGROUND_FILL
 case|:
 name|gimp_image_get_foreground
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|drawable
 argument_list|,
@@ -2512,7 +2512,7 @@ name|GIMP_TRANSPARENT_FILL
 case|:
 name|gimp_image_get_background
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|drawable
 argument_list|,
@@ -2555,7 +2555,7 @@ literal|255
 expr_stmt|;
 name|gimp_image_transform_color
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|drawable
 argument_list|,
@@ -2585,7 +2585,7 @@ name|pat_buf
 operator|=
 name|gimp_image_transform_temp_buf
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|drawable
 argument_list|,

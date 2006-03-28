@@ -127,7 +127,7 @@ name|lut
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -148,7 +148,7 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(

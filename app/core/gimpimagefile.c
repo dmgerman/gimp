@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2377060103
+DECL|enum|__anon290b567c0103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -219,7 +219,7 @@ name|imagefile
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gint
 name|size
@@ -1342,7 +1342,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_imagefile_save_thumbnail (GimpImagefile * imagefile,const gchar * mime_type,GimpImage * gimage)
+DECL|function|gimp_imagefile_save_thumbnail (GimpImagefile * imagefile,const gchar * mime_type,GimpImage * image)
 name|gimp_imagefile_save_thumbnail
 parameter_list|(
 name|GimpImagefile
@@ -1356,7 +1356,7 @@ name|mime_type
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 block|{
 name|gint
@@ -1387,7 +1387,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|FALSE
@@ -1418,7 +1418,7 @@ name|thumbnail
 argument_list|,
 name|mime_type
 argument_list|,
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|success
@@ -1427,7 +1427,7 @@ name|gimp_imagefile_save_thumb
 argument_list|(
 name|imagefile
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|size
 argument_list|,
@@ -2674,7 +2674,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_imagefile_save_thumb (GimpImagefile * imagefile,GimpImage * gimage,gint size,gboolean replace,GError ** error)
+DECL|function|gimp_imagefile_save_thumb (GimpImagefile * imagefile,GimpImage * image,gint size,gboolean replace,GError ** error)
 name|gimp_imagefile_save_thumb
 parameter_list|(
 name|GimpImagefile
@@ -2683,7 +2683,7 @@ name|imagefile
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gint
 name|size
@@ -2730,13 +2730,13 @@ name|TRUE
 return|;
 if|if
 condition|(
-name|gimage
+name|image
 operator|->
 name|width
 operator|<=
 name|size
 operator|&&
-name|gimage
+name|image
 operator|->
 name|height
 operator|<=
@@ -2745,13 +2745,13 @@ condition|)
 block|{
 name|width
 operator|=
-name|gimage
+name|image
 operator|->
 name|width
 expr_stmt|;
 name|height
 operator|=
-name|gimage
+name|image
 operator|->
 name|height
 expr_stmt|;
@@ -2769,11 +2769,11 @@ else|else
 block|{
 if|if
 condition|(
-name|gimage
+name|image
 operator|->
 name|width
 operator|<
-name|gimage
+name|image
 operator|->
 name|height
 condition|)
@@ -2791,12 +2791,12 @@ argument_list|,
 operator|(
 name|size
 operator|*
-name|gimage
+name|image
 operator|->
 name|width
 operator|)
 operator|/
-name|gimage
+name|image
 operator|->
 name|height
 argument_list|)
@@ -2817,12 +2817,12 @@ argument_list|,
 operator|(
 name|size
 operator|*
-name|gimage
+name|image
 operator|->
 name|height
 operator|)
 operator|/
-name|gimage
+name|image
 operator|->
 name|width
 argument_list|)
@@ -2835,7 +2835,7 @@ name|gimp_viewable_get_new_pixbuf
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|width

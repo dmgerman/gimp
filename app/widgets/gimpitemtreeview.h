@@ -35,7 +35,7 @@ parameter_list|(
 specifier|const
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_typedef
@@ -53,7 +53,7 @@ parameter_list|(
 specifier|const
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_typedef
@@ -69,7 +69,7 @@ function_decl|)
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpItem
 modifier|*
@@ -89,7 +89,7 @@ function_decl|)
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpItem
 modifier|*
@@ -120,7 +120,7 @@ function_decl|)
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpItem
 modifier|*
@@ -143,7 +143,7 @@ function_decl|)
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpItem
 modifier|*
@@ -164,7 +164,7 @@ function_decl|)
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_typedef
@@ -255,10 +255,10 @@ name|GimpContext
 modifier|*
 name|context
 decl_stmt|;
-DECL|member|gimage
+DECL|member|image
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 DECL|member|edit_button
 name|GtkWidget
@@ -344,7 +344,7 @@ name|view
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 DECL|member|item_type
@@ -490,7 +490,7 @@ name|view_border_width
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpMenuFactory
 modifier|*
@@ -519,7 +519,7 @@ name|view
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl

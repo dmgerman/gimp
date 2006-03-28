@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1404630103
+DECL|enum|__anon2c5b7cde0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -848,7 +848,7 @@ name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|gimp_tool_control_activate

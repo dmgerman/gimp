@@ -53,7 +53,7 @@ name|gimp_vectors_compat_new
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -79,7 +79,7 @@ name|gimp_vectors_compat_is_compatible
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -522,19 +522,19 @@ end_function
 begin_function
 name|GimpUndoStack
 modifier|*
-DECL|function|gimp_undo_stack_new (GimpImage * gimage)
+DECL|function|gimp_undo_stack_new (GimpImage * image)
 name|gimp_undo_stack_new
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 block|{
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|NULL
@@ -547,7 +547,7 @@ name|GIMP_TYPE_UNDO_STACK
 argument_list|,
 literal|"image"
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|NULL
 argument_list|)

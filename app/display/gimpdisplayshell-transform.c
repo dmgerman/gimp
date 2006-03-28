@@ -385,7 +385,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 argument_list|,
@@ -591,7 +591,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 argument_list|,
@@ -788,7 +788,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 argument_list|,
@@ -956,7 +956,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 argument_list|,
@@ -1117,7 +1117,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|width
 condition|)
@@ -1127,7 +1127,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|width
 expr_stmt|;
@@ -1139,7 +1139,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|height
 condition|)
@@ -1149,7 +1149,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|height
 expr_stmt|;

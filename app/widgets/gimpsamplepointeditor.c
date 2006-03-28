@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c929e40103
+DECL|enum|__anon2a97c1a00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -199,7 +199,7 @@ name|editor
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -211,7 +211,7 @@ name|gimp_sample_point_editor_point_added
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpSamplePoint
 modifier|*
@@ -231,7 +231,7 @@ name|gimp_sample_point_editor_point_removed
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpSamplePoint
 modifier|*
@@ -251,7 +251,7 @@ name|gimp_sample_point_editor_point_update
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpSamplePoint
 modifier|*
@@ -271,7 +271,7 @@ name|gimp_sample_point_editor_proj_update
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gboolean
 name|now
@@ -1021,7 +1021,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_sample_point_editor_set_image (GimpImageEditor * image_editor,GimpImage * gimage)
+DECL|function|gimp_sample_point_editor_set_image (GimpImageEditor * image_editor,GimpImage * image)
 name|gimp_sample_point_editor_set_image
 parameter_list|(
 name|GimpImageEditor
@@ -1030,7 +1030,7 @@ name|image_editor
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 block|{
 name|GimpSamplePointEditor
@@ -1046,14 +1046,14 @@ if|if
 condition|(
 name|image_editor
 operator|->
-name|gimage
+name|image
 condition|)
 block|{
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
 name|image_editor
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|gimp_sample_point_editor_point_added
 argument_list|,
@@ -1064,7 +1064,7 @@ name|g_signal_handlers_disconnect_by_func
 argument_list|(
 name|image_editor
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|gimp_sample_point_editor_point_removed
 argument_list|,
@@ -1075,7 +1075,7 @@ name|g_signal_handlers_disconnect_by_func
 argument_list|(
 name|image_editor
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|gimp_sample_point_editor_point_update
 argument_list|,
@@ -1086,7 +1086,7 @@ name|g_signal_handlers_disconnect_by_func
 argument_list|(
 name|image_editor
 operator|->
-name|gimage
+name|image
 operator|->
 name|projection
 argument_list|,
@@ -1105,17 +1105,17 @@ name|set_image
 argument_list|(
 name|image_editor
 argument_list|,
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimage
+name|image
 condition|)
 block|{
 name|g_signal_connect
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 literal|"sample-point-added"
 argument_list|,
@@ -1129,7 +1129,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 literal|"sample-point-removed"
 argument_list|,
@@ -1143,7 +1143,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 literal|"update-sample-point"
 argument_list|,
@@ -1157,7 +1157,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|projection
 argument_list|,
@@ -1354,12 +1354,12 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_sample_point_editor_point_added (GimpImage * gimage,GimpSamplePoint * sample_point,GimpSamplePointEditor * editor)
+DECL|function|gimp_sample_point_editor_point_added (GimpImage * image,GimpSamplePoint * sample_point,GimpSamplePointEditor * editor)
 name|gimp_sample_point_editor_point_added
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpSamplePoint
 modifier|*
@@ -1381,12 +1381,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_sample_point_editor_point_removed (GimpImage * gimage,GimpSamplePoint * sample_point,GimpSamplePointEditor * editor)
+DECL|function|gimp_sample_point_editor_point_removed (GimpImage * image,GimpSamplePoint * sample_point,GimpSamplePointEditor * editor)
 name|gimp_sample_point_editor_point_removed
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpSamplePoint
 modifier|*
@@ -1408,12 +1408,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_sample_point_editor_point_update (GimpImage * gimage,GimpSamplePoint * sample_point,GimpSamplePointEditor * editor)
+DECL|function|gimp_sample_point_editor_point_update (GimpImage * image,GimpSamplePoint * sample_point,GimpSamplePointEditor * editor)
 name|gimp_sample_point_editor_point_update
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpSamplePoint
 modifier|*
@@ -1429,7 +1429,7 @@ name|i
 init|=
 name|g_list_index
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|sample_points
 argument_list|,
@@ -1455,12 +1455,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_sample_point_editor_proj_update (GimpImage * gimage,gboolean now,gint x,gint y,gint width,gint height,GimpSamplePointEditor * editor)
+DECL|function|gimp_sample_point_editor_proj_update (GimpImage * image,gboolean now,gint x,gint y,gint width,gint height,GimpSamplePointEditor * editor)
 name|gimp_sample_point_editor_proj_update
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gboolean
 name|now
@@ -1513,7 +1513,7 @@ name|g_list_length
 argument_list|(
 name|image_editor
 operator|->
-name|gimage
+name|image
 operator|->
 name|sample_points
 argument_list|)
@@ -1529,7 +1529,7 @@ name|list
 operator|=
 name|image_editor
 operator|->
-name|gimage
+name|image
 operator|->
 name|sample_points
 init|;
@@ -1635,7 +1635,7 @@ if|if
 condition|(
 name|image_editor
 operator|->
-name|gimage
+name|image
 condition|)
 name|n_points
 operator|=
@@ -1647,7 +1647,7 @@ name|g_list_length
 argument_list|(
 name|image_editor
 operator|->
-name|gimage
+name|image
 operator|->
 name|sample_points
 argument_list|)
@@ -1857,7 +1857,7 @@ condition|(
 operator|!
 name|image_editor
 operator|->
-name|gimage
+name|image
 condition|)
 return|return
 name|FALSE
@@ -1872,7 +1872,7 @@ name|g_list_length
 argument_list|(
 name|image_editor
 operator|->
-name|gimage
+name|image
 operator|->
 name|sample_points
 argument_list|)
@@ -1888,7 +1888,7 @@ name|list
 operator|=
 name|image_editor
 operator|->
-name|gimage
+name|image
 operator|->
 name|sample_points
 init|;
@@ -1965,7 +1965,7 @@ name|gimp_image_pick_color
 argument_list|(
 name|image_editor
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|NULL
 argument_list|,

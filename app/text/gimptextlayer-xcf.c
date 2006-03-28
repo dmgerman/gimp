@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b6ac1e0103
+DECL|enum|__anon27dee9d20103
 block|{
 DECL|enumerator|TEXT_LAYER_XCF_NONE
 name|TEXT_LAYER_XCF_NONE
@@ -591,7 +591,7 @@ argument_list|)
 expr_stmt|;
 name|item
 operator|->
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -615,7 +615,7 @@ name|g_hash_table_replace
 argument_list|(
 name|item
 operator|->
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->

@@ -1008,7 +1008,7 @@ argument_list|)
 operator|/
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|xresolution
 operator|-
@@ -1041,7 +1041,7 @@ argument_list|)
 operator|/
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|yresolution
 operator|-

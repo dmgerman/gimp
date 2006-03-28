@@ -843,11 +843,11 @@ name|pressure_options
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|src_gimage
+name|src_image
 init|=
 name|NULL
 decl_stmt|;
@@ -910,7 +910,7 @@ decl_stmt|;
 name|gint
 name|offset_y
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -926,7 +926,7 @@ name|gimp_paint_options_get_fade
 argument_list|(
 name|paint_options
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|paint_core
 operator|->
@@ -980,7 +980,7 @@ operator|->
 name|src_drawable
 argument_list|)
 expr_stmt|;
-name|src_gimage
+name|src_image
 operator|=
 name|gimp_pickable_get_image
 argument_list|(
@@ -1003,7 +1003,7 @@ name|src_pickable
 operator|=
 name|GIMP_PICKABLE
 argument_list|(
-name|src_gimage
+name|src_image
 operator|->
 name|projection
 argument_list|)
@@ -1176,7 +1176,7 @@ name|y1
 operator|)
 condition|)
 return|return;
-comment|/*  If the source gimage is different from the destination,        *  then we should copy straight from the destination image        *  to the canvas.        *  Otherwise, we need a call to get_orig_image to make sure        *  we get a copy of the unblemished (offset) image        */
+comment|/*  If the source image is different from the destination,        *  then we should copy straight from the destination image        *  to the canvas.        *  Otherwise, we need a call to get_orig_image to make sure        *  we get a copy of the unblemished (offset) image        */
 if|if
 condition|(
 operator|(
@@ -1185,9 +1185,9 @@ operator|->
 name|sample_merged
 operator|&&
 operator|(
-name|src_gimage
+name|src_image
 operator|!=
-name|gimage
+name|image
 operator|)
 operator|)
 operator|||
@@ -1465,9 +1465,9 @@ name|GIMP_IMAGE_CLONE
 case|:
 name|gimp_clone_line_image
 argument_list|(
-name|gimage
+name|image
 argument_list|,
-name|src_gimage
+name|src_image
 argument_list|,
 name|drawable
 argument_list|,
@@ -1502,7 +1502,7 @@ name|GIMP_PATTERN_CLONE
 case|:
 name|gimp_clone_line_pattern
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|drawable
 argument_list|,

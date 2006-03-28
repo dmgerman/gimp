@@ -60,26 +60,26 @@ end_include
 begin_function
 name|GimpGrid
 modifier|*
-DECL|function|gimp_image_get_grid (GimpImage * gimage)
+DECL|function|gimp_image_get_grid (GimpImage * image)
 name|gimp_image_get_grid
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 block|{
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
 return|return
-name|gimage
+name|image
 operator|->
 name|grid
 return|;
@@ -88,12 +88,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_set_grid (GimpImage * gimage,GimpGrid * grid,gboolean push_undo)
+DECL|function|gimp_image_set_grid (GimpImage * image,GimpGrid * grid,gboolean push_undo)
 name|gimp_image_set_grid
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpGrid
 modifier|*
@@ -107,7 +107,7 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -125,7 +125,7 @@ name|gimp_config_is_equal_to
 argument_list|(
 name|GIMP_CONFIG
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|grid
 argument_list|)
@@ -143,14 +143,14 @@ name|push_undo
 condition|)
 name|gimp_image_undo_push_image_grid
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|_
 argument_list|(
 literal|"Grid"
 argument_list|)
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|grid
 argument_list|)
@@ -164,7 +164,7 @@ argument_list|)
 argument_list|,
 name|G_OBJECT
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|grid
 argument_list|)

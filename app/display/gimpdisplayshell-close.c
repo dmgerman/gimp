@@ -120,7 +120,7 @@ name|shell
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -203,7 +203,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -213,43 +213,43 @@ name|shell
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 expr_stmt|;
 comment|/*  FIXME: gimp_busy HACK not really appropriate here because we only    *  want to prevent the busy image and display to be closed.  --Mitch    */
 if|if
 condition|(
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
 name|busy
 condition|)
 return|return;
-comment|/*  If the image has been modified, give the user a chance to save    *  it before nuking it--this only applies if its the last view    *  to an image canvas.  (a gimage with disp_count = 1)    */
+comment|/*  If the image has been modified, give the user a chance to save    *  it before nuking it--this only applies if its the last view    *  to an image canvas.  (a image with disp_count = 1)    */
 if|if
 condition|(
 operator|!
 name|kill_it
 operator|&&
-name|gimage
+name|image
 operator|->
 name|disp_count
 operator|==
 literal|1
 operator|&&
-name|gimage
+name|image
 operator|->
 name|dirty
 operator|&&
 name|GIMP_DISPLAY_CONFIG
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -263,7 +263,7 @@ name|gimp_display_shell_close_dialog
 argument_list|(
 name|shell
 argument_list|,
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -295,7 +295,7 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_display_shell_close_dialog (GimpDisplayShell * shell,GimpImage * gimage)
+DECL|function|gimp_display_shell_close_dialog (GimpDisplayShell * shell,GimpImage * image)
 name|gimp_display_shell_close_dialog
 parameter_list|(
 name|GimpDisplayShell
@@ -304,7 +304,7 @@ name|shell
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 block|{
 name|GtkWidget
@@ -360,7 +360,7 @@ name|file_utils_uri_display_basename
 argument_list|(
 name|gimp_image_get_uri
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -531,7 +531,7 @@ name|box
 expr_stmt|;
 name|g_signal_connect_object
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 literal|"name-changed"
 argument_list|,
@@ -547,7 +547,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_display_shell_close_name_changed
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|box
 argument_list|)
@@ -603,7 +603,7 @@ argument_list|)
 argument_list|,
 literal|"gimp-image"
 argument_list|,
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_close_time_changed
@@ -873,7 +873,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|dirty
 condition|)

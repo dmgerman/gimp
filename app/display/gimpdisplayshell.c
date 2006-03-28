@@ -263,7 +263,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon296ce9cb0103
+DECL|enum|__anon27839a210103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -276,7 +276,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon296ce9cb0203
+DECL|enum|__anon27839a210203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1961,7 +1961,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -2090,7 +2090,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|)
@@ -2178,7 +2178,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|)
@@ -2477,7 +2477,7 @@ name|image_width
 operator|=
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|width
 expr_stmt|;
@@ -2485,7 +2485,7 @@ name|image_height
 operator|=
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|height
 expr_stmt|;
@@ -2495,7 +2495,7 @@ name|GIMP_DISPLAY_CONFIG
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -4496,7 +4496,7 @@ name|color_config
 operator|=
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -4569,7 +4569,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4862,7 +4862,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|guides
 condition|)
@@ -4883,7 +4883,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|grid
 condition|)
@@ -4913,7 +4913,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 condition|)
 block|{
@@ -4949,7 +4949,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -4977,7 +4977,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|coords
 operator|->
@@ -5047,7 +5047,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|coords
 operator|->
@@ -5208,7 +5208,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 operator|)
 condition|)
@@ -5244,7 +5244,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|x1
@@ -5370,7 +5370,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|x1
@@ -5949,7 +5949,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|)
@@ -6023,7 +6023,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|,
@@ -6100,7 +6100,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|,
@@ -6157,7 +6157,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 operator|/
 operator|(
@@ -6169,7 +6169,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 operator|)
 expr_stmt|;
@@ -6252,7 +6252,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|width
@@ -6384,7 +6384,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|width
 argument_list|)
@@ -6399,7 +6399,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|height
 argument_list|)

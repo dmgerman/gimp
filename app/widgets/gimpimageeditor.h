@@ -108,10 +108,10 @@ name|GimpContext
 modifier|*
 name|context
 decl_stmt|;
-DECL|member|gimage
+DECL|member|image
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 block|}
 struct|;
@@ -140,7 +140,7 @@ name|editor
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 block|}
@@ -167,7 +167,7 @@ name|editor
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl

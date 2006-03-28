@@ -504,7 +504,7 @@ name|gimp_channel_new
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gint
 name|width
@@ -532,7 +532,7 @@ name|gimp_channel_new_from_alpha
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpDrawable
 modifier|*
@@ -558,7 +558,7 @@ name|gimp_channel_new_from_component
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpChannelType
 name|type
@@ -692,7 +692,7 @@ name|gimp_channel_new_mask
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gint
 name|width

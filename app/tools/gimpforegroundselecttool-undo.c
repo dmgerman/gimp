@@ -72,7 +72,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ecd1c30108
+DECL|struct|__anon2c0f59110108
 block|{
 DECL|member|tool_ID
 name|gint
@@ -120,12 +120,12 @@ end_function_decl
 
 begin_function
 name|gboolean
-DECL|function|gimp_foreground_select_tool_push_undo (GimpImage * gimage,const gchar * undo_desc,gint tool_ID)
+DECL|function|gimp_foreground_select_tool_push_undo (GimpImage * image,const gchar * undo_desc,gint tool_ID)
 name|gimp_foreground_select_tool_push_undo
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -147,7 +147,7 @@ name|new
 operator|=
 name|gimp_image_undo_push
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_TYPE_UNDO
 argument_list|,
@@ -228,7 +228,7 @@ name|tool_manager_get_active
 argument_list|(
 name|undo
 operator|->
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|)

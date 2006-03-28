@@ -108,7 +108,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon291f70150103
+DECL|enum|__anon2bdf06a30103
 block|{
 DECL|enumerator|AUTO_CROP_NOTHING
 name|AUTO_CROP_NOTHING
@@ -235,12 +235,12 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_image_crop (GimpImage * gimage,GimpContext * context,gint x1,gint y1,gint x2,gint y2,gboolean active_layer_only,gboolean crop_layers)
+DECL|function|gimp_image_crop (GimpImage * image,GimpContext * context,gint x1,gint y1,gint x2,gint y2,gboolean active_layer_only,gboolean crop_layers)
 name|gimp_image_crop
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpContext
 modifier|*
@@ -274,7 +274,7 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -312,7 +312,7 @@ condition|)
 return|return;
 name|gimp_set_busy
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|)
@@ -335,7 +335,7 @@ name|layer
 operator|=
 name|gimp_image_get_active_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|gimp_item_offsets
@@ -393,7 +393,7 @@ name|g_object_freeze_notify
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -403,7 +403,7 @@ name|crop_layers
 condition|)
 name|gimp_image_undo_group_start
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_IMAGE_CROP
 argument_list|,
@@ -416,7 +416,7 @@ expr_stmt|;
 else|else
 name|gimp_image_undo_group_start
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_IMAGE_RESIZE
 argument_list|,
@@ -429,7 +429,7 @@ expr_stmt|;
 comment|/*  Push the image size to the stack  */
 name|gimp_image_undo_push_image_size
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|NULL
 argument_list|)
@@ -437,7 +437,7 @@ expr_stmt|;
 comment|/*  Set the new width and height  */
 name|g_object_set
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 literal|"width"
 argument_list|,
@@ -457,7 +457,7 @@ name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|channels
 argument_list|)
@@ -509,7 +509,7 @@ name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|vectors
 argument_list|)
@@ -561,7 +561,7 @@ name|GIMP_ITEM
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 argument_list|,
@@ -583,7 +583,7 @@ name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|layers
 argument_list|)
@@ -663,7 +663,7 @@ name|off_x
 argument_list|,
 literal|0
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|width
 argument_list|)
@@ -676,7 +676,7 @@ name|off_y
 argument_list|,
 literal|0
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|height
 argument_list|)
@@ -694,7 +694,7 @@ name|off_x
 argument_list|,
 literal|0
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|width
 argument_list|)
@@ -712,7 +712,7 @@ name|off_y
 argument_list|,
 literal|0
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|height
 argument_list|)
@@ -767,7 +767,7 @@ expr_stmt|;
 else|else
 name|gimp_image_remove_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_LAYER
 argument_list|(
@@ -780,7 +780,7 @@ block|}
 comment|/*  Reposition or remove all guides  */
 name|list
 operator|=
-name|gimage
+name|image
 operator|->
 name|guides
 expr_stmt|;
@@ -892,7 +892,7 @@ name|remove_guide
 condition|)
 name|gimp_image_remove_guide
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|guide
 argument_list|,
@@ -910,7 +910,7 @@ name|position
 condition|)
 name|gimp_image_move_guide
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|guide
 argument_list|,
@@ -923,7 +923,7 @@ block|}
 comment|/*  Reposition or remove sample points  */
 name|list
 operator|=
-name|gimage
+name|image
 operator|->
 name|sample_points
 expr_stmt|;
@@ -1024,7 +1024,7 @@ name|remove_sample_point
 condition|)
 name|gimp_image_remove_sample_point
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|sample_point
 argument_list|,
@@ -1048,7 +1048,7 @@ name|y
 condition|)
 name|gimp_image_move_sample_point
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|sample_point
 argument_list|,
@@ -1062,22 +1062,22 @@ expr_stmt|;
 block|}
 name|gimp_image_undo_group_end
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|gimp_image_update
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|width
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|height
 argument_list|)
@@ -1086,7 +1086,7 @@ name|gimp_viewable_size_changed
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1094,14 +1094,14 @@ name|g_object_thaw_notify
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
 name|gimp_unset_busy
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|)
@@ -1111,12 +1111,12 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_crop_auto_shrink (GimpImage * gimage,gint x1,gint y1,gint x2,gint y2,gboolean active_drawable_only,gint * shrunk_x1,gint * shrunk_y1,gint * shrunk_x2,gint * shrunk_y2)
+DECL|function|gimp_image_crop_auto_shrink (GimpImage * image,gint x1,gint y1,gint x2,gint y2,gboolean active_drawable_only,gint * shrunk_x1,gint * shrunk_y1,gint * shrunk_x2,gint * shrunk_y2)
 name|gimp_image_crop_auto_shrink
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gint
 name|x1
@@ -1216,7 +1216,7 @@ name|FALSE
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|gimage
+name|image
 operator|!=
 name|NULL
 argument_list|,
@@ -1227,7 +1227,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|FALSE
@@ -1271,7 +1271,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_set_busy
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|)
@@ -1286,7 +1286,7 @@ name|active_drawable
 operator|=
 name|gimp_image_active_drawable
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 if|if
@@ -1311,7 +1311,7 @@ name|pickable
 operator|=
 name|GIMP_PICKABLE
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|projection
 argument_list|)
@@ -1820,7 +1820,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_unset_busy
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|)

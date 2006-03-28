@@ -95,12 +95,12 @@ end_include
 
 begin_function
 name|void
-DECL|function|gimp_image_resize (GimpImage * gimage,GimpContext * context,gint new_width,gint new_height,gint offset_x,gint offset_y,GimpProgress * progress)
+DECL|function|gimp_image_resize (GimpImage * image,GimpContext * context,gint new_width,gint new_height,gint offset_x,gint offset_y,GimpProgress * progress)
 name|gimp_image_resize
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpContext
 modifier|*
@@ -125,7 +125,7 @@ parameter_list|)
 block|{
 name|gimp_image_resize_with_layers
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|context
 argument_list|,
@@ -147,12 +147,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_resize_with_layers (GimpImage * gimage,GimpContext * context,gint new_width,gint new_height,gint offset_x,gint offset_y,GimpImageResizeLayers resize_layers,GimpProgress * progress)
+DECL|function|gimp_image_resize_with_layers (GimpImage * image,GimpContext * context,gint new_width,gint new_height,gint offset_x,gint offset_y,GimpImageResizeLayers resize_layers,GimpProgress * progress)
 name|gimp_image_resize_with_layers
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpContext
 modifier|*
@@ -199,7 +199,7 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -236,7 +236,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_set_busy
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|)
@@ -244,19 +244,19 @@ expr_stmt|;
 name|progress_max
 operator|=
 operator|(
-name|gimage
+name|image
 operator|->
 name|channels
 operator|->
 name|num_children
 operator|+
-name|gimage
+name|image
 operator|->
 name|layers
 operator|->
 name|num_children
 operator|+
-name|gimage
+name|image
 operator|->
 name|vectors
 operator|->
@@ -270,13 +270,13 @@ name|g_object_freeze_notify
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_image_undo_group_start
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_IMAGE_RESIZE
 argument_list|,
@@ -288,20 +288,20 @@ argument_list|)
 expr_stmt|;
 name|old_width
 operator|=
-name|gimage
+name|image
 operator|->
 name|width
 expr_stmt|;
 name|old_height
 operator|=
-name|gimage
+name|image
 operator|->
 name|height
 expr_stmt|;
 comment|/*  Push the image size to the stack  */
 name|gimp_image_undo_push_image_size
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|NULL
 argument_list|)
@@ -309,7 +309,7 @@ expr_stmt|;
 comment|/*  Set the new width and height  */
 name|g_object_set
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 literal|"width"
 argument_list|,
@@ -329,7 +329,7 @@ name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|channels
 argument_list|)
@@ -391,7 +391,7 @@ name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|vectors
 argument_list|)
@@ -453,7 +453,7 @@ name|GIMP_ITEM
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 argument_list|,
@@ -489,7 +489,7 @@ name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|layers
 argument_list|)
@@ -658,7 +658,7 @@ block|}
 comment|/*  Reposition or remove all guides  */
 name|list
 operator|=
-name|gimage
+name|image
 operator|->
 name|guides
 expr_stmt|;
@@ -754,7 +754,7 @@ name|remove_guide
 condition|)
 name|gimp_image_remove_guide
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|guide
 argument_list|,
@@ -772,7 +772,7 @@ name|position
 condition|)
 name|gimp_image_move_guide
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|guide
 argument_list|,
@@ -785,7 +785,7 @@ block|}
 comment|/*  Reposition or remove sample points  */
 name|list
 operator|=
-name|gimage
+name|image
 operator|->
 name|sample_points
 expr_stmt|;
@@ -886,7 +886,7 @@ name|remove_sample_point
 condition|)
 name|gimp_image_remove_sample_point
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|sample_point
 argument_list|,
@@ -910,7 +910,7 @@ name|y
 condition|)
 name|gimp_image_move_sample_point
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|sample_point
 argument_list|,
@@ -924,14 +924,14 @@ expr_stmt|;
 block|}
 name|gimp_image_undo_group_end
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|gimp_viewable_size_changed
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -939,13 +939,13 @@ name|g_object_thaw_notify
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_unset_busy
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|)
@@ -955,12 +955,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_resize_to_layers (GimpImage * gimage,GimpContext * context,GimpProgress * progress)
+DECL|function|gimp_image_resize_to_layers (GimpImage * image,GimpContext * context,GimpProgress * progress)
 name|gimp_image_resize_to_layers
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpContext
 modifier|*
@@ -986,7 +986,7 @@ name|list
 init|=
 name|GIMP_LIST
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|layers
 argument_list|)
@@ -1123,7 +1123,7 @@ expr_stmt|;
 block|}
 name|gimp_image_resize
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|context
 argument_list|,

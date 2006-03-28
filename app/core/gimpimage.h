@@ -527,7 +527,7 @@ function_decl|)
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 DECL|member|alpha_changed
@@ -539,7 +539,7 @@ function_decl|)
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 DECL|member|floating_selection_changed
@@ -551,7 +551,7 @@ function_decl|)
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 DECL|member|active_layer_changed
@@ -563,7 +563,7 @@ function_decl|)
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 DECL|member|active_channel_changed
@@ -575,7 +575,7 @@ function_decl|)
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 DECL|member|active_vectors_changed
@@ -587,7 +587,7 @@ function_decl|)
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 DECL|member|component_visibility_changed
@@ -599,7 +599,7 @@ function_decl|)
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpChannelType
 name|channel
@@ -614,7 +614,7 @@ function_decl|)
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpChannelType
 name|channel
@@ -629,7 +629,7 @@ function_decl|)
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 DECL|member|resolution_changed
@@ -641,7 +641,7 @@ function_decl|)
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 DECL|member|unit_changed
@@ -653,7 +653,7 @@ function_decl|)
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 DECL|member|quick_mask_changed
@@ -665,7 +665,7 @@ function_decl|)
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 DECL|member|selection_control
@@ -677,7 +677,7 @@ function_decl|)
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpSelectionControl
 name|control
@@ -692,7 +692,7 @@ function_decl|)
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpDirtyMask
 name|dirty_mask
@@ -707,7 +707,7 @@ function_decl|)
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpDirtyMask
 name|dirty_mask
@@ -722,7 +722,7 @@ function_decl|)
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gint
 name|x
@@ -746,7 +746,7 @@ function_decl|)
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpGuide
 modifier|*
@@ -762,7 +762,7 @@ function_decl|)
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpSamplePoint
 modifier|*
@@ -778,7 +778,7 @@ function_decl|)
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpSamplePoint
 modifier|*
@@ -794,7 +794,7 @@ function_decl|)
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpSamplePoint
 modifier|*
@@ -810,7 +810,7 @@ function_decl|)
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gint
 name|color_index
@@ -825,7 +825,7 @@ function_decl|)
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpUndoEvent
 name|event
@@ -844,7 +844,7 @@ function_decl|)
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 block|}
@@ -889,7 +889,7 @@ parameter_list|(
 specifier|const
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -901,7 +901,7 @@ parameter_list|(
 specifier|const
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -926,7 +926,7 @@ parameter_list|(
 specifier|const
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -952,7 +952,7 @@ name|gimp_image_set_uri
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -971,7 +971,7 @@ parameter_list|(
 specifier|const
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -982,7 +982,7 @@ name|gimp_image_set_filename
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -1000,7 +1000,7 @@ parameter_list|(
 specifier|const
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1011,7 +1011,7 @@ name|gimp_image_set_save_proc
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|PlugInProcDef
 modifier|*
@@ -1028,7 +1028,7 @@ parameter_list|(
 specifier|const
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1039,7 +1039,7 @@ name|gimp_image_set_resolution
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gdouble
 name|xres
@@ -1057,7 +1057,7 @@ parameter_list|(
 specifier|const
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gdouble
 modifier|*
@@ -1076,7 +1076,7 @@ name|gimp_image_resolution_changed
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1087,7 +1087,7 @@ name|gimp_image_set_unit
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpUnit
 name|unit
@@ -1102,7 +1102,7 @@ parameter_list|(
 specifier|const
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1113,7 +1113,7 @@ name|gimp_image_unit_changed
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1125,7 +1125,7 @@ parameter_list|(
 specifier|const
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1137,7 +1137,7 @@ parameter_list|(
 specifier|const
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1149,7 +1149,7 @@ parameter_list|(
 specifier|const
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1161,7 +1161,7 @@ parameter_list|(
 specifier|const
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1174,7 +1174,7 @@ parameter_list|(
 specifier|const
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1185,7 +1185,7 @@ name|gimp_image_floating_selection_changed
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1198,7 +1198,7 @@ parameter_list|(
 specifier|const
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1209,7 +1209,7 @@ name|gimp_image_mask_changed
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1221,7 +1221,7 @@ parameter_list|(
 specifier|const
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpChannelType
 name|channel
@@ -1235,7 +1235,7 @@ name|gimp_image_set_component_active
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpChannelType
 name|type
@@ -1253,7 +1253,7 @@ parameter_list|(
 specifier|const
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpChannelType
 name|type
@@ -1267,7 +1267,7 @@ name|gimp_image_set_component_visible
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpChannelType
 name|type
@@ -1285,7 +1285,7 @@ parameter_list|(
 specifier|const
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpChannelType
 name|type
@@ -1299,7 +1299,7 @@ name|gimp_image_mode_changed
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1310,7 +1310,7 @@ name|gimp_image_alpha_changed
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1321,7 +1321,7 @@ name|gimp_image_update
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gint
 name|x
@@ -1344,7 +1344,7 @@ name|gimp_image_update_guide
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpGuide
 modifier|*
@@ -1359,7 +1359,7 @@ name|gimp_image_update_sample_point
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpSamplePoint
 modifier|*
@@ -1374,7 +1374,7 @@ name|gimp_image_sample_point_added
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpSamplePoint
 modifier|*
@@ -1389,7 +1389,7 @@ name|gimp_image_sample_point_removed
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpSamplePoint
 modifier|*
@@ -1404,7 +1404,7 @@ name|gimp_image_colormap_changed
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gint
 name|col
@@ -1418,7 +1418,7 @@ name|gimp_image_selection_control
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpSelectionControl
 name|control
@@ -1432,7 +1432,7 @@ name|gimp_image_quick_mask_changed
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1448,7 +1448,7 @@ parameter_list|(
 specifier|const
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1459,7 +1459,7 @@ name|gimp_image_undo_enable
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1470,7 +1470,7 @@ name|gimp_image_undo_disable
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1481,7 +1481,7 @@ name|gimp_image_undo_freeze
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1492,7 +1492,7 @@ name|gimp_image_undo_thaw
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1503,7 +1503,7 @@ name|gimp_image_undo_event
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpUndoEvent
 name|event
@@ -1521,7 +1521,7 @@ name|gimp_image_dirty
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpDirtyMask
 name|dirty_mask
@@ -1535,7 +1535,7 @@ name|gimp_image_clean
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpDirtyMask
 name|dirty_mask
@@ -1549,7 +1549,7 @@ name|gimp_image_clean_all
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1564,7 +1564,7 @@ name|gimp_image_flush
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1580,7 +1580,7 @@ parameter_list|(
 specifier|const
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 specifier|const
 name|GimpDrawable
@@ -1605,7 +1605,7 @@ parameter_list|(
 specifier|const
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 specifier|const
 name|GimpDrawable
@@ -1630,7 +1630,7 @@ parameter_list|(
 specifier|const
 name|GimpImage
 modifier|*
-name|src_gimage
+name|src_image
 parameter_list|,
 name|GimpImageType
 name|src_type
@@ -1654,7 +1654,7 @@ parameter_list|(
 specifier|const
 name|GimpImage
 modifier|*
-name|dest_gimage
+name|dest_image
 parameter_list|,
 specifier|const
 name|GimpDrawable
@@ -1680,7 +1680,7 @@ parameter_list|(
 specifier|const
 name|GimpImage
 modifier|*
-name|dest_gimage
+name|dest_image
 parameter_list|,
 specifier|const
 name|GimpDrawable
@@ -1710,7 +1710,7 @@ parameter_list|(
 specifier|const
 name|GimpImage
 modifier|*
-name|dest_gimage
+name|dest_image
 parameter_list|,
 specifier|const
 name|GimpDrawable
@@ -1739,7 +1739,7 @@ name|gimp_image_shadow
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gint
 name|width
@@ -1759,7 +1759,7 @@ name|gimp_image_free_shadow
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1776,7 +1776,7 @@ parameter_list|(
 specifier|const
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -1795,7 +1795,7 @@ parameter_list|(
 specifier|const
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gint
 modifier|*
@@ -1810,7 +1810,7 @@ name|gimp_image_parasite_attach
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpParasite
 modifier|*
@@ -1825,7 +1825,7 @@ name|gimp_image_parasite_detach
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -1845,7 +1845,7 @@ name|gimp_image_get_new_tattoo
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1856,7 +1856,7 @@ name|gimp_image_set_tattoo_state
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpTattoo
 name|val
@@ -1870,7 +1870,7 @@ name|gimp_image_get_tattoo_state
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1887,7 +1887,7 @@ parameter_list|(
 specifier|const
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1900,7 +1900,7 @@ parameter_list|(
 specifier|const
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1913,7 +1913,7 @@ parameter_list|(
 specifier|const
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1926,7 +1926,7 @@ parameter_list|(
 specifier|const
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1939,7 +1939,7 @@ parameter_list|(
 specifier|const
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1952,7 +1952,7 @@ parameter_list|(
 specifier|const
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1965,7 +1965,7 @@ parameter_list|(
 specifier|const
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1977,7 +1977,7 @@ name|gimp_image_set_active_layer
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpLayer
 modifier|*
@@ -1993,7 +1993,7 @@ name|gimp_image_set_active_channel
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpChannel
 modifier|*
@@ -2009,7 +2009,7 @@ name|gimp_image_unset_active_channel
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2021,7 +2021,7 @@ name|gimp_image_set_active_vectors
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpVectors
 modifier|*
@@ -2036,7 +2036,7 @@ name|gimp_image_active_layer_changed
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2047,7 +2047,7 @@ name|gimp_image_active_channel_changed
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2058,7 +2058,7 @@ name|gimp_image_active_vectors_changed
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2070,7 +2070,7 @@ parameter_list|(
 specifier|const
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 specifier|const
 name|GimpLayer
@@ -2087,7 +2087,7 @@ parameter_list|(
 specifier|const
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 specifier|const
 name|GimpChannel
@@ -2104,7 +2104,7 @@ parameter_list|(
 specifier|const
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 specifier|const
 name|GimpVectors
@@ -2122,7 +2122,7 @@ parameter_list|(
 specifier|const
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpTattoo
 name|tatoo
@@ -2138,7 +2138,7 @@ parameter_list|(
 specifier|const
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpTattoo
 name|tatoo
@@ -2154,7 +2154,7 @@ parameter_list|(
 specifier|const
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpTattoo
 name|tatoo
@@ -2170,7 +2170,7 @@ parameter_list|(
 specifier|const
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -2188,7 +2188,7 @@ parameter_list|(
 specifier|const
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -2206,7 +2206,7 @@ parameter_list|(
 specifier|const
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -2222,7 +2222,7 @@ name|gimp_image_add_layer
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpLayer
 modifier|*
@@ -2240,7 +2240,7 @@ name|gimp_image_remove_layer
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpLayer
 modifier|*
@@ -2255,7 +2255,7 @@ name|gimp_image_raise_layer
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpLayer
 modifier|*
@@ -2270,7 +2270,7 @@ name|gimp_image_lower_layer
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpLayer
 modifier|*
@@ -2285,7 +2285,7 @@ name|gimp_image_raise_layer_to_top
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpLayer
 modifier|*
@@ -2300,7 +2300,7 @@ name|gimp_image_lower_layer_to_bottom
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpLayer
 modifier|*
@@ -2315,7 +2315,7 @@ name|gimp_image_position_layer
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpLayer
 modifier|*
@@ -2341,7 +2341,7 @@ name|gimp_image_add_channel
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpChannel
 modifier|*
@@ -2359,7 +2359,7 @@ name|gimp_image_remove_channel
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpChannel
 modifier|*
@@ -2374,7 +2374,7 @@ name|gimp_image_raise_channel
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpChannel
 modifier|*
@@ -2389,7 +2389,7 @@ name|gimp_image_raise_channel_to_top
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpChannel
 modifier|*
@@ -2404,7 +2404,7 @@ name|gimp_image_lower_channel
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpChannel
 modifier|*
@@ -2419,7 +2419,7 @@ name|gimp_image_lower_channel_to_bottom
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpChannel
 modifier|*
@@ -2434,7 +2434,7 @@ name|gimp_image_position_channel
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpChannel
 modifier|*
@@ -2460,7 +2460,7 @@ name|gimp_image_add_vectors
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpVectors
 modifier|*
@@ -2478,7 +2478,7 @@ name|gimp_image_remove_vectors
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpVectors
 modifier|*
@@ -2493,7 +2493,7 @@ name|gimp_image_raise_vectors
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpVectors
 modifier|*
@@ -2508,7 +2508,7 @@ name|gimp_image_raise_vectors_to_top
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpVectors
 modifier|*
@@ -2523,7 +2523,7 @@ name|gimp_image_lower_vectors
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpVectors
 modifier|*
@@ -2538,7 +2538,7 @@ name|gimp_image_lower_vectors_to_bottom
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpVectors
 modifier|*
@@ -2553,7 +2553,7 @@ name|gimp_image_position_vectors
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpVectors
 modifier|*
@@ -2580,7 +2580,7 @@ parameter_list|(
 specifier|const
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|BoundSeg
 modifier|*
@@ -2602,7 +2602,7 @@ parameter_list|(
 specifier|const
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gint
 name|x
@@ -2619,7 +2619,7 @@ name|gimp_image_coords_in_active_drawable
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 specifier|const
 name|GimpCoords
@@ -2635,7 +2635,7 @@ name|gimp_image_invalidate_layer_previews
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2646,7 +2646,7 @@ name|gimp_image_invalidate_channel_previews
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl

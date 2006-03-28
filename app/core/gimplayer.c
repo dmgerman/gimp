@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c8446e40103
+DECL|enum|__anon297f60060103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -177,7 +177,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c8446e40203
+DECL|enum|__anon297f60060203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -676,7 +676,7 @@ name|gimp_layer_transform_color
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|PixelRegion
 modifier|*
@@ -2012,7 +2012,7 @@ argument_list|)
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 init|=
 name|gimp_item_get_image
 argument_list|(
@@ -2025,7 +2025,7 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
-comment|/*  first copy the gimage active channels  */
+comment|/*  first copy the image active channels  */
 for|for
 control|(
 name|i
@@ -2044,7 +2044,7 @@ index|[
 name|i
 index|]
 operator|=
-name|gimage
+name|image
 operator|->
 name|active
 index|[
@@ -2246,14 +2246,14 @@ name|GIMP_IS_IMAGE
 argument_list|(
 name|item
 operator|->
-name|gimage
+name|image
 argument_list|)
 operator|&&
 name|gimp_container_have
 argument_list|(
 name|item
 operator|->
-name|gimage
+name|image
 operator|->
 name|layers
 argument_list|,
@@ -2739,7 +2739,12 @@ argument_list|)
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
+init|=
+name|gimp_item_get_image
+argument_list|(
+name|item
+argument_list|)
 decl_stmt|;
 name|gboolean
 name|attached
@@ -2747,13 +2752,6 @@ decl_stmt|;
 name|gboolean
 name|floating_sel
 decl_stmt|;
-name|gimage
-operator|=
-name|gimp_item_get_image
-argument_list|(
-name|item
-argument_list|)
-expr_stmt|;
 name|attached
 operator|=
 name|gimp_item_is_attached
@@ -2794,7 +2792,7 @@ condition|)
 block|{
 name|gimp_image_undo_group_start
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_ITEM_PROPERTIES
 argument_list|,
@@ -2830,7 +2828,7 @@ name|floating_sel
 condition|)
 name|gimp_image_undo_group_end
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 return|return
@@ -3497,7 +3495,7 @@ argument_list|)
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpChannel
 modifier|*
@@ -3507,7 +3505,7 @@ if|if
 condition|(
 operator|!
 operator|(
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -3522,7 +3520,7 @@ return|return;
 comment|/*  Turn the current selection off  */
 name|gimp_image_selection_control
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_SELECTION_OFF
 argument_list|)
@@ -3530,7 +3528,7 @@ expr_stmt|;
 comment|/*  clear the affected region surrounding the layer  */
 name|gimp_image_selection_control
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_SELECTION_LAYER_OFF
 argument_list|)
@@ -3540,7 +3538,7 @@ name|mask
 operator|=
 name|gimp_image_get_mask
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 comment|/*  Only bother with the bounds if there is a selection  */
@@ -3770,12 +3768,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_layer_transform_color (GimpImage * gimage,PixelRegion * layerPR,PixelRegion * bufPR,GimpDrawable * drawable,GimpImageType src_type)
+DECL|function|gimp_layer_transform_color (GimpImage * image,PixelRegion * layerPR,PixelRegion * bufPR,GimpDrawable * drawable,GimpImageType src_type)
 name|gimp_layer_transform_color
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|PixelRegion
 modifier|*
@@ -3901,7 +3899,7 @@ control|)
 block|{
 name|gimp_image_transform_color
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|drawable
 argument_list|,
@@ -4041,12 +4039,12 @@ end_comment
 begin_function
 name|GimpLayer
 modifier|*
-DECL|function|gimp_layer_new (GimpImage * gimage,gint width,gint height,GimpImageType type,const gchar * name,gdouble opacity,GimpLayerModeEffects mode)
+DECL|function|gimp_layer_new (GimpImage * image,gint width,gint height,GimpImageType type,const gchar * name,gdouble opacity,GimpLayerModeEffects mode)
 name|gimp_layer_new
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gint
 name|width
@@ -4077,7 +4075,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|NULL
@@ -4117,7 +4115,7 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 literal|0
 argument_list|,
@@ -4162,13 +4160,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_new_from_tiles:  * @tiles:       The buffer to make the new layer from.  * @dest_gimage: The image the new layer will be added to.  * @type:        The #GimpImageType of the new layer.  * @name:        The new layer's name.  * @opacity:     The new layer's opacity.  * @mode:        The new layer's mode.  *  * Copies %tiles to a layer taking into consideration the  * possibility of transforming the contents to meet the requirements  * of the target image type  *  * Return value: The new layer.  **/
+comment|/**  * gimp_layer_new_from_tiles:  * @tiles:       The buffer to make the new layer from.  * @dest_image: The image the new layer will be added to.  * @type:        The #GimpImageType of the new layer.  * @name:        The new layer's name.  * @opacity:     The new layer's opacity.  * @mode:        The new layer's mode.  *  * Copies %tiles to a layer taking into consideration the  * possibility of transforming the contents to meet the requirements  * of the target image type  *  * Return value: The new layer.  **/
 end_comment
 
 begin_function
 name|GimpLayer
 modifier|*
-DECL|function|gimp_layer_new_from_tiles (TileManager * tiles,GimpImage * dest_gimage,GimpImageType type,const gchar * name,gdouble opacity,GimpLayerModeEffects mode)
+DECL|function|gimp_layer_new_from_tiles (TileManager * tiles,GimpImage * dest_image,GimpImageType type,const gchar * name,gdouble opacity,GimpLayerModeEffects mode)
 name|gimp_layer_new_from_tiles
 parameter_list|(
 name|TileManager
@@ -4177,7 +4175,7 @@ name|tiles
 parameter_list|,
 name|GimpImage
 modifier|*
-name|dest_gimage
+name|dest_image
 parameter_list|,
 name|GimpImageType
 name|type
@@ -4210,7 +4208,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|dest_gimage
+name|dest_image
 argument_list|)
 argument_list|,
 name|NULL
@@ -4255,7 +4253,7 @@ argument_list|(
 operator|&
 name|bufPR
 argument_list|,
-name|dest_gimage
+name|dest_image
 argument_list|,
 name|type
 argument_list|,
@@ -4270,13 +4268,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_new_from_pixbuf:  * @pixbuf:      The pixbuf to make the new layer from.  * @dest_gimage: The image the new layer will be added to.  * @type:        The #GimpImageType of the new layer.  * @name:        The new layer's name.  * @opacity:     The new layer's opacity.  * @mode:        The new layer's mode.  *  * Copies %pixbuf to a layer taking into consideration the  * possibility of transforming the contents to meet the requirements  * of the target image type  *  * Return value: The new layer.  **/
+comment|/**  * gimp_layer_new_from_pixbuf:  * @pixbuf:      The pixbuf to make the new layer from.  * @dest_image: The image the new layer will be added to.  * @type:        The #GimpImageType of the new layer.  * @name:        The new layer's name.  * @opacity:     The new layer's opacity.  * @mode:        The new layer's mode.  *  * Copies %pixbuf to a layer taking into consideration the  * possibility of transforming the contents to meet the requirements  * of the target image type  *  * Return value: The new layer.  **/
 end_comment
 
 begin_function
 name|GimpLayer
 modifier|*
-DECL|function|gimp_layer_new_from_pixbuf (GdkPixbuf * pixbuf,GimpImage * dest_gimage,GimpImageType type,const gchar * name,gdouble opacity,GimpLayerModeEffects mode)
+DECL|function|gimp_layer_new_from_pixbuf (GdkPixbuf * pixbuf,GimpImage * dest_image,GimpImageType type,const gchar * name,gdouble opacity,GimpLayerModeEffects mode)
 name|gimp_layer_new_from_pixbuf
 parameter_list|(
 name|GdkPixbuf
@@ -4285,7 +4283,7 @@ name|pixbuf
 parameter_list|,
 name|GimpImage
 modifier|*
-name|dest_gimage
+name|dest_image
 parameter_list|,
 name|GimpImageType
 name|type
@@ -4323,7 +4321,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|dest_gimage
+name|dest_image
 argument_list|)
 argument_list|,
 name|NULL
@@ -4379,7 +4377,7 @@ argument_list|(
 operator|&
 name|bufPR
 argument_list|,
-name|dest_gimage
+name|dest_image
 argument_list|,
 name|type
 argument_list|,
@@ -4394,13 +4392,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_new_from_region:  * @region:      A readable pixel region.  * @dest_gimage: The image the new layer will be added to.  * @type:        The #GimpImageType of the new layer.  * @name:        The new layer's name.  * @opacity:     The new layer's opacity.  * @mode:        The new layer's mode.  *  * Copies %region to a layer taking into consideration the  * possibility of transforming the contents to meet the requirements  * of the target image type  *  * Return value: The new layer.  **/
+comment|/**  * gimp_layer_new_from_region:  * @region:      A readable pixel region.  * @dest_image: The image the new layer will be added to.  * @type:        The #GimpImageType of the new layer.  * @name:        The new layer's name.  * @opacity:     The new layer's opacity.  * @mode:        The new layer's mode.  *  * Copies %region to a layer taking into consideration the  * possibility of transforming the contents to meet the requirements  * of the target image type  *  * Return value: The new layer.  **/
 end_comment
 
 begin_function
 name|GimpLayer
 modifier|*
-DECL|function|gimp_layer_new_from_region (PixelRegion * region,GimpImage * dest_gimage,GimpImageType type,const gchar * name,gdouble opacity,GimpLayerModeEffects mode)
+DECL|function|gimp_layer_new_from_region (PixelRegion * region,GimpImage * dest_image,GimpImageType type,const gchar * name,gdouble opacity,GimpLayerModeEffects mode)
 name|gimp_layer_new_from_region
 parameter_list|(
 name|PixelRegion
@@ -4409,7 +4407,7 @@ name|region
 parameter_list|,
 name|GimpImage
 modifier|*
-name|dest_gimage
+name|dest_image
 parameter_list|,
 name|GimpImageType
 name|type
@@ -4455,7 +4453,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|dest_gimage
+name|dest_image
 argument_list|)
 argument_list|,
 name|NULL
@@ -4533,7 +4531,7 @@ name|new_layer
 operator|=
 name|gimp_layer_new
 argument_list|(
-name|dest_gimage
+name|dest_image
 argument_list|,
 name|width
 argument_list|,
@@ -4662,7 +4660,7 @@ name|GIMP_GRAYA_IMAGE
 case|:
 name|gimp_layer_transform_color
 argument_list|(
-name|dest_gimage
+name|dest_image
 argument_list|,
 operator|&
 name|layerPR
@@ -4736,7 +4734,7 @@ name|GIMP_RGBA_IMAGE
 case|:
 name|gimp_layer_transform_color
 argument_list|(
-name|dest_gimage
+name|dest_image
 argument_list|,
 operator|&
 name|layerPR
@@ -4814,7 +4812,7 @@ name|GIMP_RGBA_IMAGE
 case|:
 name|gimp_layer_transform_color
 argument_list|(
-name|dest_gimage
+name|dest_image
 argument_list|,
 operator|&
 name|layerPR
@@ -4838,7 +4836,7 @@ name|GIMP_GRAYA_IMAGE
 case|:
 name|gimp_layer_transform_color
 argument_list|(
-name|dest_gimage
+name|dest_image
 argument_list|,
 operator|&
 name|layerPR
@@ -4892,7 +4890,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -4929,7 +4927,7 @@ name|push_undo
 operator|=
 name|FALSE
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -4942,7 +4940,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimage
+name|image
 condition|)
 block|{
 name|g_message
@@ -5061,7 +5059,7 @@ name|push_undo
 condition|)
 name|gimp_image_undo_push_layer_mask_add
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|_
 argument_list|(
@@ -5206,7 +5204,7 @@ name|mask
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gchar
 modifier|*
@@ -5249,7 +5247,7 @@ argument_list|(
 name|layer
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -5278,7 +5276,7 @@ name|mask
 operator|=
 name|gimp_layer_mask_new
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|item
 operator|->
@@ -5618,7 +5616,7 @@ name|selection
 operator|=
 name|gimp_image_get_mask
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|selection_empty
@@ -5634,11 +5632,11 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|width
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|height
 argument_list|,
@@ -6006,7 +6004,7 @@ name|item
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|PixelRegion
 name|srcPR
@@ -6054,7 +6052,7 @@ argument_list|(
 name|layer
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -6064,7 +6062,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimage
+name|image
 condition|)
 return|return;
 if|if
@@ -6074,7 +6072,7 @@ condition|)
 block|{
 name|gimp_image_undo_group_start
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_LAYER_APPLY_MASK
 argument_list|,
@@ -6097,7 +6095,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_undo_push_layer_mask_remove
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|NULL
 argument_list|,
@@ -6295,7 +6293,7 @@ name|push_undo
 condition|)
 name|gimp_image_undo_group_end
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 comment|/*  If applying actually changed the view  */
@@ -6800,7 +6798,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gint
 name|offset_x
@@ -6835,7 +6833,7 @@ name|context
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -6847,7 +6845,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_undo_group_start
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_ITEM_RESIZE
 argument_list|,
@@ -6880,11 +6878,11 @@ argument_list|)
 argument_list|,
 name|context
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|width
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|height
 argument_list|,
@@ -6895,7 +6893,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_undo_group_end
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -7394,7 +7392,7 @@ condition|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 init|=
 name|gimp_item_get_image
 argument_list|(
@@ -7406,7 +7404,7 @@ argument_list|)
 decl_stmt|;
 name|gimp_image_undo_push_layer_opacity
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|NULL
 argument_list|,
@@ -7549,7 +7547,7 @@ condition|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 init|=
 name|gimp_item_get_image
 argument_list|(
@@ -7561,7 +7559,7 @@ argument_list|)
 decl_stmt|;
 name|gimp_image_undo_push_layer_mode
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|NULL
 argument_list|,
@@ -7712,7 +7710,7 @@ condition|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 init|=
 name|gimp_item_get_image
 argument_list|(
@@ -7724,7 +7722,7 @@ argument_list|)
 decl_stmt|;
 name|gimp_image_undo_push_layer_lock_alpha
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|NULL
 argument_list|,

@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29573fac0103
+DECL|enum|__anon2a2410320103
 block|{
 DECL|enumerator|PICKED
 name|PICKED
@@ -880,7 +880,7 @@ name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|gimp_tool_control_activate
@@ -1240,7 +1240,7 @@ name|gimp_image_remove_sample_point
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|color_tool
 operator|->
@@ -1270,7 +1270,7 @@ name|gimp_image_move_sample_point
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|color_tool
 operator|->
@@ -1298,7 +1298,7 @@ name|gimp_image_add_sample_point_at_pos
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|color_tool
 operator|->
@@ -1324,7 +1324,7 @@ name|gimp_image_flush
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 if|if
@@ -1846,7 +1846,7 @@ name|GIMP_DISPLAY_CONFIG
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -1861,7 +1861,7 @@ name|gimp_image_find_sample_point
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|coords
 operator|->
@@ -1905,7 +1905,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|color_tool
 operator|->
@@ -2023,7 +2023,7 @@ name|x
 operator|<
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|width
 operator|&&
@@ -2039,7 +2039,7 @@ name|y
 operator|<
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|height
 operator|&&
@@ -2054,7 +2054,7 @@ name|gimp_image_coords_in_active_drawable
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|coords
 argument_list|)
@@ -2210,7 +2210,7 @@ name|draw_tool
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|width
 argument_list|,
@@ -2245,7 +2245,7 @@ name|draw_tool
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|height
 argument_list|,
@@ -2379,7 +2379,7 @@ name|tool
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|tool
 operator|->

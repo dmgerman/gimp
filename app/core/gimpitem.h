@@ -113,12 +113,12 @@ name|guint32
 name|tattoo
 decl_stmt|;
 comment|/*  provides a permanent ID  */
-DECL|member|gimage
+DECL|member|image
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
-comment|/*  gimage owner             */
+comment|/*  item owner               */
 DECL|member|parasites
 name|GimpParasiteList
 modifier|*
@@ -609,7 +609,7 @@ name|item
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gint
 name|offset_x
@@ -1079,7 +1079,7 @@ name|item
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl

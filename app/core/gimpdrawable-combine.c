@@ -91,7 +91,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpItem
 modifier|*
@@ -138,7 +138,7 @@ argument_list|(
 name|drawable
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -149,7 +149,7 @@ name|mask
 operator|=
 name|gimp_image_get_mask
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 comment|/*  don't apply the mask to itself and don't apply an empty mask  */
@@ -223,7 +223,7 @@ operator|&
 name|offset_y
 argument_list|)
 expr_stmt|;
-comment|/*  make sure the image application coordinates are within gimage bounds  */
+comment|/*  make sure the image application coordinates are within image bounds  */
 name|x1
 operator|=
 name|CLAMP
@@ -680,7 +680,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpItem
 modifier|*
@@ -725,7 +725,7 @@ argument_list|(
 name|drawable
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -736,7 +736,7 @@ name|mask
 operator|=
 name|gimp_image_get_mask
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 comment|/*  don't apply the mask to itself and don't apply an empty mask  */
@@ -810,7 +810,7 @@ operator|&
 name|offset_y
 argument_list|)
 expr_stmt|;
-comment|/*  make sure the image application coordinates are within gimage bounds  */
+comment|/*  make sure the image application coordinates are within image bounds  */
 name|x1
 operator|=
 name|CLAMP

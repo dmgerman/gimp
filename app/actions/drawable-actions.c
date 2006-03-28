@@ -516,7 +516,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpDrawable
 modifier|*
@@ -549,7 +549,7 @@ name|linked
 init|=
 name|FALSE
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|action_data_get_image
 argument_list|(
@@ -558,14 +558,14 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimage
+name|image
 condition|)
 block|{
 name|drawable
 operator|=
 name|gimp_image_active_drawable
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 if|if

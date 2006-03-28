@@ -835,7 +835,7 @@ argument_list|)
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gdouble
 name|width
@@ -880,7 +880,7 @@ name|maskPR
 decl_stmt|,
 name|basePR
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -897,7 +897,7 @@ name|gimp_channel_is_empty
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 condition|)
@@ -988,11 +988,11 @@ name|gimp_scan_convert_set_pixel_ratio
 argument_list|(
 name|scan_convert
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|yresolution
 operator|/
-name|gimage
+name|image
 operator|->
 name|xresolution
 argument_list|)
@@ -1000,13 +1000,13 @@ expr_stmt|;
 name|width
 operator|*=
 operator|(
-name|gimage
+name|image
 operator|->
 name|yresolution
 operator|/
 name|_gimp_unit_get_factor
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|,
@@ -1215,7 +1215,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_transform_color
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|drawable
 argument_list|,
@@ -1274,7 +1274,7 @@ name|pat_buf
 operator|=
 name|gimp_image_transform_temp_buf
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|drawable
 argument_list|,

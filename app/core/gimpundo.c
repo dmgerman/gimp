@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon277e4b8e0103
+DECL|enum|__anon291bc87d0103
 block|{
 DECL|enumerator|POP
 name|POP
@@ -99,7 +99,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon277e4b8e0203
+DECL|enum|__anon291bc87d0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -771,7 +771,7 @@ name|GIMP_IS_IMAGE
 argument_list|(
 name|undo
 operator|->
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -899,7 +899,7 @@ case|:
 comment|/* don't ref */
 name|undo
 operator|->
-name|gimage
+name|image
 operator|=
 operator|(
 name|GimpImage
@@ -1049,7 +1049,7 @@ name|value
 argument_list|,
 name|undo
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1546,7 +1546,7 @@ name|gimp_image_clean
 argument_list|(
 name|undo
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|undo
 operator|->
@@ -1561,7 +1561,7 @@ name|gimp_image_dirty
 argument_list|(
 name|undo
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|undo
 operator|->
@@ -1711,7 +1711,7 @@ name|gimp_undo_stack_peek
 argument_list|(
 name|undo
 operator|->
-name|gimage
+name|image
 operator|->
 name|undo_stack
 argument_list|)
@@ -1752,7 +1752,7 @@ name|image
 init|=
 name|undo
 operator|->
-name|gimage
+name|image
 decl_stmt|;
 name|GimpViewable
 modifier|*

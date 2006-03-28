@@ -357,7 +357,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpVectors
 modifier|*
@@ -369,7 +369,7 @@ name|active_tool
 decl_stmt|;
 name|return_if_no_vectors
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|vectors
 argument_list|,
@@ -380,7 +380,7 @@ name|active_tool
 operator|=
 name|tool_manager_get_active
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|)
@@ -406,7 +406,7 @@ operator|*
 operator|)
 name|gimp_container_get_child_by_name
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -437,7 +437,7 @@ name|active_tool
 operator|=
 name|tool_manager_get_active
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|)
@@ -483,7 +483,7 @@ name|options
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpVectors
 modifier|*
@@ -495,7 +495,7 @@ name|widget
 decl_stmt|;
 name|return_if_no_vectors
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|vectors
 argument_list|,
@@ -513,7 +513,7 @@ name|options
 operator|=
 name|vectors_options_dialog_new
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|vectors
 argument_list|,
@@ -589,7 +589,7 @@ name|options
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -597,7 +597,7 @@ name|widget
 decl_stmt|;
 name|return_if_no_image
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|data
 argument_list|)
@@ -613,7 +613,7 @@ name|options
 operator|=
 name|vectors_options_dialog_new
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|NULL
 argument_list|,
@@ -686,7 +686,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpVectors
 modifier|*
@@ -694,7 +694,7 @@ name|new_vectors
 decl_stmt|;
 name|return_if_no_image
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|data
 argument_list|)
@@ -703,7 +703,7 @@ name|new_vectors
 operator|=
 name|gimp_vectors_new
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|vectors_name
 condition|?
@@ -717,7 +717,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_add_vectors
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|new_vectors
 argument_list|,
@@ -727,7 +727,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -748,7 +748,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpVectors
 modifier|*
@@ -756,7 +756,7 @@ name|vectors
 decl_stmt|;
 name|return_if_no_vectors
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|vectors
 argument_list|,
@@ -765,14 +765,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_raise_vectors
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|vectors
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -793,7 +793,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpVectors
 modifier|*
@@ -801,7 +801,7 @@ name|vectors
 decl_stmt|;
 name|return_if_no_vectors
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|vectors
 argument_list|,
@@ -810,14 +810,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_raise_vectors_to_top
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|vectors
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -838,7 +838,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpVectors
 modifier|*
@@ -846,7 +846,7 @@ name|vectors
 decl_stmt|;
 name|return_if_no_vectors
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|vectors
 argument_list|,
@@ -855,14 +855,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_lower_vectors
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|vectors
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -883,7 +883,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpVectors
 modifier|*
@@ -891,7 +891,7 @@ name|vectors
 decl_stmt|;
 name|return_if_no_vectors
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|vectors
 argument_list|,
@@ -900,14 +900,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_lower_vectors_to_bottom
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|vectors
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -928,7 +928,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpVectors
 modifier|*
@@ -940,7 +940,7 @@ name|new_vectors
 decl_stmt|;
 name|return_if_no_vectors
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|vectors
 argument_list|,
@@ -969,7 +969,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_add_vectors
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|new_vectors
 argument_list|,
@@ -979,7 +979,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -1000,7 +1000,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpVectors
 modifier|*
@@ -1008,7 +1008,7 @@ name|vectors
 decl_stmt|;
 name|return_if_no_vectors
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|vectors
 argument_list|,
@@ -1017,14 +1017,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_remove_vectors
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|vectors
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -1045,7 +1045,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpVectors
 modifier|*
@@ -1053,7 +1053,7 @@ name|vectors
 decl_stmt|;
 name|return_if_no_vectors
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|vectors
 argument_list|,
@@ -1062,12 +1062,12 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_merge_visible_vectors
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -1094,7 +1094,7 @@ name|op
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpVectors
 modifier|*
@@ -1102,7 +1102,7 @@ name|vectors
 decl_stmt|;
 name|return_if_no_vectors
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|vectors
 argument_list|,
@@ -1120,7 +1120,7 @@ name|gimp_channel_select_vectors
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|_
@@ -1143,7 +1143,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -1167,7 +1167,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|ProcRecord
 modifier|*
@@ -1183,7 +1183,7 @@ name|gdisp
 decl_stmt|;
 name|return_if_no_image
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|data
 argument_list|)
@@ -1196,7 +1196,7 @@ name|proc_rec
 operator|=
 name|procedural_db_lookup
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|,
@@ -1208,7 +1208,7 @@ name|proc_rec
 operator|=
 name|procedural_db_lookup
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|,
@@ -1271,7 +1271,7 @@ name|gint32
 operator|)
 name|gimp_image_get_ID
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|args
@@ -1289,7 +1289,7 @@ expr_stmt|;
 comment|/*  unused  */
 name|plug_in_run
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|,
@@ -1347,7 +1347,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpVectors
 modifier|*
@@ -1367,7 +1367,7 @@ name|dialog
 decl_stmt|;
 name|return_if_no_vectors
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|vectors
 argument_list|,
@@ -1385,7 +1385,7 @@ name|drawable
 operator|=
 name|gimp_image_active_drawable
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 if|if
@@ -1584,7 +1584,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpVectors
 modifier|*
@@ -1596,7 +1596,7 @@ name|svg
 decl_stmt|;
 name|return_if_no_vectors
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|vectors
 argument_list|,
@@ -1607,7 +1607,7 @@ name|svg
 operator|=
 name|gimp_vectors_export_string
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|vectors
 argument_list|)
@@ -1619,7 +1619,7 @@ condition|)
 block|{
 name|gimp_clipboard_set_svg
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|,
@@ -1650,7 +1650,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gchar
 modifier|*
@@ -1661,7 +1661,7 @@ name|svg_size
 decl_stmt|;
 name|return_if_no_image
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|data
 argument_list|)
@@ -1670,7 +1670,7 @@ name|svg
 operator|=
 name|gimp_clipboard_get_svg
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|,
@@ -1694,7 +1694,7 @@ condition|(
 operator|!
 name|gimp_vectors_import_buffer
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|svg
 argument_list|,
@@ -1730,7 +1730,7 @@ else|else
 block|{
 name|gimp_image_flush
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -1762,7 +1762,7 @@ name|dialog
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpVectors
 modifier|*
@@ -1774,7 +1774,7 @@ name|widget
 decl_stmt|;
 name|return_if_no_vectors
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|vectors
 argument_list|,
@@ -1792,7 +1792,7 @@ name|dialog
 operator|=
 name|vectors_export_dialog_new
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|widget
 argument_list|,
@@ -1844,7 +1844,7 @@ name|dialog
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -1852,7 +1852,7 @@ name|widget
 decl_stmt|;
 name|return_if_no_image
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|data
 argument_list|)
@@ -1868,7 +1868,7 @@ name|dialog
 operator|=
 name|vectors_import_dialog_new
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|widget
 argument_list|,
@@ -1918,7 +1918,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpVectors
 modifier|*
@@ -1929,7 +1929,7 @@ name|visible
 decl_stmt|;
 name|return_if_no_vectors
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|vectors
 argument_list|,
@@ -1972,7 +1972,7 @@ name|undo
 operator|=
 name|gimp_image_undo_can_compress
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_TYPE_ITEM_UNDO
 argument_list|,
@@ -2013,7 +2013,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -2035,7 +2035,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpVectors
 modifier|*
@@ -2046,7 +2046,7 @@ name|linked
 decl_stmt|;
 name|return_if_no_vectors
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|vectors
 argument_list|,
@@ -2089,7 +2089,7 @@ name|undo
 operator|=
 name|gimp_image_undo_can_compress
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_TYPE_ITEM_UNDO
 argument_list|,
@@ -2130,7 +2130,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -2200,7 +2200,7 @@ name|gimp_vectors_new
 argument_list|(
 name|options
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|vectors_name
 argument_list|)
@@ -2209,7 +2209,7 @@ name|gimp_image_add_vectors
 argument_list|(
 name|options
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|new_vectors
 argument_list|,
@@ -2221,7 +2221,7 @@ name|gimp_image_flush
 argument_list|(
 name|options
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -2315,7 +2315,7 @@ name|gimp_image_flush
 argument_list|(
 name|options
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}

@@ -61,27 +61,27 @@ begin_function
 specifier|const
 name|guchar
 modifier|*
-DECL|function|gimp_image_get_colormap (const GimpImage * gimage)
+DECL|function|gimp_image_get_colormap (const GimpImage * image)
 name|gimp_image_get_colormap
 parameter_list|(
 specifier|const
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 block|{
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
 return|return
-name|gimage
+name|image
 operator|->
 name|cmap
 return|;
@@ -90,27 +90,27 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_image_get_colormap_size (const GimpImage * gimage)
+DECL|function|gimp_image_get_colormap_size (const GimpImage * image)
 name|gimp_image_get_colormap_size
 parameter_list|(
 specifier|const
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 block|{
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
 return|return
-name|gimage
+name|image
 operator|->
 name|num_cols
 return|;
@@ -119,12 +119,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_set_colormap (GimpImage * gimage,const guchar * cmap,gint n_colors,gboolean push_undo)
+DECL|function|gimp_image_set_colormap (GimpImage * image,const guchar * cmap,gint n_colors,gboolean push_undo)
 name|gimp_image_set_colormap
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 specifier|const
 name|guchar
@@ -142,7 +142,7 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -174,7 +174,7 @@ name|push_undo
 condition|)
 name|gimp_image_undo_push_image_colormap
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|_
 argument_list|(
@@ -190,11 +190,11 @@ block|{
 if|if
 condition|(
 operator|!
-name|gimage
+name|image
 operator|->
 name|cmap
 condition|)
-name|gimage
+name|image
 operator|->
 name|cmap
 operator|=
@@ -207,7 +207,7 @@ argument_list|)
 expr_stmt|;
 name|memcpy
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|cmap
 argument_list|,
@@ -223,25 +223,25 @@ else|else
 block|{
 if|if
 condition|(
-name|gimage
+name|image
 operator|->
 name|cmap
 condition|)
 name|g_free
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|cmap
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|->
 name|cmap
 operator|=
 name|NULL
 expr_stmt|;
 block|}
-name|gimage
+name|image
 operator|->
 name|num_cols
 operator|=
@@ -249,7 +249,7 @@ name|n_colors
 expr_stmt|;
 name|gimp_image_colormap_changed
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 operator|-
 literal|1
@@ -260,12 +260,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_get_colormap_entry (GimpImage * gimage,gint color_index,GimpRGB * color)
+DECL|function|gimp_image_get_colormap_entry (GimpImage * image,gint color_index,GimpRGB * color)
 name|gimp_image_get_colormap_entry
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gint
 name|color_index
@@ -279,13 +279,13 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|cmap
 operator|!=
@@ -300,7 +300,7 @@ literal|0
 operator|&&
 name|color_index
 operator|<
-name|gimage
+name|image
 operator|->
 name|num_cols
 argument_list|)
@@ -316,7 +316,7 @@ name|gimp_rgba_set_uchar
 argument_list|(
 name|color
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|cmap
 index|[
@@ -325,7 +325,7 @@ operator|*
 literal|3
 index|]
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|cmap
 index|[
@@ -336,7 +336,7 @@ operator|+
 literal|1
 index|]
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|cmap
 index|[
@@ -355,12 +355,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_set_colormap_entry (GimpImage * gimage,gint color_index,const GimpRGB * color,gboolean push_undo)
+DECL|function|gimp_image_set_colormap_entry (GimpImage * image,gint color_index,const GimpRGB * color,gboolean push_undo)
 name|gimp_image_set_colormap_entry
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gint
 name|color_index
@@ -378,13 +378,13 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|cmap
 operator|!=
@@ -399,7 +399,7 @@ literal|0
 operator|&&
 name|color_index
 operator|<
-name|gimage
+name|image
 operator|->
 name|num_cols
 argument_list|)
@@ -417,7 +417,7 @@ name|push_undo
 condition|)
 name|gimp_image_undo_push_image_colormap
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|_
 argument_list|(
@@ -430,7 +430,7 @@ argument_list|(
 name|color
 argument_list|,
 operator|&
-name|gimage
+name|image
 operator|->
 name|cmap
 index|[
@@ -440,7 +440,7 @@ literal|3
 index|]
 argument_list|,
 operator|&
-name|gimage
+name|image
 operator|->
 name|cmap
 index|[
@@ -452,7 +452,7 @@ literal|1
 index|]
 argument_list|,
 operator|&
-name|gimage
+name|image
 operator|->
 name|cmap
 index|[
@@ -466,7 +466,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_colormap_changed
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|color_index
 argument_list|)
@@ -476,12 +476,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_add_colormap_entry (GimpImage * gimage,const GimpRGB * color)
+DECL|function|gimp_image_add_colormap_entry (GimpImage * image,const GimpRGB * color)
 name|gimp_image_add_colormap_entry
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 specifier|const
 name|GimpRGB
@@ -493,13 +493,13 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|cmap
 operator|!=
@@ -508,7 +508,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|num_cols
 operator|<
@@ -524,7 +524,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_undo_push_image_colormap
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|_
 argument_list|(
@@ -537,11 +537,11 @@ argument_list|(
 name|color
 argument_list|,
 operator|&
-name|gimage
+name|image
 operator|->
 name|cmap
 index|[
-name|gimage
+name|image
 operator|->
 name|num_cols
 operator|*
@@ -549,11 +549,11 @@ literal|3
 index|]
 argument_list|,
 operator|&
-name|gimage
+name|image
 operator|->
 name|cmap
 index|[
-name|gimage
+name|image
 operator|->
 name|num_cols
 operator|*
@@ -563,11 +563,11 @@ literal|1
 index|]
 argument_list|,
 operator|&
-name|gimage
+name|image
 operator|->
 name|cmap
 index|[
-name|gimage
+name|image
 operator|->
 name|num_cols
 operator|*
@@ -577,14 +577,14 @@ literal|2
 index|]
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|->
 name|num_cols
 operator|++
 expr_stmt|;
 name|gimp_image_colormap_changed
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 operator|-
 literal|1

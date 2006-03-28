@@ -93,7 +93,7 @@ name|gimp_display_flush_handler
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpDisplay
 modifier|*
@@ -108,7 +108,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_display_connect (GimpDisplay * gdisp,GimpImage * gimage)
+DECL|function|gimp_display_connect (GimpDisplay * gdisp,GimpImage * image)
 name|gimp_display_connect
 parameter_list|(
 name|GimpDisplay
@@ -117,7 +117,7 @@ name|gdisp
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -132,7 +132,7 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -140,32 +140,32 @@ name|g_return_if_fail
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|==
 name|NULL
 argument_list|)
 expr_stmt|;
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|=
-name|gimage
+name|image
 expr_stmt|;
 name|gdisp
 operator|->
 name|instance
 operator|=
-name|gimage
+name|image
 operator|->
 name|instance_count
 expr_stmt|;
-name|gimage
+name|image
 operator|->
 name|instance_count
 operator|++
 expr_stmt|;
 comment|/* this is obsolete */
-name|gimage
+name|image
 operator|->
 name|disp_count
 operator|++
@@ -173,17 +173,17 @@ expr_stmt|;
 if|#
 directive|if
 literal|0
-block|g_print ("%s: gimage->ref_count before refing: %d\n",            G_STRFUNC, G_OBJECT (gdisp->gimage)->ref_count);
+block|g_print ("%s: image->ref_count before refing: %d\n",            G_STRFUNC, G_OBJECT (gdisp->image)->ref_count);
 endif|#
 directive|endif
 name|g_object_ref
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|projection
 argument_list|,
@@ -199,7 +199,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 literal|"flush"
 argument_list|,
@@ -226,7 +226,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -242,7 +242,7 @@ name|GIMP_IS_IMAGE
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -250,7 +250,7 @@ name|g_signal_handlers_disconnect_by_func
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|gimp_display_flush_handler
 argument_list|,
@@ -261,7 +261,7 @@ name|g_signal_handlers_disconnect_by_func
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|projection
 argument_list|,
@@ -272,7 +272,7 @@ argument_list|)
 expr_stmt|;
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|disp_count
 operator|--
@@ -280,25 +280,25 @@ expr_stmt|;
 if|#
 directive|if
 literal|0
-block|g_print ("%s: gimage->ref_count before unrefing: %d\n",            G_STRFUNC, G_OBJECT (gdisp->gimage)->ref_count);
+block|g_print ("%s: image->ref_count before unrefing: %d\n",            G_STRFUNC, G_OBJECT (gdisp->image)->ref_count);
 endif|#
 directive|endif
-comment|/*  set gdisp->gimage to NULL before unrefing because there may be code    *  that listens for image removals and then iterates the display list    *  to find a valid display.    */
-name|gimage
+comment|/*  set gdisp->image to NULL before unrefing because there may be code    *  that listens for image removals and then iterates the display list    *  to find a valid display.    */
+name|image
 operator|=
 name|gdisp
 operator|->
-name|gimage
+name|image
 expr_stmt|;
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|=
 name|NULL
 expr_stmt|;
 name|g_object_unref
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -359,12 +359,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_display_flush_handler (GimpImage * gimage,GimpDisplay * gdisp)
+DECL|function|gimp_display_flush_handler (GimpImage * image,GimpDisplay * gdisp)
 name|gimp_display_flush_handler
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpDisplay
 modifier|*

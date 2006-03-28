@@ -197,7 +197,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|_

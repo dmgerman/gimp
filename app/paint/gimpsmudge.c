@@ -542,7 +542,7 @@ argument_list|)
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|TempBuf
 modifier|*
@@ -563,7 +563,7 @@ name|w
 decl_stmt|,
 name|h
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -957,7 +957,7 @@ name|pressure_options
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|TempBuf
 modifier|*
@@ -985,7 +985,7 @@ name|w
 decl_stmt|,
 name|h
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -1009,7 +1009,7 @@ name|gimp_paint_options_get_fade
 argument_list|(
 name|paint_options
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|paint_core
 operator|->

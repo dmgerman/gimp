@@ -146,7 +146,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon289ce35a0103
+DECL|enum|__anon28e3ba6c0103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -158,15 +158,15 @@ enum|;
 end_enum
 
 begin_define
-DECL|macro|HAVE_COLORMAP (gimage)
+DECL|macro|HAVE_COLORMAP (image)
 define|#
 directive|define
 name|HAVE_COLORMAP
 parameter_list|(
-name|gimage
+name|image
 parameter_list|)
 define|\
-value|(gimage != NULL&& \          gimp_image_base_type (gimage) == GIMP_INDEXED&& \          gimp_image_get_colormap (gimage) != NULL)
+value|(image != NULL&& \          gimp_image_base_type (image) == GIMP_INDEXED&& \          gimp_image_get_colormap (image) != NULL)
 end_define
 
 begin_function_decl
@@ -223,7 +223,7 @@ name|editor
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -421,7 +421,7 @@ name|gimp_colormap_image_mode_changed
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpColormapEditor
 modifier|*
@@ -437,7 +437,7 @@ name|gimp_colormap_image_colormap_changed
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gint
 name|ncol
@@ -1203,7 +1203,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_colormap_editor_set_image (GimpImageEditor * image_editor,GimpImage * gimage)
+DECL|function|gimp_colormap_editor_set_image (GimpImageEditor * image_editor,GimpImage * image)
 name|gimp_colormap_editor_set_image
 parameter_list|(
 name|GimpImageEditor
@@ -1212,7 +1212,7 @@ name|image_editor
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 block|{
 name|GimpColormapEditor
@@ -1228,14 +1228,14 @@ if|if
 condition|(
 name|image_editor
 operator|->
-name|gimage
+name|image
 condition|)
 block|{
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
 name|image_editor
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|gimp_colormap_image_mode_changed
 argument_list|,
@@ -1246,7 +1246,7 @@ name|g_signal_handlers_disconnect_by_func
 argument_list|(
 name|image_editor
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|gimp_colormap_image_colormap_changed
 argument_list|,
@@ -1271,7 +1271,7 @@ condition|(
 operator|!
 name|HAVE_COLORMAP
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 block|{
@@ -1319,7 +1319,7 @@ name|set_image
 argument_list|(
 name|image_editor
 argument_list|,
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|editor
@@ -1336,12 +1336,12 @@ literal|0
 expr_stmt|;
 if|if
 condition|(
-name|gimage
+name|image
 condition|)
 block|{
 name|g_signal_connect
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 literal|"mode-changed"
 argument_list|,
@@ -1355,7 +1355,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 literal|"colormap-changed"
 argument_list|,
@@ -1371,7 +1371,7 @@ if|if
 condition|(
 name|HAVE_COLORMAP
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 block|{
@@ -1388,7 +1388,7 @@ name|upper
 operator|=
 name|gimp_image_get_colormap_size
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 operator|-
 literal|1
@@ -1549,14 +1549,14 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 init|=
 name|GIMP_IMAGE_EDITOR
 argument_list|(
 name|editor
 argument_list|)
 operator|->
-name|gimage
+name|image
 decl_stmt|;
 name|gint
 name|i
@@ -1613,7 +1613,7 @@ name|ncol
 operator|=
 name|gimp_image_get_colormap_size
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 if|if
@@ -1825,7 +1825,7 @@ operator|+
 name|b
 index|]
 operator|=
-name|gimage
+name|image
 operator|->
 name|cmap
 index|[
@@ -2001,14 +2001,14 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 init|=
 name|GIMP_IMAGE_EDITOR
 argument_list|(
 name|editor
 argument_list|)
 operator|->
-name|gimage
+name|image
 decl_stmt|;
 name|gint
 name|cellsize
@@ -2290,7 +2290,7 @@ operator|*
 literal|3
 index|]
 operator|=
-name|gimage
+name|image
 operator|->
 name|cmap
 index|[
@@ -2308,7 +2308,7 @@ operator|+
 literal|1
 index|]
 operator|=
-name|gimage
+name|image
 operator|->
 name|cmap
 index|[
@@ -2328,7 +2328,7 @@ operator|+
 literal|2
 index|]
 operator|=
-name|gimage
+name|image
 operator|->
 name|cmap
 index|[
@@ -2492,7 +2492,7 @@ operator|*
 literal|3
 index|]
 operator|=
-name|gimage
+name|image
 operator|->
 name|cmap
 index|[
@@ -2510,7 +2510,7 @@ operator|+
 literal|1
 index|]
 operator|=
-name|gimage
+name|image
 operator|->
 name|cmap
 index|[
@@ -2530,7 +2530,7 @@ operator|+
 literal|2
 index|]
 operator|=
-name|gimage
+name|image
 operator|->
 name|cmap
 index|[
@@ -2964,21 +2964,21 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 init|=
 name|GIMP_IMAGE_EDITOR
 argument_list|(
 name|editor
 argument_list|)
 operator|->
-name|gimage
+name|image
 decl_stmt|;
 if|if
 condition|(
 operator|!
 name|HAVE_COLORMAP
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 block|{
@@ -3045,7 +3045,7 @@ argument_list|)
 expr_stmt|;
 name|col
 operator|=
-name|gimage
+name|image
 operator|->
 name|cmap
 operator|+
@@ -3202,20 +3202,20 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 init|=
 name|GIMP_IMAGE_EDITOR
 argument_list|(
 name|editor
 argument_list|)
 operator|->
-name|gimage
+name|image
 decl_stmt|;
 if|if
 condition|(
 name|HAVE_COLORMAP
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|gimp_colormap_editor_draw
@@ -3256,14 +3256,14 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 init|=
 name|GIMP_IMAGE_EDITOR
 argument_list|(
 name|editor
 argument_list|)
 operator|->
-name|gimage
+name|image
 decl_stmt|;
 name|guint
 name|col
@@ -3273,7 +3273,7 @@ condition|(
 operator|!
 name|HAVE_COLORMAP
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 return|return
@@ -3351,7 +3351,7 @@ name|col
 operator|>=
 name|gimp_image_get_colormap_size
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 return|return
@@ -3498,25 +3498,25 @@ argument_list|)
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 init|=
 name|GIMP_IMAGE_EDITOR
 argument_list|(
 name|editor
 argument_list|)
 operator|->
-name|gimage
+name|image
 decl_stmt|;
 if|if
 condition|(
 name|HAVE_COLORMAP
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|gimp_image_get_colormap_entry
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|editor
 operator|->
@@ -3564,25 +3564,25 @@ argument_list|)
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 init|=
 name|GIMP_IMAGE_EDITOR
 argument_list|(
 name|editor
 argument_list|)
 operator|->
-name|gimage
+name|image
 decl_stmt|;
 if|if
 condition|(
 name|HAVE_COLORMAP
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 operator|&&
 name|gimp_image_get_colormap_size
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 operator|<
 literal|256
@@ -3590,7 +3590,7 @@ condition|)
 block|{
 name|gimp_image_add_colormap_entry
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|color
 argument_list|)
@@ -3616,20 +3616,20 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 init|=
 name|GIMP_IMAGE_EDITOR
 argument_list|(
 name|editor
 argument_list|)
 operator|->
-name|gimage
+name|image
 decl_stmt|;
 if|if
 condition|(
 name|HAVE_COLORMAP
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 block|{
@@ -3670,18 +3670,18 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 init|=
 name|GIMP_IMAGE_EDITOR
 argument_list|(
 name|editor
 argument_list|)
 operator|->
-name|gimage
+name|image
 decl_stmt|;
 if|if
 condition|(
-name|gimage
+name|image
 condition|)
 block|{
 name|GimpRGB
@@ -3697,7 +3697,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_set_colormap_entry
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|editor
 operator|->
@@ -3711,7 +3711,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -3721,12 +3721,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_colormap_image_mode_changed (GimpImage * gimage,GimpColormapEditor * editor)
+DECL|function|gimp_colormap_image_mode_changed (GimpImage * image,GimpColormapEditor * editor)
 name|gimp_colormap_image_mode_changed
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpColormapEditor
 modifier|*
@@ -3748,7 +3748,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_colormap_image_colormap_changed
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 operator|-
 literal|1
@@ -3762,12 +3762,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_colormap_image_colormap_changed (GimpImage * gimage,gint ncol,GimpColormapEditor * editor)
+DECL|function|gimp_colormap_image_colormap_changed (GimpImage * image,gint ncol,GimpColormapEditor * editor)
 name|gimp_colormap_image_colormap_changed
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gint
 name|ncol
@@ -3781,7 +3781,7 @@ if|if
 condition|(
 name|HAVE_COLORMAP
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 block|{
@@ -3819,7 +3819,7 @@ operator|!=
 operator|(
 name|gimp_image_get_colormap_size
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 operator|-
 literal|1
@@ -3834,7 +3834,7 @@ name|upper
 operator|=
 name|gimp_image_get_colormap_size
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 operator|-
 literal|1

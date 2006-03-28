@@ -508,7 +508,7 @@ name|gimp_image_coords_in_active_drawable
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|coords
 argument_list|)
@@ -522,7 +522,7 @@ name|gimp_image_get_mask
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 decl_stmt|;
 comment|/*  Is there a selected region? If so, is cursor inside? */

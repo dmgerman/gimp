@@ -222,7 +222,7 @@ name|info
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GError
 modifier|*
@@ -243,7 +243,7 @@ name|info
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpLayer
 modifier|*
@@ -268,7 +268,7 @@ name|info
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpChannel
 modifier|*
@@ -293,7 +293,7 @@ name|info
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|PropType
 name|prop_type
@@ -319,7 +319,7 @@ name|info
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpLayer
 modifier|*
@@ -344,7 +344,7 @@ name|info
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpChannel
 modifier|*
@@ -499,7 +499,7 @@ name|info
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GError
 modifier|*
@@ -520,7 +520,7 @@ name|info
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GError
 modifier|*
@@ -704,7 +704,7 @@ end_define
 
 begin_function
 name|void
-DECL|function|xcf_save_choose_format (XcfInfo * info,GimpImage * gimage)
+DECL|function|xcf_save_choose_format (XcfInfo * info,GimpImage * image)
 name|xcf_save_choose_format
 parameter_list|(
 name|XcfInfo
@@ -713,7 +713,7 @@ name|info
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 block|{
 name|GimpLayer
@@ -732,7 +732,7 @@ decl_stmt|;
 comment|/* default to oldest */
 if|if
 condition|(
-name|gimage
+name|image
 operator|->
 name|cmap
 condition|)
@@ -747,7 +747,7 @@ name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|layers
 argument_list|)
@@ -817,7 +817,7 @@ end_function
 
 begin_function
 name|gint
-DECL|function|xcf_save_image (XcfInfo * info,GimpImage * gimage)
+DECL|function|xcf_save_image (XcfInfo * info,GimpImage * image)
 name|xcf_save_image
 parameter_list|(
 name|XcfInfo
@@ -826,7 +826,7 @@ name|info
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 block|{
 name|GimpLayer
@@ -885,7 +885,7 @@ name|floating_layer
 operator|=
 name|gimp_image_floating_sel
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 if|if
@@ -954,7 +954,7 @@ name|guint32
 operator|*
 operator|)
 operator|&
-name|gimage
+name|image
 operator|->
 name|width
 argument_list|,
@@ -970,7 +970,7 @@ name|guint32
 operator|*
 operator|)
 operator|&
-name|gimage
+name|image
 operator|->
 name|height
 argument_list|,
@@ -986,7 +986,7 @@ name|guint32
 operator|*
 operator|)
 operator|&
-name|gimage
+name|image
 operator|->
 name|base_type
 argument_list|,
@@ -1001,7 +1001,7 @@ name|guint
 operator|)
 name|gimp_container_num_children
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|layers
 argument_list|)
@@ -1013,7 +1013,7 @@ name|guint
 operator|)
 name|gimp_container_num_children
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|channels
 argument_list|)
@@ -1025,7 +1025,7 @@ name|gimp_channel_bounds
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 operator|&
@@ -1056,7 +1056,7 @@ name|xcf_save_image_props
 argument_list|(
 name|info
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 operator|&
 name|error
@@ -1102,7 +1102,7 @@ name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|layers
 argument_list|)
@@ -1143,7 +1143,7 @@ name|xcf_save_layer
 argument_list|(
 name|info
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|layer
 argument_list|,
@@ -1245,7 +1245,7 @@ name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|channels
 argument_list|)
@@ -1286,7 +1286,7 @@ else|else
 block|{
 name|channel
 operator|=
-name|gimage
+name|image
 operator|->
 name|selection_mask
 expr_stmt|;
@@ -1309,7 +1309,7 @@ name|xcf_save_channel
 argument_list|(
 name|info
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|channel
 argument_list|,
@@ -1422,7 +1422,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|xcf_save_image_props (XcfInfo * info,GimpImage * gimage,GError ** error)
+DECL|function|xcf_save_image_props (XcfInfo * info,GimpImage * image,GError ** error)
 name|xcf_save_image_props
 parameter_list|(
 name|XcfInfo
@@ -1431,7 +1431,7 @@ name|info
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GError
 modifier|*
@@ -1450,13 +1450,13 @@ name|unit
 init|=
 name|gimp_image_get_unit
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 decl_stmt|;
 comment|/* check and see if we should save the colormap property */
 if|if
 condition|(
-name|gimage
+name|image
 operator|->
 name|cmap
 condition|)
@@ -1466,17 +1466,17 @@ name|xcf_save_prop
 argument_list|(
 name|info
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|PROP_COLORMAP
 argument_list|,
 name|error
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|num_cols
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|cmap
 argument_list|)
@@ -1496,7 +1496,7 @@ name|xcf_save_prop
 argument_list|(
 name|info
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|PROP_COMPRESSION
 argument_list|,
@@ -1510,7 +1510,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimage
+name|image
 operator|->
 name|guides
 condition|)
@@ -1520,13 +1520,13 @@ name|xcf_save_prop
 argument_list|(
 name|info
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|PROP_GUIDES
 argument_list|,
 name|error
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|guides
 argument_list|)
@@ -1538,17 +1538,17 @@ name|xcf_save_prop
 argument_list|(
 name|info
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|PROP_RESOLUTION
 argument_list|,
 name|error
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|xresolution
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|yresolution
 argument_list|)
@@ -1560,13 +1560,13 @@ name|xcf_save_prop
 argument_list|(
 name|info
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|PROP_TATTOO
 argument_list|,
 name|error
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|tattoo_state
 argument_list|)
@@ -1576,7 +1576,7 @@ if|if
 condition|(
 name|gimp_parasite_list_length
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|parasites
 argument_list|)
@@ -1589,13 +1589,13 @@ name|xcf_save_prop
 argument_list|(
 name|info
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|PROP_PARASITES
 argument_list|,
 name|error
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|parasites
 argument_list|)
@@ -1607,7 +1607,7 @@ name|unit
 operator|<
 name|_gimp_unit_get_number_of_built_in_units
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|)
@@ -1618,7 +1618,7 @@ name|xcf_save_prop
 argument_list|(
 name|info
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|PROP_UNIT
 argument_list|,
@@ -1632,7 +1632,7 @@ if|if
 condition|(
 name|gimp_container_num_children
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|vectors
 argument_list|)
@@ -1644,7 +1644,7 @@ if|if
 condition|(
 name|gimp_vectors_compat_is_compatible
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|xcf_check_error
@@ -1653,7 +1653,7 @@ name|xcf_save_prop
 argument_list|(
 name|info
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|PROP_PATHS
 argument_list|,
@@ -1668,7 +1668,7 @@ name|xcf_save_prop
 argument_list|(
 name|info
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|PROP_VECTORS
 argument_list|,
@@ -1683,7 +1683,7 @@ name|unit
 operator|>=
 name|_gimp_unit_get_number_of_built_in_units
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|)
@@ -1694,7 +1694,7 @@ name|xcf_save_prop
 argument_list|(
 name|info
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|PROP_USER_UNIT
 argument_list|,
@@ -1708,7 +1708,7 @@ if|if
 condition|(
 name|GIMP_IS_GRID
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|grid
 argument_list|)
@@ -1720,7 +1720,7 @@ name|grid
 init|=
 name|gimp_image_get_grid
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 decl_stmt|;
 name|parasite
@@ -1734,7 +1734,7 @@ name|gimp_parasite_list_add
 argument_list|(
 name|GIMP_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 operator|->
 name|parasites
@@ -1749,7 +1749,7 @@ name|gimp_parasite_list_length
 argument_list|(
 name|GIMP_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 operator|->
 name|parasites
@@ -1764,7 +1764,7 @@ name|xcf_save_prop
 argument_list|(
 name|info
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|PROP_PARASITES
 argument_list|,
@@ -1772,7 +1772,7 @@ name|error
 argument_list|,
 name|GIMP_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 operator|->
 name|parasites
@@ -1789,7 +1789,7 @@ name|gimp_parasite_list_remove
 argument_list|(
 name|GIMP_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 operator|->
 name|parasites
@@ -1812,7 +1812,7 @@ name|xcf_save_prop
 argument_list|(
 name|info
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|PROP_END
 argument_list|,
@@ -1829,7 +1829,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|xcf_save_layer_props (XcfInfo * info,GimpImage * gimage,GimpLayer * layer,GError ** error)
+DECL|function|xcf_save_layer_props (XcfInfo * info,GimpImage * image,GimpLayer * layer,GError ** error)
 name|xcf_save_layer_props
 parameter_list|(
 name|XcfInfo
@@ -1838,7 +1838,7 @@ name|info
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpLayer
 modifier|*
@@ -1862,7 +1862,7 @@ name|layer
 operator|==
 name|gimp_image_get_active_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|xcf_check_error
@@ -1871,7 +1871,7 @@ name|xcf_save_prop
 argument_list|(
 name|info
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|PROP_ACTIVE_LAYER
 argument_list|,
@@ -1885,7 +1885,7 @@ name|layer
 operator|==
 name|gimp_image_floating_sel
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 block|{
@@ -1905,7 +1905,7 @@ name|xcf_save_prop
 argument_list|(
 name|info
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|PROP_FLOATING_SELECTION
 argument_list|,
@@ -1920,7 +1920,7 @@ name|xcf_save_prop
 argument_list|(
 name|info
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|PROP_OPACITY
 argument_list|,
@@ -1938,7 +1938,7 @@ name|xcf_save_prop
 argument_list|(
 name|info
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|PROP_VISIBLE
 argument_list|,
@@ -1960,7 +1960,7 @@ name|xcf_save_prop
 argument_list|(
 name|info
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|PROP_LINKED
 argument_list|,
@@ -1982,7 +1982,7 @@ name|xcf_save_prop
 argument_list|(
 name|info
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|PROP_LOCK_ALPHA
 argument_list|,
@@ -2007,7 +2007,7 @@ name|xcf_save_prop
 argument_list|(
 name|info
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|PROP_APPLY_MASK
 argument_list|,
@@ -2027,7 +2027,7 @@ name|xcf_save_prop
 argument_list|(
 name|info
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|PROP_EDIT_MASK
 argument_list|,
@@ -2047,7 +2047,7 @@ name|xcf_save_prop
 argument_list|(
 name|info
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|PROP_SHOW_MASK
 argument_list|,
@@ -2070,7 +2070,7 @@ name|xcf_save_prop
 argument_list|(
 name|info
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|PROP_APPLY_MASK
 argument_list|,
@@ -2086,7 +2086,7 @@ name|xcf_save_prop
 argument_list|(
 name|info
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|PROP_EDIT_MASK
 argument_list|,
@@ -2102,7 +2102,7 @@ name|xcf_save_prop
 argument_list|(
 name|info
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|PROP_SHOW_MASK
 argument_list|,
@@ -2119,7 +2119,7 @@ name|xcf_save_prop
 argument_list|(
 name|info
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|PROP_OFFSETS
 argument_list|,
@@ -2147,7 +2147,7 @@ name|xcf_save_prop
 argument_list|(
 name|info
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|PROP_MODE
 argument_list|,
@@ -2165,7 +2165,7 @@ name|xcf_save_prop
 argument_list|(
 name|info
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|PROP_TATTOO
 argument_list|,
@@ -2227,7 +2227,7 @@ name|xcf_save_prop
 argument_list|(
 name|info
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|PROP_TEXT_LAYER_FLAGS
 argument_list|,
@@ -2259,7 +2259,7 @@ name|xcf_save_prop
 argument_list|(
 name|info
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|PROP_PARASITES
 argument_list|,
@@ -2307,7 +2307,7 @@ name|xcf_save_prop
 argument_list|(
 name|info
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|PROP_END
 argument_list|,
@@ -2324,7 +2324,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|xcf_save_channel_props (XcfInfo * info,GimpImage * gimage,GimpChannel * channel,GError ** error)
+DECL|function|xcf_save_channel_props (XcfInfo * info,GimpImage * image,GimpChannel * channel,GError ** error)
 name|xcf_save_channel_props
 parameter_list|(
 name|XcfInfo
@@ -2333,7 +2333,7 @@ name|info
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpChannel
 modifier|*
@@ -2357,7 +2357,7 @@ name|channel
 operator|==
 name|gimp_image_get_active_channel
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|xcf_check_error
@@ -2366,7 +2366,7 @@ name|xcf_save_prop
 argument_list|(
 name|info
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|PROP_ACTIVE_CHANNEL
 argument_list|,
@@ -2378,7 +2378,7 @@ if|if
 condition|(
 name|channel
 operator|==
-name|gimage
+name|image
 operator|->
 name|selection_mask
 condition|)
@@ -2388,7 +2388,7 @@ name|xcf_save_prop
 argument_list|(
 name|info
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|PROP_SELECTION
 argument_list|,
@@ -2402,7 +2402,7 @@ name|xcf_save_prop
 argument_list|(
 name|info
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|PROP_OPACITY
 argument_list|,
@@ -2422,7 +2422,7 @@ name|xcf_save_prop
 argument_list|(
 name|info
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|PROP_VISIBLE
 argument_list|,
@@ -2444,7 +2444,7 @@ name|xcf_save_prop
 argument_list|(
 name|info
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|PROP_LINKED
 argument_list|,
@@ -2466,7 +2466,7 @@ name|xcf_save_prop
 argument_list|(
 name|info
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|PROP_SHOW_MASKED
 argument_list|,
@@ -2510,7 +2510,7 @@ name|xcf_save_prop
 argument_list|(
 name|info
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|PROP_COLOR
 argument_list|,
@@ -2526,7 +2526,7 @@ name|xcf_save_prop
 argument_list|(
 name|info
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|PROP_TATTOO
 argument_list|,
@@ -2561,7 +2561,7 @@ name|xcf_save_prop
 argument_list|(
 name|info
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|PROP_PARASITES
 argument_list|,
@@ -2582,7 +2582,7 @@ name|xcf_save_prop
 argument_list|(
 name|info
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|PROP_END
 argument_list|,
@@ -2599,7 +2599,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|xcf_save_prop (XcfInfo * info,GimpImage * gimage,PropType prop_type,GError ** error,...)
+DECL|function|xcf_save_prop (XcfInfo * info,GimpImage * image,PropType prop_type,GError ** error,...)
 name|xcf_save_prop
 parameter_list|(
 name|XcfInfo
@@ -2608,7 +2608,7 @@ name|info
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|PropType
 name|prop_type
@@ -3977,7 +3977,7 @@ name|xcf_save_old_paths
 argument_list|(
 name|info
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|error
 argument_list|)
@@ -4085,7 +4085,7 @@ index|]
 operator|=
 name|_gimp_unit_get_identifier
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|,
@@ -4096,7 +4096,7 @@ name|factor
 operator|=
 name|_gimp_unit_get_factor
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|,
@@ -4107,7 +4107,7 @@ name|digits
 operator|=
 name|_gimp_unit_get_digits
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|,
@@ -4121,7 +4121,7 @@ index|]
 operator|=
 name|_gimp_unit_get_symbol
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|,
@@ -4135,7 +4135,7 @@ index|]
 operator|=
 name|_gimp_unit_get_abbreviation
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|,
@@ -4149,7 +4149,7 @@ index|]
 operator|=
 name|_gimp_unit_get_singular
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|,
@@ -4163,7 +4163,7 @@ index|]
 operator|=
 name|_gimp_unit_get_plural
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|,
@@ -4377,7 +4377,7 @@ name|xcf_save_vectors
 argument_list|(
 name|info
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|error
 argument_list|)
@@ -4511,7 +4511,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|xcf_save_layer (XcfInfo * info,GimpImage * gimage,GimpLayer * layer,GError ** error)
+DECL|function|xcf_save_layer (XcfInfo * info,GimpImage * image,GimpLayer * layer,GError ** error)
 name|xcf_save_layer
 parameter_list|(
 name|XcfInfo
@@ -4520,7 +4520,7 @@ name|info
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpLayer
 modifier|*
@@ -4679,7 +4679,7 @@ name|xcf_save_layer_props
 argument_list|(
 name|info
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|layer
 argument_list|,
@@ -4791,7 +4791,7 @@ name|xcf_save_channel
 argument_list|(
 name|info
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|GIMP_CHANNEL
 argument_list|(
@@ -4841,7 +4841,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|xcf_save_channel (XcfInfo * info,GimpImage * gimage,GimpChannel * channel,GError ** error)
+DECL|function|xcf_save_channel (XcfInfo * info,GimpImage * image,GimpChannel * channel,GError ** error)
 name|xcf_save_channel
 parameter_list|(
 name|XcfInfo
@@ -4850,7 +4850,7 @@ name|info
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpChannel
 modifier|*
@@ -4990,7 +4990,7 @@ name|xcf_save_channel_props
 argument_list|(
 name|info
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|channel
 argument_list|,
@@ -6469,7 +6469,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277a402f0108
+DECL|struct|__anon29faf1cc0108
 block|{
 DECL|member|info
 name|XcfInfo
@@ -6607,7 +6607,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|xcf_save_old_paths (XcfInfo * info,GimpImage * gimage,GError ** error)
+DECL|function|xcf_save_old_paths (XcfInfo * info,GimpImage * image,GError ** error)
 name|xcf_save_old_paths
 parameter_list|(
 name|XcfInfo
@@ -6616,7 +6616,7 @@ name|info
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GError
 modifier|*
@@ -6651,7 +6651,7 @@ name|num_paths
 operator|=
 name|gimp_container_num_children
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|vectors
 argument_list|)
@@ -6660,7 +6660,7 @@ name|active_vectors
 operator|=
 name|gimp_image_get_active_vectors
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 if|if
@@ -6671,7 +6671,7 @@ name|active_index
 operator|=
 name|gimp_container_get_child_index
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|vectors
 argument_list|,
@@ -6707,7 +6707,7 @@ name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|vectors
 argument_list|)
@@ -7001,7 +7001,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|xcf_save_vectors (XcfInfo * info,GimpImage * gimage,GError ** error)
+DECL|function|xcf_save_vectors (XcfInfo * info,GimpImage * image,GError ** error)
 name|xcf_save_vectors
 parameter_list|(
 name|XcfInfo
@@ -7010,7 +7010,7 @@ name|info
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GError
 modifier|*
@@ -7054,7 +7054,7 @@ name|active_vectors
 operator|=
 name|gimp_image_get_active_vectors
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 if|if
@@ -7065,7 +7065,7 @@ name|active_index
 operator|=
 name|gimp_container_get_child_index
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|vectors
 argument_list|,
@@ -7079,7 +7079,7 @@ name|num_paths
 operator|=
 name|gimp_container_num_children
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|vectors
 argument_list|)
@@ -7120,7 +7120,7 @@ name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|vectors
 argument_list|)

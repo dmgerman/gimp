@@ -911,14 +911,14 @@ name|gimp_image_get_active_vectors
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|gimp_image_set_active_vectors
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|vectors
 argument_list|)
@@ -957,7 +957,7 @@ name|GIMP_DISPLAY_CONFIG
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -980,7 +980,7 @@ name|gimp_image_find_guide
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|coords
 operator|->
@@ -1103,7 +1103,7 @@ name|gimp_image_pick_correlate_layer
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|coords
 operator|->
@@ -1122,7 +1122,7 @@ name|gimp_image_floating_sel
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 operator|&&
 operator|!
@@ -1141,7 +1141,7 @@ name|gimp_image_floating_sel
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|gimp_tool_control_activate
@@ -1163,14 +1163,14 @@ name|gimp_image_get_active_layer
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|gimp_image_set_active_layer
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|layer
 argument_list|)
@@ -1200,7 +1200,7 @@ name|gimp_image_get_active_vectors
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|gimp_edit_selection_tool_start
@@ -1229,7 +1229,7 @@ name|gimp_image_get_mask
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 condition|)
@@ -1259,7 +1259,7 @@ name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 decl_stmt|;
 if|if
@@ -1383,7 +1383,7 @@ name|GIMP_GUI_CONFIG
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -1589,7 +1589,7 @@ name|gimp_image_remove_guide
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|move
 operator|->
@@ -1619,7 +1619,7 @@ name|gimp_image_move_guide
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|move
 operator|->
@@ -1653,7 +1653,7 @@ name|gimp_image_add_hguide
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|move
 operator|->
@@ -1674,7 +1674,7 @@ name|gimp_image_add_vguide
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|move
 operator|->
@@ -1702,7 +1702,7 @@ name|gimp_image_flush
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 if|if
@@ -1769,7 +1769,7 @@ name|gimp_image_set_active_layer
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|move
 operator|->
@@ -1794,7 +1794,7 @@ name|gimp_image_set_active_vectors
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|move
 operator|->
@@ -1838,7 +1838,7 @@ name|gimp_image_flush
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -2473,7 +2473,7 @@ name|GIMP_DISPLAY_CONFIG
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -2488,7 +2488,7 @@ name|gimp_image_find_guide
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|coords
 operator|->
@@ -2654,7 +2654,7 @@ name|gimp_image_get_active_vectors
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|cursor
@@ -2733,7 +2733,7 @@ name|gimp_image_get_mask
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 condition|)
@@ -2756,7 +2756,7 @@ name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|cursor
@@ -2783,7 +2783,7 @@ name|GIMP_DISPLAY_CONFIG
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -2806,7 +2806,7 @@ name|gimp_image_find_guide
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|coords
 operator|->
@@ -2856,7 +2856,7 @@ name|gimp_image_pick_correlate_layer
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|coords
 operator|->
@@ -2876,7 +2876,7 @@ name|gimp_image_floating_sel
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 operator|&&
 operator|!
@@ -2908,7 +2908,7 @@ name|gimp_image_get_active_layer
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 condition|)
 block|{
@@ -3038,7 +3038,7 @@ name|draw_tool
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|width
 argument_list|,
@@ -3071,7 +3071,7 @@ name|draw_tool
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|height
 argument_list|,

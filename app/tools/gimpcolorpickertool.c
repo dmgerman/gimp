@@ -988,7 +988,7 @@ name|tool
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|)

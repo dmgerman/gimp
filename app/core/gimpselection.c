@@ -851,14 +851,14 @@ name|GIMP_IS_IMAGE
 argument_list|(
 name|item
 operator|->
-name|gimage
+name|image
 argument_list|)
 operator|&&
 name|gimp_image_get_mask
 argument_list|(
 name|item
 operator|->
-name|gimage
+name|image
 argument_list|)
 operator|==
 name|GIMP_CHANNEL
@@ -1271,7 +1271,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 init|=
 name|gimp_item_get_image
 argument_list|(
@@ -1288,7 +1288,7 @@ decl_stmt|;
 comment|/*  Turn the current selection off  */
 name|gimp_image_selection_control
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_SELECTION_OFF
 argument_list|)
@@ -1308,7 +1308,7 @@ name|layer
 operator|=
 name|gimp_image_get_active_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 if|if
@@ -1401,7 +1401,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 init|=
 name|gimp_item_get_image
 argument_list|(
@@ -1426,7 +1426,7 @@ name|layer
 operator|=
 name|gimp_image_floating_sel
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 operator|)
 condition|)
@@ -1482,7 +1482,7 @@ name|drawable
 operator|=
 name|gimp_image_active_drawable
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 operator|)
 operator|&&
@@ -1515,11 +1515,11 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|width
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|height
 argument_list|)
@@ -1533,7 +1533,7 @@ name|layer
 operator|=
 name|gimp_image_get_active_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 operator|)
 condition|)
@@ -1576,7 +1576,7 @@ name|off_x
 argument_list|,
 literal|0
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|width
 argument_list|)
@@ -1589,7 +1589,7 @@ name|off_y
 argument_list|,
 literal|0
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|height
 argument_list|)
@@ -1610,7 +1610,7 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|width
 argument_list|)
@@ -1631,7 +1631,7 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|height
 argument_list|)
@@ -2112,12 +2112,12 @@ end_comment
 begin_function
 name|GimpChannel
 modifier|*
-DECL|function|gimp_selection_new (GimpImage * gimage,gint width,gint height)
+DECL|function|gimp_selection_new (GimpImage * image,gint width,gint height)
 name|gimp_selection_new
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gint
 name|width
@@ -2147,7 +2147,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|NULL
@@ -2169,7 +2169,7 @@ argument_list|(
 name|channel
 argument_list|)
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 literal|0
 argument_list|,
@@ -2426,7 +2426,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpChannel
 modifier|*
@@ -2442,7 +2442,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -2484,7 +2484,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_add_channel
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|new_channel
 argument_list|,
@@ -2528,7 +2528,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|TileManager
 modifier|*
@@ -2617,7 +2617,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -2790,7 +2790,7 @@ break|break;
 block|}
 name|gimp_image_get_background
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|drawable
 argument_list|,
@@ -3124,7 +3124,7 @@ expr_stmt|;
 else|else
 name|gimp_image_remove_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_LAYER
 argument_list|(
@@ -3169,7 +3169,7 @@ condition|)
 block|{
 name|gimp_image_remove_channel
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_CHANNEL
 argument_list|(
@@ -3216,7 +3216,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpLayer
 modifier|*
@@ -3281,7 +3281,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -3345,7 +3345,7 @@ block|}
 comment|/*  Start an undo group  */
 name|gimp_image_undo_group_start
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_FS_FLOAT
 argument_list|,
@@ -3395,7 +3395,7 @@ name|gimp_layer_new_from_tiles
 argument_list|(
 name|tiles
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|gimp_drawable_type_with_alpha
 argument_list|(
@@ -3452,7 +3452,7 @@ argument_list|(
 name|tiles
 argument_list|)
 expr_stmt|;
-comment|/*  Add the floating layer to the gimage  */
+comment|/*  Add the floating layer to the image  */
 name|floating_sel_attach
 argument_list|(
 name|layer
@@ -3463,10 +3463,10 @@ expr_stmt|;
 comment|/*  End an undo group  */
 name|gimp_image_undo_group_end
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
-comment|/*  invalidate the gimage's boundary variables  */
+comment|/*  invalidate the image's boundary variables  */
 name|selection
 operator|->
 name|boundary_known

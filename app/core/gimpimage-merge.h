@@ -23,7 +23,7 @@ name|gimp_image_merge_visible_layers
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpContext
 modifier|*
@@ -42,7 +42,7 @@ name|gimp_image_merge_down
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpLayer
 modifier|*
@@ -65,7 +65,7 @@ name|gimp_image_flatten
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpContext
 modifier|*
@@ -81,7 +81,7 @@ name|gimp_image_merge_layers
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GSList
 modifier|*
@@ -109,7 +109,7 @@ name|gimp_image_merge_visible_vectors
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl

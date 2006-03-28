@@ -47,12 +47,12 @@ end_include
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_pick_color (GimpImage * gimage,GimpDrawable * drawable,gint x,gint y,gboolean sample_merged,gboolean sample_average,gdouble average_radius,GimpImageType * sample_type,GimpRGB * color,gint * color_index)
+DECL|function|gimp_image_pick_color (GimpImage * image,GimpDrawable * drawable,gint x,gint y,gboolean sample_merged,gboolean sample_average,gdouble average_radius,GimpImageType * sample_type,GimpRGB * color,gint * color_index)
 name|gimp_image_pick_color
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpDrawable
 modifier|*
@@ -94,7 +94,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|FALSE
@@ -128,7 +128,7 @@ name|drawable
 argument_list|)
 argument_list|)
 operator|==
-name|gimage
+name|image
 argument_list|,
 name|FALSE
 argument_list|)
@@ -148,7 +148,7 @@ name|drawable
 operator|=
 name|gimp_image_active_drawable
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 if|if
@@ -169,7 +169,7 @@ name|pickable
 operator|=
 name|GIMP_PICKABLE
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|projection
 argument_list|)

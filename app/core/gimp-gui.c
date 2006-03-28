@@ -1048,7 +1048,7 @@ end_function
 begin_function
 name|GimpObject
 modifier|*
-DECL|function|gimp_create_display (Gimp * gimp,GimpImage * gimage,GimpUnit unit,gdouble scale)
+DECL|function|gimp_create_display (Gimp * gimp,GimpImage * image,GimpUnit unit,gdouble scale)
 name|gimp_create_display
 parameter_list|(
 name|Gimp
@@ -1057,7 +1057,7 @@ name|gimp
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpUnit
 name|unit
@@ -1086,7 +1086,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|NULL
@@ -1109,7 +1109,7 @@ name|gui
 operator|.
 name|display_create
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|unit
 argument_list|,

@@ -436,7 +436,7 @@ name|gimp_vector_tool_vectors_changed
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpVectorTool
 modifier|*
@@ -1210,7 +1210,7 @@ name|gimp_image_set_active_vectors
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|vectors
 argument_list|)
@@ -1239,7 +1239,7 @@ name|gimp_vectors_new
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|_
 argument_list|(
@@ -1264,7 +1264,7 @@ name|gimp_image_add_vectors
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|vectors
 argument_list|,
@@ -1276,7 +1276,7 @@ name|gimp_image_flush
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|gimp_vector_tool_set_vectors
@@ -2422,7 +2422,7 @@ name|gimp_undo_stack_pop_undo
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|undo_stack
 argument_list|,
@@ -2436,7 +2436,7 @@ name|gimp_image_undo_event
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|GIMP_UNDO_EVENT_UNDO_EXPIRED
 argument_list|,
@@ -2479,7 +2479,7 @@ name|gimp_image_flush
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -3219,7 +3219,7 @@ name|gimp_image_flush
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 return|return
@@ -5220,12 +5220,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_vector_tool_vectors_changed (GimpImage * gimage,GimpVectorTool * vector_tool)
+DECL|function|gimp_vector_tool_vectors_changed (GimpImage * image,GimpVectorTool * vector_tool)
 name|gimp_vector_tool_vectors_changed
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpVectorTool
 modifier|*
@@ -5238,7 +5238,7 @@ name|vector_tool
 argument_list|,
 name|gimp_image_get_active_vectors
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5577,11 +5577,11 @@ name|draw_tool
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|!=
 name|item
 operator|->
-name|gimage
+name|image
 operator|)
 condition|)
 block|{
@@ -5624,9 +5624,9 @@ condition|)
 block|{
 name|GimpImage
 modifier|*
-name|old_gimage
+name|old_image
 decl_stmt|;
-name|old_gimage
+name|old_image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -5640,7 +5640,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|old_gimage
+name|old_image
 argument_list|,
 name|gimp_vector_tool_vectors_changed
 argument_list|,
@@ -5806,7 +5806,7 @@ name|g_signal_connect_object
 argument_list|(
 name|item
 operator|->
-name|gimage
+name|image
 argument_list|,
 literal|"active-vectors-changed"
 argument_list|,
@@ -5971,11 +5971,11 @@ name|tool
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|==
 name|item
 operator|->
-name|gimage
+name|image
 condition|)
 block|{
 name|gimp_draw_tool_start
@@ -6023,11 +6023,11 @@ name|gdisp
 operator|||
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|!=
 name|item
 operator|->
-name|gimage
+name|image
 condition|)
 block|{
 name|GList
@@ -6046,7 +6046,7 @@ name|GIMP_LIST
 argument_list|(
 name|item
 operator|->
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -6077,11 +6077,11 @@ operator|->
 name|data
 operator|)
 operator|->
-name|gimage
+name|image
 operator|==
 name|item
 operator|->
-name|gimage
+name|image
 condition|)
 block|{
 name|gimp_context_set_display
@@ -6809,7 +6809,7 @@ operator|->
 name|vectors
 argument_list|)
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|desc
 argument_list|,
@@ -6864,7 +6864,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpChannelOps
 name|operation
@@ -6879,7 +6879,7 @@ operator|->
 name|vectors
 condition|)
 return|return;
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -6931,7 +6931,7 @@ name|gimp_channel_select_vectors
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|_
@@ -6956,7 +6956,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -6979,7 +6979,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpDrawable
 modifier|*
@@ -6997,7 +6997,7 @@ operator|->
 name|vectors
 condition|)
 return|return;
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -7013,7 +7013,7 @@ name|active_drawable
 operator|=
 name|gimp_image_active_drawable
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 if|if

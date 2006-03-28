@@ -116,12 +116,12 @@ end_comment
 begin_function
 name|ChannelOptionsDialog
 modifier|*
-DECL|function|channel_options_dialog_new (GimpImage * gimage,GimpContext * context,GimpChannel * channel,GtkWidget * parent,const GimpRGB * channel_color,const gchar * channel_name,const gchar * title,const gchar * role,const gchar * stock_id,const gchar * desc,const gchar * help_id,const gchar * color_label,const gchar * opacity_label,gboolean show_from_sel)
+DECL|function|channel_options_dialog_new (GimpImage * image,GimpContext * context,GimpChannel * channel,GtkWidget * parent,const GimpRGB * channel_color,const gchar * channel_name,const gchar * title,const gchar * role,const gchar * stock_id,const gchar * desc,const gchar * help_id,const gchar * color_label,const gchar * opacity_label,gboolean show_from_sel)
 name|channel_options_dialog_new
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpContext
 modifier|*
@@ -212,7 +212,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|NULL
@@ -335,9 +335,9 @@ argument_list|)
 expr_stmt|;
 name|options
 operator|->
-name|gimage
+name|image
 operator|=
-name|gimage
+name|image
 expr_stmt|;
 name|options
 operator|->
@@ -396,7 +396,7 @@ name|viewable
 operator|=
 name|GIMP_VIEWABLE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|options

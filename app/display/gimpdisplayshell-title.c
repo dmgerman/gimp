@@ -194,7 +194,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -322,7 +322,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -582,7 +582,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 expr_stmt|;
 name|gimp
 operator|=

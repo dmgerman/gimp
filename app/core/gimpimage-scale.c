@@ -95,12 +95,12 @@ end_include
 
 begin_function
 name|void
-DECL|function|gimp_image_scale (GimpImage * gimage,gint new_width,gint new_height,GimpInterpolationType interpolation_type,GimpProgress * progress)
+DECL|function|gimp_image_scale (GimpImage * image,gint new_width,gint new_height,GimpInterpolationType interpolation_type,GimpProgress * progress)
 name|gimp_image_scale
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gint
 name|new_width
@@ -158,7 +158,7 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -187,7 +187,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_set_busy
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|)
@@ -195,19 +195,19 @@ expr_stmt|;
 name|progress_max
 operator|=
 operator|(
-name|gimage
+name|image
 operator|->
 name|channels
 operator|->
 name|num_children
 operator|+
-name|gimage
+name|image
 operator|->
 name|layers
 operator|->
 name|num_children
 operator|+
-name|gimage
+name|image
 operator|->
 name|vectors
 operator|->
@@ -221,13 +221,13 @@ name|g_object_freeze_notify
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_image_undo_group_start
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_IMAGE_SCALE
 argument_list|,
@@ -240,20 +240,20 @@ expr_stmt|;
 comment|/*  Push the image size to the stack  */
 name|gimp_image_undo_push_image_size
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
 name|old_width
 operator|=
-name|gimage
+name|image
 operator|->
 name|width
 expr_stmt|;
 name|old_height
 operator|=
-name|gimage
+name|image
 operator|->
 name|height
 expr_stmt|;
@@ -284,7 +284,7 @@ expr_stmt|;
 comment|/*  Set the new width and height  */
 name|g_object_set
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 literal|"width"
 argument_list|,
@@ -304,7 +304,7 @@ name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|channels
 argument_list|)
@@ -370,7 +370,7 @@ name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|vectors
 argument_list|)
@@ -436,7 +436,7 @@ name|GIMP_ITEM
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 argument_list|,
@@ -474,7 +474,7 @@ name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|layers
 argument_list|)
@@ -544,7 +544,7 @@ name|progress_max
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* We defer removing layers lost to scaling until now so as not to mix    * the operations of iterating over and removal from gimage->layers.    */
+comment|/* We defer removing layers lost to scaling until now so as not to mix    * the operations of iterating over and removal from image->layers.    */
 name|remove
 operator|=
 name|g_list_reverse
@@ -578,7 +578,7 @@ name|data
 decl_stmt|;
 name|gimp_image_remove_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|layer
 argument_list|)
@@ -594,7 +594,7 @@ for|for
 control|(
 name|list
 operator|=
-name|gimage
+name|image
 operator|->
 name|guides
 init|;
@@ -628,7 +628,7 @@ name|GIMP_ORIENTATION_HORIZONTAL
 case|:
 name|gimp_image_undo_push_image_guide
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|NULL
 argument_list|,
@@ -655,7 +655,7 @@ name|GIMP_ORIENTATION_VERTICAL
 case|:
 name|gimp_image_undo_push_image_guide
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|NULL
 argument_list|,
@@ -686,7 +686,7 @@ for|for
 control|(
 name|list
 operator|=
-name|gimage
+name|image
 operator|->
 name|sample_points
 init|;
@@ -710,7 +710,7 @@ name|data
 decl_stmt|;
 name|gimp_image_undo_push_image_sample_point
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|NULL
 argument_list|,
@@ -744,14 +744,14 @@ expr_stmt|;
 block|}
 name|gimp_image_undo_group_end
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|gimp_viewable_size_changed
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -759,13 +759,13 @@ name|g_object_thaw_notify
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_unset_busy
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|)
@@ -774,18 +774,18 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_scale_check:  * @gimage:      A #GimpImage.  * @new_width:   The new width.  * @new_height:  The new height.  * @max_memsize: The maximum new memory size.  * @new_memsize: The new memory size.  *  * Inventory the layer list in gimage and check that it may be  * scaled to @new_height and @new_width without problems.  *  * Return value: #GIMP_IMAGE_SCALE_OK if scaling the image will shrink none  *               of its layers completely away, and the new image size  *               is smaller than @max_memsize.  *               #GIMP_IMAGE_SCALE_TOO_SMALL if scaling would remove some  *               existing layers.  *               #GIMP_IMAGE_SCALE_TOO_BIG if the new image size would  *               exceed the maximum specified in the preferences.  **/
+comment|/**  * gimp_image_scale_check:  * @image:      A #GimpImage.  * @new_width:   The new width.  * @new_height:  The new height.  * @max_memsize: The maximum new memory size.  * @new_memsize: The new memory size.  *  * Inventory the layer list in image and check that it may be  * scaled to @new_height and @new_width without problems.  *  * Return value: #GIMP_IMAGE_SCALE_OK if scaling the image will shrink none  *               of its layers completely away, and the new image size  *               is smaller than @max_memsize.  *               #GIMP_IMAGE_SCALE_TOO_SMALL if scaling would remove some  *               existing layers.  *               #GIMP_IMAGE_SCALE_TOO_BIG if the new image size would  *               exceed the maximum specified in the preferences.  **/
 end_comment
 
 begin_function
 name|GimpImageScaleCheckType
-DECL|function|gimp_image_scale_check (const GimpImage * gimage,gint new_width,gint new_height,gint64 max_memsize,gint64 * new_memsize)
+DECL|function|gimp_image_scale_check (const GimpImage * image,gint new_width,gint new_height,gint64 max_memsize,gint64 * new_memsize)
 name|gimp_image_scale_check
 parameter_list|(
 specifier|const
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gint
 name|new_width
@@ -827,7 +827,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|GIMP_IMAGE_SCALE_TOO_SMALL
@@ -848,7 +848,7 @@ name|gimp_object_get_memsize
 argument_list|(
 name|GIMP_OBJECT
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|NULL
@@ -861,7 +861,7 @@ name|gimp_object_get_memsize
 argument_list|(
 name|GIMP_OBJECT
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|layers
 argument_list|)
@@ -873,7 +873,7 @@ name|gimp_object_get_memsize
 argument_list|(
 name|GIMP_OBJECT
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|channels
 argument_list|)
@@ -885,7 +885,7 @@ name|gimp_object_get_memsize
 argument_list|(
 name|GIMP_OBJECT
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|selection_mask
 argument_list|)
@@ -897,7 +897,7 @@ name|gimp_object_get_memsize
 argument_list|(
 name|GIMP_OBJECT
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|projection
 argument_list|)
@@ -911,7 +911,7 @@ name|gimp_object_get_memsize
 argument_list|(
 name|GIMP_OBJECT
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|undo_stack
 argument_list|)
@@ -925,7 +925,7 @@ name|gimp_object_get_memsize
 argument_list|(
 name|GIMP_OBJECT
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|redo_stack
 argument_list|)
@@ -962,7 +962,7 @@ name|new_width
 operator|/
 name|gimp_image_get_width
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 operator|)
 operator|*
@@ -974,7 +974,7 @@ name|new_height
 operator|/
 name|gimp_image_get_height
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 operator|)
 operator|)
@@ -1003,7 +1003,7 @@ name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|layers
 argument_list|)

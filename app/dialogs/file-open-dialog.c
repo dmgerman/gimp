@@ -157,7 +157,7 @@ name|open_dialog
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -357,7 +357,7 @@ if|if
 condition|(
 name|dialog
 operator|->
-name|gimage
+name|image
 condition|)
 name|uris
 operator|=
@@ -424,7 +424,7 @@ if|if
 condition|(
 name|dialog
 operator|->
-name|gimage
+name|image
 condition|)
 block|{
 if|if
@@ -435,7 +435,7 @@ name|open_dialog
 argument_list|,
 name|dialog
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|list
 operator|->
@@ -516,13 +516,13 @@ if|if
 condition|(
 name|dialog
 operator|->
-name|gimage
+name|image
 condition|)
 name|gimp_image_flush
 argument_list|(
 name|dialog
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -584,7 +584,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpPDBStatusType
 name|status
@@ -595,7 +595,7 @@ name|error
 init|=
 name|NULL
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|file_open_with_proc_and_display
 argument_list|(
@@ -626,7 +626,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimage
+name|image
 condition|)
 block|{
 return|return
@@ -685,7 +685,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|file_open_dialog_open_layer (GtkWidget * open_dialog,GimpImage * gimage,const gchar * uri,const gchar * entered_filename,PlugInProcDef * load_proc)
+DECL|function|file_open_dialog_open_layer (GtkWidget * open_dialog,GimpImage * image,const gchar * uri,const gchar * entered_filename,PlugInProcDef * load_proc)
 name|file_open_dialog_open_layer
 parameter_list|(
 name|GtkWidget
@@ -694,7 +694,7 @@ name|open_dialog
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -728,13 +728,13 @@ name|new_layer
 operator|=
 name|file_open_layer
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|,
 name|gimp_get_user_context
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|)
@@ -744,7 +744,7 @@ argument_list|(
 name|open_dialog
 argument_list|)
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|uri
 argument_list|,
@@ -787,14 +787,14 @@ name|width
 operator|=
 name|gimp_image_get_width
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|height
 operator|=
 name|gimp_image_get_height
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|gimp_item_offsets
@@ -851,7 +851,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_add_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|new_layer
 argument_list|,

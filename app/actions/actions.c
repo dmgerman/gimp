@@ -1124,7 +1124,7 @@ operator|)
 name|data
 operator|)
 operator|->
-name|gimage
+name|image
 operator|->
 name|gimp
 return|;
@@ -1312,7 +1312,7 @@ operator|)
 name|data
 operator|)
 operator|->
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|)
@@ -1493,7 +1493,7 @@ operator|)
 name|data
 operator|)
 operator|->
-name|gimage
+name|image
 return|;
 elseif|else
 if|if
@@ -1547,7 +1547,7 @@ operator|)
 name|data
 operator|)
 operator|->
-name|gimage
+name|image
 return|;
 elseif|else
 if|if
@@ -1566,7 +1566,7 @@ operator|)
 name|data
 operator|)
 operator|->
-name|gimage
+name|image
 return|;
 elseif|else
 if|if

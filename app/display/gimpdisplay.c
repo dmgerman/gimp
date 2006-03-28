@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b63f91c0103
+DECL|enum|__anon2a32c4780103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -508,7 +508,7 @@ literal|0
 expr_stmt|;
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|=
 name|NULL
 expr_stmt|;
@@ -728,7 +728,7 @@ name|value
 argument_list|,
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1252,12 +1252,12 @@ end_comment
 begin_function
 name|GimpDisplay
 modifier|*
-DECL|function|gimp_display_new (GimpImage * gimage,GimpUnit unit,gdouble scale,GimpMenuFactory * menu_factory,GimpUIManager * popup_manager)
+DECL|function|gimp_display_new (GimpImage * image,GimpUnit unit,gdouble scale,GimpMenuFactory * menu_factory,GimpUIManager * popup_manager)
 name|gimp_display_new
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpUnit
 name|unit
@@ -1282,7 +1282,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|NULL
@@ -1291,7 +1291,7 @@ expr_stmt|;
 comment|/*  If there isn't an interface, never create a gdisplay  */
 if|if
 condition|(
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -1308,7 +1308,7 @@ name|GIMP_TYPE_DISPLAY
 argument_list|,
 literal|"id"
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -1323,7 +1323,7 @@ name|gimp_display_connect
 argument_list|(
 name|gdisp
 argument_list|,
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 comment|/*  create the shell for the image  */
@@ -1405,7 +1405,7 @@ name|gimp_container_remove
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -1422,7 +1422,7 @@ name|tool_manager_control_active
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|,
@@ -1437,7 +1437,7 @@ name|tool_manager_get_active
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|)
@@ -1459,7 +1459,7 @@ name|tool_manager_focus_display_active
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|,
@@ -1530,7 +1530,7 @@ name|shell
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  unrefs the gimage  */
+comment|/*  unrefs the image  */
 name|gimp_display_disconnect
 argument_list|(
 name|gdisp
@@ -1652,7 +1652,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_reconnect (GimpDisplay * gdisp,GimpImage * gimage)
+DECL|function|gimp_display_reconnect (GimpDisplay * gdisp,GimpImage * image)
 name|gimp_display_reconnect
 parameter_list|(
 name|GimpDisplay
@@ -1661,7 +1661,7 @@ name|gdisp
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 block|{
 name|GimpImage
@@ -1680,7 +1680,7 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1689,7 +1689,7 @@ name|tool_manager_control_active
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|,
@@ -1714,7 +1714,7 @@ name|g_object_ref
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|gimp_display_disconnect
@@ -1726,7 +1726,7 @@ name|gimp_display_connect
 argument_list|(
 name|gdisp
 argument_list|,
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -1815,7 +1815,7 @@ literal|0
 argument_list|,
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|width
 argument_list|)
@@ -1828,7 +1828,7 @@ literal|0
 argument_list|,
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|height
 argument_list|)
@@ -1843,7 +1843,7 @@ literal|0
 argument_list|,
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|width
 argument_list|)
@@ -1858,7 +1858,7 @@ literal|0
 argument_list|,
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|height
 argument_list|)
@@ -2140,7 +2140,7 @@ literal|0
 argument_list|,
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|width
 argument_list|)
@@ -2155,7 +2155,7 @@ literal|0
 argument_list|,
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|height
 argument_list|)
@@ -2172,7 +2172,7 @@ literal|0
 argument_list|,
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|width
 argument_list|)
@@ -2189,7 +2189,7 @@ literal|0
 argument_list|,
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|height
 argument_list|)

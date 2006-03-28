@@ -136,7 +136,7 @@ name|gimp_display_shell_clean_dirty_handler
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpDirtyMask
 name|dirty_mask
@@ -155,7 +155,7 @@ name|gimp_display_shell_undo_event_handler
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpUndoEvent
 name|event
@@ -198,7 +198,7 @@ name|gimp_display_shell_name_changed_handler
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpDisplayShell
 modifier|*
@@ -214,7 +214,7 @@ name|gimp_display_shell_selection_control_handler
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpSelectionControl
 name|control
@@ -233,7 +233,7 @@ name|gimp_display_shell_size_changed_handler
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpDisplayShell
 modifier|*
@@ -249,7 +249,7 @@ name|gimp_display_shell_resolution_changed_handler
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpDisplayShell
 modifier|*
@@ -265,7 +265,7 @@ name|gimp_display_shell_quick_mask_changed_handler
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpDisplayShell
 modifier|*
@@ -281,7 +281,7 @@ name|gimp_display_shell_update_guide_handler
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpGuide
 modifier|*
@@ -301,7 +301,7 @@ name|gimp_display_shell_update_sample_point_handler
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpSamplePoint
 modifier|*
@@ -321,7 +321,7 @@ name|gimp_display_shell_invalidate_preview_handler
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpDisplayShell
 modifier|*
@@ -565,7 +565,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpDisplayConfig
 modifier|*
@@ -597,23 +597,23 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 expr_stmt|;
 name|display_config
 operator|=
 name|GIMP_DISPLAY_CONFIG
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -622,7 +622,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 literal|"clean"
 argument_list|,
@@ -636,7 +636,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 literal|"dirty"
 argument_list|,
@@ -650,7 +650,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 literal|"undo-event"
 argument_list|,
@@ -664,7 +664,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|grid
 argument_list|,
@@ -680,7 +680,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 literal|"name-changed"
 argument_list|,
@@ -694,7 +694,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 literal|"selection-control"
 argument_list|,
@@ -708,7 +708,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 literal|"size-changed"
 argument_list|,
@@ -722,7 +722,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 literal|"resolution-changed"
 argument_list|,
@@ -736,7 +736,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 literal|"quick-mask-changed"
 argument_list|,
@@ -750,7 +750,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 literal|"update-guide"
 argument_list|,
@@ -764,7 +764,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 literal|"update-sample-point"
 argument_list|,
@@ -778,7 +778,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 literal|"invalidate-preview"
 argument_list|,
@@ -796,7 +796,7 @@ name|vectors_freeze_handler
 operator|=
 name|gimp_container_add_handler
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|vectors
 argument_list|,
@@ -816,7 +816,7 @@ name|vectors_thaw_handler
 operator|=
 name|gimp_container_add_handler
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|vectors
 argument_list|,
@@ -836,7 +836,7 @@ name|vectors_visible_handler
 operator|=
 name|gimp_container_add_handler
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|vectors
 argument_list|,
@@ -852,7 +852,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|vectors
 argument_list|,
@@ -868,7 +868,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|vectors
 argument_list|,
@@ -884,7 +884,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -902,7 +902,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -920,7 +920,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -938,7 +938,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -956,7 +956,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -974,7 +974,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -992,7 +992,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -1010,7 +1010,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -1092,7 +1092,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -1110,14 +1110,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_display_shell_invalidate_preview_handler
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|shell
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_quick_mask_changed_handler
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|shell
 argument_list|)
@@ -1137,7 +1137,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpDisplayConfig
 modifier|*
@@ -1169,23 +1169,23 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 expr_stmt|;
 name|display_config
 operator|=
 name|GIMP_DISPLAY_CONFIG
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -1257,7 +1257,7 @@ expr_stmt|;
 block|}
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -1292,7 +1292,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -1305,7 +1305,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -1318,7 +1318,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -1331,7 +1331,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -1344,7 +1344,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|vectors
 argument_list|,
@@ -1355,7 +1355,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|vectors
 argument_list|,
@@ -1366,7 +1366,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_container_remove_handler
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|vectors
 argument_list|,
@@ -1377,7 +1377,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_container_remove_handler
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|vectors
 argument_list|,
@@ -1388,7 +1388,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_container_remove_handler
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|vectors
 argument_list|,
@@ -1399,7 +1399,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|gimp_display_shell_invalidate_preview_handler
 argument_list|,
@@ -1408,7 +1408,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|gimp_display_shell_update_guide_handler
 argument_list|,
@@ -1417,7 +1417,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|gimp_display_shell_update_sample_point_handler
 argument_list|,
@@ -1426,7 +1426,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|gimp_display_shell_quick_mask_changed_handler
 argument_list|,
@@ -1435,7 +1435,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|gimp_display_shell_resolution_changed_handler
 argument_list|,
@@ -1444,7 +1444,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|gimp_display_shell_size_changed_handler
 argument_list|,
@@ -1453,7 +1453,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|gimp_display_shell_selection_control_handler
 argument_list|,
@@ -1462,7 +1462,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|gimp_display_shell_name_changed_handler
 argument_list|,
@@ -1471,7 +1471,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|grid
 argument_list|,
@@ -1482,7 +1482,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|gimp_display_shell_undo_event_handler
 argument_list|,
@@ -1491,7 +1491,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|gimp_display_shell_clean_dirty_handler
 argument_list|,
@@ -1508,12 +1508,12 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_display_shell_clean_dirty_handler (GimpImage * gimage,GimpDirtyMask dirty_mask,GimpDisplayShell * shell)
+DECL|function|gimp_display_shell_clean_dirty_handler (GimpImage * image,GimpDirtyMask dirty_mask,GimpDisplayShell * shell)
 name|gimp_display_shell_clean_dirty_handler
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpDirtyMask
 name|dirty_mask
@@ -1534,12 +1534,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_display_shell_undo_event_handler (GimpImage * gimage,GimpUndoEvent event,GimpUndo * undo,GimpDisplayShell * shell)
+DECL|function|gimp_display_shell_undo_event_handler (GimpImage * image,GimpUndoEvent event,GimpUndo * undo,GimpDisplayShell * shell)
 name|gimp_display_shell_undo_event_handler
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpUndoEvent
 name|event
@@ -1620,12 +1620,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_display_shell_name_changed_handler (GimpImage * gimage,GimpDisplayShell * shell)
+DECL|function|gimp_display_shell_name_changed_handler (GimpImage * image,GimpDisplayShell * shell)
 name|gimp_display_shell_name_changed_handler
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpDisplayShell
 modifier|*
@@ -1643,12 +1643,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_display_shell_selection_control_handler (GimpImage * gimage,GimpSelectionControl control,GimpDisplayShell * shell)
+DECL|function|gimp_display_shell_selection_control_handler (GimpImage * image,GimpSelectionControl control,GimpDisplayShell * shell)
 name|gimp_display_shell_selection_control_handler
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpSelectionControl
 name|control
@@ -1671,12 +1671,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_display_shell_size_changed_handler (GimpImage * gimage,GimpDisplayShell * shell)
+DECL|function|gimp_display_shell_size_changed_handler (GimpImage * image,GimpDisplayShell * shell)
 name|gimp_display_shell_size_changed_handler
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpDisplayShell
 modifier|*
@@ -1689,7 +1689,7 @@ name|shell
 argument_list|,
 name|GIMP_DISPLAY_CONFIG
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -1707,12 +1707,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_display_shell_resolution_changed_handler (GimpImage * gimage,GimpDisplayShell * shell)
+DECL|function|gimp_display_shell_resolution_changed_handler (GimpImage * image,GimpDisplayShell * shell)
 name|gimp_display_shell_resolution_changed_handler
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpDisplayShell
 modifier|*
@@ -1741,7 +1741,7 @@ else|else
 block|{
 name|gimp_display_shell_size_changed_handler
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|shell
 argument_list|)
@@ -1753,12 +1753,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_display_shell_quick_mask_changed_handler (GimpImage * gimage,GimpDisplayShell * shell)
+DECL|function|gimp_display_shell_quick_mask_changed_handler (GimpImage * image,GimpDisplayShell * shell)
 name|gimp_display_shell_quick_mask_changed_handler
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpDisplayShell
 modifier|*
@@ -1767,10 +1767,8 @@ parameter_list|)
 block|{
 name|GtkImage
 modifier|*
-name|image
-decl_stmt|;
-name|image
-operator|=
+name|gtk_image
+init|=
 name|GTK_IMAGE
 argument_list|(
 name|GTK_BIN
@@ -1782,7 +1780,7 @@ argument_list|)
 operator|->
 name|child
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|g_signal_handlers_block_by_func
 argument_list|(
 name|shell
@@ -1807,7 +1805,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|quick_mask_state
 argument_list|)
@@ -1818,13 +1816,13 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|quick_mask_state
 condition|)
 name|gtk_image_set_from_stock
 argument_list|(
-name|image
+name|gtk_image
 argument_list|,
 name|GIMP_STOCK_QUICK_MASK_ON
 argument_list|,
@@ -1834,7 +1832,7 @@ expr_stmt|;
 else|else
 name|gtk_image_set_from_stock
 argument_list|(
-name|image
+name|gtk_image
 argument_list|,
 name|GIMP_STOCK_QUICK_MASK_OFF
 argument_list|,
@@ -1858,12 +1856,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_display_shell_update_guide_handler (GimpImage * gimage,GimpGuide * guide,GimpDisplayShell * shell)
+DECL|function|gimp_display_shell_update_guide_handler (GimpImage * image,GimpGuide * guide,GimpDisplayShell * shell)
 name|gimp_display_shell_update_guide_handler
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpGuide
 modifier|*
@@ -1887,12 +1885,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_display_shell_update_sample_point_handler (GimpImage * gimage,GimpSamplePoint * sample_point,GimpDisplayShell * shell)
+DECL|function|gimp_display_shell_update_sample_point_handler (GimpImage * image,GimpSamplePoint * sample_point,GimpDisplayShell * shell)
 name|gimp_display_shell_update_sample_point_handler
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpSamplePoint
 modifier|*
@@ -1916,12 +1914,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_display_shell_invalidate_preview_handler (GimpImage * gimage,GimpDisplayShell * shell)
+DECL|function|gimp_display_shell_invalidate_preview_handler (GimpImage * image,GimpDisplayShell * shell)
 name|gimp_display_shell_invalidate_preview_handler
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpDisplayShell
 modifier|*
@@ -2448,7 +2446,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->

@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b670c3a0103
+DECL|enum|__anon2c3690580103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -144,7 +144,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b670c3a0203
+DECL|enum|__anon2c3690580203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -820,7 +820,7 @@ literal|0
 expr_stmt|;
 name|item
 operator|->
-name|gimage
+name|image
 operator|=
 name|NULL
 expr_stmt|;
@@ -1039,11 +1039,11 @@ if|if
 condition|(
 name|item
 operator|->
-name|gimage
+name|image
 operator|&&
 name|item
 operator|->
-name|gimage
+name|image
 operator|->
 name|gimp
 condition|)
@@ -1052,7 +1052,7 @@ name|g_hash_table_remove
 argument_list|(
 name|item
 operator|->
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -1068,7 +1068,7 @@ argument_list|)
 expr_stmt|;
 name|item
 operator|->
-name|gimage
+name|image
 operator|=
 name|NULL
 expr_stmt|;
@@ -1210,7 +1210,7 @@ name|GIMP_IS_IMAGE
 argument_list|(
 name|item
 operator|->
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|NULL
@@ -1518,7 +1518,7 @@ name|gimp_image_undo_push_item_rename
 argument_list|(
 name|item
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|undo_desc
 argument_list|,
@@ -1889,12 +1889,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_configure:  * @item:     The #GimpItem to configure.  * @gimage:   The #GimpImage to which the item belongs.  * @offset_x: The X offset to assign the item.  * @offset_y: The Y offset to assign the item.  * @width:    The width to assign the item.  * @height:   The height to assign the item.  * @name:     The name to assign the item.  *  * This function is used to configure a new item.  First, if the item  * does not already have an ID, it is assigned the next available  * one, and then inserted into the Item Hash Table.  Next, it is  * given basic item properties as specified by the arguments.  */
+comment|/**  * gimp_item_configure:  * @item:     The #GimpItem to configure.  * @image:    The #GimpImage to which the item belongs.  * @offset_x: The X offset to assign the item.  * @offset_y: The Y offset to assign the item.  * @width:    The width to assign the item.  * @height:   The height to assign the item.  * @name:     The name to assign the item.  *  * This function is used to configure a new item.  First, if the item  * does not already have an ID, it is assigned the next available  * one, and then inserted into the Item Hash Table.  Next, it is  * given basic item properties as specified by the arguments.  */
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_item_configure (GimpItem * item,GimpImage * gimage,gint offset_x,gint offset_y,gint width,gint height,const gchar * name)
+DECL|function|gimp_item_configure (GimpItem * item,GimpImage * image,gint offset_x,gint offset_y,gint width,gint height,const gchar * name)
 name|gimp_item_configure
 parameter_list|(
 name|GimpItem
@@ -1903,7 +1903,7 @@ name|item
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gint
 name|offset_x
@@ -1935,7 +1935,7 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1960,7 +1960,7 @@ name|item
 operator|->
 name|ID
 operator|=
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -1969,7 +1969,7 @@ operator|++
 expr_stmt|;
 name|g_hash_table_insert
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -1989,7 +1989,7 @@ name|gimp_item_set_image
 argument_list|(
 name|item
 argument_list|,
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|g_object_notify
@@ -2150,7 +2150,7 @@ name|GIMP_IS_IMAGE
 argument_list|(
 name|item
 operator|->
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|NULL
@@ -2231,7 +2231,7 @@ name|GIMP_IS_IMAGE
 argument_list|(
 name|item
 operator|->
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|NULL
@@ -2535,7 +2535,7 @@ name|item_class
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -2552,7 +2552,7 @@ argument_list|(
 name|item
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -2577,7 +2577,7 @@ name|push_undo
 condition|)
 name|gimp_image_undo_group_start
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_ITEM_DISPLACE
 argument_list|,
@@ -2605,7 +2605,7 @@ name|push_undo
 condition|)
 name|gimp_image_undo_group_end
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -2634,7 +2634,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gdouble
 name|img_scale_w
@@ -2658,7 +2658,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -2675,7 +2675,7 @@ operator|/
 operator|(
 name|gdouble
 operator|)
-name|gimage
+name|image
 operator|->
 name|width
 expr_stmt|;
@@ -2689,7 +2689,7 @@ operator|/
 operator|(
 name|gdouble
 operator|)
-name|gimage
+name|image
 operator|->
 name|height
 expr_stmt|;
@@ -2770,7 +2770,7 @@ name|item_class
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -2810,7 +2810,7 @@ argument_list|(
 name|item
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -2826,7 +2826,7 @@ argument_list|)
 condition|)
 name|gimp_image_undo_group_start
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_ITEM_SCALE
 argument_list|,
@@ -2863,7 +2863,7 @@ argument_list|)
 condition|)
 name|gimp_image_undo_group_end
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -3270,7 +3270,7 @@ name|item_class
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -3306,7 +3306,7 @@ argument_list|(
 name|item
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -3322,7 +3322,7 @@ argument_list|)
 condition|)
 name|gimp_image_undo_group_start
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_ITEM_RESIZE
 argument_list|,
@@ -3357,7 +3357,7 @@ argument_list|)
 condition|)
 name|gimp_image_undo_group_end
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -3392,7 +3392,7 @@ name|item_class
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -3425,7 +3425,7 @@ argument_list|(
 name|item
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -3434,7 +3434,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_undo_group_start
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_TRANSFORM
 argument_list|,
@@ -3460,7 +3460,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_undo_group_end
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -3498,7 +3498,7 @@ name|item_class
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -3531,7 +3531,7 @@ argument_list|(
 name|item
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -3540,7 +3540,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_undo_group_start
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_TRANSFORM
 argument_list|,
@@ -3568,7 +3568,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_undo_group_end
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -3618,7 +3618,7 @@ name|item_class
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -3670,7 +3670,7 @@ argument_list|(
 name|item
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -3679,7 +3679,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_undo_group_start
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_TRANSFORM
 argument_list|,
@@ -3713,7 +3713,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_undo_group_end
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -3832,7 +3832,7 @@ condition|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 init|=
 name|gimp_item_get_image
 argument_list|(
@@ -3850,7 +3850,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_undo_group_start
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_PAINT
 argument_list|,
@@ -3874,7 +3874,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_undo_group_end
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|gimp_stroke_desc_finish
@@ -4057,14 +4057,14 @@ expr_stmt|;
 return|return
 name|item
 operator|->
-name|gimage
+name|image
 return|;
 block|}
 end_function
 
 begin_function
 name|void
-DECL|function|gimp_item_set_image (GimpItem * item,GimpImage * gimage)
+DECL|function|gimp_item_set_image (GimpItem * item,GimpImage * image)
 name|gimp_item_set_image
 parameter_list|(
 name|GimpItem
@@ -4073,7 +4073,7 @@ name|item
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -4095,19 +4095,19 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|gimage
+name|image
 operator|==
 name|NULL
 operator|||
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimage
+name|image
 operator|==
 name|NULL
 condition|)
@@ -4130,9 +4130,9 @@ literal|0
 operator|||
 name|item
 operator|->
-name|gimage
+name|image
 operator|!=
-name|gimage
+name|image
 condition|)
 block|{
 name|item
@@ -4141,15 +4141,15 @@ name|tattoo
 operator|=
 name|gimp_image_get_new_tattoo
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
 name|item
 operator|->
-name|gimage
+name|image
 operator|=
-name|gimage
+name|image
 expr_stmt|;
 block|}
 end_function
@@ -4198,7 +4198,7 @@ name|gimp_image_undo_group_start
 argument_list|(
 name|item
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_PARASITE_ATTACH
 argument_list|,
@@ -4212,7 +4212,7 @@ name|gimp_image_undo_push_item_parasite
 argument_list|(
 name|item
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|NULL
 argument_list|,
@@ -4251,7 +4251,7 @@ name|gimp_image_undo_push_cantundo
 argument_list|(
 name|item
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|_
 argument_list|(
@@ -4289,7 +4289,7 @@ name|gimp_image_parasite_attach
 argument_list|(
 name|item
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|parasite
 argument_list|)
@@ -4320,7 +4320,7 @@ name|gimp_parasite_attach
 argument_list|(
 name|item
 operator|->
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|,
@@ -4345,7 +4345,7 @@ name|gimp_image_undo_group_end
 argument_list|(
 name|item
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -4408,7 +4408,7 @@ name|gimp_image_undo_push_item_parasite_remove
 argument_list|(
 name|item
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|_
 argument_list|(
@@ -4437,7 +4437,7 @@ name|gimp_image_undo_push_cantundo
 argument_list|(
 name|item
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|_
 argument_list|(
@@ -4702,7 +4702,7 @@ condition|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 init|=
 name|gimp_item_get_image
 argument_list|(
@@ -4711,11 +4711,11 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|gimage
+name|image
 condition|)
 name|gimp_image_undo_push_item_visibility
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|NULL
 argument_list|,
@@ -4794,7 +4794,7 @@ condition|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 init|=
 name|gimp_item_get_image
 argument_list|(
@@ -4803,11 +4803,11 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|gimage
+name|image
 condition|)
 name|gimp_image_undo_push_item_linked
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|NULL
 argument_list|,

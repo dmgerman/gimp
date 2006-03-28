@@ -22,7 +22,7 @@ name|gimp_image_undo
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -33,7 +33,7 @@ name|gimp_image_redo
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -44,7 +44,7 @@ name|gimp_image_undo_free
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -55,7 +55,7 @@ name|gimp_image_undo_group_start
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpUndoType
 name|undo_type
@@ -74,7 +74,7 @@ name|gimp_image_undo_group_end
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -86,7 +86,7 @@ name|gimp_image_undo_push
 argument_list|(
 name|GimpImage
 operator|*
-name|gimage
+name|image
 argument_list|,
 name|GType
 name|object_type
@@ -127,7 +127,7 @@ name|gimp_image_undo_can_compress
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GType
 name|object_type

@@ -22,7 +22,7 @@ name|gimp_image_pick_color
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpDrawable
 modifier|*

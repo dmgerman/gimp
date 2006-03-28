@@ -60,7 +60,7 @@ end_include
 begin_function
 name|GimpTemplate
 modifier|*
-DECL|function|gimp_image_new_get_last_template (Gimp * gimp,GimpImage * gimage)
+DECL|function|gimp_image_new_get_last_template (Gimp * gimp,GimpImage * image)
 name|gimp_image_new_get_last_template
 parameter_list|(
 name|Gimp
@@ -69,7 +69,7 @@ name|gimp
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 block|{
 name|GimpTemplate
@@ -88,13 +88,13 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|gimage
+name|image
 operator|==
 name|NULL
 operator|||
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|NULL
@@ -109,13 +109,13 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimage
+name|image
 condition|)
 name|gimp_template_set_from_image
 argument_list|(
 name|template
 argument_list|,
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 else|else

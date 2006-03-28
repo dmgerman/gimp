@@ -692,7 +692,7 @@ name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 if|if
@@ -878,7 +878,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon2941ff010108
+DECL|struct|__anon2bf409cc0108
 block|{
 DECL|member|label
 specifier|const

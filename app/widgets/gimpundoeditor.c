@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bfe76bd0103
+DECL|enum|__anon29f5339f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -166,7 +166,7 @@ name|editor
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -202,7 +202,7 @@ name|gimp_undo_editor_undo_event
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpUndoEvent
 name|event
@@ -577,7 +577,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_undo_editor_set_image (GimpImageEditor * image_editor,GimpImage * gimage)
+DECL|function|gimp_undo_editor_set_image (GimpImageEditor * image_editor,GimpImage * image)
 name|gimp_undo_editor_set_image
 parameter_list|(
 name|GimpImageEditor
@@ -586,7 +586,7 @@ name|image_editor
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 block|{
 name|GimpUndoEditor
@@ -602,7 +602,7 @@ if|if
 condition|(
 name|image_editor
 operator|->
-name|gimage
+name|image
 condition|)
 block|{
 name|gimp_undo_editor_clear
@@ -614,7 +614,7 @@ name|g_signal_handlers_disconnect_by_func
 argument_list|(
 name|image_editor
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|gimp_undo_editor_undo_event
 argument_list|,
@@ -631,14 +631,14 @@ name|set_image
 argument_list|(
 name|image_editor
 argument_list|,
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
 name|image_editor
 operator|->
-name|gimage
+name|image
 condition|)
 block|{
 if|if
@@ -647,7 +647,7 @@ name|gimp_image_undo_is_enabled
 argument_list|(
 name|image_editor
 operator|->
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|gimp_undo_editor_fill
@@ -659,7 +659,7 @@ name|g_signal_connect
 argument_list|(
 name|image_editor
 operator|->
-name|gimage
+name|image
 argument_list|,
 literal|"undo-event"
 argument_list|,
@@ -760,7 +760,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpUndo
 modifier|*
@@ -770,14 +770,14 @@ name|GList
 modifier|*
 name|list
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|GIMP_IMAGE_EDITOR
 argument_list|(
 name|editor
 argument_list|)
 operator|->
-name|gimage
+name|image
 expr_stmt|;
 comment|/*  create a container as model for the undo history list  */
 name|editor
@@ -801,7 +801,7 @@ name|GIMP_TYPE_UNDO
 argument_list|,
 literal|"image"
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 literal|"name"
 argument_list|,
@@ -820,7 +820,7 @@ name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|redo_stack
 operator|->
@@ -872,7 +872,7 @@ name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|undo_stack
 operator|->
@@ -906,7 +906,7 @@ operator|->
 name|data
 argument_list|)
 operator|||
-name|gimage
+name|image
 operator|->
 name|pushing_undo_group
 operator|==
@@ -963,7 +963,7 @@ name|top_undo_item
 operator|=
 name|gimp_undo_stack_peek
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|undo_stack
 argument_list|)
@@ -1122,12 +1122,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_undo_editor_undo_event (GimpImage * gimage,GimpUndoEvent event,GimpUndo * undo,GimpUndoEditor * editor)
+DECL|function|gimp_undo_editor_undo_event (GimpImage * image,GimpUndoEvent event,GimpUndo * undo,GimpUndoEditor * editor)
 name|gimp_undo_editor_undo_event
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpUndoEvent
 name|event
@@ -1149,7 +1149,7 @@ name|top_undo_item
 operator|=
 name|gimp_undo_stack_peek
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|undo_stack
 argument_list|)
@@ -1334,7 +1334,7 @@ if|if
 condition|(
 name|gimp_image_undo_is_enabled
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|gimp_undo_editor_clear
@@ -1389,7 +1389,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpUndo
 modifier|*
@@ -1401,20 +1401,20 @@ operator|!
 name|undo
 condition|)
 return|return;
-name|gimage
+name|image
 operator|=
 name|GIMP_IMAGE_EDITOR
 argument_list|(
 name|editor
 argument_list|)
 operator|->
-name|gimage
+name|image
 expr_stmt|;
 name|top_undo_item
 operator|=
 name|gimp_undo_stack_peek
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|undo_stack
 argument_list|)
@@ -1438,14 +1438,14 @@ condition|)
 block|{
 name|gimp_image_undo
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|top_undo_item
 operator|=
 name|gimp_undo_stack_peek
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|undo_stack
 argument_list|)
@@ -1457,7 +1457,7 @@ if|if
 condition|(
 name|gimp_container_have
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|undo_stack
 operator|->
@@ -1480,14 +1480,14 @@ condition|)
 block|{
 name|gimp_image_undo
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|top_undo_item
 operator|=
 name|gimp_undo_stack_peek
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|undo_stack
 argument_list|)
@@ -1499,7 +1499,7 @@ if|if
 condition|(
 name|gimp_container_have
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|redo_stack
 operator|->
@@ -1522,14 +1522,14 @@ condition|)
 block|{
 name|gimp_image_redo
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|top_undo_item
 operator|=
 name|gimp_undo_stack_peek
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|undo_stack
 argument_list|)
@@ -1538,7 +1538,7 @@ block|}
 block|}
 name|gimp_image_flush
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}

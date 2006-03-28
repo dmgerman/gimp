@@ -6598,9 +6598,9 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 operator|(
 name|GimpImage
@@ -6621,13 +6621,13 @@ operator|)
 expr_stmt|;
 if|if
 condition|(
-name|gimage
+name|image
 condition|)
 name|gimp_selection_data_set_image
 argument_list|(
 name|selection
 argument_list|,
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -6662,7 +6662,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 init|=
 name|gimp_selection_data_get_image
 argument_list|(
@@ -6674,7 +6674,7 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
-name|gimage
+name|image
 condition|)
 return|return
 name|FALSE
@@ -6695,7 +6695,7 @@ name|y
 operator|,
 name|GIMP_VIEWABLE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 operator|,
 name|set_image_data

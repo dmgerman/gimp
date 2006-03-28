@@ -182,7 +182,7 @@ name|parent
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -202,7 +202,7 @@ name|file_save_dialog_show
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GtkWidget
 modifier|*
@@ -230,7 +230,7 @@ name|dialog
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -434,7 +434,7 @@ name|image
 operator|=
 name|gdisp
 operator|->
-name|gimage
+name|image
 expr_stmt|;
 name|uri
 operator|=
@@ -576,7 +576,7 @@ condition|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpPDBStatusType
 name|status
@@ -587,7 +587,7 @@ name|error
 init|=
 name|NULL
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|file_open_with_display
 argument_list|(
@@ -617,7 +617,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimage
+name|image
 operator|&&
 name|status
 operator|!=
@@ -687,7 +687,7 @@ name|gdisp
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|return_if_no_display
 argument_list|(
@@ -696,32 +696,32 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|gdisp
 operator|->
-name|gimage
+name|image
 expr_stmt|;
 if|if
 condition|(
 operator|!
 name|gimp_image_active_drawable
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 return|return;
-comment|/*  Only save if the gimage has been modified  */
+comment|/*  Only save if the image has been modified  */
 if|if
 condition|(
-name|gimage
+name|image
 operator|->
 name|dirty
 operator|||
 operator|!
 name|GIMP_GUI_CONFIG
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -748,7 +748,7 @@ name|gimp_object_get_name
 argument_list|(
 name|GIMP_OBJECT
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -756,7 +756,7 @@ name|save_proc
 operator|=
 name|gimp_image_get_save_proc
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 if|if
@@ -770,7 +770,7 @@ name|save_proc
 operator|=
 name|file_utils_find_proc
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -847,7 +847,7 @@ name|status
 operator|=
 name|file_save
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|action_data_get_context
 argument_list|(
@@ -995,7 +995,7 @@ name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 condition|)
 return|return;
@@ -1003,7 +1003,7 @@ name|file_save_dialog_show
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|widget
 argument_list|,
@@ -1060,7 +1060,7 @@ name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 condition|)
 return|return;
@@ -1068,7 +1068,7 @@ name|file_save_dialog_show
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|widget
 argument_list|,
@@ -1139,7 +1139,7 @@ name|G_OBJECT
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 literal|"disconnect"
@@ -1148,7 +1148,7 @@ name|file_new_template_callback
 argument_list|,
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -1200,7 +1200,7 @@ name|GIMP_OBJECT
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1212,7 +1212,7 @@ name|G_OBJECT
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|REVERT_DATA_KEY
@@ -1401,7 +1401,7 @@ name|G_OBJECT
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|REVERT_DATA_KEY
@@ -1563,7 +1563,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|file_open_dialog_show (GtkWidget * parent,GimpImage * gimage,const gchar * uri,gboolean open_as_layer)
+DECL|function|file_open_dialog_show (GtkWidget * parent,GimpImage * image,const gchar * uri,gboolean open_as_layer)
 name|file_open_dialog_show
 parameter_list|(
 name|GtkWidget
@@ -1572,7 +1572,7 @@ name|parent
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -1648,9 +1648,9 @@ argument_list|(
 name|dialog
 argument_list|)
 operator|->
-name|gimage
+name|image
 operator|=
-name|gimage
+name|image
 expr_stmt|;
 block|}
 else|else
@@ -1673,7 +1673,7 @@ argument_list|(
 name|dialog
 argument_list|)
 operator|->
-name|gimage
+name|image
 operator|=
 name|NULL
 expr_stmt|;
@@ -1706,12 +1706,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|file_save_dialog_show (GimpImage * gimage,GtkWidget * parent,const gchar * title,gboolean save_a_copy)
+DECL|function|file_save_dialog_show (GimpImage * image,GtkWidget * parent,const gchar * title,gboolean save_a_copy)
 name|file_save_dialog_show
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GtkWidget
 modifier|*
@@ -1736,7 +1736,7 @@ name|g_object_get_data
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 literal|"gimp-file-save-dialog"
@@ -1789,7 +1789,7 @@ name|g_object_set_data_full
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 literal|"gimp-file-save-dialog"
@@ -1813,7 +1813,7 @@ argument_list|(
 name|file_save_dialog_destroyed
 argument_list|)
 argument_list|,
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -1840,7 +1840,7 @@ argument_list|(
 name|dialog
 argument_list|)
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|save_a_copy
 argument_list|)
@@ -1860,7 +1860,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|file_save_dialog_destroyed (GtkWidget * dialog,GimpImage * gimage)
+DECL|function|file_save_dialog_destroyed (GtkWidget * dialog,GimpImage * image)
 name|file_save_dialog_destroyed
 parameter_list|(
 name|GtkWidget
@@ -1869,7 +1869,7 @@ name|dialog
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 block|{
 if|if
@@ -1879,15 +1879,15 @@ argument_list|(
 name|dialog
 argument_list|)
 operator|->
-name|gimage
+name|image
 operator|==
-name|gimage
+name|image
 condition|)
 name|g_object_set_data
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 literal|"gimp-file-save-dialog"
@@ -1923,9 +1923,9 @@ name|template
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 operator|(
 name|GimpImage
@@ -1963,12 +1963,12 @@ name|gimp_template_set_from_image
 argument_list|(
 name|template
 argument_list|,
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|gimp_container_add
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -2008,11 +2008,11 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|old_gimage
+name|old_image
 init|=
 name|gdisp
 operator|->
-name|gimage
+name|image
 decl_stmt|;
 name|gtk_widget_destroy
 argument_list|(
@@ -2023,7 +2023,7 @@ name|g_object_set_data
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|old_gimage
+name|old_image
 argument_list|)
 argument_list|,
 name|REVERT_DATA_KEY
@@ -2042,13 +2042,13 @@ name|Gimp
 modifier|*
 name|gimp
 init|=
-name|old_gimage
+name|old_image
 operator|->
 name|gimp
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|new_gimage
+name|new_image
 decl_stmt|;
 specifier|const
 name|gchar
@@ -2070,11 +2070,11 @@ name|gimp_object_get_name
 argument_list|(
 name|GIMP_OBJECT
 argument_list|(
-name|old_gimage
+name|old_image
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|new_gimage
+name|new_image
 operator|=
 name|file_open_image
 argument_list|(
@@ -2109,27 +2109,27 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|new_gimage
+name|new_image
 condition|)
 block|{
 name|gimp_displays_reconnect
 argument_list|(
 name|gimp
 argument_list|,
-name|old_gimage
+name|old_image
 argument_list|,
-name|new_gimage
+name|new_image
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|new_gimage
+name|new_image
 argument_list|)
 expr_stmt|;
 comment|/*  the displays own the image now  */
 name|g_object_unref
 argument_list|(
-name|new_gimage
+name|new_image
 argument_list|)
 expr_stmt|;
 block|}

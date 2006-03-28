@@ -557,7 +557,7 @@ name|gui_image_disconnect
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|Gimp
 modifier|*
@@ -2525,7 +2525,7 @@ if|if
 condition|(
 name|display2
 operator|->
-name|gimage
+name|image
 operator|==
 name|image
 condition|)
@@ -2570,12 +2570,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gui_image_disconnect (GimpImage * gimage,Gimp * gimp)
+DECL|function|gui_image_disconnect (GimpImage * image,Gimp * gimp)
 name|gui_image_disconnect
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|Gimp
 modifier|*
@@ -2594,7 +2594,7 @@ argument_list|)
 operator|==
 literal|1
 operator|&&
-name|gimage
+name|image
 operator|->
 name|instance_count
 operator|>

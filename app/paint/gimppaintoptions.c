@@ -217,7 +217,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29af888f0103
+DECL|enum|__anon2c6dbcd50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2039,7 +2039,7 @@ end_function
 
 begin_function
 name|gdouble
-DECL|function|gimp_paint_options_get_fade (GimpPaintOptions * paint_options,GimpImage * gimage,gdouble pixel_dist)
+DECL|function|gimp_paint_options_get_fade (GimpPaintOptions * paint_options,GimpImage * image,gdouble pixel_dist)
 name|gimp_paint_options_get_fade
 parameter_list|(
 name|GimpPaintOptions
@@ -2048,7 +2048,7 @@ name|paint_options
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gdouble
 name|pixel_dist
@@ -2072,7 +2072,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|GIMP_OPACITY_OPAQUE
@@ -2124,11 +2124,11 @@ operator|=
 operator|(
 name|MAX
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|width
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|height
 argument_list|)
@@ -2160,11 +2160,11 @@ name|fade_length
 operator|*
 name|MAX
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|xresolution
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|yresolution
 argument_list|)
@@ -2217,7 +2217,7 @@ end_function
 
 begin_function
 name|gdouble
-DECL|function|gimp_paint_options_get_jitter (GimpPaintOptions * paint_options,GimpImage * gimage)
+DECL|function|gimp_paint_options_get_jitter (GimpPaintOptions * paint_options,GimpImage * image)
 name|gimp_paint_options_get_jitter
 parameter_list|(
 name|GimpPaintOptions
@@ -2226,7 +2226,7 @@ name|paint_options
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 block|{
 name|GimpJitterOptions
@@ -2258,7 +2258,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_paint_options_get_gradient_color (GimpPaintOptions * paint_options,GimpImage * gimage,gdouble pressure,gdouble pixel_dist,GimpRGB * color)
+DECL|function|gimp_paint_options_get_gradient_color (GimpPaintOptions * paint_options,GimpImage * image,gdouble pressure,gdouble pixel_dist,GimpRGB * color)
 name|gimp_paint_options_get_gradient_color
 parameter_list|(
 name|GimpPaintOptions
@@ -2267,7 +2267,7 @@ name|paint_options
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gdouble
 name|pressure
@@ -2306,7 +2306,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|FALSE
@@ -2413,11 +2413,11 @@ operator|=
 operator|(
 name|MAX
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|width
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|height
 argument_list|)
@@ -2449,11 +2449,11 @@ name|gradient_length
 operator|*
 name|MAX
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|xresolution
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|yresolution
 argument_list|)

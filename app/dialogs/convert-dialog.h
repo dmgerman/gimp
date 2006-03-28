@@ -23,7 +23,7 @@ name|convert_dialog_new
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GtkWidget
 modifier|*

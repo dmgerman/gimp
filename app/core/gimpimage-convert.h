@@ -30,7 +30,7 @@ name|gimp_image_convert
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpImageBaseType
 name|new_type

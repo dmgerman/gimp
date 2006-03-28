@@ -40,7 +40,7 @@ name|gimp_image_color_hash_invalidate
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gint
 name|index
@@ -55,7 +55,7 @@ parameter_list|(
 specifier|const
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gint
 name|r

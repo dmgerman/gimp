@@ -1879,12 +1879,6 @@ name|options
 init|=
 name|NULL
 decl_stmt|;
-name|GimpImage
-modifier|*
-name|gimage
-init|=
-name|NULL
-decl_stmt|;
 name|gboolean
 name|fullscreen
 init|=
@@ -1903,12 +1897,6 @@ name|gdisp
 operator|->
 name|shell
 argument_list|)
-expr_stmt|;
-name|gimage
-operator|=
-name|gdisp
-operator|->
-name|gimage
 expr_stmt|;
 name|fullscreen
 operator|=

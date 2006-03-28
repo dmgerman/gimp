@@ -138,7 +138,7 @@ name|editor
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpRGB
 name|color
@@ -149,7 +149,7 @@ name|desc
 decl_stmt|;
 name|return_if_no_image
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|data
 argument_list|)
@@ -166,7 +166,7 @@ argument_list|(
 operator|&
 name|color
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|cmap
 index|[
@@ -177,7 +177,7 @@ operator|*
 literal|3
 index|]
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|cmap
 index|[
@@ -190,7 +190,7 @@ operator|+
 literal|1
 index|]
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|cmap
 index|[
@@ -236,7 +236,7 @@ name|gimp_color_dialog_new
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|_
@@ -322,7 +322,7 @@ argument_list|)
 argument_list|,
 name|GIMP_VIEWABLE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -393,7 +393,7 @@ name|context
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|return_if_no_context
 argument_list|(
@@ -404,14 +404,14 @@ argument_list|)
 expr_stmt|;
 name|return_if_no_image
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimage
+name|image
 operator|->
 name|num_cols
 operator|<
@@ -444,7 +444,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_add_colormap_entry
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 operator|&
 name|color
@@ -452,7 +452,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -488,14 +488,14 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 init|=
 name|GIMP_IMAGE_EDITOR
 argument_list|(
 name|editor
 argument_list|)
 operator|->
-name|gimage
+name|image
 decl_stmt|;
 switch|switch
 condition|(
@@ -511,7 +511,7 @@ name|GIMP_COLOR_DIALOG_OK
 case|:
 name|gimp_image_set_colormap_entry
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|editor
 operator|->
@@ -524,7 +524,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 comment|/* Fall through */

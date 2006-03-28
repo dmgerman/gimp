@@ -178,7 +178,7 @@ parameter_list|(
 name|gdisp
 parameter_list|)
 define|\
-value|((gdisp) == \    gimp_context_get_display (gimp_get_user_context ((gdisp)->gimage->gimp)))
+value|((gdisp) == \    gimp_context_get_display (gimp_get_user_context ((gdisp)->image->gimp)))
 end_define
 
 begin_comment
@@ -254,13 +254,13 @@ name|gimp_create_display
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|,
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|shell
 operator|->
@@ -2095,7 +2095,7 @@ name|GIMP_VIEWABLE
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|_
@@ -2202,7 +2202,7 @@ name|GIMP_DISPLAY_CONFIG
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->

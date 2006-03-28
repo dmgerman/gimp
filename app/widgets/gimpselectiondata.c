@@ -1461,7 +1461,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_selection_data_set_image (GtkSelectionData * selection,GimpImage * gimage)
+DECL|function|gimp_selection_data_set_image (GtkSelectionData * selection,GimpImage * image)
 name|gimp_selection_data_set_image
 parameter_list|(
 name|GtkSelectionData
@@ -1470,7 +1470,7 @@ name|selection
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 block|{
 name|gchar
@@ -1488,7 +1488,7 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1503,7 +1503,7 @@ argument_list|()
 argument_list|,
 name|gimp_image_get_ID
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1650,7 +1650,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_selection_data_set_component (GtkSelectionData * selection,GimpImage * gimage,GimpChannelType channel)
+DECL|function|gimp_selection_data_set_component (GtkSelectionData * selection,GimpImage * image,GimpChannelType channel)
 name|gimp_selection_data_set_component
 parameter_list|(
 name|GtkSelectionData
@@ -1659,7 +1659,7 @@ name|selection
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpChannelType
 name|channel
@@ -1680,7 +1680,7 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1695,7 +1695,7 @@ argument_list|()
 argument_list|,
 name|gimp_image_get_ID
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 operator|(

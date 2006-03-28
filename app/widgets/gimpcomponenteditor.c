@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2977bb6b0103
+DECL|enum|__anon29301c8f0103
 block|{
 DECL|enumerator|COLUMN_CHANNEL
 name|COLUMN_CHANNEL
@@ -132,7 +132,7 @@ name|editor
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -253,7 +253,7 @@ name|gimp_component_editor_mode_changed
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpComponentEditor
 modifier|*
@@ -269,7 +269,7 @@ name|gimp_component_editor_alpha_changed
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpComponentEditor
 modifier|*
@@ -285,7 +285,7 @@ name|gimp_component_editor_visibility_changed
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpChannelType
 name|channel
@@ -304,7 +304,7 @@ name|gimp_component_editor_active_changed
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpChannelType
 name|channel
@@ -827,7 +827,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_component_editor_set_image (GimpImageEditor * editor,GimpImage * gimage)
+DECL|function|gimp_component_editor_set_image (GimpImageEditor * editor,GimpImage * image)
 name|gimp_component_editor_set_image
 parameter_list|(
 name|GimpImageEditor
@@ -836,7 +836,7 @@ name|editor
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 block|{
 name|GimpComponentEditor
@@ -854,7 +854,7 @@ if|if
 condition|(
 name|editor
 operator|->
-name|gimage
+name|image
 condition|)
 block|{
 name|gimp_component_editor_clear_components
@@ -866,7 +866,7 @@ name|g_signal_handlers_disconnect_by_func
 argument_list|(
 name|editor
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|gimp_component_editor_mode_changed
 argument_list|,
@@ -877,7 +877,7 @@ name|g_signal_handlers_disconnect_by_func
 argument_list|(
 name|editor
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|gimp_component_editor_alpha_changed
 argument_list|,
@@ -888,7 +888,7 @@ name|g_signal_handlers_disconnect_by_func
 argument_list|(
 name|editor
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|gimp_component_editor_visibility_changed
 argument_list|,
@@ -899,7 +899,7 @@ name|g_signal_handlers_disconnect_by_func
 argument_list|(
 name|editor
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|gimp_component_editor_active_changed
 argument_list|,
@@ -916,14 +916,14 @@ name|set_image
 argument_list|(
 name|editor
 argument_list|,
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
 name|editor
 operator|->
-name|gimage
+name|image
 condition|)
 block|{
 name|gimp_component_editor_create_components
@@ -935,7 +935,7 @@ name|g_signal_connect
 argument_list|(
 name|editor
 operator|->
-name|gimage
+name|image
 argument_list|,
 literal|"mode-changed"
 argument_list|,
@@ -951,7 +951,7 @@ name|g_signal_connect
 argument_list|(
 name|editor
 operator|->
-name|gimage
+name|image
 argument_list|,
 literal|"alpha-changed"
 argument_list|,
@@ -967,7 +967,7 @@ name|g_signal_connect
 argument_list|(
 name|editor
 operator|->
-name|gimage
+name|image
 argument_list|,
 literal|"component-visibility-changed"
 argument_list|,
@@ -983,7 +983,7 @@ name|g_signal_connect
 argument_list|(
 name|editor
 operator|->
-name|gimage
+name|image
 argument_list|,
 literal|"component-active-changed"
 argument_list|,
@@ -1270,7 +1270,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gint
 name|n_components
@@ -1290,20 +1290,20 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|GIMP_IMAGE_EDITOR
 argument_list|(
 name|editor
 argument_list|)
 operator|->
-name|gimage
+name|image
 expr_stmt|;
 switch|switch
 condition|(
 name|gimp_image_base_type
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 block|{
@@ -1371,7 +1371,7 @@ if|if
 condition|(
 name|gimp_image_has_alpha
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|components
@@ -1426,7 +1426,7 @@ name|visible
 operator|=
 name|gimp_image_get_component_visible
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|components
 index|[
@@ -1440,7 +1440,7 @@ name|gimp_view_renderer_new
 argument_list|(
 name|G_TYPE_FROM_INSTANCE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|editor
@@ -1458,7 +1458,7 @@ name|renderer
 argument_list|,
 name|GIMP_VIEWABLE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1571,7 +1571,7 @@ if|if
 condition|(
 name|gimp_image_get_component_active
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|components
 index|[
@@ -1696,7 +1696,14 @@ condition|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
+init|=
+name|GIMP_IMAGE_EDITOR
+argument_list|(
+name|editor
+argument_list|)
+operator|->
+name|image
 decl_stmt|;
 name|GimpChannelType
 name|channel
@@ -1704,15 +1711,6 @@ decl_stmt|;
 name|gboolean
 name|active
 decl_stmt|;
-name|gimage
-operator|=
-name|GIMP_IMAGE_EDITOR
-argument_list|(
-name|editor
-argument_list|)
-operator|->
-name|gimage
-expr_stmt|;
 name|gtk_tree_model_get
 argument_list|(
 name|editor
@@ -1745,7 +1743,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_set_component_visible
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|channel
 argument_list|,
@@ -1755,7 +1753,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -1851,7 +1849,7 @@ argument_list|(
 name|editor
 argument_list|)
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|channel
 argument_list|)
@@ -2022,7 +2020,7 @@ argument_list|(
 name|editor
 argument_list|)
 operator|->
-name|gimage
+name|image
 decl_stmt|;
 name|gimp_image_set_component_active
 argument_list|(
@@ -2101,7 +2099,7 @@ argument_list|(
 name|editor
 argument_list|)
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|channel
 argument_list|)
@@ -2214,12 +2212,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_component_editor_mode_changed (GimpImage * gimage,GimpComponentEditor * editor)
+DECL|function|gimp_component_editor_mode_changed (GimpImage * image,GimpComponentEditor * editor)
 name|gimp_component_editor_mode_changed
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpComponentEditor
 modifier|*
@@ -2242,12 +2240,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_component_editor_alpha_changed (GimpImage * gimage,GimpComponentEditor * editor)
+DECL|function|gimp_component_editor_alpha_changed (GimpImage * image,GimpComponentEditor * editor)
 name|gimp_component_editor_alpha_changed
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpComponentEditor
 modifier|*
@@ -2270,12 +2268,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_component_editor_visibility_changed (GimpImage * gimage,GimpChannelType channel,GimpComponentEditor * editor)
+DECL|function|gimp_component_editor_visibility_changed (GimpImage * image,GimpChannelType channel,GimpComponentEditor * editor)
 name|gimp_component_editor_visibility_changed
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpChannelType
 name|channel
@@ -2308,7 +2306,7 @@ name|visible
 operator|=
 name|gimp_image_get_component_visible
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|channel
 argument_list|)
@@ -2340,12 +2338,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_component_editor_active_changed (GimpImage * gimage,GimpChannelType channel,GimpComponentEditor * editor)
+DECL|function|gimp_component_editor_active_changed (GimpImage * image,GimpChannelType channel,GimpComponentEditor * editor)
 name|gimp_component_editor_active_changed
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpChannelType
 name|channel
@@ -2378,7 +2376,7 @@ name|active
 operator|=
 name|gimp_image_get_component_active
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|channel
 argument_list|)
@@ -2463,7 +2461,7 @@ argument_list|(
 name|editor
 argument_list|)
 operator|->
-name|gimage
+name|image
 operator|&&
 name|editor
 operator|->
@@ -2490,7 +2488,7 @@ argument_list|(
 name|editor
 argument_list|)
 operator|->
-name|gimage
+name|image
 return|;
 block|}
 return|return

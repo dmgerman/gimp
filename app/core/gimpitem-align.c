@@ -150,7 +150,7 @@ name|reference
 operator|||
 name|target
 operator|->
-name|gimage
+name|image
 operator|)
 condition|)
 return|return;
@@ -200,7 +200,7 @@ name|gimp_image_get_height
 argument_list|(
 name|target
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|reference_width
@@ -209,7 +209,7 @@ name|gimp_image_get_width
 argument_list|(
 name|target
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}

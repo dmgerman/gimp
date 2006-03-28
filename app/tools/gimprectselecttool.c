@@ -647,7 +647,7 @@ name|fixed_width
 operator|=
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|width
 operator|*
@@ -663,7 +663,7 @@ name|fixed_height
 operator|=
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|height
 operator|*
@@ -698,7 +698,7 @@ name|fixed_width
 operator|*
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|xresolution
 operator|/
@@ -714,7 +714,7 @@ name|fixed_height
 operator|*
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|yresolution
 operator|/
@@ -873,7 +873,7 @@ name|gimp_image_floating_sel
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|floating_sel_anchor
@@ -882,7 +882,7 @@ name|gimp_image_floating_sel
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -894,7 +894,7 @@ name|gimp_image_get_mask
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|NULL
@@ -906,7 +906,7 @@ name|gimp_image_flush
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 return|return;
@@ -937,7 +937,7 @@ name|gimp_image_flush
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -1642,7 +1642,7 @@ name|tool
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|x
@@ -1772,7 +1772,7 @@ name|tool
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|width
 argument_list|,
@@ -1780,7 +1780,7 @@ name|tool
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|height
 argument_list|,
@@ -1827,7 +1827,7 @@ name|tool
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1910,7 +1910,7 @@ name|tool
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|x
 argument_list|,
@@ -2059,7 +2059,7 @@ name|image
 init|=
 name|gdisp
 operator|->
-name|gimage
+name|image
 decl_stmt|;
 name|width
 operator|=

@@ -638,7 +638,7 @@ name|return_vals
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 init|=
 name|NULL
 decl_stmt|;
@@ -869,7 +869,7 @@ name|xcf_loaders
 argument_list|)
 condition|)
 block|{
-name|gimage
+name|image
 operator|=
 operator|(
 operator|*
@@ -892,7 +892,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimage
+name|image
 condition|)
 name|success
 operator|=
@@ -971,7 +971,7 @@ name|pdb_int
 operator|=
 name|gimp_image_get_ID
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|gimp_unset_busy
@@ -1022,7 +1022,7 @@ name|return_vals
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 specifier|const
 name|gchar
@@ -1039,7 +1039,7 @@ argument_list|(
 name|gimp
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
@@ -1149,7 +1149,7 @@ argument_list|(
 operator|&
 name|info
 argument_list|,
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|success
@@ -1159,7 +1159,7 @@ argument_list|(
 operator|&
 name|info
 argument_list|,
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 if|if

@@ -177,7 +177,7 @@ name|dialog
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpDrawable
 modifier|*
@@ -189,7 +189,7 @@ name|widget
 decl_stmt|;
 name|return_if_no_drawable
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|drawable
 argument_list|,
@@ -274,7 +274,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpDrawable
 modifier|*
@@ -282,7 +282,7 @@ name|drawable
 decl_stmt|;
 name|return_if_no_drawable
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|drawable
 argument_list|,
@@ -316,7 +316,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -337,7 +337,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpDrawable
 modifier|*
@@ -345,7 +345,7 @@ name|drawable
 decl_stmt|;
 name|return_if_no_drawable
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|drawable
 argument_list|,
@@ -377,7 +377,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -398,7 +398,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpDrawable
 modifier|*
@@ -410,7 +410,7 @@ name|context
 decl_stmt|;
 name|return_if_no_drawable
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|drawable
 argument_list|,
@@ -452,7 +452,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -473,7 +473,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpDrawable
 modifier|*
@@ -489,7 +489,7 @@ name|dialog
 decl_stmt|;
 name|return_if_no_drawable
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|drawable
 argument_list|,
@@ -535,7 +535,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpDrawable
 modifier|*
@@ -546,7 +546,7 @@ name|linked
 decl_stmt|;
 name|return_if_no_drawable
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|drawable
 argument_list|,
@@ -609,7 +609,7 @@ name|undo
 operator|=
 name|gimp_image_undo_can_compress
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_TYPE_ITEM_UNDO
 argument_list|,
@@ -650,7 +650,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -672,7 +672,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpDrawable
 modifier|*
@@ -683,7 +683,7 @@ name|visible
 decl_stmt|;
 name|return_if_no_drawable
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|drawable
 argument_list|,
@@ -746,7 +746,7 @@ name|undo
 operator|=
 name|gimp_image_undo_can_compress
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_TYPE_ITEM_UNDO
 argument_list|,
@@ -787,7 +787,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -812,7 +812,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpDrawable
 modifier|*
@@ -838,7 +838,7 @@ literal|0.0
 decl_stmt|;
 name|return_if_no_drawable
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|drawable
 argument_list|,
@@ -936,7 +936,7 @@ argument_list|)
 condition|)
 name|gimp_image_undo_group_start
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_TRANSFORM
 argument_list|,
@@ -990,13 +990,13 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_undo_group_end
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
 name|gimp_image_flush
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -1020,7 +1020,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpDrawable
 modifier|*
@@ -1051,7 +1051,7 @@ name|FALSE
 decl_stmt|;
 name|return_if_no_drawable
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|drawable
 argument_list|,
@@ -1130,7 +1130,7 @@ argument_list|)
 condition|)
 name|gimp_image_undo_group_start
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_TRANSFORM
 argument_list|,
@@ -1199,13 +1199,13 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_undo_group_end
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
 name|gimp_image_flush
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -1250,7 +1250,7 @@ name|drawable
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 init|=
 name|gimp_item_get_image
 argument_list|(
@@ -1276,7 +1276,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}

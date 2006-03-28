@@ -67,10 +67,10 @@ name|gint
 name|index
 decl_stmt|;
 comment|/*  colormap index        */
-DECL|member|gimage
+DECL|member|image
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 block|}
 struct|;
@@ -152,7 +152,7 @@ index|[
 name|i
 index|]
 operator|.
-name|gimage
+name|image
 operator|=
 name|NULL
 expr_stmt|;
@@ -188,12 +188,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_color_hash_invalidate (GimpImage * gimage,gint index)
+DECL|function|gimp_image_color_hash_invalidate (GimpImage * image,gint index)
 name|gimp_image_color_hash_invalidate
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gint
 name|index
@@ -206,7 +206,7 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -239,9 +239,9 @@ index|[
 name|i
 index|]
 operator|.
-name|gimage
+name|image
 operator|==
-name|gimage
+name|image
 condition|)
 block|{
 name|color_hash_table
@@ -267,7 +267,7 @@ index|[
 name|i
 index|]
 operator|.
-name|gimage
+name|image
 operator|=
 name|NULL
 expr_stmt|;
@@ -295,9 +295,9 @@ index|[
 name|i
 index|]
 operator|.
-name|gimage
+name|image
 operator|==
-name|gimage
+name|image
 operator|&&
 name|color_hash_table
 index|[
@@ -332,7 +332,7 @@ index|[
 name|i
 index|]
 operator|.
-name|gimage
+name|image
 operator|=
 name|NULL
 expr_stmt|;
@@ -343,13 +343,13 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_image_color_hash_rgb_to_indexed (const GimpImage * gimage,gint r,gint g,gint b)
+DECL|function|gimp_image_color_hash_rgb_to_indexed (const GimpImage * image,gint r,gint g,gint b)
 name|gimp_image_color_hash_rgb_to_indexed
 parameter_list|(
 specifier|const
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gint
 name|r
@@ -379,13 +379,13 @@ name|cmap_index
 decl_stmt|;
 name|cmap
 operator|=
-name|gimage
+name|image
 operator|->
 name|cmap
 expr_stmt|;
 name|num_cols
 operator|=
-name|gimage
+name|image
 operator|->
 name|num_cols
 expr_stmt|;
@@ -418,9 +418,9 @@ index|[
 name|hash_index
 index|]
 operator|.
-name|gimage
+name|image
 operator|==
-name|gimage
+name|image
 operator|&&
 name|color_hash_table
 index|[
@@ -573,13 +573,13 @@ index|[
 name|hash_index
 index|]
 operator|.
-name|gimage
+name|image
 operator|=
 operator|(
 name|GimpImage
 operator|*
 operator|)
-name|gimage
+name|image
 expr_stmt|;
 name|color_hash_misses
 operator|++

@@ -241,7 +241,7 @@ name|view
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -253,7 +253,7 @@ name|gimp_drawable_tree_view_floating_selection_changed
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpDrawableTreeView
 modifier|*
@@ -628,7 +628,7 @@ if|if
 condition|(
 name|item_view
 operator|->
-name|gimage
+name|image
 condition|)
 block|{
 name|GimpViewable
@@ -645,7 +645,7 @@ name|gimp_image_floating_sel
 argument_list|(
 name|item_view
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|success
@@ -877,7 +877,7 @@ argument_list|(
 name|view
 argument_list|)
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 return|return;
@@ -969,7 +969,7 @@ argument_list|(
 name|view
 argument_list|)
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -983,7 +983,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_drawable_tree_view_set_image (GimpItemTreeView * view,GimpImage * gimage)
+DECL|function|gimp_drawable_tree_view_set_image (GimpItemTreeView * view,GimpImage * image)
 name|gimp_drawable_tree_view_set_image
 parameter_list|(
 name|GimpItemTreeView
@@ -992,20 +992,20 @@ name|view
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 block|{
 if|if
 condition|(
 name|view
 operator|->
-name|gimage
+name|image
 condition|)
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
 name|view
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|gimp_drawable_tree_view_floating_selection_changed
 argument_list|,
@@ -1021,20 +1021,20 @@ name|set_image
 argument_list|(
 name|view
 argument_list|,
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
 name|view
 operator|->
-name|gimage
+name|image
 condition|)
 name|g_signal_connect
 argument_list|(
 name|view
 operator|->
-name|gimage
+name|image
 argument_list|,
 literal|"floating-selection-changed"
 argument_list|,
@@ -1056,12 +1056,12 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_drawable_tree_view_floating_selection_changed (GimpImage * gimage,GimpDrawableTreeView * view)
+DECL|function|gimp_drawable_tree_view_floating_selection_changed (GimpImage * image,GimpDrawableTreeView * view)
 name|gimp_drawable_tree_view_floating_selection_changed
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpDrawableTreeView
 modifier|*
@@ -1081,7 +1081,7 @@ argument_list|)
 operator|->
 name|get_active_item
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 comment|/*  update button states  */
@@ -1139,7 +1139,7 @@ name|gimp_image_undo_group_start
 argument_list|(
 name|view
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_EDIT_PASTE
 argument_list|,
@@ -1160,7 +1160,7 @@ name|new_item
 argument_list|(
 name|view
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 if|if
@@ -1196,7 +1196,7 @@ name|gimp_container_get_child_by_name
 argument_list|(
 name|view
 operator|->
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -1269,14 +1269,14 @@ name|gimp_image_undo_group_end
 argument_list|(
 name|view
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
 name|view
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}

@@ -126,7 +126,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aa1f8880108
+DECL|struct|__anon2a9ff2720108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -192,7 +192,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aa1f8880208
+DECL|struct|__anon2a9ff2720208
 block|{
 DECL|member|PR
 name|PixelRegion
@@ -439,7 +439,7 @@ name|gradient_precalc_shapeburst
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpDrawable
 modifier|*
@@ -508,7 +508,7 @@ name|gradient_fill_region
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpDrawable
 modifier|*
@@ -757,7 +757,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|TileManager
 modifier|*
@@ -817,7 +817,7 @@ name|progress
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -850,7 +850,7 @@ condition|)
 return|return;
 name|gimp_set_busy
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|)
@@ -906,7 +906,7 @@ argument_list|)
 expr_stmt|;
 name|gradient_fill_region
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|drawable
 argument_list|,
@@ -1050,7 +1050,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_unset_busy
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|)
@@ -2379,12 +2379,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gradient_precalc_shapeburst (GimpImage * gimage,GimpDrawable * drawable,PixelRegion * PR,gdouble dist,GimpProgress * progress)
+DECL|function|gradient_precalc_shapeburst (GimpImage * image,GimpDrawable * drawable,PixelRegion * PR,gdouble dist,GimpProgress * progress)
 name|gradient_precalc_shapeburst
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpDrawable
 modifier|*
@@ -2499,10 +2499,10 @@ name|mask
 operator|=
 name|gimp_image_get_mask
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
-comment|/*  If the gimage mask is not empty, use it as the shape burst source  */
+comment|/*  If the image mask is not empty, use it as the shape burst source  */
 if|if
 condition|(
 operator|!
@@ -3831,12 +3831,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gradient_fill_region (GimpImage * gimage,GimpDrawable * drawable,GimpContext * context,PixelRegion * PR,gint width,gint height,GimpBlendMode blend_mode,GimpGradientType gradient_type,gdouble offset,GimpRepeatMode repeat,gboolean reverse,gboolean supersample,gint max_depth,gdouble threshold,gboolean dither,gdouble sx,gdouble sy,gdouble ex,gdouble ey,GimpProgress * progress)
+DECL|function|gradient_fill_region (GimpImage * image,GimpDrawable * drawable,GimpContext * context,PixelRegion * PR,gint width,gint height,GimpBlendMode blend_mode,GimpGradientType gradient_type,gdouble offset,GimpRepeatMode repeat,gboolean reverse,gboolean supersample,gint max_depth,gdouble threshold,gboolean dither,gdouble sx,gdouble sy,gdouble ex,gdouble ey,GimpProgress * progress)
 name|gradient_fill_region
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpDrawable
 modifier|*
@@ -4217,7 +4217,7 @@ argument_list|)
 expr_stmt|;
 name|gradient_precalc_shapeburst
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|drawable
 argument_list|,

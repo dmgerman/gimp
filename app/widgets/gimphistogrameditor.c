@@ -163,7 +163,7 @@ name|editor
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -175,7 +175,7 @@ name|gimp_histogram_editor_layer_changed
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpHistogramEditor
 modifier|*
@@ -1159,7 +1159,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_histogram_editor_set_image (GimpImageEditor * image_editor,GimpImage * gimage)
+DECL|function|gimp_histogram_editor_set_image (GimpImageEditor * image_editor,GimpImage * image)
 name|gimp_histogram_editor_set_image
 parameter_list|(
 name|GimpImageEditor
@@ -1168,7 +1168,7 @@ name|image_editor
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 block|{
 name|GimpHistogramEditor
@@ -1197,7 +1197,7 @@ if|if
 condition|(
 name|image_editor
 operator|->
-name|gimage
+name|image
 condition|)
 block|{
 if|if
@@ -1225,7 +1225,7 @@ name|g_signal_handlers_disconnect_by_func
 argument_list|(
 name|image_editor
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|gimp_histogram_editor_layer_changed
 argument_list|,
@@ -1236,7 +1236,7 @@ name|g_signal_handlers_disconnect_by_func
 argument_list|(
 name|image_editor
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|gimp_histogram_editor_menu_update
 argument_list|,
@@ -1281,12 +1281,12 @@ name|set_image
 argument_list|(
 name|image_editor
 argument_list|,
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimage
+name|image
 condition|)
 block|{
 name|editor
@@ -1307,7 +1307,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect_object
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 literal|"mode-changed"
 argument_list|,
@@ -1323,7 +1323,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect_object
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 literal|"active-layer-changed"
 argument_list|,
@@ -1339,7 +1339,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect_object
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 literal|"mask-changed"
 argument_list|,
@@ -1356,7 +1356,7 @@ expr_stmt|;
 block|}
 name|gimp_histogram_editor_layer_changed
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|editor
 argument_list|)
@@ -1387,12 +1387,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_histogram_editor_layer_changed (GimpImage * gimage,GimpHistogramEditor * editor)
+DECL|function|gimp_histogram_editor_layer_changed (GimpImage * image,GimpHistogramEditor * editor)
 name|gimp_histogram_editor_layer_changed
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpHistogramEditor
 modifier|*
@@ -1448,7 +1448,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|gimage
+name|image
 condition|)
 name|editor
 operator|->
@@ -1460,7 +1460,7 @@ operator|*
 operator|)
 name|gimp_image_get_active_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|gimp_histogram_editor_menu_update

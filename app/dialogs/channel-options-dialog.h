@@ -50,10 +50,10 @@ name|GtkWidget
 modifier|*
 name|save_sel_checkbutton
 decl_stmt|;
-DECL|member|gimage
+DECL|member|image
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 DECL|member|context
 name|GimpContext
@@ -76,7 +76,7 @@ name|channel_options_dialog_new
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpContext
 modifier|*

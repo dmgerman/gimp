@@ -1467,7 +1467,7 @@ name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 comment|/*  Initialize the transform tool dialog */
@@ -2589,7 +2589,7 @@ name|gimp_image_get_mask
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 decl_stmt|;
 name|GimpCursorType
@@ -2618,7 +2618,7 @@ name|gimp_image_coords_in_active_drawable
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|coords
 argument_list|)
@@ -2697,7 +2697,7 @@ name|gimp_image_get_active_vectors
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|cursor
@@ -3369,7 +3369,7 @@ name|tool
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 if|if
@@ -3978,7 +3978,7 @@ name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 break|break;
@@ -3995,7 +3995,7 @@ name|gimp_image_get_mask
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 break|break;
@@ -4012,7 +4012,7 @@ name|gimp_image_get_active_vectors
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 break|break;
@@ -4031,7 +4031,7 @@ name|gimp_image_get_mask
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4071,7 +4071,7 @@ name|gimp_set_busy
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|)
@@ -4100,7 +4100,7 @@ name|gimp_image_undo_group_start
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_TRANSFORM
 argument_list|,
@@ -4130,7 +4130,7 @@ name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -4255,7 +4255,7 @@ condition|(
 name|new_tiles
 condition|)
 block|{
-comment|/*  paste the new transformed image to the gimage...also implement            *  undo...            */
+comment|/*  paste the new transformed image to the image...also implement            *  undo...            */
 name|gimp_drawable_transform_paste
 argument_list|(
 name|tool
@@ -4341,14 +4341,14 @@ name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|gimp_transform_tool_push_undo
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|NULL
 argument_list|,
@@ -4373,7 +4373,7 @@ name|gimp_image_undo_group_end
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 comment|/*  We're done dirtying the image, and would like to be restarted    *  if the image gets dirty while the tool exists    */
@@ -4390,7 +4390,7 @@ name|gimp_unset_busy
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|)
@@ -4399,7 +4399,7 @@ name|gimp_image_flush
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|gimp_transform_tool_halt
@@ -5371,7 +5371,7 @@ name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 decl_stmt|;
 name|gint
@@ -5457,7 +5457,7 @@ name|gimp_image_get_mask
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 operator|&
@@ -6372,7 +6372,7 @@ name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 argument_list|)

@@ -267,7 +267,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2761a1a70103
+DECL|enum|__anon2a418b1b0103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -3983,7 +3983,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -3995,7 +3995,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_image_new
 argument_list|(
@@ -4016,7 +4016,7 @@ name|images
 argument_list|,
 name|GIMP_OBJECT
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4065,7 +4065,7 @@ argument_list|)
 decl_stmt|;
 name|gimp_image_parasite_attach
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|parasite
 argument_list|)
@@ -4078,7 +4078,7 @@ expr_stmt|;
 block|}
 block|}
 return|return
-name|gimage
+name|image
 return|;
 block|}
 end_function

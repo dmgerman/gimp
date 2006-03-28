@@ -86,7 +86,7 @@ name|gimp_image_undo_pop_stack
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpUndoStack
 modifier|*
@@ -109,7 +109,7 @@ name|gimp_image_undo_free_space
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -121,7 +121,7 @@ name|gimp_image_undo_free_redo
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -143,19 +143,19 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_undo (GimpImage * gimage)
+DECL|function|gimp_image_undo (GimpImage * image)
 name|gimp_image_undo
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 block|{
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|FALSE
@@ -163,7 +163,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|pushing_undo_group
 operator|==
@@ -174,13 +174,13 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_undo_pop_stack
 argument_list|(
-name|gimage
+name|image
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|undo_stack
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|redo_stack
 argument_list|,
@@ -195,19 +195,19 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_redo (GimpImage * gimage)
+DECL|function|gimp_image_redo (GimpImage * image)
 name|gimp_image_redo
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 block|{
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|FALSE
@@ -215,7 +215,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|pushing_undo_group
 operator|==
@@ -226,13 +226,13 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_undo_pop_stack
 argument_list|(
-name|gimage
+name|image
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|redo_stack
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|undo_stack
 argument_list|,
@@ -247,26 +247,26 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_undo_free (GimpImage * gimage)
+DECL|function|gimp_image_undo_free (GimpImage * image)
 name|gimp_image_undo_free
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 block|{
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  Emit the UNDO_FREE event before actually freeing everything    *  so the views can properly detach from the undo items    */
 name|gimp_image_undo_event
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_UNDO_EVENT_UNDO_FREE
 argument_list|,
@@ -277,7 +277,7 @@ name|gimp_undo_free
 argument_list|(
 name|GIMP_UNDO
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|undo_stack
 argument_list|)
@@ -289,7 +289,7 @@ name|gimp_undo_free
 argument_list|(
 name|GIMP_UNDO
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|redo_stack
 argument_list|)
@@ -300,13 +300,13 @@ expr_stmt|;
 comment|/* If the image was dirty, but could become clean by redo-ing    * some actions, then it should now become 'infinitely' dirty.    * This is because we've just nuked the actions that would allow    * the image to become clean again.  The only hope for salvation    * is to save the image now!  -- austin    */
 if|if
 condition|(
-name|gimage
+name|image
 operator|->
 name|dirty
 operator|<
 literal|0
 condition|)
-name|gimage
+name|image
 operator|->
 name|dirty
 operator|=
@@ -318,12 +318,12 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_undo_group_start (GimpImage * gimage,GimpUndoType undo_type,const gchar * name)
+DECL|function|gimp_image_undo_group_start (GimpImage * image,GimpUndoType undo_type,const gchar * name)
 name|gimp_image_undo_group_start
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpUndoType
 name|undo_type
@@ -345,7 +345,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|FALSE
@@ -386,7 +386,7 @@ expr_stmt|;
 comment|/* Notify listeners that the image will be modified */
 if|if
 condition|(
-name|gimage
+name|image
 operator|->
 name|group_count
 operator|==
@@ -398,14 +398,14 @@ name|GIMP_DIRTY_NONE
 condition|)
 name|gimp_image_dirty
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|dirty_mask
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimage
+name|image
 operator|->
 name|undo_freeze_count
 operator|>
@@ -414,7 +414,7 @@ condition|)
 return|return
 name|FALSE
 return|;
-name|gimage
+name|image
 operator|->
 name|group_count
 operator|++
@@ -422,7 +422,7 @@ expr_stmt|;
 comment|/*  If we're already in a group...ignore  */
 if|if
 condition|(
-name|gimage
+name|image
 operator|->
 name|group_count
 operator|>
@@ -434,19 +434,19 @@ return|;
 comment|/*  nuke the redo stack  */
 name|gimp_image_undo_free_redo
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 comment|/* If the image was dirty, but could become clean by redo-ing    * some actions, then it should now become 'infinitely' dirty.    * This is because we've just nuked the actions that would allow    * the image to become clean again.  The only hope for salvation    * is to save the image now!  -- austin    */
 if|if
 condition|(
-name|gimage
+name|image
 operator|->
 name|dirty
 operator|<
 literal|0
 condition|)
-name|gimage
+name|image
 operator|->
 name|dirty
 operator|=
@@ -456,7 +456,7 @@ name|undo_group
 operator|=
 name|gimp_undo_stack_new
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|gimp_object_set_name
@@ -489,7 +489,7 @@ name|dirty_mask
 expr_stmt|;
 name|gimp_undo_stack_push_undo
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|undo_stack
 argument_list|,
@@ -499,7 +499,7 @@ name|undo_group
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|->
 name|pushing_undo_group
 operator|=
@@ -513,19 +513,19 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_undo_group_end (GimpImage * gimage)
+DECL|function|gimp_image_undo_group_end (GimpImage * image)
 name|gimp_image_undo_group_end
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 block|{
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|FALSE
@@ -533,7 +533,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimage
+name|image
 operator|->
 name|undo_freeze_count
 operator|>
@@ -544,7 +544,7 @@ name|FALSE
 return|;
 name|g_return_val_if_fail
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|group_count
 operator|>
@@ -553,21 +553,21 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|->
 name|group_count
 operator|--
 expr_stmt|;
 if|if
 condition|(
-name|gimage
+name|image
 operator|->
 name|group_count
 operator|==
 literal|0
 condition|)
 block|{
-name|gimage
+name|image
 operator|->
 name|pushing_undo_group
 operator|=
@@ -576,13 +576,13 @@ expr_stmt|;
 comment|/* Do it here, since undo_push doesn't emit this event while in        * the middle of a group        */
 name|gimp_image_undo_event
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_UNDO_EVENT_UNDO_PUSHED
 argument_list|,
 name|gimp_undo_stack_peek
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|undo_stack
 argument_list|)
@@ -590,7 +590,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_undo_free_space
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -603,12 +603,12 @@ end_function
 begin_function
 name|GimpUndo
 modifier|*
-DECL|function|gimp_image_undo_push (GimpImage * gimage,GType object_type,gint64 size,gsize struct_size,GimpUndoType undo_type,const gchar * name,GimpDirtyMask dirty_mask,GimpUndoPopFunc pop_func,GimpUndoFreeFunc free_func,...)
+DECL|function|gimp_image_undo_push (GimpImage * image,GType object_type,gint64 size,gsize struct_size,GimpUndoType undo_type,const gchar * name,GimpDirtyMask dirty_mask,GimpUndoPopFunc pop_func,GimpUndoFreeFunc free_func,...)
 name|gimp_image_undo_push
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GType
 name|object_type
@@ -666,7 +666,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|NULL
@@ -702,14 +702,14 @@ name|GIMP_DIRTY_NONE
 condition|)
 name|gimp_image_dirty
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|dirty_mask
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimage
+name|image
 operator|->
 name|undo_freeze_count
 operator|>
@@ -760,7 +760,7 @@ name|name
 argument_list|,
 literal|"image"
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 literal|"undo-type"
 argument_list|,
@@ -836,19 +836,19 @@ expr_stmt|;
 comment|/*  nuke the redo stack  */
 name|gimp_image_undo_free_redo
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 comment|/* If the image was dirty, but could become clean by redo-ing    * some actions, then it should now become 'infinitely' dirty.    * This is because we've just nuked the actions that would allow    * the image to become clean again.  The only hope for salvation    * is to save the image now!  -- austin    */
 if|if
 condition|(
-name|gimage
+name|image
 operator|->
 name|dirty
 operator|<
 literal|0
 condition|)
-name|gimage
+name|image
 operator|->
 name|dirty
 operator|=
@@ -856,7 +856,7 @@ literal|10000
 expr_stmt|;
 if|if
 condition|(
-name|gimage
+name|image
 operator|->
 name|pushing_undo_group
 operator|==
@@ -865,7 +865,7 @@ condition|)
 block|{
 name|gimp_undo_stack_push_undo
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|undo_stack
 argument_list|,
@@ -874,7 +874,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_undo_event
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_UNDO_EVENT_UNDO_PUSHED
 argument_list|,
@@ -883,7 +883,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_undo_free_space
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 comment|/*  freeing undo space may have freed the newly pushed undo  */
@@ -891,7 +891,7 @@ if|if
 condition|(
 name|gimp_undo_stack_peek
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|undo_stack
 argument_list|)
@@ -914,7 +914,7 @@ name|GIMP_UNDO_STACK
 argument_list|(
 name|gimp_undo_stack_peek
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|undo_stack
 argument_list|)
@@ -940,12 +940,12 @@ end_function
 begin_function
 name|GimpUndo
 modifier|*
-DECL|function|gimp_image_undo_can_compress (GimpImage * gimage,GType object_type,GimpUndoType undo_type)
+DECL|function|gimp_image_undo_can_compress (GimpImage * image,GType object_type,GimpUndoType undo_type)
 name|gimp_image_undo_can_compress
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GType
 name|object_type
@@ -958,7 +958,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|NULL
@@ -966,7 +966,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimage
+name|image
 operator|->
 name|dirty
 operator|!=
@@ -975,7 +975,7 @@ operator|&&
 operator|!
 name|gimp_undo_stack_peek
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|redo_stack
 argument_list|)
@@ -987,7 +987,7 @@ name|undo
 init|=
 name|gimp_undo_stack_peek
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|undo_stack
 argument_list|)
@@ -1031,12 +1031,12 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_undo_pop_stack (GimpImage * gimage,GimpUndoStack * undo_stack,GimpUndoStack * redo_stack,GimpUndoMode undo_mode)
+DECL|function|gimp_image_undo_pop_stack (GimpImage * image,GimpUndoStack * undo_stack,GimpUndoStack * redo_stack,GimpUndoMode undo_mode)
 name|gimp_image_undo_pop_stack
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpUndoStack
 modifier|*
@@ -1065,7 +1065,7 @@ name|g_object_freeze_notify
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1121,7 +1121,7 @@ name|mode_changed
 condition|)
 name|gimp_image_mode_changed
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 if|if
@@ -1134,7 +1134,7 @@ name|gimp_viewable_size_changed
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1146,7 +1146,7 @@ name|resolution_changed
 condition|)
 name|gimp_image_resolution_changed
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 if|if
@@ -1157,7 +1157,7 @@ name|unit_changed
 condition|)
 name|gimp_image_unit_changed
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 if|if
@@ -1168,7 +1168,7 @@ name|quick_mask_changed
 condition|)
 name|gimp_image_quick_mask_changed
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 if|if
@@ -1179,13 +1179,13 @@ name|alpha_changed
 condition|)
 name|gimp_image_alpha_changed
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 comment|/* let others know that we just popped an action */
 name|gimp_image_undo_event
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 operator|(
 name|undo_mode
@@ -1205,7 +1205,7 @@ name|g_object_thaw_notify
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1215,12 +1215,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_undo_free_space (GimpImage * gimage)
+DECL|function|gimp_image_undo_free_space (GimpImage * image)
 name|gimp_image_undo_free_space
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 block|{
 name|GimpContainer
@@ -1238,7 +1238,7 @@ name|undo_size
 decl_stmt|;
 name|container
 operator|=
-name|gimage
+name|image
 operator|->
 name|undo_stack
 operator|->
@@ -1246,7 +1246,7 @@ name|undos
 expr_stmt|;
 name|min_undo_levels
 operator|=
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -1261,7 +1261,7 @@ expr_stmt|;
 comment|/* FIXME */
 name|undo_size
 operator|=
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -1340,7 +1340,7 @@ name|freed
 init|=
 name|gimp_undo_stack_free_bottom
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|undo_stack
 argument_list|,
@@ -1377,7 +1377,7 @@ endif|#
 directive|endif
 name|gimp_image_undo_event
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_UNDO_EVENT_UNDO_EXPIRED
 argument_list|,
@@ -1406,12 +1406,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_undo_free_redo (GimpImage * gimage)
+DECL|function|gimp_image_undo_free_redo (GimpImage * image)
 name|gimp_image_undo_free_redo
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 block|{
 name|GimpContainer
@@ -1420,7 +1420,7 @@ name|container
 decl_stmt|;
 name|container
 operator|=
-name|gimage
+name|image
 operator|->
 name|redo_stack
 operator|->
@@ -1470,7 +1470,7 @@ name|freed
 init|=
 name|gimp_undo_stack_free_bottom
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|redo_stack
 argument_list|,
@@ -1507,7 +1507,7 @@ endif|#
 directive|endif
 name|gimp_image_undo_event
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_UNDO_EVENT_REDO_EXPIRED
 argument_list|,

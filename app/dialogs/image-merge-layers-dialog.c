@@ -128,7 +128,7 @@ argument_list|)
 expr_stmt|;
 name|dialog
 operator|->
-name|gimage
+name|image
 operator|=
 name|image
 expr_stmt|;

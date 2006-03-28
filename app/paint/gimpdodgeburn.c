@@ -580,7 +580,7 @@ name|pressure_options
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|TempBuf
 modifier|*
@@ -604,7 +604,7 @@ decl_stmt|;
 name|gdouble
 name|opacity
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -628,7 +628,7 @@ name|gimp_paint_options_get_fade
 argument_list|(
 name|paint_options
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|paint_core
 operator|->
@@ -940,7 +940,7 @@ name|cur_coords
 operator|.
 name|pressure
 expr_stmt|;
-comment|/* Replace the newly dodgedburned area (canvas_buf) to the gimage */
+comment|/* Replace the newly dodgedburned area (canvas_buf) to the image */
 name|gimp_brush_core_replace_canvas
 argument_list|(
 name|GIMP_BRUSH_CORE

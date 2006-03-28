@@ -492,7 +492,7 @@ condition|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 init|=
 name|action_data_get_image
 argument_list|(
@@ -503,7 +503,7 @@ name|image_new_dialog_set
 argument_list|(
 name|dialog
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|NULL
 argument_list|)
@@ -538,7 +538,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -550,7 +550,7 @@ name|gdisp
 decl_stmt|;
 name|return_if_no_image
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|data
 argument_list|)
@@ -585,7 +585,7 @@ name|GIMP_GRAY
 case|:
 name|gimp_image_convert
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 operator|(
 name|GimpImageBaseType
@@ -609,7 +609,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 break|break;
@@ -620,7 +620,7 @@ name|gtk_widget_show
 argument_list|(
 name|convert_dialog_new
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|widget
 argument_list|,
@@ -865,7 +865,7 @@ name|gimp_image_resize_to_layers
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|action_data_get_context
 argument_list|(
@@ -888,7 +888,7 @@ name|gimp_image_flush
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -939,7 +939,7 @@ name|print_size_dialog_new
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|_
 argument_list|(
@@ -1028,7 +1028,7 @@ name|image_scale_dialog_new
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|gdisp
 argument_list|,
@@ -1122,7 +1122,7 @@ name|gimp_image_flip
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|action_data_get_context
 argument_list|(
@@ -1150,7 +1150,7 @@ name|gimp_image_flush
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -1208,7 +1208,7 @@ name|gimp_image_rotate
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|action_data_get_context
 argument_list|(
@@ -1236,7 +1236,7 @@ name|gimp_image_flush
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -1257,7 +1257,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gint
 name|x1
@@ -1270,7 +1270,7 @@ name|y2
 decl_stmt|;
 name|return_if_no_image
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|data
 argument_list|)
@@ -1282,7 +1282,7 @@ name|gimp_channel_bounds
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 operator|&
@@ -1311,7 +1311,7 @@ return|return;
 block|}
 name|gimp_image_crop
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|action_data_get_context
 argument_list|(
@@ -1333,7 +1333,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -1362,7 +1362,7 @@ name|shell
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|new_gimage
+name|new_image
 decl_stmt|;
 name|return_if_no_display
 argument_list|(
@@ -1380,22 +1380,22 @@ operator|->
 name|shell
 argument_list|)
 expr_stmt|;
-name|new_gimage
+name|new_image
 operator|=
 name|gimp_image_duplicate
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|gimp_create_display
 argument_list|(
-name|new_gimage
+name|new_image
 operator|->
 name|gimp
 argument_list|,
-name|new_gimage
+name|new_image
 argument_list|,
 name|shell
 operator|->
@@ -1411,7 +1411,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(
-name|new_gimage
+name|new_image
 argument_list|)
 expr_stmt|;
 block|}
@@ -1436,7 +1436,7 @@ name|dialog
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -1444,7 +1444,7 @@ name|widget
 decl_stmt|;
 name|return_if_no_image
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|data
 argument_list|)
@@ -1460,7 +1460,7 @@ name|dialog
 operator|=
 name|image_merge_layers_dialog_new
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|action_data_get_context
 argument_list|(
@@ -1513,18 +1513,18 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|return_if_no_image
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
 name|gimp_image_flatten
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|action_data_get_context
 argument_list|(
@@ -1534,7 +1534,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -1563,7 +1563,7 @@ name|shell
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|return_if_no_display
 argument_list|(
@@ -1581,11 +1581,11 @@ operator|->
 name|shell
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|gdisp
 operator|->
-name|gimage
+name|image
 expr_stmt|;
 if|if
 condition|(
@@ -1603,7 +1603,7 @@ name|grid_dialog_new
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|gdisp
 operator|->
@@ -1695,7 +1695,7 @@ name|shell
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -1717,11 +1717,11 @@ operator|->
 name|shell
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|gdisp
 operator|->
-name|gimage
+name|image
 expr_stmt|;
 name|dialog
 operator|=
@@ -1729,7 +1729,7 @@ name|image_properties_dialog_new
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|gdisp
 operator|->
@@ -2068,7 +2068,7 @@ name|image
 init|=
 name|dialog
 operator|->
-name|gimage
+name|image
 decl_stmt|;
 if|if
 condition|(
@@ -2291,7 +2291,7 @@ name|gimp_image_merge_visible_layers
 argument_list|(
 name|dialog
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|dialog
 operator|->
@@ -2304,7 +2304,7 @@ name|gimp_image_flush
 argument_list|(
 name|dialog
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}

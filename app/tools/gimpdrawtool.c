@@ -4049,7 +4049,7 @@ name|GIMP_LIST
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|vectors
 argument_list|)

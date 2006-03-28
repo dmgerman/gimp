@@ -871,7 +871,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 init|=
 name|action_data_get_image
 argument_list|(
@@ -923,14 +923,14 @@ name|NULL
 decl_stmt|;
 if|if
 condition|(
-name|gimage
+name|image
 condition|)
 block|{
 name|n_vectors
 operator|=
 name|gimp_container_num_children
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|vectors
 argument_list|)
@@ -941,7 +941,7 @@ name|gimp_channel_is_empty
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -953,7 +953,7 @@ name|vectors
 operator|=
 name|gimp_image_get_active_vectors
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 if|if
@@ -994,7 +994,7 @@ name|g_list_find
 argument_list|(
 name|GIMP_LIST
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|vectors
 argument_list|)
@@ -1066,14 +1066,14 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"vectors-new"
 argument_list|,
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"vectors-new-last-values"
 argument_list|,
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
@@ -1146,7 +1146,7 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"vectors-paste"
 argument_list|,
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
@@ -1160,7 +1160,7 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"vectors-import"
 argument_list|,
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
@@ -1195,7 +1195,7 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"vectors-selection-to-vectors"
 argument_list|,
-name|gimage
+name|image
 operator|&&
 operator|!
 name|mask_empty
@@ -1205,7 +1205,7 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"vectors-selection-to-vectors-short"
 argument_list|,
-name|gimage
+name|image
 operator|&&
 operator|!
 name|mask_empty
@@ -1215,7 +1215,7 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"vectors-selection-to-vectors-advanced"
 argument_list|,
-name|gimage
+name|image
 operator|&&
 operator|!
 name|mask_empty

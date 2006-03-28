@@ -200,12 +200,12 @@ end_comment
 
 begin_function
 name|GimpPDBStatusType
-DECL|function|file_save (GimpImage * gimage,GimpContext * context,GimpProgress * progress,const gchar * uri,PlugInProcDef * file_proc,GimpRunMode run_mode,gboolean save_a_copy,GError ** error)
+DECL|function|file_save (GimpImage * image,GimpContext * context,GimpProgress * progress,const gchar * uri,PlugInProcDef * file_proc,GimpRunMode run_mode,gboolean save_a_copy,GError ** error)
 name|file_save
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpContext
 modifier|*
@@ -259,7 +259,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|GIMP_PDB_CALLING_ERROR
@@ -326,7 +326,7 @@ condition|(
 operator|!
 name|gimp_image_active_drawable
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 return|return
@@ -437,7 +437,7 @@ block|}
 comment|/* ref the image, so it can't get deleted during save */
 name|g_object_ref
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|proc
@@ -451,7 +451,7 @@ name|return_vals
 operator|=
 name|procedural_db_run_proc
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|,
@@ -474,7 +474,7 @@ name|GIMP_PDB_IMAGE
 argument_list|,
 name|gimp_image_get_ID
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|GIMP_PDB_DRAWABLE
@@ -485,7 +485,7 @@ name|GIMP_ITEM
 argument_list|(
 name|gimp_image_active_drawable
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 argument_list|)
@@ -544,7 +544,7 @@ name|g_object_set_data_full
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 literal|"gimp-image-save-a-copy"
@@ -572,7 +572,7 @@ name|uri
 argument_list|,
 name|gimp_image_get_uri
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 condition|)
@@ -580,7 +580,7 @@ name|g_object_set_data
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 literal|"gimp-image-save-a-copy"
@@ -590,21 +590,21 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_set_uri
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|uri
 argument_list|)
 expr_stmt|;
 name|gimp_image_set_save_proc
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|file_proc
 argument_list|)
 expr_stmt|;
 name|gimp_image_clean_all
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -612,7 +612,7 @@ name|documents
 operator|=
 name|GIMP_DOCUMENT_LIST
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -640,12 +640,12 @@ name|file_proc
 operator|->
 name|mime_type
 argument_list|,
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -688,7 +688,7 @@ expr_stmt|;
 block|}
 name|g_object_unref
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|out

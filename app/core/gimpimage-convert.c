@@ -423,7 +423,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2a0f76540103
+DECL|enum|__anon2b82cceb0103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1464,7 +1464,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0f76540208
+DECL|struct|__anon2b82cceb0208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1541,7 +1541,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0f76540308
+DECL|struct|__anon2b82cceb0308
 block|{
 DECL|member|ncolors
 name|long
@@ -1726,7 +1726,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0f76540408
+DECL|struct|__anon2b82cceb0408
 block|{
 DECL|member|used_count
 name|signed
@@ -2793,12 +2793,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_convert (GimpImage * gimage,GimpImageBaseType new_type,gint num_cols,GimpConvertDitherType dither,gboolean alpha_dither,gboolean remove_dups,GimpConvertPaletteType palette_type,GimpPalette * custom_palette,GimpProgress * progress)
+DECL|function|gimp_image_convert (GimpImage * image,GimpImageBaseType new_type,gint num_cols,GimpConvertDitherType dither,gboolean alpha_dither,gboolean remove_dups,GimpConvertPaletteType palette_type,GimpPalette * custom_palette,GimpProgress * progress)
 name|gimp_image_convert
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpImageBaseType
 name|new_type
@@ -2868,7 +2868,7 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2878,7 +2878,7 @@ name|new_type
 operator|!=
 name|gimp_image_base_type
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2948,7 +2948,7 @@ name|custom_palette
 expr_stmt|;
 name|gimp_set_busy
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|)
@@ -2959,7 +2959,7 @@ name|g_list_length
 argument_list|(
 name|GIMP_LIST
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|layers
 argument_list|)
@@ -3010,13 +3010,13 @@ name|g_object_freeze_notify
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_image_undo_group_start
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_IMAGE_CONVERT
 argument_list|,
@@ -3027,14 +3027,14 @@ if|if
 condition|(
 name|gimp_image_floating_sel
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|floating_sel_relax
 argument_list|(
 name|gimp_image_floating_sel
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|TRUE
@@ -3043,7 +3043,7 @@ expr_stmt|;
 comment|/*  Push the image type to the stack  */
 name|gimp_image_undo_push_image_type
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|NULL
 argument_list|)
@@ -3051,13 +3051,13 @@ expr_stmt|;
 comment|/*  Set the new base type  */
 name|old_type
 operator|=
-name|gimage
+name|image
 operator|->
 name|base_type
 expr_stmt|;
 name|g_object_set
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 literal|"base-type"
 argument_list|,
@@ -3164,7 +3164,7 @@ name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|layers
 argument_list|)
@@ -3463,7 +3463,7 @@ name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|layers
 argument_list|)
@@ -3660,7 +3660,7 @@ name|GIMP_INDEXED
 condition|)
 name|gimp_image_set_colormap
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|NULL
 argument_list|,
@@ -3675,12 +3675,12 @@ name|GIMP_INDEXED
 case|:
 name|gimp_image_undo_push_image_colormap
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|->
 name|cmap
 operator|=
@@ -3839,7 +3839,7 @@ name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|layers
 argument_list|)
@@ -3901,7 +3901,7 @@ name|i
 operator|++
 control|)
 block|{
-name|gimage
+name|image
 operator|->
 name|cmap
 index|[
@@ -3916,7 +3916,7 @@ expr_stmt|;
 name|j
 operator|++
 expr_stmt|;
-name|gimage
+name|image
 operator|->
 name|cmap
 index|[
@@ -3931,7 +3931,7 @@ expr_stmt|;
 name|j
 operator|++
 expr_stmt|;
-name|gimage
+name|image
 operator|->
 name|cmap
 index|[
@@ -3947,7 +3947,7 @@ name|j
 operator|++
 expr_stmt|;
 block|}
-name|gimage
+name|image
 operator|->
 name|num_cols
 operator|=
@@ -3981,7 +3981,7 @@ name|i
 operator|++
 control|)
 block|{
-name|gimage
+name|image
 operator|->
 name|cmap
 index|[
@@ -3998,7 +3998,7 @@ index|]
 operator|.
 name|red
 expr_stmt|;
-name|gimage
+name|image
 operator|->
 name|cmap
 index|[
@@ -4015,7 +4015,7 @@ index|]
 operator|.
 name|green
 expr_stmt|;
-name|gimage
+name|image
 operator|->
 name|cmap
 index|[
@@ -4033,7 +4033,7 @@ operator|.
 name|blue
 expr_stmt|;
 block|}
-name|gimage
+name|image
 operator|->
 name|num_cols
 operator|=
@@ -4044,7 +4044,7 @@ expr_stmt|;
 block|}
 name|gimp_image_colormap_changed
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 operator|-
 literal|1
@@ -4068,14 +4068,14 @@ if|if
 condition|(
 name|gimp_image_floating_sel
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 condition|)
 name|floating_sel_rigor
 argument_list|(
 name|gimp_image_floating_sel
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|TRUE
@@ -4083,30 +4083,30 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_undo_group_end
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|gimp_image_invalidate_layer_previews
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|gimp_image_mode_changed
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|g_object_thaw_notify
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_unset_busy
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|)

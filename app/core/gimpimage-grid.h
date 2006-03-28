@@ -23,7 +23,7 @@ name|gimp_image_get_grid
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -34,7 +34,7 @@ name|gimp_image_set_grid
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpGrid
 modifier|*

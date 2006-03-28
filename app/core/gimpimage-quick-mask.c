@@ -93,12 +93,12 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_image_set_quick_mask_state (GimpImage * gimage,gboolean quick_mask_state)
+DECL|function|gimp_image_set_quick_mask_state (GimpImage * image,gboolean quick_mask_state)
 name|gimp_image_set_quick_mask_state
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gboolean
 name|quick_mask_state
@@ -116,7 +116,7 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -124,13 +124,13 @@ if|if
 condition|(
 name|quick_mask_state
 operator|==
-name|gimage
+name|image
 operator|->
 name|quick_mask_state
 condition|)
 return|return;
 comment|/*  set image->quick_mask_state early so we can return early when    *  being called recursively    */
-name|gimage
+name|image
 operator|->
 name|quick_mask_state
 operator|=
@@ -144,14 +144,14 @@ name|selection
 operator|=
 name|gimp_image_get_mask
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|mask
 operator|=
 name|gimp_image_get_quick_mask
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 if|if
@@ -167,7 +167,7 @@ condition|)
 block|{
 name|gimp_image_undo_group_start
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_IMAGE_QUICK_MASK
 argument_list|,
@@ -192,7 +192,7 @@ name|floating_sel
 init|=
 name|gimp_image_floating_sel
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 decl_stmt|;
 if|if
@@ -208,20 +208,20 @@ name|mask
 operator|=
 name|gimp_channel_new
 argument_list|(
-name|gimage
+name|image
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|width
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|height
 argument_list|,
 name|GIMP_IMAGE_QUICK_MASK_NAME
 argument_list|,
 operator|&
-name|gimage
+name|image
 operator|->
 name|quick_mask_color
 argument_list|)
@@ -272,7 +272,7 @@ argument_list|(
 name|mask
 argument_list|,
 operator|&
-name|gimage
+name|image
 operator|->
 name|quick_mask_color
 argument_list|,
@@ -292,7 +292,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|gimage
+name|image
 operator|->
 name|quick_mask_inverted
 condition|)
@@ -305,7 +305,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_add_channel
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|mask
 argument_list|,
@@ -314,7 +314,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_undo_group_end
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -332,12 +332,12 @@ name|floating_sel
 init|=
 name|gimp_image_floating_sel
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 decl_stmt|;
 name|gimp_image_undo_group_start
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_IMAGE_QUICK_MASK
 argument_list|,
@@ -349,7 +349,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimage
+name|image
 operator|->
 name|quick_mask_inverted
 condition|)
@@ -384,7 +384,7 @@ name|gimp_selection_load
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|mask
@@ -392,21 +392,21 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_remove_channel
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|mask
 argument_list|)
 expr_stmt|;
 name|gimp_image_undo_group_end
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
 block|}
 name|gimp_image_quick_mask_changed
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -414,27 +414,27 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_get_quick_mask_state (const GimpImage * gimage)
+DECL|function|gimp_image_get_quick_mask_state (const GimpImage * image)
 name|gimp_image_get_quick_mask_state
 parameter_list|(
 specifier|const
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 block|{
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
 return|return
-name|gimage
+name|image
 operator|->
 name|quick_mask_state
 return|;
@@ -443,12 +443,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_set_quick_mask_color (GimpImage * gimage,const GimpRGB * color)
+DECL|function|gimp_image_set_quick_mask_color (GimpImage * image,const GimpRGB * color)
 name|gimp_image_set_quick_mask_color
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 specifier|const
 name|GimpRGB
@@ -464,7 +464,7 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -475,7 +475,7 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|->
 name|quick_mask_color
 operator|=
@@ -486,7 +486,7 @@ name|quick_mask
 operator|=
 name|gimp_image_get_quick_mask
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 if|if
@@ -507,13 +507,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_get_quick_mask_color (const GimpImage * gimage,GimpRGB * color)
+DECL|function|gimp_image_get_quick_mask_color (const GimpImage * image,GimpRGB * color)
 name|gimp_image_get_quick_mask_color
 parameter_list|(
 specifier|const
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpRGB
 modifier|*
@@ -524,7 +524,7 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -538,7 +538,7 @@ expr_stmt|;
 operator|*
 name|color
 operator|=
-name|gimage
+name|image
 operator|->
 name|quick_mask_color
 expr_stmt|;
@@ -548,20 +548,20 @@ end_function
 begin_function
 name|GimpChannel
 modifier|*
-DECL|function|gimp_image_get_quick_mask (const GimpImage * gimage)
+DECL|function|gimp_image_get_quick_mask (const GimpImage * image)
 name|gimp_image_get_quick_mask
 parameter_list|(
 specifier|const
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 block|{
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|NULL
@@ -570,7 +570,7 @@ expr_stmt|;
 return|return
 name|gimp_image_get_channel_by_name
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_IMAGE_QUICK_MASK_NAME
 argument_list|)
@@ -580,25 +580,25 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_quick_mask_invert (GimpImage * gimage)
+DECL|function|gimp_image_quick_mask_invert (GimpImage * image)
 name|gimp_image_quick_mask_invert
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 block|{
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimage
+name|image
 operator|->
 name|quick_mask_state
 condition|)
@@ -609,7 +609,7 @@ name|quick_mask
 init|=
 name|gimp_image_get_quick_mask
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 decl_stmt|;
 if|if
@@ -624,12 +624,12 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
-name|gimage
+name|image
 operator|->
 name|quick_mask_inverted
 operator|=
 operator|!
-name|gimage
+name|image
 operator|->
 name|quick_mask_inverted
 expr_stmt|;

@@ -58,12 +58,12 @@ end_comment
 begin_function
 name|GimpGuide
 modifier|*
-DECL|function|gimp_image_add_hguide (GimpImage * gimage,gint position,gboolean push_undo)
+DECL|function|gimp_image_add_hguide (GimpImage * image,gint position,gboolean push_undo)
 name|gimp_image_add_hguide
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gint
 name|position
@@ -80,7 +80,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|NULL
@@ -94,7 +94,7 @@ literal|0
 operator|&&
 name|position
 operator|<=
-name|gimage
+name|image
 operator|->
 name|height
 argument_list|,
@@ -133,7 +133,7 @@ name|guide
 operator|->
 name|guide_ID
 operator|=
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -146,7 +146,7 @@ name|push_undo
 condition|)
 name|gimp_image_undo_push_image_guide
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|_
 argument_list|(
@@ -158,7 +158,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_add_guide
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|guide
 argument_list|,
@@ -179,12 +179,12 @@ end_function
 begin_function
 name|GimpGuide
 modifier|*
-DECL|function|gimp_image_add_vguide (GimpImage * gimage,gint position,gboolean push_undo)
+DECL|function|gimp_image_add_vguide (GimpImage * image,gint position,gboolean push_undo)
 name|gimp_image_add_vguide
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gint
 name|position
@@ -201,7 +201,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|NULL
@@ -215,7 +215,7 @@ literal|0
 operator|&&
 name|position
 operator|<=
-name|gimage
+name|image
 operator|->
 name|width
 argument_list|,
@@ -254,7 +254,7 @@ name|guide
 operator|->
 name|guide_ID
 operator|=
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -267,7 +267,7 @@ name|push_undo
 condition|)
 name|gimp_image_undo_push_image_guide
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|_
 argument_list|(
@@ -279,7 +279,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_add_guide
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|guide
 argument_list|,
@@ -368,12 +368,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_add_guide (GimpImage * gimage,GimpGuide * guide,gint position)
+DECL|function|gimp_image_add_guide (GimpImage * image,GimpGuide * guide,gint position)
 name|gimp_image_add_guide
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpGuide
 modifier|*
@@ -387,7 +387,7 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -417,7 +417,7 @@ name|g_return_if_fail
 argument_list|(
 name|position
 operator|<=
-name|gimage
+name|image
 operator|->
 name|height
 argument_list|)
@@ -427,18 +427,18 @@ name|g_return_if_fail
 argument_list|(
 name|position
 operator|<=
-name|gimage
+name|image
 operator|->
 name|width
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|->
 name|guides
 operator|=
 name|g_list_prepend
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|guides
 argument_list|,
@@ -458,7 +458,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_update_guide
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|guide
 argument_list|)
@@ -468,12 +468,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_remove_guide (GimpImage * gimage,GimpGuide * guide,gboolean push_undo)
+DECL|function|gimp_image_remove_guide (GimpImage * image,GimpGuide * guide,gboolean push_undo)
 name|gimp_image_remove_guide
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpGuide
 modifier|*
@@ -487,7 +487,7 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -500,7 +500,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_update_guide
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|guide
 argument_list|)
@@ -511,7 +511,7 @@ name|push_undo
 condition|)
 name|gimp_image_undo_push_image_guide
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|_
 argument_list|(
@@ -521,13 +521,13 @@ argument_list|,
 name|guide
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|->
 name|guides
 operator|=
 name|g_list_remove
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|guides
 argument_list|,
@@ -551,12 +551,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_move_guide (GimpImage * gimage,GimpGuide * guide,gint position,gboolean push_undo)
+DECL|function|gimp_image_move_guide (GimpImage * image,GimpGuide * guide,gint position,gboolean push_undo)
 name|gimp_image_move_guide
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpGuide
 modifier|*
@@ -573,7 +573,7 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -603,7 +603,7 @@ name|g_return_if_fail
 argument_list|(
 name|position
 operator|<=
-name|gimage
+name|image
 operator|->
 name|height
 argument_list|)
@@ -613,7 +613,7 @@ name|g_return_if_fail
 argument_list|(
 name|position
 operator|<=
-name|gimage
+name|image
 operator|->
 name|width
 argument_list|)
@@ -624,7 +624,7 @@ name|push_undo
 condition|)
 name|gimp_image_undo_push_image_guide
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|_
 argument_list|(
@@ -636,7 +636,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_update_guide
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|guide
 argument_list|)
@@ -649,7 +649,7 @@ name|position
 expr_stmt|;
 name|gimp_image_update_guide
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|guide
 argument_list|)
@@ -660,12 +660,12 @@ end_function
 begin_function
 name|GimpGuide
 modifier|*
-DECL|function|gimp_image_get_guide (GimpImage * gimage,guint32 id)
+DECL|function|gimp_image_get_guide (GimpImage * image,guint32 id)
 name|gimp_image_get_guide
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|guint32
 name|id
@@ -679,7 +679,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|NULL
@@ -689,7 +689,7 @@ for|for
 control|(
 name|guides
 operator|=
-name|gimage
+name|image
 operator|->
 name|guides
 init|;
@@ -738,12 +738,12 @@ end_function
 begin_function
 name|GimpGuide
 modifier|*
-DECL|function|gimp_image_get_next_guide (GimpImage * gimage,guint32 id,gboolean * guide_found)
+DECL|function|gimp_image_get_next_guide (GimpImage * image,guint32 id,gboolean * guide_found)
 name|gimp_image_get_next_guide
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|guint32
 name|id
@@ -761,7 +761,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|NULL
@@ -797,7 +797,7 @@ for|for
 control|(
 name|guides
 operator|=
-name|gimage
+name|image
 operator|->
 name|guides
 init|;
@@ -861,12 +861,12 @@ end_function
 begin_function
 name|GimpGuide
 modifier|*
-DECL|function|gimp_image_find_guide (GimpImage * gimage,gdouble x,gdouble y,gdouble epsilon_x,gdouble epsilon_y)
+DECL|function|gimp_image_find_guide (GimpImage * image,gdouble x,gdouble y,gdouble epsilon_x,gdouble epsilon_y)
 name|gimp_image_find_guide
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gdouble
 name|x
@@ -907,7 +907,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|NULL
@@ -934,7 +934,7 @@ literal|0
 operator|||
 name|x
 operator|>=
-name|gimage
+name|image
 operator|->
 name|width
 operator|||
@@ -944,7 +944,7 @@ literal|0
 operator|||
 name|y
 operator|>=
-name|gimage
+name|image
 operator|->
 name|height
 condition|)
@@ -957,7 +957,7 @@ for|for
 control|(
 name|list
 operator|=
-name|gimage
+name|image
 operator|->
 name|guides
 init|;
@@ -973,10 +973,6 @@ control|)
 block|{
 name|guide
 operator|=
-operator|(
-name|GimpGuide
-operator|*
-operator|)
 name|list
 operator|->
 name|data

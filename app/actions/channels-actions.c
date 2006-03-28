@@ -500,7 +500,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 init|=
 name|action_data_get_image
 argument_list|(
@@ -537,7 +537,7 @@ name|NULL
 decl_stmt|;
 if|if
 condition|(
-name|gimage
+name|image
 condition|)
 block|{
 name|fs
@@ -545,7 +545,7 @@ operator|=
 operator|(
 name|gimp_image_floating_sel
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 operator|!=
 name|NULL
@@ -582,7 +582,7 @@ name|channel
 operator|=
 name|gimp_image_get_active_channel
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 if|if
@@ -600,7 +600,7 @@ name|g_list_find
 argument_list|(
 name|GIMP_LIST
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|channels
 argument_list|)
@@ -661,7 +661,7 @@ argument_list|,
 operator|!
 name|fs
 operator|&&
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
@@ -671,7 +671,7 @@ argument_list|,
 operator|!
 name|fs
 operator|&&
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE

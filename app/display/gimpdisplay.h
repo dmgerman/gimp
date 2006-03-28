@@ -108,18 +108,18 @@ name|gint
 name|ID
 decl_stmt|;
 comment|/*  unique identifier for this gdisplay     */
-DECL|member|gimage
+DECL|member|image
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
-comment|/*  pointer to the associated gimage        */
+comment|/*  pointer to the associated image        */
 DECL|member|instance
 name|gint
 name|instance
 decl_stmt|;
 comment|/*  the instance # of this gdisplay as      */
-comment|/*  taken from the gimage at creation       */
+comment|/*  taken from the image at creation       */
 DECL|member|shell
 name|GtkWidget
 modifier|*
@@ -166,7 +166,7 @@ name|gimp_display_new
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpUnit
 name|unit
@@ -232,7 +232,7 @@ name|gdisp
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl

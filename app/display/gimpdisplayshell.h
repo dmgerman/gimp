@@ -55,7 +55,7 @@ name|SCREEN_XRES
 parameter_list|(
 name|s
 parameter_list|)
-value|((s)->dot_for_dot ? \                            (s)->gdisp->gimage->xresolution : (s)->monitor_xres)
+value|((s)->dot_for_dot ? \                            (s)->gdisp->image->xresolution : (s)->monitor_xres)
 end_define
 
 begin_define
@@ -66,7 +66,7 @@ name|SCREEN_YRES
 parameter_list|(
 name|s
 parameter_list|)
-value|((s)->dot_for_dot ? \                            (s)->gdisp->gimage->yresolution : (s)->monitor_yres)
+value|((s)->dot_for_dot ? \                            (s)->gdisp->image->yresolution : (s)->monitor_yres)
 end_define
 
 begin_comment
@@ -81,7 +81,7 @@ name|SCALEFACTOR_X
 parameter_list|(
 name|s
 parameter_list|)
-value|(gimp_zoom_model_get_factor ((s)->zoom) \                            * SCREEN_XRES(s) / (s)->gdisp->gimage->xresolution)
+value|(gimp_zoom_model_get_factor ((s)->zoom) \                            * SCREEN_XRES(s) / (s)->gdisp->image->xresolution)
 end_define
 
 begin_define
@@ -92,7 +92,7 @@ name|SCALEFACTOR_Y
 parameter_list|(
 name|s
 parameter_list|)
-value|(gimp_zoom_model_get_factor ((s)->zoom) \                            * SCREEN_YRES(s) / (s)->gdisp->gimage->yresolution)
+value|(gimp_zoom_model_get_factor ((s)->zoom) \                            * SCREEN_YRES(s) / (s)->gdisp->image->yresolution)
 end_define
 
 begin_comment

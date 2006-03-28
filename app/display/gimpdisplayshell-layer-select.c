@@ -116,10 +116,10 @@ name|GtkWidget
 modifier|*
 name|label
 decl_stmt|;
-DECL|member|gimage
+DECL|member|image
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 DECL|member|orig_layer
 name|GimpLayer
@@ -142,7 +142,7 @@ name|layer_select_new
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpLayer
 modifier|*
@@ -230,7 +230,7 @@ name|layer_select
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpLayer
 modifier|*
@@ -244,19 +244,19 @@ name|shell
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 expr_stmt|;
 name|layer
 operator|=
 name|gimp_image_get_active_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 if|if
@@ -269,11 +269,11 @@ name|layer_select
 operator|=
 name|layer_select_new
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|layer
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -338,12 +338,12 @@ begin_function
 specifier|static
 name|LayerSelect
 modifier|*
-DECL|function|layer_select_new (GimpImage * gimage,GimpLayer * layer,gint view_size)
+DECL|function|layer_select_new (GimpImage * image,GimpLayer * layer,gint view_size)
 name|layer_select_new
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpLayer
 modifier|*
@@ -384,9 +384,9 @@ argument_list|)
 expr_stmt|;
 name|layer_select
 operator|->
-name|gimage
+name|image
 operator|=
-name|gimage
+name|image
 expr_stmt|;
 name|layer_select
 operator|->
@@ -753,7 +753,7 @@ name|gimp_image_get_active_layer
 argument_list|(
 name|layer_select
 operator|->
-name|gimage
+name|image
 argument_list|)
 condition|)
 block|{
@@ -761,7 +761,7 @@ name|gimp_image_flush
 argument_list|(
 name|layer_select
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -812,7 +812,7 @@ name|gimp_image_floating_sel
 argument_list|(
 name|layer_select
 operator|->
-name|gimage
+name|image
 argument_list|)
 condition|)
 return|return;
@@ -822,7 +822,7 @@ name|gimp_image_get_active_layer
 argument_list|(
 name|layer_select
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|index
@@ -831,7 +831,7 @@ name|gimp_container_get_child_index
 argument_list|(
 name|layer_select
 operator|->
-name|gimage
+name|image
 operator|->
 name|layers
 argument_list|,
@@ -857,7 +857,7 @@ name|gimp_container_num_children
 argument_list|(
 name|layer_select
 operator|->
-name|gimage
+name|image
 operator|->
 name|layers
 argument_list|)
@@ -873,7 +873,7 @@ name|gimp_container_num_children
 argument_list|(
 name|layer_select
 operator|->
-name|gimage
+name|image
 operator|->
 name|layers
 argument_list|)
@@ -892,7 +892,7 @@ name|gimp_container_get_child_by_index
 argument_list|(
 name|layer_select
 operator|->
-name|gimage
+name|image
 operator|->
 name|layers
 argument_list|,
@@ -914,7 +914,7 @@ name|gimp_image_set_active_layer
 argument_list|(
 name|layer_select
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|next_layer
 argument_list|)

@@ -618,7 +618,7 @@ name|gradient_map_new
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -668,7 +668,7 @@ name|iscissors
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gint
 modifier|*
@@ -1734,7 +1734,7 @@ name|iscissors
 argument_list|,
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 operator|&
 name|iscissors
@@ -1761,7 +1761,7 @@ literal|0
 argument_list|,
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|width
 operator|-
@@ -1782,7 +1782,7 @@ literal|0
 argument_list|,
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|height
 operator|-
@@ -1925,7 +1925,7 @@ name|gimp_image_get_mask
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|tool
@@ -1971,7 +1971,7 @@ name|gimp_image_flush
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -2245,17 +2245,17 @@ name|gimp_channel_new_mask
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|width
 argument_list|,
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|height
 argument_list|)
@@ -2904,7 +2904,7 @@ name|iscissors
 argument_list|,
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 operator|&
 name|iscissors
@@ -2931,7 +2931,7 @@ literal|0
 argument_list|,
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|width
 operator|-
@@ -2952,7 +2952,7 @@ literal|0
 argument_list|,
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|height
 operator|-
@@ -3003,7 +3003,7 @@ name|iscissors
 argument_list|,
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 operator|&
 name|iscissors
@@ -3030,7 +3030,7 @@ literal|0
 argument_list|,
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|width
 operator|-
@@ -3051,7 +3051,7 @@ literal|0
 argument_list|,
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|height
 operator|-
@@ -5242,7 +5242,7 @@ literal|0
 argument_list|,
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|width
 operator|-
@@ -5261,7 +5261,7 @@ literal|0
 argument_list|,
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|height
 operator|-
@@ -5280,7 +5280,7 @@ literal|0
 argument_list|,
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|width
 operator|-
@@ -5299,7 +5299,7 @@ literal|0
 argument_list|,
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|height
 operator|-
@@ -5388,7 +5388,7 @@ literal|0
 argument_list|,
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|width
 operator|-
@@ -5423,7 +5423,7 @@ literal|0
 argument_list|,
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|height
 operator|-
@@ -5514,7 +5514,7 @@ name|gradient_map_new
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 comment|/*  allocate the dynamic programming array  */
@@ -7014,9 +7014,9 @@ name|destPR
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 operator|(
 name|GimpImage
@@ -7134,7 +7134,7 @@ name|pickable
 operator|=
 name|GIMP_PICKABLE
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|projection
 argument_list|)
@@ -7144,7 +7144,7 @@ argument_list|(
 name|pickable
 argument_list|)
 expr_stmt|;
-comment|/* get corresponding tile in the gimage */
+comment|/* get corresponding tile in the image */
 name|srctile
 operator|=
 name|tile_manager_get_tile
@@ -7695,12 +7695,12 @@ begin_function
 specifier|static
 name|TileManager
 modifier|*
-DECL|function|gradient_map_new (GimpImage * gimage)
+DECL|function|gradient_map_new (GimpImage * image)
 name|gradient_map_new
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 block|{
 name|TileManager
@@ -7711,11 +7711,11 @@ name|tm
 operator|=
 name|tile_manager_new
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|width
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|height
 argument_list|,
@@ -7731,7 +7731,7 @@ name|tile_manager_set_user_data
 argument_list|(
 name|tm
 argument_list|,
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|tile_manager_set_validate_proc
@@ -7750,7 +7750,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|find_max_gradient (GimpIscissorsTool * iscissors,GimpImage * gimage,gint * x,gint * y)
+DECL|function|find_max_gradient (GimpIscissorsTool * iscissors,GimpImage * image,gint * x,gint * y)
 name|find_max_gradient
 parameter_list|(
 name|GimpIscissorsTool
@@ -7759,7 +7759,7 @@ name|iscissors
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gint
 modifier|*
@@ -7831,7 +7831,7 @@ name|gradient_map
 operator|=
 name|gradient_map_new
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|radius
@@ -7850,7 +7850,7 @@ name|x
 argument_list|,
 literal|0
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|width
 argument_list|)
@@ -7864,7 +7864,7 @@ name|y
 argument_list|,
 literal|0
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|height
 argument_list|)
@@ -7891,7 +7891,7 @@ name|radius
 argument_list|,
 literal|0
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|width
 argument_list|)
@@ -7906,7 +7906,7 @@ name|radius
 argument_list|,
 literal|0
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|height
 argument_list|)
@@ -7921,7 +7921,7 @@ name|radius
 argument_list|,
 literal|0
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|width
 argument_list|)
@@ -7936,7 +7936,7 @@ name|radius
 argument_list|,
 literal|0
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|height
 argument_list|)

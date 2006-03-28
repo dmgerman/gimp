@@ -128,7 +128,7 @@ if|if
 condition|(
 name|display
 operator|->
-name|gimage
+name|image
 operator|->
 name|dirty
 condition|)
@@ -632,7 +632,7 @@ name|new
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*  remember which contexts refer to old_gimage  */
+comment|/*  remember which contexts refer to old_image  */
 for|for
 control|(
 name|list
@@ -715,7 +715,7 @@ if|if
 condition|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|==
 name|old
 condition|)
@@ -727,7 +727,7 @@ name|new
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  set the new_gimage on the remembered contexts (in reverse    *  order, since older contexts are usually the parents of    *  newer ones)    */
+comment|/*  set the new_image on the remembered contexts (in reverse    *  order, since older contexts are usually the parents of    *  newer ones)    */
 name|g_list_foreach
 argument_list|(
 name|contexts

@@ -244,7 +244,7 @@ name|info
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -260,7 +260,7 @@ name|info
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpLayer
 modifier|*
@@ -296,7 +296,7 @@ name|info
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpChannel
 modifier|*
@@ -338,7 +338,7 @@ name|info
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -355,7 +355,7 @@ name|info
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -372,7 +372,7 @@ name|info
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -468,7 +468,7 @@ name|info
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -484,7 +484,7 @@ name|info
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -500,7 +500,7 @@ name|info
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -516,7 +516,7 @@ name|info
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -570,7 +570,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpLayer
 modifier|*
@@ -665,7 +665,7 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_create_image
 argument_list|(
@@ -682,7 +682,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_undo_disable
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 comment|/* read the image properties */
@@ -693,7 +693,7 @@ name|xcf_load_image_props
 argument_list|(
 name|info
 argument_list|,
-name|gimage
+name|image
 argument_list|)
 condition|)
 goto|goto
@@ -706,7 +706,7 @@ name|gimp_image_parasite_find
 argument_list|(
 name|GIMP_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|gimp_grid_parasite_name
@@ -736,7 +736,7 @@ name|gimp_parasite_list_remove
 argument_list|(
 name|GIMP_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 operator|->
 name|parasites
@@ -751,7 +751,7 @@ name|gimp_image_set_grid
 argument_list|(
 name|GIMP_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|grid
@@ -821,7 +821,7 @@ name|xcf_load_layer
 argument_list|(
 name|info
 argument_list|,
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 if|if
@@ -846,13 +846,13 @@ name|floating_sel
 condition|)
 name|gimp_image_add_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|layer
 argument_list|,
 name|gimp_container_num_children
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|layers
 argument_list|)
@@ -935,7 +935,7 @@ name|xcf_load_channel
 argument_list|(
 name|info
 argument_list|,
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 if|if
@@ -954,13 +954,13 @@ if|if
 condition|(
 name|channel
 operator|!=
-name|gimage
+name|image
 operator|->
 name|selection_mask
 condition|)
 name|gimp_image_add_channel
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|channel
 argument_list|,
@@ -1014,7 +1014,7 @@ name|active_layer
 condition|)
 name|gimp_image_set_active_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|info
 operator|->
@@ -1029,7 +1029,7 @@ name|active_channel
 condition|)
 name|gimp_image_set_active_channel
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|info
 operator|->
@@ -1038,7 +1038,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_set_filename
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|info
 operator|->
@@ -1055,7 +1055,7 @@ literal|0
 condition|)
 name|gimp_image_set_tattoo_state
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|info
 operator|->
@@ -1064,11 +1064,11 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_undo_enable
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 return|return
-name|gimage
+name|image
 return|;
 name|error
 label|:
@@ -1089,11 +1089,11 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_undo_enable
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 return|return
-name|gimage
+name|image
 return|;
 name|hard_error
 label|:
@@ -1105,7 +1105,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 return|return
@@ -1117,7 +1117,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|xcf_load_image_props (XcfInfo * info,GimpImage * gimage)
+DECL|function|xcf_load_image_props (XcfInfo * info,GimpImage * image)
 name|xcf_load_image_props
 parameter_list|(
 name|XcfInfo
@@ -1126,7 +1126,7 @@ name|info
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 block|{
 name|PropType
@@ -1208,14 +1208,14 @@ name|guint32
 operator|*
 operator|)
 operator|&
-name|gimage
+name|image
 operator|->
 name|num_cols
 argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|->
 name|cmap
 operator|=
@@ -1223,7 +1223,7 @@ name|g_new
 argument_list|(
 name|guchar
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|num_cols
 operator|*
@@ -1241,7 +1241,7 @@ name|info
 operator|->
 name|cp
 operator|+
-name|gimage
+name|image
 operator|->
 name|num_cols
 argument_list|,
@@ -1259,7 +1259,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|gimage
+name|image
 operator|->
 name|num_cols
 condition|;
@@ -1267,7 +1267,7 @@ name|i
 operator|++
 control|)
 block|{
-name|gimage
+name|image
 operator|->
 name|cmap
 index|[
@@ -1280,7 +1280,7 @@ index|]
 operator|=
 name|i
 expr_stmt|;
-name|gimage
+name|image
 operator|->
 name|cmap
 index|[
@@ -1293,7 +1293,7 @@ index|]
 operator|=
 name|i
 expr_stmt|;
-name|gimage
+name|image
 operator|->
 name|cmap
 index|[
@@ -1325,14 +1325,14 @@ name|guint32
 operator|*
 operator|)
 operator|&
-name|gimage
+name|image
 operator|->
 name|num_cols
 argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|->
 name|cmap
 operator|=
@@ -1340,7 +1340,7 @@ name|g_new
 argument_list|(
 name|guchar
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|num_cols
 operator|*
@@ -1361,11 +1361,11 @@ operator|(
 name|guint8
 operator|*
 operator|)
-name|gimage
+name|image
 operator|->
 name|cmap
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|num_cols
 operator|*
@@ -1378,7 +1378,7 @@ if|if
 condition|(
 name|gimp_image_base_type
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 operator|!=
 name|GIMP_INDEXED
@@ -1386,18 +1386,18 @@ condition|)
 block|{
 name|g_free
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|cmap
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|->
 name|cmap
 operator|=
 name|NULL
 expr_stmt|;
-name|gimage
+name|image
 operator|->
 name|num_cols
 operator|=
@@ -1578,7 +1578,7 @@ name|XCF_ORIENTATION_HORIZONTAL
 case|:
 name|gimp_image_add_hguide
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|position
 argument_list|,
@@ -1591,7 +1591,7 @@ name|XCF_ORIENTATION_VERTICAL
 case|:
 name|gimp_image_add_vguide
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|position
 argument_list|,
@@ -1609,13 +1609,13 @@ continue|continue;
 block|}
 block|}
 comment|/*  this is silly as the order of guides doesn't really matter,              *  but it restores the list to it's original order, which              *  cannot be wrong  --Mitch              */
-name|gimage
+name|image
 operator|->
 name|guides
 operator|=
 name|g_list_reverse
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|guides
 argument_list|)
@@ -1689,7 +1689,7 @@ argument_list|)
 expr_stmt|;
 name|xres
 operator|=
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -1701,7 +1701,7 @@ name|xresolution
 expr_stmt|;
 name|yres
 operator|=
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -1712,13 +1712,13 @@ operator|->
 name|yresolution
 expr_stmt|;
 block|}
-name|gimage
+name|image
 operator|->
 name|xresolution
 operator|=
 name|xres
 expr_stmt|;
-name|gimage
+name|image
 operator|->
 name|yresolution
 operator|=
@@ -1785,7 +1785,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_parasite_attach
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|p
 argument_list|)
@@ -1849,7 +1849,7 @@ name|unit
 operator|>=
 name|_gimp_unit_get_number_of_built_in_units
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|)
@@ -1867,7 +1867,7 @@ operator|=
 name|GIMP_UNIT_INCH
 expr_stmt|;
 block|}
-name|gimage
+name|image
 operator|->
 name|resolution_unit
 operator|=
@@ -1882,7 +1882,7 @@ name|xcf_load_old_paths
 argument_list|(
 name|info
 argument_list|,
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1995,7 +1995,7 @@ name|num_units
 operator|=
 name|_gimp_unit_get_number_of_units
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|)
@@ -2006,7 +2006,7 @@ name|unit
 operator|=
 name|_gimp_unit_get_number_of_built_in_units
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|)
@@ -2027,7 +2027,7 @@ name|ABS
 argument_list|(
 name|_gimp_unit_get_factor
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|,
@@ -2050,7 +2050,7 @@ index|]
 argument_list|,
 name|_gimp_unit_get_identifier
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|,
@@ -2076,7 +2076,7 @@ name|unit
 operator|=
 name|_gimp_unit_new
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|,
@@ -2110,7 +2110,7 @@ literal|4
 index|]
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|->
 name|resolution_unit
 operator|=
@@ -2156,7 +2156,7 @@ name|xcf_load_vectors
 argument_list|(
 name|info
 argument_list|,
-name|gimage
+name|image
 argument_list|)
 condition|)
 block|{
@@ -2291,7 +2291,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|xcf_load_layer_props (XcfInfo * info,GimpImage * gimage,GimpLayer * layer,gboolean * apply_mask,gboolean * edit_mask,gboolean * show_mask,guint32 * text_layer_flags)
+DECL|function|xcf_load_layer_props (XcfInfo * info,GimpImage * image,GimpLayer * layer,gboolean * apply_mask,gboolean * edit_mask,gboolean * show_mask,guint32 * text_layer_flags)
 name|xcf_load_layer_props
 parameter_list|(
 name|XcfInfo
@@ -2300,7 +2300,7 @@ name|info
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpLayer
 modifier|*
@@ -2903,7 +2903,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|xcf_load_channel_props (XcfInfo * info,GimpImage * gimage,GimpChannel ** channel)
+DECL|function|xcf_load_channel_props (XcfInfo * info,GimpImage * image,GimpChannel ** channel)
 name|xcf_load_channel_props
 parameter_list|(
 name|XcfInfo
@@ -2912,7 +2912,7 @@ name|info
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpChannel
 modifier|*
@@ -2975,18 +2975,18 @@ name|PROP_SELECTION
 case|:
 name|g_object_unref
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|selection_mask
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|->
 name|selection_mask
 operator|=
 name|gimp_selection_new
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|gimp_item_width
 argument_list|(
@@ -3009,7 +3009,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_ref
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|selection_mask
 argument_list|)
@@ -3018,7 +3018,7 @@ name|gimp_item_sink
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|selection_mask
 argument_list|)
@@ -3028,7 +3028,7 @@ name|tile_manager_unref
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|selection_mask
 argument_list|)
@@ -3038,7 +3038,7 @@ argument_list|)
 expr_stmt|;
 name|GIMP_DRAWABLE
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|selection_mask
 argument_list|)
@@ -3072,7 +3072,7 @@ expr_stmt|;
 operator|*
 name|channel
 operator|=
-name|gimage
+name|image
 operator|->
 name|selection_mask
 expr_stmt|;
@@ -3555,7 +3555,7 @@ begin_function
 specifier|static
 name|GimpLayer
 modifier|*
-DECL|function|xcf_load_layer (XcfInfo * info,GimpImage * gimage)
+DECL|function|xcf_load_layer (XcfInfo * info,GimpImage * image)
 name|xcf_load_layer
 parameter_list|(
 name|XcfInfo
@@ -3564,7 +3564,7 @@ name|info
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 block|{
 name|GimpLayer
@@ -3718,7 +3718,7 @@ name|layer
 operator|=
 name|gimp_layer_new
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|width
 argument_list|,
@@ -3754,7 +3754,7 @@ name|xcf_load_layer_props
 argument_list|(
 name|info
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|layer
 argument_list|,
@@ -3931,7 +3931,7 @@ name|xcf_load_layer_mask
 argument_list|(
 name|info
 argument_list|,
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 if|if
@@ -4004,7 +4004,7 @@ begin_function
 specifier|static
 name|GimpChannel
 modifier|*
-DECL|function|xcf_load_channel (XcfInfo * info,GimpImage * gimage)
+DECL|function|xcf_load_channel (XcfInfo * info,GimpImage * image)
 name|xcf_load_channel
 parameter_list|(
 name|XcfInfo
@@ -4013,7 +4013,7 @@ name|info
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 block|{
 name|GimpChannel
@@ -4124,7 +4124,7 @@ name|channel
 operator|=
 name|gimp_channel_new
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|width
 argument_list|,
@@ -4157,7 +4157,7 @@ name|xcf_load_channel_props
 argument_list|(
 name|info
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 operator|&
 name|channel
@@ -4250,7 +4250,7 @@ begin_function
 specifier|static
 name|GimpLayerMask
 modifier|*
-DECL|function|xcf_load_layer_mask (XcfInfo * info,GimpImage * gimage)
+DECL|function|xcf_load_layer_mask (XcfInfo * info,GimpImage * image)
 name|xcf_load_layer_mask
 parameter_list|(
 name|XcfInfo
@@ -4259,7 +4259,7 @@ name|info
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 block|{
 name|GimpLayerMask
@@ -4374,7 +4374,7 @@ name|layer_mask
 operator|=
 name|gimp_layer_mask_new
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|width
 argument_list|,
@@ -4414,7 +4414,7 @@ name|xcf_load_channel_props
 argument_list|(
 name|info
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 operator|&
 name|channel
@@ -5912,7 +5912,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|xcf_load_old_paths (XcfInfo * info,GimpImage * gimage)
+DECL|function|xcf_load_old_paths (XcfInfo * info,GimpImage * image)
 name|xcf_load_old_paths
 parameter_list|(
 name|XcfInfo
@@ -5921,7 +5921,7 @@ name|info
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 block|{
 name|guint32
@@ -5977,7 +5977,7 @@ name|xcf_load_old_path
 argument_list|(
 name|info
 argument_list|,
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|active_vectors
@@ -5988,7 +5988,7 @@ operator|*
 operator|)
 name|gimp_container_get_child_by_index
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|vectors
 argument_list|,
@@ -6001,7 +6001,7 @@ name|active_vectors
 condition|)
 name|gimp_image_set_active_vectors
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|active_vectors
 argument_list|)
@@ -6015,7 +6015,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|xcf_load_old_path (XcfInfo * info,GimpImage * gimage)
+DECL|function|xcf_load_old_path (XcfInfo * info,GimpImage * image)
 name|xcf_load_old_path
 parameter_list|(
 name|XcfInfo
@@ -6024,7 +6024,7 @@ name|info
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 block|{
 name|gchar
@@ -6472,7 +6472,7 @@ name|vectors
 operator|=
 name|gimp_vectors_compat_new
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|name
 argument_list|,
@@ -6517,13 +6517,13 @@ name|tattoo
 expr_stmt|;
 name|gimp_image_add_vectors
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|vectors
 argument_list|,
 name|gimp_container_num_children
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|vectors
 argument_list|)
@@ -6538,7 +6538,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|xcf_load_vectors (XcfInfo * info,GimpImage * gimage)
+DECL|function|xcf_load_vectors (XcfInfo * info,GimpImage * image)
 name|xcf_load_vectors
 parameter_list|(
 name|XcfInfo
@@ -6547,7 +6547,7 @@ name|info
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 block|{
 name|guint32
@@ -6676,7 +6676,7 @@ name|xcf_load_vector
 argument_list|(
 name|info
 argument_list|,
-name|gimage
+name|image
 argument_list|)
 condition|)
 return|return
@@ -6690,7 +6690,7 @@ operator|*
 operator|)
 name|gimp_container_get_child_by_index
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|vectors
 argument_list|,
@@ -6703,7 +6703,7 @@ name|active_vectors
 condition|)
 name|gimp_image_set_active_vectors
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|active_vectors
 argument_list|)
@@ -6733,7 +6733,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|xcf_load_vector (XcfInfo * info,GimpImage * gimage)
+DECL|function|xcf_load_vector (XcfInfo * info,GimpImage * image)
 name|xcf_load_vector
 parameter_list|(
 name|XcfInfo
@@ -6742,7 +6742,7 @@ name|info
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 block|{
 name|gchar
@@ -6906,7 +6906,7 @@ name|vectors
 operator|=
 name|gimp_vectors_new
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|name
 argument_list|)
@@ -7423,13 +7423,13 @@ expr_stmt|;
 block|}
 name|gimp_image_add_vectors
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|vectors
 argument_list|,
 name|gimp_container_num_children
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|vectors
 argument_list|)

@@ -23,7 +23,7 @@ name|gimp_image_duplicate
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl

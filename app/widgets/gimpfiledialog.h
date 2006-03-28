@@ -106,10 +106,10 @@ name|PlugInProcDef
 modifier|*
 name|file_proc
 decl_stmt|;
-DECL|member|gimage
+DECL|member|image
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 DECL|member|save_a_copy
 name|gboolean
@@ -244,7 +244,7 @@ name|dialog
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gboolean
 name|save_a_copy

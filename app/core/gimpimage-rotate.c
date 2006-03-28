@@ -94,7 +94,7 @@ name|gimp_image_rotate_item_offset
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpRotationType
 name|rotate_type
@@ -119,7 +119,7 @@ name|gimp_image_rotate_guides
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpRotationType
 name|rotate_type
@@ -134,7 +134,7 @@ name|gimp_image_rotate_sample_points
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpRotationType
 name|rotate_type
@@ -144,12 +144,12 @@ end_function_decl
 
 begin_function
 name|void
-DECL|function|gimp_image_rotate (GimpImage * gimage,GimpContext * context,GimpRotationType rotate_type,GimpProgress * progress)
+DECL|function|gimp_image_rotate (GimpImage * image,GimpContext * context,GimpRotationType rotate_type,GimpProgress * progress)
 name|gimp_image_rotate
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpContext
 modifier|*
@@ -198,7 +198,7 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -224,7 +224,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_set_busy
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|)
@@ -234,7 +234,7 @@ operator|=
 operator|(
 name|gdouble
 operator|)
-name|gimage
+name|image
 operator|->
 name|width
 operator|/
@@ -245,7 +245,7 @@ operator|=
 operator|(
 name|gdouble
 operator|)
-name|gimage
+name|image
 operator|->
 name|height
 operator|/
@@ -254,19 +254,19 @@ expr_stmt|;
 name|progress_max
 operator|=
 operator|(
-name|gimage
+name|image
 operator|->
 name|channels
 operator|->
 name|num_children
 operator|+
-name|gimage
+name|image
 operator|->
 name|layers
 operator|->
 name|num_children
 operator|+
-name|gimage
+name|image
 operator|->
 name|vectors
 operator|->
@@ -280,13 +280,13 @@ name|g_object_freeze_notify
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_image_undo_group_start
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_IMAGE_ROTATE
 argument_list|,
@@ -307,13 +307,13 @@ name|GIMP_ROTATE_270
 case|:
 name|new_image_width
 operator|=
-name|gimage
+name|image
 operator|->
 name|height
 expr_stmt|;
 name|new_image_height
 operator|=
-name|gimage
+name|image
 operator|->
 name|width
 expr_stmt|;
@@ -327,13 +327,13 @@ name|GIMP_ROTATE_180
 case|:
 name|new_image_width
 operator|=
-name|gimage
+name|image
 operator|->
 name|width
 expr_stmt|;
 name|new_image_height
 operator|=
-name|gimage
+name|image
 operator|->
 name|height
 expr_stmt|;
@@ -355,7 +355,7 @@ name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|channels
 argument_list|)
@@ -431,7 +431,7 @@ name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|vectors
 argument_list|)
@@ -504,7 +504,7 @@ argument_list|,
 operator|(
 name|new_image_width
 operator|-
-name|gimage
+name|image
 operator|->
 name|width
 operator|)
@@ -514,7 +514,7 @@ argument_list|,
 operator|(
 name|new_image_height
 operator|-
-name|gimage
+name|image
 operator|->
 name|height
 operator|)
@@ -546,7 +546,7 @@ name|GIMP_ITEM
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 argument_list|,
@@ -563,7 +563,7 @@ argument_list|)
 expr_stmt|;
 name|GIMP_ITEM
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|selection_mask
 argument_list|)
@@ -574,7 +574,7 @@ literal|0
 expr_stmt|;
 name|GIMP_ITEM
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|selection_mask
 argument_list|)
@@ -604,7 +604,7 @@ name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|layers
 argument_list|)
@@ -664,7 +664,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_rotate_item_offset
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|rotate_type
 argument_list|,
@@ -693,7 +693,7 @@ block|}
 comment|/*  Rotate all Guides  */
 name|gimp_image_rotate_guides
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|rotate_type
 argument_list|)
@@ -701,7 +701,7 @@ expr_stmt|;
 comment|/*  Rotate all sample points  */
 name|gimp_image_rotate_sample_points
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|rotate_type
 argument_list|)
@@ -714,14 +714,14 @@ condition|)
 block|{
 name|gimp_image_undo_push_image_size
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
 name|g_object_set
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 literal|"width"
 argument_list|,
@@ -736,11 +736,11 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimage
+name|image
 operator|->
 name|xresolution
 operator|!=
-name|gimage
+name|image
 operator|->
 name|yresolution
 condition|)
@@ -750,26 +750,26 @@ name|tmp
 decl_stmt|;
 name|gimp_image_undo_push_image_resolution
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
 name|tmp
 operator|=
-name|gimage
+name|image
 operator|->
 name|xresolution
 expr_stmt|;
-name|gimage
+name|image
 operator|->
 name|yresolution
 operator|=
-name|gimage
+name|image
 operator|->
 name|xresolution
 expr_stmt|;
-name|gimage
+name|image
 operator|->
 name|xresolution
 operator|=
@@ -779,7 +779,7 @@ block|}
 block|}
 name|gimp_image_undo_group_end
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 if|if
@@ -790,7 +790,7 @@ name|gimp_viewable_size_changed
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -798,13 +798,13 @@ name|g_object_thaw_notify
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_unset_busy
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|)
@@ -815,12 +815,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_rotate_item_offset (GimpImage * gimage,GimpRotationType rotate_type,GimpItem * item,gint off_x,gint off_y)
+DECL|function|gimp_image_rotate_item_offset (GimpImage * image,GimpRotationType rotate_type,GimpItem * item,gint off_x,gint off_y)
 name|gimp_image_rotate_item_offset
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpRotationType
 name|rotate_type
@@ -856,7 +856,7 @@ name|GIMP_ROTATE_90
 case|:
 name|x
 operator|=
-name|gimage
+name|image
 operator|->
 name|height
 operator|-
@@ -881,7 +881,7 @@ name|off_y
 expr_stmt|;
 name|y
 operator|=
-name|gimage
+name|image
 operator|->
 name|width
 operator|-
@@ -940,12 +940,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_rotate_guides (GimpImage * gimage,GimpRotationType rotate_type)
+DECL|function|gimp_image_rotate_guides (GimpImage * image,GimpRotationType rotate_type)
 name|gimp_image_rotate_guides
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpRotationType
 name|rotate_type
@@ -960,7 +960,7 @@ for|for
 control|(
 name|list
 operator|=
-name|gimage
+name|image
 operator|->
 name|guides
 init|;
@@ -1002,7 +1002,7 @@ name|GIMP_ORIENTATION_HORIZONTAL
 case|:
 name|gimp_image_undo_push_image_guide
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|NULL
 argument_list|,
@@ -1019,7 +1019,7 @@ name|guide
 operator|->
 name|position
 operator|=
-name|gimage
+name|image
 operator|->
 name|height
 operator|-
@@ -1033,7 +1033,7 @@ name|GIMP_ORIENTATION_VERTICAL
 case|:
 name|gimp_image_undo_push_image_guide
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|NULL
 argument_list|,
@@ -1066,11 +1066,11 @@ name|GIMP_ORIENTATION_HORIZONTAL
 case|:
 name|gimp_image_move_guide
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|guide
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|height
 operator|-
@@ -1087,11 +1087,11 @@ name|GIMP_ORIENTATION_VERTICAL
 case|:
 name|gimp_image_move_guide
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|guide
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|width
 operator|-
@@ -1122,7 +1122,7 @@ name|GIMP_ORIENTATION_HORIZONTAL
 case|:
 name|gimp_image_undo_push_image_guide
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|NULL
 argument_list|,
@@ -1141,7 +1141,7 @@ name|GIMP_ORIENTATION_VERTICAL
 case|:
 name|gimp_image_undo_push_image_guide
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|NULL
 argument_list|,
@@ -1158,7 +1158,7 @@ name|guide
 operator|->
 name|position
 operator|=
-name|gimage
+name|image
 operator|->
 name|width
 operator|-
@@ -1179,12 +1179,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_rotate_sample_points (GimpImage * gimage,GimpRotationType rotate_type)
+DECL|function|gimp_image_rotate_sample_points (GimpImage * image,GimpRotationType rotate_type)
 name|gimp_image_rotate_sample_points
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpRotationType
 name|rotate_type
@@ -1199,7 +1199,7 @@ for|for
 control|(
 name|list
 operator|=
-name|gimage
+name|image
 operator|->
 name|sample_points
 init|;
@@ -1257,7 +1257,7 @@ name|sample_point
 operator|->
 name|y
 operator|=
-name|gimage
+name|image
 operator|->
 name|height
 operator|-
@@ -1271,7 +1271,7 @@ name|sample_point
 operator|->
 name|x
 operator|=
-name|gimage
+name|image
 operator|->
 name|height
 operator|-
@@ -1281,7 +1281,7 @@ name|sample_point
 operator|->
 name|y
 operator|=
-name|gimage
+name|image
 operator|->
 name|width
 operator|-
@@ -1295,7 +1295,7 @@ name|sample_point
 operator|->
 name|x
 operator|=
-name|gimage
+name|image
 operator|->
 name|width
 operator|-

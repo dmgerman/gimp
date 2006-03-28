@@ -109,7 +109,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpLayer
 modifier|*
@@ -171,7 +171,7 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -185,7 +185,7 @@ name|floating_sel
 operator|=
 name|gimp_image_floating_sel
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 comment|/*  If there is already a floating selection, anchor it  */
@@ -214,7 +214,7 @@ name|drawable
 operator|=
 name|gimp_image_active_drawable
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -264,10 +264,10 @@ name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*  add the layer to the gimage  */
+comment|/*  add the layer to the image  */
 name|gimp_image_add_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|layer
 argument_list|,
@@ -297,7 +297,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -315,7 +315,7 @@ name|layer
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -331,7 +331,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_undo_group_start
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_FS_REMOVE
 argument_list|,
@@ -358,17 +358,17 @@ name|layer
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*  remove the layer from the gimage  */
+comment|/*  remove the layer from the image  */
 name|gimp_image_remove_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|layer
 argument_list|)
 expr_stmt|;
 name|gimp_image_undo_group_end
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -386,7 +386,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpDrawable
 modifier|*
@@ -408,7 +408,7 @@ name|layer
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -441,7 +441,7 @@ block|}
 comment|/*  Start a floating selection anchoring undo  */
 name|gimp_image_undo_group_start
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_FS_ANCHOR
 argument_list|,
@@ -519,7 +519,7 @@ expr_stmt|;
 comment|/*  remove the floating selection  */
 name|gimp_image_remove_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|layer
 argument_list|)
@@ -527,7 +527,7 @@ expr_stmt|;
 comment|/*  end the group undo  */
 name|gimp_image_undo_group_end
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 comment|/*  invalidate the boundaries  */
@@ -537,7 +537,7 @@ name|GIMP_DRAWABLE
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 argument_list|)
@@ -557,7 +557,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -575,7 +575,7 @@ name|layer
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -613,7 +613,7 @@ argument_list|)
 decl_stmt|;
 name|gimp_image_set_active_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|gimp_layer_mask_get_layer
 argument_list|(
@@ -637,7 +637,7 @@ condition|)
 block|{
 name|gimp_image_set_active_channel
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_CHANNEL
 argument_list|(
@@ -654,7 +654,7 @@ else|else
 block|{
 name|gimp_image_set_active_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_LAYER
 argument_list|(
@@ -686,7 +686,7 @@ name|item
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -715,7 +715,7 @@ if|if
 condition|(
 operator|!
 operator|(
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -750,7 +750,7 @@ return|return;
 block|}
 name|gimp_image_undo_group_start
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_FS_TO_LAYER
 argument_list|,
@@ -784,7 +784,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_undo_push_fs_to_layer
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|NULL
 argument_list|,
@@ -815,7 +815,7 @@ name|drawable
 operator|=
 name|NULL
 expr_stmt|;
-name|gimage
+name|image
 operator|->
 name|floating_sel
 operator|=
@@ -835,7 +835,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_undo_group_end
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|gimp_object_name_changed
@@ -874,7 +874,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_floating_selection_changed
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -1061,7 +1061,7 @@ operator|&
 name|offy
 argument_list|)
 expr_stmt|;
-comment|/*  Find the minimum area we need to uncover -- in gimage space  */
+comment|/*  Find the minimum area we need to uncover -- in image space  */
 name|x1
 operator|=
 name|MAX
@@ -1384,7 +1384,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  What this function does is "uncover" the specified area in the    *  drawable that this floating selection obscures.  We do this so    *  that either the floating selection can be removed or it can be    *  translated    */
-comment|/*  Find the minimum area we need to uncover -- in gimage space  */
+comment|/*  Find the minimum area we need to uncover -- in image space  */
 name|gimp_item_offsets
 argument_list|(
 name|GIMP_ITEM
@@ -1893,7 +1893,7 @@ name|fsPR
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpLayer
 modifier|*
@@ -1947,7 +1947,7 @@ if|if
 condition|(
 operator|!
 operator|(
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -1959,7 +1959,7 @@ argument_list|)
 operator|)
 condition|)
 return|return;
-comment|/*  What this function does is composite the specified area of the    *  drawble with the floating selection.  We do this when the gimage    *  is constructed, before any other composition takes place.    */
+comment|/*  What this function does is composite the specified area of the    *  drawble with the floating selection.  We do this when the image    *  is constructed, before any other composition takes place.    */
 comment|/*  If this isn't the first composite,    *  restore the image underneath    */
 if|if
 condition|(
@@ -2014,7 +2014,7 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
-comment|/*  Find the minimum area we need to composite -- in gimage space  */
+comment|/*  Find the minimum area we need to composite -- in image space  */
 name|gimp_item_offsets
 argument_list|(
 name|GIMP_ITEM
@@ -2294,7 +2294,7 @@ name|lock_alpha
 operator|=
 name|FALSE
 expr_stmt|;
-comment|/*  We need to set all gimage channels to active to make sure that 	   *  nothing strange happens while applying the floating selection. 	   *  It wouldn't make sense for the floating selection to be affected 	   *  by the active gimage channels. 	   */
+comment|/*  We need to set all image channels to active to make sure that 	   *  nothing strange happens while applying the floating selection. 	   *  It wouldn't make sense for the floating selection to be affected 	   *  by the active image channels. 	   */
 for|for
 control|(
 name|i
@@ -2314,14 +2314,14 @@ index|[
 name|i
 index|]
 operator|=
-name|gimage
+name|image
 operator|->
 name|active
 index|[
 name|i
 index|]
 expr_stmt|;
-name|gimage
+name|image
 operator|->
 name|active
 index|[
@@ -2384,7 +2384,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/*  restore gimage active channels  */
+comment|/*  restore image active channels  */
 for|for
 control|(
 name|i
@@ -2398,7 +2398,7 @@ condition|;
 name|i
 operator|++
 control|)
-name|gimage
+name|image
 operator|->
 name|active
 index|[

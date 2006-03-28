@@ -1143,7 +1143,7 @@ name|uri
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpPDBStatusType
 name|status
@@ -1164,7 +1164,7 @@ name|imagefile
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|file_open_with_display
 argument_list|(
@@ -1188,7 +1188,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimage
+name|image
 operator|&&
 name|status
 operator|!=
@@ -1273,7 +1273,7 @@ name|GIMP_OBJECT
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;

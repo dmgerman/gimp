@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2998bddd0103
+DECL|enum|__anon29fd1cff0103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE
@@ -1262,14 +1262,14 @@ name|GIMP_IS_IMAGE
 argument_list|(
 name|item
 operator|->
-name|gimage
+name|image
 argument_list|)
 operator|&&
 name|gimp_container_have
 argument_list|(
 name|item
 operator|->
-name|gimage
+name|image
 operator|->
 name|vectors
 argument_list|,
@@ -2363,12 +2363,12 @@ end_comment
 begin_function
 name|GimpVectors
 modifier|*
-DECL|function|gimp_vectors_new (GimpImage * gimage,const gchar * name)
+DECL|function|gimp_vectors_new (GimpImage * image,const gchar * name)
 name|gimp_vectors_new
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -2384,7 +2384,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|NULL
@@ -2406,17 +2406,17 @@ argument_list|(
 name|vectors
 argument_list|)
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|width
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|height
 argument_list|,

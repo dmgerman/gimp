@@ -502,7 +502,7 @@ name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -668,7 +668,7 @@ name|context
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|paint_options
 operator|=
@@ -695,11 +695,11 @@ argument_list|(
 name|options
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|gdisp
 operator|->
-name|gimage
+name|image
 expr_stmt|;
 name|gimp_tool_pop_status
 argument_list|(
@@ -781,7 +781,7 @@ name|gimp_drawable_blend
 argument_list|(
 name|gimp_image_active_drawable
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|context
@@ -864,7 +864,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -926,7 +926,7 @@ name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 argument_list|,
@@ -1066,7 +1066,7 @@ name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 condition|)

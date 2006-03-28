@@ -507,7 +507,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|PixelRegion
 name|destPR
@@ -685,7 +685,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -724,7 +724,7 @@ expr_stmt|;
 comment|/*  Get the background color  */
 name|gimp_image_get_background
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|drawable
 argument_list|,
@@ -788,7 +788,7 @@ name|alpha
 operator|=
 name|ALPHA_I_PIX
 expr_stmt|;
-comment|/*  If the gimage is indexed color, ignore interpolation value  */
+comment|/*  If the image is indexed color, ignore interpolation value  */
 name|interpolation_type
 operator|=
 name|GIMP_INTERPOLATION_NONE
@@ -2779,7 +2779,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|TileManager
 modifier|*
@@ -2858,7 +2858,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -3029,7 +3029,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_get_background
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|drawable
 argument_list|,
@@ -3533,7 +3533,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|TileManager
 modifier|*
@@ -3622,7 +3622,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -3839,7 +3839,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_get_background
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|drawable
 argument_list|,
@@ -4520,7 +4520,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|TileManager
 modifier|*
@@ -4590,7 +4590,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -4603,7 +4603,7 @@ expr_stmt|;
 comment|/* Start a transform undo group */
 name|gimp_image_undo_group_start
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_TRANSFORM
 argument_list|,
@@ -4712,7 +4712,7 @@ block|}
 comment|/*  push the undo group end  */
 name|gimp_image_undo_group_end
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 return|return
@@ -4749,7 +4749,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|TileManager
 modifier|*
@@ -4796,7 +4796,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -4809,7 +4809,7 @@ expr_stmt|;
 comment|/* Start a transform undo group */
 name|gimp_image_undo_group_start
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_TRANSFORM
 argument_list|,
@@ -5007,7 +5007,7 @@ block|}
 comment|/*  push the undo group end  */
 name|gimp_image_undo_group_end
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 return|return
@@ -5047,7 +5047,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|TileManager
 modifier|*
@@ -5094,7 +5094,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -5107,7 +5107,7 @@ expr_stmt|;
 comment|/* Start a transform undo group */
 name|gimp_image_undo_group_start
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_TRANSFORM
 argument_list|,
@@ -5279,7 +5279,7 @@ block|}
 comment|/*  push the undo group end  */
 name|gimp_image_undo_group_end
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 return|return
@@ -5309,7 +5309,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|TileManager
 modifier|*
@@ -5357,7 +5357,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -5375,7 +5375,7 @@ name|gimp_channel_is_empty
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 condition|)
@@ -5416,7 +5416,7 @@ name|gimp_selection_extract
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|drawable
@@ -5465,7 +5465,7 @@ name|gimp_selection_extract
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|drawable
@@ -5486,7 +5486,7 @@ name|gimp_selection_extract
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|drawable
@@ -5531,7 +5531,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpLayer
 modifier|*
@@ -5584,7 +5584,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -5640,7 +5640,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_undo_group_start
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_EDIT_PASTE
 argument_list|,
@@ -5658,7 +5658,7 @@ name|gimp_layer_new_from_tiles
 argument_list|(
 name|tiles
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|gimp_drawable_type_with_alpha
 argument_list|(
@@ -5768,7 +5768,7 @@ expr_stmt|;
 block|}
 name|gimp_image_undo_group_end
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 return|return

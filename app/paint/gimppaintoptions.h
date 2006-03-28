@@ -361,7 +361,7 @@ name|paint_options
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gdouble
 name|pixel_dist
@@ -379,7 +379,7 @@ name|paint_options
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gdouble
 name|pressure
@@ -404,7 +404,7 @@ name|paint_options
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl

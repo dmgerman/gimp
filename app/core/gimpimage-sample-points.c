@@ -58,12 +58,12 @@ end_comment
 begin_function
 name|GimpSamplePoint
 modifier|*
-DECL|function|gimp_image_add_sample_point_at_pos (GimpImage * gimage,gint x,gint y,gboolean push_undo)
+DECL|function|gimp_image_add_sample_point_at_pos (GimpImage * image,gint x,gint y,gboolean push_undo)
 name|gimp_image_add_sample_point_at_pos
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gint
 name|x
@@ -83,7 +83,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|NULL
@@ -97,7 +97,7 @@ literal|0
 operator|&&
 name|x
 operator|<
-name|gimage
+name|image
 operator|->
 name|width
 argument_list|,
@@ -112,7 +112,7 @@ literal|0
 operator|&&
 name|y
 operator|<
-name|gimage
+name|image
 operator|->
 name|height
 argument_list|,
@@ -152,7 +152,7 @@ name|sample_point
 operator|->
 name|sample_point_ID
 operator|=
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->
@@ -165,7 +165,7 @@ name|push_undo
 condition|)
 name|gimp_image_undo_push_image_sample_point
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|_
 argument_list|(
@@ -177,7 +177,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_add_sample_point
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|sample_point
 argument_list|,
@@ -268,12 +268,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_add_sample_point (GimpImage * gimage,GimpSamplePoint * sample_point,gint x,gint y)
+DECL|function|gimp_image_add_sample_point (GimpImage * image,GimpSamplePoint * sample_point,gint x,gint y)
 name|gimp_image_add_sample_point
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpSamplePoint
 modifier|*
@@ -290,7 +290,7 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -319,7 +319,7 @@ name|g_return_if_fail
 argument_list|(
 name|x
 operator|<
-name|gimage
+name|image
 operator|->
 name|width
 argument_list|)
@@ -328,18 +328,18 @@ name|g_return_if_fail
 argument_list|(
 name|y
 operator|<
-name|gimage
+name|image
 operator|->
 name|height
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|->
 name|sample_points
 operator|=
 name|g_list_append
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|sample_points
 argument_list|,
@@ -365,14 +365,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_sample_point_added
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|sample_point
 argument_list|)
 expr_stmt|;
 name|gimp_image_update_sample_point
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|sample_point
 argument_list|)
@@ -382,12 +382,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_remove_sample_point (GimpImage * gimage,GimpSamplePoint * sample_point,gboolean push_undo)
+DECL|function|gimp_image_remove_sample_point (GimpImage * image,GimpSamplePoint * sample_point,gboolean push_undo)
 name|gimp_image_remove_sample_point
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpSamplePoint
 modifier|*
@@ -405,7 +405,7 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -418,7 +418,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_update_sample_point
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|sample_point
 argument_list|)
@@ -429,7 +429,7 @@ name|push_undo
 condition|)
 name|gimp_image_undo_push_image_sample_point
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|_
 argument_list|(
@@ -443,7 +443,7 @@ name|list
 operator|=
 name|g_list_find
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|sample_points
 argument_list|,
@@ -461,13 +461,13 @@ argument_list|(
 name|list
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|->
 name|sample_points
 operator|=
 name|g_list_remove
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|sample_points
 argument_list|,
@@ -476,7 +476,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_sample_point_removed
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|sample_point
 argument_list|)
@@ -507,7 +507,7 @@ condition|)
 block|{
 name|gimp_image_update_sample_point
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|list
 operator|->
@@ -527,12 +527,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_move_sample_point (GimpImage * gimage,GimpSamplePoint * sample_point,gint x,gint y,gboolean push_undo)
+DECL|function|gimp_image_move_sample_point (GimpImage * image,GimpSamplePoint * sample_point,gint x,gint y,gboolean push_undo)
 name|gimp_image_move_sample_point
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpSamplePoint
 modifier|*
@@ -552,7 +552,7 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -581,7 +581,7 @@ name|g_return_if_fail
 argument_list|(
 name|x
 operator|<
-name|gimage
+name|image
 operator|->
 name|width
 argument_list|)
@@ -590,7 +590,7 @@ name|g_return_if_fail
 argument_list|(
 name|y
 operator|<
-name|gimage
+name|image
 operator|->
 name|height
 argument_list|)
@@ -601,7 +601,7 @@ name|push_undo
 condition|)
 name|gimp_image_undo_push_image_sample_point
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|_
 argument_list|(
@@ -613,7 +613,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_update_sample_point
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|sample_point
 argument_list|)
@@ -632,7 +632,7 @@ name|y
 expr_stmt|;
 name|gimp_image_update_sample_point
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|sample_point
 argument_list|)
@@ -643,12 +643,12 @@ end_function
 begin_function
 name|GimpSamplePoint
 modifier|*
-DECL|function|gimp_image_find_sample_point (GimpImage * gimage,gdouble x,gdouble y,gdouble epsilon_x,gdouble epsilon_y)
+DECL|function|gimp_image_find_sample_point (GimpImage * image,gdouble x,gdouble y,gdouble epsilon_x,gdouble epsilon_y)
 name|gimp_image_find_sample_point
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gdouble
 name|x
@@ -682,7 +682,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|NULL
@@ -709,7 +709,7 @@ literal|0
 operator|||
 name|x
 operator|>=
-name|gimage
+name|image
 operator|->
 name|width
 operator|||
@@ -719,7 +719,7 @@ literal|0
 operator|||
 name|y
 operator|>=
-name|gimage
+name|image
 operator|->
 name|height
 condition|)
@@ -732,7 +732,7 @@ for|for
 control|(
 name|list
 operator|=
-name|gimage
+name|image
 operator|->
 name|sample_points
 init|;

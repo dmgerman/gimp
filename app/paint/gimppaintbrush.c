@@ -331,7 +331,7 @@ name|pressure_options
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpRGB
 name|gradient_color
@@ -349,7 +349,7 @@ decl_stmt|;
 name|GimpPaintApplicationMode
 name|paint_appl_mode
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -365,7 +365,7 @@ name|gimp_paint_options_get_fade
 argument_list|(
 name|paint_options
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|paint_core
 operator|->
@@ -408,7 +408,7 @@ name|gimp_paint_options_get_gradient_color
 argument_list|(
 name|paint_options
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|paint_core
 operator|->
@@ -508,7 +508,7 @@ name|gimp_brush_core_color_area_with_pixmap
 argument_list|(
 name|brush_core
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|drawable
 argument_list|,
@@ -533,7 +533,7 @@ else|else
 block|{
 name|gimp_image_get_foreground
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|drawable
 argument_list|,

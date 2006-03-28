@@ -35,10 +35,10 @@ name|GtkWidget
 modifier|*
 name|dialog
 decl_stmt|;
-DECL|member|gimage
+DECL|member|image
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 DECL|member|context
 name|GimpContext

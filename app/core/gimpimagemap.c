@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c7544e0103
+DECL|enum|__anon2ae150dd0103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -926,7 +926,7 @@ name|image_map
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -938,7 +938,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -952,7 +952,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|NULL
@@ -1498,7 +1498,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gint
 name|x1
@@ -1548,7 +1548,7 @@ condition|)
 empty_stmt|;
 block|}
 comment|/*  Make sure the drawable is still valid  */
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -1563,7 +1563,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimage
+name|image
 condition|)
 return|return;
 comment|/*  Register an undo step  */
@@ -1667,7 +1667,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|PixelRegion
 name|srcPR
@@ -1717,7 +1717,7 @@ name|NULL
 expr_stmt|;
 block|}
 comment|/*  Make sure the drawable is still valid  */
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -1732,7 +1732,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimage
+name|image
 condition|)
 return|return;
 comment|/*  restore the original image  */
@@ -1921,7 +1921,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -1931,7 +1931,7 @@ name|image_map
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -1946,7 +1946,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimage
+name|image
 condition|)
 return|return;
 name|gimp_image_map_clear
@@ -1979,7 +1979,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|PixelRegion
 name|shadowPR
@@ -1987,7 +1987,7 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -2002,7 +2002,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimage
+name|image
 condition|)
 block|{
 name|image_map
@@ -2095,7 +2095,7 @@ argument_list|(
 operator|&
 name|shadowPR
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|shadow
 argument_list|,
@@ -2177,7 +2177,7 @@ literal|0
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 return|return

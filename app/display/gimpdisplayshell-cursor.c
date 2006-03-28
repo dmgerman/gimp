@@ -321,7 +321,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|gboolean
 name|new_cursor
@@ -360,13 +360,13 @@ name|shell
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 expr_stmt|;
 name|new_cursor
 operator|=
@@ -560,7 +560,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|shell
 operator|->
@@ -721,7 +721,7 @@ name|shell
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|gimp
 operator|->

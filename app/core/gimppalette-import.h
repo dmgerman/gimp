@@ -46,7 +46,7 @@ name|gimp_palette_import_from_image
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -69,7 +69,7 @@ name|gimp_palette_import_from_indexed_image
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 specifier|const
 name|gchar

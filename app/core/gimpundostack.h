@@ -142,7 +142,7 @@ name|gimp_undo_stack_new
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -23,7 +23,7 @@ name|gimp_image_contiguous_region_by_seed
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpDrawable
 modifier|*
@@ -57,7 +57,7 @@ name|gimp_image_contiguous_region_by_color
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpDrawable
 modifier|*

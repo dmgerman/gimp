@@ -856,7 +856,7 @@ literal|0
 argument_list|,
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|height
 argument_list|)
@@ -893,7 +893,7 @@ literal|0
 argument_list|,
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|width
 argument_list|)
@@ -910,7 +910,7 @@ name|gimp_image_undo_group_start
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_IMAGE_GUIDE
 argument_list|,
@@ -931,7 +931,7 @@ name|gimp_image_add_hguide
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|mtool
 operator|->
@@ -947,7 +947,7 @@ name|gimp_image_update_guide
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|guide
 argument_list|)
@@ -964,7 +964,7 @@ name|gimp_image_add_vguide
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|mtool
 operator|->
@@ -980,7 +980,7 @@ name|gimp_image_update_guide
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|guide
 argument_list|)
@@ -996,7 +996,7 @@ name|gimp_image_undo_group_end
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 if|if
@@ -1009,7 +1009,7 @@ name|gimp_image_flush
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|mtool
@@ -1367,7 +1367,7 @@ name|tool
 operator|->
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2990,7 +2990,7 @@ name|image
 init|=
 name|gdisp
 operator|->
-name|gimage
+name|image
 decl_stmt|;
 name|gint
 name|ax

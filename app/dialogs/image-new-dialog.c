@@ -134,7 +134,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac4cdbb0108
+DECL|struct|__anon27b7f8a10108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -651,7 +651,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|image_new_dialog_set (GtkWidget * widget,GimpImage * gimage,GimpTemplate * template)
+DECL|function|image_new_dialog_set (GtkWidget * widget,GimpImage * image,GimpTemplate * template)
 name|image_new_dialog_set
 parameter_list|(
 name|GtkWidget
@@ -660,7 +660,7 @@ name|widget
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpTemplate
 modifier|*
@@ -681,13 +681,13 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|gimage
+name|image
 operator|==
 name|NULL
 operator|||
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -753,7 +753,7 @@ name|dialog
 operator|->
 name|gimp
 argument_list|,
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|gimp_config_sync

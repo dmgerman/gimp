@@ -140,7 +140,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b335ad20103
+DECL|enum|__anon29626b3c0103
 block|{
 DECL|enumerator|GRADIENT_IMPORT
 name|GRADIENT_IMPORT
@@ -311,7 +311,7 @@ name|context
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|ImportDialog
 modifier|*
@@ -436,7 +436,7 @@ name|container
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|ImportDialog
 modifier|*
@@ -456,7 +456,7 @@ name|container
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|ImportDialog
 modifier|*
@@ -2175,7 +2175,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|palette_import_image_changed (GimpContext * context,GimpImage * gimage,ImportDialog * dialog)
+DECL|function|palette_import_image_changed (GimpContext * context,GimpImage * image,ImportDialog * dialog)
 name|palette_import_image_changed
 parameter_list|(
 name|GimpContext
@@ -2184,7 +2184,7 @@ name|context
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|ImportDialog
 modifier|*
@@ -2193,7 +2193,7 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|gimage
+name|image
 operator|&&
 name|dialog
 operator|->
@@ -2216,7 +2216,7 @@ name|file_utils_uri_display_basename
 argument_list|(
 name|gimp_image_get_uri
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2230,7 +2230,7 @@ name|basename
 argument_list|,
 name|gimp_image_get_ID
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2624,7 +2624,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 if|if
 condition|(
@@ -2644,7 +2644,7 @@ name|import_type
 operator|=
 name|IMAGE_IMPORT
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_context_get_image
 argument_list|(
@@ -2656,9 +2656,9 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimage
+name|image
 condition|)
-name|gimage
+name|image
 operator|=
 operator|(
 name|GimpImage
@@ -2710,7 +2710,7 @@ name|dialog
 operator|->
 name|context
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 name|dialog
 argument_list|)
@@ -2970,7 +2970,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|palette_import_image_add (GimpContainer * container,GimpImage * gimage,ImportDialog * dialog)
+DECL|function|palette_import_image_add (GimpContainer * container,GimpImage * image,ImportDialog * dialog)
 name|palette_import_image_add
 parameter_list|(
 name|GimpContainer
@@ -2979,7 +2979,7 @@ name|container
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|ImportDialog
 modifier|*
@@ -3012,7 +3012,7 @@ name|dialog
 operator|->
 name|context
 argument_list|,
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -3022,7 +3022,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|palette_import_image_remove (GimpContainer * container,GimpImage * gimage,ImportDialog * dialog)
+DECL|function|palette_import_image_remove (GimpContainer * container,GimpImage * image,ImportDialog * dialog)
 name|palette_import_image_remove
 parameter_list|(
 name|GimpContainer
@@ -3031,7 +3031,7 @@ name|container
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|ImportDialog
 modifier|*
@@ -3229,7 +3229,7 @@ case|:
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 init|=
 name|gimp_context_get_image
 argument_list|(
@@ -3242,7 +3242,7 @@ if|if
 condition|(
 name|gimp_image_base_type
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 operator|==
 name|GIMP_INDEXED
@@ -3252,7 +3252,7 @@ name|palette
 operator|=
 name|gimp_palette_import_from_indexed_image
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|palette_name
 argument_list|)
@@ -3264,7 +3264,7 @@ name|palette
 operator|=
 name|gimp_palette_import_from_image
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|palette_name
 argument_list|,

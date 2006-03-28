@@ -871,7 +871,7 @@ name|image
 init|=
 name|view
 operator|->
-name|gimage
+name|image
 decl_stmt|;
 name|gint
 name|index
@@ -1056,11 +1056,11 @@ argument_list|)
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 init|=
 name|view
 operator|->
-name|gimage
+name|image
 decl_stmt|;
 name|GimpItem
 modifier|*
@@ -1081,7 +1081,7 @@ argument_list|)
 operator|->
 name|get_active_item
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 operator|*
@@ -1098,7 +1098,7 @@ name|svg_data
 operator|=
 name|gimp_vectors_export_string
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|GIMP_VECTORS
 argument_list|(

@@ -158,7 +158,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpRGB
 name|color
@@ -196,7 +196,7 @@ name|context
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -361,7 +361,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|TileManager
 modifier|*
@@ -452,7 +452,7 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -545,7 +545,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_transform_color
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|drawable
 argument_list|,
@@ -581,7 +581,7 @@ name|pat_buf
 operator|=
 name|gimp_image_transform_temp_buf
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|drawable
 argument_list|,
@@ -607,7 +607,7 @@ return|return;
 block|}
 name|gimp_set_busy
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|)
@@ -622,7 +622,7 @@ name|mask
 operator|=
 name|gimp_image_contiguous_region_by_seed
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|drawable
 argument_list|,
@@ -688,7 +688,7 @@ name|mask
 argument_list|,
 name|gimp_image_get_mask
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|GIMP_CHANNEL_OP_INTERSECT
@@ -909,7 +909,7 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  if the gimage doesn't have an alpha channel, make sure that        *  the buf_tiles have.  We need the alpha channel to fill with        *  the region calculated above        */
+comment|/*  if the image doesn't have an alpha channel, make sure that        *  the buf_tiles have.  We need the alpha channel to fill with        *  the region calculated above        */
 if|if
 condition|(
 operator|!
@@ -1173,7 +1173,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_unset_busy
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|)

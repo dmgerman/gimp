@@ -126,7 +126,7 @@ decl_stmt|;
 comment|/*  possible layer mask        */
 comment|/*  Floating selections  */
 struct|struct
-DECL|struct|__anon279d945f0108
+DECL|struct|__anon2985b15b0108
 block|{
 DECL|member|backing_store
 name|TileManager
@@ -251,7 +251,7 @@ name|gimp_layer_new
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gint
 name|width
@@ -287,7 +287,7 @@ name|tiles
 parameter_list|,
 name|GimpImage
 modifier|*
-name|dest_gimage
+name|dest_image
 parameter_list|,
 name|GimpImageType
 name|type
@@ -317,7 +317,7 @@ name|pixbuf
 parameter_list|,
 name|GimpImage
 modifier|*
-name|dest_gimage
+name|dest_image
 parameter_list|,
 name|GimpImageType
 name|type
@@ -347,7 +347,7 @@ name|region
 parameter_list|,
 name|GimpImage
 modifier|*
-name|dest_gimage
+name|dest_image
 parameter_list|,
 name|GimpImageType
 name|type

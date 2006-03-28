@@ -886,7 +886,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 init|=
 name|action_data_get_image
 argument_list|(
@@ -918,7 +918,7 @@ name|FALSE
 decl_stmt|;
 if|if
 condition|(
-name|gimage
+name|image
 condition|)
 block|{
 name|GimpUndo
@@ -933,14 +933,14 @@ name|drawable
 operator|=
 name|gimp_image_active_drawable
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|undo_enabled
 operator|=
 name|gimp_image_undo_is_enabled
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 if|if
@@ -952,7 +952,7 @@ name|undo
 operator|=
 name|gimp_undo_stack_peek
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|undo_stack
 argument_list|)
@@ -961,7 +961,7 @@ name|redo
 operator|=
 name|gimp_undo_stack_peek
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|redo_stack
 argument_list|)
@@ -1121,7 +1121,7 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"edit-copy-visible"
 argument_list|,
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 comment|/*             "edit-paste" is always enabled  */
@@ -1129,7 +1129,7 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"edit-paste-into"
 argument_list|,
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
@@ -1157,7 +1157,7 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"edit-named-paste"
 argument_list|,
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE

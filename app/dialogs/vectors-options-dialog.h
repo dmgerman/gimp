@@ -40,10 +40,10 @@ name|GtkWidget
 modifier|*
 name|name_entry
 decl_stmt|;
-DECL|member|gimage
+DECL|member|image
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 DECL|member|vectors
 name|GimpVectors
@@ -61,7 +61,7 @@ name|vectors_options_dialog_new
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpVectors
 modifier|*

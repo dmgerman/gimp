@@ -102,7 +102,7 @@ name|editor
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -114,7 +114,7 @@ name|gimp_image_editor_image_flush
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpImageEditor
 modifier|*
@@ -198,7 +198,7 @@ parameter_list|)
 block|{
 name|editor
 operator|->
-name|gimage
+name|image
 operator|=
 name|NULL
 expr_stmt|;
@@ -349,7 +349,7 @@ if|if
 condition|(
 name|editor
 operator|->
-name|gimage
+name|image
 condition|)
 name|gimp_image_editor_set_image
 argument_list|(
@@ -374,7 +374,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_editor_real_set_image (GimpImageEditor * editor,GimpImage * gimage)
+DECL|function|gimp_image_editor_real_set_image (GimpImageEditor * editor,GimpImage * image)
 name|gimp_image_editor_real_set_image
 parameter_list|(
 name|GimpImageEditor
@@ -383,20 +383,20 @@ name|editor
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 block|{
 if|if
 condition|(
 name|editor
 operator|->
-name|gimage
+name|image
 condition|)
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
 name|editor
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|gimp_image_editor_image_flush
 argument_list|,
@@ -405,21 +405,21 @@ argument_list|)
 expr_stmt|;
 name|editor
 operator|->
-name|gimage
+name|image
 operator|=
-name|gimage
+name|image
 expr_stmt|;
 if|if
 condition|(
 name|editor
 operator|->
-name|gimage
+name|image
 condition|)
 name|g_signal_connect
 argument_list|(
 name|editor
 operator|->
-name|gimage
+name|image
 argument_list|,
 literal|"flush"
 argument_list|,
@@ -438,7 +438,7 @@ argument_list|(
 name|editor
 argument_list|)
 argument_list|,
-name|gimage
+name|image
 operator|!=
 name|NULL
 argument_list|)
@@ -452,7 +452,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_image_editor_set_image (GimpImageEditor * editor,GimpImage * gimage)
+DECL|function|gimp_image_editor_set_image (GimpImageEditor * editor,GimpImage * image)
 name|gimp_image_editor_set_image
 parameter_list|(
 name|GimpImageEditor
@@ -461,7 +461,7 @@ name|editor
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -474,23 +474,23 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|gimage
+name|image
 operator|==
 name|NULL
 operator|||
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimage
+name|image
 operator|!=
 name|editor
 operator|->
-name|gimage
+name|image
 condition|)
 block|{
 name|GIMP_IMAGE_EDITOR_GET_CLASS
@@ -502,7 +502,7 @@ name|set_image
 argument_list|(
 name|editor
 argument_list|,
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 if|if
@@ -542,12 +542,12 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_editor_image_flush (GimpImage * gimage,GimpImageEditor * editor)
+DECL|function|gimp_image_editor_image_flush (GimpImage * image,GimpImageEditor * editor)
 name|gimp_image_editor_image_flush
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpImageEditor
 modifier|*

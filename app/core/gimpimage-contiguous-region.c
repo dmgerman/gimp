@@ -84,12 +84,12 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28877d890108
+DECL|struct|__anon2894b2cc0108
 block|{
-DECL|member|gimage
+DECL|member|image
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 DECL|member|type
 name|GimpImageType
@@ -232,7 +232,7 @@ name|find_contiguous_segment
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|guchar
 modifier|*
@@ -288,7 +288,7 @@ name|find_contiguous_region_helper
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|PixelRegion
 modifier|*
@@ -333,12 +333,12 @@ end_comment
 begin_function
 name|GimpChannel
 modifier|*
-DECL|function|gimp_image_contiguous_region_by_seed (GimpImage * gimage,GimpDrawable * drawable,gboolean sample_merged,gboolean antialias,gint threshold,gboolean select_transparent,gint x,gint y)
+DECL|function|gimp_image_contiguous_region_by_seed (GimpImage * image,GimpDrawable * drawable,gboolean sample_merged,gboolean antialias,gint threshold,gboolean select_transparent,gint x,gint y)
 name|gimp_image_contiguous_region_by_seed
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpDrawable
 modifier|*
@@ -397,7 +397,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|NULL
@@ -421,7 +421,7 @@ name|pickable
 operator|=
 name|GIMP_PICKABLE
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|projection
 argument_list|)
@@ -495,7 +495,7 @@ name|mask
 operator|=
 name|gimp_channel_new_mask
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|srcPR
 operator|.
@@ -634,7 +634,7 @@ condition|)
 block|{
 name|gimp_image_get_color
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|src_type
 argument_list|,
@@ -675,7 +675,7 @@ expr_stmt|;
 block|}
 name|find_contiguous_region_helper
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 operator|&
 name|maskPR
@@ -717,12 +717,12 @@ end_function
 begin_function
 name|GimpChannel
 modifier|*
-DECL|function|gimp_image_contiguous_region_by_color (GimpImage * gimage,GimpDrawable * drawable,gboolean sample_merged,gboolean antialias,gint threshold,gboolean select_transparent,const GimpRGB * color)
+DECL|function|gimp_image_contiguous_region_by_color (GimpImage * image,GimpDrawable * drawable,gboolean sample_merged,gboolean antialias,gint threshold,gboolean select_transparent,const GimpRGB * color)
 name|gimp_image_contiguous_region_by_color
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpDrawable
 modifier|*
@@ -746,7 +746,7 @@ modifier|*
 name|color
 parameter_list|)
 block|{
-comment|/*  Scan over the gimage's active layer, finding pixels within the    *  specified threshold from the given R, G,& B values.  If    *  antialiasing is on, use the same antialiasing scheme as in    *  fuzzy_select.  Modify the gimage's mask to reflect the    *  additional selection    */
+comment|/*  Scan over the image's active layer, finding pixels within the    *  specified threshold from the given R, G,& B values.  If    *  antialiasing is on, use the same antialiasing scheme as in    *  fuzzy_select.  Modify the image's mask to reflect the    *  additional selection    */
 name|GimpPickable
 modifier|*
 name|pickable
@@ -776,7 +776,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|NULL
@@ -838,7 +838,7 @@ name|pickable
 operator|=
 name|GIMP_PICKABLE
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|projection
 argument_list|)
@@ -954,9 +954,9 @@ expr_stmt|;
 block|}
 name|cont
 operator|.
-name|gimage
+name|image
 operator|=
-name|gimage
+name|image
 expr_stmt|;
 name|cont
 operator|.
@@ -980,7 +980,7 @@ name|mask
 operator|=
 name|gimp_channel_new_mask
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|width
 argument_list|,
@@ -1137,7 +1137,7 @@ name|gimp_image_get_color
 argument_list|(
 name|cont
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|cont
 operator|->
@@ -1563,12 +1563,12 @@ end_function
 begin_function
 specifier|static
 name|int
-DECL|function|find_contiguous_segment (GimpImage * gimage,guchar * col,PixelRegion * src,PixelRegion * mask,gint width,gint bytes,GimpImageType src_type,gboolean has_alpha,gboolean select_transparent,gboolean antialias,gint threshold,gint initial,gint * start,gint * end)
+DECL|function|find_contiguous_segment (GimpImage * image,guchar * col,PixelRegion * src,PixelRegion * mask,gint width,gint bytes,GimpImageType src_type,gboolean has_alpha,gboolean select_transparent,gboolean antialias,gint threshold,gint initial,gint * start,gint * end)
 name|find_contiguous_segment
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|guchar
 modifier|*
@@ -1698,7 +1698,7 @@ literal|3
 expr_stmt|;
 name|gimp_image_get_color
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|src_type
 argument_list|,
@@ -1855,7 +1855,7 @@ condition|)
 block|{
 name|gimp_image_get_color
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|src_type
 argument_list|,
@@ -2042,7 +2042,7 @@ condition|)
 block|{
 name|gimp_image_get_color
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|src_type
 argument_list|,
@@ -2139,12 +2139,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|find_contiguous_region_helper (GimpImage * gimage,PixelRegion * mask,PixelRegion * src,GimpImageType src_type,gboolean has_alpha,gboolean select_transparent,gboolean antialias,gint threshold,gint x,gint y,guchar * col)
+DECL|function|find_contiguous_region_helper (GimpImage * image,PixelRegion * mask,PixelRegion * src,GimpImageType src_type,gboolean has_alpha,gboolean select_transparent,gboolean antialias,gint threshold,gint x,gint y,guchar * col)
 name|find_contiguous_region_helper
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|PixelRegion
 modifier|*
@@ -2359,7 +2359,7 @@ condition|(
 operator|!
 name|find_contiguous_segment
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|col
 argument_list|,

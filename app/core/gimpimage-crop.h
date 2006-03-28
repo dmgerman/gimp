@@ -22,7 +22,7 @@ name|gimp_image_crop
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpContext
 modifier|*
@@ -55,7 +55,7 @@ name|gimp_image_crop_auto_shrink
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gint
 name|x1

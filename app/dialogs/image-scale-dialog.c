@@ -331,7 +331,7 @@ name|unit
 expr_stmt|;
 name|dialog
 operator|->
-name|gimage
+name|image
 operator|=
 name|image
 expr_stmt|;
@@ -357,7 +357,7 @@ name|GIMP_VIEWABLE
 argument_list|(
 name|display
 operator|->
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|_

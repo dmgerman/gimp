@@ -229,7 +229,7 @@ parameter_list|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 specifier|const
 name|guchar
@@ -270,7 +270,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -284,7 +284,7 @@ if|if
 condition|(
 name|gimp_image_base_type
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 operator|==
 name|GIMP_INDEXED
@@ -293,7 +293,7 @@ name|colormap
 operator|=
 name|gimp_image_get_colormap
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|gimp_item_offsets

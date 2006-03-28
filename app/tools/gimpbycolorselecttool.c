@@ -406,7 +406,7 @@ name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|gimp_tool_control_activate
@@ -459,7 +459,7 @@ name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 argument_list|,
@@ -554,7 +554,7 @@ name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|gimp_tool_control_halt
@@ -631,7 +631,7 @@ name|GIMP_PICKABLE
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|projection
 argument_list|)
@@ -709,7 +709,7 @@ name|gimp_image_get_mask
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|drawable
@@ -754,7 +754,7 @@ name|gimp_image_flush
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -937,7 +937,7 @@ name|gimp_image_pick_correlate_layer
 argument_list|(
 name|gdisp
 operator|->
-name|gimage
+name|image
 argument_list|,
 name|coords
 operator|->
@@ -961,7 +961,7 @@ name|layer
 operator|!=
 name|gdisp
 operator|->
-name|gimage
+name|image
 operator|->
 name|active_layer
 condition|)

@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c8d3950103
+DECL|enum|__anon28d2cc6c0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -1753,14 +1753,14 @@ name|GIMP_IS_IMAGE
 argument_list|(
 name|item
 operator|->
-name|gimage
+name|image
 argument_list|)
 operator|&&
 name|gimp_container_have
 argument_list|(
 name|item
 operator|->
-name|gimage
+name|image
 operator|->
 name|channels
 argument_list|,
@@ -6869,12 +6869,12 @@ end_comment
 begin_function
 name|GimpChannel
 modifier|*
-DECL|function|gimp_channel_new (GimpImage * gimage,gint width,gint height,const gchar * name,const GimpRGB * color)
+DECL|function|gimp_channel_new (GimpImage * image,gint width,gint height,const gchar * name,const GimpRGB * color)
 name|gimp_channel_new
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gint
 name|width
@@ -6901,7 +6901,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|NULL
@@ -6923,7 +6923,7 @@ argument_list|(
 name|channel
 argument_list|)
 argument_list|,
-name|gimage
+name|image
 argument_list|,
 literal|0
 argument_list|,
@@ -6977,12 +6977,12 @@ end_function
 begin_function
 name|GimpChannel
 modifier|*
-DECL|function|gimp_channel_new_from_alpha (GimpImage * gimage,GimpDrawable * drawable,const gchar * name,const GimpRGB * color)
+DECL|function|gimp_channel_new_from_alpha (GimpImage * image,GimpDrawable * drawable,const gchar * name,const GimpRGB * color)
 name|gimp_channel_new_from_alpha
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpDrawable
 modifier|*
@@ -7018,7 +7018,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|NULL
@@ -7068,7 +7068,7 @@ name|channel
 operator|=
 name|gimp_channel_new
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|width
 argument_list|,
@@ -7159,12 +7159,12 @@ end_function
 begin_function
 name|GimpChannel
 modifier|*
-DECL|function|gimp_channel_new_from_component (GimpImage * gimage,GimpChannelType type,const gchar * name,const GimpRGB * color)
+DECL|function|gimp_channel_new_from_component (GimpImage * image,GimpChannelType type,const gchar * name,const GimpRGB * color)
 name|gimp_channel_new_from_component
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpChannelType
 name|type
@@ -7207,7 +7207,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|NULL
@@ -7217,7 +7217,7 @@ name|pixel
 operator|=
 name|gimp_image_get_component_index
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|type
 argument_list|)
@@ -7236,7 +7236,7 @@ name|gimp_pickable_flush
 argument_list|(
 name|GIMP_PICKABLE
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|projection
 argument_list|)
@@ -7248,7 +7248,7 @@ name|gimp_pickable_get_tiles
 argument_list|(
 name|GIMP_PICKABLE
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|projection
 argument_list|)
@@ -7272,7 +7272,7 @@ name|channel
 operator|=
 name|gimp_channel_new
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|width
 argument_list|,
@@ -7405,7 +7405,7 @@ condition|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 init|=
 name|gimp_item_get_image
 argument_list|(
@@ -7417,7 +7417,7 @@ argument_list|)
 decl_stmt|;
 name|gimp_image_undo_push_channel_color
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|_
 argument_list|(
@@ -7609,7 +7609,7 @@ condition|)
 block|{
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 init|=
 name|gimp_item_get_image
 argument_list|(
@@ -7621,7 +7621,7 @@ argument_list|)
 decl_stmt|;
 name|gimp_image_undo_push_channel_color
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|_
 argument_list|(
@@ -7855,12 +7855,12 @@ end_comment
 begin_function
 name|GimpChannel
 modifier|*
-DECL|function|gimp_channel_new_mask (GimpImage * gimage,gint width,gint height)
+DECL|function|gimp_channel_new_mask (GimpImage * image,gint width,gint height)
 name|gimp_channel_new_mask
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|gint
 name|width
@@ -7877,7 +7877,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|NULL
@@ -7887,7 +7887,7 @@ name|new_channel
 operator|=
 name|gimp_channel_new
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|width
 argument_list|,

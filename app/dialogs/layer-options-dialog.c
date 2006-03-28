@@ -108,12 +108,12 @@ end_comment
 begin_function
 name|LayerOptionsDialog
 modifier|*
-DECL|function|layer_options_dialog_new (GimpImage * gimage,GimpContext * context,GimpLayer * layer,GtkWidget * parent,const gchar * layer_name,GimpFillType layer_fill_type,const gchar * title,const gchar * role,const gchar * stock_id,const gchar * desc,const gchar * help_id)
+DECL|function|layer_options_dialog_new (GimpImage * image,GimpContext * context,GimpLayer * layer,GtkWidget * parent,const gchar * layer_name,GimpFillType layer_fill_type,const gchar * title,const gchar * role,const gchar * stock_id,const gchar * desc,const gchar * help_id)
 name|layer_options_dialog_new
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpContext
 modifier|*
@@ -208,9 +208,9 @@ argument_list|)
 expr_stmt|;
 name|options
 operator|->
-name|gimage
+name|image
 operator|=
-name|gimage
+name|image
 expr_stmt|;
 name|options
 operator|->
@@ -246,7 +246,7 @@ name|viewable
 operator|=
 name|GIMP_VIEWABLE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 name|options
@@ -785,7 +785,7 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|xresolution
 argument_list|,
@@ -803,7 +803,7 @@ argument_list|)
 argument_list|,
 literal|1
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|yresolution
 argument_list|,
@@ -855,7 +855,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|width
 argument_list|)
@@ -873,7 +873,7 @@ literal|1
 argument_list|,
 literal|0
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|height
 argument_list|)
@@ -889,7 +889,7 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|width
 argument_list|)
@@ -905,7 +905,7 @@ argument_list|)
 argument_list|,
 literal|1
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|height
 argument_list|)

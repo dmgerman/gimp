@@ -527,7 +527,7 @@ name|data
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpPDBStatusType
 name|status
@@ -538,7 +538,7 @@ name|error
 init|=
 name|NULL
 decl_stmt|;
-name|gimage
+name|image
 operator|=
 name|file_open_with_display
 argument_list|(
@@ -562,7 +562,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimage
+name|image
 operator|&&
 name|status
 operator|!=
@@ -651,7 +651,7 @@ name|item
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 decl_stmt|;
 name|GimpImage
 modifier|*
@@ -703,7 +703,7 @@ argument_list|(
 name|viewable
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -745,7 +745,7 @@ name|new_image
 operator|=
 name|gimp_create_image
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|,
@@ -775,12 +775,12 @@ name|new_image
 argument_list|,
 name|gimp_image_get_colormap
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|gimp_image_get_colormap_size
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|FALSE
@@ -790,11 +790,11 @@ name|gimp_image_set_resolution
 argument_list|(
 name|new_image
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|xresolution
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|yresolution
 argument_list|)
@@ -805,7 +805,7 @@ name|new_image
 argument_list|,
 name|gimp_image_get_unit
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -909,7 +909,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_create_display
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|gimp
 argument_list|,

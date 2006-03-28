@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2940f8130103
+DECL|enum|__anon27ca51940103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -188,7 +188,7 @@ name|gimp_image_prop_view_undo_event
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpUndoEvent
 name|event
@@ -1224,12 +1224,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_prop_view_undo_event (GimpImage * gimage,GimpUndoEvent event,GimpUndo * undo,GimpImagePropView * view)
+DECL|function|gimp_image_prop_view_undo_event (GimpImage * image,GimpUndoEvent event,GimpUndo * undo,GimpImagePropView * view)
 name|gimp_image_prop_view_undo_event
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpUndoEvent
 name|event

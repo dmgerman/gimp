@@ -38,7 +38,7 @@ name|widget
 parameter_list|,
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpTemplate
 modifier|*

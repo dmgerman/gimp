@@ -1359,12 +1359,12 @@ end_function
 begin_function
 name|GimpPalette
 modifier|*
-DECL|function|gimp_palette_import_from_image (GimpImage * gimage,const gchar * palette_name,gint n_colors,gint threshold)
+DECL|function|gimp_palette_import_from_image (GimpImage * image,const gchar * palette_name,gint n_colors,gint threshold)
 name|gimp_palette_import_from_image
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -1390,7 +1390,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|NULL
@@ -1427,7 +1427,7 @@ name|pickable
 operator|=
 name|GIMP_PICKABLE
 argument_list|(
-name|gimage
+name|image
 operator|->
 name|projection
 argument_list|)
@@ -1441,7 +1441,7 @@ name|colors
 operator|=
 name|gimp_palette_import_extract
 argument_list|(
-name|gimage
+name|image
 argument_list|,
 name|gimp_pickable_get_tiles
 argument_list|(
@@ -1457,11 +1457,11 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|width
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|height
 argument_list|,
@@ -1490,12 +1490,12 @@ end_comment
 begin_function
 name|GimpPalette
 modifier|*
-DECL|function|gimp_palette_import_from_indexed_image (GimpImage * gimage,const gchar * palette_name)
+DECL|function|gimp_palette_import_from_indexed_image (GimpImage * image,const gchar * palette_name)
 name|gimp_palette_import_from_indexed_image
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -1517,7 +1517,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 argument_list|,
 name|NULL
@@ -1527,7 +1527,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|gimp_image_base_type
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 operator|==
 name|GIMP_INDEXED
@@ -1562,7 +1562,7 @@ literal|0
 init|;
 name|count
 operator|<
-name|gimage
+name|image
 operator|->
 name|num_cols
 condition|;
@@ -1598,16 +1598,18 @@ argument_list|(
 operator|&
 name|color
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|cmap
 index|[
 name|count
 operator|*
 literal|3
+operator|+
+literal|0
 index|]
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|cmap
 index|[
@@ -1618,7 +1620,7 @@ operator|+
 literal|1
 index|]
 argument_list|,
-name|gimage
+name|image
 operator|->
 name|cmap
 index|[
@@ -1820,7 +1822,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon291049c60103
+DECL|enum|__anon2b80c5820103
 block|{
 DECL|enumerator|GIMP_PALETTE_FILE_FORMAT_UNKNOWN
 name|GIMP_PALETTE_FILE_FORMAT_UNKNOWN
