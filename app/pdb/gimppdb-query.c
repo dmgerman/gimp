@@ -1855,6 +1855,8 @@ name|output_string
 argument_list|(
 name|file
 argument_list|,
+name|g_param_spec_get_name
+argument_list|(
 name|procedure
 operator|->
 name|args
@@ -1862,7 +1864,8 @@ index|[
 name|i
 index|]
 operator|.
-name|name
+name|pspec
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|output_string
@@ -1878,6 +1881,8 @@ name|output_string
 argument_list|(
 name|file
 argument_list|,
+name|g_param_spec_get_blurb
+argument_list|(
 name|procedure
 operator|->
 name|args
@@ -1885,7 +1890,8 @@ index|[
 name|i
 index|]
 operator|.
-name|description
+name|pspec
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|fprintf
@@ -1953,6 +1959,8 @@ name|output_string
 argument_list|(
 name|file
 argument_list|,
+name|g_param_spec_get_name
+argument_list|(
 name|procedure
 operator|->
 name|values
@@ -1960,7 +1968,8 @@ index|[
 name|i
 index|]
 operator|.
-name|name
+name|pspec
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|output_string
@@ -1976,6 +1985,8 @@ name|output_string
 argument_list|(
 name|file
 argument_list|,
+name|g_param_spec_get_blurb
+argument_list|(
 name|procedure
 operator|->
 name|values
@@ -1983,7 +1994,8 @@ index|[
 name|i
 index|]
 operator|.
-name|description
+name|pspec
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|fprintf

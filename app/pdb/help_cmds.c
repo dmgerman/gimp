@@ -34,6 +34,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpparamspecs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimp.h"
 end_include
 
@@ -67,6 +73,67 @@ modifier|*
 name|gimp
 parameter_list|)
 block|{
+comment|/*    * help    */
+name|procedural_db_init_proc
+argument_list|(
+operator|&
+name|help_proc
+argument_list|,
+literal|2
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|procedural_db_add_argument
+argument_list|(
+operator|&
+name|help_proc
+argument_list|,
+name|GIMP_PDB_STRING
+argument_list|,
+name|gimp_param_spec_string
+argument_list|(
+literal|"help-domain"
+argument_list|,
+literal|"help domain"
+argument_list|,
+literal|"The help domain in which help_id is registered"
+argument_list|,
+name|FALSE
+argument_list|,
+name|TRUE
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_PARAM_READWRITE
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|procedural_db_add_argument
+argument_list|(
+operator|&
+name|help_proc
+argument_list|,
+name|GIMP_PDB_STRING
+argument_list|,
+name|gimp_param_spec_string
+argument_list|(
+literal|"help-id"
+argument_list|,
+literal|"help id"
+argument_list|,
+literal|"The help page's ID"
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_PARAM_READWRITE
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|procedural_db_register
 argument_list|(
 name|gimp
@@ -244,33 +311,6 @@ block|}
 end_function
 
 begin_decl_stmt
-DECL|variable|help_inargs
-specifier|static
-name|ProcArg
-name|help_inargs
-index|[]
-init|=
-block|{
-block|{
-name|GIMP_PDB_STRING
-block|,
-literal|"help-domain"
-block|,
-literal|"The help domain in which help_id is registered"
-block|}
-block|,
-block|{
-name|GIMP_PDB_STRING
-block|,
-literal|"help-id"
-block|,
-literal|"The help page's ID"
-block|}
-block|}
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|help_proc
 specifier|static
 name|ProcRecord
@@ -295,9 +335,9 @@ name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
-literal|2
+literal|0
 block|,
-name|help_inargs
+name|NULL
 block|,
 literal|0
 block|,
