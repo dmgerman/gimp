@@ -136,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9414b10103
+DECL|enum|__anon29ac8b3b0103
 block|{
 DECL|enumerator|PSD_UNKNOWN_IMAGE
 name|PSD_UNKNOWN_IMAGE
@@ -324,7 +324,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9414b10208
+DECL|struct|__anon29ac8b3b0208
 block|{
 DECL|member|hRes
 name|Fixed
@@ -573,7 +573,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b9414b10308
+DECL|struct|__anon29ac8b3b0308
 block|{
 DECL|member|signature
 name|gchar
@@ -7619,9 +7619,9 @@ name|int
 name|lnum
 decl_stmt|;
 name|GimpImageBaseType
-name|gimagetype
+name|imagetype
 decl_stmt|;
-name|gimagetype
+name|imagetype
 operator|=
 name|psd_mode_to_gimp_base_type
 argument_list|(
@@ -7642,7 +7642,7 @@ name|PSDheader
 operator|.
 name|rows
 argument_list|,
-name|gimagetype
+name|imagetype
 argument_list|)
 expr_stmt|;
 name|gimp_image_set_filename
@@ -7854,7 +7854,7 @@ argument_list|)
 decl_stmt|;
 switch|switch
 condition|(
-name|gimagetype
+name|imagetype
 condition|)
 block|{
 case|case

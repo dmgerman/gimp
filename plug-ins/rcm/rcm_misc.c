@@ -680,7 +680,7 @@ name|Slctn
 parameter_list|)
 block|{
 name|guint32
-name|gimage
+name|image
 decl_stmt|;
 name|GimpPixelRgn
 name|srcPR
@@ -943,7 +943,7 @@ operator|&
 name|offy
 argument_list|)
 expr_stmt|;
-name|gimage
+name|image
 operator|=
 name|gimp_drawable_get_image
 argument_list|(
@@ -963,7 +963,7 @@ name|offx
 argument_list|,
 name|gimp_image_width
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 operator|-
 name|offx
@@ -980,7 +980,7 @@ name|offx
 argument_list|,
 name|gimp_image_width
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 operator|-
 name|offx
@@ -997,7 +997,7 @@ name|offy
 argument_list|,
 name|gimp_image_height
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 operator|-
 name|offy
@@ -1014,7 +1014,7 @@ name|offy
 argument_list|,
 name|gimp_image_height
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 operator|-
 name|offy
