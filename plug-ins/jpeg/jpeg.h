@@ -237,6 +237,24 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|ExifData
+modifier|*
+name|jpeg_exif_data_new_from_file
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|filename
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|jpeg_apply_exif_data_to_image
 parameter_list|(

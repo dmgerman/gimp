@@ -1828,7 +1828,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2795e1ed0108
+DECL|struct|__anon27de4cf70108
 block|{
 DECL|member|pub
 name|struct
@@ -2094,9 +2094,11 @@ literal|1
 expr_stmt|;
 name|exif_data
 operator|=
-name|exif_data_new_from_file
+name|jpeg_exif_data_new_from_file
 argument_list|(
 name|filename
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
