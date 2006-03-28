@@ -272,7 +272,7 @@ name|tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl

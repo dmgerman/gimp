@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29bc431f0103
+DECL|enum|__anon2aa929940103
 block|{
 DECL|enumerator|GIMP_RECTANGLE_TOOL_PROP_0
 name|GIMP_RECTANGLE_TOOL_PROP_0
@@ -114,7 +114,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29bc431f0203
+DECL|enum|__anon2aa929940203
 block|{
 DECL|enumerator|RECT_CREATING
 name|RECT_CREATING
@@ -249,7 +249,7 @@ name|tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -274,7 +274,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -299,7 +299,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -324,7 +324,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -343,7 +343,7 @@ name|kevent
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -367,7 +367,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -392,7 +392,7 @@ name|proximity
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -414,7 +414,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl

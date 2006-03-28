@@ -55,7 +55,7 @@ name|gboolean
 name|destroy_return_vals
 parameter_list|,
 name|gint
-name|gdisp_ID
+name|display_ID
 parameter_list|)
 function_decl|;
 end_function_decl

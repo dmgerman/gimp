@@ -372,7 +372,7 @@ name|tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 DECL|member|motion
@@ -388,7 +388,7 @@ name|tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 DECL|member|recalc
@@ -404,7 +404,7 @@ name|tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 DECL|member|transform
@@ -428,7 +428,7 @@ name|mask_empty
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 block|}
@@ -455,7 +455,7 @@ name|tr_tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
