@@ -137,7 +137,7 @@ name|gimp_display_shell_format_title
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
-name|gdisp
+name|display
 parameter_list|,
 name|gchar
 modifier|*
@@ -192,7 +192,7 @@ name|GIMP_DISPLAY_CONFIG
 argument_list|(
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -320,7 +320,7 @@ name|GIMP_DISPLAY_CONFIG
 argument_list|(
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -580,7 +580,7 @@ name|image
 operator|=
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 expr_stmt|;
@@ -784,7 +784,7 @@ literal|"%d"
 argument_list|,
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|instance
 argument_list|)

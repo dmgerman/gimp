@@ -81,7 +81,7 @@ name|h
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -97,7 +97,7 @@ name|image
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -108,12 +108,12 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_display_connect (GimpDisplay * gdisp,GimpImage * image)
+DECL|function|gimp_display_connect (GimpDisplay * display,GimpImage * image)
 name|gimp_display_connect
 parameter_list|(
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|,
 name|GimpImage
 modifier|*
@@ -124,7 +124,7 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY
 argument_list|(
-name|gdisp
+name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -138,20 +138,20 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 operator|==
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gdisp
+name|display
 operator|->
 name|image
 operator|=
 name|image
 expr_stmt|;
-name|gdisp
+name|display
 operator|->
 name|instance
 operator|=
@@ -173,7 +173,7 @@ expr_stmt|;
 if|#
 directive|if
 literal|0
-block|g_print ("%s: image->ref_count before refing: %d\n",            G_STRFUNC, G_OBJECT (gdisp->image)->ref_count);
+block|g_print ("%s: image->ref_count before refing: %d\n",            G_STRFUNC, G_OBJECT (display->image)->ref_count);
 endif|#
 directive|endif
 name|g_object_ref
@@ -194,7 +194,7 @@ argument_list|(
 name|gimp_display_update_handler
 argument_list|)
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -208,7 +208,7 @@ argument_list|(
 name|gimp_display_flush_handler
 argument_list|)
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -216,12 +216,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_disconnect (GimpDisplay * gdisp)
+DECL|function|gimp_display_disconnect (GimpDisplay * display)
 name|gimp_display_disconnect
 parameter_list|(
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpImage
@@ -232,7 +232,7 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY
 argument_list|(
-name|gdisp
+name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -240,7 +240,7 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -248,18 +248,18 @@ argument_list|)
 expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|,
 name|gimp_display_flush_handler
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -267,10 +267,10 @@ name|projection
 argument_list|,
 name|gimp_display_update_handler
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -280,17 +280,17 @@ expr_stmt|;
 if|#
 directive|if
 literal|0
-block|g_print ("%s: image->ref_count before unrefing: %d\n",            G_STRFUNC, G_OBJECT (gdisp->image)->ref_count);
+block|g_print ("%s: image->ref_count before unrefing: %d\n",            G_STRFUNC, G_OBJECT (display->image)->ref_count);
 endif|#
 directive|endif
-comment|/*  set gdisp->image to NULL before unrefing because there may be code    *  that listens for image removals and then iterates the display list    *  to find a valid display.    */
+comment|/*  set display->image to NULL before unrefing because there may be code    *  that listens for image removals and then iterates the display list    *  to find a valid display.    */
 name|image
 operator|=
-name|gdisp
+name|display
 operator|->
 name|image
 expr_stmt|;
-name|gdisp
+name|display
 operator|->
 name|image
 operator|=
@@ -311,7 +311,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_display_update_handler (GimpProjection * projection,gboolean now,gint x,gint y,gint w,gint h,GimpDisplay * gdisp)
+DECL|function|gimp_display_update_handler (GimpProjection * projection,gboolean now,gint x,gint y,gint w,gint h,GimpDisplay * display)
 name|gimp_display_update_handler
 parameter_list|(
 name|GimpProjection
@@ -335,12 +335,12 @@ name|h
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|gimp_display_update_area
 argument_list|(
-name|gdisp
+name|display
 argument_list|,
 name|now
 argument_list|,
@@ -359,7 +359,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_display_flush_handler (GimpImage * image,GimpDisplay * gdisp)
+DECL|function|gimp_display_flush_handler (GimpImage * image,GimpDisplay * display)
 name|gimp_display_flush_handler
 parameter_list|(
 name|GimpImage
@@ -368,12 +368,12 @@ name|image
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|gimp_display_flush
 argument_list|(
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}

@@ -136,7 +136,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -162,7 +162,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -187,7 +187,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -210,7 +210,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -408,7 +408,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_bucket_fill_tool_button_press (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_bucket_fill_tool_button_press (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_bucket_fill_tool_button_press
 parameter_list|(
 name|GimpTool
@@ -427,7 +427,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpBucketFillTool
@@ -489,7 +489,7 @@ name|GIMP_ITEM
 argument_list|(
 name|gimp_image_active_drawable
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -517,9 +517,9 @@ expr_stmt|;
 block|}
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|=
-name|gdisp
+name|display
 expr_stmt|;
 name|gimp_tool_control_activate
 argument_list|(
@@ -534,7 +534,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_bucket_fill_tool_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_bucket_fill_tool_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_bucket_fill_tool_button_release
 parameter_list|(
 name|GimpTool
@@ -553,7 +553,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpBucketFillTool
@@ -606,7 +606,7 @@ name|gimp_drawable_bucket_fill
 argument_list|(
 name|gimp_image_active_drawable
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -655,7 +655,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -674,7 +674,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_bucket_fill_tool_modifier_key (GimpTool * tool,GdkModifierType key,gboolean press,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_bucket_fill_tool_modifier_key (GimpTool * tool,GdkModifierType key,gboolean press,GdkModifierType state,GimpDisplay * display)
 name|gimp_bucket_fill_tool_modifier_key
 parameter_list|(
 name|GimpTool
@@ -692,7 +692,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpBucketFillOptions
@@ -787,7 +787,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_bucket_fill_tool_cursor_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_bucket_fill_tool_cursor_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,GimpDisplay * display)
 name|gimp_bucket_fill_tool_cursor_update
 parameter_list|(
 name|GimpTool
@@ -803,7 +803,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpBucketFillOptions
@@ -830,7 +830,7 @@ if|if
 condition|(
 name|gimp_image_coords_in_active_drawable
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|,
@@ -844,7 +844,7 @@ name|selection
 init|=
 name|gimp_image_get_mask
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -930,7 +930,7 @@ name|coords
 argument_list|,
 name|state
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}

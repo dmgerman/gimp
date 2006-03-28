@@ -180,7 +180,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -206,7 +206,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -232,7 +232,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -261,7 +261,7 @@ name|fuzzy_sel
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|,
 name|gint
 modifier|*
@@ -599,7 +599,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_fuzzy_select_tool_button_press (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_fuzzy_select_tool_button_press (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_fuzzy_select_tool_button_press
 parameter_list|(
 name|GimpTool
@@ -618,7 +618,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpFuzzySelectTool
@@ -694,9 +694,9 @@ argument_list|)
 expr_stmt|;
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|=
-name|gdisp
+name|display
 expr_stmt|;
 if|if
 condition|(
@@ -715,7 +715,7 @@ name|gimp_tool_push_status
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|_
 argument_list|(
@@ -732,7 +732,7 @@ name|gimp_fuzzy_select_tool_calculate
 argument_list|(
 name|fuzzy_sel
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 operator|&
 name|fuzzy_sel
@@ -747,7 +747,7 @@ argument_list|(
 name|tool
 argument_list|)
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -756,7 +756,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_fuzzy_select_tool_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_fuzzy_select_tool_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_fuzzy_select_tool_button_release
 parameter_list|(
 name|GimpTool
@@ -775,7 +775,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpFuzzySelectTool
@@ -806,7 +806,7 @@ name|gimp_tool_pop_status
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_stop
@@ -857,7 +857,7 @@ if|if
 condition|(
 name|gimp_image_floating_sel
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -866,7 +866,7 @@ name|floating_sel_anchor
 argument_list|(
 name|gimp_image_floating_sel
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -878,7 +878,7 @@ name|gimp_channel_clear
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -890,7 +890,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -921,7 +921,7 @@ name|drawable
 init|=
 name|gimp_image_active_drawable
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -945,7 +945,7 @@ name|gimp_channel_select_channel
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -999,7 +999,7 @@ name|NULL
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -1053,7 +1053,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_fuzzy_select_tool_motion (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_fuzzy_select_tool_motion (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_fuzzy_select_tool_motion
 parameter_list|(
 name|GimpTool
@@ -1072,7 +1072,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpFuzzySelectTool
@@ -1205,7 +1205,7 @@ name|gimp_fuzzy_select_tool_calculate
 argument_list|(
 name|fuzzy_sel
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 operator|&
 name|num_new_segs
@@ -1296,7 +1296,7 @@ argument_list|(
 name|draw_tool
 argument_list|)
 operator|->
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -1329,7 +1329,7 @@ begin_function
 specifier|static
 name|GdkSegment
 modifier|*
-DECL|function|gimp_fuzzy_select_tool_calculate (GimpFuzzySelectTool * fuzzy_sel,GimpDisplay * gdisp,gint * num_segs)
+DECL|function|gimp_fuzzy_select_tool_calculate (GimpFuzzySelectTool * fuzzy_sel,GimpDisplay * display,gint * num_segs)
 name|gimp_fuzzy_select_tool_calculate
 parameter_list|(
 name|GimpFuzzySelectTool
@@ -1338,7 +1338,7 @@ name|fuzzy_sel
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|,
 name|gint
 modifier|*
@@ -1404,7 +1404,7 @@ name|shell
 operator|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -1413,7 +1413,7 @@ name|drawable
 operator|=
 name|gimp_image_active_drawable
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -1477,7 +1477,7 @@ name|new
 operator|=
 name|gimp_image_contiguous_region_by_seed
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|,

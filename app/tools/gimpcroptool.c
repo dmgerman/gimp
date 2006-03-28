@@ -150,7 +150,7 @@ name|action
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -176,7 +176,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -202,7 +202,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -225,7 +225,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -605,7 +605,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_crop_tool_control (GimpTool * tool,GimpToolAction action,GimpDisplay * gdisp)
+DECL|function|gimp_crop_tool_control (GimpTool * tool,GimpToolAction action,GimpDisplay * display)
 name|gimp_crop_tool_control
 parameter_list|(
 name|GimpTool
@@ -617,7 +617,7 @@ name|action
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpRectangleTool
@@ -674,7 +674,7 @@ name|tool
 argument_list|,
 name|action
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -683,7 +683,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_crop_tool_button_press (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_crop_tool_button_press (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_crop_tool_button_press
 parameter_list|(
 name|GimpTool
@@ -702,20 +702,20 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 if|if
 condition|(
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|&&
-name|gdisp
+name|display
 operator|!=
 name|tool
 operator|->
-name|gdisp
+name|display
 condition|)
 name|gimp_rectangle_tool_response
 argument_list|(
@@ -739,7 +739,7 @@ name|time
 argument_list|,
 name|state
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -748,7 +748,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_crop_tool_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_crop_tool_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_crop_tool_button_release
 parameter_list|(
 name|GimpTool
@@ -767,7 +767,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpCropOptions
@@ -795,7 +795,7 @@ name|gimp_tool_push_status
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|_
 argument_list|(
@@ -808,7 +808,7 @@ name|gimp_tool_push_status
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|_
 argument_list|(
@@ -826,7 +826,7 @@ name|time
 argument_list|,
 name|state
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -835,7 +835,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_crop_tool_cursor_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_crop_tool_cursor_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,GimpDisplay * display)
 name|gimp_crop_tool_cursor_update
 parameter_list|(
 name|GimpTool
@@ -851,7 +851,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|gimp_rectangle_tool_cursor_update
@@ -862,7 +862,7 @@ name|coords
 argument_list|,
 name|state
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|gimp_tool_control_set_tool_cursor
@@ -887,7 +887,7 @@ name|coords
 argument_list|,
 name|state
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -958,14 +958,14 @@ name|tool
 argument_list|,
 name|tool
 operator|->
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|image
 operator|=
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 expr_stmt|;

@@ -149,7 +149,7 @@ modifier|*
 name|gimp
 parameter_list|,
 name|gint
-name|gdisp_ID
+name|display_ID
 parameter_list|,
 name|gint
 modifier|*
@@ -827,7 +827,7 @@ modifier|*
 name|gimp
 parameter_list|,
 name|gint
-name|gdisp_ID
+name|display_ID
 parameter_list|,
 name|gint
 modifier|*

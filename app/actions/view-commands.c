@@ -170,15 +170,15 @@ value|{ GimpActionGroup *group = \       gimp_ui_manager_get_action_group (manag
 end_define
 
 begin_define
-DECL|macro|IS_ACTIVE_DISPLAY (gdisp)
+DECL|macro|IS_ACTIVE_DISPLAY (display)
 define|#
 directive|define
 name|IS_ACTIVE_DISPLAY
 parameter_list|(
-name|gdisp
+name|display
 parameter_list|)
 define|\
-value|((gdisp) == \    gimp_context_get_display (gimp_get_user_context ((gdisp)->image->gimp)))
+value|((display) == \    gimp_context_get_display (gimp_get_user_context ((display)->image->gimp)))
 end_define
 
 begin_comment
@@ -228,7 +228,7 @@ parameter_list|)
 block|{
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 decl_stmt|;
 name|GimpDisplayShell
 modifier|*
@@ -236,7 +236,7 @@ name|shell
 decl_stmt|;
 name|return_if_no_display
 argument_list|(
-name|gdisp
+name|display
 argument_list|,
 name|data
 argument_list|)
@@ -245,20 +245,20 @@ name|shell
 operator|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
 expr_stmt|;
 name|gimp_create_display
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
 name|gimp
 argument_list|,
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|,
@@ -292,11 +292,11 @@ parameter_list|)
 block|{
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 decl_stmt|;
 name|return_if_no_display
 argument_list|(
-name|gdisp
+name|display
 argument_list|,
 name|data
 argument_list|)
@@ -305,7 +305,7 @@ name|gimp_display_shell_scale_fit_in
 argument_list|(
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -329,11 +329,11 @@ parameter_list|)
 block|{
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 decl_stmt|;
 name|return_if_no_display
 argument_list|(
-name|gdisp
+name|display
 argument_list|,
 name|data
 argument_list|)
@@ -342,7 +342,7 @@ name|gimp_display_shell_scale_fit_to
 argument_list|(
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -369,7 +369,7 @@ parameter_list|)
 block|{
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 decl_stmt|;
 name|GimpDisplayShell
 modifier|*
@@ -377,7 +377,7 @@ name|shell
 decl_stmt|;
 name|return_if_no_display
 argument_list|(
-name|gdisp
+name|display
 argument_list|,
 name|data
 argument_list|)
@@ -386,7 +386,7 @@ name|shell
 operator|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -560,7 +560,7 @@ parameter_list|)
 block|{
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 decl_stmt|;
 name|GimpDisplayShell
 modifier|*
@@ -571,7 +571,7 @@ name|value
 decl_stmt|;
 name|return_if_no_display
 argument_list|(
-name|gdisp
+name|display
 argument_list|,
 name|data
 argument_list|)
@@ -580,7 +580,7 @@ name|shell
 operator|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -652,7 +652,7 @@ parameter_list|)
 block|{
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 decl_stmt|;
 name|GimpDisplayShell
 modifier|*
@@ -660,7 +660,7 @@ name|shell
 decl_stmt|;
 name|return_if_no_display
 argument_list|(
-name|gdisp
+name|display
 argument_list|,
 name|data
 argument_list|)
@@ -669,7 +669,7 @@ name|shell
 operator|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -721,7 +721,7 @@ parameter_list|)
 block|{
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 decl_stmt|;
 name|GimpDisplayShell
 modifier|*
@@ -732,7 +732,7 @@ name|active
 decl_stmt|;
 name|return_if_no_display
 argument_list|(
-name|gdisp
+name|display
 argument_list|,
 name|data
 argument_list|)
@@ -741,7 +741,7 @@ name|shell
 operator|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -789,7 +789,7 @@ if|if
 condition|(
 name|IS_ACTIVE_DISPLAY
 argument_list|(
-name|gdisp
+name|display
 argument_list|)
 condition|)
 name|SET_ACTIVE
@@ -827,7 +827,7 @@ parameter_list|)
 block|{
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 decl_stmt|;
 name|GimpDisplayShell
 modifier|*
@@ -838,7 +838,7 @@ name|offset
 decl_stmt|;
 name|return_if_no_display
 argument_list|(
-name|gdisp
+name|display
 argument_list|,
 name|data
 argument_list|)
@@ -847,7 +847,7 @@ name|shell
 operator|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -930,7 +930,7 @@ parameter_list|)
 block|{
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 decl_stmt|;
 name|GimpDisplayShell
 modifier|*
@@ -941,7 +941,7 @@ name|offset
 decl_stmt|;
 name|return_if_no_display
 argument_list|(
-name|gdisp
+name|display
 argument_list|,
 name|data
 argument_list|)
@@ -950,7 +950,7 @@ name|shell
 operator|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -1030,7 +1030,7 @@ parameter_list|)
 block|{
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 decl_stmt|;
 name|GimpDisplayShell
 modifier|*
@@ -1038,7 +1038,7 @@ name|shell
 decl_stmt|;
 name|return_if_no_display
 argument_list|(
-name|gdisp
+name|display
 argument_list|,
 name|data
 argument_list|)
@@ -1047,7 +1047,7 @@ name|shell
 operator|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -1058,7 +1058,7 @@ name|global_dock_factory
 argument_list|,
 name|gtk_widget_get_screen
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -1087,7 +1087,7 @@ parameter_list|)
 block|{
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 decl_stmt|;
 name|GimpDisplayShell
 modifier|*
@@ -1095,7 +1095,7 @@ name|shell
 decl_stmt|;
 name|return_if_no_display
 argument_list|(
-name|gdisp
+name|display
 argument_list|,
 name|data
 argument_list|)
@@ -1104,7 +1104,7 @@ name|shell
 operator|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -1174,7 +1174,7 @@ parameter_list|)
 block|{
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 decl_stmt|;
 name|GimpDisplayShell
 modifier|*
@@ -1185,7 +1185,7 @@ name|active
 decl_stmt|;
 name|return_if_no_display
 argument_list|(
-name|gdisp
+name|display
 argument_list|,
 name|data
 argument_list|)
@@ -1194,7 +1194,7 @@ name|shell
 operator|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -1234,7 +1234,7 @@ parameter_list|)
 block|{
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 decl_stmt|;
 name|GimpDisplayShell
 modifier|*
@@ -1245,7 +1245,7 @@ name|active
 decl_stmt|;
 name|return_if_no_display
 argument_list|(
-name|gdisp
+name|display
 argument_list|,
 name|data
 argument_list|)
@@ -1254,7 +1254,7 @@ name|shell
 operator|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -1294,7 +1294,7 @@ parameter_list|)
 block|{
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 decl_stmt|;
 name|GimpDisplayShell
 modifier|*
@@ -1305,7 +1305,7 @@ name|active
 decl_stmt|;
 name|return_if_no_display
 argument_list|(
-name|gdisp
+name|display
 argument_list|,
 name|data
 argument_list|)
@@ -1314,7 +1314,7 @@ name|shell
 operator|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -1354,7 +1354,7 @@ parameter_list|)
 block|{
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 decl_stmt|;
 name|GimpDisplayShell
 modifier|*
@@ -1365,7 +1365,7 @@ name|active
 decl_stmt|;
 name|return_if_no_display
 argument_list|(
-name|gdisp
+name|display
 argument_list|,
 name|data
 argument_list|)
@@ -1374,7 +1374,7 @@ name|shell
 operator|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -1414,7 +1414,7 @@ parameter_list|)
 block|{
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 decl_stmt|;
 name|GimpDisplayShell
 modifier|*
@@ -1425,7 +1425,7 @@ name|active
 decl_stmt|;
 name|return_if_no_display
 argument_list|(
-name|gdisp
+name|display
 argument_list|,
 name|data
 argument_list|)
@@ -1434,7 +1434,7 @@ name|shell
 operator|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -1474,7 +1474,7 @@ parameter_list|)
 block|{
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 decl_stmt|;
 name|GimpDisplayShell
 modifier|*
@@ -1485,7 +1485,7 @@ name|active
 decl_stmt|;
 name|return_if_no_display
 argument_list|(
-name|gdisp
+name|display
 argument_list|,
 name|data
 argument_list|)
@@ -1494,7 +1494,7 @@ name|shell
 operator|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -1534,7 +1534,7 @@ parameter_list|)
 block|{
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 decl_stmt|;
 name|GimpDisplayShell
 modifier|*
@@ -1545,7 +1545,7 @@ name|active
 decl_stmt|;
 name|return_if_no_display
 argument_list|(
-name|gdisp
+name|display
 argument_list|,
 name|data
 argument_list|)
@@ -1554,7 +1554,7 @@ name|shell
 operator|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -1594,7 +1594,7 @@ parameter_list|)
 block|{
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 decl_stmt|;
 name|GimpDisplayShell
 modifier|*
@@ -1605,7 +1605,7 @@ name|active
 decl_stmt|;
 name|return_if_no_display
 argument_list|(
-name|gdisp
+name|display
 argument_list|,
 name|data
 argument_list|)
@@ -1614,7 +1614,7 @@ name|shell
 operator|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -1654,7 +1654,7 @@ parameter_list|)
 block|{
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 decl_stmt|;
 name|GimpDisplayShell
 modifier|*
@@ -1665,7 +1665,7 @@ name|active
 decl_stmt|;
 name|return_if_no_display
 argument_list|(
-name|gdisp
+name|display
 argument_list|,
 name|data
 argument_list|)
@@ -1674,7 +1674,7 @@ name|shell
 operator|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -1714,7 +1714,7 @@ parameter_list|)
 block|{
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 decl_stmt|;
 name|GimpDisplayShell
 modifier|*
@@ -1725,7 +1725,7 @@ name|active
 decl_stmt|;
 name|return_if_no_display
 argument_list|(
-name|gdisp
+name|display
 argument_list|,
 name|data
 argument_list|)
@@ -1734,7 +1734,7 @@ name|shell
 operator|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -1774,7 +1774,7 @@ parameter_list|)
 block|{
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 decl_stmt|;
 name|GimpDisplayShell
 modifier|*
@@ -1785,7 +1785,7 @@ name|active
 decl_stmt|;
 name|return_if_no_display
 argument_list|(
-name|gdisp
+name|display
 argument_list|,
 name|data
 argument_list|)
@@ -1794,7 +1794,7 @@ name|shell
 operator|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -1834,7 +1834,7 @@ parameter_list|)
 block|{
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 decl_stmt|;
 name|GimpDisplayShell
 modifier|*
@@ -1845,7 +1845,7 @@ name|active
 decl_stmt|;
 name|return_if_no_display
 argument_list|(
-name|gdisp
+name|display
 argument_list|,
 name|data
 argument_list|)
@@ -1854,7 +1854,7 @@ name|shell
 operator|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -1894,7 +1894,7 @@ parameter_list|)
 block|{
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 decl_stmt|;
 name|GimpDisplayShell
 modifier|*
@@ -1905,7 +1905,7 @@ name|active
 decl_stmt|;
 name|return_if_no_display
 argument_list|(
-name|gdisp
+name|display
 argument_list|,
 name|data
 argument_list|)
@@ -1914,7 +1914,7 @@ name|shell
 operator|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -1957,7 +1957,7 @@ parameter_list|)
 block|{
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 decl_stmt|;
 name|GimpDisplayShell
 modifier|*
@@ -1972,7 +1972,7 @@ name|fullscreen
 decl_stmt|;
 name|return_if_no_display
 argument_list|(
-name|gdisp
+name|display
 argument_list|,
 name|data
 argument_list|)
@@ -1981,7 +1981,7 @@ name|shell
 operator|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -2093,7 +2093,7 @@ name|gimp_color_dialog_new
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -2110,7 +2110,7 @@ argument_list|(
 literal|"Set Custom Canvas Padding Color"
 argument_list|)
 argument_list|,
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|,
@@ -2139,7 +2139,7 @@ argument_list|(
 name|view_padding_color_dialog_update
 argument_list|)
 argument_list|,
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -2200,7 +2200,7 @@ name|config
 operator|=
 name|GIMP_DISPLAY_CONFIG
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -2267,11 +2267,11 @@ parameter_list|)
 block|{
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 decl_stmt|;
 name|return_if_no_display
 argument_list|(
-name|gdisp
+name|display
 argument_list|,
 name|data
 argument_list|)
@@ -2280,7 +2280,7 @@ name|gimp_display_shell_scale_shrink_wrap
 argument_list|(
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -2304,7 +2304,7 @@ parameter_list|)
 block|{
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 decl_stmt|;
 name|GimpDisplayShell
 modifier|*
@@ -2315,7 +2315,7 @@ name|active
 decl_stmt|;
 name|return_if_no_display
 argument_list|(
-name|gdisp
+name|display
 argument_list|,
 name|data
 argument_list|)
@@ -2324,7 +2324,7 @@ name|shell
 operator|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)

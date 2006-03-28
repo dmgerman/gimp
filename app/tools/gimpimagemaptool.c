@@ -180,7 +180,7 @@ name|tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -199,7 +199,7 @@ name|action
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -219,7 +219,7 @@ name|kevent
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -767,7 +767,7 @@ end_define
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_image_map_tool_initialize (GimpTool * tool,GimpDisplay * gdisp)
+DECL|function|gimp_image_map_tool_initialize (GimpTool * tool,GimpDisplay * display)
 name|gimp_image_map_tool_initialize
 parameter_list|(
 name|GimpTool
@@ -776,7 +776,7 @@ name|tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpImageMapTool
@@ -802,12 +802,12 @@ name|tool
 operator|->
 name|tool_info
 expr_stmt|;
-comment|/*  set gdisp so the dialog can be hidden on display destruction  */
+comment|/*  set display so the dialog can be hidden on display destruction  */
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|=
-name|gdisp
+name|display
 expr_stmt|;
 if|if
 condition|(
@@ -865,7 +865,7 @@ name|gimp_tool_dialog_new
 argument_list|(
 name|tool_info
 argument_list|,
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|,
@@ -1261,7 +1261,7 @@ name|drawable
 operator|=
 name|gimp_image_active_drawable
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -1332,7 +1332,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_map_tool_control (GimpTool * tool,GimpToolAction action,GimpDisplay * gdisp)
+DECL|function|gimp_image_map_tool_control (GimpTool * tool,GimpToolAction action,GimpDisplay * display)
 name|gimp_image_map_tool_control
 parameter_list|(
 name|GimpTool
@@ -1344,7 +1344,7 @@ name|action
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpImageMapTool
@@ -1397,7 +1397,7 @@ name|tool
 argument_list|,
 name|action
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -1406,7 +1406,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_image_map_tool_key_press (GimpTool * tool,GdkEventKey * kevent,GimpDisplay * gdisp)
+DECL|function|gimp_image_map_tool_key_press (GimpTool * tool,GdkEventKey * kevent,GimpDisplay * display)
 name|gimp_image_map_tool_key_press
 parameter_list|(
 name|GimpTool
@@ -1419,7 +1419,7 @@ name|kevent
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpImageMapTool
@@ -1433,11 +1433,11 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|gdisp
+name|display
 operator|==
 name|tool
 operator|->
-name|gdisp
+name|display
 condition|)
 block|{
 switch|switch
@@ -1825,7 +1825,7 @@ name|gimp_projection_flush_now
 argument_list|(
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -1836,7 +1836,7 @@ name|gimp_display_flush_now
 argument_list|(
 name|tool
 operator|->
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -1967,7 +1967,7 @@ name|gimp_image_flush
 argument_list|(
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -1975,7 +1975,7 @@ expr_stmt|;
 block|}
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|=
 name|NULL
 expr_stmt|;
@@ -2036,7 +2036,7 @@ name|gimp_image_flush
 argument_list|(
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -2044,7 +2044,7 @@ expr_stmt|;
 block|}
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|=
 name|NULL
 expr_stmt|;
@@ -2165,7 +2165,7 @@ name|gimp_image_flush
 argument_list|(
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)

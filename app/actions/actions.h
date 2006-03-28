@@ -219,17 +219,17 @@ value|image = action_data_get_image (data); \   if (! image) \     return
 end_define
 
 begin_define
-DECL|macro|return_if_no_display (gdisp,data)
+DECL|macro|return_if_no_display (display,data)
 define|#
 directive|define
 name|return_if_no_display
 parameter_list|(
-name|gdisp
+name|display
 parameter_list|,
 name|data
 parameter_list|)
 define|\
-value|gdisp = action_data_get_display (data); \   if (! gdisp) \     return
+value|display = action_data_get_display (data); \   if (! display) \     return
 end_define
 
 begin_define

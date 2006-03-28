@@ -263,7 +263,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27839a210103
+DECL|enum|__anon2aaf45d80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -276,7 +276,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27839a210203
+DECL|enum|__anon2aaf45d80203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -799,7 +799,7 @@ parameter_list|)
 block|{
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|=
 name|NULL
 expr_stmt|;
@@ -1582,7 +1582,7 @@ if|if
 condition|(
 name|shell
 operator|->
-name|gdisp
+name|display
 condition|)
 name|gimp_display_shell_disconnect
 argument_list|(
@@ -1799,7 +1799,7 @@ expr_stmt|;
 block|}
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|=
 name|NULL
 expr_stmt|;
@@ -1959,7 +1959,7 @@ name|GIMP_DISPLAY_CONFIG
 argument_list|(
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -2088,7 +2088,7 @@ name|gimp_get_user_context
 argument_list|(
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -2097,7 +2097,7 @@ argument_list|)
 argument_list|,
 name|shell
 operator|->
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|gimp_ui_manager_ui_popup
@@ -2150,7 +2150,7 @@ condition|(
 operator|!
 name|shell
 operator|->
-name|gdisp
+name|display
 condition|)
 return|return;
 name|gimp_display_shell_title_update
@@ -2167,7 +2167,7 @@ name|menubar_manager
 argument_list|,
 name|shell
 operator|->
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|user_context
@@ -2176,7 +2176,7 @@ name|gimp_get_user_context
 argument_list|(
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -2187,7 +2187,7 @@ if|if
 condition|(
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|==
 name|gimp_context_get_display
 argument_list|(
@@ -2202,7 +2202,7 @@ name|popup_manager
 argument_list|,
 name|shell
 operator|->
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -2323,12 +2323,12 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_display_shell_new (GimpDisplay * gdisp,GimpUnit unit,gdouble scale,GimpMenuFactory * menu_factory,GimpUIManager * popup_manager)
+DECL|function|gimp_display_shell_new (GimpDisplay * display,GimpUnit unit,gdouble scale,GimpMenuFactory * menu_factory,GimpUIManager * popup_manager)
 name|gimp_display_shell_new
 parameter_list|(
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|,
 name|GimpUnit
 name|unit
@@ -2415,7 +2415,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY
 argument_list|(
-name|gdisp
+name|display
 argument_list|)
 argument_list|,
 name|NULL
@@ -2469,13 +2469,13 @@ argument_list|)
 expr_stmt|;
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|=
-name|gdisp
+name|display
 expr_stmt|;
 name|image_width
 operator|=
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -2483,7 +2483,7 @@ name|width
 expr_stmt|;
 name|image_height
 operator|=
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -2493,7 +2493,7 @@ name|display_config
 operator|=
 name|GIMP_DISPLAY_CONFIG
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -2802,7 +2802,7 @@ name|menu_factory
 argument_list|,
 literal|"<Image>"
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|FALSE
 argument_list|)
@@ -4494,7 +4494,7 @@ argument_list|)
 expr_stmt|;
 name|color_config
 operator|=
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -4557,7 +4557,7 @@ name|GIMP_IS_DISPLAY
 argument_list|(
 name|shell
 operator|->
-name|gdisp
+name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4567,7 +4567,7 @@ name|GIMP_IS_IMAGE
 argument_list|(
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -4860,7 +4860,7 @@ argument_list|)
 operator|&&
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -4881,7 +4881,7 @@ argument_list|)
 operator|&&
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -4911,7 +4911,7 @@ name|gimp_image_get_active_vectors
 argument_list|(
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -4947,7 +4947,7 @@ name|GIMP_DISPLAY_CONFIG
 argument_list|(
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -4975,7 +4975,7 @@ name|gimp_image_snap_rectangle
 argument_list|(
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|,
@@ -5045,7 +5045,7 @@ name|gimp_image_snap_point
 argument_list|(
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|,
@@ -5206,7 +5206,7 @@ name|gimp_image_floating_sel
 argument_list|(
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -5242,7 +5242,7 @@ name|gimp_image_get_mask
 argument_list|(
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -5368,7 +5368,7 @@ name|gimp_image_get_mask
 argument_list|(
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -5938,7 +5938,7 @@ name|menubar_manager
 argument_list|,
 name|shell
 operator|->
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|user_context
@@ -5947,7 +5947,7 @@ name|gimp_get_user_context
 argument_list|(
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -5958,7 +5958,7 @@ if|if
 condition|(
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|==
 name|gimp_context_get_display
 argument_list|(
@@ -5973,7 +5973,7 @@ name|popup_manager
 argument_list|,
 name|shell
 operator|->
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -6021,7 +6021,7 @@ name|tool_manager_control_active
 argument_list|(
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -6031,7 +6031,7 @@ name|PAUSE
 argument_list|,
 name|shell
 operator|->
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_draw_vectors
@@ -6098,7 +6098,7 @@ name|tool_manager_control_active
 argument_list|(
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -6108,7 +6108,7 @@ name|RESUME
 argument_list|,
 name|shell
 operator|->
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -6155,7 +6155,7 @@ name|gimp_image_get_height
 argument_list|(
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -6167,7 +6167,7 @@ name|gimp_image_get_width
 argument_list|(
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -6250,7 +6250,7 @@ name|GIMP_VIEWABLE
 argument_list|(
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -6382,7 +6382,7 @@ name|shell
 argument_list|,
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -6397,7 +6397,7 @@ name|shell
 argument_list|,
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -6873,7 +6873,7 @@ name|gimp_display_update_area
 argument_list|(
 name|shell
 operator|->
-name|gdisp
+name|display
 argument_list|,
 name|TRUE
 argument_list|,

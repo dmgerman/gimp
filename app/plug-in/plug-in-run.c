@@ -173,7 +173,7 @@ end_comment
 begin_function
 name|Argument
 modifier|*
-DECL|function|plug_in_run (Gimp * gimp,GimpContext * context,GimpProgress * progress,ProcRecord * proc_rec,Argument * args,gint n_args,gboolean synchronous,gboolean destroy_return_vals,gint gdisp_ID)
+DECL|function|plug_in_run (Gimp * gimp,GimpContext * context,GimpProgress * progress,ProcRecord * proc_rec,Argument * args,gint n_args,gboolean synchronous,gboolean destroy_return_vals,gint display_ID)
 name|plug_in_run
 parameter_list|(
 name|Gimp
@@ -206,7 +206,7 @@ name|gboolean
 name|destroy_return_vals
 parameter_list|,
 name|gint
-name|gdisp_ID
+name|display_ID
 parameter_list|)
 block|{
 name|Argument
@@ -504,7 +504,7 @@ name|config
 operator|.
 name|gdisp_ID
 operator|=
-name|gdisp_ID
+name|display_ID
 expr_stmt|;
 name|config
 operator|.
@@ -538,7 +538,7 @@ name|gimp_get_display_name
 argument_list|(
 name|gimp
 argument_list|,
-name|gdisp_ID
+name|display_ID
 argument_list|,
 operator|&
 name|monitor

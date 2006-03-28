@@ -468,7 +468,7 @@ parameter_list|)
 block|{
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -476,7 +476,7 @@ name|dialog
 decl_stmt|;
 name|return_if_no_display
 argument_list|(
-name|gdisp
+name|display
 argument_list|,
 name|data
 argument_list|)
@@ -490,7 +490,7 @@ argument_list|(
 literal|"Feather Selection"
 argument_list|)
 argument_list|,
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|,
@@ -513,7 +513,7 @@ literal|3
 argument_list|,
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -522,13 +522,13 @@ name|unit
 argument_list|,
 name|MIN
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
 name|xresolution
 argument_list|,
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -539,7 +539,7 @@ name|FALSE
 argument_list|,
 name|G_OBJECT
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -548,7 +548,7 @@ literal|"disconnect"
 argument_list|,
 name|select_feather_callback
 argument_list|,
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -618,7 +618,7 @@ parameter_list|)
 block|{
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -630,7 +630,7 @@ name|edge_lock
 decl_stmt|;
 name|return_if_no_display
 argument_list|(
-name|gdisp
+name|display
 argument_list|,
 name|data
 argument_list|)
@@ -644,7 +644,7 @@ argument_list|(
 literal|"Shrink Selection"
 argument_list|)
 argument_list|,
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|,
@@ -667,7 +667,7 @@ literal|0
 argument_list|,
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -676,13 +676,13 @@ name|unit
 argument_list|,
 name|MIN
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
 name|xresolution
 argument_list|,
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -693,7 +693,7 @@ name|FALSE
 argument_list|,
 name|G_OBJECT
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -702,7 +702,7 @@ literal|"disconnect"
 argument_list|,
 name|select_shrink_callback
 argument_list|,
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -787,7 +787,7 @@ parameter_list|)
 block|{
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -795,7 +795,7 @@ name|dialog
 decl_stmt|;
 name|return_if_no_display
 argument_list|(
-name|gdisp
+name|display
 argument_list|,
 name|data
 argument_list|)
@@ -809,7 +809,7 @@ argument_list|(
 literal|"Grow Selection"
 argument_list|)
 argument_list|,
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|,
@@ -832,7 +832,7 @@ literal|0
 argument_list|,
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -841,13 +841,13 @@ name|unit
 argument_list|,
 name|MIN
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
 name|xresolution
 argument_list|,
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -858,7 +858,7 @@ name|FALSE
 argument_list|,
 name|G_OBJECT
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -867,7 +867,7 @@ literal|"disconnect"
 argument_list|,
 name|select_grow_callback
 argument_list|,
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -895,7 +895,7 @@ parameter_list|)
 block|{
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -903,7 +903,7 @@ name|dialog
 decl_stmt|;
 name|return_if_no_display
 argument_list|(
-name|gdisp
+name|display
 argument_list|,
 name|data
 argument_list|)
@@ -917,7 +917,7 @@ argument_list|(
 literal|"Border Selection"
 argument_list|)
 argument_list|,
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|,
@@ -940,7 +940,7 @@ literal|0
 argument_list|,
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -949,13 +949,13 @@ name|unit
 argument_list|,
 name|MIN
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
 name|xresolution
 argument_list|,
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -966,7 +966,7 @@ name|FALSE
 argument_list|,
 name|G_OBJECT
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -975,7 +975,7 @@ literal|"disconnect"
 argument_list|,
 name|select_border_callback
 argument_list|,
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)

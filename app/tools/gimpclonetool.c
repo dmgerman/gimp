@@ -148,7 +148,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -174,7 +174,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -197,7 +197,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -223,7 +223,7 @@ name|proximity
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -437,7 +437,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_clone_tool_button_press (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_clone_tool_button_press (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_clone_tool_button_press
 parameter_list|(
 name|GimpTool
@@ -456,7 +456,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpPaintTool
@@ -528,18 +528,18 @@ name|TRUE
 expr_stmt|;
 if|if
 condition|(
-name|gdisp
+name|display
 operator|!=
 name|clone_tool
 operator|->
-name|src_gdisp
+name|src_display
 condition|)
 block|{
 if|if
 condition|(
 name|clone_tool
 operator|->
-name|src_gdisp
+name|src_display
 condition|)
 name|g_object_remove_weak_pointer
 argument_list|(
@@ -547,7 +547,7 @@ name|G_OBJECT
 argument_list|(
 name|clone_tool
 operator|->
-name|src_gdisp
+name|src_display
 argument_list|)
 argument_list|,
 operator|(
@@ -557,20 +557,20 @@ operator|)
 operator|&
 name|clone_tool
 operator|->
-name|src_gdisp
+name|src_display
 argument_list|)
 expr_stmt|;
 name|clone_tool
 operator|->
-name|src_gdisp
+name|src_display
 operator|=
-name|gdisp
+name|display
 expr_stmt|;
 name|g_object_add_weak_pointer
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|gdisp
+name|display
 argument_list|)
 argument_list|,
 operator|(
@@ -580,7 +580,7 @@ operator|)
 operator|&
 name|clone_tool
 operator|->
-name|src_gdisp
+name|src_display
 argument_list|)
 expr_stmt|;
 block|}
@@ -610,11 +610,11 @@ name|options
 operator|->
 name|sample_merged
 operator|&&
-name|gdisp
+name|display
 operator|==
 name|clone_tool
 operator|->
-name|src_gdisp
+name|src_display
 condition|)
 block|{
 name|paint_tool
@@ -642,7 +642,7 @@ name|time
 argument_list|,
 name|state
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -651,7 +651,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_clone_tool_motion (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_clone_tool_motion (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_clone_tool_motion
 parameter_list|(
 name|GimpTool
@@ -670,7 +670,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpPaintTool
@@ -734,7 +734,7 @@ name|time
 argument_list|,
 name|state
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -743,7 +743,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_clone_tool_cursor_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_clone_tool_cursor_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,GimpDisplay * display)
 name|gimp_clone_tool_cursor_update
 parameter_list|(
 name|GimpTool
@@ -759,7 +759,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpCloneOptions
@@ -787,7 +787,7 @@ if|if
 condition|(
 name|gimp_image_coords_in_active_drawable
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|,
@@ -801,7 +801,7 @@ name|selection
 init|=
 name|gimp_image_get_mask
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -905,7 +905,7 @@ name|coords
 argument_list|,
 name|state
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -914,7 +914,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_clone_tool_oper_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,gboolean proximity,GimpDisplay * gdisp)
+DECL|function|gimp_clone_tool_oper_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,gboolean proximity,GimpDisplay * display)
 name|gimp_clone_tool_oper_update
 parameter_list|(
 name|GimpTool
@@ -933,7 +933,7 @@ name|proximity
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpToolOptions
@@ -961,7 +961,7 @@ name|state
 argument_list|,
 name|proximity
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 if|if
@@ -996,7 +996,7 @@ name|gimp_tool_replace_status
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|_
 argument_list|(
@@ -1089,7 +1089,7 @@ name|off_y
 decl_stmt|;
 name|GimpDisplay
 modifier|*
-name|tmp_gdisp
+name|tmp_display
 decl_stmt|;
 name|GimpCloneTool
 modifier|*
@@ -1116,25 +1116,25 @@ operator|&
 name|off_y
 argument_list|)
 expr_stmt|;
-name|tmp_gdisp
+name|tmp_display
 operator|=
 name|draw_tool
 operator|->
-name|gdisp
+name|display
 expr_stmt|;
 name|draw_tool
 operator|->
-name|gdisp
+name|display
 operator|=
 name|clone_tool
 operator|->
-name|src_gdisp
+name|src_display
 expr_stmt|;
 if|if
 condition|(
 name|draw_tool
 operator|->
-name|gdisp
+name|display
 condition|)
 name|gimp_draw_tool_draw_handle
 argument_list|(
@@ -1165,9 +1165,9 @@ argument_list|)
 expr_stmt|;
 name|draw_tool
 operator|->
-name|gdisp
+name|display
 operator|=
-name|tmp_gdisp
+name|tmp_display
 expr_stmt|;
 block|}
 block|}

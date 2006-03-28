@@ -138,7 +138,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -164,7 +164,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -190,7 +190,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -215,7 +215,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -238,7 +238,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -512,7 +512,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_magnify_tool_button_press (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_magnify_tool_button_press (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_magnify_tool_button_press
 parameter_list|(
 name|GimpTool
@@ -531,7 +531,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpMagnifyTool
@@ -580,9 +580,9 @@ argument_list|)
 expr_stmt|;
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|=
-name|gdisp
+name|display
 expr_stmt|;
 name|gimp_draw_tool_start
 argument_list|(
@@ -591,7 +591,7 @@ argument_list|(
 name|tool
 argument_list|)
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -600,7 +600,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_magnify_tool_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_magnify_tool_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_magnify_tool_button_release
 parameter_list|(
 name|GimpTool
@@ -619,7 +619,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpMagnifyTool
@@ -659,7 +659,7 @@ name|GIMP_DISPLAY_SHELL
 argument_list|(
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -1006,7 +1006,7 @@ argument_list|(
 name|shell
 argument_list|)
 operator|/
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -1039,7 +1039,7 @@ argument_list|(
 name|shell
 argument_list|)
 operator|/
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -1074,7 +1074,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_magnify_tool_motion (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_magnify_tool_motion (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_magnify_tool_motion
 parameter_list|(
 name|GimpTool
@@ -1093,7 +1093,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpMagnifyTool
@@ -1155,7 +1155,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_magnify_tool_modifier_key (GimpTool * tool,GdkModifierType key,gboolean press,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_magnify_tool_modifier_key (GimpTool * tool,GdkModifierType key,gboolean press,GdkModifierType state,GimpDisplay * display)
 name|gimp_magnify_tool_modifier_key
 parameter_list|(
 name|GimpTool
@@ -1173,7 +1173,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpMagnifyOptions
@@ -1245,7 +1245,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_magnify_tool_cursor_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_magnify_tool_cursor_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,GimpDisplay * display)
 name|gimp_magnify_tool_cursor_update
 parameter_list|(
 name|GimpTool
@@ -1261,7 +1261,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpMagnifyOptions
@@ -1305,7 +1305,7 @@ name|coords
 argument_list|,
 name|state
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}

@@ -200,7 +200,7 @@ name|tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -661,7 +661,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_hue_saturation_tool_initialize (GimpTool * tool,GimpDisplay * gdisp)
+DECL|function|gimp_hue_saturation_tool_initialize (GimpTool * tool,GimpDisplay * display)
 name|gimp_hue_saturation_tool_initialize
 parameter_list|(
 name|GimpTool
@@ -670,7 +670,7 @@ name|tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpHueSaturationTool
@@ -690,7 +690,7 @@ name|drawable
 operator|=
 name|gimp_image_active_drawable
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -740,7 +740,7 @@ name|initialize
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|hue_saturation_update
@@ -878,7 +878,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon2bf409cc0108
+DECL|struct|__anon289ea3870108
 block|{
 DECL|member|label
 specifier|const

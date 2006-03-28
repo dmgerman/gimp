@@ -403,7 +403,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -429,7 +429,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -590,7 +590,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_edit_selection_tool_calc_coords (GimpEditSelectionTool * edit_select,GimpDisplay * gdisp,gdouble x,gdouble y)
+DECL|function|gimp_edit_selection_tool_calc_coords (GimpEditSelectionTool * edit_select,GimpDisplay * display,gdouble x,gdouble y)
 name|gimp_edit_selection_tool_calc_coords
 parameter_list|(
 name|GimpEditSelectionTool
@@ -599,7 +599,7 @@ name|edit_select
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|,
 name|gdouble
 name|x
@@ -626,7 +626,7 @@ name|shell
 operator|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -712,7 +712,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_edit_selection_tool_start (GimpTool * parent_tool,GimpDisplay * gdisp,GimpCoords * coords,GimpTranslateMode edit_mode,gboolean propagate_release)
+DECL|function|gimp_edit_selection_tool_start (GimpTool * parent_tool,GimpDisplay * display,GimpCoords * coords,GimpTranslateMode edit_mode,gboolean propagate_release)
 name|gimp_edit_selection_tool_start
 parameter_list|(
 name|GimpTool
@@ -721,7 +721,7 @@ name|parent_tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|,
 name|GimpCoords
 modifier|*
@@ -792,7 +792,7 @@ name|shell
 operator|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -806,7 +806,7 @@ name|GIMP_TRANSLATE_MODE_MASK_TO_LAYER
 operator|&&
 name|gimp_image_floating_sel
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -830,7 +830,7 @@ name|layer
 init|=
 name|gimp_image_get_active_layer
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -867,7 +867,7 @@ name|GIMP_ITEM
 argument_list|(
 name|gimp_image_get_active_vectors
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -880,7 +880,7 @@ name|GIMP_ITEM
 argument_list|(
 name|gimp_image_active_drawable
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -938,7 +938,7 @@ break|break;
 block|}
 name|gimp_image_undo_group_start
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|,
@@ -1020,7 +1020,7 @@ name|channel
 operator|=
 name|gimp_image_get_mask
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -1125,7 +1125,7 @@ name|edit_select
 operator|->
 name|x2
 operator|=
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -1135,7 +1135,7 @@ name|edit_select
 operator|->
 name|y2
 operator|=
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -1178,7 +1178,7 @@ name|gimp_edit_selection_tool_calc_coords
 argument_list|(
 name|edit_select
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|edit_select
 operator|->
@@ -1277,7 +1277,7 @@ name|gimp_channel_bounds
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -1736,13 +1736,13 @@ argument_list|(
 name|edit_select
 argument_list|)
 operator|->
-name|gdisp
+name|display
 operator|=
-name|gdisp
+name|display
 expr_stmt|;
 name|tool_manager_push_tool
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -1770,7 +1770,7 @@ argument_list|(
 name|edit_select
 argument_list|)
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|_
 argument_list|(
@@ -1791,7 +1791,7 @@ argument_list|(
 name|edit_select
 argument_list|)
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -1800,7 +1800,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_edit_selection_tool_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_edit_selection_tool_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_edit_selection_tool_button_release
 parameter_list|(
 name|GimpTool
@@ -1819,7 +1819,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpEditSelectionTool
@@ -1837,7 +1837,7 @@ name|shell
 init|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -1858,7 +1858,7 @@ name|gimp_tool_pop_status
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 comment|/*  Stop and free the selection core  */
@@ -1872,7 +1872,7 @@ argument_list|)
 expr_stmt|;
 name|tool_manager_pop_tool
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -1893,7 +1893,7 @@ name|GIMP_ITEM
 argument_list|(
 name|gimp_image_get_active_vectors
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -1906,7 +1906,7 @@ name|GIMP_ITEM
 argument_list|(
 name|gimp_image_active_drawable
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -1916,7 +1916,7 @@ name|gimp_edit_selection_tool_calc_coords
 argument_list|(
 name|edit_select
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|coords
 operator|->
@@ -1944,7 +1944,7 @@ name|GIMP_ITEM
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -2111,7 +2111,7 @@ block|}
 block|}
 name|gimp_image_undo_group_end
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -2127,7 +2127,7 @@ block|{
 comment|/* Operation cancelled - undo the undo-group! */
 name|gimp_image_undo
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -2135,7 +2135,7 @@ expr_stmt|;
 block|}
 name|gimp_image_flush
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -2186,7 +2186,7 @@ name|propagate_release
 operator|&&
 name|tool_manager_get_active
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -2196,7 +2196,7 @@ condition|)
 block|{
 name|tool_manager_button_release_active
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -2208,7 +2208,7 @@ name|time
 argument_list|,
 name|state
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -2223,7 +2223,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_edit_selection_tool_motion (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_edit_selection_tool_motion (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_edit_selection_tool_motion
 parameter_list|(
 name|GimpTool
@@ -2242,7 +2242,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpEditSelectionTool
@@ -2293,7 +2293,7 @@ name|GIMP_ITEM
 argument_list|(
 name|gimp_image_get_active_vectors
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -2306,7 +2306,7 @@ name|GIMP_ITEM
 argument_list|(
 name|gimp_image_active_drawable
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -2344,7 +2344,7 @@ name|gimp_edit_selection_tool_calc_coords
 argument_list|(
 name|edit_select
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|motion_x
 argument_list|,
@@ -2572,7 +2572,7 @@ name|gimp_selection_float
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -2584,7 +2584,7 @@ argument_list|)
 argument_list|,
 name|gimp_get_user_context
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -2670,7 +2670,7 @@ name|GIMP_ITEM
 argument_list|(
 name|gimp_image_active_drawable
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -2710,7 +2710,7 @@ expr_stmt|;
 block|}
 name|gimp_projection_flush
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -2724,14 +2724,14 @@ name|gimp_tool_pop_status
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|gimp_tool_push_status_coords
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|_
 argument_list|(
@@ -2782,14 +2782,14 @@ argument_list|)
 decl_stmt|;
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 init|=
 name|GIMP_TOOL
 argument_list|(
 name|draw_tool
 argument_list|)
 operator|->
-name|gdisp
+name|display
 decl_stmt|;
 name|GimpItem
 modifier|*
@@ -2809,7 +2809,7 @@ name|GIMP_ITEM
 argument_list|(
 name|gimp_image_get_active_vectors
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -2822,7 +2822,7 @@ name|GIMP_ITEM
 argument_list|(
 name|gimp_image_active_drawable
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -2875,7 +2875,7 @@ name|layer
 init|=
 name|gimp_image_get_active_layer
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -3078,7 +3078,7 @@ name|GIMP_ITEM
 argument_list|(
 name|gimp_image_get_active_layer
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -3295,7 +3295,7 @@ name|GIMP_ITEM
 argument_list|(
 name|gimp_image_get_active_vectors
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -3971,7 +3971,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_edit_selection_tool_key_press (GimpTool * tool,GdkEventKey * kevent,GimpDisplay * gdisp)
+DECL|function|gimp_edit_selection_tool_key_press (GimpTool * tool,GdkEventKey * kevent,GimpDisplay * display)
 name|gimp_edit_selection_tool_key_press
 parameter_list|(
 name|GimpTool
@@ -3984,7 +3984,7 @@ name|kevent
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|gint
@@ -4072,7 +4072,7 @@ name|gimp_zoom_model_get_factor
 argument_list|(
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -4202,7 +4202,7 @@ name|GIMP_ITEM
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -4332,7 +4332,7 @@ operator|*
 operator|)
 name|gimp_image_get_active_vectors
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -4445,7 +4445,7 @@ operator|*
 operator|)
 name|gimp_image_active_drawable
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -4555,7 +4555,7 @@ name|undo
 operator|=
 name|gimp_image_undo_can_compress
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|,
@@ -4628,7 +4628,7 @@ if|if
 condition|(
 name|gimp_image_undo_group_start
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|,
@@ -4642,7 +4642,7 @@ name|undo
 operator|=
 name|gimp_image_undo_can_compress
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|,
@@ -4791,7 +4791,7 @@ name|push_undo
 condition|)
 name|gimp_image_undo_group_end
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -4804,7 +4804,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)

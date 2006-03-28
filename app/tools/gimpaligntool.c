@@ -145,7 +145,7 @@ name|tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -183,7 +183,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -206,7 +206,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -909,7 +909,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_align_tool_initialize (GimpTool * tool,GimpDisplay * gdisp)
+DECL|function|gimp_align_tool_initialize (GimpTool * tool,GimpDisplay * display)
 name|gimp_align_tool_initialize
 parameter_list|(
 name|GimpTool
@@ -918,7 +918,7 @@ name|tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpAlignTool
@@ -934,9 +934,9 @@ if|if
 condition|(
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|!=
-name|gdisp
+name|display
 condition|)
 block|{
 comment|/*       align_tool->target_item     = NULL; */
@@ -951,7 +951,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_align_tool_button_press (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_align_tool_button_press (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_align_tool_button_press
 parameter_list|(
 name|GimpTool
@@ -970,7 +970,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpAlignTool
@@ -1004,11 +1004,11 @@ decl_stmt|;
 comment|/*  If the tool was being used in another image...reset it  */
 if|if
 condition|(
-name|gdisp
+name|display
 operator|!=
 name|tool
 operator|->
-name|gdisp
+name|display
 condition|)
 block|{
 if|if
@@ -1061,9 +1061,9 @@ argument_list|)
 expr_stmt|;
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|=
-name|gdisp
+name|display
 expr_stmt|;
 if|if
 condition|(
@@ -1083,7 +1083,7 @@ argument_list|(
 name|tool
 argument_list|)
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_pause
@@ -1116,7 +1116,7 @@ argument_list|(
 name|tool
 argument_list|)
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|coords
 argument_list|,
@@ -1169,7 +1169,7 @@ name|layer
 operator|=
 name|gimp_image_pick_correlate_layer
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|,
@@ -1356,7 +1356,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_align_tool_cursor_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_align_tool_cursor_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,GimpDisplay * display)
 name|gimp_align_tool_cursor_update
 parameter_list|(
 name|GimpTool
@@ -1372,7 +1372,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpAlignOptions
@@ -1429,7 +1429,7 @@ argument_list|(
 name|tool
 argument_list|)
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|coords
 argument_list|,
@@ -1474,7 +1474,7 @@ name|layer
 operator|=
 name|gimp_image_pick_correlate_layer
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|,
@@ -1494,7 +1494,7 @@ if|if
 condition|(
 name|gimp_image_floating_sel
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -1526,7 +1526,7 @@ name|layer
 operator|==
 name|gimp_image_get_active_layer
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -1594,7 +1594,7 @@ name|coords
 argument_list|,
 name|state
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -2796,7 +2796,7 @@ argument_list|(
 name|align_tool
 argument_list|)
 operator|->
-name|gdisp
+name|display
 condition|)
 name|gimp_image_flush
 argument_list|(
@@ -2805,7 +2805,7 @@ argument_list|(
 name|align_tool
 argument_list|)
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -2885,7 +2885,7 @@ argument_list|(
 name|align_tool
 argument_list|)
 operator|->
-name|gdisp
+name|display
 condition|)
 name|gimp_image_flush
 argument_list|(
@@ -2894,7 +2894,7 @@ argument_list|(
 name|align_tool
 argument_list|)
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)

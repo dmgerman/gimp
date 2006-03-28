@@ -56,10 +56,10 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-DECL|member|gdisp
+DECL|member|display
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 decl_stmt|;
 DECL|member|context
 name|GimpContext

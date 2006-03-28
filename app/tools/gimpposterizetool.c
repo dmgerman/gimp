@@ -126,7 +126,7 @@ name|tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -423,7 +423,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_posterize_tool_initialize (GimpTool * tool,GimpDisplay * gdisp)
+DECL|function|gimp_posterize_tool_initialize (GimpTool * tool,GimpDisplay * display)
 name|gimp_posterize_tool_initialize
 parameter_list|(
 name|GimpTool
@@ -432,7 +432,7 @@ name|tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpPosterizeTool
@@ -452,7 +452,7 @@ name|drawable
 operator|=
 name|gimp_image_active_drawable
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -500,7 +500,7 @@ name|initialize
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|gtk_adjustment_set_value

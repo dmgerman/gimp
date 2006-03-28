@@ -255,14 +255,14 @@ condition|(
 operator|!
 name|shell
 operator|->
-name|gdisp
+name|display
 condition|)
 return|return;
 name|image_width
 operator|=
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -272,7 +272,7 @@ name|image_height
 operator|=
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -847,7 +847,7 @@ name|gimp
 init|=
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -1066,7 +1066,7 @@ condition|(
 operator|!
 name|shell
 operator|->
-name|gdisp
+name|display
 condition|)
 return|return;
 name|current
@@ -1131,7 +1131,7 @@ name|GIMP_DISPLAY_CONFIG
 argument_list|(
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -1197,7 +1197,7 @@ name|image
 operator|=
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 expr_stmt|;
@@ -1328,7 +1328,7 @@ name|image
 operator|=
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 expr_stmt|;
@@ -1588,7 +1588,7 @@ name|gimp
 operator|=
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -1778,7 +1778,7 @@ name|GIMP_VIEWABLE
 argument_list|(
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -2749,7 +2749,7 @@ name|image
 init|=
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 decl_stmt|;

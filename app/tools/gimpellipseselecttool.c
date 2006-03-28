@@ -433,7 +433,7 @@ name|gimp_image_get_mask
 argument_list|(
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)

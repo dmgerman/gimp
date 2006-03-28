@@ -156,7 +156,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -182,7 +182,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -208,7 +208,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -231,7 +231,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -456,7 +456,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_blend_tool_button_press (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_blend_tool_button_press (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_blend_tool_button_press
 parameter_list|(
 name|GimpTool
@@ -475,7 +475,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpBlendTool
@@ -500,7 +500,7 @@ name|drawable
 operator|=
 name|gimp_image_active_drawable
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -576,9 +576,9 @@ name|off_y
 expr_stmt|;
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|=
-name|gdisp
+name|display
 expr_stmt|;
 name|gimp_tool_control_activate
 argument_list|(
@@ -592,7 +592,7 @@ name|gimp_tool_push_status_coords
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|_
 argument_list|(
@@ -614,7 +614,7 @@ argument_list|(
 name|tool
 argument_list|)
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -623,7 +623,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_blend_tool_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_blend_tool_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_blend_tool_button_release
 parameter_list|(
 name|GimpTool
@@ -642,7 +642,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpBlendTool
@@ -697,7 +697,7 @@ argument_list|)
 expr_stmt|;
 name|image
 operator|=
-name|gdisp
+name|display
 operator|->
 name|image
 expr_stmt|;
@@ -705,7 +705,7 @@ name|gimp_tool_pop_status
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_stop
@@ -766,7 +766,7 @@ name|gimp_progress_start
 argument_list|(
 name|GIMP_PROGRESS
 argument_list|(
-name|gdisp
+name|display
 argument_list|)
 argument_list|,
 name|_
@@ -874,7 +874,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_blend_tool_motion (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_blend_tool_motion (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_blend_tool_motion
 parameter_list|(
 name|GimpTool
@@ -893,7 +893,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpBlendTool
@@ -924,7 +924,7 @@ name|GIMP_ITEM
 argument_list|(
 name|gimp_image_active_drawable
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -992,14 +992,14 @@ name|gimp_tool_pop_status
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|gimp_tool_push_status_coords
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|_
 argument_list|(
@@ -1039,7 +1039,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_blend_tool_cursor_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_blend_tool_cursor_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,GimpDisplay * display)
 name|gimp_blend_tool_cursor_update
 parameter_list|(
 name|GimpTool
@@ -1055,7 +1055,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 switch|switch
@@ -1064,7 +1064,7 @@ name|gimp_drawable_type
 argument_list|(
 name|gimp_image_active_drawable
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -1112,7 +1112,7 @@ name|coords
 argument_list|,
 name|state
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}

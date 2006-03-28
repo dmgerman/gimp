@@ -382,7 +382,7 @@ name|tool_manager_get_active
 argument_list|(
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -737,7 +737,7 @@ name|gimp_image_get_mask
 argument_list|(
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)

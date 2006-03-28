@@ -228,7 +228,7 @@ name|action
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -254,7 +254,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -280,7 +280,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -305,7 +305,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -331,7 +331,7 @@ name|proximity
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -737,7 +737,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_new_rect_select_tool_control (GimpTool * tool,GimpToolAction action,GimpDisplay * gdisp)
+DECL|function|gimp_new_rect_select_tool_control (GimpTool * tool,GimpToolAction action,GimpDisplay * display)
 name|gimp_new_rect_select_tool_control
 parameter_list|(
 name|GimpTool
@@ -749,7 +749,7 @@ name|action
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpRectangleTool
@@ -806,7 +806,7 @@ name|tool
 argument_list|,
 name|action
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -815,7 +815,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_new_rect_select_tool_button_press (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_new_rect_select_tool_button_press (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_new_rect_select_tool_button_press
 parameter_list|(
 name|GimpTool
@@ -834,20 +834,20 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 if|if
 condition|(
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|&&
-name|gdisp
+name|display
 operator|!=
 name|tool
 operator|->
-name|gdisp
+name|display
 condition|)
 name|gimp_rectangle_tool_response
 argument_list|(
@@ -871,7 +871,7 @@ name|time
 argument_list|,
 name|state
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -880,7 +880,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_new_rect_select_tool_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_new_rect_select_tool_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_new_rect_select_tool_button_release
 parameter_list|(
 name|GimpTool
@@ -899,21 +899,21 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|gimp_tool_pop_status
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|gimp_tool_push_status
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|_
 argument_list|(
@@ -931,7 +931,7 @@ name|time
 argument_list|,
 name|state
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -940,7 +940,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_new_rect_select_tool_modifier_key (GimpTool * tool,GdkModifierType key,gboolean press,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_new_rect_select_tool_modifier_key (GimpTool * tool,GdkModifierType key,gboolean press,GdkModifierType state,GimpDisplay * display)
 name|gimp_new_rect_select_tool_modifier_key
 parameter_list|(
 name|GimpTool
@@ -958,7 +958,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|gimp_rectangle_tool_modifier_key
@@ -971,7 +971,7 @@ name|press
 argument_list|,
 name|state
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|GIMP_TOOL_CLASS
@@ -989,7 +989,7 @@ name|press
 argument_list|,
 name|state
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -998,7 +998,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_new_rect_select_tool_oper_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,gboolean proximity,GimpDisplay * gdisp)
+DECL|function|gimp_new_rect_select_tool_oper_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,gboolean proximity,GimpDisplay * display)
 name|gimp_new_rect_select_tool_oper_update
 parameter_list|(
 name|GimpTool
@@ -1017,7 +1017,7 @@ name|proximity
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|gimp_rectangle_tool_oper_update
@@ -1030,7 +1030,7 @@ name|state
 argument_list|,
 name|proximity
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|GIMP_TOOL_CLASS
@@ -1048,7 +1048,7 @@ name|state
 argument_list|,
 name|proximity
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -1161,14 +1161,14 @@ name|tool
 argument_list|,
 name|tool
 operator|->
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|image
 operator|=
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 expr_stmt|;
@@ -1690,7 +1690,7 @@ name|gimp_image_get_mask
 argument_list|(
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)

@@ -364,7 +364,7 @@ name|image
 operator|=
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 expr_stmt|;
@@ -558,7 +558,7 @@ argument_list|)
 argument_list|,
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|,
@@ -719,7 +719,7 @@ name|GIMP_DISPLAY_CONFIG
 argument_list|(
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->

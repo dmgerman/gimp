@@ -471,7 +471,7 @@ condition|)
 block|{
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 init|=
 name|gimp_context_get_display
 argument_list|(
@@ -510,7 +510,7 @@ literal|1
 decl_stmt|;
 if|if
 condition|(
-name|gdisp
+name|display
 condition|)
 block|{
 name|GimpDisplayShell
@@ -519,7 +519,7 @@ name|shell
 init|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -543,7 +543,7 @@ argument_list|)
 expr_stmt|;
 name|image
 operator|=
-name|gdisp
+name|display
 operator|->
 name|image
 expr_stmt|;

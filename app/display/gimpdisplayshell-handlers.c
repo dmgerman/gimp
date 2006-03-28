@@ -585,7 +585,7 @@ name|GIMP_IS_DISPLAY
 argument_list|(
 name|shell
 operator|->
-name|gdisp
+name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -595,7 +595,7 @@ name|GIMP_IS_IMAGE
 argument_list|(
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -605,7 +605,7 @@ name|image
 operator|=
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 expr_stmt|;
@@ -1157,7 +1157,7 @@ name|GIMP_IS_DISPLAY
 argument_list|(
 name|shell
 operator|->
-name|gdisp
+name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1167,7 +1167,7 @@ name|GIMP_IS_IMAGE
 argument_list|(
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -1177,7 +1177,7 @@ name|image
 operator|=
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 expr_stmt|;
@@ -1611,7 +1611,7 @@ name|gimp_display_flush
 argument_list|(
 name|shell
 operator|->
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -1803,7 +1803,7 @@ argument_list|)
 argument_list|,
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -1814,7 +1814,7 @@ if|if
 condition|(
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -2444,7 +2444,7 @@ name|GIMP_DISPLAY_CONFIG
 argument_list|(
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->

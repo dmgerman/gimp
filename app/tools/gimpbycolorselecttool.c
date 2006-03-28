@@ -120,7 +120,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -146,7 +146,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -172,7 +172,7 @@ name|proximity
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -195,7 +195,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -352,7 +352,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_by_color_select_tool_button_press (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_by_color_select_tool_button_press (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_by_color_select_tool_button_press
 parameter_list|(
 name|GimpTool
@@ -371,7 +371,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpByColorSelectTool
@@ -404,7 +404,7 @@ name|drawable
 operator|=
 name|gimp_image_active_drawable
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -418,9 +418,9 @@ argument_list|)
 expr_stmt|;
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|=
-name|gdisp
+name|display
 expr_stmt|;
 name|by_color_sel
 operator|->
@@ -457,7 +457,7 @@ name|GIMP_ITEM
 argument_list|(
 name|gimp_image_active_drawable
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -489,7 +489,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_by_color_select_tool_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_by_color_select_tool_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_by_color_select_tool_button_release
 parameter_list|(
 name|GimpTool
@@ -508,7 +508,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpByColorSelectTool
@@ -552,7 +552,7 @@ name|drawable
 operator|=
 name|gimp_image_active_drawable
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -629,7 +629,7 @@ name|pickable
 operator|=
 name|GIMP_PICKABLE
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -707,7 +707,7 @@ name|gimp_channel_select_by_color
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -752,7 +752,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -765,7 +765,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_by_color_select_tool_oper_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,gboolean proximity,GimpDisplay * gdisp)
+DECL|function|gimp_by_color_select_tool_oper_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,gboolean proximity,GimpDisplay * display)
 name|gimp_by_color_select_tool_oper_update
 parameter_list|(
 name|GimpTool
@@ -784,7 +784,7 @@ name|proximity
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpSelectionTool
@@ -893,7 +893,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_by_color_select_tool_cursor_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_by_color_select_tool_cursor_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,GimpDisplay * display)
 name|gimp_by_color_select_tool_cursor_update
 parameter_list|(
 name|GimpTool
@@ -909,7 +909,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpSelectionOptions
@@ -935,7 +935,7 @@ name|layer
 operator|=
 name|gimp_image_pick_correlate_layer
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|,
@@ -959,7 +959,7 @@ name|layer
 operator|&&
 name|layer
 operator|!=
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -1001,7 +1001,7 @@ name|coords
 argument_list|,
 name|state
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}

@@ -772,7 +772,7 @@ comment|/*  scales the image according to the current parameters in the  */
 end_comment
 
 begin_comment
-comment|/*  gdisp object.  It handles color, grayscale, 8, 15, 16, 24,   */
+comment|/*  display object.  It handles color, grayscale, 8, 15, 16, 24  */
 end_comment
 
 begin_comment
@@ -834,7 +834,7 @@ name|projection
 operator|=
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -1789,7 +1789,7 @@ name|info
 operator|->
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -2068,7 +2068,7 @@ name|info
 operator|->
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)

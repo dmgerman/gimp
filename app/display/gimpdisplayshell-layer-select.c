@@ -248,7 +248,7 @@ name|image
 operator|=
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 expr_stmt|;

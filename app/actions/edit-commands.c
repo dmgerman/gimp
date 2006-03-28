@@ -170,7 +170,7 @@ name|edit_paste
 parameter_list|(
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|,
 name|gboolean
 name|paste_into
@@ -734,7 +734,7 @@ parameter_list|)
 block|{
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 init|=
 name|action_data_get_display
 argument_list|(
@@ -743,11 +743,11 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|gdisp
+name|display
 condition|)
 name|edit_paste
 argument_list|(
-name|gdisp
+name|display
 argument_list|,
 name|FALSE
 argument_list|)
@@ -778,18 +778,18 @@ parameter_list|)
 block|{
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 decl_stmt|;
 name|return_if_no_display
 argument_list|(
-name|gdisp
+name|display
 argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
 name|edit_paste
 argument_list|(
-name|gdisp
+name|display
 argument_list|,
 name|TRUE
 argument_list|)
@@ -1295,12 +1295,12 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|edit_paste (GimpDisplay * gdisp,gboolean paste_into)
+DECL|function|edit_paste (GimpDisplay * display,gboolean paste_into)
 name|edit_paste
 parameter_list|(
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|,
 name|gboolean
 name|paste_into
@@ -1317,7 +1317,7 @@ name|svg
 operator|=
 name|gimp_clipboard_get_svg
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -1336,7 +1336,7 @@ if|if
 condition|(
 name|gimp_vectors_import_buffer
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|,
@@ -1357,7 +1357,7 @@ condition|)
 block|{
 name|gimp_image_flush
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -1379,7 +1379,7 @@ name|buffer
 operator|=
 name|gimp_clipboard_get_buffer
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -1397,7 +1397,7 @@ name|shell
 init|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -1433,13 +1433,13 @@ if|if
 condition|(
 name|gimp_edit_paste
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|,
 name|gimp_image_active_drawable
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -1460,7 +1460,7 @@ condition|)
 block|{
 name|gimp_image_flush
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)

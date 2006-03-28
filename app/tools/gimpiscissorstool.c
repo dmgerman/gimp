@@ -438,7 +438,7 @@ name|action
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -464,7 +464,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -490,7 +490,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -516,7 +516,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -542,7 +542,7 @@ name|proximity
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -565,7 +565,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -605,7 +605,7 @@ name|iscissors
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1465,7 +1465,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_iscissors_tool_control (GimpTool * tool,GimpToolAction action,GimpDisplay * gdisp)
+DECL|function|gimp_iscissors_tool_control (GimpTool * tool,GimpToolAction action,GimpDisplay * display)
 name|gimp_iscissors_tool_control
 parameter_list|(
 name|GimpTool
@@ -1477,7 +1477,7 @@ name|action
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpIscissorsTool
@@ -1543,7 +1543,7 @@ name|tool
 argument_list|,
 name|action
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -1577,7 +1577,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_iscissors_tool_button_press (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_iscissors_tool_button_press (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_iscissors_tool_button_press
 parameter_list|(
 name|GimpTool
@@ -1596,7 +1596,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpIscissorsTool
@@ -1652,11 +1652,11 @@ condition|)
 block|{
 if|if
 condition|(
-name|gdisp
+name|display
 operator|!=
 name|tool
 operator|->
-name|gdisp
+name|display
 condition|)
 block|{
 name|gimp_draw_tool_stop
@@ -1693,9 +1693,9 @@ expr_stmt|;
 block|}
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|=
-name|gdisp
+name|display
 expr_stmt|;
 switch|switch
 condition|(
@@ -1732,7 +1732,7 @@ name|find_max_gradient
 argument_list|(
 name|iscissors
 argument_list|,
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|,
@@ -1759,7 +1759,7 @@ name|x
 argument_list|,
 literal|0
 argument_list|,
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -1780,7 +1780,7 @@ name|y
 argument_list|,
 literal|0
 argument_list|,
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -1813,7 +1813,7 @@ argument_list|(
 name|tool
 argument_list|)
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1923,7 +1923,7 @@ name|gimp_channel_select_channel
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -1969,7 +1969,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -2041,7 +2041,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|iscissors_convert (GimpIscissorsTool * iscissors,GimpDisplay * gdisp)
+DECL|function|iscissors_convert (GimpIscissorsTool * iscissors,GimpDisplay * display)
 name|iscissors_convert
 parameter_list|(
 name|GimpIscissorsTool
@@ -2050,7 +2050,7 @@ name|iscissors
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpSelectionOptions
@@ -2243,17 +2243,17 @@ name|mask
 operator|=
 name|gimp_channel_new_mask
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|,
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
 name|width
 argument_list|,
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -2293,7 +2293,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_iscissors_tool_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_iscissors_tool_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_iscissors_tool_button_release
 parameter_list|(
 name|GimpTool
@@ -2312,7 +2312,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpIscissorsTool
@@ -2468,7 +2468,7 @@ argument_list|(
 name|tool
 argument_list|)
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|iscissors
 operator|->
@@ -2745,7 +2745,7 @@ name|iscissors_convert
 argument_list|(
 name|iscissors
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -2754,7 +2754,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_iscissors_tool_motion (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_iscissors_tool_motion (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_iscissors_tool_motion
 parameter_list|(
 name|GimpTool
@@ -2773,7 +2773,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpIscissorsTool
@@ -2902,7 +2902,7 @@ name|find_max_gradient
 argument_list|(
 name|iscissors
 argument_list|,
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|,
@@ -2929,7 +2929,7 @@ name|x
 argument_list|,
 literal|0
 argument_list|,
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -2950,7 +2950,7 @@ name|y
 argument_list|,
 literal|0
 argument_list|,
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -3001,7 +3001,7 @@ name|find_max_gradient
 argument_list|(
 name|iscissors
 argument_list|,
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|,
@@ -3028,7 +3028,7 @@ name|x
 argument_list|,
 literal|0
 argument_list|,
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -3049,7 +3049,7 @@ name|y
 argument_list|,
 literal|0
 argument_list|,
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -3120,7 +3120,7 @@ argument_list|)
 decl_stmt|;
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 decl_stmt|;
 name|ICurve
 modifier|*
@@ -3130,11 +3130,11 @@ name|GSList
 modifier|*
 name|list
 decl_stmt|;
-name|gdisp
+name|display
 operator|=
 name|tool
 operator|->
-name|gdisp
+name|display
 expr_stmt|;
 comment|/*  Draw the crosshairs target if we're placing a seed  */
 if|if
@@ -3809,7 +3809,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_iscissors_tool_oper_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,gboolean proximity,GimpDisplay * gdisp)
+DECL|function|gimp_iscissors_tool_oper_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,gboolean proximity,GimpDisplay * display)
 name|gimp_iscissors_tool_oper_update
 parameter_list|(
 name|GimpTool
@@ -3828,7 +3828,7 @@ name|proximity
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpIscissorsTool
@@ -3855,7 +3855,7 @@ name|state
 argument_list|,
 name|proximity
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 if|if
@@ -3996,7 +3996,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_iscissors_tool_cursor_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_iscissors_tool_cursor_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,GimpDisplay * display)
 name|gimp_iscissors_tool_cursor_update
 parameter_list|(
 name|GimpTool
@@ -4012,7 +4012,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpIscissorsTool
@@ -4057,7 +4057,7 @@ name|coords
 argument_list|,
 name|state
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 return|return;
@@ -4092,7 +4092,7 @@ name|gimp_tool_set_cursor
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|cursor
 argument_list|,
@@ -4444,7 +4444,7 @@ argument_list|(
 name|iscissors
 argument_list|)
 operator|->
-name|gdisp
+name|display
 argument_list|,
 name|x
 argument_list|,
@@ -4500,7 +4500,7 @@ argument_list|(
 name|iscissors
 argument_list|)
 operator|->
-name|gdisp
+name|display
 argument_list|,
 name|x
 argument_list|,
@@ -4770,7 +4770,7 @@ argument_list|(
 name|iscissors
 argument_list|)
 operator|->
-name|gdisp
+name|display
 argument_list|,
 name|tx
 argument_list|,
@@ -5178,7 +5178,7 @@ name|iscissors
 decl_stmt|;
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 decl_stmt|;
 name|gint
 name|x
@@ -5223,11 +5223,11 @@ argument_list|(
 name|tool
 argument_list|)
 expr_stmt|;
-name|gdisp
+name|display
 operator|=
 name|tool
 operator|->
-name|gdisp
+name|display
 expr_stmt|;
 comment|/*  Get the bounding box  */
 name|xs
@@ -5240,7 +5240,7 @@ name|x1
 argument_list|,
 literal|0
 argument_list|,
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -5259,7 +5259,7 @@ name|y1
 argument_list|,
 literal|0
 argument_list|,
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -5278,7 +5278,7 @@ name|x2
 argument_list|,
 literal|0
 argument_list|,
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -5297,7 +5297,7 @@ name|y2
 argument_list|,
 literal|0
 argument_list|,
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -5386,7 +5386,7 @@ name|ewidth
 argument_list|,
 literal|0
 argument_list|,
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -5421,7 +5421,7 @@ name|eheight
 argument_list|,
 literal|0
 argument_list|,
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -5512,7 +5512,7 @@ name|gradient_map
 operator|=
 name|gradient_map_new
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)

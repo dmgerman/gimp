@@ -129,7 +129,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -152,7 +152,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -176,7 +176,7 @@ name|mask_empty
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -375,7 +375,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_flip_tool_modifier_key (GimpTool * tool,GdkModifierType key,gboolean press,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_flip_tool_modifier_key (GimpTool * tool,GdkModifierType key,gboolean press,GdkModifierType state,GimpDisplay * display)
 name|gimp_flip_tool_modifier_key
 parameter_list|(
 name|GimpTool
@@ -393,7 +393,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpFlipOptions
@@ -463,7 +463,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_flip_tool_cursor_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_flip_tool_cursor_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,GimpDisplay * display)
 name|gimp_flip_tool_cursor_update
 parameter_list|(
 name|GimpTool
@@ -479,7 +479,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpFlipOptions
@@ -506,7 +506,7 @@ if|if
 condition|(
 name|gimp_image_coords_in_active_drawable
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|,
@@ -520,7 +520,7 @@ name|selection
 init|=
 name|gimp_image_get_mask
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -627,7 +627,7 @@ name|coords
 argument_list|,
 name|state
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -637,7 +637,7 @@ begin_function
 specifier|static
 name|TileManager
 modifier|*
-DECL|function|gimp_flip_tool_transform (GimpTransformTool * trans_tool,GimpItem * active_item,gboolean mask_empty,GimpDisplay * gdisp)
+DECL|function|gimp_flip_tool_transform (GimpTransformTool * trans_tool,GimpItem * active_item,gboolean mask_empty,GimpDisplay * display)
 name|gimp_flip_tool_transform
 parameter_list|(
 name|GimpTransformTool
@@ -653,7 +653,7 @@ name|mask_empty
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpTransformOptions

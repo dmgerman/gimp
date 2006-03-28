@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ba545ce0103
+DECL|enum|__anon2754a3320103
 block|{
 DECL|enumerator|GIMP_HANDLE_SQUARE
 name|GIMP_HANDLE_SQUARE
@@ -128,12 +128,12 @@ DECL|member|parent_instance
 name|GimpTool
 name|parent_instance
 decl_stmt|;
-DECL|member|gdisp
+DECL|member|display
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 decl_stmt|;
-comment|/*  The display we are drawing to (may be                                *  a different one than tool->gdisp)                                */
+comment|/*  The display we are drawing to (may be                                *  a different one than tool->display)                                */
 DECL|member|paused_count
 name|gint
 name|paused_count
@@ -201,7 +201,7 @@ name|draw_tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -290,7 +290,7 @@ name|draw_tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|,
 name|gdouble
 name|x1
@@ -317,7 +317,7 @@ name|draw_tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|,
 name|gdouble
 name|x1
@@ -594,7 +594,7 @@ name|draw_tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|,
 name|gdouble
 name|x
@@ -636,7 +636,7 @@ name|draw_tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|,
 name|GimpVectors
 modifier|*
@@ -682,7 +682,7 @@ name|draw_tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|,
 name|GimpVectors
 modifier|*
@@ -735,7 +735,7 @@ name|draw_tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|,
 specifier|const
 name|GimpCoords

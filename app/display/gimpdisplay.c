@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a32c4780103
+DECL|enum|__anon2a50d10a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -329,7 +329,7 @@ name|gimp_display_flush_whenever
 parameter_list|(
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|,
 name|gboolean
 name|now
@@ -344,7 +344,7 @@ name|gimp_display_paint_area
 parameter_list|(
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|,
 name|gint
 name|x
@@ -492,39 +492,39 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_display_init (GimpDisplay * gdisp)
+DECL|function|gimp_display_init (GimpDisplay * display)
 name|gimp_display_init
 parameter_list|(
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
-name|gdisp
+name|display
 operator|->
 name|ID
 operator|=
 literal|0
 expr_stmt|;
-name|gdisp
+name|display
 operator|->
 name|image
 operator|=
 name|NULL
 expr_stmt|;
-name|gdisp
+name|display
 operator|->
 name|instance
 operator|=
 literal|0
 expr_stmt|;
-name|gdisp
+name|display
 operator|->
 name|shell
 operator|=
 name|NULL
 expr_stmt|;
-name|gdisp
+name|display
 operator|->
 name|update_areas
 operator|=
@@ -620,7 +620,7 @@ parameter_list|)
 block|{
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 init|=
 name|GIMP_DISPLAY
 argument_list|(
@@ -635,7 +635,7 @@ block|{
 case|case
 name|PROP_ID
 case|:
-name|gdisp
+name|display
 operator|->
 name|ID
 operator|=
@@ -694,7 +694,7 @@ parameter_list|)
 block|{
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 init|=
 name|GIMP_DISPLAY
 argument_list|(
@@ -713,7 +713,7 @@ name|g_value_set_int
 argument_list|(
 name|value
 argument_list|,
-name|gdisp
+name|display
 operator|->
 name|ID
 argument_list|)
@@ -726,7 +726,7 @@ name|g_value_set_object
 argument_list|(
 name|value
 argument_list|,
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -739,7 +739,7 @@ name|g_value_set_object
 argument_list|(
 name|value
 argument_list|,
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -1276,7 +1276,7 @@ parameter_list|)
 block|{
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -1288,7 +1288,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/*  If there isn't an interface, never create a gdisplay  */
+comment|/*  If there isn't an interface, never create a displaylay  */
 if|if
 condition|(
 name|image
@@ -1300,7 +1300,7 @@ condition|)
 return|return
 name|NULL
 return|;
-name|gdisp
+name|display
 operator|=
 name|g_object_new
 argument_list|(
@@ -1321,19 +1321,19 @@ expr_stmt|;
 comment|/*  refs the image  */
 name|gimp_display_connect
 argument_list|(
-name|gdisp
+name|display
 argument_list|,
 name|image
 argument_list|)
 expr_stmt|;
 comment|/*  create the shell for the image  */
-name|gdisp
+name|display
 operator|->
 name|shell
 operator|=
 name|gimp_display_shell_new
 argument_list|(
-name|gdisp
+name|display
 argument_list|,
 name|unit
 argument_list|,
@@ -1346,7 +1346,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -1355,7 +1355,7 @@ name|g_signal_connect
 argument_list|(
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -1369,23 +1369,23 @@ argument_list|(
 name|gimp_display_progress_canceled
 argument_list|)
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 return|return
-name|gdisp
+name|display
 return|;
 block|}
 end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_delete (GimpDisplay * gdisp)
+DECL|function|gimp_display_delete (GimpDisplay * display)
 name|gimp_display_delete
 parameter_list|(
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpTool
@@ -1396,14 +1396,14 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY
 argument_list|(
-name|gdisp
+name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* remove the display from the list */
 name|gimp_container_remove
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -1413,14 +1413,14 @@ name|displays
 argument_list|,
 name|GIMP_OBJECT
 argument_list|(
-name|gdisp
+name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  stop any active tool  */
 name|tool_manager_control_active
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -1428,14 +1428,14 @@ name|gimp
 argument_list|,
 name|HALT
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|active_tool
 operator|=
 name|tool_manager_get_active
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -1453,11 +1453,11 @@ name|active_tool
 operator|->
 name|focus_display
 operator|==
-name|gdisp
+name|display
 condition|)
 name|tool_manager_focus_display_active
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -1466,14 +1466,14 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/*  clear out the pointer to this gdisp from the active tool  */
+comment|/*  clear out the pointer to this display from the active tool  */
 if|if
 condition|(
 name|active_tool
 operator|->
-name|gdisp
+name|display
 operator|==
-name|gdisp
+name|display
 condition|)
 block|{
 name|active_tool
@@ -1484,27 +1484,27 @@ name|NULL
 expr_stmt|;
 name|active_tool
 operator|->
-name|gdisp
+name|display
 operator|=
 name|NULL
 expr_stmt|;
 block|}
 block|}
 comment|/*  free the update area lists  */
-name|gdisp
+name|display
 operator|->
 name|update_areas
 operator|=
 name|gimp_area_list_free
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|update_areas
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gdisp
+name|display
 operator|->
 name|shell
 condition|)
@@ -1513,12 +1513,12 @@ name|GtkWidget
 modifier|*
 name|shell
 init|=
-name|gdisp
+name|display
 operator|->
 name|shell
 decl_stmt|;
-comment|/*  set gdisp->shell to NULL *before* destroying the shell.        *  all callbacks in gimpdisplayshell-callbacks.c will check        *  this pointer and do nothing if the shell is in destruction.        */
-name|gdisp
+comment|/*  set display->shell to NULL *before* destroying the shell.        *  all callbacks in gimpdisplayshell-callbacks.c will check        *  this pointer and do nothing if the shell is in destruction.        */
+name|display
 operator|->
 name|shell
 operator|=
@@ -1533,12 +1533,12 @@ block|}
 comment|/*  unrefs the image  */
 name|gimp_display_disconnect
 argument_list|(
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -1546,19 +1546,19 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_display_get_ID (GimpDisplay * gdisp)
+DECL|function|gimp_display_get_ID (GimpDisplay * display)
 name|gimp_display_get_ID
 parameter_list|(
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY
 argument_list|(
-name|gdisp
+name|display
 argument_list|)
 argument_list|,
 operator|-
@@ -1566,7 +1566,7 @@ literal|1
 argument_list|)
 expr_stmt|;
 return|return
-name|gdisp
+name|display
 operator|->
 name|ID
 return|;
@@ -1626,7 +1626,7 @@ control|)
 block|{
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 init|=
 name|list
 operator|->
@@ -1634,14 +1634,14 @@ name|data
 decl_stmt|;
 if|if
 condition|(
-name|gdisp
+name|display
 operator|->
 name|ID
 operator|==
 name|ID
 condition|)
 return|return
-name|gdisp
+name|display
 return|;
 block|}
 return|return
@@ -1652,12 +1652,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_reconnect (GimpDisplay * gdisp,GimpImage * image)
+DECL|function|gimp_display_reconnect (GimpDisplay * display,GimpImage * image)
 name|gimp_display_reconnect
 parameter_list|(
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|,
 name|GimpImage
 modifier|*
@@ -1672,7 +1672,7 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY
 argument_list|(
-name|gdisp
+name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1687,7 +1687,7 @@ expr_stmt|;
 comment|/*  stop any active tool  */
 name|tool_manager_control_active
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -1695,14 +1695,14 @@ name|gimp
 argument_list|,
 name|HALT
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_disconnect
 argument_list|(
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -1712,19 +1712,19 @@ name|old_image
 operator|=
 name|g_object_ref
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
 expr_stmt|;
 name|gimp_display_disconnect
 argument_list|(
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|gimp_display_connect
 argument_list|(
-name|gdisp
+name|display
 argument_list|,
 name|image
 argument_list|)
@@ -1738,7 +1738,7 @@ name|gimp_display_shell_reconnect
 argument_list|(
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -1749,12 +1749,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_update_area (GimpDisplay * gdisp,gboolean now,gint x,gint y,gint w,gint h)
+DECL|function|gimp_display_update_area (GimpDisplay * display,gboolean now,gint x,gint y,gint w,gint h)
 name|gimp_display_update_area
 parameter_list|(
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|,
 name|gboolean
 name|now
@@ -1776,7 +1776,7 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY
 argument_list|(
-name|gdisp
+name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1787,7 +1787,7 @@ condition|)
 block|{
 name|gimp_display_paint_area
 argument_list|(
-name|gdisp
+name|display
 argument_list|,
 name|x
 argument_list|,
@@ -1813,7 +1813,7 @@ name|x
 argument_list|,
 literal|0
 argument_list|,
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -1826,7 +1826,7 @@ name|y
 argument_list|,
 literal|0
 argument_list|,
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -1841,7 +1841,7 @@ name|w
 argument_list|,
 literal|0
 argument_list|,
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -1856,7 +1856,7 @@ name|h
 argument_list|,
 literal|0
 argument_list|,
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -1864,13 +1864,13 @@ name|height
 argument_list|)
 argument_list|)
 decl_stmt|;
-name|gdisp
+name|display
 operator|->
 name|update_areas
 operator|=
 name|gimp_area_list_process
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|update_areas
 argument_list|,
@@ -1883,25 +1883,25 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_flush (GimpDisplay * gdisp)
+DECL|function|gimp_display_flush (GimpDisplay * display)
 name|gimp_display_flush
 parameter_list|(
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY
 argument_list|(
-name|gdisp
+name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_display_flush_whenever
 argument_list|(
-name|gdisp
+name|display
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1911,25 +1911,25 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_flush_now (GimpDisplay * gdisp)
+DECL|function|gimp_display_flush_now (GimpDisplay * display)
 name|gimp_display_flush_now
 parameter_list|(
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY
 argument_list|(
-name|gdisp
+name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_display_flush_whenever
 argument_list|(
-name|gdisp
+name|display
 argument_list|,
 name|TRUE
 argument_list|)
@@ -1944,12 +1944,12 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_display_flush_whenever (GimpDisplay * gdisp,gboolean now)
+DECL|function|gimp_display_flush_whenever (GimpDisplay * display,gboolean now)
 name|gimp_display_flush_whenever
 parameter_list|(
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|,
 name|gboolean
 name|now
@@ -1957,7 +1957,7 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|gdisp
+name|display
 operator|->
 name|update_areas
 condition|)
@@ -1970,7 +1970,7 @@ for|for
 control|(
 name|list
 operator|=
-name|gdisp
+name|display
 operator|->
 name|update_areas
 init|;
@@ -2017,7 +2017,7 @@ condition|)
 block|{
 name|gimp_display_paint_area
 argument_list|(
-name|gdisp
+name|display
 argument_list|,
 name|area
 operator|->
@@ -2050,13 +2050,13 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|gdisp
+name|display
 operator|->
 name|update_areas
 operator|=
 name|gimp_area_list_free
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|update_areas
 argument_list|)
@@ -2066,7 +2066,7 @@ name|gimp_display_shell_flush
 argument_list|(
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -2080,12 +2080,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_display_paint_area (GimpDisplay * gdisp,gint x,gint y,gint w,gint h)
+DECL|function|gimp_display_paint_area (GimpDisplay * display,gint x,gint y,gint w,gint h)
 name|gimp_display_paint_area
 parameter_list|(
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|,
 name|gint
 name|x
@@ -2106,7 +2106,7 @@ name|shell
 init|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -2138,7 +2138,7 @@ name|x
 argument_list|,
 literal|0
 argument_list|,
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -2153,7 +2153,7 @@ name|y
 argument_list|,
 literal|0
 argument_list|,
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -2170,7 +2170,7 @@ name|w
 argument_list|,
 literal|0
 argument_list|,
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -2187,7 +2187,7 @@ name|h
 argument_list|,
 literal|0
 argument_list|,
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->

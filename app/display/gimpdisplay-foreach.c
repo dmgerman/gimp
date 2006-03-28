@@ -558,7 +558,7 @@ condition|)
 block|{
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 init|=
 name|GIMP_LIST
 argument_list|(
@@ -573,7 +573,7 @@ name|data
 decl_stmt|;
 name|gimp_display_delete
 argument_list|(
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -705,7 +705,7 @@ control|)
 block|{
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 init|=
 name|list
 operator|->
@@ -713,7 +713,7 @@ name|data
 decl_stmt|;
 if|if
 condition|(
-name|gdisp
+name|display
 operator|->
 name|image
 operator|==
@@ -721,7 +721,7 @@ name|old
 condition|)
 name|gimp_display_reconnect
 argument_list|(
-name|gdisp
+name|display
 argument_list|,
 name|new
 argument_list|)

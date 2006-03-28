@@ -267,7 +267,7 @@ name|shell
 argument_list|,
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -282,7 +282,7 @@ name|shell
 argument_list|,
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->

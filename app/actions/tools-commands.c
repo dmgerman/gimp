@@ -167,7 +167,7 @@ name|context
 decl_stmt|;
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 decl_stmt|;
 name|gboolean
 name|rotate_layer
@@ -269,7 +269,7 @@ name|context
 argument_list|)
 expr_stmt|;
 block|}
-name|gdisp
+name|display
 operator|=
 name|gimp_context_get_display
 argument_list|(
@@ -278,13 +278,13 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gdisp
+name|display
 condition|)
 name|tool_manager_initialize_active
 argument_list|(
 name|gimp
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}

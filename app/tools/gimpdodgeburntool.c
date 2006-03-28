@@ -95,7 +95,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -118,7 +118,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -291,7 +291,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dodge_burn_tool_modifier_key (GimpTool * tool,GdkModifierType key,gboolean press,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_dodge_burn_tool_modifier_key (GimpTool * tool,GdkModifierType key,gboolean press,GdkModifierType state,GimpDisplay * display)
 name|gimp_dodge_burn_tool_modifier_key
 parameter_list|(
 name|GimpTool
@@ -309,7 +309,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpDodgeBurnOptions
@@ -398,7 +398,7 @@ name|press
 argument_list|,
 name|state
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -407,7 +407,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dodge_burn_tool_cursor_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_dodge_burn_tool_cursor_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,GimpDisplay * display)
 name|gimp_dodge_burn_tool_cursor_update
 parameter_list|(
 name|GimpTool
@@ -423,7 +423,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpDodgeBurnOptions
@@ -469,7 +469,7 @@ name|coords
 argument_list|,
 name|state
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}

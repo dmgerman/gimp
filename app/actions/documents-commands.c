@@ -1250,7 +1250,7 @@ parameter_list|)
 block|{
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 init|=
 name|data
 decl_stmt|;
@@ -1271,7 +1271,7 @@ name|gimp_object_get_name
 argument_list|(
 name|GIMP_OBJECT
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -1302,7 +1302,7 @@ name|gtk_window_present
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)

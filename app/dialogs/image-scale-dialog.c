@@ -337,7 +337,7 @@ name|image
 expr_stmt|;
 name|dialog
 operator|->
-name|gdisp
+name|display
 operator|=
 name|display
 expr_stmt|;

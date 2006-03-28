@@ -673,7 +673,7 @@ name|image
 init|=
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 decl_stmt|;
@@ -882,7 +882,7 @@ argument_list|)
 argument_list|,
 name|shell
 operator|->
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -928,7 +928,7 @@ name|image
 init|=
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 decl_stmt|;
@@ -1029,7 +1029,7 @@ argument_list|)
 argument_list|,
 name|shell
 operator|->
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -1079,7 +1079,7 @@ name|image
 init|=
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 decl_stmt|;
@@ -1166,7 +1166,7 @@ argument_list|)
 argument_list|,
 name|shell
 operator|->
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -1202,7 +1202,7 @@ name|image
 init|=
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 decl_stmt|;
@@ -1309,7 +1309,7 @@ argument_list|)
 argument_list|,
 name|shell
 operator|->
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -1463,7 +1463,7 @@ name|image
 init|=
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 decl_stmt|;
@@ -1560,7 +1560,7 @@ argument_list|)
 argument_list|,
 name|shell
 operator|->
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -1605,7 +1605,7 @@ name|image
 init|=
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 decl_stmt|;
@@ -1872,7 +1872,7 @@ name|context
 argument_list|,
 name|shell
 operator|->
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -1920,7 +1920,7 @@ name|dest_image
 init|=
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 decl_stmt|;
@@ -2179,7 +2179,7 @@ argument_list|)
 argument_list|,
 name|shell
 operator|->
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -2225,7 +2225,7 @@ name|image
 init|=
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 decl_stmt|;
@@ -2419,7 +2419,7 @@ argument_list|)
 argument_list|,
 name|shell
 operator|->
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}

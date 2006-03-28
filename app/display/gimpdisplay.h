@@ -107,7 +107,7 @@ DECL|member|ID
 name|gint
 name|ID
 decl_stmt|;
-comment|/*  unique identifier for this gdisplay     */
+comment|/*  unique identifier for this display     */
 DECL|member|image
 name|GimpImage
 modifier|*
@@ -118,20 +118,20 @@ DECL|member|instance
 name|gint
 name|instance
 decl_stmt|;
-comment|/*  the instance # of this gdisplay as      */
+comment|/*  the instance # of this display as      */
 comment|/*  taken from the image at creation       */
 DECL|member|shell
 name|GtkWidget
 modifier|*
 name|shell
 decl_stmt|;
-comment|/*  shell widget for this gdisplay          */
+comment|/*  shell widget for this display          */
 DECL|member|update_areas
 name|GSList
 modifier|*
 name|update_areas
 decl_stmt|;
-comment|/*  Update areas list                       */
+comment|/*  Update areas list                      */
 block|}
 struct|;
 end_struct
@@ -191,7 +191,7 @@ name|gimp_display_delete
 parameter_list|(
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -202,7 +202,7 @@ name|gimp_display_get_ID
 parameter_list|(
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -228,7 +228,7 @@ name|gimp_display_reconnect
 parameter_list|(
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|,
 name|GimpImage
 modifier|*
@@ -243,7 +243,7 @@ name|gimp_display_update_area
 parameter_list|(
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|,
 name|gboolean
 name|now
@@ -269,7 +269,7 @@ name|gimp_display_flush
 parameter_list|(
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -280,7 +280,7 @@ name|gimp_display_flush_now
 parameter_list|(
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -276,7 +276,7 @@ name|action
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -302,7 +302,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -325,7 +325,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1013,7 +1013,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_text_tool_control (GimpTool * tool,GimpToolAction action,GimpDisplay * gdisp)
+DECL|function|gimp_text_tool_control (GimpTool * tool,GimpToolAction action,GimpDisplay * display)
 name|gimp_text_tool_control
 parameter_list|(
 name|GimpTool
@@ -1025,7 +1025,7 @@ name|action
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpTextTool
@@ -1074,7 +1074,7 @@ name|tool
 argument_list|,
 name|action
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -1083,7 +1083,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_text_tool_button_press (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_text_tool_button_press (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_text_tool_button_press
 parameter_list|(
 name|GimpTool
@@ -1102,7 +1102,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpTextTool
@@ -1135,9 +1135,9 @@ argument_list|)
 expr_stmt|;
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|=
-name|gdisp
+name|display
 expr_stmt|;
 name|text_tool
 operator|->
@@ -1159,7 +1159,7 @@ name|drawable
 operator|=
 name|gimp_image_active_drawable
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -1291,7 +1291,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_text_tool_cursor_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_text_tool_cursor_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,GimpDisplay * display)
 name|gimp_text_tool_cursor_update
 parameter_list|(
 name|GimpTool
@@ -1307,7 +1307,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 comment|/* FIXME: should do something fancy here... */
@@ -1324,7 +1324,7 @@ name|coords
 argument_list|,
 name|state
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -2881,7 +2881,7 @@ name|image
 operator|=
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 expr_stmt|;
@@ -3525,7 +3525,7 @@ argument_list|)
 argument_list|,
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|,

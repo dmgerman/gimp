@@ -509,18 +509,18 @@ condition|)
 block|{
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 init|=
 name|tool_manager
 operator|->
 name|active_tool
 operator|->
-name|gdisp
+name|display
 decl_stmt|;
 if|if
 condition|(
 operator|!
-name|gdisp
+name|display
 operator|&&
 name|GIMP_IS_DRAW_TOOL
 argument_list|(
@@ -529,7 +529,7 @@ operator|->
 name|active_tool
 argument_list|)
 condition|)
-name|gdisp
+name|display
 operator|=
 name|GIMP_DRAW_TOOL
 argument_list|(
@@ -538,11 +538,11 @@ operator|->
 name|active_tool
 argument_list|)
 operator|->
-name|gdisp
+name|display
 expr_stmt|;
 if|if
 condition|(
-name|gdisp
+name|display
 condition|)
 name|tool_manager_control_active
 argument_list|(
@@ -550,7 +550,7 @@ name|gimp
 argument_list|,
 name|HALT
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|tool_manager_focus_display_active
@@ -743,7 +743,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|tool_manager_initialize_active (Gimp * gimp,GimpDisplay * gdisp)
+DECL|function|tool_manager_initialize_active (Gimp * gimp,GimpDisplay * display)
 name|tool_manager_initialize_active
 parameter_list|(
 name|Gimp
@@ -752,7 +752,7 @@ name|gimp
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpToolManager
@@ -777,7 +777,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY
 argument_list|(
-name|gdisp
+name|display
 argument_list|)
 argument_list|,
 name|FALSE
@@ -809,7 +809,7 @@ name|gimp_tool_initialize
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 condition|)
 block|{
@@ -819,7 +819,7 @@ name|drawable
 operator|=
 name|gimp_image_active_drawable
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -837,7 +837,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|tool_manager_control_active (Gimp * gimp,GimpToolAction action,GimpDisplay * gdisp)
+DECL|function|tool_manager_control_active (Gimp * gimp,GimpToolAction action,GimpDisplay * display)
 name|tool_manager_control_active
 parameter_list|(
 name|Gimp
@@ -849,7 +849,7 @@ name|action
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpToolManager
@@ -881,16 +881,16 @@ condition|)
 return|return;
 if|if
 condition|(
-name|gdisp
+name|display
 operator|&&
 operator|(
 name|tool_manager
 operator|->
 name|active_tool
 operator|->
-name|gdisp
+name|display
 operator|==
-name|gdisp
+name|display
 operator|||
 operator|(
 name|GIMP_IS_DRAW_TOOL
@@ -907,9 +907,9 @@ operator|->
 name|active_tool
 argument_list|)
 operator|->
-name|gdisp
+name|display
 operator|==
-name|gdisp
+name|display
 operator|)
 operator|)
 condition|)
@@ -922,7 +922,7 @@ name|active_tool
 argument_list|,
 name|action
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -960,7 +960,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|tool_manager_button_press_active (Gimp * gimp,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|tool_manager_button_press_active (Gimp * gimp,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|tool_manager_button_press_active
 parameter_list|(
 name|Gimp
@@ -979,7 +979,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpToolManager
@@ -1020,7 +1020,7 @@ name|time
 argument_list|,
 name|state
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -1029,7 +1029,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|tool_manager_button_release_active (Gimp * gimp,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|tool_manager_button_release_active (Gimp * gimp,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|tool_manager_button_release_active
 parameter_list|(
 name|Gimp
@@ -1048,7 +1048,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpToolManager
@@ -1089,7 +1089,7 @@ name|time
 argument_list|,
 name|state
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -1098,7 +1098,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|tool_manager_motion_active (Gimp * gimp,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|tool_manager_motion_active (Gimp * gimp,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|tool_manager_motion_active
 parameter_list|(
 name|Gimp
@@ -1117,7 +1117,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpToolManager
@@ -1158,7 +1158,7 @@ name|time
 argument_list|,
 name|state
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -1167,7 +1167,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|tool_manager_key_press_active (Gimp * gimp,GdkEventKey * kevent,GimpDisplay * gdisp)
+DECL|function|tool_manager_key_press_active (Gimp * gimp,GdkEventKey * kevent,GimpDisplay * display)
 name|tool_manager_key_press_active
 parameter_list|(
 name|Gimp
@@ -1180,7 +1180,7 @@ name|kevent
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpToolManager
@@ -1220,7 +1220,7 @@ name|active_tool
 argument_list|,
 name|kevent
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 return|;
 block|}
@@ -1232,7 +1232,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|tool_manager_focus_display_active (Gimp * gimp,GimpDisplay * gdisp)
+DECL|function|tool_manager_focus_display_active (Gimp * gimp,GimpDisplay * display)
 name|tool_manager_focus_display_active
 parameter_list|(
 name|Gimp
@@ -1241,7 +1241,7 @@ name|gimp
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpToolManager
@@ -1276,7 +1276,7 @@ name|tool_manager
 operator|->
 name|active_tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -1285,7 +1285,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|tool_manager_modifier_state_active (Gimp * gimp,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|tool_manager_modifier_state_active (Gimp * gimp,GdkModifierType state,GimpDisplay * display)
 name|tool_manager_modifier_state_active
 parameter_list|(
 name|Gimp
@@ -1297,7 +1297,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpToolManager
@@ -1334,7 +1334,7 @@ name|active_tool
 argument_list|,
 name|state
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -1343,7 +1343,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|tool_manager_oper_update_active (Gimp * gimp,GimpCoords * coords,GdkModifierType state,gboolean proximity,GimpDisplay * gdisp)
+DECL|function|tool_manager_oper_update_active (Gimp * gimp,GimpCoords * coords,GdkModifierType state,gboolean proximity,GimpDisplay * display)
 name|tool_manager_oper_update_active
 parameter_list|(
 name|Gimp
@@ -1362,7 +1362,7 @@ name|proximity
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpToolManager
@@ -1403,7 +1403,7 @@ name|state
 argument_list|,
 name|proximity
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -1412,7 +1412,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|tool_manager_cursor_update_active (Gimp * gimp,GimpCoords * coords,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|tool_manager_cursor_update_active (Gimp * gimp,GimpCoords * coords,GdkModifierType state,GimpDisplay * display)
 name|tool_manager_cursor_update_active
 parameter_list|(
 name|Gimp
@@ -1428,7 +1428,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpToolManager
@@ -1467,7 +1467,7 @@ name|coords
 argument_list|,
 name|state
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -1936,18 +1936,18 @@ condition|)
 block|{
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 init|=
 name|active_tool
 operator|->
-name|gdisp
+name|display
 decl_stmt|;
 if|if
 condition|(
 operator|!
-name|gdisp
+name|display
 operator|||
-name|gdisp
+name|display
 operator|->
 name|image
 operator|!=
@@ -1960,20 +1960,20 @@ argument_list|(
 name|active_tool
 argument_list|)
 condition|)
-name|gdisp
+name|display
 operator|=
 name|GIMP_DRAW_TOOL
 argument_list|(
 name|active_tool
 argument_list|)
 operator|->
-name|gdisp
+name|display
 expr_stmt|;
 if|if
 condition|(
-name|gdisp
+name|display
 operator|&&
-name|gdisp
+name|display
 operator|->
 name|image
 operator|==

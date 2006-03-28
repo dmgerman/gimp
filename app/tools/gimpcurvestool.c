@@ -262,7 +262,7 @@ name|tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -288,7 +288,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -308,7 +308,7 @@ name|kevent
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -334,7 +334,7 @@ name|proximity
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1060,7 +1060,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_curves_tool_initialize (GimpTool * tool,GimpDisplay * gdisp)
+DECL|function|gimp_curves_tool_initialize (GimpTool * tool,GimpDisplay * display)
 name|gimp_curves_tool_initialize
 parameter_list|(
 name|GimpTool
@@ -1069,7 +1069,7 @@ name|tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpCurvesTool
@@ -1089,7 +1089,7 @@ name|drawable
 operator|=
 name|gimp_image_active_drawable
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -1194,7 +1194,7 @@ name|initialize
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 comment|/*  always pick colors  */
@@ -1308,7 +1308,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_curves_tool_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_curves_tool_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_curves_tool_button_release
 parameter_list|(
 name|GimpTool
@@ -1327,7 +1327,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpCurvesTool
@@ -1347,7 +1347,7 @@ name|drawable
 operator|=
 name|gimp_image_active_drawable
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -1459,7 +1459,7 @@ name|time
 argument_list|,
 name|state
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -1467,7 +1467,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_curves_tool_key_press (GimpTool * tool,GdkEventKey * kevent,GimpDisplay * gdisp)
+DECL|function|gimp_curves_tool_key_press (GimpTool * tool,GdkEventKey * kevent,GimpDisplay * display)
 name|gimp_curves_tool_key_press
 parameter_list|(
 name|GimpTool
@@ -1480,7 +1480,7 @@ name|kevent
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 return|return
@@ -1500,7 +1500,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_curves_tool_oper_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,gboolean proximity,GimpDisplay * gdisp)
+DECL|function|gimp_curves_tool_oper_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,gboolean proximity,GimpDisplay * display)
 name|gimp_curves_tool_oper_update
 parameter_list|(
 name|GimpTool
@@ -1519,7 +1519,7 @@ name|proximity
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpColorPickMode
@@ -1549,14 +1549,14 @@ name|state
 argument_list|,
 name|proximity
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|gimp_tool_pop_status
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 if|if
@@ -1617,7 +1617,7 @@ name|gimp_tool_push_status
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|status
 argument_list|)

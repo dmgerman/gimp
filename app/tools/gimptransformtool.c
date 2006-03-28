@@ -296,7 +296,7 @@ name|tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -315,7 +315,7 @@ name|action
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -341,7 +341,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -367,7 +367,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -393,7 +393,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -413,7 +413,7 @@ name|kevent
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -438,7 +438,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -464,7 +464,7 @@ name|proximity
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -487,7 +487,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -523,7 +523,7 @@ name|mask_empty
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -551,7 +551,7 @@ name|tr_tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -579,7 +579,7 @@ name|tr_tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -595,7 +595,7 @@ name|tr_tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1419,7 +1419,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_transform_tool_initialize (GimpTool * tool,GimpDisplay * gdisp)
+DECL|function|gimp_transform_tool_initialize (GimpTool * tool,GimpDisplay * display)
 name|gimp_transform_tool_initialize
 parameter_list|(
 name|GimpTool
@@ -1428,7 +1428,7 @@ name|tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpTransformTool
@@ -1442,11 +1442,11 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|gdisp
+name|display
 operator|!=
 name|tool
 operator|->
-name|gdisp
+name|display
 condition|)
 block|{
 name|gint
@@ -1455,9 +1455,9 @@ decl_stmt|;
 comment|/*  Set the pointer to the active display  */
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|=
-name|gdisp
+name|display
 expr_stmt|;
 name|tool
 operator|->
@@ -1465,7 +1465,7 @@ name|drawable
 operator|=
 name|gimp_image_active_drawable
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -1488,14 +1488,14 @@ name|gimp_transform_tool_bounds
 argument_list|(
 name|tr_tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|gimp_transform_tool_prepare
 argument_list|(
 name|tr_tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 comment|/*  Recalculate the transform tool  */
@@ -1503,7 +1503,7 @@ name|gimp_transform_tool_recalc
 argument_list|(
 name|tr_tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 comment|/*  start drawing the bounding box and handles...  */
@@ -1514,7 +1514,7 @@ argument_list|(
 name|tool
 argument_list|)
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|tr_tool
@@ -1561,7 +1561,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_transform_tool_control (GimpTool * tool,GimpToolAction action,GimpDisplay * gdisp)
+DECL|function|gimp_transform_tool_control (GimpTool * tool,GimpToolAction action,GimpDisplay * display)
 name|gimp_transform_tool_control
 parameter_list|(
 name|GimpTool
@@ -1573,7 +1573,7 @@ name|action
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpTransformTool
@@ -1601,14 +1601,14 @@ name|gimp_transform_tool_bounds
 argument_list|(
 name|tr_tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|gimp_transform_tool_recalc
 argument_list|(
 name|tr_tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1637,7 +1637,7 @@ name|tool
 argument_list|,
 name|action
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -1646,7 +1646,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_transform_tool_button_press (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_transform_tool_button_press (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_transform_tool_button_press
 parameter_list|(
 name|GimpTool
@@ -1665,7 +1665,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpTransformTool
@@ -1699,7 +1699,7 @@ name|state
 argument_list|,
 name|TRUE
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|tr_tool
@@ -1739,7 +1739,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_transform_tool_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_transform_tool_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_transform_tool_button_release
 parameter_list|(
 name|GimpTool
@@ -1758,7 +1758,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpTransformTool
@@ -1817,7 +1817,7 @@ name|gimp_transform_tool_doit
 argument_list|(
 name|tr_tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -1871,7 +1871,7 @@ name|gimp_transform_tool_bounds
 argument_list|(
 name|tr_tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 comment|/*  recalculate the tool's transformation matrix  */
@@ -1879,7 +1879,7 @@ name|gimp_transform_tool_recalc
 argument_list|(
 name|tr_tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_resume
@@ -1904,7 +1904,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_transform_tool_motion (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_transform_tool_motion (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_transform_tool_motion
 parameter_list|(
 name|GimpTool
@@ -1923,7 +1923,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpTransformTool
@@ -2005,7 +2005,7 @@ name|motion
 argument_list|(
 name|tr_tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|gimp_transform_tool_expose_preview
@@ -2017,7 +2017,7 @@ name|gimp_transform_tool_recalc
 argument_list|(
 name|tr_tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -2059,7 +2059,7 @@ end_define
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_transform_tool_key_press (GimpTool * tool,GdkEventKey * kevent,GimpDisplay * gdisp)
+DECL|function|gimp_transform_tool_key_press (GimpTool * tool,GdkEventKey * kevent,GimpDisplay * display)
 name|gimp_transform_tool_key_press
 parameter_list|(
 name|GimpTool
@@ -2072,7 +2072,7 @@ name|kevent
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpTransformTool
@@ -2095,11 +2095,11 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|gdisp
+name|display
 operator|==
 name|draw_tool
 operator|->
-name|gdisp
+name|display
 condition|)
 block|{
 switch|switch
@@ -2171,7 +2171,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_transform_tool_modifier_key (GimpTool * tool,GdkModifierType key,gboolean press,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_transform_tool_modifier_key (GimpTool * tool,GdkModifierType key,gboolean press,GdkModifierType state,GimpDisplay * display)
 name|gimp_transform_tool_modifier_key
 parameter_list|(
 name|GimpTool
@@ -2189,7 +2189,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpTransformOptions
@@ -2258,7 +2258,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_transform_tool_oper_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,gboolean proximity,GimpDisplay * gdisp)
+DECL|function|gimp_transform_tool_oper_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,gboolean proximity,GimpDisplay * display)
 name|gimp_transform_tool_oper_update
 parameter_list|(
 name|GimpTool
@@ -2277,7 +2277,7 @@ name|proximity
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpTransformTool
@@ -2308,11 +2308,11 @@ condition|)
 return|return;
 if|if
 condition|(
-name|gdisp
+name|display
 operator|==
 name|tool
 operator|->
-name|gdisp
+name|display
 condition|)
 block|{
 name|gdouble
@@ -2327,7 +2327,7 @@ name|gimp_draw_tool_calc_distance
 argument_list|(
 name|draw_tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|coords
 operator|->
@@ -2358,7 +2358,7 @@ name|gimp_draw_tool_calc_distance
 argument_list|(
 name|draw_tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|coords
 operator|->
@@ -2401,7 +2401,7 @@ name|gimp_draw_tool_calc_distance
 argument_list|(
 name|draw_tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|coords
 operator|->
@@ -2444,7 +2444,7 @@ name|gimp_draw_tool_calc_distance
 argument_list|(
 name|draw_tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|coords
 operator|->
@@ -2487,7 +2487,7 @@ name|gimp_draw_tool_on_handle
 argument_list|(
 name|draw_tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|coords
 operator|->
@@ -2531,7 +2531,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_transform_tool_cursor_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_transform_tool_cursor_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,GimpDisplay * display)
 name|gimp_transform_tool_cursor_update
 parameter_list|(
 name|GimpTool
@@ -2547,7 +2547,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpTransformTool
@@ -2587,7 +2587,7 @@ name|selection
 init|=
 name|gimp_image_get_mask
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -2616,7 +2616,7 @@ if|if
 condition|(
 name|gimp_image_coords_in_active_drawable
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|,
@@ -2695,7 +2695,7 @@ if|if
 condition|(
 name|gimp_image_get_active_vectors
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -2761,7 +2761,7 @@ name|coords
 argument_list|,
 name|state
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -3367,7 +3367,7 @@ name|gimp_image_get_active_vectors
 argument_list|(
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -3536,7 +3536,7 @@ begin_function
 specifier|static
 name|TileManager
 modifier|*
-DECL|function|gimp_transform_tool_real_transform (GimpTransformTool * tr_tool,GimpItem * active_item,gboolean mask_empty,GimpDisplay * gdisp)
+DECL|function|gimp_transform_tool_real_transform (GimpTransformTool * tr_tool,GimpItem * active_item,gboolean mask_empty,GimpDisplay * display)
 name|gimp_transform_tool_real_transform
 parameter_list|(
 name|GimpTransformTool
@@ -3552,7 +3552,7 @@ name|mask_empty
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpTool
@@ -3626,7 +3626,7 @@ name|gimp_progress_start
 argument_list|(
 name|GIMP_PROGRESS
 argument_list|(
-name|gdisp
+name|display
 argument_list|)
 argument_list|,
 name|tr_tool
@@ -3895,7 +3895,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_transform_tool_doit (GimpTransformTool * tr_tool,GimpDisplay * gdisp)
+DECL|function|gimp_transform_tool_doit (GimpTransformTool * tr_tool,GimpDisplay * display)
 name|gimp_transform_tool_doit
 parameter_list|(
 name|GimpTransformTool
@@ -3904,7 +3904,7 @@ name|tr_tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpTool
@@ -3976,7 +3976,7 @@ operator|*
 operator|)
 name|gimp_image_active_drawable
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -3993,7 +3993,7 @@ operator|*
 operator|)
 name|gimp_image_get_mask
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -4010,7 +4010,7 @@ operator|*
 operator|)
 name|gimp_image_get_active_vectors
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -4029,7 +4029,7 @@ name|gimp_channel_is_empty
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -4041,7 +4041,7 @@ name|gimp_display_shell_get_show_transform
 argument_list|(
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -4052,7 +4052,7 @@ name|gimp_display_shell_set_show_transform
 argument_list|(
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -4069,7 +4069,7 @@ expr_stmt|;
 block|}
 name|gimp_set_busy
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -4098,7 +4098,7 @@ expr_stmt|;
 comment|/*  Start a transform undo group  */
 name|gimp_image_undo_group_start
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|,
@@ -4128,7 +4128,7 @@ name|drawable
 operator|=
 name|gimp_image_active_drawable
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -4216,28 +4216,28 @@ name|active_item
 argument_list|,
 name|mask_empty
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|gimp_transform_tool_prepare
 argument_list|(
 name|tr_tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|gimp_transform_tool_bounds
 argument_list|(
 name|tr_tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|gimp_transform_tool_recalc
 argument_list|(
 name|tr_tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -4339,14 +4339,14 @@ name|drawable
 operator|=
 name|gimp_image_active_drawable
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
 expr_stmt|;
 name|gimp_transform_tool_push_undo
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|,
@@ -4371,7 +4371,7 @@ expr_stmt|;
 comment|/*  push the undo group end  */
 name|gimp_image_undo_group_end
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -4388,7 +4388,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_unset_busy
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -4397,7 +4397,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -4825,7 +4825,7 @@ argument_list|(
 name|tr_tool
 argument_list|)
 operator|->
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -5159,7 +5159,7 @@ argument_list|(
 name|tr_tool
 argument_list|)
 operator|->
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -5248,7 +5248,7 @@ argument_list|)
 expr_stmt|;
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|=
 name|NULL
 expr_stmt|;
@@ -5264,7 +5264,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_transform_tool_bounds (GimpTransformTool * tr_tool,GimpDisplay * gdisp)
+DECL|function|gimp_transform_tool_bounds (GimpTransformTool * tr_tool,GimpDisplay * display)
 name|gimp_transform_tool_bounds
 parameter_list|(
 name|GimpTransformTool
@@ -5273,7 +5273,7 @@ name|tr_tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpTransformOptions
@@ -5369,7 +5369,7 @@ name|drawable
 init|=
 name|gimp_image_active_drawable
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -5455,7 +5455,7 @@ name|gimp_channel_bounds
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -6124,7 +6124,7 @@ operator|->
 name|shell_desc
 argument_list|,
 name|NULL
-comment|/* tool->gdisp->shell */
+comment|/* tool->display->shell */
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
@@ -6265,7 +6265,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_transform_tool_prepare (GimpTransformTool * tr_tool,GimpDisplay * gdisp)
+DECL|function|gimp_transform_tool_prepare (GimpTransformTool * tr_tool,GimpDisplay * display)
 name|gimp_transform_tool_prepare
 parameter_list|(
 name|GimpTransformTool
@@ -6274,7 +6274,7 @@ name|tr_tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpTransformOptions
@@ -6327,7 +6327,7 @@ name|gimp_display_shell_set_show_transform
 argument_list|(
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -6340,7 +6340,7 @@ name|gimp_display_shell_set_show_transform
 argument_list|(
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -6370,7 +6370,7 @@ name|GIMP_VIEWABLE
 argument_list|(
 name|gimp_image_active_drawable
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -6410,7 +6410,7 @@ name|prepare
 argument_list|(
 name|tr_tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -6418,7 +6418,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_transform_tool_recalc (GimpTransformTool * tr_tool,GimpDisplay * gdisp)
+DECL|function|gimp_transform_tool_recalc (GimpTransformTool * tr_tool,GimpDisplay * display)
 name|gimp_transform_tool_recalc
 parameter_list|(
 name|GimpTransformTool
@@ -6427,7 +6427,7 @@ name|tr_tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 if|if
@@ -6448,7 +6448,7 @@ name|recalc
 argument_list|(
 name|tr_tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|gimp_transform_tool_transform_bounding_box
@@ -6562,7 +6562,7 @@ name|tr_tool
 argument_list|,
 name|tool
 operator|->
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 comment|/*  recalculate the tool's transformation matrix  */
@@ -6572,7 +6572,7 @@ name|tr_tool
 argument_list|,
 name|tool
 operator|->
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 comment|/* update preview */
@@ -6603,7 +6603,7 @@ argument_list|(
 name|tr_tool
 argument_list|)
 operator|->
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 break|break;
@@ -6688,7 +6688,7 @@ argument_list|(
 name|tr_tool
 argument_list|)
 operator|->
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 comment|/*  recalculate the tool's transformation matrix  */
@@ -6701,7 +6701,7 @@ argument_list|(
 name|tr_tool
 argument_list|)
 operator|->
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_resume
@@ -6760,7 +6760,7 @@ argument_list|(
 name|tr_tool
 argument_list|)
 operator|->
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)

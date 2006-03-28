@@ -258,7 +258,7 @@ name|shell
 argument_list|,
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -266,7 +266,7 @@ name|width
 argument_list|,
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -471,7 +471,7 @@ name|list
 operator|=
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -602,7 +602,7 @@ name|GIMP_GRID
 argument_list|(
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -666,7 +666,7 @@ name|width
 operator|=
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -676,7 +676,7 @@ name|height
 operator|=
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -1838,7 +1838,7 @@ name|g_list_index
 argument_list|(
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -1889,7 +1889,7 @@ name|list
 operator|=
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -2169,7 +2169,7 @@ name|GIMP_LIST
 argument_list|(
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -2345,7 +2345,7 @@ name|shell
 argument_list|,
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -2360,7 +2360,7 @@ name|shell
 argument_list|,
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -2626,7 +2626,7 @@ name|gimp_image_invalidate_without_render
 argument_list|(
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|,

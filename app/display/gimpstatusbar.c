@@ -2178,7 +2178,7 @@ name|image
 init|=
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 decl_stmt|;
@@ -2343,7 +2343,7 @@ name|image
 init|=
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 decl_stmt|;
@@ -2934,7 +2934,7 @@ name|statusbar
 operator|->
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -2946,7 +2946,7 @@ name|statusbar
 operator|->
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -3040,7 +3040,7 @@ name|image
 init|=
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 decl_stmt|;

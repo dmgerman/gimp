@@ -195,7 +195,7 @@ name|GIMP_VIEWABLE
 argument_list|(
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)

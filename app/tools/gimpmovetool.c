@@ -176,7 +176,7 @@ name|action
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -202,7 +202,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -228,7 +228,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -254,7 +254,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -279,7 +279,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -305,7 +305,7 @@ name|proximity
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -328,7 +328,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -356,7 +356,7 @@ name|move
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|,
 name|GimpOrientationType
 name|orientation
@@ -628,7 +628,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_move_tool_control (GimpTool * tool,GimpToolAction action,GimpDisplay * gdisp)
+DECL|function|gimp_move_tool_control (GimpTool * tool,GimpToolAction action,GimpDisplay * display)
 name|gimp_move_tool_control
 parameter_list|(
 name|GimpTool
@@ -640,7 +640,7 @@ name|action
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpMoveTool
@@ -658,7 +658,7 @@ name|shell
 init|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -750,7 +750,7 @@ name|tool
 argument_list|,
 name|action
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -759,7 +759,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_move_tool_button_press (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_move_tool_button_press (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_move_tool_button_press
 parameter_list|(
 name|GimpTool
@@ -778,7 +778,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpMoveTool
@@ -796,7 +796,7 @@ name|shell
 init|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -816,9 +816,9 @@ argument_list|)
 decl_stmt|;
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|=
-name|gdisp
+name|display
 expr_stmt|;
 name|move
 operator|->
@@ -880,7 +880,7 @@ argument_list|(
 name|tool
 argument_list|)
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|coords
 argument_list|,
@@ -909,14 +909,14 @@ name|old_active_vectors
 operator|=
 name|gimp_image_get_active_vectors
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
 expr_stmt|;
 name|gimp_image_set_active_vectors
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|,
@@ -955,7 +955,7 @@ name|snap_distance
 operator|=
 name|GIMP_DISPLAY_CONFIG
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -978,7 +978,7 @@ name|guide
 operator|=
 name|gimp_image_find_guide
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|,
@@ -1065,14 +1065,14 @@ argument_list|(
 name|tool
 argument_list|)
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|gimp_tool_push_status_length
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|_
 argument_list|(
@@ -1101,7 +1101,7 @@ name|layer
 operator|=
 name|gimp_image_pick_correlate_layer
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|,
@@ -1120,7 +1120,7 @@ if|if
 condition|(
 name|gimp_image_floating_sel
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -1139,7 +1139,7 @@ name|floating_layer
 operator|=
 name|gimp_image_floating_sel
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -1161,14 +1161,14 @@ name|old_active_layer
 operator|=
 name|gimp_image_get_active_layer
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
 expr_stmt|;
 name|gimp_image_set_active_layer
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|,
@@ -1198,7 +1198,7 @@ if|if
 condition|(
 name|gimp_image_get_active_vectors
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -1207,7 +1207,7 @@ name|gimp_edit_selection_tool_start
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|coords
 argument_list|,
@@ -1227,7 +1227,7 @@ name|gimp_channel_is_empty
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -1237,7 +1237,7 @@ name|gimp_edit_selection_tool_start
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|coords
 argument_list|,
@@ -1257,7 +1257,7 @@ name|drawable
 init|=
 name|gimp_image_active_drawable
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -1273,7 +1273,7 @@ name|gimp_edit_selection_tool_start
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|coords
 argument_list|,
@@ -1294,7 +1294,7 @@ name|gimp_edit_selection_tool_start
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|coords
 argument_list|,
@@ -1315,7 +1315,7 @@ name|gimp_edit_selection_tool_start
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|coords
 argument_list|,
@@ -1333,7 +1333,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_move_tool_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_move_tool_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_move_tool_button_release
 parameter_list|(
 name|GimpTool
@@ -1352,7 +1352,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpMoveTool
@@ -1370,7 +1370,7 @@ name|shell
 init|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -1381,7 +1381,7 @@ name|config
 init|=
 name|GIMP_GUI_CONFIG
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -1431,7 +1431,7 @@ name|gimp_tool_pop_status
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|gimp_tool_control_set_scroll_lock
@@ -1587,7 +1587,7 @@ condition|)
 block|{
 name|gimp_image_remove_guide
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|,
@@ -1617,7 +1617,7 @@ condition|)
 block|{
 name|gimp_image_move_guide
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|,
@@ -1651,7 +1651,7 @@ name|guide
 operator|=
 name|gimp_image_add_hguide
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|,
@@ -1672,7 +1672,7 @@ name|guide
 operator|=
 name|gimp_image_add_vguide
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|,
@@ -1700,7 +1700,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -1767,7 +1767,7 @@ condition|)
 block|{
 name|gimp_image_set_active_layer
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|,
@@ -1792,7 +1792,7 @@ condition|)
 block|{
 name|gimp_image_set_active_vectors
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|,
@@ -1836,7 +1836,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -1850,7 +1850,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_move_tool_motion (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_move_tool_motion (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_move_tool_motion
 parameter_list|(
 name|GimpTool
@@ -1869,7 +1869,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpMoveTool
@@ -1887,7 +1887,7 @@ name|shell
 init|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -2115,7 +2115,7 @@ name|gimp_tool_pop_status
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 if|if
@@ -2127,7 +2127,7 @@ name|gimp_tool_push_status
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|move
 operator|->
@@ -2151,7 +2151,7 @@ name|gimp_tool_push_status_length
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|move
 operator|->
@@ -2187,7 +2187,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_move_tool_modifier_key (GimpTool * tool,GdkModifierType key,gboolean press,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_move_tool_modifier_key (GimpTool * tool,GdkModifierType key,gboolean press,GdkModifierType state,GimpDisplay * display)
 name|gimp_move_tool_modifier_key
 parameter_list|(
 name|GimpTool
@@ -2205,7 +2205,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpMoveTool
@@ -2382,7 +2382,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_move_tool_oper_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,gboolean proximity,GimpDisplay * gdisp)
+DECL|function|gimp_move_tool_oper_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,gboolean proximity,GimpDisplay * display)
 name|gimp_move_tool_oper_update
 parameter_list|(
 name|GimpTool
@@ -2401,7 +2401,7 @@ name|proximity
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpMoveTool
@@ -2419,7 +2419,7 @@ name|shell
 init|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -2471,7 +2471,7 @@ name|snap_distance
 operator|=
 name|GIMP_DISPLAY_CONFIG
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -2486,7 +2486,7 @@ name|guide
 operator|=
 name|gimp_image_find_guide
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|,
@@ -2566,7 +2566,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_move_tool_cursor_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_move_tool_cursor_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,GimpDisplay * display)
 name|gimp_move_tool_cursor_update
 parameter_list|(
 name|GimpTool
@@ -2582,7 +2582,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpDisplayShell
@@ -2591,7 +2591,7 @@ name|shell
 init|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -2652,7 +2652,7 @@ if|if
 condition|(
 name|gimp_image_get_active_vectors
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -2673,7 +2673,7 @@ argument_list|(
 name|tool
 argument_list|)
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|coords
 argument_list|,
@@ -2731,7 +2731,7 @@ name|gimp_channel_is_empty
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -2754,7 +2754,7 @@ if|if
 condition|(
 name|gimp_image_active_drawable
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -2781,7 +2781,7 @@ name|snap_distance
 operator|=
 name|GIMP_DISPLAY_CONFIG
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -2804,7 +2804,7 @@ name|guide
 operator|=
 name|gimp_image_find_guide
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|,
@@ -2854,7 +2854,7 @@ name|layer
 operator|=
 name|gimp_image_pick_correlate_layer
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|,
@@ -2874,7 +2874,7 @@ if|if
 condition|(
 name|gimp_image_floating_sel
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -2906,7 +2906,7 @@ name|layer
 operator|==
 name|gimp_image_get_active_layer
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -2974,7 +2974,7 @@ name|coords
 argument_list|,
 name|state
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -3036,7 +3036,7 @@ name|guide_position
 argument_list|,
 name|draw_tool
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -3069,7 +3069,7 @@ name|guide_position
 argument_list|,
 name|draw_tool
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -3090,7 +3090,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_move_tool_start_hguide (GimpTool * tool,GimpDisplay * gdisp)
+DECL|function|gimp_move_tool_start_hguide (GimpTool * tool,GimpDisplay * display)
 name|gimp_move_tool_start_hguide
 parameter_list|(
 name|GimpTool
@@ -3099,7 +3099,7 @@ name|tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -3114,7 +3114,7 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY
 argument_list|(
-name|gdisp
+name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3125,7 +3125,7 @@ argument_list|(
 name|tool
 argument_list|)
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|GIMP_ORIENTATION_HORIZONTAL
 argument_list|)
@@ -3135,7 +3135,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_move_tool_start_vguide (GimpTool * tool,GimpDisplay * gdisp)
+DECL|function|gimp_move_tool_start_vguide (GimpTool * tool,GimpDisplay * display)
 name|gimp_move_tool_start_vguide
 parameter_list|(
 name|GimpTool
@@ -3144,7 +3144,7 @@ name|tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -3159,7 +3159,7 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY
 argument_list|(
-name|gdisp
+name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3170,7 +3170,7 @@ argument_list|(
 name|tool
 argument_list|)
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|GIMP_ORIENTATION_VERTICAL
 argument_list|)
@@ -3181,7 +3181,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_move_tool_start_guide (GimpMoveTool * move,GimpDisplay * gdisp,GimpOrientationType orientation)
+DECL|function|gimp_move_tool_start_guide (GimpMoveTool * move,GimpDisplay * display,GimpOrientationType orientation)
 name|gimp_move_tool_start_guide
 parameter_list|(
 name|GimpMoveTool
@@ -3190,7 +3190,7 @@ name|move
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|,
 name|GimpOrientationType
 name|orientation
@@ -3209,7 +3209,7 @@ name|gimp_display_shell_selection_visibility
 argument_list|(
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -3219,9 +3219,9 @@ argument_list|)
 expr_stmt|;
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|=
-name|gdisp
+name|display
 expr_stmt|;
 name|gimp_tool_control_activate
 argument_list|(
@@ -3249,7 +3249,7 @@ name|gimp_display_shell_draw_guide
 argument_list|(
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -3290,7 +3290,7 @@ name|gimp_tool_set_cursor
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|GIMP_CURSOR_MOUSE
 argument_list|,
@@ -3306,7 +3306,7 @@ argument_list|(
 name|move
 argument_list|)
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}

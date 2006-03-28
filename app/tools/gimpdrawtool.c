@@ -119,7 +119,7 @@ name|action
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -295,7 +295,7 @@ parameter_list|)
 block|{
 name|draw_tool
 operator|->
-name|gdisp
+name|display
 operator|=
 name|NULL
 expr_stmt|;
@@ -412,7 +412,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_draw_tool_control (GimpTool * tool,GimpToolAction action,GimpDisplay * gdisp)
+DECL|function|gimp_draw_tool_control (GimpTool * tool,GimpToolAction action,GimpDisplay * display)
 name|gimp_draw_tool_control
 parameter_list|(
 name|GimpTool
@@ -424,7 +424,7 @@ name|action
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpDrawTool
@@ -482,7 +482,7 @@ name|tool
 argument_list|,
 name|action
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -509,7 +509,7 @@ literal|0
 operator|&&
 name|draw_tool
 operator|->
-name|gdisp
+name|display
 condition|)
 block|{
 name|GIMP_DRAW_TOOL_GET_CLASS
@@ -732,7 +732,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_draw_tool_start (GimpDrawTool * draw_tool,GimpDisplay * gdisp)
+DECL|function|gimp_draw_tool_start (GimpDrawTool * draw_tool,GimpDisplay * display)
 name|gimp_draw_tool_start
 parameter_list|(
 name|GimpDrawTool
@@ -741,7 +741,7 @@ name|draw_tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpDisplayShell
@@ -760,7 +760,7 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY
 argument_list|(
-name|gdisp
+name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -768,7 +768,7 @@ name|shell
 operator|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -780,9 +780,9 @@ argument_list|)
 expr_stmt|;
 name|draw_tool
 operator|->
-name|gdisp
+name|display
 operator|=
-name|gdisp
+name|display
 expr_stmt|;
 name|gimp_draw_tool_draw
 argument_list|(
@@ -817,7 +817,7 @@ argument_list|)
 expr_stmt|;
 name|draw_tool
 operator|->
-name|gdisp
+name|display
 operator|=
 name|NULL
 expr_stmt|;
@@ -847,7 +847,7 @@ expr_stmt|;
 return|return
 name|draw_tool
 operator|->
-name|gdisp
+name|display
 operator|!=
 name|NULL
 return|;
@@ -1111,7 +1111,7 @@ end_function
 
 begin_function
 name|gdouble
-DECL|function|gimp_draw_tool_calc_distance (GimpDrawTool * draw_tool,GimpDisplay * gdisp,gdouble x1,gdouble y1,gdouble x2,gdouble y2)
+DECL|function|gimp_draw_tool_calc_distance (GimpDrawTool * draw_tool,GimpDisplay * display,gdouble x1,gdouble y1,gdouble x2,gdouble y2)
 name|gimp_draw_tool_calc_distance
 parameter_list|(
 name|GimpDrawTool
@@ -1120,7 +1120,7 @@ name|draw_tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|,
 name|gdouble
 name|x1
@@ -1163,7 +1163,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY
 argument_list|(
-name|gdisp
+name|display
 argument_list|)
 argument_list|,
 literal|0.0
@@ -1173,7 +1173,7 @@ name|shell
 operator|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -1235,7 +1235,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_draw_tool_in_radius (GimpDrawTool * draw_tool,GimpDisplay * gdisp,gdouble x1,gdouble y1,gdouble x2,gdouble y2,gint radius)
+DECL|function|gimp_draw_tool_in_radius (GimpDrawTool * draw_tool,GimpDisplay * display,gdouble x1,gdouble y1,gdouble x2,gdouble y2,gint radius)
 name|gimp_draw_tool_in_radius
 parameter_list|(
 name|GimpDrawTool
@@ -1244,7 +1244,7 @@ name|draw_tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|,
 name|gdouble
 name|x1
@@ -1290,7 +1290,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY
 argument_list|(
-name|gdisp
+name|display
 argument_list|)
 argument_list|,
 name|FALSE
@@ -1300,7 +1300,7 @@ name|shell
 operator|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -1417,7 +1417,7 @@ name|GIMP_DISPLAY_SHELL
 argument_list|(
 name|draw_tool
 operator|->
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -1532,7 +1532,7 @@ name|GIMP_DISPLAY_SHELL
 argument_list|(
 name|draw_tool
 operator|->
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -1655,7 +1655,7 @@ name|GIMP_DISPLAY_SHELL
 argument_list|(
 name|draw_tool
 operator|->
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -1918,7 +1918,7 @@ name|GIMP_DISPLAY_SHELL
 argument_list|(
 name|draw_tool
 operator|->
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -2152,7 +2152,7 @@ name|GIMP_DISPLAY_SHELL
 argument_list|(
 name|draw_tool
 operator|->
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -2296,7 +2296,7 @@ name|GIMP_DISPLAY_SHELL
 argument_list|(
 name|draw_tool
 operator|->
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -2446,7 +2446,7 @@ name|GIMP_DISPLAY_SHELL
 argument_list|(
 name|draw_tool
 operator|->
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -2772,7 +2772,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_draw_tool_on_handle (GimpDrawTool * draw_tool,GimpDisplay * gdisp,gdouble x,gdouble y,GimpHandleType type,gdouble handle_x,gdouble handle_y,gint width,gint height,GtkAnchorType anchor,gboolean use_offsets)
+DECL|function|gimp_draw_tool_on_handle (GimpDrawTool * draw_tool,GimpDisplay * display,gdouble x,gdouble y,GimpHandleType type,gdouble handle_x,gdouble handle_y,gint width,gint height,GtkAnchorType anchor,gboolean use_offsets)
 name|gimp_draw_tool_on_handle
 parameter_list|(
 name|GimpDrawTool
@@ -2781,7 +2781,7 @@ name|draw_tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|,
 name|gdouble
 name|x
@@ -2839,7 +2839,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY
 argument_list|(
-name|gdisp
+name|display
 argument_list|)
 argument_list|,
 name|FALSE
@@ -2849,7 +2849,7 @@ name|shell
 operator|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -3040,7 +3040,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_draw_tool_on_vectors_handle (GimpDrawTool * draw_tool,GimpDisplay * gdisp,GimpVectors * vectors,const GimpCoords * coord,gint width,gint height,GimpAnchorType preferred,gboolean exclusive,GimpAnchor ** ret_anchor,GimpStroke ** ret_stroke)
+DECL|function|gimp_draw_tool_on_vectors_handle (GimpDrawTool * draw_tool,GimpDisplay * display,GimpVectors * vectors,const GimpCoords * coord,gint width,gint height,GimpAnchorType preferred,gboolean exclusive,GimpAnchor ** ret_anchor,GimpStroke ** ret_stroke)
 name|gimp_draw_tool_on_vectors_handle
 parameter_list|(
 name|GimpDrawTool
@@ -3049,7 +3049,7 @@ name|draw_tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|,
 name|GimpVectors
 modifier|*
@@ -3142,7 +3142,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY
 argument_list|(
-name|gdisp
+name|display
 argument_list|)
 argument_list|,
 name|FALSE
@@ -3390,7 +3390,7 @@ name|gimp_draw_tool_on_handle
 argument_list|(
 name|draw_tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|coord
 operator|->
@@ -3460,7 +3460,7 @@ name|gimp_draw_tool_on_handle
 argument_list|(
 name|draw_tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|coord
 operator|->
@@ -3528,7 +3528,7 @@ name|gimp_draw_tool_on_handle
 argument_list|(
 name|draw_tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|coord
 operator|->
@@ -3602,7 +3602,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_draw_tool_on_vectors_curve (GimpDrawTool * draw_tool,GimpDisplay * gdisp,GimpVectors * vectors,const GimpCoords * coord,gint width,gint height,GimpCoords * ret_coords,gdouble * ret_pos,GimpAnchor ** ret_segment_start,GimpAnchor ** ret_segment_end,GimpStroke ** ret_stroke)
+DECL|function|gimp_draw_tool_on_vectors_curve (GimpDrawTool * draw_tool,GimpDisplay * display,GimpVectors * vectors,const GimpCoords * coord,gint width,gint height,GimpCoords * ret_coords,gdouble * ret_pos,GimpAnchor ** ret_segment_start,GimpAnchor ** ret_segment_end,GimpStroke ** ret_stroke)
 name|gimp_draw_tool_on_vectors_curve
 parameter_list|(
 name|GimpDrawTool
@@ -3611,7 +3611,7 @@ name|draw_tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|,
 name|GimpVectors
 modifier|*
@@ -3692,7 +3692,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY
 argument_list|(
-name|gdisp
+name|display
 argument_list|)
 argument_list|,
 name|FALSE
@@ -3888,7 +3888,7 @@ name|gimp_draw_tool_on_handle
 argument_list|(
 name|draw_tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|coord
 operator|->
@@ -3930,7 +3930,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_draw_tool_on_vectors (GimpDrawTool * draw_tool,GimpDisplay * gdisp,const GimpCoords * coords,gint width,gint height,GimpCoords * ret_coords,gdouble * ret_pos,GimpAnchor ** ret_segment_start,GimpAnchor ** ret_segment_end,GimpStroke ** ret_stroke,GimpVectors ** ret_vectors)
+DECL|function|gimp_draw_tool_on_vectors (GimpDrawTool * draw_tool,GimpDisplay * display,const GimpCoords * coords,gint width,gint height,GimpCoords * ret_coords,gdouble * ret_pos,GimpAnchor ** ret_segment_start,GimpAnchor ** ret_segment_end,GimpStroke ** ret_stroke,GimpVectors ** ret_vectors)
 name|gimp_draw_tool_on_vectors
 parameter_list|(
 name|GimpDrawTool
@@ -3939,7 +3939,7 @@ name|draw_tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|,
 specifier|const
 name|GimpCoords
@@ -4047,7 +4047,7 @@ name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -4092,7 +4092,7 @@ name|gimp_draw_tool_on_vectors_curve
 argument_list|(
 name|draw_tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|vectors
 argument_list|,
@@ -4183,7 +4183,7 @@ name|GIMP_DISPLAY_SHELL
 argument_list|(
 name|draw_tool
 operator|->
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -4351,7 +4351,7 @@ name|GIMP_DISPLAY_SHELL
 argument_list|(
 name|draw_tool
 operator|->
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -4551,7 +4551,7 @@ name|GIMP_DISPLAY_SHELL
 argument_list|(
 name|draw_tool
 operator|->
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)

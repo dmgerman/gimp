@@ -2275,7 +2275,7 @@ name|select
 operator|->
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -2413,7 +2413,7 @@ name|select
 operator|->
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|,
@@ -2670,7 +2670,7 @@ name|select
 operator|->
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->

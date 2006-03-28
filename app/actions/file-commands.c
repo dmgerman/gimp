@@ -269,7 +269,7 @@ name|response_id
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -401,7 +401,7 @@ parameter_list|)
 block|{
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -418,7 +418,7 @@ name|uri
 decl_stmt|;
 name|return_if_no_display
 argument_list|(
-name|gdisp
+name|display
 argument_list|,
 name|data
 argument_list|)
@@ -432,7 +432,7 @@ argument_list|)
 expr_stmt|;
 name|image
 operator|=
-name|gdisp
+name|display
 operator|->
 name|image
 expr_stmt|;
@@ -683,7 +683,7 @@ parameter_list|)
 block|{
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 decl_stmt|;
 name|GimpImage
 modifier|*
@@ -691,14 +691,14 @@ name|image
 decl_stmt|;
 name|return_if_no_display
 argument_list|(
-name|gdisp
+name|display
 argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
 name|image
 operator|=
-name|gdisp
+name|display
 operator|->
 name|image
 expr_stmt|;
@@ -856,7 +856,7 @@ argument_list|)
 argument_list|,
 name|GIMP_PROGRESS
 argument_list|(
-name|gdisp
+name|display
 argument_list|)
 argument_list|,
 name|uri
@@ -968,7 +968,7 @@ parameter_list|)
 block|{
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -976,7 +976,7 @@ name|widget
 decl_stmt|;
 name|return_if_no_display
 argument_list|(
-name|gdisp
+name|display
 argument_list|,
 name|data
 argument_list|)
@@ -993,7 +993,7 @@ condition|(
 operator|!
 name|gimp_image_active_drawable
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -1001,7 +1001,7 @@ condition|)
 return|return;
 name|file_save_dialog_show
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|,
@@ -1033,7 +1033,7 @@ parameter_list|)
 block|{
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -1041,7 +1041,7 @@ name|widget
 decl_stmt|;
 name|return_if_no_display
 argument_list|(
-name|gdisp
+name|display
 argument_list|,
 name|data
 argument_list|)
@@ -1058,7 +1058,7 @@ condition|(
 operator|!
 name|gimp_image_active_drawable
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -1066,7 +1066,7 @@ condition|)
 return|return;
 name|file_save_dialog_show
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|,
@@ -1098,7 +1098,7 @@ parameter_list|)
 block|{
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -1106,7 +1106,7 @@ name|dialog
 decl_stmt|;
 name|return_if_no_display
 argument_list|(
-name|gdisp
+name|display
 argument_list|,
 name|data
 argument_list|)
@@ -1120,7 +1120,7 @@ argument_list|(
 literal|"Create New Template"
 argument_list|)
 argument_list|,
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|,
@@ -1137,7 +1137,7 @@ name|NULL
 argument_list|,
 name|G_OBJECT
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -1146,7 +1146,7 @@ literal|"disconnect"
 argument_list|,
 name|file_new_template_callback
 argument_list|,
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -1174,7 +1174,7 @@ parameter_list|)
 block|{
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -1187,7 +1187,7 @@ name|uri
 decl_stmt|;
 name|return_if_no_display
 argument_list|(
-name|gdisp
+name|display
 argument_list|,
 name|data
 argument_list|)
@@ -1198,7 +1198,7 @@ name|gimp_object_get_name
 argument_list|(
 name|GIMP_OBJECT
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -1210,7 +1210,7 @@ name|g_object_get_data
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -1269,7 +1269,7 @@ argument_list|)
 argument_list|,
 name|GIMP_STOCK_QUESTION
 argument_list|,
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|,
@@ -1307,7 +1307,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect_object
 argument_list|(
-name|gdisp
+name|display
 argument_list|,
 literal|"disconnect"
 argument_list|,
@@ -1332,7 +1332,7 @@ argument_list|(
 name|file_revert_confirm_response
 argument_list|)
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|basename
@@ -1399,7 +1399,7 @@ name|g_object_set_data
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -1991,7 +1991,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|file_revert_confirm_response (GtkWidget * dialog,gint response_id,GimpDisplay * gdisp)
+DECL|function|file_revert_confirm_response (GtkWidget * dialog,gint response_id,GimpDisplay * display)
 name|file_revert_confirm_response
 parameter_list|(
 name|GtkWidget
@@ -2003,14 +2003,14 @@ name|response_id
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpImage
 modifier|*
 name|old_image
 init|=
-name|gdisp
+name|display
 operator|->
 name|image
 decl_stmt|;
@@ -2087,7 +2087,7 @@ argument_list|)
 argument_list|,
 name|GIMP_PROGRESS
 argument_list|(
-name|gdisp
+name|display
 argument_list|)
 argument_list|,
 name|uri

@@ -595,7 +595,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_navigation_editor_context_changed (GimpContext * context,GimpDisplay * gdisp,GimpNavigationEditor * editor)
+DECL|function|gimp_navigation_editor_context_changed (GimpContext * context,GimpDisplay * display,GimpNavigationEditor * editor)
 name|gimp_navigation_editor_context_changed
 parameter_list|(
 name|GimpContext
@@ -604,7 +604,7 @@ name|context
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|,
 name|GimpNavigationEditor
 modifier|*
@@ -619,13 +619,13 @@ name|NULL
 decl_stmt|;
 if|if
 condition|(
-name|gdisp
+name|display
 condition|)
 name|shell
 operator|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -666,7 +666,7 @@ argument_list|)
 decl_stmt|;
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 init|=
 name|NULL
 decl_stmt|;
@@ -720,7 +720,7 @@ argument_list|,
 name|editor
 argument_list|)
 expr_stmt|;
-name|gdisp
+name|display
 operator|=
 name|gimp_context_get_display
 argument_list|(
@@ -730,13 +730,13 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|gdisp
+name|display
 condition|)
 name|shell
 operator|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -1335,7 +1335,7 @@ name|GIMP_DISPLAY_CONFIG
 argument_list|(
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -1857,7 +1857,7 @@ name|GIMP_VIEWABLE
 argument_list|(
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -2577,7 +2577,7 @@ name|GIMP_VIEWABLE
 argument_list|(
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)

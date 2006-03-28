@@ -1179,7 +1179,7 @@ name|args
 decl_stmt|;
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 decl_stmt|;
 name|return_if_no_image
 argument_list|(
@@ -1228,7 +1228,7 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-name|gdisp
+name|display
 operator|=
 name|gimp_context_get_display
 argument_list|(
@@ -1300,7 +1300,7 @@ argument_list|)
 argument_list|,
 name|GIMP_PROGRESS
 argument_list|(
-name|gdisp
+name|display
 argument_list|)
 argument_list|,
 name|proc_rec
@@ -1314,11 +1314,11 @@ name|FALSE
 argument_list|,
 name|TRUE
 argument_list|,
-name|gdisp
+name|display
 condition|?
 name|gimp_display_get_ID
 argument_list|(
-name|gdisp
+name|display
 argument_list|)
 else|:
 literal|0

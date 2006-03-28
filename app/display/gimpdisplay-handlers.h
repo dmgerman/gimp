@@ -22,7 +22,7 @@ name|gimp_display_connect
 parameter_list|(
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|,
 name|GimpImage
 modifier|*
@@ -37,7 +37,7 @@ name|gimp_display_disconnect
 parameter_list|(
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl

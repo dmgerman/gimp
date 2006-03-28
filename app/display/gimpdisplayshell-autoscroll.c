@@ -106,7 +106,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7033480108
+DECL|struct|__anon29ae071c0108
 block|{
 DECL|member|mevent
 name|GdkEventMotion
@@ -464,11 +464,11 @@ condition|)
 block|{
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 init|=
 name|shell
 operator|->
-name|gdisp
+name|display
 decl_stmt|;
 name|GimpTool
 modifier|*
@@ -476,7 +476,7 @@ name|active_tool
 init|=
 name|tool_manager_get_active
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -579,7 +579,7 @@ expr_stmt|;
 block|}
 name|tool_manager_motion_active
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -596,7 +596,7 @@ name|info
 operator|->
 name|state
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 return|return

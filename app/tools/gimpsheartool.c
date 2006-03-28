@@ -207,7 +207,7 @@ name|tr_tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -223,7 +223,7 @@ name|tr_tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -239,7 +239,7 @@ name|tr_tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -625,7 +625,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_shear_tool_prepare (GimpTransformTool * tr_tool,GimpDisplay * gdisp)
+DECL|function|gimp_shear_tool_prepare (GimpTransformTool * tr_tool,GimpDisplay * display)
 name|gimp_shear_tool_prepare
 parameter_list|(
 name|GimpTransformTool
@@ -634,7 +634,7 @@ name|tr_tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|tr_tool
@@ -670,7 +670,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_shear_tool_motion (GimpTransformTool * tr_tool,GimpDisplay * gdisp)
+DECL|function|gimp_shear_tool_motion (GimpTransformTool * tr_tool,GimpDisplay * display)
 name|gimp_shear_tool_motion
 parameter_list|(
 name|GimpTransformTool
@@ -679,7 +679,7 @@ name|tr_tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|gdouble
@@ -970,7 +970,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_shear_tool_recalc (GimpTransformTool * tr_tool,GimpDisplay * gdisp)
+DECL|function|gimp_shear_tool_recalc (GimpTransformTool * tr_tool,GimpDisplay * display)
 name|gimp_shear_tool_recalc
 parameter_list|(
 name|GimpTransformTool
@@ -979,7 +979,7 @@ name|tr_tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|gdouble
@@ -1181,7 +1181,7 @@ argument_list|(
 name|tr_tool
 argument_list|)
 operator|->
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|gimp_transform_tool_expose_preview
@@ -1286,7 +1286,7 @@ argument_list|(
 name|tr_tool
 argument_list|)
 operator|->
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|gimp_transform_tool_expose_preview

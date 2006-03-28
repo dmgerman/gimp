@@ -383,7 +383,7 @@ name|gimp_image_active_drawable
 argument_list|(
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -589,7 +589,7 @@ name|gimp_image_active_drawable
 argument_list|(
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -786,7 +786,7 @@ name|gimp_image_active_drawable
 argument_list|(
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -954,7 +954,7 @@ name|gimp_image_active_drawable
 argument_list|(
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -1115,7 +1115,7 @@ name|x2
 operator|>
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -1125,7 +1125,7 @@ name|x2
 operator|=
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -1137,7 +1137,7 @@ name|y2
 operator|>
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -1147,7 +1147,7 @@ name|y2
 operator|=
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->

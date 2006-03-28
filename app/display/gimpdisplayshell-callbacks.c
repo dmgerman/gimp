@@ -404,12 +404,12 @@ condition|(
 operator|!
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|||
 operator|!
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|shell
 condition|)
@@ -420,7 +420,7 @@ name|gimp
 operator|=
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -879,7 +879,7 @@ if|if
 condition|(
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|==
 name|gimp_context_get_display
 argument_list|(
@@ -927,7 +927,7 @@ name|gimp
 init|=
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -943,7 +943,7 @@ argument_list|)
 argument_list|,
 name|shell
 operator|->
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -973,7 +973,7 @@ name|config
 decl_stmt|;
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 decl_stmt|;
 name|GimpCanvasPaddingMode
 name|padding_mode
@@ -981,17 +981,17 @@ decl_stmt|;
 name|GimpRGB
 name|padding_color
 decl_stmt|;
-name|gdisp
+name|display
 operator|=
 name|shell
 operator|->
-name|gdisp
+name|display
 expr_stmt|;
 name|config
 operator|=
 name|GIMP_DISPLAY_CONFIG
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -1143,12 +1143,12 @@ condition|(
 operator|!
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|||
 operator|!
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|shell
 condition|)
@@ -1393,12 +1393,12 @@ condition|(
 operator|!
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|||
 operator|!
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|shell
 condition|)
@@ -1677,7 +1677,7 @@ name|gimp_devices_get_current
 argument_list|(
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -1716,7 +1716,7 @@ parameter_list|)
 block|{
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 decl_stmt|;
 name|GimpImage
 modifier|*
@@ -1779,12 +1779,12 @@ condition|(
 operator|!
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|||
 operator|!
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|shell
 condition|)
@@ -1806,15 +1806,15 @@ condition|)
 return|return
 name|TRUE
 return|;
-name|gdisp
+name|display
 operator|=
 name|shell
 operator|->
-name|gdisp
+name|display
 expr_stmt|;
 name|image
 operator|=
-name|gdisp
+name|display
 operator|->
 name|image
 expr_stmt|;
@@ -2026,7 +2026,7 @@ name|shell
 operator|->
 name|proximity
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -2080,7 +2080,7 @@ name|shell
 operator|->
 name|proximity
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -2101,7 +2101,7 @@ name|shell
 operator|->
 name|proximity
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 break|break;
@@ -2132,7 +2132,7 @@ name|shell
 operator|->
 name|proximity
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 break|break;
@@ -2177,7 +2177,7 @@ name|tool_manager_focus_display_active
 argument_list|(
 name|gimp
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|tool_manager_modifier_state_active
@@ -2186,7 +2186,7 @@ name|gimp
 argument_list|,
 name|state
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|tool_manager_oper_update_active
@@ -2202,7 +2202,7 @@ name|shell
 operator|->
 name|proximity
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -2244,7 +2244,7 @@ name|shell
 operator|->
 name|proximity
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -2286,7 +2286,7 @@ name|tool_manager_focus_display_active
 argument_list|(
 name|gimp
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|tool_manager_modifier_state_active
@@ -2295,7 +2295,7 @@ name|gimp
 argument_list|,
 name|state
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|tool_manager_oper_update_active
@@ -2311,7 +2311,7 @@ name|shell
 operator|->
 name|proximity
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|active_tool
@@ -2373,7 +2373,7 @@ name|image_coords
 argument_list|,
 name|state
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -2612,7 +2612,7 @@ name|tool_manager_initialize_active
 argument_list|(
 name|gimp
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -2654,7 +2654,7 @@ name|tool_manager_initialize_active
 argument_list|(
 name|gimp
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -2674,7 +2674,7 @@ name|time
 argument_list|,
 name|state
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|shell
@@ -2899,7 +2899,7 @@ name|time
 argument_list|,
 name|state
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -2909,7 +2909,7 @@ name|tool_manager_focus_display_active
 argument_list|(
 name|gimp
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|tool_manager_modifier_state_active
@@ -2918,7 +2918,7 @@ name|gimp
 argument_list|,
 name|state
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|tool_manager_oper_update_active
@@ -2934,7 +2934,7 @@ name|shell
 operator|->
 name|proximity
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|gtk_grab_remove
@@ -2979,7 +2979,7 @@ name|tool_manager_focus_display_active
 argument_list|(
 name|gimp
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|tool_manager_modifier_state_active
@@ -2988,7 +2988,7 @@ name|gimp
 argument_list|,
 name|state
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|tool_manager_oper_update_active
@@ -3004,7 +3004,7 @@ name|shell
 operator|->
 name|proximity
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|shell
@@ -3427,7 +3427,7 @@ name|shell
 operator|->
 name|proximity
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|return_val
@@ -3908,7 +3908,7 @@ name|time
 argument_list|,
 name|state
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -3933,7 +3933,7 @@ name|time
 argument_list|,
 name|state
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -4026,7 +4026,7 @@ name|shell
 operator|->
 name|proximity
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -4050,7 +4050,7 @@ name|tool_manager_focus_display_active
 argument_list|(
 name|gimp
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -4101,7 +4101,7 @@ name|gimp
 argument_list|,
 name|kevent
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 condition|)
 block|{
@@ -4233,7 +4233,7 @@ name|tool_manager_focus_display_active
 argument_list|(
 name|gimp
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|tool_manager_modifier_state_active
@@ -4242,7 +4242,7 @@ name|gimp
 argument_list|,
 name|state
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|shell
@@ -4377,7 +4377,7 @@ name|gimp
 argument_list|,
 name|state
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -4396,7 +4396,7 @@ name|shell
 operator|->
 name|proximity
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -4419,7 +4419,7 @@ name|tool_manager_focus_display_active
 argument_list|(
 name|gimp
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -4469,7 +4469,7 @@ name|tool_manager_focus_display_active
 argument_list|(
 name|gimp
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|tool_manager_modifier_state_active
@@ -4478,7 +4478,7 @@ name|gimp
 argument_list|,
 name|state
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|shell
@@ -4552,7 +4552,7 @@ name|gimp
 argument_list|,
 name|state
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -4571,7 +4571,7 @@ name|shell
 operator|->
 name|proximity
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -4654,7 +4654,7 @@ name|image_coords
 argument_list|,
 name|state
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -4774,15 +4774,15 @@ parameter_list|)
 block|{
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 init|=
 name|shell
 operator|->
-name|gdisp
+name|display
 decl_stmt|;
 if|if
 condition|(
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -4819,7 +4819,7 @@ name|active_tool
 operator|=
 name|tool_manager_get_active
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -4873,7 +4873,7 @@ operator|*
 operator|)
 name|gimp_container_get_child_by_name
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -4896,7 +4896,7 @@ name|gimp_context_set_tool
 argument_list|(
 name|gimp_get_user_context
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -4911,7 +4911,7 @@ name|active_tool
 operator|=
 name|tool_manager_get_active
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -4971,7 +4971,7 @@ name|gimp_color_tool_start_sample_point
 argument_list|(
 name|active_tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 elseif|else
@@ -4983,7 +4983,7 @@ name|gimp_move_tool_start_hguide
 argument_list|(
 name|active_tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 else|else
@@ -4991,7 +4991,7 @@ name|gimp_move_tool_start_vguide
 argument_list|(
 name|active_tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -5091,7 +5091,7 @@ condition|(
 operator|!
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -5227,7 +5227,7 @@ name|gimp_image_get_quick_mask_state
 argument_list|(
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -5237,7 +5237,7 @@ name|gimp_image_set_quick_mask_state
 argument_list|(
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|,
@@ -5253,7 +5253,7 @@ name|gimp_image_flush
 argument_list|(
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)

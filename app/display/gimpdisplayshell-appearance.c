@@ -170,7 +170,7 @@ parameter_list|(
 name|shell
 parameter_list|)
 define|\
-value|((shell)->gdisp == \    gimp_context_get_display (gimp_get_user_context \                              ((shell)->gdisp->image->gimp)))
+value|((shell)->display == \    gimp_context_get_display (gimp_get_user_context \                              ((shell)->display->image->gimp)))
 end_define
 
 begin_function
@@ -1328,7 +1328,7 @@ if|if
 condition|(
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -1449,7 +1449,7 @@ if|if
 condition|(
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -1570,7 +1570,7 @@ if|if
 condition|(
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->

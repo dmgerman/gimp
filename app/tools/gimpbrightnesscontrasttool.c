@@ -154,7 +154,7 @@ name|tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -180,7 +180,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -206,7 +206,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -232,7 +232,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -582,7 +582,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_brightness_contrast_tool_initialize (GimpTool * tool,GimpDisplay * gdisp)
+DECL|function|gimp_brightness_contrast_tool_initialize (GimpTool * tool,GimpDisplay * display)
 name|gimp_brightness_contrast_tool_initialize
 parameter_list|(
 name|GimpTool
@@ -591,7 +591,7 @@ name|tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpBrightnessContrastTool
@@ -611,7 +611,7 @@ name|drawable
 operator|=
 name|gimp_image_active_drawable
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -665,7 +665,7 @@ name|initialize
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|brightness_contrast_update
@@ -749,7 +749,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_brightness_contrast_tool_button_press (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_brightness_contrast_tool_button_press (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_brightness_contrast_tool_button_press
 parameter_list|(
 name|GimpTool
@@ -768,7 +768,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpBrightnessContrastTool
@@ -830,9 +830,9 @@ argument_list|)
 expr_stmt|;
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|=
-name|gdisp
+name|display
 expr_stmt|;
 block|}
 end_function
@@ -840,7 +840,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_brightness_contrast_tool_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_brightness_contrast_tool_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_brightness_contrast_tool_button_release
 parameter_list|(
 name|GimpTool
@@ -859,7 +859,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpBrightnessContrastTool
@@ -926,7 +926,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_brightness_contrast_tool_motion (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_brightness_contrast_tool_motion (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_brightness_contrast_tool_motion
 parameter_list|(
 name|GimpTool
@@ -945,7 +945,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpBrightnessContrastTool

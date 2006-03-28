@@ -221,7 +221,7 @@ name|action
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -247,7 +247,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -273,7 +273,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -299,7 +299,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -319,7 +319,7 @@ name|kevent
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -344,7 +344,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -370,7 +370,7 @@ name|proximity
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -386,7 +386,7 @@ name|tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|,
 name|gboolean
 name|proximity
@@ -412,7 +412,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -937,7 +937,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_vector_tool_control (GimpTool * tool,GimpToolAction action,GimpDisplay * gdisp)
+DECL|function|gimp_vector_tool_control (GimpTool * tool,GimpToolAction action,GimpDisplay * display)
 name|gimp_vector_tool_control
 parameter_list|(
 name|GimpTool
@@ -949,7 +949,7 @@ name|action
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpVectorTool
@@ -988,7 +988,7 @@ name|gimp_tool_pop_status
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1006,7 +1006,7 @@ name|tool
 argument_list|,
 name|action
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -1015,7 +1015,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_vector_tool_button_press (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_vector_tool_button_press (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_vector_tool_button_press
 parameter_list|(
 name|GimpTool
@@ -1034,7 +1034,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpDrawTool
@@ -1136,9 +1136,9 @@ argument_list|)
 operator|&&
 name|draw_tool
 operator|->
-name|gdisp
+name|display
 operator|!=
-name|gdisp
+name|display
 condition|)
 block|{
 name|gimp_draw_tool_stop
@@ -1156,9 +1156,9 @@ argument_list|)
 expr_stmt|;
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|=
-name|gdisp
+name|display
 expr_stmt|;
 comment|/* select a vectors object */
 if|if
@@ -1176,7 +1176,7 @@ name|gimp_draw_tool_on_vectors
 argument_list|(
 name|draw_tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|coords
 argument_list|,
@@ -1208,7 +1208,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_set_active_vectors
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|,
@@ -1237,7 +1237,7 @@ name|vectors
 operator|=
 name|gimp_vectors_new
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|,
@@ -1262,7 +1262,7 @@ name|TRUE
 expr_stmt|;
 name|gimp_image_add_vectors
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|,
@@ -1274,7 +1274,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -1624,7 +1624,7 @@ argument_list|(
 name|tool
 argument_list|)
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|vector_tool
 operator|->
@@ -2333,7 +2333,7 @@ name|gimp_draw_tool_start
 argument_list|(
 name|draw_tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -2348,7 +2348,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_vector_tool_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_vector_tool_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_vector_tool_button_release
 parameter_list|(
 name|GimpTool
@@ -2367,7 +2367,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpVectorTool
@@ -2420,7 +2420,7 @@ name|undo
 operator|=
 name|gimp_undo_stack_pop_undo
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -2434,7 +2434,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_undo_event
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|,
@@ -2477,7 +2477,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -2488,7 +2488,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_vector_tool_motion (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_vector_tool_motion (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_vector_tool_motion
 parameter_list|(
 name|GimpTool
@@ -2507,7 +2507,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpVectorTool
@@ -2908,7 +2908,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_vector_tool_key_press (GimpTool * tool,GdkEventKey * kevent,GimpDisplay * gdisp)
+DECL|function|gimp_vector_tool_key_press (GimpTool * tool,GdkEventKey * kevent,GimpDisplay * display)
 name|gimp_vector_tool_key_press
 parameter_list|(
 name|GimpTool
@@ -2921,7 +2921,7 @@ name|kevent
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpVectorTool
@@ -2972,11 +2972,11 @@ name|FALSE
 return|;
 if|if
 condition|(
-name|gdisp
+name|display
 operator|!=
 name|draw_tool
 operator|->
-name|gdisp
+name|display
 condition|)
 return|return
 name|FALSE
@@ -2987,7 +2987,7 @@ name|GIMP_DISPLAY_SHELL
 argument_list|(
 name|draw_tool
 operator|->
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -3217,7 +3217,7 @@ return|;
 block|}
 name|gimp_image_flush
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -3231,7 +3231,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_vector_tool_modifier_key (GimpTool * tool,GdkModifierType key,gboolean press,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_vector_tool_modifier_key (GimpTool * tool,GdkModifierType key,gboolean press,GdkModifierType state,GimpDisplay * display)
 name|gimp_vector_tool_modifier_key
 parameter_list|(
 name|GimpTool
@@ -3249,7 +3249,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpVectorTool
@@ -3412,7 +3412,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_vector_tool_oper_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,gboolean proximity,GimpDisplay * gdisp)
+DECL|function|gimp_vector_tool_oper_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,gboolean proximity,GimpDisplay * display)
 name|gimp_vector_tool_oper_update
 parameter_list|(
 name|GimpTool
@@ -3431,7 +3431,7 @@ name|proximity
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpVectorTool
@@ -3524,9 +3524,9 @@ argument_list|(
 name|tool
 argument_list|)
 operator|->
-name|gdisp
+name|display
 operator|==
-name|gdisp
+name|display
 condition|)
 block|{
 name|on_handle
@@ -3538,7 +3538,7 @@ argument_list|(
 name|tool
 argument_list|)
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|vector_tool
 operator|->
@@ -3579,7 +3579,7 @@ argument_list|(
 name|tool
 argument_list|)
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|vector_tool
 operator|->
@@ -3629,7 +3629,7 @@ name|gimp_draw_tool_on_vectors
 argument_list|(
 name|draw_tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|coords
 argument_list|,
@@ -3702,9 +3702,9 @@ argument_list|(
 name|tool
 argument_list|)
 operator|->
-name|gdisp
+name|display
 operator|!=
-name|gdisp
+name|display
 condition|)
 block|{
 if|if
@@ -3954,9 +3954,9 @@ argument_list|(
 name|tool
 argument_list|)
 operator|->
-name|gdisp
+name|display
 operator|!=
-name|gdisp
+name|display
 condition|)
 block|{
 if|if
@@ -4179,9 +4179,9 @@ argument_list|(
 name|tool
 argument_list|)
 operator|->
-name|gdisp
+name|display
 operator|!=
-name|gdisp
+name|display
 condition|)
 block|{
 if|if
@@ -4268,7 +4268,7 @@ name|gimp_vector_tool_status_update
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|proximity
 argument_list|)
@@ -4279,7 +4279,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_vector_tool_status_update (GimpTool * tool,GimpDisplay * gdisp,gboolean proximity)
+DECL|function|gimp_vector_tool_status_update (GimpTool * tool,GimpDisplay * display,gboolean proximity)
 name|gimp_vector_tool_status_update
 parameter_list|(
 name|GimpTool
@@ -4288,7 +4288,7 @@ name|tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|,
 name|gboolean
 name|proximity
@@ -4307,7 +4307,7 @@ name|gimp_tool_pop_status
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 if|if
@@ -4535,7 +4535,7 @@ name|gimp_tool_push_status
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|status
 argument_list|)
@@ -4547,7 +4547,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_vector_tool_cursor_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_vector_tool_cursor_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,GimpDisplay * display)
 name|gimp_vector_tool_cursor_update
 parameter_list|(
 name|GimpTool
@@ -4563,7 +4563,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpVectorTool
@@ -4791,7 +4791,7 @@ name|coords
 argument_list|,
 name|state
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -5575,7 +5575,7 @@ name|vectors
 operator|||
 name|draw_tool
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 operator|!=
@@ -5779,7 +5779,7 @@ condition|)
 block|{
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|=
 name|NULL
 expr_stmt|;
@@ -5965,11 +5965,11 @@ if|if
 condition|(
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|&&
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 operator|==
@@ -5984,7 +5984,7 @@ name|draw_tool
 argument_list|,
 name|tool
 operator|->
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -5996,7 +5996,7 @@ name|context
 decl_stmt|;
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 decl_stmt|;
 name|context
 operator|=
@@ -6009,7 +6009,7 @@ operator|->
 name|gimp
 argument_list|)
 expr_stmt|;
-name|gdisp
+name|display
 operator|=
 name|gimp_context_get_display
 argument_list|(
@@ -6019,9 +6019,9 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gdisp
+name|display
 operator|||
-name|gdisp
+name|display
 operator|->
 name|image
 operator|!=
@@ -6034,7 +6034,7 @@ name|GList
 modifier|*
 name|list
 decl_stmt|;
-name|gdisp
+name|display
 operator|=
 name|NULL
 expr_stmt|;
@@ -6097,7 +6097,7 @@ operator|->
 name|data
 argument_list|)
 expr_stmt|;
-name|gdisp
+name|display
 operator|=
 name|gimp_context_get_display
 argument_list|(
@@ -6110,15 +6110,15 @@ block|}
 block|}
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|=
-name|gdisp
+name|display
 expr_stmt|;
 if|if
 condition|(
 name|tool
 operator|->
-name|gdisp
+name|display
 condition|)
 block|{
 name|gimp_draw_tool_start
@@ -6127,7 +6127,7 @@ name|draw_tool
 argument_list|,
 name|tool
 operator|->
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}

@@ -760,7 +760,7 @@ end_function
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_get_display_name (Gimp * gimp,gint gdisp_ID,gint * monitor_number)
+DECL|function|gimp_get_display_name (Gimp * gimp,gint display_ID,gint * monitor_number)
 name|gimp_get_display_name
 parameter_list|(
 name|Gimp
@@ -768,7 +768,7 @@ modifier|*
 name|gimp
 parameter_list|,
 name|gint
-name|gdisp_ID
+name|display_ID
 parameter_list|,
 name|gint
 modifier|*
@@ -811,7 +811,7 @@ name|get_display_name
 argument_list|(
 name|gimp
 argument_list|,
-name|gdisp_ID
+name|display_ID
 argument_list|,
 name|monitor_number
 argument_list|)

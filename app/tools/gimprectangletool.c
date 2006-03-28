@@ -458,7 +458,7 @@ name|rectangle
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2083,7 +2083,7 @@ argument_list|)
 expr_stmt|;
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|=
 name|NULL
 expr_stmt|;
@@ -2299,7 +2299,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_rectangle_tool_initialize (GimpTool * tool,GimpDisplay * gdisp)
+DECL|function|gimp_rectangle_tool_initialize (GimpTool * tool,GimpDisplay * display)
 name|gimp_rectangle_tool_initialize
 parameter_list|(
 name|GimpTool
@@ -2308,7 +2308,7 @@ name|tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpSizeEntry
@@ -2344,11 +2344,11 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gdisp
+name|display
 operator|!=
 name|tool
 operator|->
-name|gdisp
+name|display
 condition|)
 block|{
 name|gint
@@ -2356,7 +2356,7 @@ name|width
 init|=
 name|gimp_image_get_width
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -2366,7 +2366,7 @@ name|height
 init|=
 name|gimp_image_get_height
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -2470,7 +2470,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_get_resolution
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|,
@@ -2531,7 +2531,7 @@ name|gimp_display_shell_get_unit
 argument_list|(
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -2553,7 +2553,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_rectangle_tool_button_press (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_rectangle_tool_button_press (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_rectangle_tool_button_press
 parameter_list|(
 name|GimpTool
@@ -2572,7 +2572,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpRectangleTool
@@ -2603,11 +2603,11 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gdisp
+name|display
 operator|!=
 name|tool
 operator|->
-name|gdisp
+name|display
 condition|)
 block|{
 if|if
@@ -2650,9 +2650,9 @@ argument_list|)
 expr_stmt|;
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|=
-name|gdisp
+name|display
 expr_stmt|;
 name|g_object_set
 argument_list|(
@@ -2776,7 +2776,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_rectangle_tool_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_rectangle_tool_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_rectangle_tool_button_release
 parameter_list|(
 name|GimpTool
@@ -2795,7 +2795,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpRectangleTool
@@ -2852,7 +2852,7 @@ name|gimp_tool_pop_status
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 if|if
@@ -2909,7 +2909,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_rectangle_tool_motion (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_rectangle_tool_motion (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_rectangle_tool_motion
 parameter_list|(
 name|GimpTool
@@ -2928,7 +2928,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpRectangleTool
@@ -3150,7 +3150,7 @@ literal|0
 expr_stmt|;
 name|max_x
 operator|=
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -3158,7 +3158,7 @@ name|width
 expr_stmt|;
 name|max_y
 operator|=
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -4445,7 +4445,7 @@ name|gimp_rectangle_tool_update_options
 argument_list|(
 name|rectangle
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 if|if
@@ -4463,14 +4463,14 @@ name|gimp_tool_pop_status
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|gimp_tool_push_status_coords
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|_
 argument_list|(
@@ -4612,7 +4612,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_rectangle_tool_key_press (GimpTool * tool,GdkEventKey * kevent,GimpDisplay * gdisp)
+DECL|function|gimp_rectangle_tool_key_press (GimpTool * tool,GdkEventKey * kevent,GimpDisplay * display)
 name|gimp_rectangle_tool_key_press
 parameter_list|(
 name|GimpTool
@@ -4625,7 +4625,7 @@ name|kevent
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpRectangleTool
@@ -4673,11 +4673,11 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gdisp
+name|display
 operator|!=
 name|tool
 operator|->
-name|gdisp
+name|display
 condition|)
 return|return
 name|FALSE
@@ -4802,7 +4802,7 @@ literal|0
 expr_stmt|;
 name|max_x
 operator|=
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -4810,7 +4810,7 @@ name|width
 expr_stmt|;
 name|max_y
 operator|=
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -4895,7 +4895,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_rectangle_tool_modifier_key (GimpTool * tool,GdkModifierType key,gboolean press,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_rectangle_tool_modifier_key (GimpTool * tool,GdkModifierType key,gboolean press,GdkModifierType state,GimpDisplay * display)
 name|gimp_rectangle_tool_modifier_key
 parameter_list|(
 name|GimpTool
@@ -4913,14 +4913,14 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{ }
 end_function
 
 begin_function
 name|void
-DECL|function|gimp_rectangle_tool_oper_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,gboolean proximity,GimpDisplay * gdisp)
+DECL|function|gimp_rectangle_tool_oper_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,gboolean proximity,GimpDisplay * display)
 name|gimp_rectangle_tool_oper_update
 parameter_list|(
 name|GimpTool
@@ -4939,7 +4939,7 @@ name|proximity
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpRectangleTool
@@ -4987,9 +4987,9 @@ if|if
 condition|(
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|!=
-name|gdisp
+name|display
 condition|)
 return|return;
 name|g_object_get
@@ -5053,7 +5053,7 @@ name|gimp_draw_tool_on_handle
 argument_list|(
 name|draw_tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|coords
 operator|->
@@ -5121,7 +5121,7 @@ name|gimp_draw_tool_on_handle
 argument_list|(
 name|draw_tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|coords
 operator|->
@@ -5189,7 +5189,7 @@ name|gimp_draw_tool_on_handle
 argument_list|(
 name|draw_tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|coords
 operator|->
@@ -5257,7 +5257,7 @@ name|gimp_draw_tool_on_handle
 argument_list|(
 name|draw_tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|coords
 operator|->
@@ -5573,7 +5573,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_rectangle_tool_cursor_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_rectangle_tool_cursor_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,GimpDisplay * display)
 name|gimp_rectangle_tool_cursor_update
 parameter_list|(
 name|GimpTool
@@ -5589,7 +5589,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpRectangleTool
@@ -5638,9 +5638,9 @@ if|if
 condition|(
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|==
-name|gdisp
+name|display
 operator|&&
 operator|!
 operator|(
@@ -5782,7 +5782,7 @@ name|gimp_tool_set_cursor
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|gimp_tool_control_get_cursor
 argument_list|(
@@ -5836,7 +5836,7 @@ name|GIMP_DISPLAY_SHELL
 argument_list|(
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -5966,7 +5966,7 @@ name|GIMP_DISPLAY_SHELL
 argument_list|(
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -6004,7 +6004,7 @@ condition|(
 operator|!
 name|tool
 operator|->
-name|gdisp
+name|display
 condition|)
 return|return;
 name|g_object_get
@@ -6216,7 +6216,7 @@ name|tool
 argument_list|,
 name|tool
 operator|->
-name|gdisp
+name|display
 argument_list|,
 name|_
 argument_list|(
@@ -6239,7 +6239,7 @@ argument_list|)
 argument_list|,
 name|tool
 operator|->
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -6374,7 +6374,7 @@ name|GIMP_DISPLAY_SHELL
 argument_list|(
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -6420,14 +6420,14 @@ name|gimp_image_flush
 argument_list|(
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
 expr_stmt|;
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|=
 name|NULL
 expr_stmt|;
@@ -6458,7 +6458,7 @@ parameter_list|)
 block|{
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 decl_stmt|;
 name|gint
 name|x1
@@ -6470,14 +6470,14 @@ name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
-name|gdisp
+name|display
 operator|=
 name|GIMP_TOOL
 argument_list|(
 name|rectangle
 argument_list|)
 operator|->
-name|gdisp
+name|display
 expr_stmt|;
 name|gimp_draw_tool_pause
 argument_list|(
@@ -6493,7 +6493,7 @@ name|gimp_channel_bounds
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -6552,7 +6552,7 @@ literal|0
 argument_list|,
 literal|"x2"
 argument_list|,
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -6560,7 +6560,7 @@ name|width
 argument_list|,
 literal|"y2"
 argument_list|,
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -6603,7 +6603,7 @@ parameter_list|)
 block|{
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 decl_stmt|;
 name|gint
 name|offset_x
@@ -6645,18 +6645,18 @@ decl_stmt|;
 name|gint
 name|shrunk_y2
 decl_stmt|;
-name|gdisp
+name|display
 operator|=
 name|GIMP_TOOL
 argument_list|(
 name|rectangle
 argument_list|)
 operator|->
-name|gdisp
+name|display
 expr_stmt|;
 name|width
 operator|=
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -6664,7 +6664,7 @@ name|width
 expr_stmt|;
 name|height
 operator|=
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -6765,7 +6765,7 @@ if|if
 condition|(
 name|gimp_image_crop_auto_shrink
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|,
@@ -6951,7 +6951,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_rectangle_tool_update_options (GimpRectangleTool * rectangle,GimpDisplay * gdisp)
+DECL|function|gimp_rectangle_tool_update_options (GimpRectangleTool * rectangle,GimpDisplay * display)
 name|gimp_rectangle_tool_update_options
 parameter_list|(
 name|GimpRectangleTool
@@ -6960,7 +6960,7 @@ name|rectangle
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpDisplayShell
@@ -7011,7 +7011,7 @@ name|shell
 operator|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -7354,7 +7354,7 @@ argument_list|(
 name|rectangle
 argument_list|)
 operator|->
-name|gdisp
+name|display
 condition|)
 return|return;
 name|g_object_get
@@ -7448,7 +7448,7 @@ argument_list|(
 name|rectangle
 argument_list|)
 operator|->
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -7500,7 +7500,7 @@ argument_list|(
 name|rectangle
 argument_list|)
 operator|->
-name|gdisp
+name|display
 condition|)
 return|return;
 name|g_object_get
@@ -7594,7 +7594,7 @@ argument_list|(
 name|rectangle
 argument_list|)
 operator|->
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -7646,7 +7646,7 @@ argument_list|(
 name|rectangle
 argument_list|)
 operator|->
-name|gdisp
+name|display
 condition|)
 return|return;
 name|g_object_get
@@ -7746,7 +7746,7 @@ argument_list|(
 name|rectangle
 argument_list|)
 operator|->
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -7788,7 +7788,7 @@ name|GIMP_DISPLAY_SHELL
 argument_list|(
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -7965,7 +7965,7 @@ argument_list|(
 name|rectangle
 argument_list|)
 operator|->
-name|gdisp
+name|display
 condition|)
 return|return;
 name|g_object_get
@@ -8212,7 +8212,7 @@ argument_list|(
 name|rectangle
 argument_list|)
 operator|->
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}

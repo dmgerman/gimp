@@ -113,7 +113,7 @@ name|action
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -138,7 +138,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -164,7 +164,7 @@ name|proximity
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -187,7 +187,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -294,7 +294,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_selection_tool_control (GimpTool * tool,GimpToolAction action,GimpDisplay * gdisp)
+DECL|function|gimp_selection_tool_control (GimpTool * tool,GimpToolAction action,GimpDisplay * display)
 name|gimp_selection_tool_control
 parameter_list|(
 name|GimpTool
@@ -306,7 +306,7 @@ name|action
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 if|if
@@ -319,7 +319,7 @@ name|gimp_tool_pop_status
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|GIMP_TOOL_CLASS
@@ -333,7 +333,7 @@ name|tool
 argument_list|,
 name|action
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -342,7 +342,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_selection_tool_modifier_key (GimpTool * tool,GdkModifierType key,gboolean press,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_selection_tool_modifier_key (GimpTool * tool,GdkModifierType key,gboolean press,GdkModifierType state,GimpDisplay * display)
 name|gimp_selection_tool_modifier_key
 parameter_list|(
 name|GimpTool
@@ -360,7 +360,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpSelectionTool
@@ -535,7 +535,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_selection_tool_oper_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,gboolean proximity,GimpDisplay * gdisp)
+DECL|function|gimp_selection_tool_oper_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,gboolean proximity,GimpDisplay * display)
 name|gimp_selection_tool_oper_update
 parameter_list|(
 name|GimpTool
@@ -554,7 +554,7 @@ name|proximity
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpSelectionTool
@@ -607,7 +607,7 @@ name|selection
 operator|=
 name|gimp_image_get_mask
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -616,7 +616,7 @@ name|layer
 operator|=
 name|gimp_image_pick_correlate_layer
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|,
@@ -633,7 +633,7 @@ name|floating_sel
 operator|=
 name|gimp_image_floating_sel
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -848,7 +848,7 @@ name|gimp_tool_pop_status
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 if|if
@@ -950,7 +950,7 @@ name|gimp_tool_push_status
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|status
 argument_list|)
@@ -962,7 +962,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_selection_tool_cursor_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_selection_tool_cursor_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,GimpDisplay * display)
 name|gimp_selection_tool_cursor_update
 parameter_list|(
 name|GimpTool
@@ -978,7 +978,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpSelectionTool
@@ -1076,7 +1076,7 @@ name|gimp_tool_set_cursor
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|GIMP_CURSOR_MOUSE
 argument_list|,
@@ -1142,7 +1142,7 @@ name|GIMP_IS_DISPLAY
 argument_list|(
 name|tool
 operator|->
-name|gdisp
+name|display
 argument_list|)
 argument_list|,
 name|FALSE
@@ -1176,7 +1176,7 @@ name|tool
 argument_list|,
 name|tool
 operator|->
-name|gdisp
+name|display
 argument_list|,
 name|coords
 argument_list|,
@@ -1197,7 +1197,7 @@ name|tool
 argument_list|,
 name|tool
 operator|->
-name|gdisp
+name|display
 argument_list|,
 name|coords
 argument_list|,
@@ -1218,7 +1218,7 @@ name|tool
 argument_list|,
 name|tool
 operator|->
-name|gdisp
+name|display
 argument_list|,
 name|coords
 argument_list|,

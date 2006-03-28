@@ -144,7 +144,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f29a920108
+DECL|struct|__anon29dc1b060108
 block|{
 DECL|member|width
 name|gint
@@ -214,7 +214,7 @@ name|action
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -240,7 +240,7 @@ name|proximity
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -265,7 +265,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -288,7 +288,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -308,7 +308,7 @@ name|kevent
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -334,7 +334,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -360,7 +360,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -386,7 +386,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -414,7 +414,7 @@ name|free_sel
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -430,7 +430,7 @@ name|fg_select
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|,
 name|GimpChannel
 modifier|*
@@ -450,7 +450,7 @@ name|fg_select
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -482,7 +482,7 @@ name|fg_select
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|,
 name|GimpForegroundSelectOptions
 modifier|*
@@ -959,7 +959,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_foreground_select_tool_control (GimpTool * tool,GimpToolAction action,GimpDisplay * gdisp)
+DECL|function|gimp_foreground_select_tool_control (GimpTool * tool,GimpToolAction action,GimpDisplay * display)
 name|gimp_foreground_select_tool_control
 parameter_list|(
 name|GimpTool
@@ -971,7 +971,7 @@ name|action
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpForegroundSelectTool
@@ -1000,7 +1000,7 @@ name|gimp_foreground_select_tool_set_mask
 argument_list|(
 name|fg_select
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|NULL
 argument_list|)
@@ -1093,7 +1093,7 @@ name|tool
 argument_list|,
 name|action
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -1102,7 +1102,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_foreground_select_tool_oper_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,gboolean proximity,GimpDisplay * gdisp)
+DECL|function|gimp_foreground_select_tool_oper_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,gboolean proximity,GimpDisplay * display)
 name|gimp_foreground_select_tool_oper_update
 parameter_list|(
 name|GimpTool
@@ -1121,7 +1121,7 @@ name|proximity
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpForegroundSelectTool
@@ -1190,7 +1190,7 @@ name|state
 argument_list|,
 name|proximity
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 if|if
@@ -1300,7 +1300,7 @@ name|gimp_tool_replace_status
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|status
 argument_list|)
@@ -1309,7 +1309,7 @@ name|gimp_draw_tool_start
 argument_list|(
 name|draw_tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -1319,7 +1319,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_foreground_select_tool_modifier_key (GimpTool * tool,GdkModifierType key,gboolean press,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_foreground_select_tool_modifier_key (GimpTool * tool,GdkModifierType key,gboolean press,GdkModifierType state,GimpDisplay * display)
 name|gimp_foreground_select_tool_modifier_key
 parameter_list|(
 name|GimpTool
@@ -1337,7 +1337,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 if|if
@@ -1383,7 +1383,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_foreground_select_tool_cursor_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_foreground_select_tool_cursor_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,GimpDisplay * display)
 name|gimp_foreground_select_tool_cursor_update
 parameter_list|(
 name|GimpTool
@@ -1399,7 +1399,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpForegroundSelectTool
@@ -1484,7 +1484,7 @@ name|coords
 argument_list|,
 name|state
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -1493,7 +1493,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_foreground_select_tool_key_press (GimpTool * tool,GdkEventKey * kevent,GimpDisplay * gdisp)
+DECL|function|gimp_foreground_select_tool_key_press (GimpTool * tool,GdkEventKey * kevent,GimpDisplay * display)
 name|gimp_foreground_select_tool_key_press
 parameter_list|(
 name|GimpTool
@@ -1506,7 +1506,7 @@ name|kevent
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpForegroundSelectTool
@@ -1520,11 +1520,11 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|gdisp
+name|display
 operator|!=
 name|tool
 operator|->
-name|gdisp
+name|display
 condition|)
 return|return
 name|FALSE
@@ -1546,7 +1546,7 @@ name|gimp_foreground_select_tool_apply
 argument_list|(
 name|fg_select
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 return|return
@@ -1561,7 +1561,7 @@ name|tool
 argument_list|,
 name|HALT
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 return|return
@@ -1578,7 +1578,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_foreground_select_tool_button_press (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_foreground_select_tool_button_press (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_foreground_select_tool_button_press
 parameter_list|(
 name|GimpTool
@@ -1597,7 +1597,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpForegroundSelectTool
@@ -1653,9 +1653,9 @@ argument_list|)
 operator|&&
 name|draw_tool
 operator|->
-name|gdisp
+name|display
 operator|!=
-name|gdisp
+name|display
 condition|)
 name|gimp_draw_tool_stop
 argument_list|(
@@ -1725,7 +1725,7 @@ name|gimp_draw_tool_start
 argument_list|(
 name|draw_tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_resume
@@ -1751,7 +1751,7 @@ name|time
 argument_list|,
 name|state
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -1761,7 +1761,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_foreground_select_tool_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_foreground_select_tool_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_foreground_select_tool_button_release
 parameter_list|(
 name|GimpTool
@@ -1780,7 +1780,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpForegroundSelectTool
@@ -1833,7 +1833,7 @@ name|gimp_foreground_select_tool_push_stroke
 argument_list|(
 name|fg_select
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|options
 argument_list|)
@@ -1845,7 +1845,7 @@ argument_list|(
 name|tool
 argument_list|)
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_resume
@@ -1874,7 +1874,7 @@ name|time
 argument_list|,
 name|state
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -1884,7 +1884,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_foreground_select_tool_motion (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_foreground_select_tool_motion (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_foreground_select_tool_motion
 parameter_list|(
 name|GimpTool
@@ -1903,7 +1903,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpForegroundSelectTool
@@ -2037,7 +2037,7 @@ name|time
 argument_list|,
 name|state
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -2238,7 +2238,7 @@ name|GIMP_DISPLAY_SHELL
 argument_list|(
 name|draw_tool
 operator|->
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -2331,7 +2331,7 @@ name|GIMP_DISPLAY_SHELL
 argument_list|(
 name|draw_tool
 operator|->
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -2478,7 +2478,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_foreground_select_tool_select (GimpFreeSelectTool * free_sel,GimpDisplay * gdisp)
+DECL|function|gimp_foreground_select_tool_select (GimpFreeSelectTool * free_sel,GimpDisplay * display)
 name|gimp_foreground_select_tool_select
 parameter_list|(
 name|GimpFreeSelectTool
@@ -2487,7 +2487,7 @@ name|free_sel
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpForegroundSelectTool
@@ -2511,7 +2511,7 @@ name|GimpImage
 modifier|*
 name|image
 init|=
-name|gdisp
+name|display
 operator|->
 name|image
 decl_stmt|;
@@ -2722,7 +2722,7 @@ name|contiguous
 argument_list|,
 name|GIMP_PROGRESS
 argument_list|(
-name|gdisp
+name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2817,7 +2817,7 @@ name|gimp_foreground_select_tool_set_mask
 argument_list|(
 name|fg_select
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|mask
 argument_list|)
@@ -2833,7 +2833,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_foreground_select_tool_set_mask (GimpForegroundSelectTool * fg_select,GimpDisplay * gdisp,GimpChannel * mask)
+DECL|function|gimp_foreground_select_tool_set_mask (GimpForegroundSelectTool * fg_select,GimpDisplay * display,GimpChannel * mask)
 name|gimp_foreground_select_tool_set_mask
 parameter_list|(
 name|GimpForegroundSelectTool
@@ -2842,7 +2842,7 @@ name|fg_select
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|,
 name|GimpChannel
 modifier|*
@@ -2920,7 +2920,7 @@ name|gimp_display_shell_set_mask
 argument_list|(
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -3021,7 +3021,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_foreground_select_tool_apply (GimpForegroundSelectTool * fg_select,GimpDisplay * gdisp)
+DECL|function|gimp_foreground_select_tool_apply (GimpForegroundSelectTool * fg_select,GimpDisplay * display)
 name|gimp_foreground_select_tool_apply
 parameter_list|(
 name|GimpForegroundSelectTool
@@ -3030,7 +3030,7 @@ name|fg_select
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpTool
@@ -3090,7 +3090,7 @@ name|gimp_channel_select_channel
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -3130,12 +3130,12 @@ name|tool
 argument_list|,
 name|HALT
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -3300,7 +3300,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_foreground_select_tool_push_stroke (GimpForegroundSelectTool * fg_select,GimpDisplay * gdisp,GimpForegroundSelectOptions * options)
+DECL|function|gimp_foreground_select_tool_push_stroke (GimpForegroundSelectTool * fg_select,GimpDisplay * display,GimpForegroundSelectOptions * options)
 name|gimp_foreground_select_tool_push_stroke
 parameter_list|(
 name|GimpForegroundSelectTool
@@ -3309,7 +3309,7 @@ name|fg_select
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|,
 name|GimpForegroundSelectOptions
 modifier|*
@@ -3322,7 +3322,7 @@ name|shell
 init|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -3469,7 +3469,7 @@ if|if
 condition|(
 name|tool
 operator|->
-name|gdisp
+name|display
 condition|)
 name|gimp_free_select_tool_select
 argument_list|(
@@ -3480,7 +3480,7 @@ argument_list|)
 argument_list|,
 name|tool
 operator|->
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 return|return
@@ -3660,7 +3660,7 @@ if|if
 condition|(
 name|tool
 operator|->
-name|gdisp
+name|display
 condition|)
 name|gimp_display_shell_set_mask
 argument_list|(
@@ -3668,7 +3668,7 @@ name|GIMP_DISPLAY_SHELL
 argument_list|(
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)

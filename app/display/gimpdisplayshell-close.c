@@ -217,7 +217,7 @@ name|image
 operator|=
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 expr_stmt|;
@@ -273,7 +273,7 @@ name|gimp_display_delete
 argument_list|(
 name|shell
 operator|->
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -829,7 +829,7 @@ name|gimp_display_delete
 argument_list|(
 name|shell
 operator|->
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 break|break;
@@ -871,7 +871,7 @@ condition|(
 operator|!
 name|shell
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -881,7 +881,7 @@ name|gimp_display_delete
 argument_list|(
 name|shell
 operator|->
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}

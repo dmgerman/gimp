@@ -238,7 +238,7 @@ name|action
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -264,7 +264,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -290,7 +290,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -316,7 +316,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -341,7 +341,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -367,7 +367,7 @@ name|proximity
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -390,7 +390,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1061,7 +1061,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_paint_tool_control (GimpTool * tool,GimpToolAction action,GimpDisplay * gdisp)
+DECL|function|gimp_paint_tool_control (GimpTool * tool,GimpToolAction action,GimpDisplay * display)
 name|gimp_paint_tool_control
 parameter_list|(
 name|GimpTool
@@ -1073,7 +1073,7 @@ name|action
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpPaintTool
@@ -1093,7 +1093,7 @@ name|drawable
 operator|=
 name|gimp_image_active_drawable
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -1141,7 +1141,7 @@ literal|0
 comment|/*  evil hack i'm thinking about...  --mitch  */
 block|{
 comment|/*  HALT means the current display is going to go away (TM),          *  so try to find another display of the same image to make          *  straight line drawing continue to work...          */
-block|GSList *list;          for (list = display_list; list; list = g_slist_next (list))           {             GimpDisplay *tmp_disp = list->data;              if (tmp_disp != gdisp&& tmp_disp->image == gdisp->image)               {                 tool->gdisp = tmp_disp;                 break;               }           }       }
+block|GSList *list;          for (list = display_list; list; list = g_slist_next (list))           {             GimpDisplay *tmp_disp = list->data;              if (tmp_disp != display&& tmp_disp->image == display->image)               {                 tool->display = tmp_disp;                 break;               }           }       }
 endif|#
 directive|endif
 break|break;
@@ -1159,7 +1159,7 @@ name|tool
 argument_list|,
 name|action
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -1302,7 +1302,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_paint_tool_button_press (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_paint_tool_button_press (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_paint_tool_button_press
 parameter_list|(
 name|GimpTool
@@ -1321,7 +1321,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpDrawTool
@@ -1387,7 +1387,7 @@ name|drawable
 operator|=
 name|gimp_image_active_drawable
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -1439,21 +1439,21 @@ if|if
 condition|(
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|&&
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|!=
-name|gdisp
+name|display
 operator|&&
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 operator|==
-name|gdisp
+name|display
 operator|->
 name|image
 condition|)
@@ -1461,16 +1461,16 @@ block|{
 comment|/*  if this is a different display, but the same image, HACK around        *  in tool internals AFTER stopping the current draw_tool, so        *  straight line drawing works across different views of the        *  same image.        */
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|=
-name|gdisp
+name|display
 expr_stmt|;
 block|}
 name|gdk_display
 operator|=
 name|gtk_widget_get_display
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -1482,7 +1482,7 @@ operator|=
 operator|(
 name|gimp_devices_get_current
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -1514,11 +1514,11 @@ return|return;
 if|if
 condition|(
 operator|(
-name|gdisp
+name|display
 operator|!=
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|)
 operator|||
 operator|!
@@ -1614,7 +1614,7 @@ name|time
 argument_list|,
 name|state
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 if|if
@@ -1631,7 +1631,7 @@ return|return;
 comment|/*  pause the current selection  */
 name|gimp_image_selection_control
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|,
@@ -1690,7 +1690,7 @@ expr_stmt|;
 block|}
 name|gimp_projection_flush_now
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -1699,14 +1699,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_display_flush_now
 argument_list|(
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_start
 argument_list|(
 name|draw_tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -1715,7 +1715,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_paint_tool_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_paint_tool_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_paint_tool_button_release
 parameter_list|(
 name|GimpTool
@@ -1734,7 +1734,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpPaintTool
@@ -1779,7 +1779,7 @@ name|drawable
 operator|=
 name|gimp_image_active_drawable
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -1809,7 +1809,7 @@ expr_stmt|;
 comment|/*  resume the current selection  */
 name|gimp_image_selection_control
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|,
@@ -1832,7 +1832,7 @@ name|time
 argument_list|,
 name|state
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 if|if
@@ -1858,7 +1858,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -1877,7 +1877,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_paint_tool_motion (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_paint_tool_motion (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_paint_tool_motion
 parameter_list|(
 name|GimpTool
@@ -1896,7 +1896,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpPaintTool
@@ -1946,7 +1946,7 @@ name|drawable
 operator|=
 name|gimp_image_active_drawable
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -2003,7 +2003,7 @@ name|time
 argument_list|,
 name|state
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 if|if
@@ -2038,7 +2038,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_projection_flush_now
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -2047,7 +2047,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_display_flush_now
 argument_list|(
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|paint_tool
@@ -2080,7 +2080,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_paint_tool_modifier_key (GimpTool * tool,GdkModifierType key,gboolean press,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_paint_tool_modifier_key (GimpTool * tool,GdkModifierType key,gboolean press,GdkModifierType state,GimpDisplay * display)
 name|gimp_paint_tool_modifier_key
 parameter_list|(
 name|GimpTool
@@ -2098,7 +2098,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpPaintTool
@@ -2153,7 +2153,7 @@ name|info
 decl_stmt|;
 name|tool_info_list
 operator|=
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -2239,7 +2239,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_paint_tool_oper_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,gboolean proximity,GimpDisplay * gdisp)
+DECL|function|gimp_paint_tool_oper_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,gboolean proximity,GimpDisplay * display)
 name|gimp_paint_tool_oper_update
 parameter_list|(
 name|GimpTool
@@ -2258,7 +2258,7 @@ name|proximity
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpPaintTool
@@ -2332,7 +2332,7 @@ name|state
 argument_list|,
 name|proximity
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 return|return;
@@ -2347,7 +2347,7 @@ name|shell
 operator|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -2368,28 +2368,28 @@ name|gimp_tool_pop_status
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|&&
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|!=
-name|gdisp
+name|display
 operator|&&
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 operator|==
-name|gdisp
+name|display
 operator|->
 name|image
 condition|)
@@ -2397,16 +2397,16 @@ block|{
 comment|/*  if this is a different display, but the same image, HACK around        *  in tool internals AFTER stopping the current draw_tool, so        *  straight line drawing works across different views of the        *  same image.        */
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|=
-name|gdisp
+name|display
 expr_stmt|;
 block|}
 name|drawable
 operator|=
 name|gimp_image_active_drawable
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -2420,11 +2420,11 @@ condition|)
 block|{
 if|if
 condition|(
-name|gdisp
+name|display
 operator|==
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|&&
 operator|(
 name|state
@@ -2591,7 +2591,7 @@ name|GimpImage
 modifier|*
 name|image
 init|=
-name|gdisp
+name|display
 operator|->
 name|image
 decl_stmt|;
@@ -2690,7 +2690,7 @@ name|gimp_tool_push_status
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|status_str
 argument_list|)
@@ -2706,17 +2706,17 @@ else|else
 block|{
 if|if
 condition|(
-name|gdisp
+name|display
 operator|==
 name|tool
 operator|->
-name|gdisp
+name|display
 condition|)
 name|gimp_tool_push_status
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|_
 argument_list|(
@@ -2798,7 +2798,7 @@ name|gimp_draw_tool_start
 argument_list|(
 name|draw_tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -2817,7 +2817,7 @@ name|state
 argument_list|,
 name|proximity
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -3271,7 +3271,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_paint_tool_cursor_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_paint_tool_cursor_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,GimpDisplay * display)
 name|gimp_paint_tool_cursor_update
 parameter_list|(
 name|GimpTool
@@ -3287,7 +3287,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpPaintTool
@@ -3320,7 +3320,7 @@ name|gimp_tool_set_cursor
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|GIMP_CURSOR_NONE
 argument_list|,
@@ -3344,7 +3344,7 @@ name|coords
 argument_list|,
 name|state
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -3387,7 +3387,7 @@ if|if
 condition|(
 name|tool
 operator|->
-name|gdisp
+name|display
 condition|)
 block|{
 name|GimpContext
@@ -3398,7 +3398,7 @@ name|gimp_get_user_context
 argument_list|(
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->

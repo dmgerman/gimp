@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5b7cde0103
+DECL|enum|__anon2c6730f90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -152,7 +152,7 @@ name|tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -171,7 +171,7 @@ name|action
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -197,7 +197,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -223,7 +223,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -249,7 +249,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -269,7 +269,7 @@ name|kevent
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -294,7 +294,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -320,7 +320,7 @@ name|proximity
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -343,7 +343,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -532,7 +532,7 @@ argument_list|)
 expr_stmt|;
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|=
 name|NULL
 expr_stmt|;
@@ -771,7 +771,7 @@ end_comment
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_tool_real_initialize (GimpTool * tool,GimpDisplay * gdisp)
+DECL|function|gimp_tool_real_initialize (GimpTool * tool,GimpDisplay * display)
 name|gimp_tool_real_initialize
 parameter_list|(
 name|GimpTool
@@ -780,7 +780,7 @@ name|tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 return|return
@@ -792,7 +792,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tool_real_control (GimpTool * tool,GimpToolAction action,GimpDisplay * gdisp)
+DECL|function|gimp_tool_real_control (GimpTool * tool,GimpToolAction action,GimpDisplay * display)
 name|gimp_tool_real_control
 parameter_list|(
 name|GimpTool
@@ -804,7 +804,7 @@ name|action
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{ }
 end_function
@@ -812,7 +812,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tool_real_button_press (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_tool_real_button_press (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_tool_real_button_press
 parameter_list|(
 name|GimpTool
@@ -831,14 +831,14 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|=
-name|gdisp
+name|display
 expr_stmt|;
 name|tool
 operator|->
@@ -846,7 +846,7 @@ name|drawable
 operator|=
 name|gimp_image_active_drawable
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -864,7 +864,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tool_real_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_tool_real_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_tool_real_button_release
 parameter_list|(
 name|GimpTool
@@ -883,7 +883,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|gimp_tool_control_halt
@@ -899,7 +899,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tool_real_motion (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_tool_real_motion (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_tool_real_motion
 parameter_list|(
 name|GimpTool
@@ -918,7 +918,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{ }
 end_function
@@ -926,7 +926,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_tool_real_key_press (GimpTool * tool,GdkEventKey * kevent,GimpDisplay * gdisp)
+DECL|function|gimp_tool_real_key_press (GimpTool * tool,GdkEventKey * kevent,GimpDisplay * display)
 name|gimp_tool_real_key_press
 parameter_list|(
 name|GimpTool
@@ -939,7 +939,7 @@ name|kevent
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 return|return
@@ -951,7 +951,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tool_real_modifier_key (GimpTool * tool,GdkModifierType key,gboolean press,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_tool_real_modifier_key (GimpTool * tool,GdkModifierType key,gboolean press,GdkModifierType state,GimpDisplay * display)
 name|gimp_tool_real_modifier_key
 parameter_list|(
 name|GimpTool
@@ -969,7 +969,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{ }
 end_function
@@ -977,7 +977,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tool_real_oper_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,gboolean proximity,GimpDisplay * gdisp)
+DECL|function|gimp_tool_real_oper_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,gboolean proximity,GimpDisplay * display)
 name|gimp_tool_real_oper_update
 parameter_list|(
 name|GimpTool
@@ -996,7 +996,7 @@ name|proximity
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{ }
 end_function
@@ -1004,7 +1004,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tool_real_cursor_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_tool_real_cursor_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,GimpDisplay * display)
 name|gimp_tool_real_cursor_update
 parameter_list|(
 name|GimpTool
@@ -1020,14 +1020,14 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|gimp_tool_set_cursor
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|gimp_tool_control_get_cursor
 argument_list|(
@@ -1060,7 +1060,7 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_tool_initialize (GimpTool * tool,GimpDisplay * gdisp)
+DECL|function|gimp_tool_initialize (GimpTool * tool,GimpDisplay * display)
 name|gimp_tool_initialize
 parameter_list|(
 name|GimpTool
@@ -1069,7 +1069,7 @@ name|tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -1086,7 +1086,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY
 argument_list|(
-name|gdisp
+name|display
 argument_list|)
 argument_list|,
 name|FALSE
@@ -1102,7 +1102,7 @@ name|initialize
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 return|;
 block|}
@@ -1110,7 +1110,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_tool_control (GimpTool * tool,GimpToolAction action,GimpDisplay * gdisp)
+DECL|function|gimp_tool_control (GimpTool * tool,GimpToolAction action,GimpDisplay * display)
 name|gimp_tool_control
 parameter_list|(
 name|GimpTool
@@ -1122,7 +1122,7 @@ name|action
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -1162,7 +1162,7 @@ name|tool
 argument_list|,
 name|action
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|gimp_tool_control_pause
@@ -1214,7 +1214,7 @@ name|tool
 argument_list|,
 name|action
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -1242,7 +1242,7 @@ name|tool
 argument_list|,
 name|action
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 if|if
@@ -1268,7 +1268,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_tool_button_press (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_tool_button_press (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_tool_button_press
 parameter_list|(
 name|GimpTool
@@ -1287,7 +1287,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -1309,7 +1309,7 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY
 argument_list|(
-name|gdisp
+name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1328,7 +1328,7 @@ name|time
 argument_list|,
 name|state
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -1336,7 +1336,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_tool_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_tool_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_tool_button_release
 parameter_list|(
 name|GimpTool
@@ -1355,7 +1355,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -1377,7 +1377,7 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY
 argument_list|(
-name|gdisp
+name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1396,7 +1396,7 @@ name|time
 argument_list|,
 name|state
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -1404,7 +1404,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_tool_motion (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_tool_motion (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_tool_motion
 parameter_list|(
 name|GimpTool
@@ -1423,7 +1423,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -1445,7 +1445,7 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY
 argument_list|(
-name|gdisp
+name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1474,7 +1474,7 @@ name|time
 argument_list|,
 name|state
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -1482,7 +1482,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_tool_set_focus_display (GimpTool * tool,GimpDisplay * gdisp)
+DECL|function|gimp_tool_set_focus_display (GimpTool * tool,GimpDisplay * display)
 name|gimp_tool_set_focus_display
 parameter_list|(
 name|GimpTool
@@ -1491,7 +1491,7 @@ name|tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -1504,13 +1504,13 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|gdisp
+name|display
 operator|==
 name|NULL
 operator|||
 name|GIMP_IS_DISPLAY
 argument_list|(
-name|gdisp
+name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1519,9 +1519,9 @@ directive|ifdef
 name|DEBUG_FOCUS
 name|g_printerr
 argument_list|(
-literal|"gimp_tool_set_focus_display: gdisp: %p  focus_display: %p\n"
+literal|"gimp_tool_set_focus_display: display: %p  focus_display: %p\n"
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|tool
 operator|->
@@ -1532,7 +1532,7 @@ endif|#
 directive|endif
 if|if
 condition|(
-name|gdisp
+name|display
 operator|!=
 name|tool
 operator|->
@@ -1570,7 +1570,7 @@ name|tool
 operator|->
 name|focus_display
 operator|=
-name|gdisp
+name|display
 expr_stmt|;
 block|}
 block|}
@@ -1578,7 +1578,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_tool_key_press (GimpTool * tool,GdkEventKey * kevent,GimpDisplay * gdisp)
+DECL|function|gimp_tool_key_press (GimpTool * tool,GdkEventKey * kevent,GimpDisplay * display)
 name|gimp_tool_key_press
 parameter_list|(
 name|GimpTool
@@ -1591,7 +1591,7 @@ name|kevent
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -1608,7 +1608,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY
 argument_list|(
-name|gdisp
+name|display
 argument_list|)
 argument_list|,
 name|FALSE
@@ -1616,7 +1616,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|gdisp
+name|display
 operator|==
 name|tool
 operator|->
@@ -1637,7 +1637,7 @@ name|tool
 argument_list|,
 name|kevent
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 return|;
 block|}
@@ -1646,7 +1646,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tool_modifier_key (GimpTool * tool,GdkModifierType key,gboolean press,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_tool_modifier_key (GimpTool * tool,GdkModifierType key,gboolean press,GdkModifierType state,GimpDisplay * display)
 name|gimp_tool_modifier_key
 parameter_list|(
 name|GimpTool
@@ -1664,7 +1664,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -1679,13 +1679,13 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY
 argument_list|(
-name|gdisp
+name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|gdisp
+name|display
 operator|==
 name|tool
 operator|->
@@ -1707,7 +1707,7 @@ name|press
 argument_list|,
 name|state
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -1715,7 +1715,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_tool_set_modifier_state (GimpTool * tool,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_tool_set_modifier_state (GimpTool * tool,GdkModifierType state,GimpDisplay * display)
 name|gimp_tool_set_modifier_state
 parameter_list|(
 name|GimpTool
@@ -1727,7 +1727,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -1742,7 +1742,7 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY
 argument_list|(
-name|gdisp
+name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1751,9 +1751,9 @@ directive|ifdef
 name|DEBUG_FOCUS
 name|g_printerr
 argument_list|(
-literal|"gimp_tool_set_modifier_state: gdisp: %p  focus_display: %p\n"
+literal|"gimp_tool_set_modifier_state: display: %p  focus_display: %p\n"
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|tool
 operator|->
@@ -1764,7 +1764,7 @@ endif|#
 directive|endif
 name|g_return_if_fail
 argument_list|(
-name|gdisp
+name|display
 operator|==
 name|tool
 operator|->
@@ -1806,7 +1806,7 @@ name|FALSE
 argument_list|,
 name|state
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -1845,7 +1845,7 @@ name|FALSE
 argument_list|,
 name|state
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -1884,7 +1884,7 @@ name|FALSE
 argument_list|,
 name|state
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -1899,7 +1899,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_tool_oper_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,gboolean proximity,GimpDisplay * gdisp)
+DECL|function|gimp_tool_oper_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,gboolean proximity,GimpDisplay * display)
 name|gimp_tool_oper_update
 parameter_list|(
 name|GimpTool
@@ -1918,7 +1918,7 @@ name|proximity
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -1940,7 +1940,7 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY
 argument_list|(
-name|gdisp
+name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1959,7 +1959,7 @@ name|state
 argument_list|,
 name|proximity
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -1967,7 +1967,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_tool_cursor_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_tool_cursor_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,GimpDisplay * display)
 name|gimp_tool_cursor_update
 parameter_list|(
 name|GimpTool
@@ -1983,7 +1983,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -2005,7 +2005,7 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY
 argument_list|(
-name|gdisp
+name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2022,7 +2022,7 @@ name|coords
 argument_list|,
 name|state
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -2030,7 +2030,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_tool_push_status (GimpTool * tool,GimpDisplay * gdisp,const gchar * message)
+DECL|function|gimp_tool_push_status (GimpTool * tool,GimpDisplay * display,const gchar * message)
 name|gimp_tool_push_status
 parameter_list|(
 name|GimpTool
@@ -2039,7 +2039,7 @@ name|tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|,
 specifier|const
 name|gchar
@@ -2063,7 +2063,7 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY
 argument_list|(
-name|gdisp
+name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2071,7 +2071,7 @@ name|shell
 operator|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -2098,7 +2098,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_tool_push_status_coords (GimpTool * tool,GimpDisplay * gdisp,const gchar * title,gdouble x,const gchar * separator,gdouble y)
+DECL|function|gimp_tool_push_status_coords (GimpTool * tool,GimpDisplay * display,const gchar * title,gdouble x,const gchar * separator,gdouble y)
 name|gimp_tool_push_status_coords
 parameter_list|(
 name|GimpTool
@@ -2107,7 +2107,7 @@ name|tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|,
 specifier|const
 name|gchar
@@ -2142,7 +2142,7 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY
 argument_list|(
-name|gdisp
+name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2150,7 +2150,7 @@ name|shell
 operator|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -2183,7 +2183,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_tool_push_status_length (GimpTool * tool,GimpDisplay * gdisp,const gchar * title,GimpOrientationType axis,gdouble value)
+DECL|function|gimp_tool_push_status_length (GimpTool * tool,GimpDisplay * display,const gchar * title,GimpOrientationType axis,gdouble value)
 name|gimp_tool_push_status_length
 parameter_list|(
 name|GimpTool
@@ -2192,7 +2192,7 @@ name|tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|,
 specifier|const
 name|gchar
@@ -2222,7 +2222,7 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY
 argument_list|(
-name|gdisp
+name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2230,7 +2230,7 @@ name|shell
 operator|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -2261,7 +2261,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_tool_replace_status (GimpTool * tool,GimpDisplay * gdisp,const gchar * message)
+DECL|function|gimp_tool_replace_status (GimpTool * tool,GimpDisplay * display,const gchar * message)
 name|gimp_tool_replace_status
 parameter_list|(
 name|GimpTool
@@ -2270,7 +2270,7 @@ name|tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|,
 specifier|const
 name|gchar
@@ -2294,7 +2294,7 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY
 argument_list|(
-name|gdisp
+name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2302,7 +2302,7 @@ name|shell
 operator|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -2329,7 +2329,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_tool_pop_status (GimpTool * tool,GimpDisplay * gdisp)
+DECL|function|gimp_tool_pop_status (GimpTool * tool,GimpDisplay * display)
 name|gimp_tool_pop_status
 parameter_list|(
 name|GimpTool
@@ -2338,7 +2338,7 @@ name|tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpDisplayShell
@@ -2357,7 +2357,7 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY
 argument_list|(
-name|gdisp
+name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2365,7 +2365,7 @@ name|shell
 operator|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -2390,7 +2390,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_tool_set_cursor (GimpTool * tool,GimpDisplay * gdisp,GimpCursorType cursor,GimpToolCursorType tool_cursor,GimpCursorModifier modifier)
+DECL|function|gimp_tool_set_cursor (GimpTool * tool,GimpDisplay * display,GimpCursorType cursor,GimpToolCursorType tool_cursor,GimpCursorModifier modifier)
 name|gimp_tool_set_cursor
 parameter_list|(
 name|GimpTool
@@ -2399,7 +2399,7 @@ name|tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|,
 name|GimpCursorType
 name|cursor
@@ -2423,7 +2423,7 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY
 argument_list|(
-name|gdisp
+name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2431,7 +2431,7 @@ name|gimp_display_shell_set_cursor
 argument_list|(
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)

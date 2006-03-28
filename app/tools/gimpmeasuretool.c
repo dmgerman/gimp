@@ -179,7 +179,7 @@ name|action
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -205,7 +205,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -231,7 +231,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -257,7 +257,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -277,7 +277,7 @@ name|kevent
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -300,7 +300,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -373,7 +373,7 @@ name|mtool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -572,7 +572,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_measure_tool_control (GimpTool * tool,GimpToolAction action,GimpDisplay * gdisp)
+DECL|function|gimp_measure_tool_control (GimpTool * tool,GimpToolAction action,GimpDisplay * display)
 name|gimp_measure_tool_control
 parameter_list|(
 name|GimpTool
@@ -584,7 +584,7 @@ name|action
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 switch|switch
@@ -625,7 +625,7 @@ name|tool
 argument_list|,
 name|action
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -634,7 +634,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_measure_tool_button_press (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_measure_tool_button_press (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_measure_tool_button_press
 parameter_list|(
 name|GimpTool
@@ -653,7 +653,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpMeasureTool
@@ -691,7 +691,7 @@ name|shell
 operator|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -706,18 +706,18 @@ operator|->
 name|control
 argument_list|)
 operator|&&
-name|gdisp
+name|display
 operator|!=
 name|tool
 operator|->
-name|gdisp
+name|display
 condition|)
 block|{
 name|gimp_tool_pop_status
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -736,11 +736,11 @@ operator|->
 name|control
 argument_list|)
 operator|&&
-name|gdisp
+name|display
 operator|==
 name|tool
 operator|->
-name|gdisp
+name|display
 condition|)
 block|{
 comment|/*  if the cursor is in one of the handles,        *  the new function will be moving or adding a new point or guide        */
@@ -769,7 +769,7 @@ argument_list|(
 name|tool
 argument_list|)
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|coords
 operator|->
@@ -854,7 +854,7 @@ index|]
 argument_list|,
 literal|0
 argument_list|,
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -891,7 +891,7 @@ index|]
 argument_list|,
 literal|0
 argument_list|,
-name|gdisp
+name|display
 operator|->
 name|image
 operator|->
@@ -908,7 +908,7 @@ name|create_vguide
 condition|)
 name|gimp_image_undo_group_start
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|,
@@ -929,7 +929,7 @@ name|guide
 operator|=
 name|gimp_image_add_hguide
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|,
@@ -945,7 +945,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_update_guide
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|,
@@ -962,7 +962,7 @@ name|guide
 operator|=
 name|gimp_image_add_vguide
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|,
@@ -978,7 +978,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_update_guide
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|,
@@ -994,7 +994,7 @@ name|create_vguide
 condition|)
 name|gimp_image_undo_group_end
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -1007,7 +1007,7 @@ name|create_vguide
 condition|)
 name|gimp_image_flush
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -1197,7 +1197,7 @@ name|gimp_measure_tool_dialog_update
 argument_list|(
 name|mtool
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -1246,12 +1246,12 @@ name|function
 operator|=
 name|ADDING
 expr_stmt|;
-comment|/*  set the gdisplay  */
+comment|/*  set the displaylay  */
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|=
-name|gdisp
+name|display
 expr_stmt|;
 if|if
 condition|(
@@ -1267,7 +1267,7 @@ name|gimp_tool_replace_status
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 literal|" "
 argument_list|)
@@ -1290,7 +1290,7 @@ argument_list|(
 name|tool
 argument_list|)
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -1365,7 +1365,7 @@ name|GIMP_VIEWABLE
 argument_list|(
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|->
 name|image
 argument_list|)
@@ -1377,7 +1377,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_measure_tool_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_measure_tool_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_measure_tool_button_release
 parameter_list|(
 name|GimpTool
@@ -1396,7 +1396,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpMeasureTool
@@ -1420,7 +1420,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_measure_tool_motion (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_measure_tool_motion (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_measure_tool_motion
 parameter_list|(
 name|GimpTool
@@ -1439,7 +1439,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpMeasureTool
@@ -1975,7 +1975,7 @@ name|gimp_measure_tool_dialog_update
 argument_list|(
 name|mtool
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_resume
@@ -1992,7 +1992,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_measure_tool_key_press (GimpTool * tool,GdkEventKey * kevent,GimpDisplay * gdisp)
+DECL|function|gimp_measure_tool_key_press (GimpTool * tool,GdkEventKey * kevent,GimpDisplay * display)
 name|gimp_measure_tool_key_press
 parameter_list|(
 name|GimpTool
@@ -2005,16 +2005,16 @@ name|kevent
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 if|if
 condition|(
-name|gdisp
+name|display
 operator|==
 name|tool
 operator|->
-name|gdisp
+name|display
 condition|)
 block|{
 switch|switch
@@ -2051,7 +2051,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_measure_tool_cursor_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,GimpDisplay * gdisp)
+DECL|function|gimp_measure_tool_cursor_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,GimpDisplay * display)
 name|gimp_measure_tool_cursor_update
 parameter_list|(
 name|GimpTool
@@ -2067,7 +2067,7 @@ name|state
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpMeasureTool
@@ -2108,9 +2108,9 @@ argument_list|)
 operator|&&
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|==
-name|gdisp
+name|display
 condition|)
 block|{
 for|for
@@ -2138,7 +2138,7 @@ argument_list|(
 name|tool
 argument_list|)
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|coords
 operator|->
@@ -2304,7 +2304,7 @@ name|coords
 argument_list|,
 name|state
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -2498,7 +2498,7 @@ name|draw_tool
 argument_list|,
 name|tool
 operator|->
-name|gdisp
+name|display
 argument_list|,
 name|mtool
 operator|->
@@ -2663,7 +2663,7 @@ name|GIMP_DISPLAY_SHELL
 argument_list|(
 name|tool
 operator|->
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -2801,7 +2801,7 @@ name|tool
 argument_list|,
 name|tool
 operator|->
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 if|if
@@ -2961,7 +2961,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_measure_tool_dialog_update (GimpMeasureTool * mtool,GimpDisplay * gdisp)
+DECL|function|gimp_measure_tool_dialog_update (GimpMeasureTool * mtool,GimpDisplay * display)
 name|gimp_measure_tool_dialog_update
 parameter_list|(
 name|GimpMeasureTool
@@ -2970,7 +2970,7 @@ name|mtool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|gdisp
+name|display
 parameter_list|)
 block|{
 name|GimpDisplayShell
@@ -2979,7 +2979,7 @@ name|shell
 init|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|display
 operator|->
 name|shell
 argument_list|)
@@ -2988,7 +2988,7 @@ name|GimpImage
 modifier|*
 name|image
 init|=
-name|gdisp
+name|display
 operator|->
 name|image
 decl_stmt|;
@@ -3518,7 +3518,7 @@ argument_list|(
 name|mtool
 argument_list|)
 argument_list|,
-name|gdisp
+name|display
 argument_list|,
 name|buf
 argument_list|)
@@ -4123,7 +4123,7 @@ operator|->
 name|tool_info
 argument_list|,
 name|NULL
-comment|/* tool->gdisp->shell */
+comment|/* tool->display->shell */
 argument_list|,
 name|_
 argument_list|(
