@@ -46,7 +46,7 @@ modifier|*
 name|args
 parameter_list|,
 name|gint
-name|argc
+name|n_args
 parameter_list|,
 name|gboolean
 name|synchronous

@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29aa57950103
+DECL|enum|__anon29f588b50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -999,14 +999,16 @@ condition|(
 operator|!
 name|return_vals
 operator|||
+name|g_value_get_enum
+argument_list|(
+operator|&
 name|return_vals
 index|[
 literal|0
 index|]
 operator|.
 name|value
-operator|.
-name|pdb_int
+argument_list|)
 operator|!=
 name|GIMP_PDB_SUCCESS
 condition|)
@@ -1048,14 +1050,16 @@ condition|)
 block|{
 name|retval
 operator|=
+name|g_value_get_double
+argument_list|(
+operator|&
 name|return_vals
 index|[
 literal|1
 index|]
 operator|.
 name|value
-operator|.
-name|pdb_float
+argument_list|)
 expr_stmt|;
 block|}
 if|if
@@ -1067,6 +1071,8 @@ argument_list|(
 name|return_vals
 argument_list|,
 name|n_return_vals
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|progress

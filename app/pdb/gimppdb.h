@@ -25,35 +25,10 @@ DECL|member|arg_type
 name|GimpPDBArgType
 name|arg_type
 decl_stmt|;
-comment|/*  argument type        */
-DECL|union|_ArgValue
-union|union
-name|_ArgValue
-block|{
-DECL|member|pdb_int
-name|gint32
-name|pdb_int
-decl_stmt|;
-comment|/*  Integer type         */
-DECL|member|pdb_float
-name|gdouble
-name|pdb_float
-decl_stmt|;
-comment|/*  Floating point type  */
-DECL|member|pdb_pointer
-name|gpointer
-name|pdb_pointer
-decl_stmt|;
-comment|/*  Pointer type         */
-DECL|member|pdb_color
-name|GimpRGB
-name|pdb_color
-decl_stmt|;
-comment|/*  Color type           */
 DECL|member|value
-block|}
+name|GValue
 name|value
-union|;
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -448,6 +423,13 @@ parameter_list|,
 name|Argument
 modifier|*
 name|args
+parameter_list|,
+name|gint
+name|n_args
+parameter_list|,
+name|gint
+modifier|*
+name|n_return_vals
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -476,7 +458,7 @@ name|name
 parameter_list|,
 name|gint
 modifier|*
-name|nreturn_vals
+name|n_return_vals
 parameter_list|,
 modifier|...
 parameter_list|)
@@ -488,6 +470,7 @@ name|Argument
 modifier|*
 name|procedural_db_arguments
 parameter_list|(
+specifier|const
 name|ProcRecord
 modifier|*
 name|procedure
@@ -500,6 +483,7 @@ name|Argument
 modifier|*
 name|procedural_db_return_values
 parameter_list|(
+specifier|const
 name|ProcRecord
 modifier|*
 name|procedure
@@ -519,7 +503,10 @@ modifier|*
 name|args
 parameter_list|,
 name|gint
-name|nargs
+name|n_args
+parameter_list|,
+name|gboolean
+name|full_destroy
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -537,7 +524,7 @@ name|gint
 name|n_arguments
 parameter_list|,
 name|gint
-name|n_return_values
+name|n_return_vals
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -574,6 +561,21 @@ parameter_list|,
 name|GParamSpec
 modifier|*
 name|pspec
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|procedural_db_argument_init
+parameter_list|(
+name|Argument
+modifier|*
+name|arg
+parameter_list|,
+name|ProcArg
+modifier|*
+name|proc_arg
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -630,6 +632,20 @@ specifier|const
 name|gchar
 modifier|*
 name|desc
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|procedural_db_compat_arg_init
+parameter_list|(
+name|Argument
+modifier|*
+name|arg
+parameter_list|,
+name|GimpPDBArgType
+name|arg_type
 parameter_list|)
 function_decl|;
 end_function_decl

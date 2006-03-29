@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1ea31b0103
+DECL|enum|__anon2b9473840103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1159,14 +1159,16 @@ condition|(
 operator|!
 name|return_vals
 operator|||
+name|g_value_get_enum
+argument_list|(
+operator|&
 name|return_vals
 index|[
 literal|0
 index|]
 operator|.
 name|value
-operator|.
-name|pdb_int
+argument_list|)
 operator|!=
 name|GIMP_PDB_SUCCESS
 condition|)
@@ -1198,6 +1200,8 @@ argument_list|(
 name|return_vals
 argument_list|,
 name|n_return_vals
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
