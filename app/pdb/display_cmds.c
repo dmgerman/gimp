@@ -105,7 +105,13 @@ modifier|*
 name|gimp
 parameter_list|)
 block|{
+name|ProcRecord
+modifier|*
+name|procedure
+decl_stmt|;
 comment|/*    * display_new    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -118,8 +124,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|display_new_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_IMAGE
 argument_list|,
@@ -139,8 +144,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|display_new_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_DISPLAY
 argument_list|,
@@ -162,11 +166,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|display_new_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * display_delete    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -179,8 +184,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|display_delete_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_DISPLAY
 argument_list|,
@@ -202,11 +206,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|display_delete_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * display_get_window_handle    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -219,8 +224,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|display_get_window_handle_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_DISPLAY
 argument_list|,
@@ -240,8 +244,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|display_get_window_handle_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -267,11 +270,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|display_get_window_handle_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * displays_flush    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -286,11 +290,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|displays_flush_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * displays_reconnect    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -303,8 +308,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|displays_reconnect_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_IMAGE
 argument_list|,
@@ -324,8 +328,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|displays_reconnect_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_IMAGE
 argument_list|,
@@ -347,8 +350,7 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|displays_reconnect_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 block|}

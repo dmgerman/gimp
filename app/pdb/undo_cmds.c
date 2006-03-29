@@ -127,7 +127,13 @@ modifier|*
 name|gimp
 parameter_list|)
 block|{
+name|ProcRecord
+modifier|*
+name|procedure
+decl_stmt|;
 comment|/*    * image_undo_group_start    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -140,8 +146,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|image_undo_group_start_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_IMAGE
 argument_list|,
@@ -163,11 +168,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|image_undo_group_start_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * image_undo_group_end    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -180,8 +186,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|image_undo_group_end_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_IMAGE
 argument_list|,
@@ -203,11 +208,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|image_undo_group_end_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * image_undo_is_enabled    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -220,8 +226,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|image_undo_is_enabled_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_IMAGE
 argument_list|,
@@ -241,8 +246,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|image_undo_is_enabled_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -264,11 +268,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|image_undo_is_enabled_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * image_undo_disable    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -281,8 +286,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|image_undo_disable_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_IMAGE
 argument_list|,
@@ -302,8 +306,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|image_undo_disable_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -325,11 +328,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|image_undo_disable_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * image_undo_enable    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -342,8 +346,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|image_undo_enable_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_IMAGE
 argument_list|,
@@ -363,8 +366,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|image_undo_enable_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -386,11 +388,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|image_undo_enable_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * image_undo_freeze    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -403,8 +406,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|image_undo_freeze_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_IMAGE
 argument_list|,
@@ -424,8 +426,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|image_undo_freeze_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -447,11 +448,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|image_undo_freeze_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * image_undo_thaw    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -464,8 +466,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|image_undo_thaw_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_IMAGE
 argument_list|,
@@ -485,8 +486,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|image_undo_thaw_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -508,8 +508,7 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|image_undo_thaw_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 block|}

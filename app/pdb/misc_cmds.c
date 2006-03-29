@@ -129,7 +129,13 @@ modifier|*
 name|gimp
 parameter_list|)
 block|{
+name|ProcRecord
+modifier|*
+name|procedure
+decl_stmt|;
 comment|/*    * version    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -142,8 +148,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|version_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
@@ -169,11 +174,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|version_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * getpid    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -186,8 +192,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|getpid_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -213,11 +218,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|getpid_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * quit    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -230,8 +236,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|quit_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -253,8 +258,7 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|quit_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 block|}

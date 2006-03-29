@@ -335,7 +335,13 @@ modifier|*
 name|gimp
 parameter_list|)
 block|{
+name|ProcRecord
+modifier|*
+name|procedure
+decl_stmt|;
 comment|/*    * gradient_new    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -348,8 +354,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_new_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
@@ -373,8 +378,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|gradient_new_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
@@ -400,11 +404,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|gradient_new_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * gradient_duplicate    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -417,8 +422,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_duplicate_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
@@ -442,8 +446,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|gradient_duplicate_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
@@ -469,11 +472,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|gradient_duplicate_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * gradient_is_editable    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -486,8 +490,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_is_editable_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
@@ -511,8 +514,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|gradient_is_editable_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -534,11 +536,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|gradient_is_editable_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * gradient_rename    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -551,8 +554,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_rename_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
@@ -576,8 +578,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_rename_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
@@ -601,8 +602,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|gradient_rename_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
@@ -628,11 +628,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|gradient_rename_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * gradient_delete    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -645,8 +646,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_delete_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
@@ -672,11 +672,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|gradient_delete_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * gradient_get_uniform_samples    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -689,8 +690,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_get_uniform_samples_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
@@ -714,8 +714,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_get_uniform_samples_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -739,8 +738,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_get_uniform_samples_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -760,8 +758,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|gradient_get_uniform_samples_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -785,8 +782,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|gradient_get_uniform_samples_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_FLOATARRAY
 argument_list|,
@@ -806,11 +802,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|gradient_get_uniform_samples_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * gradient_get_custom_samples    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -823,8 +820,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_get_custom_samples_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
@@ -848,8 +844,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_get_custom_samples_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -873,8 +868,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_get_custom_samples_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_FLOATARRAY
 argument_list|,
@@ -892,8 +886,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_get_custom_samples_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -913,8 +906,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|gradient_get_custom_samples_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -938,8 +930,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|gradient_get_custom_samples_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_FLOATARRAY
 argument_list|,
@@ -959,11 +950,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|gradient_get_custom_samples_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * gradient_segment_get_left_color    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -976,8 +968,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_get_left_color_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
@@ -1001,8 +992,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_get_left_color_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -1026,8 +1016,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|gradient_segment_get_left_color_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_COLOR
 argument_list|,
@@ -1047,8 +1036,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|gradient_segment_get_left_color_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
@@ -1075,11 +1063,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|gradient_segment_get_left_color_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * gradient_segment_set_left_color    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -1092,8 +1081,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_set_left_color_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
@@ -1117,8 +1105,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_set_left_color_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -1142,8 +1129,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_set_left_color_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_COLOR
 argument_list|,
@@ -1163,8 +1149,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_set_left_color_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
@@ -1190,11 +1175,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|gradient_segment_set_left_color_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * gradient_segment_get_right_color    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -1207,8 +1193,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_get_right_color_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
@@ -1232,8 +1217,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_get_right_color_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -1257,8 +1241,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|gradient_segment_get_right_color_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_COLOR
 argument_list|,
@@ -1278,8 +1261,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|gradient_segment_get_right_color_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
@@ -1306,11 +1288,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|gradient_segment_get_right_color_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * gradient_segment_set_right_color    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -1323,8 +1306,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_set_right_color_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
@@ -1348,8 +1330,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_set_right_color_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -1373,8 +1354,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_set_right_color_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_COLOR
 argument_list|,
@@ -1394,8 +1374,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_set_right_color_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
@@ -1421,11 +1400,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|gradient_segment_set_right_color_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * gradient_segment_get_left_pos    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -1438,8 +1418,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_get_left_pos_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
@@ -1463,8 +1442,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_get_left_pos_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -1488,8 +1466,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|gradient_segment_get_left_pos_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
@@ -1516,11 +1493,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|gradient_segment_get_left_pos_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * gradient_segment_set_left_pos    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -1533,8 +1511,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_set_left_pos_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
@@ -1558,8 +1535,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_set_left_pos_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -1583,8 +1559,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_set_left_pos_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
@@ -1608,8 +1583,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|gradient_segment_set_left_pos_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
@@ -1636,11 +1610,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|gradient_segment_set_left_pos_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * gradient_segment_get_middle_pos    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -1653,8 +1628,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_get_middle_pos_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
@@ -1678,8 +1652,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_get_middle_pos_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -1703,8 +1676,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|gradient_segment_get_middle_pos_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
@@ -1731,11 +1703,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|gradient_segment_get_middle_pos_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * gradient_segment_set_middle_pos    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -1748,8 +1721,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_set_middle_pos_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
@@ -1773,8 +1745,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_set_middle_pos_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -1798,8 +1769,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_set_middle_pos_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
@@ -1823,8 +1793,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|gradient_segment_set_middle_pos_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
@@ -1851,11 +1820,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|gradient_segment_set_middle_pos_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * gradient_segment_get_right_pos    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -1868,8 +1838,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_get_right_pos_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
@@ -1893,8 +1862,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_get_right_pos_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -1918,8 +1886,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|gradient_segment_get_right_pos_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
@@ -1946,11 +1913,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|gradient_segment_get_right_pos_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * gradient_segment_set_right_pos    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -1963,8 +1931,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_set_right_pos_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
@@ -1988,8 +1955,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_set_right_pos_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -2013,8 +1979,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_set_right_pos_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
@@ -2038,8 +2003,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|gradient_segment_set_right_pos_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
@@ -2066,11 +2030,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|gradient_segment_set_right_pos_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * gradient_segment_get_blending_function    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -2083,8 +2048,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_get_blending_function_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
@@ -2108,8 +2072,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_get_blending_function_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -2133,8 +2096,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|gradient_segment_get_blending_function_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -2158,11 +2120,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|gradient_segment_get_blending_function_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * gradient_segment_get_coloring_type    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -2175,8 +2138,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_get_coloring_type_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
@@ -2200,8 +2162,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_get_coloring_type_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -2225,8 +2186,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|gradient_segment_get_coloring_type_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -2250,11 +2210,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|gradient_segment_get_coloring_type_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * gradient_segment_range_set_blending_function    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -2267,8 +2228,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_range_set_blending_function_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
@@ -2292,8 +2252,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_range_set_blending_function_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -2317,8 +2276,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_range_set_blending_function_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -2342,8 +2300,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_range_set_blending_function_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -2367,11 +2324,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|gradient_segment_range_set_blending_function_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * gradient_segment_range_set_coloring_type    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -2384,8 +2342,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_range_set_coloring_type_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
@@ -2409,8 +2366,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_range_set_coloring_type_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -2434,8 +2390,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_range_set_coloring_type_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -2459,8 +2414,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_range_set_coloring_type_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -2484,11 +2438,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|gradient_segment_range_set_coloring_type_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * gradient_segment_range_flip    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -2501,8 +2456,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_range_flip_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
@@ -2526,8 +2480,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_range_flip_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -2551,8 +2504,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_range_flip_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -2578,11 +2530,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|gradient_segment_range_flip_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * gradient_segment_range_replicate    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -2595,8 +2548,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_range_replicate_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
@@ -2620,8 +2572,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_range_replicate_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -2645,8 +2596,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_range_replicate_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -2670,8 +2620,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_range_replicate_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -2697,11 +2646,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|gradient_segment_range_replicate_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * gradient_segment_range_split_midpoint    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -2714,8 +2664,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_range_split_midpoint_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
@@ -2739,8 +2688,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_range_split_midpoint_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -2764,8 +2712,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_range_split_midpoint_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -2791,11 +2738,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|gradient_segment_range_split_midpoint_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * gradient_segment_range_split_uniform    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -2808,8 +2756,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_range_split_uniform_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
@@ -2833,8 +2780,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_range_split_uniform_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -2858,8 +2804,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_range_split_uniform_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -2883,8 +2828,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_range_split_uniform_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -2910,11 +2854,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|gradient_segment_range_split_uniform_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * gradient_segment_range_delete    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -2927,8 +2872,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_range_delete_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
@@ -2952,8 +2896,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_range_delete_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -2977,8 +2920,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_range_delete_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -3004,11 +2946,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|gradient_segment_range_delete_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * gradient_segment_range_redistribute_handles    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -3021,8 +2964,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_range_redistribute_handles_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
@@ -3046,8 +2988,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_range_redistribute_handles_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -3071,8 +3012,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_range_redistribute_handles_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -3098,11 +3038,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|gradient_segment_range_redistribute_handles_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * gradient_segment_range_blend_colors    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -3115,8 +3056,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_range_blend_colors_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
@@ -3140,8 +3080,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_range_blend_colors_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -3165,8 +3104,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_range_blend_colors_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -3192,11 +3130,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|gradient_segment_range_blend_colors_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * gradient_segment_range_blend_opacity    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -3209,8 +3148,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_range_blend_opacity_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
@@ -3234,8 +3172,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_range_blend_opacity_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -3259,8 +3196,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_range_blend_opacity_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -3286,11 +3222,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|gradient_segment_range_blend_opacity_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * gradient_segment_range_move    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -3303,8 +3240,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_range_move_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
@@ -3328,8 +3264,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_range_move_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -3353,8 +3288,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_range_move_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -3378,8 +3312,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_range_move_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
@@ -3405,8 +3338,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|gradient_segment_range_move_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -3426,8 +3358,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|gradient_segment_range_move_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
@@ -3454,8 +3385,7 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|gradient_segment_range_move_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 block|}

@@ -113,7 +113,13 @@ modifier|*
 name|gimp
 parameter_list|)
 block|{
+name|ProcRecord
+modifier|*
+name|procedure
+decl_stmt|;
 comment|/*    * floating_sel_remove    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -126,8 +132,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|floating_sel_remove_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_LAYER
 argument_list|,
@@ -151,11 +156,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|floating_sel_remove_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * floating_sel_anchor    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -168,8 +174,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|floating_sel_anchor_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_LAYER
 argument_list|,
@@ -193,11 +198,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|floating_sel_anchor_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * floating_sel_to_layer    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -210,8 +216,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|floating_sel_to_layer_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_LAYER
 argument_list|,
@@ -235,11 +240,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|floating_sel_to_layer_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * floating_sel_attach    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -252,8 +258,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|floating_sel_attach_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_LAYER
 argument_list|,
@@ -275,8 +280,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|floating_sel_attach_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_DRAWABLE
 argument_list|,
@@ -300,11 +304,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|floating_sel_attach_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * floating_sel_rigor    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -317,8 +322,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|floating_sel_rigor_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_LAYER
 argument_list|,
@@ -340,8 +344,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|floating_sel_rigor_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -363,11 +366,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|floating_sel_rigor_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * floating_sel_relax    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -380,8 +384,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|floating_sel_relax_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_LAYER
 argument_list|,
@@ -403,8 +406,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|floating_sel_relax_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -426,8 +428,7 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|floating_sel_relax_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 block|}

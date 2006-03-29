@@ -411,7 +411,13 @@ modifier|*
 name|gimp
 parameter_list|)
 block|{
+name|ProcRecord
+modifier|*
+name|procedure
+decl_stmt|;
 comment|/*    * drawable_delete    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -424,8 +430,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_delete_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_DRAWABLE
 argument_list|,
@@ -449,11 +454,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|drawable_delete_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * drawable_is_layer    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -466,8 +472,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_is_layer_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_DRAWABLE
 argument_list|,
@@ -489,8 +494,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|drawable_is_layer_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -512,11 +516,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|drawable_is_layer_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * drawable_is_layer_mask    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -529,8 +534,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_is_layer_mask_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_DRAWABLE
 argument_list|,
@@ -552,8 +556,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|drawable_is_layer_mask_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -575,11 +578,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|drawable_is_layer_mask_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * drawable_is_channel    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -592,8 +596,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_is_channel_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_DRAWABLE
 argument_list|,
@@ -615,8 +618,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|drawable_is_channel_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -638,11 +640,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|drawable_is_channel_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * drawable_type    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -655,8 +658,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_type_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_DRAWABLE
 argument_list|,
@@ -678,8 +680,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|drawable_type_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -703,11 +704,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|drawable_type_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * drawable_type_with_alpha    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -720,8 +722,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_type_with_alpha_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_DRAWABLE
 argument_list|,
@@ -743,8 +744,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|drawable_type_with_alpha_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -768,11 +768,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|drawable_type_with_alpha_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * drawable_has_alpha    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -785,8 +786,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_has_alpha_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_DRAWABLE
 argument_list|,
@@ -808,8 +808,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|drawable_has_alpha_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -831,11 +830,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|drawable_has_alpha_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * drawable_is_rgb    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -848,8 +848,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_is_rgb_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_DRAWABLE
 argument_list|,
@@ -871,8 +870,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|drawable_is_rgb_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -894,11 +892,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|drawable_is_rgb_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * drawable_is_gray    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -911,8 +910,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_is_gray_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_DRAWABLE
 argument_list|,
@@ -934,8 +932,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|drawable_is_gray_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -957,11 +954,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|drawable_is_gray_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * drawable_is_indexed    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -974,8 +972,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_is_indexed_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_DRAWABLE
 argument_list|,
@@ -997,8 +994,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|drawable_is_indexed_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -1020,11 +1016,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|drawable_is_indexed_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * drawable_bpp    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -1037,8 +1034,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_bpp_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_DRAWABLE
 argument_list|,
@@ -1060,8 +1056,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|drawable_bpp_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -1087,11 +1082,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|drawable_bpp_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * drawable_width    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -1104,8 +1100,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_width_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_DRAWABLE
 argument_list|,
@@ -1127,8 +1122,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|drawable_width_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -1154,11 +1148,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|drawable_width_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * drawable_height    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -1171,8 +1166,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_height_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_DRAWABLE
 argument_list|,
@@ -1194,8 +1188,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|drawable_height_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -1221,11 +1214,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|drawable_height_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * drawable_offsets    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -1238,8 +1232,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_offsets_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_DRAWABLE
 argument_list|,
@@ -1261,8 +1254,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|drawable_offsets_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -1286,8 +1278,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|drawable_offsets_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -1313,11 +1304,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|drawable_offsets_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * drawable_get_image    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -1330,8 +1322,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_get_image_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_DRAWABLE
 argument_list|,
@@ -1353,8 +1344,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|drawable_get_image_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_IMAGE
 argument_list|,
@@ -1376,11 +1366,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|drawable_get_image_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * drawable_set_image    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -1393,8 +1384,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_set_image_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_DRAWABLE
 argument_list|,
@@ -1416,8 +1406,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_set_image_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_IMAGE
 argument_list|,
@@ -1439,11 +1428,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|drawable_set_image_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * drawable_get_name    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -1456,8 +1446,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_get_name_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_DRAWABLE
 argument_list|,
@@ -1479,8 +1468,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|drawable_get_name_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
@@ -1506,11 +1494,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|drawable_get_name_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * drawable_set_name    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -1523,8 +1512,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_set_name_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_DRAWABLE
 argument_list|,
@@ -1546,8 +1534,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_set_name_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
@@ -1573,11 +1560,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|drawable_set_name_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * drawable_get_visible    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -1590,8 +1578,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_get_visible_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_DRAWABLE
 argument_list|,
@@ -1613,8 +1600,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|drawable_get_visible_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -1636,11 +1622,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|drawable_get_visible_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * drawable_set_visible    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -1653,8 +1640,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_set_visible_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_DRAWABLE
 argument_list|,
@@ -1676,8 +1662,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_set_visible_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -1699,11 +1684,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|drawable_set_visible_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * drawable_get_linked    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -1716,8 +1702,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_get_linked_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_DRAWABLE
 argument_list|,
@@ -1739,8 +1724,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|drawable_get_linked_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -1762,11 +1746,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|drawable_get_linked_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * drawable_set_linked    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -1779,8 +1764,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_set_linked_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_DRAWABLE
 argument_list|,
@@ -1802,8 +1786,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_set_linked_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -1825,11 +1808,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|drawable_set_linked_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * drawable_get_tattoo    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -1842,8 +1826,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_get_tattoo_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_DRAWABLE
 argument_list|,
@@ -1865,8 +1848,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|drawable_get_tattoo_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -1892,11 +1874,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|drawable_get_tattoo_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * drawable_set_tattoo    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -1909,8 +1892,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_set_tattoo_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_DRAWABLE
 argument_list|,
@@ -1932,8 +1914,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_set_tattoo_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -1959,11 +1940,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|drawable_set_tattoo_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * drawable_mask_bounds    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -1976,8 +1958,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_mask_bounds_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_DRAWABLE
 argument_list|,
@@ -1999,8 +1980,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|drawable_mask_bounds_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -2020,8 +2000,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|drawable_mask_bounds_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -2045,8 +2024,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|drawable_mask_bounds_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -2070,8 +2048,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|drawable_mask_bounds_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -2095,8 +2072,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|drawable_mask_bounds_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -2122,11 +2098,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|drawable_mask_bounds_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * drawable_mask_intersect    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -2139,8 +2116,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_mask_intersect_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_DRAWABLE
 argument_list|,
@@ -2162,8 +2138,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|drawable_mask_intersect_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -2183,8 +2158,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|drawable_mask_intersect_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -2208,8 +2182,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|drawable_mask_intersect_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -2233,8 +2206,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|drawable_mask_intersect_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -2258,8 +2230,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|drawable_mask_intersect_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -2285,11 +2256,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|drawable_mask_intersect_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * drawable_merge_shadow    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -2302,8 +2274,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_merge_shadow_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_DRAWABLE
 argument_list|,
@@ -2325,8 +2296,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_merge_shadow_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -2348,11 +2318,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|drawable_merge_shadow_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * drawable_update    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -2365,8 +2336,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_update_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_DRAWABLE
 argument_list|,
@@ -2388,8 +2358,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_update_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -2413,8 +2382,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_update_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -2438,8 +2406,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_update_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -2463,8 +2430,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_update_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -2490,11 +2456,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|drawable_update_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * drawable_get_pixel    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -2507,8 +2474,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_get_pixel_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_DRAWABLE
 argument_list|,
@@ -2530,8 +2496,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_get_pixel_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -2555,8 +2520,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_get_pixel_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -2580,8 +2544,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|drawable_get_pixel_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -2607,8 +2570,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|drawable_get_pixel_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT8ARRAY
 argument_list|,
@@ -2628,11 +2590,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|drawable_get_pixel_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * drawable_set_pixel    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -2645,8 +2608,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_set_pixel_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_DRAWABLE
 argument_list|,
@@ -2668,8 +2630,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_set_pixel_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -2693,8 +2654,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_set_pixel_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -2718,8 +2678,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_set_pixel_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -2745,8 +2704,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_set_pixel_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT8ARRAY
 argument_list|,
@@ -2766,11 +2724,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|drawable_set_pixel_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * drawable_fill    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -2783,8 +2742,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_fill_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_DRAWABLE
 argument_list|,
@@ -2806,8 +2764,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_fill_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -2831,11 +2788,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|drawable_fill_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * drawable_offset    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -2848,8 +2806,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_offset_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_DRAWABLE
 argument_list|,
@@ -2871,8 +2828,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_offset_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -2892,8 +2848,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_offset_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -2915,8 +2870,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_offset_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -2940,8 +2894,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_offset_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -2967,11 +2920,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|drawable_offset_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * drawable_thumbnail    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -2984,8 +2938,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_thumbnail_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_DRAWABLE
 argument_list|,
@@ -3007,8 +2960,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_thumbnail_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -3032,8 +2984,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_thumbnail_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -3057,8 +3008,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|drawable_thumbnail_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -3082,8 +3032,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|drawable_thumbnail_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -3107,8 +3056,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|drawable_thumbnail_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -3132,8 +3080,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|drawable_thumbnail_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -3157,8 +3104,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|drawable_thumbnail_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT8ARRAY
 argument_list|,
@@ -3178,11 +3124,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|drawable_thumbnail_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * drawable_sub_thumbnail    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -3195,8 +3142,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_sub_thumbnail_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_DRAWABLE
 argument_list|,
@@ -3218,8 +3164,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_sub_thumbnail_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -3243,8 +3188,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_sub_thumbnail_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -3268,8 +3212,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_sub_thumbnail_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -3293,8 +3236,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_sub_thumbnail_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -3318,8 +3260,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_sub_thumbnail_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -3343,8 +3284,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_sub_thumbnail_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -3368,8 +3308,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|drawable_sub_thumbnail_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -3393,8 +3332,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|drawable_sub_thumbnail_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -3418,8 +3356,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|drawable_sub_thumbnail_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -3443,8 +3380,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|drawable_sub_thumbnail_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -3468,8 +3404,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|drawable_sub_thumbnail_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT8ARRAY
 argument_list|,
@@ -3489,11 +3424,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|drawable_sub_thumbnail_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * drawable_foreground_extract    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -3506,8 +3442,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_foreground_extract_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_DRAWABLE
 argument_list|,
@@ -3529,8 +3464,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_foreground_extract_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -3552,8 +3486,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_foreground_extract_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_DRAWABLE
 argument_list|,
@@ -3577,8 +3510,7 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|drawable_foreground_extract_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 block|}

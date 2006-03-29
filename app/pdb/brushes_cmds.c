@@ -143,7 +143,13 @@ modifier|*
 name|gimp
 parameter_list|)
 block|{
+name|ProcRecord
+modifier|*
+name|procedure
+decl_stmt|;
 comment|/*    * brushes_refresh    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -158,11 +164,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|brushes_refresh_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * brushes_get_list    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -175,8 +182,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|brushes_get_list_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
@@ -200,8 +206,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|brushes_get_list_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -225,8 +230,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|brushes_get_list_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_STRINGARRAY
 argument_list|,
@@ -246,11 +250,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|brushes_get_list_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * brushes_get_brush    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -263,8 +268,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|brushes_get_brush_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
@@ -288,8 +292,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|brushes_get_brush_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -313,8 +316,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|brushes_get_brush_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -338,8 +340,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|brushes_get_brush_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -365,11 +366,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|brushes_get_brush_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * brushes_get_spacing    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -382,8 +384,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|brushes_get_spacing_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -409,11 +410,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|brushes_get_spacing_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * brushes_set_spacing    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -426,8 +428,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|brushes_set_spacing_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -453,11 +454,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|brushes_set_spacing_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * brushes_get_brush_data    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -470,8 +472,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|brushes_get_brush_data_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
@@ -495,8 +496,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|brushes_get_brush_data_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
@@ -520,8 +520,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|brushes_get_brush_data_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
@@ -545,8 +544,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|brushes_get_brush_data_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -570,8 +568,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|brushes_get_brush_data_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -593,8 +590,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|brushes_get_brush_data_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -618,8 +614,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|brushes_get_brush_data_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -643,8 +638,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|brushes_get_brush_data_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -668,8 +662,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|brushes_get_brush_data_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT8ARRAY
 argument_list|,
@@ -689,8 +682,7 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|brushes_get_brush_data_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 block|}

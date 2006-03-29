@@ -205,7 +205,13 @@ modifier|*
 name|gimp
 parameter_list|)
 block|{
+name|ProcRecord
+modifier|*
+name|procedure
+decl_stmt|;
 comment|/*    * parasite_find    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -218,8 +224,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|parasite_find_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
@@ -243,8 +248,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|parasite_find_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_PARASITE
 argument_list|,
@@ -264,11 +268,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|parasite_find_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * parasite_attach    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -281,8 +286,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|parasite_attach_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_PARASITE
 argument_list|,
@@ -302,11 +306,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|parasite_attach_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * parasite_detach    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -319,8 +324,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|parasite_detach_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
@@ -346,11 +350,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|parasite_detach_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * parasite_list    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -363,8 +368,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|parasite_list_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -388,8 +392,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|parasite_list_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_STRINGARRAY
 argument_list|,
@@ -409,11 +412,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|parasite_list_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * image_parasite_find    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -426,8 +430,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|image_parasite_find_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_IMAGE
 argument_list|,
@@ -447,8 +450,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|image_parasite_find_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
@@ -472,8 +474,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|image_parasite_find_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_PARASITE
 argument_list|,
@@ -493,11 +494,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|image_parasite_find_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * image_parasite_attach    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -510,8 +512,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|image_parasite_attach_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_IMAGE
 argument_list|,
@@ -531,8 +532,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|image_parasite_attach_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_PARASITE
 argument_list|,
@@ -552,11 +552,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|image_parasite_attach_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * image_parasite_detach    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -569,8 +570,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|image_parasite_detach_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_IMAGE
 argument_list|,
@@ -590,8 +590,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|image_parasite_detach_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
@@ -617,11 +616,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|image_parasite_detach_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * image_parasite_list    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -634,8 +634,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|image_parasite_list_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_IMAGE
 argument_list|,
@@ -655,8 +654,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|image_parasite_list_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -680,8 +678,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|image_parasite_list_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_STRINGARRAY
 argument_list|,
@@ -701,11 +698,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|image_parasite_list_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * drawable_parasite_find    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -718,8 +716,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_parasite_find_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_DRAWABLE
 argument_list|,
@@ -741,8 +738,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_parasite_find_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
@@ -766,8 +762,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|drawable_parasite_find_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_PARASITE
 argument_list|,
@@ -787,11 +782,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|drawable_parasite_find_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * drawable_parasite_attach    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -804,8 +800,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_parasite_attach_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_DRAWABLE
 argument_list|,
@@ -827,8 +822,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_parasite_attach_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_PARASITE
 argument_list|,
@@ -848,11 +842,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|drawable_parasite_attach_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * drawable_parasite_detach    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -865,8 +860,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_parasite_detach_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_DRAWABLE
 argument_list|,
@@ -888,8 +882,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_parasite_detach_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
@@ -915,11 +908,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|drawable_parasite_detach_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * drawable_parasite_list    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -932,8 +926,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|drawable_parasite_list_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_DRAWABLE
 argument_list|,
@@ -955,8 +948,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|drawable_parasite_list_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -980,8 +972,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|drawable_parasite_list_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_STRINGARRAY
 argument_list|,
@@ -1001,11 +992,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|drawable_parasite_list_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * vectors_parasite_find    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -1018,8 +1010,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_parasite_find_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_VECTORS
 argument_list|,
@@ -1041,8 +1032,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_parasite_find_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
@@ -1066,8 +1056,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|vectors_parasite_find_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_PARASITE
 argument_list|,
@@ -1087,11 +1076,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|vectors_parasite_find_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * vectors_parasite_attach    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -1104,8 +1094,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_parasite_attach_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_VECTORS
 argument_list|,
@@ -1127,8 +1116,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_parasite_attach_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_PARASITE
 argument_list|,
@@ -1148,11 +1136,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|vectors_parasite_attach_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * vectors_parasite_detach    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -1165,8 +1154,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_parasite_detach_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_VECTORS
 argument_list|,
@@ -1188,8 +1176,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_parasite_detach_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
@@ -1215,11 +1202,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|vectors_parasite_detach_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * vectors_parasite_list    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -1232,8 +1220,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_parasite_list_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_VECTORS
 argument_list|,
@@ -1255,8 +1242,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|vectors_parasite_list_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -1280,8 +1266,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|vectors_parasite_list_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_STRINGARRAY
 argument_list|,
@@ -1301,8 +1286,7 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|vectors_parasite_list_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 block|}

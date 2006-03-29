@@ -525,7 +525,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
+name|ProcRecord
+modifier|*
 name|procedural_db_init_proc
 parameter_list|(
 name|ProcRecord

@@ -151,7 +151,13 @@ modifier|*
 name|gimp
 parameter_list|)
 block|{
+name|ProcRecord
+modifier|*
+name|procedure
+decl_stmt|;
 comment|/*    * channel_new    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -164,8 +170,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|channel_new_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_IMAGE
 argument_list|,
@@ -185,8 +190,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|channel_new_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -210,8 +214,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|channel_new_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -235,8 +238,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|channel_new_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
@@ -260,8 +262,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|channel_new_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
@@ -285,8 +286,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|channel_new_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_COLOR
 argument_list|,
@@ -306,8 +306,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|channel_new_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_CHANNEL
 argument_list|,
@@ -331,11 +330,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|channel_new_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * channel_new_from_component    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -348,8 +348,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|channel_new_from_component_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_IMAGE
 argument_list|,
@@ -369,8 +368,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|channel_new_from_component_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -392,8 +390,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|channel_new_from_component_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
@@ -417,8 +414,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|channel_new_from_component_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_CHANNEL
 argument_list|,
@@ -442,11 +438,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|channel_new_from_component_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * channel_copy    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -459,8 +456,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|channel_copy_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_CHANNEL
 argument_list|,
@@ -482,8 +478,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|channel_copy_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_CHANNEL
 argument_list|,
@@ -507,11 +502,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|channel_copy_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * channel_combine_masks    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -524,8 +520,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|channel_combine_masks_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_CHANNEL
 argument_list|,
@@ -547,8 +542,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|channel_combine_masks_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_CHANNEL
 argument_list|,
@@ -570,8 +564,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|channel_combine_masks_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -593,8 +586,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|channel_combine_masks_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -618,8 +610,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|channel_combine_masks_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -645,11 +636,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|channel_combine_masks_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * channel_get_show_masked    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -662,8 +654,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|channel_get_show_masked_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_CHANNEL
 argument_list|,
@@ -685,8 +676,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|channel_get_show_masked_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -708,11 +698,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|channel_get_show_masked_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * channel_set_show_masked    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -725,8 +716,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|channel_set_show_masked_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_CHANNEL
 argument_list|,
@@ -748,8 +738,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|channel_set_show_masked_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -771,11 +760,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|channel_set_show_masked_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * channel_get_opacity    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -788,8 +778,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|channel_get_opacity_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_CHANNEL
 argument_list|,
@@ -811,8 +800,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|channel_get_opacity_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
@@ -838,11 +826,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|channel_get_opacity_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * channel_set_opacity    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -855,8 +844,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|channel_set_opacity_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_CHANNEL
 argument_list|,
@@ -878,8 +866,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|channel_set_opacity_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
@@ -905,11 +892,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|channel_set_opacity_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * channel_get_color    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -922,8 +910,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|channel_get_color_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_CHANNEL
 argument_list|,
@@ -945,8 +932,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|channel_get_color_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_COLOR
 argument_list|,
@@ -968,11 +954,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|channel_get_color_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * channel_set_color    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -985,8 +972,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|channel_set_color_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_CHANNEL
 argument_list|,
@@ -1008,8 +994,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|channel_set_color_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_COLOR
 argument_list|,
@@ -1031,8 +1016,7 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|channel_set_color_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 block|}

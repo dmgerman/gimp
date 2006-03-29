@@ -317,7 +317,13 @@ modifier|*
 name|gimp
 parameter_list|)
 block|{
+name|ProcRecord
+modifier|*
+name|procedure
+decl_stmt|;
 comment|/*    * layer_new    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -330,8 +336,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|layer_new_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_IMAGE
 argument_list|,
@@ -351,8 +356,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|layer_new_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -376,8 +380,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|layer_new_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -401,8 +404,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|layer_new_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -424,8 +426,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|layer_new_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
@@ -449,8 +450,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|layer_new_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
@@ -474,8 +474,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|layer_new_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -497,8 +496,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|layer_new_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_LAYER
 argument_list|,
@@ -522,11 +520,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|layer_new_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * layer_new_from_drawable    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -539,8 +538,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|layer_new_from_drawable_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_DRAWABLE
 argument_list|,
@@ -562,8 +560,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|layer_new_from_drawable_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_IMAGE
 argument_list|,
@@ -583,8 +580,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|layer_new_from_drawable_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_LAYER
 argument_list|,
@@ -608,11 +604,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|layer_new_from_drawable_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * layer_copy    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -625,8 +622,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|layer_copy_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_LAYER
 argument_list|,
@@ -648,8 +644,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|layer_copy_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -669,8 +664,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|layer_copy_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_LAYER
 argument_list|,
@@ -694,11 +688,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|layer_copy_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * layer_add_alpha    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -711,8 +706,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|layer_add_alpha_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_LAYER
 argument_list|,
@@ -736,11 +730,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|layer_add_alpha_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * layer_scale    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -753,8 +748,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|layer_scale_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_LAYER
 argument_list|,
@@ -776,8 +770,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|layer_scale_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -801,8 +794,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|layer_scale_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -826,8 +818,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|layer_scale_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -849,11 +840,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|layer_scale_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * layer_resize    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -866,8 +858,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|layer_resize_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_LAYER
 argument_list|,
@@ -889,8 +880,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|layer_resize_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -914,8 +904,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|layer_resize_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -939,8 +928,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|layer_resize_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -964,8 +952,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|layer_resize_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -991,11 +978,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|layer_resize_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * layer_resize_to_image_size    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -1008,8 +996,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|layer_resize_to_image_size_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_LAYER
 argument_list|,
@@ -1033,11 +1020,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|layer_resize_to_image_size_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * layer_translate    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -1050,8 +1038,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|layer_translate_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_LAYER
 argument_list|,
@@ -1073,8 +1060,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|layer_translate_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -1098,8 +1084,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|layer_translate_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -1125,11 +1110,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|layer_translate_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * layer_set_offsets    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -1142,8 +1128,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|layer_set_offsets_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_LAYER
 argument_list|,
@@ -1165,8 +1150,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|layer_set_offsets_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -1190,8 +1174,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|layer_set_offsets_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -1217,11 +1200,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|layer_set_offsets_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * layer_create_mask    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -1234,8 +1218,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|layer_create_mask_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_LAYER
 argument_list|,
@@ -1257,8 +1240,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|layer_create_mask_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -1280,8 +1262,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|layer_create_mask_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_CHANNEL
 argument_list|,
@@ -1305,11 +1286,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|layer_create_mask_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * layer_get_mask    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -1322,8 +1304,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|layer_get_mask_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_LAYER
 argument_list|,
@@ -1345,8 +1326,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|layer_get_mask_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_CHANNEL
 argument_list|,
@@ -1370,11 +1350,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|layer_get_mask_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * layer_from_mask    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -1387,8 +1368,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|layer_from_mask_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_CHANNEL
 argument_list|,
@@ -1410,8 +1390,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|layer_from_mask_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_LAYER
 argument_list|,
@@ -1435,11 +1414,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|layer_from_mask_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * layer_add_mask    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -1452,8 +1432,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|layer_add_mask_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_LAYER
 argument_list|,
@@ -1475,8 +1454,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|layer_add_mask_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_CHANNEL
 argument_list|,
@@ -1500,11 +1478,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|layer_add_mask_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * layer_remove_mask    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -1517,8 +1496,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|layer_remove_mask_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_LAYER
 argument_list|,
@@ -1540,8 +1518,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|layer_remove_mask_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -1565,11 +1542,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|layer_remove_mask_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * layer_is_floating_sel    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -1582,8 +1560,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|layer_is_floating_sel_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_LAYER
 argument_list|,
@@ -1605,8 +1582,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|layer_is_floating_sel_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -1628,11 +1604,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|layer_is_floating_sel_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * layer_get_lock_alpha    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -1645,8 +1622,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|layer_get_lock_alpha_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_LAYER
 argument_list|,
@@ -1668,8 +1644,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|layer_get_lock_alpha_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -1691,11 +1666,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|layer_get_lock_alpha_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * layer_set_lock_alpha    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -1708,8 +1684,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|layer_set_lock_alpha_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_LAYER
 argument_list|,
@@ -1731,8 +1706,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|layer_set_lock_alpha_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -1754,11 +1728,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|layer_set_lock_alpha_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * layer_get_apply_mask    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -1771,8 +1746,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|layer_get_apply_mask_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_LAYER
 argument_list|,
@@ -1794,8 +1768,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|layer_get_apply_mask_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -1817,11 +1790,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|layer_get_apply_mask_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * layer_set_apply_mask    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -1834,8 +1808,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|layer_set_apply_mask_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_LAYER
 argument_list|,
@@ -1857,8 +1830,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|layer_set_apply_mask_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -1880,11 +1852,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|layer_set_apply_mask_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * layer_get_show_mask    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -1897,8 +1870,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|layer_get_show_mask_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_LAYER
 argument_list|,
@@ -1920,8 +1892,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|layer_get_show_mask_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -1943,11 +1914,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|layer_get_show_mask_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * layer_set_show_mask    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -1960,8 +1932,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|layer_set_show_mask_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_LAYER
 argument_list|,
@@ -1983,8 +1954,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|layer_set_show_mask_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -2006,11 +1976,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|layer_set_show_mask_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * layer_get_edit_mask    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -2023,8 +1994,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|layer_get_edit_mask_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_LAYER
 argument_list|,
@@ -2046,8 +2016,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|layer_get_edit_mask_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -2069,11 +2038,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|layer_get_edit_mask_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * layer_set_edit_mask    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -2086,8 +2056,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|layer_set_edit_mask_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_LAYER
 argument_list|,
@@ -2109,8 +2078,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|layer_set_edit_mask_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -2132,11 +2100,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|layer_set_edit_mask_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * layer_get_opacity    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -2149,8 +2118,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|layer_get_opacity_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_LAYER
 argument_list|,
@@ -2172,8 +2140,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|layer_get_opacity_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
@@ -2199,11 +2166,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|layer_get_opacity_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * layer_set_opacity    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -2216,8 +2184,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|layer_set_opacity_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_LAYER
 argument_list|,
@@ -2239,8 +2206,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|layer_set_opacity_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
@@ -2266,11 +2232,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|layer_set_opacity_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * layer_get_mode    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -2283,8 +2250,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|layer_get_mode_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_LAYER
 argument_list|,
@@ -2306,8 +2272,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|layer_get_mode_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -2331,11 +2296,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|layer_get_mode_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * layer_set_mode    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -2348,8 +2314,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|layer_set_mode_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_LAYER
 argument_list|,
@@ -2371,8 +2336,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|layer_set_mode_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -2396,8 +2360,7 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|layer_set_mode_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 block|}

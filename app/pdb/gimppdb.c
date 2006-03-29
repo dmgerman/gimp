@@ -294,7 +294,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b6fe3940108
+DECL|struct|__anon27cc039a0108
 block|{
 DECL|member|old_name
 specifier|const
@@ -2388,7 +2388,8 @@ block|}
 end_function
 
 begin_function
-name|void
+name|ProcRecord
+modifier|*
 DECL|function|procedural_db_init_proc (ProcRecord * procedure,gint n_arguments,gint n_return_values)
 name|procedural_db_init_proc
 parameter_list|(
@@ -2476,6 +2477,9 @@ argument_list|,
 name|n_return_values
 argument_list|)
 expr_stmt|;
+return|return
+name|procedure
+return|;
 block|}
 end_function
 

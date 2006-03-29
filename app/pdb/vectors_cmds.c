@@ -279,7 +279,13 @@ modifier|*
 name|gimp
 parameter_list|)
 block|{
+name|ProcRecord
+modifier|*
+name|procedure
+decl_stmt|;
 comment|/*    * vectors_new    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -292,8 +298,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_new_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_IMAGE
 argument_list|,
@@ -313,8 +318,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_new_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
@@ -338,8 +342,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|vectors_new_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_VECTORS
 argument_list|,
@@ -363,11 +366,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|vectors_new_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * vectors_get_image    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -380,8 +384,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_get_image_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_VECTORS
 argument_list|,
@@ -403,8 +406,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|vectors_get_image_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_IMAGE
 argument_list|,
@@ -426,11 +428,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|vectors_get_image_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * vectors_get_name    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -443,8 +446,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_get_name_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_VECTORS
 argument_list|,
@@ -466,8 +468,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|vectors_get_name_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
@@ -493,11 +494,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|vectors_get_name_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * vectors_set_name    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -510,8 +512,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_set_name_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_VECTORS
 argument_list|,
@@ -533,8 +534,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_set_name_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
@@ -560,11 +560,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|vectors_set_name_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * vectors_get_visible    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -577,8 +578,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_get_visible_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_VECTORS
 argument_list|,
@@ -600,8 +600,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|vectors_get_visible_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -623,11 +622,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|vectors_get_visible_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * vectors_set_visible    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -640,8 +640,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_set_visible_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_VECTORS
 argument_list|,
@@ -663,8 +662,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_set_visible_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -686,11 +684,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|vectors_set_visible_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * vectors_get_linked    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -703,8 +702,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_get_linked_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_VECTORS
 argument_list|,
@@ -726,8 +724,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|vectors_get_linked_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -749,11 +746,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|vectors_get_linked_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * vectors_set_linked    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -766,8 +764,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_set_linked_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_VECTORS
 argument_list|,
@@ -789,8 +786,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_set_linked_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -812,11 +808,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|vectors_set_linked_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * vectors_get_tattoo    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -829,8 +826,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_get_tattoo_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_VECTORS
 argument_list|,
@@ -852,8 +848,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|vectors_get_tattoo_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -879,11 +874,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|vectors_get_tattoo_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * vectors_set_tattoo    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -896,8 +892,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_set_tattoo_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_VECTORS
 argument_list|,
@@ -919,8 +914,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_set_tattoo_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -946,11 +940,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|vectors_set_tattoo_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * vectors_get_strokes    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -963,8 +958,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_get_strokes_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_VECTORS
 argument_list|,
@@ -986,8 +980,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|vectors_get_strokes_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -1011,8 +1004,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|vectors_get_strokes_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32ARRAY
 argument_list|,
@@ -1032,11 +1024,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|vectors_get_strokes_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * vectors_stroke_get_length    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -1049,8 +1042,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_stroke_get_length_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_VECTORS
 argument_list|,
@@ -1072,8 +1064,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_stroke_get_length_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -1097,8 +1088,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_stroke_get_length_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
@@ -1123,8 +1113,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|vectors_stroke_get_length_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
@@ -1151,11 +1140,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|vectors_stroke_get_length_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * vectors_stroke_get_point_at_dist    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -1168,8 +1158,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_stroke_get_point_at_dist_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_VECTORS
 argument_list|,
@@ -1191,8 +1180,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_stroke_get_point_at_dist_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -1216,8 +1204,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_stroke_get_point_at_dist_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
@@ -1242,8 +1229,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_stroke_get_point_at_dist_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
@@ -1268,8 +1254,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|vectors_stroke_get_point_at_dist_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
@@ -1294,8 +1279,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|vectors_stroke_get_point_at_dist_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
@@ -1320,8 +1304,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|vectors_stroke_get_point_at_dist_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
@@ -1346,8 +1329,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|vectors_stroke_get_point_at_dist_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -1369,11 +1351,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|vectors_stroke_get_point_at_dist_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * vectors_stroke_remove    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -1386,8 +1369,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_stroke_remove_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_VECTORS
 argument_list|,
@@ -1409,8 +1391,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_stroke_remove_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -1436,11 +1417,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|vectors_stroke_remove_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * vectors_stroke_close    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -1453,8 +1435,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_stroke_close_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_VECTORS
 argument_list|,
@@ -1476,8 +1457,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_stroke_close_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -1503,11 +1483,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|vectors_stroke_close_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * vectors_stroke_translate    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -1520,8 +1501,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_stroke_translate_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_VECTORS
 argument_list|,
@@ -1543,8 +1523,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_stroke_translate_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -1568,8 +1547,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_stroke_translate_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -1593,8 +1571,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_stroke_translate_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -1620,11 +1597,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|vectors_stroke_translate_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * vectors_stroke_scale    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -1637,8 +1615,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_stroke_scale_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_VECTORS
 argument_list|,
@@ -1660,8 +1637,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_stroke_scale_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -1685,8 +1661,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_stroke_scale_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
@@ -1711,8 +1686,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_stroke_scale_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
@@ -1739,11 +1713,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|vectors_stroke_scale_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * vectors_stroke_interpolate    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -1756,8 +1731,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_stroke_interpolate_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_VECTORS
 argument_list|,
@@ -1779,8 +1753,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_stroke_interpolate_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -1804,8 +1777,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_stroke_interpolate_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
@@ -1830,8 +1802,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|vectors_stroke_interpolate_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -1851,8 +1822,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|vectors_stroke_interpolate_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -1876,8 +1846,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|vectors_stroke_interpolate_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_FLOATARRAY
 argument_list|,
@@ -1897,11 +1866,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|vectors_stroke_interpolate_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * vectors_bezier_stroke_new_moveto    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -1914,8 +1884,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_bezier_stroke_new_moveto_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_VECTORS
 argument_list|,
@@ -1937,8 +1906,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_bezier_stroke_new_moveto_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
@@ -1963,8 +1931,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_bezier_stroke_new_moveto_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
@@ -1989,8 +1956,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|vectors_bezier_stroke_new_moveto_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -2016,11 +1982,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|vectors_bezier_stroke_new_moveto_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * vectors_bezier_stroke_lineto    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -2033,8 +2000,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_bezier_stroke_lineto_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_VECTORS
 argument_list|,
@@ -2056,8 +2022,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_bezier_stroke_lineto_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -2081,8 +2046,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_bezier_stroke_lineto_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
@@ -2107,8 +2071,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_bezier_stroke_lineto_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
@@ -2135,11 +2098,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|vectors_bezier_stroke_lineto_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * vectors_bezier_stroke_conicto    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -2152,8 +2116,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_bezier_stroke_conicto_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_VECTORS
 argument_list|,
@@ -2175,8 +2138,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_bezier_stroke_conicto_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -2200,8 +2162,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_bezier_stroke_conicto_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
@@ -2226,8 +2187,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_bezier_stroke_conicto_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
@@ -2252,8 +2212,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_bezier_stroke_conicto_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
@@ -2278,8 +2237,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_bezier_stroke_conicto_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
@@ -2306,11 +2264,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|vectors_bezier_stroke_conicto_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * vectors_bezier_stroke_cubicto    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -2323,8 +2282,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_bezier_stroke_cubicto_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_VECTORS
 argument_list|,
@@ -2346,8 +2304,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_bezier_stroke_cubicto_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -2371,8 +2328,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_bezier_stroke_cubicto_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
@@ -2397,8 +2353,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_bezier_stroke_cubicto_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
@@ -2423,8 +2378,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_bezier_stroke_cubicto_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
@@ -2449,8 +2403,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_bezier_stroke_cubicto_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
@@ -2475,8 +2428,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_bezier_stroke_cubicto_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
@@ -2501,8 +2453,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_bezier_stroke_cubicto_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
@@ -2529,11 +2480,12 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|vectors_bezier_stroke_cubicto_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/*    * vectors_bezier_stroke_new_ellipse    */
+name|procedure
+operator|=
 name|procedural_db_init_proc
 argument_list|(
 operator|&
@@ -2546,8 +2498,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_bezier_stroke_new_ellipse_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_VECTORS
 argument_list|,
@@ -2569,8 +2520,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_bezier_stroke_new_ellipse_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
@@ -2595,8 +2545,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_bezier_stroke_new_ellipse_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
@@ -2621,8 +2570,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_bezier_stroke_new_ellipse_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
@@ -2647,8 +2595,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_bezier_stroke_new_ellipse_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
@@ -2673,8 +2620,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_argument
 argument_list|(
-operator|&
-name|vectors_bezier_stroke_new_ellipse_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
@@ -2699,8 +2645,7 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_add_return_value
 argument_list|(
-operator|&
-name|vectors_bezier_stroke_new_ellipse_proc
+name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -2726,8 +2671,7 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|vectors_bezier_stroke_new_ellipse_proc
+name|procedure
 argument_list|)
 expr_stmt|;
 block|}
