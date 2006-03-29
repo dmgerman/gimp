@@ -48,7 +48,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"themes/Default/images/gimp-wilber-pixbufs.h"
+file|"gimp-wilber-pixbufs.h"
 end_include
 
 begin_decl_stmt
@@ -131,13 +131,13 @@ name|inline_pixbufs
 index|[]
 init|=
 block|{
-name|stock_wilber_64
+name|wilber_64
 block|,
-name|stock_wilber_48
+name|wilber_48
 block|,
-name|stock_wilber_32
+name|wilber_32
 block|,
-name|stock_wilber_16
+name|wilber_16
 block|}
 decl_stmt|;
 name|g_return_if_fail
