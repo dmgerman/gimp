@@ -761,7 +761,7 @@ name|GIMP_PDB_REGION
 case|:
 name|g_message
 argument_list|(
-literal|"the \"region\" arg type is not currently supported"
+literal|"the \"region\" argument type is not supported"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1757,7 +1757,7 @@ name|GIMP_PDB_REGION
 case|:
 name|g_message
 argument_list|(
-literal|"the \"region\" arg type is not currently supported"
+literal|"the \"region\" argument type is not supported"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -2396,7 +2396,7 @@ name|GIMP_PDB_REGION
 case|:
 name|g_message
 argument_list|(
-literal|"the \"region\" arg type is not currently supported"
+literal|"the \"region\" argument type is not supported"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -2839,7 +2839,7 @@ argument_list|,
 literal|"Plug-In \"%s\"\n(%s)\n\n"
 literal|"attempted to install %s procedure \"%s\" "
 literal|"which does not take the standard %s Plug-In "
-literal|"args.\n"
+literal|"arguments.\n"
 literal|"(INT32)"
 argument_list|,
 name|gimp_filename_to_utf8
@@ -2930,7 +2930,7 @@ argument_list|,
 literal|"Plug-In \"%s\"\n(%s)\n\n"
 literal|"attempted to install<Load> procedure \"%s\" "
 literal|"which does not take the standard<Load> Plug-In "
-literal|"args.\n"
+literal|"arguments.\n"
 literal|"(INT32, STRING, STRING)"
 argument_list|,
 name|gimp_filename_to_utf8
@@ -3039,7 +3039,7 @@ argument_list|,
 literal|"Plug-In \"%s\"\n(%s)\n\n"
 literal|"attempted to install<Save> procedure \"%s\" "
 literal|"which does not take the standard<Save> Plug-In "
-literal|"args.\n"
+literal|"arguments.\n"
 literal|"(INT32, IMAGE, DRAWABLE, STRING, STRING)"
 argument_list|,
 name|gimp_filename_to_utf8
@@ -3149,7 +3149,7 @@ argument_list|,
 literal|"Plug-In \"%s\"\n(%s)\n\n"
 literal|"attempted to install %s procedure \"%s\" "
 literal|"which does not take the standard %s Plug-In "
-literal|"args.\n"
+literal|"arguments.\n"
 literal|"(INT32)"
 argument_list|,
 name|gimp_filename_to_utf8

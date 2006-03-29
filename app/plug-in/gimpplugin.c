@@ -1435,7 +1435,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Unable to run Plug-In \"%s\"\n(%s)\n\npipe() failed: %s"
+literal|"Unable to run plug-in \"%s\"\n(%s)\n\npipe() failed: %s"
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
@@ -1965,7 +1965,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Unable to run Plug-In \"%s\"\n(%s)\n\n%s"
+literal|"Unable to run plug-in \"%s\"\n(%s)\n\n%s"
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
@@ -2963,8 +2963,8 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Plug-In crashed: \"%s\"\n(%s)\n\n"
-literal|"The dying Plug-In may have messed up GIMP's internal state. "
+literal|"Plug-in crashed: \"%s\"\n(%s)\n\n"
+literal|"The dying plug-in may have messed up GIMP's internal state. "
 literal|"You may want to save your images and restart GIMP "
 literal|"to be on the safe side."
 argument_list|)

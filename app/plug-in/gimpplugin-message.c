@@ -343,7 +343,7 @@ case|:
 name|g_message
 argument_list|(
 literal|"Plug-In \"%s\"\n(%s)\n\n"
-literal|"sent a CONFIG message (should not happen)"
+literal|"sent a CONFIG message.  This should not happen."
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
@@ -387,7 +387,7 @@ case|:
 name|g_message
 argument_list|(
 literal|"Plug-In \"%s\"\n(%s)\n\n"
-literal|"sent a TILE_ACK message (should not happen)"
+literal|"sent a TILE_ACK message.  This should not happen."
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
@@ -418,7 +418,7 @@ case|:
 name|g_message
 argument_list|(
 literal|"Plug-In \"%s\"\n(%s)\n\n"
-literal|"sent a TILE_DATA message (should not happen)"
+literal|"sent a TILE_DATA message.  This should not happen."
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
@@ -475,7 +475,7 @@ case|:
 name|g_message
 argument_list|(
 literal|"Plug-In \"%s\"\n(%s)\n\n"
-literal|"sent a TEMP_PROC_RUN message (should not happen)"
+literal|"sent a TEMP_PROC_RUN message.  This should not happen."
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
@@ -2180,7 +2180,7 @@ name|g_message
 argument_list|(
 literal|"Plug-In \"%s\"\n(%s)\n\n"
 literal|"sent a TEMP_PROC_RETURN message while not running "
-literal|"a temp proc (should not happen)"
+literal|"a temporary procedure.  This should not happen."
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
@@ -3434,7 +3434,7 @@ name|g_message
 argument_list|(
 literal|"Plug-In \"%s\"\n(%s)\n\n"
 literal|"sent an EXTENSION_ACK message while not being started "
-literal|"as extension (should not happen)"
+literal|"as an extension.  This should not happen."
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
@@ -3495,8 +3495,8 @@ block|{
 name|g_message
 argument_list|(
 literal|"Plug-In \"%s\"\n(%s)\n\n"
-literal|"sent an HAS_INIT message while not in query() "
-literal|"(should not happen)"
+literal|"sent an HAS_INIT message while not in query().  "
+literal|"This should not happen."
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
