@@ -65,7 +65,7 @@ end_define
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29ffbeaa0108
+DECL|struct|__anon2892b3200108
 block|{
 DECL|member|prDlg
 name|PRINTDLG
@@ -815,8 +815,10 @@ name|PRINT_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Print image to any recognized printer"
+literal|"Print the image"
 argument_list|)
+argument_list|,
+literal|"Prints images to any printer recognized by Windows."
 argument_list|,
 literal|"Tor Lillqvist<tml@iki.fi>"
 argument_list|,
@@ -826,7 +828,7 @@ literal|"$Id$"
 argument_list|,
 name|N_
 argument_list|(
-literal|"_Print"
+literal|"_Print..."
 argument_list|)
 argument_list|,
 literal|"RGB*,GRAY*,INDEXED*"
@@ -851,8 +853,10 @@ name|PAGE_SETUP_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Set up  page layout for printing"
+literal|"Set up page layout for printing"
 argument_list|)
+argument_list|,
+literal|"Sets up the page parameters for printing to a Windows printer."
 argument_list|,
 literal|"Tor Lillqvist<tml@iki.fi>"
 argument_list|,
