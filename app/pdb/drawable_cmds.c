@@ -754,7 +754,7 @@ literal|"type-with-alpha"
 argument_list|,
 literal|"type with alpha"
 argument_list|,
-literal|"The drawable's type with alpha: { GIMP_RGB_IMAGE (0), GIMP_RGBA_IMAGE (1), GIMP_GRAY_IMAGE (2), GIMP_GRAYA_IMAGE (3), GIMP_INDEXED_IMAGE (4), GIMP_INDEXEDA_IMAGE (5) }"
+literal|"The drawable's type with alpha: { GIMP_RGBA_IMAGE (1), GIMP_GRAYA_IMAGE (3), GIMP_INDEXEDA_IMAGE (5) }"
 argument_list|,
 name|GIMP_TYPE_IMAGE_TYPE
 argument_list|,
