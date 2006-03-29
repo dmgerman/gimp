@@ -414,7 +414,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2754495e0103
+DECL|enum|__anon2966d1500103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -3728,7 +3728,7 @@ name|GIMP_PDB_CALLING_ERROR
 case|:
 name|g_printerr
 argument_list|(
-literal|"a calling error occurred while trying to run: \"%s\""
+literal|"a calling error occurred while trying to run: \"%s\"\n"
 argument_list|,
 name|name
 argument_list|)
