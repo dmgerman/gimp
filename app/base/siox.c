@@ -130,7 +130,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ebdaba0108
+DECL|struct|__anon2785c3c80108
 block|{
 DECL|member|l
 name|gfloat
@@ -240,7 +240,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ebdaba0208
+DECL|struct|__anon2785c3c80208
 block|{
 DECL|member|bgdist
 name|gfloat
@@ -3827,6 +3827,9 @@ name|pixel_regions_process
 argument_list|(
 name|pr
 argument_list|)
+operator|,
+name|n
+operator|++
 control|)
 block|{
 specifier|const
@@ -4024,6 +4027,9 @@ name|pixel_regions_process
 argument_list|(
 name|pr
 argument_list|)
+operator|,
+name|n
+operator|++
 control|)
 block|{
 specifier|const
@@ -4218,6 +4224,9 @@ name|pixel_regions_process
 argument_list|(
 name|pr
 argument_list|)
+operator|,
+name|n
+operator|++
 control|)
 block|{
 specifier|const
