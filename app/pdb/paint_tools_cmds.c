@@ -76,6 +76,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"paint/gimppaintcore.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"paint/gimppaintoptions.h"
 end_include
 
@@ -1860,7 +1866,7 @@ end_decl_stmt
 begin_function
 specifier|static
 name|gboolean
-DECL|function|paint_tools_stroke (Gimp * gimp,GimpContext * context,GimpPaintOptions * options,GimpDrawable * drawable,gint n_strokes,gdouble * strokes)
+DECL|function|paint_tools_stroke (Gimp * gimp,GimpContext * context,GimpPaintOptions * options,GimpDrawable * drawable,gint n_strokes,gdouble * strokes,const gchar * first_property_name,...)
 name|paint_tools_stroke
 parameter_list|(
 name|Gimp
@@ -1885,6 +1891,13 @@ parameter_list|,
 name|gdouble
 modifier|*
 name|strokes
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|first_property_name
+parameter_list|,
+modifier|...
 parameter_list|)
 block|{
 name|GimpPaintCore
@@ -1900,6 +1913,9 @@ name|retval
 decl_stmt|;
 name|gint
 name|i
+decl_stmt|;
+name|va_list
+name|args
 decl_stmt|;
 name|n_strokes
 operator|/=
@@ -1929,9 +1945,18 @@ argument_list|,
 name|context
 argument_list|)
 expr_stmt|;
+name|va_start
+argument_list|(
+name|args
+argument_list|,
+name|first_property_name
+argument_list|)
+expr_stmt|;
 name|core
 operator|=
-name|g_object_new
+name|GIMP_PAINT_CORE
+argument_list|(
+name|g_object_new_valist
 argument_list|(
 name|options
 operator|->
@@ -1939,7 +1964,15 @@ name|paint_info
 operator|->
 name|paint_type
 argument_list|,
-name|NULL
+name|first_property_name
+argument_list|,
+name|args
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|va_end
+argument_list|(
+name|args
 argument_list|)
 expr_stmt|;
 name|coords
@@ -2222,6 +2255,8 @@ argument_list|,
 name|num_strokes
 argument_list|,
 name|strokes
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -2435,6 +2470,8 @@ argument_list|,
 name|num_strokes
 argument_list|,
 name|strokes
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -2717,20 +2754,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|__GNUC__
-warning|#
-directive|warning
-warning|FIXME: re-enable clone src_drawable
-endif|#
-directive|endif
-if|#
-directive|if
-literal|0
-block|FIXME            core->src_drawable = src_drawable;           core->src_x        = srx_x;           core->src_y        = src_y;
-endif|#
-directive|endif
 name|success
 operator|=
 name|paint_tools_stroke
@@ -2746,6 +2769,20 @@ argument_list|,
 name|num_strokes
 argument_list|,
 name|strokes
+argument_list|,
+literal|"src-drawable"
+argument_list|,
+name|src_drawable
+argument_list|,
+literal|"src-x"
+argument_list|,
+name|src_x
+argument_list|,
+literal|"src-y"
+argument_list|,
+name|src_y
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -2959,6 +2996,8 @@ argument_list|,
 name|num_strokes
 argument_list|,
 name|strokes
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -3219,6 +3258,8 @@ argument_list|,
 name|num_strokes
 argument_list|,
 name|strokes
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -3432,6 +3473,8 @@ argument_list|,
 name|num_strokes
 argument_list|,
 name|strokes
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -3712,6 +3755,8 @@ argument_list|,
 name|num_strokes
 argument_list|,
 name|strokes
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -3925,6 +3970,8 @@ argument_list|,
 name|num_strokes
 argument_list|,
 name|strokes
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -4185,6 +4232,8 @@ argument_list|,
 name|num_strokes
 argument_list|,
 name|strokes
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -4398,6 +4447,8 @@ argument_list|,
 name|num_strokes
 argument_list|,
 name|strokes
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -4690,6 +4741,8 @@ argument_list|,
 name|num_strokes
 argument_list|,
 name|strokes
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -4903,6 +4956,8 @@ argument_list|,
 name|num_strokes
 argument_list|,
 name|strokes
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -5116,6 +5171,8 @@ argument_list|,
 name|num_strokes
 argument_list|,
 name|strokes
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -5356,6 +5413,8 @@ argument_list|,
 name|num_strokes
 argument_list|,
 name|strokes
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -5569,6 +5628,8 @@ argument_list|,
 name|num_strokes
 argument_list|,
 name|strokes
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
