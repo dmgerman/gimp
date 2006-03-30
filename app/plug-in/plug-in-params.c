@@ -207,7 +207,7 @@ index|[
 name|i
 index|]
 operator|.
-name|arg_type
+name|type
 operator|==
 name|params
 index|[
@@ -259,7 +259,7 @@ index|[
 name|i
 index|]
 operator|.
-name|arg_type
+name|type
 condition|)
 block|{
 case|case
@@ -1130,7 +1130,7 @@ index|[
 name|i
 index|]
 operator|.
-name|arg_type
+name|type
 expr_stmt|;
 switch|switch
 condition|(
@@ -1139,7 +1139,7 @@ index|[
 name|i
 index|]
 operator|.
-name|arg_type
+name|type
 condition|)
 block|{
 case|case
@@ -2456,7 +2456,7 @@ index|[
 name|i
 index|]
 operator|.
-name|arg_type
+name|type
 operator|=
 name|params
 index|[
@@ -2492,7 +2492,7 @@ index|[
 name|i
 index|]
 operator|.
-name|arg_type
+name|type
 operator|=
 name|return_vals
 index|[
@@ -2731,7 +2731,7 @@ index|[
 literal|0
 index|]
 operator|.
-name|arg_type
+name|type
 operator|!=
 name|GIMP_PDB_INT32
 operator|)
@@ -2800,7 +2800,7 @@ index|[
 literal|0
 index|]
 operator|.
-name|arg_type
+name|type
 operator|!=
 name|GIMP_PDB_INT32
 operator|)
@@ -2811,7 +2811,7 @@ index|[
 literal|1
 index|]
 operator|.
-name|arg_type
+name|type
 operator|!=
 name|GIMP_PDB_STRING
 operator|)
@@ -2822,7 +2822,7 @@ index|[
 literal|2
 index|]
 operator|.
-name|arg_type
+name|type
 operator|!=
 name|GIMP_PDB_STRING
 operator|)
@@ -2887,7 +2887,7 @@ index|[
 literal|0
 index|]
 operator|.
-name|arg_type
+name|type
 operator|!=
 name|GIMP_PDB_INT32
 operator|)
@@ -2898,7 +2898,7 @@ index|[
 literal|1
 index|]
 operator|.
-name|arg_type
+name|type
 operator|!=
 name|GIMP_PDB_IMAGE
 operator|)
@@ -2909,7 +2909,7 @@ index|[
 literal|2
 index|]
 operator|.
-name|arg_type
+name|type
 operator|!=
 name|GIMP_PDB_DRAWABLE
 operator|)
@@ -2920,7 +2920,7 @@ index|[
 literal|3
 index|]
 operator|.
-name|arg_type
+name|type
 operator|!=
 name|GIMP_PDB_STRING
 operator|)
@@ -2931,7 +2931,7 @@ index|[
 literal|4
 index|]
 operator|.
-name|arg_type
+name|type
 operator|!=
 name|GIMP_PDB_STRING
 operator|)
@@ -3041,7 +3041,7 @@ index|[
 literal|0
 index|]
 operator|.
-name|arg_type
+name|type
 operator|!=
 name|GIMP_PDB_INT32
 operator|)

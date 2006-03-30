@@ -1848,7 +1848,7 @@ index|[
 name|i
 index|]
 operator|.
-name|arg_type
+name|type
 argument_list|)
 expr_stmt|;
 name|output_string
@@ -1952,7 +1952,7 @@ index|[
 name|i
 index|]
 operator|.
-name|arg_type
+name|type
 argument_list|)
 expr_stmt|;
 name|output_string

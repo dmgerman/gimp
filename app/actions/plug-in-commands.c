@@ -272,7 +272,7 @@ index|[
 name|n_args
 index|]
 operator|.
-name|arg_type
+name|type
 operator|==
 name|GIMP_PDB_IMAGE
 condition|)
@@ -322,7 +322,7 @@ index|[
 name|n_args
 index|]
 operator|.
-name|arg_type
+name|type
 operator|==
 name|GIMP_PDB_DRAWABLE
 condition|)
@@ -448,7 +448,7 @@ index|[
 literal|1
 index|]
 operator|.
-name|arg_type
+name|type
 operator|==
 name|GIMP_PDB_IMAGE
 operator|&&
@@ -459,7 +459,7 @@ index|[
 literal|2
 index|]
 operator|.
-name|arg_type
+name|type
 operator|==
 name|GIMP_PDB_DRAWABLE
 condition|)

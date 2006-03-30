@@ -1488,7 +1488,7 @@ index|[
 literal|0
 index|]
 operator|.
-name|arg_type
+name|type
 operator|!=
 name|GIMP_PDB_INT32
 operator|)
@@ -1501,7 +1501,7 @@ index|[
 literal|1
 index|]
 operator|.
-name|arg_type
+name|type
 operator|!=
 name|GIMP_PDB_STRING
 operator|)
@@ -1514,7 +1514,7 @@ index|[
 literal|2
 index|]
 operator|.
-name|arg_type
+name|type
 operator|!=
 name|GIMP_PDB_STRING
 operator|)
@@ -1527,7 +1527,7 @@ index|[
 literal|0
 index|]
 operator|.
-name|arg_type
+name|type
 operator|!=
 name|GIMP_PDB_IMAGE
 operator|)
@@ -1808,7 +1808,7 @@ index|[
 name|i
 index|]
 operator|.
-name|arg_type
+name|type
 operator|==
 name|GIMP_PDB_STRING
 condition|)
@@ -2726,7 +2726,7 @@ index|[
 name|i
 index|]
 operator|.
-name|arg_type
+name|type
 operator|==
 name|GIMP_PDB_STRING
 condition|)
@@ -3798,7 +3798,7 @@ index|[
 literal|0
 index|]
 operator|.
-name|arg_type
+name|type
 operator|!=
 name|GIMP_PDB_INT32
 operator|)
@@ -3811,7 +3811,7 @@ index|[
 literal|1
 index|]
 operator|.
-name|arg_type
+name|type
 operator|!=
 name|GIMP_PDB_IMAGE
 operator|)
@@ -3824,7 +3824,7 @@ index|[
 literal|2
 index|]
 operator|.
-name|arg_type
+name|type
 operator|!=
 name|GIMP_PDB_DRAWABLE
 operator|)
@@ -3837,7 +3837,7 @@ index|[
 literal|3
 index|]
 operator|.
-name|arg_type
+name|type
 operator|!=
 name|GIMP_PDB_STRING
 operator|)
@@ -3850,7 +3850,7 @@ index|[
 literal|4
 index|]
 operator|.
-name|arg_type
+name|type
 operator|!=
 name|GIMP_PDB_STRING
 operator|)

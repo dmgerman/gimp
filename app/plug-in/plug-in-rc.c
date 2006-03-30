@@ -236,7 +236,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c630f300103
+DECL|enum|__anon2a42b2a90103
 block|{
 DECL|enumerator|PROTOCOL_VERSION
 name|PROTOCOL_VERSION
@@ -3509,7 +3509,7 @@ index|[
 name|i
 index|]
 operator|.
-name|arg_type
+name|type
 argument_list|)
 expr_stmt|;
 name|gimp_config_writer_string
@@ -3596,7 +3596,7 @@ index|[
 name|i
 index|]
 operator|.
-name|arg_type
+name|type
 argument_list|)
 expr_stmt|;
 name|gimp_config_writer_string

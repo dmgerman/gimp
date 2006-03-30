@@ -21,9 +21,9 @@ DECL|struct|_Argument
 struct|struct
 name|_Argument
 block|{
-DECL|member|arg_type
+DECL|member|type
 name|GimpPDBArgType
-name|arg_type
+name|type
 decl_stmt|;
 DECL|member|value
 name|GValue
@@ -178,9 +178,9 @@ DECL|struct|_ProcArg
 struct|struct
 name|_ProcArg
 block|{
-DECL|member|arg_type
+DECL|member|type
 name|GimpPDBArgType
-name|arg_type
+name|type
 decl_stmt|;
 comment|/*  Argument type (int, char, char *, etc)  */
 DECL|member|pspec

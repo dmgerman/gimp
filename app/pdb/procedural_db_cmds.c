@@ -2342,7 +2342,7 @@ name|arg_type
 operator|=
 name|arg
 operator|->
-name|arg_type
+name|type
 expr_stmt|;
 name|arg_name
 operator|=
@@ -2671,7 +2671,7 @@ name|val_type
 operator|=
 name|val
 operator|->
-name|arg_type
+name|type
 expr_stmt|;
 name|val_name
 operator|=

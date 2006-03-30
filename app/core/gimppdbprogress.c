@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f588b50103
+DECL|enum|__anon28fbeb3f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1043,7 +1043,7 @@ index|[
 literal|1
 index|]
 operator|.
-name|arg_type
+name|type
 operator|==
 name|GIMP_PDB_FLOAT
 condition|)
