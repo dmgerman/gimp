@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fbeb3f0103
+DECL|enum|__anon28945d230103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -996,9 +996,6 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-operator|!
-name|return_vals
-operator|||
 name|g_value_get_enum
 argument_list|(
 operator|&

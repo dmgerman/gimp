@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9473840103
+DECL|enum|__anon29c6aec30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1156,9 +1156,6 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-operator|!
-name|return_vals
-operator|||
 name|g_value_get_enum
 argument_list|(
 operator|&
@@ -1191,10 +1188,6 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-if|if
-condition|(
-name|return_vals
-condition|)
 name|procedural_db_destroy_args
 argument_list|(
 name|return_vals
