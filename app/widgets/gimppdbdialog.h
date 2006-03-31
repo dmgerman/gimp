@@ -166,7 +166,7 @@ modifier|*
 name|dialogs
 decl_stmt|;
 DECL|member|run_callback
-name|Argument
+name|GimpArgument
 modifier|*
 function_decl|(
 modifier|*

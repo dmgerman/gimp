@@ -42,7 +42,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb/gimpprocedure.h"
+file|"pdb/gimpargument.h"
 end_include
 
 begin_include
@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3b39100103
+DECL|enum|__anon2af9652d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1137,7 +1137,7 @@ name|callback_name
 argument_list|)
 condition|)
 block|{
-name|Argument
+name|GimpArgument
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -1194,7 +1194,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-name|procedural_db_destroy_args
+name|gimp_arguments_destroy
 argument_list|(
 name|return_vals
 argument_list|,

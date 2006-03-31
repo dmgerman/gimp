@@ -45,14 +45,14 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_argument_init (Argument * arg,ProcArg * proc_arg)
+DECL|function|gimp_argument_init (GimpArgument * arg,GimpArgumentSpec * proc_arg)
 name|gimp_argument_init
 parameter_list|(
-name|Argument
+name|GimpArgument
 modifier|*
 name|arg
 parameter_list|,
-name|ProcArg
+name|GimpArgumentSpec
 modifier|*
 name|proc_arg
 parameter_list|)
@@ -98,10 +98,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_argument_init_compat (Argument * arg,GimpPDBArgType arg_type)
+DECL|function|gimp_argument_init_compat (GimpArgument * arg,GimpPDBArgType arg_type)
 name|gimp_argument_init_compat
 parameter_list|(
-name|Argument
+name|GimpArgument
 modifier|*
 name|arg
 parameter_list|,
@@ -303,10 +303,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_arguments_destroy (Argument * args,gint n_args,gboolean full_destroy)
+DECL|function|gimp_arguments_destroy (GimpArgument * args,gint n_args,gboolean full_destroy)
 name|gimp_arguments_destroy
 parameter_list|(
-name|Argument
+name|GimpArgument
 modifier|*
 name|args
 parameter_list|,

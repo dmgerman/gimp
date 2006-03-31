@@ -21,7 +21,7 @@ comment|/*  Run a plug-in as if it were a procedure database procedure  */
 end_comment
 
 begin_function_decl
-name|Argument
+name|GimpArgument
 modifier|*
 name|plug_in_run
 parameter_list|(
@@ -41,7 +41,7 @@ name|GimpProcedure
 modifier|*
 name|procedure
 parameter_list|,
-name|Argument
+name|GimpArgument
 modifier|*
 name|args
 parameter_list|,

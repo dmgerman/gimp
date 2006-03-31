@@ -1836,7 +1836,7 @@ name|i
 operator|++
 control|)
 block|{
-name|ProcArg
+name|GimpArgumentSpec
 modifier|*
 name|arg
 init|=
@@ -1937,7 +1937,7 @@ name|i
 operator|++
 control|)
 block|{
-name|ProcArg
+name|GimpArgumentSpec
 modifier|*
 name|arg
 init|=

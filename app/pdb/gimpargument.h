@@ -17,9 +17,9 @@ name|__GIMP_ARGUMENT_H__
 end_define
 
 begin_struct
-DECL|struct|_Argument
+DECL|struct|_GimpArgument
 struct|struct
-name|_Argument
+name|_GimpArgument
 block|{
 DECL|member|type
 name|GimpPDBArgType
@@ -34,9 +34,9 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|_ProcArg
+DECL|struct|_GimpArgumentSpec
 struct|struct
-name|_ProcArg
+name|_GimpArgumentSpec
 block|{
 DECL|member|type
 name|GimpPDBArgType
@@ -55,13 +55,13 @@ begin_function_decl
 name|void
 name|gimp_argument_init
 parameter_list|(
-name|Argument
+name|GimpArgument
 modifier|*
 name|arg
 parameter_list|,
-name|ProcArg
+name|GimpArgumentSpec
 modifier|*
-name|proc_arg
+name|spec
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -70,7 +70,7 @@ begin_function_decl
 name|void
 name|gimp_argument_init_compat
 parameter_list|(
-name|Argument
+name|GimpArgument
 modifier|*
 name|arg
 parameter_list|,
@@ -84,7 +84,7 @@ begin_function_decl
 name|void
 name|gimp_arguments_destroy
 parameter_list|(
-name|Argument
+name|GimpArgument
 modifier|*
 name|args
 parameter_list|,

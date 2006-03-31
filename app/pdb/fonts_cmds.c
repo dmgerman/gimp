@@ -214,9 +214,9 @@ end_function
 
 begin_function
 specifier|static
-name|Argument
+name|GimpArgument
 modifier|*
-DECL|function|fonts_refresh_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|fonts_refresh_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
 name|fonts_refresh_invoker
 parameter_list|(
 name|GimpProcedure
@@ -235,7 +235,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
-name|Argument
+name|GimpArgument
 modifier|*
 name|args
 parameter_list|)
@@ -304,9 +304,9 @@ end_decl_stmt
 
 begin_function
 specifier|static
-name|Argument
+name|GimpArgument
 modifier|*
-DECL|function|fonts_get_list_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|fonts_get_list_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
 name|fonts_get_list_invoker
 parameter_list|(
 name|GimpProcedure
@@ -325,7 +325,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
-name|Argument
+name|GimpArgument
 modifier|*
 name|args
 parameter_list|)
@@ -335,7 +335,7 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
-name|Argument
+name|GimpArgument
 modifier|*
 name|return_vals
 decl_stmt|;

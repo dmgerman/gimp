@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a058a310103
+DECL|enum|__anon2c6502400103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -949,7 +949,7 @@ operator|->
 name|callback_busy
 condition|)
 block|{
-name|Argument
+name|GimpArgument
 modifier|*
 name|return_vals
 decl_stmt|;

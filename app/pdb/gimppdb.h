@@ -98,7 +98,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Argument
+name|GimpArgument
 modifier|*
 name|procedural_db_execute
 parameter_list|(
@@ -119,7 +119,7 @@ name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|Argument
+name|GimpArgument
 modifier|*
 name|args
 parameter_list|,
@@ -134,7 +134,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Argument
+name|GimpArgument
 modifier|*
 name|procedural_db_run_proc
 parameter_list|(

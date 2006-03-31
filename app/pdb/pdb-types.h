@@ -23,20 +23,20 @@ file|"core/core-types.h"
 end_include
 
 begin_typedef
-DECL|typedef|Argument
+DECL|typedef|GimpArgument
 typedef|typedef
 name|struct
-name|_Argument
-name|Argument
+name|_GimpArgument
+name|GimpArgument
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|ProcArg
+DECL|typedef|GimpArgumentSpec
 typedef|typedef
 name|struct
-name|_ProcArg
-name|ProcArg
+name|_GimpArgumentSpec
+name|GimpArgumentSpec
 typedef|;
 end_typedef
 
@@ -52,7 +52,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be6814e0103
+DECL|enum|__anon2ab4547e0103
 block|{
 DECL|enumerator|GIMP_PDB_COMPAT_OFF
 name|GIMP_PDB_COMPAT_OFF

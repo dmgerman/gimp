@@ -380,9 +380,9 @@ end_function
 
 begin_function
 specifier|static
-name|Argument
+name|GimpArgument
 modifier|*
-DECL|function|image_convert_rgb_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_convert_rgb_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
 name|image_convert_rgb_invoker
 parameter_list|(
 name|GimpProcedure
@@ -401,7 +401,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
-name|Argument
+name|GimpArgument
 modifier|*
 name|args
 parameter_list|)
@@ -530,9 +530,9 @@ end_decl_stmt
 
 begin_function
 specifier|static
-name|Argument
+name|GimpArgument
 modifier|*
-DECL|function|image_convert_grayscale_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_convert_grayscale_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
 name|image_convert_grayscale_invoker
 parameter_list|(
 name|GimpProcedure
@@ -551,7 +551,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
-name|Argument
+name|GimpArgument
 modifier|*
 name|args
 parameter_list|)
@@ -680,9 +680,9 @@ end_decl_stmt
 
 begin_function
 specifier|static
-name|Argument
+name|GimpArgument
 modifier|*
-DECL|function|image_convert_indexed_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_convert_indexed_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
 name|image_convert_indexed_invoker
 parameter_list|(
 name|GimpProcedure
@@ -701,7 +701,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
-name|Argument
+name|GimpArgument
 modifier|*
 name|args
 parameter_list|)

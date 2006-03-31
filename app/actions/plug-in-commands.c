@@ -193,7 +193,7 @@ name|GimpProcedure
 modifier|*
 name|procedure
 decl_stmt|;
-name|Argument
+name|GimpArgument
 modifier|*
 name|args
 decl_stmt|;

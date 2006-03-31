@@ -162,9 +162,9 @@ end_function
 
 begin_function
 specifier|static
-name|Argument
+name|GimpArgument
 modifier|*
-DECL|function|help_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|help_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
 name|help_invoker
 parameter_list|(
 name|GimpProcedure
@@ -183,7 +183,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
-name|Argument
+name|GimpArgument
 modifier|*
 name|args
 parameter_list|)

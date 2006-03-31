@@ -46,7 +46,7 @@ modifier|*
 name|main_loop
 decl_stmt|;
 DECL|member|return_vals
-name|Argument
+name|GimpArgument
 modifier|*
 name|return_vals
 decl_stmt|;

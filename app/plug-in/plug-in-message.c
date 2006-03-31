@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"pdb/gimpargument.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"pdb/gimpprocedure.h"
 end_include
 
@@ -1399,7 +1405,7 @@ name|GimpProcedure
 modifier|*
 name|procedure
 decl_stmt|;
-name|Argument
+name|GimpArgument
 modifier|*
 name|args
 init|=
@@ -1410,7 +1416,7 @@ name|n_args
 init|=
 literal|0
 decl_stmt|;
-name|Argument
+name|GimpArgument
 modifier|*
 name|return_vals
 init|=
@@ -1792,7 +1798,7 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-name|procedural_db_destroy_args
+name|gimp_arguments_destroy
 argument_list|(
 name|args
 argument_list|,
@@ -1801,7 +1807,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|procedural_db_destroy_args
+name|gimp_arguments_destroy
 argument_list|(
 name|return_vals
 argument_list|,

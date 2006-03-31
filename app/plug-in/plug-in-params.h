@@ -17,11 +17,11 @@ name|__PLUG_IN_PARAMS_H__
 end_define
 
 begin_function_decl
-name|Argument
+name|GimpArgument
 modifier|*
 name|plug_in_params_to_args
 parameter_list|(
-name|ProcArg
+name|GimpArgumentSpec
 modifier|*
 name|proc_args
 parameter_list|,
@@ -46,7 +46,7 @@ name|GPParam
 modifier|*
 name|plug_in_args_to_params
 parameter_list|(
-name|Argument
+name|GimpArgument
 modifier|*
 name|args
 parameter_list|,
@@ -146,14 +146,14 @@ name|gchar
 modifier|*
 name|menu_path
 parameter_list|,
-name|ProcArg
+name|GimpArgumentSpec
 modifier|*
 name|args
 parameter_list|,
 name|guint32
 name|n_args
 parameter_list|,
-name|ProcArg
+name|GimpArgumentSpec
 modifier|*
 name|return_vals
 parameter_list|,

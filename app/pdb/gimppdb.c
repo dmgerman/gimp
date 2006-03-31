@@ -305,7 +305,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon28a1694b0108
+DECL|struct|__anon2c506d400108
 block|{
 DECL|member|old_name
 specifier|const
@@ -975,9 +975,9 @@ block|}
 end_function
 
 begin_function
-name|Argument
+name|GimpArgument
 modifier|*
-DECL|function|procedural_db_execute (Gimp * gimp,GimpContext * context,GimpProgress * progress,const gchar * name,Argument * args,gint n_args,gint * n_return_vals)
+DECL|function|procedural_db_execute (Gimp * gimp,GimpContext * context,GimpProgress * progress,const gchar * name,GimpArgument * args,gint n_args,gint * n_return_vals)
 name|procedural_db_execute
 parameter_list|(
 name|Gimp
@@ -997,7 +997,7 @@ name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|Argument
+name|GimpArgument
 modifier|*
 name|args
 parameter_list|,
@@ -1009,7 +1009,7 @@ modifier|*
 name|n_return_vals
 parameter_list|)
 block|{
-name|Argument
+name|GimpArgument
 modifier|*
 name|return_vals
 init|=
@@ -1225,7 +1225,7 @@ block|}
 end_function
 
 begin_function
-name|Argument
+name|GimpArgument
 modifier|*
 DECL|function|procedural_db_run_proc (Gimp * gimp,GimpContext * context,GimpProgress * progress,const gchar * name,gint * n_return_vals,...)
 name|procedural_db_run_proc
@@ -1258,16 +1258,16 @@ name|GimpProcedure
 modifier|*
 name|procedure
 decl_stmt|;
-name|Argument
+name|GimpArgument
 modifier|*
-name|params
+name|args
 decl_stmt|;
-name|Argument
+name|GimpArgument
 modifier|*
 name|return_vals
 decl_stmt|;
 name|va_list
-name|args
+name|va_args
 decl_stmt|;
 name|gint
 name|i
@@ -1387,7 +1387,7 @@ name|num_values
 operator|+
 literal|1
 expr_stmt|;
-name|params
+name|args
 operator|=
 name|gimp_procedure_get_arguments
 argument_list|(
@@ -1396,7 +1396,7 @@ argument_list|)
 expr_stmt|;
 name|va_start
 argument_list|(
-name|args
+name|va_args
 argument_list|,
 name|n_return_vals
 argument_list|)
@@ -1422,7 +1422,7 @@ name|arg_type
 init|=
 name|va_arg
 argument_list|(
-name|args
+name|va_args
 argument_list|,
 name|GimpPDBArgType
 argument_list|)
@@ -1442,7 +1442,7 @@ if|if
 condition|(
 name|arg_type
 operator|!=
-name|params
+name|args
 index|[
 name|i
 index|]
@@ -1477,7 +1477,7 @@ argument_list|)
 decl_stmt|;
 name|gimp_arguments_destroy
 argument_list|(
-name|params
+name|args
 argument_list|,
 name|procedure
 operator|->
@@ -1543,7 +1543,7 @@ block|}
 name|value
 operator|=
 operator|&
-name|params
+name|args
 index|[
 name|i
 index|]
@@ -1571,7 +1571,7 @@ name|value
 argument_list|,
 name|va_arg
 argument_list|(
-name|args
+name|va_args
 argument_list|,
 name|gint
 argument_list|)
@@ -1591,7 +1591,7 @@ name|value
 argument_list|,
 name|va_arg
 argument_list|(
-name|args
+name|va_args
 argument_list|,
 name|gint
 argument_list|)
@@ -1611,7 +1611,7 @@ name|value
 argument_list|,
 name|va_arg
 argument_list|(
-name|args
+name|va_args
 argument_list|,
 name|gint
 argument_list|)
@@ -1637,7 +1637,7 @@ name|value
 argument_list|,
 name|va_arg
 argument_list|(
-name|args
+name|va_args
 argument_list|,
 name|gint
 argument_list|)
@@ -1653,7 +1653,7 @@ name|value
 argument_list|,
 name|va_arg
 argument_list|(
-name|args
+name|va_args
 argument_list|,
 name|guint
 argument_list|)
@@ -1669,7 +1669,7 @@ name|value
 argument_list|,
 name|va_arg
 argument_list|(
-name|args
+name|va_args
 argument_list|,
 name|gdouble
 argument_list|)
@@ -1685,7 +1685,7 @@ name|value
 argument_list|,
 name|va_arg
 argument_list|(
-name|args
+name|va_args
 argument_list|,
 name|gchar
 operator|*
@@ -1714,7 +1714,7 @@ name|value
 argument_list|,
 name|va_arg
 argument_list|(
-name|args
+name|va_args
 argument_list|,
 name|gpointer
 argument_list|)
@@ -1730,7 +1730,7 @@ name|color
 init|=
 name|va_arg
 argument_list|(
-name|args
+name|va_args
 argument_list|,
 name|GimpRGB
 argument_list|)
@@ -1779,7 +1779,7 @@ name|value
 argument_list|,
 name|va_arg
 argument_list|(
-name|args
+name|va_args
 argument_list|,
 name|gint
 argument_list|)
@@ -1795,7 +1795,7 @@ name|value
 argument_list|,
 name|va_arg
 argument_list|(
-name|args
+name|va_args
 argument_list|,
 name|gpointer
 argument_list|)
@@ -1811,7 +1811,7 @@ name|value
 argument_list|,
 name|va_arg
 argument_list|(
-name|args
+name|va_args
 argument_list|,
 name|gint
 argument_list|)
@@ -1825,7 +1825,7 @@ block|}
 block|}
 name|va_end
 argument_list|(
-name|args
+name|va_args
 argument_list|)
 expr_stmt|;
 name|return_vals
@@ -1840,7 +1840,7 @@ name|progress
 argument_list|,
 name|name
 argument_list|,
-name|params
+name|args
 argument_list|,
 name|procedure
 operator|->
@@ -1851,7 +1851,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_arguments_destroy
 argument_list|(
-name|params
+name|args
 argument_list|,
 name|procedure
 operator|->

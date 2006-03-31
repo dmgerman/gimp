@@ -385,7 +385,7 @@ name|args
 operator|=
 name|g_new0
 argument_list|(
-name|ProcArg
+name|GimpArgumentSpec
 argument_list|,
 name|n_arguments
 argument_list|)
@@ -402,7 +402,7 @@ name|values
 operator|=
 name|g_new0
 argument_list|(
-name|ProcArg
+name|GimpArgumentSpec
 argument_list|,
 name|n_return_values
 argument_list|)
@@ -774,9 +774,9 @@ block|}
 end_function
 
 begin_function
-name|Argument
+name|GimpArgument
 modifier|*
-DECL|function|gimp_procedure_execute (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args,gint n_args,gint * n_return_vals)
+DECL|function|gimp_procedure_execute (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args,gint n_args,gint * n_return_vals)
 name|gimp_procedure_execute
 parameter_list|(
 name|GimpProcedure
@@ -795,7 +795,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
-name|Argument
+name|GimpArgument
 modifier|*
 name|args
 parameter_list|,
@@ -807,7 +807,7 @@ modifier|*
 name|n_return_vals
 parameter_list|)
 block|{
-name|Argument
+name|GimpArgument
 modifier|*
 name|return_vals
 init|=
@@ -1399,7 +1399,7 @@ block|}
 end_function
 
 begin_function
-name|Argument
+name|GimpArgument
 modifier|*
 DECL|function|gimp_procedure_get_arguments (GimpProcedure * procedure)
 name|gimp_procedure_get_arguments
@@ -1409,7 +1409,7 @@ modifier|*
 name|procedure
 parameter_list|)
 block|{
-name|Argument
+name|GimpArgument
 modifier|*
 name|args
 decl_stmt|;
@@ -1430,7 +1430,7 @@ name|args
 operator|=
 name|g_new0
 argument_list|(
-name|Argument
+name|GimpArgument
 argument_list|,
 name|procedure
 operator|->
@@ -1476,7 +1476,7 @@ block|}
 end_function
 
 begin_function
-name|Argument
+name|GimpArgument
 modifier|*
 DECL|function|gimp_procedure_get_return_values (GimpProcedure * procedure,gboolean success)
 name|gimp_procedure_get_return_values
@@ -1489,7 +1489,7 @@ name|gboolean
 name|success
 parameter_list|)
 block|{
-name|Argument
+name|GimpArgument
 modifier|*
 name|args
 decl_stmt|;
@@ -1534,7 +1534,7 @@ name|args
 operator|=
 name|g_new0
 argument_list|(
-name|Argument
+name|GimpArgument
 argument_list|,
 name|n_args
 argument_list|)

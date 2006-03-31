@@ -92,7 +92,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a46208e0108
+DECL|struct|__anon294a20720108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -857,12 +857,12 @@ argument_list|(
 name|data
 argument_list|)
 decl_stmt|;
-name|Argument
+name|GimpArgument
 modifier|*
 name|return_vals
 decl_stmt|;
 name|gint
-name|nreturn_vals
+name|n_return_vals
 decl_stmt|;
 name|return_vals
 operator|=
@@ -879,7 +879,7 @@ argument_list|,
 name|PDB_URL_LOAD
 argument_list|,
 operator|&
-name|nreturn_vals
+name|n_return_vals
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
@@ -892,7 +892,7 @@ name|gimp_arguments_destroy
 argument_list|(
 name|return_vals
 argument_list|,
-name|nreturn_vals
+name|n_return_vals
 argument_list|,
 name|TRUE
 argument_list|)

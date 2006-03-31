@@ -78,13 +78,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb/gimpprocedure.h"
+file|"pdb/gimpargument.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"pdb/procedural_db.h"
+file|"pdb/gimpprocedure.h"
 end_include
 
 begin_include
@@ -129,7 +129,7 @@ end_comment
 
 begin_function_decl
 specifier|static
-name|Argument
+name|GimpArgument
 modifier|*
 name|plug_in_temp_run
 parameter_list|(
@@ -145,7 +145,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
-name|Argument
+name|GimpArgument
 modifier|*
 name|args
 parameter_list|,
@@ -157,7 +157,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|Argument
+name|GimpArgument
 modifier|*
 name|plug_in_get_return_vals
 parameter_list|(
@@ -181,9 +181,9 @@ comment|/*  public functions  */
 end_comment
 
 begin_function
-name|Argument
+name|GimpArgument
 modifier|*
-DECL|function|plug_in_run (Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpProcedure * procedure,Argument * args,gint n_args,gboolean synchronous,gboolean destroy_return_vals,gint display_ID)
+DECL|function|plug_in_run (Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpProcedure * procedure,GimpArgument * args,gint n_args,gboolean synchronous,gboolean destroy_return_vals,gint display_ID)
 name|plug_in_run
 parameter_list|(
 name|Gimp
@@ -202,7 +202,7 @@ name|GimpProcedure
 modifier|*
 name|procedure
 parameter_list|,
-name|Argument
+name|GimpArgument
 modifier|*
 name|args
 parameter_list|,
@@ -219,7 +219,7 @@ name|gint
 name|display_ID
 parameter_list|)
 block|{
-name|Argument
+name|GimpArgument
 modifier|*
 name|return_vals
 init|=
@@ -815,7 +815,7 @@ operator|&&
 name|destroy_return_vals
 condition|)
 block|{
-name|procedural_db_destroy_args
+name|gimp_arguments_destroy
 argument_list|(
 name|return_vals
 argument_list|,
@@ -874,7 +874,7 @@ name|PlugInProcDef
 modifier|*
 name|proc_def
 decl_stmt|;
-name|Argument
+name|GimpArgument
 modifier|*
 name|args
 decl_stmt|;
@@ -1006,7 +1006,7 @@ argument_list|,
 name|display_ID
 argument_list|)
 expr_stmt|;
-name|procedural_db_destroy_args
+name|gimp_arguments_destroy
 argument_list|(
 name|args
 argument_list|,
@@ -1029,9 +1029,9 @@ end_comment
 
 begin_function
 specifier|static
-name|Argument
+name|GimpArgument
 modifier|*
-DECL|function|plug_in_temp_run (GimpProcedure * procedure,GimpContext * context,GimpProgress * progress,Argument * args,gint n_args)
+DECL|function|plug_in_temp_run (GimpProcedure * procedure,GimpContext * context,GimpProgress * progress,GimpArgument * args,gint n_args)
 name|plug_in_temp_run
 parameter_list|(
 name|GimpProcedure
@@ -1046,7 +1046,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
-name|Argument
+name|GimpArgument
 modifier|*
 name|args
 parameter_list|,
@@ -1054,7 +1054,7 @@ name|gint
 name|n_args
 parameter_list|)
 block|{
-name|Argument
+name|GimpArgument
 modifier|*
 name|return_vals
 init|=
@@ -1243,7 +1243,7 @@ end_function
 
 begin_function
 specifier|static
-name|Argument
+name|GimpArgument
 modifier|*
 DECL|function|plug_in_get_return_vals (PlugIn * plug_in,PlugInProcFrame * proc_frame,gint * n_return_vals)
 name|plug_in_get_return_vals
@@ -1261,7 +1261,7 @@ modifier|*
 name|n_return_vals
 parameter_list|)
 block|{
-name|Argument
+name|GimpArgument
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -1356,7 +1356,7 @@ name|return_vals
 argument_list|,
 sizeof|sizeof
 argument_list|(
-name|Argument
+name|GimpArgument
 argument_list|)
 operator|*
 name|MIN

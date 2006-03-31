@@ -96,7 +96,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|Argument
+name|GimpArgument
 modifier|*
 name|gimp_pattern_select_run_callback
 parameter_list|(
@@ -348,7 +348,7 @@ end_function
 
 begin_function
 specifier|static
-name|Argument
+name|GimpArgument
 modifier|*
 DECL|function|gimp_pattern_select_run_callback (GimpPdbDialog * dialog,GimpObject * object,gboolean closing,gint * n_return_vals)
 name|gimp_pattern_select_run_callback

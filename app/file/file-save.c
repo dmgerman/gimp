@@ -248,7 +248,7 @@ modifier|*
 name|error
 parameter_list|)
 block|{
-name|Argument
+name|GimpArgument
 modifier|*
 name|return_vals
 decl_stmt|;

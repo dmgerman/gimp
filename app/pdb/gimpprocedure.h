@@ -63,7 +63,7 @@ name|_IntExec
 block|{
 comment|/*  Function called to marshal arguments  */
 DECL|member|marshal_func
-name|Argument
+name|GimpArgument
 modifier|*
 function_decl|(
 modifier|*
@@ -86,7 +86,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
-name|Argument
+name|GimpArgument
 modifier|*
 name|args
 parameter_list|)
@@ -229,7 +229,7 @@ name|num_args
 decl_stmt|;
 comment|/* Number of procedure arguments              */
 DECL|member|args
-name|ProcArg
+name|GimpArgumentSpec
 modifier|*
 name|args
 decl_stmt|;
@@ -241,7 +241,7 @@ name|num_values
 decl_stmt|;
 comment|/* Number of return values                    */
 DECL|member|values
-name|ProcArg
+name|GimpArgumentSpec
 modifier|*
 name|values
 decl_stmt|;
@@ -540,7 +540,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Argument
+name|GimpArgument
 modifier|*
 name|gimp_procedure_get_arguments
 parameter_list|(
@@ -552,7 +552,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Argument
+name|GimpArgument
 modifier|*
 name|gimp_procedure_get_return_values
 parameter_list|(
@@ -567,7 +567,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Argument
+name|GimpArgument
 modifier|*
 name|gimp_procedure_execute
 parameter_list|(
@@ -587,7 +587,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
-name|Argument
+name|GimpArgument
 modifier|*
 name|args
 parameter_list|,

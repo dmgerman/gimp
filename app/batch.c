@@ -417,11 +417,11 @@ modifier|*
 name|cmd
 parameter_list|)
 block|{
-name|Argument
+name|GimpArgument
 modifier|*
 name|args
 decl_stmt|;
-name|Argument
+name|GimpArgument
 modifier|*
 name|return_vals
 decl_stmt|;

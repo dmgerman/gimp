@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"pdb/gimpargument.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"pdb/procedural_db.h"
 end_include
 
@@ -70,12 +76,12 @@ file|"plug-in-params.h"
 end_include
 
 begin_function
-name|Argument
+name|GimpArgument
 modifier|*
-DECL|function|plug_in_params_to_args (ProcArg * proc_args,gint n_proc_args,GPParam * params,gint n_params,gboolean full_copy)
+DECL|function|plug_in_params_to_args (GimpArgumentSpec * proc_args,gint n_proc_args,GPParam * params,gint n_params,gboolean full_copy)
 name|plug_in_params_to_args
 parameter_list|(
-name|ProcArg
+name|GimpArgumentSpec
 modifier|*
 name|proc_args
 parameter_list|,
@@ -93,7 +99,7 @@ name|gboolean
 name|full_copy
 parameter_list|)
 block|{
-name|Argument
+name|GimpArgument
 modifier|*
 name|args
 decl_stmt|;
@@ -165,7 +171,7 @@ name|args
 operator|=
 name|g_new0
 argument_list|(
-name|Argument
+name|GimpArgument
 argument_list|,
 name|n_params
 argument_list|)
@@ -217,7 +223,7 @@ operator|.
 name|type
 condition|)
 block|{
-name|procedural_db_argument_init
+name|gimp_argument_init
 argument_list|(
 operator|&
 name|args
@@ -235,7 +241,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|procedural_db_compat_arg_init
+name|gimp_argument_init_compat
 argument_list|(
 operator|&
 name|args
@@ -1026,10 +1032,10 @@ end_function
 begin_function
 name|GPParam
 modifier|*
-DECL|function|plug_in_args_to_params (Argument * args,gint n_args,gboolean full_copy)
+DECL|function|plug_in_args_to_params (GimpArgument * args,gint n_args,gboolean full_copy)
 name|plug_in_args_to_params
 parameter_list|(
-name|Argument
+name|GimpArgument
 modifier|*
 name|args
 parameter_list|,
@@ -2415,11 +2421,11 @@ modifier|*
 name|error
 parameter_list|)
 block|{
-name|ProcArg
+name|GimpArgumentSpec
 modifier|*
 name|args
 decl_stmt|;
-name|ProcArg
+name|GimpArgumentSpec
 modifier|*
 name|return_args
 decl_stmt|;
@@ -2433,7 +2439,7 @@ name|args
 operator|=
 name|g_new0
 argument_list|(
-name|ProcArg
+name|GimpArgumentSpec
 argument_list|,
 name|n_args
 argument_list|)
@@ -2469,7 +2475,7 @@ name|return_args
 operator|=
 name|g_new0
 argument_list|(
-name|ProcArg
+name|GimpArgumentSpec
 argument_list|,
 name|n_return_vals
 argument_list|)
@@ -2542,7 +2548,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|plug_in_proc_args_check (const gchar * plug_in_name,const gchar * plug_in_prog,const gchar * procedure_name,const gchar * menu_path,ProcArg * args,guint32 n_args,ProcArg * return_vals,guint32 n_return_vals,GError ** error)
+DECL|function|plug_in_proc_args_check (const gchar * plug_in_name,const gchar * plug_in_prog,const gchar * procedure_name,const gchar * menu_path,GimpArgumentSpec * args,guint32 n_args,GimpArgumentSpec * return_vals,guint32 n_return_vals,GError ** error)
 name|plug_in_proc_args_check
 parameter_list|(
 specifier|const
@@ -2565,14 +2571,14 @@ name|gchar
 modifier|*
 name|menu_path
 parameter_list|,
-name|ProcArg
+name|GimpArgumentSpec
 modifier|*
 name|args
 parameter_list|,
 name|guint32
 name|n_args
 parameter_list|,
-name|ProcArg
+name|GimpArgumentSpec
 modifier|*
 name|return_vals
 parameter_list|,

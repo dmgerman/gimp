@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c837020103
+DECL|enum|__anon2a403a1e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -151,7 +151,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|Argument
+name|GimpArgument
 modifier|*
 name|gimp_brush_select_run_callback
 parameter_list|(
@@ -1043,7 +1043,7 @@ end_function
 
 begin_function
 specifier|static
-name|Argument
+name|GimpArgument
 modifier|*
 DECL|function|gimp_brush_select_run_callback (GimpPdbDialog * dialog,GimpObject * object,gboolean closing,gint * n_return_vals)
 name|gimp_brush_select_run_callback
