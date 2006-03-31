@@ -62,7 +62,7 @@ name|gint
 name|icon_data_length
 decl_stmt|;
 DECL|member|icon_data
-name|gchar
+name|guint8
 modifier|*
 name|icon_data
 decl_stmt|;
@@ -219,7 +219,7 @@ name|GimpIconType
 name|type
 parameter_list|,
 specifier|const
-name|gchar
+name|guint8
 modifier|*
 name|data
 parameter_list|,

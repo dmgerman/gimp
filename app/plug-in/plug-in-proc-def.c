@@ -131,9 +131,6 @@ modifier|*
 name|proc_def
 parameter_list|)
 block|{
-name|gint
-name|i
-decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|proc_def
@@ -600,7 +597,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|plug_in_proc_def_set_icon (PlugInProcDef * proc_def,GimpIconType icon_type,const gchar * icon_data,gint icon_data_length)
+DECL|function|plug_in_proc_def_set_icon (PlugInProcDef * proc_def,GimpIconType icon_type,const guint8 * icon_data,gint icon_data_length)
 name|plug_in_proc_def_set_icon
 parameter_list|(
 name|PlugInProcDef
@@ -611,7 +608,7 @@ name|GimpIconType
 name|icon_type
 parameter_list|,
 specifier|const
-name|gchar
+name|guint8
 modifier|*
 name|icon_data
 parameter_list|,
@@ -708,8 +705,16 @@ name|proc_def
 operator|->
 name|icon_data
 operator|=
+operator|(
+name|guint8
+operator|*
+operator|)
 name|g_strdup
 argument_list|(
+operator|(
+name|gchar
+operator|*
+operator|)
 name|icon_data
 argument_list|)
 expr_stmt|;
@@ -772,6 +777,10 @@ case|case
 name|GIMP_ICON_TYPE_STOCK_ID
 case|:
 return|return
+operator|(
+name|gchar
+operator|*
+operator|)
 name|proc_def
 operator|->
 name|icon_data
@@ -845,26 +854,6 @@ operator|&
 name|error
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|pixbuf
-condition|)
-block|{
-name|g_printerr
-argument_list|(
-name|error
-operator|->
-name|message
-argument_list|)
-expr_stmt|;
-name|g_clear_error
-argument_list|(
-operator|&
-name|error
-argument_list|)
-expr_stmt|;
-block|}
 break|break;
 case|case
 name|GIMP_ICON_TYPE_IMAGE_FILE
@@ -873,6 +862,10 @@ name|pixbuf
 operator|=
 name|gdk_pixbuf_new_from_file
 argument_list|(
+operator|(
+name|gchar
+operator|*
+operator|)
 name|proc_def
 operator|->
 name|icon_data
@@ -881,10 +874,16 @@ operator|&
 name|error
 argument_list|)
 expr_stmt|;
+break|break;
+default|default:
+break|break;
+block|}
 if|if
 condition|(
 operator|!
 name|pixbuf
+operator|&&
+name|error
 condition|)
 block|{
 name|g_printerr
@@ -900,10 +899,6 @@ operator|&
 name|error
 argument_list|)
 expr_stmt|;
-block|}
-break|break;
-default|default:
-break|break;
 block|}
 return|return
 name|pixbuf

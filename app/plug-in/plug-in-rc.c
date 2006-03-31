@@ -248,7 +248,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0e766b0103
+DECL|enum|__anon29551def0103
 block|{
 DECL|enumerator|PROTOCOL_VERSION
 name|PROTOCOL_VERSION
@@ -2006,10 +2006,6 @@ name|proc_def
 operator|->
 name|icon_data
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|icon_data
 expr_stmt|;
 if|if
@@ -3209,6 +3205,10 @@ name|gimp_config_writer_string
 argument_list|(
 name|writer
 argument_list|,
+operator|(
+name|gchar
+operator|*
+operator|)
 name|proc_def
 operator|->
 name|icon_data
@@ -3226,10 +3226,6 @@ name|proc_def
 operator|->
 name|icon_data_length
 argument_list|,
-operator|(
-name|guint8
-operator|*
-operator|)
 name|proc_def
 operator|->
 name|icon_data

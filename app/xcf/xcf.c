@@ -272,6 +272,10 @@ block|,
 operator|-
 literal|1
 block|,
+operator|(
+name|guint8
+operator|*
+operator|)
 literal|"gimp-wilber"
 block|,
 name|NULL
@@ -376,6 +380,10 @@ block|,
 operator|-
 literal|1
 block|,
+operator|(
+name|guint8
+operator|*
+operator|)
 literal|"gimp-wilber"
 block|,
 literal|"RGB*, GRAY*, INDEXED*"
