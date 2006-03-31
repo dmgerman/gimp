@@ -8,11 +8,11 @@ comment|/*  * Adobe and Adobe Photoshop are trademarks of Adobe Systems  * Incor
 end_comment
 
 begin_comment
-comment|/*  * Revision history:  *  *  2000.02 / v1.0 / Monigotes  *       First version.  *  *  2003-05-10  Pedro Gimeno<pggimeno@wanadoo.es>  *       - Cleaned up and GNUstylized.  *       - Translated all comments and vars in Spanish to English.  *  *  2005-2-11 Jay Cox<jaycox@gimp.org>  *       Rewrote all the code that deals with pixels to be stingy with  *       memory and opperate on tile-size chunks.  Create a flattened  *       copy of the image when necessary. Fixes file corruption bug  *       #167139 and memory bug #121871  */
+comment|/*  * Revision history:  *  *  2000.02 / v1.0 / Monigotes  *       First version.  *  *  2003-05-10  Pedro Gimeno<pggimeno@wanadoo.es>  *       - Cleaned up and GNUstylized.  *       - Translated all comments and vars in Spanish to English.  *  *  2005-2-11 Jay Cox<jaycox@gimp.org>  *       Rewrote all the code that deals with pixels to be stingy with  *       memory and opperate on tile-size chunks.  Create a flattened  *       copy of the image when necessary. Fixes file corruption bug  *       #167139 and memory bug #121871  *  *  2006-03-29 Guillermo S. Romero<gsr.bugs@infernal-iceberg.com>  *       - Added/enabled basic support for layer masks based in psd.c  *         and whatever was already here.  *         Layers that are not canvas sized need investigation, here  *         or in the import plugin something seems wrong.  *       - Cosmetic changes about the debug messages, more like psd.c.  */
 end_comment
 
 begin_comment
-comment|/*  * TODO:  *       Save preview  *       Save layer masks  */
+comment|/*  * TODO:  *       Save preview  */
 end_comment
 
 begin_comment
@@ -876,6 +876,8 @@ operator||
 name|GIMP_EXPORT_CAN_HANDLE_ALPHA
 operator||
 name|GIMP_EXPORT_CAN_HANDLE_LAYERS
+operator||
+name|GIMP_EXPORT_CAN_HANDLE_LAYER_MASKS
 argument_list|)
 expr_stmt|;
 if|if
@@ -1118,6 +1120,19 @@ case|:
 case|case
 name|GIMP_SUBTRACT_MODE
 case|:
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"Unable to save layer with mode '%c'. The psd file format does not support that, using normal mode instead."
+argument_list|)
+argument_list|,
+name|gimp_layer_get_mode
+argument_list|(
+name|idLayer
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
@@ -1138,6 +1153,14 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"Unable to save layer with UNKNOWN mode. Using normal mode as fallback."
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
@@ -1994,7 +2017,10 @@ comment|/* Indexed */
 default|default:
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Error: Can't convert GIMP base imagetype to PSD mode"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|IFDBG
@@ -2019,7 +2045,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|nChansLayer (gint gimpBaseType,gint hasAlpha)
+DECL|function|nChansLayer (gint gimpBaseType,gint hasAlpha,gint hasMask)
 name|nChansLayer
 parameter_list|(
 name|gint
@@ -2027,6 +2053,9 @@ name|gimpBaseType
 parameter_list|,
 name|gint
 name|hasAlpha
+parameter_list|,
+name|gint
+name|hasMask
 parameter_list|)
 block|{
 name|gint
@@ -2034,10 +2063,27 @@ name|incAlpha
 init|=
 literal|0
 decl_stmt|;
+name|gint
+name|incMask
+init|=
+literal|0
+decl_stmt|;
 name|incAlpha
 operator|=
 operator|(
 name|hasAlpha
+operator|==
+literal|0
+operator|)
+condition|?
+literal|0
+else|:
+literal|1
+expr_stmt|;
+name|incMask
+operator|=
+operator|(
+name|hasMask
 operator|==
 literal|0
 operator|)
@@ -2058,8 +2104,10 @@ return|return
 literal|3
 operator|+
 name|incAlpha
+operator|+
+name|incMask
 return|;
-comment|/* R,G,B& Alpha (if any) */
+comment|/* R,G,B& Alpha& Mask (if any) */
 case|case
 name|GIMP_GRAY
 case|:
@@ -2067,8 +2115,10 @@ return|return
 literal|1
 operator|+
 name|incAlpha
+operator|+
+name|incMask
 return|;
-comment|/* G& Alpha (if any) */
+comment|/* G& Alpha& Mask (if any) */
 case|case
 name|GIMP_INDEXED
 case|:
@@ -2076,8 +2126,10 @@ return|return
 literal|1
 operator|+
 name|incAlpha
+operator|+
+name|incMask
 return|;
-comment|/* I& Alpha (if any) */
+comment|/* I& Alpha& Mask (if any) */
 default|default:
 return|return
 literal|0
@@ -2227,7 +2279,7 @@ decl_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"      Rows: %d\n"
+literal|"\tRows: %d\n"
 argument_list|,
 name|PSDImageData
 operator|.
@@ -2237,7 +2289,7 @@ decl_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"      Columns: %d\n"
+literal|"\tColumns: %d\n"
 argument_list|,
 name|PSDImageData
 operator|.
@@ -2247,7 +2299,7 @@ decl_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"      Base type: %d\n"
+literal|"\tBase type: %d\n"
 argument_list|,
 name|PSDImageData
 operator|.
@@ -2257,7 +2309,7 @@ decl_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"      Number of channels: %d\n"
+literal|"\tNumber of channels: %d\n"
 argument_list|,
 name|PSDImageData
 operator|.
@@ -2318,6 +2370,8 @@ argument_list|(
 name|PSDImageData
 operator|.
 name|baseType
+argument_list|,
+literal|0
 argument_list|,
 literal|0
 argument_list|)
@@ -2422,7 +2476,7 @@ case|:
 name|IFDBG
 name|printf
 argument_list|(
-literal|"      Image type: INDEXED\n"
+literal|"\tImage type: INDEXED\n"
 argument_list|)
 decl_stmt|;
 name|cmap
@@ -2438,7 +2492,7 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"      Length of colormap returned by gimp_image_get_colormap: %d\n"
+literal|"\t\tLength of colormap returned by gimp_image_get_colormap: %d\n"
 argument_list|,
 name|nColors
 argument_list|)
@@ -2453,7 +2507,7 @@ block|{
 name|IFDBG
 name|printf
 argument_list|(
-literal|"      The indexed image lacks a colormap\n"
+literal|"\t\tThe indexed image lacks a colormap\n"
 argument_list|)
 decl_stmt|;
 name|write_gint32
@@ -2477,7 +2531,7 @@ block|{
 name|IFDBG
 name|printf
 argument_list|(
-literal|"      The indexed image has %d!=256 colors\n"
+literal|"\t\tThe indexed image has %d!=256 colors\n"
 argument_list|,
 name|nColors
 argument_list|)
@@ -2485,7 +2539,7 @@ decl_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"      Padding with zeros up to 256\n"
+literal|"\t\tPadding with zeros up to 256\n"
 argument_list|)
 decl_stmt|;
 name|write_gint32
@@ -2611,7 +2665,7 @@ default|default:
 name|IFDBG
 name|printf
 argument_list|(
-literal|"      Image type: Not INDEXED\n"
+literal|"\tImage type: Not INDEXED\n"
 argument_list|)
 decl_stmt|;
 name|write_gint32
@@ -2694,7 +2748,7 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"      Image title: %s\n"
+literal|"\tImage title: %s\n"
 argument_list|,
 name|fileName
 argument_list|)
@@ -2710,7 +2764,7 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"      Current layer id: %d\n"
+literal|"\tCurrent layer id: %d\n"
 argument_list|,
 name|idActLayer
 argument_list|)
@@ -2763,7 +2817,7 @@ block|{
 name|IFDBG
 name|printf
 argument_list|(
-literal|"      Active layer number is: %d\n"
+literal|"\t\tActive layer is number %d\n"
 argument_list|,
 name|nActiveLayer
 argument_list|)
@@ -2774,7 +2828,7 @@ block|{
 name|IFDBG
 name|printf
 argument_list|(
-literal|"      No active layer\n"
+literal|"\t\tNo active layer\n"
 argument_list|)
 decl_stmt|;
 block|}
@@ -2937,7 +2991,7 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"\n      Total length of 0x03EE resource: %d\n"
+literal|"\tTotal length of 0x03EE resource: %d\n"
 argument_list|,
 call|(
 name|int
@@ -3213,7 +3267,7 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"      Total length of 0x0400 resource: %d\n"
+literal|"\tTotal length of 0x0400 resource: %d\n"
 argument_list|,
 operator|(
 name|int
@@ -3476,7 +3530,7 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"      Total length of 0x0400 resource: %d\n"
+literal|"\tTotal length of 0x0400 resource: %d\n"
 argument_list|,
 operator|(
 name|int
@@ -3524,7 +3578,7 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"      Resource section total length: %d\n"
+literal|"\tResource section total length: %d\n"
 argument_list|,
 call|(
 name|int
@@ -3737,6 +3791,10 @@ modifier|*
 name|layerName
 decl_stmt|;
 comment|/* Layer name */
+name|gint
+name|mask
+decl_stmt|;
+comment|/* Layer mask */
 name|gint32
 name|eof_pos
 decl_stmt|;
@@ -3762,7 +3820,7 @@ comment|/* Position: Channel length */
 name|IFDBG
 name|printf
 argument_list|(
-literal|" Function: save_layer&mask\n"
+literal|" Function: save_layer_and_mask\n"
 argument_list|)
 decl_stmt|;
 comment|/* Create first array dimension (layers, channels) */
@@ -3844,6 +3902,11 @@ name|i
 operator|--
 control|)
 block|{
+name|gint
+name|hasMask
+init|=
+literal|0
+decl_stmt|;
 name|gimp_drawable_offsets
 argument_list|(
 name|PSDImageData
@@ -3931,7 +3994,7 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"      Layer number: %d\n"
+literal|"\tLayer number: %d\n"
 argument_list|,
 name|i
 argument_list|)
@@ -3939,7 +4002,7 @@ decl_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"         Offset x: %d\n"
+literal|"\t\tX offset: %d\n"
 argument_list|,
 name|PSDImageData
 operator|.
@@ -3954,7 +4017,7 @@ decl_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"         Offset y: %d\n"
+literal|"\t\tY offset: %d\n"
 argument_list|,
 name|PSDImageData
 operator|.
@@ -3969,7 +4032,7 @@ decl_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"         Width: %d\n"
+literal|"\t\tWidth: %d\n"
 argument_list|,
 name|PSDImageData
 operator|.
@@ -3984,7 +4047,7 @@ decl_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"         Height: %d\n"
+literal|"\t\tHeight: %d\n"
 argument_list|,
 name|PSDImageData
 operator|.
@@ -4082,6 +4145,27 @@ argument_list|,
 literal|"Layer right"
 argument_list|)
 expr_stmt|;
+name|hasMask
+operator|=
+operator|(
+name|gimp_layer_get_mask
+argument_list|(
+name|PSDImageData
+operator|.
+name|lLayers
+index|[
+name|i
+index|]
+argument_list|)
+operator|==
+operator|-
+literal|1
+operator|)
+condition|?
+literal|0
+else|:
+literal|1
+expr_stmt|;
 name|nChannelsLayer
 operator|=
 name|nChansLayer
@@ -4099,6 +4183,8 @@ index|[
 name|i
 index|]
 argument_list|)
+argument_list|,
+name|hasMask
 argument_list|)
 expr_stmt|;
 name|write_gint16
@@ -4113,7 +4199,7 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"         Number of channels: %d\n"
+literal|"\t\tNumber of channels: %d\n"
 argument_list|,
 name|nChannelsLayer
 argument_list|)
@@ -4169,6 +4255,25 @@ name|idChannel
 operator|=
 name|j
 expr_stmt|;
+if|if
+condition|(
+name|hasMask
+operator|&&
+operator|(
+name|j
+operator|+
+literal|1
+operator|==
+name|nChannelsLayer
+operator|)
+condition|)
+comment|/* Last channel ... */
+name|idChannel
+operator|=
+operator|-
+literal|2
+expr_stmt|;
+comment|/* ... will be layer mask */
 name|write_gint16
 argument_list|(
 name|fd
@@ -4181,7 +4286,7 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"           - Identifier: %d\n"
+literal|"\t\t\tChannel Identifier: %d\n"
 argument_list|,
 name|idChannel
 argument_list|)
@@ -4239,7 +4344,7 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"             Length: %d\n"
+literal|"\t\t\tLength: %d\n"
 argument_list|,
 name|ChanSize
 argument_list|)
@@ -4271,7 +4376,7 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"         Blend mode: %s\n"
+literal|"\t\tBlend mode: %s\n"
 argument_list|,
 name|blendMode
 argument_list|)
@@ -4308,7 +4413,7 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"         Opacity: %u\n"
+literal|"\t\tOpacity: %u\n"
 argument_list|,
 name|layerOpacity
 argument_list|)
@@ -4372,7 +4477,7 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"         Flags: %u\n"
+literal|"\t\tFlags: %u\n"
 argument_list|,
 name|flags
 argument_list|)
@@ -4413,9 +4518,6 @@ argument_list|,
 literal|"Extra data size"
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|SAVELAYERMASK
 name|mask
 operator|=
 name|gimp_layer_get_mask
@@ -4435,11 +4537,19 @@ operator|>=
 literal|0
 condition|)
 block|{
+name|IFDBG
+name|printf
+argument_list|(
+literal|"\t\tLayer mask size: %d\n"
+argument_list|,
+literal|20
+argument_list|)
+decl_stmt|;
 name|write_gint32
 argument_list|(
 name|fd
 argument_list|,
-literal|14
+literal|20
 argument_list|,
 literal|"Layer mask size"
 argument_list|)
@@ -4502,9 +4612,14 @@ literal|1
 operator||
 comment|/* relative */
 operator|(
-name|gimp_layer_mask_is_disabled
+name|gimp_layer_get_apply_mask
 argument_list|(
-name|mask
+name|PSDImageData
+operator|.
+name|lLayers
+index|[
+name|i
+index|]
 argument_list|)
 operator|<<
 literal|1
@@ -4539,8 +4654,7 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
-else|#
-directive|else
+block|{
 comment|/* NOTE Writing empty Layer mask / adjustment layer data */
 name|write_gint32
 argument_list|(
@@ -4554,13 +4668,12 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"\n         Layer mask size: %d\n"
+literal|"\t\tLayer mask size: %d\n"
 argument_list|,
 literal|0
 argument_list|)
 decl_stmt|;
-endif|#
-directive|endif
+block|}
 comment|/* NOTE Writing empty Layer blending ranges data */
 name|write_gint32
 argument_list|(
@@ -4574,7 +4687,7 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"\n         Layer blending size: %d\n"
+literal|"\t\tLayer blending size: %d\n"
 argument_list|,
 literal|0
 argument_list|)
@@ -4605,7 +4718,7 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"\n         Layer name: %s\n"
+literal|"\t\tLayer name: %s\n"
 argument_list|,
 name|layerName
 argument_list|)
@@ -4646,7 +4759,7 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"      ExtraData size: %d\n"
+literal|"\t\tExtraData size: %d\n"
 argument_list|,
 call|(
 name|int
@@ -4694,6 +4807,14 @@ name|i
 operator|--
 control|)
 block|{
+name|IFDBG
+name|printf
+argument_list|(
+literal|"\t\tWriting pixel data for layer slot %d\n"
+argument_list|,
+name|i
+argument_list|)
+decl_stmt|;
 name|write_pixel_data
 argument_list|(
 name|fd
@@ -4750,7 +4871,7 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"\n      Total layers info section length: %d\n"
+literal|"\t\tTotal layers info section length: %d\n"
 argument_list|,
 call|(
 name|int
@@ -4796,7 +4917,7 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"      Total layers& mask information length: %d\n"
+literal|"\t\tTotal layers& mask information length: %d\n"
 argument_list|,
 call|(
 name|int
@@ -4856,6 +4977,16 @@ modifier|*
 name|data
 decl_stmt|;
 comment|/* Temporary copy of pixel data */
+name|IFDBG
+name|printf
+argument_list|(
+literal|" Function: write_pixel_data, drw %d, lto %d\n"
+argument_list|,
+name|drawableID
+argument_list|,
+name|ltable_offset
+argument_list|)
+decl_stmt|;
 name|gint32
 name|tile_height
 init|=
@@ -4867,6 +4998,14 @@ modifier|*
 name|drawable
 init|=
 name|gimp_drawable_get
+argument_list|(
+name|drawableID
+argument_list|)
+decl_stmt|;
+name|gint32
+name|maskID
+init|=
+name|gimp_layer_get_mask
 argument_list|(
 name|drawableID
 argument_list|)
@@ -5161,8 +5300,21 @@ name|len
 operator|+=
 name|height
 operator|*
-literal|2
+sizeof|sizeof
+argument_list|(
+name|gint16
+argument_list|)
 expr_stmt|;
+name|IF_DEEP_DBG
+name|printf
+argument_list|(
+literal|"\t\t\t\t. ltable, pos %d len %d\n"
+argument_list|,
+name|length_table_pos
+argument_list|,
+name|len
+argument_list|)
+decl_stmt|;
 block|}
 for|for
 control|(
@@ -5252,6 +5404,14 @@ argument_list|,
 literal|"Compressed pixel data"
 argument_list|)
 expr_stmt|;
+name|IF_DEEP_DBG
+name|printf
+argument_list|(
+literal|"\t\t\t\t. Writing compressed pixels, stream of %d\n"
+argument_list|,
+name|tlen
+argument_list|)
+decl_stmt|;
 block|}
 comment|/* Write compressed lengths table */
 name|fseek
@@ -5316,6 +5476,14 @@ argument_list|,
 literal|"channel data length"
 argument_list|)
 expr_stmt|;
+name|IFDBG
+name|printf
+argument_list|(
+literal|"\t\tUpdating data len to %d\n"
+argument_list|,
+name|len
+argument_list|)
+decl_stmt|;
 block|}
 name|fseek
 argument_list|(
@@ -5324,6 +5492,376 @@ argument_list|,
 literal|0
 argument_list|,
 name|SEEK_END
+argument_list|)
+expr_stmt|;
+name|IF_DEEP_DBG
+name|printf
+argument_list|(
+literal|"\t\t\t\t. Cur pos %ld\n"
+argument_list|,
+name|ftell
+argument_list|(
+name|fd
+argument_list|)
+argument_list|)
+decl_stmt|;
+block|}
+comment|/* Write layer mask, as last channel, id -2 */
+if|if
+condition|(
+name|maskID
+operator|!=
+operator|-
+literal|1
+condition|)
+block|{
+name|len
+operator|=
+literal|0
+expr_stmt|;
+name|GimpDrawable
+modifier|*
+name|mdrawable
+init|=
+name|gimp_drawable_get
+argument_list|(
+name|maskID
+argument_list|)
+decl_stmt|;
+name|gimp_pixel_rgn_init
+argument_list|(
+operator|&
+name|region
+argument_list|,
+name|mdrawable
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+name|width
+argument_list|,
+name|height
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|ChanLenPosition
+condition|)
+block|{
+name|write_gint16
+argument_list|(
+name|fd
+argument_list|,
+literal|1
+argument_list|,
+literal|"Compression type (RLE)"
+argument_list|)
+expr_stmt|;
+name|len
+operator|+=
+literal|2
+expr_stmt|;
+name|IF_DEEP_DBG
+name|printf
+argument_list|(
+literal|"\t\t\t\t. ChanLenPos, len %d\n"
+argument_list|,
+name|len
+argument_list|)
+decl_stmt|;
+block|}
+if|if
+condition|(
+name|ltable_offset
+operator|>
+literal|0
+condition|)
+block|{
+name|length_table_pos
+operator|=
+name|ltable_offset
+operator|+
+literal|2
+operator|*
+operator|(
+name|bytes
+operator|+
+literal|1
+operator|)
+operator|*
+name|height
+expr_stmt|;
+name|IF_DEEP_DBG
+name|printf
+argument_list|(
+literal|"\t\t\t\t. ltable, pos %d\n"
+argument_list|,
+name|length_table_pos
+argument_list|)
+decl_stmt|;
+block|}
+else|else
+block|{
+name|length_table_pos
+operator|=
+name|ftell
+argument_list|(
+name|fd
+argument_list|)
+expr_stmt|;
+name|xfwrite
+argument_list|(
+name|fd
+argument_list|,
+name|LengthsTable
+argument_list|,
+name|height
+operator|*
+sizeof|sizeof
+argument_list|(
+name|gint16
+argument_list|)
+argument_list|,
+literal|"Dummy RLE length"
+argument_list|)
+expr_stmt|;
+name|len
+operator|+=
+name|height
+operator|*
+sizeof|sizeof
+argument_list|(
+name|gint16
+argument_list|)
+expr_stmt|;
+name|IF_DEEP_DBG
+name|printf
+argument_list|(
+literal|"\t\t\t\t. ltable, pos %d len %d\n"
+argument_list|,
+name|length_table_pos
+argument_list|,
+name|len
+argument_list|)
+decl_stmt|;
+block|}
+for|for
+control|(
+name|y
+operator|=
+literal|0
+init|;
+name|y
+operator|<
+name|height
+condition|;
+name|y
+operator|+=
+name|tile_height
+control|)
+block|{
+name|int
+name|tlen
+decl_stmt|;
+name|gimp_pixel_rgn_get_rect
+argument_list|(
+operator|&
+name|region
+argument_list|,
+name|data
+argument_list|,
+literal|0
+argument_list|,
+name|y
+argument_list|,
+name|width
+argument_list|,
+name|MIN
+argument_list|(
+name|height
+operator|-
+name|y
+argument_list|,
+name|tile_height
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|tlen
+operator|=
+name|get_compress_channel_data
+argument_list|(
+operator|&
+name|data
+index|[
+literal|0
+index|]
+argument_list|,
+name|width
+argument_list|,
+name|MIN
+argument_list|(
+name|height
+operator|-
+name|y
+argument_list|,
+name|tile_height
+argument_list|)
+argument_list|,
+literal|1
+argument_list|,
+operator|&
+name|LengthsTable
+index|[
+name|y
+index|]
+argument_list|,
+name|rledata
+argument_list|)
+expr_stmt|;
+name|len
+operator|+=
+name|tlen
+expr_stmt|;
+name|xfwrite
+argument_list|(
+name|fd
+argument_list|,
+name|rledata
+argument_list|,
+name|tlen
+argument_list|,
+literal|"Compressed mask data"
+argument_list|)
+expr_stmt|;
+name|IF_DEEP_DBG
+name|printf
+argument_list|(
+literal|"\t\t\t\t. Writing compressed mask, stream of %d\n"
+argument_list|,
+name|tlen
+argument_list|)
+decl_stmt|;
+block|}
+comment|/* Write compressed lengths table */
+name|fseek
+argument_list|(
+name|fd
+argument_list|,
+name|length_table_pos
+argument_list|,
+name|SEEK_SET
+argument_list|)
+expr_stmt|;
+comment|/*POS WHERE???*/
+for|for
+control|(
+name|j
+operator|=
+literal|0
+init|;
+name|j
+operator|<
+name|height
+condition|;
+name|j
+operator|++
+control|)
+comment|/* write real length table */
+block|{
+name|write_gint16
+argument_list|(
+name|fd
+argument_list|,
+name|LengthsTable
+index|[
+name|j
+index|]
+argument_list|,
+literal|"RLE length"
+argument_list|)
+expr_stmt|;
+name|IF_DEEP_DBG
+name|printf
+argument_list|(
+literal|"\t\t\t\t. Updating RLE len %d\n"
+argument_list|,
+name|LengthsTable
+index|[
+name|j
+index|]
+argument_list|)
+decl_stmt|;
+block|}
+if|if
+condition|(
+name|ChanLenPosition
+condition|)
+comment|/* Update total compressed length */
+block|{
+name|fseek
+argument_list|(
+name|fd
+argument_list|,
+name|ChanLenPosition
+index|[
+name|bytes
+index|]
+argument_list|,
+name|SEEK_SET
+argument_list|)
+expr_stmt|;
+comment|/*+bytes OR SOMETHING*/
+name|write_gint32
+argument_list|(
+name|fd
+argument_list|,
+name|len
+argument_list|,
+literal|"channel data length"
+argument_list|)
+expr_stmt|;
+name|IFDBG
+name|printf
+argument_list|(
+literal|"\t\tUpdating data len to %d, at %ld\n"
+argument_list|,
+name|len
+argument_list|,
+name|ftell
+argument_list|(
+name|fd
+argument_list|)
+argument_list|)
+decl_stmt|;
+block|}
+name|fseek
+argument_list|(
+name|fd
+argument_list|,
+literal|0
+argument_list|,
+name|SEEK_END
+argument_list|)
+expr_stmt|;
+name|IF_DEEP_DBG
+name|printf
+argument_list|(
+literal|"\t\t\t\t. Cur pos %ld\n"
+argument_list|,
+name|ftell
+argument_list|(
+name|fd
+argument_list|)
+argument_list|)
+decl_stmt|;
+name|gimp_drawable_detach
+argument_list|(
+name|mdrawable
 argument_list|)
 expr_stmt|;
 block|}
@@ -5392,7 +5930,7 @@ decl_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"\n Function: save_data\n"
+literal|" Function: save_data\n"
 argument_list|)
 decl_stmt|;
 name|ChanCount
@@ -5409,6 +5947,8 @@ operator|.
 name|baseType
 argument_list|,
 literal|0
+argument_list|,
+literal|0
 argument_list|)
 operator|)
 expr_stmt|;
@@ -5420,11 +5960,11 @@ name|nLayers
 operator|-
 literal|1
 expr_stmt|;
-comment|/* Channel to be written */
+comment|/* Layers to be written */
 name|IFDBG
 name|printf
 argument_list|(
-literal|"     Processing layer %d\n"
+literal|"\tProcessing %d layers\n"
 argument_list|,
 name|i
 argument_list|)
@@ -5544,7 +6084,7 @@ decl_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"\n     Creating flattened image\n"
+literal|"\t\tCreating flattened image\n"
 argument_list|)
 decl_stmt|;
 name|flat_image
@@ -5569,7 +6109,7 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"\n     Writing compressed flattened image data\n"
+literal|"\t\tWriting compressed flattened image data\n"
 argument_list|)
 decl_stmt|;
 name|write_pixel_data
@@ -5594,7 +6134,7 @@ block|{
 name|IFDBG
 name|printf
 argument_list|(
-literal|"\n     Writing compressed image data\n"
+literal|"\t\tWriting compressed image data\n"
 argument_list|)
 decl_stmt|;
 name|write_pixel_data
@@ -5627,6 +6167,8 @@ operator|.
 name|baseType
 argument_list|,
 literal|0
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 for|for
@@ -5650,7 +6192,7 @@ block|{
 name|IFDBG
 name|printf
 argument_list|(
-literal|"\n     Writing compressed channel data for channel %d\n"
+literal|"\t\tWriting compressed channel data for channel %d\n"
 argument_list|,
 name|i
 argument_list|)
@@ -5722,7 +6264,7 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"      Got number of rows: %d\n"
+literal|"\tGot number of rows: %d\n"
 argument_list|,
 name|PSDImageData
 operator|.
@@ -5741,7 +6283,7 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"      Got number of cols: %d\n"
+literal|"\tGot number of cols: %d\n"
 argument_list|,
 name|PSDImageData
 operator|.
@@ -5760,7 +6302,7 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"      Got base type: %d\n"
+literal|"\tGot base type: %d\n"
 argument_list|,
 name|PSDImageData
 operator|.
@@ -5780,7 +6322,7 @@ block|{
 name|IFDBG
 name|printf
 argument_list|(
-literal|"      Flattening indexed image\n"
+literal|"\tFlattening indexed image\n"
 argument_list|)
 decl_stmt|;
 name|gimp_image_flatten
@@ -5806,7 +6348,7 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"      Got number of channels: %d\n"
+literal|"\tGot number of channels: %d\n"
 argument_list|,
 name|PSDImageData
 operator|.
@@ -5830,7 +6372,7 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"      Got number of layers: %d\n"
+literal|"\tGot number of layers: %d\n"
 argument_list|,
 name|PSDImageData
 operator|.
@@ -6057,7 +6599,7 @@ expr_stmt|;
 name|IFDBG
 name|g_print
 argument_list|(
-literal|"      File \"%s\" has been opened\n"
+literal|"\tFile '%s' has been opened\n"
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
@@ -6130,7 +6672,7 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"\n\n"
+literal|"----- Closing PSD file, done -----\n\n"
 argument_list|)
 decl_stmt|;
 name|fclose
