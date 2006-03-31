@@ -34,6 +34,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpprocedure.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"procedural_db.h"
 end_include
 
@@ -136,7 +142,7 @@ decl_stmt|;
 comment|/*    * gradients_refresh    */
 name|procedure
 operator|=
-name|procedural_db_init_proc
+name|gimp_procedure_init
 argument_list|(
 operator|&
 name|gradients_refresh_proc
@@ -156,7 +162,7 @@ expr_stmt|;
 comment|/*    * gradients_get_list    */
 name|procedure
 operator|=
-name|procedural_db_init_proc
+name|gimp_procedure_init
 argument_list|(
 operator|&
 name|gradients_get_list_proc
@@ -166,7 +172,7 @@ argument_list|,
 literal|2
 argument_list|)
 expr_stmt|;
-name|procedural_db_add_argument
+name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
@@ -190,7 +196,7 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|procedural_db_add_return_value
+name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
@@ -214,7 +220,7 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|procedural_db_add_return_value
+name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
@@ -242,7 +248,7 @@ expr_stmt|;
 comment|/*    * gradients_sample_uniform    */
 name|procedure
 operator|=
-name|procedural_db_init_proc
+name|gimp_procedure_init
 argument_list|(
 operator|&
 name|gradients_sample_uniform_proc
@@ -252,7 +258,7 @@ argument_list|,
 literal|2
 argument_list|)
 expr_stmt|;
-name|procedural_db_add_argument
+name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
@@ -276,7 +282,7 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|procedural_db_add_argument
+name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
@@ -296,7 +302,7 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|procedural_db_add_return_value
+name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
@@ -320,7 +326,7 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|procedural_db_add_return_value
+name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
@@ -348,7 +354,7 @@ expr_stmt|;
 comment|/*    * gradients_sample_custom    */
 name|procedure
 operator|=
-name|procedural_db_init_proc
+name|gimp_procedure_init
 argument_list|(
 operator|&
 name|gradients_sample_custom_proc
@@ -358,7 +364,7 @@ argument_list|,
 literal|2
 argument_list|)
 expr_stmt|;
-name|procedural_db_add_argument
+name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
@@ -382,7 +388,7 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|procedural_db_add_argument
+name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
@@ -400,7 +406,7 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|procedural_db_add_argument
+name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
@@ -420,7 +426,7 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|procedural_db_add_return_value
+name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
@@ -444,7 +450,7 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|procedural_db_add_return_value
+name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
@@ -472,7 +478,7 @@ expr_stmt|;
 comment|/*    * gradients_get_gradient_data    */
 name|procedure
 operator|=
-name|procedural_db_init_proc
+name|gimp_procedure_init
 argument_list|(
 operator|&
 name|gradients_get_gradient_data_proc
@@ -482,7 +488,7 @@ argument_list|,
 literal|3
 argument_list|)
 expr_stmt|;
-name|procedural_db_add_argument
+name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
@@ -506,7 +512,7 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|procedural_db_add_argument
+name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
@@ -532,7 +538,7 @@ name|GIMP_PARAM_NO_VALIDATE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|procedural_db_add_argument
+name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
@@ -552,7 +558,7 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|procedural_db_add_return_value
+name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
@@ -576,7 +582,7 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|procedural_db_add_return_value
+name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
@@ -600,7 +606,7 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|procedural_db_add_return_value
+name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
@@ -664,7 +670,7 @@ name|gradient_factory
 argument_list|)
 expr_stmt|;
 return|return
-name|procedural_db_return_values
+name|gimp_procedure_get_return_values
 argument_list|(
 name|proc_record
 argument_list|,
@@ -810,7 +816,7 @@ expr_stmt|;
 block|}
 name|return_vals
 operator|=
-name|procedural_db_return_values
+name|gimp_procedure_get_return_values
 argument_list|(
 name|proc_record
 argument_list|,
@@ -1104,7 +1110,7 @@ block|}
 block|}
 name|return_vals
 operator|=
-name|procedural_db_return_values
+name|gimp_procedure_get_return_values
 argument_list|(
 name|proc_record
 argument_list|,
@@ -1396,7 +1402,7 @@ block|}
 block|}
 name|return_vals
 operator|=
-name|procedural_db_return_values
+name|gimp_procedure_get_return_values
 argument_list|(
 name|proc_record
 argument_list|,
@@ -1789,7 +1795,7 @@ expr_stmt|;
 block|}
 name|return_vals
 operator|=
-name|procedural_db_return_values
+name|gimp_procedure_get_return_values
 argument_list|(
 name|proc_record
 argument_list|,

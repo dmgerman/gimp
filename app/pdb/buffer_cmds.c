@@ -34,6 +34,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpprocedure.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"procedural_db.h"
 end_include
 
@@ -146,7 +152,7 @@ decl_stmt|;
 comment|/*    * buffers_get_list    */
 name|procedure
 operator|=
-name|procedural_db_init_proc
+name|gimp_procedure_init
 argument_list|(
 operator|&
 name|buffers_get_list_proc
@@ -156,7 +162,7 @@ argument_list|,
 literal|2
 argument_list|)
 expr_stmt|;
-name|procedural_db_add_argument
+name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
@@ -180,7 +186,7 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|procedural_db_add_return_value
+name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
@@ -204,7 +210,7 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|procedural_db_add_return_value
+name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
@@ -232,7 +238,7 @@ expr_stmt|;
 comment|/*    * buffer_rename    */
 name|procedure
 operator|=
-name|procedural_db_init_proc
+name|gimp_procedure_init
 argument_list|(
 operator|&
 name|buffer_rename_proc
@@ -242,7 +248,7 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-name|procedural_db_add_argument
+name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
@@ -266,7 +272,7 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|procedural_db_add_argument
+name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
@@ -290,7 +296,7 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|procedural_db_add_return_value
+name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
@@ -324,7 +330,7 @@ expr_stmt|;
 comment|/*    * buffer_delete    */
 name|procedure
 operator|=
-name|procedural_db_init_proc
+name|gimp_procedure_init
 argument_list|(
 operator|&
 name|buffer_delete_proc
@@ -334,7 +340,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|procedural_db_add_argument
+name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
@@ -368,7 +374,7 @@ expr_stmt|;
 comment|/*    * buffer_get_width    */
 name|procedure
 operator|=
-name|procedural_db_init_proc
+name|gimp_procedure_init
 argument_list|(
 operator|&
 name|buffer_get_width_proc
@@ -378,7 +384,7 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-name|procedural_db_add_argument
+name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
@@ -402,7 +408,7 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|procedural_db_add_return_value
+name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
@@ -436,7 +442,7 @@ expr_stmt|;
 comment|/*    * buffer_get_height    */
 name|procedure
 operator|=
-name|procedural_db_init_proc
+name|gimp_procedure_init
 argument_list|(
 operator|&
 name|buffer_get_height_proc
@@ -446,7 +452,7 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-name|procedural_db_add_argument
+name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
@@ -470,7 +476,7 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|procedural_db_add_return_value
+name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
@@ -504,7 +510,7 @@ expr_stmt|;
 comment|/*    * buffer_get_bytes    */
 name|procedure
 operator|=
-name|procedural_db_init_proc
+name|gimp_procedure_init
 argument_list|(
 operator|&
 name|buffer_get_bytes_proc
@@ -514,7 +520,7 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-name|procedural_db_add_argument
+name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
@@ -538,7 +544,7 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|procedural_db_add_return_value
+name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
@@ -572,7 +578,7 @@ expr_stmt|;
 comment|/*    * buffer_get_image_type    */
 name|procedure
 operator|=
-name|procedural_db_init_proc
+name|gimp_procedure_init
 argument_list|(
 operator|&
 name|buffer_get_image_type_proc
@@ -582,7 +588,7 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-name|procedural_db_add_argument
+name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
@@ -606,7 +612,7 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|procedural_db_add_return_value
+name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
@@ -730,7 +736,7 @@ expr_stmt|;
 block|}
 name|return_vals
 operator|=
-name|procedural_db_return_values
+name|gimp_procedure_get_return_values
 argument_list|(
 name|proc_record
 argument_list|,
@@ -966,7 +972,7 @@ expr_stmt|;
 block|}
 name|return_vals
 operator|=
-name|procedural_db_return_values
+name|gimp_procedure_get_return_values
 argument_list|(
 name|proc_record
 argument_list|,
@@ -1139,7 +1145,7 @@ name|FALSE
 expr_stmt|;
 block|}
 return|return
-name|procedural_db_return_values
+name|gimp_procedure_get_return_values
 argument_list|(
 name|proc_record
 argument_list|,
@@ -1295,7 +1301,7 @@ expr_stmt|;
 block|}
 name|return_vals
 operator|=
-name|procedural_db_return_values
+name|gimp_procedure_get_return_values
 argument_list|(
 name|proc_record
 argument_list|,
@@ -1471,7 +1477,7 @@ expr_stmt|;
 block|}
 name|return_vals
 operator|=
-name|procedural_db_return_values
+name|gimp_procedure_get_return_values
 argument_list|(
 name|proc_record
 argument_list|,
@@ -1647,7 +1653,7 @@ expr_stmt|;
 block|}
 name|return_vals
 operator|=
-name|procedural_db_return_values
+name|gimp_procedure_get_return_values
 argument_list|(
 name|proc_record
 argument_list|,
@@ -1823,7 +1829,7 @@ expr_stmt|;
 block|}
 name|return_vals
 operator|=
-name|procedural_db_return_values
+name|gimp_procedure_get_return_values
 argument_list|(
 name|proc_record
 argument_list|,

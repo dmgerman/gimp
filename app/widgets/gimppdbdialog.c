@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"pdb/gimpprocedure.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"pdb/procedural_db.h"
 end_include
 
@@ -65,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c6aec30103
+DECL|enum|__anon2b3b39100103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

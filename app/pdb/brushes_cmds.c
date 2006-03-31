@@ -34,6 +34,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpprocedure.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"procedural_db.h"
 end_include
 
@@ -150,7 +156,7 @@ decl_stmt|;
 comment|/*    * brushes_refresh    */
 name|procedure
 operator|=
-name|procedural_db_init_proc
+name|gimp_procedure_init
 argument_list|(
 operator|&
 name|brushes_refresh_proc
@@ -170,7 +176,7 @@ expr_stmt|;
 comment|/*    * brushes_get_list    */
 name|procedure
 operator|=
-name|procedural_db_init_proc
+name|gimp_procedure_init
 argument_list|(
 operator|&
 name|brushes_get_list_proc
@@ -180,7 +186,7 @@ argument_list|,
 literal|2
 argument_list|)
 expr_stmt|;
-name|procedural_db_add_argument
+name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
@@ -204,7 +210,7 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|procedural_db_add_return_value
+name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
@@ -228,7 +234,7 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|procedural_db_add_return_value
+name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
@@ -256,7 +262,7 @@ expr_stmt|;
 comment|/*    * brushes_get_brush    */
 name|procedure
 operator|=
-name|procedural_db_init_proc
+name|gimp_procedure_init
 argument_list|(
 operator|&
 name|brushes_get_brush_proc
@@ -266,7 +272,7 @@ argument_list|,
 literal|4
 argument_list|)
 expr_stmt|;
-name|procedural_db_add_return_value
+name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
@@ -290,7 +296,7 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|procedural_db_add_return_value
+name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
@@ -314,7 +320,7 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|procedural_db_add_return_value
+name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
@@ -338,7 +344,7 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|procedural_db_add_return_value
+name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
@@ -372,7 +378,7 @@ expr_stmt|;
 comment|/*    * brushes_get_spacing    */
 name|procedure
 operator|=
-name|procedural_db_init_proc
+name|gimp_procedure_init
 argument_list|(
 operator|&
 name|brushes_get_spacing_proc
@@ -382,7 +388,7 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-name|procedural_db_add_return_value
+name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
@@ -416,7 +422,7 @@ expr_stmt|;
 comment|/*    * brushes_set_spacing    */
 name|procedure
 operator|=
-name|procedural_db_init_proc
+name|gimp_procedure_init
 argument_list|(
 operator|&
 name|brushes_set_spacing_proc
@@ -426,7 +432,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|procedural_db_add_argument
+name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
@@ -460,7 +466,7 @@ expr_stmt|;
 comment|/*    * brushes_get_brush_data    */
 name|procedure
 operator|=
-name|procedural_db_init_proc
+name|gimp_procedure_init
 argument_list|(
 operator|&
 name|brushes_get_brush_data_proc
@@ -470,7 +476,7 @@ argument_list|,
 literal|8
 argument_list|)
 expr_stmt|;
-name|procedural_db_add_argument
+name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
@@ -494,7 +500,7 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|procedural_db_add_return_value
+name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
@@ -518,7 +524,7 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|procedural_db_add_return_value
+name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
@@ -542,7 +548,7 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|procedural_db_add_return_value
+name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
@@ -566,7 +572,7 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|procedural_db_add_return_value
+name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
@@ -588,7 +594,7 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|procedural_db_add_return_value
+name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
@@ -612,7 +618,7 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|procedural_db_add_return_value
+name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
@@ -636,7 +642,7 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|procedural_db_add_return_value
+name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
@@ -660,7 +666,7 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|procedural_db_add_return_value
+name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
@@ -724,7 +730,7 @@ name|brush_factory
 argument_list|)
 expr_stmt|;
 return|return
-name|procedural_db_return_values
+name|gimp_procedure_get_return_values
 argument_list|(
 name|proc_record
 argument_list|,
@@ -870,7 +876,7 @@ expr_stmt|;
 block|}
 name|return_vals
 operator|=
-name|procedural_db_return_values
+name|gimp_procedure_get_return_values
 argument_list|(
 name|proc_record
 argument_list|,
@@ -1073,7 +1079,7 @@ name|FALSE
 expr_stmt|;
 name|return_vals
 operator|=
-name|procedural_db_return_values
+name|gimp_procedure_get_return_values
 argument_list|(
 name|proc_record
 argument_list|,
@@ -1255,7 +1261,7 @@ name|FALSE
 expr_stmt|;
 name|return_vals
 operator|=
-name|procedural_db_return_values
+name|gimp_procedure_get_return_values
 argument_list|(
 name|proc_record
 argument_list|,
@@ -1393,7 +1399,7 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
-name|procedural_db_return_values
+name|gimp_procedure_get_return_values
 argument_list|(
 name|proc_record
 argument_list|,
@@ -1678,7 +1684,7 @@ expr_stmt|;
 block|}
 name|return_vals
 operator|=
-name|procedural_db_return_values
+name|gimp_procedure_get_return_values
 argument_list|(
 name|proc_record
 argument_list|,

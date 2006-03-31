@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"pdb/procedural_db.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"plug-ins.h"
 end_include
 
@@ -236,7 +242,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a42b2a90103
+DECL|enum|__anon2c16c48a0103
 block|{
 DECL|enumerator|PROTOCOL_VERSION
 name|PROTOCOL_VERSION
@@ -1473,7 +1479,7 @@ condition|)
 return|return
 name|G_TOKEN_INT
 return|;
-name|procedural_db_init_proc
+name|gimp_procedure_init
 argument_list|(
 operator|&
 name|proc_def
@@ -2520,7 +2526,7 @@ if|if
 condition|(
 name|return_value
 condition|)
-name|procedural_db_add_compat_value
+name|gimp_procedure_add_compat_value
 argument_list|(
 name|proc
 argument_list|,
@@ -2534,7 +2540,7 @@ name|desc
 argument_list|)
 expr_stmt|;
 else|else
-name|procedural_db_add_compat_arg
+name|gimp_procedure_add_compat_arg
 argument_list|(
 name|proc
 argument_list|,

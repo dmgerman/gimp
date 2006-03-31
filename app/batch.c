@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"pdb/gimpprocedure.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"pdb/procedural_db.h"
 end_include
 
@@ -418,7 +424,7 @@ name|n_return_vals
 decl_stmt|;
 name|args
 operator|=
-name|procedural_db_arguments
+name|gimp_procedure_get_arguments
 argument_list|(
 name|proc
 argument_list|)

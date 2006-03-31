@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"pdb/gimpprocedure.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"pdb/procedural_db.h"
 end_include
 
@@ -1100,7 +1106,7 @@ name|proc_frame
 operator|->
 name|return_vals
 operator|=
-name|procedural_db_return_values
+name|gimp_procedure_get_return_values
 argument_list|(
 name|NULL
 argument_list|,
@@ -1161,7 +1167,7 @@ name|proc_frame
 operator|->
 name|return_vals
 operator|=
-name|procedural_db_return_values
+name|gimp_procedure_get_return_values
 argument_list|(
 name|NULL
 argument_list|,

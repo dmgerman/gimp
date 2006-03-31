@@ -33,146 +33,6 @@ block|}
 struct|;
 end_struct
 
-begin_comment
-comment|/*  Argument marshalling procedures  */
-end_comment
-
-begin_typedef
-DECL|typedef|ArgMarshal
-typedef|typedef
-name|Argument
-modifier|*
-function_decl|(
-modifier|*
-name|ArgMarshal
-function_decl|)
-parameter_list|(
-name|ProcRecord
-modifier|*
-name|procedure
-parameter_list|,
-name|Gimp
-modifier|*
-name|gimp
-parameter_list|,
-name|GimpContext
-modifier|*
-name|context
-parameter_list|,
-name|GimpProgress
-modifier|*
-name|progress
-parameter_list|,
-name|Argument
-modifier|*
-name|args
-parameter_list|)
-function_decl|;
-end_typedef
-
-begin_comment
-comment|/*  Execution types  */
-end_comment
-
-begin_typedef
-DECL|typedef|IntExec
-typedef|typedef
-name|struct
-name|_IntExec
-name|IntExec
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|PlugInExec
-typedef|typedef
-name|struct
-name|_PlugInExec
-name|PlugInExec
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|ExtExec
-typedef|typedef
-name|struct
-name|_ExtExec
-name|ExtExec
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|TempExec
-typedef|typedef
-name|struct
-name|_TempExec
-name|TempExec
-typedef|;
-end_typedef
-
-begin_struct
-DECL|struct|_IntExec
-struct|struct
-name|_IntExec
-block|{
-DECL|member|marshal_func
-name|ArgMarshal
-name|marshal_func
-decl_stmt|;
-comment|/*  Function called to marshal arguments  */
-block|}
-struct|;
-end_struct
-
-begin_struct
-DECL|struct|_PlugInExec
-struct|struct
-name|_PlugInExec
-block|{
-DECL|member|filename
-name|gchar
-modifier|*
-name|filename
-decl_stmt|;
-comment|/*  Where is the executable on disk?  */
-block|}
-struct|;
-end_struct
-
-begin_struct
-DECL|struct|_ExtExec
-struct|struct
-name|_ExtExec
-block|{
-DECL|member|filename
-name|gchar
-modifier|*
-name|filename
-decl_stmt|;
-comment|/*  Where is the executable on disk?  */
-block|}
-struct|;
-end_struct
-
-begin_struct
-DECL|struct|_TempExec
-struct|struct
-name|_TempExec
-block|{
-DECL|member|plug_in
-name|void
-modifier|*
-name|plug_in
-decl_stmt|;
-comment|/*  Plug-in that registered this temp proc  */
-block|}
-struct|;
-end_struct
-
-begin_comment
-comment|/*  Structure for a procedure argument  */
-end_comment
-
 begin_struct
 DECL|struct|_ProcArg
 struct|struct
@@ -192,126 +52,157 @@ block|}
 struct|;
 end_struct
 
+begin_if
+if|#
+directive|if
+literal|0
+end_if
+
 begin_comment
+comment|/*  Argument marshalling procedures  */
+end_comment
+
+begin_comment
+unit|typedef Argument * (* ArgMarshal) (ProcRecord   *procedure,                                    Gimp         *gimp,                                    GimpContext  *context,                                    GimpProgress *progress,                                    Argument     *args);
+comment|/*  Execution types  */
+end_comment
+
+begin_comment
+unit|typedef struct _IntExec    IntExec; typedef struct _PlugInExec PlugInExec; typedef struct _ExtExec    ExtExec; typedef struct _TempExec   TempExec;   struct _IntExec {   ArgMarshal  marshal_func;
+comment|/*  Function called to marshal arguments  */
+end_comment
+
+begin_comment
+unit|};  struct _PlugInExec {   gchar      *filename;
+comment|/*  Where is the executable on disk?  */
+end_comment
+
+begin_comment
+unit|};  struct _ExtExec {   gchar      *filename;
+comment|/*  Where is the executable on disk?  */
+end_comment
+
+begin_comment
+unit|};  struct _TempExec {   void       *plug_in;
+comment|/*  Plug-in that registered this temp proc  */
+end_comment
+
+begin_comment
+unit|};
 comment|/*  Structure for a procedure  */
 end_comment
 
-begin_struct
-DECL|struct|_ProcRecord
-struct|struct
-name|_ProcRecord
-block|{
+begin_comment
+unit|struct _ProcRecord {
 comment|/*  Procedure information  */
-DECL|member|name
-name|gchar
-modifier|*
-name|name
-decl_stmt|;
+end_comment
+
+begin_comment
+unit|gchar       *name;
 comment|/*  Procedure name  */
-DECL|member|original_name
-name|gchar
-modifier|*
-name|original_name
-decl_stmt|;
+end_comment
+
+begin_comment
+unit|gchar       *original_name;
 comment|/*  Procedure name before canonicalization  */
-DECL|member|blurb
-name|gchar
-modifier|*
-name|blurb
-decl_stmt|;
+end_comment
+
+begin_comment
+unit|gchar       *blurb;
 comment|/*  Short procedure description  */
-DECL|member|help
-name|gchar
-modifier|*
-name|help
-decl_stmt|;
+end_comment
+
+begin_comment
+unit|gchar       *help;
 comment|/*  Detailed help instructions  */
-DECL|member|author
-name|gchar
-modifier|*
-name|author
-decl_stmt|;
+end_comment
+
+begin_comment
+unit|gchar       *author;
 comment|/*  Author field  */
-DECL|member|copyright
-name|gchar
-modifier|*
-name|copyright
-decl_stmt|;
+end_comment
+
+begin_comment
+unit|gchar       *copyright;
 comment|/*  Copyright field  */
-DECL|member|date
-name|gchar
-modifier|*
-name|date
-decl_stmt|;
+end_comment
+
+begin_comment
+unit|gchar       *date;
 comment|/*  Date field  */
-DECL|member|deprecated
-name|gchar
-modifier|*
-name|deprecated
-decl_stmt|;
+end_comment
+
+begin_comment
+unit|gchar       *deprecated;
 comment|/*  Replacement if the procedure is deprecated  */
+end_comment
+
+begin_comment
 comment|/*  Procedure type  */
-DECL|member|proc_type
-name|GimpPDBProcType
-name|proc_type
-decl_stmt|;
+end_comment
+
+begin_comment
+unit|GimpPDBProcType  proc_type;
 comment|/*  Type of procedure--Internal, Plug-In, Extension  */
+end_comment
+
+begin_comment
 comment|/*  Input arguments  */
-DECL|member|num_args
-name|gint32
-name|num_args
-decl_stmt|;
+end_comment
+
+begin_comment
+unit|gint32       num_args;
 comment|/*  Number of procedure arguments  */
-DECL|member|args
-name|ProcArg
-modifier|*
-name|args
-decl_stmt|;
+end_comment
+
+begin_comment
+unit|ProcArg     *args;
 comment|/*  Array of procedure arguments   */
+end_comment
+
+begin_comment
 comment|/*  Output values  */
-DECL|member|num_values
-name|gint32
-name|num_values
-decl_stmt|;
+end_comment
+
+begin_comment
+unit|gint32       num_values;
 comment|/*  Number of return values        */
-DECL|member|values
-name|ProcArg
-modifier|*
-name|values
-decl_stmt|;
+end_comment
+
+begin_comment
+unit|ProcArg     *values;
 comment|/*  Array of return values         */
+end_comment
+
+begin_comment
 comment|/*  Method of procedure execution  */
-DECL|union|_ExecMethod
-union|union
-name|_ExecMethod
-block|{
-DECL|member|internal
-name|IntExec
-name|internal
-decl_stmt|;
+end_comment
+
+begin_comment
+unit|union _ExecMethod   {     IntExec     internal;
 comment|/*  Execution information for internal procs  */
-DECL|member|plug_in
-name|PlugInExec
-name|plug_in
-decl_stmt|;
+end_comment
+
+begin_comment
+unit|PlugInExec  plug_in;
 comment|/*  ..................... for plug-ins  */
-DECL|member|extension
-name|ExtExec
-name|extension
-decl_stmt|;
+end_comment
+
+begin_comment
+unit|ExtExec     extension;
 comment|/*  ..................... for extensions  */
-DECL|member|temporary
-name|TempExec
-name|temporary
-decl_stmt|;
+end_comment
+
+begin_comment
+unit|TempExec    temporary;
 comment|/*  ..................... for temp procs  */
-DECL|member|exec_method
-block|}
-name|exec_method
-union|;
-block|}
-struct|;
-end_struct
+end_comment
+
+begin_endif
+unit|} exec_method; };
+endif|#
+directive|endif
+end_endif
 
 begin_comment
 comment|/*  Functions  */
@@ -466,30 +357,30 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|void
+name|procedural_db_argument_init
+parameter_list|(
 name|Argument
 modifier|*
-name|procedural_db_arguments
-parameter_list|(
-specifier|const
-name|ProcRecord
+name|arg
+parameter_list|,
+name|ProcArg
 modifier|*
-name|procedure
+name|proc_arg
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
+name|void
+name|procedural_db_compat_arg_init
+parameter_list|(
 name|Argument
 modifier|*
-name|procedural_db_return_values
-parameter_list|(
-specifier|const
-name|ProcRecord
-modifier|*
-name|procedure
+name|arg
 parameter_list|,
-name|gboolean
-name|success
+name|GimpPDBArgType
+name|arg_type
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -512,140 +403,12 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|ProcRecord
-modifier|*
-name|procedural_db_init_proc
-parameter_list|(
-name|ProcRecord
-modifier|*
-name|procedure
-parameter_list|,
-name|gint
-name|n_arguments
-parameter_list|,
-name|gint
-name|n_return_vals
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|procedural_db_add_argument
-parameter_list|(
-name|ProcRecord
-modifier|*
-name|procedure
-parameter_list|,
-name|GimpPDBArgType
-name|arg_type
-parameter_list|,
-name|GParamSpec
-modifier|*
-name|pspec
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|procedural_db_add_return_value
-parameter_list|(
-name|ProcRecord
-modifier|*
-name|procedure
-parameter_list|,
-name|GimpPDBArgType
-name|arg_type
-parameter_list|,
-name|GParamSpec
-modifier|*
-name|pspec
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|procedural_db_argument_init
-parameter_list|(
-name|Argument
-modifier|*
-name|arg
-parameter_list|,
-name|ProcArg
-modifier|*
-name|proc_arg
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|procedural_db_add_compat_arg
-parameter_list|(
-name|ProcRecord
-modifier|*
-name|procedure
-parameter_list|,
-name|Gimp
-modifier|*
-name|gimp
-parameter_list|,
-name|GimpPDBArgType
-name|arg_type
-parameter_list|,
-specifier|const
 name|gchar
 modifier|*
-name|name
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|desc
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|procedural_db_add_compat_value
+name|procedural_db_type_name
 parameter_list|(
-name|ProcRecord
-modifier|*
-name|procedure
-parameter_list|,
-name|Gimp
-modifier|*
-name|gimp
-parameter_list|,
 name|GimpPDBArgType
-name|arg_type
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|name
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|desc
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|procedural_db_compat_arg_init
-parameter_list|(
-name|Argument
-modifier|*
-name|arg
-parameter_list|,
-name|GimpPDBArgType
-name|arg_type
+name|type
 parameter_list|)
 function_decl|;
 end_function_decl

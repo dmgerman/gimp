@@ -627,7 +627,7 @@ condition|)
 block|{
 name|return_vals
 operator|=
-name|procedural_db_return_values
+name|gimp_procedure_get_return_values
 argument_list|(
 name|proc_rec
 argument_list|,
@@ -925,7 +925,7 @@ block|{
 comment|/* construct the procedures arguments */
 name|args
 operator|=
-name|procedural_db_arguments
+name|gimp_procedure_get_arguments
 argument_list|(
 operator|&
 name|proc_def
@@ -1159,7 +1159,7 @@ condition|)
 block|{
 name|return_vals
 operator|=
-name|procedural_db_return_values
+name|gimp_procedure_get_return_values
 argument_list|(
 name|proc_rec
 argument_list|,
@@ -1332,7 +1332,7 @@ block|{
 comment|/* Allocate new return values of the correct size. */
 name|return_vals
 operator|=
-name|procedural_db_return_values
+name|gimp_procedure_get_return_values
 argument_list|(
 name|proc_frame
 operator|->
@@ -1380,7 +1380,7 @@ block|{
 comment|/* Just return a dummy set of values. */
 name|return_vals
 operator|=
-name|procedural_db_return_values
+name|gimp_procedure_get_return_values
 argument_list|(
 name|proc_frame
 operator|->

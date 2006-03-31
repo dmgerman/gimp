@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"pdb/procedural_db.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimphelp-ids.h"
 end_include
 
@@ -179,7 +185,7 @@ name|gimp
 decl_stmt|;
 name|ProcRecord
 modifier|*
-name|proc_rec
+name|procedure
 decl_stmt|;
 name|Argument
 modifier|*
@@ -209,7 +215,7 @@ operator|!
 name|gimp
 condition|)
 return|return;
-name|proc_rec
+name|procedure
 operator|=
 operator|&
 name|proc_def
@@ -218,9 +224,9 @@ name|db_info
 expr_stmt|;
 name|args
 operator|=
-name|procedural_db_arguments
+name|gimp_procedure_get_arguments
 argument_list|(
-name|proc_rec
+name|procedure
 argument_list|)
 expr_stmt|;
 comment|/* initialize the first argument  */
@@ -242,7 +248,7 @@ operator|++
 expr_stmt|;
 switch|switch
 condition|(
-name|proc_rec
+name|procedure
 operator|->
 name|proc_type
 condition|)
@@ -259,13 +265,13 @@ name|GIMP_TEMPORARY
 case|:
 if|if
 condition|(
-name|proc_rec
+name|procedure
 operator|->
 name|num_args
 operator|>
 name|n_args
 operator|&&
-name|proc_rec
+name|procedure
 operator|->
 name|args
 index|[
@@ -309,13 +315,13 @@ operator|++
 expr_stmt|;
 if|if
 condition|(
-name|proc_rec
+name|procedure
 operator|->
 name|num_args
 operator|>
 name|n_args
 operator|&&
-name|proc_rec
+name|procedure
 operator|->
 name|args
 index|[
@@ -405,7 +411,7 @@ argument_list|(
 name|display
 argument_list|)
 argument_list|,
-name|proc_rec
+name|procedure
 argument_list|,
 name|args
 argument_list|,
@@ -429,19 +435,19 @@ expr_stmt|;
 comment|/* remember only "standard" plug-ins */
 if|if
 condition|(
-name|proc_rec
+name|procedure
 operator|->
 name|proc_type
 operator|==
 name|GIMP_PLUGIN
 operator|&&
-name|proc_rec
+name|procedure
 operator|->
 name|num_args
 operator|>=
 literal|3
 operator|&&
-name|proc_rec
+name|procedure
 operator|->
 name|args
 index|[
@@ -452,7 +458,7 @@ name|type
 operator|==
 name|GIMP_PDB_IMAGE
 operator|&&
-name|proc_rec
+name|procedure
 operator|->
 name|args
 index|[
@@ -478,7 +484,7 @@ name|procedural_db_destroy_args
 argument_list|(
 name|args
 argument_list|,
-name|proc_rec
+name|procedure
 operator|->
 name|num_args
 argument_list|,

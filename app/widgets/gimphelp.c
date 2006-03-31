@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"pdb/gimpprocedure.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"pdb/procedural_db.h"
 end_include
 
@@ -664,7 +670,7 @@ return|;
 block|}
 name|args
 operator|=
-name|procedural_db_arguments
+name|gimp_procedure_get_arguments
 argument_list|(
 name|proc_rec
 argument_list|)
@@ -992,7 +998,7 @@ argument_list|)
 expr_stmt|;
 name|args
 operator|=
-name|procedural_db_arguments
+name|gimp_procedure_get_arguments
 argument_list|(
 name|proc_rec
 argument_list|)

@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"pdb/gimpprocedure.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"pdb/procedural_db.h"
 end_include
 
@@ -59,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28945d230103
+DECL|enum|__anon2af052670103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1059,10 +1065,6 @@ name|value
 argument_list|)
 expr_stmt|;
 block|}
-if|if
-condition|(
-name|return_vals
-condition|)
 name|procedural_db_destroy_args
 argument_list|(
 name|return_vals

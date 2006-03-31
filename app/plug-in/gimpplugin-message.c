@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"pdb/procedural_db.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"plug-in.h"
 end_include
 
@@ -3108,7 +3114,7 @@ name|proc_install
 operator|->
 name|type
 expr_stmt|;
-name|procedural_db_init_proc
+name|gimp_procedure_init
 argument_list|(
 name|proc
 argument_list|,
@@ -3151,7 +3157,7 @@ operator|.
 name|name
 argument_list|)
 expr_stmt|;
-name|procedural_db_add_compat_arg
+name|gimp_procedure_add_compat_arg
 argument_list|(
 name|proc
 argument_list|,
@@ -3216,7 +3222,7 @@ operator|.
 name|name
 argument_list|)
 expr_stmt|;
-name|procedural_db_add_compat_value
+name|gimp_procedure_add_compat_value
 argument_list|(
 name|proc
 argument_list|,

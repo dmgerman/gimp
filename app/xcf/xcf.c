@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"pdb/gimpprocedure.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"pdb/procedural_db.h"
 end_include
 
@@ -411,6 +417,10 @@ modifier|*
 name|gimp
 parameter_list|)
 block|{
+name|ProcRecord
+modifier|*
+name|procedure
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_GIMP
@@ -420,7 +430,9 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* So this is sort of a hack, but its better than it was before.  To    * do this right there would be a file load-save handler type and    * the whole interface would change but there isn't, and currently    * the plug-in structure contains all the load-save info, so it    * makes sense to use that for the XCF load/save handlers, even    * though they are internal.  The only thing it requires is using a    * PlugInProcDef struct.  -josh    */
-name|procedural_db_init_proc
+name|procedure
+operator|=
+name|gimp_procedure_init
 argument_list|(
 operator|&
 name|xcf_plug_in_save_proc
@@ -432,12 +444,9 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|procedural_db_add_compat_arg
+name|gimp_procedure_add_compat_arg
 argument_list|(
-operator|&
-name|xcf_plug_in_save_proc
-operator|.
-name|db_info
+name|procedure
 argument_list|,
 name|gimp
 argument_list|,
@@ -448,12 +457,9 @@ argument_list|,
 literal|"dummy parameter"
 argument_list|)
 expr_stmt|;
-name|procedural_db_add_compat_arg
+name|gimp_procedure_add_compat_arg
 argument_list|(
-operator|&
-name|xcf_plug_in_save_proc
-operator|.
-name|db_info
+name|procedure
 argument_list|,
 name|gimp
 argument_list|,
@@ -464,12 +470,9 @@ argument_list|,
 literal|"Input image"
 argument_list|)
 expr_stmt|;
-name|procedural_db_add_compat_arg
+name|gimp_procedure_add_compat_arg
 argument_list|(
-operator|&
-name|xcf_plug_in_save_proc
-operator|.
-name|db_info
+name|procedure
 argument_list|,
 name|gimp
 argument_list|,
@@ -480,12 +483,9 @@ argument_list|,
 literal|"Active drawable of input image"
 argument_list|)
 expr_stmt|;
-name|procedural_db_add_compat_arg
+name|gimp_procedure_add_compat_arg
 argument_list|(
-operator|&
-name|xcf_plug_in_save_proc
-operator|.
-name|db_info
+name|procedure
 argument_list|,
 name|gimp
 argument_list|,
@@ -497,12 +497,9 @@ literal|"The name of the file to save the image in, "
 literal|"in the on-disk character set and encoding"
 argument_list|)
 expr_stmt|;
-name|procedural_db_add_compat_arg
+name|gimp_procedure_add_compat_arg
 argument_list|(
-operator|&
-name|xcf_plug_in_save_proc
-operator|.
-name|db_info
+name|procedure
 argument_list|,
 name|gimp
 argument_list|,
@@ -517,10 +514,7 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|xcf_plug_in_save_proc
-operator|.
-name|db_info
+name|procedure
 argument_list|)
 expr_stmt|;
 name|xcf_plug_in_save_proc
@@ -542,7 +536,9 @@ operator|&
 name|xcf_plug_in_save_proc
 argument_list|)
 expr_stmt|;
-name|procedural_db_init_proc
+name|procedure
+operator|=
+name|gimp_procedure_init
 argument_list|(
 operator|&
 name|xcf_plug_in_load_proc
@@ -554,12 +550,9 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-name|procedural_db_add_compat_arg
+name|gimp_procedure_add_compat_arg
 argument_list|(
-operator|&
-name|xcf_plug_in_load_proc
-operator|.
-name|db_info
+name|procedure
 argument_list|,
 name|gimp
 argument_list|,
@@ -570,12 +563,9 @@ argument_list|,
 literal|"dummy parameter"
 argument_list|)
 expr_stmt|;
-name|procedural_db_add_compat_arg
+name|gimp_procedure_add_compat_arg
 argument_list|(
-operator|&
-name|xcf_plug_in_load_proc
-operator|.
-name|db_info
+name|procedure
 argument_list|,
 name|gimp
 argument_list|,
@@ -587,12 +577,9 @@ literal|"The name of the file to load, "
 literal|"in the on-disk character set and encoding"
 argument_list|)
 expr_stmt|;
-name|procedural_db_add_compat_arg
+name|gimp_procedure_add_compat_arg
 argument_list|(
-operator|&
-name|xcf_plug_in_load_proc
-operator|.
-name|db_info
+name|procedure
 argument_list|,
 name|gimp
 argument_list|,
@@ -603,12 +590,9 @@ argument_list|,
 literal|"The basename of the file, in UTF-8"
 argument_list|)
 expr_stmt|;
-name|procedural_db_add_compat_value
+name|gimp_procedure_add_compat_value
 argument_list|(
-operator|&
-name|xcf_plug_in_load_proc
-operator|.
-name|db_info
+name|procedure
 argument_list|,
 name|gimp
 argument_list|,
@@ -623,10 +607,7 @@ name|procedural_db_register
 argument_list|(
 name|gimp
 argument_list|,
-operator|&
-name|xcf_plug_in_load_proc
-operator|.
-name|db_info
+name|procedure
 argument_list|)
 expr_stmt|;
 name|xcf_plug_in_load_proc
@@ -1022,7 +1003,7 @@ argument_list|)
 expr_stmt|;
 name|return_vals
 operator|=
-name|procedural_db_return_values
+name|gimp_procedure_get_return_values
 argument_list|(
 name|procedure
 argument_list|,
@@ -1287,7 +1268,7 @@ argument_list|)
 expr_stmt|;
 name|return_vals
 operator|=
-name|procedural_db_return_values
+name|gimp_procedure_get_return_values
 argument_list|(
 name|procedure
 argument_list|,

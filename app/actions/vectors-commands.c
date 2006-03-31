@@ -114,6 +114,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"pdb/gimpprocedure.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"pdb/procedural_db.h"
 end_include
 
@@ -1177,7 +1183,7 @@ name|image
 decl_stmt|;
 name|ProcRecord
 modifier|*
-name|proc_rec
+name|procedure
 decl_stmt|;
 name|Argument
 modifier|*
@@ -1198,7 +1204,7 @@ if|if
 condition|(
 name|value
 condition|)
-name|proc_rec
+name|procedure
 operator|=
 name|procedural_db_lookup
 argument_list|(
@@ -1210,7 +1216,7 @@ literal|"plug-in-sel2path-advanced"
 argument_list|)
 expr_stmt|;
 else|else
-name|proc_rec
+name|procedure
 operator|=
 name|procedural_db_lookup
 argument_list|(
@@ -1224,7 +1230,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|proc_rec
+name|procedure
 condition|)
 block|{
 name|g_message
@@ -1247,9 +1253,9 @@ expr_stmt|;
 comment|/*  plug-in arguments as if called by<Image>/Filters/...  */
 name|args
 operator|=
-name|procedural_db_arguments
+name|gimp_procedure_get_arguments
 argument_list|(
-name|proc_rec
+name|procedure
 argument_list|)
 expr_stmt|;
 name|g_value_set_enum
@@ -1308,12 +1314,12 @@ argument_list|(
 name|display
 argument_list|)
 argument_list|,
-name|proc_rec
+name|procedure
 argument_list|,
 name|args
 argument_list|,
 literal|3
-comment|/* not proc_rec->num_args */
+comment|/* not procedure->num_args */
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1333,7 +1339,7 @@ name|procedural_db_destroy_args
 argument_list|(
 name|args
 argument_list|,
-name|proc_rec
+name|procedure
 operator|->
 name|num_args
 argument_list|,
