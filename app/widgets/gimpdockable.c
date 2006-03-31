@@ -905,7 +905,10 @@ condition|(
 name|dockable
 operator|->
 name|blurb
-operator|&&
+condition|)
+block|{
+if|if
+condition|(
 name|dockable
 operator|->
 name|blurb
@@ -914,7 +917,6 @@ name|dockable
 operator|->
 name|name
 condition|)
-block|{
 name|g_free
 argument_list|(
 name|dockable
