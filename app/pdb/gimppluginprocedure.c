@@ -373,36 +373,6 @@ end_function
 
 begin_function
 specifier|const
-name|ProcRecord
-modifier|*
-DECL|function|plug_in_proc_def_get_proc (const PlugInProcDef * proc_def)
-name|plug_in_proc_def_get_proc
-parameter_list|(
-specifier|const
-name|PlugInProcDef
-modifier|*
-name|proc_def
-parameter_list|)
-block|{
-name|g_return_val_if_fail
-argument_list|(
-name|proc_def
-operator|!=
-name|NULL
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-return|return
-name|proc_def
-operator|->
-name|procedure
-return|;
-block|}
-end_function
-
-begin_function
-specifier|const
 name|gchar
 modifier|*
 DECL|function|plug_in_proc_def_get_progname (const PlugInProcDef * proc_def)

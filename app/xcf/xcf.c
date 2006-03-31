@@ -212,6 +212,8 @@ name|ProcRecord
 name|xcf_load_procedure
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-xcf-load"
 block|,
 literal|"gimp-xcf-load"
@@ -314,6 +316,8 @@ name|ProcRecord
 name|xcf_save_procedure
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-xcf-save"
 block|,
 literal|"gimp-xcf-save"

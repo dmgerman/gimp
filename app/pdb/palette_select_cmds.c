@@ -460,6 +460,8 @@ name|ProcRecord
 name|palettes_popup_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-palettes-popup"
 block|,
 literal|"gimp-palettes-popup"
@@ -605,6 +607,8 @@ name|ProcRecord
 name|palettes_close_popup_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-palettes-close-popup"
 block|,
 literal|"gimp-palettes-close-popup"
@@ -775,6 +779,8 @@ name|ProcRecord
 name|palettes_set_popup_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-palettes-set-popup"
 block|,
 literal|"gimp-palettes-set-popup"

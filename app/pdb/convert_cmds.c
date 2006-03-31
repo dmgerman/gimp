@@ -483,6 +483,8 @@ name|ProcRecord
 name|image_convert_rgb_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-convert-rgb"
 block|,
 literal|"gimp-image-convert-rgb"
@@ -629,6 +631,8 @@ name|ProcRecord
 name|image_convert_grayscale_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-convert-grayscale"
 block|,
 literal|"gimp-image-convert-grayscale"
@@ -945,6 +949,8 @@ name|ProcRecord
 name|image_convert_indexed_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-convert-indexed"
 block|,
 literal|"gimp-image-convert-indexed"

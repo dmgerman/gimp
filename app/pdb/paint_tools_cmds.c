@@ -2285,6 +2285,8 @@ name|ProcRecord
 name|airbrush_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-airbrush"
 block|,
 literal|"gimp-airbrush"
@@ -2500,6 +2502,8 @@ name|ProcRecord
 name|airbrush_default_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-airbrush-default"
 block|,
 literal|"gimp-airbrush-default"
@@ -2811,6 +2815,8 @@ name|ProcRecord
 name|clone_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-clone"
 block|,
 literal|"gimp-clone"
@@ -3026,6 +3032,8 @@ name|ProcRecord
 name|clone_default_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-clone-default"
 block|,
 literal|"gimp-clone-default"
@@ -3288,6 +3296,8 @@ name|ProcRecord
 name|convolve_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-convolve"
 block|,
 literal|"gimp-convolve"
@@ -3503,6 +3513,8 @@ name|ProcRecord
 name|convolve_default_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-convolve-default"
 block|,
 literal|"gimp-convolve-default"
@@ -3785,6 +3797,8 @@ name|ProcRecord
 name|dodgeburn_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-dodgeburn"
 block|,
 literal|"gimp-dodgeburn"
@@ -4000,6 +4014,8 @@ name|ProcRecord
 name|dodgeburn_default_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-dodgeburn-default"
 block|,
 literal|"gimp-dodgeburn-default"
@@ -4262,6 +4278,8 @@ name|ProcRecord
 name|eraser_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-eraser"
 block|,
 literal|"gimp-eraser"
@@ -4477,6 +4495,8 @@ name|ProcRecord
 name|eraser_default_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-eraser-default"
 block|,
 literal|"gimp-eraser-default"
@@ -4771,6 +4791,8 @@ name|ProcRecord
 name|paintbrush_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-paintbrush"
 block|,
 literal|"gimp-paintbrush"
@@ -4986,6 +5008,8 @@ name|ProcRecord
 name|paintbrush_default_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-paintbrush-default"
 block|,
 literal|"gimp-paintbrush-default"
@@ -5201,6 +5225,8 @@ name|ProcRecord
 name|pencil_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-pencil"
 block|,
 literal|"gimp-pencil"
@@ -5443,6 +5469,8 @@ name|ProcRecord
 name|smudge_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-smudge"
 block|,
 literal|"gimp-smudge"
@@ -5658,6 +5686,8 @@ name|ProcRecord
 name|smudge_default_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-smudge-default"
 block|,
 literal|"gimp-smudge-default"

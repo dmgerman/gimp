@@ -1902,6 +1902,8 @@ name|ProcRecord
 name|edit_cut_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-edit-cut"
 block|,
 literal|"gimp-edit-cut"
@@ -2091,6 +2093,8 @@ name|ProcRecord
 name|edit_copy_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-edit-copy"
 block|,
 literal|"gimp-edit-copy"
@@ -2243,6 +2247,8 @@ name|ProcRecord
 name|edit_copy_visible_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-edit-copy-visible"
 block|,
 literal|"gimp-edit-copy-visible"
@@ -2473,6 +2479,8 @@ name|ProcRecord
 name|edit_paste_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-edit-paste"
 block|,
 literal|"gimp-edit-paste"
@@ -2625,6 +2633,8 @@ name|ProcRecord
 name|edit_paste_as_new_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-edit-paste-as-new"
 block|,
 literal|"gimp-edit-paste-as-new"
@@ -2861,6 +2871,8 @@ name|ProcRecord
 name|edit_named_cut_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-edit-named-cut"
 block|,
 literal|"gimp-edit-named-cut"
@@ -3097,6 +3109,8 @@ name|ProcRecord
 name|edit_named_copy_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-edit-named-copy"
 block|,
 literal|"gimp-edit-named-copy"
@@ -3305,6 +3319,8 @@ name|ProcRecord
 name|edit_named_copy_visible_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-edit-named-copy-visible"
 block|,
 literal|"gimp-edit-named-copy-visible"
@@ -3569,6 +3585,8 @@ name|ProcRecord
 name|edit_named_paste_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-edit-named-paste"
 block|,
 literal|"gimp-edit-named-paste"
@@ -3761,6 +3779,8 @@ name|ProcRecord
 name|edit_named_paste_as_new_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-edit-named-paste-as-new"
 block|,
 literal|"gimp-edit-named-paste-as-new"
@@ -3918,6 +3938,8 @@ name|ProcRecord
 name|edit_clear_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-edit-clear"
 block|,
 literal|"gimp-edit-clear"
@@ -4096,6 +4118,8 @@ name|ProcRecord
 name|edit_fill_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-edit-fill"
 block|,
 literal|"gimp-edit-fill"
@@ -4395,6 +4419,8 @@ name|ProcRecord
 name|edit_bucket_fill_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-edit-bucket-fill"
 block|,
 literal|"gimp-edit-bucket-fill"
@@ -4870,6 +4896,8 @@ name|ProcRecord
 name|edit_blend_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-edit-blend"
 block|,
 literal|"gimp-edit-blend"
@@ -5064,6 +5092,8 @@ name|ProcRecord
 name|edit_stroke_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-edit-stroke"
 block|,
 literal|"gimp-edit-stroke"

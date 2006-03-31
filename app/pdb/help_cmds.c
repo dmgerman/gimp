@@ -290,6 +290,8 @@ name|ProcRecord
 name|help_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-help"
 block|,
 literal|"gimp-help"

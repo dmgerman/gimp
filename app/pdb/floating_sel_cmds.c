@@ -539,6 +539,8 @@ name|ProcRecord
 name|floating_sel_remove_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-floating-sel-remove"
 block|,
 literal|"gimp-floating-sel-remove"
@@ -673,6 +675,8 @@ name|ProcRecord
 name|floating_sel_anchor_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-floating-sel-anchor"
 block|,
 literal|"gimp-floating-sel-anchor"
@@ -807,6 +811,8 @@ name|ProcRecord
 name|floating_sel_to_layer_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-floating-sel-to-layer"
 block|,
 literal|"gimp-floating-sel-to-layer"
@@ -971,6 +977,8 @@ name|ProcRecord
 name|floating_sel_attach_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-floating-sel-attach"
 block|,
 literal|"gimp-floating-sel-attach"
@@ -1123,6 +1131,8 @@ name|ProcRecord
 name|floating_sel_rigor_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-floating-sel-rigor"
 block|,
 literal|"gimp-floating-sel-rigor"
@@ -1275,6 +1285,8 @@ name|ProcRecord
 name|floating_sel_relax_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-floating-sel-relax"
 block|,
 literal|"gimp-floating-sel-relax"

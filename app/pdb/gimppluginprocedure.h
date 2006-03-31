@@ -177,20 +177,6 @@ end_function_decl
 
 begin_function_decl
 specifier|const
-name|ProcRecord
-modifier|*
-name|plug_in_proc_def_get_proc
-parameter_list|(
-specifier|const
-name|PlugInProcDef
-modifier|*
-name|proc_def
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|const
 name|gchar
 modifier|*
 name|plug_in_proc_def_get_progname

@@ -1377,6 +1377,8 @@ name|ProcRecord
 name|by_color_select_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-by-color-select"
 block|,
 literal|"gimp-by-color-select"
@@ -1654,6 +1656,8 @@ name|ProcRecord
 name|ellipse_select_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-ellipse-select"
 block|,
 literal|"gimp-ellipse-select"
@@ -1895,6 +1899,8 @@ name|ProcRecord
 name|free_select_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-free-select"
 block|,
 literal|"gimp-free-select"
@@ -2183,6 +2189,8 @@ name|ProcRecord
 name|fuzzy_select_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-fuzzy-select"
 block|,
 literal|"gimp-fuzzy-select"
@@ -2443,6 +2451,8 @@ name|ProcRecord
 name|rect_select_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-rect-select"
 block|,
 literal|"gimp-rect-select"

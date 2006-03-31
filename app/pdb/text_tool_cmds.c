@@ -1770,6 +1770,8 @@ name|ProcRecord
 name|text_fontname_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-text-fontname"
 block|,
 literal|"gimp-text-fontname"
@@ -2064,6 +2066,8 @@ name|ProcRecord
 name|text_get_extents_fontname_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-text-get-extents-fontname"
 block|,
 literal|"gimp-text-get-extents-fontname"
@@ -2586,6 +2590,8 @@ name|ProcRecord
 name|text_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-text"
 block|,
 literal|"gimp-text"
@@ -3027,6 +3033,8 @@ name|ProcRecord
 name|text_get_extents_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-text-get-extents"
 block|,
 literal|"gimp-text-get-extents"

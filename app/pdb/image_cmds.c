@@ -6483,6 +6483,8 @@ name|ProcRecord
 name|image_list_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-list"
 block|,
 literal|"gimp-image-list"
@@ -6678,6 +6680,8 @@ name|ProcRecord
 name|image_new_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-new"
 block|,
 literal|"gimp-image-new"
@@ -6836,6 +6840,8 @@ name|ProcRecord
 name|image_duplicate_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-duplicate"
 block|,
 literal|"gimp-image-duplicate"
@@ -6965,6 +6971,8 @@ name|ProcRecord
 name|image_delete_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-delete"
 block|,
 literal|"gimp-image-delete"
@@ -7113,6 +7121,8 @@ name|ProcRecord
 name|image_base_type_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-base-type"
 block|,
 literal|"gimp-image-base-type"
@@ -7261,6 +7271,8 @@ name|ProcRecord
 name|image_width_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-width"
 block|,
 literal|"gimp-image-width"
@@ -7409,6 +7421,8 @@ name|ProcRecord
 name|image_height_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-height"
 block|,
 literal|"gimp-image-height"
@@ -7525,6 +7539,8 @@ name|ProcRecord
 name|image_free_shadow_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-free-shadow"
 block|,
 literal|"gimp-image-free-shadow"
@@ -7717,6 +7733,8 @@ name|ProcRecord
 name|image_resize_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-resize"
 block|,
 literal|"gimp-image-resize"
@@ -7837,6 +7855,8 @@ name|ProcRecord
 name|image_resize_to_layers_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-resize-to-layers"
 block|,
 literal|"gimp-image-resize-to-layers"
@@ -7997,6 +8017,8 @@ name|ProcRecord
 name|image_scale_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-scale"
 block|,
 literal|"gimp-image-scale"
@@ -8234,6 +8256,8 @@ name|ProcRecord
 name|image_crop_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-crop"
 block|,
 literal|"gimp-image-crop"
@@ -8372,6 +8396,8 @@ name|ProcRecord
 name|image_flip_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-flip"
 block|,
 literal|"gimp-image-flip"
@@ -8510,6 +8536,8 @@ name|ProcRecord
 name|image_rotate_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-rotate"
 block|,
 literal|"gimp-image-rotate"
@@ -8745,6 +8773,8 @@ name|ProcRecord
 name|image_get_layers_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-get-layers"
 block|,
 literal|"gimp-image-get-layers"
@@ -8980,6 +9010,8 @@ name|ProcRecord
 name|image_get_channels_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-get-channels"
 block|,
 literal|"gimp-image-get-channels"
@@ -9215,6 +9247,8 @@ name|ProcRecord
 name|image_get_vectors_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-get-vectors"
 block|,
 literal|"gimp-image-get-vectors"
@@ -9367,6 +9401,8 @@ name|ProcRecord
 name|image_get_active_drawable_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-get-active-drawable"
 block|,
 literal|"gimp-image-get-active-drawable"
@@ -9483,6 +9519,8 @@ name|ProcRecord
 name|image_unset_active_channel_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-unset-active-channel"
 block|,
 literal|"gimp-image-unset-active-channel"
@@ -9635,6 +9673,8 @@ name|ProcRecord
 name|image_get_floating_sel_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-get-floating-sel"
 block|,
 literal|"gimp-image-get-floating-sel"
@@ -9812,6 +9852,8 @@ name|ProcRecord
 name|image_floating_sel_attached_to_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-floating-sel-attached-to"
 block|,
 literal|"gimp-image-floating-sel-attached-to"
@@ -10172,6 +10214,8 @@ name|ProcRecord
 name|image_pick_color_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-pick-color"
 block|,
 literal|"gimp-image-pick-color"
@@ -10360,6 +10404,8 @@ name|ProcRecord
 name|image_pick_correlate_layer_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-pick-correlate-layer"
 block|,
 literal|"gimp-image-pick-correlate-layer"
@@ -10565,6 +10611,8 @@ name|ProcRecord
 name|image_add_layer_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-add-layer"
 block|,
 literal|"gimp-image-add-layer"
@@ -10708,6 +10756,8 @@ name|ProcRecord
 name|image_remove_layer_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-remove-layer"
 block|,
 literal|"gimp-image-remove-layer"
@@ -10853,6 +10903,8 @@ name|ProcRecord
 name|image_raise_layer_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-raise-layer"
 block|,
 literal|"gimp-image-raise-layer"
@@ -10998,6 +11050,8 @@ name|ProcRecord
 name|image_lower_layer_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-lower-layer"
 block|,
 literal|"gimp-image-lower-layer"
@@ -11143,6 +11197,8 @@ name|ProcRecord
 name|image_raise_layer_to_top_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-raise-layer-to-top"
 block|,
 literal|"gimp-image-raise-layer-to-top"
@@ -11288,6 +11344,8 @@ name|ProcRecord
 name|image_lower_layer_to_bottom_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-lower-layer-to-bottom"
 block|,
 literal|"gimp-image-lower-layer-to-bottom"
@@ -11472,6 +11530,8 @@ name|ProcRecord
 name|image_add_channel_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-add-channel"
 block|,
 literal|"gimp-image-add-channel"
@@ -11615,6 +11675,8 @@ name|ProcRecord
 name|image_remove_channel_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-remove-channel"
 block|,
 literal|"gimp-image-remove-channel"
@@ -11760,6 +11822,8 @@ name|ProcRecord
 name|image_raise_channel_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-raise-channel"
 block|,
 literal|"gimp-image-raise-channel"
@@ -11905,6 +11969,8 @@ name|ProcRecord
 name|image_lower_channel_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-lower-channel"
 block|,
 literal|"gimp-image-lower-channel"
@@ -12089,6 +12155,8 @@ name|ProcRecord
 name|image_add_vectors_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-add-vectors"
 block|,
 literal|"gimp-image-add-vectors"
@@ -12232,6 +12300,8 @@ name|ProcRecord
 name|image_remove_vectors_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-remove-vectors"
 block|,
 literal|"gimp-image-remove-vectors"
@@ -12377,6 +12447,8 @@ name|ProcRecord
 name|image_raise_vectors_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-raise-vectors"
 block|,
 literal|"gimp-image-raise-vectors"
@@ -12522,6 +12594,8 @@ name|ProcRecord
 name|image_lower_vectors_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-lower-vectors"
 block|,
 literal|"gimp-image-lower-vectors"
@@ -12667,6 +12741,8 @@ name|ProcRecord
 name|image_raise_vectors_to_top_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-raise-vectors-to-top"
 block|,
 literal|"gimp-image-raise-vectors-to-top"
@@ -12812,6 +12888,8 @@ name|ProcRecord
 name|image_lower_vectors_to_bottom_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-lower-vectors-to-bottom"
 block|,
 literal|"gimp-image-lower-vectors-to-bottom"
@@ -12975,6 +13053,8 @@ name|ProcRecord
 name|image_flatten_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-flatten"
 block|,
 literal|"gimp-image-flatten"
@@ -13156,6 +13236,8 @@ name|ProcRecord
 name|image_merge_visible_layers_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-merge-visible-layers"
 block|,
 literal|"gimp-image-merge-visible-layers"
@@ -13364,6 +13446,8 @@ name|ProcRecord
 name|image_merge_down_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-merge-down"
 block|,
 literal|"gimp-image-merge-down"
@@ -13541,6 +13625,8 @@ name|ProcRecord
 name|image_add_layer_mask_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-add-layer-mask"
 block|,
 literal|"gimp-image-add-layer-mask"
@@ -13702,6 +13788,8 @@ name|ProcRecord
 name|image_remove_layer_mask_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-remove-layer-mask"
 block|,
 literal|"gimp-image-remove-layer-mask"
@@ -13885,6 +13973,8 @@ name|ProcRecord
 name|image_get_colormap_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-get-colormap"
 block|,
 literal|"gimp-image-get-colormap"
@@ -14042,6 +14132,8 @@ name|ProcRecord
 name|image_set_colormap_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-set-colormap"
 block|,
 literal|"gimp-image-set-colormap"
@@ -14158,6 +14250,8 @@ name|ProcRecord
 name|image_clean_all_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-clean-all"
 block|,
 literal|"gimp-image-clean-all"
@@ -14309,6 +14403,8 @@ name|ProcRecord
 name|image_is_dirty_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-is-dirty"
 block|,
 literal|"gimp-image-is-dirty"
@@ -14727,6 +14823,8 @@ name|ProcRecord
 name|image_thumbnail_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-thumbnail"
 block|,
 literal|"gimp-image-thumbnail"
@@ -14879,6 +14977,8 @@ name|ProcRecord
 name|image_get_active_layer_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-get-active-layer"
 block|,
 literal|"gimp-image-get-active-layer"
@@ -15030,6 +15130,8 @@ name|ProcRecord
 name|image_set_active_layer_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-set-active-layer"
 block|,
 literal|"gimp-image-set-active-layer"
@@ -15182,6 +15284,8 @@ name|ProcRecord
 name|image_get_active_channel_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-get-active-channel"
 block|,
 literal|"gimp-image-get-active-channel"
@@ -15333,6 +15437,8 @@ name|ProcRecord
 name|image_set_active_channel_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-set-active-channel"
 block|,
 literal|"gimp-image-set-active-channel"
@@ -15485,6 +15591,8 @@ name|ProcRecord
 name|image_get_active_vectors_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-get-active-vectors"
 block|,
 literal|"gimp-image-get-active-vectors"
@@ -15636,6 +15744,8 @@ name|ProcRecord
 name|image_set_active_vectors_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-set-active-vectors"
 block|,
 literal|"gimp-image-set-active-vectors"
@@ -15797,6 +15907,8 @@ name|ProcRecord
 name|image_get_selection_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-get-selection"
 block|,
 literal|"gimp-image-get-selection"
@@ -16008,6 +16120,8 @@ name|ProcRecord
 name|image_get_component_active_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-get-component-active"
 block|,
 literal|"gimp-image-get-component-active"
@@ -16205,6 +16319,8 @@ name|ProcRecord
 name|image_set_component_active_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-set-component-active"
 block|,
 literal|"gimp-image-set-component-active"
@@ -16416,6 +16532,8 @@ name|ProcRecord
 name|image_get_component_visible_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-get-component-visible"
 block|,
 literal|"gimp-image-get-component-visible"
@@ -16613,6 +16731,8 @@ name|ProcRecord
 name|image_set_component_visible_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-set-component-visible"
 block|,
 literal|"gimp-image-set-component-visible"
@@ -16762,6 +16882,8 @@ name|ProcRecord
 name|image_get_filename_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-get-filename"
 block|,
 literal|"gimp-image-get-filename"
@@ -16972,6 +17094,8 @@ name|ProcRecord
 name|image_set_filename_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-set-filename"
 block|,
 literal|"gimp-image-set-filename"
@@ -17145,6 +17269,8 @@ name|ProcRecord
 name|image_get_name_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-get-name"
 block|,
 literal|"gimp-image-get-name"
@@ -17317,6 +17443,8 @@ name|ProcRecord
 name|image_get_resolution_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-get-resolution"
 block|,
 literal|"gimp-image-get-resolution"
@@ -17517,6 +17645,8 @@ name|ProcRecord
 name|image_set_resolution_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-set-resolution"
 block|,
 literal|"gimp-image-set-resolution"
@@ -17665,6 +17795,8 @@ name|ProcRecord
 name|image_get_unit_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-get-unit"
 block|,
 literal|"gimp-image-get-unit"
@@ -17799,6 +17931,8 @@ name|ProcRecord
 name|image_set_unit_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-set-unit"
 block|,
 literal|"gimp-image-set-unit"
@@ -17947,6 +18081,8 @@ name|ProcRecord
 name|image_get_tattoo_state_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-get-tattoo-state"
 block|,
 literal|"gimp-image-get-tattoo-state"
@@ -18081,6 +18217,8 @@ name|ProcRecord
 name|image_set_tattoo_state_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-set-tattoo-state"
 block|,
 literal|"gimp-image-set-tattoo-state"
@@ -18251,6 +18389,8 @@ name|ProcRecord
 name|image_get_layer_by_tattoo_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-get-layer-by-tattoo"
 block|,
 literal|"gimp-image-get-layer-by-tattoo"
@@ -18421,6 +18561,8 @@ name|ProcRecord
 name|image_get_channel_by_tattoo_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-get-channel-by-tattoo"
 block|,
 literal|"gimp-image-get-channel-by-tattoo"
@@ -18591,6 +18733,8 @@ name|ProcRecord
 name|image_get_vectors_by_tattoo_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-get-vectors-by-tattoo"
 block|,
 literal|"gimp-image-get-vectors-by-tattoo"

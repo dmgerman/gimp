@@ -1347,6 +1347,8 @@ name|ProcRecord
 name|procedural_db_temp_name_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-procedural-db-temp-name"
 block|,
 literal|"gimp-procedural-db-temp-name"
@@ -1469,6 +1471,8 @@ name|ProcRecord
 name|procedural_db_dump_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-procedural-db-dump"
 block|,
 literal|"gimp-procedural-db-dump"
@@ -1787,6 +1791,8 @@ name|ProcRecord
 name|procedural_db_query_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-procedural-db-query"
 block|,
 literal|"gimp-procedural-db-query"
@@ -2119,6 +2125,8 @@ name|ProcRecord
 name|procedural_db_proc_info_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-procedural-db-proc-info"
 block|,
 literal|"gimp-procedural-db-proc-info"
@@ -2448,6 +2456,8 @@ name|ProcRecord
 name|procedural_db_proc_arg_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-procedural-db-proc-arg"
 block|,
 literal|"gimp-procedural-db-proc-arg"
@@ -2777,6 +2787,8 @@ name|ProcRecord
 name|procedural_db_proc_val_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-procedural-db-proc-val"
 block|,
 literal|"gimp-procedural-db-proc-val"
@@ -2992,6 +3004,8 @@ name|ProcRecord
 name|procedural_db_get_data_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-procedural-db-get-data"
 block|,
 literal|"gimp-procedural-db-get-data"
@@ -3177,6 +3191,8 @@ name|ProcRecord
 name|procedural_db_get_data_size_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-procedural-db-get-data-size"
 block|,
 literal|"gimp-procedural-db-get-data-size"
@@ -3350,6 +3366,8 @@ name|ProcRecord
 name|procedural_db_set_data_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-procedural-db-set-data"
 block|,
 literal|"gimp-procedural-db-set-data"

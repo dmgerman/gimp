@@ -4663,6 +4663,8 @@ name|ProcRecord
 name|drawable_transform_flip_simple_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-drawable-transform-flip-simple"
 block|,
 literal|"gimp-drawable-transform-flip-simple"
@@ -5076,6 +5078,8 @@ name|ProcRecord
 name|drawable_transform_flip_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-drawable-transform-flip"
 block|,
 literal|"gimp-drawable-transform-flip"
@@ -5458,6 +5462,8 @@ name|ProcRecord
 name|drawable_transform_flip_default_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-drawable-transform-flip-default"
 block|,
 literal|"gimp-drawable-transform-flip-default"
@@ -5943,6 +5949,8 @@ name|ProcRecord
 name|drawable_transform_perspective_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-drawable-transform-perspective"
 block|,
 literal|"gimp-drawable-transform-perspective"
@@ -6397,6 +6405,8 @@ name|ProcRecord
 name|drawable_transform_perspective_default_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-drawable-transform-perspective-default"
 block|,
 literal|"gimp-drawable-transform-perspective-default"
@@ -6683,6 +6693,8 @@ name|ProcRecord
 name|drawable_transform_rotate_simple_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-drawable-transform-rotate-simple"
 block|,
 literal|"gimp-drawable-transform-rotate-simple"
@@ -7107,6 +7119,8 @@ name|ProcRecord
 name|drawable_transform_rotate_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-drawable-transform-rotate"
 block|,
 literal|"gimp-drawable-transform-rotate"
@@ -7500,6 +7514,8 @@ name|ProcRecord
 name|drawable_transform_rotate_default_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-drawable-transform-rotate-default"
 block|,
 literal|"gimp-drawable-transform-rotate-default"
@@ -7927,6 +7943,8 @@ name|ProcRecord
 name|drawable_transform_scale_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-drawable-transform-scale"
 block|,
 literal|"gimp-drawable-transform-scale"
@@ -8323,6 +8341,8 @@ name|ProcRecord
 name|drawable_transform_scale_default_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-drawable-transform-scale-default"
 block|,
 literal|"gimp-drawable-transform-scale-default"
@@ -8700,6 +8720,8 @@ name|ProcRecord
 name|drawable_transform_shear_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-drawable-transform-shear"
 block|,
 literal|"gimp-drawable-transform-shear"
@@ -9046,6 +9068,8 @@ name|ProcRecord
 name|drawable_transform_shear_default_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-drawable-transform-shear-default"
 block|,
 literal|"gimp-drawable-transform-shear-default"
@@ -9525,6 +9549,8 @@ name|ProcRecord
 name|drawable_transform_2d_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-drawable-transform-2d"
 block|,
 literal|"gimp-drawable-transform-2d"
@@ -9973,6 +9999,8 @@ name|ProcRecord
 name|drawable_transform_2d_default_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-drawable-transform-2d-default"
 block|,
 literal|"gimp-drawable-transform-2d-default"
@@ -10546,6 +10574,8 @@ name|ProcRecord
 name|drawable_transform_matrix_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-drawable-transform-matrix"
 block|,
 literal|"gimp-drawable-transform-matrix"
@@ -11088,6 +11118,8 @@ name|ProcRecord
 name|drawable_transform_matrix_default_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-drawable-transform-matrix-default"
 block|,
 literal|"gimp-drawable-transform-matrix-default"

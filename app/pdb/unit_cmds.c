@@ -1153,6 +1153,8 @@ name|ProcRecord
 name|unit_get_number_of_units_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-unit-get-number-of-units"
 block|,
 literal|"gimp-unit-get-number-of-units"
@@ -1267,6 +1269,8 @@ name|ProcRecord
 name|unit_get_number_of_built_in_units_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-unit-get-number-of-built-in-units"
 block|,
 literal|"gimp-unit-get-number-of-built-in-units"
@@ -1547,6 +1551,8 @@ name|ProcRecord
 name|unit_new_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-unit-new"
 block|,
 literal|"gimp-unit-new"
@@ -1694,6 +1700,8 @@ name|ProcRecord
 name|unit_get_deletion_flag_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-unit-get-deletion-flag"
 block|,
 literal|"gimp-unit-get-deletion-flag"
@@ -1827,6 +1835,8 @@ name|ProcRecord
 name|unit_set_deletion_flag_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-unit-set-deletion-flag"
 block|,
 literal|"gimp-unit-set-deletion-flag"
@@ -1978,6 +1988,8 @@ name|ProcRecord
 name|unit_get_identifier_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-unit-get-identifier"
 block|,
 literal|"gimp-unit-get-identifier"
@@ -2125,6 +2137,8 @@ name|ProcRecord
 name|unit_get_factor_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-unit-get-factor"
 block|,
 literal|"gimp-unit-get-factor"
@@ -2272,6 +2286,8 @@ name|ProcRecord
 name|unit_get_digits_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-unit-get-digits"
 block|,
 literal|"gimp-unit-get-digits"
@@ -2423,6 +2439,8 @@ name|ProcRecord
 name|unit_get_symbol_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-unit-get-symbol"
 block|,
 literal|"gimp-unit-get-symbol"
@@ -2574,6 +2592,8 @@ name|ProcRecord
 name|unit_get_abbreviation_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-unit-get-abbreviation"
 block|,
 literal|"gimp-unit-get-abbreviation"
@@ -2725,6 +2745,8 @@ name|ProcRecord
 name|unit_get_singular_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-unit-get-singular"
 block|,
 literal|"gimp-unit-get-singular"
@@ -2876,6 +2898,8 @@ name|ProcRecord
 name|unit_get_plural_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-unit-get-plural"
 block|,
 literal|"gimp-unit-get-plural"

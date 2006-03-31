@@ -592,6 +592,8 @@ name|ProcRecord
 name|pattern_get_info_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-pattern-get-info"
 block|,
 literal|"gimp-pattern-get-info"
@@ -898,6 +900,8 @@ name|ProcRecord
 name|pattern_get_pixels_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-pattern-get-pixels"
 block|,
 literal|"gimp-pattern-get-pixels"

@@ -285,11 +285,6 @@ modifier|*
 name|error
 parameter_list|)
 block|{
-specifier|const
-name|ProcRecord
-modifier|*
-name|proc
-decl_stmt|;
 name|Argument
 modifier|*
 name|return_vals
@@ -513,13 +508,6 @@ name|uri
 argument_list|)
 expr_stmt|;
 block|}
-name|proc
-operator|=
-name|plug_in_proc_def_get_proc
-argument_list|(
-name|file_proc
-argument_list|)
-expr_stmt|;
 name|return_vals
 operator|=
 name|procedural_db_run_proc
@@ -530,7 +518,9 @@ name|context
 argument_list|,
 name|progress
 argument_list|,
-name|proc
+name|file_proc
+operator|->
+name|procedure
 operator|->
 name|name
 argument_list|,

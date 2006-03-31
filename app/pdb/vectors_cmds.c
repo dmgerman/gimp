@@ -2823,6 +2823,8 @@ name|ProcRecord
 name|vectors_new_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-vectors-new"
 block|,
 literal|"gimp-vectors-new"
@@ -2981,6 +2983,8 @@ name|ProcRecord
 name|vectors_get_image_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-vectors-get-image"
 block|,
 literal|"gimp-vectors-get-image"
@@ -3142,6 +3146,8 @@ name|ProcRecord
 name|vectors_get_name_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-vectors-get-name"
 block|,
 literal|"gimp-vectors-get-name"
@@ -3292,6 +3298,8 @@ name|ProcRecord
 name|vectors_set_name_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-vectors-set-name"
 block|,
 literal|"gimp-vectors-set-name"
@@ -3449,6 +3457,8 @@ name|ProcRecord
 name|vectors_get_visible_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-vectors-get-visible"
 block|,
 literal|"gimp-vectors-get-visible"
@@ -3594,6 +3604,8 @@ name|ProcRecord
 name|vectors_set_visible_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-vectors-set-visible"
 block|,
 literal|"gimp-vectors-set-visible"
@@ -3751,6 +3763,8 @@ name|ProcRecord
 name|vectors_get_linked_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-vectors-get-linked"
 block|,
 literal|"gimp-vectors-get-linked"
@@ -3896,6 +3910,8 @@ name|ProcRecord
 name|vectors_set_linked_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-vectors-set-linked"
 block|,
 literal|"gimp-vectors-set-linked"
@@ -4053,6 +4069,8 @@ name|ProcRecord
 name|vectors_get_tattoo_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-vectors-get-tattoo"
 block|,
 literal|"gimp-vectors-get-tattoo"
@@ -4196,6 +4214,8 @@ name|ProcRecord
 name|vectors_set_tattoo_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-vectors-set-tattoo"
 block|,
 literal|"gimp-vectors-set-tattoo"
@@ -4432,6 +4452,8 @@ name|ProcRecord
 name|vectors_get_strokes_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-vectors-get-strokes"
 block|,
 literal|"gimp-vectors-get-strokes"
@@ -4640,6 +4662,8 @@ name|ProcRecord
 name|vectors_stroke_get_length_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-vectors-stroke-get-length"
 block|,
 literal|"gimp-vectors-stroke-get-length"
@@ -4953,6 +4977,8 @@ name|ProcRecord
 name|vectors_stroke_get_point_at_dist_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-vectors-stroke-get-point-at-dist"
 block|,
 literal|"gimp-vectors-stroke-get-point-at-dist"
@@ -5113,6 +5139,8 @@ name|ProcRecord
 name|vectors_stroke_remove_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-vectors-stroke-remove"
 block|,
 literal|"gimp-vectors-stroke-remove"
@@ -5271,6 +5299,8 @@ name|ProcRecord
 name|vectors_stroke_close_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-vectors-stroke-close"
 block|,
 literal|"gimp-vectors-stroke-close"
@@ -5465,6 +5495,8 @@ name|ProcRecord
 name|vectors_stroke_translate_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-vectors-stroke-translate"
 block|,
 literal|"gimp-vectors-stroke-translate"
@@ -5659,6 +5691,8 @@ name|ProcRecord
 name|vectors_stroke_scale_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-vectors-stroke-scale"
 block|,
 literal|"gimp-vectors-stroke-scale"
@@ -6010,6 +6044,8 @@ name|ProcRecord
 name|vectors_stroke_interpolate_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-vectors-stroke-interpolate"
 block|,
 literal|"gimp-vectors-stroke-interpolate"
@@ -6232,6 +6268,8 @@ name|ProcRecord
 name|vectors_bezier_stroke_new_moveto_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-vectors-bezier-stroke-new-moveto"
 block|,
 literal|"gimp-vectors-bezier-stroke-new-moveto"
@@ -6444,6 +6482,8 @@ name|ProcRecord
 name|vectors_bezier_stroke_lineto_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-vectors-bezier-stroke-lineto"
 block|,
 literal|"gimp-vectors-bezier-stroke-lineto"
@@ -6708,6 +6748,8 @@ name|ProcRecord
 name|vectors_bezier_stroke_conicto_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-vectors-bezier-stroke-conicto"
 block|,
 literal|"gimp-vectors-bezier-stroke-conicto"
@@ -7024,6 +7066,8 @@ name|ProcRecord
 name|vectors_bezier_stroke_cubicto_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-vectors-bezier-stroke-cubicto"
 block|,
 literal|"gimp-vectors-bezier-stroke-cubicto"
@@ -7300,6 +7344,8 @@ name|ProcRecord
 name|vectors_bezier_stroke_new_ellipse_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-vectors-bezier-stroke-new-ellipse"
 block|,
 literal|"gimp-vectors-bezier-stroke-new-ellipse"

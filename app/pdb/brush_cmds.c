@@ -2308,6 +2308,8 @@ name|ProcRecord
 name|brush_new_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-brush-new"
 block|,
 literal|"gimp-brush-new"
@@ -2524,6 +2526,8 @@ name|ProcRecord
 name|brush_duplicate_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-brush-duplicate"
 block|,
 literal|"gimp-brush-duplicate"
@@ -2702,6 +2706,8 @@ name|ProcRecord
 name|brush_is_generated_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-brush-is-generated"
 block|,
 literal|"gimp-brush-is-generated"
@@ -2927,6 +2933,8 @@ name|ProcRecord
 name|brush_rename_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-brush-rename"
 block|,
 literal|"gimp-brush-rename"
@@ -3122,6 +3130,8 @@ name|ProcRecord
 name|brush_delete_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-brush-delete"
 block|,
 literal|"gimp-brush-delete"
@@ -3302,6 +3312,8 @@ name|ProcRecord
 name|brush_is_editable_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-brush-is-editable"
 block|,
 literal|"gimp-brush-is-editable"
@@ -3569,6 +3581,8 @@ name|ProcRecord
 name|brush_get_info_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-brush-get-info"
 block|,
 literal|"gimp-brush-get-info"
@@ -3968,6 +3982,8 @@ name|ProcRecord
 name|brush_get_pixels_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-brush-get-pixels"
 block|,
 literal|"gimp-brush-get-pixels"
@@ -4146,6 +4162,8 @@ name|ProcRecord
 name|brush_get_spacing_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-brush-get-spacing"
 block|,
 literal|"gimp-brush-get-spacing"
@@ -4310,6 +4328,8 @@ name|ProcRecord
 name|brush_set_spacing_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-brush-set-spacing"
 block|,
 literal|"gimp-brush-set-spacing"
@@ -4493,6 +4513,8 @@ name|ProcRecord
 name|brush_get_shape_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-brush-get-shape"
 block|,
 literal|"gimp-brush-get-shape"
@@ -4676,6 +4698,8 @@ name|ProcRecord
 name|brush_get_radius_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-brush-get-radius"
 block|,
 literal|"gimp-brush-get-radius"
@@ -4859,6 +4883,8 @@ name|ProcRecord
 name|brush_get_spikes_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-brush-get-spikes"
 block|,
 literal|"gimp-brush-get-spikes"
@@ -5042,6 +5068,8 @@ name|ProcRecord
 name|brush_get_hardness_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-brush-get-hardness"
 block|,
 literal|"gimp-brush-get-hardness"
@@ -5225,6 +5253,8 @@ name|ProcRecord
 name|brush_get_aspect_ratio_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-brush-get-aspect-ratio"
 block|,
 literal|"gimp-brush-get-aspect-ratio"
@@ -5408,6 +5438,8 @@ name|ProcRecord
 name|brush_get_angle_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-brush-get-angle"
 block|,
 literal|"gimp-brush-get-angle"
@@ -5626,6 +5658,8 @@ name|ProcRecord
 name|brush_set_shape_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-brush-set-shape"
 block|,
 literal|"gimp-brush-set-shape"
@@ -5844,6 +5878,8 @@ name|ProcRecord
 name|brush_set_radius_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-brush-set-radius"
 block|,
 literal|"gimp-brush-set-radius"
@@ -6062,6 +6098,8 @@ name|ProcRecord
 name|brush_set_spikes_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-brush-set-spikes"
 block|,
 literal|"gimp-brush-set-spikes"
@@ -6280,6 +6318,8 @@ name|ProcRecord
 name|brush_set_hardness_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-brush-set-hardness"
 block|,
 literal|"gimp-brush-set-hardness"
@@ -6498,6 +6538,8 @@ name|ProcRecord
 name|brush_set_aspect_ratio_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-brush-set-aspect-ratio"
 block|,
 literal|"gimp-brush-set-aspect-ratio"
@@ -6716,6 +6758,8 @@ name|ProcRecord
 name|brush_set_angle_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-brush-set-angle"
 block|,
 literal|"gimp-brush-set-angle"

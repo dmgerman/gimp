@@ -162,84 +162,89 @@ struct|struct
 name|_ProcRecord
 block|{
 comment|/*  Procedure information  */
+DECL|member|static_proc
+name|gboolean
+name|static_proc
+decl_stmt|;
+comment|/*  Are the procedure's strings allocated      */
 DECL|member|name
 name|gchar
 modifier|*
 name|name
 decl_stmt|;
-comment|/*  Procedure name  */
+comment|/*  Procedure name                             */
 DECL|member|original_name
 name|gchar
 modifier|*
 name|original_name
 decl_stmt|;
-comment|/*  Procedure name before canonicalization  */
+comment|/*  Procedure name before canonicalization     */
 DECL|member|blurb
 name|gchar
 modifier|*
 name|blurb
 decl_stmt|;
-comment|/*  Short procedure description  */
+comment|/*  Short procedure description                */
 DECL|member|help
 name|gchar
 modifier|*
 name|help
 decl_stmt|;
-comment|/*  Detailed help instructions  */
+comment|/*  Detailed help instructions                 */
 DECL|member|author
 name|gchar
 modifier|*
 name|author
 decl_stmt|;
-comment|/*  Author field  */
+comment|/*  Author field                               */
 DECL|member|copyright
 name|gchar
 modifier|*
 name|copyright
 decl_stmt|;
-comment|/*  Copyright field  */
+comment|/*  Copyright field                            */
 DECL|member|date
 name|gchar
 modifier|*
 name|date
 decl_stmt|;
-comment|/*  Date field  */
+comment|/*  Date field                                 */
 DECL|member|deprecated
 name|gchar
 modifier|*
 name|deprecated
 decl_stmt|;
-comment|/*  Replacement if the procedure is deprecated  */
+comment|/*  Replacement if the procedure is deprecated */
 comment|/*  Procedure type  */
 DECL|member|proc_type
 name|GimpPDBProcType
 name|proc_type
 decl_stmt|;
-comment|/*  Type of procedure--Internal, Plug-In, Extension  */
+comment|/*  Type of procedure                          */
 comment|/*  Input arguments  */
 DECL|member|num_args
 name|gint32
 name|num_args
 decl_stmt|;
-comment|/*  Number of procedure arguments  */
+comment|/*  Number of procedure arguments              */
 DECL|member|args
 name|ProcArg
 modifier|*
 name|args
 decl_stmt|;
-comment|/*  Array of procedure arguments   */
+comment|/*  Array of procedure arguments               */
 comment|/*  Output values  */
 DECL|member|num_values
 name|gint32
 name|num_values
 decl_stmt|;
-comment|/*  Number of return values        */
+comment|/*  Number of return values                    */
 DECL|member|values
 name|ProcArg
 modifier|*
 name|values
 decl_stmt|;
-comment|/*  Array of return values         */
+comment|/*  Array of return values                     */
 comment|/*  Method of procedure execution  */
 DECL|union|_ExecMethod
 union|union
@@ -249,22 +254,22 @@ DECL|member|internal
 name|IntExec
 name|internal
 decl_stmt|;
-comment|/*  Execution information for internal procs  */
+comment|/*  Execution information for internal procs   */
 DECL|member|plug_in
 name|PlugInExec
 name|plug_in
 decl_stmt|;
-comment|/*  ..................... for plug-ins  */
+comment|/*  ..................... for plug-ins         */
 DECL|member|extension
 name|ExtExec
 name|extension
 decl_stmt|;
-comment|/*  ..................... for extensions  */
+comment|/*  ..................... for extensions       */
 DECL|member|temporary
 name|TempExec
 name|temporary
 decl_stmt|;
-comment|/*  ..................... for temp procs  */
+comment|/*  ..................... for temp procs       */
 DECL|member|exec_method
 block|}
 name|exec_method
@@ -272,10 +277,6 @@ union|;
 block|}
 struct|;
 end_struct
-
-begin_comment
-comment|/*  Functions  */
-end_comment
 
 begin_function_decl
 name|ProcRecord
@@ -312,6 +313,17 @@ name|n_arguments
 parameter_list|,
 name|gint
 name|n_return_vals
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_procedure_dispose
+parameter_list|(
+name|ProcRecord
+modifier|*
+name|procedure
 parameter_list|)
 function_decl|;
 end_function_decl

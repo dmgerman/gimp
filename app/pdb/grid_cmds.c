@@ -1055,6 +1055,8 @@ name|ProcRecord
 name|image_grid_get_spacing_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-grid-get-spacing"
 block|,
 literal|"gimp-image-grid-get-spacing"
@@ -1231,6 +1233,8 @@ name|ProcRecord
 name|image_grid_set_spacing_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-grid-set-spacing"
 block|,
 literal|"gimp-image-grid-set-spacing"
@@ -1427,6 +1431,8 @@ name|ProcRecord
 name|image_grid_get_offset_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-grid-get-offset"
 block|,
 literal|"gimp-image-grid-get-offset"
@@ -1603,6 +1609,8 @@ name|ProcRecord
 name|image_grid_set_offset_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-grid-set-offset"
 block|,
 literal|"gimp-image-grid-set-offset"
@@ -1777,6 +1785,8 @@ name|ProcRecord
 name|image_grid_get_foreground_color_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-grid-get-foreground-color"
 block|,
 literal|"gimp-image-grid-get-foreground-color"
@@ -1935,6 +1945,8 @@ name|ProcRecord
 name|image_grid_set_foreground_color_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-grid-set-foreground-color"
 block|,
 literal|"gimp-image-grid-set-foreground-color"
@@ -2109,6 +2121,8 @@ name|ProcRecord
 name|image_grid_get_background_color_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-grid-get-background-color"
 block|,
 literal|"gimp-image-grid-get-background-color"
@@ -2267,6 +2281,8 @@ name|ProcRecord
 name|image_grid_set_background_color_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-grid-set-background-color"
 block|,
 literal|"gimp-image-grid-set-background-color"
@@ -2438,6 +2454,8 @@ name|ProcRecord
 name|image_grid_get_style_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-grid-get-style"
 block|,
 literal|"gimp-image-grid-get-style"
@@ -2594,6 +2612,8 @@ name|ProcRecord
 name|image_grid_set_style_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-image-grid-set-style"
 block|,
 literal|"gimp-image-grid-set-style"

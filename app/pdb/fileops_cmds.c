@@ -1602,7 +1602,6 @@ name|PlugInProcDef
 modifier|*
 name|file_proc
 decl_stmt|;
-specifier|const
 name|ProcRecord
 modifier|*
 name|proc
@@ -1683,10 +1682,9 @@ argument_list|)
 return|;
 name|proc
 operator|=
-name|plug_in_proc_def_get_proc
-argument_list|(
 name|file_proc
-argument_list|)
+operator|->
+name|procedure
 expr_stmt|;
 name|new_args
 operator|=
@@ -1816,6 +1814,8 @@ name|ProcRecord
 name|file_load_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-file-load"
 block|,
 literal|"gimp-file-load"
@@ -2060,6 +2060,8 @@ name|ProcRecord
 name|file_load_layer_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-file-load-layer"
 block|,
 literal|"gimp-file-load-layer"
@@ -2445,6 +2447,8 @@ name|ProcRecord
 name|file_load_thumbnail_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-file-load-thumbnail"
 block|,
 literal|"gimp-file-load-thumbnail"
@@ -2520,7 +2524,6 @@ name|PlugInProcDef
 modifier|*
 name|file_proc
 decl_stmt|;
-specifier|const
 name|ProcRecord
 modifier|*
 name|proc
@@ -2601,10 +2604,9 @@ argument_list|)
 return|;
 name|proc
 operator|=
-name|plug_in_proc_def_get_proc
-argument_list|(
 name|file_proc
-argument_list|)
+operator|->
+name|procedure
 expr_stmt|;
 name|new_args
 operator|=
@@ -2734,6 +2736,8 @@ name|ProcRecord
 name|file_save_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-file-save"
 block|,
 literal|"gimp-file-save"
@@ -2965,6 +2969,8 @@ name|ProcRecord
 name|file_save_thumbnail_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-file-save-thumbnail"
 block|,
 literal|"gimp-file-save-thumbnail"
@@ -3118,6 +3124,8 @@ name|ProcRecord
 name|temp_name_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-temp-name"
 block|,
 literal|"gimp-temp-name"
@@ -3309,6 +3317,8 @@ name|ProcRecord
 name|register_magic_load_handler_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-register-magic-load-handler"
 block|,
 literal|"gimp-register-magic-load-handler"
@@ -3479,6 +3489,8 @@ name|ProcRecord
 name|register_load_handler_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-register-load-handler"
 block|,
 literal|"gimp-register-load-handler"
@@ -3825,6 +3837,8 @@ name|ProcRecord
 name|register_save_handler_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-register-save-handler"
 block|,
 literal|"gimp-register-save-handler"
@@ -3991,6 +4005,8 @@ name|ProcRecord
 name|register_file_handler_mime_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-register-file-handler-mime"
 block|,
 literal|"gimp-register-file-handler-mime"
@@ -4157,6 +4173,8 @@ name|ProcRecord
 name|register_thumbnail_loader_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-register-thumbnail-loader"
 block|,
 literal|"gimp-register-thumbnail-loader"

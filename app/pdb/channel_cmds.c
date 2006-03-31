@@ -1262,6 +1262,8 @@ name|ProcRecord
 name|channel_new_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-channel-new"
 block|,
 literal|"gimp-channel-new"
@@ -1490,6 +1492,8 @@ name|ProcRecord
 name|channel_new_from_component_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-channel-new-from-component"
 block|,
 literal|"gimp-channel-new-from-component"
@@ -1670,6 +1674,8 @@ name|ProcRecord
 name|channel_copy_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-channel-copy"
 block|,
 literal|"gimp-channel-copy"
@@ -1873,6 +1879,8 @@ name|ProcRecord
 name|channel_combine_masks_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-channel-combine-masks"
 block|,
 literal|"gimp-channel-combine-masks"
@@ -2027,6 +2035,8 @@ name|ProcRecord
 name|channel_get_show_masked_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-channel-get-show-masked"
 block|,
 literal|"gimp-channel-get-show-masked"
@@ -2167,6 +2177,8 @@ name|ProcRecord
 name|channel_set_show_masked_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-channel-set-show-masked"
 block|,
 literal|"gimp-channel-set-show-masked"
@@ -2323,6 +2335,8 @@ name|ProcRecord
 name|channel_get_opacity_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-channel-get-opacity"
 block|,
 literal|"gimp-channel-get-opacity"
@@ -2467,6 +2481,8 @@ name|ProcRecord
 name|channel_set_opacity_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-channel-set-opacity"
 block|,
 literal|"gimp-channel-set-opacity"
@@ -2631,6 +2647,8 @@ name|ProcRecord
 name|channel_get_color_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-channel-get-color"
 block|,
 literal|"gimp-channel-get-color"
@@ -2790,6 +2808,8 @@ name|ProcRecord
 name|channel_set_color_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-channel-set-color"
 block|,
 literal|"gimp-channel-set-color"

@@ -1434,6 +1434,8 @@ name|ProcRecord
 name|flip_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-flip"
 block|,
 literal|"gimp-flip"
@@ -1872,6 +1874,8 @@ name|ProcRecord
 name|perspective_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-perspective"
 block|,
 literal|"gimp-perspective"
@@ -2184,6 +2188,8 @@ name|ProcRecord
 name|rotate_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-rotate"
 block|,
 literal|"gimp-rotate"
@@ -2564,6 +2570,8 @@ name|ProcRecord
 name|scale_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-scale"
 block|,
 literal|"gimp-scale"
@@ -2894,6 +2902,8 @@ name|ProcRecord
 name|shear_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-shear"
 block|,
 literal|"gimp-shear"
@@ -3326,6 +3336,8 @@ name|ProcRecord
 name|transform_2d_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-transform-2d"
 block|,
 literal|"gimp-transform-2d"

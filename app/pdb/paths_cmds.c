@@ -1976,6 +1976,8 @@ name|ProcRecord
 name|path_list_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-path-list"
 block|,
 literal|"gimp-path-list"
@@ -2149,6 +2151,8 @@ name|ProcRecord
 name|path_get_current_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-path-get-current"
 block|,
 literal|"gimp-path-get-current"
@@ -2308,6 +2312,8 @@ name|ProcRecord
 name|path_set_current_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-path-set-current"
 block|,
 literal|"gimp-path-set-current"
@@ -2467,6 +2473,8 @@ name|ProcRecord
 name|path_delete_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-path-delete"
 block|,
 literal|"gimp-path-delete"
@@ -2830,6 +2838,8 @@ name|ProcRecord
 name|path_get_points_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-path-get-points"
 block|,
 literal|"gimp-path-get-points"
@@ -3185,6 +3195,8 @@ name|ProcRecord
 name|path_set_points_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-path-set-points"
 block|,
 literal|"gimp-path-set-points"
@@ -3372,6 +3384,8 @@ name|ProcRecord
 name|path_stroke_current_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-path-stroke-current"
 block|,
 literal|"gimp-path-stroke-current"
@@ -3730,6 +3744,8 @@ name|ProcRecord
 name|path_get_point_at_dist_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-path-get-point-at-dist"
 block|,
 literal|"gimp-path-get-point-at-dist"
@@ -3922,6 +3938,8 @@ name|ProcRecord
 name|path_get_tattoo_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-path-get-tattoo"
 block|,
 literal|"gimp-path-get-tattoo"
@@ -4100,6 +4118,8 @@ name|ProcRecord
 name|path_set_tattoo_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-path-set-tattoo"
 block|,
 literal|"gimp-path-set-tattoo"
@@ -4291,6 +4311,8 @@ name|ProcRecord
 name|get_path_by_tattoo_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-get-path-by-tattoo"
 block|,
 literal|"gimp-get-path-by-tattoo"
@@ -4483,6 +4505,8 @@ name|ProcRecord
 name|path_get_locked_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-path-get-locked"
 block|,
 literal|"gimp-path-get-locked"
@@ -4663,6 +4687,8 @@ name|ProcRecord
 name|path_set_locked_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-path-set-locked"
 block|,
 literal|"gimp-path-set-locked"
@@ -4920,6 +4946,8 @@ name|ProcRecord
 name|path_to_selection_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-path-to-selection"
 block|,
 literal|"gimp-path-to-selection"
@@ -5102,6 +5130,8 @@ name|ProcRecord
 name|path_import_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-path-import"
 block|,
 literal|"gimp-path-import"
@@ -5302,6 +5332,8 @@ name|ProcRecord
 name|path_import_string_proc
 init|=
 block|{
+name|TRUE
+block|,
 literal|"gimp-path-import-string"
 block|,
 literal|"gimp-path-import-string"
