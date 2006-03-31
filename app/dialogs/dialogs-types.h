@@ -22,15 +22,6 @@ directive|include
 file|"display/display-types.h"
 end_include
 
-begin_typedef
-DECL|typedef|InfoDialog
-typedef|typedef
-name|struct
-name|_InfoDialog
-name|InfoDialog
-typedef|;
-end_typedef
-
 begin_endif
 endif|#
 directive|endif

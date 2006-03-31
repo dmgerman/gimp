@@ -112,14 +112,15 @@ DECL|member|parent_instance
 name|GimpTransformTool
 name|parent_instance
 decl_stmt|;
-comment|/*  shear dialog  */
-DECL|member|xshear_val
-name|gdouble
-name|xshear_val
+DECL|member|x_adj
+name|GtkObject
+modifier|*
+name|x_adj
 decl_stmt|;
-DECL|member|yshear_val
-name|gdouble
-name|yshear_val
+DECL|member|y_adj
+name|GtkObject
+modifier|*
+name|y_adj
 decl_stmt|;
 block|}
 struct|;

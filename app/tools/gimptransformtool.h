@@ -22,16 +22,6 @@ directive|include
 file|"gimpdrawtool.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"dialogs/dialogs-types.h"
-end_include
-
-begin_comment
-comment|/* FIXME */
-end_comment
-
 begin_comment
 comment|/* buffer sizes for scaling information strings (for the info dialog) */
 end_comment
@@ -303,7 +293,6 @@ DECL|member|direction
 name|GimpTransformDirection
 name|direction
 decl_stmt|;
-comment|/*  transform info dialog  */
 DECL|member|shell_desc
 specifier|const
 name|gchar
@@ -316,10 +305,10 @@ name|gchar
 modifier|*
 name|progress_text
 decl_stmt|;
-DECL|member|info_dialog
-name|InfoDialog
+DECL|member|dialog
+name|GtkWidget
 modifier|*
-name|info_dialog
+name|dialog
 decl_stmt|;
 block|}
 struct|;

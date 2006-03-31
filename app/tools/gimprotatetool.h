@@ -112,17 +112,10 @@ DECL|member|parent_instance
 name|GimpTransformTool
 name|parent_instance
 decl_stmt|;
-comment|/*  rotate dialog  */
-DECL|member|angle_val
-name|gdouble
-name|angle_val
-decl_stmt|;
-DECL|member|center_vals
-name|gdouble
-name|center_vals
-index|[
-literal|2
-index|]
+DECL|member|angle_adj
+name|GtkObject
+modifier|*
+name|angle_adj
 decl_stmt|;
 DECL|member|sizeentry
 name|GtkWidget

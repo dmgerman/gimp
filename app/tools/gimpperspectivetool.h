@@ -112,15 +112,15 @@ DECL|member|parent_instance
 name|GimpTransformTool
 name|parent_instance
 decl_stmt|;
-comment|/*  perspective dialog  */
-DECL|member|matrix_row_buf
-name|gchar
-name|matrix_row_buf
+DECL|member|label
+name|GtkWidget
+modifier|*
+name|label
 index|[
 literal|3
 index|]
 index|[
-name|MAX_INFO_BUF
+literal|3
 index|]
 decl_stmt|;
 block|}
