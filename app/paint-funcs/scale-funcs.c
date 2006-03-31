@@ -513,7 +513,6 @@ condition|;
 name|x
 operator|++
 control|)
-block|{
 name|dest
 index|[
 name|x
@@ -527,7 +526,6 @@ name|x
 index|]
 index|]
 expr_stmt|;
-block|}
 name|last_src_y
 operator|=
 name|y_src_offsets
@@ -2765,6 +2763,7 @@ expr_stmt|;
 block|}
 else|else
 comment|/* alpha<= 0 */
+block|{
 for|for
 control|(
 name|b
@@ -2785,6 +2784,7 @@ index|]
 operator|=
 literal|0
 expr_stmt|;
+block|}
 name|d
 operator|+=
 name|bytes
@@ -4494,20 +4494,31 @@ index|]
 operator|=
 name|sy
 expr_stmt|;
+if|if
+condition|(
+operator|!
 name|inv_lin_trans
 argument_list|(
 name|trans
 argument_list|,
 name|itrans
 argument_list|)
+condition|)
+block|{
+name|g_warning
+argument_list|(
+literal|"transformation matrix is not invertible"
+argument_list|)
 expr_stmt|;
+return|return;
+block|}
 comment|/* Calculate kernel */
 name|kernel
 operator|=
 name|kernel_lanczos
 argument_list|()
 expr_stmt|;
-comment|/*      allocate buffer for width + 2 * LANCZOS_WIDTH      We need 2* LANCZOS_WIDTH lines for sliding window      buffer with edge mirror   */
+comment|/*      allocate buffer for width + 2 * LANCZOS_WIDTH      We need 2* LANCZOS_WIDTH lines for sliding window      buffer with edge mirror    */
 name|src_rowstride
 operator|=
 operator|(
