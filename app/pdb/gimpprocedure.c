@@ -102,6 +102,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpargument.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpprocedure.h"
 end_include
 
@@ -1446,7 +1452,7 @@ condition|;
 name|i
 operator|++
 control|)
-name|procedural_db_argument_init
+name|gimp_argument_init
 argument_list|(
 operator|&
 name|args
@@ -1533,7 +1539,7 @@ argument_list|,
 name|n_args
 argument_list|)
 expr_stmt|;
-name|procedural_db_compat_arg_init
+name|gimp_argument_init_compat
 argument_list|(
 operator|&
 name|args
@@ -1594,7 +1600,7 @@ condition|;
 name|i
 operator|++
 control|)
-name|procedural_db_argument_init
+name|gimp_argument_init
 argument_list|(
 operator|&
 name|args

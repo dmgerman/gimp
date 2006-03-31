@@ -58,6 +58,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpargument.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpprocedure.h"
 end_include
 
@@ -1790,7 +1796,7 @@ operator|&
 name|n_return_vals
 argument_list|)
 expr_stmt|;
-name|procedural_db_destroy_args
+name|gimp_arguments_destroy
 argument_list|(
 name|new_args
 argument_list|,
@@ -2718,7 +2724,7 @@ operator|&
 name|n_return_vals
 argument_list|)
 expr_stmt|;
-name|procedural_db_destroy_args
+name|gimp_arguments_destroy
 argument_list|(
 name|new_args
 argument_list|,

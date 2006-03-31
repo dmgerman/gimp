@@ -155,6 +155,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"pdb/gimpargument.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"pdb/gimpprocedure.h"
 end_include
 
@@ -510,7 +516,7 @@ operator|.
 name|value
 argument_list|)
 expr_stmt|;
-name|procedural_db_destroy_args
+name|gimp_arguments_destroy
 argument_list|(
 name|return_vals
 argument_list|,

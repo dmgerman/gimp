@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"pdb/gimpargument.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"pdb/procedural_db.h"
 end_include
 
@@ -86,7 +92,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b216c180108
+DECL|struct|__anon2a46208e0108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -882,7 +888,7 @@ argument_list|,
 name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
-name|procedural_db_destroy_args
+name|gimp_arguments_destroy
 argument_list|(
 name|return_vals
 argument_list|,

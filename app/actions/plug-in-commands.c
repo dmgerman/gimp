@@ -90,13 +90,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb/gimpprocedure.h"
+file|"pdb/gimpargument.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"pdb/procedural_db.h"
+file|"pdb/gimpprocedure.h"
 end_include
 
 begin_include
@@ -485,7 +485,7 @@ expr_stmt|;
 block|}
 name|error
 label|:
-name|procedural_db_destroy_args
+name|gimp_arguments_destroy
 argument_list|(
 name|args
 argument_list|,
