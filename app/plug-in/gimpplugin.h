@@ -247,9 +247,9 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_rec
+name|procedure
 parameter_list|,
 specifier|const
 name|gchar
@@ -361,9 +361,9 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_rec
+name|procedure
 parameter_list|)
 function_decl|;
 end_function_decl

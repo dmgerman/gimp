@@ -58,7 +58,7 @@ end_include
 begin_decl_stmt
 DECL|variable|brushes_popup_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|brushes_popup_proc
 decl_stmt|;
 end_decl_stmt
@@ -66,7 +66,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|brushes_close_popup_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|brushes_close_popup_proc
 decl_stmt|;
 end_decl_stmt
@@ -74,7 +74,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|brushes_set_popup_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|brushes_set_popup_proc
 decl_stmt|;
 end_decl_stmt
@@ -89,7 +89,7 @@ modifier|*
 name|gimp
 parameter_list|)
 block|{
-name|ProcRecord
+name|GimpProcedure
 modifier|*
 name|procedure
 decl_stmt|;
@@ -444,12 +444,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|brushes_popup_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|brushes_popup_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|brushes_popup_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -647,7 +647,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -658,7 +658,7 @@ end_function
 begin_decl_stmt
 DECL|variable|brushes_popup_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|brushes_popup_proc
 init|=
 block|{
@@ -705,12 +705,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|brushes_close_popup_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|brushes_close_popup_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|brushes_close_popup_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -796,7 +796,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -807,7 +807,7 @@ end_function
 begin_decl_stmt
 DECL|variable|brushes_close_popup_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|brushes_close_popup_proc
 init|=
 block|{
@@ -854,12 +854,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|brushes_set_popup_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|brushes_set_popup_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|brushes_set_popup_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -1032,7 +1032,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -1043,7 +1043,7 @@ end_function
 begin_decl_stmt
 DECL|variable|brushes_set_popup_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|brushes_set_popup_proc
 init|=
 block|{

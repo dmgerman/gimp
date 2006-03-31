@@ -64,7 +64,7 @@ end_include
 begin_decl_stmt
 DECL|variable|image_add_hguide_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|image_add_hguide_proc
 decl_stmt|;
 end_decl_stmt
@@ -72,7 +72,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|image_add_vguide_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|image_add_vguide_proc
 decl_stmt|;
 end_decl_stmt
@@ -80,7 +80,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|image_delete_guide_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|image_delete_guide_proc
 decl_stmt|;
 end_decl_stmt
@@ -88,7 +88,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|image_find_next_guide_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|image_find_next_guide_proc
 decl_stmt|;
 end_decl_stmt
@@ -96,7 +96,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|image_get_guide_orientation_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|image_get_guide_orientation_proc
 decl_stmt|;
 end_decl_stmt
@@ -104,7 +104,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|image_get_guide_position_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|image_get_guide_position_proc
 decl_stmt|;
 end_decl_stmt
@@ -119,7 +119,7 @@ modifier|*
 name|gimp
 parameter_list|)
 block|{
-name|ProcRecord
+name|GimpProcedure
 modifier|*
 name|procedure
 decl_stmt|;
@@ -649,12 +649,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_add_hguide_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_add_hguide_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_add_hguide_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -768,7 +768,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -799,7 +799,7 @@ end_function
 begin_decl_stmt
 DECL|variable|image_add_hguide_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|image_add_hguide_proc
 init|=
 block|{
@@ -846,12 +846,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_add_vguide_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_add_vguide_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_add_vguide_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -965,7 +965,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -996,7 +996,7 @@ end_function
 begin_decl_stmt
 DECL|variable|image_add_vguide_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|image_add_vguide_proc
 init|=
 block|{
@@ -1043,12 +1043,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_delete_guide_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_delete_guide_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_delete_guide_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -1145,7 +1145,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -1156,7 +1156,7 @@ end_function
 begin_decl_stmt
 DECL|variable|image_delete_guide_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|image_delete_guide_proc
 init|=
 block|{
@@ -1203,12 +1203,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_find_next_guide_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_find_next_guide_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_find_next_guide_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -1310,7 +1310,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -1341,7 +1341,7 @@ end_function
 begin_decl_stmt
 DECL|variable|image_find_next_guide_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|image_find_next_guide_proc
 init|=
 block|{
@@ -1388,12 +1388,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_get_guide_orientation_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_get_guide_orientation_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_get_guide_orientation_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -1497,7 +1497,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -1528,7 +1528,7 @@ end_function
 begin_decl_stmt
 DECL|variable|image_get_guide_orientation_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|image_get_guide_orientation_proc
 init|=
 block|{
@@ -1575,12 +1575,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_get_guide_position_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_get_guide_position_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_get_guide_position_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -1684,7 +1684,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -1715,7 +1715,7 @@ end_function
 begin_decl_stmt
 DECL|variable|image_get_guide_position_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|image_get_guide_position_proc
 init|=
 block|{

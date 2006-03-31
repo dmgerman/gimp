@@ -544,14 +544,6 @@ name|list
 operator|->
 name|data
 decl_stmt|;
-name|ProcRecord
-modifier|*
-name|proc_rec
-init|=
-name|proc_def
-operator|->
-name|procedure
-decl_stmt|;
 name|gchar
 modifier|*
 name|name
@@ -658,7 +650,9 @@ index|]
 operator|=
 name|g_strdup
 argument_list|(
-name|proc_rec
+name|proc_def
+operator|->
+name|procedure
 operator|->
 name|name
 argument_list|)

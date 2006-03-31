@@ -104,7 +104,7 @@ end_include
 begin_decl_stmt
 DECL|variable|version_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|version_proc
 decl_stmt|;
 end_decl_stmt
@@ -112,7 +112,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|getpid_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|getpid_proc
 decl_stmt|;
 end_decl_stmt
@@ -120,7 +120,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|quit_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|quit_proc
 decl_stmt|;
 end_decl_stmt
@@ -135,7 +135,7 @@ modifier|*
 name|gimp
 parameter_list|)
 block|{
-name|ProcRecord
+name|GimpProcedure
 modifier|*
 name|procedure
 decl_stmt|;
@@ -274,12 +274,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|version_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|version_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|version_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -319,7 +319,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|TRUE
 argument_list|)
@@ -346,7 +346,7 @@ end_function
 begin_decl_stmt
 DECL|variable|version_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|version_proc
 init|=
 block|{
@@ -393,12 +393,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|getpid_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|getpid_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|getpid_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -435,7 +435,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|TRUE
 argument_list|)
@@ -462,7 +462,7 @@ end_function
 begin_decl_stmt
 DECL|variable|getpid_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|getpid_proc
 init|=
 block|{
@@ -509,12 +509,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|quit_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|quit_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|quit_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -570,7 +570,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -581,7 +581,7 @@ end_function
 begin_decl_stmt
 DECL|variable|quit_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|quit_proc
 init|=
 block|{

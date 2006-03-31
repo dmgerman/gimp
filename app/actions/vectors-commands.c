@@ -1181,7 +1181,7 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|ProcRecord
+name|GimpProcedure
 modifier|*
 name|procedure
 decl_stmt|;

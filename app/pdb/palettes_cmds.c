@@ -94,7 +94,7 @@ end_include
 begin_decl_stmt
 DECL|variable|palettes_refresh_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|palettes_refresh_proc
 decl_stmt|;
 end_decl_stmt
@@ -102,7 +102,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|palettes_get_list_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|palettes_get_list_proc
 decl_stmt|;
 end_decl_stmt
@@ -110,7 +110,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|palettes_get_palette_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|palettes_get_palette_proc
 decl_stmt|;
 end_decl_stmt
@@ -118,7 +118,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|palettes_get_palette_entry_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|palettes_get_palette_entry_proc
 decl_stmt|;
 end_decl_stmt
@@ -133,7 +133,7 @@ modifier|*
 name|gimp
 parameter_list|)
 block|{
-name|ProcRecord
+name|GimpProcedure
 modifier|*
 name|procedure
 decl_stmt|;
@@ -454,12 +454,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|palettes_refresh_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|palettes_refresh_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|palettes_refresh_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -488,7 +488,7 @@ expr_stmt|;
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|TRUE
 argument_list|)
@@ -499,7 +499,7 @@ end_function
 begin_decl_stmt
 DECL|variable|palettes_refresh_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|palettes_refresh_proc
 init|=
 block|{
@@ -546,12 +546,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|palettes_get_list_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|palettes_get_list_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|palettes_get_list_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -638,7 +638,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -684,7 +684,7 @@ end_function
 begin_decl_stmt
 DECL|variable|palettes_get_list_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|palettes_get_list_proc
 init|=
 block|{
@@ -731,12 +731,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|palettes_get_palette_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|palettes_get_palette_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|palettes_get_palette_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -818,7 +818,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -864,7 +864,7 @@ end_function
 begin_decl_stmt
 DECL|variable|palettes_get_palette_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|palettes_get_palette_proc
 init|=
 block|{
@@ -911,12 +911,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|palettes_get_palette_entry_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|palettes_get_palette_entry_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|palettes_get_palette_entry_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -1125,7 +1125,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -1185,7 +1185,7 @@ end_function
 begin_decl_stmt
 DECL|variable|palettes_get_palette_entry_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|palettes_get_palette_entry_proc
 init|=
 block|{

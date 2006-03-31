@@ -133,9 +133,9 @@ name|Argument
 modifier|*
 name|plug_in_temp_run
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_rec
+name|procedure
 parameter_list|,
 name|GimpContext
 modifier|*
@@ -183,7 +183,7 @@ end_comment
 begin_function
 name|Argument
 modifier|*
-DECL|function|plug_in_run (Gimp * gimp,GimpContext * context,GimpProgress * progress,ProcRecord * proc_rec,Argument * args,gint n_args,gboolean synchronous,gboolean destroy_return_vals,gint display_ID)
+DECL|function|plug_in_run (Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpProcedure * procedure,Argument * args,gint n_args,gboolean synchronous,gboolean destroy_return_vals,gint display_ID)
 name|plug_in_run
 parameter_list|(
 name|Gimp
@@ -198,9 +198,9 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_rec
+name|procedure
 parameter_list|,
 name|Argument
 modifier|*
@@ -270,9 +270,10 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|proc_rec
-operator|!=
-name|NULL
+name|GIMP_IS_PROCEDURE
+argument_list|(
+name|procedure
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -292,7 +293,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|proc_rec
+name|procedure
 operator|->
 name|proc_type
 operator|==
@@ -303,7 +304,7 @@ name|return_vals
 operator|=
 name|plug_in_temp_run
 argument_list|(
-name|proc_rec
+name|procedure
 argument_list|,
 name|context
 argument_list|,
@@ -328,9 +329,9 @@ name|context
 argument_list|,
 name|progress
 argument_list|,
-name|proc_rec
+name|procedure
 argument_list|,
-name|proc_rec
+name|procedure
 operator|->
 name|exec_method
 operator|.
@@ -569,7 +570,7 @@ name|proc_run
 operator|.
 name|name
 operator|=
-name|proc_rec
+name|procedure
 operator|->
 name|original_name
 expr_stmt|;
@@ -635,7 +636,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_rec
+name|procedure
 argument_list|,
 name|FALSE
 argument_list|)
@@ -679,7 +680,7 @@ expr_stmt|;
 comment|/* If this is an extension,        * wait for an installation-confirmation message        */
 if|if
 condition|(
-name|proc_rec
+name|procedure
 operator|->
 name|proc_type
 operator|==
@@ -818,7 +819,7 @@ name|procedural_db_destroy_args
 argument_list|(
 name|return_vals
 argument_list|,
-name|proc_rec
+name|procedure
 operator|->
 name|num_values
 argument_list|,
@@ -1030,12 +1031,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|plug_in_temp_run (ProcRecord * proc_rec,GimpContext * context,GimpProgress * progress,Argument * args,gint n_args)
+DECL|function|plug_in_temp_run (GimpProcedure * procedure,GimpContext * context,GimpProgress * progress,Argument * args,gint n_args)
 name|plug_in_temp_run
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_rec
+name|procedure
 parameter_list|,
 name|GimpContext
 modifier|*
@@ -1074,7 +1075,7 @@ operator|(
 name|PlugIn
 operator|*
 operator|)
-name|proc_rec
+name|procedure
 operator|->
 name|exec_method
 operator|.
@@ -1104,14 +1105,14 @@ name|context
 argument_list|,
 name|progress
 argument_list|,
-name|proc_rec
+name|procedure
 argument_list|)
 expr_stmt|;
 name|proc_run
 operator|.
 name|name
 operator|=
-name|proc_rec
+name|procedure
 operator|->
 name|original_name
 expr_stmt|;
@@ -1164,7 +1165,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_rec
+name|procedure
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1297,7 +1298,7 @@ name|n_return_vals
 operator|=
 name|proc_frame
 operator|->
-name|proc_rec
+name|procedure
 operator|->
 name|num_values
 operator|+
@@ -1339,7 +1340,7 @@ name|gimp_procedure_get_return_values
 argument_list|(
 name|proc_frame
 operator|->
-name|proc_rec
+name|procedure
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1387,7 +1388,7 @@ name|gimp_procedure_get_return_values
 argument_list|(
 name|proc_frame
 operator|->
-name|proc_rec
+name|procedure
 argument_list|,
 name|FALSE
 argument_list|)

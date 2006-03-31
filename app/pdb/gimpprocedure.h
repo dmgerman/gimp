@@ -17,43 +17,6 @@ name|__GIMP_PROCEDURE_H__
 end_define
 
 begin_comment
-comment|/*  Argument marshalling procedures  */
-end_comment
-
-begin_typedef
-DECL|typedef|ArgMarshal
-typedef|typedef
-name|Argument
-modifier|*
-function_decl|(
-modifier|*
-name|ArgMarshal
-function_decl|)
-parameter_list|(
-name|ProcRecord
-modifier|*
-name|procedure
-parameter_list|,
-name|Gimp
-modifier|*
-name|gimp
-parameter_list|,
-name|GimpContext
-modifier|*
-name|context
-parameter_list|,
-name|GimpProgress
-modifier|*
-name|progress
-parameter_list|,
-name|Argument
-modifier|*
-name|args
-parameter_list|)
-function_decl|;
-end_typedef
-
-begin_comment
 comment|/*  Execution types  */
 end_comment
 
@@ -98,11 +61,36 @@ DECL|struct|_IntExec
 struct|struct
 name|_IntExec
 block|{
-DECL|member|marshal_func
-name|ArgMarshal
-name|marshal_func
-decl_stmt|;
 comment|/*  Function called to marshal arguments  */
+DECL|member|marshal_func
+name|Argument
+modifier|*
+function_decl|(
+modifier|*
+name|marshal_func
+function_decl|)
+parameter_list|(
+name|GimpProcedure
+modifier|*
+name|procedure
+parameter_list|,
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
+parameter_list|,
+name|Argument
+modifier|*
+name|args
+parameter_list|)
+function_decl|;
 block|}
 struct|;
 end_struct
@@ -112,12 +100,12 @@ DECL|struct|_PlugInExec
 struct|struct
 name|_PlugInExec
 block|{
+comment|/*  Where is the executable on disk?  */
 DECL|member|filename
 name|gchar
 modifier|*
 name|filename
 decl_stmt|;
-comment|/*  Where is the executable on disk?  */
 block|}
 struct|;
 end_struct
@@ -127,12 +115,12 @@ DECL|struct|_ExtExec
 struct|struct
 name|_ExtExec
 block|{
+comment|/*  Where is the executable on disk?  */
 DECL|member|filename
 name|gchar
 modifier|*
 name|filename
 decl_stmt|;
-comment|/*  Where is the executable on disk?  */
 block|}
 struct|;
 end_struct
@@ -142,24 +130,31 @@ DECL|struct|_TempExec
 struct|struct
 name|_TempExec
 block|{
+comment|/*  Plug-in that registered this temp proc  */
 DECL|member|plug_in
 name|void
 modifier|*
 name|plug_in
 decl_stmt|;
-comment|/*  Plug-in that registered this temp proc  */
 block|}
 struct|;
 end_struct
 
-begin_comment
-comment|/*  Structure for a procedure  */
-end_comment
+begin_define
+DECL|macro|GIMP_IS_PROCEDURE (obj)
+define|#
+directive|define
+name|GIMP_IS_PROCEDURE
+parameter_list|(
+name|obj
+parameter_list|)
+value|((obj) != NULL)
+end_define
 
 begin_struct
-DECL|struct|_ProcRecord
+DECL|struct|_GimpProcedure
 struct|struct
-name|_ProcRecord
+name|_GimpProcedure
 block|{
 comment|/*  Flags  */
 DECL|member|static_proc
@@ -285,7 +280,7 @@ struct|;
 end_struct
 
 begin_function_decl
-name|ProcRecord
+name|GimpProcedure
 modifier|*
 name|gimp_procedure_new
 parameter_list|(
@@ -298,7 +293,7 @@ begin_function_decl
 name|void
 name|gimp_procedure_free
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
 name|procedure
 parameter_list|)
@@ -306,11 +301,11 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|ProcRecord
+name|GimpProcedure
 modifier|*
 name|gimp_procedure_init
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
 name|procedure
 parameter_list|,
@@ -327,7 +322,7 @@ begin_function_decl
 name|void
 name|gimp_procedure_set_strings
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
 name|procedure
 parameter_list|,
@@ -370,7 +365,7 @@ begin_function_decl
 name|void
 name|gimp_procedure_set_static_strings
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
 name|procedure
 parameter_list|,
@@ -413,7 +408,7 @@ begin_function_decl
 name|void
 name|gimp_procedure_take_strings
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
 name|procedure
 parameter_list|,
@@ -456,7 +451,7 @@ begin_function_decl
 name|void
 name|gimp_procedure_add_argument
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
 name|procedure
 parameter_list|,
@@ -474,7 +469,7 @@ begin_function_decl
 name|void
 name|gimp_procedure_add_return_value
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
 name|procedure
 parameter_list|,
@@ -492,7 +487,7 @@ begin_function_decl
 name|void
 name|gimp_procedure_add_compat_arg
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
 name|procedure
 parameter_list|,
@@ -520,7 +515,7 @@ begin_function_decl
 name|void
 name|gimp_procedure_add_compat_value
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
 name|procedure
 parameter_list|,
@@ -549,8 +544,7 @@ name|Argument
 modifier|*
 name|gimp_procedure_get_arguments
 parameter_list|(
-specifier|const
-name|ProcRecord
+name|GimpProcedure
 modifier|*
 name|procedure
 parameter_list|)
@@ -562,8 +556,7 @@ name|Argument
 modifier|*
 name|gimp_procedure_get_return_values
 parameter_list|(
-specifier|const
-name|ProcRecord
+name|GimpProcedure
 modifier|*
 name|procedure
 parameter_list|,
@@ -578,7 +571,7 @@ name|Argument
 modifier|*
 name|gimp_procedure_execute
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
 name|procedure
 parameter_list|,

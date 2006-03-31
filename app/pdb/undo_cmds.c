@@ -70,7 +70,7 @@ end_include
 begin_decl_stmt
 DECL|variable|image_undo_group_start_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|image_undo_group_start_proc
 decl_stmt|;
 end_decl_stmt
@@ -78,7 +78,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|image_undo_group_end_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|image_undo_group_end_proc
 decl_stmt|;
 end_decl_stmt
@@ -86,7 +86,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|image_undo_is_enabled_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|image_undo_is_enabled_proc
 decl_stmt|;
 end_decl_stmt
@@ -94,7 +94,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|image_undo_disable_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|image_undo_disable_proc
 decl_stmt|;
 end_decl_stmt
@@ -102,7 +102,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|image_undo_enable_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|image_undo_enable_proc
 decl_stmt|;
 end_decl_stmt
@@ -110,7 +110,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|image_undo_freeze_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|image_undo_freeze_proc
 decl_stmt|;
 end_decl_stmt
@@ -118,7 +118,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|image_undo_thaw_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|image_undo_thaw_proc
 decl_stmt|;
 end_decl_stmt
@@ -133,7 +133,7 @@ modifier|*
 name|gimp
 parameter_list|)
 block|{
-name|ProcRecord
+name|GimpProcedure
 modifier|*
 name|procedure
 decl_stmt|;
@@ -524,12 +524,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_undo_group_start_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_undo_group_start_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_undo_group_start_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -620,7 +620,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -631,7 +631,7 @@ end_function
 begin_decl_stmt
 DECL|variable|image_undo_group_start_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|image_undo_group_start_proc
 init|=
 block|{
@@ -678,12 +678,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_undo_group_end_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_undo_group_end_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_undo_group_end_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -740,7 +740,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -751,7 +751,7 @@ end_function
 begin_decl_stmt
 DECL|variable|image_undo_group_end_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|image_undo_group_end_proc
 init|=
 block|{
@@ -798,12 +798,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_undo_is_enabled_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_undo_is_enabled_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_undo_is_enabled_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -872,7 +872,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -903,7 +903,7 @@ end_function
 begin_decl_stmt
 DECL|variable|image_undo_is_enabled_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|image_undo_is_enabled_proc
 init|=
 block|{
@@ -950,12 +950,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_undo_disable_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_undo_disable_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_undo_disable_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -1024,7 +1024,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -1055,7 +1055,7 @@ end_function
 begin_decl_stmt
 DECL|variable|image_undo_disable_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|image_undo_disable_proc
 init|=
 block|{
@@ -1102,12 +1102,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_undo_enable_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_undo_enable_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_undo_enable_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -1176,7 +1176,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -1207,7 +1207,7 @@ end_function
 begin_decl_stmt
 DECL|variable|image_undo_enable_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|image_undo_enable_proc
 init|=
 block|{
@@ -1254,12 +1254,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_undo_freeze_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_undo_freeze_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_undo_freeze_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -1328,7 +1328,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -1359,7 +1359,7 @@ end_function
 begin_decl_stmt
 DECL|variable|image_undo_freeze_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|image_undo_freeze_proc
 init|=
 block|{
@@ -1406,12 +1406,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_undo_thaw_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_undo_thaw_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_undo_thaw_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -1480,7 +1480,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -1511,7 +1511,7 @@ end_function
 begin_decl_stmt
 DECL|variable|image_undo_thaw_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|image_undo_thaw_proc
 init|=
 block|{

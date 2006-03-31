@@ -64,7 +64,7 @@ end_include
 begin_decl_stmt
 DECL|variable|floating_sel_remove_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|floating_sel_remove_proc
 decl_stmt|;
 end_decl_stmt
@@ -72,7 +72,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|floating_sel_anchor_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|floating_sel_anchor_proc
 decl_stmt|;
 end_decl_stmt
@@ -80,7 +80,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|floating_sel_to_layer_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|floating_sel_to_layer_proc
 decl_stmt|;
 end_decl_stmt
@@ -88,7 +88,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|floating_sel_attach_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|floating_sel_attach_proc
 decl_stmt|;
 end_decl_stmt
@@ -96,7 +96,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|floating_sel_rigor_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|floating_sel_rigor_proc
 decl_stmt|;
 end_decl_stmt
@@ -104,7 +104,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|floating_sel_relax_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|floating_sel_relax_proc
 decl_stmt|;
 end_decl_stmt
@@ -119,7 +119,7 @@ modifier|*
 name|gimp
 parameter_list|)
 block|{
-name|ProcRecord
+name|GimpProcedure
 modifier|*
 name|procedure
 decl_stmt|;
@@ -444,12 +444,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|floating_sel_remove_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|floating_sel_remove_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|floating_sel_remove_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -524,7 +524,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -535,7 +535,7 @@ end_function
 begin_decl_stmt
 DECL|variable|floating_sel_remove_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|floating_sel_remove_proc
 init|=
 block|{
@@ -582,12 +582,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|floating_sel_anchor_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|floating_sel_anchor_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|floating_sel_anchor_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -662,7 +662,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -673,7 +673,7 @@ end_function
 begin_decl_stmt
 DECL|variable|floating_sel_anchor_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|floating_sel_anchor_proc
 init|=
 block|{
@@ -720,12 +720,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|floating_sel_to_layer_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|floating_sel_to_layer_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|floating_sel_to_layer_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -800,7 +800,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -811,7 +811,7 @@ end_function
 begin_decl_stmt
 DECL|variable|floating_sel_to_layer_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|floating_sel_to_layer_proc
 init|=
 block|{
@@ -858,12 +858,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|floating_sel_attach_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|floating_sel_attach_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|floating_sel_attach_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -968,7 +968,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -979,7 +979,7 @@ end_function
 begin_decl_stmt
 DECL|variable|floating_sel_attach_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|floating_sel_attach_proc
 init|=
 block|{
@@ -1026,12 +1026,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|floating_sel_rigor_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|floating_sel_rigor_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|floating_sel_rigor_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -1124,7 +1124,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -1135,7 +1135,7 @@ end_function
 begin_decl_stmt
 DECL|variable|floating_sel_rigor_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|floating_sel_rigor_proc
 init|=
 block|{
@@ -1182,12 +1182,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|floating_sel_relax_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|floating_sel_relax_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|floating_sel_relax_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -1280,7 +1280,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -1291,7 +1291,7 @@ end_function
 begin_decl_stmt
 DECL|variable|floating_sel_relax_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|floating_sel_relax_proc
 init|=
 block|{

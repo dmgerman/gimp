@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"pdb/gimpprocedure.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"plug-in-proc-frame.h"
 end_include
 
@@ -68,7 +74,7 @@ end_comment
 begin_function
 name|PlugInProcFrame
 modifier|*
-DECL|function|plug_in_proc_frame_new (GimpContext * context,GimpProgress * progress,ProcRecord * proc_rec)
+DECL|function|plug_in_proc_frame_new (GimpContext * context,GimpProgress * progress,GimpProcedure * procedure)
 name|plug_in_proc_frame_new
 parameter_list|(
 name|GimpContext
@@ -79,9 +85,9 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_rec
+name|procedure
 parameter_list|)
 block|{
 name|PlugInProcFrame
@@ -114,9 +120,10 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|proc_rec
-operator|!=
-name|NULL
+name|GIMP_IS_PROCEDURE
+argument_list|(
+name|procedure
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -144,7 +151,7 @@ name|context
 argument_list|,
 name|progress
 argument_list|,
-name|proc_rec
+name|procedure
 argument_list|)
 expr_stmt|;
 return|return
@@ -155,7 +162,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|plug_in_proc_frame_init (PlugInProcFrame * proc_frame,GimpContext * context,GimpProgress * progress,ProcRecord * proc_rec)
+DECL|function|plug_in_proc_frame_init (PlugInProcFrame * proc_frame,GimpContext * context,GimpProgress * progress,GimpProcedure * procedure)
 name|plug_in_proc_frame_init
 parameter_list|(
 name|PlugInProcFrame
@@ -170,9 +177,9 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_rec
+name|procedure
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -219,9 +226,9 @@ name|NULL
 expr_stmt|;
 name|proc_frame
 operator|->
-name|proc_rec
+name|procedure
 operator|=
-name|proc_rec
+name|procedure
 expr_stmt|;
 name|proc_frame
 operator|->

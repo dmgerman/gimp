@@ -58,7 +58,7 @@ end_include
 begin_decl_stmt
 DECL|variable|unit_get_number_of_units_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|unit_get_number_of_units_proc
 decl_stmt|;
 end_decl_stmt
@@ -66,7 +66,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|unit_get_number_of_built_in_units_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|unit_get_number_of_built_in_units_proc
 decl_stmt|;
 end_decl_stmt
@@ -74,7 +74,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|unit_new_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|unit_new_proc
 decl_stmt|;
 end_decl_stmt
@@ -82,7 +82,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|unit_get_deletion_flag_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|unit_get_deletion_flag_proc
 decl_stmt|;
 end_decl_stmt
@@ -90,7 +90,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|unit_set_deletion_flag_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|unit_set_deletion_flag_proc
 decl_stmt|;
 end_decl_stmt
@@ -98,7 +98,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|unit_get_identifier_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|unit_get_identifier_proc
 decl_stmt|;
 end_decl_stmt
@@ -106,7 +106,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|unit_get_factor_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|unit_get_factor_proc
 decl_stmt|;
 end_decl_stmt
@@ -114,7 +114,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|unit_get_digits_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|unit_get_digits_proc
 decl_stmt|;
 end_decl_stmt
@@ -122,7 +122,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|unit_get_symbol_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|unit_get_symbol_proc
 decl_stmt|;
 end_decl_stmt
@@ -130,7 +130,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|unit_get_abbreviation_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|unit_get_abbreviation_proc
 decl_stmt|;
 end_decl_stmt
@@ -138,7 +138,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|unit_get_singular_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|unit_get_singular_proc
 decl_stmt|;
 end_decl_stmt
@@ -146,7 +146,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|unit_get_plural_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|unit_get_plural_proc
 decl_stmt|;
 end_decl_stmt
@@ -161,7 +161,7 @@ modifier|*
 name|gimp
 parameter_list|)
 block|{
-name|ProcRecord
+name|GimpProcedure
 modifier|*
 name|procedure
 decl_stmt|;
@@ -1078,12 +1078,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|unit_get_number_of_units_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|unit_get_number_of_units_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|unit_get_number_of_units_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -1122,7 +1122,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|TRUE
 argument_list|)
@@ -1149,7 +1149,7 @@ end_function
 begin_decl_stmt
 DECL|variable|unit_get_number_of_units_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|unit_get_number_of_units_proc
 init|=
 block|{
@@ -1196,12 +1196,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|unit_get_number_of_built_in_units_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|unit_get_number_of_built_in_units_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|unit_get_number_of_built_in_units_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -1240,7 +1240,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|TRUE
 argument_list|)
@@ -1267,7 +1267,7 @@ end_function
 begin_decl_stmt
 DECL|variable|unit_get_number_of_built_in_units_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|unit_get_number_of_built_in_units_proc
 init|=
 block|{
@@ -1314,12 +1314,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|unit_new_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|unit_new_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|unit_new_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -1520,7 +1520,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -1551,7 +1551,7 @@ end_function
 begin_decl_stmt
 DECL|variable|unit_new_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|unit_new_proc
 init|=
 block|{
@@ -1598,12 +1598,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|unit_get_deletion_flag_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|unit_get_deletion_flag_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|unit_get_deletion_flag_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -1671,7 +1671,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -1702,7 +1702,7 @@ end_function
 begin_decl_stmt
 DECL|variable|unit_get_deletion_flag_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|unit_get_deletion_flag_proc
 init|=
 block|{
@@ -1749,12 +1749,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|unit_set_deletion_flag_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|unit_set_deletion_flag_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|unit_set_deletion_flag_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -1828,7 +1828,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -1839,7 +1839,7 @@ end_function
 begin_decl_stmt
 DECL|variable|unit_set_deletion_flag_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|unit_set_deletion_flag_proc
 init|=
 block|{
@@ -1886,12 +1886,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|unit_get_identifier_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|unit_get_identifier_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|unit_get_identifier_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -1963,7 +1963,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -1994,7 +1994,7 @@ end_function
 begin_decl_stmt
 DECL|variable|unit_get_identifier_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|unit_get_identifier_proc
 init|=
 block|{
@@ -2041,12 +2041,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|unit_get_factor_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|unit_get_factor_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|unit_get_factor_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -2114,7 +2114,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -2145,7 +2145,7 @@ end_function
 begin_decl_stmt
 DECL|variable|unit_get_factor_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|unit_get_factor_proc
 init|=
 block|{
@@ -2192,12 +2192,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|unit_get_digits_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|unit_get_digits_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|unit_get_digits_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -2265,7 +2265,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -2296,7 +2296,7 @@ end_function
 begin_decl_stmt
 DECL|variable|unit_get_digits_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|unit_get_digits_proc
 init|=
 block|{
@@ -2343,12 +2343,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|unit_get_symbol_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|unit_get_symbol_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|unit_get_symbol_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -2420,7 +2420,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -2451,7 +2451,7 @@ end_function
 begin_decl_stmt
 DECL|variable|unit_get_symbol_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|unit_get_symbol_proc
 init|=
 block|{
@@ -2498,12 +2498,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|unit_get_abbreviation_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|unit_get_abbreviation_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|unit_get_abbreviation_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -2575,7 +2575,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -2606,7 +2606,7 @@ end_function
 begin_decl_stmt
 DECL|variable|unit_get_abbreviation_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|unit_get_abbreviation_proc
 init|=
 block|{
@@ -2653,12 +2653,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|unit_get_singular_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|unit_get_singular_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|unit_get_singular_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -2730,7 +2730,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -2761,7 +2761,7 @@ end_function
 begin_decl_stmt
 DECL|variable|unit_get_singular_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|unit_get_singular_proc
 init|=
 block|{
@@ -2808,12 +2808,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|unit_get_plural_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|unit_get_plural_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|unit_get_plural_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -2885,7 +2885,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -2916,7 +2916,7 @@ end_function
 begin_decl_stmt
 DECL|variable|unit_get_plural_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|unit_get_plural_proc
 init|=
 block|{

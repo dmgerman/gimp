@@ -130,7 +130,7 @@ end_include
 begin_decl_stmt
 DECL|variable|drawable_delete_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_delete_proc
 decl_stmt|;
 end_decl_stmt
@@ -138,7 +138,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|drawable_is_layer_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_is_layer_proc
 decl_stmt|;
 end_decl_stmt
@@ -146,7 +146,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|drawable_is_layer_mask_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_is_layer_mask_proc
 decl_stmt|;
 end_decl_stmt
@@ -154,7 +154,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|drawable_is_channel_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_is_channel_proc
 decl_stmt|;
 end_decl_stmt
@@ -162,7 +162,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|drawable_type_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_type_proc
 decl_stmt|;
 end_decl_stmt
@@ -170,7 +170,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|drawable_type_with_alpha_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_type_with_alpha_proc
 decl_stmt|;
 end_decl_stmt
@@ -178,7 +178,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|drawable_has_alpha_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_has_alpha_proc
 decl_stmt|;
 end_decl_stmt
@@ -186,7 +186,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|drawable_is_rgb_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_is_rgb_proc
 decl_stmt|;
 end_decl_stmt
@@ -194,7 +194,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|drawable_is_gray_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_is_gray_proc
 decl_stmt|;
 end_decl_stmt
@@ -202,7 +202,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|drawable_is_indexed_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_is_indexed_proc
 decl_stmt|;
 end_decl_stmt
@@ -210,7 +210,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|drawable_bpp_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_bpp_proc
 decl_stmt|;
 end_decl_stmt
@@ -218,7 +218,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|drawable_width_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_width_proc
 decl_stmt|;
 end_decl_stmt
@@ -226,7 +226,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|drawable_height_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_height_proc
 decl_stmt|;
 end_decl_stmt
@@ -234,7 +234,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|drawable_offsets_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_offsets_proc
 decl_stmt|;
 end_decl_stmt
@@ -242,7 +242,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|drawable_get_image_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_get_image_proc
 decl_stmt|;
 end_decl_stmt
@@ -250,7 +250,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|drawable_set_image_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_set_image_proc
 decl_stmt|;
 end_decl_stmt
@@ -258,7 +258,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|drawable_get_name_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_get_name_proc
 decl_stmt|;
 end_decl_stmt
@@ -266,7 +266,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|drawable_set_name_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_set_name_proc
 decl_stmt|;
 end_decl_stmt
@@ -274,7 +274,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|drawable_get_visible_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_get_visible_proc
 decl_stmt|;
 end_decl_stmt
@@ -282,7 +282,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|drawable_set_visible_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_set_visible_proc
 decl_stmt|;
 end_decl_stmt
@@ -290,7 +290,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|drawable_get_linked_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_get_linked_proc
 decl_stmt|;
 end_decl_stmt
@@ -298,7 +298,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|drawable_set_linked_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_set_linked_proc
 decl_stmt|;
 end_decl_stmt
@@ -306,7 +306,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|drawable_get_tattoo_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_get_tattoo_proc
 decl_stmt|;
 end_decl_stmt
@@ -314,7 +314,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|drawable_set_tattoo_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_set_tattoo_proc
 decl_stmt|;
 end_decl_stmt
@@ -322,7 +322,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|drawable_mask_bounds_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_mask_bounds_proc
 decl_stmt|;
 end_decl_stmt
@@ -330,7 +330,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|drawable_mask_intersect_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_mask_intersect_proc
 decl_stmt|;
 end_decl_stmt
@@ -338,7 +338,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|drawable_merge_shadow_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_merge_shadow_proc
 decl_stmt|;
 end_decl_stmt
@@ -346,7 +346,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|drawable_update_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_update_proc
 decl_stmt|;
 end_decl_stmt
@@ -354,7 +354,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|drawable_get_pixel_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_get_pixel_proc
 decl_stmt|;
 end_decl_stmt
@@ -362,7 +362,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|drawable_set_pixel_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_set_pixel_proc
 decl_stmt|;
 end_decl_stmt
@@ -370,7 +370,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|drawable_fill_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_fill_proc
 decl_stmt|;
 end_decl_stmt
@@ -378,7 +378,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|drawable_offset_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_offset_proc
 decl_stmt|;
 end_decl_stmt
@@ -386,7 +386,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|drawable_thumbnail_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_thumbnail_proc
 decl_stmt|;
 end_decl_stmt
@@ -394,7 +394,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|drawable_sub_thumbnail_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_sub_thumbnail_proc
 decl_stmt|;
 end_decl_stmt
@@ -402,7 +402,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|drawable_foreground_extract_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_foreground_extract_proc
 decl_stmt|;
 end_decl_stmt
@@ -417,7 +417,7 @@ modifier|*
 name|gimp
 parameter_list|)
 block|{
-name|ProcRecord
+name|GimpProcedure
 modifier|*
 name|procedure
 decl_stmt|;
@@ -3577,12 +3577,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_delete_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|drawable_delete_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|drawable_delete_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -3663,7 +3663,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -3674,7 +3674,7 @@ end_function
 begin_decl_stmt
 DECL|variable|drawable_delete_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_delete_proc
 init|=
 block|{
@@ -3721,12 +3721,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_is_layer_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|drawable_is_layer_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|drawable_is_layer_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -3801,7 +3801,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -3832,7 +3832,7 @@ end_function
 begin_decl_stmt
 DECL|variable|drawable_is_layer_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_is_layer_proc
 init|=
 block|{
@@ -3879,12 +3879,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_is_layer_mask_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|drawable_is_layer_mask_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|drawable_is_layer_mask_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -3959,7 +3959,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -3990,7 +3990,7 @@ end_function
 begin_decl_stmt
 DECL|variable|drawable_is_layer_mask_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_is_layer_mask_proc
 init|=
 block|{
@@ -4037,12 +4037,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_is_channel_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|drawable_is_channel_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|drawable_is_channel_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -4117,7 +4117,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -4148,7 +4148,7 @@ end_function
 begin_decl_stmt
 DECL|variable|drawable_is_channel_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_is_channel_proc
 init|=
 block|{
@@ -4195,12 +4195,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_type_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|drawable_type_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|drawable_type_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -4275,7 +4275,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -4306,7 +4306,7 @@ end_function
 begin_decl_stmt
 DECL|variable|drawable_type_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_type_proc
 init|=
 block|{
@@ -4353,12 +4353,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_type_with_alpha_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|drawable_type_with_alpha_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|drawable_type_with_alpha_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -4433,7 +4433,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -4464,7 +4464,7 @@ end_function
 begin_decl_stmt
 DECL|variable|drawable_type_with_alpha_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_type_with_alpha_proc
 init|=
 block|{
@@ -4511,12 +4511,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_has_alpha_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|drawable_has_alpha_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|drawable_has_alpha_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -4591,7 +4591,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -4622,7 +4622,7 @@ end_function
 begin_decl_stmt
 DECL|variable|drawable_has_alpha_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_has_alpha_proc
 init|=
 block|{
@@ -4669,12 +4669,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_is_rgb_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|drawable_is_rgb_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|drawable_is_rgb_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -4749,7 +4749,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -4780,7 +4780,7 @@ end_function
 begin_decl_stmt
 DECL|variable|drawable_is_rgb_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_is_rgb_proc
 init|=
 block|{
@@ -4827,12 +4827,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_is_gray_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|drawable_is_gray_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|drawable_is_gray_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -4907,7 +4907,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -4938,7 +4938,7 @@ end_function
 begin_decl_stmt
 DECL|variable|drawable_is_gray_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_is_gray_proc
 init|=
 block|{
@@ -4985,12 +4985,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_is_indexed_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|drawable_is_indexed_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|drawable_is_indexed_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -5065,7 +5065,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -5096,7 +5096,7 @@ end_function
 begin_decl_stmt
 DECL|variable|drawable_is_indexed_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_is_indexed_proc
 init|=
 block|{
@@ -5143,12 +5143,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_bpp_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|drawable_bpp_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|drawable_bpp_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -5223,7 +5223,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -5254,7 +5254,7 @@ end_function
 begin_decl_stmt
 DECL|variable|drawable_bpp_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_bpp_proc
 init|=
 block|{
@@ -5301,12 +5301,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_width_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|drawable_width_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|drawable_width_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -5384,7 +5384,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -5415,7 +5415,7 @@ end_function
 begin_decl_stmt
 DECL|variable|drawable_width_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_width_proc
 init|=
 block|{
@@ -5462,12 +5462,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_height_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|drawable_height_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|drawable_height_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -5545,7 +5545,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -5576,7 +5576,7 @@ end_function
 begin_decl_stmt
 DECL|variable|drawable_height_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_height_proc
 init|=
 block|{
@@ -5623,12 +5623,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_offsets_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|drawable_offsets_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|drawable_offsets_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -5715,7 +5715,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -5761,7 +5761,7 @@ end_function
 begin_decl_stmt
 DECL|variable|drawable_offsets_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_offsets_proc
 init|=
 block|{
@@ -5808,12 +5808,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_get_image_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|drawable_get_image_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|drawable_get_image_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -5892,7 +5892,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -5923,7 +5923,7 @@ end_function
 begin_decl_stmt
 DECL|variable|drawable_get_image_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_get_image_proc
 init|=
 block|{
@@ -5970,12 +5970,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_set_image_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|drawable_set_image_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|drawable_set_image_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -6068,7 +6068,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -6079,7 +6079,7 @@ end_function
 begin_decl_stmt
 DECL|variable|drawable_set_image_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_set_image_proc
 init|=
 block|{
@@ -6126,12 +6126,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_get_name_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|drawable_get_name_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|drawable_get_name_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -6213,7 +6213,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -6244,7 +6244,7 @@ end_function
 begin_decl_stmt
 DECL|variable|drawable_get_name_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_get_name_proc
 init|=
 block|{
@@ -6291,12 +6291,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_set_name_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|drawable_set_name_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|drawable_set_name_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -6387,7 +6387,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -6398,7 +6398,7 @@ end_function
 begin_decl_stmt
 DECL|variable|drawable_set_name_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_set_name_proc
 init|=
 block|{
@@ -6445,12 +6445,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_get_visible_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|drawable_get_visible_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|drawable_get_visible_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -6528,7 +6528,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -6559,7 +6559,7 @@ end_function
 begin_decl_stmt
 DECL|variable|drawable_get_visible_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_get_visible_proc
 init|=
 block|{
@@ -6606,12 +6606,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_set_visible_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|drawable_set_visible_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|drawable_set_visible_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -6697,7 +6697,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -6708,7 +6708,7 @@ end_function
 begin_decl_stmt
 DECL|variable|drawable_set_visible_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_set_visible_proc
 init|=
 block|{
@@ -6755,12 +6755,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_get_linked_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|drawable_get_linked_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|drawable_get_linked_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -6838,7 +6838,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -6869,7 +6869,7 @@ end_function
 begin_decl_stmt
 DECL|variable|drawable_get_linked_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_get_linked_proc
 init|=
 block|{
@@ -6916,12 +6916,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_set_linked_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|drawable_set_linked_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|drawable_set_linked_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -7007,7 +7007,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -7018,7 +7018,7 @@ end_function
 begin_decl_stmt
 DECL|variable|drawable_set_linked_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_set_linked_proc
 init|=
 block|{
@@ -7065,12 +7065,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_get_tattoo_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|drawable_get_tattoo_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|drawable_get_tattoo_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -7148,7 +7148,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -7179,7 +7179,7 @@ end_function
 begin_decl_stmt
 DECL|variable|drawable_get_tattoo_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_get_tattoo_proc
 init|=
 block|{
@@ -7226,12 +7226,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_set_tattoo_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|drawable_set_tattoo_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|drawable_set_tattoo_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -7315,7 +7315,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -7326,7 +7326,7 @@ end_function
 begin_decl_stmt
 DECL|variable|drawable_set_tattoo_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_set_tattoo_proc
 init|=
 block|{
@@ -7373,12 +7373,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_mask_bounds_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|drawable_mask_bounds_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|drawable_mask_bounds_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -7485,7 +7485,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -7570,7 +7570,7 @@ end_function
 begin_decl_stmt
 DECL|variable|drawable_mask_bounds_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_mask_bounds_proc
 init|=
 block|{
@@ -7617,12 +7617,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_mask_intersect_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|drawable_mask_intersect_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|drawable_mask_intersect_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -7729,7 +7729,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -7814,7 +7814,7 @@ end_function
 begin_decl_stmt
 DECL|variable|drawable_mask_intersect_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_mask_intersect_proc
 init|=
 block|{
@@ -7861,12 +7861,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_merge_shadow_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|drawable_merge_shadow_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|drawable_merge_shadow_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -8007,7 +8007,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -8018,7 +8018,7 @@ end_function
 begin_decl_stmt
 DECL|variable|drawable_merge_shadow_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_merge_shadow_proc
 init|=
 block|{
@@ -8065,12 +8065,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_update_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|drawable_update_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|drawable_update_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -8205,7 +8205,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -8216,7 +8216,7 @@ end_function
 begin_decl_stmt
 DECL|variable|drawable_update_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_update_proc
 init|=
 block|{
@@ -8263,12 +8263,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_get_pixel_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|drawable_get_pixel_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|drawable_get_pixel_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -8497,7 +8497,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -8543,7 +8543,7 @@ end_function
 begin_decl_stmt
 DECL|variable|drawable_get_pixel_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_get_pixel_proc
 init|=
 block|{
@@ -8590,12 +8590,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_set_pixel_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|drawable_set_pixel_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|drawable_set_pixel_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -8830,7 +8830,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -8841,7 +8841,7 @@ end_function
 begin_decl_stmt
 DECL|variable|drawable_set_pixel_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_set_pixel_proc
 init|=
 block|{
@@ -8888,12 +8888,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_fill_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|drawable_fill_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|drawable_fill_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -8979,7 +8979,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -8990,7 +8990,7 @@ end_function
 begin_decl_stmt
 DECL|variable|drawable_fill_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_fill_proc
 init|=
 block|{
@@ -9037,12 +9037,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_offset_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|drawable_offset_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|drawable_offset_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -9194,7 +9194,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -9205,7 +9205,7 @@ end_function
 begin_decl_stmt
 DECL|variable|drawable_offset_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_offset_proc
 init|=
 block|{
@@ -9252,12 +9252,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_thumbnail_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|drawable_thumbnail_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|drawable_thumbnail_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -9559,7 +9559,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -9644,7 +9644,7 @@ end_function
 begin_decl_stmt
 DECL|variable|drawable_thumbnail_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_thumbnail_proc
 init|=
 block|{
@@ -9691,12 +9691,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_sub_thumbnail_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|drawable_sub_thumbnail_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|drawable_sub_thumbnail_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -10047,7 +10047,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -10132,7 +10132,7 @@ end_function
 begin_decl_stmt
 DECL|variable|drawable_sub_thumbnail_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_sub_thumbnail_proc
 init|=
 block|{
@@ -10179,12 +10179,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_foreground_extract_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|drawable_foreground_extract_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|drawable_foreground_extract_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -10309,7 +10309,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -10320,7 +10320,7 @@ end_function
 begin_decl_stmt
 DECL|variable|drawable_foreground_extract_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|drawable_foreground_extract_proc
 init|=
 block|{

@@ -3596,16 +3596,16 @@ end_function
 begin_function
 name|PlugInProcDef
 modifier|*
-DECL|function|plug_ins_proc_def_find (Gimp * gimp,ProcRecord * proc_rec)
+DECL|function|plug_ins_proc_def_find (Gimp * gimp,GimpProcedure * procedure)
 name|plug_ins_proc_def_find
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_rec
+name|procedure
 parameter_list|)
 block|{
 name|GSList
@@ -3624,9 +3624,10 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|proc_rec
-operator|!=
-name|NULL
+name|GIMP_IS_PROCEDURE
+argument_list|(
+name|procedure
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -3658,7 +3659,7 @@ name|data
 decl_stmt|;
 if|if
 condition|(
-name|proc_rec
+name|procedure
 operator|==
 name|proc_def
 operator|->

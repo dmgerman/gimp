@@ -82,7 +82,7 @@ end_include
 begin_decl_stmt
 DECL|variable|gimprc_query_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gimprc_query_proc
 decl_stmt|;
 end_decl_stmt
@@ -90,7 +90,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|gimprc_set_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gimprc_set_proc
 decl_stmt|;
 end_decl_stmt
@@ -98,7 +98,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|get_default_comment_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|get_default_comment_proc
 decl_stmt|;
 end_decl_stmt
@@ -106,7 +106,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|get_monitor_resolution_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|get_monitor_resolution_proc
 decl_stmt|;
 end_decl_stmt
@@ -114,7 +114,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|get_theme_dir_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|get_theme_dir_proc
 decl_stmt|;
 end_decl_stmt
@@ -122,7 +122,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|get_color_configuration_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|get_color_configuration_proc
 decl_stmt|;
 end_decl_stmt
@@ -130,7 +130,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|get_module_load_inhibit_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|get_module_load_inhibit_proc
 decl_stmt|;
 end_decl_stmt
@@ -145,7 +145,7 @@ modifier|*
 name|gimp
 parameter_list|)
 block|{
-name|ProcRecord
+name|GimpProcedure
 modifier|*
 name|procedure
 decl_stmt|;
@@ -538,12 +538,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gimprc_query_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|gimprc_query_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gimprc_query_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -646,7 +646,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -677,7 +677,7 @@ end_function
 begin_decl_stmt
 DECL|variable|gimprc_query_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gimprc_query_proc
 init|=
 block|{
@@ -724,12 +724,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gimprc_set_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|gimprc_set_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gimprc_set_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -833,7 +833,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -844,7 +844,7 @@ end_function
 begin_decl_stmt
 DECL|variable|gimprc_set_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gimprc_set_proc
 init|=
 block|{
@@ -891,12 +891,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|get_default_comment_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|get_default_comment_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|get_default_comment_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -942,7 +942,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|TRUE
 argument_list|)
@@ -969,7 +969,7 @@ end_function
 begin_decl_stmt
 DECL|variable|get_default_comment_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|get_default_comment_proc
 init|=
 block|{
@@ -1016,12 +1016,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|get_monitor_resolution_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|get_monitor_resolution_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|get_monitor_resolution_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -1080,7 +1080,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|TRUE
 argument_list|)
@@ -1120,7 +1120,7 @@ end_function
 begin_decl_stmt
 DECL|variable|get_monitor_resolution_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|get_monitor_resolution_proc
 init|=
 block|{
@@ -1167,12 +1167,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|get_theme_dir_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|get_theme_dir_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|get_theme_dir_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -1215,7 +1215,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|TRUE
 argument_list|)
@@ -1242,7 +1242,7 @@ end_function
 begin_decl_stmt
 DECL|variable|get_theme_dir_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|get_theme_dir_proc
 init|=
 block|{
@@ -1289,12 +1289,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|get_color_configuration_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|get_color_configuration_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|get_color_configuration_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -1343,7 +1343,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|TRUE
 argument_list|)
@@ -1370,7 +1370,7 @@ end_function
 begin_decl_stmt
 DECL|variable|get_color_configuration_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|get_color_configuration_proc
 init|=
 block|{
@@ -1417,12 +1417,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|get_module_load_inhibit_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|get_module_load_inhibit_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|get_module_load_inhibit_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -1467,7 +1467,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|TRUE
 argument_list|)
@@ -1494,7 +1494,7 @@ end_function
 begin_decl_stmt
 DECL|variable|get_module_load_inhibit_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|get_module_load_inhibit_proc
 init|=
 block|{

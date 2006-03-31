@@ -41,18 +41,18 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|ProcRecord
+DECL|typedef|GimpProcedure
 typedef|typedef
 name|struct
-name|_ProcRecord
-name|ProcRecord
+name|_GimpProcedure
+name|GimpProcedure
 typedef|;
 end_typedef
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b48f0580103
+DECL|enum|__anon2be6814e0103
 block|{
 DECL|enumerator|GIMP_PDB_COMPAT_OFF
 name|GIMP_PDB_COMPAT_OFF

@@ -188,9 +188,9 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc
+name|procedure
 parameter_list|,
 name|gboolean
 name|return_value
@@ -248,7 +248,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon29551def0103
+DECL|enum|__anon2b8c17580103
 block|{
 DECL|enumerator|PROTOCOL_VERSION
 name|PROTOCOL_VERSION
@@ -1163,7 +1163,7 @@ modifier|*
 name|proc_def
 parameter_list|)
 block|{
-name|ProcRecord
+name|GimpProcedure
 modifier|*
 name|procedure
 decl_stmt|;
@@ -2342,7 +2342,7 @@ end_function
 begin_function
 specifier|static
 name|GTokenType
-DECL|function|plug_in_proc_arg_deserialize (GScanner * scanner,Gimp * gimp,ProcRecord * proc,gboolean return_value)
+DECL|function|plug_in_proc_arg_deserialize (GScanner * scanner,Gimp * gimp,GimpProcedure * procedure,gboolean return_value)
 name|plug_in_proc_arg_deserialize
 parameter_list|(
 name|GScanner
@@ -2353,9 +2353,9 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc
+name|procedure
 parameter_list|,
 name|gboolean
 name|return_value
@@ -2521,7 +2521,7 @@ name|return_value
 condition|)
 name|gimp_procedure_add_compat_value
 argument_list|(
-name|proc
+name|procedure
 argument_list|,
 name|gimp
 argument_list|,
@@ -2535,7 +2535,7 @@ expr_stmt|;
 else|else
 name|gimp_procedure_add_compat_arg
 argument_list|(
-name|proc
+name|procedure
 argument_list|,
 name|gimp
 argument_list|,
@@ -2960,7 +2960,7 @@ name|list2
 operator|->
 name|data
 decl_stmt|;
-name|ProcRecord
+name|GimpProcedure
 modifier|*
 name|procedure
 init|=

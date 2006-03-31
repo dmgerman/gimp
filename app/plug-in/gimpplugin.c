@@ -903,7 +903,7 @@ end_function
 begin_function
 name|PlugIn
 modifier|*
-DECL|function|plug_in_new (Gimp * gimp,GimpContext * context,GimpProgress * progress,ProcRecord * proc_rec,const gchar * prog)
+DECL|function|plug_in_new (Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpProcedure * procedure,const gchar * prog)
 name|plug_in_new
 parameter_list|(
 name|Gimp
@@ -918,9 +918,9 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_rec
+name|procedure
 parameter_list|,
 specifier|const
 name|gchar
@@ -1113,7 +1113,7 @@ name|context
 argument_list|,
 name|progress
 argument_list|,
-name|proc_rec
+name|procedure
 argument_list|)
 expr_stmt|;
 name|plug_in
@@ -3500,7 +3500,7 @@ end_function
 begin_function
 name|PlugInProcFrame
 modifier|*
-DECL|function|plug_in_proc_frame_push (PlugIn * plug_in,GimpContext * context,GimpProgress * progress,ProcRecord * proc_rec)
+DECL|function|plug_in_proc_frame_push (PlugIn * plug_in,GimpContext * context,GimpProgress * progress,GimpProcedure * procedure)
 name|plug_in_proc_frame_push
 parameter_list|(
 name|PlugIn
@@ -3515,9 +3515,9 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_rec
+name|procedure
 parameter_list|)
 block|{
 name|PlugInProcFrame
@@ -3559,9 +3559,10 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|proc_rec
-operator|!=
-name|NULL
+name|GIMP_IS_PROCEDURE
+argument_list|(
+name|procedure
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -3574,7 +3575,7 @@ name|context
 argument_list|,
 name|progress
 argument_list|,
-name|proc_rec
+name|procedure
 argument_list|)
 expr_stmt|;
 name|plug_in
@@ -3880,7 +3881,7 @@ name|gimp
 argument_list|,
 name|proc_frame
 operator|->
-name|proc_rec
+name|procedure
 argument_list|)
 expr_stmt|;
 if|if

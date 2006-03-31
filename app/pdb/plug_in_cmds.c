@@ -112,7 +112,7 @@ end_include
 begin_decl_stmt
 DECL|variable|plugins_query_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|plugins_query_proc
 decl_stmt|;
 end_decl_stmt
@@ -120,7 +120,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|plugin_domain_register_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|plugin_domain_register_proc
 decl_stmt|;
 end_decl_stmt
@@ -128,7 +128,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|plugin_help_register_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|plugin_help_register_proc
 decl_stmt|;
 end_decl_stmt
@@ -136,7 +136,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|plugin_menu_register_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|plugin_menu_register_proc
 decl_stmt|;
 end_decl_stmt
@@ -144,7 +144,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|plugin_menu_branch_register_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|plugin_menu_branch_register_proc
 decl_stmt|;
 end_decl_stmt
@@ -152,7 +152,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|plugin_icon_register_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|plugin_icon_register_proc
 decl_stmt|;
 end_decl_stmt
@@ -167,7 +167,7 @@ modifier|*
 name|gimp
 parameter_list|)
 block|{
-name|ProcRecord
+name|GimpProcedure
 modifier|*
 name|procedure
 decl_stmt|;
@@ -858,12 +858,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|plugins_query_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|plugins_query_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|plugins_query_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -984,7 +984,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|TRUE
 argument_list|)
@@ -1154,7 +1154,7 @@ end_function
 begin_decl_stmt
 DECL|variable|plugins_query_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|plugins_query_proc
 init|=
 block|{
@@ -1201,12 +1201,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|plugin_domain_register_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|plugin_domain_register_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|plugin_domain_register_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -1322,7 +1322,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -1333,7 +1333,7 @@ end_function
 begin_decl_stmt
 DECL|variable|plugin_domain_register_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|plugin_domain_register_proc
 init|=
 block|{
@@ -1380,12 +1380,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|plugin_help_register_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|plugin_help_register_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|plugin_help_register_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -1501,7 +1501,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -1512,7 +1512,7 @@ end_function
 begin_decl_stmt
 DECL|variable|plugin_help_register_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|plugin_help_register_proc
 init|=
 block|{
@@ -1559,12 +1559,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|plugin_menu_register_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|plugin_menu_register_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|plugin_menu_register_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -1681,7 +1681,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -1692,7 +1692,7 @@ end_function
 begin_decl_stmt
 DECL|variable|plugin_menu_register_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|plugin_menu_register_proc
 init|=
 block|{
@@ -1739,12 +1739,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|plugin_menu_branch_register_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|plugin_menu_branch_register_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|plugin_menu_branch_register_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -1876,7 +1876,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -1887,7 +1887,7 @@ end_function
 begin_decl_stmt
 DECL|variable|plugin_menu_branch_register_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|plugin_menu_branch_register_proc
 init|=
 block|{
@@ -1934,12 +1934,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|plugin_icon_register_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|plugin_icon_register_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|plugin_icon_register_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -2116,7 +2116,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -2127,7 +2127,7 @@ end_function
 begin_decl_stmt
 DECL|variable|plugin_icon_register_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|plugin_icon_register_proc
 init|=
 block|{

@@ -82,7 +82,7 @@ end_include
 begin_decl_stmt
 DECL|variable|image_convert_rgb_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|image_convert_rgb_proc
 decl_stmt|;
 end_decl_stmt
@@ -90,7 +90,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|image_convert_grayscale_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|image_convert_grayscale_proc
 decl_stmt|;
 end_decl_stmt
@@ -98,7 +98,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|image_convert_indexed_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|image_convert_indexed_proc
 decl_stmt|;
 end_decl_stmt
@@ -113,7 +113,7 @@ modifier|*
 name|gimp
 parameter_list|)
 block|{
-name|ProcRecord
+name|GimpProcedure
 modifier|*
 name|procedure
 decl_stmt|;
@@ -376,12 +376,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_convert_rgb_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_convert_rgb_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_convert_rgb_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -468,7 +468,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -479,7 +479,7 @@ end_function
 begin_decl_stmt
 DECL|variable|image_convert_rgb_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|image_convert_rgb_proc
 init|=
 block|{
@@ -526,12 +526,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_convert_grayscale_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_convert_grayscale_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_convert_grayscale_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -618,7 +618,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -629,7 +629,7 @@ end_function
 begin_decl_stmt
 DECL|variable|image_convert_grayscale_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|image_convert_grayscale_proc
 init|=
 block|{
@@ -676,12 +676,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_convert_indexed_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|image_convert_indexed_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_convert_indexed_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -938,7 +938,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -949,7 +949,7 @@ end_function
 begin_decl_stmt
 DECL|variable|image_convert_indexed_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|image_convert_indexed_proc
 init|=
 block|{

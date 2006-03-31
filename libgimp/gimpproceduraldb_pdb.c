@@ -386,18 +386,18 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_procedural_db_proc_info:  * @procedure: The procedure name.  * @blurb: A short blurb.  * @help: Detailed procedure help.  * @author: Author(s) of the procedure.  * @copyright: The copyright.  * @date: Copyright date.  * @proc_type: The procedure type.  * @num_args: The number of input arguments.  * @num_values: The number of return values.  *  * Queries the procedural database for information on the specified  * procedure.  *  * This procedure returns information on the specified procedure. A  * short blurb, detailed help, author(s), copyright information,  * procedure type, number of input, and number of return values are  * returned. For specific information on each input argument and return  * value, use the 'gimp_procedural_db_proc_arg' and  * 'gimp_procedural_db_proc_val' procedures.  *  * Returns: TRUE on success.  */
+comment|/**  * _gimp_procedural_db_proc_info:  * @procedure_name: The procedure name.  * @blurb: A short blurb.  * @help: Detailed procedure help.  * @author: Author(s) of the procedure.  * @copyright: The copyright.  * @date: Copyright date.  * @proc_type: The procedure type.  * @num_args: The number of input arguments.  * @num_values: The number of return values.  *  * Queries the procedural database for information on the specified  * procedure.  *  * This procedure returns information on the specified procedure. A  * short blurb, detailed help, author(s), copyright information,  * procedure type, number of input, and number of return values are  * returned. For specific information on each input argument and return  * value, use the 'gimp_procedural_db_proc_arg' and  * 'gimp_procedural_db_proc_val' procedures.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|_gimp_procedural_db_proc_info (const gchar * procedure,gchar ** blurb,gchar ** help,gchar ** author,gchar ** copyright,gchar ** date,GimpPDBProcType * proc_type,gint * num_args,gint * num_values)
+DECL|function|_gimp_procedural_db_proc_info (const gchar * procedure_name,gchar ** blurb,gchar ** help,gchar ** author,gchar ** copyright,gchar ** date,GimpPDBProcType * proc_type,gint * num_args,gint * num_values)
 name|_gimp_procedural_db_proc_info
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
-name|procedure
+name|procedure_name
 parameter_list|,
 name|gchar
 modifier|*
@@ -460,7 +460,7 @@ name|nreturn_vals
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
-name|procedure
+name|procedure_name
 argument_list|,
 name|GIMP_PDB_END
 argument_list|)
@@ -649,18 +649,18 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_procedural_db_proc_arg:  * @procedure: The procedure name.  * @arg_num: The argument number.  * @arg_type: The type of argument.  * @arg_name: The name of the argument.  * @arg_desc: A description of the argument.  *  * Queries the procedural database for information on the specified  * procedure's argument.  *  * This procedure returns information on the specified procedure's  * argument. The argument type, name, and a description are retrieved.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_procedural_db_proc_arg:  * @procedure_name: The procedure name.  * @arg_num: The argument number.  * @arg_type: The type of argument.  * @arg_name: The name of the argument.  * @arg_desc: A description of the argument.  *  * Queries the procedural database for information on the specified  * procedure's argument.  *  * This procedure returns information on the specified procedure's  * argument. The argument type, name, and a description are retrieved.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_procedural_db_proc_arg (const gchar * procedure,gint arg_num,GimpPDBArgType * arg_type,gchar ** arg_name,gchar ** arg_desc)
+DECL|function|gimp_procedural_db_proc_arg (const gchar * procedure_name,gint arg_num,GimpPDBArgType * arg_type,gchar ** arg_name,gchar ** arg_desc)
 name|gimp_procedural_db_proc_arg
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
-name|procedure
+name|procedure_name
 parameter_list|,
 name|gint
 name|arg_num
@@ -703,7 +703,7 @@ name|nreturn_vals
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
-name|procedure
+name|procedure_name
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -802,18 +802,18 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_procedural_db_proc_val:  * @procedure: The procedure name.  * @val_num: The return value number.  * @val_type: The type of return value.  * @val_name: The name of the return value.  * @val_desc: A description of the return value.  *  * Queries the procedural database for information on the specified  * procedure's return value.  *  * This procedure returns information on the specified procedure's  * return value. The return value type, name, and a description are  * retrieved.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_procedural_db_proc_val:  * @procedure_name: The procedure name.  * @val_num: The return value number.  * @val_type: The type of return value.  * @val_name: The name of the return value.  * @val_desc: A description of the return value.  *  * Queries the procedural database for information on the specified  * procedure's return value.  *  * This procedure returns information on the specified procedure's  * return value. The return value type, name, and a description are  * retrieved.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_procedural_db_proc_val (const gchar * procedure,gint val_num,GimpPDBArgType * val_type,gchar ** val_name,gchar ** val_desc)
+DECL|function|gimp_procedural_db_proc_val (const gchar * procedure_name,gint val_num,GimpPDBArgType * val_type,gchar ** val_name,gchar ** val_desc)
 name|gimp_procedural_db_proc_val
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
-name|procedure
+name|procedure_name
 parameter_list|,
 name|gint
 name|val_num
@@ -856,7 +856,7 @@ name|nreturn_vals
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
-name|procedure
+name|procedure_name
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,

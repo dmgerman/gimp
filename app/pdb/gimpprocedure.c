@@ -126,7 +126,7 @@ specifier|static
 name|void
 name|gimp_procedure_free_strings
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
 name|procedure
 parameter_list|)
@@ -138,7 +138,7 @@ comment|/*  public functions  */
 end_comment
 
 begin_function
-name|ProcRecord
+name|GimpProcedure
 modifier|*
 DECL|function|gimp_procedure_new (void)
 name|gimp_procedure_new
@@ -146,13 +146,13 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|ProcRecord
+name|GimpProcedure
 modifier|*
 name|procedure
 init|=
 name|g_new0
 argument_list|(
-name|ProcRecord
+name|GimpProcedure
 argument_list|,
 literal|1
 argument_list|)
@@ -165,10 +165,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_procedure_free (ProcRecord * procedure)
+DECL|function|gimp_procedure_free (GimpProcedure * procedure)
 name|gimp_procedure_free
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
 name|procedure
 parameter_list|)
@@ -178,9 +178,10 @@ name|i
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
+name|GIMP_IS_PROCEDURE
+argument_list|(
 name|procedure
-operator|!=
-name|NULL
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_free_strings
@@ -300,12 +301,12 @@ block|}
 end_function
 
 begin_function
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-DECL|function|gimp_procedure_init (ProcRecord * procedure,gint n_arguments,gint n_return_values)
+DECL|function|gimp_procedure_init (GimpProcedure * procedure,gint n_arguments,gint n_return_values)
 name|gimp_procedure_init
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
 name|procedure
 parameter_list|,
@@ -318,9 +319,10 @@ parameter_list|)
 block|{
 name|g_return_val_if_fail
 argument_list|(
+name|GIMP_IS_PROCEDURE
+argument_list|(
 name|procedure
-operator|!=
-name|NULL
+argument_list|)
 argument_list|,
 name|procedure
 argument_list|)
@@ -407,10 +409,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_procedure_set_strings (ProcRecord * procedure,gchar * name,gchar * original_name,gchar * blurb,gchar * help,gchar * author,gchar * copyright,gchar * date,gchar * deprecated)
+DECL|function|gimp_procedure_set_strings (GimpProcedure * procedure,gchar * name,gchar * original_name,gchar * blurb,gchar * help,gchar * author,gchar * copyright,gchar * date,gchar * deprecated)
 name|gimp_procedure_set_strings
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
 name|procedure
 parameter_list|,
@@ -449,9 +451,10 @@ parameter_list|)
 block|{
 name|g_return_if_fail
 argument_list|(
+name|GIMP_IS_PROCEDURE
+argument_list|(
 name|procedure
-operator|!=
-name|NULL
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_free_strings
@@ -542,10 +545,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_procedure_set_static_strings (ProcRecord * procedure,gchar * name,gchar * original_name,gchar * blurb,gchar * help,gchar * author,gchar * copyright,gchar * date,gchar * deprecated)
+DECL|function|gimp_procedure_set_static_strings (GimpProcedure * procedure,gchar * name,gchar * original_name,gchar * blurb,gchar * help,gchar * author,gchar * copyright,gchar * date,gchar * deprecated)
 name|gimp_procedure_set_static_strings
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
 name|procedure
 parameter_list|,
@@ -584,9 +587,10 @@ parameter_list|)
 block|{
 name|g_return_if_fail
 argument_list|(
+name|GIMP_IS_PROCEDURE
+argument_list|(
 name|procedure
-operator|!=
-name|NULL
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_free_strings
@@ -653,10 +657,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_procedure_take_strings (ProcRecord * procedure,gchar * name,gchar * original_name,gchar * blurb,gchar * help,gchar * author,gchar * copyright,gchar * date,gchar * deprecated)
+DECL|function|gimp_procedure_take_strings (GimpProcedure * procedure,gchar * name,gchar * original_name,gchar * blurb,gchar * help,gchar * author,gchar * copyright,gchar * date,gchar * deprecated)
 name|gimp_procedure_take_strings
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
 name|procedure
 parameter_list|,
@@ -695,9 +699,10 @@ parameter_list|)
 block|{
 name|g_return_if_fail
 argument_list|(
+name|GIMP_IS_PROCEDURE
+argument_list|(
 name|procedure
-operator|!=
-name|NULL
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_free_strings
@@ -765,10 +770,10 @@ end_function
 begin_function
 name|Argument
 modifier|*
-DECL|function|gimp_procedure_execute (ProcRecord * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args,gint n_args,gint * n_return_vals)
+DECL|function|gimp_procedure_execute (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args,gint n_args,gint * n_return_vals)
 name|gimp_procedure_execute
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
 name|procedure
 parameter_list|,
@@ -807,9 +812,10 @@ name|i
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
+name|GIMP_IS_PROCEDURE
+argument_list|(
 name|procedure
-operator|!=
-name|NULL
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -1389,11 +1395,10 @@ end_function
 begin_function
 name|Argument
 modifier|*
-DECL|function|gimp_procedure_get_arguments (const ProcRecord * procedure)
+DECL|function|gimp_procedure_get_arguments (GimpProcedure * procedure)
 name|gimp_procedure_get_arguments
 parameter_list|(
-specifier|const
-name|ProcRecord
+name|GimpProcedure
 modifier|*
 name|procedure
 parameter_list|)
@@ -1407,9 +1412,10 @@ name|i
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
+name|GIMP_IS_PROCEDURE
+argument_list|(
 name|procedure
-operator|!=
-name|NULL
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -1466,11 +1472,10 @@ end_function
 begin_function
 name|Argument
 modifier|*
-DECL|function|gimp_procedure_get_return_values (const ProcRecord * procedure,gboolean success)
+DECL|function|gimp_procedure_get_return_values (GimpProcedure * procedure,gboolean success)
 name|gimp_procedure_get_return_values
 parameter_list|(
-specifier|const
-name|ProcRecord
+name|GimpProcedure
 modifier|*
 name|procedure
 parameter_list|,
@@ -1490,9 +1495,10 @@ name|i
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
+name|GIMP_IS_PROCEDURE
+argument_list|(
 name|procedure
-operator|!=
-name|NULL
+argument_list|)
 operator|||
 name|success
 operator|==
@@ -1615,10 +1621,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_procedure_add_argument (ProcRecord * procedure,GimpPDBArgType arg_type,GParamSpec * pspec)
+DECL|function|gimp_procedure_add_argument (GimpProcedure * procedure,GimpPDBArgType arg_type,GParamSpec * pspec)
 name|gimp_procedure_add_argument
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
 name|procedure
 parameter_list|,
@@ -1635,9 +1641,10 @@ name|i
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
+name|GIMP_IS_PROCEDURE
+argument_list|(
 name|procedure
-operator|!=
-name|NULL
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_return_if_fail
@@ -1731,10 +1738,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_procedure_add_return_value (ProcRecord * procedure,GimpPDBArgType arg_type,GParamSpec * pspec)
+DECL|function|gimp_procedure_add_return_value (GimpProcedure * procedure,GimpPDBArgType arg_type,GParamSpec * pspec)
 name|gimp_procedure_add_return_value
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
 name|procedure
 parameter_list|,
@@ -1751,9 +1758,10 @@ name|i
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
+name|GIMP_IS_PROCEDURE
+argument_list|(
 name|procedure
-operator|!=
-name|NULL
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_return_if_fail
@@ -2262,10 +2270,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_procedure_add_compat_arg (ProcRecord * procedure,Gimp * gimp,GimpPDBArgType arg_type,const gchar * name,const gchar * desc)
+DECL|function|gimp_procedure_add_compat_arg (GimpProcedure * procedure,Gimp * gimp,GimpPDBArgType arg_type,const gchar * name,const gchar * desc)
 name|gimp_procedure_add_compat_arg
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
 name|procedure
 parameter_list|,
@@ -2289,9 +2297,10 @@ parameter_list|)
 block|{
 name|g_return_if_fail
 argument_list|(
+name|GIMP_IS_PROCEDURE
+argument_list|(
 name|procedure
-operator|!=
-name|NULL
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_return_if_fail
@@ -2332,10 +2341,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_procedure_add_compat_value (ProcRecord * procedure,Gimp * gimp,GimpPDBArgType arg_type,const gchar * name,const gchar * desc)
+DECL|function|gimp_procedure_add_compat_value (GimpProcedure * procedure,Gimp * gimp,GimpPDBArgType arg_type,const gchar * name,const gchar * desc)
 name|gimp_procedure_add_compat_value
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
 name|procedure
 parameter_list|,
@@ -2359,9 +2368,10 @@ parameter_list|)
 block|{
 name|g_return_if_fail
 argument_list|(
+name|GIMP_IS_PROCEDURE
+argument_list|(
 name|procedure
-operator|!=
-name|NULL
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_return_if_fail
@@ -2407,10 +2417,10 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_procedure_free_strings (ProcRecord * procedure)
+DECL|function|gimp_procedure_free_strings (GimpProcedure * procedure)
 name|gimp_procedure_free_strings
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
 name|procedure
 parameter_list|)

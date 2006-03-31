@@ -189,7 +189,7 @@ name|Gimp
 modifier|*
 name|gimp
 decl_stmt|;
-name|ProcRecord
+name|GimpProcedure
 modifier|*
 name|procedure
 decl_stmt|;

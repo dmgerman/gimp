@@ -136,7 +136,7 @@ end_include
 begin_decl_stmt
 DECL|variable|file_load_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|file_load_proc
 decl_stmt|;
 end_decl_stmt
@@ -144,7 +144,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|file_load_layer_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|file_load_layer_proc
 decl_stmt|;
 end_decl_stmt
@@ -152,7 +152,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|file_load_thumbnail_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|file_load_thumbnail_proc
 decl_stmt|;
 end_decl_stmt
@@ -160,7 +160,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|file_save_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|file_save_proc
 decl_stmt|;
 end_decl_stmt
@@ -168,7 +168,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|file_save_thumbnail_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|file_save_thumbnail_proc
 decl_stmt|;
 end_decl_stmt
@@ -176,7 +176,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|temp_name_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|temp_name_proc
 decl_stmt|;
 end_decl_stmt
@@ -184,7 +184,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|register_magic_load_handler_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|register_magic_load_handler_proc
 decl_stmt|;
 end_decl_stmt
@@ -192,7 +192,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|register_load_handler_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|register_load_handler_proc
 decl_stmt|;
 end_decl_stmt
@@ -200,7 +200,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|register_save_handler_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|register_save_handler_proc
 decl_stmt|;
 end_decl_stmt
@@ -208,7 +208,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|register_file_handler_mime_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|register_file_handler_mime_proc
 decl_stmt|;
 end_decl_stmt
@@ -216,7 +216,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|register_thumbnail_loader_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|register_thumbnail_loader_proc
 decl_stmt|;
 end_decl_stmt
@@ -231,7 +231,7 @@ modifier|*
 name|gimp
 parameter_list|)
 block|{
-name|ProcRecord
+name|GimpProcedure
 modifier|*
 name|procedure
 decl_stmt|;
@@ -1369,9 +1369,9 @@ modifier|*
 name|magics
 parameter_list|)
 block|{
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc
+name|procedure
 decl_stmt|;
 name|PlugInProcDef
 modifier|*
@@ -1393,7 +1393,7 @@ argument_list|(
 name|procedure_name
 argument_list|)
 expr_stmt|;
-name|proc
+name|procedure
 operator|=
 name|procedural_db_lookup
 argument_list|(
@@ -1404,11 +1404,11 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|proc
+name|procedure
 operator|&&
 operator|(
 operator|(
-name|proc
+name|procedure
 operator|->
 name|num_args
 operator|<
@@ -1416,7 +1416,7 @@ literal|3
 operator|)
 operator|||
 operator|(
-name|proc
+name|procedure
 operator|->
 name|num_values
 operator|<
@@ -1424,7 +1424,7 @@ literal|1
 operator|)
 operator|||
 operator|(
-name|proc
+name|procedure
 operator|->
 name|args
 index|[
@@ -1437,7 +1437,7 @@ name|GIMP_PDB_INT32
 operator|)
 operator|||
 operator|(
-name|proc
+name|procedure
 operator|->
 name|args
 index|[
@@ -1450,7 +1450,7 @@ name|GIMP_PDB_STRING
 operator|)
 operator|||
 operator|(
-name|proc
+name|procedure
 operator|->
 name|args
 index|[
@@ -1463,7 +1463,7 @@ name|GIMP_PDB_STRING
 operator|)
 operator|||
 operator|(
-name|proc
+name|procedure
 operator|->
 name|values
 index|[
@@ -1566,12 +1566,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|file_load_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|file_load_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|file_load_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -1602,7 +1602,7 @@ name|PlugInProcDef
 modifier|*
 name|file_proc
 decl_stmt|;
-name|ProcRecord
+name|GimpProcedure
 modifier|*
 name|proc
 decl_stmt|;
@@ -1646,7 +1646,7 @@ condition|)
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1675,7 +1675,7 @@ condition|)
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1810,7 +1810,7 @@ end_function
 begin_decl_stmt
 DECL|variable|file_load_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|file_load_proc
 init|=
 block|{
@@ -1857,12 +1857,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|file_load_layer_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|file_load_layer_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|file_load_layer_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -2024,7 +2024,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -2058,7 +2058,7 @@ end_function
 begin_decl_stmt
 DECL|variable|file_load_layer_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|file_load_layer_proc
 init|=
 block|{
@@ -2105,12 +2105,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|file_load_thumbnail_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|file_load_thumbnail_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|file_load_thumbnail_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -2375,7 +2375,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -2447,7 +2447,7 @@ end_function
 begin_decl_stmt
 DECL|variable|file_load_thumbnail_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|file_load_thumbnail_proc
 init|=
 block|{
@@ -2494,12 +2494,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|file_save_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|file_save_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|file_save_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -2530,7 +2530,7 @@ name|PlugInProcDef
 modifier|*
 name|file_proc
 decl_stmt|;
-name|ProcRecord
+name|GimpProcedure
 modifier|*
 name|proc
 decl_stmt|;
@@ -2574,7 +2574,7 @@ condition|)
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2603,7 +2603,7 @@ condition|)
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2738,7 +2738,7 @@ end_function
 begin_decl_stmt
 DECL|variable|file_save_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|file_save_proc
 init|=
 block|{
@@ -2785,12 +2785,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|file_save_thumbnail_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|file_save_thumbnail_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|file_save_thumbnail_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -2962,7 +2962,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -2973,7 +2973,7 @@ end_function
 begin_decl_stmt
 DECL|variable|file_save_thumbnail_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|file_save_thumbnail_proc
 init|=
 block|{
@@ -3020,12 +3020,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|temp_name_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|temp_name_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|temp_name_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -3099,7 +3099,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -3130,7 +3130,7 @@ end_function
 begin_decl_stmt
 DECL|variable|temp_name_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|temp_name_proc
 init|=
 block|{
@@ -3177,12 +3177,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|register_magic_load_handler_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|register_magic_load_handler_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|register_magic_load_handler_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -3314,7 +3314,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -3325,7 +3325,7 @@ end_function
 begin_decl_stmt
 DECL|variable|register_magic_load_handler_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|register_magic_load_handler_proc
 init|=
 block|{
@@ -3372,12 +3372,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|register_load_handler_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|register_load_handler_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|register_load_handler_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -3488,7 +3488,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -3499,7 +3499,7 @@ end_function
 begin_decl_stmt
 DECL|variable|register_load_handler_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|register_load_handler_proc
 init|=
 block|{
@@ -3546,12 +3546,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|register_save_handler_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|register_save_handler_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|register_save_handler_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -3643,7 +3643,7 @@ condition|(
 name|success
 condition|)
 block|{
-name|ProcRecord
+name|GimpProcedure
 modifier|*
 name|proc
 decl_stmt|;
@@ -3838,7 +3838,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -3849,7 +3849,7 @@ end_function
 begin_decl_stmt
 DECL|variable|register_save_handler_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|register_save_handler_proc
 init|=
 block|{
@@ -3896,12 +3896,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|register_file_handler_mime_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|register_file_handler_mime_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|register_file_handler_mime_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -4008,7 +4008,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -4019,7 +4019,7 @@ end_function
 begin_decl_stmt
 DECL|variable|register_file_handler_mime_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|register_file_handler_mime_proc
 init|=
 block|{
@@ -4066,12 +4066,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|register_thumbnail_loader_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|register_thumbnail_loader_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|register_thumbnail_loader_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -4178,7 +4178,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -4189,7 +4189,7 @@ end_function
 begin_decl_stmt
 DECL|variable|register_thumbnail_loader_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|register_thumbnail_loader_proc
 init|=
 block|{

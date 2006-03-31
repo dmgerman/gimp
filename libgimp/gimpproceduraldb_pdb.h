@@ -103,7 +103,7 @@ argument_list|(
 specifier|const
 name|gchar
 operator|*
-name|procedure
+name|procedure_name
 argument_list|,
 name|gchar
 operator|*
@@ -153,7 +153,7 @@ parameter_list|(
 specifier|const
 name|gchar
 modifier|*
-name|procedure
+name|procedure_name
 parameter_list|,
 name|gint
 name|arg_num
@@ -182,7 +182,7 @@ parameter_list|(
 specifier|const
 name|gchar
 modifier|*
-name|procedure
+name|procedure_name
 parameter_list|,
 name|gint
 name|val_num

@@ -1395,9 +1395,9 @@ name|proc_name
 init|=
 name|NULL
 decl_stmt|;
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_rec
+name|procedure
 decl_stmt|;
 name|Argument
 modifier|*
@@ -1437,7 +1437,7 @@ argument_list|(
 name|plug_in
 argument_list|)
 expr_stmt|;
-name|proc_rec
+name|procedure
 operator|=
 name|procedural_db_lookup
 argument_list|(
@@ -1451,7 +1451,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|proc_rec
+name|procedure
 condition|)
 block|{
 name|proc_name
@@ -1472,7 +1472,7 @@ condition|(
 name|proc_name
 condition|)
 block|{
-name|proc_rec
+name|procedure
 operator|=
 name|procedural_db_lookup
 argument_list|(
@@ -1525,7 +1525,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|proc_rec
+name|procedure
 operator|->
 name|deprecated
 condition|)
@@ -1546,7 +1546,7 @@ condition|(
 operator|!
 name|strcmp
 argument_list|(
-name|proc_rec
+name|procedure
 operator|->
 name|deprecated
 argument_list|,
@@ -1601,7 +1601,7 @@ argument_list|)
 argument_list|,
 name|canonical
 argument_list|,
-name|proc_rec
+name|procedure
 operator|->
 name|deprecated
 argument_list|)
@@ -1620,7 +1620,7 @@ operator|==
 name|GIMP_PDB_COMPAT_OFF
 condition|)
 block|{
-name|proc_rec
+name|procedure
 operator|=
 name|NULL
 expr_stmt|;
@@ -1637,7 +1637,7 @@ name|canonical
 expr_stmt|;
 if|if
 condition|(
-name|proc_rec
+name|procedure
 condition|)
 block|{
 name|n_args
@@ -1650,11 +1650,11 @@ name|args
 operator|=
 name|plug_in_params_to_args
 argument_list|(
-name|proc_rec
+name|procedure
 operator|->
 name|args
 argument_list|,
-name|proc_rec
+name|procedure
 operator|->
 name|num_args
 argument_list|,
@@ -1935,13 +1935,13 @@ name|plug_in_params_to_args
 argument_list|(
 name|proc_frame
 operator|->
-name|proc_rec
+name|procedure
 operator|->
 name|values
 argument_list|,
 name|proc_frame
 operator|->
-name|proc_rec
+name|procedure
 operator|->
 name|num_values
 argument_list|,
@@ -2242,7 +2242,7 @@ name|proc_def
 init|=
 name|NULL
 decl_stmt|;
-name|ProcRecord
+name|GimpProcedure
 modifier|*
 name|procedure
 init|=

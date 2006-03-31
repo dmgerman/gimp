@@ -94,7 +94,7 @@ end_include
 begin_decl_stmt
 DECL|variable|airbrush_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|airbrush_proc
 decl_stmt|;
 end_decl_stmt
@@ -102,7 +102,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|airbrush_default_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|airbrush_default_proc
 decl_stmt|;
 end_decl_stmt
@@ -110,7 +110,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|clone_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|clone_proc
 decl_stmt|;
 end_decl_stmt
@@ -118,7 +118,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|clone_default_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|clone_default_proc
 decl_stmt|;
 end_decl_stmt
@@ -126,7 +126,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|convolve_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|convolve_proc
 decl_stmt|;
 end_decl_stmt
@@ -134,7 +134,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|convolve_default_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|convolve_default_proc
 decl_stmt|;
 end_decl_stmt
@@ -142,7 +142,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|dodgeburn_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|dodgeburn_proc
 decl_stmt|;
 end_decl_stmt
@@ -150,7 +150,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|dodgeburn_default_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|dodgeburn_default_proc
 decl_stmt|;
 end_decl_stmt
@@ -158,7 +158,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|eraser_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|eraser_proc
 decl_stmt|;
 end_decl_stmt
@@ -166,7 +166,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|eraser_default_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|eraser_default_proc
 decl_stmt|;
 end_decl_stmt
@@ -174,7 +174,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|paintbrush_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|paintbrush_proc
 decl_stmt|;
 end_decl_stmt
@@ -182,7 +182,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|paintbrush_default_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|paintbrush_default_proc
 decl_stmt|;
 end_decl_stmt
@@ -190,7 +190,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|pencil_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|pencil_proc
 decl_stmt|;
 end_decl_stmt
@@ -198,7 +198,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|smudge_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|smudge_proc
 decl_stmt|;
 end_decl_stmt
@@ -206,7 +206,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|smudge_default_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|smudge_default_proc
 decl_stmt|;
 end_decl_stmt
@@ -221,7 +221,7 @@ modifier|*
 name|gimp
 parameter_list|)
 block|{
-name|ProcRecord
+name|GimpProcedure
 modifier|*
 name|procedure
 decl_stmt|;
@@ -2082,12 +2082,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|airbrush_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|airbrush_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|airbrush_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -2270,7 +2270,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -2281,7 +2281,7 @@ end_function
 begin_decl_stmt
 DECL|variable|airbrush_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|airbrush_proc
 init|=
 block|{
@@ -2328,12 +2328,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|airbrush_default_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|airbrush_default_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|airbrush_default_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -2489,7 +2489,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -2500,7 +2500,7 @@ end_function
 begin_decl_stmt
 DECL|variable|airbrush_default_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|airbrush_default_proc
 init|=
 block|{
@@ -2547,12 +2547,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|clone_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|clone_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|clone_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -2804,7 +2804,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -2815,7 +2815,7 @@ end_function
 begin_decl_stmt
 DECL|variable|clone_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|clone_proc
 init|=
 block|{
@@ -2862,12 +2862,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|clone_default_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|clone_default_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|clone_default_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -3023,7 +3023,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -3034,7 +3034,7 @@ end_function
 begin_decl_stmt
 DECL|variable|clone_default_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|clone_default_proc
 init|=
 block|{
@@ -3081,12 +3081,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|convolve_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|convolve_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|convolve_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -3289,7 +3289,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -3300,7 +3300,7 @@ end_function
 begin_decl_stmt
 DECL|variable|convolve_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|convolve_proc
 init|=
 block|{
@@ -3347,12 +3347,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|convolve_default_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|convolve_default_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|convolve_default_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -3508,7 +3508,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -3519,7 +3519,7 @@ end_function
 begin_decl_stmt
 DECL|variable|convolve_default_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|convolve_default_proc
 init|=
 block|{
@@ -3566,12 +3566,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|dodgeburn_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|dodgeburn_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|dodgeburn_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -3794,7 +3794,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -3805,7 +3805,7 @@ end_function
 begin_decl_stmt
 DECL|variable|dodgeburn_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|dodgeburn_proc
 init|=
 block|{
@@ -3852,12 +3852,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|dodgeburn_default_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|dodgeburn_default_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|dodgeburn_default_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -4013,7 +4013,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -4024,7 +4024,7 @@ end_function
 begin_decl_stmt
 DECL|variable|dodgeburn_default_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|dodgeburn_default_proc
 init|=
 block|{
@@ -4071,12 +4071,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|eraser_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|eraser_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|eraser_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -4279,7 +4279,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -4290,7 +4290,7 @@ end_function
 begin_decl_stmt
 DECL|variable|eraser_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|eraser_proc
 init|=
 block|{
@@ -4337,12 +4337,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|eraser_default_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|eraser_default_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|eraser_default_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -4498,7 +4498,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -4509,7 +4509,7 @@ end_function
 begin_decl_stmt
 DECL|variable|eraser_default_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|eraser_default_proc
 init|=
 block|{
@@ -4556,12 +4556,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|paintbrush_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|paintbrush_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|paintbrush_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -4796,7 +4796,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -4807,7 +4807,7 @@ end_function
 begin_decl_stmt
 DECL|variable|paintbrush_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|paintbrush_proc
 init|=
 block|{
@@ -4854,12 +4854,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|paintbrush_default_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|paintbrush_default_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|paintbrush_default_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -5015,7 +5015,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -5026,7 +5026,7 @@ end_function
 begin_decl_stmt
 DECL|variable|paintbrush_default_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|paintbrush_default_proc
 init|=
 block|{
@@ -5073,12 +5073,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|pencil_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|pencil_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|pencil_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -5234,7 +5234,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -5245,7 +5245,7 @@ end_function
 begin_decl_stmt
 DECL|variable|pencil_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|pencil_proc
 init|=
 block|{
@@ -5292,12 +5292,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|smudge_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|smudge_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|smudge_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -5480,7 +5480,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -5491,7 +5491,7 @@ end_function
 begin_decl_stmt
 DECL|variable|smudge_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|smudge_proc
 init|=
 block|{
@@ -5538,12 +5538,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|smudge_default_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|smudge_default_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|smudge_default_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -5699,7 +5699,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -5710,7 +5710,7 @@ end_function
 begin_decl_stmt
 DECL|variable|smudge_default_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|smudge_default_proc
 init|=
 block|{

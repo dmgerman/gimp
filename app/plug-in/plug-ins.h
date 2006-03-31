@@ -395,7 +395,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* Retreive a plug-ins proc_def from its ProcRecord */
+comment|/* Retreive a plug-ins proc_def from its GimpProcedure */
 end_comment
 
 begin_function_decl
@@ -407,9 +407,9 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_rec
+name|procedure
 parameter_list|)
 function_decl|;
 end_function_decl

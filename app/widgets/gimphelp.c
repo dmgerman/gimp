@@ -219,7 +219,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|procedure
+name|procedure_name
 parameter_list|,
 specifier|const
 name|gchar
@@ -436,7 +436,7 @@ decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
-name|procedure
+name|procedure_name
 init|=
 name|NULL
 decl_stmt|;
@@ -493,7 +493,7 @@ operator|->
 name|gimp
 argument_list|)
 condition|)
-name|procedure
+name|procedure_name
 operator|=
 literal|"extension-gimp-help-browser-temp"
 expr_stmt|;
@@ -508,14 +508,14 @@ name|GIMP_HELP_BROWSER_WEB_BROWSER
 condition|)
 block|{
 comment|/*  FIXME: should check for procedure availability  */
-name|procedure
+name|procedure_name
 operator|=
 literal|"plug-in-web-browser"
 expr_stmt|;
 block|}
 if|if
 condition|(
-name|procedure
+name|procedure_name
 condition|)
 name|gimp_help_call
 argument_list|(
@@ -523,7 +523,7 @@ name|idle_help
 operator|->
 name|gimp
 argument_list|,
-name|procedure
+name|procedure_name
 argument_list|,
 name|idle_help
 operator|->
@@ -587,9 +587,9 @@ name|busy
 init|=
 name|FALSE
 decl_stmt|;
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_rec
+name|procedure
 decl_stmt|;
 if|if
 condition|(
@@ -603,7 +603,7 @@ operator|=
 name|TRUE
 expr_stmt|;
 comment|/*  Check if a help browser is already running  */
-name|proc_rec
+name|procedure
 operator|=
 name|procedural_db_lookup
 argument_list|(
@@ -615,7 +615,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|proc_rec
+name|procedure
 condition|)
 block|{
 name|Argument
@@ -624,7 +624,7 @@ name|args
 init|=
 name|NULL
 decl_stmt|;
-name|proc_rec
+name|procedure
 operator|=
 name|procedural_db_lookup
 argument_list|(
@@ -636,7 +636,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|proc_rec
+name|procedure
 condition|)
 block|{
 name|gimp_help_browser_error
@@ -672,7 +672,7 @@ name|args
 operator|=
 name|gimp_procedure_get_arguments
 argument_list|(
-name|proc_rec
+name|procedure
 argument_list|)
 expr_stmt|;
 name|g_value_set_enum
@@ -699,7 +699,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|proc_rec
+name|procedure
 argument_list|,
 name|args
 argument_list|,
@@ -724,7 +724,7 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/*  Check if the help browser started properly  */
-name|proc_rec
+name|procedure
 operator|=
 name|procedural_db_lookup
 argument_list|(
@@ -736,7 +736,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|proc_rec
+name|procedure
 condition|)
 block|{
 name|gimp_help_browser_error
@@ -894,7 +894,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_help_call (Gimp * gimp,const gchar * procedure,const gchar * help_domain,const gchar * help_locales,const gchar * help_id)
+DECL|function|gimp_help_call (Gimp * gimp,const gchar * procedure_name,const gchar * help_domain,const gchar * help_locales,const gchar * help_id)
 name|gimp_help_call
 parameter_list|(
 name|Gimp
@@ -904,7 +904,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|procedure
+name|procedure_name
 parameter_list|,
 specifier|const
 name|gchar
@@ -922,12 +922,12 @@ modifier|*
 name|help_id
 parameter_list|)
 block|{
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_rec
+name|procedure
 decl_stmt|;
 comment|/*  Check if a help parser is already running  */
-name|proc_rec
+name|procedure
 operator|=
 name|procedural_db_lookup
 argument_list|(
@@ -939,7 +939,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|proc_rec
+name|procedure
 condition|)
 block|{
 name|Argument
@@ -967,7 +967,7 @@ name|help_uris
 init|=
 name|NULL
 decl_stmt|;
-name|proc_rec
+name|procedure
 operator|=
 name|procedural_db_lookup
 argument_list|(
@@ -979,7 +979,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|proc_rec
+name|procedure
 condition|)
 comment|/*  FIXME: error msg  */
 return|return;
@@ -1000,7 +1000,7 @@ name|args
 operator|=
 name|gimp_procedure_get_arguments
 argument_list|(
-name|proc_rec
+name|procedure
 argument_list|)
 expr_stmt|;
 name|g_value_set_int
@@ -1066,7 +1066,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|proc_rec
+name|procedure
 argument_list|,
 name|args
 argument_list|,
@@ -1091,7 +1091,7 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/*  Check if the help parser started properly  */
-name|proc_rec
+name|procedure
 operator|=
 name|procedural_db_lookup
 argument_list|(
@@ -1102,7 +1102,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|proc_rec
+name|procedure
 condition|)
 block|{
 name|Argument
@@ -1119,7 +1119,7 @@ name|g_printerr
 argument_list|(
 literal|"Calling help via %s: %s %s %s\n"
 argument_list|,
-name|procedure
+name|procedure_name
 argument_list|,
 name|help_domain
 condition|?
@@ -1162,7 +1162,7 @@ name|n_return_vals
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
-name|procedure
+name|procedure_name
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,

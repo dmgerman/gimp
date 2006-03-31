@@ -94,7 +94,7 @@ end_include
 begin_decl_stmt
 DECL|variable|gradient_new_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gradient_new_proc
 decl_stmt|;
 end_decl_stmt
@@ -102,7 +102,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|gradient_duplicate_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gradient_duplicate_proc
 decl_stmt|;
 end_decl_stmt
@@ -110,7 +110,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|gradient_is_editable_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gradient_is_editable_proc
 decl_stmt|;
 end_decl_stmt
@@ -118,7 +118,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|gradient_rename_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gradient_rename_proc
 decl_stmt|;
 end_decl_stmt
@@ -126,7 +126,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|gradient_delete_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gradient_delete_proc
 decl_stmt|;
 end_decl_stmt
@@ -134,7 +134,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|gradient_get_uniform_samples_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gradient_get_uniform_samples_proc
 decl_stmt|;
 end_decl_stmt
@@ -142,7 +142,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|gradient_get_custom_samples_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gradient_get_custom_samples_proc
 decl_stmt|;
 end_decl_stmt
@@ -150,7 +150,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|gradient_segment_get_left_color_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gradient_segment_get_left_color_proc
 decl_stmt|;
 end_decl_stmt
@@ -158,7 +158,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|gradient_segment_set_left_color_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gradient_segment_set_left_color_proc
 decl_stmt|;
 end_decl_stmt
@@ -166,7 +166,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|gradient_segment_get_right_color_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gradient_segment_get_right_color_proc
 decl_stmt|;
 end_decl_stmt
@@ -174,7 +174,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|gradient_segment_set_right_color_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gradient_segment_set_right_color_proc
 decl_stmt|;
 end_decl_stmt
@@ -182,7 +182,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|gradient_segment_get_left_pos_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gradient_segment_get_left_pos_proc
 decl_stmt|;
 end_decl_stmt
@@ -190,7 +190,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|gradient_segment_set_left_pos_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gradient_segment_set_left_pos_proc
 decl_stmt|;
 end_decl_stmt
@@ -198,7 +198,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|gradient_segment_get_middle_pos_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gradient_segment_get_middle_pos_proc
 decl_stmt|;
 end_decl_stmt
@@ -206,7 +206,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|gradient_segment_set_middle_pos_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gradient_segment_set_middle_pos_proc
 decl_stmt|;
 end_decl_stmt
@@ -214,7 +214,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|gradient_segment_get_right_pos_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gradient_segment_get_right_pos_proc
 decl_stmt|;
 end_decl_stmt
@@ -222,7 +222,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|gradient_segment_set_right_pos_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gradient_segment_set_right_pos_proc
 decl_stmt|;
 end_decl_stmt
@@ -230,7 +230,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|gradient_segment_get_blending_function_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gradient_segment_get_blending_function_proc
 decl_stmt|;
 end_decl_stmt
@@ -238,7 +238,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|gradient_segment_get_coloring_type_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gradient_segment_get_coloring_type_proc
 decl_stmt|;
 end_decl_stmt
@@ -246,7 +246,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|gradient_segment_range_set_blending_function_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gradient_segment_range_set_blending_function_proc
 decl_stmt|;
 end_decl_stmt
@@ -254,7 +254,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|gradient_segment_range_set_coloring_type_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gradient_segment_range_set_coloring_type_proc
 decl_stmt|;
 end_decl_stmt
@@ -262,7 +262,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|gradient_segment_range_flip_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gradient_segment_range_flip_proc
 decl_stmt|;
 end_decl_stmt
@@ -270,7 +270,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|gradient_segment_range_replicate_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gradient_segment_range_replicate_proc
 decl_stmt|;
 end_decl_stmt
@@ -278,7 +278,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|gradient_segment_range_split_midpoint_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gradient_segment_range_split_midpoint_proc
 decl_stmt|;
 end_decl_stmt
@@ -286,7 +286,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|gradient_segment_range_split_uniform_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gradient_segment_range_split_uniform_proc
 decl_stmt|;
 end_decl_stmt
@@ -294,7 +294,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|gradient_segment_range_delete_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gradient_segment_range_delete_proc
 decl_stmt|;
 end_decl_stmt
@@ -302,7 +302,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|gradient_segment_range_redistribute_handles_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gradient_segment_range_redistribute_handles_proc
 decl_stmt|;
 end_decl_stmt
@@ -310,7 +310,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|gradient_segment_range_blend_colors_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gradient_segment_range_blend_colors_proc
 decl_stmt|;
 end_decl_stmt
@@ -318,7 +318,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|gradient_segment_range_blend_opacity_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gradient_segment_range_blend_opacity_proc
 decl_stmt|;
 end_decl_stmt
@@ -326,7 +326,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|gradient_segment_range_move_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gradient_segment_range_move_proc
 decl_stmt|;
 end_decl_stmt
@@ -341,7 +341,7 @@ modifier|*
 name|gimp
 parameter_list|)
 block|{
-name|ProcRecord
+name|GimpProcedure
 modifier|*
 name|procedure
 decl_stmt|;
@@ -3591,12 +3591,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradient_new_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|gradient_new_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradient_new_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -3710,7 +3710,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -3741,7 +3741,7 @@ end_function
 begin_decl_stmt
 DECL|variable|gradient_new_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gradient_new_proc
 init|=
 block|{
@@ -3788,12 +3788,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradient_duplicate_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|gradient_duplicate_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradient_duplicate_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -3930,7 +3930,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -3961,7 +3961,7 @@ end_function
 begin_decl_stmt
 DECL|variable|gradient_duplicate_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gradient_duplicate_proc
 init|=
 block|{
@@ -4008,12 +4008,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradient_is_editable_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|gradient_is_editable_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradient_is_editable_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -4114,7 +4114,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -4145,7 +4145,7 @@ end_function
 begin_decl_stmt
 DECL|variable|gradient_is_editable_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gradient_is_editable_proc
 init|=
 block|{
@@ -4192,12 +4192,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradient_rename_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|gradient_rename_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradient_rename_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -4343,7 +4343,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -4374,7 +4374,7 @@ end_function
 begin_decl_stmt
 DECL|variable|gradient_rename_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gradient_rename_proc
 init|=
 block|{
@@ -4421,12 +4421,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradient_delete_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|gradient_delete_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradient_delete_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -4562,7 +4562,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -4573,7 +4573,7 @@ end_function
 begin_decl_stmt
 DECL|variable|gradient_delete_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gradient_delete_proc
 init|=
 block|{
@@ -4620,12 +4620,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradient_get_uniform_samples_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|gradient_get_uniform_samples_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradient_get_uniform_samples_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -4862,7 +4862,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -4908,7 +4908,7 @@ end_function
 begin_decl_stmt
 DECL|variable|gradient_get_uniform_samples_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gradient_get_uniform_samples_proc
 init|=
 block|{
@@ -4955,12 +4955,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradient_get_custom_samples_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|gradient_get_custom_samples_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradient_get_custom_samples_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -5198,7 +5198,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -5244,7 +5244,7 @@ end_function
 begin_decl_stmt
 DECL|variable|gradient_get_custom_samples_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gradient_get_custom_samples_proc
 init|=
 block|{
@@ -5291,12 +5291,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradient_segment_get_left_color_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|gradient_segment_get_left_color_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradient_segment_get_left_color_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -5440,7 +5440,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -5487,7 +5487,7 @@ end_function
 begin_decl_stmt
 DECL|variable|gradient_segment_get_left_color_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gradient_segment_get_left_color_proc
 init|=
 block|{
@@ -5534,12 +5534,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradient_segment_set_left_color_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|gradient_segment_set_left_color_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradient_segment_set_left_color_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -5700,7 +5700,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -5711,7 +5711,7 @@ end_function
 begin_decl_stmt
 DECL|variable|gradient_segment_set_left_color_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gradient_segment_set_left_color_proc
 init|=
 block|{
@@ -5758,12 +5758,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradient_segment_get_right_color_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|gradient_segment_get_right_color_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradient_segment_get_right_color_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -5907,7 +5907,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -5954,7 +5954,7 @@ end_function
 begin_decl_stmt
 DECL|variable|gradient_segment_get_right_color_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gradient_segment_get_right_color_proc
 init|=
 block|{
@@ -6001,12 +6001,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradient_segment_set_right_color_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|gradient_segment_set_right_color_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradient_segment_set_right_color_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -6167,7 +6167,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -6178,7 +6178,7 @@ end_function
 begin_decl_stmt
 DECL|variable|gradient_segment_set_right_color_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gradient_segment_set_right_color_proc
 init|=
 block|{
@@ -6225,12 +6225,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradient_segment_get_left_pos_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|gradient_segment_get_left_pos_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradient_segment_get_left_pos_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -6352,7 +6352,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -6383,7 +6383,7 @@ end_function
 begin_decl_stmt
 DECL|variable|gradient_segment_get_left_pos_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gradient_segment_get_left_pos_proc
 init|=
 block|{
@@ -6430,12 +6430,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradient_segment_set_left_pos_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|gradient_segment_set_left_pos_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradient_segment_set_left_pos_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -6582,7 +6582,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -6613,7 +6613,7 @@ end_function
 begin_decl_stmt
 DECL|variable|gradient_segment_set_left_pos_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gradient_segment_set_left_pos_proc
 init|=
 block|{
@@ -6660,12 +6660,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradient_segment_get_middle_pos_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|gradient_segment_get_middle_pos_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradient_segment_get_middle_pos_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -6787,7 +6787,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -6818,7 +6818,7 @@ end_function
 begin_decl_stmt
 DECL|variable|gradient_segment_get_middle_pos_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gradient_segment_get_middle_pos_proc
 init|=
 block|{
@@ -6865,12 +6865,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradient_segment_set_middle_pos_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|gradient_segment_set_middle_pos_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradient_segment_set_middle_pos_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -7017,7 +7017,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -7048,7 +7048,7 @@ end_function
 begin_decl_stmt
 DECL|variable|gradient_segment_set_middle_pos_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gradient_segment_set_middle_pos_proc
 init|=
 block|{
@@ -7095,12 +7095,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradient_segment_get_right_pos_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|gradient_segment_get_right_pos_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradient_segment_get_right_pos_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -7222,7 +7222,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -7253,7 +7253,7 @@ end_function
 begin_decl_stmt
 DECL|variable|gradient_segment_get_right_pos_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gradient_segment_get_right_pos_proc
 init|=
 block|{
@@ -7300,12 +7300,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradient_segment_set_right_pos_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|gradient_segment_set_right_pos_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradient_segment_set_right_pos_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -7452,7 +7452,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -7483,7 +7483,7 @@ end_function
 begin_decl_stmt
 DECL|variable|gradient_segment_set_right_pos_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gradient_segment_set_right_pos_proc
 init|=
 block|{
@@ -7530,12 +7530,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradient_segment_get_blending_function_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|gradient_segment_get_blending_function_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradient_segment_get_blending_function_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -7657,7 +7657,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -7688,7 +7688,7 @@ end_function
 begin_decl_stmt
 DECL|variable|gradient_segment_get_blending_function_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gradient_segment_get_blending_function_proc
 init|=
 block|{
@@ -7735,12 +7735,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradient_segment_get_coloring_type_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|gradient_segment_get_coloring_type_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradient_segment_get_coloring_type_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -7862,7 +7862,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -7893,7 +7893,7 @@ end_function
 begin_decl_stmt
 DECL|variable|gradient_segment_get_coloring_type_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gradient_segment_get_coloring_type_proc
 init|=
 block|{
@@ -7940,12 +7940,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradient_segment_range_set_blending_function_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|gradient_segment_range_set_blending_function_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradient_segment_range_set_blending_function_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -8107,7 +8107,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -8118,7 +8118,7 @@ end_function
 begin_decl_stmt
 DECL|variable|gradient_segment_range_set_blending_function_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gradient_segment_range_set_blending_function_proc
 init|=
 block|{
@@ -8165,12 +8165,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradient_segment_range_set_coloring_type_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|gradient_segment_range_set_coloring_type_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradient_segment_range_set_coloring_type_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -8332,7 +8332,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -8343,7 +8343,7 @@ end_function
 begin_decl_stmt
 DECL|variable|gradient_segment_range_set_coloring_type_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gradient_segment_range_set_coloring_type_proc
 init|=
 block|{
@@ -8390,12 +8390,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradient_segment_range_flip_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|gradient_segment_range_flip_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradient_segment_range_flip_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -8543,7 +8543,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -8554,7 +8554,7 @@ end_function
 begin_decl_stmt
 DECL|variable|gradient_segment_range_flip_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gradient_segment_range_flip_proc
 init|=
 block|{
@@ -8601,12 +8601,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradient_segment_range_replicate_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|gradient_segment_range_replicate_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradient_segment_range_replicate_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -8772,7 +8772,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -8783,7 +8783,7 @@ end_function
 begin_decl_stmt
 DECL|variable|gradient_segment_range_replicate_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gradient_segment_range_replicate_proc
 init|=
 block|{
@@ -8830,12 +8830,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradient_segment_range_split_midpoint_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|gradient_segment_range_split_midpoint_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradient_segment_range_split_midpoint_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -8983,7 +8983,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -8994,7 +8994,7 @@ end_function
 begin_decl_stmt
 DECL|variable|gradient_segment_range_split_midpoint_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gradient_segment_range_split_midpoint_proc
 init|=
 block|{
@@ -9041,12 +9041,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradient_segment_range_split_uniform_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|gradient_segment_range_split_uniform_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradient_segment_range_split_uniform_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -9212,7 +9212,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -9223,7 +9223,7 @@ end_function
 begin_decl_stmt
 DECL|variable|gradient_segment_range_split_uniform_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gradient_segment_range_split_uniform_proc
 init|=
 block|{
@@ -9270,12 +9270,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradient_segment_range_delete_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|gradient_segment_range_delete_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradient_segment_range_delete_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -9423,7 +9423,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -9434,7 +9434,7 @@ end_function
 begin_decl_stmt
 DECL|variable|gradient_segment_range_delete_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gradient_segment_range_delete_proc
 init|=
 block|{
@@ -9481,12 +9481,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradient_segment_range_redistribute_handles_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|gradient_segment_range_redistribute_handles_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradient_segment_range_redistribute_handles_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -9630,7 +9630,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -9641,7 +9641,7 @@ end_function
 begin_decl_stmt
 DECL|variable|gradient_segment_range_redistribute_handles_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gradient_segment_range_redistribute_handles_proc
 init|=
 block|{
@@ -9688,12 +9688,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradient_segment_range_blend_colors_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|gradient_segment_range_blend_colors_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradient_segment_range_blend_colors_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -9851,7 +9851,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -9862,7 +9862,7 @@ end_function
 begin_decl_stmt
 DECL|variable|gradient_segment_range_blend_colors_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gradient_segment_range_blend_colors_proc
 init|=
 block|{
@@ -9909,12 +9909,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradient_segment_range_blend_opacity_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|gradient_segment_range_blend_opacity_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradient_segment_range_blend_opacity_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -10072,7 +10072,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -10083,7 +10083,7 @@ end_function
 begin_decl_stmt
 DECL|variable|gradient_segment_range_blend_opacity_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gradient_segment_range_blend_opacity_proc
 init|=
 block|{
@@ -10130,12 +10130,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradient_segment_range_move_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|gradient_segment_range_move_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradient_segment_range_move_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -10327,7 +10327,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -10358,7 +10358,7 @@ end_function
 begin_decl_stmt
 DECL|variable|gradient_segment_range_move_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|gradient_segment_range_move_proc
 init|=
 block|{

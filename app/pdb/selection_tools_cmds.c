@@ -76,7 +76,7 @@ end_include
 begin_decl_stmt
 DECL|variable|by_color_select_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|by_color_select_proc
 decl_stmt|;
 end_decl_stmt
@@ -84,7 +84,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|ellipse_select_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|ellipse_select_proc
 decl_stmt|;
 end_decl_stmt
@@ -92,7 +92,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|free_select_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|free_select_proc
 decl_stmt|;
 end_decl_stmt
@@ -100,7 +100,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|fuzzy_select_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|fuzzy_select_proc
 decl_stmt|;
 end_decl_stmt
@@ -108,7 +108,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|rect_select_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|rect_select_proc
 decl_stmt|;
 end_decl_stmt
@@ -123,7 +123,7 @@ modifier|*
 name|gimp
 parameter_list|)
 block|{
-name|ProcRecord
+name|GimpProcedure
 modifier|*
 name|procedure
 decl_stmt|;
@@ -1144,12 +1144,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|by_color_select_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|by_color_select_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|by_color_select_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -1362,7 +1362,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -1373,7 +1373,7 @@ end_function
 begin_decl_stmt
 DECL|variable|by_color_select_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|by_color_select_proc
 init|=
 block|{
@@ -1420,12 +1420,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|ellipse_select_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|ellipse_select_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|ellipse_select_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -1643,7 +1643,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -1654,7 +1654,7 @@ end_function
 begin_decl_stmt
 DECL|variable|ellipse_select_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|ellipse_select_proc
 init|=
 block|{
@@ -1701,12 +1701,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|free_select_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|free_select_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|free_select_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -1888,7 +1888,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -1899,7 +1899,7 @@ end_function
 begin_decl_stmt
 DECL|variable|free_select_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|free_select_proc
 init|=
 block|{
@@ -1946,12 +1946,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|fuzzy_select_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|fuzzy_select_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|fuzzy_select_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -2180,7 +2180,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -2191,7 +2191,7 @@ end_function
 begin_decl_stmt
 DECL|variable|fuzzy_select_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|fuzzy_select_proc
 init|=
 block|{
@@ -2239,12 +2239,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|rect_select_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|rect_select_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|rect_select_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -2444,7 +2444,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -2455,7 +2455,7 @@ end_function
 begin_decl_stmt
 DECL|variable|rect_select_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|rect_select_proc
 init|=
 block|{

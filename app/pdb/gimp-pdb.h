@@ -93,7 +93,7 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|ProcRecord
+name|GimpProcedure
 modifier|*
 name|procedure
 parameter_list|)
@@ -117,7 +117,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|ProcRecord
+name|GimpProcedure
 modifier|*
 name|procedural_db_lookup
 parameter_list|(

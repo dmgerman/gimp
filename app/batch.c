@@ -106,9 +106,9 @@ name|gchar
 modifier|*
 name|proc_name
 parameter_list|,
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc
+name|procedure
 parameter_list|,
 name|GimpRunMode
 name|run_mode
@@ -223,9 +223,9 @@ name|proc_name
 init|=
 literal|"plug-in-script-fu-text-console"
 decl_stmt|;
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc
+name|procedure
 init|=
 name|procedural_db_lookup
 argument_list|(
@@ -236,7 +236,7 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|proc
+name|procedure
 condition|)
 name|batch_run_cmd
 argument_list|(
@@ -244,7 +244,7 @@ name|gimp
 argument_list|,
 name|proc_name
 argument_list|,
-name|proc
+name|procedure
 argument_list|,
 name|GIMP_RUN_NONINTERACTIVE
 argument_list|,
@@ -266,7 +266,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|ProcRecord
+name|GimpProcedure
 modifier|*
 name|eval_proc
 init|=
@@ -386,7 +386,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|batch_run_cmd (Gimp * gimp,const gchar * proc_name,ProcRecord * proc,GimpRunMode run_mode,const gchar * cmd)
+DECL|function|batch_run_cmd (Gimp * gimp,const gchar * proc_name,GimpProcedure * procedure,GimpRunMode run_mode,const gchar * cmd)
 name|batch_run_cmd
 parameter_list|(
 name|Gimp
@@ -398,9 +398,9 @@ name|gchar
 modifier|*
 name|proc_name
 parameter_list|,
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc
+name|procedure
 parameter_list|,
 name|GimpRunMode
 name|run_mode
@@ -426,7 +426,7 @@ name|args
 operator|=
 name|gimp_procedure_get_arguments
 argument_list|(
-name|proc
+name|procedure
 argument_list|)
 expr_stmt|;
 name|g_value_set_int
@@ -444,7 +444,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|proc
+name|procedure
 operator|->
 name|num_args
 operator|>
@@ -480,7 +480,7 @@ name|proc_name
 argument_list|,
 name|args
 argument_list|,
-name|proc
+name|procedure
 operator|->
 name|num_args
 argument_list|,
@@ -543,7 +543,7 @@ name|procedural_db_destroy_args
 argument_list|(
 name|args
 argument_list|,
-name|proc
+name|procedure
 operator|->
 name|num_args
 argument_list|,

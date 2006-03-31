@@ -84,7 +84,7 @@ name|gboolean
 name|installed_during_init
 decl_stmt|;
 DECL|member|procedure
-name|ProcRecord
+name|GimpProcedure
 modifier|*
 name|procedure
 decl_stmt|;

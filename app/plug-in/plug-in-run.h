@@ -37,9 +37,9 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_rec
+name|procedure
 parameter_list|,
 name|Argument
 modifier|*

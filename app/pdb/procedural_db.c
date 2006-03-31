@@ -299,7 +299,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29139ae60108
+DECL|struct|__anon2b638f240108
 block|{
 DECL|member|old_name
 specifier|const
@@ -743,14 +743,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|procedural_db_register (Gimp * gimp,ProcRecord * procedure)
+DECL|function|procedural_db_register (Gimp * gimp,GimpProcedure * procedure)
 name|procedural_db_register
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|ProcRecord
+name|GimpProcedure
 modifier|*
 name|procedure
 parameter_list|)
@@ -769,9 +769,10 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
+name|GIMP_IS_PROCEDURE
+argument_list|(
 name|procedure
-operator|!=
-name|NULL
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|list
@@ -902,7 +903,7 @@ block|}
 end_function
 
 begin_function
-name|ProcRecord
+name|GimpProcedure
 modifier|*
 DECL|function|procedural_db_lookup (Gimp * gimp,const gchar * name)
 name|procedural_db_lookup
@@ -1133,7 +1134,7 @@ name|list
 argument_list|)
 control|)
 block|{
-name|ProcRecord
+name|GimpProcedure
 modifier|*
 name|procedure
 init|=
@@ -1143,9 +1144,10 @@ name|data
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
+name|GIMP_IS_PROCEDURE
+argument_list|(
 name|procedure
-operator|!=
-name|NULL
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -1246,9 +1248,9 @@ parameter_list|,
 modifier|...
 parameter_list|)
 block|{
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc
+name|procedure
 decl_stmt|;
 name|Argument
 modifier|*
@@ -1316,7 +1318,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|proc
+name|procedure
 operator|=
 name|procedural_db_lookup
 argument_list|(
@@ -1327,7 +1329,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|proc
+name|procedure
 operator|==
 name|NULL
 condition|)
@@ -1373,7 +1375,7 @@ block|}
 operator|*
 name|n_return_vals
 operator|=
-name|proc
+name|procedure
 operator|->
 name|num_values
 operator|+
@@ -1383,7 +1385,7 @@ name|params
 operator|=
 name|gimp_procedure_get_arguments
 argument_list|(
-name|proc
+name|procedure
 argument_list|)
 expr_stmt|;
 name|va_start
@@ -1401,7 +1403,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|proc
+name|procedure
 operator|->
 name|num_args
 condition|;
@@ -1448,7 +1450,7 @@ name|expected
 init|=
 name|procedural_db_type_name
 argument_list|(
-name|proc
+name|procedure
 operator|->
 name|args
 index|[
@@ -1471,11 +1473,11 @@ name|procedural_db_destroy_args
 argument_list|(
 name|params
 argument_list|,
-name|proc
+name|procedure
 operator|->
 name|num_args
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|g_message
@@ -1486,7 +1488,7 @@ literal|"PDB calling error for procedure '%s':\n"
 literal|"Argument #%d type mismatch (expected %s, got %s)"
 argument_list|)
 argument_list|,
-name|proc
+name|procedure
 operator|->
 name|name
 argument_list|,
@@ -1513,7 +1515,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc
+name|procedure
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1834,7 +1836,7 @@ name|name
 argument_list|,
 name|params
 argument_list|,
-name|proc
+name|procedure
 operator|->
 name|num_args
 argument_list|,
@@ -1845,7 +1847,7 @@ name|procedural_db_destroy_args
 argument_list|(
 name|params
 argument_list|,
-name|proc
+name|procedure
 operator|->
 name|num_args
 argument_list|,

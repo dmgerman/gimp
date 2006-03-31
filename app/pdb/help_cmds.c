@@ -64,7 +64,7 @@ end_include
 begin_decl_stmt
 DECL|variable|help_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|help_proc
 decl_stmt|;
 end_decl_stmt
@@ -79,7 +79,7 @@ modifier|*
 name|gimp
 parameter_list|)
 block|{
-name|ProcRecord
+name|GimpProcedure
 modifier|*
 name|procedure
 decl_stmt|;
@@ -158,12 +158,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|help_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|help_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|help_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -275,7 +275,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -286,7 +286,7 @@ end_function
 begin_decl_stmt
 DECL|variable|help_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|help_proc
 init|=
 block|{

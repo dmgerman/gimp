@@ -124,7 +124,7 @@ end_include
 begin_decl_stmt
 DECL|variable|edit_cut_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|edit_cut_proc
 decl_stmt|;
 end_decl_stmt
@@ -132,7 +132,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|edit_copy_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|edit_copy_proc
 decl_stmt|;
 end_decl_stmt
@@ -140,7 +140,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|edit_copy_visible_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|edit_copy_visible_proc
 decl_stmt|;
 end_decl_stmt
@@ -148,7 +148,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|edit_paste_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|edit_paste_proc
 decl_stmt|;
 end_decl_stmt
@@ -156,7 +156,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|edit_paste_as_new_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|edit_paste_as_new_proc
 decl_stmt|;
 end_decl_stmt
@@ -164,7 +164,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|edit_named_cut_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|edit_named_cut_proc
 decl_stmt|;
 end_decl_stmt
@@ -172,7 +172,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|edit_named_copy_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|edit_named_copy_proc
 decl_stmt|;
 end_decl_stmt
@@ -180,7 +180,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|edit_named_copy_visible_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|edit_named_copy_visible_proc
 decl_stmt|;
 end_decl_stmt
@@ -188,7 +188,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|edit_named_paste_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|edit_named_paste_proc
 decl_stmt|;
 end_decl_stmt
@@ -196,7 +196,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|edit_named_paste_as_new_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|edit_named_paste_as_new_proc
 decl_stmt|;
 end_decl_stmt
@@ -204,7 +204,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|edit_clear_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|edit_clear_proc
 decl_stmt|;
 end_decl_stmt
@@ -212,7 +212,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|edit_fill_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|edit_fill_proc
 decl_stmt|;
 end_decl_stmt
@@ -220,7 +220,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|edit_bucket_fill_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|edit_bucket_fill_proc
 decl_stmt|;
 end_decl_stmt
@@ -228,7 +228,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|edit_blend_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|edit_blend_proc
 decl_stmt|;
 end_decl_stmt
@@ -236,7 +236,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|edit_stroke_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|edit_stroke_proc
 decl_stmt|;
 end_decl_stmt
@@ -251,7 +251,7 @@ modifier|*
 name|gimp
 parameter_list|)
 block|{
-name|ProcRecord
+name|GimpProcedure
 modifier|*
 name|procedure
 decl_stmt|;
@@ -1752,12 +1752,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|edit_cut_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|edit_cut_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|edit_cut_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -1867,7 +1867,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -1898,7 +1898,7 @@ end_function
 begin_decl_stmt
 DECL|variable|edit_cut_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|edit_cut_proc
 init|=
 block|{
@@ -1945,12 +1945,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|edit_copy_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|edit_copy_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|edit_copy_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -2060,7 +2060,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -2091,7 +2091,7 @@ end_function
 begin_decl_stmt
 DECL|variable|edit_copy_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|edit_copy_proc
 init|=
 block|{
@@ -2138,12 +2138,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|edit_copy_visible_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|edit_copy_visible_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|edit_copy_visible_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -2216,7 +2216,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -2247,7 +2247,7 @@ end_function
 begin_decl_stmt
 DECL|variable|edit_copy_visible_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|edit_copy_visible_proc
 init|=
 block|{
@@ -2294,12 +2294,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|edit_paste_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|edit_paste_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|edit_paste_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -2447,7 +2447,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -2481,7 +2481,7 @@ end_function
 begin_decl_stmt
 DECL|variable|edit_paste_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|edit_paste_proc
 init|=
 block|{
@@ -2528,12 +2528,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|edit_paste_as_new_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|edit_paste_as_new_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|edit_paste_as_new_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -2606,7 +2606,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -2637,7 +2637,7 @@ end_function
 begin_decl_stmt
 DECL|variable|edit_paste_as_new_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|edit_paste_as_new_proc
 init|=
 block|{
@@ -2684,12 +2684,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|edit_named_cut_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|edit_named_cut_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|edit_named_cut_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -2846,7 +2846,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -2877,7 +2877,7 @@ end_function
 begin_decl_stmt
 DECL|variable|edit_named_cut_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|edit_named_cut_proc
 init|=
 block|{
@@ -2924,12 +2924,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|edit_named_copy_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|edit_named_copy_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|edit_named_copy_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -3086,7 +3086,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -3117,7 +3117,7 @@ end_function
 begin_decl_stmt
 DECL|variable|edit_named_copy_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|edit_named_copy_proc
 init|=
 block|{
@@ -3164,12 +3164,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|edit_named_copy_visible_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|edit_named_copy_visible_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|edit_named_copy_visible_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -3298,7 +3298,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -3329,7 +3329,7 @@ end_function
 begin_decl_stmt
 DECL|variable|edit_named_copy_visible_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|edit_named_copy_visible_proc
 init|=
 block|{
@@ -3376,12 +3376,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|edit_named_paste_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|edit_named_paste_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|edit_named_paste_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -3563,7 +3563,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -3597,7 +3597,7 @@ end_function
 begin_decl_stmt
 DECL|variable|edit_named_paste_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|edit_named_paste_proc
 init|=
 block|{
@@ -3644,12 +3644,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|edit_named_paste_as_new_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|edit_named_paste_as_new_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|edit_named_paste_as_new_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -3762,7 +3762,7 @@ name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -3793,7 +3793,7 @@ end_function
 begin_decl_stmt
 DECL|variable|edit_named_paste_as_new_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|edit_named_paste_as_new_proc
 init|=
 block|{
@@ -3840,12 +3840,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|edit_clear_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|edit_clear_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|edit_clear_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -3943,7 +3943,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -3954,7 +3954,7 @@ end_function
 begin_decl_stmt
 DECL|variable|edit_clear_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|edit_clear_proc
 init|=
 block|{
@@ -4001,12 +4001,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|edit_fill_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|edit_fill_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|edit_fill_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -4125,7 +4125,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -4136,7 +4136,7 @@ end_function
 begin_decl_stmt
 DECL|variable|edit_fill_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|edit_fill_proc
 init|=
 block|{
@@ -4183,12 +4183,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|edit_bucket_fill_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|edit_bucket_fill_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|edit_bucket_fill_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -4428,7 +4428,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -4439,7 +4439,7 @@ end_function
 begin_decl_stmt
 DECL|variable|edit_bucket_fill_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|edit_bucket_fill_proc
 init|=
 block|{
@@ -4486,12 +4486,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|edit_blend_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|edit_blend_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|edit_blend_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -4907,7 +4907,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -4918,7 +4918,7 @@ end_function
 begin_decl_stmt
 DECL|variable|edit_blend_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|edit_blend_proc
 init|=
 block|{
@@ -4965,12 +4965,12 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|edit_stroke_invoker (ProcRecord * proc_record,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+DECL|function|edit_stroke_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|edit_stroke_invoker
 parameter_list|(
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_record
+name|procedure
 parameter_list|,
 name|Gimp
 modifier|*
@@ -5105,7 +5105,7 @@ block|}
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_record
+name|procedure
 argument_list|,
 name|success
 argument_list|)
@@ -5116,7 +5116,7 @@ end_function
 begin_decl_stmt
 DECL|variable|edit_stroke_proc
 specifier|static
-name|ProcRecord
+name|GimpProcedure
 name|edit_stroke_proc
 init|=
 block|{

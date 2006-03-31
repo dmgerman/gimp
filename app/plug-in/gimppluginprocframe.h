@@ -35,10 +35,10 @@ name|GList
 modifier|*
 name|context_stack
 decl_stmt|;
-DECL|member|proc_rec
-name|ProcRecord
+DECL|member|procedure
+name|GimpProcedure
 modifier|*
-name|proc_rec
+name|procedure
 decl_stmt|;
 DECL|member|main_loop
 name|GMainLoop
@@ -84,9 +84,9 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_rec
+name|procedure
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -107,9 +107,9 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
-name|ProcRecord
+name|GimpProcedure
 modifier|*
-name|proc_rec
+name|procedure
 parameter_list|)
 function_decl|;
 end_function_decl
