@@ -70,6 +70,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"pdb/gimpprocedure.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"pdb/procedural_db.h"
 end_include
 
@@ -542,10 +548,9 @@ name|ProcRecord
 modifier|*
 name|proc_rec
 init|=
-operator|&
 name|proc_def
 operator|->
-name|db_info
+name|procedure
 decl_stmt|;
 name|gchar
 modifier|*

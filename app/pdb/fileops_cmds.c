@@ -640,13 +640,13 @@ name|procedure
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
-name|gimp_param_spec_enum
+name|g_param_spec_enum
 argument_list|(
 literal|"run-mode"
 argument_list|,
 literal|"run mode"
 argument_list|,
-literal|"The run mode: { GIMP_RUN_INTERACTIVE (0), GIMP_RUN_NONINTERACTIVE (1) }"
+literal|"The run mode: { GIMP_RUN_INTERACTIVE (0), GIMP_RUN_NONINTERACTIVE (1), GIMP_RUN_WITH_LAST_VALS (2) }"
 argument_list|,
 name|GIMP_TYPE_RUN_MODE
 argument_list|,
@@ -654,23 +654,6 @@ name|GIMP_RUN_INTERACTIVE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_param_spec_enum_exclude_value
-argument_list|(
-name|GIMP_PARAM_SPEC_ENUM
-argument_list|(
-name|procedure
-operator|->
-name|args
-index|[
-literal|0
-index|]
-operator|.
-name|pspec
-argument_list|)
-argument_list|,
-name|GIMP_RUN_WITH_LAST_VALS
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -1772,7 +1755,7 @@ name|type
 operator|==
 name|GIMP_PDB_STRING
 condition|)
-name|g_value_set_string
+name|g_value_set_static_string
 argument_list|(
 operator|&
 name|new_args
@@ -1817,7 +1800,7 @@ name|proc
 operator|->
 name|num_args
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|)
 expr_stmt|;
 return|return
@@ -2690,7 +2673,7 @@ name|type
 operator|==
 name|GIMP_PDB_STRING
 condition|)
-name|g_value_set_string
+name|g_value_set_static_string
 argument_list|(
 operator|&
 name|new_args
@@ -2735,7 +2718,7 @@ name|proc
 operator|->
 name|num_args
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|)
 expr_stmt|;
 return|return
@@ -3085,6 +3068,7 @@ if|if
 condition|(
 name|success
 condition|)
+block|{
 name|name
 operator|=
 name|gimp_get_temp_filename
@@ -3094,6 +3078,7 @@ argument_list|,
 name|extension
 argument_list|)
 expr_stmt|;
+block|}
 name|return_vals
 operator|=
 name|gimp_procedure_get_return_values

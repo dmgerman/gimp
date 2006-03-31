@@ -32,16 +32,6 @@ directive|include
 file|<gdk-pixbuf/gdk-pixbuf.h>
 end_include
 
-begin_include
-include|#
-directive|include
-file|"pdb/gimpprocedure.h"
-end_include
-
-begin_comment
-comment|/* ProcRecord */
-end_comment
-
 begin_struct
 DECL|struct|_PlugInProcDef
 struct|struct
@@ -93,9 +83,10 @@ DECL|member|installed_during_init
 name|gboolean
 name|installed_during_init
 decl_stmt|;
-DECL|member|db_info
+DECL|member|procedure
 name|ProcRecord
-name|db_info
+modifier|*
+name|procedure
 decl_stmt|;
 comment|/*  file proc specific members  */
 DECL|member|file_proc

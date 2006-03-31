@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"pdb/gimpprocedure.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"pdb/procedural_db.h"
 end_include
 
@@ -922,15 +928,13 @@ condition|(
 name|proc_def
 condition|)
 block|{
-comment|/* construct the procedures arguments */
 name|args
 operator|=
 name|gimp_procedure_get_arguments
 argument_list|(
-operator|&
 name|proc_def
 operator|->
-name|db_info
+name|procedure
 argument_list|)
 expr_stmt|;
 name|g_value_set_int
@@ -985,15 +989,14 @@ name|context
 argument_list|,
 name|progress
 argument_list|,
-operator|&
 name|proc_def
 operator|->
-name|db_info
+name|procedure
 argument_list|,
 name|args
 argument_list|,
 literal|3
-comment|/* not proc_def->db_info.num_args */
+comment|/* not proc_def->procedure->num_args */
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1008,8 +1011,8 @@ name|args
 argument_list|,
 name|proc_def
 operator|->
-name|db_info
-operator|.
+name|procedure
+operator|->
 name|num_args
 argument_list|,
 name|TRUE

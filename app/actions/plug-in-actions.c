@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"pdb/gimpprocedure.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"plug-in/plug-ins.h"
 end_include
 
@@ -970,8 +976,8 @@ name|group
 argument_list|,
 name|proc_def
 operator|->
-name|db_info
-operator|.
+name|procedure
+operator|->
 name|name
 argument_list|,
 name|sensitive
@@ -1337,8 +1343,8 @@ if|if
 condition|(
 name|proc_def
 operator|->
-name|db_info
-operator|.
+name|procedure
+operator|->
 name|blurb
 condition|)
 name|tooltip
@@ -1349,8 +1355,8 @@ name|locale_domain
 argument_list|,
 name|proc_def
 operator|->
-name|db_info
-operator|.
+name|procedure
+operator|->
 name|blurb
 argument_list|)
 expr_stmt|;
@@ -1360,8 +1366,8 @@ name|name
 operator|=
 name|proc_def
 operator|->
-name|db_info
-operator|.
+name|procedure
+operator|->
 name|name
 expr_stmt|;
 name|entry
@@ -1411,7 +1417,7 @@ expr_stmt|;
 if|#
 directive|if
 literal|0
-block|g_print ("adding plug-in action '%s' (%s)\n", proc_def->db_info.name, label);
+block|g_print ("adding plug-in action '%s' (%s)\n",            proc_def->procedure->name, label);
 endif|#
 directive|endif
 name|gimp_action_group_add_plug_in_actions
@@ -1705,8 +1711,8 @@ argument_list|)
 argument_list|,
 name|proc_def
 operator|->
-name|db_info
-operator|.
+name|procedure
+operator|->
 name|name
 argument_list|)
 expr_stmt|;
@@ -1718,7 +1724,7 @@ block|{
 if|#
 directive|if
 literal|0
-block|g_print ("removing plug-in action '%s'\n",                proc_def->db_info.name);
+block|g_print ("removing plug-in action '%s'\n",                proc_def->procedure->name);
 endif|#
 directive|endif
 name|gtk_action_group_remove_action

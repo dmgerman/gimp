@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"pdb/gimpprocedure.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"pdb/procedural_db.h"
 end_include
 
@@ -3029,10 +3035,9 @@ expr_stmt|;
 comment|/*  The procedural database procedure  */
 name|proc
 operator|=
-operator|&
 name|proc_def
 operator|->
-name|db_info
+name|procedure
 expr_stmt|;
 name|proc
 operator|->

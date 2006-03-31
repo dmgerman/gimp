@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"pdb/gimpprocedure.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"plug-in/plug-ins.h"
 end_include
 
@@ -983,8 +989,8 @@ literal|"%s-merge-id"
 argument_list|,
 name|proc_def
 operator|->
-name|db_info
-operator|.
+name|procedure
+operator|->
 name|name
 argument_list|)
 expr_stmt|;
@@ -1130,7 +1136,7 @@ block|}
 if|#
 directive|if
 literal|0
-block|g_print ("adding menu item for '%s' (@ %s)\n",            proc_def->db_info.name, action_path);
+block|g_print ("adding menu item for '%s' (@ %s)\n",            proc_def->procedure->name, action_path);
 endif|#
 directive|endif
 name|gtk_ui_manager_add_ui
@@ -1146,14 +1152,14 @@ name|action_path
 argument_list|,
 name|proc_def
 operator|->
-name|db_info
-operator|.
+name|procedure
+operator|->
 name|name
 argument_list|,
 name|proc_def
 operator|->
-name|db_info
-operator|.
+name|procedure
+operator|->
 name|name
 argument_list|,
 name|GTK_UI_MANAGER_MENUITEM
@@ -1218,8 +1224,8 @@ literal|"%s-merge-id"
 argument_list|,
 name|proc_def
 operator|->
-name|db_info
-operator|.
+name|procedure
+operator|->
 name|name
 argument_list|)
 expr_stmt|;
