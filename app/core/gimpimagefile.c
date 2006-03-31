@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon290b567c0103
+DECL|enum|__anon2bbf5a850103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -1730,7 +1730,7 @@ name|GIMP_THUMB_STATE_NOT_FOUND
 case|:
 name|stock_id
 operator|=
-literal|"gimp-wilber-eek"
+literal|"gtk-dialog-question"
 expr_stmt|;
 break|break;
 default|default:
