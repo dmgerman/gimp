@@ -637,6 +637,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-image-undo-group-start"
 block|,
 literal|"gimp-image-undo-group-start"
@@ -753,6 +755,8 @@ name|ProcRecord
 name|image_undo_group_end_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-image-undo-group-end"
@@ -905,6 +909,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-image-undo-is-enabled"
 block|,
 literal|"gimp-image-undo-is-enabled"
@@ -1053,6 +1059,8 @@ name|ProcRecord
 name|image_undo_disable_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-image-undo-disable"
@@ -1205,6 +1213,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-image-undo-enable"
 block|,
 literal|"gimp-image-undo-enable"
@@ -1355,6 +1365,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-image-undo-freeze"
 block|,
 literal|"gimp-image-undo-freeze"
@@ -1503,6 +1515,8 @@ name|ProcRecord
 name|image_undo_thaw_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-image-undo-thaw"

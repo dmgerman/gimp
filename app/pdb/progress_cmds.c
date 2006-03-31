@@ -629,6 +629,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-progress-init"
 block|,
 literal|"gimp-progress-init"
@@ -774,6 +776,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-progress-update"
 block|,
 literal|"gimp-progress-update"
@@ -893,6 +897,8 @@ name|ProcRecord
 name|progress_pulse_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-progress-pulse"
@@ -1043,6 +1049,8 @@ name|ProcRecord
 name|progress_set_text_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-progress-set-text"
@@ -1198,6 +1206,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-progress-get-window-handle"
 block|,
 literal|"gimp-progress-get-window-handle"
@@ -1339,6 +1349,8 @@ name|ProcRecord
 name|progress_install_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-progress-install"
@@ -1484,6 +1496,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-progress-uninstall"
 block|,
 literal|"gimp-progress-uninstall"
@@ -1625,6 +1639,8 @@ name|ProcRecord
 name|progress_cancel_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-progress-cancel"

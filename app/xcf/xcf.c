@@ -206,52 +206,6 @@ function_decl|;
 end_function_decl
 
 begin_decl_stmt
-DECL|variable|xcf_load_procedure
-specifier|static
-name|ProcRecord
-name|xcf_load_procedure
-init|=
-block|{
-name|TRUE
-block|,
-literal|"gimp-xcf-load"
-block|,
-literal|"gimp-xcf-load"
-block|,
-literal|"loads file saved in the .xcf file format"
-block|,
-literal|"The xcf file format has been designed specifically for loading and "
-literal|"saving tiled and layered images in the GIMP. This procedure will load "
-literal|"the specified file."
-block|,
-literal|"Spencer Kimball& Peter Mattis"
-block|,
-literal|"Spencer Kimball& Peter Mattis"
-block|,
-literal|"1995-1996"
-block|,
-name|NULL
-block|,
-name|GIMP_INTERNAL
-block|,
-literal|0
-block|,
-name|NULL
-block|,
-literal|0
-block|,
-name|NULL
-block|,
-block|{
-block|{
-name|xcf_load_invoker
-block|}
-block|}
-block|}
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|xcf_plug_in_load_proc
 specifier|static
 name|PlugInProcDef
@@ -288,8 +242,7 @@ literal|0
 block|,
 name|FALSE
 block|,
-operator|&
-name|xcf_load_procedure
+name|NULL
 block|,
 name|TRUE
 block|,
@@ -309,52 +262,6 @@ block|,
 comment|/* fill me in at runtime */
 name|NULL
 comment|/* fill me in at runtime */
-block|}
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|xcf_save_procedure
-specifier|static
-name|ProcRecord
-name|xcf_save_procedure
-init|=
-block|{
-name|TRUE
-block|,
-literal|"gimp-xcf-save"
-block|,
-literal|"gimp-xcf-save"
-block|,
-literal|"saves file in the .xcf file format"
-block|,
-literal|"The xcf file format has been designed specifically for loading and "
-literal|"saving tiled and layered images in the GIMP. This procedure will save "
-literal|"the specified image in the xcf file format."
-block|,
-literal|"Spencer Kimball& Peter Mattis"
-block|,
-literal|"Spencer Kimball& Peter Mattis"
-block|,
-literal|"1995-1996"
-block|,
-name|NULL
-block|,
-name|GIMP_INTERNAL
-block|,
-literal|0
-block|,
-name|NULL
-block|,
-literal|0
-block|,
-name|NULL
-block|,
-block|{
-block|{
-name|xcf_save_invoker
-block|}
-block|}
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -395,8 +302,7 @@ literal|0
 block|,
 name|FALSE
 block|,
-operator|&
-name|xcf_save_procedure
+name|NULL
 block|,
 name|TRUE
 block|,
@@ -464,16 +370,64 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* So this is sort of a hack, but its better than it was before.  To    * do this right there would be a file load-save handler type and    * the whole interface would change but there isn't, and currently    * the plug-in structure contains all the load-save info, so it    * makes sense to use that for the XCF load/save handlers, even    * though they are internal.  The only thing it requires is using a    * PlugInProcDef struct.  -josh    */
+comment|/*  gimp-xcf-save  */
 name|procedure
 operator|=
+name|xcf_plug_in_save_proc
+operator|.
+name|procedure
+operator|=
+name|gimp_procedure_new
+argument_list|()
+expr_stmt|;
 name|gimp_procedure_init
 argument_list|(
-operator|&
-name|xcf_save_procedure
+name|procedure
 argument_list|,
 literal|5
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|procedure
+operator|->
+name|proc_type
+operator|=
+name|GIMP_INTERNAL
+expr_stmt|;
+name|procedure
+operator|->
+name|exec_method
+operator|.
+name|internal
+operator|.
+name|marshal_func
+operator|=
+name|xcf_save_invoker
+expr_stmt|;
+name|gimp_procedure_set_static_strings
+argument_list|(
+name|procedure
+argument_list|,
+literal|"gimp-xcf-save"
+argument_list|,
+literal|"gimp-xcf-save"
+argument_list|,
+literal|"saves file in the .xcf file format"
+argument_list|,
+literal|"The xcf file format has been designed "
+literal|"specifically for loading and saving "
+literal|"tiled and layered images in the GIMP. "
+literal|"This procedure will save the specified "
+literal|"image in the xcf file format."
+argument_list|,
+literal|"Spencer Kimball& Peter Mattis"
+argument_list|,
+literal|"Spencer Kimball& Peter Mattis"
+argument_list|,
+literal|"1995-1996"
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_compat_arg
@@ -568,16 +522,64 @@ operator|&
 name|xcf_plug_in_save_proc
 argument_list|)
 expr_stmt|;
+comment|/*  gimp-xcf-load  */
 name|procedure
 operator|=
+name|xcf_plug_in_load_proc
+operator|.
+name|procedure
+operator|=
+name|gimp_procedure_new
+argument_list|()
+expr_stmt|;
 name|gimp_procedure_init
 argument_list|(
-operator|&
-name|xcf_load_procedure
+name|procedure
 argument_list|,
 literal|3
 argument_list|,
 literal|1
+argument_list|)
+expr_stmt|;
+name|procedure
+operator|->
+name|proc_type
+operator|=
+name|GIMP_INTERNAL
+expr_stmt|;
+name|procedure
+operator|->
+name|exec_method
+operator|.
+name|internal
+operator|.
+name|marshal_func
+operator|=
+name|xcf_load_invoker
+expr_stmt|;
+name|gimp_procedure_set_static_strings
+argument_list|(
+name|procedure
+argument_list|,
+literal|"gimp-xcf-load"
+argument_list|,
+literal|"gimp-xcf-load"
+argument_list|,
+literal|"loads file saved in the .xcf file format"
+argument_list|,
+literal|"The xcf file format has been designed "
+literal|"specifically for loading and saving "
+literal|"tiled and layered images in the GIMP. "
+literal|"This procedure will load the specified "
+literal|"file."
+argument_list|,
+literal|"Spencer Kimball& Peter Mattis"
+argument_list|,
+literal|"Spencer Kimball& Peter Mattis"
+argument_list|,
+literal|"1995-1996"
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_compat_arg

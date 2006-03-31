@@ -1160,6 +1160,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-plugins-query"
 block|,
 literal|"gimp-plugins-query"
@@ -1335,6 +1337,8 @@ name|ProcRecord
 name|plugin_domain_register_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-plugin-domain-register"
@@ -1514,6 +1518,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-plugin-help-register"
 block|,
 literal|"gimp-plugin-help-register"
@@ -1690,6 +1696,8 @@ name|ProcRecord
 name|plugin_menu_register_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-plugin-menu-register"
@@ -1883,6 +1891,8 @@ name|ProcRecord
 name|plugin_menu_branch_register_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-plugin-menu-branch-register"
@@ -2121,6 +2131,8 @@ name|ProcRecord
 name|plugin_icon_register_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-plugin-icon-register"

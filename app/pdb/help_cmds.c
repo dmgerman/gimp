@@ -292,6 +292,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-help"
 block|,
 literal|"gimp-help"

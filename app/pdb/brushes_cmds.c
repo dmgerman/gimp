@@ -749,6 +749,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-brushes-refresh"
 block|,
 literal|"gimp-brushes-refresh"
@@ -930,6 +932,8 @@ name|ProcRecord
 name|brushes_get_list_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-brushes-get-list"
@@ -1163,6 +1167,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-brushes-get-brush"
 block|,
 literal|"gimp-brushes-get-brush"
@@ -1306,6 +1312,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-brushes-get-spacing"
 block|,
 literal|"gimp-brushes-get-spacing"
@@ -1424,6 +1432,8 @@ name|ProcRecord
 name|brushes_set_spacing_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-brushes-set-spacing"
@@ -1824,6 +1834,8 @@ name|ProcRecord
 name|brushes_get_brush_data_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-brushes-get-brush-data"

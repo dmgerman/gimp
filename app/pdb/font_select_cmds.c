@@ -454,6 +454,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-fonts-popup"
 block|,
 literal|"gimp-fonts-popup"
@@ -597,6 +599,8 @@ name|ProcRecord
 name|fonts_close_popup_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-fonts-close-popup"
@@ -767,6 +771,8 @@ name|ProcRecord
 name|fonts_set_popup_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-fonts-set-popup"

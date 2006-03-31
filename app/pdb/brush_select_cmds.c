@@ -664,6 +664,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-brushes-popup"
 block|,
 literal|"gimp-brushes-popup"
@@ -809,6 +811,8 @@ name|ProcRecord
 name|brushes_close_popup_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-brushes-close-popup"
@@ -1043,6 +1047,8 @@ name|ProcRecord
 name|brushes_set_popup_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-brushes-set-popup"

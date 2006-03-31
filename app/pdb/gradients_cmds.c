@@ -689,6 +689,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-gradients-refresh"
 block|,
 literal|"gimp-gradients-refresh"
@@ -870,6 +872,8 @@ name|ProcRecord
 name|gradients_get_list_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-gradients-get-list"
@@ -1168,6 +1172,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-gradients-sample-uniform"
 block|,
 literal|"gimp-gradients-sample-uniform"
@@ -1460,6 +1466,8 @@ name|ProcRecord
 name|gradients_sample_custom_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-gradients-sample-custom"
@@ -1868,6 +1876,8 @@ name|ProcRecord
 name|gradients_get_gradient_data_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-gradients-get-gradient-data"

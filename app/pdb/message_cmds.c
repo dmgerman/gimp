@@ -347,6 +347,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-message"
 block|,
 literal|"gimp-message"
@@ -460,6 +462,8 @@ name|ProcRecord
 name|message_get_handler_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-message-get-handler"
@@ -576,6 +580,8 @@ name|ProcRecord
 name|message_set_handler_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-message-set-handler"

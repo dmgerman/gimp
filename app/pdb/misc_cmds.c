@@ -352,6 +352,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-version"
 block|,
 literal|"gimp-version"
@@ -464,6 +466,8 @@ name|ProcRecord
 name|getpid_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-getpid"
@@ -581,6 +585,8 @@ name|ProcRecord
 name|quit_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-quit"

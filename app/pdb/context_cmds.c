@@ -1313,6 +1313,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-context-push"
 block|,
 literal|"gimp-context-push"
@@ -1425,6 +1427,8 @@ name|ProcRecord
 name|context_pop_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-context-pop"
@@ -1577,6 +1581,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-context-get-paint-method"
 block|,
 literal|"gimp-context-get-paint-method"
@@ -1725,6 +1731,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-context-set-paint-method"
 block|,
 literal|"gimp-context-set-paint-method"
@@ -1849,6 +1857,8 @@ name|ProcRecord
 name|context_get_foreground_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-context-get-foreground"
@@ -1978,6 +1988,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-context-set-foreground"
 block|,
 literal|"gimp-context-set-foreground"
@@ -2102,6 +2114,8 @@ name|ProcRecord
 name|context_get_background_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-context-get-background"
@@ -2231,6 +2245,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-context-set-background"
 block|,
 literal|"gimp-context-set-background"
@@ -2319,6 +2335,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-context-set-default-colors"
 block|,
 literal|"gimp-context-set-default-colors"
@@ -2405,6 +2423,8 @@ name|ProcRecord
 name|context_swap_colors_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-context-swap-colors"
@@ -2523,6 +2543,8 @@ name|ProcRecord
 name|context_get_opacity_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-context-get-opacity"
@@ -2644,6 +2666,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-context-set-opacity"
 block|,
 literal|"gimp-context-set-opacity"
@@ -2758,6 +2782,8 @@ name|ProcRecord
 name|context_get_paint_mode_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-context-get-paint-mode"
@@ -2875,6 +2901,8 @@ name|ProcRecord
 name|context_set_paint_mode_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-context-set-paint-mode"
@@ -3027,6 +3055,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-context-get-brush"
 block|,
 literal|"gimp-context-get-brush"
@@ -3175,6 +3205,8 @@ name|ProcRecord
 name|context_set_brush_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-context-set-brush"
@@ -3327,6 +3359,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-context-get-pattern"
 block|,
 literal|"gimp-context-get-pattern"
@@ -3475,6 +3509,8 @@ name|ProcRecord
 name|context_set_pattern_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-context-set-pattern"
@@ -3627,6 +3663,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-context-get-gradient"
 block|,
 literal|"gimp-context-get-gradient"
@@ -3775,6 +3813,8 @@ name|ProcRecord
 name|context_set_gradient_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-context-set-gradient"
@@ -3927,6 +3967,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-context-get-palette"
 block|,
 literal|"gimp-context-get-palette"
@@ -4075,6 +4117,8 @@ name|ProcRecord
 name|context_set_palette_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-context-set-palette"
@@ -4227,6 +4271,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-context-get-font"
 block|,
 literal|"gimp-context-get-font"
@@ -4373,6 +4419,8 @@ name|ProcRecord
 name|context_set_font_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-context-set-font"

@@ -683,6 +683,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-gimprc-query"
 block|,
 literal|"gimp-gimprc-query"
@@ -848,6 +850,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-gimprc-set"
 block|,
 literal|"gimp-gimprc-set"
@@ -969,6 +973,8 @@ name|ProcRecord
 name|get_default_comment_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-get-default-comment"
@@ -1120,6 +1126,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-get-monitor-resolution"
 block|,
 literal|"gimp-get-monitor-resolution"
@@ -1238,6 +1246,8 @@ name|ProcRecord
 name|get_theme_dir_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-get-theme-dir"
@@ -1366,6 +1376,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-get-color-configuration"
 block|,
 literal|"gimp-get-color-configuration"
@@ -1486,6 +1498,8 @@ name|ProcRecord
 name|get_module_load_inhibit_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-get-module-load-inhibit"

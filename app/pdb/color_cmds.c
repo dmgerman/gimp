@@ -2220,6 +2220,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-brightness-contrast"
 block|,
 literal|"gimp-brightness-contrast"
@@ -2505,6 +2507,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-levels"
 block|,
 literal|"gimp-levels"
@@ -2655,6 +2659,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-levels-auto"
 block|,
 literal|"gimp-levels-auto"
@@ -2803,6 +2809,8 @@ name|ProcRecord
 name|levels_stretch_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-levels-stretch"
@@ -3108,6 +3116,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-posterize"
 block|,
 literal|"gimp-posterize"
@@ -3257,6 +3267,8 @@ name|ProcRecord
 name|desaturate_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-desaturate"
@@ -3426,6 +3438,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-desaturate-full"
 block|,
 literal|"gimp-desaturate-full"
@@ -3592,6 +3606,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-equalize"
 block|,
 literal|"gimp-equalize"
@@ -3738,6 +3754,8 @@ name|ProcRecord
 name|invert_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-invert"
@@ -4252,6 +4270,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-curves-spline"
 block|,
 literal|"gimp-curves-spline"
@@ -4688,6 +4708,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-curves-explicit"
 block|,
 literal|"gimp-curves-explicit"
@@ -5083,6 +5105,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-color-balance"
 block|,
 literal|"gimp-color-balance"
@@ -5430,6 +5454,8 @@ name|ProcRecord
 name|colorize_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-colorize"
@@ -5864,6 +5890,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-histogram"
 block|,
 literal|"gimp-histogram"
@@ -6238,6 +6266,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-hue-saturation"
 block|,
 literal|"gimp-hue-saturation"
@@ -6565,6 +6595,8 @@ name|ProcRecord
 name|threshold_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-threshold"

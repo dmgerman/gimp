@@ -1904,6 +1904,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-edit-cut"
 block|,
 literal|"gimp-edit-cut"
@@ -2095,6 +2097,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-edit-copy"
 block|,
 literal|"gimp-edit-copy"
@@ -2247,6 +2251,8 @@ name|ProcRecord
 name|edit_copy_visible_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-edit-copy-visible"
@@ -2481,6 +2487,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-edit-paste"
 block|,
 literal|"gimp-edit-paste"
@@ -2633,6 +2641,8 @@ name|ProcRecord
 name|edit_paste_as_new_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-edit-paste-as-new"
@@ -2873,6 +2883,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-edit-named-cut"
 block|,
 literal|"gimp-edit-named-cut"
@@ -3111,6 +3123,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-edit-named-copy"
 block|,
 literal|"gimp-edit-named-copy"
@@ -3319,6 +3333,8 @@ name|ProcRecord
 name|edit_named_copy_visible_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-edit-named-copy-visible"
@@ -3587,6 +3603,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-edit-named-paste"
 block|,
 literal|"gimp-edit-named-paste"
@@ -3781,6 +3799,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-edit-named-paste-as-new"
 block|,
 literal|"gimp-edit-named-paste-as-new"
@@ -3938,6 +3958,8 @@ name|ProcRecord
 name|edit_clear_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-edit-clear"
@@ -4118,6 +4140,8 @@ name|ProcRecord
 name|edit_fill_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-edit-fill"
@@ -4419,6 +4443,8 @@ name|ProcRecord
 name|edit_bucket_fill_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-edit-bucket-fill"
@@ -4898,6 +4924,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-edit-blend"
 block|,
 literal|"gimp-edit-blend"
@@ -5092,6 +5120,8 @@ name|ProcRecord
 name|edit_stroke_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-edit-stroke"

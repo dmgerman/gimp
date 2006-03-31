@@ -505,6 +505,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-palettes-refresh"
 block|,
 literal|"gimp-palettes-refresh"
@@ -688,6 +690,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-palettes-get-list"
 block|,
 literal|"gimp-palettes-get-list"
@@ -864,6 +868,8 @@ name|ProcRecord
 name|palettes_get_palette_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-palettes-get-palette"
@@ -1183,6 +1189,8 @@ name|ProcRecord
 name|palettes_get_palette_entry_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-palettes-get-palette-entry"

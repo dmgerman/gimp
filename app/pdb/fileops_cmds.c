@@ -1816,6 +1816,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-file-load"
 block|,
 literal|"gimp-file-load"
@@ -2060,6 +2062,8 @@ name|ProcRecord
 name|file_load_layer_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-file-load-layer"
@@ -2449,6 +2453,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-file-load-thumbnail"
 block|,
 literal|"gimp-file-load-thumbnail"
@@ -2738,6 +2744,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-file-save"
 block|,
 literal|"gimp-file-save"
@@ -2971,6 +2979,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-file-save-thumbnail"
 block|,
 literal|"gimp-file-save-thumbnail"
@@ -3124,6 +3134,8 @@ name|ProcRecord
 name|temp_name_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-temp-name"
@@ -3319,6 +3331,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-register-magic-load-handler"
 block|,
 literal|"gimp-register-magic-load-handler"
@@ -3489,6 +3503,8 @@ name|ProcRecord
 name|register_load_handler_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-register-load-handler"
@@ -3839,6 +3855,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-register-save-handler"
 block|,
 literal|"gimp-register-save-handler"
@@ -4007,6 +4025,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-register-file-handler-mime"
 block|,
 literal|"gimp-register-file-handler-mime"
@@ -4173,6 +4193,8 @@ name|ProcRecord
 name|register_thumbnail_loader_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-register-thumbnail-loader"

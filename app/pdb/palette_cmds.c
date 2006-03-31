@@ -1454,6 +1454,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-palette-new"
 block|,
 literal|"gimp-palette-new"
@@ -1670,6 +1672,8 @@ name|ProcRecord
 name|palette_duplicate_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-palette-duplicate"
@@ -1899,6 +1903,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-palette-rename"
 block|,
 literal|"gimp-palette-rename"
@@ -2096,6 +2102,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-palette-delete"
 block|,
 literal|"gimp-palette-delete"
@@ -2278,6 +2286,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-palette-is-editable"
 block|,
 literal|"gimp-palette-is-editable"
@@ -2455,6 +2465,8 @@ name|ProcRecord
 name|palette_get_info_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-palette-get-info"
@@ -2636,6 +2648,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-palette-get-columns"
 block|,
 literal|"gimp-palette-get-columns"
@@ -2807,6 +2821,8 @@ name|ProcRecord
 name|palette_set_columns_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-palette-set-columns"
@@ -3052,6 +3068,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-palette-add-entry"
 block|,
 literal|"gimp-palette-add-entry"
@@ -3257,6 +3275,8 @@ name|ProcRecord
 name|palette_delete_entry_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-palette-delete-entry"
@@ -3497,6 +3517,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-palette-entry-get-color"
 block|,
 literal|"gimp-palette-entry-get-color"
@@ -3726,6 +3748,8 @@ name|ProcRecord
 name|palette_entry_set_color_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-palette-entry-set-color"
@@ -3959,6 +3983,8 @@ name|ProcRecord
 name|palette_entry_get_name_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-palette-entry-get-name"
@@ -4204,6 +4230,8 @@ name|ProcRecord
 name|palette_entry_set_name_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-palette-entry-set-name"

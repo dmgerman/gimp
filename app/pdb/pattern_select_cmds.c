@@ -462,6 +462,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-patterns-popup"
 block|,
 literal|"gimp-patterns-popup"
@@ -607,6 +609,8 @@ name|ProcRecord
 name|patterns_close_popup_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-patterns-close-popup"
@@ -779,6 +783,8 @@ name|ProcRecord
 name|patterns_set_popup_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-patterns-set-popup"

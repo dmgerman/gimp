@@ -2287,6 +2287,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-airbrush"
 block|,
 literal|"gimp-airbrush"
@@ -2502,6 +2504,8 @@ name|ProcRecord
 name|airbrush_default_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-airbrush-default"
@@ -2817,6 +2821,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-clone"
 block|,
 literal|"gimp-clone"
@@ -3032,6 +3038,8 @@ name|ProcRecord
 name|clone_default_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-clone-default"
@@ -3298,6 +3306,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-convolve"
 block|,
 literal|"gimp-convolve"
@@ -3513,6 +3523,8 @@ name|ProcRecord
 name|convolve_default_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-convolve-default"
@@ -3799,6 +3811,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-dodgeburn"
 block|,
 literal|"gimp-dodgeburn"
@@ -4014,6 +4028,8 @@ name|ProcRecord
 name|dodgeburn_default_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-dodgeburn-default"
@@ -4280,6 +4296,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-eraser"
 block|,
 literal|"gimp-eraser"
@@ -4495,6 +4513,8 @@ name|ProcRecord
 name|eraser_default_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-eraser-default"
@@ -4793,6 +4813,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-paintbrush"
 block|,
 literal|"gimp-paintbrush"
@@ -5010,6 +5032,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-paintbrush-default"
 block|,
 literal|"gimp-paintbrush-default"
@@ -5225,6 +5249,8 @@ name|ProcRecord
 name|pencil_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-pencil"
@@ -5471,6 +5497,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-smudge"
 block|,
 literal|"gimp-smudge"
@@ -5686,6 +5714,8 @@ name|ProcRecord
 name|smudge_default_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-smudge-default"

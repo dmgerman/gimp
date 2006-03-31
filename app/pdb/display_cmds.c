@@ -509,6 +509,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-display-new"
 block|,
 literal|"gimp-display-new"
@@ -627,6 +629,8 @@ name|ProcRecord
 name|display_delete_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-display-delete"
@@ -784,6 +788,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-display-get-window-handle"
 block|,
 literal|"gimp-display-get-window-handle"
@@ -879,6 +885,8 @@ name|ProcRecord
 name|displays_flush_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-displays-flush"
@@ -1060,6 +1068,8 @@ name|ProcRecord
 name|displays_reconnect_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-displays-reconnect"

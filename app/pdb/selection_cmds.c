@@ -1602,6 +1602,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-selection-bounds"
 block|,
 literal|"gimp-selection-bounds"
@@ -1794,6 +1796,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-selection-value"
 block|,
 literal|"gimp-selection-value"
@@ -1945,6 +1949,8 @@ name|ProcRecord
 name|selection_is_empty_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-selection-is-empty"
@@ -2107,6 +2113,8 @@ name|ProcRecord
 name|selection_translate_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-selection-translate"
@@ -2352,6 +2360,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-selection-float"
 block|,
 literal|"gimp-selection-float"
@@ -2473,6 +2483,8 @@ name|ProcRecord
 name|selection_invert_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-selection-invert"
@@ -2598,6 +2610,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-selection-sharpen"
 block|,
 literal|"gimp-selection-sharpen"
@@ -2719,6 +2733,8 @@ name|ProcRecord
 name|selection_all_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-selection-all"
@@ -2844,6 +2860,8 @@ name|ProcRecord
 name|selection_none_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-selection-none"
@@ -2989,6 +3007,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-selection-feather"
 block|,
 literal|"gimp-selection-feather"
@@ -3130,6 +3150,8 @@ name|ProcRecord
 name|selection_border_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-selection-border"
@@ -3275,6 +3297,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-selection-grow"
 block|,
 literal|"gimp-selection-grow"
@@ -3418,6 +3442,8 @@ name|ProcRecord
 name|selection_shrink_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-selection-shrink"
@@ -3570,6 +3596,8 @@ name|ProcRecord
 name|selection_layer_alpha_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-selection-layer-alpha"
@@ -3751,6 +3779,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-selection-load"
 block|,
 literal|"gimp-selection-load"
@@ -3915,6 +3945,8 @@ name|ProcRecord
 name|selection_save_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-selection-save"
@@ -4110,6 +4142,8 @@ name|ProcRecord
 name|selection_combine_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-selection-combine"

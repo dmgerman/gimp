@@ -528,6 +528,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-gradients-popup"
 block|,
 literal|"gimp-gradients-popup"
@@ -673,6 +675,8 @@ name|ProcRecord
 name|gradients_close_popup_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-gradients-close-popup"
@@ -845,6 +849,8 @@ name|ProcRecord
 name|gradients_set_popup_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-gradients-set-popup"

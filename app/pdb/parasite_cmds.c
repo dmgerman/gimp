@@ -1430,6 +1430,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-parasite-find"
 block|,
 literal|"gimp-parasite-find"
@@ -1546,6 +1548,8 @@ name|ProcRecord
 name|parasite_attach_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-parasite-attach"
@@ -1668,6 +1672,8 @@ name|ProcRecord
 name|parasite_detach_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-parasite-detach"
@@ -1807,6 +1813,8 @@ name|ProcRecord
 name|parasite_list_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-parasite-list"
@@ -1995,6 +2003,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-image-parasite-find"
 block|,
 literal|"gimp-image-parasite-find"
@@ -2130,6 +2140,8 @@ name|ProcRecord
 name|image_parasite_attach_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-image-parasite-attach"
@@ -2271,6 +2283,8 @@ name|ProcRecord
 name|image_parasite_detach_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-image-parasite-detach"
@@ -2446,6 +2460,8 @@ name|ProcRecord
 name|image_parasite_list_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-image-parasite-list"
@@ -2643,6 +2659,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-drawable-parasite-find"
 block|,
 literal|"gimp-drawable-parasite-find"
@@ -2787,6 +2805,8 @@ name|ProcRecord
 name|drawable_parasite_attach_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-drawable-parasite-attach"
@@ -2937,6 +2957,8 @@ name|ProcRecord
 name|drawable_parasite_detach_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-drawable-parasite-detach"
@@ -3121,6 +3143,8 @@ name|ProcRecord
 name|drawable_parasite_list_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-drawable-parasite-list"
@@ -3318,6 +3342,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-vectors-parasite-find"
 block|,
 literal|"gimp-vectors-parasite-find"
@@ -3462,6 +3488,8 @@ name|ProcRecord
 name|vectors_parasite_attach_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-vectors-parasite-attach"
@@ -3612,6 +3640,8 @@ name|ProcRecord
 name|vectors_parasite_detach_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-vectors-parasite-detach"
@@ -3796,6 +3826,8 @@ name|ProcRecord
 name|vectors_parasite_list_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-vectors-parasite-list"

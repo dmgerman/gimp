@@ -790,6 +790,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-buffers-get-list"
 block|,
 literal|"gimp-buffers-get-list"
@@ -1013,6 +1015,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-buffer-rename"
 block|,
 literal|"gimp-buffer-rename"
@@ -1166,6 +1170,8 @@ name|ProcRecord
 name|buffer_delete_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-buffer-delete"
@@ -1346,6 +1352,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-buffer-get-width"
 block|,
 literal|"gimp-buffer-get-width"
@@ -1522,6 +1530,8 @@ name|ProcRecord
 name|buffer_get_height_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-buffer-get-height"
@@ -1702,6 +1712,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-buffer-get-bytes"
 block|,
 literal|"gimp-buffer-get-bytes"
@@ -1878,6 +1890,8 @@ name|ProcRecord
 name|buffer_get_image_type_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-buffer-get-image-type"

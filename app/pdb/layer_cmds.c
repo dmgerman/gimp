@@ -2615,6 +2615,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-layer-new"
 block|,
 literal|"gimp-layer-new"
@@ -2872,6 +2874,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-layer-new-from-drawable"
 block|,
 literal|"gimp-layer-new-from-drawable"
@@ -3070,6 +3074,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-layer-copy"
 block|,
 literal|"gimp-layer-copy"
@@ -3192,6 +3198,8 @@ name|ProcRecord
 name|layer_add_alpha_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-layer-add-alpha"
@@ -3396,6 +3404,8 @@ name|ProcRecord
 name|layer_scale_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-layer-scale"
@@ -3614,6 +3624,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-layer-resize"
 block|,
 literal|"gimp-layer-resize"
@@ -3753,6 +3765,8 @@ name|ProcRecord
 name|layer_resize_to_image_size_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-layer-resize-to-image-size"
@@ -3971,6 +3985,8 @@ name|ProcRecord
 name|layer_translate_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-layer-translate"
@@ -4209,6 +4225,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-layer-set-offsets"
 block|,
 literal|"gimp-layer-set-offsets"
@@ -4399,6 +4417,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-layer-create-mask"
 block|,
 literal|"gimp-layer-create-mask"
@@ -4559,6 +4579,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-layer-get-mask"
 block|,
 literal|"gimp-layer-get-mask"
@@ -4717,6 +4739,8 @@ name|ProcRecord
 name|layer_from_mask_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-layer-from-mask"
@@ -4887,6 +4911,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-layer-add-mask"
 block|,
 literal|"gimp-layer-add-mask"
@@ -5046,6 +5072,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-layer-remove-mask"
 block|,
 literal|"gimp-layer-remove-mask"
@@ -5200,6 +5228,8 @@ name|ProcRecord
 name|layer_is_floating_sel_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-layer-is-floating-sel"
@@ -5358,6 +5388,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-layer-get-lock-alpha"
 block|,
 literal|"gimp-layer-get-lock-alpha"
@@ -5500,6 +5532,8 @@ name|ProcRecord
 name|layer_set_lock_alpha_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-layer-set-lock-alpha"
@@ -5671,6 +5705,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-layer-get-apply-mask"
 block|,
 literal|"gimp-layer-get-apply-mask"
@@ -5826,6 +5862,8 @@ name|ProcRecord
 name|layer_set_apply_mask_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-layer-set-apply-mask"
@@ -5997,6 +6035,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-layer-get-show-mask"
 block|,
 literal|"gimp-layer-get-show-mask"
@@ -6152,6 +6192,8 @@ name|ProcRecord
 name|layer_set_show_mask_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-layer-set-show-mask"
@@ -6323,6 +6365,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-layer-get-edit-mask"
 block|,
 literal|"gimp-layer-get-edit-mask"
@@ -6476,6 +6520,8 @@ name|ProcRecord
 name|layer_set_edit_mask_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-layer-set-edit-mask"
@@ -6636,6 +6682,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-layer-get-opacity"
 block|,
 literal|"gimp-layer-get-opacity"
@@ -6780,6 +6828,8 @@ name|ProcRecord
 name|layer_set_opacity_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-layer-set-opacity"
@@ -6938,6 +6988,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-layer-get-mode"
 block|,
 literal|"gimp-layer-get-mode"
@@ -7080,6 +7132,8 @@ name|ProcRecord
 name|layer_set_mode_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-layer-set-mode"

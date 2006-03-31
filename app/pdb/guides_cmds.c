@@ -805,6 +805,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-image-add-hguide"
 block|,
 literal|"gimp-image-add-hguide"
@@ -1000,6 +1002,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-image-add-vguide"
 block|,
 literal|"gimp-image-add-vguide"
@@ -1156,6 +1160,8 @@ name|ProcRecord
 name|image_delete_guide_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-image-delete-guide"
@@ -1339,6 +1345,8 @@ name|ProcRecord
 name|image_find_next_guide_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-image-find-next-guide"
@@ -1526,6 +1534,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-image-get-guide-orientation"
 block|,
 literal|"gimp-image-get-guide-orientation"
@@ -1709,6 +1719,8 @@ name|ProcRecord
 name|image_get_guide_position_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-image-get-guide-position"

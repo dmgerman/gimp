@@ -259,6 +259,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-fonts-refresh"
 block|,
 literal|"gimp-fonts-refresh"
@@ -438,6 +440,8 @@ name|ProcRecord
 name|fonts_get_list_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-fonts-get-list"

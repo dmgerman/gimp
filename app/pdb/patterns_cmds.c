@@ -575,6 +575,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-patterns-refresh"
 block|,
 literal|"gimp-patterns-refresh"
@@ -756,6 +758,8 @@ name|ProcRecord
 name|patterns_get_list_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-patterns-get-list"
@@ -962,6 +966,8 @@ name|ProcRecord
 name|patterns_get_pattern_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-patterns-get-pattern"
@@ -1325,6 +1331,8 @@ name|ProcRecord
 name|patterns_get_pattern_data_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-patterns-get-pattern-data"

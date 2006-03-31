@@ -3680,6 +3680,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-drawable-delete"
 block|,
 literal|"gimp-drawable-delete"
@@ -3834,6 +3836,8 @@ name|ProcRecord
 name|drawable_is_layer_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-drawable-is-layer"
@@ -3992,6 +3996,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-drawable-is-layer-mask"
 block|,
 literal|"gimp-drawable-is-layer-mask"
@@ -4146,6 +4152,8 @@ name|ProcRecord
 name|drawable_is_channel_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-drawable-is-channel"
@@ -4304,6 +4312,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-drawable-type"
 block|,
 literal|"gimp-drawable-type"
@@ -4458,6 +4468,8 @@ name|ProcRecord
 name|drawable_type_with_alpha_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-drawable-type-with-alpha"
@@ -4616,6 +4628,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-drawable-has-alpha"
 block|,
 literal|"gimp-drawable-has-alpha"
@@ -4770,6 +4784,8 @@ name|ProcRecord
 name|drawable_is_rgb_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-drawable-is-rgb"
@@ -4928,6 +4944,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-drawable-is-gray"
 block|,
 literal|"gimp-drawable-is-gray"
@@ -5084,6 +5102,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-drawable-is-indexed"
 block|,
 literal|"gimp-drawable-is-indexed"
@@ -5238,6 +5258,8 @@ name|ProcRecord
 name|drawable_bpp_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-drawable-bpp"
@@ -5399,6 +5421,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-drawable-width"
 block|,
 literal|"gimp-drawable-width"
@@ -5556,6 +5580,8 @@ name|ProcRecord
 name|drawable_height_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-drawable-height"
@@ -5741,6 +5767,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-drawable-offsets"
 block|,
 literal|"gimp-drawable-offsets"
@@ -5901,6 +5929,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-drawable-get-image"
 block|,
 literal|"gimp-drawable-get-image"
@@ -6053,6 +6083,8 @@ name|ProcRecord
 name|drawable_set_image_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-drawable-set-image"
@@ -6218,6 +6250,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-drawable-get-name"
 block|,
 literal|"gimp-drawable-get-name"
@@ -6368,6 +6402,8 @@ name|ProcRecord
 name|drawable_set_name_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-drawable-set-name"
@@ -6529,6 +6565,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-drawable-get-visible"
 block|,
 literal|"gimp-drawable-get-visible"
@@ -6674,6 +6712,8 @@ name|ProcRecord
 name|drawable_set_visible_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-drawable-set-visible"
@@ -6835,6 +6875,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-drawable-get-linked"
 block|,
 literal|"gimp-drawable-get-linked"
@@ -6980,6 +7022,8 @@ name|ProcRecord
 name|drawable_set_linked_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-drawable-set-linked"
@@ -7141,6 +7185,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-drawable-get-tattoo"
 block|,
 literal|"gimp-drawable-get-tattoo"
@@ -7284,6 +7330,8 @@ name|ProcRecord
 name|drawable_set_tattoo_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-drawable-set-tattoo"
@@ -7528,6 +7576,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-drawable-mask-bounds"
 block|,
 literal|"gimp-drawable-mask-bounds"
@@ -7770,6 +7820,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-drawable-mask-intersect"
 block|,
 literal|"gimp-drawable-mask-intersect"
@@ -7972,6 +8024,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-drawable-merge-shadow"
 block|,
 literal|"gimp-drawable-merge-shadow"
@@ -8166,6 +8220,8 @@ name|ProcRecord
 name|drawable_update_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-drawable-update"
@@ -8493,6 +8549,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-drawable-get-pixel"
 block|,
 literal|"gimp-drawable-get-pixel"
@@ -8789,6 +8847,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-drawable-set-pixel"
 block|,
 literal|"gimp-drawable-set-pixel"
@@ -8934,6 +8994,8 @@ name|ProcRecord
 name|drawable_fill_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-drawable-fill"
@@ -9147,6 +9209,8 @@ name|ProcRecord
 name|drawable_offset_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-drawable-offset"
@@ -9584,6 +9648,8 @@ name|ProcRecord
 name|drawable_thumbnail_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-drawable-thumbnail"
@@ -10072,6 +10138,8 @@ init|=
 block|{
 name|TRUE
 block|,
+name|TRUE
+block|,
 literal|"gimp-drawable-sub-thumbnail"
 block|,
 literal|"gimp-drawable-sub-thumbnail"
@@ -10256,6 +10324,8 @@ name|ProcRecord
 name|drawable_foreground_extract_proc
 init|=
 block|{
+name|TRUE
+block|,
 name|TRUE
 block|,
 literal|"gimp-drawable-foreground-extract"
