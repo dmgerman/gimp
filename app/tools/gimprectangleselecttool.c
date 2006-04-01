@@ -1116,6 +1116,9 @@ name|gboolean
 name|rectangle_exists
 decl_stmt|;
 name|gboolean
+name|auto_shrink
+decl_stmt|;
+name|gboolean
 name|selected
 decl_stmt|;
 name|gint
@@ -1223,6 +1226,23 @@ operator|>
 literal|0
 operator|)
 expr_stmt|;
+name|g_object_get
+argument_list|(
+name|options
+argument_list|,
+literal|"auto-shrink"
+argument_list|,
+operator|&
+name|auto_shrink
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|auto_shrink
+condition|)
+block|{
 if|if
 condition|(
 name|x
@@ -1283,6 +1303,7 @@ name|max_y
 operator|-
 name|y
 expr_stmt|;
+block|}
 comment|/* if rectangle exists, turn it into a selection */
 if|if
 condition|(
