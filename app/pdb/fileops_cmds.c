@@ -608,7 +608,7 @@ name|procedure
 argument_list|,
 name|GIMP_PDB_INT8ARRAY
 argument_list|,
-name|g_param_spec_pointer
+name|gimp_param_spec_array
 argument_list|(
 literal|"thumb-data"
 argument_list|,
@@ -1803,8 +1803,6 @@ argument_list|,
 name|proc
 operator|->
 name|num_args
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 return|return
@@ -2430,7 +2428,7 @@ argument_list|,
 name|thumb_data_count
 argument_list|)
 expr_stmt|;
-name|g_value_set_pointer
+name|gimp_value_take_int8array
 argument_list|(
 operator|&
 name|return_vals
@@ -2441,6 +2439,8 @@ operator|.
 name|value
 argument_list|,
 name|thumb_data
+argument_list|,
+name|thumb_data_count
 argument_list|)
 expr_stmt|;
 block|}
@@ -2731,8 +2731,6 @@ argument_list|,
 name|proc
 operator|->
 name|num_args
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 return|return

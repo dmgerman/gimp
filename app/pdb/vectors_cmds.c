@@ -1020,7 +1020,7 @@ name|procedure
 argument_list|,
 name|GIMP_PDB_INT32ARRAY
 argument_list|,
-name|g_param_spec_pointer
+name|gimp_param_spec_array
 argument_list|(
 literal|"stroke-ids"
 argument_list|,
@@ -1862,7 +1862,7 @@ name|procedure
 argument_list|,
 name|GIMP_PDB_FLOATARRAY
 argument_list|,
-name|g_param_spec_pointer
+name|gimp_param_spec_array
 argument_list|(
 literal|"coords"
 argument_list|,
@@ -4451,7 +4451,7 @@ argument_list|,
 name|num_strokes
 argument_list|)
 expr_stmt|;
-name|g_value_set_pointer
+name|gimp_value_take_int32array
 argument_list|(
 operator|&
 name|return_vals
@@ -4462,6 +4462,8 @@ operator|.
 name|value
 argument_list|,
 name|stroke_ids
+argument_list|,
+name|num_strokes
 argument_list|)
 expr_stmt|;
 block|}
@@ -6057,7 +6059,7 @@ argument_list|,
 name|num_coords
 argument_list|)
 expr_stmt|;
-name|g_value_set_pointer
+name|gimp_value_take_floatarray
 argument_list|(
 operator|&
 name|return_vals
@@ -6068,6 +6070,8 @@ operator|.
 name|value
 argument_list|,
 name|coords
+argument_list|,
+name|num_coords
 argument_list|)
 expr_stmt|;
 block|}

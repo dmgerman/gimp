@@ -822,8 +822,6 @@ argument_list|,
 name|procedure
 operator|->
 name|num_values
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|return_vals
@@ -1015,8 +1013,6 @@ operator|->
 name|procedure
 operator|->
 name|num_args
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 block|}

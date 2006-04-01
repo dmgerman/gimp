@@ -541,8 +541,6 @@ argument_list|(
 name|return_vals
 argument_list|,
 name|n_return_vals
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_arguments_destroy
@@ -552,8 +550,6 @@ argument_list|,
 name|procedure
 operator|->
 name|num_args
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 return|return;

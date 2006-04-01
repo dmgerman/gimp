@@ -1803,8 +1803,6 @@ argument_list|(
 name|args
 argument_list|,
 name|n_args
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_arguments_destroy
@@ -1812,8 +1810,6 @@ argument_list|(
 name|return_vals
 argument_list|,
 name|n_return_vals
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|plug_in_params_destroy

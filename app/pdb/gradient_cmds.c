@@ -798,7 +798,7 @@ name|procedure
 argument_list|,
 name|GIMP_PDB_FLOATARRAY
 argument_list|,
-name|g_param_spec_pointer
+name|gimp_param_spec_array
 argument_list|(
 literal|"color-samples"
 argument_list|,
@@ -884,7 +884,7 @@ name|procedure
 argument_list|,
 name|GIMP_PDB_FLOATARRAY
 argument_list|,
-name|g_param_spec_pointer
+name|gimp_param_spec_array
 argument_list|(
 literal|"positions"
 argument_list|,
@@ -946,7 +946,7 @@ name|procedure
 argument_list|,
 name|GIMP_PDB_FLOATARRAY
 argument_list|,
-name|g_param_spec_pointer
+name|gimp_param_spec_array
 argument_list|(
 literal|"color-samples"
 argument_list|,
@@ -4891,7 +4891,7 @@ argument_list|,
 name|num_color_samples
 argument_list|)
 expr_stmt|;
-name|g_value_set_pointer
+name|gimp_value_take_floatarray
 argument_list|(
 operator|&
 name|return_vals
@@ -4902,6 +4902,8 @@ operator|.
 name|value
 argument_list|,
 name|color_samples
+argument_list|,
+name|num_color_samples
 argument_list|)
 expr_stmt|;
 block|}
@@ -5051,7 +5053,11 @@ argument_list|)
 expr_stmt|;
 name|positions
 operator|=
-name|g_value_get_pointer
+operator|(
+name|gdouble
+operator|*
+operator|)
+name|gimp_value_get_floatarray
 argument_list|(
 operator|&
 name|args
@@ -5227,7 +5233,7 @@ argument_list|,
 name|num_color_samples
 argument_list|)
 expr_stmt|;
-name|g_value_set_pointer
+name|gimp_value_take_floatarray
 argument_list|(
 operator|&
 name|return_vals
@@ -5238,6 +5244,8 @@ operator|.
 name|value
 argument_list|,
 name|color_samples
+argument_list|,
+name|num_color_samples
 argument_list|)
 expr_stmt|;
 block|}

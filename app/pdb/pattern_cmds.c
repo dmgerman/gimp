@@ -376,7 +376,7 @@ name|procedure
 argument_list|,
 name|GIMP_PDB_INT8ARRAY
 argument_list|,
-name|g_param_spec_pointer
+name|gimp_param_spec_array
 argument_list|(
 literal|"color-bytes"
 argument_list|,
@@ -881,7 +881,7 @@ argument_list|,
 name|num_color_bytes
 argument_list|)
 expr_stmt|;
-name|g_value_set_pointer
+name|gimp_value_take_int8array
 argument_list|(
 operator|&
 name|return_vals
@@ -892,6 +892,8 @@ operator|.
 name|value
 argument_list|,
 name|color_bytes
+argument_list|,
+name|num_color_bytes
 argument_list|)
 expr_stmt|;
 block|}

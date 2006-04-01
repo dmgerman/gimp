@@ -2637,7 +2637,7 @@ name|procedure
 argument_list|,
 name|GIMP_PDB_INT8ARRAY
 argument_list|,
-name|g_param_spec_pointer
+name|gimp_param_spec_array
 argument_list|(
 literal|"pixel"
 argument_list|,
@@ -2771,7 +2771,7 @@ name|procedure
 argument_list|,
 name|GIMP_PDB_INT8ARRAY
 argument_list|,
-name|g_param_spec_pointer
+name|gimp_param_spec_array
 argument_list|(
 literal|"pixel"
 argument_list|,
@@ -3171,7 +3171,7 @@ name|procedure
 argument_list|,
 name|GIMP_PDB_INT8ARRAY
 argument_list|,
-name|g_param_spec_pointer
+name|gimp_param_spec_array
 argument_list|(
 literal|"thumbnail-data"
 argument_list|,
@@ -3471,7 +3471,7 @@ name|procedure
 argument_list|,
 name|GIMP_PDB_INT8ARRAY
 argument_list|,
-name|g_param_spec_pointer
+name|gimp_param_spec_array
 argument_list|(
 literal|"thumbnail-data"
 argument_list|,
@@ -8526,7 +8526,7 @@ argument_list|,
 name|num_channels
 argument_list|)
 expr_stmt|;
-name|g_value_set_pointer
+name|gimp_value_take_int8array
 argument_list|(
 operator|&
 name|return_vals
@@ -8537,6 +8537,8 @@ operator|.
 name|value
 argument_list|,
 name|pixel
+argument_list|,
+name|num_channels
 argument_list|)
 expr_stmt|;
 block|}
@@ -8704,7 +8706,11 @@ argument_list|)
 expr_stmt|;
 name|pixel
 operator|=
-name|g_value_get_pointer
+operator|(
+name|guint8
+operator|*
+operator|)
+name|gimp_value_get_int8array
 argument_list|(
 operator|&
 name|args
@@ -9627,7 +9633,7 @@ argument_list|,
 name|thumbnail_data_count
 argument_list|)
 expr_stmt|;
-name|g_value_set_pointer
+name|gimp_value_take_int8array
 argument_list|(
 operator|&
 name|return_vals
@@ -9638,6 +9644,8 @@ operator|.
 name|value
 argument_list|,
 name|thumbnail_data
+argument_list|,
+name|thumbnail_data_count
 argument_list|)
 expr_stmt|;
 block|}
@@ -10115,7 +10123,7 @@ argument_list|,
 name|thumbnail_data_count
 argument_list|)
 expr_stmt|;
-name|g_value_set_pointer
+name|gimp_value_take_int8array
 argument_list|(
 operator|&
 name|return_vals
@@ -10126,6 +10134,8 @@ operator|.
 name|value
 argument_list|,
 name|thumbnail_data
+argument_list|,
+name|thumbnail_data_count
 argument_list|)
 expr_stmt|;
 block|}

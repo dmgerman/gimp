@@ -612,7 +612,7 @@ name|procedure
 argument_list|,
 name|GIMP_PDB_FLOATARRAY
 argument_list|,
-name|g_param_spec_pointer
+name|gimp_param_spec_array
 argument_list|(
 literal|"segs"
 argument_list|,
@@ -1789,7 +1789,11 @@ argument_list|)
 expr_stmt|;
 name|segs
 operator|=
-name|g_value_get_pointer
+operator|(
+name|gdouble
+operator|*
+operator|)
+name|gimp_value_get_floatarray
 argument_list|(
 operator|&
 name|args

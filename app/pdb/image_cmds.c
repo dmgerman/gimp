@@ -832,7 +832,7 @@ name|procedure
 argument_list|,
 name|GIMP_PDB_INT32ARRAY
 argument_list|,
-name|g_param_spec_pointer
+name|gimp_param_spec_array
 argument_list|(
 literal|"image-ids"
 argument_list|,
@@ -1895,7 +1895,7 @@ name|procedure
 argument_list|,
 name|GIMP_PDB_INT32ARRAY
 argument_list|,
-name|g_param_spec_pointer
+name|gimp_param_spec_array
 argument_list|(
 literal|"layer-ids"
 argument_list|,
@@ -1977,7 +1977,7 @@ name|procedure
 argument_list|,
 name|GIMP_PDB_INT32ARRAY
 argument_list|,
-name|g_param_spec_pointer
+name|gimp_param_spec_array
 argument_list|(
 literal|"channel-ids"
 argument_list|,
@@ -2059,7 +2059,7 @@ name|procedure
 argument_list|,
 name|GIMP_PDB_INT32ARRAY
 argument_list|,
-name|g_param_spec_pointer
+name|gimp_param_spec_array
 argument_list|(
 literal|"vector-ids"
 argument_list|,
@@ -4195,7 +4195,7 @@ name|procedure
 argument_list|,
 name|GIMP_PDB_INT8ARRAY
 argument_list|,
-name|g_param_spec_pointer
+name|gimp_param_spec_array
 argument_list|(
 literal|"colormap"
 argument_list|,
@@ -4277,7 +4277,7 @@ name|procedure
 argument_list|,
 name|GIMP_PDB_INT8ARRAY
 argument_list|,
-name|g_param_spec_pointer
+name|gimp_param_spec_array
 argument_list|(
 literal|"colormap"
 argument_list|,
@@ -4579,7 +4579,7 @@ name|procedure
 argument_list|,
 name|GIMP_PDB_INT8ARRAY
 argument_list|,
-name|g_param_spec_pointer
+name|gimp_param_spec_array
 argument_list|(
 literal|"thumbnail-data"
 argument_list|,
@@ -6463,7 +6463,7 @@ argument_list|,
 name|num_images
 argument_list|)
 expr_stmt|;
-name|g_value_set_pointer
+name|gimp_value_take_int32array
 argument_list|(
 operator|&
 name|return_vals
@@ -6474,6 +6474,8 @@ operator|.
 name|value
 argument_list|,
 name|image_ids
+argument_list|,
+name|num_images
 argument_list|)
 expr_stmt|;
 return|return
@@ -8780,7 +8782,7 @@ argument_list|,
 name|num_layers
 argument_list|)
 expr_stmt|;
-name|g_value_set_pointer
+name|gimp_value_take_int32array
 argument_list|(
 operator|&
 name|return_vals
@@ -8791,6 +8793,8 @@ operator|.
 name|value
 argument_list|,
 name|layer_ids
+argument_list|,
+name|num_layers
 argument_list|)
 expr_stmt|;
 block|}
@@ -9019,7 +9023,7 @@ argument_list|,
 name|num_channels
 argument_list|)
 expr_stmt|;
-name|g_value_set_pointer
+name|gimp_value_take_int32array
 argument_list|(
 operator|&
 name|return_vals
@@ -9030,6 +9034,8 @@ operator|.
 name|value
 argument_list|,
 name|channel_ids
+argument_list|,
+name|num_channels
 argument_list|)
 expr_stmt|;
 block|}
@@ -9258,7 +9264,7 @@ argument_list|,
 name|num_vectors
 argument_list|)
 expr_stmt|;
-name|g_value_set_pointer
+name|gimp_value_take_int32array
 argument_list|(
 operator|&
 name|return_vals
@@ -9269,6 +9275,8 @@ operator|.
 name|value
 argument_list|,
 name|vector_ids
+argument_list|,
+name|num_vectors
 argument_list|)
 expr_stmt|;
 block|}
@@ -14040,7 +14048,7 @@ argument_list|,
 name|num_bytes
 argument_list|)
 expr_stmt|;
-name|g_value_set_pointer
+name|gimp_value_take_int8array
 argument_list|(
 operator|&
 name|return_vals
@@ -14051,6 +14059,8 @@ operator|.
 name|value
 argument_list|,
 name|colormap
+argument_list|,
+name|num_bytes
 argument_list|)
 expr_stmt|;
 block|}
@@ -14180,7 +14190,11 @@ argument_list|)
 expr_stmt|;
 name|colormap
 operator|=
-name|g_value_get_pointer
+operator|(
+name|guint8
+operator|*
+operator|)
+name|gimp_value_get_int8array
 argument_list|(
 operator|&
 name|args
@@ -14898,7 +14912,7 @@ argument_list|,
 name|thumbnail_data_count
 argument_list|)
 expr_stmt|;
-name|g_value_set_pointer
+name|gimp_value_take_int8array
 argument_list|(
 operator|&
 name|return_vals
@@ -14909,6 +14923,8 @@ operator|.
 name|value
 argument_list|,
 name|thumbnail_data
+argument_list|,
+name|thumbnail_data_count
 argument_list|)
 expr_stmt|;
 block|}

@@ -246,7 +246,7 @@ name|procedure
 argument_list|,
 name|GIMP_PDB_STRINGARRAY
 argument_list|,
-name|g_param_spec_pointer
+name|gimp_param_spec_string_array
 argument_list|(
 literal|"menu-path"
 argument_list|,
@@ -288,7 +288,7 @@ name|procedure
 argument_list|,
 name|GIMP_PDB_STRINGARRAY
 argument_list|,
-name|g_param_spec_pointer
+name|gimp_param_spec_string_array
 argument_list|(
 literal|"plugin-accelerator"
 argument_list|,
@@ -330,7 +330,7 @@ name|procedure
 argument_list|,
 name|GIMP_PDB_STRINGARRAY
 argument_list|,
-name|g_param_spec_pointer
+name|gimp_param_spec_string_array
 argument_list|(
 literal|"plugin-location"
 argument_list|,
@@ -372,7 +372,7 @@ name|procedure
 argument_list|,
 name|GIMP_PDB_STRINGARRAY
 argument_list|,
-name|g_param_spec_pointer
+name|gimp_param_spec_string_array
 argument_list|(
 literal|"plugin-image-type"
 argument_list|,
@@ -414,7 +414,7 @@ name|procedure
 argument_list|,
 name|GIMP_PDB_INT32ARRAY
 argument_list|,
-name|g_param_spec_pointer
+name|gimp_param_spec_array
 argument_list|(
 literal|"plugin-install-time"
 argument_list|,
@@ -456,7 +456,7 @@ name|procedure
 argument_list|,
 name|GIMP_PDB_STRINGARRAY
 argument_list|,
-name|g_param_spec_pointer
+name|gimp_param_spec_string_array
 argument_list|(
 literal|"plugin-real-name"
 argument_list|,
@@ -838,7 +838,7 @@ name|procedure
 argument_list|,
 name|GIMP_PDB_INT8ARRAY
 argument_list|,
-name|g_param_spec_pointer
+name|gimp_param_spec_array
 argument_list|(
 literal|"icon-data"
 argument_list|,
@@ -1008,7 +1008,7 @@ argument_list|,
 name|num_plugins
 argument_list|)
 expr_stmt|;
-name|g_value_set_pointer
+name|gimp_value_take_stringarray
 argument_list|(
 operator|&
 name|return_vals
@@ -1019,6 +1019,8 @@ operator|.
 name|value
 argument_list|,
 name|menu_path
+argument_list|,
+name|num_plugins
 argument_list|)
 expr_stmt|;
 name|g_value_set_int
@@ -1034,7 +1036,7 @@ argument_list|,
 name|num_plugins
 argument_list|)
 expr_stmt|;
-name|g_value_set_pointer
+name|gimp_value_take_stringarray
 argument_list|(
 operator|&
 name|return_vals
@@ -1045,6 +1047,8 @@ operator|.
 name|value
 argument_list|,
 name|plugin_accelerator
+argument_list|,
+name|num_plugins
 argument_list|)
 expr_stmt|;
 name|g_value_set_int
@@ -1060,7 +1064,7 @@ argument_list|,
 name|num_plugins
 argument_list|)
 expr_stmt|;
-name|g_value_set_pointer
+name|gimp_value_take_stringarray
 argument_list|(
 operator|&
 name|return_vals
@@ -1071,6 +1075,8 @@ operator|.
 name|value
 argument_list|,
 name|plugin_location
+argument_list|,
+name|num_plugins
 argument_list|)
 expr_stmt|;
 name|g_value_set_int
@@ -1086,7 +1092,7 @@ argument_list|,
 name|num_plugins
 argument_list|)
 expr_stmt|;
-name|g_value_set_pointer
+name|gimp_value_take_stringarray
 argument_list|(
 operator|&
 name|return_vals
@@ -1097,6 +1103,8 @@ operator|.
 name|value
 argument_list|,
 name|plugin_image_type
+argument_list|,
+name|num_plugins
 argument_list|)
 expr_stmt|;
 name|g_value_set_int
@@ -1112,7 +1120,7 @@ argument_list|,
 name|num_plugins
 argument_list|)
 expr_stmt|;
-name|g_value_set_pointer
+name|gimp_value_take_int32array
 argument_list|(
 operator|&
 name|return_vals
@@ -1123,6 +1131,8 @@ operator|.
 name|value
 argument_list|,
 name|plugin_install_time
+argument_list|,
+name|num_plugins
 argument_list|)
 expr_stmt|;
 name|g_value_set_int
@@ -1138,7 +1148,7 @@ argument_list|,
 name|num_plugins
 argument_list|)
 expr_stmt|;
-name|g_value_set_pointer
+name|gimp_value_take_stringarray
 argument_list|(
 operator|&
 name|return_vals
@@ -1149,6 +1159,8 @@ operator|.
 name|value
 argument_list|,
 name|plugin_real_name
+argument_list|,
+name|num_plugins
 argument_list|)
 expr_stmt|;
 return|return
@@ -2028,7 +2040,11 @@ argument_list|)
 expr_stmt|;
 name|icon_data
 operator|=
-name|g_value_get_pointer
+operator|(
+name|guint8
+operator|*
+operator|)
+name|gimp_value_get_int8array
 argument_list|(
 operator|&
 name|args

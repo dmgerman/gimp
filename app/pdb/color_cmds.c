@@ -1036,7 +1036,7 @@ name|procedure
 argument_list|,
 name|GIMP_PDB_INT8ARRAY
 argument_list|,
-name|g_param_spec_pointer
+name|gimp_param_spec_array
 argument_list|(
 literal|"control-pts"
 argument_list|,
@@ -1142,7 +1142,7 @@ name|procedure
 argument_list|,
 name|GIMP_PDB_INT8ARRAY
 argument_list|,
-name|g_param_spec_pointer
+name|gimp_param_spec_array
 argument_list|(
 literal|"curve"
 argument_list|,
@@ -3895,7 +3895,11 @@ argument_list|)
 expr_stmt|;
 name|control_pts
 operator|=
-name|g_value_get_pointer
+operator|(
+name|guint8
+operator|*
+operator|)
+name|gimp_value_get_int8array
 argument_list|(
 operator|&
 name|args
@@ -4409,7 +4413,11 @@ argument_list|)
 expr_stmt|;
 name|curve
 operator|=
-name|g_value_get_pointer
+operator|(
+name|guint8
+operator|*
+operator|)
+name|gimp_value_get_int8array
 argument_list|(
 operator|&
 name|args

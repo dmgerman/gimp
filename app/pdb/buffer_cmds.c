@@ -222,7 +222,7 @@ name|procedure
 argument_list|,
 name|GIMP_PDB_STRINGARRAY
 argument_list|,
-name|g_param_spec_pointer
+name|gimp_param_spec_string_array
 argument_list|(
 literal|"buffer-list"
 argument_list|,
@@ -767,7 +767,7 @@ argument_list|,
 name|num_buffers
 argument_list|)
 expr_stmt|;
-name|g_value_set_pointer
+name|gimp_value_take_stringarray
 argument_list|(
 operator|&
 name|return_vals
@@ -778,6 +778,8 @@ operator|.
 name|value
 argument_list|,
 name|buffer_list
+argument_list|,
+name|num_buffers
 argument_list|)
 expr_stmt|;
 block|}

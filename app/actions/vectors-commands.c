@@ -1348,8 +1348,6 @@ argument_list|,
 name|procedure
 operator|->
 name|num_args
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 block|}

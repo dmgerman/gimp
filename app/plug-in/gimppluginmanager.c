@@ -4521,8 +4521,6 @@ argument_list|(
 name|return_vals
 argument_list|,
 name|n_return_vals
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 block|}

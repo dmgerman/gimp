@@ -458,7 +458,7 @@ name|procedure
 argument_list|,
 name|GIMP_PDB_STRINGARRAY
 argument_list|,
-name|g_param_spec_pointer
+name|gimp_param_spec_string_array
 argument_list|(
 literal|"procedure-names"
 argument_list|,
@@ -1088,7 +1088,7 @@ name|procedure
 argument_list|,
 name|GIMP_PDB_INT8ARRAY
 argument_list|,
-name|g_param_spec_pointer
+name|gimp_param_spec_array
 argument_list|(
 literal|"data"
 argument_list|,
@@ -1242,7 +1242,7 @@ name|procedure
 argument_list|,
 name|GIMP_PDB_INT8ARRAY
 argument_list|,
-name|g_param_spec_pointer
+name|gimp_param_spec_array
 argument_list|(
 literal|"data"
 argument_list|,
@@ -1774,7 +1774,7 @@ argument_list|,
 name|num_matches
 argument_list|)
 expr_stmt|;
-name|g_value_set_pointer
+name|gimp_value_take_stringarray
 argument_list|(
 operator|&
 name|return_vals
@@ -1785,6 +1785,8 @@ operator|.
 name|value
 argument_list|,
 name|procedure_names
+argument_list|,
+name|num_matches
 argument_list|)
 expr_stmt|;
 block|}
@@ -2995,7 +2997,7 @@ argument_list|,
 name|bytes
 argument_list|)
 expr_stmt|;
-name|g_value_set_pointer
+name|gimp_value_take_int8array
 argument_list|(
 operator|&
 name|return_vals
@@ -3006,6 +3008,8 @@ operator|.
 name|value
 argument_list|,
 name|data
+argument_list|,
+name|bytes
 argument_list|)
 expr_stmt|;
 block|}
@@ -3326,7 +3330,11 @@ argument_list|)
 expr_stmt|;
 name|data
 operator|=
-name|g_value_get_pointer
+operator|(
+name|guint8
+operator|*
+operator|)
+name|gimp_value_get_int8array
 argument_list|(
 operator|&
 name|args

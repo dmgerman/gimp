@@ -90,9 +90,6 @@ name|args
 parameter_list|,
 name|gint
 name|n_args
-parameter_list|,
-name|gboolean
-name|full_destroy
 parameter_list|)
 function_decl|;
 end_function_decl
