@@ -19,6 +19,7 @@ end_define
 begin_decl_stmt
 name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
+comment|/*  * GIMP_TYPE_RGB  */
 DECL|macro|GIMP_TYPE_RGB
 define|#
 directive|define
@@ -40,6 +41,38 @@ argument_list|)
 name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
+
+begin_function_decl
+name|void
+name|gimp_value_get_rgb
+parameter_list|(
+specifier|const
+name|GValue
+modifier|*
+name|value
+parameter_list|,
+name|GimpRGB
+modifier|*
+name|rgb
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_value_set_rgb
+parameter_list|(
+name|GValue
+modifier|*
+name|value
+parameter_list|,
+specifier|const
+name|GimpRGB
+modifier|*
+name|rgb
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_comment
 comment|/*  * GIMP_TYPE_PARAM_RGB  */
@@ -112,7 +145,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c7223ff0103
+DECL|enum|__anon274c60a40103
 block|{
 DECL|enumerator|GIMP_RGB_COMPOSITE_NONE
 name|GIMP_RGB_COMPOSITE_NONE

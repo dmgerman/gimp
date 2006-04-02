@@ -305,7 +305,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b85a0ea0108
+DECL|struct|__anon27dc6a700108
 block|{
 DECL|member|old_name
 specifier|const
@@ -1428,10 +1428,6 @@ decl_stmt|;
 name|GValue
 modifier|*
 name|value
-decl_stmt|;
-name|GimpArray
-modifier|*
-name|array
 decl_stmt|;
 name|gint
 name|count
