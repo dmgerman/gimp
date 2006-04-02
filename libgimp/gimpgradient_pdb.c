@@ -2901,7 +2901,7 @@ decl_stmt|;
 name|gdouble
 name|final_delta
 init|=
-literal|0
+literal|0.0
 decl_stmt|;
 name|return_vals
 operator|=

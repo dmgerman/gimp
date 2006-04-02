@@ -581,7 +581,7 @@ decl_stmt|;
 name|gdouble
 name|opacity
 init|=
-literal|0
+literal|0.0
 decl_stmt|;
 name|return_vals
 operator|=

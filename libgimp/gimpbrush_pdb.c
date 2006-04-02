@@ -1241,7 +1241,7 @@ decl_stmt|;
 name|gdouble
 name|radius
 init|=
-literal|0
+literal|0.0
 decl_stmt|;
 name|return_vals
 operator|=
@@ -1401,7 +1401,7 @@ decl_stmt|;
 name|gdouble
 name|hardness
 init|=
-literal|0
+literal|0.0
 decl_stmt|;
 name|return_vals
 operator|=
@@ -1481,7 +1481,7 @@ decl_stmt|;
 name|gdouble
 name|aspect_ratio
 init|=
-literal|0
+literal|0.0
 decl_stmt|;
 name|return_vals
 operator|=
@@ -1561,7 +1561,7 @@ decl_stmt|;
 name|gdouble
 name|angle
 init|=
-literal|0
+literal|0.0
 decl_stmt|;
 name|return_vals
 operator|=
@@ -1731,7 +1731,7 @@ decl_stmt|;
 name|gdouble
 name|radius_out
 init|=
-literal|0
+literal|0.0
 decl_stmt|;
 name|return_vals
 operator|=
@@ -1905,7 +1905,7 @@ decl_stmt|;
 name|gdouble
 name|hardness_out
 init|=
-literal|0
+literal|0.0
 decl_stmt|;
 name|return_vals
 operator|=
@@ -1992,7 +1992,7 @@ decl_stmt|;
 name|gdouble
 name|aspect_ratio_out
 init|=
-literal|0
+literal|0.0
 decl_stmt|;
 name|return_vals
 operator|=
@@ -2079,7 +2079,7 @@ decl_stmt|;
 name|gdouble
 name|angle_out
 init|=
-literal|0
+literal|0.0
 decl_stmt|;
 name|return_vals
 operator|=

@@ -960,7 +960,7 @@ decl_stmt|;
 name|gdouble
 name|length
 init|=
-literal|0
+literal|0.0
 decl_stmt|;
 name|return_vals
 operator|=
@@ -1067,7 +1067,7 @@ decl_stmt|;
 name|gdouble
 name|x_point
 init|=
-literal|0
+literal|0.0
 decl_stmt|;
 name|return_vals
 operator|=
