@@ -1092,6 +1092,7 @@ name|GimpItem
 modifier|*
 name|item
 parameter_list|,
+specifier|const
 name|GimpParasite
 modifier|*
 name|parasite
@@ -1116,6 +1117,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|const
 name|GimpParasite
 modifier|*
 name|gimp_item_parasite_find

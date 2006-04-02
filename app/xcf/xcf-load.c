@@ -580,6 +580,7 @@ name|GimpChannel
 modifier|*
 name|channel
 decl_stmt|;
+specifier|const
 name|GimpParasite
 modifier|*
 name|parasite

@@ -129,7 +129,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b50c8f0103
+DECL|enum|__anon2af8814e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1189,6 +1189,7 @@ decl_stmt|;
 name|GimpImageBaseType
 name|image_type
 decl_stmt|;
+specifier|const
 name|GimpParasite
 modifier|*
 name|parasite

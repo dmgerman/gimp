@@ -93,7 +93,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2892c11b0103
+DECL|enum|__anon2ad310090103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -1199,8 +1199,7 @@ block|}
 end_function
 
 begin_function
-name|GimpParasite
-modifier|*
+name|void
 DECL|function|gimp_parasite_list_add (GimpParasiteList * list,const GimpParasite * parasite)
 name|gimp_parasite_list_add
 parameter_list|(
@@ -1218,33 +1217,27 @@ name|GimpParasite
 modifier|*
 name|copy
 decl_stmt|;
-name|g_return_val_if_fail
+name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_PARASITE_LIST
 argument_list|(
 name|list
 argument_list|)
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
-name|g_return_val_if_fail
+name|g_return_if_fail
 argument_list|(
 name|parasite
 operator|!=
 name|NULL
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
-name|g_return_val_if_fail
+name|g_return_if_fail
 argument_list|(
 name|parasite
 operator|->
 name|name
 operator|!=
-name|NULL
-argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
@@ -1310,9 +1303,6 @@ argument_list|,
 name|copy
 argument_list|)
 expr_stmt|;
-return|return
-name|copy
-return|;
 block|}
 end_function
 
@@ -1331,10 +1321,6 @@ modifier|*
 name|name
 parameter_list|)
 block|{
-name|GimpParasite
-modifier|*
-name|parasite
-decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_PARASITE_LIST
@@ -1350,8 +1336,16 @@ operator|->
 name|table
 condition|)
 block|{
+name|GimpParasite
+modifier|*
+name|parasite
+decl_stmt|;
 name|parasite
 operator|=
+operator|(
+name|GimpParasite
+operator|*
+operator|)
 name|gimp_parasite_list_find
 argument_list|(
 name|list
@@ -1539,6 +1533,7 @@ block|}
 end_function
 
 begin_function
+specifier|const
 name|GimpParasite
 modifier|*
 DECL|function|gimp_parasite_list_find (GimpParasiteList * list,const gchar * name)

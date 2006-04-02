@@ -191,8 +191,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpParasite
-modifier|*
+name|void
 name|gimp_parasite_list_add
 parameter_list|(
 name|GimpParasiteList
@@ -263,6 +262,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|const
 name|GimpParasite
 modifier|*
 name|gimp_parasite_list_find

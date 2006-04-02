@@ -1769,6 +1769,7 @@ comment|/*  parasites  */
 end_comment
 
 begin_function_decl
+specifier|const
 name|GimpParasite
 modifier|*
 name|gimp_image_parasite_find
@@ -1812,6 +1813,7 @@ name|GimpImage
 modifier|*
 name|image
 parameter_list|,
+specifier|const
 name|GimpParasite
 modifier|*
 name|parasite
@@ -1830,7 +1832,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|parasite
+name|name
 parameter_list|)
 function_decl|;
 end_function_decl

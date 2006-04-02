@@ -28,6 +28,7 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
+specifier|const
 name|GimpParasite
 modifier|*
 name|parasite
@@ -52,6 +53,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|const
 name|GimpParasite
 modifier|*
 name|gimp_parasite_find

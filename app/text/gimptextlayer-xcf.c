@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27dee9d20103
+DECL|enum|__anon29c11c760103
 block|{
 DECL|enumerator|TEXT_LAYER_XCF_NONE
 name|TEXT_LAYER_XCF_NONE
@@ -134,6 +134,7 @@ name|text
 init|=
 name|NULL
 decl_stmt|;
+specifier|const
 name|GimpParasite
 modifier|*
 name|parasite

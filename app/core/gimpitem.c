@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3690580103
+DECL|enum|__anon27b7f5f60103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -144,7 +144,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3690580203
+DECL|enum|__anon27b7f5f60203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4156,23 +4156,48 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_item_parasite_attach (GimpItem * item,GimpParasite * parasite)
+DECL|function|gimp_item_parasite_attach (GimpItem * item,const GimpParasite * parasite)
 name|gimp_item_parasite_attach
 parameter_list|(
 name|GimpItem
 modifier|*
 name|item
 parameter_list|,
+specifier|const
 name|GimpParasite
 modifier|*
 name|parasite
 parameter_list|)
 block|{
+name|GimpParasite
+modifier|*
+name|copy
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_ITEM
 argument_list|(
 name|item
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|parasite
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
+comment|/*  make a temp copy of the struct because    *  gimp_parasite_shift_parent() changes it    */
+name|copy
+operator|=
+name|g_memdup
+argument_list|(
+name|parasite
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|GimpParasite
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4189,7 +4214,7 @@ if|if
 condition|(
 name|gimp_parasite_is_undoable
 argument_list|(
-name|parasite
+name|copy
 argument_list|)
 condition|)
 block|{
@@ -4218,7 +4243,7 @@ name|NULL
 argument_list|,
 name|item
 argument_list|,
-name|parasite
+name|copy
 argument_list|)
 expr_stmt|;
 block|}
@@ -4227,13 +4252,13 @@ if|if
 condition|(
 name|gimp_parasite_is_persistent
 argument_list|(
-name|parasite
+name|copy
 argument_list|)
 operator|&&
 operator|!
 name|gimp_parasite_compare
 argument_list|(
-name|parasite
+name|copy
 argument_list|,
 name|gimp_item_parasite_find
 argument_list|(
@@ -4241,7 +4266,7 @@ name|item
 argument_list|,
 name|gimp_parasite_name
 argument_list|(
-name|parasite
+name|copy
 argument_list|)
 argument_list|)
 argument_list|)
@@ -4267,14 +4292,14 @@ name|item
 operator|->
 name|parasites
 argument_list|,
-name|parasite
+name|copy
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
 name|gimp_parasite_has_flag
 argument_list|(
-name|parasite
+name|copy
 argument_list|,
 name|GIMP_PARASITE_ATTACH_PARENT
 argument_list|)
@@ -4282,7 +4307,7 @@ condition|)
 block|{
 name|gimp_parasite_shift_parent
 argument_list|(
-name|parasite
+name|copy
 argument_list|)
 expr_stmt|;
 name|gimp_image_parasite_attach
@@ -4291,7 +4316,7 @@ name|item
 operator|->
 name|image
 argument_list|,
-name|parasite
+name|copy
 argument_list|)
 expr_stmt|;
 block|}
@@ -4300,7 +4325,7 @@ if|if
 condition|(
 name|gimp_parasite_has_flag
 argument_list|(
-name|parasite
+name|copy
 argument_list|,
 name|GIMP_PARASITE_ATTACH_GRANDPARENT
 argument_list|)
@@ -4308,12 +4333,12 @@ condition|)
 block|{
 name|gimp_parasite_shift_parent
 argument_list|(
-name|parasite
+name|copy
 argument_list|)
 expr_stmt|;
 name|gimp_parasite_shift_parent
 argument_list|(
-name|parasite
+name|copy
 argument_list|)
 expr_stmt|;
 name|gimp_parasite_attach
@@ -4324,7 +4349,7 @@ name|image
 operator|->
 name|gimp
 argument_list|,
-name|parasite
+name|copy
 argument_list|)
 expr_stmt|;
 block|}
@@ -4337,7 +4362,7 @@ argument_list|)
 operator|&&
 name|gimp_parasite_is_undoable
 argument_list|(
-name|parasite
+name|copy
 argument_list|)
 condition|)
 block|{
@@ -4349,6 +4374,11 @@ name|image
 argument_list|)
 expr_stmt|;
 block|}
+name|g_free
+argument_list|(
+name|copy
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -4367,6 +4397,7 @@ modifier|*
 name|name
 parameter_list|)
 block|{
+specifier|const
 name|GimpParasite
 modifier|*
 name|parasite
@@ -4459,6 +4490,7 @@ block|}
 end_function
 
 begin_function
+specifier|const
 name|GimpParasite
 modifier|*
 DECL|function|gimp_item_parasite_find (const GimpItem * item,const gchar * name)
