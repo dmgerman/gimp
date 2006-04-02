@@ -191,13 +191,15 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
+name|GimpParasite
+modifier|*
 name|gimp_parasite_list_add
 parameter_list|(
 name|GimpParasiteList
 modifier|*
 name|list
 parameter_list|,
+specifier|const
 name|GimpParasite
 modifier|*
 name|parasite

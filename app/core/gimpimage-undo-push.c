@@ -12704,7 +12704,7 @@ end_function_decl
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_undo_push_image_parasite (GimpImage * image,const gchar * undo_desc,gpointer parasite)
+DECL|function|gimp_image_undo_push_image_parasite (GimpImage * image,const gchar * undo_desc,const GimpParasite * parasite)
 name|gimp_image_undo_push_image_parasite
 parameter_list|(
 name|GimpImage
@@ -12716,7 +12716,9 @@ name|gchar
 modifier|*
 name|undo_desc
 parameter_list|,
-name|gpointer
+specifier|const
+name|GimpParasite
+modifier|*
 name|parasite
 parameter_list|)
 block|{
@@ -12955,7 +12957,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_undo_push_item_parasite (GimpImage * image,const gchar * undo_desc,GimpItem * item,gpointer parasite)
+DECL|function|gimp_image_undo_push_item_parasite (GimpImage * image,const gchar * undo_desc,GimpItem * item,const GimpParasite * parasite)
 name|gimp_image_undo_push_item_parasite
 parameter_list|(
 name|GimpImage
@@ -12971,7 +12973,9 @@ name|GimpItem
 modifier|*
 name|item
 parameter_list|,
-name|gpointer
+specifier|const
+name|GimpParasite
+modifier|*
 name|parasite
 parameter_list|)
 block|{

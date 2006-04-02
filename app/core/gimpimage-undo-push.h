@@ -875,7 +875,9 @@ name|gchar
 modifier|*
 name|undo_desc
 parameter_list|,
-name|gpointer
+specifier|const
+name|GimpParasite
+modifier|*
 name|parasite
 parameter_list|)
 function_decl|;
@@ -919,7 +921,9 @@ name|GimpItem
 modifier|*
 name|item
 parameter_list|,
-name|gpointer
+specifier|const
+name|GimpParasite
+modifier|*
 name|parasite
 parameter_list|)
 function_decl|;

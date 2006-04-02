@@ -52,7 +52,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c1b5160108
+DECL|struct|__anon277d1c5d0108
 block|{
 DECL|member|delete_on_exit
 name|gboolean
@@ -351,13 +351,14 @@ end_function
 
 begin_function
 name|GimpUnit
-DECL|function|_gimp_unit_new (Gimp * gimp,gchar * identifier,gdouble factor,gint digits,gchar * symbol,gchar * abbreviation,gchar * singular,gchar * plural)
+DECL|function|_gimp_unit_new (Gimp * gimp,const gchar * identifier,gdouble factor,gint digits,const gchar * symbol,const gchar * abbreviation,const gchar * singular,const gchar * plural)
 name|_gimp_unit_new
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|identifier
@@ -368,18 +369,22 @@ parameter_list|,
 name|gint
 name|digits
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|symbol
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|abbreviation
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|singular
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|plural

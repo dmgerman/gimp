@@ -93,7 +93,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b62bbe90103
+DECL|enum|__anon2892c11b0103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -983,6 +983,10 @@ argument_list|)
 expr_stmt|;
 name|parasite_data
 operator|=
+operator|(
+name|guint8
+operator|*
+operator|)
 name|str
 expr_stmt|;
 block|}
@@ -1195,40 +1199,52 @@ block|}
 end_function
 
 begin_function
-name|void
-DECL|function|gimp_parasite_list_add (GimpParasiteList * list,GimpParasite * parasite)
+name|GimpParasite
+modifier|*
+DECL|function|gimp_parasite_list_add (GimpParasiteList * list,const GimpParasite * parasite)
 name|gimp_parasite_list_add
 parameter_list|(
 name|GimpParasiteList
 modifier|*
 name|list
 parameter_list|,
+specifier|const
 name|GimpParasite
 modifier|*
 name|parasite
 parameter_list|)
 block|{
-name|g_return_if_fail
+name|GimpParasite
+modifier|*
+name|copy
+decl_stmt|;
+name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_PARASITE_LIST
 argument_list|(
 name|list
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|parasite
 operator|!=
 name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|parasite
 operator|->
 name|name
 operator|!=
+name|NULL
+argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
@@ -1260,7 +1276,7 @@ operator|->
 name|name
 argument_list|)
 expr_stmt|;
-name|parasite
+name|copy
 operator|=
 name|gimp_parasite_copy
 argument_list|(
@@ -1273,11 +1289,11 @@ name|list
 operator|->
 name|table
 argument_list|,
-name|parasite
+name|copy
 operator|->
 name|name
 argument_list|,
-name|parasite
+name|copy
 argument_list|)
 expr_stmt|;
 name|g_signal_emit
@@ -1291,9 +1307,12 @@ index|]
 argument_list|,
 literal|0
 argument_list|,
-name|parasite
+name|copy
 argument_list|)
 expr_stmt|;
+return|return
+name|copy
+return|;
 block|}
 end_function
 
