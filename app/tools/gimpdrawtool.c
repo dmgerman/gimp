@@ -3668,7 +3668,10 @@ name|segment_end
 decl_stmt|;
 name|GimpCoords
 name|min_coords
-decl_stmt|,
+init|=
+name|GIMP_COORDS_DEFAULT_VALUES
+decl_stmt|;
+name|GimpCoords
 name|cur_coords
 decl_stmt|;
 name|gdouble

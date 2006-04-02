@@ -60,7 +60,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a526c2b0108
+DECL|struct|__anon2c7819a30108
 block|{
 DECL|member|key
 name|gchar
@@ -308,11 +308,16 @@ condition|(
 name|last
 condition|)
 block|{
+name|last
+operator|=
+name|g_slist_last
+argument_list|(
 name|g_slist_append
 argument_list|(
 name|last
 argument_list|,
 name|token
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
