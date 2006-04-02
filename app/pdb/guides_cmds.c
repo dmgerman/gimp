@@ -423,6 +423,8 @@ argument_list|,
 literal|1
 argument_list|,
 name|GIMP_PARAM_READWRITE
+operator||
+name|GIMP_PARAM_NO_VALIDATE
 argument_list|)
 argument_list|)
 expr_stmt|;
