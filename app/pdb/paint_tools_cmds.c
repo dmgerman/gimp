@@ -1878,7 +1878,7 @@ end_decl_stmt
 begin_function
 specifier|static
 name|gboolean
-DECL|function|paint_tools_stroke (Gimp * gimp,GimpContext * context,GimpPaintOptions * options,GimpDrawable * drawable,gint n_strokes,gdouble * strokes,const gchar * first_property_name,...)
+DECL|function|paint_tools_stroke (Gimp * gimp,GimpContext * context,GimpPaintOptions * options,GimpDrawable * drawable,gint n_strokes,const gdouble * strokes,const gchar * first_property_name,...)
 name|paint_tools_stroke
 parameter_list|(
 name|Gimp
@@ -1900,6 +1900,7 @@ parameter_list|,
 name|gint
 name|n_strokes
 parameter_list|,
+specifier|const
 name|gdouble
 modifier|*
 name|strokes
@@ -2088,7 +2089,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|airbrush_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|airbrush_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|airbrush_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2107,6 +2108,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -2127,6 +2129,7 @@ decl_stmt|;
 name|gint32
 name|num_strokes
 decl_stmt|;
+specifier|const
 name|gdouble
 modifier|*
 name|strokes
@@ -2180,10 +2183,6 @@ argument_list|)
 expr_stmt|;
 name|strokes
 operator|=
-operator|(
-name|gdouble
-operator|*
-operator|)
 name|gimp_value_get_floatarray
 argument_list|(
 operator|&
@@ -2338,7 +2337,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|airbrush_default_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|airbrush_default_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|airbrush_default_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2357,6 +2356,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -2374,6 +2374,7 @@ decl_stmt|;
 name|gint32
 name|num_strokes
 decl_stmt|;
+specifier|const
 name|gdouble
 modifier|*
 name|strokes
@@ -2414,10 +2415,6 @@ argument_list|)
 expr_stmt|;
 name|strokes
 operator|=
-operator|(
-name|gdouble
-operator|*
-operator|)
 name|gimp_value_get_floatarray
 argument_list|(
 operator|&
@@ -2561,7 +2558,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|clone_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|clone_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|clone_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2580,6 +2577,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -2610,6 +2608,7 @@ decl_stmt|;
 name|gint32
 name|num_strokes
 decl_stmt|;
+specifier|const
 name|gdouble
 modifier|*
 name|strokes
@@ -2710,10 +2709,6 @@ argument_list|)
 expr_stmt|;
 name|strokes
 operator|=
-operator|(
-name|gdouble
-operator|*
-operator|)
 name|gimp_value_get_floatarray
 argument_list|(
 operator|&
@@ -2880,7 +2875,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|clone_default_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|clone_default_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|clone_default_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2899,6 +2894,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -2916,6 +2912,7 @@ decl_stmt|;
 name|gint32
 name|num_strokes
 decl_stmt|;
+specifier|const
 name|gdouble
 modifier|*
 name|strokes
@@ -2956,10 +2953,6 @@ argument_list|)
 expr_stmt|;
 name|strokes
 operator|=
-operator|(
-name|gdouble
-operator|*
-operator|)
 name|gimp_value_get_floatarray
 argument_list|(
 operator|&
@@ -3103,7 +3096,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|convolve_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|convolve_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|convolve_invoker
 parameter_list|(
 name|GimpProcedure
@@ -3122,6 +3115,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -3145,6 +3139,7 @@ decl_stmt|;
 name|gint32
 name|num_strokes
 decl_stmt|;
+specifier|const
 name|gdouble
 modifier|*
 name|strokes
@@ -3211,10 +3206,6 @@ argument_list|)
 expr_stmt|;
 name|strokes
 operator|=
-operator|(
-name|gdouble
-operator|*
-operator|)
 name|gimp_value_get_floatarray
 argument_list|(
 operator|&
@@ -3373,7 +3364,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|convolve_default_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|convolve_default_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|convolve_default_invoker
 parameter_list|(
 name|GimpProcedure
@@ -3392,6 +3383,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -3409,6 +3401,7 @@ decl_stmt|;
 name|gint32
 name|num_strokes
 decl_stmt|;
+specifier|const
 name|gdouble
 modifier|*
 name|strokes
@@ -3449,10 +3442,6 @@ argument_list|)
 expr_stmt|;
 name|strokes
 operator|=
-operator|(
-name|gdouble
-operator|*
-operator|)
 name|gimp_value_get_floatarray
 argument_list|(
 operator|&
@@ -3596,7 +3585,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|dodgeburn_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|dodgeburn_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|dodgeburn_invoker
 parameter_list|(
 name|GimpProcedure
@@ -3615,6 +3604,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -3641,6 +3631,7 @@ decl_stmt|;
 name|gint32
 name|num_strokes
 decl_stmt|;
+specifier|const
 name|gdouble
 modifier|*
 name|strokes
@@ -3720,10 +3711,6 @@ argument_list|)
 expr_stmt|;
 name|strokes
 operator|=
-operator|(
-name|gdouble
-operator|*
-operator|)
 name|gimp_value_get_floatarray
 argument_list|(
 operator|&
@@ -3886,7 +3873,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|dodgeburn_default_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|dodgeburn_default_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|dodgeburn_default_invoker
 parameter_list|(
 name|GimpProcedure
@@ -3905,6 +3892,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -3922,6 +3910,7 @@ decl_stmt|;
 name|gint32
 name|num_strokes
 decl_stmt|;
+specifier|const
 name|gdouble
 modifier|*
 name|strokes
@@ -3962,10 +3951,6 @@ argument_list|)
 expr_stmt|;
 name|strokes
 operator|=
-operator|(
-name|gdouble
-operator|*
-operator|)
 name|gimp_value_get_floatarray
 argument_list|(
 operator|&
@@ -4109,7 +4094,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|eraser_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|eraser_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|eraser_invoker
 parameter_list|(
 name|GimpProcedure
@@ -4128,6 +4113,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -4145,6 +4131,7 @@ decl_stmt|;
 name|gint32
 name|num_strokes
 decl_stmt|;
+specifier|const
 name|gdouble
 modifier|*
 name|strokes
@@ -4191,10 +4178,6 @@ argument_list|)
 expr_stmt|;
 name|strokes
 operator|=
-operator|(
-name|gdouble
-operator|*
-operator|)
 name|gimp_value_get_floatarray
 argument_list|(
 operator|&
@@ -4379,7 +4362,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|eraser_default_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|eraser_default_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|eraser_default_invoker
 parameter_list|(
 name|GimpProcedure
@@ -4398,6 +4381,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -4415,6 +4399,7 @@ decl_stmt|;
 name|gint32
 name|num_strokes
 decl_stmt|;
+specifier|const
 name|gdouble
 modifier|*
 name|strokes
@@ -4455,10 +4440,6 @@ argument_list|)
 expr_stmt|;
 name|strokes
 operator|=
-operator|(
-name|gdouble
-operator|*
-operator|)
 name|gimp_value_get_floatarray
 argument_list|(
 operator|&
@@ -4602,7 +4583,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|paintbrush_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|paintbrush_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|paintbrush_invoker
 parameter_list|(
 name|GimpProcedure
@@ -4621,6 +4602,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -4641,6 +4623,7 @@ decl_stmt|;
 name|gint32
 name|num_strokes
 decl_stmt|;
+specifier|const
 name|gdouble
 modifier|*
 name|strokes
@@ -4700,10 +4683,6 @@ argument_list|)
 expr_stmt|;
 name|strokes
 operator|=
-operator|(
-name|gdouble
-operator|*
-operator|)
 name|gimp_value_get_floatarray
 argument_list|(
 operator|&
@@ -4904,7 +4883,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|paintbrush_default_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|paintbrush_default_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|paintbrush_default_invoker
 parameter_list|(
 name|GimpProcedure
@@ -4923,6 +4902,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -4940,6 +4920,7 @@ decl_stmt|;
 name|gint32
 name|num_strokes
 decl_stmt|;
+specifier|const
 name|gdouble
 modifier|*
 name|strokes
@@ -4980,10 +4961,6 @@ argument_list|)
 expr_stmt|;
 name|strokes
 operator|=
-operator|(
-name|gdouble
-operator|*
-operator|)
 name|gimp_value_get_floatarray
 argument_list|(
 operator|&
@@ -5127,7 +5104,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|pencil_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|pencil_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|pencil_invoker
 parameter_list|(
 name|GimpProcedure
@@ -5146,6 +5123,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -5163,6 +5141,7 @@ decl_stmt|;
 name|gint32
 name|num_strokes
 decl_stmt|;
+specifier|const
 name|gdouble
 modifier|*
 name|strokes
@@ -5203,10 +5182,6 @@ argument_list|)
 expr_stmt|;
 name|strokes
 operator|=
-operator|(
-name|gdouble
-operator|*
-operator|)
 name|gimp_value_get_floatarray
 argument_list|(
 operator|&
@@ -5350,7 +5325,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|smudge_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|smudge_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|smudge_invoker
 parameter_list|(
 name|GimpProcedure
@@ -5369,6 +5344,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -5389,6 +5365,7 @@ decl_stmt|;
 name|gint32
 name|num_strokes
 decl_stmt|;
+specifier|const
 name|gdouble
 modifier|*
 name|strokes
@@ -5442,10 +5419,6 @@ argument_list|)
 expr_stmt|;
 name|strokes
 operator|=
-operator|(
-name|gdouble
-operator|*
-operator|)
 name|gimp_value_get_floatarray
 argument_list|(
 operator|&
@@ -5600,7 +5573,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|smudge_default_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|smudge_default_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|smudge_default_invoker
 parameter_list|(
 name|GimpProcedure
@@ -5619,6 +5592,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -5636,6 +5610,7 @@ decl_stmt|;
 name|gint32
 name|num_strokes
 decl_stmt|;
+specifier|const
 name|gdouble
 modifier|*
 name|strokes
@@ -5676,10 +5651,6 @@ argument_list|)
 expr_stmt|;
 name|strokes
 operator|=
-operator|(
-name|gdouble
-operator|*
-operator|)
 name|gimp_value_get_floatarray
 argument_list|(
 operator|&

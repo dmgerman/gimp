@@ -1846,7 +1846,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|path_list_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|path_list_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|path_list_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1865,6 +1865,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -2027,7 +2028,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|path_get_current_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|path_get_current_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|path_get_current_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2046,6 +2047,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -2204,7 +2206,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|path_set_current_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|path_set_current_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|path_set_current_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2223,6 +2225,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -2237,6 +2240,7 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -2258,10 +2262,6 @@ argument_list|)
 expr_stmt|;
 name|name
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -2367,7 +2367,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|path_delete_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|path_delete_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|path_delete_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2386,6 +2386,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -2400,6 +2401,7 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -2421,10 +2423,6 @@ argument_list|)
 expr_stmt|;
 name|name
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -2530,7 +2528,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|path_get_points_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|path_get_points_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|path_get_points_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2549,6 +2547,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -2567,6 +2566,7 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -2609,10 +2609,6 @@ argument_list|)
 expr_stmt|;
 name|name
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -2899,7 +2895,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|path_set_points_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|path_set_points_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|path_set_points_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2918,6 +2914,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -2932,6 +2929,7 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -2942,6 +2940,7 @@ decl_stmt|;
 name|gint32
 name|num_path_points
 decl_stmt|;
+specifier|const
 name|gdouble
 modifier|*
 name|points_pairs
@@ -2963,10 +2962,6 @@ argument_list|)
 expr_stmt|;
 name|name
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -3006,10 +3001,6 @@ argument_list|)
 expr_stmt|;
 name|points_pairs
 operator|=
-operator|(
-name|gdouble
-operator|*
-operator|)
 name|gimp_value_get_floatarray
 argument_list|(
 operator|&
@@ -3073,6 +3064,7 @@ name|GimpVectors
 modifier|*
 name|vectors
 decl_stmt|;
+specifier|const
 name|gdouble
 modifier|*
 name|curr_point_pair
@@ -3262,7 +3254,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|path_stroke_current_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|path_stroke_current_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|path_stroke_current_invoker
 parameter_list|(
 name|GimpProcedure
@@ -3281,6 +3273,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -3453,7 +3446,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|path_get_point_at_dist_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|path_get_point_at_dist_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|path_get_point_at_dist_invoker
 parameter_list|(
 name|GimpProcedure
@@ -3472,6 +3465,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -3815,7 +3809,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|path_get_tattoo_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|path_get_tattoo_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|path_get_tattoo_invoker
 parameter_list|(
 name|GimpProcedure
@@ -3834,6 +3828,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -3852,6 +3847,7 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -3878,10 +3874,6 @@ argument_list|)
 expr_stmt|;
 name|name
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -4011,7 +4003,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|path_set_tattoo_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|path_set_tattoo_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|path_set_tattoo_invoker
 parameter_list|(
 name|GimpProcedure
@@ -4030,6 +4022,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -4044,6 +4037,7 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -4068,10 +4062,6 @@ argument_list|)
 expr_stmt|;
 name|name
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -4193,7 +4183,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|get_path_by_tattoo_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|get_path_by_tattoo_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|get_path_by_tattoo_invoker
 parameter_list|(
 name|GimpProcedure
@@ -4212,6 +4202,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -4388,7 +4379,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|path_get_locked_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|path_get_locked_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|path_get_locked_invoker
 parameter_list|(
 name|GimpProcedure
@@ -4407,6 +4398,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -4425,6 +4417,7 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -4451,10 +4444,6 @@ argument_list|)
 expr_stmt|;
 name|name
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -4584,7 +4573,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|path_set_locked_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|path_set_locked_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|path_set_locked_invoker
 parameter_list|(
 name|GimpProcedure
@@ -4603,6 +4592,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -4617,6 +4607,7 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -4641,10 +4632,6 @@ argument_list|)
 expr_stmt|;
 name|name
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -4768,7 +4755,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|path_to_selection_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|path_to_selection_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|path_to_selection_invoker
 parameter_list|(
 name|GimpProcedure
@@ -4787,6 +4774,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -4801,6 +4789,7 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -4837,10 +4826,6 @@ argument_list|)
 expr_stmt|;
 name|name
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -5029,7 +5014,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|path_import_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|path_import_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|path_import_invoker
 parameter_list|(
 name|GimpProcedure
@@ -5048,6 +5033,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -5062,6 +5048,7 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -5089,10 +5076,6 @@ argument_list|)
 expr_stmt|;
 name|filename
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -5215,7 +5198,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|path_import_string_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|path_import_string_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|path_import_string_invoker
 parameter_list|(
 name|GimpProcedure
@@ -5234,6 +5217,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -5248,6 +5232,7 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|string
@@ -5278,10 +5263,6 @@ argument_list|)
 expr_stmt|;
 name|string
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&

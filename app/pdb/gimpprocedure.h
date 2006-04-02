@@ -86,6 +86,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args

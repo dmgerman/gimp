@@ -503,7 +503,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|progress_init_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|progress_init_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|progress_init_invoker
 parameter_list|(
 name|GimpProcedure
@@ -522,6 +522,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -532,6 +533,7 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|message
@@ -542,10 +544,6 @@ name|gdisplay
 decl_stmt|;
 name|message
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -676,7 +674,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|progress_update_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|progress_update_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|progress_update_invoker
 parameter_list|(
 name|GimpProcedure
@@ -695,6 +693,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -823,7 +822,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|progress_pulse_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|progress_pulse_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|progress_pulse_invoker
 parameter_list|(
 name|GimpProcedure
@@ -842,6 +841,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -946,7 +946,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|progress_set_text_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|progress_set_text_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|progress_set_text_invoker
 parameter_list|(
 name|GimpProcedure
@@ -965,6 +965,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -975,16 +976,13 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|message
 decl_stmt|;
 name|message
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -1098,7 +1096,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|progress_get_window_handle_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|progress_get_window_handle_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|progress_get_window_handle_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1117,6 +1115,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -1253,7 +1252,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|progress_install_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|progress_install_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|progress_install_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1272,6 +1271,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -1282,16 +1282,13 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|progress_callback
 decl_stmt|;
 name|progress_callback
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -1398,7 +1395,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|progress_uninstall_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|progress_uninstall_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|progress_uninstall_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1417,6 +1414,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -1427,16 +1425,13 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|progress_callback
 decl_stmt|;
 name|progress_callback
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -1543,7 +1538,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|progress_cancel_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|progress_cancel_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|progress_cancel_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1562,6 +1557,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -1572,16 +1568,13 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|progress_callback
 decl_stmt|;
 name|progress_callback
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&

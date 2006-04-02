@@ -644,7 +644,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|gradients_refresh_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|gradients_refresh_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|gradients_refresh_invoker
 parameter_list|(
 name|GimpProcedure
@@ -663,6 +663,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -736,7 +737,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|gradients_get_list_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|gradients_get_list_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|gradients_get_list_invoker
 parameter_list|(
 name|GimpProcedure
@@ -755,6 +756,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -769,6 +771,7 @@ name|GimpArgument
 modifier|*
 name|return_vals
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|filter
@@ -787,10 +790,6 @@ name|NULL
 decl_stmt|;
 name|filter
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -923,7 +922,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|gradients_sample_uniform_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|gradients_sample_uniform_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|gradients_sample_uniform_invoker
 parameter_list|(
 name|GimpProcedure
@@ -942,6 +941,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -1223,7 +1223,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|gradients_sample_custom_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|gradients_sample_custom_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|gradients_sample_custom_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1242,6 +1242,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -1259,6 +1260,7 @@ decl_stmt|;
 name|gint32
 name|num_samples
 decl_stmt|;
+specifier|const
 name|gdouble
 modifier|*
 name|positions
@@ -1292,10 +1294,6 @@ argument_list|)
 expr_stmt|;
 name|positions
 operator|=
-operator|(
-name|gdouble
-operator|*
-operator|)
 name|gimp_value_get_floatarray
 argument_list|(
 operator|&
@@ -1525,7 +1523,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|gradients_get_gradient_data_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|gradients_get_gradient_data_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|gradients_get_gradient_data_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1544,6 +1542,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -1558,6 +1557,7 @@ name|GimpArgument
 modifier|*
 name|return_vals
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -1587,10 +1587,6 @@ name|NULL
 decl_stmt|;
 name|name
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&

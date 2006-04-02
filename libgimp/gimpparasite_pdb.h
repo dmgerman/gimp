@@ -39,6 +39,7 @@ begin_function_decl
 name|gboolean
 name|gimp_parasite_attach
 parameter_list|(
+specifier|const
 name|GimpParasite
 modifier|*
 name|parasite
@@ -98,6 +99,7 @@ parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
+specifier|const
 name|GimpParasite
 modifier|*
 name|parasite
@@ -163,6 +165,7 @@ parameter_list|(
 name|gint32
 name|drawable_ID
 parameter_list|,
+specifier|const
 name|GimpParasite
 modifier|*
 name|parasite
@@ -228,6 +231,7 @@ parameter_list|(
 name|gint32
 name|vectors_ID
 parameter_list|,
+specifier|const
 name|GimpParasite
 modifier|*
 name|parasite

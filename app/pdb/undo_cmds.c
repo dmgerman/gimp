@@ -530,7 +530,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|image_undo_group_start_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|image_undo_group_start_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|image_undo_group_start_invoker
 parameter_list|(
 name|GimpProcedure
@@ -549,6 +549,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -684,7 +685,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|image_undo_group_end_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|image_undo_group_end_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|image_undo_group_end_invoker
 parameter_list|(
 name|GimpProcedure
@@ -703,6 +704,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -804,7 +806,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|image_undo_is_enabled_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|image_undo_is_enabled_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|image_undo_is_enabled_invoker
 parameter_list|(
 name|GimpProcedure
@@ -823,6 +825,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -956,7 +959,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|image_undo_disable_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|image_undo_disable_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|image_undo_disable_invoker
 parameter_list|(
 name|GimpProcedure
@@ -975,6 +978,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -1108,7 +1112,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|image_undo_enable_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|image_undo_enable_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|image_undo_enable_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1127,6 +1131,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -1260,7 +1265,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|image_undo_freeze_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|image_undo_freeze_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|image_undo_freeze_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1279,6 +1284,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -1412,7 +1418,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|image_undo_thaw_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|image_undo_thaw_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|image_undo_thaw_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1431,6 +1437,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args

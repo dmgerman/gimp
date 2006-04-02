@@ -1440,7 +1440,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|text_fontname_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|text_fontname_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|text_fontname_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1459,6 +1459,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -1487,6 +1488,7 @@ decl_stmt|;
 name|gdouble
 name|y
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|text
@@ -1503,6 +1505,7 @@ decl_stmt|;
 name|gint32
 name|size_type
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|fontname
@@ -1577,10 +1580,6 @@ argument_list|)
 expr_stmt|;
 name|text
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -1646,10 +1645,6 @@ argument_list|)
 expr_stmt|;
 name|fontname
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -1819,7 +1814,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|text_get_extents_fontname_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|text_get_extents_fontname_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|text_get_extents_fontname_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1838,6 +1833,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -1852,6 +1848,7 @@ name|GimpArgument
 modifier|*
 name|return_vals
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|text
@@ -1862,6 +1859,7 @@ decl_stmt|;
 name|gint32
 name|size_type
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|fontname
@@ -1888,10 +1886,6 @@ literal|0
 decl_stmt|;
 name|text
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -1931,10 +1925,6 @@ argument_list|)
 expr_stmt|;
 name|fontname
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -2117,7 +2107,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|text_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|text_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|text_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2136,6 +2126,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -2164,6 +2155,7 @@ decl_stmt|;
 name|gdouble
 name|y
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|text
@@ -2180,34 +2172,42 @@ decl_stmt|;
 name|gint32
 name|size_type
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|foundry
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|family
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|weight
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|slant
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|set_width
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|spacing
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|registry
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|encoding
@@ -2282,10 +2282,6 @@ argument_list|)
 expr_stmt|;
 name|text
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -2351,10 +2347,6 @@ argument_list|)
 expr_stmt|;
 name|foundry
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -2368,10 +2360,6 @@ argument_list|)
 expr_stmt|;
 name|family
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -2385,10 +2373,6 @@ argument_list|)
 expr_stmt|;
 name|weight
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -2402,10 +2386,6 @@ argument_list|)
 expr_stmt|;
 name|slant
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -2419,10 +2399,6 @@ argument_list|)
 expr_stmt|;
 name|set_width
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -2436,10 +2412,6 @@ argument_list|)
 expr_stmt|;
 name|spacing
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -2453,10 +2425,6 @@ argument_list|)
 expr_stmt|;
 name|registry
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -2470,10 +2438,6 @@ argument_list|)
 expr_stmt|;
 name|encoding
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -2643,7 +2607,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|text_get_extents_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|text_get_extents_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|text_get_extents_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2662,6 +2626,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -2676,6 +2641,7 @@ name|GimpArgument
 modifier|*
 name|return_vals
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|text
@@ -2686,34 +2652,42 @@ decl_stmt|;
 name|gint32
 name|size_type
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|foundry
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|family
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|weight
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|slant
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|set_width
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|spacing
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|registry
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|encoding
@@ -2740,10 +2714,6 @@ literal|0
 decl_stmt|;
 name|text
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -2783,10 +2753,6 @@ argument_list|)
 expr_stmt|;
 name|foundry
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -2800,10 +2766,6 @@ argument_list|)
 expr_stmt|;
 name|family
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -2817,10 +2779,6 @@ argument_list|)
 expr_stmt|;
 name|weight
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -2834,10 +2792,6 @@ argument_list|)
 expr_stmt|;
 name|slant
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -2851,10 +2805,6 @@ argument_list|)
 expr_stmt|;
 name|set_width
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -2868,10 +2818,6 @@ argument_list|)
 expr_stmt|;
 name|spacing
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -2885,10 +2831,6 @@ argument_list|)
 expr_stmt|;
 name|registry
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -2902,10 +2844,6 @@ argument_list|)
 expr_stmt|;
 name|encoding
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&

@@ -111,9 +111,10 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_parasite_attach (GimpParasite * parasite)
+DECL|function|gimp_parasite_attach (const GimpParasite * parasite)
 name|gimp_parasite_attach
 parameter_list|(
+specifier|const
 name|GimpParasite
 modifier|*
 name|parasite
@@ -491,12 +492,13 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_parasite_attach (gint32 image_ID,GimpParasite * parasite)
+DECL|function|gimp_image_parasite_attach (gint32 image_ID,const GimpParasite * parasite)
 name|gimp_image_parasite_attach
 parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
+specifier|const
 name|GimpParasite
 modifier|*
 name|parasite
@@ -892,12 +894,13 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_drawable_parasite_attach (gint32 drawable_ID,GimpParasite * parasite)
+DECL|function|gimp_drawable_parasite_attach (gint32 drawable_ID,const GimpParasite * parasite)
 name|gimp_drawable_parasite_attach
 parameter_list|(
 name|gint32
 name|drawable_ID
 parameter_list|,
+specifier|const
 name|GimpParasite
 modifier|*
 name|parasite
@@ -1293,12 +1296,13 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_vectors_parasite_attach (gint32 vectors_ID,GimpParasite * parasite)
+DECL|function|gimp_vectors_parasite_attach (gint32 vectors_ID,const GimpParasite * parasite)
 name|gimp_vectors_parasite_attach
 parameter_list|(
 name|gint32
 name|vectors_ID
 parameter_list|,
+specifier|const
 name|GimpParasite
 modifier|*
 name|parasite

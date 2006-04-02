@@ -450,7 +450,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|brushes_popup_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|brushes_popup_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|brushes_popup_invoker
 parameter_list|(
 name|GimpProcedure
@@ -469,6 +469,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -479,14 +480,17 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|brush_callback
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|popup_title
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|initial_brush
@@ -502,10 +506,6 @@ name|paint_mode
 decl_stmt|;
 name|brush_callback
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -519,10 +519,6 @@ argument_list|)
 expr_stmt|;
 name|popup_title
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -536,10 +532,6 @@ argument_list|)
 expr_stmt|;
 name|initial_brush
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -711,7 +703,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|brushes_close_popup_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|brushes_close_popup_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|brushes_close_popup_invoker
 parameter_list|(
 name|GimpProcedure
@@ -730,6 +722,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -740,16 +733,13 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|brush_callback
 decl_stmt|;
 name|brush_callback
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -860,7 +850,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|brushes_set_popup_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|brushes_set_popup_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|brushes_set_popup_invoker
 parameter_list|(
 name|GimpProcedure
@@ -879,6 +869,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -889,10 +880,12 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|brush_callback
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|brush_name
@@ -908,10 +901,6 @@ name|paint_mode
 decl_stmt|;
 name|brush_callback
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -925,10 +914,6 @@ argument_list|)
 expr_stmt|;
 name|brush_name
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&

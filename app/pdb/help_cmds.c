@@ -164,7 +164,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|help_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|help_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|help_invoker
 parameter_list|(
 name|GimpProcedure
@@ -183,6 +183,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -193,20 +194,18 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|help_domain
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|help_id
 decl_stmt|;
 name|help_domain
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -220,10 +219,6 @@ argument_list|)
 expr_stmt|;
 name|help_id
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&

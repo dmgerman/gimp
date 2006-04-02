@@ -1150,7 +1150,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|by_color_select_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|by_color_select_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|by_color_select_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1169,6 +1169,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -1426,7 +1427,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|ellipse_select_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|ellipse_select_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|ellipse_select_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1445,6 +1446,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -1707,7 +1709,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|free_select_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|free_select_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|free_select_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1726,6 +1728,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -1743,6 +1746,7 @@ decl_stmt|;
 name|gint32
 name|num_segs
 decl_stmt|;
+specifier|const
 name|gdouble
 modifier|*
 name|segs
@@ -1789,10 +1793,6 @@ argument_list|)
 expr_stmt|;
 name|segs
 operator|=
-operator|(
-name|gdouble
-operator|*
-operator|)
 name|gimp_value_get_floatarray
 argument_list|(
 operator|&
@@ -1956,7 +1956,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|fuzzy_select_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|fuzzy_select_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|fuzzy_select_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1975,6 +1975,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -2249,7 +2250,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|rect_select_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|rect_select_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|rect_select_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2268,6 +2269,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args

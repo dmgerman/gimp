@@ -1268,7 +1268,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|procedural_db_temp_name_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|procedural_db_temp_name_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|procedural_db_temp_name_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1287,6 +1287,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -1396,7 +1397,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|procedural_db_dump_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|procedural_db_dump_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|procedural_db_dump_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1415,6 +1416,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -1425,16 +1427,13 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|filename
 decl_stmt|;
 name|filename
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -1522,7 +1521,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|procedural_db_query_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|procedural_db_query_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|procedural_db_query_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1541,6 +1540,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -1555,30 +1555,37 @@ name|GimpArgument
 modifier|*
 name|return_vals
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|name
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|blurb
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|help
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|author
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|copyright
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|date
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|proc_type
@@ -1597,10 +1604,6 @@ name|NULL
 decl_stmt|;
 name|name
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -1614,10 +1617,6 @@ argument_list|)
 expr_stmt|;
 name|blurb
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -1631,10 +1630,6 @@ argument_list|)
 expr_stmt|;
 name|help
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -1648,10 +1643,6 @@ argument_list|)
 expr_stmt|;
 name|author
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -1665,10 +1656,6 @@ argument_list|)
 expr_stmt|;
 name|copyright
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -1682,10 +1669,6 @@ argument_list|)
 expr_stmt|;
 name|date
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -1699,10 +1682,6 @@ argument_list|)
 expr_stmt|;
 name|proc_type
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -1846,7 +1825,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|procedural_db_proc_info_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|procedural_db_proc_info_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|procedural_db_proc_info_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1865,6 +1844,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -1879,6 +1859,7 @@ name|GimpArgument
 modifier|*
 name|return_vals
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|procedure_name
@@ -1930,10 +1911,6 @@ literal|0
 decl_stmt|;
 name|procedure_name
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -2182,7 +2159,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|procedural_db_proc_arg_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|procedural_db_proc_arg_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|procedural_db_proc_arg_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2201,6 +2178,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -2215,6 +2193,7 @@ name|GimpArgument
 modifier|*
 name|return_vals
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|procedure_name
@@ -2241,10 +2220,6 @@ name|NULL
 decl_stmt|;
 name|procedure_name
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -2515,7 +2490,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|procedural_db_proc_val_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|procedural_db_proc_val_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|procedural_db_proc_val_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2534,6 +2509,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -2548,6 +2524,7 @@ name|GimpArgument
 modifier|*
 name|return_vals
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|procedure_name
@@ -2574,10 +2551,6 @@ name|NULL
 decl_stmt|;
 name|procedure_name
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -2848,7 +2821,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|procedural_db_get_data_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|procedural_db_get_data_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|procedural_db_get_data_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2867,6 +2840,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -2881,6 +2855,7 @@ name|GimpArgument
 modifier|*
 name|return_vals
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|identifier
@@ -2898,10 +2873,6 @@ name|NULL
 decl_stmt|;
 name|identifier
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -3069,7 +3040,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|procedural_db_get_data_size_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|procedural_db_get_data_size_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|procedural_db_get_data_size_invoker
 parameter_list|(
 name|GimpProcedure
@@ -3088,6 +3059,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -3102,6 +3074,7 @@ name|GimpArgument
 modifier|*
 name|return_vals
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|identifier
@@ -3113,10 +3086,6 @@ literal|0
 decl_stmt|;
 name|identifier
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -3258,7 +3227,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|procedural_db_set_data_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|procedural_db_set_data_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|procedural_db_set_data_invoker
 parameter_list|(
 name|GimpProcedure
@@ -3277,6 +3246,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -3287,6 +3257,7 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|identifier
@@ -3294,16 +3265,13 @@ decl_stmt|;
 name|gint32
 name|bytes
 decl_stmt|;
+specifier|const
 name|guint8
 modifier|*
 name|data
 decl_stmt|;
 name|identifier
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&

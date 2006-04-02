@@ -1244,7 +1244,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|context_push_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|context_push_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|context_push_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1263,6 +1263,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -1360,7 +1361,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|context_pop_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|context_pop_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|context_pop_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1379,6 +1380,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -1476,7 +1478,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|context_get_paint_method_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|context_get_paint_method_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|context_get_paint_method_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1495,6 +1497,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -1628,7 +1631,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|context_set_paint_method_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|context_set_paint_method_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|context_set_paint_method_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1647,6 +1650,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -1657,16 +1661,13 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|name
 decl_stmt|;
 name|name
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -1778,7 +1779,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|context_get_foreground_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|context_get_foreground_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|context_get_foreground_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1797,6 +1798,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -1906,7 +1908,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|context_set_foreground_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|context_set_foreground_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|context_set_foreground_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1925,6 +1927,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -2035,7 +2038,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|context_get_background_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|context_get_background_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|context_get_background_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2054,6 +2057,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -2163,7 +2167,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|context_set_background_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|context_set_background_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|context_set_background_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2182,6 +2186,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -2292,7 +2297,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|context_set_default_colors_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|context_set_default_colors_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|context_set_default_colors_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2311,6 +2316,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -2382,7 +2388,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|context_swap_colors_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|context_swap_colors_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|context_swap_colors_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2401,6 +2407,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -2472,7 +2479,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|context_get_opacity_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|context_get_opacity_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|context_get_opacity_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2491,6 +2498,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -2592,7 +2600,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|context_set_opacity_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|context_set_opacity_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|context_set_opacity_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2611,6 +2619,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -2713,7 +2722,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|context_get_paint_mode_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|context_get_paint_mode_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|context_get_paint_mode_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2732,6 +2741,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -2831,7 +2841,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|context_set_paint_mode_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|context_set_paint_mode_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|context_set_paint_mode_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2850,6 +2860,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -2950,7 +2961,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|context_get_brush_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|context_get_brush_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|context_get_brush_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2969,6 +2980,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -3102,7 +3114,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|context_set_brush_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|context_set_brush_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|context_set_brush_invoker
 parameter_list|(
 name|GimpProcedure
@@ -3121,6 +3133,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -3131,16 +3144,13 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|name
 decl_stmt|;
 name|name
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -3254,7 +3264,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|context_get_pattern_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|context_get_pattern_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|context_get_pattern_invoker
 parameter_list|(
 name|GimpProcedure
@@ -3273,6 +3283,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -3406,7 +3417,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|context_set_pattern_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|context_set_pattern_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|context_set_pattern_invoker
 parameter_list|(
 name|GimpProcedure
@@ -3425,6 +3436,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -3435,16 +3447,13 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|name
 decl_stmt|;
 name|name
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -3558,7 +3567,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|context_get_gradient_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|context_get_gradient_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|context_get_gradient_invoker
 parameter_list|(
 name|GimpProcedure
@@ -3577,6 +3586,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -3710,7 +3720,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|context_set_gradient_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|context_set_gradient_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|context_set_gradient_invoker
 parameter_list|(
 name|GimpProcedure
@@ -3729,6 +3739,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -3739,16 +3750,13 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|name
 decl_stmt|;
 name|name
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -3862,7 +3870,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|context_get_palette_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|context_get_palette_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|context_get_palette_invoker
 parameter_list|(
 name|GimpProcedure
@@ -3881,6 +3889,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -4014,7 +4023,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|context_set_palette_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|context_set_palette_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|context_set_palette_invoker
 parameter_list|(
 name|GimpProcedure
@@ -4033,6 +4042,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -4043,16 +4053,13 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|name
 decl_stmt|;
 name|name
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -4166,7 +4173,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|context_get_font_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|context_get_font_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|context_get_font_invoker
 parameter_list|(
 name|GimpProcedure
@@ -4185,6 +4192,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -4318,7 +4326,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|context_set_font_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|context_set_font_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|context_set_font_invoker
 parameter_list|(
 name|GimpProcedure
@@ -4337,6 +4345,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -4347,16 +4356,13 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|name
 decl_stmt|;
 name|name
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&

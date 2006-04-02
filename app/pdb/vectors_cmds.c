@@ -2693,7 +2693,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|vectors_new_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|vectors_new_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|vectors_new_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2712,6 +2712,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -2730,6 +2731,7 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -2757,10 +2759,6 @@ argument_list|)
 expr_stmt|;
 name|name
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -2872,7 +2870,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|vectors_get_image_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|vectors_get_image_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|vectors_get_image_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2891,6 +2889,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -3034,7 +3033,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|vectors_get_name_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|vectors_get_name_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|vectors_get_name_invoker
 parameter_list|(
 name|GimpProcedure
@@ -3053,6 +3052,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -3199,7 +3199,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|vectors_set_name_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|vectors_set_name_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|vectors_set_name_invoker
 parameter_list|(
 name|GimpProcedure
@@ -3218,6 +3218,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -3232,6 +3233,7 @@ name|GimpVectors
 modifier|*
 name|vectors
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -3259,10 +3261,6 @@ argument_list|)
 expr_stmt|;
 name|name
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -3353,7 +3351,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|vectors_get_visible_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|vectors_get_visible_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|vectors_get_visible_invoker
 parameter_list|(
 name|GimpProcedure
@@ -3372,6 +3370,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -3514,7 +3513,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|vectors_set_visible_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|vectors_set_visible_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|vectors_set_visible_invoker
 parameter_list|(
 name|GimpProcedure
@@ -3533,6 +3532,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -3663,7 +3663,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|vectors_get_linked_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|vectors_get_linked_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|vectors_get_linked_invoker
 parameter_list|(
 name|GimpProcedure
@@ -3682,6 +3682,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -3824,7 +3825,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|vectors_set_linked_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|vectors_set_linked_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|vectors_set_linked_invoker
 parameter_list|(
 name|GimpProcedure
@@ -3843,6 +3844,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -3973,7 +3975,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|vectors_get_tattoo_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|vectors_get_tattoo_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|vectors_get_tattoo_invoker
 parameter_list|(
 name|GimpProcedure
@@ -3992,6 +3994,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -4134,7 +4137,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|vectors_set_tattoo_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|vectors_set_tattoo_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|vectors_set_tattoo_invoker
 parameter_list|(
 name|GimpProcedure
@@ -4153,6 +4156,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -4281,7 +4285,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|vectors_get_strokes_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|vectors_get_strokes_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|vectors_get_strokes_invoker
 parameter_list|(
 name|GimpProcedure
@@ -4300,6 +4304,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -4523,7 +4528,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|vectors_stroke_get_length_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|vectors_stroke_get_length_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|vectors_stroke_get_length_invoker
 parameter_list|(
 name|GimpProcedure
@@ -4542,6 +4547,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -4735,7 +4741,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|vectors_stroke_get_point_at_dist_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|vectors_stroke_get_point_at_dist_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|vectors_stroke_get_point_at_dist_invoker
 parameter_list|(
 name|GimpProcedure
@@ -4754,6 +4760,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -5052,7 +5059,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|vectors_stroke_remove_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|vectors_stroke_remove_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|vectors_stroke_remove_invoker
 parameter_list|(
 name|GimpProcedure
@@ -5071,6 +5078,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -5216,7 +5224,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|vectors_stroke_close_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|vectors_stroke_close_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|vectors_stroke_close_invoker
 parameter_list|(
 name|GimpProcedure
@@ -5235,6 +5243,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -5378,7 +5387,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|vectors_stroke_translate_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|vectors_stroke_translate_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|vectors_stroke_translate_invoker
 parameter_list|(
 name|GimpProcedure
@@ -5397,6 +5406,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -5576,7 +5586,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|vectors_stroke_scale_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|vectors_stroke_scale_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|vectors_stroke_scale_invoker
 parameter_list|(
 name|GimpProcedure
@@ -5595,6 +5605,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -5774,7 +5785,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|vectors_stroke_interpolate_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|vectors_stroke_interpolate_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|vectors_stroke_interpolate_invoker
 parameter_list|(
 name|GimpProcedure
@@ -5793,6 +5804,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -6131,7 +6143,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|vectors_bezier_stroke_new_moveto_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|vectors_bezier_stroke_new_moveto_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|vectors_bezier_stroke_new_moveto_invoker
 parameter_list|(
 name|GimpProcedure
@@ -6150,6 +6162,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -6357,7 +6370,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|vectors_bezier_stroke_lineto_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|vectors_bezier_stroke_lineto_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|vectors_bezier_stroke_lineto_invoker
 parameter_list|(
 name|GimpProcedure
@@ -6376,6 +6389,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -6573,7 +6587,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|vectors_bezier_stroke_conicto_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|vectors_bezier_stroke_conicto_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|vectors_bezier_stroke_conicto_invoker
 parameter_list|(
 name|GimpProcedure
@@ -6592,6 +6606,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -6841,7 +6856,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|vectors_bezier_stroke_cubicto_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|vectors_bezier_stroke_cubicto_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|vectors_bezier_stroke_cubicto_invoker
 parameter_list|(
 name|GimpProcedure
@@ -6860,6 +6875,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -7161,7 +7177,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|vectors_bezier_stroke_new_ellipse_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|vectors_bezier_stroke_new_ellipse_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|vectors_bezier_stroke_new_ellipse_invoker
 parameter_list|(
 name|GimpProcedure
@@ -7180,6 +7196,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args

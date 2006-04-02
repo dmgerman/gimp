@@ -1038,7 +1038,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|channel_new_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|channel_new_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|channel_new_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1057,6 +1057,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -1081,6 +1082,7 @@ decl_stmt|;
 name|gint32
 name|height
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -1140,10 +1142,6 @@ argument_list|)
 expr_stmt|;
 name|name
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -1311,7 +1309,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|channel_new_from_component_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|channel_new_from_component_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|channel_new_from_component_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1330,6 +1328,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -1351,6 +1350,7 @@ decl_stmt|;
 name|gint32
 name|component
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -1391,10 +1391,6 @@ argument_list|)
 expr_stmt|;
 name|name
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -1543,7 +1539,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|channel_copy_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|channel_copy_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|channel_copy_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1562,6 +1558,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -1727,7 +1724,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|channel_combine_masks_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|channel_combine_masks_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|channel_combine_masks_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1746,6 +1743,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -1934,7 +1932,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|channel_get_show_masked_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|channel_get_show_masked_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|channel_get_show_masked_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1953,6 +1951,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -2092,7 +2091,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|channel_set_show_masked_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|channel_set_show_masked_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|channel_set_show_masked_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2111,6 +2110,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -2236,7 +2236,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|channel_get_opacity_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|channel_get_opacity_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|channel_get_opacity_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2255,6 +2255,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -2396,7 +2397,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|channel_set_opacity_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|channel_set_opacity_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|channel_set_opacity_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2415,6 +2416,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -2544,7 +2546,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|channel_get_color_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|channel_get_color_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|channel_get_color_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2563,6 +2565,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -2712,7 +2715,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|channel_set_color_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|channel_set_color_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|channel_set_color_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2731,6 +2734,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args

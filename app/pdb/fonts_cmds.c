@@ -216,7 +216,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|fonts_refresh_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|fonts_refresh_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|fonts_refresh_invoker
 parameter_list|(
 name|GimpProcedure
@@ -235,6 +235,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -306,7 +307,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|fonts_get_list_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|fonts_get_list_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|fonts_get_list_invoker
 parameter_list|(
 name|GimpProcedure
@@ -325,6 +326,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -339,6 +341,7 @@ name|GimpArgument
 modifier|*
 name|return_vals
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|filter
@@ -357,10 +360,6 @@ name|NULL
 decl_stmt|;
 name|filter
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&

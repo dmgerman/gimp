@@ -310,7 +310,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|patterns_popup_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|patterns_popup_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|patterns_popup_invoker
 parameter_list|(
 name|GimpProcedure
@@ -329,6 +329,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -339,24 +340,23 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|pattern_callback
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|popup_title
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|initial_pattern
 decl_stmt|;
 name|pattern_callback
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -370,10 +370,6 @@ argument_list|)
 expr_stmt|;
 name|popup_title
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -387,10 +383,6 @@ argument_list|)
 expr_stmt|;
 name|initial_pattern
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -509,7 +501,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|patterns_close_popup_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|patterns_close_popup_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|patterns_close_popup_invoker
 parameter_list|(
 name|GimpProcedure
@@ -528,6 +520,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -538,16 +531,13 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|pattern_callback
 decl_stmt|;
 name|pattern_callback
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -658,7 +648,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|patterns_set_popup_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|patterns_set_popup_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|patterns_set_popup_invoker
 parameter_list|(
 name|GimpProcedure
@@ -677,6 +667,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -687,20 +678,18 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|pattern_callback
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|pattern_name
 decl_stmt|;
 name|pattern_callback
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -714,10 +703,6 @@ argument_list|)
 expr_stmt|;
 name|pattern_name
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&

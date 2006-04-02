@@ -864,7 +864,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|plugins_query_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|plugins_query_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|plugins_query_invoker
 parameter_list|(
 name|GimpProcedure
@@ -883,6 +883,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -892,6 +893,7 @@ name|GimpArgument
 modifier|*
 name|return_vals
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|search_string
@@ -944,10 +946,6 @@ name|NULL
 decl_stmt|;
 name|search_string
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -1219,7 +1217,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|plugin_domain_register_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|plugin_domain_register_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|plugin_domain_register_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1238,6 +1236,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -1248,20 +1247,18 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|domain_name
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|domain_path
 decl_stmt|;
 name|domain_name
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -1275,10 +1272,6 @@ argument_list|)
 expr_stmt|;
 name|domain_path
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -1398,7 +1391,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|plugin_help_register_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|plugin_help_register_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|plugin_help_register_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1417,6 +1410,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -1427,20 +1421,18 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|domain_name
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|domain_uri
 decl_stmt|;
 name|domain_name
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -1454,10 +1446,6 @@ argument_list|)
 expr_stmt|;
 name|domain_uri
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -1577,7 +1565,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|plugin_menu_register_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|plugin_menu_register_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|plugin_menu_register_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1596,6 +1584,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -1606,20 +1595,18 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|procedure_name
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|menu_path
 decl_stmt|;
 name|procedure_name
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -1633,10 +1620,6 @@ argument_list|)
 expr_stmt|;
 name|menu_path
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -1757,7 +1740,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|plugin_menu_branch_register_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|plugin_menu_branch_register_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|plugin_menu_branch_register_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1776,6 +1759,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -1786,20 +1770,18 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|menu_path
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|menu_name
 decl_stmt|;
 name|menu_path
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -1813,10 +1795,6 @@ argument_list|)
 expr_stmt|;
 name|menu_name
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -1952,7 +1930,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|plugin_icon_register_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|plugin_icon_register_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|plugin_icon_register_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1971,6 +1949,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -1981,6 +1960,7 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|procedure_name
@@ -1991,16 +1971,13 @@ decl_stmt|;
 name|gint32
 name|icon_data_length
 decl_stmt|;
+specifier|const
 name|guint8
 modifier|*
 name|icon_data
 decl_stmt|;
 name|procedure_name
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&

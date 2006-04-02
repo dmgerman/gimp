@@ -1084,7 +1084,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|unit_get_number_of_units_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|unit_get_number_of_units_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|unit_get_number_of_units_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1103,6 +1103,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -1202,7 +1203,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|unit_get_number_of_built_in_units_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|unit_get_number_of_built_in_units_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|unit_get_number_of_built_in_units_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1221,6 +1222,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -1320,7 +1322,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|unit_new_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|unit_new_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|unit_new_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1339,6 +1341,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -1353,6 +1356,7 @@ name|GimpArgument
 modifier|*
 name|return_vals
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|identifier
@@ -1363,18 +1367,22 @@ decl_stmt|;
 name|gint32
 name|digits
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|symbol
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|abbreviation
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|singular
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|plural
@@ -1386,10 +1394,6 @@ literal|0
 decl_stmt|;
 name|identifier
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -1429,10 +1433,6 @@ argument_list|)
 expr_stmt|;
 name|symbol
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -1446,10 +1446,6 @@ argument_list|)
 expr_stmt|;
 name|abbreviation
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -1463,10 +1459,6 @@ argument_list|)
 expr_stmt|;
 name|singular
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -1480,10 +1472,6 @@ argument_list|)
 expr_stmt|;
 name|plural
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|g_value_get_string
 argument_list|(
 operator|&
@@ -1604,7 +1592,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|unit_get_deletion_flag_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|unit_get_deletion_flag_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|unit_get_deletion_flag_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1623,6 +1611,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -1755,7 +1744,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|unit_set_deletion_flag_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|unit_set_deletion_flag_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|unit_set_deletion_flag_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1774,6 +1763,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -1892,7 +1882,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|unit_get_identifier_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|unit_get_identifier_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|unit_get_identifier_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1911,6 +1901,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -2047,7 +2038,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|unit_get_factor_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|unit_get_factor_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|unit_get_factor_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2066,6 +2057,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -2198,7 +2190,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|unit_get_digits_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|unit_get_digits_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|unit_get_digits_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2217,6 +2209,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -2349,7 +2342,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|unit_get_symbol_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|unit_get_symbol_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|unit_get_symbol_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2368,6 +2361,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -2504,7 +2498,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|unit_get_abbreviation_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|unit_get_abbreviation_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|unit_get_abbreviation_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2523,6 +2517,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -2659,7 +2654,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|unit_get_singular_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|unit_get_singular_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|unit_get_singular_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2678,6 +2673,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -2814,7 +2810,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|unit_get_plural_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|unit_get_plural_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|unit_get_plural_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2833,6 +2829,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args

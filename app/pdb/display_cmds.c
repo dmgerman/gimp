@@ -372,7 +372,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|display_new_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|display_new_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|display_new_invoker
 parameter_list|(
 name|GimpProcedure
@@ -391,6 +391,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -556,7 +557,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|display_delete_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|display_delete_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|display_delete_invoker
 parameter_list|(
 name|GimpProcedure
@@ -575,6 +576,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -678,7 +680,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|display_get_window_handle_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|display_get_window_handle_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|display_get_window_handle_invoker
 parameter_list|(
 name|GimpProcedure
@@ -697,6 +699,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -835,7 +838,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|displays_flush_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|displays_flush_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|displays_flush_invoker
 parameter_list|(
 name|GimpProcedure
@@ -854,6 +857,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
@@ -934,7 +938,7 @@ begin_function
 specifier|static
 name|GimpArgument
 modifier|*
-DECL|function|displays_reconnect_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpArgument * args)
+DECL|function|displays_reconnect_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
 name|displays_reconnect_invoker
 parameter_list|(
 name|GimpProcedure
@@ -953,6 +957,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+specifier|const
 name|GimpArgument
 modifier|*
 name|args
