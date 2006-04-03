@@ -429,6 +429,10 @@ name|g_object_new
 argument_list|(
 name|GIMP_TYPE_SIZE_BOX
 argument_list|,
+literal|"keep-aspect"
+argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
