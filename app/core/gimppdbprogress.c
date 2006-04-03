@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpparamspecs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppdbprogress.h"
 end_include
 
@@ -65,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b010cd0103
+DECL|enum|__anon2b0c13170103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -985,19 +991,19 @@ argument_list|,
 operator|&
 name|n_return_vals
 argument_list|,
-name|GIMP_PDB_INT32
+name|GIMP_TYPE_INT32
 argument_list|,
 name|command
 argument_list|,
-name|GIMP_PDB_STRING
+name|G_TYPE_STRING
 argument_list|,
 name|text
 argument_list|,
-name|GIMP_PDB_FLOAT
+name|G_TYPE_DOUBLE
 argument_list|,
 name|value
 argument_list|,
-name|GIMP_PDB_END
+name|G_TYPE_NONE
 argument_list|)
 expr_stmt|;
 if|if
@@ -1041,14 +1047,16 @@ name|n_return_vals
 operator|>=
 literal|2
 operator|&&
+name|G_VALUE_HOLDS_DOUBLE
+argument_list|(
+operator|&
 name|return_vals
 index|[
 literal|1
 index|]
 operator|.
-name|type
-operator|==
-name|GIMP_PDB_FLOAT
+name|value
+argument_list|)
 condition|)
 block|{
 name|retval

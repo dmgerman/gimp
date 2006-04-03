@@ -160,8 +160,6 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_IMAGE
-argument_list|,
 name|gimp_param_spec_image_id
 argument_list|(
 literal|"image"
@@ -199,8 +197,6 @@ expr_stmt|;
 name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_IMAGE
 argument_list|,
 name|gimp_param_spec_image_id
 argument_list|(
@@ -240,8 +236,6 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_IMAGE
-argument_list|,
 name|gimp_param_spec_image_id
 argument_list|(
 literal|"image"
@@ -259,8 +253,6 @@ expr_stmt|;
 name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_INT32
 argument_list|,
 name|g_param_spec_boolean
 argument_list|(
@@ -300,8 +292,6 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_IMAGE
-argument_list|,
 name|gimp_param_spec_image_id
 argument_list|(
 literal|"image"
@@ -319,8 +309,6 @@ expr_stmt|;
 name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_INT32
 argument_list|,
 name|g_param_spec_boolean
 argument_list|(
@@ -360,8 +348,6 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_IMAGE
-argument_list|,
 name|gimp_param_spec_image_id
 argument_list|(
 literal|"image"
@@ -379,8 +365,6 @@ expr_stmt|;
 name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_INT32
 argument_list|,
 name|g_param_spec_boolean
 argument_list|(
@@ -420,8 +404,6 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_IMAGE
-argument_list|,
 name|gimp_param_spec_image_id
 argument_list|(
 literal|"image"
@@ -439,8 +421,6 @@ expr_stmt|;
 name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_INT32
 argument_list|,
 name|g_param_spec_boolean
 argument_list|(
@@ -480,8 +460,6 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_IMAGE
-argument_list|,
 name|gimp_param_spec_image_id
 argument_list|(
 literal|"image"
@@ -499,8 +477,6 @@ expr_stmt|;
 name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_INT32
 argument_list|,
 name|g_param_spec_boolean
 argument_list|(

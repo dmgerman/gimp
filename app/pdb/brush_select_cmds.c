@@ -116,8 +116,6 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_STRING
-argument_list|,
 name|gimp_param_spec_string
 argument_list|(
 literal|"brush-callback"
@@ -139,8 +137,6 @@ expr_stmt|;
 name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_STRING
 argument_list|,
 name|gimp_param_spec_string
 argument_list|(
@@ -164,8 +160,6 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_STRING
-argument_list|,
 name|gimp_param_spec_string
 argument_list|(
 literal|"initial-brush"
@@ -187,8 +181,6 @@ expr_stmt|;
 name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_FLOAT
 argument_list|,
 name|g_param_spec_double
 argument_list|(
@@ -212,9 +204,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|g_param_spec_int
+name|gimp_param_spec_int32
 argument_list|(
 literal|"spacing"
 argument_list|,
@@ -235,8 +225,6 @@ expr_stmt|;
 name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_INT32
 argument_list|,
 name|g_param_spec_enum
 argument_list|(
@@ -277,8 +265,6 @@ expr_stmt|;
 name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_STRING
 argument_list|,
 name|gimp_param_spec_string
 argument_list|(
@@ -322,8 +308,6 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_STRING
-argument_list|,
 name|gimp_param_spec_string
 argument_list|(
 literal|"brush-callback"
@@ -345,8 +329,6 @@ expr_stmt|;
 name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_STRING
 argument_list|,
 name|gimp_param_spec_string
 argument_list|(
@@ -370,8 +352,6 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_FLOAT
-argument_list|,
 name|g_param_spec_double
 argument_list|(
 literal|"opacity"
@@ -394,9 +374,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|g_param_spec_int
+name|gimp_param_spec_int32
 argument_list|(
 literal|"spacing"
 argument_list|,
@@ -417,8 +395,6 @@ expr_stmt|;
 name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_INT32
 argument_list|,
 name|g_param_spec_enum
 argument_list|(

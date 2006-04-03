@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpparamspecs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"pdb/procedural_db.h"
 end_include
 
@@ -399,7 +405,7 @@ name|callback_name
 argument_list|,
 name|n_return_vals
 argument_list|,
-name|GIMP_PDB_STRING
+name|G_TYPE_STRING
 argument_list|,
 name|GIMP_OBJECT
 argument_list|(
@@ -408,17 +414,17 @@ argument_list|)
 operator|->
 name|name
 argument_list|,
-name|GIMP_PDB_INT32
+name|GIMP_TYPE_INT32
 argument_list|,
 name|palette
 operator|->
 name|n_colors
 argument_list|,
-name|GIMP_PDB_INT32
+name|GIMP_TYPE_INT32
 argument_list|,
 name|closing
 argument_list|,
-name|GIMP_PDB_END
+name|G_TYPE_NONE
 argument_list|)
 return|;
 block|}

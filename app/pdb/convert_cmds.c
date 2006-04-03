@@ -140,8 +140,6 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_IMAGE
-argument_list|,
 name|gimp_param_spec_image_id
 argument_list|(
 literal|"image"
@@ -179,8 +177,6 @@ expr_stmt|;
 name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_IMAGE
 argument_list|,
 name|gimp_param_spec_image_id
 argument_list|(
@@ -220,8 +216,6 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_IMAGE
-argument_list|,
 name|gimp_param_spec_image_id
 argument_list|(
 literal|"image"
@@ -239,8 +233,6 @@ expr_stmt|;
 name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_INT32
 argument_list|,
 name|g_param_spec_enum
 argument_list|(
@@ -262,8 +254,6 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
 name|g_param_spec_enum
 argument_list|(
 literal|"palette-type"
@@ -284,9 +274,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|g_param_spec_int
+name|gimp_param_spec_int32
 argument_list|(
 literal|"num-cols"
 argument_list|,
@@ -308,8 +296,6 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
 name|g_param_spec_boolean
 argument_list|(
 literal|"alpha-dither"
@@ -328,8 +314,6 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
 name|g_param_spec_boolean
 argument_list|(
 literal|"remove-unused"
@@ -347,8 +331,6 @@ expr_stmt|;
 name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_STRING
 argument_list|,
 name|gimp_param_spec_string
 argument_list|(

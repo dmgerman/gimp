@@ -194,8 +194,6 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_STRING
-argument_list|,
 name|gimp_param_spec_string
 argument_list|(
 literal|"search-string"
@@ -220,9 +218,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|g_param_spec_int
+name|gimp_param_spec_int32
 argument_list|(
 literal|"num-plugins"
 argument_list|,
@@ -243,8 +239,6 @@ expr_stmt|;
 name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_STRINGARRAY
 argument_list|,
 name|gimp_param_spec_string_array
 argument_list|(
@@ -262,9 +256,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|g_param_spec_int
+name|gimp_param_spec_int32
 argument_list|(
 literal|"num-plugins"
 argument_list|,
@@ -285,8 +277,6 @@ expr_stmt|;
 name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_STRINGARRAY
 argument_list|,
 name|gimp_param_spec_string_array
 argument_list|(
@@ -304,9 +294,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|g_param_spec_int
+name|gimp_param_spec_int32
 argument_list|(
 literal|"num-plugins"
 argument_list|,
@@ -327,8 +315,6 @@ expr_stmt|;
 name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_STRINGARRAY
 argument_list|,
 name|gimp_param_spec_string_array
 argument_list|(
@@ -346,9 +332,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|g_param_spec_int
+name|gimp_param_spec_int32
 argument_list|(
 literal|"num-plugins"
 argument_list|,
@@ -369,8 +353,6 @@ expr_stmt|;
 name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_STRINGARRAY
 argument_list|,
 name|gimp_param_spec_string_array
 argument_list|(
@@ -388,9 +370,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|g_param_spec_int
+name|gimp_param_spec_int32
 argument_list|(
 literal|"num-plugins"
 argument_list|,
@@ -412,9 +392,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_INT32ARRAY
-argument_list|,
-name|gimp_param_spec_array
+name|gimp_param_spec_int32_array
 argument_list|(
 literal|"plugin-install-time"
 argument_list|,
@@ -430,9 +408,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|g_param_spec_int
+name|gimp_param_spec_int32
 argument_list|(
 literal|"num-plugins"
 argument_list|,
@@ -453,8 +429,6 @@ expr_stmt|;
 name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_STRINGARRAY
 argument_list|,
 name|gimp_param_spec_string_array
 argument_list|(
@@ -492,8 +466,6 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_STRING
-argument_list|,
 name|gimp_param_spec_string
 argument_list|(
 literal|"domain-name"
@@ -515,8 +487,6 @@ expr_stmt|;
 name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_STRING
 argument_list|,
 name|gimp_param_spec_string
 argument_list|(
@@ -562,8 +532,6 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_STRING
-argument_list|,
 name|gimp_param_spec_string
 argument_list|(
 literal|"domain-name"
@@ -585,8 +553,6 @@ expr_stmt|;
 name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_STRING
 argument_list|,
 name|gimp_param_spec_string
 argument_list|(
@@ -630,8 +596,6 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_STRING
-argument_list|,
 name|gimp_param_spec_string
 argument_list|(
 literal|"procedure-name"
@@ -653,8 +617,6 @@ expr_stmt|;
 name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_STRING
 argument_list|,
 name|gimp_param_spec_string
 argument_list|(
@@ -698,8 +660,6 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_STRING
-argument_list|,
 name|gimp_param_spec_string
 argument_list|(
 literal|"menu-path"
@@ -721,8 +681,6 @@ expr_stmt|;
 name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_STRING
 argument_list|,
 name|gimp_param_spec_string
 argument_list|(
@@ -766,8 +724,6 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_STRING
-argument_list|,
 name|gimp_param_spec_string
 argument_list|(
 literal|"procedure-name"
@@ -790,8 +746,6 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
 name|g_param_spec_enum
 argument_list|(
 literal|"icon-type"
@@ -812,9 +766,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|g_param_spec_int
+name|gimp_param_spec_int32
 argument_list|(
 literal|"icon-data-length"
 argument_list|,
@@ -836,9 +788,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_INT8ARRAY
-argument_list|,
-name|gimp_param_spec_array
+name|gimp_param_spec_int8_array
 argument_list|(
 literal|"icon-data"
 argument_list|,
@@ -2017,10 +1967,6 @@ argument_list|)
 expr_stmt|;
 name|icon_data
 operator|=
-operator|(
-name|guint8
-operator|*
-operator|)
 name|gimp_value_get_int8array
 argument_list|(
 operator|&

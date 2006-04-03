@@ -182,9 +182,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_DRAWABLE
-argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_drawable_id
 argument_list|(
 literal|"drawable"
 argument_list|,
@@ -194,8 +192,6 @@ literal|"The affected drawable"
 argument_list|,
 name|gimp
 argument_list|,
-name|GIMP_TYPE_DRAWABLE
-argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
@@ -203,8 +199,6 @@ expr_stmt|;
 name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_INT32
 argument_list|,
 name|gimp_param_spec_enum
 argument_list|(
@@ -243,9 +237,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_DRAWABLE
-argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_drawable_id
 argument_list|(
 literal|"drawable"
 argument_list|,
@@ -254,8 +246,6 @@ argument_list|,
 literal|"The flipped drawable"
 argument_list|,
 name|gimp
-argument_list|,
-name|GIMP_TYPE_DRAWABLE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -285,9 +275,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_DRAWABLE
-argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_drawable_id
 argument_list|(
 literal|"drawable"
 argument_list|,
@@ -297,8 +285,6 @@ literal|"The affected drawable"
 argument_list|,
 name|gimp
 argument_list|,
-name|GIMP_TYPE_DRAWABLE
-argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
@@ -306,8 +292,6 @@ expr_stmt|;
 name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_INT32
 argument_list|,
 name|g_param_spec_boolean
 argument_list|(
@@ -326,8 +310,6 @@ expr_stmt|;
 name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_FLOAT
 argument_list|,
 name|g_param_spec_double
 argument_list|(
@@ -352,8 +334,6 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_FLOAT
-argument_list|,
 name|g_param_spec_double
 argument_list|(
 literal|"y0"
@@ -376,8 +356,6 @@ expr_stmt|;
 name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_FLOAT
 argument_list|,
 name|g_param_spec_double
 argument_list|(
@@ -402,8 +380,6 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_FLOAT
-argument_list|,
 name|g_param_spec_double
 argument_list|(
 literal|"y1"
@@ -426,8 +402,6 @@ expr_stmt|;
 name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_FLOAT
 argument_list|,
 name|g_param_spec_double
 argument_list|(
@@ -452,8 +426,6 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_FLOAT
-argument_list|,
 name|g_param_spec_double
 argument_list|(
 literal|"y2"
@@ -476,8 +448,6 @@ expr_stmt|;
 name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_FLOAT
 argument_list|,
 name|g_param_spec_double
 argument_list|(
@@ -502,8 +472,6 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_FLOAT
-argument_list|,
 name|g_param_spec_double
 argument_list|(
 literal|"y3"
@@ -527,9 +495,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_DRAWABLE
-argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_drawable_id
 argument_list|(
 literal|"drawable"
 argument_list|,
@@ -538,8 +504,6 @@ argument_list|,
 literal|"The newly mapped drawable"
 argument_list|,
 name|gimp
-argument_list|,
-name|GIMP_TYPE_DRAWABLE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -569,9 +533,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_DRAWABLE
-argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_drawable_id
 argument_list|(
 literal|"drawable"
 argument_list|,
@@ -581,8 +543,6 @@ literal|"The affected drawable"
 argument_list|,
 name|gimp
 argument_list|,
-name|GIMP_TYPE_DRAWABLE
-argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
@@ -590,8 +550,6 @@ expr_stmt|;
 name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_INT32
 argument_list|,
 name|g_param_spec_boolean
 argument_list|(
@@ -610,8 +568,6 @@ expr_stmt|;
 name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_FLOAT
 argument_list|,
 name|g_param_spec_double
 argument_list|(
@@ -636,9 +592,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_DRAWABLE
-argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_drawable_id
 argument_list|(
 literal|"drawable"
 argument_list|,
@@ -647,8 +601,6 @@ argument_list|,
 literal|"The rotated drawable"
 argument_list|,
 name|gimp
-argument_list|,
-name|GIMP_TYPE_DRAWABLE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -678,9 +630,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_DRAWABLE
-argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_drawable_id
 argument_list|(
 literal|"drawable"
 argument_list|,
@@ -690,8 +640,6 @@ literal|"The affected drawable"
 argument_list|,
 name|gimp
 argument_list|,
-name|GIMP_TYPE_DRAWABLE
-argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
@@ -699,8 +647,6 @@ expr_stmt|;
 name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_INT32
 argument_list|,
 name|g_param_spec_boolean
 argument_list|(
@@ -719,8 +665,6 @@ expr_stmt|;
 name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_FLOAT
 argument_list|,
 name|g_param_spec_double
 argument_list|(
@@ -745,8 +689,6 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_FLOAT
-argument_list|,
 name|g_param_spec_double
 argument_list|(
 literal|"y0"
@@ -769,8 +711,6 @@ expr_stmt|;
 name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_FLOAT
 argument_list|,
 name|g_param_spec_double
 argument_list|(
@@ -795,8 +735,6 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_FLOAT
-argument_list|,
 name|g_param_spec_double
 argument_list|(
 literal|"y1"
@@ -820,9 +758,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_DRAWABLE
-argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_drawable_id
 argument_list|(
 literal|"drawable"
 argument_list|,
@@ -831,8 +767,6 @@ argument_list|,
 literal|"The scaled drawable"
 argument_list|,
 name|gimp
-argument_list|,
-name|GIMP_TYPE_DRAWABLE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -862,9 +796,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_DRAWABLE
-argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_drawable_id
 argument_list|(
 literal|"drawable"
 argument_list|,
@@ -874,8 +806,6 @@ literal|"The affected drawable"
 argument_list|,
 name|gimp
 argument_list|,
-name|GIMP_TYPE_DRAWABLE
-argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
@@ -883,8 +813,6 @@ expr_stmt|;
 name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_INT32
 argument_list|,
 name|g_param_spec_boolean
 argument_list|(
@@ -903,8 +831,6 @@ expr_stmt|;
 name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_INT32
 argument_list|,
 name|gimp_param_spec_enum
 argument_list|(
@@ -943,8 +869,6 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_FLOAT
-argument_list|,
 name|g_param_spec_double
 argument_list|(
 literal|"magnitude"
@@ -968,9 +892,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_DRAWABLE
-argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_drawable_id
 argument_list|(
 literal|"drawable"
 argument_list|,
@@ -979,8 +901,6 @@ argument_list|,
 literal|"The sheared drawable"
 argument_list|,
 name|gimp
-argument_list|,
-name|GIMP_TYPE_DRAWABLE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -1010,9 +930,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_DRAWABLE
-argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_drawable_id
 argument_list|(
 literal|"drawable"
 argument_list|,
@@ -1022,8 +940,6 @@ literal|"The affected drawable"
 argument_list|,
 name|gimp
 argument_list|,
-name|GIMP_TYPE_DRAWABLE
-argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
@@ -1031,8 +947,6 @@ expr_stmt|;
 name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_INT32
 argument_list|,
 name|g_param_spec_boolean
 argument_list|(
@@ -1051,8 +965,6 @@ expr_stmt|;
 name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_FLOAT
 argument_list|,
 name|g_param_spec_double
 argument_list|(
@@ -1077,8 +989,6 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_FLOAT
-argument_list|,
 name|g_param_spec_double
 argument_list|(
 literal|"source-y"
@@ -1101,8 +1011,6 @@ expr_stmt|;
 name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_FLOAT
 argument_list|,
 name|g_param_spec_double
 argument_list|(
@@ -1127,8 +1035,6 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_FLOAT
-argument_list|,
 name|g_param_spec_double
 argument_list|(
 literal|"scale-y"
@@ -1151,8 +1057,6 @@ expr_stmt|;
 name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_FLOAT
 argument_list|,
 name|g_param_spec_double
 argument_list|(
@@ -1177,8 +1081,6 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_FLOAT
-argument_list|,
 name|g_param_spec_double
 argument_list|(
 literal|"dest-x"
@@ -1201,8 +1103,6 @@ expr_stmt|;
 name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_FLOAT
 argument_list|,
 name|g_param_spec_double
 argument_list|(
@@ -1227,9 +1127,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_DRAWABLE
-argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_drawable_id
 argument_list|(
 literal|"drawable"
 argument_list|,
@@ -1238,8 +1136,6 @@ argument_list|,
 literal|"The transformed drawable"
 argument_list|,
 name|gimp
-argument_list|,
-name|GIMP_TYPE_DRAWABLE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -1302,11 +1198,7 @@ name|flip_type
 decl_stmt|;
 name|drawable
 operator|=
-operator|(
-name|GimpDrawable
-operator|*
-operator|)
-name|gimp_value_get_item
+name|gimp_value_get_drawable
 argument_list|(
 operator|&
 name|args
@@ -1317,8 +1209,6 @@ operator|.
 name|value
 argument_list|,
 name|gimp
-argument_list|,
-name|GIMP_TYPE_DRAWABLE
 argument_list|)
 expr_stmt|;
 name|flip_type
@@ -1412,7 +1302,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimp_value_set_item
+name|gimp_value_set_drawable
 argument_list|(
 operator|&
 name|return_vals
@@ -1422,10 +1312,7 @@ index|]
 operator|.
 name|value
 argument_list|,
-name|GIMP_ITEM
-argument_list|(
 name|drawable
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -1551,11 +1438,7 @@ name|y3
 decl_stmt|;
 name|drawable
 operator|=
-operator|(
-name|GimpDrawable
-operator|*
-operator|)
-name|gimp_value_get_item
+name|gimp_value_get_drawable
 argument_list|(
 operator|&
 name|args
@@ -1566,8 +1449,6 @@ operator|.
 name|value
 argument_list|,
 name|gimp
-argument_list|,
-name|GIMP_TYPE_DRAWABLE
 argument_list|)
 expr_stmt|;
 name|interpolation
@@ -1855,7 +1736,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimp_value_set_item
+name|gimp_value_set_drawable
 argument_list|(
 operator|&
 name|return_vals
@@ -1865,10 +1746,7 @@ index|]
 operator|.
 name|value
 argument_list|,
-name|GIMP_ITEM
-argument_list|(
 name|drawable
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -1973,11 +1851,7 @@ name|angle
 decl_stmt|;
 name|drawable
 operator|=
-operator|(
-name|GimpDrawable
-operator|*
-operator|)
-name|gimp_value_get_item
+name|gimp_value_get_drawable
 argument_list|(
 operator|&
 name|args
@@ -1988,8 +1862,6 @@ operator|.
 name|value
 argument_list|,
 name|gimp
-argument_list|,
-name|GIMP_TYPE_DRAWABLE
 argument_list|)
 expr_stmt|;
 name|interpolation
@@ -2172,7 +2044,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimp_value_set_item
+name|gimp_value_set_drawable
 argument_list|(
 operator|&
 name|return_vals
@@ -2182,10 +2054,7 @@ index|]
 operator|.
 name|value
 argument_list|,
-name|GIMP_ITEM
-argument_list|(
 name|drawable
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -2299,11 +2168,7 @@ name|y1
 decl_stmt|;
 name|drawable
 operator|=
-operator|(
-name|GimpDrawable
-operator|*
-operator|)
-name|gimp_value_get_item
+name|gimp_value_get_drawable
 argument_list|(
 operator|&
 name|args
@@ -2314,8 +2179,6 @@ operator|.
 name|value
 argument_list|,
 name|gimp
-argument_list|,
-name|GIMP_TYPE_DRAWABLE
 argument_list|)
 expr_stmt|;
 name|interpolation
@@ -2557,7 +2420,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimp_value_set_item
+name|gimp_value_set_drawable
 argument_list|(
 operator|&
 name|return_vals
@@ -2567,10 +2430,7 @@ index|]
 operator|.
 name|value
 argument_list|,
-name|GIMP_ITEM
-argument_list|(
 name|drawable
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -2678,11 +2538,7 @@ name|magnitude
 decl_stmt|;
 name|drawable
 operator|=
-operator|(
-name|GimpDrawable
-operator|*
-operator|)
-name|gimp_value_get_item
+name|gimp_value_get_drawable
 argument_list|(
 operator|&
 name|args
@@ -2693,8 +2549,6 @@ operator|.
 name|value
 argument_list|,
 name|gimp
-argument_list|,
-name|GIMP_TYPE_DRAWABLE
 argument_list|)
 expr_stmt|;
 name|interpolation
@@ -2892,7 +2746,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimp_value_set_item
+name|gimp_value_set_drawable
 argument_list|(
 operator|&
 name|return_vals
@@ -2902,10 +2756,7 @@ index|]
 operator|.
 name|value
 argument_list|,
-name|GIMP_ITEM
-argument_list|(
 name|drawable
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -3028,11 +2879,7 @@ name|dest_y
 decl_stmt|;
 name|drawable
 operator|=
-operator|(
-name|GimpDrawable
-operator|*
-operator|)
-name|gimp_value_get_item
+name|gimp_value_get_drawable
 argument_list|(
 operator|&
 name|args
@@ -3043,8 +2890,6 @@ operator|.
 name|value
 argument_list|,
 name|gimp
-argument_list|,
-name|GIMP_TYPE_DRAWABLE
 argument_list|)
 expr_stmt|;
 name|interpolation
@@ -3329,7 +3174,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimp_value_set_item
+name|gimp_value_set_drawable
 argument_list|(
 operator|&
 name|return_vals
@@ -3339,10 +3184,7 @@ index|]
 operator|.
 name|value
 argument_list|,
-name|GIMP_ITEM
-argument_list|(
 name|drawable
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return

@@ -238,8 +238,6 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_STRING
-argument_list|,
 name|gimp_param_spec_string
 argument_list|(
 literal|"name"
@@ -261,8 +259,6 @@ expr_stmt|;
 name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_PARASITE
 argument_list|,
 name|gimp_param_spec_parasite
 argument_list|(
@@ -300,8 +296,6 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_PARASITE
-argument_list|,
 name|gimp_param_spec_parasite
 argument_list|(
 literal|"parasite"
@@ -337,8 +331,6 @@ expr_stmt|;
 name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_STRING
 argument_list|,
 name|gimp_param_spec_string
 argument_list|(
@@ -382,9 +374,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|g_param_spec_int
+name|gimp_param_spec_int32
 argument_list|(
 literal|"num-parasites"
 argument_list|,
@@ -405,8 +395,6 @@ expr_stmt|;
 name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_STRINGARRAY
 argument_list|,
 name|gimp_param_spec_string_array
 argument_list|(
@@ -444,8 +432,6 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_IMAGE
-argument_list|,
 name|gimp_param_spec_image_id
 argument_list|(
 literal|"image"
@@ -463,8 +449,6 @@ expr_stmt|;
 name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_STRING
 argument_list|,
 name|gimp_param_spec_string
 argument_list|(
@@ -487,8 +471,6 @@ expr_stmt|;
 name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_PARASITE
 argument_list|,
 name|gimp_param_spec_parasite
 argument_list|(
@@ -526,8 +508,6 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_IMAGE
-argument_list|,
 name|gimp_param_spec_image_id
 argument_list|(
 literal|"image"
@@ -545,8 +525,6 @@ expr_stmt|;
 name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_PARASITE
 argument_list|,
 name|gimp_param_spec_parasite
 argument_list|(
@@ -584,8 +562,6 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_IMAGE
-argument_list|,
 name|gimp_param_spec_image_id
 argument_list|(
 literal|"image"
@@ -603,8 +579,6 @@ expr_stmt|;
 name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_STRING
 argument_list|,
 name|gimp_param_spec_string
 argument_list|(
@@ -648,8 +622,6 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_IMAGE
-argument_list|,
 name|gimp_param_spec_image_id
 argument_list|(
 literal|"image"
@@ -668,9 +640,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|g_param_spec_int
+name|gimp_param_spec_int32
 argument_list|(
 literal|"num-parasites"
 argument_list|,
@@ -691,8 +661,6 @@ expr_stmt|;
 name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_STRINGARRAY
 argument_list|,
 name|gimp_param_spec_string_array
 argument_list|(
@@ -730,9 +698,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_DRAWABLE
-argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_drawable_id
 argument_list|(
 literal|"drawable"
 argument_list|,
@@ -742,8 +708,6 @@ literal|"The drawable"
 argument_list|,
 name|gimp
 argument_list|,
-name|GIMP_TYPE_DRAWABLE
-argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
@@ -751,8 +715,6 @@ expr_stmt|;
 name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_STRING
 argument_list|,
 name|gimp_param_spec_string
 argument_list|(
@@ -775,8 +737,6 @@ expr_stmt|;
 name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_PARASITE
 argument_list|,
 name|gimp_param_spec_parasite
 argument_list|(
@@ -814,9 +774,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_DRAWABLE
-argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_drawable_id
 argument_list|(
 literal|"drawable"
 argument_list|,
@@ -826,8 +784,6 @@ literal|"The drawable"
 argument_list|,
 name|gimp
 argument_list|,
-name|GIMP_TYPE_DRAWABLE
-argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
@@ -835,8 +791,6 @@ expr_stmt|;
 name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_PARASITE
 argument_list|,
 name|gimp_param_spec_parasite
 argument_list|(
@@ -874,9 +828,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_DRAWABLE
-argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_drawable_id
 argument_list|(
 literal|"drawable"
 argument_list|,
@@ -886,8 +838,6 @@ literal|"The drawable"
 argument_list|,
 name|gimp
 argument_list|,
-name|GIMP_TYPE_DRAWABLE
-argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
@@ -895,8 +845,6 @@ expr_stmt|;
 name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_STRING
 argument_list|,
 name|gimp_param_spec_string
 argument_list|(
@@ -940,9 +888,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_DRAWABLE
-argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_drawable_id
 argument_list|(
 literal|"drawable"
 argument_list|,
@@ -952,8 +898,6 @@ literal|"The drawable"
 argument_list|,
 name|gimp
 argument_list|,
-name|GIMP_TYPE_DRAWABLE
-argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
@@ -962,9 +906,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|g_param_spec_int
+name|gimp_param_spec_int32
 argument_list|(
 literal|"num-parasites"
 argument_list|,
@@ -985,8 +927,6 @@ expr_stmt|;
 name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_STRINGARRAY
 argument_list|,
 name|gimp_param_spec_string_array
 argument_list|(
@@ -1024,9 +964,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_VECTORS
-argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_vectors_id
 argument_list|(
 literal|"vectors"
 argument_list|,
@@ -1036,8 +974,6 @@ literal|"The vectors object"
 argument_list|,
 name|gimp
 argument_list|,
-name|GIMP_TYPE_VECTORS
-argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
@@ -1045,8 +981,6 @@ expr_stmt|;
 name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_STRING
 argument_list|,
 name|gimp_param_spec_string
 argument_list|(
@@ -1069,8 +1003,6 @@ expr_stmt|;
 name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_PARASITE
 argument_list|,
 name|gimp_param_spec_parasite
 argument_list|(
@@ -1108,9 +1040,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_VECTORS
-argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_vectors_id
 argument_list|(
 literal|"vectors"
 argument_list|,
@@ -1120,8 +1050,6 @@ literal|"The vectors object"
 argument_list|,
 name|gimp
 argument_list|,
-name|GIMP_TYPE_VECTORS
-argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
@@ -1129,8 +1057,6 @@ expr_stmt|;
 name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_PARASITE
 argument_list|,
 name|gimp_param_spec_parasite
 argument_list|(
@@ -1168,9 +1094,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_VECTORS
-argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_vectors_id
 argument_list|(
 literal|"vectors"
 argument_list|,
@@ -1180,8 +1104,6 @@ literal|"The vectors object"
 argument_list|,
 name|gimp
 argument_list|,
-name|GIMP_TYPE_VECTORS
-argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
@@ -1189,8 +1111,6 @@ expr_stmt|;
 name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_STRING
 argument_list|,
 name|gimp_param_spec_string
 argument_list|(
@@ -1234,9 +1154,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_VECTORS
-argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_vectors_id
 argument_list|(
 literal|"vectors"
 argument_list|,
@@ -1246,8 +1164,6 @@ literal|"The vectors object"
 argument_list|,
 name|gimp
 argument_list|,
-name|GIMP_TYPE_VECTORS
-argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
@@ -1256,9 +1172,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|g_param_spec_int
+name|gimp_param_spec_int32
 argument_list|(
 literal|"num-parasites"
 argument_list|,
@@ -1279,8 +1193,6 @@ expr_stmt|;
 name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_STRINGARRAY
 argument_list|,
 name|gimp_param_spec_string_array
 argument_list|(
@@ -2562,11 +2474,7 @@ name|NULL
 decl_stmt|;
 name|drawable
 operator|=
-operator|(
-name|GimpDrawable
-operator|*
-operator|)
-name|gimp_value_get_item
+name|gimp_value_get_drawable
 argument_list|(
 operator|&
 name|args
@@ -2577,8 +2485,6 @@ operator|.
 name|value
 argument_list|,
 name|gimp
-argument_list|,
-name|GIMP_TYPE_DRAWABLE
 argument_list|)
 expr_stmt|;
 name|name
@@ -2747,11 +2653,7 @@ name|parasite
 decl_stmt|;
 name|drawable
 operator|=
-operator|(
-name|GimpDrawable
-operator|*
-operator|)
-name|gimp_value_get_item
+name|gimp_value_get_drawable
 argument_list|(
 operator|&
 name|args
@@ -2762,8 +2664,6 @@ operator|.
 name|value
 argument_list|,
 name|gimp
-argument_list|,
-name|GIMP_TYPE_DRAWABLE
 argument_list|)
 expr_stmt|;
 name|parasite
@@ -2897,11 +2797,7 @@ name|name
 decl_stmt|;
 name|drawable
 operator|=
-operator|(
-name|GimpDrawable
-operator|*
-operator|)
-name|gimp_value_get_item
+name|gimp_value_get_drawable
 argument_list|(
 operator|&
 name|args
@@ -2912,8 +2808,6 @@ operator|.
 name|value
 argument_list|,
 name|gimp
-argument_list|,
-name|GIMP_TYPE_DRAWABLE
 argument_list|)
 expr_stmt|;
 name|name
@@ -3058,11 +2952,7 @@ name|NULL
 decl_stmt|;
 name|drawable
 operator|=
-operator|(
-name|GimpDrawable
-operator|*
-operator|)
-name|gimp_value_get_item
+name|gimp_value_get_drawable
 argument_list|(
 operator|&
 name|args
@@ -3073,8 +2963,6 @@ operator|.
 name|value
 argument_list|,
 name|gimp
-argument_list|,
-name|GIMP_TYPE_DRAWABLE
 argument_list|)
 expr_stmt|;
 if|if
@@ -3246,11 +3134,7 @@ name|NULL
 decl_stmt|;
 name|vectors
 operator|=
-operator|(
-name|GimpVectors
-operator|*
-operator|)
-name|gimp_value_get_item
+name|gimp_value_get_vectors
 argument_list|(
 operator|&
 name|args
@@ -3261,8 +3145,6 @@ operator|.
 name|value
 argument_list|,
 name|gimp
-argument_list|,
-name|GIMP_TYPE_VECTORS
 argument_list|)
 expr_stmt|;
 name|name
@@ -3431,11 +3313,7 @@ name|parasite
 decl_stmt|;
 name|vectors
 operator|=
-operator|(
-name|GimpVectors
-operator|*
-operator|)
-name|gimp_value_get_item
+name|gimp_value_get_vectors
 argument_list|(
 operator|&
 name|args
@@ -3446,8 +3324,6 @@ operator|.
 name|value
 argument_list|,
 name|gimp
-argument_list|,
-name|GIMP_TYPE_VECTORS
 argument_list|)
 expr_stmt|;
 name|parasite
@@ -3581,11 +3457,7 @@ name|name
 decl_stmt|;
 name|vectors
 operator|=
-operator|(
-name|GimpVectors
-operator|*
-operator|)
-name|gimp_value_get_item
+name|gimp_value_get_vectors
 argument_list|(
 operator|&
 name|args
@@ -3596,8 +3468,6 @@ operator|.
 name|value
 argument_list|,
 name|gimp
-argument_list|,
-name|GIMP_TYPE_VECTORS
 argument_list|)
 expr_stmt|;
 name|name
@@ -3742,11 +3612,7 @@ name|NULL
 decl_stmt|;
 name|vectors
 operator|=
-operator|(
-name|GimpVectors
-operator|*
-operator|)
-name|gimp_value_get_item
+name|gimp_value_get_vectors
 argument_list|(
 operator|&
 name|args
@@ -3757,8 +3623,6 @@ operator|.
 name|value
 argument_list|,
 name|gimp
-argument_list|,
-name|GIMP_TYPE_VECTORS
 argument_list|)
 expr_stmt|;
 if|if

@@ -328,9 +328,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_DRAWABLE
-argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_drawable_id
 argument_list|(
 literal|"drawable"
 argument_list|,
@@ -340,8 +338,6 @@ literal|"The drawable"
 argument_list|,
 name|gimp
 argument_list|,
-name|GIMP_TYPE_DRAWABLE
-argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
@@ -350,9 +346,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|g_param_spec_int
+name|gimp_param_spec_int32
 argument_list|(
 literal|"brightness"
 argument_list|,
@@ -376,9 +370,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|g_param_spec_int
+name|gimp_param_spec_int32
 argument_list|(
 literal|"contrast"
 argument_list|,
@@ -422,9 +414,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_DRAWABLE
-argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_drawable_id
 argument_list|(
 literal|"drawable"
 argument_list|,
@@ -434,8 +424,6 @@ literal|"The drawable"
 argument_list|,
 name|gimp
 argument_list|,
-name|GIMP_TYPE_DRAWABLE
-argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
@@ -443,8 +431,6 @@ expr_stmt|;
 name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_INT32
 argument_list|,
 name|g_param_spec_enum
 argument_list|(
@@ -466,9 +452,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|g_param_spec_int
+name|gimp_param_spec_int32
 argument_list|(
 literal|"low-input"
 argument_list|,
@@ -490,9 +474,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|g_param_spec_int
+name|gimp_param_spec_int32
 argument_list|(
 literal|"high-input"
 argument_list|,
@@ -513,8 +495,6 @@ expr_stmt|;
 name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_FLOAT
 argument_list|,
 name|g_param_spec_double
 argument_list|(
@@ -538,9 +518,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|g_param_spec_int
+name|gimp_param_spec_int32
 argument_list|(
 literal|"low-output"
 argument_list|,
@@ -562,9 +540,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|g_param_spec_int
+name|gimp_param_spec_int32
 argument_list|(
 literal|"high-output"
 argument_list|,
@@ -606,9 +582,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_DRAWABLE
-argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_drawable_id
 argument_list|(
 literal|"drawable"
 argument_list|,
@@ -617,8 +591,6 @@ argument_list|,
 literal|"The drawable"
 argument_list|,
 name|gimp
-argument_list|,
-name|GIMP_TYPE_DRAWABLE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -648,9 +620,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_DRAWABLE
-argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_drawable_id
 argument_list|(
 literal|"drawable"
 argument_list|,
@@ -659,8 +629,6 @@ argument_list|,
 literal|"The drawable"
 argument_list|,
 name|gimp
-argument_list|,
-name|GIMP_TYPE_DRAWABLE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -690,9 +658,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_DRAWABLE
-argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_drawable_id
 argument_list|(
 literal|"drawable"
 argument_list|,
@@ -702,8 +668,6 @@ literal|"The drawable"
 argument_list|,
 name|gimp
 argument_list|,
-name|GIMP_TYPE_DRAWABLE
-argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
@@ -712,9 +676,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|g_param_spec_int
+name|gimp_param_spec_int32
 argument_list|(
 literal|"levels"
 argument_list|,
@@ -756,9 +718,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_DRAWABLE
-argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_drawable_id
 argument_list|(
 literal|"drawable"
 argument_list|,
@@ -767,8 +727,6 @@ argument_list|,
 literal|"The drawable"
 argument_list|,
 name|gimp
-argument_list|,
-name|GIMP_TYPE_DRAWABLE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -798,9 +756,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_DRAWABLE
-argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_drawable_id
 argument_list|(
 literal|"drawable"
 argument_list|,
@@ -810,8 +766,6 @@ literal|"The drawable"
 argument_list|,
 name|gimp
 argument_list|,
-name|GIMP_TYPE_DRAWABLE
-argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
@@ -819,8 +773,6 @@ expr_stmt|;
 name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_INT32
 argument_list|,
 name|g_param_spec_enum
 argument_list|(
@@ -862,9 +814,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_DRAWABLE
-argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_drawable_id
 argument_list|(
 literal|"drawable"
 argument_list|,
@@ -874,8 +824,6 @@ literal|"The drawable"
 argument_list|,
 name|gimp
 argument_list|,
-name|GIMP_TYPE_DRAWABLE
-argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
@@ -883,8 +831,6 @@ expr_stmt|;
 name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_INT32
 argument_list|,
 name|g_param_spec_boolean
 argument_list|(
@@ -924,9 +870,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_DRAWABLE
-argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_drawable_id
 argument_list|(
 literal|"drawable"
 argument_list|,
@@ -935,8 +879,6 @@ argument_list|,
 literal|"The drawable"
 argument_list|,
 name|gimp
-argument_list|,
-name|GIMP_TYPE_DRAWABLE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -966,9 +908,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_DRAWABLE
-argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_drawable_id
 argument_list|(
 literal|"drawable"
 argument_list|,
@@ -978,8 +918,6 @@ literal|"The drawable"
 argument_list|,
 name|gimp
 argument_list|,
-name|GIMP_TYPE_DRAWABLE
-argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
@@ -987,8 +925,6 @@ expr_stmt|;
 name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_INT32
 argument_list|,
 name|g_param_spec_enum
 argument_list|(
@@ -1010,9 +946,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|g_param_spec_int
+name|gimp_param_spec_int32
 argument_list|(
 literal|"num-points"
 argument_list|,
@@ -1034,9 +968,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_INT8ARRAY
-argument_list|,
-name|gimp_param_spec_array
+name|gimp_param_spec_int8_array
 argument_list|(
 literal|"control-pts"
 argument_list|,
@@ -1072,9 +1004,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_DRAWABLE
-argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_drawable_id
 argument_list|(
 literal|"drawable"
 argument_list|,
@@ -1084,8 +1014,6 @@ literal|"The drawable"
 argument_list|,
 name|gimp
 argument_list|,
-name|GIMP_TYPE_DRAWABLE
-argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
@@ -1093,8 +1021,6 @@ expr_stmt|;
 name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_INT32
 argument_list|,
 name|g_param_spec_enum
 argument_list|(
@@ -1116,9 +1042,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|g_param_spec_int
+name|gimp_param_spec_int32
 argument_list|(
 literal|"num-bytes"
 argument_list|,
@@ -1140,9 +1064,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_INT8ARRAY
-argument_list|,
-name|gimp_param_spec_array
+name|gimp_param_spec_int8_array
 argument_list|(
 literal|"curve"
 argument_list|,
@@ -1178,9 +1100,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_DRAWABLE
-argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_drawable_id
 argument_list|(
 literal|"drawable"
 argument_list|,
@@ -1190,8 +1110,6 @@ literal|"The drawable"
 argument_list|,
 name|gimp
 argument_list|,
-name|GIMP_TYPE_DRAWABLE
-argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
@@ -1199,8 +1117,6 @@ expr_stmt|;
 name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_INT32
 argument_list|,
 name|g_param_spec_enum
 argument_list|(
@@ -1222,8 +1138,6 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
 name|g_param_spec_boolean
 argument_list|(
 literal|"preserve-lum"
@@ -1241,8 +1155,6 @@ expr_stmt|;
 name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_FLOAT
 argument_list|,
 name|g_param_spec_double
 argument_list|(
@@ -1268,8 +1180,6 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_FLOAT
-argument_list|,
 name|g_param_spec_double
 argument_list|(
 literal|"magenta-green"
@@ -1293,8 +1203,6 @@ expr_stmt|;
 name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_FLOAT
 argument_list|,
 name|g_param_spec_double
 argument_list|(
@@ -1340,9 +1248,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_DRAWABLE
-argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_drawable_id
 argument_list|(
 literal|"drawable"
 argument_list|,
@@ -1352,8 +1258,6 @@ literal|"The drawable"
 argument_list|,
 name|gimp
 argument_list|,
-name|GIMP_TYPE_DRAWABLE
-argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
@@ -1361,8 +1265,6 @@ expr_stmt|;
 name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_FLOAT
 argument_list|,
 name|g_param_spec_double
 argument_list|(
@@ -1386,8 +1288,6 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_FLOAT
-argument_list|,
 name|g_param_spec_double
 argument_list|(
 literal|"saturation"
@@ -1409,8 +1309,6 @@ expr_stmt|;
 name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_FLOAT
 argument_list|,
 name|g_param_spec_double
 argument_list|(
@@ -1456,9 +1354,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_DRAWABLE
-argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_drawable_id
 argument_list|(
 literal|"drawable"
 argument_list|,
@@ -1468,8 +1364,6 @@ literal|"The drawable"
 argument_list|,
 name|gimp
 argument_list|,
-name|GIMP_TYPE_DRAWABLE
-argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
@@ -1477,8 +1371,6 @@ expr_stmt|;
 name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_INT32
 argument_list|,
 name|g_param_spec_enum
 argument_list|(
@@ -1500,9 +1392,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|g_param_spec_int
+name|gimp_param_spec_int32
 argument_list|(
 literal|"start-range"
 argument_list|,
@@ -1524,9 +1414,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|g_param_spec_int
+name|gimp_param_spec_int32
 argument_list|(
 literal|"end-range"
 argument_list|,
@@ -1547,8 +1435,6 @@ expr_stmt|;
 name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_FLOAT
 argument_list|,
 name|g_param_spec_double
 argument_list|(
@@ -1573,8 +1459,6 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_FLOAT
-argument_list|,
 name|g_param_spec_double
 argument_list|(
 literal|"std-dev"
@@ -1597,8 +1481,6 @@ expr_stmt|;
 name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_FLOAT
 argument_list|,
 name|g_param_spec_double
 argument_list|(
@@ -1623,8 +1505,6 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_FLOAT
-argument_list|,
 name|g_param_spec_double
 argument_list|(
 literal|"pixels"
@@ -1648,8 +1528,6 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_FLOAT
-argument_list|,
 name|g_param_spec_double
 argument_list|(
 literal|"count"
@@ -1672,8 +1550,6 @@ expr_stmt|;
 name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_FLOAT
 argument_list|,
 name|g_param_spec_double
 argument_list|(
@@ -1718,9 +1594,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_DRAWABLE
-argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_drawable_id
 argument_list|(
 literal|"drawable"
 argument_list|,
@@ -1730,8 +1604,6 @@ literal|"The drawable"
 argument_list|,
 name|gimp
 argument_list|,
-name|GIMP_TYPE_DRAWABLE
-argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
@@ -1739,8 +1611,6 @@ expr_stmt|;
 name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_INT32
 argument_list|,
 name|g_param_spec_enum
 argument_list|(
@@ -1761,8 +1631,6 @@ expr_stmt|;
 name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_FLOAT
 argument_list|,
 name|g_param_spec_double
 argument_list|(
@@ -1788,8 +1656,6 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_FLOAT
-argument_list|,
 name|g_param_spec_double
 argument_list|(
 literal|"lightness"
@@ -1813,8 +1679,6 @@ expr_stmt|;
 name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_FLOAT
 argument_list|,
 name|g_param_spec_double
 argument_list|(
@@ -1860,9 +1724,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_DRAWABLE
-argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_drawable_id
 argument_list|(
 literal|"drawable"
 argument_list|,
@@ -1872,8 +1734,6 @@ literal|"The drawable"
 argument_list|,
 name|gimp
 argument_list|,
-name|GIMP_TYPE_DRAWABLE
-argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
@@ -1882,9 +1742,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|g_param_spec_int
+name|gimp_param_spec_int32
 argument_list|(
 literal|"low-threshold"
 argument_list|,
@@ -1906,9 +1764,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|g_param_spec_int
+name|gimp_param_spec_int32
 argument_list|(
 literal|"high-threshold"
 argument_list|,
@@ -1982,11 +1838,7 @@ name|contrast
 decl_stmt|;
 name|drawable
 operator|=
-operator|(
-name|GimpDrawable
-operator|*
-operator|)
-name|gimp_value_get_item
+name|gimp_value_get_drawable
 argument_list|(
 operator|&
 name|args
@@ -1997,8 +1849,6 @@ operator|.
 name|value
 argument_list|,
 name|gimp
-argument_list|,
-name|GIMP_TYPE_DRAWABLE
 argument_list|)
 expr_stmt|;
 name|brightness
@@ -2322,11 +2172,7 @@ name|high_output
 decl_stmt|;
 name|drawable
 operator|=
-operator|(
-name|GimpDrawable
-operator|*
-operator|)
-name|gimp_value_get_item
+name|gimp_value_get_drawable
 argument_list|(
 operator|&
 name|args
@@ -2337,8 +2183,6 @@ operator|.
 name|value
 argument_list|,
 name|gimp
-argument_list|,
-name|GIMP_TYPE_DRAWABLE
 argument_list|)
 expr_stmt|;
 name|channel
@@ -2592,11 +2436,7 @@ name|drawable
 decl_stmt|;
 name|drawable
 operator|=
-operator|(
-name|GimpDrawable
-operator|*
-operator|)
-name|gimp_value_get_item
+name|gimp_value_get_drawable
 argument_list|(
 operator|&
 name|args
@@ -2607,8 +2447,6 @@ operator|.
 name|value
 argument_list|,
 name|gimp
-argument_list|,
-name|GIMP_TYPE_DRAWABLE
 argument_list|)
 expr_stmt|;
 if|if
@@ -2745,11 +2583,7 @@ name|drawable
 decl_stmt|;
 name|drawable
 operator|=
-operator|(
-name|GimpDrawable
-operator|*
-operator|)
-name|gimp_value_get_item
+name|gimp_value_get_drawable
 argument_list|(
 operator|&
 name|args
@@ -2760,8 +2594,6 @@ operator|.
 name|value
 argument_list|,
 name|gimp
-argument_list|,
-name|GIMP_TYPE_DRAWABLE
 argument_list|)
 expr_stmt|;
 if|if
@@ -2901,11 +2733,7 @@ name|levels
 decl_stmt|;
 name|drawable
 operator|=
-operator|(
-name|GimpDrawable
-operator|*
-operator|)
-name|gimp_value_get_item
+name|gimp_value_get_drawable
 argument_list|(
 operator|&
 name|args
@@ -2916,8 +2744,6 @@ operator|.
 name|value
 argument_list|,
 name|gimp
-argument_list|,
-name|GIMP_TYPE_DRAWABLE
 argument_list|)
 expr_stmt|;
 name|levels
@@ -3204,11 +3030,7 @@ name|drawable
 decl_stmt|;
 name|drawable
 operator|=
-operator|(
-name|GimpDrawable
-operator|*
-operator|)
-name|gimp_value_get_item
+name|gimp_value_get_drawable
 argument_list|(
 operator|&
 name|args
@@ -3219,8 +3041,6 @@ operator|.
 name|value
 argument_list|,
 name|gimp
-argument_list|,
-name|GIMP_TYPE_DRAWABLE
 argument_list|)
 expr_stmt|;
 if|if
@@ -3361,11 +3181,7 @@ name|desaturate_mode
 decl_stmt|;
 name|drawable
 operator|=
-operator|(
-name|GimpDrawable
-operator|*
-operator|)
-name|gimp_value_get_item
+name|gimp_value_get_drawable
 argument_list|(
 operator|&
 name|args
@@ -3376,8 +3192,6 @@ operator|.
 name|value
 argument_list|,
 name|gimp
-argument_list|,
-name|GIMP_TYPE_DRAWABLE
 argument_list|)
 expr_stmt|;
 name|desaturate_mode
@@ -3531,11 +3345,7 @@ name|mask_only
 decl_stmt|;
 name|drawable
 operator|=
-operator|(
-name|GimpDrawable
-operator|*
-operator|)
-name|gimp_value_get_item
+name|gimp_value_get_drawable
 argument_list|(
 operator|&
 name|args
@@ -3546,8 +3356,6 @@ operator|.
 name|value
 argument_list|,
 name|gimp
-argument_list|,
-name|GIMP_TYPE_DRAWABLE
 argument_list|)
 expr_stmt|;
 name|mask_only
@@ -3697,11 +3505,7 @@ name|drawable
 decl_stmt|;
 name|drawable
 operator|=
-operator|(
-name|GimpDrawable
-operator|*
-operator|)
-name|gimp_value_get_item
+name|gimp_value_get_drawable
 argument_list|(
 operator|&
 name|args
@@ -3712,8 +3516,6 @@ operator|.
 name|value
 argument_list|,
 name|gimp
-argument_list|,
-name|GIMP_TYPE_DRAWABLE
 argument_list|)
 expr_stmt|;
 if|if
@@ -3859,11 +3661,7 @@ name|control_pts
 decl_stmt|;
 name|drawable
 operator|=
-operator|(
-name|GimpDrawable
-operator|*
-operator|)
-name|gimp_value_get_item
+name|gimp_value_get_drawable
 argument_list|(
 operator|&
 name|args
@@ -3874,8 +3672,6 @@ operator|.
 name|value
 argument_list|,
 name|gimp
-argument_list|,
-name|GIMP_TYPE_DRAWABLE
 argument_list|)
 expr_stmt|;
 name|channel
@@ -3906,10 +3702,6 @@ argument_list|)
 expr_stmt|;
 name|control_pts
 operator|=
-operator|(
-name|guint8
-operator|*
-operator|)
 name|gimp_value_get_int8array
 argument_list|(
 operator|&
@@ -4379,11 +4171,7 @@ name|curve
 decl_stmt|;
 name|drawable
 operator|=
-operator|(
-name|GimpDrawable
-operator|*
-operator|)
-name|gimp_value_get_item
+name|gimp_value_get_drawable
 argument_list|(
 operator|&
 name|args
@@ -4394,8 +4182,6 @@ operator|.
 name|value
 argument_list|,
 name|gimp
-argument_list|,
-name|GIMP_TYPE_DRAWABLE
 argument_list|)
 expr_stmt|;
 name|channel
@@ -4426,10 +4212,6 @@ argument_list|)
 expr_stmt|;
 name|curve
 operator|=
-operator|(
-name|guint8
-operator|*
-operator|)
 name|gimp_value_get_int8array
 argument_list|(
 operator|&
@@ -4827,11 +4609,7 @@ name|yellow_blue
 decl_stmt|;
 name|drawable
 operator|=
-operator|(
-name|GimpDrawable
-operator|*
-operator|)
-name|gimp_value_get_item
+name|gimp_value_get_drawable
 argument_list|(
 operator|&
 name|args
@@ -4842,8 +4620,6 @@ operator|.
 name|value
 argument_list|,
 name|gimp
-argument_list|,
-name|GIMP_TYPE_DRAWABLE
 argument_list|)
 expr_stmt|;
 name|transfer_mode
@@ -5219,11 +4995,7 @@ name|lightness
 decl_stmt|;
 name|drawable
 operator|=
-operator|(
-name|GimpDrawable
-operator|*
-operator|)
-name|gimp_value_get_item
+name|gimp_value_get_drawable
 argument_list|(
 operator|&
 name|args
@@ -5234,8 +5006,6 @@ operator|.
 name|value
 argument_list|,
 name|gimp
-argument_list|,
-name|GIMP_TYPE_DRAWABLE
 argument_list|)
 expr_stmt|;
 name|hue
@@ -5605,11 +5375,7 @@ literal|0.0
 decl_stmt|;
 name|drawable
 operator|=
-operator|(
-name|GimpDrawable
-operator|*
-operator|)
-name|gimp_value_get_item
+name|gimp_value_get_drawable
 argument_list|(
 operator|&
 name|args
@@ -5620,8 +5386,6 @@ operator|.
 name|value
 argument_list|,
 name|gimp
-argument_list|,
-name|GIMP_TYPE_DRAWABLE
 argument_list|)
 expr_stmt|;
 name|channel
@@ -6009,11 +5773,7 @@ name|saturation
 decl_stmt|;
 name|drawable
 operator|=
-operator|(
-name|GimpDrawable
-operator|*
-operator|)
-name|gimp_value_get_item
+name|gimp_value_get_drawable
 argument_list|(
 operator|&
 name|args
@@ -6024,8 +5784,6 @@ operator|.
 name|value
 argument_list|,
 name|gimp
-argument_list|,
-name|GIMP_TYPE_DRAWABLE
 argument_list|)
 expr_stmt|;
 name|hue_range
@@ -6380,11 +6138,7 @@ name|high_threshold
 decl_stmt|;
 name|drawable
 operator|=
-operator|(
-name|GimpDrawable
-operator|*
-operator|)
-name|gimp_value_get_item
+name|gimp_value_get_drawable
 argument_list|(
 operator|&
 name|args
@@ -6395,8 +6149,6 @@ operator|.
 name|value
 argument_list|,
 name|gimp
-argument_list|,
-name|GIMP_TYPE_DRAWABLE
 argument_list|)
 expr_stmt|;
 name|low_threshold

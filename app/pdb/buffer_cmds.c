@@ -172,8 +172,6 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_STRING
-argument_list|,
 name|gimp_param_spec_string
 argument_list|(
 literal|"filter"
@@ -196,9 +194,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|g_param_spec_int
+name|gimp_param_spec_int32
 argument_list|(
 literal|"num-buffers"
 argument_list|,
@@ -219,8 +215,6 @@ expr_stmt|;
 name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_STRINGARRAY
 argument_list|,
 name|gimp_param_spec_string_array
 argument_list|(
@@ -258,8 +252,6 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_STRING
-argument_list|,
 name|gimp_param_spec_string
 argument_list|(
 literal|"buffer-name"
@@ -282,8 +274,6 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_STRING
-argument_list|,
 name|gimp_param_spec_string
 argument_list|(
 literal|"new-name"
@@ -305,8 +295,6 @@ expr_stmt|;
 name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_STRING
 argument_list|,
 name|gimp_param_spec_string
 argument_list|(
@@ -350,8 +338,6 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_STRING
-argument_list|,
 name|gimp_param_spec_string
 argument_list|(
 literal|"buffer-name"
@@ -394,8 +380,6 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_STRING
-argument_list|,
 name|gimp_param_spec_string
 argument_list|(
 literal|"buffer-name"
@@ -418,9 +402,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|g_param_spec_int
+name|gimp_param_spec_int32
 argument_list|(
 literal|"width"
 argument_list|,
@@ -462,8 +444,6 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_STRING
-argument_list|,
 name|gimp_param_spec_string
 argument_list|(
 literal|"buffer-name"
@@ -486,9 +466,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|g_param_spec_int
+name|gimp_param_spec_int32
 argument_list|(
 literal|"height"
 argument_list|,
@@ -530,8 +508,6 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_STRING
-argument_list|,
 name|gimp_param_spec_string
 argument_list|(
 literal|"buffer-name"
@@ -554,9 +530,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|g_param_spec_int
+name|gimp_param_spec_int32
 argument_list|(
 literal|"bytes"
 argument_list|,
@@ -598,8 +572,6 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_STRING
-argument_list|,
 name|gimp_param_spec_string
 argument_list|(
 literal|"buffer-name"
@@ -621,8 +593,6 @@ expr_stmt|;
 name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_INT32
 argument_list|,
 name|g_param_spec_enum
 argument_list|(

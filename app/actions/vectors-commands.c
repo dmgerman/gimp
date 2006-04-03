@@ -1264,7 +1264,7 @@ argument_list|(
 name|procedure
 argument_list|)
 expr_stmt|;
-name|g_value_set_enum
+name|g_value_set_int
 argument_list|(
 operator|&
 name|args
@@ -1290,7 +1290,7 @@ argument_list|,
 name|image
 argument_list|)
 expr_stmt|;
-name|gimp_value_set_item
+name|gimp_value_set_drawable
 argument_list|(
 operator|&
 name|args

@@ -92,7 +92,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d5eb800108
+DECL|struct|__anon2afd14830108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -881,11 +881,11 @@ argument_list|,
 operator|&
 name|n_return_vals
 argument_list|,
-name|GIMP_PDB_STRING
+name|G_TYPE_STRING
 argument_list|,
 name|url
 argument_list|,
-name|GIMP_PDB_END
+name|G_TYPE_NONE
 argument_list|)
 expr_stmt|;
 name|gimp_arguments_destroy

@@ -456,9 +456,6 @@ name|GimpProcedure
 modifier|*
 name|procedure
 parameter_list|,
-name|GimpPDBArgType
-name|arg_type
-parameter_list|,
 name|GParamSpec
 modifier|*
 name|pspec
@@ -473,9 +470,6 @@ parameter_list|(
 name|GimpProcedure
 modifier|*
 name|procedure
-parameter_list|,
-name|GimpPDBArgType
-name|arg_type
 parameter_list|,
 name|GParamSpec
 modifier|*

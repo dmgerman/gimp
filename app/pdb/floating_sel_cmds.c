@@ -146,9 +146,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_LAYER
-argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_layer_id
 argument_list|(
 literal|"floating-sel"
 argument_list|,
@@ -157,8 +155,6 @@ argument_list|,
 literal|"The floating selection"
 argument_list|,
 name|gimp
-argument_list|,
-name|GIMP_TYPE_LAYER
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -188,9 +184,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_LAYER
-argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_layer_id
 argument_list|(
 literal|"floating-sel"
 argument_list|,
@@ -199,8 +193,6 @@ argument_list|,
 literal|"The floating selection"
 argument_list|,
 name|gimp
-argument_list|,
-name|GIMP_TYPE_LAYER
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -230,9 +222,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_LAYER
-argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_layer_id
 argument_list|(
 literal|"floating-sel"
 argument_list|,
@@ -241,8 +231,6 @@ argument_list|,
 literal|"The floating selection"
 argument_list|,
 name|gimp
-argument_list|,
-name|GIMP_TYPE_LAYER
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -272,9 +260,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_LAYER
-argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_layer_id
 argument_list|(
 literal|"layer"
 argument_list|,
@@ -284,8 +270,6 @@ literal|"The layer (is attached as floating selection)"
 argument_list|,
 name|gimp
 argument_list|,
-name|GIMP_TYPE_LAYER
-argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
@@ -294,9 +278,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_DRAWABLE
-argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_drawable_id
 argument_list|(
 literal|"drawable"
 argument_list|,
@@ -305,8 +287,6 @@ argument_list|,
 literal|"The drawable (where to attach the floating selection)"
 argument_list|,
 name|gimp
-argument_list|,
-name|GIMP_TYPE_DRAWABLE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -336,9 +316,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_LAYER
-argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_layer_id
 argument_list|(
 literal|"floating-sel"
 argument_list|,
@@ -348,8 +326,6 @@ literal|"The floating selection"
 argument_list|,
 name|gimp
 argument_list|,
-name|GIMP_TYPE_LAYER
-argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
@@ -357,8 +333,6 @@ expr_stmt|;
 name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_INT32
 argument_list|,
 name|g_param_spec_boolean
 argument_list|(
@@ -398,9 +372,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_LAYER
-argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_layer_id
 argument_list|(
 literal|"floating-sel"
 argument_list|,
@@ -410,8 +382,6 @@ literal|"The floating selection"
 argument_list|,
 name|gimp
 argument_list|,
-name|GIMP_TYPE_LAYER
-argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
@@ -419,8 +389,6 @@ expr_stmt|;
 name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_INT32
 argument_list|,
 name|g_param_spec_boolean
 argument_list|(
@@ -486,11 +454,7 @@ name|floating_sel
 decl_stmt|;
 name|floating_sel
 operator|=
-operator|(
-name|GimpLayer
-operator|*
-operator|)
-name|gimp_value_get_item
+name|gimp_value_get_layer
 argument_list|(
 operator|&
 name|args
@@ -501,8 +465,6 @@ operator|.
 name|value
 argument_list|,
 name|gimp
-argument_list|,
-name|GIMP_TYPE_LAYER
 argument_list|)
 expr_stmt|;
 if|if
@@ -625,11 +587,7 @@ name|floating_sel
 decl_stmt|;
 name|floating_sel
 operator|=
-operator|(
-name|GimpLayer
-operator|*
-operator|)
-name|gimp_value_get_item
+name|gimp_value_get_layer
 argument_list|(
 operator|&
 name|args
@@ -640,8 +598,6 @@ operator|.
 name|value
 argument_list|,
 name|gimp
-argument_list|,
-name|GIMP_TYPE_LAYER
 argument_list|)
 expr_stmt|;
 if|if
@@ -764,11 +720,7 @@ name|floating_sel
 decl_stmt|;
 name|floating_sel
 operator|=
-operator|(
-name|GimpLayer
-operator|*
-operator|)
-name|gimp_value_get_item
+name|gimp_value_get_layer
 argument_list|(
 operator|&
 name|args
@@ -779,8 +731,6 @@ operator|.
 name|value
 argument_list|,
 name|gimp
-argument_list|,
-name|GIMP_TYPE_LAYER
 argument_list|)
 expr_stmt|;
 if|if
@@ -907,11 +857,7 @@ name|drawable
 decl_stmt|;
 name|layer
 operator|=
-operator|(
-name|GimpLayer
-operator|*
-operator|)
-name|gimp_value_get_item
+name|gimp_value_get_layer
 argument_list|(
 operator|&
 name|args
@@ -922,17 +868,11 @@ operator|.
 name|value
 argument_list|,
 name|gimp
-argument_list|,
-name|GIMP_TYPE_LAYER
 argument_list|)
 expr_stmt|;
 name|drawable
 operator|=
-operator|(
-name|GimpDrawable
-operator|*
-operator|)
-name|gimp_value_get_item
+name|gimp_value_get_drawable
 argument_list|(
 operator|&
 name|args
@@ -943,8 +883,6 @@ operator|.
 name|value
 argument_list|,
 name|gimp
-argument_list|,
-name|GIMP_TYPE_DRAWABLE
 argument_list|)
 expr_stmt|;
 if|if
@@ -1075,11 +1013,7 @@ name|undo
 decl_stmt|;
 name|floating_sel
 operator|=
-operator|(
-name|GimpLayer
-operator|*
-operator|)
-name|gimp_value_get_item
+name|gimp_value_get_layer
 argument_list|(
 operator|&
 name|args
@@ -1090,8 +1024,6 @@ operator|.
 name|value
 argument_list|,
 name|gimp
-argument_list|,
-name|GIMP_TYPE_LAYER
 argument_list|)
 expr_stmt|;
 name|undo
@@ -1232,11 +1164,7 @@ name|undo
 decl_stmt|;
 name|floating_sel
 operator|=
-operator|(
-name|GimpLayer
-operator|*
-operator|)
-name|gimp_value_get_item
+name|gimp_value_get_layer
 argument_list|(
 operator|&
 name|args
@@ -1247,8 +1175,6 @@ operator|.
 name|value
 argument_list|,
 name|gimp
-argument_list|,
-name|GIMP_TYPE_LAYER
 argument_list|)
 expr_stmt|;
 name|undo

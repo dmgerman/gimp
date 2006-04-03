@@ -264,8 +264,6 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_IMAGE
-argument_list|,
 name|gimp_param_spec_image_id
 argument_list|(
 literal|"image"
@@ -283,8 +281,6 @@ expr_stmt|;
 name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_INT32
 argument_list|,
 name|g_param_spec_boolean
 argument_list|(
@@ -304,9 +300,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|g_param_spec_int
+name|gimp_param_spec_int32
 argument_list|(
 literal|"x1"
 argument_list|,
@@ -328,9 +322,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|g_param_spec_int
+name|gimp_param_spec_int32
 argument_list|(
 literal|"y1"
 argument_list|,
@@ -352,9 +344,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|g_param_spec_int
+name|gimp_param_spec_int32
 argument_list|(
 literal|"x2"
 argument_list|,
@@ -376,9 +366,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|g_param_spec_int
+name|gimp_param_spec_int32
 argument_list|(
 literal|"y2"
 argument_list|,
@@ -420,8 +408,6 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_IMAGE
-argument_list|,
 name|gimp_param_spec_image_id
 argument_list|(
 literal|"image"
@@ -440,9 +426,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|g_param_spec_int
+name|gimp_param_spec_int32
 argument_list|(
 literal|"x"
 argument_list|,
@@ -464,9 +448,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|g_param_spec_int
+name|gimp_param_spec_int32
 argument_list|(
 literal|"y"
 argument_list|,
@@ -488,9 +470,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|g_param_spec_int
+name|gimp_param_spec_int32
 argument_list|(
 literal|"value"
 argument_list|,
@@ -532,8 +512,6 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_IMAGE
-argument_list|,
 name|gimp_param_spec_image_id
 argument_list|(
 literal|"image"
@@ -551,8 +529,6 @@ expr_stmt|;
 name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_INT32
 argument_list|,
 name|g_param_spec_boolean
 argument_list|(
@@ -592,8 +568,6 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_IMAGE
-argument_list|,
 name|gimp_param_spec_image_id
 argument_list|(
 literal|"image"
@@ -612,9 +586,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|g_param_spec_int
+name|gimp_param_spec_int32
 argument_list|(
 literal|"offx"
 argument_list|,
@@ -636,9 +608,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|g_param_spec_int
+name|gimp_param_spec_int32
 argument_list|(
 literal|"offy"
 argument_list|,
@@ -680,9 +650,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_DRAWABLE
-argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_drawable_id
 argument_list|(
 literal|"drawable"
 argument_list|,
@@ -692,8 +660,6 @@ literal|"The drawable from which to float selection"
 argument_list|,
 name|gimp
 argument_list|,
-name|GIMP_TYPE_DRAWABLE
-argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
@@ -702,9 +668,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|g_param_spec_int
+name|gimp_param_spec_int32
 argument_list|(
 literal|"offx"
 argument_list|,
@@ -726,9 +690,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|g_param_spec_int
+name|gimp_param_spec_int32
 argument_list|(
 literal|"offy"
 argument_list|,
@@ -750,9 +712,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_LAYER
-argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_layer_id
 argument_list|(
 literal|"layer"
 argument_list|,
@@ -761,8 +721,6 @@ argument_list|,
 literal|"The floated layer"
 argument_list|,
 name|gimp
-argument_list|,
-name|GIMP_TYPE_LAYER
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -791,8 +749,6 @@ expr_stmt|;
 name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_IMAGE
 argument_list|,
 name|gimp_param_spec_image_id
 argument_list|(
@@ -832,8 +788,6 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_IMAGE
-argument_list|,
 name|gimp_param_spec_image_id
 argument_list|(
 literal|"image"
@@ -871,8 +825,6 @@ expr_stmt|;
 name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_IMAGE
 argument_list|,
 name|gimp_param_spec_image_id
 argument_list|(
@@ -912,8 +864,6 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_IMAGE
-argument_list|,
 name|gimp_param_spec_image_id
 argument_list|(
 literal|"image"
@@ -952,8 +902,6 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_IMAGE
-argument_list|,
 name|gimp_param_spec_image_id
 argument_list|(
 literal|"image"
@@ -971,8 +919,6 @@ expr_stmt|;
 name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_FLOAT
 argument_list|,
 name|g_param_spec_double
 argument_list|(
@@ -1016,8 +962,6 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_IMAGE
-argument_list|,
 name|gimp_param_spec_image_id
 argument_list|(
 literal|"image"
@@ -1036,9 +980,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|g_param_spec_int
+name|gimp_param_spec_int32
 argument_list|(
 literal|"radius"
 argument_list|,
@@ -1080,8 +1022,6 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_IMAGE
-argument_list|,
 name|gimp_param_spec_image_id
 argument_list|(
 literal|"image"
@@ -1100,9 +1040,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|g_param_spec_int
+name|gimp_param_spec_int32
 argument_list|(
 literal|"steps"
 argument_list|,
@@ -1144,8 +1082,6 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_IMAGE
-argument_list|,
 name|gimp_param_spec_image_id
 argument_list|(
 literal|"image"
@@ -1164,9 +1100,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|g_param_spec_int
+name|gimp_param_spec_int32
 argument_list|(
 literal|"steps"
 argument_list|,
@@ -1208,9 +1142,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_LAYER
-argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_layer_id
 argument_list|(
 literal|"layer"
 argument_list|,
@@ -1219,8 +1151,6 @@ argument_list|,
 literal|"Layer with alpha"
 argument_list|,
 name|gimp
-argument_list|,
-name|GIMP_TYPE_LAYER
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -1250,9 +1180,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_CHANNEL
-argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_channel_id
 argument_list|(
 literal|"channel"
 argument_list|,
@@ -1261,8 +1189,6 @@ argument_list|,
 literal|"The channel"
 argument_list|,
 name|gimp
-argument_list|,
-name|GIMP_TYPE_CHANNEL
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -1292,8 +1218,6 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_IMAGE
-argument_list|,
 name|gimp_param_spec_image_id
 argument_list|(
 literal|"image"
@@ -1312,9 +1236,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_CHANNEL
-argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_channel_id
 argument_list|(
 literal|"channel"
 argument_list|,
@@ -1323,8 +1245,6 @@ argument_list|,
 literal|"The new channel"
 argument_list|,
 name|gimp
-argument_list|,
-name|GIMP_TYPE_CHANNEL
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -1354,9 +1274,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_PDB_CHANNEL
-argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_channel_id
 argument_list|(
 literal|"channel"
 argument_list|,
@@ -1366,8 +1284,6 @@ literal|"The channel"
 argument_list|,
 name|gimp
 argument_list|,
-name|GIMP_TYPE_CHANNEL
-argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
@@ -1375,8 +1291,6 @@ expr_stmt|;
 name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
-argument_list|,
-name|GIMP_PDB_INT32
 argument_list|,
 name|g_param_spec_enum
 argument_list|(
@@ -2218,11 +2132,7 @@ name|NULL
 decl_stmt|;
 name|drawable
 operator|=
-operator|(
-name|GimpDrawable
-operator|*
-operator|)
-name|gimp_value_get_item
+name|gimp_value_get_drawable
 argument_list|(
 operator|&
 name|args
@@ -2233,8 +2143,6 @@ operator|.
 name|value
 argument_list|,
 name|gimp
-argument_list|,
-name|GIMP_TYPE_DRAWABLE
 argument_list|)
 expr_stmt|;
 name|offx
@@ -2340,7 +2248,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimp_value_set_item
+name|gimp_value_set_layer
 argument_list|(
 operator|&
 name|return_vals
@@ -2350,10 +2258,7 @@ index|]
 operator|.
 name|value
 argument_list|,
-name|GIMP_ITEM
-argument_list|(
 name|layer
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -3540,11 +3445,7 @@ name|layer
 decl_stmt|;
 name|layer
 operator|=
-operator|(
-name|GimpLayer
-operator|*
-operator|)
-name|gimp_value_get_item
+name|gimp_value_get_layer
 argument_list|(
 operator|&
 name|args
@@ -3555,8 +3456,6 @@ operator|.
 name|value
 argument_list|,
 name|gimp
-argument_list|,
-name|GIMP_TYPE_LAYER
 argument_list|)
 expr_stmt|;
 if|if
@@ -3695,11 +3594,7 @@ name|channel
 decl_stmt|;
 name|channel
 operator|=
-operator|(
-name|GimpChannel
-operator|*
-operator|)
-name|gimp_value_get_item
+name|gimp_value_get_channel
 argument_list|(
 operator|&
 name|args
@@ -3710,8 +3605,6 @@ operator|.
 name|value
 argument_list|,
 name|gimp
-argument_list|,
-name|GIMP_TYPE_CHANNEL
 argument_list|)
 expr_stmt|;
 if|if
@@ -3938,7 +3831,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimp_value_set_item
+name|gimp_value_set_channel
 argument_list|(
 operator|&
 name|return_vals
@@ -3948,10 +3841,7 @@ index|]
 operator|.
 name|value
 argument_list|,
-name|GIMP_ITEM
-argument_list|(
 name|channel
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -4049,11 +3939,7 @@ name|operation
 decl_stmt|;
 name|channel
 operator|=
-operator|(
-name|GimpChannel
-operator|*
-operator|)
-name|gimp_value_get_item
+name|gimp_value_get_channel
 argument_list|(
 operator|&
 name|args
@@ -4064,8 +3950,6 @@ operator|.
 name|value
 argument_list|,
 name|gimp
-argument_list|,
-name|GIMP_TYPE_CHANNEL
 argument_list|)
 expr_stmt|;
 name|operation
