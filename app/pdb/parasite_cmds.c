@@ -34,12 +34,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpargument.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpprocedure.h"
 end_include
 
@@ -1218,9 +1212,9 @@ end_function
 
 begin_function
 specifier|static
-name|GimpArgument
+name|GValueArray
 modifier|*
-DECL|function|parasite_find_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
+DECL|function|parasite_find_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
 name|parasite_find_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1240,7 +1234,7 @@ modifier|*
 name|progress
 parameter_list|,
 specifier|const
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|args
 parameter_list|)
@@ -1250,7 +1244,7 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -1271,11 +1265,11 @@ name|g_value_get_string
 argument_list|(
 operator|&
 name|args
+operator|->
+name|values
 index|[
 literal|0
 index|]
-operator|.
-name|value
 argument_list|)
 expr_stmt|;
 if|if
@@ -1322,11 +1316,11 @@ name|g_value_take_boxed
 argument_list|(
 operator|&
 name|return_vals
+operator|->
+name|values
 index|[
 literal|1
 index|]
-operator|.
-name|value
 argument_list|,
 name|parasite
 argument_list|)
@@ -1385,9 +1379,9 @@ end_decl_stmt
 
 begin_function
 specifier|static
-name|GimpArgument
+name|GValueArray
 modifier|*
-DECL|function|parasite_attach_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
+DECL|function|parasite_attach_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
 name|parasite_attach_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1407,7 +1401,7 @@ modifier|*
 name|progress
 parameter_list|,
 specifier|const
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|args
 parameter_list|)
@@ -1428,11 +1422,11 @@ name|g_value_get_boxed
 argument_list|(
 operator|&
 name|args
+operator|->
+name|values
 index|[
 literal|0
 index|]
-operator|.
-name|value
 argument_list|)
 expr_stmt|;
 if|if
@@ -1507,9 +1501,9 @@ end_decl_stmt
 
 begin_function
 specifier|static
-name|GimpArgument
+name|GValueArray
 modifier|*
-DECL|function|parasite_detach_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
+DECL|function|parasite_detach_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
 name|parasite_detach_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1529,7 +1523,7 @@ modifier|*
 name|progress
 parameter_list|,
 specifier|const
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|args
 parameter_list|)
@@ -1550,11 +1544,11 @@ name|g_value_get_string
 argument_list|(
 operator|&
 name|args
+operator|->
+name|values
 index|[
 literal|0
 index|]
-operator|.
-name|value
 argument_list|)
 expr_stmt|;
 if|if
@@ -1629,9 +1623,9 @@ end_decl_stmt
 
 begin_function
 specifier|static
-name|GimpArgument
+name|GValueArray
 modifier|*
-DECL|function|parasite_list_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
+DECL|function|parasite_list_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
 name|parasite_list_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1651,12 +1645,12 @@ modifier|*
 name|progress
 parameter_list|,
 specifier|const
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|args
 parameter_list|)
 block|{
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -1695,11 +1689,11 @@ name|g_value_set_int
 argument_list|(
 operator|&
 name|return_vals
+operator|->
+name|values
 index|[
 literal|1
 index|]
-operator|.
-name|value
 argument_list|,
 name|num_parasites
 argument_list|)
@@ -1708,11 +1702,11 @@ name|gimp_value_take_stringarray
 argument_list|(
 operator|&
 name|return_vals
+operator|->
+name|values
 index|[
 literal|2
 index|]
-operator|.
-name|value
 argument_list|,
 name|parasites
 argument_list|,
@@ -1773,9 +1767,9 @@ end_decl_stmt
 
 begin_function
 specifier|static
-name|GimpArgument
+name|GValueArray
 modifier|*
-DECL|function|image_parasite_find_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
+DECL|function|image_parasite_find_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
 name|image_parasite_find_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1795,7 +1789,7 @@ modifier|*
 name|progress
 parameter_list|,
 specifier|const
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|args
 parameter_list|)
@@ -1805,7 +1799,7 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -1830,11 +1824,11 @@ name|gimp_value_get_image
 argument_list|(
 operator|&
 name|args
+operator|->
+name|values
 index|[
 literal|0
 index|]
-operator|.
-name|value
 argument_list|,
 name|gimp
 argument_list|)
@@ -1845,11 +1839,11 @@ name|g_value_get_string
 argument_list|(
 operator|&
 name|args
+operator|->
+name|values
 index|[
 literal|1
 index|]
-operator|.
-name|value
 argument_list|)
 expr_stmt|;
 if|if
@@ -1896,11 +1890,11 @@ name|g_value_take_boxed
 argument_list|(
 operator|&
 name|return_vals
+operator|->
+name|values
 index|[
 literal|1
 index|]
-operator|.
-name|value
 argument_list|,
 name|parasite
 argument_list|)
@@ -1959,9 +1953,9 @@ end_decl_stmt
 
 begin_function
 specifier|static
-name|GimpArgument
+name|GValueArray
 modifier|*
-DECL|function|image_parasite_attach_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
+DECL|function|image_parasite_attach_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
 name|image_parasite_attach_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1981,7 +1975,7 @@ modifier|*
 name|progress
 parameter_list|,
 specifier|const
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|args
 parameter_list|)
@@ -2006,11 +2000,11 @@ name|gimp_value_get_image
 argument_list|(
 operator|&
 name|args
+operator|->
+name|values
 index|[
 literal|0
 index|]
-operator|.
-name|value
 argument_list|,
 name|gimp
 argument_list|)
@@ -2021,11 +2015,11 @@ name|g_value_get_boxed
 argument_list|(
 operator|&
 name|args
+operator|->
+name|values
 index|[
 literal|1
 index|]
-operator|.
-name|value
 argument_list|)
 expr_stmt|;
 if|if
@@ -2100,9 +2094,9 @@ end_decl_stmt
 
 begin_function
 specifier|static
-name|GimpArgument
+name|GValueArray
 modifier|*
-DECL|function|image_parasite_detach_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
+DECL|function|image_parasite_detach_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
 name|image_parasite_detach_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2122,7 +2116,7 @@ modifier|*
 name|progress
 parameter_list|,
 specifier|const
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|args
 parameter_list|)
@@ -2147,11 +2141,11 @@ name|gimp_value_get_image
 argument_list|(
 operator|&
 name|args
+operator|->
+name|values
 index|[
 literal|0
 index|]
-operator|.
-name|value
 argument_list|,
 name|gimp
 argument_list|)
@@ -2162,11 +2156,11 @@ name|g_value_get_string
 argument_list|(
 operator|&
 name|args
+operator|->
+name|values
 index|[
 literal|1
 index|]
-operator|.
-name|value
 argument_list|)
 expr_stmt|;
 if|if
@@ -2241,9 +2235,9 @@ end_decl_stmt
 
 begin_function
 specifier|static
-name|GimpArgument
+name|GValueArray
 modifier|*
-DECL|function|image_parasite_list_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
+DECL|function|image_parasite_list_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
 name|image_parasite_list_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2263,7 +2257,7 @@ modifier|*
 name|progress
 parameter_list|,
 specifier|const
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|args
 parameter_list|)
@@ -2273,7 +2267,7 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -2299,11 +2293,11 @@ name|gimp_value_get_image
 argument_list|(
 operator|&
 name|args
+operator|->
+name|values
 index|[
 literal|0
 index|]
-operator|.
-name|value
 argument_list|,
 name|gimp
 argument_list|)
@@ -2342,11 +2336,11 @@ name|g_value_set_int
 argument_list|(
 operator|&
 name|return_vals
+operator|->
+name|values
 index|[
 literal|1
 index|]
-operator|.
-name|value
 argument_list|,
 name|num_parasites
 argument_list|)
@@ -2355,11 +2349,11 @@ name|gimp_value_take_stringarray
 argument_list|(
 operator|&
 name|return_vals
+operator|->
+name|values
 index|[
 literal|2
 index|]
-operator|.
-name|value
 argument_list|,
 name|parasites
 argument_list|,
@@ -2421,9 +2415,9 @@ end_decl_stmt
 
 begin_function
 specifier|static
-name|GimpArgument
+name|GValueArray
 modifier|*
-DECL|function|drawable_parasite_find_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
+DECL|function|drawable_parasite_find_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
 name|drawable_parasite_find_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2443,7 +2437,7 @@ modifier|*
 name|progress
 parameter_list|,
 specifier|const
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|args
 parameter_list|)
@@ -2453,7 +2447,7 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -2478,11 +2472,11 @@ name|gimp_value_get_drawable
 argument_list|(
 operator|&
 name|args
+operator|->
+name|values
 index|[
 literal|0
 index|]
-operator|.
-name|value
 argument_list|,
 name|gimp
 argument_list|)
@@ -2493,11 +2487,11 @@ name|g_value_get_string
 argument_list|(
 operator|&
 name|args
+operator|->
+name|values
 index|[
 literal|1
 index|]
-operator|.
-name|value
 argument_list|)
 expr_stmt|;
 if|if
@@ -2547,11 +2541,11 @@ name|g_value_take_boxed
 argument_list|(
 operator|&
 name|return_vals
+operator|->
+name|values
 index|[
 literal|1
 index|]
-operator|.
-name|value
 argument_list|,
 name|parasite
 argument_list|)
@@ -2610,9 +2604,9 @@ end_decl_stmt
 
 begin_function
 specifier|static
-name|GimpArgument
+name|GValueArray
 modifier|*
-DECL|function|drawable_parasite_attach_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
+DECL|function|drawable_parasite_attach_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
 name|drawable_parasite_attach_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2632,7 +2626,7 @@ modifier|*
 name|progress
 parameter_list|,
 specifier|const
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|args
 parameter_list|)
@@ -2657,11 +2651,11 @@ name|gimp_value_get_drawable
 argument_list|(
 operator|&
 name|args
+operator|->
+name|values
 index|[
 literal|0
 index|]
-operator|.
-name|value
 argument_list|,
 name|gimp
 argument_list|)
@@ -2672,11 +2666,11 @@ name|g_value_get_boxed
 argument_list|(
 operator|&
 name|args
+operator|->
+name|values
 index|[
 literal|1
 index|]
-operator|.
-name|value
 argument_list|)
 expr_stmt|;
 if|if
@@ -2754,9 +2748,9 @@ end_decl_stmt
 
 begin_function
 specifier|static
-name|GimpArgument
+name|GValueArray
 modifier|*
-DECL|function|drawable_parasite_detach_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
+DECL|function|drawable_parasite_detach_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
 name|drawable_parasite_detach_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2776,7 +2770,7 @@ modifier|*
 name|progress
 parameter_list|,
 specifier|const
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|args
 parameter_list|)
@@ -2801,11 +2795,11 @@ name|gimp_value_get_drawable
 argument_list|(
 operator|&
 name|args
+operator|->
+name|values
 index|[
 literal|0
 index|]
-operator|.
-name|value
 argument_list|,
 name|gimp
 argument_list|)
@@ -2816,11 +2810,11 @@ name|g_value_get_string
 argument_list|(
 operator|&
 name|args
+operator|->
+name|values
 index|[
 literal|1
 index|]
-operator|.
-name|value
 argument_list|)
 expr_stmt|;
 if|if
@@ -2898,9 +2892,9 @@ end_decl_stmt
 
 begin_function
 specifier|static
-name|GimpArgument
+name|GValueArray
 modifier|*
-DECL|function|drawable_parasite_list_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
+DECL|function|drawable_parasite_list_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
 name|drawable_parasite_list_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2920,7 +2914,7 @@ modifier|*
 name|progress
 parameter_list|,
 specifier|const
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|args
 parameter_list|)
@@ -2930,7 +2924,7 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -2956,11 +2950,11 @@ name|gimp_value_get_drawable
 argument_list|(
 operator|&
 name|args
+operator|->
+name|values
 index|[
 literal|0
 index|]
-operator|.
-name|value
 argument_list|,
 name|gimp
 argument_list|)
@@ -3002,11 +2996,11 @@ name|g_value_set_int
 argument_list|(
 operator|&
 name|return_vals
+operator|->
+name|values
 index|[
 literal|1
 index|]
-operator|.
-name|value
 argument_list|,
 name|num_parasites
 argument_list|)
@@ -3015,11 +3009,11 @@ name|gimp_value_take_stringarray
 argument_list|(
 operator|&
 name|return_vals
+operator|->
+name|values
 index|[
 literal|2
 index|]
-operator|.
-name|value
 argument_list|,
 name|parasites
 argument_list|,
@@ -3081,9 +3075,9 @@ end_decl_stmt
 
 begin_function
 specifier|static
-name|GimpArgument
+name|GValueArray
 modifier|*
-DECL|function|vectors_parasite_find_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
+DECL|function|vectors_parasite_find_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
 name|vectors_parasite_find_invoker
 parameter_list|(
 name|GimpProcedure
@@ -3103,7 +3097,7 @@ modifier|*
 name|progress
 parameter_list|,
 specifier|const
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|args
 parameter_list|)
@@ -3113,7 +3107,7 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -3138,11 +3132,11 @@ name|gimp_value_get_vectors
 argument_list|(
 operator|&
 name|args
+operator|->
+name|values
 index|[
 literal|0
 index|]
-operator|.
-name|value
 argument_list|,
 name|gimp
 argument_list|)
@@ -3153,11 +3147,11 @@ name|g_value_get_string
 argument_list|(
 operator|&
 name|args
+operator|->
+name|values
 index|[
 literal|1
 index|]
-operator|.
-name|value
 argument_list|)
 expr_stmt|;
 if|if
@@ -3207,11 +3201,11 @@ name|g_value_take_boxed
 argument_list|(
 operator|&
 name|return_vals
+operator|->
+name|values
 index|[
 literal|1
 index|]
-operator|.
-name|value
 argument_list|,
 name|parasite
 argument_list|)
@@ -3270,9 +3264,9 @@ end_decl_stmt
 
 begin_function
 specifier|static
-name|GimpArgument
+name|GValueArray
 modifier|*
-DECL|function|vectors_parasite_attach_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
+DECL|function|vectors_parasite_attach_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
 name|vectors_parasite_attach_invoker
 parameter_list|(
 name|GimpProcedure
@@ -3292,7 +3286,7 @@ modifier|*
 name|progress
 parameter_list|,
 specifier|const
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|args
 parameter_list|)
@@ -3317,11 +3311,11 @@ name|gimp_value_get_vectors
 argument_list|(
 operator|&
 name|args
+operator|->
+name|values
 index|[
 literal|0
 index|]
-operator|.
-name|value
 argument_list|,
 name|gimp
 argument_list|)
@@ -3332,11 +3326,11 @@ name|g_value_get_boxed
 argument_list|(
 operator|&
 name|args
+operator|->
+name|values
 index|[
 literal|1
 index|]
-operator|.
-name|value
 argument_list|)
 expr_stmt|;
 if|if
@@ -3414,9 +3408,9 @@ end_decl_stmt
 
 begin_function
 specifier|static
-name|GimpArgument
+name|GValueArray
 modifier|*
-DECL|function|vectors_parasite_detach_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
+DECL|function|vectors_parasite_detach_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
 name|vectors_parasite_detach_invoker
 parameter_list|(
 name|GimpProcedure
@@ -3436,7 +3430,7 @@ modifier|*
 name|progress
 parameter_list|,
 specifier|const
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|args
 parameter_list|)
@@ -3461,11 +3455,11 @@ name|gimp_value_get_vectors
 argument_list|(
 operator|&
 name|args
+operator|->
+name|values
 index|[
 literal|0
 index|]
-operator|.
-name|value
 argument_list|,
 name|gimp
 argument_list|)
@@ -3476,11 +3470,11 @@ name|g_value_get_string
 argument_list|(
 operator|&
 name|args
+operator|->
+name|values
 index|[
 literal|1
 index|]
-operator|.
-name|value
 argument_list|)
 expr_stmt|;
 if|if
@@ -3558,9 +3552,9 @@ end_decl_stmt
 
 begin_function
 specifier|static
-name|GimpArgument
+name|GValueArray
 modifier|*
-DECL|function|vectors_parasite_list_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
+DECL|function|vectors_parasite_list_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
 name|vectors_parasite_list_invoker
 parameter_list|(
 name|GimpProcedure
@@ -3580,7 +3574,7 @@ modifier|*
 name|progress
 parameter_list|,
 specifier|const
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|args
 parameter_list|)
@@ -3590,7 +3584,7 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -3616,11 +3610,11 @@ name|gimp_value_get_vectors
 argument_list|(
 operator|&
 name|args
+operator|->
+name|values
 index|[
 literal|0
 index|]
-operator|.
-name|value
 argument_list|,
 name|gimp
 argument_list|)
@@ -3662,11 +3656,11 @@ name|g_value_set_int
 argument_list|(
 operator|&
 name|return_vals
+operator|->
+name|values
 index|[
 literal|1
 index|]
-operator|.
-name|value
 argument_list|,
 name|num_parasites
 argument_list|)
@@ -3675,11 +3669,11 @@ name|gimp_value_take_stringarray
 argument_list|(
 operator|&
 name|return_vals
+operator|->
+name|values
 index|[
 literal|2
 index|]
-operator|.
-name|value
 argument_list|,
 name|parasites
 argument_list|,

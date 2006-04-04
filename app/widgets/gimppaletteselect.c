@@ -96,7 +96,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|gimp_palette_select_run_callback
 parameter_list|(
@@ -110,10 +110,6 @@ name|object
 parameter_list|,
 name|gboolean
 name|closing
-parameter_list|,
-name|gint
-modifier|*
-name|n_return_vals
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -354,9 +350,9 @@ end_function
 
 begin_function
 specifier|static
-name|GimpArgument
+name|GValueArray
 modifier|*
-DECL|function|gimp_palette_select_run_callback (GimpPdbDialog * dialog,GimpObject * object,gboolean closing,gint * n_return_vals)
+DECL|function|gimp_palette_select_run_callback (GimpPdbDialog * dialog,GimpObject * object,gboolean closing)
 name|gimp_palette_select_run_callback
 parameter_list|(
 name|GimpPdbDialog
@@ -369,10 +365,6 @@ name|object
 parameter_list|,
 name|gboolean
 name|closing
-parameter_list|,
-name|gint
-modifier|*
-name|n_return_vals
 parameter_list|)
 block|{
 name|GimpPalette
@@ -402,8 +394,6 @@ argument_list|,
 name|dialog
 operator|->
 name|callback_name
-argument_list|,
-name|n_return_vals
 argument_list|,
 name|G_TYPE_STRING
 argument_list|,

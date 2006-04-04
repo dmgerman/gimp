@@ -166,7 +166,7 @@ modifier|*
 name|dialogs
 decl_stmt|;
 DECL|member|run_callback
-name|GimpArgument
+name|GValueArray
 modifier|*
 function_decl|(
 modifier|*
@@ -183,10 +183,6 @@ name|object
 parameter_list|,
 name|gboolean
 name|closing
-parameter_list|,
-name|gint
-modifier|*
-name|n_return_vals
 parameter_list|)
 function_decl|;
 block|}

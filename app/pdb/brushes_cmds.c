@@ -34,12 +34,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpargument.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpprocedure.h"
 end_include
 
@@ -666,9 +660,9 @@ end_function
 
 begin_function
 specifier|static
-name|GimpArgument
+name|GValueArray
 modifier|*
-DECL|function|brushes_refresh_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
+DECL|function|brushes_refresh_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
 name|brushes_refresh_invoker
 parameter_list|(
 name|GimpProcedure
@@ -688,7 +682,7 @@ modifier|*
 name|progress
 parameter_list|,
 specifier|const
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|args
 parameter_list|)
@@ -759,9 +753,9 @@ end_decl_stmt
 
 begin_function
 specifier|static
-name|GimpArgument
+name|GValueArray
 modifier|*
-DECL|function|brushes_get_list_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
+DECL|function|brushes_get_list_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
 name|brushes_get_list_invoker
 parameter_list|(
 name|GimpProcedure
@@ -781,7 +775,7 @@ modifier|*
 name|progress
 parameter_list|,
 specifier|const
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|args
 parameter_list|)
@@ -791,7 +785,7 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -818,11 +812,11 @@ name|g_value_get_string
 argument_list|(
 operator|&
 name|args
+operator|->
+name|values
 index|[
 literal|0
 index|]
-operator|.
-name|value
 argument_list|)
 expr_stmt|;
 if|if
@@ -865,11 +859,11 @@ name|g_value_set_int
 argument_list|(
 operator|&
 name|return_vals
+operator|->
+name|values
 index|[
 literal|1
 index|]
-operator|.
-name|value
 argument_list|,
 name|num_brushes
 argument_list|)
@@ -878,11 +872,11 @@ name|gimp_value_take_stringarray
 argument_list|(
 operator|&
 name|return_vals
+operator|->
+name|values
 index|[
 literal|2
 index|]
-operator|.
-name|value
 argument_list|,
 name|brush_list
 argument_list|,
@@ -944,9 +938,9 @@ end_decl_stmt
 
 begin_function
 specifier|static
-name|GimpArgument
+name|GValueArray
 modifier|*
-DECL|function|brushes_get_brush_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
+DECL|function|brushes_get_brush_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
 name|brushes_get_brush_invoker
 parameter_list|(
 name|GimpProcedure
@@ -966,7 +960,7 @@ modifier|*
 name|progress
 parameter_list|,
 specifier|const
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|args
 parameter_list|)
@@ -976,7 +970,7 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -1075,11 +1069,11 @@ name|g_value_take_string
 argument_list|(
 operator|&
 name|return_vals
+operator|->
+name|values
 index|[
 literal|1
 index|]
-operator|.
-name|value
 argument_list|,
 name|name
 argument_list|)
@@ -1088,11 +1082,11 @@ name|g_value_set_int
 argument_list|(
 operator|&
 name|return_vals
+operator|->
+name|values
 index|[
 literal|2
 index|]
-operator|.
-name|value
 argument_list|,
 name|width
 argument_list|)
@@ -1101,11 +1095,11 @@ name|g_value_set_int
 argument_list|(
 operator|&
 name|return_vals
+operator|->
+name|values
 index|[
 literal|3
 index|]
-operator|.
-name|value
 argument_list|,
 name|height
 argument_list|)
@@ -1114,11 +1108,11 @@ name|g_value_set_int
 argument_list|(
 operator|&
 name|return_vals
+operator|->
+name|values
 index|[
 literal|4
 index|]
-operator|.
-name|value
 argument_list|,
 name|spacing
 argument_list|)
@@ -1178,9 +1172,9 @@ end_decl_stmt
 
 begin_function
 specifier|static
-name|GimpArgument
+name|GValueArray
 modifier|*
-DECL|function|brushes_get_spacing_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
+DECL|function|brushes_get_spacing_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
 name|brushes_get_spacing_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1200,7 +1194,7 @@ modifier|*
 name|progress
 parameter_list|,
 specifier|const
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|args
 parameter_list|)
@@ -1210,7 +1204,7 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -1261,11 +1255,11 @@ name|g_value_set_int
 argument_list|(
 operator|&
 name|return_vals
+operator|->
+name|values
 index|[
 literal|1
 index|]
-operator|.
-name|value
 argument_list|,
 name|spacing
 argument_list|)
@@ -1324,9 +1318,9 @@ end_decl_stmt
 
 begin_function
 specifier|static
-name|GimpArgument
+name|GValueArray
 modifier|*
-DECL|function|brushes_set_spacing_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
+DECL|function|brushes_set_spacing_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
 name|brushes_set_spacing_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1346,7 +1340,7 @@ modifier|*
 name|progress
 parameter_list|,
 specifier|const
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|args
 parameter_list|)
@@ -1365,11 +1359,11 @@ name|g_value_get_int
 argument_list|(
 operator|&
 name|args
+operator|->
+name|values
 index|[
 literal|0
 index|]
-operator|.
-name|value
 argument_list|)
 expr_stmt|;
 if|if
@@ -1447,9 +1441,9 @@ end_decl_stmt
 
 begin_function
 specifier|static
-name|GimpArgument
+name|GValueArray
 modifier|*
-DECL|function|brushes_get_brush_data_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
+DECL|function|brushes_get_brush_data_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
 name|brushes_get_brush_data_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1469,7 +1463,7 @@ modifier|*
 name|progress
 parameter_list|,
 specifier|const
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|args
 parameter_list|)
@@ -1479,7 +1473,7 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -1536,11 +1530,11 @@ name|g_value_get_string
 argument_list|(
 operator|&
 name|args
+operator|->
+name|values
 index|[
 literal|0
 index|]
-operator|.
-name|value
 argument_list|)
 expr_stmt|;
 if|if
@@ -1692,11 +1686,11 @@ name|g_value_take_string
 argument_list|(
 operator|&
 name|return_vals
+operator|->
+name|values
 index|[
 literal|1
 index|]
-operator|.
-name|value
 argument_list|,
 name|actual_name
 argument_list|)
@@ -1705,11 +1699,11 @@ name|g_value_set_double
 argument_list|(
 operator|&
 name|return_vals
+operator|->
+name|values
 index|[
 literal|2
 index|]
-operator|.
-name|value
 argument_list|,
 name|opacity
 argument_list|)
@@ -1718,11 +1712,11 @@ name|g_value_set_int
 argument_list|(
 operator|&
 name|return_vals
+operator|->
+name|values
 index|[
 literal|3
 index|]
-operator|.
-name|value
 argument_list|,
 name|spacing
 argument_list|)
@@ -1731,11 +1725,11 @@ name|g_value_set_enum
 argument_list|(
 operator|&
 name|return_vals
+operator|->
+name|values
 index|[
 literal|4
 index|]
-operator|.
-name|value
 argument_list|,
 name|paint_mode
 argument_list|)
@@ -1744,11 +1738,11 @@ name|g_value_set_int
 argument_list|(
 operator|&
 name|return_vals
+operator|->
+name|values
 index|[
 literal|5
 index|]
-operator|.
-name|value
 argument_list|,
 name|width
 argument_list|)
@@ -1757,11 +1751,11 @@ name|g_value_set_int
 argument_list|(
 operator|&
 name|return_vals
+operator|->
+name|values
 index|[
 literal|6
 index|]
-operator|.
-name|value
 argument_list|,
 name|height
 argument_list|)
@@ -1770,11 +1764,11 @@ name|g_value_set_int
 argument_list|(
 operator|&
 name|return_vals
+operator|->
+name|values
 index|[
 literal|7
 index|]
-operator|.
-name|value
 argument_list|,
 name|length
 argument_list|)
@@ -1783,11 +1777,11 @@ name|gimp_value_take_int8array
 argument_list|(
 operator|&
 name|return_vals
+operator|->
+name|values
 index|[
 literal|8
 index|]
-operator|.
-name|value
 argument_list|,
 name|mask_data
 argument_list|,

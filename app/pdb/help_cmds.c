@@ -28,12 +28,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpargument.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpprocedure.h"
 end_include
 
@@ -158,9 +152,9 @@ end_function
 
 begin_function
 specifier|static
-name|GimpArgument
+name|GValueArray
 modifier|*
-DECL|function|help_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
+DECL|function|help_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
 name|help_invoker
 parameter_list|(
 name|GimpProcedure
@@ -180,7 +174,7 @@ modifier|*
 name|progress
 parameter_list|,
 specifier|const
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|args
 parameter_list|)
@@ -206,11 +200,11 @@ name|g_value_get_string
 argument_list|(
 operator|&
 name|args
+operator|->
+name|values
 index|[
 literal|0
 index|]
-operator|.
-name|value
 argument_list|)
 expr_stmt|;
 name|help_id
@@ -219,11 +213,11 @@ name|g_value_get_string
 argument_list|(
 operator|&
 name|args
+operator|->
+name|values
 index|[
 literal|1
 index|]
-operator|.
-name|value
 argument_list|)
 expr_stmt|;
 if|if

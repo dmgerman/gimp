@@ -40,12 +40,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpargument.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpprocedure.h"
 end_include
 
@@ -1234,9 +1228,9 @@ end_function
 
 begin_function
 specifier|static
-name|GimpArgument
+name|GValueArray
 modifier|*
-DECL|function|palette_new_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
+DECL|function|palette_new_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
 name|palette_new_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1256,7 +1250,7 @@ modifier|*
 name|progress
 parameter_list|,
 specifier|const
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|args
 parameter_list|)
@@ -1266,7 +1260,7 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -1287,11 +1281,11 @@ name|g_value_get_string
 argument_list|(
 operator|&
 name|args
+operator|->
+name|values
 index|[
 literal|0
 index|]
-operator|.
-name|value
 argument_list|)
 expr_stmt|;
 if|if
@@ -1366,11 +1360,11 @@ name|g_value_take_string
 argument_list|(
 operator|&
 name|return_vals
+operator|->
+name|values
 index|[
 literal|1
 index|]
-operator|.
-name|value
 argument_list|,
 name|actual_name
 argument_list|)
@@ -1429,9 +1423,9 @@ end_decl_stmt
 
 begin_function
 specifier|static
-name|GimpArgument
+name|GValueArray
 modifier|*
-DECL|function|palette_duplicate_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
+DECL|function|palette_duplicate_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
 name|palette_duplicate_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1451,7 +1445,7 @@ modifier|*
 name|progress
 parameter_list|,
 specifier|const
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|args
 parameter_list|)
@@ -1461,7 +1455,7 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -1482,11 +1476,11 @@ name|g_value_get_string
 argument_list|(
 operator|&
 name|args
+operator|->
+name|values
 index|[
 literal|0
 index|]
-operator|.
-name|value
 argument_list|)
 expr_stmt|;
 if|if
@@ -1584,11 +1578,11 @@ name|g_value_take_string
 argument_list|(
 operator|&
 name|return_vals
+operator|->
+name|values
 index|[
 literal|1
 index|]
-operator|.
-name|value
 argument_list|,
 name|copy_name
 argument_list|)
@@ -1647,9 +1641,9 @@ end_decl_stmt
 
 begin_function
 specifier|static
-name|GimpArgument
+name|GValueArray
 modifier|*
-DECL|function|palette_rename_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
+DECL|function|palette_rename_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
 name|palette_rename_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1669,7 +1663,7 @@ modifier|*
 name|progress
 parameter_list|,
 specifier|const
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|args
 parameter_list|)
@@ -1679,7 +1673,7 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -1705,11 +1699,11 @@ name|g_value_get_string
 argument_list|(
 operator|&
 name|args
+operator|->
+name|values
 index|[
 literal|0
 index|]
-operator|.
-name|value
 argument_list|)
 expr_stmt|;
 name|new_name
@@ -1718,11 +1712,11 @@ name|g_value_get_string
 argument_list|(
 operator|&
 name|args
+operator|->
+name|values
 index|[
 literal|1
 index|]
-operator|.
-name|value
 argument_list|)
 expr_stmt|;
 if|if
@@ -1808,11 +1802,11 @@ name|g_value_take_string
 argument_list|(
 operator|&
 name|return_vals
+operator|->
+name|values
 index|[
 literal|1
 index|]
-operator|.
-name|value
 argument_list|,
 name|actual_name
 argument_list|)
@@ -1871,9 +1865,9 @@ end_decl_stmt
 
 begin_function
 specifier|static
-name|GimpArgument
+name|GValueArray
 modifier|*
-DECL|function|palette_delete_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
+DECL|function|palette_delete_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
 name|palette_delete_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1893,7 +1887,7 @@ modifier|*
 name|progress
 parameter_list|,
 specifier|const
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|args
 parameter_list|)
@@ -1914,11 +1908,11 @@ name|g_value_get_string
 argument_list|(
 operator|&
 name|args
+operator|->
+name|values
 index|[
 literal|0
 index|]
-operator|.
-name|value
 argument_list|)
 expr_stmt|;
 if|if
@@ -2068,9 +2062,9 @@ end_decl_stmt
 
 begin_function
 specifier|static
-name|GimpArgument
+name|GValueArray
 modifier|*
-DECL|function|palette_is_editable_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
+DECL|function|palette_is_editable_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
 name|palette_is_editable_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2090,7 +2084,7 @@ modifier|*
 name|progress
 parameter_list|,
 specifier|const
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|args
 parameter_list|)
@@ -2100,7 +2094,7 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -2120,11 +2114,11 @@ name|g_value_get_string
 argument_list|(
 operator|&
 name|args
+operator|->
+name|values
 index|[
 literal|0
 index|]
-operator|.
-name|value
 argument_list|)
 expr_stmt|;
 if|if
@@ -2187,11 +2181,11 @@ name|g_value_set_boolean
 argument_list|(
 operator|&
 name|return_vals
+operator|->
+name|values
 index|[
 literal|1
 index|]
-operator|.
-name|value
 argument_list|,
 name|editable
 argument_list|)
@@ -2250,9 +2244,9 @@ end_decl_stmt
 
 begin_function
 specifier|static
-name|GimpArgument
+name|GValueArray
 modifier|*
-DECL|function|palette_get_info_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
+DECL|function|palette_get_info_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
 name|palette_get_info_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2272,7 +2266,7 @@ modifier|*
 name|progress
 parameter_list|,
 specifier|const
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|args
 parameter_list|)
@@ -2282,7 +2276,7 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -2302,11 +2296,11 @@ name|g_value_get_string
 argument_list|(
 operator|&
 name|args
+operator|->
+name|values
 index|[
 literal|0
 index|]
-operator|.
-name|value
 argument_list|)
 expr_stmt|;
 if|if
@@ -2366,11 +2360,11 @@ name|g_value_set_int
 argument_list|(
 operator|&
 name|return_vals
+operator|->
+name|values
 index|[
 literal|1
 index|]
-operator|.
-name|value
 argument_list|,
 name|num_colors
 argument_list|)
@@ -2429,9 +2423,9 @@ end_decl_stmt
 
 begin_function
 specifier|static
-name|GimpArgument
+name|GValueArray
 modifier|*
-DECL|function|palette_get_columns_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
+DECL|function|palette_get_columns_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
 name|palette_get_columns_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2451,7 +2445,7 @@ modifier|*
 name|progress
 parameter_list|,
 specifier|const
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|args
 parameter_list|)
@@ -2461,7 +2455,7 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -2481,11 +2475,11 @@ name|g_value_get_string
 argument_list|(
 operator|&
 name|args
+operator|->
+name|values
 index|[
 literal|0
 index|]
-operator|.
-name|value
 argument_list|)
 expr_stmt|;
 if|if
@@ -2545,11 +2539,11 @@ name|g_value_set_int
 argument_list|(
 operator|&
 name|return_vals
+operator|->
+name|values
 index|[
 literal|1
 index|]
-operator|.
-name|value
 argument_list|,
 name|num_columns
 argument_list|)
@@ -2608,9 +2602,9 @@ end_decl_stmt
 
 begin_function
 specifier|static
-name|GimpArgument
+name|GValueArray
 modifier|*
-DECL|function|palette_set_columns_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
+DECL|function|palette_set_columns_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
 name|palette_set_columns_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2630,7 +2624,7 @@ modifier|*
 name|progress
 parameter_list|,
 specifier|const
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|args
 parameter_list|)
@@ -2654,11 +2648,11 @@ name|g_value_get_string
 argument_list|(
 operator|&
 name|args
+operator|->
+name|values
 index|[
 literal|0
 index|]
-operator|.
-name|value
 argument_list|)
 expr_stmt|;
 name|columns
@@ -2667,11 +2661,11 @@ name|g_value_get_int
 argument_list|(
 operator|&
 name|args
+operator|->
+name|values
 index|[
 literal|1
 index|]
-operator|.
-name|value
 argument_list|)
 expr_stmt|;
 if|if
@@ -2781,9 +2775,9 @@ end_decl_stmt
 
 begin_function
 specifier|static
-name|GimpArgument
+name|GValueArray
 modifier|*
-DECL|function|palette_add_entry_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
+DECL|function|palette_add_entry_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
 name|palette_add_entry_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2803,7 +2797,7 @@ modifier|*
 name|progress
 parameter_list|,
 specifier|const
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|args
 parameter_list|)
@@ -2813,7 +2807,7 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -2841,11 +2835,11 @@ name|g_value_get_string
 argument_list|(
 operator|&
 name|args
+operator|->
+name|values
 index|[
 literal|0
 index|]
-operator|.
-name|value
 argument_list|)
 expr_stmt|;
 name|entry_name
@@ -2854,22 +2848,22 @@ name|g_value_get_string
 argument_list|(
 operator|&
 name|args
+operator|->
+name|values
 index|[
 literal|1
 index|]
-operator|.
-name|value
 argument_list|)
 expr_stmt|;
 name|gimp_value_get_rgb
 argument_list|(
 operator|&
 name|args
+operator|->
+name|values
 index|[
 literal|2
 index|]
-operator|.
-name|value
 argument_list|,
 operator|&
 name|color
@@ -2958,11 +2952,11 @@ name|g_value_set_int
 argument_list|(
 operator|&
 name|return_vals
+operator|->
+name|values
 index|[
 literal|1
 index|]
-operator|.
-name|value
 argument_list|,
 name|entry_num
 argument_list|)
@@ -3021,9 +3015,9 @@ end_decl_stmt
 
 begin_function
 specifier|static
-name|GimpArgument
+name|GValueArray
 modifier|*
-DECL|function|palette_delete_entry_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
+DECL|function|palette_delete_entry_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
 name|palette_delete_entry_invoker
 parameter_list|(
 name|GimpProcedure
@@ -3043,7 +3037,7 @@ modifier|*
 name|progress
 parameter_list|,
 specifier|const
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|args
 parameter_list|)
@@ -3067,11 +3061,11 @@ name|g_value_get_string
 argument_list|(
 operator|&
 name|args
+operator|->
+name|values
 index|[
 literal|0
 index|]
-operator|.
-name|value
 argument_list|)
 expr_stmt|;
 name|entry_num
@@ -3080,11 +3074,11 @@ name|g_value_get_int
 argument_list|(
 operator|&
 name|args
+operator|->
+name|values
 index|[
 literal|1
 index|]
-operator|.
-name|value
 argument_list|)
 expr_stmt|;
 if|if
@@ -3228,9 +3222,9 @@ end_decl_stmt
 
 begin_function
 specifier|static
-name|GimpArgument
+name|GValueArray
 modifier|*
-DECL|function|palette_entry_get_color_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
+DECL|function|palette_entry_get_color_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
 name|palette_entry_get_color_invoker
 parameter_list|(
 name|GimpProcedure
@@ -3250,7 +3244,7 @@ modifier|*
 name|progress
 parameter_list|,
 specifier|const
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|args
 parameter_list|)
@@ -3260,7 +3254,7 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -3291,11 +3285,11 @@ name|g_value_get_string
 argument_list|(
 operator|&
 name|args
+operator|->
+name|values
 index|[
 literal|0
 index|]
-operator|.
-name|value
 argument_list|)
 expr_stmt|;
 name|entry_num
@@ -3304,11 +3298,11 @@ name|g_value_get_int
 argument_list|(
 operator|&
 name|args
+operator|->
+name|values
 index|[
 literal|1
 index|]
-operator|.
-name|value
 argument_list|)
 expr_stmt|;
 if|if
@@ -3402,11 +3396,11 @@ name|gimp_value_set_rgb
 argument_list|(
 operator|&
 name|return_vals
+operator|->
+name|values
 index|[
 literal|1
 index|]
-operator|.
-name|value
 argument_list|,
 operator|&
 name|color
@@ -3466,9 +3460,9 @@ end_decl_stmt
 
 begin_function
 specifier|static
-name|GimpArgument
+name|GValueArray
 modifier|*
-DECL|function|palette_entry_set_color_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
+DECL|function|palette_entry_set_color_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
 name|palette_entry_set_color_invoker
 parameter_list|(
 name|GimpProcedure
@@ -3488,7 +3482,7 @@ modifier|*
 name|progress
 parameter_list|,
 specifier|const
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|args
 parameter_list|)
@@ -3515,11 +3509,11 @@ name|g_value_get_string
 argument_list|(
 operator|&
 name|args
+operator|->
+name|values
 index|[
 literal|0
 index|]
-operator|.
-name|value
 argument_list|)
 expr_stmt|;
 name|entry_num
@@ -3528,22 +3522,22 @@ name|g_value_get_int
 argument_list|(
 operator|&
 name|args
+operator|->
+name|values
 index|[
 literal|1
 index|]
-operator|.
-name|value
 argument_list|)
 expr_stmt|;
 name|gimp_value_get_rgb
 argument_list|(
 operator|&
 name|args
+operator|->
+name|values
 index|[
 literal|2
 index|]
-operator|.
-name|value
 argument_list|,
 operator|&
 name|color
@@ -3697,9 +3691,9 @@ end_decl_stmt
 
 begin_function
 specifier|static
-name|GimpArgument
+name|GValueArray
 modifier|*
-DECL|function|palette_entry_get_name_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
+DECL|function|palette_entry_get_name_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
 name|palette_entry_get_name_invoker
 parameter_list|(
 name|GimpProcedure
@@ -3719,7 +3713,7 @@ modifier|*
 name|progress
 parameter_list|,
 specifier|const
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|args
 parameter_list|)
@@ -3729,7 +3723,7 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -3753,11 +3747,11 @@ name|g_value_get_string
 argument_list|(
 operator|&
 name|args
+operator|->
+name|values
 index|[
 literal|0
 index|]
-operator|.
-name|value
 argument_list|)
 expr_stmt|;
 name|entry_num
@@ -3766,11 +3760,11 @@ name|g_value_get_int
 argument_list|(
 operator|&
 name|args
+operator|->
+name|values
 index|[
 literal|1
 index|]
-operator|.
-name|value
 argument_list|)
 expr_stmt|;
 if|if
@@ -3867,11 +3861,11 @@ name|g_value_take_string
 argument_list|(
 operator|&
 name|return_vals
+operator|->
+name|values
 index|[
 literal|1
 index|]
-operator|.
-name|value
 argument_list|,
 name|entry_name
 argument_list|)
@@ -3930,9 +3924,9 @@ end_decl_stmt
 
 begin_function
 specifier|static
-name|GimpArgument
+name|GValueArray
 modifier|*
-DECL|function|palette_entry_set_name_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpArgument * args)
+DECL|function|palette_entry_set_name_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
 name|palette_entry_set_name_invoker
 parameter_list|(
 name|GimpProcedure
@@ -3952,7 +3946,7 @@ modifier|*
 name|progress
 parameter_list|,
 specifier|const
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|args
 parameter_list|)
@@ -3981,11 +3975,11 @@ name|g_value_get_string
 argument_list|(
 operator|&
 name|args
+operator|->
+name|values
 index|[
 literal|0
 index|]
-operator|.
-name|value
 argument_list|)
 expr_stmt|;
 name|entry_num
@@ -3994,11 +3988,11 @@ name|g_value_get_int
 argument_list|(
 operator|&
 name|args
+operator|->
+name|values
 index|[
 literal|1
 index|]
-operator|.
-name|value
 argument_list|)
 expr_stmt|;
 name|entry_name
@@ -4007,11 +4001,11 @@ name|g_value_get_string
 argument_list|(
 operator|&
 name|args
+operator|->
+name|values
 index|[
 literal|2
 index|]
-operator|.
-name|value
 argument_list|)
 expr_stmt|;
 if|if

@@ -1836,11 +1836,10 @@ name|i
 operator|++
 control|)
 block|{
-name|GimpArgumentSpec
+name|GParamSpec
 modifier|*
-name|arg
+name|pspec
 init|=
-operator|&
 name|procedure
 operator|->
 name|args
@@ -1862,8 +1861,6 @@ name|arg_type
 operator|=
 name|gimp_argument_type_to_pdb_arg_type
 argument_list|(
-name|arg
-operator|->
 name|pspec
 operator|->
 name|value_type
@@ -1884,8 +1881,6 @@ name|file
 argument_list|,
 name|g_param_spec_get_name
 argument_list|(
-name|arg
-operator|->
 name|pspec
 argument_list|)
 argument_list|)
@@ -1905,8 +1900,6 @@ name|file
 argument_list|,
 name|g_param_spec_get_blurb
 argument_list|(
-name|arg
-operator|->
 name|pspec
 argument_list|)
 argument_list|)
@@ -1949,11 +1942,10 @@ name|i
 operator|++
 control|)
 block|{
-name|GimpArgumentSpec
+name|GParamSpec
 modifier|*
-name|arg
+name|pspec
 init|=
-operator|&
 name|procedure
 operator|->
 name|values
@@ -1975,8 +1967,6 @@ name|arg_type
 operator|=
 name|gimp_argument_type_to_pdb_arg_type
 argument_list|(
-name|arg
-operator|->
 name|pspec
 operator|->
 name|value_type
@@ -1997,8 +1987,6 @@ name|file
 argument_list|,
 name|g_param_spec_get_name
 argument_list|(
-name|arg
-operator|->
 name|pspec
 argument_list|)
 argument_list|)
@@ -2018,8 +2006,6 @@ name|file
 argument_list|,
 name|g_param_spec_get_blurb
 argument_list|(
-name|arg
-operator|->
 name|pspec
 argument_list|)
 argument_list|)

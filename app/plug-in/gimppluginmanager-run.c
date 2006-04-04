@@ -78,12 +78,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb/gimpargument.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"pdb/gimpprocedure.h"
 end_include
 
@@ -129,7 +123,7 @@ end_comment
 
 begin_function_decl
 specifier|static
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|plug_in_temp_run
 parameter_list|(
@@ -145,19 +139,16 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|args
-parameter_list|,
-name|gint
-name|n_args
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 specifier|static
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|plug_in_get_return_vals
 parameter_list|(
@@ -168,10 +159,6 @@ parameter_list|,
 name|PlugInProcFrame
 modifier|*
 name|proc_frame
-parameter_list|,
-name|gint
-modifier|*
-name|n_return_vals
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -181,9 +168,9 @@ comment|/*  public functions  */
 end_comment
 
 begin_function
-name|GimpArgument
+name|GValueArray
 modifier|*
-DECL|function|plug_in_run (Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpProcedure * procedure,GimpArgument * args,gint n_args,gboolean synchronous,gboolean destroy_return_vals,gint display_ID)
+DECL|function|plug_in_run (Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpProcedure * procedure,GValueArray * args,gboolean synchronous,gboolean destroy_return_vals,gint display_ID)
 name|plug_in_run
 parameter_list|(
 name|Gimp
@@ -202,12 +189,9 @@ name|GimpProcedure
 modifier|*
 name|procedure
 parameter_list|,
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|args
-parameter_list|,
-name|gint
-name|n_args
 parameter_list|,
 name|gboolean
 name|synchronous
@@ -219,16 +203,11 @@ name|gint
 name|display_ID
 parameter_list|)
 block|{
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|return_vals
 init|=
 name|NULL
-decl_stmt|;
-name|gint
-name|n_return_vals
-init|=
-literal|0
 decl_stmt|;
 name|PlugIn
 modifier|*
@@ -280,10 +259,6 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|n_args
-operator|==
-literal|0
-operator|||
 name|args
 operator|!=
 name|NULL
@@ -311,8 +286,6 @@ argument_list|,
 name|progress
 argument_list|,
 name|args
-argument_list|,
-name|n_args
 argument_list|)
 expr_stmt|;
 goto|goto
@@ -578,7 +551,9 @@ name|proc_run
 operator|.
 name|nparams
 operator|=
-name|n_args
+name|args
+operator|->
+name|n_values
 expr_stmt|;
 name|proc_run
 operator|.
@@ -587,8 +562,6 @@ operator|=
 name|plug_in_args_to_params
 argument_list|(
 name|args
-argument_list|,
-name|n_args
 argument_list|,
 name|FALSE
 argument_list|)
@@ -794,9 +767,6 @@ operator|&
 name|plug_in
 operator|->
 name|main_proc_frame
-argument_list|,
-operator|&
-name|n_return_vals
 argument_list|)
 expr_stmt|;
 block|}
@@ -815,13 +785,9 @@ operator|&&
 name|destroy_return_vals
 condition|)
 block|{
-name|gimp_arguments_destroy
+name|g_value_array_free
 argument_list|(
 name|return_vals
-argument_list|,
-name|procedure
-operator|->
-name|num_values
 argument_list|)
 expr_stmt|;
 name|return_vals
@@ -872,7 +838,7 @@ name|PlugInProcDef
 modifier|*
 name|proc_def
 decl_stmt|;
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|args
 decl_stmt|;
@@ -940,11 +906,11 @@ name|g_value_set_int
 argument_list|(
 operator|&
 name|args
+operator|->
+name|values
 index|[
 literal|0
 index|]
-operator|.
-name|value
 argument_list|,
 name|with_interface
 condition|?
@@ -957,11 +923,11 @@ name|g_value_set_int
 argument_list|(
 operator|&
 name|args
+operator|->
+name|values
 index|[
 literal|1
 index|]
-operator|.
-name|value
 argument_list|,
 name|image_ID
 argument_list|)
@@ -970,11 +936,11 @@ name|g_value_set_int
 argument_list|(
 operator|&
 name|args
+operator|->
+name|values
 index|[
 literal|2
 index|]
-operator|.
-name|value
 argument_list|,
 name|drawable_ID
 argument_list|)
@@ -994,9 +960,6 @@ name|procedure
 argument_list|,
 name|args
 argument_list|,
-literal|3
-comment|/* not proc_def->procedure->num_args */
-argument_list|,
 name|FALSE
 argument_list|,
 name|TRUE
@@ -1004,15 +967,9 @@ argument_list|,
 name|display_ID
 argument_list|)
 expr_stmt|;
-name|gimp_arguments_destroy
+name|g_value_array_free
 argument_list|(
 name|args
-argument_list|,
-name|proc_def
-operator|->
-name|procedure
-operator|->
-name|num_args
 argument_list|)
 expr_stmt|;
 block|}
@@ -1025,9 +982,9 @@ end_comment
 
 begin_function
 specifier|static
-name|GimpArgument
+name|GValueArray
 modifier|*
-DECL|function|plug_in_temp_run (GimpProcedure * procedure,GimpContext * context,GimpProgress * progress,GimpArgument * args,gint n_args)
+DECL|function|plug_in_temp_run (GimpProcedure * procedure,GimpContext * context,GimpProgress * progress,GValueArray * args)
 name|plug_in_temp_run
 parameter_list|(
 name|GimpProcedure
@@ -1042,24 +999,16 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|args
-parameter_list|,
-name|gint
-name|n_args
 parameter_list|)
 block|{
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|return_vals
 init|=
 name|NULL
-decl_stmt|;
-name|gint
-name|n_return_vals
-init|=
-literal|0
 decl_stmt|;
 name|PlugIn
 modifier|*
@@ -1116,7 +1065,9 @@ name|proc_run
 operator|.
 name|nparams
 operator|=
-name|n_args
+name|args
+operator|->
+name|n_values
 expr_stmt|;
 name|proc_run
 operator|.
@@ -1125,8 +1076,6 @@ operator|=
 name|plug_in_args_to_params
 argument_list|(
 name|args
-argument_list|,
-name|n_args
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1210,9 +1159,6 @@ argument_list|(
 name|plug_in
 argument_list|,
 name|proc_frame
-argument_list|,
-operator|&
-name|n_return_vals
 argument_list|)
 expr_stmt|;
 comment|/*  main_loop is quit and proc_frame is popped in        *  plug_in_handle_temp_proc_return()        */
@@ -1239,9 +1185,9 @@ end_function
 
 begin_function
 specifier|static
-name|GimpArgument
+name|GValueArray
 modifier|*
-DECL|function|plug_in_get_return_vals (PlugIn * plug_in,PlugInProcFrame * proc_frame,gint * n_return_vals)
+DECL|function|plug_in_get_return_vals (PlugIn * plug_in,PlugInProcFrame * proc_frame)
 name|plug_in_get_return_vals
 parameter_list|(
 name|PlugIn
@@ -1251,13 +1197,9 @@ parameter_list|,
 name|PlugInProcFrame
 modifier|*
 name|proc_frame
-parameter_list|,
-name|gint
-modifier|*
-name|n_return_vals
 parameter_list|)
 block|{
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -1279,27 +1221,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|n_return_vals
-operator|!=
-name|NULL
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-comment|/* Return the status code plus the current return values. */
-operator|*
-name|n_return_vals
-operator|=
-name|proc_frame
-operator|->
-name|procedure
-operator|->
-name|num_values
-operator|+
-literal|1
-expr_stmt|;
 if|if
 condition|(
 name|proc_frame
@@ -1308,10 +1229,17 @@ name|return_vals
 operator|&&
 name|proc_frame
 operator|->
-name|n_return_vals
+name|return_vals
+operator|->
+name|n_values
 operator|==
-operator|*
-name|n_return_vals
+name|proc_frame
+operator|->
+name|procedure
+operator|->
+name|num_values
+operator|+
+literal|1
 condition|)
 block|{
 name|return_vals
@@ -1345,24 +1273,35 @@ comment|/* Copy all of the arguments we can. */
 name|memcpy
 argument_list|(
 name|return_vals
+operator|->
+name|values
 argument_list|,
 name|proc_frame
 operator|->
 name|return_vals
+operator|->
+name|values
 argument_list|,
 sizeof|sizeof
 argument_list|(
-name|GimpArgument
+name|GValue
 argument_list|)
 operator|*
 name|MIN
 argument_list|(
 name|proc_frame
 operator|->
-name|n_return_vals
+name|return_vals
+operator|->
+name|n_values
 argument_list|,
-operator|*
-name|n_return_vals
+name|proc_frame
+operator|->
+name|procedure
+operator|->
+name|num_values
+operator|+
+literal|1
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1396,12 +1335,6 @@ operator|->
 name|return_vals
 operator|=
 name|NULL
-expr_stmt|;
-name|proc_frame
-operator|->
-name|n_return_vals
-operator|=
-literal|0
 expr_stmt|;
 return|return
 name|return_vals

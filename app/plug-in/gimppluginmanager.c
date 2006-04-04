@@ -84,12 +84,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb/gimpargument.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"pdb/gimpprocedure.h"
 end_include
 
@@ -1405,6 +1399,10 @@ name|list
 operator|->
 name|data
 decl_stmt|;
+name|GValueArray
+modifier|*
+name|args
+decl_stmt|;
 if|if
 condition|(
 name|gimp
@@ -1446,6 +1444,13 @@ operator|)
 name|n_extensions
 argument_list|)
 expr_stmt|;
+name|args
+operator|=
+name|g_value_array_new
+argument_list|(
+literal|0
+argument_list|)
+expr_stmt|;
 name|plug_in_run
 argument_list|(
 name|gimp
@@ -1458,9 +1463,7 @@ name|proc_def
 operator|->
 name|procedure
 argument_list|,
-name|NULL
-argument_list|,
-literal|0
+name|args
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1468,6 +1471,11 @@ name|TRUE
 argument_list|,
 operator|-
 literal|1
+argument_list|)
+expr_stmt|;
+name|g_value_array_free
+argument_list|(
+name|args
 argument_list|)
 expr_stmt|;
 block|}
@@ -4416,12 +4424,9 @@ operator|->
 name|file_proc
 condition|)
 block|{
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|return_vals
-decl_stmt|;
-name|gint
-name|n_return_vals
 decl_stmt|;
 if|if
 condition|(
@@ -4441,9 +4446,6 @@ argument_list|,
 name|NULL
 argument_list|,
 literal|"gimp-register-save-handler"
-argument_list|,
-operator|&
-name|n_return_vals
 argument_list|,
 name|G_TYPE_STRING
 argument_list|,
@@ -4483,9 +4485,6 @@ name|NULL
 argument_list|,
 literal|"gimp-register-magic-load-handler"
 argument_list|,
-operator|&
-name|n_return_vals
-argument_list|,
 name|G_TYPE_STRING
 argument_list|,
 name|proc_def
@@ -4516,11 +4515,9 @@ name|G_TYPE_NONE
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_arguments_destroy
+name|g_value_array_free
 argument_list|(
 name|return_vals
-argument_list|,
-name|n_return_vals
 argument_list|)
 expr_stmt|;
 block|}

@@ -21,7 +21,7 @@ comment|/*  Run a plug-in as if it were a procedure database procedure  */
 end_comment
 
 begin_function_decl
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|plug_in_run
 parameter_list|(
@@ -41,12 +41,9 @@ name|GimpProcedure
 modifier|*
 name|procedure
 parameter_list|,
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|args
-parameter_list|,
-name|gint
-name|n_args
 parameter_list|,
 name|gboolean
 name|synchronous

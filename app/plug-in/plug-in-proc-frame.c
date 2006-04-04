@@ -244,12 +244,6 @@ name|NULL
 expr_stmt|;
 name|proc_frame
 operator|->
-name|n_return_vals
-operator|=
-literal|0
-expr_stmt|;
-name|proc_frame
-operator|->
 name|progress
 operator|=
 name|progress

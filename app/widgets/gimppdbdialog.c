@@ -42,12 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb/gimpargument.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"pdb/procedural_db.h"
 end_include
 
@@ -71,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c53517e0103
+DECL|enum|__anon2c1a3af10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1137,12 +1131,9 @@ name|callback_name
 argument_list|)
 condition|)
 block|{
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|return_vals
-decl_stmt|;
-name|gint
-name|n_return_vals
 decl_stmt|;
 name|return_vals
 operator|=
@@ -1155,9 +1146,6 @@ argument_list|,
 name|object
 argument_list|,
 name|closing
-argument_list|,
-operator|&
-name|n_return_vals
 argument_list|)
 expr_stmt|;
 if|if
@@ -1166,11 +1154,11 @@ name|g_value_get_enum
 argument_list|(
 operator|&
 name|return_vals
+operator|->
+name|values
 index|[
 literal|0
 index|]
-operator|.
-name|value
 argument_list|)
 operator|!=
 name|GIMP_PDB_SUCCESS
@@ -1194,11 +1182,9 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_arguments_destroy
+name|g_value_array_free
 argument_list|(
 name|return_vals
-argument_list|,
-name|n_return_vals
 argument_list|)
 expr_stmt|;
 block|}

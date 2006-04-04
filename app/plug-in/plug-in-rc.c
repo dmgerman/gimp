@@ -248,7 +248,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b67441a0103
+DECL|enum|__anon2a3d5b5e0103
 block|{
 DECL|enumerator|PROTOCOL_VERSION
 name|PROTOCOL_VERSION
@@ -3484,8 +3484,6 @@ name|args
 index|[
 name|i
 index|]
-operator|.
-name|pspec
 decl_stmt|;
 name|gimp_config_writer_open
 argument_list|(
@@ -3561,8 +3559,6 @@ name|values
 index|[
 name|i
 index|]
-operator|.
-name|pspec
 decl_stmt|;
 name|gimp_config_writer_open
 argument_list|(

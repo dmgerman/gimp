@@ -48,12 +48,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb/gimpargument.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"pdb/procedural_db.h"
 end_include
 
@@ -92,7 +86,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afd14830108
+DECL|struct|__anon28c9fe3c0108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -857,12 +851,9 @@ argument_list|(
 name|data
 argument_list|)
 decl_stmt|;
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|return_vals
-decl_stmt|;
-name|gint
-name|n_return_vals
 decl_stmt|;
 name|return_vals
 operator|=
@@ -878,9 +869,6 @@ name|NULL
 argument_list|,
 name|PDB_URL_LOAD
 argument_list|,
-operator|&
-name|n_return_vals
-argument_list|,
 name|G_TYPE_STRING
 argument_list|,
 name|url
@@ -888,11 +876,9 @@ argument_list|,
 name|G_TYPE_NONE
 argument_list|)
 expr_stmt|;
-name|gimp_arguments_destroy
+name|g_value_array_free
 argument_list|(
 name|return_vals
-argument_list|,
-name|n_return_vals
 argument_list|)
 expr_stmt|;
 block|}

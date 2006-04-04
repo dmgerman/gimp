@@ -46,13 +46,9 @@ modifier|*
 name|main_loop
 decl_stmt|;
 DECL|member|return_vals
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|return_vals
-decl_stmt|;
-DECL|member|n_return_vals
-name|gint
-name|n_return_vals
 decl_stmt|;
 DECL|member|progress
 name|GimpProgress

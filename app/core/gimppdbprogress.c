@@ -36,12 +36,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb/gimpargument.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"pdb/procedural_db.h"
 end_include
 
@@ -71,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0c13170103
+DECL|enum|__anon28822d0e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -955,12 +949,9 @@ operator|->
 name|callback_busy
 condition|)
 block|{
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|return_vals
-decl_stmt|;
-name|gint
-name|n_return_vals
 decl_stmt|;
 name|progress
 operator|->
@@ -988,9 +979,6 @@ name|progress
 operator|->
 name|callback_name
 argument_list|,
-operator|&
-name|n_return_vals
-argument_list|,
 name|GIMP_TYPE_INT32
 argument_list|,
 name|command
@@ -1012,11 +1000,11 @@ name|g_value_get_enum
 argument_list|(
 operator|&
 name|return_vals
+operator|->
+name|values
 index|[
 literal|0
 index|]
-operator|.
-name|value
 argument_list|)
 operator|!=
 name|GIMP_PDB_SUCCESS
@@ -1043,7 +1031,9 @@ block|}
 elseif|else
 if|if
 condition|(
-name|n_return_vals
+name|return_vals
+operator|->
+name|n_values
 operator|>=
 literal|2
 operator|&&
@@ -1051,11 +1041,11 @@ name|G_VALUE_HOLDS_DOUBLE
 argument_list|(
 operator|&
 name|return_vals
+operator|->
+name|values
 index|[
 literal|1
 index|]
-operator|.
-name|value
 argument_list|)
 condition|)
 block|{
@@ -1065,19 +1055,17 @@ name|g_value_get_double
 argument_list|(
 operator|&
 name|return_vals
+operator|->
+name|values
 index|[
 literal|1
 index|]
-operator|.
-name|value
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_arguments_destroy
+name|g_value_array_free
 argument_list|(
 name|return_vals
-argument_list|,
-name|n_return_vals
 argument_list|)
 expr_stmt|;
 name|progress

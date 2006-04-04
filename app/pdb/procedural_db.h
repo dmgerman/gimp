@@ -98,7 +98,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|procedural_db_execute
 parameter_list|(
@@ -119,22 +119,15 @@ name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|args
-parameter_list|,
-name|gint
-name|n_args
-parameter_list|,
-name|gint
-modifier|*
-name|n_return_vals
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|procedural_db_run_proc
 parameter_list|(
@@ -154,10 +147,6 @@ specifier|const
 name|gchar
 modifier|*
 name|name
-parameter_list|,
-name|gint
-modifier|*
-name|n_return_vals
 parameter_list|,
 modifier|...
 parameter_list|)

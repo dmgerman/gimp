@@ -114,12 +114,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb/gimpargument.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"pdb/gimpprocedure.h"
 end_include
 
@@ -1191,7 +1185,7 @@ name|GimpProcedure
 modifier|*
 name|procedure
 decl_stmt|;
-name|GimpArgument
+name|GValueArray
 modifier|*
 name|args
 decl_stmt|;
@@ -1268,11 +1262,11 @@ name|g_value_set_int
 argument_list|(
 operator|&
 name|args
+operator|->
+name|values
 index|[
 literal|0
 index|]
-operator|.
-name|value
 argument_list|,
 name|GIMP_RUN_INTERACTIVE
 argument_list|)
@@ -1281,11 +1275,11 @@ name|gimp_value_set_image
 argument_list|(
 operator|&
 name|args
+operator|->
+name|values
 index|[
 literal|1
 index|]
-operator|.
-name|value
 argument_list|,
 name|image
 argument_list|)
@@ -1294,11 +1288,11 @@ name|gimp_value_set_drawable
 argument_list|(
 operator|&
 name|args
+operator|->
+name|values
 index|[
 literal|2
 index|]
-operator|.
-name|value
 argument_list|,
 name|NULL
 comment|/* unused */
@@ -1324,9 +1318,6 @@ name|procedure
 argument_list|,
 name|args
 argument_list|,
-literal|3
-comment|/* not procedure->num_args */
-argument_list|,
 name|FALSE
 argument_list|,
 name|TRUE
@@ -1341,13 +1332,9 @@ else|:
 literal|0
 argument_list|)
 expr_stmt|;
-name|gimp_arguments_destroy
+name|g_value_array_free
 argument_list|(
 name|args
-argument_list|,
-name|procedure
-operator|->
-name|num_args
 argument_list|)
 expr_stmt|;
 block|}
