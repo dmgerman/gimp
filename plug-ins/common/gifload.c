@@ -716,7 +716,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2a314f790108
+DECL|struct|__anon291fd33a0108
 block|{
 DECL|member|Width
 name|unsigned
@@ -766,7 +766,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2a314f790208
+DECL|struct|__anon291fd33a0208
 block|{
 DECL|member|transparent
 name|int
@@ -3855,6 +3855,21 @@ block|}
 else|else
 comment|/* NOT FIRST FRAME */
 block|{
+name|gimp_progress_set_text_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Opening '%s' (frame %d)"
+argument_list|)
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|)
+argument_list|,
+name|frame_number
+argument_list|)
+expr_stmt|;
 comment|/* If the colourmap is now different, we have to promote to 	 RGB! */
 if|if
 condition|(
