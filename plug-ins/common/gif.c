@@ -135,7 +135,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon275520150103
+DECL|enum|__anon2b1513d40103
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -152,7 +152,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275520150208
+DECL|struct|__anon2b1513d40208
 block|{
 DECL|member|interlace
 name|gint
@@ -1374,13 +1374,15 @@ end_function_decl
 
 begin_decl_stmt
 DECL|variable|rowstride
-name|int
+specifier|static
+name|gint
 name|rowstride
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|pixels
+specifier|static
 name|guchar
 modifier|*
 name|pixels
@@ -1389,14 +1391,16 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|cur_progress
-name|int
+specifier|static
+name|gint
 name|cur_progress
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|max_progress
-name|int
+specifier|static
+name|gint
 name|max_progress
 decl_stmt|;
 end_decl_stmt
@@ -2895,8 +2899,7 @@ operator|--
 name|i
 control|)
 block|{
-name|unsigned
-name|int
+name|guint
 name|local_error
 init|=
 literal|0
@@ -3171,18 +3174,41 @@ expr_stmt|;
 block|}
 comment|/*** Now for each layer in the image, save an image in a compound GIF ***/
 comment|/************************************************************************/
+name|cur_progress
+operator|=
+literal|0
+expr_stmt|;
+name|max_progress
+operator|=
+name|nlayers
+operator|*
+name|rows
+expr_stmt|;
+for|for
+control|(
 name|i
 operator|=
 name|nlayers
 operator|-
 literal|1
-expr_stmt|;
-while|while
-condition|(
+init|;
 name|i
 operator|>=
 literal|0
-condition|)
+condition|;
+name|i
+operator|--
+operator|,
+name|cur_progress
+operator|=
+operator|(
+name|nlayers
+operator|-
+name|i
+operator|)
+operator|*
+name|rows
+control|)
 block|{
 name|drawable_type
 operator|=
@@ -3260,24 +3286,13 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|cur_progress
-operator|=
-literal|0
-expr_stmt|;
-name|max_progress
-operator|=
-name|drawable
-operator|->
-name|height
-expr_stmt|;
 name|pixels
 operator|=
-operator|(
-name|guchar
-operator|*
-operator|)
-name|g_malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
+operator|(
 name|drawable
 operator|->
 name|width
@@ -3304,6 +3319,7 @@ condition|?
 literal|2
 else|:
 literal|1
+operator|)
 operator|)
 argument_list|)
 expr_stmt|;
@@ -3500,12 +3516,14 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
+block|{
 name|Disposal
 operator|=
 name|gsvals
 operator|.
 name|default_dispose
 expr_stmt|;
+block|}
 name|layer_name
 operator|=
 name|gimp_drawable_get_name
@@ -3672,9 +3690,6 @@ name|g_free
 argument_list|(
 name|pixels
 argument_list|)
-expr_stmt|;
-name|i
-operator|--
 expr_stmt|;
 block|}
 name|g_free
@@ -5373,12 +5388,12 @@ condition|)
 name|gimp_progress_update
 argument_list|(
 operator|(
-name|double
+name|gdouble
 operator|)
 name|cur_progress
 operator|/
 operator|(
-name|double
+name|gdouble
 operator|)
 name|max_progress
 argument_list|)
@@ -6202,10 +6217,6 @@ comment|/*    * Set up the current x and y position    */
 block|curx = cury = 0;
 endif|#
 directive|endif
-name|cur_progress
-operator|=
-literal|0
-expr_stmt|;
 comment|/*    * Write an Image separator    */
 name|fputc
 argument_list|(
