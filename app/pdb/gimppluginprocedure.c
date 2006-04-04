@@ -132,7 +132,7 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_free
+name|g_object_unref
 argument_list|(
 name|proc_def
 operator|->

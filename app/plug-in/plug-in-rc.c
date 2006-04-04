@@ -248,7 +248,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf942320103
+DECL|enum|__anon2af8c2d90103
 block|{
 DECL|enumerator|PROTOCOL_VERSION
 name|PROTOCOL_VERSION
@@ -1171,6 +1171,9 @@ name|GTokenType
 name|token
 decl_stmt|;
 name|gint
+name|proc_type
+decl_stmt|;
+name|gint
 name|n_args
 decl_stmt|;
 name|gint
@@ -1222,13 +1225,7 @@ name|gimp_scanner_parse_int
 argument_list|(
 name|scanner
 argument_list|,
-operator|(
-name|gint
-operator|*
-operator|)
 operator|&
-name|procedure
-operator|->
 name|proc_type
 argument_list|)
 condition|)
@@ -1477,13 +1474,17 @@ condition|)
 return|return
 name|G_TOKEN_INT
 return|;
-name|gimp_procedure_init
+name|gimp_procedure_initialize
 argument_list|(
 name|procedure
+argument_list|,
+name|proc_type
 argument_list|,
 name|n_args
 argument_list|,
 name|n_return_vals
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 for|for

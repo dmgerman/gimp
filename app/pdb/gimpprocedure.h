@@ -16,6 +16,12 @@ directive|define
 name|__GIMP_PROCEDURE_H__
 end_define
 
+begin_include
+include|#
+directive|include
+file|"core/gimpobject.h"
+end_include
+
 begin_comment
 comment|/*  Execution types  */
 end_comment
@@ -142,6 +148,36 @@ struct|;
 end_struct
 
 begin_define
+DECL|macro|GIMP_TYPE_PROCEDURE
+define|#
+directive|define
+name|GIMP_TYPE_PROCEDURE
+value|(gimp_procedure_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_PROCEDURE (obj)
+define|#
+directive|define
+name|GIMP_PROCEDURE
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_PROCEDURE, GimpProcedure))
+end_define
+
+begin_define
+DECL|macro|GIMP_PROCEDURE_CLASS (klass)
+define|#
+directive|define
+name|GIMP_PROCEDURE_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_PROCEDURE, GimpProcedureClass))
+end_define
+
+begin_define
 DECL|macro|GIMP_IS_PROCEDURE (obj)
 define|#
 directive|define
@@ -149,20 +185,50 @@ name|GIMP_IS_PROCEDURE
 parameter_list|(
 name|obj
 parameter_list|)
-value|((obj) != NULL)
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_PROCEDURE))
 end_define
+
+begin_define
+DECL|macro|GIMP_IS_PROCEDURE_CLASS (klass)
+define|#
+directive|define
+name|GIMP_IS_PROCEDURE_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_PROCEDURE))
+end_define
+
+begin_define
+DECL|macro|GIMP_PROCEDURE_GET_CLASS (obj)
+define|#
+directive|define
+name|GIMP_PROCEDURE_GET_CLASS
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_PROCEDURE, GimpProcedureClass))
+end_define
+
+begin_typedef
+DECL|typedef|GimpProcedureClass
+typedef|typedef
+name|struct
+name|_GimpProcedureClass
+name|GimpProcedureClass
+typedef|;
+end_typedef
 
 begin_struct
 DECL|struct|_GimpProcedure
 struct|struct
 name|_GimpProcedure
 block|{
-comment|/*  Flags  */
-DECL|member|static_proc
-name|gboolean
-name|static_proc
+DECL|member|parent_instance
+name|GimpObject
+name|parent_instance
 decl_stmt|;
-comment|/* Is the procedure allocated?                */
+comment|/*  Flags  */
 DECL|member|static_strings
 name|gboolean
 name|static_strings
@@ -282,6 +348,58 @@ block|}
 struct|;
 end_struct
 
+begin_struct
+DECL|struct|_GimpProcedureClass
+struct|struct
+name|_GimpProcedureClass
+block|{
+DECL|member|parent_class
+name|GimpObjectClass
+name|parent_class
+decl_stmt|;
+DECL|member|execute
+name|GValueArray
+modifier|*
+function_decl|(
+modifier|*
+name|execute
+function_decl|)
+parameter_list|(
+name|GimpProcedure
+modifier|*
+name|procedure
+parameter_list|,
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
+parameter_list|,
+name|GValueArray
+modifier|*
+name|args
+parameter_list|)
+function_decl|;
+block|}
+struct|;
+end_struct
+
+begin_decl_stmt
+name|GType
+name|gimp_procedure_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
 begin_function_decl
 name|GimpProcedure
 modifier|*
@@ -293,30 +411,25 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
-name|gimp_procedure_free
+name|GimpProcedure
+modifier|*
+name|gimp_procedure_initialize
 parameter_list|(
 name|GimpProcedure
 modifier|*
 name|procedure
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|GimpProcedure
-modifier|*
-name|gimp_procedure_init
-parameter_list|(
-name|GimpProcedure
-modifier|*
-name|procedure
+parameter_list|,
+name|GimpPDBProcType
+name|proc_type
 parameter_list|,
 name|gint
 name|n_arguments
 parameter_list|,
 name|gint
 name|n_return_vals
+parameter_list|,
+name|gpointer
+name|exec_method
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -61,95 +61,6 @@ directive|include
 file|"plug-in/plug-ins.h"
 end_include
 
-begin_decl_stmt
-DECL|variable|help_proc
-specifier|static
-name|GimpProcedure
-name|help_proc
-decl_stmt|;
-end_decl_stmt
-
-begin_function
-name|void
-DECL|function|register_help_procs (Gimp * gimp)
-name|register_help_procs
-parameter_list|(
-name|Gimp
-modifier|*
-name|gimp
-parameter_list|)
-block|{
-name|GimpProcedure
-modifier|*
-name|procedure
-decl_stmt|;
-comment|/*    * help    */
-name|procedure
-operator|=
-name|gimp_procedure_init
-argument_list|(
-operator|&
-name|help_proc
-argument_list|,
-literal|2
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gimp_procedure_add_argument
-argument_list|(
-name|procedure
-argument_list|,
-name|gimp_param_spec_string
-argument_list|(
-literal|"help-domain"
-argument_list|,
-literal|"help domain"
-argument_list|,
-literal|"The help domain in which help_id is registered"
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
-argument_list|,
-name|NULL
-argument_list|,
-name|GIMP_PARAM_READWRITE
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_procedure_add_argument
-argument_list|(
-name|procedure
-argument_list|,
-name|gimp_param_spec_string
-argument_list|(
-literal|"help-id"
-argument_list|,
-literal|"help id"
-argument_list|,
-literal|"The help page's ID"
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-name|NULL
-argument_list|,
-name|GIMP_PARAM_READWRITE
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_pdb_register
-argument_list|(
-name|gimp
-argument_list|,
-name|procedure
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
 begin_function
 specifier|static
 name|GValueArray
@@ -274,51 +185,113 @@ return|;
 block|}
 end_function
 
-begin_decl_stmt
-DECL|variable|help_proc
-specifier|static
+begin_function
+name|void
+DECL|function|register_help_procs (Gimp * gimp)
+name|register_help_procs
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|)
+block|{
 name|GimpProcedure
-name|help_proc
-init|=
-block|{
-name|TRUE
-block|,
-name|TRUE
-block|,
-literal|"gimp-help"
-block|,
-literal|"gimp-help"
-block|,
-literal|"Load a help page."
-block|,
-literal|"This procedure loads the specified help page into the helpbrowser or what ever is configured as help viewer. The help page is identified by its domain and ID: if help_domain is NULL, we use the help_domain which was registered using the gimp-plugin-help-register procedure. If help_domain is NULL and no help domain was registered, the help domain of the main GIMP installation is used."
-block|,
-literal|"Michael Natterer<mitch@gimp.org>"
-block|,
-literal|"Michael Natterer"
-block|,
-literal|"2000"
-block|,
-name|NULL
-block|,
-name|GIMP_INTERNAL
-block|,
-literal|0
-block|,
-name|NULL
-block|,
-literal|0
-block|,
-name|NULL
-block|,
-block|{
-block|{
-name|help_invoker
-block|}
-block|}
-block|}
+modifier|*
+name|procedure
 decl_stmt|;
-end_decl_stmt
+comment|/*    * gimp-help    */
+name|procedure
+operator|=
+name|gimp_procedure_new
+argument_list|()
+expr_stmt|;
+name|gimp_procedure_initialize
+argument_list|(
+name|procedure
+argument_list|,
+name|GIMP_INTERNAL
+argument_list|,
+literal|2
+argument_list|,
+literal|0
+argument_list|,
+name|help_invoker
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_strings
+argument_list|(
+name|procedure
+argument_list|,
+literal|"gimp-help"
+argument_list|,
+literal|"gimp-help"
+argument_list|,
+literal|"Load a help page."
+argument_list|,
+literal|"This procedure loads the specified help page into the helpbrowser or what ever is configured as help viewer. The help page is identified by its domain and ID: if help_domain is NULL, we use the help_domain which was registered using the gimp-plugin-help-register procedure. If help_domain is NULL and no help domain was registered, the help domain of the main GIMP installation is used."
+argument_list|,
+literal|"Michael Natterer<mitch@gimp.org>"
+argument_list|,
+literal|"Michael Natterer"
+argument_list|,
+literal|"2000"
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_add_argument
+argument_list|(
+name|procedure
+argument_list|,
+name|gimp_param_spec_string
+argument_list|(
+literal|"help-domain"
+argument_list|,
+literal|"help domain"
+argument_list|,
+literal|"The help domain in which help_id is registered"
+argument_list|,
+name|FALSE
+argument_list|,
+name|TRUE
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_PARAM_READWRITE
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_add_argument
+argument_list|(
+name|procedure
+argument_list|,
+name|gimp_param_spec_string
+argument_list|(
+literal|"help-id"
+argument_list|,
+literal|"help id"
+argument_list|,
+literal|"The help page's ID"
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_PARAM_READWRITE
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_pdb_register
+argument_list|(
+name|gimp
+argument_list|,
+name|procedure
+argument_list|)
+expr_stmt|;
+block|}
+end_function
 
 end_unit
 
