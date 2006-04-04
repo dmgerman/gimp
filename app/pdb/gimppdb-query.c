@@ -82,13 +82,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpargument.h"
+file|"gimpprocedure.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpprocedure.h"
+file|"gimp-pdb-compat.h"
 end_include
 
 begin_include
@@ -1859,7 +1859,7 @@ argument_list|)
 expr_stmt|;
 name|arg_type
 operator|=
-name|gimp_argument_type_to_pdb_arg_type
+name|gimp_pdb_compat_arg_type_from_gtype
 argument_list|(
 name|pspec
 operator|->
@@ -1965,7 +1965,7 @@ argument_list|)
 expr_stmt|;
 name|arg_type
 operator|=
-name|gimp_argument_type_to_pdb_arg_type
+name|gimp_pdb_compat_arg_type_from_gtype
 argument_list|(
 name|pspec
 operator|->

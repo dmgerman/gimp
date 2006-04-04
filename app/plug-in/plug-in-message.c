@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"pdb/gimp-pdb-compat.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"pdb/procedural_db.h"
 end_include
 
@@ -2962,10 +2968,12 @@ operator|.
 name|name
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_compat_arg
+name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
+name|gimp_pdb_compat_param_spec
+argument_list|(
 name|plug_in
 operator|->
 name|gimp
@@ -2989,6 +2997,7 @@ name|i
 index|]
 operator|.
 name|description
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -3027,10 +3036,12 @@ operator|.
 name|name
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_compat_value
+name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
+name|gimp_pdb_compat_param_spec
+argument_list|(
 name|plug_in
 operator|->
 name|gimp
@@ -3054,6 +3065,7 @@ name|i
 index|]
 operator|.
 name|description
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_free

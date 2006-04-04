@@ -58,7 +58,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpargument.h"
+file|"gimp-pdb-compat.h"
 end_include
 
 begin_include
@@ -2264,7 +2264,7 @@ index|]
 decl_stmt|;
 name|arg_type
 operator|=
-name|gimp_argument_type_to_pdb_arg_type
+name|gimp_pdb_compat_arg_type_from_gtype
 argument_list|(
 name|G_PARAM_SPEC_VALUE_TYPE
 argument_list|(
@@ -2594,7 +2594,7 @@ index|]
 decl_stmt|;
 name|val_type
 operator|=
-name|gimp_argument_type_to_pdb_arg_type
+name|gimp_pdb_compat_arg_type_from_gtype
 argument_list|(
 name|G_PARAM_SPEC_VALUE_TYPE
 argument_list|(

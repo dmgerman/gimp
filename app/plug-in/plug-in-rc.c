@@ -48,13 +48,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb/gimpargument.h"
+file|"pdb/gimpprocedure.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"pdb/gimpprocedure.h"
+file|"pdb/gimp-pdb-compat.h"
 end_include
 
 begin_include
@@ -248,7 +248,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3d5b5e0103
+DECL|enum|__anon2bf942320103
 block|{
 DECL|enumerator|PROTOCOL_VERSION
 name|PROTOCOL_VERSION
@@ -2379,6 +2379,10 @@ name|desc
 init|=
 name|NULL
 decl_stmt|;
+name|GParamSpec
+modifier|*
+name|pspec
+decl_stmt|;
 if|if
 condition|(
 operator|!
@@ -2515,14 +2519,10 @@ name|token
 operator|=
 name|G_TOKEN_LEFT_PAREN
 expr_stmt|;
-if|if
-condition|(
-name|return_value
-condition|)
-name|gimp_procedure_add_compat_value
+name|pspec
+operator|=
+name|gimp_pdb_compat_param_spec
 argument_list|(
-name|procedure
-argument_list|,
 name|gimp
 argument_list|,
 name|arg_type
@@ -2532,18 +2532,23 @@ argument_list|,
 name|desc
 argument_list|)
 expr_stmt|;
-else|else
-name|gimp_procedure_add_compat_arg
+if|if
+condition|(
+name|return_value
+condition|)
+name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp
+name|pspec
+argument_list|)
+expr_stmt|;
+else|else
+name|gimp_procedure_add_argument
+argument_list|(
+name|procedure
 argument_list|,
-name|arg_type
-argument_list|,
-name|name
-argument_list|,
-name|desc
+name|pspec
 argument_list|)
 expr_stmt|;
 name|error
@@ -3498,7 +3503,7 @@ name|writer
 argument_list|,
 literal|"%d"
 argument_list|,
-name|gimp_argument_type_to_pdb_arg_type
+name|gimp_pdb_compat_arg_type_from_gtype
 argument_list|(
 name|G_PARAM_SPEC_VALUE_TYPE
 argument_list|(
@@ -3573,7 +3578,7 @@ name|writer
 argument_list|,
 literal|"%d"
 argument_list|,
-name|gimp_argument_type_to_pdb_arg_type
+name|gimp_pdb_compat_arg_type_from_gtype
 argument_list|(
 name|G_PARAM_SPEC_VALUE_TYPE
 argument_list|(

@@ -72,12 +72,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb/gimpargument.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"pdb/gimpprocedure.h"
 end_include
 
@@ -438,70 +432,111 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_compat_arg
+name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp
-argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
+name|gimp_param_spec_int32
+argument_list|(
 literal|"dummy-param"
 argument_list|,
-literal|"dummy parameter"
+literal|"Dummy Param"
+argument_list|,
+literal|"Dummy parameter"
+argument_list|,
+name|G_MININT32
+argument_list|,
+name|G_MAXINT32
+argument_list|,
+literal|0
+argument_list|,
+name|GIMP_PARAM_READWRITE
+argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_compat_arg
+name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp
-argument_list|,
-name|GIMP_PDB_IMAGE
-argument_list|,
+name|gimp_param_spec_image_id
+argument_list|(
 literal|"image"
 argument_list|,
+literal|"Image"
+argument_list|,
 literal|"Input image"
-argument_list|)
-expr_stmt|;
-name|gimp_procedure_add_compat_arg
-argument_list|(
-name|procedure
 argument_list|,
 name|gimp
 argument_list|,
-name|GIMP_PDB_DRAWABLE
+name|GIMP_PARAM_READWRITE
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_add_argument
+argument_list|(
+name|procedure
 argument_list|,
+name|gimp_param_spec_drawable_id
+argument_list|(
 literal|"drawable"
 argument_list|,
+literal|"Drawable"
+argument_list|,
 literal|"Active drawable of input image"
-argument_list|)
-expr_stmt|;
-name|gimp_procedure_add_compat_arg
-argument_list|(
-name|procedure
 argument_list|,
 name|gimp
 argument_list|,
-name|GIMP_PDB_STRING
+name|GIMP_PARAM_READWRITE
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_add_argument
+argument_list|(
+name|procedure
 argument_list|,
+name|gimp_param_spec_string
+argument_list|(
 literal|"filename"
 argument_list|,
-literal|"The name of the file to save the image in, "
-literal|"in the on-disk character set and encoding"
+literal|"Filename"
+argument_list|,
+literal|"The name of the file "
+literal|"to save the image in, "
+literal|"in the on-disk "
+literal|"character set and "
+literal|"encoding"
+argument_list|,
+name|TRUE
+argument_list|,
+name|FALSE
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_PARAM_READWRITE
+argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_compat_arg
+name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp
+name|gimp_param_spec_string
+argument_list|(
+literal|"raw-filename"
 argument_list|,
-name|GIMP_PDB_STRING
+literal|"Raw filename"
 argument_list|,
-literal|"raw_filename"
+literal|"The basename of the "
+literal|"file, in UTF-8"
 argument_list|,
-literal|"The basename of the file, in UTF-8"
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_PARAM_READWRITE
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
@@ -590,57 +625,92 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_compat_arg
+name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp
-argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
+name|gimp_param_spec_int32
+argument_list|(
 literal|"dummy-param"
 argument_list|,
-literal|"dummy parameter"
+literal|"Dummy Param"
+argument_list|,
+literal|"Dummy parameter"
+argument_list|,
+name|G_MININT32
+argument_list|,
+name|G_MAXINT32
+argument_list|,
+literal|0
+argument_list|,
+name|GIMP_PARAM_READWRITE
+argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_compat_arg
+name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp
-argument_list|,
-name|GIMP_PDB_STRING
-argument_list|,
+name|gimp_param_spec_string
+argument_list|(
 literal|"filename"
 argument_list|,
-literal|"The name of the file to load, "
-literal|"in the on-disk character set and encoding"
+literal|"Filename"
+argument_list|,
+literal|"The name of the file "
+literal|"to load, in the "
+literal|"on-disk character "
+literal|"set and encoding"
+argument_list|,
+name|TRUE
+argument_list|,
+name|FALSE
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_PARAM_READWRITE
+argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_compat_arg
+name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp
-argument_list|,
-name|GIMP_PDB_STRING
-argument_list|,
+name|gimp_param_spec_string
+argument_list|(
 literal|"raw-filename"
 argument_list|,
-literal|"The basename of the file, in UTF-8"
+literal|"Raw filename"
+argument_list|,
+literal|"The basename of the "
+literal|"file, in UTF-8"
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_PARAM_READWRITE
+argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_compat_value
+name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp
-argument_list|,
-name|GIMP_PDB_IMAGE
-argument_list|,
+name|gimp_param_spec_image_id
+argument_list|(
 literal|"image"
 argument_list|,
+literal|"Image"
+argument_list|,
 literal|"Output image"
+argument_list|,
+name|gimp
+argument_list|,
+name|GIMP_PARAM_READWRITE
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|procedural_db_register

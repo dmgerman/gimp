@@ -108,12 +108,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpargument.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpprocedure.h"
 end_include
 
@@ -311,7 +305,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2794cfe10108
+DECL|struct|__anon290b47470108
 block|{
 DECL|member|old_name
 specifier|const
