@@ -173,13 +173,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb/gimpprocedure.h"
+file|"pdb/gimp-pdb.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"pdb/procedural_db.h"
+file|"pdb/gimpprocedure.h"
 end_include
 
 begin_include
@@ -507,7 +507,7 @@ expr_stmt|;
 block|}
 name|return_vals
 operator|=
-name|procedural_db_run_proc
+name|gimp_pdb_run_proc
 argument_list|(
 name|gimp
 argument_list|,
@@ -809,7 +809,7 @@ name|NULL
 return|;
 name|procedure
 operator|=
-name|procedural_db_lookup
+name|gimp_pdb_lookup
 argument_list|(
 name|gimp
 argument_list|,
@@ -873,7 +873,7 @@ argument_list|)
 expr_stmt|;
 name|return_vals
 operator|=
-name|procedural_db_run_proc
+name|gimp_pdb_run_proc
 argument_list|(
 name|gimp
 argument_list|,

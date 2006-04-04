@@ -72,7 +72,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb/gimpprocedure.h"
+file|"pdb/gimp-pdb.h"
 end_include
 
 begin_include
@@ -84,7 +84,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb/procedural_db.h"
+file|"pdb/gimpprocedure.h"
 end_include
 
 begin_include
@@ -1435,7 +1435,7 @@ argument_list|)
 expr_stmt|;
 name|procedure
 operator|=
-name|procedural_db_lookup
+name|gimp_pdb_lookup
 argument_list|(
 name|plug_in
 operator|->
@@ -1470,7 +1470,7 @@ condition|)
 block|{
 name|procedure
 operator|=
-name|procedural_db_lookup
+name|gimp_pdb_lookup
 argument_list|(
 name|plug_in
 operator|->
@@ -1669,10 +1669,10 @@ argument_list|,
 name|plug_in
 argument_list|)
 expr_stmt|;
-comment|/*  Execute the procedure even if procedural_db_lookup() returned NULL,    *  procedural_db_execute() will return appropriate error return_vals.    */
+comment|/*  Execute the procedure even if gimp_pdb_lookup() returned NULL,    *  gimp_pdb_execute() will return appropriate error return_vals.    */
 name|return_vals
 operator|=
-name|procedural_db_execute
+name|gimp_pdb_execute
 argument_list|(
 name|plug_in
 operator|->

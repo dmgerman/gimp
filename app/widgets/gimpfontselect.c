@@ -54,7 +54,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb/procedural_db.h"
+file|"pdb/gimp-pdb.h"
 end_include
 
 begin_include
@@ -362,7 +362,7 @@ name|closing
 parameter_list|)
 block|{
 return|return
-name|procedural_db_run_proc
+name|gimp_pdb_run_proc
 argument_list|(
 name|dialog
 operator|->

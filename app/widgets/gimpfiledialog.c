@@ -78,7 +78,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb/procedural_db.h"
+file|"pdb/gimp-pdb.h"
 end_include
 
 begin_include
@@ -1141,7 +1141,7 @@ comment|/* FIXME */
 name|local_only
 operator|=
 operator|(
-name|procedural_db_lookup
+name|gimp_pdb_lookup
 argument_list|(
 name|gimp
 argument_list|,
@@ -1176,7 +1176,7 @@ comment|/* FIXME */
 name|local_only
 operator|=
 operator|(
-name|procedural_db_lookup
+name|gimp_pdb_lookup
 argument_list|(
 name|gimp
 argument_list|,

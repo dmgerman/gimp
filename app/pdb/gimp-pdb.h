@@ -6,19 +6,19 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__PROCEDURAL_DB_H__
+name|__GIMP_PDB_H__
 end_ifndef
 
 begin_define
-DECL|macro|__PROCEDURAL_DB_H__
+DECL|macro|__GIMP_PDB_H__
 define|#
 directive|define
-name|__PROCEDURAL_DB_H__
+name|__GIMP_PDB_H__
 end_define
 
 begin_function_decl
 name|void
-name|procedural_db_init
+name|gimp_pdb_init
 parameter_list|(
 name|Gimp
 modifier|*
@@ -29,7 +29,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|procedural_db_free
+name|gimp_pdb_exit
 parameter_list|(
 name|Gimp
 modifier|*
@@ -40,7 +40,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|procedural_db_init_procs
+name|gimp_pdb_init_procs
 parameter_list|(
 name|Gimp
 modifier|*
@@ -51,7 +51,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|procedural_db_register
+name|gimp_pdb_register
 parameter_list|(
 name|Gimp
 modifier|*
@@ -66,7 +66,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|procedural_db_unregister
+name|gimp_pdb_unregister
 parameter_list|(
 name|Gimp
 modifier|*
@@ -75,7 +75,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|name
+name|procedure_name
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -83,7 +83,7 @@ end_function_decl
 begin_function_decl
 name|GimpProcedure
 modifier|*
-name|procedural_db_lookup
+name|gimp_pdb_lookup
 parameter_list|(
 name|Gimp
 modifier|*
@@ -92,7 +92,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|name
+name|procedure_name
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -100,7 +100,7 @@ end_function_decl
 begin_function_decl
 name|GValueArray
 modifier|*
-name|procedural_db_execute
+name|gimp_pdb_execute
 parameter_list|(
 name|Gimp
 modifier|*
@@ -117,7 +117,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|name
+name|procedure_name
 parameter_list|,
 name|GValueArray
 modifier|*
@@ -129,7 +129,7 @@ end_function_decl
 begin_function_decl
 name|GValueArray
 modifier|*
-name|procedural_db_run_proc
+name|gimp_pdb_run_proc
 parameter_list|(
 name|Gimp
 modifier|*
@@ -146,7 +146,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|name
+name|procedure_name
 parameter_list|,
 modifier|...
 parameter_list|)
@@ -159,7 +159,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __PROCEDURAL_DB_H__  */
+comment|/*  __GIMP_PDB_H__  */
 end_comment
 
 end_unit

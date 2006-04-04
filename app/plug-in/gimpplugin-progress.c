@@ -48,13 +48,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb/gimpprocedure.h"
+file|"pdb/gimp-pdb.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"pdb/procedural_db.h"
+file|"pdb/gimpprocedure.h"
 end_include
 
 begin_include
@@ -710,7 +710,7 @@ argument_list|)
 expr_stmt|;
 name|procedure
 operator|=
-name|procedural_db_lookup
+name|gimp_pdb_lookup
 argument_list|(
 name|plug_in
 operator|->

@@ -60,13 +60,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb/gimpprocedure.h"
+file|"pdb/gimp-pdb.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"pdb/procedural_db.h"
+file|"pdb/gimpprocedure.h"
 end_include
 
 begin_include
@@ -605,7 +605,7 @@ expr_stmt|;
 comment|/*  Check if a help browser is already running  */
 name|procedure
 operator|=
-name|procedural_db_lookup
+name|gimp_pdb_lookup
 argument_list|(
 name|gimp
 argument_list|,
@@ -626,7 +626,7 @@ name|NULL
 decl_stmt|;
 name|procedure
 operator|=
-name|procedural_db_lookup
+name|gimp_pdb_lookup
 argument_list|(
 name|gimp
 argument_list|,
@@ -720,7 +720,7 @@ block|}
 comment|/*  Check if the help browser started properly  */
 name|procedure
 operator|=
-name|procedural_db_lookup
+name|gimp_pdb_lookup
 argument_list|(
 name|gimp
 argument_list|,
@@ -923,7 +923,7 @@ decl_stmt|;
 comment|/*  Check if a help parser is already running  */
 name|procedure
 operator|=
-name|procedural_db_lookup
+name|gimp_pdb_lookup
 argument_list|(
 name|gimp
 argument_list|,
@@ -963,7 +963,7 @@ name|NULL
 decl_stmt|;
 name|procedure
 operator|=
-name|procedural_db_lookup
+name|gimp_pdb_lookup
 argument_list|(
 name|gimp
 argument_list|,
@@ -1081,7 +1081,7 @@ block|}
 comment|/*  Check if the help parser started properly  */
 name|procedure
 operator|=
-name|procedural_db_lookup
+name|gimp_pdb_lookup
 argument_list|(
 name|gimp
 argument_list|,
@@ -1129,7 +1129,7 @@ endif|#
 directive|endif
 name|return_vals
 operator|=
-name|procedural_db_run_proc
+name|gimp_pdb_run_proc
 argument_list|(
 name|gimp
 argument_list|,

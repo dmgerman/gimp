@@ -72,13 +72,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb/gimpprocedure.h"
+file|"pdb/gimp-pdb.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"pdb/procedural_db.h"
+file|"pdb/gimpprocedure.h"
 end_include
 
 begin_include
@@ -539,7 +539,7 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|procedural_db_register
+name|gimp_pdb_register
 argument_list|(
 name|gimp
 argument_list|,
@@ -713,7 +713,7 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|procedural_db_register
+name|gimp_pdb_register
 argument_list|(
 name|gimp
 argument_list|,

@@ -100,12 +100,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb/procedural_db.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"plug-in/plug-in.h"
 end_include
 

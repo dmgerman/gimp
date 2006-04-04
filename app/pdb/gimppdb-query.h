@@ -6,19 +6,19 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__PROCEDURAL_DB_QUERY_H__
+name|__GIMP_PDB_QUERY_H__
 end_ifndef
 
 begin_define
-DECL|macro|__PROCEDURAL_DB_QUERY_H__
+DECL|macro|__GIMP_PDB_QUERY_H__
 define|#
 directive|define
-name|__PROCEDURAL_DB_QUERY_H__
+name|__GIMP_PDB_QUERY_H__
 end_define
 
 begin_function_decl
 name|gboolean
-name|procedural_db_dump
+name|gimp_pdb_dump
 parameter_list|(
 name|Gimp
 modifier|*
@@ -34,7 +34,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|procedural_db_query
+name|gimp_pdb_query
 parameter_list|(
 name|Gimp
 modifier|*
@@ -90,7 +90,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|procedural_db_proc_info
+name|gimp_pdb_proc_info
 parameter_list|(
 name|Gimp
 modifier|*
@@ -147,7 +147,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __PROCEDURAL_DB_QUERY_H__ */
+comment|/* __GIMP_PDB_QUERY_H__ */
 end_comment
 
 end_unit

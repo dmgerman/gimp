@@ -82,7 +82,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpprocedure.h"
+file|"gimp-pdb.h"
 end_include
 
 begin_include
@@ -94,13 +94,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"procedural_db.h"
+file|"gimp-pdb-query.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"procedural-db-query.h"
+file|"gimpprocedure.h"
 end_include
 
 begin_include
@@ -244,7 +244,7 @@ end_comment
 begin_function_decl
 specifier|static
 name|void
-name|procedural_db_query_entry
+name|gimp_pdb_query_entry
 parameter_list|(
 name|gpointer
 name|key
@@ -261,7 +261,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|procedural_db_print_entry
+name|gimp_pdb_print_entry
 parameter_list|(
 name|gpointer
 name|key
@@ -278,7 +278,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|procedural_db_get_strings
+name|gimp_pdb_get_strings
 parameter_list|(
 name|PDBStrings
 modifier|*
@@ -300,8 +300,8 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|procedural_db_dump (Gimp * gimp,const gchar * filename)
-name|procedural_db_dump
+DECL|function|gimp_pdb_dump (Gimp * gimp,const gchar * filename)
+name|gimp_pdb_dump
 parameter_list|(
 name|Gimp
 modifier|*
@@ -359,7 +359,7 @@ name|gimp
 operator|->
 name|procedural_ht
 argument_list|,
-name|procedural_db_print_entry
+name|gimp_pdb_print_entry
 argument_list|,
 name|file
 argument_list|)
@@ -377,8 +377,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|procedural_db_query (Gimp * gimp,const gchar * name,const gchar * blurb,const gchar * help,const gchar * author,const gchar * copyright,const gchar * date,const gchar * proc_type,gint * num_procs,gchar *** procs)
-name|procedural_db_query
+DECL|function|gimp_pdb_query (Gimp * gimp,const gchar * name,const gchar * blurb,const gchar * help,const gchar * author,const gchar * copyright,const gchar * date,const gchar * proc_type,gint * num_procs,gchar *** procs)
+name|gimp_pdb_query
 parameter_list|(
 name|Gimp
 modifier|*
@@ -692,7 +692,7 @@ name|gimp
 operator|->
 name|procedural_ht
 argument_list|,
-name|procedural_db_query_entry
+name|gimp_pdb_query_entry
 argument_list|,
 operator|&
 name|pdb_query
@@ -710,7 +710,7 @@ name|gimp
 operator|->
 name|procedural_compat_ht
 argument_list|,
-name|procedural_db_query_entry
+name|gimp_pdb_query_entry
 argument_list|,
 operator|&
 name|pdb_query
@@ -814,8 +814,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|procedural_db_proc_info (Gimp * gimp,const gchar * proc_name,gchar ** blurb,gchar ** help,gchar ** author,gchar ** copyright,gchar ** date,GimpPDBProcType * proc_type,gint * num_args,gint * num_values)
-name|procedural_db_proc_info
+DECL|function|gimp_pdb_proc_info (Gimp * gimp,const gchar * proc_name,gchar ** blurb,gchar ** help,gchar ** author,gchar ** copyright,gchar ** date,GimpPDBProcType * proc_type,gint * num_args,gint * num_values)
+name|gimp_pdb_proc_info
 parameter_list|(
 name|Gimp
 modifier|*
@@ -892,7 +892,7 @@ argument_list|)
 expr_stmt|;
 name|procedure
 operator|=
-name|procedural_db_lookup
+name|gimp_pdb_lookup
 argument_list|(
 name|gimp
 argument_list|,
@@ -904,7 +904,7 @@ condition|(
 name|procedure
 condition|)
 block|{
-name|procedural_db_get_strings
+name|gimp_pdb_get_strings
 argument_list|(
 operator|&
 name|strings
@@ -940,7 +940,7 @@ condition|)
 block|{
 name|procedure
 operator|=
-name|procedural_db_lookup
+name|gimp_pdb_lookup
 argument_list|(
 name|gimp
 argument_list|,
@@ -951,7 +951,7 @@ if|if
 condition|(
 name|procedure
 condition|)
-name|procedural_db_get_strings
+name|gimp_pdb_get_strings
 argument_list|(
 operator|&
 name|strings
@@ -1138,8 +1138,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|procedural_db_query_entry (gpointer key,gpointer value,gpointer user_data)
-name|procedural_db_query_entry
+DECL|function|gimp_pdb_query_entry (gpointer key,gpointer value,gpointer user_data)
+name|gimp_pdb_query_entry
 parameter_list|(
 name|gpointer
 name|key
@@ -1221,7 +1221,7 @@ name|list
 operator|->
 name|data
 expr_stmt|;
-name|procedural_db_get_strings
+name|gimp_pdb_get_strings
 argument_list|(
 operator|&
 name|strings
@@ -1595,8 +1595,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|procedural_db_print_entry (gpointer key,gpointer value,gpointer user_data)
-name|procedural_db_print_entry
+DECL|function|gimp_pdb_print_entry (gpointer key,gpointer value,gpointer user_data)
+name|gimp_pdb_print_entry
 parameter_list|(
 name|gpointer
 name|key
@@ -2056,8 +2056,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|procedural_db_get_strings (PDBStrings * strings,GimpProcedure * procedure,gboolean compat)
-name|procedural_db_get_strings
+DECL|function|gimp_pdb_get_strings (PDBStrings * strings,GimpProcedure * procedure,gboolean compat)
+name|gimp_pdb_get_strings
 parameter_list|(
 name|PDBStrings
 modifier|*

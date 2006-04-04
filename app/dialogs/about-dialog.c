@@ -48,7 +48,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb/procedural_db.h"
+file|"pdb/gimp-pdb.h"
 end_include
 
 begin_include
@@ -86,7 +86,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c9fe3c0108
+DECL|struct|__anon2a203b8b0108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -365,7 +365,7 @@ name|mask
 decl_stmt|;
 if|if
 condition|(
-name|procedural_db_lookup
+name|gimp_pdb_lookup
 argument_list|(
 name|context
 operator|->
@@ -857,7 +857,7 @@ name|return_vals
 decl_stmt|;
 name|return_vals
 operator|=
-name|procedural_db_run_proc
+name|gimp_pdb_run_proc
 argument_list|(
 name|context
 operator|->

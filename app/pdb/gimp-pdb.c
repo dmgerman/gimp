@@ -108,6 +108,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimp-pdb.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpprocedure.h"
 end_include
 
@@ -120,14 +126,29 @@ end_include
 begin_include
 include|#
 directive|include
-file|"procedural_db.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimp-intl.h"
 end_include
+
+begin_comment
+comment|/*  local function prototypes  */
+end_comment
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_pdb_free_entry
+parameter_list|(
+name|gpointer
+name|key
+parameter_list|,
+name|gpointer
+name|value
+parameter_list|,
+name|gpointer
+name|user_data
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_comment
 comment|/*  public functions  */
@@ -135,8 +156,8 @@ end_comment
 
 begin_function
 name|void
-DECL|function|procedural_db_init (Gimp * gimp)
-name|procedural_db_init
+DECL|function|gimp_pdb_init (Gimp * gimp)
+name|gimp_pdb_init
 parameter_list|(
 name|Gimp
 modifier|*
@@ -177,51 +198,9 @@ block|}
 end_function
 
 begin_function
-specifier|static
 name|void
-DECL|function|procedural_db_free_entry (gpointer key,gpointer value,gpointer user_data)
-name|procedural_db_free_entry
-parameter_list|(
-name|gpointer
-name|key
-parameter_list|,
-name|gpointer
-name|value
-parameter_list|,
-name|gpointer
-name|user_data
-parameter_list|)
-block|{
-if|if
-condition|(
-name|value
-condition|)
-block|{
-name|g_list_foreach
-argument_list|(
-name|value
-argument_list|,
-operator|(
-name|GFunc
-operator|)
-name|gimp_procedure_free
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_list_free
-argument_list|(
-name|value
-argument_list|)
-expr_stmt|;
-block|}
-block|}
-end_function
-
-begin_function
-name|void
-DECL|function|procedural_db_free (Gimp * gimp)
-name|procedural_db_free
+DECL|function|gimp_pdb_exit (Gimp * gimp)
+name|gimp_pdb_exit
 parameter_list|(
 name|Gimp
 modifier|*
@@ -249,7 +228,7 @@ name|gimp
 operator|->
 name|procedural_ht
 argument_list|,
-name|procedural_db_free_entry
+name|gimp_pdb_free_entry
 argument_list|,
 name|NULL
 argument_list|)
@@ -294,8 +273,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|procedural_db_init_procs (Gimp * gimp)
-name|procedural_db_init_procs
+DECL|function|gimp_pdb_init_procs (Gimp * gimp)
+name|gimp_pdb_init_procs
 parameter_list|(
 name|Gimp
 modifier|*
@@ -305,7 +284,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon290b47470108
+DECL|struct|__anon2ba7364f0108
 block|{
 DECL|member|old_name
 specifier|const
@@ -749,8 +728,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|procedural_db_register (Gimp * gimp,GimpProcedure * procedure)
-name|procedural_db_register
+DECL|function|gimp_pdb_register (Gimp * gimp,GimpProcedure * procedure)
+name|gimp_pdb_register
 parameter_list|(
 name|Gimp
 modifier|*
@@ -817,8 +796,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|procedural_db_unregister (Gimp * gimp,const gchar * name)
-name|procedural_db_unregister
+DECL|function|gimp_pdb_unregister (Gimp * gimp,const gchar * procedure_name)
+name|gimp_pdb_unregister
 parameter_list|(
 name|Gimp
 modifier|*
@@ -827,7 +806,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|name
+name|procedure_name
 parameter_list|)
 block|{
 name|GList
@@ -844,7 +823,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|name
+name|procedure_name
 operator|!=
 name|NULL
 argument_list|)
@@ -857,7 +836,7 @@ name|gimp
 operator|->
 name|procedural_ht
 argument_list|,
-name|name
+name|procedure_name
 argument_list|)
 expr_stmt|;
 if|if
@@ -889,7 +868,7 @@ argument_list|,
 operator|(
 name|gpointer
 operator|)
-name|name
+name|procedure_name
 argument_list|,
 name|list
 argument_list|)
@@ -901,7 +880,7 @@ name|gimp
 operator|->
 name|procedural_ht
 argument_list|,
-name|name
+name|procedure_name
 argument_list|)
 expr_stmt|;
 block|}
@@ -911,8 +890,8 @@ end_function
 begin_function
 name|GimpProcedure
 modifier|*
-DECL|function|procedural_db_lookup (Gimp * gimp,const gchar * name)
-name|procedural_db_lookup
+DECL|function|gimp_pdb_lookup (Gimp * gimp,const gchar * procedure_name)
+name|gimp_pdb_lookup
 parameter_list|(
 name|Gimp
 modifier|*
@@ -921,7 +900,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|name
+name|procedure_name
 parameter_list|)
 block|{
 name|GList
@@ -940,7 +919,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|name
+name|procedure_name
 operator|!=
 name|NULL
 argument_list|,
@@ -955,7 +934,7 @@ name|gimp
 operator|->
 name|procedural_ht
 argument_list|,
-name|name
+name|procedure_name
 argument_list|)
 expr_stmt|;
 if|if
@@ -967,7 +946,6 @@ name|list
 operator|->
 name|data
 return|;
-else|else
 return|return
 name|NULL
 return|;
@@ -977,8 +955,8 @@ end_function
 begin_function
 name|GValueArray
 modifier|*
-DECL|function|procedural_db_execute (Gimp * gimp,GimpContext * context,GimpProgress * progress,const gchar * name,GValueArray * args)
-name|procedural_db_execute
+DECL|function|gimp_pdb_execute (Gimp * gimp,GimpContext * context,GimpProgress * progress,const gchar * procedure_name,GValueArray * args)
+name|gimp_pdb_execute
 parameter_list|(
 name|Gimp
 modifier|*
@@ -995,7 +973,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|name
+name|procedure_name
 parameter_list|,
 name|GValueArray
 modifier|*
@@ -1048,7 +1026,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|name
+name|procedure_name
 operator|!=
 name|NULL
 argument_list|,
@@ -1072,7 +1050,7 @@ name|gimp
 operator|->
 name|procedural_ht
 argument_list|,
-name|name
+name|procedure_name
 argument_list|)
 expr_stmt|;
 if|if
@@ -1090,7 +1068,7 @@ literal|"PDB calling error:\n"
 literal|"Procedure '%s' not found"
 argument_list|)
 argument_list|,
-name|name
+name|procedure_name
 argument_list|)
 expr_stmt|;
 name|return_vals
@@ -1206,8 +1184,8 @@ end_function
 begin_function
 name|GValueArray
 modifier|*
-DECL|function|procedural_db_run_proc (Gimp * gimp,GimpContext * context,GimpProgress * progress,const gchar * name,...)
-name|procedural_db_run_proc
+DECL|function|gimp_pdb_run_proc (Gimp * gimp,GimpContext * context,GimpProgress * progress,const gchar * procedure_name,...)
+name|gimp_pdb_run_proc
 parameter_list|(
 name|Gimp
 modifier|*
@@ -1224,7 +1202,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|name
+name|procedure_name
 parameter_list|,
 modifier|...
 parameter_list|)
@@ -1283,7 +1261,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|name
+name|procedure_name
 operator|!=
 name|NULL
 argument_list|,
@@ -1292,11 +1270,11 @@ argument_list|)
 expr_stmt|;
 name|procedure
 operator|=
-name|procedural_db_lookup
+name|gimp_pdb_lookup
 argument_list|(
 name|gimp
 argument_list|,
-name|name
+name|procedure_name
 argument_list|)
 expr_stmt|;
 if|if
@@ -1314,7 +1292,7 @@ literal|"PDB calling error:\n"
 literal|"Procedure '%s' not found"
 argument_list|)
 argument_list|,
-name|name
+name|procedure_name
 argument_list|)
 expr_stmt|;
 name|return_vals
@@ -1350,7 +1328,7 @@ name|va_start
 argument_list|(
 name|va_args
 argument_list|,
-name|name
+name|procedure_name
 argument_list|)
 expr_stmt|;
 for|for
@@ -1555,7 +1533,7 @@ argument_list|)
 expr_stmt|;
 name|return_vals
 operator|=
-name|procedural_db_execute
+name|gimp_pdb_execute
 argument_list|(
 name|gimp
 argument_list|,
@@ -1563,7 +1541,7 @@ name|context
 argument_list|,
 name|progress
 argument_list|,
-name|name
+name|procedure_name
 argument_list|,
 name|args
 argument_list|)
@@ -1576,6 +1554,52 @@ expr_stmt|;
 return|return
 name|return_vals
 return|;
+block|}
+end_function
+
+begin_comment
+comment|/*  private functions  */
+end_comment
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_pdb_free_entry (gpointer key,gpointer value,gpointer user_data)
+name|gimp_pdb_free_entry
+parameter_list|(
+name|gpointer
+name|key
+parameter_list|,
+name|gpointer
+name|value
+parameter_list|,
+name|gpointer
+name|user_data
+parameter_list|)
+block|{
+if|if
+condition|(
+name|value
+condition|)
+block|{
+name|g_list_foreach
+argument_list|(
+name|value
+argument_list|,
+operator|(
+name|GFunc
+operator|)
+name|gimp_procedure_free
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_list_free
+argument_list|(
+name|value
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 

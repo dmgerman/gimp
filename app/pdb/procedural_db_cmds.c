@@ -34,13 +34,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpprocedure.h"
+file|"gimp-pdb.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"procedural_db.h"
+file|"gimpprocedure.h"
 end_include
 
 begin_include
@@ -64,13 +64,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"plug-in/plug-in-data.h"
+file|"gimp-pdb-query.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"procedural-db-query.h"
+file|"plug-in/plug-in-data.h"
 end_include
 
 begin_decl_stmt
@@ -194,7 +194,7 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|procedural_db_register
+name|gimp_pdb_register
 argument_list|(
 name|gimp
 argument_list|,
@@ -236,7 +236,7 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|procedural_db_register
+name|gimp_pdb_register
 argument_list|(
 name|gimp
 argument_list|,
@@ -448,7 +448,7 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|procedural_db_register
+name|gimp_pdb_register
 argument_list|(
 name|gimp
 argument_list|,
@@ -664,7 +664,7 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|procedural_db_register
+name|gimp_pdb_register
 argument_list|(
 name|gimp
 argument_list|,
@@ -807,7 +807,7 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|procedural_db_register
+name|gimp_pdb_register
 argument_list|(
 name|gimp
 argument_list|,
@@ -950,7 +950,7 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|procedural_db_register
+name|gimp_pdb_register
 argument_list|(
 name|gimp
 argument_list|,
@@ -1030,7 +1030,7 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|procedural_db_register
+name|gimp_pdb_register
 argument_list|(
 name|gimp
 argument_list|,
@@ -1094,7 +1094,7 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|procedural_db_register
+name|gimp_pdb_register
 argument_list|(
 name|gimp
 argument_list|,
@@ -1174,7 +1174,7 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|procedural_db_register
+name|gimp_pdb_register
 argument_list|(
 name|gimp
 argument_list|,
@@ -1372,7 +1372,7 @@ condition|)
 block|{
 name|success
 operator|=
-name|procedural_db_dump
+name|gimp_pdb_dump
 argument_list|(
 name|gimp
 argument_list|,
@@ -1620,7 +1620,7 @@ condition|)
 block|{
 name|success
 operator|=
-name|procedural_db_query
+name|gimp_pdb_query
 argument_list|(
 name|gimp
 argument_list|,
@@ -1863,7 +1863,7 @@ argument_list|)
 expr_stmt|;
 name|success
 operator|=
-name|procedural_db_proc_info
+name|gimp_pdb_proc_info
 argument_list|(
 name|gimp
 argument_list|,
@@ -2186,7 +2186,7 @@ argument_list|)
 expr_stmt|;
 name|proc
 operator|=
-name|procedural_db_lookup
+name|gimp_pdb_lookup
 argument_list|(
 name|gimp
 argument_list|,
@@ -2221,7 +2221,7 @@ name|compat_name
 condition|)
 name|proc
 operator|=
-name|procedural_db_lookup
+name|gimp_pdb_lookup
 argument_list|(
 name|gimp
 argument_list|,
@@ -2516,7 +2516,7 @@ argument_list|)
 expr_stmt|;
 name|proc
 operator|=
-name|procedural_db_lookup
+name|gimp_pdb_lookup
 argument_list|(
 name|gimp
 argument_list|,
@@ -2551,7 +2551,7 @@ name|compat_name
 condition|)
 name|proc
 operator|=
-name|procedural_db_lookup
+name|gimp_pdb_lookup
 argument_list|(
 name|gimp
 argument_list|,

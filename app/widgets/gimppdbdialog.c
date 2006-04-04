@@ -42,7 +42,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb/procedural_db.h"
+file|"pdb/gimp-pdb.h"
 end_include
 
 begin_include
@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1a3af10103
+DECL|enum|__anon299d860b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1117,7 +1117,7 @@ name|TRUE
 expr_stmt|;
 if|if
 condition|(
-name|procedural_db_lookup
+name|gimp_pdb_lookup
 argument_list|(
 name|dialog
 operator|->
@@ -1351,7 +1351,7 @@ block|{
 if|if
 condition|(
 operator|!
-name|procedural_db_lookup
+name|gimp_pdb_lookup
 argument_list|(
 name|dialog
 operator|->

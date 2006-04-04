@@ -36,7 +36,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb/procedural_db.h"
+file|"pdb/gimp-pdb.h"
 end_include
 
 begin_include
@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28822d0e0103
+DECL|enum|__anon27f623ec0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -961,7 +961,7 @@ name|TRUE
 expr_stmt|;
 name|return_vals
 operator|=
-name|procedural_db_run_proc
+name|gimp_pdb_run_proc
 argument_list|(
 name|progress
 operator|->

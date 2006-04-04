@@ -52,7 +52,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb/procedural_db.h"
+file|"pdb/gimp-pdb.h"
 end_include
 
 begin_include
@@ -267,7 +267,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a418b1b0103
+DECL|enum|__anon292e57c90103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -982,7 +982,7 @@ name|palette_factory
 operator|=
 name|NULL
 expr_stmt|;
-name|procedural_db_init
+name|gimp_pdb_init
 argument_list|(
 name|gimp
 argument_list|)
@@ -1341,7 +1341,7 @@ argument_list|(
 name|gimp
 argument_list|)
 expr_stmt|;
-name|procedural_db_free
+name|gimp_pdb_exit
 argument_list|(
 name|gimp
 argument_list|)
@@ -2511,7 +2511,7 @@ argument_list|,
 literal|0.2
 argument_list|)
 expr_stmt|;
-name|procedural_db_init_procs
+name|gimp_pdb_init_procs
 argument_list|(
 name|gimp
 argument_list|)

@@ -84,13 +84,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb/gimpprocedure.h"
+file|"pdb/gimp-pdb.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"pdb/procedural_db.h"
+file|"pdb/gimpprocedure.h"
 end_include
 
 begin_include
@@ -2679,7 +2679,7 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/*  Register the procedural database entry  */
-name|procedural_db_register
+name|gimp_pdb_register
 argument_list|(
 name|gimp
 argument_list|,
@@ -2761,7 +2761,7 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/*  Unregister the procedural database entry  */
-name|procedural_db_unregister
+name|gimp_pdb_unregister
 argument_list|(
 name|gimp
 argument_list|,
@@ -4383,7 +4383,7 @@ name|proc_def
 operator|->
 name|prog
 expr_stmt|;
-name|procedural_db_register
+name|gimp_pdb_register
 argument_list|(
 name|gimp
 argument_list|,
@@ -4437,7 +4437,7 @@ condition|)
 block|{
 name|return_vals
 operator|=
-name|procedural_db_run_proc
+name|gimp_pdb_run_proc
 argument_list|(
 name|gimp
 argument_list|,
@@ -4475,7 +4475,7 @@ else|else
 block|{
 name|return_vals
 operator|=
-name|procedural_db_run_proc
+name|gimp_pdb_run_proc
 argument_list|(
 name|gimp
 argument_list|,
