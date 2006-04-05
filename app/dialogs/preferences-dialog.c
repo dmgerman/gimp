@@ -8415,7 +8415,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2b70ddb90108
+DECL|struct|__anon2b3758400108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -9127,7 +9127,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"dpi"
+literal|"ppi"
 argument_list|)
 argument_list|,
 literal|1
@@ -9208,7 +9208,8 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"From _windowing system (currently %d Ã %d dpi)"
+literal|"From _windowing system "
+literal|"(currently %d Ã %d ppi)"
 argument_list|)
 argument_list|,
 name|ROUND
@@ -9577,7 +9578,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b70ddb90208
+DECL|struct|__anon2b3758400208
 block|{
 DECL|member|label
 specifier|const
@@ -10484,7 +10485,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b70ddb90308
+DECL|struct|__anon2b3758400308
 block|{
 DECL|member|label
 specifier|const
@@ -10641,7 +10642,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b70ddb90408
+DECL|struct|__anon2b3758400408
 block|{
 DECL|member|tree_label
 specifier|const

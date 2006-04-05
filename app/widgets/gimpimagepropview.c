@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ca51940103
+DECL|enum|__anon27b164fd0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1517,7 +1517,7 @@ name|GIMP_UNIT_INCH
 condition|?
 name|_
 argument_list|(
-literal|"dpi"
+literal|"ppi"
 argument_list|)
 else|:
 name|format_buf

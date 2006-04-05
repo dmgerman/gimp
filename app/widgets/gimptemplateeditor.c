@@ -116,7 +116,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon289a57f80103
+DECL|enum|__anon29d254e30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3533,7 +3533,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"%d Ã %d dpi, %s"
+literal|"%d Ã %d ppi, %s"
 argument_list|)
 argument_list|,
 name|xres
@@ -3550,7 +3550,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"%d dpi, %s"
+literal|"%d ppi, %s"
 argument_list|)
 argument_list|,
 name|yres
