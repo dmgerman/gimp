@@ -52,7 +52,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9ddb070108
+DECL|struct|__anon29354d550108
 block|{
 DECL|member|brightness
 name|gdouble
@@ -113,13 +113,6 @@ condition|)
 return|return
 name|value
 return|;
-name|g_printerr
-argument_list|(
-literal|"%g "
-argument_list|,
-name|value
-argument_list|)
-expr_stmt|;
 comment|/* apply brightness */
 if|if
 condition|(
@@ -184,13 +177,6 @@ operator|*
 name|slant
 operator|+
 literal|0.5
-expr_stmt|;
-name|g_printerr
-argument_list|(
-literal|"%g\n"
-argument_list|,
-name|value
-argument_list|)
 expr_stmt|;
 return|return
 name|value
@@ -1015,7 +1001,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9ddb070208
+DECL|struct|__anon29354d550208
 block|{
 DECL|member|histogram
 name|GimpHistogram
