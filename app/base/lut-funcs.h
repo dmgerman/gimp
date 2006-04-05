@@ -16,10 +16,6 @@ directive|define
 name|__LUT_FUNCS_H__
 end_define
 
-begin_comment
-comment|/* brightness contrast */
-end_comment
-
 begin_function_decl
 name|GimpLut
 modifier|*
@@ -57,10 +53,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/* invert */
-end_comment
-
 begin_function_decl
 name|GimpLut
 modifier|*
@@ -71,24 +63,6 @@ name|n_channels
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_function_decl
-name|void
-name|invert_lut_setup
-parameter_list|(
-name|GimpLut
-modifier|*
-name|lut
-parameter_list|,
-name|gint
-name|n_channels
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
-comment|/* add (or subtract) */
-end_comment
 
 begin_function_decl
 name|GimpLut
@@ -105,27 +79,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
-name|add_lut_setup
-parameter_list|(
-name|GimpLut
-modifier|*
-name|lut
-parameter_list|,
-name|gdouble
-name|amount
-parameter_list|,
-name|gint
-name|n_channels
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
-comment|/* intersect (MIN (pixel, value)) */
-end_comment
-
-begin_function_decl
 name|GimpLut
 modifier|*
 name|intersect_lut_new
@@ -140,27 +93,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
-name|intersect_lut_setup
-parameter_list|(
-name|GimpLut
-modifier|*
-name|lut
-parameter_list|,
-name|gdouble
-name|value
-parameter_list|,
-name|gint
-name|n_channels
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
-comment|/* threshold */
-end_comment
-
-begin_function_decl
 name|GimpLut
 modifier|*
 name|threshold_lut_new
@@ -173,27 +105,6 @@ name|n_channels
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_function_decl
-name|void
-name|threshold_lut_setup
-parameter_list|(
-name|GimpLut
-modifier|*
-name|lut
-parameter_list|,
-name|gdouble
-name|value
-parameter_list|,
-name|gint
-name|n_channels
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
-comment|/* posterize */
-end_comment
 
 begin_function_decl
 name|GimpLut
@@ -226,33 +137,11 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/* equalize histogram */
-end_comment
-
 begin_function_decl
 name|GimpLut
 modifier|*
-name|eq_histogram_lut_new
+name|equalize_lut_new
 parameter_list|(
-name|GimpHistogram
-modifier|*
-name|histogram
-parameter_list|,
-name|gint
-name|n_channels
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|eq_histogram_lut_setup
-parameter_list|(
-name|GimpLut
-modifier|*
-name|lut
-parameter_list|,
 name|GimpHistogram
 modifier|*
 name|histogram

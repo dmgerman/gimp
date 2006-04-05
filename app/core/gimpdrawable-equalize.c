@@ -198,10 +198,9 @@ argument_list|,
 name|hist
 argument_list|)
 expr_stmt|;
-comment|/* Build equalization LUT */
 name|lut
 operator|=
-name|eq_histogram_lut_new
+name|equalize_lut_new
 argument_list|(
 name|hist
 argument_list|,
