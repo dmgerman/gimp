@@ -716,7 +716,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon291fd33a0108
+DECL|struct|__anon29e661cd0108
 block|{
 DECL|member|Width
 name|unsigned
@@ -766,7 +766,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon291fd33a0208
+DECL|struct|__anon29e661cd0208
 block|{
 DECL|member|transparent
 name|int
@@ -3870,7 +3870,10 @@ argument_list|,
 name|frame_number
 argument_list|)
 expr_stmt|;
-comment|/* If the colourmap is now different, we have to promote to 	 RGB! */
+name|gimp_progress_pulse
+argument_list|()
+expr_stmt|;
+comment|/* If the colourmap is now different, we have to promote to RGB! */
 if|if
 condition|(
 operator|!
@@ -4655,6 +4658,13 @@ name|ypos
 operator|++
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|frame_number
+operator|==
+literal|1
+condition|)
+block|{
 name|cur_progress
 operator|++
 expr_stmt|;
@@ -4671,16 +4681,17 @@ condition|)
 name|gimp_progress_update
 argument_list|(
 operator|(
-name|double
+name|gdouble
 operator|)
 name|cur_progress
 operator|/
 operator|(
-name|double
+name|gdouble
 operator|)
 name|max_progress
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 if|if
 condition|(
@@ -4871,35 +4882,6 @@ end_endif
 begin_comment
 comment|/*SIGNED_COMPARE_SLOW */
 end_comment
-
-begin_decl_stmt
-DECL|variable|rowstride
-name|int
-name|rowstride
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|pixels
-name|guchar
-modifier|*
-name|pixels
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|cur_progress
-name|int
-name|cur_progress
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|max_progress
-name|int
-name|max_progress
-decl_stmt|;
-end_decl_stmt
 
 begin_comment
 comment|/* public */
