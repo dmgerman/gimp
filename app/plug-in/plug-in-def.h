@@ -104,15 +104,15 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|plug_in_def_add_proc_def
+name|plug_in_def_add_procedure
 parameter_list|(
 name|PlugInDef
 modifier|*
 name|plug_in_def
 parameter_list|,
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
-name|proc_def
+name|proc
 parameter_list|)
 function_decl|;
 end_function_decl

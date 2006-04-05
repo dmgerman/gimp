@@ -168,7 +168,7 @@ name|GimpProcedure
 modifier|*
 name|procedure
 decl_stmt|;
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
 name|file_proc
 decl_stmt|;
@@ -386,7 +386,7 @@ name|GValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
 name|file_proc
 decl_stmt|;
@@ -467,9 +467,10 @@ argument_list|)
 return|;
 name|proc
 operator|=
+name|GIMP_PROCEDURE
+argument_list|(
 name|file_proc
-operator|->
-name|procedure
+argument_list|)
 expr_stmt|;
 name|new_args
 operator|=
@@ -1155,7 +1156,7 @@ name|GValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
 name|file_proc
 decl_stmt|;
@@ -1236,9 +1237,10 @@ argument_list|)
 return|;
 name|proc
 operator|=
+name|GIMP_PROCEDURE
+argument_list|(
 name|file_proc
-operator|->
-name|procedure
+argument_list|)
 expr_stmt|;
 name|new_args
 operator|=
@@ -1998,7 +2000,7 @@ name|GimpProcedure
 modifier|*
 name|proc
 decl_stmt|;
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
 name|file_proc
 decl_stmt|;

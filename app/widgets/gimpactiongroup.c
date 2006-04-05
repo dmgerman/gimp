@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon288c9cc40103
+DECL|enum|__anon2b2440500103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2406,7 +2406,7 @@ index|[
 name|i
 index|]
 operator|.
-name|proc_def
+name|procedure
 argument_list|)
 expr_stmt|;
 if|if

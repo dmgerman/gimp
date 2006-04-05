@@ -127,7 +127,7 @@ end_comment
 
 begin_function_decl
 specifier|static
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
 name|file_proc_find_by_prefix
 parameter_list|(
@@ -148,7 +148,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
 name|file_proc_find_by_extension
 parameter_list|(
@@ -169,7 +169,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
 name|file_proc_find_by_name
 parameter_list|(
@@ -557,7 +557,7 @@ block|}
 end_function
 
 begin_function
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
 DECL|function|file_utils_find_proc (GSList * procs,const gchar * uri)
 name|file_utils_find_proc
@@ -572,7 +572,7 @@ modifier|*
 name|uri
 parameter_list|)
 block|{
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
 name|file_proc
 decl_stmt|;
@@ -636,7 +636,7 @@ condition|(
 name|filename
 condition|)
 block|{
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
 name|size_matched_proc
 init|=
@@ -841,7 +841,7 @@ block|}
 end_function
 
 begin_function
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
 DECL|function|file_utils_find_proc_by_extension (GSList * procs,const gchar * uri)
 name|file_utils_find_proc_by_extension
@@ -1257,7 +1257,7 @@ end_comment
 
 begin_function
 specifier|static
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
 DECL|function|file_proc_find_by_prefix (GSList * procs,const gchar * uri,gboolean skip_magic)
 name|file_proc_find_by_prefix
@@ -1295,7 +1295,7 @@ name|p
 argument_list|)
 control|)
 block|{
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
 name|proc
 init|=
@@ -1367,7 +1367,7 @@ end_function
 
 begin_function
 specifier|static
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
 DECL|function|file_proc_find_by_extension (GSList * procs,const gchar * uri,gboolean skip_magic)
 name|file_proc_find_by_extension
@@ -1426,7 +1426,7 @@ name|p
 argument_list|)
 control|)
 block|{
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
 name|proc
 init|=
@@ -1541,7 +1541,7 @@ end_function
 
 begin_function
 specifier|static
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
 DECL|function|file_proc_find_by_name (GSList * procs,const gchar * uri,gboolean skip_magic)
 name|file_proc_find_by_name
@@ -1559,7 +1559,7 @@ name|gboolean
 name|skip_magic
 parameter_list|)
 block|{
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
 name|proc
 decl_stmt|;

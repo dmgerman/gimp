@@ -442,10 +442,10 @@ name|gchar
 modifier|*
 name|tooltip
 decl_stmt|;
-DECL|member|proc_def
-name|PlugInProcDef
+DECL|member|procedure
+name|GimpPlugInProcedure
 modifier|*
-name|proc_def
+name|procedure
 decl_stmt|;
 DECL|member|help_id
 specifier|const

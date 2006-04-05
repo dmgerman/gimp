@@ -1499,14 +1499,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_file_dialog_set_file_proc (GimpFileDialog * dialog,PlugInProcDef * file_proc)
+DECL|function|gimp_file_dialog_set_file_proc (GimpFileDialog * dialog,GimpPlugInProcedure * file_proc)
 name|gimp_file_dialog_set_file_proc
 parameter_list|(
 name|GimpFileDialog
 modifier|*
 name|dialog
 parameter_list|,
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
 name|file_proc
 parameter_list|)
@@ -1951,7 +1951,7 @@ name|list
 argument_list|)
 control|)
 block|{
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
 name|file_proc
 init|=
@@ -2008,7 +2008,7 @@ argument_list|)
 expr_stmt|;
 name|label
 operator|=
-name|plug_in_proc_def_get_label
+name|gimp_plug_in_procedure_get_label
 argument_list|(
 name|file_proc
 argument_list|,
@@ -2577,7 +2577,7 @@ operator|==
 name|GTK_FILE_CHOOSER_ACTION_SAVE
 condition|)
 block|{
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
 name|proc
 init|=

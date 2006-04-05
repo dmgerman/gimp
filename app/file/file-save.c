@@ -212,7 +212,7 @@ end_comment
 
 begin_function
 name|GimpPDBStatusType
-DECL|function|file_save (GimpImage * image,GimpContext * context,GimpProgress * progress,const gchar * uri,PlugInProcDef * file_proc,GimpRunMode run_mode,gboolean save_a_copy,GError ** error)
+DECL|function|file_save (GimpImage * image,GimpContext * context,GimpProgress * progress,const gchar * uri,GimpPlugInProcedure * file_proc,GimpRunMode run_mode,gboolean save_a_copy,GError ** error)
 name|file_save
 parameter_list|(
 name|GimpImage
@@ -232,7 +232,7 @@ name|gchar
 modifier|*
 name|uri
 parameter_list|,
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
 name|file_proc
 parameter_list|,
@@ -304,9 +304,10 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
+name|GIMP_IS_PLUG_IN_PROCEDURE
+argument_list|(
 name|file_proc
-operator|!=
-name|NULL
+argument_list|)
 argument_list|,
 name|GIMP_PDB_CALLING_ERROR
 argument_list|)
@@ -456,9 +457,10 @@ name|context
 argument_list|,
 name|progress
 argument_list|,
+name|GIMP_PROCEDURE
+argument_list|(
 name|file_proc
-operator|->
-name|procedure
+argument_list|)
 operator|->
 name|name
 argument_list|,

@@ -81,9 +81,9 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
-name|proc_def
+name|proc
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -93,7 +93,7 @@ comment|/* Add in the file load/save handler fields procedure. */
 end_comment
 
 begin_function_decl
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
 name|plug_ins_file_register_magic
 parameter_list|(
@@ -125,7 +125,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
 name|plug_ins_file_register_mime
 parameter_list|(
@@ -147,7 +147,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
 name|plug_ins_file_register_thumb_loader
 parameter_list|(
@@ -199,9 +199,9 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
-name|proc_def
+name|proc
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -214,9 +214,9 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
-name|proc_def
+name|proc
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -390,49 +390,6 @@ modifier|*
 modifier|*
 modifier|*
 name|help_uris
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
-comment|/* Retreive a plug-ins proc_def from its GimpProcedure */
-end_comment
-
-begin_function_decl
-name|PlugInProcDef
-modifier|*
-name|plug_ins_proc_def_find
-parameter_list|(
-name|Gimp
-modifier|*
-name|gimp
-parameter_list|,
-name|GimpProcedure
-modifier|*
-name|procedure
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|GSList
-modifier|*
-name|plug_ins_extensions_parse
-parameter_list|(
-name|gchar
-modifier|*
-name|extensions
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|PlugInImageType
-name|plug_ins_image_types_parse
-parameter_list|(
-name|gchar
-modifier|*
-name|image_types
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -139,7 +139,7 @@ name|gchar
 modifier|*
 name|entered_filename
 parameter_list|,
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
 name|load_proc
 parameter_list|)
@@ -169,7 +169,7 @@ name|gchar
 modifier|*
 name|entered_filename
 parameter_list|,
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
 name|load_proc
 parameter_list|)
@@ -556,7 +556,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|file_open_dialog_open_image (GtkWidget * open_dialog,Gimp * gimp,const gchar * uri,const gchar * entered_filename,PlugInProcDef * load_proc)
+DECL|function|file_open_dialog_open_image (GtkWidget * open_dialog,Gimp * gimp,const gchar * uri,const gchar * entered_filename,GimpPlugInProcedure * load_proc)
 name|file_open_dialog_open_image
 parameter_list|(
 name|GtkWidget
@@ -577,7 +577,7 @@ name|gchar
 modifier|*
 name|entered_filename
 parameter_list|,
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
 name|load_proc
 parameter_list|)
@@ -685,7 +685,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|file_open_dialog_open_layer (GtkWidget * open_dialog,GimpImage * image,const gchar * uri,const gchar * entered_filename,PlugInProcDef * load_proc)
+DECL|function|file_open_dialog_open_layer (GtkWidget * open_dialog,GimpImage * image,const gchar * uri,const gchar * entered_filename,GimpPlugInProcedure * load_proc)
 name|file_open_dialog_open_layer
 parameter_list|(
 name|GtkWidget
@@ -706,7 +706,7 @@ name|gchar
 modifier|*
 name|entered_filename
 parameter_list|,
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
 name|load_proc
 parameter_list|)

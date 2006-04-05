@@ -101,10 +101,10 @@ DECL|struct|_PlugInMenuEntry
 struct|struct
 name|_PlugInMenuEntry
 block|{
-DECL|member|proc_def
-name|PlugInProcDef
+DECL|member|proc
+name|GimpPlugInProcedure
 modifier|*
-name|proc_def
+name|proc
 decl_stmt|;
 DECL|member|menu_path
 specifier|const
@@ -559,9 +559,9 @@ name|list
 argument_list|)
 control|)
 block|{
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
-name|proc_def
+name|proc
 init|=
 name|list
 operator|->
@@ -569,26 +569,26 @@ name|data
 decl_stmt|;
 if|if
 condition|(
-name|proc_def
+name|proc
 operator|->
 name|prog
 operator|&&
-name|proc_def
+name|proc
 operator|->
 name|menu_paths
 operator|&&
 operator|!
-name|proc_def
+name|proc
 operator|->
 name|extensions
 operator|&&
 operator|!
-name|proc_def
+name|proc
 operator|->
 name|prefixes
 operator|&&
 operator|!
-name|proc_def
+name|proc
 operator|->
 name|magics
 condition|)
@@ -601,7 +601,7 @@ for|for
 control|(
 name|path
 operator|=
-name|proc_def
+name|proc
 operator|->
 name|menu_paths
 init|;
@@ -664,9 +664,9 @@ name|key
 decl_stmt|;
 name|entry
 operator|->
-name|proc_def
+name|proc
 operator|=
-name|proc_def
+name|proc
 expr_stmt|;
 name|entry
 operator|->
@@ -678,9 +678,9 @@ name|data
 expr_stmt|;
 name|progname
 operator|=
-name|plug_in_proc_def_get_progname
+name|gimp_plug_in_procedure_get_progname
 argument_list|(
-name|proc_def
+name|proc
 argument_list|)
 expr_stmt|;
 name|locale_domain
@@ -698,7 +698,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|proc_def
+name|proc
 operator|->
 name|menu_label
 condition|)
@@ -730,7 +730,7 @@ name|dgettext
 argument_list|(
 name|locale_domain
 argument_list|,
-name|proc_def
+name|proc
 operator|->
 name|menu_label
 argument_list|)
@@ -862,7 +862,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|plug_in_menus_add_proc (GimpUIManager * manager,const gchar * ui_path,PlugInProcDef * proc_def,const gchar * menu_path)
+DECL|function|plug_in_menus_add_proc (GimpUIManager * manager,const gchar * ui_path,GimpPlugInProcedure * proc,const gchar * menu_path)
 name|plug_in_menus_add_proc
 parameter_list|(
 name|GimpUIManager
@@ -874,9 +874,9 @@ name|gchar
 modifier|*
 name|ui_path
 parameter_list|,
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
-name|proc_def
+name|proc
 parameter_list|,
 specifier|const
 name|gchar
@@ -923,9 +923,10 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|proc_def
-operator|!=
-name|NULL
+name|GIMP_IS_PLUG_IN_PROCEDURE
+argument_list|(
+name|proc
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|path
@@ -938,7 +939,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|proc_def
+name|proc
 operator|->
 name|menu_label
 condition|)
@@ -987,9 +988,10 @@ name|g_strdup_printf
 argument_list|(
 literal|"%s-merge-id"
 argument_list|,
-name|proc_def
-operator|->
-name|procedure
+name|GIMP_PROCEDURE
+argument_list|(
+name|proc
+argument_list|)
 operator|->
 name|name
 argument_list|)
@@ -1136,7 +1138,7 @@ block|}
 if|#
 directive|if
 literal|0
-block|g_print ("adding menu item for '%s' (@ %s)\n",            proc_def->procedure->name, action_path);
+block|g_print ("adding menu item for '%s' (@ %s)\n",            GIMP_PROCEDURE (proc)->name, action_path);
 endif|#
 directive|endif
 name|gtk_ui_manager_add_ui
@@ -1150,15 +1152,17 @@ name|merge_id
 argument_list|,
 name|action_path
 argument_list|,
-name|proc_def
-operator|->
-name|procedure
+name|GIMP_PROCEDURE
+argument_list|(
+name|proc
+argument_list|)
 operator|->
 name|name
 argument_list|,
-name|proc_def
-operator|->
-name|procedure
+name|GIMP_PROCEDURE
+argument_list|(
+name|proc
+argument_list|)
 operator|->
 name|name
 argument_list|,
@@ -1182,16 +1186,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|plug_in_menus_remove_proc (GimpUIManager * manager,PlugInProcDef * proc_def)
+DECL|function|plug_in_menus_remove_proc (GimpUIManager * manager,GimpPlugInProcedure * proc)
 name|plug_in_menus_remove_proc
 parameter_list|(
 name|GimpUIManager
 modifier|*
 name|manager
 parameter_list|,
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
-name|proc_def
+name|proc
 parameter_list|)
 block|{
 name|gchar
@@ -1211,9 +1215,10 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|proc_def
-operator|!=
-name|NULL
+name|GIMP_IS_PLUG_IN_PROCEDURE
+argument_list|(
+name|proc
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|merge_key
@@ -1222,9 +1227,10 @@ name|g_strdup_printf
 argument_list|(
 literal|"%s-merge-id"
 argument_list|,
-name|proc_def
-operator|->
-name|procedure
+name|GIMP_PROCEDURE
+argument_list|(
+name|proc
+argument_list|)
 operator|->
 name|name
 argument_list|)
@@ -1311,7 +1317,7 @@ name|ui_path
 argument_list|,
 name|entry
 operator|->
-name|proc_def
+name|proc
 argument_list|,
 name|entry
 operator|->

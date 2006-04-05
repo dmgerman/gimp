@@ -37,7 +37,7 @@ name|gchar
 modifier|*
 name|uri
 parameter_list|,
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
 name|file_proc
 parameter_list|,

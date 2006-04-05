@@ -520,9 +520,9 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
-name|proc_def
+name|proc
 parameter_list|,
 specifier|const
 name|gchar
@@ -541,9 +541,9 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
-name|proc_def
+name|proc
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1680,16 +1680,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gui_menus_add_proc (Gimp * gimp,PlugInProcDef * proc_def,const gchar * menu_path)
+DECL|function|gui_menus_add_proc (Gimp * gimp,GimpPlugInProcedure * proc,const gchar * menu_path)
 name|gui_menus_add_proc
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
-name|proc_def
+name|proc
 parameter_list|,
 specifier|const
 name|gchar
@@ -1775,7 +1775,7 @@ name|data
 argument_list|,
 literal|"/image-menubar"
 argument_list|,
-name|proc_def
+name|proc
 argument_list|,
 name|menu_path
 argument_list|)
@@ -1788,7 +1788,7 @@ name|data
 argument_list|,
 literal|"/dummy-menubar/image-popup"
 argument_list|,
-name|proc_def
+name|proc
 argument_list|,
 name|menu_path
 argument_list|)
@@ -1814,7 +1814,7 @@ name|data
 argument_list|,
 literal|"/toolbox-menubar"
 argument_list|,
-name|proc_def
+name|proc
 argument_list|,
 name|menu_path
 argument_list|)
@@ -1840,7 +1840,7 @@ name|data
 argument_list|,
 literal|"/brushes-popup"
 argument_list|,
-name|proc_def
+name|proc
 argument_list|,
 name|menu_path
 argument_list|)
@@ -1866,7 +1866,7 @@ name|data
 argument_list|,
 literal|"/gradients-popup"
 argument_list|,
-name|proc_def
+name|proc
 argument_list|,
 name|menu_path
 argument_list|)
@@ -1892,7 +1892,7 @@ name|data
 argument_list|,
 literal|"/palettes-popup"
 argument_list|,
-name|proc_def
+name|proc
 argument_list|,
 name|menu_path
 argument_list|)
@@ -1918,7 +1918,7 @@ name|data
 argument_list|,
 literal|"/patterns-popup"
 argument_list|,
-name|proc_def
+name|proc
 argument_list|,
 name|menu_path
 argument_list|)
@@ -1944,7 +1944,7 @@ name|data
 argument_list|,
 literal|"/fonts-popup"
 argument_list|,
-name|proc_def
+name|proc
 argument_list|,
 name|menu_path
 argument_list|)
@@ -1970,7 +1970,7 @@ name|data
 argument_list|,
 literal|"/buffers-popup"
 argument_list|,
-name|proc_def
+name|proc
 argument_list|,
 name|menu_path
 argument_list|)
@@ -1989,16 +1989,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gui_menus_delete_proc (Gimp * gimp,PlugInProcDef * proc_def,const gchar * menu_path)
+DECL|function|gui_menus_delete_proc (Gimp * gimp,GimpPlugInProcedure * proc,const gchar * menu_path)
 name|gui_menus_delete_proc
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
-name|proc_def
+name|proc
 parameter_list|,
 specifier|const
 name|gchar
@@ -2071,7 +2071,7 @@ name|list
 operator|->
 name|data
 argument_list|,
-name|proc_def
+name|proc
 argument_list|)
 expr_stmt|;
 block|}
@@ -2087,16 +2087,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gui_menus_create_item (Gimp * gimp,PlugInProcDef * proc_def,const gchar * menu_path)
+DECL|function|gui_menus_create_item (Gimp * gimp,GimpPlugInProcedure * proc,const gchar * menu_path)
 name|gui_menus_create_item
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
-name|proc_def
+name|proc
 parameter_list|,
 specifier|const
 name|gchar
@@ -2140,7 +2140,7 @@ name|list
 operator|->
 name|data
 argument_list|,
-name|proc_def
+name|proc
 argument_list|)
 expr_stmt|;
 block|}
@@ -2152,7 +2152,7 @@ name|list
 operator|->
 name|data
 argument_list|,
-name|proc_def
+name|proc
 argument_list|,
 name|menu_path
 argument_list|)
@@ -2170,7 +2170,7 @@ for|for
 control|(
 name|list
 operator|=
-name|proc_def
+name|proc
 operator|->
 name|menu_paths
 init|;
@@ -2187,7 +2187,7 @@ name|gui_menus_add_proc
 argument_list|(
 name|gimp
 argument_list|,
-name|proc_def
+name|proc
 argument_list|,
 name|list
 operator|->
@@ -2201,7 +2201,7 @@ name|gui_menus_add_proc
 argument_list|(
 name|gimp
 argument_list|,
-name|proc_def
+name|proc
 argument_list|,
 name|menu_path
 argument_list|)
@@ -2213,16 +2213,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gui_menus_delete_item (Gimp * gimp,PlugInProcDef * proc_def)
+DECL|function|gui_menus_delete_item (Gimp * gimp,GimpPlugInProcedure * proc)
 name|gui_menus_delete_item
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
-name|proc_def
+name|proc
 parameter_list|)
 block|{
 name|GList
@@ -2233,7 +2233,7 @@ for|for
 control|(
 name|list
 operator|=
-name|proc_def
+name|proc
 operator|->
 name|menu_paths
 init|;
@@ -2250,7 +2250,7 @@ name|gui_menus_delete_proc
 argument_list|(
 name|gimp
 argument_list|,
-name|proc_def
+name|proc
 argument_list|,
 name|list
 operator|->
@@ -2282,7 +2282,7 @@ name|list
 operator|->
 name|data
 argument_list|,
-name|proc_def
+name|proc
 argument_list|)
 expr_stmt|;
 block|}

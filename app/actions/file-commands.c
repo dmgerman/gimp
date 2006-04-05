@@ -736,7 +736,7 @@ name|gchar
 modifier|*
 name|uri
 decl_stmt|;
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
 name|save_proc
 init|=

@@ -174,7 +174,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
 name|gimp_file_proc_view_get_proc
 parameter_list|(
@@ -198,7 +198,7 @@ name|GimpFileProcView
 modifier|*
 name|view
 parameter_list|,
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
 name|proc
 parameter_list|)

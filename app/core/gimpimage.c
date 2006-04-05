@@ -282,7 +282,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon295b63990103
+DECL|enum|__anon287858bd0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -361,7 +361,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon295b63990203
+DECL|enum|__anon287858bd0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -5676,14 +5676,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_set_save_proc (GimpImage * image,PlugInProcDef * proc)
+DECL|function|gimp_image_set_save_proc (GimpImage * image,GimpPlugInProcedure * proc)
 name|gimp_image_set_save_proc
 parameter_list|(
 name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
 name|proc
 parameter_list|)
@@ -5706,7 +5706,7 @@ block|}
 end_function
 
 begin_function
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
 DECL|function|gimp_image_get_save_proc (const GimpImage * image)
 name|gimp_image_get_save_proc

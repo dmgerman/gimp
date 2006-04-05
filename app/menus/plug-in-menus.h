@@ -65,9 +65,9 @@ name|gchar
 modifier|*
 name|ui_path
 parameter_list|,
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
-name|proc_def
+name|proc
 parameter_list|,
 specifier|const
 name|gchar
@@ -85,9 +85,9 @@ name|GimpUIManager
 modifier|*
 name|manager
 parameter_list|,
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
-name|proc_def
+name|proc
 parameter_list|)
 function_decl|;
 end_function_decl

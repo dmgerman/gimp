@@ -157,7 +157,7 @@ modifier|*
 modifier|*
 name|ret_basename
 parameter_list|,
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
 modifier|*
 name|ret_save_proc
@@ -200,7 +200,7 @@ name|gchar
 modifier|*
 name|uri
 parameter_list|,
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
 name|save_proc
 parameter_list|,
@@ -404,7 +404,7 @@ name|gchar
 modifier|*
 name|basename
 decl_stmt|;
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
 name|save_proc
 decl_stmt|;
@@ -505,7 +505,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|file_save_dialog_check_uri (GtkWidget * save_dialog,Gimp * gimp,gchar ** ret_uri,gchar ** ret_basename,PlugInProcDef ** ret_save_proc)
+DECL|function|file_save_dialog_check_uri (GtkWidget * save_dialog,Gimp * gimp,gchar ** ret_uri,gchar ** ret_basename,GimpPlugInProcedure ** ret_save_proc)
 name|file_save_dialog_check_uri
 parameter_list|(
 name|GtkWidget
@@ -526,7 +526,7 @@ modifier|*
 modifier|*
 name|ret_basename
 parameter_list|,
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
 modifier|*
 name|ret_save_proc
@@ -549,15 +549,15 @@ name|gchar
 modifier|*
 name|basename
 decl_stmt|;
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
 name|save_proc
 decl_stmt|;
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
 name|uri_proc
 decl_stmt|;
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
 name|basename_proc
 decl_stmt|;
@@ -1399,7 +1399,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|file_save_dialog_save_image (GtkWidget * save_dialog,GimpImage * image,const gchar * uri,PlugInProcDef * save_proc,gboolean save_a_copy)
+DECL|function|file_save_dialog_save_image (GtkWidget * save_dialog,GimpImage * image,const gchar * uri,GimpPlugInProcedure * save_proc,gboolean save_a_copy)
 name|file_save_dialog_save_image
 parameter_list|(
 name|GtkWidget
@@ -1415,7 +1415,7 @@ name|gchar
 modifier|*
 name|uri
 parameter_list|,
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
 name|save_proc
 parameter_list|,

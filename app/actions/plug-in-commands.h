@@ -24,9 +24,9 @@ name|GtkAction
 modifier|*
 name|action
 parameter_list|,
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
-name|proc_def
+name|proc
 parameter_list|,
 name|gpointer
 name|data

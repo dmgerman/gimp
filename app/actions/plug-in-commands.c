@@ -164,28 +164,33 @@ end_comment
 
 begin_function
 name|void
-DECL|function|plug_in_run_cmd_callback (GtkAction * action,PlugInProcDef * proc_def,gpointer data)
+DECL|function|plug_in_run_cmd_callback (GtkAction * action,GimpPlugInProcedure * proc,gpointer data)
 name|plug_in_run_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
 name|action
 parameter_list|,
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
-name|proc_def
+name|proc
 parameter_list|,
 name|gpointer
 name|data
 parameter_list|)
 block|{
-name|Gimp
-modifier|*
-name|gimp
-decl_stmt|;
 name|GimpProcedure
 modifier|*
 name|procedure
+init|=
+name|GIMP_PROCEDURE
+argument_list|(
+name|proc
+argument_list|)
+decl_stmt|;
+name|Gimp
+modifier|*
+name|gimp
 decl_stmt|;
 name|GValueArray
 modifier|*
@@ -208,12 +213,6 @@ name|gimp
 argument_list|,
 name|data
 argument_list|)
-expr_stmt|;
-name|procedure
-operator|=
-name|proc_def
-operator|->
-name|procedure
 expr_stmt|;
 name|args
 operator|=
@@ -461,7 +460,7 @@ name|gimp_set_last_plug_in
 argument_list|(
 name|gimp
 argument_list|,
-name|proc_def
+name|proc
 argument_list|)
 expr_stmt|;
 block|}

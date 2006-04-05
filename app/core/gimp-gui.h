@@ -293,9 +293,9 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
-name|proc_def
+name|proc
 parameter_list|,
 specifier|const
 name|gchar
@@ -314,9 +314,9 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
-name|proc_def
+name|proc
 parameter_list|)
 function_decl|;
 DECL|member|menus_create_branch
@@ -720,9 +720,9 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
-name|proc_def
+name|proc
 parameter_list|,
 specifier|const
 name|gchar
@@ -740,9 +740,9 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
-name|proc_def
+name|proc
 parameter_list|)
 function_decl|;
 end_function_decl

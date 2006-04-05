@@ -267,7 +267,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon292e57c90103
+DECL|enum|__anon29fb86680103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -3842,16 +3842,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_set_last_plug_in (Gimp * gimp,PlugInProcDef * proc_def)
+DECL|function|gimp_set_last_plug_in (Gimp * gimp,GimpPlugInProcedure * proc)
 name|gimp_set_last_plug_in
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
-name|proc_def
+name|proc
 parameter_list|)
 block|{
 name|GSList
@@ -3892,7 +3892,7 @@ name|gimp
 operator|->
 name|last_plug_ins
 argument_list|,
-name|proc_def
+name|proc
 argument_list|)
 expr_stmt|;
 name|gimp
@@ -3905,7 +3905,7 @@ name|gimp
 operator|->
 name|last_plug_ins
 argument_list|,
-name|proc_def
+name|proc
 argument_list|)
 expr_stmt|;
 name|list

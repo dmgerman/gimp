@@ -56,15 +56,6 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|PlugInProcDef
-typedef|typedef
-name|struct
-name|_PlugInProcDef
-name|PlugInProcDef
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|PlugInProcFrame
 typedef|typedef
 name|struct
@@ -79,6 +70,15 @@ typedef|typedef
 name|struct
 name|_PlugInShm
 name|PlugInShm
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpPlugInProcedure
+typedef|typedef
+name|struct
+name|_GimpPlugInProcedure
+name|GimpPlugInProcedure
 typedef|;
 end_typedef
 

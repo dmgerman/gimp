@@ -102,7 +102,7 @@ name|GtkFileChooserDialog
 name|parent_instance
 decl_stmt|;
 DECL|member|file_proc
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
 name|file_proc
 decl_stmt|;
@@ -227,7 +227,7 @@ name|GimpFileDialog
 modifier|*
 name|dialog
 parameter_list|,
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
 name|file_proc
 parameter_list|)

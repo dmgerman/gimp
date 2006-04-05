@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a410ce0103
+DECL|enum|__anon27dfb87e0103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -54,13 +54,13 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a410ce0203
+DECL|enum|__anon27dfb87e0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
 block|,
-DECL|enumerator|PROP_PROC_DEF
-name|PROP_PROC_DEF
+DECL|enumerator|PROP_PROCEDURE
+name|PROP_PROCEDURE
 block|}
 enum|;
 end_enum
@@ -232,11 +232,11 @@ name|g_object_class_install_property
 argument_list|(
 name|object_class
 argument_list|,
-name|PROP_PROC_DEF
+name|PROP_PROCEDURE
 argument_list|,
 name|g_param_spec_pointer
 argument_list|(
-literal|"proc-def"
+literal|"procedure"
 argument_list|,
 name|NULL
 argument_list|,
@@ -298,7 +298,7 @@ parameter_list|)
 block|{
 name|action
 operator|->
-name|proc_def
+name|proc
 operator|=
 name|NULL
 expr_stmt|;
@@ -342,7 +342,7 @@ name|prop_id
 condition|)
 block|{
 case|case
-name|PROP_PROC_DEF
+name|PROP_PROCEDURE
 case|:
 name|g_value_set_pointer
 argument_list|(
@@ -350,7 +350,7 @@ name|value
 argument_list|,
 name|action
 operator|->
-name|proc_def
+name|proc
 argument_list|)
 expr_stmt|;
 break|break;
@@ -407,11 +407,11 @@ name|prop_id
 condition|)
 block|{
 case|case
-name|PROP_PROC_DEF
+name|PROP_PROCEDURE
 case|:
 name|action
 operator|->
-name|proc_def
+name|proc
 operator|=
 name|g_value_get_pointer
 argument_list|(
@@ -460,7 +460,7 @@ name|plug_in_action
 argument_list|,
 name|plug_in_action
 operator|->
-name|proc_def
+name|proc
 argument_list|)
 expr_stmt|;
 block|}
@@ -511,7 +511,7 @@ argument_list|)
 operator|&&
 name|plug_in_action
 operator|->
-name|proc_def
+name|proc
 condition|)
 block|{
 name|GdkPixbuf
@@ -520,11 +520,11 @@ name|pixbuf
 decl_stmt|;
 name|pixbuf
 operator|=
-name|plug_in_proc_def_get_pixbuf
+name|gimp_plug_in_procedure_get_pixbuf
 argument_list|(
 name|plug_in_action
 operator|->
-name|proc_def
+name|proc
 argument_list|)
 expr_stmt|;
 if|if
@@ -642,7 +642,7 @@ end_comment
 begin_function
 name|GimpPlugInAction
 modifier|*
-DECL|function|gimp_plug_in_action_new (const gchar * name,const gchar * label,const gchar * tooltip,const gchar * stock_id,PlugInProcDef * proc_def)
+DECL|function|gimp_plug_in_action_new (const gchar * name,const gchar * label,const gchar * tooltip,const gchar * stock_id,GimpPlugInProcedure * proc)
 name|gimp_plug_in_action_new
 parameter_list|(
 specifier|const
@@ -665,9 +665,9 @@ name|gchar
 modifier|*
 name|stock_id
 parameter_list|,
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
-name|proc_def
+name|proc
 parameter_list|)
 block|{
 return|return
@@ -691,9 +691,9 @@ literal|"stock-id"
 argument_list|,
 name|stock_id
 argument_list|,
-literal|"proc-def"
+literal|"procedure"
 argument_list|,
-name|proc_def
+name|proc
 argument_list|,
 name|NULL
 argument_list|)
@@ -703,16 +703,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_plug_in_action_selected (GimpPlugInAction * action,PlugInProcDef * proc_def)
+DECL|function|gimp_plug_in_action_selected (GimpPlugInAction * action,GimpPlugInProcedure * proc)
 name|gimp_plug_in_action_selected
 parameter_list|(
 name|GimpPlugInAction
 modifier|*
 name|action
 parameter_list|,
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
-name|proc_def
+name|proc
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -734,7 +734,7 @@ index|]
 argument_list|,
 literal|0
 argument_list|,
-name|proc_def
+name|proc
 argument_list|)
 expr_stmt|;
 block|}

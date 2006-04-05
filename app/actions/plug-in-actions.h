@@ -49,9 +49,9 @@ name|GimpActionGroup
 modifier|*
 name|group
 parameter_list|,
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
-name|proc_def
+name|proc
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -64,9 +64,9 @@ name|GimpActionGroup
 modifier|*
 name|group
 parameter_list|,
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
-name|proc_def
+name|proc
 parameter_list|,
 specifier|const
 name|gchar
@@ -84,9 +84,9 @@ name|GimpActionGroup
 modifier|*
 name|group
 parameter_list|,
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
-name|proc_def
+name|proc
 parameter_list|)
 function_decl|;
 end_function_decl

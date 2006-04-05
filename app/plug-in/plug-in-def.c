@@ -156,7 +156,7 @@ argument_list|,
 operator|(
 name|GFunc
 operator|)
-name|plug_in_proc_def_free
+name|g_object_unref
 argument_list|,
 name|NULL
 argument_list|)
@@ -184,16 +184,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|plug_in_def_add_proc_def (PlugInDef * plug_in_def,PlugInProcDef * proc_def)
-name|plug_in_def_add_proc_def
+DECL|function|plug_in_def_add_procedure (PlugInDef * plug_in_def,GimpPlugInProcedure * proc)
+name|plug_in_def_add_procedure
 parameter_list|(
 name|PlugInDef
 modifier|*
 name|plug_in_def
 parameter_list|,
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
-name|proc_def
+name|proc
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -203,7 +203,15 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
-name|proc_def
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_PLUG_IN_PROCEDURE
+argument_list|(
+name|proc
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|proc
 operator|->
 name|mtime
 operator|=
@@ -211,7 +219,7 @@ name|plug_in_def
 operator|->
 name|mtime
 expr_stmt|;
-name|proc_def
+name|proc
 operator|->
 name|prog
 operator|=
@@ -232,7 +240,7 @@ name|plug_in_def
 operator|->
 name|proc_defs
 argument_list|,
-name|proc_def
+name|proc
 argument_list|)
 expr_stmt|;
 block|}

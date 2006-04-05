@@ -43,7 +43,7 @@ name|gchar
 modifier|*
 name|entered_filename
 parameter_list|,
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
 name|file_proc
 parameter_list|,
@@ -171,7 +171,7 @@ name|gchar
 modifier|*
 name|entered_filename
 parameter_list|,
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
 name|file_proc
 parameter_list|,
@@ -216,7 +216,7 @@ parameter_list|,
 name|GimpRunMode
 name|run_mode
 parameter_list|,
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
 name|file_proc
 parameter_list|,

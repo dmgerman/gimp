@@ -240,7 +240,7 @@ name|ID
 decl_stmt|;
 comment|/*  provides a unique ID         */
 DECL|member|save_proc
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
 name|save_proc
 decl_stmt|;
@@ -1013,7 +1013,7 @@ name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
 name|proc
 parameter_list|)
@@ -1021,7 +1021,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
 name|gimp_image_get_save_proc
 parameter_list|(

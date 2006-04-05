@@ -634,7 +634,7 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
 name|proc_def
 parameter_list|)

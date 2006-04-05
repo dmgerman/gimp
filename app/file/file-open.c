@@ -237,7 +237,7 @@ end_comment
 begin_function
 name|GimpImage
 modifier|*
-DECL|function|file_open_image (Gimp * gimp,GimpContext * context,GimpProgress * progress,const gchar * uri,const gchar * entered_filename,PlugInProcDef * file_proc,GimpRunMode run_mode,GimpPDBStatusType * status,const gchar ** mime_type,GError ** error)
+DECL|function|file_open_image (Gimp * gimp,GimpContext * context,GimpProgress * progress,const gchar * uri,const gchar * entered_filename,GimpPlugInProcedure * file_proc,GimpRunMode run_mode,GimpPDBStatusType * status,const gchar ** mime_type,GError ** error)
 name|file_open_image
 parameter_list|(
 name|Gimp
@@ -262,7 +262,7 @@ name|gchar
 modifier|*
 name|entered_filename
 parameter_list|,
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
 name|file_proc
 parameter_list|,
@@ -515,9 +515,10 @@ name|context
 argument_list|,
 name|progress
 argument_list|,
+name|GIMP_PROCEDURE
+argument_list|(
 name|file_proc
-operator|->
-name|procedure
+argument_list|)
 operator|->
 name|name
 argument_list|,
@@ -704,7 +705,7 @@ modifier|*
 name|image_height
 parameter_list|)
 block|{
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
 name|file_proc
 decl_stmt|;
@@ -1090,7 +1091,7 @@ end_function
 begin_function
 name|GimpImage
 modifier|*
-DECL|function|file_open_with_proc_and_display (Gimp * gimp,GimpContext * context,GimpProgress * progress,const gchar * uri,const gchar * entered_filename,PlugInProcDef * file_proc,GimpPDBStatusType * status,GError ** error)
+DECL|function|file_open_with_proc_and_display (Gimp * gimp,GimpContext * context,GimpProgress * progress,const gchar * uri,const gchar * entered_filename,GimpPlugInProcedure * file_proc,GimpPDBStatusType * status,GError ** error)
 name|file_open_with_proc_and_display
 parameter_list|(
 name|Gimp
@@ -1115,7 +1116,7 @@ name|gchar
 modifier|*
 name|entered_filename
 parameter_list|,
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
 name|file_proc
 parameter_list|,
@@ -1321,7 +1322,7 @@ end_function
 begin_function
 name|GimpLayer
 modifier|*
-DECL|function|file_open_layer (Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpImage * dest_image,const gchar * uri,GimpRunMode run_mode,PlugInProcDef * file_proc,GimpPDBStatusType * status,GError ** error)
+DECL|function|file_open_layer (Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpImage * dest_image,const gchar * uri,GimpRunMode run_mode,GimpPlugInProcedure * file_proc,GimpPDBStatusType * status,GError ** error)
 name|file_open_layer
 parameter_list|(
 name|Gimp
@@ -1348,7 +1349,7 @@ parameter_list|,
 name|GimpRunMode
 name|run_mode
 parameter_list|,
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
 name|file_proc
 parameter_list|,

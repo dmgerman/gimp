@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon275dee740103
+DECL|enum|__anon28ea697c0103
 block|{
 DECL|enumerator|COLUMN_PROC
 name|COLUMN_PROC
@@ -87,7 +87,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon275dee740203
+DECL|enum|__anon28ea697c0203
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -426,7 +426,7 @@ name|list
 argument_list|)
 control|)
 block|{
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
 name|proc
 init|=
@@ -493,7 +493,7 @@ argument_list|)
 expr_stmt|;
 name|label
 operator|=
-name|plug_in_proc_def_get_label
+name|gimp_plug_in_procedure_get_label
 argument_list|(
 name|proc
 argument_list|,
@@ -502,7 +502,7 @@ argument_list|)
 expr_stmt|;
 name|help_id
 operator|=
-name|plug_in_proc_def_get_help_id
+name|gimp_plug_in_procedure_get_help_id
 argument_list|(
 name|proc
 argument_list|,
@@ -808,7 +808,7 @@ block|}
 end_function
 
 begin_function
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
 DECL|function|gimp_file_proc_view_get_proc (GimpFileProcView * view,gchar ** label)
 name|gimp_file_proc_view_get_proc
@@ -868,7 +868,7 @@ name|iter
 argument_list|)
 condition|)
 block|{
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
 name|proc
 decl_stmt|;
@@ -934,14 +934,14 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_file_proc_view_set_proc (GimpFileProcView * view,PlugInProcDef * proc)
+DECL|function|gimp_file_proc_view_set_proc (GimpFileProcView * view,GimpPlugInProcedure * proc)
 name|gimp_file_proc_view_set_proc
 parameter_list|(
 name|GimpFileProcView
 modifier|*
 name|view
 parameter_list|,
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
 name|proc
 parameter_list|)
@@ -1001,7 +1001,7 @@ name|iter
 argument_list|)
 control|)
 block|{
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
 name|this
 decl_stmt|;

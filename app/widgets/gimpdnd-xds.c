@@ -367,7 +367,7 @@ modifier|*
 name|selection
 parameter_list|)
 block|{
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
 name|proc
 decl_stmt|;

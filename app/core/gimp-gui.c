@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"plug-in/plug-in-proc-def.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp.h"
 end_include
 
@@ -1308,16 +1314,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_menus_create_item (Gimp * gimp,PlugInProcDef * proc_def,const gchar * menu_path)
+DECL|function|gimp_menus_create_item (Gimp * gimp,GimpPlugInProcedure * proc,const gchar * menu_path)
 name|gimp_menus_create_item
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
-name|proc_def
+name|proc
 parameter_list|,
 specifier|const
 name|gchar
@@ -1335,9 +1341,10 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|proc_def
-operator|!=
-name|NULL
+name|GIMP_IS_PLUG_IN_PROCEDURE
+argument_list|(
+name|proc
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -1356,7 +1363,7 @@ name|menus_create_item
 argument_list|(
 name|gimp
 argument_list|,
-name|proc_def
+name|proc
 argument_list|,
 name|menu_path
 argument_list|)
@@ -1366,16 +1373,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_menus_delete_item (Gimp * gimp,PlugInProcDef * proc_def)
+DECL|function|gimp_menus_delete_item (Gimp * gimp,GimpPlugInProcedure * proc)
 name|gimp_menus_delete_item
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
-name|proc_def
+name|proc
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -1388,9 +1395,10 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|proc_def
-operator|!=
-name|NULL
+name|GIMP_IS_PLUG_IN_PROCEDURE
+argument_list|(
+name|proc
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -1409,7 +1417,7 @@ name|menus_delete_item
 argument_list|(
 name|gimp
 argument_list|,
-name|proc_def
+name|proc
 argument_list|)
 expr_stmt|;
 block|}

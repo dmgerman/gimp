@@ -91,7 +91,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
 name|file_utils_find_proc
 parameter_list|(
@@ -108,7 +108,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|PlugInProcDef
+name|GimpPlugInProcedure
 modifier|*
 name|file_utils_find_proc_by_extension
 parameter_list|(
