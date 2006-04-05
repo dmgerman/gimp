@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon293830bb0103
+DECL|enum|__anon29e965880103
 block|{
 DECL|enumerator|DISCONNECT
 name|DISCONNECT
@@ -69,7 +69,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon293830bb0203
+DECL|enum|__anon29e965880203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1283,6 +1283,12 @@ argument_list|,
 name|object
 operator|->
 name|name
+condition|?
+name|object
+operator|->
+name|name
+else|:
+literal|"anonymous"
 argument_list|,
 name|memsize
 argument_list|,
