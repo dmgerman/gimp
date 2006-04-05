@@ -152,6 +152,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|GValueArray
+modifier|*
+name|plug_in_proc_frame_get_return_vals
+parameter_list|(
+name|PlugInProcFrame
+modifier|*
+name|proc_frame
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
