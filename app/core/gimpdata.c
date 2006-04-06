@@ -99,7 +99,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon287a8a230103
+DECL|enum|__anon299a16850103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY
@@ -112,7 +112,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon287a8a230203
+DECL|enum|__anon299a16850203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2319,26 +2319,11 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-specifier|static
-name|GQuark
-name|quark
-init|=
-literal|0
-decl_stmt|;
-if|if
-condition|(
-operator|!
-name|quark
-condition|)
-name|quark
-operator|=
+return|return
 name|g_quark_from_static_string
 argument_list|(
 literal|"gimp-data-error-quark"
 argument_list|)
-expr_stmt|;
-return|return
-name|quark
 return|;
 block|}
 end_function
