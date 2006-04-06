@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bad85290103
+DECL|enum|__anon299d1fda0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -433,6 +433,7 @@ name|GimpZoomPreviewPrivate
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/**    * GimpZoomPreview:drawable:    *    * The drawable the #GimpZoomPreview is currently attached to.    *    * Since: GIMP 2.4    */
 name|g_object_class_install_property
 argument_list|(
 name|object_class
@@ -2586,7 +2587,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_zoom_get_drawable:  * @preview: a #GimpZoomPreview widget  *  * Return Value: the #GimpDrawable that was passed to gimp_zoom_preview_new().  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_zoom_get_drawable:  * @preview: a #GimpZoomPreview widget  *  * Returns the #GimpDrawable the #GimpZoomPreview is attached to.  *   * Return Value: the #GimpDrawable that was passed to gimp_zoom_preview_new().  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -2618,7 +2619,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_zoom_get_factor:  * @preview: a #GimpZoomPreview widget  *  * Return Value: the current zoom factor  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_zoom_get_factor:  * @preview: a #GimpZoomPreview widget  *  * Returns the zoom factor of the zoom model the preview is currently using.  *  * Return Value: the current zoom factor  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -2652,7 +2653,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_zoom_preview_get_source:  * @preview:  * @width:  * @height:  * @bpp:  *  *  * Return Value:  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_zoom_preview_get_source:  * @preview: a #GimpZoomPreview widget  * @width: a pointer to an int where the current width of the zoom widget  *         will be put.  * @height: a pointer to an int where the current width of the zoom widget  *          will be put.  * @bpp: a pointer to an int where the bpp of the current drawable the zoom  *       widget is using will be put.  *  * Returns the scaled image data of the part of the drawable the  * #GimpZoomPreview is currently showing, as a newly allocated array of guchar.  * This function also allow to get the current width, height and bpp of the  * #GimpZoomPreview.  *  * Return Value:  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
