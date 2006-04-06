@@ -16,49 +16,12 @@ directive|define
 name|__PLUG_IN_ENUMS_H__
 end_define
 
-begin_define
-DECL|macro|GIMP_TYPE_RUN_MODE
-define|#
-directive|define
-name|GIMP_TYPE_RUN_MODE
-value|(gimp_run_mode_get_type ())
-end_define
-
-begin_decl_stmt
-name|GType
-name|gimp_run_mode_get_type
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
-
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon2b4566a60103
-block|{
-DECL|enumerator|GIMP_RUN_INTERACTIVE
-name|GIMP_RUN_INTERACTIVE
-block|,
-DECL|enumerator|GIMP_RUN_NONINTERACTIVE
-name|GIMP_RUN_NONINTERACTIVE
-block|,
-DECL|enumerator|GIMP_RUN_WITH_LAST_VALS
-name|GIMP_RUN_WITH_LAST_VALS
-DECL|typedef|GimpRunMode
-block|}
-name|GimpRunMode
-typedef|;
-end_typedef
-
 begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon2b4566a60203
+DECL|enum|__anon28dd78d90103
 block|{
 DECL|enumerator|PLUG_IN_RGB_IMAGE
 name|PLUG_IN_RGB_IMAGE
