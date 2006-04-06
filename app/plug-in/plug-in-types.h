@@ -73,15 +73,6 @@ name|PlugInShm
 typedef|;
 end_typedef
 
-begin_typedef
-DECL|typedef|GimpPlugInProcedure
-typedef|typedef
-name|struct
-name|_GimpPlugInProcedure
-name|GimpPlugInProcedure
-typedef|;
-end_typedef
-
 begin_endif
 endif|#
 directive|endif

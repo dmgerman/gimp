@@ -42,13 +42,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"plug-in/plug-in-proc-def.h"
+file|"plug-in/plug-ins.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"plug-in/plug-ins.h"
+file|"pdb/gimppluginprocedure.h"
 end_include
 
 begin_include
@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ea697c0103
+DECL|enum|__anon2ab370440103
 block|{
 DECL|enumerator|COLUMN_PROC
 name|COLUMN_PROC
@@ -87,7 +87,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ea697c0203
+DECL|enum|__anon2ab370440203
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED

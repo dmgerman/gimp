@@ -72,7 +72,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb/gimpprocedure.h"
+file|"pdb/gimptemporaryprocedure.h"
 end_include
 
 begin_include
@@ -85,12 +85,6 @@ begin_include
 include|#
 directive|include
 file|"plug-in-params.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"plug-in-proc-def.h"
 end_include
 
 begin_include
@@ -281,13 +275,12 @@ name|progress
 argument_list|,
 name|procedure
 argument_list|,
+name|GIMP_PLUG_IN_PROCEDURE
+argument_list|(
 name|procedure
+argument_list|)
 operator|->
-name|exec_method
-operator|.
-name|plug_in
-operator|.
-name|filename
+name|prog
 argument_list|)
 expr_stmt|;
 if|if
@@ -829,16 +822,11 @@ name|plug_in
 decl_stmt|;
 name|plug_in
 operator|=
-operator|(
-name|PlugIn
-operator|*
-operator|)
+name|GIMP_TEMPORARY_PROCEDURE
+argument_list|(
 name|procedure
+argument_list|)
 operator|->
-name|exec_method
-operator|.
-name|temporary
-operator|.
 name|plug_in
 expr_stmt|;
 if|if

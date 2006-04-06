@@ -54,7 +54,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb/gimpprocedure.h"
+file|"pdb/gimptemporaryprocedure.h"
 end_include
 
 begin_include
@@ -722,20 +722,16 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
+name|GIMP_IS_TEMPORARY_PROCEDURE
+argument_list|(
 name|procedure
+argument_list|)
 operator|||
+name|GIMP_TEMPORARY_PROCEDURE
+argument_list|(
 name|procedure
+argument_list|)
 operator|->
-name|proc_type
-operator|!=
-name|GIMP_TEMPORARY
-operator|||
-name|procedure
-operator|->
-name|exec_method
-operator|.
-name|temporary
-operator|.
 name|plug_in
 operator|!=
 name|plug_in

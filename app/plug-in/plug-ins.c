@@ -90,7 +90,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb/gimpprocedure.h"
+file|"pdb/gimppluginprocedure.h"
 end_include
 
 begin_include
@@ -121,12 +121,6 @@ begin_include
 include|#
 directive|include
 file|"plug-in-params.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"plug-in-proc-def.h"
 end_include
 
 begin_include
@@ -3653,11 +3647,6 @@ name|data
 expr_stmt|;
 if|if
 condition|(
-name|proc
-operator|->
-name|prog
-operator|&&
-operator|(
 name|GIMP_PROCEDURE
 argument_list|(
 name|proc
@@ -3666,24 +3655,8 @@ operator|->
 name|proc_type
 operator|!=
 name|GIMP_INTERNAL
-operator|)
 condition|)
 block|{
-name|GIMP_PROCEDURE
-argument_list|(
-name|proc
-argument_list|)
-operator|->
-name|exec_method
-operator|.
-name|plug_in
-operator|.
-name|filename
-operator|=
-name|proc
-operator|->
-name|prog
-expr_stmt|;
 name|gimp_pdb_register
 argument_list|(
 name|gimp
@@ -3692,6 +3665,27 @@ name|GIMP_PROCEDURE
 argument_list|(
 name|proc
 argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|g_printerr
+argument_list|(
+literal|"%s: NOT adding %s (prog = %s) to PDB\n"
+argument_list|,
+name|G_STRFUNC
+argument_list|,
+name|GIMP_PROCEDURE
+argument_list|(
+name|proc
+argument_list|)
+operator|->
+name|name
+argument_list|,
+name|proc
+operator|->
+name|prog
 argument_list|)
 expr_stmt|;
 block|}

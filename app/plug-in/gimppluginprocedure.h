@@ -35,7 +35,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb/gimpprocedure.h"
+file|"gimpprocedure.h"
 end_include
 
 begin_define
@@ -223,6 +223,21 @@ DECL|member|parent_class
 name|GimpProcedureClass
 name|parent_class
 decl_stmt|;
+DECL|member|get_progname
+specifier|const
+name|gchar
+modifier|*
+function_decl|(
+modifier|*
+name|get_progname
+function_decl|)
+parameter_list|(
+specifier|const
+name|GimpPlugInProcedure
+modifier|*
+name|procedure
+parameter_list|)
+function_decl|;
 block|}
 struct|;
 end_struct
@@ -238,11 +253,17 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function_decl
-name|GimpPlugInProcedure
+name|GimpProcedure
 modifier|*
 name|gimp_plug_in_procedure_new
 parameter_list|(
-name|void
+name|GimpPDBProcType
+name|proc_type
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|prog
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -12,7 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"string.h"
+file|<string.h>
 end_include
 
 begin_include
@@ -48,7 +48,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb/gimpprocedure.h"
+file|"pdb/gimppluginprocedure.h"
 end_include
 
 begin_include
@@ -61,12 +61,6 @@ begin_include
 include|#
 directive|include
 file|"plug-in/plug-in-def.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"plug-in/plug-in-proc-def.h"
 end_include
 
 begin_include

@@ -66,19 +66,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb/gimpprocedure.h"
+file|"pdb/gimppluginprocedure.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"plug-in/plug-ins.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"plug-in/plug-in-proc-def.h"
 end_include
 
 begin_include

@@ -22,58 +22,14 @@ directive|include
 file|"core/gimpobject.h"
 end_include
 
-begin_comment
-comment|/*  Execution types  */
-end_comment
-
 begin_typedef
-DECL|typedef|IntExec
+DECL|typedef|GimpMarshalFunc
 typedef|typedef
-name|struct
-name|_IntExec
-name|IntExec
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|PlugInExec
-typedef|typedef
-name|struct
-name|_PlugInExec
-name|PlugInExec
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|ExtExec
-typedef|typedef
-name|struct
-name|_ExtExec
-name|ExtExec
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|TempExec
-typedef|typedef
-name|struct
-name|_TempExec
-name|TempExec
-typedef|;
-end_typedef
-
-begin_struct
-DECL|struct|_IntExec
-struct|struct
-name|_IntExec
-block|{
-comment|/*  Function called to marshal arguments  */
-DECL|member|marshal_func
 name|GValueArray
 modifier|*
 function_decl|(
 modifier|*
-name|marshal_func
+name|GimpMarshalFunc
 function_decl|)
 parameter_list|(
 name|GimpProcedure
@@ -98,54 +54,7 @@ modifier|*
 name|args
 parameter_list|)
 function_decl|;
-block|}
-struct|;
-end_struct
-
-begin_struct
-DECL|struct|_PlugInExec
-struct|struct
-name|_PlugInExec
-block|{
-comment|/*  Where is the executable on disk?  */
-DECL|member|filename
-name|gchar
-modifier|*
-name|filename
-decl_stmt|;
-block|}
-struct|;
-end_struct
-
-begin_struct
-DECL|struct|_ExtExec
-struct|struct
-name|_ExtExec
-block|{
-comment|/*  Where is the executable on disk?  */
-DECL|member|filename
-name|gchar
-modifier|*
-name|filename
-decl_stmt|;
-block|}
-struct|;
-end_struct
-
-begin_struct
-DECL|struct|_TempExec
-struct|struct
-name|_TempExec
-block|{
-comment|/*  Plug-in that registered this temp proc  */
-DECL|member|plug_in
-name|void
-modifier|*
-name|plug_in
-decl_stmt|;
-block|}
-struct|;
-end_struct
+end_typedef
 
 begin_define
 DECL|macro|GIMP_TYPE_PROCEDURE
@@ -228,122 +137,93 @@ DECL|member|parent_instance
 name|GimpObject
 name|parent_instance
 decl_stmt|;
-comment|/*  Flags  */
+DECL|member|proc_type
+name|GimpPDBProcType
+name|proc_type
+decl_stmt|;
+comment|/* Type of procedure              */
 DECL|member|static_strings
 name|gboolean
 name|static_strings
 decl_stmt|;
-comment|/* Are the procedure's strings allocated?     */
-comment|/*  Procedure information  */
+comment|/* Are the strings allocated?     */
 DECL|member|name
 name|gchar
 modifier|*
 name|name
 decl_stmt|;
-comment|/* Procedure name                             */
+comment|/* Procedure name                 */
 DECL|member|original_name
 name|gchar
 modifier|*
 name|original_name
 decl_stmt|;
-comment|/* Procedure name before canonicalization     */
+comment|/* Uncanonicalized procedure name */
 DECL|member|blurb
 name|gchar
 modifier|*
 name|blurb
 decl_stmt|;
-comment|/* Short procedure description                */
+comment|/* Short procedure description    */
 DECL|member|help
 name|gchar
 modifier|*
 name|help
 decl_stmt|;
-comment|/* Detailed help instructions                 */
+comment|/* Detailed help instructions     */
 DECL|member|author
 name|gchar
 modifier|*
 name|author
 decl_stmt|;
-comment|/* Author field                               */
+comment|/* Author field                   */
 DECL|member|copyright
 name|gchar
 modifier|*
 name|copyright
 decl_stmt|;
-comment|/* Copyright field                            */
+comment|/* Copyright field                */
 DECL|member|date
 name|gchar
 modifier|*
 name|date
 decl_stmt|;
-comment|/* Date field                                 */
+comment|/* Date field                     */
 DECL|member|deprecated
 name|gchar
 modifier|*
 name|deprecated
 decl_stmt|;
-comment|/* Replacement if the procedure is deprecated */
-comment|/*  Procedure type  */
-DECL|member|proc_type
-name|GimpPDBProcType
-name|proc_type
-decl_stmt|;
-comment|/* Type of procedure                          */
-comment|/*  Input arguments  */
+comment|/* Replacement if deprecated      */
 DECL|member|num_args
 name|gint32
 name|num_args
 decl_stmt|;
-comment|/* Number of procedure arguments              */
+comment|/* Number of procedure arguments  */
 DECL|member|args
 name|GParamSpec
 modifier|*
 modifier|*
 name|args
 decl_stmt|;
-comment|/* Array of procedure arguments               */
-comment|/*  Output values  */
+comment|/* Array of procedure arguments   */
 DECL|member|num_values
 name|gint32
 name|num_values
 decl_stmt|;
-comment|/* Number of return values                    */
+comment|/* Number of return values        */
 DECL|member|values
 name|GParamSpec
 modifier|*
 modifier|*
 name|values
 decl_stmt|;
-comment|/* Array of return values                     */
-comment|/*  Method of procedure execution  */
-DECL|union|_ExecMethod
-union|union
-name|_ExecMethod
-block|{
-DECL|member|internal
-name|IntExec
-name|internal
+comment|/* Array of return values         */
+DECL|member|marshal_func
+name|GimpMarshalFunc
+name|marshal_func
 decl_stmt|;
-comment|/* Execution information for internal procs   */
-DECL|member|plug_in
-name|PlugInExec
-name|plug_in
-decl_stmt|;
-comment|/* ..................... for plug-ins         */
-DECL|member|extension
-name|ExtExec
-name|extension
-decl_stmt|;
-comment|/* ..................... for extensions       */
-DECL|member|temporary
-name|TempExec
-name|temporary
-decl_stmt|;
-comment|/* ..................... for temp procs       */
-DECL|member|exec_method
-block|}
-name|exec_method
-union|;
+comment|/* Marshaller for internal procs  */
 block|}
 struct|;
 end_struct
@@ -405,31 +285,8 @@ name|GimpProcedure
 modifier|*
 name|gimp_procedure_new
 parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|GimpProcedure
-modifier|*
-name|gimp_procedure_initialize
-parameter_list|(
-name|GimpProcedure
-modifier|*
-name|procedure
-parameter_list|,
-name|GimpPDBProcType
-name|proc_type
-parameter_list|,
-name|gint
-name|n_arguments
-parameter_list|,
-name|gint
-name|n_return_vals
-parameter_list|,
-name|gpointer
-name|exec_method
+name|GimpMarshalFunc
+name|marshal_func
 parameter_list|)
 function_decl|;
 end_function_decl

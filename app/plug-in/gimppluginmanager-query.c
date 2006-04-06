@@ -70,13 +70,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb/gimpprocedure.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"plug-in-proc-def.h"
+file|"pdb/gimppluginprocedure.h"
 end_include
 
 begin_function

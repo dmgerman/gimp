@@ -120,6 +120,16 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimptemporaryprocedure.h"
+end_include
+
+begin_comment
+comment|/* eek */
+end_comment
+
+begin_include
+include|#
+directive|include
 file|"internal_procs.h"
 end_include
 
@@ -194,6 +204,16 @@ argument_list|,
 name|g_str_equal
 argument_list|)
 expr_stmt|;
+block|{
+specifier|volatile
+name|GType
+name|eek
+decl_stmt|;
+name|eek
+operator|=
+name|GIMP_TYPE_TEMPORARY_PROCEDURE
+expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -284,7 +304,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27c017560108
+DECL|struct|__anon27a76c630108
 block|{
 DECL|member|old_name
 specifier|const
