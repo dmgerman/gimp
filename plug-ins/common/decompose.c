@@ -227,6 +227,9 @@ parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
+name|gint
+name|position
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -811,7 +814,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b98a8fa0108
+DECL|struct|__anon28a561240108
 block|{
 DECL|member|type
 name|gchar
@@ -1431,7 +1434,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b98a8fa0208
+DECL|struct|__anon28a561240208
 block|{
 DECL|member|extract_type
 name|gchar
@@ -2773,6 +2776,8 @@ index|[
 literal|0
 index|]
 argument_list|,
+name|j
+argument_list|,
 name|layername
 argument_list|,
 name|width
@@ -3165,6 +3170,8 @@ name|create_new_layer
 argument_list|(
 name|image_ID
 argument_list|,
+literal|0
+argument_list|,
 name|layername
 argument_list|,
 name|width
@@ -3187,11 +3194,14 @@ end_function
 begin_function
 specifier|static
 name|gint32
-DECL|function|create_new_layer (gint32 image_ID,const gchar * layername,guint width,guint height,GimpImageBaseType type,GimpDrawable ** drawable,GimpPixelRgn * pixel_rgn)
+DECL|function|create_new_layer (gint32 image_ID,gint position,const gchar * layername,guint width,guint height,GimpImageBaseType type,GimpDrawable ** drawable,GimpPixelRgn * pixel_rgn)
 name|create_new_layer
 parameter_list|(
 name|gint32
 name|image_ID
+parameter_list|,
+name|gint
+name|position
 parameter_list|,
 specifier|const
 name|gchar
@@ -3292,7 +3302,7 @@ name|image_ID
 argument_list|,
 name|layer_ID
 argument_list|,
-literal|0
+name|position
 argument_list|)
 expr_stmt|;
 operator|*
