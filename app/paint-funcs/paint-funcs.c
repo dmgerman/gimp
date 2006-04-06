@@ -122,13 +122,15 @@ struct|struct
 name|_LayerMode
 block|{
 DECL|member|affect_alpha
+specifier|const
 name|guint
 name|affect_alpha
 range|:
 literal|1
 decl_stmt|;
-comment|/*  does the layer mode affect the alpha channel  */
+comment|/*  does the layer mode affect the                                           alpha channel  */
 DECL|member|increase_opacity
+specifier|const
 name|guint
 name|increase_opacity
 range|:
@@ -136,6 +138,7 @@ literal|1
 decl_stmt|;
 comment|/*  layer mode can increase opacity */
 DECL|member|decrease_opacity
+specifier|const
 name|guint
 name|decrease_opacity
 range|:
@@ -412,6 +415,7 @@ end_typedef
 begin_decl_stmt
 DECL|variable|layer_mode_funcs
 specifier|static
+specifier|const
 name|LayerModeFunc
 name|layer_mode_funcs
 index|[]

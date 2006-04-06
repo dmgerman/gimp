@@ -86,7 +86,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27e603050103
+DECL|enum|__anon2aba3fd30103
 block|{
 DECL|enumerator|COLOR_SELECT_HUE
 name|COLOR_SELECT_HUE
@@ -137,7 +137,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27e603050203
+DECL|enum|__anon2aba3fd30203
 block|{
 DECL|enumerator|UPDATE_VALUES
 name|UPDATE_VALUES
@@ -835,6 +835,7 @@ end_define
 begin_decl_stmt
 DECL|variable|update_procs
 specifier|static
+specifier|const
 name|ColorSelectFillUpdateProc
 name|update_procs
 index|[]

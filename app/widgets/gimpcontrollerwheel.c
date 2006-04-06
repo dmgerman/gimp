@@ -66,10 +66,12 @@ struct|struct
 name|_WheelEvent
 block|{
 DECL|member|direction
+specifier|const
 name|GdkScrollDirection
 name|direction
 decl_stmt|;
 DECL|member|modifiers
+specifier|const
 name|GdkModifierType
 name|modifiers
 decl_stmt|;

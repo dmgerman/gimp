@@ -420,6 +420,7 @@ name|gint
 name|i
 decl_stmt|;
 specifier|static
+specifier|const
 name|gdouble
 name|slider_initial_vals
 index|[]
@@ -441,6 +442,7 @@ literal|0
 block|}
 decl_stmt|;
 specifier|static
+specifier|const
 name|gdouble
 name|slider_max_vals
 index|[]
@@ -462,6 +464,7 @@ literal|100
 block|}
 decl_stmt|;
 specifier|static
+specifier|const
 name|gdouble
 name|slider_incs
 index|[]

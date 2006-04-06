@@ -282,7 +282,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon287858bd0103
+DECL|enum|__anon294a20a20103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -361,7 +361,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon287858bd0203
+DECL|enum|__anon294a20a20203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -798,6 +798,7 @@ end_function_decl
 begin_decl_stmt
 DECL|variable|valid_combinations
 specifier|static
+specifier|const
 name|gint
 name|valid_combinations
 index|[]

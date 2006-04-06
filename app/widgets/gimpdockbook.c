@@ -147,7 +147,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba7b9cd0103
+DECL|enum|__anon27b40d8e0103
 block|{
 DECL|enumerator|DOCKABLE_ADDED
 name|DOCKABLE_ADDED
@@ -399,6 +399,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|dialog_target_table
 specifier|static
+specifier|const
 name|GtkTargetEntry
 name|dialog_target_table
 index|[]

@@ -1299,7 +1299,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a1e06d0103
+DECL|enum|__anon2a06ec380103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1313,7 +1313,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a1e06d0203
+DECL|enum|__anon2a06ec380203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0
@@ -1378,6 +1378,7 @@ end_enum
 begin_decl_stmt
 DECL|variable|gimp_context_prop_names
 specifier|static
+specifier|const
 name|gchar
 modifier|*
 name|gimp_context_prop_names

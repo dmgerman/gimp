@@ -72,10 +72,12 @@ struct|struct
 name|_KeyboardEvent
 block|{
 DECL|member|keyval
+specifier|const
 name|guint
 name|keyval
 decl_stmt|;
 DECL|member|modifiers
+specifier|const
 name|GdkModifierType
 name|modifiers
 decl_stmt|;

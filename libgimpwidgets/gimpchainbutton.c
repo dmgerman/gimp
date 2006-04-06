@@ -29,7 +29,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b8108e0103
+DECL|enum|__anon2a30a83f0103
 block|{
 DECL|enumerator|TOGGLED
 name|TOGGLED
@@ -117,6 +117,7 @@ specifier|static
 specifier|const
 name|gchar
 modifier|*
+specifier|const
 name|gimp_chain_stock_items
 index|[]
 init|=

@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c049a40103
+DECL|enum|__anon290891cc0103
 block|{
 DECL|enumerator|COLOR_PICKED
 name|COLOR_PICKED
@@ -533,6 +533,7 @@ end_define
 begin_decl_stmt
 DECL|variable|dropper_bits
 specifier|static
+specifier|const
 name|guchar
 name|dropper_bits
 index|[]
@@ -646,6 +647,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|dropper_mask
 specifier|static
+specifier|const
 name|guchar
 name|dropper_mask
 index|[]
@@ -770,6 +772,7 @@ name|GdkCursor
 modifier|*
 name|cursor
 decl_stmt|;
+specifier|const
 name|GdkColor
 name|bg
 init|=
@@ -783,6 +786,7 @@ block|,
 literal|0xffff
 block|}
 decl_stmt|;
+specifier|const
 name|GdkColor
 name|fg
 init|=

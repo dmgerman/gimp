@@ -678,17 +678,20 @@ struct|struct
 name|_GimpCursor
 block|{
 DECL|member|bits
+specifier|const
 name|guchar
 modifier|*
 name|bits
 decl_stmt|;
 DECL|member|mask_bits
+specifier|const
 name|guchar
 modifier|*
 name|mask_bits
 decl_stmt|;
 DECL|member|width
 DECL|member|height
+specifier|const
 name|gint
 name|width
 decl_stmt|,
@@ -696,6 +699,7 @@ name|height
 decl_stmt|;
 DECL|member|x_hot
 DECL|member|y_hot
+specifier|const
 name|gint
 name|x_hot
 decl_stmt|,
@@ -771,7 +775,13 @@ block|,
 name|cursor_mouse_y_hot
 block|,
 name|cursor_mouse
-block|,   }
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
 block|,
 block|{
 name|cursor_crosshair_bits

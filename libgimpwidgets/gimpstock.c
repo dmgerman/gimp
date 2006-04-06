@@ -319,6 +319,7 @@ end_function
 begin_decl_stmt
 DECL|variable|gimp_stock_items
 specifier|static
+specifier|const
 name|GtkStockItem
 name|gimp_stock_items
 index|[]
@@ -2468,7 +2469,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2ad41a500108
+DECL|struct|__anon2acbb6440108
 block|{
 DECL|member|stock_id
 specifier|const
@@ -3193,8 +3194,9 @@ end_struct
 
 begin_struct
 specifier|static
+specifier|const
 struct|struct
-DECL|struct|__anon2ad41a500208
+DECL|struct|__anon2acbb6440208
 block|{
 DECL|member|stock_id
 specifier|const
@@ -4011,8 +4013,9 @@ end_struct
 
 begin_struct
 specifier|static
+specifier|const
 struct|struct
-DECL|struct|__anon2ad41a500308
+DECL|struct|__anon2acbb6440308
 block|{
 DECL|member|stock_id
 specifier|const
@@ -4107,8 +4110,9 @@ end_struct
 
 begin_struct
 specifier|static
+specifier|const
 struct|struct
-DECL|struct|__anon2ad41a500408
+DECL|struct|__anon2acbb6440408
 block|{
 DECL|member|stock_id
 specifier|const
@@ -4251,8 +4255,9 @@ end_struct
 
 begin_struct
 specifier|static
+specifier|const
 struct|struct
-DECL|struct|__anon2ad41a500508
+DECL|struct|__anon2acbb6440508
 block|{
 DECL|member|stock_id
 specifier|const
