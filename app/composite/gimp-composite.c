@@ -12,12 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdlib.h>
 end_include
 
@@ -134,54 +128,6 @@ literal|0
 block|,
 comment|/* GIMP_PIXELFORMAT_ANY */
 block|}
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|gimp_composite_pixel_name
-specifier|const
-name|gchar
-modifier|*
-name|gimp_composite_pixel_name
-index|[]
-init|=
-block|{
-literal|"GIMP_PIXELFORMAT_V8"
-block|,
-literal|"GIMP_PIXELFORMAT_VA8"
-block|,
-literal|"GIMP_PIXELFORMAT_RGB8"
-block|,
-literal|"GIMP_PIXELFORMAT_RGBA8"
-block|,
-if|#
-directive|if
-name|GIMP_COMPOSITE_16BIT
-literal|"GIMP_PIXELFORMAT_V16"
-block|,
-literal|"GIMP_PIXELFORMAT_VA16"
-block|,
-literal|"GIMP_PIXELFORMAT_RGB16 "
-block|,
-literal|"GIMP_PIXELFORMAT_RGBA16 "
-block|,
-endif|#
-directive|endif
-if|#
-directive|if
-name|GIMP_COMPOSITE_32BIT
-literal|"GIMP_PIXELFORMAT_V32"
-block|,
-literal|"GIMP_PIXELFORMAT_VA32"
-block|,
-literal|"GIMP_PIXELFORMAT_RGB32 "
-block|,
-literal|"GIMP_PIXELFORMAT_RGBA32 "
-block|,
-endif|#
-directive|endif
-literal|"GIMP_PIXELFORMAT_ANY"
-block|,   }
 decl_stmt|;
 end_decl_stmt
 
@@ -582,20 +528,6 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_struct
-struct|struct
-DECL|struct|__anon2792a0e20108
-block|{
-DECL|member|announce_function
-name|gchar
-name|announce_function
-decl_stmt|;
-DECL|variable|gimp_composite_debug
-block|}
-name|gimp_composite_debug
-struct|;
-end_struct
-
 begin_decl_stmt
 DECL|variable|gimp_composite_options
 name|struct
@@ -717,7 +649,7 @@ operator|&
 name|GIMP_COMPOSITE_OPTION_VERBOSE
 condition|)
 block|{
-name|printf
+name|g_print
 argument_list|(
 literal|"%s %s %s %s = %p\n"
 argument_list|,
@@ -753,10 +685,7 @@ name|function
 argument_list|)
 expr_stmt|;
 block|}
-call|(
-modifier|*
 name|function
-call|)
 argument_list|(
 name|ctx
 argument_list|)
@@ -764,7 +693,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|printf
+name|g_print
 argument_list|(
 literal|"gimp_composite: unsupported operation: %s %s %s %s\n"
 argument_list|,
@@ -815,7 +744,7 @@ modifier|*
 name|ctx
 parameter_list|)
 block|{
-name|printf
+name|g_print
 argument_list|(
 literal|"%p: op=%s\n  A=%s(%d):%p\n  B=%s(%d):%p\n  D=%s(%d):%p\n  M=%s(%d):%p\n  n_pixels=%lu\n"
 argument_list|,
