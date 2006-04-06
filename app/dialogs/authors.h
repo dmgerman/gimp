@@ -9,6 +9,7 @@ specifier|static
 specifier|const
 name|gchar
 modifier|*
+specifier|const
 name|authors
 index|[]
 init|=
@@ -372,6 +373,7 @@ specifier|static
 specifier|const
 name|gchar
 modifier|*
+specifier|const
 name|artists
 index|[]
 init|=
@@ -397,6 +399,7 @@ specifier|static
 specifier|const
 name|gchar
 modifier|*
+specifier|const
 name|documenters
 index|[]
 init|=
