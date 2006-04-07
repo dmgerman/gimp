@@ -114,6 +114,12 @@ name|static_name
 range|:
 literal|1
 decl_stmt|;
+DECL|member|disconnected
+name|guint
+name|disconnected
+range|:
+literal|1
+decl_stmt|;
 block|}
 struct|;
 end_struct
