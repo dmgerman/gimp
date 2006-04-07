@@ -282,7 +282,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon294a20a20103
+DECL|enum|__anon292584d30103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -361,7 +361,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon294a20a20203
+DECL|enum|__anon292584d30203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3442,7 +3442,7 @@ name|image
 operator|->
 name|shadow
 condition|)
-name|gimp_image_free_shadow
+name|gimp_image_free_shadow_tiles
 argument_list|(
 name|image
 argument_list|)
@@ -8787,8 +8787,8 @@ end_comment
 begin_function
 name|TileManager
 modifier|*
-DECL|function|gimp_image_shadow (GimpImage * image,gint width,gint height,gint bpp)
-name|gimp_image_shadow
+DECL|function|gimp_image_get_shadow_tiles (GimpImage * image,gint width,gint height,gint bpp)
+name|gimp_image_get_shadow_tiles
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -8857,7 +8857,7 @@ argument_list|)
 operator|)
 condition|)
 block|{
-name|gimp_image_free_shadow
+name|gimp_image_free_shadow_tiles
 argument_list|(
 name|image
 argument_list|)
@@ -8895,8 +8895,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_free_shadow (GimpImage * image)
-name|gimp_image_free_shadow
+DECL|function|gimp_image_free_shadow_tiles (GimpImage * image)
+name|gimp_image_free_shadow_tiles
 parameter_list|(
 name|GimpImage
 modifier|*

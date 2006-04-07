@@ -1173,7 +1173,7 @@ condition|(
 name|success
 condition|)
 block|{
-name|gimp_image_free_shadow
+name|gimp_image_free_shadow_tiles
 argument_list|(
 name|image
 argument_list|)

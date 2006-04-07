@@ -1735,7 +1735,7 @@ end_comment
 begin_function_decl
 name|TileManager
 modifier|*
-name|gimp_image_shadow
+name|gimp_image_get_shadow_tiles
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -1755,7 +1755,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_image_free_shadow
+name|gimp_image_free_shadow_tiles
 parameter_list|(
 name|GimpImage
 modifier|*

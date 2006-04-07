@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a2eb2d0103
+DECL|enum|__anon2b671e390103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -1430,7 +1430,7 @@ name|image_map
 operator|->
 name|destPR
 argument_list|,
-name|gimp_drawable_shadow
+name|gimp_drawable_get_shadow_tiles
 argument_list|(
 name|image_map
 operator|->

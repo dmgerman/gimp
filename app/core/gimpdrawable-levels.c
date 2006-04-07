@@ -417,7 +417,7 @@ argument_list|(
 operator|&
 name|destPR
 argument_list|,
-name|gimp_drawable_shadow
+name|gimp_drawable_get_shadow_tiles
 argument_list|(
 name|drawable
 argument_list|)
@@ -664,7 +664,7 @@ argument_list|(
 operator|&
 name|destPR
 argument_list|,
-name|gimp_drawable_shadow
+name|gimp_drawable_get_shadow_tiles
 argument_list|(
 name|drawable
 argument_list|)

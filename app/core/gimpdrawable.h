@@ -714,7 +714,7 @@ end_function_decl
 begin_function_decl
 name|TileManager
 modifier|*
-name|gimp_drawable_shadow
+name|gimp_drawable_get_shadow_tiles
 parameter_list|(
 name|GimpDrawable
 modifier|*

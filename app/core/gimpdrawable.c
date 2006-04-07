@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc8f5190103
+DECL|enum|__anon2b1a3faf0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -4498,8 +4498,8 @@ end_function
 begin_function
 name|TileManager
 modifier|*
-DECL|function|gimp_drawable_shadow (GimpDrawable * drawable)
-name|gimp_drawable_shadow
+DECL|function|gimp_drawable_get_shadow_tiles (GimpDrawable * drawable)
+name|gimp_drawable_get_shadow_tiles
 parameter_list|(
 name|GimpDrawable
 modifier|*
@@ -4538,7 +4538,7 @@ name|NULL
 argument_list|)
 expr_stmt|;
 return|return
-name|gimp_image_shadow
+name|gimp_image_get_shadow_tiles
 argument_list|(
 name|gimp_item_get_image
 argument_list|(
