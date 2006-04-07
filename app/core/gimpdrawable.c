@@ -114,6 +114,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage-colormap.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimage-undo-push.h"
 end_include
 
@@ -167,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c50a170103
+DECL|enum|__anon2b07ab0d0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -970,7 +976,7 @@ name|iface
 operator|->
 name|get_tiles
 operator|=
-name|gimp_drawable_data
+name|gimp_drawable_get_tiles
 expr_stmt|;
 name|iface
 operator|->
@@ -2570,7 +2576,7 @@ name|tile
 operator|=
 name|tile_manager_get_tile
 argument_list|(
-name|gimp_drawable_data
+name|gimp_drawable_get_tiles
 argument_list|(
 name|drawable
 argument_list|)
@@ -2968,7 +2974,7 @@ argument_list|(
 operator|&
 name|srcPR
 argument_list|,
-name|gimp_drawable_data
+name|gimp_drawable_get_tiles
 argument_list|(
 name|drawable
 argument_list|)
@@ -3201,7 +3207,7 @@ name|dest_tile
 operator|=
 name|tile_manager_get_tile
 argument_list|(
-name|gimp_drawable_data
+name|gimp_drawable_get_tiles
 argument_list|(
 name|drawable
 argument_list|)
@@ -3229,7 +3235,7 @@ argument_list|)
 expr_stmt|;
 name|tile_manager_map_tile
 argument_list|(
-name|gimp_drawable_data
+name|gimp_drawable_get_tiles
 argument_list|(
 name|drawable
 argument_list|)
@@ -3297,7 +3303,7 @@ argument_list|(
 operator|&
 name|PR2
 argument_list|,
-name|gimp_drawable_data
+name|gimp_drawable_get_tiles
 argument_list|(
 name|drawable
 argument_list|)
@@ -3867,6 +3873,36 @@ argument_list|,
 name|y
 argument_list|)
 expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|TileManager
+modifier|*
+DECL|function|gimp_drawable_get_tiles (const GimpDrawable * drawable)
+name|gimp_drawable_get_tiles
+parameter_list|(
+specifier|const
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_DRAWABLE
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+return|return
+name|drawable
+operator|->
+name|tiles
+return|;
 block|}
 end_function
 
@@ -4755,7 +4791,7 @@ argument_list|(
 operator|&
 name|destPR
 argument_list|,
-name|gimp_drawable_data
+name|gimp_drawable_get_tiles
 argument_list|(
 name|drawable
 argument_list|)
@@ -6048,36 +6084,7 @@ block|}
 end_function
 
 begin_function
-name|TileManager
-modifier|*
-DECL|function|gimp_drawable_data (const GimpDrawable * drawable)
-name|gimp_drawable_data
-parameter_list|(
 specifier|const
-name|GimpDrawable
-modifier|*
-name|drawable
-parameter_list|)
-block|{
-name|g_return_val_if_fail
-argument_list|(
-name|GIMP_IS_DRAWABLE
-argument_list|(
-name|drawable
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-return|return
-name|drawable
-operator|->
-name|tiles
-return|;
-block|}
-end_function
-
-begin_function
 name|guchar
 modifier|*
 DECL|function|gimp_drawable_cmap (const GimpDrawable * drawable)
@@ -6113,16 +6120,14 @@ name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|image
-condition|)
 return|return
 name|image
-operator|->
-name|cmap
-return|;
-return|return
+condition|?
+name|gimp_image_get_colormap
+argument_list|(
+name|image
+argument_list|)
+else|:
 name|NULL
 return|;
 block|}

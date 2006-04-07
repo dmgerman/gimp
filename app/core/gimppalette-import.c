@@ -1778,7 +1778,7 @@ name|drawable
 argument_list|)
 argument_list|)
 argument_list|,
-name|gimp_drawable_data
+name|gimp_drawable_get_tiles
 argument_list|(
 name|drawable
 argument_list|)
@@ -1822,7 +1822,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b80c5820103
+DECL|enum|__anon2b4110d20103
 block|{
 DECL|enumerator|GIMP_PALETTE_FILE_FORMAT_UNKNOWN
 name|GIMP_PALETTE_FILE_FORMAT_UNKNOWN

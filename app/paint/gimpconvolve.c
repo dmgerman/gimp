@@ -144,7 +144,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b97ecd30103
+DECL|enum|__anon2ab101c70103
 block|{
 DECL|enumerator|CONVOLVE_NCLIP
 name|CONVOLVE_NCLIP
@@ -787,7 +787,7 @@ argument_list|(
 operator|&
 name|srcPR
 argument_list|,
-name|gimp_drawable_data
+name|gimp_drawable_get_tiles
 argument_list|(
 name|drawable
 argument_list|)

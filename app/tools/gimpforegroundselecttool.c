@@ -144,7 +144,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29dc1b060108
+DECL|struct|__anon295a048a0108
 block|{
 DECL|member|width
 name|gint
@@ -2622,7 +2622,7 @@ name|gimp_scan_convert_render_value
 argument_list|(
 name|scan_convert
 argument_list|,
-name|gimp_drawable_data
+name|gimp_drawable_get_tiles
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -3276,7 +3276,7 @@ name|GIMP_CHANNEL_OP_SUBTRACT
 else|:
 name|GIMP_CHANNEL_OP_ADD
 argument_list|,
-name|gimp_drawable_data
+name|gimp_drawable_get_tiles
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(

@@ -783,7 +783,7 @@ argument_list|(
 operator|&
 name|srcPR
 argument_list|,
-name|gimp_drawable_data
+name|gimp_drawable_get_tiles
 argument_list|(
 name|drawable
 argument_list|)
@@ -1064,7 +1064,7 @@ argument_list|(
 operator|&
 name|srcPR
 argument_list|,
-name|gimp_drawable_data
+name|gimp_drawable_get_tiles
 argument_list|(
 name|drawable
 argument_list|)

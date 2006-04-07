@@ -3541,7 +3541,7 @@ name|tile
 operator|=
 name|tile_manager_get_tile
 argument_list|(
-name|gimp_drawable_data
+name|gimp_drawable_get_tiles
 argument_list|(
 name|drawable
 argument_list|)
@@ -3829,7 +3829,7 @@ name|tile
 operator|=
 name|tile_manager_get_tile
 argument_list|(
-name|gimp_drawable_data
+name|gimp_drawable_get_tiles
 argument_list|(
 name|drawable
 argument_list|)

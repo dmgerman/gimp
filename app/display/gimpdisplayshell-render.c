@@ -967,7 +967,7 @@ name|x
 argument_list|,
 name|y
 argument_list|,
-name|gimp_drawable_data
+name|gimp_drawable_get_tiles
 argument_list|(
 name|shell
 operator|->

@@ -367,7 +367,7 @@ return|;
 return|return
 name|siox_init
 argument_list|(
-name|gimp_drawable_data
+name|gimp_drawable_get_tiles
 argument_list|(
 name|drawable
 argument_list|)
@@ -553,7 +553,7 @@ name|state
 argument_list|,
 name|refinement
 argument_list|,
-name|gimp_drawable_data
+name|gimp_drawable_get_tiles
 argument_list|(
 name|mask
 argument_list|)

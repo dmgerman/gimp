@@ -877,7 +877,7 @@ expr_stmt|;
 else|else
 name|tm
 operator|=
-name|gimp_drawable_data
+name|gimp_drawable_get_tiles
 argument_list|(
 name|drawable
 argument_list|)
@@ -1096,7 +1096,7 @@ expr_stmt|;
 else|else
 name|tm
 operator|=
-name|gimp_drawable_data
+name|gimp_drawable_get_tiles
 argument_list|(
 name|drawable
 argument_list|)

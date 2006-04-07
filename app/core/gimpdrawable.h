@@ -579,6 +579,19 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|TileManager
+modifier|*
+name|gimp_drawable_get_tiles
+parameter_list|(
+specifier|const
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_drawable_set_tiles
 parameter_list|(
@@ -955,19 +968,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|TileManager
-modifier|*
-name|gimp_drawable_data
-parameter_list|(
 specifier|const
-name|GimpDrawable
-modifier|*
-name|drawable
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|guchar
 modifier|*
 name|gimp_drawable_cmap

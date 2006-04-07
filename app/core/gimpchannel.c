@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d2cc6c0103
+DECL|enum|__anon2b3d6d290103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -7093,7 +7093,7 @@ argument_list|(
 operator|&
 name|srcPR
 argument_list|,
-name|gimp_drawable_data
+name|gimp_drawable_get_tiles
 argument_list|(
 name|drawable
 argument_list|)
@@ -7114,7 +7114,7 @@ argument_list|(
 operator|&
 name|destPR
 argument_list|,
-name|gimp_drawable_data
+name|gimp_drawable_get_tiles
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -7306,7 +7306,7 @@ argument_list|(
 operator|&
 name|dest
 argument_list|,
-name|gimp_drawable_data
+name|gimp_drawable_get_tiles
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(

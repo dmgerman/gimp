@@ -84,7 +84,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2894b2cc0108
+DECL|struct|__anon296acbb20108
 block|{
 DECL|member|image
 name|GimpImage
@@ -511,7 +511,7 @@ argument_list|(
 operator|&
 name|maskPR
 argument_list|,
-name|gimp_drawable_data
+name|gimp_drawable_get_tiles
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -992,7 +992,7 @@ argument_list|(
 operator|&
 name|maskPR
 argument_list|,
-name|gimp_drawable_data
+name|gimp_drawable_get_tiles
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(

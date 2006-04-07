@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae150dd0103
+DECL|enum|__anon27a2eb2d0103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -1266,7 +1266,7 @@ name|image_map
 operator|->
 name|srcPR
 argument_list|,
-name|gimp_drawable_data
+name|gimp_drawable_get_tiles
 argument_list|(
 name|image_map
 operator|->
@@ -1367,7 +1367,7 @@ name|image_map
 operator|->
 name|destPR
 argument_list|,
-name|gimp_drawable_data
+name|gimp_drawable_get_tiles
 argument_list|(
 name|image_map
 operator|->
@@ -1811,7 +1811,7 @@ argument_list|(
 operator|&
 name|destPR
 argument_list|,
-name|gimp_drawable_data
+name|gimp_drawable_get_tiles
 argument_list|(
 name|image_map
 operator|->

@@ -1517,7 +1517,7 @@ argument_list|(
 operator|&
 name|src1PR
 argument_list|,
-name|gimp_drawable_data
+name|gimp_drawable_get_tiles
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -1631,7 +1631,7 @@ argument_list|(
 operator|&
 name|src1PR
 argument_list|,
-name|gimp_drawable_data
+name|gimp_drawable_get_tiles
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -1879,7 +1879,7 @@ argument_list|(
 operator|&
 name|src1PR
 argument_list|,
-name|gimp_drawable_data
+name|gimp_drawable_get_tiles
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -1919,7 +1919,7 @@ argument_list|(
 operator|&
 name|src2PR
 argument_list|,
-name|gimp_drawable_data
+name|gimp_drawable_get_tiles
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -1972,7 +1972,7 @@ argument_list|(
 operator|&
 name|maskPR
 argument_list|,
-name|gimp_drawable_data
+name|gimp_drawable_get_tiles
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
