@@ -267,7 +267,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c1fb3f0103
+DECL|enum|__anon2c59e2e50103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -836,7 +836,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimp_object_set_name
+name|gimp_object_set_static_name
 argument_list|(
 name|GIMP_OBJECT
 argument_list|(
@@ -905,7 +905,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimp_object_set_name
+name|gimp_object_set_static_name
 argument_list|(
 name|GIMP_OBJECT
 argument_list|(
@@ -940,7 +940,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|gimp_object_set_name
+name|gimp_object_set_static_name
 argument_list|(
 name|GIMP_OBJECT
 argument_list|(
@@ -1015,7 +1015,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimp_object_set_name
+name|gimp_object_set_static_name
 argument_list|(
 name|GIMP_OBJECT
 argument_list|(
@@ -1053,7 +1053,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|gimp_object_set_name
+name|gimp_object_set_static_name
 argument_list|(
 name|GIMP_OBJECT
 argument_list|(
@@ -2338,7 +2338,7 @@ argument_list|,
 name|gimp_brush_get_standard
 argument_list|)
 expr_stmt|;
-name|gimp_object_set_name
+name|gimp_object_set_static_name
 argument_list|(
 name|GIMP_OBJECT
 argument_list|(
@@ -2376,7 +2376,7 @@ argument_list|,
 name|gimp_pattern_get_standard
 argument_list|)
 expr_stmt|;
-name|gimp_object_set_name
+name|gimp_object_set_static_name
 argument_list|(
 name|GIMP_OBJECT
 argument_list|(
@@ -2414,7 +2414,7 @@ argument_list|,
 name|gimp_gradient_get_standard
 argument_list|)
 expr_stmt|;
-name|gimp_object_set_name
+name|gimp_object_set_static_name
 argument_list|(
 name|GIMP_OBJECT
 argument_list|(
@@ -2452,7 +2452,7 @@ argument_list|,
 name|gimp_palette_get_standard
 argument_list|)
 expr_stmt|;
-name|gimp_object_set_name
+name|gimp_object_set_static_name
 argument_list|(
 name|GIMP_OBJECT
 argument_list|(

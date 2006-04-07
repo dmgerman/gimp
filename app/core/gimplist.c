@@ -45,7 +45,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6b420c0103
+DECL|enum|__anon2abef8380103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1981,15 +1981,10 @@ condition|(
 name|list2
 condition|)
 do|;
-name|gimp_object_set_name
+name|gimp_object_take_name
 argument_list|(
 name|object
 argument_list|,
-name|new_name
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
 name|new_name
 argument_list|)
 expr_stmt|;

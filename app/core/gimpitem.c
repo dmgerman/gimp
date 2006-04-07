@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b7f5f60103
+DECL|enum|__anon2c7169650103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -144,7 +144,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b7f5f60203
+DECL|enum|__anon2c7169650203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2047,6 +2047,10 @@ argument_list|,
 literal|"height"
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|name
+condition|)
 name|gimp_object_set_name
 argument_list|(
 name|GIMP_OBJECT
@@ -2055,9 +2059,16 @@ name|item
 argument_list|)
 argument_list|,
 name|name
-condition|?
-name|name
-else|:
+argument_list|)
+expr_stmt|;
+else|else
+name|gimp_object_set_static_name
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
+name|item
+argument_list|)
+argument_list|,
 name|_
 argument_list|(
 literal|"Unnamed"

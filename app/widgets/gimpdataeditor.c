@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2750d7ec0103
+DECL|enum|__anon289bbf320103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1947,22 +1947,6 @@ name|editor
 operator|->
 name|data
 condition|)
-block|{
-specifier|const
-name|gchar
-modifier|*
-name|entry_text
-decl_stmt|;
-name|entry_text
-operator|=
-name|gtk_entry_get_text
-argument_list|(
-name|GTK_ENTRY
-argument_list|(
-name|widget
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|gimp_object_set_name
 argument_list|(
 name|GIMP_OBJECT
@@ -1972,10 +1956,15 @@ operator|->
 name|data
 argument_list|)
 argument_list|,
-name|entry_text
+name|gtk_entry_get_text
+argument_list|(
+name|GTK_ENTRY
+argument_list|(
+name|widget
+argument_list|)
+argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 

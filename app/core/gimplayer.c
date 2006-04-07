@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon297f60060103
+DECL|enum|__anon28b7d4f20103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -177,7 +177,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon297f60060203
+DECL|enum|__anon28b7d4f20203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1729,9 +1729,7 @@ block|{
 name|gchar
 modifier|*
 name|mask_name
-decl_stmt|;
-name|mask_name
-operator|=
+init|=
 name|g_strdup_printf
 argument_list|(
 name|_
@@ -1744,8 +1742,8 @@ argument_list|(
 name|object
 argument_list|)
 argument_list|)
-expr_stmt|;
-name|gimp_object_set_name
+decl_stmt|;
+name|gimp_object_take_name
 argument_list|(
 name|GIMP_OBJECT
 argument_list|(
@@ -1754,11 +1752,6 @@ operator|->
 name|mask
 argument_list|)
 argument_list|,
-name|mask_name
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
 name|mask_name
 argument_list|)
 expr_stmt|;

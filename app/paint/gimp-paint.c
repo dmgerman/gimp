@@ -202,7 +202,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimp_object_set_name
+name|gimp_object_set_static_name
 argument_list|(
 name|GIMP_OBJECT
 argument_list|(

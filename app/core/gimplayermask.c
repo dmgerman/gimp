@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29cdb1fb0103
+DECL|enum|__anon2a21e7290103
 block|{
 DECL|enumerator|APPLY_CHANGED
 name|APPLY_CHANGED
@@ -786,18 +786,13 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_object_set_name
+name|gimp_object_take_name
 argument_list|(
 name|GIMP_OBJECT
 argument_list|(
 name|layer_mask
 argument_list|)
 argument_list|,
-name|mask_name
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
 name|mask_name
 argument_list|)
 expr_stmt|;
