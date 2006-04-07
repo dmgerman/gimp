@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b07ab0d0103
+DECL|enum|__anon2bc8f5190103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -6087,8 +6087,8 @@ begin_function
 specifier|const
 name|guchar
 modifier|*
-DECL|function|gimp_drawable_cmap (const GimpDrawable * drawable)
-name|gimp_drawable_cmap
+DECL|function|gimp_drawable_get_colormap (const GimpDrawable * drawable)
+name|gimp_drawable_get_colormap
 parameter_list|(
 specifier|const
 name|GimpDrawable

@@ -971,7 +971,7 @@ begin_function_decl
 specifier|const
 name|guchar
 modifier|*
-name|gimp_drawable_cmap
+name|gimp_drawable_get_colormap
 parameter_list|(
 specifier|const
 name|GimpDrawable

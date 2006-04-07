@@ -2973,7 +2973,7 @@ argument_list|,
 operator|&
 name|maskPR
 argument_list|,
-name|gimp_drawable_cmap
+name|gimp_drawable_get_colormap
 argument_list|(
 name|drawable
 argument_list|)
@@ -3047,7 +3047,7 @@ name|destPR
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_drawable_cmap
+name|gimp_drawable_get_colormap
 argument_list|(
 name|drawable
 argument_list|)

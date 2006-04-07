@@ -147,7 +147,7 @@ argument_list|)
 expr_stmt|;
 name|cmap
 operator|=
-name|gimp_drawable_cmap
+name|gimp_drawable_get_colormap
 argument_list|(
 name|drawable
 argument_list|)
@@ -618,7 +618,7 @@ argument_list|)
 expr_stmt|;
 name|cmap
 operator|=
-name|gimp_drawable_cmap
+name|gimp_drawable_get_colormap
 argument_list|(
 name|drawable
 argument_list|)

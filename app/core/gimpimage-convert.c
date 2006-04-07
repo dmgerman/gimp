@@ -423,7 +423,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2b82cceb0103
+DECL|enum|__anon2c3bb5e90103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1464,7 +1464,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b82cceb0208
+DECL|struct|__anon2c3bb5e90208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1541,7 +1541,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b82cceb0308
+DECL|struct|__anon2c3bb5e90308
 block|{
 DECL|member|ncolors
 name|long
@@ -1726,7 +1726,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b82cceb0408
+DECL|struct|__anon2c3bb5e90408
 block|{
 DECL|member|used_count
 name|signed
@@ -3190,10 +3190,6 @@ control|)
 block|{
 name|layer
 operator|=
-operator|(
-name|GimpLayer
-operator|*
-operator|)
 name|list
 operator|->
 name|data
@@ -10479,7 +10475,7 @@ name|g
 decl_stmt|,
 name|b
 decl_stmt|;
-comment|/* fprintf(stderr, "custompal_pass1: using (theCustomPalette %s) from (file %s)\n",                          theCustomPalette->name, theCustomPalette->filename); */
+comment|/* fprintf(stderr,              "custompal_pass1: using (theCustomPalette %s) from (file %s)\n",              theCustomPalette->name, theCustomPalette->filename); */
 for|for
 control|(
 name|i
@@ -10507,10 +10503,6 @@ control|)
 block|{
 name|entry
 operator|=
-operator|(
-name|GimpPaletteEntry
-operator|*
-operator|)
 name|list
 operator|->
 name|data

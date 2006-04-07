@@ -2480,6 +2480,7 @@ index|[
 literal|4
 index|]
 decl_stmt|;
+specifier|const
 name|guchar
 modifier|*
 name|cmap
@@ -2748,7 +2749,7 @@ name|GIMP_INDEXED_IMAGE
 case|:
 name|cmap
 operator|=
-name|gimp_drawable_cmap
+name|gimp_drawable_get_colormap
 argument_list|(
 name|texture
 argument_list|)
@@ -2839,7 +2840,7 @@ name|GIMP_INDEXEDA_IMAGE
 case|:
 name|cmap
 operator|=
-name|gimp_drawable_cmap
+name|gimp_drawable_get_colormap
 argument_list|(
 name|texture
 argument_list|)
@@ -3239,6 +3240,7 @@ index|]
 decl_stmt|,
 name|maskval
 decl_stmt|;
+specifier|const
 name|guchar
 modifier|*
 name|cmap
@@ -3530,7 +3532,7 @@ name|GIMP_INDEXED_IMAGE
 case|:
 name|cmap
 operator|=
-name|gimp_drawable_cmap
+name|gimp_drawable_get_colormap
 argument_list|(
 name|texture
 argument_list|)
@@ -3651,7 +3653,7 @@ name|GIMP_INDEXEDA_IMAGE
 case|:
 name|cmap
 operator|=
-name|gimp_drawable_cmap
+name|gimp_drawable_get_colormap
 argument_list|(
 name|texture
 argument_list|)
