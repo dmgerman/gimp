@@ -31,6 +31,9 @@ name|context
 parameter_list|,
 name|GimpMergeType
 name|merge_type
+parameter_list|,
+name|gboolean
+name|discard_invisible
 parameter_list|)
 function_decl|;
 end_function_decl

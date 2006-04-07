@@ -49,6 +49,10 @@ DECL|member|merge_type
 name|GimpMergeType
 name|merge_type
 decl_stmt|;
+DECL|member|discard_invisible
+name|gboolean
+name|discard_invisible
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -72,6 +76,9 @@ name|parent
 parameter_list|,
 name|GimpMergeType
 name|merge_type
+parameter_list|,
+name|gboolean
+name|discard_invisible
 parameter_list|)
 function_decl|;
 end_function_decl

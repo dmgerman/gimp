@@ -5310,6 +5310,8 @@ argument_list|,
 name|context
 argument_list|,
 name|merge_type
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 if|if

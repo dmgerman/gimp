@@ -361,6 +361,16 @@ name|GIMP_EXPAND_AS_NECESSARY
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+DECL|variable|image_merge_layers_discard_invisible
+specifier|static
+name|gboolean
+name|image_merge_layers_discard_invisible
+init|=
+name|FALSE
+decl_stmt|;
+end_decl_stmt
+
 begin_comment
 comment|/*  public functions  */
 end_comment
@@ -1470,6 +1480,8 @@ argument_list|,
 name|widget
 argument_list|,
 name|image_merge_layers_type
+argument_list|,
+name|image_merge_layers_discard_invisible
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -2287,6 +2299,12 @@ name|dialog
 operator|->
 name|merge_type
 expr_stmt|;
+name|image_merge_layers_discard_invisible
+operator|=
+name|dialog
+operator|->
+name|discard_invisible
+expr_stmt|;
 name|gimp_image_merge_visible_layers
 argument_list|(
 name|dialog
@@ -2298,6 +2316,8 @@ operator|->
 name|context
 argument_list|,
 name|image_merge_layers_type
+argument_list|,
+name|image_merge_layers_discard_invisible
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush
