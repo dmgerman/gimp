@@ -1719,7 +1719,10 @@ name|buf
 argument_list|,
 literal|"%s<%d>"
 argument_list|,
+name|GIMP_OBJECT
+argument_list|(
 name|procedure
+argument_list|)
 operator|->
 name|name
 argument_list|,
@@ -1742,7 +1745,10 @@ name|output_string
 argument_list|(
 name|file
 argument_list|,
+name|GIMP_OBJECT
+argument_list|(
 name|procedure
+argument_list|)
 operator|->
 name|name
 argument_list|)
@@ -2090,7 +2096,10 @@ name|g_strdup_printf
 argument_list|(
 name|COMPAT_BLURB
 argument_list|,
+name|GIMP_OBJECT
+argument_list|(
 name|procedure
+argument_list|)
 operator|->
 name|name
 argument_list|)

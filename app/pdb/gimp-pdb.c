@@ -304,7 +304,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a2a5a520108
+DECL|struct|__anon29faa7d30108
 block|{
 DECL|member|old_name
 specifier|const
@@ -791,6 +791,11 @@ modifier|*
 name|procedure
 parameter_list|)
 block|{
+specifier|const
+name|gchar
+modifier|*
+name|name
+decl_stmt|;
 name|GList
 modifier|*
 name|list
@@ -811,6 +816,16 @@ name|procedure
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|name
+operator|=
+name|gimp_object_get_name
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
+name|procedure
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|list
 operator|=
 name|g_hash_table_lookup
@@ -819,8 +834,6 @@ name|gimp
 operator|->
 name|procedural_ht
 argument_list|,
-name|procedure
-operator|->
 name|name
 argument_list|)
 expr_stmt|;
@@ -830,8 +843,9 @@ name|gimp
 operator|->
 name|procedural_ht
 argument_list|,
-name|procedure
-operator|->
+operator|(
+name|gpointer
+operator|)
 name|name
 argument_list|,
 name|g_list_prepend
@@ -1497,9 +1511,13 @@ literal|"PDB calling error for procedure '%s':\n"
 literal|"Argument #%d type mismatch (expected %s, got %s)"
 argument_list|)
 argument_list|,
+name|gimp_object_get_name
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
 name|procedure
-operator|->
-name|name
+argument_list|)
+argument_list|)
 argument_list|,
 name|i
 operator|+

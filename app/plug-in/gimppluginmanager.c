@@ -960,7 +960,7 @@ argument_list|(
 literal|"removing duplicate PDB procedure \"%s\" "
 literal|"registered by '%s'\n"
 argument_list|,
-name|GIMP_PROCEDURE
+name|GIMP_OBJECT
 argument_list|(
 name|overridden_proc
 argument_list|)
@@ -1410,7 +1410,7 @@ argument_list|(
 literal|"Starting extension: '%s'\n"
 argument_list|)
 argument_list|,
-name|GIMP_PROCEDURE
+name|GIMP_OBJECT
 argument_list|(
 name|proc
 argument_list|)
@@ -1422,7 +1422,7 @@ name|status_callback
 argument_list|(
 name|NULL
 argument_list|,
-name|GIMP_PROCEDURE
+name|GIMP_OBJECT
 argument_list|(
 name|proc
 argument_list|)
@@ -2652,7 +2652,7 @@ name|gimp_pdb_unregister
 argument_list|(
 name|gimp
 argument_list|,
-name|GIMP_PROCEDURE
+name|GIMP_OBJECT
 argument_list|(
 name|proc
 argument_list|)
@@ -3702,7 +3702,7 @@ literal|"%s: NOT adding %s (prog = %s) to PDB\n"
 argument_list|,
 name|G_STRFUNC
 argument_list|,
-name|GIMP_PROCEDURE
+name|GIMP_OBJECT
 argument_list|(
 name|proc
 argument_list|)
@@ -3773,7 +3773,7 @@ literal|"gimp-register-save-handler"
 argument_list|,
 name|G_TYPE_STRING
 argument_list|,
-name|GIMP_PROCEDURE
+name|GIMP_OBJECT
 argument_list|(
 name|proc
 argument_list|)
@@ -3812,7 +3812,7 @@ literal|"gimp-register-magic-load-handler"
 argument_list|,
 name|G_TYPE_STRING
 argument_list|,
-name|GIMP_PROCEDURE
+name|GIMP_OBJECT
 argument_list|(
 name|proc
 argument_list|)
@@ -3900,14 +3900,14 @@ if|if
 condition|(
 name|strcmp
 argument_list|(
-name|GIMP_PROCEDURE
+name|GIMP_OBJECT
 argument_list|(
 name|proc
 argument_list|)
 operator|->
 name|name
 argument_list|,
-name|GIMP_PROCEDURE
+name|GIMP_OBJECT
 argument_list|(
 name|tmp_proc
 argument_list|)

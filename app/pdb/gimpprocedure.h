@@ -147,12 +147,6 @@ name|gboolean
 name|static_strings
 decl_stmt|;
 comment|/* Are the strings allocated?     */
-DECL|member|name
-name|gchar
-modifier|*
-name|name
-decl_stmt|;
-comment|/* Procedure name                 */
 DECL|member|original_name
 name|gchar
 modifier|*
@@ -301,10 +295,6 @@ name|procedure
 parameter_list|,
 name|gchar
 modifier|*
-name|name
-parameter_list|,
-name|gchar
-modifier|*
 name|original_name
 parameter_list|,
 name|gchar
@@ -344,10 +334,6 @@ name|procedure
 parameter_list|,
 name|gchar
 modifier|*
-name|name
-parameter_list|,
-name|gchar
-modifier|*
 name|original_name
 parameter_list|,
 name|gchar
@@ -384,10 +370,6 @@ parameter_list|(
 name|GimpProcedure
 modifier|*
 name|procedure
-parameter_list|,
-name|gchar
-modifier|*
-name|name
 parameter_list|,
 name|gchar
 modifier|*

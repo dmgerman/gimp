@@ -638,7 +638,7 @@ index|]
 operator|=
 name|g_strdup
 argument_list|(
-name|GIMP_PROCEDURE
+name|GIMP_OBJECT
 argument_list|(
 name|proc
 argument_list|)

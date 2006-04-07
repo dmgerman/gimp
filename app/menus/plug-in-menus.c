@@ -976,7 +976,7 @@ name|g_strdup_printf
 argument_list|(
 literal|"%s-merge-id"
 argument_list|,
-name|GIMP_PROCEDURE
+name|GIMP_OBJECT
 argument_list|(
 name|proc
 argument_list|)
@@ -1126,7 +1126,7 @@ block|}
 if|#
 directive|if
 literal|0
-block|g_print ("adding menu item for '%s' (@ %s)\n",            GIMP_PROCEDURE (proc)->name, action_path);
+block|g_print ("adding menu item for '%s' (@ %s)\n",            GIMP_OBJECT (proc)->name, action_path);
 endif|#
 directive|endif
 name|gtk_ui_manager_add_ui
@@ -1140,14 +1140,14 @@ name|merge_id
 argument_list|,
 name|action_path
 argument_list|,
-name|GIMP_PROCEDURE
+name|GIMP_OBJECT
 argument_list|(
 name|proc
 argument_list|)
 operator|->
 name|name
 argument_list|,
-name|GIMP_PROCEDURE
+name|GIMP_OBJECT
 argument_list|(
 name|proc
 argument_list|)
@@ -1215,7 +1215,7 @@ name|g_strdup_printf
 argument_list|(
 literal|"%s-merge-id"
 argument_list|,
-name|GIMP_PROCEDURE
+name|GIMP_OBJECT
 argument_list|(
 name|proc
 argument_list|)

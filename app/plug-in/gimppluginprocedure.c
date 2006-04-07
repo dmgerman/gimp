@@ -627,9 +627,9 @@ name|l
 argument_list|)
 control|)
 block|{
-name|GimpProcedure
+name|GimpObject
 modifier|*
-name|proc
+name|object
 init|=
 name|l
 operator|->
@@ -642,7 +642,7 @@ name|strcmp
 argument_list|(
 name|proc_name
 argument_list|,
-name|proc
+name|object
 operator|->
 name|name
 argument_list|)
@@ -650,7 +650,7 @@ condition|)
 return|return
 name|GIMP_PLUG_IN_PROCEDURE
 argument_list|(
-name|proc
+name|object
 argument_list|)
 return|;
 block|}
@@ -1204,7 +1204,7 @@ name|help_domain
 argument_list|,
 literal|"?"
 argument_list|,
-name|GIMP_PROCEDURE
+name|GIMP_OBJECT
 argument_list|(
 name|proc
 argument_list|)
@@ -1217,7 +1217,7 @@ return|;
 return|return
 name|g_strdup
 argument_list|(
-name|GIMP_PROCEDURE
+name|GIMP_OBJECT
 argument_list|(
 name|proc
 argument_list|)

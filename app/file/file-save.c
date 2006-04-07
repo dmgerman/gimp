@@ -445,7 +445,7 @@ name|context
 argument_list|,
 name|progress
 argument_list|,
-name|GIMP_PROCEDURE
+name|GIMP_OBJECT
 argument_list|(
 name|file_proc
 argument_list|)
