@@ -263,6 +263,7 @@ DECL|variable|xcf_loaders
 specifier|static
 name|GimpXcfLoaderFunc
 modifier|*
+specifier|const
 name|xcf_loaders
 index|[]
 init|=
