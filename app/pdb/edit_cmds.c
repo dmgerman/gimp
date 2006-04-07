@@ -2856,6 +2856,11 @@ argument_list|,
 name|procedure
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|procedure
+argument_list|)
+expr_stmt|;
 comment|/*    * gimp-edit-copy    */
 name|procedure
 operator|=
@@ -2928,6 +2933,11 @@ argument_list|,
 name|procedure
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|procedure
+argument_list|)
+expr_stmt|;
 comment|/*    * gimp-edit-copy-visible    */
 name|procedure
 operator|=
@@ -2997,6 +3007,11 @@ name|gimp_pdb_register
 argument_list|(
 name|gimp
 argument_list|,
+name|procedure
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
 name|procedure
 argument_list|)
 expr_stmt|;
@@ -3090,6 +3105,11 @@ argument_list|,
 name|procedure
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|procedure
+argument_list|)
+expr_stmt|;
 comment|/*    * gimp-edit-paste-as-new    */
 name|procedure
 operator|=
@@ -3141,6 +3161,11 @@ name|gimp_pdb_register
 argument_list|(
 name|gimp
 argument_list|,
+name|procedure
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
 name|procedure
 argument_list|)
 expr_stmt|;
@@ -3242,6 +3267,11 @@ argument_list|,
 name|procedure
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|procedure
+argument_list|)
+expr_stmt|;
 comment|/*    * gimp-edit-named-copy    */
 name|procedure
 operator|=
@@ -3340,6 +3370,11 @@ argument_list|,
 name|procedure
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|procedure
+argument_list|)
+expr_stmt|;
 comment|/*    * gimp-edit-named-copy-visible    */
 name|procedure
 operator|=
@@ -3435,6 +3470,11 @@ name|gimp_pdb_register
 argument_list|(
 name|gimp
 argument_list|,
+name|procedure
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
 name|procedure
 argument_list|)
 expr_stmt|;
@@ -3550,6 +3590,11 @@ argument_list|,
 name|procedure
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|procedure
+argument_list|)
+expr_stmt|;
 comment|/*    * gimp-edit-named-paste-as-new    */
 name|procedure
 operator|=
@@ -3626,6 +3671,11 @@ argument_list|,
 name|procedure
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|procedure
+argument_list|)
+expr_stmt|;
 comment|/*    * gimp-edit-clear    */
 name|procedure
 operator|=
@@ -3677,6 +3727,11 @@ name|gimp_pdb_register
 argument_list|(
 name|gimp
 argument_list|,
+name|procedure
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
 name|procedure
 argument_list|)
 expr_stmt|;
@@ -3751,6 +3806,11 @@ name|gimp_pdb_register
 argument_list|(
 name|gimp
 argument_list|,
+name|procedure
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
 name|procedure
 argument_list|)
 expr_stmt|;
@@ -3953,6 +4013,11 @@ name|gimp_pdb_register
 argument_list|(
 name|gimp
 argument_list|,
+name|procedure
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
 name|procedure
 argument_list|)
 expr_stmt|;
@@ -4328,6 +4393,11 @@ argument_list|,
 name|procedure
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|procedure
+argument_list|)
+expr_stmt|;
 comment|/*    * gimp-edit-stroke    */
 name|procedure
 operator|=
@@ -4379,6 +4449,11 @@ name|gimp_pdb_register
 argument_list|(
 name|gimp
 argument_list|,
+name|procedure
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
 name|procedure
 argument_list|)
 expr_stmt|;

@@ -1090,7 +1090,7 @@ name|current_plug_in
 operator|->
 name|plug_in_def
 operator|->
-name|proc_defs
+name|procedures
 argument_list|,
 name|canonical
 argument_list|)
@@ -1440,6 +1440,11 @@ argument_list|,
 name|procedure
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|procedure
+argument_list|)
+expr_stmt|;
 comment|/*    * gimp-plugin-domain-register    */
 name|procedure
 operator|=
@@ -1519,6 +1524,11 @@ name|gimp_pdb_register
 argument_list|(
 name|gimp
 argument_list|,
+name|procedure
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
 name|procedure
 argument_list|)
 expr_stmt|;
@@ -1602,6 +1612,11 @@ argument_list|,
 name|procedure
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|procedure
+argument_list|)
+expr_stmt|;
 comment|/*    * gimp-plugin-menu-register    */
 name|procedure
 operator|=
@@ -1682,6 +1697,11 @@ argument_list|,
 name|procedure
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|procedure
+argument_list|)
+expr_stmt|;
 comment|/*    * gimp-plugin-menu-branch-register    */
 name|procedure
 operator|=
@@ -1759,6 +1779,11 @@ name|gimp_pdb_register
 argument_list|(
 name|gimp
 argument_list|,
+name|procedure
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
 name|procedure
 argument_list|)
 expr_stmt|;
@@ -1875,6 +1900,11 @@ name|gimp_pdb_register
 argument_list|(
 name|gimp
 argument_list|,
+name|procedure
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
 name|procedure
 argument_list|)
 expr_stmt|;

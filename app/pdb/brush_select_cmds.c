@@ -728,6 +728,11 @@ argument_list|,
 name|procedure
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|procedure
+argument_list|)
+expr_stmt|;
 comment|/*    * gimp-brushes-close-popup    */
 name|procedure
 operator|=
@@ -783,6 +788,11 @@ name|gimp_pdb_register
 argument_list|(
 name|gimp
 argument_list|,
+name|procedure
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
 name|procedure
 argument_list|)
 expr_stmt|;
@@ -927,6 +937,11 @@ name|gimp_pdb_register
 argument_list|(
 name|gimp
 argument_list|,
+name|procedure
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
 name|procedure
 argument_list|)
 expr_stmt|;

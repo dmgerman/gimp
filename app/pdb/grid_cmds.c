@@ -1512,6 +1512,11 @@ argument_list|,
 name|procedure
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|procedure
+argument_list|)
+expr_stmt|;
 comment|/*    * gimp-image-grid-set-spacing    */
 name|procedure
 operator|=
@@ -1609,6 +1614,11 @@ name|gimp_pdb_register
 argument_list|(
 name|gimp
 argument_list|,
+name|procedure
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
 name|procedure
 argument_list|)
 expr_stmt|;
@@ -1712,6 +1722,11 @@ argument_list|,
 name|procedure
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|procedure
+argument_list|)
+expr_stmt|;
 comment|/*    * gimp-image-grid-set-offset    */
 name|procedure
 operator|=
@@ -1812,6 +1827,11 @@ argument_list|,
 name|procedure
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|procedure
+argument_list|)
+expr_stmt|;
 comment|/*    * gimp-image-grid-get-foreground-color    */
 name|procedure
 operator|=
@@ -1881,6 +1901,11 @@ name|gimp_pdb_register
 argument_list|(
 name|gimp
 argument_list|,
+name|procedure
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
 name|procedure
 argument_list|)
 expr_stmt|;
@@ -1956,6 +1981,11 @@ argument_list|,
 name|procedure
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|procedure
+argument_list|)
+expr_stmt|;
 comment|/*    * gimp-image-grid-get-background-color    */
 name|procedure
 operator|=
@@ -2028,6 +2058,11 @@ argument_list|,
 name|procedure
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|procedure
+argument_list|)
+expr_stmt|;
 comment|/*    * gimp-image-grid-set-background-color    */
 name|procedure
 operator|=
@@ -2097,6 +2132,11 @@ name|gimp_pdb_register
 argument_list|(
 name|gimp
 argument_list|,
+name|procedure
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
 name|procedure
 argument_list|)
 expr_stmt|;
@@ -2174,6 +2214,11 @@ argument_list|,
 name|procedure
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|procedure
+argument_list|)
+expr_stmt|;
 comment|/*    * gimp-image-grid-set-style    */
 name|procedure
 operator|=
@@ -2245,6 +2290,11 @@ name|gimp_pdb_register
 argument_list|(
 name|gimp
 argument_list|,
+name|procedure
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
 name|procedure
 argument_list|)
 expr_stmt|;

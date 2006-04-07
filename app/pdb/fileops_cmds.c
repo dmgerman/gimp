@@ -2568,6 +2568,11 @@ argument_list|,
 name|procedure
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|procedure
+argument_list|)
+expr_stmt|;
 comment|/*    * gimp-file-load-layer    */
 name|procedure
 operator|=
@@ -2694,6 +2699,11 @@ name|gimp_pdb_register
 argument_list|(
 name|gimp
 argument_list|,
+name|procedure
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
 name|procedure
 argument_list|)
 expr_stmt|;
@@ -2837,6 +2847,11 @@ argument_list|,
 name|procedure
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|procedure
+argument_list|)
+expr_stmt|;
 comment|/*    * gimp-file-save    */
 name|procedure
 operator|=
@@ -2973,6 +2988,11 @@ argument_list|,
 name|procedure
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|procedure
+argument_list|)
+expr_stmt|;
 comment|/*    * gimp-file-save-thumbnail    */
 name|procedure
 operator|=
@@ -3046,6 +3066,11 @@ name|gimp_pdb_register
 argument_list|(
 name|gimp
 argument_list|,
+name|procedure
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
 name|procedure
 argument_list|)
 expr_stmt|;
@@ -3126,6 +3151,11 @@ name|gimp_pdb_register
 argument_list|(
 name|gimp
 argument_list|,
+name|procedure
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
 name|procedure
 argument_list|)
 expr_stmt|;
@@ -3259,6 +3289,11 @@ argument_list|,
 name|procedure
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|procedure
+argument_list|)
+expr_stmt|;
 comment|/*    * gimp-register-load-handler    */
 name|procedure
 operator|=
@@ -3362,6 +3397,11 @@ name|gimp_pdb_register
 argument_list|(
 name|gimp
 argument_list|,
+name|procedure
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
 name|procedure
 argument_list|)
 expr_stmt|;
@@ -3471,6 +3511,11 @@ argument_list|,
 name|procedure
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|procedure
+argument_list|)
+expr_stmt|;
 comment|/*    * gimp-register-file-handler-mime    */
 name|procedure
 operator|=
@@ -3551,6 +3596,11 @@ argument_list|,
 name|procedure
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|procedure
+argument_list|)
+expr_stmt|;
 comment|/*    * gimp-register-thumbnail-loader    */
 name|procedure
 operator|=
@@ -3628,6 +3678,11 @@ name|gimp_pdb_register
 argument_list|(
 name|gimp
 argument_list|,
+name|procedure
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
 name|procedure
 argument_list|)
 expr_stmt|;

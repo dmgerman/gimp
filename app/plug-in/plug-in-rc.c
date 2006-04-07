@@ -248,7 +248,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c00860a0103
+DECL|enum|__anon2c96d5f30103
 block|{
 DECL|enumerator|PROTOCOL_VERSION
 name|PROTOCOL_VERSION
@@ -944,8 +944,6 @@ block|{
 name|plug_in_def_free
 argument_list|(
 name|plug_in_def
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -1036,7 +1034,6 @@ argument_list|,
 name|proc
 argument_list|)
 expr_stmt|;
-elseif|else
 if|if
 condition|(
 name|proc
@@ -1143,8 +1140,6 @@ block|}
 name|plug_in_def_free
 argument_list|(
 name|plug_in_def
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 return|return
@@ -2939,7 +2934,7 @@ if|if
 condition|(
 name|plug_in_def
 operator|->
-name|proc_defs
+name|procedures
 condition|)
 block|{
 name|GSList
@@ -2979,7 +2974,7 @@ name|list2
 operator|=
 name|plug_in_def
 operator|->
-name|proc_defs
+name|procedures
 init|;
 name|list2
 condition|;

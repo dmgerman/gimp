@@ -539,6 +539,11 @@ argument_list|,
 name|proc
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|procedure
+argument_list|)
+expr_stmt|;
 comment|/*  gimp-xcf-load  */
 name|procedure
 operator|=
@@ -751,6 +756,11 @@ argument_list|(
 name|gimp
 argument_list|,
 name|proc
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|procedure
 argument_list|)
 expr_stmt|;
 block|}

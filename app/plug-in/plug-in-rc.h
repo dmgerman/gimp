@@ -43,7 +43,7 @@ name|plug_in_rc_write
 parameter_list|(
 name|GSList
 modifier|*
-name|proc_defs
+name|plug_in_defs
 parameter_list|,
 specifier|const
 name|gchar

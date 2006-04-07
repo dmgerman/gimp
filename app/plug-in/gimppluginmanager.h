@@ -193,13 +193,13 @@ end_comment
 
 begin_function_decl
 name|void
-name|plug_ins_temp_proc_def_add
+name|plug_ins_temp_procedure_add
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|GimpPlugInProcedure
+name|GimpTemporaryProcedure
 modifier|*
 name|proc
 parameter_list|)
@@ -208,13 +208,13 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|plug_ins_temp_proc_def_remove
+name|plug_ins_temp_procedure_remove
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|GimpPlugInProcedure
+name|GimpTemporaryProcedure
 modifier|*
 name|proc
 parameter_list|)

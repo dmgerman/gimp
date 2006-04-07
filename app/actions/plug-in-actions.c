@@ -579,7 +579,7 @@ name|group
 operator|->
 name|gimp
 operator|->
-name|plug_in_proc_defs
+name|plug_in_procedures
 init|;
 name|list
 condition|;
@@ -908,7 +908,7 @@ name|group
 operator|->
 name|gimp
 operator|->
-name|plug_in_proc_defs
+name|plug_in_procedures
 init|;
 name|list
 condition|;

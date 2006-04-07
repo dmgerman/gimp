@@ -205,10 +205,10 @@ DECL|member|write_pluginrc
 name|gboolean
 name|write_pluginrc
 decl_stmt|;
-DECL|member|plug_in_proc_defs
+DECL|member|plug_in_procedures
 name|GSList
 modifier|*
-name|plug_in_proc_defs
+name|plug_in_procedures
 decl_stmt|;
 DECL|member|plug_in_menu_branches
 name|GSList
@@ -636,7 +636,7 @@ name|gimp
 parameter_list|,
 name|GimpPlugInProcedure
 modifier|*
-name|proc_def
+name|procedure
 parameter_list|)
 function_decl|;
 end_function_decl
