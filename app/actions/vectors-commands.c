@@ -126,12 +126,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"plug-in/plug-in-run.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"vectors/gimpvectors.h"
 end_include
 
@@ -1258,6 +1252,13 @@ argument_list|(
 name|procedure
 argument_list|)
 expr_stmt|;
+name|gimp_value_array_truncate
+argument_list|(
+name|args
+argument_list|,
+literal|3
+argument_list|)
+expr_stmt|;
 name|g_value_set_int
 argument_list|(
 operator|&
@@ -1298,8 +1299,10 @@ name|NULL
 comment|/* unused */
 argument_list|)
 expr_stmt|;
-name|plug_in_run
+name|gimp_procedure_execute_async
 argument_list|(
+name|procedure
+argument_list|,
 name|image
 operator|->
 name|gimp
@@ -1314,13 +1317,7 @@ argument_list|(
 name|display
 argument_list|)
 argument_list|,
-name|procedure
-argument_list|,
 name|args
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
 argument_list|,
 name|display
 condition|?

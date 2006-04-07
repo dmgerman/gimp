@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpdrawable.h"
 end_include
 
@@ -73,12 +79,6 @@ begin_include
 include|#
 directive|include
 file|"plug-in/plug-in-data.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"plug-in/plug-in-run.h"
 end_include
 
 begin_include
@@ -380,9 +380,18 @@ goto|goto
 name|error
 goto|;
 block|}
-comment|/* run the plug-in procedure */
-name|plug_in_run
+name|gimp_value_array_truncate
 argument_list|(
+name|args
+argument_list|,
+name|n_args
+argument_list|)
+expr_stmt|;
+comment|/* run the plug-in procedure */
+name|gimp_procedure_execute_async
+argument_list|(
+name|procedure
+argument_list|,
 name|gimp
 argument_list|,
 name|gimp_get_user_context
@@ -395,13 +404,7 @@ argument_list|(
 name|display
 argument_list|)
 argument_list|,
-name|procedure
-argument_list|,
 name|args
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
 argument_list|,
 name|display
 condition|?
@@ -623,8 +626,10 @@ name|drawable
 argument_list|)
 expr_stmt|;
 comment|/* run the plug-in procedure */
-name|plug_in_run
+name|gimp_procedure_execute_async
 argument_list|(
+name|procedure
+argument_list|,
 name|gimp
 argument_list|,
 name|gimp_get_user_context
@@ -637,13 +642,7 @@ argument_list|(
 name|display
 argument_list|)
 argument_list|,
-name|procedure
-argument_list|,
 name|args
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
 argument_list|,
 name|gimp_display_get_ID
 argument_list|(

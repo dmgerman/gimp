@@ -102,12 +102,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"plug-in/plug-in-run.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimp-pdb.h"
 end_include
 
@@ -304,7 +298,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29faa7d30108
+DECL|struct|__anon29c1f7e60108
 block|{
 DECL|member|old_name
 specifier|const

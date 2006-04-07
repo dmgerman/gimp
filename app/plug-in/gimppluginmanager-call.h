@@ -16,6 +16,23 @@ directive|define
 name|__PLUG_IN_RUN_H__
 end_define
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|__YES_I_NEED_PLUG_IN_RUN__
+end_ifndef
+
+begin_error
+error|#
+directive|error
+error|Don't use plug_in_run*(), use gimp_procedure_execute*() instead.
+end_error
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_comment
 comment|/*  Run a plug-in as if it were a procedure database procedure  */
 end_comment
@@ -37,7 +54,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
-name|GimpProcedure
+name|GimpPlugInProcedure
 modifier|*
 name|procedure
 parameter_list|,
@@ -53,6 +70,38 @@ name|destroy_return_vals
 parameter_list|,
 name|gint
 name|display_ID
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/*  Run a temp plug-in proc as if it were a procedure database procedure  */
+end_comment
+
+begin_function_decl
+name|GValueArray
+modifier|*
+name|plug_in_run_temp
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
+parameter_list|,
+name|GimpTemporaryProcedure
+modifier|*
+name|procedure
+parameter_list|,
+name|GValueArray
+modifier|*
+name|args
 parameter_list|)
 function_decl|;
 end_function_decl
