@@ -248,7 +248,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2afb46460103
+DECL|enum|__anon2a2f0a0b0103
 block|{
 DECL|enumerator|PROTOCOL_VERSION
 name|PROTOCOL_VERSION
@@ -885,10 +885,6 @@ modifier|*
 name|scanner
 parameter_list|)
 block|{
-name|gchar
-modifier|*
-name|name
-decl_stmt|;
 name|PlugInDef
 modifier|*
 name|plug_in_def
@@ -898,6 +894,10 @@ modifier|*
 name|proc
 init|=
 name|NULL
+decl_stmt|;
+name|gchar
+modifier|*
+name|name
 decl_stmt|;
 name|GTokenType
 name|token
@@ -923,6 +923,11 @@ argument_list|(
 name|name
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|name
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -944,11 +949,6 @@ block|{
 name|plug_in_def_free
 argument_list|(
 name|plug_in_def
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|name
 argument_list|)
 expr_stmt|;
 return|return
@@ -1015,7 +1015,9 @@ name|scanner
 argument_list|,
 name|gimp
 argument_list|,
-name|name
+name|plug_in_def
+operator|->
+name|prog
 argument_list|,
 operator|&
 name|proc
@@ -1099,11 +1101,6 @@ default|default:
 break|break;
 block|}
 block|}
-name|g_free
-argument_list|(
-name|name
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|token
@@ -1381,7 +1378,7 @@ name|n_menu_paths
 argument_list|)
 condition|)
 return|return
-name|G_TOKEN_STRING
+name|G_TOKEN_INT
 return|;
 for|for
 control|(

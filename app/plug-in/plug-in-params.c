@@ -60,12 +60,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"plug-in.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"plug-in-params.h"
 end_include
 

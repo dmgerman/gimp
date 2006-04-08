@@ -635,12 +635,11 @@ name|data
 decl_stmt|;
 if|if
 condition|(
-operator|!
 name|plug_in_def
 operator|->
 name|needs_query
 condition|)
-continue|continue;
+block|{
 name|basename
 operator|=
 name|g_filename_display_basename
@@ -703,6 +702,7 @@ argument_list|,
 name|plug_in_def
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 comment|/* initialize the plug-ins */
@@ -793,12 +793,11 @@ name|data
 decl_stmt|;
 if|if
 condition|(
-operator|!
 name|plug_in_def
 operator|->
 name|has_init
 condition|)
-continue|continue;
+block|{
 name|basename
 operator|=
 name|g_filename_display_basename
@@ -863,6 +862,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+block|}
 name|status_callback
 argument_list|(
 name|NULL
@@ -872,7 +872,7 @@ argument_list|,
 literal|1.0
 argument_list|)
 expr_stmt|;
-comment|/* insert the proc defs */
+comment|/* insert the procedures */
 for|for
 control|(
 name|list
