@@ -3288,6 +3288,10 @@ elseif|else
 if|if
 condition|(
 name|fixed_center
+operator|||
+name|state
+operator|&
+name|GDK_CONTROL_MASK
 condition|)
 block|{
 name|x2
@@ -3427,6 +3431,10 @@ elseif|else
 if|if
 condition|(
 name|fixed_center
+operator|||
+name|state
+operator|&
+name|GDK_CONTROL_MASK
 condition|)
 block|{
 name|x1
@@ -3615,6 +3623,10 @@ elseif|else
 if|if
 condition|(
 name|fixed_center
+operator|||
+name|state
+operator|&
+name|GDK_CONTROL_MASK
 condition|)
 block|{
 name|y2
@@ -3754,6 +3766,10 @@ elseif|else
 if|if
 condition|(
 name|fixed_center
+operator|||
+name|state
+operator|&
+name|GDK_CONTROL_MASK
 condition|)
 block|{
 name|y1
