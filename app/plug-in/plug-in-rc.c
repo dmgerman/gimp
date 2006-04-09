@@ -60,12 +60,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"plug-ins.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"plug-in-def.h"
 end_include
 
@@ -97,6 +91,11 @@ parameter_list|,
 name|GScanner
 modifier|*
 name|scanner
+parameter_list|,
+name|GSList
+modifier|*
+modifier|*
+name|plug_in_defs
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -248,7 +247,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2f0a0b0103
+DECL|enum|__anon2bd066000103
 block|{
 DECL|enumerator|PROTOCOL_VERSION
 name|PROTOCOL_VERSION
@@ -304,7 +303,8 @@ enum|;
 end_enum
 
 begin_function
-name|gboolean
+name|GSList
+modifier|*
 DECL|function|plug_in_rc_parse (Gimp * gimp,const gchar * filename,GError ** error)
 name|plug_in_rc_parse
 parameter_list|(
@@ -331,18 +331,19 @@ name|GEnumClass
 modifier|*
 name|enum_class
 decl_stmt|;
-name|GTokenType
-name|token
-decl_stmt|;
-name|gboolean
-name|retval
+name|GSList
+modifier|*
+name|plug_in_defs
 init|=
-name|FALSE
+name|NULL
 decl_stmt|;
 name|gint
 name|version
 init|=
 name|GIMP_PROTOCOL_VERSION
+decl_stmt|;
+name|GTokenType
+name|token
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -392,7 +393,7 @@ operator|!
 name|scanner
 condition|)
 return|return
-name|FALSE
+name|NULL
 return|;
 name|enum_class
 operator|=
@@ -759,6 +760,9 @@ argument_list|(
 name|gimp
 argument_list|,
 name|scanner
+argument_list|,
+operator|&
+name|plug_in_defs
 argument_list|)
 expr_stmt|;
 name|g_scanner_set_scope
@@ -791,6 +795,17 @@ condition|(
 name|version
 operator|!=
 name|GIMP_PROTOCOL_VERSION
+operator|||
+name|token
+operator|!=
+name|G_TOKEN_LEFT_PAREN
+condition|)
+block|{
+if|if
+condition|(
+name|version
+operator|!=
+name|GIMP_PROTOCOL_VERSION
 condition|)
 block|{
 name|g_set_error
@@ -813,13 +828,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-elseif|else
-if|if
-condition|(
-name|token
-operator|!=
-name|G_TOKEN_LEFT_PAREN
-condition|)
+else|else
 block|{
 name|g_scanner_get_next_token
 argument_list|(
@@ -847,11 +856,26 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
-else|else
-block|{
-name|retval
+name|g_slist_foreach
+argument_list|(
+name|plug_in_defs
+argument_list|,
+operator|(
+name|GFunc
+operator|)
+name|plug_in_def_free
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_slist_free
+argument_list|(
+name|plug_in_defs
+argument_list|)
+expr_stmt|;
+name|plug_in_defs
 operator|=
-name|TRUE
+name|NULL
 expr_stmt|;
 block|}
 name|g_type_class_unref
@@ -865,7 +889,10 @@ name|scanner
 argument_list|)
 expr_stmt|;
 return|return
-name|retval
+name|g_slist_reverse
+argument_list|(
+name|plug_in_defs
+argument_list|)
 return|;
 block|}
 end_function
@@ -873,7 +900,7 @@ end_function
 begin_function
 specifier|static
 name|GTokenType
-DECL|function|plug_in_def_deserialize (Gimp * gimp,GScanner * scanner)
+DECL|function|plug_in_def_deserialize (Gimp * gimp,GScanner * scanner,GSList ** plug_in_defs)
 name|plug_in_def_deserialize
 parameter_list|(
 name|Gimp
@@ -883,6 +910,11 @@ parameter_list|,
 name|GScanner
 modifier|*
 name|scanner
+parameter_list|,
+name|GSList
+modifier|*
+modifier|*
+name|plug_in_defs
 parameter_list|)
 block|{
 name|PlugInDef
@@ -1122,9 +1154,13 @@ name|token
 argument_list|)
 condition|)
 block|{
-name|plug_ins_def_add_from_rc
+operator|*
+name|plug_in_defs
+operator|=
+name|g_slist_prepend
 argument_list|(
-name|gimp
+operator|*
+name|plug_in_defs
 argument_list|,
 name|plug_in_def
 argument_list|)

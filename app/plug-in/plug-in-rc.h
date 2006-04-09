@@ -17,7 +17,8 @@ name|__PLUG_IN_RC_H__
 end_define
 
 begin_function_decl
-name|gboolean
+name|GSList
+modifier|*
 name|plug_in_rc_parse
 parameter_list|(
 name|Gimp

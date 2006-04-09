@@ -169,25 +169,6 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* Add a plug-in definition. */
-end_comment
-
-begin_function_decl
-name|void
-name|plug_ins_def_add_from_rc
-parameter_list|(
-name|Gimp
-modifier|*
-name|gimp
-parameter_list|,
-name|PlugInDef
-modifier|*
-name|plug_in_def
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
 comment|/* Add/Remove temporary procedures. */
 end_comment
 
