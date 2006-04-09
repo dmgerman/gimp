@@ -310,12 +310,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"plug-ins.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"plug-in-debug.h"
 end_include
 
@@ -347,6 +341,18 @@ begin_include
 include|#
 directive|include
 file|"plug-in-shm.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"plug-ins.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"plug-ins-locale.h"
 end_include
 
 begin_include

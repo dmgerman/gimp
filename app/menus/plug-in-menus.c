@@ -54,13 +54,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"plug-in/plug-ins.h"
+file|"plug-in/plug-in-def.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"plug-in/plug-in-def.h"
+file|"plug-in/plug-ins-locale.h"
 end_include
 
 begin_include

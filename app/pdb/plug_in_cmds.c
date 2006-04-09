@@ -40,12 +40,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpbase/gimpprotocol.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"pdb-types.h"
 end_include
 
@@ -88,13 +82,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"plug-in/plug-in-params.h"
+file|"plug-in/plug-in.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"plug-in/plug-in.h"
+file|"plug-in/plug-ins-help.h"
 end_include
 
 begin_include

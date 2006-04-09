@@ -78,6 +78,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"plug-in/plug-ins-help.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"plug-in/plug-ins-locale.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpactiongroup.h"
 end_include
 
