@@ -70,25 +70,6 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* Register an internal plug-in.  This is for file load-save  * handlers, which are organized around the plug-in data structure.  * This could all be done a little better, but oh well.  -josh  */
-end_comment
-
-begin_function_decl
-name|void
-name|plug_ins_add_internal
-parameter_list|(
-name|Gimp
-modifier|*
-name|gimp
-parameter_list|,
-name|GimpPlugInProcedure
-modifier|*
-name|proc
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
 comment|/* Add in the file load/save handler fields procedure. */
 end_comment
 
@@ -164,6 +145,25 @@ specifier|const
 name|gchar
 modifier|*
 name|thumb_proc
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/* Register a plug-in. This function is public for file load-save  * handlers, which are organized around the plug-in data structure.  * This could all be done a little better, but oh well.  -josh  */
+end_comment
+
+begin_function_decl
+name|void
+name|plug_ins_procedure_add
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
+name|GimpPlugInProcedure
+modifier|*
+name|proc
 parameter_list|)
 function_decl|;
 end_function_decl

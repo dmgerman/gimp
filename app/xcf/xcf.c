@@ -534,7 +534,7 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|plug_ins_add_internal
+name|plug_ins_procedure_add
 argument_list|(
 name|gimp
 argument_list|,
@@ -754,7 +754,7 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|plug_ins_add_internal
+name|plug_ins_procedure_add
 argument_list|(
 name|gimp
 argument_list|,
