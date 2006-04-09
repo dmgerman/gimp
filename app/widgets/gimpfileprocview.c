@@ -42,13 +42,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"plug-in/plug-ins-help.h"
+file|"plug-in/plug-in-help-domain.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"plug-in/plug-ins-locale.h"
+file|"plug-in/plug-in-locale-domain.h"
 end_include
 
 begin_include
@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b3f98c0103
+DECL|enum|__anon2b77f7f90103
 block|{
 DECL|enumerator|COLUMN_PROC
 name|COLUMN_PROC
@@ -93,7 +93,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b3f98c0203
+DECL|enum|__anon2b77f7f90203
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -473,7 +473,7 @@ name|list2
 decl_stmt|;
 name|locale_domain
 operator|=
-name|plug_ins_locale_domain
+name|plug_in_locale_domain
 argument_list|(
 name|gimp
 argument_list|,
@@ -486,7 +486,7 @@ argument_list|)
 expr_stmt|;
 name|help_domain
 operator|=
-name|plug_ins_help_domain
+name|plug_in_help_domain
 argument_list|(
 name|gimp
 argument_list|,

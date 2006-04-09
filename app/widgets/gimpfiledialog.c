@@ -66,7 +66,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"plug-in/plug-ins-locale.h"
+file|"plug-in/plug-in-locale-domain.h"
 end_include
 
 begin_include
@@ -1995,7 +1995,7 @@ name|i
 decl_stmt|;
 name|domain
 operator|=
-name|plug_ins_locale_domain
+name|plug_in_locale_domain
 argument_list|(
 name|gimp
 argument_list|,

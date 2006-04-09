@@ -322,6 +322,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"plug-in-locale-domain.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"plug-in-message.h"
 end_include
 
@@ -347,12 +353,6 @@ begin_include
 include|#
 directive|include
 file|"plug-ins.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"plug-ins-locale.h"
 end_include
 
 begin_include
@@ -3834,7 +3834,7 @@ name|gchar
 modifier|*
 name|domain
 init|=
-name|plug_ins_locale_domain
+name|plug_in_locale_domain
 argument_list|(
 name|plug_in
 operator|->

@@ -1,24 +1,24 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * plug-ins-help.h  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * plug-in-help-domain.h  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__PLUG_INS_HELP_H__
+name|__PLUG_IN_HELP_DOMAIN_H__
 end_ifndef
 
 begin_define
-DECL|macro|__PLUG_INS_HELP_H__
+DECL|macro|__PLUG_IN_HELP_DOMAIN_H__
 define|#
 directive|define
-name|__PLUG_INS_HELP_H__
+name|__PLUG_IN_HELP_DOMAIN_H__
 end_define
 
 begin_function_decl
 name|void
-name|plug_ins_help_exit
+name|plug_in_help_domain_exit
 parameter_list|(
 name|Gimp
 modifier|*
@@ -33,7 +33,7 @@ end_comment
 
 begin_function_decl
 name|void
-name|plug_ins_help_domain_add
+name|plug_in_help_domain_add
 parameter_list|(
 name|Gimp
 modifier|*
@@ -65,7 +65,7 @@ begin_function_decl
 specifier|const
 name|gchar
 modifier|*
-name|plug_ins_help_domain
+name|plug_in_help_domain
 parameter_list|(
 name|Gimp
 modifier|*
@@ -91,7 +91,7 @@ end_comment
 
 begin_function_decl
 name|gint
-name|plug_ins_help_domains
+name|plug_in_help_domains
 parameter_list|(
 name|Gimp
 modifier|*
@@ -118,7 +118,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __PLUG_INS_HELP_H__ */
+comment|/* __PLUG_INS_HELP_DOMAIN_H__ */
 end_comment
 
 end_unit

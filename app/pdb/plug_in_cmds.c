@@ -82,13 +82,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"plug-in/plug-in.h"
+file|"plug-in/plug-in-menu-branch.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"plug-in/plug-ins-help.h"
+file|"plug-in/plug-in.h"
 end_include
 
 begin_include
@@ -877,7 +877,7 @@ operator|->
 name|current_plug_in
 condition|)
 block|{
-name|plug_ins_menu_branch_add
+name|plug_in_menu_branch_add
 argument_list|(
 name|gimp
 argument_list|,

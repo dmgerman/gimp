@@ -72,19 +72,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"plug-in/plug-ins.h"
+file|"plug-in/plug-in-help-domain.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"plug-in/plug-ins-help.h"
+file|"plug-in/plug-in-locale-domain.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"plug-in/plug-ins-locale.h"
+file|"plug-in/plug-in-menu-branch.h"
 end_include
 
 begin_include
@@ -1212,7 +1212,7 @@ argument_list|)
 expr_stmt|;
 name|locale_domain
 operator|=
-name|plug_ins_locale_domain
+name|plug_in_locale_domain
 argument_list|(
 name|group
 operator|->
@@ -1225,7 +1225,7 @@ argument_list|)
 expr_stmt|;
 name|help_domain
 operator|=
-name|plug_ins_help_domain
+name|plug_in_help_domain
 argument_list|(
 name|group
 operator|->
@@ -1628,7 +1628,7 @@ argument_list|)
 expr_stmt|;
 name|locale_domain
 operator|=
-name|plug_ins_locale_domain
+name|plug_in_locale_domain
 argument_list|(
 name|group
 operator|->
@@ -1827,7 +1827,7 @@ argument_list|)
 expr_stmt|;
 name|locale_domain
 operator|=
-name|plug_ins_locale_domain
+name|plug_in_locale_domain
 argument_list|(
 name|group
 operator|->
@@ -1997,7 +1997,7 @@ argument_list|)
 expr_stmt|;
 name|domain
 operator|=
-name|plug_ins_locale_domain
+name|plug_in_locale_domain
 argument_list|(
 name|gimp
 argument_list|,
@@ -2179,7 +2179,7 @@ argument_list|)
 expr_stmt|;
 name|domain
 operator|=
-name|plug_ins_locale_domain
+name|plug_in_locale_domain
 argument_list|(
 name|gimp
 argument_list|,

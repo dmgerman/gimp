@@ -52,13 +52,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"plug-in/plug-in.h"
+file|"plug-in/plug-in-help-domain.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"plug-in/plug-ins-help.h"
+file|"plug-in/plug-in.h"
 end_include
 
 begin_function
@@ -151,7 +151,7 @@ operator|(
 name|gchar
 operator|*
 operator|)
-name|plug_ins_help_domain
+name|plug_in_help_domain
 argument_list|(
 name|gimp
 argument_list|,
