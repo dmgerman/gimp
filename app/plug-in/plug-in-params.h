@@ -60,23 +60,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|void
-name|plug_in_params_destroy
-parameter_list|(
-name|GPParam
-modifier|*
-name|params
-parameter_list|,
-name|gint
-name|n_params
-parameter_list|,
-name|gboolean
-name|full_destroy
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_endif
 endif|#
 directive|endif
