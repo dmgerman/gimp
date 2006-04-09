@@ -300,6 +300,27 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gboolean
+name|gimp_plug_in_procedure_add_menu_path
+parameter_list|(
+name|GimpPlugInProcedure
+modifier|*
+name|proc
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|menu_path
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gchar
 modifier|*
 name|gimp_plug_in_procedure_get_label
