@@ -54,6 +54,7 @@ end_ifdef
 begin_decl_stmt
 DECL|variable|debug_actions
 specifier|static
+specifier|const
 name|GimpActionEntry
 name|debug_actions
 index|[]

@@ -39,6 +39,7 @@ end_endif
 
 begin_decl_stmt
 specifier|extern
+specifier|const
 name|GimpStringActionEntry
 name|dialogs_dockable_actions
 index|[]

@@ -96,6 +96,7 @@ end_include
 begin_decl_stmt
 DECL|variable|tools_actions
 specifier|static
+specifier|const
 name|GimpActionEntry
 name|tools_actions
 index|[]
@@ -306,6 +307,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|tools_toggle_actions
 specifier|static
+specifier|const
 name|GimpToggleActionEntry
 name|tools_toggle_actions
 index|[]
@@ -342,6 +344,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|tools_alternative_actions
 specifier|static
+specifier|const
 name|GimpStringActionEntry
 name|tools_alternative_actions
 index|[]
@@ -391,6 +394,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|tools_color_average_radius_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|tools_color_average_radius_actions
 index|[]
@@ -528,6 +532,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|tools_ink_blob_size_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|tools_ink_blob_size_actions
 index|[]
@@ -665,6 +670,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|tools_ink_blob_aspect_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|tools_ink_blob_aspect_actions
 index|[]
@@ -802,6 +808,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|tools_ink_blob_angle_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|tools_ink_blob_angle_actions
 index|[]
@@ -939,6 +946,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|tools_value_1_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|tools_value_1_actions
 index|[]
@@ -1076,6 +1084,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|tools_value_2_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|tools_value_2_actions
 index|[]
@@ -1213,6 +1222,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|tools_value_3_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|tools_value_3_actions
 index|[]
@@ -1350,6 +1360,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|tools_value_4_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|tools_value_4_actions
 index|[]
@@ -1487,6 +1498,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|tools_object_1_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|tools_object_1_actions
 index|[]
@@ -1588,6 +1600,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|tools_object_2_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|tools_object_2_actions
 index|[]

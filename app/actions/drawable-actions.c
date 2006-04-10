@@ -90,6 +90,7 @@ end_include
 begin_decl_stmt
 DECL|variable|drawable_actions
 specifier|static
+specifier|const
 name|GimpActionEntry
 name|drawable_actions
 index|[]
@@ -226,6 +227,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|drawable_toggle_actions
 specifier|static
+specifier|const
 name|GimpToggleActionEntry
 name|drawable_toggle_actions
 index|[]
@@ -291,6 +293,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|drawable_flip_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|drawable_flip_actions
 index|[]
@@ -350,6 +353,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|drawable_rotate_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|drawable_rotate_actions
 index|[]

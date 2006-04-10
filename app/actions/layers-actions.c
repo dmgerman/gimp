@@ -102,6 +102,7 @@ end_include
 begin_decl_stmt
 DECL|variable|layers_actions
 specifier|static
+specifier|const
 name|GimpActionEntry
 name|layers_actions
 index|[]
@@ -770,6 +771,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|layers_toggle_actions
 specifier|static
+specifier|const
 name|GimpToggleActionEntry
 name|layers_toggle_actions
 index|[]
@@ -886,6 +888,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|layers_mask_apply_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|layers_mask_apply_actions
 index|[]
@@ -945,6 +948,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|layers_mask_to_selection_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|layers_mask_to_selection_actions
 index|[]
@@ -1052,6 +1056,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|layers_alpha_to_selection_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|layers_alpha_to_selection_actions
 index|[]
@@ -1159,6 +1164,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|layers_select_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|layers_select_actions
 index|[]
@@ -1254,6 +1260,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|layers_opacity_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|layers_opacity_actions
 index|[]
@@ -1394,6 +1401,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|layers_mode_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|layers_mode_actions
 index|[]

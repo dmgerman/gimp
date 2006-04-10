@@ -66,6 +66,7 @@ end_include
 begin_decl_stmt
 DECL|variable|cursor_info_actions
 specifier|static
+specifier|const
 name|GimpActionEntry
 name|cursor_info_actions
 index|[]
@@ -96,6 +97,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|cursor_info_toggle_actions
 specifier|static
+specifier|const
 name|GimpToggleActionEntry
 name|cursor_info_toggle_actions
 index|[]

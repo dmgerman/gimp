@@ -84,6 +84,7 @@ end_include
 begin_decl_stmt
 DECL|variable|select_actions
 specifier|static
+specifier|const
 name|GimpActionEntry
 name|select_actions
 index|[]

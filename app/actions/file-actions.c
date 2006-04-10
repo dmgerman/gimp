@@ -181,6 +181,7 @@ end_function_decl
 begin_decl_stmt
 DECL|variable|file_actions
 specifier|static
+specifier|const
 name|GimpActionEntry
 name|file_actions
 index|[]

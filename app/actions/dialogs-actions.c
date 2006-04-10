@@ -60,6 +60,7 @@ end_include
 begin_decl_stmt
 DECL|variable|dialogs_actions
 specifier|static
+specifier|const
 name|GimpActionEntry
 name|dialogs_actions
 index|[]
@@ -180,6 +181,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|dialogs_dockable_actions
+specifier|const
 name|GimpStringActionEntry
 name|dialogs_dockable_actions
 index|[]
@@ -730,6 +732,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|dialogs_toplevel_actions
 specifier|static
+specifier|const
 name|GimpStringActionEntry
 name|dialogs_toplevel_actions
 index|[]

@@ -72,6 +72,7 @@ end_include
 begin_decl_stmt
 DECL|variable|brush_editor_actions
 specifier|static
+specifier|const
 name|GimpActionEntry
 name|brush_editor_actions
 index|[]
@@ -102,6 +103,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|brush_editor_toggle_actions
 specifier|static
+specifier|const
 name|GimpToggleActionEntry
 name|brush_editor_toggle_actions
 index|[]

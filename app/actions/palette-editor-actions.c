@@ -84,6 +84,7 @@ end_include
 begin_decl_stmt
 DECL|variable|palette_editor_actions
 specifier|static
+specifier|const
 name|GimpActionEntry
 name|palette_editor_actions
 index|[]
@@ -164,6 +165,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|palette_editor_toggle_actions
 specifier|static
+specifier|const
 name|GimpToggleActionEntry
 name|palette_editor_toggle_actions
 index|[]
@@ -199,6 +201,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|palette_editor_new_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|palette_editor_new_actions
 index|[]
@@ -258,6 +261,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|palette_editor_zoom_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|palette_editor_zoom_actions
 index|[]

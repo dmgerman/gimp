@@ -72,6 +72,7 @@ end_include
 begin_decl_stmt
 DECL|variable|quick_mask_actions
 specifier|static
+specifier|const
 name|GimpActionEntry
 name|quick_mask_actions
 index|[]
@@ -124,6 +125,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|quick_mask_toggle_actions
 specifier|static
+specifier|const
 name|GimpToggleActionEntry
 name|quick_mask_toggle_actions
 index|[]
@@ -162,6 +164,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|quick_mask_invert_actions
 specifier|static
+specifier|const
 name|GimpRadioActionEntry
 name|quick_mask_invert_actions
 index|[]

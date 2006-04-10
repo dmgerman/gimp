@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2440500103
+DECL|enum|__anon2bd556f70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1121,13 +1121,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_action_group_add_actions (GimpActionGroup * group,GimpActionEntry * entries,guint n_entries)
+DECL|function|gimp_action_group_add_actions (GimpActionGroup * group,const GimpActionEntry * entries,guint n_entries)
 name|gimp_action_group_add_actions
 parameter_list|(
 name|GimpActionGroup
 modifier|*
 name|group
 parameter_list|,
+specifier|const
 name|GimpActionEntry
 modifier|*
 name|entries
@@ -1339,13 +1340,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_action_group_add_toggle_actions (GimpActionGroup * group,GimpToggleActionEntry * entries,guint n_entries)
+DECL|function|gimp_action_group_add_toggle_actions (GimpActionGroup * group,const GimpToggleActionEntry * entries,guint n_entries)
 name|gimp_action_group_add_toggle_actions
 parameter_list|(
 name|GimpActionGroup
 modifier|*
 name|group
 parameter_list|,
+specifier|const
 name|GimpToggleActionEntry
 modifier|*
 name|entries
@@ -1570,13 +1572,14 @@ end_function
 begin_function
 name|GSList
 modifier|*
-DECL|function|gimp_action_group_add_radio_actions (GimpActionGroup * group,GimpRadioActionEntry * entries,guint n_entries,GSList * radio_group,gint value,GCallback callback)
+DECL|function|gimp_action_group_add_radio_actions (GimpActionGroup * group,const GimpRadioActionEntry * entries,guint n_entries,GSList * radio_group,gint value,GCallback callback)
 name|gimp_action_group_add_radio_actions
 parameter_list|(
 name|GimpActionGroup
 modifier|*
 name|group
 parameter_list|,
+specifier|const
 name|GimpRadioActionEntry
 modifier|*
 name|entries
@@ -1853,13 +1856,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_action_group_add_enum_actions (GimpActionGroup * group,GimpEnumActionEntry * entries,guint n_entries,GCallback callback)
+DECL|function|gimp_action_group_add_enum_actions (GimpActionGroup * group,const GimpEnumActionEntry * entries,guint n_entries,GCallback callback)
 name|gimp_action_group_add_enum_actions
 parameter_list|(
 name|GimpActionGroup
 modifier|*
 name|group
 parameter_list|,
+specifier|const
 name|GimpEnumActionEntry
 modifier|*
 name|entries
@@ -2078,13 +2082,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_action_group_add_string_actions (GimpActionGroup * group,GimpStringActionEntry * entries,guint n_entries,GCallback callback)
+DECL|function|gimp_action_group_add_string_actions (GimpActionGroup * group,const GimpStringActionEntry * entries,guint n_entries,GCallback callback)
 name|gimp_action_group_add_string_actions
 parameter_list|(
 name|GimpActionGroup
 modifier|*
 name|group
 parameter_list|,
+specifier|const
 name|GimpStringActionEntry
 modifier|*
 name|entries
@@ -2296,13 +2301,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_action_group_add_plug_in_actions (GimpActionGroup * group,GimpPlugInActionEntry * entries,guint n_entries,GCallback callback)
+DECL|function|gimp_action_group_add_plug_in_actions (GimpActionGroup * group,const GimpPlugInActionEntry * entries,guint n_entries,GCallback callback)
 name|gimp_action_group_add_plug_in_actions
 parameter_list|(
 name|GimpActionGroup
 modifier|*
 name|group
 parameter_list|,
+specifier|const
 name|GimpPlugInActionEntry
 modifier|*
 name|entries

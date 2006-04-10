@@ -84,6 +84,7 @@ end_include
 begin_decl_stmt
 DECL|variable|gradients_actions
 specifier|static
+specifier|const
 name|GimpActionEntry
 name|gradients_actions
 index|[]
@@ -264,6 +265,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|gradients_edit_actions
 specifier|static
+specifier|const
 name|GimpStringActionEntry
 name|gradients_edit_actions
 index|[]

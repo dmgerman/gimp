@@ -78,6 +78,7 @@ end_include
 begin_decl_stmt
 DECL|variable|patterns_actions
 specifier|static
+specifier|const
 name|GimpActionEntry
 name|patterns_actions
 index|[]
@@ -258,6 +259,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|patterns_edit_actions
 specifier|static
+specifier|const
 name|GimpStringActionEntry
 name|patterns_edit_actions
 index|[]

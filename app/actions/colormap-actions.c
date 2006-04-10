@@ -78,6 +78,7 @@ end_include
 begin_decl_stmt
 DECL|variable|colormap_editor_actions
 specifier|static
+specifier|const
 name|GimpActionEntry
 name|colormap_editor_actions
 index|[]
@@ -133,6 +134,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|colormap_editor_add_color_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|colormap_editor_add_color_actions
 index|[]

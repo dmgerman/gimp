@@ -60,6 +60,7 @@ end_include
 begin_decl_stmt
 DECL|variable|help_actions
 specifier|static
+specifier|const
 name|GimpActionEntry
 name|help_actions
 index|[]

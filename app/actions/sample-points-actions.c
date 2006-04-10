@@ -66,6 +66,7 @@ end_include
 begin_decl_stmt
 DECL|variable|sample_point_editor_actions
 specifier|static
+specifier|const
 name|GimpActionEntry
 name|sample_point_editor_actions
 index|[]
@@ -96,6 +97,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|sample_point_editor_toggle_actions
 specifier|static
+specifier|const
 name|GimpToggleActionEntry
 name|sample_point_editor_toggle_actions
 index|[]

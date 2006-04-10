@@ -78,6 +78,7 @@ end_include
 begin_decl_stmt
 DECL|variable|images_actions
 specifier|static
+specifier|const
 name|GimpActionEntry
 name|images_actions
 index|[]

@@ -66,6 +66,7 @@ end_include
 begin_decl_stmt
 DECL|variable|text_editor_actions
 specifier|static
+specifier|const
 name|GimpActionEntry
 name|text_editor_actions
 index|[]
@@ -143,6 +144,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|text_editor_direction_actions
 specifier|static
+specifier|const
 name|GimpRadioActionEntry
 name|text_editor_direction_actions
 index|[]

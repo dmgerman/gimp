@@ -126,6 +126,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|tool_options_actions
 specifier|static
+specifier|const
 name|GimpActionEntry
 name|tool_options_actions
 index|[]

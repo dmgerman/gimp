@@ -114,6 +114,7 @@ end_include
 begin_decl_stmt
 DECL|variable|dockable_actions
 specifier|static
+specifier|const
 name|GimpActionEntry
 name|dockable_actions
 index|[]
@@ -261,6 +262,7 @@ end_define
 begin_decl_stmt
 DECL|variable|dockable_view_size_actions
 specifier|static
+specifier|const
 name|GimpRadioActionEntry
 name|dockable_view_size_actions
 index|[]
@@ -379,6 +381,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|dockable_tab_style_actions
 specifier|static
+specifier|const
 name|GimpRadioActionEntry
 name|dockable_tab_style_actions
 index|[]
@@ -461,6 +464,7 @@ end_undef
 begin_decl_stmt
 DECL|variable|dockable_toggle_actions
 specifier|static
+specifier|const
 name|GimpToggleActionEntry
 name|dockable_toggle_actions
 index|[]
@@ -496,6 +500,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|dockable_view_type_actions
 specifier|static
+specifier|const
 name|GimpRadioActionEntry
 name|dockable_view_type_actions
 index|[]

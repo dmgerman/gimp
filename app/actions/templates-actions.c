@@ -72,6 +72,7 @@ end_include
 begin_decl_stmt
 DECL|variable|templates_actions
 specifier|static
+specifier|const
 name|GimpActionEntry
 name|templates_actions
 index|[]

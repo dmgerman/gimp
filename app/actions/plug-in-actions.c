@@ -190,6 +190,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|plug_in_actions
 specifier|static
+specifier|const
 name|GimpActionEntry
 name|plug_in_actions
 index|[]
@@ -424,6 +425,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|plug_in_repeat_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|plug_in_repeat_actions
 index|[]

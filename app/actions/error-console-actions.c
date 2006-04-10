@@ -66,6 +66,7 @@ end_include
 begin_decl_stmt
 DECL|variable|error_console_actions
 specifier|static
+specifier|const
 name|GimpActionEntry
 name|error_console_actions
 index|[]
@@ -121,6 +122,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|error_console_save_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|error_console_save_actions
 index|[]

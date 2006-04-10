@@ -538,6 +538,7 @@ name|GimpActionGroup
 modifier|*
 name|group
 parameter_list|,
+specifier|const
 name|GimpActionEntry
 modifier|*
 name|entries
@@ -556,6 +557,7 @@ name|GimpActionGroup
 modifier|*
 name|group
 parameter_list|,
+specifier|const
 name|GimpToggleActionEntry
 modifier|*
 name|entries
@@ -575,6 +577,7 @@ name|GimpActionGroup
 modifier|*
 name|group
 parameter_list|,
+specifier|const
 name|GimpRadioActionEntry
 modifier|*
 name|entries
@@ -603,6 +606,7 @@ name|GimpActionGroup
 modifier|*
 name|group
 parameter_list|,
+specifier|const
 name|GimpEnumActionEntry
 modifier|*
 name|entries
@@ -624,6 +628,7 @@ name|GimpActionGroup
 modifier|*
 name|group
 parameter_list|,
+specifier|const
 name|GimpStringActionEntry
 modifier|*
 name|entries
@@ -645,6 +650,7 @@ name|GimpActionGroup
 modifier|*
 name|group
 parameter_list|,
+specifier|const
 name|GimpPlugInActionEntry
 modifier|*
 name|entries

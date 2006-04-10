@@ -180,6 +180,7 @@ end_function_decl
 begin_decl_stmt
 DECL|variable|edit_actions
 specifier|static
+specifier|const
 name|GimpActionEntry
 name|edit_actions
 index|[]
@@ -608,6 +609,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|edit_fill_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|edit_fill_actions
 index|[]

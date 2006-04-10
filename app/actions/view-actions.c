@@ -190,6 +190,7 @@ end_function_decl
 begin_decl_stmt
 DECL|variable|view_actions
 specifier|static
+specifier|const
 name|GimpActionEntry
 name|view_actions
 index|[]
@@ -453,6 +454,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|view_toggle_actions
 specifier|static
+specifier|const
 name|GimpToggleActionEntry
 name|view_toggle_actions
 index|[]
@@ -836,6 +838,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|view_zoom_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|view_zoom_actions
 index|[]
@@ -1033,6 +1036,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|view_zoom_explicit_actions
 specifier|static
+specifier|const
 name|GimpRadioActionEntry
 name|view_zoom_explicit_actions
 index|[]
@@ -1237,6 +1241,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|view_padding_color_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|view_padding_color_actions
 index|[]
@@ -1353,6 +1358,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|view_scroll_horizontal_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|view_scroll_horizontal_actions
 index|[]
@@ -1490,6 +1496,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|view_scroll_vertical_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|view_scroll_vertical_actions
 index|[]

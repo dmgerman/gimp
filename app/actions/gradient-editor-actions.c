@@ -96,6 +96,7 @@ end_include
 begin_decl_stmt
 DECL|variable|gradient_editor_actions
 specifier|static
+specifier|const
 name|GimpActionEntry
 name|gradient_editor_actions
 index|[]
@@ -407,6 +408,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|gradient_editor_toggle_actions
 specifier|static
+specifier|const
 name|GimpToggleActionEntry
 name|gradient_editor_toggle_actions
 index|[]
@@ -498,6 +500,7 @@ end_define
 begin_decl_stmt
 DECL|variable|gradient_editor_load_left_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|gradient_editor_load_left_actions
 index|[]
@@ -682,6 +685,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|gradient_editor_save_left_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|gradient_editor_save_left_actions
 index|[]
@@ -763,6 +767,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|gradient_editor_load_right_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|gradient_editor_load_right_actions
 index|[]
@@ -947,6 +952,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|gradient_editor_save_right_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|gradient_editor_save_right_actions
 index|[]
@@ -1052,6 +1058,7 @@ end_undef
 begin_decl_stmt
 DECL|variable|gradient_editor_blending_actions
 specifier|static
+specifier|const
 name|GimpRadioActionEntry
 name|gradient_editor_blending_actions
 index|[]
@@ -1178,6 +1185,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|gradient_editor_coloring_actions
 specifier|static
+specifier|const
 name|GimpRadioActionEntry
 name|gradient_editor_coloring_actions
 index|[]
@@ -1266,6 +1274,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|gradient_editor_zoom_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|gradient_editor_zoom_actions
 index|[]

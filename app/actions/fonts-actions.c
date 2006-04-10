@@ -78,6 +78,7 @@ end_include
 begin_decl_stmt
 DECL|variable|fonts_actions
 specifier|static
+specifier|const
 name|GimpActionEntry
 name|fonts_actions
 index|[]

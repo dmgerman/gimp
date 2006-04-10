@@ -84,6 +84,7 @@ end_include
 begin_decl_stmt
 DECL|variable|dock_actions
 specifier|static
+specifier|const
 name|GimpActionEntry
 name|dock_actions
 index|[]
@@ -158,6 +159,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|dock_toggle_actions
 specifier|static
+specifier|const
 name|GimpToggleActionEntry
 name|dock_toggle_actions
 index|[]

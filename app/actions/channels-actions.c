@@ -84,6 +84,7 @@ end_include
 begin_decl_stmt
 DECL|variable|channels_actions
 specifier|static
+specifier|const
 name|GimpActionEntry
 name|channels_actions
 index|[]
@@ -339,6 +340,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|channels_to_selection_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|channels_to_selection_actions
 index|[]

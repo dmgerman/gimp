@@ -84,6 +84,7 @@ end_include
 begin_decl_stmt
 DECL|variable|palettes_actions
 specifier|static
+specifier|const
 name|GimpActionEntry
 name|palettes_actions
 index|[]
@@ -289,6 +290,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|palettes_edit_actions
 specifier|static
+specifier|const
 name|GimpStringActionEntry
 name|palettes_edit_actions
 index|[]

@@ -94,6 +94,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|context_actions
 specifier|static
+specifier|const
 name|GimpActionEntry
 name|context_actions
 index|[]
@@ -331,6 +332,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|context_foreground_red_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|context_foreground_red_actions
 index|[]
@@ -468,6 +470,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|context_foreground_green_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|context_foreground_green_actions
 index|[]
@@ -605,6 +608,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|context_foreground_blue_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|context_foreground_blue_actions
 index|[]
@@ -742,6 +746,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|context_background_red_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|context_background_red_actions
 index|[]
@@ -879,6 +884,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|context_background_green_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|context_background_green_actions
 index|[]
@@ -1016,6 +1022,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|context_background_blue_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|context_background_blue_actions
 index|[]
@@ -1153,6 +1160,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|context_foreground_hue_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|context_foreground_hue_actions
 index|[]
@@ -1290,6 +1298,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|context_foreground_saturation_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|context_foreground_saturation_actions
 index|[]
@@ -1427,6 +1436,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|context_foreground_value_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|context_foreground_value_actions
 index|[]
@@ -1564,6 +1574,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|context_background_hue_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|context_background_hue_actions
 index|[]
@@ -1701,6 +1712,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|context_background_saturation_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|context_background_saturation_actions
 index|[]
@@ -1838,6 +1850,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|context_background_value_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|context_background_value_actions
 index|[]
@@ -1975,6 +1988,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|context_opacity_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|context_opacity_actions
 index|[]
@@ -2112,6 +2126,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|context_paint_mode_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|context_paint_mode_actions
 index|[]
@@ -2195,6 +2210,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|context_tool_select_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|context_tool_select_actions
 index|[]
@@ -2296,6 +2312,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|context_brush_select_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|context_brush_select_actions
 index|[]
@@ -2397,6 +2414,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|context_pattern_select_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|context_pattern_select_actions
 index|[]
@@ -2498,6 +2516,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|context_palette_select_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|context_palette_select_actions
 index|[]
@@ -2599,6 +2618,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|context_gradient_select_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|context_gradient_select_actions
 index|[]
@@ -2700,6 +2720,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|context_font_select_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|context_font_select_actions
 index|[]
@@ -2801,6 +2822,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|context_brush_shape_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|context_brush_shape_actions
 index|[]
@@ -2866,6 +2888,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|context_brush_radius_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|context_brush_radius_actions
 index|[]
@@ -3003,6 +3026,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|context_brush_spikes_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|context_brush_spikes_actions
 index|[]
@@ -3140,6 +3164,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|context_brush_hardness_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|context_brush_hardness_actions
 index|[]
@@ -3277,6 +3302,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|context_brush_aspect_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|context_brush_aspect_actions
 index|[]
@@ -3414,6 +3440,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|context_brush_angle_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|context_brush_angle_actions
 index|[]

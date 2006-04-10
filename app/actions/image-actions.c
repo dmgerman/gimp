@@ -96,6 +96,7 @@ end_include
 begin_decl_stmt
 DECL|variable|image_actions
 specifier|static
+specifier|const
 name|GimpActionEntry
 name|image_actions
 index|[]
@@ -574,6 +575,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|image_convert_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|image_convert_actions
 index|[]
@@ -657,6 +659,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|image_flip_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|image_flip_actions
 index|[]
@@ -716,6 +719,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|image_rotate_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|image_rotate_actions
 index|[]

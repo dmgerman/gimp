@@ -84,6 +84,7 @@ end_include
 begin_decl_stmt
 DECL|variable|vectors_actions
 specifier|static
+specifier|const
 name|GimpActionEntry
 name|vectors_actions
 index|[]
@@ -521,6 +522,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|vectors_toggle_actions
 specifier|static
+specifier|const
 name|GimpToggleActionEntry
 name|vectors_toggle_actions
 index|[]
@@ -580,6 +582,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|vectors_to_selection_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|vectors_to_selection_actions
 index|[]
@@ -708,6 +711,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|vectors_selection_to_vectors_actions
 specifier|static
+specifier|const
 name|GimpEnumActionEntry
 name|vectors_selection_to_vectors_actions
 index|[]
