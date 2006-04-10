@@ -69,7 +69,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27edf6de0103
+DECL|enum|__anon2ba059020103
 block|{
 DECL|enumerator|ZOOMED
 name|ZOOMED
@@ -82,7 +82,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27edf6de0203
+DECL|enum|__anon2ba059020203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -108,7 +108,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27edf6de0308
+DECL|struct|__anon2ba059020308
 block|{
 DECL|member|value
 name|gdouble
@@ -1878,6 +1878,7 @@ define|#
 directive|define
 name|ZOOM_MIN_STEP
 value|1.1
+specifier|const
 name|gdouble
 name|presets
 index|[]
