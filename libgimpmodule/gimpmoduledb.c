@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c8a960e0103
+DECL|enum|__anon2b08b5a60103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -1537,6 +1537,10 @@ argument_list|,
 name|db
 argument_list|)
 expr_stmt|;
+name|db
+operator|->
+name|modules
+operator|=
 name|g_list_remove
 argument_list|(
 name|db
