@@ -44,12 +44,12 @@ DECL|macro|SELECTION_BORDER
 define|#
 directive|define
 name|SELECTION_BORDER
-value|2
+value|8
 end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon294e3b540103
+DECL|enum|__anon2aa9f4150103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -63,7 +63,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294e3b540208
+DECL|struct|__anon2aa9f4150208
 block|{
 DECL|member|x
 DECL|member|y
