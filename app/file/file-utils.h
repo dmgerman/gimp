@@ -145,7 +145,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|file_utils_save_thumnail
+name|file_utils_save_thumbnail
 parameter_list|(
 name|GimpImage
 modifier|*

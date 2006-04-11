@@ -1455,8 +1455,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|file_utils_save_thumnail (GimpImage * image,const gchar * filename)
-name|file_utils_save_thumnail
+DECL|function|file_utils_save_thumbnail (GimpImage * image,const gchar * filename)
+name|file_utils_save_thumbnail
 parameter_list|(
 name|GimpImage
 modifier|*

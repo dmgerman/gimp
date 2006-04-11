@@ -1061,7 +1061,7 @@ condition|)
 block|{
 name|success
 operator|=
-name|file_utils_save_thumnail
+name|file_utils_save_thumbnail
 argument_list|(
 name|image
 argument_list|,
