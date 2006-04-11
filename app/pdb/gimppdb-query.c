@@ -1701,7 +1701,7 @@ name|fprintf
 argument_list|(
 name|file
 argument_list|,
-literal|"\n(register-procedure "
+literal|"(register-procedure "
 argument_list|)
 expr_stmt|;
 if|if
@@ -1765,6 +1765,13 @@ operator|->
 name|proc_type
 argument_list|)
 expr_stmt|;
+name|fprintf
+argument_list|(
+name|file
+argument_list|,
+literal|"  "
+argument_list|)
+expr_stmt|;
 name|output_string
 argument_list|(
 name|file
@@ -1772,6 +1779,13 @@ argument_list|,
 name|procedure
 operator|->
 name|blurb
+argument_list|)
+expr_stmt|;
+name|fprintf
+argument_list|(
+name|file
+argument_list|,
+literal|"  "
 argument_list|)
 expr_stmt|;
 name|output_string
@@ -1783,6 +1797,13 @@ operator|->
 name|help
 argument_list|)
 expr_stmt|;
+name|fprintf
+argument_list|(
+name|file
+argument_list|,
+literal|"  "
+argument_list|)
+expr_stmt|;
 name|output_string
 argument_list|(
 name|file
@@ -1790,6 +1811,13 @@ argument_list|,
 name|procedure
 operator|->
 name|author
+argument_list|)
+expr_stmt|;
+name|fprintf
+argument_list|(
+name|file
+argument_list|,
+literal|"  "
 argument_list|)
 expr_stmt|;
 name|output_string
@@ -1801,6 +1829,13 @@ operator|->
 name|copyright
 argument_list|)
 expr_stmt|;
+name|fprintf
+argument_list|(
+name|file
+argument_list|,
+literal|"  "
+argument_list|)
+expr_stmt|;
 name|output_string
 argument_list|(
 name|file
@@ -1808,6 +1843,13 @@ argument_list|,
 name|procedure
 operator|->
 name|date
+argument_list|)
+expr_stmt|;
+name|fprintf
+argument_list|(
+name|file
+argument_list|,
+literal|"  "
 argument_list|)
 expr_stmt|;
 name|output_string
@@ -1823,7 +1865,7 @@ name|fprintf
 argument_list|(
 name|file
 argument_list|,
-literal|"( "
+literal|"  ("
 argument_list|)
 expr_stmt|;
 for|for
@@ -1860,7 +1902,7 @@ name|fprintf
 argument_list|(
 name|file
 argument_list|,
-literal|"( "
+literal|"\n    (\n"
 argument_list|)
 expr_stmt|;
 name|arg_type
@@ -1881,6 +1923,13 @@ argument_list|,
 name|arg_type
 argument_list|)
 expr_stmt|;
+name|fprintf
+argument_list|(
+name|file
+argument_list|,
+literal|"      "
+argument_list|)
+expr_stmt|;
 name|output_string
 argument_list|(
 name|file
@@ -1891,6 +1940,13 @@ name|pspec
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|fprintf
+argument_list|(
+name|file
+argument_list|,
+literal|"      "
+argument_list|)
+expr_stmt|;
 name|output_string
 argument_list|(
 name|file
@@ -1898,6 +1954,13 @@ argument_list|,
 name|arg_value
 operator|->
 name|value_name
+argument_list|)
+expr_stmt|;
+name|fprintf
+argument_list|(
+name|file
+argument_list|,
+literal|"      "
 argument_list|)
 expr_stmt|;
 name|output_string
@@ -1914,7 +1977,7 @@ name|fprintf
 argument_list|(
 name|file
 argument_list|,
-literal|" ) "
+literal|"    )"
 argument_list|)
 expr_stmt|;
 block|}
@@ -1922,14 +1985,14 @@ name|fprintf
 argument_list|(
 name|file
 argument_list|,
-literal|" ) "
+literal|"\n  )\n"
 argument_list|)
 expr_stmt|;
 name|fprintf
 argument_list|(
 name|file
 argument_list|,
-literal|"( "
+literal|"  ("
 argument_list|)
 expr_stmt|;
 for|for
@@ -1966,7 +2029,7 @@ name|fprintf
 argument_list|(
 name|file
 argument_list|,
-literal|"( "
+literal|"\n    (\n"
 argument_list|)
 expr_stmt|;
 name|arg_type
@@ -1987,6 +2050,13 @@ argument_list|,
 name|arg_type
 argument_list|)
 expr_stmt|;
+name|fprintf
+argument_list|(
+name|file
+argument_list|,
+literal|"      "
+argument_list|)
+expr_stmt|;
 name|output_string
 argument_list|(
 name|file
@@ -1997,6 +2067,13 @@ name|pspec
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|fprintf
+argument_list|(
+name|file
+argument_list|,
+literal|"      "
+argument_list|)
+expr_stmt|;
 name|output_string
 argument_list|(
 name|file
@@ -2004,6 +2081,13 @@ argument_list|,
 name|arg_value
 operator|->
 name|value_name
+argument_list|)
+expr_stmt|;
+name|fprintf
+argument_list|(
+name|file
+argument_list|,
+literal|"      "
 argument_list|)
 expr_stmt|;
 name|output_string
@@ -2020,7 +2104,7 @@ name|fprintf
 argument_list|(
 name|file
 argument_list|,
-literal|" ) "
+literal|"    )"
 argument_list|)
 expr_stmt|;
 block|}
@@ -2028,14 +2112,14 @@ name|fprintf
 argument_list|(
 name|file
 argument_list|,
-literal|" ) "
+literal|"\n  )"
 argument_list|)
 expr_stmt|;
 name|fprintf
 argument_list|(
 name|file
 argument_list|,
-literal|" ) "
+literal|"\n)\n"
 argument_list|)
 expr_stmt|;
 block|}
