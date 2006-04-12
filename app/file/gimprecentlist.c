@@ -147,13 +147,13 @@ parameter_list|(
 name|list
 parameter_list|)
 define|\
-value|g_list_foreach (list, (GFunc) gimp_recent_item_unref, NULL); \ 	g_list_free (list);
+value|g_list_foreach (list, (GFunc) gimp_recent_item_unref, NULL);  \   g_list_free (list);
 end_define
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae0321a0108
+DECL|struct|__anon2c0a64d60108
 block|{
 DECL|member|states
 name|GSList
@@ -179,7 +179,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ae0321a0203
+DECL|enum|__anon2c0a64d60203
 block|{
 DECL|enumerator|STATE_START
 name|STATE_START

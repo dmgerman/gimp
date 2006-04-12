@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a766860103
+DECL|enum|__anon28eb91100103
 block|{
 DECL|enumerator|TEXT_CHANGED
 name|TEXT_CHANGED

@@ -129,7 +129,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ba12900103
+DECL|enum|__anon2c23a77a0103
 block|{
 DECL|enumerator|SESSION_INFO
 name|SESSION_INFO

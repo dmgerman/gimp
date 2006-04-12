@@ -2388,7 +2388,7 @@ condition|(
 name|image
 condition|)
 block|{
-comment|/*  this invokes this function recursively but we don't enter 	   *  the if() branch the second time 	   */
+comment|/*  this invokes this function recursively but we don't enter            *  the if() branch the second time            */
 name|gimp_context_set_image
 argument_list|(
 name|context
@@ -2396,7 +2396,7 @@ argument_list|,
 name|image
 argument_list|)
 expr_stmt|;
-comment|/*  stop the emission of the original signal (the emission of 	   *  the recursive signal is finished) 	   */
+comment|/*  stop the emission of the original signal (the emission of            *  the recursive signal is finished)            */
 name|g_signal_stop_emission_by_name
 argument_list|(
 name|context

@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2936972b0103
+DECL|enum|__anon28dac1290103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -48,7 +48,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2936972b0203
+DECL|enum|__anon28dac1290203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

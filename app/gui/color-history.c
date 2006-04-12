@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbd08c70103
+DECL|enum|__anon2b3359cb0103
 block|{
 DECL|enumerator|COLOR_HISTORY
 name|COLOR_HISTORY

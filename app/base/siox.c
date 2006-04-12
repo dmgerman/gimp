@@ -130,7 +130,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2785c3c80108
+DECL|struct|__anon2c2d5e470108
 block|{
 DECL|member|l
 name|gfloat
@@ -240,7 +240,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2785c3c80208
+DECL|struct|__anon2c2d5e470208
 block|{
 DECL|member|bgdist
 name|gfloat

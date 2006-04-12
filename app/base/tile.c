@@ -644,7 +644,7 @@ comment|/* skip terminal unlock */
 block|}
 else|else
 block|{
-comment|/* last reference was just released, so move the tile to the 	     tile cache */
+comment|/* last reference was just released, so move the tile to the              tile cache */
 name|tile_cache_insert
 argument_list|(
 name|tile

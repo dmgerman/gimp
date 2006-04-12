@@ -13,13 +13,13 @@ name|gimp_composite_regression_h
 end_define
 
 begin_comment
-comment|/*  * The following typedefs are temporary and only used in regression testing. 	*/
+comment|/*  * The following typedefs are temporary and only used in regression testing.         */
 end_comment
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291801ef0108
+DECL|struct|__anon2a9076b10108
 block|{
 DECL|member|v
 name|guint8
@@ -34,7 +34,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291801ef0208
+DECL|struct|__anon2a9076b10208
 block|{
 DECL|member|v
 name|guint8
@@ -53,7 +53,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291801ef0308
+DECL|struct|__anon2a9076b10308
 block|{
 DECL|member|r
 name|guint8
@@ -76,7 +76,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291801ef0408
+DECL|struct|__anon2a9076b10408
 block|{
 DECL|member|r
 name|guint8
@@ -109,7 +109,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291801ef0508
+DECL|struct|__anon2a9076b10508
 block|{
 DECL|member|v
 name|guint16
@@ -124,7 +124,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291801ef0608
+DECL|struct|__anon2a9076b10608
 block|{
 DECL|member|v
 name|guint16
@@ -143,7 +143,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291801ef0708
+DECL|struct|__anon2a9076b10708
 block|{
 DECL|member|r
 name|guint16
@@ -166,7 +166,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291801ef0808
+DECL|struct|__anon2a9076b10808
 block|{
 DECL|member|r
 name|guint16
@@ -204,7 +204,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291801ef0908
+DECL|struct|__anon2a9076b10908
 block|{
 DECL|member|v
 name|guint32
@@ -219,7 +219,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291801ef0a08
+DECL|struct|__anon2a9076b10a08
 block|{
 DECL|member|v
 name|guint32
@@ -238,7 +238,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291801ef0b08
+DECL|struct|__anon2a9076b10b08
 block|{
 DECL|member|r
 name|guint32
@@ -261,7 +261,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291801ef0c08
+DECL|struct|__anon2a9076b10c08
 block|{
 DECL|member|r
 name|guint32

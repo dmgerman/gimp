@@ -44,7 +44,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2889aaa30108
+DECL|struct|__anon2b9f83040108
 block|{
 DECL|member|buf
 name|TempBuf

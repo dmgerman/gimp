@@ -148,7 +148,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c517b300103
+DECL|enum|__anon2a0479330103
 block|{
 DECL|enumerator|UNIT_INFO
 name|UNIT_INFO

@@ -51,7 +51,7 @@ name|TileManager
 modifier|*
 name|tm
 decl_stmt|;
-comment|/* A pointer to the tile manager for this tile. 			  *  We need this in order to call the tile managers 			  *  validate proc whenever the tile is referenced 			  *  yet invalid. 			  */
+comment|/* A pointer to the tile manager for this tile.                           *  We need this in order to call the tile managers                           *  validate proc whenever the tile is referenced                           *  yet invalid.                           */
 block|}
 struct|;
 end_struct
@@ -65,7 +65,7 @@ DECL|member|ref_count
 name|gshort
 name|ref_count
 decl_stmt|;
-comment|/* reference count. when the reference count is  		         *  non-zero then the "data" for this tile must 		         *  be valid. when the reference count for a tile 		         *  is 0 then the "data" for this tile must be 		         *  NULL. 		         */
+comment|/* reference count. when the reference count is                           *  non-zero then the "data" for this tile must                          *  be valid. when the reference count for a tile                          *  is 0 then the "data" for this tile must be                          *  NULL.                          */
 DECL|member|write_count
 name|gshort
 name|write_count
@@ -104,7 +104,7 @@ DECL|member|eheight
 name|gushort
 name|eheight
 decl_stmt|;
-comment|/* the effective height of the tile 		         *  a tile's effective width and height may be smaller 		         *  (but not larger) than TILE_WIDTH and TILE_HEIGHT. 		         *  this is to handle edge tiles of a drawable. 		         */
+comment|/* the effective height of the tile                          *  a tile's effective width and height may be smaller                          *  (but not larger) than TILE_WIDTH and TILE_HEIGHT.                          *  this is to handle edge tiles of a drawable.                          */
 DECL|member|size
 name|gint
 name|size
@@ -131,7 +131,7 @@ DECL|member|swap_offset
 name|off_t
 name|swap_offset
 decl_stmt|;
-comment|/* the offset within the swap file of the tile data. 		         * if the tile data is in memory this will be set                          * to -1.                          */
+comment|/* the offset within the swap file of the tile data.                          * if the tile data is in memory this will be set                          * to -1.                          */
 DECL|member|tlink
 name|TileLink
 modifier|*

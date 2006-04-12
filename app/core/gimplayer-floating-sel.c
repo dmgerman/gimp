@@ -2244,7 +2244,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/*  a kludge here to prevent the case of the drawable 	   *  underneath having lock alpha on, and disallowing 	   *  the composited floating selection from being shown 	   */
+comment|/*  a kludge here to prevent the case of the drawable            *  underneath having lock alpha on, and disallowing            *  the composited floating selection from being shown            */
 if|if
 condition|(
 name|GIMP_IS_LAYER
@@ -2294,7 +2294,7 @@ name|lock_alpha
 operator|=
 name|FALSE
 expr_stmt|;
-comment|/*  We need to set all image channels to active to make sure that 	   *  nothing strange happens while applying the floating selection. 	   *  It wouldn't make sense for the floating selection to be affected 	   *  by the active image channels. 	   */
+comment|/*  We need to set all image channels to active to make sure that            *  nothing strange happens while applying the floating selection.            *  It wouldn't make sense for the floating selection to be affected            *  by the active image channels.            */
 for|for
 control|(
 name|i
@@ -2331,7 +2331,7 @@ operator|=
 literal|1
 expr_stmt|;
 block|}
-comment|/*  apply the fs with the undo specified by the value 	   *  passed to this function 	   */
+comment|/*  apply the fs with the undo specified by the value            *  passed to this function            */
 name|gimp_drawable_apply_region
 argument_list|(
 name|layer

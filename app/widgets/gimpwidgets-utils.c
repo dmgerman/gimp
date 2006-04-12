@@ -1781,7 +1781,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon2be1f20d0108
+DECL|struct|__anon2933236f0108
 block|{
 DECL|member|modifiers
 name|GdkModifierType

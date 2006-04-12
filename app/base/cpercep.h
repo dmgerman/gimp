@@ -96,7 +96,7 @@ comment|/* This is in the header so that it can potentially be inlined. */
 end_comment
 
 begin_endif
-unit|static const double cpercep_distance_space (const double L1, const double a1, const double b1, 			const double L2, const double a2, const double b2) {   const double Ld = L1 - L2;   const double ad = a1 - a2;   const double bd = b1 - b2;    return (Ld*Ld + ad*ad + bd*bd); }
+unit|static const double cpercep_distance_space (const double L1, const double a1, const double b1,                         const double L2, const double a2, const double b2) {   const double Ld = L1 - L2;   const double ad = a1 - a2;   const double bd = b1 - b2;    return (Ld*Ld + ad*ad + bd*bd); }
 endif|#
 directive|endif
 end_endif

@@ -1625,7 +1625,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
-comment|/* Other cool things to be added: 	       * %r = xresolution                * %R = yresolution                * %ø = image's fractal dimension                * %þ = the answer to everything 	       */
+comment|/* Other cool things to be added:                * %r = xresolution                * %R = yresolution                * %ø = image's fractal dimension                * %þ = the answer to everything                */
 default|default:
 comment|/* format string contains unknown %-sequence, print it literally */
 name|i

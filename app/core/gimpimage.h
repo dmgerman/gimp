@@ -30,7 +30,7 @@ name|GIMP_IMAGE_TYPE_IS_RGB
 parameter_list|(
 name|t
 parameter_list|)
-value|((t) == GIMP_RGB_IMAGE ||         \ 				            (t) == GIMP_RGBA_IMAGE)
+value|((t) == GIMP_RGB_IMAGE ||         \                                             (t) == GIMP_RGBA_IMAGE)
 end_define
 
 begin_define
@@ -41,7 +41,7 @@ name|GIMP_IMAGE_TYPE_IS_GRAY
 parameter_list|(
 name|t
 parameter_list|)
-value|((t) == GIMP_GRAY_IMAGE ||        \ 				            (t) == GIMP_GRAYA_IMAGE)
+value|((t) == GIMP_GRAY_IMAGE ||        \                                             (t) == GIMP_GRAYA_IMAGE)
 end_define
 
 begin_define
@@ -52,7 +52,7 @@ name|GIMP_IMAGE_TYPE_IS_INDEXED
 parameter_list|(
 name|t
 parameter_list|)
-value|((t) == GIMP_INDEXED_IMAGE ||     \ 				            (t) == GIMP_INDEXEDA_IMAGE)
+value|((t) == GIMP_INDEXED_IMAGE ||     \                                             (t) == GIMP_INDEXEDA_IMAGE)
 end_define
 
 begin_define
@@ -63,7 +63,7 @@ name|GIMP_IMAGE_TYPE_HAS_ALPHA
 parameter_list|(
 name|t
 parameter_list|)
-value|((t) == GIMP_RGBA_IMAGE  ||       \ 				            (t) == GIMP_GRAYA_IMAGE ||       \ 				            (t) == GIMP_INDEXEDA_IMAGE)
+value|((t) == GIMP_RGBA_IMAGE  ||       \                                             (t) == GIMP_GRAYA_IMAGE ||       \                                             (t) == GIMP_INDEXEDA_IMAGE)
 end_define
 
 begin_define

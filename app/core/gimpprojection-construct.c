@@ -340,7 +340,7 @@ directive|if
 literal|0
 block|GimpImage *image = proj->image;    if ((gimp_container_num_children (image->layers) == 1))
 comment|/* a single layer */
-block|{       GimpDrawable *layer;        layer = GIMP_DRAWABLE (gimp_container_get_child_by_index (image->layers,                                                                 0));        if (gimp_drawable_has_alpha (layer)&&           (gimp_item_get_visible (GIMP_ITEM (layer)))&&           (gimp_item_width (GIMP_ITEM (layer))  == image->width)&&           (gimp_item_height (GIMP_ITEM (layer)) == image->height)&&           (! gimp_drawable_is_indexed (layer))&&           (gimp_layer_get_opacity (GIMP_LAYER (layer)) == GIMP_OPACITY_OPAQUE))         {           gint xoff;           gint yoff;            gimp_item_offsets (GIMP_ITEM (layer),&xoff,&yoff);            if (xoff == 0&& yoff == 0)             {               PixelRegion srcPR, destPR;                g_printerr ("cow-projection!");                pixel_region_init (&srcPR, gimp_drawable_get_tiles (layer),                                  x, y, w,h, FALSE);               pixel_region_init (&destPR, gimp_projection_get_tiles (proj),                                  x, y, w,h, TRUE);                copy_region (&srcPR,&destPR);                proj->construct_flag = TRUE;                gimp_projection_construct_channels (proj, x, y, w, h);                return;             } 	}     }
+block|{       GimpDrawable *layer;        layer = GIMP_DRAWABLE (gimp_container_get_child_by_index (image->layers,                                                                 0));        if (gimp_drawable_has_alpha (layer)&&           (gimp_item_get_visible (GIMP_ITEM (layer)))&&           (gimp_item_width (GIMP_ITEM (layer))  == image->width)&&           (gimp_item_height (GIMP_ITEM (layer)) == image->height)&&           (! gimp_drawable_is_indexed (layer))&&           (gimp_layer_get_opacity (GIMP_LAYER (layer)) == GIMP_OPACITY_OPAQUE))         {           gint xoff;           gint yoff;            gimp_item_offsets (GIMP_ITEM (layer),&xoff,&yoff);            if (xoff == 0&& yoff == 0)             {               PixelRegion srcPR, destPR;                g_printerr ("cow-projection!");                pixel_region_init (&srcPR, gimp_drawable_get_tiles (layer),                                  x, y, w,h, FALSE);               pixel_region_init (&destPR, gimp_projection_get_tiles (proj),                                  x, y, w,h, TRUE);                copy_region (&srcPR,&destPR);                proj->construct_flag = TRUE;                gimp_projection_construct_channels (proj, x, y, w, h);                return;             }         }     }
 endif|#
 directive|endif
 name|proj
@@ -859,7 +859,7 @@ operator|&
 name|maskPR
 expr_stmt|;
 block|}
-comment|/*  Based on the type of the layer, project the layer onto the 	   *  projection image... 	   */
+comment|/*  Based on the type of the layer, project the layer onto the            *  projection image...            */
 switch|switch
 condition|(
 name|gimp_drawable_type

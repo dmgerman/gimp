@@ -84,7 +84,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296acbb20108
+DECL|struct|__anon2a0f28df0108
 block|{
 DECL|member|image
 name|GimpImage

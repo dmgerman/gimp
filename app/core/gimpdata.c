@@ -99,7 +99,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon299a16850103
+DECL|enum|__anon2b6fb5df0103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY
@@ -112,7 +112,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon299a16850203
+DECL|enum|__anon2b6fb5df0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

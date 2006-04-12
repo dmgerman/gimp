@@ -512,7 +512,7 @@ condition|(
 name|list
 condition|)
 block|{
-comment|/* Tile is in the cache.  Remove it from its current list and 	 put it at the tail of the proper list (clean or dirty) */
+comment|/* Tile is in the cache.  Remove it from its current list and          put it at the tail of the proper list (clean or dirty) */
 if|if
 condition|(
 name|tile

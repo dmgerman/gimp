@@ -115,7 +115,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae4bc4d0103
+DECL|enum|__anon2773a7060103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -131,7 +131,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae4bc4d0203
+DECL|enum|__anon2773a7060203
 block|{
 DECL|enumerator|BOOK_ADDED
 name|BOOK_ADDED

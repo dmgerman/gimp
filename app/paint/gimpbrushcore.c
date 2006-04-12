@@ -104,8 +104,8 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c98e7920103
-DECL|enum|__anon2c98e7920203
+DECL|enum|__anon2b15bbfe0103
+DECL|enum|__anon2b15bbfe0203
 block|{
 DECL|enumerator|SET_BRUSH
 DECL|enumerator|SET_BRUSH
@@ -4823,7 +4823,7 @@ expr_stmt|;
 ifdef|#
 directive|ifdef
 name|FANCY_PRESSURE
-comment|/* Create the pressure profile    *    * It is: I'(I) = tanh (20 * (pressure - 0.5) * I)           : pressure> 0.5    *        I'(I) = 1 - tanh (20 * (0.5 - pressure) * (1 - I)) : pressure< 0.5    *    * It looks like:    *    *    low pressure      medium pressure     high pressure    *    *         |                   /                 --    *         |    		/                 /    *        /     	       /                 |    *      --                  /	                 |    */
+comment|/* Create the pressure profile    *    * It is: I'(I) = tanh (20 * (pressure - 0.5) * I)           : pressure> 0.5    *        I'(I) = 1 - tanh (20 * (0.5 - pressure) * (1 - I)) : pressure< 0.5    *    * It looks like:    *    *    low pressure      medium pressure     high pressure    *    *         |                   /                 --    *         |                    /                 /    *        /                    /                 |    *      --                  /                         |    */
 block|{
 specifier|static
 name|gdouble

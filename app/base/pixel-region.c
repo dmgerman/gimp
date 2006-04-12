@@ -1556,7 +1556,7 @@ name|process_count
 operator|)
 condition|)
 block|{
-comment|/*  This eliminates the possibility of incrementing the 	   *  same region twice 	   */
+comment|/*  This eliminates the possibility of incrementing the            *  same region twice            */
 name|PRH
 operator|->
 name|PR
@@ -1564,7 +1564,7 @@ operator|->
 name|process_count
 operator|++
 expr_stmt|;
-comment|/*  Unref the last referenced tile if the underlying region 	      is a tile manager  */
+comment|/*  Unref the last referenced tile if the underlying region               is a tile manager  */
 if|if
 condition|(
 name|PRH
@@ -1733,7 +1733,7 @@ name|process_count
 operator|)
 condition|)
 block|{
-comment|/*  This eliminates the possibility of incrementing the 	   *  same region twice 	   */
+comment|/*  This eliminates the possibility of incrementing the            *  same region twice            */
 name|PRH
 operator|->
 name|PR
@@ -1741,7 +1741,7 @@ operator|->
 name|process_count
 operator|++
 expr_stmt|;
-comment|/*  Unref the last referenced tile if the underlying region 	      is a tile manager  */
+comment|/*  Unref the last referenced tile if the underlying region               is a tile manager  */
 if|if
 condition|(
 name|PRH

@@ -908,7 +908,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b43522e0108
+DECL|struct|__anon297f33570108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -936,7 +936,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b43522e0208
+DECL|struct|__anon297f33570208
 block|{
 DECL|member|offset
 name|gdouble

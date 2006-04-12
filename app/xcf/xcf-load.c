@@ -1374,7 +1374,7 @@ literal|3
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* discard color map, if image is not indexed, this is just 	   * sanity checking to make sure gimp doesn't end up with an 	   * image state that is impossible.            */
+comment|/* discard color map, if image is not indexed, this is just            * sanity checking to make sure gimp doesn't end up with an            * image state that is impossible.            */
 if|if
 condition|(
 name|gimp_image_base_type

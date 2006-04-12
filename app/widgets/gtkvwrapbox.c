@@ -954,7 +954,7 @@ operator|=
 name|layout_width
 expr_stmt|;
 block|}
-comment|/* g_print ("ratio for height %d width %d = %f\n", 	 (gint) layout_height, 	 (gint) layout_width, 	 ratio);       */
+comment|/* g_print ("ratio for height %d width %d = %f\n",          (gint) layout_height,          (gint) layout_width,          ratio);       */
 block|}
 do|while
 condition|(
@@ -1870,7 +1870,7 @@ block|}
 block|}
 else|else
 block|{
-comment|/* g_print ("child_allocation.y %d += %d * %f ", 		       child_allocation.y, n_children, extra); */
+comment|/* g_print ("child_allocation.y %d += %d * %f ",                        child_allocation.y, n_children, extra); */
 name|child_allocation
 operator|.
 name|y
@@ -1879,7 +1879,7 @@ name|n_children
 operator|*
 name|extra
 expr_stmt|;
-comment|/* g_print ("= %d\n", 		       child_allocation.y); */
+comment|/* g_print ("= %d\n",                        child_allocation.y); */
 name|child_allocation
 operator|.
 name|height

@@ -96,7 +96,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c1bdfa30103
+DECL|enum|__anon2c80fd480103
 block|{
 DECL|enumerator|PIPE_SELECT_CONSTANT
 name|PIPE_SELECT_CONSTANT
@@ -177,7 +177,7 @@ DECL|member|nbrushes
 name|gint
 name|nbrushes
 decl_stmt|;
-comment|/* Might be less than the product of the 				 * ranks in some odd special case */
+comment|/* Might be less than the product of the                                  * ranks in some odd special case */
 DECL|member|brushes
 name|GimpBrush
 modifier|*

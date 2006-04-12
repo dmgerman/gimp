@@ -6479,7 +6479,7 @@ name|min_cost
 operator|=
 name|G_MAXINT
 expr_stmt|;
-comment|/* pixel[] array encodes how to get to a neigbour, if possible. 	   * 0 means no connection (eg edge). 	   * Rest packed as bottom two bytes: y offset then x offset. 	   * Initially, we assume we can't get anywhere. */
+comment|/* pixel[] array encodes how to get to a neigbour, if possible.            * 0 means no connection (eg edge).            * Rest packed as bottom two bytes: y offset then x offset.            * Initially, we assume we can't get anywhere. */
 for|for
 control|(
 name|k
@@ -6652,7 +6652,7 @@ name|diry
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  find the minimum cost of going through each neighbor to reach the 	   *  seed point... 	   */
+comment|/*  find the minimum cost of going through each neighbor to reach the            *  seed point...            */
 name|link
 operator|=
 operator|-
@@ -6804,7 +6804,7 @@ operator|)
 operator|+
 name|link
 expr_stmt|;
-comment|/*  possibly change the links from the other pixels to this pixel... 	       *  these changes occur if a neighboring pixel will receive a lower 	       *  cumulative cost by going through this pixel. 	       */
+comment|/*  possibly change the links from the other pixels to this pixel...                *  these changes occur if a neighboring pixel will receive a lower                *  cumulative cost by going through this pixel.                */
 for|for
 control|(
 name|k
@@ -6830,7 +6830,7 @@ operator|!=
 name|link
 condition|)
 block|{
-comment|/*  if the cumulative cost at the neighbor is greater than 		     *  the cost through the link to the current pixel, change the 		     *  neighbor's link to point to the current pixel. 		     */
+comment|/*  if the cumulative cost at the neighbor is greater than                      *  the cost through the link to the current pixel, change the                      *  neighbor's link to point to the current pixel.                      */
 name|new_cost
 operator|=
 name|link_cost
@@ -7626,7 +7626,7 @@ operator|)
 name|hmax
 argument_list|)
 expr_stmt|;
-comment|/* Scale the direction from between 0 and 254, 	       *  corresponding to -PI/2, PI/2 255 is reserved for 	       *  directionless pixels */
+comment|/* Scale the direction from between 0 and 254,                *  corresponding to -PI/2, PI/2 255 is reserved for                *  directionless pixels */
 name|gradmap
 index|[
 name|j

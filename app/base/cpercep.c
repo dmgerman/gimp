@@ -3089,7 +3089,7 @@ comment|/* EXPERIMENTAL SECTION */
 end_comment
 
 begin_if
-unit|const double xscaler(const double start, const double end, 	const double me, const double him) {   return start + ((end-start) * him) / (me + him); }   void mix_colours (const double L1, const double a1, const double b1, 	     const double L2, const double a2, const double b2, 	     double *rtnL, double *rtna, double *rtnb, 	     double mass1, double mass2) {   double w1, w2;
+unit|const double xscaler(const double start, const double end,         const double me, const double him) {   return start + ((end-start) * him) / (me + him); }   void mix_colours (const double L1, const double a1, const double b1,              const double L2, const double a2, const double b2,              double *rtnL, double *rtna, double *rtnb,              double mass1, double mass2) {   double w1, w2;
 if|#
 directive|if
 literal|0
@@ -3120,7 +3120,7 @@ directive|endif
 end_endif
 
 begin_ifdef
-unit|*rtnL = xscaler (L1, L2, mass1, mass2);    if (w1<= 0.0&&       w2<= 0.0)     {       *rtna = 	*rtnb = 0.0;
+unit|*rtnL = xscaler (L1, L2, mass1, mass2);    if (w1<= 0.0&&       w2<= 0.0)     {       *rtna =         *rtnb = 0.0;
 ifdef|#
 directive|ifdef
 name|SANITY

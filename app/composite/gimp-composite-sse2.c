@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* -*- mode: c tab-width: 2; c-basic-indent: 2; indent-tabs-mode: nil -*-  *  * The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * -*- mode: c tab-width: 2; c-basic-indent: 2; indent-tabs-mode: nil -*-  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * Gimp image compositing  * Copyright (C) 2003  Helvetix Victorinox, a pseudonym,<helvetix@gimp.org>  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * Gimp image compositing  * Copyright (C) 2003  Helvetix Victorinox, a pseudonym,<helvetix@gimp.org>  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -1187,7 +1187,7 @@ name|n_pixels
 decl_stmt|;
 asm|asm
 specifier|volatile
-asm|("  movq       %0,%%mm0\n"                 "\tpxor    %%mm6,%%mm6\n"                 "\tmovq       %1,%%mm7\n" 								"\tmovdqu     %2,%%xmm0\n"                 "\tpxor   %%xmm6,%%xmm6\n"                 "\tmovdqu     %3,%%xmm7\n"                 :
+asm|("  movq       %0,%%mm0\n"                 "\tpxor    %%mm6,%%mm6\n"                 "\tmovq       %1,%%mm7\n"                 "\tmovdqu     %2,%%xmm0\n"                 "\tpxor   %%xmm6,%%xmm6\n"                 "\tmovdqu     %3,%%xmm7\n"                 :
 comment|/* empty */
 asm|: "m" (*rgba8_alpha_mask_64), "m" (*rgba8_w128_64), "m" (*rgba8_alpha_mask_128), "m" (*rgba8_w128_128)                 : "%mm0", "%mm6", "%mm7", "%xmm0", "%xmm6", "%xmm7");
 for|for

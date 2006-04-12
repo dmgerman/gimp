@@ -156,7 +156,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c46d180103
+DECL|enum|__anon286d89220103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -169,7 +169,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c46d180203
+DECL|enum|__anon286d89220203
 block|{
 DECL|enumerator|COLUMN_ICON
 name|COLUMN_ICON

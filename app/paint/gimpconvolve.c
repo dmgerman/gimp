@@ -144,7 +144,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ab101c70103
+DECL|enum|__anon2901ad300103
 block|{
 DECL|enumerator|CONVOLVE_NCLIP
 name|CONVOLVE_NCLIP
@@ -1033,7 +1033,7 @@ name|drawable
 argument_list|)
 condition|)
 block|{
-comment|/* note: this particular approach needlessly convolves the totally- 	     opaque alpha channel. A faster approach would be to keep 	     tempPR the same number of bytes as srcPR, and extend the 	     paint_core_replace_canvas API to handle non-alpha images. */
+comment|/* note: this particular approach needlessly convolves the totally-              opaque alpha channel. A faster approach would be to keep              tempPR the same number of bytes as srcPR, and extend the              paint_core_replace_canvas API to handle non-alpha images. */
 name|bytes
 operator|=
 name|srcPR

@@ -247,7 +247,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd066000103
+DECL|enum|__anon29d7bbda0103
 block|{
 DECL|enumerator|PROTOCOL_VERSION
 name|PROTOCOL_VERSION

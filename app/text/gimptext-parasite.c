@@ -335,7 +335,7 @@ end_function
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c94b300103
+DECL|enum|__anon29a4f34f0103
 block|{
 DECL|enumerator|TEXT
 name|TEXT

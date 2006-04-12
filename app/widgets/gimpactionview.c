@@ -1688,7 +1688,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1bab770108
+DECL|struct|__anon2bf89b2d0108
 block|{
 DECL|member|accel_path
 name|gchar

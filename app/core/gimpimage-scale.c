@@ -518,7 +518,7 @@ name|NULL
 argument_list|)
 condition|)
 block|{
-comment|/* Since 0< img_scale_w, img_scale_h, failure due to one or more 	   * vanishing scaled layer dimensions. Implicit delete implemented 	   * here. Upstream warning implemented in resize_check_layer_scaling(), 	   * which offers the user the chance to bail out. 	   */
+comment|/* Since 0< img_scale_w, img_scale_h, failure due to one or more            * vanishing scaled layer dimensions. Implicit delete implemented            * here. Upstream warning implemented in resize_check_layer_scaling(),            * which offers the user the chance to bail out.            */
 name|remove
 operator|=
 name|g_list_prepend

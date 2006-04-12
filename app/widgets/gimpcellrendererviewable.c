@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon275f7d380103
+DECL|enum|__anon295a510e0103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -66,7 +66,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon275f7d380203
+DECL|enum|__anon295a510e0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

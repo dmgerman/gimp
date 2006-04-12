@@ -724,7 +724,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296174390108
+DECL|struct|__anon28ada0f70108
 block|{
 DECL|member|factory
 name|GimpDataFactory

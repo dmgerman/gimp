@@ -429,7 +429,7 @@ argument_list|,
 literal|255
 argument_list|)
 expr_stmt|;
-comment|/* This change affects the way saturation is computed. With the 	   old code (different code for value< 0), increasing the 	   saturation affected muted colors very much, and bright colors 	   less. With the new code, it affects muted colors and bright 	   colors more or less evenly. For enhancing the color in photos, 	   the new behavior is exactly what you want. It's hard for me 	   to imagine a case in which the old behavior is better. 	 */
+comment|/* This change affects the way saturation is computed. With the            old code (different code for value< 0), increasing the            saturation affected muted colors very much, and bright colors            less. With the new code, it affects muted colors and bright            colors more or less evenly. For enhancing the color in photos,            the new behavior is exactly what you want. It's hard for me            to imagine a case in which the old behavior is better.          */
 name|hs
 operator|->
 name|saturation_transfer

@@ -2404,7 +2404,7 @@ comment|/* Some of this stuff should probably be combined with the  * code it wa
 end_comment
 
 begin_enum
-DECL|enum|__anon277008390103
+DECL|enum|__anon2906e7890103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum
@@ -2672,7 +2672,7 @@ name|current
 init|=
 literal|0
 decl_stmt|;
-comment|/* number of filled rows at this point 		       * in the scan line 		       */
+comment|/* number of filled rows at this point                        * in the scan line                        */
 name|gint
 name|last_x
 decl_stmt|;

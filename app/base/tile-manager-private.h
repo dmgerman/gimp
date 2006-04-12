@@ -70,7 +70,7 @@ DECL|member|validate_proc
 name|TileValidateProc
 name|validate_proc
 decl_stmt|;
-comment|/*  this proc is called when an attempt 				     *  to get an invalid tile is made. 				     */
+comment|/*  this proc is called when an attempt                                      *  to get an invalid tile is made.                                      */
 DECL|member|cached_num
 name|gint
 name|cached_num

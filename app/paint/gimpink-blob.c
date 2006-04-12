@@ -36,7 +36,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29fd6f3a0103
+DECL|enum|__anon2b51839e0103
 block|{
 DECL|enumerator|EDGE_NONE
 name|EDGE_NONE
@@ -2233,7 +2233,7 @@ literal|0
 end_if
 
 begin_endif
-unit|void blob_dump (Blob *b) {   gint i,j;    for (i = 0; i< b->height; i++)     {       for (j = 0; j< b->data[i].left; j++) 	putchar (' ');        for (j = b->data[i].left; j<= b->data[i].right; j++) 	putchar ('*');        putchar ('\n');     } }
+unit|void blob_dump (Blob *b) {   gint i,j;    for (i = 0; i< b->height; i++)     {       for (j = 0; j< b->data[i].left; j++)         putchar (' ');        for (j = b->data[i].left; j<= b->data[i].right; j++)         putchar ('*');        putchar ('\n');     } }
 endif|#
 directive|endif
 end_endif
@@ -3644,7 +3644,7 @@ comment|/* increment used for move to NE */
 end_comment
 
 begin_comment
-unit|blob_line_add_pixel (b, x, y);        while (x != x1) 	{ 	  if (d<= 0) 	    { 	      d += incrE; 	      x += xstep; 	    } 	  else 	    { 	      d += incrNE; 	      x += xstep; 	      y += ystep; 	    }  	  blob_line_add_pixel (b, x, y); 	}     }   else     {       d = 2 * dx - dy;
+unit|blob_line_add_pixel (b, x, y);        while (x != x1)         {           if (d<= 0)             {               d += incrE;               x += xstep;             }           else             {               d += incrNE;               x += xstep;               y += ystep;             }            blob_line_add_pixel (b, x, y);         }     }   else     {       d = 2 * dx - dy;
 comment|/* initial value of d */
 end_comment
 
@@ -3659,7 +3659,7 @@ comment|/* increment used for move to NE */
 end_comment
 
 begin_endif
-unit|blob_line_add_pixel (b, x, y);        while (y != y1) 	{ 	  if (d<= 0) 	    { 	      d += incrE; 	      y += ystep; 	    } 	  else 	    { 	      d += incrNE; 	      x += xstep; 	      y += ystep; 	    }  	  blob_line_add_pixel (b, x, y); 	}     } }
+unit|blob_line_add_pixel (b, x, y);        while (y != y1)         {           if (d<= 0)             {               d += incrE;               y += ystep;             }           else             {               d += incrNE;               x += xstep;               y += ystep;             }            blob_line_add_pixel (b, x, y);         }     } }
 endif|#
 directive|endif
 end_endif

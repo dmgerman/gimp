@@ -93,7 +93,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6ff1840103
+DECL|enum|__anon2b33047c0103
 block|{
 DECL|enumerator|PATH_COLUMN
 name|PATH_COLUMN

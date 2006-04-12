@@ -124,7 +124,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b656c7e0103
+DECL|enum|__anon29ac774e0103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -149,7 +149,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b656c7e0203
+DECL|enum|__anon29ac774e0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1127,7 +1127,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b656c7e0308
+DECL|struct|__anon29ac774e0308
 block|{
 DECL|member|writer
 name|GimpConfigWriter

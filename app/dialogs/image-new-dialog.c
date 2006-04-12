@@ -134,7 +134,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b7f8a10108
+DECL|struct|__anon293f6f2b0108
 block|{
 DECL|member|dialog
 name|GtkWidget

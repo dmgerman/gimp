@@ -126,7 +126,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2999d45a0108
+DECL|struct|__anon28c5b76a0108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -192,7 +192,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2999d45a0208
+DECL|struct|__anon28c5b76a0208
 block|{
 DECL|member|PR
 name|PixelRegion

@@ -116,7 +116,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d254e30103
+DECL|enum|__anon2a351ce40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

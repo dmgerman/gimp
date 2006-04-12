@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3d6d290103
+DECL|enum|__anon2771868f0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED

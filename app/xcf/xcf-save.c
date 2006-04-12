@@ -3780,7 +3780,7 @@ argument_list|,
 name|prop_type
 argument_list|)
 expr_stmt|;
-comment|/* because we don't know how much room the parasite list will take 	     * we save the file position and write the length later 	     */
+comment|/* because we don't know how much room the parasite list will take              * we save the file position and write the length later              */
 name|pos
 operator|=
 name|info
@@ -5630,7 +5630,7 @@ name|i
 operator|++
 control|)
 block|{
-comment|/* save the start offset of where we are writing 	   *  out the next tile. 	   */
+comment|/* save the start offset of where we are writing            *  out the next tile.            */
 name|offset
 operator|=
 name|info
@@ -5708,7 +5708,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
-comment|/* seek back to where we are to write out the next 	   *  tile offset and write it out. 	   */
+comment|/* seek back to where we are to write out the next            *  tile offset and write it out.            */
 name|xcf_check_error
 argument_list|(
 name|xcf_seek_pos
@@ -5731,14 +5731,14 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-comment|/* increment the location we are to write out the 	   *  next offset. 	   */
+comment|/* increment the location we are to write out the            *  next offset.            */
 name|saved_pos
 operator|=
 name|info
 operator|->
 name|cp
 expr_stmt|;
-comment|/* seek to the end of the file which is where 	   *  we will write out the next tile. 	   */
+comment|/* seek to the end of the file which is where            *  we will write out the next tile.            */
 name|xcf_check_error
 argument_list|(
 name|xcf_seek_end
@@ -6005,7 +6005,7 @@ block|{
 case|case
 literal|0
 case|:
-comment|/* in state 0 we try to find a long sequence of 	       *  matching values. 	       */
+comment|/* in state 0 we try to find a long sequence of                *  matching values.                */
 if|if
 condition|(
 operator|(
@@ -6144,7 +6144,7 @@ break|break;
 case|case
 literal|1
 case|:
-comment|/* in state 1 we try and find a long sequence of 	       *  non-matching values. 	       */
+comment|/* in state 1 we try and find a long sequence of                *  non-matching values.                */
 if|if
 condition|(
 operator|(
@@ -6469,7 +6469,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29af89840108
+DECL|struct|__anon2b64a5530108
 block|{
 DECL|member|info
 name|XcfInfo

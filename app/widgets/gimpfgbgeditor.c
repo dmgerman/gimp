@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad4a41b0103
+DECL|enum|__anon2c91c0880103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -81,7 +81,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad4a41b0203
+DECL|enum|__anon2c91c0880203
 block|{
 DECL|enumerator|COLOR_CLICKED
 name|COLOR_CLICKED
@@ -95,7 +95,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad4a41b0303
+DECL|enum|__anon2c91c0880303
 block|{
 DECL|enumerator|INVALID_AREA
 name|INVALID_AREA

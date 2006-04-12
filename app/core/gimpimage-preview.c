@@ -689,7 +689,7 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
-comment|/*  floating selections are added right above the layer 	   *  they are attached to 	   */
+comment|/*  floating selections are added right above the layer            *  they are attached to            */
 if|if
 condition|(
 name|gimp_layer_is_floating_sel

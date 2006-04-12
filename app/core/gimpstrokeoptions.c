@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2950bc9c0103
+DECL|enum|__anon27bbb6220103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -99,7 +99,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2950bc9c0203
+DECL|enum|__anon27bbb6220203
 block|{
 DECL|enumerator|DASH_INFO_CHANGED
 name|DASH_INFO_CHANGED

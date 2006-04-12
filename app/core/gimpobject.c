@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b603ce40103
+DECL|enum|__anon2976b8e30103
 block|{
 DECL|enumerator|DISCONNECT
 name|DISCONNECT
@@ -69,7 +69,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b603ce40203
+DECL|enum|__anon2976b8e30203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
