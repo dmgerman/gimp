@@ -234,7 +234,7 @@ operator|)
 name|STEPS
 operator|)
 expr_stmt|;
-comment|/*  I've tried to use a gauss function here instead of a 	      threshold, but the result was not that impressive.    */
+comment|/*  I've tried to use a gauss function here instead of a               threshold, but the result was not that impressive.    */
 name|w
 operator|=
 operator|(
