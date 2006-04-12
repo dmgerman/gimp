@@ -49,7 +49,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aa9f4150103
+DECL|enum|__anon29fb81050103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -63,7 +63,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aa9f4150208
+DECL|struct|__anon29fb81050208
 block|{
 DECL|member|x
 DECL|member|y

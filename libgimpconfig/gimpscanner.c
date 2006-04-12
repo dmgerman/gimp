@@ -66,7 +66,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9cbacf0108
+DECL|struct|__anon2a9acf160108
 block|{
 DECL|member|name
 name|gchar
@@ -1056,7 +1056,7 @@ end_function
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9cbacf0203
+DECL|enum|__anon2a9acf160203
 block|{
 DECL|enumerator|COLOR_RGB
 name|COLOR_RGB

@@ -145,7 +145,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon274c60a40103
+DECL|enum|__anon2b91e9a70103
 block|{
 DECL|enumerator|GIMP_RGB_COMPOSITE_NONE
 name|GIMP_RGB_COMPOSITE_NONE
@@ -711,7 +711,7 @@ name|g
 parameter_list|,
 name|b
 parameter_list|)
-value|((r) * GIMP_RGB_LUMINANCE_RED   + \ 			           (g) * GIMP_RGB_LUMINANCE_GREEN + \ 			           (b) * GIMP_RGB_LUMINANCE_BLUE)
+value|((r) * GIMP_RGB_LUMINANCE_RED   + \                                    (g) * GIMP_RGB_LUMINANCE_GREEN + \                                    (b) * GIMP_RGB_LUMINANCE_BLUE)
 end_define
 
 begin_ifndef
@@ -760,7 +760,7 @@ name|g
 parameter_list|,
 name|b
 parameter_list|)
-value|((r) * GIMP_RGB_INTENSITY_RED   + \ 			           (g) * GIMP_RGB_INTENSITY_GREEN + \ 			           (b) * GIMP_RGB_INTENSITY_BLUE)
+value|((r) * GIMP_RGB_INTENSITY_RED   + \                                    (g) * GIMP_RGB_INTENSITY_GREEN + \                                    (b) * GIMP_RGB_INTENSITY_BLUE)
 end_define
 
 begin_endif

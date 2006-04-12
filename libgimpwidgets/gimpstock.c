@@ -2470,7 +2470,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b204af80108
+DECL|struct|__anon27fb1cdd0108
 block|{
 DECL|member|stock_id
 specifier|const
@@ -3197,7 +3197,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b204af80208
+DECL|struct|__anon27fb1cdd0208
 block|{
 DECL|member|stock_id
 specifier|const
@@ -4016,7 +4016,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b204af80308
+DECL|struct|__anon27fb1cdd0308
 block|{
 DECL|member|stock_id
 specifier|const
@@ -4113,7 +4113,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b204af80408
+DECL|struct|__anon27fb1cdd0408
 block|{
 DECL|member|stock_id
 specifier|const
@@ -4258,7 +4258,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b204af80508
+DECL|struct|__anon27fb1cdd0508
 block|{
 DECL|member|stock_id
 specifier|const

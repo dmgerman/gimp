@@ -62,7 +62,7 @@ parameter_list|(
 name|gboolean
 name|menu_only
 parameter_list|,
-comment|/* specify menu items as va_list: 		       *  const gchar    *label, 		       *  GCallback       callback, 		       *  gpointer        callback_data, 		       *  gpointer        item_data, 		       *  GtkWidget     **widget_ptr, 		       *  gboolean        active 		       */
+comment|/* specify menu items as va_list:                        *  const gchar    *label,                        *  GCallback       callback,                        *  gpointer        callback_data,                        *  gpointer        item_data,                        *  GtkWidget     **widget_ptr,                        *  gboolean        active                        */
 modifier|...
 parameter_list|)
 block|{
@@ -387,7 +387,7 @@ name|gpointer
 name|initial
 parameter_list|,
 comment|/* item_data */
-comment|/* specify menu items as va_list: 			*  const gchar *label, 			*  gpointer     item_data, 			*  GtkWidget  **widget_ptr, 			*/
+comment|/* specify menu items as va_list:                         *  const gchar *label,                         *  gpointer     item_data,                         *  GtkWidget  **widget_ptr,                         */
 modifier|...
 parameter_list|)
 block|{
@@ -678,7 +678,7 @@ name|gint
 name|initial
 parameter_list|,
 comment|/* item_data */
-comment|/* specify menu items as va_list: 			   *  const gchar *label, 			   *  gint         item_data, 			   *  GtkWidget  **widget_ptr, 			   */
+comment|/* specify menu items as va_list:                            *  const gchar *label,                            *  gint         item_data,                            *  GtkWidget  **widget_ptr,                            */
 modifier|...
 parameter_list|)
 block|{

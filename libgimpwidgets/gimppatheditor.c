@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc060fa0103
+DECL|enum|__anon28d935a00103
 block|{
 DECL|enumerator|PATH_CHANGED
 name|PATH_CHANGED
@@ -69,7 +69,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc060fa0203
+DECL|enum|__anon28d935a00203
 block|{
 DECL|enumerator|COLUMN_UTF8
 name|COLUMN_UTF8

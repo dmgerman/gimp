@@ -99,7 +99,7 @@ name|gchar
 modifier|*
 name|frame_title
 parameter_list|,
-comment|/* specify radio buttons as va_list: 		       *  const gchar    *label, 		       *  GCallback       callback, 		       *  gpointer        callback_data, 		       *  gpointer        item_data, 		       *  GtkWidget     **widget_ptr, 		       *  gboolean        active, 		       */
+comment|/* specify radio buttons as va_list:                        *  const gchar    *label,                        *  GCallback       callback,                        *  gpointer        callback_data,                        *  gpointer        item_data,                        *  GtkWidget     **widget_ptr,                        *  gboolean        active,                        */
 modifier|...
 parameter_list|)
 block|{
@@ -433,7 +433,7 @@ name|gpointer
 name|initial
 parameter_list|,
 comment|/* item_data */
-comment|/* specify radio buttons as va_list: 			*  const gchar *label, 			*  gpointer     item_data, 			*  GtkWidget  **widget_ptr, 			*/
+comment|/* specify radio buttons as va_list:                         *  const gchar *label,                         *  gpointer     item_data,                         *  GtkWidget  **widget_ptr,                         */
 modifier|...
 parameter_list|)
 block|{
@@ -733,7 +733,7 @@ name|gint
 name|initial
 parameter_list|,
 comment|/* item_data */
-comment|/* specify radio buttons as va_list: 			   *  const gchar *label, 			   *  gint         item_data, 			   *  GtkWidget  **widget_ptr, 			   */
+comment|/* specify radio buttons as va_list:                            *  const gchar *label,                            *  gint         item_data,                            *  GtkWidget  **widget_ptr,                            */
 modifier|...
 parameter_list|)
 block|{
@@ -3363,7 +3363,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278491d30108
+DECL|struct|__anon27c1784c0108
 block|{
 DECL|member|chainbutton
 name|GimpChainButton

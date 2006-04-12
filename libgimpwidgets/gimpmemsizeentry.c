@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be3cb2e0103
+DECL|enum|__anon2be5044a0103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED

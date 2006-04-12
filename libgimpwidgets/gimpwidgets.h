@@ -306,7 +306,7 @@ name|gint
 name|initial
 argument_list|,
 comment|/* item_data */
-comment|/* specify radio buttons as va_list: 				       *  const gchar  *label, 				       *  gint          item_data, 				       *  GtkWidget   **widget_ptr, 				       */
+comment|/* specify radio buttons as va_list:                                        *  const gchar  *label,                                        *  gint          item_data,                                        *  GtkWidget   **widget_ptr,                                        */
 operator|...
 argument_list|)
 name|G_GNUC_NULL_TERMINATED
@@ -340,7 +340,7 @@ name|gchar
 operator|*
 name|frame_title
 argument_list|,
-comment|/* specify radio buttons as va_list: 				     *  const gchar    *label, 				     *  GCallback       callback, 				     *  gpointer        callback_data, 				     *  gpointer        item_data, 				     *  GtkWidget     **widget_ptr, 				     *  gboolean        active, 				     */
+comment|/* specify radio buttons as va_list:                                      *  const gchar    *label,                                      *  GCallback       callback,                                      *  gpointer        callback_data,                                      *  gpointer        item_data,                                      *  GtkWidget     **widget_ptr,                                      *  gboolean        active,                                      */
 operator|...
 argument_list|)
 name|G_GNUC_NULL_TERMINATED
@@ -370,7 +370,7 @@ name|gpointer
 name|initial
 argument_list|,
 comment|/* item_data */
-comment|/* specify radio buttons as va_list: 				     *  const gchar    *label, 				     *  gpointer        item_data, 				     *  GtkWidget     **widget_ptr, 				     */
+comment|/* specify radio buttons as va_list:                                      *  const gchar    *label,                                      *  gpointer        item_data,                                      *  GtkWidget     **widget_ptr,                                      */
 operator|...
 argument_list|)
 name|G_GNUC_NULL_TERMINATED

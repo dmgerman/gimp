@@ -58,7 +58,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4f3f2b0108
+DECL|struct|__anon290e08710108
 block|{
 DECL|member|hscr_policy
 name|GtkPolicyType

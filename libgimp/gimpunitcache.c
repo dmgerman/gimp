@@ -52,7 +52,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a6b5760108
+DECL|struct|__anon2ad1de4e0108
 block|{
 DECL|member|factor
 name|gdouble

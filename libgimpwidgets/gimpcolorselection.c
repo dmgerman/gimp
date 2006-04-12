@@ -104,7 +104,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c0c266b0103
+DECL|enum|__anon28ea31010103
 block|{
 DECL|enumerator|UPDATE_NOTEBOOK
 name|UPDATE_NOTEBOOK
@@ -149,7 +149,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0c266b0203
+DECL|enum|__anon28ea31010203
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED

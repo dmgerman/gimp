@@ -223,7 +223,7 @@ DECL|member|data
 name|gpointer
 name|data
 decl_stmt|;
-comment|/* a pointer to the data.  plugin is              * 		     * responsible for tracking byte order            */
+comment|/* a pointer to the data.  plugin is              *                      * responsible for tracking byte order            */
 block|}
 struct|;
 end_struct

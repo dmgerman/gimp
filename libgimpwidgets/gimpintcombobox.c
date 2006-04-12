@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2921ad940103
+DECL|enum|__anon28773b180103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -55,7 +55,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2921ad940208
+DECL|struct|__anon28773b180208
 block|{
 DECL|member|pixbuf_renderer
 name|GtkCellRenderer

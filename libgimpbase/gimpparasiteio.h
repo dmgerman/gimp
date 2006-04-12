@@ -43,7 +43,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b5becc0108
+DECL|struct|__anon29e452280108
 block|{
 DECL|member|step
 name|gint

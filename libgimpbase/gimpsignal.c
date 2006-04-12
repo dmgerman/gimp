@@ -114,7 +114,7 @@ directive|else
 return|return
 name|NULL
 return|;
-comment|/* Or g_error()? Should all calls to 				 * this function really be inside 				 * #ifdef G_OS_UNIX? 				 */
+comment|/* Or g_error()? Should all calls to                                  * this function really be inside                                  * #ifdef G_OS_UNIX?                                  */
 endif|#
 directive|endif
 block|}
