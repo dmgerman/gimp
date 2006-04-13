@@ -216,7 +216,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"_Acquire"
+literal|"Acq_uire"
 argument_list|)
 block|}
 block|,
