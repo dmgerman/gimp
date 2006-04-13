@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIF saving file filter for The GIMP version 1.3/1.4  *  *    Copyright  *    - Adam D. Moss  *    - Peter Mattis  *    - Spencer Kimball  *  *      Based around original GIF code by David Koblas.  *  *  * Version 4.1.0 - 2003-06-16  *                        Adam D. Moss -<adam@gimp.org><adam@foxbox.org>  */
+comment|/* GIF saving file filter for GIMP  *  *    Copyright  *    - Adam D. Moss  *    - Peter Mattis  *    - Spencer Kimball  *  *      Based around original GIF code by David Koblas.  *  *  * Version 4.1.0 - 2003-06-16  *                        Adam D. Moss -<adam@gimp.org><adam@foxbox.org>  */
 end_comment
 
 begin_comment
@@ -135,7 +135,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1513d40103
+DECL|enum|__anon298c97380103
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -152,7 +152,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1513d40208
+DECL|struct|__anon298c97380208
 block|{
 DECL|member|interlace
 name|gint
@@ -257,7 +257,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|boundscheck
+name|bounds_check
 parameter_list|(
 name|gint32
 name|image_ID
@@ -268,7 +268,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|badbounds_dialog
+name|bad_bounds_dialog
 parameter_list|(
 name|void
 parameter_list|)
@@ -758,12 +758,12 @@ break|break;
 block|}
 if|if
 condition|(
-name|boundscheck
+name|bounds_check
 argument_list|(
 name|image_ID
 argument_list|)
 condition|)
-comment|/* The image may or may not have had layers out of 	   bounds, but the user didn't mind cropping it down. */
+comment|/* The image may or may not have had layers out of            bounds, but the user didn't mind cropping it down. */
 block|{
 switch|switch
 condition|(
@@ -956,7 +956,7 @@ block|}
 block|}
 block|}
 else|else
-comment|/* Some layers were out of bounds and the user wishes 	      to abort.  */
+comment|/* Some layers were out of bounds and the user wishes           to abort.  */
 block|{
 name|status
 operator|=
@@ -988,60 +988,6 @@ name|status
 expr_stmt|;
 block|}
 end_function
-
-begin_define
-DECL|macro|MAXCOLORMAPSIZE
-define|#
-directive|define
-name|MAXCOLORMAPSIZE
-value|256
-end_define
-
-begin_define
-DECL|macro|INTERLACE
-define|#
-directive|define
-name|INTERLACE
-value|0x40
-end_define
-
-begin_define
-DECL|macro|LOCALCOLORMAP
-define|#
-directive|define
-name|LOCALCOLORMAP
-value|0x80
-end_define
-
-begin_define
-DECL|macro|GRAYSCALE
-define|#
-directive|define
-name|GRAYSCALE
-value|1
-end_define
-
-begin_define
-DECL|macro|COLOR
-define|#
-directive|define
-name|COLOR
-value|2
-end_define
-
-begin_typedef
-DECL|typedef|CMap
-typedef|typedef
-name|guchar
-name|CMap
-index|[
-literal|3
-index|]
-index|[
-name|MAXCOLORMAPSIZE
-index|]
-typedef|;
-end_typedef
 
 begin_decl_stmt
 DECL|variable|globalcomment
@@ -1199,7 +1145,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|int
-name|colorstobpp
+name|colors_to_bpp
 parameter_list|(
 name|int
 parameter_list|)
@@ -1209,7 +1155,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|int
-name|bpptocolors
+name|bpp_to_colors
 parameter_list|(
 name|int
 parameter_list|)
@@ -1219,7 +1165,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|int
-name|GetPixel
+name|get_pixel
 parameter_list|(
 name|int
 parameter_list|,
@@ -1230,18 +1176,8 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
-name|BumpPixel
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
 name|int
-name|GIFNextPixel
+name|gif_next_pixel
 parameter_list|(
 name|ifunptr
 parameter_list|)
@@ -1251,7 +1187,17 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|GIFEncodeHeader
+name|bump_pixel
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|gif_encode_header
 parameter_list|(
 name|FILE
 modifier|*
@@ -1283,7 +1229,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|GIFEncodeGraphicControlExt
+name|gif_encode_graphic_control_ext
 parameter_list|(
 name|FILE
 modifier|*
@@ -1310,7 +1256,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|GIFEncodeImageData
+name|gif_encode_image_data
 parameter_list|(
 name|FILE
 modifier|*
@@ -1335,7 +1281,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|GIFEncodeClose
+name|gif_encode_close
 parameter_list|(
 name|FILE
 modifier|*
@@ -1346,7 +1292,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|GIFEncodeLoopExt
+name|gif_encode_loop_ext
 parameter_list|(
 name|FILE
 modifier|*
@@ -1359,7 +1305,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|GIFEncodeCommentExt
+name|gif_encode_comment_ext
 parameter_list|(
 name|FILE
 modifier|*
@@ -1405,34 +1351,6 @@ name|max_progress
 decl_stmt|;
 end_decl_stmt
 
-begin_function_decl
-specifier|static
-name|void
-name|Putword
-parameter_list|(
-name|int
-parameter_list|,
-name|FILE
-modifier|*
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|compress
-parameter_list|(
-name|int
-parameter_list|,
-name|FILE
-modifier|*
-parameter_list|,
-name|ifunptr
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -1442,7 +1360,7 @@ end_ifdef
 begin_function_decl
 specifier|static
 name|void
-name|nocompress
+name|no_compress
 parameter_list|(
 name|int
 parameter_list|,
@@ -1468,7 +1386,7 @@ end_ifdef
 begin_function_decl
 specifier|static
 name|void
-name|rlecompress
+name|rle_compress
 parameter_list|(
 name|int
 parameter_list|,
@@ -1488,7 +1406,7 @@ end_else
 begin_function_decl
 specifier|static
 name|void
-name|normalcompress
+name|normal_compress
 parameter_list|(
 name|int
 parameter_list|,
@@ -1509,6 +1427,34 @@ begin_endif
 endif|#
 directive|endif
 end_endif
+
+begin_function_decl
+specifier|static
+name|void
+name|put_word
+parameter_list|(
+name|int
+parameter_list|,
+name|FILE
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|compress
+parameter_list|(
+name|int
+parameter_list|,
+name|FILE
+modifier|*
+parameter_list|,
+name|ifunptr
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 specifier|static
@@ -1543,7 +1489,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|writeerr
+name|write_err
 parameter_list|(
 name|void
 parameter_list|)
@@ -2212,8 +2158,8 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|boundscheck (gint32 image_ID)
-name|boundscheck
+DECL|function|bounds_check (gint32 image_ID)
+name|bounds_check
 parameter_list|(
 name|gint32
 name|image_ID
@@ -2341,7 +2287,7 @@ name|drawable
 argument_list|)
 expr_stmt|;
 comment|/* Image has illegal bounds - ask the user what it wants to do */
-comment|/* Do the crop if we can't talk to the user, or if we asked 	   * the user and they said yes. */
+comment|/* Do the crop if we can't talk to the user, or if we asked            * the user and they said yes. */
 if|if
 condition|(
 operator|(
@@ -2350,7 +2296,7 @@ operator|==
 name|GIMP_RUN_NONINTERACTIVE
 operator|)
 operator|||
-name|badbounds_dialog
+name|bad_bounds_dialog
 argument_list|()
 condition|)
 block|{
@@ -3041,12 +2987,12 @@ operator|<
 literal|256
 condition|)
 block|{
-comment|/* we keep track of how many bits we promised to have in liberalBPP, 	 so that we don't accidentally come under this when doing 	 clever transparency stuff where we can re-use wasted indices. */
+comment|/* we keep track of how many bits we promised to have in liberalBPP,          so that we don't accidentally come under this when doing          clever transparency stuff where we can re-use wasted indices. */
 name|liberalBPP
 operator|=
 name|BitsPerPixel
 operator|=
-name|colorstobpp
+name|colors_to_bpp
 argument_list|(
 name|colors
 operator|+
@@ -3070,7 +3016,7 @@ name|liberalBPP
 operator|=
 name|BitsPerPixel
 operator|=
-name|colorstobpp
+name|colors_to_bpp
 argument_list|(
 literal|256
 argument_list|)
@@ -3109,7 +3055,7 @@ name|gsvals
 operator|.
 name|interlace
 expr_stmt|;
-name|GIFEncodeHeader
+name|gif_encode_header
 argument_list|(
 name|outfile
 argument_list|,
@@ -3129,7 +3075,7 @@ name|Green
 argument_list|,
 name|Blue
 argument_list|,
-name|GetPixel
+name|get_pixel
 argument_list|)
 expr_stmt|;
 comment|/* If the image has multiple layers it'll be made into an      animated GIF, so write out the infinite-looping extension */
@@ -3147,7 +3093,7 @@ operator|.
 name|loop
 operator|)
 condition|)
-name|GIFEncodeLoopExt
+name|gif_encode_loop_ext
 argument_list|(
 name|outfile
 argument_list|,
@@ -3164,7 +3110,7 @@ operator|&&
 name|globalcomment
 condition|)
 block|{
-name|GIFEncodeCommentExt
+name|gif_encode_comment_ext
 argument_list|(
 name|outfile
 argument_list|,
@@ -3359,7 +3305,7 @@ name|GIMP_GRAYA_IMAGE
 operator|)
 condition|)
 block|{
-comment|/* Try to find an entry which isn't actually used in the 	     image, for a transparency index. */
+comment|/* Try to find an entry which isn't actually used in the              image, for a transparency index. */
 name|transparent
 operator|=
 name|find_unused_ia_colour
@@ -3374,9 +3320,9 @@ name|drawable
 operator|->
 name|height
 argument_list|,
-name|bpptocolors
+name|bpp_to_colors
 argument_list|(
-name|colorstobpp
+name|colors_to_bpp
 argument_list|(
 name|colors
 argument_list|)
@@ -3416,7 +3362,7 @@ expr_stmt|;
 block|}
 name|BitsPerPixel
 operator|=
-name|colorstobpp
+name|colors_to_bpp
 argument_list|(
 name|colors
 argument_list|)
@@ -3428,7 +3374,7 @@ operator|!=
 name|liberalBPP
 condition|)
 block|{
-comment|/* We were able to re-use an index within the existing bitspace, 	     whereas the estimate in the header was pessimistic but still 	     needs to be upheld... */
+comment|/* We were able to re-use an index within the existing bitspace,              whereas the estimate in the header was pessimistic but still              needs to be upheld... */
 ifdef|#
 directive|ifdef
 name|GIFDEBUG
@@ -3630,7 +3576,7 @@ operator|=
 literal|1
 expr_stmt|;
 block|}
-name|GIFEncodeGraphicControlExt
+name|gif_encode_graphic_control_ext
 argument_list|(
 name|outfile
 argument_list|,
@@ -3648,11 +3594,11 @@ name|transparent
 argument_list|,
 name|useBPP
 argument_list|,
-name|GetPixel
+name|get_pixel
 argument_list|)
 expr_stmt|;
 block|}
-name|GIFEncodeImageData
+name|gif_encode_image_data
 argument_list|(
 name|outfile
 argument_list|,
@@ -3674,7 +3620,7 @@ literal|0
 argument_list|,
 name|useBPP
 argument_list|,
-name|GetPixel
+name|get_pixel
 argument_list|,
 name|offset_x
 argument_list|,
@@ -3697,7 +3643,7 @@ argument_list|(
 name|layers
 argument_list|)
 expr_stmt|;
-name|GIFEncodeClose
+name|gif_encode_close
 argument_list|(
 name|outfile
 argument_list|)
@@ -3711,8 +3657,8 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|badbounds_dialog (void)
-name|badbounds_dialog
+DECL|function|bad_bounds_dialog (void)
+name|bad_bounds_dialog
 parameter_list|(
 name|void
 parameter_list|)
@@ -5106,8 +5052,8 @@ end_function
 begin_function
 specifier|static
 name|int
-DECL|function|colorstobpp (int colors)
-name|colorstobpp
+DECL|function|colors_to_bpp (int colors)
+name|colors_to_bpp
 parameter_list|(
 name|int
 name|colors
@@ -5207,7 +5153,7 @@ else|else
 block|{
 name|g_warning
 argument_list|(
-literal|"GIF: colorstobpp - Eep! too many colours: %d\n"
+literal|"GIF: colors_to_bpp - Eep! too many colours: %d\n"
 argument_list|,
 name|colors
 argument_list|)
@@ -5225,8 +5171,8 @@ end_function
 begin_function
 specifier|static
 name|int
-DECL|function|bpptocolors (int bpp)
-name|bpptocolors
+DECL|function|bpp_to_colors (int bpp)
+name|bpp_to_colors
 parameter_list|(
 name|int
 name|bpp
@@ -5244,7 +5190,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"GIF: bpptocolors - Eep! bpp==%d !\n"
+literal|"GIF: bpp_to_colors - Eep! bpp==%d !\n"
 argument_list|,
 name|bpp
 argument_list|)
@@ -5270,8 +5216,8 @@ end_function
 begin_function
 specifier|static
 name|int
-DECL|function|GetPixel (int x,int y)
-name|GetPixel
+DECL|function|get_pixel (int x,int y)
+name|get_pixel
 parameter_list|(
 name|int
 name|x
@@ -5304,7 +5250,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*****************************************************************************  *  * GIFENCODE.C    - GIF Image compression interface  *  * GIFEncode( FName, GHeight, GWidth, GInterlace, Background, Transparent,  *            BitsPerPixel, Red, Green, Blue, GetPixel )  *  *****************************************************************************/
+comment|/*****************************************************************************  *  * GIFENCODE.C    - GIF Image compression interface  *  * GIFEncode( FName, GHeight, GWidth, GInterlace, Background, Transparent,  *            BitsPerPixel, Red, Green, Blue, get_pixel )  *  *****************************************************************************/
 end_comment
 
 begin_decl_stmt
@@ -5354,8 +5300,8 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|BumpPixel (void)
-name|BumpPixel
+DECL|function|bump_pixel (void)
+name|bump_pixel
 parameter_list|(
 name|void
 parameter_list|)
@@ -5507,8 +5453,8 @@ end_comment
 begin_function
 specifier|static
 name|int
-DECL|function|GIFNextPixel (ifunptr getpixel)
-name|GIFNextPixel
+DECL|function|gif_next_pixel (ifunptr getpixel)
+name|gif_next_pixel
 parameter_list|(
 name|ifunptr
 name|getpixel
@@ -5541,7 +5487,7 @@ argument_list|,
 name|cury
 argument_list|)
 expr_stmt|;
-name|BumpPixel
+name|bump_pixel
 argument_list|()
 expr_stmt|;
 return|return
@@ -5557,8 +5503,8 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|GIFEncodeHeader (FILE * fp,gboolean gif89,int GWidth,int GHeight,int Background,int BitsPerPixel,int Red[],int Green[],int Blue[],ifunptr GetPixel)
-name|GIFEncodeHeader
+DECL|function|gif_encode_header (FILE * fp,gboolean gif89,int GWidth,int GHeight,int Background,int BitsPerPixel,int Red[],int Green[],int Blue[],ifunptr get_pixel)
+name|gif_encode_header
 parameter_list|(
 name|FILE
 modifier|*
@@ -5592,7 +5538,7 @@ name|Blue
 index|[]
 parameter_list|,
 name|ifunptr
-name|GetPixel
+name|get_pixel
 parameter_list|)
 block|{
 name|int
@@ -5706,14 +5652,14 @@ name|fp
 argument_list|)
 expr_stmt|;
 comment|/*    * Write out the screen width and height    */
-name|Putword
+name|put_word
 argument_list|(
 name|RWidth
 argument_list|,
 name|fp
 argument_list|)
 expr_stmt|;
-name|Putword
+name|put_word
 argument_list|(
 name|RHeight
 argument_list|,
@@ -5822,8 +5768,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|GIFEncodeGraphicControlExt (FILE * fp,int Disposal,int Delay89,int NumFramesInImage,int GWidth,int GHeight,int Transparent,int BitsPerPixel,ifunptr GetPixel)
-name|GIFEncodeGraphicControlExt
+DECL|function|gif_encode_graphic_control_ext (FILE * fp,int Disposal,int Delay89,int NumFramesInImage,int GWidth,int GHeight,int Transparent,int BitsPerPixel,ifunptr get_pixel)
+name|gif_encode_graphic_control_ext
 parameter_list|(
 name|FILE
 modifier|*
@@ -5851,7 +5797,7 @@ name|int
 name|BitsPerPixel
 parameter_list|,
 name|ifunptr
-name|GetPixel
+name|get_pixel
 parameter_list|)
 block|{
 name|int
@@ -6065,8 +6011,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|GIFEncodeImageData (FILE * fp,int GWidth,int GHeight,int GInterlace,int BitsPerPixel,ifunptr GetPixel,gint offset_x,gint offset_y)
-name|GIFEncodeImageData
+DECL|function|gif_encode_image_data (FILE * fp,int GWidth,int GHeight,int GInterlace,int BitsPerPixel,ifunptr get_pixel,gint offset_x,gint offset_y)
+name|gif_encode_image_data
 parameter_list|(
 name|FILE
 modifier|*
@@ -6085,7 +6031,7 @@ name|int
 name|BitsPerPixel
 parameter_list|,
 name|ifunptr
-name|GetPixel
+name|get_pixel
 parameter_list|,
 name|gint
 name|offset_x
@@ -6194,29 +6140,6 @@ name|cury
 operator|=
 literal|0
 expr_stmt|;
-if|#
-directive|if
-literal|0
-comment|/*    * Write an Image separator    */
-block|fputc (',', fp);
-comment|/*    * Write the Image header    */
-block|Putword (LeftOfs, fp);   Putword (TopOfs, fp);   Putword (Width, fp);   Putword (Height, fp);
-comment|/*    * Write out whether or not the image is interlaced    */
-block|if (Interlace)     fputc (0x40, fp);   else     fputc (0x00, fp);
-comment|/*    * Write out the initial code size    */
-block|fputc (InitCodeSize, fp);
-comment|/*    * Go and actually compress the data    */
-block|compress (InitCodeSize + 1, fp, GetPixel);
-comment|/*    * Write out a Zero-length packet (to end the series)    */
-block|fputc (0, fp);
-comment|/***************************/
-block|Interlace = GInterlace;   ColorMapSize = 1<< BitsPerPixel;   RWidth = Width = GWidth;   RHeight = Height = GHeight;   LeftOfs = TopOfs = 0;   Resolution = BitsPerPixel;    CountDown = (long) Width *(long) Height;   Pass = 0;
-comment|/*    * The initial code size    */
-block|if (BitsPerPixel<= 1)     InitCodeSize = 2;   else     InitCodeSize = BitsPerPixel;
-comment|/*    * Set up the current x and y position    */
-block|curx = cury = 0;
-endif|#
-directive|endif
 comment|/*    * Write an Image separator    */
 name|fputc
 argument_list|(
@@ -6226,28 +6149,28 @@ name|fp
 argument_list|)
 expr_stmt|;
 comment|/*    * Write the Image header    */
-name|Putword
+name|put_word
 argument_list|(
 name|LeftOfs
 argument_list|,
 name|fp
 argument_list|)
 expr_stmt|;
-name|Putword
+name|put_word
 argument_list|(
 name|TopOfs
 argument_list|,
 name|fp
 argument_list|)
 expr_stmt|;
-name|Putword
+name|put_word
 argument_list|(
 name|Width
 argument_list|,
 name|fp
 argument_list|)
 expr_stmt|;
-name|Putword
+name|put_word
 argument_list|(
 name|Height
 argument_list|,
@@ -6291,7 +6214,7 @@ literal|1
 argument_list|,
 name|fp
 argument_list|,
-name|GetPixel
+name|get_pixel
 argument_list|)
 expr_stmt|;
 comment|/*    * Write out a Zero-length packet (to end the series)    */
@@ -6302,14 +6225,25 @@ argument_list|,
 name|fp
 argument_list|)
 expr_stmt|;
+if|#
+directive|if
+literal|0
+comment|/***************************/
+block|Interlace = GInterlace;   ColorMapSize = 1<< BitsPerPixel;   RWidth = Width = GWidth;   RHeight = Height = GHeight;   LeftOfs = TopOfs = 0;   Resolution = BitsPerPixel;    CountDown = (long) Width *(long) Height;   Pass = 0;
+comment|/*    * The initial code size    */
+block|if (BitsPerPixel<= 1)     InitCodeSize = 2;   else     InitCodeSize = BitsPerPixel;
+comment|/*    * Set up the current x and y position    */
+block|curx = cury = 0;
+endif|#
+directive|endif
 block|}
 end_function
 
 begin_function
 specifier|static
 name|void
-DECL|function|GIFEncodeClose (FILE * fp)
-name|GIFEncodeClose
+DECL|function|gif_encode_close (FILE * fp)
+name|gif_encode_close
 parameter_list|(
 name|FILE
 modifier|*
@@ -6336,8 +6270,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|GIFEncodeLoopExt (FILE * fp,guint num_loops)
-name|GIFEncodeLoopExt
+DECL|function|gif_encode_loop_ext (FILE * fp,guint num_loops)
+name|gif_encode_loop_ext
 parameter_list|(
 name|FILE
 modifier|*
@@ -6389,7 +6323,7 @@ argument_list|,
 name|fp
 argument_list|)
 expr_stmt|;
-name|Putword
+name|put_word
 argument_list|(
 name|num_loops
 argument_list|,
@@ -6403,15 +6337,15 @@ argument_list|,
 name|fp
 argument_list|)
 expr_stmt|;
-comment|/* NOTE: num_loops==0 means 'loop infinitely' */
+comment|/* NOTE: num_loops == 0 means 'loop infinitely' */
 block|}
 end_function
 
 begin_function
 specifier|static
 name|void
-DECL|function|GIFEncodeCommentExt (FILE * fp,const gchar * comment)
-name|GIFEncodeCommentExt
+DECL|function|gif_encode_comment_ext (FILE * fp,const gchar * comment)
+name|gif_encode_comment_ext
 parameter_list|(
 name|FILE
 modifier|*
@@ -6499,8 +6433,8 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|Putword (int w,FILE * fp)
-name|Putword
+DECL|function|put_word (int w,FILE * fp)
+name|put_word
 parameter_list|(
 name|int
 name|w
@@ -6787,7 +6721,7 @@ end_decl_stmt
 
 begin_comment
 DECL|variable|hsize
-comment|/* the original reason for this being 				   variable was "for dynamic table sizing", 				   but since it was never actually changed 				   I made it const   --Adam. */
+comment|/* the original reason for this being                                    variable was "for dynamic table sizing",                                    but since it was never actually changed                                    I made it const   --Adam. */
 end_comment
 
 begin_comment
@@ -7013,7 +6947,7 @@ block|{
 ifdef|#
 directive|ifdef
 name|GIF_UN
-name|nocompress
+name|no_compress
 argument_list|(
 name|init_bits
 argument_list|,
@@ -7027,7 +6961,7 @@ directive|else
 ifdef|#
 directive|ifdef
 name|GIF_RLE
-name|rlecompress
+name|rle_compress
 argument_list|(
 name|init_bits
 argument_list|,
@@ -7038,7 +6972,7 @@ argument_list|)
 expr_stmt|;
 else|#
 directive|else
-name|normalcompress
+name|normal_compress
 argument_list|(
 name|init_bits
 argument_list|,
@@ -7063,8 +6997,8 @@ end_ifdef
 begin_function
 specifier|static
 name|void
-DECL|function|nocompress (int init_bits,FILE * outfile,ifunptr ReadValue)
-name|nocompress
+DECL|function|no_compress (int init_bits,FILE * outfile,ifunptr ReadValue)
+name|no_compress
 parameter_list|(
 name|int
 name|init_bits
@@ -7177,7 +7111,7 @@ argument_list|()
 expr_stmt|;
 name|ent
 operator|=
-name|GIFNextPixel
+name|gif_next_pixel
 argument_list|(
 name|ReadValue
 argument_list|)
@@ -7242,7 +7176,7 @@ condition|(
 operator|(
 name|c
 operator|=
-name|GIFNextPixel
+name|gif_next_pixel
 argument_list|(
 name|ReadValue
 argument_list|)
@@ -7262,7 +7196,7 @@ condition|(
 operator|(
 name|c
 operator|=
-name|GIFNextPixel
+name|gif_next_pixel
 argument_list|(
 name|ReadValue
 argument_list|)
@@ -7407,8 +7341,8 @@ directive|ifdef
 name|GIF_RLE
 specifier|static
 name|void
-DECL|function|rlecompress (int init_bits,FILE * outfile,ifunptr ReadValue)
-name|rlecompress
+DECL|function|rle_compress (int init_bits,FILE * outfile,ifunptr ReadValue)
+name|rle_compress
 parameter_list|(
 name|int
 name|init_bits
@@ -7529,7 +7463,7 @@ name|last
 operator|=
 name|ent
 operator|=
-name|GIFNextPixel
+name|gif_next_pixel
 argument_list|(
 name|ReadValue
 argument_list|)
@@ -7594,7 +7528,7 @@ condition|(
 operator|(
 name|c
 operator|=
-name|GIFNextPixel
+name|gif_next_pixel
 argument_list|(
 name|ReadValue
 argument_list|)
@@ -7614,7 +7548,7 @@ condition|(
 operator|(
 name|c
 operator|=
-name|GIFNextPixel
+name|gif_next_pixel
 argument_list|(
 name|ReadValue
 argument_list|)
@@ -7871,8 +7805,8 @@ else|#
 directive|else
 specifier|static
 name|void
-DECL|function|normalcompress (int init_bits,FILE * outfile,ifunptr ReadValue)
-name|normalcompress
+DECL|function|normal_compress (int init_bits,FILE * outfile,ifunptr ReadValue)
+name|normal_compress
 parameter_list|(
 name|int
 name|init_bits
@@ -7989,7 +7923,7 @@ argument_list|()
 expr_stmt|;
 name|ent
 operator|=
-name|GIFNextPixel
+name|gif_next_pixel
 argument_list|(
 name|ReadValue
 argument_list|)
@@ -8054,7 +7988,7 @@ condition|(
 operator|(
 name|c
 operator|=
-name|GIFNextPixel
+name|gif_next_pixel
 argument_list|(
 name|ReadValue
 argument_list|)
@@ -8074,7 +8008,7 @@ condition|(
 operator|(
 name|c
 operator|=
-name|GIFNextPixel
+name|gif_next_pixel
 argument_list|(
 name|ReadValue
 argument_list|)
@@ -8499,7 +8433,7 @@ argument_list|(
 name|g_outfile
 argument_list|)
 condition|)
-name|writeerr
+name|write_err
 argument_list|()
 expr_stmt|;
 block|}
@@ -8762,8 +8696,8 @@ expr_stmt|;
 block|}
 specifier|static
 name|void
-DECL|function|writeerr (void)
-name|writeerr
+DECL|function|write_err (void)
+name|write_err
 parameter_list|(
 name|void
 parameter_list|)
