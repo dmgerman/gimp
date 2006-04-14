@@ -25,7 +25,7 @@ end_ifndef
 begin_error
 error|#
 directive|error
-error|Don't use plug_in_run*(), use gimp_procedure_execute*() instead.
+error|Do not use plug_in_run*(), use gimp_procedure_execute*() instead.
 end_error
 
 begin_endif
