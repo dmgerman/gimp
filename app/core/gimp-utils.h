@@ -65,6 +65,17 @@ end_function_decl
 
 begin_function_decl
 name|gint64
+name|gimp_g_type_instance_get_memsize
+parameter_list|(
+name|GTypeInstance
+modifier|*
+name|instance
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gint64
 name|gimp_g_object_get_memsize
 parameter_list|(
 name|GObject
@@ -120,6 +131,17 @@ parameter_list|(
 name|GValue
 modifier|*
 name|value
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gint64
+name|gimp_g_param_spec_get_memsize
+parameter_list|(
+name|GParamSpec
+modifier|*
+name|pspec
 parameter_list|)
 function_decl|;
 end_function_decl
