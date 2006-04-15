@@ -1278,7 +1278,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_clipboard_set_buffer:  * @gimp: pointer to #Gimp  * @svg:  a #GimpBuffer, or %NULL.  *  * Offers the buffer in %GDK_SELECTION_CLIPBOARD.  **/
+comment|/**  * gimp_clipboard_set_buffer:  * @gimp:   pointer to #Gimp  * @buffer: a #GimpBuffer, or %NULL.  *  * Offers the buffer in %GDK_SELECTION_CLIPBOARD.  **/
 end_comment
 
 begin_function
