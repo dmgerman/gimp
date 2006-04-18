@@ -144,14 +144,13 @@ name|pickable_iface
 operator|->
 name|flush
 condition|)
-return|return
 name|pickable_iface
 operator|->
 name|flush
 argument_list|(
 name|pickable
 argument_list|)
-return|;
+expr_stmt|;
 block|}
 end_function
 
