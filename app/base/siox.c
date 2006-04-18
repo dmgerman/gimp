@@ -130,7 +130,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2d5e470108
+DECL|struct|__anon2bc2b2110108
 block|{
 DECL|member|l
 name|gfloat
@@ -240,7 +240,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2d5e470208
+DECL|struct|__anon2bc2b2110208
 block|{
 DECL|member|bgdist
 name|gfloat
@@ -5271,12 +5271,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * siox_drb:  * @state:        current state struct as constructed by siox_init  * @brushradius:  the radius of the brush  * @brushmode:    at this time either SIOX_DRB_ADD or SIOX_DRB_SUBTRACT  * @threshold:    a threshold to be defined by the user.  *                Range for SIOX_DRB_ADD: ]0..1] default: 1.0,  *                range for for SIOX_DRB_SUBTRACT: [0..1[, default: 0.0  *  * drb - detail refinement brush, a brush mask for subpixel classification.  *  * FIXME: Now it is assumed that the brush is a square. Should be able  * to be whatever GIMP offers.  * TODO: This is still an experimental method. There are more tests  * needed to evaluate performance of this!  */
+comment|/**  * siox_drb:  * @state:        current state struct as constructed by siox_init  * @mask:  * @x:  * @y:  * @brush_radius: the radius of the brush  * @brush_mode:   at this time either SIOX_DRB_ADD or SIOX_DRB_SUBTRACT  * @threshold:    a threshold to be defined by the user.  *                Range for SIOX_DRB_ADD: ]0..1] default: 1.0,  *                range for for SIOX_DRB_SUBTRACT: [0..1[, default: 0.0  *  * drb - detail refinement brush, a brush mask for subpixel classification.  *  * FIXME: Now it is assumed that the brush is a square. Should be able  * to be whatever GIMP offers.  * TODO: This is still an experimental method. There are more tests  * needed to evaluate performance of this!  */
 end_comment
 
 begin_function
 name|void
-DECL|function|siox_drb (SioxState * state,TileManager * mask,gint x,gint y,gint brushradius,gint brushmode,gfloat threshold)
+DECL|function|siox_drb (SioxState * state,TileManager * mask,gint x,gint y,gint brush_radius,gint brush_mode,gfloat threshold)
 name|siox_drb
 parameter_list|(
 name|SioxState
@@ -5294,10 +5294,10 @@ name|gint
 name|y
 parameter_list|,
 name|gint
-name|brushradius
+name|brush_radius
 parameter_list|,
 name|gint
-name|brushmode
+name|brush_mode
 parameter_list|,
 name|gfloat
 name|threshold
@@ -5349,17 +5349,17 @@ name|pixels
 argument_list|,
 name|x
 operator|-
-name|brushradius
+name|brush_radius
 argument_list|,
 name|y
 operator|-
-name|brushradius
+name|brush_radius
 argument_list|,
-name|brushradius
+name|brush_radius
 operator|*
 literal|2
 argument_list|,
-name|brushradius
+name|brush_radius
 operator|*
 literal|2
 argument_list|,
@@ -5375,17 +5375,17 @@ name|mask
 argument_list|,
 name|x
 operator|-
-name|brushradius
+name|brush_radius
 argument_list|,
 name|y
 operator|-
-name|brushradius
+name|brush_radius
 argument_list|,
-name|brushradius
+name|brush_radius
 operator|*
 literal|2
 argument_list|,
-name|brushradius
+name|brush_radius
 operator|*
 literal|2
 argument_list|,
@@ -5568,7 +5568,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|brushmode
+name|brush_mode
 operator|==
 name|SIOX_DRB_ADD
 condition|)
@@ -5606,7 +5606,7 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
-comment|/*if (brushmode == SIOX_DRB_SUBTRACT)*/
+comment|/*if (brush_mode == SIOX_DRB_SUBTRACT)*/
 block|{
 if|if
 condition|(
