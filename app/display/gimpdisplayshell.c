@@ -263,7 +263,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aaf45d80103
+DECL|enum|__anon2bb6a48e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -276,7 +276,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aaf45d80203
+DECL|enum|__anon2bb6a48e0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -536,8 +536,8 @@ DECL|variable|display_rc_style
 specifier|static
 specifier|const
 name|gchar
-modifier|*
 name|display_rc_style
+index|[]
 init|=
 literal|"style \"fullscreen-menubar-style\"\n"
 literal|"{\n"

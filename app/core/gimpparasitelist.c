@@ -93,7 +93,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad310090103
+DECL|enum|__anon2b6822570103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -320,8 +320,8 @@ DECL|variable|parasite_symbol
 specifier|static
 specifier|const
 name|gchar
-modifier|*
 name|parasite_symbol
+index|[]
 init|=
 literal|"parasite"
 decl_stmt|;

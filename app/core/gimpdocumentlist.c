@@ -122,8 +122,8 @@ DECL|variable|document_symbol
 specifier|static
 specifier|const
 name|gchar
-modifier|*
 name|document_symbol
+index|[]
 init|=
 literal|"document"
 decl_stmt|;
