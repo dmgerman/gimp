@@ -8161,7 +8161,6 @@ name|value
 argument_list|)
 argument_list|)
 expr_stmt|;
-return|return
 name|gimp_value_set_array
 argument_list|(
 name|value
@@ -8180,7 +8179,7 @@ argument_list|(
 name|gint16
 argument_list|)
 argument_list|)
-return|;
+expr_stmt|;
 block|}
 end_function
 
@@ -8210,7 +8209,6 @@ name|value
 argument_list|)
 argument_list|)
 expr_stmt|;
-return|return
 name|gimp_value_set_static_array
 argument_list|(
 name|value
@@ -8229,7 +8227,7 @@ argument_list|(
 name|gint16
 argument_list|)
 argument_list|)
-return|;
+expr_stmt|;
 block|}
 end_function
 
@@ -8258,7 +8256,6 @@ name|value
 argument_list|)
 argument_list|)
 expr_stmt|;
-return|return
 name|gimp_value_take_array
 argument_list|(
 name|value
@@ -8276,7 +8273,7 @@ argument_list|(
 name|gint16
 argument_list|)
 argument_list|)
-return|;
+expr_stmt|;
 block|}
 end_function
 
@@ -8616,7 +8613,6 @@ name|value
 argument_list|)
 argument_list|)
 expr_stmt|;
-return|return
 name|gimp_value_set_array
 argument_list|(
 name|value
@@ -8635,7 +8631,7 @@ argument_list|(
 name|gint32
 argument_list|)
 argument_list|)
-return|;
+expr_stmt|;
 block|}
 end_function
 
@@ -8665,7 +8661,6 @@ name|value
 argument_list|)
 argument_list|)
 expr_stmt|;
-return|return
 name|gimp_value_set_static_array
 argument_list|(
 name|value
@@ -8684,7 +8679,7 @@ argument_list|(
 name|gint32
 argument_list|)
 argument_list|)
-return|;
+expr_stmt|;
 block|}
 end_function
 
@@ -8713,7 +8708,6 @@ name|value
 argument_list|)
 argument_list|)
 expr_stmt|;
-return|return
 name|gimp_value_take_array
 argument_list|(
 name|value
@@ -8731,7 +8725,7 @@ argument_list|(
 name|gint32
 argument_list|)
 argument_list|)
-return|;
+expr_stmt|;
 block|}
 end_function
 
@@ -9071,7 +9065,6 @@ name|value
 argument_list|)
 argument_list|)
 expr_stmt|;
-return|return
 name|gimp_value_set_array
 argument_list|(
 name|value
@@ -9090,7 +9083,7 @@ argument_list|(
 name|gdouble
 argument_list|)
 argument_list|)
-return|;
+expr_stmt|;
 block|}
 end_function
 
@@ -9120,7 +9113,6 @@ name|value
 argument_list|)
 argument_list|)
 expr_stmt|;
-return|return
 name|gimp_value_set_static_array
 argument_list|(
 name|value
@@ -9139,7 +9131,7 @@ argument_list|(
 name|gdouble
 argument_list|)
 argument_list|)
-return|;
+expr_stmt|;
 block|}
 end_function
 
@@ -9168,7 +9160,6 @@ name|value
 argument_list|)
 argument_list|)
 expr_stmt|;
-return|return
 name|gimp_value_take_array
 argument_list|(
 name|value
@@ -9186,7 +9177,7 @@ argument_list|(
 name|gdouble
 argument_list|)
 argument_list|)
-return|;
+expr_stmt|;
 block|}
 end_function
 
