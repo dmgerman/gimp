@@ -3732,13 +3732,13 @@ literal|"gimp-path-get-point-at-dist"
 argument_list|,
 literal|"This procedure is deprecated! Use 'gimp-vectors-stroke-get-point-at-dist' instead."
 argument_list|,
-literal|"This will return the x,y position of a point at a given distance along the bezier curve. The distance will be obtained by first digitizing the curve internally and then walking along the curve. For a closed curve the start of the path is the first point on the path that was created. This might not be obvious. Note the current path is used."
+literal|"This procedure is deprecated! Use 'gimp-vectors-stroke-get-point-at-dist' instead."
 argument_list|,
-literal|"Andy Thomas"
+literal|""
 argument_list|,
-literal|"Andy Thomas"
+literal|""
 argument_list|,
-literal|"1999"
+literal|""
 argument_list|,
 literal|"gimp-vectors-stroke-get-point-at-dist"
 argument_list|)
