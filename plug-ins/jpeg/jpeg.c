@@ -674,6 +674,16 @@ name|d_status
 operator|=
 name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
+name|image_ID_global
+operator|=
+operator|-
+literal|1
+expr_stmt|;
+name|layer_ID_global
+operator|=
+operator|-
+literal|1
+expr_stmt|;
 if|if
 condition|(
 name|strcmp
