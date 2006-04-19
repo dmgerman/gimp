@@ -169,7 +169,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb0e7b10103
+DECL|enum|__anon2b1c46de0103
 block|{
 DECL|enumerator|GPL_PAGE
 name|GPL_PAGE
@@ -194,7 +194,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb0e7b10203
+DECL|enum|__anon2b1c46de0203
 block|{
 DECL|enumerator|DIRENT_COLUMN
 name|DIRENT_COLUMN
@@ -426,7 +426,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bb0e7b10303
+DECL|enum|__anon2b1c46de0303
 block|{
 DECL|enumerator|TREE_ITEM_DO_NOTHING
 name|TREE_ITEM_DO_NOTHING
@@ -447,19 +447,22 @@ end_typedef
 
 begin_struct
 specifier|static
+specifier|const
 struct|struct
-DECL|struct|__anon2bb0e7b10408
+DECL|struct|__anon2b1c46de0408
 block|{
 DECL|member|directory
 name|gboolean
 name|directory
 decl_stmt|;
 DECL|member|name
+specifier|const
 name|gchar
 modifier|*
 name|name
 decl_stmt|;
 DECL|member|description
+specifier|const
 name|gchar
 modifier|*
 name|description
@@ -886,10 +889,12 @@ name|GtkWidget
 modifier|*
 name|page
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|title
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|footer
@@ -1562,17 +1567,19 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|user_install_notebook_append_page (GtkNotebook * notebook,gchar * title,gchar * footer,gint vbox_spacing)
+DECL|function|user_install_notebook_append_page (GtkNotebook * notebook,const gchar * title,const gchar * footer,gint vbox_spacing)
 name|user_install_notebook_append_page
 parameter_list|(
 name|GtkNotebook
 modifier|*
 name|notebook
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|title
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|footer
@@ -1603,6 +1610,9 @@ argument_list|)
 argument_list|,
 literal|"title"
 argument_list|,
+operator|(
+name|gpointer
+operator|)
 name|title
 argument_list|)
 expr_stmt|;
@@ -1615,6 +1625,9 @@ argument_list|)
 argument_list|,
 literal|"footer"
 argument_list|,
+operator|(
+name|gpointer
+operator|)
 name|footer
 argument_list|)
 expr_stmt|;
@@ -1641,13 +1654,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|add_label (GtkBox * box,gchar * text)
+DECL|function|add_label (GtkBox * box,const gchar * text)
 name|add_label
 parameter_list|(
 name|GtkBox
 modifier|*
 name|box
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|text
@@ -2255,11 +2269,6 @@ literal|"dark orange"
 argument_list|,
 operator|&
 name|title_color
-argument_list|)
-expr_stmt|;
-name|gtk_widget_realize
-argument_list|(
-name|dialog
 argument_list|)
 expr_stmt|;
 comment|/*  B/W Style for the page contents  */
