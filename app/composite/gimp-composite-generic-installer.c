@@ -52,6 +52,7 @@ end_include
 begin_struct
 DECL|struct|install_table
 specifier|static
+specifier|const
 struct|struct
 name|install_table
 block|{
@@ -23152,6 +23153,7 @@ name|void
 parameter_list|)
 block|{
 specifier|static
+specifier|const
 name|struct
 name|install_table
 modifier|*
