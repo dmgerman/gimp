@@ -144,7 +144,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2901ad300103
+DECL|enum|__anon2bfa5bf40103
 block|{
 DECL|enumerator|CONVOLVE_NCLIP
 name|CONVOLVE_NCLIP
@@ -259,11 +259,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/* FIXME: this code is not MT-safe */
+end_comment
+
 begin_decl_stmt
 DECL|variable|matrix_size
 specifier|static
+specifier|const
 name|gint
 name|matrix_size
+init|=
+literal|5
 decl_stmt|;
 end_decl_stmt
 
@@ -341,6 +348,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|blur_matrix
 specifier|static
+specifier|const
 name|gfloat
 name|blur_matrix
 index|[
@@ -404,6 +412,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|sharpen_matrix
 specifier|static
+specifier|const
 name|gfloat
 name|sharpen_matrix
 index|[
@@ -1674,12 +1683,10 @@ name|gdouble
 name|rate
 parameter_list|)
 block|{
+comment|/*  find percent of tool pressure  */
 name|gdouble
 name|percent
-decl_stmt|;
-comment|/*  find percent of tool pressure  */
-name|percent
-operator|=
+init|=
 name|MIN
 argument_list|(
 name|rate
@@ -1688,7 +1695,7 @@ literal|100.0
 argument_list|,
 literal|1.0
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 comment|/*  get the appropriate convolution matrix and size and divisor  */
 switch|switch
 condition|(
@@ -1698,11 +1705,16 @@ block|{
 case|case
 name|GIMP_BLUR_CONVOLVE
 case|:
-name|matrix_size
-operator|=
-literal|5
-expr_stmt|;
+name|gimp_convolve_copy_matrix
+argument_list|(
 name|blur_matrix
+argument_list|,
+name|matrix
+argument_list|,
+name|matrix_size
+argument_list|)
+expr_stmt|;
+name|matrix
 index|[
 literal|12
 index|]
@@ -1717,24 +1729,20 @@ operator|-
 name|MIN_BLUR
 operator|)
 expr_stmt|;
+break|break;
+case|case
+name|GIMP_SHARPEN_CONVOLVE
+case|:
 name|gimp_convolve_copy_matrix
 argument_list|(
-name|blur_matrix
+name|sharpen_matrix
 argument_list|,
 name|matrix
 argument_list|,
 name|matrix_size
 argument_list|)
 expr_stmt|;
-break|break;
-case|case
-name|GIMP_SHARPEN_CONVOLVE
-case|:
-name|matrix_size
-operator|=
-literal|5
-expr_stmt|;
-name|sharpen_matrix
+name|matrix
 index|[
 literal|12
 index|]
@@ -1749,23 +1757,10 @@ operator|-
 name|MIN_SHARPEN
 operator|)
 expr_stmt|;
-name|gimp_convolve_copy_matrix
-argument_list|(
-name|sharpen_matrix
-argument_list|,
-name|matrix
-argument_list|,
-name|matrix_size
-argument_list|)
-expr_stmt|;
 break|break;
 case|case
 name|GIMP_CUSTOM_CONVOLVE
 case|:
-name|matrix_size
-operator|=
-literal|5
-expr_stmt|;
 break|break;
 block|}
 name|matrix_divisor
@@ -1779,8 +1774,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-operator|!
+name|G_UNLIKELY
+argument_list|(
 name|matrix_divisor
+operator|==
+literal|0.0
+argument_list|)
 condition|)
 name|matrix_divisor
 operator|=

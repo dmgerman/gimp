@@ -1617,7 +1617,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b1999430103
+DECL|enum|__anon277f6f6a0103
 block|{
 DECL|enumerator|no_op
 name|no_op
@@ -3710,6 +3710,7 @@ specifier|static
 specifier|const
 name|char
 modifier|*
+specifier|const
 name|re_error_msgid
 index|[]
 init|=
@@ -3963,7 +3964,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1999430208
+DECL|struct|__anon277f6f6a0208
 block|{
 DECL|member|stack
 name|fail_stack_elt_t
@@ -4070,7 +4071,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1999430308
+DECL|struct|__anon277f6f6a0308
 block|{
 DECL|member|stack
 name|fail_stack_elt_t
@@ -4533,14 +4534,14 @@ end_comment
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon2b199943040a
+DECL|union|__anon277f6f6a040a
 block|{
 DECL|member|word
 name|fail_stack_elt_t
 name|word
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2b1999430508
+DECL|struct|__anon277f6f6a0508
 block|{
 comment|/* This field is one if this group can match the empty string,          zero if not.  If not yet determined,  `MATCH_NULL_UNSET_VALUE'.  */
 DECL|macro|MATCH_NULL_UNSET_VALUE
@@ -5285,7 +5286,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1999430608
+DECL|struct|__anon277f6f6a0608
 block|{
 DECL|member|begalt_offset
 name|pattern_offset_t
@@ -5316,7 +5317,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1999430708
+DECL|struct|__anon277f6f6a0708
 block|{
 DECL|member|stack
 name|compile_stack_elt_t

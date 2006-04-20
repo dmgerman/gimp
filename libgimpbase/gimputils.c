@@ -59,20 +59,21 @@ name|max_chars
 parameter_list|)
 block|{
 comment|/* FIXME: should we make this translatable? */
-specifier|static
 specifier|const
 name|gchar
-modifier|*
 name|ellipsis
+index|[]
 init|=
 literal|"..."
 decl_stmt|;
-specifier|static
 specifier|const
 name|gint
 name|e_len
 init|=
-literal|3
+sizeof|sizeof
+argument_list|(
+name|ellipsis
+argument_list|)
 decl_stmt|;
 if|if
 condition|(

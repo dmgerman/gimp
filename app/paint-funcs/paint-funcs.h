@@ -1335,6 +1335,7 @@ name|PixelRegion
 modifier|*
 name|destR
 parameter_list|,
+specifier|const
 name|gfloat
 modifier|*
 name|matrix

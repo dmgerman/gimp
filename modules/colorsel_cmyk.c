@@ -494,6 +494,7 @@ specifier|static
 specifier|const
 name|gchar
 modifier|*
+specifier|const
 name|cmyk_labels
 index|[]
 init|=
@@ -527,6 +528,7 @@ specifier|static
 specifier|const
 name|gchar
 modifier|*
+specifier|const
 name|cmyk_tips
 index|[]
 init|=

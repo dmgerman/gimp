@@ -10308,7 +10308,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|convolve_region (PixelRegion * srcR,PixelRegion * destR,gfloat * matrix,gint size,gdouble divisor,GimpConvolutionType mode,gboolean alpha_weighting)
+DECL|function|convolve_region (PixelRegion * srcR,PixelRegion * destR,const gfloat * matrix,gint size,gdouble divisor,GimpConvolutionType mode,gboolean alpha_weighting)
 name|convolve_region
 parameter_list|(
 name|PixelRegion
@@ -10319,6 +10319,7 @@ name|PixelRegion
 modifier|*
 name|destR
 parameter_list|,
+specifier|const
 name|gfloat
 modifier|*
 name|matrix
@@ -10355,6 +10356,7 @@ decl_stmt|,
 modifier|*
 name|d
 decl_stmt|;
+specifier|const
 name|gfloat
 modifier|*
 name|m
