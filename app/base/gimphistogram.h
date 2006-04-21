@@ -152,6 +152,26 @@ end_function_decl
 
 begin_function_decl
 name|gdouble
+name|gimp_histogram_get_threshold
+parameter_list|(
+name|GimpHistogram
+modifier|*
+name|histogram
+parameter_list|,
+name|GimpHistogramChannel
+name|channel
+parameter_list|,
+name|gint
+name|start
+parameter_list|,
+name|gint
+name|end
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gdouble
 name|gimp_histogram_get_value
 parameter_list|(
 name|GimpHistogram
