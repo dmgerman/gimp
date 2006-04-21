@@ -70,7 +70,7 @@ specifier|const
 name|gint
 name|e_len
 init|=
-sizeof|sizeof
+name|strlen
 argument_list|(
 name|ellipsis
 argument_list|)
