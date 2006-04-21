@@ -1190,17 +1190,8 @@ operator|/
 literal|2.0
 expr_stmt|;
 block|}
-elseif|else
-if|if
-condition|(
-name|p1
-operator|!=
-name|p2
-operator|&&
-name|p3
-operator|!=
-name|p4
-condition|)
+else|else
+comment|/* (p1 != p2&& p3 != p4) */
 block|{
 comment|/* Both neighbors are available. Make the tangents at the endpoints        * parallel to the line between the opposite endpoint and the adjacent        * neighbor.        */
 name|slope
