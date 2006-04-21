@@ -133,7 +133,7 @@ define|#
 directive|define
 name|DEFAULT_FONT_BLURB
 define|\
-value|"Specify a default font.  The font is searched for in the " \ "fontconfig font path."
+value|"Specify a default font."
 end_define
 
 begin_define
@@ -142,7 +142,7 @@ define|#
 directive|define
 name|DEFAULT_GRADIENT_BLURB
 define|\
-value|"Specify a default gradient.  The gradient is searched for in the " \ "specified gradient path."
+value|"Specify a default gradient."
 end_define
 
 begin_define
@@ -169,7 +169,7 @@ define|#
 directive|define
 name|DEFAULT_PATTERN_BLURB
 define|\
-value|"Specify a default pattern. The pattern is searched for in the " \ "specified pattern path."
+value|"Specify a default pattern."
 end_define
 
 begin_define
@@ -178,7 +178,7 @@ define|#
 directive|define
 name|DEFAULT_PALETTE_BLURB
 define|\
-value|"Specify a default palette.  The palette is searched for in the " \ "specified palette path."
+value|"Specify a default palette."
 end_define
 
 begin_define
@@ -360,7 +360,7 @@ define|#
 directive|define
 name|FONT_PATH_BLURB
 define|\
-value|"Where to look for fonts."
+value|"Where to look for fonts in addition to the system-wide installed fonts."
 end_define
 
 begin_define

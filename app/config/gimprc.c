@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af3c8940103
+DECL|enum|__anon2accbbfa0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1540,6 +1540,7 @@ block|{
 specifier|const
 name|gchar
 modifier|*
+specifier|const
 name|path_tokens
 index|[]
 init|=
