@@ -394,13 +394,13 @@ name|gint
 name|digits
 parameter_list|,
 name|gboolean
-name|restrict_scale
+name|limit_scale
 parameter_list|,
 name|gdouble
-name|restricted_lower
+name|lower_limit
 parameter_list|,
 name|gdouble
-name|restricted_upper
+name|upper_limit
 parameter_list|)
 function_decl|;
 end_function_decl

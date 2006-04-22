@@ -3698,13 +3698,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_prop_scale_entry_new:  * @config:            Object to which property is attached.  * @property_name:     Name of double property controlled by the spin button.  * @table:             The #GtkTable the widgets will be attached to.  * @column:            The column to start with.  * @row:               The row to attach the widgets.  * @label:             The text for the #GtkLabel which will appear left of  *                     the #GtkHScale.  * @step_increment:    Step size.  * @page_increment:    Page size.  * @digits:            Number of digits after decimal point to display.  * @restrict_scale:    %TRUE if the range of possible values of the  *                     GtkSpinButton should be  *                     the same as of the GtkHScale.  * @restricted_lower:  The spinbutton's lower boundary if @restrict_scale  *                     is %FALSE.  * @restricted_upper:  The spinbutton's upper boundary if @restrict_scale  *                     is %FALSE.  *  * Creates a #GimpScaleEntry (slider and spin button) to set and  * display the value of the specified double property.  See  * gimp_scale_entry_new() for more information.  *  * Return value: The #GtkSpinButton's #GtkAdjustment.  *  * Since GIMP 2.4  */
+comment|/**  * gimp_prop_scale_entry_new:  * @config:         Object to which property is attached.  * @property_name:  Name of double property controlled by the spin button.  * @table:          The #GtkTable the widgets will be attached to.  * @column:         The column to start with.  * @row:            The row to attach the widgets.  * @label:          The text for the #GtkLabel which will appear left of  *                  the #GtkHScale.  * @step_increment: Step size.  * @page_increment: Page size.  * @digits:         Number of digits after decimal point to display.  * @limit_scale:    %TRUE if the range of possible values of the  *                  GtkSpinButton should be the same as of the GtkHScale.  * @lower_limit:    The spinbutton's lower boundary if @limit_scale is %FALSE.  * @upper_limit:    The spinbutton's upper boundary if @limit_scale is %FALSE.  *  * Creates a #GimpScaleEntry (slider and spin button) to set and  * display the value of the specified double property.  See  * gimp_scale_entry_new() for more information.  *  * Return value: The #GtkSpinButton's #GtkAdjustment.  *  * Since GIMP 2.4  */
 end_comment
 
 begin_function
 name|GtkObject
 modifier|*
-DECL|function|gimp_prop_scale_entry_new (GObject * config,const gchar * property_name,GtkTable * table,gint column,gint row,const gchar * label,gdouble step_increment,gdouble page_increment,gint digits,gboolean restrict_scale,gdouble restricted_lower,gdouble restricted_upper)
+DECL|function|gimp_prop_scale_entry_new (GObject * config,const gchar * property_name,GtkTable * table,gint column,gint row,const gchar * label,gdouble step_increment,gdouble page_increment,gint digits,gboolean limit_scale,gdouble lower_limit,gdouble upper_limit)
 name|gimp_prop_scale_entry_new
 parameter_list|(
 name|GObject
@@ -3741,13 +3741,13 @@ name|gint
 name|digits
 parameter_list|,
 name|gboolean
-name|restrict_scale
+name|limit_scale
 parameter_list|,
 name|gdouble
-name|restricted_lower
+name|lower_limit
 parameter_list|,
 name|gdouble
-name|restricted_upper
+name|upper_limit
 parameter_list|)
 block|{
 name|GParamSpec
@@ -3836,7 +3836,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|restrict_scale
+name|limit_scale
 condition|)
 block|{
 name|adjustment
@@ -3903,9 +3903,9 @@ literal|1
 argument_list|,
 name|value
 argument_list|,
-name|restricted_lower
+name|lower_limit
 argument_list|,
-name|restricted_upper
+name|upper_limit
 argument_list|,
 name|step_increment
 argument_list|,
