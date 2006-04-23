@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd2d7f50103
+DECL|enum|__anon299db5140103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -926,10 +926,6 @@ argument_list|(
 name|args
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|viewable
-condition|)
 name|gimp_viewable_dialog_set_viewable
 argument_list|(
 name|dialog
@@ -981,6 +977,16 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
+name|viewable
+condition|)
+name|g_warning
+argument_list|(
+literal|"Use of GimpViewableDialog with a NULL viewable is depecrated!"
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
 name|dialog
 operator|->
 name|view
@@ -989,9 +995,7 @@ block|{
 name|GimpViewable
 modifier|*
 name|old_viewable
-decl_stmt|;
-name|old_viewable
-operator|=
+init|=
 name|GIMP_VIEW
 argument_list|(
 name|dialog
@@ -1000,7 +1004,7 @@ name|view
 argument_list|)
 operator|->
 name|viewable
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|viewable

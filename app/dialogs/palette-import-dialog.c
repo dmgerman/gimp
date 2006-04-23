@@ -114,12 +114,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpviewabledialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"palette-import-dialog.h"
 end_include
 
@@ -140,7 +134,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b04e0480103
+DECL|enum|__anon274d3fe60103
 block|{
 DECL|enumerator|GRADIENT_IMPORT
 name|GRADIENT_IMPORT
@@ -660,25 +654,18 @@ name|dialog
 operator|->
 name|dialog
 operator|=
-name|gimp_viewable_dialog_new
+name|gimp_dialog_new
 argument_list|(
-name|NULL
-argument_list|,
-name|_
-argument_list|(
-literal|"Import Palette"
-argument_list|)
-argument_list|,
-literal|"gimp-palette-import"
-argument_list|,
-name|GTK_STOCK_CONVERT
-argument_list|,
 name|_
 argument_list|(
 literal|"Import a New Palette"
 argument_list|)
 argument_list|,
+literal|"gimp-palette-import"
+argument_list|,
 name|NULL
+argument_list|,
+literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,

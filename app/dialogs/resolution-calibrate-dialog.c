@@ -191,7 +191,7 @@ argument_list|(
 literal|"Calibrate Monitor Resolution"
 argument_list|)
 argument_list|,
-literal|"calibrate_resolution"
+literal|"gimp-resolution-calibration"
 argument_list|,
 name|gtk_widget_get_toplevel
 argument_list|(

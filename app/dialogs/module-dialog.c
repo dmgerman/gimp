@@ -60,12 +60,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpviewabledialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"module-dialog.h"
 end_include
 
@@ -76,10 +70,10 @@ file|"gimp-intl.h"
 end_include
 
 begin_define
-DECL|macro|MODULES_RESPONSE_REFRESH
+DECL|macro|RESPONSE_REFRESH
 define|#
 directive|define
-name|MODULES_RESPONSE_REFRESH
+name|RESPONSE_REFRESH
 value|1
 end_define
 
@@ -93,7 +87,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b33047c0103
+DECL|enum|__anon2b42c7b80103
 block|{
 DECL|enumerator|PATH_COLUMN
 name|PATH_COLUMN
@@ -428,25 +422,18 @@ name|gimp
 expr_stmt|;
 name|shell
 operator|=
-name|gimp_viewable_dialog_new
+name|gimp_dialog_new
 argument_list|(
-name|NULL
-argument_list|,
-name|_
-argument_list|(
-literal|"Module Manager"
-argument_list|)
-argument_list|,
-literal|"gimp-modules"
-argument_list|,
-name|GTK_STOCK_EXECUTE
-argument_list|,
 name|_
 argument_list|(
 literal|"Manage Loadable Modules"
 argument_list|)
 argument_list|,
+literal|"gimp-modules"
+argument_list|,
 name|NULL
+argument_list|,
+literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
@@ -454,13 +441,28 @@ name|GIMP_HELP_MODULE_DIALOG
 argument_list|,
 name|GTK_STOCK_REFRESH
 argument_list|,
-name|MODULES_RESPONSE_REFRESH
+name|RESPONSE_REFRESH
 argument_list|,
 name|GTK_STOCK_CLOSE
 argument_list|,
 name|GTK_STOCK_CLOSE
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_dialog_set_alternative_button_order
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|shell
+argument_list|)
+argument_list|,
+name|GTK_RESPONSE_CLOSE
+argument_list|,
+name|RESPONSE_REFRESH
+argument_list|,
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -789,7 +791,7 @@ argument_list|(
 name|hbox
 argument_list|)
 argument_list|,
-name|GTK_BUTTONBOX_SPREAD
+name|GTK_BUTTONBOX_END
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -836,9 +838,9 @@ name|button
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_box_pack_start
+name|gtk_container_add
 argument_list|(
-name|GTK_BOX
+name|GTK_CONTAINER
 argument_list|(
 name|hbox
 argument_list|)
@@ -846,12 +848,6 @@ argument_list|,
 name|dialog
 operator|->
 name|button
-argument_list|,
-name|TRUE
-argument_list|,
-name|TRUE
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -1041,7 +1037,7 @@ if|if
 condition|(
 name|response_id
 operator|==
-name|MODULES_RESPONSE_REFRESH
+name|RESPONSE_REFRESH
 condition|)
 name|gimp_modules_refresh
 argument_list|(
