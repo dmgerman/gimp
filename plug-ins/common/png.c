@@ -170,7 +170,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294f55d40108
+DECL|struct|__anon28fd99870108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -217,7 +217,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294f55d40208
+DECL|struct|__anon28fd99870208
 block|{
 DECL|member|run
 name|gboolean
@@ -2161,12 +2161,6 @@ decl_stmt|;
 name|gint
 name|num_texts
 decl_stmt|;
-comment|/*    * PNG 0.89 and newer have a sane, forwards compatible constructor.    * Some SGI IRIX users will not have a new enough version though    */
-if|#
-directive|if
-name|PNG_LIBPNG_VER
-operator|>
-literal|88
 name|pp
 operator|=
 name|png_create_read_struct
@@ -2187,46 +2181,6 @@ argument_list|(
 name|pp
 argument_list|)
 expr_stmt|;
-else|#
-directive|else
-name|pp
-operator|=
-operator|(
-name|png_structp
-operator|)
-name|calloc
-argument_list|(
-sizeof|sizeof
-argument_list|(
-name|png_struct
-argument_list|)
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|png_read_init
-argument_list|(
-name|pp
-argument_list|)
-expr_stmt|;
-name|info
-operator|=
-operator|(
-name|png_infop
-operator|)
-name|calloc
-argument_list|(
-sizeof|sizeof
-argument_list|(
-name|png_info
-argument_list|)
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-endif|#
-directive|endif
-comment|/* PNG_LIBPNG_VER> 88 */
 if|if
 condition|(
 name|setjmp
@@ -2418,11 +2372,6 @@ name|pp
 argument_list|)
 expr_stmt|;
 comment|/*    * Special handling for INDEXED + tRNS (transparency palette)    */
-if|#
-directive|if
-name|PNG_LIBPNG_VER
-operator|>
-literal|99
 if|if
 condition|(
 name|png_get_valid
@@ -2513,15 +2462,6 @@ operator|=
 literal|0
 expr_stmt|;
 block|}
-else|#
-directive|else
-name|trns
-operator|=
-literal|0
-expr_stmt|;
-endif|#
-directive|endif
-comment|/* PNG_LIBPNG_VER> 99 */
 comment|/*    * Update the info structures after the transformations take effect    */
 name|png_read_update_info
 argument_list|(
@@ -2716,11 +2656,6 @@ literal|0
 argument_list|)
 expr_stmt|;
 comment|/*    * Find out everything we can about the image resolution    * This is only practical with the new 1.0 APIs, I'm afraid    * due to a bug in libpng-1.0.6, see png-implement for details    */
-if|#
-directive|if
-name|PNG_LIBPNG_VER
-operator|>
-literal|99
 if|if
 condition|(
 name|png_get_valid
@@ -3019,9 +2954,6 @@ break|break;
 block|}
 block|}
 block|}
-endif|#
-directive|endif
-comment|/* PNG_LIBPNG_VER> 99 */
 name|gimp_image_set_filename
 argument_list|(
 name|image
@@ -3044,11 +2976,6 @@ operator|&
 name|PNG_COLOR_MASK_PALETTE
 condition|)
 block|{
-if|#
-directive|if
-name|PNG_LIBPNG_VER
-operator|>
-literal|99
 if|if
 condition|(
 name|png_get_valid
@@ -3141,28 +3068,6 @@ name|num_palette
 argument_list|)
 expr_stmt|;
 block|}
-else|#
-directive|else
-name|gimp_image_set_colormap
-argument_list|(
-name|image
-argument_list|,
-operator|(
-name|guchar
-operator|*
-operator|)
-name|info
-operator|->
-name|palette
-argument_list|,
-name|info
-operator|->
-name|num_palette
-argument_list|)
-expr_stmt|;
-endif|#
-directive|endif
-comment|/* PNG_LIBPNG_VER> 99 */
 block|}
 comment|/*    * Get the drawable and set the pixel region for our load...    */
 name|drawable
@@ -3718,10 +3623,12 @@ block|}
 endif|#
 directive|endif
 comment|/*    * Done with the file...    */
-name|png_read_destroy
+name|png_destroy_read_struct
 argument_list|(
+operator|&
 name|pp
 argument_list|,
+operator|&
 name|info
 argument_list|,
 name|NULL
@@ -4251,12 +4158,6 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/*    * PNG 0.89 and newer have a sane, forwards compatible constructor.    * Some SGI IRIX users will not have a new enough version though    */
-if|#
-directive|if
-name|PNG_LIBPNG_VER
-operator|>
-literal|88
 name|pp
 operator|=
 name|png_create_write_struct
@@ -4277,46 +4178,6 @@ argument_list|(
 name|pp
 argument_list|)
 expr_stmt|;
-else|#
-directive|else
-name|pp
-operator|=
-operator|(
-name|png_structp
-operator|)
-name|calloc
-argument_list|(
-sizeof|sizeof
-argument_list|(
-name|png_struct
-argument_list|)
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|png_write_init
-argument_list|(
-name|pp
-argument_list|)
-expr_stmt|;
-name|info
-operator|=
-operator|(
-name|png_infop
-operator|)
-name|calloc
-argument_list|(
-sizeof|sizeof
-argument_list|(
-name|png_info
-argument_list|)
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-endif|#
-directive|endif
-comment|/* PNG_LIBPNG_VER> 88 */
 if|if
 condition|(
 name|setjmp
@@ -4692,11 +4553,6 @@ expr_stmt|;
 comment|/* otherwise the default is fine */
 block|}
 comment|/* All this stuff is optional extras, if the user is aiming for smallest      possible file size she can turn them all off */
-if|#
-directive|if
-name|PNG_LIBPNG_VER
-operator|>
-literal|99
 if|if
 condition|(
 name|pngvals
@@ -5017,9 +4873,6 @@ name|mod_time
 argument_list|)
 expr_stmt|;
 block|}
-endif|#
-directive|endif
-comment|/* PNG_LIBPNG_VER> 99 */
 if|#
 directive|if
 name|defined
@@ -5627,9 +5480,13 @@ argument_list|,
 name|info
 argument_list|)
 expr_stmt|;
-name|png_write_destroy
+name|png_destroy_write_struct
 argument_list|(
+operator|&
 name|pp
+argument_list|,
+operator|&
+name|info
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -5814,11 +5671,6 @@ operator|=
 literal|1
 expr_stmt|;
 block|}
-if|#
-directive|if
-name|PNG_LIBPNG_VER
-operator|>
-literal|99
 name|cols
 operator|=
 name|drawable
@@ -6099,32 +5951,6 @@ argument_list|(
 name|pixels
 argument_list|)
 expr_stmt|;
-else|#
-directive|else
-name|info
-operator|->
-name|valid
-operator||=
-name|PNG_INFO_PLTE
-expr_stmt|;
-name|info
-operator|->
-name|palette
-operator|=
-operator|(
-name|png_colorp
-operator|)
-name|before
-expr_stmt|;
-name|info
-operator|->
-name|num_palette
-operator|=
-name|colors
-expr_stmt|;
-endif|#
-directive|endif
-comment|/* PNG_LIBPNG_VER> 99 */
 block|}
 end_function
 
