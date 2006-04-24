@@ -83,28 +83,20 @@ name|LOAD_PROC
 value|"file-gif-load"
 end_define
 
+begin_define
+DECL|macro|LOAD_THUMB_PROC
+define|#
+directive|define
+name|LOAD_THUMB_PROC
+value|"file-gif-load-thumb"
+end_define
+
 begin_comment
 comment|/* uncomment the line below for a little debugging info */
 end_comment
 
 begin_comment
 comment|/* #define GIFDEBUG yesplease */
-end_comment
-
-begin_comment
-comment|/* Does the version of GIMP we're compiling for support    data attachments to images?  ('Parasites') */
-end_comment
-
-begin_define
-DECL|macro|FACEHUGGERS
-define|#
-directive|define
-name|FACEHUGGERS
-value|aieee
-end_define
-
-begin_comment
-comment|/* PS: I know that technically facehuggers aren't parasites,    the pupal-forms are.  But facehuggers are ky00te. */
 end_comment
 
 begin_comment
@@ -160,6 +152,9 @@ specifier|const
 name|gchar
 modifier|*
 name|filename
+parameter_list|,
+name|gboolean
+name|thumbnail
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -175,14 +170,6 @@ index|]
 index|[
 literal|256
 index|]
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|run_mode
-specifier|static
-name|GimpRunMode
-name|run_mode
 decl_stmt|;
 end_decl_stmt
 
@@ -215,14 +202,9 @@ index|]
 decl_stmt|;
 end_decl_stmt
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|FACEHUGGERS
-end_ifdef
-
 begin_decl_stmt
 DECL|variable|comment_parasite
+specifier|static
 name|GimpParasite
 modifier|*
 name|comment_parasite
@@ -230,11 +212,6 @@ init|=
 name|NULL
 decl_stmt|;
 end_decl_stmt
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
@@ -318,11 +295,34 @@ literal|"Output image"
 block|}
 block|}
 decl_stmt|;
+specifier|static
+name|GimpParamDef
+name|thumb_args
+index|[]
+init|=
+block|{
+block|{
+name|GIMP_PDB_STRING
+block|,
+literal|"filename"
+block|,
+literal|"The name of the file to load"
+block|}
+block|,
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"thumb-size"
+block|,
+literal|"Preferred thumbnail size"
+block|}
+block|}
+decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
 name|LOAD_PROC
 argument_list|,
-literal|"loads files of Compuserve GIF file format"
+literal|"Loads files of Compuserve GIF file format"
 argument_list|,
 literal|"FIXME: write help for gif_load"
 argument_list|,
@@ -330,7 +330,7 @@ literal|"Spencer Kimball, Peter Mattis, Adam Moss, David Koblas"
 argument_list|,
 literal|"Spencer Kimball, Peter Mattis, Adam Moss, David Koblas"
 argument_list|,
-literal|"1995-1997"
+literal|"1995-2006"
 argument_list|,
 name|N_
 argument_list|(
@@ -372,6 +372,49 @@ argument_list|,
 literal|""
 argument_list|,
 literal|"0,string,GIF8"
+argument_list|)
+expr_stmt|;
+name|gimp_install_procedure
+argument_list|(
+name|LOAD_THUMB_PROC
+argument_list|,
+literal|"Loads only the first frame of a GIF image, to be "
+literal|"used as a thumbnail"
+argument_list|,
+literal|""
+argument_list|,
+literal|"Sven Neumann"
+argument_list|,
+literal|"Sven Neumann"
+argument_list|,
+literal|"2006"
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_PLUGIN
+argument_list|,
+name|G_N_ELEMENTS
+argument_list|(
+name|thumb_args
+argument_list|)
+argument_list|,
+name|G_N_ELEMENTS
+argument_list|(
+name|load_return_vals
+argument_list|)
+argument_list|,
+name|thumb_args
+argument_list|,
+name|load_return_vals
+argument_list|)
+expr_stmt|;
+name|gimp_register_thumbnail_loader
+argument_list|(
+name|LOAD_PROC
+argument_list|,
+name|LOAD_THUMB_PROC
 argument_list|)
 expr_stmt|;
 block|}
@@ -421,17 +464,6 @@ decl_stmt|;
 name|gint32
 name|image_ID
 decl_stmt|;
-name|run_mode
-operator|=
-name|param
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_int32
-expr_stmt|;
 name|INIT_I18N
 argument_list|()
 expr_stmt|;
@@ -489,9 +521,64 @@ operator|.
 name|data
 operator|.
 name|d_string
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* The GIF format only tells you how many bits per pixel        *  are in the image, not the actual number of used indices (D'OH!)        *        * So if we're not careful, repeated load/save of a transparent GIF        *  without intermediate indexed->RGB->indexed pumps up the number of        *  bits used, as we add an index each time for the transparent        *  colour.  Ouch.  We either do some heavier analysis at save-time,        *  or trim down the number of GIMP colours at load-time.  We do the        *  latter for now.        */
+block|}
+elseif|else
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|name
+argument_list|,
+name|LOAD_THUMB_PROC
+argument_list|)
+operator|==
+literal|0
+condition|)
+block|{
+name|image_ID
+operator|=
+name|load_image
+argument_list|(
+name|param
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_string
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|status
+operator|=
+name|GIMP_PDB_CALLING_ERROR
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|status
+operator|==
+name|GIMP_PDB_SUCCESS
+condition|)
+block|{
+if|if
+condition|(
+name|image_ID
+operator|!=
+operator|-
+literal|1
+condition|)
+block|{
+comment|/* The GIF format only tells you how many bits per pixel            *  are in the image, not the actual number of used indices (D'OH!)            *            * So if we're not careful, repeated load/save of a transparent GIF            *  without intermediate indexed->RGB->indexed pumps up the number of            *  bits used, as we add an index each time for the transparent            *  colour.  Ouch.  We either do some heavier analysis at save-time,            *  or trim down the number of GIMP colours at load-time.  We do the            *  latter for now.            */
 ifdef|#
 directive|ifdef
 name|GIFDEBUG
@@ -509,7 +596,6 @@ condition|(
 operator|!
 name|promote_to_rgb
 condition|)
-block|{
 name|gimp_image_set_colormap
 argument_list|(
 name|image_ID
@@ -521,15 +607,6 @@ operator|+
 literal|1
 argument_list|)
 expr_stmt|;
-block|}
-if|if
-condition|(
-name|image_ID
-operator|!=
-operator|-
-literal|1
-condition|)
-block|{
 operator|*
 name|nreturn_vals
 operator|=
@@ -563,13 +640,6 @@ operator|=
 name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
-block|}
-else|else
-block|{
-name|status
-operator|=
-name|GIMP_PDB_CALLING_ERROR
-expr_stmt|;
 block|}
 name|values
 index|[
@@ -716,7 +786,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29e661cd0108
+DECL|struct|__anon2920f2590108
 block|{
 DECL|member|Width
 name|unsigned
@@ -766,7 +836,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29e661cd0208
+DECL|struct|__anon2920f2590208
 block|{
 DECL|member|transparent
 name|int
@@ -802,43 +872,6 @@ literal|0
 block|}
 struct|;
 end_struct
-
-begin_decl_stmt
-DECL|variable|verbose
-name|int
-name|verbose
-init|=
-name|FALSE
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|showComment
-name|int
-name|showComment
-init|=
-name|TRUE
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|globalcomment
-name|char
-modifier|*
-name|globalcomment
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|globalusecomment
-name|gint
-name|globalusecomment
-init|=
-name|TRUE
-decl_stmt|;
-end_decl_stmt
 
 begin_function_decl
 specifier|static
@@ -956,13 +989,16 @@ end_function_decl
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_image (const gchar * filename)
+DECL|function|load_image (const gchar * filename,gboolean thumbnail)
 name|load_image
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
 name|filename
+parameter_list|,
+name|gboolean
+name|thumbnail
 parameter_list|)
 block|{
 name|FILE
@@ -984,7 +1020,7 @@ decl_stmt|;
 name|gint
 name|grayScale
 decl_stmt|;
-name|gint
+name|gboolean
 name|useGlobalColormap
 decl_stmt|;
 name|gint
@@ -1086,7 +1122,7 @@ condition|(
 name|strncmp
 argument_list|(
 operator|(
-name|char
+name|gchar
 operator|*
 operator|)
 name|buf
@@ -1117,7 +1153,7 @@ argument_list|(
 name|version
 argument_list|,
 operator|(
-name|char
+name|gchar
 operator|*
 operator|)
 name|buf
@@ -1740,9 +1776,6 @@ name|Height
 argument_list|)
 expr_stmt|;
 block|}
-ifdef|#
-directive|ifdef
-name|FACEHUGGERS
 if|if
 condition|(
 name|comment_parasite
@@ -1750,6 +1783,11 @@ operator|!=
 name|NULL
 condition|)
 block|{
+if|if
+condition|(
+operator|!
+name|thumbnail
+condition|)
 name|gimp_image_parasite_attach
 argument_list|(
 name|image_ID
@@ -1767,8 +1805,12 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
-endif|#
-directive|endif
+comment|/* If we are loading a thumbnail, we stop after the first frame. */
+if|if
+condition|(
+name|thumbnail
+condition|)
+break|break;
 block|}
 return|return
 name|image_ID
@@ -2177,9 +2219,6 @@ operator|>
 literal|0
 condition|)
 block|{
-ifdef|#
-directive|ifdef
-name|FACEHUGGERS
 if|if
 condition|(
 operator|!
@@ -2221,21 +2260,6 @@ argument_list|,
 name|buf
 argument_list|)
 expr_stmt|;
-else|#
-directive|else
-if|if
-condition|(
-name|showComment
-condition|)
-name|g_print
-argument_list|(
-literal|"GIF: gif comment: %s\n"
-argument_list|,
-name|buf
-argument_list|)
-expr_stmt|;
-endif|#
-directive|endif
 block|}
 return|return
 name|TRUE
@@ -4275,10 +4299,9 @@ operator|*
 name|height
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|verbose
-condition|)
+ifdef|#
+directive|ifdef
+name|GIFDEBUG
 name|g_print
 argument_list|(
 literal|"GIF: reading %d by %d%s GIF image, ncols=%d\n"
@@ -4296,6 +4319,8 @@ argument_list|,
 name|ncols
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 if|if
 condition|(
 operator|!
