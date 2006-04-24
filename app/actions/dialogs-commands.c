@@ -100,6 +100,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
+specifier|const
 name|tabs
 index|[]
 parameter_list|,
@@ -478,7 +479,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|dialogs_create_dock (GdkScreen * screen,gboolean show_image_menu,const gchar * tabs[],gint n_tabs)
+DECL|function|dialogs_create_dock (GdkScreen * screen,gboolean show_image_menu,const gchar * const tabs[],gint n_tabs)
 name|dialogs_create_dock
 parameter_list|(
 name|GdkScreen
@@ -491,6 +492,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
+specifier|const
 name|tabs
 index|[]
 parameter_list|,
