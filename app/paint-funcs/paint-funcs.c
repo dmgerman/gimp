@@ -16920,6 +16920,7 @@ literal|0
 expr_stmt|;
 block|}
 else|else
+block|{
 name|transition
 index|[
 name|x
@@ -16927,6 +16928,7 @@ index|]
 operator|=
 literal|0
 expr_stmt|;
+block|}
 for|for
 control|(
 name|x
@@ -17067,6 +17069,7 @@ literal|0
 expr_stmt|;
 block|}
 else|else
+block|{
 name|transition
 index|[
 name|x
@@ -17074,6 +17077,7 @@ index|]
 operator|=
 literal|0
 expr_stmt|;
+block|}
 block|}
 if|if
 condition|(
@@ -17163,6 +17167,7 @@ literal|0
 expr_stmt|;
 block|}
 else|else
+block|{
 name|transition
 index|[
 name|x
@@ -17170,6 +17175,7 @@ index|]
 operator|=
 literal|0
 expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -18381,6 +18387,7 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
+block|{
 name|memcpy
 argument_list|(
 name|transition
@@ -18400,6 +18407,7 @@ operator|->
 name|w
 argument_list|)
 expr_stmt|;
+block|}
 for|for
 control|(
 name|x
@@ -18463,7 +18471,8 @@ index|]
 operator|--
 expr_stmt|;
 block|}
-elseif|else
+else|else
+block|{
 if|if
 condition|(
 name|transition
@@ -18527,13 +18536,16 @@ index|]
 operator|--
 expr_stmt|;
 block|}
+block|}
 else|else
+block|{
 name|max
 index|[
 name|x
 index|]
 operator|--
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|max

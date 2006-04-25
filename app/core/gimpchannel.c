@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2771868f0103
+DECL|enum|__anon28aeefbc0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -6188,17 +6188,13 @@ name|x1
 argument_list|,
 name|y1
 argument_list|,
-operator|(
 name|x2
 operator|-
 name|x1
-operator|)
 argument_list|,
-operator|(
 name|y2
 operator|-
 name|y1
-operator|)
 argument_list|,
 name|TRUE
 argument_list|)
