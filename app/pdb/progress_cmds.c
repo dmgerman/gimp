@@ -28,7 +28,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimp-pdb.h"
+file|"gimppdb.h"
 end_include
 
 begin_include
@@ -873,12 +873,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|register_progress_procs (Gimp * gimp)
+DECL|function|register_progress_procs (GimpPDB * pdb)
 name|register_progress_procs
 parameter_list|(
-name|Gimp
+name|GimpPDB
 modifier|*
-name|gimp
+name|pdb
 parameter_list|)
 block|{
 name|GimpProcedure
@@ -956,6 +956,8 @@ literal|"gdisplay"
 argument_list|,
 literal|"GimpDisplay to update progressbar in, or -1 for a seperate window"
 argument_list|,
+name|pdb
+operator|->
 name|gimp
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -964,9 +966,9 @@ name|GIMP_PARAM_NO_VALIDATE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)
@@ -1036,9 +1038,9 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)
@@ -1085,9 +1087,9 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)
@@ -1156,9 +1158,9 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)
@@ -1227,9 +1229,9 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)
@@ -1298,9 +1300,9 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)
@@ -1369,9 +1371,9 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)
@@ -1440,9 +1442,9 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)

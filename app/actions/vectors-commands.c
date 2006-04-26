@@ -120,7 +120,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb/gimp-pdb.h"
+file|"pdb/gimppdb.h"
 end_include
 
 begin_include
@@ -1206,11 +1206,13 @@ name|value
 condition|)
 name|procedure
 operator|=
-name|gimp_pdb_lookup
+name|gimp_pdb_lookup_procedure
 argument_list|(
 name|image
 operator|->
 name|gimp
+operator|->
+name|pdb
 argument_list|,
 literal|"plug-in-sel2path-advanced"
 argument_list|)
@@ -1218,11 +1220,13 @@ expr_stmt|;
 else|else
 name|procedure
 operator|=
-name|gimp_pdb_lookup
+name|gimp_pdb_lookup_procedure
 argument_list|(
 name|image
 operator|->
 name|gimp
+operator|->
+name|pdb
 argument_list|,
 literal|"plug-in-sel2path"
 argument_list|)

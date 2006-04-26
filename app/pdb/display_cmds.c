@@ -28,7 +28,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimp-pdb.h"
+file|"gimppdb.h"
 end_include
 
 begin_include
@@ -583,12 +583,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|register_display_procs (Gimp * gimp)
+DECL|function|register_display_procs (GimpPDB * pdb)
 name|register_display_procs
 parameter_list|(
-name|Gimp
+name|GimpPDB
 modifier|*
-name|gimp
+name|pdb
 parameter_list|)
 block|{
 name|GimpProcedure
@@ -644,6 +644,8 @@ literal|"image"
 argument_list|,
 literal|"The image"
 argument_list|,
+name|pdb
+operator|->
 name|gimp
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -662,15 +664,17 @@ literal|"display"
 argument_list|,
 literal|"The new display"
 argument_list|,
+name|pdb
+operator|->
 name|gimp
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)
@@ -729,15 +733,17 @@ literal|"display"
 argument_list|,
 literal|"The display to delete"
 argument_list|,
+name|pdb
+operator|->
 name|gimp
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)
@@ -796,6 +802,8 @@ literal|"display"
 argument_list|,
 literal|"The display to get the window handle from"
 argument_list|,
+name|pdb
+operator|->
 name|gimp
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -824,9 +832,9 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)
@@ -873,9 +881,9 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)
@@ -934,6 +942,8 @@ literal|"old image"
 argument_list|,
 literal|"The old image (must have at least one display)"
 argument_list|,
+name|pdb
+operator|->
 name|gimp
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -952,15 +962,17 @@ literal|"new image"
 argument_list|,
 literal|"The new image (must not have a display)"
 argument_list|,
+name|pdb
+operator|->
 name|gimp
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)

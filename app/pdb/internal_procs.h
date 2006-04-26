@@ -24,9 +24,9 @@ begin_function_decl
 name|void
 name|internal_procs_init
 parameter_list|(
-name|Gimp
+name|GimpPDB
 modifier|*
-name|gimp
+name|pdb
 parameter_list|)
 function_decl|;
 end_function_decl

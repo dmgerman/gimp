@@ -34,7 +34,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimp-pdb.h"
+file|"gimppdb.h"
 end_include
 
 begin_include
@@ -2935,12 +2935,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|register_paths_procs (Gimp * gimp)
+DECL|function|register_paths_procs (GimpPDB * pdb)
 name|register_paths_procs
 parameter_list|(
-name|Gimp
+name|GimpPDB
 modifier|*
-name|gimp
+name|pdb
 parameter_list|)
 block|{
 name|GimpProcedure
@@ -2996,6 +2996,8 @@ literal|"image"
 argument_list|,
 literal|"The image to list the paths from"
 argument_list|,
+name|pdb
+operator|->
 name|gimp
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -3040,9 +3042,9 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)
@@ -3101,6 +3103,8 @@ literal|"image"
 argument_list|,
 literal|"The image to get the current path from"
 argument_list|,
+name|pdb
+operator|->
 name|gimp
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -3129,9 +3133,9 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)
@@ -3190,6 +3194,8 @@ literal|"image"
 argument_list|,
 literal|"The image in which a path will become current"
 argument_list|,
+name|pdb
+operator|->
 name|gimp
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -3218,9 +3224,9 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)
@@ -3279,6 +3285,8 @@ literal|"image"
 argument_list|,
 literal|"The image to delete the path from"
 argument_list|,
+name|pdb
+operator|->
 name|gimp
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -3307,9 +3315,9 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)
@@ -3368,6 +3376,8 @@ literal|"image"
 argument_list|,
 literal|"The image to list the paths from"
 argument_list|,
+name|pdb
+operator|->
 name|gimp
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -3478,9 +3488,9 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)
@@ -3539,6 +3549,8 @@ literal|"image"
 argument_list|,
 literal|"The image to set the paths in"
 argument_list|,
+name|pdb
+operator|->
 name|gimp
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -3627,9 +3639,9 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)
@@ -3688,15 +3700,17 @@ literal|"image"
 argument_list|,
 literal|"The image which contains the path to stroke"
 argument_list|,
+name|pdb
+operator|->
 name|gimp
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)
@@ -3755,6 +3769,8 @@ literal|"image"
 argument_list|,
 literal|"The image the paths belongs to"
 argument_list|,
+name|pdb
+operator|->
 name|gimp
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -3851,9 +3867,9 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)
@@ -3912,6 +3928,8 @@ literal|"image"
 argument_list|,
 literal|"The image"
 argument_list|,
+name|pdb
+operator|->
 name|gimp
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -3962,9 +3980,9 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)
@@ -4023,6 +4041,8 @@ literal|"image"
 argument_list|,
 literal|"The image"
 argument_list|,
+name|pdb
+operator|->
 name|gimp
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -4073,9 +4093,9 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)
@@ -4134,6 +4154,8 @@ literal|"image"
 argument_list|,
 literal|"The image"
 argument_list|,
+name|pdb
+operator|->
 name|gimp
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -4184,9 +4206,9 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)
@@ -4245,6 +4267,8 @@ literal|"image"
 argument_list|,
 literal|"The image"
 argument_list|,
+name|pdb
+operator|->
 name|gimp
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -4291,9 +4315,9 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)
@@ -4352,6 +4376,8 @@ literal|"image"
 argument_list|,
 literal|"The image"
 argument_list|,
+name|pdb
+operator|->
 name|gimp
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -4398,9 +4424,9 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)
@@ -4459,6 +4485,8 @@ literal|"image"
 argument_list|,
 literal|"The image"
 argument_list|,
+name|pdb
+operator|->
 name|gimp
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -4589,9 +4617,9 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)
@@ -4650,6 +4678,8 @@ literal|"image"
 argument_list|,
 literal|"The image"
 argument_list|,
+name|pdb
+operator|->
 name|gimp
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -4714,9 +4744,9 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)
@@ -4775,6 +4805,8 @@ literal|"image"
 argument_list|,
 literal|"The image"
 argument_list|,
+name|pdb
+operator|->
 name|gimp
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -4861,9 +4893,9 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)

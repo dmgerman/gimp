@@ -48,7 +48,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb/gimp-pdb.h"
+file|"pdb/gimppdb.h"
 end_include
 
 begin_include
@@ -710,11 +710,13 @@ argument_list|)
 expr_stmt|;
 name|procedure
 operator|=
-name|gimp_pdb_lookup
+name|gimp_pdb_lookup_procedure
 argument_list|(
 name|plug_in
 operator|->
 name|gimp
+operator|->
+name|pdb
 argument_list|,
 name|progress_callback
 argument_list|)
@@ -828,6 +830,14 @@ operator|=
 name|g_object_new
 argument_list|(
 name|GIMP_TYPE_PDB_PROGRESS
+argument_list|,
+literal|"pdb"
+argument_list|,
+name|plug_in
+operator|->
+name|gimp
+operator|->
+name|pdb
 argument_list|,
 literal|"context"
 argument_list|,

@@ -34,7 +34,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimp-pdb.h"
+file|"gimppdb.h"
 end_include
 
 begin_include
@@ -1387,12 +1387,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|register_unit_procs (Gimp * gimp)
+DECL|function|register_unit_procs (GimpPDB * pdb)
 name|register_unit_procs
 parameter_list|(
-name|Gimp
+name|GimpPDB
 modifier|*
-name|gimp
+name|pdb
 parameter_list|)
 block|{
 name|GimpProcedure
@@ -1458,9 +1458,9 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)
@@ -1529,9 +1529,9 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)
@@ -1755,9 +1755,9 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)
@@ -1844,9 +1844,9 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)
@@ -1933,9 +1933,9 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)
@@ -2026,9 +2026,9 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)
@@ -2120,9 +2120,9 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)
@@ -2213,9 +2213,9 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)
@@ -2306,9 +2306,9 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)
@@ -2399,9 +2399,9 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)
@@ -2492,9 +2492,9 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)
@@ -2585,9 +2585,9 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)

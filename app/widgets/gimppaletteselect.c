@@ -54,7 +54,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb/gimp-pdb.h"
+file|"pdb/gimppdb.h"
 end_include
 
 begin_include
@@ -377,13 +377,11 @@ name|object
 argument_list|)
 decl_stmt|;
 return|return
-name|gimp_pdb_run_proc
+name|gimp_pdb_execute_procedure_by_name
 argument_list|(
 name|dialog
 operator|->
-name|caller_context
-operator|->
-name|gimp
+name|pdb
 argument_list|,
 name|dialog
 operator|->
@@ -397,10 +395,7 @@ name|callback_name
 argument_list|,
 name|G_TYPE_STRING
 argument_list|,
-name|GIMP_OBJECT
-argument_list|(
-name|palette
-argument_list|)
+name|object
 operator|->
 name|name
 argument_list|,

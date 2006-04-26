@@ -173,7 +173,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb/gimp-pdb.h"
+file|"pdb/gimppdb.h"
 end_include
 
 begin_include
@@ -495,9 +495,11 @@ expr_stmt|;
 block|}
 name|return_vals
 operator|=
-name|gimp_pdb_run_proc
+name|gimp_pdb_execute_procedure_by_name
 argument_list|(
 name|gimp
+operator|->
+name|pdb
 argument_list|,
 name|context
 argument_list|,
@@ -798,9 +800,11 @@ name|NULL
 return|;
 name|procedure
 operator|=
-name|gimp_pdb_lookup
+name|gimp_pdb_lookup_procedure
 argument_list|(
 name|gimp
+operator|->
+name|pdb
 argument_list|,
 name|file_proc
 operator|->
@@ -862,9 +866,11 @@ argument_list|)
 expr_stmt|;
 name|return_vals
 operator|=
-name|gimp_pdb_run_proc
+name|gimp_pdb_execute_procedure_by_name
 argument_list|(
 name|gimp
+operator|->
+name|pdb
 argument_list|,
 name|context
 argument_list|,

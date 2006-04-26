@@ -72,7 +72,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb/gimp-pdb.h"
+file|"pdb/gimppdb.h"
 end_include
 
 begin_include
@@ -1141,9 +1141,11 @@ comment|/* FIXME */
 name|local_only
 operator|=
 operator|(
-name|gimp_pdb_lookup
+name|gimp_pdb_lookup_procedure
 argument_list|(
 name|gimp
+operator|->
+name|pdb
 argument_list|,
 literal|"file-uri-load"
 argument_list|)
@@ -1176,9 +1178,11 @@ comment|/* FIXME */
 name|local_only
 operator|=
 operator|(
-name|gimp_pdb_lookup
+name|gimp_pdb_lookup_procedure
 argument_list|(
 name|gimp
+operator|->
+name|pdb
 argument_list|,
 literal|"file-uri-save"
 argument_list|)

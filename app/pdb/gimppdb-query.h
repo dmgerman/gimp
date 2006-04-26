@@ -20,9 +20,9 @@ begin_function_decl
 name|gboolean
 name|gimp_pdb_dump
 parameter_list|(
-name|Gimp
+name|GimpPDB
 modifier|*
-name|gimp
+name|pdb
 parameter_list|,
 specifier|const
 name|gchar
@@ -36,9 +36,9 @@ begin_function_decl
 name|gboolean
 name|gimp_pdb_query
 parameter_list|(
-name|Gimp
+name|GimpPDB
 modifier|*
-name|gimp
+name|pdb
 parameter_list|,
 specifier|const
 name|gchar
@@ -92,9 +92,9 @@ begin_function_decl
 name|gboolean
 name|gimp_pdb_proc_info
 parameter_list|(
-name|Gimp
+name|GimpPDB
 modifier|*
-name|gimp
+name|pdb
 parameter_list|,
 specifier|const
 name|gchar

@@ -76,25 +76,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimp.h"
+file|"gimppdb.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimp-pdb.h"
+file|"gimppdb-query.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"gimp-pdb-compat.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimp-pdb-query.h"
 end_include
 
 begin_include
@@ -139,10 +133,10 @@ DECL|struct|_PDBQuery
 struct|struct
 name|_PDBQuery
 block|{
-DECL|member|gimp
-name|Gimp
+DECL|member|pdb
+name|GimpPDB
 modifier|*
-name|gimp
+name|pdb
 decl_stmt|;
 DECL|member|name_regex
 name|regex_t
@@ -300,12 +294,12 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_pdb_dump (Gimp * gimp,const gchar * filename)
+DECL|function|gimp_pdb_dump (GimpPDB * pdb,const gchar * filename)
 name|gimp_pdb_dump
 parameter_list|(
-name|Gimp
+name|GimpPDB
 modifier|*
-name|gimp
+name|pdb
 parameter_list|,
 specifier|const
 name|gchar
@@ -319,9 +313,9 @@ name|file
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|GIMP_IS_GIMP
+name|GIMP_IS_PDB
 argument_list|(
-name|gimp
+name|pdb
 argument_list|)
 argument_list|,
 name|FALSE
@@ -355,9 +349,9 @@ name|FALSE
 return|;
 name|g_hash_table_foreach
 argument_list|(
-name|gimp
+name|pdb
 operator|->
-name|procedural_ht
+name|procedures
 argument_list|,
 name|gimp_pdb_print_entry
 argument_list|,
@@ -377,12 +371,12 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_pdb_query (Gimp * gimp,const gchar * name,const gchar * blurb,const gchar * help,const gchar * author,const gchar * copyright,const gchar * date,const gchar * proc_type,gint * num_procs,gchar *** procs)
+DECL|function|gimp_pdb_query (GimpPDB * pdb,const gchar * name,const gchar * blurb,const gchar * help,const gchar * author,const gchar * copyright,const gchar * date,const gchar * proc_type,gint * num_procs,gchar *** procs)
 name|gimp_pdb_query
 parameter_list|(
-name|Gimp
+name|GimpPDB
 modifier|*
-name|gimp
+name|pdb
 parameter_list|,
 specifier|const
 name|gchar
@@ -440,9 +434,9 @@ name|FALSE
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|GIMP_IS_GIMP
+name|GIMP_IS_PDB
 argument_list|(
-name|gimp
+name|pdb
 argument_list|)
 argument_list|,
 name|FALSE
@@ -664,9 +658,9 @@ name|TRUE
 expr_stmt|;
 name|pdb_query
 operator|.
-name|gimp
+name|pdb
 operator|=
-name|gimp
+name|pdb
 expr_stmt|;
 name|pdb_query
 operator|.
@@ -688,9 +682,9 @@ name|FALSE
 expr_stmt|;
 name|g_hash_table_foreach
 argument_list|(
-name|gimp
+name|pdb
 operator|->
-name|procedural_ht
+name|procedures
 argument_list|,
 name|gimp_pdb_query_entry
 argument_list|,
@@ -706,9 +700,9 @@ name|TRUE
 expr_stmt|;
 name|g_hash_table_foreach
 argument_list|(
-name|gimp
+name|pdb
 operator|->
-name|procedural_compat_ht
+name|compat_proc_names
 argument_list|,
 name|gimp_pdb_query_entry
 argument_list|,
@@ -814,12 +808,12 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_pdb_proc_info (Gimp * gimp,const gchar * proc_name,gchar ** blurb,gchar ** help,gchar ** author,gchar ** copyright,gchar ** date,GimpPDBProcType * proc_type,gint * num_args,gint * num_values)
+DECL|function|gimp_pdb_proc_info (GimpPDB * pdb,const gchar * proc_name,gchar ** blurb,gchar ** help,gchar ** author,gchar ** copyright,gchar ** date,GimpPDBProcType * proc_type,gint * num_args,gint * num_values)
 name|gimp_pdb_proc_info
 parameter_list|(
-name|Gimp
+name|GimpPDB
 modifier|*
-name|gimp
+name|pdb
 parameter_list|,
 specifier|const
 name|gchar
@@ -873,9 +867,9 @@ name|strings
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|GIMP_IS_GIMP
+name|GIMP_IS_PDB
 argument_list|(
-name|gimp
+name|pdb
 argument_list|)
 argument_list|,
 name|FALSE
@@ -892,30 +886,18 @@ argument_list|)
 expr_stmt|;
 name|procedure
 operator|=
-name|gimp_pdb_lookup
+name|gimp_pdb_lookup_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|proc_name
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|procedure
 condition|)
-block|{
-name|gimp_pdb_get_strings
-argument_list|(
-operator|&
-name|strings
-argument_list|,
-name|procedure
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
-block|}
-else|else
 block|{
 specifier|const
 name|gchar
@@ -924,11 +906,9 @@ name|compat_name
 decl_stmt|;
 name|compat_name
 operator|=
-name|g_hash_table_lookup
+name|gimp_pdb_lookup_compat_proc_name
 argument_list|(
-name|gimp
-operator|->
-name|procedural_compat_ht
+name|pdb
 argument_list|,
 name|proc_name
 argument_list|)
@@ -937,20 +917,21 @@ if|if
 condition|(
 name|compat_name
 condition|)
-block|{
 name|procedure
 operator|=
-name|gimp_pdb_lookup
+name|gimp_pdb_lookup_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|compat_name
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|procedure
 condition|)
+block|{
 name|gimp_pdb_get_strings
 argument_list|(
 operator|&
@@ -961,13 +942,6 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-block|}
-block|}
-if|if
-condition|(
-name|procedure
-condition|)
-block|{
 operator|*
 name|blurb
 operator|=
@@ -1197,9 +1171,9 @@ name|g_hash_table_lookup
 argument_list|(
 name|pdb_query
 operator|->
-name|gimp
+name|pdb
 operator|->
-name|procedural_ht
+name|procedures
 argument_list|,
 name|value
 argument_list|)

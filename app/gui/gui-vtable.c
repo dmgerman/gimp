@@ -2710,6 +2710,12 @@ literal|"help-id"
 argument_list|,
 name|help_id
 argument_list|,
+literal|"pdb"
+argument_list|,
+name|gimp
+operator|->
+name|pdb
+argument_list|,
 literal|"context"
 argument_list|,
 name|context

@@ -60,7 +60,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb/gimp-pdb.h"
+file|"pdb/gimppdb.h"
 end_include
 
 begin_include
@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2904f9a60103
+DECL|enum|__anon296c5aa00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1113,13 +1113,11 @@ argument_list|)
 expr_stmt|;
 name|return_vals
 operator|=
-name|gimp_pdb_run_proc
+name|gimp_pdb_execute_procedure_by_name
 argument_list|(
 name|dialog
 operator|->
-name|caller_context
-operator|->
-name|gimp
+name|pdb
 argument_list|,
 name|dialog
 operator|->

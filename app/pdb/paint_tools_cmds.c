@@ -34,7 +34,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimp-pdb.h"
+file|"gimppdb.h"
 end_include
 
 begin_include
@@ -3233,12 +3233,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|register_paint_tools_procs (Gimp * gimp)
+DECL|function|register_paint_tools_procs (GimpPDB * pdb)
 name|register_paint_tools_procs
 parameter_list|(
-name|Gimp
+name|GimpPDB
 modifier|*
-name|gimp
+name|pdb
 parameter_list|)
 block|{
 name|GimpProcedure
@@ -3294,6 +3294,8 @@ literal|"drawable"
 argument_list|,
 literal|"The affected drawable"
 argument_list|,
+name|pdb
+operator|->
 name|gimp
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -3360,9 +3362,9 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)
@@ -3421,6 +3423,8 @@ literal|"drawable"
 argument_list|,
 literal|"The affected drawable"
 argument_list|,
+name|pdb
+operator|->
 name|gimp
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -3465,9 +3469,9 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)
@@ -3526,6 +3530,8 @@ literal|"drawable"
 argument_list|,
 literal|"The affected drawable"
 argument_list|,
+name|pdb
+operator|->
 name|gimp
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -3544,6 +3550,8 @@ literal|"src drawable"
 argument_list|,
 literal|"The source drawable"
 argument_list|,
+name|pdb
+operator|->
 name|gimp
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -3654,9 +3662,9 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)
@@ -3715,6 +3723,8 @@ literal|"drawable"
 argument_list|,
 literal|"The affected drawable"
 argument_list|,
+name|pdb
+operator|->
 name|gimp
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -3759,9 +3769,9 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)
@@ -3820,6 +3830,8 @@ literal|"drawable"
 argument_list|,
 literal|"The affected drawable"
 argument_list|,
+name|pdb
+operator|->
 name|gimp
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -3906,9 +3918,9 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)
@@ -3967,6 +3979,8 @@ literal|"drawable"
 argument_list|,
 literal|"The affected drawable"
 argument_list|,
+name|pdb
+operator|->
 name|gimp
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -4011,9 +4025,9 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)
@@ -4072,6 +4086,8 @@ literal|"drawable"
 argument_list|,
 literal|"The affected drawable"
 argument_list|,
+name|pdb
+operator|->
 name|gimp
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -4178,9 +4194,9 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)
@@ -4239,6 +4255,8 @@ literal|"drawable"
 argument_list|,
 literal|"The affected drawable"
 argument_list|,
+name|pdb
+operator|->
 name|gimp
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -4283,9 +4301,9 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)
@@ -4344,6 +4362,8 @@ literal|"drawable"
 argument_list|,
 literal|"The affected drawable"
 argument_list|,
+name|pdb
+operator|->
 name|gimp
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -4428,9 +4448,9 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)
@@ -4489,6 +4509,8 @@ literal|"drawable"
 argument_list|,
 literal|"The affected drawable"
 argument_list|,
+name|pdb
+operator|->
 name|gimp
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -4533,9 +4555,9 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)
@@ -4594,6 +4616,8 @@ literal|"drawable"
 argument_list|,
 literal|"The affected drawable"
 argument_list|,
+name|pdb
+operator|->
 name|gimp
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -4702,9 +4726,9 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)
@@ -4763,6 +4787,8 @@ literal|"drawable"
 argument_list|,
 literal|"The affected drawable"
 argument_list|,
+name|pdb
+operator|->
 name|gimp
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -4807,9 +4833,9 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)
@@ -4868,6 +4894,8 @@ literal|"drawable"
 argument_list|,
 literal|"The affected drawable"
 argument_list|,
+name|pdb
+operator|->
 name|gimp
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -4912,9 +4940,9 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)
@@ -4973,6 +5001,8 @@ literal|"drawable"
 argument_list|,
 literal|"The affected drawable"
 argument_list|,
+name|pdb
+operator|->
 name|gimp
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -5039,9 +5069,9 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)
@@ -5100,6 +5130,8 @@ literal|"drawable"
 argument_list|,
 literal|"The affected drawable"
 argument_list|,
+name|pdb
+operator|->
 name|gimp
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -5144,9 +5176,9 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)

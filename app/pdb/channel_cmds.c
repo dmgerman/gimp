@@ -34,7 +34,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimp-pdb.h"
+file|"gimppdb.h"
 end_include
 
 begin_include
@@ -1387,12 +1387,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|register_channel_procs (Gimp * gimp)
+DECL|function|register_channel_procs (GimpPDB * pdb)
 name|register_channel_procs
 parameter_list|(
-name|Gimp
+name|GimpPDB
 modifier|*
-name|gimp
+name|pdb
 parameter_list|)
 block|{
 name|GimpProcedure
@@ -1448,6 +1448,8 @@ literal|"image"
 argument_list|,
 literal|"The image to which to add the channel"
 argument_list|,
+name|pdb
+operator|->
 name|gimp
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -1572,15 +1574,17 @@ literal|"channel"
 argument_list|,
 literal|"The newly created channel"
 argument_list|,
+name|pdb
+operator|->
 name|gimp
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)
@@ -1639,6 +1643,8 @@ literal|"image"
 argument_list|,
 literal|"The image to which to add the channel"
 argument_list|,
+name|pdb
+operator|->
 name|gimp
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -1699,15 +1705,17 @@ literal|"channel"
 argument_list|,
 literal|"The newly created channel"
 argument_list|,
+name|pdb
+operator|->
 name|gimp
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)
@@ -1766,6 +1774,8 @@ literal|"channel"
 argument_list|,
 literal|"The channel to copy"
 argument_list|,
+name|pdb
+operator|->
 name|gimp
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -1784,15 +1794,17 @@ literal|"channel copy"
 argument_list|,
 literal|"The newly copied channel"
 argument_list|,
+name|pdb
+operator|->
 name|gimp
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)
@@ -1851,6 +1863,8 @@ literal|"channel1"
 argument_list|,
 literal|"The channel1"
 argument_list|,
+name|pdb
+operator|->
 name|gimp
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -1869,6 +1883,8 @@ literal|"channel2"
 argument_list|,
 literal|"The channel2"
 argument_list|,
+name|pdb
+operator|->
 name|gimp
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -1939,9 +1955,9 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)
@@ -2000,6 +2016,8 @@ literal|"channel"
 argument_list|,
 literal|"The channel"
 argument_list|,
+name|pdb
+operator|->
 name|gimp
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -2024,9 +2042,9 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)
@@ -2085,6 +2103,8 @@ literal|"channel"
 argument_list|,
 literal|"The channel"
 argument_list|,
+name|pdb
+operator|->
 name|gimp
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -2109,9 +2129,9 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)
@@ -2170,6 +2190,8 @@ literal|"channel"
 argument_list|,
 literal|"The channel"
 argument_list|,
+name|pdb
+operator|->
 name|gimp
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -2198,9 +2220,9 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)
@@ -2259,6 +2281,8 @@ literal|"channel"
 argument_list|,
 literal|"The channel"
 argument_list|,
+name|pdb
+operator|->
 name|gimp
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -2287,9 +2311,9 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)
@@ -2348,6 +2372,8 @@ literal|"channel"
 argument_list|,
 literal|"The channel"
 argument_list|,
+name|pdb
+operator|->
 name|gimp
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -2372,9 +2398,9 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)
@@ -2433,6 +2459,8 @@ literal|"channel"
 argument_list|,
 literal|"The channel"
 argument_list|,
+name|pdb
+operator|->
 name|gimp
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -2457,9 +2485,9 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
-name|gimp
+name|pdb
 argument_list|,
 name|procedure
 argument_list|)

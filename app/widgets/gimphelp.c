@@ -60,7 +60,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb/gimp-pdb.h"
+file|"pdb/gimppdb.h"
 end_include
 
 begin_include
@@ -599,9 +599,11 @@ expr_stmt|;
 comment|/*  Check if a help browser is already running  */
 name|procedure
 operator|=
-name|gimp_pdb_lookup
+name|gimp_pdb_lookup_procedure
 argument_list|(
 name|gimp
+operator|->
+name|pdb
 argument_list|,
 literal|"extension-gimp-help-browser-temp"
 argument_list|)
@@ -620,9 +622,11 @@ name|NULL
 decl_stmt|;
 name|procedure
 operator|=
-name|gimp_pdb_lookup
+name|gimp_pdb_lookup_procedure
 argument_list|(
 name|gimp
+operator|->
+name|pdb
 argument_list|,
 literal|"extension-gimp-help-browser"
 argument_list|)
@@ -717,9 +721,11 @@ block|}
 comment|/*  Check if the help browser started properly  */
 name|procedure
 operator|=
-name|gimp_pdb_lookup
+name|gimp_pdb_lookup_procedure
 argument_list|(
 name|gimp
+operator|->
+name|pdb
 argument_list|,
 literal|"extension-gimp-help-browser-temp"
 argument_list|)
@@ -920,9 +926,11 @@ decl_stmt|;
 comment|/*  Check if a help parser is already running  */
 name|procedure
 operator|=
-name|gimp_pdb_lookup
+name|gimp_pdb_lookup_procedure
 argument_list|(
 name|gimp
+operator|->
+name|pdb
 argument_list|,
 literal|"extension-gimp-help-temp"
 argument_list|)
@@ -960,9 +968,11 @@ name|NULL
 decl_stmt|;
 name|procedure
 operator|=
-name|gimp_pdb_lookup
+name|gimp_pdb_lookup_procedure
 argument_list|(
 name|gimp
+operator|->
+name|pdb
 argument_list|,
 literal|"extension-gimp-help"
 argument_list|)
@@ -1081,9 +1091,11 @@ block|}
 comment|/*  Check if the help parser started properly  */
 name|procedure
 operator|=
-name|gimp_pdb_lookup
+name|gimp_pdb_lookup_procedure
 argument_list|(
 name|gimp
+operator|->
+name|pdb
 argument_list|,
 literal|"extension-gimp-help-temp"
 argument_list|)
@@ -1129,9 +1141,11 @@ endif|#
 directive|endif
 name|return_vals
 operator|=
-name|gimp_pdb_run_proc
+name|gimp_pdb_execute_procedure_by_name
 argument_list|(
 name|gimp
+operator|->
+name|pdb
 argument_list|,
 name|gimp_get_user_context
 argument_list|(

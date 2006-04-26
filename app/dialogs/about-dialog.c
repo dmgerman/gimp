@@ -42,13 +42,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpcontext.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"pdb/gimp-pdb.h"
+file|"pdb/gimppdb.h"
 end_include
 
 begin_include
@@ -86,7 +92,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a203b8b0108
+DECL|struct|__anon2b143fea0108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -365,11 +371,13 @@ name|mask
 decl_stmt|;
 if|if
 condition|(
-name|gimp_pdb_lookup
+name|gimp_pdb_lookup_procedure
 argument_list|(
 name|context
 operator|->
 name|gimp
+operator|->
+name|pdb
 argument_list|,
 name|PDB_URL_LOAD
 argument_list|)
@@ -857,11 +865,13 @@ name|return_vals
 decl_stmt|;
 name|return_vals
 operator|=
-name|gimp_pdb_run_proc
+name|gimp_pdb_execute_procedure_by_name
 argument_list|(
 name|context
 operator|->
 name|gimp
+operator|->
+name|pdb
 argument_list|,
 name|context
 argument_list|,

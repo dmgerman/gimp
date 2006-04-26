@@ -267,7 +267,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2963df6c0103
+DECL|enum|__anon2b8c63190103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -982,7 +982,7 @@ name|palette_factory
 operator|=
 name|NULL
 expr_stmt|;
-name|gimp_pdb_init
+name|gimp_pdb_initialize
 argument_list|(
 name|gimp
 argument_list|)
@@ -2045,20 +2045,16 @@ operator|)
 expr_stmt|;
 name|memsize
 operator|+=
-name|gimp_g_hash_table_get_memsize
+name|gimp_object_get_memsize
+argument_list|(
+name|GIMP_OBJECT
 argument_list|(
 name|gimp
 operator|->
-name|procedural_ht
+name|pdb
 argument_list|)
-expr_stmt|;
-name|memsize
-operator|+=
-name|gimp_g_hash_table_get_memsize
-argument_list|(
-name|gimp
-operator|->
-name|procedural_compat_ht
+argument_list|,
+name|gui_size
 argument_list|)
 expr_stmt|;
 name|memsize

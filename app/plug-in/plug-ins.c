@@ -66,7 +66,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb/gimp-pdb.h"
+file|"pdb/gimppdb.h"
 end_include
 
 begin_include
@@ -1747,9 +1747,11 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/*  Register the procedural database entry  */
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
 name|gimp
+operator|->
+name|pdb
 argument_list|,
 name|GIMP_PROCEDURE
 argument_list|(
@@ -1857,16 +1859,16 @@ name|proc
 argument_list|)
 expr_stmt|;
 comment|/*  Unregister the procedural database entry  */
-name|gimp_pdb_unregister
+name|gimp_pdb_unregister_procedure
 argument_list|(
 name|gimp
+operator|->
+name|pdb
 argument_list|,
-name|GIMP_OBJECT
+name|GIMP_PROCEDURE
 argument_list|(
 name|proc
 argument_list|)
-operator|->
-name|name
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -2357,9 +2359,11 @@ modifier|*
 name|proc
 parameter_list|)
 block|{
-name|gimp_pdb_register
+name|gimp_pdb_register_procedure
 argument_list|(
 name|gimp
+operator|->
+name|pdb
 argument_list|,
 name|GIMP_PROCEDURE
 argument_list|(
@@ -2387,9 +2391,11 @@ condition|)
 block|{
 name|return_vals
 operator|=
-name|gimp_pdb_run_proc
+name|gimp_pdb_execute_procedure_by_name
 argument_list|(
 name|gimp
+operator|->
+name|pdb
 argument_list|,
 name|context
 argument_list|,
@@ -2426,9 +2432,11 @@ else|else
 block|{
 name|return_vals
 operator|=
-name|gimp_pdb_run_proc
+name|gimp_pdb_execute_procedure_by_name
 argument_list|(
 name|gimp
+operator|->
+name|pdb
 argument_list|,
 name|context
 argument_list|,

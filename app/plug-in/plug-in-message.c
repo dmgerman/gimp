@@ -72,7 +72,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb/gimp-pdb.h"
+file|"pdb/gimppdb.h"
 end_include
 
 begin_include
@@ -1370,11 +1370,13 @@ argument_list|)
 expr_stmt|;
 name|procedure
 operator|=
-name|gimp_pdb_lookup
+name|gimp_pdb_lookup_procedure
 argument_list|(
 name|plug_in
 operator|->
 name|gimp
+operator|->
+name|pdb
 argument_list|,
 name|canonical
 argument_list|)
@@ -1387,13 +1389,13 @@ condition|)
 block|{
 name|proc_name
 operator|=
-name|g_hash_table_lookup
+name|gimp_pdb_lookup_compat_proc_name
 argument_list|(
 name|plug_in
 operator|->
 name|gimp
 operator|->
-name|procedural_compat_ht
+name|pdb
 argument_list|,
 name|canonical
 argument_list|)
@@ -1405,11 +1407,13 @@ condition|)
 block|{
 name|procedure
 operator|=
-name|gimp_pdb_lookup
+name|gimp_pdb_lookup_procedure
 argument_list|(
 name|plug_in
 operator|->
 name|gimp
+operator|->
+name|pdb
 argument_list|,
 name|proc_name
 argument_list|)
@@ -1595,7 +1599,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/*  Execute the procedure even if gimp_pdb_lookup() returned NULL,    *  gimp_pdb_execute() will return appropriate error return_vals.    */
+comment|/*  Execute the procedure even if gimp_pdb_lookup_procedure()    *  returned NULL, gimp_pdb_execute_procedure_by_name_args() will    *  return appropriate error return_vals.    */
 name|plug_in_push
 argument_list|(
 name|plug_in
@@ -1607,11 +1611,13 @@ argument_list|)
 expr_stmt|;
 name|return_vals
 operator|=
-name|gimp_pdb_execute
+name|gimp_pdb_execute_procedure_by_name_args
 argument_list|(
 name|plug_in
 operator|->
 name|gimp
+operator|->
+name|pdb
 argument_list|,
 name|proc_frame
 operator|->

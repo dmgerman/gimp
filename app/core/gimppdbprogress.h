@@ -109,6 +109,11 @@ DECL|member|value
 name|gdouble
 name|value
 decl_stmt|;
+DECL|member|pdb
+name|GimpPDB
+modifier|*
+name|pdb
+decl_stmt|;
 DECL|member|context
 name|GimpContext
 modifier|*
