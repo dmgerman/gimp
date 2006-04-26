@@ -1254,7 +1254,6 @@ name|data
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*  plug-in arguments as if called by<Image>/Filters/...  */
 name|args
 operator|=
 name|gimp_procedure_get_arguments
@@ -1266,7 +1265,7 @@ name|gimp_value_array_truncate
 argument_list|(
 name|args
 argument_list|,
-literal|3
+literal|2
 argument_list|)
 expr_stmt|;
 name|g_value_set_int
@@ -1293,20 +1292,6 @@ literal|1
 index|]
 argument_list|,
 name|image
-argument_list|)
-expr_stmt|;
-name|gimp_value_set_drawable
-argument_list|(
-operator|&
-name|args
-operator|->
-name|values
-index|[
-literal|2
-index|]
-argument_list|,
-name|NULL
-comment|/* unused */
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_execute_async
