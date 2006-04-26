@@ -130,7 +130,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc2b2110108
+DECL|struct|__anon2c0b864c0108
 block|{
 DECL|member|l
 name|gfloat
@@ -240,7 +240,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc2b2110208
+DECL|struct|__anon2c0b864c0208
 block|{
 DECL|member|bgdist
 name|gfloat
@@ -2052,7 +2052,7 @@ struct|;
 end_struct
 
 begin_comment
-comment|/* This method checks out the neighbourhood of the pixel at position  * (x,y) in the TileManager mask, it adds the sourrounding  * pixels to the queue to allow further processing it uses maskVal to  * determine if the sourounding pixels have already been visited x,y  * are passed from above.  */
+comment|/* This method checks out the neighbourhood of the pixel at position  * (x,y) in the TileManager mask, it adds the surrounding pixels to  * the queue to allow further processing it uses maskVal to determine  * if the surrounding pixels have already been visited x,y are passed  * from above.  */
 end_comment
 
 begin_function
@@ -2087,12 +2087,6 @@ name|mark
 parameter_list|)
 block|{
 name|gint
-name|oldx
-init|=
-operator|-
-literal|1
-decl_stmt|;
-name|gint
 name|xx
 init|=
 name|b
@@ -2106,8 +2100,11 @@ name|b
 operator|->
 name|seedy
 decl_stmt|;
-name|guchar
-name|val
+name|gint
+name|oldx
+init|=
+operator|-
+literal|1
 decl_stmt|;
 name|GSList
 modifier|*
@@ -2120,6 +2117,9 @@ condition|(
 name|TRUE
 condition|)
 block|{
+name|guchar
+name|val
+decl_stmt|;
 if|if
 condition|(
 name|oldx

@@ -84,7 +84,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0f28df0108
+DECL|struct|__anon2c06a4500108
 block|{
 DECL|member|image
 name|GimpImage
@@ -157,10 +157,12 @@ specifier|static
 name|gint
 name|pixel_difference
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|col1
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|col2
@@ -234,6 +236,7 @@ name|GimpImage
 modifier|*
 name|image
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|col
@@ -319,6 +322,7 @@ parameter_list|,
 name|gint
 name|y
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|col
@@ -1212,13 +1216,15 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|pixel_difference (guchar * col1,guchar * col2,gboolean antialias,gint threshold,gint bytes,gboolean has_alpha,gboolean select_transparent)
+DECL|function|pixel_difference (const guchar * col1,const guchar * col2,gboolean antialias,gint threshold,gint bytes,gboolean has_alpha,gboolean select_transparent)
 name|pixel_difference
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|col1
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|col2
@@ -1563,13 +1569,14 @@ end_function
 begin_function
 specifier|static
 name|int
-DECL|function|find_contiguous_segment (GimpImage * image,guchar * col,PixelRegion * src,PixelRegion * mask,gint width,gint bytes,GimpImageType src_type,gboolean has_alpha,gboolean select_transparent,gboolean antialias,gint threshold,gint initial,gint * start,gint * end)
+DECL|function|find_contiguous_segment (GimpImage * image,const guchar * col,PixelRegion * src,PixelRegion * mask,gint width,gint bytes,GimpImageType src_type,gboolean has_alpha,gboolean select_transparent,gboolean antialias,gint threshold,gint initial,gint * start,gint * end)
 name|find_contiguous_segment
 parameter_list|(
 name|GimpImage
 modifier|*
 name|image
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|col
@@ -2139,7 +2146,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|find_contiguous_region_helper (GimpImage * image,PixelRegion * mask,PixelRegion * src,GimpImageType src_type,gboolean has_alpha,gboolean select_transparent,gboolean antialias,gint threshold,gint x,gint y,guchar * col)
+DECL|function|find_contiguous_region_helper (GimpImage * image,PixelRegion * mask,PixelRegion * src,GimpImageType src_type,gboolean has_alpha,gboolean select_transparent,gboolean antialias,gint threshold,gint x,gint y,const guchar * col)
 name|find_contiguous_region_helper
 parameter_list|(
 name|GimpImage
@@ -2175,6 +2182,7 @@ parameter_list|,
 name|gint
 name|y
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|col
