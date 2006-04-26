@@ -130,7 +130,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0b864c0108
+DECL|struct|__anon297eade10108
 block|{
 DECL|member|l
 name|gfloat
@@ -240,7 +240,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0b864c0208
+DECL|struct|__anon297eade10208
 block|{
 DECL|member|bgdist
 name|gfloat
@@ -2086,6 +2086,12 @@ name|guchar
 name|mark
 parameter_list|)
 block|{
+name|GSList
+modifier|*
+name|stack
+init|=
+name|NULL
+decl_stmt|;
 name|gint
 name|xx
 init|=
@@ -2105,12 +2111,6 @@ name|oldx
 init|=
 operator|-
 literal|1
-decl_stmt|;
-name|GSList
-modifier|*
-name|stack
-init|=
-name|NULL
 decl_stmt|;
 while|while
 condition|(
