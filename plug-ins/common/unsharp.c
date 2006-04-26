@@ -84,7 +84,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277327d50108
+DECL|struct|__anon2bf790670108
 block|{
 DECL|member|radius
 name|gdouble
@@ -111,7 +111,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277327d50208
+DECL|struct|__anon2bf790670208
 block|{
 DECL|member|run
 name|gboolean
@@ -182,6 +182,7 @@ name|gdouble
 modifier|*
 name|cmatrix
 parameter_list|,
+specifier|const
 name|gint
 name|cmatrix_length
 parameter_list|,
@@ -194,10 +195,12 @@ name|guchar
 modifier|*
 name|dest
 parameter_list|,
+specifier|const
 name|gint
 name|len
 parameter_list|,
-name|glong
+specifier|const
+name|gint
 name|bytes
 parameter_list|)
 function_decl|;
@@ -862,7 +865,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|blur_line (const gdouble * ctable,const gdouble * cmatrix,const gint cmatrix_length,const guchar * src,guchar * dest,const gint len,const glong bytes)
+DECL|function|blur_line (const gdouble * ctable,const gdouble * cmatrix,const gint cmatrix_length,const guchar * src,guchar * dest,const gint len,const gint bytes)
 name|blur_line
 parameter_list|(
 specifier|const
@@ -893,7 +896,7 @@ name|gint
 name|len
 parameter_list|,
 specifier|const
-name|glong
+name|gint
 name|bytes
 parameter_list|)
 block|{
