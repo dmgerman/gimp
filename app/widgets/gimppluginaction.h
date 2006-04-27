@@ -103,10 +103,10 @@ DECL|member|parent_instance
 name|GimpAction
 name|parent_instance
 decl_stmt|;
-DECL|member|proc
+DECL|member|procedure
 name|GimpPlugInProcedure
 modifier|*
-name|proc
+name|procedure
 decl_stmt|;
 block|}
 struct|;
@@ -178,7 +178,7 @@ name|stock_id
 parameter_list|,
 name|GimpPlugInProcedure
 modifier|*
-name|proc
+name|procedure
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -193,7 +193,7 @@ name|action
 parameter_list|,
 name|GimpPlugInProcedure
 modifier|*
-name|proc
+name|procedure
 parameter_list|)
 function_decl|;
 end_function_decl
