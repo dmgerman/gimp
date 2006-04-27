@@ -12,13 +12,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"stdlib.h"
+file|<stdlib.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"string.h"
+file|<string.h>
 end_include
 
 begin_ifdef
@@ -903,23 +903,21 @@ condition|)
 block|{
 if|if
 condition|(
-name|GIMP_PARAM_SPEC_RGB
+name|gimp_param_spec_rgb_has_alpha
 argument_list|(
 name|param_spec
 argument_list|)
-operator|->
-name|has_alpha
 condition|)
 name|values
 operator|=
 literal|"The color is specified in the form (color-rgba red green blue "
-literal|"alpha) with channel values as floats between 0.0 and 1.0."
+literal|"alpha) with channel values as floats in the range of 0.0 to 1.0."
 expr_stmt|;
 else|else
 name|values
 operator|=
 literal|"The color is specified in the form (color-rgb red green blue) "
-literal|"with channel values as floats between 0.0 and 1.0."
+literal|"with channel values as floats in the range of 0.0 to 1.0."
 expr_stmt|;
 block|}
 elseif|else

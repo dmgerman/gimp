@@ -97,47 +97,6 @@ parameter_list|)
 value|(G_TYPE_CHECK_INSTANCE_TYPE ((pspec), GIMP_TYPE_PARAM_RGB))
 end_define
 
-begin_define
-DECL|macro|GIMP_PARAM_SPEC_RGB (pspec)
-define|#
-directive|define
-name|GIMP_PARAM_SPEC_RGB
-parameter_list|(
-name|pspec
-parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((pspec), GIMP_TYPE_PARAM_RGB, GimpParamSpecRGB))
-end_define
-
-begin_typedef
-DECL|typedef|GimpParamSpecRGB
-typedef|typedef
-name|struct
-name|_GimpParamSpecRGB
-name|GimpParamSpecRGB
-typedef|;
-end_typedef
-
-begin_struct
-DECL|struct|_GimpParamSpecRGB
-struct|struct
-name|_GimpParamSpecRGB
-block|{
-DECL|member|parent_instance
-name|GParamSpecBoxed
-name|parent_instance
-decl_stmt|;
-DECL|member|has_alpha
-name|gboolean
-name|has_alpha
-decl_stmt|;
-DECL|member|default_value
-name|GimpRGB
-name|default_value
-decl_stmt|;
-block|}
-struct|;
-end_struct
-
 begin_decl_stmt
 name|GType
 name|gimp_param_rgb_get_type
@@ -182,6 +141,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|gboolean
+name|gimp_param_spec_rgb_has_alpha
+parameter_list|(
+name|GParamSpec
+modifier|*
+name|pspec
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/*  RGB and RGBA color types and operations taken from LibGCK  */
 end_comment
@@ -189,7 +159,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c5caec00103
+DECL|enum|__anon288761ed0103
 block|{
 DECL|enumerator|GIMP_RGB_COMPOSITE_NONE
 name|GIMP_RGB_COMPOSITE_NONE

@@ -761,12 +761,10 @@ block|{
 name|gboolean
 name|has_alpha
 init|=
-name|GIMP_PARAM_SPEC_RGB
+name|gimp_param_spec_rgb_has_alpha
 argument_list|(
 name|param_spec
 argument_list|)
-operator|->
-name|has_alpha
 decl_stmt|;
 name|success
 operator|=
