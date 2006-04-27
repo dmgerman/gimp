@@ -3226,6 +3226,8 @@ literal|"color"
 argument_list|,
 literal|"The new entry's color color"
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -3452,6 +3454,8 @@ literal|"color"
 argument_list|,
 literal|"The color requested"
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -3562,6 +3566,8 @@ argument_list|,
 literal|"color"
 argument_list|,
 literal|"The new color"
+argument_list|,
+name|FALSE
 argument_list|,
 name|NULL
 argument_list|,

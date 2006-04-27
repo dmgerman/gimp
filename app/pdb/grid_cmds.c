@@ -1941,6 +1941,8 @@ literal|"fgcolor"
 argument_list|,
 literal|"The image's grid foreground color"
 argument_list|,
+name|TRUE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -2027,6 +2029,8 @@ argument_list|,
 literal|"fgcolor"
 argument_list|,
 literal|"The new foreground color"
+argument_list|,
+name|TRUE
 argument_list|,
 name|NULL
 argument_list|,
@@ -2115,6 +2119,8 @@ literal|"bgcolor"
 argument_list|,
 literal|"The image's grid background color"
 argument_list|,
+name|TRUE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -2201,6 +2207,8 @@ argument_list|,
 literal|"bgcolor"
 argument_list|,
 literal|"The new background color"
+argument_list|,
+name|TRUE
 argument_list|,
 name|NULL
 argument_list|,

@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * GimpConfig object property dumper.  * Copyright (C) 2001-2003  Sven Neumann<sven@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * GimpConfig object property dumper.  * Copyright (C) 2001-2006  Sven Neumann<sven@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -849,13 +849,15 @@ modifier|*
 name|param_spec
 parameter_list|)
 block|{
-name|GType
-name|type
-decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
 name|blurb
+init|=
+name|g_param_spec_get_blurb
+argument_list|(
+name|param_spec
+argument_list|)
 decl_stmt|;
 specifier|const
 name|gchar
@@ -864,13 +866,6 @@ name|values
 init|=
 name|NULL
 decl_stmt|;
-name|blurb
-operator|=
-name|g_param_spec_get_blurb
-argument_list|(
-name|param_spec
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -898,36 +893,41 @@ name|name
 argument_list|)
 expr_stmt|;
 block|}
-name|type
-operator|=
-name|param_spec
-operator|->
-name|value_type
-expr_stmt|;
 if|if
 condition|(
-name|g_type_is_a
+name|GIMP_IS_PARAM_SPEC_RGB
 argument_list|(
-name|type
-argument_list|,
-name|GIMP_TYPE_RGB
+name|param_spec
 argument_list|)
 condition|)
 block|{
+if|if
+condition|(
+name|GIMP_PARAM_SPEC_RGB
+argument_list|(
+name|param_spec
+argument_list|)
+operator|->
+name|has_alpha
+condition|)
 name|values
 operator|=
-literal|"The color is specified in the form (color-rgba red green blue alpha) "
+literal|"The color is specified in the form (color-rgba red green blue "
+literal|"alpha) with channel values as floats between 0.0 and 1.0."
+expr_stmt|;
+else|else
+name|values
+operator|=
+literal|"The color is specified in the form (color-rgb red green blue) "
 literal|"with channel values as floats between 0.0 and 1.0."
 expr_stmt|;
 block|}
 elseif|else
 if|if
 condition|(
-name|g_type_is_a
+name|GIMP_IS_PARAM_SPEC_MEMSIZE
 argument_list|(
-name|type
-argument_list|,
-name|GIMP_TYPE_MEMSIZE
+name|param_spec
 argument_list|)
 condition|)
 block|{
@@ -942,11 +942,9 @@ block|}
 elseif|else
 if|if
 condition|(
-name|g_type_is_a
+name|GIMP_IS_PARAM_SPEC_CONFIG_PATH
 argument_list|(
-name|type
-argument_list|,
-name|GIMP_TYPE_CONFIG_PATH
+name|param_spec
 argument_list|)
 condition|)
 block|{
@@ -1045,11 +1043,9 @@ block|}
 elseif|else
 if|if
 condition|(
-name|g_type_is_a
+name|GIMP_IS_PARAM_SPEC_UNIT
 argument_list|(
-name|type
-argument_list|,
-name|GIMP_TYPE_UNIT
+name|param_spec
 argument_list|)
 condition|)
 block|{
@@ -1064,7 +1060,9 @@ if|if
 condition|(
 name|g_type_is_a
 argument_list|(
-name|type
+name|param_spec
+operator|->
+name|value_type
 argument_list|,
 name|GIMP_TYPE_CONFIG
 argument_list|)
@@ -1081,7 +1079,9 @@ switch|switch
 condition|(
 name|G_TYPE_FUNDAMENTAL
 argument_list|(
-name|type
+name|param_spec
+operator|->
+name|value_type
 argument_list|)
 condition|)
 block|{
@@ -1184,7 +1184,9 @@ name|enum_class
 operator|=
 name|g_type_class_peek
 argument_list|(
-name|type
+name|param_spec
+operator|->
+name|value_type
 argument_list|)
 expr_stmt|;
 name|str
@@ -1302,7 +1304,9 @@ literal|"FIXME: Can't tell anything about a %s."
 argument_list|,
 name|g_type_name
 argument_list|(
-name|type
+name|param_spec
+operator|->
+name|value_type
 argument_list|)
 argument_list|)
 expr_stmt|;

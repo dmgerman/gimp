@@ -57,7 +57,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27de06b80103
+DECL|enum|__anon2c6d0a9e0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -70,7 +70,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27de06b80203
+DECL|enum|__anon2c6d0a9e0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -508,6 +508,8 @@ argument_list|,
 name|NULL
 argument_list|,
 name|NULL
+argument_list|,
+name|TRUE
 argument_list|,
 operator|&
 name|color

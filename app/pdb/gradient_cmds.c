@@ -6539,6 +6539,8 @@ literal|"color"
 argument_list|,
 literal|"The return color"
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -6673,6 +6675,8 @@ literal|"color"
 argument_list|,
 literal|"The color to set"
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -6805,6 +6809,8 @@ argument_list|,
 literal|"color"
 argument_list|,
 literal|"The return color"
+argument_list|,
+name|FALSE
 argument_list|,
 name|NULL
 argument_list|,
@@ -6939,6 +6945,8 @@ argument_list|,
 literal|"color"
 argument_list|,
 literal|"The color to set"
+argument_list|,
+name|FALSE
 argument_list|,
 name|NULL
 argument_list|,

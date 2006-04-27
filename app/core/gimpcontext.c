@@ -1299,7 +1299,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b31ce8a0103
+DECL|enum|__anon2906f46c0103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1313,7 +1313,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b31ce8a0203
+DECL|enum|__anon2906f46c0203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0
@@ -2561,6 +2561,8 @@ index|[
 name|GIMP_CONTEXT_PROP_FOREGROUND
 index|]
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 operator|&
@@ -2579,6 +2581,8 @@ name|gimp_context_prop_names
 index|[
 name|GIMP_CONTEXT_PROP_BACKGROUND
 index|]
+argument_list|,
+name|FALSE
 argument_list|,
 name|NULL
 argument_list|,

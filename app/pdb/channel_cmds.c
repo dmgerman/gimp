@@ -1239,6 +1239,14 @@ operator|&
 name|color
 argument_list|)
 expr_stmt|;
+name|gimp_rgb_set_alpha
+argument_list|(
+operator|&
+name|color
+argument_list|,
+literal|1.0
+argument_list|)
+expr_stmt|;
 block|}
 name|return_vals
 operator|=
@@ -1555,6 +1563,8 @@ argument_list|,
 literal|"color"
 argument_list|,
 literal|"The channel compositing color"
+argument_list|,
+name|FALSE
 argument_list|,
 name|NULL
 argument_list|,
@@ -2392,6 +2402,8 @@ literal|"color"
 argument_list|,
 literal|"The channel compositing color"
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -2478,6 +2490,8 @@ argument_list|,
 literal|"color"
 argument_list|,
 literal|"The new channel compositing color"
+argument_list|,
+name|FALSE
 argument_list|,
 name|NULL
 argument_list|,

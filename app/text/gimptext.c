@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b88f1b30103
+DECL|enum|__anon29a3277b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -517,6 +517,8 @@ argument_list|,
 literal|"color"
 argument_list|,
 name|NULL
+argument_list|,
+name|FALSE
 argument_list|,
 operator|&
 name|black

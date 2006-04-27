@@ -490,6 +490,14 @@ operator|&
 name|foreground
 argument_list|)
 expr_stmt|;
+name|gimp_rgb_set_alpha
+argument_list|(
+operator|&
+name|foreground
+argument_list|,
+literal|1.0
+argument_list|)
+expr_stmt|;
 name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
@@ -655,6 +663,14 @@ name|context
 argument_list|,
 operator|&
 name|background
+argument_list|)
+expr_stmt|;
+name|gimp_rgb_set_alpha
+argument_list|(
+operator|&
+name|background
+argument_list|,
+literal|1.0
 argument_list|)
 expr_stmt|;
 name|return_vals
@@ -2514,6 +2530,8 @@ literal|"foreground"
 argument_list|,
 literal|"The foreground color"
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -2580,6 +2598,8 @@ argument_list|,
 literal|"foreground"
 argument_list|,
 literal|"The foreground color"
+argument_list|,
+name|FALSE
 argument_list|,
 name|NULL
 argument_list|,
@@ -2648,6 +2668,8 @@ literal|"background"
 argument_list|,
 literal|"The background color"
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -2714,6 +2736,8 @@ argument_list|,
 literal|"background"
 argument_list|,
 literal|"The background color"
+argument_list|,
+name|FALSE
 argument_list|,
 name|NULL
 argument_list|,

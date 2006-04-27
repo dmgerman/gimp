@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2791267a0103
+DECL|enum|__anon2a28c8250103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -434,6 +434,8 @@ literal|"padding-color"
 argument_list|,
 name|CANVAS_PADDING_COLOR_BLURB
 argument_list|,
+name|FALSE
+argument_list|,
 operator|&
 name|white
 argument_list|,
@@ -653,6 +655,8 @@ argument_list|,
 literal|"padding-color"
 argument_list|,
 name|CANVAS_PADDING_COLOR_BLURB
+argument_list|,
+name|FALSE
 argument_list|,
 operator|&
 name|black

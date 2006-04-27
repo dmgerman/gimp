@@ -106,7 +106,7 @@ define|default, flags)\   g_object_class_install_property (class, id,\          
 end_define
 
 begin_define
-DECL|macro|GIMP_CONFIG_INSTALL_PROP_RGB (class,id,name,blurb,default,flags)
+DECL|macro|GIMP_CONFIG_INSTALL_PROP_RGB (class,id,name,blurb,has_alpha,default,flags)
 define|#
 directive|define
 name|GIMP_CONFIG_INSTALL_PROP_RGB
@@ -119,7 +119,9 @@ name|name
 parameter_list|,
 name|blurb
 parameter_list|,
-define|default, flags)\   g_object_class_install_property (class, id,\                                    gimp_param_spec_rgb (name, NULL, blurb,\                                    default,\                                    flags | GIMP_CONFIG_PARAM_FLAGS))
+name|has_alpha
+parameter_list|,
+define|default, flags) \   g_object_class_install_property (class, id,\                                    gimp_param_spec_rgb (name, NULL, blurb,\                                    has_alpha, default, \                                    flags | GIMP_CONFIG_PARAM_FLAGS))
 end_define
 
 begin_define

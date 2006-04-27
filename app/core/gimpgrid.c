@@ -69,7 +69,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0627e50103
+DECL|enum|__anon296392e40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -269,6 +269,8 @@ argument_list|(
 literal|"The foreground color of the grid."
 argument_list|)
 argument_list|,
+name|TRUE
+argument_list|,
 operator|&
 name|black
 argument_list|,
@@ -288,6 +290,8 @@ argument_list|(
 literal|"The background color of the grid; "
 literal|"only used in double dashed line style."
 argument_list|)
+argument_list|,
+name|TRUE
 argument_list|,
 operator|&
 name|white
