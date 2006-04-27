@@ -146,7 +146,7 @@ end_comment
 begin_function_decl
 specifier|static
 name|void
-name|menu_can_change_accels
+name|menus_can_change_accels
 parameter_list|(
 name|GimpGuiConfig
 modifier|*
@@ -230,7 +230,7 @@ argument_list|(
 name|GTK_TYPE_MENU
 argument_list|)
 expr_stmt|;
-name|menu_can_change_accels
+name|menus_can_change_accels
 argument_list|(
 name|GIMP_GUI_CONFIG
 argument_list|(
@@ -250,7 +250,7 @@ literal|"notify::can-change-accels"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|menu_can_change_accels
+name|menus_can_change_accels
 argument_list|)
 argument_list|,
 name|NULL
@@ -964,7 +964,7 @@ name|gimp
 operator|->
 name|config
 argument_list|,
-name|menu_can_change_accels
+name|menus_can_change_accels
 argument_list|,
 name|NULL
 argument_list|)
@@ -1226,8 +1226,8 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|menu_can_change_accels (GimpGuiConfig * config)
-name|menu_can_change_accels
+DECL|function|menus_can_change_accels (GimpGuiConfig * config)
+name|menus_can_change_accels
 parameter_list|(
 name|GimpGuiConfig
 modifier|*
