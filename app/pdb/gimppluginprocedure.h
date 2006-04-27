@@ -223,6 +223,7 @@ DECL|member|parent_class
 name|GimpProcedureClass
 name|parent_class
 decl_stmt|;
+comment|/*  virtual functions  */
 DECL|member|get_progname
 specifier|const
 name|gchar
@@ -236,6 +237,24 @@ specifier|const
 name|GimpPlugInProcedure
 modifier|*
 name|procedure
+parameter_list|)
+function_decl|;
+comment|/*  signals  */
+DECL|member|menu_path_added
+name|void
+function_decl|(
+modifier|*
+name|menu_path_added
+function_decl|)
+parameter_list|(
+name|GimpPlugInProcedure
+modifier|*
+name|procedure
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|menu_path
 parameter_list|)
 function_decl|;
 block|}
