@@ -86,20 +86,31 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* Retrieve the locale domain of the standard plug-ins */
+comment|/* Retrieve all help domains */
 end_comment
 
-begin_decl_stmt
-specifier|const
+begin_function_decl
+name|gint
+name|plug_in_locale_domains
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|gchar
 modifier|*
-name|plug_in_standard_locale_domain
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
+modifier|*
+modifier|*
+name|locale_domains
+parameter_list|,
+name|gchar
+modifier|*
+modifier|*
+modifier|*
+name|locale_paths
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_endif
 endif|#

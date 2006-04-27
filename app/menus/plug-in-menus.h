@@ -18,26 +18,6 @@ end_define
 
 begin_function_decl
 name|void
-name|plug_in_menus_init
-parameter_list|(
-name|Gimp
-modifier|*
-name|gimp
-parameter_list|,
-name|GSList
-modifier|*
-name|plug_in_defs
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|std_plugins_domain
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|plug_in_menus_setup
 parameter_list|(
 name|GimpUIManager
