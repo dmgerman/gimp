@@ -625,6 +625,13 @@ argument_list|,
 name|drawable
 argument_list|)
 expr_stmt|;
+name|gimp_value_array_truncate
+argument_list|(
+name|args
+argument_list|,
+literal|3
+argument_list|)
+expr_stmt|;
 comment|/* run the plug-in procedure */
 name|gimp_procedure_execute_async
 argument_list|(
