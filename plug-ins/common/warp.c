@@ -83,7 +83,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b51b640103
+DECL|enum|__anon2a415dbd0103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -103,7 +103,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b51b640208
+DECL|struct|__anon2a415dbd0208
 block|{
 DECL|member|amount
 name|gdouble
@@ -256,13 +256,13 @@ name|guchar
 modifier|*
 name|data
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|int
+name|gint
 name|w
 parameter_list|)
 function_decl|;
@@ -516,10 +516,6 @@ end_decl_stmt
 
 begin_comment
 comment|/* -------------------------------------------------------------------------- */
-end_comment
-
-begin_comment
-comment|/* static gint         display_diff_map = TRUE;   show 16-bit diff. vectormap */
 end_comment
 
 begin_decl_stmt
@@ -4171,7 +4167,7 @@ operator|%
 literal|256
 argument_list|)
 expr_stmt|;
-comment|/* low-order byte */
+comment|/* low-order byte  */
 name|d
 operator|+=
 name|dest_bytes_inc
@@ -4219,7 +4215,7 @@ condition|(
 operator|(
 name|row
 operator|%
-literal|5
+literal|8
 operator|)
 operator|==
 literal|0
@@ -4319,7 +4315,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|diff_prepare_row (GimpPixelRgn * pixel_rgn,guchar * data,int x,int y,int w)
+DECL|function|diff_prepare_row (GimpPixelRgn * pixel_rgn,guchar * data,gint x,gint y,gint w)
 name|diff_prepare_row
 parameter_list|(
 name|GimpPixelRgn
@@ -4330,68 +4326,34 @@ name|guchar
 modifier|*
 name|data
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|int
+name|gint
 name|w
 parameter_list|)
 block|{
-name|int
+name|gint
 name|b
 decl_stmt|;
-if|if
-condition|(
 name|y
-operator|==
-literal|0
-condition|)
-comment|/* wrap around */
-name|gimp_pixel_rgn_get_row
+operator|=
+name|CLAMP
 argument_list|(
-name|pixel_rgn
+name|y
 argument_list|,
-name|data
+literal|0
 argument_list|,
-name|x
-argument_list|,
-operator|(
 name|pixel_rgn
 operator|->
 name|h
 operator|-
 literal|1
-operator|)
-argument_list|,
-name|w
 argument_list|)
 expr_stmt|;
-elseif|else
-if|if
-condition|(
-name|y
-operator|==
-name|pixel_rgn
-operator|->
-name|h
-condition|)
-name|gimp_pixel_rgn_get_row
-argument_list|(
-name|pixel_rgn
-argument_list|,
-name|data
-argument_list|,
-name|x
-argument_list|,
-literal|1
-argument_list|,
-name|w
-argument_list|)
-expr_stmt|;
-else|else
 name|gimp_pixel_rgn_get_row
 argument_list|(
 name|pixel_rgn
@@ -5147,6 +5109,7 @@ name|dest_bytes
 argument_list|)
 expr_stmt|;
 comment|/*  initialize the source and destination pixel regions  */
+comment|/* 'curl' vector-rotation input */
 name|gimp_pixel_rgn_init
 argument_list|(
 operator|&
@@ -5167,7 +5130,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* 'curl' vector-rotation input */
+comment|/* destination: X diff output */
 name|gimp_pixel_rgn_init
 argument_list|(
 operator|&
@@ -5188,7 +5151,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* destination: X diff output */
+comment|/* Y diff output */
 name|gimp_pixel_rgn_init
 argument_list|(
 operator|&
@@ -5209,7 +5172,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* Y diff output */
 name|pr
 operator|=
 name|prev_row
@@ -5269,6 +5231,7 @@ expr_stmt|;
 comment|/* fixed-vector (x,y) component scale factors */
 name|scale_vec_x
 operator|=
+operator|(
 name|dvals
 operator|.
 name|vector_scale
@@ -5291,9 +5254,11 @@ operator|*
 literal|256.0
 operator|/
 literal|10
+operator|)
 expr_stmt|;
 name|scale_vec_y
 operator|=
+operator|(
 name|dvals
 operator|.
 name|vector_scale
@@ -5316,13 +5281,13 @@ operator|*
 literal|256.0
 operator|/
 literal|10
+operator|)
 expr_stmt|;
 if|if
 condition|(
 name|do_vecmap
 condition|)
 block|{
-comment|/*    fprintf(stderr,"%f %f  x,y vector components.\n",scale_vec_x,scale_vec_y); */
 name|vdraw
 operator|=
 name|gimp_drawable_get
@@ -5339,6 +5304,7 @@ operator|->
 name|bpp
 expr_stmt|;
 comment|/* bytes per pixel in SOURCE drawable */
+comment|/* fixed-vector scale-map */
 name|gimp_pixel_rgn_init
 argument_list|(
 operator|&
@@ -5359,7 +5325,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* fixed-vector scale-map */
 name|crv
 operator|=
 name|cur_row_v
@@ -5405,6 +5370,7 @@ name|gdraw
 operator|->
 name|bpp
 expr_stmt|;
+comment|/* fixed-vector scale-map */
 name|gimp_pixel_rgn_init
 argument_list|(
 operator|&
@@ -5425,7 +5391,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* fixed-vector scale-map */
 name|prg
 operator|=
 name|prev_row_g
@@ -5503,6 +5468,7 @@ name|mdraw
 operator|->
 name|bpp
 expr_stmt|;
+comment|/* fixed-vector scale-map */
 name|gimp_pixel_rgn_init
 argument_list|(
 operator|&
@@ -5523,7 +5489,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* fixed-vector scale-map */
 name|crm
 operator|=
 name|cur_row_m
@@ -5559,6 +5524,7 @@ name|G_PI
 operator|/
 literal|180.0
 expr_stmt|;
+comment|/* note that '3' is rather arbitrary here. */
 name|rscalefac
 operator|=
 literal|256.0
@@ -5569,7 +5535,7 @@ operator|*
 name|src_bytes
 operator|)
 expr_stmt|;
-comment|/* note that '3' is rather arbitrary here. */
+comment|/* scale factor for gradient map components */
 name|gscalefac
 operator|=
 name|dvals
@@ -5584,7 +5550,6 @@ operator|*
 name|gbytes
 operator|)
 expr_stmt|;
-comment|/* scale factor for gradient map components */
 comment|/*  loop through the rows, applying the differential convolution  */
 for|for
 control|(
@@ -6436,7 +6401,7 @@ condition|(
 operator|(
 name|row
 operator|%
-literal|5
+literal|8
 operator|)
 operator|==
 literal|0
@@ -6444,12 +6409,12 @@ condition|)
 name|gimp_progress_update
 argument_list|(
 operator|(
-name|double
+name|gdouble
 operator|)
 name|row
 operator|/
 call|(
-name|double
+name|gdouble
 call|)
 argument_list|(
 name|y2
@@ -6517,7 +6482,6 @@ name|y1
 operator|)
 argument_list|)
 expr_stmt|;
-comment|/*   if (display_diff_map) {     gimp_display_new(new_image_id);   }   */
 name|gimp_displays_flush
 argument_list|()
 expr_stmt|;
@@ -6733,6 +6697,7 @@ literal|"Finding XY gradient"
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/* generate x,y differential images (arrays) */
 name|diff
 argument_list|(
 name|disp_map
@@ -6744,7 +6709,6 @@ operator|&
 name|ydlayer
 argument_list|)
 expr_stmt|;
-comment|/* generate x,y differential images (arrays) */
 comment|/* Get selection area */
 if|if
 condition|(
@@ -7318,8 +7282,6 @@ comment|/* only push undo-stack the first time through. Thanks Spencer! */
 if|if
 condition|(
 name|first_time
-operator|==
-name|TRUE
 condition|)
 name|gimp_pixel_rgn_init
 argument_list|(
@@ -7350,7 +7312,6 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 else|else
-comment|/*     gimp_pixel_rgn_init (&dest_rgn, new, x1, y1, (x2 - x1), (y2 - y1), TRUE, FALSE); */
 name|gimp_pixel_rgn_init
 argument_list|(
 operator|&
@@ -7484,8 +7445,6 @@ condition|(
 name|dvals
 operator|.
 name|mag_use
-operator|==
-name|TRUE
 condition|)
 block|{
 name|gimp_pixel_rgn_init
@@ -7583,13 +7542,12 @@ name|map_y_rgn
 argument_list|)
 expr_stmt|;
 block|}
+comment|/* substep displacement vector scale factor */
 name|dscalefac
 operator|=
-operator|(
 name|dvals
 operator|.
 name|amount
-operator|)
 operator|/
 operator|(
 literal|256
@@ -7601,7 +7559,6 @@ operator|.
 name|substeps
 operator|)
 expr_stmt|;
-comment|/* substep displacement vector scale factor */
 for|for
 control|(
 name|pr
@@ -7649,8 +7606,6 @@ condition|(
 name|dvals
 operator|.
 name|mag_use
-operator|==
-name|TRUE
 condition|)
 name|mmagrow
 operator|=
@@ -7786,8 +7741,6 @@ condition|(
 name|dvals
 operator|.
 name|mag_use
-operator|==
-name|TRUE
 condition|)
 block|{
 name|scalefac
@@ -7881,13 +7834,13 @@ name|substep
 operator|++
 control|)
 block|{
+comment|/* In this (substep) loop, (x,y) remain fixed. (dx,dy) vary each step. */
 name|needx
 operator|=
 name|x
 operator|+
 name|dx
 expr_stmt|;
-comment|/* In this (substep) loop, (x,y) remain fixed. (dx,dy) vary each step. */
 name|needy
 operator|=
 name|y
@@ -7903,7 +7856,7 @@ condition|)
 name|xi
 operator|=
 operator|(
-name|int
+name|gint
 operator|)
 name|needx
 expr_stmt|;
@@ -7913,7 +7866,7 @@ operator|=
 operator|-
 operator|(
 operator|(
-name|int
+name|gint
 operator|)
 operator|-
 name|needx
@@ -7930,7 +7883,7 @@ condition|)
 name|yi
 operator|=
 operator|(
-name|int
+name|gint
 operator|)
 name|needy
 expr_stmt|;
@@ -7940,7 +7893,7 @@ operator|=
 operator|-
 operator|(
 operator|(
-name|int
+name|gint
 operator|)
 operator|-
 name|needy
@@ -8460,6 +8413,7 @@ argument_list|,
 name|ivalues
 argument_list|)
 expr_stmt|;
+comment|/* move displacement vector to this new value */
 name|dx
 operator|+=
 name|dscalefac
@@ -8470,7 +8424,6 @@ operator|-
 literal|32768
 operator|)
 expr_stmt|;
-comment|/* move displacement vector to this new value */
 name|dy
 operator|+=
 name|dscalefac
@@ -8529,7 +8482,7 @@ condition|)
 name|xi
 operator|=
 operator|(
-name|int
+name|gint
 operator|)
 name|needx
 expr_stmt|;
@@ -8539,7 +8492,7 @@ operator|=
 operator|-
 operator|(
 operator|(
-name|int
+name|gint
 operator|)
 operator|-
 name|needx
@@ -8556,7 +8509,7 @@ condition|)
 name|yi
 operator|=
 operator|(
-name|int
+name|gint
 operator|)
 name|needy
 expr_stmt|;
@@ -8566,7 +8519,7 @@ operator|=
 operator|-
 operator|(
 operator|(
-name|int
+name|gint
 operator|)
 operator|-
 name|needy
@@ -9343,6 +9296,7 @@ expr_stmt|;
 block|}
 name|data
 operator|=
+operator|(
 name|tile
 operator|->
 name|data
@@ -9366,6 +9320,7 @@ operator|(
 name|x
 operator|%
 name|tile_width
+operator|)
 operator|)
 operator|)
 expr_stmt|;
