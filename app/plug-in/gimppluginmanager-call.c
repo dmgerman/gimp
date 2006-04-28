@@ -81,6 +81,19 @@ directive|include
 file|"gimppluginmanager.h"
 end_include
 
+begin_define
+DECL|macro|__YES_I_NEED_GIMP_PLUG_IN_MANAGER_RUN__
+define|#
+directive|define
+name|__YES_I_NEED_GIMP_PLUG_IN_MANAGER_RUN__
+end_define
+
+begin_include
+include|#
+directive|include
+file|"gimppluginmanager-run.h"
+end_include
+
 begin_include
 include|#
 directive|include
@@ -91,19 +104,6 @@ begin_include
 include|#
 directive|include
 file|"plug-in-params.h"
-end_include
-
-begin_define
-DECL|macro|__YES_I_NEED_PLUG_IN_RUN__
-define|#
-directive|define
-name|__YES_I_NEED_PLUG_IN_RUN__
-end_define
-
-begin_include
-include|#
-directive|include
-file|"plug-in-run.h"
 end_include
 
 begin_include
@@ -119,8 +119,8 @@ end_comment
 begin_function
 name|GValueArray
 modifier|*
-DECL|function|plug_in_run (GimpPlugInManager * manager,GimpContext * context,GimpProgress * progress,GimpPlugInProcedure * procedure,GValueArray * args,gboolean synchronous,gboolean destroy_return_vals,gint display_ID)
-name|plug_in_run
+DECL|function|gimp_plug_in_manager_run (GimpPlugInManager * manager,GimpContext * context,GimpProgress * progress,GimpPlugInProcedure * procedure,GValueArray * args,gboolean synchronous,gboolean destroy_return_vals,gint display_ID)
+name|gimp_plug_in_manager_run
 parameter_list|(
 name|GimpPlugInManager
 modifier|*
@@ -748,8 +748,8 @@ end_function
 begin_function
 name|GValueArray
 modifier|*
-DECL|function|plug_in_run_temp (GimpPlugInManager * manager,GimpContext * context,GimpProgress * progress,GimpTemporaryProcedure * procedure,GValueArray * args)
-name|plug_in_run_temp
+DECL|function|gimp_plug_in_manager_run_temp (GimpPlugInManager * manager,GimpContext * context,GimpProgress * progress,GimpTemporaryProcedure * procedure,GValueArray * args)
+name|gimp_plug_in_manager_run_temp
 parameter_list|(
 name|GimpPlugInManager
 modifier|*

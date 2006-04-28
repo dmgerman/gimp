@@ -57,23 +57,23 @@ directive|include
 file|"core/gimpparamspecs.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"plug-in/plug-in.h"
-end_include
-
 begin_define
-DECL|macro|__YES_I_NEED_PLUG_IN_RUN__
+DECL|macro|__YES_I_NEED_GIMP_PLUG_IN_MANAGER_RUN__
 define|#
 directive|define
-name|__YES_I_NEED_PLUG_IN_RUN__
+name|__YES_I_NEED_GIMP_PLUG_IN_MANAGER_RUN__
 end_define
 
 begin_include
 include|#
 directive|include
-file|"plug-in/plug-in-run.h"
+file|"plug-in/gimppluginmanager-run.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"plug-in/plug-in.h"
 end_include
 
 begin_include
@@ -90,7 +90,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon297c85300103
+DECL|enum|__anon27e70e0d0103
 block|{
 DECL|enumerator|MENU_PATH_ADDED
 name|MENU_PATH_ADDED
@@ -969,7 +969,7 @@ name|args
 argument_list|)
 return|;
 return|return
-name|plug_in_run
+name|gimp_plug_in_manager_run
 argument_list|(
 name|gimp
 operator|->
@@ -1027,7 +1027,7 @@ name|gint32
 name|display_ID
 parameter_list|)
 block|{
-name|plug_in_run
+name|gimp_plug_in_manager_run
 argument_list|(
 name|gimp
 operator|->
