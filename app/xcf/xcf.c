@@ -78,7 +78,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"plug-in/plug-ins.h"
+file|"plug-in/gimppluginmanager.h"
 end_include
 
 begin_include
@@ -528,9 +528,11 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|plug_ins_procedure_add
+name|gimp_plug_in_manager_add_procedure
 argument_list|(
 name|gimp
+operator|->
+name|plug_in_manager
 argument_list|,
 name|proc
 argument_list|)
@@ -748,9 +750,11 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|plug_ins_procedure_add
+name|gimp_plug_in_manager_add_procedure
 argument_list|(
 name|gimp
+operator|->
+name|plug_in_manager
 argument_list|,
 name|proc
 argument_list|)

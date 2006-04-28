@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"plug-in/gimppluginmanager.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"file/file-utils.h"
 end_include
 
@@ -3136,6 +3142,8 @@ operator|&&
 name|file_utils_find_proc_by_extension
 argument_list|(
 name|gimp
+operator|->
+name|plug_in_manager
 operator|->
 name|load_procs
 argument_list|,

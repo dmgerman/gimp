@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimppluginmanager.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"plug-in.h"
 end_include
 
@@ -103,12 +109,6 @@ begin_include
 include|#
 directive|include
 file|"plug-in-params.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"plug-in-shm.h"
 end_include
 
 begin_comment
@@ -572,11 +572,11 @@ name|shm_ID
 decl_stmt|;
 name|shm_ID
 operator|=
-name|plug_in_shm_get_ID
+name|gimp_plug_in_manager_get_shm_ID
 argument_list|(
 name|plug_in
 operator|->
-name|gimp
+name|manager
 argument_list|)
 expr_stmt|;
 if|if
@@ -751,6 +751,8 @@ name|gimp_item_get_by_ID
 argument_list|(
 name|plug_in
 operator|->
+name|manager
+operator|->
 name|gimp
 argument_list|,
 name|tile_info
@@ -884,11 +886,11 @@ argument_list|,
 literal|0
 argument_list|)
 argument_list|,
-name|plug_in_shm_get_addr
+name|gimp_plug_in_manager_get_shm_addr
 argument_list|(
 name|plug_in
 operator|->
-name|gimp
+name|manager
 argument_list|)
 argument_list|,
 name|tile_size
@@ -972,6 +974,8 @@ operator|)
 name|gimp_item_get_by_ID
 argument_list|(
 name|plug_in
+operator|->
+name|manager
 operator|->
 name|gimp
 argument_list|,
@@ -1163,11 +1167,11 @@ name|use_shm
 condition|)
 name|memcpy
 argument_list|(
-name|plug_in_shm_get_addr
+name|gimp_plug_in_manager_get_shm_addr
 argument_list|(
 name|plug_in
 operator|->
-name|gimp
+name|manager
 argument_list|)
 argument_list|,
 name|tile_data_pointer
@@ -1374,6 +1378,8 @@ name|gimp_pdb_lookup_procedure
 argument_list|(
 name|plug_in
 operator|->
+name|manager
+operator|->
 name|gimp
 operator|->
 name|pdb
@@ -1393,6 +1399,8 @@ name|gimp_pdb_lookup_compat_proc_name
 argument_list|(
 name|plug_in
 operator|->
+name|manager
+operator|->
 name|gimp
 operator|->
 name|pdb
@@ -1411,6 +1419,8 @@ name|gimp_pdb_lookup_procedure
 argument_list|(
 name|plug_in
 operator|->
+name|manager
+operator|->
 name|gimp
 operator|->
 name|pdb
@@ -1421,6 +1431,8 @@ expr_stmt|;
 if|if
 condition|(
 name|plug_in
+operator|->
+name|manager
 operator|->
 name|gimp
 operator|->
@@ -1468,6 +1480,8 @@ block|{
 if|if
 condition|(
 name|plug_in
+operator|->
+name|manager
 operator|->
 name|gimp
 operator|->
@@ -1548,6 +1562,8 @@ if|if
 condition|(
 name|plug_in
 operator|->
+name|manager
+operator|->
 name|gimp
 operator|->
 name|pdb_compat_mode
@@ -1604,7 +1620,7 @@ name|plug_in_push
 argument_list|(
 name|plug_in
 operator|->
-name|gimp
+name|manager
 argument_list|,
 name|plug_in
 argument_list|)
@@ -1614,6 +1630,8 @@ operator|=
 name|gimp_pdb_execute_procedure_by_name_args
 argument_list|(
 name|plug_in
+operator|->
+name|manager
 operator|->
 name|gimp
 operator|->
@@ -1646,7 +1664,7 @@ name|plug_in_pop
 argument_list|(
 name|plug_in
 operator|->
-name|gimp
+name|manager
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -2597,6 +2615,8 @@ name|gimp_pdb_compat_param_spec
 argument_list|(
 name|plug_in
 operator|->
+name|manager
+operator|->
 name|gimp
 argument_list|,
 name|proc_install
@@ -2658,6 +2678,8 @@ init|=
 name|gimp_pdb_compat_param_spec
 argument_list|(
 name|plug_in
+operator|->
+name|manager
 operator|->
 name|gimp
 argument_list|,

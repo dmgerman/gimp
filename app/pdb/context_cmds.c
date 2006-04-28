@@ -76,6 +76,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"plug-in/gimppluginmanager.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"plug-in/plug-in-context.h"
 end_include
 
@@ -123,9 +129,13 @@ if|if
 condition|(
 name|gimp
 operator|->
+name|plug_in_manager
+operator|->
 name|current_plug_in
 operator|&&
 name|gimp
+operator|->
+name|plug_in_manager
 operator|->
 name|current_plug_in
 operator|->
@@ -136,6 +146,8 @@ operator|=
 name|plug_in_context_push
 argument_list|(
 name|gimp
+operator|->
+name|plug_in_manager
 operator|->
 name|current_plug_in
 argument_list|)
@@ -194,9 +206,13 @@ if|if
 condition|(
 name|gimp
 operator|->
+name|plug_in_manager
+operator|->
 name|current_plug_in
 operator|&&
 name|gimp
+operator|->
+name|plug_in_manager
 operator|->
 name|current_plug_in
 operator|->
@@ -207,6 +223,8 @@ operator|=
 name|plug_in_context_pop
 argument_list|(
 name|gimp
+operator|->
+name|plug_in_manager
 operator|->
 name|current_plug_in
 argument_list|)

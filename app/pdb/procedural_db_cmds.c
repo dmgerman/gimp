@@ -70,7 +70,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"plug-in/plug-in-data.h"
+file|"plug-in/gimppluginmanager-data.h"
 end_include
 
 begin_function
@@ -1450,9 +1450,11 @@ name|orig_data
 decl_stmt|;
 name|orig_data
 operator|=
-name|plug_in_data_get
+name|gimp_plug_in_manager_get_data
 argument_list|(
 name|gimp
+operator|->
+name|plug_in_manager
 argument_list|,
 name|canonical
 argument_list|,
@@ -1611,9 +1613,11 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
-name|plug_in_data_get
+name|gimp_plug_in_manager_get_data
 argument_list|(
 name|gimp
+operator|->
+name|plug_in_manager
 argument_list|,
 name|canonical
 argument_list|,
@@ -1763,9 +1767,11 @@ argument_list|(
 name|identifier
 argument_list|)
 decl_stmt|;
-name|plug_in_data_set
+name|gimp_plug_in_manager_set_data
 argument_list|(
 name|gimp
+operator|->
+name|plug_in_manager
 argument_list|,
 name|canonical
 argument_list|,

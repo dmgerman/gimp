@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"plug-in/gimppluginmanager.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"file/file-open.h"
 end_include
 
@@ -773,6 +779,8 @@ argument_list|(
 name|image
 operator|->
 name|gimp
+operator|->
+name|plug_in_manager
 operator|->
 name|save_procs
 argument_list|,

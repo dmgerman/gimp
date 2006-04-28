@@ -64,6 +64,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"plug-in/gimppluginmanager.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"plug-in/plug-in-progress.h"
 end_include
 
@@ -134,11 +140,15 @@ if|if
 condition|(
 name|gimp
 operator|->
+name|plug_in_manager
+operator|->
 name|current_plug_in
 condition|)
 name|plug_in_progress_message
 argument_list|(
 name|gimp
+operator|->
+name|plug_in_manager
 operator|->
 name|current_plug_in
 argument_list|,

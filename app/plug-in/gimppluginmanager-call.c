@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimppluginmanager.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"plug-in.h"
 end_include
 
@@ -103,12 +109,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"plug-in-shm.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -119,12 +119,12 @@ end_comment
 begin_function
 name|GValueArray
 modifier|*
-DECL|function|plug_in_run (Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpPlugInProcedure * procedure,GValueArray * args,gboolean synchronous,gboolean destroy_return_vals,gint display_ID)
+DECL|function|plug_in_run (GimpPlugInManager * manager,GimpContext * context,GimpProgress * progress,GimpPlugInProcedure * procedure,GValueArray * args,gboolean synchronous,gboolean destroy_return_vals,gint display_ID)
 name|plug_in_run
 parameter_list|(
-name|Gimp
+name|GimpPlugInManager
 modifier|*
-name|gimp
+name|manager
 parameter_list|,
 name|GimpContext
 modifier|*
@@ -164,9 +164,9 @@ name|plug_in
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|GIMP_IS_GIMP
+name|GIMP_IS_PLUG_IN_MANAGER
 argument_list|(
-name|gimp
+name|manager
 argument_list|)
 argument_list|,
 name|NULL
@@ -219,7 +219,7 @@ name|plug_in
 operator|=
 name|plug_in_new
 argument_list|(
-name|gimp
+name|manager
 argument_list|,
 name|context
 argument_list|,
@@ -240,15 +240,23 @@ condition|(
 name|plug_in
 condition|)
 block|{
+name|GimpCoreConfig
+modifier|*
+name|core_config
+init|=
+name|manager
+operator|->
+name|gimp
+operator|->
+name|config
+decl_stmt|;
 name|GimpDisplayConfig
 modifier|*
 name|display_config
 init|=
 name|GIMP_DISPLAY_CONFIG
 argument_list|(
-name|gimp
-operator|->
-name|config
+name|core_config
 argument_list|)
 decl_stmt|;
 name|GimpGuiConfig
@@ -257,9 +265,7 @@ name|gui_config
 init|=
 name|GIMP_GUI_CONFIG
 argument_list|(
-name|gimp
-operator|->
-name|config
+name|core_config
 argument_list|)
 decl_stmt|;
 name|GPConfig
@@ -311,9 +317,9 @@ name|config
 operator|.
 name|shm_ID
 operator|=
-name|plug_in_shm_get_ID
+name|gimp_plug_in_manager_get_shm_ID
 argument_list|(
-name|gimp
+name|manager
 argument_list|)
 expr_stmt|;
 name|config
@@ -380,9 +386,7 @@ name|config
 operator|.
 name|install_cmap
 operator|=
-name|gimp
-operator|->
-name|config
+name|core_config
 operator|->
 name|install_cmap
 expr_stmt|;
@@ -400,9 +404,7 @@ name|min_colors
 operator|=
 name|CLAMP
 argument_list|(
-name|gimp
-operator|->
-name|config
+name|core_config
 operator|->
 name|min_colors
 argument_list|,
@@ -438,6 +440,8 @@ operator|*
 operator|)
 name|gimp_get_program_class
 argument_list|(
+name|manager
+operator|->
 name|gimp
 argument_list|)
 expr_stmt|;
@@ -447,6 +451,8 @@ name|display_name
 operator|=
 name|gimp_get_display_name
 argument_list|(
+name|manager
+operator|->
 name|gimp
 argument_list|,
 name|display_ID
@@ -605,6 +611,8 @@ argument_list|)
 expr_stmt|;
 name|gimp_threads_leave
 argument_list|(
+name|manager
+operator|->
 name|gimp
 argument_list|)
 expr_stmt|;
@@ -617,6 +625,8 @@ argument_list|)
 expr_stmt|;
 name|gimp_threads_enter
 argument_list|(
+name|manager
+operator|->
 name|gimp
 argument_list|)
 expr_stmt|;
@@ -663,6 +673,8 @@ argument_list|)
 expr_stmt|;
 name|gimp_threads_leave
 argument_list|(
+name|manager
+operator|->
 name|gimp
 argument_list|)
 expr_stmt|;
@@ -675,6 +687,8 @@ argument_list|)
 expr_stmt|;
 name|gimp_threads_enter
 argument_list|(
+name|manager
+operator|->
 name|gimp
 argument_list|)
 expr_stmt|;
@@ -734,12 +748,12 @@ end_function
 begin_function
 name|GValueArray
 modifier|*
-DECL|function|plug_in_run_temp (Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpTemporaryProcedure * procedure,GValueArray * args)
+DECL|function|plug_in_run_temp (GimpPlugInManager * manager,GimpContext * context,GimpProgress * progress,GimpTemporaryProcedure * procedure,GValueArray * args)
 name|plug_in_run_temp
 parameter_list|(
-name|Gimp
+name|GimpPlugInManager
 modifier|*
-name|gimp
+name|manager
 parameter_list|,
 name|GimpContext
 modifier|*
@@ -770,9 +784,9 @@ name|plug_in
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|GIMP_IS_GIMP
+name|GIMP_IS_PLUG_IN_MANAGER
 argument_list|(
-name|gimp
+name|manager
 argument_list|)
 argument_list|,
 name|NULL

@@ -54,7 +54,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"plug-in/plug-in-locale-domain.h"
+file|"plug-in/gimppluginmanager.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"plug-in/gimppluginmanager-locale-domain.h"
 end_include
 
 begin_include
@@ -404,6 +410,8 @@ name|manager
 operator|->
 name|gimp
 operator|->
+name|plug_in_manager
+operator|->
 name|plug_in_procedures
 init|;
 name|list
@@ -562,11 +570,13 @@ argument_list|)
 expr_stmt|;
 name|locale_domain
 operator|=
-name|plug_in_locale_domain
+name|gimp_plug_in_manager_get_locale_domain
 argument_list|(
 name|manager
 operator|->
 name|gimp
+operator|->
+name|plug_in_manager
 argument_list|,
 name|progname
 argument_list|,

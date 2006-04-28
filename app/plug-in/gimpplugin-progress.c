@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimppluginmanager.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"plug-in.h"
 end_include
 
@@ -157,6 +163,8 @@ operator|=
 name|gimp_new_progress
 argument_list|(
 name|plug_in
+operator|->
+name|manager
 operator|->
 name|gimp
 argument_list|,
@@ -371,6 +379,8 @@ block|{
 name|gimp_free_progress
 argument_list|(
 name|plug_in
+operator|->
+name|manager
 operator|->
 name|gimp
 argument_list|,
@@ -714,6 +724,8 @@ name|gimp_pdb_lookup_procedure
 argument_list|(
 name|plug_in
 operator|->
+name|manager
+operator|->
 name|gimp
 operator|->
 name|pdb
@@ -834,6 +846,8 @@ argument_list|,
 literal|"pdb"
 argument_list|,
 name|plug_in
+operator|->
+name|manager
 operator|->
 name|gimp
 operator|->
@@ -1045,6 +1059,8 @@ name|progress
 argument_list|,
 name|plug_in
 operator|->
+name|manager
+operator|->
 name|gimp
 argument_list|,
 name|domain
@@ -1058,6 +1074,8 @@ block|{
 name|gimp_message
 argument_list|(
 name|plug_in
+operator|->
+name|manager
 operator|->
 name|gimp
 argument_list|,

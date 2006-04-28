@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * plug-in-file.c  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimppluginmanager-file.c  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -48,6 +48,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimppluginmanager.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimppluginmanager-file.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"plug-in.h"
 end_include
 
@@ -57,24 +69,18 @@ directive|include
 file|"plug-in-def.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"plug-in-file.h"
-end_include
-
 begin_comment
 comment|/*  public functions  */
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|plug_in_file_register_load_handler (Gimp * gimp,const gchar * name,const gchar * extensions,const gchar * prefixes,const gchar * magics)
-name|plug_in_file_register_load_handler
+DECL|function|gimp_plug_in_manager_register_load_handler (GimpPlugInManager * manager,const gchar * name,const gchar * extensions,const gchar * prefixes,const gchar * magics)
+name|gimp_plug_in_manager_register_load_handler
 parameter_list|(
-name|Gimp
+name|GimpPlugInManager
 modifier|*
-name|gimp
+name|manager
 parameter_list|,
 specifier|const
 name|gchar
@@ -111,9 +117,9 @@ name|list
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|GIMP_IS_GIMP
+name|GIMP_IS_PLUG_IN_MANAGER
 argument_list|(
-name|gimp
+name|manager
 argument_list|)
 argument_list|,
 name|FALSE
@@ -130,11 +136,11 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimp
+name|manager
 operator|->
 name|current_plug_in
 operator|&&
-name|gimp
+name|manager
 operator|->
 name|current_plug_in
 operator|->
@@ -142,7 +148,7 @@ name|plug_in_def
 condition|)
 name|list
 operator|=
-name|gimp
+name|manager
 operator|->
 name|current_plug_in
 operator|->
@@ -153,7 +159,7 @@ expr_stmt|;
 else|else
 name|list
 operator|=
-name|gimp
+name|manager
 operator|->
 name|plug_in_procedures
 expr_stmt|;
@@ -281,20 +287,20 @@ condition|(
 operator|!
 name|g_slist_find
 argument_list|(
-name|gimp
+name|manager
 operator|->
 name|load_procs
 argument_list|,
 name|file_proc
 argument_list|)
 condition|)
-name|gimp
+name|manager
 operator|->
 name|load_procs
 operator|=
 name|g_slist_prepend
 argument_list|(
-name|gimp
+name|manager
 operator|->
 name|load_procs
 argument_list|,
@@ -309,12 +315,12 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|plug_in_file_register_save_handler (Gimp * gimp,const gchar * name,const gchar * extensions,const gchar * prefixes)
-name|plug_in_file_register_save_handler
+DECL|function|gimp_plug_in_manager_register_save_handler (GimpPlugInManager * manager,const gchar * name,const gchar * extensions,const gchar * prefixes)
+name|gimp_plug_in_manager_register_save_handler
 parameter_list|(
-name|Gimp
+name|GimpPlugInManager
 modifier|*
-name|gimp
+name|manager
 parameter_list|,
 specifier|const
 name|gchar
@@ -346,9 +352,9 @@ name|list
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|GIMP_IS_GIMP
+name|GIMP_IS_PLUG_IN_MANAGER
 argument_list|(
-name|gimp
+name|manager
 argument_list|)
 argument_list|,
 name|FALSE
@@ -365,11 +371,11 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimp
+name|manager
 operator|->
 name|current_plug_in
 operator|&&
-name|gimp
+name|manager
 operator|->
 name|current_plug_in
 operator|->
@@ -377,7 +383,7 @@ name|plug_in_def
 condition|)
 name|list
 operator|=
-name|gimp
+name|manager
 operator|->
 name|current_plug_in
 operator|->
@@ -388,7 +394,7 @@ expr_stmt|;
 else|else
 name|list
 operator|=
-name|gimp
+name|manager
 operator|->
 name|plug_in_procedures
 expr_stmt|;
@@ -519,20 +525,20 @@ condition|(
 operator|!
 name|g_slist_find
 argument_list|(
-name|gimp
+name|manager
 operator|->
 name|save_procs
 argument_list|,
 name|file_proc
 argument_list|)
 condition|)
-name|gimp
+name|manager
 operator|->
 name|save_procs
 operator|=
 name|g_slist_prepend
 argument_list|(
-name|gimp
+name|manager
 operator|->
 name|save_procs
 argument_list|,
@@ -547,12 +553,12 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|plug_in_file_register_mime_type (Gimp * gimp,const gchar * name,const gchar * mime_type)
-name|plug_in_file_register_mime_type
+DECL|function|gimp_plug_in_manager_register_mime_type (GimpPlugInManager * manager,const gchar * name,const gchar * mime_type)
+name|gimp_plug_in_manager_register_mime_type
 parameter_list|(
-name|Gimp
+name|GimpPlugInManager
 modifier|*
-name|gimp
+name|manager
 parameter_list|,
 specifier|const
 name|gchar
@@ -575,9 +581,9 @@ name|list
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|GIMP_IS_GIMP
+name|GIMP_IS_PLUG_IN_MANAGER
 argument_list|(
-name|gimp
+name|manager
 argument_list|)
 argument_list|,
 name|FALSE
@@ -603,11 +609,11 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimp
+name|manager
 operator|->
 name|current_plug_in
 operator|&&
-name|gimp
+name|manager
 operator|->
 name|current_plug_in
 operator|->
@@ -615,7 +621,7 @@ name|plug_in_def
 condition|)
 name|list
 operator|=
-name|gimp
+name|manager
 operator|->
 name|current_plug_in
 operator|->
@@ -626,7 +632,7 @@ expr_stmt|;
 else|else
 name|list
 operator|=
-name|gimp
+name|manager
 operator|->
 name|plug_in_procedures
 expr_stmt|;
@@ -662,12 +668,12 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|plug_in_file_register_thumb_loader (Gimp * gimp,const gchar * load_proc,const gchar * thumb_proc)
-name|plug_in_file_register_thumb_loader
+DECL|function|gimp_plug_in_manager_register_thumb_loader (GimpPlugInManager * manager,const gchar * load_proc,const gchar * thumb_proc)
+name|gimp_plug_in_manager_register_thumb_loader
 parameter_list|(
-name|Gimp
+name|GimpPlugInManager
 modifier|*
-name|gimp
+name|manager
 parameter_list|,
 specifier|const
 name|gchar
@@ -690,9 +696,9 @@ name|list
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|GIMP_IS_GIMP
+name|GIMP_IS_PLUG_IN_MANAGER
 argument_list|(
-name|gimp
+name|manager
 argument_list|)
 argument_list|,
 name|FALSE
@@ -714,11 +720,11 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimp
+name|manager
 operator|->
 name|current_plug_in
 operator|&&
-name|gimp
+name|manager
 operator|->
 name|current_plug_in
 operator|->
@@ -726,7 +732,7 @@ name|plug_in_def
 condition|)
 name|list
 operator|=
-name|gimp
+name|manager
 operator|->
 name|current_plug_in
 operator|->
@@ -737,7 +743,7 @@ expr_stmt|;
 else|else
 name|list
 operator|=
-name|gimp
+name|manager
 operator|->
 name|plug_in_procedures
 expr_stmt|;

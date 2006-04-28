@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"plug-in/plug-in.h"
 end_include
 
@@ -303,6 +309,8 @@ return|return
 name|plug_in_run_temp
 argument_list|(
 name|gimp
+operator|->
+name|plug_in_manager
 argument_list|,
 name|context
 argument_list|,
@@ -358,6 +366,8 @@ operator|=
 name|plug_in_run_temp
 argument_list|(
 name|gimp
+operator|->
+name|plug_in_manager
 argument_list|,
 name|context
 argument_list|,

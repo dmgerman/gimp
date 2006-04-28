@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"plug-in/gimppluginmanager.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"file/file-save.h"
 end_include
 
@@ -605,6 +611,8 @@ name|file_utils_find_proc
 argument_list|(
 name|gimp
 operator|->
+name|plug_in_manager
+operator|->
 name|save_procs
 argument_list|,
 name|uri
@@ -615,6 +623,8 @@ operator|=
 name|file_utils_find_proc
 argument_list|(
 name|gimp
+operator|->
+name|plug_in_manager
 operator|->
 name|save_procs
 argument_list|,
@@ -831,6 +841,8 @@ name|file_utils_find_proc
 argument_list|(
 name|gimp
 operator|->
+name|plug_in_manager
+operator|->
 name|save_procs
 argument_list|,
 name|uri
@@ -841,6 +853,8 @@ operator|=
 name|file_utils_find_proc
 argument_list|(
 name|gimp
+operator|->
+name|plug_in_manager
 operator|->
 name|save_procs
 argument_list|,

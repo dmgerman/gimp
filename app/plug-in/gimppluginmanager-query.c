@@ -64,13 +64,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimp.h"
+file|"pdb/gimppluginprocedure.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"pdb/gimppluginprocedure.h"
+file|"gimppluginmanager.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimppluginmanager-query.h"
 end_include
 
 begin_function
@@ -107,12 +113,12 @@ end_function
 
 begin_function
 name|gint
-DECL|function|plug_ins_query (Gimp * gimp,const gchar * search_str,gchar *** menu_strs,gchar *** accel_strs,gchar *** prog_strs,gchar *** types_strs,gchar *** realname_strs,gint32 ** time_ints)
-name|plug_ins_query
+DECL|function|gimp_plug_in_manager_query (GimpPlugInManager * manager,const gchar * search_str,gchar *** menu_strs,gchar *** accel_strs,gchar *** prog_strs,gchar *** types_strs,gchar *** realname_strs,gint32 ** time_ints)
+name|gimp_plug_in_manager_query
 parameter_list|(
-name|Gimp
+name|GimpPlugInManager
 modifier|*
-name|gimp
+name|manager
 parameter_list|,
 specifier|const
 name|gchar
@@ -180,9 +186,9 @@ name|sregex
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|GIMP_IS_GIMP
+name|GIMP_IS_PLUG_IN_MANAGER
 argument_list|(
-name|gimp
+name|manager
 argument_list|)
 argument_list|,
 literal|0
@@ -308,7 +314,7 @@ for|for
 control|(
 name|list
 operator|=
-name|gimp
+name|manager
 operator|->
 name|plug_in_procedures
 init|;

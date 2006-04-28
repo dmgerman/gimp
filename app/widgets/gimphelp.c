@@ -72,7 +72,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"plug-in/plug-in-help-domain.h"
+file|"plug-in/gimppluginmanager-help-domain.h"
 end_include
 
 begin_include
@@ -986,9 +986,11 @@ comment|/*  FIXME: error msg  */
 return|return;
 name|n_domains
 operator|=
-name|plug_in_help_domains
+name|gimp_plug_in_manager_get_help_domains
 argument_list|(
 name|gimp
+operator|->
+name|plug_in_manager
 argument_list|,
 operator|&
 name|help_domains

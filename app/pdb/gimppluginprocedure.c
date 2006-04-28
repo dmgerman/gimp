@@ -63,12 +63,6 @@ directive|include
 file|"plug-in/plug-in.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"plug-in/plug-ins.h"
-end_include
-
 begin_define
 DECL|macro|__YES_I_NEED_PLUG_IN_RUN__
 define|#
@@ -96,7 +90,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c186c140103
+DECL|enum|__anon297c85300103
 block|{
 DECL|enumerator|MENU_PATH_ADDED
 name|MENU_PATH_ADDED
@@ -978,6 +972,8 @@ return|return
 name|plug_in_run
 argument_list|(
 name|gimp
+operator|->
+name|plug_in_manager
 argument_list|,
 name|context
 argument_list|,
@@ -1034,6 +1030,8 @@ block|{
 name|plug_in_run
 argument_list|(
 name|gimp
+operator|->
+name|plug_in_manager
 argument_list|,
 name|context
 argument_list|,

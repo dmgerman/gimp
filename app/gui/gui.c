@@ -72,12 +72,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpenvirontable.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -91,6 +85,18 @@ begin_include
 include|#
 directive|include
 file|"core/gimptoolinfo.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"plug-in/gimpenvirontable.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"plug-in/gimppluginmanager.h"
 end_include
 
 begin_include
@@ -1332,6 +1338,8 @@ expr_stmt|;
 name|gimp_environ_table_add
 argument_list|(
 name|gimp
+operator|->
+name|plug_in_manager
 operator|->
 name|environ_table
 argument_list|,

@@ -78,7 +78,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"plug-in/plug-in-data.h"
+file|"plug-in/gimppluginmanager.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"plug-in/gimppluginmanager-data.h"
 end_include
 
 begin_include
@@ -453,9 +459,11 @@ index|]
 argument_list|)
 condition|)
 block|{
-name|gimp_set_last_plug_in
+name|gimp_plug_in_manager_set_last_plug_in
 argument_list|(
 name|gimp
+operator|->
+name|plug_in_manager
 argument_list|,
 name|proc
 argument_list|)
@@ -560,6 +568,8 @@ operator|=
 name|g_slist_nth_data
 argument_list|(
 name|gimp
+operator|->
+name|plug_in_manager
 operator|->
 name|last_plug_ins
 argument_list|,
@@ -810,9 +820,11 @@ name|response_id
 operator|==
 name|GTK_RESPONSE_OK
 condition|)
-name|plug_in_data_free
+name|gimp_plug_in_manager_data_free
 argument_list|(
 name|gimp
+operator|->
+name|plug_in_manager
 argument_list|)
 expr_stmt|;
 block|}

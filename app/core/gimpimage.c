@@ -228,6 +228,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"plug-in/gimppluginmanager.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"file/file-utils.h"
 end_include
 
@@ -282,7 +288,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon292584d30103
+DECL|enum|__anon28b962810103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -361,7 +367,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon292584d30203
+DECL|enum|__anon28b962810203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -5583,6 +5589,8 @@ argument_list|(
 name|image
 operator|->
 name|gimp
+operator|->
+name|plug_in_manager
 operator|->
 name|load_procs
 argument_list|,

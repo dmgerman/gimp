@@ -42,9 +42,9 @@ name|GValueArray
 modifier|*
 name|plug_in_run
 parameter_list|(
-name|Gimp
+name|GimpPlugInManager
 modifier|*
-name|gimp
+name|manager
 parameter_list|,
 name|GimpContext
 modifier|*
@@ -83,9 +83,9 @@ name|GValueArray
 modifier|*
 name|plug_in_run_temp
 parameter_list|(
-name|Gimp
+name|GimpPlugInManager
 modifier|*
-name|gimp
+name|manager
 parameter_list|,
 name|GimpContext
 modifier|*

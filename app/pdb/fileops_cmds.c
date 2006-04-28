@@ -100,7 +100,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"plug-in/plug-in-file.h"
+file|"plug-in/gimppluginmanager-file.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"plug-in/gimppluginmanager.h"
 end_include
 
 begin_function
@@ -161,6 +167,8 @@ name|file_utils_filename_to_uri
 argument_list|(
 name|gimp
 operator|->
+name|plug_in_manager
+operator|->
 name|load_procs
 argument_list|,
 name|g_value_get_string
@@ -195,6 +203,8 @@ operator|=
 name|file_utils_find_proc
 argument_list|(
 name|gimp
+operator|->
+name|plug_in_manager
 operator|->
 name|load_procs
 argument_list|,
@@ -448,6 +458,8 @@ name|file_utils_filename_to_uri
 argument_list|(
 name|gimp
 operator|->
+name|plug_in_manager
+operator|->
 name|load_procs
 argument_list|,
 name|filename
@@ -593,6 +605,8 @@ name|file_utils_filename_to_uri
 argument_list|(
 name|gimp
 operator|->
+name|plug_in_manager
+operator|->
 name|load_procs
 argument_list|,
 name|g_value_get_string
@@ -627,6 +641,8 @@ operator|=
 name|file_utils_find_proc
 argument_list|(
 name|gimp
+operator|->
+name|plug_in_manager
 operator|->
 name|save_procs
 argument_list|,
@@ -1315,9 +1331,11 @@ argument_list|)
 decl_stmt|;
 name|success
 operator|=
-name|plug_in_file_register_load_handler
+name|gimp_plug_in_manager_register_load_handler
 argument_list|(
 name|gimp
+operator|->
+name|plug_in_manager
 argument_list|,
 name|canonical
 argument_list|,
@@ -1449,9 +1467,11 @@ argument_list|)
 decl_stmt|;
 name|success
 operator|=
-name|plug_in_file_register_load_handler
+name|gimp_plug_in_manager_register_load_handler
 argument_list|(
 name|gimp
+operator|->
+name|plug_in_manager
 argument_list|,
 name|canonical
 argument_list|,
@@ -1583,9 +1603,11 @@ argument_list|)
 decl_stmt|;
 name|success
 operator|=
-name|plug_in_file_register_save_handler
+name|gimp_plug_in_manager_register_save_handler
 argument_list|(
 name|gimp
+operator|->
+name|plug_in_manager
 argument_list|,
 name|canonical
 argument_list|,
@@ -1697,9 +1719,11 @@ argument_list|)
 decl_stmt|;
 name|success
 operator|=
-name|plug_in_file_register_mime_type
+name|gimp_plug_in_manager_register_mime_type
 argument_list|(
 name|gimp
+operator|->
+name|plug_in_manager
 argument_list|,
 name|canonical
 argument_list|,
@@ -1809,9 +1833,11 @@ argument_list|)
 decl_stmt|;
 name|success
 operator|=
-name|plug_in_file_register_thumb_loader
+name|gimp_plug_in_manager_register_thumb_loader
 argument_list|(
 name|gimp
+operator|->
+name|plug_in_manager
 argument_list|,
 name|canonical
 argument_list|,

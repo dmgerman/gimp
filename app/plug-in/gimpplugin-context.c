@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimppluginmanager.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"plug-in.h"
 end_include
 
@@ -109,6 +115,8 @@ operator|=
 name|gimp_context_new
 argument_list|(
 name|plug_in
+operator|->
+name|manager
 operator|->
 name|gimp
 argument_list|,
