@@ -20,16 +20,6 @@ begin_function_decl
 name|void
 name|user_install_dialog_run
 parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|alternate_system_gimprc
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|alernate_gimprc
-parameter_list|,
 name|gboolean
 name|verbose
 parameter_list|)
