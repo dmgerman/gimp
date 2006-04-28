@@ -88,12 +88,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpmath/gimpmath.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
@@ -107,12 +101,6 @@ begin_include
 include|#
 directive|include
 file|"config/gimpconfig-file.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config/gimprc.h"
 end_include
 
 begin_include
@@ -135,7 +123,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4f28530103
+DECL|enum|__anon2998b34a0103
 block|{
 DECL|enumerator|WELCOME_PAGE
 name|WELCOME_PAGE
@@ -145,25 +133,6 @@ name|INSTALLATION_PAGE
 block|,
 DECL|enumerator|NUM_PAGES
 name|NUM_PAGES
-block|}
-enum|;
-end_enum
-
-begin_enum
-enum|enum
-DECL|enum|__anon2b4f28530203
-block|{
-DECL|enumerator|DIRENT_COLUMN
-name|DIRENT_COLUMN
-block|,
-DECL|enumerator|PIXBUF_COLUMN
-name|PIXBUF_COLUMN
-block|,
-DECL|enumerator|DESC_COLUMN
-name|DESC_COLUMN
-block|,
-DECL|enumerator|NUM_COLUMNS
-name|NUM_COLUMNS
 block|}
 enum|;
 end_enum
@@ -180,9 +149,9 @@ parameter_list|,
 name|gint
 name|response_id
 parameter_list|,
-name|GimpRc
+name|GtkWidget
 modifier|*
-name|gimprc
+name|notebook
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -221,17 +190,6 @@ end_function_decl
 begin_comment
 comment|/*  private stuff  */
 end_comment
-
-begin_decl_stmt
-DECL|variable|notebook
-specifier|static
-name|GtkWidget
-modifier|*
-name|notebook
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|title_label
@@ -288,7 +246,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b4f28530303
+DECL|enum|__anon2998b34a0203
 block|{
 DECL|enumerator|USER_INSTALL_MKDIR
 name|USER_INSTALL_MKDIR
@@ -307,7 +265,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b4f28530408
+DECL|struct|__anon2998b34a0308
 block|{
 DECL|member|name
 specifier|const
@@ -521,7 +479,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|user_install_dialog_response (GtkWidget * dialog,gint response_id,GimpRc * gimprc)
+DECL|function|user_install_dialog_response (GtkWidget * dialog,gint response_id,GtkWidget * notebook)
 name|user_install_dialog_response
 parameter_list|(
 name|GtkWidget
@@ -531,9 +489,9 @@ parameter_list|,
 name|gint
 name|response_id
 parameter_list|,
-name|GimpRc
+name|GtkWidget
 modifier|*
-name|gimprc
+name|notebook
 parameter_list|)
 block|{
 name|gint
@@ -682,23 +640,10 @@ break|break;
 case|case
 name|INSTALLATION_PAGE
 case|:
-if|if
-condition|(
-operator|!
-name|migrate
-condition|)
-name|gimp_rc_save
-argument_list|(
-name|gimprc
-argument_list|)
-expr_stmt|;
 name|gtk_widget_destroy
 argument_list|(
 name|dialog
 argument_list|)
-expr_stmt|;
-name|gtk_main_quit
-argument_list|()
 expr_stmt|;
 break|break;
 default|default:
@@ -1228,27 +1173,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|user_install_dialog_run (const gchar * alternate_system_gimprc,const gchar * alternate_gimprc,gboolean verbose)
+DECL|function|user_install_dialog_run (gboolean verbose)
 name|user_install_dialog_run
 parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|alternate_system_gimprc
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|alternate_gimprc
-parameter_list|,
 name|gboolean
 name|verbose
 parameter_list|)
 block|{
-name|GimpRc
-modifier|*
-name|gimprc
-decl_stmt|;
 name|GtkWidget
 modifier|*
 name|dialog
@@ -1260,6 +1191,10 @@ decl_stmt|;
 name|GtkWidget
 modifier|*
 name|hbox
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|notebook
 decl_stmt|;
 name|GdkPixbuf
 modifier|*
@@ -1332,44 +1267,18 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-name|gimprc
-operator|=
-name|gimp_rc_new
-argument_list|(
-name|alternate_system_gimprc
-argument_list|,
-name|alternate_gimprc
-argument_list|,
-name|verbose
-argument_list|)
-expr_stmt|;
 name|g_signal_connect
 argument_list|(
 name|dialog
 argument_list|,
-literal|"response"
+literal|"destroy"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|user_install_dialog_response
+name|gtk_main_quit
 argument_list|)
 argument_list|,
-name|gimprc
-argument_list|)
-expr_stmt|;
-name|g_object_weak_ref
-argument_list|(
-name|G_OBJECT
-argument_list|(
-name|dialog
-argument_list|)
-argument_list|,
-operator|(
-name|GWeakNotify
-operator|)
-name|g_object_unref
-argument_list|,
-name|gimprc
+name|NULL
 argument_list|)
 expr_stmt|;
 name|vbox
@@ -1631,6 +1540,20 @@ argument_list|(
 name|notebook
 argument_list|)
 expr_stmt|;
+name|g_signal_connect
+argument_list|(
+name|dialog
+argument_list|,
+literal|"response"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|user_install_dialog_response
+argument_list|)
+argument_list|,
+name|notebook
+argument_list|)
+expr_stmt|;
 name|user_install_dialog_add_welcome_page
 argument_list|(
 name|dialog
@@ -1676,10 +1599,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/*********************/
-end_comment
 
 begin_comment
 comment|/*  Local functions  */

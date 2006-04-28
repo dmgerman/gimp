@@ -672,10 +672,6 @@ else|else
 block|{
 name|user_install_dialog_run
 argument_list|(
-name|alternate_system_gimprc
-argument_list|,
-name|alternate_gimprc
-argument_list|,
 name|be_verbose
 argument_list|)
 expr_stmt|;
