@@ -154,7 +154,7 @@ end_struct
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c85a0f40103
+DECL|enum|__anon28f6f16a0103
 block|{
 DECL|enumerator|USER_INSTALL_MKDIR
 name|USER_INSTALL_MKDIR
@@ -173,7 +173,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c85a0f40208
+DECL|struct|__anon28f6f16a0208
 block|{
 DECL|member|name
 specifier|const

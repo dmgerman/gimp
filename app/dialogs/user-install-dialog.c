@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2945f4500103
+DECL|enum|__anon2c4276b90103
 block|{
 DECL|enumerator|WELCOME_PAGE
 name|WELCOME_PAGE
@@ -955,6 +955,22 @@ decl_stmt|;
 name|GtkTextIter
 name|cursor
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GTK_IS_WIDGET
+argument_list|(
+name|view
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GTK_IS_TEXT_BUFFER
+argument_list|(
+name|buffer
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gtk_text_buffer_insert_at_cursor
 argument_list|(
 name|buffer
@@ -1467,7 +1483,7 @@ argument_list|(
 name|user_install_dialog_response
 argument_list|)
 argument_list|,
-name|notebook
+name|install
 argument_list|)
 expr_stmt|;
 name|user_install_dialog_add_welcome_page
