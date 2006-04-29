@@ -1616,7 +1616,7 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/*  Execute the procedure even if gimp_pdb_lookup_procedure()    *  returned NULL, gimp_pdb_execute_procedure_by_name_args() will    *  return appropriate error return_vals.    */
-name|plug_in_push
+name|gimp_plug_in_manager_plug_in_push
 argument_list|(
 name|plug_in
 operator|->
@@ -1660,7 +1660,7 @@ argument_list|,
 name|args
 argument_list|)
 expr_stmt|;
-name|plug_in_pop
+name|gimp_plug_in_manager_plug_in_pop
 argument_list|(
 name|plug_in
 operator|->
