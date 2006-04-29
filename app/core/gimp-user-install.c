@@ -154,7 +154,7 @@ end_struct
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29639ad70103
+DECL|enum|__anon2c85a0f40103
 block|{
 DECL|enumerator|USER_INSTALL_MKDIR
 name|USER_INSTALL_MKDIR
@@ -173,7 +173,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29639ad70208
+DECL|struct|__anon2c85a0f40208
 block|{
 DECL|member|name
 specifier|const
@@ -487,23 +487,31 @@ name|gimp_directory
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|/*  FIXME  */
 name|version
 operator|=
 name|strstr
 argument_list|(
 name|dir
 argument_list|,
-literal|"2.3"
+name|GIMP_APP_VERSION
 argument_list|)
 expr_stmt|;
-name|g_assert
-argument_list|(
+if|if
+condition|(
+operator|!
 name|version
-operator|!=
-name|NULL
+condition|)
+block|{
+name|g_free
+argument_list|(
+name|dir
 argument_list|)
 expr_stmt|;
+return|return
+name|install
+return|;
+block|}
+comment|/*  we assume that GIMP_APP_VERSION is in the form '2.x'  */
 name|version
 index|[
 literal|2
