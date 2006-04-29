@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpparamspecs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"pdb/gimppdb.h"
 end_include
 
@@ -680,7 +686,7 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-name|g_value_set_enum
+name|g_value_set_int
 argument_list|(
 operator|&
 name|args
@@ -1026,7 +1032,7 @@ argument_list|,
 name|n_domains
 argument_list|)
 expr_stmt|;
-name|g_value_set_pointer
+name|gimp_value_take_stringarray
 argument_list|(
 operator|&
 name|args
@@ -1037,6 +1043,8 @@ literal|1
 index|]
 argument_list|,
 name|help_domains
+argument_list|,
+name|n_domains
 argument_list|)
 expr_stmt|;
 name|g_value_set_int
@@ -1052,7 +1060,7 @@ argument_list|,
 name|n_domains
 argument_list|)
 expr_stmt|;
-name|g_value_set_pointer
+name|gimp_value_take_stringarray
 argument_list|(
 operator|&
 name|args
@@ -1063,6 +1071,8 @@ literal|3
 index|]
 argument_list|,
 name|help_uris
+argument_list|,
+name|n_domains
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_execute_async
