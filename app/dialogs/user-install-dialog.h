@@ -20,8 +20,9 @@ begin_function_decl
 name|void
 name|user_install_dialog_run
 parameter_list|(
-name|gboolean
-name|verbose
+name|GimpUserInstall
+modifier|*
+name|install
 parameter_list|)
 function_decl|;
 end_function_decl
