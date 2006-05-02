@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon296632360103
+DECL|enum|__anon297dd13c0103
 block|{
 DECL|enumerator|WELCOME_PAGE
 name|WELCOME_PAGE
@@ -624,10 +624,6 @@ name|gchar
 modifier|*
 name|title
 decl_stmt|;
-name|gchar
-modifier|*
-name|label
-decl_stmt|;
 name|title
 operator|=
 name|g_strdup_printf
@@ -635,18 +631,6 @@ argument_list|(
 name|_
 argument_list|(
 literal|"It seems you have used GIMP %s before."
-argument_list|)
-argument_list|,
-name|version
-argument_list|)
-expr_stmt|;
-name|label
-operator|=
-name|g_strdup_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"_Migrate GIMP %s user settings"
 argument_list|)
 argument_list|,
 name|version
@@ -679,7 +663,10 @@ name|migrate
 argument_list|,
 name|migrate
 argument_list|,
-name|label
+name|_
+argument_list|(
+literal|"_Use my old settings"
+argument_list|)
 argument_list|,
 name|TRUE
 argument_list|,
@@ -687,7 +674,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"_Do a fresh user installation"
+literal|"_Do a fresh installation"
 argument_list|)
 argument_list|,
 name|FALSE
@@ -695,11 +682,6 @@ argument_list|,
 name|NULL
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|label
 argument_list|)
 expr_stmt|;
 name|g_free
