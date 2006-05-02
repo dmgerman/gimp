@@ -101,7 +101,7 @@ name|gchar
 modifier|*
 name|identifier
 parameter_list|,
-name|gpointer
+name|gconstpointer
 name|data
 parameter_list|,
 name|guint32

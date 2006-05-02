@@ -355,7 +355,7 @@ argument_list|(
 name|data
 argument_list|,
 operator|(
-name|gpointer
+name|gconstpointer
 operator|)
 name|hack
 argument_list|,
@@ -385,7 +385,7 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_procedural_db_set_data (const gchar * identifier,gpointer data,guint32 bytes)
+DECL|function|gimp_procedural_db_set_data (const gchar * identifier,gconstpointer data,guint32 bytes)
 name|gimp_procedural_db_set_data
 parameter_list|(
 specifier|const
@@ -393,7 +393,7 @@ name|gchar
 modifier|*
 name|identifier
 parameter_list|,
-name|gpointer
+name|gconstpointer
 name|data
 parameter_list|,
 name|guint32
