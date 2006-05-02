@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b989bd0103
+DECL|enum|__anon296632360103
 block|{
 DECL|enumerator|WELCOME_PAGE
 name|WELCOME_PAGE
@@ -687,7 +687,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Do a _fresh user installation"
+literal|"_Do a fresh user installation"
 argument_list|)
 argument_list|,
 name|FALSE
@@ -1177,7 +1177,7 @@ name|GTK_RESPONSE_CANCEL
 argument_list|,
 name|_
 argument_list|(
-literal|"Continue"
+literal|"C_ontinue"
 argument_list|)
 argument_list|,
 name|GTK_RESPONSE_OK
