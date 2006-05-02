@@ -20,8 +20,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-comment|/*< skip>*/
-DECL|enum|__anon28dd78d90103
+DECL|enum|__anon2c7218c30103
 block|{
 DECL|enumerator|PLUG_IN_RGB_IMAGE
 name|PLUG_IN_RGB_IMAGE
@@ -67,6 +66,29 @@ literal|5
 DECL|typedef|PlugInImageType
 block|}
 name|PlugInImageType
+typedef|;
+end_typedef
+
+begin_typedef
+typedef|typedef
+enum|enum
+comment|/*< pdb-skip>*/
+DECL|enum|__anon2c7218c30203
+block|{
+DECL|enumerator|GIMP_PLUG_IN_CALL_NONE
+name|GIMP_PLUG_IN_CALL_NONE
+block|,
+DECL|enumerator|GIMP_PLUG_IN_CALL_RUN
+name|GIMP_PLUG_IN_CALL_RUN
+block|,
+DECL|enumerator|GIMP_PLUG_IN_CALL_QUERY
+name|GIMP_PLUG_IN_CALL_QUERY
+block|,
+DECL|enumerator|GIMP_PLUG_IN_CALL_INIT
+name|GIMP_PLUG_IN_CALL_INIT
+DECL|typedef|GimpPlugInCallMode
+block|}
+name|GimpPlugInCallMode
 typedef|;
 end_typedef
 

@@ -105,6 +105,19 @@ directive|include
 file|"gimppluginmanager.h"
 end_include
 
+begin_define
+DECL|macro|__YES_I_NEED_GIMP_PLUG_IN_MANAGER_CALL__
+define|#
+directive|define
+name|__YES_I_NEED_GIMP_PLUG_IN_MANAGER_CALL__
+end_define
+
+begin_include
+include|#
+directive|include
+file|"gimppluginmanager-call.h"
+end_include
+
 begin_include
 include|#
 directive|include
@@ -161,7 +174,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3db3cc0103
+DECL|enum|__anon28b082cc0103
 block|{
 DECL|enumerator|MENU_BRANCH_ADDED
 name|MENU_BRANCH_ADDED
@@ -1428,7 +1441,7 @@ name|prog
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|plug_in_call_query
+name|gimp_plug_in_manager_call_query
 argument_list|(
 name|manager
 argument_list|,
@@ -1590,7 +1603,7 @@ name|prog
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|plug_in_call_init
+name|gimp_plug_in_manager_call_init
 argument_list|(
 name|manager
 argument_list|,

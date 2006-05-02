@@ -503,7 +503,9 @@ name|plug_in
 operator|&&
 name|plug_in
 operator|->
-name|query
+name|call_mode
+operator|==
+name|GIMP_PLUG_IN_CALL_QUERY
 condition|)
 block|{
 name|plug_in_def_set_locale_domain_name
@@ -633,7 +635,9 @@ name|plug_in
 operator|&&
 name|plug_in
 operator|->
-name|query
+name|call_mode
+operator|==
+name|GIMP_PLUG_IN_CALL_QUERY
 condition|)
 block|{
 name|plug_in_def_set_help_domain_name
@@ -1053,7 +1057,9 @@ name|plug_in
 operator|&&
 name|plug_in
 operator|->
-name|query
+name|call_mode
+operator|==
+name|GIMP_PLUG_IN_CALL_QUERY
 condition|)
 block|{
 name|GimpPlugInProcedure

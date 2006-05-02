@@ -19,16 +19,6 @@ end_define
 begin_include
 include|#
 directive|include
-file|<sys/types.h>
-end_include
-
-begin_comment
-comment|/* pid_t  */
-end_comment
-
-begin_include
-include|#
-directive|include
 file|"plug-in-proc-frame.h"
 end_include
 
@@ -60,51 +50,34 @@ name|open
 range|:
 literal|1
 decl_stmt|;
-comment|/*  Is the plug-in open?                    */
-DECL|member|query
-name|guint
-name|query
-range|:
-literal|1
+comment|/*  Is the plug-in open?              */
+DECL|member|call_mode
+name|GimpPlugInCallMode
+name|call_mode
 decl_stmt|;
-comment|/*  Are we querying the plug-in?            */
-DECL|member|init
-name|guint
-name|init
-range|:
-literal|1
-decl_stmt|;
-comment|/*  Are we initialing the plug-in?          */
-DECL|member|synchronous
-name|guint
-name|synchronous
-range|:
-literal|1
-decl_stmt|;
-comment|/*  Is the plug-in running synchronously?   */
 DECL|member|pid
 name|GPid
 name|pid
 decl_stmt|;
-comment|/*  Plug-in's process id                    */
+comment|/*  Plug-in's process id              */
 DECL|member|name
 name|gchar
 modifier|*
 name|name
 decl_stmt|;
-comment|/*  Plug-in's name                          */
+comment|/*  Plug-in's name                    */
 DECL|member|prog
 name|gchar
 modifier|*
 name|prog
 decl_stmt|;
-comment|/*  Plug-in's full path name                */
+comment|/*  Plug-in's full path name          */
 DECL|member|my_read
 name|GIOChannel
 modifier|*
 name|my_read
 decl_stmt|;
-comment|/*  App's read and write channels           */
+comment|/*  App's read and write channels     */
 DECL|member|my_write
 name|GIOChannel
 modifier|*
@@ -115,7 +88,7 @@ name|GIOChannel
 modifier|*
 name|his_read
 decl_stmt|;
-comment|/*  Plug-in's read and write channels       */
+comment|/*  Plug-in's read and write channels */
 DECL|member|his_write
 name|GIOChannel
 modifier|*
@@ -125,7 +98,7 @@ DECL|member|input_id
 name|guint
 name|input_id
 decl_stmt|;
-comment|/*  Id of input proc                        */
+comment|/*  Id of input proc                  */
 DECL|member|write_buffer
 name|gchar
 name|write_buffer
@@ -133,24 +106,24 @@ index|[
 name|WRITE_BUFFER_SIZE
 index|]
 decl_stmt|;
-comment|/*  Buffer for writing       */
+comment|/* Buffer for writing */
 DECL|member|write_buffer_index
 name|gint
 name|write_buffer_index
 decl_stmt|;
-comment|/*  Buffer index for writing */
+comment|/* Buffer index       */
 DECL|member|temp_procedures
 name|GSList
 modifier|*
 name|temp_procedures
 decl_stmt|;
-comment|/*  Temporary procedures                    */
+comment|/*  Temporary procedures              */
 DECL|member|ext_main_loop
 name|GMainLoop
 modifier|*
 name|ext_main_loop
 decl_stmt|;
-comment|/*  for waiting for extension_ack           */
+comment|/*  for waiting for extension_ack     */
 DECL|member|main_proc_frame
 name|PlugInProcFrame
 name|main_proc_frame
@@ -165,7 +138,7 @@ name|PlugInDef
 modifier|*
 name|plug_in_def
 decl_stmt|;
-comment|/*  Valid only during query() and init()    */
+comment|/*  Valid during query() and init()   */
 block|}
 struct|;
 end_struct
@@ -188,44 +161,6 @@ parameter_list|(
 name|GimpPlugInManager
 modifier|*
 name|manager
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|plug_in_call_query
-parameter_list|(
-name|GimpPlugInManager
-modifier|*
-name|manager
-parameter_list|,
-name|GimpContext
-modifier|*
-name|context
-parameter_list|,
-name|PlugInDef
-modifier|*
-name|plug_in_def
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|plug_in_call_init
-parameter_list|(
-name|GimpPlugInManager
-modifier|*
-name|manager
-parameter_list|,
-name|GimpContext
-modifier|*
-name|context
-parameter_list|,
-name|PlugInDef
-modifier|*
-name|plug_in_def
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -288,6 +223,12 @@ parameter_list|(
 name|PlugIn
 modifier|*
 name|plug_in
+parameter_list|,
+name|GimpPlugInCallMode
+name|call_mode
+parameter_list|,
+name|gboolean
+name|synchronous
 parameter_list|)
 function_decl|;
 end_function_decl

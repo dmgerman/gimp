@@ -28,16 +28,16 @@ file|"core/gimp.h"
 end_include
 
 begin_define
-DECL|macro|__YES_I_NEED_GIMP_PLUG_IN_MANAGER_RUN__
+DECL|macro|__YES_I_NEED_GIMP_PLUG_IN_MANAGER_CALL__
 define|#
 directive|define
-name|__YES_I_NEED_GIMP_PLUG_IN_MANAGER_RUN__
+name|__YES_I_NEED_GIMP_PLUG_IN_MANAGER_CALL__
 end_define
 
 begin_include
 include|#
 directive|include
-file|"plug-in/gimppluginmanager-run.h"
+file|"plug-in/gimppluginmanager-call.h"
 end_include
 
 begin_include
@@ -306,7 +306,7 @@ name|args
 parameter_list|)
 block|{
 return|return
-name|gimp_plug_in_manager_run_temp
+name|gimp_plug_in_manager_call_run_temp
 argument_list|(
 name|gimp
 operator|->
@@ -363,7 +363,7 @@ name|return_vals
 decl_stmt|;
 name|return_vals
 operator|=
-name|gimp_plug_in_manager_run_temp
+name|gimp_plug_in_manager_call_run_temp
 argument_list|(
 name|gimp
 operator|->
