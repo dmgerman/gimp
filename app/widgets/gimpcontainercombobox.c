@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon292ec45a0103
+DECL|enum|__anon29d903690103
 block|{
 DECL|enumerator|COLUMN_RENDERER
 name|COLUMN_RENDERER
@@ -1092,25 +1092,19 @@ argument_list|,
 name|iter
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|__GNUC__
-warning|#
-directive|warning
-warning|FIXME: remove this hack as soon as bug #149906 is fixed
-endif|#
-directive|endif
-comment|/*  if the store is empty after this remove, clear out renderers        *  from all cells so they don't keep refing the viewables        */
+comment|/*  If the store is now empty, clear out renderers from all cells        *  so that they don't reference the viewables.  See bug #149906.        */
 if|if
 condition|(
-operator|!
 name|gtk_tree_model_iter_n_children
 argument_list|(
 name|model
 argument_list|,
 name|NULL
 argument_list|)
+operator|==
+literal|0
 condition|)
+block|{
 name|g_object_set
 argument_list|(
 name|GIMP_CONTAINER_COMBO_BOX
@@ -1127,6 +1121,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 end_function
