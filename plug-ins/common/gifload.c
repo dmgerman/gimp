@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIF loading file filter for The GIMP 1.3/1.4  * +-------------------------------------------------------------------+  * |  Copyright Adam D. Moss, Peter Mattis, Spencer Kimball            |  * +-------------------------------------------------------------------+  * Version 1.50.4 - 2003/06/03  *                        Adam D. Moss -<adam@gimp.org><adam@foxbox.org>  */
+comment|/* GIF loading file filter for GIMP 2.x  * +-------------------------------------------------------------------+  * |  Copyright Adam D. Moss, Peter Mattis, Spencer Kimball            |  * +-------------------------------------------------------------------+  * Version 1.50.4 - 2003/06/03  *                        Adam D. Moss -<adam@gimp.org><adam@foxbox.org>  */
 end_comment
 
 begin_comment
@@ -786,7 +786,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2920f2590108
+DECL|struct|__anon2c60e0d00108
 block|{
 DECL|member|Width
 name|unsigned
@@ -836,7 +836,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2920f2590208
+DECL|struct|__anon2c60e0d00208
 block|{
 DECL|member|transparent
 name|int
@@ -4102,7 +4102,7 @@ break|break;
 case|case
 literal|0x03
 case|:
-comment|/* Rarely-used, and unhandled by many 		       loaders/players (including GIMP: we treat as 		       'combine' mode). */
+comment|/* Rarely-used, and unhandled by many                        loaders/players (including GIMP: we treat as                        'combine' mode). */
 name|framename_ptr
 operator|=
 name|framename
@@ -4329,7 +4329,7 @@ operator|&&
 name|promote_to_rgb
 condition|)
 block|{
-comment|/* I don't see how one would easily construct a GIF in which  	 this could happen, but it's a mad mad world. */
+comment|/* I don't see how one would easily construct a GIF in which          this could happen, but it's a mad mad world. */
 name|g_message
 argument_list|(
 literal|"Ouch!  Can't handle non-alpha RGB frames.\n"
@@ -4810,259 +4810,6 @@ name|image_ID
 return|;
 block|}
 end_function
-
-begin_comment
-comment|/* ppmtogif.c - read a portable pixmap and produce a GIF file ** ** Based on GIFENCOD by David Rowley<mgardi@watdscu.waterloo.edu>.A ** Lempel-Zim compression based on "compress". ** ** Modified by Marcel Wijkstra<wijkstra@fwi.uva.nl> ** ** ** Copyright (C) 1989 by Jef Poskanzer. ** ** Permission to use, copy, modify, and distribute this software and its ** documentation for any purpose and without fee is hereby granted, provided ** that the above copyright notice appear in all copies and that both that ** copyright notice and this permission notice appear in supporting ** documentation.  This software is provided "as is" without express or ** implied warranty. ** ** The Graphics Interchange Format(c) is the Copyright property of ** CompuServe Incorporated.  GIF(sm) is a Service Mark property of ** CompuServe Incorporated. */
-end_comment
-
-begin_define
-DECL|macro|MAXCOLORS
-define|#
-directive|define
-name|MAXCOLORS
-value|256
-end_define
-
-begin_comment
-comment|/*  * Pointer to function returning an int  */
-end_comment
-
-begin_typedef
-DECL|typedef|ifunptr
-typedef|typedef
-name|int
-function_decl|(
-modifier|*
-name|ifunptr
-function_decl|)
-parameter_list|(
-name|int
-parameter_list|,
-name|int
-parameter_list|)
-function_decl|;
-end_typedef
-
-begin_comment
-comment|/*  * a code_int must be able to hold 2**BITS values of type int, and also -1  */
-end_comment
-
-begin_typedef
-DECL|typedef|code_int
-typedef|typedef
-name|int
-name|code_int
-typedef|;
-end_typedef
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|SIGNED_COMPARE_SLOW
-end_ifdef
-
-begin_typedef
-DECL|typedef|count_int
-typedef|typedef
-name|unsigned
-name|long
-name|int
-name|count_int
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|count_short
-typedef|typedef
-name|unsigned
-name|short
-name|int
-name|count_short
-typedef|;
-end_typedef
-
-begin_else
-else|#
-directive|else
-end_else
-
-begin_comment
-comment|/*SIGNED_COMPARE_SLOW */
-end_comment
-
-begin_typedef
-DECL|typedef|count_int
-typedef|typedef
-name|long
-name|int
-name|count_int
-typedef|;
-end_typedef
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/*SIGNED_COMPARE_SLOW */
-end_comment
-
-begin_comment
-comment|/* public */
-end_comment
-
-begin_comment
-comment|/***************************************************************************  *  *  GIFCOMPR.C       - GIF Image compression routines  *  *  Lempel-Ziv compression based on 'compress'.  GIF modifications by  *  David Rowley (mgardi@watdcsu.waterloo.edu)  *  ***************************************************************************/
-end_comment
-
-begin_comment
-comment|/*  * General DEFINEs  */
-end_comment
-
-begin_define
-DECL|macro|GIF_BITS
-define|#
-directive|define
-name|GIF_BITS
-value|12
-end_define
-
-begin_define
-DECL|macro|HSIZE
-define|#
-directive|define
-name|HSIZE
-value|5003
-end_define
-
-begin_comment
-DECL|macro|HSIZE
-comment|/* 80% occupancy */
-end_comment
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|NO_UCHAR
-end_ifdef
-
-begin_typedef
-DECL|typedef|char_type
-typedef|typedef
-name|char
-name|char_type
-typedef|;
-end_typedef
-
-begin_else
-else|#
-directive|else
-end_else
-
-begin_comment
-comment|/*NO_UCHAR */
-end_comment
-
-begin_typedef
-DECL|typedef|char_type
-typedef|typedef
-name|unsigned
-name|char
-name|char_type
-typedef|;
-end_typedef
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/*NO_UCHAR */
-end_comment
-
-begin_comment
-comment|/*   * GIF Image compression - modified 'compress'  *  * Based on: compress.c - File compression ala IEEE Computer, June 1984.  *  * By Authors:  Spencer W. Thomas       (decvax!harpo!utah-cs!utah-gr!thomas)  *              Jim McKie               (decvax!mcvax!jim)  *              Steve Davies            (decvax!vax135!petsd!peora!srd)  *              Ken Turkowski           (decvax!decwrl!turtlevax!ken)  *              James A. Woods          (decvax!ihnp4!ames!jaw)  *              Joe Orost               (decvax!vax135!petsd!joe)  *  */
-end_comment
-
-begin_define
-DECL|macro|ARGVAL ()
-define|#
-directive|define
-name|ARGVAL
-parameter_list|()
-value|(*++(*argv) || (--argc&& *++argv))
-end_define
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|COMPATIBLE
-end_ifdef
-
-begin_comment
-comment|/* But wrong! */
-end_comment
-
-begin_define
-DECL|macro|MAXCODE (Mn_bits)
-define|#
-directive|define
-name|MAXCODE
-parameter_list|(
-name|Mn_bits
-parameter_list|)
-value|((code_int) 1<< (Mn_bits) - 1)
-end_define
-
-begin_else
-else|#
-directive|else
-end_else
-
-begin_comment
-comment|/*COMPATIBLE */
-end_comment
-
-begin_define
-DECL|macro|MAXCODE (Mn_bits)
-define|#
-directive|define
-name|MAXCODE
-parameter_list|(
-name|Mn_bits
-parameter_list|)
-value|(((code_int) 1<< (Mn_bits)) - 1)
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/*COMPATIBLE */
-end_comment
-
-begin_decl_stmt
-DECL|variable|hsize
-specifier|const
-name|code_int
-name|hsize
-init|=
-name|HSIZE
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
-DECL|variable|hsize
-comment|/* the original reason for this being 				   variable was "for dynamic table sizing", 				   but since it was never actually changed 				   I made it const   --Adam. */
-end_comment
-
-begin_comment
-comment|/* The End */
-end_comment
 
 end_unit
 
