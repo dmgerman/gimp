@@ -29,6 +29,15 @@ file|"plug-in/plug-in-enums.h"
 end_include
 
 begin_typedef
+DECL|typedef|GimpPlugIn
+typedef|typedef
+name|struct
+name|_GimpPlugIn
+name|GimpPlugIn
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpPlugInManager
 typedef|typedef
 name|struct
@@ -47,6 +56,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpPlugInProcFrame
+typedef|typedef
+name|struct
+name|_GimpPlugInProcFrame
+name|GimpPlugInProcFrame
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpPlugInShm
 typedef|typedef
 name|struct
@@ -56,29 +74,11 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|PlugIn
-typedef|typedef
-name|struct
-name|_PlugIn
-name|PlugIn
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|PlugInDef
 typedef|typedef
 name|struct
 name|_PlugInDef
 name|PlugInDef
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|PlugInProcFrame
-typedef|typedef
-name|struct
-name|_PlugInProcFrame
-name|PlugInProcFrame
 typedef|;
 end_typedef
 

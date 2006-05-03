@@ -124,13 +124,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"plug-in/gimppluginmanager.h"
+file|"plug-in/gimpplugin.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"plug-in/plug-in.h"
+file|"plug-in/gimppluginmanager.h"
 end_include
 
 begin_function
@@ -3189,7 +3189,7 @@ name|current_plug_in
 condition|)
 name|undo_desc
 operator|=
-name|plug_in_get_undo_desc
+name|gimp_plug_in_get_undo_desc
 argument_list|(
 name|gimp
 operator|->

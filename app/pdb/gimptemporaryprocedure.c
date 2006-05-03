@@ -27,6 +27,12 @@ directive|include
 file|"core/gimp.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"plug-in/gimpplugin.h"
+end_include
+
 begin_define
 DECL|macro|__YES_I_NEED_GIMP_PLUG_IN_MANAGER_CALL__
 define|#
@@ -38,12 +44,6 @@ begin_include
 include|#
 directive|include
 file|"plug-in/gimppluginmanager-call.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"plug-in/plug-in.h"
 end_include
 
 begin_include
@@ -422,10 +422,10 @@ end_comment
 begin_function
 name|GimpProcedure
 modifier|*
-DECL|function|gimp_temporary_procedure_new (PlugIn * plug_in)
+DECL|function|gimp_temporary_procedure_new (GimpPlugIn * plug_in)
 name|gimp_temporary_procedure_new
 parameter_list|(
-name|PlugIn
+name|GimpPlugIn
 modifier|*
 name|plug_in
 parameter_list|)
@@ -436,9 +436,10 @@ name|proc
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
+name|GIMP_IS_PLUG_IN
+argument_list|(
 name|plug_in
-operator|!=
-name|NULL
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)

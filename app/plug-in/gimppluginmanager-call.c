@@ -78,6 +78,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpplugin.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpplugin-message.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppluginmanager.h"
 end_include
 
@@ -97,19 +109,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"plug-in.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"plug-in-def.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"plug-in-message.h"
 end_include
 
 begin_include
@@ -146,7 +146,7 @@ modifier|*
 name|plug_in_def
 parameter_list|)
 block|{
-name|PlugIn
+name|GimpPlugIn
 modifier|*
 name|plug_in
 decl_stmt|;
@@ -175,7 +175,7 @@ argument_list|)
 expr_stmt|;
 name|plug_in
 operator|=
-name|plug_in_new
+name|gimp_plug_in_new
 argument_list|(
 name|manager
 argument_list|,
@@ -203,7 +203,7 @@ name|plug_in_def
 expr_stmt|;
 if|if
 condition|(
-name|plug_in_open
+name|gimp_plug_in_open
 argument_list|(
 name|plug_in
 argument_list|,
@@ -239,7 +239,7 @@ name|plug_in
 argument_list|)
 condition|)
 block|{
-name|plug_in_close
+name|gimp_plug_in_close
 argument_list|(
 name|plug_in
 argument_list|,
@@ -249,7 +249,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|plug_in_handle_message
+name|gimp_plug_in_handle_message
 argument_list|(
 name|plug_in
 argument_list|,
@@ -266,7 +266,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-name|plug_in_unref
+name|g_object_unref
 argument_list|(
 name|plug_in
 argument_list|)
@@ -293,7 +293,7 @@ modifier|*
 name|plug_in_def
 parameter_list|)
 block|{
-name|PlugIn
+name|GimpPlugIn
 modifier|*
 name|plug_in
 decl_stmt|;
@@ -322,7 +322,7 @@ argument_list|)
 expr_stmt|;
 name|plug_in
 operator|=
-name|plug_in_new
+name|gimp_plug_in_new
 argument_list|(
 name|manager
 argument_list|,
@@ -350,7 +350,7 @@ name|plug_in_def
 expr_stmt|;
 if|if
 condition|(
-name|plug_in_open
+name|gimp_plug_in_open
 argument_list|(
 name|plug_in
 argument_list|,
@@ -386,7 +386,7 @@ name|plug_in
 argument_list|)
 condition|)
 block|{
-name|plug_in_close
+name|gimp_plug_in_close
 argument_list|(
 name|plug_in
 argument_list|,
@@ -396,7 +396,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|plug_in_handle_message
+name|gimp_plug_in_handle_message
 argument_list|(
 name|plug_in
 argument_list|,
@@ -413,7 +413,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-name|plug_in_unref
+name|g_object_unref
 argument_list|(
 name|plug_in
 argument_list|)
@@ -464,7 +464,7 @@ name|return_vals
 init|=
 name|NULL
 decl_stmt|;
-name|PlugIn
+name|GimpPlugIn
 modifier|*
 name|plug_in
 decl_stmt|;
@@ -523,7 +523,7 @@ argument_list|)
 expr_stmt|;
 name|plug_in
 operator|=
-name|plug_in_new
+name|gimp_plug_in_new
 argument_list|(
 name|manager
 argument_list|,
@@ -586,7 +586,7 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
-name|plug_in_open
+name|gimp_plug_in_open
 argument_list|(
 name|plug_in
 argument_list|,
@@ -596,7 +596,7 @@ name|FALSE
 argument_list|)
 condition|)
 block|{
-name|plug_in_unref
+name|g_object_unref
 argument_list|(
 name|plug_in
 argument_list|)
@@ -872,6 +872,11 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|plug_in
+argument_list|)
+expr_stmt|;
 goto|goto
 name|done
 goto|;
@@ -888,11 +893,6 @@ argument_list|(
 name|proc_run
 operator|.
 name|params
-argument_list|)
-expr_stmt|;
-name|plug_in_ref
-argument_list|(
-name|plug_in
 argument_list|)
 expr_stmt|;
 comment|/* If this is an extension,        * wait for an installation-confirmation message        */
@@ -940,7 +940,7 @@ operator|->
 name|gimp
 argument_list|)
 expr_stmt|;
-comment|/*  main_loop is quit in plug_in_handle_extension_ack()  */
+comment|/*  main_loop is quit in gimp_plug_in_handle_extension_ack()  */
 name|g_main_loop_unref
 argument_list|(
 name|plug_in
@@ -961,7 +961,7 @@ condition|(
 name|synchronous
 condition|)
 block|{
-name|PlugInProcFrame
+name|GimpPlugInProcFrame
 modifier|*
 name|proc_frame
 init|=
@@ -1002,7 +1002,7 @@ operator|->
 name|gimp
 argument_list|)
 expr_stmt|;
-comment|/*  main_loop is quit in plug_in_handle_proc_return()  */
+comment|/*  main_loop is quit in gimp_plug_in_handle_proc_return()  */
 name|g_main_loop_unref
 argument_list|(
 name|proc_frame
@@ -1018,13 +1018,13 @@ name|NULL
 expr_stmt|;
 name|return_vals
 operator|=
-name|plug_in_proc_frame_get_return_vals
+name|gimp_plug_in_proc_frame_get_return_vals
 argument_list|(
 name|proc_frame
 argument_list|)
 expr_stmt|;
 block|}
-name|plug_in_unref
+name|g_object_unref
 argument_list|(
 name|plug_in
 argument_list|)
@@ -1088,7 +1088,7 @@ name|return_vals
 init|=
 name|NULL
 decl_stmt|;
-name|PlugIn
+name|GimpPlugIn
 modifier|*
 name|plug_in
 decl_stmt|;
@@ -1156,7 +1156,7 @@ condition|(
 name|plug_in
 condition|)
 block|{
-name|PlugInProcFrame
+name|GimpPlugInProcFrame
 modifier|*
 name|proc_frame
 decl_stmt|;
@@ -1165,7 +1165,7 @@ name|proc_run
 decl_stmt|;
 name|proc_frame
 operator|=
-name|plug_in_proc_frame_push
+name|gimp_plug_in_proc_frame_push
 argument_list|(
 name|plug_in
 argument_list|,
@@ -1242,7 +1242,7 @@ operator|.
 name|params
 argument_list|)
 expr_stmt|;
-name|plug_in_proc_frame_pop
+name|gimp_plug_in_proc_frame_pop
 argument_list|(
 name|plug_in
 argument_list|)
@@ -1270,37 +1270,37 @@ operator|.
 name|params
 argument_list|)
 expr_stmt|;
-name|plug_in_ref
+name|g_object_ref
 argument_list|(
 name|plug_in
 argument_list|)
 expr_stmt|;
-name|plug_in_proc_frame_ref
+name|gimp_plug_in_proc_frame_ref
 argument_list|(
 name|proc_frame
 argument_list|)
 expr_stmt|;
-name|plug_in_main_loop
+name|gimp_plug_in_main_loop
 argument_list|(
 name|plug_in
 argument_list|)
 expr_stmt|;
-comment|/*  main_loop is quit and proc_frame is popped in        *  plug_in_handle_temp_proc_return()        */
+comment|/*  main_loop is quit and proc_frame is popped in        *  gimp_plug_in_handle_temp_proc_return()        */
 name|return_vals
 operator|=
-name|plug_in_proc_frame_get_return_vals
+name|gimp_plug_in_proc_frame_get_return_vals
 argument_list|(
 name|proc_frame
 argument_list|)
 expr_stmt|;
-name|plug_in_proc_frame_unref
+name|gimp_plug_in_proc_frame_unref
 argument_list|(
 name|proc_frame
 argument_list|,
 name|plug_in
 argument_list|)
 expr_stmt|;
-name|plug_in_unref
+name|g_object_unref
 argument_list|(
 name|plug_in
 argument_list|)

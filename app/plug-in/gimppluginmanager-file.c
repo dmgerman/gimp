@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpplugin.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppluginmanager.h"
 end_include
 
@@ -55,12 +61,6 @@ begin_include
 include|#
 directive|include
 file|"gimppluginmanager-file.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"plug-in.h"
 end_include
 
 begin_include

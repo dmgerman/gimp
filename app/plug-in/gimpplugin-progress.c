@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * plug-in-progress.c  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpplugin-progress.c  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -60,19 +60,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpplugin.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpplugin-progress.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppluginmanager.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"plug-in.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"plug-in-progress.h"
 end_include
 
 begin_comment
@@ -82,13 +82,13 @@ end_comment
 begin_function_decl
 specifier|static
 name|void
-name|plug_in_progress_cancel_callback
+name|gimp_plug_in_progress_cancel_callback
 parameter_list|(
 name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
-name|PlugIn
+name|GimpPlugIn
 modifier|*
 name|plug_in
 parameter_list|)
@@ -101,10 +101,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|plug_in_progress_start (PlugIn * plug_in,const gchar * message,GimpObject * display)
-name|plug_in_progress_start
+DECL|function|gimp_plug_in_progress_start (GimpPlugIn * plug_in,const gchar * message,GimpObject * display)
+name|gimp_plug_in_progress_start
 parameter_list|(
-name|PlugIn
+name|GimpPlugIn
 modifier|*
 name|plug_in
 parameter_list|,
@@ -118,15 +118,16 @@ modifier|*
 name|display
 parameter_list|)
 block|{
-name|PlugInProcFrame
+name|GimpPlugInProcFrame
 modifier|*
 name|proc_frame
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
+name|GIMP_IS_PLUG_IN
+argument_list|(
 name|plug_in
-operator|!=
-name|NULL
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_return_if_fail
@@ -143,7 +144,7 @@ argument_list|)
 expr_stmt|;
 name|proc_frame
 operator|=
-name|plug_in_get_proc_frame
+name|gimp_plug_in_get_proc_frame
 argument_list|(
 name|plug_in
 argument_list|)
@@ -221,7 +222,7 @@ literal|"cancel"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|plug_in_progress_cancel_callback
+name|gimp_plug_in_progress_cancel_callback
 argument_list|)
 argument_list|,
 name|plug_in
@@ -295,28 +296,29 @@ end_function
 
 begin_function
 name|void
-DECL|function|plug_in_progress_end (PlugIn * plug_in)
-name|plug_in_progress_end
+DECL|function|gimp_plug_in_progress_end (GimpPlugIn * plug_in)
+name|gimp_plug_in_progress_end
 parameter_list|(
-name|PlugIn
+name|GimpPlugIn
 modifier|*
 name|plug_in
 parameter_list|)
 block|{
-name|PlugInProcFrame
+name|GimpPlugInProcFrame
 modifier|*
 name|proc_frame
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
+name|GIMP_IS_PLUG_IN
+argument_list|(
 name|plug_in
-operator|!=
-name|NULL
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|proc_frame
 operator|=
-name|plug_in_get_proc_frame
+name|gimp_plug_in_get_proc_frame
 argument_list|(
 name|plug_in
 argument_list|)
@@ -409,10 +411,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|plug_in_progress_set_text (PlugIn * plug_in,const gchar * message)
-name|plug_in_progress_set_text
+DECL|function|gimp_plug_in_progress_set_text (GimpPlugIn * plug_in,const gchar * message)
+name|gimp_plug_in_progress_set_text
 parameter_list|(
-name|PlugIn
+name|GimpPlugIn
 modifier|*
 name|plug_in
 parameter_list|,
@@ -422,20 +424,21 @@ modifier|*
 name|message
 parameter_list|)
 block|{
-name|PlugInProcFrame
+name|GimpPlugInProcFrame
 modifier|*
 name|proc_frame
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
+name|GIMP_IS_PLUG_IN
+argument_list|(
 name|plug_in
-operator|!=
-name|NULL
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|proc_frame
 operator|=
-name|plug_in_get_proc_frame
+name|gimp_plug_in_get_proc_frame
 argument_list|(
 name|plug_in
 argument_list|)
@@ -460,10 +463,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|plug_in_progress_set_value (PlugIn * plug_in,gdouble percentage)
-name|plug_in_progress_set_value
+DECL|function|gimp_plug_in_progress_set_value (GimpPlugIn * plug_in,gdouble percentage)
+name|gimp_plug_in_progress_set_value
 parameter_list|(
-name|PlugIn
+name|GimpPlugIn
 modifier|*
 name|plug_in
 parameter_list|,
@@ -471,20 +474,21 @@ name|gdouble
 name|percentage
 parameter_list|)
 block|{
-name|PlugInProcFrame
+name|GimpPlugInProcFrame
 modifier|*
 name|proc_frame
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
+name|GIMP_IS_PLUG_IN
+argument_list|(
 name|plug_in
-operator|!=
-name|NULL
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|proc_frame
 operator|=
-name|plug_in_get_proc_frame
+name|gimp_plug_in_get_proc_frame
 argument_list|(
 name|plug_in
 argument_list|)
@@ -510,7 +514,7 @@ operator|->
 name|progress_cancel_id
 condition|)
 block|{
-name|plug_in_progress_start
+name|gimp_plug_in_progress_start
 argument_list|(
 name|plug_in
 argument_list|,
@@ -547,28 +551,29 @@ end_function
 
 begin_function
 name|void
-DECL|function|plug_in_progress_pulse (PlugIn * plug_in)
-name|plug_in_progress_pulse
+DECL|function|gimp_plug_in_progress_pulse (GimpPlugIn * plug_in)
+name|gimp_plug_in_progress_pulse
 parameter_list|(
-name|PlugIn
+name|GimpPlugIn
 modifier|*
 name|plug_in
 parameter_list|)
 block|{
-name|PlugInProcFrame
+name|GimpPlugInProcFrame
 modifier|*
 name|proc_frame
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
+name|GIMP_IS_PLUG_IN
+argument_list|(
 name|plug_in
-operator|!=
-name|NULL
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|proc_frame
 operator|=
-name|plug_in_get_proc_frame
+name|gimp_plug_in_get_proc_frame
 argument_list|(
 name|plug_in
 argument_list|)
@@ -594,7 +599,7 @@ operator|->
 name|progress_cancel_id
 condition|)
 block|{
-name|plug_in_progress_start
+name|gimp_plug_in_progress_start
 argument_list|(
 name|plug_in
 argument_list|,
@@ -629,30 +634,31 @@ end_function
 
 begin_function
 name|guint32
-DECL|function|plug_in_progress_get_window (PlugIn * plug_in)
-name|plug_in_progress_get_window
+DECL|function|gimp_plug_in_progress_get_window (GimpPlugIn * plug_in)
+name|gimp_plug_in_progress_get_window
 parameter_list|(
-name|PlugIn
+name|GimpPlugIn
 modifier|*
 name|plug_in
 parameter_list|)
 block|{
-name|PlugInProcFrame
+name|GimpPlugInProcFrame
 modifier|*
 name|proc_frame
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
+name|GIMP_IS_PLUG_IN
+argument_list|(
 name|plug_in
-operator|!=
-name|NULL
+argument_list|)
 argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
 name|proc_frame
 operator|=
-name|plug_in_get_proc_frame
+name|gimp_plug_in_get_proc_frame
 argument_list|(
 name|plug_in
 argument_list|)
@@ -679,10 +685,10 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|plug_in_progress_install (PlugIn * plug_in,const gchar * progress_callback)
-name|plug_in_progress_install
+DECL|function|gimp_plug_in_progress_install (GimpPlugIn * plug_in,const gchar * progress_callback)
+name|gimp_plug_in_progress_install
 parameter_list|(
-name|PlugIn
+name|GimpPlugIn
 modifier|*
 name|plug_in
 parameter_list|,
@@ -692,7 +698,7 @@ modifier|*
 name|progress_callback
 parameter_list|)
 block|{
-name|PlugInProcFrame
+name|GimpPlugInProcFrame
 modifier|*
 name|proc_frame
 decl_stmt|;
@@ -702,9 +708,10 @@ name|procedure
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
+name|GIMP_IS_PLUG_IN
+argument_list|(
 name|plug_in
-operator|!=
-name|NULL
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|)
@@ -796,7 +803,7 @@ return|;
 block|}
 name|proc_frame
 operator|=
-name|plug_in_get_proc_frame
+name|gimp_plug_in_get_proc_frame
 argument_list|(
 name|plug_in
 argument_list|)
@@ -808,7 +815,7 @@ operator|->
 name|progress
 condition|)
 block|{
-name|plug_in_progress_end
+name|gimp_plug_in_progress_end
 argument_list|(
 name|plug_in
 argument_list|)
@@ -874,10 +881,10 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|plug_in_progress_uninstall (PlugIn * plug_in,const gchar * progress_callback)
-name|plug_in_progress_uninstall
+DECL|function|gimp_plug_in_progress_uninstall (GimpPlugIn * plug_in,const gchar * progress_callback)
+name|gimp_plug_in_progress_uninstall
 parameter_list|(
-name|PlugIn
+name|GimpPlugIn
 modifier|*
 name|plug_in
 parameter_list|,
@@ -887,15 +894,16 @@ modifier|*
 name|progress_callback
 parameter_list|)
 block|{
-name|PlugInProcFrame
+name|GimpPlugInProcFrame
 modifier|*
 name|proc_frame
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
+name|GIMP_IS_PLUG_IN
+argument_list|(
 name|plug_in
-operator|!=
-name|NULL
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|)
@@ -911,7 +919,7 @@ argument_list|)
 expr_stmt|;
 name|proc_frame
 operator|=
-name|plug_in_get_proc_frame
+name|gimp_plug_in_get_proc_frame
 argument_list|(
 name|plug_in
 argument_list|)
@@ -926,7 +934,7 @@ name|progress
 argument_list|)
 condition|)
 block|{
-name|plug_in_progress_end
+name|gimp_plug_in_progress_end
 argument_list|(
 name|plug_in
 argument_list|)
@@ -956,10 +964,10 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|plug_in_progress_cancel (PlugIn * plug_in,const gchar * progress_callback)
-name|plug_in_progress_cancel
+DECL|function|gimp_plug_in_progress_cancel (GimpPlugIn * plug_in,const gchar * progress_callback)
+name|gimp_plug_in_progress_cancel
 parameter_list|(
-name|PlugIn
+name|GimpPlugIn
 modifier|*
 name|plug_in
 parameter_list|,
@@ -971,9 +979,10 @@ parameter_list|)
 block|{
 name|g_return_val_if_fail
 argument_list|(
+name|GIMP_IS_PLUG_IN
+argument_list|(
 name|plug_in
-operator|!=
-name|NULL
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|)
@@ -995,10 +1004,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|plug_in_progress_message (PlugIn * plug_in,const gchar * message)
-name|plug_in_progress_message
+DECL|function|gimp_plug_in_progress_message (GimpPlugIn * plug_in,const gchar * message)
+name|gimp_plug_in_progress_message
 parameter_list|(
-name|PlugIn
+name|GimpPlugIn
 modifier|*
 name|plug_in
 parameter_list|,
@@ -1008,7 +1017,7 @@ modifier|*
 name|message
 parameter_list|)
 block|{
-name|PlugInProcFrame
+name|GimpPlugInProcFrame
 modifier|*
 name|proc_frame
 decl_stmt|;
@@ -1018,9 +1027,10 @@ name|domain
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
+name|GIMP_IS_PLUG_IN
+argument_list|(
 name|plug_in
-operator|!=
-name|NULL
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_return_if_fail
@@ -1032,14 +1042,14 @@ argument_list|)
 expr_stmt|;
 name|proc_frame
 operator|=
-name|plug_in_get_proc_frame
+name|gimp_plug_in_get_proc_frame
 argument_list|(
 name|plug_in
 argument_list|)
 expr_stmt|;
 name|domain
 operator|=
-name|plug_in_get_undo_desc
+name|gimp_plug_in_get_undo_desc
 argument_list|(
 name|plug_in
 argument_list|)
@@ -1100,19 +1110,19 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|plug_in_progress_cancel_callback (GimpProgress * progress,PlugIn * plug_in)
-name|plug_in_progress_cancel_callback
+DECL|function|gimp_plug_in_progress_cancel_callback (GimpProgress * progress,GimpPlugIn * plug_in)
+name|gimp_plug_in_progress_cancel_callback
 parameter_list|(
 name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
-name|PlugIn
+name|GimpPlugIn
 modifier|*
 name|plug_in
 parameter_list|)
 block|{
-name|PlugInProcFrame
+name|GimpPlugInProcFrame
 modifier|*
 name|proc_frame
 init|=
@@ -1210,16 +1220,11 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|plug_in_close
+name|gimp_plug_in_close
 argument_list|(
 name|plug_in
 argument_list|,
 name|TRUE
-argument_list|)
-expr_stmt|;
-name|plug_in_unref
-argument_list|(
-name|plug_in
 argument_list|)
 expr_stmt|;
 block|}

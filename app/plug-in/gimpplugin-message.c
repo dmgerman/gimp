@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * plug-in-message.c  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpplugin-message.c  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -90,13 +90,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppluginmanager.h"
+file|"gimpplugin.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"plug-in.h"
+file|"gimpplugin-message.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimppluginmanager.h"
 end_include
 
 begin_include
@@ -118,9 +124,9 @@ end_comment
 begin_function_decl
 specifier|static
 name|void
-name|plug_in_handle_quit
+name|gimp_plug_in_handle_quit
 parameter_list|(
-name|PlugIn
+name|GimpPlugIn
 modifier|*
 name|plug_in
 parameter_list|)
@@ -130,9 +136,9 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|plug_in_handle_tile_req
+name|gimp_plug_in_handle_tile_req
 parameter_list|(
-name|PlugIn
+name|GimpPlugIn
 modifier|*
 name|plug_in
 parameter_list|,
@@ -146,9 +152,9 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|plug_in_handle_proc_run
+name|gimp_plug_in_handle_proc_run
 parameter_list|(
-name|PlugIn
+name|GimpPlugIn
 modifier|*
 name|plug_in
 parameter_list|,
@@ -162,9 +168,9 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|plug_in_handle_proc_return
+name|gimp_plug_in_handle_proc_return
 parameter_list|(
-name|PlugIn
+name|GimpPlugIn
 modifier|*
 name|plug_in
 parameter_list|,
@@ -178,9 +184,9 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|plug_in_handle_temp_proc_return
+name|gimp_plug_in_handle_temp_proc_return
 parameter_list|(
-name|PlugIn
+name|GimpPlugIn
 modifier|*
 name|plug_in
 parameter_list|,
@@ -194,9 +200,9 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|plug_in_handle_proc_install
+name|gimp_plug_in_handle_proc_install
 parameter_list|(
-name|PlugIn
+name|GimpPlugIn
 modifier|*
 name|plug_in
 parameter_list|,
@@ -210,9 +216,9 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|plug_in_handle_proc_uninstall
+name|gimp_plug_in_handle_proc_uninstall
 parameter_list|(
-name|PlugIn
+name|GimpPlugIn
 modifier|*
 name|plug_in
 parameter_list|,
@@ -226,9 +232,9 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|plug_in_handle_extension_ack
+name|gimp_plug_in_handle_extension_ack
 parameter_list|(
-name|PlugIn
+name|GimpPlugIn
 modifier|*
 name|plug_in
 parameter_list|)
@@ -238,9 +244,9 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|plug_in_handle_has_init
+name|gimp_plug_in_handle_has_init
 parameter_list|(
-name|PlugIn
+name|GimpPlugIn
 modifier|*
 name|plug_in
 parameter_list|)
@@ -253,10 +259,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|plug_in_handle_message (PlugIn * plug_in,GimpWireMessage * msg)
-name|plug_in_handle_message
+DECL|function|gimp_plug_in_handle_message (GimpPlugIn * plug_in,GimpWireMessage * msg)
+name|gimp_plug_in_handle_message
 parameter_list|(
-name|PlugIn
+name|GimpPlugIn
 modifier|*
 name|plug_in
 parameter_list|,
@@ -265,6 +271,30 @@ modifier|*
 name|msg
 parameter_list|)
 block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_PLUG_IN
+argument_list|(
+name|plug_in
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|plug_in
+operator|->
+name|open
+operator|==
+name|TRUE
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|msg
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
 switch|switch
 condition|(
 name|msg
@@ -275,7 +305,7 @@ block|{
 case|case
 name|GP_QUIT
 case|:
-name|plug_in_handle_quit
+name|gimp_plug_in_handle_quit
 argument_list|(
 name|plug_in
 argument_list|)
@@ -304,7 +334,7 @@ name|prog
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|plug_in_close
+name|gimp_plug_in_close
 argument_list|(
 name|plug_in
 argument_list|,
@@ -315,7 +345,7 @@ break|break;
 case|case
 name|GP_TILE_REQ
 case|:
-name|plug_in_handle_tile_req
+name|gimp_plug_in_handle_tile_req
 argument_list|(
 name|plug_in
 argument_list|,
@@ -348,7 +378,7 @@ name|prog
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|plug_in_close
+name|gimp_plug_in_close
 argument_list|(
 name|plug_in
 argument_list|,
@@ -379,7 +409,7 @@ name|prog
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|plug_in_close
+name|gimp_plug_in_close
 argument_list|(
 name|plug_in
 argument_list|,
@@ -390,7 +420,7 @@ break|break;
 case|case
 name|GP_PROC_RUN
 case|:
-name|plug_in_handle_proc_run
+name|gimp_plug_in_handle_proc_run
 argument_list|(
 name|plug_in
 argument_list|,
@@ -403,7 +433,7 @@ break|break;
 case|case
 name|GP_PROC_RETURN
 case|:
-name|plug_in_handle_proc_return
+name|gimp_plug_in_handle_proc_return
 argument_list|(
 name|plug_in
 argument_list|,
@@ -436,7 +466,7 @@ name|prog
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|plug_in_close
+name|gimp_plug_in_close
 argument_list|(
 name|plug_in
 argument_list|,
@@ -447,7 +477,7 @@ break|break;
 case|case
 name|GP_TEMP_PROC_RETURN
 case|:
-name|plug_in_handle_temp_proc_return
+name|gimp_plug_in_handle_temp_proc_return
 argument_list|(
 name|plug_in
 argument_list|,
@@ -460,7 +490,7 @@ break|break;
 case|case
 name|GP_PROC_INSTALL
 case|:
-name|plug_in_handle_proc_install
+name|gimp_plug_in_handle_proc_install
 argument_list|(
 name|plug_in
 argument_list|,
@@ -473,7 +503,7 @@ break|break;
 case|case
 name|GP_PROC_UNINSTALL
 case|:
-name|plug_in_handle_proc_uninstall
+name|gimp_plug_in_handle_proc_uninstall
 argument_list|(
 name|plug_in
 argument_list|,
@@ -486,7 +516,7 @@ break|break;
 case|case
 name|GP_EXTENSION_ACK
 case|:
-name|plug_in_handle_extension_ack
+name|gimp_plug_in_handle_extension_ack
 argument_list|(
 name|plug_in
 argument_list|)
@@ -495,7 +525,7 @@ break|break;
 case|case
 name|GP_HAS_INIT
 case|:
-name|plug_in_handle_has_init
+name|gimp_plug_in_handle_has_init
 argument_list|(
 name|plug_in
 argument_list|)
@@ -512,15 +542,15 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|plug_in_handle_quit (PlugIn * plug_in)
-name|plug_in_handle_quit
+DECL|function|gimp_plug_in_handle_quit (GimpPlugIn * plug_in)
+name|gimp_plug_in_handle_quit
 parameter_list|(
-name|PlugIn
+name|GimpPlugIn
 modifier|*
 name|plug_in
 parameter_list|)
 block|{
-name|plug_in_close
+name|gimp_plug_in_close
 argument_list|(
 name|plug_in
 argument_list|,
@@ -533,10 +563,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|plug_in_handle_tile_req (PlugIn * plug_in,GPTileReq * tile_req)
-name|plug_in_handle_tile_req
+DECL|function|gimp_plug_in_handle_tile_req (GimpPlugIn * plug_in,GPTileReq * tile_req)
+name|gimp_plug_in_handle_tile_req
 parameter_list|(
-name|PlugIn
+name|GimpPlugIn
 modifier|*
 name|plug_in
 parameter_list|,
@@ -669,7 +699,7 @@ argument_list|(
 literal|"plug_in_handle_tile_req: ERROR"
 argument_list|)
 expr_stmt|;
-name|plug_in_close
+name|gimp_plug_in_close
 argument_list|(
 name|plug_in
 argument_list|,
@@ -699,7 +729,7 @@ argument_list|(
 literal|"plug_in_handle_tile_req: ERROR"
 argument_list|)
 expr_stmt|;
-name|plug_in_close
+name|gimp_plug_in_close
 argument_list|(
 name|plug_in
 argument_list|,
@@ -726,7 +756,7 @@ operator|.
 name|type
 argument_list|)
 expr_stmt|;
-name|plug_in_close
+name|gimp_plug_in_close
 argument_list|(
 name|plug_in
 argument_list|,
@@ -789,7 +819,7 @@ name|prog
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|plug_in_close
+name|gimp_plug_in_close
 argument_list|(
 name|plug_in
 argument_list|,
@@ -860,7 +890,7 @@ name|prog
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|plug_in_close
+name|gimp_plug_in_close
 argument_list|(
 name|plug_in
 argument_list|,
@@ -952,7 +982,7 @@ argument_list|(
 literal|"plug_in_handle_tile_req: ERROR"
 argument_list|)
 expr_stmt|;
-name|plug_in_close
+name|gimp_plug_in_close
 argument_list|(
 name|plug_in
 argument_list|,
@@ -1013,7 +1043,7 @@ name|prog
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|plug_in_close
+name|gimp_plug_in_close
 argument_list|(
 name|plug_in
 argument_list|,
@@ -1084,7 +1114,7 @@ name|prog
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|plug_in_close
+name|gimp_plug_in_close
 argument_list|(
 name|plug_in
 argument_list|,
@@ -1224,7 +1254,7 @@ argument_list|(
 literal|"plug_in_handle_tile_req: ERROR"
 argument_list|)
 expr_stmt|;
-name|plug_in_close
+name|gimp_plug_in_close
 argument_list|(
 name|plug_in
 argument_list|,
@@ -1261,7 +1291,7 @@ argument_list|(
 literal|"plug_in_handle_tile_req: ERROR"
 argument_list|)
 expr_stmt|;
-name|plug_in_close
+name|gimp_plug_in_close
 argument_list|(
 name|plug_in
 argument_list|,
@@ -1288,7 +1318,7 @@ operator|.
 name|type
 argument_list|)
 expr_stmt|;
-name|plug_in_close
+name|gimp_plug_in_close
 argument_list|(
 name|plug_in
 argument_list|,
@@ -1310,10 +1340,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|plug_in_handle_proc_run (PlugIn * plug_in,GPProcRun * proc_run)
-name|plug_in_handle_proc_run
+DECL|function|gimp_plug_in_handle_proc_run (GimpPlugIn * plug_in,GPProcRun * proc_run)
+name|gimp_plug_in_handle_proc_run
 parameter_list|(
-name|PlugIn
+name|GimpPlugIn
 modifier|*
 name|plug_in
 parameter_list|,
@@ -1322,7 +1352,7 @@ modifier|*
 name|proc_run
 parameter_list|)
 block|{
-name|PlugInProcFrame
+name|GimpPlugInProcFrame
 modifier|*
 name|proc_frame
 decl_stmt|;
@@ -1367,7 +1397,7 @@ argument_list|)
 expr_stmt|;
 name|proc_frame
 operator|=
-name|plug_in_get_proc_frame
+name|gimp_plug_in_get_proc_frame
 argument_list|(
 name|plug_in
 argument_list|)
@@ -1721,7 +1751,7 @@ argument_list|(
 literal|"plug_in_handle_proc_run: ERROR"
 argument_list|)
 expr_stmt|;
-name|plug_in_close
+name|gimp_plug_in_close
 argument_list|(
 name|plug_in
 argument_list|,
@@ -1752,10 +1782,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|plug_in_handle_proc_return (PlugIn * plug_in,GPProcReturn * proc_return)
-name|plug_in_handle_proc_return
+DECL|function|gimp_plug_in_handle_proc_return (GimpPlugIn * plug_in,GPProcReturn * proc_return)
+name|gimp_plug_in_handle_proc_return
 parameter_list|(
-name|PlugIn
+name|GimpPlugIn
 modifier|*
 name|plug_in
 parameter_list|,
@@ -1764,7 +1794,7 @@ modifier|*
 name|proc_return
 parameter_list|)
 block|{
-name|PlugInProcFrame
+name|GimpPlugInProcFrame
 modifier|*
 name|proc_frame
 init|=
@@ -1823,7 +1853,7 @@ operator|->
 name|main_loop
 argument_list|)
 expr_stmt|;
-name|plug_in_close
+name|gimp_plug_in_close
 argument_list|(
 name|plug_in
 argument_list|,
@@ -1836,10 +1866,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|plug_in_handle_temp_proc_return (PlugIn * plug_in,GPProcReturn * proc_return)
-name|plug_in_handle_temp_proc_return
+DECL|function|gimp_plug_in_handle_temp_proc_return (GimpPlugIn * plug_in,GPProcReturn * proc_return)
+name|gimp_plug_in_handle_temp_proc_return
 parameter_list|(
-name|PlugIn
+name|GimpPlugIn
 modifier|*
 name|plug_in
 parameter_list|,
@@ -1855,7 +1885,7 @@ operator|->
 name|temp_proc_frames
 condition|)
 block|{
-name|PlugInProcFrame
+name|GimpPlugInProcFrame
 modifier|*
 name|proc_frame
 init|=
@@ -1896,12 +1926,12 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|plug_in_main_loop_quit
+name|gimp_plug_in_main_loop_quit
 argument_list|(
 name|plug_in
 argument_list|)
 expr_stmt|;
-name|plug_in_proc_frame_pop
+name|gimp_plug_in_proc_frame_pop
 argument_list|(
 name|plug_in
 argument_list|)
@@ -1930,7 +1960,7 @@ name|prog
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|plug_in_close
+name|gimp_plug_in_close
 argument_list|(
 name|plug_in
 argument_list|,
@@ -1944,10 +1974,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|plug_in_handle_proc_install (PlugIn * plug_in,GPProcInstall * proc_install)
-name|plug_in_handle_proc_install
+DECL|function|gimp_plug_in_handle_proc_install (GimpPlugIn * plug_in,GPProcInstall * proc_install)
+name|gimp_plug_in_handle_proc_install
 parameter_list|(
-name|PlugIn
+name|GimpPlugIn
 modifier|*
 name|plug_in
 parameter_list|,
@@ -2498,7 +2528,7 @@ if|if
 condition|(
 name|proc
 condition|)
-name|plug_in_remove_temp_proc
+name|gimp_plug_in_remove_temp_proc
 argument_list|(
 name|plug_in
 argument_list|,
@@ -2822,7 +2852,7 @@ break|break;
 case|case
 name|GIMP_TEMPORARY
 case|:
-name|plug_in_add_temp_proc
+name|gimp_plug_in_add_temp_proc
 argument_list|(
 name|plug_in
 argument_list|,
@@ -2845,10 +2875,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|plug_in_handle_proc_uninstall (PlugIn * plug_in,GPProcUninstall * proc_uninstall)
-name|plug_in_handle_proc_uninstall
+DECL|function|gimp_plug_in_handle_proc_uninstall (GimpPlugIn * plug_in,GPProcUninstall * proc_uninstall)
+name|gimp_plug_in_handle_proc_uninstall
 parameter_list|(
-name|PlugIn
+name|GimpPlugIn
 modifier|*
 name|plug_in
 parameter_list|,
@@ -2889,7 +2919,7 @@ if|if
 condition|(
 name|proc
 condition|)
-name|plug_in_remove_temp_proc
+name|gimp_plug_in_remove_temp_proc
 argument_list|(
 name|plug_in
 argument_list|,
@@ -2910,10 +2940,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|plug_in_handle_extension_ack (PlugIn * plug_in)
-name|plug_in_handle_extension_ack
+DECL|function|gimp_plug_in_handle_extension_ack (GimpPlugIn * plug_in)
+name|gimp_plug_in_handle_extension_ack
 parameter_list|(
-name|PlugIn
+name|GimpPlugIn
 modifier|*
 name|plug_in
 parameter_list|)
@@ -2956,7 +2986,7 @@ name|prog
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|plug_in_close
+name|gimp_plug_in_close
 argument_list|(
 name|plug_in
 argument_list|,
@@ -2970,10 +3000,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|plug_in_handle_has_init (PlugIn * plug_in)
-name|plug_in_handle_has_init
+DECL|function|gimp_plug_in_handle_has_init (GimpPlugIn * plug_in)
+name|gimp_plug_in_handle_has_init
 parameter_list|(
-name|PlugIn
+name|GimpPlugIn
 modifier|*
 name|plug_in
 parameter_list|)
@@ -3020,7 +3050,7 @@ name|prog
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|plug_in_close
+name|gimp_plug_in_close
 argument_list|(
 name|plug_in
 argument_list|,

@@ -104,7 +104,7 @@ name|GimpPlugInProcedure
 name|parent_instance
 decl_stmt|;
 DECL|member|plug_in
-name|PlugIn
+name|GimpPlugIn
 modifier|*
 name|plug_in
 decl_stmt|;
@@ -140,7 +140,7 @@ name|GimpProcedure
 modifier|*
 name|gimp_temporary_procedure_new
 parameter_list|(
-name|PlugIn
+name|GimpPlugIn
 modifier|*
 name|plug_in
 parameter_list|)

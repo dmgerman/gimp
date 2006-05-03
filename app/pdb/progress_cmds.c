@@ -52,19 +52,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"plug-in/gimpplugin-progress.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"plug-in/gimpplugin.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"plug-in/gimppluginmanager.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"plug-in/plug-in-progress.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"plug-in/plug-in.h"
 end_include
 
 begin_function
@@ -143,7 +143,7 @@ condition|(
 name|success
 condition|)
 block|{
-name|PlugIn
+name|GimpPlugIn
 modifier|*
 name|plug_in
 init|=
@@ -169,7 +169,7 @@ name|gimp
 operator|->
 name|no_interface
 condition|)
-name|plug_in_progress_start
+name|gimp_plug_in_progress_start
 argument_list|(
 name|plug_in
 argument_list|,
@@ -251,7 +251,7 @@ condition|(
 name|success
 condition|)
 block|{
-name|PlugIn
+name|GimpPlugIn
 modifier|*
 name|plug_in
 init|=
@@ -277,7 +277,7 @@ name|gimp
 operator|->
 name|no_interface
 condition|)
-name|plug_in_progress_set_value
+name|gimp_plug_in_progress_set_value
 argument_list|(
 name|plug_in
 argument_list|,
@@ -336,7 +336,7 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
-name|PlugIn
+name|GimpPlugIn
 modifier|*
 name|plug_in
 init|=
@@ -362,7 +362,7 @@ name|gimp
 operator|->
 name|no_interface
 condition|)
-name|plug_in_progress_pulse
+name|gimp_plug_in_progress_pulse
 argument_list|(
 name|plug_in
 argument_list|)
@@ -441,7 +441,7 @@ condition|(
 name|success
 condition|)
 block|{
-name|PlugIn
+name|GimpPlugIn
 modifier|*
 name|plug_in
 init|=
@@ -467,7 +467,7 @@ name|gimp
 operator|->
 name|no_interface
 condition|)
-name|plug_in_progress_set_text
+name|gimp_plug_in_progress_set_text
 argument_list|(
 name|plug_in
 argument_list|,
@@ -535,7 +535,7 @@ name|window
 init|=
 literal|0
 decl_stmt|;
-name|PlugIn
+name|GimpPlugIn
 modifier|*
 name|plug_in
 init|=
@@ -563,7 +563,7 @@ name|no_interface
 condition|)
 name|window
 operator|=
-name|plug_in_progress_get_window
+name|gimp_plug_in_progress_get_window
 argument_list|(
 name|plug_in
 argument_list|)
@@ -663,7 +663,7 @@ condition|(
 name|success
 condition|)
 block|{
-name|PlugIn
+name|GimpPlugIn
 modifier|*
 name|plug_in
 init|=
@@ -683,7 +683,7 @@ name|open
 condition|)
 name|success
 operator|=
-name|plug_in_progress_install
+name|gimp_plug_in_progress_install
 argument_list|(
 name|plug_in
 argument_list|,
@@ -764,7 +764,7 @@ condition|(
 name|success
 condition|)
 block|{
-name|PlugIn
+name|GimpPlugIn
 modifier|*
 name|plug_in
 init|=
@@ -784,7 +784,7 @@ name|open
 condition|)
 name|success
 operator|=
-name|plug_in_progress_uninstall
+name|gimp_plug_in_progress_uninstall
 argument_list|(
 name|plug_in
 argument_list|,
@@ -865,7 +865,7 @@ condition|(
 name|success
 condition|)
 block|{
-name|PlugIn
+name|GimpPlugIn
 modifier|*
 name|plug_in
 init|=
@@ -885,7 +885,7 @@ name|open
 condition|)
 name|success
 operator|=
-name|plug_in_progress_cancel
+name|gimp_plug_in_progress_cancel
 argument_list|(
 name|plug_in
 argument_list|,

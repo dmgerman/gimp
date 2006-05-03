@@ -96,6 +96,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpplugin.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpplugindebug.h"
 end_include
 
@@ -151,12 +157,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"plug-in.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"plug-in-def.h"
 end_include
 
@@ -174,7 +174,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b082cc0103
+DECL|enum|__anon28b03b830103
 block|{
 DECL|enumerator|MENU_BRANCH_ADDED
 name|MENU_BRANCH_ADDED
@@ -953,11 +953,6 @@ expr_stmt|;
 name|g_free
 argument_list|(
 name|path
-argument_list|)
-expr_stmt|;
-name|plug_in_init
-argument_list|(
-name|manager
 argument_list|)
 expr_stmt|;
 comment|/* allocate a piece of shared memory for use in transporting tiles    *  to plug-ins. if we can't allocate a piece of shared memory then    *  we'll fall back on sending the data over the pipe.    */
@@ -2244,6 +2239,10 @@ modifier|*
 name|manager
 parameter_list|)
 block|{
+name|GSList
+modifier|*
+name|list
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_PLUG_IN_MANAGER
@@ -2294,11 +2293,39 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
-name|plug_in_exit
-argument_list|(
+name|list
+operator|=
 name|manager
+operator|->
+name|open_plug_ins
+expr_stmt|;
+while|while
+condition|(
+name|list
+condition|)
+block|{
+name|GimpPlugIn
+modifier|*
+name|plug_in
+init|=
+name|list
+operator|->
+name|data
+decl_stmt|;
+name|list
+operator|=
+name|list
+operator|->
+name|next
+expr_stmt|;
+name|gimp_plug_in_close
+argument_list|(
+name|plug_in
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
+block|}
 name|g_slist_foreach
 argument_list|(
 name|manager
@@ -2869,14 +2896,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_plug_in_manager_plug_in_push (GimpPlugInManager * manager,PlugIn * plug_in)
+DECL|function|gimp_plug_in_manager_plug_in_push (GimpPlugInManager * manager,GimpPlugIn * plug_in)
 name|gimp_plug_in_manager_plug_in_push
 parameter_list|(
 name|GimpPlugInManager
 modifier|*
 name|manager
 parameter_list|,
-name|PlugIn
+name|GimpPlugIn
 modifier|*
 name|plug_in
 parameter_list|)
@@ -2891,9 +2918,10 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
+name|GIMP_IS_PLUG_IN
+argument_list|(
 name|plug_in
-operator|!=
-name|NULL
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|manager

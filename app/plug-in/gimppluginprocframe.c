@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * plug-in-proc-frame.c  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimppluginprocframe.c  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -42,46 +42,30 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb/gimpprocedure.h"
+file|"pdb/gimppluginprocedure.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"plug-in-proc-frame.h"
+file|"gimpplugin.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"plug-in-progress.h"
+file|"gimpplugin-progress.h"
 end_include
-
-begin_function_decl
-specifier|static
-name|void
-name|plug_in_proc_frame_free
-parameter_list|(
-name|PlugInProcFrame
-modifier|*
-name|proc_frame
-parameter_list|,
-name|PlugIn
-modifier|*
-name|plug_in
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_comment
 comment|/*  publuc functions  */
 end_comment
 
 begin_function
-name|PlugInProcFrame
+name|GimpPlugInProcFrame
 modifier|*
-DECL|function|plug_in_proc_frame_new (GimpContext * context,GimpProgress * progress,GimpProcedure * procedure)
-name|plug_in_proc_frame_new
+DECL|function|gimp_plug_in_proc_frame_new (GimpContext * context,GimpProgress * progress,GimpPlugInProcedure * procedure)
+name|gimp_plug_in_proc_frame_new
 parameter_list|(
 name|GimpContext
 modifier|*
@@ -91,12 +75,12 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
-name|GimpProcedure
+name|GimpPlugInProcedure
 modifier|*
 name|procedure
 parameter_list|)
 block|{
-name|PlugInProcFrame
+name|GimpPlugInProcFrame
 modifier|*
 name|proc_frame
 decl_stmt|;
@@ -126,7 +110,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|GIMP_IS_PROCEDURE
+name|GIMP_IS_PLUG_IN_PROCEDURE
 argument_list|(
 name|procedure
 argument_list|)
@@ -138,7 +122,7 @@ name|proc_frame
 operator|=
 name|g_new0
 argument_list|(
-name|PlugInProcFrame
+name|GimpPlugInProcFrame
 argument_list|,
 literal|1
 argument_list|)
@@ -149,7 +133,7 @@ name|ref_count
 operator|=
 literal|1
 expr_stmt|;
-name|plug_in_proc_frame_init
+name|gimp_plug_in_proc_frame_init
 argument_list|(
 name|proc_frame
 argument_list|,
@@ -168,10 +152,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|plug_in_proc_frame_init (PlugInProcFrame * proc_frame,GimpContext * context,GimpProgress * progress,GimpProcedure * procedure)
-name|plug_in_proc_frame_init
+DECL|function|gimp_plug_in_proc_frame_init (GimpPlugInProcFrame * proc_frame,GimpContext * context,GimpProgress * progress,GimpPlugInProcedure * procedure)
+name|gimp_plug_in_proc_frame_init
 parameter_list|(
-name|PlugInProcFrame
+name|GimpPlugInProcFrame
 modifier|*
 name|proc_frame
 parameter_list|,
@@ -183,7 +167,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
-name|GimpProcedure
+name|GimpPlugInProcedure
 modifier|*
 name|procedure
 parameter_list|)
@@ -215,6 +199,18 @@ name|progress
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|procedure
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_PLUG_IN_PROCEDURE
+argument_list|(
+name|procedure
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|proc_frame
 operator|->
 name|main_context
@@ -234,7 +230,10 @@ name|proc_frame
 operator|->
 name|procedure
 operator|=
+name|GIMP_PROCEDURE
+argument_list|(
 name|procedure
+argument_list|)
 expr_stmt|;
 name|proc_frame
 operator|->
@@ -278,14 +277,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|plug_in_proc_frame_dispose (PlugInProcFrame * proc_frame,PlugIn * plug_in)
-name|plug_in_proc_frame_dispose
+DECL|function|gimp_plug_in_proc_frame_dispose (GimpPlugInProcFrame * proc_frame,GimpPlugIn * plug_in)
+name|gimp_plug_in_proc_frame_dispose
 parameter_list|(
-name|PlugInProcFrame
+name|GimpPlugInProcFrame
 modifier|*
 name|proc_frame
 parameter_list|,
-name|PlugIn
+name|GimpPlugIn
 modifier|*
 name|plug_in
 parameter_list|)
@@ -299,9 +298,10 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
+name|GIMP_IS_PLUG_IN
+argument_list|(
 name|plug_in
-operator|!=
-name|NULL
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -311,7 +311,7 @@ operator|->
 name|progress
 condition|)
 block|{
-name|plug_in_progress_end
+name|gimp_plug_in_progress_end
 argument_list|(
 name|plug_in
 argument_list|)
@@ -394,60 +394,58 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|plug_in_proc_frame_free (PlugInProcFrame * proc_frame,PlugIn * plug_in)
-name|plug_in_proc_frame_free
-parameter_list|(
-name|PlugInProcFrame
-modifier|*
+if|if
+condition|(
 name|proc_frame
-parameter_list|,
-name|PlugIn
-modifier|*
-name|plug_in
-parameter_list|)
+operator|->
+name|return_vals
+condition|)
 block|{
-name|g_return_if_fail
+name|g_value_array_free
 argument_list|(
 name|proc_frame
-operator|!=
+operator|->
+name|return_vals
+argument_list|)
+expr_stmt|;
+name|proc_frame
+operator|->
+name|return_vals
+operator|=
 name|NULL
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|proc_frame
+operator|->
+name|main_loop
+condition|)
+block|{
+name|g_main_loop_unref
+argument_list|(
+name|proc_frame
+operator|->
+name|main_loop
 argument_list|)
 expr_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|plug_in
-operator|!=
+name|proc_frame
+operator|->
+name|main_loop
+operator|=
 name|NULL
-argument_list|)
 expr_stmt|;
-name|plug_in_proc_frame_dispose
-argument_list|(
-name|proc_frame
-argument_list|,
-name|plug_in
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|proc_frame
-argument_list|)
-expr_stmt|;
+block|}
 block|}
 end_function
 
 begin_function
-name|PlugInProcFrame
+name|GimpPlugInProcFrame
 modifier|*
-DECL|function|plug_in_proc_frame_ref (PlugInProcFrame * proc_frame)
-name|plug_in_proc_frame_ref
+DECL|function|gimp_plug_in_proc_frame_ref (GimpPlugInProcFrame * proc_frame)
+name|gimp_plug_in_proc_frame_ref
 parameter_list|(
-name|PlugInProcFrame
+name|GimpPlugInProcFrame
 modifier|*
 name|proc_frame
 parameter_list|)
@@ -474,14 +472,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|plug_in_proc_frame_unref (PlugInProcFrame * proc_frame,PlugIn * plug_in)
-name|plug_in_proc_frame_unref
+DECL|function|gimp_plug_in_proc_frame_unref (GimpPlugInProcFrame * proc_frame,GimpPlugIn * plug_in)
+name|gimp_plug_in_proc_frame_unref
 parameter_list|(
-name|PlugInProcFrame
+name|GimpPlugInProcFrame
 modifier|*
 name|proc_frame
 parameter_list|,
-name|PlugIn
+name|GimpPlugIn
 modifier|*
 name|plug_in
 parameter_list|)
@@ -495,9 +493,10 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
+name|GIMP_IS_PLUG_IN
+argument_list|(
 name|plug_in
-operator|!=
-name|NULL
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|proc_frame
@@ -513,23 +512,30 @@ name|ref_count
 operator|<
 literal|1
 condition|)
-name|plug_in_proc_frame_free
+block|{
+name|gimp_plug_in_proc_frame_dispose
 argument_list|(
 name|proc_frame
 argument_list|,
 name|plug_in
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|proc_frame
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 
 begin_function
 name|GValueArray
 modifier|*
-DECL|function|plug_in_proc_frame_get_return_vals (PlugInProcFrame * proc_frame)
-name|plug_in_proc_frame_get_return_vals
+DECL|function|gimp_plug_in_proc_frame_get_return_vals (GimpPlugInProcFrame * proc_frame)
+name|gimp_plug_in_proc_frame_get_return_vals
 parameter_list|(
-name|PlugInProcFrame
+name|GimpPlugInProcFrame
 modifier|*
 name|proc_frame
 parameter_list|)

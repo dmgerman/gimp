@@ -76,6 +76,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"plug-in/gimpplugin.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"plug-in/gimppluginmanager-menu-branch.h"
 end_include
 
@@ -95,12 +101,6 @@ begin_include
 include|#
 directive|include
 file|"plug-in/plug-in-def.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"plug-in/plug-in.h"
 end_include
 
 begin_function
@@ -487,7 +487,7 @@ condition|(
 name|success
 condition|)
 block|{
-name|PlugIn
+name|GimpPlugIn
 modifier|*
 name|plug_in
 init|=
@@ -619,7 +619,7 @@ condition|(
 name|success
 condition|)
 block|{
-name|PlugIn
+name|GimpPlugIn
 modifier|*
 name|plug_in
 init|=
@@ -751,7 +751,7 @@ condition|(
 name|success
 condition|)
 block|{
-name|PlugIn
+name|GimpPlugIn
 modifier|*
 name|plug_in
 init|=
@@ -777,7 +777,7 @@ argument_list|)
 decl_stmt|;
 name|success
 operator|=
-name|plug_in_menu_register
+name|gimp_plug_in_menu_register
 argument_list|(
 name|plug_in
 argument_list|,
@@ -886,7 +886,7 @@ condition|(
 name|success
 condition|)
 block|{
-name|PlugIn
+name|GimpPlugIn
 modifier|*
 name|plug_in
 init|=
@@ -1041,7 +1041,7 @@ condition|(
 name|success
 condition|)
 block|{
-name|PlugIn
+name|GimpPlugIn
 modifier|*
 name|plug_in
 init|=

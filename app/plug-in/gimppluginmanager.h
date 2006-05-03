@@ -137,7 +137,7 @@ modifier|*
 name|help_domains
 decl_stmt|;
 DECL|member|current_plug_in
-name|PlugIn
+name|GimpPlugIn
 modifier|*
 name|current_plug_in
 decl_stmt|;
@@ -397,7 +397,7 @@ name|GimpPlugInManager
 modifier|*
 name|manager
 parameter_list|,
-name|PlugIn
+name|GimpPlugIn
 modifier|*
 name|plug_in
 parameter_list|)
