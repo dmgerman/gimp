@@ -316,10 +316,6 @@ block|}
 if|if
 condition|(
 name|merge_list
-operator|&&
-name|merge_list
-operator|->
-name|next
 condition|)
 block|{
 specifier|const
@@ -432,37 +428,11 @@ return|return
 name|layer
 return|;
 block|}
-else|else
-block|{
-name|g_slist_free
-argument_list|(
-name|merge_list
-argument_list|)
-expr_stmt|;
-comment|/* If there was a floating selection, we have done something.          No need to warn the user. Return the active layer instead */
-if|if
-condition|(
-name|had_floating_sel
-condition|)
 return|return
 name|image
 operator|->
 name|active_layer
 return|;
-else|else
-name|g_message
-argument_list|(
-name|_
-argument_list|(
-literal|"Not enough visible layers for a merge. "
-literal|"There must be at least two."
-argument_list|)
-argument_list|)
-expr_stmt|;
-return|return
-name|NULL
-return|;
-block|}
 block|}
 end_function
 
@@ -649,6 +619,10 @@ name|GimpMergeType
 name|merge_type
 parameter_list|)
 block|{
+name|GimpLayer
+modifier|*
+name|layer
+decl_stmt|;
 name|GList
 modifier|*
 name|list
@@ -711,14 +685,12 @@ name|list
 argument_list|)
 control|)
 block|{
-name|GimpLayer
-modifier|*
 name|layer
-init|=
+operator|=
 name|list
 operator|->
 name|data
-decl_stmt|;
+expr_stmt|;
 if|if
 condition|(
 name|layer
@@ -753,14 +725,12 @@ name|layer_list
 argument_list|)
 control|)
 block|{
-name|GimpLayer
-modifier|*
 name|layer
-init|=
+operator|=
 name|layer_list
 operator|->
 name|data
-decl_stmt|;
+expr_stmt|;
 if|if
 condition|(
 name|gimp_item_get_visible
@@ -781,15 +751,6 @@ name|layer
 argument_list|)
 expr_stmt|;
 block|}
-if|if
-condition|(
-name|merge_list
-condition|)
-block|{
-name|GimpLayer
-modifier|*
-name|layer
-decl_stmt|;
 name|merge_list
 operator|=
 name|g_slist_prepend
@@ -839,21 +800,6 @@ expr_stmt|;
 return|return
 name|layer
 return|;
-block|}
-else|else
-block|{
-name|g_message
-argument_list|(
-name|_
-argument_list|(
-literal|"There are not enough visible layers for a merge down."
-argument_list|)
-argument_list|)
-expr_stmt|;
-return|return
-name|NULL
-return|;
-block|}
 block|}
 end_function
 
