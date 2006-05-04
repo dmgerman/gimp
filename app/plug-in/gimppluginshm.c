@@ -208,6 +208,22 @@ directive|include
 file|"gimppluginshm.h"
 end_include
 
+begin_define
+DECL|macro|TILE_MAP_SIZE
+define|#
+directive|define
+name|TILE_MAP_SIZE
+value|(TILE_WIDTH * TILE_HEIGHT * 4)
+end_define
+
+begin_define
+DECL|macro|ERRMSG_SHM_DISABLE
+define|#
+directive|define
+name|ERRMSG_SHM_DISABLE
+value|"Disabling shared memory tile transport"
+end_define
+
 begin_struct
 DECL|struct|_GimpPlugInShm
 struct|struct
@@ -238,22 +254,6 @@ block|}
 struct|;
 end_struct
 
-begin_define
-DECL|macro|TILE_MAP_SIZE
-define|#
-directive|define
-name|TILE_MAP_SIZE
-value|(TILE_WIDTH * TILE_HEIGHT * 4)
-end_define
-
-begin_define
-DECL|macro|ERRMSG_SHM_DISABLE
-define|#
-directive|define
-name|ERRMSG_SHM_DISABLE
-value|"Disabling shared memory tile transport"
-end_define
-
 begin_function
 name|GimpPlugInShm
 modifier|*
@@ -275,13 +275,6 @@ argument_list|,
 literal|1
 argument_list|)
 decl_stmt|;
-if|#
-directive|if
-name|defined
-argument_list|(
-name|USE_SYSV_SHM
-argument_list|)
-comment|/* Use SysV shared memory mechanisms for transferring tile data. */
 name|shm
 operator|->
 name|shm_ID
@@ -289,6 +282,14 @@ operator|=
 operator|-
 literal|1
 expr_stmt|;
+if|#
+directive|if
+name|defined
+argument_list|(
+name|USE_SYSV_SHM
+argument_list|)
+comment|/* Use SysV shared memory mechanisms for transferring tile data. */
+block|{
 name|shm
 operator|->
 name|shm_ID
@@ -347,7 +348,7 @@ operator|-
 literal|1
 condition|)
 block|{
-name|g_warning
+name|g_printerr
 argument_list|(
 literal|"shmat() failed: %s\n"
 name|ERRMSG_SHM_DISABLE
@@ -409,7 +410,7 @@ directive|endif
 block|}
 else|else
 block|{
-name|g_warning
+name|g_printerr
 argument_list|(
 literal|"shmget() failed: %s\n"
 name|ERRMSG_SHM_DISABLE
@@ -421,6 +422,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+block|}
 elif|#
 directive|elif
 name|defined
@@ -428,6 +430,7 @@ argument_list|(
 name|USE_WIN32_SHM
 argument_list|)
 comment|/* Use Win32 shared memory mechanisms for transferring tile data. */
+block|{
 name|gint
 name|pid
 decl_stmt|;
@@ -437,13 +440,6 @@ index|[
 name|MAX_PATH
 index|]
 decl_stmt|;
-name|shm
-operator|->
-name|shm_ID
-operator|=
-operator|-
-literal|1
-expr_stmt|;
 comment|/* Our shared memory id will be our process ID */
 name|pid
 operator|=
@@ -526,14 +522,17 @@ name|shm
 operator|->
 name|shm_addr
 condition|)
+block|{
 name|shm
 operator|->
 name|shm_ID
 operator|=
 name|pid
 expr_stmt|;
+block|}
 else|else
-name|g_warning
+block|{
+name|g_printerr
 argument_list|(
 literal|"MapViewOfFile error: %d... "
 name|ERRMSG_SHM_DISABLE
@@ -543,9 +542,10 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+block|}
 else|else
 block|{
-name|g_warning
+name|g_printerr
 argument_list|(
 literal|"CreateFileMapping error: %d... "
 name|ERRMSG_SHM_DISABLE
@@ -555,6 +555,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+block|}
 elif|#
 directive|elif
 name|defined
@@ -562,6 +563,7 @@ argument_list|(
 name|USE_POSIX_SHM
 argument_list|)
 comment|/* Use POSIX shared memory mechanisms for transferring tile data. */
+block|{
 name|gint
 name|pid
 decl_stmt|;
@@ -574,13 +576,6 @@ decl_stmt|;
 name|gint
 name|shm_fd
 decl_stmt|;
-name|shm
-operator|->
-name|shm_ID
-operator|=
-operator|-
-literal|1
-expr_stmt|;
 comment|/* Our shared memory id will be our process ID */
 name|pid
 operator|=
@@ -682,7 +677,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|g_warning
+name|g_printerr
 argument_list|(
 literal|"mmap() failed: %s\n"
 name|ERRMSG_SHM_DISABLE
@@ -702,7 +697,7 @@ block|}
 block|}
 else|else
 block|{
-name|g_warning
+name|g_printerr
 argument_list|(
 literal|"ftruncate() failed: %s\n"
 name|ERRMSG_SHM_DISABLE
@@ -727,7 +722,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|g_warning
+name|g_printerr
 argument_list|(
 literal|"shm_open() failed: %s\n"
 name|ERRMSG_SHM_DISABLE
@@ -739,8 +734,29 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+block|}
 endif|#
 directive|endif
+if|if
+condition|(
+name|shm
+operator|->
+name|shm_ID
+operator|==
+operator|-
+literal|1
+condition|)
+block|{
+name|g_free
+argument_list|(
+name|shm
+argument_list|)
+expr_stmt|;
+name|shm
+operator|=
+name|NULL
+expr_stmt|;
+block|}
 return|return
 name|shm
 return|;
@@ -764,15 +780,6 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
-if|#
-directive|if
-name|defined
-argument_list|(
-name|USE_SYSV_SHM
-argument_list|)
-ifndef|#
-directive|ifndef
-name|IPC_RMID_DEFERRED_RELEASE
 if|if
 condition|(
 name|shm
@@ -783,6 +790,15 @@ operator|-
 literal|1
 condition|)
 block|{
+if|#
+directive|if
+name|defined
+argument_list|(
+name|USE_SYSV_SHM
+argument_list|)
+ifndef|#
+directive|ifndef
+name|IPC_RMID_DEFERRED_RELEASE
 name|shmdt
 argument_list|(
 name|shm
@@ -801,20 +817,8 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-block|}
 else|#
 directive|else
-comment|/* IPC_RMID_DEFERRED_RELEASE */
-if|if
-condition|(
-name|shm
-operator|->
-name|shm_ID
-operator|!=
-operator|-
-literal|1
-condition|)
-block|{
 name|shmdt
 argument_list|(
 name|shm
@@ -822,9 +826,9 @@ operator|->
 name|shm_addr
 argument_list|)
 expr_stmt|;
-block|}
 endif|#
 directive|endif
+comment|/* IPC_RMID_DEFERRED_RELEASE */
 elif|#
 directive|elif
 name|defined
@@ -837,7 +841,6 @@ name|shm
 operator|->
 name|shm_handle
 condition|)
-block|{
 name|CloseHandle
 argument_list|(
 name|shm
@@ -845,23 +848,12 @@ operator|->
 name|shm_handle
 argument_list|)
 expr_stmt|;
-block|}
 elif|#
 directive|elif
 name|defined
 argument_list|(
 name|USE_POSIX_SHM
 argument_list|)
-if|if
-condition|(
-name|shm
-operator|->
-name|shm_ID
-operator|!=
-operator|-
-literal|1
-condition|)
-block|{
 name|gchar
 name|shm_handle
 index|[
@@ -898,9 +890,9 @@ argument_list|(
 name|shm_handle
 argument_list|)
 expr_stmt|;
-block|}
 endif|#
 directive|endif
+block|}
 name|g_free
 argument_list|(
 name|shm

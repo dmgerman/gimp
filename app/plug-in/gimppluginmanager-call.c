@@ -109,6 +109,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimppluginshm.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"plug-in-def.h"
 end_include
 
@@ -624,10 +630,21 @@ name|config
 operator|.
 name|shm_ID
 operator|=
-name|gimp_plug_in_manager_get_shm_ID
+operator|(
+name|manager
+operator|->
+name|shm
+condition|?
+name|gimp_plug_in_shm_get_ID
 argument_list|(
 name|manager
+operator|->
+name|shm
 argument_list|)
+else|:
+operator|-
+literal|1
+operator|)
 expr_stmt|;
 name|config
 operator|.
