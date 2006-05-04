@@ -111,10 +111,17 @@ name|GimpPlugInManager
 modifier|*
 name|manager
 decl_stmt|;
-DECL|member|ref_count
-name|gint
-name|ref_count
+DECL|member|prog
+name|gchar
+modifier|*
+name|prog
 decl_stmt|;
+comment|/*  Plug-in's full path name          */
+DECL|member|call_mode
+name|GimpPlugInCallMode
+name|call_mode
+decl_stmt|;
+comment|/*  QUERY, INIT or RUN                */
 DECL|member|open
 name|guint
 name|open
@@ -122,27 +129,11 @@ range|:
 literal|1
 decl_stmt|;
 comment|/*  Is the plug-in open?              */
-DECL|member|call_mode
-name|GimpPlugInCallMode
-name|call_mode
-decl_stmt|;
 DECL|member|pid
 name|GPid
 name|pid
 decl_stmt|;
 comment|/*  Plug-in's process id              */
-DECL|member|name
-name|gchar
-modifier|*
-name|name
-decl_stmt|;
-comment|/*  Plug-in's name                    */
-DECL|member|prog
-name|gchar
-modifier|*
-name|prog
-decl_stmt|;
-comment|/*  Plug-in's full path name          */
 DECL|member|my_read
 name|GIOChannel
 modifier|*

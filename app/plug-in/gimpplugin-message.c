@@ -319,11 +319,12 @@ argument_list|(
 literal|"Plug-In \"%s\"\n(%s)\n\n"
 literal|"sent a CONFIG message.  This should not happen."
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_object_get_name
+argument_list|(
+name|GIMP_OBJECT
 argument_list|(
 name|plug_in
-operator|->
-name|name
+argument_list|)
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
@@ -363,11 +364,12 @@ argument_list|(
 literal|"Plug-In \"%s\"\n(%s)\n\n"
 literal|"sent a TILE_ACK message.  This should not happen."
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_object_get_name
+argument_list|(
+name|GIMP_OBJECT
 argument_list|(
 name|plug_in
-operator|->
-name|name
+argument_list|)
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
@@ -394,11 +396,12 @@ argument_list|(
 literal|"Plug-In \"%s\"\n(%s)\n\n"
 literal|"sent a TILE_DATA message.  This should not happen."
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_object_get_name
+argument_list|(
+name|GIMP_OBJECT
 argument_list|(
 name|plug_in
-operator|->
-name|name
+argument_list|)
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
@@ -451,11 +454,12 @@ argument_list|(
 literal|"Plug-In \"%s\"\n(%s)\n\n"
 literal|"sent a TEMP_PROC_RUN message.  This should not happen."
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_object_get_name
+argument_list|(
+name|GIMP_OBJECT
 argument_list|(
 name|plug_in
-operator|->
-name|name
+argument_list|)
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
@@ -804,11 +808,12 @@ argument_list|(
 literal|"Plug-In \"%s\"\n(%s)\n\n"
 literal|"requested invalid drawable (killing)"
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_object_get_name
+argument_list|(
+name|GIMP_OBJECT
 argument_list|(
 name|plug_in
-operator|->
-name|name
+argument_list|)
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
@@ -875,11 +880,12 @@ argument_list|(
 literal|"Plug-In \"%s\"\n(%s)\n\n"
 literal|"requested invalid tile (killing)"
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_object_get_name
+argument_list|(
+name|GIMP_OBJECT
 argument_list|(
 name|plug_in
-operator|->
-name|name
+argument_list|)
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
@@ -1028,11 +1034,12 @@ argument_list|(
 literal|"Plug-In \"%s\"\n(%s)\n\n"
 literal|"requested invalid drawable (killing)"
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_object_get_name
+argument_list|(
+name|GIMP_OBJECT
 argument_list|(
 name|plug_in
-operator|->
-name|name
+argument_list|)
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
@@ -1099,11 +1106,12 @@ argument_list|(
 literal|"Plug-In \"%s\"\n(%s)\n\n"
 literal|"requested invalid tile (killing)"
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_object_get_name
+argument_list|(
+name|GIMP_OBJECT
 argument_list|(
 name|plug_in
-operator|->
-name|name
+argument_list|)
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
@@ -1477,11 +1485,12 @@ literal|"WARNING: Plug-In \"%s\"\n(%s)\n"
 literal|"called deprecated procedure '%s'.\n"
 literal|"It should call '%s' instead!"
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_object_get_name
+argument_list|(
+name|GIMP_OBJECT
 argument_list|(
 name|plug_in
-operator|->
-name|name
+argument_list|)
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
@@ -1538,11 +1547,12 @@ argument_list|(
 literal|"WARNING: Plug-In \"%s\"\n(%s)\n"
 literal|"called deprecated procedure '%s'."
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_object_get_name
+argument_list|(
+name|GIMP_OBJECT
 argument_list|(
 name|plug_in
-operator|->
-name|name
+argument_list|)
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
@@ -1564,11 +1574,12 @@ literal|"WARNING: Plug-In \"%s\"\n(%s)\n"
 literal|"called deprecated procedure '%s'.\n"
 literal|"It should call '%s' instead!"
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_object_get_name
+argument_list|(
+name|GIMP_OBJECT
 argument_list|(
 name|plug_in
-operator|->
-name|name
+argument_list|)
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
@@ -1945,11 +1956,12 @@ literal|"Plug-In \"%s\"\n(%s)\n\n"
 literal|"sent a TEMP_PROC_RETURN message while not running "
 literal|"a temporary procedure.  This should not happen."
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_object_get_name
+argument_list|(
+name|GIMP_OBJECT
 argument_list|(
 name|plug_in
-operator|->
-name|name
+argument_list|)
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
@@ -2105,11 +2117,12 @@ literal|"attempted to install procedure \"%s\" "
 literal|"which fails to comply with the array parameter "
 literal|"passing standard.  Argument %d is noncompliant."
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_object_get_name
+argument_list|(
+name|GIMP_OBJECT
 argument_list|(
 name|plug_in
-operator|->
-name|name
+argument_list|)
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
@@ -2434,11 +2447,12 @@ argument_list|(
 literal|"Plug-In \"%s\"\n(%s)\n\n"
 literal|"attempted to install a procedure with invalid UTF-8 strings."
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_object_get_name
+argument_list|(
+name|GIMP_OBJECT
 argument_list|(
 name|plug_in
-operator|->
-name|name
+argument_list|)
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
@@ -2971,11 +2985,12 @@ literal|"Plug-In \"%s\"\n(%s)\n\n"
 literal|"sent an EXTENSION_ACK message while not being started "
 literal|"as an extension.  This should not happen."
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_object_get_name
+argument_list|(
+name|GIMP_OBJECT
 argument_list|(
 name|plug_in
-operator|->
-name|name
+argument_list|)
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
@@ -3035,11 +3050,12 @@ literal|"Plug-In \"%s\"\n(%s)\n\n"
 literal|"sent an HAS_INIT message while not in query().  "
 literal|"This should not happen."
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_object_get_name
+argument_list|(
+name|GIMP_OBJECT
 argument_list|(
 name|plug_in
-operator|->
-name|name
+argument_list|)
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
