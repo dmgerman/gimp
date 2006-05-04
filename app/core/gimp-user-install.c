@@ -120,6 +120,10 @@ DECL|struct|_GimpUserInstall
 struct|struct
 name|_GimpUserInstall
 block|{
+DECL|member|verbose
+name|gboolean
+name|verbose
+decl_stmt|;
 DECL|member|old_dir
 name|gchar
 modifier|*
@@ -154,7 +158,7 @@ end_struct
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28f6f16a0103
+DECL|enum|__anon2969769c0103
 block|{
 DECL|enumerator|USER_INSTALL_MKDIR
 name|USER_INSTALL_MKDIR
@@ -173,7 +177,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon28f6f16a0208
+DECL|struct|__anon2969769c0208
 block|{
 DECL|member|name
 specifier|const
@@ -453,9 +457,12 @@ end_function_decl
 begin_function
 name|GimpUserInstall
 modifier|*
-DECL|function|gimp_user_install_new ()
+DECL|function|gimp_user_install_new (gboolean verbose)
 name|gimp_user_install_new
-parameter_list|()
+parameter_list|(
+name|gboolean
+name|verbose
+parameter_list|)
 block|{
 name|GimpUserInstall
 modifier|*
@@ -479,6 +486,12 @@ decl_stmt|;
 name|gboolean
 name|migrate
 decl_stmt|;
+name|install
+operator|->
+name|verbose
+operator|=
+name|verbose
+expr_stmt|;
 name|dir
 operator|=
 name|g_strdup
@@ -677,9 +690,6 @@ argument_list|(
 name|install
 argument_list|)
 return|;
-return|return
-name|FALSE
-return|;
 block|}
 end_function
 
@@ -860,6 +870,19 @@ if|if
 condition|(
 name|install
 operator|->
+name|verbose
+condition|)
+name|g_print
+argument_list|(
+literal|"%s\n"
+argument_list|,
+name|message
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|install
+operator|->
 name|log
 condition|)
 name|install
@@ -873,14 +896,6 @@ argument_list|,
 name|install
 operator|->
 name|log_data
-argument_list|)
-expr_stmt|;
-else|else
-name|g_printerr
-argument_list|(
-literal|"user-install: %s\n"
-argument_list|,
-name|message
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -964,9 +979,9 @@ name|log_data
 argument_list|)
 expr_stmt|;
 else|else
-name|g_printerr
+name|g_print
 argument_list|(
-literal|"user-install (error): %s\n"
+literal|"error: %s\n"
 argument_list|,
 name|message
 argument_list|)

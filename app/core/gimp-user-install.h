@@ -52,7 +52,10 @@ begin_function_decl
 name|GimpUserInstall
 modifier|*
 name|gimp_user_install_new
-parameter_list|()
+parameter_list|(
+name|gboolean
+name|verbose
+parameter_list|)
 function_decl|;
 end_function_decl
 
