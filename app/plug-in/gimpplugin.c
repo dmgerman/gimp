@@ -2990,7 +2990,10 @@ name|context
 argument_list|,
 name|progress
 argument_list|,
+name|GIMP_PLUG_IN_PROCEDURE
+argument_list|(
 name|procedure
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|plug_in

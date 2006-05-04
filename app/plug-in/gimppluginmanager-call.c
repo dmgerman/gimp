@@ -531,10 +531,7 @@ name|context
 argument_list|,
 name|progress
 argument_list|,
-name|GIMP_PROCEDURE
-argument_list|(
 name|procedure
-argument_list|)
 argument_list|,
 name|procedure
 operator|->
@@ -1173,10 +1170,7 @@ name|context
 argument_list|,
 name|progress
 argument_list|,
-name|GIMP_PROCEDURE
-argument_list|(
 name|procedure
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|proc_run
