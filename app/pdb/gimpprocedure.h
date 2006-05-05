@@ -287,8 +287,9 @@ name|GValueArray
 modifier|*
 name|args
 parameter_list|,
-name|gint32
-name|display_ID
+name|GimpObject
+modifier|*
+name|display
 parameter_list|)
 function_decl|;
 block|}
@@ -542,8 +543,9 @@ name|GValueArray
 modifier|*
 name|args
 parameter_list|,
-name|gint32
-name|display_ID
+name|GimpObject
+modifier|*
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl

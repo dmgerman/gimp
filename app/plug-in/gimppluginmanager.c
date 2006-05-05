@@ -174,7 +174,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2987daf40103
+DECL|enum|__anon29eca62a0103
 block|{
 DECL|enumerator|PLUG_IN_OPENED
 name|PLUG_IN_OPENED
@@ -2412,8 +2412,7 @@ name|NULL
 argument_list|,
 name|args
 argument_list|,
-operator|-
-literal|1
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_value_array_free

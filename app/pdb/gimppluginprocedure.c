@@ -84,7 +84,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5ed19e0103
+DECL|enum|__anon298560b30103
 block|{
 DECL|enumerator|MENU_PATH_ADDED
 name|MENU_PATH_ADDED
@@ -177,8 +177,9 @@ name|GValueArray
 modifier|*
 name|args
 parameter_list|,
-name|gint32
-name|display_ID
+name|GimpObject
+modifier|*
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -984,8 +985,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-operator|-
-literal|1
+name|NULL
 argument_list|)
 return|;
 block|}
@@ -994,7 +994,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_plug_in_procedure_execute_async (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GValueArray * args,gint32 display_ID)
+DECL|function|gimp_plug_in_procedure_execute_async (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GValueArray * args,GimpObject * display)
 name|gimp_plug_in_procedure_execute_async
 parameter_list|(
 name|GimpProcedure
@@ -1017,8 +1017,9 @@ name|GValueArray
 modifier|*
 name|args
 parameter_list|,
-name|gint32
-name|display_ID
+name|GimpObject
+modifier|*
+name|display
 parameter_list|)
 block|{
 name|gimp_plug_in_manager_call_run
@@ -1042,7 +1043,7 @@ name|FALSE
 argument_list|,
 name|TRUE
 argument_list|,
-name|display_ID
+name|display
 argument_list|)
 expr_stmt|;
 block|}

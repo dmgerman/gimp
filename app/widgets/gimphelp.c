@@ -714,8 +714,7 @@ name|NULL
 argument_list|,
 name|args
 argument_list|,
-operator|-
-literal|1
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_value_array_free
@@ -1090,8 +1089,7 @@ name|NULL
 argument_list|,
 name|args
 argument_list|,
-operator|-
-literal|1
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_value_array_free

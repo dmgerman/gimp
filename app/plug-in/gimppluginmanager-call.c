@@ -431,7 +431,7 @@ end_function
 begin_function
 name|GValueArray
 modifier|*
-DECL|function|gimp_plug_in_manager_call_run (GimpPlugInManager * manager,GimpContext * context,GimpProgress * progress,GimpPlugInProcedure * procedure,GValueArray * args,gboolean synchronous,gboolean destroy_return_vals,gint display_ID)
+DECL|function|gimp_plug_in_manager_call_run (GimpPlugInManager * manager,GimpContext * context,GimpProgress * progress,GimpPlugInProcedure * procedure,GValueArray * args,gboolean synchronous,gboolean destroy_return_vals,GimpObject * display)
 name|gimp_plug_in_manager_call_run
 parameter_list|(
 name|GimpPlugInManager
@@ -460,8 +460,9 @@ parameter_list|,
 name|gboolean
 name|destroy_return_vals
 parameter_list|,
-name|gint
-name|display_ID
+name|GimpObject
+modifier|*
+name|display
 parameter_list|)
 block|{
 name|GValueArray
@@ -527,6 +528,20 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|display
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_OBJECT
+argument_list|(
+name|display
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|plug_in
 operator|=
 name|gimp_plug_in_new
@@ -584,6 +599,9 @@ name|GPProcRun
 name|proc_run
 decl_stmt|;
 name|gint
+name|display_ID
+decl_stmt|;
+name|gint
 name|monitor
 decl_stmt|;
 if|if
@@ -608,6 +626,22 @@ goto|goto
 name|done
 goto|;
 block|}
+name|display_ID
+operator|=
+name|display
+condition|?
+name|gimp_get_display_ID
+argument_list|(
+name|manager
+operator|->
+name|gimp
+argument_list|,
+name|display
+argument_list|)
+else|:
+operator|-
+literal|1
+expr_stmt|;
 name|config
 operator|.
 name|version

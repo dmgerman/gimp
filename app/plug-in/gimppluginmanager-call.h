@@ -114,8 +114,9 @@ parameter_list|,
 name|gboolean
 name|destroy_return_vals
 parameter_list|,
-name|gint
-name|display_ID
+name|GimpObject
+modifier|*
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -193,8 +193,9 @@ name|GValueArray
 modifier|*
 name|args
 parameter_list|,
-name|gint32
-name|display_ID
+name|GimpObject
+modifier|*
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -775,7 +776,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_procedure_real_execute_async (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GValueArray * args,gint32 display_ID)
+DECL|function|gimp_procedure_real_execute_async (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GValueArray * args,GimpObject * display)
 name|gimp_procedure_real_execute_async
 parameter_list|(
 name|GimpProcedure
@@ -798,8 +799,9 @@ name|GValueArray
 modifier|*
 name|args
 parameter_list|,
-name|gint32
-name|display_ID
+name|GimpObject
+modifier|*
+name|display
 parameter_list|)
 block|{
 name|GValueArray
@@ -1397,7 +1399,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_procedure_execute_async (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GValueArray * args,gint32 display_ID)
+DECL|function|gimp_procedure_execute_async (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GValueArray * args,GimpObject * display)
 name|gimp_procedure_execute_async
 parameter_list|(
 name|GimpProcedure
@@ -1420,8 +1422,9 @@ name|GValueArray
 modifier|*
 name|args
 parameter_list|,
-name|gint32
-name|display_ID
+name|GimpObject
+modifier|*
+name|display
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -1467,6 +1470,18 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|display
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_OBJECT
+argument_list|(
+name|display
+argument_list|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|gimp_procedure_validate_args
@@ -1493,7 +1508,7 @@ name|progress
 argument_list|,
 name|args
 argument_list|,
-name|display_ID
+name|display
 argument_list|)
 expr_stmt|;
 block|}

@@ -412,15 +412,10 @@ argument_list|)
 argument_list|,
 name|args
 argument_list|,
-name|display
-condition|?
-name|gimp_display_get_ID
+name|GIMP_OBJECT
 argument_list|(
 name|display
 argument_list|)
-else|:
-operator|-
-literal|1
 argument_list|)
 expr_stmt|;
 comment|/* remember only "standard" plug-ins */
@@ -661,7 +656,7 @@ argument_list|)
 argument_list|,
 name|args
 argument_list|,
-name|gimp_display_get_ID
+name|GIMP_OBJECT
 argument_list|(
 name|display
 argument_list|)

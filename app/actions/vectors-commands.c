@@ -1314,14 +1314,10 @@ argument_list|)
 argument_list|,
 name|args
 argument_list|,
-name|display
-condition|?
-name|gimp_display_get_ID
+name|GIMP_OBJECT
 argument_list|(
 name|display
 argument_list|)
-else|:
-literal|0
 argument_list|)
 expr_stmt|;
 name|g_value_array_free
