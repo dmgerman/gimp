@@ -457,6 +457,8 @@ literal|"Input image"
 argument_list|,
 name|gimp
 argument_list|,
+name|FALSE
+argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
@@ -474,6 +476,8 @@ argument_list|,
 literal|"Active drawable of input image"
 argument_list|,
 name|gimp
+argument_list|,
+name|TRUE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -745,6 +749,8 @@ argument_list|,
 literal|"Output image"
 argument_list|,
 name|gimp
+argument_list|,
+name|FALSE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
