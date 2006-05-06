@@ -752,6 +752,10 @@ name|Gimp
 modifier|*
 name|gimp
 decl_stmt|;
+DECL|member|none_ok
+name|gboolean
+name|none_ok
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -789,6 +793,9 @@ parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|gboolean
+name|none_ok
 parameter_list|,
 name|GParamFlags
 name|flags
@@ -922,6 +929,10 @@ DECL|member|item_type
 name|GType
 name|item_type
 decl_stmt|;
+DECL|member|none_ok
+name|gboolean
+name|none_ok
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -962,6 +973,9 @@ name|gimp
 parameter_list|,
 name|GType
 name|item_type
+parameter_list|,
+name|gboolean
+name|none_ok
 parameter_list|,
 name|GParamFlags
 name|flags
@@ -1127,6 +1141,9 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
+name|gboolean
+name|none_ok
+parameter_list|,
 name|GParamFlags
 name|flags
 parameter_list|)
@@ -1287,6 +1304,9 @@ parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|gboolean
+name|none_ok
 parameter_list|,
 name|GParamFlags
 name|flags
@@ -1449,6 +1469,9 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
+name|gboolean
+name|none_ok
+parameter_list|,
 name|GParamFlags
 name|flags
 parameter_list|)
@@ -1609,6 +1632,9 @@ parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|gboolean
+name|none_ok
 parameter_list|,
 name|GParamFlags
 name|flags
@@ -1771,6 +1797,9 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
+name|gboolean
+name|none_ok
+parameter_list|,
 name|GParamFlags
 name|flags
 parameter_list|)
@@ -1932,6 +1961,9 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
+name|gboolean
+name|none_ok
+parameter_list|,
 name|GParamFlags
 name|flags
 parameter_list|)
@@ -2060,6 +2092,10 @@ name|Gimp
 modifier|*
 name|gimp
 decl_stmt|;
+DECL|member|none_ok
+name|gboolean
+name|none_ok
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -2097,6 +2133,9 @@ parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|gboolean
+name|none_ok
 parameter_list|,
 name|GParamFlags
 name|flags

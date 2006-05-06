@@ -350,6 +350,8 @@ name|desc
 argument_list|,
 name|gimp
 argument_list|,
+name|TRUE
+argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
 expr_stmt|;
@@ -368,6 +370,8 @@ argument_list|,
 name|desc
 argument_list|,
 name|gimp
+argument_list|,
+name|TRUE
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
@@ -388,6 +392,8 @@ name|desc
 argument_list|,
 name|gimp
 argument_list|,
+name|TRUE
+argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
 expr_stmt|;
@@ -406,6 +412,8 @@ argument_list|,
 name|desc
 argument_list|,
 name|gimp
+argument_list|,
+name|TRUE
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
@@ -426,6 +434,8 @@ name|desc
 argument_list|,
 name|gimp
 argument_list|,
+name|TRUE
+argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
 expr_stmt|;
@@ -444,6 +454,8 @@ argument_list|,
 name|desc
 argument_list|,
 name|gimp
+argument_list|,
+name|TRUE
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
@@ -467,6 +479,8 @@ argument_list|,
 name|desc
 argument_list|,
 name|gimp
+argument_list|,
+name|TRUE
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
@@ -731,7 +745,7 @@ name|pdb_type_quark
 condition|)
 block|{
 struct|struct
-DECL|struct|__anon27e64a750108
+DECL|struct|__anon2af0e6730108
 block|{
 DECL|member|g_type
 name|GType

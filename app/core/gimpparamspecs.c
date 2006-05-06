@@ -2226,6 +2226,12 @@ name|gimp
 operator|=
 name|NULL
 expr_stmt|;
+name|ispec
+operator|->
+name|none_ok
+operator|=
+name|FALSE
+expr_stmt|;
 block|}
 end_function
 
@@ -2299,6 +2305,26 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
+if|if
+condition|(
+name|ispec
+operator|->
+name|none_ok
+operator|&&
+operator|(
+name|image_id
+operator|==
+literal|0
+operator|||
+name|image_id
+operator|==
+operator|-
+literal|1
+operator|)
+condition|)
+return|return
+name|FALSE
+return|;
 name|image
 operator|=
 name|gimp_image_get_by_ID
@@ -2417,7 +2443,7 @@ end_function
 begin_function
 name|GParamSpec
 modifier|*
-DECL|function|gimp_param_spec_image_id (const gchar * name,const gchar * nick,const gchar * blurb,Gimp * gimp,GParamFlags flags)
+DECL|function|gimp_param_spec_image_id (const gchar * name,const gchar * nick,const gchar * blurb,Gimp * gimp,gboolean none_ok,GParamFlags flags)
 name|gimp_param_spec_image_id
 parameter_list|(
 specifier|const
@@ -2438,6 +2464,9 @@ parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|gboolean
+name|none_ok
 parameter_list|,
 name|GParamFlags
 name|flags
@@ -2472,15 +2501,21 @@ argument_list|,
 name|flags
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|ispec
-condition|)
 name|ispec
 operator|->
 name|gimp
 operator|=
 name|gimp
+expr_stmt|;
+name|ispec
+operator|->
+name|none_ok
+operator|=
+name|none_ok
+condition|?
+name|TRUE
+else|:
+name|FALSE
 expr_stmt|;
 return|return
 name|G_PARAM_SPEC
@@ -2885,6 +2920,12 @@ name|item_type
 operator|=
 name|GIMP_TYPE_ITEM
 expr_stmt|;
+name|ispec
+operator|->
+name|none_ok
+operator|=
+name|FALSE
+expr_stmt|;
 block|}
 end_function
 
@@ -2958,6 +2999,26 @@ name|GimpItem
 modifier|*
 name|item
 decl_stmt|;
+if|if
+condition|(
+name|ispec
+operator|->
+name|none_ok
+operator|&&
+operator|(
+name|item_id
+operator|==
+literal|0
+operator|||
+name|item_id
+operator|==
+operator|-
+literal|1
+operator|)
+condition|)
+return|return
+name|FALSE
+return|;
 name|item
 operator|=
 name|gimp_item_get_by_ID
@@ -3111,7 +3172,7 @@ end_function
 begin_function
 name|GParamSpec
 modifier|*
-DECL|function|gimp_param_spec_item_id (const gchar * name,const gchar * nick,const gchar * blurb,Gimp * gimp,GType item_type,GParamFlags flags)
+DECL|function|gimp_param_spec_item_id (const gchar * name,const gchar * nick,const gchar * blurb,Gimp * gimp,GType item_type,gboolean none_ok,GParamFlags flags)
 name|gimp_param_spec_item_id
 parameter_list|(
 specifier|const
@@ -3135,6 +3196,9 @@ name|gimp
 parameter_list|,
 name|GType
 name|item_type
+parameter_list|,
+name|gboolean
+name|none_ok
 parameter_list|,
 name|GParamFlags
 name|flags
@@ -3181,11 +3245,6 @@ argument_list|,
 name|flags
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|ispec
-condition|)
-block|{
 name|ispec
 operator|->
 name|gimp
@@ -3198,7 +3257,12 @@ name|item_type
 operator|=
 name|item_type
 expr_stmt|;
-block|}
+name|ispec
+operator|->
+name|none_ok
+operator|=
+name|none_ok
+expr_stmt|;
 return|return
 name|G_PARAM_SPEC
 argument_list|(
@@ -3571,7 +3635,7 @@ end_function
 begin_function
 name|GParamSpec
 modifier|*
-DECL|function|gimp_param_spec_drawable_id (const gchar * name,const gchar * nick,const gchar * blurb,Gimp * gimp,GParamFlags flags)
+DECL|function|gimp_param_spec_drawable_id (const gchar * name,const gchar * nick,const gchar * blurb,Gimp * gimp,gboolean none_ok,GParamFlags flags)
 name|gimp_param_spec_drawable_id
 parameter_list|(
 specifier|const
@@ -3592,6 +3656,9 @@ parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|gboolean
+name|none_ok
 parameter_list|,
 name|GParamFlags
 name|flags
@@ -3631,6 +3698,16 @@ operator|->
 name|gimp
 operator|=
 name|gimp
+expr_stmt|;
+name|ispec
+operator|->
+name|none_ok
+operator|=
+name|none_ok
+condition|?
+name|TRUE
+else|:
+name|FALSE
 expr_stmt|;
 return|return
 name|G_PARAM_SPEC
@@ -3990,7 +4067,7 @@ end_function
 begin_function
 name|GParamSpec
 modifier|*
-DECL|function|gimp_param_spec_layer_id (const gchar * name,const gchar * nick,const gchar * blurb,Gimp * gimp,GParamFlags flags)
+DECL|function|gimp_param_spec_layer_id (const gchar * name,const gchar * nick,const gchar * blurb,Gimp * gimp,gboolean none_ok,GParamFlags flags)
 name|gimp_param_spec_layer_id
 parameter_list|(
 specifier|const
@@ -4011,6 +4088,9 @@ parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|gboolean
+name|none_ok
 parameter_list|,
 name|GParamFlags
 name|flags
@@ -4050,6 +4130,16 @@ operator|->
 name|gimp
 operator|=
 name|gimp
+expr_stmt|;
+name|ispec
+operator|->
+name|none_ok
+operator|=
+name|none_ok
+condition|?
+name|TRUE
+else|:
+name|FALSE
 expr_stmt|;
 return|return
 name|G_PARAM_SPEC
@@ -4409,7 +4499,7 @@ end_function
 begin_function
 name|GParamSpec
 modifier|*
-DECL|function|gimp_param_spec_channel_id (const gchar * name,const gchar * nick,const gchar * blurb,Gimp * gimp,GParamFlags flags)
+DECL|function|gimp_param_spec_channel_id (const gchar * name,const gchar * nick,const gchar * blurb,Gimp * gimp,gboolean none_ok,GParamFlags flags)
 name|gimp_param_spec_channel_id
 parameter_list|(
 specifier|const
@@ -4430,6 +4520,9 @@ parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|gboolean
+name|none_ok
 parameter_list|,
 name|GParamFlags
 name|flags
@@ -4469,6 +4562,16 @@ operator|->
 name|gimp
 operator|=
 name|gimp
+expr_stmt|;
+name|ispec
+operator|->
+name|none_ok
+operator|=
+name|none_ok
+condition|?
+name|TRUE
+else|:
+name|FALSE
 expr_stmt|;
 return|return
 name|G_PARAM_SPEC
@@ -4828,7 +4931,7 @@ end_function
 begin_function
 name|GParamSpec
 modifier|*
-DECL|function|gimp_param_spec_layer_mask_id (const gchar * name,const gchar * nick,const gchar * blurb,Gimp * gimp,GParamFlags flags)
+DECL|function|gimp_param_spec_layer_mask_id (const gchar * name,const gchar * nick,const gchar * blurb,Gimp * gimp,gboolean none_ok,GParamFlags flags)
 name|gimp_param_spec_layer_mask_id
 parameter_list|(
 specifier|const
@@ -4849,6 +4952,9 @@ parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|gboolean
+name|none_ok
 parameter_list|,
 name|GParamFlags
 name|flags
@@ -4888,6 +4994,16 @@ operator|->
 name|gimp
 operator|=
 name|gimp
+expr_stmt|;
+name|ispec
+operator|->
+name|none_ok
+operator|=
+name|none_ok
+condition|?
+name|TRUE
+else|:
+name|FALSE
 expr_stmt|;
 return|return
 name|G_PARAM_SPEC
@@ -5247,7 +5363,7 @@ end_function
 begin_function
 name|GParamSpec
 modifier|*
-DECL|function|gimp_param_spec_selection_id (const gchar * name,const gchar * nick,const gchar * blurb,Gimp * gimp,GParamFlags flags)
+DECL|function|gimp_param_spec_selection_id (const gchar * name,const gchar * nick,const gchar * blurb,Gimp * gimp,gboolean none_ok,GParamFlags flags)
 name|gimp_param_spec_selection_id
 parameter_list|(
 specifier|const
@@ -5268,6 +5384,9 @@ parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|gboolean
+name|none_ok
 parameter_list|,
 name|GParamFlags
 name|flags
@@ -5307,6 +5426,16 @@ operator|->
 name|gimp
 operator|=
 name|gimp
+expr_stmt|;
+name|ispec
+operator|->
+name|none_ok
+operator|=
+name|none_ok
+condition|?
+name|TRUE
+else|:
+name|FALSE
 expr_stmt|;
 return|return
 name|G_PARAM_SPEC
@@ -5666,7 +5795,7 @@ end_function
 begin_function
 name|GParamSpec
 modifier|*
-DECL|function|gimp_param_spec_vectors_id (const gchar * name,const gchar * nick,const gchar * blurb,Gimp * gimp,GParamFlags flags)
+DECL|function|gimp_param_spec_vectors_id (const gchar * name,const gchar * nick,const gchar * blurb,Gimp * gimp,gboolean none_ok,GParamFlags flags)
 name|gimp_param_spec_vectors_id
 parameter_list|(
 specifier|const
@@ -5687,6 +5816,9 @@ parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|gboolean
+name|none_ok
 parameter_list|,
 name|GParamFlags
 name|flags
@@ -5726,6 +5858,16 @@ operator|->
 name|gimp
 operator|=
 name|gimp
+expr_stmt|;
+name|ispec
+operator|->
+name|none_ok
+operator|=
+name|none_ok
+condition|?
+name|TRUE
+else|:
+name|FALSE
 expr_stmt|;
 return|return
 name|G_PARAM_SPEC
@@ -6151,6 +6293,12 @@ name|gimp
 operator|=
 name|NULL
 expr_stmt|;
+name|ispec
+operator|->
+name|none_ok
+operator|=
+name|FALSE
+expr_stmt|;
 block|}
 end_function
 
@@ -6224,6 +6372,26 @@ name|GimpObject
 modifier|*
 name|display
 decl_stmt|;
+if|if
+condition|(
+name|ispec
+operator|->
+name|none_ok
+operator|&&
+operator|(
+name|display_id
+operator|==
+literal|0
+operator|||
+name|display_id
+operator|==
+operator|-
+literal|1
+operator|)
+condition|)
+return|return
+name|FALSE
+return|;
 name|display
 operator|=
 name|gimp_get_display_by_ID
@@ -6342,7 +6510,7 @@ end_function
 begin_function
 name|GParamSpec
 modifier|*
-DECL|function|gimp_param_spec_display_id (const gchar * name,const gchar * nick,const gchar * blurb,Gimp * gimp,GParamFlags flags)
+DECL|function|gimp_param_spec_display_id (const gchar * name,const gchar * nick,const gchar * blurb,Gimp * gimp,gboolean none_ok,GParamFlags flags)
 name|gimp_param_spec_display_id
 parameter_list|(
 specifier|const
@@ -6363,6 +6531,9 @@ parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|gboolean
+name|none_ok
 parameter_list|,
 name|GParamFlags
 name|flags
@@ -6397,15 +6568,21 @@ argument_list|,
 name|flags
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|ispec
-condition|)
 name|ispec
 operator|->
 name|gimp
 operator|=
 name|gimp
+expr_stmt|;
+name|ispec
+operator|->
+name|none_ok
+operator|=
+name|none_ok
+condition|?
+name|TRUE
+else|:
+name|FALSE
 expr_stmt|;
 return|return
 name|G_PARAM_SPEC

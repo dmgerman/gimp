@@ -1460,6 +1460,8 @@ name|pdb
 operator|->
 name|gimp
 argument_list|,
+name|FALSE
+argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
@@ -1588,6 +1590,8 @@ name|pdb
 operator|->
 name|gimp
 argument_list|,
+name|FALSE
+argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
@@ -1657,6 +1661,8 @@ name|pdb
 operator|->
 name|gimp
 argument_list|,
+name|FALSE
+argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
@@ -1718,6 +1724,8 @@ argument_list|,
 name|pdb
 operator|->
 name|gimp
+argument_list|,
+name|FALSE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -1788,6 +1796,8 @@ name|pdb
 operator|->
 name|gimp
 argument_list|,
+name|FALSE
+argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
@@ -1807,6 +1817,8 @@ argument_list|,
 name|pdb
 operator|->
 name|gimp
+argument_list|,
+name|FALSE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -1877,6 +1889,8 @@ name|pdb
 operator|->
 name|gimp
 argument_list|,
+name|FALSE
+argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
@@ -1896,6 +1910,8 @@ argument_list|,
 name|pdb
 operator|->
 name|gimp
+argument_list|,
+name|FALSE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -2030,6 +2046,8 @@ name|pdb
 operator|->
 name|gimp
 argument_list|,
+name|FALSE
+argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
@@ -2117,6 +2135,8 @@ name|pdb
 operator|->
 name|gimp
 argument_list|,
+name|FALSE
+argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
@@ -2203,6 +2223,8 @@ argument_list|,
 name|pdb
 operator|->
 name|gimp
+argument_list|,
+name|FALSE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -2295,6 +2317,8 @@ name|pdb
 operator|->
 name|gimp
 argument_list|,
+name|FALSE
+argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
@@ -2386,6 +2410,8 @@ name|pdb
 operator|->
 name|gimp
 argument_list|,
+name|FALSE
+argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
@@ -2474,6 +2500,8 @@ argument_list|,
 name|pdb
 operator|->
 name|gimp
+argument_list|,
+name|FALSE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
