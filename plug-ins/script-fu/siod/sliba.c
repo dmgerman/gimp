@@ -912,6 +912,7 @@ argument_list|,
 literal|")"
 argument_list|)
 expr_stmt|;
+break|break;
 case|case
 name|tc_byte_array
 case|:
