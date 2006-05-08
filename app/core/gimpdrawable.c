@@ -66,12 +66,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimp.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimp-utils.h"
 end_include
 
@@ -173,7 +167,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1a3faf0103
+DECL|enum|__anon2bbaf5e80103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
