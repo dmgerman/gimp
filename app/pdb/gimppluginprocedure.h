@@ -154,7 +154,7 @@ modifier|*
 name|image_types
 decl_stmt|;
 DECL|member|image_types_val
-name|PlugInImageType
+name|GimpPlugInImageType
 name|image_types_val
 decl_stmt|;
 DECL|member|mtime

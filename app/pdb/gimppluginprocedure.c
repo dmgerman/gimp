@@ -84,7 +84,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon298560b30103
+DECL|enum|__anon2c2795250103
 block|{
 DECL|enumerator|MENU_PATH_ADDED
 name|MENU_PATH_ADDED
@@ -2628,7 +2628,7 @@ name|proc
 operator|->
 name|image_types_val
 operator|&
-name|PLUG_IN_RGB_IMAGE
+name|GIMP_PLUG_IN_RGB_IMAGE
 expr_stmt|;
 break|break;
 case|case
@@ -2640,7 +2640,7 @@ name|proc
 operator|->
 name|image_types_val
 operator|&
-name|PLUG_IN_RGBA_IMAGE
+name|GIMP_PLUG_IN_RGBA_IMAGE
 expr_stmt|;
 break|break;
 case|case
@@ -2652,7 +2652,7 @@ name|proc
 operator|->
 name|image_types_val
 operator|&
-name|PLUG_IN_GRAY_IMAGE
+name|GIMP_PLUG_IN_GRAY_IMAGE
 expr_stmt|;
 break|break;
 case|case
@@ -2664,7 +2664,7 @@ name|proc
 operator|->
 name|image_types_val
 operator|&
-name|PLUG_IN_GRAYA_IMAGE
+name|GIMP_PLUG_IN_GRAYA_IMAGE
 expr_stmt|;
 break|break;
 case|case
@@ -2676,7 +2676,7 @@ name|proc
 operator|->
 name|image_types_val
 operator|&
-name|PLUG_IN_INDEXED_IMAGE
+name|GIMP_PLUG_IN_INDEXED_IMAGE
 expr_stmt|;
 break|break;
 case|case
@@ -2688,7 +2688,7 @@ name|proc
 operator|->
 name|image_types_val
 operator|&
-name|PLUG_IN_INDEXEDA_IMAGE
+name|GIMP_PLUG_IN_INDEXEDA_IMAGE
 expr_stmt|;
 break|break;
 default|default:
@@ -2710,7 +2710,7 @@ end_function
 
 begin_function
 specifier|static
-name|PlugInImageType
+name|GimpPlugInImageType
 DECL|function|image_types_parse (const gchar * image_types)
 name|image_types_parse
 parameter_list|(
@@ -2727,7 +2727,7 @@ name|type_spec
 init|=
 name|image_types
 decl_stmt|;
-name|PlugInImageType
+name|GimpPlugInImageType
 name|types
 init|=
 literal|0
@@ -2800,7 +2800,7 @@ condition|)
 block|{
 name|types
 operator||=
-name|PLUG_IN_RGBA_IMAGE
+name|GIMP_PLUG_IN_RGBA_IMAGE
 expr_stmt|;
 name|image_types
 operator|+=
@@ -2824,9 +2824,9 @@ condition|)
 block|{
 name|types
 operator||=
-name|PLUG_IN_RGB_IMAGE
+name|GIMP_PLUG_IN_RGB_IMAGE
 operator||
-name|PLUG_IN_RGBA_IMAGE
+name|GIMP_PLUG_IN_RGBA_IMAGE
 expr_stmt|;
 name|image_types
 operator|+=
@@ -2850,7 +2850,7 @@ condition|)
 block|{
 name|types
 operator||=
-name|PLUG_IN_RGB_IMAGE
+name|GIMP_PLUG_IN_RGB_IMAGE
 expr_stmt|;
 name|image_types
 operator|+=
@@ -2874,7 +2874,7 @@ condition|)
 block|{
 name|types
 operator||=
-name|PLUG_IN_GRAYA_IMAGE
+name|GIMP_PLUG_IN_GRAYA_IMAGE
 expr_stmt|;
 name|image_types
 operator|+=
@@ -2898,9 +2898,9 @@ condition|)
 block|{
 name|types
 operator||=
-name|PLUG_IN_GRAY_IMAGE
+name|GIMP_PLUG_IN_GRAY_IMAGE
 operator||
-name|PLUG_IN_GRAYA_IMAGE
+name|GIMP_PLUG_IN_GRAYA_IMAGE
 expr_stmt|;
 name|image_types
 operator|+=
@@ -2924,7 +2924,7 @@ condition|)
 block|{
 name|types
 operator||=
-name|PLUG_IN_GRAY_IMAGE
+name|GIMP_PLUG_IN_GRAY_IMAGE
 expr_stmt|;
 name|image_types
 operator|+=
@@ -2948,7 +2948,7 @@ condition|)
 block|{
 name|types
 operator||=
-name|PLUG_IN_INDEXEDA_IMAGE
+name|GIMP_PLUG_IN_INDEXEDA_IMAGE
 expr_stmt|;
 name|image_types
 operator|+=
@@ -2972,9 +2972,9 @@ condition|)
 block|{
 name|types
 operator||=
-name|PLUG_IN_INDEXED_IMAGE
+name|GIMP_PLUG_IN_INDEXED_IMAGE
 operator||
-name|PLUG_IN_INDEXEDA_IMAGE
+name|GIMP_PLUG_IN_INDEXEDA_IMAGE
 expr_stmt|;
 name|image_types
 operator|+=
@@ -2998,7 +2998,7 @@ condition|)
 block|{
 name|types
 operator||=
-name|PLUG_IN_INDEXED_IMAGE
+name|GIMP_PLUG_IN_INDEXED_IMAGE
 expr_stmt|;
 name|image_types
 operator|+=
@@ -3022,17 +3022,19 @@ condition|)
 block|{
 name|types
 operator||=
-name|PLUG_IN_RGB_IMAGE
+operator|(
+name|GIMP_PLUG_IN_RGB_IMAGE
 operator||
-name|PLUG_IN_RGBA_IMAGE
+name|GIMP_PLUG_IN_RGBA_IMAGE
 operator||
-name|PLUG_IN_GRAY_IMAGE
+name|GIMP_PLUG_IN_GRAY_IMAGE
 operator||
-name|PLUG_IN_GRAYA_IMAGE
+name|GIMP_PLUG_IN_GRAYA_IMAGE
 operator||
-name|PLUG_IN_INDEXED_IMAGE
+name|GIMP_PLUG_IN_INDEXED_IMAGE
 operator||
-name|PLUG_IN_INDEXEDA_IMAGE
+name|GIMP_PLUG_IN_INDEXEDA_IMAGE
+operator|)
 expr_stmt|;
 name|image_types
 operator|+=
