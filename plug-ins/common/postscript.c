@@ -288,7 +288,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2947b3180108
+DECL|struct|__anon2bf5938c0108
 block|{
 DECL|member|resolution
 name|guint
@@ -377,7 +377,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2947b3180208
+DECL|struct|__anon2bf5938c0208
 block|{
 DECL|member|width
 DECL|member|height
@@ -970,7 +970,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2947b3180308
+DECL|struct|__anon2bf5938c0308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1838,7 +1838,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2947b3180408
+DECL|struct|__anon2bf5938c0408
 block|{
 DECL|member|eol
 name|long
@@ -7350,7 +7350,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Error starting Ghostscript. Make sure that Ghostscript is installed and - if necessary - use the environment variable GS_PROC to tell GIMP about its location.\n(%s)"
+literal|"Error starting Ghostscript. Make sure that Ghostscript is installed and - if necessary - use the environment variable GS_PROG to tell GIMP about its location.\n(%s)"
 argument_list|)
 argument_list|,
 name|Gerr
@@ -7442,7 +7442,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Error starting Ghostscript. Make sure that Ghostscript is installed and - if necessary - use the environment variable GS_PROC to tell GIMP about its location.\n(%s)"
+literal|"Error starting Ghostscript. Make sure that Ghostscript is installed and - if necessary - use the environment variable GS_PROG to tell GIMP about its location.\n(%s)"
 argument_list|)
 argument_list|,
 name|Gerr
