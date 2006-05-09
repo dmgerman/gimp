@@ -255,7 +255,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29af25e30103
+DECL|enum|__anon2c6e34770103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -3648,18 +3648,6 @@ argument_list|,
 name|height
 argument_list|,
 name|type
-argument_list|)
-expr_stmt|;
-name|gimp_container_add
-argument_list|(
-name|gimp
-operator|->
-name|images
-argument_list|,
-name|GIMP_OBJECT
-argument_list|(
-name|image
-argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
