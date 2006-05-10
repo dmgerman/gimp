@@ -1871,7 +1871,7 @@ control|)
 block|{
 asm|asm
 specifier|volatile
-asm|("  movq       %0,%%mm2\n"                     "\tmovq       %1,%%mm3\n"                     "\tmovntq  %%mm3,%0\n"                     "\tmovntq  %%mm2,%1\n"                     : "+m" (*a), "+m" (*b)                     :                     : "%mm2", "%mm3");
+asm|("  movq       %0,%%mm2\n"                     "\tmovq       %1,%%mm3\n"                     "\tmovq    %%mm3,%0\n"                     "\tmovq    %%mm2,%1\n"                     : "+m" (*a), "+m" (*b)                     :                     : "%mm2", "%mm3");
 name|a
 operator|++
 expr_stmt|;
