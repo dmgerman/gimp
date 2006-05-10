@@ -1139,7 +1139,6 @@ name|list
 operator|->
 name|next
 control|)
-block|{
 if|if
 condition|(
 operator|!
@@ -1158,7 +1157,6 @@ operator|->
 name|has_cursor
 condition|)
 break|break;
-block|}
 if|if
 condition|(
 operator|!
@@ -1475,6 +1473,7 @@ name|GtkAction
 modifier|*
 name|action
 decl_stmt|;
+comment|/* activate the action instead of simply calling gimp_exit(), so the    * quit action's senistivity is taken into account    */
 name|action
 operator|=
 name|gimp_ui_manager_find_action
@@ -2783,6 +2782,10 @@ block|{
 name|GimpToolInfo
 modifier|*
 name|tool_info
+init|=
+name|list
+operator|->
+name|data
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -2797,16 +2800,6 @@ name|gchar
 modifier|*
 name|stock_id
 decl_stmt|;
-name|tool_info
-operator|=
-operator|(
-name|GimpToolInfo
-operator|*
-operator|)
-name|list
-operator|->
-name|data
-expr_stmt|;
 name|button
 operator|=
 name|gtk_radio_button_new

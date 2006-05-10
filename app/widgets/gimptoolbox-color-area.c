@@ -491,7 +491,7 @@ name|gimp_color_dialog_new
 argument_list|(
 name|NULL
 argument_list|,
-name|title
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,
@@ -506,11 +506,6 @@ name|toplevel_factory
 argument_list|,
 literal|"gimp-toolbox-color-dialog"
 argument_list|,
-operator|(
-specifier|const
-name|GimpRGB
-operator|*
-operator|)
 operator|&
 name|color
 argument_list|,
@@ -518,10 +513,6 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|)
-expr_stmt|;
-name|color_dialog_active
-operator|=
-name|TRUE
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
@@ -538,8 +529,6 @@ name|context
 argument_list|)
 expr_stmt|;
 block|}
-else|else
-block|{
 name|gtk_window_set_title
 argument_list|(
 name|GTK_WINDOW
@@ -573,7 +562,6 @@ name|color_dialog_active
 operator|=
 name|TRUE
 expr_stmt|;
-block|}
 block|}
 end_function
 
