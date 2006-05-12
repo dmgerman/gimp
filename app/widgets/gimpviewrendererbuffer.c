@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpviewable.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpviewrendererbuffer.h"
 end_include
 
