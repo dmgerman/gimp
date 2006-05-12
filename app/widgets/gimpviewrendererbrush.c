@@ -30,12 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpbrush.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpbrushpipe.h"
 end_include
 

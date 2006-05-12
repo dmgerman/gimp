@@ -260,7 +260,6 @@ argument_list|)
 operator|->
 name|file_system
 expr_stmt|;
-literal|2
 name|path
 operator|=
 name|gtk_file_system_uri_to_path

@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpview.c  * Copyright (C) 2001-2005 Michael Natterer<mitch@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpview.c  * Copyright (C) 2001-2006 Michael Natterer<mitch@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -93,17 +93,9 @@ directive|include
 file|"gimpviewrenderer-utils.h"
 end_include
 
-begin_define
-DECL|macro|VIEW_EVENT_MASK
-define|#
-directive|define
-name|VIEW_EVENT_MASK
-value|(GDK_BUTTON_PRESS_MASK   | \                          GDK_BUTTON_RELEASE_MASK | \                          GDK_ENTER_NOTIFY_MASK   | \                          GDK_LEAVE_NOTIFY_MASK)
-end_define
-
 begin_enum
 enum|enum
-DECL|enum|__anon29360fda0103
+DECL|enum|__anon2890263a0103
 block|{
 DECL|enumerator|SET_VIEWABLE
 name|SET_VIEWABLE
@@ -695,6 +687,30 @@ argument_list|,
 name|GTK_NO_WINDOW
 argument_list|)
 expr_stmt|;
+name|gtk_widget_add_events
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|view
+argument_list|)
+argument_list|,
+operator|(
+name|GDK_BUTTON_PRESS_MASK
+operator||
+name|GDK_BUTTON_RELEASE_MASK
+operator||
+name|GDK_ENTER_NOTIFY_MASK
+operator||
+name|GDK_LEAVE_NOTIFY_MASK
+operator|)
+argument_list|)
+expr_stmt|;
+name|view
+operator|->
+name|event_window
+operator|=
+name|NULL
+expr_stmt|;
 name|view
 operator|->
 name|viewable
@@ -736,6 +752,18 @@ operator|->
 name|in_button
 operator|=
 name|FALSE
+expr_stmt|;
+name|view
+operator|->
+name|has_grab
+operator|=
+name|FALSE
+expr_stmt|;
+name|view
+operator|->
+name|press_state
+operator|=
+literal|0
 expr_stmt|;
 block|}
 end_function
@@ -903,12 +931,6 @@ name|gtk_widget_get_events
 argument_list|(
 name|widget
 argument_list|)
-expr_stmt|;
-name|attributes
-operator|.
-name|event_mask
-operator||=
-name|VIEW_EVENT_MASK
 expr_stmt|;
 name|attributes_mask
 operator|=
