@@ -117,13 +117,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpconfig/gimpconfig-path.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core-types.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"config/gimpbaseconfig.c"
+file|"config/gimpbaseconfig.h"
 end_include
 
 begin_include

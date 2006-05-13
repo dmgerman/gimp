@@ -4977,16 +4977,6 @@ modifier|*
 name|data
 decl_stmt|;
 comment|/* Temporary copy of pixel data */
-name|IFDBG
-name|printf
-argument_list|(
-literal|" Function: write_pixel_data, drw %d, lto %d\n"
-argument_list|,
-name|drawableID
-argument_list|,
-name|ltable_offset
-argument_list|)
-decl_stmt|;
 name|gint32
 name|tile_height
 init|=
@@ -5062,6 +5052,16 @@ name|int
 name|i
 decl_stmt|,
 name|j
+decl_stmt|;
+name|IFDBG
+name|printf
+argument_list|(
+literal|" Function: write_pixel_data, drw %d, lto %d\n"
+argument_list|,
+name|drawableID
+argument_list|,
+name|ltable_offset
+argument_list|)
 decl_stmt|;
 if|if
 condition|(
@@ -5515,10 +5515,6 @@ operator|-
 literal|1
 condition|)
 block|{
-name|len
-operator|=
-literal|0
-expr_stmt|;
 name|GimpDrawable
 modifier|*
 name|mdrawable
@@ -5528,6 +5524,10 @@ argument_list|(
 name|maskID
 argument_list|)
 decl_stmt|;
+name|len
+operator|=
+literal|0
+expr_stmt|;
 name|gimp_pixel_rgn_init
 argument_list|(
 operator|&
