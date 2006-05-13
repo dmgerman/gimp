@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2781f02a0103
+DECL|enum|__anon2b42925d0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -177,7 +177,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2781f02a0203
+DECL|enum|__anon2b42925d0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3405,6 +3405,34 @@ argument_list|(
 name|item
 argument_list|)
 decl_stmt|;
+ifdef|#
+directive|ifdef
+name|__GNUC__
+warning|#
+directive|warning
+warning|FIXME: make interpolated transformations work on layers without alpha
+endif|#
+directive|endif
+if|if
+condition|(
+name|interpolation_type
+operator|!=
+name|GIMP_INTERPOLATION_NONE
+operator|&&
+operator|!
+name|gimp_drawable_has_alpha
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
+name|item
+argument_list|)
+argument_list|)
+condition|)
+name|gimp_layer_add_alpha
+argument_list|(
+name|layer
+argument_list|)
+expr_stmt|;
 name|GIMP_ITEM_CLASS
 argument_list|(
 name|parent_class
