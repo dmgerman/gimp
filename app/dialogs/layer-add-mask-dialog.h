@@ -44,6 +44,11 @@ DECL|member|add_mask_type
 name|GimpAddMaskType
 name|add_mask_type
 decl_stmt|;
+DECL|member|channel
+name|GimpChannel
+modifier|*
+name|channel
+decl_stmt|;
 DECL|member|invert
 name|gboolean
 name|invert

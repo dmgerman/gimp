@@ -95,6 +95,14 @@ literal|"copy-mask"
 block|}
 block|,
 block|{
+name|GIMP_ADD_CHANNEL_MASK
+block|,
+literal|"GIMP_ADD_CHANNEL_MASK"
+block|,
+literal|"channel-mask"
+block|}
+block|,
+block|{
 literal|0
 block|,
 name|NULL
@@ -171,6 +179,17 @@ block|,
 name|N_
 argument_list|(
 literal|"_Grayscale copy of layer"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_ADD_CHANNEL_MASK
+block|,
+name|N_
+argument_list|(
+literal|"C_hannel"
 argument_list|)
 block|,
 name|NULL
