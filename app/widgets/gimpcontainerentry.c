@@ -247,24 +247,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
-name|GimpContainerEntry
+argument|GimpContainerEntry
 argument_list|,
-name|gimp_container_entry
+argument|gimp_container_entry
 argument_list|,
-name|GTK_TYPE_ENTRY
+argument|GTK_TYPE_ENTRY
 argument_list|,
-name|G_IMPLEMENT_INTERFACE
-argument_list|(
-name|GIMP_TYPE_CONTAINER_VIEW
-argument_list|,
-name|gimp_container_entry_view_iface_init
+argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONTAINER_VIEW,                                                 gimp_container_entry_view_iface_init)
 argument_list|)
-argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -275,7 +269,6 @@ value|gimp_container_entry_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|parent_view_iface
 specifier|static
 name|GimpContainerViewInterface
 modifier|*

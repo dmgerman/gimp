@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2795de8f0103
+DECL|enum|__anon2c3a20250103
 block|{
 DECL|enumerator|SEARCH
 name|SEARCH
@@ -97,17 +97,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpBrowser
+argument|GimpBrowser
 argument_list|,
-name|gimp_browser
+argument|gimp_browser
 argument_list|,
-name|GTK_TYPE_HPANED
+argument|GTK_TYPE_HPANED
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -118,7 +117,6 @@ value|gimp_browser_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|browser_signals
 specifier|static
 name|guint
 name|browser_signals

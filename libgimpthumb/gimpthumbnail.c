@@ -250,7 +250,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a6e1430103
+DECL|enum|__anon27d8a9230103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -447,17 +447,17 @@ endif|#
 directive|endif
 end_endif
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpThumbnail,gimp_thumbnail,G_TYPE_OBJECT)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpThumbnail
+argument|GimpThumbnail
 argument_list|,
-name|gimp_thumbnail
+argument|gimp_thumbnail
 argument_list|,
-name|G_TYPE_OBJECT
+argument|G_TYPE_OBJECT
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -470,7 +470,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_thumbnail_class_init (GimpThumbnailClass * klass)
 name|gimp_thumbnail_class_init
 parameter_list|(
 name|GimpThumbnailClass

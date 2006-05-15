@@ -33,17 +33,17 @@ directive|include
 file|"gimpunitstore.h"
 end_include
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpUnitComboBox,gimp_unit_combo_box,GTK_TYPE_COMBO_BOX)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpUnitComboBox
+argument|GimpUnitComboBox
 argument_list|,
-name|gimp_unit_combo_box
+argument|gimp_unit_combo_box
 argument_list|,
-name|GTK_TYPE_COMBO_BOX
+argument|GTK_TYPE_COMBO_BOX
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -56,7 +56,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_unit_combo_box_class_init (GimpUnitComboBoxClass * klass)
 name|gimp_unit_combo_box_class_init
 parameter_list|(
 name|GimpUnitComboBoxClass

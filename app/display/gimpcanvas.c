@@ -77,17 +77,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpCanvas
+argument|GimpCanvas
 argument_list|,
-name|gimp_canvas
+argument|gimp_canvas
 argument_list|,
-name|GTK_TYPE_DRAWING_AREA
+argument|GTK_TYPE_DRAWING_AREA
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -98,7 +97,6 @@ value|gimp_canvas_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|stipples
 specifier|static
 specifier|const
 name|guchar

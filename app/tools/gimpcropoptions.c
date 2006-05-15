@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon278c61000103
+DECL|enum|__anon276a69940103
 block|{
 DECL|enumerator|PROP_LAYER_ONLY
 name|PROP_LAYER_ONLY
@@ -145,29 +145,23 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpCropOptions,gimp_crop_options,GIMP_TYPE_TOOL_OPTIONS,G_IMPLEMENT_INTERFACE (GIMP_TYPE_RECTANGLE_OPTIONS,gimp_crop_options_rectangle_options_iface_init))
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
-name|GimpCropOptions
+argument|GimpCropOptions
 argument_list|,
-name|gimp_crop_options
+argument|gimp_crop_options
 argument_list|,
-name|GIMP_TYPE_TOOL_OPTIONS
+argument|GIMP_TYPE_TOOL_OPTIONS
 argument_list|,
-name|G_IMPLEMENT_INTERFACE
-argument_list|(
-name|GIMP_TYPE_RECTANGLE_OPTIONS
-argument_list|,
-name|gimp_crop_options_rectangle_options_iface_init
+argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_RECTANGLE_OPTIONS,                                                 gimp_crop_options_rectangle_options_iface_init)
 argument_list|)
-argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_crop_options_class_init (GimpCropOptionsClass * klass)
 name|gimp_crop_options_class_init
 parameter_list|(
 name|GimpCropOptionsClass

@@ -142,17 +142,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpTextLayout,gimp_text_layout,G_TYPE_OBJECT)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpTextLayout
+argument|GimpTextLayout
 argument_list|,
-name|gimp_text_layout
+argument|gimp_text_layout
 argument_list|,
-name|G_TYPE_OBJECT
+argument|G_TYPE_OBJECT
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -165,7 +165,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_text_layout_class_init (GimpTextLayoutClass * klass)
 name|gimp_text_layout_class_init
 parameter_list|(
 name|GimpTextLayoutClass

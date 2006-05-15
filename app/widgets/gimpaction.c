@@ -81,7 +81,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2911e0430103
+DECL|enum|__anon2933c40b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -186,17 +186,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpAction,gimp_action,GTK_TYPE_ACTION)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpAction
+argument|GimpAction
 argument_list|,
-name|gimp_action
+argument|gimp_action
 argument_list|,
-name|GTK_TYPE_ACTION
+argument|GTK_TYPE_ACTION
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -209,7 +209,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_action_class_init (GimpActionClass * klass)
 name|gimp_action_class_init
 parameter_list|(
 name|GimpActionClass

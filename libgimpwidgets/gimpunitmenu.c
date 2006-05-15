@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a174ec0103
+DECL|enum|__anon291e1d0c0103
 block|{
 DECL|enumerator|UNIT_CHANGED
 name|UNIT_CHANGED
@@ -72,7 +72,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a174ec0203
+DECL|enum|__anon291e1d0c0203
 block|{
 DECL|enumerator|UNIT_COLUMN
 name|UNIT_COLUMN
@@ -134,17 +134,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpUnitMenu
+argument|GimpUnitMenu
 argument_list|,
-name|gimp_unit_menu
+argument|gimp_unit_menu
 argument_list|,
-name|GTK_TYPE_OPTION_MENU
+argument|GTK_TYPE_OPTION_MENU
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -155,7 +154,6 @@ value|gimp_unit_menu_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|gimp_unit_menu_signals
 specifier|static
 name|guint
 name|gimp_unit_menu_signals

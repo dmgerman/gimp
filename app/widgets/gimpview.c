@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2890263a0103
+DECL|enum|__anon2bbfc3520103
 block|{
 DECL|enumerator|SET_VIEWABLE
 name|SET_VIEWABLE
@@ -355,17 +355,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpView
+argument|GimpView
 argument_list|,
-name|gimp_view
+argument|gimp_view
 argument_list|,
-name|GTK_TYPE_WIDGET
+argument|GTK_TYPE_WIDGET
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -376,7 +375,6 @@ value|gimp_view_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|view_signals
 specifier|static
 name|guint
 name|view_signals

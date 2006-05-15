@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c302d160103
+DECL|enum|__anon27a1a0470103
 block|{
 DECL|enumerator|MOVE_CURSOR
 name|MOVE_CURSOR
@@ -405,24 +405,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
-name|GimpContainerGridView
+argument|GimpContainerGridView
 argument_list|,
-name|gimp_container_grid_view
+argument|gimp_container_grid_view
 argument_list|,
-name|GIMP_TYPE_CONTAINER_BOX
+argument|GIMP_TYPE_CONTAINER_BOX
 argument_list|,
-name|G_IMPLEMENT_INTERFACE
-argument_list|(
-name|GIMP_TYPE_CONTAINER_VIEW
-argument_list|,
-name|gimp_container_grid_view_view_iface_init
+argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONTAINER_VIEW,                                                 gimp_container_grid_view_view_iface_init)
 argument_list|)
-argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -433,7 +427,6 @@ value|gimp_container_grid_view_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|parent_view_iface
 specifier|static
 name|GimpContainerViewInterface
 modifier|*

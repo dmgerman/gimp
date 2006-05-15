@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b737dc70103
+DECL|enum|__anon27b79f4a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -193,17 +193,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpActionGroup,gimp_action_group,GTK_TYPE_ACTION_GROUP)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpActionGroup
+argument|GimpActionGroup
 argument_list|,
-name|gimp_action_group
+argument|gimp_action_group
 argument_list|,
-name|GTK_TYPE_ACTION_GROUP
+argument|GTK_TYPE_ACTION_GROUP
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -216,7 +216,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_action_group_class_init (GimpActionGroupClass * klass)
 name|gimp_action_group_class_init
 parameter_list|(
 name|GimpActionGroupClass

@@ -43,7 +43,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c04581b0103
+DECL|enum|__anon2b1731410103
 block|{
 DECL|enumerator|OFFSETS_CHANGED
 name|OFFSETS_CHANGED
@@ -114,17 +114,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpOffsetArea
+argument|GimpOffsetArea
 argument_list|,
-name|gimp_offset_area
+argument|gimp_offset_area
 argument_list|,
-name|GTK_TYPE_DRAWING_AREA
+argument|GTK_TYPE_DRAWING_AREA
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -135,7 +134,6 @@ value|gimp_offset_area_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|gimp_offset_area_signals
 specifier|static
 name|guint
 name|gimp_offset_area_signals

@@ -104,7 +104,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ea31010103
+DECL|enum|__anon27b6a7a40103
 block|{
 DECL|enumerator|UPDATE_NOTEBOOK
 name|UPDATE_NOTEBOOK
@@ -149,7 +149,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ea31010203
+DECL|enum|__anon27b6a7a40203
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -322,17 +322,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpColorSelection
+argument|GimpColorSelection
 argument_list|,
-name|gimp_color_selection
+argument|gimp_color_selection
 argument_list|,
-name|GTK_TYPE_VBOX
+argument|GTK_TYPE_VBOX
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -343,7 +342,6 @@ value|gimp_color_selection_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|selection_signals
 specifier|static
 name|guint
 name|selection_signals

@@ -95,7 +95,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a593a390103
+DECL|enum|__anon297c59e00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -301,24 +301,19 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpEditor,gimp_editor,GTK_TYPE_VBOX,G_IMPLEMENT_INTERFACE (GIMP_TYPE_DOCKED,gimp_editor_docked_iface_init))
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
-name|GimpEditor
+argument|GimpEditor
 argument_list|,
-name|gimp_editor
+argument|gimp_editor
 argument_list|,
-name|GTK_TYPE_VBOX
+argument|GTK_TYPE_VBOX
 argument_list|,
-name|G_IMPLEMENT_INTERFACE
-argument_list|(
-name|GIMP_TYPE_DOCKED
-argument_list|,
-name|gimp_editor_docked_iface_init
+argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_DOCKED,                                                 gimp_editor_docked_iface_init)
 argument_list|)
-argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -331,7 +326,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_editor_class_init (GimpEditorClass * klass)
 name|gimp_editor_class_init
 parameter_list|(
 name|GimpEditorClass

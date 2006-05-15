@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fd6ed50103
+DECL|enum|__anon299381a40103
 block|{
 DECL|enumerator|APPLY_CHANGED
 name|APPLY_CHANGED
@@ -147,17 +147,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpLayerMask
+argument|GimpLayerMask
 argument_list|,
-name|gimp_layer_mask
+argument|gimp_layer_mask
 argument_list|,
-name|GIMP_TYPE_CHANNEL
+argument|GIMP_TYPE_CHANNEL
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -168,7 +167,6 @@ value|gimp_layer_mask_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|layer_mask_signals
 specifier|static
 name|guint
 name|layer_mask_signals

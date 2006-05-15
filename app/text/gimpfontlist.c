@@ -153,20 +153,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpFontList
+argument|GimpFontList
 argument_list|,
-name|gimp_font_list
+argument|gimp_font_list
 argument_list|,
-name|GIMP_TYPE_LIST
+argument|GIMP_TYPE_LIST
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_decl_stmt
-DECL|variable|font_desc_to_string
 specifier|static
 name|GimpFontDescToStringFunc
 name|font_desc_to_string

@@ -256,22 +256,21 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpDrawableComboBox,gimp_drawable_combo_box,GIMP_TYPE_INT_COMBO_BOX)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpDrawableComboBox
+argument|GimpDrawableComboBox
 argument_list|,
-name|gimp_drawable_combo_box
+argument|gimp_drawable_combo_box
 argument_list|,
-name|GIMP_TYPE_INT_COMBO_BOX
+argument|GIMP_TYPE_INT_COMBO_BOX
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_drawable_combo_box_class_init (GimpDrawableComboBoxClass * klass)
 name|gimp_drawable_combo_box_class_init
 parameter_list|(
 name|GimpDrawableComboBoxClass

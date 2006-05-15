@@ -147,30 +147,19 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpContainerBox,gimp_container_box,GIMP_TYPE_EDITOR,G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONTAINER_VIEW,gimp_container_box_view_iface_init)G_IMPLEMENT_INTERFACE (GIMP_TYPE_DOCKED,gimp_container_box_docked_iface_init))
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
-name|GimpContainerBox
+argument|GimpContainerBox
 argument_list|,
-name|gimp_container_box
+argument|gimp_container_box
 argument_list|,
-name|GIMP_TYPE_EDITOR
+argument|GIMP_TYPE_EDITOR
 argument_list|,
-name|G_IMPLEMENT_INTERFACE
-argument_list|(
-argument|GIMP_TYPE_CONTAINER_VIEW
-argument_list|,
-argument|gimp_container_box_view_iface_init
+argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONTAINER_VIEW,                                                 gimp_container_box_view_iface_init)                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_DOCKED,                                                 gimp_container_box_docked_iface_init)
 argument_list|)
-name|G_IMPLEMENT_INTERFACE
-argument_list|(
-name|GIMP_TYPE_DOCKED
-argument_list|,
-name|gimp_container_box_docked_iface_init
-argument_list|)
-argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -183,7 +172,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_container_box_class_init (GimpContainerBoxClass * klass)
 name|gimp_container_box_class_init
 parameter_list|(
 name|GimpContainerBoxClass

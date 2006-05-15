@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28773b180103
+DECL|enum|__anon2795bf240103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -55,7 +55,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28773b180208
+DECL|struct|__anon2795bf240208
 block|{
 DECL|member|pixbuf_renderer
 name|GtkCellRenderer
@@ -183,17 +183,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpIntComboBox,gimp_int_combo_box,GTK_TYPE_COMBO_BOX)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpIntComboBox
+argument|GimpIntComboBox
 argument_list|,
-name|gimp_int_combo_box
+argument|gimp_int_combo_box
 argument_list|,
-name|GTK_TYPE_COMBO_BOX
+argument|GTK_TYPE_COMBO_BOX
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -206,7 +206,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_int_combo_box_class_init (GimpIntComboBoxClass * klass)
 name|gimp_int_combo_box_class_init
 parameter_list|(
 name|GimpIntComboBoxClass

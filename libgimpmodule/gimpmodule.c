@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon296a04fb0103
+DECL|enum|__anon2c74812b0103
 block|{
 DECL|enumerator|MODIFIED
 name|MODIFIED
@@ -129,17 +129,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpModule,gimp_module,G_TYPE_TYPE_MODULE)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpModule
+argument|GimpModule
 argument_list|,
-name|gimp_module
+argument|gimp_module
 argument_list|,
-name|G_TYPE_TYPE_MODULE
+argument|G_TYPE_TYPE_MODULE
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -150,7 +150,6 @@ value|gimp_module_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|module_signals
 specifier|static
 name|guint
 name|module_signals
@@ -163,7 +162,6 @@ end_decl_stmt
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_module_class_init (GimpModuleClass * klass)
 name|gimp_module_class_init
 parameter_list|(
 name|GimpModuleClass

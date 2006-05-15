@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d107370103
+DECL|enum|__anon2b8ab4fb0103
 block|{
 DECL|enumerator|ACCEL_EDITED
 name|ACCEL_EDITED
@@ -72,7 +72,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d107370203
+DECL|enum|__anon2b8ab4fb0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -214,17 +214,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpCellRendererAccel
+argument|GimpCellRendererAccel
 argument_list|,
-name|gimp_cell_renderer_accel
+argument|gimp_cell_renderer_accel
 argument_list|,
-name|GTK_TYPE_CELL_RENDERER_TEXT
+argument|GTK_TYPE_CELL_RENDERER_TEXT
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -235,7 +234,6 @@ value|gimp_cell_renderer_accel_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|accel_cell_signals
 specifier|static
 name|guint
 name|accel_cell_signals

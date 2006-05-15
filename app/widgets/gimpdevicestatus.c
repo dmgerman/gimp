@@ -138,7 +138,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d34edc0103
+DECL|enum|__anon2c421e6f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -355,17 +355,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpDeviceStatus,gimp_device_status,GIMP_TYPE_EDITOR)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpDeviceStatus
+argument|GimpDeviceStatus
 argument_list|,
-name|gimp_device_status
+argument|gimp_device_status
 argument_list|,
-name|GIMP_TYPE_EDITOR
+argument|GIMP_TYPE_EDITOR
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -378,7 +378,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_device_status_class_init (GimpDeviceStatusClass * klass)
 name|gimp_device_status_class_init
 parameter_list|(
 name|GimpDeviceStatusClass

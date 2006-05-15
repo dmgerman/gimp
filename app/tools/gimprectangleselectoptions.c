@@ -81,29 +81,23 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpNewRectSelectOptions,gimp_new_rect_select_options,GIMP_TYPE_SELECTION_OPTIONS,G_IMPLEMENT_INTERFACE (GIMP_TYPE_RECTANGLE_OPTIONS,gimp_new_rect_select_options_rectangle_options_iface_init))
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
-name|GimpNewRectSelectOptions
+argument|GimpNewRectSelectOptions
 argument_list|,
-name|gimp_new_rect_select_options
+argument|gimp_new_rect_select_options
 argument_list|,
-name|GIMP_TYPE_SELECTION_OPTIONS
+argument|GIMP_TYPE_SELECTION_OPTIONS
 argument_list|,
-name|G_IMPLEMENT_INTERFACE
-argument_list|(
-name|GIMP_TYPE_RECTANGLE_OPTIONS
-argument_list|,
-name|gimp_new_rect_select_options_rectangle_options_iface_init
+argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_RECTANGLE_OPTIONS,                                                 gimp_new_rect_select_options_rectangle_options_iface_init)
 argument_list|)
-argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_new_rect_select_options_class_init (GimpNewRectSelectOptionsClass * klass)
 name|gimp_new_rect_select_options_class_init
 parameter_list|(
 name|GimpNewRectSelectOptionsClass

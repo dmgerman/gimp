@@ -158,29 +158,23 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpProgressBox,gimp_progress_box,GTK_TYPE_VBOX,G_IMPLEMENT_INTERFACE (GIMP_TYPE_PROGRESS,gimp_progress_box_progress_iface_init))
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
-name|GimpProgressBox
+argument|GimpProgressBox
 argument_list|,
-name|gimp_progress_box
+argument|gimp_progress_box
 argument_list|,
-name|GTK_TYPE_VBOX
+argument|GTK_TYPE_VBOX
 argument_list|,
-name|G_IMPLEMENT_INTERFACE
-argument_list|(
-name|GIMP_TYPE_PROGRESS
-argument_list|,
-name|gimp_progress_box_progress_iface_init
+argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_PROGRESS,                                                 gimp_progress_box_progress_iface_init)
 argument_list|)
-argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_progress_box_class_init (GimpProgressBoxClass * klass)
 name|gimp_progress_box_class_init
 parameter_list|(
 name|GimpProgressBoxClass

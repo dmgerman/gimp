@@ -107,17 +107,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpUndoStack,gimp_undo_stack,GIMP_TYPE_UNDO)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpUndoStack
+argument|GimpUndoStack
 argument_list|,
-name|gimp_undo_stack
+argument|gimp_undo_stack
 argument_list|,
-name|GIMP_TYPE_UNDO
+argument|GIMP_TYPE_UNDO
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -130,7 +130,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_undo_stack_class_init (GimpUndoStackClass * klass)
 name|gimp_undo_stack_class_init
 parameter_list|(
 name|GimpUndoStackClass

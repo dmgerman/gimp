@@ -843,17 +843,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpIscissorsTool
+argument|GimpIscissorsTool
 argument_list|,
-name|gimp_iscissors_tool
+argument|gimp_iscissors_tool
 argument_list|,
-name|GIMP_TYPE_SELECTION_TOOL
+argument|GIMP_TYPE_SELECTION_TOOL
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -872,7 +871,6 @@ comment|/*  where to move on a given link direction  */
 end_comment
 
 begin_decl_stmt
-DECL|variable|move
 specifier|static
 name|gint
 name|move

@@ -156,17 +156,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpImageDock,gimp_image_dock,GIMP_TYPE_DOCK)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpImageDock
+argument|GimpImageDock
 argument_list|,
-name|gimp_image_dock
+argument|gimp_image_dock
 argument_list|,
-name|GIMP_TYPE_DOCK
+argument|GIMP_TYPE_DOCK
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -179,7 +179,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_dock_class_init (GimpImageDockClass * klass)
 name|gimp_image_dock_class_init
 parameter_list|(
 name|GimpImageDockClass

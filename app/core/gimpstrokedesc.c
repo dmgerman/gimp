@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b55341f0103
+DECL|enum|__anon29e5686f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -184,24 +184,19 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpStrokeDesc,gimp_stroke_desc,GIMP_TYPE_OBJECT,G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG,NULL))
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
-name|GimpStrokeDesc
+argument|GimpStrokeDesc
 argument_list|,
-name|gimp_stroke_desc
+argument|gimp_stroke_desc
 argument_list|,
-name|GIMP_TYPE_OBJECT
+argument|GIMP_TYPE_OBJECT
 argument_list|,
-name|G_IMPLEMENT_INTERFACE
-argument_list|(
-name|GIMP_TYPE_CONFIG
-argument_list|,
-name|NULL
+argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG, NULL)
 argument_list|)
-argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -214,7 +209,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_stroke_desc_class_init (GimpStrokeDescClass * klass)
 name|gimp_stroke_desc_class_init
 parameter_list|(
 name|GimpStrokeDescClass

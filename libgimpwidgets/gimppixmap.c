@@ -57,17 +57,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpPixmap,gimp_pixmap,GTK_TYPE_IMAGE)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpPixmap
+argument|GimpPixmap
 argument_list|,
-name|gimp_pixmap
+argument|gimp_pixmap
 argument_list|,
-name|GTK_TYPE_IMAGE
+argument|GTK_TYPE_IMAGE
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -80,7 +80,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_pixmap_class_init (GimpPixmapClass * klass)
 name|gimp_pixmap_class_init
 parameter_list|(
 name|GimpPixmapClass

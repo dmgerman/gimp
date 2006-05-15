@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c64b6950103
+DECL|enum|__anon29c2ff180103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -54,7 +54,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c64b6950203
+DECL|enum|__anon29c2ff180203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -152,17 +152,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpPlugInAction
+argument|GimpPlugInAction
 argument_list|,
-name|gimp_plug_in_action
+argument|gimp_plug_in_action
 argument_list|,
-name|GIMP_TYPE_ACTION
+argument|GIMP_TYPE_ACTION
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -173,7 +172,6 @@ value|gimp_plug_in_action_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|action_signals
 specifier|static
 name|guint
 name|action_signals

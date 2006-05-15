@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d935a00103
+DECL|enum|__anon28c6bba50103
 block|{
 DECL|enumerator|PATH_CHANGED
 name|PATH_CHANGED
@@ -69,7 +69,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d935a00203
+DECL|enum|__anon28c6bba50203
 block|{
 DECL|enumerator|COLUMN_UTF8
 name|COLUMN_UTF8
@@ -186,17 +186,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpPathEditor
+argument|GimpPathEditor
 argument_list|,
-name|gimp_path_editor
+argument|gimp_path_editor
 argument_list|,
-name|GTK_TYPE_VBOX
+argument|GTK_TYPE_VBOX
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -207,7 +206,6 @@ value|gimp_path_editor_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|gimp_path_editor_signals
 specifier|static
 name|guint
 name|gimp_path_editor_signals

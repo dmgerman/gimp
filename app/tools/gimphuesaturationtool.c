@@ -346,17 +346,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpHueSaturationTool
+argument|GimpHueSaturationTool
 argument_list|,
-name|gimp_hue_saturation_tool
+argument|gimp_hue_saturation_tool
 argument_list|,
-name|GIMP_TYPE_IMAGE_MAP_TOOL
+argument|GIMP_TYPE_IMAGE_MAP_TOOL
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -367,7 +366,6 @@ value|gimp_hue_saturation_tool_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|default_colors
 specifier|static
 name|gint
 name|default_colors
@@ -878,7 +876,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon2998d1120108
+DECL|struct|__anon2786593e0108
 block|{
 DECL|member|label
 specifier|const

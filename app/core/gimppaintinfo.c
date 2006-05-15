@@ -69,17 +69,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpPaintInfo,gimp_paint_info,GIMP_TYPE_VIEWABLE)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpPaintInfo
+argument|GimpPaintInfo
 argument_list|,
-name|gimp_paint_info
+argument|gimp_paint_info
 argument_list|,
-name|GIMP_TYPE_VIEWABLE
+argument|GIMP_TYPE_VIEWABLE
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -92,7 +92,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_paint_info_class_init (GimpPaintInfoClass * klass)
 name|gimp_paint_info_class_init
 parameter_list|(
 name|GimpPaintInfoClass

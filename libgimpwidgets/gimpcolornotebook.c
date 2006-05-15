@@ -261,17 +261,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpColorNotebook,gimp_color_notebook,GIMP_TYPE_COLOR_SELECTOR)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpColorNotebook
+argument|GimpColorNotebook
 argument_list|,
-name|gimp_color_notebook
+argument|gimp_color_notebook
 argument_list|,
-name|GIMP_TYPE_COLOR_SELECTOR
+argument|GIMP_TYPE_COLOR_SELECTOR
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -284,7 +284,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_color_notebook_class_init (GimpColorNotebookClass * klass)
 name|gimp_color_notebook_class_init
 parameter_list|(
 name|GimpColorNotebookClass

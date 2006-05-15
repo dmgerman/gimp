@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ab9740b0103
+DECL|enum|__anon2902620d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -108,17 +108,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpColorBar,gimp_color_bar,GTK_TYPE_MISC)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpColorBar
+argument|GimpColorBar
 argument_list|,
-name|gimp_color_bar
+argument|gimp_color_bar
 argument_list|,
-name|GTK_TYPE_MISC
+argument|GTK_TYPE_MISC
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -131,7 +131,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_color_bar_class_init (GimpColorBarClass * klass)
 name|gimp_color_bar_class_init
 parameter_list|(
 name|GimpColorBarClass

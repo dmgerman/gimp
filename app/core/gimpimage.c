@@ -288,7 +288,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon27f169520103
+DECL|enum|__anon289927a00103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -367,7 +367,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27f169520203
+DECL|enum|__anon289927a00203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -915,17 +915,16 @@ block|, }
 decl_stmt|;
 end_decl_stmt
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpImage
+argument|GimpImage
 argument_list|,
-name|gimp_image
+argument|gimp_image
 argument_list|,
-name|GIMP_TYPE_VIEWABLE
+argument|GIMP_TYPE_VIEWABLE
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -936,7 +935,6 @@ value|gimp_image_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|gimp_image_signals
 specifier|static
 name|guint
 name|gimp_image_signals

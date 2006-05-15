@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2976b8e30103
+DECL|enum|__anon2bc2db940103
 block|{
 DECL|enumerator|DISCONNECT
 name|DISCONNECT
@@ -69,7 +69,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2976b8e30203
+DECL|enum|__anon2bc2db940203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -179,17 +179,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpObject
+argument|GimpObject
 argument_list|,
-name|gimp_object
+argument|gimp_object
 argument_list|,
-name|G_TYPE_OBJECT
+argument|G_TYPE_OBJECT
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -200,7 +199,6 @@ value|gimp_object_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|object_signals
 specifier|static
 name|guint
 name|object_signals

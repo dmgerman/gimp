@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d37cb30103
+DECL|enum|__anon278569690103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -200,17 +200,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpViewableButton,gimp_viewable_button,GIMP_TYPE_BUTTON)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpViewableButton
+argument|GimpViewableButton
 argument_list|,
-name|gimp_viewable_button
+argument|gimp_viewable_button
 argument_list|,
-name|GIMP_TYPE_BUTTON
+argument|GIMP_TYPE_BUTTON
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -223,7 +223,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_viewable_button_class_init (GimpViewableButtonClass * klass)
 name|gimp_viewable_button_class_init
 parameter_list|(
 name|GimpViewableButtonClass

@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e68ff90103
+DECL|enum|__anon2b5f11dc0103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -221,17 +221,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpBrush
+argument|GimpBrush
 argument_list|,
-name|gimp_brush
+argument|gimp_brush
 argument_list|,
-name|GIMP_TYPE_DATA
+argument|GIMP_TYPE_DATA
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -242,7 +241,6 @@ value|gimp_brush_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|brush_signals
 specifier|static
 name|guint
 name|brush_signals

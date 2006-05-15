@@ -104,8 +104,8 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b15bbfe0103
-DECL|enum|__anon2b15bbfe0203
+DECL|enum|__anon2906556e0103
+DECL|enum|__anon2906556e0203
 block|{
 DECL|enumerator|SET_BRUSH
 DECL|enumerator|SET_BRUSH
@@ -508,17 +508,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpBrushCore
+argument|GimpBrushCore
 argument_list|,
-name|gimp_brush_core
+argument|gimp_brush_core
 argument_list|,
-name|GIMP_TYPE_PAINT_CORE
+argument|GIMP_TYPE_PAINT_CORE
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -530,8 +529,6 @@ value|gimp_brush_core_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|core_signals
-DECL|variable|core_signals
 specifier|static
 name|guint
 name|core_signals

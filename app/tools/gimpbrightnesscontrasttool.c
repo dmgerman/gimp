@@ -318,17 +318,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpBrightnessContrastTool,gimp_brightness_contrast_tool,GIMP_TYPE_IMAGE_MAP_TOOL)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpBrightnessContrastTool
+argument|GimpBrightnessContrastTool
 argument_list|,
-name|gimp_brightness_contrast_tool
+argument|gimp_brightness_contrast_tool
 argument_list|,
-name|GIMP_TYPE_IMAGE_MAP_TOOL
+argument|GIMP_TYPE_IMAGE_MAP_TOOL
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -340,7 +340,6 @@ end_define
 
 begin_function
 name|void
-DECL|function|gimp_brightness_contrast_tool_register (GimpToolRegisterCallback callback,gpointer data)
 name|gimp_brightness_contrast_tool_register
 parameter_list|(
 name|GimpToolRegisterCallback

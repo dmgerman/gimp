@@ -84,17 +84,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpViewRendererBrush,gimp_view_renderer_brush,GIMP_TYPE_VIEW_RENDERER)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpViewRendererBrush
+argument|GimpViewRendererBrush
 argument_list|,
-name|gimp_view_renderer_brush
+argument|gimp_view_renderer_brush
 argument_list|,
-name|GIMP_TYPE_VIEW_RENDERER
+argument|GIMP_TYPE_VIEW_RENDERER
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -107,7 +107,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_view_renderer_brush_class_init (GimpViewRendererBrushClass * klass)
 name|gimp_view_renderer_brush_class_init
 parameter_list|(
 name|GimpViewRendererBrushClass

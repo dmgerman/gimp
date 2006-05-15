@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon291bc87d0103
+DECL|enum|__anon2b82e2500103
 block|{
 DECL|enumerator|POP
 name|POP
@@ -99,7 +99,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon291bc87d0203
+DECL|enum|__anon2b82e2500203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -327,17 +327,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpUndo
+argument|GimpUndo
 argument_list|,
-name|gimp_undo
+argument|gimp_undo
 argument_list|,
-name|GIMP_TYPE_VIEWABLE
+argument|GIMP_TYPE_VIEWABLE
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -348,7 +347,6 @@ value|gimp_undo_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|undo_signals
 specifier|static
 name|guint
 name|undo_signals

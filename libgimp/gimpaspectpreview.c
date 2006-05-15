@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be839770103
+DECL|enum|__anon2b3f92340103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -169,17 +169,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpAspectPreview,gimp_aspect_preview,GIMP_TYPE_PREVIEW)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpAspectPreview
+argument|GimpAspectPreview
 argument_list|,
-name|gimp_aspect_preview
+argument|gimp_aspect_preview
 argument_list|,
-name|GIMP_TYPE_PREVIEW
+argument|GIMP_TYPE_PREVIEW
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -192,7 +192,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_aspect_preview_class_init (GimpAspectPreviewClass * klass)
 name|gimp_aspect_preview_class_init
 parameter_list|(
 name|GimpAspectPreviewClass

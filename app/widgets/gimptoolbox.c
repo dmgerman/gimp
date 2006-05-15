@@ -561,17 +561,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpToolbox,gimp_toolbox,GIMP_TYPE_IMAGE_DOCK)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpToolbox
+argument|GimpToolbox
 argument_list|,
-name|gimp_toolbox
+argument|gimp_toolbox
 argument_list|,
-name|GIMP_TYPE_IMAGE_DOCK
+argument|GIMP_TYPE_IMAGE_DOCK
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -584,7 +584,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_toolbox_class_init (GimpToolboxClass * klass)
 name|gimp_toolbox_class_init
 parameter_list|(
 name|GimpToolboxClass

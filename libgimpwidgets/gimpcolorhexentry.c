@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5457250103
+DECL|enum|__anon2c4038360103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -66,7 +66,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5457250203
+DECL|enum|__anon2c4038360203
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -120,17 +120,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpColorHexEntry
+argument|GimpColorHexEntry
 argument_list|,
-name|gimp_color_hex_entry
+argument|gimp_color_hex_entry
 argument_list|,
-name|GTK_TYPE_ENTRY
+argument|GTK_TYPE_ENTRY
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -141,7 +140,6 @@ value|gimp_color_hex_entry_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|entry_signals
 specifier|static
 name|guint
 name|entry_signals

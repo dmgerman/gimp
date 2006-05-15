@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon275f7ed20103
+DECL|enum|__anon2b9223d90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -121,22 +121,21 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpColorPickerOptions,gimp_color_picker_options,GIMP_TYPE_COLOR_OPTIONS)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpColorPickerOptions
+argument|GimpColorPickerOptions
 argument_list|,
-name|gimp_color_picker_options
+argument|gimp_color_picker_options
 argument_list|,
-name|GIMP_TYPE_COLOR_OPTIONS
+argument|GIMP_TYPE_COLOR_OPTIONS
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_color_picker_options_class_init (GimpColorPickerOptionsClass * klass)
 name|gimp_color_picker_options_class_init
 parameter_list|(
 name|GimpColorPickerOptionsClass

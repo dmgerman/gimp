@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28aeefbc0103
+DECL|enum|__anon2962c4e50103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -940,24 +940,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
-name|GimpChannel
+argument|GimpChannel
 argument_list|,
-name|gimp_channel
+argument|gimp_channel
 argument_list|,
-name|GIMP_TYPE_DRAWABLE
+argument|GIMP_TYPE_DRAWABLE
 argument_list|,
-name|G_IMPLEMENT_INTERFACE
-argument_list|(
-name|GIMP_TYPE_PICKABLE
-argument_list|,
-name|gimp_channel_pickable_iface_init
+argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_PICKABLE,                                                 gimp_channel_pickable_iface_init)
 argument_list|)
-argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -968,7 +962,6 @@ value|gimp_channel_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|channel_signals
 specifier|static
 name|guint
 name|channel_signals

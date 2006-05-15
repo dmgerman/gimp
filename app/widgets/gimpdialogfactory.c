@@ -375,17 +375,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpDialogFactory,gimp_dialog_factory,GIMP_TYPE_OBJECT)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpDialogFactory
+argument|GimpDialogFactory
 argument_list|,
-name|gimp_dialog_factory
+argument|gimp_dialog_factory
 argument_list|,
-name|GIMP_TYPE_OBJECT
+argument|GIMP_TYPE_OBJECT
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -398,7 +398,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dialog_factory_class_init (GimpDialogFactoryClass * klass)
 name|gimp_dialog_factory_class_init
 parameter_list|(
 name|GimpDialogFactoryClass

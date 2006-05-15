@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad10be00103
+DECL|enum|__anon2ab3b36e0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -55,17 +55,16 @@ block|}
 enum|;
 end_enum
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpColorSelector
+argument|GimpColorSelector
 argument_list|,
-name|gimp_color_selector
+argument|gimp_color_selector
 argument_list|,
-name|GTK_TYPE_VBOX
+argument|GTK_TYPE_VBOX
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -76,7 +75,6 @@ value|gimp_color_selector_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|selector_signals
 specifier|static
 name|guint
 name|selector_signals

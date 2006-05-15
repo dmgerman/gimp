@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon296c5aa00103
+DECL|enum|__anon2be6cbff0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -261,17 +261,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpBrushSelect,gimp_brush_select,GIMP_TYPE_PDB_DIALOG)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpBrushSelect
+argument|GimpBrushSelect
 argument_list|,
-name|gimp_brush_select
+argument|gimp_brush_select
 argument_list|,
-name|GIMP_TYPE_PDB_DIALOG
+argument|GIMP_TYPE_PDB_DIALOG
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -284,7 +284,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_brush_select_class_init (GimpBrushSelectClass * klass)
 name|gimp_brush_select_class_init
 parameter_list|(
 name|GimpBrushSelectClass

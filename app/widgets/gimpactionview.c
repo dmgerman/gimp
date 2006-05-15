@@ -184,17 +184,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpActionView,gimp_action_view,GTK_TYPE_TREE_VIEW)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpActionView
+argument|GimpActionView
 argument_list|,
-name|gimp_action_view
+argument|gimp_action_view
 argument_list|,
-name|GTK_TYPE_TREE_VIEW
+argument|GTK_TYPE_TREE_VIEW
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -207,7 +207,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_action_view_class_init (GimpActionViewClass * klass)
 name|gimp_action_view_class_init
 parameter_list|(
 name|GimpActionViewClass
@@ -1688,7 +1687,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf89b2d0108
+DECL|struct|__anon28a51af90108
 block|{
 DECL|member|accel_path
 name|gchar

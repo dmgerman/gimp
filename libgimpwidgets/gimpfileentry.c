@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ec46440103
+DECL|enum|__anon2b4fb2440103
 block|{
 DECL|enumerator|FILENAME_CHANGED
 name|FILENAME_CHANGED
@@ -128,17 +128,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpFileEntry
+argument|GimpFileEntry
 argument_list|,
-name|gimp_file_entry
+argument|gimp_file_entry
 argument_list|,
-name|GTK_TYPE_HBOX
+argument|GTK_TYPE_HBOX
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -149,7 +148,6 @@ value|gimp_file_entry_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|gimp_file_entry_signals
 specifier|static
 name|guint
 name|gimp_file_entry_signals

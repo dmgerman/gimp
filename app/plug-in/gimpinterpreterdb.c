@@ -319,17 +319,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpInterpreterDB,gimp_interpreter_db,G_TYPE_OBJECT)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpInterpreterDB
+argument|GimpInterpreterDB
 argument_list|,
-name|gimp_interpreter_db
+argument|gimp_interpreter_db
 argument_list|,
-name|G_TYPE_OBJECT
+argument|G_TYPE_OBJECT
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -342,7 +342,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_interpreter_db_class_init (GimpInterpreterDBClass * class)
 name|gimp_interpreter_db_class_init
 parameter_list|(
 name|GimpInterpreterDBClass

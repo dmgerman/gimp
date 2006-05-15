@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be3ce4e0103
+DECL|enum|__anon2aea0a300103
 block|{
 DECL|enumerator|ENTRY_CLICKED
 name|ENTRY_CLICKED
@@ -307,17 +307,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpPaletteView
+argument|GimpPaletteView
 argument_list|,
-name|gimp_palette_view
+argument|gimp_palette_view
 argument_list|,
-name|GIMP_TYPE_VIEW
+argument|GIMP_TYPE_VIEW
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -328,7 +327,6 @@ value|gimp_palette_view_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|view_signals
 specifier|static
 name|guint
 name|view_signals

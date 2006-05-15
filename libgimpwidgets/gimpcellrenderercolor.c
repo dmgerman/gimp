@@ -49,7 +49,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af385a20103
+DECL|enum|__anon2b6023700103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -184,17 +184,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpCellRendererColor,gimp_cell_renderer_color,GTK_TYPE_CELL_RENDERER)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpCellRendererColor
+argument|GimpCellRendererColor
 argument_list|,
-name|gimp_cell_renderer_color
+argument|gimp_cell_renderer_color
 argument_list|,
-name|GTK_TYPE_CELL_RENDERER
+argument|GTK_TYPE_CELL_RENDERER
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -207,7 +207,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_cell_renderer_color_class_init (GimpCellRendererColorClass * klass)
 name|gimp_cell_renderer_color_class_init
 parameter_list|(
 name|GimpCellRendererColorClass

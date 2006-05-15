@@ -341,17 +341,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpPaintCore
+argument|GimpPaintCore
 argument_list|,
-name|gimp_paint_core
+argument|gimp_paint_core
 argument_list|,
-name|GIMP_TYPE_OBJECT
+argument|GIMP_TYPE_OBJECT
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -362,7 +361,6 @@ value|gimp_paint_core_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|global_core_ID
 specifier|static
 name|gint
 name|global_core_ID

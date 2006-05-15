@@ -95,24 +95,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
-name|GimpIntStore
+argument|GimpIntStore
 argument_list|,
-name|gimp_int_store
+argument|gimp_int_store
 argument_list|,
-name|GTK_TYPE_LIST_STORE
+argument|GTK_TYPE_LIST_STORE
 argument_list|,
-name|G_IMPLEMENT_INTERFACE
-argument_list|(
-name|GTK_TYPE_TREE_MODEL
-argument_list|,
-name|gimp_int_store_tree_model_init
+argument|G_IMPLEMENT_INTERFACE (GTK_TYPE_TREE_MODEL,                                                 gimp_int_store_tree_model_init)
 argument_list|)
-argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -123,7 +117,6 @@ value|gimp_int_store_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|parent_iface
 specifier|static
 name|GtkTreeModelIface
 modifier|*

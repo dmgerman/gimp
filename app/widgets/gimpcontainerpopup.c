@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c34c810103
+DECL|enum|__anon2aeaf92c0103
 block|{
 DECL|enumerator|CANCEL
 name|CANCEL
@@ -277,17 +277,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpContainerPopup,gimp_container_popup,GTK_TYPE_WINDOW)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpContainerPopup
+argument|GimpContainerPopup
 argument_list|,
-name|gimp_container_popup
+argument|gimp_container_popup
 argument_list|,
-name|GTK_TYPE_WINDOW
+argument|GTK_TYPE_WINDOW
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -298,7 +298,6 @@ value|gimp_container_popup_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|popup_signals
 specifier|static
 name|guint
 name|popup_signals
@@ -311,7 +310,6 @@ end_decl_stmt
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_container_popup_class_init (GimpContainerPopupClass * klass)
 name|gimp_container_popup_class_init
 parameter_list|(
 name|GimpContainerPopupClass

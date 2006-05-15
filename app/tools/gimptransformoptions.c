@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27afdf5f0103
+DECL|enum|__anon29c3c0e60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -251,17 +251,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpTransformOptions,gimp_transform_options,GIMP_TYPE_TOOL_OPTIONS)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpTransformOptions
+argument|GimpTransformOptions
 argument_list|,
-name|gimp_transform_options
+argument|gimp_transform_options
 argument_list|,
-name|GIMP_TYPE_TOOL_OPTIONS
+argument|GIMP_TYPE_TOOL_OPTIONS
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -274,7 +274,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_transform_options_class_init (GimpTransformOptionsClass * klass)
 name|gimp_transform_options_class_init
 parameter_list|(
 name|GimpTransformOptionsClass

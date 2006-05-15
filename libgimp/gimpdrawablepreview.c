@@ -49,7 +49,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fb81050103
+DECL|enum|__anon2c2755660103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -63,7 +63,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fb81050208
+DECL|struct|__anon2c2755660208
 block|{
 DECL|member|x
 DECL|member|y
@@ -246,17 +246,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpDrawablePreview,gimp_drawable_preview,GIMP_TYPE_SCROLLED_PREVIEW)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpDrawablePreview
+argument|GimpDrawablePreview
 argument_list|,
-name|gimp_drawable_preview
+argument|gimp_drawable_preview
 argument_list|,
-name|GIMP_TYPE_SCROLLED_PREVIEW
+argument|GIMP_TYPE_SCROLLED_PREVIEW
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -269,7 +269,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_drawable_preview_class_init (GimpDrawablePreviewClass * klass)
 name|gimp_drawable_preview_class_init
 parameter_list|(
 name|GimpDrawablePreviewClass

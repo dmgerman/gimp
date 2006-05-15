@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27614a050103
+DECL|enum|__anon2b5f27d60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -152,17 +152,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpColorFrame,gimp_color_frame,GIMP_TYPE_FRAME)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpColorFrame
+argument|GimpColorFrame
 argument_list|,
-name|gimp_color_frame
+argument|gimp_color_frame
 argument_list|,
-name|GIMP_TYPE_FRAME
+argument|GIMP_TYPE_FRAME
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -175,7 +175,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_color_frame_class_init (GimpColorFrameClass * klass)
 name|gimp_color_frame_class_init
 parameter_list|(
 name|GimpColorFrameClass

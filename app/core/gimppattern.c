@@ -263,17 +263,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpPattern,gimp_pattern,GIMP_TYPE_DATA)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpPattern
+argument|GimpPattern
 argument_list|,
-name|gimp_pattern
+argument|gimp_pattern
 argument_list|,
-name|GIMP_TYPE_DATA
+argument|GIMP_TYPE_DATA
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -286,7 +286,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_pattern_class_init (GimpPatternClass * klass)
 name|gimp_pattern_class_init
 parameter_list|(
 name|GimpPatternClass

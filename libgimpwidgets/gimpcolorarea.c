@@ -57,7 +57,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6d0a9e0103
+DECL|enum|__anon275743c00103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -70,7 +70,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6d0a9e0203
+DECL|enum|__anon275743c00203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -298,17 +298,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpColorArea
+argument|GimpColorArea
 argument_list|,
-name|gimp_color_area
+argument|gimp_color_area
 argument_list|,
-name|GTK_TYPE_DRAWING_AREA
+argument|GTK_TYPE_DRAWING_AREA
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -319,7 +318,6 @@ value|gimp_color_area_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|gimp_color_area_signals
 specifier|static
 name|guint
 name|gimp_color_area_signals

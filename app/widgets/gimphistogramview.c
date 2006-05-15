@@ -63,7 +63,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c935b20103
+DECL|enum|__anon2b9fe51b0103
 block|{
 DECL|enumerator|RANGE_CHANGED
 name|RANGE_CHANGED
@@ -76,7 +76,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c935b20203
+DECL|enum|__anon2b9fe51b0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -260,17 +260,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpHistogramView
+argument|GimpHistogramView
 argument_list|,
-name|gimp_histogram_view
+argument|gimp_histogram_view
 argument_list|,
-name|GTK_TYPE_DRAWING_AREA
+argument|GTK_TYPE_DRAWING_AREA
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -281,7 +280,6 @@ value|gimp_histogram_view_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|histogram_view_signals
 specifier|static
 name|guint
 name|histogram_view_signals

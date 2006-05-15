@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b671e390103
+DECL|enum|__anon2b28ce850103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -254,24 +254,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
-name|GimpImageMap
+argument|GimpImageMap
 argument_list|,
-name|gimp_image_map
+argument|gimp_image_map
 argument_list|,
-name|GIMP_TYPE_OBJECT
+argument|GIMP_TYPE_OBJECT
 argument_list|,
-name|G_IMPLEMENT_INTERFACE
-argument_list|(
-name|GIMP_TYPE_PICKABLE
-argument_list|,
-name|gimp_image_map_pickable_iface_init
+argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_PICKABLE,                                                 gimp_image_map_pickable_iface_init)
 argument_list|)
-argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -282,7 +276,6 @@ value|gimp_image_map_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|image_map_signals
 specifier|static
 name|guint
 name|image_map_signals

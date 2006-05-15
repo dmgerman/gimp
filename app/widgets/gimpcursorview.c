@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon292361e40103
+DECL|enum|__anon2bd040590103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -222,24 +222,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
-name|GimpCursorView
+argument|GimpCursorView
 argument_list|,
-name|gimp_cursor_view
+argument|gimp_cursor_view
 argument_list|,
-name|GIMP_TYPE_EDITOR
+argument|GIMP_TYPE_EDITOR
 argument_list|,
-name|G_IMPLEMENT_INTERFACE
-argument_list|(
-name|GIMP_TYPE_DOCKED
-argument_list|,
-name|gimp_cursor_view_docked_iface_init
+argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_DOCKED,                                                 gimp_cursor_view_docked_iface_init)
 argument_list|)
-argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -250,7 +244,6 @@ value|gimp_cursor_view_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|parent_docked_iface
 specifier|static
 name|GimpDockedInterface
 modifier|*

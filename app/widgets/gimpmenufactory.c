@@ -69,17 +69,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpMenuFactory,gimp_menu_factory,GIMP_TYPE_OBJECT)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpMenuFactory
+argument|GimpMenuFactory
 argument_list|,
-name|gimp_menu_factory
+argument|gimp_menu_factory
 argument_list|,
-name|GIMP_TYPE_OBJECT
+argument|GIMP_TYPE_OBJECT
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -92,7 +92,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_menu_factory_class_init (GimpMenuFactoryClass * klass)
 name|gimp_menu_factory_class_init
 parameter_list|(
 name|GimpMenuFactoryClass

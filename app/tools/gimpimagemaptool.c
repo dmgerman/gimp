@@ -435,17 +435,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpImageMapTool,gimp_image_map_tool,GIMP_TYPE_COLOR_TOOL)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpImageMapTool
+argument|GimpImageMapTool
 argument_list|,
-name|gimp_image_map_tool
+argument|gimp_image_map_tool
 argument_list|,
-name|GIMP_TYPE_COLOR_TOOL
+argument|GIMP_TYPE_COLOR_TOOL
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -458,7 +458,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_map_tool_class_init (GimpImageMapToolClass * klass)
 name|gimp_image_map_tool_class_init
 parameter_list|(
 name|GimpImageMapToolClass

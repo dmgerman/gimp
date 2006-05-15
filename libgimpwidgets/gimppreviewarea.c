@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c9720e0103
+DECL|enum|__anon2b52990e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -219,17 +219,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpPreviewArea,gimp_preview_area,GTK_TYPE_DRAWING_AREA)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpPreviewArea
+argument|GimpPreviewArea
 argument_list|,
-name|gimp_preview_area
+argument|gimp_preview_area
 argument_list|,
-name|GTK_TYPE_DRAWING_AREA
+argument|GTK_TYPE_DRAWING_AREA
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -242,7 +242,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_preview_area_class_init (GimpPreviewAreaClass * klass)
 name|gimp_preview_area_class_init
 parameter_list|(
 name|GimpPreviewAreaClass

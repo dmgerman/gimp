@@ -200,17 +200,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpDockSeparator
+argument|GimpDockSeparator
 argument_list|,
-name|gimp_dock_separator
+argument|gimp_dock_separator
 argument_list|,
-name|GTK_TYPE_EVENT_BOX
+argument|GTK_TYPE_EVENT_BOX
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -221,7 +220,6 @@ value|gimp_dock_separator_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|dialog_target_table
 specifier|static
 specifier|const
 name|GtkTargetEntry

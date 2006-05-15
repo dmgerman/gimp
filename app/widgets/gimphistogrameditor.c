@@ -270,24 +270,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
-name|GimpHistogramEditor
+argument|GimpHistogramEditor
 argument_list|,
-name|gimp_histogram_editor
+argument|gimp_histogram_editor
 argument_list|,
-name|GIMP_TYPE_IMAGE_EDITOR
+argument|GIMP_TYPE_IMAGE_EDITOR
 argument_list|,
-name|G_IMPLEMENT_INTERFACE
-argument_list|(
-name|GIMP_TYPE_DOCKED
-argument_list|,
-name|gimp_histogram_editor_docked_iface_init
+argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_DOCKED,                                                 gimp_histogram_editor_docked_iface_init)
 argument_list|)
-argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -298,7 +292,6 @@ value|gimp_histogram_editor_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|parent_docked_iface
 specifier|static
 name|GimpDockedInterface
 modifier|*

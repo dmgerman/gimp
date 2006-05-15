@@ -213,17 +213,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpToolView,gimp_tool_view,GIMP_TYPE_CONTAINER_EDITOR)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpToolView
+argument|GimpToolView
 argument_list|,
-name|gimp_tool_view
+argument|gimp_tool_view
 argument_list|,
-name|GIMP_TYPE_CONTAINER_EDITOR
+argument|GIMP_TYPE_CONTAINER_EDITOR
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -236,7 +236,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tool_view_class_init (GimpToolViewClass * klass)
 name|gimp_tool_view_class_init
 parameter_list|(
 name|GimpToolViewClass

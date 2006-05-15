@@ -571,17 +571,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpTextTool,gimp_text_tool,GIMP_TYPE_TOOL)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpTextTool
+argument|GimpTextTool
 argument_list|,
-name|gimp_text_tool
+argument|gimp_text_tool
 argument_list|,
-name|GIMP_TYPE_TOOL
+argument|GIMP_TYPE_TOOL
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -593,7 +593,6 @@ end_define
 
 begin_function
 name|void
-DECL|function|gimp_text_tool_register (GimpToolRegisterCallback callback,gpointer data)
 name|gimp_text_tool_register
 parameter_list|(
 name|GimpToolRegisterCallback

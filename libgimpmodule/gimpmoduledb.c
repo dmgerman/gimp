@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b08b5a60103
+DECL|enum|__anon2c19a4d50103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -183,17 +183,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpModuleDB
+argument|GimpModuleDB
 argument_list|,
-name|gimp_module_db
+argument|gimp_module_db
 argument_list|,
-name|G_TYPE_OBJECT
+argument|G_TYPE_OBJECT
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -204,7 +203,6 @@ value|gimp_module_db_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|db_signals
 specifier|static
 name|guint
 name|db_signals

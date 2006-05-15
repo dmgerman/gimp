@@ -167,7 +167,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbaf5e80103
+DECL|enum|__anon2901cf520103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -592,24 +592,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
-name|GimpDrawable
+argument|GimpDrawable
 argument_list|,
-name|gimp_drawable
+argument|gimp_drawable
 argument_list|,
-name|GIMP_TYPE_ITEM
+argument|GIMP_TYPE_ITEM
 argument_list|,
-name|G_IMPLEMENT_INTERFACE
-argument_list|(
-name|GIMP_TYPE_PICKABLE
-argument_list|,
-name|gimp_drawable_pickable_iface_init
+argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_PICKABLE,                                                 gimp_drawable_pickable_iface_init)
 argument_list|)
-argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -620,7 +614,6 @@ value|gimp_drawable_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|gimp_drawable_signals
 specifier|static
 name|guint
 name|gimp_drawable_signals

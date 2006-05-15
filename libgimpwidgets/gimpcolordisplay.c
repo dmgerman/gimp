@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2759d4260103
+DECL|enum|__anon2c5c1c720103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -66,7 +66,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2759d4260203
+DECL|enum|__anon2c5c1c720203
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -124,24 +124,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
-name|GimpColorDisplay
+argument|GimpColorDisplay
 argument_list|,
-name|gimp_color_display
+argument|gimp_color_display
 argument_list|,
-name|G_TYPE_OBJECT
+argument|G_TYPE_OBJECT
 argument_list|,
-name|G_IMPLEMENT_INTERFACE
-argument_list|(
-name|GIMP_TYPE_CONFIG
-argument_list|,
-name|NULL
+argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG, NULL)
 argument_list|)
-argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -152,7 +146,6 @@ value|gimp_color_display_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|display_signals
 specifier|static
 name|guint
 name|display_signals

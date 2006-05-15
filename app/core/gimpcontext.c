@@ -1299,7 +1299,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ce97bc0103
+DECL|enum|__anon2b7ab5600103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1313,7 +1313,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ce97bc0203
+DECL|enum|__anon2b7ab5600203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0
@@ -1475,24 +1475,18 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
-name|GimpContext
+argument|GimpContext
 argument_list|,
-name|gimp_context
+argument|gimp_context
 argument_list|,
-name|GIMP_TYPE_OBJECT
+argument|GIMP_TYPE_OBJECT
 argument_list|,
-name|G_IMPLEMENT_INTERFACE
-argument_list|(
-name|GIMP_TYPE_CONFIG
-argument_list|,
-name|gimp_context_config_iface_init
+argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG,                                                 gimp_context_config_iface_init)
 argument_list|)
-argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -1503,7 +1497,6 @@ value|gimp_context_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|gimp_context_signals
 specifier|static
 name|guint
 name|gimp_context_signals

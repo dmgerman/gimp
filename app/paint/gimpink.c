@@ -324,17 +324,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpInk,gimp_ink,GIMP_TYPE_PAINT_CORE)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpInk
+argument|GimpInk
 argument_list|,
-name|gimp_ink
+argument|gimp_ink
 argument_list|,
-name|GIMP_TYPE_PAINT_CORE
+argument|GIMP_TYPE_PAINT_CORE
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -346,7 +346,6 @@ end_define
 
 begin_function
 name|void
-DECL|function|gimp_ink_register (Gimp * gimp,GimpPaintRegisterCallback callback)
 name|gimp_ink_register
 parameter_list|(
 name|Gimp
@@ -2404,7 +2403,7 @@ comment|/* Some of this stuff should probably be combined with the  * code it wa
 end_comment
 
 begin_enum
-DECL|enum|__anon2906e7890103
+DECL|enum|__anon29b693090103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum

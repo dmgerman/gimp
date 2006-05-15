@@ -86,17 +86,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpErrorDialog,gimp_error_dialog,GIMP_TYPE_DIALOG)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpErrorDialog
+argument|GimpErrorDialog
 argument_list|,
-name|gimp_error_dialog
+argument|gimp_error_dialog
 argument_list|,
-name|GIMP_TYPE_DIALOG
+argument|GIMP_TYPE_DIALOG
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -109,7 +109,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_error_dialog_class_init (GimpErrorDialogClass * klass)
 name|gimp_error_dialog_class_init
 parameter_list|(
 name|GimpErrorDialogClass

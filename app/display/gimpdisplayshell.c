@@ -263,7 +263,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb6a48e0103
+DECL|enum|__anon295a3c960103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -276,7 +276,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb6a48e0203
+DECL|enum|__anon295a3c960203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -496,17 +496,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpDisplayShell
+argument|GimpDisplayShell
 argument_list|,
-name|gimp_display_shell
+argument|gimp_display_shell
 argument_list|,
-name|GTK_TYPE_WINDOW
+argument|GTK_TYPE_WINDOW
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -517,7 +516,6 @@ value|gimp_display_shell_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|display_shell_signals
 specifier|static
 name|guint
 name|display_shell_signals

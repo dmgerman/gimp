@@ -102,7 +102,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad6be760103
+DECL|enum|__anon2a3135820103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -234,17 +234,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpBrushGenerated,gimp_brush_generated,GIMP_TYPE_BRUSH)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpBrushGenerated
+argument|GimpBrushGenerated
 argument_list|,
-name|gimp_brush_generated
+argument|gimp_brush_generated
 argument_list|,
-name|GIMP_TYPE_BRUSH
+argument|GIMP_TYPE_BRUSH
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -257,7 +257,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_brush_generated_class_init (GimpBrushGeneratedClass * klass)
 name|gimp_brush_generated_class_init
 parameter_list|(
 name|GimpBrushGeneratedClass

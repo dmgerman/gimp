@@ -468,17 +468,17 @@ endif|#
 directive|endif
 end_endif
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpPlugIn,gimp_plug_in,GIMP_TYPE_OBJECT)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpPlugIn
+argument|GimpPlugIn
 argument_list|,
-name|gimp_plug_in
+argument|gimp_plug_in
 argument_list|,
-name|GIMP_TYPE_OBJECT
+argument|GIMP_TYPE_OBJECT
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -491,7 +491,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_plug_in_class_init (GimpPlugInClass * klass)
 name|gimp_plug_in_class_init
 parameter_list|(
 name|GimpPlugInClass

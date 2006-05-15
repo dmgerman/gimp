@@ -77,7 +77,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c78836c0103
+DECL|enum|__anon2a0d80e90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -288,17 +288,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpDashEditor,gimp_dash_editor,GTK_TYPE_DRAWING_AREA)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpDashEditor
+argument|GimpDashEditor
 argument_list|,
-name|gimp_dash_editor
+argument|gimp_dash_editor
 argument_list|,
-name|GTK_TYPE_DRAWING_AREA
+argument|GTK_TYPE_DRAWING_AREA
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -311,7 +311,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dash_editor_class_init (GimpDashEditorClass * klass)
 name|gimp_dash_editor_class_init
 parameter_list|(
 name|GimpDashEditorClass

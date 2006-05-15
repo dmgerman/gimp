@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd1f9fc0103
+DECL|enum|__anon298cb1410103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -117,22 +117,21 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpMeasureOptions,gimp_measure_options,GIMP_TYPE_TOOL_OPTIONS)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpMeasureOptions
+argument|GimpMeasureOptions
 argument_list|,
-name|gimp_measure_options
+argument|gimp_measure_options
 argument_list|,
-name|GIMP_TYPE_TOOL_OPTIONS
+argument|GIMP_TYPE_TOOL_OPTIONS
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_measure_options_class_init (GimpMeasureOptionsClass * klass)
 name|gimp_measure_options_class_init
 parameter_list|(
 name|GimpMeasureOptionsClass

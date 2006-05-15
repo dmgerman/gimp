@@ -84,7 +84,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2795250103
+DECL|enum|__anon28a3f6eb0103
 block|{
 DECL|enumerator|MENU_PATH_ADDED
 name|MENU_PATH_ADDED
@@ -198,17 +198,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpPlugInProcedure
+argument|GimpPlugInProcedure
 argument_list|,
-name|gimp_plug_in_procedure
+argument|gimp_plug_in_procedure
 argument_list|,
-name|GIMP_TYPE_PROCEDURE
+argument|GIMP_TYPE_PROCEDURE
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -219,7 +218,6 @@ value|gimp_plug_in_procedure_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|gimp_plug_in_procedure_signals
 specifier|static
 name|guint
 name|gimp_plug_in_procedure_signals

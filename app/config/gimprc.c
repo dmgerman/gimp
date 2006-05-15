@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2accbbfa0103
+DECL|enum|__anon297353bb0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -233,24 +233,19 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpRc,gimp_rc,GIMP_TYPE_PLUGIN_CONFIG,G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG,gimp_rc_config_iface_init))
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
-name|GimpRc
+argument|GimpRc
 argument_list|,
-name|gimp_rc
+argument|gimp_rc
 argument_list|,
-name|GIMP_TYPE_PLUGIN_CONFIG
+argument|GIMP_TYPE_PLUGIN_CONFIG
 argument_list|,
-name|G_IMPLEMENT_INTERFACE
-argument_list|(
-name|GIMP_TYPE_CONFIG
-argument_list|,
-name|gimp_rc_config_iface_init
+argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG,                                                 gimp_rc_config_iface_init)
 argument_list|)
-argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -263,7 +258,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_rc_class_init (GimpRcClass * klass)
 name|gimp_rc_class_init
 parameter_list|(
 name|GimpRcClass

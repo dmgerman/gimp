@@ -29,7 +29,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a63fd50103
+DECL|enum|__anon28b8d4570103
 block|{
 DECL|enumerator|TOGGLED
 name|TOGGLED
@@ -76,17 +76,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpChainButton
+argument|GimpChainButton
 argument_list|,
-name|gimp_chain_button
+argument|gimp_chain_button
 argument_list|,
-name|GTK_TYPE_TABLE
+argument|GTK_TYPE_TABLE
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -97,7 +96,6 @@ value|gimp_chain_button_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|gimp_chain_button_signals
 specifier|static
 name|guint
 name|gimp_chain_button_signals

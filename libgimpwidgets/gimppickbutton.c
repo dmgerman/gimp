@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9b9fda0103
+DECL|enum|__anon2b77e7990103
 block|{
 DECL|enumerator|COLOR_PICKED
 name|COLOR_PICKED
@@ -208,17 +208,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpPickButton
+argument|GimpPickButton
 argument_list|,
-name|gimp_pick_button
+argument|gimp_pick_button
 argument_list|,
-name|GTK_TYPE_BUTTON
+argument|GTK_TYPE_BUTTON
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -229,7 +228,6 @@ value|gimp_pick_button_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|pick_button_signals
 specifier|static
 name|guint
 name|pick_button_signals

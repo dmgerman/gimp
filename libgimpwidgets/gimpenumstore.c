@@ -61,17 +61,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpEnumStore,gimp_enum_store,GIMP_TYPE_INT_STORE)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpEnumStore
+argument|GimpEnumStore
 argument_list|,
-name|gimp_enum_store
+argument|gimp_enum_store
 argument_list|,
-name|GIMP_TYPE_INT_STORE
+argument|GIMP_TYPE_INT_STORE
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -84,7 +84,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_enum_store_class_init (GimpEnumStoreClass * klass)
 name|gimp_enum_store_class_init
 parameter_list|(
 name|GimpEnumStoreClass

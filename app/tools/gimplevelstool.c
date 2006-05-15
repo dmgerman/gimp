@@ -655,17 +655,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpLevelsTool,gimp_levels_tool,GIMP_TYPE_IMAGE_MAP_TOOL)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpLevelsTool
+argument|GimpLevelsTool
 argument_list|,
-name|gimp_levels_tool
+argument|gimp_levels_tool
 argument_list|,
-name|GIMP_TYPE_IMAGE_MAP_TOOL
+argument|GIMP_TYPE_IMAGE_MAP_TOOL
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -677,7 +677,6 @@ end_define
 
 begin_function
 name|void
-DECL|function|gimp_levels_tool_register (GimpToolRegisterCallback callback,gpointer data)
 name|gimp_levels_tool_register
 parameter_list|(
 name|GimpToolRegisterCallback

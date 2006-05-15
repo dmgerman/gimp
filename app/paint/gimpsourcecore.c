@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b494e6d0103
+DECL|enum|__anon2c77a4270103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -316,21 +316,20 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpClone,gimp_clone,GIMP_TYPE_BRUSH_CORE)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpClone
+argument|GimpClone
 argument_list|,
-name|gimp_clone
+argument|gimp_clone
 argument_list|,
-name|GIMP_TYPE_BRUSH_CORE
+argument|GIMP_TYPE_BRUSH_CORE
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_function
 name|void
-DECL|function|gimp_clone_register (Gimp * gimp,GimpPaintRegisterCallback callback)
 name|gimp_clone_register
 parameter_list|(
 name|Gimp

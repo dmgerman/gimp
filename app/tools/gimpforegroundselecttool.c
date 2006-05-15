@@ -144,7 +144,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295a048a0108
+DECL|struct|__anon2c787a7e0108
 block|{
 DECL|member|width
 name|gint
@@ -511,17 +511,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpForegroundSelectTool,gimp_foreground_select_tool,GIMP_TYPE_FREE_SELECT_TOOL)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpForegroundSelectTool
+argument|GimpForegroundSelectTool
 argument_list|,
-name|gimp_foreground_select_tool
+argument|gimp_foreground_select_tool
 argument_list|,
-name|GIMP_TYPE_FREE_SELECT_TOOL
+argument|GIMP_TYPE_FREE_SELECT_TOOL
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -533,7 +533,6 @@ end_define
 
 begin_function
 name|void
-DECL|function|gimp_foreground_select_tool_register (GimpToolRegisterCallback callback,gpointer data)
 name|gimp_foreground_select_tool_register
 parameter_list|(
 name|GimpToolRegisterCallback

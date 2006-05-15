@@ -155,17 +155,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpControllerWheel
+argument|GimpControllerWheel
 argument_list|,
-name|gimp_controller_wheel
+argument|gimp_controller_wheel
 argument_list|,
-name|GIMP_TYPE_CONTROLLER
+argument|GIMP_TYPE_CONTROLLER
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -176,7 +175,6 @@ value|gimp_controller_wheel_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|wheel_events
 specifier|static
 name|WheelEvent
 name|wheel_events

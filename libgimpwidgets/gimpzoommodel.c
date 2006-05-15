@@ -69,7 +69,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba059020103
+DECL|enum|__anon2af7ba9e0103
 block|{
 DECL|enumerator|ZOOMED
 name|ZOOMED
@@ -82,7 +82,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba059020203
+DECL|enum|__anon2af7ba9e0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -108,7 +108,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba059020308
+DECL|struct|__anon2af7ba9e0308
 block|{
 DECL|member|value
 name|gdouble
@@ -202,17 +202,17 @@ block|, }
 decl_stmt|;
 end_decl_stmt
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpZoomModel,gimp_zoom_model,G_TYPE_OBJECT)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpZoomModel
+argument|GimpZoomModel
 argument_list|,
-name|gimp_zoom_model
+argument|gimp_zoom_model
 argument_list|,
-name|G_TYPE_OBJECT
+argument|G_TYPE_OBJECT
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -225,7 +225,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_zoom_model_class_init (GimpZoomModelClass * klass)
 name|gimp_zoom_model_class_init
 parameter_list|(
 name|GimpZoomModelClass
@@ -242,7 +241,7 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
-comment|/**    * GimpZoomModel::zoomed:    * @model: the object that received the signal    * @old_factor: the zoom factor before it changes    * @new_factor: the zoom factor after it has changed.    *    * Emitted the zoom factor of the zoom model changes.    */
+comment|/**    * GimpZoomModel::zoomed:    * @model: the object that received the signal    * @old_factor: the zoom factor before it changes    * @new_factor: the zoom factor after it has changed.    *    * Emitted when the zoom factor of the zoom model changes.    */
 name|zoom_model_signals
 index|[
 name|ZOOMED

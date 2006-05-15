@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9a10750103
+DECL|enum|__anon2b2cdac80103
 block|{
 DECL|enumerator|COLUMN_RENDERER
 name|COLUMN_RENDERER
@@ -417,24 +417,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
-name|GimpContainerTreeView
+argument|GimpContainerTreeView
 argument_list|,
-name|gimp_container_tree_view
+argument|gimp_container_tree_view
 argument_list|,
-name|GIMP_TYPE_CONTAINER_BOX
+argument|GIMP_TYPE_CONTAINER_BOX
 argument_list|,
-name|G_IMPLEMENT_INTERFACE
-argument_list|(
-name|GIMP_TYPE_CONTAINER_VIEW
-argument_list|,
-name|gimp_container_tree_view_view_iface_init
+argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONTAINER_VIEW,                                                 gimp_container_tree_view_view_iface_init)
 argument_list|)
-argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -445,7 +439,6 @@ value|gimp_container_tree_view_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|parent_view_iface
 specifier|static
 name|GimpContainerViewInterface
 modifier|*

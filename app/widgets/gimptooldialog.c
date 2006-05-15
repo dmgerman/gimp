@@ -51,22 +51,21 @@ directive|include
 file|"gimptooldialog.h"
 end_include
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpToolDialog,gimp_tool_dialog,GIMP_TYPE_VIEWABLE_DIALOG)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpToolDialog
+argument|GimpToolDialog
 argument_list|,
-name|gimp_tool_dialog
+argument|gimp_tool_dialog
 argument_list|,
-name|GIMP_TYPE_VIEWABLE_DIALOG
+argument|GIMP_TYPE_VIEWABLE_DIALOG
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tool_dialog_class_init (GimpToolDialogClass * klass)
 name|gimp_tool_dialog_class_init
 parameter_list|(
 name|GimpToolDialogClass

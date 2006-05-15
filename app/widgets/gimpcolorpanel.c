@@ -149,17 +149,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpColorPanel,gimp_color_panel,GIMP_TYPE_COLOR_BUTTON)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpColorPanel
+argument|GimpColorPanel
 argument_list|,
-name|gimp_color_panel
+argument|gimp_color_panel
 argument_list|,
-name|GIMP_TYPE_COLOR_BUTTON
+argument|GIMP_TYPE_COLOR_BUTTON
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -172,7 +172,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_color_panel_class_init (GimpColorPanelClass * klass)
 name|gimp_color_panel_class_init
 parameter_list|(
 name|GimpColorPanelClass

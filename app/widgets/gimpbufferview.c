@@ -163,17 +163,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpBufferView,gimp_buffer_view,GIMP_TYPE_CONTAINER_EDITOR)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpBufferView
+argument|GimpBufferView
 argument_list|,
-name|gimp_buffer_view
+argument|gimp_buffer_view
 argument_list|,
-name|GIMP_TYPE_CONTAINER_EDITOR
+argument|GIMP_TYPE_CONTAINER_EDITOR
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -186,7 +186,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_buffer_view_class_init (GimpBufferViewClass * klass)
 name|gimp_buffer_view_class_init
 parameter_list|(
 name|GimpBufferViewClass

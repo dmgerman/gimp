@@ -274,17 +274,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpPalette,gimp_palette,GIMP_TYPE_DATA)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpPalette
+argument|GimpPalette
 argument_list|,
-name|gimp_palette
+argument|gimp_palette
 argument_list|,
-name|GIMP_TYPE_DATA
+argument|GIMP_TYPE_DATA
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -297,7 +297,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_palette_class_init (GimpPaletteClass * klass)
 name|gimp_palette_class_init
 parameter_list|(
 name|GimpPaletteClass

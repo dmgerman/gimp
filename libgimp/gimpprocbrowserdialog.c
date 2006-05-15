@@ -83,7 +83,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b82d4110103
+DECL|enum|__anon2c768d480103
 block|{
 DECL|enumerator|SELECTION_CHANGED
 name|SELECTION_CHANGED
@@ -100,7 +100,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b82d4110203
+DECL|enum|__anon2c768d480203
 block|{
 DECL|enumerator|SEARCH_TYPE_ALL
 name|SEARCH_TYPE_ALL
@@ -133,7 +133,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b82d4110303
+DECL|enum|__anon2c768d480303
 block|{
 DECL|enumerator|COLUMN_PROC_NAME
 name|COLUMN_PROC_NAME
@@ -225,17 +225,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpProcBrowserDialog
+argument|GimpProcBrowserDialog
 argument_list|,
-name|gimp_proc_browser_dialog
+argument|gimp_proc_browser_dialog
 argument_list|,
-name|GIMP_TYPE_DIALOG
+argument|GIMP_TYPE_DIALOG
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -246,7 +245,6 @@ value|gimp_proc_browser_dialog_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|dialog_signals
 specifier|static
 name|guint
 name|dialog_signals

@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c9da840103
+DECL|enum|__anon2c0925140103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -151,17 +151,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpFgBgView,gimp_fg_bg_view,GTK_TYPE_DRAWING_AREA)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpFgBgView
+argument|GimpFgBgView
 argument_list|,
-name|gimp_fg_bg_view
+argument|gimp_fg_bg_view
 argument_list|,
-name|GTK_TYPE_DRAWING_AREA
+argument|GTK_TYPE_DRAWING_AREA
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -174,7 +174,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_fg_bg_view_class_init (GimpFgBgViewClass * klass)
 name|gimp_fg_bg_view_class_init
 parameter_list|(
 name|GimpFgBgViewClass

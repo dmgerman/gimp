@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bcec1220103
+DECL|enum|__anon27829b800103
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -115,17 +115,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpColorDisplayStack
+argument|GimpColorDisplayStack
 argument_list|,
-name|gimp_color_display_stack
+argument|gimp_color_display_stack
 argument_list|,
-name|G_TYPE_OBJECT
+argument|G_TYPE_OBJECT
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -136,7 +135,6 @@ value|gimp_color_display_stack_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|stack_signals
 specifier|static
 name|guint
 name|stack_signals

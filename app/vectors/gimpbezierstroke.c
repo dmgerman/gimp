@@ -595,17 +595,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpBezierStroke,gimp_bezier_stroke,GIMP_TYPE_STROKE)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpBezierStroke
+argument|GimpBezierStroke
 argument_list|,
-name|gimp_bezier_stroke
+argument|gimp_bezier_stroke
 argument_list|,
-name|GIMP_TYPE_STROKE
+argument|GIMP_TYPE_STROKE
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -618,7 +618,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_bezier_stroke_class_init (GimpBezierStrokeClass * klass)
 name|gimp_bezier_stroke_class_init
 parameter_list|(
 name|GimpBezierStrokeClass

@@ -146,7 +146,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e3ba6c0103
+DECL|enum|__anon299081110103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -449,17 +449,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpColormapEditor
+argument|GimpColormapEditor
 argument_list|,
-name|gimp_colormap_editor
+argument|gimp_colormap_editor
 argument_list|,
-name|GIMP_TYPE_IMAGE_EDITOR
+argument|GIMP_TYPE_IMAGE_EDITOR
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -470,7 +469,6 @@ value|gimp_colormap_editor_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|editor_signals
 specifier|static
 name|guint
 name|editor_signals

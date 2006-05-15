@@ -152,7 +152,7 @@ end_function
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0c77530103
+DECL|enum|__anon29c166890103
 block|{
 DECL|enumerator|REGISTER_PROCEDURE
 name|REGISTER_PROCEDURE
@@ -260,17 +260,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpPDB
+argument|GimpPDB
 argument_list|,
-name|gimp_pdb
+argument|gimp_pdb
 argument_list|,
-name|GIMP_TYPE_OBJECT
+argument|GIMP_TYPE_OBJECT
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -281,7 +280,6 @@ value|gimp_pdb_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|gimp_pdb_signals
 specifier|static
 name|guint
 name|gimp_pdb_signals

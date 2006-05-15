@@ -45,17 +45,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpEnumLabel,gimp_enum_label,GTK_TYPE_LABEL)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpEnumLabel
+argument|GimpEnumLabel
 argument_list|,
-name|gimp_enum_label
+argument|gimp_enum_label
 argument_list|,
-name|GTK_TYPE_LABEL
+argument|GTK_TYPE_LABEL
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -68,7 +68,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_enum_label_class_init (GimpEnumLabelClass * klass)
 name|gimp_enum_label_class_init
 parameter_list|(
 name|GimpEnumLabelClass

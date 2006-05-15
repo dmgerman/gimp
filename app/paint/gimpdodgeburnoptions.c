@@ -59,7 +59,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c33eb40103
+DECL|enum|__anon2c9bbef20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -123,22 +123,21 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpDodgeBurnOptions,gimp_dodge_burn_options,GIMP_TYPE_PAINT_OPTIONS)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpDodgeBurnOptions
+argument|GimpDodgeBurnOptions
 argument_list|,
-name|gimp_dodge_burn_options
+argument|gimp_dodge_burn_options
 argument_list|,
-name|GIMP_TYPE_PAINT_OPTIONS
+argument|GIMP_TYPE_PAINT_OPTIONS
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dodge_burn_options_class_init (GimpDodgeBurnOptionsClass * klass)
 name|gimp_dodge_burn_options_class_init
 parameter_list|(
 name|GimpDodgeBurnOptionsClass

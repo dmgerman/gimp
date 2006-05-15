@@ -252,22 +252,21 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpHistogramBox,gimp_histogram_box,GTK_TYPE_VBOX)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpHistogramBox
+argument|GimpHistogramBox
 argument_list|,
-name|gimp_histogram_box
+argument|gimp_histogram_box
 argument_list|,
-name|GTK_TYPE_VBOX
+argument|GTK_TYPE_VBOX
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_histogram_box_class_init (GimpHistogramBoxClass * klass)
 name|gimp_histogram_box_class_init
 parameter_list|(
 name|GimpHistogramBoxClass

@@ -39,21 +39,20 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpPencil,gimp_pencil,GIMP_TYPE_PAINTBRUSH)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpPencil
+argument|GimpPencil
 argument_list|,
-name|gimp_pencil
+argument|gimp_pencil
 argument_list|,
-name|GIMP_TYPE_PAINTBRUSH
+argument|GIMP_TYPE_PAINTBRUSH
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_function
 name|void
-DECL|function|gimp_pencil_register (Gimp * gimp,GimpPaintRegisterCallback callback)
 name|gimp_pencil_register
 parameter_list|(
 name|Gimp

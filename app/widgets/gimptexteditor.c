@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28eb91100103
+DECL|enum|__anon2b5fb9c10103
 block|{
 DECL|enumerator|TEXT_CHANGED
 name|TEXT_CHANGED
@@ -123,17 +123,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpTextEditor
+argument|GimpTextEditor
 argument_list|,
-name|gimp_text_editor
+argument|gimp_text_editor
 argument_list|,
-name|GIMP_TYPE_DIALOG
+argument|GIMP_TYPE_DIALOG
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -144,7 +143,6 @@ value|gimp_text_editor_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|text_editor_signals
 specifier|static
 name|guint
 name|text_editor_signals

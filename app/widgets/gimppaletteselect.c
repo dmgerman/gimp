@@ -114,17 +114,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpPaletteSelect,gimp_palette_select,GIMP_TYPE_PDB_DIALOG)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpPaletteSelect
+argument|GimpPaletteSelect
 argument_list|,
-name|gimp_palette_select
+argument|gimp_palette_select
 argument_list|,
-name|GIMP_TYPE_PDB_DIALOG
+argument|GIMP_TYPE_PDB_DIALOG
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -137,7 +137,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_palette_select_class_init (GimpPaletteSelectClass * klass)
 name|gimp_palette_select_class_init
 parameter_list|(
 name|GimpPaletteSelectClass

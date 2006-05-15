@@ -36,7 +36,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0481ad0108
+DECL|struct|__anon2c91a7f90108
 block|{
 DECL|member|title
 name|gchar
@@ -85,7 +85,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0481ad0203
+DECL|enum|__anon2c91a7f90203
 block|{
 DECL|enumerator|FONT_SET
 name|FONT_SET
@@ -98,7 +98,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0481ad0303
+DECL|enum|__anon2c91a7f90303
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -281,22 +281,21 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpFontSelectButton,gimp_font_select_button,GTK_TYPE_BUTTON)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpFontSelectButton
+argument|GimpFontSelectButton
 argument_list|,
-name|gimp_font_select_button
+argument|gimp_font_select_button
 argument_list|,
-name|GTK_TYPE_BUTTON
+argument|GTK_TYPE_BUTTON
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_font_select_button_class_init (GimpFontSelectButtonClass * klass)
 name|gimp_font_select_button_class_init
 parameter_list|(
 name|GimpFontSelectButtonClass

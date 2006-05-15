@@ -61,17 +61,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpViewRendererImage,gimp_view_renderer_image,GIMP_TYPE_VIEW_RENDERER)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpViewRendererImage
+argument|GimpViewRendererImage
 argument_list|,
-name|gimp_view_renderer_image
+argument|gimp_view_renderer_image
 argument_list|,
-name|GIMP_TYPE_VIEW_RENDERER
+argument|GIMP_TYPE_VIEW_RENDERER
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -84,7 +84,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_view_renderer_image_class_init (GimpViewRendererImageClass * klass)
 name|gimp_view_renderer_image_class_init
 parameter_list|(
 name|GimpViewRendererImageClass

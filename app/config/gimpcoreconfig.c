@@ -119,7 +119,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b41800c0103
+DECL|enum|__anon2973f7c90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -363,17 +363,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpCoreConfig,gimp_core_config,GIMP_TYPE_BASE_CONFIG)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpCoreConfig
+argument|GimpCoreConfig
 argument_list|,
-name|gimp_core_config
+argument|gimp_core_config
 argument_list|,
-name|GIMP_TYPE_BASE_CONFIG
+argument|GIMP_TYPE_BASE_CONFIG
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -386,7 +386,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_core_config_class_init (GimpCoreConfigClass * klass)
 name|gimp_core_config_class_init
 parameter_list|(
 name|GimpCoreConfigClass

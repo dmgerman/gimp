@@ -148,17 +148,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpColorScale,gimp_color_scale,GTK_TYPE_SCALE)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpColorScale
+argument|GimpColorScale
 argument_list|,
-name|gimp_color_scale
+argument|gimp_color_scale
 argument_list|,
-name|GTK_TYPE_SCALE
+argument|GTK_TYPE_SCALE
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -171,7 +171,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_color_scale_class_init (GimpColorScaleClass * klass)
 name|gimp_color_scale_class_init
 parameter_list|(
 name|GimpColorScaleClass

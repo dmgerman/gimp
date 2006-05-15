@@ -101,7 +101,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c278edf0103
+DECL|enum|__anon28c2c9d80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -265,17 +265,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpGuiConfig,gimp_gui_config,GIMP_TYPE_DISPLAY_CONFIG)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpGuiConfig
+argument|GimpGuiConfig
 argument_list|,
-name|gimp_gui_config
+argument|gimp_gui_config
 argument_list|,
-name|GIMP_TYPE_DISPLAY_CONFIG
+argument|GIMP_TYPE_DISPLAY_CONFIG
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -288,7 +288,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_gui_config_class_init (GimpGuiConfigClass * klass)
 name|gimp_gui_config_class_init
 parameter_list|(
 name|GimpGuiConfigClass

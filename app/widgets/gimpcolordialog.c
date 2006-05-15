@@ -87,7 +87,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7de2090103
+DECL|enum|__anon2bf5f3530103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -204,17 +204,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpColorDialog
+argument|GimpColorDialog
 argument_list|,
-name|gimp_color_dialog
+argument|gimp_color_dialog
 argument_list|,
-name|GIMP_TYPE_VIEWABLE_DIALOG
+argument|GIMP_TYPE_VIEWABLE_DIALOG
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -225,7 +224,6 @@ value|gimp_color_dialog_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|color_dialog_signals
 specifier|static
 name|guint
 name|color_dialog_signals

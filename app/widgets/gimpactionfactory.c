@@ -63,17 +63,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpActionFactory,gimp_action_factory,GIMP_TYPE_OBJECT)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpActionFactory
+argument|GimpActionFactory
 argument_list|,
-name|gimp_action_factory
+argument|gimp_action_factory
 argument_list|,
-name|GIMP_TYPE_OBJECT
+argument|GIMP_TYPE_OBJECT
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -86,7 +86,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_action_factory_class_init (GimpActionFactoryClass * klass)
 name|gimp_action_factory_class_init
 parameter_list|(
 name|GimpActionFactoryClass

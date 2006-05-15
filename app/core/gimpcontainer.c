@@ -124,7 +124,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ac774e0103
+DECL|enum|__anon2a3c47850103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -149,7 +149,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ac774e0203
+DECL|enum|__anon2a3c47850203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -310,24 +310,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
-name|GimpContainer
+argument|GimpContainer
 argument_list|,
-name|gimp_container
+argument|gimp_container
 argument_list|,
-name|GIMP_TYPE_OBJECT
+argument|GIMP_TYPE_OBJECT
 argument_list|,
-name|G_IMPLEMENT_INTERFACE
-argument_list|(
-name|GIMP_TYPE_CONFIG
-argument_list|,
-name|gimp_container_config_iface_init
+argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG,                                                 gimp_container_config_iface_init)
 argument_list|)
-argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -338,7 +332,6 @@ value|gimp_container_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|container_signals
 specifier|static
 name|guint
 name|container_signals
@@ -1127,7 +1120,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ac774e0308
+DECL|struct|__anon2a3c47850308
 block|{
 DECL|member|writer
 name|GimpConfigWriter

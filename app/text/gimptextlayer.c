@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27978c040103
+DECL|enum|__anon2a53cec60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -388,17 +388,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpTextLayer,gimp_text_layer,GIMP_TYPE_LAYER)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpTextLayer
+argument|GimpTextLayer
 argument_list|,
-name|gimp_text_layer
+argument|gimp_text_layer
 argument_list|,
-name|GIMP_TYPE_LAYER
+argument|GIMP_TYPE_LAYER
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -411,7 +411,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_text_layer_class_init (GimpTextLayerClass * klass)
 name|gimp_text_layer_class_init
 parameter_list|(
 name|GimpTextLayerClass

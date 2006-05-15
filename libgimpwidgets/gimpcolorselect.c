@@ -86,7 +86,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2aba3fd30103
+DECL|enum|__anon2c3056c10103
 block|{
 DECL|enumerator|COLOR_SELECT_HUE
 name|COLOR_SELECT_HUE
@@ -137,7 +137,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2aba3fd30203
+DECL|enum|__anon2c3056c10203
 block|{
 DECL|enumerator|UPDATE_VALUES
 name|UPDATE_VALUES
@@ -812,17 +812,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpColorSelect
+argument|GimpColorSelect
 argument_list|,
-name|gimp_color_select
+argument|gimp_color_select
 argument_list|,
-name|GIMP_TYPE_COLOR_SELECTOR
+argument|GIMP_TYPE_COLOR_SELECTOR
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -833,7 +832,6 @@ value|gimp_color_select_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|update_procs
 specifier|static
 specifier|const
 name|ColorSelectFillUpdateProc

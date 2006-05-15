@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6730f90103
+DECL|enum|__anon2b172fe50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -348,17 +348,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpTool
+argument|GimpTool
 argument_list|,
-name|gimp_tool
+argument|gimp_tool
 argument_list|,
-name|GIMP_TYPE_OBJECT
+argument|GIMP_TYPE_OBJECT
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -369,7 +368,6 @@ value|gimp_tool_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|global_tool_ID
 specifier|static
 name|gint
 name|global_tool_ID

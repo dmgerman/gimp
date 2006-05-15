@@ -384,24 +384,19 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpNewRectSelectTool,gimp_new_rect_select_tool,GIMP_TYPE_SELECTION_TOOL,G_IMPLEMENT_INTERFACE (GIMP_TYPE_RECTANGLE_TOOL,gimp_new_rect_select_tool_rectangle_tool_iface_init))
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
-name|GimpNewRectSelectTool
+argument|GimpNewRectSelectTool
 argument_list|,
-name|gimp_new_rect_select_tool
+argument|gimp_new_rect_select_tool
 argument_list|,
-name|GIMP_TYPE_SELECTION_TOOL
+argument|GIMP_TYPE_SELECTION_TOOL
 argument_list|,
-name|G_IMPLEMENT_INTERFACE
-argument_list|(
-name|GIMP_TYPE_RECTANGLE_TOOL
-argument_list|,
-name|gimp_new_rect_select_tool_rectangle_tool_iface_init
+argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_RECTANGLE_TOOL,                                                 gimp_new_rect_select_tool_rectangle_tool_iface_init)
 argument_list|)
-argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -413,7 +408,6 @@ end_define
 
 begin_function
 name|void
-DECL|function|gimp_new_rect_select_tool_register (GimpToolRegisterCallback callback,gpointer data)
 name|gimp_new_rect_select_tool_register
 parameter_list|(
 name|GimpToolRegisterCallback

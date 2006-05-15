@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon292b031d0103
+DECL|enum|__anon279365f50103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -615,30 +615,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
-name|GimpItemTreeView
+argument|GimpItemTreeView
 argument_list|,
-name|gimp_item_tree_view
+argument|gimp_item_tree_view
 argument_list|,
-name|GIMP_TYPE_CONTAINER_TREE_VIEW
+argument|GIMP_TYPE_CONTAINER_TREE_VIEW
 argument_list|,
-name|G_IMPLEMENT_INTERFACE
-argument_list|(
-argument|GIMP_TYPE_CONTAINER_VIEW
-argument_list|,
-argument|gimp_item_tree_view_view_iface_init
+argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONTAINER_VIEW,                                                 gimp_item_tree_view_view_iface_init)                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_DOCKED,                                                 gimp_item_tree_view_docked_iface_init)
 argument_list|)
-name|G_IMPLEMENT_INTERFACE
-argument_list|(
-name|GIMP_TYPE_DOCKED
-argument_list|,
-name|gimp_item_tree_view_docked_iface_init
-argument_list|)
-argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -649,7 +637,6 @@ value|gimp_item_tree_view_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|parent_view_iface
 specifier|static
 name|GimpContainerViewInterface
 modifier|*

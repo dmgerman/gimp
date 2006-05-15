@@ -39,17 +39,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpToolControl,gimp_tool_control,GIMP_TYPE_OBJECT)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpToolControl
+argument|GimpToolControl
 argument_list|,
-name|gimp_tool_control
+argument|gimp_tool_control
 argument_list|,
-name|GIMP_TYPE_OBJECT
+argument|GIMP_TYPE_OBJECT
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -62,7 +62,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tool_control_class_init (GimpToolControlClass * klass)
 name|gimp_tool_control_class_init
 parameter_list|(
 name|GimpToolControlClass

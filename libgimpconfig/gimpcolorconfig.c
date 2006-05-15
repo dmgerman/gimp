@@ -158,7 +158,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b37bed20103
+DECL|enum|__anon2c7570110103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -258,31 +258,20 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
-name|GimpColorConfig
+argument|GimpColorConfig
 argument_list|,
-name|gimp_color_config
+argument|gimp_color_config
 argument_list|,
-name|G_TYPE_OBJECT
+argument|G_TYPE_OBJECT
 argument_list|,
-name|G_IMPLEMENT_INTERFACE
-argument_list|(
-argument|GIMP_TYPE_CONFIG
-argument_list|,
-argument|NULL
-argument_list|)
-name|gimp_type_set_translation_domain
-argument_list|(
-name|g_define_type_id
-argument_list|,
-name|GETTEXT_PACKAGE
+argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG, NULL)                          gimp_type_set_translation_domain (g_define_type_id,                                                            GETTEXT_PACKAGE
 literal|"-libgimp"
+argument|)
 argument_list|)
-argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -295,7 +284,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_color_config_class_init (GimpColorConfigClass * klass)
 name|gimp_color_config_class_init
 parameter_list|(
 name|GimpColorConfigClass

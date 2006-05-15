@@ -171,17 +171,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpDataFactoryView,gimp_data_factory_view,GIMP_TYPE_CONTAINER_EDITOR)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpDataFactoryView
+argument|GimpDataFactoryView
 argument_list|,
-name|gimp_data_factory_view
+argument|gimp_data_factory_view
 argument_list|,
-name|GIMP_TYPE_CONTAINER_EDITOR
+argument|GIMP_TYPE_CONTAINER_EDITOR
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -194,7 +194,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_data_factory_view_class_init (GimpDataFactoryViewClass * klass)
 name|gimp_data_factory_view_class_init
 parameter_list|(
 name|GimpDataFactoryViewClass

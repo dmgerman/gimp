@@ -200,17 +200,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpBuffer,gimp_buffer,GIMP_TYPE_VIEWABLE)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpBuffer
+argument|GimpBuffer
 argument_list|,
-name|gimp_buffer
+argument|gimp_buffer
 argument_list|,
-name|GIMP_TYPE_VIEWABLE
+argument|GIMP_TYPE_VIEWABLE
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -223,7 +223,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_buffer_class_init (GimpBufferClass * klass)
 name|gimp_buffer_class_init
 parameter_list|(
 name|GimpBufferClass

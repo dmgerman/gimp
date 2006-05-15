@@ -63,7 +63,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a3e5c30103
+DECL|enum|__anon2bceaecd0103
 block|{
 DECL|enumerator|SRC_COLUMN_NAME
 name|SRC_COLUMN_NAME
@@ -79,7 +79,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a3e5c30203
+DECL|enum|__anon2bceaecd0203
 block|{
 DECL|enumerator|DEST_COLUMN_ENABLED
 name|DEST_COLUMN_ENABLED
@@ -339,17 +339,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpColorDisplayEditor,gimp_color_display_editor,GTK_TYPE_VBOX)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpColorDisplayEditor
+argument|GimpColorDisplayEditor
 argument_list|,
-name|gimp_color_display_editor
+argument|gimp_color_display_editor
 argument_list|,
-name|GTK_TYPE_VBOX
+argument|GTK_TYPE_VBOX
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -362,7 +362,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_color_display_editor_class_init (GimpColorDisplayEditorClass * klass)
 name|gimp_color_display_editor_class_init
 parameter_list|(
 name|GimpColorDisplayEditorClass

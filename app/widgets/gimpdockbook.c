@@ -147,7 +147,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b948d360103
+DECL|enum|__anon2a1ad5880103
 block|{
 DECL|enumerator|DOCKABLE_ADDED
 name|DOCKABLE_ADDED
@@ -361,17 +361,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpDockbook
+argument|GimpDockbook
 argument_list|,
-name|gimp_dockbook
+argument|gimp_dockbook
 argument_list|,
-name|GTK_TYPE_NOTEBOOK
+argument|GTK_TYPE_NOTEBOOK
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -382,7 +381,6 @@ value|gimp_dockbook_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|dockbook_signals
 specifier|static
 name|guint
 name|dockbook_signals

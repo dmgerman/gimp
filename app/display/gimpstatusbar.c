@@ -362,24 +362,19 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpStatusbar,gimp_statusbar,GTK_TYPE_HBOX,G_IMPLEMENT_INTERFACE (GIMP_TYPE_PROGRESS,gimp_statusbar_progress_iface_init))
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
-name|GimpStatusbar
+argument|GimpStatusbar
 argument_list|,
-name|gimp_statusbar
+argument|gimp_statusbar
 argument_list|,
-name|GTK_TYPE_HBOX
+argument|GTK_TYPE_HBOX
 argument_list|,
-name|G_IMPLEMENT_INTERFACE
-argument_list|(
-name|GIMP_TYPE_PROGRESS
-argument_list|,
-name|gimp_statusbar_progress_iface_init
+argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_PROGRESS,                                                 gimp_statusbar_progress_iface_init)
 argument_list|)
-argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -392,7 +387,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_statusbar_class_init (GimpStatusbarClass * klass)
 name|gimp_statusbar_class_init
 parameter_list|(
 name|GimpStatusbarClass

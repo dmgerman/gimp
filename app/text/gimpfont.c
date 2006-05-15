@@ -107,7 +107,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ab19db70103
+DECL|enum|__anon29ad4d5a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -293,17 +293,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpFont,gimp_font,GIMP_TYPE_VIEWABLE)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpFont
+argument|GimpFont
 argument_list|,
-name|gimp_font
+argument|gimp_font
 argument_list|,
-name|GIMP_TYPE_VIEWABLE
+argument|GIMP_TYPE_VIEWABLE
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -316,7 +316,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_font_class_init (GimpFontClass * klass)
 name|gimp_font_class_init
 parameter_list|(
 name|GimpFontClass
@@ -1340,7 +1339,7 @@ comment|/* This is a table of scripts and corresponding short sample strings    
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2ab19db70208
+DECL|struct|__anon29ad4d5a0208
 block|{
 DECL|member|script
 specifier|const

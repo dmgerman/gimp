@@ -297,17 +297,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpGradient,gimp_gradient,GIMP_TYPE_DATA)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpGradient
+argument|GimpGradient
 argument_list|,
-name|gimp_gradient
+argument|gimp_gradient
 argument_list|,
-name|GIMP_TYPE_DATA
+argument|GIMP_TYPE_DATA
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -320,7 +320,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_gradient_class_init (GimpGradientClass * klass)
 name|gimp_gradient_class_init
 parameter_list|(
 name|GimpGradientClass

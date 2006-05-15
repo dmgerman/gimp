@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ae06590103
+DECL|enum|__anon2a2026170103
 block|{
 DECL|enumerator|COLUMN_PROC
 name|COLUMN_PROC
@@ -93,7 +93,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ae06590203
+DECL|enum|__anon2a2026170203
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -132,17 +132,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpFileProcView
+argument|GimpFileProcView
 argument_list|,
-name|gimp_file_proc_view
+argument|gimp_file_proc_view
 argument_list|,
-name|GTK_TYPE_TREE_VIEW
+argument|GTK_TYPE_TREE_VIEW
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -153,7 +152,6 @@ value|gimp_file_proc_view_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|view_signals
 specifier|static
 name|guint
 name|view_signals

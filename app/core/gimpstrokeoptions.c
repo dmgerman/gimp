@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27bbb6220103
+DECL|enum|__anon288fc6910103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -99,7 +99,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27bbb6220203
+DECL|enum|__anon288fc6910203
 block|{
 DECL|enumerator|DASH_INFO_CHANGED
 name|DASH_INFO_CHANGED
@@ -157,20 +157,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpStrokeOptions
+argument|GimpStrokeOptions
 argument_list|,
-name|gimp_stroke_options
+argument|gimp_stroke_options
 argument_list|,
-name|GIMP_TYPE_CONTEXT
+argument|GIMP_TYPE_CONTEXT
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_decl_stmt
-DECL|variable|stroke_options_signals
 specifier|static
 name|guint
 name|stroke_options_signals

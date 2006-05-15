@@ -181,17 +181,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpFrame,gimp_frame,GTK_TYPE_FRAME)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpFrame
+argument|GimpFrame
 argument_list|,
-name|gimp_frame
+argument|gimp_frame
 argument_list|,
-name|GTK_TYPE_FRAME
+argument|GTK_TYPE_FRAME
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -204,7 +204,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_frame_class_init (GimpFrameClass * klass)
 name|gimp_frame_class_init
 parameter_list|(
 name|GimpFrameClass

@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b31fc20103
+DECL|enum|__anon2b54469b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -171,17 +171,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpToolInfo,gimp_tool_info,GIMP_TYPE_VIEWABLE)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpToolInfo
+argument|GimpToolInfo
 argument_list|,
-name|gimp_tool_info
+argument|gimp_tool_info
 argument_list|,
-name|GIMP_TYPE_VIEWABLE
+argument|GIMP_TYPE_VIEWABLE
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -194,7 +194,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tool_info_class_init (GimpToolInfoClass * klass)
 name|gimp_tool_info_class_init
 parameter_list|(
 name|GimpToolInfoClass

@@ -145,17 +145,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpTemporaryProcedure,gimp_temporary_procedure,GIMP_TYPE_PLUG_IN_PROCEDURE)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpTemporaryProcedure
+argument|GimpTemporaryProcedure
 argument_list|,
-name|gimp_temporary_procedure
+argument|gimp_temporary_procedure
 argument_list|,
-name|GIMP_TYPE_PLUG_IN_PROCEDURE
+argument|GIMP_TYPE_PLUG_IN_PROCEDURE
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -168,7 +168,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_temporary_procedure_class_init (GimpTemporaryProcedureClass * klass)
 name|gimp_temporary_procedure_class_init
 parameter_list|(
 name|GimpTemporaryProcedureClass

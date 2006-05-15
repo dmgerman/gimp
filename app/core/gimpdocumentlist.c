@@ -98,27 +98,20 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
-name|GimpDocumentList
+argument|GimpDocumentList
 argument_list|,
-name|gimp_document_list
+argument|gimp_document_list
 argument_list|,
-name|GIMP_TYPE_LIST
+argument|GIMP_TYPE_LIST
 argument_list|,
-name|G_IMPLEMENT_INTERFACE
-argument_list|(
-name|GIMP_TYPE_CONFIG
-argument_list|,
-name|gimp_document_list_config_iface_init
+argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG,                                                 gimp_document_list_config_iface_init)
 argument_list|)
-argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_decl_stmt
-DECL|variable|document_symbol
 specifier|static
 specifier|const
 name|gchar

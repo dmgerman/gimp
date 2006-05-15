@@ -73,7 +73,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad7572d0103
+DECL|enum|__anon2989b31c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -247,17 +247,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpDisplayConfig,gimp_display_config,GIMP_TYPE_CORE_CONFIG)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpDisplayConfig
+argument|GimpDisplayConfig
 argument_list|,
-name|gimp_display_config
+argument|gimp_display_config
 argument_list|,
-name|GIMP_TYPE_CORE_CONFIG
+argument|GIMP_TYPE_CORE_CONFIG
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -270,7 +270,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_display_config_class_init (GimpDisplayConfigClass * klass)
 name|gimp_display_config_class_init
 parameter_list|(
 name|GimpDisplayConfigClass

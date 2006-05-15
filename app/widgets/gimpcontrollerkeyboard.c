@@ -161,17 +161,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpControllerKeyboard
+argument|GimpControllerKeyboard
 argument_list|,
-name|gimp_controller_keyboard
+argument|gimp_controller_keyboard
 argument_list|,
-name|GIMP_TYPE_CONTROLLER
+argument|GIMP_TYPE_CONTROLLER
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -182,7 +181,6 @@ value|gimp_controller_keyboard_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|keyboard_events
 specifier|static
 name|KeyboardEvent
 name|keyboard_events

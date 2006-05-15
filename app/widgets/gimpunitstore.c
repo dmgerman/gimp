@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a09bb760103
+DECL|enum|__anon2b312d340103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -333,24 +333,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
-name|GimpUnitStore
+argument|GimpUnitStore
 argument_list|,
-name|gimp_unit_store
+argument|gimp_unit_store
 argument_list|,
-name|G_TYPE_OBJECT
+argument|G_TYPE_OBJECT
 argument_list|,
-name|G_IMPLEMENT_INTERFACE
-argument_list|(
-name|GTK_TYPE_TREE_MODEL
-argument_list|,
-name|gimp_unit_store_tree_model_init
+argument|G_IMPLEMENT_INTERFACE (GTK_TYPE_TREE_MODEL,                                                 gimp_unit_store_tree_model_init)
 argument_list|)
-argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -361,7 +355,6 @@ value|gimp_unit_store_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|column_types
 specifier|static
 name|GType
 name|column_types

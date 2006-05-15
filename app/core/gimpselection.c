@@ -534,17 +534,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpSelection,gimp_selection,GIMP_TYPE_CHANNEL)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpSelection
+argument|GimpSelection
 argument_list|,
-name|gimp_selection
+argument|gimp_selection
 argument_list|,
-name|GIMP_TYPE_CHANNEL
+argument|GIMP_TYPE_CHANNEL
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -557,7 +557,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_selection_class_init (GimpSelectionClass * klass)
 name|gimp_selection_class_init
 parameter_list|(
 name|GimpSelectionClass

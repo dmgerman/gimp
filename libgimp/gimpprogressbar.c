@@ -161,17 +161,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpProgressBar,gimp_progress_bar,GTK_TYPE_PROGRESS_BAR)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpProgressBar
+argument|GimpProgressBar
 argument_list|,
-name|gimp_progress_bar
+argument|gimp_progress_bar
 argument_list|,
-name|GTK_TYPE_PROGRESS_BAR
+argument|GTK_TYPE_PROGRESS_BAR
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -184,7 +184,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_progress_bar_class_init (GimpProgressBarClass * klass)
 name|gimp_progress_bar_class_init
 parameter_list|(
 name|GimpProgressBarClass

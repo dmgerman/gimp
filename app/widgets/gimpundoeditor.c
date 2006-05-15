@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f866af0103
+DECL|enum|__anon2b6656750103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -241,17 +241,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpUndoEditor,gimp_undo_editor,GIMP_TYPE_IMAGE_EDITOR)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpUndoEditor
+argument|GimpUndoEditor
 argument_list|,
-name|gimp_undo_editor
+argument|gimp_undo_editor
 argument_list|,
-name|GIMP_TYPE_IMAGE_EDITOR
+argument|GIMP_TYPE_IMAGE_EDITOR
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -264,7 +264,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_undo_editor_class_init (GimpUndoEditorClass * klass)
 name|gimp_undo_editor_class_init
 parameter_list|(
 name|GimpUndoEditorClass

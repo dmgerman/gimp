@@ -290,17 +290,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpColorScales,gimp_color_scales,GIMP_TYPE_COLOR_SELECTOR)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpColorScales
+argument|GimpColorScales
 argument_list|,
-name|gimp_color_scales
+argument|gimp_color_scales
 argument_list|,
-name|GIMP_TYPE_COLOR_SELECTOR
+argument|GIMP_TYPE_COLOR_SELECTOR
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -313,7 +313,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_color_scales_class_init (GimpColorScalesClass * klass)
 name|gimp_color_scales_class_init
 parameter_list|(
 name|GimpColorScalesClass

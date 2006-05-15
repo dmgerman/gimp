@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29301c8f0103
+DECL|enum|__anon2c28479f0103
 block|{
 DECL|enumerator|COLUMN_CHANNEL
 name|COLUMN_CHANNEL
@@ -336,17 +336,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpComponentEditor,gimp_component_editor,GIMP_TYPE_IMAGE_EDITOR)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpComponentEditor
+argument|GimpComponentEditor
 argument_list|,
-name|gimp_component_editor
+argument|gimp_component_editor
 argument_list|,
-name|GIMP_TYPE_IMAGE_EDITOR
+argument|GIMP_TYPE_IMAGE_EDITOR
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -359,7 +359,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_component_editor_class_init (GimpComponentEditorClass * klass)
 name|gimp_component_editor_class_init
 parameter_list|(
 name|GimpComponentEditorClass
@@ -1619,14 +1618,7 @@ name|model
 argument_list|)
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|__GNUC__
-warning|#
-directive|warning
-warning|FIXME: remove this hack as soon as bug #149906 is fixed
-endif|#
-directive|endif
+comment|/*  Clear the renderer so that it don't reference the viewable.    *  See bug #149906.    */
 name|g_object_set
 argument_list|(
 name|editor

@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a28c8250103
+DECL|enum|__anon2b15372e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -159,24 +159,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
-name|GimpDisplayOptions
+argument|GimpDisplayOptions
 argument_list|,
-name|gimp_display_options
+argument|gimp_display_options
 argument_list|,
-name|G_TYPE_OBJECT
+argument|G_TYPE_OBJECT
 argument_list|,
-name|G_IMPLEMENT_INTERFACE
-argument_list|(
-name|GIMP_TYPE_CONFIG
-argument_list|,
-name|NULL
+argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG, NULL)
 argument_list|)
-argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_typedef
 DECL|typedef|GimpDisplayOptionsFullscreen
@@ -204,29 +198,23 @@ name|gimp_display_options_fullscreen_init
 value|gimp_display_options_init
 end_define
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpDisplayOptionsFullscreen,gimp_display_options_fullscreen,GIMP_TYPE_DISPLAY_OPTIONS,G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG,NULL))
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
-name|GimpDisplayOptionsFullscreen
+argument|GimpDisplayOptionsFullscreen
 argument_list|,
-name|gimp_display_options_fullscreen
+argument|gimp_display_options_fullscreen
 argument_list|,
-name|GIMP_TYPE_DISPLAY_OPTIONS
+argument|GIMP_TYPE_DISPLAY_OPTIONS
 argument_list|,
-name|G_IMPLEMENT_INTERFACE
-argument_list|(
-name|GIMP_TYPE_CONFIG
-argument_list|,
-name|NULL
+argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG, NULL)
 argument_list|)
-argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_display_options_class_init (GimpDisplayOptionsClass * klass)
 name|gimp_display_options_class_init
 parameter_list|(
 name|GimpDisplayOptionsClass

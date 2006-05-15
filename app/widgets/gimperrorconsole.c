@@ -114,17 +114,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpErrorConsole,gimp_error_console,GIMP_TYPE_EDITOR)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpErrorConsole
+argument|GimpErrorConsole
 argument_list|,
-name|gimp_error_console
+argument|gimp_error_console
 argument_list|,
-name|GIMP_TYPE_EDITOR
+argument|GIMP_TYPE_EDITOR
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -137,7 +137,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_error_console_class_init (GimpErrorConsoleClass * klass)
 name|gimp_error_console_class_init
 parameter_list|(
 name|GimpErrorConsoleClass

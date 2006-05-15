@@ -141,17 +141,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpBrushFactoryView,gimp_brush_factory_view,GIMP_TYPE_DATA_FACTORY_VIEW)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpBrushFactoryView
+argument|GimpBrushFactoryView
 argument_list|,
-name|gimp_brush_factory_view
+argument|gimp_brush_factory_view
 argument_list|,
-name|GIMP_TYPE_DATA_FACTORY_VIEW
+argument|GIMP_TYPE_DATA_FACTORY_VIEW
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -164,7 +164,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_brush_factory_view_class_init (GimpBrushFactoryViewClass * klass)
 name|gimp_brush_factory_view_class_init
 parameter_list|(
 name|GimpBrushFactoryViewClass

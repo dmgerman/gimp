@@ -93,7 +93,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6822570103
+DECL|enum|__anon2a53417f0103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -273,24 +273,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
-name|GimpParasiteList
+argument|GimpParasiteList
 argument_list|,
-name|gimp_parasite_list
+argument|gimp_parasite_list
 argument_list|,
-name|GIMP_TYPE_OBJECT
+argument|GIMP_TYPE_OBJECT
 argument_list|,
-name|G_IMPLEMENT_INTERFACE
-argument_list|(
-name|GIMP_TYPE_CONFIG
-argument_list|,
-name|gimp_parasite_list_config_iface_init
+argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG,                                                 gimp_parasite_list_config_iface_init)
 argument_list|)
-argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -301,7 +295,6 @@ value|gimp_parasite_list_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|parasite_list_signals
 specifier|static
 name|guint
 name|parasite_list_signals

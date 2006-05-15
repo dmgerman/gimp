@@ -412,24 +412,19 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpThumbBox,gimp_thumb_box,GTK_TYPE_FRAME,G_IMPLEMENT_INTERFACE (GIMP_TYPE_PROGRESS,gimp_thumb_box_progress_iface_init))
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
-name|GimpThumbBox
+argument|GimpThumbBox
 argument_list|,
-name|gimp_thumb_box
+argument|gimp_thumb_box
 argument_list|,
-name|GTK_TYPE_FRAME
+argument|GTK_TYPE_FRAME
 argument_list|,
-name|G_IMPLEMENT_INTERFACE
-argument_list|(
-name|GIMP_TYPE_PROGRESS
-argument_list|,
-name|gimp_thumb_box_progress_iface_init
+argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_PROGRESS,                                                 gimp_thumb_box_progress_iface_init)
 argument_list|)
-argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -442,7 +437,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_thumb_box_class_init (GimpThumbBoxClass * klass)
 name|gimp_thumb_box_class_init
 parameter_list|(
 name|GimpThumbBoxClass

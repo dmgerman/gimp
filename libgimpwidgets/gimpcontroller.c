@@ -54,7 +54,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3f576a0103
+DECL|enum|__anon27d601500103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -70,7 +70,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3f576a0203
+DECL|enum|__anon27d601500203
 block|{
 DECL|enumerator|EVENT
 name|EVENT
@@ -140,24 +140,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
-name|GimpController
+argument|GimpController
 argument_list|,
-name|gimp_controller
+argument|gimp_controller
 argument_list|,
-name|G_TYPE_OBJECT
+argument|G_TYPE_OBJECT
 argument_list|,
-name|G_IMPLEMENT_INTERFACE
-argument_list|(
-name|GIMP_TYPE_CONFIG
-argument_list|,
-name|NULL
+argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG, NULL)
 argument_list|)
-argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -168,7 +162,6 @@ value|gimp_controller_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|controller_signals
 specifier|static
 name|guint
 name|controller_signals

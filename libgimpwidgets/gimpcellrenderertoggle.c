@@ -43,7 +43,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon293be1ff0103
+DECL|enum|__anon2b8a7f910103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -56,7 +56,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon293be1ff0203
+DECL|enum|__anon2b8a7f910203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -252,17 +252,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpCellRendererToggle
+argument|GimpCellRendererToggle
 argument_list|,
-name|gimp_cell_renderer_toggle
+argument|gimp_cell_renderer_toggle
 argument_list|,
-name|GTK_TYPE_CELL_RENDERER_TOGGLE
+argument|GTK_TYPE_CELL_RENDERER_TOGGLE
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -273,7 +272,6 @@ value|gimp_cell_renderer_toggle_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|toggle_cell_signals
 specifier|static
 name|guint
 name|toggle_cell_signals

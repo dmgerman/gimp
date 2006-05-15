@@ -63,21 +63,20 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpPencilTool,gimp_pencil_tool,GIMP_TYPE_PAINTBRUSH_TOOL)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpPencilTool
+argument|GimpPencilTool
 argument_list|,
-name|gimp_pencil_tool
+argument|gimp_pencil_tool
 argument_list|,
-name|GIMP_TYPE_PAINTBRUSH_TOOL
+argument|GIMP_TYPE_PAINTBRUSH_TOOL
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_function
 name|void
-DECL|function|gimp_pencil_tool_register (GimpToolRegisterCallback callback,gpointer data)
 name|gimp_pencil_tool_register
 parameter_list|(
 name|GimpToolRegisterCallback

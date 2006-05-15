@@ -435,17 +435,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpDockable
+argument|GimpDockable
 argument_list|,
-name|gimp_dockable
+argument|gimp_dockable
 argument_list|,
-name|GTK_TYPE_BIN
+argument|GTK_TYPE_BIN
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -456,7 +455,6 @@ value|gimp_dockable_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|dialog_target_table
 specifier|static
 specifier|const
 name|GtkTargetEntry

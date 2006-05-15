@@ -288,24 +288,19 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpContainerEditor,gimp_container_editor,GTK_TYPE_VBOX,G_IMPLEMENT_INTERFACE (GIMP_TYPE_DOCKED,gimp_container_editor_docked_iface_init))
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
-name|GimpContainerEditor
+argument|GimpContainerEditor
 argument_list|,
-name|gimp_container_editor
+argument|gimp_container_editor
 argument_list|,
-name|GTK_TYPE_VBOX
+argument|GTK_TYPE_VBOX
 argument_list|,
-name|G_IMPLEMENT_INTERFACE
-argument_list|(
-name|GIMP_TYPE_DOCKED
-argument_list|,
-name|gimp_container_editor_docked_iface_init
+argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_DOCKED,                                                 gimp_container_editor_docked_iface_init)
 argument_list|)
-argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -318,7 +313,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_container_editor_class_init (GimpContainerEditorClass * klass)
 name|gimp_container_editor_class_init
 parameter_list|(
 name|GimpContainerEditorClass

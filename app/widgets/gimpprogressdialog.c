@@ -179,24 +179,19 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpProgressDialog,gimp_progress_dialog,GIMP_TYPE_DIALOG,G_IMPLEMENT_INTERFACE (GIMP_TYPE_PROGRESS,gimp_progress_dialog_progress_iface_init))
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
-name|GimpProgressDialog
+argument|GimpProgressDialog
 argument_list|,
-name|gimp_progress_dialog
+argument|gimp_progress_dialog
 argument_list|,
-name|GIMP_TYPE_DIALOG
+argument|GIMP_TYPE_DIALOG
 argument_list|,
-name|G_IMPLEMENT_INTERFACE
-argument_list|(
-name|GIMP_TYPE_PROGRESS
-argument_list|,
-name|gimp_progress_dialog_progress_iface_init
+argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_PROGRESS,                                                 gimp_progress_dialog_progress_iface_init)
 argument_list|)
-argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -209,7 +204,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_progress_dialog_class_init (GimpProgressDialogClass * klass)
 name|gimp_progress_dialog_class_init
 parameter_list|(
 name|GimpProgressDialogClass

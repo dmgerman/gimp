@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f8a5330103
+DECL|enum|__anon2ac2b98c0103
 block|{
 DECL|enumerator|MARKER_CHANGED
 name|MARKER_CHANGED
@@ -248,17 +248,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpNavigationView
+argument|GimpNavigationView
 argument_list|,
-name|gimp_navigation_view
+argument|gimp_navigation_view
 argument_list|,
-name|GIMP_TYPE_VIEW
+argument|GIMP_TYPE_VIEW
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -269,7 +268,6 @@ value|gimp_navigation_view_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|view_signals
 specifier|static
 name|guint
 name|view_signals

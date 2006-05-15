@@ -174,7 +174,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29eca62a0103
+DECL|enum|__anon2b039c8d0103
 block|{
 DECL|enumerator|PLUG_IN_OPENED
 name|PLUG_IN_OPENED
@@ -291,17 +291,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpPlugInManager
+argument|GimpPlugInManager
 argument_list|,
-name|gimp_plug_in_manager
+argument|gimp_plug_in_manager
 argument_list|,
-name|GIMP_TYPE_OBJECT
+argument|GIMP_TYPE_OBJECT
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -312,7 +311,6 @@ value|gimp_plug_in_manager_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|manager_signals
 specifier|static
 name|guint
 name|manager_signals

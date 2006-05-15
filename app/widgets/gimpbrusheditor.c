@@ -182,17 +182,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpBrushEditor,gimp_brush_editor,GIMP_TYPE_DATA_EDITOR)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpBrushEditor
+argument|GimpBrushEditor
 argument_list|,
-name|gimp_brush_editor
+argument|gimp_brush_editor
 argument_list|,
-name|GIMP_TYPE_DATA_EDITOR
+argument|GIMP_TYPE_DATA_EDITOR
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -205,7 +205,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_brush_editor_class_init (GimpBrushEditorClass * klass)
 name|gimp_brush_editor_class_init
 parameter_list|(
 name|GimpBrushEditorClass

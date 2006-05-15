@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c74d7800103
+DECL|enum|__anon27fed9600103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -105,7 +105,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c74d7800203
+DECL|enum|__anon27fed9600203
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -474,17 +474,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpUIManager
+argument|GimpUIManager
 argument_list|,
-name|gimp_ui_manager
+argument|gimp_ui_manager
 argument_list|,
-name|GTK_TYPE_UI_MANAGER
+argument|GTK_TYPE_UI_MANAGER
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -495,7 +494,6 @@ value|gimp_ui_manager_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|manager_signals
 specifier|static
 name|guint
 name|manager_signals
@@ -2064,7 +2062,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c74d7800308
+DECL|struct|__anon27fed9600308
 block|{
 DECL|member|x
 name|guint

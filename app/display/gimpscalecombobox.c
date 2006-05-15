@@ -43,7 +43,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a44d4b90103
+DECL|enum|__anon2b3a60b50103
 block|{
 DECL|enumerator|SCALE
 name|SCALE
@@ -134,17 +134,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpScaleComboBox,gimp_scale_combo_box,GTK_TYPE_COMBO_BOX)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpScaleComboBox
+argument|GimpScaleComboBox
 argument_list|,
-name|gimp_scale_combo_box
+argument|gimp_scale_combo_box
 argument_list|,
-name|GTK_TYPE_COMBO_BOX
+argument|GTK_TYPE_COMBO_BOX
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -157,7 +157,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_scale_combo_box_class_init (GimpScaleComboBoxClass * klass)
 name|gimp_scale_combo_box_class_init
 parameter_list|(
 name|GimpScaleComboBoxClass

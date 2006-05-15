@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af9e8e80103
+DECL|enum|__anon2c419ec70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -166,17 +166,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpViewableDialog,gimp_viewable_dialog,GIMP_TYPE_DIALOG)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpViewableDialog
+argument|GimpViewableDialog
 argument_list|,
-name|gimp_viewable_dialog
+argument|gimp_viewable_dialog
 argument_list|,
-name|GIMP_TYPE_DIALOG
+argument|GIMP_TYPE_DIALOG
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -189,7 +189,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_viewable_dialog_class_init (GimpViewableDialogClass * klass)
 name|gimp_viewable_dialog_class_init
 parameter_list|(
 name|GimpViewableDialogClass

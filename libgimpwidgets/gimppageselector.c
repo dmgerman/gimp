@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c111c2e0103
+DECL|enum|__anon29ce4ede0103
 block|{
 DECL|enumerator|SELECTION_CHANGED
 name|SELECTION_CHANGED
@@ -81,7 +81,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c111c2e0203
+DECL|enum|__anon29ce4ede0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -97,7 +97,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c111c2e0303
+DECL|enum|__anon29ce4ede0303
 block|{
 DECL|enumerator|COLUMN_PAGE_NO
 name|COLUMN_PAGE_NO
@@ -117,7 +117,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c111c2e0408
+DECL|struct|__anon29ce4ede0408
 block|{
 DECL|member|n_pages
 name|gint
@@ -414,17 +414,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpPageSelector
+argument|GimpPageSelector
 argument_list|,
-name|gimp_page_selector
+argument|gimp_page_selector
 argument_list|,
-name|GTK_TYPE_VBOX
+argument|GTK_TYPE_VBOX
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -435,7 +434,6 @@ value|gimp_page_selector_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|selector_signals
 specifier|static
 name|guint
 name|selector_signals

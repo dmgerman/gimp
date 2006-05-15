@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2abc3e860103
+DECL|enum|__anon28d9d7b40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -361,24 +361,19 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpDisplay,gimp_display,GIMP_TYPE_OBJECT,G_IMPLEMENT_INTERFACE (GIMP_TYPE_PROGRESS,gimp_display_progress_iface_init))
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
-name|GimpDisplay
+argument|GimpDisplay
 argument_list|,
-name|gimp_display
+argument|gimp_display
 argument_list|,
-name|GIMP_TYPE_OBJECT
+argument|GIMP_TYPE_OBJECT
 argument_list|,
-name|G_IMPLEMENT_INTERFACE
-argument_list|(
-name|GIMP_TYPE_PROGRESS
-argument_list|,
-name|gimp_display_progress_iface_init
+argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_PROGRESS,                                                 gimp_display_progress_iface_init)
 argument_list|)
-argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -391,7 +386,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_display_class_init (GimpDisplayClass * klass)
 name|gimp_display_class_init
 parameter_list|(
 name|GimpDisplayClass

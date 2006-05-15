@@ -125,21 +125,20 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpPaintbrush,gimp_paintbrush,GIMP_TYPE_BRUSH_CORE)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpPaintbrush
+argument|GimpPaintbrush
 argument_list|,
-name|gimp_paintbrush
+argument|gimp_paintbrush
 argument_list|,
-name|GIMP_TYPE_BRUSH_CORE
+argument|GIMP_TYPE_BRUSH_CORE
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_function
 name|void
-DECL|function|gimp_paintbrush_register (Gimp * gimp,GimpPaintRegisterCallback callback)
 name|gimp_paintbrush_register
 parameter_list|(
 name|Gimp

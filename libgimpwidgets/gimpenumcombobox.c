@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2902ea560103
+DECL|enum|__anon2acd2edc0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -99,17 +99,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpEnumComboBox,gimp_enum_combo_box,GIMP_TYPE_INT_COMBO_BOX)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpEnumComboBox
+argument|GimpEnumComboBox
 argument_list|,
-name|gimp_enum_combo_box
+argument|gimp_enum_combo_box
 argument_list|,
-name|GIMP_TYPE_INT_COMBO_BOX
+argument|GIMP_TYPE_INT_COMBO_BOX
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -122,7 +122,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_enum_combo_box_class_init (GimpEnumComboBoxClass * klass)
 name|gimp_enum_combo_box_class_init
 parameter_list|(
 name|GimpEnumComboBoxClass

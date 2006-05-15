@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon293619de0103
+DECL|enum|__anon2c2e1ad30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -727,17 +727,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpStroke,gimp_stroke,GIMP_TYPE_OBJECT)
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpStroke
+argument|GimpStroke
 argument_list|,
-name|gimp_stroke
+argument|gimp_stroke
 argument_list|,
-name|GIMP_TYPE_OBJECT
+argument|GIMP_TYPE_OBJECT
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -750,7 +750,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_stroke_class_init (GimpStrokeClass * klass)
 name|gimp_stroke_class_init
 parameter_list|(
 name|GimpStrokeClass

@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1681690103
+DECL|enum|__anon2947a80f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -194,17 +194,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_macro
 name|G_DEFINE_TYPE
 argument_list|(
-name|GimpDialog
+argument|GimpDialog
 argument_list|,
-name|gimp_dialog
+argument|gimp_dialog
 argument_list|,
-name|GTK_TYPE_DIALOG
+argument|GTK_TYPE_DIALOG
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -215,7 +214,6 @@ value|gimp_dialog_parent_class
 end_define
 
 begin_decl_stmt
-DECL|variable|show_help_button
 specifier|static
 name|gboolean
 name|show_help_button
@@ -1494,7 +1492,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1681690208
+DECL|struct|__anon2947a80f0208
 block|{
 DECL|member|dialog
 name|GtkDialog
