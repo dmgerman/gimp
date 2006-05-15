@@ -117,7 +117,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpconfig/gimpconfig-path.h"
+file|"libgimpconfig/gimpconfig.h"
 end_include
 
 begin_include
