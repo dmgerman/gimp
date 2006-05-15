@@ -654,20 +654,6 @@ argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
-name|g_printerr
-argument_list|(
-literal|"%s (%s)\n"
-argument_list|,
-name|G_STRFUNC
-argument_list|,
-name|GIMP_OBJECT
-argument_list|(
-name|plug_in
-argument_list|)
-operator|->
-name|name
-argument_list|)
-expr_stmt|;
 name|g_free
 argument_list|(
 name|plug_in
@@ -1748,22 +1734,6 @@ argument_list|(
 name|plug_in
 operator|->
 name|open
-operator|==
-name|TRUE
-argument_list|)
-expr_stmt|;
-name|g_printerr
-argument_list|(
-literal|"%s (%s)\n"
-argument_list|,
-name|G_STRFUNC
-argument_list|,
-name|GIMP_OBJECT
-argument_list|(
-name|plug_in
-argument_list|)
-operator|->
-name|name
 argument_list|)
 expr_stmt|;
 name|plug_in
