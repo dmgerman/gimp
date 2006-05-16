@@ -96,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2789b1dd0108
+DECL|struct|__anon2ba351e90108
 block|{
 DECL|member|script
 name|SFScript
@@ -3310,6 +3310,7 @@ operator|=
 name|args
 expr_stmt|;
 block|{
+specifier|const
 name|gchar
 modifier|*
 name|key
@@ -3336,6 +3337,9 @@ name|g_tree_insert
 argument_list|(
 name|script_tree
 argument_list|,
+operator|(
+name|gpointer
+operator|)
 name|key
 argument_list|,
 name|g_list_append
@@ -5151,6 +5155,7 @@ name|script
 operator|->
 name|menu_path
 condition|)
+block|{
 name|retval
 operator|=
 name|g_utf8_collate
@@ -5174,6 +5179,7 @@ name|menu_path
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 return|return
 name|retval

@@ -70,16 +70,6 @@ end_comment
 begin_function_decl
 specifier|static
 name|void
-name|script_fu_quit
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
 name|script_fu_query
 parameter_list|(
 name|void
@@ -159,6 +149,7 @@ end_function_decl
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
+specifier|const
 name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
@@ -166,7 +157,7 @@ block|{
 name|NULL
 block|,
 comment|/* init_proc  */
-name|script_fu_quit
+name|NULL
 block|,
 comment|/* quit_proc  */
 name|script_fu_query
@@ -187,23 +178,13 @@ end_macro
 begin_function
 specifier|static
 name|void
-name|script_fu_quit
-parameter_list|(
-name|void
-parameter_list|)
-block|{ }
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|script_fu_query (void)
 name|script_fu_query
 parameter_list|(
 name|void
 parameter_list|)
 block|{
 specifier|static
+specifier|const
 name|GimpParamDef
 name|console_args
 index|[]
@@ -219,6 +200,7 @@ block|}
 block|}
 decl_stmt|;
 specifier|static
+specifier|const
 name|GimpParamDef
 name|textconsole_args
 index|[]
@@ -234,6 +216,7 @@ block|}
 block|}
 decl_stmt|;
 specifier|static
+specifier|const
 name|GimpParamDef
 name|eval_args
 index|[]
@@ -257,6 +240,7 @@ block|}
 block|}
 decl_stmt|;
 specifier|static
+specifier|const
 name|GimpParamDef
 name|server_args
 index|[]
@@ -560,10 +544,6 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  Load all of the available scripts  */
-name|script_fu_find_scripts
-argument_list|()
-expr_stmt|;
 if|if
 condition|(
 name|strcmp
@@ -576,7 +556,7 @@ operator|==
 literal|0
 condition|)
 block|{
-comment|/*        *  The main, automatically installed script fu extension.  For        *  things like logos and effects that are runnable from GIMP        *  menus.        */
+comment|/*        *  The main script-fu extension.        */
 specifier|static
 name|GimpParam
 name|values
@@ -584,15 +564,15 @@ index|[
 literal|1
 index|]
 decl_stmt|;
-name|GimpPDBStatusType
-name|status
-init|=
-name|GIMP_PDB_SUCCESS
-decl_stmt|;
+comment|/*  Load all of the available scripts  */
+name|script_fu_find_scripts
+argument_list|()
+expr_stmt|;
 comment|/*  Acknowledge that the extension is properly initialized  */
 name|gimp_extension_ack
 argument_list|()
 expr_stmt|;
+comment|/*  Go into an endless loop  */
 while|while
 condition|(
 name|TRUE
@@ -602,6 +582,7 @@ argument_list|(
 literal|0
 argument_list|)
 expr_stmt|;
+comment|/*  Set return values; pointless because we never get out of the loop  */
 operator|*
 name|nreturn_vals
 operator|=
@@ -630,7 +611,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|status
+name|GIMP_PDB_SUCCESS
 expr_stmt|;
 block|}
 elseif|else
@@ -758,6 +739,7 @@ name|void
 parameter_list|)
 block|{
 specifier|static
+specifier|const
 name|GimpParamDef
 name|args
 index|[]
