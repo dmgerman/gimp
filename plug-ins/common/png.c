@@ -170,7 +170,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fd99870108
+DECL|struct|__anon2c74431b0108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -217,7 +217,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fd99870208
+DECL|struct|__anon2c74431b0208
 block|{
 DECL|member|run
 name|gboolean
@@ -487,6 +487,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
+specifier|const
 name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
@@ -552,6 +553,7 @@ name|void
 parameter_list|)
 block|{
 specifier|static
+specifier|const
 name|GimpParamDef
 name|load_args
 index|[]
@@ -583,6 +585,7 @@ block|}
 block|}
 decl_stmt|;
 specifier|static
+specifier|const
 name|GimpParamDef
 name|load_return_vals
 index|[]
@@ -616,6 +619,7 @@ name|FULL_CONFIG_ARGS
 define|\
 value|OLD_CONFIG_ARGS,                                                        \     { GIMP_PDB_INT32, "comment", "Write comment?"                        }, \     { GIMP_PDB_INT32, "svtrans", "Preserve color of transparent pixels?" }
 specifier|static
+specifier|const
 name|GimpParamDef
 name|save_args
 index|[]
@@ -627,6 +631,7 @@ name|OLD_CONFIG_ARGS
 block|}
 decl_stmt|;
 specifier|static
+specifier|const
 name|GimpParamDef
 name|save_args2
 index|[]
@@ -638,6 +643,7 @@ name|FULL_CONFIG_ARGS
 block|}
 decl_stmt|;
 specifier|static
+specifier|const
 name|GimpParamDef
 name|save_args_defaults
 index|[]
@@ -647,6 +653,7 @@ name|COMMON_SAVE_ARGS
 block|}
 decl_stmt|;
 specifier|static
+specifier|const
 name|GimpParamDef
 name|save_get_defaults_return_vals
 index|[]
@@ -656,6 +663,7 @@ name|FULL_CONFIG_ARGS
 block|}
 decl_stmt|;
 specifier|static
+specifier|const
 name|GimpParamDef
 name|save_args_set_defaults
 index|[]

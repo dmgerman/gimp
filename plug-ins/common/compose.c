@@ -76,10 +76,10 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a5afdd0108
+DECL|struct|__anon2a1c3c3a0108
 block|{
 union|union
-DECL|union|__anon27a5afdd020a
+DECL|union|__anon2a1c3c3a020a
 block|{
 DECL|member|ID
 name|gint32
@@ -624,7 +624,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a5afdd0308
+DECL|struct|__anon2a1c3c3a0308
 block|{
 DECL|member|compose_type
 specifier|const
@@ -1121,7 +1121,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a5afdd0408
+DECL|struct|__anon2a1c3c3a0408
 block|{
 DECL|member|inputs
 name|ComposeInput
@@ -1161,7 +1161,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a5afdd0508
+DECL|struct|__anon2a1c3c3a0508
 block|{
 DECL|member|width
 DECL|member|height
@@ -1237,6 +1237,7 @@ end_typedef
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
+specifier|const
 name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
@@ -1361,6 +1362,7 @@ name|void
 parameter_list|)
 block|{
 specifier|static
+specifier|const
 name|GimpParamDef
 name|args
 index|[]
@@ -1456,6 +1458,7 @@ block|}
 block|}
 decl_stmt|;
 specifier|static
+specifier|const
 name|GimpParamDef
 name|return_vals
 index|[]
@@ -1471,6 +1474,7 @@ block|}
 block|}
 decl_stmt|;
 specifier|static
+specifier|const
 name|GimpParamDef
 name|drw_args
 index|[]
@@ -1566,6 +1570,7 @@ block|}
 block|}
 decl_stmt|;
 specifier|static
+specifier|const
 name|GimpParamDef
 name|drw_return_vals
 index|[]
@@ -1581,6 +1586,7 @@ block|}
 block|}
 decl_stmt|;
 specifier|static
+specifier|const
 name|GimpParamDef
 name|recompose_args
 index|[]

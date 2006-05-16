@@ -60,7 +60,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc19b5b0108
+DECL|struct|__anon2c8741370108
 block|{
 DECL|member|xblock
 name|gint
@@ -88,7 +88,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc19b5b0208
+DECL|struct|__anon2c8741370208
 block|{
 DECL|member|gval
 name|GlassValues
@@ -220,6 +220,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
+specifier|const
 name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
@@ -282,6 +283,7 @@ name|void
 parameter_list|)
 block|{
 specifier|static
+specifier|const
 name|GimpParamDef
 name|args
 index|[]

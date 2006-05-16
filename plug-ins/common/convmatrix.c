@@ -66,7 +66,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2934d4190103
+DECL|enum|__anon289418960103
 block|{
 DECL|enumerator|EXTEND
 name|EXTEND
@@ -257,6 +257,7 @@ end_function_decl
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
+specifier|const
 name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
@@ -290,7 +291,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2934d4190208
+DECL|struct|__anon289418960208
 block|{
 DECL|member|matrix
 name|gfloat
@@ -447,7 +448,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon2934d4190308
+DECL|struct|__anon289418960308
 block|{
 DECL|member|matrix
 name|GtkWidget
@@ -517,6 +518,7 @@ name|void
 parameter_list|)
 block|{
 specifier|static
+specifier|const
 name|GimpParamDef
 name|args
 index|[]

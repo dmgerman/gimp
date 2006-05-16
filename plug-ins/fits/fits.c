@@ -86,7 +86,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2878f36c0108
+DECL|struct|__anon297862b50108
 block|{
 DECL|member|replace
 name|gint
@@ -358,6 +358,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
+specifier|const
 name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
@@ -405,6 +406,7 @@ name|void
 parameter_list|)
 block|{
 specifier|static
+specifier|const
 name|GimpParamDef
 name|load_args
 index|[]
@@ -436,6 +438,7 @@ block|}
 block|,   }
 decl_stmt|;
 specifier|static
+specifier|const
 name|GimpParamDef
 name|load_return_vals
 index|[]
@@ -451,6 +454,7 @@ block|}
 block|,   }
 decl_stmt|;
 specifier|static
+specifier|const
 name|GimpParamDef
 name|save_args
 index|[]

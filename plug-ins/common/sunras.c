@@ -127,7 +127,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4de06f0108
+DECL|struct|__anon292516840108
 block|{
 DECL|member|l_ras_magic
 name|L_CARD32
@@ -216,7 +216,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4de06f0208
+DECL|struct|__anon292516840208
 block|{
 DECL|member|val
 name|gint
@@ -784,6 +784,7 @@ end_function_decl
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
+specifier|const
 name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
@@ -811,7 +812,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4de06f0308
+DECL|struct|__anon292516840308
 block|{
 DECL|member|rle
 name|gboolean
@@ -864,6 +865,7 @@ name|void
 parameter_list|)
 block|{
 specifier|static
+specifier|const
 name|GimpParamDef
 name|load_args
 index|[]
@@ -895,6 +897,7 @@ block|}
 block|}
 decl_stmt|;
 specifier|static
+specifier|const
 name|GimpParamDef
 name|load_return_vals
 index|[]
@@ -910,6 +913,7 @@ block|}
 block|}
 decl_stmt|;
 specifier|static
+specifier|const
 name|GimpParamDef
 name|save_args
 index|[]

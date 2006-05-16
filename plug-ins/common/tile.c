@@ -56,7 +56,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279f81510108
+DECL|struct|__anon2c0163b10108
 block|{
 DECL|member|new_width
 name|gint
@@ -158,6 +158,7 @@ end_function_decl
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
+specifier|const
 name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
@@ -215,6 +216,7 @@ name|void
 parameter_list|)
 block|{
 specifier|static
+specifier|const
 name|GimpParamDef
 name|args
 index|[]
@@ -270,6 +272,7 @@ block|}
 block|}
 decl_stmt|;
 specifier|static
+specifier|const
 name|GimpParamDef
 name|return_vals
 index|[]

@@ -680,7 +680,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275f56880108
+DECL|struct|__anon29ac02340108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -734,7 +734,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275f56880208
+DECL|struct|__anon29ac02340208
 block|{
 DECL|member|y
 name|gint32
@@ -1486,6 +1486,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
+specifier|const
 name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
@@ -2064,6 +2065,7 @@ name|void
 parameter_list|)
 block|{
 specifier|static
+specifier|const
 name|GimpParamDef
 name|args
 index|[]
@@ -2231,6 +2233,7 @@ block|}
 block|}
 decl_stmt|;
 specifier|static
+specifier|const
 name|GimpParamDef
 name|return_vals
 index|[]
@@ -2246,6 +2249,7 @@ block|}
 block|}
 decl_stmt|;
 specifier|static
+specifier|const
 name|GimpParamDef
 name|args_iter
 index|[]

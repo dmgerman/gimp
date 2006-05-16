@@ -288,7 +288,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf5938c0108
+DECL|struct|__anon278a519c0108
 block|{
 DECL|member|resolution
 name|guint
@@ -377,7 +377,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf5938c0208
+DECL|struct|__anon278a519c0208
 block|{
 DECL|member|width
 DECL|member|height
@@ -970,7 +970,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf5938c0308
+DECL|struct|__anon278a519c0308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1017,6 +1017,7 @@ end_function_decl
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
+specifier|const
 name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
@@ -1838,7 +1839,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf5938c0408
+DECL|struct|__anon278a519c0408
 block|{
 DECL|member|eol
 name|long
@@ -2067,6 +2068,7 @@ name|void
 parameter_list|)
 block|{
 specifier|static
+specifier|const
 name|GimpParamDef
 name|load_args
 index|[]
@@ -2098,6 +2100,7 @@ block|}
 block|}
 decl_stmt|;
 specifier|static
+specifier|const
 name|GimpParamDef
 name|load_return_vals
 index|[]
@@ -2113,6 +2116,7 @@ block|}
 block|}
 decl_stmt|;
 specifier|static
+specifier|const
 name|GimpParamDef
 name|set_load_args
 index|[]
@@ -2184,6 +2188,7 @@ block|}
 block|}
 decl_stmt|;
 specifier|static
+specifier|const
 name|GimpParamDef
 name|thumb_args
 index|[]
@@ -2207,6 +2212,7 @@ block|}
 block|}
 decl_stmt|;
 specifier|static
+specifier|const
 name|GimpParamDef
 name|thumb_return_vals
 index|[]
@@ -2222,6 +2228,7 @@ block|}
 block|}
 decl_stmt|;
 specifier|static
+specifier|const
 name|GimpParamDef
 name|save_args
 index|[]

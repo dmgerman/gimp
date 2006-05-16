@@ -138,7 +138,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27b0b8a40103
+DECL|enum|__anon28a0f1830103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -158,7 +158,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27b0b8a40203
+DECL|enum|__anon28a0f1830203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -174,7 +174,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b0b8a40308
+DECL|struct|__anon28a0f1830308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -196,7 +196,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon27b0b8a4040a
+DECL|union|__anon28a0f183040a
 block|{
 DECL|member|d
 name|gdouble
@@ -221,7 +221,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b0b8a40508
+DECL|struct|__anon28a0f1830508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -251,7 +251,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b0b8a40608
+DECL|struct|__anon28a0f1830608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -286,7 +286,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b0b8a40708
+DECL|struct|__anon28a0f1830708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -322,7 +322,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b0b8a40808
+DECL|struct|__anon28a0f1830808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -389,7 +389,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b0b8a40908
+DECL|struct|__anon28a0f1830908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -538,7 +538,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b0b8a40a08
+DECL|struct|__anon28a0f1830a08
 block|{
 DECL|member|run
 name|gboolean
@@ -1387,6 +1387,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
+specifier|const
 name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
@@ -1422,6 +1423,7 @@ name|void
 parameter_list|)
 block|{
 specifier|static
+specifier|const
 name|GimpParamDef
 name|args
 index|[]
@@ -1453,6 +1455,7 @@ block|}
 block|,   }
 decl_stmt|;
 specifier|static
+specifier|const
 name|GimpParamDef
 modifier|*
 name|return_vals

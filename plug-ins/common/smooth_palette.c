@@ -123,6 +123,7 @@ end_function_decl
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
+specifier|const
 name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
@@ -158,6 +159,7 @@ name|void
 parameter_list|)
 block|{
 specifier|static
+specifier|const
 name|GimpParamDef
 name|args
 index|[]
@@ -221,6 +223,7 @@ block|}
 block|}
 decl_stmt|;
 specifier|static
+specifier|const
 name|GimpParamDef
 name|return_vals
 index|[]
@@ -297,7 +300,7 @@ end_function
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon287191020108
+DECL|struct|__anon2a1d8e4d0108
 block|{
 DECL|member|width
 name|gint

@@ -141,6 +141,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
+specifier|const
 name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
@@ -180,6 +181,7 @@ name|void
 parameter_list|)
 block|{
 specifier|static
+specifier|const
 name|GimpParamDef
 name|editor_args
 index|[]
@@ -211,6 +213,7 @@ block|}
 block|}
 decl_stmt|;
 specifier|static
+specifier|const
 name|GimpParamDef
 name|decode_xmp_args
 index|[]
@@ -234,6 +237,7 @@ block|}
 block|}
 decl_stmt|;
 specifier|static
+specifier|const
 name|GimpParamDef
 name|encode_xmp_args
 index|[]
@@ -249,6 +253,7 @@ block|}
 block|}
 decl_stmt|;
 specifier|static
+specifier|const
 name|GimpParamDef
 name|encode_xmp_return_vals
 index|[]
@@ -263,8 +268,9 @@ literal|"XMP packet"
 block|}
 block|}
 decl_stmt|;
-comment|/* FIXME: uncomment when these are working   static GimpParamDef decode_exif_args[] =   {     { GIMP_PDB_IMAGE,       "image",     "Input image"                  },     { GIMP_PDB_INT32,       "exif-size", "size of the EXIF block"       },     { GIMP_PDB_INT8ARRAY,   "exif",      "EXIF block"                   }   };    static GimpParamDef encode_exif_args[] =   {     { GIMP_PDB_IMAGE,       "image",     "Input image"                  }   };   static GimpParamDef encode_exif_return_vals[] =   {     { GIMP_PDB_INT32,       "exif-size", "size of the EXIF block"       },     { GIMP_PDB_INT8ARRAY,   "exif",      "EXIF block"                   }   }; */
+comment|/* FIXME: uncomment when these are working   static const GimpParamDef decode_exif_args[] =   {     { GIMP_PDB_IMAGE,       "image",     "Input image"                  },     { GIMP_PDB_INT32,       "exif-size", "size of the EXIF block"       },     { GIMP_PDB_INT8ARRAY,   "exif",      "EXIF block"                   }   };    static const GimpParamDef encode_exif_args[] =   {     { GIMP_PDB_IMAGE,       "image",     "Input image"                  }   };   static const GimpParamDef encode_exif_return_vals[] =   {     { GIMP_PDB_INT32,       "exif-size", "size of the EXIF block"       },     { GIMP_PDB_INT8ARRAY,   "exif",      "EXIF block"                   }   }; */
 specifier|static
+specifier|const
 name|GimpParamDef
 name|get_args
 index|[]
@@ -296,6 +302,7 @@ block|}
 block|}
 decl_stmt|;
 specifier|static
+specifier|const
 name|GimpParamDef
 name|get_return_vals
 index|[]
@@ -327,6 +334,7 @@ block|}
 block|}
 decl_stmt|;
 specifier|static
+specifier|const
 name|GimpParamDef
 name|set_args
 index|[]
@@ -382,6 +390,7 @@ block|}
 block|}
 decl_stmt|;
 specifier|static
+specifier|const
 name|GimpParamDef
 name|get_simple_args
 index|[]
@@ -413,6 +422,7 @@ block|}
 block|}
 decl_stmt|;
 specifier|static
+specifier|const
 name|GimpParamDef
 name|get_simple_return_vals
 index|[]
@@ -428,6 +438,7 @@ block|}
 block|}
 decl_stmt|;
 specifier|static
+specifier|const
 name|GimpParamDef
 name|set_simple_args
 index|[]
@@ -466,8 +477,9 @@ literal|"XMP property value"
 block|}
 block|}
 decl_stmt|;
-comment|/* FIXME: uncomment when these are working   static GimpParamDef delete_args[] =   {     { GIMP_PDB_IMAGE,       "image",     "Input image"                  },     { GIMP_PDB_STRING,      "schema",    "XMP schema prefix or URI"     },     { GIMP_PDB_STRING,      "property",  "XMP property name"            }   };    static GimpParamDef add_schema_args[] =   {     { GIMP_PDB_IMAGE,       "image",     "Input image"                  },     { GIMP_PDB_STRING,      "prefix",    "XMP schema prefix"            },     { GIMP_PDB_STRING,      "uri",       "XMP schema URI"               }   }; */
+comment|/* FIXME: uncomment when these are working   static const GimpParamDef delete_args[] =   {     { GIMP_PDB_IMAGE,       "image",     "Input image"                  },     { GIMP_PDB_STRING,      "schema",    "XMP schema prefix or URI"     },     { GIMP_PDB_STRING,      "property",  "XMP property name"            }   };    static const GimpParamDef add_schema_args[] =   {     { GIMP_PDB_IMAGE,       "image",     "Input image"                  },     { GIMP_PDB_STRING,      "prefix",    "XMP schema prefix"            },     { GIMP_PDB_STRING,      "uri",       "XMP schema URI"               }   }; */
 specifier|static
+specifier|const
 name|GimpParamDef
 name|import_args
 index|[]
@@ -491,6 +503,7 @@ block|}
 block|}
 decl_stmt|;
 specifier|static
+specifier|const
 name|GimpParamDef
 name|export_args
 index|[]

@@ -159,6 +159,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
+specifier|const
 name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
@@ -183,7 +184,7 @@ name|MAIN
 argument_list|()
 comment|/******************************************************************************/
 expr|enum
-DECL|enum|__anon2782c1440103
+DECL|enum|__anon274ff3080103
 block|{
 DECL|enumerator|OUTSIDE_TYPE_WRAP
 name|OUTSIDE_TYPE_WRAP
@@ -203,7 +204,7 @@ end_expr_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2782c1440208
+DECL|struct|__anon274ff3080208
 block|{
 DECL|member|x1
 name|gdouble
@@ -275,6 +276,7 @@ name|void
 parameter_list|)
 block|{
 specifier|static
+specifier|const
 name|GimpParamDef
 name|args
 index|[]
@@ -409,7 +411,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2782c1440308
+DECL|struct|__anon274ff3080308
 block|{
 DECL|member|x1
 name|gint
@@ -452,7 +454,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2782c1440408
+DECL|struct|__anon274ff3080408
 block|{
 DECL|member|width
 name|gint
@@ -1007,7 +1009,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2782c1440508
+DECL|struct|__anon274ff3080508
 block|{
 DECL|member|r
 name|guchar
@@ -2885,7 +2887,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2782c1440608
+DECL|struct|__anon274ff3080608
 block|{
 DECL|member|preview
 name|GtkWidget

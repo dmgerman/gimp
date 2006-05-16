@@ -46,7 +46,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be74eee0103
+DECL|enum|__anon2c2a4b430103
 block|{
 DECL|enumerator|MODE_SMEAR
 name|MODE_SMEAR
@@ -62,7 +62,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be74eee0208
+DECL|struct|__anon2c2a4b430208
 block|{
 DECL|member|amplitude
 name|gdouble
@@ -258,6 +258,7 @@ end_define
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
+specifier|const
 name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
@@ -293,6 +294,7 @@ name|void
 parameter_list|)
 block|{
 specifier|static
+specifier|const
 name|GimpParamDef
 name|args
 index|[]

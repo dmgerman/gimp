@@ -378,6 +378,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
+specifier|const
 name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
@@ -418,7 +419,7 @@ comment|/* Currently unused... Eventually may be used  * to track dialog data.  
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c5174da0108
+DECL|struct|__anon2af6552f0108
 typedef|typedef
 struct|struct
 block|{
@@ -923,6 +924,7 @@ name|void
 parameter_list|)
 block|{
 specifier|static
+specifier|const
 name|GimpParamDef
 name|args
 index|[]
@@ -932,6 +934,7 @@ name|IN_ARGS
 block|}
 decl_stmt|;
 specifier|static
+specifier|const
 name|GimpParamDef
 name|return_vals
 index|[]
@@ -1408,7 +1411,7 @@ comment|/* Data used to carry data between each of  * the callback function call
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c5174da0208
+DECL|struct|__anon2af6552f0208
 typedef|typedef
 struct|struct
 block|{

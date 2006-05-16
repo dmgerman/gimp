@@ -133,7 +133,7 @@ comment|/* Block identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a9c3afc0103
+DECL|enum|__anon2b2ac4b00103
 typedef|typedef
 enum|enum
 block|{
@@ -197,7 +197,7 @@ comment|/* Bitmap type.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a9c3afc0203
+DECL|enum|__anon2b2ac4b00203
 typedef|typedef
 enum|enum
 block|{
@@ -237,7 +237,7 @@ comment|/* Channel types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a9c3afc0303
+DECL|enum|__anon2b2ac4b00303
 typedef|typedef
 enum|enum
 block|{
@@ -269,7 +269,7 @@ comment|/* Possible metrics used to measure resolution.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a9c3afc0403
+DECL|enum|__anon2b2ac4b00403
 typedef|typedef
 enum|enum
 block|{
@@ -297,7 +297,7 @@ comment|/* Possible types of compression.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a9c3afc0503
+DECL|enum|__anon2b2ac4b00503
 typedef|typedef
 enum|enum
 block|{
@@ -325,7 +325,7 @@ comment|/* Picture tube placement mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a9c3afc0603
+DECL|enum|__anon2b2ac4b00603
 typedef|typedef
 enum|enum
 block|{
@@ -347,7 +347,7 @@ comment|/* Picture tube selection mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a9c3afc0703
+DECL|enum|__anon2b2ac4b00703
 typedef|typedef
 enum|enum
 block|{
@@ -383,7 +383,7 @@ comment|/* Extended data field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a9c3afc0803
+DECL|enum|__anon2b2ac4b00803
 typedef|typedef
 enum|enum
 block|{
@@ -403,7 +403,7 @@ comment|/* Creator field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a9c3afc0903
+DECL|enum|__anon2b2ac4b00903
 typedef|typedef
 enum|enum
 block|{
@@ -451,7 +451,7 @@ comment|/* Creator application identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a9c3afc0a03
+DECL|enum|__anon2b2ac4b00a03
 typedef|typedef
 enum|enum
 block|{
@@ -475,7 +475,7 @@ comment|/* Layer types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a9c3afc0b03
+DECL|enum|__anon2b2ac4b00b03
 typedef|typedef
 enum|enum
 block|{
@@ -536,7 +536,7 @@ comment|/* The following have been reverse engineered.  * If a new version of th
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a9c3afc0c03
+DECL|enum|__anon2b2ac4b00c03
 typedef|typedef
 enum|enum
 block|{
@@ -609,7 +609,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9c3afc0d08
+DECL|struct|__anon2b2ac4b00d08
 block|{
 DECL|member|width
 DECL|member|height
@@ -734,6 +734,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
+specifier|const
 name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
@@ -761,7 +762,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9c3afc0e08
+DECL|struct|__anon2b2ac4b00e08
 block|{
 DECL|member|compression
 name|PSPCompression
@@ -811,6 +812,7 @@ name|void
 parameter_list|)
 block|{
 specifier|static
+specifier|const
 name|GimpParamDef
 name|load_args
 index|[]
@@ -842,6 +844,7 @@ block|}
 block|}
 decl_stmt|;
 specifier|static
+specifier|const
 name|GimpParamDef
 name|load_return_vals
 index|[]
@@ -859,7 +862,7 @@ decl_stmt|;
 if|#
 directive|if
 literal|0
-block|static GimpParamDef save_args[] =   {     { GIMP_PDB_INT32,    "run-mode",     "Interactive, non-interactive" },     { GIMP_PDB_IMAGE,    "image",        "Input image" },     { GIMP_PDB_DRAWABLE, "drawable",     "Drawable to save" },     { GIMP_PDB_STRING,   "filename",     "The name of the file to save the image in" },     { GIMP_PDB_STRING,   "raw-filename", "The name of the file to save the image in" },     { GIMP_PDB_INT32,    "compression",  "Specify 0 for no compression, 1 for RLE, and 2 for LZ77" }   };
+block|static const GimpParamDef save_args[] =   {     { GIMP_PDB_INT32,    "run-mode",     "Interactive, non-interactive" },     { GIMP_PDB_IMAGE,    "image",        "Input image" },     { GIMP_PDB_DRAWABLE, "drawable",     "Drawable to save" },     { GIMP_PDB_STRING,   "filename",     "The name of the file to save the image in" },     { GIMP_PDB_STRING,   "raw-filename", "The name of the file to save the image in" },     { GIMP_PDB_INT32,    "compression",  "Specify 0 for no compression, 1 for RLE, and 2 for LZ77" }   };
 endif|#
 directive|endif
 name|gimp_install_procedure

@@ -84,7 +84,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c08b23e0108
+DECL|struct|__anon2af4ec870108
 block|{
 DECL|member|compression
 name|gint
@@ -107,7 +107,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c08b23e0208
+DECL|struct|__anon2af4ec870208
 block|{
 DECL|member|ID
 name|gint32
@@ -558,6 +558,7 @@ end_function_decl
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
+specifier|const
 name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
@@ -644,6 +645,7 @@ name|void
 parameter_list|)
 block|{
 specifier|static
+specifier|const
 name|GimpParamDef
 name|load_args
 index|[]
@@ -675,6 +677,7 @@ block|}
 block|}
 decl_stmt|;
 specifier|static
+specifier|const
 name|GimpParamDef
 name|load_return_vals
 index|[]
@@ -696,6 +699,7 @@ name|COMMON_SAVE_ARGS
 define|\
 value|{ GIMP_PDB_INT32,    "run-mode",     "Interactive, non-interactive" },\     { GIMP_PDB_IMAGE,    "image",        "Input image" },\     { GIMP_PDB_DRAWABLE, "drawable",     "Drawable to save" },\     { GIMP_PDB_STRING,   "filename",     "The name of the file to save the image in" },\     { GIMP_PDB_STRING,   "raw-filename", "The name of the file to save the image in" },\     { GIMP_PDB_INT32,    "compression",  "Compression type: { NONE (0), LZW (1), PACKBITS (2), DEFLATE (3), JPEG (4)" }
 specifier|static
+specifier|const
 name|GimpParamDef
 name|save_args_old
 index|[]
@@ -705,6 +709,7 @@ name|COMMON_SAVE_ARGS
 block|}
 decl_stmt|;
 specifier|static
+specifier|const
 name|GimpParamDef
 name|save_args
 index|[]

@@ -65,7 +65,7 @@ end_define
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2892b3200108
+DECL|struct|__anon288118d40108
 block|{
 DECL|member|prDlg
 name|PRINTDLG
@@ -652,6 +652,7 @@ name|void
 parameter_list|)
 block|{
 specifier|static
+specifier|const
 name|GimpParamDef
 name|print_args
 index|[]
@@ -779,6 +780,7 @@ block|}
 block|}
 decl_stmt|;
 specifier|static
+specifier|const
 name|GimpParamDef
 name|pagesetup_args
 index|[]
@@ -2850,6 +2852,7 @@ end_function
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
+specifier|const
 name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=

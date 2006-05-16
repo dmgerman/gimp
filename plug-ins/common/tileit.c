@@ -112,7 +112,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2251f50108
+DECL|struct|__anon279373c70108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -447,6 +447,7 @@ end_function_decl
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
+specifier|const
 name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
@@ -494,7 +495,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a2251f50203
+DECL|enum|__anon279373c70203
 block|{
 DECL|enumerator|ALL
 name|ALL
@@ -513,7 +514,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2251f50308
+DECL|struct|__anon279373c70308
 block|{
 DECL|member|type
 name|AppliedTo
@@ -583,7 +584,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2251f50408
+DECL|struct|__anon279373c70408
 block|{
 DECL|member|htoggle
 name|GtkWidget
@@ -752,6 +753,7 @@ name|void
 parameter_list|)
 block|{
 specifier|static
+specifier|const
 name|GimpParamDef
 name|args
 index|[]

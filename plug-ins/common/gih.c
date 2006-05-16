@@ -197,7 +197,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27e7ef8a0108
+DECL|struct|__anon2b3017040108
 block|{
 DECL|member|spacing
 name|guint
@@ -270,7 +270,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e7ef8a0208
+DECL|struct|__anon2b3017040208
 block|{
 DECL|member|orientation
 name|GimpOrientationType
@@ -486,6 +486,7 @@ end_function_decl
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
+specifier|const
 name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
@@ -521,6 +522,7 @@ name|void
 parameter_list|)
 block|{
 specifier|static
+specifier|const
 name|GimpParamDef
 name|gih_save_args
 index|[]
@@ -649,6 +651,7 @@ block|}
 block|}
 decl_stmt|;
 specifier|static
+specifier|const
 name|GimpParamDef
 name|gih_load_args
 index|[]
@@ -680,6 +683,7 @@ block|}
 block|}
 decl_stmt|;
 specifier|static
+specifier|const
 name|GimpParamDef
 name|gih_load_return_vals
 index|[]

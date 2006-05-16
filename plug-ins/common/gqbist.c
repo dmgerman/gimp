@@ -132,7 +132,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28d10e2a0103
+DECL|enum|__anon2be2c8380103
 block|{
 DECL|enumerator|PROJECTION
 name|PROJECTION
@@ -177,7 +177,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d10e2a0208
+DECL|struct|__anon2be2c8380208
 block|{
 DECL|member|transformSequence
 name|TransformType
@@ -216,7 +216,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d10e2a0308
+DECL|struct|__anon2be2c8380308
 block|{
 DECL|member|info
 name|ExpInfo
@@ -2163,6 +2163,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
+specifier|const
 name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=

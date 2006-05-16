@@ -652,6 +652,7 @@ end_function_decl
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
+specifier|const
 name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
@@ -711,7 +712,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0b57b00108
+DECL|struct|__anon2be8a0730108
 block|{
 DECL|member|propagate_mode
 name|gint
@@ -879,7 +880,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0b57b00208
+DECL|struct|__anon2be8a0730208
 block|{
 DECL|member|applicable_image_type
 name|gint
@@ -1159,6 +1160,7 @@ name|void
 parameter_list|)
 block|{
 specifier|static
+specifier|const
 name|GimpParamDef
 name|args
 index|[]
@@ -4041,7 +4043,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0b57b00308
+DECL|struct|__anon2be8a0730308
 block|{
 DECL|member|min_modified
 name|gshort

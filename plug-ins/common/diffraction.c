@@ -110,7 +110,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27bb8c130108
+DECL|struct|__anon298d52d90108
 block|{
 DECL|member|lam_r
 name|gdouble
@@ -169,7 +169,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27bb8c130208
+DECL|struct|__anon298d52d90208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -363,6 +363,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
+specifier|const
 name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
@@ -508,6 +509,7 @@ name|void
 parameter_list|)
 block|{
 specifier|static
+specifier|const
 name|GimpParamDef
 name|args
 index|[]
@@ -1121,7 +1123,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon27bb8c130308
+DECL|struct|__anon298d52d90308
 typedef|typedef
 struct|struct
 block|{
