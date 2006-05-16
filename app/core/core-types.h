@@ -356,6 +356,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpPatternClipboard
+typedef|typedef
+name|struct
+name|_GimpPatternClipboard
+name|GimpPatternClipboard
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpPalette
 typedef|typedef
 name|struct
