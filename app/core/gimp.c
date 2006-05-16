@@ -255,7 +255,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a12560d0103
+DECL|enum|__anon2c5d9d140103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -2392,15 +2392,6 @@ name|gimp
 argument_list|)
 argument_list|,
 name|status_callback
-argument_list|)
-expr_stmt|;
-name|status_callback
-argument_list|(
-literal|""
-argument_list|,
-literal|""
-argument_list|,
-literal|1.0
 argument_list|)
 expr_stmt|;
 block|}
