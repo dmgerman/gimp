@@ -311,6 +311,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpBrushClipboard
+typedef|typedef
+name|struct
+name|_GimpBrushClipboard
+name|GimpBrushClipboard
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpBrushGenerated
 typedef|typedef
 name|struct
