@@ -61,7 +61,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3c3ce50103
+DECL|enum|__anon2adfff320103
 block|{
 DECL|enumerator|WIDTH_CHANGED
 name|WIDTH_CHANGED
@@ -987,7 +987,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_resolution_entry_new:  * @width_label:       Optional label for the width control.  * @width:             Width of the item, specified in terms of @size_unit.  * @width_label:       Optional label for the height control.  * @height:            Height of the item, specified in terms of @size_unit.  * @size_unit:         Unit used to specify the width and height.  * @x_label:           Optional label for the X resolution entry.  * @initial_x:         The initial X resolution.  * @y_label:           Optional label for the Y resolution entry.  Ignored if  *                     @independent is %FALSE.  * @initial_y:         The initial Y resolution.  Ignored if @independent is  *                     %FALSE.  * @initial_unit:      The initial unit.  * @independent:       Whether the X and Y resolutions can be different values.  * @spinbutton_width:  The minimal horizontal size of the #GtkSpinButton s.  *  * Creates a new #GimpResolutionEntry widget.  *  * The #GimpResolutionEntry is derived from #GtkTable and will have  * an empty border of one cell width on each side plus an empty column left  * of the #GimpUnitMenu to allow the caller to add labels or other widgets.  *  * A #GimpChainButton is displayed if independent is set to %TRUE.  *  * Returns: A pointer to the new #GimpResolutionEntry widget.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_resolution_entry_new:  * @width_label:       Optional label for the width control.  * @width:             Width of the item, specified in terms of @size_unit.  * @height_label:      Optional label for the height control.  * @height:            Height of the item, specified in terms of @size_unit.  * @size_unit:         Unit used to specify the width and height.  * @x_label:           Optional label for the X resolution entry.  * @initial_x:         The initial X resolution.  * @y_label:           Optional label for the Y resolution entry.  Ignored if  *                     @independent is %FALSE.  * @initial_y:         The initial Y resolution.  Ignored if @independent is  *                     %FALSE.  * @initial_unit:      The initial unit.  * @independent:       Whether the X and Y resolutions can be different values.  * @spinbutton_width:  The minimal horizontal size of the #GtkSpinButton s.  *  * Creates a new #GimpResolutionEntry widget.  *  * The #GimpResolutionEntry is derived from #GtkTable and will have  * an empty border of one cell width on each side plus an empty column left  * of the #GimpUnitMenu to allow the caller to add labels or other widgets.  *  * A #GimpChainButton is displayed if independent is set to %TRUE.  *  * Returns: A pointer to the new #GimpResolutionEntry widget.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -1863,13 +1863,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_resolution_entry_set_width_value_boundaries:  * @gre:   The #GimpResolutionEntry you want to set value boundaries for.  * @lower: The new lower boundary of the value of the field in pixels.  * @upper: The new upper boundary of the value of the field in pixels.  *  * Limits the range of possible values which can be entered in the width field  * of the #GimpResolutionEntry.  *  * The current value of the field will be clamped to fit in its  * new boundaries.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_resolution_entry_set_width_boundaries:  * @gre:   The #GimpResolutionEntry you want to set value boundaries for.  * @lower: The new lower boundary of the value of the field in pixels.  * @upper: The new upper boundary of the value of the field in pixels.  *  * Limits the range of possible values which can be entered in the width field  * of the #GimpResolutionEntry.  *  * The current value of the field will be clamped to fit in its  * new boundaries.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_resolution_entry_set_width_value_boundaries (GimpResolutionEntry * gre,gdouble lower,gdouble upper)
-name|gimp_resolution_entry_set_width_value_boundaries
+DECL|function|gimp_resolution_entry_set_width_boundaries (GimpResolutionEntry * gre,gdouble lower,gdouble upper)
+name|gimp_resolution_entry_set_width_boundaries
 parameter_list|(
 name|GimpResolutionEntry
 modifier|*
@@ -1906,13 +1906,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_resolution_entry_set_height_value_boundaries:  * @gre:   The #GimpResolutionEntry you want to set value boundaries for.  * @lower: The new lower boundary of the value of the field in pixels.  * @upper: The new upper boundary of the value of the field in pixels.  *  * Limits the range of possible values which can be entered in the height field  * of the #GimpResolutionEntry.  *  * The current value of the field will be clamped to fit in its  * new boundaries.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_resolution_entry_set_height_boundaries:  * @gre:   The #GimpResolutionEntry you want to set value boundaries for.  * @lower: The new lower boundary of the value of the field in pixels.  * @upper: The new upper boundary of the value of the field in pixels.  *  * Limits the range of possible values which can be entered in the height field  * of the #GimpResolutionEntry.  *  * The current value of the field will be clamped to fit in its  * new boundaries.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_resolution_entry_set_height_value_boundaries (GimpResolutionEntry * gre,gdouble lower,gdouble upper)
-name|gimp_resolution_entry_set_height_value_boundaries
+DECL|function|gimp_resolution_entry_set_height_boundaries (GimpResolutionEntry * gre,gdouble lower,gdouble upper)
+name|gimp_resolution_entry_set_height_boundaries
 parameter_list|(
 name|GimpResolutionEntry
 modifier|*
