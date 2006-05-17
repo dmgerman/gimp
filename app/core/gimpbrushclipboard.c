@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e8ff930103
+DECL|enum|__anon2c74ce060103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -550,10 +550,6 @@ modifier|*
 name|gimp
 parameter_list|)
 block|{
-name|GimpBrushClipboard
-modifier|*
-name|brush
-decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_GIMP
@@ -564,8 +560,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|brush
-operator|=
+return|return
 name|g_object_new
 argument_list|(
 name|GIMP_TYPE_BRUSH_CLIPBOARD
@@ -582,12 +577,6 @@ argument_list|,
 name|gimp
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-return|return
-name|GIMP_DATA
-argument_list|(
-name|brush
 argument_list|)
 return|;
 block|}
@@ -1074,6 +1063,15 @@ expr_stmt|;
 name|gimp_data_dirty
 argument_list|(
 name|GIMP_DATA
+argument_list|(
+name|brush
+argument_list|)
+argument_list|)
+expr_stmt|;
+comment|/* emit "name-changed" so that the description is updated */
+name|gimp_object_name_changed
+argument_list|(
+name|GIMP_OBJECT
 argument_list|(
 name|brush
 argument_list|)
