@@ -512,9 +512,9 @@ name|gimp_rotate_tool_register
 block|,
 name|gimp_crop_tool_register
 block|,
-name|gimp_move_tool_register
-block|,
 name|gimp_align_tool_register
+block|,
+name|gimp_move_tool_register
 block|,
 comment|/*  non-modifying tools  */
 name|gimp_measure_tool_register
