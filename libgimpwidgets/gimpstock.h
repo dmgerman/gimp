@@ -305,6 +305,11 @@ define|#
 directive|define
 name|GIMP_STOCK_TOOL_AIRBRUSH
 value|"gimp-tool-airbrush"
+DECL|macro|GIMP_STOCK_TOOL_ALIGN
+define|#
+directive|define
+name|GIMP_STOCK_TOOL_ALIGN
+value|"gimp-tool-align"
 DECL|macro|GIMP_STOCK_TOOL_BLEND
 define|#
 directive|define

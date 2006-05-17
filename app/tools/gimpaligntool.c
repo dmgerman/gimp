@@ -3346,7 +3346,7 @@ name|g_signal_connect
 argument_list|(
 name|button
 argument_list|,
-literal|"pressed"
+literal|"clicked"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
