@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ae648e0103
+DECL|enum|__anon2c4e2a870103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -749,11 +749,11 @@ literal|3
 index|]
 init|=
 block|{
-literal|0
+literal|255
 block|,
-literal|0
+literal|255
 block|,
-literal|0
+literal|255
 block|}
 decl_stmt|;
 name|pattern
@@ -776,15 +776,7 @@ name|color
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_data_dirty
-argument_list|(
-name|GIMP_DATA
-argument_list|(
-name|pattern
-argument_list|)
-argument_list|)
-expr_stmt|;
-comment|/* emit "name-changed" so that the description is updated */
+comment|/* emit "name-changed" so the description is updated (emits "dirty" too) */
 name|gimp_object_name_changed
 argument_list|(
 name|GIMP_OBJECT

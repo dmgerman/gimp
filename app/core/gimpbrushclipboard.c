@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c74ce060103
+DECL|enum|__anon2ad4acb00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1060,15 +1060,7 @@ name|height
 operator|/
 literal|2
 expr_stmt|;
-name|gimp_data_dirty
-argument_list|(
-name|GIMP_DATA
-argument_list|(
-name|brush
-argument_list|)
-argument_list|)
-expr_stmt|;
-comment|/* emit "name-changed" so that the description is updated */
+comment|/* emit "name-changed" so the description is updated (emits "dirty" too) */
 name|gimp_object_name_changed
 argument_list|(
 name|GIMP_OBJECT
