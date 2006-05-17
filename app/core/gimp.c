@@ -238,6 +238,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimppatternclipboard.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpparasitelist.h"
 end_include
 
@@ -261,7 +267,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a09b5f20103
+DECL|enum|__anon28a59b790103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -2112,6 +2118,10 @@ name|GimpData
 modifier|*
 name|clipboard_brush
 decl_stmt|;
+name|GimpData
+modifier|*
+name|clipboard_pattern
+decl_stmt|;
 if|if
 condition|(
 name|gimp
@@ -2359,6 +2369,41 @@ expr_stmt|;
 name|g_object_unref
 argument_list|(
 name|clipboard_brush
+argument_list|)
+expr_stmt|;
+comment|/*  add the clipboard pattern  */
+name|clipboard_pattern
+operator|=
+name|gimp_pattern_clipboard_new
+argument_list|(
+name|gimp
+argument_list|)
+expr_stmt|;
+name|gimp_data_make_internal
+argument_list|(
+name|GIMP_DATA
+argument_list|(
+name|clipboard_pattern
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_container_add
+argument_list|(
+name|gimp
+operator|->
+name|pattern_factory
+operator|->
+name|container
+argument_list|,
+name|GIMP_OBJECT
+argument_list|(
+name|clipboard_pattern
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|clipboard_pattern
 argument_list|)
 expr_stmt|;
 comment|/*  register all internal procedures  */
