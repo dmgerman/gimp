@@ -120,6 +120,17 @@ DECL|member|polygonal
 name|gboolean
 name|polygonal
 decl_stmt|;
+comment|/*  options gui  */
+DECL|member|to_selection_button
+name|GtkWidget
+modifier|*
+name|to_selection_button
+decl_stmt|;
+DECL|member|stroke_button
+name|GtkWidget
+modifier|*
+name|stroke_button
+decl_stmt|;
 block|}
 struct|;
 end_struct
