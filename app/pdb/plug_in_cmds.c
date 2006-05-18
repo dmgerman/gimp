@@ -1891,7 +1891,7 @@ literal|"icon-type"
 argument_list|,
 literal|"icon type"
 argument_list|,
-literal|"The type of the icon: { GIMP_ICON_TYPE_STOCK_ID (0), GIMP_ICON_TYPE_INLINE_PIXBUF (1), GIMP_ICON_TYPE_IMAGE_FILE (2) }"
+literal|"The type of the icon"
 argument_list|,
 name|GIMP_TYPE_ICON_TYPE
 argument_list|,
@@ -1911,7 +1911,7 @@ literal|"icon-data-length"
 argument_list|,
 literal|"icon data length"
 argument_list|,
-literal|"The length of 'icon-data' (1<= icon_data_length)"
+literal|"The length of 'icon-data'"
 argument_list|,
 literal|1
 argument_list|,

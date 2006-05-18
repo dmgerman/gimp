@@ -3314,7 +3314,7 @@ literal|"pressure"
 argument_list|,
 literal|"pressure"
 argument_list|,
-literal|"The pressure of the airbrush strokes (0<= pressure<= 100)"
+literal|"The pressure of the airbrush strokes"
 argument_list|,
 literal|0
 argument_list|,
@@ -3576,7 +3576,7 @@ literal|"clone-type"
 argument_list|,
 literal|"clone type"
 argument_list|,
-literal|"The type of clone: { GIMP_IMAGE_CLONE (0), GIMP_PATTERN_CLONE (1) }"
+literal|"The type of clone"
 argument_list|,
 name|GIMP_TYPE_CLONE_TYPE
 argument_list|,
@@ -3860,7 +3860,7 @@ literal|"pressure"
 argument_list|,
 literal|"pressure"
 argument_list|,
-literal|"The pressure (0<= pressure<= 100)"
+literal|"The pressure"
 argument_list|,
 literal|0
 argument_list|,
@@ -3882,7 +3882,7 @@ literal|"convolve-type"
 argument_list|,
 literal|"convolve type"
 argument_list|,
-literal|"Convolve type: { GIMP_BLUR_CONVOLVE (0), GIMP_SHARPEN_CONVOLVE (1) }"
+literal|"Convolve type"
 argument_list|,
 name|GIMP_TYPE_CONVOLVE_TYPE
 argument_list|,
@@ -4120,7 +4120,7 @@ literal|"exposure"
 argument_list|,
 literal|"exposure"
 argument_list|,
-literal|"The exposure of the strokes (0<= exposure<= 100)"
+literal|"The exposure of the strokes"
 argument_list|,
 literal|0
 argument_list|,
@@ -4142,7 +4142,7 @@ literal|"dodgeburn-type"
 argument_list|,
 literal|"dodgeburn type"
 argument_list|,
-literal|"The type either dodge or burn: { GIMP_DODGE (0), GIMP_BURN (1) }"
+literal|"The type either dodge or burn"
 argument_list|,
 name|GIMP_TYPE_DODGE_BURN_TYPE
 argument_list|,
@@ -4162,7 +4162,7 @@ literal|"dodgeburn-mode"
 argument_list|,
 literal|"dodgeburn mode"
 argument_list|,
-literal|"The mode: { GIMP_SHADOWS (0), GIMP_MIDTONES (1), GIMP_HIGHLIGHTS (2) }"
+literal|"The mode"
 argument_list|,
 name|GIMP_TYPE_TRANSFER_MODE
 argument_list|,
@@ -4438,7 +4438,7 @@ literal|"hardness"
 argument_list|,
 literal|"hardness"
 argument_list|,
-literal|"{ GIMP_BRUSH_HARD (0), GIMP_BRUSH_SOFT (1) }"
+literal|"How to apply the brush"
 argument_list|,
 name|GIMP_TYPE_BRUSH_APPLICATION_MODE
 argument_list|,
@@ -4458,7 +4458,7 @@ literal|"method"
 argument_list|,
 literal|"method"
 argument_list|,
-literal|"{ GIMP_PAINT_CONSTANT (0), GIMP_PAINT_INCREMENTAL (1) }"
+literal|"The paint method to use"
 argument_list|,
 name|GIMP_TYPE_PAINT_APPLICATION_MODE
 argument_list|,
@@ -4658,7 +4658,7 @@ literal|"fade-out"
 argument_list|,
 literal|"fade out"
 argument_list|,
-literal|"Fade out parameter (0<= fade_out)"
+literal|"Fade out parameter"
 argument_list|,
 literal|0
 argument_list|,
@@ -4718,7 +4718,7 @@ literal|"method"
 argument_list|,
 literal|"method"
 argument_list|,
-literal|"{ GIMP_PAINT_CONSTANT (0), GIMP_PAINT_INCREMENTAL (1) }"
+literal|"The paint method to use"
 argument_list|,
 name|GIMP_TYPE_PAINT_APPLICATION_MODE
 argument_list|,
@@ -4738,7 +4738,7 @@ literal|"gradient-length"
 argument_list|,
 literal|"gradient length"
 argument_list|,
-literal|"Length of gradient to draw (0<= gradient_length)"
+literal|"Length of gradient to draw"
 argument_list|,
 literal|0
 argument_list|,
@@ -5049,7 +5049,7 @@ literal|"pressure"
 argument_list|,
 literal|"pressure"
 argument_list|,
-literal|"The pressure of the smudge strokes (0<= pressure<= 100)"
+literal|"The pressure of the smudge strokes"
 argument_list|,
 literal|0
 argument_list|,

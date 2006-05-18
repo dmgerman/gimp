@@ -295,7 +295,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_floating_sel_rigor:  * @floating_sel_ID: The floating selection.  * @undo: %%desc%%.  *  * Rigor the floating selection.  *  * This procedure rigors the floating selection.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_floating_sel_rigor:  * @floating_sel_ID: The floating selection.  * @undo: .  *  * Rigor the floating selection.  *  * This procedure rigors the floating selection.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -369,7 +369,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_floating_sel_relax:  * @floating_sel_ID: The floating selection.  * @undo: %%desc%%.  *  * Relax the floating selection.  *  * This procedure relaxes the floating selection.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_floating_sel_relax:  * @floating_sel_ID: The floating selection.  * @undo: .  *  * Relax the floating selection.  *  * This procedure relaxes the floating selection.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function

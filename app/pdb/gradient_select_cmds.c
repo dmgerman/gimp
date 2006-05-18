@@ -597,7 +597,7 @@ literal|"sample-size"
 argument_list|,
 literal|"sample size"
 argument_list|,
-literal|"Size of the sample to return when the gradient is changed: (1<= sample_size<= 10000)"
+literal|"Size of the sample to return when the gradient is changed"
 argument_list|,
 literal|1
 argument_list|,

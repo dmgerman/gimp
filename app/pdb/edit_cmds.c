@@ -3944,7 +3944,7 @@ literal|"fill-type"
 argument_list|,
 literal|"fill type"
 argument_list|,
-literal|"The type of fill: { GIMP_FOREGROUND_FILL (0), GIMP_BACKGROUND_FILL (1), GIMP_WHITE_FILL (2), GIMP_TRANSPARENT_FILL (3), GIMP_PATTERN_FILL (4) }"
+literal|"The type of fill"
 argument_list|,
 name|GIMP_TYPE_FILL_TYPE
 argument_list|,
@@ -4035,7 +4035,7 @@ literal|"fill-mode"
 argument_list|,
 literal|"fill mode"
 argument_list|,
-literal|"The type of fill: { GIMP_FG_BUCKET_FILL (0), GIMP_BG_BUCKET_FILL (1), GIMP_PATTERN_BUCKET_FILL (2) }"
+literal|"The type of fill"
 argument_list|,
 name|GIMP_TYPE_BUCKET_FILL_MODE
 argument_list|,
@@ -4055,7 +4055,7 @@ literal|"paint-mode"
 argument_list|,
 literal|"paint mode"
 argument_list|,
-literal|"The paint application mode: { GIMP_NORMAL_MODE (0), GIMP_DISSOLVE_MODE (1), GIMP_BEHIND_MODE (2), GIMP_MULTIPLY_MODE (3), GIMP_SCREEN_MODE (4), GIMP_OVERLAY_MODE (5), GIMP_DIFFERENCE_MODE (6), GIMP_ADDITION_MODE (7), GIMP_SUBTRACT_MODE (8), GIMP_DARKEN_ONLY_MODE (9), GIMP_LIGHTEN_ONLY_MODE (10), GIMP_HUE_MODE (11), GIMP_SATURATION_MODE (12), GIMP_COLOR_MODE (13), GIMP_VALUE_MODE (14), GIMP_DIVIDE_MODE (15), GIMP_DODGE_MODE (16), GIMP_BURN_MODE (17), GIMP_HARDLIGHT_MODE (18), GIMP_SOFTLIGHT_MODE (19), GIMP_GRAIN_EXTRACT_MODE (20), GIMP_GRAIN_MERGE_MODE (21), GIMP_COLOR_ERASE_MODE (22) }"
+literal|"The paint application mode"
 argument_list|,
 name|GIMP_TYPE_LAYER_MODE_EFFECTS
 argument_list|,
@@ -4075,7 +4075,7 @@ literal|"opacity"
 argument_list|,
 literal|"opacity"
 argument_list|,
-literal|"The opacity of the final bucket fill (0<= opacity<= 100)"
+literal|"The opacity of the final bucket fill"
 argument_list|,
 literal|0
 argument_list|,
@@ -4097,7 +4097,7 @@ literal|"threshold"
 argument_list|,
 literal|"threshold"
 argument_list|,
-literal|"The threshold determines how extensive the seed fill will be. It's value is specified in terms of intensity levels (0<= threshold<= 255). This parameter is only valid when there is no selection in the specified image."
+literal|"The threshold determines how extensive the seed fill will be. It's value is specified in terms of intensity levels. This parameter is only valid when there is no selection in the specified image."
 argument_list|,
 literal|0
 argument_list|,
@@ -4254,7 +4254,7 @@ literal|"blend-mode"
 argument_list|,
 literal|"blend mode"
 argument_list|,
-literal|"The type of blend: { GIMP_FG_BG_RGB_MODE (0), GIMP_FG_BG_HSV_MODE (1), GIMP_FG_TRANSPARENT_MODE (2), GIMP_CUSTOM_MODE (3) }"
+literal|"The type of blend"
 argument_list|,
 name|GIMP_TYPE_BLEND_MODE
 argument_list|,
@@ -4274,7 +4274,7 @@ literal|"paint-mode"
 argument_list|,
 literal|"paint mode"
 argument_list|,
-literal|"The paint application mode: { GIMP_NORMAL_MODE (0), GIMP_DISSOLVE_MODE (1), GIMP_BEHIND_MODE (2), GIMP_MULTIPLY_MODE (3), GIMP_SCREEN_MODE (4), GIMP_OVERLAY_MODE (5), GIMP_DIFFERENCE_MODE (6), GIMP_ADDITION_MODE (7), GIMP_SUBTRACT_MODE (8), GIMP_DARKEN_ONLY_MODE (9), GIMP_LIGHTEN_ONLY_MODE (10), GIMP_HUE_MODE (11), GIMP_SATURATION_MODE (12), GIMP_COLOR_MODE (13), GIMP_VALUE_MODE (14), GIMP_DIVIDE_MODE (15), GIMP_DODGE_MODE (16), GIMP_BURN_MODE (17), GIMP_HARDLIGHT_MODE (18), GIMP_SOFTLIGHT_MODE (19), GIMP_GRAIN_EXTRACT_MODE (20), GIMP_GRAIN_MERGE_MODE (21), GIMP_COLOR_ERASE_MODE (22) }"
+literal|"The paint application mode"
 argument_list|,
 name|GIMP_TYPE_LAYER_MODE_EFFECTS
 argument_list|,
@@ -4294,7 +4294,7 @@ literal|"gradient-type"
 argument_list|,
 literal|"gradient type"
 argument_list|,
-literal|"The type of gradient: { GIMP_GRADIENT_LINEAR (0), GIMP_GRADIENT_BILINEAR (1), GIMP_GRADIENT_RADIAL (2), GIMP_GRADIENT_SQUARE (3), GIMP_GRADIENT_CONICAL_SYMMETRIC (4), GIMP_GRADIENT_CONICAL_ASYMMETRIC (5), GIMP_GRADIENT_SHAPEBURST_ANGULAR (6), GIMP_GRADIENT_SHAPEBURST_SPHERICAL (7), GIMP_GRADIENT_SHAPEBURST_DIMPLED (8), GIMP_GRADIENT_SPIRAL_CLOCKWISE (9), GIMP_GRADIENT_SPIRAL_ANTICLOCKWISE (10) }"
+literal|"The type of gradient"
 argument_list|,
 name|GIMP_TYPE_GRADIENT_TYPE
 argument_list|,
@@ -4314,7 +4314,7 @@ literal|"opacity"
 argument_list|,
 literal|"opacity"
 argument_list|,
-literal|"The opacity of the final blend (0<= opacity<= 100)"
+literal|"The opacity of the final blend"
 argument_list|,
 literal|0
 argument_list|,
@@ -4336,7 +4336,7 @@ literal|"offset"
 argument_list|,
 literal|"offset"
 argument_list|,
-literal|"Offset relates to the starting and ending coordinates specified for the blend. This parameter is mode dependent (0<= offset)"
+literal|"Offset relates to the starting and ending coordinates specified for the blend. This parameter is mode dependent."
 argument_list|,
 literal|0
 argument_list|,
@@ -4358,7 +4358,7 @@ literal|"repeat"
 argument_list|,
 literal|"repeat"
 argument_list|,
-literal|"Repeat mode: { GIMP_REPEAT_NONE (0), GIMP_REPEAT_SAWTOOTH (1), GIMP_REPEAT_TRIANGULAR (2) }"
+literal|"Repeat mode"
 argument_list|,
 name|GIMP_TYPE_REPEAT_MODE
 argument_list|,
@@ -4378,7 +4378,7 @@ literal|"reverse"
 argument_list|,
 literal|"reverse"
 argument_list|,
-literal|"Use the reverse gradient (TRUE or FALSE)"
+literal|"Use the reverse gradient"
 argument_list|,
 name|FALSE
 argument_list|,
@@ -4396,7 +4396,7 @@ literal|"supersample"
 argument_list|,
 literal|"supersample"
 argument_list|,
-literal|"Do adaptive supersampling (TRUE or FALSE)"
+literal|"Do adaptive supersampling"
 argument_list|,
 name|FALSE
 argument_list|,
@@ -4462,7 +4462,7 @@ literal|"dither"
 argument_list|,
 literal|"dither"
 argument_list|,
-literal|"Use dithering to reduce banding (TRUE or FALSE)"
+literal|"Use dithering to reduce banding"
 argument_list|,
 name|FALSE
 argument_list|,

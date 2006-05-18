@@ -1297,7 +1297,7 @@ literal|"threshold"
 argument_list|,
 literal|"threshold"
 argument_list|,
-literal|"Threshold in intensity levels (0<= threshold<= 255)"
+literal|"Threshold in intensity levels"
 argument_list|,
 literal|0
 argument_list|,
@@ -1319,7 +1319,7 @@ literal|"operation"
 argument_list|,
 literal|"operation"
 argument_list|,
-literal|"The selection operation: { GIMP_CHANNEL_OP_ADD (0), GIMP_CHANNEL_OP_SUBTRACT (1), GIMP_CHANNEL_OP_REPLACE (2), GIMP_CHANNEL_OP_INTERSECT (3) }"
+literal|"The selection operation"
 argument_list|,
 name|GIMP_TYPE_CHANNEL_OPS
 argument_list|,
@@ -1339,7 +1339,7 @@ literal|"antialias"
 argument_list|,
 literal|"antialias"
 argument_list|,
-literal|"Antialiasing (TRUE or FALSE)"
+literal|"Antialiasing"
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1532,7 +1532,7 @@ literal|"width"
 argument_list|,
 literal|"width"
 argument_list|,
-literal|"The width of the ellipse (0< width)"
+literal|"The width of the ellipse"
 argument_list|,
 literal|0
 argument_list|,
@@ -1554,7 +1554,7 @@ literal|"height"
 argument_list|,
 literal|"height"
 argument_list|,
-literal|"The height of the ellipse (0< height)"
+literal|"The height of the ellipse"
 argument_list|,
 literal|0
 argument_list|,
@@ -1576,7 +1576,7 @@ literal|"operation"
 argument_list|,
 literal|"operation"
 argument_list|,
-literal|"The selection operation: { GIMP_CHANNEL_OP_ADD (0), GIMP_CHANNEL_OP_SUBTRACT (1), GIMP_CHANNEL_OP_REPLACE (2), GIMP_CHANNEL_OP_INTERSECT (3) }"
+literal|"The selection operation"
 argument_list|,
 name|GIMP_TYPE_CHANNEL_OPS
 argument_list|,
@@ -1596,7 +1596,7 @@ literal|"antialias"
 argument_list|,
 literal|"antialias"
 argument_list|,
-literal|"Antialiasing (TRUE or FALSE)"
+literal|"Antialiasing"
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1763,7 +1763,7 @@ literal|"operation"
 argument_list|,
 literal|"operation"
 argument_list|,
-literal|"The selection operation: { GIMP_CHANNEL_OP_ADD (0), GIMP_CHANNEL_OP_SUBTRACT (1), GIMP_CHANNEL_OP_REPLACE (2), GIMP_CHANNEL_OP_INTERSECT (3) }"
+literal|"The selection operation"
 argument_list|,
 name|GIMP_TYPE_CHANNEL_OPS
 argument_list|,
@@ -1783,7 +1783,7 @@ literal|"antialias"
 argument_list|,
 literal|"antialias"
 argument_list|,
-literal|"Antialiasing (TRUE or FALSE)"
+literal|"Antialiasing"
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1959,7 +1959,7 @@ literal|"threshold"
 argument_list|,
 literal|"threshold"
 argument_list|,
-literal|"Threshold in intensity levels (0<= threshold<= 255)"
+literal|"Threshold in intensity levels"
 argument_list|,
 literal|0
 argument_list|,
@@ -1981,7 +1981,7 @@ literal|"operation"
 argument_list|,
 literal|"operation"
 argument_list|,
-literal|"The selection operation: { GIMP_CHANNEL_OP_ADD (0), GIMP_CHANNEL_OP_SUBTRACT (1), GIMP_CHANNEL_OP_REPLACE (2), GIMP_CHANNEL_OP_INTERSECT (3) }"
+literal|"The selection operation"
 argument_list|,
 name|GIMP_TYPE_CHANNEL_OPS
 argument_list|,
@@ -2001,7 +2001,7 @@ literal|"antialias"
 argument_list|,
 literal|"antialias"
 argument_list|,
-literal|"Antialiasing (TRUE or FALSE)"
+literal|"Antialiasing"
 argument_list|,
 name|FALSE
 argument_list|,
@@ -2194,7 +2194,7 @@ literal|"width"
 argument_list|,
 literal|"width"
 argument_list|,
-literal|"The width of the rectangle (0< width)"
+literal|"The width of the rectangle"
 argument_list|,
 literal|0
 argument_list|,
@@ -2216,7 +2216,7 @@ literal|"height"
 argument_list|,
 literal|"height"
 argument_list|,
-literal|"The height of the rectangle (0< height)"
+literal|"The height of the rectangle"
 argument_list|,
 literal|0
 argument_list|,
@@ -2238,7 +2238,7 @@ literal|"operation"
 argument_list|,
 literal|"operation"
 argument_list|,
-literal|"The selection operation: { GIMP_CHANNEL_OP_ADD (0), GIMP_CHANNEL_OP_SUBTRACT (1), GIMP_CHANNEL_OP_REPLACE (2), GIMP_CHANNEL_OP_INTERSECT (3) }"
+literal|"The selection operation"
 argument_list|,
 name|GIMP_TYPE_CHANNEL_OPS
 argument_list|,

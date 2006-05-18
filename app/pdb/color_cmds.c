@@ -4136,7 +4136,7 @@ literal|"brightness"
 argument_list|,
 literal|"brightness"
 argument_list|,
-literal|"Brightness adjustment (-127<= brightness<= 127)"
+literal|"Brightness adjustment"
 argument_list|,
 operator|-
 literal|127
@@ -4160,7 +4160,7 @@ literal|"contrast"
 argument_list|,
 literal|"contrast"
 argument_list|,
-literal|"Contrast adjustment (-127<= contrast<= 127)"
+literal|"Contrast adjustment"
 argument_list|,
 operator|-
 literal|127
@@ -4255,7 +4255,7 @@ literal|"channel"
 argument_list|,
 literal|"channel"
 argument_list|,
-literal|"The channel to modify: { GIMP_HISTOGRAM_VALUE (0), GIMP_HISTOGRAM_RED (1), GIMP_HISTOGRAM_GREEN (2), GIMP_HISTOGRAM_BLUE (3), GIMP_HISTOGRAM_ALPHA (4) }"
+literal|"The channel to modify"
 argument_list|,
 name|GIMP_TYPE_HISTOGRAM_CHANNEL
 argument_list|,
@@ -4275,7 +4275,7 @@ literal|"low-input"
 argument_list|,
 literal|"low input"
 argument_list|,
-literal|"Intensity of lowest input (0<= low_input<= 255)"
+literal|"Intensity of lowest input"
 argument_list|,
 literal|0
 argument_list|,
@@ -4297,7 +4297,7 @@ literal|"high-input"
 argument_list|,
 literal|"high input"
 argument_list|,
-literal|"Intensity of highest input (0<= high_input<= 255)"
+literal|"Intensity of highest input"
 argument_list|,
 literal|0
 argument_list|,
@@ -4319,7 +4319,7 @@ literal|"gamma"
 argument_list|,
 literal|"gamma"
 argument_list|,
-literal|"Gamma correction factor (0.1<= gamma<= 10)"
+literal|"Gamma correction factor"
 argument_list|,
 literal|0.1
 argument_list|,
@@ -4341,7 +4341,7 @@ literal|"low-output"
 argument_list|,
 literal|"low output"
 argument_list|,
-literal|"Intensity of lowest output (0<= low_output<= 255)"
+literal|"Intensity of lowest output"
 argument_list|,
 literal|0
 argument_list|,
@@ -4363,7 +4363,7 @@ literal|"high-output"
 argument_list|,
 literal|"high output"
 argument_list|,
-literal|"Intensity of highest output (0<= high_output<= 255)"
+literal|"Intensity of highest output"
 argument_list|,
 literal|0
 argument_list|,
@@ -4598,7 +4598,7 @@ literal|"levels"
 argument_list|,
 literal|"levels"
 argument_list|,
-literal|"Levels of posterization (2<= levels<= 255)"
+literal|"Levels of posterization"
 argument_list|,
 literal|2
 argument_list|,
@@ -5013,7 +5013,7 @@ literal|"channel"
 argument_list|,
 literal|"channel"
 argument_list|,
-literal|"The channel to modify: { GIMP_HISTOGRAM_VALUE (0), GIMP_HISTOGRAM_RED (1), GIMP_HISTOGRAM_GREEN (2), GIMP_HISTOGRAM_BLUE (3), GIMP_HISTOGRAM_ALPHA (4) }"
+literal|"The channel to modify"
 argument_list|,
 name|GIMP_TYPE_HISTOGRAM_CHANNEL
 argument_list|,
@@ -5033,7 +5033,7 @@ literal|"num-points"
 argument_list|,
 literal|"num points"
 argument_list|,
-literal|"The number of values in the control point array (4<= num_points<= 34)"
+literal|"The number of values in the control point array"
 argument_list|,
 literal|4
 argument_list|,
@@ -5142,7 +5142,7 @@ literal|"channel"
 argument_list|,
 literal|"channel"
 argument_list|,
-literal|"The channel to modify: { GIMP_HISTOGRAM_VALUE (0), GIMP_HISTOGRAM_RED (1), GIMP_HISTOGRAM_GREEN (2), GIMP_HISTOGRAM_BLUE (3), GIMP_HISTOGRAM_ALPHA (4) }"
+literal|"The channel to modify"
 argument_list|,
 name|GIMP_TYPE_HISTOGRAM_CHANNEL
 argument_list|,
@@ -5271,7 +5271,7 @@ literal|"transfer-mode"
 argument_list|,
 literal|"transfer mode"
 argument_list|,
-literal|"Transfer mode: { GIMP_SHADOWS (0), GIMP_MIDTONES (1), GIMP_HIGHLIGHTS (2) }"
+literal|"Transfer mode"
 argument_list|,
 name|GIMP_TYPE_TRANSFER_MODE
 argument_list|,
@@ -5309,7 +5309,7 @@ literal|"cyan-red"
 argument_list|,
 literal|"cyan red"
 argument_list|,
-literal|"Cyan-Red color balance (-100<= cyan_red<= 100)"
+literal|"Cyan-Red color balance"
 argument_list|,
 operator|-
 literal|100
@@ -5333,7 +5333,7 @@ literal|"magenta-green"
 argument_list|,
 literal|"magenta green"
 argument_list|,
-literal|"Magenta-Green color balance (-100<= magenta_green<= 100)"
+literal|"Magenta-Green color balance"
 argument_list|,
 operator|-
 literal|100
@@ -5357,7 +5357,7 @@ literal|"yellow-blue"
 argument_list|,
 literal|"yellow blue"
 argument_list|,
-literal|"Yellow-Blue color balance (-100<= yellow_blue<= 100)"
+literal|"Yellow-Blue color balance"
 argument_list|,
 operator|-
 literal|100
@@ -5452,7 +5452,7 @@ literal|"hue"
 argument_list|,
 literal|"hue"
 argument_list|,
-literal|"Hue in degrees (0<= hue<= 360)"
+literal|"Hue in degrees"
 argument_list|,
 literal|0
 argument_list|,
@@ -5474,7 +5474,7 @@ literal|"saturation"
 argument_list|,
 literal|"saturation"
 argument_list|,
-literal|"Saturation in percent (0<= saturation<= 100)"
+literal|"Saturation in percent"
 argument_list|,
 literal|0
 argument_list|,
@@ -5496,7 +5496,7 @@ literal|"lightness"
 argument_list|,
 literal|"lightness"
 argument_list|,
-literal|"Lightness in percent (-100<= lightness<= 100)"
+literal|"Lightness in percent"
 argument_list|,
 operator|-
 literal|100
@@ -5591,7 +5591,7 @@ literal|"channel"
 argument_list|,
 literal|"channel"
 argument_list|,
-literal|"The channel to modify: { GIMP_HISTOGRAM_VALUE (0), GIMP_HISTOGRAM_RED (1), GIMP_HISTOGRAM_GREEN (2), GIMP_HISTOGRAM_BLUE (3), GIMP_HISTOGRAM_ALPHA (4) }"
+literal|"The channel to modify"
 argument_list|,
 name|GIMP_TYPE_HISTOGRAM_CHANNEL
 argument_list|,
@@ -5864,7 +5864,7 @@ literal|"hue-range"
 argument_list|,
 literal|"hue range"
 argument_list|,
-literal|"Range of affected hues: { GIMP_ALL_HUES (0), GIMP_RED_HUES (1), GIMP_YELLOW_HUES (2), GIMP_GREEN_HUES (3), GIMP_CYAN_HUES (4), GIMP_BLUE_HUES (5), GIMP_MAGENTA_HUES (6) }"
+literal|"Range of affected hues"
 argument_list|,
 name|GIMP_TYPE_HUE_RANGE
 argument_list|,
@@ -5884,7 +5884,7 @@ literal|"hue-offset"
 argument_list|,
 literal|"hue offset"
 argument_list|,
-literal|"Hue offset in degrees (-180<= hue_offset<= 180)"
+literal|"Hue offset in degrees"
 argument_list|,
 operator|-
 literal|180
@@ -5908,7 +5908,7 @@ literal|"lightness"
 argument_list|,
 literal|"lightness"
 argument_list|,
-literal|"Lightness modification (-100<= lightness<= 100)"
+literal|"Lightness modification"
 argument_list|,
 operator|-
 literal|100
@@ -5932,7 +5932,7 @@ literal|"saturation"
 argument_list|,
 literal|"saturation"
 argument_list|,
-literal|"Saturation modification (-100<= saturation<= 100)"
+literal|"Saturation modification"
 argument_list|,
 operator|-
 literal|100
@@ -6027,7 +6027,7 @@ literal|"low-threshold"
 argument_list|,
 literal|"low threshold"
 argument_list|,
-literal|"The low threshold value (0<= low_threshold<= 255)"
+literal|"The low threshold value"
 argument_list|,
 literal|0
 argument_list|,
@@ -6049,7 +6049,7 @@ literal|"high-threshold"
 argument_list|,
 literal|"high threshold"
 argument_list|,
-literal|"The high threshold value (0<= high_threshold<= 255)"
+literal|"The high threshold value"
 argument_list|,
 literal|0
 argument_list|,

@@ -1449,7 +1449,7 @@ literal|"orientation"
 argument_list|,
 literal|"orientation"
 argument_list|,
-literal|"The guide's orientation: { GIMP_ORIENTATION_HORIZONTAL (0), GIMP_ORIENTATION_VERTICAL (1) }"
+literal|"The guide's orientation"
 argument_list|,
 name|GIMP_TYPE_ORIENTATION_TYPE
 argument_list|,

@@ -1032,7 +1032,7 @@ literal|"undo"
 argument_list|,
 literal|"undo"
 argument_list|,
-literal|"(TRUE or FALSE)"
+literal|""
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1121,7 +1121,7 @@ literal|"undo"
 argument_list|,
 literal|"undo"
 argument_list|,
-literal|"(TRUE or FALSE)"
+literal|""
 argument_list|,
 name|FALSE
 argument_list|,

@@ -2007,7 +2007,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_segment_range_set_blending_function:  * @name: The gradient name.  * @start_segment: The index of the first segment to operate on.  * @end_segment: The index of the last segment to operate on. If negative, the selection will extend to the end of the string.  * @blending_function: The Blending Function.  *  * Change the blending function of a segments range  *  * This function changes the blending function of a segment range to  * the specified blending function.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_gradient_segment_range_set_blending_function:  * @name: The gradient name.  * @start_segment: The index of the first segment to operate on.  * @end_segment: The index of the last segment to operate on. If negative, the selection will extend to the end of the string.  * @blending_function: The blending function.  *  * Change the blending function of a segments range  *  * This function changes the blending function of a segment range to  * the specified blending function.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function
@@ -2097,7 +2097,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_segment_range_set_coloring_type:  * @name: The gradient name.  * @start_segment: The index of the first segment to operate on.  * @end_segment: The index of the last segment to operate on. If negative, the selection will extend to the end of the string.  * @coloring_type: The Coloring Type.  *  * Change the coloring type of a segments range  *  * This function changes the coloring type of a segment range to the  * specified coloring type.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_gradient_segment_range_set_coloring_type:  * @name: The gradient name.  * @start_segment: The index of the first segment to operate on.  * @end_segment: The index of the last segment to operate on. If negative, the selection will extend to the end of the string.  * @coloring_type: The coloring type.  *  * Change the coloring type of a segments range  *  * This function changes the coloring type of a segment range to the  * specified coloring type.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function

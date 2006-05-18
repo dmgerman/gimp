@@ -6073,7 +6073,7 @@ literal|"flip-type"
 argument_list|,
 literal|"flip type"
 argument_list|,
-literal|"Type of flip: { GIMP_ORIENTATION_HORIZONTAL (0), GIMP_ORIENTATION_VERTICAL (1) }"
+literal|"Type of flip"
 argument_list|,
 name|GIMP_TYPE_ORIENTATION_TYPE
 argument_list|,
@@ -6352,7 +6352,7 @@ literal|"transform-direction"
 argument_list|,
 literal|"transform direction"
 argument_list|,
-literal|"Direction of Transformation: { GIMP_TRANSFORM_FORWARD (0), GIMP_TRANSFORM_BACKWARD (1) }"
+literal|"Direction of transformation"
 argument_list|,
 name|GIMP_TYPE_TRANSFORM_DIRECTION
 argument_list|,
@@ -6372,7 +6372,7 @@ literal|"interpolation"
 argument_list|,
 literal|"interpolation"
 argument_list|,
-literal|"Type of interpolation: { GIMP_INTERPOLATION_NONE (0), GIMP_INTERPOLATION_LINEAR (1), GIMP_INTERPOLATION_CUBIC (2), GIMP_INTERPOLATION_LANCZOS (3) }"
+literal|"Type of interpolation"
 argument_list|,
 name|GIMP_TYPE_INTERPOLATION_TYPE
 argument_list|,
@@ -6948,7 +6948,7 @@ literal|"transform-direction"
 argument_list|,
 literal|"transform direction"
 argument_list|,
-literal|"Direction of Transformation: { GIMP_TRANSFORM_FORWARD (0), GIMP_TRANSFORM_BACKWARD (1) }"
+literal|"Direction of transformation"
 argument_list|,
 name|GIMP_TYPE_TRANSFORM_DIRECTION
 argument_list|,
@@ -6968,7 +6968,7 @@ literal|"interpolation"
 argument_list|,
 literal|"interpolation"
 argument_list|,
-literal|"Type of interpolation: { GIMP_INTERPOLATION_NONE (0), GIMP_INTERPOLATION_LINEAR (1), GIMP_INTERPOLATION_CUBIC (2), GIMP_INTERPOLATION_LANCZOS (3) }"
+literal|"Type of interpolation"
 argument_list|,
 name|GIMP_TYPE_INTERPOLATION_TYPE
 argument_list|,
@@ -7452,7 +7452,7 @@ literal|"rotate-type"
 argument_list|,
 literal|"rotate type"
 argument_list|,
-literal|"Type of rotation: { GIMP_ROTATE_90 (0), GIMP_ROTATE_180 (1), GIMP_ROTATE_270 (2) }"
+literal|"Type of rotation"
 argument_list|,
 name|GIMP_TYPE_ROTATION_TYPE
 argument_list|,
@@ -7730,7 +7730,7 @@ literal|"transform-direction"
 argument_list|,
 literal|"transform direction"
 argument_list|,
-literal|"Direction of Transformation: { GIMP_TRANSFORM_FORWARD (0), GIMP_TRANSFORM_BACKWARD (1) }"
+literal|"Direction of transformation"
 argument_list|,
 name|GIMP_TYPE_TRANSFORM_DIRECTION
 argument_list|,
@@ -7750,7 +7750,7 @@ literal|"interpolation"
 argument_list|,
 literal|"interpolation"
 argument_list|,
-literal|"Type of interpolation: { GIMP_INTERPOLATION_NONE (0), GIMP_INTERPOLATION_LINEAR (1), GIMP_INTERPOLATION_CUBIC (2), GIMP_INTERPOLATION_LANCZOS (3) }"
+literal|"Type of interpolation"
 argument_list|,
 name|GIMP_TYPE_INTERPOLATION_TYPE
 argument_list|,
@@ -8227,7 +8227,7 @@ literal|"transform-direction"
 argument_list|,
 literal|"transform direction"
 argument_list|,
-literal|"Direction of Transformation: { GIMP_TRANSFORM_FORWARD (0), GIMP_TRANSFORM_BACKWARD (1) }"
+literal|"Direction of transformation"
 argument_list|,
 name|GIMP_TYPE_TRANSFORM_DIRECTION
 argument_list|,
@@ -8247,7 +8247,7 @@ literal|"interpolation"
 argument_list|,
 literal|"interpolation"
 argument_list|,
-literal|"Type of interpolation: { GIMP_INTERPOLATION_NONE (0), GIMP_INTERPOLATION_LINEAR (1), GIMP_INTERPOLATION_CUBIC (2), GIMP_INTERPOLATION_LANCZOS (3) }"
+literal|"Type of interpolation"
 argument_list|,
 name|GIMP_TYPE_INTERPOLATION_TYPE
 argument_list|,
@@ -8639,7 +8639,7 @@ literal|"shear-type"
 argument_list|,
 literal|"shear type"
 argument_list|,
-literal|"Type of shear: { GIMP_ORIENTATION_HORIZONTAL (0), GIMP_ORIENTATION_VERTICAL (1) }"
+literal|"Type of shear"
 argument_list|,
 name|GIMP_TYPE_ORIENTATION_TYPE
 argument_list|,
@@ -8697,7 +8697,7 @@ literal|"transform-direction"
 argument_list|,
 literal|"transform direction"
 argument_list|,
-literal|"Direction of Transformation: { GIMP_TRANSFORM_FORWARD (0), GIMP_TRANSFORM_BACKWARD (1) }"
+literal|"Direction of transformation"
 argument_list|,
 name|GIMP_TYPE_TRANSFORM_DIRECTION
 argument_list|,
@@ -8717,7 +8717,7 @@ literal|"interpolation"
 argument_list|,
 literal|"interpolation"
 argument_list|,
-literal|"Type of interpolation: { GIMP_INTERPOLATION_NONE (0), GIMP_INTERPOLATION_LINEAR (1), GIMP_INTERPOLATION_CUBIC (2), GIMP_INTERPOLATION_LANCZOS (3) }"
+literal|"Type of interpolation"
 argument_list|,
 name|GIMP_TYPE_INTERPOLATION_TYPE
 argument_list|,
@@ -8888,7 +8888,7 @@ literal|"shear-type"
 argument_list|,
 literal|"shear type"
 argument_list|,
-literal|"Type of shear: { GIMP_ORIENTATION_HORIZONTAL (0), GIMP_ORIENTATION_VERTICAL (1) }"
+literal|"Type of shear"
 argument_list|,
 name|GIMP_TYPE_ORIENTATION_TYPE
 argument_list|,
@@ -9236,7 +9236,7 @@ literal|"transform-direction"
 argument_list|,
 literal|"transform direction"
 argument_list|,
-literal|"Direction of Transformation: { GIMP_TRANSFORM_FORWARD (0), GIMP_TRANSFORM_BACKWARD (1) }"
+literal|"Direction of transformation"
 argument_list|,
 name|GIMP_TYPE_TRANSFORM_DIRECTION
 argument_list|,
@@ -9256,7 +9256,7 @@ literal|"interpolation"
 argument_list|,
 literal|"interpolation"
 argument_list|,
-literal|"Type of interpolation: { GIMP_INTERPOLATION_NONE (0), GIMP_INTERPOLATION_LINEAR (1), GIMP_INTERPOLATION_CUBIC (2), GIMP_INTERPOLATION_LANCZOS (3) }"
+literal|"Type of interpolation"
 argument_list|,
 name|GIMP_TYPE_INTERPOLATION_TYPE
 argument_list|,
@@ -9924,7 +9924,7 @@ literal|"transform-direction"
 argument_list|,
 literal|"transform direction"
 argument_list|,
-literal|"Direction of Transformation: { GIMP_TRANSFORM_FORWARD (0), GIMP_TRANSFORM_BACKWARD (1) }"
+literal|"Direction of transformation"
 argument_list|,
 name|GIMP_TYPE_TRANSFORM_DIRECTION
 argument_list|,
@@ -9944,7 +9944,7 @@ literal|"interpolation"
 argument_list|,
 literal|"interpolation"
 argument_list|,
-literal|"Type of interpolation: { GIMP_INTERPOLATION_NONE (0), GIMP_INTERPOLATION_LINEAR (1), GIMP_INTERPOLATION_CUBIC (2), GIMP_INTERPOLATION_LANCZOS (3) }"
+literal|"Type of interpolation"
 argument_list|,
 name|GIMP_TYPE_INTERPOLATION_TYPE
 argument_list|,

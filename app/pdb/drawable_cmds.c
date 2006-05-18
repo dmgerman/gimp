@@ -5561,7 +5561,7 @@ literal|"type"
 argument_list|,
 literal|"type"
 argument_list|,
-literal|"The drawable's type: { GIMP_RGB_IMAGE (0), GIMP_RGBA_IMAGE (1), GIMP_GRAY_IMAGE (2), GIMP_GRAYA_IMAGE (3), GIMP_INDEXED_IMAGE (4), GIMP_INDEXEDA_IMAGE (5) }"
+literal|"The drawable's type"
 argument_list|,
 name|GIMP_TYPE_IMAGE_TYPE
 argument_list|,
@@ -5652,7 +5652,7 @@ literal|"type-with-alpha"
 argument_list|,
 literal|"type with alpha"
 argument_list|,
-literal|"The drawable's type with alpha: { GIMP_RGBA_IMAGE (1), GIMP_GRAYA_IMAGE (3), GIMP_INDEXEDA_IMAGE (5) }"
+literal|"The drawable's type with alpha"
 argument_list|,
 name|GIMP_TYPE_IMAGE_TYPE
 argument_list|,
@@ -8364,7 +8364,7 @@ literal|"fill-type"
 argument_list|,
 literal|"fill type"
 argument_list|,
-literal|"The type of fill: { GIMP_FOREGROUND_FILL (0), GIMP_BACKGROUND_FILL (1), GIMP_WHITE_FILL (2), GIMP_TRANSPARENT_FILL (3), GIMP_PATTERN_FILL (4) }"
+literal|"The type of fill"
 argument_list|,
 name|GIMP_TYPE_FILL_TYPE
 argument_list|,
@@ -8473,7 +8473,7 @@ literal|"fill-type"
 argument_list|,
 literal|"fill type"
 argument_list|,
-literal|"fill vacated regions of drawable with background or transparent: { GIMP_OFFSET_BACKGROUND (0), GIMP_OFFSET_TRANSPARENT (1) }"
+literal|"fill vacated regions of drawable with background or transparent"
 argument_list|,
 name|GIMP_TYPE_OFFSET_TYPE
 argument_list|,
@@ -9134,7 +9134,7 @@ literal|"mode"
 argument_list|,
 literal|"mode"
 argument_list|,
-literal|"The algorithm to use: { GIMP_FOREGROUND_EXTRACT_SIOX (0) }"
+literal|"The algorithm to use"
 argument_list|,
 name|GIMP_TYPE_FOREGROUND_EXTRACT_MODE
 argument_list|,

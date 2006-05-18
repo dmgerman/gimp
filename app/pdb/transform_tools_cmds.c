@@ -1992,7 +1992,7 @@ literal|"flip-type"
 argument_list|,
 literal|"flip type"
 argument_list|,
-literal|"Type of flip: { GIMP_ORIENTATION_HORIZONTAL (0), GIMP_ORIENTATION_VERTICAL (1) }"
+literal|"Type of flip"
 argument_list|,
 name|GIMP_TYPE_ORIENTATION_TYPE
 argument_list|,
@@ -2770,7 +2770,7 @@ literal|"shear-type"
 argument_list|,
 literal|"shear type"
 argument_list|,
-literal|"Type of shear: { GIMP_ORIENTATION_HORIZONTAL (0), GIMP_ORIENTATION_VERTICAL (1) }"
+literal|"Type of shear"
 argument_list|,
 name|GIMP_TYPE_ORIENTATION_TYPE
 argument_list|,

@@ -2313,7 +2313,7 @@ literal|"style"
 argument_list|,
 literal|"style"
 argument_list|,
-literal|"The image's grid style: { GIMP_GRID_DOTS (0), GIMP_GRID_INTERSECTIONS (1), GIMP_GRID_ON_OFF_DASH (2), GIMP_GRID_DOUBLE_DASH (3), GIMP_GRID_SOLID (4) }"
+literal|"The image's grid style"
 argument_list|,
 name|GIMP_TYPE_GRID_STYLE
 argument_list|,
@@ -2404,7 +2404,7 @@ literal|"style"
 argument_list|,
 literal|"style"
 argument_list|,
-literal|"The image's grid style: { GIMP_GRID_DOTS (0), GIMP_GRID_INTERSECTIONS (1), GIMP_GRID_ON_OFF_DASH (2), GIMP_GRID_DOUBLE_DASH (3), GIMP_GRID_SOLID (4) }"
+literal|"The image's grid style"
 argument_list|,
 name|GIMP_TYPE_GRID_STYLE
 argument_list|,

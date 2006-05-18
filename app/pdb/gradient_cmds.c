@@ -6223,7 +6223,7 @@ literal|"reverse"
 argument_list|,
 literal|"reverse"
 argument_list|,
-literal|"Use the reverse gradient (TRUE or FALSE)"
+literal|"Use the reverse gradient"
 argument_list|,
 name|FALSE
 argument_list|,
@@ -6388,7 +6388,7 @@ literal|"reverse"
 argument_list|,
 literal|"reverse"
 argument_list|,
-literal|"Use the reverse gradient (TRUE or FALSE)"
+literal|"Use the reverse gradient"
 argument_list|,
 name|FALSE
 argument_list|,
@@ -7841,7 +7841,7 @@ literal|"blend-func"
 argument_list|,
 literal|"blend func"
 argument_list|,
-literal|"The blending function of the segment: { GIMP_GRADIENT_SEGMENT_LINEAR (0), GIMP_GRADIENT_SEGMENT_CURVED (1), GIMP_GRADIENT_SEGMENT_SINE (2), GIMP_GRADIENT_SEGMENT_SPHERE_INCREASING (3), GIMP_GRADIENT_SEGMENT_SPHERE_DECREASING (4) }"
+literal|"The blending function of the segment"
 argument_list|,
 name|GIMP_TYPE_GRADIENT_SEGMENT_TYPE
 argument_list|,
@@ -7954,7 +7954,7 @@ literal|"coloring-type"
 argument_list|,
 literal|"coloring type"
 argument_list|,
-literal|"The coloring type of the segment: { GIMP_GRADIENT_SEGMENT_RGB (0), GIMP_GRADIENT_SEGMENT_HSV_CCW (1), GIMP_GRADIENT_SEGMENT_HSV_CW (2) }"
+literal|"The coloring type of the segment"
 argument_list|,
 name|GIMP_TYPE_GRADIENT_SEGMENT_COLOR
 argument_list|,
@@ -8089,7 +8089,7 @@ literal|"blending-function"
 argument_list|,
 literal|"blending function"
 argument_list|,
-literal|"The Blending Function: { GIMP_GRADIENT_SEGMENT_LINEAR (0), GIMP_GRADIENT_SEGMENT_CURVED (1), GIMP_GRADIENT_SEGMENT_SINE (2), GIMP_GRADIENT_SEGMENT_SPHERE_INCREASING (3), GIMP_GRADIENT_SEGMENT_SPHERE_DECREASING (4) }"
+literal|"The blending function"
 argument_list|,
 name|GIMP_TYPE_GRADIENT_SEGMENT_TYPE
 argument_list|,
@@ -8224,7 +8224,7 @@ literal|"coloring-type"
 argument_list|,
 literal|"coloring type"
 argument_list|,
-literal|"The Coloring Type: { GIMP_GRADIENT_SEGMENT_RGB (0), GIMP_GRADIENT_SEGMENT_HSV_CCW (1), GIMP_GRADIENT_SEGMENT_HSV_CW (2) }"
+literal|"The coloring type"
 argument_list|,
 name|GIMP_TYPE_GRADIENT_SEGMENT_COLOR
 argument_list|,

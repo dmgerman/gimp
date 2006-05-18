@@ -1476,7 +1476,7 @@ literal|"width"
 argument_list|,
 literal|"width"
 argument_list|,
-literal|"The channel width (1<= width)"
+literal|"The channel width"
 argument_list|,
 literal|1
 argument_list|,
@@ -1498,7 +1498,7 @@ literal|"height"
 argument_list|,
 literal|"height"
 argument_list|,
-literal|"The channel height (1<= height)"
+literal|"The channel height"
 argument_list|,
 literal|1
 argument_list|,
@@ -1542,7 +1542,7 @@ literal|"opacity"
 argument_list|,
 literal|"opacity"
 argument_list|,
-literal|"The channel opacity (0<= opacity<= 100)"
+literal|"The channel opacity"
 argument_list|,
 literal|0
 argument_list|,
@@ -1677,7 +1677,7 @@ literal|"component"
 argument_list|,
 literal|"component"
 argument_list|,
-literal|"The image component: { GIMP_RED_CHANNEL (0), GIMP_GREEN_CHANNEL (1), GIMP_BLUE_CHANNEL (2), GIMP_GRAY_CHANNEL (3), GIMP_INDEXED_CHANNEL (4), GIMP_ALPHA_CHANNEL (5) }"
+literal|"The image component"
 argument_list|,
 name|GIMP_TYPE_CHANNEL_TYPE
 argument_list|,
@@ -1927,7 +1927,7 @@ literal|"operation"
 argument_list|,
 literal|"operation"
 argument_list|,
-literal|"The selection operation: { GIMP_CHANNEL_OP_ADD (0), GIMP_CHANNEL_OP_SUBTRACT (1), GIMP_CHANNEL_OP_REPLACE (2), GIMP_CHANNEL_OP_INTERSECT (3) }"
+literal|"The selection operation"
 argument_list|,
 name|GIMP_TYPE_CHANNEL_OPS
 argument_list|,
@@ -2333,7 +2333,7 @@ literal|"opacity"
 argument_list|,
 literal|"opacity"
 argument_list|,
-literal|"The new channel opacity (0<= opacity<= 100)"
+literal|"The new channel opacity"
 argument_list|,
 literal|0
 argument_list|,

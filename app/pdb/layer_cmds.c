@@ -3621,7 +3621,7 @@ literal|"width"
 argument_list|,
 literal|"width"
 argument_list|,
-literal|"The layer width (1<= width)"
+literal|"The layer width"
 argument_list|,
 literal|1
 argument_list|,
@@ -3643,7 +3643,7 @@ literal|"height"
 argument_list|,
 literal|"height"
 argument_list|,
-literal|"The layer height (1<= height)"
+literal|"The layer height"
 argument_list|,
 literal|1
 argument_list|,
@@ -3665,7 +3665,7 @@ literal|"type"
 argument_list|,
 literal|"type"
 argument_list|,
-literal|"The layer type: { GIMP_RGB_IMAGE (0), GIMP_RGBA_IMAGE (1), GIMP_GRAY_IMAGE (2), GIMP_GRAYA_IMAGE (3), GIMP_INDEXED_IMAGE (4), GIMP_INDEXEDA_IMAGE (5) }"
+literal|"The layer type"
 argument_list|,
 name|GIMP_TYPE_IMAGE_TYPE
 argument_list|,
@@ -3707,7 +3707,7 @@ literal|"opacity"
 argument_list|,
 literal|"opacity"
 argument_list|,
-literal|"The layer opacity (0<= opacity<= 100)"
+literal|"The layer opacity"
 argument_list|,
 literal|0
 argument_list|,
@@ -3729,7 +3729,7 @@ literal|"mode"
 argument_list|,
 literal|"mode"
 argument_list|,
-literal|"The layer combination mode: { GIMP_NORMAL_MODE (0), GIMP_DISSOLVE_MODE (1), GIMP_BEHIND_MODE (2), GIMP_MULTIPLY_MODE (3), GIMP_SCREEN_MODE (4), GIMP_OVERLAY_MODE (5), GIMP_DIFFERENCE_MODE (6), GIMP_ADDITION_MODE (7), GIMP_SUBTRACT_MODE (8), GIMP_DARKEN_ONLY_MODE (9), GIMP_LIGHTEN_ONLY_MODE (10), GIMP_HUE_MODE (11), GIMP_SATURATION_MODE (12), GIMP_COLOR_MODE (13), GIMP_VALUE_MODE (14), GIMP_DIVIDE_MODE (15), GIMP_DODGE_MODE (16), GIMP_BURN_MODE (17), GIMP_HARDLIGHT_MODE (18), GIMP_SOFTLIGHT_MODE (19), GIMP_GRAIN_EXTRACT_MODE (20), GIMP_GRAIN_MERGE_MODE (21), GIMP_COLOR_ERASE_MODE (22) }"
+literal|"The layer combination mode"
 argument_list|,
 name|GIMP_TYPE_LAYER_MODE_EFFECTS
 argument_list|,
@@ -4139,7 +4139,7 @@ literal|"new-width"
 argument_list|,
 literal|"new width"
 argument_list|,
-literal|"New layer width (1<= new_width)"
+literal|"New layer width"
 argument_list|,
 literal|1
 argument_list|,
@@ -4161,7 +4161,7 @@ literal|"new-height"
 argument_list|,
 literal|"new height"
 argument_list|,
-literal|"New layer height (1<= new_height)"
+literal|"New layer height"
 argument_list|,
 literal|1
 argument_list|,
@@ -4272,7 +4272,7 @@ literal|"new-width"
 argument_list|,
 literal|"new width"
 argument_list|,
-literal|"New layer width (1<= new_width)"
+literal|"New layer width"
 argument_list|,
 literal|1
 argument_list|,
@@ -4294,7 +4294,7 @@ literal|"new-height"
 argument_list|,
 literal|"new height"
 argument_list|,
-literal|"New layer height (1<= new_height)"
+literal|"New layer height"
 argument_list|,
 literal|1
 argument_list|,
@@ -4732,7 +4732,7 @@ literal|"mask-type"
 argument_list|,
 literal|"mask type"
 argument_list|,
-literal|"The type of mask: { GIMP_ADD_WHITE_MASK (0), GIMP_ADD_BLACK_MASK (1), GIMP_ADD_ALPHA_MASK (2), GIMP_ADD_ALPHA_TRANSFER_MASK (3), GIMP_ADD_SELECTION_MASK (4), GIMP_ADD_COPY_MASK (5), GIMP_ADD_CHANNEL_MASK (6) }"
+literal|"The type of mask"
 argument_list|,
 name|GIMP_TYPE_ADD_MASK_TYPE
 argument_list|,
@@ -5124,7 +5124,7 @@ literal|"mode"
 argument_list|,
 literal|"mode"
 argument_list|,
-literal|"Removal mode: { GIMP_MASK_APPLY (0), GIMP_MASK_DISCARD (1) }"
+literal|"Removal mode"
 argument_list|,
 name|GIMP_TYPE_MASK_APPLY_MODE
 argument_list|,
@@ -6109,7 +6109,7 @@ literal|"opacity"
 argument_list|,
 literal|"opacity"
 argument_list|,
-literal|"The new layer opacity (0<= opacity<= 100)"
+literal|"The new layer opacity"
 argument_list|,
 literal|0
 argument_list|,
@@ -6202,7 +6202,7 @@ literal|"mode"
 argument_list|,
 literal|"mode"
 argument_list|,
-literal|"The layer combination mode: { GIMP_NORMAL_MODE (0), GIMP_DISSOLVE_MODE (1), GIMP_BEHIND_MODE (2), GIMP_MULTIPLY_MODE (3), GIMP_SCREEN_MODE (4), GIMP_OVERLAY_MODE (5), GIMP_DIFFERENCE_MODE (6), GIMP_ADDITION_MODE (7), GIMP_SUBTRACT_MODE (8), GIMP_DARKEN_ONLY_MODE (9), GIMP_LIGHTEN_ONLY_MODE (10), GIMP_HUE_MODE (11), GIMP_SATURATION_MODE (12), GIMP_COLOR_MODE (13), GIMP_VALUE_MODE (14), GIMP_DIVIDE_MODE (15), GIMP_DODGE_MODE (16), GIMP_BURN_MODE (17), GIMP_HARDLIGHT_MODE (18), GIMP_SOFTLIGHT_MODE (19), GIMP_GRAIN_EXTRACT_MODE (20), GIMP_GRAIN_MERGE_MODE (21), GIMP_COLOR_ERASE_MODE (22) }"
+literal|"The layer combination mode"
 argument_list|,
 name|GIMP_TYPE_LAYER_MODE_EFFECTS
 argument_list|,
@@ -6293,7 +6293,7 @@ literal|"mode"
 argument_list|,
 literal|"mode"
 argument_list|,
-literal|"The new layer combination mode: { GIMP_NORMAL_MODE (0), GIMP_DISSOLVE_MODE (1), GIMP_BEHIND_MODE (2), GIMP_MULTIPLY_MODE (3), GIMP_SCREEN_MODE (4), GIMP_OVERLAY_MODE (5), GIMP_DIFFERENCE_MODE (6), GIMP_ADDITION_MODE (7), GIMP_SUBTRACT_MODE (8), GIMP_DARKEN_ONLY_MODE (9), GIMP_LIGHTEN_ONLY_MODE (10), GIMP_HUE_MODE (11), GIMP_SATURATION_MODE (12), GIMP_COLOR_MODE (13), GIMP_VALUE_MODE (14), GIMP_DIVIDE_MODE (15), GIMP_DODGE_MODE (16), GIMP_BURN_MODE (17), GIMP_HARDLIGHT_MODE (18), GIMP_SOFTLIGHT_MODE (19), GIMP_GRAIN_EXTRACT_MODE (20), GIMP_GRAIN_MERGE_MODE (21), GIMP_COLOR_ERASE_MODE (22) }"
+literal|"The new layer combination mode"
 argument_list|,
 name|GIMP_TYPE_LAYER_MODE_EFFECTS
 argument_list|,

@@ -1922,7 +1922,7 @@ literal|"run-mode"
 argument_list|,
 literal|"run mode"
 argument_list|,
-literal|"The run mode: { GIMP_RUN_INTERACTIVE (0), GIMP_RUN_NONINTERACTIVE (1) }"
+literal|"The run mode"
 argument_list|,
 name|GIMP_TYPE_RUN_MODE
 argument_list|,
@@ -2072,7 +2072,7 @@ literal|"run-mode"
 argument_list|,
 literal|"run mode"
 argument_list|,
-literal|"The run mode: { GIMP_RUN_INTERACTIVE (0), GIMP_RUN_NONINTERACTIVE (1) }"
+literal|"The run mode"
 argument_list|,
 name|GIMP_TYPE_RUN_MODE
 argument_list|,
@@ -2222,7 +2222,7 @@ literal|"run-mode"
 argument_list|,
 literal|"run mode"
 argument_list|,
-literal|"The run mode: { GIMP_RUN_INTERACTIVE (0), GIMP_RUN_NONINTERACTIVE (1), GIMP_RUN_WITH_LAST_VALS (2) }"
+literal|"The run mode"
 argument_list|,
 name|GIMP_TYPE_RUN_MODE
 argument_list|,

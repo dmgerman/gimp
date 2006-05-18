@@ -454,7 +454,7 @@ literal|"handler"
 argument_list|,
 literal|"handler"
 argument_list|,
-literal|"The current handler type: { GIMP_MESSAGE_BOX (0), GIMP_CONSOLE (1), GIMP_ERROR_CONSOLE (2) }"
+literal|"The current handler type"
 argument_list|,
 name|GIMP_TYPE_MESSAGE_HANDLER_TYPE
 argument_list|,
@@ -523,7 +523,7 @@ literal|"handler"
 argument_list|,
 literal|"handler"
 argument_list|,
-literal|"The new handler type: { GIMP_MESSAGE_BOX (0), GIMP_CONSOLE (1), GIMP_ERROR_CONSOLE (2) }"
+literal|"The new handler type"
 argument_list|,
 name|GIMP_TYPE_MESSAGE_HANDLER_TYPE
 argument_list|,

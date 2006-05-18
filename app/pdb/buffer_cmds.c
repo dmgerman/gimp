@@ -1684,7 +1684,7 @@ literal|"image-type"
 argument_list|,
 literal|"image type"
 argument_list|,
-literal|"The buffer image type: { GIMP_RGB (0), GIMP_GRAY (1), GIMP_INDEXED (2) }"
+literal|"The buffer image type"
 argument_list|,
 name|GIMP_TYPE_IMAGE_BASE_TYPE
 argument_list|,

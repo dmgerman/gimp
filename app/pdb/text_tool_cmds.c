@@ -1630,7 +1630,7 @@ literal|"border"
 argument_list|,
 literal|"border"
 argument_list|,
-literal|"The size of the border (-1<= border)"
+literal|"The size of the border"
 argument_list|,
 operator|-
 literal|1
@@ -1654,7 +1654,7 @@ literal|"antialias"
 argument_list|,
 literal|"antialias"
 argument_list|,
-literal|"Antialiasing (TRUE or FALSE)"
+literal|"Antialiasing"
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1694,7 +1694,7 @@ literal|"size-type"
 argument_list|,
 literal|"size type"
 argument_list|,
-literal|"The units of specified size: { GIMP_PIXELS (0), GIMP_POINTS (1) }"
+literal|"The units of specified size"
 argument_list|,
 name|GIMP_TYPE_SIZE_TYPE
 argument_list|,
@@ -1851,7 +1851,7 @@ literal|"size-type"
 argument_list|,
 literal|"size type"
 argument_list|,
-literal|"The units of specified size: { GIMP_PIXELS (0), GIMP_POINTS (1) }"
+literal|"The units of specified size"
 argument_list|,
 name|GIMP_TYPE_SIZE_TYPE
 argument_list|,
@@ -2142,7 +2142,7 @@ literal|"border"
 argument_list|,
 literal|"border"
 argument_list|,
-literal|"The size of the border (-1<= border)"
+literal|"The size of the border"
 argument_list|,
 operator|-
 literal|1
@@ -2166,7 +2166,7 @@ literal|"antialias"
 argument_list|,
 literal|"antialias"
 argument_list|,
-literal|"Antialiasing (TRUE or FALSE)"
+literal|"Antialiasing"
 argument_list|,
 name|FALSE
 argument_list|,
@@ -2206,7 +2206,7 @@ literal|"size-type"
 argument_list|,
 literal|"size type"
 argument_list|,
-literal|"The units of specified size: { GIMP_PIXELS (0), GIMP_POINTS (1) }"
+literal|"The units of specified size"
 argument_list|,
 name|GIMP_TYPE_SIZE_TYPE
 argument_list|,
@@ -2517,7 +2517,7 @@ literal|"size-type"
 argument_list|,
 literal|"size type"
 argument_list|,
-literal|"The units of specified size: { GIMP_PIXELS (0), GIMP_POINTS (1) }"
+literal|"The units of specified size"
 argument_list|,
 name|GIMP_TYPE_SIZE_TYPE
 argument_list|,

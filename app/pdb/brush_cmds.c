@@ -4752,7 +4752,7 @@ literal|"spacing"
 argument_list|,
 literal|"spacing"
 argument_list|,
-literal|"The brush spacing (0<= spacing<= 1000)"
+literal|"The brush spacing"
 argument_list|,
 literal|0
 argument_list|,
@@ -4845,7 +4845,7 @@ literal|"spacing"
 argument_list|,
 literal|"spacing"
 argument_list|,
-literal|"The brush spacing (0<= spacing<= 1000)"
+literal|"The brush spacing"
 argument_list|,
 literal|0
 argument_list|,
@@ -4938,7 +4938,7 @@ literal|"shape"
 argument_list|,
 literal|"shape"
 argument_list|,
-literal|"The brush shape: { GIMP_BRUSH_GENERATED_CIRCLE (0), GIMP_BRUSH_GENERATED_SQUARE (1), GIMP_BRUSH_GENERATED_DIAMOND (2) }"
+literal|"The brush shape"
 argument_list|,
 name|GIMP_TYPE_BRUSH_GENERATED_SHAPE
 argument_list|,
@@ -5498,7 +5498,7 @@ literal|"shape-in"
 argument_list|,
 literal|"shape in"
 argument_list|,
-literal|"The brush shape: { GIMP_BRUSH_GENERATED_CIRCLE (0), GIMP_BRUSH_GENERATED_SQUARE (1), GIMP_BRUSH_GENERATED_DIAMOND (2) }"
+literal|"The brush shape"
 argument_list|,
 name|GIMP_TYPE_BRUSH_GENERATED_SHAPE
 argument_list|,
@@ -5518,7 +5518,7 @@ literal|"shape-out"
 argument_list|,
 literal|"shape out"
 argument_list|,
-literal|"The brush shape actually assigned: { GIMP_BRUSH_GENERATED_CIRCLE (0), GIMP_BRUSH_GENERATED_SQUARE (1), GIMP_BRUSH_GENERATED_DIAMOND (2) }"
+literal|"The brush shape actually assigned"
 argument_list|,
 name|GIMP_TYPE_BRUSH_GENERATED_SHAPE
 argument_list|,

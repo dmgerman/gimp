@@ -58,6 +58,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpparamspecs-desc.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-pdb-compat.h"
 end_include
 
@@ -999,12 +1005,9 @@ argument_list|)
 expr_stmt|;
 name|arg_desc
 operator|=
-name|g_strdup
-argument_list|(
-name|g_param_spec_get_blurb
+name|gimp_param_spec_get_desc
 argument_list|(
 name|pspec
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -1287,12 +1290,9 @@ argument_list|)
 expr_stmt|;
 name|val_desc
 operator|=
-name|g_strdup
-argument_list|(
-name|g_param_spec_get_blurb
+name|gimp_param_spec_get_desc
 argument_list|(
 name|pspec
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -2373,7 +2373,7 @@ literal|"proc-type"
 argument_list|,
 literal|"proc type"
 argument_list|,
-literal|"The procedure type: { GIMP_INTERNAL (0), GIMP_PLUGIN (1), GIMP_EXTENSION (2), GIMP_TEMPORARY (3) }"
+literal|"The procedure type"
 argument_list|,
 name|GIMP_TYPE_PDB_PROC_TYPE
 argument_list|,
@@ -2530,7 +2530,7 @@ literal|"arg-type"
 argument_list|,
 literal|"arg type"
 argument_list|,
-literal|"The type of argument: { GIMP_PDB_INT32 (0), GIMP_PDB_INT16 (1), GIMP_PDB_INT8 (2), GIMP_PDB_FLOAT (3), GIMP_PDB_STRING (4), GIMP_PDB_INT32ARRAY (5), GIMP_PDB_INT16ARRAY (6), GIMP_PDB_INT8ARRAY (7), GIMP_PDB_FLOATARRAY (8), GIMP_PDB_STRINGARRAY (9), GIMP_PDB_COLOR (10), GIMP_PDB_REGION (11), GIMP_PDB_DISPLAY (12), GIMP_PDB_IMAGE (13), GIMP_PDB_LAYER (14), GIMP_PDB_CHANNEL (15), GIMP_PDB_DRAWABLE (16), GIMP_PDB_SELECTION (17), GIMP_PDB_BOUNDARY (18), GIMP_PDB_VECTORS (19), GIMP_PDB_PARASITE (20), GIMP_PDB_STATUS (21), GIMP_PDB_PATH (GIMP_PDB_VECTORS) }"
+literal|"The type of argument"
 argument_list|,
 name|GIMP_TYPE_PDB_ARG_TYPE
 argument_list|,
@@ -2702,7 +2702,7 @@ literal|"val-type"
 argument_list|,
 literal|"val type"
 argument_list|,
-literal|"The type of return value: { GIMP_PDB_INT32 (0), GIMP_PDB_INT16 (1), GIMP_PDB_INT8 (2), GIMP_PDB_FLOAT (3), GIMP_PDB_STRING (4), GIMP_PDB_INT32ARRAY (5), GIMP_PDB_INT16ARRAY (6), GIMP_PDB_INT8ARRAY (7), GIMP_PDB_FLOATARRAY (8), GIMP_PDB_STRINGARRAY (9), GIMP_PDB_COLOR (10), GIMP_PDB_REGION (11), GIMP_PDB_DISPLAY (12), GIMP_PDB_IMAGE (13), GIMP_PDB_LAYER (14), GIMP_PDB_CHANNEL (15), GIMP_PDB_DRAWABLE (16), GIMP_PDB_SELECTION (17), GIMP_PDB_BOUNDARY (18), GIMP_PDB_VECTORS (19), GIMP_PDB_PARASITE (20), GIMP_PDB_STATUS (21), GIMP_PDB_PATH (GIMP_PDB_VECTORS) }"
+literal|"The type of return value"
 argument_list|,
 name|GIMP_TYPE_PDB_ARG_TYPE
 argument_list|,

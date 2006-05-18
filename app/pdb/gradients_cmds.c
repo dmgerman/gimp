@@ -1385,7 +1385,7 @@ literal|"reverse"
 argument_list|,
 literal|"reverse"
 argument_list|,
-literal|"Use the reverse gradient (TRUE or FALSE)"
+literal|"Use the reverse gradient"
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1528,7 +1528,7 @@ literal|"reverse"
 argument_list|,
 literal|"reverse"
 argument_list|,
-literal|"Use the reverse gradient (TRUE or FALSE)"
+literal|"Use the reverse gradient"
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1655,7 +1655,7 @@ literal|"sample-size"
 argument_list|,
 literal|"sample size"
 argument_list|,
-literal|"Size of the sample to return when the gradient is changed: (1<= sample_size<= 10000)"
+literal|"Size of the sample to return when the gradient is changed"
 argument_list|,
 literal|1
 argument_list|,
@@ -1679,7 +1679,7 @@ literal|"reverse"
 argument_list|,
 literal|"reverse"
 argument_list|,
-literal|"Use the reverse gradient (TRUE or FALSE)"
+literal|"Use the reverse gradient"
 argument_list|,
 name|FALSE
 argument_list|,

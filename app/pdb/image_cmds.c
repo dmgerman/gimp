@@ -9651,7 +9651,7 @@ literal|"type"
 argument_list|,
 literal|"type"
 argument_list|,
-literal|"The type of image: { GIMP_RGB (0), GIMP_GRAY (1), GIMP_INDEXED (2) }"
+literal|"The type of image"
 argument_list|,
 name|GIMP_TYPE_IMAGE_BASE_TYPE
 argument_list|,
@@ -9928,7 +9928,7 @@ literal|"base-type"
 argument_list|,
 literal|"base type"
 argument_list|,
-literal|"The image's base type: { GIMP_RGB (0), GIMP_GRAY (1), GIMP_INDEXED (2) }"
+literal|"The image's base type"
 argument_list|,
 name|GIMP_TYPE_IMAGE_BASE_TYPE
 argument_list|,
@@ -10276,7 +10276,7 @@ literal|"new-width"
 argument_list|,
 literal|"new width"
 argument_list|,
-literal|"New image width (1<= new_width)"
+literal|"New image width"
 argument_list|,
 literal|1
 argument_list|,
@@ -10298,7 +10298,7 @@ literal|"new-height"
 argument_list|,
 literal|"new height"
 argument_list|,
-literal|"New image height (1<= new_height)"
+literal|"New image height"
 argument_list|,
 literal|1
 argument_list|,
@@ -10506,7 +10506,7 @@ literal|"new-width"
 argument_list|,
 literal|"new width"
 argument_list|,
-literal|"New image width (1<= new_width)"
+literal|"New image width"
 argument_list|,
 literal|1
 argument_list|,
@@ -10528,7 +10528,7 @@ literal|"new-height"
 argument_list|,
 literal|"new height"
 argument_list|,
-literal|"New image height (1<= new_height)"
+literal|"New image height"
 argument_list|,
 literal|1
 argument_list|,
@@ -10780,7 +10780,7 @@ literal|"flip-type"
 argument_list|,
 literal|"flip type"
 argument_list|,
-literal|"Type of flip: { GIMP_ORIENTATION_HORIZONTAL (0), GIMP_ORIENTATION_VERTICAL (1) }"
+literal|"Type of flip"
 argument_list|,
 name|GIMP_TYPE_ORIENTATION_TYPE
 argument_list|,
@@ -10886,7 +10886,7 @@ literal|"rotate-type"
 argument_list|,
 literal|"rotate type"
 argument_list|,
-literal|"Angle of rotation: { GIMP_ROTATE_90 (0), GIMP_ROTATE_180 (1), GIMP_ROTATE_270 (2) }"
+literal|"Angle of rotation"
 argument_list|,
 name|GIMP_TYPE_ROTATION_TYPE
 argument_list|,
@@ -13657,7 +13657,7 @@ literal|"merge-type"
 argument_list|,
 literal|"merge type"
 argument_list|,
-literal|"The type of merge: { GIMP_EXPAND_AS_NECESSARY (0), GIMP_CLIP_TO_IMAGE (1), GIMP_CLIP_TO_BOTTOM_LAYER (2) }"
+literal|"The type of merge"
 argument_list|,
 name|GIMP_TYPE_MERGE_TYPE
 argument_list|,
@@ -13807,7 +13807,7 @@ literal|"merge-type"
 argument_list|,
 literal|"merge type"
 argument_list|,
-literal|"The type of merge: { GIMP_EXPAND_AS_NECESSARY (0), GIMP_CLIP_TO_IMAGE (1), GIMP_CLIP_TO_BOTTOM_LAYER (2) }"
+literal|"The type of merge"
 argument_list|,
 name|GIMP_TYPE_MERGE_TYPE
 argument_list|,
@@ -14072,7 +14072,7 @@ literal|"mode"
 argument_list|,
 literal|"mode"
 argument_list|,
-literal|"Removal mode: { GIMP_MASK_APPLY (0), GIMP_MASK_DISCARD (1) }"
+literal|"Removal mode"
 argument_list|,
 name|GIMP_TYPE_MASK_APPLY_MODE
 argument_list|,
@@ -14163,7 +14163,7 @@ literal|"num-bytes"
 argument_list|,
 literal|"num bytes"
 argument_list|,
-literal|"Number of bytes in the colormap array (0< num_bytes)"
+literal|"Number of bytes in the colormap array"
 argument_list|,
 literal|0
 argument_list|,
@@ -14272,7 +14272,7 @@ literal|"num-bytes"
 argument_list|,
 literal|"num bytes"
 argument_list|,
-literal|"Number of bytes in the colormap array (0<= num_bytes<= 768)"
+literal|"Number of bytes in the colormap array"
 argument_list|,
 literal|0
 argument_list|,
@@ -15411,7 +15411,7 @@ literal|"component"
 argument_list|,
 literal|"component"
 argument_list|,
-literal|"The image component: { GIMP_RED_CHANNEL (0), GIMP_GREEN_CHANNEL (1), GIMP_BLUE_CHANNEL (2), GIMP_GRAY_CHANNEL (3), GIMP_INDEXED_CHANNEL (4), GIMP_ALPHA_CHANNEL (5) }"
+literal|"The image component"
 argument_list|,
 name|GIMP_TYPE_CHANNEL_TYPE
 argument_list|,
@@ -15431,7 +15431,7 @@ literal|"active"
 argument_list|,
 literal|"active"
 argument_list|,
-literal|"Component is active (TRUE or FALSE)"
+literal|"Component is active"
 argument_list|,
 name|FALSE
 argument_list|,
@@ -15520,7 +15520,7 @@ literal|"component"
 argument_list|,
 literal|"component"
 argument_list|,
-literal|"The image component: { GIMP_RED_CHANNEL (0), GIMP_GREEN_CHANNEL (1), GIMP_BLUE_CHANNEL (2), GIMP_GRAY_CHANNEL (3), GIMP_INDEXED_CHANNEL (4), GIMP_ALPHA_CHANNEL (5) }"
+literal|"The image component"
 argument_list|,
 name|GIMP_TYPE_CHANNEL_TYPE
 argument_list|,
@@ -15540,7 +15540,7 @@ literal|"active"
 argument_list|,
 literal|"active"
 argument_list|,
-literal|"Component is active (TRUE or FALSE)"
+literal|"Component is active"
 argument_list|,
 name|FALSE
 argument_list|,
@@ -15629,7 +15629,7 @@ literal|"component"
 argument_list|,
 literal|"component"
 argument_list|,
-literal|"The image component: { GIMP_RED_CHANNEL (0), GIMP_GREEN_CHANNEL (1), GIMP_BLUE_CHANNEL (2), GIMP_GRAY_CHANNEL (3), GIMP_INDEXED_CHANNEL (4), GIMP_ALPHA_CHANNEL (5) }"
+literal|"The image component"
 argument_list|,
 name|GIMP_TYPE_CHANNEL_TYPE
 argument_list|,
@@ -15649,7 +15649,7 @@ literal|"visible"
 argument_list|,
 literal|"visible"
 argument_list|,
-literal|"Component is visible (TRUE or FALSE)"
+literal|"Component is visible"
 argument_list|,
 name|FALSE
 argument_list|,
@@ -15738,7 +15738,7 @@ literal|"component"
 argument_list|,
 literal|"component"
 argument_list|,
-literal|"The image component: { GIMP_RED_CHANNEL (0), GIMP_GREEN_CHANNEL (1), GIMP_BLUE_CHANNEL (2), GIMP_GRAY_CHANNEL (3), GIMP_INDEXED_CHANNEL (4), GIMP_ALPHA_CHANNEL (5) }"
+literal|"The image component"
 argument_list|,
 name|GIMP_TYPE_CHANNEL_TYPE
 argument_list|,
@@ -15758,7 +15758,7 @@ literal|"visible"
 argument_list|,
 literal|"visible"
 argument_list|,
-literal|"Component is visible (TRUE or FALSE)"
+literal|"Component is visible"
 argument_list|,
 name|FALSE
 argument_list|,

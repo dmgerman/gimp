@@ -786,7 +786,7 @@ literal|"dither-type"
 argument_list|,
 literal|"dither type"
 argument_list|,
-literal|"The dither type to use: { GIMP_NO_DITHER (0), GIMP_FS_DITHER (1), GIMP_FSLOWBLEED_DITHER (2), GIMP_FIXED_DITHER (3) }"
+literal|"The dither type to use"
 argument_list|,
 name|GIMP_TYPE_CONVERT_DITHER_TYPE
 argument_list|,
@@ -806,7 +806,7 @@ literal|"palette-type"
 argument_list|,
 literal|"palette type"
 argument_list|,
-literal|"The type of palette to use: { GIMP_MAKE_PALETTE (0), GIMP_REUSE_PALETTE (1), GIMP_WEB_PALETTE (2), GIMP_MONO_PALETTE (3), GIMP_CUSTOM_PALETTE (4) }"
+literal|"The type of palette to use"
 argument_list|,
 name|GIMP_TYPE_CONVERT_PALETTE_TYPE
 argument_list|,

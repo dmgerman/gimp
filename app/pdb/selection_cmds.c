@@ -2383,7 +2383,7 @@ literal|"value"
 argument_list|,
 literal|"value"
 argument_list|,
-literal|"Value of the selection (0<= value<= 255)"
+literal|"Value of the selection"
 argument_list|,
 literal|0
 argument_list|,
@@ -3708,7 +3708,7 @@ literal|"operation"
 argument_list|,
 literal|"operation"
 argument_list|,
-literal|"The selection operation: { GIMP_CHANNEL_OP_ADD (0), GIMP_CHANNEL_OP_SUBTRACT (1), GIMP_CHANNEL_OP_REPLACE (2), GIMP_CHANNEL_OP_INTERSECT (3) }"
+literal|"The selection operation"
 argument_list|,
 name|GIMP_TYPE_CHANNEL_OPS
 argument_list|,
