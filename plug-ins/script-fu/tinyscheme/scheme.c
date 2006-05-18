@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* T I N Y S C H E M E    1 . 3 5  *   Dimitrios Souflis (dsouflis@acm.org)  *   Based on MiniScheme (original credits follow)  * (MINISCM)               coded by Atsushi Moriwaki (11/5/1989)  * (MINISCM)           E-MAIL :  moriwaki@kurims.kurims.kyoto-u.ac.jp  * (MINISCM) This version has been modified by R.C. Secrist.  * (MINISCM)  * (MINISCM) Mini-Scheme is now maintained by Akira KIDA.  * (MINISCM)  * (MINISCM) This is a revised and modified version by Akira KIDA.  * (MINISCM)   current version is 0.85k4 (15 May 1994)  *  */
+comment|/* T I N Y S C H E M E    1 . 3 7  *   Dimitrios Souflis (dsouflis@acm.org)  *   Based on MiniScheme (original credits follow)  * (MINISCM)               coded by Atsushi Moriwaki (11/5/1989)  * (MINISCM)           E-MAIL :  moriwaki@kurims.kurims.kyoto-u.ac.jp  * (MINISCM) This version has been modified by R.C. Secrist.  * (MINISCM)  * (MINISCM) Mini-Scheme is now maintained by Akira KIDA.  * (MINISCM)  * (MINISCM) This is a revised and modified version by Akira KIDA.  * (MINISCM)   current version is 0.85k4 (15 May 1994)  *  */
 end_comment
 
 begin_comment
@@ -267,7 +267,7 @@ DECL|macro|banner
 define|#
 directive|define
 name|banner
-value|"TinyScheme 1.35 (with UTF-8 support)"
+value|"TinyScheme 1.37 (with UTF-8 support)"
 end_define
 
 begin_include
@@ -2752,6 +2752,21 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|pointer
+name|reserve_cells
+parameter_list|(
+name|scheme
+modifier|*
+name|sc
+parameter_list|,
+name|int
+name|n
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|pointer
 name|get_consecutive_cells
 parameter_list|(
 name|scheme
@@ -4855,6 +4870,7 @@ name|adj
 operator|*
 operator|(
 operator|(
+name|unsigned
 name|long
 operator|)
 name|cp
@@ -5292,6 +5308,128 @@ expr_stmt|;
 return|return
 operator|(
 name|x
+operator|)
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/* make sure that there is a given number of cells free */
+end_comment
+
+begin_function
+DECL|function|reserve_cells (scheme * sc,int n)
+specifier|static
+name|pointer
+name|reserve_cells
+parameter_list|(
+name|scheme
+modifier|*
+name|sc
+parameter_list|,
+name|int
+name|n
+parameter_list|)
+block|{
+if|if
+condition|(
+name|sc
+operator|->
+name|no_memory
+condition|)
+block|{
+return|return
+name|sc
+operator|->
+name|NIL
+return|;
+block|}
+comment|/* Are there enough cells available? */
+if|if
+condition|(
+name|sc
+operator|->
+name|fcells
+operator|<
+name|n
+condition|)
+block|{
+comment|/* If not, try gc'ing some */
+name|gc
+argument_list|(
+name|sc
+argument_list|,
+name|sc
+operator|->
+name|NIL
+argument_list|,
+name|sc
+operator|->
+name|NIL
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|sc
+operator|->
+name|fcells
+operator|<
+name|n
+condition|)
+block|{
+comment|/* If there still aren't, try getting more heap */
+if|if
+condition|(
+operator|!
+name|alloc_cellseg
+argument_list|(
+name|sc
+argument_list|,
+literal|1
+argument_list|)
+condition|)
+block|{
+name|sc
+operator|->
+name|no_memory
+operator|=
+literal|1
+expr_stmt|;
+return|return
+name|sc
+operator|->
+name|NIL
+return|;
+block|}
+block|}
+if|if
+condition|(
+name|sc
+operator|->
+name|fcells
+operator|<
+name|n
+condition|)
+block|{
+comment|/* If all fail, report failure */
+name|sc
+operator|->
+name|no_memory
+operator|=
+literal|1
+expr_stmt|;
+return|return
+name|sc
+operator|->
+name|NIL
+return|;
+block|}
+block|}
+return|return
+operator|(
+name|sc
+operator|->
+name|T
 operator|)
 return|;
 block|}
@@ -8934,7 +9072,7 @@ comment|/* ========== garbage collector ========== */
 end_comment
 
 begin_comment
-comment|/*--  *  We use algorithm E (Knuth, The Art of Computer Programming Vol.1,  *  sec. 2.3.5), the Schorr-Deutsch-Waite link-inversion algorithm,   *  for marking.   */
+comment|/*--  *  We use algorithm E (Knuth, The Art of Computer Programming Vol.1,  *  sec. 2.3.5), the Schorr-Deutsch-Waite link-inversion algorithm,  *  for marking.  */
 end_comment
 
 begin_function
@@ -11593,7 +11731,7 @@ decl_stmt|;
 name|int
 name|len
 decl_stmt|;
-DECL|enum|__anon29ecaaba0103
+DECL|enum|__anon2ade78100103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -12245,9 +12383,30 @@ return|;
 case|case
 literal|';'
 case|:
+while|while
+condition|(
+operator|(
+name|c
+operator|=
+name|inchar
+argument_list|(
+name|sc
+argument_list|)
+operator|)
+operator|!=
+literal|'\n'
+operator|&&
+name|c
+operator|!=
+name|EOF
+condition|)
+empty_stmt|;
 return|return
 operator|(
-name|TOK_COMMENT
+name|token
+argument_list|(
+name|sc
+argument_list|)
 operator|)
 return|;
 case|case
@@ -12366,8 +12525,31 @@ operator|==
 literal|'!'
 condition|)
 block|{
+while|while
+condition|(
+operator|(
+name|c
+operator|=
+name|inchar
+argument_list|(
+name|sc
+argument_list|)
+operator|)
+operator|!=
+literal|'\n'
+operator|&&
+name|c
+operator|!=
+name|EOF
+condition|)
+empty_stmt|;
 return|return
-name|TOK_COMMENT
+operator|(
+name|token
+argument_list|(
+name|sc
+argument_list|)
+operator|)
 return|;
 block|}
 else|else
@@ -14179,7 +14361,7 @@ name|USE_ALIST_ENV
 end_ifndef
 
 begin_comment
-comment|/*   * In this implementation, each frame of the environment may be   * a hash table: a vector of alists hashed by variable name.   * In practice, we use a vector only for the initial frame;   * subsequent frames are too small and transient for the lookup   * speed to out-weigh the cost of making a new vector.   */
+comment|/*  * In this implementation, each frame of the environment may be  * a hash table: a vector of alists hashed by variable name.  * In practice, we use a vector only for the initial frame;  * subsequent frames are too small and transient for the lookup  * speed to out-weigh the cost of making a new vector.  */
 end_comment
 
 begin_function
@@ -26657,48 +26839,7 @@ name|EOF_OBJ
 argument_list|)
 expr_stmt|;
 block|}
-case|case
-name|TOK_COMMENT
-case|:
-block|{
-name|gunichar
-name|c
-decl_stmt|;
-while|while
-condition|(
-operator|(
-name|c
-operator|=
-name|inchar
-argument_list|(
-name|sc
-argument_list|)
-operator|)
-operator|!=
-literal|'\n'
-operator|&&
-name|c
-operator|!=
-name|EOF
-condition|)
-empty_stmt|;
-name|sc
-operator|->
-name|tok
-operator|=
-name|token
-argument_list|(
-name|sc
-argument_list|)
-expr_stmt|;
-name|s_goto
-argument_list|(
-name|sc
-argument_list|,
-name|OP_RDSEXPR
-argument_list|)
-expr_stmt|;
-block|}
+comment|/*  * Commented out because we now skip comments in the scanner  *           case TOK_COMMENT: {                gunichar c;                while ((c=inchar(sc)) != '\n'&& c!=EOF)                     ;                sc->tok = token(sc);                s_goto(sc,OP_RDSEXPR);           } */
 case|case
 name|TOK_VEC
 case|:
@@ -27205,46 +27346,7 @@ argument_list|(
 name|sc
 argument_list|)
 expr_stmt|;
-while|while
-condition|(
-name|sc
-operator|->
-name|tok
-operator|==
-name|TOK_COMMENT
-condition|)
-block|{
-name|gunichar
-name|c
-decl_stmt|;
-while|while
-condition|(
-operator|(
-name|c
-operator|=
-name|inchar
-argument_list|(
-name|sc
-argument_list|)
-operator|)
-operator|!=
-literal|'\n'
-operator|&&
-name|c
-operator|!=
-name|EOF
-condition|)
-empty_stmt|;
-name|sc
-operator|->
-name|tok
-operator|=
-name|token
-argument_list|(
-name|sc
-argument_list|)
-expr_stmt|;
-block|}
+comment|/* We now skip comments in the scanner           while (sc->tok == TOK_COMMENT) {                gunichar c;                while ((c=inchar(sc)) != '\n'&& c!=EOF)                     ;                sc->tok = token(sc);           } */
 if|if
 condition|(
 name|sc
@@ -28767,7 +28869,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon29ecaaba0208
+DECL|struct|__anon2ade78100208
 specifier|static
 struct|struct
 block|{
@@ -29016,7 +29118,7 @@ value|"\017"
 end_define
 
 begin_typedef
-DECL|struct|__anon29ecaaba0308
+DECL|struct|__anon2ade78100308
 typedef|typedef
 struct|struct
 block|{
@@ -30049,6 +30151,8 @@ block|,
 name|s_cons
 block|,
 name|s_immutable_cons
+block|,
+name|reserve_cells
 block|,
 name|mk_integer
 block|,
@@ -31916,11 +32020,20 @@ directive|if
 name|STANDALONE
 end_if
 
-begin_ifdef
-ifdef|#
-directive|ifdef
+begin_if
+if|#
+directive|if
+name|defined
+argument_list|(
 name|macintosh
-end_ifdef
+argument_list|)
+operator|&&
+operator|!
+name|defined
+argument_list|(
+name|OSX
+argument_list|)
+end_if
 
 begin_function
 DECL|function|main ()
