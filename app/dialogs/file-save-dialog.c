@@ -427,6 +427,21 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+name|g_signal_connect
+argument_list|(
+name|dialog
+argument_list|,
+literal|"destroy"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|gtk_widget_destroyed
+argument_list|)
+argument_list|,
+operator|&
+name|dialog
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|file_save_dialog_check_uri
@@ -466,6 +481,10 @@ name|save_a_copy
 argument_list|)
 condition|)
 block|{
+if|if
+condition|(
+name|dialog
+condition|)
 name|gtk_widget_hide
 argument_list|(
 name|save_dialog
@@ -483,6 +502,11 @@ name|basename
 argument_list|)
 expr_stmt|;
 block|}
+comment|/* dialog may have been destroyed while save plugin was running */
+if|if
+condition|(
+name|dialog
+condition|)
 name|gimp_file_dialog_set_sensitive
 argument_list|(
 name|dialog
