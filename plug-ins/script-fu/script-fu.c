@@ -544,6 +544,10 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
+comment|/*  Load all of the available scripts  */
+name|script_fu_find_scripts
+argument_list|()
+expr_stmt|;
 if|if
 condition|(
 name|strcmp
@@ -564,10 +568,6 @@ index|[
 literal|1
 index|]
 decl_stmt|;
-comment|/*  Load all of the available scripts  */
-name|script_fu_find_scripts
-argument_list|()
-expr_stmt|;
 comment|/*  Acknowledge that the extension is properly initialized  */
 name|gimp_extension_ack
 argument_list|()
