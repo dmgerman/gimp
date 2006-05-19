@@ -7,6 +7,10 @@ begin_comment
 comment|/* memo    the initial value of each pixel is the value of the pixel itself.    To determine whether it is an isolated local peak point, use:    (self == min&& (! modified_flag))   ; modified_flag holds history of update    In other word, pixel itself is not a neighbor of it. */
 end_comment
 
+begin_comment
+comment|/*    in response to bug #156545, after lengthy discussion, the meanings of "dilate"    and "erode" are being swapped -- 19 May 2006. */
+end_comment
+
 begin_include
 include|#
 directive|include
@@ -712,7 +716,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be8a0730108
+DECL|struct|__anon2bdbd98a0108
 block|{
 DECL|member|propagate_mode
 name|gint
@@ -880,7 +884,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be8a0730208
+DECL|struct|__anon2bdbd98a0208
 block|{
 DECL|member|applicable_image_type
 name|gint
@@ -1656,7 +1660,7 @@ name|vpvals
 operator|.
 name|propagate_mode
 operator|=
-literal|0
+literal|1
 expr_stmt|;
 elseif|else
 if|if
@@ -1674,7 +1678,7 @@ name|vpvals
 operator|.
 name|propagate_mode
 operator|=
-literal|1
+literal|0
 expr_stmt|;
 block|}
 break|break;
@@ -1839,7 +1843,7 @@ name|vpvals
 operator|.
 name|propagate_mode
 operator|=
-literal|0
+literal|1
 expr_stmt|;
 elseif|else
 if|if
@@ -1857,7 +1861,7 @@ name|vpvals
 operator|.
 name|propagate_mode
 operator|=
-literal|1
+literal|0
 expr_stmt|;
 block|}
 break|break;
@@ -4043,7 +4047,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be8a0730308
+DECL|struct|__anon2bdbd98a0308
 block|{
 DECL|member|min_modified
 name|gshort
