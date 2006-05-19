@@ -4411,17 +4411,17 @@ name|procedure
 argument_list|,
 literal|"gimp-levels-auto"
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp_levels_stretch' instead."
+literal|"This procedure is deprecated! Use 'gimp-levels-stretch' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp_levels_stretch' instead."
-argument_list|,
-literal|""
+literal|"This procedure is deprecated! Use 'gimp-levels-stretch' instead."
 argument_list|,
 literal|""
 argument_list|,
 literal|""
 argument_list|,
-literal|"gimp_levels_stretch"
+literal|""
+argument_list|,
+literal|"gimp-levels-stretch"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument

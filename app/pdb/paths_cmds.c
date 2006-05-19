@@ -4812,7 +4812,7 @@ literal|"gimp-path-import-string"
 argument_list|,
 literal|"Import paths from an SVG string."
 argument_list|,
-literal|"This procedure works like gimp_path_import() but takes a string rather than reading the SVG from a file. This allows you to write scripts that generate SVG and feed it to GIMP."
+literal|"This procedure works like 'gimp-path-import' but takes a string rather than reading the SVG from a file. This allows you to write scripts that generate SVG and feed it to GIMP."
 argument_list|,
 literal|"Sven Neumann<sven@gimp.org>"
 argument_list|,

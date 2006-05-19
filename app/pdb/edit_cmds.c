@@ -3901,7 +3901,7 @@ literal|"gimp-edit-fill"
 argument_list|,
 literal|"Fill selected area of drawable."
 argument_list|,
-literal|"This procedure fills the specified drawable with the fill mode. If the fill mode is foreground, the current foreground color is used. If the fill mode is background, the current background color is used. Other fill modes should not be used. This procedure only affects regions within a selection if there is a selection active. If you want to fill the whole drawable, regardless of the selection, use gimp_drawable_fill()."
+literal|"This procedure fills the specified drawable with the fill mode. If the fill mode is foreground, the current foreground color is used. If the fill mode is background, the current background color is used. Other fill modes should not be used. This procedure only affects regions within a selection if there is a selection active. If you want to fill the whole drawable, regardless of the selection, use 'gimp-drawable-fill'."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis& Raphael Quinet"
 argument_list|,

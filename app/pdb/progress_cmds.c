@@ -1114,7 +1114,7 @@ literal|"gimp-progress-pulse"
 argument_list|,
 literal|"Pulses the progress bar for the current plug-in."
 argument_list|,
-literal|"Updates the progress bar for the current plug-in. It is only valid to call this procedure from a plug-in. Use this function instead of gimp_progress_update() if you cannot tell how much progress has been made. This usually causes the the progress bar to enter \"activity mode\", where a block bounces back and forth."
+literal|"Updates the progress bar for the current plug-in. It is only valid to call this procedure from a plug-in. Use this function instead of 'gimp-progress-update' if you cannot tell how much progress has been made. This usually causes the the progress bar to enter \"activity mode\", where a block bounces back and forth."
 argument_list|,
 literal|"Sven Neumann<sven@gimp.org>"
 argument_list|,
@@ -1163,7 +1163,7 @@ literal|"gimp-progress-set-text"
 argument_list|,
 literal|"Changes the text in the progress bar for the current plug-in."
 argument_list|,
-literal|"This function allows to change the text in the progress bar for the current plug-in. Unlike gimp_progress_init() it does not change the displayed value."
+literal|"This function allows to change the text in the progress bar for the current plug-in. Unlike 'gimp-progress-init' it does not change the displayed value."
 argument_list|,
 literal|"Sven Neumann<sven@gimp.org>"
 argument_list|,
@@ -1376,7 +1376,7 @@ literal|"gimp-progress-uninstall"
 argument_list|,
 literal|"Uninstalls the progress callback for the current plug-in."
 argument_list|,
-literal|"This function uninstalls any progress callback installed with gimp_progress_install() before."
+literal|"This function uninstalls any progress callback installed with 'gimp-progress-install' before."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,

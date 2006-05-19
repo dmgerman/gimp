@@ -6500,7 +6500,7 @@ literal|"gimp-drawable-transform-flip-default"
 argument_list|,
 literal|"Flip the specified drawable around a given line."
 argument_list|,
-literal|"This procedure is a variant of gimp_drawable_transform_flip() which uses no interpolation/supersampling at all, or default values (depending on the 'interpolate' parameter)."
+literal|"This procedure is a variant of 'gimp-drawable-transform-flip' which uses no interpolation/supersampling at all, or default values (depending on the 'interpolate' parameter)."
 argument_list|,
 literal|"Jo\xc3\xa3o S. O. Bueno Calligaris"
 argument_list|,
@@ -7096,7 +7096,7 @@ literal|"gimp-drawable-transform-perspective-default"
 argument_list|,
 literal|"Perform a possibly non-affine transformation on the specified drawable, with extra parameters."
 argument_list|,
-literal|"This procedure is a variant of gimp_drawable_transform_perspective() which uses no interpolation/supersampling at all, or default values (depending on the 'interpolate' parameter)."
+literal|"This procedure is a variant of 'gimp-drawable-transform-perspective' which uses no interpolation/supersampling at all, or default values (depending on the 'interpolate' parameter)."
 argument_list|,
 literal|"Jo\xc3\xa3o S. O. Bueno Calligaris"
 argument_list|,
@@ -7878,7 +7878,7 @@ literal|"gimp-drawable-transform-rotate-default"
 argument_list|,
 literal|"Rotate the specified drawable about given coordinates through the specified angle."
 argument_list|,
-literal|"This procedure is a variant of gimp_drawable_transform_rotate() which uses no interpolation/supersampling at all, or default values (depending on the 'interpolate' parameter)."
+literal|"This procedure is a variant of 'gimp-drawable-transform-rotate' which uses no interpolation/supersampling at all, or default values (depending on the 'interpolate' parameter)."
 argument_list|,
 literal|"Jo\xc3\xa3o S. O. Bueno Calligaris"
 argument_list|,
@@ -8375,7 +8375,7 @@ literal|"gimp-drawable-transform-scale-default"
 argument_list|,
 literal|"Scale the specified drawable with extra parameters"
 argument_list|,
-literal|"This procedure is a variant of gimp_drawable_transform_scale() which uses no interpolation/supersampling at all, or default values (depending on the 'interpolate' parameter)."
+literal|"This procedure is a variant of 'gimp-drawable-transform-scale' which uses no interpolation/supersampling at all, or default values (depending on the 'interpolate' parameter)."
 argument_list|,
 literal|"Jo\xc3\xa3o S. O. Bueno Calligaris"
 argument_list|,
@@ -8845,7 +8845,7 @@ literal|"gimp-drawable-transform-shear-default"
 argument_list|,
 literal|"Shear the specified drawable about its center by the specified magnitude, with extra parameters."
 argument_list|,
-literal|"This procedure is a variant of gimp_drawable_transform_shear() which uses no interpolation/supersampling at all, or default values (depending on the 'interpolate' parameter)."
+literal|"This procedure is a variant of 'gimp-drawable-transform-shear' which uses no interpolation/supersampling at all, or default values (depending on the 'interpolate' parameter)."
 argument_list|,
 literal|"Jo\xc3\xa3o S. O. Bueno Calligaris"
 argument_list|,
@@ -9384,7 +9384,7 @@ literal|"gimp-drawable-transform-2d-default"
 argument_list|,
 literal|"Transform the specified drawable in 2d, with extra parameters."
 argument_list|,
-literal|"This procedure is a variant of gimp_drawable_transform_2d() which uses no interpolation/supersampling at all, or default values (depending on the 'interpolate' parameter)."
+literal|"This procedure is a variant of 'gimp-drawable-transform-2d' which uses no interpolation/supersampling at all, or default values (depending on the 'interpolate' parameter)."
 argument_list|,
 literal|"Jo\xc3\xa3o S. O. Bueno Calligaris"
 argument_list|,
@@ -10072,7 +10072,7 @@ literal|"gimp-drawable-transform-matrix-default"
 argument_list|,
 literal|"Transform the specified drawable in 2d, with extra parameters."
 argument_list|,
-literal|"This procedure is a variant of gimp_drawable_transform_matrix() which uses no interpolation/supersampling at all, or default values (depending on the 'interpolate' parameter)."
+literal|"This procedure is a variant of 'gimp-drawable-transform-matrix' which uses no interpolation/supersampling at all, or default values (depending on the 'interpolate' parameter)."
 argument_list|,
 literal|"Jo\xc3\xa3o S. O. Bueno Calligaris"
 argument_list|,
