@@ -1388,7 +1388,7 @@ name|gimp_item_linked_get_list
 argument_list|(
 name|active_item
 argument_list|,
-name|GIMP_ITEM_LINKED_LAYERS
+name|GIMP_ITEM_TYPE_LAYERS
 argument_list|)
 expr_stmt|;
 comment|/*  Expand the rectangle to include all linked layers as well  */
@@ -1559,7 +1559,7 @@ name|gimp_item_linked_get_list
 argument_list|(
 name|active_item
 argument_list|,
-name|GIMP_ITEM_LINKED_VECTORS
+name|GIMP_ITEM_TYPE_VECTORS
 argument_list|)
 expr_stmt|;
 for|for
@@ -2062,7 +2062,7 @@ name|gimp_item_linked_get_list
 argument_list|(
 name|active_item
 argument_list|,
-name|GIMP_ITEM_LINKED_CHANNELS
+name|GIMP_ITEM_TYPE_CHANNELS
 argument_list|)
 expr_stmt|;
 for|for
@@ -2513,9 +2513,9 @@ name|gimp_item_linked_get_list
 argument_list|(
 name|active_item
 argument_list|,
-name|GIMP_ITEM_LINKED_LAYERS
+name|GIMP_ITEM_TYPE_LAYERS
 operator||
-name|GIMP_ITEM_LINKED_VECTORS
+name|GIMP_ITEM_TYPE_VECTORS
 argument_list|)
 expr_stmt|;
 for|for
@@ -3135,7 +3135,7 @@ name|gimp_item_linked_get_list
 argument_list|(
 name|active_item
 argument_list|,
-name|GIMP_ITEM_LINKED_LAYERS
+name|GIMP_ITEM_TYPE_LAYERS
 argument_list|)
 expr_stmt|;
 for|for
@@ -3343,7 +3343,7 @@ name|gimp_item_linked_get_list
 argument_list|(
 name|active_item
 argument_list|,
-name|GIMP_ITEM_LINKED_VECTORS
+name|GIMP_ITEM_TYPE_VECTORS
 argument_list|)
 expr_stmt|;
 for|for

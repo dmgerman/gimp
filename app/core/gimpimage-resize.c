@@ -137,7 +137,7 @@ name|offset_x
 argument_list|,
 name|offset_y
 argument_list|,
-name|GIMP_IMAGE_RESIZE_LAYERS_NONE
+name|GIMP_ITEM_SET_NONE
 argument_list|,
 name|progress
 argument_list|)
@@ -147,7 +147,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_resize_with_layers (GimpImage * image,GimpContext * context,gint new_width,gint new_height,gint offset_x,gint offset_y,GimpImageResizeLayers resize_layers,GimpProgress * progress)
+DECL|function|gimp_image_resize_with_layers (GimpImage * image,GimpContext * context,gint new_width,gint new_height,gint offset_x,gint offset_y,GimpItemSet layer_set,GimpProgress * progress)
 name|gimp_image_resize_with_layers
 parameter_list|(
 name|GimpImage
@@ -170,8 +170,8 @@ parameter_list|,
 name|gint
 name|offset_y
 parameter_list|,
-name|GimpImageResizeLayers
-name|resize_layers
+name|GimpItemSet
+name|layer_set
 parameter_list|,
 name|GimpProgress
 modifier|*
@@ -547,11 +547,19 @@ argument_list|)
 expr_stmt|;
 switch|switch
 condition|(
-name|resize_layers
+name|layer_set
 condition|)
 block|{
 case|case
-name|GIMP_IMAGE_RESIZE_LAYERS_MATCHING
+name|GIMP_ITEM_SET_ALL
+case|:
+name|resize
+operator|=
+name|TRUE
+expr_stmt|;
+break|break;
+case|case
+name|GIMP_ITEM_SET_IMAGE_SIZED
 case|:
 name|resize
 operator|=
@@ -581,7 +589,7 @@ operator|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_IMAGE_RESIZE_LAYERS_VISIBLE
+name|GIMP_ITEM_SET_VISIBLE
 case|:
 name|resize
 operator|=
@@ -592,7 +600,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_IMAGE_RESIZE_LAYERS_LINKED
+name|GIMP_ITEM_SET_LINKED
 case|:
 name|resize
 operator|=
@@ -600,14 +608,6 @@ name|gimp_item_get_linked
 argument_list|(
 name|item
 argument_list|)
-expr_stmt|;
-break|break;
-case|case
-name|GIMP_IMAGE_RESIZE_LAYERS_ALL
-case|:
-name|resize
-operator|=
-name|TRUE
 expr_stmt|;
 break|break;
 default|default:

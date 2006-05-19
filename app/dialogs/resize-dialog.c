@@ -137,9 +137,9 @@ name|GtkWidget
 modifier|*
 name|area
 decl_stmt|;
-DECL|member|resize_layers
-name|GimpImageResizeLayers
-name|resize_layers
+DECL|member|layer_set
+name|GimpItemSet
+name|layer_set
 decl_stmt|;
 DECL|member|callback
 name|GimpResizeCallback
@@ -590,9 +590,9 @@ name|unit
 expr_stmt|;
 name|private
 operator|->
-name|resize_layers
+name|layer_set
 operator|=
-name|GIMP_IMAGE_RESIZE_LAYERS_NONE
+name|GIMP_ITEM_SET_NONE
 expr_stmt|;
 name|private
 operator|->
@@ -1436,7 +1436,7 @@ name|combo
 operator|=
 name|gimp_enum_combo_box_new
 argument_list|(
-name|GIMP_TYPE_IMAGE_RESIZE_LAYERS
+name|GIMP_TYPE_ITEM_SET
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1479,7 +1479,7 @@ argument_list|)
 argument_list|,
 name|private
 operator|->
-name|resize_layers
+name|layer_set
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1489,7 +1489,7 @@ argument_list|,
 operator|&
 name|private
 operator|->
-name|resize_layers
+name|layer_set
 argument_list|)
 expr_stmt|;
 block|}
@@ -1610,7 +1610,7 @@ argument_list|)
 argument_list|,
 name|private
 operator|->
-name|resize_layers
+name|layer_set
 argument_list|,
 name|private
 operator|->

@@ -120,7 +120,7 @@ name|gimp_item_linked_get_list
 argument_list|(
 name|item
 argument_list|,
-name|GIMP_ITEM_LINKED_ALL
+name|GIMP_ITEM_TYPE_ALL
 argument_list|)
 expr_stmt|;
 for|for
@@ -233,7 +233,7 @@ name|gimp_item_linked_get_list
 argument_list|(
 name|item
 argument_list|,
-name|GIMP_ITEM_LINKED_ALL
+name|GIMP_ITEM_TYPE_ALL
 argument_list|)
 expr_stmt|;
 for|for
@@ -351,9 +351,9 @@ name|gimp_item_linked_get_list
 argument_list|(
 name|item
 argument_list|,
-name|GIMP_ITEM_LINKED_LAYERS
+name|GIMP_ITEM_TYPE_LAYERS
 operator||
-name|GIMP_ITEM_LINKED_VECTORS
+name|GIMP_ITEM_TYPE_VECTORS
 argument_list|)
 expr_stmt|;
 for|for
@@ -402,7 +402,7 @@ name|gimp_item_linked_get_list
 argument_list|(
 name|item
 argument_list|,
-name|GIMP_ITEM_LINKED_CHANNELS
+name|GIMP_ITEM_TYPE_CHANNELS
 argument_list|)
 expr_stmt|;
 for|for
@@ -546,7 +546,7 @@ name|gimp_item_linked_get_list
 argument_list|(
 name|item
 argument_list|,
-name|GIMP_ITEM_LINKED_ALL
+name|GIMP_ITEM_TYPE_ALL
 argument_list|)
 expr_stmt|;
 for|for
@@ -605,14 +605,14 @@ end_comment
 begin_function
 name|GList
 modifier|*
-DECL|function|gimp_item_linked_get_list (GimpItem * item,GimpItemLinkedMask which)
+DECL|function|gimp_item_linked_get_list (GimpItem * item,GimpItemTypeMask which)
 name|gimp_item_linked_get_list
 parameter_list|(
 name|GimpItem
 modifier|*
 name|item
 parameter_list|,
-name|GimpItemLinkedMask
+name|GimpItemTypeMask
 name|which
 parameter_list|)
 block|{
@@ -675,7 +675,7 @@ if|if
 condition|(
 name|which
 operator|&
-name|GIMP_ITEM_LINKED_LAYERS
+name|GIMP_ITEM_TYPE_LAYERS
 condition|)
 block|{
 for|for
@@ -733,7 +733,7 @@ if|if
 condition|(
 name|which
 operator|&
-name|GIMP_ITEM_LINKED_CHANNELS
+name|GIMP_ITEM_TYPE_CHANNELS
 condition|)
 block|{
 for|for
@@ -791,7 +791,7 @@ if|if
 condition|(
 name|which
 operator|&
-name|GIMP_ITEM_LINKED_VECTORS
+name|GIMP_ITEM_TYPE_VECTORS
 condition|)
 block|{
 for|for

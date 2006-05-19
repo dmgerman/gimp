@@ -438,7 +438,7 @@ parameter_list|,
 name|gint
 name|offset_y
 parameter_list|,
-name|GimpImageResizeLayers
+name|GimpItemSet
 name|unused
 parameter_list|,
 name|gpointer
@@ -4222,7 +4222,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|layers_resize_layer_callback (GtkWidget * dialog,GimpViewable * viewable,gint width,gint height,GimpUnit unit,gint offset_x,gint offset_y,GimpImageResizeLayers unused,gpointer data)
+DECL|function|layers_resize_layer_callback (GtkWidget * dialog,GimpViewable * viewable,gint width,gint height,GimpUnit unit,gint offset_x,gint offset_y,GimpItemSet unused,gpointer data)
 name|layers_resize_layer_callback
 parameter_list|(
 name|GtkWidget
@@ -4248,7 +4248,7 @@ parameter_list|,
 name|gint
 name|offset_y
 parameter_list|,
-name|GimpImageResizeLayers
+name|GimpItemSet
 name|unused
 parameter_list|,
 name|gpointer

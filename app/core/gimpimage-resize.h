@@ -71,8 +71,8 @@ parameter_list|,
 name|gint
 name|offset_y
 parameter_list|,
-name|GimpImageResizeLayers
-name|resize_layers
+name|GimpItemSet
+name|layer_set
 parameter_list|,
 name|GimpProgress
 modifier|*
