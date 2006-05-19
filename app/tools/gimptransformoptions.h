@@ -148,13 +148,9 @@ DECL|member|grid_size
 name|gint
 name|grid_size
 decl_stmt|;
-DECL|member|constrain_1
+DECL|member|constrain
 name|gboolean
-name|constrain_1
-decl_stmt|;
-DECL|member|constrain_2
-name|gboolean
-name|constrain_2
+name|constrain
 decl_stmt|;
 block|}
 struct|;

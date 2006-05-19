@@ -1492,7 +1492,7 @@ if|if
 condition|(
 name|options
 operator|->
-name|constrain_1
+name|constrain
 condition|)
 block|{
 name|tr_tool
