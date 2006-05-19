@@ -3530,7 +3530,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_image_get_colormap:  * @image_ID: The image.  * @num_bytes: Number of bytes in the colormap array.  *  * Returns the image's colormap  *  * This procedure returns an actual pointer to the image's colormap, as  * well as the number of bytes contained in the colormap. The actual  * number of colors in the transmitted colormap will be \"num_bytes\" /  * 3. If the image is not of base type GIMP_INDEXED, this pointer will  * be NULL.  *  * Returns: The image's colormap.  */
+comment|/**  * _gimp_image_get_colormap:  * @image_ID: The image.  * @num_bytes: Number of bytes in the colormap array.  *  * Returns the image's colormap  *  * This procedure returns an actual pointer to the image's colormap, as  * well as the number of bytes contained in the colormap. The actual  * number of colors in the transmitted colormap will be \"num_bytes\" /  * 3. If the image is not in Indexed color mode, no colormap is  * returned.  *  * Returns: The image's colormap.  */
 end_comment
 
 begin_function
