@@ -1851,6 +1851,23 @@ literal|0
 else|:
 literal|1
 expr_stmt|;
+comment|/* hack to handle some existing files with incorrect headers, see bug #306675 */
+if|if
+condition|(
+name|info
+operator|.
+name|alphaBits
+operator|==
+name|info
+operator|.
+name|bpp
+condition|)
+name|info
+operator|.
+name|alphaBits
+operator|=
+literal|0
+expr_stmt|;
 switch|switch
 condition|(
 name|info
