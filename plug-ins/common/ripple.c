@@ -128,7 +128,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a977f890108
+DECL|struct|__anon2b1d9dc20108
 block|{
 DECL|member|period
 name|gint
@@ -904,7 +904,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2a977f890208
+DECL|struct|__anon2b1d9dc20208
 typedef|typedef
 struct|struct
 block|{
@@ -3123,7 +3123,7 @@ block|{
 name|gint
 name|b
 decl_stmt|;
-comment|//  x = x - floor(x);
+comment|/* x = x - floor(x); */
 if|if
 condition|(
 name|has_alpha

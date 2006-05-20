@@ -5704,7 +5704,7 @@ argument_list|(
 name|dlg
 argument_list|)
 expr_stmt|;
-comment|// selection_set_edit_command(tools, factory_edit);
+comment|/* selection_set_edit_command(tools, factory_edit); */
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX

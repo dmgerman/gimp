@@ -6,6 +6,24 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_define
+DECL|macro|__POSIX_SOURCE
+define|#
+directive|define
+name|__POSIX_SOURCE
+end_define
+
+begin_comment
+DECL|macro|__POSIX_SOURCE
+comment|/* all the sigaction stuff is POSIX */
+end_comment
+
+begin_include
+include|#
+directive|include
 file|<glib.h>
 end_include
 

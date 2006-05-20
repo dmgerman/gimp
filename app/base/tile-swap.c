@@ -1599,9 +1599,9 @@ name|_O_BINARY
 operator||
 name|_O_TEMPORARY
 argument_list|,
-name|S_IREAD
+name|S_IRUSR
 operator||
-name|S_IWRITE
+name|S_IWUSR
 argument_list|)
 expr_stmt|;
 if|if
