@@ -546,7 +546,7 @@ name|tool_manager_control_active
 argument_list|(
 name|gimp
 argument_list|,
-name|HALT
+name|GIMP_TOOL_ACTION_HALT
 argument_list|,
 name|display
 argument_list|)
@@ -923,7 +923,7 @@ if|if
 condition|(
 name|action
 operator|==
-name|HALT
+name|GIMP_TOOL_ACTION_HALT
 condition|)
 block|{
 if|if
@@ -1974,7 +1974,7 @@ name|image
 operator|->
 name|gimp
 argument_list|,
-name|HALT
+name|GIMP_TOOL_ACTION_HALT
 argument_list|,
 name|display
 argument_list|)

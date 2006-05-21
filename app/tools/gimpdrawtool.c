@@ -441,7 +441,7 @@ name|action
 condition|)
 block|{
 case|case
-name|PAUSE
+name|GIMP_TOOL_ACTION_PAUSE
 case|:
 name|gimp_draw_tool_pause
 argument_list|(
@@ -450,7 +450,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|RESUME
+name|GIMP_TOOL_ACTION_RESUME
 case|:
 name|gimp_draw_tool_resume
 argument_list|(
@@ -459,15 +459,13 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|HALT
+name|GIMP_TOOL_ACTION_HALT
 case|:
 name|gimp_draw_tool_stop
 argument_list|(
 name|draw_tool
 argument_list|)
 expr_stmt|;
-break|break;
-default|default:
 break|break;
 block|}
 name|GIMP_TOOL_CLASS

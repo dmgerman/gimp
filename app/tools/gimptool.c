@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b172fe50103
+DECL|enum|__anon2749750f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1137,7 +1137,7 @@ name|action
 condition|)
 block|{
 case|case
-name|PAUSE
+name|GIMP_TOOL_ACTION_PAUSE
 case|:
 if|if
 condition|(
@@ -1172,7 +1172,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|RESUME
+name|GIMP_TOOL_ACTION_RESUME
 case|:
 if|if
 condition|(
@@ -1227,7 +1227,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|HALT
+name|GIMP_TOOL_ACTION_HALT
 case|:
 name|GIMP_TOOL_GET_CLASS
 argument_list|(

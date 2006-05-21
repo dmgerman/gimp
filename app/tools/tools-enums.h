@@ -41,7 +41,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29f6fc360103
+DECL|enum|__anon28d108c00103
 block|{
 DECL|enumerator|GIMP_COLOR_PICK_MODE_NONE
 name|GIMP_COLOR_PICK_MODE_NONE
@@ -85,7 +85,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29f6fc360203
+DECL|enum|__anon28d108c00203
 block|{
 DECL|enumerator|GIMP_CROP_MODE_CROP
 name|GIMP_CROP_MODE_CROP
@@ -121,7 +121,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29f6fc360303
+DECL|enum|__anon28d108c00303
 block|{
 DECL|enumerator|GIMP_RECTANGLE_MODE_EXECUTE
 name|GIMP_RECTANGLE_MODE_EXECUTE
@@ -157,7 +157,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29f6fc360403
+DECL|enum|__anon28d108c00403
 block|{
 DECL|enumerator|GIMP_RECT_SELECT_MODE_FREE
 name|GIMP_RECT_SELECT_MODE_FREE
@@ -197,7 +197,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29f6fc360503
+DECL|enum|__anon28d108c00503
 block|{
 DECL|enumerator|GIMP_TRANSFORM_TYPE_LAYER
 name|GIMP_TRANSFORM_TYPE_LAYER
@@ -237,7 +237,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29f6fc360603
+DECL|enum|__anon28d108c00603
 block|{
 DECL|enumerator|GIMP_VECTOR_MODE_DESIGN
 name|GIMP_VECTOR_MODE_DESIGN
@@ -277,7 +277,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29f6fc360703
+DECL|enum|__anon28d108c00703
 block|{
 DECL|enumerator|GIMP_TRANSFORM_PREVIEW_TYPE_OUTLINE
 name|GIMP_TRANSFORM_PREVIEW_TYPE_OUTLINE
@@ -321,7 +321,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29f6fc360803
+DECL|enum|__anon28d108c00803
 block|{
 DECL|enumerator|GIMP_TRANSFORM_GRID_TYPE_N_LINES
 name|GIMP_TRANSFORM_GRID_TYPE_N_LINES
@@ -344,7 +344,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon29f6fc360903
+DECL|enum|__anon28d108c00903
 block|{
 DECL|enumerator|SELECTION_ADD
 name|SELECTION_ADD
@@ -391,16 +391,16 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon29f6fc360a03
+DECL|enum|__anon28d108c00a03
 block|{
-DECL|enumerator|PAUSE
-name|PAUSE
+DECL|enumerator|GIMP_TOOL_ACTION_PAUSE
+name|GIMP_TOOL_ACTION_PAUSE
 block|,
-DECL|enumerator|RESUME
-name|RESUME
+DECL|enumerator|GIMP_TOOL_ACTION_RESUME
+name|GIMP_TOOL_ACTION_RESUME
 block|,
-DECL|enumerator|HALT
-name|HALT
+DECL|enumerator|GIMP_TOOL_ACTION_HALT
+name|GIMP_TOOL_ACTION_HALT
 DECL|typedef|GimpToolAction
 block|}
 name|GimpToolAction
@@ -415,7 +415,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon29f6fc360b03
+DECL|enum|__anon28d108c00b03
 block|{
 DECL|enumerator|GIMP_TRANSLATE_MODE_VECTORS
 name|GIMP_TRANSLATE_MODE_VECTORS
@@ -454,7 +454,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon29f6fc360c03
+DECL|enum|__anon28d108c00c03
 block|{
 DECL|enumerator|GIMP_MOTION_MODE_EXACT
 name|GIMP_MOTION_MODE_EXACT
@@ -478,7 +478,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon29f6fc360d03
+DECL|enum|__anon28d108c00d03
 block|{
 DECL|enumerator|TRANSFORM_CREATING
 name|TRANSFORM_CREATING

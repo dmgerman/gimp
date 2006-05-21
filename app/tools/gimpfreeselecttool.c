@@ -570,7 +570,14 @@ name|action
 condition|)
 block|{
 case|case
-name|HALT
+name|GIMP_TOOL_ACTION_PAUSE
+case|:
+case|case
+name|GIMP_TOOL_ACTION_RESUME
+case|:
+break|break;
+case|case
+name|GIMP_TOOL_ACTION_HALT
 case|:
 name|GIMP_FREE_SELECT_TOOL
 argument_list|(
@@ -581,8 +588,6 @@ name|num_points
 operator|=
 literal|0
 expr_stmt|;
-break|break;
-default|default:
 break|break;
 block|}
 name|GIMP_TOOL_CLASS

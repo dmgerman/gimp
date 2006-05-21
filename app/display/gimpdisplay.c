@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d9d7b40103
+DECL|enum|__anon28a3e4230103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1475,7 +1475,7 @@ name|image
 operator|->
 name|gimp
 argument_list|,
-name|HALT
+name|GIMP_TOOL_ACTION_HALT
 argument_list|,
 name|display
 argument_list|)
@@ -1742,7 +1742,7 @@ name|image
 operator|->
 name|gimp
 argument_list|,
-name|HALT
+name|GIMP_TOOL_ACTION_HALT
 argument_list|,
 name|display
 argument_list|)

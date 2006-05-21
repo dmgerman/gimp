@@ -592,14 +592,14 @@ name|action
 condition|)
 block|{
 case|case
-name|PAUSE
+name|GIMP_TOOL_ACTION_PAUSE
 case|:
 case|case
-name|RESUME
+name|GIMP_TOOL_ACTION_RESUME
 case|:
 break|break;
 case|case
-name|HALT
+name|GIMP_TOOL_ACTION_HALT
 case|:
 name|gimp_measure_tool_halt
 argument_list|(
@@ -609,8 +609,6 @@ name|tool
 argument_list|)
 argument_list|)
 expr_stmt|;
-break|break;
-default|default:
 break|break;
 block|}
 name|GIMP_TOOL_CLASS

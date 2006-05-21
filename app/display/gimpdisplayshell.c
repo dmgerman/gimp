@@ -263,7 +263,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon295a3c960103
+DECL|enum|__anon2a2076ac0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -276,7 +276,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon295a3c960203
+DECL|enum|__anon2a2076ac0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -6025,7 +6025,7 @@ name|image
 operator|->
 name|gimp
 argument_list|,
-name|PAUSE
+name|GIMP_TOOL_ACTION_PAUSE
 argument_list|,
 name|shell
 operator|->
@@ -6102,7 +6102,7 @@ name|image
 operator|->
 name|gimp
 argument_list|,
-name|RESUME
+name|GIMP_TOOL_ACTION_RESUME
 argument_list|,
 name|shell
 operator|->

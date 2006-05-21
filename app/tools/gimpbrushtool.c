@@ -1143,7 +1143,14 @@ name|action
 condition|)
 block|{
 case|case
-name|HALT
+name|GIMP_TOOL_ACTION_PAUSE
+case|:
+case|case
+name|GIMP_TOOL_ACTION_RESUME
+case|:
+break|break;
+case|case
+name|GIMP_TOOL_ACTION_HALT
 case|:
 name|gimp_paint_core_paint
 argument_list|(
@@ -1183,8 +1190,6 @@ comment|/*  HALT means the current display is going to go away (TM),          * 
 block|GSList *list;          for (list = display_list; list; list = g_slist_next (list))           {             GimpDisplay *tmp_disp = list->data;              if (tmp_disp != display&& tmp_disp->image == display->image)               {                 tool->display = tmp_disp;                 break;               }           }       }
 endif|#
 directive|endif
-break|break;
-default|default:
 break|break;
 block|}
 name|GIMP_TOOL_CLASS

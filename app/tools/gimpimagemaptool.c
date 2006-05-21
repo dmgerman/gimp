@@ -1361,7 +1361,14 @@ name|action
 condition|)
 block|{
 case|case
-name|HALT
+name|GIMP_TOOL_ACTION_PAUSE
+case|:
+case|case
+name|GIMP_TOOL_ACTION_RESUME
+case|:
+break|break;
+case|case
+name|GIMP_TOOL_ACTION_HALT
 case|:
 if|if
 condition|(
@@ -1381,8 +1388,6 @@ argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|)
 expr_stmt|;
-break|break;
-default|default:
 break|break;
 block|}
 name|GIMP_TOOL_CLASS

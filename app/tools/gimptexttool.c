@@ -1048,14 +1048,14 @@ name|action
 condition|)
 block|{
 case|case
-name|PAUSE
+name|GIMP_TOOL_ACTION_PAUSE
 case|:
 case|case
-name|RESUME
+name|GIMP_TOOL_ACTION_RESUME
 case|:
 break|break;
 case|case
-name|HALT
+name|GIMP_TOOL_ACTION_HALT
 case|:
 name|gimp_text_tool_set_drawable
 argument_list|(

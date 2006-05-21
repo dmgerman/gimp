@@ -144,7 +144,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c787a7e0108
+DECL|struct|__anon27b260d90108
 block|{
 DECL|member|width
 name|gint
@@ -988,7 +988,14 @@ name|action
 condition|)
 block|{
 case|case
-name|HALT
+name|GIMP_TOOL_ACTION_PAUSE
+case|:
+case|case
+name|GIMP_TOOL_ACTION_RESUME
+case|:
+break|break;
+case|case
+name|GIMP_TOOL_ACTION_HALT
 case|:
 block|{
 name|GList
@@ -1077,8 +1084,6 @@ name|NULL
 expr_stmt|;
 block|}
 block|}
-break|break;
-default|default:
 break|break;
 block|}
 name|GIMP_TOOL_CLASS
@@ -1558,7 +1563,7 @@ name|gimp_tool_control
 argument_list|(
 name|tool
 argument_list|,
-name|HALT
+name|GIMP_TOOL_ACTION_HALT
 argument_list|,
 name|display
 argument_list|)
@@ -3127,7 +3132,7 @@ name|gimp_tool_control
 argument_list|(
 name|tool
 argument_list|,
-name|HALT
+name|GIMP_TOOL_ACTION_HALT
 argument_list|,
 name|display
 argument_list|)

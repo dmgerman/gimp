@@ -761,11 +761,11 @@ name|action
 condition|)
 block|{
 case|case
-name|PAUSE
+name|GIMP_TOOL_ACTION_PAUSE
 case|:
 break|break;
 case|case
-name|RESUME
+name|GIMP_TOOL_ACTION_RESUME
 case|:
 name|gimp_rectangle_tool_configure
 argument_list|(
@@ -774,7 +774,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|HALT
+name|GIMP_TOOL_ACTION_HALT
 case|:
 name|gimp_rectangle_tool_response
 argument_list|(
@@ -785,8 +785,6 @@ argument_list|,
 name|rectangle
 argument_list|)
 expr_stmt|;
-break|break;
-default|default:
 break|break;
 block|}
 name|GIMP_TOOL_CLASS
