@@ -1211,6 +1211,20 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|gboolean
+name|gimp_item_is_in_set
+parameter_list|(
+name|GimpItem
+modifier|*
+name|item
+parameter_list|,
+name|GimpItemSet
+name|set
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

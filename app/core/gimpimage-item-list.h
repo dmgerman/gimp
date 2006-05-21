@@ -6,23 +6,27 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_ITEM_LINKED_H__
+name|__GIMP_IMAGE_ITEM_LIST_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_ITEM_LINKED_H__
+DECL|macro|__GIMP_IMAGE_ITEM_LIST_H__
 define|#
 directive|define
-name|__GIMP_ITEM_LINKED_H__
+name|__GIMP_IMAGE_ITEM_LIST_H__
 end_define
 
 begin_function_decl
 name|void
-name|gimp_item_linked_translate
+name|gimp_image_item_list_translate
 parameter_list|(
-name|GimpItem
+name|GimpImage
 modifier|*
-name|item
+name|image
+parameter_list|,
+name|GList
+modifier|*
+name|list
 parameter_list|,
 name|gint
 name|offset_x
@@ -38,11 +42,15 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_item_linked_flip
+name|gimp_image_item_list_flip
 parameter_list|(
-name|GimpItem
+name|GimpImage
 modifier|*
-name|item
+name|image
+parameter_list|,
+name|GList
+modifier|*
+name|list
 parameter_list|,
 name|GimpContext
 modifier|*
@@ -62,11 +70,15 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_item_linked_rotate
+name|gimp_image_item_list_rotate
 parameter_list|(
-name|GimpItem
+name|GimpImage
 modifier|*
-name|item
+name|image
+parameter_list|,
+name|GList
+modifier|*
+name|list
 parameter_list|,
 name|GimpContext
 modifier|*
@@ -89,11 +101,15 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_item_linked_transform
+name|gimp_image_item_list_transform
 parameter_list|(
-name|GimpItem
+name|GimpImage
 modifier|*
-name|item
+name|image
+parameter_list|,
+name|GList
+modifier|*
+name|list
 parameter_list|,
 name|GimpContext
 modifier|*
@@ -126,13 +142,63 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_image_item_list_align
+parameter_list|(
+name|GimpImage
+modifier|*
+name|image
+parameter_list|,
+name|GList
+modifier|*
+name|list
+parameter_list|,
+name|GimpAlignmentType
+name|alignment
+parameter_list|,
+name|GimpItem
+modifier|*
+name|reference
+parameter_list|,
+name|GimpAlignmentType
+name|reference_alignment
+parameter_list|,
+name|gint
+name|offset
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GList
+modifier|*
+name|gimp_image_item_list_get_list
+parameter_list|(
+name|GimpImage
+modifier|*
+name|image
+parameter_list|,
+name|GimpItem
+modifier|*
+name|exclude
+parameter_list|,
+name|GimpItemTypeMask
+name|type
+parameter_list|,
+name|GimpItemSet
+name|set
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMP_ITEM_LINKED_H__ */
+comment|/* __GIMP_IMAGE_ITEM_LIST_H__ */
 end_comment
 
 end_unit
