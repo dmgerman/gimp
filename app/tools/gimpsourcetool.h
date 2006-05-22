@@ -117,6 +117,14 @@ name|GimpDisplay
 modifier|*
 name|src_display
 decl_stmt|;
+DECL|member|src_x
+name|gint
+name|src_x
+decl_stmt|;
+DECL|member|src_y
+name|gint
+name|src_y
+decl_stmt|;
 block|}
 struct|;
 end_struct
