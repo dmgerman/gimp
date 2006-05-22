@@ -969,13 +969,6 @@ name|gint
 name|n_args
 parameter_list|)
 block|{
-name|g_printerr
-argument_list|(
-literal|"%s\n"
-argument_list|,
-name|G_STRFUNC
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|args
