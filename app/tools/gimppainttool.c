@@ -1181,15 +1181,6 @@ operator|->
 name|core
 argument_list|)
 expr_stmt|;
-if|#
-directive|if
-literal|0
-comment|/*  evil hack i'm thinking about...  --mitch  */
-block|{
-comment|/*  HALT means the current display is going to go away (TM),          *  so try to find another display of the same image to make          *  straight line drawing continue to work...          */
-block|GSList *list;          for (list = display_list; list; list = g_slist_next (list))           {             GimpDisplay *tmp_disp = list->data;              if (tmp_disp != display&& tmp_disp->image == display->image)               {                 tool->display = tmp_disp;                 break;               }           }       }
-endif|#
-directive|endif
 break|break;
 block|}
 name|GIMP_TOOL_CLASS
