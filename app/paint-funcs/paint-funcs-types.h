@@ -49,7 +49,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27dfca720103
+DECL|enum|__anon2bc173370103
 block|{
 DECL|enumerator|INITIAL_CHANNEL_MASK
 name|INITIAL_CHANNEL_MASK
@@ -83,7 +83,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27dfca720203
+DECL|enum|__anon2bc173370203
 block|{
 DECL|enumerator|NO_COMBINATION
 name|NO_COMBINATION
@@ -98,6 +98,9 @@ name|COMBINE_INDEXED_INDEXED_A
 block|,
 DECL|enumerator|COMBINE_INDEXED_A_INDEXED_A
 name|COMBINE_INDEXED_A_INDEXED_A
+block|,
+DECL|enumerator|COMBINE_INTEN_A_INDEXED
+name|COMBINE_INTEN_A_INDEXED
 block|,
 DECL|enumerator|COMBINE_INTEN_A_INDEXED_A
 name|COMBINE_INTEN_A_INDEXED_A

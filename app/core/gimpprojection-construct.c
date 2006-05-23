@@ -245,6 +245,10 @@ parameter_list|,
 name|PixelRegion
 modifier|*
 name|dest
+parameter_list|,
+name|PixelRegion
+modifier|*
+name|mask
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -877,7 +881,6 @@ case|:
 case|case
 name|GIMP_GRAY_IMAGE
 case|:
-comment|/* no mask possible */
 name|project_intensity
 argument_list|(
 name|proj
@@ -919,7 +922,6 @@ break|break;
 case|case
 name|GIMP_INDEXED_IMAGE
 case|:
-comment|/* no mask possible */
 name|project_indexed
 argument_list|(
 name|proj
@@ -931,6 +933,8 @@ name|src2PR
 argument_list|,
 operator|&
 name|src1PR
+argument_list|,
+name|mask
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1561,7 +1565,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|project_indexed (GimpProjection * proj,GimpLayer * layer,PixelRegion * src,PixelRegion * dest)
+DECL|function|project_indexed (GimpProjection * proj,GimpLayer * layer,PixelRegion * src,PixelRegion * dest,PixelRegion * mask)
 name|project_indexed
 parameter_list|(
 name|GimpProjection
@@ -1579,6 +1583,10 @@ parameter_list|,
 name|PixelRegion
 modifier|*
 name|dest
+parameter_list|,
+name|PixelRegion
+modifier|*
+name|mask
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -1605,7 +1613,7 @@ name|src
 argument_list|,
 name|dest
 argument_list|,
-name|NULL
+name|mask
 argument_list|,
 name|proj
 operator|->
@@ -1633,11 +1641,39 @@ name|INITIAL_INDEXED
 argument_list|)
 expr_stmt|;
 else|else
-name|g_warning
+name|combine_regions
 argument_list|(
-literal|"%s: unable to project indexed image."
+name|dest
 argument_list|,
-name|G_STRFUNC
+name|src
+argument_list|,
+name|dest
+argument_list|,
+name|mask
+argument_list|,
+name|proj
+operator|->
+name|image
+operator|->
+name|cmap
+argument_list|,
+name|layer
+operator|->
+name|opacity
+operator|*
+literal|255.999
+argument_list|,
+name|layer
+operator|->
+name|mode
+argument_list|,
+name|proj
+operator|->
+name|image
+operator|->
+name|visible
+argument_list|,
+name|COMBINE_INTEN_A_INDEXED
 argument_list|)
 expr_stmt|;
 block|}
