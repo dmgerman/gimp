@@ -2749,10 +2749,9 @@ name|n_colors
 operator|+=
 literal|1
 expr_stmt|;
-comment|/*  will make the palette dirty too  */
-name|gimp_object_name_changed
+name|gimp_data_dirty
 argument_list|(
-name|GIMP_OBJECT
+name|GIMP_DATA
 argument_list|(
 name|palette
 argument_list|)
@@ -2884,10 +2883,9 @@ name|pos
 operator|++
 expr_stmt|;
 block|}
-comment|/*  will make the palette dirty too  */
-name|gimp_object_name_changed
+name|gimp_data_dirty
 argument_list|(
-name|GIMP_OBJECT
+name|GIMP_DATA
 argument_list|(
 name|palette
 argument_list|)

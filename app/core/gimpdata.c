@@ -99,7 +99,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6fb5df0103
+DECL|enum|__anon27496a6b0103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY
@@ -112,7 +112,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6fb5df0203
+DECL|enum|__anon27496a6b0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -234,18 +234,6 @@ parameter_list|,
 name|GParamSpec
 modifier|*
 name|pspec
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_data_name_changed
-parameter_list|(
-name|GimpObject
-modifier|*
-name|object
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -484,12 +472,6 @@ operator|->
 name|get_property
 operator|=
 name|gimp_data_get_property
-expr_stmt|;
-name|gimp_object_class
-operator|->
-name|name_changed
-operator|=
-name|gimp_data_name_changed
 expr_stmt|;
 name|gimp_object_class
 operator|->
@@ -1036,47 +1018,6 @@ end_function
 
 begin_function
 specifier|static
-name|void
-DECL|function|gimp_data_name_changed (GimpObject * object)
-name|gimp_data_name_changed
-parameter_list|(
-name|GimpObject
-modifier|*
-name|object
-parameter_list|)
-block|{
-if|if
-condition|(
-name|GIMP_OBJECT_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|name_changed
-condition|)
-name|GIMP_OBJECT_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|name_changed
-argument_list|(
-name|object
-argument_list|)
-expr_stmt|;
-name|gimp_data_dirty
-argument_list|(
-name|GIMP_DATA
-argument_list|(
-name|object
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
 name|gint64
 DECL|function|gimp_data_get_memsize (GimpObject * object,gint64 * gui_size)
 name|gimp_data_get_memsize
@@ -1159,6 +1100,14 @@ expr_stmt|;
 name|gimp_viewable_invalidate_preview
 argument_list|(
 name|GIMP_VIEWABLE
+argument_list|(
+name|data
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_object_name_changed
+argument_list|(
+name|GIMP_OBJECT
 argument_list|(
 name|data
 argument_list|)
