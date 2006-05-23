@@ -626,7 +626,7 @@ name|tool
 argument_list|,
 name|action
 argument_list|,
-name|gdisp
+name|display
 argument_list|)
 expr_stmt|;
 name|GIMP_TOOL_CLASS
