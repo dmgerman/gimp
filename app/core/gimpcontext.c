@@ -1299,7 +1299,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7ab5600103
+DECL|enum|__anon27a8f79e0103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1313,7 +1313,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7ab5600203
+DECL|enum|__anon27a8f79e0203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0
@@ -7594,7 +7594,7 @@ name|tool_name
 operator|=
 name|g_strdup
 argument_list|(
-literal|"gimp-rect-select-tool"
+literal|"gimp-new-rect-select-tool"
 argument_list|)
 expr_stmt|;
 name|tool_info

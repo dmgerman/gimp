@@ -447,7 +447,7 @@ argument_list|(
 literal|"_New Rect Select"
 argument_list|)
 argument_list|,
-name|NULL
+literal|"R"
 argument_list|,
 name|NULL
 argument_list|,

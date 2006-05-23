@@ -320,7 +320,7 @@ argument_list|(
 literal|"_Rectangle Select"
 argument_list|)
 argument_list|,
-literal|"R"
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,
