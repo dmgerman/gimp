@@ -508,13 +508,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|tr_tool
-operator|->
-name|dialog
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 

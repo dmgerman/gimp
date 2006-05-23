@@ -683,13 +683,6 @@ name|buf
 argument_list|)
 expr_stmt|;
 block|}
-name|gtk_widget_show
-argument_list|(
-name|tr_tool
-operator|->
-name|dialog
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
