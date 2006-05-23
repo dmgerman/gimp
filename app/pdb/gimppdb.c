@@ -152,7 +152,7 @@ end_function
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c166890103
+DECL|enum|__anon2988aa250103
 block|{
 DECL|enumerator|REGISTER_PROCEDURE
 name|REGISTER_PROCEDURE
@@ -665,7 +665,7 @@ argument_list|,
 name|name
 argument_list|)
 expr_stmt|;
-name|g_hash_table_insert
+name|g_hash_table_replace
 argument_list|(
 name|pdb
 operator|->
@@ -753,7 +753,20 @@ if|if
 condition|(
 name|list
 condition|)
-name|g_hash_table_insert
+block|{
+name|name
+operator|=
+name|gimp_object_get_name
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
+name|list
+operator|->
+name|data
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_hash_table_replace
 argument_list|(
 name|pdb
 operator|->
@@ -767,7 +780,9 @@ argument_list|,
 name|list
 argument_list|)
 expr_stmt|;
+block|}
 else|else
+block|{
 name|g_hash_table_remove
 argument_list|(
 name|pdb
@@ -777,6 +792,7 @@ argument_list|,
 name|name
 argument_list|)
 expr_stmt|;
+block|}
 name|g_object_unref
 argument_list|(
 name|procedure
