@@ -91,7 +91,7 @@ typedef|;
 end_typedef
 
 begin_decl_stmt
-DECL|variable|image_ID_global
+specifier|extern
 name|gint32
 specifier|volatile
 name|image_ID_global
@@ -99,14 +99,14 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|layer_ID_global
+specifier|extern
 name|gint32
 name|layer_ID_global
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|drawable_global
+specifier|extern
 name|GimpDrawable
 modifier|*
 name|drawable_global
@@ -114,28 +114,28 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|undo_touched
+specifier|extern
 name|gboolean
 name|undo_touched
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|load_interactive
+specifier|extern
 name|gboolean
 name|load_interactive
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|display_ID
+specifier|extern
 name|gint32
 name|display_ID
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|image_comment
+specifier|extern
 name|gchar
 modifier|*
 name|image_comment
@@ -209,7 +209,7 @@ name|HAVE_EXIF
 end_ifdef
 
 begin_decl_stmt
-DECL|variable|exif_data
+specifier|extern
 name|ExifData
 modifier|*
 name|exif_data

@@ -102,6 +102,29 @@ directive|include
 file|"jpeg-load.h"
 end_include
 
+begin_decl_stmt
+DECL|variable|image_ID_global
+name|gint32
+specifier|volatile
+name|image_ID_global
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|drawable_global
+name|GimpDrawable
+modifier|*
+name|drawable_global
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|layer_ID_global
+name|gint32
+name|layer_ID_global
+decl_stmt|;
+end_decl_stmt
+
 begin_function
 name|gint32
 DECL|function|load_image (const gchar * filename,GimpRunMode runmode,gboolean preview)
@@ -1828,7 +1851,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27de4cf70108
+DECL|struct|__anon2c5d37180108
 block|{
 DECL|member|pub
 name|struct

@@ -114,7 +114,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b9f5490108
+DECL|struct|__anon2b14c41b0108
 block|{
 DECL|member|quality
 name|gdouble
@@ -171,21 +171,21 @@ typedef|;
 end_typedef
 
 begin_decl_stmt
-DECL|variable|jsvals
+specifier|extern
 name|JpegSaveVals
 name|jsvals
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|orig_image_ID_global
+specifier|extern
 name|gint32
 name|orig_image_ID_global
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|drawable_ID_global
+specifier|extern
 name|gint32
 name|drawable_ID_global
 decl_stmt|;

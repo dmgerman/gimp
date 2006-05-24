@@ -55,6 +55,14 @@ directive|include
 file|"gimpexif.h"
 end_include
 
+begin_decl_stmt
+DECL|variable|exif_data
+name|ExifData
+modifier|*
+name|exif_data
+decl_stmt|;
+end_decl_stmt
+
 begin_comment
 comment|/*  * gimp_metadata_store_exif:  * @image_ID:    the GIMP image to work on.  * @exif_data:   the Exif data that is to be stored.  *  * This function is supposed to load the "gimp-metadata" parasite  * (which is in XMP format), parse it, add the exif information,  * reformat it into XMP, and store the result as the new parasite.  * The infrastructure to do this is not yet available, so for the  * moment it does something much simpler -- it calls upon libexif  * to serialize the exif data, and stores the result in a parasite  * called "exif-data".  */
 end_comment
