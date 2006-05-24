@@ -132,7 +132,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27ed721e0103
+DECL|enum|__anon28f421960103
 block|{
 DECL|enumerator|RAW_RGB
 name|RAW_RGB
@@ -158,7 +158,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27ed721e0203
+DECL|enum|__anon28f421960203
 block|{
 DECL|enumerator|RAW_PALETTE_RGB
 name|RAW_PALETTE_RGB
@@ -176,7 +176,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ed721e0308
+DECL|struct|__anon28f421960308
 block|{
 DECL|member|file_offset
 name|gint32
@@ -217,7 +217,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ed721e0408
+DECL|struct|__anon28f421960408
 block|{
 DECL|member|fp
 name|FILE
@@ -496,9 +496,9 @@ specifier|static
 name|void
 name|palette_callback
 parameter_list|(
-name|GimpFileEntry
+name|GtkFileChooser
 modifier|*
-name|file_entry
+name|button
 parameter_list|,
 name|GimpPreviewArea
 modifier|*
@@ -4182,13 +4182,13 @@ name|GtkWidget
 modifier|*
 name|combo
 decl_stmt|;
+name|GtkWidget
+modifier|*
+name|button
+decl_stmt|;
 name|GtkObject
 modifier|*
 name|adj
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|entry
 decl_stmt|;
 name|gint32
 name|size
@@ -5043,20 +5043,30 @@ argument_list|,
 name|preview
 argument_list|)
 expr_stmt|;
-name|entry
+name|button
 operator|=
-name|gimp_file_entry_new
+name|gtk_file_chooser_button_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Select Palette File to Load"
+literal|"Select Palette File"
+argument_list|)
+argument_list|,
+name|GTK_FILE_CHOOSER_ACTION_OPEN
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|palfile
+condition|)
+name|gtk_file_chooser_set_filename
+argument_list|(
+name|GTK_FILE_CHOOSER
+argument_list|(
+name|button
 argument_list|)
 argument_list|,
 name|palfile
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_table_attach_aligned
@@ -5079,7 +5089,7 @@ literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
-name|entry
+name|button
 argument_list|,
 literal|2
 argument_list|,
@@ -5088,9 +5098,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|entry
+name|button
 argument_list|,
-literal|"filename-changed"
+literal|"selection-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -5434,12 +5444,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|palette_callback (GimpFileEntry * file_entry,GimpPreviewArea * preview)
+DECL|function|palette_callback (GtkFileChooser * button,GimpPreviewArea * preview)
 name|palette_callback
 parameter_list|(
-name|GimpFileEntry
+name|GtkFileChooser
 modifier|*
-name|file_entry
+name|button
 parameter_list|,
 name|GimpPreviewArea
 modifier|*
@@ -5457,9 +5467,9 @@ argument_list|)
 expr_stmt|;
 name|palfile
 operator|=
-name|gimp_file_entry_get_filename
+name|gtk_file_chooser_get_filename
 argument_list|(
-name|file_entry
+name|button
 argument_list|)
 expr_stmt|;
 name|palette_update
