@@ -7242,27 +7242,16 @@ name|vbox2
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|entry
-operator|=
-name|gimp_prop_file_entry_new
+name|prefs_widget_add_aligned
+argument_list|(
+name|gimp_prop_entry_new
 argument_list|(
 name|object
 argument_list|,
 literal|"web-browser"
 argument_list|,
-name|_
-argument_list|(
-literal|"Select Web Browser"
+literal|0
 argument_list|)
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
-name|prefs_widget_add_aligned
-argument_list|(
-name|entry
 argument_list|,
 name|_
 argument_list|(
@@ -8605,7 +8594,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon299f07c20108
+DECL|struct|__anon2a9c8dd20108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -9768,7 +9757,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon299f07c20208
+DECL|struct|__anon2a9c8dd20208
 block|{
 DECL|member|label
 specifier|const
@@ -9968,12 +9957,6 @@ name|row
 operator|++
 control|)
 block|{
-if|#
-directive|if
-literal|0
-block|button = gimp_prop_file_entry_new (color_config,                                            profiles[i].property_name,                                            gettext (profiles[i].fs_label),                                            FALSE, TRUE);
-else|#
-directive|else
 name|button
 operator|=
 name|gimp_prop_file_chooser_button_new
@@ -10000,8 +9983,6 @@ argument_list|,
 name|GTK_FILE_CHOOSER_ACTION_OPEN
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 name|gimp_table_attach_aligned
 argument_list|(
 name|GTK_TABLE
@@ -10675,8 +10656,14 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon299f07c20308
+DECL|struct|__anon2a9c8dd20308
 block|{
+DECL|member|property_name
+specifier|const
+name|gchar
+modifier|*
+name|property_name
+decl_stmt|;
 DECL|member|label
 specifier|const
 name|gchar
@@ -10689,32 +10676,28 @@ name|gchar
 modifier|*
 name|fs_label
 decl_stmt|;
-DECL|member|property_name
-specifier|const
-name|gchar
-modifier|*
-name|property_name
-decl_stmt|;
 block|}
 name|dirs
 index|[]
 init|=
 block|{
 block|{
-name|N_
-argument_list|(
-literal|"Temp folder:"
-argument_list|)
-block|,
-name|N_
-argument_list|(
-literal|"Select Temp Folder"
-argument_list|)
-block|,
 literal|"temp-path"
+block|,
+name|N_
+argument_list|(
+literal|"Temporary folder:"
+argument_list|)
+block|,
+name|N_
+argument_list|(
+literal|"Select Folder for Temporary Files"
+argument_list|)
 block|}
 block|,
 block|{
+literal|"swap-path"
+block|,
 name|N_
 argument_list|(
 literal|"Swap folder:"
@@ -10724,10 +10707,8 @@ name|N_
 argument_list|(
 literal|"Select Swap Folder"
 argument_list|)
-block|,
-literal|"swap-path"
 block|}
-block|,     }
+block|}
 struct|;
 name|table
 operator|=
@@ -10763,9 +10744,9 @@ name|i
 operator|++
 control|)
 block|{
-name|entry
+name|button
 operator|=
-name|gimp_prop_file_entry_new
+name|gimp_prop_file_chooser_button_new
 argument_list|(
 name|object
 argument_list|,
@@ -10786,9 +10767,7 @@ operator|.
 name|fs_label
 argument_list|)
 argument_list|,
-name|TRUE
-argument_list|,
-name|TRUE
+name|GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER
 argument_list|)
 expr_stmt|;
 name|gimp_table_attach_aligned
@@ -10816,7 +10795,7 @@ literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
-name|entry
+name|button
 argument_list|,
 literal|1
 argument_list|,
@@ -10832,7 +10811,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon299f07c20408
+DECL|struct|__anon2a9c8dd20408
 block|{
 DECL|member|tree_label
 specifier|const

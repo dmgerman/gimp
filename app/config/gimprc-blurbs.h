@@ -835,7 +835,7 @@ define|#
 directive|define
 name|SWAP_PATH_BLURB
 define|\
-value|N_("Sets the swap file location. GIMP uses a tile based memory allocation " \    "scheme. The swap file is used to quickly and easily swap tiles out to " \    "disk and back in. Be aware that the swap file can easily get very large " \    "if GIMP is used with large images. " \    "Also, things can get horribly slow if the swap file is created on " \    "a directory that is mounted over NFS.  For these reasons, it may " \    "be desirable to put your swap file in \"/tmp\".")
+value|N_("Sets the swap file location. GIMP uses a tile based memory allocation " \    "scheme. The swap file is used to quickly and easily swap tiles out to " \    "disk and back in. Be aware that the swap file can easily get very large " \    "if GIMP is used with large images. " \    "Also, things can get horribly slow if the swap file is created on " \    "a folder that is mounted over NFS.  For these reasons, it may be " \    "desirable to put your swap file in \"/tmp\".")
 end_define
 
 begin_define
@@ -889,7 +889,7 @@ define|#
 directive|define
 name|TEMP_PATH_BLURB
 define|\
-value|N_("Sets the temporary storage directory. Files will appear here " \    "during the course of running the GIMP.  Most files will disappear " \    "when the GIMP exits, but some files are likely to remain, so it is " \    "best if this directory not be one that is shared by other users.")
+value|N_("Sets the folder for temporary storage. Files will appear here " \    "during the course of running the GIMP.  Most files will disappear " \    "when the GIMP exits, but some files are likely to remain, so it is " \    "best if this folder not be one that is shared by other users.")
 end_define
 
 begin_define

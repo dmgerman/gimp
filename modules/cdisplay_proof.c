@@ -323,7 +323,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d8f02c0103
+DECL|enum|__anon29b490c00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1361,7 +1361,7 @@ argument_list|)
 expr_stmt|;
 name|entry
 operator|=
-name|gimp_prop_file_entry_new
+name|gimp_prop_file_chooser_button_new
 argument_list|(
 name|G_OBJECT
 argument_list|(
@@ -1375,9 +1375,7 @@ argument_list|(
 literal|"Choose an ICC Color Profile"
 argument_list|)
 argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
+name|GTK_FILE_CHOOSER_ACTION_OPEN
 argument_list|)
 expr_stmt|;
 name|gimp_table_attach_aligned
