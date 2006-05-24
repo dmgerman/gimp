@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c6bba50103
+DECL|enum|__anon27dd28dd0103
 block|{
 DECL|enumerator|PATH_CHANGED
 name|PATH_CHANGED
@@ -69,7 +69,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c6bba50203
+DECL|enum|__anon27dd28dd0203
 block|{
 DECL|enumerator|COLUMN_UTF8
 name|COLUMN_UTF8
@@ -976,19 +976,19 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_path_editor_new:  * @filesel_title: The title of the #GtkFileSelection dialog which can be  *                 popped up by the attached #GimpFileSelection.  * @path:          The initial search path.  *  * Creates a new #GimpPathEditor widget.  *  * The elements of the initial search path must be separated with the  * #G_SEARCHPATH_SEPARATOR character.  *  * Returns: A pointer to the new #GimpPathEditor widget.  **/
+comment|/**  * gimp_path_editor_new:  * @title: The title of the #GtkFileChooser dialog which can be popped up.  * @path:  The initial search path.  *  * Creates a new #GimpPathEditor widget.  *  * The elements of the initial search path must be separated with the  * #G_SEARCHPATH_SEPARATOR character.  *  * Returns: A pointer to the new #GimpPathEditor widget.  **/
 end_comment
 
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_path_editor_new (const gchar * filesel_title,const gchar * path)
+DECL|function|gimp_path_editor_new (const gchar * title,const gchar * path)
 name|gimp_path_editor_new
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
-name|filesel_title
+name|title
 parameter_list|,
 specifier|const
 name|gchar
@@ -1002,7 +1002,7 @@ name|editor
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|filesel_title
+name|title
 operator|!=
 name|NULL
 argument_list|,
@@ -1024,7 +1024,7 @@ name|file_entry
 operator|=
 name|gimp_file_entry_new
 argument_list|(
-name|filesel_title
+name|title
 argument_list|,
 literal|""
 argument_list|,

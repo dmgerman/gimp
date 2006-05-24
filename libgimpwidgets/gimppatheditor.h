@@ -263,7 +263,7 @@ parameter_list|(
 specifier|const
 name|gchar
 modifier|*
-name|filesel_title
+name|title
 parameter_list|,
 specifier|const
 name|gchar
