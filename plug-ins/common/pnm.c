@@ -8,7 +8,7 @@ comment|/* $Id$ */
 end_comment
 
 begin_comment
-comment|/*  * The pnm reading and writing code was written from scratch by Erik Nygren  * (nygren@mit.edu) based on the specifications in the man pages and  * does not contain any code from the netpbm or pbmplus distributions.  */
+comment|/*  * The pnm reading and writing code was written from scratch by Erik Nygren  * (nygren@mit.edu) based on the specifications in the man pages and  * does not contain any code from the netpbm or pbmplus distributions.  *  * 2006: pbm saving written by Martin K Collins (martin@mkcollins.org)  */
 end_comment
 
 begin_include
@@ -150,6 +150,14 @@ define|#
 directive|define
 name|PNM_SAVE_PROC
 value|"file-pnm-save"
+end_define
+
+begin_define
+DECL|macro|PBM_SAVE_PROC
+define|#
+directive|define
+name|PBM_SAVE_PROC
+value|"file-pbm-save"
 end_define
 
 begin_define
@@ -349,7 +357,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1c8b7b0108
+DECL|struct|__anon2799271c0108
 block|{
 DECL|member|raw
 name|gint
@@ -380,7 +388,7 @@ DECL|macro|SAVE_COMMENT_STRING
 define|#
 directive|define
 name|SAVE_COMMENT_STRING
-value|"# CREATOR: The GIMP's PNM Filter Version 1.0\n"
+value|"# CREATOR: The GIMP's PNM Filter Version 1.1\n"
 end_define
 
 begin_comment
@@ -455,6 +463,9 @@ name|image_ID
 parameter_list|,
 name|gint32
 name|drawable_ID
+parameter_list|,
+name|gboolean
+name|pbm
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -549,6 +560,38 @@ begin_function_decl
 specifier|static
 name|void
 name|pnmsaverow_raw
+parameter_list|(
+name|PNMRowInfo
+modifier|*
+name|ri
+parameter_list|,
+name|guchar
+modifier|*
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|pnmsaverow_raw_pbm
+parameter_list|(
+name|PNMRowInfo
+modifier|*
+name|ri
+parameter_list|,
+name|guchar
+modifier|*
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|pnmsaverow_ascii_pbm
 parameter_list|(
 name|PNMRowInfo
 modifier|*
@@ -1121,6 +1164,41 @@ argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
+name|PBM_SAVE_PROC
+argument_list|,
+literal|"saves files in the pnm file format"
+argument_list|,
+literal|"PBM saving produces mono images without transparency."
+argument_list|,
+literal|"Martin K Collins"
+argument_list|,
+literal|"Erik Nygren"
+argument_list|,
+literal|"2006"
+argument_list|,
+name|N_
+argument_list|(
+literal|"PBM image"
+argument_list|)
+argument_list|,
+literal|"RGB, GRAY, INDEXED"
+argument_list|,
+name|GIMP_PLUGIN
+argument_list|,
+name|G_N_ELEMENTS
+argument_list|(
+name|save_args
+argument_list|)
+argument_list|,
+literal|0
+argument_list|,
+name|save_args
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_install_procedure
+argument_list|(
 name|PGM_SAVE_PROC
 argument_list|,
 literal|"saves files in the pnm file format"
@@ -1191,6 +1269,13 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_file_handler_mime
 argument_list|(
+name|PBM_SAVE_PROC
+argument_list|,
+literal|"image/x-portable-bitmap"
+argument_list|)
+expr_stmt|;
+name|gimp_register_file_handler_mime
+argument_list|(
 name|PGM_SAVE_PROC
 argument_list|,
 literal|"image/x-portable-graymap"
@@ -1201,6 +1286,15 @@ argument_list|(
 name|PPM_SAVE_PROC
 argument_list|,
 literal|"image/x-portable-pixmap"
+argument_list|)
+expr_stmt|;
+name|gimp_register_save_handler
+argument_list|(
+name|PBM_SAVE_PROC
+argument_list|,
+literal|"pbm"
+argument_list|,
+literal|""
 argument_list|)
 expr_stmt|;
 name|gimp_register_save_handler
@@ -1279,6 +1373,12 @@ name|export
 init|=
 name|GIMP_EXPORT_CANCEL
 decl_stmt|;
+name|gboolean
+name|pbm
+init|=
+name|FALSE
+decl_stmt|;
+comment|/* flag for PBM output */
 name|run_mode
 operator|=
 name|param
@@ -1407,6 +1507,15 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
+name|PBM_SAVE_PROC
+argument_list|)
+operator|==
+literal|0
+operator|||
+name|strcmp
+argument_list|(
+name|name
+argument_list|,
 name|PGM_SAVE_PROC
 argument_list|)
 operator|==
@@ -1474,6 +1583,7 @@ argument_list|)
 operator|==
 literal|0
 condition|)
+block|{
 name|export
 operator|=
 name|gimp_export_image
@@ -1486,15 +1596,48 @@ name|drawable_ID
 argument_list|,
 literal|"PNM"
 argument_list|,
-operator|(
 name|GIMP_EXPORT_CAN_HANDLE_RGB
 operator||
 name|GIMP_EXPORT_CAN_HANDLE_GRAY
 operator||
 name|GIMP_EXPORT_CAN_HANDLE_INDEXED
-operator|)
 argument_list|)
 expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|name
+argument_list|,
+name|PBM_SAVE_PROC
+argument_list|)
+operator|==
+literal|0
+condition|)
+block|{
+name|export
+operator|=
+name|gimp_export_image
+argument_list|(
+operator|&
+name|image_ID
+argument_list|,
+operator|&
+name|drawable_ID
+argument_list|,
+literal|"PBM"
+argument_list|,
+name|GIMP_EXPORT_CAN_HANDLE_BITMAP
+argument_list|)
+expr_stmt|;
+name|pbm
+operator|=
+name|TRUE
+expr_stmt|;
+comment|/* gimp has no mono image type so hack it */
+block|}
 elseif|else
 if|if
 condition|(
@@ -1507,6 +1650,7 @@ argument_list|)
 operator|==
 literal|0
 condition|)
+block|{
 name|export
 operator|=
 name|gimp_export_image
@@ -1519,12 +1663,12 @@ name|drawable_ID
 argument_list|,
 literal|"PGM"
 argument_list|,
-operator|(
 name|GIMP_EXPORT_CAN_HANDLE_GRAY
-operator|)
 argument_list|)
 expr_stmt|;
+block|}
 else|else
+block|{
 name|export
 operator|=
 name|gimp_export_image
@@ -1537,13 +1681,12 @@ name|drawable_ID
 argument_list|,
 literal|"PPM"
 argument_list|,
-operator|(
 name|GIMP_EXPORT_CAN_HANDLE_RGB
 operator||
 name|GIMP_EXPORT_CAN_HANDLE_INDEXED
-operator|)
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|export
@@ -1674,6 +1817,8 @@ argument_list|,
 name|image_ID
 argument_list|,
 name|drawable_ID
+argument_list|,
+name|pbm
 argument_list|)
 condition|)
 block|{
@@ -1949,7 +2094,7 @@ name|jmpbuf
 argument_list|,
 name|_
 argument_list|(
-literal|"PNM: Premature end of file."
+literal|"Premature end of file."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1975,7 +2120,7 @@ name|jmpbuf
 argument_list|,
 name|_
 argument_list|(
-literal|"PNM: Invalid file."
+literal|"Invalid file."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2104,7 +2249,7 @@ name|jmpbuf
 argument_list|,
 name|_
 argument_list|(
-literal|"PNM: Premature end of file."
+literal|"Premature end of file."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2139,7 +2284,7 @@ name|jmpbuf
 argument_list|,
 name|_
 argument_list|(
-literal|"PNM: Invalid X resolution."
+literal|"Invalid X resolution."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2165,7 +2310,7 @@ name|jmpbuf
 argument_list|,
 name|_
 argument_list|(
-literal|"PNM: Premature end of file."
+literal|"Premature end of file."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2200,7 +2345,7 @@ name|jmpbuf
 argument_list|,
 name|_
 argument_list|(
-literal|"PNM: Invalid Y resolution."
+literal|"Invalid Y resolution."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2236,7 +2381,7 @@ name|jmpbuf
 argument_list|,
 name|_
 argument_list|(
-literal|"PNM: Premature end of file."
+literal|"Premature end of file."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2288,7 +2433,7 @@ name|jmpbuf
 argument_list|,
 name|_
 argument_list|(
-literal|"PNM: Invalid maximum value."
+literal|"Invalid maximum value."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2625,20 +2770,18 @@ operator|++
 control|)
 block|{
 comment|/* Truncated files will just have all 0's at the end of the images */
-name|CHECK_FOR_ERROR
-argument_list|(
+if|if
+condition|(
 name|pnmscanner_eof
 argument_list|(
 name|scan
 argument_list|)
-argument_list|,
-name|info
-operator|->
-name|jmpbuf
-argument_list|,
+condition|)
+name|g_message
+argument_list|(
 name|_
 argument_list|(
-literal|"PNM: Premature end of file."
+literal|"Premature end of file."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2799,6 +2942,11 @@ operator|+=
 name|scanlines
 expr_stmt|;
 block|}
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 name|g_free
 argument_list|(
 name|data
@@ -2968,7 +3116,7 @@ name|jmpbuf
 argument_list|,
 name|_
 argument_list|(
-literal|"PNM: Premature end of file."
+literal|"Premature end of file."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3092,6 +3240,11 @@ operator|+=
 name|scanlines
 expr_stmt|;
 block|}
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 name|g_free
 argument_list|(
 name|data
@@ -3285,7 +3438,7 @@ name|jmpbuf
 argument_list|,
 name|_
 argument_list|(
-literal|"PNM: Error reading file."
+literal|"Error reading file."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3398,6 +3551,11 @@ operator|+=
 name|scanlines
 expr_stmt|;
 block|}
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 name|g_free
 argument_list|(
 name|buf
@@ -3406,6 +3564,309 @@ expr_stmt|;
 name|g_free
 argument_list|(
 name|data
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_comment
+comment|/* Writes out mono raw rows */
+end_comment
+
+begin_function
+specifier|static
+name|void
+DECL|function|pnmsaverow_raw_pbm (PNMRowInfo * ri,guchar * data)
+name|pnmsaverow_raw_pbm
+parameter_list|(
+name|PNMRowInfo
+modifier|*
+name|ri
+parameter_list|,
+name|guchar
+modifier|*
+name|data
+parameter_list|)
+block|{
+name|gint
+name|b
+decl_stmt|,
+name|i
+decl_stmt|,
+name|p
+init|=
+literal|0
+decl_stmt|;
+name|gchar
+modifier|*
+name|rbcur
+init|=
+name|ri
+operator|->
+name|rowbuf
+decl_stmt|;
+name|gint32
+name|len
+init|=
+operator|(
+name|int
+operator|)
+name|ceil
+argument_list|(
+call|(
+name|double
+call|)
+argument_list|(
+name|ri
+operator|->
+name|xres
+argument_list|)
+operator|/
+literal|8.0
+argument_list|)
+decl_stmt|;
+for|for
+control|(
+name|b
+operator|=
+literal|0
+init|;
+name|b
+operator|<
+name|len
+condition|;
+name|b
+operator|++
+control|)
+comment|/* each output byte */
+block|{
+operator|*
+operator|(
+name|rbcur
+operator|+
+name|b
+operator|)
+operator|=
+literal|0
+expr_stmt|;
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+literal|8
+condition|;
+name|i
+operator|++
+control|)
+comment|/* each bit in this byte */
+block|{
+if|if
+condition|(
+name|p
+operator|>=
+name|ri
+operator|->
+name|xres
+condition|)
+break|break;
+if|if
+condition|(
+operator|*
+operator|(
+name|data
+operator|+
+name|p
+operator|)
+operator|==
+literal|0
+condition|)
+operator|*
+operator|(
+name|rbcur
+operator|+
+name|b
+operator|)
+operator||=
+call|(
+name|char
+call|)
+argument_list|(
+literal|1
+operator|<<
+operator|(
+literal|7
+operator|-
+name|i
+operator|)
+argument_list|)
+expr_stmt|;
+name|p
+operator|++
+expr_stmt|;
+block|}
+block|}
+name|write
+argument_list|(
+name|ri
+operator|->
+name|fd
+argument_list|,
+name|ri
+operator|->
+name|rowbuf
+argument_list|,
+name|len
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_comment
+comment|/* Writes out mono ascii rows */
+end_comment
+
+begin_function
+specifier|static
+name|void
+DECL|function|pnmsaverow_ascii_pbm (PNMRowInfo * ri,guchar * data)
+name|pnmsaverow_ascii_pbm
+parameter_list|(
+name|PNMRowInfo
+modifier|*
+name|ri
+parameter_list|,
+name|guchar
+modifier|*
+name|data
+parameter_list|)
+block|{
+specifier|static
+name|gint
+name|line_len
+init|=
+literal|0
+decl_stmt|;
+comment|/* ascii pbm lines must be<= 70 chars long */
+name|gint32
+name|len
+init|=
+literal|0
+decl_stmt|;
+name|gint
+name|i
+decl_stmt|;
+name|gchar
+modifier|*
+name|rbcur
+init|=
+name|ri
+operator|->
+name|rowbuf
+decl_stmt|;
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+name|ri
+operator|->
+name|xres
+condition|;
+name|i
+operator|++
+control|)
+block|{
+if|if
+condition|(
+name|line_len
+operator|>
+literal|69
+condition|)
+block|{
+operator|*
+operator|(
+name|rbcur
+operator|+
+name|i
+operator|)
+operator|=
+literal|'\n'
+expr_stmt|;
+name|line_len
+operator|=
+literal|0
+expr_stmt|;
+name|len
+operator|++
+expr_stmt|;
+name|rbcur
+operator|++
+expr_stmt|;
+block|}
+if|if
+condition|(
+operator|*
+operator|(
+name|data
+operator|+
+name|i
+operator|)
+operator|==
+literal|0
+condition|)
+operator|*
+operator|(
+name|rbcur
+operator|+
+name|i
+operator|)
+operator|=
+literal|'1'
+expr_stmt|;
+else|else
+operator|*
+operator|(
+name|rbcur
+operator|+
+name|i
+operator|)
+operator|=
+literal|'0'
+expr_stmt|;
+name|line_len
+operator|++
+expr_stmt|;
+name|len
+operator|++
+expr_stmt|;
+block|}
+operator|*
+operator|(
+name|rbcur
+operator|+
+name|i
+operator|)
+operator|=
+literal|'\n'
+expr_stmt|;
+name|write
+argument_list|(
+name|ri
+operator|->
+name|fd
+argument_list|,
+name|ri
+operator|->
+name|rowbuf
+argument_list|,
+name|len
 argument_list|)
 expr_stmt|;
 block|}
@@ -3830,7 +4291,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|save_image (const gchar * filename,gint32 image_ID,gint32 drawable_ID)
+DECL|function|save_image (const gchar * filename,gint32 image_ID,gint32 drawable_ID,gboolean pbm)
 name|save_image
 parameter_list|(
 specifier|const
@@ -3843,6 +4304,9 @@ name|image_ID
 parameter_list|,
 name|gint32
 name|drawable_ID
+parameter_list|,
+name|gboolean
+name|pbm
 parameter_list|)
 block|{
 name|GimpPixelRgn
@@ -3982,7 +4446,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"PNM save cannot handle images with alpha channels."
+literal|"Cannot save images with alpha channel."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4072,6 +4536,47 @@ name|raw
 operator|==
 name|FALSE
 condition|)
+block|{
+if|if
+condition|(
+name|pbm
+condition|)
+block|{
+name|write
+argument_list|(
+name|fd
+argument_list|,
+literal|"P1\n"
+argument_list|,
+literal|3
+argument_list|)
+expr_stmt|;
+name|np
+operator|=
+literal|0
+expr_stmt|;
+name|rowbufsize
+operator|=
+name|xres
+operator|+
+call|(
+name|int
+call|)
+argument_list|(
+name|xres
+operator|/
+literal|70
+argument_list|)
+operator|+
+literal|1
+expr_stmt|;
+name|saverow
+operator|=
+name|pnmsaverow_ascii_pbm
+expr_stmt|;
+block|}
+else|else
+block|{
 switch|switch
 condition|(
 name|drawable_type
@@ -4168,6 +4673,8 @@ return|return
 name|FALSE
 return|;
 block|}
+block|}
+block|}
 elseif|else
 if|if
 condition|(
@@ -4177,6 +4684,49 @@ name|raw
 operator|==
 name|TRUE
 condition|)
+block|{
+if|if
+condition|(
+name|pbm
+condition|)
+block|{
+name|write
+argument_list|(
+name|fd
+argument_list|,
+literal|"P4\n"
+argument_list|,
+literal|3
+argument_list|)
+expr_stmt|;
+name|np
+operator|=
+literal|0
+expr_stmt|;
+name|rowbufsize
+operator|=
+operator|(
+name|int
+operator|)
+name|ceil
+argument_list|(
+call|(
+name|double
+call|)
+argument_list|(
+name|xres
+argument_list|)
+operator|/
+literal|8.0
+argument_list|)
+expr_stmt|;
+name|saverow
+operator|=
+name|pnmsaverow_raw_pbm
+expr_stmt|;
+block|}
+else|else
+block|{
 switch|switch
 condition|(
 name|drawable_type
@@ -4271,11 +4821,16 @@ return|return
 name|FALSE
 return|;
 block|}
+block|}
+block|}
 if|if
 condition|(
 name|drawable_type
 operator|==
 name|GIMP_INDEXED_IMAGE
+operator|&&
+operator|!
+name|pbm
 condition|)
 block|{
 name|gint
@@ -4392,6 +4947,22 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* write out resolution and maxval */
+if|if
+condition|(
+name|pbm
+condition|)
+name|sprintf
+argument_list|(
+name|buf
+argument_list|,
+literal|"%d %d\n"
+argument_list|,
+name|xres
+argument_list|,
+name|yres
+argument_list|)
+expr_stmt|;
+else|else
 name|sprintf
 argument_list|(
 name|buf
@@ -4538,7 +5109,13 @@ name|d
 operator|+=
 name|xres
 operator|*
+operator|(
 name|np
+condition|?
+name|np
+else|:
+literal|1
+operator|)
 expr_stmt|;
 if|if
 condition|(
@@ -4564,6 +5141,11 @@ name|yres
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 comment|/* close the file */
 name|close
 argument_list|(
@@ -5150,7 +5732,7 @@ if|if
 condition|(
 name|s
 operator|->
-name|inbufsize
+name|inbufpos
 operator|>
 name|s
 operator|->
