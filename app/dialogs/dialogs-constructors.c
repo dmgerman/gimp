@@ -2530,9 +2530,11 @@ name|index
 decl_stmt|;
 name|index
 operator|=
-name|gimp_colormap_editor_col_index
+name|gimp_colormap_editor_get_index
 argument_list|(
 name|editor
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_image_get_colormap_entry
