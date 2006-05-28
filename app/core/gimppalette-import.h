@@ -58,6 +58,9 @@ name|n_colors
 parameter_list|,
 name|gint
 name|treshold
+parameter_list|,
+name|gboolean
+name|selection_only
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -98,6 +101,9 @@ name|n_colors
 parameter_list|,
 name|gint
 name|threshold
+parameter_list|,
+name|gboolean
+name|selection_only
 parameter_list|)
 function_decl|;
 end_function_decl
