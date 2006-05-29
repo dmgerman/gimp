@@ -418,9 +418,10 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|moveto (FT_Vector * to,gpointer data)
+DECL|function|moveto (const FT_Vector * to,gpointer data)
 name|moveto
 parameter_list|(
+specifier|const
 name|FT_Vector
 modifier|*
 name|to
@@ -433,10 +434,6 @@ name|RenderContext
 modifier|*
 name|context
 init|=
-operator|(
-name|RenderContext
-operator|*
-operator|)
 name|data
 decl_stmt|;
 name|GimpCoords
@@ -524,9 +521,10 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|lineto (FT_Vector * to,gpointer data)
+DECL|function|lineto (const FT_Vector * to,gpointer data)
 name|lineto
 parameter_list|(
+specifier|const
 name|FT_Vector
 modifier|*
 name|to
@@ -539,10 +537,6 @@ name|RenderContext
 modifier|*
 name|context
 init|=
-operator|(
-name|RenderContext
-operator|*
-operator|)
 name|data
 decl_stmt|;
 name|GimpCoords
@@ -609,13 +603,15 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|conicto (FT_Vector * ftcontrol,FT_Vector * to,gpointer data)
+DECL|function|conicto (const FT_Vector * ftcontrol,const FT_Vector * to,gpointer data)
 name|conicto
 parameter_list|(
+specifier|const
 name|FT_Vector
 modifier|*
 name|ftcontrol
 parameter_list|,
+specifier|const
 name|FT_Vector
 modifier|*
 name|to
@@ -628,10 +624,6 @@ name|RenderContext
 modifier|*
 name|context
 init|=
-operator|(
-name|RenderContext
-operator|*
-operator|)
 name|data
 decl_stmt|;
 name|GimpCoords
@@ -714,17 +706,20 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|cubicto (FT_Vector * ftcontrol1,FT_Vector * ftcontrol2,FT_Vector * to,gpointer data)
+DECL|function|cubicto (const FT_Vector * ftcontrol1,const FT_Vector * ftcontrol2,const FT_Vector * to,gpointer data)
 name|cubicto
 parameter_list|(
+specifier|const
 name|FT_Vector
 modifier|*
 name|ftcontrol1
 parameter_list|,
+specifier|const
 name|FT_Vector
 modifier|*
 name|ftcontrol2
 parameter_list|,
+specifier|const
 name|FT_Vector
 modifier|*
 name|to
@@ -737,10 +732,6 @@ name|RenderContext
 modifier|*
 name|context
 init|=
-operator|(
-name|RenderContext
-operator|*
-operator|)
 name|data
 decl_stmt|;
 name|GimpCoords
