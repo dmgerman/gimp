@@ -198,6 +198,8 @@ specifier|static
 name|GtkListStore
 modifier|*
 name|store
+init|=
+name|NULL
 decl_stmt|;
 end_decl_stmt
 
@@ -3621,14 +3623,14 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-comment|/* Create the ~/.gimp-$VER/gimpressionist/Presets directory if    * it doesn't already exists.    * */
+comment|/* Create the ~/.gimp-$VER/gimpressionist/Presets directory if    * it doesn't already exists.    *    */
 name|presets_dir_path
 operator|=
 name|g_build_filename
 argument_list|(
 operator|(
 specifier|const
-name|char
+name|gchar
 operator|*
 operator|)
 name|thispath
@@ -3694,16 +3696,19 @@ expr_stmt|;
 return|return;
 block|}
 block|}
-comment|/* Check if the user-friendly name has changed. If so, then save it under    * a new file. If not - use the same file name.    * */
+comment|/* Check if the user-friendly name has changed. If so, then save it    * under a new file. If not - use the same file name.    */
 if|if
 condition|(
-operator|!
+name|selected_preset_orig_name
+operator|&&
 name|strcmp
 argument_list|(
 name|preset_name
 argument_list|,
 name|selected_preset_orig_name
 argument_list|)
+operator|==
+literal|0
 condition|)
 block|{
 name|fname
