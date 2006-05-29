@@ -67,6 +67,12 @@ directive|include
 file|"core/gimpimage.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimp-intl.h"
+end_include
+
 begin_function
 specifier|static
 name|GValueArray
@@ -725,6 +731,16 @@ condition|(
 name|success
 condition|)
 block|{
+name|gimp_channel_push_undo
+argument_list|(
+name|channel1
+argument_list|,
+name|_
+argument_list|(
+literal|"Combine Masks"
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gimp_channel_combine_mask
 argument_list|(
 name|channel1
