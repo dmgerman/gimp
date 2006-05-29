@@ -413,7 +413,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4aad9d0108
+DECL|struct|__anon28c4c6e50108
 block|{
 DECL|member|command
 name|gchar
@@ -437,7 +437,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4aad9d0208
+DECL|struct|__anon28c4c6e50208
 block|{
 DECL|member|port_entry
 name|GtkWidget
@@ -1284,6 +1284,156 @@ end_function
 begin_function
 specifier|static
 name|void
+DECL|function|server_progress_start (const gchar * message,gboolean cancelable,gpointer user_data)
+name|server_progress_start
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|message
+parameter_list|,
+name|gboolean
+name|cancelable
+parameter_list|,
+name|gpointer
+name|user_data
+parameter_list|)
+block|{
+comment|/* do nothing */
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|server_progress_end (gpointer user_data)
+name|server_progress_end
+parameter_list|(
+name|gpointer
+name|user_data
+parameter_list|)
+block|{
+comment|/* do nothing */
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|server_progress_set_text (const gchar * message,gpointer user_data)
+name|server_progress_set_text
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|message
+parameter_list|,
+name|gpointer
+name|user_data
+parameter_list|)
+block|{
+comment|/* do nothing */
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|server_progress_set_value (gdouble percentage,gpointer user_data)
+name|server_progress_set_value
+parameter_list|(
+name|gdouble
+name|percentage
+parameter_list|,
+name|gpointer
+name|user_data
+parameter_list|)
+block|{
+comment|/* do nothing */
+block|}
+end_function
+
+begin_comment
+comment|/*  * Suppress progress popups by installing progress handlers that do nothing.  */
+end_comment
+
+begin_function
+specifier|static
+specifier|const
+name|gchar
+modifier|*
+DECL|function|server_progress_install (void)
+name|server_progress_install
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+name|GimpProgressVtable
+name|vtable
+init|=
+block|{
+literal|0
+block|, }
+decl_stmt|;
+name|vtable
+operator|.
+name|start
+operator|=
+name|server_progress_start
+expr_stmt|;
+name|vtable
+operator|.
+name|end
+operator|=
+name|server_progress_end
+expr_stmt|;
+name|vtable
+operator|.
+name|set_text
+operator|=
+name|server_progress_set_text
+expr_stmt|;
+name|vtable
+operator|.
+name|set_value
+operator|=
+name|server_progress_set_value
+expr_stmt|;
+return|return
+name|gimp_progress_install_vtable
+argument_list|(
+operator|&
+name|vtable
+argument_list|,
+name|NULL
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|server_progress_uninstall (const gchar * progress)
+name|server_progress_uninstall
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|progress
+parameter_list|)
+block|{
+name|gimp_progress_uninstall
+argument_list|(
+name|progress
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
 DECL|function|server_start (gint port,const gchar * logfile)
 name|server_start
 parameter_list|(
@@ -1296,6 +1446,11 @@ modifier|*
 name|logfile
 parameter_list|)
 block|{
+specifier|const
+name|gchar
+modifier|*
+name|progress
+decl_stmt|;
 comment|/* First of all, create the socket and set it up to accept connections. */
 comment|/* This may fail if there's a server running on this port already.      */
 name|server_sock
@@ -1372,6 +1527,11 @@ operator|)
 name|g_free
 argument_list|)
 expr_stmt|;
+name|progress
+operator|=
+name|server_progress_install
+argument_list|()
+expr_stmt|;
 name|server_log
 argument_list|(
 literal|"Script-fu server initialized and listening...\n"
@@ -1440,6 +1600,11 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+name|server_progress_uninstall
+argument_list|(
+name|progress
+argument_list|)
+expr_stmt|;
 name|server_quit
 argument_list|()
 expr_stmt|;
