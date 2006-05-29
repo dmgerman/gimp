@@ -115,7 +115,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba53bb10103
+DECL|enum|__anon2c2d630b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -131,7 +131,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba53bb10203
+DECL|enum|__anon2c2d630b0203
 block|{
 DECL|enumerator|BOOK_ADDED
 name|BOOK_ADDED
@@ -1271,12 +1271,46 @@ argument_list|(
 name|widget
 argument_list|)
 decl_stmt|;
+name|GtkWidget
+modifier|*
+name|focus
+init|=
+name|gtk_window_get_focus
+argument_list|(
+name|window
+argument_list|)
+decl_stmt|;
 name|gboolean
 name|handled
 init|=
 name|FALSE
 decl_stmt|;
 comment|/* we're overriding the GtkWindow implementation here to give    * the focus widget precedence over unmodified accelerators    * before the accelerator activation scheme.    */
+comment|/* text widgets get all key events first */
+if|if
+condition|(
+name|G_UNLIKELY
+argument_list|(
+name|GTK_IS_EDITABLE
+argument_list|(
+name|focus
+argument_list|)
+operator|||
+name|GTK_IS_TEXT_VIEW
+argument_list|(
+name|focus
+argument_list|)
+argument_list|)
+condition|)
+name|handled
+operator|=
+name|gtk_window_propagate_key_event
+argument_list|(
+name|window
+argument_list|,
+name|event
+argument_list|)
+expr_stmt|;
 comment|/* invoke control/alt accelerators */
 if|if
 condition|(
