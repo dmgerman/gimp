@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -29,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b8d4570103
+DECL|enum|__anon27e910020103
 block|{
 DECL|enumerator|TOGGLED
 name|TOGGLED
