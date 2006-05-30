@@ -9,10 +9,28 @@ directive|include
 file|"config.h"
 end_include
 
+begin_define
+DECL|macro|_POSIX_SOURCE
+define|#
+directive|define
+name|_POSIX_SOURCE
+end_define
+
+begin_comment
+DECL|macro|_POSIX_SOURCE
+comment|/* need PATH_MAX */
+end_comment
+
 begin_include
 include|#
 directive|include
 file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<limits.h>
 end_include
 
 begin_include
@@ -39,11 +57,16 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
-begin_ifndef
-ifndef|#
-directive|ifndef
+begin_if
+if|#
+directive|if
+operator|!
+name|defined
 name|PATH_MAX
-end_ifndef
+operator|&&
+name|defined
+name|_MAX_PATH
+end_if
 
 begin_define
 DECL|macro|PATH_MAX
@@ -132,7 +155,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be2c8380103
+DECL|enum|__anon2c5f23050103
 block|{
 DECL|enumerator|PROJECTION
 name|PROJECTION
@@ -177,7 +200,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be2c8380208
+DECL|struct|__anon2c5f23050208
 block|{
 DECL|member|transformSequence
 name|TransformType
@@ -216,7 +239,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be2c8380308
+DECL|struct|__anon2c5f23050308
 block|{
 DECL|member|info
 name|ExpInfo

@@ -9,6 +9,18 @@ directive|include
 file|"config.h"
 end_include
 
+begin_define
+DECL|macro|_SVID_SOURCE
+define|#
+directive|define
+name|_SVID_SOURCE
+end_define
+
+begin_comment
+DECL|macro|_SVID_SOURCE
+comment|/* need lockf() and F_TLOCK/F_ULOCK */
+end_comment
+
 begin_include
 include|#
 directive|include
@@ -153,7 +165,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0a64d60108
+DECL|struct|__anon27bc4bc00108
 block|{
 DECL|member|states
 name|GSList
@@ -179,7 +191,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c0a64d60203
+DECL|enum|__anon27bc4bc00203
 block|{
 DECL|enumerator|STATE_START
 name|STATE_START

@@ -9,6 +9,18 @@ directive|include
 file|"config.h"
 end_include
 
+begin_define
+DECL|macro|_BSD_SOURCE
+define|#
+directive|define
+name|_BSD_SOURCE
+end_define
+
+begin_comment
+DECL|macro|_BSD_SOURCE
+comment|/* the ALSA headers need this */
+end_comment
+
 begin_include
 include|#
 directive|include
@@ -114,7 +126,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288dcedb0108
+DECL|struct|__anon29b001060108
 block|{
 DECL|member|name
 name|gchar
@@ -134,7 +146,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon288dcedb0203
+DECL|enum|__anon29b001060203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

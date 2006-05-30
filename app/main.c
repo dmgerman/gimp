@@ -9,6 +9,30 @@ directive|include
 file|"config.h"
 end_include
 
+begin_define
+DECL|macro|_POSIX_SOURCE
+define|#
+directive|define
+name|_POSIX_SOURCE
+end_define
+
+begin_comment
+DECL|macro|_POSIX_SOURCE
+comment|/* all the sigaction stuff is POSIX */
+end_comment
+
+begin_define
+DECL|macro|_SVID_SOURCE
+define|#
+directive|define
+name|_SVID_SOURCE
+end_define
+
+begin_comment
+DECL|macro|_SVID_SOURCE
+comment|/* except for SA_RESTART, it seems  */
+end_comment
+
 begin_include
 include|#
 directive|include

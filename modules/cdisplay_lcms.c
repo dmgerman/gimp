@@ -9,6 +9,16 @@ directive|include
 file|"config.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|<glib.h>
+end_include
+
+begin_comment
+comment|/* lcms.h uses the "inline" keyword */
+end_comment
+
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -180,7 +190,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0532160103
+DECL|enum|__anon278c64d20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

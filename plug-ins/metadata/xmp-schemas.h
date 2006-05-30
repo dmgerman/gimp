@@ -27,7 +27,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29099ea80103
+DECL|enum|__anon27dcaebb0103
 block|{
 DECL|enumerator|XMP_TYPE_BOOLEAN
 name|XMP_TYPE_BOOLEAN
@@ -152,7 +152,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29099ea80208
+DECL|struct|__anon27dcaebb0208
 block|{
 DECL|member|name
 specifier|const
@@ -181,7 +181,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29099ea80308
+DECL|struct|__anon27dcaebb0308
 block|{
 DECL|member|uri
 specifier|const
@@ -421,7 +421,7 @@ comment|/* List of known XMP schemas and their properties */
 end_comment
 
 begin_decl_stmt
-DECL|variable|xmp_schemas
+specifier|extern
 name|XMPSchema
 modifier|*
 specifier|const
