@@ -181,15 +181,33 @@ condition|)
 block|{
 name|batch_interpreter
 operator|=
+name|g_getenv
+argument_list|(
+literal|"GIMP_BATCH_INTERPRETER"
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|batch_interpreter
+condition|)
+block|{
+name|batch_interpreter
+operator|=
 name|BATCH_DEFAULT_EVAL_PROC
 expr_stmt|;
 name|g_printerr
 argument_list|(
-literal|"No batch interpreter specified, using the default '%s'.\n"
+name|_
+argument_list|(
+literal|"No batch interpreter specified, using the default "
+literal|"'%s'.\n"
+argument_list|)
 argument_list|,
 name|batch_interpreter
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 comment|/*  script-fu text console, hardcoded for backward compatibility  */
 if|if
