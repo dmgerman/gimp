@@ -627,6 +627,11 @@ name|argv
 index|[]
 parameter_list|)
 block|{
+name|g_set_prgname
+argument_list|(
+literal|"xmpdump"
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|argc

@@ -121,7 +121,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2af3e9420103
+DECL|enum|__anon28d979f80103
 block|{
 DECL|enumerator|STATE_START
 name|STATE_START
@@ -215,7 +215,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af3e9420208
+DECL|struct|__anon28d979f80208
 block|{
 DECL|member|depth
 name|gint
@@ -1509,6 +1509,7 @@ operator|!=
 name|type
 condition|)
 block|{
+comment|/* make sure that we are not mixing different types in this property */
 name|g_return_if_fail
 argument_list|(
 name|context
@@ -2956,6 +2957,39 @@ index|]
 argument_list|)
 expr_stmt|;
 block|}
+comment|/* rdf:Alt is not an ordered list, but some broken XMP files use */
+comment|/* it instead of rdf:Seq.  Workaround: if we did not find some */
+comment|/* attributes for the valid cases ALT_LANG or ALT_LI_RSC, then */
+comment|/* we pretend that we are parsing a real list (bug #343315). */
+if|if
+condition|(
+operator|(
+name|context
+operator|->
+name|property_type
+operator|!=
+name|XMP_PTYPE_ALT_LANG
+operator|)
+operator|&&
+operator|(
+name|context
+operator|->
+name|state
+operator|!=
+name|STATE_INSIDE_ALT_LI_RSC
+operator|)
+condition|)
+name|add_property_value
+argument_list|(
+name|context
+argument_list|,
+name|XMP_PTYPE_ORDERED_LIST
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 block|}
 else|else
 name|parse_error_element
@@ -3411,7 +3445,6 @@ decl_stmt|;
 ifdef|#
 directive|ifdef
 name|DEBUG_XMP_PARSER
-comment|/*   g_print ("[%02d/%02d] %d</%s>\n", context->state, context->saved_state,            context->depth, element_name);   */
 name|g_print
 argument_list|(
 literal|"[%25s/%17s] %d</%s>\n"
@@ -3587,6 +3620,15 @@ name|STATE_INSIDE_STRUCT
 expr_stmt|;
 if|if
 condition|(
+operator|(
+name|context
+operator|->
+name|prop_cur_value
+operator|>=
+literal|0
+operator|)
+operator|&&
+operator|(
 name|context
 operator|->
 name|prop_value
@@ -3597,6 +3639,7 @@ name|prop_cur_value
 index|]
 operator|==
 name|NULL
+operator|)
 condition|)
 name|update_property_value
 argument_list|(
@@ -3620,6 +3663,15 @@ name|STATE_INSIDE_ALT
 expr_stmt|;
 if|if
 condition|(
+operator|(
+name|context
+operator|->
+name|prop_cur_value
+operator|>=
+literal|0
+operator|)
+operator|&&
+operator|(
 name|context
 operator|->
 name|prop_value
@@ -3630,6 +3682,7 @@ name|prop_cur_value
 index|]
 operator|==
 name|NULL
+operator|)
 condition|)
 name|update_property_value
 argument_list|(
