@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimprectangletool.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpellipseselecttool.h"
 end_include
 
@@ -280,6 +286,15 @@ argument_list|(
 name|ellipse_select
 argument_list|)
 decl_stmt|;
+name|GimpRectangleTool
+modifier|*
+name|rect_tool
+init|=
+name|GIMP_RECTANGLE_TOOL
+argument_list|(
+name|ellipse_select
+argument_list|)
+decl_stmt|;
 name|gimp_tool_control_set_tool_cursor
 argument_list|(
 name|tool
@@ -287,6 +302,13 @@ operator|->
 name|control
 argument_list|,
 name|GIMP_TOOL_CURSOR_ELLIPSE_SELECT
+argument_list|)
+expr_stmt|;
+name|gimp_rectangle_tool_set_constrain
+argument_list|(
+name|rect_tool
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}

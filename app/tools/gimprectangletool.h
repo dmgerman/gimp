@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon290dcff40103
+DECL|enum|__anon2c0b0af30103
 block|{
 DECL|enumerator|GIMP_RECTANGLE_TOOL_PROP_0
 name|GIMP_RECTANGLE_TOOL_PROP_0
@@ -56,6 +56,9 @@ name|GIMP_RECTANGLE_TOOL_PROP_Y2
 block|,
 DECL|enumerator|GIMP_RECTANGLE_TOOL_PROP_FUNCTION
 name|GIMP_RECTANGLE_TOOL_PROP_FUNCTION
+block|,
+DECL|enumerator|GIMP_RECTANGLE_TOOL_PROP_CONSTRAIN
+name|GIMP_RECTANGLE_TOOL_PROP_CONSTRAIN
 block|,
 DECL|enumerator|GIMP_RECTANGLE_TOOL_PROP_LAST
 name|GIMP_RECTANGLE_TOOL_PROP_LAST
@@ -114,7 +117,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon290dcff40203
+DECL|enum|__anon2c0b0af30203
 block|{
 DECL|enumerator|RECT_CREATING
 name|RECT_CREATING
@@ -496,6 +499,20 @@ parameter_list|(
 name|GimpRectangleTool
 modifier|*
 name|rectangle
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_rectangle_tool_set_constrain
+parameter_list|(
+name|GimpRectangleTool
+modifier|*
+name|rectangle
+parameter_list|,
+name|gboolean
+name|constrain
 parameter_list|)
 function_decl|;
 end_function_decl
