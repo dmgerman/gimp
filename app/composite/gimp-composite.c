@@ -1492,5 +1492,29 @@ block|}
 block|}
 end_function
 
+begin_function
+name|gboolean
+DECL|function|gimp_composite_use_cpu_accel (void)
+name|gimp_composite_use_cpu_accel
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+return|return
+operator|(
+operator|(
+name|gimp_composite_options
+operator|.
+name|bits
+operator|&
+name|GIMP_COMPOSITE_OPTION_USE
+operator|)
+operator|!=
+literal|0
+operator|)
+return|;
+block|}
+end_function
+
 end_unit
 

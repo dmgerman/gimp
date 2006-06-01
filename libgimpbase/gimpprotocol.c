@@ -2004,7 +2004,7 @@ operator|)
 operator|&
 name|config
 operator|->
-name|gimp_reserved_4
+name|use_cpu_accel
 argument_list|,
 literal|1
 argument_list|,
@@ -2515,7 +2515,7 @@ operator|)
 operator|&
 name|config
 operator|->
-name|gimp_reserved_4
+name|use_cpu_accel
 argument_list|,
 literal|1
 argument_list|,

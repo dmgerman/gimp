@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"composite/gimp-composite.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimp.h"
 end_include
 
@@ -712,9 +718,10 @@ operator|)
 expr_stmt|;
 name|config
 operator|.
-name|gimp_reserved_4
+name|use_cpu_accel
 operator|=
-literal|0
+name|gimp_composite_use_cpu_accel
+argument_list|()
 expr_stmt|;
 name|config
 operator|.
