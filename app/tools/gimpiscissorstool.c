@@ -4022,11 +4022,6 @@ argument_list|(
 name|tool
 argument_list|)
 decl_stmt|;
-name|GimpCursorType
-name|cursor
-init|=
-name|GIMP_CURSOR_MOUSE
-decl_stmt|;
 name|GimpCursorModifier
 name|modifier
 init|=
@@ -4078,9 +4073,9 @@ break|break;
 case|case
 name|ISCISSORS_OP_IMPOSSIBLE
 case|:
-name|cursor
+name|modifier
 operator|=
-name|GIMP_CURSOR_BAD
+name|GIMP_CURSOR_MODIFIER_BAD
 expr_stmt|;
 break|break;
 default|default:
@@ -4092,7 +4087,7 @@ name|tool
 argument_list|,
 name|display
 argument_list|,
-name|cursor
+name|GIMP_CURSOR_MOUSE
 argument_list|,
 name|GIMP_TOOL_CURSOR_ISCISSORS
 argument_list|,

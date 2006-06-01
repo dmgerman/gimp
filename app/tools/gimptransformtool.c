@@ -2674,6 +2674,7 @@ name|GIMP_TRANSFORM_TYPE_PATH
 case|:
 if|if
 condition|(
+operator|!
 name|gimp_image_get_active_vectors
 argument_list|(
 name|display
@@ -2681,14 +2682,9 @@ operator|->
 name|image
 argument_list|)
 condition|)
-name|cursor
+name|modifier
 operator|=
-name|GIMP_CURSOR_MOUSE
-expr_stmt|;
-else|else
-name|cursor
-operator|=
-name|GIMP_CURSOR_BAD
+name|GIMP_CURSOR_MODIFIER_BAD
 expr_stmt|;
 break|break;
 block|}
@@ -2705,6 +2701,12 @@ operator|==
 name|TRANSFORM_HANDLE_CENTER
 condition|)
 block|{
+if|if
+condition|(
+name|modifier
+operator|!=
+name|GIMP_CURSOR_MODIFIER_BAD
+condition|)
 name|modifier
 operator|=
 name|GIMP_CURSOR_MODIFIER_MOVE

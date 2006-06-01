@@ -2398,7 +2398,7 @@ name|gimp_display_shell_set_cursor
 argument_list|(
 name|shell
 argument_list|,
-name|GIMP_CURSOR_BAD
+name|GIMP_CURSOR_MOUSE
 argument_list|,
 name|gimp_tool_control_get_tool_cursor
 argument_list|(
@@ -2407,7 +2407,7 @@ operator|->
 name|control
 argument_list|)
 argument_list|,
-name|GIMP_CURSOR_MODIFIER_NONE
+name|GIMP_CURSOR_MODIFIER_BAD
 argument_list|)
 expr_stmt|;
 block|}
@@ -2418,11 +2418,11 @@ name|gimp_display_shell_set_cursor
 argument_list|(
 name|shell
 argument_list|,
-name|GIMP_CURSOR_BAD
+name|GIMP_CURSOR_MOUSE
 argument_list|,
 name|GIMP_TOOL_CURSOR_NONE
 argument_list|,
-name|GIMP_CURSOR_MODIFIER_NONE
+name|GIMP_CURSOR_MODIFIER_BAD
 argument_list|)
 expr_stmt|;
 block|}
@@ -4679,7 +4679,7 @@ name|gimp_display_shell_set_cursor
 argument_list|(
 name|shell
 argument_list|,
-name|GIMP_CURSOR_BAD
+name|GIMP_CURSOR_MOUSE
 argument_list|,
 name|gimp_tool_control_get_tool_cursor
 argument_list|(
@@ -4688,7 +4688,7 @@ operator|->
 name|control
 argument_list|)
 argument_list|,
-name|GIMP_CURSOR_MODIFIER_NONE
+name|GIMP_CURSOR_MODIFIER_BAD
 argument_list|)
 expr_stmt|;
 block|}
@@ -4699,11 +4699,11 @@ name|gimp_display_shell_set_cursor
 argument_list|(
 name|shell
 argument_list|,
-name|GIMP_CURSOR_BAD
+name|GIMP_CURSOR_MOUSE
 argument_list|,
 name|GIMP_TOOL_CURSOR_NONE
 argument_list|,
-name|GIMP_CURSOR_MODIFIER_NONE
+name|GIMP_CURSOR_MODIFIER_BAD
 argument_list|)
 expr_stmt|;
 block|}

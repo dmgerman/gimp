@@ -167,7 +167,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2965d2780103
+DECL|enum|__anon2a19ab270103
 block|{
 DECL|enumerator|PICKED
 name|PICKED
@@ -2058,15 +2058,10 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|GimpCursorType
-name|cursor
-init|=
-name|GIMP_CURSOR_BAD
-decl_stmt|;
 name|GimpCursorModifier
 name|modifier
 init|=
-name|GIMP_CURSOR_MODIFIER_NONE
+name|GIMP_CURSOR_MODIFIER_BAD
 decl_stmt|;
 if|if
 condition|(
@@ -2120,11 +2115,6 @@ argument_list|)
 operator|)
 condition|)
 block|{
-name|cursor
-operator|=
-name|GIMP_CURSOR_MOUSE
-expr_stmt|;
-block|}
 switch|switch
 condition|(
 name|color_tool
@@ -2165,13 +2155,14 @@ name|GIMP_CURSOR_MODIFIER_PLUS
 expr_stmt|;
 break|break;
 block|}
+block|}
 name|gimp_tool_set_cursor
 argument_list|(
 name|tool
 argument_list|,
 name|display
 argument_list|,
-name|cursor
+name|GIMP_CURSOR_COLOR_PICKER
 argument_list|,
 name|GIMP_TOOL_CURSOR_COLOR_PICKER
 argument_list|,
