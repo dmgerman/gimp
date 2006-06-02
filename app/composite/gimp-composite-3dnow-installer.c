@@ -16,12 +16,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib-object.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdlib.h>
 end_include
 
@@ -34,13 +28,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/base-types.h"
+file|<glib-object.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"base/cpu-accel.h"
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"base/base-types.h"
 end_include
 
 begin_include
@@ -88,10 +88,10 @@ name|COMPILE_3DNOW_IS_OKAY
 argument_list|)
 if|if
 condition|(
-name|cpu_accel
+name|gimp_cpu_accel_get_support
 argument_list|()
 operator|&
-name|CPU_ACCEL_X86_3DNOW
+name|GIMP_CPU_ACCEL_X86_3DNOW
 condition|)
 block|{
 return|return

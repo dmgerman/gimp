@@ -438,7 +438,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296ef8d90103
+DECL|enum|__anon2773e0a30103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -1756,6 +1756,12 @@ name|vtable
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_cpu_accel_set_use
+argument_list|(
+name|gimp_use_cpu_accel
+argument_list|()
+argument_list|)
+expr_stmt|;
 comment|/* initialize i18n support */
 name|setlocale
 argument_list|(

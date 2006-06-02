@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_comment
@@ -44,8 +44,76 @@ end_include
 begin_include
 include|#
 directive|include
-file|"cpu-accel.h"
+file|"gimpcpuaccel.h"
 end_include
+
+begin_function_decl
+specifier|static
+name|GimpCpuAccelFlags
+name|cpu_accel
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_decl_stmt
+name|G_GNUC_CONST
+DECL|variable|use_cpu_accel
+specifier|static
+name|gboolean
+name|use_cpu_accel
+init|=
+name|TRUE
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+comment|/**  * gimp_cpu_accel_get_support:  *  * Query for CPU acceleration support.  *  * Return value: #GimpCpuAccelFlags as supported by the CPU.  *  * Since: GIMP 2.4  */
+end_comment
+
+begin_function
+name|GimpCpuAccelFlags
+DECL|function|gimp_cpu_accel_get_support (void)
+name|gimp_cpu_accel_get_support
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+return|return
+name|use_cpu_accel
+condition|?
+name|cpu_accel
+argument_list|()
+else|:
+name|GIMP_CPU_ACCEL_NONE
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_cpu_accel_set_use:  * @use:  whether to use CPU acceleration features or not  *  * This function is for internal use only.  *  * Since: GIMP 2.4  */
+end_comment
+
+begin_function
+name|void
+DECL|function|gimp_cpu_accel_set_use (gboolean use)
+name|gimp_cpu_accel_set_use
+parameter_list|(
+name|gboolean
+name|use
+parameter_list|)
+block|{
+name|use_cpu_accel
+operator|=
+name|use
+condition|?
+name|TRUE
+else|:
+name|FALSE
+expr_stmt|;
+block|}
+end_function
 
 begin_if
 if|#
@@ -77,7 +145,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29cfa2500103
+DECL|enum|__anon29c8dcb80103
 block|{
 DECL|enumerator|ARCH_X86_VENDOR_NONE
 name|ARCH_X86_VENDOR_NONE
@@ -124,7 +192,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon29cfa2500203
+DECL|enum|__anon29c8dcb80203
 block|{
 DECL|enumerator|ARCH_X86_INTEL_FEATURE_MMX
 name|ARCH_X86_INTEL_FEATURE_MMX
@@ -201,7 +269,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29cfa2500303
+DECL|enum|__anon29c8dcb80303
 block|{
 DECL|enumerator|ARCH_X86_INTEL_FEATURE_PNI
 name|ARCH_X86_INTEL_FEATURE_PNI
@@ -648,7 +716,7 @@ literal|0
 return|;
 name|caps
 operator|=
-name|CPU_ACCEL_X86_MMX
+name|GIMP_CPU_ACCEL_X86_MMX
 expr_stmt|;
 ifdef|#
 directive|ifdef
@@ -661,9 +729,9 @@ name|ARCH_X86_INTEL_FEATURE_XMM
 condition|)
 name|caps
 operator||=
-name|CPU_ACCEL_X86_SSE
+name|GIMP_CPU_ACCEL_X86_SSE
 operator||
-name|CPU_ACCEL_X86_MMXEXT
+name|GIMP_CPU_ACCEL_X86_MMXEXT
 expr_stmt|;
 if|if
 condition|(
@@ -673,7 +741,7 @@ name|ARCH_X86_INTEL_FEATURE_XMM2
 condition|)
 name|caps
 operator||=
-name|CPU_ACCEL_X86_SSE2
+name|GIMP_CPU_ACCEL_X86_SSE2
 expr_stmt|;
 if|if
 condition|(
@@ -683,7 +751,7 @@ name|ARCH_X86_INTEL_FEATURE_PNI
 condition|)
 name|caps
 operator||=
-name|CPU_ACCEL_X86_SSE3
+name|GIMP_CPU_ACCEL_X86_SSE3
 expr_stmt|;
 endif|#
 directive|endif
@@ -774,7 +842,7 @@ name|ARCH_X86_AMD_FEATURE_3DNOW
 condition|)
 name|caps
 operator||=
-name|CPU_ACCEL_X86_3DNOW
+name|GIMP_CPU_ACCEL_X86_3DNOW
 expr_stmt|;
 if|if
 condition|(
@@ -784,7 +852,7 @@ name|ARCH_X86_AMD_FEATURE_MMXEXT
 condition|)
 name|caps
 operator||=
-name|CPU_ACCEL_X86_MMXEXT
+name|GIMP_CPU_ACCEL_X86_MMXEXT
 expr_stmt|;
 endif|#
 directive|endif
@@ -872,7 +940,7 @@ name|ARCH_X86_CENTAUR_FEATURE_MMX
 condition|)
 name|caps
 operator||=
-name|CPU_ACCEL_X86_MMX
+name|GIMP_CPU_ACCEL_X86_MMX
 expr_stmt|;
 ifdef|#
 directive|ifdef
@@ -885,7 +953,7 @@ name|ARCH_X86_CENTAUR_FEATURE_3DNOW
 condition|)
 name|caps
 operator||=
-name|CPU_ACCEL_X86_3DNOW
+name|GIMP_CPU_ACCEL_X86_3DNOW
 expr_stmt|;
 if|if
 condition|(
@@ -895,7 +963,7 @@ name|ARCH_X86_CENTAUR_FEATURE_MMXEXT
 condition|)
 name|caps
 operator||=
-name|CPU_ACCEL_X86_MMXEXT
+name|GIMP_CPU_ACCEL_X86_MMXEXT
 expr_stmt|;
 endif|#
 directive|endif
@@ -983,7 +1051,7 @@ name|ARCH_X86_CYRIX_FEATURE_MMX
 condition|)
 name|caps
 operator||=
-name|CPU_ACCEL_X86_MMX
+name|GIMP_CPU_ACCEL_X86_MMX
 expr_stmt|;
 ifdef|#
 directive|ifdef
@@ -996,7 +1064,7 @@ name|ARCH_X86_CYRIX_FEATURE_MMXEXT
 condition|)
 name|caps
 operator||=
-name|CPU_ACCEL_X86_MMXEXT
+name|GIMP_CPU_ACCEL_X86_MMXEXT
 expr_stmt|;
 endif|#
 directive|endif
@@ -1181,7 +1249,7 @@ condition|(
 operator|(
 name|caps
 operator|&
-name|CPU_ACCEL_X86_SSE
+name|GIMP_CPU_ACCEL_X86_SSE
 operator|)
 operator|&&
 operator|!
@@ -1192,9 +1260,9 @@ name|caps
 operator|&=
 operator|~
 operator|(
-name|CPU_ACCEL_X86_SSE
+name|GIMP_CPU_ACCEL_X86_SSE
 operator||
-name|CPU_ACCEL_X86_SSE2
+name|GIMP_CPU_ACCEL_X86_SSE2
 operator|)
 expr_stmt|;
 endif|#
@@ -1316,7 +1384,7 @@ operator|&&
 name|has_vu
 condition|)
 return|return
-name|CPU_ACCEL_PPC_ALTIVEC
+name|GIMP_CPU_ACCEL_PPC_ALTIVEC
 return|;
 return|return
 literal|0
@@ -1455,7 +1523,7 @@ name|SIG_DFL
 argument_list|)
 expr_stmt|;
 return|return
-name|CPU_ACCEL_PPC_ALTIVEC
+name|GIMP_CPU_ACCEL_PPC_ALTIVEC
 return|;
 block|}
 end_function
@@ -1479,7 +1547,8 @@ comment|/* ARCH_PPC&& USE_ALTIVEC */
 end_comment
 
 begin_function
-name|guint32
+specifier|static
+name|GimpCpuAccelFlags
 DECL|function|cpu_accel (void)
 name|cpu_accel
 parameter_list|(
@@ -1512,159 +1581,19 @@ name|arch_accel
 argument_list|()
 expr_stmt|;
 return|return
+operator|(
+name|GimpCpuAccelFlags
+operator|)
 name|accel
 return|;
 else|#
 directive|else
 comment|/* !HAVE_ACCEL */
 return|return
-literal|0
+name|GIMP_CPU_ACCEL_NONE
 return|;
 endif|#
 directive|endif
-block|}
-end_function
-
-begin_function
-name|void
-DECL|function|cpu_accel_print_results (void)
-name|cpu_accel_print_results
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-name|g_printerr
-argument_list|(
-literal|"Testing CPU features...\n"
-argument_list|)
-expr_stmt|;
-ifdef|#
-directive|ifdef
-name|ARCH_X86
-name|g_printerr
-argument_list|(
-literal|"  mmx     : %s\n"
-argument_list|,
-operator|(
-name|cpu_accel
-argument_list|()
-operator|&
-name|CPU_ACCEL_X86_MMX
-operator|)
-condition|?
-literal|"yes"
-else|:
-literal|"no"
-argument_list|)
-expr_stmt|;
-name|g_printerr
-argument_list|(
-literal|"  3dnow   : %s\n"
-argument_list|,
-operator|(
-name|cpu_accel
-argument_list|()
-operator|&
-name|CPU_ACCEL_X86_3DNOW
-operator|)
-condition|?
-literal|"yes"
-else|:
-literal|"no"
-argument_list|)
-expr_stmt|;
-name|g_printerr
-argument_list|(
-literal|"  mmxext  : %s\n"
-argument_list|,
-operator|(
-name|cpu_accel
-argument_list|()
-operator|&
-name|CPU_ACCEL_X86_MMXEXT
-operator|)
-condition|?
-literal|"yes"
-else|:
-literal|"no"
-argument_list|)
-expr_stmt|;
-name|g_printerr
-argument_list|(
-literal|"  sse     : %s\n"
-argument_list|,
-operator|(
-name|cpu_accel
-argument_list|()
-operator|&
-name|CPU_ACCEL_X86_SSE
-operator|)
-condition|?
-literal|"yes"
-else|:
-literal|"no"
-argument_list|)
-expr_stmt|;
-name|g_printerr
-argument_list|(
-literal|"  sse2    : %s\n"
-argument_list|,
-operator|(
-name|cpu_accel
-argument_list|()
-operator|&
-name|CPU_ACCEL_X86_SSE2
-operator|)
-condition|?
-literal|"yes"
-else|:
-literal|"no"
-argument_list|)
-expr_stmt|;
-name|g_printerr
-argument_list|(
-literal|"  sse3    : %s\n"
-argument_list|,
-operator|(
-name|cpu_accel
-argument_list|()
-operator|&
-name|CPU_ACCEL_X86_SSE3
-operator|)
-condition|?
-literal|"yes"
-else|:
-literal|"no"
-argument_list|)
-expr_stmt|;
-endif|#
-directive|endif
-ifdef|#
-directive|ifdef
-name|ARCH_PPC
-name|g_printerr
-argument_list|(
-literal|"  altivec : %s\n"
-argument_list|,
-operator|(
-name|cpu_accel
-argument_list|()
-operator|&
-name|CPU_ACCEL_PPC_ALTIVEC
-operator|)
-condition|?
-literal|"yes"
-else|:
-literal|"no"
-argument_list|)
-expr_stmt|;
-endif|#
-directive|endif
-name|g_printerr
-argument_list|(
-literal|"\n"
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 

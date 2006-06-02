@@ -31,6 +31,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimpbase/gimpcpuaccel.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimpbase/gimpdatafiles.h>
 end_include
 

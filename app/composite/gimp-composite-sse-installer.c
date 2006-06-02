@@ -16,12 +16,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib-object.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdlib.h>
 end_include
 
@@ -34,13 +28,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/base-types.h"
+file|<glib-object.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"base/cpu-accel.h"
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"base/base-types.h"
 end_include
 
 begin_include
@@ -348,21 +348,21 @@ name|defined
 argument_list|(
 name|COMPILE_SSE_IS_OKAY
 argument_list|)
-name|guint32
+name|GimpCpuAccelFlags
 name|cpu
 init|=
-name|cpu_accel
+name|gimp_cpu_accel_get_support
 argument_list|()
 decl_stmt|;
 if|if
 condition|(
 name|cpu
 operator|&
-name|CPU_ACCEL_X86_SSE
+name|GIMP_CPU_ACCEL_X86_SSE
 operator|||
 name|cpu
 operator|&
-name|CPU_ACCEL_X86_MMXEXT
+name|GIMP_CPU_ACCEL_X86_MMXEXT
 condition|)
 block|{
 return|return
