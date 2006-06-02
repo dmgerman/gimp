@@ -47,18 +47,18 @@ directive|include
 file|"gimpcpuaccel.h"
 end_include
 
-begin_function_decl
+begin_decl_stmt
 specifier|static
 name|GimpCpuAccelFlags
 name|cpu_accel
-parameter_list|(
+argument_list|(
 name|void
-parameter_list|)
-function_decl|;
-end_function_decl
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
 
 begin_decl_stmt
-name|G_GNUC_CONST
 DECL|variable|use_cpu_accel
 specifier|static
 name|gboolean
@@ -145,7 +145,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c8dcb80103
+DECL|enum|__anon2c5a9a600103
 block|{
 DECL|enumerator|ARCH_X86_VENDOR_NONE
 name|ARCH_X86_VENDOR_NONE
@@ -192,7 +192,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c8dcb80203
+DECL|enum|__anon2c5a9a600203
 block|{
 DECL|enumerator|ARCH_X86_INTEL_FEATURE_MMX
 name|ARCH_X86_INTEL_FEATURE_MMX
@@ -269,7 +269,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c8dcb80303
+DECL|enum|__anon2c5a9a600303
 block|{
 DECL|enumerator|ARCH_X86_INTEL_FEATURE_PNI
 name|ARCH_X86_INTEL_FEATURE_PNI
