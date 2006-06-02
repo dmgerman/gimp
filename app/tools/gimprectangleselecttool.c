@@ -1139,15 +1139,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|g_printerr
-argument_list|(
-literal|"%s: function = %d\n"
-argument_list|,
-name|G_STRFUNC
-argument_list|,
-name|function
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|function
