@@ -112,6 +112,11 @@ DECL|member|parent_instance
 name|GimpSelectionTool
 name|parent_instance
 decl_stmt|;
+DECL|member|undo
+name|GimpUndo
+modifier|*
+name|undo
+decl_stmt|;
 block|}
 struct|;
 end_struct
