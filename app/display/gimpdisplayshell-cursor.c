@@ -753,10 +753,23 @@ break|break;
 case|case
 name|GIMP_CURSOR_MODE_TOOL_CROSSHAIR
 case|:
+if|if
+condition|(
+name|cursor_type
+operator|<
+name|GIMP_CURSOR_CORNER_TOP_LEFT
+operator|||
+name|cursor_type
+operator|>
+name|GIMP_CURSOR_SIDE_BOTTOM
+condition|)
+block|{
+comment|/* the corner and side cursors count as crosshair, so leave                * them and override everything else                */
 name|cursor_type
 operator|=
 name|GIMP_CURSOR_CROSSHAIR_SMALL
 expr_stmt|;
+block|}
 break|break;
 case|case
 name|GIMP_CURSOR_MODE_CROSSHAIR
@@ -769,10 +782,19 @@ name|tool_cursor
 operator|=
 name|GIMP_TOOL_CURSOR_NONE
 expr_stmt|;
+if|if
+condition|(
+name|modifier
+operator|!=
+name|GIMP_CURSOR_MODIFIER_BAD
+condition|)
+block|{
+comment|/* the bad modifier is always shown */
 name|modifier
 operator|=
 name|GIMP_CURSOR_MODIFIER_NONE
 expr_stmt|;
+block|}
 break|break;
 block|}
 block|}

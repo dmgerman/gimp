@@ -122,6 +122,10 @@ name|SelectOps
 name|saved_op
 decl_stmt|;
 comment|/*  saved tool options state                  */
+DECL|member|allow_move
+name|gboolean
+name|allow_move
+decl_stmt|;
 block|}
 struct|;
 end_struct
