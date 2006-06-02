@@ -438,7 +438,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2adf70830103
+DECL|enum|__anon2bdc57010103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -875,16 +875,6 @@ DECL|variable|_show_help_button
 specifier|static
 name|gboolean
 name|_show_help_button
-init|=
-name|TRUE
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|_use_cpu_accel
-specifier|static
-name|gboolean
-name|_use_cpu_accel
 init|=
 name|TRUE
 decl_stmt|;
@@ -4158,24 +4148,6 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_use_cpu_accel:  *  * Returns whether or not GIMP and its plug-ins should use  * CPU-specific accelerated routines (MMX, SSE, Altivec...) if  * available.  *  * Return value: the use_cpu_accel boolean  *  * Since: GIMP 2.4  **/
-end_comment
-
-begin_function
-name|gboolean
-DECL|function|gimp_use_cpu_accel (void)
-name|gimp_use_cpu_accel
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-return|return
-name|_use_cpu_accel
-return|;
-block|}
-end_function
-
-begin_comment
 comment|/**  * gimp_get_progname:  *  * Returns the Plug-In's executable name.  *  * Return value: the executable name  **/
 end_comment
 
@@ -5449,16 +5421,6 @@ name|TRUE
 else|:
 name|FALSE
 expr_stmt|;
-name|_use_cpu_accel
-operator|=
-name|config
-operator|->
-name|use_cpu_accel
-condition|?
-name|TRUE
-else|:
-name|FALSE
-expr_stmt|;
 name|_min_colors
 operator|=
 name|config
@@ -5510,8 +5472,9 @@ argument_list|)
 expr_stmt|;
 name|gimp_cpu_accel_set_use
 argument_list|(
-name|gimp_use_cpu_accel
-argument_list|()
+name|config
+operator|->
+name|use_cpu_accel
 argument_list|)
 expr_stmt|;
 if|if
