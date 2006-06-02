@@ -55,17 +55,6 @@ value|(gimp_param_parasite_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_PARAM_SPEC_PARASITE (pspec)
-define|#
-directive|define
-name|GIMP_PARAM_SPEC_PARASITE
-parameter_list|(
-name|pspec
-parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((pspec), GIMP_TYPE_PARAM_PARASITE, GimpParamSpecParasite))
-end_define
-
-begin_define
 DECL|macro|GIMP_IS_PARAM_SPEC_PARASITE (pspec)
 define|#
 directive|define
@@ -75,28 +64,6 @@ name|pspec
 parameter_list|)
 value|(G_TYPE_CHECK_INSTANCE_TYPE ((pspec), GIMP_TYPE_PARAM_PARASITE))
 end_define
-
-begin_typedef
-DECL|typedef|GimpParamSpecParasite
-typedef|typedef
-name|struct
-name|_GimpParamSpecParasite
-name|GimpParamSpecParasite
-typedef|;
-end_typedef
-
-begin_struct
-DECL|struct|_GimpParamSpecParasite
-struct|struct
-name|_GimpParamSpecParasite
-block|{
-DECL|member|parent_instance
-name|GParamSpecBoxed
-name|parent_instance
-decl_stmt|;
-block|}
-struct|;
-end_struct
 
 begin_decl_stmt
 name|GType
