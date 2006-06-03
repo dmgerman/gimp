@@ -1126,6 +1126,24 @@ name|GIMP_CURSOR_MODIFIER_ANCHOR
 expr_stmt|;
 break|break;
 block|}
+comment|/*  we don't set the bad modifier ourselves, so a subclass has set    *  it, always leave it there since it's more important than what we    *  have to say.    */
+if|if
+condition|(
+name|gimp_tool_control_get_cursor_modifier
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|)
+operator|==
+name|GIMP_CURSOR_MODIFIER_BAD
+condition|)
+block|{
+name|modifier
+operator|=
+name|GIMP_CURSOR_MODIFIER_BAD
+expr_stmt|;
+block|}
 name|gimp_tool_set_cursor
 argument_list|(
 name|tool

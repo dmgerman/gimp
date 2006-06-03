@@ -2617,7 +2617,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_image_coords_in_active_drawable
+name|gimp_image_coords_in_active_pickable
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -2627,6 +2627,12 @@ specifier|const
 name|GimpCoords
 modifier|*
 name|coords
+parameter_list|,
+name|gboolean
+name|sample_merged
+parameter_list|,
+name|gboolean
+name|selected_only
 parameter_list|)
 function_decl|;
 end_function_decl
