@@ -965,11 +965,7 @@ if|if
 condition|(
 name|function
 operator|==
-name|RECT_CREATING
-operator|||
-name|function
-operator|==
-name|RECT_EXECUTING
+name|RECT_INACTIVE
 condition|)
 block|{
 name|GimpDisplay

@@ -726,9 +726,9 @@ name|selection_tool
 operator|->
 name|op
 operator|=
-name|SELECTION_MOVE_COPY
+name|SELECTION_MOVE
 expr_stmt|;
-comment|/* move a copy of the selection */
+comment|/* move the selection */
 block|}
 elseif|else
 if|if
@@ -756,9 +756,9 @@ name|selection_tool
 operator|->
 name|op
 operator|=
-name|SELECTION_MOVE
+name|SELECTION_MOVE_COPY
 expr_stmt|;
-comment|/* move the selection */
+comment|/* move a copy of the selection */
 block|}
 elseif|else
 if|if
