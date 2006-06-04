@@ -875,74 +875,21 @@ block|{
 name|guint
 name|function
 decl_stmt|;
-comment|/* if we have an existing rectangle in the current display, then      we have already "executed", and need to undo at this point, unless      the user has done something in the meantime */
-if|if
-condition|(
-name|tool
-operator|->
-name|display
-operator|&&
-name|display
-operator|==
-name|tool
-operator|->
-name|display
-condition|)
-block|{
-name|GimpNewRectSelectTool
-modifier|*
-name|rect_select
-init|=
-name|GIMP_NEW_RECT_SELECT_TOOL
-argument_list|(
-name|tool
-argument_list|)
-decl_stmt|;
-name|GimpImage
-modifier|*
-name|image
-init|=
-name|display
-operator|->
-name|image
-decl_stmt|;
-name|GimpUndo
-modifier|*
-name|undo
-decl_stmt|;
-name|undo
-operator|=
-name|gimp_undo_stack_peek
-argument_list|(
-name|image
-operator|->
-name|undo_stack
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|undo
-operator|&&
-name|rect_select
-operator|->
-name|undo
-operator|==
-name|undo
-condition|)
-block|{
-name|gimp_image_undo
-argument_list|(
-name|image
-argument_list|)
-expr_stmt|;
-name|rect_select
-operator|->
-name|undo
-operator|=
-name|NULL
-expr_stmt|;
-block|}
-block|}
+comment|/*   /\* if we have an existing rectangle in the current display, then */
+comment|/*      we have already "executed", and need to undo at this point, unless */
+comment|/*      the user has done something in the meantime *\/ */
+comment|/*   if (tool->display&& display == tool->display) */
+comment|/*     { */
+comment|/*       GimpNewRectSelectTool *rect_select = GIMP_NEW_RECT_SELECT_TOOL (tool); */
+comment|/*       GimpImage             *image       = display->image; */
+comment|/*       GimpUndo              *undo; */
+comment|/*       undo = gimp_undo_stack_peek (image->undo_stack); */
+comment|/*       if (undo&& rect_select->undo == undo) */
+comment|/*         { */
+comment|/*           gimp_image_undo (image); */
+comment|/*           rect_select->undo = NULL; */
+comment|/*         } */
+comment|/*     } */
 if|if
 condition|(
 name|tool
