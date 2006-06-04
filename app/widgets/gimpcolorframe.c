@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5f27d60103
+DECL|enum|__anon2b77d0460103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1330,7 +1330,7 @@ name|color_index
 operator|==
 name|color_index
 operator|&&
-name|gimp_rgb_distance
+name|gimp_rgba_distance
 argument_list|(
 operator|&
 name|frame
