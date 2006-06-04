@@ -1346,7 +1346,7 @@ name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"_Preview"
+literal|"Pr_eview"
 argument_list|)
 argument_list|)
 expr_stmt|;
