@@ -1125,24 +1125,6 @@ argument_list|,
 name|display
 argument_list|)
 expr_stmt|;
-comment|/*   /\* if a rectangle still exists, "execute" the tool now *\/ */
-comment|/*   if (tool->display) */
-comment|/*     { */
-comment|/*       gint                   x1, y1, x2, y2; */
-comment|/*       GimpNewRectSelectTool *rect_select     = GIMP_NEW_RECT_SELECT_TOOL (tool); */
-comment|/*       g_object_get (GIMP_RECTANGLE_TOOL (tool), */
-comment|/*                     "x1",&x1, */
-comment|/*                     "y1",&y1, */
-comment|/*                     "x2",&x2, */
-comment|/*                     "y2",&y2, */
-comment|/*                     NULL); */
-comment|/*       gimp_rectangle_tool_execute (GIMP_RECTANGLE_TOOL (tool), */
-comment|/*                                    x1, y1, */
-comment|/*                                    x2 - x1, */
-comment|/*                                    y2 - y1); */
-comment|/*       /\* save the undo that we got when executing *\/ */
-comment|/*       rect_select->undo = gimp_undo_stack_peek (display->image->undo_stack); */
-comment|/*     } */
 block|}
 end_function
 
