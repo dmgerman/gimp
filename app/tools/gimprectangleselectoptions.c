@@ -215,6 +215,16 @@ argument_list|(
 name|vbox_rectangle
 argument_list|)
 expr_stmt|;
+name|gimp_rectangle_options_set_highlight
+argument_list|(
+name|GIMP_RECTANGLE_OPTIONS
+argument_list|(
+name|tool_options
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 return|return
 name|vbox
 return|;
