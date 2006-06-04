@@ -7145,7 +7145,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|g_signal_handlers_block_by_func
+name|g_signal_handlers_unblock_by_func
 argument_list|(
 name|config
 argument_list|,
