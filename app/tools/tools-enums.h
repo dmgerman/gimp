@@ -41,7 +41,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c072c460103
+DECL|enum|__anon29fb826d0103
 block|{
 DECL|enumerator|GIMP_COLOR_PICK_MODE_NONE
 name|GIMP_COLOR_PICK_MODE_NONE
@@ -61,6 +61,50 @@ comment|/*< desc="Add to palette">*/
 DECL|typedef|GimpColorPickMode
 block|}
 name|GimpColorPickMode
+typedef|;
+end_typedef
+
+begin_define
+DECL|macro|GIMP_TYPE_RECTANGLE_GUIDE
+define|#
+directive|define
+name|GIMP_TYPE_RECTANGLE_GUIDE
+value|(gimp_rectangle_guide_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_rectangle_guide_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon29fb826d0203
+block|{
+DECL|enumerator|GIMP_RECTANGLE_GUIDE_NONE
+name|GIMP_RECTANGLE_GUIDE_NONE
+block|,
+comment|/*< desc="No guides">*/
+DECL|enumerator|GIMP_RECTANGLE_GUIDE_CENTER_LINES
+name|GIMP_RECTANGLE_GUIDE_CENTER_LINES
+block|,
+comment|/*< desc="Center lines">*/
+DECL|enumerator|GIMP_RECTANGLE_GUIDE_THIRDS
+name|GIMP_RECTANGLE_GUIDE_THIRDS
+block|,
+comment|/*< desc="Rule of thirds">*/
+DECL|enumerator|GIMP_RECTANGLE_GUIDE_GOLDEN
+name|GIMP_RECTANGLE_GUIDE_GOLDEN
+comment|/*< desc="Golden sections">*/
+DECL|typedef|GimpRectangleGuide
+block|}
+name|GimpRectangleGuide
 typedef|;
 end_typedef
 
@@ -85,7 +129,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c072c460203
+DECL|enum|__anon29fb826d0303
 block|{
 DECL|enumerator|GIMP_CROP_MODE_CROP
 name|GIMP_CROP_MODE_CROP
@@ -121,7 +165,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c072c460303
+DECL|enum|__anon29fb826d0403
 block|{
 DECL|enumerator|GIMP_RECT_SELECT_MODE_FREE
 name|GIMP_RECT_SELECT_MODE_FREE
@@ -161,7 +205,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c072c460403
+DECL|enum|__anon29fb826d0503
 block|{
 DECL|enumerator|GIMP_TRANSFORM_TYPE_LAYER
 name|GIMP_TRANSFORM_TYPE_LAYER
@@ -201,7 +245,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c072c460503
+DECL|enum|__anon29fb826d0603
 block|{
 DECL|enumerator|GIMP_VECTOR_MODE_DESIGN
 name|GIMP_VECTOR_MODE_DESIGN
@@ -241,7 +285,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c072c460603
+DECL|enum|__anon29fb826d0703
 block|{
 DECL|enumerator|GIMP_TRANSFORM_PREVIEW_TYPE_OUTLINE
 name|GIMP_TRANSFORM_PREVIEW_TYPE_OUTLINE
@@ -285,7 +329,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c072c460703
+DECL|enum|__anon29fb826d0803
 block|{
 DECL|enumerator|GIMP_TRANSFORM_GRID_TYPE_N_LINES
 name|GIMP_TRANSFORM_GRID_TYPE_N_LINES
@@ -308,7 +352,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2c072c460803
+DECL|enum|__anon29fb826d0903
 block|{
 DECL|enumerator|SELECTION_ADD
 name|SELECTION_ADD
@@ -355,7 +399,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2c072c460903
+DECL|enum|__anon29fb826d0a03
 block|{
 DECL|enumerator|GIMP_TOOL_ACTION_PAUSE
 name|GIMP_TOOL_ACTION_PAUSE
@@ -379,7 +423,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2c072c460a03
+DECL|enum|__anon29fb826d0b03
 block|{
 DECL|enumerator|GIMP_TRANSLATE_MODE_VECTORS
 name|GIMP_TRANSLATE_MODE_VECTORS
@@ -418,7 +462,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2c072c460b03
+DECL|enum|__anon29fb826d0c03
 block|{
 DECL|enumerator|GIMP_MOTION_MODE_EXACT
 name|GIMP_MOTION_MODE_EXACT
@@ -442,7 +486,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2c072c460c03
+DECL|enum|__anon29fb826d0d03
 block|{
 DECL|enumerator|TRANSFORM_CREATING
 name|TRANSFORM_CREATING

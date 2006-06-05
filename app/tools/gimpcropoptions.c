@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon276a69940103
+DECL|enum|__anon2c4bb77b0103
 block|{
 DECL|enumerator|PROP_LAYER_ONLY
 name|PROP_LAYER_ONLY
@@ -297,6 +297,9 @@ case|case
 name|GIMP_RECTANGLE_OPTIONS_PROP_HIGHLIGHT
 case|:
 case|case
+name|GIMP_RECTANGLE_OPTIONS_PROP_GUIDE
+case|:
+case|case
 name|GIMP_RECTANGLE_OPTIONS_PROP_FIXED_WIDTH
 case|:
 case|case
@@ -420,6 +423,9 @@ condition|)
 block|{
 case|case
 name|GIMP_RECTANGLE_OPTIONS_PROP_HIGHLIGHT
+case|:
+case|case
+name|GIMP_RECTANGLE_OPTIONS_PROP_GUIDE
 case|:
 case|case
 name|GIMP_RECTANGLE_OPTIONS_PROP_FIXED_WIDTH
