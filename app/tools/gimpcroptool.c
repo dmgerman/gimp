@@ -699,12 +699,8 @@ name|tool
 operator|->
 name|display
 condition|)
-name|gimp_rectangle_tool_response
+name|gimp_rectangle_tool_cancel
 argument_list|(
-name|NULL
-argument_list|,
-name|GTK_RESPONSE_CANCEL
-argument_list|,
 name|GIMP_RECTANGLE_TOOL
 argument_list|(
 name|tool
