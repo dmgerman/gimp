@@ -17465,7 +17465,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|border_region (PixelRegion * src,gint16 xradius,gint16 yradius)
+DECL|function|border_region (PixelRegion * src,gint16 xradius,gint16 yradius,gboolean feather_border)
 name|border_region
 parameter_list|(
 name|PixelRegion
@@ -17477,6 +17477,9 @@ name|xradius
 parameter_list|,
 name|gint16
 name|yradius
+parameter_list|,
+name|gboolean
+name|feather_border
 parameter_list|)
 block|{
 comment|/*      This function has no bugs, but if you imagine some you can      blame them on jaycox@gimp.org   */
@@ -18264,6 +18267,11 @@ name|dist
 operator|<
 literal|1.0
 condition|)
+block|{
+if|if
+condition|(
+name|feather_border
+condition|)
 name|a
 operator|=
 literal|255
@@ -18280,8 +18288,16 @@ expr_stmt|;
 else|else
 name|a
 operator|=
+literal|255
+expr_stmt|;
+block|}
+else|else
+block|{
+name|a
+operator|=
 literal|0
 expr_stmt|;
+block|}
 name|density
 index|[
 name|x

@@ -1352,6 +1352,7 @@ condition|(
 name|success
 condition|)
 block|{
+comment|/* FIXME: "feather" hardcoded to TRUE */
 name|gimp_channel_border
 argument_list|(
 name|gimp_image_get_mask
@@ -1362,6 +1363,8 @@ argument_list|,
 name|radius
 argument_list|,
 name|radius
+argument_list|,
+name|TRUE
 argument_list|,
 name|TRUE
 argument_list|)

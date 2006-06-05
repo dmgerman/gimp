@@ -383,6 +383,9 @@ name|gint
 name|radius_y
 parameter_list|,
 name|gboolean
+name|feather_border
+parameter_list|,
+name|gboolean
 name|push_undo
 parameter_list|)
 function_decl|;
@@ -878,6 +881,9 @@ name|radius_x
 parameter_list|,
 name|gint
 name|radius_y
+parameter_list|,
+name|gboolean
+name|feather_border
 parameter_list|,
 name|gboolean
 name|push_undo

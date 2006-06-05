@@ -468,6 +468,9 @@ name|gint
 name|radius_y
 parameter_list|,
 name|gboolean
+name|feather_border
+parameter_list|,
+name|gboolean
 name|push_undo
 parameter_list|)
 function_decl|;
@@ -1947,7 +1950,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_selection_border (GimpChannel * channel,gint radius_x,gint radius_y,gboolean push_undo)
+DECL|function|gimp_selection_border (GimpChannel * channel,gint radius_x,gint radius_y,gboolean feather_border,gboolean push_undo)
 name|gimp_selection_border
 parameter_list|(
 name|GimpChannel
@@ -1959,6 +1962,9 @@ name|radius_x
 parameter_list|,
 name|gint
 name|radius_y
+parameter_list|,
+name|gboolean
+name|feather_border
 parameter_list|,
 name|gboolean
 name|push_undo
@@ -1976,6 +1982,8 @@ argument_list|,
 name|radius_x
 argument_list|,
 name|radius_y
+argument_list|,
+name|feather_border
 argument_list|,
 name|push_undo
 argument_list|)
