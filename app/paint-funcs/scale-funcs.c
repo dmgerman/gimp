@@ -4989,10 +4989,10 @@ decl_stmt|;
 name|gint
 name|byte
 decl_stmt|;
-name|gint
+name|gdouble
 name|aval
 decl_stmt|;
-name|gint
+name|gdouble
 name|arecip
 decl_stmt|;
 name|gint
