@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f25b080103
+DECL|enum|__anon27efc71c0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -874,7 +874,7 @@ name|gint
 name|radius_y
 parameter_list|,
 name|gboolean
-name|feather_border
+name|feather
 parameter_list|,
 name|gboolean
 name|push_undo
@@ -5986,7 +5986,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_channel_real_border (GimpChannel * channel,gint radius_x,gint radius_y,gboolean feather_border,gboolean push_undo)
+DECL|function|gimp_channel_real_border (GimpChannel * channel,gint radius_x,gint radius_y,gboolean feather,gboolean push_undo)
 name|gimp_channel_real_border
 parameter_list|(
 name|GimpChannel
@@ -6000,7 +6000,7 @@ name|gint
 name|radius_y
 parameter_list|,
 name|gboolean
-name|feather_border
+name|feather
 parameter_list|,
 name|gboolean
 name|push_undo
@@ -6207,7 +6207,7 @@ name|radius_x
 argument_list|,
 name|radius_y
 argument_list|,
-name|feather_border
+name|feather
 argument_list|)
 expr_stmt|;
 name|channel
@@ -8436,7 +8436,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_channel_border (GimpChannel * channel,gint radius_x,gint radius_y,gboolean feather_border,gboolean push_undo)
+DECL|function|gimp_channel_border (GimpChannel * channel,gint radius_x,gint radius_y,gboolean feather,gboolean push_undo)
 name|gimp_channel_border
 parameter_list|(
 name|GimpChannel
@@ -8450,7 +8450,7 @@ name|gint
 name|radius_y
 parameter_list|,
 name|gboolean
-name|feather_border
+name|feather
 parameter_list|,
 name|gboolean
 name|push_undo
@@ -8492,7 +8492,7 @@ name|radius_x
 argument_list|,
 name|radius_y
 argument_list|,
-name|feather_border
+name|feather
 argument_list|,
 name|push_undo
 argument_list|)

@@ -1431,7 +1431,7 @@ name|gint16
 name|yradius
 parameter_list|,
 name|gboolean
-name|feather_border
+name|feather
 parameter_list|)
 function_decl|;
 end_function_decl

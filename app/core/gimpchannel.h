@@ -383,7 +383,7 @@ name|gint
 name|radius_y
 parameter_list|,
 name|gboolean
-name|feather_border
+name|feather
 parameter_list|,
 name|gboolean
 name|push_undo
@@ -883,7 +883,7 @@ name|gint
 name|radius_y
 parameter_list|,
 name|gboolean
-name|feather_border
+name|feather
 parameter_list|,
 name|gboolean
 name|push_undo
