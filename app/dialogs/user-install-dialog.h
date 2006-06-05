@@ -17,7 +17,7 @@ name|__USER_INSTALL_DIALOG_H__
 end_define
 
 begin_function_decl
-name|void
+name|gboolean
 name|user_install_dialog_run
 parameter_list|(
 name|GimpUserInstall
