@@ -154,7 +154,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be49dd00108
+DECL|struct|__anon2b191ce00108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -201,7 +201,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be49dd00208
+DECL|struct|__anon2b191ce00208
 block|{
 DECL|member|run
 name|gboolean
@@ -1612,7 +1612,7 @@ expr_stmt|;
 operator|*
 name|nreturn_vals
 operator|=
-literal|9
+literal|10
 expr_stmt|;
 DECL|macro|SET_VALUE (index,field)
 define|#
@@ -1698,7 +1698,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-name|GET_DEFAULTS_PROC
+name|SET_DEFAULTS_PROC
 argument_list|)
 operator|==
 literal|0
@@ -1708,7 +1708,7 @@ if|if
 condition|(
 name|nparams
 operator|==
-literal|10
+literal|9
 condition|)
 block|{
 name|pngvals
@@ -1717,7 +1717,7 @@ name|interlaced
 operator|=
 name|param
 index|[
-literal|1
+literal|0
 index|]
 operator|.
 name|data
@@ -1730,7 +1730,7 @@ name|compression_level
 operator|=
 name|param
 index|[
-literal|2
+literal|1
 index|]
 operator|.
 name|data
@@ -1743,7 +1743,7 @@ name|bkgd
 operator|=
 name|param
 index|[
-literal|3
+literal|2
 index|]
 operator|.
 name|data
@@ -1756,7 +1756,7 @@ name|gama
 operator|=
 name|param
 index|[
-literal|4
+literal|3
 index|]
 operator|.
 name|data
@@ -1769,7 +1769,7 @@ name|offs
 operator|=
 name|param
 index|[
-literal|5
+literal|4
 index|]
 operator|.
 name|data
@@ -1782,7 +1782,7 @@ name|phys
 operator|=
 name|param
 index|[
-literal|6
+literal|5
 index|]
 operator|.
 name|data
@@ -1795,7 +1795,7 @@ name|time
 operator|=
 name|param
 index|[
-literal|7
+literal|6
 index|]
 operator|.
 name|data
@@ -1808,7 +1808,7 @@ name|comment
 operator|=
 name|param
 index|[
-literal|8
+literal|7
 index|]
 operator|.
 name|data
@@ -1821,7 +1821,7 @@ name|save_transp_pixels
 operator|=
 name|param
 index|[
-literal|9
+literal|8
 index|]
 operator|.
 name|data
