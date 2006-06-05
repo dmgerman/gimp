@@ -2777,7 +2777,7 @@ literal|"gimp-selection-invert"
 argument_list|,
 literal|"Invert the selection mask."
 argument_list|,
-literal|"This procedure inverts the selection mask. For every pixel in the selection channel, its new value is calculated as (255 - old_value)."
+literal|"This procedure inverts the selection mask. For every pixel in the selection channel, its new value is calculated as (255 - old-value)."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -2848,7 +2848,7 @@ literal|"gimp-selection-sharpen"
 argument_list|,
 literal|"Sharpen the selection mask."
 argument_list|,
-literal|"This procedure sharpens the selection mask. For every pixel in the selection channel, if the value is> 0, the new pixel is assigned a value of 255. This removes any \"anti-aliasing\" that might exist in the selection mask's boundary."
+literal|"This procedure sharpens the selection mask. For every pixel in the selection channel, if the value is> 127, the new pixel is assigned a value of 255. This removes any \"anti-aliasing\" that might exist in the selection mask's boundary."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
