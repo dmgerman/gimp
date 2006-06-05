@@ -58,7 +58,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29359f060108
+DECL|struct|__anon27fb94ac0108
 block|{
 DECL|member|window
 name|GtkWidget
@@ -227,7 +227,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|GdkPixbuf
+name|GdkPixbufAnimation
 modifier|*
 name|splash_image_load
 parameter_list|(
@@ -238,7 +238,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|GdkPixbuf
+name|GdkPixbufAnimation
 modifier|*
 name|splash_image_pick_from_dir
 parameter_list|(
@@ -302,17 +302,13 @@ name|GtkWidget
 modifier|*
 name|vbox
 decl_stmt|;
-name|GdkPixbuf
+name|GdkPixbufAnimation
 modifier|*
 name|pixbuf
 decl_stmt|;
 name|GdkScreen
 modifier|*
 name|screen
-decl_stmt|;
-name|GdkPixmap
-modifier|*
-name|pixmap
 decl_stmt|;
 name|PangoAttrList
 modifier|*
@@ -446,7 +442,7 @@ name|width
 operator|=
 name|MIN
 argument_list|(
-name|gdk_pixbuf_get_width
+name|gdk_pixbuf_animation_get_width
 argument_list|(
 name|pixbuf
 argument_list|)
@@ -463,7 +459,7 @@ name|height
 operator|=
 name|MIN
 argument_list|(
-name|gdk_pixbuf_get_height
+name|gdk_pixbuf_animation_get_height
 argument_list|(
 name|pixbuf
 argument_list|)
@@ -532,7 +528,15 @@ argument_list|(
 name|vbox
 argument_list|)
 expr_stmt|;
-comment|/*  prepare the drawing area  */
+comment|/*  If the splash image is static, we use a drawing area and set the    *  image as back pixmap, otherwise a GtkImage is being used.    */
+if|if
+condition|(
+name|gdk_pixbuf_animation_is_static_image
+argument_list|(
+name|pixbuf
+argument_list|)
+condition|)
+block|{
 name|splash
 operator|->
 name|area
@@ -540,6 +544,19 @@ operator|=
 name|gtk_drawing_area_new
 argument_list|()
 expr_stmt|;
+block|}
+else|else
+block|{
+name|splash
+operator|->
+name|area
+operator|=
+name|gtk_image_new_from_animation
+argument_list|(
+name|pixbuf
+argument_list|)
+expr_stmt|;
+block|}
 name|gtk_box_pack_start_defaults
 argument_list|(
 name|GTK_BOX
@@ -587,7 +604,10 @@ name|splash
 operator|->
 name|area
 argument_list|,
+name|gdk_pixbuf_animation_get_static_image
+argument_list|(
 name|pixbuf
+argument_list|)
 argument_list|,
 operator|&
 name|values
@@ -613,8 +633,18 @@ argument_list|,
 name|GDK_GC_FOREGROUND
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|gdk_pixbuf_animation_is_static_image
+argument_list|(
+name|pixbuf
+argument_list|)
+condition|)
+block|{
+name|GdkPixmap
+modifier|*
 name|pixmap
-operator|=
+init|=
 name|gdk_pixmap_new
 argument_list|(
 name|splash
@@ -634,7 +664,7 @@ argument_list|,
 operator|-
 literal|1
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|gdk_draw_pixbuf
 argument_list|(
 name|pixmap
@@ -643,7 +673,10 @@ name|splash
 operator|->
 name|gc
 argument_list|,
+name|gdk_pixbuf_animation_get_static_image
+argument_list|(
 name|pixbuf
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -668,11 +701,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|pixbuf
-argument_list|)
-expr_stmt|;
 name|gdk_window_set_back_pixmap
 argument_list|(
 name|splash
@@ -689,6 +717,12 @@ expr_stmt|;
 name|g_object_unref
 argument_list|(
 name|pixmap
+argument_list|)
+expr_stmt|;
+block|}
+name|g_object_unref
+argument_list|(
+name|pixbuf
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -1782,7 +1816,7 @@ end_function
 
 begin_function
 specifier|static
-name|GdkPixbuf
+name|GdkPixbufAnimation
 modifier|*
 DECL|function|splash_image_load (void)
 name|splash_image_load
@@ -1790,7 +1824,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|GdkPixbuf
+name|GdkPixbufAnimation
 modifier|*
 name|pixbuf
 decl_stmt|;
@@ -1807,7 +1841,7 @@ argument_list|)
 expr_stmt|;
 name|pixbuf
 operator|=
-name|gdk_pixbuf_new_from_file
+name|gdk_pixbuf_animation_new_from_file
 argument_list|(
 name|filename
 argument_list|,
@@ -1868,7 +1902,7 @@ argument_list|)
 expr_stmt|;
 name|pixbuf
 operator|=
-name|gdk_pixbuf_new_from_file
+name|gdk_pixbuf_animation_new_from_file
 argument_list|(
 name|filename
 argument_list|,
@@ -1919,7 +1953,7 @@ end_function
 
 begin_function
 specifier|static
-name|GdkPixbuf
+name|GdkPixbufAnimation
 modifier|*
 DECL|function|splash_image_pick_from_dir (const gchar * dirname)
 name|splash_image_pick_from_dir
@@ -1930,7 +1964,7 @@ modifier|*
 name|dirname
 parameter_list|)
 block|{
-name|GdkPixbuf
+name|GdkPixbufAnimation
 modifier|*
 name|pixbuf
 init|=
@@ -2031,7 +2065,7 @@ argument_list|)
 decl_stmt|;
 name|pixbuf
 operator|=
-name|gdk_pixbuf_new_from_file
+name|gdk_pixbuf_animation_new_from_file
 argument_list|(
 name|filename
 argument_list|,
