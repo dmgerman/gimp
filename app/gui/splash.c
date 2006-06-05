@@ -58,7 +58,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27fb94ac0108
+DECL|struct|__anon2b4257300108
 block|{
 DECL|member|window
 name|GtkWidget
@@ -725,7 +725,7 @@ argument_list|(
 name|pixbuf
 argument_list|)
 expr_stmt|;
-name|g_signal_connect
+name|g_signal_connect_after
 argument_list|(
 name|splash
 operator|->
