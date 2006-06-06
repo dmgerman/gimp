@@ -92,6 +92,14 @@ value|"plug-in-decompose"
 end_define
 
 begin_define
+DECL|macro|PLUG_IN_PROC_REG
+define|#
+directive|define
+name|PLUG_IN_PROC_REG
+value|"plug-in-decompose-registered"
+end_define
+
+begin_define
 DECL|macro|PLUG_IN_BINARY
 define|#
 directive|define
@@ -154,6 +162,7 @@ parameter_list|,
 name|gint32
 name|drawable_ID
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|extract_type
@@ -259,8 +268,36 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
+name|transfer_registration_color
+parameter_list|(
+specifier|const
+name|guchar
+modifier|*
+name|src
+parameter_list|,
+name|gint
+name|bpp
+parameter_list|,
+name|gint
+name|numpix
+parameter_list|,
+name|guchar
+modifier|*
+modifier|*
+name|dst
+parameter_list|,
+name|gint
+name|num_channels
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
 name|extract_rgb
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -284,6 +321,7 @@ specifier|static
 name|void
 name|extract_red
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -307,6 +345,7 @@ specifier|static
 name|void
 name|extract_green
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -330,6 +369,7 @@ specifier|static
 name|void
 name|extract_blue
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -353,6 +393,7 @@ specifier|static
 name|void
 name|extract_rgba
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -376,6 +417,7 @@ specifier|static
 name|void
 name|extract_alpha
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -399,6 +441,7 @@ specifier|static
 name|void
 name|extract_hsv
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -422,6 +465,7 @@ specifier|static
 name|void
 name|extract_hue
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -445,6 +489,7 @@ specifier|static
 name|void
 name|extract_sat
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -468,6 +513,7 @@ specifier|static
 name|void
 name|extract_val
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -491,6 +537,7 @@ specifier|static
 name|void
 name|extract_cmy
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -514,6 +561,7 @@ specifier|static
 name|void
 name|extract_cyan
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -537,6 +585,7 @@ specifier|static
 name|void
 name|extract_magenta
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -560,6 +609,7 @@ specifier|static
 name|void
 name|extract_yellow
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -583,6 +633,7 @@ specifier|static
 name|void
 name|extract_cmyk
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -606,6 +657,7 @@ specifier|static
 name|void
 name|extract_cyank
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -629,6 +681,7 @@ specifier|static
 name|void
 name|extract_magentak
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -652,6 +705,7 @@ specifier|static
 name|void
 name|extract_yellowk
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -675,6 +729,7 @@ specifier|static
 name|void
 name|extract_lab
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -698,6 +753,7 @@ specifier|static
 name|void
 name|extract_ycbcr470
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -721,6 +777,7 @@ specifier|static
 name|void
 name|extract_ycbcr709
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -744,6 +801,7 @@ specifier|static
 name|void
 name|extract_ycbcr470f
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -767,6 +825,7 @@ specifier|static
 name|void
 name|extract_ycbcr709f
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -814,9 +873,10 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29006b8c0108
+DECL|struct|__anon29f947fa0108
 block|{
 DECL|member|type
+specifier|const
 name|gchar
 modifier|*
 name|type
@@ -826,7 +886,7 @@ DECL|member|dialog
 name|gboolean
 name|dialog
 decl_stmt|;
-comment|/* Dialog-Flag. Set it to TRUE if you want to appear                           * this extract function within the dialog */
+comment|/* Dialog-Flag. Set it to TRUE if you want to appear                              * this extract function within the dialog */
 DECL|member|num_images
 name|gint
 name|num_images
@@ -834,6 +894,7 @@ decl_stmt|;
 comment|/* Number of images to create */
 comment|/* Names of channels to extract */
 DECL|member|channel_name
+specifier|const
 name|gchar
 modifier|*
 name|channel_name
@@ -849,6 +910,7 @@ modifier|*
 name|extract_fun
 function_decl|)
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -1434,7 +1496,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29006b8c0208
+DECL|struct|__anon29f947fa0208
 block|{
 DECL|member|extract_type
 name|gchar
@@ -1446,6 +1508,10 @@ decl_stmt|;
 DECL|member|as_layers
 name|gboolean
 name|as_layers
+decl_stmt|;
+DECL|member|use_registration
+name|gboolean
+name|use_registration
 decl_stmt|;
 DECL|typedef|DecoVals
 block|}
@@ -1487,7 +1553,10 @@ literal|"rgb"
 block|,
 comment|/* Decompose type      */
 name|TRUE
+block|,
 comment|/* Decompose to Layers */
+name|FALSE
+comment|/* use registration color */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -1616,7 +1685,53 @@ literal|"different channel information in each of them"
 argument_list|,
 literal|"Peter Kirchgessner"
 argument_list|,
-literal|"Peter Kirchgessner (peter@kirchgessner.net)"
+literal|"Peter Kirchgessner"
+argument_list|,
+literal|"1997"
+argument_list|,
+name|N_
+argument_list|(
+literal|"_Decompose..."
+argument_list|)
+argument_list|,
+literal|"RGB*"
+argument_list|,
+name|GIMP_PLUGIN
+argument_list|,
+name|G_N_ELEMENTS
+argument_list|(
+name|args
+argument_list|)
+argument_list|,
+name|G_N_ELEMENTS
+argument_list|(
+name|return_vals
+argument_list|)
+argument_list|,
+name|args
+argument_list|,
+name|return_vals
+argument_list|)
+expr_stmt|;
+name|gimp_install_procedure
+argument_list|(
+name|PLUG_IN_PROC_REG
+argument_list|,
+name|N_
+argument_list|(
+literal|"Decompose an image into separate colorspace components"
+argument_list|)
+argument_list|,
+literal|"This function creates new gray images with "
+literal|"different channel information in each of them. "
+literal|"Pixels in the foreground color will appear black "
+literal|"in all output images.  This can be used for "
+literal|"things like crop marks that have to show up on "
+literal|"all channels."
+argument_list|,
+literal|"Peter Kirchgessner"
+argument_list|,
+literal|"Peter Kirchgessner, Clarence Risher"
 argument_list|,
 literal|"1997"
 argument_list|,
@@ -1646,7 +1761,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-name|PLUG_IN_PROC
+name|PLUG_IN_PROC_REG
 argument_list|,
 literal|"<Image>/Colors/Components"
 argument_list|)
@@ -1871,6 +1986,10 @@ operator|&&
 name|nparams
 operator|!=
 literal|5
+operator|&&
+name|nparams
+operator|!=
+literal|6
 condition|)
 block|{
 name|status
@@ -1937,6 +2056,21 @@ operator|.
 name|d_int32
 else|:
 name|FALSE
+expr_stmt|;
+name|decovals
+operator|.
+name|use_registration
+operator|=
+operator|(
+name|strcmp
+argument_list|(
+name|name
+argument_list|,
+name|PLUG_IN_PROC_REG
+argument_list|)
+operator|==
+literal|0
+operator|)
 expr_stmt|;
 block|}
 break|break;
@@ -2200,7 +2334,7 @@ end_comment
 begin_function
 specifier|static
 name|gint32
-DECL|function|decompose (gint32 image_ID,gint32 drawable_ID,char * extract_type,gint32 * image_ID_dst,gint32 * nlayers,gint32 * layer_ID_dst)
+DECL|function|decompose (gint32 image_ID,gint32 drawable_ID,const gchar * extract_type,gint32 * image_ID_dst,gint32 * nlayers,gint32 * layer_ID_dst)
 name|decompose
 parameter_list|(
 name|gint32
@@ -2209,7 +2343,8 @@ parameter_list|,
 name|gint32
 name|drawable_ID
 parameter_list|,
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|extract_type
 parameter_list|,
@@ -2930,6 +3065,35 @@ argument_list|,
 name|dst
 argument_list|)
 expr_stmt|;
+comment|/* Transfer the registration color */
+if|if
+condition|(
+name|decovals
+operator|.
+name|use_registration
+condition|)
+name|transfer_registration_color
+argument_list|(
+name|src
+argument_list|,
+name|drawable_src
+operator|->
+name|bpp
+argument_list|,
+name|scan_lines
+operator|*
+name|width
+argument_list|,
+name|dst
+argument_list|,
+name|extract
+index|[
+name|extract_idx
+index|]
+operator|.
+name|num_images
+argument_list|)
+expr_stmt|;
 comment|/* Set destination pixel regions */
 for|for
 control|(
@@ -3353,15 +3517,207 @@ block|}
 end_function
 
 begin_comment
+comment|/* Registration Color function */
+end_comment
+
+begin_function
+specifier|static
+name|void
+DECL|function|transfer_registration_color (const guchar * src,gint bpp,gint numpix,guchar ** dst,gint num_channels)
+name|transfer_registration_color
+parameter_list|(
+specifier|const
+name|guchar
+modifier|*
+name|src
+parameter_list|,
+name|gint
+name|bpp
+parameter_list|,
+name|gint
+name|numpix
+parameter_list|,
+name|guchar
+modifier|*
+modifier|*
+name|dst
+parameter_list|,
+name|gint
+name|num_channels
+parameter_list|)
+block|{
+specifier|register
+specifier|const
+name|guchar
+modifier|*
+name|rgb_src
+init|=
+name|src
+decl_stmt|;
+name|guchar
+modifier|*
+name|dsts
+index|[
+literal|4
+index|]
+decl_stmt|;
+specifier|register
+name|gint
+name|count
+init|=
+name|numpix
+decl_stmt|;
+name|gint
+name|channel
+decl_stmt|;
+name|GimpRGB
+name|color
+decl_stmt|;
+name|guchar
+name|red
+decl_stmt|,
+name|green
+decl_stmt|,
+name|blue
+decl_stmt|;
+name|gimp_context_get_foreground
+argument_list|(
+operator|&
+name|color
+argument_list|)
+expr_stmt|;
+name|gimp_rgb_get_uchar
+argument_list|(
+operator|&
+name|color
+argument_list|,
+operator|&
+name|red
+argument_list|,
+operator|&
+name|green
+argument_list|,
+operator|&
+name|blue
+argument_list|)
+expr_stmt|;
+for|for
+control|(
+name|channel
+operator|=
+literal|0
+init|;
+name|channel
+operator|<
+name|num_channels
+condition|;
+name|channel
+operator|++
+control|)
+name|dsts
+index|[
+name|channel
+index|]
+operator|=
+name|dst
+index|[
+name|channel
+index|]
+expr_stmt|;
+while|while
+condition|(
+name|count
+operator|--
+operator|>
+literal|0
+condition|)
+block|{
+if|if
+condition|(
+name|rgb_src
+index|[
+literal|0
+index|]
+operator|==
+name|red
+operator|&&
+name|rgb_src
+index|[
+literal|1
+index|]
+operator|==
+name|green
+operator|&&
+name|rgb_src
+index|[
+literal|2
+index|]
+operator|==
+name|blue
+condition|)
+for|for
+control|(
+name|channel
+operator|=
+literal|0
+init|;
+name|channel
+operator|<
+name|num_channels
+condition|;
+name|channel
+operator|++
+control|)
+operator|*
+operator|(
+name|dsts
+index|[
+name|channel
+index|]
+operator|++
+operator|)
+operator|=
+literal|255
+expr_stmt|;
+else|else
+for|for
+control|(
+name|channel
+operator|=
+literal|0
+init|;
+name|channel
+operator|<
+name|num_channels
+condition|;
+name|channel
+operator|++
+control|)
+name|dsts
+index|[
+name|channel
+index|]
+operator|++
+expr_stmt|;
+name|rgb_src
+operator|+=
+name|bpp
+expr_stmt|;
+block|}
+block|}
+end_function
+
+begin_comment
 comment|/* Extract functions */
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|extract_rgb (guchar * src,gint bpp,gint numpix,guchar ** dst)
+DECL|function|extract_rgb (const guchar * src,gint bpp,gint numpix,guchar ** dst)
 name|extract_rgb
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -3379,6 +3735,7 @@ name|dst
 parameter_list|)
 block|{
 specifier|register
+specifier|const
 name|guchar
 modifier|*
 name|rgb_src
@@ -3482,9 +3839,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|extract_rgba (guchar * src,gint bpp,gint numpix,guchar ** dst)
+DECL|function|extract_rgba (const guchar * src,gint bpp,gint numpix,guchar ** dst)
 name|extract_rgba
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -3502,6 +3860,7 @@ name|dst
 parameter_list|)
 block|{
 specifier|register
+specifier|const
 name|guchar
 modifier|*
 name|rgba_src
@@ -3627,9 +3986,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|extract_red (guchar * src,gint bpp,gint numpix,guchar ** dst)
+DECL|function|extract_red (const guchar * src,gint bpp,gint numpix,guchar ** dst)
 name|extract_red
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -3647,6 +4007,7 @@ name|dst
 parameter_list|)
 block|{
 specifier|register
+specifier|const
 name|guchar
 modifier|*
 name|rgb_src
@@ -3701,9 +4062,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|extract_green (guchar * src,gint bpp,gint numpix,guchar ** dst)
+DECL|function|extract_green (const guchar * src,gint bpp,gint numpix,guchar ** dst)
 name|extract_green
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -3721,6 +4083,7 @@ name|dst
 parameter_list|)
 block|{
 specifier|register
+specifier|const
 name|guchar
 modifier|*
 name|rgb_src
@@ -3777,9 +4140,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|extract_blue (guchar * src,gint bpp,gint numpix,guchar ** dst)
+DECL|function|extract_blue (const guchar * src,gint bpp,gint numpix,guchar ** dst)
 name|extract_blue
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -3797,6 +4161,7 @@ name|dst
 parameter_list|)
 block|{
 specifier|register
+specifier|const
 name|guchar
 modifier|*
 name|rgb_src
@@ -3853,9 +4218,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|extract_alpha (guchar * src,gint bpp,gint numpix,guchar ** dst)
+DECL|function|extract_alpha (const guchar * src,gint bpp,gint numpix,guchar ** dst)
 name|extract_alpha
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -3873,6 +4239,7 @@ name|dst
 parameter_list|)
 block|{
 specifier|register
+specifier|const
 name|guchar
 modifier|*
 name|rgb_src
@@ -3929,9 +4296,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|extract_cmy (guchar * src,gint bpp,gint numpix,guchar ** dst)
+DECL|function|extract_cmy (const guchar * src,gint bpp,gint numpix,guchar ** dst)
 name|extract_cmy
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -3949,6 +4317,7 @@ name|dst
 parameter_list|)
 block|{
 specifier|register
+specifier|const
 name|guchar
 modifier|*
 name|rgb_src
@@ -4058,9 +4427,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|extract_hsv (guchar * src,gint bpp,gint numpix,guchar ** dst)
+DECL|function|extract_hsv (const guchar * src,gint bpp,gint numpix,guchar ** dst)
 name|extract_hsv
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -4078,6 +4448,7 @@ name|dst
 parameter_list|)
 block|{
 specifier|register
+specifier|const
 name|guchar
 modifier|*
 name|rgb_src
@@ -4203,9 +4574,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|extract_hue (guchar * src,gint bpp,gint numpix,guchar ** dst)
+DECL|function|extract_hue (const guchar * src,gint bpp,gint numpix,guchar ** dst)
 name|extract_hue
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -4223,6 +4595,7 @@ name|dst
 parameter_list|)
 block|{
 specifier|register
+specifier|const
 name|guchar
 modifier|*
 name|rgb_src
@@ -4300,9 +4673,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|extract_sat (guchar * src,gint bpp,gint numpix,guchar ** dst)
+DECL|function|extract_sat (const guchar * src,gint bpp,gint numpix,guchar ** dst)
 name|extract_sat
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -4320,6 +4694,7 @@ name|dst
 parameter_list|)
 block|{
 specifier|register
+specifier|const
 name|guchar
 modifier|*
 name|rgb_src
@@ -4397,9 +4772,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|extract_val (guchar * src,gint bpp,gint numpix,guchar ** dst)
+DECL|function|extract_val (const guchar * src,gint bpp,gint numpix,guchar ** dst)
 name|extract_val
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -4417,6 +4793,7 @@ name|dst
 parameter_list|)
 block|{
 specifier|register
+specifier|const
 name|guchar
 modifier|*
 name|rgb_src
@@ -4494,9 +4871,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|extract_cyan (guchar * src,gint bpp,gint numpix,guchar ** dst)
+DECL|function|extract_cyan (const guchar * src,gint bpp,gint numpix,guchar ** dst)
 name|extract_cyan
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -4514,6 +4892,7 @@ name|dst
 parameter_list|)
 block|{
 specifier|register
+specifier|const
 name|guchar
 modifier|*
 name|rgb_src
@@ -4575,9 +4954,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|extract_magenta (guchar * src,gint bpp,gint numpix,guchar ** dst)
+DECL|function|extract_magenta (const guchar * src,gint bpp,gint numpix,guchar ** dst)
 name|extract_magenta
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -4595,6 +4975,7 @@ name|dst
 parameter_list|)
 block|{
 specifier|register
+specifier|const
 name|guchar
 modifier|*
 name|rgb_src
@@ -4658,9 +5039,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|extract_yellow (guchar * src,gint bpp,gint numpix,guchar ** dst)
+DECL|function|extract_yellow (const guchar * src,gint bpp,gint numpix,guchar ** dst)
 name|extract_yellow
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -4678,6 +5060,7 @@ name|dst
 parameter_list|)
 block|{
 specifier|register
+specifier|const
 name|guchar
 modifier|*
 name|rgb_src
@@ -4741,9 +5124,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|extract_cmyk (guchar * src,gint bpp,gint numpix,guchar ** dst)
+DECL|function|extract_cmyk (const guchar * src,gint bpp,gint numpix,guchar ** dst)
 name|extract_cmyk
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -4761,6 +5145,7 @@ name|dst
 parameter_list|)
 block|{
 specifier|register
+specifier|const
 name|guchar
 modifier|*
 name|rgb_src
@@ -4943,9 +5328,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|extract_cyank (guchar * src,gint bpp,gint numpix,guchar ** dst)
+DECL|function|extract_cyank (const guchar * src,gint bpp,gint numpix,guchar ** dst)
 name|extract_cyank
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -4963,6 +5349,7 @@ name|dst
 parameter_list|)
 block|{
 specifier|register
+specifier|const
 name|guchar
 modifier|*
 name|rgb_src
@@ -5083,9 +5470,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|extract_magentak (guchar * src,gint bpp,gint numpix,guchar ** dst)
+DECL|function|extract_magentak (const guchar * src,gint bpp,gint numpix,guchar ** dst)
 name|extract_magentak
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -5103,6 +5491,7 @@ name|dst
 parameter_list|)
 block|{
 specifier|register
+specifier|const
 name|guchar
 modifier|*
 name|rgb_src
@@ -5224,9 +5613,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|extract_yellowk (guchar * src,gint bpp,gint numpix,guchar ** dst)
+DECL|function|extract_yellowk (const guchar * src,gint bpp,gint numpix,guchar ** dst)
 name|extract_yellowk
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -5244,6 +5634,7 @@ name|dst
 parameter_list|)
 block|{
 specifier|register
+specifier|const
 name|guchar
 modifier|*
 name|rgb_src
@@ -5364,9 +5755,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|extract_lab (guchar * src,gint bpp,gint numpix,guchar ** dst)
+DECL|function|extract_lab (const guchar * src,gint bpp,gint numpix,guchar ** dst)
 name|extract_lab
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -5384,6 +5776,7 @@ name|dst
 parameter_list|)
 block|{
 specifier|register
+specifier|const
 name|guchar
 modifier|*
 name|rgb_src
@@ -5775,9 +6168,10 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|extract_ycbcr470 (guchar * src,gint bpp,gint numpix,guchar ** dst)
+DECL|function|extract_ycbcr470 (const guchar * src,gint bpp,gint numpix,guchar ** dst)
 name|extract_ycbcr470
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -5795,6 +6189,7 @@ name|dst
 parameter_list|)
 block|{
 specifier|register
+specifier|const
 name|guchar
 modifier|*
 name|rgb_src
@@ -6003,9 +6398,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|extract_ycbcr709 (guchar * src,gint bpp,gint numpix,guchar ** dst)
+DECL|function|extract_ycbcr709 (const guchar * src,gint bpp,gint numpix,guchar ** dst)
 name|extract_ycbcr709
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -6023,6 +6419,7 @@ name|dst
 parameter_list|)
 block|{
 specifier|register
+specifier|const
 name|guchar
 modifier|*
 name|rgb_src
@@ -6231,9 +6628,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|extract_ycbcr470f (guchar * src,gint bpp,gint numpix,guchar ** dst)
+DECL|function|extract_ycbcr470f (const guchar * src,gint bpp,gint numpix,guchar ** dst)
 name|extract_ycbcr470f
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -6251,6 +6649,7 @@ name|dst
 parameter_list|)
 block|{
 specifier|register
+specifier|const
 name|guchar
 modifier|*
 name|rgb_src
@@ -6491,9 +6890,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|extract_ycbcr709f (guchar * src,gint bpp,gint numpix,guchar ** dst)
+DECL|function|extract_ycbcr709f (const guchar * src,gint bpp,gint numpix,guchar ** dst)
 name|extract_ycbcr709f
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -6511,6 +6911,7 @@ name|dst
 parameter_list|)
 block|{
 specifier|register
+specifier|const
 name|guchar
 modifier|*
 name|rgb_src
@@ -7262,7 +7663,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Decompose to _layers"
+literal|"_Decompose to layers"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -7316,6 +7717,82 @@ operator|.
 name|as_layers
 argument_list|)
 expr_stmt|;
+name|toggle
+operator|=
+name|gtk_check_button_new_with_mnemonic
+argument_list|(
+name|_
+argument_list|(
+literal|"_Foreground as registration color"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_help_set_help_data
+argument_list|(
+name|toggle
+argument_list|,
+name|_
+argument_list|(
+literal|"Pixels in the foreground color will "
+literal|"appear black in all output images.  "
+literal|"This can be used for things like crop "
+literal|"marks that have to show up on all "
+literal|"channels."
+argument_list|)
+argument_list|,
+name|PLUG_IN_PROC
+argument_list|)
+expr_stmt|;
+name|gtk_toggle_button_set_active
+argument_list|(
+name|GTK_TOGGLE_BUTTON
+argument_list|(
+name|toggle
+argument_list|)
+argument_list|,
+name|decovals
+operator|.
+name|use_registration
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_start
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|main_vbox
+argument_list|)
+argument_list|,
+name|toggle
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|toggle
+argument_list|)
+expr_stmt|;
+name|g_signal_connect
+argument_list|(
+name|toggle
+argument_list|,
+literal|"toggled"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|gimp_toggle_button_update
+argument_list|)
+argument_list|,
+operator|&
+name|decovals
+operator|.
+name|use_registration
+argument_list|)
+expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|dialog
@@ -7344,7 +7821,6 @@ if|if
 condition|(
 name|run
 condition|)
-block|{
 name|strcpy
 argument_list|(
 name|decovals
@@ -7359,7 +7835,6 @@ operator|.
 name|type
 argument_list|)
 expr_stmt|;
-block|}
 return|return
 name|run
 return|;
