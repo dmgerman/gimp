@@ -333,6 +333,7 @@ begin_function_decl
 name|void
 name|gimp_rgb_to_hsv4
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|rgb

@@ -3591,9 +3591,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_rgb_to_hsv4 (guchar * rgb,gdouble * hue,gdouble * saturation,gdouble * value)
+DECL|function|gimp_rgb_to_hsv4 (const guchar * rgb,gdouble * hue,gdouble * saturation,gdouble * value)
 name|gimp_rgb_to_hsv4
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|rgb
