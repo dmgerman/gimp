@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2986a7c80103
+DECL|enum|__anon2956655c0103
 block|{
 DECL|enumerator|RECTANGLE_CHANGED
 name|RECTANGLE_CHANGED
@@ -7618,15 +7618,6 @@ argument_list|(
 name|tool
 operator|->
 name|control
-argument_list|)
-expr_stmt|;
-name|gimp_image_flush
-argument_list|(
-name|tool
-operator|->
-name|display
-operator|->
-name|image
 argument_list|)
 expr_stmt|;
 name|tool
