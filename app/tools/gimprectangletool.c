@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2abb17850103
+DECL|enum|__anon28c519290103
 block|{
 DECL|enumerator|RECTANGLE_CHANGED
 name|RECTANGLE_CHANGED
@@ -3490,7 +3490,7 @@ argument_list|(
 name|tool
 argument_list|)
 expr_stmt|;
-comment|/*  This is the only case when the motion events should be ignored--       we're just waiting for the button release event to execute  */
+comment|/*  This is the only case when the motion events should be ignored --    *  we're just waiting for the button release event to execute.    */
 name|g_object_get
 argument_list|(
 name|rectangle
@@ -6529,10 +6529,6 @@ modifier|*
 name|draw_tool
 parameter_list|)
 block|{
-name|GimpTool
-modifier|*
-name|tool
-decl_stmt|;
 name|GimpRectangleToolPrivate
 modifier|*
 name|private
@@ -6557,13 +6553,6 @@ name|draw_tool
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|tool
-operator|=
-name|GIMP_TOOL
-argument_list|(
-name|draw_tool
-argument_list|)
-expr_stmt|;
 name|private
 operator|=
 name|GIMP_RECTANGLE_TOOL_GET_PRIVATE
@@ -6575,7 +6564,7 @@ name|g_object_get
 argument_list|(
 name|GIMP_RECTANGLE_TOOL
 argument_list|(
-name|tool
+name|draw_tool
 argument_list|)
 argument_list|,
 literal|"function"
@@ -7732,6 +7721,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/* FIXME: ârectangle_selection_callbackâdefined but not used */
+end_comment
+
 begin_function
 specifier|static
 name|void
@@ -7750,6 +7743,13 @@ block|{
 name|GimpDisplay
 modifier|*
 name|display
+init|=
+name|GIMP_TOOL
+argument_list|(
+name|rectangle
+argument_list|)
+operator|->
+name|display
 decl_stmt|;
 name|gint
 name|x1
@@ -7761,15 +7761,6 @@ name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
-name|display
-operator|=
-name|GIMP_TOOL
-argument_list|(
-name|rectangle
-argument_list|)
-operator|->
-name|display
-expr_stmt|;
 name|gimp_draw_tool_pause
 argument_list|(
 name|GIMP_DRAW_TOOL
@@ -8307,6 +8298,13 @@ block|{
 name|GimpDisplayShell
 modifier|*
 name|shell
+init|=
+name|GIMP_DISPLAY_SHELL
+argument_list|(
+name|display
+operator|->
+name|shell
+argument_list|)
 decl_stmt|;
 name|gdouble
 name|width
@@ -8348,15 +8346,6 @@ decl_stmt|;
 name|gboolean
 name|fixed_aspect
 decl_stmt|;
-name|shell
-operator|=
-name|GIMP_DISPLAY_SHELL
-argument_list|(
-name|display
-operator|->
-name|shell
-argument_list|)
-expr_stmt|;
 name|g_object_get
 argument_list|(
 name|rectangle
