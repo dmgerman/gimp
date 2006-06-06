@@ -96,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a4370d0108
+DECL|struct|__anon28e103ad0108
 block|{
 DECL|member|script
 name|SFScript
@@ -175,9 +175,6 @@ parameter_list|(
 name|SFMenu
 modifier|*
 name|menu
-parameter_list|,
-name|gpointer
-name|foo
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -424,6 +421,11 @@ argument_list|,
 name|script_fu_load_script
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|path
 argument_list|)
 expr_stmt|;
 comment|/*  Now that all scripts are read in and sorted, tell gimp about them  */
@@ -3599,17 +3601,18 @@ block|}
 end_function
 
 begin_comment
-comment|/*  *  The following function is a GTraverseFunction.  Please  *  note that it frees the script->args structure.  --Sven  */
+comment|/*  *  The following function is a GTraverseFunction.  *  Please note that it frees the script->args structure.  */
 end_comment
 
 begin_function
 specifier|static
 name|gboolean
-DECL|function|script_fu_install_script (gpointer foo,GList * scripts,gpointer bar)
+DECL|function|script_fu_install_script (gpointer foo G_GNUC_UNUSED,GList * scripts,gpointer bar G_GNUC_UNUSED)
 name|script_fu_install_script
 parameter_list|(
 name|gpointer
 name|foo
+name|G_GNUC_UNUSED
 parameter_list|,
 name|GList
 modifier|*
@@ -3617,6 +3620,7 @@ name|scripts
 parameter_list|,
 name|gpointer
 name|bar
+name|G_GNUC_UNUSED
 parameter_list|)
 block|{
 name|GList
@@ -3647,6 +3651,7 @@ name|list
 operator|->
 name|data
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|menu_path
@@ -3744,22 +3749,15 @@ return|;
 block|}
 end_function
 
-begin_comment
-comment|/*  *  The following function is a GFunc.  */
-end_comment
-
 begin_function
 specifier|static
 name|void
-DECL|function|script_fu_install_menu (SFMenu * menu,gpointer foo)
+DECL|function|script_fu_install_menu (SFMenu * menu)
 name|script_fu_install_menu
 parameter_list|(
 name|SFMenu
 modifier|*
 name|menu
-parameter_list|,
-name|gpointer
-name|foo
 parameter_list|)
 block|{
 name|gimp_plugin_menu_register
@@ -3797,11 +3795,12 @@ end_comment
 begin_function
 specifier|static
 name|gboolean
-DECL|function|script_fu_remove_script (gpointer foo,GList * scripts,gpointer bar)
+DECL|function|script_fu_remove_script (gpointer foo G_GNUC_UNUSED,GList * scripts,gpointer bar G_GNUC_UNUSED)
 name|script_fu_remove_script
 parameter_list|(
 name|gpointer
 name|foo
+name|G_GNUC_UNUSED
 parameter_list|,
 name|GList
 modifier|*
@@ -3809,6 +3808,7 @@ name|scripts
 parameter_list|,
 name|gpointer
 name|bar
+name|G_GNUC_UNUSED
 parameter_list|)
 block|{
 name|GList
@@ -3906,10 +3906,6 @@ name|script
 decl_stmt|;
 name|gint
 name|min_args
-decl_stmt|;
-name|gchar
-modifier|*
-name|escaped
 decl_stmt|;
 name|run_mode
 operator|=
@@ -4296,8 +4292,11 @@ case|:
 case|case
 name|SF_DIRNAME
 case|:
-name|escaped
-operator|=
+block|{
+name|gchar
+modifier|*
+name|tmp
+init|=
 name|g_strescape
 argument_list|(
 name|param
@@ -4308,21 +4307,22 @@ name|d_string
 argument_list|,
 name|NULL
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|g_string_append_printf
 argument_list|(
 name|s
 argument_list|,
 literal|"\"%s\""
 argument_list|,
-name|escaped
+name|tmp
 argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
-name|escaped
+name|tmp
 argument_list|)
 expr_stmt|;
+block|}
 break|break;
 case|case
 name|SF_ADJUSTMENT
@@ -4492,12 +4492,13 @@ end_comment
 begin_function
 specifier|static
 name|gboolean
-DECL|function|script_fu_lookup_script (gpointer * foo,GList * scripts,gconstpointer * name)
+DECL|function|script_fu_lookup_script (gpointer * foo G_GNUC_UNUSED,GList * scripts,gconstpointer * name)
 name|script_fu_lookup_script
 parameter_list|(
 name|gpointer
 modifier|*
 name|foo
+name|G_GNUC_UNUSED
 parameter_list|,
 name|GList
 modifier|*
