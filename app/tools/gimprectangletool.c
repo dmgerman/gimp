@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2956655c0103
+DECL|enum|__anon293f7fcf0103
 block|{
 DECL|enumerator|RECTANGLE_CHANGED
 name|RECTANGLE_CHANGED
@@ -9114,16 +9114,6 @@ decl_stmt|;
 name|gboolean
 name|highlight
 decl_stmt|;
-name|gint
-name|x1
-decl_stmt|,
-name|y1
-decl_stmt|;
-name|gint
-name|x2
-decl_stmt|,
-name|y2
-decl_stmt|;
 if|if
 condition|(
 operator|!
@@ -9155,6 +9145,24 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|highlight
+condition|)
+block|{
+name|GdkRectangle
+name|rect
+decl_stmt|;
+name|gint
+name|x1
+decl_stmt|,
+name|y1
+decl_stmt|;
+name|gint
+name|x2
+decl_stmt|,
+name|y2
+decl_stmt|;
 name|g_object_get
 argument_list|(
 name|rectangle
@@ -9182,14 +9190,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|highlight
-condition|)
-block|{
-name|GdkRectangle
-name|rect
-decl_stmt|;
 name|rect
 operator|.
 name|x
@@ -9228,6 +9228,7 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
+block|{
 name|gimp_display_shell_set_highlight
 argument_list|(
 name|shell
@@ -9235,6 +9236,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
