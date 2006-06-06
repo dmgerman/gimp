@@ -24,19 +24,31 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimp/gimpui.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"siod/siod.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"siod-wrapper.h"
+file|"script-fu-types.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"script-fu-console.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"script-fu-interface.h"
 end_include
 
 begin_include
@@ -55,6 +67,12 @@ begin_include
 include|#
 directive|include
 file|"script-fu-text-console.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"siod-wrapper.h"
 end_include
 
 begin_include
@@ -1002,13 +1020,39 @@ index|]
 decl_stmt|;
 name|GimpPDBStatusType
 name|status
-init|=
-name|GIMP_PDB_SUCCESS
 decl_stmt|;
+if|if
+condition|(
+name|script_fu_interface_is_active
+argument_list|()
+condition|)
+block|{
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"You can not use \"Refresh Scripts\" while a "
+literal|"Script-Fu dialog box is open.  Please close "
+literal|"all Script-Fu windows and try again."
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|status
+operator|=
+name|GIMP_PDB_EXECUTION_ERROR
+expr_stmt|;
+block|}
+else|else
+block|{
 comment|/*  Reload all of the available scripts  */
 name|script_fu_find_scripts
 argument_list|()
 expr_stmt|;
+name|status
+operator|=
+name|GIMP_PDB_SUCCESS
+expr_stmt|;
+block|}
 operator|*
 name|nreturn_vals
 operator|=

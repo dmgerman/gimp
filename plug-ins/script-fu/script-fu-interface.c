@@ -108,7 +108,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2794af400108
+DECL|struct|__anon292375a60108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -440,10 +440,29 @@ comment|/*  *  Function definitions  */
 end_comment
 
 begin_function
+name|gboolean
+DECL|function|script_fu_interface_is_active (void)
+name|script_fu_interface_is_active
+parameter_list|(
 name|void
-DECL|function|script_fu_interface_report_cc (gchar * command)
+parameter_list|)
+block|{
+return|return
+operator|(
+name|sf_interface
+operator|!=
+name|NULL
+operator|)
+return|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|script_fu_interface_report_cc (const gchar * command)
 name|script_fu_interface_report_cc
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|command
