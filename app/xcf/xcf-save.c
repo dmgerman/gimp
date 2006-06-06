@@ -88,6 +88,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpguide.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -6469,7 +6475,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b64a5530108
+DECL|struct|__anon2c907c440108
 block|{
 DECL|member|info
 name|XcfInfo

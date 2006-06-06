@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpguide.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -263,7 +269,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2076ac0103
+DECL|enum|__anon299a46e10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -276,7 +282,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2076ac0203
+DECL|enum|__anon299a46e10203
 block|{
 DECL|enumerator|SCALED
 name|SCALED

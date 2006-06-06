@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpguide.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimage-colormap.h"
 end_include
 
@@ -1324,7 +1330,7 @@ name|gu
 operator|->
 name|guide
 operator|=
-name|gimp_image_guide_ref
+name|g_object_ref
 argument_list|(
 name|guide
 argument_list|)
@@ -1445,7 +1451,7 @@ name|gu
 operator|->
 name|position
 expr_stmt|;
-name|gimp_image_guide_ref
+name|g_object_ref
 argument_list|(
 name|gu
 operator|->
@@ -1574,7 +1580,7 @@ name|undo
 operator|->
 name|data
 decl_stmt|;
-name|gimp_image_guide_unref
+name|g_object_unref
 argument_list|(
 name|gu
 operator|->

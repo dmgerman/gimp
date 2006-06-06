@@ -108,6 +108,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpguide.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimage.h"
 end_include
 
@@ -288,7 +294,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd4ac4a0103
+DECL|enum|__anon289593760103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -367,7 +373,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd4ac4a0203
+DECL|enum|__anon289593760203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3689,7 +3695,7 @@ argument_list|,
 operator|(
 name|GFunc
 operator|)
-name|gimp_image_guide_unref
+name|g_object_unref
 argument_list|,
 name|NULL
 argument_list|)
