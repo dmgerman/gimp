@@ -1752,7 +1752,7 @@ init|=
 name|FALSE
 decl_stmt|;
 name|gboolean
-name|update_cursor
+name|update_sw_cursor
 init|=
 name|FALSE
 decl_stmt|;
@@ -1971,7 +1971,7 @@ name|height
 argument_list|)
 condition|)
 block|{
-name|update_cursor
+name|update_sw_cursor
 operator|=
 name|TRUE
 expr_stmt|;
@@ -2009,7 +2009,7 @@ condition|)
 return|return
 name|TRUE
 return|;
-name|update_cursor
+name|update_sw_cursor
 operator|=
 name|TRUE
 expr_stmt|;
@@ -3408,7 +3408,7 @@ name|height
 argument_list|)
 condition|)
 block|{
-name|update_cursor
+name|update_sw_cursor
 operator|=
 name|TRUE
 expr_stmt|;
@@ -3633,7 +3633,7 @@ name|display_coords
 argument_list|)
 expr_stmt|;
 block|}
-name|update_cursor
+name|update_sw_cursor
 operator|=
 name|TRUE
 expr_stmt|;
@@ -4710,7 +4710,7 @@ block|}
 block|}
 if|if
 condition|(
-name|update_cursor
+name|update_sw_cursor
 condition|)
 name|gimp_display_shell_update_cursor
 argument_list|(

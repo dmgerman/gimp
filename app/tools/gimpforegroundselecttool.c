@@ -144,7 +144,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b260d90108
+DECL|struct|__anon28d551080108
 block|{
 DECL|member|width
 name|gint

@@ -489,6 +489,15 @@ comment|/* typedef struct _GimpGrid         GimpGrid; in config-types.h */
 end_comment
 
 begin_typedef
+DECL|typedef|GimpGuide
+typedef|typedef
+name|struct
+name|_GimpGuide
+name|GimpGuide
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpImagefile
 typedef|typedef
 name|struct
@@ -615,15 +624,6 @@ typedef|typedef
 name|struct
 name|_GimpGradientSegment
 name|GimpGradientSegment
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpGuide
-typedef|typedef
-name|struct
-name|_GimpGuide
-name|GimpGuide
 typedef|;
 end_typedef
 

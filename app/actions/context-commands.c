@@ -377,7 +377,7 @@ parameter_list|,
 name|usep
 parameter_list|)
 define|\
-value|void \ context_##name##_##fgbg##ground_cmd_callback (GtkAction *action, \                                               gint       value, \                                               gpointer   data) \ { \   GimpRGB      color; \   GimpContext *context; \   return_if_no_context (context, data); \ \   gimp_context_get_##fgbg##ground (context,&color); \   context_select_color ((GimpActionSelectType) value,&color, usec, usep); \   gimp_context_set_##fgbg##ground (context,&color); \ \ }
+value|void \ context_##name##_##fgbg##ground_cmd_callback (GtkAction *action, \                                               gint       value, \                                               gpointer   data) \ { \   GimpContext *context; \   GimpRGB      color; \   return_if_no_context (context, data); \ \   gimp_context_get_##fgbg##ground (context,&color); \   context_select_color ((GimpActionSelectType) value,&color, usec, usep); \   gimp_context_set_##fgbg##ground (context,&color); \ }
 end_define
 
 begin_macro

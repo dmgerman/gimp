@@ -2190,12 +2190,12 @@ name|GDK_MOD1_MASK
 condition|)
 name|cursor
 operator|=
-name|GDK_BOTTOM_RIGHT_CORNER
+name|GIMP_CURSOR_CORNER_BOTTOM_RIGHT
 expr_stmt|;
 else|else
 name|cursor
 operator|=
-name|GDK_BOTTOM_SIDE
+name|GIMP_CURSOR_SIDE_BOTTOM
 expr_stmt|;
 break|break;
 block|}
@@ -2208,7 +2208,7 @@ condition|)
 block|{
 name|cursor
 operator|=
-name|GDK_RIGHT_SIDE
+name|GIMP_CURSOR_SIDE_RIGHT
 expr_stmt|;
 break|break;
 block|}
