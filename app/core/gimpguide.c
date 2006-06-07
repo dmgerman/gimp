@@ -63,7 +63,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d4c62e0103
+DECL|enum|__anon28b8d2ea0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -463,6 +463,34 @@ name|orientation
 argument_list|,
 name|NULL
 argument_list|)
+return|;
+block|}
+end_function
+
+begin_function
+name|guint32
+DECL|function|gimp_guide_get_ID (GimpGuide * guide)
+name|gimp_guide_get_ID
+parameter_list|(
+name|GimpGuide
+modifier|*
+name|guide
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_GUIDE
+argument_list|(
+name|guide
+argument_list|)
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+return|return
+name|guide
+operator|->
+name|guide_ID
 return|;
 block|}
 end_function

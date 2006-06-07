@@ -269,7 +269,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon299a46e10103
+DECL|enum|__anon28d6bb200103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -282,7 +282,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon299a46e10203
+DECL|enum|__anon28d6bb200203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -5577,9 +5577,11 @@ name|guide
 parameter_list|)
 block|{
 name|gint
-name|x
+name|position
 decl_stmt|;
 name|gint
+name|x
+decl_stmt|,
 name|y
 decl_stmt|;
 name|g_return_if_fail
@@ -5592,15 +5594,21 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
+name|GIMP_IS_GUIDE
+argument_list|(
 name|guide
-operator|!=
-name|NULL
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|position
+operator|=
+name|gimp_guide_get_position
+argument_list|(
+name|guide
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|guide
-operator|->
 name|position
 operator|<
 literal|0
@@ -5610,12 +5618,8 @@ name|gimp_display_shell_transform_xy
 argument_list|(
 name|shell
 argument_list|,
-name|guide
-operator|->
 name|position
 argument_list|,
-name|guide
-operator|->
 name|position
 argument_list|,
 operator|&
@@ -5629,9 +5633,10 @@ argument_list|)
 expr_stmt|;
 switch|switch
 condition|(
+name|gimp_guide_get_position
+argument_list|(
 name|guide
-operator|->
-name|orientation
+argument_list|)
 condition|)
 block|{
 case|case
