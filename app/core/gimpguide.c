@@ -12,16 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<string.h>
-end_include
-
-begin_comment
-comment|/* strcmp */
-end_comment
-
-begin_include
-include|#
-directive|include
 file|<glib-object.h>
 end_include
 
@@ -29,12 +19,6 @@ begin_include
 include|#
 directive|include
 file|"libgimpbase/gimpbase.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimpbase/gimplimits.h"
 end_include
 
 begin_include
@@ -55,15 +39,9 @@ directive|include
 file|"gimpguide.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gimp-intl.h"
-end_include
-
 begin_enum
 enum|enum
-DECL|enum|__anon28b8d2ea0103
+DECL|enum|__anon2ad874f70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -178,10 +156,7 @@ name|PROP_ID
 argument_list|,
 literal|"id"
 argument_list|,
-name|N_
-argument_list|(
-literal|"Identifying number for the guide."
-argument_list|)
+name|NULL
 argument_list|,
 literal|0
 argument_list|,
@@ -202,10 +177,7 @@ name|PROP_ORIENTATION
 argument_list|,
 literal|"orientation"
 argument_list|,
-name|N_
-argument_list|(
-literal|"Orientation of the guide."
-argument_list|)
+name|NULL
 argument_list|,
 name|GIMP_TYPE_ORIENTATION_TYPE
 argument_list|,
@@ -222,10 +194,7 @@ name|PROP_POSITION
 argument_list|,
 literal|"position"
 argument_list|,
-name|N_
-argument_list|(
-literal|"Offset of the guide."
-argument_list|)
+name|NULL
 argument_list|,
 operator|-
 literal|1
