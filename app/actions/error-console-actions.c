@@ -98,14 +98,14 @@ name|GTK_STOCK_CLEAR
 block|,
 name|N_
 argument_list|(
-literal|"_Clear Errors"
+literal|"_Clear"
 argument_list|)
 block|,
 literal|""
 block|,
 name|N_
 argument_list|(
-literal|"Clear errors"
+literal|"Clear error console"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -114,6 +114,31 @@ name|error_console_clear_cmd_callback
 argument_list|)
 block|,
 name|GIMP_HELP_ERRORS_CLEAR
+block|}
+block|,
+block|{
+literal|"error-console-select-all"
+block|,
+name|NULL
+block|,
+name|N_
+argument_list|(
+literal|"Select _All"
+argument_list|)
+block|,
+literal|""
+block|,
+name|N_
+argument_list|(
+literal|"Select all errors"
+argument_list|)
+block|,
+name|G_CALLBACK
+argument_list|(
+name|error_console_select_all_cmd_callback
+argument_list|)
+block|,
+name|GIMP_HELP_ERRORS_SELECT_ALL
 block|}
 block|}
 decl_stmt|;
@@ -135,14 +160,14 @@ name|GTK_STOCK_SAVE_AS
 block|,
 name|N_
 argument_list|(
-literal|"Save _All Errors to File..."
+literal|"_Save Error Log to File..."
 argument_list|)
 block|,
 literal|""
 block|,
 name|N_
 argument_list|(
-literal|"Save all errors"
+literal|"Save error log"
 argument_list|)
 block|,
 name|FALSE
@@ -159,7 +184,7 @@ name|GTK_STOCK_SAVE_AS
 block|,
 name|N_
 argument_list|(
-literal|"Save _Selection to File..."
+literal|"Save S_election to File..."
 argument_list|)
 block|,
 literal|""
@@ -273,6 +298,13 @@ value|gimp_action_group_set_action_sensitive (group, action, (condition) != 0)
 name|SET_SENSITIVE
 argument_list|(
 literal|"error-console-clear"
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"error-console-select-all"
 argument_list|,
 name|TRUE
 argument_list|)

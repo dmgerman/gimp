@@ -2721,6 +2721,14 @@ value|"gimp-errors-save"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_ERRORS_SELECT_ALL
+define|#
+directive|define
+name|GIMP_HELP_ERRORS_SELECT_ALL
+value|"gimp-errors-select-all"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_PREFS_DIALOG
 define|#
 directive|define
