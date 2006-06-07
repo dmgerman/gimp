@@ -47,13 +47,10 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9a4c070103
+DECL|enum|__anon2891108d0103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
-block|,
-DECL|enumerator|MOVED
-name|MOVED
 block|,
 DECL|enumerator|LAST_SIGNAL
 name|LAST_SIGNAL
@@ -63,7 +60,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9a4c070203
+DECL|enum|__anon2891108d0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

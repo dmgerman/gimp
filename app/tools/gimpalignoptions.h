@@ -112,10 +112,6 @@ DECL|member|parent_instence
 name|GimpToolOptions
 name|parent_instence
 decl_stmt|;
-DECL|member|align_type
-name|GimpTransformType
-name|align_type
-decl_stmt|;
 block|}
 struct|;
 end_struct

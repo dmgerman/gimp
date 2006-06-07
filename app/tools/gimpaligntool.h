@@ -133,10 +133,10 @@ index|[
 name|ALIGN_TOOL_NUM_BUTTONS
 index|]
 decl_stmt|;
-DECL|member|selected_items
+DECL|member|selected_objects
 name|GList
 modifier|*
-name|selected_items
+name|selected_objects
 decl_stmt|;
 DECL|member|horz_align_type
 name|GimpAlignmentType

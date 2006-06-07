@@ -6,30 +6,34 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_ITEM_ALIGN_H__
+name|__GIMP_IMAGE_ARRANGE_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_ITEM_ALIGN_H__
+DECL|macro|__GIMP_IMAGE_ARRANGE_H__
 define|#
 directive|define
-name|__GIMP_ITEM_ALIGN_H__
+name|__GIMP_IMAGE_ARRANGE_H__
 end_define
 
 begin_function_decl
 name|void
-name|gimp_item_align
+name|gimp_image_arrange_objects
 parameter_list|(
-name|GimpItem
+name|GimpImage
 modifier|*
-name|target
+name|image
+parameter_list|,
+name|GList
+modifier|*
+name|list
 parameter_list|,
 name|GimpAlignmentType
-name|target_alignment
+name|alignment
 parameter_list|,
-name|GimpItem
+name|GObject
 modifier|*
-name|refeence
+name|reference
 parameter_list|,
 name|GimpAlignmentType
 name|reference_alignment
@@ -46,7 +50,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMP_ITEM_ALIGN_H__ */
+comment|/*  __GIMP_IMAGE_ARRANGE_H__  */
 end_comment
 
 end_unit
