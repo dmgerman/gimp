@@ -1648,10 +1648,10 @@ argument_list|(
 name|image
 argument_list|)
 decl_stmt|;
-empty_stmt|;
 name|gint
 name|pressx
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|pressy
 decl_stmt|;
 name|g_object_get
