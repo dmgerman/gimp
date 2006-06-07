@@ -269,7 +269,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d6bb200103
+DECL|enum|__anon2ba7887a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -282,7 +282,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d6bb200203
+DECL|enum|__anon2ba7887a0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -5633,7 +5633,7 @@ argument_list|)
 expr_stmt|;
 switch|switch
 condition|(
-name|gimp_guide_get_position
+name|gimp_guide_get_orientation
 argument_list|(
 name|guide
 argument_list|)
