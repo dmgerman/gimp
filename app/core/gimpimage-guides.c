@@ -434,6 +434,11 @@ argument_list|,
 name|guide
 argument_list|)
 expr_stmt|;
+name|gimp_guide_removed
+argument_list|(
+name|guide
+argument_list|)
+expr_stmt|;
 name|gimp_guide_set_position
 argument_list|(
 name|guide

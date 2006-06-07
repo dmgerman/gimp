@@ -128,6 +128,19 @@ DECL|member|parent_class
 name|GObjectClass
 name|parent_class
 decl_stmt|;
+comment|/*  signals  */
+DECL|member|removed
+name|void
+function_decl|(
+modifier|*
+name|removed
+function_decl|)
+parameter_list|(
+name|GimpGuide
+modifier|*
+name|guide
+parameter_list|)
+function_decl|;
 block|}
 struct|;
 end_struct
@@ -213,6 +226,17 @@ name|guide
 parameter_list|,
 name|gint
 name|position
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_guide_removed
+parameter_list|(
+name|GimpGuide
+modifier|*
+name|guide
 parameter_list|)
 function_decl|;
 end_function_decl
