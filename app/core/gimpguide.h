@@ -100,7 +100,7 @@ struct|struct
 name|_GimpGuide
 block|{
 DECL|member|parent_instance
-name|GimpObject
+name|GObject
 name|parent_instance
 decl_stmt|;
 DECL|member|position
@@ -125,7 +125,7 @@ struct|struct
 name|_GimpGuideClass
 block|{
 DECL|member|parent_class
-name|GimpObjectClass
+name|GObjectClass
 name|parent_class
 decl_stmt|;
 block|}
@@ -141,6 +141,20 @@ argument_list|)
 name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
+
+begin_function_decl
+name|GimpGuide
+modifier|*
+name|gimp_guide_new
+parameter_list|(
+name|GimpOrientationType
+name|orientation
+parameter_list|,
+name|guint32
+name|guide_ID
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 name|gint

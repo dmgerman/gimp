@@ -63,7 +63,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3f88030103
+DECL|enum|__anon28a62c380103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -128,14 +128,14 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpGuide,gimp_guide,GIMP_TYPE_OBJECT)
+DECL|function|G_DEFINE_TYPE (GimpGuide,gimp_guide,G_TYPE_OBJECT)
 name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpGuide
 argument_list|,
 argument|gimp_guide
 argument_list|,
-argument|GIMP_TYPE_OBJECT
+argument|G_TYPE_OBJECT
 argument_list|)
 end_macro
 
@@ -209,8 +209,10 @@ argument_list|)
 argument_list|,
 name|GIMP_TYPE_ORIENTATION_TYPE
 argument_list|,
-name|GIMP_ORIENTATION_VERTICAL
+name|GIMP_ORIENTATION_UNKNOWN
 argument_list|,
+name|G_PARAM_CONSTRUCT_ONLY
+operator||
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
@@ -220,7 +222,7 @@ name|object_class
 argument_list|,
 name|PROP_ID
 argument_list|,
-literal|"guide-id"
+literal|"id"
 argument_list|,
 name|N_
 argument_list|(
@@ -233,6 +235,8 @@ name|G_MAXINT
 argument_list|,
 literal|0
 argument_list|,
+name|G_PARAM_CONSTRUCT_ONLY
+operator||
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
@@ -434,6 +438,38 @@ block|}
 end_function
 
 begin_function
+name|GimpGuide
+modifier|*
+DECL|function|gimp_guide_new (GimpOrientationType orientation,guint32 guide_ID)
+name|gimp_guide_new
+parameter_list|(
+name|GimpOrientationType
+name|orientation
+parameter_list|,
+name|guint32
+name|guide_ID
+parameter_list|)
+block|{
+return|return
+name|g_object_new
+argument_list|(
+name|GIMP_TYPE_GUIDE
+argument_list|,
+literal|"orientation"
+argument_list|,
+name|orientation
+argument_list|,
+literal|"id"
+argument_list|,
+name|guide_ID
+argument_list|,
+name|NULL
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_function
 name|gint
 DECL|function|gimp_guide_get_position (GimpGuide * guide)
 name|gimp_guide_get_position
@@ -450,7 +486,8 @@ argument_list|(
 name|guide
 argument_list|)
 argument_list|,
-literal|0
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 return|return
@@ -488,6 +525,16 @@ name|position
 operator|=
 name|position
 expr_stmt|;
+name|g_object_notify
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|guide
+argument_list|)
+argument_list|,
+literal|"position"
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -508,7 +555,7 @@ argument_list|(
 name|guide
 argument_list|)
 argument_list|,
-literal|0
+name|GIMP_ORIENTATION_UNKNOWN
 argument_list|)
 expr_stmt|;
 return|return
