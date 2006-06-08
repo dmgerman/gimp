@@ -294,7 +294,7 @@ end_function
 
 begin_function
 specifier|const
-name|char
+name|gchar
 modifier|*
 DECL|function|siod_get_error_msg (void)
 name|siod_get_error_msg

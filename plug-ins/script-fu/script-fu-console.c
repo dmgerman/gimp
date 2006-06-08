@@ -80,7 +80,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0175310108
+DECL|struct|__anon29b03ab50108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -1888,7 +1888,8 @@ expr_stmt|;
 name|siod_interpret_string
 argument_list|(
 operator|(
-name|char
+specifier|const
+name|gchar
 operator|*
 operator|)
 name|list
@@ -2341,10 +2342,29 @@ argument_list|)
 operator|!=
 literal|0
 condition|)
+block|{
+specifier|const
+name|gchar
+modifier|*
+name|msg
+init|=
+name|siod_get_error_msg
+argument_list|()
+decl_stmt|;
+if|if
+condition|(
+name|msg
+condition|)
+name|g_printerr
+argument_list|(
+name|msg
+argument_list|)
+expr_stmt|;
 name|status
 operator|=
 name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
+block|}
 break|break;
 case|case
 name|GIMP_RUN_INTERACTIVE
@@ -2360,8 +2380,8 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Script-Fu evaluate mode allows only "
-literal|"noninteractive invocation"
+literal|"Script-Fu evaluation mode only allows "
+literal|"non-interactive invocation"
 argument_list|)
 argument_list|)
 expr_stmt|;
