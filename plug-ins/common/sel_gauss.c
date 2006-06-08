@@ -106,7 +106,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4224d80108
+DECL|struct|__anon294226bd0108
 block|{
 DECL|member|radius
 name|gdouble
@@ -2827,7 +2827,7 @@ parameter_list|,
 name|ALPHA
 parameter_list|)
 define|\
-value|if (bytes == BYTES&& has_alpha == ALPHA)\     return matrixmult_int (src, dest, width, height, mat, numrad,\                            BYTES, ALPHA, maxdelta, preview_mode);
+value|if (bytes == BYTES&& has_alpha == ALPHA)\     {\       matrixmult_int (src, dest, width, height, mat, numrad,\                       BYTES, ALPHA, maxdelta, preview_mode);\       return;\     }
 name|EXPAND
 argument_list|(
 literal|1
