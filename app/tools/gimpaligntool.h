@@ -90,7 +90,7 @@ DECL|macro|ALIGN_TOOL_NUM_BUTTONS
 define|#
 directive|define
 name|ALIGN_TOOL_NUM_BUTTONS
-value|6
+value|12
 end_define
 
 begin_typedef
@@ -138,13 +138,9 @@ name|GList
 modifier|*
 name|selected_objects
 decl_stmt|;
-DECL|member|horz_align_type
+DECL|member|align_type
 name|GimpAlignmentType
-name|horz_align_type
-decl_stmt|;
-DECL|member|vert_align_type
-name|GimpAlignmentType
-name|vert_align_type
+name|align_type
 decl_stmt|;
 DECL|member|horz_offset
 name|gdouble
@@ -178,6 +174,10 @@ decl_stmt|,
 name|y1
 decl_stmt|;
 comment|/* rubber-band rectangle */
+DECL|member|set_reference
+name|gboolean
+name|set_reference
+decl_stmt|;
 block|}
 struct|;
 end_struct
