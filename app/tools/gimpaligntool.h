@@ -142,6 +142,10 @@ DECL|member|align_type
 name|GimpAlignmentType
 name|align_type
 decl_stmt|;
+DECL|member|align_reference_type
+name|GimpAlignReferenceType
+name|align_reference_type
+decl_stmt|;
 DECL|member|horz_offset
 name|gdouble
 name|horz_offset
