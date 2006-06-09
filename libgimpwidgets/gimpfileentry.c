@@ -27,6 +27,12 @@ directive|include
 file|"gimpwidgetstypes.h"
 end_include
 
+begin_undef
+undef|#
+directive|undef
+name|GIMP_DISABLE_DEPRECATED
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -47,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon294692d00103
+DECL|enum|__anon2c09d53e0103
 block|{
 DECL|enumerator|FILENAME_CHANGED
 name|FILENAME_CHANGED
@@ -513,7 +519,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_file_entry_new:  * @title:       The title of the #GtkFileEntry dialog.  * @filename:    The initial filename.  * @dir_only:    %TRUE if the file entry should accept directories only.  * @check_valid: %TRUE if the widget should check if the entered file  *               really exists.  *  * Creates a new #GimpFileEntry widget.  *  * Returns: A pointer to the new #GimpFileEntry widget.  **/
+comment|/**  * gimp_file_entry_new:  * @title:       The title of the #GtkFileEntry dialog.  * @filename:    The initial filename.  * @dir_only:    %TRUE if the file entry should accept directories only.  * @check_valid: %TRUE if the widget should check if the entered file  *               really exists.  *  * You should use #GtkFileChooserButton instead.  *  * Returns: A pointer to the new #GimpFileEntry widget.  **/
 end_comment
 
 begin_function

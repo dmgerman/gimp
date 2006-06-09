@@ -33,11 +33,11 @@ directive|include
 file|"gimpwidgetstypes.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gimppatheditor.h"
-end_include
+begin_undef
+undef|#
+directive|undef
+name|GIMP_DISABLE_DEPRECATED
+end_undef
 
 begin_include
 include|#
@@ -48,12 +48,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimppatheditor.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/libgimp-intl.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27dd28dd0103
+DECL|enum|__anon2b5431ce0103
 block|{
 DECL|enumerator|PATH_CHANGED
 name|PATH_CHANGED
@@ -69,7 +75,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27dd28dd0203
+DECL|enum|__anon2b5431ce0203
 block|{
 DECL|enumerator|COLUMN_UTF8
 name|COLUMN_UTF8
