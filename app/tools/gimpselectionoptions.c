@@ -84,7 +84,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpnewrectselecttool.h"
+file|"gimprectangleselecttool.h"
 end_include
 
 begin_include
@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d112340103
+DECL|enum|__anon28d42ad70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

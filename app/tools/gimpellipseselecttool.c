@@ -84,7 +84,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpnewrectselectoptions.h"
+file|"gimprectangleselectoptions.h"
 end_include
 
 begin_include

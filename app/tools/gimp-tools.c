@@ -299,13 +299,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpnewrectselecttool.h"
+file|"gimpthresholdtool.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpthresholdtool.h"
+file|"gimprectangleselecttool.h"
 end_include
 
 begin_include
