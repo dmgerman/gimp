@@ -917,21 +917,6 @@ block|{
 name|guint
 name|function
 decl_stmt|;
-comment|/*   /\* if we have an existing rectangle in the current display, then */
-comment|/*      we have already "executed", and need to undo at this point, unless */
-comment|/*      the user has done something in the meantime *\/ */
-comment|/*   if (tool->display&& display == tool->display) */
-comment|/*     { */
-comment|/*       GimpNewRectSelectTool *rect_select = GIMP_NEW_RECT_SELECT_TOOL (tool); */
-comment|/*       GimpImage             *image       = display->image; */
-comment|/*       GimpUndo              *undo; */
-comment|/*       undo = gimp_undo_stack_peek (image->undo_stack); */
-comment|/*       if (undo&& rect_select->undo == undo) */
-comment|/*         { */
-comment|/*           gimp_image_undo (image); */
-comment|/*           rect_select->undo = NULL; */
-comment|/*         } */
-comment|/*     } */
 if|if
 condition|(
 name|tool
