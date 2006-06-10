@@ -109,7 +109,7 @@ struct|struct
 name|_GimpEllipseSelectTool
 block|{
 DECL|member|parent_instance
-name|GimpNewRectSelectTool
+name|GimpRectSelectTool
 name|parent_instance
 decl_stmt|;
 block|}
@@ -122,7 +122,7 @@ struct|struct
 name|_GimpEllipseSelectToolClass
 block|{
 DECL|member|parent_class
-name|GimpNewRectSelectToolClass
+name|GimpRectSelectToolClass
 name|parent_class
 decl_stmt|;
 block|}

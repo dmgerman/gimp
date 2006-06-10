@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_NEW_RECT_SELECT_OPTIONS_H__
+name|__GIMP_RECT_SELECT_OPTIONS_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_NEW_RECT_SELECT_OPTIONS_H__
+DECL|macro|__GIMP_RECT_SELECT_OPTIONS_H__
 define|#
 directive|define
-name|__GIMP_NEW_RECT_SELECT_OPTIONS_H__
+name|__GIMP_RECT_SELECT_OPTIONS_H__
 end_define
 
 begin_include
@@ -23,90 +23,90 @@ file|"gimpselectionoptions.h"
 end_include
 
 begin_define
-DECL|macro|GIMP_TYPE_NEW_RECT_SELECT_OPTIONS
+DECL|macro|GIMP_TYPE_RECT_SELECT_OPTIONS
 define|#
 directive|define
-name|GIMP_TYPE_NEW_RECT_SELECT_OPTIONS
-value|(gimp_new_rect_select_options_get_type ())
+name|GIMP_TYPE_RECT_SELECT_OPTIONS
+value|(gimp_rect_select_options_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_NEW_RECT_SELECT_OPTIONS (obj)
+DECL|macro|GIMP_RECT_SELECT_OPTIONS (obj)
 define|#
 directive|define
-name|GIMP_NEW_RECT_SELECT_OPTIONS
+name|GIMP_RECT_SELECT_OPTIONS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_NEW_RECT_SELECT_OPTIONS, GimpNewRectSelectOptions))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_RECT_SELECT_OPTIONS, GimpRectSelectOptions))
 end_define
 
 begin_define
-DECL|macro|GIMP_NEW_RECT_SELECT_OPTIONS_CLASS (klass)
+DECL|macro|GIMP_RECT_SELECT_OPTIONS_CLASS (klass)
 define|#
 directive|define
-name|GIMP_NEW_RECT_SELECT_OPTIONS_CLASS
+name|GIMP_RECT_SELECT_OPTIONS_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_NEW_RECT_SELECT_OPTIONS, GimpNewRectSelectOptionsClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_RECT_SELECT_OPTIONS, GimpRectSelectOptionsClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_NEW_RECT_SELECT_OPTIONS (obj)
+DECL|macro|GIMP_IS_RECT_SELECT_OPTIONS (obj)
 define|#
 directive|define
-name|GIMP_IS_NEW_RECT_SELECT_OPTIONS
+name|GIMP_IS_RECT_SELECT_OPTIONS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_NEW_RECT_SELECT_OPTIONS))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_RECT_SELECT_OPTIONS))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_NEW_RECT_SELECT_OPTIONS_CLASS (klass)
+DECL|macro|GIMP_IS_RECT_SELECT_OPTIONS_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_NEW_RECT_SELECT_OPTIONS_CLASS
+name|GIMP_IS_RECT_SELECT_OPTIONS_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_NEW_RECT_SELECT_OPTIONS))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_RECT_SELECT_OPTIONS))
 end_define
 
 begin_define
-DECL|macro|GIMP_NEW_RECT_SELECT_OPTIONS_GET_CLASS (obj)
+DECL|macro|GIMP_RECT_SELECT_OPTIONS_GET_CLASS (obj)
 define|#
 directive|define
-name|GIMP_NEW_RECT_SELECT_OPTIONS_GET_CLASS
+name|GIMP_RECT_SELECT_OPTIONS_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_NEW_RECT_SELECT_OPTIONS, GimpNewRectSelectOptionsClass))
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_RECT_SELECT_OPTIONS, GimpRectSelectOptionsClass))
 end_define
 
 begin_typedef
-DECL|typedef|GimpNewRectSelectOptions
+DECL|typedef|GimpRectSelectOptions
 typedef|typedef
 name|struct
-name|_GimpNewRectSelectOptions
-name|GimpNewRectSelectOptions
+name|_GimpRectSelectOptions
+name|GimpRectSelectOptions
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpNewRectSelectOptionsClass
+DECL|typedef|GimpRectSelectOptionsClass
 typedef|typedef
 name|struct
 name|_GimpToolOptionsClass
-name|GimpNewRectSelectOptionsClass
+name|GimpRectSelectOptionsClass
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpNewRectSelectOptions
+DECL|struct|_GimpRectSelectOptions
 struct|struct
-name|_GimpNewRectSelectOptions
+name|_GimpRectSelectOptions
 block|{
 DECL|member|parent_instence
 name|GimpSelectionOptions
@@ -118,7 +118,7 @@ end_struct
 
 begin_decl_stmt
 name|GType
-name|gimp_new_rect_select_options_get_type
+name|gimp_rect_select_options_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -129,7 +129,7 @@ end_decl_stmt
 begin_function_decl
 name|GtkWidget
 modifier|*
-name|gimp_new_rect_select_options_gui
+name|gimp_rect_select_options_gui
 parameter_list|(
 name|GimpToolOptions
 modifier|*
@@ -144,7 +144,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMP_NEW_RECT_SELECT_OPTIONS_H__ */
+comment|/* __GIMP_RECT_SELECT_OPTIONS_H__ */
 end_comment
 
 end_unit

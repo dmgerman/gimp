@@ -1608,7 +1608,7 @@ name|gimp
 operator|->
 name|tool_info_list
 argument_list|,
-literal|"gimp-new-rect-select-tool"
+literal|"gimp-rect-select-tool"
 argument_list|)
 expr_stmt|;
 name|tool_button
@@ -2315,7 +2315,7 @@ name|gimp
 operator|->
 name|tool_info_list
 argument_list|,
-literal|"gimp-new-rect-select-tool"
+literal|"gimp-rect-select-tool"
 argument_list|)
 expr_stmt|;
 name|tool_button

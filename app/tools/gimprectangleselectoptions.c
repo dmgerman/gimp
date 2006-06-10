@@ -72,7 +72,7 @@ end_include
 begin_function_decl
 specifier|static
 name|void
-name|gimp_new_rect_select_options_rectangle_options_iface_init
+name|gimp_rect_select_options_rectangle_options_iface_init
 parameter_list|(
 name|GimpRectangleOptionsInterface
 modifier|*
@@ -82,25 +82,25 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpNewRectSelectOptions,gimp_new_rect_select_options,GIMP_TYPE_SELECTION_OPTIONS,G_IMPLEMENT_INTERFACE (GIMP_TYPE_RECTANGLE_OPTIONS,gimp_new_rect_select_options_rectangle_options_iface_init))
+DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpRectSelectOptions,gimp_rect_select_options,GIMP_TYPE_SELECTION_OPTIONS,G_IMPLEMENT_INTERFACE (GIMP_TYPE_RECTANGLE_OPTIONS,gimp_rect_select_options_rectangle_options_iface_init))
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
-argument|GimpNewRectSelectOptions
+argument|GimpRectSelectOptions
 argument_list|,
-argument|gimp_new_rect_select_options
+argument|gimp_rect_select_options
 argument_list|,
 argument|GIMP_TYPE_SELECTION_OPTIONS
 argument_list|,
-argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_RECTANGLE_OPTIONS,                                                 gimp_new_rect_select_options_rectangle_options_iface_init)
+argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_RECTANGLE_OPTIONS,                                                 gimp_rect_select_options_rectangle_options_iface_init)
 argument_list|)
 end_macro
 
 begin_function
 specifier|static
 name|void
-name|gimp_new_rect_select_options_class_init
+name|gimp_rect_select_options_class_init
 parameter_list|(
-name|GimpNewRectSelectOptionsClass
+name|GimpRectSelectOptionsClass
 modifier|*
 name|klass
 parameter_list|)
@@ -137,10 +137,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_new_rect_select_options_init (GimpNewRectSelectOptions * options)
-name|gimp_new_rect_select_options_init
+DECL|function|gimp_rect_select_options_init (GimpRectSelectOptions * options)
+name|gimp_rect_select_options_init
 parameter_list|(
-name|GimpNewRectSelectOptions
+name|GimpRectSelectOptions
 modifier|*
 name|options
 parameter_list|)
@@ -150,8 +150,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_new_rect_select_options_rectangle_options_iface_init (GimpRectangleOptionsInterface * iface)
-name|gimp_new_rect_select_options_rectangle_options_iface_init
+DECL|function|gimp_rect_select_options_rectangle_options_iface_init (GimpRectangleOptionsInterface * iface)
+name|gimp_rect_select_options_rectangle_options_iface_init
 parameter_list|(
 name|GimpRectangleOptionsInterface
 modifier|*
@@ -163,8 +163,8 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_new_rect_select_options_gui (GimpToolOptions * tool_options)
-name|gimp_new_rect_select_options_gui
+DECL|function|gimp_rect_select_options_gui (GimpToolOptions * tool_options)
+name|gimp_rect_select_options_gui
 parameter_list|(
 name|GimpToolOptions
 modifier|*

@@ -299,12 +299,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimprectselecttool.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpnewrectselecttool.h"
 end_include
 
@@ -540,8 +534,6 @@ block|,
 name|gimp_ellipse_select_tool_register
 block|,
 name|gimp_rect_select_tool_register
-block|,
-name|gimp_new_rect_select_tool_register
 block|}
 decl_stmt|;
 name|GList
@@ -2016,14 +2008,6 @@ argument_list|(
 name|tool_type
 argument_list|,
 name|GIMP_TYPE_IMAGE_MAP_TOOL
-argument_list|)
-operator|&&
-operator|!
-name|g_type_is_a
-argument_list|(
-name|tool_type
-argument_list|,
-name|GIMP_TYPE_RECT_SELECT_TOOL
 argument_list|)
 operator|)
 expr_stmt|;

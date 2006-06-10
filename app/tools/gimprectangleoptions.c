@@ -175,20 +175,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
-name|gimp_rectangle_options_set_highlight
-parameter_list|(
-name|GimpRectangleOptions
-modifier|*
-name|options
-parameter_list|,
-name|gboolean
-name|highlight
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|gboolean
 name|gimp_rectangle_options_get_highlight
 parameter_list|(

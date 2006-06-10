@@ -116,7 +116,7 @@ specifier|static
 name|void
 name|gimp_ellipse_select_tool_select
 parameter_list|(
-name|GimpNewRectSelectTool
+name|GimpRectSelectTool
 modifier|*
 name|rect_tool
 parameter_list|,
@@ -139,14 +139,14 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpEllipseSelectTool,gimp_ellipse_select_tool,GIMP_TYPE_NEW_RECT_SELECT_TOOL)
+DECL|function|G_DEFINE_TYPE (GimpEllipseSelectTool,gimp_ellipse_select_tool,GIMP_TYPE_RECT_SELECT_TOOL)
 name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpEllipseSelectTool
 argument_list|,
 argument|gimp_ellipse_select_tool
 argument_list|,
-argument|GIMP_TYPE_NEW_RECT_SELECT_TOOL
+argument|GIMP_TYPE_RECT_SELECT_TOOL
 argument_list|)
 end_macro
 
@@ -180,9 +180,9 @@ call|)
 argument_list|(
 name|GIMP_TYPE_ELLIPSE_SELECT_TOOL
 argument_list|,
-name|GIMP_TYPE_NEW_RECT_SELECT_OPTIONS
+name|GIMP_TYPE_RECT_SELECT_OPTIONS
 argument_list|,
-name|gimp_new_rect_select_options_gui
+name|gimp_rect_select_options_gui
 argument_list|,
 literal|0
 argument_list|,
@@ -236,7 +236,7 @@ name|GimpDrawToolClass
 modifier|*
 name|draw_tool_class
 decl_stmt|;
-name|GimpNewRectSelectToolClass
+name|GimpRectSelectToolClass
 modifier|*
 name|rect_tool_class
 decl_stmt|;
@@ -249,7 +249,7 @@ argument_list|)
 expr_stmt|;
 name|rect_tool_class
 operator|=
-name|GIMP_NEW_RECT_SELECT_TOOL_CLASS
+name|GIMP_RECT_SELECT_TOOL_CLASS
 argument_list|(
 name|klass
 argument_list|)
@@ -328,11 +328,11 @@ modifier|*
 name|draw_tool
 parameter_list|)
 block|{
-name|GimpNewRectSelectTool
+name|GimpRectSelectTool
 modifier|*
 name|rect_sel
 init|=
-name|GIMP_NEW_RECT_SELECT_TOOL
+name|GIMP_RECT_SELECT_TOOL
 argument_list|(
 name|draw_tool
 argument_list|)
@@ -405,10 +405,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_ellipse_select_tool_select (GimpNewRectSelectTool * rect_tool,SelectOps operation,gint x,gint y,gint w,gint h)
+DECL|function|gimp_ellipse_select_tool_select (GimpRectSelectTool * rect_tool,SelectOps operation,gint x,gint y,gint w,gint h)
 name|gimp_ellipse_select_tool_select
 parameter_list|(
-name|GimpNewRectSelectTool
+name|GimpRectSelectTool
 modifier|*
 name|rect_tool
 parameter_list|,
