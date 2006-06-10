@@ -114,11 +114,14 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_ellipse_select_tool_rect_select
+name|gimp_ellipse_select_tool_select
 parameter_list|(
 name|GimpNewRectSelectTool
 modifier|*
 name|rect_tool
+parameter_list|,
+name|SelectOps
+name|operation
 parameter_list|,
 name|gint
 name|x
@@ -259,9 +262,9 @@ name|gimp_ellipse_select_tool_draw
 expr_stmt|;
 name|rect_tool_class
 operator|->
-name|rect_select
+name|select
 operator|=
-name|gimp_ellipse_select_tool_rect_select
+name|gimp_ellipse_select_tool_select
 expr_stmt|;
 block|}
 end_function
@@ -402,12 +405,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_ellipse_select_tool_rect_select (GimpNewRectSelectTool * rect_tool,gint x,gint y,gint w,gint h)
-name|gimp_ellipse_select_tool_rect_select
+DECL|function|gimp_ellipse_select_tool_select (GimpNewRectSelectTool * rect_tool,SelectOps operation,gint x,gint y,gint w,gint h)
+name|gimp_ellipse_select_tool_select
 parameter_list|(
 name|GimpNewRectSelectTool
 modifier|*
 name|rect_tool
+parameter_list|,
+name|SelectOps
+name|operation
 parameter_list|,
 name|gint
 name|x
@@ -467,8 +473,6 @@ name|w
 argument_list|,
 name|h
 argument_list|,
-name|options
-operator|->
 name|operation
 argument_list|,
 name|options

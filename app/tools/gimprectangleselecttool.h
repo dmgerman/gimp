@@ -112,10 +112,25 @@ DECL|member|parent_instance
 name|GimpSelectionTool
 name|parent_instance
 decl_stmt|;
+DECL|member|operation
+name|SelectOps
+name|operation
+decl_stmt|;
+comment|/* remember for use when modifying   */
+DECL|member|use_saved_op
+name|gboolean
+name|use_saved_op
+decl_stmt|;
+comment|/* use operation or get from options */
 DECL|member|undo
 name|GimpUndo
 modifier|*
 name|undo
+decl_stmt|;
+DECL|member|redo
+name|GimpUndo
+modifier|*
+name|redo
 decl_stmt|;
 block|}
 struct|;
@@ -130,16 +145,19 @@ DECL|member|parent_class
 name|GimpSelectionToolClass
 name|parent_class
 decl_stmt|;
-DECL|member|rect_select
+DECL|member|select
 name|void
 function_decl|(
 modifier|*
-name|rect_select
+name|select
 function_decl|)
 parameter_list|(
 name|GimpNewRectSelectTool
 modifier|*
 name|rect_select
+parameter_list|,
+name|SelectOps
+name|operation
 parameter_list|,
 name|gint
 name|x

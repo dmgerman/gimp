@@ -452,12 +452,6 @@ name|gimp_rectangle_tool_key_press
 expr_stmt|;
 name|tool_class
 operator|->
-name|modifier_key
-operator|=
-name|gimp_rectangle_tool_modifier_key
-expr_stmt|;
-name|tool_class
-operator|->
 name|oper_update
 operator|=
 name|gimp_rectangle_tool_oper_update
