@@ -1762,9 +1762,6 @@ decl_stmt|;
 name|gboolean
 name|rectangle_exists
 decl_stmt|;
-name|gboolean
-name|auto_shrink
-decl_stmt|;
 name|SelectOps
 name|operation
 decl_stmt|;
