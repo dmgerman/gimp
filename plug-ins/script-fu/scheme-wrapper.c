@@ -462,7 +462,7 @@ name|gboolean
 name|local_register_scripts
 parameter_list|)
 block|{
-name|char
+name|gchar
 modifier|*
 name|siod_argv
 index|[]
@@ -4535,7 +4535,6 @@ name|a
 argument_list|)
 argument_list|)
 return|;
-break|break;
 default|default:
 name|g_snprintf
 argument_list|(
@@ -4564,12 +4563,6 @@ name|NIL
 argument_list|)
 return|;
 block|}
-if|if
-condition|(
-operator|!
-name|success
-condition|)
-break|break;
 block|}
 if|if
 condition|(
