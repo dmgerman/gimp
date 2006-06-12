@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2761bb490103
+DECL|enum|__anon27de83590103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2653,7 +2653,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_zoom_preview_get_source:  * @preview: a #GimpZoomPreview widget  * @width: a pointer to an int where the current width of the zoom widget  *         will be put.  * @height: a pointer to an int where the current width of the zoom widget  *          will be put.  * @bpp: a pointer to an int where the bpp of the current drawable the zoom  *       widget is using will be put.  *  * Returns the scaled image data of the part of the drawable the  * #GimpZoomPreview is currently showing, as a newly allocated array of guchar.  * This function also allow to get the current width, height and bpp of the  * #GimpZoomPreview.  *  * Return Value:  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_zoom_preview_get_source:  * @preview: a #GimpZoomPreview widget  * @width: a pointer to an int where the current width of the zoom widget  *         will be put.  * @height: a pointer to an int where the current width of the zoom widget  *          will be put.  * @bpp: return location for the number of bytes per pixel  *  * Returns the scaled image data of the part of the drawable the  * #GimpZoomPreview is currently showing, as a newly allocated array of guchar.  * This function also allow to get the current width, height and bpp of the  * #GimpZoomPreview.  *  * Return Value: newly allocated data that should be released using g_free()  *               when it is not any longer needed  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
