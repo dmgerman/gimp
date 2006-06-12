@@ -105,7 +105,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e0af320108
+DECL|struct|__anon299779260108
 block|{
 DECL|member|tilable
 name|gboolean
@@ -645,7 +645,6 @@ name|d_status
 operator|=
 name|status
 expr_stmt|;
-comment|/*  Get the specified drawable  */
 name|drawable
 operator|=
 name|gimp_drawable_get
@@ -660,7 +659,6 @@ operator|.
 name|d_drawable
 argument_list|)
 expr_stmt|;
-comment|/*  See how we will run  */
 switch|switch
 condition|(
 name|run_mode
@@ -669,7 +667,6 @@ block|{
 case|case
 name|GIMP_RUN_INTERACTIVE
 case|:
-comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
 name|PLUG_IN_PROC
@@ -678,7 +675,6 @@ operator|&
 name|snvals
 argument_list|)
 expr_stmt|;
-comment|/*  Get information from the dialog  */
 if|if
 condition|(
 operator|!
@@ -692,7 +688,6 @@ break|break;
 case|case
 name|GIMP_RUN_NONINTERACTIVE
 case|:
-comment|/*  Test number of arguments  */
 if|if
 condition|(
 name|nparams
@@ -829,7 +824,6 @@ break|break;
 default|default:
 break|break;
 block|}
-comment|/*  Create texture  */
 if|if
 condition|(
 operator|(
@@ -855,25 +849,6 @@ argument_list|)
 operator|)
 condition|)
 block|{
-comment|/*  Set the tile cache size  */
-name|gimp_tile_cache_ntiles
-argument_list|(
-operator|(
-name|drawable
-operator|->
-name|width
-operator|+
-name|gimp_tile_width
-argument_list|()
-operator|-
-literal|1
-operator|)
-operator|/
-name|gimp_tile_width
-argument_list|()
-argument_list|)
-expr_stmt|;
-comment|/*  Run!  */
 name|solid_noise
 argument_list|(
 name|drawable
@@ -881,7 +856,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/*  If run mode is interactive, flush displays  */
 if|if
 condition|(
 name|run_mode
@@ -891,7 +865,6 @@ condition|)
 name|gimp_displays_flush
 argument_list|()
 expr_stmt|;
-comment|/*  Store data  */
 if|if
 condition|(
 name|run_mode
@@ -920,7 +893,6 @@ block|}
 block|}
 else|else
 block|{
-comment|/* gimp_message ("solid noise: cannot operate on indexed color images"); */
 name|status
 operator|=
 name|GIMP_PDB_EXECUTION_ERROR
@@ -967,13 +939,9 @@ name|gint
 name|bytes
 decl_stmt|;
 name|gint
-name|x1
+name|x
 decl_stmt|,
-name|y1
-decl_stmt|,
-name|x2
-decl_stmt|,
-name|y2
+name|y
 decl_stmt|;
 name|gint
 name|width
@@ -994,15 +962,20 @@ decl_stmt|;
 name|gint
 name|rowstride
 decl_stmt|;
+name|gint
+name|i
+decl_stmt|;
 comment|/*  Get selection area  */
 if|if
 condition|(
 name|preview
 condition|)
 block|{
-name|x1
+name|x
 operator|=
-name|y1
+literal|0
+expr_stmt|;
+name|y
 operator|=
 literal|0
 expr_stmt|;
@@ -1017,48 +990,32 @@ operator|&
 name|height
 argument_list|)
 expr_stmt|;
-name|x2
-operator|=
-name|width
-expr_stmt|;
-name|y2
-operator|=
-name|height
-expr_stmt|;
 block|}
 else|else
 block|{
-name|gimp_drawable_mask_bounds
+if|if
+condition|(
+operator|!
+name|gimp_drawable_mask_intersect
 argument_list|(
 name|drawable
 operator|->
 name|drawable_id
 argument_list|,
 operator|&
-name|x1
+name|x
 argument_list|,
 operator|&
-name|y1
+name|y
 argument_list|,
 operator|&
-name|x2
-argument_list|,
-operator|&
-name|y2
-argument_list|)
-expr_stmt|;
 name|width
-operator|=
-name|x2
-operator|-
-name|x1
-expr_stmt|;
+argument_list|,
+operator|&
 name|height
-operator|=
-name|y2
-operator|-
-name|y1
-expr_stmt|;
+argument_list|)
+condition|)
+return|return;
 block|}
 comment|/*  Initialization  */
 name|solid_noise_init
@@ -1173,9 +1130,9 @@ name|dest_rgn
 argument_list|,
 name|drawable
 argument_list|,
-name|x1
+name|x
 argument_list|,
-name|y1
+name|y
 argument_list|,
 name|width
 argument_list|,
@@ -1194,7 +1151,6 @@ condition|)
 name|bytes
 operator|--
 expr_stmt|;
-comment|/*  One, two, three, go!  */
 if|if
 condition|(
 name|preview
@@ -1209,9 +1165,9 @@ name|width
 argument_list|,
 name|height
 argument_list|,
-name|x1
+name|x
 argument_list|,
-name|y1
+name|y
 argument_list|,
 name|bytes
 argument_list|,
@@ -1232,6 +1188,10 @@ argument_list|,
 operator|&
 name|dest_rgn
 argument_list|)
+operator|,
+name|i
+operator|=
+literal|0
 init|;
 name|pr
 operator|!=
@@ -1243,6 +1203,9 @@ name|gimp_pixel_rgns_process
 argument_list|(
 name|pr
 argument_list|)
+operator|,
+name|i
+operator|++
 control|)
 block|{
 name|solid_noise_draw_one_tile
@@ -1254,16 +1217,15 @@ name|width
 argument_list|,
 name|height
 argument_list|,
-name|x1
+name|x
 argument_list|,
-name|y1
+name|y
 argument_list|,
 name|bytes
 argument_list|,
 name|has_alpha
 argument_list|)
 expr_stmt|;
-comment|/*  Update progress  */
 name|progress
 operator|+=
 name|dest_rgn
@@ -1274,15 +1236,23 @@ name|dest_rgn
 operator|.
 name|h
 expr_stmt|;
+if|if
+condition|(
+name|i
+operator|%
+literal|16
+operator|==
+literal|0
+condition|)
 name|gimp_progress_update
 argument_list|(
 operator|(
-name|double
+name|gdouble
 operator|)
 name|progress
 operator|/
 operator|(
-name|double
+name|gdouble
 operator|)
 name|max_progress
 argument_list|)
@@ -1336,9 +1306,9 @@ name|drawable
 operator|->
 name|drawable_id
 argument_list|,
-name|x1
+name|x
 argument_list|,
-name|y1
+name|y
 argument_list|,
 name|width
 argument_list|,
