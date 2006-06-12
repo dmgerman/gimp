@@ -98,7 +98,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon290767c10103
+DECL|enum|__anon2bf2d9100103
 block|{
 DECL|enumerator|SINUS
 name|SINUS
@@ -114,7 +114,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon290767c10203
+DECL|enum|__anon2bf2d9100203
 block|{
 DECL|enumerator|TYPE_MANDELBROT
 name|TYPE_MANDELBROT
@@ -156,7 +156,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290767c10308
+DECL|struct|__anon2bf2d9100308
 block|{
 DECL|member|fractaltype
 name|gint
@@ -255,7 +255,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290767c10408
+DECL|struct|__anon2bf2d9100408
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -277,22 +277,47 @@ name|explorer_interface_t
 typedef|;
 end_typedef
 
+begin_comment
+comment|/* typedef gint       colorvalue[3]; */
+end_comment
+
 begin_typedef
-DECL|typedef|colorvalue
 typedef|typedef
-name|gint
-name|colorvalue
-index|[
-literal|3
-index|]
+struct|struct
+DECL|struct|__anon2bf2d9100508
+block|{
+DECL|member|r
+DECL|member|g
+DECL|member|b
+name|guchar
+name|r
+decl_stmt|,
+name|g
+decl_stmt|,
+name|b
+decl_stmt|;
+DECL|typedef|gucharRGB
+block|}
+name|gucharRGB
 typedef|;
 end_typedef
 
 begin_typedef
 DECL|typedef|clrmap
 typedef|typedef
-name|colorvalue
+name|gucharRGB
 name|clrmap
+index|[
+name|MAXNCOLORS
+index|]
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|vlumap
+typedef|typedef
+name|guchar
+name|vlumap
 index|[
 name|MAXNCOLORS
 index|]
@@ -302,7 +327,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290767c10508
+DECL|struct|__anon2bf2d9100608
 block|{
 DECL|member|text
 name|GtkWidget
@@ -773,6 +798,14 @@ begin_decl_stmt
 specifier|extern
 name|explorer_vals_t
 name|wvals
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|GimpDrawable
+modifier|*
+name|drawable
 decl_stmt|;
 end_decl_stmt
 
