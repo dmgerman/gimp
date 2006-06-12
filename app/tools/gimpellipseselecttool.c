@@ -399,6 +399,11 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+name|gimp_rectangle_tool_draw
+argument_list|(
+name|draw_tool
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
