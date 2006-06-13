@@ -316,6 +316,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|gboolean
+name|gimp_undo_is_weak
+parameter_list|(
+name|GimpUndo
+modifier|*
+name|undo
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

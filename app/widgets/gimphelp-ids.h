@@ -161,6 +161,22 @@ value|"gimp-edit-redo"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_EDIT_STRONG_UNDO
+define|#
+directive|define
+name|GIMP_HELP_EDIT_STRONG_UNDO
+value|"gimp-edit-strong-undo"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_EDIT_STRONG_REDO
+define|#
+directive|define
+name|GIMP_HELP_EDIT_STRONG_REDO
+value|"gimp-edit-strong-redo"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_EDIT_UNDO_CLEAR
 define|#
 directive|define
