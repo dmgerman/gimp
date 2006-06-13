@@ -21,7 +21,7 @@ DECL|macro|PREVIEW_SIZE
 define|#
 directive|define
 name|PREVIEW_SIZE
-value|128
+value|256
 end_define
 
 begin_define
@@ -98,7 +98,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf2d9100103
+DECL|enum|__anon28a55e220103
 block|{
 DECL|enumerator|SINUS
 name|SINUS
@@ -114,7 +114,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf2d9100203
+DECL|enum|__anon28a55e220203
 block|{
 DECL|enumerator|TYPE_MANDELBROT
 name|TYPE_MANDELBROT
@@ -156,7 +156,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf2d9100308
+DECL|struct|__anon28a55e220308
 block|{
 DECL|member|fractaltype
 name|gint
@@ -255,7 +255,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf2d9100408
+DECL|struct|__anon28a55e220408
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -284,7 +284,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf2d9100508
+DECL|struct|__anon28a55e220508
 block|{
 DECL|member|r
 DECL|member|g
@@ -327,7 +327,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf2d9100608
+DECL|struct|__anon28a55e220608
 block|{
 DECL|member|text
 name|GtkWidget

@@ -1915,7 +1915,7 @@ name|vbox
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|hbbox
+name|bbox
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -2562,8 +2562,8 @@ name|toggle
 argument_list|,
 name|_
 argument_list|(
-literal|"If you enable this option the preview "
-literal|"will be redrawn automatically"
+literal|"If enabled the preview will "
+literal|"be redrawn automatically"
 argument_list|)
 argument_list|,
 name|NULL
@@ -2571,11 +2571,11 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gtk_button_new_with_label
+name|gtk_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Redraw"
+literal|"R_edraw preview"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2612,18 +2612,6 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|button
-argument_list|)
-expr_stmt|;
-name|gimp_help_set_help_data
-argument_list|(
-name|button
-argument_list|,
-name|_
-argument_list|(
-literal|"Redraw preview"
-argument_list|)
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 comment|/*  Zoom Options  */
@@ -2664,7 +2652,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|2
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -2682,6 +2670,36 @@ argument_list|(
 name|vbox
 argument_list|)
 expr_stmt|;
+name|bbox
+operator|=
+name|gtk_hbox_new
+argument_list|(
+name|TRUE
+argument_list|,
+literal|6
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_start
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|vbox
+argument_list|)
+argument_list|,
+name|bbox
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|bbox
+argument_list|)
+expr_stmt|;
 name|button
 operator|=
 name|gtk_button_new_from_stock
@@ -2693,14 +2711,14 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|vbox
+name|bbox
 argument_list|)
 argument_list|,
 name|button
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 literal|0
 argument_list|)
@@ -2735,14 +2753,14 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|vbox
+name|bbox
 argument_list|)
 argument_list|,
 name|button
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 literal|0
 argument_list|)
@@ -2766,6 +2784,36 @@ argument_list|,
 name|dialog
 argument_list|)
 expr_stmt|;
+name|bbox
+operator|=
+name|gtk_hbox_new
+argument_list|(
+name|TRUE
+argument_list|,
+literal|6
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_start
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|vbox
+argument_list|)
+argument_list|,
+name|bbox
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|bbox
+argument_list|)
+expr_stmt|;
 name|button
 operator|=
 name|gtk_button_new_from_stock
@@ -2777,14 +2825,14 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|vbox
+name|bbox
 argument_list|)
 argument_list|,
 name|button
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 literal|0
 argument_list|)
@@ -2800,7 +2848,7 @@ name|button
 argument_list|,
 name|_
 argument_list|(
-literal|"Undo last zoom"
+literal|"Undo last zoom change"
 argument_list|)
 argument_list|,
 name|NULL
@@ -2831,14 +2879,14 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|vbox
+name|bbox
 argument_list|)
 argument_list|,
 name|button
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 literal|0
 argument_list|)
@@ -2854,7 +2902,7 @@ name|button
 argument_list|,
 name|_
 argument_list|(
-literal|"Redo last zoom"
+literal|"Redo last zoom change"
 argument_list|)
 argument_list|,
 name|NULL
@@ -3546,11 +3594,11 @@ operator|.
 name|cy
 argument_list|)
 expr_stmt|;
-name|hbbox
+name|bbox
 operator|=
 name|gtk_hbox_new
 argument_list|(
-name|FALSE
+name|TRUE
 argument_list|,
 literal|6
 argument_list|)
@@ -3562,7 +3610,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-name|hbbox
+name|bbox
 argument_list|,
 literal|0
 argument_list|,
@@ -3575,7 +3623,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|hbbox
+name|bbox
 argument_list|)
 expr_stmt|;
 name|button
@@ -3589,7 +3637,7 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|hbbox
+name|bbox
 argument_list|)
 argument_list|,
 name|button
@@ -3643,7 +3691,7 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|hbbox
+name|bbox
 argument_list|)
 argument_list|,
 name|button
@@ -3697,7 +3745,7 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|hbbox
+name|bbox
 argument_list|)
 argument_list|,
 name|button
