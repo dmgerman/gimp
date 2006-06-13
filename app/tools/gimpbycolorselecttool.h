@@ -120,6 +120,15 @@ decl_stmt|,
 name|y
 decl_stmt|;
 comment|/*  Point from which to execute seed fill  */
+DECL|member|undo
+name|GimpUndo
+modifier|*
+name|undo
+decl_stmt|;
+DECL|member|op
+name|SelectOps
+name|op
+decl_stmt|;
 block|}
 struct|;
 end_struct
