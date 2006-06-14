@@ -576,7 +576,7 @@ begin_decl_stmt
 DECL|variable|image_convert_actions
 specifier|static
 specifier|const
-name|GimpEnumActionEntry
+name|GimpRadioActionEntry
 name|image_convert_actions
 index|[]
 init|=
@@ -600,8 +600,6 @@ argument_list|)
 block|,
 name|GIMP_RGB
 block|,
-name|FALSE
-block|,
 name|GIMP_HELP_IMAGE_CONVERT_RGB
 block|}
 block|,
@@ -624,8 +622,6 @@ argument_list|)
 block|,
 name|GIMP_GRAY
 block|,
-name|FALSE
-block|,
 name|GIMP_HELP_IMAGE_CONVERT_GRAYSCALE
 block|}
 block|,
@@ -647,8 +643,6 @@ literal|"Convert the image to indexed colors"
 argument_list|)
 block|,
 name|GIMP_INDEXED
-block|,
-name|FALSE
 block|,
 name|GIMP_HELP_IMAGE_CONVERT_INDEXED
 block|}
@@ -845,7 +839,7 @@ argument_list|,
 literal|"<Actions>/image/image-new"
 argument_list|)
 expr_stmt|;
-name|gimp_action_group_add_enum_actions
+name|gimp_action_group_add_radio_actions
 argument_list|(
 name|group
 argument_list|,
@@ -855,6 +849,10 @@ name|G_N_ELEMENTS
 argument_list|(
 name|image_convert_actions
 argument_list|)
+argument_list|,
+name|NULL
+argument_list|,
+literal|0
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1037,6 +1035,17 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+DECL|macro|SET_ACTIVE (action,condition)
+define|#
+directive|define
+name|SET_ACTIVE
+parameter_list|(
+name|action
+parameter_list|,
+name|condition
+parameter_list|)
+define|\
+value|gimp_action_group_set_action_active (group, action, (condition) != 0)
 DECL|macro|SET_SENSITIVE (action,condition)
 define|#
 directive|define
@@ -1048,33 +1057,30 @@ name|condition
 parameter_list|)
 define|\
 value|gimp_action_group_set_action_sensitive (group, action, (condition) != 0)
-name|SET_SENSITIVE
+name|SET_ACTIVE
 argument_list|(
 literal|"image-convert-rgb"
 argument_list|,
 name|image
 operator|&&
-operator|!
 name|is_rgb
 argument_list|)
 expr_stmt|;
-name|SET_SENSITIVE
+name|SET_ACTIVE
 argument_list|(
 literal|"image-convert-grayscale"
 argument_list|,
 name|image
 operator|&&
-operator|!
 name|is_gray
 argument_list|)
 expr_stmt|;
-name|SET_SENSITIVE
+name|SET_ACTIVE
 argument_list|(
 literal|"image-convert-indexed"
 argument_list|,
 name|image
 operator|&&
-operator|!
 name|is_indexed
 argument_list|)
 expr_stmt|;

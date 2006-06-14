@@ -532,15 +532,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|image_convert_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|image_convert_cmd_callback (GtkAction * action,GtkAction * current,gpointer data)
 name|image_convert_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
-name|value
+name|GtkAction
+modifier|*
+name|current
 parameter_list|,
 name|gpointer
 name|data
@@ -557,6 +558,9 @@ decl_stmt|;
 name|GimpDisplay
 modifier|*
 name|display
+decl_stmt|;
+name|GimpImageBaseType
+name|value
 decl_stmt|;
 name|return_if_no_image
 argument_list|(
@@ -579,11 +583,28 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
+name|value
+operator|=
+name|gtk_radio_action_get_current_value
+argument_list|(
+name|GTK_RADIO_ACTION
+argument_list|(
+name|action
+argument_list|)
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|value
+operator|==
+name|gimp_image_base_type
+argument_list|(
+name|image
+argument_list|)
+condition|)
+return|return;
 switch|switch
 condition|(
-operator|(
-name|GimpImageBaseType
-operator|)
 name|value
 condition|)
 block|{
@@ -597,9 +618,6 @@ name|gimp_image_convert
 argument_list|(
 name|image
 argument_list|,
-operator|(
-name|GimpImageBaseType
-operator|)
 name|value
 argument_list|,
 literal|0
