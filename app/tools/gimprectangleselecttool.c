@@ -783,7 +783,6 @@ argument_list|,
 name|GIMP_TOOL_CURSOR_RECT_SELECT
 argument_list|)
 expr_stmt|;
-comment|/*   gimp_tool_control_set_preserve    (tool->control, FALSE); */
 name|gimp_tool_control_set_dirty_mask
 argument_list|(
 name|tool
@@ -2410,6 +2409,25 @@ return|;
 block|}
 else|else
 block|{
+name|GimpTool
+modifier|*
+name|tool
+init|=
+name|GIMP_TOOL
+argument_list|(
+name|rectangle
+argument_list|)
+decl_stmt|;
+comment|/* prevent this change from halting the tool */
+name|gimp_tool_control_set_preserve
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 comment|/* otherwise clear the selection */
 name|gimp_channel_clear
 argument_list|(
@@ -2418,6 +2436,15 @@ argument_list|,
 name|NULL
 argument_list|,
 name|TRUE
+argument_list|)
+expr_stmt|;
+name|gimp_tool_control_set_preserve
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -2499,6 +2526,16 @@ operator|==
 name|undo
 condition|)
 block|{
+comment|/* prevent this change from halting the tool */
+name|gimp_tool_control_set_preserve
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 name|gimp_image_undo
 argument_list|(
 name|image
@@ -2507,6 +2544,15 @@ expr_stmt|;
 name|gimp_image_flush
 argument_list|(
 name|image
+argument_list|)
+expr_stmt|;
+name|gimp_tool_control_set_preserve
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
