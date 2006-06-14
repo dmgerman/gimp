@@ -783,6 +783,18 @@ argument_list|,
 name|GIMP_TOOL_CURSOR_RECT_SELECT
 argument_list|)
 expr_stmt|;
+comment|/*   gimp_tool_control_set_preserve    (tool->control, FALSE); */
+name|gimp_tool_control_set_dirty_mask
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|,
+name|GIMP_DIRTY_IMAGE_SIZE
+operator||
+name|GIMP_DIRTY_SELECTION
+argument_list|)
+expr_stmt|;
 name|gimp_rectangle_tool_set_constrain
 argument_list|(
 name|rect_tool
@@ -1303,9 +1315,28 @@ operator|==
 name|undo
 condition|)
 block|{
+comment|/* prevent this change from halting the tool */
+name|gimp_tool_control_set_preserve
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 name|gimp_image_undo
 argument_list|(
 name|image
+argument_list|)
+expr_stmt|;
+name|gimp_tool_control_set_preserve
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/* we will need to redo if the user cancels or executes */
@@ -1442,6 +1473,16 @@ operator|==
 name|redo
 condition|)
 block|{
+comment|/* prevent this from halting the tool */
+name|gimp_tool_control_set_preserve
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 name|gimp_image_redo
 argument_list|(
 name|image
@@ -1452,6 +1493,15 @@ operator|->
 name|redo
 operator|=
 name|NULL
+expr_stmt|;
+name|gimp_tool_control_set_preserve
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|,
+name|FALSE
+argument_list|)
 expr_stmt|;
 block|}
 block|}
@@ -1505,6 +1555,16 @@ operator|->
 name|redo
 condition|)
 block|{
+comment|/* prevent this from halting the tool */
+name|gimp_tool_control_set_preserve
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 name|gimp_image_redo
 argument_list|(
 name|tool
@@ -1512,6 +1572,15 @@ operator|->
 name|display
 operator|->
 name|image
+argument_list|)
+expr_stmt|;
+name|gimp_tool_control_set_preserve
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -2477,6 +2546,16 @@ argument_list|(
 name|rectangle
 argument_list|)
 decl_stmt|;
+comment|/* prevent change in selection from halting the tool */
+name|gimp_tool_control_set_preserve
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|tool
@@ -2662,6 +2741,15 @@ name|image
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_tool_control_set_preserve
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 return|return
 name|TRUE
 return|;
