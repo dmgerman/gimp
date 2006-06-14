@@ -300,6 +300,9 @@ decl_stmt|;
 name|GimpRunMode
 name|run_mode
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|run_mode
 operator|=
 name|param
@@ -385,25 +388,6 @@ name|drawable_id
 argument_list|)
 condition|)
 block|{
-if|if
-condition|(
-name|run_mode
-operator|!=
-name|GIMP_RUN_NONINTERACTIVE
-condition|)
-block|{
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
-name|gimp_progress_init
-argument_list|(
-name|_
-argument_list|(
-literal|"Value Invert"
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
 name|vinvert
 argument_list|(
 name|drawable
