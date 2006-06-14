@@ -2358,7 +2358,7 @@ literal|"gimp-file-load-thumbnail"
 argument_list|,
 literal|"Loads the thumbnail for a file."
 argument_list|,
-literal|"This procedure tries to load a thumbnail that belongs to the file with the given filename. This name is a full pathname. The returned data is an array of colordepth 3 (RGB), regardless of the image type. Width and height of the thumbnail are also returned. Don't use this function if you need a thumbnail of an already opened image, use gimp_image_thumbnail instead."
+literal|"This procedure tries to load a thumbnail that belongs to the file with the given filename. This name is a full pathname. The returned data is an array of colordepth 3 (RGB), regardless of the image type. Width and height of the thumbnail are also returned. Don't use this function if you need a thumbnail of an already opened image, use 'gimp-image-thumbnail' instead."
 argument_list|,
 literal|"Adam D. Moss, Sven Neumann"
 argument_list|,

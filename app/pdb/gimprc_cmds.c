@@ -891,7 +891,7 @@ literal|"gimp-gimprc-set"
 argument_list|,
 literal|"Sets a gimprc token to a value and saves it in the gimprc."
 argument_list|,
-literal|"This procedure is used to add or change additional information in the gimprc file that is considered extraneous to the operation of the GIMP. Plug-ins that need configuration information can use this function to store it, and gimp_gimprc_query to retrieve it. This will accept _only_ string values in UTF-8 encoding."
+literal|"This procedure is used to add or change additional information in the gimprc file that is considered extraneous to the operation of the GIMP. Plug-ins that need configuration information can use this function to store it, and 'gimp-gimprc-query' to retrieve it. This will accept _only_ string values in UTF-8 encoding."
 argument_list|,
 literal|"Seth Burgess"
 argument_list|,

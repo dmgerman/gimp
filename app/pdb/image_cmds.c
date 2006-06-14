@@ -9586,7 +9586,7 @@ literal|"gimp-image-new"
 argument_list|,
 literal|"Creates a new image with the specified width, height, and type."
 argument_list|,
-literal|"Creates a new image, undisplayed with the specified extents and type. A layer should be created and added before this image is displayed, or subsequent calls to 'gimp_display_new' with this image as an argument will fail. Layers can be created using the 'gimp_layer_new' commands. They can be added to an image using the 'gimp_image_add_layer' command."
+literal|"Creates a new image, undisplayed with the specified extents and type. A layer should be created and added before this image is displayed, or subsequent calls to 'gimp-display-new' with this image as an argument will fail. Layers can be created using the 'gimp-layer-new' commands. They can be added to an image using the 'gimp-image-add-layer' command."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -10162,7 +10162,7 @@ literal|"gimp-image-free-shadow"
 argument_list|,
 literal|"Free the specified image's shadow data (if it exists)."
 argument_list|,
-literal|"This procedure is intended as a memory saving device. If any shadow memory has been allocated, it will be freed automatically on a call to 'gimp_image_delete'."
+literal|"This procedure is intended as a memory saving device. If any shadow memory has been allocated, it will be freed automatically on a call to 'gimp-image-delete'."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -14409,7 +14409,7 @@ literal|"gimp-image-is-dirty"
 argument_list|,
 literal|"Checks if the image has unsaved changes."
 argument_list|,
-literal|"This procedure checks the specified image's dirty count to see if it needs to be saved. Note that saving the image does not automatically set the dirty count to 0, you need to call gimp-image-clean-all after calling a save procedure to make the image clean."
+literal|"This procedure checks the specified image's dirty count to see if it needs to be saved. Note that saving the image does not automatically set the dirty count to 0, you need to call 'gimp-image-clean-all' after calling a save procedure to make the image clean."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -16317,7 +16317,7 @@ literal|"gimp-image-get-unit"
 argument_list|,
 literal|"Returns the specified image's unit."
 argument_list|,
-literal|"This procedure returns the specified image's unit. This value is independent of any of the layers in this image. See the gimp_unit_* procedure definitions for the valid range of unit IDs and a description of the unit system."
+literal|"This procedure returns the specified image's unit. This value is independent of any of the layers in this image. See the gimp_unit_*() procedure definitions for the valid range of unit IDs and a description of the unit system."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -16410,7 +16410,7 @@ literal|"gimp-image-set-unit"
 argument_list|,
 literal|"Sets the specified image's unit."
 argument_list|,
-literal|"This procedure sets the specified image's unit. No scaling or resizing is performed. This value is independent of any of the layers in this image. See the gimp_unit_* procedure definitions for the valid range of unit IDs and a description of the unit system."
+literal|"This procedure sets the specified image's unit. No scaling or resizing is performed. This value is independent of any of the layers in this image. See the gimp_unit_*() procedure definitions for the valid range of unit IDs and a description of the unit system."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,

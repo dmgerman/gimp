@@ -20,7 +20,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * _gimp_layer_new:  * @image_ID: The image to which to add the layer.  * @width: The layer width.  * @height: The layer height.  * @type: The layer type.  * @name: The layer name.  * @opacity: The layer opacity.  * @mode: The layer combination mode.  *  * Create a new layer.  *  * This procedure creates a new layer with the specified width, height,  * and type. Name, opacity, and mode are also supplied parameters. The  * new layer still needs to be added to the image, as this is not  * automatic. Add the new layer with the 'gimp_image_add_layer'  * command. Other attributes such as layer mask modes, and offsets  * should be set with explicit procedure calls.  *  * Returns: The newly created layer.  */
+comment|/**  * _gimp_layer_new:  * @image_ID: The image to which to add the layer.  * @width: The layer width.  * @height: The layer height.  * @type: The layer type.  * @name: The layer name.  * @opacity: The layer opacity.  * @mode: The layer combination mode.  *  * Create a new layer.  *  * This procedure creates a new layer with the specified width, height,  * and type. Name, opacity, and mode are also supplied parameters. The  * new layer still needs to be added to the image, as this is not  * automatic. Add the new layer with the gimp_image_add_layer()  * command. Other attributes such as layer mask modes, and offsets  * should be set with explicit procedure calls.  *  * Returns: The newly created layer.  */
 end_comment
 
 begin_function
@@ -143,7 +143,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_new_from_drawable:  * @drawable_ID: The source drawable from where the new layer is copied.  * @dest_image_ID: The destination image to which to add the layer.  *  * Create a new layer by copying an existing drawable.  *  * This procedure creates a new layer as a copy of the specified  * drawable. The new layer still needs to be added to the image, as  * this is not automatic. Add the new layer with the  * 'gimp_image_add_layer' command. Other attributes such as layer mask  * modes, and offsets should be set with explicit procedure calls.  *  * Returns: The newly copied layer.  */
+comment|/**  * gimp_layer_new_from_drawable:  * @drawable_ID: The source drawable from where the new layer is copied.  * @dest_image_ID: The destination image to which to add the layer.  *  * Create a new layer by copying an existing drawable.  *  * This procedure creates a new layer as a copy of the specified  * drawable. The new layer still needs to be added to the image, as  * this is not automatic. Add the new layer with the  * gimp_image_add_layer() command. Other attributes such as layer mask  * modes, and offsets should be set with explicit procedure calls.  *  * Returns: The newly copied layer.  */
 end_comment
 
 begin_function
@@ -794,7 +794,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_create_mask:  * @layer_ID: The layer to which to add the mask.  * @mask_type: The type of mask.  *  * Create a layer mask for the specified specified layer.  *  * This procedure creates a layer mask for the specified layer. Layer  * masks serve as an additional alpha channel for a layer. A number of  * ifferent types of masks are allowed for initialisation: completely  * white masks (which will leave the layer fully visible), completely  * black masks (which will give the layer complete transparency, the  * layer's already existing alpha channel (which will leave the layer  * fully visible, but which may be more useful than a white mask), the  * current selection or a grayscale copy of the layer. The layer mask  * still needs to be added to the layer. This can be done with a call  * to 'gimp_layer_add_mask'.  *  * Returns: The newly created mask.  */
+comment|/**  * gimp_layer_create_mask:  * @layer_ID: The layer to which to add the mask.  * @mask_type: The type of mask.  *  * Create a layer mask for the specified specified layer.  *  * This procedure creates a layer mask for the specified layer. Layer  * masks serve as an additional alpha channel for a layer. A number of  * ifferent types of masks are allowed for initialisation: completely  * white masks (which will leave the layer fully visible), completely  * black masks (which will give the layer complete transparency, the  * layer's already existing alpha channel (which will leave the layer  * fully visible, but which may be more useful than a white mask), the  * current selection or a grayscale copy of the layer. The layer mask  * still needs to be added to the layer. This can be done with a call  * to gimp_layer_add_mask().  *  * Returns: The newly created mask.  */
 end_comment
 
 begin_function

@@ -3703,7 +3703,7 @@ literal|"gimp-vectors-new"
 argument_list|,
 literal|"Creates a new empty vectors object."
 argument_list|,
-literal|"Creates a new empty vectors object. Needs to be added to an image using gimp_image_add_vectors."
+literal|"Creates a new empty vectors object. Needs to be added to an image using 'gimp-image-add-vectors'."
 argument_list|,
 literal|"Simon Budig"
 argument_list|,

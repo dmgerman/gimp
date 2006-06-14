@@ -3402,7 +3402,7 @@ literal|"gimp-airbrush-default"
 argument_list|,
 literal|"Paint in the current brush with varying pressure. Paint application is time-dependent."
 argument_list|,
-literal|"This tool simulates the use of an airbrush. It is similar to gimp_airbrush except that the pressure is derived from the airbrush tools options box. It the option has not been set the default for the option will be used."
+literal|"This tool simulates the use of an airbrush. It is similar to 'gimp-airbrush' except that the pressure is derived from the airbrush tools options box. It the option has not been set the default for the option will be used."
 argument_list|,
 literal|"Andy Thomas"
 argument_list|,
@@ -3708,7 +3708,7 @@ literal|"gimp-clone-default"
 argument_list|,
 literal|"Clone from the source to the dest drawable using the current brush"
 argument_list|,
-literal|"This tool clones (copies) from the source drawable starting at the specified source coordinates to the dest drawable. This function performs exactly the same as the gimp_clone function except that the tools arguments are obtained from the clones option dialog. It this dialog has not been activated then the dialogs default values will be used."
+literal|"This tool clones (copies) from the source drawable starting at the specified source coordinates to the dest drawable. This function performs exactly the same as the 'gimp-clone' function except that the tools arguments are obtained from the clones option dialog. It this dialog has not been activated then the dialogs default values will be used."
 argument_list|,
 literal|"Andy Thomas"
 argument_list|,
@@ -3968,7 +3968,7 @@ literal|"gimp-convolve-default"
 argument_list|,
 literal|"Convolve (Blur, Sharpen) using the current brush."
 argument_list|,
-literal|"This tool convolves the specified drawable with either a sharpening or blurring kernel. This function performs exactly the same as the gimp_convolve function except that the tools arguments are obtained from the convolve option dialog. It this dialog has not been activated then the dialogs default values will be used."
+literal|"This tool convolves the specified drawable with either a sharpening or blurring kernel. This function performs exactly the same as the 'gimp-convolve' function except that the tools arguments are obtained from the convolve option dialog. It this dialog has not been activated then the dialogs default values will be used."
 argument_list|,
 literal|"Andy Thomas"
 argument_list|,
@@ -4246,7 +4246,7 @@ name|procedure
 argument_list|,
 literal|"gimp-dodgeburn-default"
 argument_list|,
-literal|"Dodgeburn image with varying exposure. This is the same as the gimp_dodgeburn function except that the exposure, type and mode are taken from the tools option dialog. If the dialog has not been activated then the defaults as used by the dialog will be used."
+literal|"Dodgeburn image with varying exposure. This is the same as the gimp_dodgeburn() function except that the exposure, type and mode are taken from the tools option dialog. If the dialog has not been activated then the defaults as used by the dialog will be used."
 argument_list|,
 literal|"Dodgeburn. More details here later."
 argument_list|,
@@ -4506,7 +4506,7 @@ literal|"gimp-eraser-default"
 argument_list|,
 literal|"Erase using the current brush."
 argument_list|,
-literal|"This tool erases using the current brush mask. This function performs exactly the same as the gimp_eraser function except that the tools arguments are obtained from the eraser option dialog. It this dialog has not been activated then the dialogs default values will be used."
+literal|"This tool erases using the current brush mask. This function performs exactly the same as the 'gimp-eraser' function except that the tools arguments are obtained from the eraser option dialog. It this dialog has not been activated then the dialogs default values will be used."
 argument_list|,
 literal|"Andy Thomas"
 argument_list|,
@@ -5137,7 +5137,7 @@ literal|"gimp-smudge-default"
 argument_list|,
 literal|"Smudge image with varying pressure."
 argument_list|,
-literal|"This tool simulates a smudge using the current brush. It behaves exactly the same as gimp_smudge except that the pressure value is taken from the smudge tool options or the options default if the tools option dialog has not been activated."
+literal|"This tool simulates a smudge using the current brush. It behaves exactly the same as 'gimp-smudge' except that the pressure value is taken from the smudge tool options or the options default if the tools option dialog has not been activated."
 argument_list|,
 literal|"Andy Thomas"
 argument_list|,

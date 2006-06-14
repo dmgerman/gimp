@@ -20,7 +20,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * gimp_edit_cut:  * @drawable_ID: The drawable to cut from.  *  * Cut from the specified drawable.  *  * If there is a selection in the image, then the area specified by the  * selection is cut from the specified drawable and placed in an  * internal GIMP edit buffer. It can subsequently be retrieved using  * the 'gimp-edit-paste' command. If there is no selection, then the  * specified drawable will be removed and its contents stored in the  * internal GIMP edit buffer.  *  * Returns: TRUE if the cut was successful, FALSE if the selection contained only transparent pixels.  */
+comment|/**  * gimp_edit_cut:  * @drawable_ID: The drawable to cut from.  *  * Cut from the specified drawable.  *  * If there is a selection in the image, then the area specified by the  * selection is cut from the specified drawable and placed in an  * internal GIMP edit buffer. It can subsequently be retrieved using  * the gimp_edit_paste() command. If there is no selection, then the  * specified drawable will be removed and its contents stored in the  * internal GIMP edit buffer.  *  * Returns: TRUE if the cut was successful, FALSE if the selection contained only transparent pixels.  */
 end_comment
 
 begin_function
@@ -98,7 +98,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_edit_copy:  * @drawable_ID: The drawable to copy from.  *  * Copy from the specified drawable.  *  * If there is a selection in the image, then the area specified by the  * selection is copied from the specified drawable and placed in an  * internal GIMP edit buffer. It can subsequently be retrieved using  * the 'gimp-edit-paste' command. If there is no selection, then the  * specified drawable's contents will be stored in the internal GIMP  * edit buffer.  *  * Returns: TRUE if the copy was successful, FALSE if the selection contained only transparent pixels.  */
+comment|/**  * gimp_edit_copy:  * @drawable_ID: The drawable to copy from.  *  * Copy from the specified drawable.  *  * If there is a selection in the image, then the area specified by the  * selection is copied from the specified drawable and placed in an  * internal GIMP edit buffer. It can subsequently be retrieved using  * the gimp_edit_paste() command. If there is no selection, then the  * specified drawable's contents will be stored in the internal GIMP  * edit buffer.  *  * Returns: TRUE if the copy was successful, FALSE if the selection contained only transparent pixels.  */
 end_comment
 
 begin_function
@@ -176,7 +176,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_edit_copy_visible:  * @image_ID: The image to copy from.  *  * Copy from the projection.  *  * If there is a selection in the image, then the area specified by the  * selection is copied from the projection and placed in an internal  * GIMP edit buffer. It can subsequently be retrieved using the  * 'gimp-edit-paste' command. If there is no selection, then the  * projection's contents will be stored in the internal GIMP edit  * buffer.  *  * Returns: TRUE if the copy was successful, FALSE if the selection contained only transparent pixels.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_edit_copy_visible:  * @image_ID: The image to copy from.  *  * Copy from the projection.  *  * If there is a selection in the image, then the area specified by the  * selection is copied from the projection and placed in an internal  * GIMP edit buffer. It can subsequently be retrieved using the  * gimp_edit_paste() command. If there is no selection, then the  * projection's contents will be stored in the internal GIMP edit  * buffer.  *  * Returns: TRUE if the copy was successful, FALSE if the selection contained only transparent pixels.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function
@@ -254,7 +254,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_edit_paste:  * @drawable_ID: The drawable to paste to.  * @paste_into: Clear selection, or paste behind it?  *  * Paste buffer to the specified drawable.  *  * This procedure pastes a copy of the internal GIMP edit buffer to the  * specified drawable. The GIMP edit buffer will be empty unless a call  * was previously made to either 'gimp-edit-cut' or 'gimp-edit-copy'.  * The \"paste_into\" option specifies whether to clear the current  * image selection, or to paste the buffer \"behind\" the selection.  * This allows the selection to act as a mask for the pasted buffer.  * Anywhere that the selection mask is non-zero, the pasted buffer will  * show through. The pasted buffer will be a new layer in the image  * which is designated as the image floating selection. If the image  * has a floating selection at the time of pasting, the old floating  * selection will be anchored to it's drawable before the new floating  * selection is added. This procedure returns the new floating layer.  * The resulting floating selection will already be attached to the  * specified drawable, and a subsequent call to floating_sel_attach is  * not needed.  *  * Returns: The new floating selection.  */
+comment|/**  * gimp_edit_paste:  * @drawable_ID: The drawable to paste to.  * @paste_into: Clear selection, or paste behind it?  *  * Paste buffer to the specified drawable.  *  * This procedure pastes a copy of the internal GIMP edit buffer to the  * specified drawable. The GIMP edit buffer will be empty unless a call  * was previously made to either gimp_edit_cut() or gimp_edit_copy().  * The \"paste_into\" option specifies whether to clear the current  * image selection, or to paste the buffer \"behind\" the selection.  * This allows the selection to act as a mask for the pasted buffer.  * Anywhere that the selection mask is non-zero, the pasted buffer will  * show through. The pasted buffer will be a new layer in the image  * which is designated as the image floating selection. If the image  * has a floating selection at the time of pasting, the old floating  * selection will be anchored to it's drawable before the new floating  * selection is added. This procedure returns the new floating layer.  * The resulting floating selection will already be attached to the  * specified drawable, and a subsequent call to floating_sel_attach is  * not needed.  *  * Returns: The new floating selection.  */
 end_comment
 
 begin_function
@@ -340,7 +340,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_edit_paste_as_new:  *  * Paste buffer to a new image.  *  * This procedure pastes a copy of the internal GIMP edit buffer to a  * new image. The GIMP edit buffer will be empty unless a call was  * previously made to either 'gimp-edit-cut' or 'gimp-edit-copy'. This  * procedure returns the new image.  *  * Returns: The new image.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_edit_paste_as_new:  *  * Paste buffer to a new image.  *  * This procedure pastes a copy of the internal GIMP edit buffer to a  * new image. The GIMP edit buffer will be empty unless a call was  * previously made to either gimp_edit_cut() or gimp_edit_copy(). This  * procedure returns the new image.  *  * Returns: The new image.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
@@ -414,7 +414,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_edit_named_cut:  * @drawable_ID: The drawable to cut from.  * @buffer_name: The name of the buffer to create.  *  * Cut into a named buffer.  *  * This procedure works like gimp-edit-cut, but additionally stores the  * cut buffer into a named buffer that will stay available for later  * pasting, regardless of any intermediate copy or cut operations.  *  * Returns: The real name given to the buffer, or NULL if the selection contained only transparent pixels.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_edit_named_cut:  * @drawable_ID: The drawable to cut from.  * @buffer_name: The name of the buffer to create.  *  * Cut into a named buffer.  *  * This procedure works like gimp_edit_cut(), but additionally stores  * the cut buffer into a named buffer that will stay available for  * later pasting, regardless of any intermediate copy or cut  * operations.  *  * Returns: The real name given to the buffer, or NULL if the selection contained only transparent pixels.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
@@ -506,7 +506,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_edit_named_copy:  * @drawable_ID: The drawable to copy from.  * @buffer_name: The name of the buffer to create.  *  * Copy into a named buffer.  *  * This procedure works like gimp-edit-copy, but additionally stores  * the copied buffer into a named buffer that will stay available for  * later pasting, regardless of any intermediate copy or cut  * operations.  *  * Returns: The real name given to the buffer, or NULL if the selection contained only transparent pixels.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_edit_named_copy:  * @drawable_ID: The drawable to copy from.  * @buffer_name: The name of the buffer to create.  *  * Copy into a named buffer.  *  * This procedure works like gimp_edit_copy(), but additionally stores  * the copied buffer into a named buffer that will stay available for  * later pasting, regardless of any intermediate copy or cut  * operations.  *  * Returns: The real name given to the buffer, or NULL if the selection contained only transparent pixels.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
@@ -598,7 +598,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_edit_named_copy_visible:  * @image_ID: The image to copy from.  * @buffer_name: The name of the buffer to create.  *  * Copy from the projection into a named buffer.  *  * This procedure works like gimp-edit-copy-visible, but additionally  * stores the copied buffer into a named buffer that will stay  * available for later pasting, regardless of any intermediate copy or  * cut operations.  *  * Returns: The real name given to the buffer.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_edit_named_copy_visible:  * @image_ID: The image to copy from.  * @buffer_name: The name of the buffer to create.  *  * Copy from the projection into a named buffer.  *  * This procedure works like gimp_edit_copy_visible(), but additionally  * stores the copied buffer into a named buffer that will stay  * available for later pasting, regardless of any intermediate copy or  * cut operations.  *  * Returns: The real name given to the buffer.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
@@ -690,7 +690,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_edit_named_paste:  * @drawable_ID: The drawable to paste to.  * @buffer_name: The name of the buffer to paste.  * @paste_into: Clear selection, or paste behind it?  *  * Paste named buffer to the specified drawable.  *  * This procedure works like gimp-edit-paste but pastes a named buffer  * instead of the global buffer.  *  * Returns: The new floating selection.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_edit_named_paste:  * @drawable_ID: The drawable to paste to.  * @buffer_name: The name of the buffer to paste.  * @paste_into: Clear selection, or paste behind it?  *  * Paste named buffer to the specified drawable.  *  * This procedure works like gimp_edit_paste() but pastes a named  * buffer instead of the global buffer.  *  * Returns: The new floating selection.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
@@ -785,7 +785,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_edit_named_paste_as_new:  * @buffer_name: The name of the buffer to paste.  *  * Paste named buffer to a new image.  *  * This procedure works like gimp-edit-paste-as-new but pastes a named  * buffer instead of the global buffer.  *  * Returns: The new image.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_edit_named_paste_as_new:  * @buffer_name: The name of the buffer to paste.  *  * Paste named buffer to a new image.  *  * This procedure works like gimp_edit_paste_as_new() but pastes a  * named buffer instead of the global buffer.  *  * Returns: The new image.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function

@@ -88,7 +88,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_patterns_get_list:  * @filter: An optional regular expression used to filter the list.  * @num_patterns: The number of patterns in the pattern list.  *  * Retrieve a complete listing of the available patterns.  *  * This procedure returns a complete listing of available GIMP  * patterns. Each name returned can be used as input to the  * 'gimp-context-set-pattern'.  *  * Returns: The list of pattern names.  */
+comment|/**  * gimp_patterns_get_list:  * @filter: An optional regular expression used to filter the list.  * @num_patterns: The number of patterns in the pattern list.  *  * Retrieve a complete listing of the available patterns.  *  * This procedure returns a complete listing of available GIMP  * patterns. Each name returned can be used as input to the  * gimp_context_set_pattern().  *  * Returns: The list of pattern names.  */
 end_comment
 
 begin_function

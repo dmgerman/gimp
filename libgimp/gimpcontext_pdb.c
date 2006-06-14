@@ -20,7 +20,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * gimp_context_push:  *  * Pushes a context to the top of the plug-in's context stack.  *  * This procedure creates a new context by copying the current context.  * This copy becomes the new current context for the calling plug-in  * until it is popped again using gimp-context-pop.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_context_push:  *  * Pushes a context to the top of the plug-in's context stack.  *  * This procedure creates a new context by copying the current context.  * This copy becomes the new current context for the calling plug-in  * until it is popped again using gimp_context_pop().  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function
@@ -82,7 +82,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_pop:  *  * Pops the topmost context from the plug-in's context stack.  *  * This procedure removes the topmost context from the plug-in's  * context stack. The context that was active before the corresponding  * call to gimp-context-push becomes the new current context of the  * plug-in.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_context_pop:  *  * Pops the topmost context from the plug-in's context stack.  *  * This procedure removes the topmost context from the plug-in's  * context stack. The context that was active before the corresponding  * call to gimp_context_push() becomes the new current context of the  * plug-in.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function

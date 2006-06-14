@@ -1569,7 +1569,7 @@ literal|"gimp-plugin-help-register"
 argument_list|,
 literal|"Register a help path for a plug-in."
 argument_list|,
-literal|"This procedure changes the help rootdir for the plug-in which calls it. All subsequent calls of gimp_help from this plug-in will be interpreted relative to this rootdir."
+literal|"This procedure changes the help rootdir for the plug-in which calls it. All subsequent calls of 'gimp-help' from this plug-in will be interpreted relative to this rootdir."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,

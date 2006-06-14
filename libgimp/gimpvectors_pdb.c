@@ -26,7 +26,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * gimp_vectors_new:  * @image_ID: The image.  * @name: the name of the new vector object.  *  * Creates a new empty vectors object.  *  * Creates a new empty vectors object. Needs to be added to an image  * using gimp_image_add_vectors.  *  * Returns: the current vector object, 0 if no vector exists in the image.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_vectors_new:  * @image_ID: The image.  * @name: the name of the new vector object.  *  * Creates a new empty vectors object.  *  * Creates a new empty vectors object. Needs to be added to an image  * using gimp_image_add_vectors().  *  * Returns: the current vector object, 0 if no vector exists in the image.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function

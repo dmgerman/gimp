@@ -110,7 +110,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_airbrush_default:  * @drawable_ID: The affected drawable.  * @num_strokes: Number of stroke control points (count each coordinate as 2 points).  * @strokes: Array of stroke coordinates: { s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y }.  *  * Paint in the current brush with varying pressure. Paint application  * is time-dependent.  *  * This tool simulates the use of an airbrush. It is similar to  * gimp_airbrush except that the pressure is derived from the airbrush  * tools options box. It the option has not been set the default for  * the option will be used.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_airbrush_default:  * @drawable_ID: The affected drawable.  * @num_strokes: Number of stroke control points (count each coordinate as 2 points).  * @strokes: Array of stroke coordinates: { s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y }.  *  * Paint in the current brush with varying pressure. Paint application  * is time-dependent.  *  * This tool simulates the use of an airbrush. It is similar to  * gimp_airbrush() except that the pressure is derived from the  * airbrush tools options box. It the option has not been set the  * default for the option will be used.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -304,7 +304,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_clone_default:  * @drawable_ID: The affected drawable.  * @num_strokes: Number of stroke control points (count each coordinate as 2 points).  * @strokes: Array of stroke coordinates: { s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y }.  *  * Clone from the source to the dest drawable using the current brush  *  * This tool clones (copies) from the source drawable starting at the  * specified source coordinates to the dest drawable. This function  * performs exactly the same as the gimp_clone function except that the  * tools arguments are obtained from the clones option dialog. It this  * dialog has not been activated then the dialogs default values will  * be used.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_clone_default:  * @drawable_ID: The affected drawable.  * @num_strokes: Number of stroke control points (count each coordinate as 2 points).  * @strokes: Array of stroke coordinates: { s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y }.  *  * Clone from the source to the dest drawable using the current brush  *  * This tool clones (copies) from the source drawable starting at the  * specified source coordinates to the dest drawable. This function  * performs exactly the same as the gimp_clone() function except that  * the tools arguments are obtained from the clones option dialog. It  * this dialog has not been activated then the dialogs default values  * will be used.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -484,7 +484,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_convolve_default:  * @drawable_ID: The affected drawable.  * @num_strokes: Number of stroke control points (count each coordinate as 2 points).  * @strokes: Array of stroke coordinates: { s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y }.  *  * Convolve (Blur, Sharpen) using the current brush.  *  * This tool convolves the specified drawable with either a sharpening  * or blurring kernel. This function performs exactly the same as the  * gimp_convolve function except that the tools arguments are obtained  * from the convolve option dialog. It this dialog has not been  * activated then the dialogs default values will be used.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_convolve_default:  * @drawable_ID: The affected drawable.  * @num_strokes: Number of stroke control points (count each coordinate as 2 points).  * @strokes: Array of stroke coordinates: { s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y }.  *  * Convolve (Blur, Sharpen) using the current brush.  *  * This tool convolves the specified drawable with either a sharpening  * or blurring kernel. This function performs exactly the same as the  * gimp_convolve() function except that the tools arguments are  * obtained from the convolve option dialog. It this dialog has not  * been activated then the dialogs default values will be used.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -671,7 +671,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_dodgeburn_default:  * @drawable_ID: The affected drawable.  * @num_strokes: Number of stroke control points (count each coordinate as 2 points).  * @strokes: Array of stroke coordinates: { s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y }.  *  * Dodgeburn image with varying exposure. This is the same as the  * gimp_dodgeburn function except that the exposure, type and mode are  * taken from the tools option dialog. If the dialog has not been  * activated then the defaults as used by the dialog will be used.  *  * Dodgeburn. More details here later.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_dodgeburn_default:  * @drawable_ID: The affected drawable.  * @num_strokes: Number of stroke control points (count each coordinate as 2 points).  * @strokes: Array of stroke coordinates: { s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y }.  *  * Dodgeburn image with varying exposure. This is the same as the  * gimp_dodgeburn() function except that the exposure, type and mode  * are taken from the tools option dialog. If the dialog has not been  * activated then the defaults as used by the dialog will be used.  *  * Dodgeburn. More details here later.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -851,7 +851,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_eraser_default:  * @drawable_ID: The affected drawable.  * @num_strokes: Number of stroke control points (count each coordinate as 2 points).  * @strokes: Array of stroke coordinates: { s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y }.  *  * Erase using the current brush.  *  * This tool erases using the current brush mask. This function  * performs exactly the same as the gimp_eraser function except that  * the tools arguments are obtained from the eraser option dialog. It  * this dialog has not been activated then the dialogs default values  * will be used.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_eraser_default:  * @drawable_ID: The affected drawable.  * @num_strokes: Number of stroke control points (count each coordinate as 2 points).  * @strokes: Array of stroke coordinates: { s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y }.  *  * Erase using the current brush.  *  * This tool erases using the current brush mask. This function  * performs exactly the same as the gimp_eraser() function except that  * the tools arguments are obtained from the eraser option dialog. It  * this dialog has not been activated then the dialogs default values  * will be used.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -1294,7 +1294,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_smudge_default:  * @drawable_ID: The affected drawable.  * @num_strokes: Number of stroke control points (count each coordinate as 2 points).  * @strokes: Array of stroke coordinates: { s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y }.  *  * Smudge image with varying pressure.  *  * This tool simulates a smudge using the current brush. It behaves  * exactly the same as gimp_smudge except that the pressure value is  * taken from the smudge tool options or the options default if the  * tools option dialog has not been activated.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_smudge_default:  * @drawable_ID: The affected drawable.  * @num_strokes: Number of stroke control points (count each coordinate as 2 points).  * @strokes: Array of stroke coordinates: { s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y }.  *  * Smudge image with varying pressure.  *  * This tool simulates a smudge using the current brush. It behaves  * exactly the same as gimp_smudge() except that the pressure value is  * taken from the smudge tool options or the options default if the  * tools option dialog has not been activated.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function

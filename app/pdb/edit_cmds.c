@@ -3259,7 +3259,7 @@ literal|"gimp-edit-named-cut"
 argument_list|,
 literal|"Cut into a named buffer."
 argument_list|,
-literal|"This procedure works like gimp-edit-cut, but additionally stores the cut buffer into a named buffer that will stay available for later pasting, regardless of any intermediate copy or cut operations."
+literal|"This procedure works like 'gimp-edit-cut', but additionally stores the cut buffer into a named buffer that will stay available for later pasting, regardless of any intermediate copy or cut operations."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -3374,7 +3374,7 @@ literal|"gimp-edit-named-copy"
 argument_list|,
 literal|"Copy into a named buffer."
 argument_list|,
-literal|"This procedure works like gimp-edit-copy, but additionally stores the copied buffer into a named buffer that will stay available for later pasting, regardless of any intermediate copy or cut operations."
+literal|"This procedure works like 'gimp-edit-copy', but additionally stores the copied buffer into a named buffer that will stay available for later pasting, regardless of any intermediate copy or cut operations."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -3489,7 +3489,7 @@ literal|"gimp-edit-named-copy-visible"
 argument_list|,
 literal|"Copy from the projection into a named buffer."
 argument_list|,
-literal|"This procedure works like gimp-edit-copy-visible, but additionally stores the copied buffer into a named buffer that will stay available for later pasting, regardless of any intermediate copy or cut operations."
+literal|"This procedure works like 'gimp-edit-copy-visible', but additionally stores the copied buffer into a named buffer that will stay available for later pasting, regardless of any intermediate copy or cut operations."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -3604,7 +3604,7 @@ literal|"gimp-edit-named-paste"
 argument_list|,
 literal|"Paste named buffer to the specified drawable."
 argument_list|,
-literal|"This procedure works like gimp-edit-paste but pastes a named buffer instead of the global buffer."
+literal|"This procedure works like 'gimp-edit-paste' but pastes a named buffer instead of the global buffer."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -3737,7 +3737,7 @@ literal|"gimp-edit-named-paste-as-new"
 argument_list|,
 literal|"Paste named buffer to a new image."
 argument_list|,
-literal|"This procedure works like gimp-edit-paste-as-new but pastes a named buffer instead of the global buffer."
+literal|"This procedure works like 'gimp-edit-paste-as-new' but pastes a named buffer instead of the global buffer."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,

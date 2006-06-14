@@ -105,7 +105,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gimprc_set:  * @token: The token to add or modify.  * @value: The value to set the token to.  *  * Sets a gimprc token to a value and saves it in the gimprc.  *  * This procedure is used to add or change additional information in  * the gimprc file that is considered extraneous to the operation of  * the GIMP. Plug-ins that need configuration information can use this  * function to store it, and gimp_gimprc_query to retrieve it. This  * will accept _only_ string values in UTF-8 encoding.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_gimprc_set:  * @token: The token to add or modify.  * @value: The value to set the token to.  *  * Sets a gimprc token to a value and saves it in the gimprc.  *  * This procedure is used to add or change additional information in  * the gimprc file that is considered extraneous to the operation of  * the GIMP. Plug-ins that need configuration information can use this  * function to store it, and gimp_gimprc_query() to retrieve it. This  * will accept _only_ string values in UTF-8 encoding.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function

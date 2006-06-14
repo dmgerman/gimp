@@ -98,7 +98,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_plugin_help_register:  * @domain_name: The XML namespace of the plug-in's help pages.  * @domain_uri: The root URI of the plug-in's help pages.  *  * Register a help path for a plug-in.  *  * This procedure changes the help rootdir for the plug-in which calls  * it. All subsequent calls of gimp_help from this plug-in will be  * interpreted relative to this rootdir.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_plugin_help_register:  * @domain_name: The XML namespace of the plug-in's help pages.  * @domain_uri: The root URI of the plug-in's help pages.  *  * Register a help path for a plug-in.  *  * This procedure changes the help rootdir for the plug-in which calls  * it. All subsequent calls of gimp_help() from this plug-in will be  * interpreted relative to this rootdir.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function

@@ -143,7 +143,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_new:  * @width: The width of the image.  * @height: The height of the image.  * @type: The type of image.  *  * Creates a new image with the specified width, height, and type.  *  * Creates a new image, undisplayed with the specified extents and  * type. A layer should be created and added before this image is  * displayed, or subsequent calls to 'gimp_display_new' with this image  * as an argument will fail. Layers can be created using the  * 'gimp_layer_new' commands. They can be added to an image using the  * 'gimp_image_add_layer' command.  *  * Returns: The ID of the newly created image.  */
+comment|/**  * gimp_image_new:  * @width: The width of the image.  * @height: The height of the image.  * @type: The type of image.  *  * Creates a new image with the specified width, height, and type.  *  * Creates a new image, undisplayed with the specified extents and  * type. A layer should be created and added before this image is  * displayed, or subsequent calls to gimp_display_new() with this image  * as an argument will fail. Layers can be created using the  * gimp_layer_new() commands. They can be added to an image using the  * gimp_image_add_layer() command.  *  * Returns: The ID of the newly created image.  */
 end_comment
 
 begin_function
@@ -616,7 +616,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_free_shadow:  * @image_ID: The image.  *  * Free the specified image's shadow data (if it exists).  *  * This procedure is intended as a memory saving device. If any shadow  * memory has been allocated, it will be freed automatically on a call  * to 'gimp_image_delete'.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_free_shadow:  * @image_ID: The image.  *  * Free the specified image's shadow data (if it exists).  *  * This procedure is intended as a memory saving device. If any shadow  * memory has been allocated, it will be freed automatically on a call  * to gimp_image_delete().  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -3804,7 +3804,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_is_dirty:  * @image_ID: The image.  *  * Checks if the image has unsaved changes.  *  * This procedure checks the specified image's dirty count to see if it  * needs to be saved. Note that saving the image does not automatically  * set the dirty count to 0, you need to call gimp-image-clean-all  * after calling a save procedure to make the image clean.  *  * Returns: TRUE if the image has unsaved changes.  */
+comment|/**  * gimp_image_is_dirty:  * @image_ID: The image.  *  * Checks if the image has unsaved changes.  *  * This procedure checks the specified image's dirty count to see if it  * needs to be saved. Note that saving the image does not automatically  * set the dirty count to 0, you need to call gimp_image_clean_all()  * after calling a save procedure to make the image clean.  *  * Returns: TRUE if the image has unsaved changes.  */
 end_comment
 
 begin_function
@@ -5405,7 +5405,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_unit:  * @image_ID: The image.  *  * Returns the specified image's unit.  *  * This procedure returns the specified image's unit. This value is  * independent of any of the layers in this image. See the gimp_unit_*  * procedure definitions for the valid range of unit IDs and a  * description of the unit system.  *  * Returns: The unit.  */
+comment|/**  * gimp_image_get_unit:  * @image_ID: The image.  *  * Returns the specified image's unit.  *  * This procedure returns the specified image's unit. This value is  * independent of any of the layers in this image. See the  * gimp_unit_*() procedure definitions for the valid range of unit IDs  * and a description of the unit system.  *  * Returns: The unit.  */
 end_comment
 
 begin_function
@@ -5483,7 +5483,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_set_unit:  * @image_ID: The image.  * @unit: The new image unit.  *  * Sets the specified image's unit.  *  * This procedure sets the specified image's unit. No scaling or  * resizing is performed. This value is independent of any of the  * layers in this image. See the gimp_unit_* procedure definitions for  * the valid range of unit IDs and a description of the unit system.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_set_unit:  * @image_ID: The image.  * @unit: The new image unit.  *  * Sets the specified image's unit.  *  * This procedure sets the specified image's unit. No scaling or  * resizing is performed. This value is independent of any of the  * layers in this image. See the gimp_unit_*() procedure definitions  * for the valid range of unit IDs and a description of the unit  * system.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function

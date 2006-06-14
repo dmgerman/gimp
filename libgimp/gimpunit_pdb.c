@@ -166,7 +166,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_unit_new:  * @identifier: The new unit's identifier.  * @factor: The new unit's factor.  * @digits: The new unit's digits.  * @symbol: The new unit's symbol.  * @abbreviation: The new unit's abbreviation.  * @singular: The new unit's singular form.  * @plural: The new unit's plural form.  *  * Creates a new unit and returns it's integer ID.  *  * This procedure creates a new unit and returns it's integer ID. Note  * that the new unit will have it's deletion flag set to TRUE, so you  * will have to set it to FALSE with gimp_unit_set_deletion_flag to  * make it persistent.  *  * Returns: The new unit's ID.  */
+comment|/**  * _gimp_unit_new:  * @identifier: The new unit's identifier.  * @factor: The new unit's factor.  * @digits: The new unit's digits.  * @symbol: The new unit's symbol.  * @abbreviation: The new unit's abbreviation.  * @singular: The new unit's singular form.  * @plural: The new unit's plural form.  *  * Creates a new unit and returns it's integer ID.  *  * This procedure creates a new unit and returns it's integer ID. Note  * that the new unit will have it's deletion flag set to TRUE, so you  * will have to set it to FALSE with gimp_unit_set_deletion_flag() to  * make it persistent.  *  * Returns: The new unit's ID.  */
 end_comment
 
 begin_function

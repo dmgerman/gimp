@@ -1567,7 +1567,7 @@ literal|"gimp-unit-new"
 argument_list|,
 literal|"Creates a new unit and returns it's integer ID."
 argument_list|,
-literal|"This procedure creates a new unit and returns it's integer ID. Note that the new unit will have it's deletion flag set to TRUE, so you will have to set it to FALSE with gimp_unit_set_deletion_flag to make it persistent."
+literal|"This procedure creates a new unit and returns it's integer ID. Note that the new unit will have it's deletion flag set to TRUE, so you will have to set it to FALSE with 'gimp-unit-set-deletion-flag' to make it persistent."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
