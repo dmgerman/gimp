@@ -215,7 +215,7 @@ literal|"04th April 1999"
 argument_list|,
 name|N_
 argument_list|(
-literal|"Colormap _Rotation..."
+literal|"_Rotate Colors..."
 argument_list|)
 argument_list|,
 literal|"RGB*"
@@ -245,7 +245,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* Rotate colormap of a single row */
+comment|/* Rotate colors of a single row */
 end_comment
 
 begin_function
@@ -617,7 +617,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* Rotate colormap row by row ... */
+comment|/* Rotate colors row by row ... */
 end_comment
 
 begin_function
@@ -1056,7 +1056,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/* call dialog and rotate the colormap */
+comment|/* call dialog and rotate the colors */
 if|if
 condition|(
 name|gimp_drawable_is_rgb
@@ -1076,7 +1076,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Rotating the colormap"
+literal|"Rotating the colors"
 argument_list|)
 argument_list|)
 expr_stmt|;
