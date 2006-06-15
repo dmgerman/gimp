@@ -302,7 +302,7 @@ name|PLUG_IN_PROC_REMAP
 argument_list|,
 name|N_
 argument_list|(
-literal|"Remap the colormap"
+literal|"Rearrange the colormap"
 argument_list|)
 argument_list|,
 literal|"This procedure takes an indexed image and lets you "
@@ -317,7 +317,7 @@ literal|"14th June 2006"
 argument_list|,
 name|N_
 argument_list|(
-literal|"_Remap colormap"
+literal|"_Rearrange Colormap..."
 argument_list|)
 argument_list|,
 literal|"INDEXED*"
@@ -334,6 +334,13 @@ argument_list|,
 name|remap_args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+name|PLUG_IN_PROC_REMAP
+argument_list|,
+literal|"<Image>/Colors/Map"
 argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
@@ -357,7 +364,7 @@ literal|"14th June 2006"
 argument_list|,
 name|N_
 argument_list|(
-literal|"_Swap colormap"
+literal|"_Swap Colors"
 argument_list|)
 argument_list|,
 literal|"INDEXED*"
@@ -374,13 +381,6 @@ argument_list|,
 name|swap_args
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_plugin_menu_register
-argument_list|(
-name|PLUG_IN_PROC_REMAP
-argument_list|,
-literal|"<Image>/Colors/Map"
 argument_list|)
 expr_stmt|;
 block|}
@@ -1291,7 +1291,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Remap colormap"
+literal|"Rearranging the colormap"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1784,7 +1784,7 @@ end_function
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c30b87e0103
+DECL|enum|__anon2b43ce590103
 block|{
 DECL|enumerator|COLOR_INDEX
 name|COLOR_INDEX
@@ -1897,7 +1897,7 @@ name|gimp_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Remap colormap"
+literal|"Rearrange Colormap"
 argument_list|)
 argument_list|,
 name|PLUG_IN_BINARY
@@ -1984,8 +1984,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Drag and drop colors below to rearrange the "
-literal|"colormap.\n"
+literal|"Drag and drop colors to rearrange the colormap.\n"
 literal|"The numbers shown are the original indices."
 argument_list|)
 argument_list|)
