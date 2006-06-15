@@ -423,7 +423,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2c3bb5e90103
+DECL|enum|__anon27f156410103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1464,7 +1464,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3bb5e90208
+DECL|struct|__anon27f156410208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1541,7 +1541,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3bb5e90308
+DECL|struct|__anon27f156410308
 block|{
 DECL|member|ncolors
 name|long
@@ -1726,7 +1726,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3bb5e90408
+DECL|struct|__anon27f156410408
 block|{
 DECL|member|used_count
 name|signed
@@ -3692,17 +3692,9 @@ condition|(
 name|remove_dups
 operator|&&
 operator|(
-operator|(
 name|palette_type
-operator|==
-name|GIMP_WEB_PALETTE
-operator|)
-operator|||
-operator|(
-name|palette_type
-operator|==
-name|GIMP_CUSTOM_PALETTE
-operator|)
+operator|!=
+name|GIMP_MAKE_PALETTE
 operator|)
 condition|)
 block|{

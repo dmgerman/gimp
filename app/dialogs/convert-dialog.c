@@ -114,7 +114,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2932c72c0108
+DECL|struct|__anon287c63bc0108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -652,11 +652,13 @@ name|GIMP_TYPE_CONVERT_PALETTE_TYPE
 argument_list|,
 name|GIMP_MAKE_PALETTE
 argument_list|,
+operator|(
 name|palette_box
 condition|?
 name|GIMP_CUSTOM_PALETTE
 else|:
 name|GIMP_MONO_PALETTE
+operator|)
 argument_list|,
 name|gtk_label_new
 argument_list|(
@@ -677,14 +679,14 @@ operator|->
 name|palette_type
 argument_list|,
 operator|&
-name|toggle
+name|button
 argument_list|)
 expr_stmt|;
 name|gimp_int_radio_group_set_active
 argument_list|(
 name|GTK_RADIO_BUTTON
 argument_list|(
-name|toggle
+name|button
 argument_list|)
 argument_list|,
 name|dialog
@@ -870,15 +872,6 @@ condition|(
 name|palette_box
 condition|)
 block|{
-name|vbox
-operator|=
-name|gtk_vbox_new
-argument_list|(
-name|FALSE
-argument_list|,
-literal|2
-argument_list|)
-expr_stmt|;
 name|gimp_enum_radio_frame_add
 argument_list|(
 name|GTK_FRAME
@@ -886,35 +879,25 @@ argument_list|(
 name|frame
 argument_list|)
 argument_list|,
-name|vbox
+name|palette_box
 argument_list|,
 name|GIMP_CUSTOM_PALETTE
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|vbox
+name|palette_box
 argument_list|)
 expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
+block|}
 name|vbox
-argument_list|)
-argument_list|,
-name|palette_box
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
+operator|=
+name|gtk_bin_get_child
 argument_list|(
-name|palette_box
+name|GTK_BIN
+argument_list|(
+name|frame
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|toggle
@@ -924,7 +907,7 @@ argument_list|(
 name|_
 argument_list|(
 literal|"_Remove unused colors "
-literal|"from final palette"
+literal|"from colormap"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -953,7 +936,7 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
-literal|0
+literal|3
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -978,7 +961,26 @@ operator|->
 name|remove_dups
 argument_list|)
 expr_stmt|;
-block|}
+name|g_object_set_data
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|button
+argument_list|)
+argument_list|,
+literal|"inverse_sensitive"
+argument_list|,
+name|toggle
+argument_list|)
+expr_stmt|;
+name|gimp_toggle_button_sensitive_update
+argument_list|(
+name|GTK_TOGGLE_BUTTON
+argument_list|(
+name|button
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/*  dithering  */
 name|frame
 operator|=
@@ -1267,7 +1269,7 @@ name|progress
 argument_list|,
 name|_
 argument_list|(
-literal|"Converting to indexed"
+literal|"Converting to indexed colors"
 argument_list|)
 argument_list|,
 name|FALSE
