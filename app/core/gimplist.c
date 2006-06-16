@@ -45,7 +45,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c657bc80103
+DECL|enum|__anon29b805430103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1392,6 +1392,20 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+comment|/* for debugging purposes only */
+name|gimp_object_set_static_name
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
+name|list
+argument_list|)
+argument_list|,
+name|g_type_name
+argument_list|(
+name|children_type
+argument_list|)
+argument_list|)
+expr_stmt|;
 return|return
 name|GIMP_CONTAINER
 argument_list|(
@@ -1457,6 +1471,20 @@ else|:
 name|FALSE
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+comment|/* for debugging purposes only */
+name|gimp_object_set_static_name
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
+name|list
+argument_list|)
+argument_list|,
+name|g_type_name
+argument_list|(
+name|children_type
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
