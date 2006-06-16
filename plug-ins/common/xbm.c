@@ -126,7 +126,7 @@ DECL|macro|MAX_PREFIX
 define|#
 directive|define
 name|MAX_PREFIX
-value|24
+value|64
 end_define
 
 begin_comment
