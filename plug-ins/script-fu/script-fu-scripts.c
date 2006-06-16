@@ -96,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1c43240108
+DECL|struct|__anon2a200a4c0108
 block|{
 DECL|member|script
 name|SFScript
@@ -236,7 +236,7 @@ parameter_list|(
 specifier|const
 name|gchar
 modifier|*
-name|script_name
+name|name
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -569,7 +569,7 @@ argument_list|)
 expr_stmt|;
 name|script
 operator|->
-name|script_name
+name|name
 operator|=
 name|g_strdup
 argument_list|(
@@ -610,7 +610,7 @@ argument_list|(
 name|a
 argument_list|)
 expr_stmt|;
-comment|/*  Find the script help  */
+comment|/*  Find the script blurb  */
 name|val
 operator|=
 name|get_c_string
@@ -623,7 +623,7 @@ argument_list|)
 expr_stmt|;
 name|script
 operator|->
-name|help
+name|blurb
 operator|=
 name|g_strdup
 argument_list|(
@@ -3753,11 +3753,11 @@ name|gimp_install_temp_proc
 argument_list|(
 name|script
 operator|->
-name|script_name
+name|name
 argument_list|,
 name|script
 operator|->
-name|help
+name|blurb
 argument_list|,
 literal|""
 argument_list|,
@@ -3835,7 +3835,7 @@ name|menu
 operator|->
 name|script
 operator|->
-name|script_name
+name|name
 argument_list|,
 name|menu
 operator|->
@@ -4184,7 +4184,7 @@ name|s
 argument_list|,
 name|script
 operator|->
-name|script_name
+name|name
 argument_list|)
 expr_stmt|;
 for|for
@@ -4612,7 +4612,7 @@ name|strcmp
 argument_list|(
 name|script
 operator|->
-name|script_name
+name|name
 argument_list|,
 operator|*
 name|name
@@ -4642,19 +4642,19 @@ begin_function
 specifier|static
 name|SFScript
 modifier|*
-DECL|function|script_fu_find_script (const gchar * script_name)
+DECL|function|script_fu_find_script (const gchar * name)
 name|script_fu_find_script
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
-name|script_name
+name|name
 parameter_list|)
 block|{
 name|gconstpointer
 name|script
 init|=
-name|script_name
+name|name
 decl_stmt|;
 name|g_tree_foreach
 argument_list|(
@@ -4673,7 +4673,7 @@ if|if
 condition|(
 name|script
 operator|==
-name|script_name
+name|name
 condition|)
 return|return
 name|NULL
@@ -4714,14 +4714,21 @@ name|gimp_uninstall_temp_proc
 argument_list|(
 name|script
 operator|->
-name|script_name
+name|name
 argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
 name|script
 operator|->
-name|script_name
+name|name
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|script
+operator|->
+name|blurb
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -4729,13 +4736,6 @@ argument_list|(
 name|script
 operator|->
 name|menu_path
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|script
-operator|->
-name|help
 argument_list|)
 expr_stmt|;
 name|g_free

@@ -108,7 +108,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292375a60108
+DECL|struct|__anon29e441090108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -842,7 +842,7 @@ name|g_strdup
 argument_list|(
 name|script
 operator|->
-name|script_name
+name|name
 argument_list|)
 expr_stmt|;
 name|sf_interface
@@ -3340,7 +3340,7 @@ name|s
 argument_list|,
 name|script
 operator|->
-name|script_name
+name|name
 argument_list|)
 expr_stmt|;
 for|for
@@ -4564,7 +4564,7 @@ name|gtk_label_new
 argument_list|(
 name|script
 operator|->
-name|script_name
+name|name
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -4732,7 +4732,7 @@ name|text_buffer
 argument_list|,
 name|script
 operator|->
-name|help
+name|blurb
 argument_list|,
 operator|-
 literal|1
