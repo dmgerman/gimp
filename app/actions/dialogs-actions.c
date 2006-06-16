@@ -300,7 +300,7 @@ block|,
 block|{
 literal|"dialogs-indexed-palette"
 block|,
-name|GIMP_STOCK_INDEXED_PALETTE
+name|GIMP_STOCK_COLORMAP
 block|,
 name|N_
 argument_list|(

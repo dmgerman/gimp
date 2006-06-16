@@ -445,7 +445,7 @@ argument_list|(
 literal|"Colormap Editor"
 argument_list|)
 block|,
-name|GIMP_STOCK_INDEXED_PALETTE
+name|GIMP_STOCK_COLORMAP
 block|,
 name|colormap_editor_actions_setup
 block|,

@@ -1511,8 +1511,21 @@ name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
-name|GIMP_STOCK_INDEXED_PALETTE
+name|GIMP_STOCK_COLORMAP
 block|,
+name|NULL
+block|,
+literal|0
+block|,
+literal|0
+block|,
+name|LIBGIMP_DOMAIN
+block|}
+block|,
+block|{
+literal|"gimp-indexed-palette"
+block|,
+comment|/* compat */
 name|NULL
 block|,
 literal|0
@@ -2482,7 +2495,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2ad3fe6d0108
+DECL|struct|__anon2a3989ff0108
 block|{
 DECL|member|stock_id
 specifier|const
@@ -2903,9 +2916,16 @@ name|stock_template_24
 block|}
 block|,
 block|{
-name|GIMP_STOCK_INDEXED_PALETTE
+name|GIMP_STOCK_COLORMAP
 block|,
-name|stock_indexed_palette_24
+name|stock_colormap_24
+block|}
+block|,
+block|{
+literal|"gimp-indexed-palette"
+block|,
+comment|/* compat */
+name|stock_colormap_24
 block|}
 block|,
 block|{
@@ -3215,7 +3235,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2ad3fe6d0208
+DECL|struct|__anon2a3989ff0208
 block|{
 DECL|member|stock_id
 specifier|const
@@ -3480,9 +3500,16 @@ name|stock_template_16
 block|}
 block|,
 block|{
-name|GIMP_STOCK_INDEXED_PALETTE
+name|GIMP_STOCK_COLORMAP
 block|,
-name|stock_indexed_palette_16
+name|stock_colormap_16
+block|}
+block|,
+block|{
+literal|"gimp-indexed-palette"
+block|,
+comment|/* compat */
+name|stock_colormap_16
 block|}
 block|,
 block|{
@@ -4040,7 +4067,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2ad3fe6d0308
+DECL|struct|__anon2a3989ff0308
 block|{
 DECL|member|stock_id
 specifier|const
@@ -4137,7 +4164,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2ad3fe6d0408
+DECL|struct|__anon2a3989ff0408
 block|{
 DECL|member|stock_id
 specifier|const
@@ -4282,7 +4309,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2ad3fe6d0508
+DECL|struct|__anon2a3989ff0508
 block|{
 DECL|member|stock_id
 specifier|const

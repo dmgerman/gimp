@@ -930,7 +930,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_STOCK_INDEXED_PALETTE
+name|GIMP_STOCK_COLORMAP
 argument_list|,
 name|GIMP_HELP_INDEXED_PALETTE_DIALOG
 argument_list|,

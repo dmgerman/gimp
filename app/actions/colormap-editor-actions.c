@@ -87,7 +87,7 @@ block|{
 block|{
 literal|"colormap-editor-popup"
 block|,
-name|GIMP_STOCK_INDEXED_PALETTE
+name|GIMP_STOCK_COLORMAP
 block|,
 name|N_
 argument_list|(
