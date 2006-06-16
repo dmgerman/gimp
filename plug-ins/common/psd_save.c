@@ -1116,57 +1116,53 @@ literal|"over"
 argument_list|)
 expr_stmt|;
 break|break;
-case|case
-name|GIMP_ADDITION_MODE
-case|:
-case|case
-name|GIMP_SUBTRACT_MODE
-case|:
-name|g_message
-argument_list|(
-name|_
-argument_list|(
-literal|"Unable to save layer with mode '%c'. The psd file format does not support that, using normal mode instead."
-argument_list|)
-argument_list|,
-name|gimp_layer_get_mode
-argument_list|(
-name|idLayer
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|IFDBG
-name|printf
-argument_list|(
-literal|"PSD: Warning - unsupported layer-blend mode: %c, using 'norm' mode\n"
-argument_list|,
-name|gimp_layer_get_mode
-argument_list|(
-name|idLayer
-argument_list|)
-argument_list|)
-decl_stmt|;
-name|strcpy
-argument_list|(
-name|psdMode
-argument_list|,
-literal|"norm"
-argument_list|)
-expr_stmt|;
-break|break;
 default|default:
+block|{
+specifier|const
+name|gchar
+modifier|*
+name|nick
+init|=
+literal|"?"
+decl_stmt|;
+name|gimp_enum_get_value
+argument_list|(
+name|GIMP_TYPE_LAYER_MODE_EFFECTS
+argument_list|,
+name|gimp_layer_get_mode
+argument_list|(
+name|idLayer
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|,
+operator|&
+name|nick
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Unable to save layer with UNKNOWN mode. Using normal mode as fallback."
+literal|"Unable to save layer with mode '%s'.  Either the PSD "
+literal|"file format or the save plug-in does not support that, "
+literal|"using normal mode instead."
 argument_list|)
+argument_list|,
+name|nick
 argument_list|)
 expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"PSD: Warning - UNKNOWN layer-blend mode, reverting to 'norm'\n"
+literal|"PSD: Warning - unsupported layer-blend mode: %s, "
+literal|"using normal mode\n"
+argument_list|,
+name|nick
 argument_list|)
 decl_stmt|;
 name|strcpy
@@ -1176,6 +1172,7 @@ argument_list|,
 literal|"norm"
 argument_list|)
 expr_stmt|;
+block|}
 break|break;
 block|}
 block|}
