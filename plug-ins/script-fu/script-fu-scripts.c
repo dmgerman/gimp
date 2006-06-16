@@ -96,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2919786e0108
+DECL|struct|__anon2a1c43240108
 block|{
 DECL|member|script
 name|SFScript
@@ -811,7 +811,7 @@ index|]
 operator|.
 name|name
 operator|=
-literal|"run_mode"
+literal|"run-mode"
 expr_stmt|;
 name|args
 index|[
@@ -2152,7 +2152,7 @@ expr_stmt|;
 ifdef|#
 directive|ifdef
 name|G_OS_WIN32
-comment|/* Replace POSIX slashes with Win32 backslashes. This 		   * is just so script-fus can be written with only 		   * POSIX directory separators. 		   */
+comment|/* Replace POSIX slashes with Win32 backslashes. This                    * is just so script-fus can be written with only                    * POSIX directory separators.                    */
 name|val
 operator|=
 name|script
