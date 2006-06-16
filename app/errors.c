@@ -10,14 +10,14 @@ file|"config.h"
 end_include
 
 begin_define
-DECL|macro|_POSIX_SOURCE
+DECL|macro|_GNU_SOURCE
 define|#
 directive|define
-name|_POSIX_SOURCE
+name|_GNU_SOURCE
 end_define
 
 begin_comment
-DECL|macro|_POSIX_SOURCE
+DECL|macro|_GNU_SOURCE
 comment|/* need the POSIX signal API */
 end_comment
 

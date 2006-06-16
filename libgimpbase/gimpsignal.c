@@ -10,16 +10,15 @@ file|"config.h"
 end_include
 
 begin_define
-DECL|macro|_POSIX_C_SOURCE
+DECL|macro|_GNU_SOURCE
 define|#
 directive|define
-name|_POSIX_C_SOURCE
-value|199309L
+name|_GNU_SOURCE
 end_define
 
 begin_comment
-DECL|macro|_POSIX_C_SOURCE
-comment|/* all the sigaction stuff is POSIX */
+DECL|macro|_GNU_SOURCE
+comment|/* for the sigaction stuff */
 end_comment
 
 begin_include

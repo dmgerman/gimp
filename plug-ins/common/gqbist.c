@@ -10,14 +10,14 @@ file|"config.h"
 end_include
 
 begin_define
-DECL|macro|_POSIX_SOURCE
+DECL|macro|_GNU_SOURCE
 define|#
 directive|define
-name|_POSIX_SOURCE
+name|_GNU_SOURCE
 end_define
 
 begin_comment
-DECL|macro|_POSIX_SOURCE
+DECL|macro|_GNU_SOURCE
 comment|/* need PATH_MAX */
 end_comment
 
@@ -155,7 +155,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c5f23050103
+DECL|enum|__anon2c2a84280103
 block|{
 DECL|enumerator|PROJECTION
 name|PROJECTION
@@ -200,7 +200,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5f23050208
+DECL|struct|__anon2c2a84280208
 block|{
 DECL|member|transformSequence
 name|TransformType
@@ -239,7 +239,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5f23050308
+DECL|struct|__anon2c2a84280308
 block|{
 DECL|member|info
 name|ExpInfo

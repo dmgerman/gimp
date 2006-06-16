@@ -10,14 +10,14 @@ file|"config.h"
 end_include
 
 begin_define
-DECL|macro|_BSD_SOURCE
+DECL|macro|_GNU_SOURCE
 define|#
 directive|define
-name|_BSD_SOURCE
+name|_GNU_SOURCE
 end_define
 
 begin_comment
-DECL|macro|_BSD_SOURCE
+DECL|macro|_GNU_SOURCE
 comment|/* the ALSA headers need this */
 end_comment
 
@@ -126,7 +126,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b001060108
+DECL|struct|__anon2c85ac860108
 block|{
 DECL|member|name
 name|gchar
@@ -146,7 +146,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b001060203
+DECL|enum|__anon2c85ac860203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
