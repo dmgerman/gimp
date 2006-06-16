@@ -73,7 +73,7 @@ literal|"debug-mem-profile"
 block|,
 name|NULL
 block|,
-literal|"_Mem Profile"
+literal|"_Memory Profile"
 block|,
 name|NULL
 block|,
