@@ -84,7 +84,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a3f6eb0103
+DECL|enum|__anon2c4c4b930103
 block|{
 DECL|enumerator|MENU_PATH_ADDED
 name|MENU_PATH_ADDED
@@ -2082,7 +2082,7 @@ name|stripped
 decl_stmt|;
 name|gchar
 modifier|*
-name|ellipses
+name|ellipsis
 decl_stmt|;
 name|gchar
 modifier|*
@@ -2172,7 +2172,7 @@ argument_list|(
 name|stripped
 argument_list|)
 expr_stmt|;
-name|ellipses
+name|ellipsis
 operator|=
 name|strstr
 argument_list|(
@@ -2183,9 +2183,24 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|ellipses
+operator|!
+name|ellipsis
+condition|)
+name|ellipsis
+operator|=
+name|strstr
+argument_list|(
+name|label
+argument_list|,
+literal|"\342\200\246"
+comment|/* U+2026 HORIZONTAL ELLIPSIS */
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|ellipsis
 operator|&&
-name|ellipses
+name|ellipsis
 operator|==
 operator|(
 name|label
@@ -2199,7 +2214,7 @@ literal|3
 operator|)
 condition|)
 operator|*
-name|ellipses
+name|ellipsis
 operator|=
 literal|'\0'
 expr_stmt|;
