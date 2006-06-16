@@ -99,7 +99,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a8d22d50108
+DECL|struct|__anon27b32d520108
 block|{
 DECL|member|colors
 name|GimpRGB
@@ -573,11 +573,14 @@ name|gimp_install_procedure
 argument_list|(
 name|COLOR_MAP_PROC
 argument_list|,
-literal|"Map color range specified by two colors"
-literal|"to color range specified by two other color."
+name|N_
+argument_list|(
+literal|"Map color range specified by two colors "
+literal|"to another range"
+argument_list|)
 argument_list|,
 literal|"Map color range specified by two colors"
-literal|"to color range specified by two other color."
+literal|"to color range specified by two other color. "
 literal|"Intermediate colors are interpolated."
 argument_list|,
 literal|"Peter Kirchgessner"
