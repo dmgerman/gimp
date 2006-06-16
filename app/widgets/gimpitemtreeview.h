@@ -524,6 +524,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|GimpImage
+modifier|*
+name|gimp_item_tree_view_get_image
+parameter_list|(
+name|GimpItemTreeView
+modifier|*
+name|view
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

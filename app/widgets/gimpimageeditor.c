@@ -529,6 +529,35 @@ block|}
 block|}
 end_function
 
+begin_function
+name|GimpImage
+modifier|*
+DECL|function|gimp_image_editor_get_image (GimpImageEditor * editor)
+name|gimp_image_editor_get_image
+parameter_list|(
+name|GimpImageEditor
+modifier|*
+name|editor
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_IMAGE_EDITOR
+argument_list|(
+name|editor
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+return|return
+name|editor
+operator|->
+name|image
+return|;
+block|}
+end_function
+
 begin_comment
 comment|/*  private functions  */
 end_comment

@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon279365f50103
+DECL|enum|__anon298de2410103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -2009,6 +2009,35 @@ argument_list|,
 name|view
 argument_list|)
 expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|GimpImage
+modifier|*
+DECL|function|gimp_item_tree_view_get_image (GimpItemTreeView * view)
+name|gimp_item_tree_view_get_image
+parameter_list|(
+name|GimpItemTreeView
+modifier|*
+name|view
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_ITEM_TREE_VIEW
+argument_list|(
+name|view
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+return|return
+name|view
+operator|->
+name|image
+return|;
 block|}
 end_function
 

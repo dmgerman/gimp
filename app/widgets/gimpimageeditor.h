@@ -172,6 +172,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|GimpImage
+modifier|*
+name|gimp_image_editor_get_image
+parameter_list|(
+name|GimpImageEditor
+modifier|*
+name|editor
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
