@@ -147,7 +147,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon289de40c0103
+DECL|enum|__anon27b372170103
 block|{
 DECL|enumerator|DOCKABLE_ADDED
 name|DOCKABLE_ADDED
@@ -1542,6 +1542,16 @@ name|event_box
 argument_list|)
 argument_list|,
 name|FALSE
+argument_list|)
+expr_stmt|;
+name|gtk_event_box_set_above_child
+argument_list|(
+name|GTK_EVENT_BOX
+argument_list|(
+name|event_box
+argument_list|)
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
