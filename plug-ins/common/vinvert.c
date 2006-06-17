@@ -16,6 +16,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimp.h>
 end_include
 
@@ -285,13 +291,6 @@ index|[
 literal|1
 index|]
 decl_stmt|;
-name|GimpDrawable
-modifier|*
-name|drawable
-decl_stmt|;
-name|gint32
-name|image_ID
-decl_stmt|;
 name|GimpPDBStatusType
 name|status
 init|=
@@ -344,6 +343,25 @@ name|d_status
 operator|=
 name|status
 expr_stmt|;
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|name
+argument_list|,
+name|PLUG_IN_PROC
+argument_list|)
+operator|==
+literal|0
+condition|)
+block|{
+name|GimpDrawable
+modifier|*
+name|drawable
+decl_stmt|;
+name|gint32
+name|image_ID
+decl_stmt|;
 comment|/*  Get the specified drawable  */
 name|drawable
 operator|=
@@ -370,13 +388,6 @@ name|data
 operator|.
 name|d_image
 expr_stmt|;
-if|if
-condition|(
-name|status
-operator|==
-name|GIMP_PDB_SUCCESS
-condition|)
-block|{
 comment|/*  Make sure that the drawable is indexed or RGB color  */
 if|if
 condition|(
@@ -436,6 +447,18 @@ operator|=
 name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
+name|gimp_drawable_detach
+argument_list|(
+name|drawable
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|status
+operator|=
+name|GIMP_PDB_CALLING_ERROR
+expr_stmt|;
 block|}
 name|values
 index|[
@@ -447,11 +470,6 @@ operator|.
 name|d_status
 operator|=
 name|status
-expr_stmt|;
-name|gimp_drawable_detach
-argument_list|(
-name|drawable
-argument_list|)
 expr_stmt|;
 block|}
 end_function
