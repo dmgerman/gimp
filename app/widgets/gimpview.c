@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbfc3520103
+DECL|enum|__anon28af08ba0103
 block|{
 DECL|enumerator|SET_VIEWABLE
 name|SET_VIEWABLE
@@ -2373,7 +2373,6 @@ argument_list|)
 argument_list|,
 operator|(
 name|gpointer
-operator|*
 operator|)
 operator|&
 name|view
@@ -2548,7 +2547,6 @@ argument_list|)
 argument_list|,
 operator|(
 name|gpointer
-operator|*
 operator|)
 operator|&
 name|view
