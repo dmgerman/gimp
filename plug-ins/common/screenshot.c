@@ -299,7 +299,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27e862e00103
+DECL|enum|__anon2b8302450103
 block|{
 DECL|enumerator|SHOOT_ROOT
 name|SHOOT_ROOT
@@ -318,7 +318,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e862e00208
+DECL|struct|__anon2b8302450208
 block|{
 DECL|member|shoot_type
 name|ShootType

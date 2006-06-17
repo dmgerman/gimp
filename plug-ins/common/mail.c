@@ -229,7 +229,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3f19450103
+DECL|enum|__anon27cae1e30103
 block|{
 DECL|enumerator|ENCAPSULATION_UUENCODE
 name|ENCAPSULATION_UUENCODE
@@ -267,7 +267,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3f19450208
+DECL|struct|__anon27cae1e30208
 block|{
 DECL|member|receipt
 name|gchar

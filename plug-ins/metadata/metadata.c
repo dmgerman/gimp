@@ -589,6 +589,11 @@ name|EDITOR_PROC
 argument_list|,
 name|GIMP_ICON_TYPE_STOCK_ID
 argument_list|,
+operator|(
+specifier|const
+name|guint8
+operator|*
+operator|)
 name|GTK_STOCK_PROPERTIES
 argument_list|)
 expr_stmt|;

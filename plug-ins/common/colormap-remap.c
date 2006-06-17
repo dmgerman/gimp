@@ -334,7 +334,7 @@ name|GIMP_ICON_TYPE_STOCK_ID
 argument_list|,
 operator|(
 specifier|const
-name|guchar
+name|guint8
 operator|*
 operator|)
 name|GIMP_STOCK_COLORMAP
@@ -1646,7 +1646,7 @@ end_function
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0355730103
+DECL|enum|__anon2ac473280103
 block|{
 DECL|enumerator|COLOR_INDEX
 name|COLOR_INDEX

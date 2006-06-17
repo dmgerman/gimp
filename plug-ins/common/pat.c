@@ -452,7 +452,7 @@ name|GIMP_ICON_TYPE_STOCK_ID
 argument_list|,
 operator|(
 specifier|const
-name|guchar
+name|guint8
 operator|*
 operator|)
 name|GIMP_STOCK_PATTERN
@@ -520,7 +520,7 @@ name|GIMP_ICON_TYPE_STOCK_ID
 argument_list|,
 operator|(
 specifier|const
-name|guchar
+name|guint8
 operator|*
 operator|)
 name|GIMP_STOCK_PATTERN

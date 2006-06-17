@@ -165,7 +165,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b59dc520108
+DECL|struct|__anon28e7f89d0108
 block|{
 DECL|member|description
 name|gchar
@@ -495,6 +495,11 @@ name|LOAD_PROC
 argument_list|,
 name|GIMP_ICON_TYPE_STOCK_ID
 argument_list|,
+operator|(
+specifier|const
+name|guint8
+operator|*
+operator|)
 name|GIMP_STOCK_BRUSH
 argument_list|)
 expr_stmt|;
@@ -557,6 +562,11 @@ name|SAVE_PROC
 argument_list|,
 name|GIMP_ICON_TYPE_STOCK_ID
 argument_list|,
+operator|(
+specifier|const
+name|guint8
+operator|*
+operator|)
 name|GIMP_STOCK_BRUSH
 argument_list|)
 expr_stmt|;
@@ -1985,7 +1995,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon2b59dc52020a
+DECL|union|__anon28e7f89d020a
 block|{
 DECL|member|u
 name|guint16

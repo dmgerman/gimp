@@ -87,7 +87,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b43344b0103
+DECL|enum|__anon2bc1810c0103
 block|{
 DECL|enumerator|LIST_COLUMN_NAME
 name|LIST_COLUMN_NAME
@@ -115,7 +115,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b43344b0203
+DECL|enum|__anon2bc1810c0203
 block|{
 DECL|enumerator|TREE_COLUMN_PATH_NAME
 name|TREE_COLUMN_PATH_NAME
@@ -144,7 +144,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b43344b0308
+DECL|struct|__anon2bc1810c0308
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -175,7 +175,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b43344b0408
+DECL|struct|__anon2bc1810c0408
 block|{
 DECL|member|menu
 name|gchar
@@ -464,6 +464,11 @@ name|PLUG_IN_PROC
 argument_list|,
 name|GIMP_ICON_TYPE_STOCK_ID
 argument_list|,
+operator|(
+specifier|const
+name|guint8
+operator|*
+operator|)
 name|GIMP_STOCK_PLUGIN
 argument_list|)
 expr_stmt|;
