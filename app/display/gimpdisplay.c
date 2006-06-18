@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a3e4230103
+DECL|enum|__anon2bdabff90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1494,10 +1494,7 @@ expr_stmt|;
 if|if
 condition|(
 name|active_tool
-condition|)
-block|{
-if|if
-condition|(
+operator|&&
 name|active_tool
 operator|->
 name|focus_display
@@ -1515,30 +1512,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/*  clear out the pointer to this display from the active tool  */
-if|if
-condition|(
-name|active_tool
-operator|->
-name|display
-operator|==
-name|display
-condition|)
-block|{
-name|active_tool
-operator|->
-name|drawable
-operator|=
-name|NULL
-expr_stmt|;
-name|active_tool
-operator|->
-name|display
-operator|=
-name|NULL
-expr_stmt|;
-block|}
-block|}
 comment|/*  free the update area lists  */
 name|display
 operator|->
