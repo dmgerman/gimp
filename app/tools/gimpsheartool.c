@@ -980,7 +980,7 @@ name|function
 condition|)
 block|{
 case|case
-name|TRANSFORM_HANDLE_1
+name|TRANSFORM_HANDLE_NW
 case|:
 if|if
 condition|(
@@ -1009,7 +1009,7 @@ name|diffy
 expr_stmt|;
 break|break;
 case|case
-name|TRANSFORM_HANDLE_2
+name|TRANSFORM_HANDLE_NE
 case|:
 if|if
 condition|(
@@ -1038,7 +1038,7 @@ name|diffy
 expr_stmt|;
 break|break;
 case|case
-name|TRANSFORM_HANDLE_3
+name|TRANSFORM_HANDLE_SW
 case|:
 if|if
 condition|(
@@ -1067,7 +1067,7 @@ name|diffy
 expr_stmt|;
 break|break;
 case|case
-name|TRANSFORM_HANDLE_4
+name|TRANSFORM_HANDLE_SE
 case|:
 if|if
 condition|(

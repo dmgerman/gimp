@@ -864,7 +864,7 @@ name|function
 condition|)
 block|{
 case|case
-name|TRANSFORM_HANDLE_1
+name|TRANSFORM_HANDLE_NW
 case|:
 name|transform_tool
 operator|->
@@ -886,7 +886,7 @@ name|diff_y
 expr_stmt|;
 break|break;
 case|case
-name|TRANSFORM_HANDLE_2
+name|TRANSFORM_HANDLE_NE
 case|:
 name|transform_tool
 operator|->
@@ -908,7 +908,7 @@ name|diff_y
 expr_stmt|;
 break|break;
 case|case
-name|TRANSFORM_HANDLE_3
+name|TRANSFORM_HANDLE_SW
 case|:
 name|transform_tool
 operator|->
@@ -930,7 +930,7 @@ name|diff_y
 expr_stmt|;
 break|break;
 case|case
-name|TRANSFORM_HANDLE_4
+name|TRANSFORM_HANDLE_SE
 case|:
 name|transform_tool
 operator|->

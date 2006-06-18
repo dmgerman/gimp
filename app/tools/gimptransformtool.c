@@ -2331,7 +2331,7 @@ name|tr_tool
 operator|->
 name|function
 operator|=
-name|TRANSFORM_HANDLE_1
+name|TRANSFORM_HANDLE_NW
 expr_stmt|;
 name|dist
 operator|=
@@ -2373,7 +2373,7 @@ name|tr_tool
 operator|->
 name|function
 operator|=
-name|TRANSFORM_HANDLE_2
+name|TRANSFORM_HANDLE_NE
 expr_stmt|;
 block|}
 name|dist
@@ -2416,7 +2416,7 @@ name|tr_tool
 operator|->
 name|function
 operator|=
-name|TRANSFORM_HANDLE_3
+name|TRANSFORM_HANDLE_SW
 expr_stmt|;
 block|}
 name|dist
@@ -2459,7 +2459,7 @@ name|tr_tool
 operator|->
 name|function
 operator|=
-name|TRANSFORM_HANDLE_4
+name|TRANSFORM_HANDLE_SE
 expr_stmt|;
 block|}
 if|if

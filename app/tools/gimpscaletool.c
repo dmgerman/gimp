@@ -804,12 +804,6 @@ name|gdouble
 modifier|*
 name|y2
 decl_stmt|;
-name|gdouble
-name|mag
-decl_stmt|;
-name|gdouble
-name|dot
-decl_stmt|;
 name|gint
 name|dir_x
 decl_stmt|,
@@ -854,6 +848,15 @@ name|tr_tool
 operator|->
 name|lasty
 expr_stmt|;
+name|g_printerr
+argument_list|(
+literal|"%d\n"
+argument_list|,
+name|tr_tool
+operator|->
+name|function
+argument_list|)
+expr_stmt|;
 switch|switch
 condition|(
 name|tr_tool
@@ -862,7 +865,7 @@ name|function
 condition|)
 block|{
 case|case
-name|TRANSFORM_HANDLE_1
+name|TRANSFORM_HANDLE_NW
 case|:
 name|x1
 operator|=
@@ -912,7 +915,7 @@ literal|1
 expr_stmt|;
 break|break;
 case|case
-name|TRANSFORM_HANDLE_2
+name|TRANSFORM_HANDLE_NE
 case|:
 name|x1
 operator|=
@@ -965,7 +968,7 @@ literal|1
 expr_stmt|;
 break|break;
 case|case
-name|TRANSFORM_HANDLE_3
+name|TRANSFORM_HANDLE_SW
 case|:
 name|x1
 operator|=
@@ -1018,7 +1021,7 @@ literal|1
 expr_stmt|;
 break|break;
 case|case
-name|TRANSFORM_HANDLE_4
+name|TRANSFORM_HANDLE_SE
 case|:
 name|x1
 operator|=
@@ -1155,6 +1158,12 @@ operator|->
 name|constrain
 condition|)
 block|{
+name|gdouble
+name|mag
+decl_stmt|;
+name|gdouble
+name|dot
+decl_stmt|;
 name|mag
 operator|=
 name|hypot
