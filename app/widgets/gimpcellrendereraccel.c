@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8ab4fb0103
+DECL|enum|__anon288c56b80103
 block|{
 DECL|enumerator|ACCEL_EDITED
 name|ACCEL_EDITED
@@ -72,7 +72,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8ab4fb0203
+DECL|enum|__anon288c56b80203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1413,9 +1413,7 @@ name|edit_widget
 argument_list|)
 argument_list|,
 operator|(
-name|void
-operator|*
-operator|*
+name|gpointer
 operator|)
 operator|&
 name|accel

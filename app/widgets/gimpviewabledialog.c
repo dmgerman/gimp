@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c419ec70103
+DECL|enum|__anon2c034ede0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1262,7 +1262,6 @@ argument_list|)
 argument_list|,
 operator|(
 name|gpointer
-operator|*
 operator|)
 operator|&
 name|dialog

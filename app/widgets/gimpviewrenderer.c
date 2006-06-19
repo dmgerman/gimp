@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0b89aa0103
+DECL|enum|__anon2801ec6c0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1124,7 +1124,6 @@ argument_list|)
 argument_list|,
 operator|(
 name|gpointer
-operator|*
 operator|)
 operator|&
 name|renderer
@@ -1185,7 +1184,6 @@ argument_list|)
 argument_list|,
 operator|(
 name|gpointer
-operator|*
 operator|)
 operator|&
 name|renderer
