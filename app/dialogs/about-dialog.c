@@ -92,7 +92,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2e8f380108
+DECL|struct|__anon2b034fe30108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -2388,7 +2388,7 @@ name|decorate_text
 argument_list|(
 name|dialog
 argument_list|,
-literal|3
+literal|2
 argument_list|,
 operator|(
 operator|(
