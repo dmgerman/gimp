@@ -2901,8 +2901,23 @@ condition|)
 block|{
 name|gchar
 modifier|*
+name|basename
+decl_stmt|;
+name|gchar
+modifier|*
 name|filename
 decl_stmt|;
+name|basename
+operator|=
+name|g_strconcat
+argument_list|(
+name|notebook_icon
+argument_list|,
+literal|".png"
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|filename
 operator|=
 name|themes_get_theme_file
@@ -2913,7 +2928,7 @@ literal|"images"
 argument_list|,
 literal|"preferences"
 argument_list|,
-name|notebook_icon
+name|basename
 argument_list|,
 name|NULL
 argument_list|)
@@ -2936,16 +2951,61 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-else|else
-name|pixbuf
-operator|=
-name|NULL
-expr_stmt|;
 name|g_free
 argument_list|(
 name|filename
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|basename
+argument_list|)
+expr_stmt|;
+name|basename
+operator|=
+name|g_strconcat
+argument_list|(
+name|notebook_icon
+argument_list|,
+literal|"-22.png"
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|filename
+operator|=
+name|themes_get_theme_file
+argument_list|(
+name|gimp
+argument_list|,
+literal|"images"
+argument_list|,
+literal|"preferences"
+argument_list|,
+name|basename
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|g_file_test
+argument_list|(
+name|filename
+argument_list|,
+name|G_FILE_TEST_IS_REGULAR
+argument_list|)
+condition|)
+name|small_pixbuf
+operator|=
+name|gdk_pixbuf_new_from_file
+argument_list|(
+name|filename
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+elseif|else
 if|if
 condition|(
 name|pixbuf
@@ -2956,11 +3016,21 @@ name|gdk_pixbuf_scale_simple
 argument_list|(
 name|pixbuf
 argument_list|,
-literal|18
+literal|22
 argument_list|,
-literal|18
+literal|22
 argument_list|,
 name|GDK_INTERP_BILINEAR
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|basename
 argument_list|)
 expr_stmt|;
 block|}
@@ -5985,7 +6055,7 @@ argument_list|(
 literal|"Environment"
 argument_list|)
 argument_list|,
-literal|"environment.png"
+literal|"environment"
 argument_list|,
 name|GTK_TREE_STORE
 argument_list|(
@@ -6367,7 +6437,7 @@ argument_list|(
 literal|"User Interface"
 argument_list|)
 argument_list|,
-literal|"interface.png"
+literal|"interface"
 argument_list|,
 name|GTK_TREE_STORE
 argument_list|(
@@ -6712,7 +6782,7 @@ argument_list|(
 literal|"Theme"
 argument_list|)
 argument_list|,
-literal|"theme.png"
+literal|"theme"
 argument_list|,
 name|GTK_TREE_STORE
 argument_list|(
@@ -7189,7 +7259,7 @@ argument_list|(
 literal|"Help System"
 argument_list|)
 argument_list|,
-literal|"help-system.png"
+literal|"help-system"
 argument_list|,
 name|GTK_TREE_STORE
 argument_list|(
@@ -7431,7 +7501,7 @@ argument_list|(
 literal|"Tool Options"
 argument_list|)
 argument_list|,
-literal|"tool-options.png"
+literal|"tool-options"
 argument_list|,
 name|GTK_TREE_STORE
 argument_list|(
@@ -7839,7 +7909,7 @@ argument_list|(
 literal|"Toolbox"
 argument_list|)
 argument_list|,
-literal|"toolbox.png"
+literal|"toolbox"
 argument_list|,
 name|GTK_TREE_STORE
 argument_list|(
@@ -7975,7 +8045,7 @@ argument_list|(
 literal|"Default New Image"
 argument_list|)
 argument_list|,
-literal|"new-image.png"
+literal|"new-image"
 argument_list|,
 name|GTK_TREE_STORE
 argument_list|(
@@ -8147,7 +8217,7 @@ argument_list|(
 literal|"Default Image Grid"
 argument_list|)
 argument_list|,
-literal|"default-grid.png"
+literal|"default-grid"
 argument_list|,
 name|GTK_TREE_STORE
 argument_list|(
@@ -8226,7 +8296,7 @@ argument_list|(
 literal|"Image Windows"
 argument_list|)
 argument_list|,
-literal|"image-windows.png"
+literal|"image-windows"
 argument_list|,
 name|GTK_TREE_STORE
 argument_list|(
@@ -8561,7 +8631,7 @@ argument_list|(
 literal|"Image Window Appearance"
 argument_list|)
 argument_list|,
-literal|"image-windows.png"
+literal|"image-windows"
 argument_list|,
 name|GTK_TREE_STORE
 argument_list|(
@@ -8648,7 +8718,7 @@ argument_list|(
 literal|"Image Title& Statusbar Format"
 argument_list|)
 argument_list|,
-literal|"image-title.png"
+literal|"image-title"
 argument_list|,
 name|GTK_TREE_STORE
 argument_list|(
@@ -8725,7 +8795,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2ba62c6e0108
+DECL|struct|__anon2b42edb80108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -9200,7 +9270,7 @@ argument_list|(
 literal|"Display"
 argument_list|)
 argument_list|,
-literal|"display.png"
+literal|"display"
 argument_list|,
 name|GTK_TREE_STORE
 argument_list|(
@@ -9852,7 +9922,7 @@ argument_list|(
 literal|"Color Management"
 argument_list|)
 argument_list|,
-literal|"color-management.png"
+literal|"color-management"
 argument_list|,
 name|GTK_TREE_STORE
 argument_list|(
@@ -9888,7 +9958,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2ba62c6e0208
+DECL|struct|__anon2b42edb80208
 block|{
 DECL|member|label
 specifier|const
@@ -10232,7 +10302,7 @@ argument_list|(
 literal|"Input Devices"
 argument_list|)
 argument_list|,
-literal|"input-devices.png"
+literal|"input-devices"
 argument_list|,
 name|GTK_TREE_STORE
 argument_list|(
@@ -10412,7 +10482,7 @@ argument_list|(
 literal|"Additional Input Controllers"
 argument_list|)
 argument_list|,
-literal|"controllers.png"
+literal|"controllers"
 argument_list|,
 name|GTK_TREE_STORE
 argument_list|(
@@ -10483,7 +10553,7 @@ argument_list|(
 literal|"Window Management"
 argument_list|)
 argument_list|,
-literal|"window-management.png"
+literal|"window-management"
 argument_list|,
 name|GTK_TREE_STORE
 argument_list|(
@@ -10763,7 +10833,7 @@ argument_list|(
 literal|"Folders"
 argument_list|)
 argument_list|,
-literal|"folders.png"
+literal|"folders"
 argument_list|,
 name|GTK_TREE_STORE
 argument_list|(
@@ -10787,7 +10857,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2ba62c6e0308
+DECL|struct|__anon2b42edb80308
 block|{
 DECL|member|property_name
 specifier|const
@@ -10942,7 +11012,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2ba62c6e0408
+DECL|struct|__anon2b42edb80408
 block|{
 DECL|member|tree_label
 specifier|const
@@ -11002,7 +11072,7 @@ argument_list|(
 literal|"Brush Folders"
 argument_list|)
 block|,
-literal|"folders-brushes.png"
+literal|"folders-brushes"
 block|,
 name|GIMP_HELP_PREFS_FOLDERS_BRUSHES
 block|,
@@ -11027,7 +11097,7 @@ argument_list|(
 literal|"Pattern Folders"
 argument_list|)
 block|,
-literal|"folders-patterns.png"
+literal|"folders-patterns"
 block|,
 name|GIMP_HELP_PREFS_FOLDERS_PATTERNS
 block|,
@@ -11052,7 +11122,7 @@ argument_list|(
 literal|"Palette Folders"
 argument_list|)
 block|,
-literal|"folders-palettes.png"
+literal|"folders-palettes"
 block|,
 name|GIMP_HELP_PREFS_FOLDERS_PALETTES
 block|,
@@ -11077,7 +11147,7 @@ argument_list|(
 literal|"Gradient Folders"
 argument_list|)
 block|,
-literal|"folders-gradients.png"
+literal|"folders-gradients"
 block|,
 name|GIMP_HELP_PREFS_FOLDERS_GRADIENTS
 block|,
@@ -11102,7 +11172,7 @@ argument_list|(
 literal|"Font Folders"
 argument_list|)
 block|,
-literal|"folders-fonts.png"
+literal|"folders-fonts"
 block|,
 name|GIMP_HELP_PREFS_FOLDERS_FONTS
 block|,
@@ -11127,7 +11197,7 @@ argument_list|(
 literal|"Plug-In Folders"
 argument_list|)
 block|,
-literal|"folders-plug-ins.png"
+literal|"folders-plug-ins"
 block|,
 name|GIMP_HELP_PREFS_FOLDERS_PLUG_INS
 block|,
@@ -11152,7 +11222,7 @@ argument_list|(
 literal|"Script-Fu Folders"
 argument_list|)
 block|,
-literal|"folders-scripts.png"
+literal|"folders-scripts"
 block|,
 name|GIMP_HELP_PREFS_FOLDERS_SCRIPTS
 block|,
@@ -11177,7 +11247,7 @@ argument_list|(
 literal|"Module Folders"
 argument_list|)
 block|,
-literal|"folders-modules.png"
+literal|"folders-modules"
 block|,
 name|GIMP_HELP_PREFS_FOLDERS_MODULES
 block|,
@@ -11202,7 +11272,7 @@ argument_list|(
 literal|"Interpreter Folders"
 argument_list|)
 block|,
-literal|"folders-interp.png"
+literal|"folders-interp"
 block|,
 name|GIMP_HELP_PREFS_FOLDERS_INTERPRETERS
 block|,
@@ -11227,7 +11297,7 @@ argument_list|(
 literal|"Environment Folders"
 argument_list|)
 block|,
-literal|"folders-environ.png"
+literal|"folders-environ"
 block|,
 name|GIMP_HELP_PREFS_FOLDERS_ENVIRONMENT
 block|,
@@ -11252,7 +11322,7 @@ argument_list|(
 literal|"Theme Folders"
 argument_list|)
 block|,
-literal|"folders-themes.png"
+literal|"folders-themes"
 block|,
 name|GIMP_HELP_PREFS_FOLDERS_THEMES
 block|,
