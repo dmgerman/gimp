@@ -260,11 +260,16 @@ name|gboolean
 name|use_grid
 decl_stmt|;
 comment|/*  does the tool use the grid       */
+DECL|member|use_handles
+name|gboolean
+name|use_handles
+decl_stmt|;
+comment|/*  uses the corner handles          */
 DECL|member|use_center
 name|gboolean
 name|use_center
 decl_stmt|;
-comment|/*  use the center handle            */
+comment|/*  uses the center handle           */
 DECL|member|ngx
 DECL|member|ngy
 name|gint

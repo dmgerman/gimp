@@ -443,6 +443,18 @@ argument_list|(
 literal|"Rotating"
 argument_list|)
 expr_stmt|;
+name|tr_tool
+operator|->
+name|use_grid
+operator|=
+name|TRUE
+expr_stmt|;
+name|tr_tool
+operator|->
+name|use_center
+operator|=
+name|TRUE
+expr_stmt|;
 block|}
 end_function
 
