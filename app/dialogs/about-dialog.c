@@ -18,12 +18,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<time.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -92,7 +86,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b034fe30108
+DECL|struct|__anon293312980108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -460,6 +454,10 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|pixbuf
+condition|)
 name|g_object_unref
 argument_list|(
 name|pixbuf
