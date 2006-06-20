@@ -60,8 +60,6 @@ literal|"Francisco Bustamante"
 block|,
 literal|"Albert Cahalan"
 block|,
-literal|"Lapo Calamandrei"
-block|,
 literal|"George J. Carrette"
 block|,
 literal|"Sean Cier"
@@ -176,8 +174,6 @@ literal|"Tuomas Kuosmanen"
 block|,
 literal|"Olof S Kylander"
 block|,
-literal|"Karl La Rocca"
-block|,
 literal|"Philip Lafleur"
 block|,
 literal|"Chris Lahey"
@@ -251,8 +247,6 @@ block|,
 literal|"David Necas"
 block|,
 literal|"Sven Neumann"
-block|,
-literal|"Andreas Nilsson"
 block|,
 literal|"Stephen Robert Norris"
 block|,
@@ -331,8 +325,6 @@ block|,
 literal|"Nathan Summers"
 block|,
 literal|"Mike Sweet"
-block|,
-literal|"William Szilveszter"
 block|,
 literal|"Eiichi Takamori"
 block|,
