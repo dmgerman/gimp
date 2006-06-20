@@ -60,6 +60,8 @@ literal|"Francisco Bustamante"
 block|,
 literal|"Albert Cahalan"
 block|,
+literal|"Lapo Calamandrei"
+block|,
 literal|"George J. Carrette"
 block|,
 literal|"Sean Cier"
@@ -250,6 +252,8 @@ literal|"David Necas"
 block|,
 literal|"Sven Neumann"
 block|,
+literal|"Andreas Nilsson"
+block|,
 literal|"Stephen Robert Norris"
 block|,
 literal|"Tim Newsome"
@@ -328,6 +332,8 @@ literal|"Nathan Summers"
 block|,
 literal|"Mike Sweet"
 block|,
+literal|"William Szilveszter"
+block|,
 literal|"Eiichi Takamori"
 block|,
 literal|"Tristan Tarrant"
@@ -378,15 +384,21 @@ name|artists
 index|[]
 init|=
 block|{
+literal|"Lapo Calamandrei"
+block|,
 literal|"Tuomas Kuosmanen"
 block|,
 literal|"Karl La Rocca"
+block|,
+literal|"Andreas Nilsson"
 block|,
 literal|"Mike Schaeffer"
 block|,
 literal|"Carol Spears"
 block|,
 literal|"Jakub Steiner"
+block|,
+literal|"William Szilveszter"
 block|,
 name|NULL
 block|}
