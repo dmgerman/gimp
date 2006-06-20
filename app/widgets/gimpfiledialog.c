@@ -1682,6 +1682,13 @@ name|strlen
 argument_list|(
 name|dirname
 argument_list|)
+operator|&&
+name|strcmp
+argument_list|(
+name|dirname
+argument_list|,
+literal|"."
+argument_list|)
 condition|)
 name|gtk_file_chooser_set_current_folder_uri
 argument_list|(
