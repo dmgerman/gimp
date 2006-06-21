@@ -1777,6 +1777,26 @@ argument_list|,
 name|display
 argument_list|)
 expr_stmt|;
+comment|/* override the previous if shift or ctrl are down */
+if|if
+condition|(
+name|state
+operator|&
+operator|(
+name|GDK_SHIFT_MASK
+operator||
+name|GDK_CONTROL_MASK
+operator|)
+condition|)
+name|gimp_tool_control_set_cursor
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|,
+name|GIMP_CURSOR_CROSSHAIR_SMALL
+argument_list|)
+expr_stmt|;
 name|GIMP_TOOL_CLASS
 argument_list|(
 name|parent_class
