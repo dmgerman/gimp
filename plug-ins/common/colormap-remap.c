@@ -357,7 +357,7 @@ literal|"Mukund Sivaraman<muks@mukund.org>"
 argument_list|,
 literal|"Mukund Sivaraman<muks@mukund.org>"
 argument_list|,
-literal|"14th June 2006"
+literal|"June 2006"
 argument_list|,
 name|N_
 argument_list|(
@@ -943,7 +943,8 @@ block|{
 name|guchar
 modifier|*
 name|cmap
-decl_stmt|,
+decl_stmt|;
+name|guchar
 modifier|*
 name|new_cmap
 decl_stmt|;
@@ -1654,7 +1655,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1561150103
+DECL|enum|__anon27863e8f0103
 block|{
 DECL|enumerator|COLOR_INDEX
 name|COLOR_INDEX
