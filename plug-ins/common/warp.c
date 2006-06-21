@@ -83,7 +83,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0069320103
+DECL|enum|__anon2b63ad380103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -103,7 +103,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0069320208
+DECL|struct|__anon2b63ad380208
 block|{
 DECL|member|amount
 name|gdouble
@@ -293,7 +293,7 @@ name|GimpDrawable
 modifier|*
 name|mag_draw
 parameter_list|,
-name|gint
+name|gboolean
 name|first_time
 parameter_list|,
 name|gint
@@ -310,16 +310,6 @@ parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
-parameter_list|,
-name|GimpDrawable
-modifier|*
-modifier|*
-name|map_x_p
-parameter_list|,
-name|GimpDrawable
-modifier|*
-modifier|*
-name|map_y_p
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -843,39 +833,18 @@ index|[
 literal|1
 index|]
 decl_stmt|;
-name|GimpDrawable
-modifier|*
-name|drawable
-decl_stmt|;
-name|GimpDrawable
-modifier|*
-name|map_x
-init|=
-name|NULL
-decl_stmt|;
-comment|/* satisfy compiler complaints */
-name|GimpDrawable
-modifier|*
-name|map_y
-init|=
-name|NULL
-decl_stmt|;
-name|gint32
-name|image_ID
-decl_stmt|;
-comment|/* image id of drawable */
-name|GimpRGB
-name|color
-decl_stmt|;
 name|GimpPDBStatusType
 name|status
 init|=
 name|GIMP_PDB_SUCCESS
 decl_stmt|;
-name|gint
-name|pcnt
+name|GimpDrawable
+modifier|*
+name|drawable
 decl_stmt|;
-comment|/* parameter counter for scanning input params. */
+name|GimpRGB
+name|color
+decl_stmt|;
 name|run_mode
 operator|=
 name|param
@@ -1023,11 +992,11 @@ expr_stmt|;
 block|}
 else|else
 block|{
+name|gint
 name|pcnt
-operator|=
+init|=
 name|MIN_ARGS
-expr_stmt|;
-comment|/* parameter counter */
+decl_stmt|;
 name|dvals
 operator|.
 name|amount
@@ -1322,12 +1291,6 @@ comment|/*  run the warp effect  */
 name|warp
 argument_list|(
 name|drawable
-argument_list|,
-operator|&
-name|map_x
-argument_list|,
-operator|&
-name|map_y
 argument_list|)
 expr_stmt|;
 comment|/*  Store data  */
@@ -1351,6 +1314,20 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|run_mode
+operator|!=
+name|GIMP_RUN_NONINTERACTIVE
+condition|)
+name|gimp_displays_flush
+argument_list|()
+expr_stmt|;
+name|gimp_drawable_detach
+argument_list|(
+name|drawable
+argument_list|)
+expr_stmt|;
 name|values
 index|[
 literal|0
@@ -1361,45 +1338,6 @@ operator|.
 name|d_status
 operator|=
 name|status
-expr_stmt|;
-if|if
-condition|(
-name|map_x
-condition|)
-block|{
-name|image_ID
-operator|=
-name|gimp_drawable_get_image
-argument_list|(
-name|map_x
-operator|->
-name|drawable_id
-argument_list|)
-expr_stmt|;
-name|gimp_drawable_detach
-argument_list|(
-name|map_x
-argument_list|)
-expr_stmt|;
-name|gimp_drawable_detach
-argument_list|(
-name|map_y
-argument_list|)
-expr_stmt|;
-name|gimp_image_delete
-argument_list|(
-name|image_ID
-argument_list|)
-expr_stmt|;
-block|}
-if|if
-condition|(
-name|run_mode
-operator|!=
-name|GIMP_RUN_NONINTERACTIVE
-condition|)
-name|gimp_displays_flush
-argument_list|()
 expr_stmt|;
 block|}
 end_function
@@ -4825,6 +4763,7 @@ argument_list|(
 name|image_id
 argument_list|)
 expr_stmt|;
+comment|/* create new image for X,Y diff */
 name|new_image_id
 operator|=
 name|gimp_image_new
@@ -4836,7 +4775,6 @@ argument_list|,
 name|GIMP_RGB
 argument_list|)
 expr_stmt|;
-comment|/* create new image for X,Y diff */
 name|xlayer_id
 operator|=
 name|gimp_layer_new
@@ -6599,22 +6537,12 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|warp (GimpDrawable * orig_draw,GimpDrawable ** map_x,GimpDrawable ** map_y)
+DECL|function|warp (GimpDrawable * orig_draw)
 name|warp
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|orig_draw
-parameter_list|,
-name|GimpDrawable
-modifier|*
-modifier|*
-name|map_x
-parameter_list|,
-name|GimpDrawable
-modifier|*
-modifier|*
-name|map_y
 parameter_list|)
 block|{
 name|GimpDrawable
@@ -6627,7 +6555,15 @@ modifier|*
 name|mag_draw
 decl_stmt|;
 comment|/* Magnitude multiplier factor map */
-name|gint
+name|GimpDrawable
+modifier|*
+name|map_x
+decl_stmt|;
+name|GimpDrawable
+modifier|*
+name|map_y
+decl_stmt|;
+name|gboolean
 name|first_time
 init|=
 name|TRUE
@@ -6668,10 +6604,13 @@ init|=
 operator|-
 literal|1
 decl_stmt|;
+name|gint32
+name|image_ID
+decl_stmt|;
+comment|/* index var. over all "warp" Displacement iterations */
 name|gint
 name|warp_iter
 decl_stmt|;
-comment|/* index var. over all "warp" Displacement iterations */
 name|disp_map
 operator|=
 name|gimp_drawable_get
@@ -6697,18 +6636,6 @@ name|_
 argument_list|(
 literal|"Finding XY gradient"
 argument_list|)
-argument_list|)
-expr_stmt|;
-comment|/* generate x,y differential images (arrays) */
-name|diff
-argument_list|(
-name|disp_map
-argument_list|,
-operator|&
-name|xdlayer
-argument_list|,
-operator|&
-name|ydlayer
 argument_list|)
 expr_stmt|;
 comment|/* Get selection area */
@@ -6762,7 +6689,18 @@ operator|->
 name|drawable_id
 argument_list|)
 expr_stmt|;
-operator|*
+comment|/* generate x,y differential images (arrays) */
+name|diff
+argument_list|(
+name|disp_map
+argument_list|,
+operator|&
+name|xdlayer
+argument_list|,
+operator|&
+name|ydlayer
+argument_list|)
+expr_stmt|;
 name|map_x
 operator|=
 name|gimp_drawable_get
@@ -6770,7 +6708,6 @@ argument_list|(
 name|xdlayer
 argument_list|)
 expr_stmt|;
-operator|*
 name|map_y
 operator|=
 name|gimp_drawable_get
@@ -6787,9 +6724,6 @@ operator|->
 name|drawable_id
 argument_list|)
 expr_stmt|;
-comment|/*   gimp_image_lower_layer(orig_image_id, new_layer_id); */
-comment|/* hide it! */
-comment|/*   gimp_layer_set_opacity(new_layer_id, 0.0); */
 for|for
 control|(
 name|warp_iter
@@ -6828,10 +6762,8 @@ name|orig_draw
 argument_list|,
 name|orig_draw
 argument_list|,
-operator|*
 name|map_x
 argument_list|,
-operator|*
 name|map_y
 argument_list|,
 name|mag_draw
@@ -6878,14 +6810,32 @@ operator|=
 name|FALSE
 expr_stmt|;
 block|}
-comment|/* gimp_image_add_layer (orig_image_id, new_layer_id, 1); */
-comment|/* make layer visible in 'layers' dialog */
+name|image_ID
+operator|=
+name|gimp_drawable_get_image
+argument_list|(
+name|map_x
+operator|->
+name|drawable_id
+argument_list|)
+expr_stmt|;
+name|gimp_drawable_detach
+argument_list|(
+name|map_x
+argument_list|)
+expr_stmt|;
+name|gimp_drawable_detach
+argument_list|(
+name|map_y
+argument_list|)
+expr_stmt|;
+name|gimp_image_delete
+argument_list|(
+name|image_ID
+argument_list|)
+expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/* Warp */
-end_comment
 
 begin_comment
 comment|/* -------------------------------------------------------------------------- */
@@ -6894,7 +6844,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|warp_one (GimpDrawable * draw,GimpDrawable * new,GimpDrawable * map_x,GimpDrawable * map_y,GimpDrawable * mag_draw,gint first_time,gint step)
+DECL|function|warp_one (GimpDrawable * draw,GimpDrawable * new,GimpDrawable * map_x,GimpDrawable * map_y,GimpDrawable * mag_draw,gboolean first_time,gint step)
 name|warp_one
 parameter_list|(
 name|GimpDrawable
@@ -6917,7 +6867,7 @@ name|GimpDrawable
 modifier|*
 name|mag_draw
 parameter_list|,
-name|gint
+name|gboolean
 name|first_time
 parameter_list|,
 name|gint
@@ -8888,11 +8838,7 @@ name|draw
 operator|->
 name|drawable_id
 argument_list|,
-operator|(
 name|first_time
-operator|==
-name|TRUE
-operator|)
 argument_list|)
 expr_stmt|;
 name|g_rand_free
