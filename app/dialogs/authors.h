@@ -410,9 +410,23 @@ init|=
 block|{
 literal|"Carey Bunks"
 block|,
+literal|"Marco Ciampa"
+block|,
+literal|"Dust"
+block|,
+literal|"Jakub Friedl"
+block|,
 literal|"Michael Hammel"
 block|,
+literal|"Julien Hardelin"
+block|,
 literal|"Simon Janes"
+block|,
+literal|"RÃ³man Joost"
+block|,
+literal|"Hans de Jonge"
+block|,
+literal|"Semka KuloviÃ¦-Debals"
 block|,
 literal|"Karin Kylander"
 block|,
@@ -422,7 +436,11 @@ literal|"Ed Mackey"
 block|,
 literal|"Ian Main"
 block|,
+literal|"Manuel QuiÃ±ones"
+block|,
 literal|"James Robinson"
+block|,
+literal|"Axel Wernicke"
 block|,
 name|NULL
 block|}
