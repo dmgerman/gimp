@@ -1654,7 +1654,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2901c28e0103
+DECL|enum|__anon279d963e0103
 block|{
 DECL|enumerator|COLOR_INDEX
 name|COLOR_INDEX
@@ -1687,6 +1687,17 @@ name|gboolean
 name|remap_run
 init|=
 name|FALSE
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|reverse_order
+specifier|static
+name|gint
+name|reverse_order
+index|[
+literal|256
+index|]
 decl_stmt|;
 end_decl_stmt
 
@@ -1787,6 +1798,7 @@ name|column
 operator|=
 name|COLOR_H
 expr_stmt|;
+elseif|else
 if|if
 condition|(
 name|strncmp
@@ -1806,6 +1818,7 @@ name|column
 operator|=
 name|COLOR_S
 expr_stmt|;
+elseif|else
 if|if
 condition|(
 name|strncmp
@@ -1831,16 +1844,59 @@ name|store
 argument_list|,
 name|column
 argument_list|,
-name|g_str_has_suffix
-argument_list|(
-name|name
-argument_list|,
-literal|"asc"
-argument_list|)
-condition|?
 name|GTK_SORT_ASCENDING
-else|:
-name|GTK_SORT_DESCENDING
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|remap_reset_callback (GtkAction * action,GtkTreeSortable * store)
+name|remap_reset_callback
+parameter_list|(
+name|GtkAction
+modifier|*
+name|action
+parameter_list|,
+name|GtkTreeSortable
+modifier|*
+name|store
+parameter_list|)
+block|{
+name|remap_sort
+argument_list|(
+name|store
+argument_list|,
+name|COLOR_INDEX
+argument_list|,
+name|GTK_SORT_ASCENDING
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|remap_reverse_callback (GtkAction * action,GtkListStore * store)
+name|remap_reverse_callback
+parameter_list|(
+name|GtkAction
+modifier|*
+name|action
+parameter_list|,
+name|GtkListStore
+modifier|*
+name|store
+parameter_list|)
+block|{
+name|gtk_list_store_reorder
+argument_list|(
+name|store
+argument_list|,
+name|reverse_order
 argument_list|)
 expr_stmt|;
 block|}
@@ -1870,13 +1926,13 @@ index|[]
 init|=
 block|{
 block|{
-literal|"sort-hue-asc"
+literal|"sort-hue"
 block|,
 name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Sort by Hue (ascending)"
+literal|"Sort on Hue"
 argument_list|)
 block|,
 name|NULL
@@ -1890,13 +1946,13 @@ argument_list|)
 block|}
 block|,
 block|{
-literal|"sort-sat-asc"
+literal|"sort-sat"
 block|,
 name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Sort by Saturation (ascending)"
+literal|"Sort on Saturation"
 argument_list|)
 block|,
 name|NULL
@@ -1910,13 +1966,13 @@ argument_list|)
 block|}
 block|,
 block|{
-literal|"sort-val-asc"
+literal|"sort-val"
 block|,
 name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Sort by Value (ascending)"
+literal|"Sort on Value"
 argument_list|)
 block|,
 name|NULL
@@ -1930,13 +1986,13 @@ argument_list|)
 block|}
 block|,
 block|{
-literal|"sort-hue-des"
+literal|"reverse"
 block|,
 name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Sort by Hue (descending)"
+literal|"Reverse Order"
 argument_list|)
 block|,
 name|NULL
@@ -1945,18 +2001,18 @@ name|NULL
 block|,
 name|G_CALLBACK
 argument_list|(
-argument|remap_sort_callback
+argument|remap_reverse_callback
 argument_list|)
 block|}
 block|,
 block|{
-literal|"sort-sat-des"
+literal|"reset"
 block|,
 name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Sort by Saturation (descending)"
+literal|"Reset Order"
 argument_list|)
 block|,
 name|NULL
@@ -1965,27 +2021,7 @@ name|NULL
 block|,
 name|G_CALLBACK
 argument_list|(
-argument|remap_sort_callback
-argument_list|)
-block|}
-block|,
-block|{
-literal|"sort-val-des"
-block|,
-name|NULL
-block|,
-name|N_
-argument_list|(
-literal|"Sort by Value (descending)"
-argument_list|)
-block|,
-name|NULL
-block|,
-name|NULL
-block|,
-name|G_CALLBACK
-argument_list|(
-argument|remap_sort_callback
+argument|remap_reset_callback
 argument_list|)
 block|}
 block|,   }
@@ -2054,13 +2090,12 @@ name|ui_manager
 argument_list|,
 literal|"<ui>"
 literal|"<popup name=\"remap-popup\">"
-literal|"<menuitem action=\"sort-hue-asc\" />"
-literal|"<menuitem action=\"sort-sat-asc\" />"
-literal|"<menuitem action=\"sort-val-asc\" />"
+literal|"<menuitem action=\"sort-hue\" />"
+literal|"<menuitem action=\"sort-sat\" />"
+literal|"<menuitem action=\"sort-val\" />"
 literal|"<separator />"
-literal|"<menuitem action=\"sort-hue-des\" />"
-literal|"<menuitem action=\"sort-sat-des\" />"
-literal|"<menuitem action=\"sort-val-des\" />"
+literal|"<menuitem action=\"reverse\" />"
+literal|"<menuitem action=\"reset\" />"
 literal|"</popup>"
 literal|"</ui>"
 argument_list|,
@@ -2405,7 +2440,8 @@ argument_list|(
 name|_
 argument_list|(
 literal|"Drag and drop colors to rearrange the colormap.\n"
-literal|"The numbers shown are the original indices."
+literal|"The numbers shown are the original indices.\n"
+literal|"Right-click for a menu with sort options."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2450,6 +2486,33 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+name|cmap
+operator|=
+name|gimp_image_get_colormap
+argument_list|(
+name|image_ID
+argument_list|,
+operator|&
+name|ncols
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+operator|(
+name|ncols
+operator|>
+literal|0
+operator|)
+operator|&&
+operator|(
+name|ncols
+operator|<=
+literal|256
+operator|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 name|store
 operator|=
 name|gtk_list_store_new
@@ -2467,16 +2530,6 @@ argument_list|,
 name|G_TYPE_DOUBLE
 argument_list|,
 name|G_TYPE_DOUBLE
-argument_list|)
-expr_stmt|;
-name|cmap
-operator|=
-name|gimp_image_get_colormap
-argument_list|(
-name|image_ID
-argument_list|,
-operator|&
-name|ncols
 argument_list|)
 expr_stmt|;
 for|for
@@ -2557,6 +2610,17 @@ argument_list|,
 operator|&
 name|hsv
 argument_list|)
+expr_stmt|;
+name|reverse_order
+index|[
+name|i
+index|]
+operator|=
+name|ncols
+operator|-
+name|i
+operator|-
+literal|1
 expr_stmt|;
 name|gtk_list_store_append
 argument_list|(
