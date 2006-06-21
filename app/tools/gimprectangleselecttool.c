@@ -1796,10 +1796,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/*  * This function is called if the user clicks and releases the left  * button without moving it.  There are four things we might want  * to do here:  * 1) If there is an existing rectangle and we are inside it, we  *    convert it into a selection.  * 2) If there is an existing rectangle and we are outside it, we  *    clear it.  * 3) If there is no rectangle and we are inside the selection, we  *    create a rectangle from the selection bounds.  * 4) If there is no rectangle and we are outside the selection,  *    we clear the selection.  */
-end_comment
-
 begin_function
 specifier|static
 name|void
@@ -2059,6 +2055,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/*  * This function is called if the user clicks and releases the left  * button without moving it.  There are the things we might want  * to do here:  * 1) If there is an existing rectangle and we are inside it, we  *    convert it into a selection.  * 2) If there is an existing rectangle and we are outside it, we  *    clear it.  * 3) If there is no rectangle and there is a floating selection,  *    we anchor it.  * 4) If there is no rectangle and we are inside the selection, we  *    create a rectangle from the selection bounds.  * 5) If there is no rectangle and we are outside the selection,  *    we clear the selection.  */
+end_comment
+
 begin_function
 specifier|static
 name|gboolean
@@ -2121,6 +2121,26 @@ decl_stmt|;
 name|gint
 name|pressy
 decl_stmt|;
+if|if
+condition|(
+name|gimp_image_floating_sel
+argument_list|(
+name|image
+argument_list|)
+condition|)
+block|{
+name|floating_sel_anchor
+argument_list|(
+name|gimp_image_floating_sel
+argument_list|(
+name|image
+argument_list|)
+argument_list|)
+expr_stmt|;
+return|return
+name|TRUE
+return|;
+block|}
 name|g_object_get
 argument_list|(
 name|rectangle
