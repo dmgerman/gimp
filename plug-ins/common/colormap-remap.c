@@ -1659,7 +1659,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5cb9f40103
+DECL|enum|__anon2963a6110103
 block|{
 DECL|enumerator|COLOR_INDEX
 name|COLOR_INDEX
@@ -2288,7 +2288,7 @@ end_function
 
 begin_function
 specifier|static
-name|void
+name|gboolean
 DECL|function|remap_popup_menu (GtkWidget * widget,GdkEventButton * event)
 name|remap_popup_menu
 parameter_list|(
@@ -2358,6 +2358,9 @@ name|gtk_get_current_event_time
 argument_list|()
 argument_list|)
 expr_stmt|;
+return|return
+name|TRUE
+return|;
 block|}
 end_function
 
@@ -2390,13 +2393,14 @@ name|type
 operator|==
 name|GDK_BUTTON_PRESS
 condition|)
+return|return
 name|remap_popup_menu
 argument_list|(
 name|widget
 argument_list|,
 name|event
 argument_list|)
-expr_stmt|;
+return|;
 return|return
 name|FALSE
 return|;
