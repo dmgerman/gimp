@@ -5908,7 +5908,7 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
-literal|0
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -8795,7 +8795,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2b42edb80108
+DECL|struct|__anon2c3a75f30108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -9958,7 +9958,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b42edb80208
+DECL|struct|__anon2c3a75f30208
 block|{
 DECL|member|label
 specifier|const
@@ -10857,7 +10857,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b42edb80308
+DECL|struct|__anon2c3a75f30308
 block|{
 DECL|member|property_name
 specifier|const
@@ -11012,7 +11012,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b42edb80408
+DECL|struct|__anon2c3a75f30408
 block|{
 DECL|member|tree_label
 specifier|const
