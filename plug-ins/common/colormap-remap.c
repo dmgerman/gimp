@@ -289,7 +289,7 @@ literal|"Mukund Sivaraman<muks@mukund.org>"
 argument_list|,
 literal|"Mukund Sivaraman<muks@mukund.org>"
 argument_list|,
-literal|"14th June 2006"
+literal|"June 2006"
 argument_list|,
 name|N_
 argument_list|(
@@ -1645,6 +1645,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/* dialog */
+end_comment
+
 begin_define
 DECL|macro|RESPONSE_RESET
 define|#
@@ -1655,7 +1659,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27863e8f0103
+DECL|enum|__anon2c5cb9f40103
 block|{
 DECL|enumerator|COLOR_INDEX
 name|COLOR_INDEX
@@ -1680,6 +1684,17 @@ name|NUM_COLS
 block|}
 enum|;
 end_enum
+
+begin_decl_stmt
+DECL|variable|remap_ui
+specifier|static
+name|GtkUIManager
+modifier|*
+name|remap_ui
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|remap_run
@@ -1907,14 +1922,14 @@ begin_function
 specifier|static
 name|GtkUIManager
 modifier|*
-DECL|function|remap_ui_manager_new (GtkWidget * window,GtkTreeSortable * store)
+DECL|function|remap_ui_manager_new (GtkWidget * window,GtkListStore * store)
 name|remap_ui_manager_new
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|window
 parameter_list|,
-name|GtkTreeSortable
+name|GtkListStore
 modifier|*
 name|store
 parameter_list|)
@@ -2009,7 +2024,7 @@ block|,
 block|{
 literal|"reset"
 block|,
-name|NULL
+name|GIMP_STOCK_RESET
 block|,
 name|N_
 argument_list|(
@@ -2273,9 +2288,9 @@ end_function
 
 begin_function
 specifier|static
-name|gboolean
-DECL|function|remap_button_press (GtkWidget * widget,GdkEventButton * event,GtkUIManager * ui)
-name|remap_button_press
+name|void
+DECL|function|remap_popup_menu (GtkWidget * widget,GdkEventButton * event)
+name|remap_popup_menu
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -2284,31 +2299,7 @@ parameter_list|,
 name|GdkEventButton
 modifier|*
 name|event
-parameter_list|,
-name|GtkUIManager
-modifier|*
-name|ui
 parameter_list|)
-block|{
-name|gtk_widget_grab_focus
-argument_list|(
-name|widget
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|event
-operator|->
-name|button
-operator|==
-literal|3
-operator|&&
-name|event
-operator|->
-name|type
-operator|==
-name|GDK_BUTTON_PRESS
-condition|)
 block|{
 name|GtkWidget
 modifier|*
@@ -2316,7 +2307,7 @@ name|menu
 init|=
 name|gtk_ui_manager_get_widget
 argument_list|(
-name|ui
+name|remap_ui
 argument_list|,
 literal|"/remap-popup"
 argument_list|)
@@ -2350,15 +2341,62 @@ argument_list|,
 name|NULL
 argument_list|,
 name|event
+condition|?
+name|event
 operator|->
 name|button
+else|:
+literal|0
 argument_list|,
+name|event
+condition|?
 name|event
 operator|->
 name|time
+else|:
+name|gtk_get_current_event_time
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+end_function
+
+begin_function
+specifier|static
+name|gboolean
+DECL|function|remap_button_press (GtkWidget * widget,GdkEventButton * event)
+name|remap_button_press
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|GdkEventButton
+modifier|*
+name|event
+parameter_list|)
+block|{
+if|if
+condition|(
+name|event
+operator|->
+name|button
+operator|==
+literal|3
+operator|&&
+name|event
+operator|->
+name|type
+operator|==
+name|GDK_BUTTON_PRESS
+condition|)
+name|remap_popup_menu
+argument_list|(
+name|widget
+argument_list|,
+name|event
+argument_list|)
+expr_stmt|;
 return|return
 name|FALSE
 return|;
@@ -2391,13 +2429,11 @@ block|{
 case|case
 name|RESPONSE_RESET
 case|:
-name|remap_sort
+name|remap_reset_callback
 argument_list|(
+name|NULL
+argument_list|,
 name|store
-argument_list|,
-name|COLOR_INDEX
-argument_list|,
-name|GTK_SORT_ASCENDING
 argument_list|)
 expr_stmt|;
 break|break;
@@ -2768,6 +2804,15 @@ argument_list|(
 name|cmap
 argument_list|)
 expr_stmt|;
+name|remap_ui
+operator|=
+name|remap_ui_manager_new
+argument_list|(
+name|dialog
+argument_list|,
+name|store
+argument_list|)
+expr_stmt|;
 name|iconview
 operator|=
 name|gtk_icon_view_new_with_model
@@ -2953,6 +2998,20 @@ name|g_signal_connect
 argument_list|(
 name|iconview
 argument_list|,
+literal|"popup-menu"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|remap_popup_menu
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_signal_connect
+argument_list|(
+name|iconview
+argument_list|,
 literal|"button-press-event"
 argument_list|,
 name|G_CALLBACK
@@ -2960,15 +3019,7 @@ argument_list|(
 name|remap_button_press
 argument_list|)
 argument_list|,
-name|remap_ui_manager_new
-argument_list|(
-name|dialog
-argument_list|,
-name|GTK_TREE_SORTABLE
-argument_list|(
-name|store
-argument_list|)
-argument_list|)
+name|NULL
 argument_list|)
 expr_stmt|;
 name|hbox
