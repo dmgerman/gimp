@@ -23,7 +23,7 @@ file|<libgimp/gimp.h>
 end_include
 
 begin_typedef
-DECL|struct|__anon2b4c8c8b0108
+DECL|struct|__anon2bc3349c0108
 typedef|typedef
 struct|struct
 block|{
@@ -36,11 +36,6 @@ DECL|member|window
 name|GtkWidget
 modifier|*
 name|window
-decl_stmt|;
-DECL|member|frame
-name|GtkWidget
-modifier|*
-name|frame
 decl_stmt|;
 DECL|member|preview
 name|GtkWidget

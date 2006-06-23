@@ -92,7 +92,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Copyright(c) 1999-2005 by Maurits Rijk"
+literal|"Copyright Â© 1999-2005 by Maurits Rijk"
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -1304,7 +1304,7 @@ literal|"About"
 block|,
 name|GTK_STOCK_ABOUT
 block|,
-literal|"_About Image Map..."
+name|NULL
 block|,
 name|NULL
 block|,
