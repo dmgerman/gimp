@@ -108,7 +108,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aea09210108
+DECL|struct|__anon27f878ef0108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -2627,7 +2627,7 @@ operator|->
 name|progress_label
 argument_list|)
 argument_list|,
-name|TRUE
+name|PANGO_ELLIPSIZE_MIDDLE
 argument_list|)
 expr_stmt|;
 name|gimp_label_set_attributes
