@@ -46,7 +46,7 @@ DECL|macro|PLUG_IN_BINARY
 define|#
 directive|define
 name|PLUG_IN_BINARY
-value|"gtkprint"
+value|"print"
 end_define
 
 begin_function_decl
@@ -214,7 +214,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6e36a40108
+DECL|struct|__anon2a34576f0108
 block|{
 DECL|member|num_pages
 name|gint
@@ -305,10 +305,10 @@ name|PROC_NAME
 argument_list|,
 name|N_
 argument_list|(
-literal|"Print the image using the Gtk Print system"
+literal|"Print the image"
 argument_list|)
 argument_list|,
-literal|"FIXME: write help"
+literal|"Print the image using the GTK+ Print API."
 argument_list|,
 literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu>"
 argument_list|,
