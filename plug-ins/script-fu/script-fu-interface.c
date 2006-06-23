@@ -108,7 +108,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279864270108
+DECL|struct|__anon2aea09210108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -2616,6 +2616,18 @@ argument_list|,
 literal|0.0
 argument_list|,
 literal|0.5
+argument_list|)
+expr_stmt|;
+name|gtk_label_set_ellipsize
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|sf_interface
+operator|->
+name|progress_label
+argument_list|)
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_label_set_attributes
