@@ -680,7 +680,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ac02340108
+DECL|struct|__anon288934350108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -734,7 +734,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ac02340208
+DECL|struct|__anon288934350208
 block|{
 DECL|member|y
 name|gint32
@@ -1456,7 +1456,7 @@ parameter_list|,
 name|int
 name|argc
 parameter_list|,
-name|gint8
+name|guint8
 modifier|*
 name|int8array
 parameter_list|)
@@ -4891,7 +4891,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|p_copy_yval (BenderDialog * cd,int outline,int argc,gint8 * int8array)
+DECL|function|p_copy_yval (BenderDialog * cd,int outline,int argc,guint8 * int8array)
 name|p_copy_yval
 parameter_list|(
 name|BenderDialog
@@ -4904,7 +4904,7 @@ parameter_list|,
 name|int
 name|argc
 parameter_list|,
-name|gint8
+name|guint8
 modifier|*
 name|int8array
 parameter_list|)

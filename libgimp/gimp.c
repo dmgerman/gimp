@@ -426,7 +426,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b7ad2670103
+DECL|enum|__anon29eacad20103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -2985,7 +2985,7 @@ operator|.
 name|d_int8
 operator|=
 operator|(
-name|gint8
+name|guint8
 operator|)
 name|va_arg
 argument_list|(
@@ -3097,7 +3097,7 @@ name|va_arg
 argument_list|(
 name|args
 argument_list|,
-name|gint8
+name|guint8
 operator|*
 argument_list|)
 expr_stmt|;

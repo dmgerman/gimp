@@ -490,7 +490,7 @@ name|gint16
 name|d_int16
 decl_stmt|;
 DECL|member|d_int8
-name|gint8
+name|guint8
 name|d_int8
 decl_stmt|;
 DECL|member|d_float
@@ -513,7 +513,7 @@ modifier|*
 name|d_int16array
 decl_stmt|;
 DECL|member|d_int8array
-name|gint8
+name|guint8
 modifier|*
 name|d_int8array
 decl_stmt|;

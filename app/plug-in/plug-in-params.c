@@ -636,10 +636,6 @@ argument_list|(
 operator|&
 name|value
 argument_list|,
-operator|(
-name|guint8
-operator|*
-operator|)
 name|params
 index|[
 name|i
@@ -658,10 +654,6 @@ argument_list|(
 operator|&
 name|value
 argument_list|,
-operator|(
-name|guint8
-operator|*
-operator|)
 name|params
 index|[
 name|i
@@ -1461,10 +1453,6 @@ name|data
 operator|.
 name|d_int8array
 operator|=
-operator|(
-name|gint8
-operator|*
-operator|)
 name|gimp_value_dup_int8array
 argument_list|(
 name|value
@@ -1481,7 +1469,7 @@ operator|.
 name|d_int8array
 operator|=
 operator|(
-name|gint8
+name|guint8
 operator|*
 operator|)
 name|gimp_value_get_int8array

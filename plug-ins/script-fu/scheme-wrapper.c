@@ -3370,7 +3370,7 @@ operator|.
 name|d_int8
 operator|=
 operator|(
-name|gint8
+name|guint8
 operator|)
 name|get_c_long
 argument_list|(
@@ -3806,7 +3806,7 @@ operator|.
 name|d_int8array
 operator|=
 operator|(
-name|gint8
+name|guint8
 operator|*
 operator|)
 name|list

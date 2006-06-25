@@ -26,7 +26,7 @@ directive|define
 name|GIMP_PROTOCOL_VERSION
 value|0x0011
 name|enum
-DECL|enum|__anon2bc0597c0103
+DECL|enum|__anon2b9f979d0103
 type|{
 DECL|enumerator|GP_QUIT
 name|GP_QUIT
@@ -324,7 +324,7 @@ name|guint32
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon2bc0597c020a
+DECL|union|__anon2b9f979d020a
 block|{
 DECL|member|d_int32
 name|gint32
@@ -335,7 +335,7 @@ name|gint16
 name|d_int16
 decl_stmt|;
 DECL|member|d_int8
-name|gint8
+name|guint8
 name|d_int8
 decl_stmt|;
 DECL|member|d_float
@@ -358,7 +358,7 @@ modifier|*
 name|d_int16array
 decl_stmt|;
 DECL|member|d_int8array
-name|gint8
+name|guint8
 modifier|*
 name|d_int8array
 decl_stmt|;
@@ -378,7 +378,7 @@ name|GimpRGB
 name|d_color
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2bc0597c0308
+DECL|struct|__anon2b9f979d0308
 block|{
 DECL|member|x
 name|gint32
@@ -438,7 +438,7 @@ name|gint32
 name|d_vectors
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2bc0597c0408
+DECL|struct|__anon2b9f979d0408
 block|{
 DECL|member|name
 name|gchar

@@ -653,9 +653,6 @@ index|[
 name|i
 index|]
 operator|=
-operator|(
-name|guchar
-operator|)
 name|param
 index|[
 literal|4
@@ -1659,7 +1656,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2963a6110103
+DECL|enum|__anon2ab490970103
 block|{
 DECL|enumerator|COLOR_INDEX
 name|COLOR_INDEX

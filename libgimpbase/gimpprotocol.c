@@ -5878,10 +5878,6 @@ name|_gimp_wire_read_int8
 argument_list|(
 name|channel
 argument_list|,
-operator|(
-name|guint8
-operator|*
-operator|)
 operator|&
 operator|(
 operator|*
@@ -6274,7 +6270,7 @@ name|d_int8array
 operator|=
 name|g_new
 argument_list|(
-name|gint8
+name|guint8
 argument_list|,
 operator|(
 operator|*
@@ -6298,10 +6294,6 @@ name|_gimp_wire_read_int8
 argument_list|(
 name|channel
 argument_list|,
-operator|(
-name|guint8
-operator|*
-operator|)
 operator|(
 operator|*
 name|params

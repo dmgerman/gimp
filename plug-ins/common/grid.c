@@ -244,7 +244,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290d70e80108
+DECL|struct|__anon29ead1e80108
 block|{
 DECL|member|hwidth
 name|gint
@@ -780,9 +780,6 @@ operator|(
 operator|(
 name|double
 operator|)
-operator|(
-name|guint
-operator|)
 name|param
 index|[
 literal|7
@@ -875,9 +872,6 @@ argument_list|,
 operator|(
 operator|(
 name|double
-operator|)
-operator|(
-name|guint
 operator|)
 name|param
 index|[

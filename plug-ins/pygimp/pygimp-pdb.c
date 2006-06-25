@@ -60,7 +60,7 @@ comment|/* Declarations for objects of type pdb */
 end_comment
 
 begin_typedef
-DECL|struct|__anon27da83210108
+DECL|struct|__anon2b6f15cd0108
 typedef|typedef
 struct|struct
 block|{
@@ -80,7 +80,7 @@ comment|/* Declarations for objects of type pdbFunc */
 end_comment
 
 begin_typedef
-DECL|struct|__anon27da83210208
+DECL|struct|__anon2b6f15cd0208
 typedef|typedef
 struct|struct
 block|{
@@ -270,7 +270,7 @@ name|fprintf
 argument_list|(
 name|stderr
 argument_list|,
-literal|"%i. int %i\n"
+literal|"%i. int %u\n"
 argument_list|,
 name|i
 argument_list|,
@@ -1675,7 +1675,7 @@ name|gint16
 modifier|*
 name|i16a
 decl_stmt|;
-name|gint8
+name|guint8
 modifier|*
 name|i8a
 decl_stmt|;
@@ -1890,6 +1890,9 @@ name|data
 operator|.
 name|d_int32
 operator|=
+operator|(
+name|gint32
+operator|)
 name|PyInt_AsLong
 argument_list|(
 name|x
@@ -1927,6 +1930,9 @@ name|data
 operator|.
 name|d_int16
 operator|=
+operator|(
+name|gint16
+operator|)
 name|PyInt_AsLong
 argument_list|(
 name|x
@@ -1964,6 +1970,9 @@ name|data
 operator|.
 name|d_int8
 operator|=
+operator|(
+name|guint8
+operator|)
 name|PyInt_AsLong
 argument_list|(
 name|x
