@@ -2208,7 +2208,7 @@ name|from
 init|=
 name|buffer
 decl_stmt|;
-name|gint
+name|guint
 name|x
 decl_stmt|;
 for|for
@@ -2841,7 +2841,7 @@ name|guint8
 name|alphaBits
 parameter_list|)
 block|{
-name|gint
+name|guint
 name|x
 decl_stmt|;
 for|for
