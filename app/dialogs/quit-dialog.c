@@ -330,7 +330,7 @@ argument_list|(
 literal|"Close All Images"
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_WILBER_EEK
+name|GIMP_STOCK_WARNING
 argument_list|,
 name|NULL
 argument_list|,
