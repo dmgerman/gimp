@@ -2115,9 +2115,13 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gfig_brush_changed_callback (const gchar * brush_name,gdouble opacity,gint spacing,GimpLayerModeEffects paint_mode,gint width,gint height,const guchar * mask_data,gboolean dialog_closing,gpointer user_data)
+DECL|function|gfig_brush_changed_callback (GimpBrushSelectButton * button,const gchar * brush_name,gdouble opacity,gint spacing,GimpLayerModeEffects paint_mode,gint width,gint height,const guchar * mask_data,gboolean dialog_closing,gpointer user_data)
 name|gfig_brush_changed_callback
 parameter_list|(
+name|GimpBrushSelectButton
+modifier|*
+name|button
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -2209,9 +2213,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|gfig_pattern_changed_callback (const gchar * pattern_name,gint width,gint height,gint bpp,const guchar * mask_data,gboolean dialog_closing,gpointer user_data)
+DECL|function|gfig_pattern_changed_callback (GimpPatternSelectButton * button,const gchar * pattern_name,gint width,gint height,gint bpp,const guchar * mask_data,gboolean dialog_closing,gpointer user_data)
 name|gfig_pattern_changed_callback
 parameter_list|(
+name|GimpPatternSelectButton
+modifier|*
+name|button
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -2264,9 +2272,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|gfig_gradient_changed_callback (const gchar * gradient_name,gint width,const gdouble * grad_data,gboolean dialog_closing,gpointer user_data)
+DECL|function|gfig_gradient_changed_callback (GimpGradientSelectButton * button,const gchar * gradient_name,gint width,const gdouble * grad_data,gboolean dialog_closing,gpointer user_data)
 name|gfig_gradient_changed_callback
 parameter_list|(
+name|GimpGradientSelectButton
+modifier|*
+name|button
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -2871,18 +2883,21 @@ operator|->
 name|brush_name
 argument_list|)
 expr_stmt|;
-name|gimp_brush_select_widget_set
+name|gimp_brush_select_button_set_brush
+argument_list|(
+name|GIMP_BRUSH_SELECT_BUTTON
 argument_list|(
 name|gfig_context
 operator|->
 name|brush_select
+argument_list|)
 argument_list|,
 name|style
 operator|->
 name|brush_name
 argument_list|,
 operator|-
-literal|1.
+literal|1.0
 argument_list|,
 operator|-
 literal|1
@@ -2892,22 +2907,28 @@ literal|1
 argument_list|)
 expr_stmt|;
 comment|/* FIXME */
-name|gimp_pattern_select_widget_set
+name|gimp_pattern_select_button_set_pattern_name
+argument_list|(
+name|GIMP_PATTERN_SELECT_BUTTON
 argument_list|(
 name|gfig_context
 operator|->
 name|pattern_select
+argument_list|)
 argument_list|,
 name|style
 operator|->
 name|pattern
 argument_list|)
 expr_stmt|;
-name|gimp_gradient_select_widget_set
+name|gimp_gradient_select_button_set_gradient_name
+argument_list|(
+name|GIMP_GRADIENT_SELECT_BUTTON
 argument_list|(
 name|gfig_context
 operator|->
 name|gradient_select
+argument_list|)
 argument_list|,
 name|style
 operator|->

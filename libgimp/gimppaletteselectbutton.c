@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimpfontselectbutton.c  * Copyright (C) 2003  Sven Neumann<sven@gimp.org>  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimppaletteselectbutton.c  * Copyright (C) 2004  Michael Natterer<mitch@gimp.org>  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -36,7 +36,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpfontselectbutton.h"
+file|"gimppaletteselectbutton.h"
 end_include
 
 begin_include
@@ -52,41 +52,41 @@ file|"libgimp-intl.h"
 end_include
 
 begin_define
-DECL|macro|GIMP_FONT_SELECT_BUTTON_GET_PRIVATE (obj)
+DECL|macro|GIMP_PALETTE_SELECT_BUTTON_GET_PRIVATE (obj)
 define|#
 directive|define
-name|GIMP_FONT_SELECT_BUTTON_GET_PRIVATE
+name|GIMP_PALETTE_SELECT_BUTTON_GET_PRIVATE
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_PRIVATE ((obj), GIMP_TYPE_FONT_SELECT_BUTTON, GimpFontSelectButtonPrivate))
+value|(G_TYPE_INSTANCE_GET_PRIVATE ((obj), GIMP_TYPE_PALETTE_SELECT_BUTTON, GimpPaletteSelectButtonPrivate))
 end_define
 
 begin_typedef
-DECL|typedef|GimpFontSelectButtonPrivate
+DECL|typedef|GimpPaletteSelectButtonPrivate
 typedef|typedef
 name|struct
-name|_GimpFontSelectButtonPrivate
-name|GimpFontSelectButtonPrivate
+name|_GimpPaletteSelectButtonPrivate
+name|GimpPaletteSelectButtonPrivate
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpFontSelectButtonPrivate
+DECL|struct|_GimpPaletteSelectButtonPrivate
 struct|struct
-name|_GimpFontSelectButtonPrivate
+name|_GimpPaletteSelectButtonPrivate
 block|{
 DECL|member|title
 name|gchar
 modifier|*
 name|title
 decl_stmt|;
-DECL|member|font_name
+DECL|member|palette_name
 name|gchar
 modifier|*
-name|font_name
+name|palette_name
 decl_stmt|;
-comment|/* local copy */
+comment|/* Local copy */
 DECL|member|inside
 name|GtkWidget
 modifier|*
@@ -103,10 +103,10 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a59b9650103
+DECL|enum|__anon2af538210103
 block|{
-DECL|enumerator|FONT_SET
-name|FONT_SET
+DECL|enumerator|PALETTE_SET
+name|PALETTE_SET
 block|,
 DECL|enumerator|LAST_SIGNAL
 name|LAST_SIGNAL
@@ -116,7 +116,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a59b9650203
+DECL|enum|__anon2af538210203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -124,8 +124,8 @@ block|,
 DECL|enumerator|PROP_TITLE
 name|PROP_TITLE
 block|,
-DECL|enumerator|PROP_FONT_NAME
-name|PROP_FONT_NAME
+DECL|enumerator|PROP_PALETTE_NAME
+name|PROP_PALETTE_NAME
 block|}
 enum|;
 end_enum
@@ -137,7 +137,7 @@ end_comment
 begin_function_decl
 specifier|static
 name|void
-name|gimp_font_select_button_finalize
+name|gimp_palette_select_button_finalize
 parameter_list|(
 name|GObject
 modifier|*
@@ -149,7 +149,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_font_select_button_set_property
+name|gimp_palette_select_button_set_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -173,7 +173,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_font_select_button_get_property
+name|gimp_palette_select_button_get_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -196,11 +196,11 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_font_select_button_clicked
+name|gimp_palette_select_button_clicked
 parameter_list|(
-name|GimpFontSelectButton
+name|GimpPaletteSelectButton
 modifier|*
-name|font_button
+name|palette_button
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -208,12 +208,12 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_font_select_button_callback
+name|gimp_palette_select_button_callback
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
-name|font_name
+name|palette_name
 parameter_list|,
 name|gboolean
 name|dialog_closing
@@ -227,11 +227,11 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_font_select_drag_data_received
+name|gimp_palette_select_drag_data_received
 parameter_list|(
-name|GimpFontSelectButton
+name|GimpPaletteSelectButton
 modifier|*
-name|font_button
+name|palette_button
 parameter_list|,
 name|GdkDragContext
 modifier|*
@@ -260,11 +260,11 @@ begin_function_decl
 specifier|static
 name|GtkWidget
 modifier|*
-name|gimp_font_select_button_create_inside
+name|gimp_palette_select_button_create_inside
 parameter_list|(
-name|GimpFontSelectButton
+name|GimpPaletteSelectButton
 modifier|*
-name|button
+name|palette_button
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -277,7 +277,7 @@ name|GtkTargetEntry
 name|target
 init|=
 block|{
-literal|"application/x-gimp-font-name"
+literal|"application/x-gimp-palette-name"
 block|,
 literal|0
 block|}
@@ -285,10 +285,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|font_button_signals
+DECL|variable|palette_button_signals
 specifier|static
 name|guint
-name|font_button_signals
+name|palette_button_signals
 index|[
 name|LAST_SIGNAL
 index|]
@@ -300,12 +300,12 @@ decl_stmt|;
 end_decl_stmt
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpFontSelectButton,gimp_font_select_button,GIMP_TYPE_SELECT_BUTTON)
+DECL|function|G_DEFINE_TYPE (GimpPaletteSelectButton,gimp_palette_select_button,GIMP_TYPE_SELECT_BUTTON)
 name|G_DEFINE_TYPE
 argument_list|(
-argument|GimpFontSelectButton
+argument|GimpPaletteSelectButton
 argument_list|,
-argument|gimp_font_select_button
+argument|gimp_palette_select_button
 argument_list|,
 argument|GIMP_TYPE_SELECT_BUTTON
 argument_list|)
@@ -314,9 +314,9 @@ end_macro
 begin_function
 specifier|static
 name|void
-name|gimp_font_select_button_class_init
+name|gimp_palette_select_button_class_init
 parameter_list|(
-name|GimpFontSelectButtonClass
+name|GimpPaletteSelectButtonClass
 modifier|*
 name|klass
 parameter_list|)
@@ -343,33 +343,33 @@ name|object_class
 operator|->
 name|finalize
 operator|=
-name|gimp_font_select_button_finalize
+name|gimp_palette_select_button_finalize
 expr_stmt|;
 name|object_class
 operator|->
 name|set_property
 operator|=
-name|gimp_font_select_button_set_property
+name|gimp_palette_select_button_set_property
 expr_stmt|;
 name|object_class
 operator|->
 name|get_property
 operator|=
-name|gimp_font_select_button_get_property
+name|gimp_palette_select_button_get_property
 expr_stmt|;
 name|select_button_class
 operator|->
 name|select_destroy
 operator|=
-name|gimp_font_select_destroy
+name|gimp_palette_select_destroy
 expr_stmt|;
 name|klass
 operator|->
-name|font_set
+name|palette_set
 operator|=
 name|NULL
 expr_stmt|;
-comment|/**    * GimpFontSelectButton:title:    *    * The title to be used for the font selection popup dialog.    *    * Since: GIMP 2.4    */
+comment|/**    * GimpPaletteSelectButton:title:    *    * The title to be used for the palette selection popup dialog.    *    * Since: GIMP 2.4    */
 name|g_object_class_install_property
 argument_list|(
 name|object_class
@@ -382,11 +382,11 @@ literal|"title"
 argument_list|,
 literal|"Title"
 argument_list|,
-literal|"The title to be used for the font selection popup dialog"
+literal|"The title to be used for the palette selection popup dialog"
 argument_list|,
 name|_
 argument_list|(
-literal|"Font Selection"
+literal|"Palette Selection"
 argument_list|)
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -395,39 +395,36 @@ name|G_PARAM_CONSTRUCT_ONLY
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/**    * GimpFontSelectButton:font-name:    *    * The name of the currently selected font.    *    * Since: GIMP 2.4    */
+comment|/**    * GimpPaletteSelectButton:palette-name:    *    * The name of the currently selected palette.    *    * Since: GIMP 2.4    */
 name|g_object_class_install_property
 argument_list|(
 name|object_class
 argument_list|,
-name|PROP_FONT_NAME
+name|PROP_PALETTE_NAME
 argument_list|,
 name|g_param_spec_string
 argument_list|(
-literal|"font-name"
+literal|"palette-name"
 argument_list|,
-literal|"Font name"
+literal|"Palette name"
 argument_list|,
-literal|"The name of the currently selected font"
+literal|"The name of the currently selected palette"
 argument_list|,
-name|_
-argument_list|(
-literal|"Sans"
-argument_list|)
+name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/**    * GimpFontSelectButton::font-set:    * @widget: the object which received the signal.    * @font_name: the name of the currently selected font.    * @dialog_closing: whether the dialog was closed or not.    *    * The ::font-set signal is emitted when the user selects a font.    *    * Since: GIMP 2.4    */
-name|font_button_signals
+comment|/**    * GimpPaletteSelectButton::palette-set:    * @widget: the object which received the signal.    * @palette_name: the name of the currently selected palette.    * @dialog_closing: whether the dialog was closed or not.    *    * The ::palette-set signal is emitted when the user selects a palette.    *    * Since: GIMP 2.4    */
+name|palette_button_signals
 index|[
-name|FONT_SET
+name|PALETTE_SET
 index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"font-set"
+literal|"palette-set"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -438,9 +435,9 @@ name|G_SIGNAL_RUN_FIRST
 argument_list|,
 name|G_STRUCT_OFFSET
 argument_list|(
-name|GimpFontSelectButtonClass
+name|GimpPaletteSelectButtonClass
 argument_list|,
-name|font_set
+name|palette_set
 argument_list|)
 argument_list|,
 name|NULL
@@ -464,7 +461,7 @@ name|object_class
 argument_list|,
 sizeof|sizeof
 argument_list|(
-name|GimpFontSelectButtonPrivate
+name|GimpPaletteSelectButtonPrivate
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -474,28 +471,28 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_font_select_button_init (GimpFontSelectButton * font_button)
-name|gimp_font_select_button_init
+DECL|function|gimp_palette_select_button_init (GimpPaletteSelectButton * palette_button)
+name|gimp_palette_select_button_init
 parameter_list|(
-name|GimpFontSelectButton
+name|GimpPaletteSelectButton
 modifier|*
-name|font_button
+name|palette_button
 parameter_list|)
 block|{
-name|GimpFontSelectButtonPrivate
+name|GimpPaletteSelectButtonPrivate
 modifier|*
 name|priv
 decl_stmt|;
 name|priv
 operator|=
-name|GIMP_FONT_SELECT_BUTTON_GET_PRIVATE
+name|GIMP_PALETTE_SELECT_BUTTON_GET_PRIVATE
 argument_list|(
-name|font_button
+name|palette_button
 argument_list|)
 expr_stmt|;
 name|priv
 operator|->
-name|font_name
+name|palette_name
 operator|=
 name|NULL
 expr_stmt|;
@@ -503,16 +500,16 @@ name|priv
 operator|->
 name|inside
 operator|=
-name|gimp_font_select_button_create_inside
+name|gimp_palette_select_button_create_inside
 argument_list|(
-name|font_button
+name|palette_button
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
-name|font_button
+name|palette_button
 argument_list|)
 argument_list|,
 name|priv
@@ -524,14 +521,14 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_font_select_button_new:  * @title:     Title of the dialog to use or %NULL to use the default title.  * @font_name: Initial font name.  *  * Creates a new #GtkWidget that completely controls the selection of  * a font.  This widget is suitable for placement in a table in a  * plug-in dialog.  *  * Returns: A #GtkWidget that you can use in your UI.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_palette_select_button_new:  * @title:        Title of the dialog to use or %NULL to use the default title.  * @palette_name: Initial palette name.  *  * Creates a new #GtkWidget that completely controls the selection of  * a palette.  This widget is suitable for placement in a table in a  * plug-in dialog.  *  * Returns: A #GtkWidget that you can use in your UI.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_font_select_button_new (const gchar * title,const gchar * font_name)
-name|gimp_font_select_button_new
+DECL|function|gimp_palette_select_button_new (const gchar * title,const gchar * palette_name)
+name|gimp_palette_select_button_new
 parameter_list|(
 specifier|const
 name|gchar
@@ -541,79 +538,79 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|font_name
+name|palette_name
 parameter_list|)
 block|{
 name|GtkWidget
 modifier|*
-name|font_button
+name|palette_button
 decl_stmt|;
 if|if
 condition|(
 name|title
 condition|)
-name|font_button
+name|palette_button
 operator|=
 name|g_object_new
 argument_list|(
-name|GIMP_TYPE_FONT_SELECT_BUTTON
+name|GIMP_TYPE_PALETTE_SELECT_BUTTON
 argument_list|,
 literal|"title"
 argument_list|,
 name|title
 argument_list|,
-literal|"font-name"
+literal|"palette-name"
 argument_list|,
-name|font_name
+name|palette_name
 argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
 else|else
-name|font_button
+name|palette_button
 operator|=
 name|g_object_new
 argument_list|(
-name|GIMP_TYPE_FONT_SELECT_BUTTON
+name|GIMP_TYPE_PALETTE_SELECT_BUTTON
 argument_list|,
-literal|"font-name"
+literal|"palette-name"
 argument_list|,
-name|font_name
+name|palette_name
 argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
 return|return
-name|font_button
+name|palette_button
 return|;
 block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_font_select_button_get_font_name:  * @font_button: A #GimpFontSelectButton  *  * Retrieves the name of currently selected font.  *  * Returns: an internal copy of the font name which must not be freed.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_palette_select_button_get_palette_name:  * @palette_button: A #GimpPaletteSelectButton  *  * Retrieves the name of currently selected palette.  *  * Returns: an internal copy of the palette name which must not be freed.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
 name|G_CONST_RETURN
 name|gchar
 modifier|*
-DECL|function|gimp_font_select_button_get_font_name (GimpFontSelectButton * font_button)
-name|gimp_font_select_button_get_font_name
+DECL|function|gimp_palette_select_button_get_palette_name (GimpPaletteSelectButton * palette_button)
+name|gimp_palette_select_button_get_palette_name
 parameter_list|(
-name|GimpFontSelectButton
+name|GimpPaletteSelectButton
 modifier|*
-name|font_button
+name|palette_button
 parameter_list|)
 block|{
-name|GimpFontSelectButtonPrivate
+name|GimpPaletteSelectButtonPrivate
 modifier|*
 name|priv
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|GIMP_IS_FONT_SELECT_BUTTON
+name|GIMP_IS_PALETTE_SELECT_BUTTON
 argument_list|(
-name|font_button
+name|palette_button
 argument_list|)
 argument_list|,
 name|NULL
@@ -621,36 +618,36 @@ argument_list|)
 expr_stmt|;
 name|priv
 operator|=
-name|GIMP_FONT_SELECT_BUTTON_GET_PRIVATE
+name|GIMP_PALETTE_SELECT_BUTTON_GET_PRIVATE
 argument_list|(
-name|font_button
+name|palette_button
 argument_list|)
 expr_stmt|;
 return|return
 name|priv
 operator|->
-name|font_name
+name|palette_name
 return|;
 block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_font_select_button_set_font_name:  * @font_button: A #GimpFontSelectButton  * @font_name: Font name to set; %NULL means no change.  *  * Sets the current font for the font select button.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_palette_select_button_set_palette_name:  * @palette_button: A #GimpPaletteSelectButton  * @palette_name: Palette name to set; %NULL means no change.  *  * Sets the current palette for the palette select button.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_font_select_button_set_font_name (GimpFontSelectButton * font_button,const gchar * font_name)
-name|gimp_font_select_button_set_font_name
+DECL|function|gimp_palette_select_button_set_palette_name (GimpPaletteSelectButton * palette_button,const gchar * palette_name)
+name|gimp_palette_select_button_set_palette_name
 parameter_list|(
-name|GimpFontSelectButton
+name|GimpPaletteSelectButton
 modifier|*
-name|font_button
+name|palette_button
 parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|font_name
+name|palette_name
 parameter_list|)
 block|{
 name|GimpSelectButton
@@ -659,9 +656,9 @@ name|select_button
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|GIMP_IS_FONT_SELECT_BUTTON
+name|GIMP_IS_PALETTE_SELECT_BUTTON
 argument_list|(
-name|font_button
+name|palette_button
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -669,7 +666,7 @@ name|select_button
 operator|=
 name|GIMP_SELECT_BUTTON
 argument_list|(
-name|font_button
+name|palette_button
 argument_list|)
 expr_stmt|;
 if|if
@@ -678,23 +675,23 @@ name|select_button
 operator|->
 name|temp_callback
 condition|)
-name|gimp_fonts_set_popup
+name|gimp_palettes_set_popup
 argument_list|(
 name|select_button
 operator|->
 name|temp_callback
 argument_list|,
-name|font_name
+name|palette_name
 argument_list|)
 expr_stmt|;
 else|else
-name|gimp_font_select_button_callback
+name|gimp_palette_select_button_callback
 argument_list|(
-name|font_name
+name|palette_name
 argument_list|,
 name|FALSE
 argument_list|,
-name|font_button
+name|palette_button
 argument_list|)
 expr_stmt|;
 block|}
@@ -707,21 +704,21 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_font_select_button_finalize (GObject * object)
-name|gimp_font_select_button_finalize
+DECL|function|gimp_palette_select_button_finalize (GObject * object)
+name|gimp_palette_select_button_finalize
 parameter_list|(
 name|GObject
 modifier|*
 name|object
 parameter_list|)
 block|{
-name|GimpFontSelectButtonPrivate
+name|GimpPaletteSelectButtonPrivate
 modifier|*
 name|priv
 decl_stmt|;
 name|priv
 operator|=
-name|GIMP_FONT_SELECT_BUTTON_GET_PRIVATE
+name|GIMP_PALETTE_SELECT_BUTTON_GET_PRIVATE
 argument_list|(
 name|object
 argument_list|)
@@ -730,12 +727,12 @@ name|g_free
 argument_list|(
 name|priv
 operator|->
-name|font_name
+name|palette_name
 argument_list|)
 expr_stmt|;
 name|priv
 operator|->
-name|font_name
+name|palette_name
 operator|=
 name|NULL
 expr_stmt|;
@@ -754,7 +751,7 @@ name|NULL
 expr_stmt|;
 name|G_OBJECT_CLASS
 argument_list|(
-name|gimp_font_select_button_parent_class
+name|gimp_palette_select_button_parent_class
 argument_list|)
 operator|->
 name|finalize
@@ -768,8 +765,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_font_select_button_set_property (GObject * object,guint property_id,const GValue * value,GParamSpec * pspec)
-name|gimp_font_select_button_set_property
+DECL|function|gimp_palette_select_button_set_property (GObject * object,guint property_id,const GValue * value,GParamSpec * pspec)
+name|gimp_palette_select_button_set_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -788,26 +785,26 @@ modifier|*
 name|pspec
 parameter_list|)
 block|{
-name|GimpFontSelectButton
+name|GimpPaletteSelectButton
 modifier|*
-name|font_button
+name|palette_button
 decl_stmt|;
-name|GimpFontSelectButtonPrivate
+name|GimpPaletteSelectButtonPrivate
 modifier|*
 name|priv
 decl_stmt|;
-name|font_button
+name|palette_button
 operator|=
-name|GIMP_FONT_SELECT_BUTTON
+name|GIMP_PALETTE_SELECT_BUTTON
 argument_list|(
 name|object
 argument_list|)
 expr_stmt|;
 name|priv
 operator|=
-name|GIMP_FONT_SELECT_BUTTON_GET_PRIVATE
+name|GIMP_PALETTE_SELECT_BUTTON_GET_PRIVATE
 argument_list|(
-name|font_button
+name|palette_button
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -829,11 +826,11 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PROP_FONT_NAME
+name|PROP_PALETTE_NAME
 case|:
-name|gimp_font_select_button_set_font_name
+name|gimp_palette_select_button_set_palette_name
 argument_list|(
-name|font_button
+name|palette_button
 argument_list|,
 name|g_value_get_string
 argument_list|(
@@ -860,8 +857,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_font_select_button_get_property (GObject * object,guint property_id,GValue * value,GParamSpec * pspec)
-name|gimp_font_select_button_get_property
+DECL|function|gimp_palette_select_button_get_property (GObject * object,guint property_id,GValue * value,GParamSpec * pspec)
+name|gimp_palette_select_button_get_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -879,26 +876,26 @@ modifier|*
 name|pspec
 parameter_list|)
 block|{
-name|GimpFontSelectButton
+name|GimpPaletteSelectButton
 modifier|*
-name|font_button
+name|palette_button
 decl_stmt|;
-name|GimpFontSelectButtonPrivate
+name|GimpPaletteSelectButtonPrivate
 modifier|*
 name|priv
 decl_stmt|;
-name|font_button
+name|palette_button
 operator|=
-name|GIMP_FONT_SELECT_BUTTON
+name|GIMP_PALETTE_SELECT_BUTTON
 argument_list|(
 name|object
 argument_list|)
 expr_stmt|;
 name|priv
 operator|=
-name|GIMP_FONT_SELECT_BUTTON_GET_PRIVATE
+name|GIMP_PALETTE_SELECT_BUTTON_GET_PRIVATE
 argument_list|(
-name|font_button
+name|palette_button
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -920,7 +917,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PROP_FONT_NAME
+name|PROP_PALETTE_NAME
 case|:
 name|g_value_set_string
 argument_list|(
@@ -928,7 +925,7 @@ name|value
 argument_list|,
 name|priv
 operator|->
-name|font_name
+name|palette_name
 argument_list|)
 expr_stmt|;
 break|break;
@@ -950,13 +947,13 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_font_select_button_callback (const gchar * font_name,gboolean dialog_closing,gpointer user_data)
-name|gimp_font_select_button_callback
+DECL|function|gimp_palette_select_button_callback (const gchar * palette_name,gboolean dialog_closing,gpointer user_data)
+name|gimp_palette_select_button_callback
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
-name|font_name
+name|palette_name
 parameter_list|,
 name|gboolean
 name|dialog_closing
@@ -965,11 +962,11 @@ name|gpointer
 name|user_data
 parameter_list|)
 block|{
-name|GimpFontSelectButton
+name|GimpPaletteSelectButton
 modifier|*
-name|font_button
+name|palette_button
 decl_stmt|;
-name|GimpFontSelectButtonPrivate
+name|GimpPaletteSelectButtonPrivate
 modifier|*
 name|priv
 decl_stmt|;
@@ -977,41 +974,41 @@ name|GimpSelectButton
 modifier|*
 name|select_button
 decl_stmt|;
-name|font_button
+name|palette_button
 operator|=
-name|GIMP_FONT_SELECT_BUTTON
+name|GIMP_PALETTE_SELECT_BUTTON
 argument_list|(
 name|user_data
 argument_list|)
 expr_stmt|;
 name|priv
 operator|=
-name|GIMP_FONT_SELECT_BUTTON_GET_PRIVATE
+name|GIMP_PALETTE_SELECT_BUTTON_GET_PRIVATE
 argument_list|(
-name|font_button
+name|palette_button
 argument_list|)
 expr_stmt|;
 name|select_button
 operator|=
 name|GIMP_SELECT_BUTTON
 argument_list|(
-name|font_button
+name|palette_button
 argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
 name|priv
 operator|->
-name|font_name
+name|palette_name
 argument_list|)
 expr_stmt|;
 name|priv
 operator|->
-name|font_name
+name|palette_name
 operator|=
 name|g_strdup
 argument_list|(
-name|font_name
+name|palette_name
 argument_list|)
 expr_stmt|;
 name|gtk_label_set_text
@@ -1023,7 +1020,7 @@ operator|->
 name|label
 argument_list|)
 argument_list|,
-name|font_name
+name|palette_name
 argument_list|)
 expr_stmt|;
 if|if
@@ -1038,16 +1035,16 @@ name|NULL
 expr_stmt|;
 name|g_signal_emit
 argument_list|(
-name|font_button
+name|palette_button
 argument_list|,
-name|font_button_signals
+name|palette_button_signals
 index|[
-name|FONT_SET
+name|PALETTE_SET
 index|]
 argument_list|,
 literal|0
 argument_list|,
-name|font_name
+name|palette_name
 argument_list|,
 name|dialog_closing
 argument_list|)
@@ -1056,10 +1053,10 @@ name|g_object_notify
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|font_button
+name|palette_button
 argument_list|)
 argument_list|,
-literal|"font-name"
+literal|"palette-name"
 argument_list|)
 expr_stmt|;
 block|}
@@ -1068,15 +1065,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_font_select_button_clicked (GimpFontSelectButton * font_button)
-name|gimp_font_select_button_clicked
+DECL|function|gimp_palette_select_button_clicked (GimpPaletteSelectButton * palette_button)
+name|gimp_palette_select_button_clicked
 parameter_list|(
-name|GimpFontSelectButton
+name|GimpPaletteSelectButton
 modifier|*
-name|font_button
+name|palette_button
 parameter_list|)
 block|{
-name|GimpFontSelectButtonPrivate
+name|GimpPaletteSelectButtonPrivate
 modifier|*
 name|priv
 decl_stmt|;
@@ -1086,16 +1083,16 @@ name|select_button
 decl_stmt|;
 name|priv
 operator|=
-name|GIMP_FONT_SELECT_BUTTON_GET_PRIVATE
+name|GIMP_PALETTE_SELECT_BUTTON_GET_PRIVATE
 argument_list|(
-name|font_button
+name|palette_button
 argument_list|)
 expr_stmt|;
 name|select_button
 operator|=
 name|GIMP_SELECT_BUTTON
 argument_list|(
-name|font_button
+name|palette_button
 argument_list|)
 expr_stmt|;
 if|if
@@ -1105,8 +1102,8 @@ operator|->
 name|temp_callback
 condition|)
 block|{
-comment|/*  calling gimp_fonts_set_popup() raises the dialog  */
-name|gimp_fonts_set_popup
+comment|/*  calling gimp_palettes_set_popup() raises the dialog  */
+name|gimp_palettes_set_popup
 argument_list|(
 name|select_button
 operator|->
@@ -1114,7 +1111,7 @@ name|temp_callback
 argument_list|,
 name|priv
 operator|->
-name|font_name
+name|palette_name
 argument_list|)
 expr_stmt|;
 block|}
@@ -1124,7 +1121,7 @@ name|select_button
 operator|->
 name|temp_callback
 operator|=
-name|gimp_font_select_new
+name|gimp_palette_select_new
 argument_list|(
 name|priv
 operator|->
@@ -1132,11 +1129,11 @@ name|title
 argument_list|,
 name|priv
 operator|->
-name|font_name
+name|palette_name
 argument_list|,
-name|gimp_font_select_button_callback
+name|gimp_palette_select_button_callback
 argument_list|,
-name|font_button
+name|palette_button
 argument_list|)
 expr_stmt|;
 block|}
@@ -1146,12 +1143,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_font_select_drag_data_received (GimpFontSelectButton * font_button,GdkDragContext * context,gint x,gint y,GtkSelectionData * selection,guint info,guint time)
-name|gimp_font_select_drag_data_received
+DECL|function|gimp_palette_select_drag_data_received (GimpPaletteSelectButton * palette_button,GdkDragContext * context,gint x,gint y,GtkSelectionData * selection,guint info,guint time)
+name|gimp_palette_select_drag_data_received
 parameter_list|(
-name|GimpFontSelectButton
+name|GimpPaletteSelectButton
 modifier|*
-name|font_button
+name|palette_button
 parameter_list|,
 name|GdkDragContext
 modifier|*
@@ -1199,7 +1196,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"Received invalid font data!"
+literal|"Received invalid palette data!"
 argument_list|)
 expr_stmt|;
 return|return;
@@ -1284,9 +1281,9 @@ name|str
 operator|+
 name|name_offset
 decl_stmt|;
-name|gimp_font_select_button_set_font_name
+name|gimp_palette_select_button_set_palette_name
 argument_list|(
-name|font_button
+name|palette_button
 argument_list|,
 name|name
 argument_list|)
@@ -1305,12 +1302,12 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|gimp_font_select_button_create_inside (GimpFontSelectButton * font_button)
-name|gimp_font_select_button_create_inside
+DECL|function|gimp_palette_select_button_create_inside (GimpPaletteSelectButton * palette_button)
+name|gimp_palette_select_button_create_inside
 parameter_list|(
-name|GimpFontSelectButton
+name|GimpPaletteSelectButton
 modifier|*
-name|font_button
+name|palette_button
 parameter_list|)
 block|{
 name|GtkWidget
@@ -1325,15 +1322,15 @@ name|GtkWidget
 modifier|*
 name|image
 decl_stmt|;
-name|GimpFontSelectButtonPrivate
+name|GimpPaletteSelectButtonPrivate
 modifier|*
 name|priv
 decl_stmt|;
 name|priv
 operator|=
-name|GIMP_FONT_SELECT_BUTTON_GET_PRIVATE
+name|GIMP_PALETTE_SELECT_BUTTON_GET_PRIVATE
 argument_list|(
-name|font_button
+name|palette_button
 argument_list|)
 expr_stmt|;
 name|gtk_widget_push_composite_child
@@ -1367,7 +1364,7 @@ name|image
 operator|=
 name|gtk_image_new_from_stock
 argument_list|(
-name|GIMP_STOCK_FONT
+name|GIMP_STOCK_PALETTE
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)
@@ -1396,7 +1393,7 @@ name|gtk_label_new
 argument_list|(
 name|priv
 operator|->
-name|font_name
+name|palette_name
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1430,10 +1427,10 @@ literal|"clicked"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_font_select_button_clicked
+name|gimp_palette_select_button_clicked
 argument_list|)
 argument_list|,
-name|font_button
+name|palette_button
 argument_list|)
 expr_stmt|;
 name|gtk_drag_dest_set
@@ -1465,10 +1462,10 @@ literal|"drag-data-received"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_font_select_drag_data_received
+name|gimp_palette_select_drag_data_received
 argument_list|)
 argument_list|,
-name|font_button
+name|palette_button
 argument_list|)
 expr_stmt|;
 name|gtk_widget_pop_composite_child

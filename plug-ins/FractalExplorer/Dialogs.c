@@ -1046,9 +1046,13 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|explorer_gradient_select_callback (const gchar * name,gint width,const gdouble * gradient_data,gboolean dialog_closing,gpointer data)
+DECL|function|explorer_gradient_select_callback (GimpGradientSelectButton * gradient_button,const gchar * name,gint width,const gdouble * gradient_data,gboolean dialog_closing,gpointer data)
 name|explorer_gradient_select_callback
 parameter_list|(
+name|GimpGradientSelectButton
+modifier|*
+name|gradient_button
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -5942,7 +5946,7 @@ argument_list|)
 expr_stmt|;
 name|gradient
 operator|=
-name|gimp_gradient_select_widget_new
+name|gimp_gradient_select_button_new
 argument_list|(
 name|_
 argument_list|(
@@ -5950,8 +5954,18 @@ literal|"FractalExplorer Gradient"
 argument_list|)
 argument_list|,
 name|gradient_name
+argument_list|)
+expr_stmt|;
+name|g_signal_connect
+argument_list|(
+name|gradient
 argument_list|,
+literal|"gradient-set"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|explorer_gradient_select_callback
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)

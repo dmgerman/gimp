@@ -18,7 +18,25 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpui.h"
+file|"gimpuitypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpfontselectbutton.h"
+end_include
+
+begin_undef
+undef|#
+directive|undef
+name|GIMP_DISABLE_DEPRECATED
+end_undef
+
+begin_include
+include|#
+directive|include
+file|"gimpfontmenu.h"
 end_include
 
 begin_typedef
@@ -71,7 +89,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_font_select_widget_new:  * @title:     Title of the dialog to use or %NULL means to use the default  *             title.  * @font_name: Initial font name.  * @callback:  A function to call when the selected font changes.  * @data:      A pointer to arbitary data to be used in the call to @callback.  *  * Creates a new #GtkWidget that completely controls the selection of  * a font.  This widget is suitable for placement in a table in a  * plug-in dialog.  *  * Returns: A #GtkWidget that you can use in your UI.  */
+comment|/**  * gimp_font_select_widget_new:  * @title:     Title of the dialog to use or %NULL to use the default title.  * @font_name: Initial font name.  * @callback:  A function to call when the selected font changes.  * @data:      A pointer to arbitary data to be used in the call to @callback.  *  * Creates a new #GtkWidget that completely controls the selection of  * a font.  This widget is suitable for placement in a table in a  * plug-in dialog.  *  * Returns: A #GtkWidget that you can use in your UI.  */
 end_comment
 
 begin_function
@@ -192,9 +210,9 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_font_select_button_close_popup
+name|gimp_select_button_close_popup
 argument_list|(
-name|GIMP_FONT_SELECT_BUTTON
+name|GIMP_SELECT_BUTTON
 argument_list|(
 name|widget
 argument_list|)

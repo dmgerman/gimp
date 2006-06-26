@@ -1,19 +1,19 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimpfontselectbutton.h  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimpgradientselectbutton.h  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_FONT_SELECT_BUTTON_H__
+name|__GIMP_GRADIENT_SELECT_BUTTON_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_FONT_SELECT_BUTTON_H__
+DECL|macro|__GIMP_GRADIENT_SELECT_BUTTON_H__
 define|#
 directive|define
-name|__GIMP_FONT_SELECT_BUTTON_H__
+name|__GIMP_GRADIENT_SELECT_BUTTON_H__
 end_define
 
 begin_include
@@ -31,81 +31,81 @@ comment|/* For information look into the C source or the html documentation */
 end_comment
 
 begin_define
-DECL|macro|GIMP_TYPE_FONT_SELECT_BUTTON
+DECL|macro|GIMP_TYPE_GRADIENT_SELECT_BUTTON
 define|#
 directive|define
-name|GIMP_TYPE_FONT_SELECT_BUTTON
-value|(gimp_font_select_button_get_type ())
+name|GIMP_TYPE_GRADIENT_SELECT_BUTTON
+value|(gimp_gradient_select_button_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_FONT_SELECT_BUTTON (obj)
+DECL|macro|GIMP_GRADIENT_SELECT_BUTTON (obj)
 define|#
 directive|define
-name|GIMP_FONT_SELECT_BUTTON
+name|GIMP_GRADIENT_SELECT_BUTTON
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_FONT_SELECT_BUTTON, GimpFontSelectButton))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_GRADIENT_SELECT_BUTTON, GimpGradientSelectButton))
 end_define
 
 begin_define
-DECL|macro|GIMP_FONT_SELECT_BUTTON_CLASS (klass)
+DECL|macro|GIMP_GRADIENT_SELECT_BUTTON_CLASS (klass)
 define|#
 directive|define
-name|GIMP_FONT_SELECT_BUTTON_CLASS
+name|GIMP_GRADIENT_SELECT_BUTTON_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_FONT_SELECT_BUTTON, GimpFontSelectButtonClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_GRADIENT_SELECT_BUTTON, GimpGradientSelectButtonClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_FONT_SELECT_BUTTON (obj)
+DECL|macro|GIMP_IS_GRADIENT_SELECT_BUTTON (obj)
 define|#
 directive|define
-name|GIMP_IS_FONT_SELECT_BUTTON
+name|GIMP_IS_GRADIENT_SELECT_BUTTON
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_FONT_SELECT_BUTTON))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_GRADIENT_SELECT_BUTTON))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_FONT_SELECT_BUTTON_CLASS (klass)
+DECL|macro|GIMP_IS_GRADIENT_SELECT_BUTTON_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_FONT_SELECT_BUTTON_CLASS
+name|GIMP_IS_GRADIENT_SELECT_BUTTON_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_FONT_SELECT_BUTTON))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_GRADIENT_SELECT_BUTTON))
 end_define
 
 begin_define
-DECL|macro|GIMP_FONT_SELECT_BUTTON_GET_CLASS (obj)
+DECL|macro|GIMP_GRADIENT_SELECT_BUTTON_GET_CLASS (obj)
 define|#
 directive|define
-name|GIMP_FONT_SELECT_BUTTON_GET_CLASS
+name|GIMP_GRADIENT_SELECT_BUTTON_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_FONT_SELECT_BUTTON, GimpFontSelectButtonClass))
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_GRADIENT_SELECT_BUTTON, GimpGradientSelectButtonClass))
 end_define
 
 begin_typedef
-DECL|typedef|GimpFontSelectButtonClass
+DECL|typedef|GimpGradientSelectButtonClass
 typedef|typedef
 name|struct
-name|_GimpFontSelectButtonClass
-name|GimpFontSelectButtonClass
+name|_GimpGradientSelectButtonClass
+name|GimpGradientSelectButtonClass
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpFontSelectButton
+DECL|struct|_GimpGradientSelectButton
 struct|struct
-name|_GimpFontSelectButton
+name|_GimpGradientSelectButton
 block|{
 DECL|member|parent_instance
 name|GimpSelectButton
@@ -116,30 +116,38 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|_GimpFontSelectButtonClass
+DECL|struct|_GimpGradientSelectButtonClass
 struct|struct
-name|_GimpFontSelectButtonClass
+name|_GimpGradientSelectButtonClass
 block|{
 DECL|member|parent_class
 name|GimpSelectButtonClass
 name|parent_class
 decl_stmt|;
-comment|/* font_set signal is emitted when font is chosen */
-DECL|member|font_set
+comment|/* gradient_set signal is emitted when gradient is chosen */
+DECL|member|gradient_set
 name|void
 function_decl|(
 modifier|*
-name|font_set
+name|gradient_set
 function_decl|)
 parameter_list|(
-name|GimpFontSelectButton
+name|GimpGradientSelectButton
 modifier|*
-name|font_button
+name|gradient_button
 parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|font_name
+name|gradient_name
+parameter_list|,
+name|gint
+name|width
+parameter_list|,
+specifier|const
+name|gdouble
+modifier|*
+name|gradient_data
 parameter_list|,
 name|gboolean
 name|dialog_closing
@@ -192,7 +200,7 @@ end_struct
 
 begin_decl_stmt
 name|GType
-name|gimp_font_select_button_get_type
+name|gimp_gradient_select_button_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -203,7 +211,7 @@ end_decl_stmt
 begin_function_decl
 name|GtkWidget
 modifier|*
-name|gimp_font_select_button_new
+name|gimp_gradient_select_button_new
 parameter_list|(
 specifier|const
 name|gchar
@@ -213,7 +221,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|font_name
+name|gradient_name
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -222,9 +230,9 @@ begin_function_decl
 name|G_CONST_RETURN
 name|gchar
 modifier|*
-name|gimp_font_select_button_get_font_name
+name|gimp_gradient_select_button_get_gradient_name
 parameter_list|(
-name|GimpFontSelectButton
+name|GimpGradientSelectButton
 modifier|*
 name|button
 parameter_list|)
@@ -233,16 +241,16 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_font_select_button_set_font_name
+name|gimp_gradient_select_button_set_gradient_name
 parameter_list|(
-name|GimpFontSelectButton
+name|GimpGradientSelectButton
 modifier|*
 name|button
 parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|font_name
+name|gradient_name
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -257,7 +265,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMP_FONT_SELECT_BUTTON_H__ */
+comment|/* __GIMP_GRADIENT_SELECT_BUTTON_H__ */
 end_comment
 
 end_unit

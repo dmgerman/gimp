@@ -239,6 +239,10 @@ begin_function_decl
 name|void
 name|gfig_brush_changed_callback
 parameter_list|(
+name|GimpBrushSelectButton
+modifier|*
+name|button
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -277,6 +281,10 @@ begin_function_decl
 name|void
 name|gfig_pattern_changed_callback
 parameter_list|(
+name|GimpPatternSelectButton
+modifier|*
+name|button
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -309,6 +317,10 @@ begin_function_decl
 name|void
 name|gfig_gradient_changed_callback
 parameter_list|(
+name|GimpGradientSelectButton
+modifier|*
+name|button
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*

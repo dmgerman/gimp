@@ -112,6 +112,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpSelectButton
+typedef|typedef
+name|struct
+name|_GimpSelectButton
+name|GimpSelectButton
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpBrushSelectButton
 typedef|typedef
 name|struct

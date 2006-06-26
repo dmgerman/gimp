@@ -55,13 +55,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimpbrushmenu.h>
+file|<libgimp/gimpdrawablepreview.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<libgimp/gimpdrawablepreview.h>
+file|<libgimp/gimpbrushmenu.h>
 end_include
 
 begin_include
@@ -127,7 +127,37 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimp/gimpselectbutton.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimpbrushselectbutton.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimpfontselectbutton.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimpgradientselectbutton.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimppaletteselectbutton.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimppatternselectbutton.h>
 end_include
 
 begin_include
