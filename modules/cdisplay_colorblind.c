@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon275bc4fb0103
+DECL|enum|__anon2ad397490103
 block|{
 DECL|enumerator|COLORBLIND_DEFICIENCY_PROTANOPIA
 name|COLORBLIND_DEFICIENCY_PROTANOPIA
@@ -148,7 +148,7 @@ name|COLORBLIND_DEFICIENCY_PROTANOPIA
 block|,
 name|N_
 argument_list|(
-literal|"Protanopia (insensitivity to red"
+literal|"Protanopia (insensitivity to red)"
 argument_list|)
 block|,
 name|NULL
@@ -345,7 +345,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon275bc4fb0203
+DECL|enum|__anon2ad397490203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

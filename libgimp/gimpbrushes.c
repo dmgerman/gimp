@@ -63,7 +63,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_brushes_get_paint_mode:  *  * This procedure isdeprecated! Use gimp_context_get_paint_mode() instead.  *  * Returns: The paint mode.  */
+comment|/**  * gimp_brushes_get_paint_mode:  *  * This procedure is deprecated! Use gimp_context_get_paint_mode() instead.  *  * Returns: The paint mode.  */
 end_comment
 
 begin_function
