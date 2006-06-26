@@ -60,7 +60,7 @@ comment|/* Declarations for objects of type pdb */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b6f15cd0108
+DECL|struct|__anon2a33242c0108
 typedef|typedef
 struct|struct
 block|{
@@ -80,7 +80,7 @@ comment|/* Declarations for objects of type pdbFunc */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b6f15cd0208
+DECL|struct|__anon2a33242c0208
 typedef|typedef
 struct|struct
 block|{
@@ -2643,7 +2643,7 @@ name|b
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_rgb_set_uchar
+name|gimp_rgba_set_uchar
 argument_list|(
 operator|&
 name|ret
@@ -2669,6 +2669,8 @@ name|PyInt_AsLong
 argument_list|(
 name|b
 argument_list|)
+argument_list|,
+literal|255
 argument_list|)
 expr_stmt|;
 break|break;
