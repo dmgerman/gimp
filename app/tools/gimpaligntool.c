@@ -710,7 +710,7 @@ name|align_tool
 decl_stmt|;
 name|GtkContainer
 modifier|*
-name|controls_container
+name|container
 decl_stmt|;
 name|GObject
 modifier|*
@@ -767,7 +767,7 @@ operator|->
 name|tool_options
 argument_list|)
 expr_stmt|;
-name|controls_container
+name|container
 operator|=
 name|GTK_CONTAINER
 argument_list|(
@@ -790,7 +790,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_container_add
 argument_list|(
-name|controls_container
+name|container
 argument_list|,
 name|align_tool
 operator|->
