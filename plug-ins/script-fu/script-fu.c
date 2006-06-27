@@ -980,7 +980,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"script_fu_refresh"
+literal|"script-fu-refresh"
 argument_list|,
 name|N_
 argument_list|(

@@ -38,7 +38,7 @@ DECL|macro|PLUG_IN_PROC
 define|#
 directive|define
 name|PLUG_IN_PROC
-value|"plug_in_illusion"
+value|"plug-in-illusion"
 end_define
 
 begin_define
@@ -140,7 +140,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295cd8290108
+DECL|struct|__anon27fefbe10108
 block|{
 DECL|member|division
 name|gint32
@@ -625,7 +625,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon295cd8290208
+DECL|struct|__anon27fefbe10208
 typedef|typedef
 struct|struct
 block|{

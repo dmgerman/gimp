@@ -1006,7 +1006,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_fractalexplorer"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Render"
 argument_list|)

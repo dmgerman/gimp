@@ -87,11 +87,11 @@ value|(((i) + (i)/256 + 1) / 256)
 end_define
 
 begin_define
-DECL|macro|PLUG_IN_NAME
+DECL|macro|PLUG_IN_PROC
 define|#
 directive|define
-name|PLUG_IN_NAME
-value|"plug_in_depth_merge"
+name|PLUG_IN_PROC
+value|"plug-in-depth-merge"
 end_define
 
 begin_define
@@ -99,15 +99,7 @@ DECL|macro|PLUG_IN_VERSION
 define|#
 directive|define
 name|PLUG_IN_VERSION
-value|"1.0.0; 14 August 1998"
-end_define
-
-begin_define
-DECL|macro|HELP_ID
-define|#
-directive|define
-name|HELP_ID
-value|"plug-in-depth-merge"
+value|"August 1998"
 end_define
 
 begin_define
@@ -768,7 +760,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 name|N_
 argument_list|(
@@ -810,7 +802,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Combine"
 argument_list|)
@@ -910,7 +902,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_get_data
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 operator|(
@@ -1149,7 +1141,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_get_data
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 operator|(
@@ -1230,7 +1222,7 @@ name|GIMP_RUN_INTERACTIVE
 condition|)
 name|gimp_set_data
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 operator|(
@@ -3753,7 +3745,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-name|HELP_ID
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
