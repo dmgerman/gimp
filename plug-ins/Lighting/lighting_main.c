@@ -63,6 +63,14 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_define
+DECL|macro|PLUG_IN_PROC
+define|#
+directive|define
+name|PLUG_IN_PROC
+value|"plug-in-lighting"
+end_define
+
 begin_decl_stmt
 DECL|variable|mapvals
 name|LightingValues
@@ -801,7 +809,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive (0), non-interactive (1)"
 block|}
@@ -881,7 +889,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"lightposition_x"
+literal|"lightposition-x"
 block|,
 literal|"Lightsource position (x,y,z)"
 block|}
@@ -889,7 +897,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"lightposition_y"
+literal|"lightposition-y"
 block|,
 literal|"Lightsource position (x,y,z)"
 block|}
@@ -897,7 +905,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"lightposition_z"
+literal|"lightposition-z"
 block|,
 literal|"Lightsource position (x,y,z)"
 block|}
@@ -905,7 +913,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"lightdirection_x"
+literal|"lightdirection-x"
 block|,
 literal|"Lightsource direction [x,y,z]"
 block|}
@@ -913,7 +921,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"lightdirection_y"
+literal|"lightdirection-y"
 block|,
 literal|"Lightsource direction [x,y,z]"
 block|}
@@ -921,7 +929,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"lightdirection_z"
+literal|"lightdirection-z"
 block|,
 literal|"Lightsource direction [x,y,z]"
 block|}
@@ -929,7 +937,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"ambient_intensity"
+literal|"ambient-intensity"
 block|,
 literal|"Material ambient intensity (0..1)"
 block|}
@@ -937,7 +945,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"diffuse_intensity"
+literal|"diffuse-intensity"
 block|,
 literal|"Material diffuse intensity (0..1)"
 block|}
@@ -945,7 +953,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"diffuse_reflectivity"
+literal|"diffuse-reflectivity"
 block|,
 literal|"Material diffuse reflectivity (0..1)"
 block|}
@@ -953,7 +961,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"specular_reflectivity"
+literal|"specular-reflectivity"
 block|,
 literal|"Material specular reflectivity (0..1)"
 block|}
@@ -993,9 +1001,12 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_lighting"
+name|PLUG_IN_PROC
 argument_list|,
+name|N_
+argument_list|(
 literal|"Apply various lighting effects to an image"
+argument_list|)
 argument_list|,
 literal|"No help yet"
 argument_list|,
@@ -1028,7 +1039,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_lighting"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Light and Shadow/Light"
 argument_list|)
@@ -1137,7 +1148,7 @@ comment|/* Possibly retrieve data */
 comment|/* ====================== */
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_lighting"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|mapvals
@@ -1217,7 +1228,7 @@ argument_list|()
 expr_stmt|;
 name|gimp_set_data
 argument_list|(
-literal|"plug_in_lighting"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|mapvals

@@ -121,6 +121,14 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_define
+DECL|macro|PLUG_IN_PROC
+define|#
+directive|define
+name|PLUG_IN_PROC
+value|"plug-in-fractalexplorer"
+end_define
+
 begin_comment
 comment|/**********************************************************************   Global variables  *********************************************************************/
 end_comment
@@ -775,7 +783,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -960,9 +968,12 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_fractalexplorer"
+name|PLUG_IN_PROC
 argument_list|,
-literal|"Chaos Fractal Explorer Plug-In"
+name|N_
+argument_list|(
+literal|"Render fractal art"
+argument_list|)
 argument_list|,
 literal|"No help yet."
 argument_list|,
@@ -3445,15 +3456,13 @@ parameter_list|)
 block|{
 name|gint
 name|n
-decl_stmt|;
-comment|/*    *    Insert fractalexplorers in alphabetical order    */
-name|n
-operator|=
+init|=
 name|fractalexplorer_list_pos
 argument_list|(
 name|fractalexplorer
 argument_list|)
-expr_stmt|;
+decl_stmt|;
+comment|/*    *    Insert fractalexplorers in alphabetical order    */
 name|fractalexplorer_list
 operator|=
 name|g_list_insert

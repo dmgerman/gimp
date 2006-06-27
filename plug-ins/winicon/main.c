@@ -55,6 +55,30 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_define
+DECL|macro|LOAD_PROC
+define|#
+directive|define
+name|LOAD_PROC
+value|"file-ico-load"
+end_define
+
+begin_define
+DECL|macro|LOAD_THUMB_PROC
+define|#
+directive|define
+name|LOAD_THUMB_PROC
+value|"file-ico-load-thumb"
+end_define
+
+begin_define
+DECL|macro|SAVE_PROC
+define|#
+directive|define
+name|SAVE_PROC
+value|"file-ico-save"
+end_define
+
 begin_function_decl
 specifier|static
 name|void
@@ -142,7 +166,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -158,7 +182,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"raw_filename"
+literal|"raw-filename"
 block|,
 literal|"The name entered"
 block|}
@@ -198,7 +222,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"thumb_size"
+literal|"thumb-size"
 block|,
 literal|"Preferred thumbnail size"
 block|}
@@ -222,7 +246,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"image_width"
+literal|"image-width"
 block|,
 literal|"Width of full-sized image"
 block|}
@@ -230,7 +254,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"image_height"
+literal|"image-height"
 block|,
 literal|"Height of full-sized image"
 block|}
@@ -246,7 +270,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -278,7 +302,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"raw_filename"
+literal|"raw-filename"
 block|,
 literal|"The name entered"
 block|}
@@ -286,7 +310,7 @@ block|,   }
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"file_ico_load"
+name|LOAD_PROC
 argument_list|,
 literal|"Loads files of Windows ICO file format"
 argument_list|,
@@ -324,14 +348,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_file_handler_mime
 argument_list|(
-literal|"file_ico_load"
+name|LOAD_PROC
 argument_list|,
 literal|"image/x-ico"
 argument_list|)
 expr_stmt|;
 name|gimp_register_magic_load_handler
 argument_list|(
-literal|"file_ico_load"
+name|LOAD_PROC
 argument_list|,
 literal|"ico"
 argument_list|,
@@ -342,7 +366,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"file_ico_load_thumb"
+name|LOAD_THUMB_PROC
 argument_list|,
 literal|"Loads a preview from an Windows ICO file"
 argument_list|,
@@ -377,14 +401,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_thumbnail_loader
 argument_list|(
-literal|"file_ico_load"
+name|LOAD_PROC
 argument_list|,
-literal|"file_ico_load_thumb"
+name|LOAD_THUMB_PROC
 argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"file_ico_save"
+name|SAVE_PROC
 argument_list|,
 literal|"Saves files in Windows ICO file format"
 argument_list|,
@@ -419,14 +443,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_file_handler_mime
 argument_list|(
-literal|"file_ico_save"
+name|SAVE_PROC
 argument_list|,
 literal|"image/x-ico"
 argument_list|)
 expr_stmt|;
 name|gimp_register_save_handler
 argument_list|(
-literal|"file_ico_save"
+name|SAVE_PROC
 argument_list|,
 literal|"ico"
 argument_list|,
@@ -541,7 +565,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_ico_load"
+name|LOAD_PROC
 argument_list|)
 operator|==
 literal|0
@@ -644,7 +668,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_ico_load_thumb"
+name|LOAD_THUMB_PROC
 argument_list|)
 operator|==
 literal|0
@@ -808,7 +832,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_ico_save"
+name|SAVE_PROC
 argument_list|)
 operator|==
 literal|0

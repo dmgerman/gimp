@@ -63,6 +63,14 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_define
+DECL|macro|PLUG_IN_PROC
+define|#
+directive|define
+name|PLUG_IN_PROC
+value|"plug-in-map-object"
+end_define
+
 begin_comment
 comment|/* Global variables */
 end_comment
@@ -685,7 +693,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive (0), non-interactive (1)"
 block|}
@@ -717,7 +725,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"viewpoint_x"
+literal|"viewpoint-x"
 block|,
 literal|"Position of viewpoint (x,y,z)"
 block|}
@@ -725,7 +733,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"viewpoint_y"
+literal|"viewpoint-y"
 block|,
 literal|"Position of viewpoint (x,y,z)"
 block|}
@@ -733,7 +741,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"viewpoint_z"
+literal|"viewpoint-z"
 block|,
 literal|"Position of viewpoint (x,y,z)"
 block|}
@@ -741,7 +749,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"position_x"
+literal|"position-x"
 block|,
 literal|"Object position (x,y,z)"
 block|}
@@ -749,7 +757,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"position_y"
+literal|"position-y"
 block|,
 literal|"Object position (x,y,z)"
 block|}
@@ -757,7 +765,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"position_z"
+literal|"position-z"
 block|,
 literal|"Object position (x,y,z)"
 block|}
@@ -765,7 +773,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"firstaxis_x"
+literal|"firstaxis-x"
 block|,
 literal|"First axis of object [x,y,z]"
 block|}
@@ -773,7 +781,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"firstaxis_y"
+literal|"firstaxis-y"
 block|,
 literal|"First axis of object [x,y,z]"
 block|}
@@ -781,7 +789,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"firstaxis_z"
+literal|"firstaxis-z"
 block|,
 literal|"First axis of object [x,y,z]"
 block|}
@@ -789,7 +797,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"secondaxis_x"
+literal|"secondaxis-x"
 block|,
 literal|"Second axis of object [x,y,z]"
 block|}
@@ -797,7 +805,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"secondaxis_y"
+literal|"secondaxis-y"
 block|,
 literal|"Second axis of object [x,y,z]"
 block|}
@@ -805,7 +813,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"secondaxis_z"
+literal|"secondaxis-z"
 block|,
 literal|"Second axis of object [x,y,z]"
 block|}
@@ -813,7 +821,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"rotationangle_x"
+literal|"rotationangle-x"
 block|,
 literal|"Rotation about X axis in degrees"
 block|}
@@ -821,7 +829,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"rotationangle_y"
+literal|"rotationangle-y"
 block|,
 literal|"Rotation about Y axis in degrees"
 block|}
@@ -829,7 +837,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"rotationangle_z"
+literal|"rotationangle-z"
 block|,
 literal|"Rotation about Z axis in degrees"
 block|}
@@ -853,7 +861,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"lightposition_x"
+literal|"lightposition-x"
 block|,
 literal|"Lightsource position (x,y,z)"
 block|}
@@ -861,7 +869,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"lightposition_y"
+literal|"lightposition-y"
 block|,
 literal|"Lightsource position (x,y,z)"
 block|}
@@ -869,7 +877,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"lightposition_z"
+literal|"lightposition-z"
 block|,
 literal|"Lightsource position (x,y,z)"
 block|}
@@ -877,7 +885,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"lightdirection_x"
+literal|"lightdirection-x"
 block|,
 literal|"Lightsource direction [x,y,z]"
 block|}
@@ -885,7 +893,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"lightdirection_y"
+literal|"lightdirection-y"
 block|,
 literal|"Lightsource direction [x,y,z]"
 block|}
@@ -893,7 +901,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"lightdirection_z"
+literal|"lightdirection-z"
 block|,
 literal|"Lightsource direction [x,y,z]"
 block|}
@@ -981,7 +989,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"x_scale"
+literal|"x-scale"
 block|,
 literal|"Box x size (0..->)"
 block|}
@@ -989,7 +997,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"y_scale"
+literal|"y-scale"
 block|,
 literal|"Box y size (0..->)"
 block|}
@@ -997,7 +1005,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"z_scale"
+literal|"z-scale"
 block|,
 literal|"Box z size (0..->)"
 block|}
@@ -1005,7 +1013,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"cylinder_length"
+literal|"cylinder-length"
 block|,
 literal|"Cylinder length (0..->)"
 block|}
@@ -1013,7 +1021,7 @@ block|,
 block|{
 name|GIMP_PDB_DRAWABLE
 block|,
-literal|"box_front_drawable"
+literal|"box-front-drawable"
 block|,
 literal|"Box front face (set these to -1 if not used)"
 block|}
@@ -1021,7 +1029,7 @@ block|,
 block|{
 name|GIMP_PDB_DRAWABLE
 block|,
-literal|"box_back_drawable"
+literal|"box-back-drawable"
 block|,
 literal|"Box back face"
 block|}
@@ -1029,7 +1037,7 @@ block|,
 block|{
 name|GIMP_PDB_DRAWABLE
 block|,
-literal|"box_top_drawable"
+literal|"box-top-drawable"
 block|,
 literal|"Box top face"
 block|}
@@ -1037,7 +1045,7 @@ block|,
 block|{
 name|GIMP_PDB_DRAWABLE
 block|,
-literal|"box_bottom_drawable"
+literal|"box-bottom-drawable"
 block|,
 literal|"Box bottom face"
 block|}
@@ -1045,7 +1053,7 @@ block|,
 block|{
 name|GIMP_PDB_DRAWABLE
 block|,
-literal|"box_left_drawable"
+literal|"box-left-drawable"
 block|,
 literal|"Box left face"
 block|}
@@ -1053,7 +1061,7 @@ block|,
 block|{
 name|GIMP_PDB_DRAWABLE
 block|,
-literal|"box_right_drawable"
+literal|"box-right-drawable"
 block|,
 literal|"Box right face"
 block|}
@@ -1061,7 +1069,7 @@ block|,
 block|{
 name|GIMP_PDB_DRAWABLE
 block|,
-literal|"cyl_top_drawable"
+literal|"cyl-top-drawable"
 block|,
 literal|"Cylinder top face (set these to -1 if not used)"
 block|}
@@ -1069,7 +1077,7 @@ block|,
 block|{
 name|GIMP_PDB_DRAWABLE
 block|,
-literal|"cyl_bottom_drawable"
+literal|"cyl-bottom-drawable"
 block|,
 literal|"Cylinder bottom face"
 block|}
@@ -1077,9 +1085,12 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_map_object"
+name|PLUG_IN_PROC
 argument_list|,
-literal|"Maps a picture to a object (plane, sphere, box or cylinder)"
+name|N_
+argument_list|(
+literal|"Map the image to an object (plane, sphere, box or cylinder)"
+argument_list|)
 argument_list|,
 literal|"No help yet"
 argument_list|,
@@ -1112,7 +1123,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_map_object"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Map"
 argument_list|)
@@ -1272,7 +1283,7 @@ argument_list|()
 expr_stmt|;
 name|gimp_set_data
 argument_list|(
-literal|"plug_in_map_object"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|mapvals
@@ -1290,7 +1301,7 @@ name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_map_object"
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|mapvals
