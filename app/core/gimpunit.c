@@ -52,7 +52,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293f167f0108
+DECL|struct|__anon2c6698e90108
 block|{
 DECL|member|delete_on_exit
 name|gboolean
@@ -1042,8 +1042,6 @@ name|singular
 argument_list|)
 return|;
 return|return
-name|gettext
-argument_list|(
 name|_gimp_unit_get_user_unit
 argument_list|(
 name|gimp
@@ -1052,7 +1050,6 @@ name|unit
 argument_list|)
 operator|->
 name|singular
-argument_list|)
 return|;
 block|}
 end_function
@@ -1135,8 +1132,6 @@ name|plural
 argument_list|)
 return|;
 return|return
-name|gettext
-argument_list|(
 name|_gimp_unit_get_user_unit
 argument_list|(
 name|gimp
@@ -1145,7 +1140,6 @@ name|unit
 argument_list|)
 operator|->
 name|plural
-argument_list|)
 return|;
 block|}
 end_function
