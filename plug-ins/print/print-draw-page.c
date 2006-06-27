@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<time.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimp.h>
 end_include
 
@@ -257,7 +263,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Image width (%lg in) is larger than printable width (%lg in)."
+literal|"Image width (%g in) is larger than printable width (%g in)."
 argument_list|,
 name|image_width
 operator|/
@@ -288,7 +294,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Image height (%lg in) is larger than printable height (%lg in)."
+literal|"Image height (%g in) is larger than printable height (%g in)."
 argument_list|,
 name|image_height
 operator|/
@@ -507,7 +513,7 @@ argument_list|,
 operator|&
 name|drawable_id
 argument_list|,
-literal|"silent"
+name|NULL
 argument_list|,
 name|GIMP_EXPORT_CAN_HANDLE_RGB
 operator||
@@ -608,7 +614,7 @@ argument_list|(
 name|image_id
 argument_list|)
 expr_stmt|;
-comment|/* knock pixels into the shape cairo wants:    *  CAIRO_FORMAT_ARGB32: each pixel is a 32-bit quantity, with alpha in the upper 8 bits,    * then red, then green, then blue. The 32-bit quantities are stored native-endian.    * Pre-multiplied alpha is used.    *    */
+comment|/* knock pixels into the shape requested by cairo:    *    *  CAIRO_FORMAT_ARGB32:    *  each pixel is a 32-bit quantity, with alpha in the upper 8 bits,    *  then red, then green, then blue. The 32-bit quantities are    *  stored native-endian.  Pre-multiplied alpha is used.    *    */
 name|cairo_data
 operator|=
 operator|(
@@ -785,9 +791,6 @@ decl_stmt|;
 name|gint
 name|layout_width
 decl_stmt|;
-name|GTimeVal
-name|time_val
-decl_stmt|;
 name|gchar
 name|date_buffer
 index|[
@@ -811,6 +814,10 @@ specifier|const
 name|gchar
 modifier|*
 name|end_ptr
+decl_stmt|;
+name|gchar
+modifier|*
+name|filename
 decl_stmt|;
 name|gdouble
 name|cr_width
@@ -1071,12 +1078,6 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/* date */
-name|g_get_current_time
-argument_list|(
-operator|&
-name|time_val
-argument_list|)
-expr_stmt|;
 name|date
 operator|=
 name|g_date_new
@@ -1086,9 +1087,10 @@ name|g_date_set_time_t
 argument_list|(
 name|date
 argument_list|,
-name|time_val
-operator|.
-name|tv_sec
+name|time
+argument_list|(
+name|NULL
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_date_strftime
@@ -1173,29 +1175,36 @@ name|layout
 argument_list|)
 expr_stmt|;
 comment|/* file name if any */
-if|if
-condition|(
+name|filename
+operator|=
 name|gimp_image_get_filename
 argument_list|(
 name|data
 operator|->
 name|image_id
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|filename
 condition|)
 block|{
 name|pango_layout_set_text
 argument_list|(
 name|layout
 argument_list|,
-name|gimp_image_get_filename
+name|gimp_filename_to_uft8
 argument_list|(
-name|data
-operator|->
-name|image_id
+name|filename
 argument_list|)
 argument_list|,
 operator|-
 literal|1
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|filename
 argument_list|)
 expr_stmt|;
 name|pango_layout_get_size
@@ -1255,10 +1264,12 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
+block|{
 name|fname_text_width
 operator|=
 literal|0
 expr_stmt|;
+block|}
 comment|/* image comment if it is short */
 name|parasite
 operator|=
