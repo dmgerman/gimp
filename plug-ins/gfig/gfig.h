@@ -47,7 +47,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288eb4cc0108
+DECL|struct|__anon2b84ed280108
 block|{
 DECL|member|gridspacing
 name|gint
@@ -102,7 +102,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288eb4cc0208
+DECL|struct|__anon2b84ed280208
 block|{
 DECL|member|type
 name|SelectionType
@@ -310,7 +310,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288eb4cc0308
+DECL|struct|__anon2b84ed280308
 block|{
 DECL|member|opts
 name|GfigOpts
@@ -505,7 +505,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288eb4cc0408
+DECL|struct|__anon2b84ed280408
 block|{
 DECL|member|debug_styles
 name|gboolean
@@ -609,7 +609,7 @@ typedef|;
 end_typedef
 
 begin_decl_stmt
-DECL|variable|gfig_context
+specifier|extern
 name|GFigContext
 modifier|*
 name|gfig_context
@@ -1027,7 +1027,7 @@ function_decl|;
 end_function_decl
 
 begin_decl_stmt
-DECL|variable|top_level_dlg
+specifier|extern
 name|GtkWidget
 modifier|*
 name|top_level_dlg
@@ -1035,7 +1035,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|gfig_drawable
+specifier|extern
 name|GimpDrawable
 modifier|*
 name|gfig_drawable
@@ -1043,7 +1043,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|gfig_list
+specifier|extern
 name|GList
 modifier|*
 name|gfig_list
@@ -1051,8 +1051,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|org_scale_x_factor
-DECL|variable|org_scale_y_factor
+specifier|extern
 name|gdouble
 name|org_scale_x_factor
 decl_stmt|,

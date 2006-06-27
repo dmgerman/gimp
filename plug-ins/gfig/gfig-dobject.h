@@ -88,7 +88,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c64a0670108
+DECL|struct|__anon297d0be10108
 block|{
 DECL|member|type
 name|DobjType
@@ -135,7 +135,7 @@ typedef|;
 end_typedef
 
 begin_decl_stmt
-DECL|variable|dobj_class
+specifier|extern
 name|GfigObjectClass
 name|dobj_class
 index|[

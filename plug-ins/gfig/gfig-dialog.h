@@ -17,19 +17,18 @@ name|__GFIG_DIALOG_H__
 end_define
 
 begin_decl_stmt
-DECL|variable|undo_level
+specifier|extern
 name|gint
 name|undo_level
 decl_stmt|;
 end_decl_stmt
 
 begin_comment
-DECL|variable|undo_level
 comment|/* Last slot filled in -1 = no undo */
 end_comment
 
 begin_decl_stmt
-DECL|variable|undo_table
+specifier|extern
 name|GList
 modifier|*
 name|undo_table

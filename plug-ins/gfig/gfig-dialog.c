@@ -294,6 +294,33 @@ value|4
 end_define
 
 begin_comment
+comment|/* Globals */
+end_comment
+
+begin_decl_stmt
+DECL|variable|undo_level
+name|gint
+name|undo_level
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+DECL|variable|undo_level
+comment|/* Last slot filled in -1 = no undo */
+end_comment
+
+begin_decl_stmt
+DECL|variable|undo_table
+name|GList
+modifier|*
+name|undo_table
+index|[
+name|MAX_UNDO
+index|]
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
 comment|/* Values when first invoked */
 end_comment
 
@@ -437,7 +464,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0b3a630108
+DECL|struct|__anon2b9af0a60108
 block|{
 DECL|member|gridspacing
 name|GtkAdjustment
