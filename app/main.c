@@ -1264,7 +1264,10 @@ name|context
 operator|=
 name|g_option_context_new
 argument_list|(
+name|_
+argument_list|(
 literal|"[FILE|URI...]"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_option_context_add_main_entries

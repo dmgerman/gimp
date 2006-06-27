@@ -87,7 +87,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc1810c0103
+DECL|enum|__anon2991e89e0103
 block|{
 DECL|enumerator|LIST_COLUMN_NAME
 name|LIST_COLUMN_NAME
@@ -115,7 +115,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc1810c0203
+DECL|enum|__anon2991e89e0203
 block|{
 DECL|enumerator|TREE_COLUMN_PATH_NAME
 name|TREE_COLUMN_PATH_NAME
@@ -144,7 +144,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc1810c0308
+DECL|struct|__anon2991e89e0308
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -175,7 +175,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc1810c0408
+DECL|struct|__anon2991e89e0408
 block|{
 DECL|member|menu
 name|gchar
@@ -1385,9 +1385,13 @@ name|str
 operator|=
 name|g_strdup_printf
 argument_list|(
-name|_
+name|ngettext
 argument_list|(
+literal|"%d plug-in"
+argument_list|,
 literal|"%d plug-ins"
+argument_list|,
+name|num_plugins
 argument_list|)
 argument_list|,
 name|num_plugins

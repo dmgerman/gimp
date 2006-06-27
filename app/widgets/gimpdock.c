@@ -115,7 +115,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2d630b0103
+DECL|enum|__anon27b7579c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -131,7 +131,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2d630b0203
+DECL|enum|__anon27b7579c0203
 block|{
 DECL|enumerator|BOOK_ADDED
 name|BOOK_ADDED
@@ -1212,10 +1212,17 @@ argument_list|)
 operator|->
 name|box
 argument_list|,
-name|_
+name|ngettext
 argument_list|(
-literal|"This window has %d tabs open. Closing the "
-literal|"window will also close all its tabs."
+literal|"This window has %d tab open. "
+literal|"Closing the window will also close "
+literal|"all its tabs."
+argument_list|,
+literal|"This window has %d tabs open. "
+literal|"Closing the window will also close "
+literal|"all its tabs."
+argument_list|,
+name|n
 argument_list|)
 argument_list|,
 name|n

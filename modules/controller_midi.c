@@ -126,7 +126,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c85ac860108
+DECL|struct|__anon2bafc20d0108
 block|{
 DECL|member|name
 name|gchar
@@ -146,7 +146,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c85ac860203
+DECL|enum|__anon2bafc20d0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1487,7 +1487,10 @@ name|blurb
 operator|=
 name|g_strdup_printf
 argument_list|(
+name|_
+argument_list|(
 literal|"Note %02x on"
+argument_list|)
 argument_list|,
 name|event_id
 argument_list|)
@@ -1508,7 +1511,10 @@ name|blurb
 operator|=
 name|g_strdup_printf
 argument_list|(
+name|_
+argument_list|(
 literal|"Note %02x off"
+argument_list|)
 argument_list|,
 name|event_id
 operator|-
@@ -1531,7 +1537,10 @@ name|blurb
 operator|=
 name|g_strdup_printf
 argument_list|(
+name|_
+argument_list|(
 literal|"Controller %03d"
+argument_list|)
 argument_list|,
 name|event_id
 operator|-
