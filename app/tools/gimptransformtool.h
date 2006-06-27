@@ -298,6 +298,12 @@ DECL|member|direction
 name|GimpTransformDirection
 name|direction
 decl_stmt|;
+DECL|member|undo_desc
+specifier|const
+name|gchar
+modifier|*
+name|undo_desc
+decl_stmt|;
 DECL|member|shell_desc
 specifier|const
 name|gchar

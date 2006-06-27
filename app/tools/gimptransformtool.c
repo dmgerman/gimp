@@ -1017,6 +1017,12 @@ name|GIMP_TRANSFORM_FORWARD
 expr_stmt|;
 name|tr_tool
 operator|->
+name|undo_desc
+operator|=
+name|NULL
+expr_stmt|;
+name|tr_tool
+operator|->
 name|shell_desc
 operator|=
 name|NULL
@@ -4102,11 +4108,9 @@ name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_TRANSFORM
 argument_list|,
-name|tool
+name|tr_tool
 operator|->
-name|tool_info
-operator|->
-name|blurb
+name|undo_desc
 argument_list|)
 expr_stmt|;
 comment|/* With the old UI, if original is NULL, then this is the    * first transformation. In the new UI, it is always so, right?    */

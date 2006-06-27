@@ -415,6 +415,15 @@ argument_list|)
 expr_stmt|;
 name|tr_tool
 operator|->
+name|undo_desc
+operator|=
+name|Q_
+argument_list|(
+literal|"command|Shear"
+argument_list|)
+expr_stmt|;
+name|tr_tool
+operator|->
 name|shell_desc
 operator|=
 name|_
