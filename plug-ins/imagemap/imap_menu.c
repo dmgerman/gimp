@@ -810,6 +810,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|entries
 specifier|static
+specifier|const
 name|GtkActionEntry
 name|entries
 index|[]
@@ -1331,6 +1332,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|toggle_entries
 specifier|static
+specifier|const
 name|GtkToggleActionEntry
 name|toggle_entries
 index|[]
@@ -1374,6 +1376,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|color_entries
 specifier|static
+specifier|const
 name|GtkRadioActionEntry
 name|color_entries
 index|[]
@@ -1413,6 +1416,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|mapping_entries
 specifier|static
+specifier|const
 name|GtkRadioActionEntry
 name|mapping_entries
 index|[]
@@ -1480,6 +1484,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|zoom_entries
 specifier|static
+specifier|const
 name|GtkRadioActionEntry
 name|zoom_entries
 index|[]
@@ -1640,16 +1645,12 @@ literal|"<menuitem action='Gray'/>"
 literal|"<separator/>"
 literal|"<menuitem action='ZoomIn'/>"
 literal|"<menuitem action='ZoomOut'/>"
-literal|"<menu action='ZoomToMenu'>"
-literal|"<menuitem action='Zoom1:1'/>"
-literal|"<menuitem action='Zoom1:2'/>"
-literal|"<menuitem action='Zoom1:3'/>"
-literal|"<menuitem action='Zoom1:4'/>"
-literal|"<menuitem action='Zoom1:5'/>"
-literal|"<menuitem action='Zoom1:6'/>"
-literal|"<menuitem action='Zoom1:7'/>"
-literal|"<menuitem action='Zoom1:8'/>"
-literal|"</menu>"
+if|#
+directive|if
+literal|0
+expr|"<menu action='ZoomToMenu'>" "<menuitem action='Zoom1:1'/>" "<menuitem action='Zoom1:2'/>" "<menuitem action='Zoom1:3'/>" "<menuitem action='Zoom1:4'/>" "<menuitem action='Zoom1:5'/>" "<menuitem action='Zoom1:6'/>" "<menuitem action='Zoom1:7'/>" "<menuitem action='Zoom1:8'/>" "</menu>"
+endif|#
+directive|endif
 literal|"</menu>"
 literal|"<menu action='MappingMenu'>"
 literal|"<menuitem action='Arrow'/>"
