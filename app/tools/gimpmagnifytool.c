@@ -313,7 +313,7 @@ argument_list|)
 argument_list|,
 name|N_
 argument_list|(
-literal|"_Zoom"
+literal|"tool|_Zoom"
 argument_list|)
 argument_list|,
 literal|"Z"
