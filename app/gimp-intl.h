@@ -36,57 +36,8 @@ end_endif
 begin_include
 include|#
 directive|include
-file|<libintl.h>
+file|<glib/gi18n.h>
 end_include
-
-begin_define
-DECL|macro|_ (String)
-define|#
-directive|define
-name|_
-parameter_list|(
-name|String
-parameter_list|)
-value|gettext (String)
-end_define
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|gettext_noop
-end_ifdef
-
-begin_define
-DECL|macro|N_ (String)
-define|#
-directive|define
-name|N_
-parameter_list|(
-name|String
-parameter_list|)
-value|gettext_noop (String)
-end_define
-
-begin_else
-else|#
-directive|else
-end_else
-
-begin_define
-DECL|macro|N_ (String)
-define|#
-directive|define
-name|N_
-parameter_list|(
-name|String
-parameter_list|)
-value|(String)
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_endif
 endif|#

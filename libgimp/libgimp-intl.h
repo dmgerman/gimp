@@ -67,6 +67,27 @@ parameter_list|)
 value|dgettext (GETTEXT_PACKAGE "-libgimp", String)
 end_define
 
+begin_undef
+undef|#
+directive|undef
+name|ngettext
+end_undef
+
+begin_define
+DECL|macro|ngettext (String1,String2,number)
+define|#
+directive|define
+name|ngettext
+parameter_list|(
+name|String1
+parameter_list|,
+name|String2
+parameter_list|,
+name|number
+parameter_list|)
+value|dngettext (GETTEXT_PACKAGE "-libgimp", String1, String2, number)
+end_define
+
 begin_ifdef
 ifdef|#
 directive|ifdef
