@@ -540,7 +540,7 @@ define|#
 directive|define
 name|NUM_PROCESSORS_BLURB
 define|\
-value|N_("On multiprocessor machines, if GIMP has been compiled with --enable-mp " \    "this sets how many processors GIMP should use simultaneously.")
+value|N_("Sets how how many processors GIMP should try to use simultaneously.")
 end_define
 
 begin_define
