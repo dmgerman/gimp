@@ -99,7 +99,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b32d520108
+DECL|struct|__anon29b3b2fc0108
 block|{
 DECL|member|colors
 name|GimpRGB
@@ -427,7 +427,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -459,7 +459,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -483,7 +483,7 @@ block|,
 block|{
 name|GIMP_PDB_COLOR
 block|,
-literal|"srccolor_1"
+literal|"srccolor-1"
 block|,
 literal|"First source color"
 block|}
@@ -491,7 +491,7 @@ block|,
 block|{
 name|GIMP_PDB_COLOR
 block|,
-literal|"srccolor_2"
+literal|"srccolor-2"
 block|,
 literal|"Second source color"
 block|}
@@ -499,7 +499,7 @@ block|,
 block|{
 name|GIMP_PDB_COLOR
 block|,
-literal|"dstcolor_1"
+literal|"dstcolor-1"
 block|,
 literal|"First destination color"
 block|}
@@ -507,7 +507,7 @@ block|,
 block|{
 name|GIMP_PDB_COLOR
 block|,
-literal|"dstcolor_2"
+literal|"dstcolor-2"
 block|,
 literal|"Second destination color"
 block|}
@@ -515,7 +515,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"map_mode"
+literal|"map-mode"
 block|,
 literal|"Mapping mode (0: linear, others reserved)"
 block|}

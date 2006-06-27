@@ -341,7 +341,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2756b1430108
+DECL|struct|__anon2b6210ae0108
 block|{
 DECL|member|dst_id
 name|gint32
@@ -410,7 +410,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2756b1430208
+DECL|struct|__anon2b6210ae0208
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -518,7 +518,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2756b1430308
+DECL|struct|__anon2b6210ae0308
 block|{
 DECL|member|color
 name|guchar
@@ -547,7 +547,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2756b1430408
+DECL|struct|__anon2b6210ae0408
 block|{
 DECL|member|all_samples
 name|gint32
@@ -574,7 +574,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2756b1430508
+DECL|struct|__anon2b6210ae0508
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -1181,7 +1181,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -1197,7 +1197,7 @@ block|,
 block|{
 name|GIMP_PDB_DRAWABLE
 block|,
-literal|"dst_drawable"
+literal|"dst-drawable"
 block|,
 literal|"The drawable to be colorized (Type GRAY* or RGB*)"
 block|}
@@ -1205,7 +1205,7 @@ block|,
 block|{
 name|GIMP_PDB_DRAWABLE
 block|,
-literal|"sample_drawable"
+literal|"sample-drawable"
 block|,
 literal|"Sample drawable (should be of Type RGB or RGBA)"
 block|}
@@ -1213,7 +1213,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"hold_inten"
+literal|"hold-inten"
 block|,
 literal|"hold brightness intensity levels (TRUE, FALSE)"
 block|}
@@ -1221,7 +1221,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"orig_inten"
+literal|"orig-inten"
 block|,
 literal|"TRUE: hold brightness of original intensity levels. FALSE: Hold Intensity of input levels"
 block|}
@@ -1229,7 +1229,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"rnd_subcolors"
+literal|"rnd-subcolors"
 block|,
 literal|"TRUE: Use all subcolors of same intensity, FALSE: use only one color per intensity"
 block|}
@@ -1237,7 +1237,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"guess_missing"
+literal|"guess-missing"
 block|,
 literal|"TRUE: guess samplecolors for the missing intensity values FALSE: use only colors found in the sample"
 block|}
@@ -1245,7 +1245,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"in_low"
+literal|"in-low"
 block|,
 literal|"intensity of lowest input (0<= in_low<= 254)"
 block|}
@@ -1253,7 +1253,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"in_high"
+literal|"in-high"
 block|,
 literal|"intensity of highest input (1<= in_high<= 255)"
 block|}
@@ -1269,7 +1269,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"out_low"
+literal|"out-low"
 block|,
 literal|"lowest sample color intensity (0<= out_low<= 254)"
 block|}
@@ -1277,7 +1277,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"out_high"
+literal|"out-high"
 block|,
 literal|"highest sample color intensity (1<= out_high<= 255)"
 block|}

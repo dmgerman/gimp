@@ -211,7 +211,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, [non-interactive]"
 block|}
@@ -227,7 +227,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, [non-interactive]"
 block|}
@@ -243,7 +243,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"[Interactive], non-interactive"
 block|}
@@ -267,7 +267,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"[Interactive], non-interactive"
 block|}
@@ -330,7 +330,10 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug-in-script-fu-console"
 argument_list|,
-literal|"Provides a console mode for script-fu development"
+name|N_
+argument_list|(
+literal|"Interactive console for Script-Fu development"
+argument_list|)
 argument_list|,
 literal|"Provides an interface which allows interactive "
 literal|"scheme development."
@@ -410,7 +413,10 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug-in-script-fu-server"
 argument_list|,
-literal|"Provides a server for remote script-fu operation"
+name|N_
+argument_list|(
+literal|"Server for remote Script-Fu operation"
+argument_list|)
 argument_list|,
 literal|"Provides a server for remote script-fu operation"
 argument_list|,
@@ -766,7 +772,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"[Interactive], non-interactive"
 block|}
@@ -936,7 +942,10 @@ name|gimp_install_temp_proc
 argument_list|(
 literal|"script-fu-refresh"
 argument_list|,
-literal|"Re-read all available scripts"
+name|N_
+argument_list|(
+literal|"Re-read all available Script-Fu scripts"
+argument_list|)
 argument_list|,
 literal|"Re-read all available scripts"
 argument_list|,

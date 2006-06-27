@@ -210,7 +210,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ea9f470103
+DECL|enum|__anon2a4e20390103
 block|{
 DECL|enumerator|CML_KEEP_VALUES
 name|CML_KEEP_VALUES
@@ -339,7 +339,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ea9f470203
+DECL|enum|__anon2a4e20390203
 block|{
 DECL|enumerator|COMP_NONE
 name|COMP_NONE
@@ -484,7 +484,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ea9f470303
+DECL|enum|__anon2a4e20390303
 block|{
 DECL|enumerator|STANDARD
 name|STANDARD
@@ -589,7 +589,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ea9f470403
+DECL|enum|__anon2a4e20390403
 block|{
 DECL|enumerator|CML_INITIAL_RANDOM_INDEPENDENT
 name|CML_INITIAL_RANDOM_INDEPENDENT
@@ -687,7 +687,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ea9f470508
+DECL|struct|__anon2a4e20390508
 block|{
 DECL|member|function
 name|gint
@@ -760,7 +760,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ea9f470608
+DECL|struct|__anon2a4e20390608
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -1573,7 +1573,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ea9f470708
+DECL|struct|__anon2a4e20390708
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -1797,7 +1797,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"ru-_mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -1821,7 +1821,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"parameter_file_name"
+literal|"parameter-filename"
 block|,
 literal|"The name of parameter file. CML_explorer makes an image with its settings."
 block|}

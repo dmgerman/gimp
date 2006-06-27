@@ -680,7 +680,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288934350108
+DECL|struct|__anon2b8a64280108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -734,7 +734,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288934350208
+DECL|struct|__anon2b8a64280208
 block|{
 DECL|member|y
 name|gint32
@@ -2074,7 +2074,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -2122,7 +2122,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"work_on_copy"
+literal|"work-on-copy"
 block|,
 literal|"{ TRUE, FALSE } TRUE: copy the drawable and bend the copy"
 block|}
@@ -2130,7 +2130,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"curve_type"
+literal|"curve-type"
 block|,
 literal|" { 0, 1 } 0 == smooth (use 17 points), 1 == freehand (use 256 val_y) "
 block|}
@@ -2138,7 +2138,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"argc_upper_point_x"
+literal|"argc-upper-point-x"
 block|,
 literal|"{2<= argc<= 17} "
 block|}
@@ -2146,7 +2146,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOATARRAY
 block|,
-literal|"upper_point_x"
+literal|"upper-point-x"
 block|,
 literal|"array of 17 x point_koords { 0.0<= x<= 1.0 or -1 for unused point }"
 block|}
@@ -2154,7 +2154,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"argc_upper_point_y"
+literal|"argc-upper-point-y"
 block|,
 literal|"{2<= argc<= 17} "
 block|}
@@ -2162,7 +2162,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOATARRAY
 block|,
-literal|"upper_point_y"
+literal|"upper-point-y"
 block|,
 literal|"array of 17 y point_koords { 0.0<= y<= 1.0 or -1 for unused point }"
 block|}
@@ -2170,7 +2170,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"argc_lower_point_x"
+literal|"argc-lower_point-x"
 block|,
 literal|"{2<= argc<= 17} "
 block|}
@@ -2178,7 +2178,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOATARRAY
 block|,
-literal|"lower_point_x"
+literal|"lower-point-x"
 block|,
 literal|"array of 17 x point_koords { 0.0<= x<= 1.0 or -1 for unused point }"
 block|}
@@ -2186,7 +2186,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"argc_lower_point_y"
+literal|"argc-lower-point-y"
 block|,
 literal|"{2<= argc<= 17} "
 block|}
@@ -2202,7 +2202,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"argc_upper_val_y"
+literal|"argc-upper-val-y"
 block|,
 literal|"{ 256 } "
 block|}
@@ -2210,7 +2210,7 @@ block|,
 block|{
 name|GIMP_PDB_INT8ARRAY
 block|,
-literal|"upper_val_y"
+literal|"upper-val-y"
 block|,
 literal|"array of 256 y freehand koord { 0<= y<= 255 }"
 block|}
@@ -2218,7 +2218,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"argc_lower_val_y"
+literal|"argc-lower-val-y"
 block|,
 literal|"{ 256 } "
 block|}
@@ -2226,7 +2226,7 @@ block|,
 block|{
 name|GIMP_PDB_INT8ARRAY
 block|,
-literal|"lower_val_y"
+literal|"lower-val-y"
 block|,
 literal|"array of 256 y freehand koord { 0<= y<= 255 }"
 block|}
@@ -2242,7 +2242,7 @@ block|{
 block|{
 name|GIMP_PDB_LAYER
 block|,
-literal|"bent_layer"
+literal|"bent-layer"
 block|,
 literal|"the handled layer"
 block|}
@@ -2258,7 +2258,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"non-interactive"
 block|}
@@ -2266,7 +2266,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"total_steps"
+literal|"total-steps"
 block|,
 literal|"total number of steps (# of layers-1 to apply the related plug-in)"
 block|}
@@ -2274,7 +2274,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"current_step"
+literal|"current-step"
 block|,
 literal|"current (for linear iterations this is the layerstack position, otherwise some value inbetween)"
 block|}
@@ -2282,7 +2282,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"len_struct"
+literal|"len-struct"
 block|,
 literal|"length of stored data structure with id is equal to the plug_in  proc_name"
 block|}

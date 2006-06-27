@@ -343,7 +343,7 @@ comment|/* Data structure holding data between runs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b9e2f370108
+DECL|struct|__anon27d65f070108
 typedef|typedef
 struct|struct
 block|{
@@ -390,7 +390,7 @@ comment|/* The dialog information */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b9e2f370208
+DECL|struct|__anon27d65f070208
 typedef|typedef
 struct|struct
 block|{
@@ -3368,7 +3368,7 @@ DECL|macro|IN_ARGS
 define|#
 directive|define
 name|IN_ARGS
-value|{ GIMP_PDB_INT32,    "run_mode",  "Interactive, non-interactive" },\                 { GIMP_PDB_INT32,    "root",      "Root window { TRUE, FALSE }" },\                 { GIMP_PDB_INT32,    "decorations", \ 									"Include Window Decorations { TRUE, FALSE }" }
+value|{ GIMP_PDB_INT32,    "run-mode",  "Interactive, non-interactive" },\                 { GIMP_PDB_INT32,    "root",      "Root window { TRUE, FALSE }" },\                 { GIMP_PDB_INT32,    "decorations", \ 									"Include Window Decorations { TRUE, FALSE }" }
 end_define
 
 begin_define

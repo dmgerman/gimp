@@ -154,7 +154,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b191ce00108
+DECL|struct|__anon2b5ffdee0108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -201,7 +201,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b191ce00208
+DECL|struct|__anon2b5ffdee0208
 block|{
 DECL|member|run
 name|gboolean
@@ -589,7 +589,7 @@ define|#
 directive|define
 name|COMMON_SAVE_ARGS
 define|\
-value|{ GIMP_PDB_INT32,    "run_mode",     "Interactive, non-interactive" }, \     { GIMP_PDB_IMAGE,    "image",        "Input image"                  }, \     { GIMP_PDB_DRAWABLE, "drawable",     "Drawable to save"             }, \     { GIMP_PDB_STRING,   "filename",     "The name of the file to save the image in"}, \     { GIMP_PDB_STRING,   "raw_filename", "The name of the file to save the image in"}
+value|{ GIMP_PDB_INT32,    "run-mode",     "Interactive, non-interactive" }, \     { GIMP_PDB_IMAGE,    "image",        "Input image"                  }, \     { GIMP_PDB_DRAWABLE, "drawable",     "Drawable to save"             }, \     { GIMP_PDB_STRING,   "filename",     "The name of the file to save the image in"}, \     { GIMP_PDB_STRING,   "raw-filename", "The name of the file to save the image in"}
 DECL|macro|OLD_CONFIG_ARGS
 define|#
 directive|define

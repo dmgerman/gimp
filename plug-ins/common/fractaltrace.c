@@ -184,7 +184,7 @@ name|MAIN
 argument_list|()
 comment|/******************************************************************************/
 expr|enum
-DECL|enum|__anon274ff3080103
+DECL|enum|__anon2b454b1a0103
 block|{
 DECL|enumerator|OUTSIDE_TYPE_WRAP
 name|OUTSIDE_TYPE_WRAP
@@ -204,7 +204,7 @@ end_expr_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274ff3080208
+DECL|struct|__anon2b454b1a0208
 block|{
 DECL|member|x1
 name|gdouble
@@ -285,7 +285,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"interactive / non-interactive"
 block|}
@@ -349,7 +349,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"outside_type"
+literal|"outside-type"
 block|,
 literal|"outside type"
 literal|"(0=WRAP/1=TRANS/2=BLACK/3=WHITE)"
@@ -411,7 +411,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274ff3080308
+DECL|struct|__anon2b454b1a0308
 block|{
 DECL|member|x1
 name|gint
@@ -454,7 +454,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274ff3080408
+DECL|struct|__anon2b454b1a0408
 block|{
 DECL|member|width
 name|gint
@@ -1009,7 +1009,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274ff3080508
+DECL|struct|__anon2b454b1a0508
 block|{
 DECL|member|r
 name|guchar
@@ -2887,7 +2887,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274ff3080608
+DECL|struct|__anon2b454b1a0608
 block|{
 DECL|member|preview
 name|GtkWidget

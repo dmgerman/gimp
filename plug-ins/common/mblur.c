@@ -58,7 +58,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a4182f10103
+DECL|enum|__anon29fc58d20103
 block|{
 DECL|enumerator|MBLUR_LINEAR
 name|MBLUR_LINEAR
@@ -82,7 +82,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4182f10208
+DECL|struct|__anon29fc58d20208
 block|{
 DECL|member|mblur_type
 name|gint32
@@ -439,7 +439,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -487,7 +487,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"center_x"
+literal|"center-x"
 block|,
 literal|"Center X (optional)"
 block|}
@@ -495,7 +495,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"center_y"
+literal|"center-y"
 block|,
 literal|"Center Y (optional)"
 block|}
@@ -503,7 +503,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"blur_outward"
+literal|"blur-outward"
 block|,
 literal|"For radial, 1 for outward, 0 for inward (optional)"
 block|}

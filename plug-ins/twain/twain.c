@@ -419,7 +419,7 @@ comment|/* Currently unused... Eventually may be used  * to track dialog data.  
 end_comment
 
 begin_typedef
-DECL|struct|__anon2af6552f0108
+DECL|struct|__anon2c3096c10108
 typedef|typedef
 struct|struct
 block|{
@@ -890,7 +890,7 @@ DECL|macro|IN_ARGS
 define|#
 directive|define
 name|IN_ARGS
-value|{ GIMP_PDB_INT32, "run_mode", "Interactive, non-interactive" }
+value|{ GIMP_PDB_INT32, "run-mode", "Interactive, non-interactive" }
 end_define
 
 begin_define
@@ -907,7 +907,7 @@ define|#
 directive|define
 name|OUT_ARGS
 define|\
-value|{ GIMP_PDB_INT32, "image_count", "Number of acquired images" }, \ 	{ GIMP_PDB_INT32ARRAY, "image_ids", "Array of acquired image identifiers" }
+value|{ GIMP_PDB_INT32, "image-count", "Number of acquired images" }, \ 	{ GIMP_PDB_INT32ARRAY, "image-ids", "Array of acquired image identifiers" }
 end_define
 
 begin_comment
@@ -1411,7 +1411,7 @@ comment|/* Data used to carry data between each of  * the callback function call
 end_comment
 
 begin_typedef
-DECL|struct|__anon2af6552f0208
+DECL|struct|__anon2c3096c10208
 typedef|typedef
 struct|struct
 block|{

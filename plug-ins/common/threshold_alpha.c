@@ -153,7 +153,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0342620108
+DECL|struct|__anon27a0ccde0108
 block|{
 DECL|member|threshold
 name|gint
@@ -202,7 +202,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}

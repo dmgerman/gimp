@@ -250,6 +250,8 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|load_args
+specifier|static
+specifier|const
 name|GimpParamDef
 name|load_args
 index|[]
@@ -258,7 +260,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -274,7 +276,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"raw_filename"
+literal|"raw-filename"
 block|,
 literal|"The name entered"
 block|}
@@ -282,7 +284,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"from_frame"
+literal|"from-frame"
 block|,
 literal|"Load beginning from this frame"
 block|}
@@ -290,16 +292,18 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"to_frame"
+literal|"to-frame"
 block|,
 literal|"End loading with this frame"
 block|}
-block|, }
+block|}
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|load_return_vals
+specifier|static
+specifier|const
 name|GimpParamDef
 name|load_return_vals
 index|[]
@@ -318,6 +322,8 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|save_args
+specifier|static
+specifier|const
 name|GimpParamDef
 name|save_args
 index|[]
@@ -326,7 +332,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
@@ -358,7 +364,7 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"raw_filename"
+literal|"raw-filename"
 block|,
 literal|"The name entered"
 block|}
@@ -366,7 +372,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"from_frame"
+literal|"from-frame"
 block|,
 literal|"Save beginning from this frame"
 block|}
@@ -374,7 +380,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"to_frame"
+literal|"to-frame"
 block|,
 literal|"End saving with this frame"
 block|}
@@ -384,6 +390,8 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|info_args
+specifier|static
+specifier|const
 name|GimpParamDef
 name|info_args
 index|[]
@@ -402,6 +410,8 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|info_return_vals
+specifier|static
+specifier|const
 name|GimpParamDef
 name|info_return_vals
 index|[]
@@ -579,7 +589,7 @@ name|gimp_install_procedure
 argument_list|(
 name|INFO_PROC
 argument_list|,
-literal|"Get info about a Fli movie"
+literal|"Get information about a Fli movie"
 argument_list|,
 literal|"This is a experimantal plug-in to handle FLI movies"
 argument_list|,

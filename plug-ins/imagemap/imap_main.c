@@ -211,6 +211,14 @@ parameter_list|)
 value|((x) / _zoom_factor)
 end_define
 
+begin_define
+DECL|macro|PLUG_IN_PROC
+define|#
+directive|define
+name|PLUG_IN_PROC
+value|"plug-in-imagemap"
+end_define
+
 begin_comment
 comment|/* Global variables */
 end_comment
@@ -521,7 +529,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"run_mode"
+literal|"run-mode"
 block|,
 literal|"Interactive"
 block|}
@@ -559,7 +567,7 @@ literal|0
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_imagemap"
+name|PLUG_IN_PROC
 argument_list|,
 name|N_
 argument_list|(
@@ -597,7 +605,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_imagemap"
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Web"
 argument_list|)
