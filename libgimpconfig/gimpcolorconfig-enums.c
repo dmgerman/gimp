@@ -267,7 +267,7 @@ name|GIMP_COLOR_RENDERING_INTENT_SATURATION
 block|,
 name|N_
 argument_list|(
-literal|"Saturation"
+literal|"intent|Saturation"
 argument_list|)
 block|,
 name|NULL

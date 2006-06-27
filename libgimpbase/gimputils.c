@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<stdio.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<glib-object.h>
 end_include
 
@@ -1128,6 +1134,7 @@ if|if
 condition|(
 name|value_desc
 condition|)
+block|{
 operator|*
 name|value_desc
 operator|=
@@ -1140,6 +1147,12 @@ operator|->
 name|value_desc
 operator|)
 condition|?
+name|g_strip_context
+argument_list|(
+name|enum_desc
+operator|->
+name|value_desc
+argument_list|,
 name|dgettext
 argument_list|(
 name|gimp_type_get_translation_domain
@@ -1151,10 +1164,12 @@ name|enum_desc
 operator|->
 name|value_desc
 argument_list|)
+argument_list|)
 else|:
 name|NULL
 operator|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|value_help
@@ -1255,6 +1270,12 @@ operator|->
 name|value_desc
 condition|)
 return|return
+name|g_strip_context
+argument_list|(
+name|enum_desc
+operator|->
+name|value_desc
+argument_list|,
 name|dgettext
 argument_list|(
 name|gimp_type_get_translation_domain
@@ -1265,6 +1286,7 @@ argument_list|,
 name|enum_desc
 operator|->
 name|value_desc
+argument_list|)
 argument_list|)
 return|;
 return|return

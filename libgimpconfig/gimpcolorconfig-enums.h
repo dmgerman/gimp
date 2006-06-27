@@ -37,7 +37,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon292339f10103
+DECL|enum|__anon2c4c8b980103
 block|{
 DECL|enumerator|GIMP_COLOR_MANAGEMENT_OFF
 name|GIMP_COLOR_MANAGEMENT_OFF
@@ -78,7 +78,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon292339f10203
+DECL|enum|__anon2c4c8b980203
 block|{
 DECL|enumerator|GIMP_COLOR_RENDERING_INTENT_PERCEPTUAL
 name|GIMP_COLOR_RENDERING_INTENT_PERCEPTUAL
@@ -91,7 +91,7 @@ comment|/*< desc="Relative colorimetric">*/
 DECL|enumerator|GIMP_COLOR_RENDERING_INTENT_SATURATION
 name|GIMP_COLOR_RENDERING_INTENT_SATURATION
 block|,
-comment|/*< desc="Saturation">*/
+comment|/*< desc="intent|Saturation">*/
 DECL|enumerator|GIMP_COLOR_RENDERING_INTENT_ABSOLUTE_COLORIMETRIC
 name|GIMP_COLOR_RENDERING_INTENT_ABSOLUTE_COLORIMETRIC
 comment|/*< desc="Absolute colorimetric">*/
@@ -123,7 +123,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon292339f10303
+DECL|enum|__anon2c4c8b980303
 block|{
 DECL|enumerator|GIMP_COLOR_FILE_OPEN_ASK
 name|GIMP_COLOR_FILE_OPEN_ASK

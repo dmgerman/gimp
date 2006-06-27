@@ -1844,7 +1844,7 @@ name|GIMP_GRADIENT_LINEAR
 block|,
 name|N_
 argument_list|(
-literal|"Linear"
+literal|"gradient|Linear"
 argument_list|)
 block|,
 name|NULL
@@ -2746,7 +2746,7 @@ name|GIMP_INTERPOLATION_LINEAR
 block|,
 name|N_
 argument_list|(
-literal|"Linear"
+literal|"interpolation|Linear"
 argument_list|)
 block|,
 name|NULL
