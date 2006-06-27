@@ -360,9 +360,9 @@ operator|->
 name|image
 argument_list|)
 argument_list|,
-name|_
+name|Q_
 argument_list|(
-literal|"Scale Image"
+literal|"dialog-title|Scale Image"
 argument_list|)
 argument_list|,
 literal|"gimp-image-scale"

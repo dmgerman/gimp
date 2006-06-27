@@ -4813,9 +4813,9 @@ name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_TRANSFORM
 argument_list|,
-name|_
+name|Q_
 argument_list|(
-literal|"Flip"
+literal|"command|Flip"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5111,9 +5111,9 @@ name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_TRANSFORM
 argument_list|,
-name|_
+name|Q_
 argument_list|(
-literal|"Rotate"
+literal|"command|Rotate"
 argument_list|)
 argument_list|)
 expr_stmt|;

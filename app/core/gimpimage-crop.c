@@ -114,7 +114,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a42cebb0103
+DECL|enum|__anon289bfaea0103
 block|{
 DECL|enumerator|AUTO_CROP_NOTHING
 name|AUTO_CROP_NOTHING
@@ -413,9 +413,9 @@ name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_IMAGE_CROP
 argument_list|,
-name|_
+name|Q_
 argument_list|(
-literal|"Crop Image"
+literal|"command|Crop Image"
 argument_list|)
 argument_list|)
 expr_stmt|;

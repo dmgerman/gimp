@@ -416,9 +416,9 @@ literal|0
 argument_list|,
 literal|"gimp-move-tool"
 argument_list|,
-name|_
+name|Q_
 argument_list|(
-literal|"Move"
+literal|"tool|Move"
 argument_list|)
 argument_list|,
 name|_

@@ -978,11 +978,10 @@ operator|->
 name|image
 argument_list|)
 argument_list|,
-name|tool
-operator|->
-name|tool_info
-operator|->
-name|blurb
+name|Q_
+argument_list|(
+literal|"command|Fuzzy Select"
+argument_list|)
 argument_list|,
 name|fuzzy_sel
 operator|->

@@ -136,9 +136,9 @@ name|gimp_channel_push_undo
 argument_list|(
 name|channel
 argument_list|,
-name|_
+name|Q_
 argument_list|(
-literal|"Rectangle Select"
+literal|"command|Rectangle Select"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -332,9 +332,9 @@ name|gimp_channel_push_undo
 argument_list|(
 name|channel
 argument_list|,
-name|_
+name|Q_
 argument_list|(
-literal|"Ellipse Select"
+literal|"command|Ellipse Select"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1747,9 +1747,9 @@ name|gimp_channel_select_channel
 argument_list|(
 name|channel
 argument_list|,
-name|_
+name|Q_
 argument_list|(
-literal|"Fuzzy Select"
+literal|"command|Fuzzy Select"
 argument_list|)
 argument_list|,
 name|add_on
@@ -1922,9 +1922,9 @@ name|gimp_channel_select_channel
 argument_list|(
 name|channel
 argument_list|,
-name|_
+name|Q_
 argument_list|(
-literal|"Select by Color"
+literal|"command|Select by Color"
 argument_list|)
 argument_list|,
 name|add_on

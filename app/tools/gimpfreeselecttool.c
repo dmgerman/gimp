@@ -1251,11 +1251,10 @@ operator|->
 name|image
 argument_list|)
 argument_list|,
-name|tool
-operator|->
-name|tool_info
-operator|->
-name|blurb
+name|Q_
+argument_list|(
+literal|"command|Free Select"
+argument_list|)
 argument_list|,
 name|free_sel
 operator|->

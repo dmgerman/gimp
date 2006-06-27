@@ -1113,9 +1113,9 @@ name|bufPR
 argument_list|,
 name|TRUE
 argument_list|,
-name|_
+name|Q_
 argument_list|(
-literal|"Bucket Fill"
+literal|"command|Bucket Fill"
 argument_list|)
 argument_list|,
 name|opacity
