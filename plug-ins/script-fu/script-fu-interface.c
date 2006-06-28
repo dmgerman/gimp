@@ -108,7 +108,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc1b73d0108
+DECL|struct|__anon29f692b20108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -4174,7 +4174,7 @@ break|break;
 case|case
 name|SF_FONT
 case|:
-name|gimp_font_select_button_set_font_name
+name|gimp_font_select_button_set_font
 argument_list|(
 name|GIMP_FONT_SELECT_BUTTON
 argument_list|(
@@ -4195,7 +4195,7 @@ break|break;
 case|case
 name|SF_PALETTE
 case|:
-name|gimp_palette_select_button_set_palette_name
+name|gimp_palette_select_button_set_palette
 argument_list|(
 name|GIMP_PALETTE_SELECT_BUTTON
 argument_list|(
@@ -4216,7 +4216,7 @@ break|break;
 case|case
 name|SF_PATTERN
 case|:
-name|gimp_pattern_select_button_set_pattern_name
+name|gimp_pattern_select_button_set_pattern
 argument_list|(
 name|GIMP_PATTERN_SELECT_BUTTON
 argument_list|(
@@ -4237,7 +4237,7 @@ break|break;
 case|case
 name|SF_GRADIENT
 case|:
-name|gimp_gradient_select_button_set_gradient_name
+name|gimp_gradient_select_button_set_gradient
 argument_list|(
 name|GIMP_GRADIENT_SELECT_BUTTON
 argument_list|(

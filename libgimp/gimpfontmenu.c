@@ -247,7 +247,7 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_font_select_button_set_font_name
+name|gimp_font_select_button_set_font
 argument_list|(
 name|GIMP_FONT_SELECT_BUTTON
 argument_list|(

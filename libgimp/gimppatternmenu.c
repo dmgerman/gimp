@@ -261,7 +261,7 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_pattern_select_button_set_pattern_name
+name|gimp_pattern_select_button_set_pattern
 argument_list|(
 name|GIMP_PATTERN_SELECT_BUTTON
 argument_list|(

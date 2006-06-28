@@ -134,7 +134,7 @@ function_decl|)
 parameter_list|(
 name|GimpFontSelectButton
 modifier|*
-name|font_button
+name|button
 parameter_list|,
 specifier|const
 name|gchar
@@ -222,7 +222,7 @@ begin_function_decl
 name|G_CONST_RETURN
 name|gchar
 modifier|*
-name|gimp_font_select_button_get_font_name
+name|gimp_font_select_button_get_font
 parameter_list|(
 name|GimpFontSelectButton
 modifier|*
@@ -233,7 +233,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_font_select_button_set_font_name
+name|gimp_font_select_button_set_font
 parameter_list|(
 name|GimpFontSelectButton
 modifier|*

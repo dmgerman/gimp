@@ -134,7 +134,7 @@ function_decl|)
 parameter_list|(
 name|GimpBrushSelectButton
 modifier|*
-name|brush_button
+name|button
 parameter_list|,
 specifier|const
 name|gchar

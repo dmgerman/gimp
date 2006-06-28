@@ -247,7 +247,7 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_palette_select_button_set_palette_name
+name|gimp_palette_select_button_set_palette
 argument_list|(
 name|GIMP_PALETTE_SELECT_BUTTON
 argument_list|(

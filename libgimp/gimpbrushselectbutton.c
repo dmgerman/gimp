@@ -142,7 +142,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b724d6d0103
+DECL|enum|__anon2bd261440103
 block|{
 DECL|enumerator|BRUSH_SET
 name|BRUSH_SET
@@ -155,7 +155,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b724d6d0203
+DECL|enum|__anon2bd261440203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -248,7 +248,7 @@ name|gimp_brush_select_button_clicked
 parameter_list|(
 name|GimpBrushSelectButton
 modifier|*
-name|brush_button
+name|button
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -299,7 +299,7 @@ name|gimp_brush_select_preview_resize
 parameter_list|(
 name|GimpBrushSelectButton
 modifier|*
-name|brush_button
+name|button
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -319,7 +319,7 @@ name|event
 parameter_list|,
 name|GimpBrushSelectButton
 modifier|*
-name|brush_button
+name|button
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -386,7 +386,7 @@ name|gimp_brush_select_button_open_popup
 parameter_list|(
 name|GimpBrushSelectButton
 modifier|*
-name|brush_button
+name|button
 parameter_list|,
 name|gint
 name|x
@@ -404,7 +404,7 @@ name|gimp_brush_select_button_close_popup
 parameter_list|(
 name|GimpBrushSelectButton
 modifier|*
-name|brush_button
+name|button
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -416,7 +416,7 @@ name|gimp_brush_select_drag_data_received
 parameter_list|(
 name|GimpBrushSelectButton
 modifier|*
-name|brush_button
+name|button
 parameter_list|,
 name|GdkDragContext
 modifier|*
@@ -449,7 +449,7 @@ name|gimp_brush_select_button_create_inside
 parameter_list|(
 name|GimpBrushSelectButton
 modifier|*
-name|brush_button
+name|button
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -749,12 +749,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_brush_select_button_init (GimpBrushSelectButton * brush_button)
+DECL|function|gimp_brush_select_button_init (GimpBrushSelectButton * button)
 name|gimp_brush_select_button_init
 parameter_list|(
 name|GimpBrushSelectButton
 modifier|*
-name|brush_button
+name|button
 parameter_list|)
 block|{
 name|GimpBrushSelectButtonPrivate
@@ -781,7 +781,7 @@ name|priv
 operator|=
 name|GIMP_BRUSH_SELECT_BUTTON_GET_PRIVATE
 argument_list|(
-name|brush_button
+name|button
 argument_list|)
 expr_stmt|;
 name|priv
@@ -834,14 +834,14 @@ name|inside
 operator|=
 name|gimp_brush_select_button_create_inside
 argument_list|(
-name|brush_button
+name|button
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
-name|brush_button
+name|button
 argument_list|)
 argument_list|,
 name|priv
@@ -890,13 +890,13 @@ parameter_list|)
 block|{
 name|GtkWidget
 modifier|*
-name|brush_button
+name|button
 decl_stmt|;
 if|if
 condition|(
 name|title
 condition|)
-name|brush_button
+name|button
 operator|=
 name|g_object_new
 argument_list|(
@@ -926,7 +926,7 @@ name|NULL
 argument_list|)
 expr_stmt|;
 else|else
-name|brush_button
+name|button
 operator|=
 name|g_object_new
 argument_list|(
@@ -952,7 +952,7 @@ name|NULL
 argument_list|)
 expr_stmt|;
 return|return
-name|brush_button
+name|button
 return|;
 block|}
 end_function
@@ -965,12 +965,12 @@ begin_function
 name|G_CONST_RETURN
 name|gchar
 modifier|*
-DECL|function|gimp_brush_select_button_get_brush (GimpBrushSelectButton * brush_button,gdouble * opacity,gint * spacing,GimpLayerModeEffects * paint_mode)
+DECL|function|gimp_brush_select_button_get_brush (GimpBrushSelectButton * button,gdouble * opacity,gint * spacing,GimpLayerModeEffects * paint_mode)
 name|gimp_brush_select_button_get_brush
 parameter_list|(
 name|GimpBrushSelectButton
 modifier|*
-name|brush_button
+name|button
 parameter_list|,
 name|gdouble
 modifier|*
@@ -993,51 +993,51 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_BRUSH_SELECT_BUTTON
 argument_list|(
-name|brush_button
+name|button
 argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|opacity
-condition|)
-operator|*
-name|opacity
-operator|=
-name|priv
-operator|->
-name|opacity
-expr_stmt|;
-if|if
-condition|(
-name|spacing
-condition|)
-operator|*
-name|spacing
-operator|=
-name|priv
-operator|->
-name|spacing
-expr_stmt|;
-if|if
-condition|(
-name|paint_mode
-condition|)
-operator|*
-name|paint_mode
-operator|=
-name|priv
-operator|->
-name|paint_mode
-expr_stmt|;
 name|priv
 operator|=
 name|GIMP_BRUSH_SELECT_BUTTON_GET_PRIVATE
 argument_list|(
-name|brush_button
+name|button
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|opacity
+condition|)
+operator|*
+name|opacity
+operator|=
+name|priv
+operator|->
+name|opacity
+expr_stmt|;
+if|if
+condition|(
+name|spacing
+condition|)
+operator|*
+name|spacing
+operator|=
+name|priv
+operator|->
+name|spacing
+expr_stmt|;
+if|if
+condition|(
+name|paint_mode
+condition|)
+operator|*
+name|paint_mode
+operator|=
+name|priv
+operator|->
+name|paint_mode
 expr_stmt|;
 return|return
 name|priv
@@ -1048,17 +1048,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_brush_select_button_set_brush:  * @brush_button: A #GimpBrushSelectButton  * @brush_name: Brush name to set; %NULL means no change.  * @opacity:    Opacity to set. -1.0 means no change.  * @spacing:    Spacing to set. -1 means no change.  * @paint_mode: Paint mode to set.  -1 means no change.  *  * Sets the current brush and other values for the brush select  * button.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_brush_select_button_set_brush:  * @button: A #GimpBrushSelectButton  * @brush_name: Brush name to set; %NULL means no change.  * @opacity:    Opacity to set. -1.0 means no change.  * @spacing:    Spacing to set. -1 means no change.  * @paint_mode: Paint mode to set.  -1 means no change.  *  * Sets the current brush and other values for the brush select  * button.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_brush_select_button_set_brush (GimpBrushSelectButton * brush_button,const gchar * brush_name,gdouble opacity,gint spacing,GimpLayerModeEffects paint_mode)
+DECL|function|gimp_brush_select_button_set_brush (GimpBrushSelectButton * button,const gchar * brush_name,gdouble opacity,gint spacing,GimpLayerModeEffects paint_mode)
 name|gimp_brush_select_button_set_brush
 parameter_list|(
 name|GimpBrushSelectButton
 modifier|*
-name|brush_button
+name|button
 parameter_list|,
 specifier|const
 name|gchar
@@ -1083,7 +1083,7 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_BRUSH_SELECT_BUTTON
 argument_list|(
-name|brush_button
+name|button
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1091,7 +1091,7 @@ name|select_button
 operator|=
 name|GIMP_SELECT_BUTTON
 argument_list|(
-name|brush_button
+name|button
 argument_list|)
 expr_stmt|;
 if|if
@@ -1266,7 +1266,7 @@ name|mask_data
 argument_list|,
 name|FALSE
 argument_list|,
-name|brush_button
+name|button
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -1387,24 +1387,22 @@ parameter_list|)
 block|{
 name|GimpBrushSelectButton
 modifier|*
-name|brush_button
+name|button
+init|=
+name|GIMP_BRUSH_SELECT_BUTTON
+argument_list|(
+name|object
+argument_list|)
 decl_stmt|;
 name|GimpBrushSelectButtonPrivate
 modifier|*
 name|priv
 decl_stmt|;
-name|brush_button
-operator|=
-name|GIMP_BRUSH_SELECT_BUTTON
-argument_list|(
-name|object
-argument_list|)
-expr_stmt|;
 name|priv
 operator|=
 name|GIMP_BRUSH_SELECT_BUTTON_GET_PRIVATE
 argument_list|(
-name|brush_button
+name|button
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -1430,7 +1428,7 @@ name|PROP_BRUSH_NAME
 case|:
 name|gimp_brush_select_button_set_brush
 argument_list|(
-name|brush_button
+name|button
 argument_list|,
 name|g_value_get_string
 argument_list|(
@@ -1526,24 +1524,22 @@ parameter_list|)
 block|{
 name|GimpBrushSelectButton
 modifier|*
-name|brush_button
+name|button
+init|=
+name|GIMP_BRUSH_SELECT_BUTTON
+argument_list|(
+name|object
+argument_list|)
 decl_stmt|;
 name|GimpBrushSelectButtonPrivate
 modifier|*
 name|priv
 decl_stmt|;
-name|brush_button
-operator|=
-name|GIMP_BRUSH_SELECT_BUTTON
-argument_list|(
-name|object
-argument_list|)
-expr_stmt|;
 name|priv
 operator|=
 name|GIMP_BRUSH_SELECT_BUTTON_GET_PRIVATE
 argument_list|(
-name|brush_button
+name|button
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -1671,7 +1667,7 @@ parameter_list|)
 block|{
 name|GimpBrushSelectButton
 modifier|*
-name|brush_button
+name|button
 decl_stmt|;
 name|GimpBrushSelectButtonPrivate
 modifier|*
@@ -1681,7 +1677,7 @@ name|GimpSelectButton
 modifier|*
 name|select_button
 decl_stmt|;
-name|brush_button
+name|button
 operator|=
 name|GIMP_BRUSH_SELECT_BUTTON
 argument_list|(
@@ -1692,14 +1688,14 @@ name|priv
 operator|=
 name|GIMP_BRUSH_SELECT_BUTTON_GET_PRIVATE
 argument_list|(
-name|brush_button
+name|button
 argument_list|)
 expr_stmt|;
 name|select_button
 operator|=
 name|GIMP_SELECT_BUTTON
 argument_list|(
-name|brush_button
+name|button
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -1793,7 +1789,7 @@ name|NULL
 expr_stmt|;
 name|g_signal_emit
 argument_list|(
-name|brush_button
+name|button
 argument_list|,
 name|brush_button_signals
 index|[
@@ -1823,7 +1819,7 @@ name|g_object_notify
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|brush_button
+name|button
 argument_list|)
 argument_list|,
 literal|"brush-name"
@@ -1835,12 +1831,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_brush_select_button_clicked (GimpBrushSelectButton * brush_button)
+DECL|function|gimp_brush_select_button_clicked (GimpBrushSelectButton * button)
 name|gimp_brush_select_button_clicked
 parameter_list|(
 name|GimpBrushSelectButton
 modifier|*
-name|brush_button
+name|button
 parameter_list|)
 block|{
 name|GimpBrushSelectButtonPrivate
@@ -1855,14 +1851,14 @@ name|priv
 operator|=
 name|GIMP_BRUSH_SELECT_BUTTON_GET_PRIVATE
 argument_list|(
-name|brush_button
+name|button
 argument_list|)
 expr_stmt|;
 name|select_button
 operator|=
 name|GIMP_SELECT_BUTTON
 argument_list|(
-name|brush_button
+name|button
 argument_list|)
 expr_stmt|;
 if|if
@@ -1927,7 +1923,7 @@ name|paint_mode
 argument_list|,
 name|gimp_brush_select_button_callback
 argument_list|,
-name|brush_button
+name|button
 argument_list|)
 expr_stmt|;
 block|}
@@ -1937,12 +1933,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_brush_select_preview_resize (GimpBrushSelectButton * brush_button)
+DECL|function|gimp_brush_select_preview_resize (GimpBrushSelectButton * button)
 name|gimp_brush_select_preview_resize
 parameter_list|(
 name|GimpBrushSelectButton
 modifier|*
-name|brush_button
+name|button
 parameter_list|)
 block|{
 name|GimpBrushSelectButtonPrivate
@@ -1953,7 +1949,7 @@ name|priv
 operator|=
 name|GIMP_BRUSH_SELECT_BUTTON_GET_PRIVATE
 argument_list|(
-name|brush_button
+name|button
 argument_list|)
 expr_stmt|;
 if|if
@@ -1995,7 +1991,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_brush_select_preview_events (GtkWidget * widget,GdkEvent * event,GimpBrushSelectButton * brush_button)
+DECL|function|gimp_brush_select_preview_events (GtkWidget * widget,GdkEvent * event,GimpBrushSelectButton * button)
 name|gimp_brush_select_preview_events
 parameter_list|(
 name|GtkWidget
@@ -2008,7 +2004,7 @@ name|event
 parameter_list|,
 name|GimpBrushSelectButton
 modifier|*
-name|brush_button
+name|button
 parameter_list|)
 block|{
 name|GimpBrushSelectButtonPrivate
@@ -2023,7 +2019,7 @@ name|priv
 operator|=
 name|GIMP_BRUSH_SELECT_BUTTON_GET_PRIVATE
 argument_list|(
-name|brush_button
+name|button
 argument_list|)
 expr_stmt|;
 if|if
@@ -2067,7 +2063,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_brush_select_button_open_popup
 argument_list|(
-name|brush_button
+name|button
 argument_list|,
 name|bevent
 operator|->
@@ -2107,7 +2103,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_brush_select_button_close_popup
 argument_list|(
-name|brush_button
+name|button
 argument_list|)
 expr_stmt|;
 block|}
@@ -2425,12 +2421,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_brush_select_button_open_popup (GimpBrushSelectButton * brush_button,gint x,gint y)
+DECL|function|gimp_brush_select_button_open_popup (GimpBrushSelectButton * button,gint x,gint y)
 name|gimp_brush_select_button_open_popup
 parameter_list|(
 name|GimpBrushSelectButton
 modifier|*
-name|brush_button
+name|button
 parameter_list|,
 name|gint
 name|x
@@ -2471,7 +2467,7 @@ name|priv
 operator|=
 name|GIMP_BRUSH_SELECT_BUTTON_GET_PRIVATE
 argument_list|(
-name|brush_button
+name|button
 argument_list|)
 expr_stmt|;
 if|if
@@ -2482,7 +2478,7 @@ name|popup
 condition|)
 name|gimp_brush_select_button_close_popup
 argument_list|(
-name|brush_button
+name|button
 argument_list|)
 expr_stmt|;
 if|if
@@ -2763,12 +2759,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_brush_select_button_close_popup (GimpBrushSelectButton * brush_button)
+DECL|function|gimp_brush_select_button_close_popup (GimpBrushSelectButton * button)
 name|gimp_brush_select_button_close_popup
 parameter_list|(
 name|GimpBrushSelectButton
 modifier|*
-name|brush_button
+name|button
 parameter_list|)
 block|{
 name|GimpBrushSelectButtonPrivate
@@ -2779,7 +2775,7 @@ name|priv
 operator|=
 name|GIMP_BRUSH_SELECT_BUTTON_GET_PRIVATE
 argument_list|(
-name|brush_button
+name|button
 argument_list|)
 expr_stmt|;
 if|if
@@ -2809,12 +2805,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_brush_select_drag_data_received (GimpBrushSelectButton * brush_button,GdkDragContext * context,gint x,gint y,GtkSelectionData * selection,guint info,guint time)
+DECL|function|gimp_brush_select_drag_data_received (GimpBrushSelectButton * button,GdkDragContext * context,gint x,gint y,GtkSelectionData * selection,guint info,guint time)
 name|gimp_brush_select_drag_data_received
 parameter_list|(
 name|GimpBrushSelectButton
 modifier|*
-name|brush_button
+name|button
 parameter_list|,
 name|GdkDragContext
 modifier|*
@@ -2949,7 +2945,7 @@ name|name_offset
 decl_stmt|;
 name|gimp_brush_select_button_set_brush
 argument_list|(
-name|brush_button
+name|button
 argument_list|,
 name|name
 argument_list|,

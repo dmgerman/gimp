@@ -134,7 +134,7 @@ function_decl|)
 parameter_list|(
 name|GimpGradientSelectButton
 modifier|*
-name|gradient_button
+name|button
 parameter_list|,
 specifier|const
 name|gchar
@@ -230,7 +230,7 @@ begin_function_decl
 name|G_CONST_RETURN
 name|gchar
 modifier|*
-name|gimp_gradient_select_button_get_gradient_name
+name|gimp_gradient_select_button_get_gradient
 parameter_list|(
 name|GimpGradientSelectButton
 modifier|*
@@ -241,7 +241,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_gradient_select_button_set_gradient_name
+name|gimp_gradient_select_button_set_gradient
 parameter_list|(
 name|GimpGradientSelectButton
 modifier|*

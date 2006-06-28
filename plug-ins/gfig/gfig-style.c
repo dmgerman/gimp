@@ -2907,7 +2907,7 @@ literal|1
 argument_list|)
 expr_stmt|;
 comment|/* FIXME */
-name|gimp_pattern_select_button_set_pattern_name
+name|gimp_pattern_select_button_set_pattern
 argument_list|(
 name|GIMP_PATTERN_SELECT_BUTTON
 argument_list|(
@@ -2921,7 +2921,7 @@ operator|->
 name|pattern
 argument_list|)
 expr_stmt|;
-name|gimp_gradient_select_button_set_gradient_name
+name|gimp_gradient_select_button_set_gradient
 argument_list|(
 name|GIMP_GRADIENT_SELECT_BUTTON
 argument_list|(

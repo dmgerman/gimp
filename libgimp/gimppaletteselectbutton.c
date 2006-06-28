@@ -103,7 +103,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af538210103
+DECL|enum|__anon2ae127ad0103
 block|{
 DECL|enumerator|PALETTE_SET
 name|PALETTE_SET
@@ -116,7 +116,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af538210203
+DECL|enum|__anon2ae127ad0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -200,7 +200,7 @@ name|gimp_palette_select_button_clicked
 parameter_list|(
 name|GimpPaletteSelectButton
 modifier|*
-name|palette_button
+name|button
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -231,7 +231,7 @@ name|gimp_palette_select_drag_data_received
 parameter_list|(
 name|GimpPaletteSelectButton
 modifier|*
-name|palette_button
+name|button
 parameter_list|,
 name|GdkDragContext
 modifier|*
@@ -471,12 +471,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_palette_select_button_init (GimpPaletteSelectButton * palette_button)
+DECL|function|gimp_palette_select_button_init (GimpPaletteSelectButton * button)
 name|gimp_palette_select_button_init
 parameter_list|(
 name|GimpPaletteSelectButton
 modifier|*
-name|palette_button
+name|button
 parameter_list|)
 block|{
 name|GimpPaletteSelectButtonPrivate
@@ -487,7 +487,7 @@ name|priv
 operator|=
 name|GIMP_PALETTE_SELECT_BUTTON_GET_PRIVATE
 argument_list|(
-name|palette_button
+name|button
 argument_list|)
 expr_stmt|;
 name|priv
@@ -502,14 +502,14 @@ name|inside
 operator|=
 name|gimp_palette_select_button_create_inside
 argument_list|(
-name|palette_button
+name|button
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
-name|palette_button
+name|button
 argument_list|)
 argument_list|,
 name|priv
@@ -543,13 +543,13 @@ parameter_list|)
 block|{
 name|GtkWidget
 modifier|*
-name|palette_button
+name|button
 decl_stmt|;
 if|if
 condition|(
 name|title
 condition|)
-name|palette_button
+name|button
 operator|=
 name|g_object_new
 argument_list|(
@@ -567,7 +567,7 @@ name|NULL
 argument_list|)
 expr_stmt|;
 else|else
-name|palette_button
+name|button
 operator|=
 name|g_object_new
 argument_list|(
@@ -581,25 +581,25 @@ name|NULL
 argument_list|)
 expr_stmt|;
 return|return
-name|palette_button
+name|button
 return|;
 block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_palette_select_button_get_palette_name:  * @palette_button: A #GimpPaletteSelectButton  *  * Retrieves the name of currently selected palette.  *  * Returns: an internal copy of the palette name which must not be freed.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_palette_select_button_get_palette:  * @button: A #GimpPaletteSelectButton  *  * Retrieves the name of currently selected palette.  *  * Returns: an internal copy of the palette name which must not be freed.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
 name|G_CONST_RETURN
 name|gchar
 modifier|*
-DECL|function|gimp_palette_select_button_get_palette_name (GimpPaletteSelectButton * palette_button)
-name|gimp_palette_select_button_get_palette_name
+DECL|function|gimp_palette_select_button_get_palette (GimpPaletteSelectButton * button)
+name|gimp_palette_select_button_get_palette
 parameter_list|(
 name|GimpPaletteSelectButton
 modifier|*
-name|palette_button
+name|button
 parameter_list|)
 block|{
 name|GimpPaletteSelectButtonPrivate
@@ -610,7 +610,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_PALETTE_SELECT_BUTTON
 argument_list|(
-name|palette_button
+name|button
 argument_list|)
 argument_list|,
 name|NULL
@@ -620,7 +620,7 @@ name|priv
 operator|=
 name|GIMP_PALETTE_SELECT_BUTTON_GET_PRIVATE
 argument_list|(
-name|palette_button
+name|button
 argument_list|)
 expr_stmt|;
 return|return
@@ -632,17 +632,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_palette_select_button_set_palette_name:  * @palette_button: A #GimpPaletteSelectButton  * @palette_name: Palette name to set; %NULL means no change.  *  * Sets the current palette for the palette select button.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_palette_select_button_set_palette:  * @button: A #GimpPaletteSelectButton  * @palette_name: Palette name to set; %NULL means no change.  *  * Sets the current palette for the palette select button.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_palette_select_button_set_palette_name (GimpPaletteSelectButton * palette_button,const gchar * palette_name)
-name|gimp_palette_select_button_set_palette_name
+DECL|function|gimp_palette_select_button_set_palette (GimpPaletteSelectButton * button,const gchar * palette_name)
+name|gimp_palette_select_button_set_palette
 parameter_list|(
 name|GimpPaletteSelectButton
 modifier|*
-name|palette_button
+name|button
 parameter_list|,
 specifier|const
 name|gchar
@@ -658,7 +658,7 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_PALETTE_SELECT_BUTTON
 argument_list|(
-name|palette_button
+name|button
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -666,7 +666,7 @@ name|select_button
 operator|=
 name|GIMP_SELECT_BUTTON
 argument_list|(
-name|palette_button
+name|button
 argument_list|)
 expr_stmt|;
 if|if
@@ -691,7 +691,7 @@ name|palette_name
 argument_list|,
 name|FALSE
 argument_list|,
-name|palette_button
+name|button
 argument_list|)
 expr_stmt|;
 block|}
@@ -787,13 +787,13 @@ parameter_list|)
 block|{
 name|GimpPaletteSelectButton
 modifier|*
-name|palette_button
+name|button
 decl_stmt|;
 name|GimpPaletteSelectButtonPrivate
 modifier|*
 name|priv
 decl_stmt|;
-name|palette_button
+name|button
 operator|=
 name|GIMP_PALETTE_SELECT_BUTTON
 argument_list|(
@@ -804,7 +804,7 @@ name|priv
 operator|=
 name|GIMP_PALETTE_SELECT_BUTTON_GET_PRIVATE
 argument_list|(
-name|palette_button
+name|button
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -828,9 +828,9 @@ break|break;
 case|case
 name|PROP_PALETTE_NAME
 case|:
-name|gimp_palette_select_button_set_palette_name
+name|gimp_palette_select_button_set_palette
 argument_list|(
-name|palette_button
+name|button
 argument_list|,
 name|g_value_get_string
 argument_list|(
@@ -878,13 +878,13 @@ parameter_list|)
 block|{
 name|GimpPaletteSelectButton
 modifier|*
-name|palette_button
+name|button
 decl_stmt|;
 name|GimpPaletteSelectButtonPrivate
 modifier|*
 name|priv
 decl_stmt|;
-name|palette_button
+name|button
 operator|=
 name|GIMP_PALETTE_SELECT_BUTTON
 argument_list|(
@@ -895,7 +895,7 @@ name|priv
 operator|=
 name|GIMP_PALETTE_SELECT_BUTTON_GET_PRIVATE
 argument_list|(
-name|palette_button
+name|button
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -964,7 +964,7 @@ parameter_list|)
 block|{
 name|GimpPaletteSelectButton
 modifier|*
-name|palette_button
+name|button
 decl_stmt|;
 name|GimpPaletteSelectButtonPrivate
 modifier|*
@@ -974,7 +974,7 @@ name|GimpSelectButton
 modifier|*
 name|select_button
 decl_stmt|;
-name|palette_button
+name|button
 operator|=
 name|GIMP_PALETTE_SELECT_BUTTON
 argument_list|(
@@ -985,14 +985,14 @@ name|priv
 operator|=
 name|GIMP_PALETTE_SELECT_BUTTON_GET_PRIVATE
 argument_list|(
-name|palette_button
+name|button
 argument_list|)
 expr_stmt|;
 name|select_button
 operator|=
 name|GIMP_SELECT_BUTTON
 argument_list|(
-name|palette_button
+name|button
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -1035,7 +1035,7 @@ name|NULL
 expr_stmt|;
 name|g_signal_emit
 argument_list|(
-name|palette_button
+name|button
 argument_list|,
 name|palette_button_signals
 index|[
@@ -1053,7 +1053,7 @@ name|g_object_notify
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|palette_button
+name|button
 argument_list|)
 argument_list|,
 literal|"palette-name"
@@ -1065,12 +1065,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_palette_select_button_clicked (GimpPaletteSelectButton * palette_button)
+DECL|function|gimp_palette_select_button_clicked (GimpPaletteSelectButton * button)
 name|gimp_palette_select_button_clicked
 parameter_list|(
 name|GimpPaletteSelectButton
 modifier|*
-name|palette_button
+name|button
 parameter_list|)
 block|{
 name|GimpPaletteSelectButtonPrivate
@@ -1085,14 +1085,14 @@ name|priv
 operator|=
 name|GIMP_PALETTE_SELECT_BUTTON_GET_PRIVATE
 argument_list|(
-name|palette_button
+name|button
 argument_list|)
 expr_stmt|;
 name|select_button
 operator|=
 name|GIMP_SELECT_BUTTON
 argument_list|(
-name|palette_button
+name|button
 argument_list|)
 expr_stmt|;
 if|if
@@ -1133,7 +1133,7 @@ name|palette_name
 argument_list|,
 name|gimp_palette_select_button_callback
 argument_list|,
-name|palette_button
+name|button
 argument_list|)
 expr_stmt|;
 block|}
@@ -1143,12 +1143,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_palette_select_drag_data_received (GimpPaletteSelectButton * palette_button,GdkDragContext * context,gint x,gint y,GtkSelectionData * selection,guint info,guint time)
+DECL|function|gimp_palette_select_drag_data_received (GimpPaletteSelectButton * button,GdkDragContext * context,gint x,gint y,GtkSelectionData * selection,guint info,guint time)
 name|gimp_palette_select_drag_data_received
 parameter_list|(
 name|GimpPaletteSelectButton
 modifier|*
-name|palette_button
+name|button
 parameter_list|,
 name|GdkDragContext
 modifier|*
@@ -1281,9 +1281,9 @@ name|str
 operator|+
 name|name_offset
 decl_stmt|;
-name|gimp_palette_select_button_set_palette_name
+name|gimp_palette_select_button_set_palette
 argument_list|(
-name|palette_button
+name|button
 argument_list|,
 name|name
 argument_list|)

@@ -104,47 +104,47 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_select_button_close_popup:  * @select_button: A #GimpSelectButton  *  * Closes the popup window associated with @select_button.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_select_button_close_popup:  * @button: A #GimpSelectButton  *  * Closes the popup window associated with @button.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_select_button_close_popup (GimpSelectButton * select_button)
+DECL|function|gimp_select_button_close_popup (GimpSelectButton * button)
 name|gimp_select_button_close_popup
 parameter_list|(
 name|GimpSelectButton
 modifier|*
-name|select_button
+name|button
 parameter_list|)
 block|{
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_SELECT_BUTTON
 argument_list|(
-name|select_button
+name|button
 argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|select_button
+name|button
 operator|->
 name|temp_callback
 condition|)
 block|{
 name|GIMP_SELECT_BUTTON_GET_CLASS
 argument_list|(
-name|select_button
+name|button
 argument_list|)
 operator|->
 name|select_destroy
 argument_list|(
-name|select_button
+name|button
 operator|->
 name|temp_callback
 argument_list|)
 expr_stmt|;
-name|select_button
+name|button
 operator|->
 name|temp_callback
 operator|=
@@ -169,18 +169,12 @@ modifier|*
 name|object
 parameter_list|)
 block|{
-name|GimpSelectButton
-modifier|*
-name|select_button
-init|=
+name|gimp_select_button_close_popup
+argument_list|(
 name|GIMP_SELECT_BUTTON
 argument_list|(
 name|object
 argument_list|)
-decl_stmt|;
-name|gimp_select_button_close_popup
-argument_list|(
-name|select_button
 argument_list|)
 expr_stmt|;
 name|GTK_OBJECT_CLASS

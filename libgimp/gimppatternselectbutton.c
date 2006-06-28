@@ -134,7 +134,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon273d073f0103
+DECL|enum|__anon2c5b0b4b0103
 block|{
 DECL|enumerator|PATTERN_SET
 name|PATTERN_SET
@@ -147,7 +147,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon273d073f0203
+DECL|enum|__anon2c5b0b4b0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -231,7 +231,7 @@ name|gimp_pattern_select_button_clicked
 parameter_list|(
 name|GimpPatternSelectButton
 modifier|*
-name|pattern_button
+name|button
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -276,7 +276,7 @@ name|gimp_pattern_select_preview_resize
 parameter_list|(
 name|GimpPatternSelectButton
 modifier|*
-name|pattern_button
+name|button
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -296,7 +296,7 @@ name|event
 parameter_list|,
 name|GimpPatternSelectButton
 modifier|*
-name|pattern_button
+name|button
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -334,7 +334,7 @@ name|gimp_pattern_select_button_open_popup
 parameter_list|(
 name|GimpPatternSelectButton
 modifier|*
-name|pattern_button
+name|button
 parameter_list|,
 name|gint
 name|x
@@ -352,7 +352,7 @@ name|gimp_pattern_select_button_close_popup
 parameter_list|(
 name|GimpPatternSelectButton
 modifier|*
-name|pattern_button
+name|button
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -364,7 +364,7 @@ name|gimp_pattern_select_drag_data_received
 parameter_list|(
 name|GimpPatternSelectButton
 modifier|*
-name|pattern_button
+name|button
 parameter_list|,
 name|GdkDragContext
 modifier|*
@@ -397,7 +397,7 @@ name|gimp_pattern_select_button_create_inside
 parameter_list|(
 name|GimpPatternSelectButton
 modifier|*
-name|pattern_button
+name|button
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -612,12 +612,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_pattern_select_button_init (GimpPatternSelectButton * pattern_button)
+DECL|function|gimp_pattern_select_button_init (GimpPatternSelectButton * button)
 name|gimp_pattern_select_button_init
 parameter_list|(
 name|GimpPatternSelectButton
 modifier|*
-name|pattern_button
+name|button
 parameter_list|)
 block|{
 name|GimpPatternSelectButtonPrivate
@@ -631,7 +631,7 @@ name|priv
 operator|=
 name|GIMP_PATTERN_SELECT_BUTTON_GET_PRIVATE
 argument_list|(
-name|pattern_button
+name|button
 argument_list|)
 expr_stmt|;
 name|priv
@@ -677,14 +677,14 @@ name|inside
 operator|=
 name|gimp_pattern_select_button_create_inside
 argument_list|(
-name|pattern_button
+name|button
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
-name|pattern_button
+name|button
 argument_list|)
 argument_list|,
 name|priv
@@ -724,13 +724,13 @@ parameter_list|)
 block|{
 name|GtkWidget
 modifier|*
-name|pattern_button
+name|button
 decl_stmt|;
 if|if
 condition|(
 name|title
 condition|)
-name|pattern_button
+name|button
 operator|=
 name|g_object_new
 argument_list|(
@@ -748,7 +748,7 @@ name|NULL
 argument_list|)
 expr_stmt|;
 else|else
-name|pattern_button
+name|button
 operator|=
 name|g_object_new
 argument_list|(
@@ -762,25 +762,25 @@ name|NULL
 argument_list|)
 expr_stmt|;
 return|return
-name|pattern_button
+name|button
 return|;
 block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_pattern_select_button_get_pattern_name:  * @button: A #GimpPatternSelectButton  *  * Retrieves the name of currently selected pattern.  *  * Returns: an internal copy of the pattern name which must not be freed.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_pattern_select_button_get_pattern:  * @button: A #GimpPatternSelectButton  *  * Retrieves the name of currently selected pattern.  *  * Returns: an internal copy of the pattern name which must not be freed.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
 name|G_CONST_RETURN
 name|gchar
 modifier|*
-DECL|function|gimp_pattern_select_button_get_pattern_name (GimpPatternSelectButton * pattern_button)
-name|gimp_pattern_select_button_get_pattern_name
+DECL|function|gimp_pattern_select_button_get_pattern (GimpPatternSelectButton * button)
+name|gimp_pattern_select_button_get_pattern
 parameter_list|(
 name|GimpPatternSelectButton
 modifier|*
-name|pattern_button
+name|button
 parameter_list|)
 block|{
 name|GimpPatternSelectButtonPrivate
@@ -791,7 +791,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_PATTERN_SELECT_BUTTON
 argument_list|(
-name|pattern_button
+name|button
 argument_list|)
 argument_list|,
 name|NULL
@@ -801,7 +801,7 @@ name|priv
 operator|=
 name|GIMP_PATTERN_SELECT_BUTTON_GET_PRIVATE
 argument_list|(
-name|pattern_button
+name|button
 argument_list|)
 expr_stmt|;
 return|return
@@ -813,17 +813,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_pattern_select_button_set_pattern_name:  * @pattern_button: A #GimpPatternSelectButton  * @pattern_name: Pattern name to set; %NULL means no change.  *  * Sets the current pattern for the pattern select button.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_pattern_select_button_set_pattern_name:  * @button: A #GimpPatternSelectButton  * @pattern_name: Pattern name to set; %NULL means no change.  *  * Sets the current pattern for the pattern select button.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_pattern_select_button_set_pattern_name (GimpPatternSelectButton * pattern_button,const gchar * pattern_name)
-name|gimp_pattern_select_button_set_pattern_name
+DECL|function|gimp_pattern_select_button_set_pattern (GimpPatternSelectButton * button,const gchar * pattern_name)
+name|gimp_pattern_select_button_set_pattern
 parameter_list|(
 name|GimpPatternSelectButton
 modifier|*
-name|pattern_button
+name|button
 parameter_list|,
 specifier|const
 name|gchar
@@ -839,7 +839,7 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_PATTERN_SELECT_BUTTON
 argument_list|(
-name|pattern_button
+name|button
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -847,7 +847,7 @@ name|select_button
 operator|=
 name|GIMP_SELECT_BUTTON
 argument_list|(
-name|pattern_button
+name|button
 argument_list|)
 expr_stmt|;
 if|if
@@ -946,7 +946,7 @@ name|mask_data
 argument_list|,
 name|FALSE
 argument_list|,
-name|pattern_button
+name|button
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -1067,13 +1067,13 @@ parameter_list|)
 block|{
 name|GimpPatternSelectButton
 modifier|*
-name|pattern_button
+name|button
 decl_stmt|;
 name|GimpPatternSelectButtonPrivate
 modifier|*
 name|priv
 decl_stmt|;
-name|pattern_button
+name|button
 operator|=
 name|GIMP_PATTERN_SELECT_BUTTON
 argument_list|(
@@ -1084,7 +1084,7 @@ name|priv
 operator|=
 name|GIMP_PATTERN_SELECT_BUTTON_GET_PRIVATE
 argument_list|(
-name|pattern_button
+name|button
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -1108,9 +1108,9 @@ break|break;
 case|case
 name|PROP_PATTERN_NAME
 case|:
-name|gimp_pattern_select_button_set_pattern_name
+name|gimp_pattern_select_button_set_pattern
 argument_list|(
-name|pattern_button
+name|button
 argument_list|,
 name|g_value_get_string
 argument_list|(
@@ -1158,13 +1158,13 @@ parameter_list|)
 block|{
 name|GimpPatternSelectButton
 modifier|*
-name|pattern_button
+name|button
 decl_stmt|;
 name|GimpPatternSelectButtonPrivate
 modifier|*
 name|priv
 decl_stmt|;
-name|pattern_button
+name|button
 operator|=
 name|GIMP_PATTERN_SELECT_BUTTON
 argument_list|(
@@ -1175,7 +1175,7 @@ name|priv
 operator|=
 name|GIMP_PATTERN_SELECT_BUTTON_GET_PRIVATE
 argument_list|(
-name|pattern_button
+name|button
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -1258,7 +1258,7 @@ parameter_list|)
 block|{
 name|GimpPatternSelectButton
 modifier|*
-name|pattern_button
+name|button
 decl_stmt|;
 name|GimpPatternSelectButtonPrivate
 modifier|*
@@ -1268,7 +1268,7 @@ name|GimpSelectButton
 modifier|*
 name|select_button
 decl_stmt|;
-name|pattern_button
+name|button
 operator|=
 name|GIMP_PATTERN_SELECT_BUTTON
 argument_list|(
@@ -1279,14 +1279,14 @@ name|priv
 operator|=
 name|GIMP_PATTERN_SELECT_BUTTON_GET_PRIVATE
 argument_list|(
-name|pattern_button
+name|button
 argument_list|)
 expr_stmt|;
 name|select_button
 operator|=
 name|GIMP_SELECT_BUTTON
 argument_list|(
-name|pattern_button
+name|button
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -1372,7 +1372,7 @@ name|NULL
 expr_stmt|;
 name|g_signal_emit
 argument_list|(
-name|pattern_button
+name|button
 argument_list|,
 name|pattern_button_signals
 index|[
@@ -1396,7 +1396,7 @@ name|g_object_notify
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|pattern_button
+name|button
 argument_list|)
 argument_list|,
 literal|"pattern-name"
@@ -1408,12 +1408,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_pattern_select_button_clicked (GimpPatternSelectButton * pattern_button)
+DECL|function|gimp_pattern_select_button_clicked (GimpPatternSelectButton * button)
 name|gimp_pattern_select_button_clicked
 parameter_list|(
 name|GimpPatternSelectButton
 modifier|*
-name|pattern_button
+name|button
 parameter_list|)
 block|{
 name|GimpPatternSelectButtonPrivate
@@ -1428,14 +1428,14 @@ name|priv
 operator|=
 name|GIMP_PATTERN_SELECT_BUTTON_GET_PRIVATE
 argument_list|(
-name|pattern_button
+name|button
 argument_list|)
 expr_stmt|;
 name|select_button
 operator|=
 name|GIMP_SELECT_BUTTON
 argument_list|(
-name|pattern_button
+name|button
 argument_list|)
 expr_stmt|;
 if|if
@@ -1476,7 +1476,7 @@ name|pattern_name
 argument_list|,
 name|gimp_pattern_select_button_callback
 argument_list|,
-name|pattern_button
+name|button
 argument_list|)
 expr_stmt|;
 block|}
@@ -1486,12 +1486,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_pattern_select_preview_resize (GimpPatternSelectButton * pattern_button)
+DECL|function|gimp_pattern_select_preview_resize (GimpPatternSelectButton * button)
 name|gimp_pattern_select_preview_resize
 parameter_list|(
 name|GimpPatternSelectButton
 modifier|*
-name|pattern_button
+name|button
 parameter_list|)
 block|{
 name|GimpPatternSelectButtonPrivate
@@ -1502,7 +1502,7 @@ name|priv
 operator|=
 name|GIMP_PATTERN_SELECT_BUTTON_GET_PRIVATE
 argument_list|(
-name|pattern_button
+name|button
 argument_list|)
 expr_stmt|;
 if|if
@@ -1548,7 +1548,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_pattern_select_preview_events (GtkWidget * widget,GdkEvent * event,GimpPatternSelectButton * pattern_button)
+DECL|function|gimp_pattern_select_preview_events (GtkWidget * widget,GdkEvent * event,GimpPatternSelectButton * button)
 name|gimp_pattern_select_preview_events
 parameter_list|(
 name|GtkWidget
@@ -1561,7 +1561,7 @@ name|event
 parameter_list|,
 name|GimpPatternSelectButton
 modifier|*
-name|pattern_button
+name|button
 parameter_list|)
 block|{
 name|GimpPatternSelectButtonPrivate
@@ -1576,7 +1576,7 @@ name|priv
 operator|=
 name|GIMP_PATTERN_SELECT_BUTTON_GET_PRIVATE
 argument_list|(
-name|pattern_button
+name|button
 argument_list|)
 expr_stmt|;
 if|if
@@ -1620,7 +1620,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_pattern_select_button_open_popup
 argument_list|(
-name|pattern_button
+name|button
 argument_list|,
 name|bevent
 operator|->
@@ -1660,7 +1660,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_pattern_select_button_close_popup
 argument_list|(
-name|pattern_button
+name|button
 argument_list|)
 expr_stmt|;
 block|}
@@ -1773,12 +1773,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_pattern_select_button_open_popup (GimpPatternSelectButton * pattern_button,gint x,gint y)
+DECL|function|gimp_pattern_select_button_open_popup (GimpPatternSelectButton * button,gint x,gint y)
 name|gimp_pattern_select_button_open_popup
 parameter_list|(
 name|GimpPatternSelectButton
 modifier|*
-name|pattern_button
+name|button
 parameter_list|,
 name|gint
 name|x
@@ -1819,7 +1819,7 @@ name|priv
 operator|=
 name|GIMP_PATTERN_SELECT_BUTTON_GET_PRIVATE
 argument_list|(
-name|pattern_button
+name|button
 argument_list|)
 expr_stmt|;
 if|if
@@ -1830,7 +1830,7 @@ name|popup
 condition|)
 name|gimp_pattern_select_button_close_popup
 argument_list|(
-name|pattern_button
+name|button
 argument_list|)
 expr_stmt|;
 if|if
@@ -2104,12 +2104,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_pattern_select_button_close_popup (GimpPatternSelectButton * pattern_button)
+DECL|function|gimp_pattern_select_button_close_popup (GimpPatternSelectButton * button)
 name|gimp_pattern_select_button_close_popup
 parameter_list|(
 name|GimpPatternSelectButton
 modifier|*
-name|pattern_button
+name|button
 parameter_list|)
 block|{
 name|GimpPatternSelectButtonPrivate
@@ -2120,7 +2120,7 @@ name|priv
 operator|=
 name|GIMP_PATTERN_SELECT_BUTTON_GET_PRIVATE
 argument_list|(
-name|pattern_button
+name|button
 argument_list|)
 expr_stmt|;
 if|if
@@ -2150,12 +2150,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_pattern_select_drag_data_received (GimpPatternSelectButton * pattern_button,GdkDragContext * context,gint x,gint y,GtkSelectionData * selection,guint info,guint time)
+DECL|function|gimp_pattern_select_drag_data_received (GimpPatternSelectButton * button,GdkDragContext * context,gint x,gint y,GtkSelectionData * selection,guint info,guint time)
 name|gimp_pattern_select_drag_data_received
 parameter_list|(
 name|GimpPatternSelectButton
 modifier|*
-name|pattern_button
+name|button
 parameter_list|,
 name|GdkDragContext
 modifier|*
@@ -2288,9 +2288,9 @@ name|str
 operator|+
 name|name_offset
 decl_stmt|;
-name|gimp_pattern_select_button_set_pattern_name
+name|gimp_pattern_select_button_set_pattern
 argument_list|(
-name|pattern_button
+name|button
 argument_list|,
 name|name
 argument_list|)

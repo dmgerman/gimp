@@ -134,7 +134,7 @@ function_decl|)
 parameter_list|(
 name|GimpPaletteSelectButton
 modifier|*
-name|palette_button
+name|button
 parameter_list|,
 specifier|const
 name|gchar
@@ -222,7 +222,7 @@ begin_function_decl
 name|G_CONST_RETURN
 name|gchar
 modifier|*
-name|gimp_palette_select_button_get_palette_name
+name|gimp_palette_select_button_get_palette
 parameter_list|(
 name|GimpPaletteSelectButton
 modifier|*
@@ -233,7 +233,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_palette_select_button_set_palette_name
+name|gimp_palette_select_button_set_palette
 parameter_list|(
 name|GimpPaletteSelectButton
 modifier|*

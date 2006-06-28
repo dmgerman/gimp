@@ -137,7 +137,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon27cad36f0103
+DECL|enum|__anon2acbd5790103
 block|{
 DECL|enumerator|GRADIENT_SET
 name|GRADIENT_SET
@@ -150,7 +150,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27cad36f0203
+DECL|enum|__anon2acbd5790203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -234,7 +234,7 @@ name|gimp_gradient_select_button_clicked
 parameter_list|(
 name|GimpGradientSelectButton
 modifier|*
-name|gradient_button
+name|button
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -281,7 +281,7 @@ name|allocation
 parameter_list|,
 name|GimpGradientSelectButton
 modifier|*
-name|gradient_button
+name|button
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -301,7 +301,7 @@ name|event
 parameter_list|,
 name|GimpGradientSelectButton
 modifier|*
-name|gradient_button
+name|button
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -313,7 +313,7 @@ name|gimp_gradient_select_drag_data_received
 parameter_list|(
 name|GimpGradientSelectButton
 modifier|*
-name|gradient_button
+name|button
 parameter_list|,
 name|GdkDragContext
 modifier|*
@@ -346,7 +346,7 @@ name|gimp_gradient_select_button_create_inside
 parameter_list|(
 name|GimpGradientSelectButton
 modifier|*
-name|gradient_button
+name|button
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -557,12 +557,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_gradient_select_button_init (GimpGradientSelectButton * gradient_button)
+DECL|function|gimp_gradient_select_button_init (GimpGradientSelectButton * button)
 name|gimp_gradient_select_button_init
 parameter_list|(
 name|GimpGradientSelectButton
 modifier|*
-name|gradient_button
+name|button
 parameter_list|)
 block|{
 name|GimpGradientSelectButtonPrivate
@@ -573,7 +573,7 @@ name|priv
 operator|=
 name|GIMP_GRADIENT_SELECT_BUTTON_GET_PRIVATE
 argument_list|(
-name|gradient_button
+name|button
 argument_list|)
 expr_stmt|;
 name|priv
@@ -601,14 +601,14 @@ name|inside
 operator|=
 name|gimp_gradient_select_button_create_inside
 argument_list|(
-name|gradient_button
+name|button
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
-name|gradient_button
+name|button
 argument_list|)
 argument_list|,
 name|priv
@@ -642,13 +642,13 @@ parameter_list|)
 block|{
 name|GtkWidget
 modifier|*
-name|gradient_button
+name|button
 decl_stmt|;
 if|if
 condition|(
 name|title
 condition|)
-name|gradient_button
+name|button
 operator|=
 name|g_object_new
 argument_list|(
@@ -666,7 +666,7 @@ name|NULL
 argument_list|)
 expr_stmt|;
 else|else
-name|gradient_button
+name|button
 operator|=
 name|g_object_new
 argument_list|(
@@ -680,25 +680,25 @@ name|NULL
 argument_list|)
 expr_stmt|;
 return|return
-name|gradient_button
+name|button
 return|;
 block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_select_button_get_gradient_name:  * @gradient_button: A #GimpGradientSelectButton  *  * Retrieves the name of currently selected gradient.  *  * Returns: an internal copy of the gradient name which must not be freed.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_gradient_select_button_get_gradient_name:  * @button: A #GimpGradientSelectButton  *  * Retrieves the name of currently selected gradient.  *  * Returns: an internal copy of the gradient name which must not be freed.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
 name|G_CONST_RETURN
 name|gchar
 modifier|*
-DECL|function|gimp_gradient_select_button_get_gradient_name (GimpGradientSelectButton * gradient_button)
-name|gimp_gradient_select_button_get_gradient_name
+DECL|function|gimp_gradient_select_button_get_gradient (GimpGradientSelectButton * button)
+name|gimp_gradient_select_button_get_gradient
 parameter_list|(
 name|GimpGradientSelectButton
 modifier|*
-name|gradient_button
+name|button
 parameter_list|)
 block|{
 name|GimpGradientSelectButtonPrivate
@@ -709,7 +709,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_GRADIENT_SELECT_BUTTON
 argument_list|(
-name|gradient_button
+name|button
 argument_list|)
 argument_list|,
 name|NULL
@@ -719,7 +719,7 @@ name|priv
 operator|=
 name|GIMP_GRADIENT_SELECT_BUTTON_GET_PRIVATE
 argument_list|(
-name|gradient_button
+name|button
 argument_list|)
 expr_stmt|;
 return|return
@@ -731,17 +731,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_select_button_set_gradient_name:  * @gradient_button: A #GimpGradientSelectButton  * @gradient_name: Gradient name to set.  *  * Sets the current gradient for the gradient select button.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_gradient_select_button_set_gradient:  * @button: A #GimpGradientSelectButton  * @gradient_name: Gradient name to set.  *  * Sets the current gradient for the gradient select button.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_gradient_select_button_set_gradient_name (GimpGradientSelectButton * gradient_button,const gchar * gradient_name)
-name|gimp_gradient_select_button_set_gradient_name
+DECL|function|gimp_gradient_select_button_set_gradient (GimpGradientSelectButton * button,const gchar * gradient_name)
+name|gimp_gradient_select_button_set_gradient
 parameter_list|(
 name|GimpGradientSelectButton
 modifier|*
-name|gradient_button
+name|button
 parameter_list|,
 specifier|const
 name|gchar
@@ -761,7 +761,7 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_GRADIENT_SELECT_BUTTON
 argument_list|(
-name|gradient_button
+name|button
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -769,14 +769,14 @@ name|priv
 operator|=
 name|GIMP_GRADIENT_SELECT_BUTTON_GET_PRIVATE
 argument_list|(
-name|gradient_button
+name|button
 argument_list|)
 expr_stmt|;
 name|select_button
 operator|=
 name|GIMP_SELECT_BUTTON
 argument_list|(
-name|gradient_button
+name|button
 argument_list|)
 expr_stmt|;
 if|if
@@ -861,7 +861,7 @@ name|samples
 argument_list|,
 name|FALSE
 argument_list|,
-name|gradient_button
+name|button
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -982,13 +982,13 @@ parameter_list|)
 block|{
 name|GimpGradientSelectButton
 modifier|*
-name|gradient_button
+name|button
 decl_stmt|;
 name|GimpGradientSelectButtonPrivate
 modifier|*
 name|priv
 decl_stmt|;
-name|gradient_button
+name|button
 operator|=
 name|GIMP_GRADIENT_SELECT_BUTTON
 argument_list|(
@@ -999,7 +999,7 @@ name|priv
 operator|=
 name|GIMP_GRADIENT_SELECT_BUTTON_GET_PRIVATE
 argument_list|(
-name|gradient_button
+name|button
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -1023,9 +1023,9 @@ break|break;
 case|case
 name|PROP_GRADIENT_NAME
 case|:
-name|gimp_gradient_select_button_set_gradient_name
+name|gimp_gradient_select_button_set_gradient
 argument_list|(
-name|gradient_button
+name|button
 argument_list|,
 name|g_value_get_string
 argument_list|(
@@ -1073,13 +1073,13 @@ parameter_list|)
 block|{
 name|GimpGradientSelectButton
 modifier|*
-name|gradient_button
+name|button
 decl_stmt|;
 name|GimpGradientSelectButtonPrivate
 modifier|*
 name|priv
 decl_stmt|;
-name|gradient_button
+name|button
 operator|=
 name|GIMP_GRADIENT_SELECT_BUTTON
 argument_list|(
@@ -1090,7 +1090,7 @@ name|priv
 operator|=
 name|GIMP_GRADIENT_SELECT_BUTTON_GET_PRIVATE
 argument_list|(
-name|gradient_button
+name|button
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -1167,7 +1167,7 @@ parameter_list|)
 block|{
 name|GimpGradientSelectButton
 modifier|*
-name|gradient_button
+name|button
 decl_stmt|;
 name|GimpGradientSelectButtonPrivate
 modifier|*
@@ -1177,7 +1177,7 @@ name|GimpSelectButton
 modifier|*
 name|select_button
 decl_stmt|;
-name|gradient_button
+name|button
 operator|=
 name|GIMP_GRADIENT_SELECT_BUTTON
 argument_list|(
@@ -1188,14 +1188,14 @@ name|priv
 operator|=
 name|GIMP_GRADIENT_SELECT_BUTTON_GET_PRIVATE
 argument_list|(
-name|gradient_button
+name|button
 argument_list|)
 expr_stmt|;
 name|select_button
 operator|=
 name|GIMP_SELECT_BUTTON
 argument_list|(
-name|gradient_button
+name|button
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -1262,7 +1262,7 @@ name|NULL
 expr_stmt|;
 name|g_signal_emit
 argument_list|(
-name|gradient_button
+name|button
 argument_list|,
 name|gradient_button_signals
 index|[
@@ -1284,7 +1284,7 @@ name|g_object_notify
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|gradient_button
+name|button
 argument_list|)
 argument_list|,
 literal|"gradient-name"
@@ -1296,12 +1296,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_gradient_select_button_clicked (GimpGradientSelectButton * gradient_button)
+DECL|function|gimp_gradient_select_button_clicked (GimpGradientSelectButton * button)
 name|gimp_gradient_select_button_clicked
 parameter_list|(
 name|GimpGradientSelectButton
 modifier|*
-name|gradient_button
+name|button
 parameter_list|)
 block|{
 name|GimpGradientSelectButtonPrivate
@@ -1316,14 +1316,14 @@ name|priv
 operator|=
 name|GIMP_GRADIENT_SELECT_BUTTON_GET_PRIVATE
 argument_list|(
-name|gradient_button
+name|button
 argument_list|)
 expr_stmt|;
 name|select_button
 operator|=
 name|GIMP_SELECT_BUTTON
 argument_list|(
-name|gradient_button
+name|button
 argument_list|)
 expr_stmt|;
 if|if
@@ -1368,7 +1368,7 @@ name|sample_size
 argument_list|,
 name|gimp_gradient_select_button_callback
 argument_list|,
-name|gradient_button
+name|button
 argument_list|)
 expr_stmt|;
 block|}
@@ -1378,7 +1378,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_gradient_select_preview_size_allocate (GtkWidget * widget,GtkAllocation * allocation,GimpGradientSelectButton * gradient_button)
+DECL|function|gimp_gradient_select_preview_size_allocate (GtkWidget * widget,GtkAllocation * allocation,GimpGradientSelectButton * button)
 name|gimp_gradient_select_preview_size_allocate
 parameter_list|(
 name|GtkWidget
@@ -1391,7 +1391,7 @@ name|allocation
 parameter_list|,
 name|GimpGradientSelectButton
 modifier|*
-name|gradient_button
+name|button
 parameter_list|)
 block|{
 name|gdouble
@@ -1409,7 +1409,7 @@ name|priv
 operator|=
 name|GIMP_GRADIENT_SELECT_BUTTON_GET_PRIVATE
 argument_list|(
-name|gradient_button
+name|button
 argument_list|)
 expr_stmt|;
 if|if
@@ -1470,7 +1470,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_gradient_select_preview_expose (GtkWidget * widget,GdkEventExpose * event,GimpGradientSelectButton * gradient_button)
+DECL|function|gimp_gradient_select_preview_expose (GtkWidget * widget,GdkEventExpose * event,GimpGradientSelectButton * button)
 name|gimp_gradient_select_preview_expose
 parameter_list|(
 name|GtkWidget
@@ -1483,7 +1483,7 @@ name|event
 parameter_list|,
 name|GimpGradientSelectButton
 modifier|*
-name|gradient_button
+name|button
 parameter_list|)
 block|{
 specifier|const
@@ -1523,7 +1523,7 @@ name|priv
 operator|=
 name|GIMP_GRADIENT_SELECT_BUTTON_GET_PRIVATE
 argument_list|(
-name|gradient_button
+name|button
 argument_list|)
 expr_stmt|;
 name|src
@@ -1903,12 +1903,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_gradient_select_drag_data_received (GimpGradientSelectButton * gradient_button,GdkDragContext * context,gint x,gint y,GtkSelectionData * selection,guint info,guint time)
+DECL|function|gimp_gradient_select_drag_data_received (GimpGradientSelectButton * button,GdkDragContext * context,gint x,gint y,GtkSelectionData * selection,guint info,guint time)
 name|gimp_gradient_select_drag_data_received
 parameter_list|(
 name|GimpGradientSelectButton
 modifier|*
-name|gradient_button
+name|button
 parameter_list|,
 name|GdkDragContext
 modifier|*
@@ -2041,9 +2041,9 @@ name|str
 operator|+
 name|name_offset
 decl_stmt|;
-name|gimp_gradient_select_button_set_gradient_name
+name|gimp_gradient_select_button_set_gradient
 argument_list|(
-name|gradient_button
+name|button
 argument_list|,
 name|name
 argument_list|)

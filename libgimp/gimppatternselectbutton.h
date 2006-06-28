@@ -134,7 +134,7 @@ function_decl|)
 parameter_list|(
 name|GimpPatternSelectButton
 modifier|*
-name|pattern_button
+name|button
 parameter_list|,
 specifier|const
 name|gchar
@@ -236,7 +236,7 @@ begin_function_decl
 name|G_CONST_RETURN
 name|gchar
 modifier|*
-name|gimp_pattern_select_button_get_pattern_name
+name|gimp_pattern_select_button_get_pattern
 parameter_list|(
 name|GimpPatternSelectButton
 modifier|*
@@ -247,7 +247,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_pattern_select_button_set_pattern_name
+name|gimp_pattern_select_button_set_pattern
 parameter_list|(
 name|GimpPatternSelectButton
 modifier|*
