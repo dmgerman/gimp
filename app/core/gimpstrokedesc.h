@@ -171,18 +171,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpStrokeDesc
-modifier|*
-name|gimp_stroke_desc_duplicate
-parameter_list|(
-name|GimpStrokeDesc
-modifier|*
-name|desc
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|void
 name|gimp_stroke_desc_prepare
 parameter_list|(
