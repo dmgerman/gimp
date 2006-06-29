@@ -234,6 +234,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdisplayshell-progress.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdisplayshell-scale.h"
 end_include
 
@@ -269,7 +275,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba7887a0103
+DECL|enum|__anon2c1d78600103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -282,7 +288,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba7887a0203
+DECL|enum|__anon2c1d78600203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -503,13 +509,15 @@ function_decl|;
 end_function_decl
 
 begin_macro
-name|G_DEFINE_TYPE
+name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
 argument|GimpDisplayShell
 argument_list|,
 argument|gimp_display_shell
 argument_list|,
 argument|GTK_TYPE_WINDOW
+argument_list|,
+argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_PROGRESS,                                                 gimp_display_shell_progress_iface_init)
 argument_list|)
 end_macro
 
