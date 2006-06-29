@@ -301,7 +301,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b7a31220103
+DECL|enum|__anon2c4ce34a0103
 block|{
 DECL|enumerator|SHOOT_ROOT
 name|SHOOT_ROOT
@@ -320,7 +320,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7a31220208
+DECL|struct|__anon2c4ce34a0208
 block|{
 DECL|member|shoot_type
 name|ShootType
@@ -1534,7 +1534,7 @@ index|]
 operator|.
 name|keycode
 argument_list|,
-name|AnyModifier
+literal|0
 argument_list|,
 name|x_root
 argument_list|,
