@@ -4,7 +4,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_function_decl
-name|void
+name|gboolean
 name|draw_page_cairo
 parameter_list|(
 name|GtkPrintContext

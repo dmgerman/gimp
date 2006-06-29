@@ -45,6 +45,12 @@ directive|include
 file|"print-draw-page.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
 begin_comment
 comment|/* In points */
 end_comment
@@ -55,6 +61,14 @@ define|#
 directive|define
 name|HEADER_HEIGHT
 value|(20*72/25.4)
+end_define
+
+begin_define
+DECL|macro|EPSILON
+define|#
+directive|define
+name|EPSILON
+value|0.0001
 end_define
 
 begin_function_decl
@@ -103,7 +117,7 @@ function_decl|;
 end_function_decl
 
 begin_function
-name|void
+name|gboolean
 DECL|function|draw_page_cairo (GtkPrintContext * context,PrintData * data)
 name|draw_page_cairo
 parameter_list|(
@@ -259,11 +273,16 @@ operator|*
 name|image_width
 operator|>
 name|cr_width
+operator|+
+name|EPSILON
 condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Image width (%g in) is larger than printable width (%g in)."
+name|_
+argument_list|(
+literal|"Image width (%lg in) is larger than printable width (%lg in)."
+argument_list|)
 argument_list|,
 name|image_width
 operator|/
@@ -281,7 +300,9 @@ operator|->
 name|operation
 argument_list|)
 expr_stmt|;
-return|return;
+return|return
+name|FALSE
+return|;
 block|}
 if|if
 condition|(
@@ -290,11 +311,16 @@ operator|*
 name|image_height
 operator|>
 name|cr_height
+operator|+
+name|EPSILON
 condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Image height (%g in) is larger than printable height (%g in)."
+name|_
+argument_list|(
+literal|"Image height (%lg in) is larger than printable height (%lg in)."
+argument_list|)
 argument_list|,
 name|image_height
 operator|/
@@ -312,7 +338,9 @@ operator|->
 name|operation
 argument_list|)
 expr_stmt|;
-return|return;
+return|return
+name|FALSE
+return|;
 block|}
 comment|/* print header if it is requested */
 if|if
@@ -429,6 +457,9 @@ argument_list|(
 name|pixels
 argument_list|)
 expr_stmt|;
+return|return
+name|TRUE
+return|;
 block|}
 end_function
 

@@ -1035,13 +1035,6 @@ argument_list|(
 name|keys
 argument_list|)
 expr_stmt|;
-name|gtk_print_operation_set_print_settings
-argument_list|(
-name|operation
-argument_list|,
-name|settings
-argument_list|)
-expr_stmt|;
 comment|/* page setup parameters */
 name|page_setup
 operator|=
@@ -1098,6 +1091,19 @@ name|page_setup
 argument_list|,
 name|orientation
 argument_list|)
+expr_stmt|;
+name|gtk_print_settings_set_orientation
+argument_list|(
+name|settings
+argument_list|,
+name|orientation
+argument_list|)
+expr_stmt|;
+name|data
+operator|->
+name|orientation
+operator|=
+name|orientation
 expr_stmt|;
 block|}
 name|gtk_print_operation_set_default_page_setup
@@ -1185,6 +1191,13 @@ operator|->
 name|unit
 operator|=
 name|GIMP_UNIT_INCH
+expr_stmt|;
+name|gtk_print_operation_set_print_settings
+argument_list|(
+name|operation
+argument_list|,
+name|settings
+argument_list|)
 expr_stmt|;
 return|return
 name|TRUE

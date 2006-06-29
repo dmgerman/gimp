@@ -50,7 +50,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e5fb230108
+DECL|struct|__anon2ad740310108
 block|{
 DECL|member|data
 name|PrintData
@@ -720,6 +720,16 @@ name|gtk_print_operation_set_default_page_setup
 argument_list|(
 name|operation
 argument_list|,
+name|page_setup
+argument_list|)
+expr_stmt|;
+comment|/* needed for previewing */
+name|data
+operator|->
+name|orientation
+operator|=
+name|gtk_page_setup_get_orientation
+argument_list|(
 name|page_setup
 argument_list|)
 expr_stmt|;
