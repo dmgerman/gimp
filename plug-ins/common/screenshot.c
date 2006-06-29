@@ -301,7 +301,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2938da420103
+DECL|enum|__anon2b7a31220103
 block|{
 DECL|enumerator|SHOOT_ROOT
 name|SHOOT_ROOT
@@ -320,7 +320,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2938da420208
+DECL|struct|__anon2b7a31220208
 block|{
 DECL|member|shoot_type
 name|ShootType
@@ -993,6 +993,7 @@ operator|.
 name|d_int32
 expr_stmt|;
 block|}
+else|else
 block|{
 name|status
 operator|=
@@ -1640,7 +1641,6 @@ name|shootvals
 operator|.
 name|decorate
 condition|)
-block|{
 name|x_win
 operator|=
 name|XmuClientWindow
@@ -1650,7 +1650,6 @@ argument_list|,
 name|x_win
 argument_list|)
 expr_stmt|;
-block|}
 endif|#
 directive|endif
 name|shootvals
