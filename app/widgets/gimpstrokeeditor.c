@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon287622910103
+DECL|enum|__anon2ba8d25f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -381,6 +381,19 @@ block|{
 case|case
 name|PROP_OPTIONS
 case|:
+if|if
+condition|(
+name|editor
+operator|->
+name|options
+condition|)
+name|g_object_unref
+argument_list|(
+name|editor
+operator|->
+name|options
+argument_list|)
+expr_stmt|;
 name|editor
 operator|->
 name|options
