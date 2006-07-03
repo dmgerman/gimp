@@ -901,7 +901,11 @@ name|no_splash
 condition|)
 block|{
 name|splash_create
-argument_list|()
+argument_list|(
+name|gimp
+operator|->
+name|be_verbose
+argument_list|)
 expr_stmt|;
 name|status_callback
 operator|=

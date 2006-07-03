@@ -58,7 +58,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b7cb0d0108
+DECL|struct|__anon295f89140108
 block|{
 DECL|member|window
 name|GtkWidget
@@ -257,7 +257,8 @@ name|GdkPixbufAnimation
 modifier|*
 name|splash_image_load
 parameter_list|(
-name|void
+name|gboolean
+name|be_verbose
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -272,6 +273,9 @@ specifier|const
 name|gchar
 modifier|*
 name|dirname
+parameter_list|,
+name|gboolean
+name|be_verbose
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -314,10 +318,11 @@ end_comment
 
 begin_function
 name|void
-DECL|function|splash_create (void)
+DECL|function|splash_create (gboolean be_verbose)
 name|splash_create
 parameter_list|(
-name|void
+name|gboolean
+name|be_verbose
 parameter_list|)
 block|{
 name|GtkWidget
@@ -357,7 +362,9 @@ expr_stmt|;
 name|pixbuf
 operator|=
 name|splash_image_load
-argument_list|()
+argument_list|(
+name|be_verbose
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -1954,10 +1961,11 @@ begin_function
 specifier|static
 name|GdkPixbufAnimation
 modifier|*
-DECL|function|splash_image_load (void)
+DECL|function|splash_image_load (gboolean be_verbose)
 name|splash_image_load
 parameter_list|(
-name|void
+name|gboolean
+name|be_verbose
 parameter_list|)
 block|{
 name|GdkPixbufAnimation
@@ -1975,6 +1983,17 @@ argument_list|(
 literal|"gimp-splash.png"
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|be_verbose
+condition|)
+name|g_printerr
+argument_list|(
+literal|"Trying splash '%s' ... "
+argument_list|,
+name|filename
+argument_list|)
+expr_stmt|;
 name|pixbuf
 operator|=
 name|gdk_pixbuf_animation_new_from_file
@@ -1987,6 +2006,19 @@ expr_stmt|;
 name|g_free
 argument_list|(
 name|filename
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|be_verbose
+condition|)
+name|g_printerr
+argument_list|(
+name|pixbuf
+condition|?
+literal|"OK\n"
+else|:
+literal|"failed\n"
 argument_list|)
 expr_stmt|;
 if|if
@@ -2008,6 +2040,8 @@ operator|=
 name|splash_image_pick_from_dir
 argument_list|(
 name|filename
+argument_list|,
+name|be_verbose
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -2036,6 +2070,17 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|be_verbose
+condition|)
+name|g_printerr
+argument_list|(
+literal|"Trying splash '%s' ... "
+argument_list|,
+name|filename
+argument_list|)
+expr_stmt|;
 name|pixbuf
 operator|=
 name|gdk_pixbuf_animation_new_from_file
@@ -2048,6 +2093,19 @@ expr_stmt|;
 name|g_free
 argument_list|(
 name|filename
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|be_verbose
+condition|)
+name|g_printerr
+argument_list|(
+name|pixbuf
+condition|?
+literal|"OK\n"
+else|:
+literal|"failed\n"
 argument_list|)
 expr_stmt|;
 if|if
@@ -2074,6 +2132,8 @@ operator|=
 name|splash_image_pick_from_dir
 argument_list|(
 name|filename
+argument_list|,
+name|be_verbose
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -2091,13 +2151,16 @@ begin_function
 specifier|static
 name|GdkPixbufAnimation
 modifier|*
-DECL|function|splash_image_pick_from_dir (const gchar * dirname)
+DECL|function|splash_image_pick_from_dir (const gchar * dirname,gboolean be_verbose)
 name|splash_image_pick_from_dir
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
 name|dirname
+parameter_list|,
+name|gboolean
+name|be_verbose
 parameter_list|)
 block|{
 name|GdkPixbufAnimation
@@ -2199,6 +2262,17 @@ argument_list|,
 name|NULL
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|be_verbose
+condition|)
+name|g_printerr
+argument_list|(
+literal|"Trying splash '%s' ... "
+argument_list|,
+name|filename
+argument_list|)
+expr_stmt|;
 name|pixbuf
 operator|=
 name|gdk_pixbuf_animation_new_from_file
@@ -2211,6 +2285,19 @@ expr_stmt|;
 name|g_free
 argument_list|(
 name|filename
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|be_verbose
+condition|)
+name|g_printerr
+argument_list|(
+name|pixbuf
+condition|?
+literal|"OK\n"
+else|:
+literal|"failed\n"
 argument_list|)
 expr_stmt|;
 name|g_list_foreach
