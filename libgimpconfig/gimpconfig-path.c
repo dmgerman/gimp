@@ -375,24 +375,25 @@ begin_comment
 comment|/*  * GimpConfig path utilities  */
 end_comment
 
-begin_function_decl
+begin_decl_stmt
 specifier|static
 name|gchar
 modifier|*
 name|gimp_config_path_expand_only
-parameter_list|(
+argument_list|(
 specifier|const
 name|gchar
-modifier|*
+operator|*
 name|path
-parameter_list|,
+argument_list|,
 name|GError
-modifier|*
-modifier|*
+operator|*
+operator|*
 name|error
-parameter_list|)
-function_decl|;
-end_function_decl
+argument_list|)
+name|G_GNUC_MALLOC
+decl_stmt|;
+end_decl_stmt
 
 begin_function_decl
 specifier|static

@@ -90,18 +90,19 @@ name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
 
-begin_function_decl
+begin_decl_stmt
 name|gchar
 modifier|*
 name|gimp_personal_rc_file
-parameter_list|(
+argument_list|(
 specifier|const
 name|gchar
-modifier|*
+operator|*
 name|basename
-parameter_list|)
-function_decl|;
-end_function_decl
+argument_list|)
+name|G_GNUC_MALLOC
+decl_stmt|;
+end_decl_stmt
 
 begin_function_decl
 name|GList
@@ -127,17 +128,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
+begin_decl_stmt
 name|gchar
 modifier|*
 name|gimp_path_to_str
-parameter_list|(
+argument_list|(
 name|GList
-modifier|*
+operator|*
 name|path
-parameter_list|)
-function_decl|;
-end_function_decl
+argument_list|)
+name|G_GNUC_MALLOC
+decl_stmt|;
+end_decl_stmt
 
 begin_function_decl
 name|void
@@ -150,17 +152,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
+begin_decl_stmt
 name|gchar
 modifier|*
 name|gimp_path_get_user_writable_dir
-parameter_list|(
+argument_list|(
 name|GList
-modifier|*
+operator|*
 name|path
-parameter_list|)
-function_decl|;
-end_function_decl
+argument_list|)
+name|G_GNUC_MALLOC
+decl_stmt|;
+end_decl_stmt
 
 begin_comment
 comment|/*  should be considered private, don't use!  */

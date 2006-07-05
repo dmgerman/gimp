@@ -2720,7 +2720,7 @@ operator|=
 name|g_date_new
 argument_list|()
 expr_stmt|;
-name|g_date_set_time
+name|g_date_set_time_t
 argument_list|(
 name|date
 argument_list|,

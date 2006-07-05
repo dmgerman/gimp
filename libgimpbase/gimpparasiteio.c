@@ -701,10 +701,6 @@ parameter_list|)
 block|{
 name|GString
 modifier|*
-name|s
-decl_stmt|;
-name|gchar
-modifier|*
 name|str
 decl_stmt|;
 name|gint
@@ -719,7 +715,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|s
+name|str
 operator|=
 name|g_string_new
 argument_list|(
@@ -728,7 +724,7 @@ argument_list|)
 expr_stmt|;
 name|g_string_printf
 argument_list|(
-name|s
+name|str
 argument_list|,
 literal|"ncells:%d cellwidth:%d cellheight:%d "
 literal|"step:%d dim:%d cols:%d rows:%d placement:%s"
@@ -784,7 +780,7 @@ control|)
 block|{
 name|g_string_append_printf
 argument_list|(
-name|s
+name|str
 argument_list|,
 literal|" rank%d:%d"
 argument_list|,
@@ -800,7 +796,7 @@ argument_list|)
 expr_stmt|;
 name|g_string_append_printf
 argument_list|(
-name|s
+name|str
 argument_list|,
 literal|" sel%d:%s"
 argument_list|,
@@ -815,21 +811,13 @@ index|]
 argument_list|)
 expr_stmt|;
 block|}
-name|str
-operator|=
-name|s
-operator|->
-name|str
-expr_stmt|;
+return|return
 name|g_string_free
 argument_list|(
-name|s
+name|str
 argument_list|,
 name|FALSE
 argument_list|)
-expr_stmt|;
-return|return
-name|str
 return|;
 block|}
 end_function

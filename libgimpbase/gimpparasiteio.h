@@ -43,7 +43,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e452280108
+DECL|struct|__anon27ff355d0108
 block|{
 DECL|member|step
 name|gint
@@ -146,17 +146,18 @@ begin_comment
 comment|/* Build a string representation of GimpPixPipeParams */
 end_comment
 
-begin_function_decl
+begin_decl_stmt
 name|gchar
 modifier|*
 name|gimp_pixpipe_params_build
-parameter_list|(
+argument_list|(
 name|GimpPixPipeParams
-modifier|*
+operator|*
 name|params
-parameter_list|)
-function_decl|;
-end_function_decl
+argument_list|)
+name|G_GNUC_MALLOC
+decl_stmt|;
+end_decl_stmt
 
 begin_macro
 name|G_END_DECLS

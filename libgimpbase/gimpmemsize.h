@@ -41,16 +41,17 @@ name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
 
-begin_function_decl
+begin_decl_stmt
 name|gchar
 modifier|*
 name|gimp_memsize_serialize
-parameter_list|(
+argument_list|(
 name|guint64
 name|memsize
-parameter_list|)
-function_decl|;
-end_function_decl
+argument_list|)
+name|G_GNUC_MALLOC
+decl_stmt|;
+end_decl_stmt
 
 begin_function_decl
 name|gboolean
@@ -68,16 +69,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
+begin_decl_stmt
 name|gchar
 modifier|*
 name|gimp_memsize_to_string
-parameter_list|(
+argument_list|(
 name|guint64
 name|memsize
-parameter_list|)
-function_decl|;
-end_function_decl
+argument_list|)
+name|G_GNUC_MALLOC
+decl_stmt|;
+end_decl_stmt
 
 begin_comment
 comment|/*  * GIMP_TYPE_PARAM_MEMSIZE  */
