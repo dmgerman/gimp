@@ -73,24 +73,25 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
+begin_decl_stmt
 name|gchar
 modifier|*
 name|themes_get_theme_file
-parameter_list|(
+argument_list|(
 name|Gimp
-modifier|*
+operator|*
 name|gimp
-parameter_list|,
+argument_list|,
 specifier|const
 name|gchar
-modifier|*
+operator|*
 name|first_component
-parameter_list|,
-modifier|...
-parameter_list|)
-function_decl|;
-end_function_decl
+argument_list|,
+operator|...
+argument_list|)
+name|G_GNUC_NULL_TERMINATED
+decl_stmt|;
+end_decl_stmt
 
 begin_function_decl
 name|void
