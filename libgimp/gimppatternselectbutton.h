@@ -233,7 +233,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|G_CONST_RETURN
+specifier|const
 name|gchar
 modifier|*
 name|gimp_pattern_select_button_get_pattern

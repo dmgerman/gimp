@@ -137,7 +137,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2acbd5790103
+DECL|enum|__anon2aee14240103
 block|{
 DECL|enumerator|GRADIENT_SET
 name|GRADIENT_SET
@@ -150,7 +150,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2acbd5790203
+DECL|enum|__anon2aee14240203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -690,7 +690,7 @@ comment|/**  * gimp_gradient_select_button_get_gradient_name:  * @button: A #Gim
 end_comment
 
 begin_function
-name|G_CONST_RETURN
+specifier|const
 name|gchar
 modifier|*
 DECL|function|gimp_gradient_select_button_get_gradient (GimpGradientSelectButton * button)

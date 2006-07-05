@@ -103,7 +103,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae127ad0103
+DECL|enum|__anon2af3b9ed0103
 block|{
 DECL|enumerator|PALETTE_SET
 name|PALETTE_SET
@@ -116,7 +116,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae127ad0203
+DECL|enum|__anon2af3b9ed0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -591,7 +591,7 @@ comment|/**  * gimp_palette_select_button_get_palette:  * @button: A #GimpPalett
 end_comment
 
 begin_function
-name|G_CONST_RETURN
+specifier|const
 name|gchar
 modifier|*
 DECL|function|gimp_palette_select_button_get_palette (GimpPaletteSelectButton * button)

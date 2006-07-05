@@ -142,7 +142,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd261440103
+DECL|enum|__anon2ad2a8170103
 block|{
 DECL|enumerator|BRUSH_SET
 name|BRUSH_SET
@@ -155,7 +155,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd261440203
+DECL|enum|__anon2ad2a8170203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -962,7 +962,7 @@ comment|/**  * gimp_brush_select_button_get_brush:  * @button: A #GimpBrushSelec
 end_comment
 
 begin_function
-name|G_CONST_RETURN
+specifier|const
 name|gchar
 modifier|*
 DECL|function|gimp_brush_select_button_get_brush (GimpBrushSelectButton * button,gdouble * opacity,gint * spacing,GimpLayerModeEffects * paint_mode)

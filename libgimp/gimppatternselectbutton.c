@@ -134,7 +134,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5b0b4b0103
+DECL|enum|__anon2c6afd340103
 block|{
 DECL|enumerator|PATTERN_SET
 name|PATTERN_SET
@@ -147,7 +147,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5b0b4b0203
+DECL|enum|__anon2c6afd340203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -772,7 +772,7 @@ comment|/**  * gimp_pattern_select_button_get_pattern:  * @button: A #GimpPatter
 end_comment
 
 begin_function
-name|G_CONST_RETURN
+specifier|const
 name|gchar
 modifier|*
 DECL|function|gimp_pattern_select_button_get_pattern (GimpPatternSelectButton * button)

@@ -103,7 +103,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b13af7e0103
+DECL|enum|__anon2755bc100103
 block|{
 DECL|enumerator|FONT_SET
 name|FONT_SET
@@ -116,7 +116,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b13af7e0203
+DECL|enum|__anon2755bc100203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -594,7 +594,7 @@ comment|/**  * gimp_font_select_button_get_font:  * @button: A #GimpFontSelectBu
 end_comment
 
 begin_function
-name|G_CONST_RETURN
+specifier|const
 name|gchar
 modifier|*
 DECL|function|gimp_font_select_button_get_font (GimpFontSelectButton * button)
