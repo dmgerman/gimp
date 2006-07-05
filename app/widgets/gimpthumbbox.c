@@ -1648,7 +1648,7 @@ literal|"No selection"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_label_set_line_wrap
+name|gtk_label_set_ellipsize
 argument_list|(
 name|GTK_LABEL
 argument_list|(
@@ -1657,7 +1657,7 @@ operator|->
 name|filename
 argument_list|)
 argument_list|,
-name|TRUE
+name|PANGO_ELLIPSIZE_MIDDLE
 argument_list|)
 expr_stmt|;
 name|gtk_label_set_justify
