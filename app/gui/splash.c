@@ -58,7 +58,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295f89140108
+DECL|struct|__anon27df03520108
 block|{
 DECL|member|window
 name|GtkWidget
@@ -1744,6 +1744,17 @@ literal|"Somewhat longer text"
 argument_list|,
 operator|&
 name|area
+argument_list|)
+expr_stmt|;
+name|splash_position_layouts
+argument_list|(
+name|splash
+argument_list|,
+literal|""
+argument_list|,
+literal|""
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
