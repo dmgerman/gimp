@@ -23,7 +23,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2336a50103
+DECL|enum|__anon2ab4a93d0103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -36,7 +36,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2336a50203
+DECL|enum|__anon2ab4a93d0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1309,21 +1309,11 @@ if|if
 condition|(
 name|image
 condition|)
-block|{
-name|g_object_ref
+name|g_object_ref_sink
 argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
-name|gtk_object_sink
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|image
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
 name|button
 operator|->
 name|priv

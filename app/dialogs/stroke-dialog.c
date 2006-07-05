@@ -566,12 +566,14 @@ argument_list|,
 name|paint_radio
 argument_list|)
 expr_stmt|;
-name|gtk_object_sink
-argument_list|(
-name|GTK_OBJECT
+name|g_object_ref_sink
 argument_list|(
 name|radio_box
 argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|radio_box
 argument_list|)
 expr_stmt|;
 block|{

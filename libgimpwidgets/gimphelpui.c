@@ -48,7 +48,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b06c5f70103
+DECL|enum|__anon29a9db3b0103
 block|{
 DECL|enumerator|GIMP_WIDGET_HELP_TYPE_HELP
 name|GIMP_WIDGET_HELP_TYPE_HELP
@@ -214,17 +214,9 @@ name|gtk_tooltips_new
 argument_list|()
 expr_stmt|;
 comment|/* take ownership of the tooltips */
-name|g_object_ref
+name|g_object_ref_sink
 argument_list|(
 name|tool_tips
-argument_list|)
-expr_stmt|;
-name|gtk_object_sink
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|tool_tips
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

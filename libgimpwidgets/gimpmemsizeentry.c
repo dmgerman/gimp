@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ab9d8900103
+DECL|enum|__anon2be750040103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED
@@ -672,21 +672,11 @@ expr_stmt|;
 undef|#
 directive|undef
 name|CAST
-name|g_object_ref
+name|g_object_ref_sink
 argument_list|(
 name|entry
 operator|->
 name|adjustment
-argument_list|)
-expr_stmt|;
-name|gtk_object_sink
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|entry
-operator|->
-name|adjustment
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_entry_set_width_chars

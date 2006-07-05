@@ -174,7 +174,7 @@ DECL|macro|GLIB_REQUIRED_MINOR
 define|#
 directive|define
 name|GLIB_REQUIRED_MINOR
-value|8
+value|10
 DECL|macro|GLIB_REQUIRED_MICRO
 define|#
 directive|define

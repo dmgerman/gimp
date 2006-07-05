@@ -95,7 +95,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon296c4acd0103
+DECL|enum|__anon2c7e13c10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2088,12 +2088,14 @@ argument_list|(
 name|children
 argument_list|)
 expr_stmt|;
-name|gtk_object_sink
-argument_list|(
-name|GTK_OBJECT
+name|g_object_ref_sink
 argument_list|(
 name|hbox
 argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|hbox
 argument_list|)
 expr_stmt|;
 return|return
