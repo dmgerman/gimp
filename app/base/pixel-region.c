@@ -687,7 +687,7 @@ name|gint
 name|npixels
 decl_stmt|;
 name|gint
-name|tilebpp
+name|bpp
 decl_stmt|;
 name|end
 operator|=
@@ -708,7 +708,7 @@ argument_list|,
 name|y
 argument_list|)
 expr_stmt|;
-name|tilebpp
+name|bpp
 operator|=
 name|tile_manager_bpp
 argument_list|(
@@ -721,7 +721,7 @@ name|inc
 operator|=
 name|subsample
 operator|*
-name|tilebpp
+name|bpp
 expr_stmt|;
 if|if
 condition|(
@@ -748,7 +748,7 @@ name|y
 argument_list|,
 name|data
 argument_list|,
-name|tilebpp
+name|bpp
 argument_list|)
 expr_stmt|;
 block|}
@@ -849,7 +849,7 @@ literal|0
 init|;
 name|b
 operator|<
-name|tilebpp
+name|bpp
 condition|;
 name|b
 operator|++
@@ -882,7 +882,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|pixel_region_set_row (PixelRegion * PR,gint x,gint y,gint w,guchar * data)
+DECL|function|pixel_region_set_row (PixelRegion * PR,gint x,gint y,gint w,const guchar * data)
 name|pixel_region_set_row
 parameter_list|(
 name|PixelRegion
@@ -898,6 +898,7 @@ parameter_list|,
 name|gint
 name|w
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|data
@@ -996,7 +997,7 @@ modifier|*
 name|tile_data
 decl_stmt|;
 name|gint
-name|tilebpp
+name|bpp
 decl_stmt|;
 name|gint
 name|inc
@@ -1029,7 +1030,7 @@ argument_list|,
 name|end
 argument_list|)
 expr_stmt|;
-name|tilebpp
+name|bpp
 operator|=
 name|tile_manager_bpp
 argument_list|(
@@ -1109,7 +1110,7 @@ name|inc
 operator|=
 name|subsample
 operator|*
-name|tilebpp
+name|bpp
 operator|*
 name|tile_ewidth
 argument_list|(
@@ -1136,7 +1137,7 @@ literal|0
 init|;
 name|b
 operator|<
-name|tilebpp
+name|bpp
 condition|;
 name|b
 operator|++
@@ -1168,7 +1169,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|pixel_region_set_col (PixelRegion * PR,gint x,gint y,gint h,guchar * data)
+DECL|function|pixel_region_set_col (PixelRegion * PR,gint x,gint y,gint h,const guchar * data)
 name|pixel_region_set_col
 parameter_list|(
 name|PixelRegion
@@ -1184,13 +1185,14 @@ parameter_list|,
 name|gint
 name|h
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|data
 parameter_list|)
 block|{
 name|gint
-name|tilebpp
+name|bpp
 decl_stmt|;
 name|gint
 name|end
@@ -1214,7 +1216,7 @@ argument_list|,
 name|end
 argument_list|)
 expr_stmt|;
-name|tilebpp
+name|bpp
 operator|=
 name|tile_manager_bpp
 argument_list|(
@@ -1241,7 +1243,7 @@ literal|1
 argument_list|,
 name|data
 argument_list|,
-name|tilebpp
+name|bpp
 argument_list|)
 expr_stmt|;
 block|}

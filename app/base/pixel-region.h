@@ -346,6 +346,7 @@ parameter_list|,
 name|gint
 name|w
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|data
@@ -397,6 +398,7 @@ parameter_list|,
 name|gint
 name|h
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|data
