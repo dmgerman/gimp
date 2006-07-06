@@ -766,6 +766,7 @@ operator|->
 name|nchannels
 argument_list|)
 expr_stmt|;
+break|break;
 block|}
 name|width
 operator|=
@@ -1157,6 +1158,7 @@ operator|->
 name|nchannels
 argument_list|)
 expr_stmt|;
+break|break;
 block|}
 name|width
 operator|=

@@ -938,6 +938,8 @@ expr_stmt|;
 block|}
 if|if
 condition|(
+name|G_UNLIKELY
+argument_list|(
 name|x
 operator|!=
 name|startx
@@ -945,6 +947,7 @@ operator|||
 name|y
 operator|!=
 name|starty
+argument_list|)
 condition|)
 name|g_warning
 argument_list|(

@@ -92,7 +92,7 @@ end_function_decl
 begin_function
 name|TempBuf
 modifier|*
-DECL|function|temp_buf_new (gint width,gint height,gint bytes,gint x,gint y,const guchar * col)
+DECL|function|temp_buf_new (gint width,gint height,gint bytes,gint x,gint y,const guchar * color)
 name|temp_buf_new
 parameter_list|(
 name|gint
@@ -113,7 +113,7 @@ parameter_list|,
 specifier|const
 name|guchar
 modifier|*
-name|col
+name|color
 parameter_list|)
 block|{
 name|TempBuf
@@ -199,7 +199,7 @@ expr_stmt|;
 comment|/*  initialize the data  */
 if|if
 condition|(
-name|col
+name|color
 condition|)
 block|{
 name|glong
@@ -222,12 +222,12 @@ control|)
 block|{
 if|if
 condition|(
-name|col
+name|color
 index|[
 literal|0
 index|]
 operator|!=
-name|col
+name|color
 index|[
 name|i
 index|]
@@ -248,7 +248,7 @@ operator|->
 name|data
 argument_list|,
 operator|*
-name|col
+name|color
 argument_list|,
 name|width
 operator|*
@@ -291,7 +291,7 @@ name|guchar
 modifier|*
 name|c
 init|=
-name|col
+name|color
 decl_stmt|;
 name|gint
 name|j

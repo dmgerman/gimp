@@ -1013,6 +1013,7 @@ operator|->
 name|num_regions
 argument_list|)
 expr_stmt|;
+break|break;
 block|}
 if|if
 condition|(
@@ -1248,7 +1249,10 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|G_UNLIKELY
+argument_list|(
 name|error
+argument_list|)
 condition|)
 block|{
 name|g_warning
@@ -1618,6 +1622,7 @@ operator|.
 name|num_regions
 argument_list|)
 expr_stmt|;
+break|break;
 block|}
 if|if
 condition|(
@@ -1818,7 +1823,10 @@ expr_stmt|;
 block|}
 if|if
 condition|(
+name|G_UNLIKELY
+argument_list|(
 name|error
+argument_list|)
 condition|)
 block|{
 name|g_warning

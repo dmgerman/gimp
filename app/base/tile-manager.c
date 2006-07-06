@@ -138,14 +138,14 @@ end_function
 begin_function
 name|TileManager
 modifier|*
-DECL|function|tile_manager_new (gint toplevel_width,gint toplevel_height,gint bpp)
+DECL|function|tile_manager_new (gint width,gint height,gint bpp)
 name|tile_manager_new
 parameter_list|(
 name|gint
-name|toplevel_width
+name|width
 parameter_list|,
 name|gint
-name|toplevel_height
+name|height
 parameter_list|,
 name|gint
 name|bpp
@@ -155,24 +155,13 @@ name|TileManager
 modifier|*
 name|tm
 decl_stmt|;
-name|gint
-name|width
-decl_stmt|;
-name|gint
-name|height
-decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|toplevel_width
+name|width
 operator|>
 literal|0
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|toplevel_height
+operator|&&
+name|height
 operator|>
 literal|0
 argument_list|,
@@ -201,31 +190,11 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-name|width
-operator|=
-name|toplevel_width
-expr_stmt|;
-name|height
-operator|=
-name|toplevel_height
-expr_stmt|;
 name|tm
 operator|->
 name|ref_count
 operator|=
 literal|1
-expr_stmt|;
-name|tm
-operator|->
-name|x
-operator|=
-literal|0
-expr_stmt|;
-name|tm
-operator|->
-name|y
-operator|=
-literal|0
 expr_stmt|;
 name|tm
 operator|->
@@ -275,34 +244,10 @@ name|TILE_WIDTH
 expr_stmt|;
 name|tm
 operator|->
-name|tiles
-operator|=
-name|NULL
-expr_stmt|;
-name|tm
-operator|->
-name|validate_proc
-operator|=
-name|NULL
-expr_stmt|;
-name|tm
-operator|->
 name|cached_num
 operator|=
 operator|-
 literal|1
-expr_stmt|;
-name|tm
-operator|->
-name|cached_tile
-operator|=
-name|NULL
-expr_stmt|;
-name|tm
-operator|->
-name|user_data
-operator|=
-name|NULL
 expr_stmt|;
 return|return
 name|tm
@@ -372,12 +317,6 @@ operator|<
 literal|1
 condition|)
 block|{
-name|gint
-name|ntiles
-decl_stmt|;
-name|gint
-name|i
-decl_stmt|;
 if|if
 condition|(
 name|tm
@@ -400,8 +339,9 @@ operator|->
 name|tiles
 condition|)
 block|{
+name|gint
 name|ntiles
-operator|=
+init|=
 name|tm
 operator|->
 name|ntile_rows
@@ -409,7 +349,10 @@ operator|*
 name|tm
 operator|->
 name|ntile_cols
-expr_stmt|;
+decl_stmt|;
+name|gint
+name|i
+decl_stmt|;
 for|for
 control|(
 name|i
@@ -840,23 +783,26 @@ index|]
 expr_stmt|;
 if|if
 condition|(
+name|G_UNLIKELY
+argument_list|(
 name|wantwrite
 operator|&&
 operator|!
 name|wantread
+argument_list|)
 condition|)
-block|{
 name|g_warning
 argument_list|(
 literal|"WRITE-ONLY TILE... UNTESTED!"
 argument_list|)
 expr_stmt|;
-block|}
 ifdef|#
 directive|ifdef
 name|DEBUG_TILE_MANAGER
 if|if
 condition|(
+name|G_UNLIKELY
+argument_list|(
 operator|(
 operator|*
 name|tile_ptr
@@ -870,6 +816,7 @@ name|tile_ptr
 operator|)
 operator|->
 name|write_count
+argument_list|)
 condition|)
 name|g_printerr
 argument_list|(
@@ -1004,19 +951,6 @@ argument_list|,
 name|new
 operator|->
 name|size
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-operator|!
-name|new
-operator|->
-name|valid
-condition|)
-name|g_warning
-argument_list|(
-literal|"Oh boy, r/w tile is invalid... we suck. "
-literal|"Please report."
 argument_list|)
 expr_stmt|;
 if|if
@@ -1170,12 +1104,15 @@ else|else
 block|{
 if|if
 condition|(
+name|G_UNLIKELY
+argument_list|(
 operator|(
 operator|*
 name|tile_ptr
 operator|)
 operator|->
 name|write_count
+argument_list|)
 condition|)
 name|g_printerr
 argument_list|(
@@ -1228,12 +1165,8 @@ name|gint
 name|ypixel
 parameter_list|)
 block|{
-name|Tile
-modifier|*
-name|tile_ptr
-decl_stmt|;
 name|gint
-name|tile_num
+name|num
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -1242,7 +1175,7 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
-name|tile_num
+name|num
 operator|=
 name|tile_manager_get_tile_num
 argument_list|(
@@ -1255,23 +1188,19 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|tile_num
+name|num
 operator|<
 literal|0
 condition|)
 return|return;
-name|tile_ptr
-operator|=
+name|tile_swap_in_async
+argument_list|(
 name|tm
 operator|->
 name|tiles
 index|[
-name|tile_num
+name|num
 index|]
-expr_stmt|;
-name|tile_swap_in_async
-argument_list|(
-name|tile_ptr
 argument_list|)
 expr_stmt|;
 block|}
@@ -1374,9 +1303,6 @@ name|row
 decl_stmt|,
 name|col
 decl_stmt|;
-name|gint
-name|num
-decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|tm
@@ -1464,6 +1390,9 @@ operator|->
 name|tiles
 condition|)
 block|{
+name|gint
+name|num
+decl_stmt|;
 name|col
 operator|=
 name|x
@@ -1535,7 +1464,7 @@ name|ypixel
 parameter_list|)
 block|{
 name|gint
-name|tile_num
+name|num
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -1551,7 +1480,7 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
-name|tile_num
+name|num
 operator|=
 name|tile_manager_get_tile_num
 argument_list|(
@@ -1564,7 +1493,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|tile_num
+name|num
 operator|<
 literal|0
 condition|)
@@ -1575,7 +1504,7 @@ name|tile_ptr
 argument_list|,
 name|tm
 argument_list|,
-name|tile_num
+name|num
 argument_list|)
 expr_stmt|;
 block|}
@@ -1637,11 +1566,14 @@ name|leave
 goto|;
 if|if
 condition|(
+name|G_UNLIKELY
+argument_list|(
 name|tile
 operator|->
 name|share_count
 operator|>
 literal|1
+argument_list|)
 condition|)
 block|{
 comment|/* This tile is shared.  Replace it with a new, invalid tile. */
@@ -1811,7 +1743,7 @@ name|srctile
 parameter_list|)
 block|{
 name|gint
-name|tile_num
+name|num
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -1827,7 +1759,7 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
-name|tile_num
+name|num
 operator|=
 name|tile_manager_get_tile_num
 argument_list|(
@@ -1840,14 +1772,19 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|tile_num
+name|G_UNLIKELY
+argument_list|(
+name|num
 operator|<
 literal|0
+argument_list|)
 condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"tile_manager_map_tile: tile coordinates out of range."
+literal|"%s: tile coordinates out of range."
+argument_list|,
+name|G_GNUC_FUNCTION
 argument_list|)
 expr_stmt|;
 return|return;
@@ -1856,7 +1793,7 @@ name|tile_manager_map
 argument_list|(
 name|tm
 argument_list|,
-name|tile_num
+name|num
 argument_list|,
 name|srctile
 argument_list|)
@@ -1938,6 +1875,8 @@ name|ntile_cols
 expr_stmt|;
 if|if
 condition|(
+name|G_UNLIKELY
+argument_list|(
 operator|(
 name|tile_num
 operator|<
@@ -1949,26 +1888,34 @@ name|tile_num
 operator|>=
 name|ntiles
 operator|)
+argument_list|)
 condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"tile_manager_map: tile out of range."
+literal|"%s: tile out of range"
+argument_list|,
+name|G_GNUC_FUNCTION
 argument_list|)
 expr_stmt|;
 return|return;
 block|}
 if|if
 condition|(
+name|G_UNLIKELY
+argument_list|(
 operator|!
 name|tm
 operator|->
 name|tiles
+argument_list|)
 condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"tile_manager_map: empty tile level - init'ing."
+literal|"%s: empty tile level - initializing"
+argument_list|,
+name|G_GNUC_FUNCTION
 argument_list|)
 expr_stmt|;
 name|tm
@@ -2187,14 +2134,19 @@ endif|#
 directive|endif
 if|if
 condition|(
+name|G_UNLIKELY
+argument_list|(
 operator|!
 name|srctile
 operator|->
 name|valid
+argument_list|)
 condition|)
 name|g_warning
 argument_list|(
-literal|"tile_manager_map: srctile not validated yet!  please report."
+literal|"%s: srctile not validated yet!  please report"
+argument_list|,
+name|G_GNUC_FUNCTION
 argument_list|)
 expr_stmt|;
 name|TILE_MUTEX_LOCK
@@ -2205,6 +2157,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|G_UNLIKELY
+argument_list|(
 operator|(
 operator|*
 name|tile_ptr
@@ -2237,11 +2191,14 @@ operator|!=
 name|srctile
 operator|->
 name|bpp
+argument_list|)
 condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"tile_manager_map: nonconformant map (%p -> %p)"
+literal|"%s: nonconformant map (%p -> %p)"
+argument_list|,
+name|G_GNUC_FUNCTION
 argument_list|,
 name|srctile
 argument_list|,
@@ -2802,15 +2759,19 @@ break|break;
 block|}
 if|if
 condition|(
+name|G_UNLIKELY
+argument_list|(
 name|tl
 operator|==
 name|NULL
+argument_list|)
 condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"tile_manager_get_tile_coordinates: "
-literal|"tile not attached to manager"
+literal|"%s: tile not attached to manager"
+argument_list|,
+name|G_GNUC_FUNCTION
 argument_list|)
 expr_stmt|;
 return|return;
@@ -2920,14 +2881,19 @@ break|break;
 block|}
 if|if
 condition|(
+name|G_UNLIKELY
+argument_list|(
 name|tl
 operator|==
 name|NULL
+argument_list|)
 condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"tile_manager_map_over_tile: tile not attached to manager"
+literal|"%s: tile not attached to manager"
+argument_list|,
+name|G_GNUC_FUNCTION
 argument_list|)
 expr_stmt|;
 return|return;
