@@ -6885,8 +6885,8 @@ directive|ifdef
 name|GIMP_XCF_PATH_DEBUG
 name|g_printerr
 argument_list|(
-literal|"name: %s, tattoo: %d, visible: %d, linked: %d, num_parasites %d, "
-literal|"num_strokes %d\n"
+literal|"name: %s, tattoo: %d, visible: %d, linked: %d, "
+literal|"num_parasites %d, num_strokes %d\n"
 argument_list|,
 name|name
 argument_list|,
@@ -6968,14 +6968,12 @@ block|{
 name|GimpParasite
 modifier|*
 name|parasite
-decl_stmt|;
-name|parasite
-operator|=
+init|=
 name|xcf_load_parasite
 argument_list|(
 name|info
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 operator|!
@@ -7200,6 +7198,26 @@ name|NULL
 argument_list|)
 expr_stmt|;
 continue|continue;
+block|}
+if|if
+condition|(
+name|num_axes
+operator|<
+literal|2
+operator|||
+name|num_axes
+operator|>
+literal|6
+condition|)
+block|{
+name|g_printerr
+argument_list|(
+literal|"bad number of axes in stroke description\n"
+argument_list|)
+expr_stmt|;
+return|return
+name|FALSE
+return|;
 block|}
 name|control_points
 operator|=
