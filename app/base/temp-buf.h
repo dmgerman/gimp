@@ -76,6 +76,7 @@ parameter_list|,
 name|gint
 name|y
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|col
@@ -146,23 +147,24 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
+begin_decl_stmt
 name|TempBuf
 modifier|*
 name|temp_buf_scale
-parameter_list|(
+argument_list|(
 name|TempBuf
-modifier|*
+operator|*
 name|buf
-parameter_list|,
+argument_list|,
 name|gint
 name|width
-parameter_list|,
+argument_list|,
 name|gint
 name|height
-parameter_list|)
-function_decl|;
-end_function_decl
+argument_list|)
+name|G_GNUC_WARN_UNUSED_RESULT
+decl_stmt|;
+end_decl_stmt
 
 begin_function_decl
 name|TempBuf
