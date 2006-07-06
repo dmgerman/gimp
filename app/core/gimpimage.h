@@ -313,7 +313,7 @@ DECL|member|tattoo_state
 name|GimpTattoo
 name|tattoo_state
 decl_stmt|;
-comment|/*  the next unique tattoo to use*/
+comment|/*  the last used tattoo         */
 DECL|member|shadow
 name|TileManager
 modifier|*
@@ -2127,7 +2127,7 @@ modifier|*
 name|image
 parameter_list|,
 name|GimpTattoo
-name|tatoo
+name|tattoo
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2143,7 +2143,7 @@ modifier|*
 name|image
 parameter_list|,
 name|GimpTattoo
-name|tatoo
+name|tattoo
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2159,7 +2159,7 @@ modifier|*
 name|image
 parameter_list|,
 name|GimpTattoo
-name|tatoo
+name|tattoo
 parameter_list|)
 function_decl|;
 end_function_decl

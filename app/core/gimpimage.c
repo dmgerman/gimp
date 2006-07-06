@@ -294,7 +294,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon29cf22210103
+DECL|enum|__anon296d805d0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -373,7 +373,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29cf22210203
+DECL|enum|__anon296d805d0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -9450,11 +9450,14 @@ operator|++
 expr_stmt|;
 if|if
 condition|(
+name|G_UNLIKELY
+argument_list|(
 name|image
 operator|->
 name|tattoo_state
-operator|<=
+operator|==
 literal|0
+argument_list|)
 condition|)
 name|g_warning
 argument_list|(
@@ -9536,7 +9539,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* Check that the layer tatoos don't overlap with channel or vector ones */
+comment|/* Check that the layer tattoos don't overlap with channel or vector ones */
 for|for
 control|(
 name|list
