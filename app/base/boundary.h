@@ -31,7 +31,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3603270103
+DECL|enum|__anon273ba7980103
 block|{
 DECL|enumerator|BOUNDARY_WITHIN_BOUNDS
 name|BOUNDARY_WITHIN_BOUNDS
