@@ -549,7 +549,7 @@ argument_list|(
 literal|"Pal_ettes"
 argument_list|)
 block|,
-literal|"<control>P"
+name|NULL
 block|,
 name|N_
 argument_list|(

@@ -158,7 +158,7 @@ end_struct
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b1fd59a0103
+DECL|enum|__anon2b19cf450103
 block|{
 DECL|enumerator|USER_INSTALL_MKDIR
 name|USER_INSTALL_MKDIR
@@ -177,7 +177,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b1fd59a0208
+DECL|struct|__anon2b19cf450208
 block|{
 DECL|member|name
 specifier|const
@@ -197,6 +197,12 @@ init|=
 block|{
 block|{
 literal|"gtkrc"
+block|,
+name|USER_INSTALL_COPY
+block|}
+block|,
+block|{
+literal|"menurc"
 block|,
 name|USER_INSTALL_COPY
 block|}
