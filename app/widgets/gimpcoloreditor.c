@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon278e6f9f0103
+DECL|enum|__anon2bbb7fe20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1105,8 +1105,8 @@ name|hex_entry
 argument_list|,
 name|_
 argument_list|(
-literal|"Hexadecimal color notation "
-literal|"as used in HTML and CSS"
+literal|"Hexadecimal color notation as used in HTML and "
+literal|"CSS.  This entry also accepts CSS color names."
 argument_list|)
 argument_list|,
 name|NULL

@@ -1567,8 +1567,16 @@ condition|)
 block|{
 name|ebox
 operator|=
-name|gtk_event_box_new
-argument_list|()
+name|g_object_new
+argument_list|(
+name|GTK_TYPE_EVENT_BOX
+argument_list|,
+literal|"visible-window"
+argument_list|,
+name|FALSE
+argument_list|,
+name|NULL
+argument_list|)
 expr_stmt|;
 name|gtk_table_attach
 argument_list|(
@@ -3363,7 +3371,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be151c20108
+DECL|struct|__anon27b148790108
 block|{
 DECL|member|chainbutton
 name|GimpChainButton

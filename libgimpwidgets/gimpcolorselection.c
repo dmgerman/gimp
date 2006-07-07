@@ -104,7 +104,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27b6a7a40103
+DECL|enum|__anon2c6c9c430103
 block|{
 DECL|enumerator|UPDATE_NOTEBOOK
 name|UPDATE_NOTEBOOK
@@ -149,7 +149,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b6a7a40203
+DECL|enum|__anon2c6c9c430203
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -1179,8 +1179,8 @@ name|entry
 argument_list|,
 name|_
 argument_list|(
-literal|"Hexadecimal color notation "
-literal|"as used in HTML and CSS"
+literal|"Hexadecimal color notation as used in HTML and "
+literal|"CSS.  This entry also accepts CSS color names."
 argument_list|)
 argument_list|,
 name|NULL
