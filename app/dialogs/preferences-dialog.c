@@ -8795,7 +8795,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2c3a75f30108
+DECL|struct|__anon2a296d5e0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -9958,7 +9958,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c3a75f30208
+DECL|struct|__anon2a296d5e0208
 block|{
 DECL|member|label
 specifier|const
@@ -10661,7 +10661,7 @@ argument_list|,
 name|_
 argument_list|(
 literal|"Toolbox and other docks are transient "
-literal|"to the active display"
+literal|"to the active image window"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -10857,7 +10857,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c3a75f30308
+DECL|struct|__anon2a296d5e0308
 block|{
 DECL|member|property_name
 specifier|const
@@ -11012,7 +11012,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c3a75f30408
+DECL|struct|__anon2a296d5e0408
 block|{
 DECL|member|tree_label
 specifier|const
