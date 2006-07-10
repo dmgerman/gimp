@@ -1289,6 +1289,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_draw_tool_calc_distance:  * @draw_tool: a #GimpDrawTool  * @display:   a #GimpDisplay  * @x1:        start point X in image coordinates  * @y1:        start point Y in image coordinates  * @x1:        end point X in image coordinates  * @y1:        end point Y in image coordinates  *  * Returns: the distance between the given points in display coordinates  **/
+end_comment
+
 begin_function
 name|gdouble
 DECL|function|gimp_draw_tool_calc_distance (GimpDrawTool * draw_tool,GimpDisplay * display,gdouble x1,gdouble y1,gdouble x2,gdouble y2)
@@ -1412,6 +1416,10 @@ argument_list|)
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_draw_tool_in_radius:  * @draw_tool: a #GimpDrawTool  * @display:   a #GimpDisplay  * @x1:        start point X in image coordinates  * @y1:        start point Y in image coordinates  * @x1:        end point X in image coordinates  * @y1:        end point Y in image coordinates  * @radius:    distance in screen coordinates, not image coordinates  *  * The points are in image space coordinates.  *  * Returns: %TRUE if the points are within radius of each other,  *          %FALSE otherwise  **/
+end_comment
 
 begin_function
 name|gboolean
@@ -1544,6 +1552,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_draw_tool_draw_line:  * @draw_tool:   the #GimpDrawTool  * @x1:          start point X in image coordinates  * @y1:          start point Y in image coordinates  * @x1:          end point X in image coordinates  * @y1:          end point Y in image coordinates  * @use_offsets: whether to use the image pixel offsets of the tool's display  *  * This function takes image space coordinates and transforms them to  * screen window coordinates, then draws a line between the resulting  * coordindates.  **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_draw_tool_draw_line (GimpDrawTool * draw_tool,gdouble x1,gdouble y1,gdouble x2,gdouble y2,gboolean use_offsets)
@@ -1659,6 +1671,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_draw_tool_draw_dashed_line:  * @draw_tool:   the #GimpDrawTool  * @x1:          start point X in image coordinates  * @y1:          start point Y in image coordinates  * @x1:          end point X in image coordinates  * @y1:          end point Y in image coordinates  * @use_offsets: whether to use the image pixel offsets of the tool's display  *  * This function takes image space coordinates and transforms them to  * screen window coordinates, then draws a dashed line between the  * resulting coordindates.  **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_draw_tool_draw_dashed_line (GimpDrawTool * draw_tool,gdouble x1,gdouble y1,gdouble x2,gdouble y2,gboolean use_offsets)
@@ -1773,6 +1789,10 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_draw_tool_draw_rectangle:  * @draw_tool:   the #GimpDrawTool  * @filled:      whether to fill the rectangle  * @x:           horizontal image coordinate  * @y:           vertical image coordinate  * @width:       width in image coordinates  * @height:      height in image coordinates  * @use_offsets: whether to use the image pixel offsets of the tool's display  *  * This function takes image space coordinates and transforms them to  * screen window coordinates, then draws the resulting rectangle.  **/
+end_comment
 
 begin_function
 name|void
@@ -4656,7 +4676,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_draw_tool_draw_boundary:  *  * @draw_tool: a #GimpDrawTool  * @bound_segs: the sorted brush outline  * @n_bound_segs: the number of segments in @bound_segs  * @offset_x: x offset  * @offset_y: y offset  * @use_offsets: whether to use offsets  *  * Draw the boundary of the brush that @draw_tool uses. The boundary  * should be sorted with sort_boundary(), and @n_bound_segs should  * include the sentinel segments inserted by sort_boundary() that  * indicate the end of connected segment sequences (groups) .  */
+comment|/**  * gimp_draw_tool_draw_boundary:  * @draw_tool:    a #GimpDrawTool  * @bound_segs:   the sorted brush outline  * @n_bound_segs: the number of segments in @bound_segs  * @offset_x:     x offset  * @offset_y:     y offset  * @use_offsets:  whether to use offsets  *  * Draw the boundary of the brush that @draw_tool uses. The boundary  * should be sorted with sort_boundary(), and @n_bound_segs should  * include the sentinel segments inserted by sort_boundary() that  * indicate the end of connected segment sequences (groups) .  */
 end_comment
 
 begin_function
