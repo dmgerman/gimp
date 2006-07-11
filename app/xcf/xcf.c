@@ -195,63 +195,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_if
-if|#
-directive|if
-literal|0
-end_if
-
-begin_comment
-unit|static PlugInProcDef xcf_plug_in_load_proc = {   "gimp-xcf-load",   N_("GIMP XCF image"),   NULL,   GIMP_ICON_TYPE_STOCK_ID,   -1,   (guint8 *) "gimp-wilber",   NULL,
-comment|/* ignored for load */
-end_comment
-
-begin_comment
-unit|0,
-comment|/* ignored for load */
-end_comment
-
-begin_comment
-unit|0,   FALSE,   NULL,   TRUE,   "xcf",   "",   "0,string,gimp\\040xcf\\040",   "image/x-xcf",   NULL,
-comment|/* fill me in at runtime */
-end_comment
-
-begin_comment
-unit|NULL,
-comment|/* fill me in at runtime */
-end_comment
-
-begin_comment
-unit|NULL
-comment|/* fill me in at runtime */
-end_comment
-
-begin_comment
-unit|};  static PlugInProcDef xcf_plug_in_save_proc = {   "gimp-xcf-save",   N_("GIMP XCF image"),   NULL,   GIMP_ICON_TYPE_STOCK_ID,   -1,   (guint8 *) "gimp-wilber",   "RGB*, GRAY*, INDEXED*",   0,
-comment|/* fill me in at runtime */
-end_comment
-
-begin_comment
-unit|0,   FALSE,   NULL,   TRUE,   "xcf",   "",   NULL,   "image/x-xcf",   NULL,
-comment|/* fill me in at runtime */
-end_comment
-
-begin_comment
-unit|NULL,
-comment|/* fill me in at runtime */
-end_comment
-
-begin_comment
-unit|NULL
-comment|/* fill me in at runtime */
-end_comment
-
-begin_endif
-unit|};
-endif|#
-directive|endif
-end_endif
-
 begin_decl_stmt
 DECL|variable|xcf_loaders
 specifier|static
@@ -404,9 +347,9 @@ name|procedure
 argument_list|,
 literal|"gimp-xcf-save"
 argument_list|,
-literal|"saves file in the .xcf file format"
+literal|"Saves file in the .xcf file format"
 argument_list|,
-literal|"The xcf file format has been designed "
+literal|"The XCF file format has been designed "
 literal|"specifically for loading and saving "
 literal|"tiled and layered images in the GIMP. "
 literal|"This procedure will save the specified "
@@ -649,9 +592,9 @@ name|procedure
 argument_list|,
 literal|"gimp-xcf-load"
 argument_list|,
-literal|"loads file saved in the .xcf file format"
+literal|"Loads file saved in the .xcf file format"
 argument_list|,
-literal|"The xcf file format has been designed "
+literal|"The XCF file format has been designed "
 literal|"specifically for loading and saving "
 literal|"tiled and layered images in the GIMP. "
 literal|"This procedure will load the specified "
@@ -1125,6 +1068,7 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
+block|{
 name|g_message
 argument_list|(
 name|_
@@ -1143,6 +1087,7 @@ name|errno
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
@@ -1391,6 +1336,7 @@ expr_stmt|;
 block|}
 block|}
 else|else
+block|{
 name|g_message
 argument_list|(
 name|_
@@ -1409,6 +1355,7 @@ name|errno
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
