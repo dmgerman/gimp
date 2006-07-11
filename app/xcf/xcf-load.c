@@ -142,6 +142,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpprogress.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpselection.h"
 end_include
 
@@ -553,6 +559,17 @@ endif|#
 directive|endif
 end_endif
 
+begin_define
+DECL|macro|xcf_progress_update (info)
+define|#
+directive|define
+name|xcf_progress_update
+parameter_list|(
+name|info
+parameter_list|)
+value|G_STMT_START  \   {                                             \     if (info->progress)                         \       gimp_progress_pulse (info->progress);     \   } G_STMT_END
+end_define
+
 begin_function
 name|GimpImage
 modifier|*
@@ -686,6 +703,11 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
+name|xcf_progress_update
+argument_list|(
+name|info
+argument_list|)
+expr_stmt|;
 comment|/* read the image properties */
 if|if
 condition|(
@@ -762,6 +784,11 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+name|xcf_progress_update
+argument_list|(
+name|info
+argument_list|)
+expr_stmt|;
 while|while
 condition|(
 name|TRUE
@@ -835,6 +862,11 @@ name|error
 goto|;
 name|num_successful_elements
 operator|++
+expr_stmt|;
+name|xcf_progress_update
+argument_list|(
+name|info
+argument_list|)
 expr_stmt|;
 comment|/* add the layer to the image if its not the floating selection */
 if|if
@@ -949,6 +981,11 @@ name|error
 goto|;
 name|num_successful_elements
 operator|++
+expr_stmt|;
+name|xcf_progress_update
+argument_list|(
+name|info
+argument_list|)
 expr_stmt|;
 comment|/* add the channel to the image if its not the selection */
 if|if
@@ -3827,6 +3864,11 @@ condition|)
 goto|goto
 name|error
 goto|;
+name|xcf_progress_update
+argument_list|(
+name|info
+argument_list|)
+expr_stmt|;
 comment|/* call the evil text layer hack that might change our layer pointer */
 name|active
 operator|=
@@ -3955,6 +3997,11 @@ condition|)
 goto|goto
 name|error
 goto|;
+name|xcf_progress_update
+argument_list|(
+name|info
+argument_list|)
+expr_stmt|;
 comment|/* read in the layer mask */
 if|if
 condition|(
@@ -3995,6 +4042,11 @@ condition|)
 goto|goto
 name|error
 goto|;
+name|xcf_progress_update
+argument_list|(
+name|info
+argument_list|)
+expr_stmt|;
 name|layer_mask
 operator|->
 name|apply_mask
@@ -4219,6 +4271,11 @@ condition|)
 goto|goto
 name|error
 goto|;
+name|xcf_progress_update
+argument_list|(
+name|info
+argument_list|)
+expr_stmt|;
 comment|/* read the hierarchy and layer mask offsets */
 name|info
 operator|->
@@ -4270,6 +4327,11 @@ condition|)
 goto|goto
 name|error
 goto|;
+name|xcf_progress_update
+argument_list|(
+name|info
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|is_fs_drawable
@@ -4476,6 +4538,11 @@ condition|)
 goto|goto
 name|error
 goto|;
+name|xcf_progress_update
+argument_list|(
+name|info
+argument_list|)
+expr_stmt|;
 comment|/* read the hierarchy and layer mask offsets */
 name|info
 operator|->
@@ -4527,6 +4594,11 @@ condition|)
 goto|goto
 name|error
 goto|;
+name|xcf_progress_update
+argument_list|(
+name|info
+argument_list|)
+expr_stmt|;
 comment|/* attach the floating selection... */
 if|if
 condition|(

@@ -142,6 +142,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpprogress.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpunit.h"
 end_include
 
@@ -708,6 +714,17 @@ parameter_list|)
 value|G_STMT_START { \   if (! (x))                                                  \     {                                                         \       g_message (_("Error saving XCF file: %s"),              \                  error->message);                             \       return FALSE;                                           \     }                                                         \   } G_STMT_END
 end_define
 
+begin_define
+DECL|macro|xcf_progress_update (info)
+define|#
+directive|define
+name|xcf_progress_update
+parameter_list|(
+name|info
+parameter_list|)
+value|G_STMT_START  \   {                                             \     progress++;                                 \     if (info->progress)                         \       gimp_progress_set_value (info->progress,  \                                (gdouble) progress / (gdouble) max_progress); \   } G_STMT_END
+end_define
+
 begin_function
 name|void
 DECL|function|xcf_save_choose_format (XcfInfo * info,GimpImage * image)
@@ -859,6 +876,14 @@ decl_stmt|;
 name|guint
 name|nchannels
 decl_stmt|;
+name|guint
+name|progress
+init|=
+literal|0
+decl_stmt|;
+name|guint
+name|max_progress
+decl_stmt|;
 name|GList
 modifier|*
 name|list
@@ -878,7 +903,7 @@ decl_stmt|;
 name|gchar
 name|version_tag
 index|[
-literal|14
+literal|16
 index|]
 decl_stmt|;
 name|GError
@@ -1024,6 +1049,14 @@ operator|->
 name|channels
 argument_list|)
 expr_stmt|;
+name|max_progress
+operator|=
+literal|1
+operator|+
+name|nlayers
+operator|+
+name|nchannels
+expr_stmt|;
 comment|/* check and see if we have to save out the selection */
 name|have_selection
 operator|=
@@ -1067,6 +1100,11 @@ argument_list|,
 operator|&
 name|error
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|xcf_progress_update
+argument_list|(
+name|info
 argument_list|)
 expr_stmt|;
 comment|/* save the current file position as it is the start of where    *  we place the layer offset information.    */
@@ -1127,10 +1165,6 @@ control|)
 block|{
 name|layer
 operator|=
-operator|(
-name|GimpLayer
-operator|*
-operator|)
 name|list
 operator|->
 name|data
@@ -1156,6 +1190,11 @@ argument_list|,
 operator|&
 name|error
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|xcf_progress_update
+argument_list|(
+name|info
 argument_list|)
 expr_stmt|;
 comment|/* seek back to where we are to write out the next        *  layer offset and write it out.        */
@@ -1272,10 +1311,6 @@ condition|)
 block|{
 name|channel
 operator|=
-operator|(
-name|GimpChannel
-operator|*
-operator|)
 name|list
 operator|->
 name|data
@@ -1322,6 +1357,11 @@ argument_list|,
 operator|&
 name|error
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|xcf_progress_update
+argument_list|(
+name|info
 argument_list|)
 expr_stmt|;
 comment|/* seek back to where we are to write out the next        *  channel offset and write it out.        */
@@ -5847,28 +5887,16 @@ modifier|*
 name|error
 parameter_list|)
 block|{
-name|guchar
+name|GError
 modifier|*
-name|data
-decl_stmt|,
-modifier|*
-name|t
-decl_stmt|;
-name|unsigned
-name|int
-name|last
+name|tmp_error
+init|=
+name|NULL
 decl_stmt|;
 name|gint
-name|state
-decl_stmt|;
-name|gint
-name|length
-decl_stmt|;
-name|gint
-name|count
-decl_stmt|;
-name|gint
-name|size
+name|len
+init|=
+literal|0
 decl_stmt|;
 name|gint
 name|bpp
@@ -5877,17 +5905,6 @@ name|gint
 name|i
 decl_stmt|,
 name|j
-decl_stmt|;
-name|gint
-name|len
-init|=
-literal|0
-decl_stmt|;
-name|GError
-modifier|*
-name|tmp_error
-init|=
-name|NULL
 decl_stmt|;
 name|tile_lock
 argument_list|(
@@ -5915,12 +5932,11 @@ name|i
 operator|++
 control|)
 block|{
-name|data
-operator|=
-operator|(
+specifier|const
 name|guchar
-operator|*
-operator|)
+modifier|*
+name|data
+init|=
 name|tile_data_pointer
 argument_list|(
 name|tile
@@ -5931,21 +5947,25 @@ literal|0
 argument_list|)
 operator|+
 name|i
-expr_stmt|;
+decl_stmt|;
+name|gint
 name|state
-operator|=
+init|=
 literal|0
-expr_stmt|;
+decl_stmt|;
+name|gint
 name|length
-operator|=
+init|=
 literal|0
-expr_stmt|;
+decl_stmt|;
+name|gint
 name|count
-operator|=
+init|=
 literal|0
-expr_stmt|;
+decl_stmt|;
+name|gint
 name|size
-operator|=
+init|=
 name|tile_ewidth
 argument_list|(
 name|tile
@@ -5955,12 +5975,13 @@ name|tile_eheight
 argument_list|(
 name|tile
 argument_list|)
-expr_stmt|;
+decl_stmt|;
+name|guint
 name|last
-operator|=
+init|=
 operator|-
 literal|1
-expr_stmt|;
+decl_stmt|;
 while|while
 condition|(
 name|size
@@ -6107,10 +6128,12 @@ operator|*
 name|data
 operator|)
 condition|)
+block|{
 name|state
 operator|=
 literal|1
 expr_stmt|;
+block|}
 break|break;
 case|case
 literal|1
@@ -6167,6 +6190,11 @@ operator|)
 operator|)
 condition|)
 block|{
+specifier|const
+name|guchar
+modifier|*
+name|t
+decl_stmt|;
 name|count
 operator|+=
 name|length
@@ -6440,7 +6468,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd23dbb0108
+DECL|struct|__anon2b18166a0108
 block|{
 DECL|member|info
 name|XcfInfo

@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2782fcce0103
+DECL|enum|__anon2c47d83f0103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -164,7 +164,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2782fcce0203
+DECL|enum|__anon2c47d83f0203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE
@@ -196,7 +196,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2782fcce0303
+DECL|enum|__anon2c47d83f0303
 block|{
 DECL|enumerator|XCF_ORIENTATION_HORIZONTAL
 name|XCF_ORIENTATION_HORIZONTAL
@@ -216,7 +216,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2782fcce0403
+DECL|enum|__anon2c47d83f0403
 block|{
 DECL|enumerator|XCF_STROKETYPE_STROKE
 name|XCF_STROKETYPE_STROKE
@@ -306,6 +306,11 @@ decl_stmt|;
 DECL|member|file_version
 name|gint
 name|file_version
+decl_stmt|;
+DECL|member|progress
+name|GimpProgress
+modifier|*
+name|progress
 decl_stmt|;
 block|}
 struct|;
