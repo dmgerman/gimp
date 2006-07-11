@@ -24,6 +24,7 @@ name|FILE
 modifier|*
 name|fp
 parameter_list|,
+specifier|const
 name|guint32
 modifier|*
 name|data
@@ -47,6 +48,7 @@ name|FILE
 modifier|*
 name|fp
 parameter_list|,
+specifier|const
 name|gfloat
 modifier|*
 name|data
@@ -70,6 +72,7 @@ name|FILE
 modifier|*
 name|fp
 parameter_list|,
+specifier|const
 name|guint8
 modifier|*
 name|data

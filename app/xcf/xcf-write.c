@@ -51,13 +51,14 @@ end_include
 
 begin_function
 name|guint
-DECL|function|xcf_write_int32 (FILE * fp,guint32 * data,gint count,GError ** error)
+DECL|function|xcf_write_int32 (FILE * fp,const guint32 * data,gint count,GError ** error)
 name|xcf_write_int32
 parameter_list|(
 name|FILE
 modifier|*
 name|fp
 parameter_list|,
+specifier|const
 name|guint32
 modifier|*
 name|data
@@ -76,9 +77,6 @@ modifier|*
 name|tmp_error
 init|=
 name|NULL
-decl_stmt|;
-name|guint32
-name|tmp
 decl_stmt|;
 name|gint
 name|i
@@ -104,8 +102,9 @@ name|i
 operator|++
 control|)
 block|{
+name|guint32
 name|tmp
-operator|=
+init|=
 name|g_htonl
 argument_list|(
 name|data
@@ -113,12 +112,13 @@ index|[
 name|i
 index|]
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|xcf_write_int8
 argument_list|(
 name|fp
 argument_list|,
 operator|(
+specifier|const
 name|guint8
 operator|*
 operator|)
@@ -161,13 +161,14 @@ end_function
 
 begin_function
 name|guint
-DECL|function|xcf_write_float (FILE * fp,gfloat * data,gint count,GError ** error)
+DECL|function|xcf_write_float (FILE * fp,const gfloat * data,gint count,GError ** error)
 name|xcf_write_float
 parameter_list|(
 name|FILE
 modifier|*
 name|fp
 parameter_list|,
+specifier|const
 name|gfloat
 modifier|*
 name|data
@@ -187,13 +188,13 @@ argument_list|(
 name|fp
 argument_list|,
 operator|(
+specifier|const
 name|guint32
 operator|*
 operator|)
 operator|(
 operator|(
-name|void
-operator|*
+name|gconstpointer
 operator|)
 name|data
 operator|)
@@ -208,13 +209,14 @@ end_function
 
 begin_function
 name|guint
-DECL|function|xcf_write_int8 (FILE * fp,guint8 * data,gint count,GError ** error)
+DECL|function|xcf_write_int8 (FILE * fp,const guint8 * data,gint count,GError ** error)
 name|xcf_write_int8
 parameter_list|(
 name|FILE
 modifier|*
 name|fp
 parameter_list|,
+specifier|const
 name|guint8
 modifier|*
 name|data
@@ -230,14 +232,9 @@ parameter_list|)
 block|{
 name|guint
 name|total
-decl_stmt|;
-name|gint
-name|bytes
-decl_stmt|;
-name|total
-operator|=
+init|=
 name|count
-expr_stmt|;
+decl_stmt|;
 while|while
 condition|(
 name|count
@@ -245,11 +242,13 @@ operator|>
 literal|0
 condition|)
 block|{
+name|gint
 name|bytes
-operator|=
+init|=
 name|fwrite
 argument_list|(
 operator|(
+specifier|const
 name|gchar
 operator|*
 operator|)
@@ -264,7 +263,7 @@ name|count
 argument_list|,
 name|fp
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|bytes
@@ -342,19 +341,14 @@ name|tmp_error
 init|=
 name|NULL
 decl_stmt|;
-name|guint32
-name|tmp
-decl_stmt|;
 name|guint
 name|total
+init|=
+literal|0
 decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
-name|total
-operator|=
-literal|0
-expr_stmt|;
 for|for
 control|(
 name|i
@@ -369,6 +363,9 @@ name|i
 operator|++
 control|)
 block|{
+name|guint32
+name|tmp
+decl_stmt|;
 if|if
 condition|(
 name|data
@@ -433,6 +430,7 @@ argument_list|(
 name|fp
 argument_list|,
 operator|(
+specifier|const
 name|guint8
 operator|*
 operator|)
