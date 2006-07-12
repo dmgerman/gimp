@@ -4,7 +4,7 @@ comment|/* bmp.c                                          */
 end_comment
 
 begin_comment
-comment|/* Version 0.51	                                  */
+comment|/* Version 0.52                                   */
 end_comment
 
 begin_comment
@@ -52,7 +52,7 @@ comment|/*            16.03.1998 Endian-independent!!     */
 end_comment
 
 begin_comment
-comment|/*	      21.03.1998 Little Bug-fix		  */
+comment|/*            21.03.1998 Little Bug-fix           */
 end_comment
 
 begin_comment
@@ -109,6 +109,22 @@ end_comment
 
 begin_comment
 comment|/*                       by njl195@zepler.org.uk  */
+end_comment
+
+begin_comment
+comment|/*            29.06.2006 Full support for 16/32   */
+end_comment
+
+begin_comment
+comment|/*                       bits bitmaps and support */
+end_comment
+
+begin_comment
+comment|/*                       for alpha channel        */
+end_comment
+
+begin_comment
+comment|/*                       by p.filiciak@zax.pl     */
 end_comment
 
 begin_comment

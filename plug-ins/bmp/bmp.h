@@ -216,6 +216,13 @@ name|gulong
 name|biClrImp
 decl_stmt|;
 comment|/* 32 */
+DECL|member|masks
+name|guint32
+name|masks
+index|[
+literal|4
+index|]
+decl_stmt|;
 comment|/* 36 */
 DECL|variable|Bitmap_Head
 block|}
@@ -237,9 +244,9 @@ DECL|member|shiftin
 name|guint32
 name|shiftin
 decl_stmt|;
-DECL|member|shiftout
-name|guint32
-name|shiftout
+DECL|member|max_value
+name|gfloat
+name|max_value
 decl_stmt|;
 DECL|typedef|Bitmap_Channel
 block|}
