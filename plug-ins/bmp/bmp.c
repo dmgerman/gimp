@@ -201,9 +201,11 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|interactive_bmp
+DECL|variable|interactive
 name|gboolean
-name|interactive_bmp
+name|interactive
+init|=
+name|FALSE
 decl_stmt|;
 end_decl_stmt
 
@@ -629,7 +631,7 @@ block|{
 case|case
 name|GIMP_RUN_INTERACTIVE
 case|:
-name|interactive_bmp
+name|interactive
 operator|=
 name|TRUE
 expr_stmt|;
@@ -638,10 +640,6 @@ case|case
 name|GIMP_RUN_NONINTERACTIVE
 case|:
 comment|/*  Make sure all the arguments are there!  */
-name|interactive_bmp
-operator|=
-name|FALSE
-expr_stmt|;
 if|if
 condition|(
 name|nparams
@@ -764,6 +762,11 @@ block|{
 case|case
 name|GIMP_RUN_INTERACTIVE
 case|:
+name|interactive
+operator|=
+name|TRUE
+expr_stmt|;
+comment|/* fallthrough */
 case|case
 name|GIMP_RUN_WITH_LAST_VALS
 case|:
@@ -818,30 +821,10 @@ expr_stmt|;
 return|return;
 block|}
 break|break;
-default|default:
-break|break;
-block|}
-switch|switch
-condition|(
-name|run_mode
-condition|)
-block|{
-case|case
-name|GIMP_RUN_INTERACTIVE
-case|:
-name|interactive_bmp
-operator|=
-name|TRUE
-expr_stmt|;
-break|break;
 case|case
 name|GIMP_RUN_NONINTERACTIVE
 case|:
 comment|/*  Make sure all the arguments are there!  */
-name|interactive_bmp
-operator|=
-name|FALSE
-expr_stmt|;
 if|if
 condition|(
 name|nparams
@@ -853,14 +836,6 @@ operator|=
 name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 break|break;
-case|case
-name|GIMP_RUN_WITH_LAST_VALS
-case|:
-name|interactive_bmp
-operator|=
-name|FALSE
-expr_stmt|;
-break|break;
 default|default:
 break|break;
 block|}
@@ -870,7 +845,6 @@ name|status
 operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
-block|{
 name|status
 operator|=
 name|WriteBMP
@@ -889,7 +863,6 @@ argument_list|,
 name|drawable_ID
 argument_list|)
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|export

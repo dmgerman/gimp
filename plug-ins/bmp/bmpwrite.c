@@ -82,7 +82,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a802680103
+DECL|enum|__anon2b29034c0103
 block|{
 DECL|enumerator|RGB_565
 DECL|enumerator|RGBA_5551
@@ -949,7 +949,7 @@ operator|==
 literal|4
 operator|)
 operator|&&
-name|interactive_bmp
+name|interactive
 condition|)
 block|{
 if|if
@@ -978,7 +978,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|interactive_bmp
+name|interactive
 operator|&&
 operator|!
 name|save_dialog_rgb
@@ -994,18 +994,6 @@ condition|(
 name|rgb_format
 condition|)
 block|{
-default|default:
-name|g_message
-argument_list|(
-name|_
-argument_list|(
-literal|"Unknown format."
-argument_list|)
-argument_list|)
-expr_stmt|;
-return|return
-name|GIMP_PDB_EXECUTION_ERROR
-return|;
 case|case
 name|RGB_888
 case|:
@@ -1066,6 +1054,12 @@ operator|=
 literal|16
 expr_stmt|;
 break|break;
+default|default:
+name|g_return_val_if_reached
+argument_list|(
+name|GIMP_PDB_EXECUTION_ERROR
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 comment|/* Let's take some file */

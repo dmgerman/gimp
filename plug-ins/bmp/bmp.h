@@ -102,7 +102,7 @@ end_function_decl
 begin_decl_stmt
 specifier|extern
 name|gboolean
-name|interactive_bmp
+name|interactive
 decl_stmt|;
 end_decl_stmt
 
