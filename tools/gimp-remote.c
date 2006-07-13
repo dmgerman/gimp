@@ -1644,12 +1644,12 @@ return|return
 name|EXIT_FAILURE
 return|;
 block|}
-comment|/*  Problem: If the Toolbox is hidden via Tab (gtk_widget_hide)            *  it does not accept DnD-Operations and gtk_main() will not be            *  terminated. If the Toolbox is simply unmapped (by the WM)            *  DnD works. But in both cases gdk_window_is_visible() returns            *  FALSE. To work around this we add a timeout and abort after            *  1.5 seconds.            */
+comment|/*  Problem: If the Toolbox is hidden via Tab (gtk_widget_hide)            *  it does not accept DnD-Operations and gtk_main() will not be            *  terminated. If the Toolbox is simply unmapped (by the WM)            *  DnD works. But in both cases gdk_window_is_visible() returns            *  FALSE. To work around this we add a timeout and abort after            *  5 seconds.            */
 name|timeout
 operator|=
 name|g_timeout_add
 argument_list|(
-literal|1500
+literal|5000
 argument_list|,
 name|toolbox_hidden
 argument_list|,
