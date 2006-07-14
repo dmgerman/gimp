@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * This is a plug-in for the GIMP.  *  * Generates clickable image maps.  *  * Copyright (C) 1998-2005 Maurits Rijk  m.rijk@chello.nl  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
+comment|/*  * This is a plug-in for the GIMP.  *  * Generates clickable image maps.  *  * Copyright (C) 1998-2006 Maurits Rijk  m.rijk@chello.nl  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
 end_comment
 
 begin_include
@@ -245,6 +245,27 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|set_preview_color
+parameter_list|()
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|set_zoom_factor
+parameter_list|()
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|toggle_area_list
+parameter_list|()
+function_decl|;
+end_function_decl
+
 begin_decl_stmt
 DECL|variable|_menu
 specifier|static
@@ -425,6 +446,23 @@ argument_list|,
 name|factor
 operator|>
 literal|1
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|menu_set_zoom (gint factor)
+name|menu_set_zoom
+parameter_list|(
+name|gint
+name|factor
+parameter_list|)
+block|{
+name|menu_set_zoom_sensitivity
+argument_list|(
+name|factor
 argument_list|)
 expr_stmt|;
 block|}
@@ -1645,12 +1683,16 @@ literal|"<menuitem action='Gray'/>"
 literal|"<separator/>"
 literal|"<menuitem action='ZoomIn'/>"
 literal|"<menuitem action='ZoomOut'/>"
-if|#
-directive|if
-literal|0
-expr|"<menu action='ZoomToMenu'>" "<menuitem action='Zoom1:1'/>" "<menuitem action='Zoom1:2'/>" "<menuitem action='Zoom1:3'/>" "<menuitem action='Zoom1:4'/>" "<menuitem action='Zoom1:5'/>" "<menuitem action='Zoom1:6'/>" "<menuitem action='Zoom1:7'/>" "<menuitem action='Zoom1:8'/>" "</menu>"
-endif|#
-directive|endif
+literal|"<menu action='ZoomToMenu'>"
+literal|"<menuitem action='Zoom1:1'/>"
+literal|"<menuitem action='Zoom1:2'/>"
+literal|"<menuitem action='Zoom1:3'/>"
+literal|"<menuitem action='Zoom1:4'/>"
+literal|"<menuitem action='Zoom1:5'/>"
+literal|"<menuitem action='Zoom1:6'/>"
+literal|"<menuitem action='Zoom1:7'/>"
+literal|"<menuitem action='Zoom1:8'/>"
+literal|"</menu>"
 literal|"</menu>"
 literal|"<menu action='MappingMenu'>"
 literal|"<menuitem action='Arrow'/>"
@@ -1833,9 +1875,12 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
-name|NULL
+name|G_CALLBACK
+argument_list|(
+name|set_preview_color
+argument_list|)
 argument_list|,
-name|window
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_action_group_add_radio_actions
@@ -1851,9 +1896,12 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
-name|NULL
+name|G_CALLBACK
+argument_list|(
+name|set_zoom_factor
+argument_list|)
 argument_list|,
-name|window
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_action_group_add_radio_actions
@@ -1999,6 +2047,11 @@ expr_stmt|;
 name|menu_shapes_selected
 argument_list|(
 literal|0
+argument_list|)
+expr_stmt|;
+name|menu_set_zoom_sensitivity
+argument_list|(
+literal|1
 argument_list|)
 expr_stmt|;
 return|return
@@ -2265,23 +2318,6 @@ name|action
 argument_list|)
 argument_list|,
 name|check
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-name|void
-DECL|function|menu_set_zoom (gint factor)
-name|menu_set_zoom
-parameter_list|(
-name|gint
-name|factor
-parameter_list|)
-block|{
-name|menu_set_zoom_sensitivity
-argument_list|(
-name|factor
 argument_list|)
 expr_stmt|;
 block|}

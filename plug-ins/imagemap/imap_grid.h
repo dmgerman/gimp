@@ -19,7 +19,9 @@ end_define
 begin_function_decl
 name|void
 name|do_grid_settings_dialog
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 function_decl|;
 end_function_decl
 
@@ -37,7 +39,9 @@ end_function_decl
 begin_function_decl
 name|void
 name|toggle_grid
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 function_decl|;
 end_function_decl
 

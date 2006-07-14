@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * This is a plug-in for the GIMP.  *  * Generates clickable image maps.  *  * Copyright (C) 1998-2005 Maurits Rijk  m.rijk@chello.nl  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
+comment|/*  * This is a plug-in for the GIMP.  *  * Generates clickable image maps.  *  * Copyright (C) 1998-2006 Maurits Rijk  m.rijk@chello.nl  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
 end_comment
 
 begin_include
@@ -284,6 +284,8 @@ DECL|variable|_cursor
 specifier|static
 name|GdkCursorType
 name|_cursor
+init|=
+name|GDK_TOP_LEFT_ARROW
 decl_stmt|;
 end_decl_stmt
 
@@ -1847,49 +1849,35 @@ expr_stmt|;
 block|}
 end_function
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|_NOT_READY_YET
-end_ifdef
-
 begin_function
-specifier|static
 name|void
-DECL|function|set_preview_gray (void)
-name|set_preview_gray
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-name|_map_info
-operator|.
-name|show_gray
-operator|=
-name|TRUE
-expr_stmt|;
-name|set_zoom
-argument_list|(
-name|_zoom_factor
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|set_preview_color (void)
+DECL|function|set_preview_color (GtkRadioAction * action,GtkRadioAction * current,gpointer user_data)
 name|set_preview_color
 parameter_list|(
-name|void
+name|GtkRadioAction
+modifier|*
+name|action
+parameter_list|,
+name|GtkRadioAction
+modifier|*
+name|current
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 block|{
 name|_map_info
 operator|.
 name|show_gray
 operator|=
-name|FALSE
+operator|(
+name|gtk_radio_action_get_current_value
+argument_list|(
+name|current
+argument_list|)
+operator|==
+literal|1
+operator|)
 expr_stmt|;
 name|set_zoom
 argument_list|(
@@ -1899,10 +1887,40 @@ expr_stmt|;
 block|}
 end_function
 
-begin_endif
-endif|#
-directive|endif
-end_endif
+begin_function
+name|void
+DECL|function|set_zoom_factor (GtkRadioAction * action,GtkRadioAction * current,gpointer user_data)
+name|set_zoom_factor
+parameter_list|(
+name|GtkRadioAction
+modifier|*
+name|action
+parameter_list|,
+name|GtkRadioAction
+modifier|*
+name|current
+parameter_list|,
+name|gpointer
+name|user_data
+parameter_list|)
+block|{
+name|gint
+name|factor
+init|=
+name|gtk_radio_action_get_current_value
+argument_list|(
+name|current
+argument_list|)
+decl_stmt|;
+name|set_zoom
+argument_list|(
+name|factor
+operator|+
+literal|1
+argument_list|)
+expr_stmt|;
+block|}
+end_function
 
 begin_function
 specifier|const
@@ -2997,7 +3015,7 @@ name|GtkWidget
 modifier|*
 name|dialog
 init|=
-name|gtk_message_dialog_new_with_markup
+name|gtk_message_dialog_new
 argument_list|(
 name|NULL
 argument_list|,
@@ -3007,11 +3025,17 @@ name|GTK_MESSAGE_QUESTION
 argument_list|,
 name|GTK_BUTTONS_YES_NO
 argument_list|,
-literal|"<span weight=\"bold\" size=\"larger\">%s</span>\n\n%s"
-argument_list|,
 name|_
 argument_list|(
 literal|"Some data has been changed!"
+argument_list|)
+argument_list|)
+decl_stmt|;
+name|gtk_message_dialog_format_secondary_text
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|dialog
 argument_list|)
 argument_list|,
 name|_
@@ -3019,7 +3043,7 @@ argument_list|(
 literal|"Do you really want to discard your changes?"
 argument_list|)
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 if|if
 condition|(
 name|gtk_dialog_run
@@ -4362,14 +4386,7 @@ expr_stmt|;
 block|}
 end_function
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|_NOT_READY_YET_
-end_ifdef
-
 begin_function
-specifier|static
 name|void
 DECL|function|toggle_area_list (void)
 name|toggle_area_list
@@ -4384,11 +4401,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_function
 specifier|static
@@ -5385,74 +5397,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|_NOT_READY_YET_
-end_ifdef
-
-begin_function
-specifier|static
-name|Command_t
-modifier|*
-DECL|function|factory_toggle_area_list (void)
-name|factory_toggle_area_list
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-return|return
-name|command_new
-argument_list|(
-name|toggle_area_list
-argument_list|)
-return|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|Command_t
-modifier|*
-DECL|function|factory_preview_color (void)
-name|factory_preview_color
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-return|return
-name|command_new
-argument_list|(
-name|set_preview_color
-argument_list|)
-return|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|Command_t
-modifier|*
-DECL|function|factory_preview_gray (void)
-name|factory_preview_gray
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-return|return
-name|command_new
-argument_list|(
-name|set_preview_gray
-argument_list|)
-return|;
-block|}
-end_function
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
 begin_function
 specifier|static
 name|Command_t
@@ -5528,6 +5472,9 @@ literal|"imagemap"
 argument_list|,
 name|TRUE
 argument_list|)
+expr_stmt|;
+name|set_arrow_func
+argument_list|()
 expr_stmt|;
 name|_shapes
 operator|=
