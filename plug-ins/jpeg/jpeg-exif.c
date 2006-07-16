@@ -685,7 +685,7 @@ literal|2
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* set software to "The GIMP" */
+comment|/* set software to "GIMP" */
 if|if
 condition|(
 operator|(
@@ -705,6 +705,13 @@ argument_list|)
 operator|)
 condition|)
 block|{
+specifier|const
+name|gchar
+modifier|*
+name|name
+init|=
+literal|"GIMP"
+decl_stmt|;
 name|entry
 operator|->
 name|data
@@ -715,7 +722,7 @@ operator|*
 operator|)
 name|g_strdup
 argument_list|(
-literal|"The GIMP"
+name|name
 argument_list|)
 expr_stmt|;
 name|entry
@@ -724,7 +731,7 @@ name|size
 operator|=
 name|strlen
 argument_list|(
-literal|"The GIMP"
+name|name
 argument_list|)
 operator|+
 literal|1
