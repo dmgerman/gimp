@@ -11967,7 +11967,7 @@ literal|"gimp-image-add-layer"
 argument_list|,
 literal|"Add the specified layer to the image."
 argument_list|,
-literal|"This procedure adds the specified layer to the image at the given position. If the position is specified as -1, then the layer is inserted at the top of the layer stack. If the layer to be added has no alpha channel, it must be added at position 0. The layer type must be compatible with the image base type."
+literal|"This procedure adds the specified layer to the image at the given position. If the position is specified as -1, then the layer is inserted above the active layer. The layer type must be compatible with the image base type."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
