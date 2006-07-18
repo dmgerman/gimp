@@ -302,7 +302,7 @@ literal|"<control><shift>Z"
 block|,
 name|N_
 argument_list|(
-literal|"Undo the last operation, skipping over some types"
+literal|"Undo the last operation, skipping visibility changes"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -327,7 +327,7 @@ literal|"<control><shift>Y"
 block|,
 name|N_
 argument_list|(
-literal|"Redo the last operation that was undone, skipping over some types"
+literal|"Redo the last operation that was undone, skipping visibility changes"
 argument_list|)
 block|,
 name|G_CALLBACK
