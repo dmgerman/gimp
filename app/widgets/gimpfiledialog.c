@@ -1669,7 +1669,7 @@ argument_list|)
 expr_stmt|;
 name|basename
 operator|=
-name|g_path_get_basename
+name|file_utils_uri_display_basename
 argument_list|(
 name|uri
 argument_list|)
