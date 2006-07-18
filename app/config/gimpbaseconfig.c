@@ -84,7 +84,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc1218d0103
+DECL|enum|__anon2ad45bd70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -344,9 +344,9 @@ argument_list|)
 argument_list|,
 literal|1
 operator|<<
-literal|28
+literal|30
 argument_list|,
-comment|/* 256MB */
+comment|/* 1GB */
 name|GIMP_PARAM_STATIC_STRINGS
 operator||
 name|GIMP_CONFIG_PARAM_CONFIRM

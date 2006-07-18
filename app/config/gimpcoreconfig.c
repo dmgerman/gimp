@@ -119,7 +119,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2973f7c90103
+DECL|enum|__anon29e9ad980103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1084,9 +1084,9 @@ name|GIMP_MAX_MEMSIZE
 argument_list|,
 literal|1
 operator|<<
-literal|24
+literal|25
 argument_list|,
-comment|/* 16MB */
+comment|/* 32MB */
 name|GIMP_PARAM_STATIC_STRINGS
 operator||
 name|GIMP_CONFIG_PARAM_CONFIRM
