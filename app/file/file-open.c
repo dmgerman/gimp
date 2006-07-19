@@ -1009,6 +1009,9 @@ name|file_proc
 operator|->
 name|mime_type
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|GIMP_UNSTABLE
 name|g_printerr
 argument_list|(
 literal|"opened thumbnail at %d x %d\n"
@@ -1022,6 +1025,8 @@ operator|->
 name|height
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 block|}
 block|}
 name|g_value_array_free

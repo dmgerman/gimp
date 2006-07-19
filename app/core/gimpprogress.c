@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e530490103
+DECL|enum|__anon29e561a00103
 block|{
 DECL|enumerator|CANCEL
 name|CANCEL
@@ -681,7 +681,7 @@ block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_progress_message (GimpProgress * progress,Gimp * gimp,const gchar * domain,const gchar * message)
 name|gimp_progress_message
 parameter_list|(
@@ -729,6 +729,7 @@ name|progress_iface
 operator|->
 name|message
 condition|)
+block|{
 name|progress_iface
 operator|->
 name|message
@@ -742,16 +743,13 @@ argument_list|,
 name|message
 argument_list|)
 expr_stmt|;
-else|else
-name|gimp_message
-argument_list|(
-name|gimp
-argument_list|,
-name|domain
-argument_list|,
-name|message
-argument_list|)
-expr_stmt|;
+return|return
+name|TRUE
+return|;
+block|}
+return|return
+name|FALSE
+return|;
 block|}
 end_function
 

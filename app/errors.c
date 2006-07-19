@@ -301,6 +301,8 @@ name|gimp
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|message
 argument_list|)
 expr_stmt|;
