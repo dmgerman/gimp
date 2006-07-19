@@ -16,9 +16,25 @@ directive|define
 name|__GIMP_CMYK_H__
 end_define
 
-begin_function_decl
+begin_decl_stmt
 name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
+comment|/*  * GIMP_TYPE_CMYK  */
+DECL|macro|GIMP_TYPE_CMYK
+define|#
+directive|define
+name|GIMP_TYPE_CMYK
+value|(gimp_cmyk_get_type ())
+name|GType
+name|gimp_cmyk_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_function_decl
 name|void
 name|gimp_cmyk_set
 parameter_list|(
