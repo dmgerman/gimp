@@ -134,7 +134,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6afd340103
+DECL|enum|__anon28fe2eec0103
 block|{
 DECL|enumerator|PATTERN_SET
 name|PATTERN_SET
@@ -147,7 +147,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6afd340203
+DECL|enum|__anon28fe2eec0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -813,7 +813,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_pattern_select_button_set_pattern_name:  * @button: A #GimpPatternSelectButton  * @pattern_name: Pattern name to set; %NULL means no change.  *  * Sets the current pattern for the pattern select button.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_pattern_select_button_set_pattern:  * @button: A #GimpPatternSelectButton  * @pattern_name: Pattern name to set; %NULL means no change.  *  * Sets the current pattern for the pattern select button.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function

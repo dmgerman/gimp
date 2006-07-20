@@ -137,7 +137,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aee14240103
+DECL|enum|__anon29592e6a0103
 block|{
 DECL|enumerator|GRADIENT_SET
 name|GRADIENT_SET
@@ -150,7 +150,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aee14240203
+DECL|enum|__anon29592e6a0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -686,7 +686,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_select_button_get_gradient_name:  * @button: A #GimpGradientSelectButton  *  * Retrieves the name of currently selected gradient.  *  * Returns: an internal copy of the gradient name which must not be freed.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_gradient_select_button_get_gradient:  * @button: A #GimpGradientSelectButton  *  * Retrieves the name of currently selected gradient.  *  * Returns: an internal copy of the gradient name which must not be freed.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
