@@ -1324,7 +1324,6 @@ name|child_allocation
 operator|.
 name|x
 operator|=
-operator|(
 name|allocation
 operator|->
 name|x
@@ -1332,11 +1331,6 @@ operator|+
 name|container
 operator|->
 name|border_width
-operator|+
-name|button_requisition
-operator|.
-name|width
-operator|)
 expr_stmt|;
 name|child_allocation
 operator|.
