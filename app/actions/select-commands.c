@@ -1837,6 +1837,7 @@ argument_list|)
 expr_stmt|;
 name|select_shrink_edge_lock
 operator|=
+operator|!
 name|gtk_toggle_button_get_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
