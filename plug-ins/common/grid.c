@@ -244,7 +244,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ead1e80108
+DECL|struct|__anon274f5e9e0108
 block|{
 DECL|member|hwidth
 name|gint
@@ -3818,7 +3818,7 @@ literal|0.0
 argument_list|,
 name|drawable
 operator|->
-name|height
+name|width
 argument_list|)
 expr_stmt|;
 name|gimp_size_entry_set_size
@@ -3834,7 +3834,7 @@ literal|0.0
 argument_list|,
 name|drawable
 operator|->
-name|width
+name|height
 argument_list|)
 expr_stmt|;
 name|gimp_size_entry_set_size
@@ -3867,7 +3867,7 @@ literal|1.0
 argument_list|,
 name|drawable
 operator|->
-name|height
+name|width
 argument_list|)
 expr_stmt|;
 name|gimp_size_entry_set_refval_boundaries
@@ -3883,7 +3883,7 @@ literal|1.0
 argument_list|,
 name|drawable
 operator|->
-name|width
+name|height
 argument_list|)
 expr_stmt|;
 name|gimp_size_entry_set_refval_boundaries
@@ -4215,7 +4215,7 @@ literal|0.0
 argument_list|,
 name|drawable
 operator|->
-name|height
+name|width
 argument_list|)
 expr_stmt|;
 name|gimp_size_entry_set_size
@@ -4231,7 +4231,7 @@ literal|0.0
 argument_list|,
 name|drawable
 operator|->
-name|width
+name|height
 argument_list|)
 expr_stmt|;
 name|gimp_size_entry_set_size
@@ -4264,7 +4264,7 @@ literal|0.0
 argument_list|,
 name|drawable
 operator|->
-name|height
+name|width
 argument_list|)
 expr_stmt|;
 name|gimp_size_entry_set_refval_boundaries
@@ -4280,7 +4280,7 @@ literal|0.0
 argument_list|,
 name|drawable
 operator|->
-name|width
+name|height
 argument_list|)
 expr_stmt|;
 name|gimp_size_entry_set_refval_boundaries
