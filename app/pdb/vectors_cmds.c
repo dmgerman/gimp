@@ -3708,7 +3708,7 @@ modifier|*
 name|vectors
 decl_stmt|;
 name|gint32
-name|op
+name|operation
 decl_stmt|;
 name|gboolean
 name|antialias
@@ -3737,7 +3737,7 @@ argument_list|,
 name|gimp
 argument_list|)
 expr_stmt|;
-name|op
+name|operation
 operator|=
 name|g_value_get_enum
 argument_list|(
@@ -3839,7 +3839,7 @@ argument_list|)
 argument_list|,
 name|vectors
 argument_list|,
-name|op
+name|operation
 argument_list|,
 name|antialias
 argument_list|,
@@ -6892,9 +6892,9 @@ name|procedure
 argument_list|,
 name|g_param_spec_enum
 argument_list|(
-literal|"op"
+literal|"operation"
 argument_list|,
-literal|"op"
+literal|"operation"
 argument_list|,
 literal|"The desired operation with current selection"
 argument_list|,

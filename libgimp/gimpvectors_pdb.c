@@ -2162,19 +2162,19 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_to_selection:  * @vectors_ID: The vectors object to render to the selection.  * @op: The desired operation with current selection.  * @antialias: Antialias selection.  * @feather: Feather selection.  * @feather_radius_x: Feather radius x.  * @feather_radius_y: Feather radius y.  *  * Transforms the specified vectors object into a selection  *  * This procedure renders the desired vectors object into the current  * selection of the image the vectors object belongs to.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_vectors_to_selection:  * @vectors_ID: The vectors object to render to the selection.  * @operation: The desired operation with current selection.  * @antialias: Antialias selection.  * @feather: Feather selection.  * @feather_radius_x: Feather radius x.  * @feather_radius_y: Feather radius y.  *  * Transforms the specified vectors object into a selection  *  * This procedure renders the desired vectors object into the current  * selection of the image the vectors object belongs to.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_vectors_to_selection (gint32 vectors_ID,GimpChannelOps op,gboolean antialias,gboolean feather,gdouble feather_radius_x,gdouble feather_radius_y)
+DECL|function|gimp_vectors_to_selection (gint32 vectors_ID,GimpChannelOps operation,gboolean antialias,gboolean feather,gdouble feather_radius_x,gdouble feather_radius_y)
 name|gimp_vectors_to_selection
 parameter_list|(
 name|gint32
 name|vectors_ID
 parameter_list|,
 name|GimpChannelOps
-name|op
+name|operation
 parameter_list|,
 name|gboolean
 name|antialias
@@ -2216,7 +2216,7 @@ name|vectors_ID
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
-name|op
+name|operation
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,

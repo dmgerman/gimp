@@ -417,7 +417,7 @@ name|gint32
 name|vectors_ID
 parameter_list|,
 name|GimpChannelOps
-name|op
+name|operation
 parameter_list|,
 name|gboolean
 name|antialias
