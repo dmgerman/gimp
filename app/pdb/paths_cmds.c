@@ -4486,17 +4486,17 @@ name|procedure
 argument_list|,
 literal|"gimp-path-to-selection"
 argument_list|,
-literal|"Transforms the active path into a selection"
+literal|"This procedure is deprecated! Use 'gimp-vectors-to-selection' instead."
 argument_list|,
-literal|"This procedure renders the desired path into the current selection."
+literal|"This procedure is deprecated! Use 'gimp-vectors-to-selection' instead."
 argument_list|,
-literal|"Jo\xc3\xa3o S. O. Bueno Calligaris"
+literal|""
 argument_list|,
-literal|"Jo\xc3\xa3o S. O. Bueno Calligaris"
+literal|""
 argument_list|,
-literal|"2003"
+literal|""
 argument_list|,
-name|NULL
+literal|"gimp-vectors-to-selection"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument

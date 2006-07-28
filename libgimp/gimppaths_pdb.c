@@ -1283,7 +1283,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_path_to_selection:  * @image_ID: The image.  * @name: The name of the path which should be made into selection.  * @op: The desired operation with current selection.  * @antialias: Antialias selection.  * @feather: Feather selection.  * @feather_radius_x: Feather radius x.  * @feather_radius_y: Feather radius y.  *  * Transforms the active path into a selection  *  * This procedure renders the desired path into the current selection.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_path_to_selection:  * @image_ID: The image.  * @name: The name of the path which should be made into selection.  * @op: The desired operation with current selection.  * @antialias: Antialias selection.  * @feather: Feather selection.  * @feather_radius_x: Feather radius x.  * @feather_radius_y: Feather radius y.  *  * This procedure is deprecated! Use gimp_vectors_to_selection()  * instead.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
