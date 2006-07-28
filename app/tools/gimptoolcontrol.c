@@ -1151,7 +1151,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_tool_control_set_cursor_modifier (GimpToolControl * control,GimpCursorModifier cmodifier)
+DECL|function|gimp_tool_control_set_cursor_modifier (GimpToolControl * control,GimpCursorModifier modifier)
 name|gimp_tool_control_set_cursor_modifier
 parameter_list|(
 name|GimpToolControl
@@ -1159,7 +1159,7 @@ modifier|*
 name|control
 parameter_list|,
 name|GimpCursorModifier
-name|cmodifier
+name|modifier
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -1174,7 +1174,7 @@ name|control
 operator|->
 name|cursor_modifier
 operator|=
-name|cmodifier
+name|modifier
 expr_stmt|;
 block|}
 end_function
@@ -1241,7 +1241,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_tool_control_set_toggle_cursor_modifier (GimpToolControl * control,GimpCursorModifier cmodifier)
+DECL|function|gimp_tool_control_set_toggle_cursor_modifier (GimpToolControl * control,GimpCursorModifier modifier)
 name|gimp_tool_control_set_toggle_cursor_modifier
 parameter_list|(
 name|GimpToolControl
@@ -1249,7 +1249,7 @@ modifier|*
 name|control
 parameter_list|,
 name|GimpCursorModifier
-name|cmodifier
+name|modifier
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -1264,7 +1264,7 @@ name|control
 operator|->
 name|toggle_cursor_modifier
 operator|=
-name|cmodifier
+name|modifier
 expr_stmt|;
 block|}
 end_function

@@ -572,7 +572,7 @@ modifier|*
 name|control
 parameter_list|,
 name|GimpCursorModifier
-name|cmodifier
+name|modifier
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -614,7 +614,7 @@ modifier|*
 name|control
 parameter_list|,
 name|GimpCursorModifier
-name|cmodifier
+name|modifier
 parameter_list|)
 function_decl|;
 end_function_decl
