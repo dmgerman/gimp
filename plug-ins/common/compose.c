@@ -76,10 +76,10 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1c3c3a0108
+DECL|struct|__anon2b55e5220108
 block|{
 union|union
-DECL|union|__anon2a1c3c3a020a
+DECL|union|__anon2b55e522020a
 block|{
 DECL|member|ID
 name|gint32
@@ -624,7 +624,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1c3c3a0308
+DECL|struct|__anon2b55e5220308
 block|{
 DECL|member|compose_type
 specifier|const
@@ -1121,7 +1121,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1c3c3a0408
+DECL|struct|__anon2b55e5220408
 block|{
 DECL|member|inputs
 name|ComposeInput
@@ -1161,7 +1161,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1c3c3a0508
+DECL|struct|__anon2b55e5220508
 block|{
 DECL|member|width
 DECL|member|height
@@ -2102,6 +2102,10 @@ operator|&
 name|composevals
 argument_list|)
 expr_stmt|;
+name|compose_by_drawable
+operator|=
+name|TRUE
+expr_stmt|;
 comment|/* The dialog is now drawable based. Get a drawable-ID of the image */
 if|if
 condition|(
@@ -2203,10 +2207,6 @@ operator|.
 name|d_int32
 expr_stmt|;
 block|}
-name|compose_by_drawable
-operator|=
-name|TRUE
-expr_stmt|;
 comment|/*  First acquire information with a dialog  */
 if|if
 condition|(
@@ -2480,6 +2480,10 @@ argument_list|,
 operator|&
 name|composevals
 argument_list|)
+expr_stmt|;
+name|compose_by_drawable
+operator|=
+name|TRUE
 expr_stmt|;
 break|break;
 default|default:
