@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28956def0103
+DECL|enum|__anon298b2dc40103
 block|{
 DECL|enumerator|RECTANGLE_CHANGED
 name|RECTANGLE_CHANGED
@@ -4526,9 +4526,9 @@ case|:
 if|if
 condition|(
 name|inc_y
-operator|==
+operator|!=
 literal|0
-operator|||
+operator|&&
 name|inc_x
 operator|/
 name|inc_y
@@ -4574,9 +4574,9 @@ case|:
 if|if
 condition|(
 name|inc_y
-operator|==
+operator|!=
 literal|0
-operator|||
+operator|&&
 name|inc_x
 operator|/
 name|inc_y
@@ -4622,9 +4622,9 @@ case|:
 if|if
 condition|(
 name|inc_y
-operator|==
+operator|!=
 literal|0
-operator|||
+operator|&&
 name|inc_x
 operator|/
 name|inc_y
@@ -4673,9 +4673,9 @@ case|:
 if|if
 condition|(
 name|inc_y
-operator|==
+operator|!=
 literal|0
-operator|||
+operator|&&
 name|inc_x
 operator|/
 name|inc_y
