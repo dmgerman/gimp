@@ -190,7 +190,7 @@ DECL|macro|STATUSBAR_SIZE
 define|#
 directive|define
 name|STATUSBAR_SIZE
-value|128
+value|200
 end_define
 
 begin_function_decl
@@ -2204,6 +2204,19 @@ name|tool_options
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gimp_tool_push_status
+argument_list|(
+name|tool
+argument_list|,
+name|display
+argument_list|,
+name|_
+argument_list|(
+literal|"Click in any image to pick the "
+literal|"foreground color."
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 else|else
@@ -2218,6 +2231,14 @@ name|tool
 argument_list|)
 argument_list|)
 condition|)
+block|{
+name|gimp_tool_pop_status
+argument_list|(
+name|tool
+argument_list|,
+name|display
+argument_list|)
+expr_stmt|;
 name|gimp_color_tool_disable
 argument_list|(
 name|GIMP_COLOR_TOOL
@@ -2226,6 +2247,7 @@ name|tool
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 block|}
@@ -2442,6 +2464,11 @@ index|[
 name|STATUSBAR_SIZE
 index|]
 decl_stmt|;
+specifier|const
+name|gchar
+modifier|*
+name|status_help
+decl_stmt|;
 name|gint
 name|off_x
 decl_stmt|,
@@ -2535,6 +2562,30 @@ name|last_coords
 operator|.
 name|y
 expr_stmt|;
+if|if
+condition|(
+operator|(
+name|state
+operator|&
+name|GDK_CONTROL_MASK
+operator|)
+condition|)
+name|status_help
+operator|=
+name|_
+argument_list|(
+literal|"Click to draw the line."
+argument_list|)
+expr_stmt|;
+else|else
+name|status_help
+operator|=
+name|_
+argument_list|(
+literal|"Click to draw the line."
+literal|" (try Ctrl for constrained angles)"
+argument_list|)
+expr_stmt|;
 comment|/*  show distance in statusbar  */
 if|if
 condition|(
@@ -2569,7 +2620,7 @@ argument_list|(
 name|status_str
 argument_list|)
 argument_list|,
-literal|"%.1f %s"
+literal|"%.1f %s.  %s"
 argument_list|,
 name|dist
 argument_list|,
@@ -2577,6 +2628,8 @@ name|_
 argument_list|(
 literal|"pixels"
 argument_list|)
+argument_list|,
+name|status_help
 argument_list|)
 expr_stmt|;
 block|}
@@ -2605,7 +2658,7 @@ argument_list|(
 name|format_str
 argument_list|)
 argument_list|,
-literal|"%%.%df %s"
+literal|"%%.%df %s.  %%s"
 argument_list|,
 name|_gimp_unit_get_digits
 argument_list|(
@@ -2678,6 +2731,8 @@ argument_list|,
 name|format_str
 argument_list|,
 name|dist
+argument_list|,
+name|status_help
 argument_list|)
 expr_stmt|;
 block|}
@@ -2715,7 +2770,23 @@ name|display
 argument_list|,
 name|_
 argument_list|(
-literal|"Press Shift to draw a straight line."
+literal|"Click to paint. (try "
+literal|"Shift for a straight line, "
+literal|"Ctrl to pick a color)"
+argument_list|)
+argument_list|)
+expr_stmt|;
+else|else
+name|gimp_tool_push_status
+argument_list|(
+name|tool
+argument_list|,
+name|display
+argument_list|,
+name|_
+argument_list|(
+literal|"Click to paint. (try "
+literal|"Ctrl to pick a color)"
 argument_list|)
 argument_list|)
 expr_stmt|;

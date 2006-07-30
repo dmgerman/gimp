@@ -4368,7 +4368,7 @@ name|status
 operator|=
 name|_
 argument_list|(
-literal|"Click to create a new anchor. (try SHIFT)"
+literal|"Click to create a new anchor. (try Shift)"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -4401,7 +4401,7 @@ name|status
 operator|=
 name|_
 argument_list|(
-literal|"Click-Drag to move the handle around. (try SHIFT)"
+literal|"Click-Drag to move the handle around. (try Shift)"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -4434,7 +4434,7 @@ operator|=
 name|_
 argument_list|(
 literal|"Click-Drag to change the shape of the curve. "
-literal|"(SHIFT: symmetrical)"
+literal|"(Shift: symmetrical)"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -4446,7 +4446,7 @@ operator|=
 name|_
 argument_list|(
 literal|"Click-Drag to move the component around. "
-literal|"(try SHIFT)"
+literal|"(try Shift)"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -4468,7 +4468,7 @@ name|status
 operator|=
 name|_
 argument_list|(
-literal|"Click to insert an anchor on the path. (try SHIFT)"
+literal|"Click to insert an anchor on the path. (try Shift)"
 argument_list|)
 expr_stmt|;
 break|break;

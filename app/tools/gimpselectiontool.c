@@ -917,28 +917,6 @@ name|status
 init|=
 name|NULL
 decl_stmt|;
-if|if
-condition|(
-operator|!
-name|gimp_enum_get_value
-argument_list|(
-name|GIMP_TYPE_CHANNEL_OPS
-argument_list|,
-name|selection_tool
-operator|->
-name|op
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-operator|&
-name|status
-argument_list|,
-name|NULL
-argument_list|)
-condition|)
-block|{
 switch|switch
 condition|(
 name|selection_tool
@@ -947,13 +925,77 @@ name|op
 condition|)
 block|{
 case|case
+name|SELECTION_REPLACE
+case|:
+if|if
+condition|(
+operator|!
+name|gimp_channel_is_empty
+argument_list|(
+name|selection
+argument_list|)
+condition|)
+name|status
+operator|=
+name|N_
+argument_list|(
+literal|"Click-Drag to replace the current selection. "
+literal|"(try Shift, Ctrl, Alt)"
+argument_list|)
+expr_stmt|;
+else|else
+name|status
+operator|=
+name|N_
+argument_list|(
+literal|"Click-Drag to create a new selection."
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|SELECTION_ADD
+case|:
+name|status
+operator|=
+name|N_
+argument_list|(
+literal|"Click-Drag to add to the current selection. "
+literal|"(try Ctrl)"
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|SELECTION_SUBTRACT
+case|:
+name|status
+operator|=
+name|N_
+argument_list|(
+literal|"Click-Drag to subtract from the current selection. "
+literal|"(try Shift)"
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|SELECTION_INTERSECT
+case|:
+name|status
+operator|=
+name|N_
+argument_list|(
+literal|"Click-Drag to intersect with the current selection."
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
 name|SELECTION_MOVE_MASK
 case|:
 name|status
 operator|=
 name|_
 argument_list|(
-literal|"Move the selection mask"
+literal|"Click-Drag to move the selection mask. "
+literal|"(try Shift or Ctrl)"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -964,7 +1006,7 @@ name|status
 operator|=
 name|_
 argument_list|(
-literal|"Move the selected pixels"
+literal|"Click-Drag to move the selected pixels."
 argument_list|)
 expr_stmt|;
 break|break;
@@ -975,7 +1017,7 @@ name|status
 operator|=
 name|_
 argument_list|(
-literal|"Move a copy of the selected pixels"
+literal|"Click-Drag to move a copy of the selected pixels."
 argument_list|)
 expr_stmt|;
 break|break;
@@ -986,7 +1028,7 @@ name|status
 operator|=
 name|_
 argument_list|(
-literal|"Anchor the floating selection"
+literal|"Click to anchor the floating selection."
 argument_list|)
 expr_stmt|;
 break|break;
@@ -994,7 +1036,6 @@ default|default:
 name|g_return_if_reached
 argument_list|()
 expr_stmt|;
-block|}
 block|}
 if|if
 condition|(
