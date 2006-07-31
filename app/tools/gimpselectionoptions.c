@@ -66,18 +66,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpbycolorselecttool.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpellipseselecttool.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpforegroundselecttool.h"
 end_include
 
@@ -90,7 +78,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpfuzzyselecttool.h"
+file|"gimpregionselecttool.h"
 end_include
 
 begin_include
@@ -119,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d42ad70103
+DECL|enum|__anon27913b030103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1753,21 +1741,16 @@ block|}
 comment|/*  selection tools which operate on colors or contiguous regions  */
 if|if
 condition|(
+name|g_type_is_a
+argument_list|(
 name|tool_options
 operator|->
 name|tool_info
 operator|->
 name|tool_type
-operator|==
-name|GIMP_TYPE_FUZZY_SELECT_TOOL
-operator|||
-name|tool_options
-operator|->
-name|tool_info
-operator|->
-name|tool_type
-operator|==
-name|GIMP_TYPE_BY_COLOR_SELECT_TOOL
+argument_list|,
+name|GIMP_TYPE_REGION_SELECT_TOOL
+argument_list|)
 condition|)
 block|{
 name|GtkWidget
@@ -1989,21 +1972,16 @@ block|}
 comment|/*  widgets for fixed size select  */
 if|if
 condition|(
+name|g_type_is_a
+argument_list|(
 name|tool_options
 operator|->
 name|tool_info
 operator|->
 name|tool_type
-operator|==
+argument_list|,
 name|GIMP_TYPE_RECT_SELECT_TOOL
-operator|||
-name|tool_options
-operator|->
-name|tool_info
-operator|->
-name|tool_type
-operator|==
-name|GIMP_TYPE_ELLIPSE_SELECT_TOOL
+argument_list|)
 condition|)
 block|{
 name|GtkWidget
