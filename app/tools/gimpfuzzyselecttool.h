@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpfuzzyselecttool.h  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_ifndef
@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gimpselectiontool.h"
+file|"gimpregionselecttool.h"
 end_include
 
 begin_define
@@ -109,46 +109,8 @@ struct|struct
 name|_GimpFuzzySelectTool
 block|{
 DECL|member|parent_instance
-name|GimpSelectionTool
+name|GimpRegionSelectTool
 name|parent_instance
-decl_stmt|;
-DECL|member|x
-DECL|member|y
-name|gint
-name|x
-decl_stmt|,
-name|y
-decl_stmt|;
-comment|/*  Point from which to execute seed fill   */
-DECL|member|first_x
-name|gint
-name|first_x
-decl_stmt|;
-comment|/*                                          */
-DECL|member|first_y
-name|gint
-name|first_y
-decl_stmt|;
-comment|/*  variables to keep track of sensitivity  */
-DECL|member|first_threshold
-name|gdouble
-name|first_threshold
-decl_stmt|;
-comment|/*  initial value of threshold slider       */
-DECL|member|fuzzy_mask
-name|GimpChannel
-modifier|*
-name|fuzzy_mask
-decl_stmt|;
-comment|/*  Segments which make up the fuzzy selection boundary  */
-DECL|member|segs
-name|GdkSegment
-modifier|*
-name|segs
-decl_stmt|;
-DECL|member|num_segs
-name|gint
-name|num_segs
 decl_stmt|;
 block|}
 struct|;
@@ -160,7 +122,7 @@ struct|struct
 name|_GimpFuzzySelectToolClass
 block|{
 DECL|member|parent_class
-name|GimpSelectionToolClass
+name|GimpRegionSelectToolClass
 name|parent_class
 decl_stmt|;
 block|}
