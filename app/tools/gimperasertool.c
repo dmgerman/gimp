@@ -266,6 +266,15 @@ argument_list|(
 name|eraser
 argument_list|)
 decl_stmt|;
+name|GimpPaintTool
+modifier|*
+name|paint_tool
+init|=
+name|GIMP_PAINT_TOOL
+argument_list|(
+name|eraser
+argument_list|)
+decl_stmt|;
 name|gimp_tool_control_set_tool_cursor
 argument_list|(
 name|tool
@@ -286,12 +295,36 @@ argument_list|)
 expr_stmt|;
 name|gimp_paint_tool_enable_color_picker
 argument_list|(
-name|GIMP_PAINT_TOOL
-argument_list|(
-name|eraser
-argument_list|)
+name|paint_tool
 argument_list|,
 name|GIMP_COLOR_PICK_MODE_BACKGROUND
+argument_list|)
+expr_stmt|;
+name|paint_tool
+operator|->
+name|status
+operator|=
+name|_
+argument_list|(
+literal|"Click to erase."
+argument_list|)
+expr_stmt|;
+name|paint_tool
+operator|->
+name|status_line
+operator|=
+name|_
+argument_list|(
+literal|"Click to erase the line."
+argument_list|)
+expr_stmt|;
+name|paint_tool
+operator|->
+name|status_ctrl
+operator|=
+name|_
+argument_list|(
+literal|"%s to pick a background color"
 argument_list|)
 expr_stmt|;
 block|}

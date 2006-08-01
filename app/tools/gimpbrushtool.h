@@ -128,6 +128,27 @@ DECL|member|brush_y
 name|gdouble
 name|brush_y
 decl_stmt|;
+DECL|member|status
+specifier|const
+name|gchar
+modifier|*
+name|status
+decl_stmt|;
+comment|/* status message */
+DECL|member|status_line
+specifier|const
+name|gchar
+modifier|*
+name|status_line
+decl_stmt|;
+comment|/* status message when drawing a line */
+DECL|member|status_ctrl
+specifier|const
+name|gchar
+modifier|*
+name|status_ctrl
+decl_stmt|;
+comment|/* additional message for the ctrl modifier */
 DECL|member|core
 name|GimpPaintCore
 modifier|*

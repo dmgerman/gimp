@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpwidgets-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpsmudgetool.h"
 end_include
 
@@ -182,6 +188,15 @@ argument_list|(
 name|smudge
 argument_list|)
 decl_stmt|;
+name|GimpPaintTool
+modifier|*
+name|paint_tool
+init|=
+name|GIMP_PAINT_TOOL
+argument_list|(
+name|smudge
+argument_list|)
+decl_stmt|;
 name|gimp_tool_control_set_tool_cursor
 argument_list|(
 name|tool
@@ -199,6 +214,24 @@ name|smudge
 argument_list|)
 argument_list|,
 name|GIMP_COLOR_PICK_MODE_FOREGROUND
+argument_list|)
+expr_stmt|;
+name|paint_tool
+operator|->
+name|status
+operator|=
+name|_
+argument_list|(
+literal|"Click to smudge."
+argument_list|)
+expr_stmt|;
+name|paint_tool
+operator|->
+name|status_line
+operator|=
+name|_
+argument_list|(
+literal|"Click to smudge the line."
 argument_list|)
 expr_stmt|;
 block|}

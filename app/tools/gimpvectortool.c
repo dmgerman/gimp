@@ -126,6 +126,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpwidgets-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpdisplay.h"
 end_include
 
@@ -387,6 +393,9 @@ parameter_list|,
 name|GimpDisplay
 modifier|*
 name|display
+parameter_list|,
+name|GdkModifierType
+name|state
 parameter_list|,
 name|gboolean
 name|proximity
@@ -4269,6 +4278,8 @@ name|tool
 argument_list|,
 name|display
 argument_list|,
+name|state
+argument_list|,
 name|proximity
 argument_list|)
 expr_stmt|;
@@ -4278,7 +4289,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_vector_tool_status_update (GimpTool * tool,GimpDisplay * display,gboolean proximity)
+DECL|function|gimp_vector_tool_status_update (GimpTool * tool,GimpDisplay * display,GdkModifierType state,gboolean proximity)
 name|gimp_vector_tool_status_update
 parameter_list|(
 name|GimpTool
@@ -4288,6 +4299,9 @@ parameter_list|,
 name|GimpDisplay
 modifier|*
 name|display
+parameter_list|,
+name|GdkModifierType
+name|state
 parameter_list|,
 name|gboolean
 name|proximity
@@ -4314,7 +4328,6 @@ condition|(
 name|proximity
 condition|)
 block|{
-specifier|const
 name|gchar
 modifier|*
 name|status
@@ -4366,9 +4379,23 @@ name|VECTORS_ADD_ANCHOR
 case|:
 name|status
 operator|=
+name|gimp_suggest_modifiers
+argument_list|(
 name|_
 argument_list|(
-literal|"Click to create a new anchor. (try Shift)"
+literal|"Click to create a new anchor."
+argument_list|)
+argument_list|,
+name|GDK_SHIFT_MASK
+operator|&
+operator|~
+name|state
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 break|break;
@@ -4399,9 +4426,24 @@ name|VECTORS_MOVE_HANDLE
 case|:
 name|status
 operator|=
+name|gimp_suggest_modifiers
+argument_list|(
 name|_
 argument_list|(
-literal|"Click-Drag to move the handle around. (try Shift)"
+literal|"Click-Drag to move the handle "
+literal|"around."
+argument_list|)
+argument_list|,
+name|GDK_SHIFT_MASK
+operator|&
+operator|~
+name|state
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 break|break;
@@ -4423,18 +4465,50 @@ name|polygonal
 condition|)
 name|status
 operator|=
+name|gimp_suggest_modifiers
+argument_list|(
 name|_
 argument_list|(
-literal|"Click-Drag to move the anchors around."
+literal|"Click-Drag to move the "
+literal|"anchors around."
+argument_list|)
+argument_list|,
+name|GDK_SHIFT_MASK
+operator|&
+operator|~
+name|state
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 else|else
 name|status
 operator|=
+name|gimp_suggest_modifiers
+argument_list|(
 name|_
 argument_list|(
-literal|"Click-Drag to change the shape of the curve. "
-literal|"(Shift: symmetrical)"
+literal|"Click-Drag to change the "
+literal|"shape of the curve."
+argument_list|)
+argument_list|,
+name|GDK_SHIFT_MASK
+operator|&
+operator|~
+name|state
+argument_list|,
+name|_
+argument_list|(
+literal|"%s: symmetrical"
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 break|break;
@@ -4443,10 +4517,24 @@ name|VECTORS_MOVE_STROKE
 case|:
 name|status
 operator|=
+name|gimp_suggest_modifiers
+argument_list|(
 name|_
 argument_list|(
-literal|"Click-Drag to move the component around. "
-literal|"(try Shift)"
+literal|"Click-Drag to move the "
+literal|"component around."
+argument_list|)
+argument_list|,
+name|GDK_SHIFT_MASK
+operator|&
+operator|~
+name|state
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 break|break;
@@ -4466,9 +4554,24 @@ name|VECTORS_INSERT_ANCHOR
 case|:
 name|status
 operator|=
+name|gimp_suggest_modifiers
+argument_list|(
 name|_
 argument_list|(
-literal|"Click to insert an anchor on the path. (try Shift)"
+literal|"Click-Drag to insert an anchor "
+literal|"on the path."
+argument_list|)
+argument_list|,
+name|GDK_SHIFT_MASK
+operator|&
+operator|~
+name|state
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 break|break;
@@ -4539,6 +4642,38 @@ argument_list|,
 name|status
 argument_list|)
 expr_stmt|;
+comment|/* not very elegant */
+switch|switch
+condition|(
+name|vector_tool
+operator|->
+name|function
+condition|)
+block|{
+case|case
+name|VECTORS_ADD_ANCHOR
+case|:
+case|case
+name|VECTORS_MOVE_HANDLE
+case|:
+case|case
+name|VECTORS_MOVE_CURVE
+case|:
+case|case
+name|VECTORS_MOVE_STROKE
+case|:
+case|case
+name|VECTORS_INSERT_ANCHOR
+case|:
+name|g_free
+argument_list|(
+name|status
+argument_list|)
+expr_stmt|;
+break|break;
+default|default:
+break|break;
+block|}
 block|}
 block|}
 end_function

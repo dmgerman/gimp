@@ -132,6 +132,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpwidgets-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpdisplay.h"
 end_include
 
@@ -692,6 +698,33 @@ operator|->
 name|draw_line
 operator|=
 name|FALSE
+expr_stmt|;
+name|paint_tool
+operator|->
+name|status
+operator|=
+name|_
+argument_list|(
+literal|"Click to paint."
+argument_list|)
+expr_stmt|;
+name|paint_tool
+operator|->
+name|status_line
+operator|=
+name|_
+argument_list|(
+literal|"Click to draw the line."
+argument_list|)
+expr_stmt|;
+name|paint_tool
+operator|->
+name|status_ctrl
+operator|=
+name|_
+argument_list|(
+literal|"%s to pick a color"
+argument_list|)
 expr_stmt|;
 name|paint_tool
 operator|->
@@ -2204,6 +2237,19 @@ name|tool_options
 argument_list|)
 argument_list|)
 expr_stmt|;
+switch|switch
+condition|(
+name|GIMP_COLOR_TOOL
+argument_list|(
+name|tool
+argument_list|)
+operator|->
+name|pick_mode
+condition|)
+block|{
+case|case
+name|GIMP_COLOR_PICK_MODE_FOREGROUND
+case|:
 name|gimp_tool_push_status
 argument_list|(
 name|tool
@@ -2217,6 +2263,27 @@ literal|"foreground color."
 argument_list|)
 argument_list|)
 expr_stmt|;
+break|break;
+case|case
+name|GIMP_COLOR_PICK_MODE_BACKGROUND
+case|:
+name|gimp_tool_push_status
+argument_list|(
+name|tool
+argument_list|,
+name|display
+argument_list|,
+name|_
+argument_list|(
+literal|"Click in any image to pick the "
+literal|"background color."
+argument_list|)
+argument_list|)
+expr_stmt|;
+break|break;
+default|default:
+break|break;
+block|}
 block|}
 block|}
 else|else
@@ -2464,7 +2531,6 @@ index|[
 name|STATUSBAR_SIZE
 index|]
 decl_stmt|;
-specifier|const
 name|gchar
 modifier|*
 name|status_help
@@ -2562,28 +2628,27 @@ name|last_coords
 operator|.
 name|y
 expr_stmt|;
-if|if
-condition|(
-operator|(
-name|state
-operator|&
+name|status_help
+operator|=
+name|gimp_suggest_modifiers
+argument_list|(
+name|paint_tool
+operator|->
+name|status_line
+argument_list|,
 name|GDK_CONTROL_MASK
-operator|)
-condition|)
-name|status_help
-operator|=
+operator|&
+operator|~
+name|state
+argument_list|,
+name|NULL
+argument_list|,
 name|_
 argument_list|(
-literal|"Click to draw the line."
+literal|"%s for constrained angles"
 argument_list|)
-expr_stmt|;
-else|else
-name|status_help
-operator|=
-name|_
-argument_list|(
-literal|"Click to draw the line."
-literal|" (try Ctrl for constrained angles)"
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 comment|/*  show distance in statusbar  */
@@ -2736,6 +2801,11 @@ name|status_help
 argument_list|)
 expr_stmt|;
 block|}
+name|g_free
+argument_list|(
+name|status_help
+argument_list|)
+expr_stmt|;
 name|gimp_tool_push_status
 argument_list|(
 name|tool
@@ -2754,6 +2824,10 @@ expr_stmt|;
 block|}
 else|else
 block|{
+name|gchar
+modifier|*
+name|status
+decl_stmt|;
 if|if
 condition|(
 name|display
@@ -2762,32 +2836,70 @@ name|tool
 operator|->
 name|display
 condition|)
-name|gimp_tool_push_status
+name|status
+operator|=
+name|gimp_suggest_modifiers
 argument_list|(
-name|tool
+name|paint_tool
+operator|->
+name|status
 argument_list|,
-name|display
+operator|(
+name|GDK_SHIFT_MASK
+operator||
+name|GDK_CONTROL_MASK
+operator|)
+operator|&
+operator|~
+name|state
 argument_list|,
 name|_
 argument_list|(
-literal|"Click to paint. (try "
-literal|"Shift for a straight line, "
-literal|"Ctrl to pick a color)"
+literal|"%s for a straight line"
 argument_list|)
+argument_list|,
+name|paint_tool
+operator|->
+name|status_ctrl
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 else|else
+name|status
+operator|=
+name|gimp_suggest_modifiers
+argument_list|(
+name|paint_tool
+operator|->
+name|status
+argument_list|,
+name|GDK_CONTROL_MASK
+operator|&
+operator|~
+name|state
+argument_list|,
+name|NULL
+argument_list|,
+name|paint_tool
+operator|->
+name|status_ctrl
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|gimp_tool_push_status
 argument_list|(
 name|tool
 argument_list|,
 name|display
 argument_list|,
-name|_
-argument_list|(
-literal|"Click to paint. (try "
-literal|"Ctrl to pick a color)"
+name|status
 argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|status
 argument_list|)
 expr_stmt|;
 name|paint_tool
