@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpwidgets-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpeditselectiontool.h"
 end_include
 
@@ -910,13 +916,38 @@ condition|(
 name|proximity
 condition|)
 block|{
-specifier|const
 name|gchar
 modifier|*
 name|status
 init|=
 name|NULL
 decl_stmt|;
+name|gboolean
+name|free_status
+init|=
+name|FALSE
+decl_stmt|;
+name|GdkModifierType
+name|modifiers
+init|=
+operator|(
+name|GDK_SHIFT_MASK
+operator||
+name|GDK_CONTROL_MASK
+operator|)
+decl_stmt|;
+if|if
+condition|(
+operator|!
+name|gimp_channel_is_empty
+argument_list|(
+name|selection
+argument_list|)
+condition|)
+name|modifiers
+operator||=
+name|GDK_MOD1_MASK
+expr_stmt|;
 switch|switch
 condition|(
 name|selection_tool
@@ -935,14 +966,34 @@ argument_list|(
 name|selection
 argument_list|)
 condition|)
+block|{
 name|status
 operator|=
-name|N_
+name|gimp_suggest_modifiers
 argument_list|(
-literal|"Click-Drag to replace the current selection. "
-literal|"(try Shift, Ctrl, Alt)"
+name|_
+argument_list|(
+literal|"Click-Drag to replace the "
+literal|"current selection."
+argument_list|)
+argument_list|,
+name|modifiers
+operator|&
+operator|~
+name|state
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
+name|free_status
+operator|=
+name|TRUE
+expr_stmt|;
+block|}
 else|else
 name|status
 operator|=
@@ -957,11 +1008,33 @@ name|SELECTION_ADD
 case|:
 name|status
 operator|=
-name|N_
+name|gimp_suggest_modifiers
 argument_list|(
-literal|"Click-Drag to add to the current selection. "
-literal|"(try Ctrl)"
+name|_
+argument_list|(
+literal|"Click-Drag to add to the "
+literal|"current selection."
 argument_list|)
+argument_list|,
+name|modifiers
+operator|&
+operator|~
+operator|(
+name|state
+operator||
+name|GDK_SHIFT_MASK
+operator|)
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|free_status
+operator|=
+name|TRUE
 expr_stmt|;
 break|break;
 case|case
@@ -969,11 +1042,33 @@ name|SELECTION_SUBTRACT
 case|:
 name|status
 operator|=
-name|N_
+name|gimp_suggest_modifiers
 argument_list|(
-literal|"Click-Drag to subtract from the current selection. "
-literal|"(try Shift)"
+name|_
+argument_list|(
+literal|"Click-Drag to subtract from the "
+literal|"current selection."
 argument_list|)
+argument_list|,
+name|modifiers
+operator|&
+operator|~
+operator|(
+name|state
+operator||
+name|GDK_CONTROL_MASK
+operator|)
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|free_status
+operator|=
+name|TRUE
 expr_stmt|;
 break|break;
 case|case
@@ -981,10 +1076,29 @@ name|SELECTION_INTERSECT
 case|:
 name|status
 operator|=
-name|N_
+name|gimp_suggest_modifiers
 argument_list|(
-literal|"Click-Drag to intersect with the current selection."
+name|_
+argument_list|(
+literal|"Click-Drag to intersect with "
+literal|"the current selection."
 argument_list|)
+argument_list|,
+name|modifiers
+operator|&
+operator|~
+name|state
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|free_status
+operator|=
+name|TRUE
 expr_stmt|;
 break|break;
 case|case
@@ -992,11 +1106,29 @@ name|SELECTION_MOVE_MASK
 case|:
 name|status
 operator|=
+name|gimp_suggest_modifiers
+argument_list|(
 name|_
 argument_list|(
-literal|"Click-Drag to move the selection mask. "
-literal|"(try Shift or Ctrl)"
+literal|"Click-Drag to move the "
+literal|"selection mask."
 argument_list|)
+argument_list|,
+name|modifiers
+operator|&
+operator|~
+name|state
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|free_status
+operator|=
+name|TRUE
 expr_stmt|;
 break|break;
 case|case
@@ -1047,6 +1179,15 @@ name|tool
 argument_list|,
 name|display
 argument_list|,
+name|status
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|free_status
+condition|)
+name|g_free
+argument_list|(
 name|status
 argument_list|)
 expr_stmt|;

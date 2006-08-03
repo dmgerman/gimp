@@ -234,6 +234,13 @@ argument_list|(
 literal|"Click to smudge the line."
 argument_list|)
 expr_stmt|;
+name|paint_tool
+operator|->
+name|status_ctrl
+operator|=
+name|NULL
+expr_stmt|;
+comment|/* don't suggest Ctrl even if it works */
 block|}
 end_function
 
