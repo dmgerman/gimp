@@ -744,8 +744,14 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|GIMP_DATA_ERROR
+argument_list|,
+name|GIMP_DATA_ERROR_READ
+argument_list|,
 name|_
 argument_list|(
 literal|"Corrupt segment %d in gradient file '%s'."
@@ -908,7 +914,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297f33570108
+DECL|struct|__anon27cd4ec20108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -936,7 +942,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297f33570208
+DECL|struct|__anon27cd4ec20208
 block|{
 DECL|member|offset
 name|gdouble
