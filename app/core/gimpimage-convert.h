@@ -62,6 +62,23 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_image_convert_set_dither_matrix
+parameter_list|(
+name|gint
+name|width
+parameter_list|,
+name|gint
+name|height
+parameter_list|,
+name|guchar
+modifier|*
+name|source
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

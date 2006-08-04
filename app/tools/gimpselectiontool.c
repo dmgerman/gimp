@@ -1008,7 +1008,7 @@ block|}
 else|else
 name|status
 operator|=
-name|N_
+name|_
 argument_list|(
 literal|"Click-Drag to create a new selection."
 argument_list|)

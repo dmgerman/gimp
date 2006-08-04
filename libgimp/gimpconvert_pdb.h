@@ -72,6 +72,27 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|gboolean
+name|gimp_image_convert_set_dither_matrix
+parameter_list|(
+name|gint
+name|width
+parameter_list|,
+name|gint
+name|height
+parameter_list|,
+name|gint
+name|matrix_length
+parameter_list|,
+specifier|const
+name|guint8
+modifier|*
+name|matrix
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_macro
 name|G_END_DECLS
 end_macro
