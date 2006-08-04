@@ -982,9 +982,9 @@ literal|"Check if the image's undo stack is enabled."
 argument_list|,
 literal|"This procedure checks if the image's undo stack is currently enabled or disabled. This is useful when several plugins or scripts call each other and want to check if their caller has already used 'gimp-image-undo-disable' or 'gimp-image-undo-freeze'."
 argument_list|,
-literal|"Raphael Quinet"
+literal|"Rapha\xc3\xabl Quinet<raphael@gimp.org>"
 argument_list|,
-literal|"Raphael Quinet"
+literal|"Rapha\xc3\xabl Quinet"
 argument_list|,
 literal|"1999"
 argument_list|,

@@ -265,7 +265,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_convert_set_dither_matrix:  * @width: Width of the matrix (0 to reset to default matrix).  * @height: Height of the matrix (0 to reset to default matrix).  * @matrix_length: The length of 'matrix'.  * @matrix: The matrix -- all values must be>= 1.  *  * Set dither matrix for conversion to indexed  *  * This procedure sets the dither matrix used when converting images to  * INDEXED mode with positional dithering.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_convert_set_dither_matrix:  * @width: Width of the matrix (0 to reset to default matrix).  * @height: Height of the matrix (0 to reset to default matrix).  * @matrix_length: The length of 'matrix'.  * @matrix: The matrix -- all values must be>= 1.  *  * Set dither matrix for conversion to indexed  *  * This procedure sets the dither matrix used when converting images to  * INDEXED mode with positional dithering.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function

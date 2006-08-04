@@ -1066,11 +1066,11 @@ literal|"Set dither matrix for conversion to indexed"
 argument_list|,
 literal|"This procedure sets the dither matrix used when converting images to INDEXED mode with positional dithering."
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|"David Gowers"
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|"David Gowers"
 argument_list|,
-literal|"1995-1996"
+literal|"2006"
 argument_list|,
 name|NULL
 argument_list|)
