@@ -3038,10 +3038,10 @@ file|"imap_ncsa_parse.h"
 end_include
 
 begin_define
-DECL|macro|link
+DECL|macro|imap_link
 define|#
 directive|define
-name|link
+name|imap_link
 value|1
 end_define
 
@@ -3951,7 +3951,7 @@ file|"imap_ncsa.l"
 block|{
 name|BEGIN
 argument_list|(
-name|link
+name|imap_link
 argument_list|)
 expr_stmt|;
 return|return
@@ -3970,7 +3970,7 @@ file|"imap_ncsa.l"
 block|{
 name|BEGIN
 argument_list|(
-name|link
+name|imap_link
 argument_list|)
 expr_stmt|;
 return|return
@@ -3989,7 +3989,7 @@ file|"imap_ncsa.l"
 block|{
 name|BEGIN
 argument_list|(
-name|link
+name|imap_link
 argument_list|)
 expr_stmt|;
 return|return
@@ -4008,7 +4008,7 @@ file|"imap_ncsa.l"
 block|{
 name|BEGIN
 argument_list|(
-name|link
+name|imap_link
 argument_list|)
 expr_stmt|;
 return|return
@@ -4127,7 +4127,7 @@ case|:
 case|case
 name|YY_STATE_EOF
 argument_list|(
-name|link
+name|imap_link
 argument_list|)
 case|:
 case|case
