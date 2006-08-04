@@ -542,7 +542,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* 526 procedures registered total */
+comment|/* 527 procedures registered total */
 end_comment
 
 begin_function
