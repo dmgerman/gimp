@@ -48,12 +48,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb/gimppluginprocedure.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"plug-in/gimppluginmanager.h"
 end_include
 
@@ -61,6 +55,12 @@ begin_include
 include|#
 directive|include
 file|"plug-in/gimppluginmanager-locale-domain.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"plug-in/gimppluginprocedure.h"
 end_include
 
 begin_include

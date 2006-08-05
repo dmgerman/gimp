@@ -102,42 +102,12 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimptemporaryprocedure.h"
-end_include
-
-begin_comment
-comment|/* eek */
-end_comment
-
-begin_include
-include|#
-directive|include
 file|"gimp-intl.h"
 end_include
 
-begin_function
-name|void
-DECL|function|gimp_pdb_eek (void)
-name|gimp_pdb_eek
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-specifier|volatile
-name|GType
-name|eek
-decl_stmt|;
-name|eek
-operator|=
-name|gimp_temporary_procedure_get_type
-argument_list|()
-expr_stmt|;
-block|}
-end_function
-
 begin_enum
 enum|enum
-DECL|enum|__anon27e79f800103
+DECL|enum|__anon29311a220103
 block|{
 DECL|enumerator|REGISTER_PROCEDURE
 name|REGISTER_PROCEDURE

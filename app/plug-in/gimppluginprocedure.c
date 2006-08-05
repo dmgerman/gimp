@@ -36,7 +36,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb-types.h"
+file|"plug-in-types.h"
 end_include
 
 begin_include
@@ -67,7 +67,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"plug-in/gimppluginmanager-call.h"
+file|"gimppluginmanager-call.h"
 end_include
 
 begin_include
@@ -84,7 +84,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a67b170103
+DECL|enum|__anon2b072d230103
 block|{
 DECL|enumerator|MENU_PATH_ADDED
 name|MENU_PATH_ADDED

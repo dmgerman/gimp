@@ -42,12 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb/gimppluginprocedure.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"plug-in/gimppluginmanager-help-domain.h"
 end_include
 
@@ -55,6 +49,12 @@ begin_include
 include|#
 directive|include
 file|"plug-in/gimppluginmanager-locale-domain.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"plug-in/gimppluginprocedure.h"
 end_include
 
 begin_include
@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2026170103
+DECL|enum|__anon2a1aaf400103
 block|{
 DECL|enumerator|COLUMN_PROC
 name|COLUMN_PROC
@@ -93,7 +93,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2026170203
+DECL|enum|__anon2a1aaf400203
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED

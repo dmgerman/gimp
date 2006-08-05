@@ -78,12 +78,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb/gimptemporaryprocedure.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpenvirontable.h"
 end_include
 
@@ -157,6 +151,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimptemporaryprocedure.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"plug-in-def.h"
 end_include
 
@@ -174,7 +174,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon298dbdc50103
+DECL|enum|__anon2a586a250103
 block|{
 DECL|enumerator|PLUG_IN_OPENED
 name|PLUG_IN_OPENED

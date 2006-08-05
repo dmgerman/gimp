@@ -54,12 +54,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb/gimptemporaryprocedure.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpplugin.h"
 end_include
 
@@ -73,6 +67,12 @@ begin_include
 include|#
 directive|include
 file|"gimppluginmanager.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimptemporaryprocedure.h"
 end_include
 
 begin_comment

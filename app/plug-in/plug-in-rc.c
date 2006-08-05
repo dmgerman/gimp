@@ -54,7 +54,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb/gimppluginprocedure.h"
+file|"gimppluginprocedure.h"
 end_include
 
 begin_include
@@ -247,7 +247,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d7bbda0103
+DECL|enum|__anon28a54f4f0103
 block|{
 DECL|enumerator|PROTOCOL_VERSION
 name|PROTOCOL_VERSION

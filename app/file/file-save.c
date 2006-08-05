@@ -167,7 +167,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb/gimppluginprocedure.h"
+file|"plug-in/gimppluginprocedure.h"
 end_include
 
 begin_include

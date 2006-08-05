@@ -64,12 +64,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb/gimppluginprocedure.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimppluginmanager.h"
 end_include
 
@@ -77,6 +71,12 @@ begin_include
 include|#
 directive|include
 file|"gimppluginmanager-query.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimppluginprocedure.h"
 end_include
 
 begin_function

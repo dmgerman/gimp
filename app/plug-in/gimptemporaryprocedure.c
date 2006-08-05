@@ -18,7 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb-types.h"
+file|"plug-in-types.h"
 end_include
 
 begin_include
@@ -30,7 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"plug-in/gimpplugin.h"
+file|"gimpplugin.h"
 end_include
 
 begin_define
@@ -43,7 +43,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"plug-in/gimppluginmanager-call.h"
+file|"gimppluginmanager-call.h"
 end_include
 
 begin_include

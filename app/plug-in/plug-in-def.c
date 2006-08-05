@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb/gimppluginprocedure.h"
+file|"gimppluginprocedure.h"
 end_include
 
 begin_include
