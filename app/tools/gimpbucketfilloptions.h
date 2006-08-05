@@ -132,6 +132,10 @@ DECL|member|threshold
 name|gdouble
 name|threshold
 decl_stmt|;
+DECL|member|fill_criterion
+name|GimpSelectCriterion
+name|fill_criterion
+decl_stmt|;
 block|}
 struct|;
 end_struct

@@ -382,6 +382,10 @@ name|options
 operator|->
 name|select_transparent
 argument_list|,
+name|options
+operator|->
+name|select_criterion
+argument_list|,
 name|x
 argument_list|,
 name|y

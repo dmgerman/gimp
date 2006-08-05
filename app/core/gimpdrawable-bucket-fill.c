@@ -117,7 +117,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_drawable_bucket_fill (GimpDrawable * drawable,GimpContext * context,GimpBucketFillMode fill_mode,gint paint_mode,gdouble opacity,gboolean do_seed_fill,gboolean fill_transparent,gdouble threshold,gboolean sample_merged,gdouble x,gdouble y)
+DECL|function|gimp_drawable_bucket_fill (GimpDrawable * drawable,GimpContext * context,GimpBucketFillMode fill_mode,gint paint_mode,gdouble opacity,gboolean do_seed_fill,gboolean fill_transparent,GimpSelectCriterion fill_criterion,gdouble threshold,gboolean sample_merged,gdouble x,gdouble y)
 name|gimp_drawable_bucket_fill
 parameter_list|(
 name|GimpDrawable
@@ -142,6 +142,9 @@ name|do_seed_fill
 parameter_list|,
 name|gboolean
 name|fill_transparent
+parameter_list|,
+name|GimpSelectCriterion
+name|fill_criterion
 parameter_list|,
 name|gdouble
 name|threshold
@@ -296,6 +299,8 @@ name|do_seed_fill
 argument_list|,
 name|fill_transparent
 argument_list|,
+name|fill_criterion
+argument_list|,
 name|threshold
 argument_list|,
 name|sample_merged
@@ -315,7 +320,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_bucket_fill_full (GimpDrawable * drawable,GimpBucketFillMode fill_mode,gint paint_mode,gdouble opacity,gboolean do_seed_fill,gboolean fill_transparent,gdouble threshold,gboolean sample_merged,gdouble x,gdouble y,const GimpRGB * color,GimpPattern * pattern)
+DECL|function|gimp_drawable_bucket_fill_full (GimpDrawable * drawable,GimpBucketFillMode fill_mode,gint paint_mode,gdouble opacity,gboolean do_seed_fill,gboolean fill_transparent,GimpSelectCriterion fill_criterion,gdouble threshold,gboolean sample_merged,gdouble x,gdouble y,const GimpRGB * color,GimpPattern * pattern)
 name|gimp_drawable_bucket_fill_full
 parameter_list|(
 name|GimpDrawable
@@ -336,6 +341,9 @@ name|do_seed_fill
 parameter_list|,
 name|gboolean
 name|fill_transparent
+parameter_list|,
+name|GimpSelectCriterion
+name|fill_criterion
 parameter_list|,
 name|gdouble
 name|threshold
@@ -636,6 +644,8 @@ operator|)
 name|threshold
 argument_list|,
 name|fill_transparent
+argument_list|,
+name|fill_criterion
 argument_list|,
 operator|(
 name|gint

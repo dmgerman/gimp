@@ -142,6 +142,10 @@ DECL|member|threshold
 name|gdouble
 name|threshold
 decl_stmt|;
+DECL|member|select_criterion
+name|GimpSelectCriterion
+name|select_criterion
+decl_stmt|;
 comment|/*  used by rect., ellipse selection  */
 DECL|member|auto_shrink
 name|gboolean

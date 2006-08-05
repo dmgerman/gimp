@@ -1606,7 +1606,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_channel_select_fuzzy (GimpChannel * channel,GimpDrawable * drawable,gboolean sample_merged,gint x,gint y,gint threshold,gboolean select_transparent,GimpChannelOps op,gboolean antialias,gboolean feather,gdouble feather_radius_x,gdouble feather_radius_y)
+DECL|function|gimp_channel_select_fuzzy (GimpChannel * channel,GimpDrawable * drawable,gboolean sample_merged,gint x,gint y,gint threshold,gboolean select_transparent,GimpSelectCriterion select_criterion,GimpChannelOps op,gboolean antialias,gboolean feather,gdouble feather_radius_x,gdouble feather_radius_y)
 name|gimp_channel_select_fuzzy
 parameter_list|(
 name|GimpChannel
@@ -1631,6 +1631,9 @@ name|threshold
 parameter_list|,
 name|gboolean
 name|select_transparent
+parameter_list|,
+name|GimpSelectCriterion
+name|select_criterion
 parameter_list|,
 name|GimpChannelOps
 name|op
@@ -1719,6 +1722,8 @@ name|threshold
 argument_list|,
 name|select_transparent
 argument_list|,
+name|select_criterion
+argument_list|,
 name|x
 argument_list|,
 name|y
@@ -1777,7 +1782,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_channel_select_by_color (GimpChannel * channel,GimpDrawable * drawable,gboolean sample_merged,const GimpRGB * color,gint threshold,gboolean select_transparent,GimpChannelOps op,gboolean antialias,gboolean feather,gdouble feather_radius_x,gdouble feather_radius_y)
+DECL|function|gimp_channel_select_by_color (GimpChannel * channel,GimpDrawable * drawable,gboolean sample_merged,const GimpRGB * color,gint threshold,gboolean select_transparent,GimpSelectCriterion select_criterion,GimpChannelOps op,gboolean antialias,gboolean feather,gdouble feather_radius_x,gdouble feather_radius_y)
 name|gimp_channel_select_by_color
 parameter_list|(
 name|GimpChannel
@@ -1801,6 +1806,9 @@ name|threshold
 parameter_list|,
 name|gboolean
 name|select_transparent
+parameter_list|,
+name|GimpSelectCriterion
+name|select_criterion
 parameter_list|,
 name|GimpChannelOps
 name|op
@@ -1895,6 +1903,8 @@ argument_list|,
 name|threshold
 argument_list|,
 name|select_transparent
+argument_list|,
+name|select_criterion
 argument_list|,
 name|color
 argument_list|)

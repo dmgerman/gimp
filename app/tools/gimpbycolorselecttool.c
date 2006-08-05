@@ -478,6 +478,10 @@ name|options
 operator|->
 name|select_transparent
 argument_list|,
+name|options
+operator|->
+name|select_criterion
+argument_list|,
 operator|&
 name|color
 argument_list|)

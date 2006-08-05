@@ -333,6 +333,9 @@ parameter_list|,
 name|gboolean
 name|select_transparent
 parameter_list|,
+name|GimpSelectCriterion
+name|select_criterion
+parameter_list|,
 name|GimpChannelOps
 name|op
 parameter_list|,
@@ -376,6 +379,9 @@ name|threshold
 parameter_list|,
 name|gboolean
 name|select_transparent
+parameter_list|,
+name|GimpSelectCriterion
+name|select_criterion
 parameter_list|,
 name|GimpChannelOps
 name|op

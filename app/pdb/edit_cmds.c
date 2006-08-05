@@ -2168,6 +2168,8 @@ argument_list|,
 name|FALSE
 comment|/* don't fill transparent */
 argument_list|,
+name|GIMP_SELECT_CRITERION_COMPOSITE
+argument_list|,
 name|threshold
 argument_list|,
 name|sample_merged

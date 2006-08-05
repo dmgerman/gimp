@@ -41,6 +41,9 @@ parameter_list|,
 name|gboolean
 name|select_transparent
 parameter_list|,
+name|GimpSelectCriterion
+name|select_criterion
+parameter_list|,
 name|gint
 name|x
 parameter_list|,
@@ -74,6 +77,9 @@ name|threshold
 parameter_list|,
 name|gboolean
 name|select_transparent
+parameter_list|,
+name|GimpSelectCriterion
+name|select_criterion
 parameter_list|,
 specifier|const
 name|GimpRGB

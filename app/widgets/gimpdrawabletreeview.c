@@ -845,6 +845,9 @@ argument_list|,
 comment|/* no seed fill */
 name|FALSE
 argument_list|,
+comment|/* don't fill transp */
+name|GIMP_SELECT_CRITERION_COMPOSITE
+argument_list|,
 literal|0.0
 argument_list|,
 name|FALSE
@@ -939,6 +942,9 @@ name|FALSE
 argument_list|,
 comment|/* no seed fill */
 name|FALSE
+argument_list|,
+comment|/* don't fill transp */
+name|GIMP_SELECT_CRITERION_COMPOSITE
 argument_list|,
 literal|0.0
 argument_list|,
@@ -1239,9 +1245,12 @@ name|context
 argument_list|)
 argument_list|,
 name|FALSE
-comment|/* no seed fill */
 argument_list|,
+comment|/* no seed fill */
 name|FALSE
+argument_list|,
+comment|/* don't fill transp */
+name|GIMP_SELECT_CRITERION_COMPOSITE
 argument_list|,
 literal|0.0
 argument_list|,

@@ -637,6 +637,10 @@ name|fill_transparent
 argument_list|,
 name|options
 operator|->
+name|fill_criterion
+argument_list|,
+name|options
+operator|->
 name|threshold
 argument_list|,
 name|options

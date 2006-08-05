@@ -275,6 +275,8 @@ argument_list|,
 name|FALSE
 comment|/* don't select transparent */
 argument_list|,
+name|GIMP_SELECT_CRITERION_COMPOSITE
+argument_list|,
 name|operation
 argument_list|,
 name|antialias
@@ -952,6 +954,8 @@ name|threshold
 argument_list|,
 name|FALSE
 comment|/* don't select transparent */
+argument_list|,
+name|GIMP_SELECT_CRITERION_COMPOSITE
 argument_list|,
 name|operation
 argument_list|,

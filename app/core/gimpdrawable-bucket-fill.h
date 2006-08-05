@@ -43,6 +43,9 @@ parameter_list|,
 name|gboolean
 name|fill_transparent
 parameter_list|,
+name|GimpSelectCriterion
+name|fill_criterion
+parameter_list|,
 name|gdouble
 name|threshold
 parameter_list|,
@@ -80,6 +83,9 @@ name|do_seed_fill
 parameter_list|,
 name|gboolean
 name|fill_transparent
+parameter_list|,
+name|GimpSelectCriterion
+name|fill_criterion
 parameter_list|,
 name|gdouble
 name|threshold

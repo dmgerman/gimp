@@ -1277,6 +1277,9 @@ argument_list|,
 comment|/* no seed fill */
 name|FALSE
 argument_list|,
+comment|/* don't fill transp */
+name|GIMP_SELECT_CRITERION_COMPOSITE
+argument_list|,
 literal|0.0
 argument_list|,
 name|FALSE
