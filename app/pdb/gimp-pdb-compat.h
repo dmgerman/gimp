@@ -72,6 +72,20 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_pdb_compat_procs_register
+parameter_list|(
+name|GimpPDB
+modifier|*
+name|pdb
+parameter_list|,
+name|GimpPDBCompatMode
+name|compat_mode
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

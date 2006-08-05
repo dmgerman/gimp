@@ -112,7 +112,7 @@ end_comment
 begin_include
 include|#
 directive|include
-file|"gimp-pdb.h"
+file|"gimp-pdb-compat.h"
 end_include
 
 begin_comment
@@ -142,9 +142,11 @@ operator|=
 name|gimp_temporary_procedure_get_type
 argument_list|()
 expr_stmt|;
-name|gimp_pdb_exit
+name|gimp_pdb_compat_procs_register
 argument_list|(
 name|NULL
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 block|}
@@ -152,7 +154,7 @@ end_function
 
 begin_enum
 enum|enum
-DECL|enum|__anon2988aa250103
+DECL|enum|__anon2b86db4b0103
 block|{
 DECL|enumerator|REGISTER_PROCEDURE
 name|REGISTER_PROCEDURE
