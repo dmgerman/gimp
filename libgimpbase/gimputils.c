@@ -611,14 +611,10 @@ operator|*
 name|str
 operator|++
 expr_stmt|;
-operator|*
-name|p
-operator|++
-operator|=
-operator|*
 name|str
 operator|++
 expr_stmt|;
+continue|continue;
 block|}
 comment|/*  find the "(_X)" construct and remove it entirely  */
 if|if
