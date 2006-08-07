@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c8730a20103
+DECL|enum|__anon29c91bbf0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2140,6 +2140,10 @@ name|tooltip
 decl_stmt|;
 name|label
 operator|=
+operator|(
+name|gchar
+operator|*
+operator|)
 name|g_strip_context
 argument_list|(
 name|entries
