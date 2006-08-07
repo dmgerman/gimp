@@ -66,14 +66,6 @@ value|1
 end_define
 
 begin_define
-DECL|macro|RESPONSE_ABOUT
-define|#
-directive|define
-name|RESPONSE_ABOUT
-value|2
-end_define
-
-begin_define
 DECL|macro|TEXT_WIDTH
 define|#
 directive|define
@@ -108,7 +100,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f692b20108
+DECL|struct|__anon2bd01f270108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -905,6 +897,14 @@ name|GTK_RESPONSE_CANCEL
 argument_list|,
 operator|-
 literal|1
+argument_list|)
+expr_stmt|;
+name|gimp_window_set_transient
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|dialog
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
