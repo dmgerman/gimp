@@ -2241,10 +2241,6 @@ name|GimpPlugInProcedure
 modifier|*
 name|proc
 decl_stmt|;
-name|GSList
-modifier|*
-name|list
-decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
