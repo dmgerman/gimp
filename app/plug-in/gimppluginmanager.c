@@ -174,7 +174,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a586a250103
+DECL|enum|__anon2b1898370103
 block|{
 DECL|enumerator|PLUG_IN_OPENED
 name|PLUG_IN_OPENED
@@ -185,8 +185,8 @@ block|,
 DECL|enumerator|MENU_BRANCH_ADDED
 name|MENU_BRANCH_ADDED
 block|,
-DECL|enumerator|LAST_PLUG_INS_CHANGED
-name|LAST_PLUG_INS_CHANGED
+DECL|enumerator|HISTORY_CHANGED
+name|HISTORY_CHANGED
 block|,
 DECL|enumerator|LAST_SIGNAL
 name|LAST_SIGNAL
@@ -467,12 +467,12 @@ argument_list|)
 expr_stmt|;
 name|manager_signals
 index|[
-name|LAST_PLUG_INS_CHANGED
+name|HISTORY_CHANGED
 index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"last-plug-ins-changed"
+literal|"history-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -485,7 +485,7 @@ name|G_STRUCT_OFFSET
 argument_list|(
 name|GimpPlugInManagerClass
 argument_list|,
-name|last_plug_ins_changed
+name|history_changed
 argument_list|)
 argument_list|,
 name|NULL
@@ -581,7 +581,7 @@ name|NULL
 expr_stmt|;
 name|manager
 operator|->
-name|last_plug_ins
+name|history
 operator|=
 name|NULL
 expr_stmt|;
@@ -721,19 +721,19 @@ if|if
 condition|(
 name|manager
 operator|->
-name|last_plug_ins
+name|history
 condition|)
 block|{
 name|g_slist_free
 argument_list|(
 name|manager
 operator|->
-name|last_plug_ins
+name|history
 argument_list|)
 expr_stmt|;
 name|manager
 operator|->
-name|last_plug_ins
+name|history
 operator|=
 name|NULL
 expr_stmt|;
@@ -2819,8 +2819,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_plug_in_manager_set_last_plug_in (GimpPlugInManager * manager,GimpPlugInProcedure * procedure)
-name|gimp_plug_in_manager_set_last_plug_in
+DECL|function|gimp_plug_in_manager_set_last_proc (GimpPlugInManager * manager,GimpPlugInProcedure * procedure)
+name|gimp_plug_in_manager_set_last_proc
 parameter_list|(
 name|GimpPlugInManager
 modifier|*
@@ -2863,26 +2863,26 @@ argument_list|)
 expr_stmt|;
 name|manager
 operator|->
-name|last_plug_ins
+name|history
 operator|=
 name|g_slist_remove
 argument_list|(
 name|manager
 operator|->
-name|last_plug_ins
+name|history
 argument_list|,
 name|procedure
 argument_list|)
 expr_stmt|;
 name|manager
 operator|->
-name|last_plug_ins
+name|history
 operator|=
 name|g_slist_prepend
 argument_list|(
 name|manager
 operator|->
-name|last_plug_ins
+name|history
 argument_list|,
 name|procedure
 argument_list|)
@@ -2893,7 +2893,7 @@ name|g_slist_nth
 argument_list|(
 name|manager
 operator|->
-name|last_plug_ins
+name|history
 argument_list|,
 name|history_size
 argument_list|)
@@ -2905,13 +2905,13 @@ condition|)
 block|{
 name|manager
 operator|->
-name|last_plug_ins
+name|history
 operator|=
 name|g_slist_remove_link
 argument_list|(
 name|manager
 operator|->
-name|last_plug_ins
+name|history
 argument_list|,
 name|list
 argument_list|)
@@ -2928,7 +2928,7 @@ name|manager
 argument_list|,
 name|manager_signals
 index|[
-name|LAST_PLUG_INS_CHANGED
+name|HISTORY_CHANGED
 index|]
 argument_list|,
 literal|0

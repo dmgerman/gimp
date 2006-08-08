@@ -244,7 +244,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|plug_in_actions_last_changed
+name|plug_in_actions_history_changed
 parameter_list|(
 name|GimpPlugInManager
 modifier|*
@@ -1048,11 +1048,11 @@ name|gimp
 operator|->
 name|plug_in_manager
 argument_list|,
-literal|"last-plug-ins-changed"
+literal|"history-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|plug_in_actions_last_changed
+name|plug_in_actions_history_changed
 argument_list|)
 argument_list|,
 name|group
@@ -1060,7 +1060,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|plug_in_actions_last_changed
+name|plug_in_actions_history_changed
 argument_list|(
 name|group
 operator|->
@@ -1229,13 +1229,13 @@ if|if
 condition|(
 name|manager
 operator|->
-name|last_plug_ins
+name|history
 operator|&&
 name|gimp_plug_in_procedure_get_sensitive
 argument_list|(
 name|manager
 operator|->
-name|last_plug_ins
+name|history
 operator|->
 name|data
 argument_list|,
@@ -1289,7 +1289,7 @@ name|list
 operator|=
 name|manager
 operator|->
-name|last_plug_ins
+name|history
 operator|,
 name|i
 operator|=
@@ -2224,8 +2224,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|plug_in_actions_last_changed (GimpPlugInManager * manager,GimpActionGroup * group)
-name|plug_in_actions_last_changed
+DECL|function|plug_in_actions_history_changed (GimpPlugInManager * manager,GimpActionGroup * group)
+name|plug_in_actions_history_changed
 parameter_list|(
 name|GimpPlugInManager
 modifier|*
@@ -2257,7 +2257,7 @@ if|if
 condition|(
 name|manager
 operator|->
-name|last_plug_ins
+name|history
 condition|)
 block|{
 name|GimpPlugInProcedure
@@ -2266,7 +2266,7 @@ name|proc
 init|=
 name|manager
 operator|->
-name|last_plug_ins
+name|history
 operator|->
 name|data
 decl_stmt|;
@@ -2400,7 +2400,7 @@ name|list
 operator|=
 name|manager
 operator|->
-name|last_plug_ins
+name|history
 operator|,
 name|i
 operator|=

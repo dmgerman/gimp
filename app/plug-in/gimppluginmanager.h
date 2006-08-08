@@ -151,10 +151,10 @@ name|GSList
 modifier|*
 name|plug_in_stack
 decl_stmt|;
-DECL|member|last_plug_ins
+DECL|member|history
 name|GSList
 modifier|*
-name|last_plug_ins
+name|history
 decl_stmt|;
 DECL|member|shm
 name|GimpPlugInShm
@@ -253,11 +253,11 @@ modifier|*
 name|menu_label
 parameter_list|)
 function_decl|;
-DECL|member|last_plug_ins_changed
+DECL|member|history_changed
 name|void
 function_decl|(
 modifier|*
-name|last_plug_ins_changed
+name|history_changed
 function_decl|)
 parameter_list|(
 name|GimpPlugInManager
@@ -415,7 +415,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_plug_in_manager_set_last_plug_in
+name|gimp_plug_in_manager_set_last_proc
 parameter_list|(
 name|GimpPlugInManager
 modifier|*
