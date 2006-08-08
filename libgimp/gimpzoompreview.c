@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27de83590103
+DECL|enum|__anon27c8e9480103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2587,7 +2587,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_zoom_get_drawable:  * @preview: a #GimpZoomPreview widget  *  * Returns the #GimpDrawable the #GimpZoomPreview is attached to.  *   * Return Value: the #GimpDrawable that was passed to gimp_zoom_preview_new().  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_zoom_preview_get_drawable:  * @preview: a #GimpZoomPreview widget  *  * Returns the #GimpDrawable the #GimpZoomPreview is attached to.  *  * Return Value: the #GimpDrawable that was passed to gimp_zoom_preview_new().  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -2619,7 +2619,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_zoom_get_factor:  * @preview: a #GimpZoomPreview widget  *  * Returns the zoom factor of the zoom model the preview is currently using.  *  * Return Value: the current zoom factor  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_zoom_preview_get_factor:  * @preview: a #GimpZoomPreview widget  *  * Returns the zoom factor the preview is currently using.  *  * Return Value: the current zoom factor  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
