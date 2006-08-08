@@ -4321,6 +4321,13 @@ name|dwidth
 decl_stmt|,
 name|dheight
 decl_stmt|;
+name|g_assert
+argument_list|(
+name|GIMP_VIEWABLE_MAX_PREVIEW_SIZE
+operator|>=
+literal|1024
+argument_list|)
+expr_stmt|;
 comment|/* Adjust the width/height ratio */
 name|dwidth
 operator|=
@@ -8565,7 +8572,7 @@ literal|"gimp-drawable-thumbnail"
 argument_list|,
 literal|"Get a thumbnail of a drawable."
 argument_list|,
-literal|"This function gets data from which a thumbnail of a drawable preview can be created. Maximum x or y dimension is 512 pixels. The pixels are returned in RGB[A] or GRAY[A] format. The bpp return value gives the number of bytes in the image."
+literal|"This function gets data from which a thumbnail of a drawable preview can be created. Maximum x or y dimension is 1024 pixels. The pixels are returned in RGB[A] or GRAY[A] format. The bpp return value gives the number of bytes in the image."
 argument_list|,
 literal|"Andy Thomas"
 argument_list|,
@@ -8612,7 +8619,7 @@ literal|"The requested thumbnail width"
 argument_list|,
 literal|1
 argument_list|,
-literal|512
+literal|1024
 argument_list|,
 literal|1
 argument_list|,
@@ -8634,7 +8641,7 @@ literal|"The requested thumbnail height"
 argument_list|,
 literal|1
 argument_list|,
-literal|512
+literal|1024
 argument_list|,
 literal|1
 argument_list|,
@@ -8784,7 +8791,7 @@ literal|"gimp-drawable-sub-thumbnail"
 argument_list|,
 literal|"Get a thumbnail of a sub-area of a drawable drawable."
 argument_list|,
-literal|"This function gets data from which a thumbnail of a drawable preview can be created. Maximum x or y dimension is 512 pixels. The pixels are returned in RGB[A] or GRAY[A] format. The bpp return value gives the number of bytes in the image."
+literal|"This function gets data from which a thumbnail of a drawable preview can be created. Maximum x or y dimension is 1024 pixels. The pixels are returned in RGB[A] or GRAY[A] format. The bpp return value gives the number of bytes in the image."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -8919,7 +8926,7 @@ literal|"The thumbnail width"
 argument_list|,
 literal|1
 argument_list|,
-literal|512
+literal|1024
 argument_list|,
 literal|1
 argument_list|,
@@ -8941,7 +8948,7 @@ literal|"The thumbnail height"
 argument_list|,
 literal|1
 argument_list|,
-literal|512
+literal|1024
 argument_list|,
 literal|1
 argument_list|,

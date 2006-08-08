@@ -2773,7 +2773,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_drawable_thumbnail:  * @drawable_ID: The drawable.  * @width: The requested thumbnail width.  * @height: The requested thumbnail height.  * @actual_width: The previews width.  * @actual_height: The previews height.  * @bpp: The previews bpp.  * @thumbnail_data_count: The number of bytes in thumbnail data.  * @thumbnail_data: The thumbnail data.  *  * Get a thumbnail of a drawable.  *  * This function gets data from which a thumbnail of a drawable preview  * can be created. Maximum x or y dimension is 512 pixels. The pixels  * are returned in RGB[A] or GRAY[A] format. The bpp return value gives  * the number of bytes in the image.  *  * Returns: TRUE on success.  */
+comment|/**  * _gimp_drawable_thumbnail:  * @drawable_ID: The drawable.  * @width: The requested thumbnail width.  * @height: The requested thumbnail height.  * @actual_width: The previews width.  * @actual_height: The previews height.  * @bpp: The previews bpp.  * @thumbnail_data_count: The number of bytes in thumbnail data.  * @thumbnail_data: The thumbnail data.  *  * Get a thumbnail of a drawable.  *  * This function gets data from which a thumbnail of a drawable preview  * can be created. Maximum x or y dimension is 1024 pixels. The pixels  * are returned in RGB[A] or GRAY[A] format. The bpp return value gives  * the number of bytes in the image.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -2988,7 +2988,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_drawable_sub_thumbnail:  * @drawable_ID: The drawable.  * @src_x: The x coordinate of the area.  * @src_y: The y coordinate of the area.  * @src_width: The width of the area.  * @src_height: The height of the area.  * @dest_width: The thumbnail width.  * @dest_height: The thumbnail height.  * @width: The previews width.  * @height: The previews height.  * @bpp: The previews bpp.  * @thumbnail_data_count: The number of bytes in thumbnail data.  * @thumbnail_data: The thumbnail data.  *  * Get a thumbnail of a sub-area of a drawable drawable.  *  * This function gets data from which a thumbnail of a drawable preview  * can be created. Maximum x or y dimension is 512 pixels. The pixels  * are returned in RGB[A] or GRAY[A] format. The bpp return value gives  * the number of bytes in the image.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * _gimp_drawable_sub_thumbnail:  * @drawable_ID: The drawable.  * @src_x: The x coordinate of the area.  * @src_y: The y coordinate of the area.  * @src_width: The width of the area.  * @src_height: The height of the area.  * @dest_width: The thumbnail width.  * @dest_height: The thumbnail height.  * @width: The previews width.  * @height: The previews height.  * @bpp: The previews bpp.  * @thumbnail_data_count: The number of bytes in thumbnail data.  * @thumbnail_data: The thumbnail data.  *  * Get a thumbnail of a sub-area of a drawable drawable.  *  * This function gets data from which a thumbnail of a drawable preview  * can be created. Maximum x or y dimension is 1024 pixels. The pixels  * are returned in RGB[A] or GRAY[A] format. The bpp return value gives  * the number of bytes in the image.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function
