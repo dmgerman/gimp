@@ -623,7 +623,7 @@ name|gimp
 operator|->
 name|gui
 operator|.
-name|message
+name|show_message
 operator|=
 name|gui_message
 expr_stmt|;

@@ -294,7 +294,7 @@ name|gimp
 argument_list|)
 condition|)
 block|{
-name|gimp_message
+name|gimp_show_message
 argument_list|(
 operator|*
 name|gimp
@@ -306,8 +306,9 @@ argument_list|,
 name|message
 argument_list|)
 expr_stmt|;
-return|return;
 block|}
+else|else
+block|{
 name|g_printerr
 argument_list|(
 literal|"%s: %s\n\n"
@@ -320,6 +321,7 @@ argument_list|,
 name|message
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 

@@ -78,11 +78,11 @@ modifier|*
 name|gimp
 parameter_list|)
 function_decl|;
-DECL|member|message
+DECL|member|show_message
 name|void
 function_decl|(
 modifier|*
-name|message
+name|show_message
 function_decl|)
 parameter_list|(
 name|Gimp
@@ -559,7 +559,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_message
+name|gimp_show_message
 parameter_list|(
 name|Gimp
 modifier|*

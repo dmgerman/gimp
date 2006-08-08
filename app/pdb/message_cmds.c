@@ -155,7 +155,7 @@ operator|->
 name|current_plug_in
 argument_list|)
 expr_stmt|;
-name|gimp_message
+name|gimp_show_message
 argument_list|(
 name|gimp
 argument_list|,

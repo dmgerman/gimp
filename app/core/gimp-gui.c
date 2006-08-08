@@ -129,7 +129,7 @@ name|gimp
 operator|->
 name|gui
 operator|.
-name|message
+name|show_message
 operator|=
 name|NULL
 expr_stmt|;
@@ -526,8 +526,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_message (Gimp * gimp,GimpProgress * progress,const gchar * domain,const gchar * message)
-name|gimp_message
+DECL|function|gimp_show_message (Gimp * gimp,GimpProgress * progress,const gchar * domain,const gchar * message)
+name|gimp_show_message
 parameter_list|(
 name|Gimp
 modifier|*
@@ -609,7 +609,7 @@ name|gimp
 operator|->
 name|gui
 operator|.
-name|message
+name|show_message
 operator|&&
 operator|!
 name|gimp
@@ -621,7 +621,7 @@ name|gimp
 operator|->
 name|gui
 operator|.
-name|message
+name|show_message
 argument_list|(
 name|gimp
 argument_list|,
