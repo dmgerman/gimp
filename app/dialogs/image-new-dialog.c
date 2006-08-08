@@ -134,7 +134,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293f6f2b0108
+DECL|struct|__anon2c0109e70108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -522,6 +522,10 @@ literal|"view-border-width"
 argument_list|,
 literal|0
 argument_list|,
+literal|"ellipsize"
+argument_list|,
+name|PANGO_ELLIPSIZE_NONE
+argument_list|,
 literal|"focus-on-click"
 argument_list|,
 name|FALSE
@@ -555,7 +559,7 @@ name|combo
 argument_list|,
 literal|1
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
