@@ -102,6 +102,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"plug-in/gimppluginmanager-history.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"pdb/gimpprocedure.h"
 end_include
 
@@ -695,7 +701,7 @@ index|]
 argument_list|)
 condition|)
 block|{
-name|gimp_plug_in_manager_set_last_proc
+name|gimp_plug_in_manager_history_add
 argument_list|(
 name|gimp
 operator|->
@@ -781,15 +787,16 @@ name|FALSE
 expr_stmt|;
 name|procedure
 operator|=
-name|g_slist_nth_data
+name|GIMP_PROCEDURE
+argument_list|(
+name|gimp_plug_in_manager_history_nth
 argument_list|(
 name|gimp
 operator|->
 name|plug_in_manager
-operator|->
-name|history
 argument_list|,
 name|value
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
