@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2acd5d390103
+DECL|enum|__anon2b4197bf0103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -1071,8 +1071,14 @@ operator|!
 name|success
 condition|)
 block|{
-name|g_message
+name|gimp_message
 argument_list|(
+name|imagefile
+operator|->
+name|gimp
+argument_list|,
+name|progress
+argument_list|,
 name|error
 operator|->
 name|message

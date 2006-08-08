@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpprogress.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimphelp-ids.h"
 end_include
 
@@ -472,8 +478,19 @@ name|drawable
 argument_list|)
 condition|)
 block|{
-name|g_message
+name|gimp_message
 argument_list|(
+name|display
+operator|->
+name|image
+operator|->
+name|gimp
+argument_list|,
+name|GIMP_PROGRESS
+argument_list|(
+name|display
+argument_list|)
+argument_list|,
 name|_
 argument_list|(
 literal|"Posterize does not operate on indexed layers."

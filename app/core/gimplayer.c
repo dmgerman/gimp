@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4018980103
+DECL|enum|__anon29db0cc30103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -177,7 +177,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4018980203
+DECL|enum|__anon29db0cc30203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4566,9 +4566,11 @@ operator|!
 name|new_layer
 condition|)
 block|{
-name|g_message
+name|g_warning
 argument_list|(
-literal|"gimp_layer_new_from_region: could not allocate new layer"
+literal|"%s: could not allocate new layer"
+argument_list|,
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 return|return

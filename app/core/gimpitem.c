@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c8091a60103
+DECL|enum|__anon27bbafc80103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -144,7 +144,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c8091a60203
+DECL|enum|__anon27bbafc80203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2919,7 +2919,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_scale_by_factors:  * @item:     Item to be transformed by explicit width and height factors.  * @w_factor: scale factor to apply to width and horizontal offset  * @h_factor: scale factor to apply to height and vertical offset  * @interpolation:  * @progress:  *  * Scales item dimensions and offsets by uniform width and  * height factors.  *  * Use gimp_item_scale_by_factors() in circumstances when the  * same width and height scaling factors are to be uniformly  * applied to a set of items. In this context, the item's  * dimensions and offsets from the sides of the containing  * image all change by these predetermined factors. By fiat,  * the fixed point of the transform is the upper left hand  * corner of the image. Returns gboolean #FALSE if a requested  * scale factor is zero or if a scaling zero's out a item  * dimension; returns #TRUE otherwise.  *  * Use gimp_item_scale() in circumstances where new item width  * and height dimensions are predetermined instead.  *  * Side effects: Undo set created for item. Old item imagery  *               scaled& painted to new item tiles.  *  * Returns: #TRUE, if the scaled item has positive dimensions  *          #FALSE if the scaled item has at least one zero dimension  **/
+comment|/**  * gimp_item_scale_by_factors:  * @item:     Item to be transformed by explicit width and height factors.  * @w_factor: scale factor to apply to width and horizontal offset  * @h_factor: scale factor to apply to height and vertical offset  * @interpolation:  * @progress:  *  * Scales item dimensions and offsets by uniform width and  * height factors.  *  * Use gimp_item_scale_by_factors() in circumstances when the same  * width and height scaling factors are to be uniformly applied to a  * set of items. In this context, the item's dimensions and offsets  * from the sides of the containing image all change by these  * predetermined factors. By fiat, the fixed point of the transform is  * the upper left hand corner of the image. Returns #FALSE if a  * requested scale factor is zero or if a scaling zero's out a item  * dimension; returns #TRUE otherwise.  *  * Use gimp_item_scale() in circumstances where new item width  * and height dimensions are predetermined instead.  *  * Side effects: Undo set created for item. Old item imagery  *               scaled& painted to new item tiles.  *  * Returns: #TRUE, if the scaled item has positive dimensions  *          #FALSE if the scaled item has at least one zero dimension  **/
 end_comment
 
 begin_function
@@ -2990,9 +2990,11 @@ operator|==
 literal|0.0
 condition|)
 block|{
-name|g_message
+name|g_warning
 argument_list|(
-literal|"gimp_item_scale_by_factors: Error. Requested width or height scale equals zero."
+literal|"%s: requested width or height scale equals zero"
+argument_list|,
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 return|return
@@ -3159,9 +3161,11 @@ operator|==
 literal|0
 condition|)
 block|{
-name|g_message
+name|g_warning
 argument_list|(
-literal|"gimp_layer_scale: Error. Requested width or height equals zero."
+literal|"%s: requested width or height equals zero"
+argument_list|,
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 return|return;

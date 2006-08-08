@@ -8643,8 +8643,12 @@ operator|>
 name|GIMP_MAX_RESOLUTION
 condition|)
 block|{
-name|g_message
+name|gimp_message
 argument_list|(
+name|gimp
+argument_list|,
+name|progress
+argument_list|,
 name|_
 argument_list|(
 literal|"Image resolution is out of bounds, "

@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29311a220103
+DECL|enum|__anon2ab4df330103
 block|{
 DECL|enumerator|REGISTER_PROCEDURE
 name|REGISTER_PROCEDURE
@@ -1180,8 +1180,14 @@ operator|==
 name|NULL
 condition|)
 block|{
-name|g_message
+name|gimp_message
 argument_list|(
+name|pdb
+operator|->
+name|gimp
+argument_list|,
+name|progress
+argument_list|,
 name|_
 argument_list|(
 literal|"PDB calling error:\n"
@@ -1415,8 +1421,14 @@ operator|==
 name|NULL
 condition|)
 block|{
-name|g_message
+name|gimp_message
 argument_list|(
+name|pdb
+operator|->
+name|gimp
+argument_list|,
+name|progress
+argument_list|,
 name|_
 argument_list|(
 literal|"PDB calling error:\n"
@@ -1555,8 +1567,14 @@ argument_list|(
 name|args
 argument_list|)
 expr_stmt|;
-name|g_message
+name|gimp_message
 argument_list|(
+name|pdb
+operator|->
+name|gimp
+argument_list|,
+name|progress
+argument_list|,
 name|_
 argument_list|(
 literal|"PDB calling error for procedure '%s':\n"

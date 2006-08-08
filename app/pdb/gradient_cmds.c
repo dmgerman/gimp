@@ -1035,8 +1035,12 @@ operator|!
 name|success
 condition|)
 block|{
-name|g_message
+name|gimp_message
 argument_list|(
+name|gimp
+argument_list|,
+name|progress
+argument_list|,
 name|error
 operator|->
 name|message

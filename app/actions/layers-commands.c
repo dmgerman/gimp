@@ -3682,10 +3682,11 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|g_message
+name|g_warning
 argument_list|(
-literal|"new_layer_query_response: "
-literal|"could not allocate new layer"
+literal|"%s: could not allocate new layer"
+argument_list|,
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 block|}

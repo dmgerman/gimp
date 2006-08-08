@@ -839,6 +839,18 @@ condition|)
 block|{
 name|info
 operator|.
+name|gimp
+operator|=
+name|gimp
+expr_stmt|;
+name|info
+operator|.
+name|progress
+operator|=
+name|progress
+expr_stmt|;
+name|info
+operator|.
 name|cp
 operator|=
 literal|0
@@ -902,12 +914,6 @@ operator|.
 name|compression
 operator|=
 name|COMPRESS_NONE
-expr_stmt|;
-name|info
-operator|.
-name|progress
-operator|=
-name|progress
 expr_stmt|;
 if|if
 condition|(
@@ -1106,8 +1112,12 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|g_message
+name|gimp_message
 argument_list|(
+name|gimp
+argument_list|,
+name|progress
+argument_list|,
 name|_
 argument_list|(
 literal|"XCF error: unsupported XCF file version %d "
@@ -1144,8 +1154,12 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|g_message
+name|gimp_message
 argument_list|(
+name|gimp
+argument_list|,
+name|progress
+argument_list|,
 name|_
 argument_list|(
 literal|"Could not open '%s' for reading: %s"
@@ -1303,6 +1317,18 @@ condition|)
 block|{
 name|info
 operator|.
+name|gimp
+operator|=
+name|gimp
+expr_stmt|;
+name|info
+operator|.
+name|progress
+operator|=
+name|progress
+expr_stmt|;
+name|info
+operator|.
 name|cp
 operator|=
 literal|0
@@ -1360,12 +1386,6 @@ operator|.
 name|compression
 operator|=
 name|COMPRESS_RLE
-expr_stmt|;
-name|info
-operator|.
-name|progress
-operator|=
-name|progress
 expr_stmt|;
 if|if
 condition|(
@@ -1445,8 +1465,12 @@ operator|==
 name|EOF
 condition|)
 block|{
-name|g_message
+name|gimp_message
 argument_list|(
+name|gimp
+argument_list|,
+name|progress
+argument_list|,
 name|_
 argument_list|(
 literal|"Error saving XCF file: %s"
@@ -1475,8 +1499,12 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|g_message
+name|gimp_message
 argument_list|(
+name|gimp
+argument_list|,
+name|progress
+argument_list|,
 name|_
 argument_list|(
 literal|"Could not open '%s' for writing: %s"

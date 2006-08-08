@@ -899,8 +899,17 @@ argument_list|(
 name|uri
 argument_list|)
 decl_stmt|;
-name|g_message
+name|gimp_message
 argument_list|(
+name|image
+operator|->
+name|gimp
+argument_list|,
+name|GIMP_PROGRESS
+argument_list|(
+name|display
+argument_list|)
+argument_list|,
 name|_
 argument_list|(
 literal|"Saving '%s' failed:\n\n%s"
@@ -1184,6 +1193,10 @@ name|GimpDisplay
 modifier|*
 name|display
 decl_stmt|;
+name|GimpImage
+modifier|*
+name|image
+decl_stmt|;
 name|GtkWidget
 modifier|*
 name|dialog
@@ -1200,14 +1213,18 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
+name|image
+operator|=
+name|display
+operator|->
+name|image
+expr_stmt|;
 name|uri
 operator|=
 name|gimp_object_get_name
 argument_list|(
 name|GIMP_OBJECT
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|)
 argument_list|)
@@ -1218,8 +1235,6 @@ name|g_object_get_data
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|)
 argument_list|,
@@ -1232,11 +1247,21 @@ operator|!
 name|uri
 condition|)
 block|{
-name|g_message
+name|gimp_message
 argument_list|(
+name|image
+operator|->
+name|gimp
+argument_list|,
+name|GIMP_PROGRESS
+argument_list|(
+name|display
+argument_list|)
+argument_list|,
 name|_
 argument_list|(
-literal|"Revert failed. No file name associated with this image."
+literal|"Revert failed. "
+literal|"No file name associated with this image."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1407,8 +1432,6 @@ name|g_object_set_data
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|)
 argument_list|,
@@ -2158,8 +2181,15 @@ argument_list|(
 name|uri
 argument_list|)
 decl_stmt|;
-name|g_message
+name|gimp_message
 argument_list|(
+name|gimp
+argument_list|,
+name|GIMP_PROGRESS
+argument_list|(
+name|display
+argument_list|)
+argument_list|,
 name|_
 argument_list|(
 literal|"Reverting to '%s' failed:\n\n%s"

@@ -70,6 +70,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpchannel.h"
 end_include
 
@@ -618,7 +624,7 @@ name|data
 parameter_list|,
 name|count
 parameter_list|)
-value|G_STMT_START { \   info->cp += xcf_write_int32 (info->fp, data, count,&error); \   if (error)                                                   \     {                                                          \       g_message (_("Error saving XCF file: %s"),               \                  error->message);                              \       return FALSE;                                            \     }                                                          \   } G_STMT_END
+value|G_STMT_START { \   info->cp += xcf_write_int32 (info->fp, data, count,&error); \   if (error)                                                   \     {                                                          \       gimp_message (info->gimp, info->progress,                \                     _("Error saving XCF file: %s"),            \                     error->message);                           \       return FALSE;                                            \     }                                                          \   } G_STMT_END
 end_define
 
 begin_define
@@ -633,7 +639,7 @@ name|data
 parameter_list|,
 name|count
 parameter_list|)
-value|G_STMT_START { \   info->cp += xcf_write_int8 (info->fp, data, count,&error); \   if (error)                                                  \     {                                                         \       g_message (_("Error saving XCF file: %s"),              \                  error->message);                             \       return FALSE;                                           \     }                                                         \   } G_STMT_END
+value|G_STMT_START { \   info->cp += xcf_write_int8 (info->fp, data, count,&error); \   if (error)                                                  \     {                                                         \       gimp_message (info->gimp, info->progress,               \                     _("Error saving XCF file: %s"),           \                     error->message);                          \       return FALSE;                                           \     }                                                         \   } G_STMT_END
 end_define
 
 begin_define
@@ -648,7 +654,7 @@ name|data
 parameter_list|,
 name|count
 parameter_list|)
-value|G_STMT_START { \   info->cp += xcf_write_float (info->fp, data, count,&error); \   if (error)                                                   \     {                                                          \       g_message (_("Error saving XCF file: %s"),               \                  error->message);                              \       return FALSE;                                            \     }                                                          \   } G_STMT_END
+value|G_STMT_START { \   info->cp += xcf_write_float (info->fp, data, count,&error); \   if (error)                                                   \     {                                                          \       gimp_message (info->gimp, info->progress,                \                     _("Error saving XCF file: %s"),            \                     error->message);                           \       return FALSE;                                            \     }                                                          \   } G_STMT_END
 end_define
 
 begin_define
@@ -663,7 +669,7 @@ name|data
 parameter_list|,
 name|count
 parameter_list|)
-value|G_STMT_START { \   info->cp += xcf_write_string (info->fp, data, count,&error); \   if (error)                                                    \     {                                                           \       g_message (_("Error saving XCF file: %s"),                \                  error->message);                               \       return FALSE;                                             \     }                                                           \   } G_STMT_END
+value|G_STMT_START { \   info->cp += xcf_write_string (info->fp, data, count,&error); \   if (error)                                                    \     {                                                           \       gimp_message (info->gimp, info->progress,                 \                     _("Error saving XCF file: %s"),             \                     error->message);                            \       return FALSE;                                             \     }                                                           \   } G_STMT_END
 end_define
 
 begin_define
@@ -704,14 +710,16 @@ value|G_STMT_START { \   if (! (x))                                             
 end_define
 
 begin_define
-DECL|macro|xcf_print_error (x)
+DECL|macro|xcf_print_error (info,x)
 define|#
 directive|define
 name|xcf_print_error
 parameter_list|(
+name|info
+parameter_list|,
 name|x
 parameter_list|)
-value|G_STMT_START { \   if (! (x))                                                  \     {                                                         \       g_message (_("Error saving XCF file: %s"),              \                  error->message);                             \       return FALSE;                                           \     }                                                         \   } G_STMT_END
+value|G_STMT_START {               \   if (! (x))                                                  \     {                                                         \       gimp_message (info->gimp, info->progress,               \                     _("Error saving XCF file: %s"),           \                     error->message);                          \       return FALSE;                                           \     }                                                         \   } G_STMT_END
 end_define
 
 begin_define
@@ -1091,6 +1099,8 @@ expr_stmt|;
 comment|/* write the property information for the image.    */
 name|xcf_print_error
 argument_list|(
+name|info
+argument_list|,
 name|xcf_save_image_props
 argument_list|(
 name|info
@@ -1117,6 +1127,8 @@ expr_stmt|;
 comment|/* seek to after the offset lists */
 name|xcf_print_error
 argument_list|(
+name|info
+argument_list|,
 name|xcf_seek_pos
 argument_list|(
 name|info
@@ -1179,6 +1191,8 @@ expr_stmt|;
 comment|/* write out the layer. */
 name|xcf_print_error
 argument_list|(
+name|info
+argument_list|,
 name|xcf_save_layer
 argument_list|(
 name|info
@@ -1200,6 +1214,8 @@ expr_stmt|;
 comment|/* seek back to where we are to write out the next        *  layer offset and write it out.        */
 name|xcf_print_error
 argument_list|(
+name|info
+argument_list|,
 name|xcf_seek_pos
 argument_list|(
 name|info
@@ -1231,6 +1247,8 @@ expr_stmt|;
 comment|/* seek to the end of the file which is where        *  we will write out the next layer.        */
 name|xcf_print_error
 argument_list|(
+name|info
+argument_list|,
 name|xcf_seek_end
 argument_list|(
 name|info
@@ -1248,6 +1266,8 @@ literal|0
 expr_stmt|;
 name|xcf_print_error
 argument_list|(
+name|info
+argument_list|,
 name|xcf_seek_pos
 argument_list|(
 name|info
@@ -1277,6 +1297,8 @@ name|cp
 expr_stmt|;
 name|xcf_print_error
 argument_list|(
+name|info
+argument_list|,
 name|xcf_seek_end
 argument_list|(
 name|info
@@ -1346,6 +1368,8 @@ expr_stmt|;
 comment|/* write out the layer. */
 name|xcf_print_error
 argument_list|(
+name|info
+argument_list|,
 name|xcf_save_channel
 argument_list|(
 name|info
@@ -1367,6 +1391,8 @@ expr_stmt|;
 comment|/* seek back to where we are to write out the next        *  channel offset and write it out.        */
 name|xcf_print_error
 argument_list|(
+name|info
+argument_list|,
 name|xcf_seek_pos
 argument_list|(
 name|info
@@ -1398,6 +1424,8 @@ expr_stmt|;
 comment|/* seek to the end of the file which is where        *  we will write out the next channel.        */
 name|xcf_print_error
 argument_list|(
+name|info
+argument_list|,
 name|xcf_seek_end
 argument_list|(
 name|info
@@ -1415,6 +1443,8 @@ literal|0
 expr_stmt|;
 name|xcf_print_error
 argument_list|(
+name|info
+argument_list|,
 name|xcf_seek_pos
 argument_list|(
 name|info
@@ -6468,7 +6498,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b18166a0108
+DECL|struct|__anon29a8ed210108
 block|{
 DECL|member|info
 name|XcfInfo

@@ -955,8 +955,15 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-name|g_message
+name|gimp_message
 argument_list|(
+name|gimp
+argument_list|,
+name|GIMP_PROGRESS
+argument_list|(
+name|save_dialog
+argument_list|)
+argument_list|,
 name|_
 argument_list|(
 literal|"The given filename does not have any known "
@@ -1637,8 +1644,17 @@ argument_list|(
 name|uri
 argument_list|)
 decl_stmt|;
-name|g_message
+name|gimp_message
 argument_list|(
+name|image
+operator|->
+name|gimp
+argument_list|,
+name|GIMP_PROGRESS
+argument_list|(
+name|save_dialog
+argument_list|)
+argument_list|,
 name|_
 argument_list|(
 literal|"Saving '%s' failed:\n\n%s"
