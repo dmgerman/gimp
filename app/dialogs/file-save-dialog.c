@@ -287,44 +287,16 @@ condition|(
 name|uri
 condition|)
 block|{
-name|gchar
-modifier|*
-name|folder_uri
-init|=
-name|g_path_get_dirname
-argument_list|(
-name|uri
-argument_list|)
-decl_stmt|;
-ifdef|#
-directive|ifdef
-name|__GNUC__
-warning|#
-directive|warning
-warning|: FIXME: should use set_uri() but idle stuff in the file chooser seems to override set_current_name() when called immediately after set_uri()
-endif|#
-directive|endif
-if|if
-condition|(
-name|folder_uri
-condition|)
-block|{
-name|gtk_file_chooser_set_current_folder_uri
+name|gtk_file_chooser_set_uri
 argument_list|(
 name|GTK_FILE_CHOOSER
 argument_list|(
 name|dialog
 argument_list|)
 argument_list|,
-name|folder_uri
+name|uri
 argument_list|)
 expr_stmt|;
-name|g_free
-argument_list|(
-name|folder_uri
-argument_list|)
-expr_stmt|;
-block|}
 name|gtk_file_chooser_set_current_name
 argument_list|(
 name|GTK_FILE_CHOOSER
@@ -654,6 +626,9 @@ argument_list|,
 name|basename
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|DEBUG_SPEW
 name|g_print
 argument_list|(
 literal|"\n\n%s: URI = %s\n"
@@ -725,6 +700,8 @@ else|:
 literal|"NULL"
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 comment|/*  first check if the user entered an extension at all  */
 if|if
 condition|(
@@ -732,6 +709,9 @@ operator|!
 name|basename_proc
 condition|)
 block|{
+ifdef|#
+directive|ifdef
+name|DEBUG_SPEW
 name|g_print
 argument_list|(
 literal|"%s: basename has no valid extension\n"
@@ -739,6 +719,8 @@ argument_list|,
 name|G_STRFUNC
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 if|if
 condition|(
 operator|!
@@ -757,6 +739,9 @@ name|ext
 init|=
 name|NULL
 decl_stmt|;
+ifdef|#
+directive|ifdef
+name|DEBUG_SPEW
 name|g_print
 argument_list|(
 literal|"%s: basename has no '.', trying to add extension\n"
@@ -764,6 +749,8 @@ argument_list|,
 name|G_STRFUNC
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 if|if
 condition|(
 operator|!
@@ -831,6 +818,9 @@ name|gchar
 modifier|*
 name|utf8
 decl_stmt|;
+ifdef|#
+directive|ifdef
+name|DEBUG_SPEW
 name|g_print
 argument_list|(
 literal|"%s: appending .%s to basename\n"
@@ -840,6 +830,8 @@ argument_list|,
 name|ext
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 name|g_free
 argument_list|(
 name|uri
@@ -918,6 +910,9 @@ expr_stmt|;
 block|}
 else|else
 block|{
+ifdef|#
+directive|ifdef
+name|DEBUG_SPEW
 name|g_print
 argument_list|(
 literal|"%s: save_proc has no extensions, continuing without\n"
@@ -925,6 +920,8 @@ argument_list|,
 name|G_STRFUNC
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 comment|/*  there may be file formats with no extension at all, use                *  the selected proc in this case.                */
 name|basename_proc
 operator|=
@@ -946,6 +943,9 @@ operator|!
 name|basename_proc
 condition|)
 block|{
+ifdef|#
+directive|ifdef
+name|DEBUG_SPEW
 name|g_print
 argument_list|(
 literal|"%s: unable to figure save_proc, bailing out\n"
@@ -953,6 +953,8 @@ argument_list|,
 name|G_STRFUNC
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 name|g_message
 argument_list|(
 name|_
@@ -990,6 +992,9 @@ operator|->
 name|extensions_list
 condition|)
 block|{
+ifdef|#
+directive|ifdef
+name|DEBUG_SPEW
 name|g_print
 argument_list|(
 literal|"%s: basename has '.', but save_proc has no extensions, "
@@ -998,6 +1003,8 @@ argument_list|,
 name|G_STRFUNC
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 comment|/*  accept any random extension if the file format has            *  no extensions at all            */
 name|basename_proc
 operator|=
@@ -1021,6 +1028,9 @@ operator|!
 name|save_proc
 condition|)
 block|{
+ifdef|#
+directive|ifdef
+name|DEBUG_SPEW
 name|g_print
 argument_list|(
 literal|"%s: no save_proc was selected from the list\n"
@@ -1028,12 +1038,17 @@ argument_list|,
 name|G_STRFUNC
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 if|if
 condition|(
 operator|!
 name|basename_proc
 condition|)
 block|{
+ifdef|#
+directive|ifdef
+name|DEBUG_SPEW
 name|g_print
 argument_list|(
 literal|"%s: basename had no useful extension, bailing out\n"
@@ -1041,6 +1056,8 @@ argument_list|,
 name|G_STRFUNC
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 name|g_message
 argument_list|(
 name|_
@@ -1066,6 +1083,9 @@ return|return
 name|FALSE
 return|;
 block|}
+ifdef|#
+directive|ifdef
+name|DEBUG_SPEW
 name|g_print
 argument_list|(
 literal|"%s: use URI's proc '%s' so indirect saving works\n"
@@ -1083,6 +1103,8 @@ else|:
 literal|"?"
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 comment|/*  use the URI's proc if no save proc was selected  */
 name|save_proc
 operator|=
@@ -1091,6 +1113,9 @@ expr_stmt|;
 block|}
 else|else
 block|{
+ifdef|#
+directive|ifdef
+name|DEBUG_SPEW
 name|g_print
 argument_list|(
 literal|"%s: save_proc '%s' was selected from the list\n"
@@ -1102,6 +1127,8 @@ operator|->
 name|menu_label
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 if|if
 condition|(
 name|save_proc
@@ -1109,6 +1136,9 @@ operator|!=
 name|basename_proc
 condition|)
 block|{
+ifdef|#
+directive|ifdef
+name|DEBUG_SPEW
 name|g_print
 argument_list|(
 literal|"%s: however the basename's proc is '%s'\n"
@@ -1124,6 +1154,8 @@ else|:
 literal|"NULL"
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 if|if
 condition|(
 name|uri_proc
@@ -1131,6 +1163,9 @@ operator|!=
 name|basename_proc
 condition|)
 block|{
+ifdef|#
+directive|ifdef
+name|DEBUG_SPEW
 name|g_print
 argument_list|(
 literal|"%s: that's impossible for remote URIs, bailing out\n"
@@ -1138,6 +1173,8 @@ argument_list|,
 name|G_STRFUNC
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 comment|/*  remote URI  */
 name|g_message
 argument_list|(
@@ -1166,6 +1203,9 @@ return|;
 block|}
 else|else
 block|{
+ifdef|#
+directive|ifdef
+name|DEBUG_SPEW
 name|g_print
 argument_list|(
 literal|"%s: ask the user if she really wants that filename\n"
@@ -1173,6 +1213,8 @@ argument_list|,
 name|G_STRFUNC
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 comment|/*  local URI  */
 if|if
 condition|(
@@ -1209,6 +1251,9 @@ operator|!=
 name|uri_proc
 condition|)
 block|{
+ifdef|#
+directive|ifdef
+name|DEBUG_SPEW
 name|g_print
 argument_list|(
 literal|"%s: use URI's proc '%s' so indirect saving works\n"
@@ -1220,6 +1265,8 @@ operator|->
 name|menu_label
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 comment|/*  need to use the URI's proc for saving because e.g.            *  the GIF plug-in can't save a GIF to sftp://            */
 name|save_proc
 operator|=
@@ -1233,18 +1280,11 @@ operator|!
 name|save_proc
 condition|)
 block|{
-name|g_print
+name|g_warning
 argument_list|(
-literal|"%s: EEEEEEK\n"
+literal|"%s: EEEEEEK"
 argument_list|,
 name|G_STRFUNC
-argument_list|)
-expr_stmt|;
-name|g_message
-argument_list|(
-literal|"Yay! You found a bug. Please report this at "
-literal|"http://bugzilla.gnome.org/ and paste the console "
-literal|"output to the 'Additional Comments' field"
 argument_list|)
 expr_stmt|;
 return|return
