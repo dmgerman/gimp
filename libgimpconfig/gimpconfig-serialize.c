@@ -422,13 +422,11 @@ modifier|*
 name|writer
 parameter_list|)
 block|{
-name|GTypeClass
-modifier|*
-name|owner_class
-decl_stmt|;
 name|GimpConfigInterface
 modifier|*
 name|config_iface
+init|=
+name|NULL
 decl_stmt|;
 name|GimpConfigInterface
 modifier|*
@@ -525,15 +523,27 @@ return|return
 name|TRUE
 return|;
 block|}
+if|if
+condition|(
+name|G_TYPE_IS_OBJECT
+argument_list|(
+name|param_spec
+operator|->
+name|owner_type
+argument_list|)
+condition|)
+block|{
+name|GTypeClass
+modifier|*
 name|owner_class
-operator|=
+init|=
 name|g_type_class_peek
 argument_list|(
 name|param_spec
 operator|->
 name|owner_type
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|config_iface
 operator|=
 name|g_type_interface_peek
@@ -543,7 +553,7 @@ argument_list|,
 name|GIMP_TYPE_CONFIG
 argument_list|)
 expr_stmt|;
-comment|/*  We must call serialize_property() *only* if the *exact* class    *  which implements it is param_spec->owner_type's class.    *    *  Therefore, we ask param_spec->owner_type's immediate parent class    *  for it's GimpConfigInterface and check if we get a different pointer.    *    *  (if the pointers are the same, param_spec->owner_type's    *   GimpConfigInterface is inherited from one of it's parent classes    *   and thus not able to handle param_spec->owner_type's properties).    */
+comment|/*  We must call serialize_property() *only* if the *exact* class        *  which implements it is param_spec->owner_type's class.        *        *  Therefore, we ask param_spec->owner_type's immediate parent class        *  for it's GimpConfigInterface and check if we get a different        *  pointer.        *        *  (if the pointers are the same, param_spec->owner_type's        *   GimpConfigInterface is inherited from one of it's parent classes        *   and thus not able to handle param_spec->owner_type's properties).        */
 if|if
 condition|(
 name|config_iface
@@ -559,7 +569,7 @@ name|g_type_class_peek_parent
 argument_list|(
 name|owner_class
 argument_list|)
-operator|,
+expr_stmt|;
 name|parent_iface
 operator|=
 name|g_type_interface_peek
@@ -569,6 +579,7 @@ argument_list|,
 name|GIMP_TYPE_CONFIG
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 if|if
 condition|(
