@@ -180,7 +180,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon293f53760103
+DECL|enum|__anon2ae3f9a60103
 block|{
 DECL|enumerator|PLUG_IN_OPENED
 name|PLUG_IN_OPENED
@@ -664,7 +664,7 @@ argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
-name|gimp_plug_in_manager_history_free
+name|gimp_plug_in_manager_history_clear
 argument_list|(
 name|manager
 argument_list|)
@@ -2693,6 +2693,14 @@ argument_list|,
 name|tmp_proc
 argument_list|)
 expr_stmt|;
+comment|/* and from the history */
+name|gimp_plug_in_manager_history_remove
+argument_list|(
+name|manager
+argument_list|,
+name|tmp_proc
+argument_list|)
+expr_stmt|;
 name|g_object_unref
 argument_list|(
 name|tmp_proc
@@ -2824,6 +2832,16 @@ operator|->
 name|plug_in_procedures
 argument_list|,
 name|procedure
+argument_list|)
+expr_stmt|;
+name|gimp_plug_in_manager_history_remove
+argument_list|(
+name|manager
+argument_list|,
+name|GIMP_PLUG_IN_PROCEDURE
+argument_list|(
+name|procedure
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_pdb_unregister_procedure
