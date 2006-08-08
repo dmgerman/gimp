@@ -83,7 +83,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b63ad380103
+DECL|enum|__anon28b8fc5e0103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -103,7 +103,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b63ad380208
+DECL|struct|__anon28b8fc5e0208
 block|{
 DECL|member|amount
 name|gdouble
@@ -4326,12 +4326,14 @@ control|)
 block|{
 name|data
 index|[
+name|b
 operator|-
+operator|(
+name|gint
+operator|)
 name|pixel_rgn
 operator|->
 name|bpp
-operator|+
-name|b
 index|]
 operator|=
 name|data
