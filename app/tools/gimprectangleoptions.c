@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimptooloptions.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimprectangleoptions.h"
 end_include
 
@@ -563,20 +569,20 @@ parameter_list|)
 block|{
 specifier|static
 name|GType
-name|rectangle_options_iface_type
+name|iface_type
 init|=
 literal|0
 decl_stmt|;
 if|if
 condition|(
 operator|!
-name|rectangle_options_iface_type
+name|iface_type
 condition|)
 block|{
 specifier|static
 specifier|const
 name|GTypeInfo
-name|rectangle_options_iface_info
+name|iface_info
 init|=
 block|{
 sizeof|sizeof
@@ -595,7 +601,7 @@ operator|)
 name|NULL
 block|,       }
 decl_stmt|;
-name|rectangle_options_iface_type
+name|iface_type
 operator|=
 name|g_type_register_static
 argument_list|(
@@ -604,14 +610,21 @@ argument_list|,
 literal|"GimpRectangleOptionsInterface"
 argument_list|,
 operator|&
-name|rectangle_options_iface_info
+name|iface_info
 argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+name|g_type_interface_add_prerequisite
+argument_list|(
+name|iface_type
+argument_list|,
+name|GIMP_TYPE_TOOL_OPTIONS
+argument_list|)
+expr_stmt|;
 block|}
 return|return
-name|rectangle_options_iface_type
+name|iface_type
 return|;
 block|}
 end_function
@@ -619,12 +632,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_rectangle_options_iface_base_init (GimpRectangleOptionsInterface * options_iface)
+DECL|function|gimp_rectangle_options_iface_base_init (GimpRectangleOptionsInterface * iface)
 name|gimp_rectangle_options_iface_base_init
 parameter_list|(
 name|GimpRectangleOptionsInterface
 modifier|*
-name|options_iface
+name|iface
 parameter_list|)
 block|{
 specifier|static
@@ -641,7 +654,7 @@ condition|)
 block|{
 name|g_object_interface_install_property
 argument_list|(
-name|options_iface
+name|iface
 argument_list|,
 name|g_param_spec_boolean
 argument_list|(
@@ -659,7 +672,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_interface_install_property
 argument_list|(
-name|options_iface
+name|iface
 argument_list|,
 name|g_param_spec_enum
 argument_list|(
@@ -679,7 +692,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_interface_install_property
 argument_list|(
-name|options_iface
+name|iface
 argument_list|,
 name|g_param_spec_boolean
 argument_list|(
@@ -697,7 +710,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_interface_install_property
 argument_list|(
-name|options_iface
+name|iface
 argument_list|,
 name|g_param_spec_double
 argument_list|(
@@ -719,7 +732,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_interface_install_property
 argument_list|(
-name|options_iface
+name|iface
 argument_list|,
 name|g_param_spec_boolean
 argument_list|(
@@ -737,7 +750,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_interface_install_property
 argument_list|(
-name|options_iface
+name|iface
 argument_list|,
 name|g_param_spec_double
 argument_list|(
@@ -759,7 +772,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_interface_install_property
 argument_list|(
-name|options_iface
+name|iface
 argument_list|,
 name|g_param_spec_boolean
 argument_list|(
@@ -777,7 +790,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_interface_install_property
 argument_list|(
-name|options_iface
+name|iface
 argument_list|,
 name|g_param_spec_double
 argument_list|(
@@ -799,7 +812,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_interface_install_property
 argument_list|(
-name|options_iface
+name|iface
 argument_list|,
 name|g_param_spec_boolean
 argument_list|(
@@ -817,7 +830,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_interface_install_property
 argument_list|(
-name|options_iface
+name|iface
 argument_list|,
 name|g_param_spec_boolean
 argument_list|(
@@ -835,7 +848,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_interface_install_property
 argument_list|(
-name|options_iface
+name|iface
 argument_list|,
 name|g_param_spec_double
 argument_list|(
@@ -858,7 +871,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_interface_install_property
 argument_list|(
-name|options_iface
+name|iface
 argument_list|,
 name|g_param_spec_double
 argument_list|(
@@ -881,7 +894,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_interface_install_property
 argument_list|(
-name|options_iface
+name|iface
 argument_list|,
 name|gimp_param_spec_unit
 argument_list|(
@@ -903,7 +916,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_interface_install_property
 argument_list|(
-name|options_iface
+name|iface
 argument_list|,
 name|g_param_spec_boolean
 argument_list|(
@@ -921,7 +934,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_interface_install_property
 argument_list|(
-name|options_iface
+name|iface
 argument_list|,
 name|g_param_spec_object
 argument_list|(
@@ -1016,11 +1029,10 @@ name|private
 operator|=
 name|g_object_get_qdata
 argument_list|(
-operator|(
-name|GObject
-operator|*
-operator|)
+name|G_OBJECT
+argument_list|(
 name|options
+argument_list|)
 argument_list|,
 name|private_key
 argument_list|)
@@ -1031,17 +1043,6 @@ operator|!
 name|private
 condition|)
 block|{
-name|GimpRectangleOptionsInterface
-modifier|*
-name|options_iface
-decl_stmt|;
-name|options_iface
-operator|=
-name|GIMP_RECTANGLE_OPTIONS_GET_INTERFACE
-argument_list|(
-name|options
-argument_list|)
-expr_stmt|;
 name|private
 operator|=
 name|g_new0
@@ -1053,11 +1054,10 @@ argument_list|)
 expr_stmt|;
 name|g_object_set_qdata_full
 argument_list|(
-operator|(
-name|GObject
-operator|*
-operator|)
+name|G_OBJECT
+argument_list|(
 name|options
+argument_list|)
 argument_list|,
 name|private_key
 argument_list|,

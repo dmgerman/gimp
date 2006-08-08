@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a337bb70103
+DECL|enum|__anon28fda7d80103
 block|{
 DECL|enumerator|RECTANGLE_CHANGED
 name|RECTANGLE_CHANGED
@@ -727,20 +727,20 @@ parameter_list|)
 block|{
 specifier|static
 name|GType
-name|rectangle_tool_iface_type
+name|iface_type
 init|=
 literal|0
 decl_stmt|;
 if|if
 condition|(
 operator|!
-name|rectangle_tool_iface_type
+name|iface_type
 condition|)
 block|{
 specifier|static
 specifier|const
 name|GTypeInfo
-name|rectangle_tool_iface_info
+name|iface_info
 init|=
 block|{
 sizeof|sizeof
@@ -759,7 +759,7 @@ operator|)
 name|NULL
 block|,       }
 decl_stmt|;
-name|rectangle_tool_iface_type
+name|iface_type
 operator|=
 name|g_type_register_static
 argument_list|(
@@ -768,14 +768,21 @@ argument_list|,
 literal|"GimpRectangleToolInterface"
 argument_list|,
 operator|&
-name|rectangle_tool_iface_info
+name|iface_info
 argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+name|g_type_interface_add_prerequisite
+argument_list|(
+name|iface_type
+argument_list|,
+name|GIMP_TYPE_DRAW_TOOL
+argument_list|)
+expr_stmt|;
 block|}
 return|return
-name|rectangle_tool_iface_type
+name|iface_type
 return|;
 block|}
 end_function
