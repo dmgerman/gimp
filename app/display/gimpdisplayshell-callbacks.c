@@ -1891,7 +1891,7 @@ name|event
 argument_list|)
 expr_stmt|;
 comment|/*  GimpCoords passed to tools are ALWAYS in image coordinates  */
-name|gimp_display_shell_untransform_coords
+name|gimp_display_shell_untransform_coordinate
 argument_list|(
 name|shell
 argument_list|,
@@ -3328,7 +3328,7 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/*  GimpCoords passed to tools are ALWAYS in image coordinates  */
-name|gimp_display_shell_untransform_coords
+name|gimp_display_shell_untransform_coordinate
 argument_list|(
 name|shell
 argument_list|,
@@ -3540,7 +3540,7 @@ name|event
 argument_list|)
 expr_stmt|;
 comment|/*  GimpCoords passed to tools are ALWAYS in image coordinates  */
-name|gimp_display_shell_untransform_coords
+name|gimp_display_shell_untransform_coordinate
 argument_list|(
 name|shell
 argument_list|,
@@ -3823,7 +3823,7 @@ name|display_coords
 argument_list|)
 expr_stmt|;
 comment|/*  GimpCoords passed to tools are ALWAYS in                          *  image coordinates                          */
-name|gimp_display_shell_untransform_coords
+name|gimp_display_shell_untransform_coordinate
 argument_list|(
 name|shell
 argument_list|,

@@ -2066,9 +2066,6 @@ name|ICurve
 modifier|*
 name|icurve
 decl_stmt|;
-name|guint
-name|packed
-decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
@@ -2160,8 +2157,9 @@ name|i
 operator|++
 control|)
 block|{
+name|guint32
 name|packed
-operator|=
+init|=
 name|GPOINTER_TO_INT
 argument_list|(
 name|g_ptr_array_index
@@ -2173,7 +2171,7 @@ argument_list|,
 name|i
 argument_list|)
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|points
 index|[
 name|i
