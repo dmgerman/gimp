@@ -4381,6 +4381,13 @@ name|draw_tool
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|n_points
+operator|==
+literal|0
+condition|)
+return|return;
 name|shell
 operator|=
 name|GIMP_DISPLAY_SHELL
@@ -4505,6 +4512,13 @@ name|draw_tool
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|n_points
+operator|==
+literal|0
+condition|)
+return|return;
 name|shell
 operator|=
 name|GIMP_DISPLAY_SHELL
