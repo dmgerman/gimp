@@ -176,6 +176,7 @@ decl_stmt|;
 name|gint
 name|count
 decl_stmt|;
+comment|/*  first get the fallback compat GType that matches the pdb type  */
 name|type
 operator|=
 name|gimp_pdb_compat_arg_type_to_gtype
@@ -188,6 +189,7 @@ operator|.
 name|type
 argument_list|)
 expr_stmt|;
+comment|/*  then try to try to be more specific by looking at the param        *  spec (return values have one additional value (the status),        *  skip that, it's not in the array of param specs)        */
 if|if
 condition|(
 name|i
@@ -203,9 +205,6 @@ name|pspec_index
 init|=
 name|i
 decl_stmt|;
-name|GimpPDBArgType
-name|pspec_arg_type
-decl_stmt|;
 if|if
 condition|(
 name|return_values
@@ -213,6 +212,17 @@ condition|)
 name|pspec_index
 operator|--
 expr_stmt|;
+comment|/*  are there param specs left?  */
+if|if
+condition|(
+name|pspec_index
+operator|<
+name|n_pspecs
+condition|)
+block|{
+name|GimpPDBArgType
+name|pspec_arg_type
+decl_stmt|;
 name|pspec_arg_type
 operator|=
 name|gimp_pdb_compat_arg_type_from_gtype
@@ -226,12 +236,9 @@ index|]
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/*  if the param spec's GType, mapped to a pdb type, matches                *  the passed pdb type, use the param spec's GType                */
 if|if
 condition|(
-name|pspec_index
-operator|<
-name|n_pspecs
-operator|&&
 name|pspec_arg_type
 operator|==
 name|params
@@ -252,6 +259,7 @@ name|pspec_index
 index|]
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 name|g_value_init
