@@ -2776,7 +2776,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_param_spec_rgb:  * @pspec: a #GParamSpec to hold an #GimpRGB value.  *  * Returns: %TRUE if the alpha channel is relevant.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_param_spec_rgb_has_alpha:  * @pspec: a #GParamSpec to hold an #GimpRGB value.  *  * Returns: %TRUE if the alpha channel is relevant.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
