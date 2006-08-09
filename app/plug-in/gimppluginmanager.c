@@ -180,7 +180,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae3f9a60103
+DECL|enum|__anon2c7784840103
 block|{
 DECL|enumerator|PLUG_IN_OPENED
 name|PLUG_IN_OPENED
@@ -667,6 +667,16 @@ decl_stmt|;
 name|gimp_plug_in_manager_history_clear
 argument_list|(
 name|manager
+argument_list|)
+expr_stmt|;
+name|G_OBJECT_CLASS
+argument_list|(
+name|parent_class
+argument_list|)
+operator|->
+name|dispose
+argument_list|(
+name|object
 argument_list|)
 expr_stmt|;
 block|}
