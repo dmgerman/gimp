@@ -1326,9 +1326,6 @@ name|GdkPoint
 modifier|*
 name|coords
 decl_stmt|;
-name|gint
-name|i
-decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY_SHELL
