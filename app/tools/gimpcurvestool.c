@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpconfig/gimpconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
@@ -417,6 +423,11 @@ name|image_map_tool
 parameter_list|,
 name|gpointer
 name|fp
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -3657,7 +3668,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_curves_tool_settings_load (GimpImageMapTool * image_map_tool,gpointer fp)
+DECL|function|gimp_curves_tool_settings_load (GimpImageMapTool * image_map_tool,gpointer fp,GError ** error)
 name|gimp_curves_tool_settings_load
 parameter_list|(
 name|GimpImageMapTool
@@ -3666,6 +3677,11 @@ name|image_map_tool
 parameter_list|,
 name|gpointer
 name|fp
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|GimpCurvesTool
@@ -3729,12 +3745,7 @@ argument_list|)
 argument_list|,
 name|file
 argument_list|)
-condition|)
-return|return
-name|FALSE
-return|;
-if|if
-condition|(
+operator|||
 name|strcmp
 argument_list|(
 name|buf
@@ -3744,9 +3755,25 @@ argument_list|)
 operator|!=
 literal|0
 condition|)
+block|{
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|GIMP_CONFIG_ERROR
+argument_list|,
+name|GIMP_CONFIG_ERROR_PARSE
+argument_list|,
+name|_
+argument_list|(
+literal|"not a GIMP Levels file"
+argument_list|)
+argument_list|)
+expr_stmt|;
 return|return
 name|FALSE
 return|;
+block|}
 for|for
 control|(
 name|i
@@ -3813,6 +3840,20 @@ comment|/*  FIXME: should have a helpful error message here  */
 name|g_printerr
 argument_list|(
 literal|"fields != 2"
+argument_list|)
+expr_stmt|;
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|GIMP_CONFIG_ERROR
+argument_list|,
+name|GIMP_CONFIG_ERROR_PARSE
+argument_list|,
+name|_
+argument_list|(
+literal|"parse error"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return

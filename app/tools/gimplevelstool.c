@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpconfig/gimpconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
@@ -389,6 +395,11 @@ name|image_mao_tool
 parameter_list|,
 name|gpointer
 name|fp
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -3424,7 +3435,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_levels_tool_settings_load (GimpImageMapTool * image_map_tool,gpointer fp)
+DECL|function|gimp_levels_tool_settings_load (GimpImageMapTool * image_map_tool,gpointer fp,GError ** error)
 name|gimp_levels_tool_settings_load
 parameter_list|(
 name|GimpImageMapTool
@@ -3433,6 +3444,11 @@ name|image_map_tool
 parameter_list|,
 name|gpointer
 name|fp
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|GimpLevelsTool
@@ -3509,12 +3525,7 @@ argument_list|)
 argument_list|,
 name|file
 argument_list|)
-condition|)
-return|return
-name|FALSE
-return|;
-if|if
-condition|(
+operator|||
 name|strcmp
 argument_list|(
 name|buf
@@ -3524,9 +3535,25 @@ argument_list|)
 operator|!=
 literal|0
 condition|)
+block|{
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|GIMP_CONFIG_ERROR
+argument_list|,
+name|GIMP_CONFIG_ERROR_PARSE
+argument_list|,
+name|_
+argument_list|(
+literal|"not a GIMP Levels file"
+argument_list|)
+argument_list|)
+expr_stmt|;
 return|return
 name|FALSE
 return|;
+block|}
 for|for
 control|(
 name|i
@@ -3580,9 +3607,9 @@ name|fields
 operator|!=
 literal|4
 condition|)
-return|return
-name|FALSE
-return|;
+goto|goto
+name|error
+goto|;
 if|if
 condition|(
 operator|!
@@ -3595,9 +3622,9 @@ argument_list|,
 name|file
 argument_list|)
 condition|)
-return|return
-name|FALSE
-return|;
+goto|goto
+name|error
+goto|;
 name|gamma
 index|[
 name|i
@@ -3621,9 +3648,9 @@ name|errno
 operator|==
 name|ERANGE
 condition|)
-return|return
-name|FALSE
-return|;
+goto|goto
+name|error
+goto|;
 block|}
 for|for
 control|(
@@ -3719,6 +3746,25 @@ argument_list|)
 expr_stmt|;
 return|return
 name|TRUE
+return|;
+name|error
+label|:
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|GIMP_CONFIG_ERROR
+argument_list|,
+name|GIMP_CONFIG_ERROR_PARSE
+argument_list|,
+name|_
+argument_list|(
+literal|"parse error"
+argument_list|)
+argument_list|)
+expr_stmt|;
+return|return
+name|FALSE
 return|;
 block|}
 end_function

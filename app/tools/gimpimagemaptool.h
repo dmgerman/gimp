@@ -239,6 +239,11 @@ name|image_map_tool
 parameter_list|,
 name|gpointer
 name|file
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 DECL|member|settings_save

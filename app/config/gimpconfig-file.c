@@ -267,7 +267,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Error while writing '%s': %s"
+literal|"Error writing '%s': %s"
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
@@ -317,7 +317,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Error while reading '%s': %s"
+literal|"Error reading '%s': %s"
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
@@ -373,7 +373,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Error while writing '%s': %s"
+literal|"Error writing '%s': %s"
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8

@@ -1696,7 +1696,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_image_map_tool_settings_load (GimpImageMapTool * tool,gpointer file)
+DECL|function|gimp_image_map_tool_settings_load (GimpImageMapTool * tool,gpointer file,GError ** error)
 name|gimp_image_map_tool_settings_load
 parameter_list|(
 name|GimpImageMapTool
@@ -1705,6 +1705,11 @@ name|tool
 parameter_list|,
 name|gpointer
 name|file
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|GimpImageMapToolClass
@@ -1736,6 +1741,8 @@ argument_list|(
 name|tool
 argument_list|,
 name|file
+argument_list|,
+name|error
 argument_list|)
 condition|)
 block|{
@@ -2279,7 +2286,15 @@ block|{
 name|FILE
 modifier|*
 name|file
+decl_stmt|;
+name|GError
+modifier|*
+name|error
 init|=
+name|NULL
+decl_stmt|;
+name|file
+operator|=
 name|g_fopen
 argument_list|(
 name|filename
@@ -2290,7 +2305,7 @@ literal|"wt"
 else|:
 literal|"rt"
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -2364,17 +2379,32 @@ argument_list|(
 name|tool
 argument_list|,
 name|file
+argument_list|,
+operator|&
+name|error
 argument_list|)
 condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Error in reading file '%s'."
+name|_
+argument_list|(
+literal|"Error reading '%s': %s"
+argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
 name|filename
 argument_list|)
+argument_list|,
+name|error
+operator|->
+name|message
+argument_list|)
+expr_stmt|;
+name|g_error_free
+argument_list|(
+name|error
 argument_list|)
 expr_stmt|;
 block|}
