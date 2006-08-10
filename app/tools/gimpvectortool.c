@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpprogress.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimptoolinfo.h"
 end_include
 
@@ -7121,8 +7127,22 @@ operator|!
 name|active_drawable
 condition|)
 block|{
-name|g_message
+name|gimp_message
 argument_list|(
+name|image
+operator|->
+name|gimp
+argument_list|,
+name|GIMP_PROGRESS
+argument_list|(
+name|GIMP_TOOL
+argument_list|(
+name|vector_tool
+argument_list|)
+operator|->
+name|display
+argument_list|)
+argument_list|,
 name|_
 argument_list|(
 literal|"There is no active layer or channel to stroke to"
