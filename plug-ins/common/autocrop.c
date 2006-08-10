@@ -830,8 +830,6 @@ condition|(
 name|y1
 operator|==
 name|height
-operator|-
-literal|1
 operator|&&
 operator|!
 name|abort
@@ -942,8 +940,8 @@ name|y1
 operator|>
 literal|0
 condition|)
-operator|--
 name|y1
+operator|--
 expr_stmt|;
 if|if
 condition|(
@@ -953,8 +951,8 @@ name|height
 operator|-
 literal|1
 condition|)
-operator|++
 name|y2
+operator|++
 expr_stmt|;
 if|if
 condition|(
@@ -1134,8 +1132,8 @@ name|x1
 operator|>
 literal|0
 condition|)
-operator|--
 name|x1
+operator|--
 expr_stmt|;
 if|if
 condition|(
@@ -1145,8 +1143,8 @@ name|width
 operator|-
 literal|1
 condition|)
-operator|++
 name|x2
+operator|++
 expr_stmt|;
 name|g_free
 argument_list|(
