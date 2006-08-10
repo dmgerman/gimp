@@ -1065,8 +1065,15 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-name|g_message
+name|gimp_message
 argument_list|(
+name|gimp
+argument_list|,
+name|GIMP_PROGRESS
+argument_list|(
+name|save_dialog
+argument_list|)
+argument_list|,
 name|_
 argument_list|(
 literal|"The given filename does not have any known "
@@ -1183,14 +1190,22 @@ expr_stmt|;
 endif|#
 directive|endif
 comment|/*  remote URI  */
-name|g_message
+name|gimp_message
 argument_list|(
+name|gimp
+argument_list|,
+name|GIMP_PROGRESS
+argument_list|(
+name|save_dialog
+argument_list|)
+argument_list|,
 name|_
 argument_list|(
 literal|"Saving remote files needs to determine the "
-literal|"file format from the file extension. Please "
-literal|"enter a file extension that matches the selected "
-literal|"file format or enter no file extension at all."
+literal|"file format from the file extension. "
+literal|"Please enter a file extension that matches "
+literal|"the selected file format or enter no file "
+literal|"extension at all."
 argument_list|)
 argument_list|)
 expr_stmt|;
