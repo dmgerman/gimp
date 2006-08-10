@@ -95,7 +95,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bdccac90108
+DECL|struct|__anon295629940108
 block|{
 DECL|member|mask_size
 name|gdouble
@@ -430,7 +430,7 @@ expr_stmt|;
 operator|*
 name|nreturn_vals
 operator|=
-literal|2
+literal|1
 expr_stmt|;
 operator|*
 name|return_vals
