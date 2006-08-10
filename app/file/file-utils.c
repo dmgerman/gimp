@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<errno.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdlib.h>
 end_include
 
@@ -602,7 +608,7 @@ end_function
 begin_function
 name|GimpPlugInProcedure
 modifier|*
-DECL|function|file_utils_find_proc (GSList * procs,const gchar * uri)
+DECL|function|file_utils_find_proc (GSList * procs,const gchar * uri,GError ** error)
 name|file_utils_find_proc
 parameter_list|(
 name|GSList
@@ -613,6 +619,11 @@ specifier|const
 name|gchar
 modifier|*
 name|uri
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|GimpPlugInProcedure
@@ -642,6 +653,20 @@ name|g_return_val_if_fail
 argument_list|(
 name|uri
 operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|error
+operator|==
+name|NULL
+operator|||
+operator|*
+name|error
+operator|==
 name|NULL
 argument_list|,
 name|NULL
@@ -762,6 +787,7 @@ operator|)
 operator|!=
 name|NULL
 condition|)
+block|{
 name|head_size
 operator|=
 name|fread
@@ -782,6 +808,27 @@ argument_list|,
 name|ifp
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|g_file_error_from_errno
+argument_list|(
+name|errno
+argument_list|)
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 if|if
 condition|(
@@ -870,7 +917,8 @@ name|size_matched_proc
 return|;
 block|}
 comment|/* As a last resort, try matching by name */
-return|return
+name|file_proc
+operator|=
 name|file_proc_find_by_name
 argument_list|(
 name|all_procs
@@ -879,6 +927,35 @@ name|uri
 argument_list|,
 name|FALSE
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|file_proc
+operator|&&
+name|error
+operator|&&
+operator|*
+name|error
+operator|==
+name|NULL
+condition|)
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
+name|_
+argument_list|(
+literal|"Unknown file type"
+argument_list|)
+argument_list|)
+expr_stmt|;
+return|return
+name|file_proc
 return|;
 block|}
 end_function

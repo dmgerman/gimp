@@ -371,6 +371,8 @@ operator|->
 name|load_procs
 argument_list|,
 name|uri
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 if|if
@@ -378,25 +380,9 @@ condition|(
 operator|!
 name|file_proc
 condition|)
-block|{
-name|g_set_error
-argument_list|(
-name|error
-argument_list|,
-name|G_FILE_ERROR
-argument_list|,
-name|G_FILE_ERROR_FAILED
-argument_list|,
-name|_
-argument_list|(
-literal|"Unknown file type"
-argument_list|)
-argument_list|)
-expr_stmt|;
 return|return
 name|NULL
 return|;
-block|}
 name|filename
 operator|=
 name|file_utils_filename_from_uri
@@ -793,6 +779,8 @@ operator|->
 name|load_procs
 argument_list|,
 name|uri
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if

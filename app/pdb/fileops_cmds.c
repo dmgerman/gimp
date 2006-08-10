@@ -209,6 +209,8 @@ operator|->
 name|load_procs
 argument_list|,
 name|uri
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -647,6 +649,8 @@ operator|->
 name|save_procs
 argument_list|,
 name|uri
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_free

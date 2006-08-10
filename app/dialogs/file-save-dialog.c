@@ -611,6 +611,8 @@ operator|->
 name|save_procs
 argument_list|,
 name|uri
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|basename_proc
@@ -624,6 +626,8 @@ operator|->
 name|save_procs
 argument_list|,
 name|basename
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 ifdef|#
@@ -861,6 +865,8 @@ operator|->
 name|save_procs
 argument_list|,
 name|uri
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|basename_proc
@@ -874,6 +880,8 @@ operator|->
 name|save_procs
 argument_list|,
 name|basename
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|utf8
