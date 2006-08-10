@@ -122,6 +122,11 @@ name|gboolean
 name|use_saved_op
 decl_stmt|;
 comment|/* use operation or get from options */
+DECL|member|saved_show_selection
+name|gboolean
+name|saved_show_selection
+decl_stmt|;
+comment|/* used to remember existing value   */
 DECL|member|undo
 name|GimpUndo
 modifier|*
