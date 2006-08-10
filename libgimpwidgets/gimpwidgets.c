@@ -3371,7 +3371,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b148790108
+DECL|struct|__anon2be02dda0108
 block|{
 DECL|member|chainbutton
 name|GimpChainButton
@@ -3520,13 +3520,7 @@ name|gcd
 operator|->
 name|orig_x
 expr_stmt|;
-name|g_signal_stop_emission_by_name
-argument_list|(
-name|widget
-argument_list|,
-literal|"value-changed"
-argument_list|)
-expr_stmt|;
+comment|/*                   g_signal_stop_emission_by_name (widget, "value-changed"); */
 name|gimp_size_entry_set_refval
 argument_list|(
 name|GIMP_SIZE_ENTRY
@@ -3590,13 +3584,7 @@ name|gcd
 operator|->
 name|orig_y
 expr_stmt|;
-name|g_signal_stop_emission_by_name
-argument_list|(
-name|widget
-argument_list|,
-literal|"value-changed"
-argument_list|)
-expr_stmt|;
+comment|/*                   g_signal_stop_emission_by_name (widget, "value-changed"); */
 name|gimp_size_entry_set_refval
 argument_list|(
 name|GIMP_SIZE_ENTRY
@@ -3641,13 +3629,7 @@ name|new_y
 operator|=
 name|new_x
 expr_stmt|;
-name|g_signal_stop_emission_by_name
-argument_list|(
-name|widget
-argument_list|,
-literal|"value-changed"
-argument_list|)
-expr_stmt|;
+comment|/*               g_signal_stop_emission_by_name (widget, "value-changed"); */
 name|gimp_size_entry_set_refval
 argument_list|(
 name|GIMP_SIZE_ENTRY
@@ -3693,13 +3675,7 @@ name|new_x
 operator|=
 name|new_y
 expr_stmt|;
-name|g_signal_stop_emission_by_name
-argument_list|(
-name|widget
-argument_list|,
-literal|"value-changed"
-argument_list|)
-expr_stmt|;
+comment|/*               g_signal_stop_emission_by_name (widget, "value-changed"); */
 name|gimp_size_entry_set_refval
 argument_list|(
 name|GIMP_SIZE_ENTRY
