@@ -171,7 +171,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c70afc90108
+DECL|struct|__anon2c6df4fd0108
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -728,7 +728,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c70afc90208
+DECL|struct|__anon2c6df4fd0208
 block|{
 DECL|member|schema
 specifier|const
@@ -2889,6 +2889,16 @@ name|notebook
 argument_list|)
 argument_list|,
 name|GTK_POS_TOP
+argument_list|)
+expr_stmt|;
+name|gtk_container_set_border_width
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|notebook
+argument_list|)
+argument_list|,
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
