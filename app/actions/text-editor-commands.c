@@ -456,8 +456,12 @@ name|error
 argument_list|)
 condition|)
 block|{
-name|g_message
+name|gimp_show_message_dialog
 argument_list|(
+name|dialog
+argument_list|,
+name|GTK_MESSAGE_ERROR
+argument_list|,
 name|_
 argument_list|(
 literal|"Could not open '%s' for reading: %s"

@@ -250,8 +250,15 @@ name|NULL
 argument_list|)
 condition|)
 block|{
-name|g_message
+name|gimp_show_message_dialog
 argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|console
+argument_list|)
+argument_list|,
+name|GTK_MESSAGE_WARNING
+argument_list|,
 name|_
 argument_list|(
 literal|"Cannot save. Nothing is selected."
@@ -513,8 +520,12 @@ name|error
 argument_list|)
 condition|)
 block|{
-name|g_message
+name|gimp_show_message_dialog
 argument_list|(
+name|dialog
+argument_list|,
+name|GTK_MESSAGE_ERROR
+argument_list|,
 name|_
 argument_list|(
 literal|"Error writing file '%s':\n%s"
