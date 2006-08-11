@@ -66,12 +66,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpwidgets-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c00e9ce0103
+DECL|enum|__anon288fcb640103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1282,12 +1288,17 @@ operator|!=
 name|GIMP_PDB_SUCCESS
 condition|)
 block|{
-name|g_message
+name|gimp_show_message_dialog
 argument_list|(
+name|dialog
+argument_list|,
+name|GTK_MESSAGE_ERROR
+argument_list|,
 name|_
 argument_list|(
 literal|"Unable to run %s callback. "
-literal|"The corresponding plug-in may have crashed."
+literal|"The corresponding plug-in may have "
+literal|"crashed."
 argument_list|)
 argument_list|,
 name|g_type_name

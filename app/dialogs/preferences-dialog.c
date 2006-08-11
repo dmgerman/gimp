@@ -5356,7 +5356,7 @@ argument_list|,
 name|message
 argument_list|)
 expr_stmt|;
-name|g_signal_connect_swapped
+name|g_signal_connect
 argument_list|(
 name|dialog
 argument_list|,
@@ -5367,7 +5367,7 @@ argument_list|(
 name|gtk_widget_destroy
 argument_list|)
 argument_list|,
-name|dialog
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -8916,7 +8916,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon27666d840108
+DECL|struct|__anon2919f9f40108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -10079,7 +10079,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27666d840208
+DECL|struct|__anon2919f9f40208
 block|{
 DECL|member|label
 specifier|const
@@ -10978,7 +10978,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27666d840308
+DECL|struct|__anon2919f9f40308
 block|{
 DECL|member|property_name
 specifier|const
@@ -11133,7 +11133,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27666d840408
+DECL|struct|__anon2919f9f40408
 block|{
 DECL|member|tree_label
 specifier|const

@@ -120,6 +120,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpwidgets-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"palette-import-dialog.h"
 end_include
 
@@ -140,7 +146,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27cc7ce20103
+DECL|enum|__anon2a2e89200103
 block|{
 DECL|enumerator|GRADIENT_IMPORT
 name|GRADIENT_IMPORT
@@ -3825,8 +3831,14 @@ operator|!
 name|palette
 condition|)
 block|{
-name|g_message
+name|gimp_show_message_dialog
 argument_list|(
+name|dialog
+operator|->
+name|dialog
+argument_list|,
+name|GTK_MESSAGE_ERROR
+argument_list|,
 name|error
 operator|->
 name|message

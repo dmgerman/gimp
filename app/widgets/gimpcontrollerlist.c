@@ -156,7 +156,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c8b29480103
+DECL|enum|__anon297507720103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -169,7 +169,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c8b29480203
+DECL|enum|__anon297507720203
 block|{
 DECL|enumerator|COLUMN_ICON
 name|COLUMN_ICON
@@ -2207,13 +2207,18 @@ operator|!=
 name|NULL
 condition|)
 block|{
-name|g_message
+name|gimp_show_message_dialog
 argument_list|(
+name|button
+argument_list|,
+name|GTK_MESSAGE_WARNING
+argument_list|,
 name|_
 argument_list|(
-literal|"There can only be one active keyboard controller.\n\n"
-literal|"You already have a keyboard controller in your list "
-literal|"of active controllers."
+literal|"There can only be one active keyboard "
+literal|"controller.\n\n"
+literal|"You already have a keyboard controller in "
+literal|"your list of active controllers."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2238,13 +2243,18 @@ operator|!=
 name|NULL
 condition|)
 block|{
-name|g_message
+name|gimp_show_message_dialog
 argument_list|(
+name|button
+argument_list|,
+name|GTK_MESSAGE_WARNING
+argument_list|,
 name|_
 argument_list|(
-literal|"There can only be one active wheel controller.\n\n"
-literal|"You already have a wheel controller in your list "
-literal|"of active controllers."
+literal|"There can only be one active wheel "
+literal|"controller.\n\n"
+literal|"You already have a wheel controller in "
+literal|"your list of active controllers."
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -1687,7 +1687,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a51af90108
+DECL|struct|__anon28f7dc940108
 block|{
 DECL|member|accel_path
 name|gchar
@@ -1759,8 +1759,12 @@ name|TRUE
 argument_list|)
 condition|)
 block|{
-name|g_message
+name|gimp_show_message_dialog
 argument_list|(
+name|dialog
+argument_list|,
+name|GTK_MESSAGE_ERROR
+argument_list|,
 name|_
 argument_list|(
 literal|"Changing shortcut failed."
@@ -2190,8 +2194,15 @@ name|FALSE
 argument_list|)
 condition|)
 block|{
-name|g_message
+name|gimp_show_message_dialog
 argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|view
+argument_list|)
+argument_list|,
+name|GTK_MESSAGE_ERROR
+argument_list|,
 name|_
 argument_list|(
 literal|"Removing shortcut failed."
@@ -2207,8 +2218,15 @@ operator|!
 name|accel_key
 condition|)
 block|{
-name|g_message
+name|gimp_show_message_dialog
 argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|view
+argument_list|)
+argument_list|,
+name|GTK_MESSAGE_ERROR
+argument_list|,
 name|_
 argument_list|(
 literal|"Invalid shortcut."
@@ -2399,8 +2417,15 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|g_message
+name|gimp_show_message_dialog
 argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|view
+argument_list|)
+argument_list|,
+name|GTK_MESSAGE_ERROR
+argument_list|,
 name|_
 argument_list|(
 literal|"Changing shortcut failed."

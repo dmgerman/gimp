@@ -102,6 +102,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpwidgets-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"stroke-dialog.h"
 end_include
 
@@ -1134,11 +1140,16 @@ operator|!
 name|drawable
 condition|)
 block|{
-name|g_message
+name|gimp_show_message_dialog
 argument_list|(
+name|widget
+argument_list|,
+name|GTK_MESSAGE_WARNING
+argument_list|,
 name|_
 argument_list|(
-literal|"There is no active layer or channel to stroke to."
+literal|"There is no active layer or channel "
+literal|"to stroke to."
 argument_list|)
 argument_list|)
 expr_stmt|;

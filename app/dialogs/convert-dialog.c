@@ -114,7 +114,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287c63bc0108
+DECL|struct|__anon27c484d80108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -1738,11 +1738,18 @@ operator|>
 literal|256
 condition|)
 block|{
-name|g_message
+name|gimp_show_message_dialog
 argument_list|(
+name|dialog
+operator|->
+name|dialog
+argument_list|,
+name|GTK_MESSAGE_WARNING
+argument_list|,
 name|_
 argument_list|(
-literal|"Cannot convert to a palette with more than 256 colors."
+literal|"Cannot convert to a palette "
+literal|"with more than 256 colors."
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -947,8 +947,15 @@ name|error
 argument_list|)
 condition|)
 block|{
-name|g_message
+name|gimp_show_message_dialog
 argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|tree_view
+argument_list|)
+argument_list|,
+name|GTK_MESSAGE_ERROR
+argument_list|,
 name|error
 operator|->
 name|message
