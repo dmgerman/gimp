@@ -100,7 +100,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd01f270108
+DECL|struct|__anon2b9e0cec0108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -978,9 +978,9 @@ argument_list|)
 argument_list|,
 name|vbox
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 literal|0
 argument_list|)
