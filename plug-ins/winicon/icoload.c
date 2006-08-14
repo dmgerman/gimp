@@ -528,7 +528,7 @@ name|g_fopen
 argument_list|(
 name|filename
 argument_list|,
-literal|"r"
+literal|"rb"
 argument_list|)
 operator|)
 condition|)
