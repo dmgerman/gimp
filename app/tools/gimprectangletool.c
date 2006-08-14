@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fda7d80103
+DECL|enum|__anon287b0ee10103
 block|{
 DECL|enumerator|RECTANGLE_CHANGED
 name|RECTANGLE_CHANGED
@@ -856,9 +856,9 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-literal|0
+name|G_MININT
 argument_list|,
-name|GIMP_MAX_IMAGE_SIZE
+name|G_MAXINT
 argument_list|,
 literal|0
 argument_list|,
@@ -878,9 +878,9 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-literal|0
+name|G_MININT
 argument_list|,
-name|GIMP_MAX_IMAGE_SIZE
+name|G_MAXINT
 argument_list|,
 literal|0
 argument_list|,
@@ -4530,7 +4530,7 @@ block|{
 case|case
 name|RECT_RESIZING_UPPER_LEFT
 case|:
-comment|/*            * Ok the same basically happens for each corner, just with a different fixed            * corner. To keep within aspect ratio and at the same time keep the cursor on            * one edge if not the corner itself:            * - calculate the two positions of the corner in question on the base of the current            *   mouse cursor position and the fixed corner opposite the one selected.            * - decide on which egde we are inside the rectangle dimension            * - if we are on the inside of the vertical edge then we use the x position of the             *   cursor, otherwise we are on the inside (or close enough) of the horizontal            *   edge and then we use the y position of the cursor for the base of our new corner.            */
+comment|/*            * The same basically happens for each corner, just with a            * different fixed corner. To keep within aspect ratio and            * at the same time keep the cursor on one edge if not the            * corner itself: - calculate the two positions of the            * corner in question on the base of the current mouse            * cursor position and the fixed corner opposite the one            * selected.  - decide on which egde we are inside the            * rectangle dimension - if we are on the inside of the            * vertical edge then we use the x position of the cursor,            * otherwise we are on the inside (or close enough) of the            * horizontal edge and then we use the y position of the            * cursor for the base of our new corner.            */
 name|x1
 operator|=
 name|rx2
@@ -4769,7 +4769,7 @@ break|break;
 case|case
 name|RECT_RESIZING_LEFT
 case|:
-comment|/* When resizing the left hand delimiter then the aspect dictates the             * height of the result, any inc_y is redundant and not relevant to the            * result            */
+comment|/* When resizing the left hand delimiter then the aspect            * dictates the height of the result, any inc_y is redundant            * and not relevant to the result            */
 name|y2
 operator|=
 name|ry1
@@ -4806,7 +4806,7 @@ break|break;
 case|case
 name|RECT_RESIZING_RIGHT
 case|:
-comment|/* When resizing the right hand delimiter then the aspect dictates the             * height of the result, any inc_y is redundant and not relevant to the            * result            */
+comment|/* When resizing the right hand delimiter then the aspect            * dictates the height of the result, any inc_y is redundant            * and not relevant to the result            */
 name|y2
 operator|=
 name|ry1
