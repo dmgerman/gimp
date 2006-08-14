@@ -3853,6 +3853,8 @@ name|coords
 operator|->
 name|y
 argument_list|)
+operator|>
+literal|1
 condition|)
 block|{
 name|iscissors
