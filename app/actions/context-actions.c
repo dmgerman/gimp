@@ -5104,7 +5104,7 @@ value|gimp_action_group_set_action_sensitive (group, "context-" action, (conditi
 if|#
 directive|if
 literal|0
-block|SET_SENSITIVE ("brush-radius-minimum",       generated&& radius> 1.0);   SET_SENSITIVE ("brush-radius-decrease",      generated&& radius> 1.0);   SET_SENSITIVE ("brush-radius-decrease-skip", generated&& radius> 1.0);    SET_SENSITIVE ("brush-radius-maximum",       generated&& radius< 4096.0);   SET_SENSITIVE ("brush-radius-increase",      generated&& radius< 4096.0);   SET_SENSITIVE ("brush-radius-increase-skip", generated&& radius< 4096.0);    SET_SENSITIVE ("brush-angle-minimum",       generated);   SET_SENSITIVE ("brush-angle-decrease",      generated);   SET_SENSITIVE ("brush-angle-decrease-skip", generated);    SET_SENSITIVE ("brush-angle-maximum",       generated);   SET_SENSITIVE ("brush-angle-increase",      generated);   SET_SENSITIVE ("brush-angle-increase-skip", generated);
+block|SET_SENSITIVE ("brush-radius-minimum",       generated&& radius> 1.0);   SET_SENSITIVE ("brush-radius-decrease",      generated&& radius> 1.0);   SET_SENSITIVE ("brush-radius-decrease-skip", generated&& radius> 1.0);    SET_SENSITIVE ("brush-radius-maximum",       generated&& radius< 4000.0);   SET_SENSITIVE ("brush-radius-increase",      generated&& radius< 4000.0);   SET_SENSITIVE ("brush-radius-increase-skip", generated&& radius< 4000.0);    SET_SENSITIVE ("brush-angle-minimum",       generated);   SET_SENSITIVE ("brush-angle-decrease",      generated);   SET_SENSITIVE ("brush-angle-decrease-skip", generated);    SET_SENSITIVE ("brush-angle-maximum",       generated);   SET_SENSITIVE ("brush-angle-increase",      generated);   SET_SENSITIVE ("brush-angle-increase-skip", generated);
 endif|#
 directive|endif
 undef|#

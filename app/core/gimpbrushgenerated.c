@@ -102,7 +102,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon276ccbff0103
+DECL|enum|__anon2b2e62020103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -358,7 +358,7 @@ name|NULL
 argument_list|,
 literal|0.1
 argument_list|,
-literal|1000.0
+literal|4000.0
 argument_list|,
 literal|5.0
 argument_list|,
