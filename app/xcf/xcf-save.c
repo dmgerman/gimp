@@ -6122,6 +6122,7 @@ modifier|*
 name|data
 init|=
 operator|(
+specifier|const
 name|guchar
 operator|*
 operator|)
@@ -6656,7 +6657,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2b81870108
+DECL|struct|__anon29eb42420108
 block|{
 DECL|member|info
 name|XcfInfo

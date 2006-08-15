@@ -983,13 +983,6 @@ operator|!
 name|preview
 condition|)
 return|return;
-name|g_printerr
-argument_list|(
-literal|"ico_specs_dialog_update_icon_preview: %d\n"
-argument_list|,
-name|bpp
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|bpp
