@@ -4,6 +4,22 @@ comment|/*  * The GIMP -- an image manipulation program  * Copyright (C) 1995 Sp
 end_comment
 
 begin_define
+DECL|macro|LOAD_PROC
+define|#
+directive|define
+name|LOAD_PROC
+value|"file-bmp-load"
+end_define
+
+begin_define
+DECL|macro|SAVE_PROC
+define|#
+directive|define
+name|SAVE_PROC
+value|"file-bmp-save"
+end_define
+
+begin_define
 DECL|macro|MAXCOLORS
 define|#
 directive|define
@@ -103,6 +119,13 @@ begin_decl_stmt
 specifier|extern
 name|gboolean
 name|interactive
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|gboolean
+name|lastvals
 decl_stmt|;
 end_decl_stmt
 
