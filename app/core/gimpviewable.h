@@ -33,7 +33,7 @@ DECL|macro|GIMP_VIEWABLE_MAX_PREVIEW_SIZE
 define|#
 directive|define
 name|GIMP_VIEWABLE_MAX_PREVIEW_SIZE
-value|1024
+value|2048
 end_define
 
 begin_define
