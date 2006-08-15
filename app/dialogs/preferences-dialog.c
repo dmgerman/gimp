@@ -8916,7 +8916,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2919f9f40108
+DECL|struct|__anon2a09a5ac0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -10079,7 +10079,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2919f9f40208
+DECL|struct|__anon2a09a5ac0208
 block|{
 DECL|member|label
 specifier|const
@@ -10773,6 +10773,9 @@ argument_list|,
 name|size_group
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|GIMP_UNSTABLE
 name|prefs_check_button_add
 argument_list|(
 name|object
@@ -10791,6 +10794,8 @@ name|vbox2
 argument_list|)
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 name|vbox2
 operator|=
 name|prefs_frame_new
@@ -10978,7 +10983,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2919f9f40308
+DECL|struct|__anon2a09a5ac0308
 block|{
 DECL|member|property_name
 specifier|const
@@ -11133,7 +11138,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2919f9f40408
+DECL|struct|__anon2a09a5ac0408
 block|{
 DECL|member|tree_label
 specifier|const
