@@ -76,10 +76,10 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b55e5220108
+DECL|struct|__anon28950cc70108
 block|{
 union|union
-DECL|union|__anon2b55e522020a
+DECL|union|__anon28950cc7020a
 block|{
 DECL|member|ID
 name|gint32
@@ -624,7 +624,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b55e5220308
+DECL|struct|__anon28950cc70308
 block|{
 DECL|member|compose_type
 specifier|const
@@ -1121,7 +1121,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b55e5220408
+DECL|struct|__anon28950cc70408
 block|{
 DECL|member|inputs
 name|ComposeInput
@@ -1161,7 +1161,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b55e5220508
+DECL|struct|__anon28950cc70508
 block|{
 DECL|member|width
 DECL|member|height
@@ -1840,7 +1840,7 @@ expr_stmt|;
 operator|*
 name|nreturn_vals
 operator|=
-literal|2
+literal|1
 expr_stmt|;
 operator|*
 name|return_vals
@@ -2602,6 +2602,17 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+operator|*
+name|nreturn_vals
+operator|=
+name|composevals
+operator|.
+name|do_recompose
+condition|?
+literal|1
+else|:
+literal|2
+expr_stmt|;
 name|values
 index|[
 literal|0
