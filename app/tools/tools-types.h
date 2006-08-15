@@ -57,6 +57,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpBrushTool
+typedef|typedef
+name|struct
+name|_GimpBrushTool
+name|GimpBrushTool
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpColorTool
 typedef|typedef
 name|struct

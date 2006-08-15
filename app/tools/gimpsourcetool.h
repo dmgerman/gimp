@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gimppainttool.h"
+file|"gimpbrushtool.h"
 end_include
 
 begin_define
@@ -109,7 +109,7 @@ struct|struct
 name|_GimpCloneTool
 block|{
 DECL|member|parent_instance
-name|GimpPaintTool
+name|GimpBrushTool
 name|parent_instance
 decl_stmt|;
 DECL|member|src_display
@@ -135,7 +135,7 @@ struct|struct
 name|_GimpCloneToolClass
 block|{
 DECL|member|parent_class
-name|GimpPaintToolClass
+name|GimpBrushToolClass
 name|parent_class
 decl_stmt|;
 block|}

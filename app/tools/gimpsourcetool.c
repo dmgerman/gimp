@@ -331,14 +331,14 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpCloneTool,gimp_clone_tool,GIMP_TYPE_PAINT_TOOL)
+DECL|function|G_DEFINE_TYPE (GimpCloneTool,gimp_clone_tool,GIMP_TYPE_BRUSH_TOOL)
 name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpCloneTool
 argument_list|,
 argument|gimp_clone_tool
 argument_list|,
-argument|GIMP_TYPE_PAINT_TOOL
+argument|GIMP_TYPE_BRUSH_TOOL
 argument_list|)
 end_macro
 

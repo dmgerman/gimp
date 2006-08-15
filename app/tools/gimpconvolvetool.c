@@ -178,14 +178,14 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpConvolveTool,gimp_convolve_tool,GIMP_TYPE_PAINT_TOOL)
+DECL|function|G_DEFINE_TYPE (GimpConvolveTool,gimp_convolve_tool,GIMP_TYPE_BRUSH_TOOL)
 name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpConvolveTool
 argument_list|,
 argument|gimp_convolve_tool
 argument_list|,
-argument|GIMP_TYPE_PAINT_TOOL
+argument|GIMP_TYPE_BRUSH_TOOL
 argument_list|)
 end_macro
 
@@ -697,6 +697,11 @@ block|{
 name|GObject
 modifier|*
 name|config
+init|=
+name|G_OBJECT
+argument_list|(
+name|tool_options
+argument_list|)
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -714,13 +719,6 @@ name|gchar
 modifier|*
 name|str
 decl_stmt|;
-name|config
-operator|=
-name|G_OBJECT
-argument_list|(
-name|tool_options
-argument_list|)
-expr_stmt|;
 name|vbox
 operator|=
 name|gimp_paint_options_gui

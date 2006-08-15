@@ -64,14 +64,14 @@ file|"gimp-intl.h"
 end_include
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpPaintbrushTool,gimp_paintbrush_tool,GIMP_TYPE_PAINT_TOOL)
+DECL|function|G_DEFINE_TYPE (GimpPaintbrushTool,gimp_paintbrush_tool,GIMP_TYPE_BRUSH_TOOL)
 name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpPaintbrushTool
 argument_list|,
 argument|gimp_paintbrush_tool
 argument_list|,
-argument|GIMP_TYPE_PAINT_TOOL
+argument|GIMP_TYPE_BRUSH_TOOL
 argument_list|)
 end_macro
 
