@@ -426,7 +426,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29eacad20103
+DECL|enum|__anon2a2ba55f0103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -3909,7 +3909,6 @@ comment|/**  * gimp_shm_addr:  *  * Returns the address of the shared memory seg
 end_comment
 
 begin_function
-specifier|const
 name|guchar
 modifier|*
 DECL|function|gimp_shm_addr (void)

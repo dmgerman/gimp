@@ -1048,7 +1048,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-specifier|const
 name|guchar
 modifier|*
 name|gimp_shm_addr
