@@ -805,9 +805,15 @@ expr_stmt|;
 comment|/*  Make a check to see if it should be a floating selection translation  */
 if|if
 condition|(
+operator|(
 name|edit_mode
 operator|==
 name|GIMP_TRANSLATE_MODE_MASK_TO_LAYER
+operator|||
+name|edit_mode
+operator|==
+name|GIMP_TRANSLATE_MODE_MASK_COPY_TO_LAYER
+operator|)
 operator|&&
 name|gimp_image_floating_sel
 argument_list|(
