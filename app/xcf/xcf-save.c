@@ -6121,6 +6121,10 @@ name|guchar
 modifier|*
 name|data
 init|=
+operator|(
+name|guchar
+operator|*
+operator|)
 name|tile_data_pointer
 argument_list|(
 name|tile
@@ -6652,7 +6656,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c08ad7b0108
+DECL|struct|__anon2a2b81870108
 block|{
 DECL|member|info
 name|XcfInfo

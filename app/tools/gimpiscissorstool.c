@@ -1744,7 +1744,7 @@ name|iscissors
 operator|->
 name|x
 operator|=
-name|rint
+name|RINT
 argument_list|(
 name|coords
 operator|->
@@ -1755,7 +1755,7 @@ name|iscissors
 operator|->
 name|y
 operator|=
-name|rint
+name|RINT
 argument_list|(
 name|coords
 operator|->
@@ -2995,7 +2995,7 @@ name|iscissors
 operator|->
 name|x
 operator|=
-name|rint
+name|RINT
 argument_list|(
 name|coords
 operator|->
@@ -3006,7 +3006,7 @@ name|iscissors
 operator|->
 name|y
 operator|=
-name|rint
+name|RINT
 argument_list|(
 name|coords
 operator|->
@@ -4058,14 +4058,14 @@ operator|->
 name|mask
 argument_list|)
 argument_list|,
-name|rint
+name|RINT
 argument_list|(
 name|coords
 operator|->
 name|x
 argument_list|)
 argument_list|,
-name|rint
+name|RINT
 argument_list|(
 name|coords
 operator|->

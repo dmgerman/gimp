@@ -151,12 +151,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpwidgets-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon297507720103
+DECL|enum|__anon2bcc206e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -169,7 +175,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon297507720203
+DECL|enum|__anon2bcc206e0203
 block|{
 DECL|enumerator|COLUMN_ICON
 name|COLUMN_ICON

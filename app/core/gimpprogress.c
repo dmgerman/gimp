@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e561a00103
+DECL|enum|__anon2b2f1f800103
 block|{
 DECL|enumerator|CANCEL
 name|CANCEL
@@ -708,12 +708,14 @@ name|GimpProgressInterface
 modifier|*
 name|progress_iface
 decl_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_PROGRESS
 argument_list|(
 name|progress
 argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|progress_iface

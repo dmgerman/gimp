@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpdrawable.h"
 end_include
 
@@ -893,7 +899,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon28fc39e30108
+DECL|struct|__anon27d72ab20108
 block|{
 DECL|member|label
 specifier|const
