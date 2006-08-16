@@ -46,7 +46,7 @@ file|"tile-private.h"
 end_include
 
 begin_comment
-comment|/*  This is the percentage of the maximum cache size that should be cleared  *   from the cache when an eviction is necessary  */
+comment|/*  This is the percentage of the maximum cache size that should be cleared  *  from the cache when an eviction is necessary  */
 end_comment
 
 begin_define
@@ -232,6 +232,12 @@ end_decl_stmt
 begin_ifdef
 ifdef|#
 directive|ifdef
+name|ENABLE_MP
+end_ifdef
+
+begin_ifdef
+ifdef|#
+directive|ifdef
 name|ENABLE_THREADED_TILE_SWAPPER
 end_ifdef
 
@@ -268,32 +274,6 @@ name|NULL
 decl_stmt|;
 end_decl_stmt
 
-begin_decl_stmt
-DECL|variable|tile_mutex
-specifier|static
-name|GStaticMutex
-name|tile_mutex
-init|=
-name|G_STATIC_MUTEX_INIT
-decl_stmt|;
-end_decl_stmt
-
-begin_define
-DECL|macro|CACHE_LOCK
-define|#
-directive|define
-name|CACHE_LOCK
-value|g_static_mutex_lock (&tile_mutex)
-end_define
-
-begin_define
-DECL|macro|CACHE_UNLOCK
-define|#
-directive|define
-name|CACHE_UNLOCK
-value|g_static_mutex_unlock (&tile_mutex)
-end_define
-
 begin_else
 else|#
 directive|else
@@ -308,6 +288,42 @@ init|=
 literal|0
 decl_stmt|;
 end_decl_stmt
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_decl_stmt
+DECL|variable|tile_cache_mutex
+specifier|static
+name|GStaticMutex
+name|tile_cache_mutex
+init|=
+name|G_STATIC_MUTEX_INIT
+decl_stmt|;
+end_decl_stmt
+
+begin_define
+DECL|macro|CACHE_LOCK
+define|#
+directive|define
+name|CACHE_LOCK
+value|g_static_mutex_lock (&tile_cache_mutex)
+end_define
+
+begin_define
+DECL|macro|CACHE_UNLOCK
+define|#
+directive|define
+name|CACHE_UNLOCK
+value|g_static_mutex_unlock (&tile_cache_mutex)
+end_define
+
+begin_else
+else|#
+directive|else
+end_else
 
 begin_define
 DECL|macro|CACHE_LOCK
@@ -932,14 +948,10 @@ else|else
 return|return
 name|FALSE
 return|;
-name|CACHE_UNLOCK
-expr_stmt|;
 name|TILE_MUTEX_LOCK
 argument_list|(
 name|tile
 argument_list|)
-expr_stmt|;
-name|CACHE_LOCK
 expr_stmt|;
 name|tile_cache_flush_internal
 argument_list|(
@@ -1306,6 +1318,8 @@ condition|)
 return|return
 name|TRUE
 return|;
+name|CACHE_LOCK
+expr_stmt|;
 if|if
 condition|(
 operator|(
@@ -1406,6 +1420,8 @@ operator|->
 name|size
 expr_stmt|;
 block|}
+name|CACHE_UNLOCK
+expr_stmt|;
 return|return
 name|TRUE
 return|;
