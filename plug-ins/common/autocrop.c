@@ -948,8 +948,6 @@ condition|(
 name|y2
 operator|<
 name|height
-operator|-
-literal|1
 condition|)
 name|y2
 operator|++
@@ -1140,8 +1138,6 @@ condition|(
 name|x2
 operator|<
 name|width
-operator|-
-literal|1
 condition|)
 name|x2
 operator|++
