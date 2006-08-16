@@ -43,6 +43,10 @@ name|gchar
 modifier|*
 name|palette_name
 decl_stmt|;
+DECL|member|num_colors
+name|gint
+name|num_colors
+decl_stmt|;
 DECL|member|callback
 name|GimpRunPaletteCallback
 name|callback
@@ -161,6 +165,14 @@ block|,
 literal|"str"
 block|,
 literal|"String"
+block|}
+block|,
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"num colors"
+block|,
+literal|"Number of colors"
 block|}
 block|,
 block|{
@@ -500,11 +512,24 @@ argument_list|)
 expr_stmt|;
 name|palette_data
 operator|->
-name|closing
+name|num_colors
 operator|=
 name|param
 index|[
 literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
+name|palette_data
+operator|->
+name|closing
+operator|=
+name|param
+index|[
+literal|2
 index|]
 operator|.
 name|data

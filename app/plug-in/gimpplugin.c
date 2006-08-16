@@ -2104,8 +2104,16 @@ directive|ifdef
 name|GIMP_UNSTABLE
 name|g_printerr
 argument_list|(
-literal|"plug_in_close: plug-in aborted before sending its "
+literal|"plug-in '%s' aborted before sending its "
 literal|"temporary procedure return values\n"
+argument_list|,
+name|gimp_object_get_name
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
+name|plug_in
+argument_list|)
+argument_list|)
 argument_list|)
 expr_stmt|;
 endif|#
@@ -2156,8 +2164,16 @@ directive|ifdef
 name|GIMP_UNSTABLE
 name|g_printerr
 argument_list|(
-literal|"plug_in_close: plug-in aborted before sending its "
+literal|"plug-in '%s' aborted before sending its "
 literal|"procedure return values\n"
+argument_list|,
+name|gimp_object_get_name
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
+name|plug_in
+argument_list|)
+argument_list|)
 argument_list|)
 expr_stmt|;
 endif|#
@@ -2191,8 +2207,16 @@ directive|ifdef
 name|GIMP_UNSTABLE
 name|g_printerr
 argument_list|(
-literal|"plug_in_close: extension aborted before sending its "
+literal|"extension '%s' aborted before sending its "
 literal|"extension_ack message\n"
+argument_list|,
+name|gimp_object_get_name
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
+name|plug_in
+argument_list|)
+argument_list|)
 argument_list|)
 expr_stmt|;
 endif|#
