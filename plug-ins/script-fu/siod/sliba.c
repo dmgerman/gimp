@@ -1710,7 +1710,7 @@ operator|(
 name|flocons
 argument_list|(
 operator|(
-name|double
+name|guint8
 operator|)
 name|a
 operator|->
