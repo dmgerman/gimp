@@ -1738,6 +1738,19 @@ argument_list|,
 name|display
 argument_list|)
 expr_stmt|;
+name|gimp_rectangle_tool_modifier_key
+argument_list|(
+name|tool
+argument_list|,
+name|key
+argument_list|,
+name|press
+argument_list|,
+name|state
+argument_list|,
+name|display
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

@@ -1161,6 +1161,15 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|(
+operator|!
+operator|(
+name|state
+operator|&
+name|GDK_BUTTON1_MASK
+operator|)
+operator|)
+operator|&&
 name|options
 operator|->
 name|clone_type

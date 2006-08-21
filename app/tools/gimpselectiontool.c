@@ -398,6 +398,13 @@ name|GimpSelectionOptions
 modifier|*
 name|options
 decl_stmt|;
+if|if
+condition|(
+name|state
+operator|&
+name|GDK_BUTTON1_MASK
+condition|)
+return|return;
 name|options
 operator|=
 name|GIMP_SELECTION_OPTIONS

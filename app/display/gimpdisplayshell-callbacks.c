@@ -459,7 +459,7 @@ condition|)
 return|return
 name|TRUE
 return|;
-comment|/*  do not process any key events while BUTTON1 is down. We do this          *  so tools keep the modifier state they were in when BUTTON1 was          *  pressed and to prevent accelerators from being invoked.          */
+comment|/*  do not process any key events while BUTTON1 is down, except modifier          *  key events. We do this so that tools don't get interrupted between          *  button press and button release.          */
 if|if
 condition|(
 name|kevent
@@ -469,6 +469,37 @@ operator|&
 name|GDK_BUTTON1_MASK
 condition|)
 block|{
+if|if
+condition|(
+name|kevent
+operator|->
+name|keyval
+operator|==
+name|GDK_Shift_L
+operator|||
+name|kevent
+operator|->
+name|keyval
+operator|==
+name|GDK_Shift_R
+operator|||
+name|kevent
+operator|->
+name|keyval
+operator|==
+name|GDK_Control_L
+operator|||
+name|kevent
+operator|->
+name|keyval
+operator|==
+name|GDK_Control_R
+condition|)
+block|{
+return|return
+name|FALSE
+return|;
+block|}
 if|if
 condition|(
 name|event

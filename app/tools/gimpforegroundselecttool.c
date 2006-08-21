@@ -144,7 +144,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbf5e210108
+DECL|struct|__anon2aff60550108
 block|{
 DECL|member|width
 name|gint
@@ -1346,6 +1346,15 @@ parameter_list|)
 block|{
 if|if
 condition|(
+operator|(
+operator|!
+operator|(
+name|state
+operator|&
+name|GDK_BUTTON1_MASK
+operator|)
+operator|)
+operator|&&
 name|key
 operator|==
 name|GDK_CONTROL_MASK
