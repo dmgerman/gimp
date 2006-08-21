@@ -1161,15 +1161,16 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-operator|(
 operator|!
 operator|(
 name|state
 operator|&
 name|GDK_BUTTON1_MASK
 operator|)
-operator|)
-operator|&&
+condition|)
+block|{
+if|if
+condition|(
 name|options
 operator|->
 name|clone_type
@@ -1204,6 +1205,7 @@ argument_list|(
 literal|"Click to clone."
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 name|GIMP_TOOL_CLASS
 argument_list|(
