@@ -16,19 +16,9 @@ directive|define
 name|__GIMP_HELP_UI_H__
 end_define
 
-begin_decl_stmt
+begin_function_decl
 name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
-name|void
-name|_gimp_help_init
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_INTERNAL
-decl_stmt|;
-end_decl_stmt
-
-begin_function_decl
 name|void
 name|gimp_help_enable_tooltips
 parameter_list|(
@@ -148,6 +138,20 @@ argument_list|)
 name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
+
+begin_comment
+comment|/*  only for private use in libgimpwidgets  */
+end_comment
+
+begin_function_decl
+name|G_GNUC_INTERNAL
+name|void
+name|_gimp_help_init
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_macro
 name|G_END_DECLS

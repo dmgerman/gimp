@@ -202,35 +202,35 @@ begin_comment
 comment|/*  for internal use only   */
 end_comment
 
-begin_decl_stmt
+begin_function_decl
+name|G_GNUC_INTERNAL
 name|void
 name|_gimp_thumbs_delete_others
-argument_list|(
+parameter_list|(
 specifier|const
 name|gchar
-operator|*
+modifier|*
 name|uri
-argument_list|,
+parameter_list|,
 name|GimpThumbSize
 name|size
-argument_list|)
-name|G_GNUC_INTERNAL
-decl_stmt|;
-end_decl_stmt
+parameter_list|)
+function_decl|;
+end_function_decl
 
-begin_decl_stmt
+begin_function_decl
+name|G_GNUC_INTERNAL
 name|gchar
 modifier|*
 name|_gimp_thumb_filename_from_uri
-argument_list|(
+parameter_list|(
 specifier|const
 name|gchar
-operator|*
+modifier|*
 name|uri
-argument_list|)
-name|G_GNUC_INTERNAL
-decl_stmt|;
-end_decl_stmt
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_macro
 name|G_END_DECLS
