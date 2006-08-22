@@ -87,16 +87,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_decl_stmt
+begin_function_decl
+name|G_GNUC_INTERNAL
 name|gchar
 modifier|*
 name|_gimp_get_color_configuration
-argument_list|(
+parameter_list|(
 name|void
-argument_list|)
-name|G_GNUC_INTERNAL
-decl_stmt|;
-end_decl_stmt
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 name|gchar

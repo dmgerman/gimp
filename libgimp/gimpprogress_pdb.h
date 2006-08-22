@@ -20,34 +20,34 @@ directive|define
 name|__GIMP_PROGRESS_PDB_H__
 end_define
 
-begin_decl_stmt
+begin_function_decl
 name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
+name|G_GNUC_INTERNAL
 name|gboolean
 name|_gimp_progress_init
-argument_list|(
+parameter_list|(
 specifier|const
 name|gchar
-operator|*
+modifier|*
 name|message
-argument_list|,
+parameter_list|,
 name|gint32
 name|gdisplay_ID
-argument_list|)
-name|G_GNUC_INTERNAL
-decl_stmt|;
-end_decl_stmt
+parameter_list|)
+function_decl|;
+end_function_decl
 
-begin_decl_stmt
+begin_function_decl
+name|G_GNUC_INTERNAL
 name|gboolean
 name|_gimp_progress_update
-argument_list|(
+parameter_list|(
 name|gdouble
 name|percentage
-argument_list|)
-name|G_GNUC_INTERNAL
-decl_stmt|;
-end_decl_stmt
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 name|gboolean
@@ -79,31 +79,31 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_decl_stmt
+begin_function_decl
+name|G_GNUC_INTERNAL
 name|gboolean
 name|_gimp_progress_install
-argument_list|(
+parameter_list|(
 specifier|const
 name|gchar
-operator|*
+modifier|*
 name|progress_callback
-argument_list|)
-name|G_GNUC_INTERNAL
-decl_stmt|;
-end_decl_stmt
+parameter_list|)
+function_decl|;
+end_function_decl
 
-begin_decl_stmt
+begin_function_decl
+name|G_GNUC_INTERNAL
 name|gboolean
 name|_gimp_progress_uninstall
-argument_list|(
+parameter_list|(
 specifier|const
 name|gchar
-operator|*
+modifier|*
 name|progress_callback
-argument_list|)
-name|G_GNUC_INTERNAL
-decl_stmt|;
-end_decl_stmt
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 name|gboolean
