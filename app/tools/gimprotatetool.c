@@ -1440,7 +1440,7 @@ index|]
 operator|+=
 name|angle
 expr_stmt|;
-comment|/*  limit the angle to between 0 and 360 degrees  */
+comment|/*  limit the angle to between -180 and 180 degrees  */
 if|if
 condition|(
 name|tr_tool
@@ -1453,6 +1453,7 @@ operator|<
 operator|-
 name|G_PI
 condition|)
+block|{
 name|tr_tool
 operator|->
 name|trans_info
@@ -1463,7 +1464,7 @@ operator|=
 literal|2.0
 operator|*
 name|G_PI
-operator|-
+operator|+
 name|tr_tool
 operator|->
 name|trans_info
@@ -1471,6 +1472,7 @@ index|[
 name|REAL_ANGLE
 index|]
 expr_stmt|;
+block|}
 elseif|else
 if|if
 condition|(
@@ -1483,6 +1485,7 @@ index|]
 operator|>
 name|G_PI
 condition|)
+block|{
 name|tr_tool
 operator|->
 name|trans_info
@@ -1501,6 +1504,7 @@ literal|2.0
 operator|*
 name|G_PI
 expr_stmt|;
+block|}
 comment|/*  constrain the angle to 15-degree multiples if ctrl is held down  */
 if|if
 condition|(
