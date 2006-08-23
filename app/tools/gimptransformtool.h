@@ -138,37 +138,37 @@ DECL|member|startx
 name|gdouble
 name|startx
 decl_stmt|;
-comment|/*  starting x coord                 */
+comment|/*  starting x coord                  */
 DECL|member|starty
 name|gdouble
 name|starty
 decl_stmt|;
-comment|/*  starting y coord                 */
+comment|/*  starting y coord                  */
 DECL|member|curx
 name|gdouble
 name|curx
 decl_stmt|;
-comment|/*  current x coord                  */
+comment|/*  current x coord                   */
 DECL|member|cury
 name|gdouble
 name|cury
 decl_stmt|;
-comment|/*  current y coord                  */
+comment|/*  current y coord                   */
 DECL|member|lastx
 name|gdouble
 name|lastx
 decl_stmt|;
-comment|/*  last x coord                     */
+comment|/*  last x coord                      */
 DECL|member|lasty
 name|gdouble
 name|lasty
 decl_stmt|;
-comment|/*  last y coord                     */
+comment|/*  last y coord                      */
 DECL|member|state
 name|GdkModifierType
 name|state
 decl_stmt|;
-comment|/*  state of buttons and keys        */
+comment|/*  state of buttons and keys         */
 DECL|member|x1
 DECL|member|y1
 name|gint
@@ -176,7 +176,7 @@ name|x1
 decl_stmt|,
 name|y1
 decl_stmt|;
-comment|/*  upper left hand coordinate       */
+comment|/*  upper left hand coordinate        */
 DECL|member|x2
 DECL|member|y2
 name|gint
@@ -184,7 +184,7 @@ name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
-comment|/*  lower right hand coords          */
+comment|/*  lower right hand coords           */
 DECL|member|cx
 DECL|member|cy
 name|gdouble
@@ -192,7 +192,7 @@ name|cx
 decl_stmt|,
 name|cy
 decl_stmt|;
-comment|/*  center point (for rotation)      */
+comment|/*  center point (for rotation)       */
 DECL|member|tx1
 DECL|member|ty1
 name|gdouble
@@ -200,7 +200,7 @@ name|tx1
 decl_stmt|,
 name|ty1
 decl_stmt|;
-comment|/*  transformed coords               */
+comment|/*  transformed coords                */
 DECL|member|tx2
 DECL|member|ty2
 name|gdouble
@@ -233,43 +233,48 @@ DECL|member|transform
 name|GimpMatrix3
 name|transform
 decl_stmt|;
-comment|/*  transformation matrix            */
+comment|/*  transformation matrix             */
 DECL|member|trans_info
 name|TransInfo
 name|trans_info
 decl_stmt|;
-comment|/*  transformation info              */
+comment|/*  transformation info               */
 DECL|member|old_trans_info
 name|TransInfo
 name|old_trans_info
 decl_stmt|;
-comment|/*  for cancelling a drag operation  */
+comment|/*  for cancelling a drag operation   */
 DECL|member|original
 name|TileManager
 modifier|*
 name|original
 decl_stmt|;
-comment|/*  pointer to original tiles        */
+comment|/*  pointer to original tiles         */
 DECL|member|function
 name|TransformAction
 name|function
 decl_stmt|;
-comment|/*  current tool activity            */
+comment|/*  current tool activity             */
 DECL|member|use_grid
 name|gboolean
 name|use_grid
 decl_stmt|;
-comment|/*  does the tool use the grid       */
+comment|/*  does the tool use the grid        */
 DECL|member|use_handles
 name|gboolean
 name|use_handles
 decl_stmt|;
-comment|/*  uses the corner handles          */
+comment|/*  uses the corner handles           */
 DECL|member|use_center
 name|gboolean
 name|use_center
 decl_stmt|;
-comment|/*  uses the center handle           */
+comment|/*  uses the center handle            */
+DECL|member|use_mid_handles
+name|gboolean
+name|use_mid_handles
+decl_stmt|;
+comment|/*  use handles at midpoints of edges */
 DECL|member|ngx
 DECL|member|ngy
 name|gint
@@ -277,19 +282,19 @@ name|ngx
 decl_stmt|,
 name|ngy
 decl_stmt|;
-comment|/*  number of grid lines in original                                    *  x and y directions                                    */
+comment|/*  number of grid lines in original                                     *  x and y directions                                     */
 DECL|member|grid_coords
 name|gdouble
 modifier|*
 name|grid_coords
 decl_stmt|;
-comment|/*  x and y coordinates of the grid                                    *  endpoints (a total of (ngx+ngy)*2                                    *  coordinate pairs)                                    */
+comment|/*  x and y coordinates of the grid                                     *  endpoints (a total of (ngx+ngy)*2                                     *  coordinate pairs)                                     */
 DECL|member|tgrid_coords
 name|gdouble
 modifier|*
 name|tgrid_coords
 decl_stmt|;
-comment|/*  transformed grid_coords          */
+comment|/*  transformed grid_coords           */
 DECL|member|type
 name|GimpTransformType
 name|type

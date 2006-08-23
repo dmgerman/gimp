@@ -430,6 +430,12 @@ name|use_center
 operator|=
 name|TRUE
 expr_stmt|;
+name|tr_tool
+operator|->
+name|use_mid_handles
+operator|=
+name|TRUE
+expr_stmt|;
 block|}
 end_function
 
@@ -867,6 +873,14 @@ name|function
 condition|)
 block|{
 case|case
+name|TRANSFORM_HANDLE_N
+case|:
+name|diff_x
+operator|=
+literal|0
+expr_stmt|;
+comment|/* and fall through */
+case|case
 name|TRANSFORM_HANDLE_NW
 case|:
 name|x1
@@ -916,6 +930,14 @@ operator|=
 literal|1
 expr_stmt|;
 break|break;
+case|case
+name|TRANSFORM_HANDLE_E
+case|:
+name|diff_y
+operator|=
+literal|0
+expr_stmt|;
+comment|/* and fall through */
 case|case
 name|TRANSFORM_HANDLE_NE
 case|:
@@ -970,6 +992,14 @@ literal|1
 expr_stmt|;
 break|break;
 case|case
+name|TRANSFORM_HANDLE_W
+case|:
+name|diff_y
+operator|=
+literal|0
+expr_stmt|;
+comment|/* and fall through */
+case|case
 name|TRANSFORM_HANDLE_SW
 case|:
 name|x1
@@ -1022,6 +1052,14 @@ operator|-
 literal|1
 expr_stmt|;
 break|break;
+case|case
+name|TRANSFORM_HANDLE_S
+case|:
+name|diff_x
+operator|=
+literal|0
+expr_stmt|;
+comment|/* and fall through */
 case|case
 name|TRANSFORM_HANDLE_SE
 case|:
