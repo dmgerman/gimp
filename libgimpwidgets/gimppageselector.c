@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7e197c0103
+DECL|enum|__anon29bfb7f60103
 block|{
 DECL|enumerator|SELECTION_CHANGED
 name|SELECTION_CHANGED
@@ -81,7 +81,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7e197c0203
+DECL|enum|__anon29bfb7f60203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -97,7 +97,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7e197c0303
+DECL|enum|__anon29bfb7f60303
 block|{
 DECL|enumerator|COLUMN_PAGE_NO
 name|COLUMN_PAGE_NO
@@ -117,7 +117,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7e197c0408
+DECL|struct|__anon29bfb7f60408
 block|{
 DECL|member|n_pages
 name|gint
@@ -4232,7 +4232,7 @@ name|g_strdup_printf
 argument_list|(
 name|ngettext
 argument_list|(
-literal|"All %d page selected"
+literal|"%d page selected"
 argument_list|,
 literal|"All %d pages selected"
 argument_list|,

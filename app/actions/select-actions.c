@@ -127,7 +127,7 @@ name|GIMP_STOCK_SELECTION_ALL
 block|,
 name|N_
 argument_list|(
-literal|"_All"
+literal|"select|_All"
 argument_list|)
 block|,
 literal|"<control>A"
@@ -152,7 +152,7 @@ name|GIMP_STOCK_SELECTION_NONE
 block|,
 name|N_
 argument_list|(
-literal|"_None"
+literal|"select|_None"
 argument_list|)
 block|,
 literal|"<control><shift>A"

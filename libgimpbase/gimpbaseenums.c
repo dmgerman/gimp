@@ -2735,7 +2735,7 @@ name|GIMP_INTERPOLATION_NONE
 block|,
 name|N_
 argument_list|(
-literal|"None (Fastest)"
+literal|"interpolation|None"
 argument_list|)
 block|,
 name|NULL
