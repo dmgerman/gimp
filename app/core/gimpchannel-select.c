@@ -81,7 +81,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_channel_select_rectangle (GimpChannel * channel,gint x,gint y,gint w,gint h,GimpChannelOps op,gboolean feather,gdouble feather_radius_x,gdouble feather_radius_y)
+DECL|function|gimp_channel_select_rectangle (GimpChannel * channel,gint x,gint y,gint w,gint h,GimpChannelOps op,gboolean feather,gdouble feather_radius_x,gdouble feather_radius_y,gboolean push_undo)
 name|gimp_channel_select_rectangle
 parameter_list|(
 name|GimpChannel
@@ -111,6 +111,9 @@ name|feather_radius_x
 parameter_list|,
 name|gdouble
 name|feather_radius_y
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -132,6 +135,10 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|push_undo
+condition|)
 name|gimp_channel_push_undo
 argument_list|(
 name|channel
@@ -274,7 +281,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_channel_select_ellipse (GimpChannel * channel,gint x,gint y,gint w,gint h,GimpChannelOps op,gboolean antialias,gboolean feather,gdouble feather_radius_x,gdouble feather_radius_y)
+DECL|function|gimp_channel_select_ellipse (GimpChannel * channel,gint x,gint y,gint w,gint h,GimpChannelOps op,gboolean antialias,gboolean feather,gdouble feather_radius_x,gdouble feather_radius_y,gboolean push_undo)
 name|gimp_channel_select_ellipse
 parameter_list|(
 name|GimpChannel
@@ -307,6 +314,9 @@ name|feather_radius_x
 parameter_list|,
 name|gdouble
 name|feather_radius_y
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -328,6 +338,10 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|push_undo
+condition|)
 name|gimp_channel_push_undo
 argument_list|(
 name|channel
@@ -478,7 +492,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_channel_select_scan_convert (GimpChannel * channel,const gchar * undo_desc,GimpScanConvert * scan_convert,gint offset_x,gint offset_y,GimpChannelOps op,gboolean antialias,gboolean feather,gdouble feather_radius_x,gdouble feather_radius_y)
+DECL|function|gimp_channel_select_scan_convert (GimpChannel * channel,const gchar * undo_desc,GimpScanConvert * scan_convert,gint offset_x,gint offset_y,GimpChannelOps op,gboolean antialias,gboolean feather,gdouble feather_radius_x,gdouble feather_radius_y,gboolean push_undo)
 name|gimp_channel_select_scan_convert
 parameter_list|(
 name|GimpChannel
@@ -514,6 +528,9 @@ name|feather_radius_x
 parameter_list|,
 name|gdouble
 name|feather_radius_y
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 block|{
 name|GimpItem
@@ -557,6 +574,10 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|push_undo
+condition|)
 name|gimp_channel_push_undo
 argument_list|(
 name|channel
@@ -665,7 +686,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_channel_select_polygon (GimpChannel * channel,const gchar * undo_desc,gint n_points,GimpVector2 * points,GimpChannelOps op,gboolean antialias,gboolean feather,gdouble feather_radius_x,gdouble feather_radius_y)
+DECL|function|gimp_channel_select_polygon (GimpChannel * channel,const gchar * undo_desc,gint n_points,GimpVector2 * points,GimpChannelOps op,gboolean antialias,gboolean feather,gdouble feather_radius_x,gdouble feather_radius_y,gboolean push_undo)
 name|gimp_channel_select_polygon
 parameter_list|(
 name|GimpChannel
@@ -698,6 +719,9 @@ name|feather_radius_x
 parameter_list|,
 name|gdouble
 name|feather_radius_y
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 block|{
 name|GimpScanConvert
@@ -767,6 +791,8 @@ argument_list|,
 name|feather_radius_x
 argument_list|,
 name|feather_radius_y
+argument_list|,
+name|push_undo
 argument_list|)
 expr_stmt|;
 name|gimp_scan_convert_free
@@ -779,7 +805,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_channel_select_vectors (GimpChannel * channel,const gchar * undo_desc,GimpVectors * vectors,GimpChannelOps op,gboolean antialias,gboolean feather,gdouble feather_radius_x,gdouble feather_radius_y)
+DECL|function|gimp_channel_select_vectors (GimpChannel * channel,const gchar * undo_desc,GimpVectors * vectors,GimpChannelOps op,gboolean antialias,gboolean feather,gdouble feather_radius_x,gdouble feather_radius_y,gboolean push_undo)
 name|gimp_channel_select_vectors
 parameter_list|(
 name|GimpChannel
@@ -809,6 +835,9 @@ name|feather_radius_x
 parameter_list|,
 name|gdouble
 name|feather_radius_y
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 block|{
 name|GimpScanConvert
@@ -1044,6 +1073,8 @@ argument_list|,
 name|feather_radius_x
 argument_list|,
 name|feather_radius_y
+argument_list|,
+name|push_undo
 argument_list|)
 expr_stmt|;
 name|gimp_scan_convert_free

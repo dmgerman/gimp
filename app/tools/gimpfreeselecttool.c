@@ -1241,6 +1241,8 @@ argument_list|,
 name|options
 operator|->
 name|feather_radius
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}

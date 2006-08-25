@@ -780,6 +780,8 @@ argument_list|,
 name|feather_radius
 argument_list|,
 name|feather_radius
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
@@ -981,6 +983,8 @@ argument_list|,
 name|feather_radius
 argument_list|,
 name|feather_radius
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
@@ -1716,6 +1720,8 @@ argument_list|,
 name|feather_radius
 argument_list|,
 name|feather_radius
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
