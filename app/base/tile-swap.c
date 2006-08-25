@@ -3484,7 +3484,9 @@ operator|==
 operator|-
 literal|1
 condition|)
-return|return;
+goto|goto
+name|out
+goto|;
 block|}
 name|tile_alloc
 argument_list|(
@@ -3564,7 +3566,15 @@ operator|->
 name|data
 argument_list|)
 expr_stmt|;
-return|return;
+name|tile
+operator|->
+name|data
+operator|=
+name|NULL
+expr_stmt|;
+goto|goto
+name|out
+goto|;
 block|}
 name|nleft
 operator|-=
