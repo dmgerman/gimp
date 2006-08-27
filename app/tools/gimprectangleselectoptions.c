@@ -174,18 +174,16 @@ block|{
 name|GtkWidget
 modifier|*
 name|vbox
+init|=
+name|gimp_selection_options_gui
+argument_list|(
+name|tool_options
+argument_list|)
 decl_stmt|;
 name|GtkWidget
 modifier|*
 name|vbox_rectangle
 decl_stmt|;
-name|vbox
-operator|=
-name|gimp_selection_options_gui
-argument_list|(
-name|tool_options
-argument_list|)
-expr_stmt|;
 comment|/*  rectangle options  */
 name|vbox_rectangle
 operator|=

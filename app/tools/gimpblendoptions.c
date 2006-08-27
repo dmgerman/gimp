@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29441f430103
+DECL|enum|__anon2b1c03630103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -672,6 +672,11 @@ decl_stmt|;
 name|GtkWidget
 modifier|*
 name|vbox
+init|=
+name|gimp_paint_options_gui
+argument_list|(
+name|tool_options
+argument_list|)
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -689,13 +694,6 @@ name|GtkWidget
 modifier|*
 name|button
 decl_stmt|;
-name|vbox
-operator|=
-name|gimp_paint_options_gui
-argument_list|(
-name|tool_options
-argument_list|)
-expr_stmt|;
 name|table
 operator|=
 name|g_object_get_data

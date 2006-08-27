@@ -1880,6 +1880,11 @@ decl_stmt|;
 name|GtkWidget
 modifier|*
 name|vbox
+init|=
+name|gimp_paint_options_gui
+argument_list|(
+name|tool_options
+argument_list|)
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -1901,13 +1906,6 @@ name|GtkWidget
 modifier|*
 name|combo
 decl_stmt|;
-name|vbox
-operator|=
-name|gimp_paint_options_gui
-argument_list|(
-name|tool_options
-argument_list|)
-expr_stmt|;
 name|frame
 operator|=
 name|gimp_prop_enum_radio_frame_new

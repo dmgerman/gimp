@@ -272,18 +272,16 @@ decl_stmt|;
 name|GtkWidget
 modifier|*
 name|vbox
+init|=
+name|gimp_paint_options_gui
+argument_list|(
+name|tool_options
+argument_list|)
 decl_stmt|;
 name|GtkWidget
 modifier|*
 name|table
 decl_stmt|;
-name|vbox
-operator|=
-name|gimp_paint_options_gui
-argument_list|(
-name|tool_options
-argument_list|)
-expr_stmt|;
 comment|/*  the rate scale  */
 name|table
 operator|=

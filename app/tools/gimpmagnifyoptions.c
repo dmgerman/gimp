@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2947d27f0103
+DECL|enum|__anon29a1e4fd0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -554,6 +554,11 @@ decl_stmt|;
 name|GtkWidget
 modifier|*
 name|vbox
+init|=
+name|gimp_tool_options_gui
+argument_list|(
+name|tool_options
+argument_list|)
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -567,13 +572,6 @@ name|gchar
 modifier|*
 name|str
 decl_stmt|;
-name|vbox
-operator|=
-name|gimp_tool_options_gui
-argument_list|(
-name|tool_options
-argument_list|)
-expr_stmt|;
 comment|/*  the auto_resize toggle button  */
 name|button
 operator|=

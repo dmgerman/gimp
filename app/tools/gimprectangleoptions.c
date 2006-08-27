@@ -3153,6 +3153,11 @@ decl_stmt|;
 name|GtkWidget
 modifier|*
 name|vbox
+init|=
+name|gimp_tool_options_gui
+argument_list|(
+name|tool_options
+argument_list|)
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -3194,13 +3199,6 @@ name|GtkObject
 modifier|*
 name|adjustment
 decl_stmt|;
-name|vbox
-operator|=
-name|gimp_tool_options_gui
-argument_list|(
-name|tool_options
-argument_list|)
-expr_stmt|;
 name|button
 operator|=
 name|gimp_prop_check_button_new

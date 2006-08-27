@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9223d90103
+DECL|enum|__anon2ae9b5ec0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -479,6 +479,11 @@ decl_stmt|;
 name|GtkWidget
 modifier|*
 name|vbox
+init|=
+name|gimp_color_options_gui
+argument_list|(
+name|tool_options
+argument_list|)
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -492,13 +497,6 @@ name|gchar
 modifier|*
 name|str
 decl_stmt|;
-name|vbox
-operator|=
-name|gimp_color_options_gui
-argument_list|(
-name|tool_options
-argument_list|)
-expr_stmt|;
 comment|/*  the sample merged toggle button  */
 name|button
 operator|=

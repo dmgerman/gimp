@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4cff340103
+DECL|enum|__anon2ab940e20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -413,6 +413,11 @@ decl_stmt|;
 name|GtkWidget
 modifier|*
 name|vbox
+init|=
+name|gimp_tool_options_gui
+argument_list|(
+name|tool_options
+argument_list|)
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -426,13 +431,6 @@ name|gchar
 modifier|*
 name|str
 decl_stmt|;
-name|vbox
-operator|=
-name|gimp_tool_options_gui
-argument_list|(
-name|tool_options
-argument_list|)
-expr_stmt|;
 comment|/*  tool toggle  */
 name|frame
 operator|=

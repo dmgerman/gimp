@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon289e7dc10103
+DECL|enum|__anon2997743d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -931,6 +931,11 @@ decl_stmt|;
 name|GtkWidget
 modifier|*
 name|vbox
+init|=
+name|gimp_tool_options_gui
+argument_list|(
+name|tool_options
+argument_list|)
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -963,13 +968,6 @@ name|constrain
 init|=
 name|NULL
 decl_stmt|;
-name|vbox
-operator|=
-name|gimp_tool_options_gui
-argument_list|(
-name|tool_options
-argument_list|)
-expr_stmt|;
 name|hbox
 operator|=
 name|gimp_prop_enum_stock_box_new
