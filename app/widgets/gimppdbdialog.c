@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon288fcb640103
+DECL|enum|__anon29c0cf4c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1290,7 +1290,10 @@ condition|)
 block|{
 name|gimp_show_message_dialog
 argument_list|(
+name|GTK_WIDGET
+argument_list|(
 name|dialog
+argument_list|)
 argument_list|,
 name|GTK_MESSAGE_ERROR
 argument_list|,
