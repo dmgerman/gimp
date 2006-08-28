@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2907856c0103
+DECL|enum|__anon273d8ba10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2340,9 +2340,13 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_text_options_editor_new (GimpTextOptions * options,GimpMenuFactory * menu_factory,const gchar * title)
+DECL|function|gimp_text_options_editor_new (GtkWindow * parent,GimpTextOptions * options,GimpMenuFactory * menu_factory,const gchar * title)
 name|gimp_text_options_editor_new
 parameter_list|(
+name|GtkWindow
+modifier|*
+name|parent
+parameter_list|,
 name|GimpTextOptions
 modifier|*
 name|options
@@ -2400,6 +2404,8 @@ operator|=
 name|gimp_text_editor_new
 argument_list|(
 name|title
+argument_list|,
+name|parent
 argument_list|,
 name|menu_factory
 argument_list|)

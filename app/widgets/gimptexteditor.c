@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5fb9c10103
+DECL|enum|__anon2b8d43830103
 block|{
 DECL|enumerator|TEXT_CHANGED
 name|TEXT_CHANGED
@@ -393,13 +393,17 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_text_editor_new (const gchar * title,GimpMenuFactory * menu_factory)
+DECL|function|gimp_text_editor_new (const gchar * title,GtkWindow * parent,GimpMenuFactory * menu_factory)
 name|gimp_text_editor_new
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
 name|title
+parameter_list|,
+name|GtkWindow
+modifier|*
+name|parent
 parameter_list|,
 name|GimpMenuFactory
 modifier|*
@@ -427,6 +431,20 @@ argument_list|(
 name|title
 operator|!=
 name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|parent
+operator|==
+name|NULL
+operator|||
+name|GTK_IS_WINDOW
+argument_list|(
+name|parent
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -490,6 +508,20 @@ name|gtk_widget_destroy
 argument_list|)
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|parent
+condition|)
+name|gtk_window_set_transient_for
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|editor
+argument_list|)
+argument_list|,
+name|parent
 argument_list|)
 expr_stmt|;
 name|editor

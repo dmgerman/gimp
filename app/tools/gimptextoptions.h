@@ -227,6 +227,10 @@ name|GtkWidget
 modifier|*
 name|gimp_text_options_editor_new
 parameter_list|(
+name|GtkWindow
+modifier|*
+name|parent
+parameter_list|,
 name|GimpTextOptions
 modifier|*
 name|options

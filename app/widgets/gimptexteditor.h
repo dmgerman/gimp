@@ -155,6 +155,10 @@ name|gchar
 modifier|*
 name|title
 parameter_list|,
+name|GtkWindow
+modifier|*
+name|parent
+parameter_list|,
 name|GimpMenuFactory
 modifier|*
 name|menu_factory
