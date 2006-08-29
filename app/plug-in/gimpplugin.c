@@ -2421,14 +2421,44 @@ condition|(
 operator|!
 name|got_message
 condition|)
-name|g_message
+block|{
+name|GimpPlugInProcFrame
+modifier|*
+name|frame
+init|=
+name|gimp_plug_in_get_proc_frame
 argument_list|(
+name|plug_in
+argument_list|)
+decl_stmt|;
+name|GimpProgress
+modifier|*
+name|progress
+init|=
+name|frame
+condition|?
+name|frame
+operator|->
+name|progress
+else|:
+name|NULL
+decl_stmt|;
+name|gimp_message
+argument_list|(
+name|plug_in
+operator|->
+name|manager
+operator|->
+name|gimp
+argument_list|,
+name|progress
+argument_list|,
 name|_
 argument_list|(
 literal|"Plug-in crashed: \"%s\"\n(%s)\n\n"
-literal|"The dying plug-in may have messed up GIMP's internal state. "
-literal|"You may want to save your images and restart GIMP "
-literal|"to be on the safe side."
+literal|"The dying plug-in may have messed up GIMP's internal "
+literal|"state. You may want to save your images and restart "
+literal|"GIMP to be on the safe side."
 argument_list|)
 argument_list|,
 name|gimp_object_get_name
@@ -2447,6 +2477,7 @@ name|prog
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 name|g_object_unref
 argument_list|(
 name|plug_in
