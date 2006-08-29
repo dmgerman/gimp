@@ -443,19 +443,6 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_vectors_tree_view_init (GimpVectorsTreeView * view)
-name|gimp_vectors_tree_view_init
-parameter_list|(
-name|GimpVectorsTreeView
-modifier|*
-name|view
-parameter_list|)
-block|{ }
-end_function
-
-begin_function
-specifier|static
-name|void
 DECL|function|gimp_vectors_tree_view_view_iface_init (GimpContainerViewInterface * iface)
 name|gimp_vectors_tree_view_view_iface_init
 parameter_list|(
@@ -478,6 +465,19 @@ operator|=
 name|gimp_vectors_tree_view_set_container
 expr_stmt|;
 block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_vectors_tree_view_init (GimpVectorsTreeView * view)
+name|gimp_vectors_tree_view_init
+parameter_list|(
+name|GimpVectorsTreeView
+modifier|*
+name|view
+parameter_list|)
+block|{ }
 end_function
 
 begin_function

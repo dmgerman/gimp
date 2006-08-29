@@ -287,6 +287,10 @@ name|GimpUndo
 modifier|*
 name|undo
 parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 name|gboolean
 name|create_now
 parameter_list|)
@@ -300,6 +304,10 @@ parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 function_decl|;
 end_function_decl

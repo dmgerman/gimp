@@ -108,6 +108,11 @@ name|GimpDataFactory
 modifier|*
 name|data_factory
 decl_stmt|;
+DECL|member|context
+name|GimpContext
+modifier|*
+name|context
+decl_stmt|;
 DECL|member|edit_active
 name|gboolean
 name|edit_active

@@ -218,6 +218,10 @@ name|renderer
 operator|->
 name|viewable
 argument_list|,
+name|renderer
+operator|->
+name|context
+argument_list|,
 name|buffer_width
 argument_list|,
 name|buffer_height
@@ -255,6 +259,10 @@ argument_list|(
 name|renderer
 operator|->
 name|viewable
+argument_list|,
+name|renderer
+operator|->
+name|context
 argument_list|,
 name|view_width
 argument_list|,

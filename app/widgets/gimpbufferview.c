@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdocked.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpeditor.h"
 end_include
 
@@ -110,6 +116,34 @@ include|#
 directive|include
 file|"gimp-intl.h"
 end_include
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_buffer_view_docked_iface_init
+parameter_list|(
+name|GimpDockedInterface
+modifier|*
+name|iface
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_buffer_view_set_context
+parameter_list|(
+name|GimpDocked
+modifier|*
+name|docked
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 specifier|static
@@ -164,14 +198,15 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpBufferView,gimp_buffer_view,GIMP_TYPE_CONTAINER_EDITOR)
-name|G_DEFINE_TYPE
+name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
 argument|GimpBufferView
 argument_list|,
 argument|gimp_buffer_view
 argument_list|,
 argument|GIMP_TYPE_CONTAINER_EDITOR
+argument_list|,
+argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_DOCKED,                                                 gimp_buffer_view_docked_iface_init)
 argument_list|)
 end_macro
 
@@ -183,9 +218,20 @@ name|parent_class
 value|gimp_buffer_view_parent_class
 end_define
 
+begin_decl_stmt
+specifier|static
+name|GimpDockedInterface
+modifier|*
+name|parent_docked_iface
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
 begin_function
 specifier|static
 name|void
+DECL|function|gimp_buffer_view_class_init (GimpBufferViewClass * klass)
 name|gimp_buffer_view_class_init
 parameter_list|(
 name|GimpBufferViewClass
@@ -207,6 +253,45 @@ operator|->
 name|activate_item
 operator|=
 name|gimp_buffer_view_activate_item
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_buffer_view_docked_iface_init (GimpDockedInterface * iface)
+name|gimp_buffer_view_docked_iface_init
+parameter_list|(
+name|GimpDockedInterface
+modifier|*
+name|iface
+parameter_list|)
+block|{
+name|parent_docked_iface
+operator|=
+name|g_type_interface_peek_parent
+argument_list|(
+name|iface
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|parent_docked_iface
+condition|)
+name|parent_docked_iface
+operator|=
+name|g_type_default_interface_peek
+argument_list|(
+name|GIMP_TYPE_DOCKED
+argument_list|)
+expr_stmt|;
+name|iface
+operator|->
+name|set_context
+operator|=
+name|gimp_buffer_view_set_context
 expr_stmt|;
 block|}
 end_function
@@ -248,6 +333,60 @@ name|NULL
 expr_stmt|;
 block|}
 end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_buffer_view_set_context (GimpDocked * docked,GimpContext * context)
+name|gimp_buffer_view_set_context
+parameter_list|(
+name|GimpDocked
+modifier|*
+name|docked
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|)
+block|{
+name|GimpBufferView
+modifier|*
+name|view
+init|=
+name|GIMP_BUFFER_VIEW
+argument_list|(
+name|docked
+argument_list|)
+decl_stmt|;
+name|parent_docked_iface
+operator|->
+name|set_context
+argument_list|(
+name|docked
+argument_list|,
+name|context
+argument_list|)
+expr_stmt|;
+name|gimp_view_renderer_set_context
+argument_list|(
+name|GIMP_VIEW
+argument_list|(
+name|view
+operator|->
+name|global_view
+argument_list|)
+operator|->
+name|renderer
+argument_list|,
+name|context
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_comment
+comment|/*  public functions  */
+end_comment
 
 begin_function
 name|GtkWidget
@@ -436,6 +575,8 @@ name|global_view
 operator|=
 name|gimp_view_new_full_by_types
 argument_list|(
+name|NULL
+argument_list|,
 name|GIMP_TYPE_VIEW
 argument_list|,
 name|GIMP_TYPE_BUFFER
@@ -747,6 +888,10 @@ argument_list|)
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/*  private functions  */
+end_comment
 
 begin_function
 specifier|static

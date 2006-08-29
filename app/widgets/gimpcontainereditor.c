@@ -344,26 +344,6 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_container_editor_init (GimpContainerEditor * view)
-name|gimp_container_editor_init
-parameter_list|(
-name|GimpContainerEditor
-modifier|*
-name|view
-parameter_list|)
-block|{
-name|view
-operator|->
-name|view
-operator|=
-name|NULL
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
 DECL|function|gimp_container_editor_docked_iface_init (GimpDockedInterface * iface)
 name|gimp_container_editor_docked_iface_init
 parameter_list|(
@@ -407,6 +387,26 @@ operator|->
 name|get_show_button_bar
 operator|=
 name|gimp_container_editor_get_show_button_bar
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_container_editor_init (GimpContainerEditor * view)
+name|gimp_container_editor_init
+parameter_list|(
+name|GimpContainerEditor
+modifier|*
+name|view
+parameter_list|)
+block|{
+name|view
+operator|->
+name|view
+operator|=
+name|NULL
 expr_stmt|;
 block|}
 end_function

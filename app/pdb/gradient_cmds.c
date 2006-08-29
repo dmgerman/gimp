@@ -1257,6 +1257,8 @@ name|gimp_gradient_get_color_at
 argument_list|(
 name|gradient
 argument_list|,
+name|context
+argument_list|,
 name|seg
 argument_list|,
 name|pos
@@ -1547,6 +1549,8 @@ operator|=
 name|gimp_gradient_get_color_at
 argument_list|(
 name|gradient
+argument_list|,
+name|context
 argument_list|,
 name|seg
 argument_list|,
@@ -4558,6 +4562,8 @@ name|gimp_gradient_segment_range_split_midpoint
 argument_list|(
 name|gradient
 argument_list|,
+name|context
+argument_list|,
 name|start_seg
 argument_list|,
 name|end_seg
@@ -4736,6 +4742,8 @@ block|{
 name|gimp_gradient_segment_range_split_uniform
 argument_list|(
 name|gradient
+argument_list|,
+name|context
 argument_list|,
 name|start_seg
 argument_list|,

@@ -275,7 +275,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1d78600103
+DECL|enum|__anon29d96ee90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -288,7 +288,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1d78600203
+DECL|enum|__anon29d96ee90203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -6142,6 +6142,10 @@ modifier|*
 name|shell
 parameter_list|)
 block|{
+name|GimpImage
+modifier|*
+name|image
+decl_stmt|;
 name|GdkPixbuf
 modifier|*
 name|pixbuf
@@ -6162,6 +6166,14 @@ name|shell
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|image
+operator|=
+name|shell
+operator|->
+name|display
+operator|->
+name|image
+expr_stmt|;
 name|factor
 operator|=
 operator|(
@@ -6170,10 +6182,6 @@ name|gdouble
 operator|)
 name|gimp_image_get_height
 argument_list|(
-name|shell
-operator|->
-name|display
-operator|->
 name|image
 argument_list|)
 operator|/
@@ -6182,10 +6190,6 @@ name|gdouble
 operator|)
 name|gimp_image_get_width
 argument_list|(
-name|shell
-operator|->
-name|display
-operator|->
 name|image
 argument_list|)
 operator|)
@@ -6265,11 +6269,14 @@ name|gimp_viewable_get_pixbuf
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(
-name|shell
-operator|->
-name|display
-operator|->
 name|image
+argument_list|)
+argument_list|,
+name|gimp_get_user_context
+argument_list|(
+name|image
+operator|->
+name|gimp
 argument_list|)
 argument_list|,
 name|width

@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon278569690103
+DECL|enum|__anon290ead400103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1213,6 +1213,8 @@ name|context
 argument_list|)
 argument_list|,
 name|prop_name
+argument_list|,
+name|context
 argument_list|,
 name|button
 operator|->

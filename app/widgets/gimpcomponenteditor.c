@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fc6e5a0103
+DECL|enum|__anon2c1175da0103
 block|{
 DECL|enumerator|COLUMN_CHANNEL
 name|COLUMN_CHANNEL
@@ -325,6 +325,11 @@ parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|GimpContext
+modifier|*
+modifier|*
+name|context
 parameter_list|,
 name|GimpChannelType
 modifier|*
@@ -1433,6 +1438,13 @@ name|renderer
 operator|=
 name|gimp_view_renderer_new
 argument_list|(
+name|GIMP_IMAGE_EDITOR
+argument_list|(
+name|editor
+argument_list|)
+operator|->
+name|context
+argument_list|,
 name|G_TYPE_FROM_INSTANCE
 argument_list|(
 name|image
@@ -2412,12 +2424,17 @@ begin_function
 specifier|static
 name|GimpImage
 modifier|*
-DECL|function|gimp_component_editor_drag_component (GtkWidget * widget,GimpChannelType * channel,gpointer data)
+DECL|function|gimp_component_editor_drag_component (GtkWidget * widget,GimpContext ** context,GimpChannelType * channel,gpointer data)
 name|gimp_component_editor_drag_component
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|GimpContext
+modifier|*
+modifier|*
+name|context
 parameter_list|,
 name|GimpChannelType
 modifier|*
@@ -2463,6 +2480,20 @@ operator|=
 name|editor
 operator|->
 name|clicked_component
+expr_stmt|;
+if|if
+condition|(
+name|context
+condition|)
+operator|*
+name|context
+operator|=
+name|GIMP_IMAGE_EDITOR
+argument_list|(
+name|editor
+argument_list|)
+operator|->
+name|context
 expr_stmt|;
 return|return
 name|GIMP_IMAGE_EDITOR

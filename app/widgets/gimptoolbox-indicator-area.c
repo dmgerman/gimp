@@ -502,6 +502,8 @@ name|brush_view
 operator|=
 name|gimp_view_new_full_by_types
 argument_list|(
+name|context
+argument_list|,
 name|GIMP_TYPE_VIEW
 argument_list|,
 name|GIMP_TYPE_BRUSH
@@ -617,6 +619,8 @@ name|pattern_view
 operator|=
 name|gimp_view_new_full_by_types
 argument_list|(
+name|context
+argument_list|,
 name|GIMP_TYPE_VIEW
 argument_list|,
 name|GIMP_TYPE_PATTERN
@@ -732,6 +736,8 @@ name|gradient_view
 operator|=
 name|gimp_view_new_full_by_types
 argument_list|(
+name|context
+argument_list|,
 name|GIMP_TYPE_VIEW
 argument_list|,
 name|GIMP_TYPE_GRADIENT

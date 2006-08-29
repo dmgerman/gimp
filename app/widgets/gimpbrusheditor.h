@@ -180,9 +180,9 @@ name|GtkWidget
 modifier|*
 name|gimp_brush_editor_new
 parameter_list|(
-name|Gimp
+name|GimpContext
 modifier|*
-name|gimp
+name|context
 parameter_list|,
 name|GimpMenuFactory
 modifier|*

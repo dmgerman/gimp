@@ -712,6 +712,11 @@ name|renderer
 operator|=
 name|gimp_view_renderer_new
 argument_list|(
+name|gimp_container_view_get_context
+argument_list|(
+name|view
+argument_list|)
+argument_list|,
 name|G_TYPE_FROM_INSTANCE
 argument_list|(
 name|viewable

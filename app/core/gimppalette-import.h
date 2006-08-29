@@ -25,6 +25,10 @@ name|GimpGradient
 modifier|*
 name|gradient
 parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 name|gboolean
 name|reverse
 parameter_list|,

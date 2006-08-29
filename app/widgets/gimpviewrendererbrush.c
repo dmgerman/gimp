@@ -305,6 +305,10 @@ name|viewable
 argument_list|,
 name|renderer
 operator|->
+name|context
+argument_list|,
+name|renderer
+operator|->
 name|width
 argument_list|,
 name|renderer
@@ -1718,6 +1722,10 @@ name|GIMP_VIEWABLE
 argument_list|(
 name|brush
 argument_list|)
+argument_list|,
+name|renderer
+operator|->
+name|context
 argument_list|,
 name|renderer
 operator|->

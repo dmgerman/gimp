@@ -908,6 +908,10 @@ name|renderer
 operator|->
 name|viewable
 argument_list|,
+name|renderer
+operator|->
+name|context
+argument_list|,
 name|w
 argument_list|,
 name|h
@@ -980,6 +984,10 @@ argument_list|(
 name|renderer
 operator|->
 name|viewable
+argument_list|,
+name|renderer
+operator|->
+name|context
 argument_list|,
 name|width
 operator|-

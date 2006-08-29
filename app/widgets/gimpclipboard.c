@@ -2389,6 +2389,11 @@ operator|->
 name|buffer
 argument_list|)
 argument_list|,
+name|gimp_get_user_context
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|,
 name|gimp_buffer_get_width
 argument_list|(
 name|gimp_clip

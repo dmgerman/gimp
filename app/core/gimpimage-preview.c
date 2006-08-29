@@ -323,12 +323,16 @@ end_function
 begin_function
 name|TempBuf
 modifier|*
-DECL|function|gimp_image_get_preview (GimpViewable * viewable,gint width,gint height)
+DECL|function|gimp_image_get_preview (GimpViewable * viewable,GimpContext * context,gint width,gint height)
 name|gimp_image_get_preview
 parameter_list|(
 name|GimpViewable
 modifier|*
 name|viewable
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|gint
 name|width
@@ -415,6 +419,8 @@ name|gimp_image_get_new_preview
 argument_list|(
 name|viewable
 argument_list|,
+name|context
+argument_list|,
 name|width
 argument_list|,
 name|height
@@ -438,12 +444,16 @@ end_function
 begin_function
 name|TempBuf
 modifier|*
-DECL|function|gimp_image_get_new_preview (GimpViewable * viewable,gint width,gint height)
+DECL|function|gimp_image_get_new_preview (GimpViewable * viewable,GimpContext * context,gint width,gint height)
 name|gimp_image_get_new_preview
 parameter_list|(
 name|GimpViewable
 modifier|*
 name|viewable
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|gint
 name|width
@@ -1107,6 +1117,8 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|,
+name|context
+argument_list|,
 name|w
 argument_list|,
 name|h
@@ -1232,6 +1244,8 @@ name|layer
 operator|->
 name|mask
 argument_list|)
+argument_list|,
+name|context
 argument_list|,
 name|w
 argument_list|,

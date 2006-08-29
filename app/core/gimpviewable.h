@@ -288,6 +288,10 @@ name|GimpViewable
 modifier|*
 name|viewable
 parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 name|gint
 name|width
 parameter_list|,
@@ -306,6 +310,10 @@ parameter_list|(
 name|GimpViewable
 modifier|*
 name|viewable
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|gint
 name|width
@@ -326,6 +334,10 @@ name|GimpViewable
 modifier|*
 name|viewable
 parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 name|gint
 name|width
 parameter_list|,
@@ -344,6 +356,10 @@ parameter_list|(
 name|GimpViewable
 modifier|*
 name|viewable
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|gint
 name|width
@@ -530,6 +546,10 @@ name|GimpViewable
 modifier|*
 name|viewable
 parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 name|gint
 name|width
 parameter_list|,
@@ -547,6 +567,10 @@ parameter_list|(
 name|GimpViewable
 modifier|*
 name|viewable
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|gint
 name|width
@@ -587,6 +611,10 @@ name|GimpViewable
 modifier|*
 name|viewable
 parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 name|gint
 name|width
 parameter_list|,
@@ -604,6 +632,10 @@ parameter_list|(
 name|GimpViewable
 modifier|*
 name|viewable
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|gint
 name|width

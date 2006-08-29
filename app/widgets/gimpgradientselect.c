@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e8a9de0103
+DECL|enum|__anon2a465cd60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -525,6 +525,10 @@ operator|=
 name|gimp_gradient_get_color_at
 argument_list|(
 name|gradient
+argument_list|,
+name|dialog
+operator|->
+name|caller_context
 argument_list|,
 name|seg
 argument_list|,

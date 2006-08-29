@@ -487,6 +487,10 @@ name|gimp_gradient_get_color_at
 argument_list|(
 name|gradient
 argument_list|,
+name|renderer
+operator|->
+name|context
+argument_list|,
 name|seg
 argument_list|,
 name|cur_x

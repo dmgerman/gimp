@@ -245,6 +245,10 @@ name|GtkWidget
 modifier|*
 name|gimp_view_new
 parameter_list|(
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 name|GimpViewable
 modifier|*
 name|viewable
@@ -266,6 +270,10 @@ name|GtkWidget
 modifier|*
 name|gimp_view_new_full
 parameter_list|(
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 name|GimpViewable
 modifier|*
 name|viewable
@@ -296,6 +304,10 @@ name|GtkWidget
 modifier|*
 name|gimp_view_new_by_types
 parameter_list|(
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 name|GType
 name|view_type
 parameter_list|,
@@ -319,6 +331,10 @@ name|GtkWidget
 modifier|*
 name|gimp_view_new_full_by_types
 parameter_list|(
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 name|GType
 name|view_type
 parameter_list|,

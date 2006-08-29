@@ -310,6 +310,8 @@ name|image_view
 operator|=
 name|gimp_view_new_full_by_types
 argument_list|(
+name|context
+argument_list|,
 name|GIMP_TYPE_VIEW
 argument_list|,
 name|GIMP_TYPE_IMAGE
@@ -348,13 +350,12 @@ argument_list|(
 name|image_view
 argument_list|)
 argument_list|,
-operator|(
-name|GimpViewable
-operator|*
-operator|)
+name|GIMP_VIEWABLE
+argument_list|(
 name|gimp_context_get_image
 argument_list|(
 name|context
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;

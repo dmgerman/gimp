@@ -172,9 +172,9 @@ name|GtkWidget
 modifier|*
 name|gimp_thumb_box_new
 parameter_list|(
-name|Gimp
+name|GimpContext
 modifier|*
-name|gimp
+name|context
 parameter_list|)
 function_decl|;
 end_function_decl

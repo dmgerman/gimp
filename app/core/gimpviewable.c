@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpmarshal.h"
 end_include
 
@@ -65,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon295d67170103
+DECL|enum|__anon2baed0df0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -78,7 +84,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon295d67170203
+DECL|enum|__anon2baed0df0203
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
 name|INVALIDATE_PREVIEW
@@ -200,6 +206,10 @@ parameter_list|(
 name|GimpViewable
 modifier|*
 name|viewable
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|gint
 name|width
@@ -366,6 +376,16 @@ name|GQuark
 name|quark_preview_pixbuf
 init|=
 literal|0
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|debug_context
+specifier|static
+name|gboolean
+name|debug_context
+init|=
+name|TRUE
 decl_stmt|;
 end_decl_stmt
 
@@ -1103,12 +1123,16 @@ begin_function
 specifier|static
 name|GdkPixbuf
 modifier|*
-DECL|function|gimp_viewable_real_get_new_pixbuf (GimpViewable * viewable,gint width,gint height)
+DECL|function|gimp_viewable_real_get_new_pixbuf (GimpViewable * viewable,GimpContext * context,gint width,gint height)
 name|gimp_viewable_real_get_new_pixbuf
 parameter_list|(
 name|GimpViewable
 modifier|*
 name|viewable
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|gint
 name|width
@@ -1132,6 +1156,8 @@ operator|=
 name|gimp_viewable_get_preview
 argument_list|(
 name|viewable
+argument_list|,
+name|context
 argument_list|,
 name|width
 argument_list|,
@@ -2149,18 +2175,22 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_viewable_get_preview:  * @viewable: The viewable object to get a preview for.  * @width:    desired width for the preview  * @height:   desired height for the preview  *  * Gets a preview for a viewable object, by running through a variety  * of methods until it finds one that works.  First, if an  * implementation exists of a "get_preview" method, it is tried, and  * the result is returned if it is not #NULL.  Second, the function  * checks to see whether there is a cached preview with the correct  * dimensions; if so, it is returned.  If neither of these works, then  * the function looks for an implementation of the "get_new_preview"  * method, and executes it, caching the result.  If everything fails,  * #NULL is returned.  *  * Returns: A #TempBuf containg the preview image, or #NULL if none can  *          be found or created.  **/
+comment|/**  * gimp_viewable_get_preview:  * @viewable: The viewable object to get a preview for.  * @context:  The context to render the preview for.  * @width:    desired width for the preview  * @height:   desired height for the preview  *  * Gets a preview for a viewable object, by running through a variety  * of methods until it finds one that works.  First, if an  * implementation exists of a "get_preview" method, it is tried, and  * the result is returned if it is not #NULL.  Second, the function  * checks to see whether there is a cached preview with the correct  * dimensions; if so, it is returned.  If neither of these works, then  * the function looks for an implementation of the "get_new_preview"  * method, and executes it, caching the result.  If everything fails,  * #NULL is returned.  *  * Returns: A #TempBuf containg the preview image, or #NULL if none can  *          be found or created.  **/
 end_comment
 
 begin_function
 name|TempBuf
 modifier|*
-DECL|function|gimp_viewable_get_preview (GimpViewable * viewable,gint width,gint height)
+DECL|function|gimp_viewable_get_preview (GimpViewable * viewable,GimpContext * context,gint width,gint height)
 name|gimp_viewable_get_preview
 parameter_list|(
 name|GimpViewable
 modifier|*
 name|viewable
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|gint
 name|width
@@ -2191,6 +2221,20 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
+name|context
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
 name|width
 operator|>
 literal|0
@@ -2205,6 +2249,21 @@ operator|>
 literal|0
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|debug_context
+operator|&&
+name|context
+operator|==
+name|NULL
+condition|)
+name|g_warning
+argument_list|(
+literal|"%s: context is NULL"
+argument_list|,
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 name|viewable_class
@@ -2227,6 +2286,8 @@ operator|->
 name|get_preview
 argument_list|(
 name|viewable
+argument_list|,
+name|context
 argument_list|,
 name|width
 argument_list|,
@@ -2289,6 +2350,8 @@ name|get_new_preview
 argument_list|(
 name|viewable
 argument_list|,
+name|context
+argument_list|,
 name|width
 argument_list|,
 name|height
@@ -2324,12 +2387,16 @@ end_comment
 begin_function
 name|TempBuf
 modifier|*
-DECL|function|gimp_viewable_get_new_preview (GimpViewable * viewable,gint width,gint height)
+DECL|function|gimp_viewable_get_new_preview (GimpViewable * viewable,GimpContext * context,gint width,gint height)
 name|gimp_viewable_get_new_preview
 parameter_list|(
 name|GimpViewable
 modifier|*
 name|viewable
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|gint
 name|width
@@ -2360,6 +2427,20 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
+name|context
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
 name|width
 operator|>
 literal|0
@@ -2374,6 +2455,21 @@ operator|>
 literal|0
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|debug_context
+operator|&&
+name|context
+operator|==
+name|NULL
+condition|)
+name|g_warning
+argument_list|(
+literal|"%s: context is NULL"
+argument_list|,
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 name|viewable_class
@@ -2396,6 +2492,8 @@ operator|->
 name|get_new_preview
 argument_list|(
 name|viewable
+argument_list|,
+name|context
 argument_list|,
 name|width
 argument_list|,
@@ -2422,6 +2520,8 @@ operator|->
 name|get_preview
 argument_list|(
 name|viewable
+argument_list|,
+name|context
 argument_list|,
 name|width
 argument_list|,
@@ -2614,18 +2714,22 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_viewable_get_pixbuf:  * @viewable: The viewable object to get a pixbuf preview for.  * @width:    desired width for the preview  * @height:   desired height for the preview  *  * Gets a preview for a viewable object, by running through a variety  * of methods until it finds one that works.  First, if an  * implementation exists of a "get_pixbuf" method, it is tried, and  * the result is returned if it is not #NULL.  Second, the function  * checks to see whether there is a cached preview with the correct  * dimensions; if so, it is returned.  If neither of these works, then  * the function looks for an implementation of the "get_new_pixbuf"  * method, and executes it, caching the result.  If everything fails,  * #NULL is returned.  *  * Returns: A #GdkPixbuf containing the preview pixbuf, or #NULL if none can  *          be found or created.  **/
+comment|/**  * gimp_viewable_get_pixbuf:  * @viewable: The viewable object to get a pixbuf preview for.  * @context:  The context to render the preview for.  * @width:    desired width for the preview  * @height:   desired height for the preview  *  * Gets a preview for a viewable object, by running through a variety  * of methods until it finds one that works.  First, if an  * implementation exists of a "get_pixbuf" method, it is tried, and  * the result is returned if it is not #NULL.  Second, the function  * checks to see whether there is a cached preview with the correct  * dimensions; if so, it is returned.  If neither of these works, then  * the function looks for an implementation of the "get_new_pixbuf"  * method, and executes it, caching the result.  If everything fails,  * #NULL is returned.  *  * Returns: A #GdkPixbuf containing the preview pixbuf, or #NULL if none can  *          be found or created.  **/
 end_comment
 
 begin_function
 name|GdkPixbuf
 modifier|*
-DECL|function|gimp_viewable_get_pixbuf (GimpViewable * viewable,gint width,gint height)
+DECL|function|gimp_viewable_get_pixbuf (GimpViewable * viewable,GimpContext * context,gint width,gint height)
 name|gimp_viewable_get_pixbuf
 parameter_list|(
 name|GimpViewable
 modifier|*
 name|viewable
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|gint
 name|width
@@ -2656,6 +2760,20 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
+name|context
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
 name|width
 operator|>
 literal|0
@@ -2670,6 +2788,21 @@ operator|>
 literal|0
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|debug_context
+operator|&&
+name|context
+operator|==
+name|NULL
+condition|)
+name|g_warning
+argument_list|(
+literal|"%s: context is NULL"
+argument_list|,
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 name|viewable_class
@@ -2692,6 +2825,8 @@ operator|->
 name|get_pixbuf
 argument_list|(
 name|viewable
+argument_list|,
+name|context
 argument_list|,
 name|width
 argument_list|,
@@ -2756,6 +2891,8 @@ name|get_new_pixbuf
 argument_list|(
 name|viewable
 argument_list|,
+name|context
+argument_list|,
 name|width
 argument_list|,
 name|height
@@ -2785,18 +2922,22 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_viewable_get_new_pixbuf:  * @viewable: The viewable object to get a new pixbuf preview for.  * @width:    desired width for the pixbuf  * @height:   desired height for the pixbuf  *  * Gets a new preview for a viewable object.  Similar to  * gimp_viewable_get_pixbuf(), except that it tries things in a  * different order, first looking for a "get_new_pixbuf" method, and  * then if that fails for a "get_pixbuf" method.  This function does  * not look for a cached pixbuf.  *  * Returns: A #GdkPixbuf containing the preview, or #NULL if none can  *          be created.  **/
+comment|/**  * gimp_viewable_get_new_pixbuf:  * @viewable: The viewable object to get a new pixbuf preview for.  * @context:  The context to render the preview for.  * @width:    desired width for the pixbuf  * @height:   desired height for the pixbuf  *  * Gets a new preview for a viewable object.  Similar to  * gimp_viewable_get_pixbuf(), except that it tries things in a  * different order, first looking for a "get_new_pixbuf" method, and  * then if that fails for a "get_pixbuf" method.  This function does  * not look for a cached pixbuf.  *  * Returns: A #GdkPixbuf containing the preview, or #NULL if none can  *          be created.  **/
 end_comment
 
 begin_function
 name|GdkPixbuf
 modifier|*
-DECL|function|gimp_viewable_get_new_pixbuf (GimpViewable * viewable,gint width,gint height)
+DECL|function|gimp_viewable_get_new_pixbuf (GimpViewable * viewable,GimpContext * context,gint width,gint height)
 name|gimp_viewable_get_new_pixbuf
 parameter_list|(
 name|GimpViewable
 modifier|*
 name|viewable
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|gint
 name|width
@@ -2827,6 +2968,20 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
+name|context
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
 name|width
 operator|>
 literal|0
@@ -2841,6 +2996,21 @@ operator|>
 literal|0
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|debug_context
+operator|&&
+name|context
+operator|==
+name|NULL
+condition|)
+name|g_warning
+argument_list|(
+literal|"%s: context is NULL"
+argument_list|,
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 name|viewable_class
@@ -2863,6 +3033,8 @@ operator|->
 name|get_new_pixbuf
 argument_list|(
 name|viewable
+argument_list|,
+name|context
 argument_list|,
 name|width
 argument_list|,
@@ -2889,6 +3061,8 @@ operator|->
 name|get_pixbuf
 argument_list|(
 name|viewable
+argument_list|,
+name|context
 argument_list|,
 name|width
 argument_list|,

@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e528fa0103
+DECL|enum|__anon2bad54cc0103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -66,7 +66,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e528fa0203
+DECL|enum|__anon2bad54cc0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1306,6 +1306,12 @@ name|event
 argument_list|)
 argument_list|,
 name|bevent
+argument_list|,
+name|cell
+operator|->
+name|renderer
+operator|->
+name|context
 argument_list|,
 name|cell
 operator|->

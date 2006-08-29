@@ -146,7 +146,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a2e89200103
+DECL|enum|__anon291a27250103
 block|{
 DECL|enumerator|GRADIENT_IMPORT
 name|GRADIENT_IMPORT
@@ -1999,6 +1999,11 @@ name|preview
 operator|=
 name|gimp_view_new_full_by_types
 argument_list|(
+name|gimp_get_user_context
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|,
 name|GIMP_TYPE_VIEW
 argument_list|,
 name|GIMP_TYPE_PALETTE
@@ -3651,6 +3656,10 @@ operator|=
 name|gimp_palette_import_from_gradient
 argument_list|(
 name|gradient
+argument_list|,
+name|dialog
+operator|->
+name|context
 argument_list|,
 name|FALSE
 argument_list|,

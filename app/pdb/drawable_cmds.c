@@ -4405,6 +4405,8 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|,
+name|context
+argument_list|,
 name|width
 argument_list|,
 name|height

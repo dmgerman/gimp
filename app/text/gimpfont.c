@@ -107,7 +107,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ad4d5a0103
+DECL|enum|__anon2baf19ae0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -265,6 +265,10 @@ parameter_list|(
 name|GimpViewable
 modifier|*
 name|viewable
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|gint
 name|width
@@ -835,12 +839,16 @@ begin_function
 specifier|static
 name|TempBuf
 modifier|*
-DECL|function|gimp_font_get_new_preview (GimpViewable * viewable,gint width,gint height)
+DECL|function|gimp_font_get_new_preview (GimpViewable * viewable,GimpContext * context,gint width,gint height)
 name|gimp_font_get_new_preview
 parameter_list|(
 name|GimpViewable
 modifier|*
 name|viewable
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|gint
 name|width
@@ -1339,7 +1347,7 @@ comment|/* This is a table of scripts and corresponding short sample strings    
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29ad4d5a0208
+DECL|struct|__anon2baf19ae0208
 block|{
 DECL|member|script
 specifier|const

@@ -124,6 +124,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpgradient.h"
 end_include
 
@@ -137,6 +143,12 @@ begin_include
 include|#
 directive|include
 file|"gimppalette.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimppalette-import.h"
 end_include
 
 begin_include
@@ -166,12 +178,16 @@ end_comment
 begin_function
 name|GimpPalette
 modifier|*
-DECL|function|gimp_palette_import_from_gradient (GimpGradient * gradient,gboolean reverse,const gchar * palette_name,gint n_colors)
+DECL|function|gimp_palette_import_from_gradient (GimpGradient * gradient,GimpContext * context,gboolean reverse,const gchar * palette_name,gint n_colors)
 name|gimp_palette_import_from_gradient
 parameter_list|(
 name|GimpGradient
 modifier|*
 name|gradient
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|gboolean
 name|reverse
@@ -211,6 +227,16 @@ argument_list|(
 name|GIMP_IS_GRADIENT
 argument_list|(
 name|gradient
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
 argument_list|)
 argument_list|,
 name|NULL
@@ -281,6 +307,8 @@ operator|=
 name|gimp_gradient_get_color_at
 argument_list|(
 name|gradient
+argument_list|,
+name|context
 argument_list|,
 name|seg
 argument_list|,
@@ -2091,7 +2119,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27c0aeee0103
+DECL|enum|__anon27ed51730103
 block|{
 DECL|enumerator|GIMP_PALETTE_FILE_FORMAT_UNKNOWN
 name|GIMP_PALETTE_FILE_FORMAT_UNKNOWN

@@ -717,6 +717,11 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
+name|GimpContext
+modifier|*
+modifier|*
+name|context
+parameter_list|,
 name|GimpChannelType
 modifier|*
 name|channel
@@ -832,6 +837,11 @@ parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|GimpContext
+modifier|*
+modifier|*
+name|context
 parameter_list|,
 name|gpointer
 name|data

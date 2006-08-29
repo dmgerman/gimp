@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4197bf0103
+DECL|enum|__anon2772819a0103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -179,6 +179,10 @@ parameter_list|(
 name|GimpViewable
 modifier|*
 name|viewable
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|gint
 name|width
@@ -1638,12 +1642,16 @@ begin_function
 specifier|static
 name|GdkPixbuf
 modifier|*
-DECL|function|gimp_imagefile_get_new_pixbuf (GimpViewable * viewable,gint width,gint height)
+DECL|function|gimp_imagefile_get_new_pixbuf (GimpViewable * viewable,GimpContext * context,gint width,gint height)
 name|gimp_imagefile_get_new_pixbuf
 parameter_list|(
 name|GimpViewable
 modifier|*
 name|viewable
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|gint
 name|width
@@ -2840,6 +2848,14 @@ argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(
 name|image
+argument_list|)
+argument_list|,
+comment|/* random context, unused */
+name|gimp_get_user_context
+argument_list|(
+name|image
+operator|->
+name|gimp
 argument_list|)
 argument_list|,
 name|width

@@ -185,10 +185,10 @@ modifier|*
 name|dnd_gimp
 decl_stmt|;
 comment|/* eek */
-DECL|member|dnd_viewable
-name|GimpViewable
+DECL|member|dnd_renderer
+name|GimpViewRenderer
 modifier|*
-name|dnd_viewable
+name|dnd_renderer
 decl_stmt|;
 DECL|member|scroll_timeout_id
 name|guint

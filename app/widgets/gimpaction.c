@@ -87,7 +87,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a34e8120103
+DECL|enum|__anon2c1de9600103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1212,6 +1212,9 @@ name|view
 operator|=
 name|gimp_view_new_full
 argument_list|(
+name|NULL
+comment|/* FIXME */
+argument_list|,
 name|action
 operator|->
 name|viewable

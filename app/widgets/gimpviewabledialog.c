@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c034ede0103
+DECL|enum|__anon27989afe0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -964,8 +964,9 @@ name|args
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-operator|!
 name|viewable
+operator|==
+name|NULL
 operator|||
 name|GIMP_IS_VIEWABLE
 argument_list|(
@@ -1113,8 +1114,9 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-operator|!
 name|viewable
+operator|==
+name|NULL
 operator|||
 name|GIMP_IS_VIEWABLE
 argument_list|(
@@ -1213,6 +1215,9 @@ name|view
 operator|=
 name|gimp_view_new
 argument_list|(
+name|NULL
+argument_list|,
+comment|/* FIXME */
 name|viewable
 argument_list|,
 literal|32

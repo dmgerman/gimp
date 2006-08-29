@@ -2408,8 +2408,6 @@ return|return
 name|gimp_brush_editor_new
 argument_list|(
 name|context
-operator|->
-name|gimp
 argument_list|,
 name|factory
 operator|->
@@ -2441,8 +2439,6 @@ return|return
 name|gimp_gradient_editor_new
 argument_list|(
 name|context
-operator|->
-name|gimp
 argument_list|,
 name|factory
 operator|->
@@ -2474,8 +2470,6 @@ return|return
 name|gimp_palette_editor_new
 argument_list|(
 name|context
-operator|->
-name|gimp
 argument_list|,
 name|factory
 operator|->

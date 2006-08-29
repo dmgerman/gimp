@@ -923,13 +923,13 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_prop_view_new:  * @config:        #GimpConfig object to which property is attached.  * @property_name: Name of #GimpViewable property.  * @size:          Width and height of preview display.  *  * Creates a widget to display the value of a #GimpViewable property.  *  * Return value:  A new #GimpView widget.  *  * Since GIMP 2.4  */
+comment|/**  * gimp_prop_view_new:  * @config:        #GimpConfig object to which property is attached.  * @context:       a #Gimpcontext.  * @property_name: Name of #GimpViewable property.  * @size:          Width and height of preview display.  *  * Creates a widget to display the value of a #GimpViewable property.  *  * Return value:  A new #GimpView widget.  *  * Since GIMP 2.4  */
 end_comment
 
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_prop_view_new (GObject * config,const gchar * property_name,gint size)
+DECL|function|gimp_prop_view_new (GObject * config,const gchar * property_name,GimpContext * context,gint size)
 name|gimp_prop_view_new
 parameter_list|(
 name|GObject
@@ -940,6 +940,10 @@ specifier|const
 name|gchar
 modifier|*
 name|property_name
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|gint
 name|size
@@ -1016,6 +1020,8 @@ name|view
 operator|=
 name|gimp_view_new_by_types
 argument_list|(
+name|context
+argument_list|,
 name|GIMP_TYPE_VIEW
 argument_list|,
 name|param_spec

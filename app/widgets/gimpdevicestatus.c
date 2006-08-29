@@ -138,7 +138,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c421e6f0103
+DECL|enum|__anon2756200a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1287,6 +1287,8 @@ argument_list|)
 argument_list|,
 literal|"tool"
 argument_list|,
+name|context
+argument_list|,
 name|CELL_SIZE
 argument_list|)
 expr_stmt|;
@@ -1506,6 +1508,8 @@ argument_list|)
 argument_list|,
 literal|"brush"
 argument_list|,
+name|context
+argument_list|,
 name|CELL_SIZE
 argument_list|)
 expr_stmt|;
@@ -1598,6 +1602,8 @@ argument_list|)
 argument_list|,
 literal|"pattern"
 argument_list|,
+name|context
+argument_list|,
 name|CELL_SIZE
 argument_list|)
 expr_stmt|;
@@ -1689,6 +1695,8 @@ name|context
 argument_list|)
 argument_list|,
 literal|"gradient"
+argument_list|,
+name|context
 argument_list|,
 literal|2
 operator|*

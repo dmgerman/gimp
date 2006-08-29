@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbafaed0103
+DECL|enum|__anon2b44b4ef0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -88,7 +88,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbafaed0203
+DECL|enum|__anon2b44b4ef0203
 block|{
 DECL|enumerator|COLUMN_RENDERER
 name|COLUMN_RENDERER
@@ -999,6 +999,11 @@ name|renderer
 operator|=
 name|gimp_view_renderer_new
 argument_list|(
+name|gimp_container_view_get_context
+argument_list|(
+name|view
+argument_list|)
+argument_list|,
 name|G_TYPE_FROM_INSTANCE
 argument_list|(
 name|viewable

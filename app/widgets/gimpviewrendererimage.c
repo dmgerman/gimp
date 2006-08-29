@@ -239,6 +239,10 @@ name|renderer
 operator|->
 name|viewable
 argument_list|,
+name|renderer
+operator|->
+name|context
+argument_list|,
 name|image
 operator|->
 name|width
@@ -280,6 +284,10 @@ argument_list|(
 name|renderer
 operator|->
 name|viewable
+argument_list|,
+name|renderer
+operator|->
+name|context
 argument_list|,
 name|view_width
 argument_list|,

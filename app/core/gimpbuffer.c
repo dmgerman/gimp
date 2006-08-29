@@ -173,6 +173,10 @@ name|GimpViewable
 modifier|*
 name|viewable
 parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 name|gint
 name|width
 parameter_list|,
@@ -696,12 +700,16 @@ begin_function
 specifier|static
 name|TempBuf
 modifier|*
-DECL|function|gimp_buffer_get_new_preview (GimpViewable * viewable,gint width,gint height)
+DECL|function|gimp_buffer_get_new_preview (GimpViewable * viewable,GimpContext * context,gint width,gint height)
 name|gimp_buffer_get_new_preview
 parameter_list|(
 name|GimpViewable
 modifier|*
 name|viewable
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|gint
 name|width

@@ -526,19 +526,6 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_channel_tree_view_init (GimpChannelTreeView * view)
-name|gimp_channel_tree_view_init
-parameter_list|(
-name|GimpChannelTreeView
-modifier|*
-name|view
-parameter_list|)
-block|{ }
-end_function
-
-begin_function
-specifier|static
-name|void
 DECL|function|gimp_channel_tree_view_view_iface_init (GimpContainerViewInterface * view_iface)
 name|gimp_channel_tree_view_view_iface_init
 parameter_list|(
@@ -588,6 +575,19 @@ operator|=
 name|gimp_channel_tree_view_set_context
 expr_stmt|;
 block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_channel_tree_view_init (GimpChannelTreeView * view)
+name|gimp_channel_tree_view_init
+parameter_list|(
+name|GimpChannelTreeView
+modifier|*
+name|view
+parameter_list|)
+block|{ }
 end_function
 
 begin_function

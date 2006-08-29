@@ -1832,7 +1832,10 @@ name|thumb_box
 operator|=
 name|gimp_thumb_box_new
 argument_list|(
+name|gimp_get_user_context
+argument_list|(
 name|gimp
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_sensitive

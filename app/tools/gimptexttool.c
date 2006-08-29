@@ -2294,6 +2294,13 @@ expr_stmt|;
 name|gimp_undo_refresh_preview
 argument_list|(
 name|undo
+argument_list|,
+name|gimp_get_user_context
+argument_list|(
+name|image
+operator|->
+name|gimp
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

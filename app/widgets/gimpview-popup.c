@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpview-popup.c  * Copyright (C) 2001 Michael Natterer<mitch@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpview-popup.c  * Copyright (C) 2003-2006 Michael Natterer<mitch@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -25,6 +25,12 @@ begin_include
 include|#
 directive|include
 file|"widgets-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimpcontext.h"
 end_include
 
 begin_include
@@ -77,6 +83,11 @@ DECL|member|widget
 name|GtkWidget
 modifier|*
 name|widget
+decl_stmt|;
+DECL|member|context
+name|GimpContext
+modifier|*
+name|context
 decl_stmt|;
 DECL|member|viewable
 name|GimpViewable
@@ -190,7 +201,7 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_view_popup_show (GtkWidget * widget,GdkEventButton * bevent,GimpViewable * viewable,gint view_width,gint view_height,gboolean dot_for_dot)
+DECL|function|gimp_view_popup_show (GtkWidget * widget,GdkEventButton * bevent,GimpContext * context,GimpViewable * viewable,gint view_width,gint view_height,gboolean dot_for_dot)
 name|gimp_view_popup_show
 parameter_list|(
 name|GtkWidget
@@ -200,6 +211,10 @@ parameter_list|,
 name|GdkEventButton
 modifier|*
 name|bevent
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|GimpViewable
 modifier|*
@@ -240,6 +255,20 @@ argument_list|(
 name|bevent
 operator|!=
 name|NULL
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|context
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|)
@@ -291,6 +320,12 @@ operator|->
 name|widget
 operator|=
 name|widget
+expr_stmt|;
+name|popup
+operator|->
+name|context
+operator|=
+name|context
 expr_stmt|;
 name|popup
 operator|->
@@ -717,6 +752,10 @@ name|view
 operator|=
 name|gimp_view_new_full
 argument_list|(
+name|popup
+operator|->
+name|context
+argument_list|,
 name|popup
 operator|->
 name|viewable

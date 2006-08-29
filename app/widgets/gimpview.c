@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpmarshal.h"
 end_include
 
@@ -95,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28af08ba0103
+DECL|enum|__anon28b00c5d0103
 block|{
 DECL|enumerator|SET_VIEWABLE
 name|SET_VIEWABLE
@@ -332,6 +338,11 @@ parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|GimpContext
+modifier|*
+modifier|*
+name|context
 parameter_list|,
 name|gpointer
 name|data
@@ -1918,6 +1929,12 @@ name|bevent
 argument_list|,
 name|view
 operator|->
+name|renderer
+operator|->
+name|context
+argument_list|,
+name|view
+operator|->
 name|viewable
 argument_list|,
 name|view
@@ -1962,6 +1979,12 @@ argument_list|(
 name|widget
 argument_list|,
 name|bevent
+argument_list|,
+name|view
+operator|->
+name|renderer
+operator|->
+name|context
 argument_list|,
 name|view
 operator|->
@@ -2565,9 +2588,13 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_view_new (GimpViewable * viewable,gint size,gint border_width,gboolean is_popup)
+DECL|function|gimp_view_new (GimpContext * context,GimpViewable * viewable,gint size,gint border_width,gboolean is_popup)
 name|gimp_view_new
 parameter_list|(
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 name|GimpViewable
 modifier|*
 name|viewable
@@ -2588,6 +2615,20 @@ name|view
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
+name|context
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
 name|GIMP_IS_VIEWABLE
 argument_list|(
 name|viewable
@@ -2600,6 +2641,8 @@ name|view
 operator|=
 name|gimp_view_new_by_types
 argument_list|(
+name|context
+argument_list|,
 name|GIMP_TYPE_VIEW
 argument_list|,
 name|G_TYPE_FROM_INSTANCE
@@ -2647,9 +2690,13 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_view_new_full (GimpViewable * viewable,gint width,gint height,gint border_width,gboolean is_popup,gboolean clickable,gboolean show_popup)
+DECL|function|gimp_view_new_full (GimpContext * context,GimpViewable * viewable,gint width,gint height,gint border_width,gboolean is_popup,gboolean clickable,gboolean show_popup)
 name|gimp_view_new_full
 parameter_list|(
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 name|GimpViewable
 modifier|*
 name|viewable
@@ -2677,6 +2724,20 @@ name|GtkWidget
 modifier|*
 name|view
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|context
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_VIEWABLE
@@ -2691,6 +2752,8 @@ name|view
 operator|=
 name|gimp_view_new_full_by_types
 argument_list|(
+name|context
+argument_list|,
 name|GIMP_TYPE_VIEW
 argument_list|,
 name|G_TYPE_FROM_INSTANCE
@@ -2744,9 +2807,13 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_view_new_by_types (GType view_type,GType viewable_type,gint size,gint border_width,gboolean is_popup)
+DECL|function|gimp_view_new_by_types (GimpContext * context,GType view_type,GType viewable_type,gint size,gint border_width,gboolean is_popup)
 name|gimp_view_new_by_types
 parameter_list|(
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 name|GType
 name|view_type
 parameter_list|,
@@ -2771,6 +2838,20 @@ name|GimpView
 modifier|*
 name|view
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|context
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|g_type_is_a
@@ -2825,6 +2906,8 @@ name|renderer
 operator|=
 name|gimp_view_renderer_new
 argument_list|(
+name|context
+argument_list|,
 name|viewable_type
 argument_list|,
 name|size
@@ -2884,9 +2967,13 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_view_new_full_by_types (GType view_type,GType viewable_type,gint width,gint height,gint border_width,gboolean is_popup,gboolean clickable,gboolean show_popup)
+DECL|function|gimp_view_new_full_by_types (GimpContext * context,GType view_type,GType viewable_type,gint width,gint height,gint border_width,gboolean is_popup,gboolean clickable,gboolean show_popup)
 name|gimp_view_new_full_by_types
 parameter_list|(
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 name|GType
 name|view_type
 parameter_list|,
@@ -2920,6 +3007,20 @@ name|GimpView
 modifier|*
 name|view
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|context
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|g_type_is_a
@@ -2987,6 +3088,8 @@ name|renderer
 operator|=
 name|gimp_view_renderer_new_full
 argument_list|(
+name|context
+argument_list|,
 name|viewable_type
 argument_list|,
 name|width
@@ -3324,17 +3427,38 @@ begin_function
 specifier|static
 name|GimpViewable
 modifier|*
-DECL|function|gimp_view_drag_viewable (GtkWidget * widget,gpointer data)
+DECL|function|gimp_view_drag_viewable (GtkWidget * widget,GimpContext ** context,gpointer data)
 name|gimp_view_drag_viewable
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
+name|GimpContext
+modifier|*
+modifier|*
+name|context
+parameter_list|,
 name|gpointer
 name|data
 parameter_list|)
 block|{
+if|if
+condition|(
+name|context
+condition|)
+operator|*
+name|context
+operator|=
+name|GIMP_VIEW
+argument_list|(
+name|widget
+argument_list|)
+operator|->
+name|renderer
+operator|->
+name|context
+expr_stmt|;
 return|return
 name|GIMP_VIEW
 argument_list|(
@@ -3361,14 +3485,20 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GimpViewable
+name|GimpView
 modifier|*
-name|viewable
+name|view
 init|=
 name|GIMP_VIEW
 argument_list|(
 name|widget
 argument_list|)
+decl_stmt|;
+name|GimpViewable
+modifier|*
+name|viewable
+init|=
+name|view
 operator|->
 name|viewable
 decl_stmt|;
@@ -3397,6 +3527,12 @@ return|return
 name|gimp_viewable_get_new_pixbuf
 argument_list|(
 name|viewable
+argument_list|,
+name|view
+operator|->
+name|renderer
+operator|->
+name|context
 argument_list|,
 name|width
 argument_list|,

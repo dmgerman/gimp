@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimage.h"
 end_include
 
@@ -83,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbdc1c00103
+DECL|enum|__anon2b0a34d60103
 block|{
 DECL|enumerator|POP
 name|POP
@@ -99,7 +105,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbdc1c00203
+DECL|enum|__anon2b0a34d60203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -261,6 +267,10 @@ name|GimpViewable
 modifier|*
 name|viewable
 parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 name|gint
 name|width
 parameter_list|,
@@ -323,6 +333,10 @@ parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1303,12 +1317,16 @@ begin_function
 specifier|static
 name|TempBuf
 modifier|*
-DECL|function|gimp_undo_get_new_preview (GimpViewable * viewable,gint width,gint height)
+DECL|function|gimp_undo_get_new_preview (GimpViewable * viewable,GimpContext * context,gint width,gint height)
 name|gimp_undo_get_new_preview
 parameter_list|(
 name|GimpViewable
 modifier|*
 name|viewable
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|gint
 name|width
@@ -1628,12 +1646,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_undo_create_preview (GimpUndo * undo,gboolean create_now)
+DECL|function|gimp_undo_create_preview (GimpUndo * undo,GimpContext * context,gboolean create_now)
 name|gimp_undo_create_preview
 parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|gboolean
 name|create_now
@@ -1644,6 +1666,18 @@ argument_list|(
 name|GIMP_IS_UNDO
 argument_list|(
 name|undo
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|context
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1665,6 +1699,8 @@ condition|)
 name|gimp_undo_create_preview_private
 argument_list|(
 name|undo
+argument_list|,
+name|context
 argument_list|)
 expr_stmt|;
 else|else
@@ -1718,6 +1754,9 @@ block|{
 name|gimp_undo_create_preview_private
 argument_list|(
 name|undo
+argument_list|,
+name|NULL
+comment|/* FIXME */
 argument_list|)
 expr_stmt|;
 block|}
@@ -1736,12 +1775,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_undo_create_preview_private (GimpUndo * undo)
+DECL|function|gimp_undo_create_preview_private (GimpUndo * undo,GimpContext * context)
 name|gimp_undo_create_preview_private
 parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 block|{
 name|GimpImage
@@ -1912,6 +1955,8 @@ name|gimp_viewable_get_new_preview
 argument_list|(
 name|preview_viewable
 argument_list|,
+name|context
+argument_list|,
 name|width
 argument_list|,
 name|height
@@ -1930,12 +1975,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_undo_refresh_preview (GimpUndo * undo)
+DECL|function|gimp_undo_refresh_preview (GimpUndo * undo,GimpContext * context)
 name|gimp_undo_refresh_preview
 parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -1943,6 +1992,18 @@ argument_list|(
 name|GIMP_IS_UNDO
 argument_list|(
 name|undo
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|context
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1976,6 +2037,8 @@ expr_stmt|;
 name|gimp_undo_create_preview
 argument_list|(
 name|undo
+argument_list|,
+name|context
 argument_list|,
 name|FALSE
 argument_list|)

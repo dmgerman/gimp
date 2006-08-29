@@ -93,6 +93,10 @@ name|gchar
 modifier|*
 name|property_name
 parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 name|gint
 name|size
 parameter_list|)

@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimagefile.h"
 end_include
 
@@ -1149,12 +1155,12 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_thumb_box_new (Gimp * gimp)
+DECL|function|gimp_thumb_box_new (GimpContext * context)
 name|gimp_thumb_box_new
 parameter_list|(
-name|Gimp
+name|GimpContext
 modifier|*
-name|gimp
+name|context
 parameter_list|)
 block|{
 name|GimpThumbBox
@@ -1205,9 +1211,9 @@ name|progress_requisition
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|GIMP_IS_GIMP
+name|GIMP_IS_CONTEXT
 argument_list|(
-name|gimp
+name|context
 argument_list|)
 argument_list|,
 name|NULL
@@ -1503,6 +1509,8 @@ name|imagefile
 operator|=
 name|gimp_imagefile_new
 argument_list|(
+name|context
+operator|->
 name|gimp
 argument_list|,
 name|NULL
@@ -1557,6 +1565,8 @@ name|preview
 operator|=
 name|gimp_view_new
 argument_list|(
+name|context
+argument_list|,
 name|GIMP_VIEWABLE
 argument_list|(
 name|box
@@ -1565,6 +1575,8 @@ name|imagefile
 argument_list|)
 argument_list|,
 comment|/* add padding for the shadow frame */
+name|context
+operator|->
 name|gimp
 operator|->
 name|config
