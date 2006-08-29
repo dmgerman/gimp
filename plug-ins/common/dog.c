@@ -56,7 +56,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3eff180108
+DECL|struct|__anon27e890f40108
 block|{
 DECL|member|inner
 name|gdouble
@@ -438,8 +438,7 @@ argument_list|)
 argument_list|,
 literal|"Applies two Gaussian blurs to the drawable, and "
 literal|"subtracts the results.  This is robust and widely "
-literal|"used method for detecting edges. Uses Gauss IIR "
-literal|"algorithm for the Gaussians."
+literal|"used method for detecting edges."
 argument_list|,
 literal|"Spencer Kimball, Peter Mattis, Sven Neumann, William Skaggs"
 argument_list|,
