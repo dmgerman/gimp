@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core-types.h"
 end_include
 
@@ -73,12 +79,6 @@ begin_include
 include|#
 directive|include
 file|"gimpprogress.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimp-utils.h"
 end_include
 
 begin_include

@@ -18,13 +18,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display-types.h"
+file|"libgimpbase/gimpbase.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimp-utils.h"
+file|"display-types.h"
 end_include
 
 begin_include

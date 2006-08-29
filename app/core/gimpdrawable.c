@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpcolor/gimpcolor.h"
 end_include
 
@@ -61,12 +67,6 @@ begin_include
 include|#
 directive|include
 file|"paint-funcs/scale-funcs.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimp-utils.h"
 end_include
 
 begin_include
@@ -167,7 +167,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a96ecd80103
+DECL|enum|__anon2c861ffe0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE

@@ -67,6 +67,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimpbase/gimprectangle.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimpbase/gimpunit.h>
 end_include
 

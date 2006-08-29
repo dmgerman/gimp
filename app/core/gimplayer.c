@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpmath/gimpmath.h"
 end_include
 
@@ -67,12 +73,6 @@ begin_include
 include|#
 directive|include
 file|"paint-funcs/paint-funcs.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimp-utils.h"
 end_include
 
 begin_include
@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29db0cc30103
+DECL|enum|__anon27e13da20103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -177,7 +177,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29db0cc30203
+DECL|enum|__anon27e13da20203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
