@@ -104,8 +104,8 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ab1f6700103
-DECL|enum|__anon2ab1f6700203
+DECL|enum|__anon27951a5e0103
+DECL|enum|__anon27951a5e0203
 block|{
 DECL|enumerator|SET_BRUSH
 DECL|enumerator|SET_BRUSH
@@ -3347,6 +3347,26 @@ modifier|*
 name|brush
 parameter_list|)
 block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_BRUSH_CORE
+argument_list|(
+name|core
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|brush
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_BRUSH
+argument_list|(
+name|brush
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|g_signal_emit
 argument_list|(
 name|core
