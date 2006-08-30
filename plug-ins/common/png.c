@@ -154,7 +154,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298dde450108
+DECL|struct|__anon298b94980108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -201,7 +201,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298dde450208
+DECL|struct|__anon298b94980208
 block|{
 DECL|member|run
 name|gboolean
@@ -5542,9 +5542,6 @@ modifier|*
 name|colors
 parameter_list|)
 block|{
-name|gint
-name|i
-decl_stmt|;
 name|gboolean
 name|ix_used
 index|[
@@ -5562,18 +5559,13 @@ decl_stmt|;
 name|gpointer
 name|pr
 decl_stmt|;
-name|guchar
-modifier|*
-name|pixel_row
-decl_stmt|;
 name|gint
 name|row
 decl_stmt|,
 name|col
 decl_stmt|;
-name|guchar
-modifier|*
-name|pixel
+name|gint
+name|i
 decl_stmt|;
 for|for
 control|(
@@ -5589,7 +5581,6 @@ condition|;
 name|i
 operator|++
 control|)
-block|{
 name|ix_used
 index|[
 name|i
@@ -5597,7 +5588,6 @@ index|]
 operator|=
 name|FALSE
 expr_stmt|;
-block|}
 name|gimp_pixel_rgn_init
 argument_list|(
 operator|&
@@ -5646,12 +5636,15 @@ name|pr
 argument_list|)
 control|)
 block|{
+specifier|const
+name|guchar
+modifier|*
 name|pixel_row
-operator|=
+init|=
 name|pixel_rgn
 operator|.
 name|data
-expr_stmt|;
+decl_stmt|;
 for|for
 control|(
 name|row
@@ -5668,10 +5661,13 @@ name|row
 operator|++
 control|)
 block|{
+specifier|const
+name|guchar
+modifier|*
 name|pixel
-operator|=
+init|=
 name|pixel_row
-expr_stmt|;
+decl_stmt|;
 for|for
 control|(
 name|col
@@ -5760,11 +5756,9 @@ index|]
 operator|==
 name|FALSE
 condition|)
-block|{
 return|return
 name|i
 return|;
-block|}
 block|}
 comment|/* Couldn't find an unused color index within the number of      bits per pixel we wanted.  Will have to increment the number      of colors in the image and assign a transparent pixel there. */
 if|if
@@ -5892,13 +5886,6 @@ operator|&
 name|colors
 argument_list|)
 decl_stmt|;
-name|g_print
-argument_list|(
-literal|"has transparent pixels, unused color is %d\n"
-argument_list|,
-name|transparent
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|transparent
