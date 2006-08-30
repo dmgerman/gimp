@@ -522,7 +522,7 @@ define|#
 directive|define
 name|MOVE_TOOL_CHANGES_ACTIVE_BLURB
 define|\
-value|N_("If enabled, the move tool changes the active layer or path when a layer " \    "or path is being picked. This used to be the default behaviour in older " \    "versions.")
+value|N_("If enabled, the move tool sets the edited layer or path as active.  " \    "This used to be the default behaviour in older versions.")
 end_define
 
 begin_define

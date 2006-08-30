@@ -7989,7 +7989,7 @@ literal|"move-tool-changes-active"
 argument_list|,
 name|_
 argument_list|(
-literal|"Change current layer or path"
+literal|"Set layer or path as active"
 argument_list|)
 argument_list|,
 name|GIMP_STOCK_TOOL_MOVE
@@ -8916,7 +8916,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2a09a5ac0108
+DECL|struct|__anon2bd25c7f0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -10079,7 +10079,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a09a5ac0208
+DECL|struct|__anon2bd25c7f0208
 block|{
 DECL|member|label
 specifier|const
@@ -10983,7 +10983,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a09a5ac0308
+DECL|struct|__anon2bd25c7f0308
 block|{
 DECL|member|property_name
 specifier|const
@@ -11138,7 +11138,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a09a5ac0408
+DECL|struct|__anon2bd25c7f0408
 block|{
 DECL|member|tree_label
 specifier|const
