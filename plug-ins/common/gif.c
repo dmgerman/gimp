@@ -135,7 +135,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4b5a4e0103
+DECL|enum|__anon28ddf9600103
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -152,7 +152,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4b5a4e0208
+DECL|struct|__anon28ddf9600208
 block|{
 DECL|member|interlace
 name|gint
@@ -1104,6 +1104,7 @@ specifier|static
 name|gint
 name|find_unused_ia_colour
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|pixels
@@ -1131,12 +1132,7 @@ modifier|*
 name|pixels
 parameter_list|,
 name|gint
-modifier|*
 name|transparent
-parameter_list|,
-name|gint
-modifier|*
-name|colors
 parameter_list|,
 name|gint
 name|numpixels
@@ -1531,9 +1527,10 @@ end_function_decl
 begin_function
 specifier|static
 name|gint
-DECL|function|find_unused_ia_colour (guchar * pixels,gint numpixels,gint num_indices,gint * colors)
+DECL|function|find_unused_ia_colour (const guchar * pixels,gint numpixels,gint num_indices,gint * colors)
 name|find_unused_ia_colour
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|pixels
@@ -1549,14 +1546,14 @@ modifier|*
 name|colors
 parameter_list|)
 block|{
-name|int
-name|i
-decl_stmt|;
 name|gboolean
 name|ix_used
 index|[
 literal|256
 index|]
+decl_stmt|;
+name|gint
+name|i
 decl_stmt|;
 ifdef|#
 directive|ifdef
@@ -1566,17 +1563,9 @@ argument_list|(
 literal|"GIF: fuiac: Image claims to use %d/%d indices - finding free "
 literal|"index...\n"
 argument_list|,
-call|(
-name|int
-call|)
-argument_list|(
 operator|*
 name|colors
-argument_list|)
 argument_list|,
-operator|(
-name|int
-operator|)
 name|num_indices
 argument_list|)
 expr_stmt|;
@@ -1595,18 +1584,13 @@ condition|;
 name|i
 operator|++
 control|)
-block|{
 name|ix_used
 index|[
 name|i
 index|]
 operator|=
-operator|(
-name|gboolean
-operator|)
 name|FALSE
 expr_stmt|;
-block|}
 for|for
 control|(
 name|i
@@ -1642,9 +1626,6 @@ literal|2
 index|]
 index|]
 operator|=
-operator|(
-name|gboolean
-operator|)
 name|TRUE
 expr_stmt|;
 block|}
@@ -1666,15 +1647,11 @@ control|)
 block|{
 if|if
 condition|(
+operator|!
 name|ix_used
 index|[
 name|i
 index|]
-operator|==
-operator|(
-name|gboolean
-operator|)
-name|FALSE
 condition|)
 block|{
 ifdef|#
@@ -1700,10 +1677,8 @@ block|}
 comment|/* Couldn't find an unused colour index within the number of      bits per pixel we wanted.  Will have to increment the number      of colours in the image and assign a transparent pixel there. */
 if|if
 condition|(
-operator|(
 operator|*
 name|colors
-operator|)
 operator|<
 literal|256
 condition|)
@@ -1719,13 +1694,8 @@ argument_list|(
 literal|"GIF: 2nd pass "
 literal|"- Increasing bounds and using colour index %d.\n"
 argument_list|,
-call|(
-name|int
-call|)
-argument_list|(
 operator|*
 name|colors
-argument_list|)
 operator|-
 literal|1
 argument_list|)
@@ -1750,10 +1720,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 operator|-
 literal|1
-operator|)
 return|;
 block|}
 end_function
@@ -1761,22 +1729,17 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|special_flatten_indexed_alpha (guchar * pixels,int * transparent,int * colors,int numpixels)
+DECL|function|special_flatten_indexed_alpha (guchar * pixels,gint transparent,gint numpixels)
 name|special_flatten_indexed_alpha
 parameter_list|(
 name|guchar
 modifier|*
 name|pixels
 parameter_list|,
-name|int
-modifier|*
+name|gint
 name|transparent
 parameter_list|,
-name|int
-modifier|*
-name|colors
-parameter_list|,
-name|int
+name|gint
 name|numpixels
 parameter_list|)
 block|{
@@ -1786,10 +1749,7 @@ decl_stmt|;
 comment|/* Each transparent pixel in the image is mapped to a uniform value for      encoding, if image already has<=255 colours */
 if|if
 condition|(
-operator|(
-operator|*
 name|transparent
-operator|)
 operator|==
 operator|-
 literal|1
@@ -1861,13 +1821,10 @@ index|[
 name|i
 index|]
 operator|=
-call|(
+operator|(
 name|guchar
-call|)
-argument_list|(
-operator|*
+operator|)
 name|transparent
-argument_list|)
 expr_stmt|;
 block|}
 else|else
@@ -1887,18 +1844,17 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/* Pixel data now takes half as much space (the alpha data has been      discarded) */
-comment|/*  pixels = g_realloc (pixels, numpixels);*/
 block|}
 end_function
 
 begin_function
 specifier|static
-name|int
-DECL|function|parse_ms_tag (char * str)
+name|gint
+DECL|function|parse_ms_tag (const gchar * str)
 name|parse_ms_tag
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|str
 parameter_list|)
@@ -2064,11 +2020,12 @@ end_function
 
 begin_function
 specifier|static
-name|int
-DECL|function|parse_disposal_tag (char * str)
+name|gint
+DECL|function|parse_disposal_tag (const gchar * str)
 name|parse_disposal_tag
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|str
 parameter_list|)
@@ -3338,11 +3295,7 @@ name|special_flatten_indexed_alpha
 argument_list|(
 name|pixels
 argument_list|,
-operator|&
 name|transparent
-argument_list|,
-operator|&
-name|colors
 argument_list|,
 name|drawable
 operator|->
