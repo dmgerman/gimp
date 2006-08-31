@@ -97,6 +97,11 @@ DECL|member|parent_instance
 name|GtkFrame
 name|parent_instance
 decl_stmt|;
+DECL|member|context
+name|GimpContext
+modifier|*
+name|context
+decl_stmt|;
 DECL|member|imagefile
 name|GimpImagefile
 modifier|*
