@@ -1222,9 +1222,13 @@ expr_stmt|;
 else|else
 name|context
 operator|=
+name|gimp_container_view_get_context
+argument_list|(
+name|GIMP_CONTAINER_VIEW
+argument_list|(
 name|view
-operator|->
-name|context
+argument_list|)
+argument_list|)
 expr_stmt|;
 name|gimp_drawable_bucket_fill_full
 argument_list|(

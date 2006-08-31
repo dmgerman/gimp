@@ -162,7 +162,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bcc206e0103
+DECL|enum|__anon29371aff0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -175,7 +175,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bcc206e0203
+DECL|enum|__anon29371aff0203
 block|{
 DECL|enumerator|COLUMN_ICON
 name|COLUMN_ICON
@@ -1549,6 +1549,23 @@ name|dest
 argument_list|)
 argument_list|,
 name|gimp_controllers_get_list
+argument_list|(
+name|list
+operator|->
+name|gimp
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_container_view_set_context
+argument_list|(
+name|GIMP_CONTAINER_VIEW
+argument_list|(
+name|list
+operator|->
+name|dest
+argument_list|)
+argument_list|,
+name|gimp_get_user_context
 argument_list|(
 name|list
 operator|->

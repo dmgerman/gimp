@@ -250,11 +250,6 @@ DECL|member|parent_instance
 name|GimpContainerTreeView
 name|parent_instance
 decl_stmt|;
-DECL|member|context
-name|GimpContext
-modifier|*
-name|context
-decl_stmt|;
 DECL|member|image
 name|GimpImage
 modifier|*
