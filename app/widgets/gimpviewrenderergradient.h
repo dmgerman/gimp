@@ -129,6 +129,10 @@ DECL|member|reverse
 name|gboolean
 name|reverse
 decl_stmt|;
+DECL|member|has_fg_bg_segments
+name|gboolean
+name|has_fg_bg_segments
+decl_stmt|;
 block|}
 struct|;
 end_struct
