@@ -59,6 +59,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpwidgets/gimpwidgets.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tools-types.h"
 end_include
 
@@ -1124,8 +1130,33 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"This tool has no options."
+literal|"This tool has\nno options."
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_label_set_justify
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
+name|GTK_JUSTIFY_CENTER
+argument_list|)
+expr_stmt|;
+name|gimp_label_set_attributes
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
+name|PANGO_ATTR_STYLE
+argument_list|,
+name|PANGO_STYLE_ITALIC
+argument_list|,
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
