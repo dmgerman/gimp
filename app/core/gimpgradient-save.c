@@ -145,7 +145,7 @@ return|return
 name|FALSE
 return|;
 block|}
-comment|/* File format is:    *    *   GIMP Gradient    *   Name: name    *   number_of_segments    *   left middle right r0 g0 b0 a0 r1 g1 b1 a1 type coloring    *   left middle right r0 g0 b0 a0 r1 g1 b1 a1 type coloring    *   ...    */
+comment|/* File format is:    *    *   GIMP Gradient    *   Name: name    *   number_of_segments    *   left middle right r0 g0 b0 a0 r1 g1 b1 a1 type coloring left_color_type    *   left middle right r0 g0 b0 a0 r1 g1 b1 a1 type coloring right_color_type    *   ...    */
 name|fprintf
 argument_list|(
 name|file
@@ -425,7 +425,7 @@ name|fprintf
 argument_list|(
 name|file
 argument_list|,
-literal|"%s %s %s %s %s %s %s %s %s %s %s %d %d\n"
+literal|"%s %s %s %s %s %s %s %s %s %s %s %d %d %d %d\n"
 argument_list|,
 name|buf
 index|[
@@ -442,6 +442,7 @@ index|[
 literal|2
 index|]
 argument_list|,
+comment|/* left, middle, right */
 name|buf
 index|[
 literal|3
@@ -462,6 +463,7 @@ index|[
 literal|6
 index|]
 argument_list|,
+comment|/* left color          */
 name|buf
 index|[
 literal|7
@@ -482,6 +484,7 @@ index|[
 literal|10
 index|]
 argument_list|,
+comment|/* right color         */
 operator|(
 name|gint
 operator|)
@@ -495,6 +498,20 @@ operator|)
 name|seg
 operator|->
 name|color
+argument_list|,
+operator|(
+name|gint
+operator|)
+name|seg
+operator|->
+name|left_color_type
+argument_list|,
+operator|(
+name|gint
+operator|)
+name|seg
+operator|->
+name|right_color_type
 argument_list|)
 expr_stmt|;
 block|}
