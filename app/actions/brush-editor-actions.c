@@ -195,10 +195,6 @@ argument_list|(
 name|user_data
 argument_list|)
 decl_stmt|;
-name|GimpContext
-modifier|*
-name|context
-decl_stmt|;
 name|GimpData
 modifier|*
 name|data
@@ -213,15 +209,6 @@ name|edit_active
 init|=
 name|FALSE
 decl_stmt|;
-name|context
-operator|=
-name|gimp_get_user_context
-argument_list|(
-name|group
-operator|->
-name|gimp
-argument_list|)
-expr_stmt|;
 name|data
 operator|=
 name|data_editor
