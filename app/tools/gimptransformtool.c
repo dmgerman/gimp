@@ -4474,6 +4474,13 @@ name|TileManager
 modifier|*
 name|new_tiles
 decl_stmt|;
+specifier|const
+name|gchar
+modifier|*
+name|message
+init|=
+name|NULL
+decl_stmt|;
 name|gboolean
 name|new_layer
 decl_stmt|;
@@ -4521,6 +4528,13 @@ operator|->
 name|image
 argument_list|)
 expr_stmt|;
+name|message
+operator|=
+name|_
+argument_list|(
+literal|"There is no layer to transform."
+argument_list|)
+expr_stmt|;
 break|break;
 case|case
 name|GIMP_TRANSFORM_TYPE_SELECTION
@@ -4536,6 +4550,13 @@ argument_list|(
 name|display
 operator|->
 name|image
+argument_list|)
+expr_stmt|;
+name|message
+operator|=
+name|_
+argument_list|(
+literal|"There is no selection to transform."
 argument_list|)
 expr_stmt|;
 break|break;
@@ -4555,6 +4576,13 @@ operator|->
 name|image
 argument_list|)
 expr_stmt|;
+name|message
+operator|=
+name|_
+argument_list|(
+literal|"There is no path to transform."
+argument_list|)
+expr_stmt|;
 break|break;
 block|}
 if|if
@@ -4562,7 +4590,25 @@ condition|(
 operator|!
 name|active_item
 condition|)
+block|{
+name|gimp_message
+argument_list|(
+name|display
+operator|->
+name|image
+operator|->
+name|gimp
+argument_list|,
+name|GIMP_PROGRESS
+argument_list|(
+name|display
+argument_list|)
+argument_list|,
+name|message
+argument_list|)
+expr_stmt|;
 return|return;
+block|}
 name|mask_empty
 operator|=
 name|gimp_channel_is_empty
