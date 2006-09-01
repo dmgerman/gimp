@@ -335,23 +335,12 @@ modifier|*
 name|renderer
 parameter_list|)
 block|{
-name|g_printerr
-argument_list|(
-literal|"%s: invalidating %s\n"
-argument_list|,
-name|G_STRFUNC
-argument_list|,
-name|gimp_object_get_name
-argument_list|(
-name|GIMP_OBJECT
-argument_list|(
-name|renderer
-operator|->
-name|viewable
-argument_list|)
-argument_list|)
-argument_list|)
-expr_stmt|;
+if|#
+directive|if
+literal|0
+block|g_printerr ("%s: invalidating %s\n", G_STRFUNC,               gimp_object_get_name (GIMP_OBJECT (renderer->viewable)));
+endif|#
+directive|endif
 name|gimp_view_renderer_invalidate
 argument_list|(
 name|renderer

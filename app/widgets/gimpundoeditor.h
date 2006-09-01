@@ -103,6 +103,11 @@ DECL|member|parent_instance
 name|GimpImageEditor
 name|parent_instance
 decl_stmt|;
+DECL|member|context
+name|GimpContext
+modifier|*
+name|context
+decl_stmt|;
 DECL|member|container
 name|GimpContainer
 modifier|*
