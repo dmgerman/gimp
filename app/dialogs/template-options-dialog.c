@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimptemplate.h"
 end_include
 
@@ -82,16 +88,16 @@ end_comment
 begin_function
 name|TemplateOptionsDialog
 modifier|*
-DECL|function|template_options_dialog_new (Gimp * gimp,GimpTemplate * template,GtkWidget * parent,const gchar * title,const gchar * role,const gchar * stock_id,const gchar * desc,const gchar * help_id)
+DECL|function|template_options_dialog_new (GimpTemplate * template,GimpContext * context,GtkWidget * parent,const gchar * title,const gchar * role,const gchar * stock_id,const gchar * desc,const gchar * help_id)
 name|template_options_dialog_new
 parameter_list|(
-name|Gimp
-modifier|*
-name|gimp
-parameter_list|,
 name|GimpTemplate
 modifier|*
 name|template
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|GtkWidget
 modifier|*
@@ -139,16 +145,6 @@ name|vbox
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|GIMP_IS_GIMP
-argument_list|(
-name|gimp
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
 name|template
 operator|==
 name|NULL
@@ -156,6 +152,16 @@ operator|||
 name|GIMP_IS_TEMPLATE
 argument_list|(
 name|template
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
 argument_list|)
 argument_list|,
 name|NULL
@@ -229,6 +235,8 @@ name|options
 operator|->
 name|gimp
 operator|=
+name|context
+operator|->
 name|gimp
 expr_stmt|;
 name|options
@@ -268,6 +276,8 @@ name|gimp_config_duplicate
 argument_list|(
 name|GIMP_CONFIG
 argument_list|(
+name|options
+operator|->
 name|gimp
 operator|->
 name|config
@@ -297,6 +307,8 @@ operator|=
 name|gimp_viewable_dialog_new
 argument_list|(
 name|viewable
+argument_list|,
+name|context
 argument_list|,
 name|title
 argument_list|,
@@ -406,6 +418,8 @@ name|gimp_template_editor_new
 argument_list|(
 name|template
 argument_list|,
+name|options
+operator|->
 name|gimp
 argument_list|,
 name|TRUE

@@ -718,12 +718,12 @@ name|layer
 argument_list|)
 argument_list|)
 argument_list|,
+name|layer
+argument_list|,
 name|action_data_get_context
 argument_list|(
 name|data
 argument_list|)
-argument_list|,
-name|layer
 argument_list|,
 name|widget
 argument_list|,
@@ -854,12 +854,12 @@ name|layer_options_dialog_new
 argument_list|(
 name|image
 argument_list|,
+name|NULL
+argument_list|,
 name|action_data_get_context
 argument_list|(
 name|data
 argument_list|)
-argument_list|,
-name|NULL
 argument_list|,
 name|widget
 argument_list|,
@@ -2089,6 +2089,11 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|,
+name|action_data_get_context
+argument_list|(
+name|data
+argument_list|)
+argument_list|,
 name|_
 argument_list|(
 literal|"Set Layer Boundary Size"
@@ -2269,6 +2274,11 @@ argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(
 name|layer
+argument_list|)
+argument_list|,
+name|action_data_get_context
+argument_list|(
+name|data
 argument_list|)
 argument_list|,
 name|_
@@ -2507,6 +2517,11 @@ operator|=
 name|layer_add_mask_dialog_new
 argument_list|(
 name|layer
+argument_list|,
+name|action_data_get_context
+argument_list|(
+name|data
+argument_list|)
 argument_list|,
 name|widget
 argument_list|,

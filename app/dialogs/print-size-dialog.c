@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -241,12 +247,16 @@ end_function_decl
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|print_size_dialog_new (GimpImage * image,const gchar * title,const gchar * role,GtkWidget * parent,GimpHelpFunc help_func,const gchar * help_id,GimpResolutionCallback callback,gpointer user_data)
+DECL|function|print_size_dialog_new (GimpImage * image,GimpContext * context,const gchar * title,const gchar * role,GtkWidget * parent,GimpHelpFunc help_func,const gchar * help_id,GimpResolutionCallback callback,gpointer user_data)
 name|print_size_dialog_new
 parameter_list|(
 name|GimpImage
 modifier|*
 name|image
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 specifier|const
 name|gchar
@@ -339,6 +349,20 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
+name|context
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
 name|callback
 operator|!=
 name|NULL
@@ -354,6 +378,8 @@ name|GIMP_VIEWABLE
 argument_list|(
 name|image
 argument_list|)
+argument_list|,
+name|context
 argument_list|,
 name|title
 argument_list|,

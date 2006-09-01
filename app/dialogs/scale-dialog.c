@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -166,12 +172,16 @@ end_function_decl
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|scale_dialog_new (GimpViewable * viewable,const gchar * title,const gchar * role,GtkWidget * parent,GimpHelpFunc help_func,const gchar * help_id,GimpUnit unit,GimpInterpolationType interpolation,GimpScaleCallback callback,gpointer user_data)
+DECL|function|scale_dialog_new (GimpViewable * viewable,GimpContext * context,const gchar * title,const gchar * role,GtkWidget * parent,GimpHelpFunc help_func,const gchar * help_id,GimpUnit unit,GimpInterpolationType interpolation,GimpScaleCallback callback,gpointer user_data)
 name|scale_dialog_new
 parameter_list|(
 name|GimpViewable
 modifier|*
 name|viewable
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 specifier|const
 name|gchar
@@ -260,6 +270,20 @@ argument_list|(
 name|GIMP_IS_VIEWABLE
 argument_list|(
 name|viewable
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|context
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
 argument_list|)
 argument_list|,
 name|NULL
@@ -371,6 +395,8 @@ operator|=
 name|gimp_viewable_dialog_new
 argument_list|(
 name|viewable
+argument_list|,
+name|context
 argument_list|,
 name|title
 argument_list|,

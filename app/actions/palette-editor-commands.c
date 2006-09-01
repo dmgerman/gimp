@@ -190,6 +190,10 @@ argument_list|(
 name|palette
 argument_list|)
 argument_list|,
+name|data_editor
+operator|->
+name|context
+argument_list|,
 name|_
 argument_list|(
 literal|"Edit Palette Color"
@@ -277,6 +281,10 @@ name|GIMP_VIEWABLE
 argument_list|(
 name|palette
 argument_list|)
+argument_list|,
+name|data_editor
+operator|->
+name|context
 argument_list|)
 expr_stmt|;
 name|gimp_color_dialog_set_color

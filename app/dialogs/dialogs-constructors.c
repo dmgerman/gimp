@@ -401,8 +401,6 @@ return|return
 name|image_new_dialog_new
 argument_list|(
 name|context
-operator|->
-name|gimp
 argument_list|)
 return|;
 block|}

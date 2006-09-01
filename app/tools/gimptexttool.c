@@ -3548,6 +3548,15 @@ operator|->
 name|layer
 argument_list|)
 argument_list|,
+name|GIMP_CONTEXT
+argument_list|(
+name|tool
+operator|->
+name|tool_info
+operator|->
+name|tool_options
+argument_list|)
+argument_list|,
 name|_
 argument_list|(
 literal|"Confirm Text Editing"

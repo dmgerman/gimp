@@ -114,7 +114,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c484d80108
+DECL|struct|__anon2a05a92b0108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -312,12 +312,16 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|convert_dialog_new (GimpImage * image,GtkWidget * parent,GimpProgress * progress)
+DECL|function|convert_dialog_new (GimpImage * image,GimpContext * context,GtkWidget * parent,GimpProgress * progress)
 name|convert_dialog_new
 parameter_list|(
 name|GimpImage
 modifier|*
 name|image
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|GtkWidget
 modifier|*
@@ -381,6 +385,20 @@ argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
 name|image
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|context
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
 argument_list|)
 argument_list|,
 name|NULL
@@ -471,6 +489,8 @@ name|GIMP_VIEWABLE
 argument_list|(
 name|image
 argument_list|)
+argument_list|,
+name|context
 argument_list|,
 name|_
 argument_list|(

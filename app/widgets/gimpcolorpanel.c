@@ -666,6 +666,8 @@ name|gimp_color_dialog_new
 argument_list|(
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|GIMP_COLOR_BUTTON
 argument_list|(
 name|button

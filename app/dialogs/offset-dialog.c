@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpdrawable.h"
 end_include
 
@@ -137,6 +143,11 @@ DECL|struct|_OffsetDialog
 struct|struct
 name|_OffsetDialog
 block|{
+DECL|member|context
+name|GimpContext
+modifier|*
+name|context
+decl_stmt|;
 DECL|member|dialog
 name|GtkWidget
 modifier|*
@@ -206,12 +217,16 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|offset_dialog_new (GimpDrawable * drawable,GtkWidget * parent)
+DECL|function|offset_dialog_new (GimpDrawable * drawable,GimpContext * context,GtkWidget * parent)
 name|offset_dialog_new
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|GtkWidget
 modifier|*
@@ -273,6 +288,16 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
 name|GTK_IS_WIDGET
 argument_list|(
 name|parent
@@ -289,6 +314,12 @@ name|OffsetDialog
 argument_list|,
 literal|1
 argument_list|)
+expr_stmt|;
+name|dialog
+operator|->
+name|context
+operator|=
+name|context
 expr_stmt|;
 name|dialog
 operator|->
@@ -375,6 +406,8 @@ name|GIMP_VIEWABLE
 argument_list|(
 name|drawable
 argument_list|)
+argument_list|,
+name|context
 argument_list|,
 name|_
 argument_list|(
@@ -1222,12 +1255,9 @@ name|gimp_drawable_offset
 argument_list|(
 name|drawable
 argument_list|,
-name|gimp_get_user_context
-argument_list|(
-name|image
+name|dialog
 operator|->
-name|gimp
-argument_list|)
+name|context
 argument_list|,
 name|dialog
 operator|->

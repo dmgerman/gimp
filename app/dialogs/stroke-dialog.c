@@ -178,12 +178,16 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|stroke_dialog_new (GimpItem * item,const gchar * title,const gchar * stock_id,const gchar * help_id,GtkWidget * parent)
+DECL|function|stroke_dialog_new (GimpItem * item,GimpContext * context,const gchar * title,const gchar * stock_id,const gchar * help_id,GtkWidget * parent)
 name|stroke_dialog_new
 parameter_list|(
 name|GimpItem
 modifier|*
 name|item
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 specifier|const
 name|gchar
@@ -205,10 +209,6 @@ modifier|*
 name|parent
 parameter_list|)
 block|{
-name|GimpContext
-modifier|*
-name|context
-decl_stmt|;
 name|GimpStrokeDesc
 modifier|*
 name|desc
@@ -261,6 +261,16 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
 name|stock_id
 operator|!=
 name|NULL
@@ -296,15 +306,6 @@ operator|=
 name|gimp_item_get_image
 argument_list|(
 name|item
-argument_list|)
-expr_stmt|;
-name|context
-operator|=
-name|gimp_get_user_context
-argument_list|(
-name|image
-operator|->
-name|gimp
 argument_list|)
 expr_stmt|;
 name|desc
@@ -357,6 +358,8 @@ name|GIMP_VIEWABLE
 argument_list|(
 name|item
 argument_list|)
+argument_list|,
+name|context
 argument_list|,
 name|title
 argument_list|,

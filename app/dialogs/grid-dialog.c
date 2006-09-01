@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -157,12 +163,16 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|grid_dialog_new (GimpImage * image,GtkWidget * parent)
+DECL|function|grid_dialog_new (GimpImage * image,GimpContext * context,GtkWidget * parent)
 name|grid_dialog_new
 parameter_list|(
 name|GimpImage
 modifier|*
 name|image
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|GtkWidget
 modifier|*
@@ -190,6 +200,20 @@ argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
 name|image
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|context
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
 argument_list|)
 argument_list|,
 name|NULL
@@ -237,6 +261,8 @@ name|GIMP_VIEWABLE
 argument_list|(
 name|image
 argument_list|)
+argument_list|,
+name|context
 argument_list|,
 name|_
 argument_list|(

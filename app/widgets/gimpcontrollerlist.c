@@ -162,7 +162,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29371aff0103
+DECL|enum|__anon28c390210103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -175,7 +175,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29371aff0203
+DECL|enum|__anon28c390210203
 block|{
 DECL|enumerator|COLUMN_ICON
 name|COLUMN_ICON
@@ -2662,6 +2662,9 @@ operator|->
 name|dest_info
 argument_list|)
 argument_list|,
+name|NULL
+argument_list|,
+comment|/* FIXME */
 name|_
 argument_list|(
 literal|"Configure Controller"

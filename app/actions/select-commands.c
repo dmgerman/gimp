@@ -1202,6 +1202,11 @@ name|image
 argument_list|)
 argument_list|)
 argument_list|,
+name|action_data_get_context
+argument_list|(
+name|data
+argument_list|)
+argument_list|,
 name|_
 argument_list|(
 literal|"Stroke Selection"

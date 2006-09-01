@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -70,7 +76,7 @@ end_comment
 begin_function
 name|VectorsOptionsDialog
 modifier|*
-DECL|function|vectors_options_dialog_new (GimpImage * image,GimpVectors * vectors,GtkWidget * parent,const gchar * vectors_name,const gchar * title,const gchar * role,const gchar * stock_id,const gchar * desc,const gchar * help_id)
+DECL|function|vectors_options_dialog_new (GimpImage * image,GimpVectors * vectors,GimpContext * context,GtkWidget * parent,const gchar * vectors_name,const gchar * title,const gchar * role,const gchar * stock_id,const gchar * desc,const gchar * help_id)
 name|vectors_options_dialog_new
 parameter_list|(
 name|GimpImage
@@ -80,6 +86,10 @@ parameter_list|,
 name|GimpVectors
 modifier|*
 name|vectors
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|GtkWidget
 modifier|*
@@ -155,6 +165,20 @@ operator|||
 name|GIMP_IS_VECTORS
 argument_list|(
 name|vectors
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|context
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
 argument_list|)
 argument_list|,
 name|NULL
@@ -262,6 +286,8 @@ operator|=
 name|gimp_viewable_dialog_new
 argument_list|(
 name|viewable
+argument_list|,
+name|context
 argument_list|,
 name|title
 argument_list|,

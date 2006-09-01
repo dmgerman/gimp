@@ -21,9 +21,9 @@ name|GtkWidget
 modifier|*
 name|image_new_dialog_new
 parameter_list|(
-name|Gimp
+name|GimpContext
 modifier|*
-name|gimp
+name|context
 parameter_list|)
 function_decl|;
 end_function_decl

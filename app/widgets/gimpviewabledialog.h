@@ -107,6 +107,11 @@ DECL|member|parent_instance
 name|GimpDialog
 name|parent_instance
 decl_stmt|;
+DECL|member|context
+name|GimpContext
+modifier|*
+name|context
+decl_stmt|;
 DECL|member|icon
 name|GtkWidget
 modifier|*
@@ -163,6 +168,10 @@ name|GimpViewable
 operator|*
 name|viewable
 argument_list|,
+name|GimpContext
+operator|*
+name|context
+argument_list|,
 specifier|const
 name|gchar
 operator|*
@@ -212,6 +221,10 @@ parameter_list|,
 name|GimpViewable
 modifier|*
 name|viewable
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -360,6 +360,8 @@ operator|->
 name|image
 argument_list|)
 argument_list|,
+name|context
+argument_list|,
 name|Q_
 argument_list|(
 literal|"dialog-title|Scale Image"

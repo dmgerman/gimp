@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimplayer.h"
 end_include
 
@@ -64,12 +70,16 @@ end_comment
 begin_function
 name|DesaturateDialog
 modifier|*
-DECL|function|desaturate_dialog_new (GimpDrawable * drawable,GtkWidget * parent,GimpDesaturateMode mode)
+DECL|function|desaturate_dialog_new (GimpDrawable * drawable,GimpContext * context,GtkWidget * parent,GimpDesaturateMode mode)
 name|desaturate_dialog_new
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|GtkWidget
 modifier|*
@@ -100,6 +110,20 @@ argument_list|(
 name|GIMP_IS_DRAWABLE
 argument_list|(
 name|drawable
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|context
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
 argument_list|)
 argument_list|,
 name|NULL
@@ -146,6 +170,8 @@ name|GIMP_VIEWABLE
 argument_list|(
 name|drawable
 argument_list|)
+argument_list|,
+name|context
 argument_list|,
 name|_
 argument_list|(

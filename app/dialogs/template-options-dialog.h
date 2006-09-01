@@ -59,13 +59,13 @@ name|TemplateOptionsDialog
 modifier|*
 name|template_options_dialog_new
 parameter_list|(
-name|Gimp
-modifier|*
-name|gimp
-parameter_list|,
 name|GimpTemplate
 modifier|*
 name|template
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|GtkWidget
 modifier|*

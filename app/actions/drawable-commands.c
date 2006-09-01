@@ -228,6 +228,11 @@ name|desaturate_dialog_new
 argument_list|(
 name|drawable
 argument_list|,
+name|action_data_get_context
+argument_list|(
+name|data
+argument_list|)
+argument_list|,
 name|widget
 argument_list|,
 name|desaturate_mode
@@ -508,6 +513,11 @@ operator|=
 name|offset_dialog_new
 argument_list|(
 name|drawable
+argument_list|,
+name|action_data_get_context
+argument_list|(
+name|data
+argument_list|)
 argument_list|,
 name|widget
 argument_list|)

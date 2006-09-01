@@ -7171,6 +7171,18 @@ operator|->
 name|vectors
 argument_list|)
 argument_list|,
+name|GIMP_CONTEXT
+argument_list|(
+name|GIMP_TOOL
+argument_list|(
+name|vector_tool
+argument_list|)
+operator|->
+name|tool_info
+operator|->
+name|tool_options
+argument_list|)
+argument_list|,
 name|_
 argument_list|(
 literal|"Stroke Path"

@@ -6885,6 +6885,11 @@ operator|->
 name|image
 argument_list|)
 argument_list|)
+argument_list|,
+name|GIMP_CONTEXT
+argument_list|(
+name|options
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_sensitive

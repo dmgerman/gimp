@@ -529,6 +529,11 @@ name|image
 argument_list|,
 name|vectors
 argument_list|,
+name|action_data_get_context
+argument_list|(
+name|data
+argument_list|)
+argument_list|,
 name|widget
 argument_list|,
 name|gimp_object_get_name
@@ -628,6 +633,11 @@ argument_list|(
 name|image
 argument_list|,
 name|NULL
+argument_list|,
+name|action_data_get_context
+argument_list|(
+name|data
+argument_list|)
 argument_list|,
 name|widget
 argument_list|,
@@ -1409,6 +1419,11 @@ argument_list|(
 name|GIMP_ITEM
 argument_list|(
 name|vectors
+argument_list|)
+argument_list|,
+name|action_data_get_context
+argument_list|(
+name|data
 argument_list|)
 argument_list|,
 name|_

@@ -96,7 +96,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d3f96e0103
+DECL|enum|__anon2bc753330103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -109,7 +109,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d3f96e0203
+DECL|enum|__anon2bc753330203
 block|{
 DECL|enumerator|COLUMN_EVENT
 name|COLUMN_EVENT
@@ -2919,6 +2919,9 @@ operator|->
 name|info
 argument_list|)
 argument_list|,
+name|NULL
+argument_list|,
+comment|/* FIXME */
 name|_
 argument_list|(
 literal|"Select Controller Event Action"

@@ -406,11 +406,9 @@ name|options
 operator|=
 name|template_options_dialog_new
 argument_list|(
-name|context
-operator|->
-name|gimp
-argument_list|,
 name|NULL
+argument_list|,
+name|context
 argument_list|,
 name|GTK_WIDGET
 argument_list|(
@@ -670,11 +668,9 @@ name|options
 operator|=
 name|template_options_dialog_new
 argument_list|(
-name|context
-operator|->
-name|gimp
-argument_list|,
 name|template
+argument_list|,
+name|context
 argument_list|,
 name|GTK_WIDGET
 argument_list|(

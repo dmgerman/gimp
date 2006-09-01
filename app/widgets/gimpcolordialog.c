@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpmarshal.h"
 end_include
 
@@ -87,7 +93,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf5f3530103
+DECL|enum|__anon2b826b340103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -973,12 +979,16 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_color_dialog_new (GimpViewable * viewable,const gchar * title,const gchar * stock_id,const gchar * desc,GtkWidget * parent,GimpDialogFactory * dialog_factory,const gchar * dialog_identifier,const GimpRGB * color,gboolean wants_updates,gboolean show_alpha)
+DECL|function|gimp_color_dialog_new (GimpViewable * viewable,GimpContext * context,const gchar * title,const gchar * stock_id,const gchar * desc,GtkWidget * parent,GimpDialogFactory * dialog_factory,const gchar * dialog_identifier,const GimpRGB * color,gboolean wants_updates,gboolean show_alpha)
 name|gimp_color_dialog_new
 parameter_list|(
 name|GimpViewable
 modifier|*
 name|viewable
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 specifier|const
 name|gchar
@@ -1038,6 +1048,20 @@ operator|||
 name|GIMP_IS_VIEWABLE
 argument_list|(
 name|viewable
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|context
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
 argument_list|)
 argument_list|,
 name|NULL
@@ -1146,6 +1170,8 @@ name|dialog
 argument_list|)
 argument_list|,
 name|viewable
+argument_list|,
+name|context
 argument_list|)
 expr_stmt|;
 else|else

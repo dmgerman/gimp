@@ -66,6 +66,10 @@ name|GimpLayer
 modifier|*
 name|layer
 parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 name|GtkWidget
 modifier|*
 name|parent

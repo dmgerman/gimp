@@ -1284,6 +1284,13 @@ name|GIMP_VIEWABLE
 argument_list|(
 name|drawable
 argument_list|)
+argument_list|,
+name|GIMP_CONTEXT
+argument_list|(
+name|tool_info
+operator|->
+name|tool_options
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

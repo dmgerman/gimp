@@ -497,6 +497,8 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|GTK_WIDGET
 argument_list|(
 name|editor

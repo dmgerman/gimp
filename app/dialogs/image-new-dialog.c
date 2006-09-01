@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -134,7 +140,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0109e70108
+DECL|struct|__anon274c4bab0108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -156,10 +162,10 @@ name|GtkWidget
 modifier|*
 name|editor
 decl_stmt|;
-DECL|member|gimp
-name|Gimp
+DECL|member|context
+name|GimpContext
 modifier|*
-name|gimp
+name|context
 decl_stmt|;
 DECL|member|template
 name|GimpTemplate
@@ -249,12 +255,12 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|image_new_dialog_new (Gimp * gimp)
+DECL|function|image_new_dialog_new (GimpContext * context)
 name|image_new_dialog_new
 parameter_list|(
-name|Gimp
+name|GimpContext
 modifier|*
-name|gimp
+name|context
 parameter_list|)
 block|{
 name|ImageNewDialog
@@ -275,9 +281,9 @@ name|entry
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|GIMP_IS_GIMP
+name|GIMP_IS_CONTEXT
 argument_list|(
-name|gimp
+name|context
 argument_list|)
 argument_list|,
 name|NULL
@@ -294,9 +300,9 @@ argument_list|)
 expr_stmt|;
 name|dialog
 operator|->
-name|gimp
+name|context
 operator|=
-name|gimp
+name|context
 expr_stmt|;
 name|dialog
 operator|->
@@ -510,6 +516,8 @@ name|GIMP_TYPE_CONTAINER_COMBO_BOX
 argument_list|,
 literal|"container"
 argument_list|,
+name|context
+operator|->
 name|gimp
 operator|->
 name|templates
@@ -589,6 +597,8 @@ name|dialog
 operator|->
 name|template
 argument_list|,
+name|context
+operator|->
 name|gimp
 argument_list|,
 name|FALSE
@@ -755,6 +765,8 @@ name|gimp_image_new_get_last_template
 argument_list|(
 name|dialog
 operator|->
+name|context
+operator|->
 name|gimp
 argument_list|,
 name|image
@@ -822,6 +834,8 @@ name|G_OBJECT
 argument_list|(
 name|dialog
 operator|->
+name|context
+operator|->
 name|gimp
 operator|->
 name|config
@@ -866,6 +880,8 @@ operator|>
 name|GIMP_GUI_CONFIG
 argument_list|(
 name|dialog
+operator|->
+name|context
 operator|->
 name|gimp
 operator|->
@@ -1209,6 +1225,8 @@ name|GIMP_GUI_CONFIG
 argument_list|(
 name|data
 operator|->
+name|context
+operator|->
 name|gimp
 operator|->
 name|config
@@ -1297,6 +1315,8 @@ name|gimp
 operator|=
 name|dialog
 operator|->
+name|context
+operator|->
 name|gimp
 expr_stmt|;
 name|gtk_widget_destroy
@@ -1312,10 +1332,9 @@ name|gimp
 argument_list|,
 name|template
 argument_list|,
-name|gimp_get_user_context
-argument_list|(
-name|gimp
-argument_list|)
+name|dialog
+operator|->
+name|context
 argument_list|)
 expr_stmt|;
 name|gimp_image_new_set_last_template

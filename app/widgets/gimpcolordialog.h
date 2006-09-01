@@ -182,6 +182,10 @@ name|GimpViewable
 modifier|*
 name|viewable
 parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*

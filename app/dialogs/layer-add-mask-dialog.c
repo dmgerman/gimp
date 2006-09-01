@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -127,12 +133,16 @@ end_comment
 begin_function
 name|LayerAddMaskDialog
 modifier|*
-DECL|function|layer_add_mask_dialog_new (GimpLayer * layer,GtkWidget * parent,GimpAddMaskType add_mask_type,gboolean invert)
+DECL|function|layer_add_mask_dialog_new (GimpLayer * layer,GimpContext * context,GtkWidget * parent,GimpAddMaskType add_mask_type,gboolean invert)
 name|layer_add_mask_dialog_new
 parameter_list|(
 name|GimpLayer
 modifier|*
 name|layer
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|GtkWidget
 modifier|*
@@ -189,6 +199,20 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|context
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|dialog
 operator|=
 name|g_new0
@@ -226,6 +250,8 @@ name|GIMP_VIEWABLE
 argument_list|(
 name|layer
 argument_list|)
+argument_list|,
+name|context
 argument_list|,
 name|_
 argument_list|(
@@ -419,7 +445,7 @@ name|image
 operator|->
 name|channels
 argument_list|,
-name|NULL
+name|context
 argument_list|,
 name|GIMP_VIEW_SIZE_SMALL
 argument_list|,

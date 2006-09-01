@@ -78,13 +78,13 @@ name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-name|GimpContext
-modifier|*
-name|context
-parameter_list|,
 name|GimpChannel
 modifier|*
 name|channel
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|GtkWidget
 modifier|*
