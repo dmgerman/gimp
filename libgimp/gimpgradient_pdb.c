@@ -875,7 +875,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_segment_set_left_color:  * @name: The gradient name.  * @segment: The index of the segment within the gradient.  * @color: The color to set.  * @opacity: The opacity to set for the endpoint.  *  * Retrieves the left endpoint color of the specified segment  *  * This procedure retrieves the left endpoint color of the specified  * segment of the specified gradient.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_gradient_segment_set_left_color:  * @name: The gradient name.  * @segment: The index of the segment within the gradient.  * @color: The color to set.  * @opacity: The opacity to set for the endpoint.  *  * Sets the left endpoint color of the specified segment  *  * This procedure sets the left endpoint color of the specified segment  * of the specified gradient.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function
@@ -1086,7 +1086,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_segment_set_right_color:  * @name: The gradient name.  * @segment: The index of the segment within the gradient.  * @color: The color to set.  * @opacity: The opacity to set for the endpoint.  *  * Retrieves the right endpoint color of the specified segment  *  * This procedure retrieves the right endpoint color of the specified  * segment of the specified gradient.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_gradient_segment_set_right_color:  * @name: The gradient name.  * @segment: The index of the segment within the gradient.  * @color: The color to set.  * @opacity: The opacity to set for the endpoint.  *  * Sets the right endpoint color of the specified segment  *  * This procedure sets the right endpoint color of the specified  * segment of the specified gradient.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function

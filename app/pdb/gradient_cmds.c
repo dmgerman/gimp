@@ -6618,9 +6618,9 @@ name|procedure
 argument_list|,
 literal|"gimp-gradient-segment-set-left-color"
 argument_list|,
-literal|"Retrieves the left endpoint color of the specified segment"
+literal|"Sets the left endpoint color of the specified segment"
 argument_list|,
-literal|"This procedure retrieves the left endpoint color of the specified segment of the specified gradient."
+literal|"This procedure sets the left endpoint color of the specified segment of the specified gradient."
 argument_list|,
 literal|"Shlomi Fish<shlomif@iglu.org.il>"
 argument_list|,
@@ -6889,9 +6889,9 @@ name|procedure
 argument_list|,
 literal|"gimp-gradient-segment-set-right-color"
 argument_list|,
-literal|"Retrieves the right endpoint color of the specified segment"
+literal|"Sets the right endpoint color of the specified segment"
 argument_list|,
-literal|"This procedure retrieves the right endpoint color of the specified segment of the specified gradient."
+literal|"This procedure sets the right endpoint color of the specified segment of the specified gradient."
 argument_list|,
 literal|"Shlomi Fish<shlomif@iglu.org.il>"
 argument_list|,
