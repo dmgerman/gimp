@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_CLONE_H__
+name|__GIMP_SOURCE_CORE_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_CLONE_H__
+DECL|macro|__GIMP_SOURCE_CORE_H__
 define|#
 directive|define
-name|__GIMP_CLONE_H__
+name|__GIMP_SOURCE_CORE_H__
 end_define
 
 begin_include
@@ -23,90 +23,90 @@ file|"gimpbrushcore.h"
 end_include
 
 begin_define
-DECL|macro|GIMP_TYPE_CLONE
+DECL|macro|GIMP_TYPE_SOURCE_CORE
 define|#
 directive|define
-name|GIMP_TYPE_CLONE
-value|(gimp_clone_get_type ())
+name|GIMP_TYPE_SOURCE_CORE
+value|(gimp_source_core_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_CLONE (obj)
+DECL|macro|GIMP_SOURCE_CORE (obj)
 define|#
 directive|define
-name|GIMP_CLONE
+name|GIMP_SOURCE_CORE
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_CLONE, GimpClone))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_SOURCE_CORE, GimpSourceCore))
 end_define
 
 begin_define
-DECL|macro|GIMP_CLONE_CLASS (klass)
+DECL|macro|GIMP_SOURCE_CORE_CLASS (klass)
 define|#
 directive|define
-name|GIMP_CLONE_CLASS
+name|GIMP_SOURCE_CORE_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_CLONE, GimpCloneClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_SOURCE_CORE, GimpSourceCoreClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_CLONE (obj)
+DECL|macro|GIMP_IS_SOURCE_CORE (obj)
 define|#
 directive|define
-name|GIMP_IS_CLONE
+name|GIMP_IS_SOURCE_CORE
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_CLONE))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_SOURCE_CORE))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_CLONE_CLASS (klass)
+DECL|macro|GIMP_IS_SOURCE_CORE_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_CLONE_CLASS
+name|GIMP_IS_SOURCE_CORE_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_CLONE))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_SOURCE_CORE))
 end_define
 
 begin_define
-DECL|macro|GIMP_CLONE_GET_CLASS (obj)
+DECL|macro|GIMP_SOURCE_CORE_GET_CLASS (obj)
 define|#
 directive|define
-name|GIMP_CLONE_GET_CLASS
+name|GIMP_SOURCE_CORE_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_CLONE, GimpCloneClass))
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_SOURCE_CORE, GimpSourceCoreClass))
 end_define
 
 begin_typedef
-DECL|typedef|GimpClone
+DECL|typedef|GimpSourceCore
 typedef|typedef
 name|struct
-name|_GimpClone
-name|GimpClone
+name|_GimpSourceCore
+name|GimpSourceCore
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpCloneClass
+DECL|typedef|GimpSourceCoreClass
 typedef|typedef
 name|struct
-name|_GimpCloneClass
-name|GimpCloneClass
+name|_GimpSourceCoreClass
+name|GimpSourceCoreClass
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpClone
+DECL|struct|_GimpSourceCore
 struct|struct
-name|_GimpClone
+name|_GimpSourceCore
 block|{
 DECL|member|parent_instance
 name|GimpBrushCore
@@ -154,21 +154,41 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|_GimpCloneClass
+DECL|struct|_GimpSourceCoreClass
 struct|struct
-name|_GimpCloneClass
+name|_GimpSourceCoreClass
 block|{
 DECL|member|parent_class
 name|GimpBrushCoreClass
 name|parent_class
 decl_stmt|;
+DECL|member|motion
+name|void
+function_decl|(
+modifier|*
+name|motion
+function_decl|)
+parameter_list|(
+name|GimpSourceCore
+modifier|*
+name|source_core
+parameter_list|,
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|,
+name|GimpPaintOptions
+modifier|*
+name|paint_options
+parameter_list|)
+function_decl|;
 block|}
 struct|;
 end_struct
 
 begin_function_decl
 name|void
-name|gimp_clone_register
+name|gimp_source_core_register
 parameter_list|(
 name|Gimp
 modifier|*
@@ -182,7 +202,7 @@ end_function_decl
 
 begin_decl_stmt
 name|GType
-name|gimp_clone_get_type
+name|gimp_source_core_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -196,7 +216,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMP_CLONE_H__  */
+comment|/*  __GIMP_SOURCE_CORE_H__  */
 end_comment
 
 end_unit

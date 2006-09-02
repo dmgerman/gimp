@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_CLONE_OPTIONS_H__
+name|__GIMP_SOURCE_OPTIONS_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_CLONE_OPTIONS_H__
+DECL|macro|__GIMP_SOURCE_OPTIONS_H__
 define|#
 directive|define
-name|__GIMP_CLONE_OPTIONS_H__
+name|__GIMP_SOURCE_OPTIONS_H__
 end_define
 
 begin_include
@@ -23,101 +23,97 @@ file|"gimppaintoptions.h"
 end_include
 
 begin_define
-DECL|macro|GIMP_TYPE_CLONE_OPTIONS
+DECL|macro|GIMP_TYPE_SOURCE_OPTIONS
 define|#
 directive|define
-name|GIMP_TYPE_CLONE_OPTIONS
-value|(gimp_clone_options_get_type ())
+name|GIMP_TYPE_SOURCE_OPTIONS
+value|(gimp_source_options_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_CLONE_OPTIONS (obj)
+DECL|macro|GIMP_SOURCE_OPTIONS (obj)
 define|#
 directive|define
-name|GIMP_CLONE_OPTIONS
+name|GIMP_SOURCE_OPTIONS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_CLONE_OPTIONS, GimpCloneOptions))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_SOURCE_OPTIONS, GimpSourceOptions))
 end_define
 
 begin_define
-DECL|macro|GIMP_CLONE_OPTIONS_CLASS (klass)
+DECL|macro|GIMP_SOURCE_OPTIONS_CLASS (klass)
 define|#
 directive|define
-name|GIMP_CLONE_OPTIONS_CLASS
+name|GIMP_SOURCE_OPTIONS_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_CLONE_OPTIONS, GimpCloneOptionsClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_SOURCE_OPTIONS, GimpSourceOptionsClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_CLONE_OPTIONS (obj)
+DECL|macro|GIMP_IS_SOURCE_OPTIONS (obj)
 define|#
 directive|define
-name|GIMP_IS_CLONE_OPTIONS
+name|GIMP_IS_SOURCE_OPTIONS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_CLONE_OPTIONS))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_SOURCE_OPTIONS))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_CLONE_OPTIONS_CLASS (klass)
+DECL|macro|GIMP_IS_SOURCE_OPTIONS_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_CLONE_OPTIONS_CLASS
+name|GIMP_IS_SOURCE_OPTIONS_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_CLONE_OPTIONS))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_SOURCE_OPTIONS))
 end_define
 
 begin_define
-DECL|macro|GIMP_CLONE_OPTIONS_GET_CLASS (obj)
+DECL|macro|GIMP_SOURCE_OPTIONS_GET_CLASS (obj)
 define|#
 directive|define
-name|GIMP_CLONE_OPTIONS_GET_CLASS
+name|GIMP_SOURCE_OPTIONS_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_CLONE_OPTIONS, GimpCloneOptionsClass))
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_SOURCE_OPTIONS, GimpSourceOptionsClass))
 end_define
 
 begin_typedef
-DECL|typedef|GimpCloneOptions
+DECL|typedef|GimpSourceOptions
 typedef|typedef
 name|struct
-name|_GimpCloneOptions
-name|GimpCloneOptions
+name|_GimpSourceOptions
+name|GimpSourceOptions
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpCloneOptionsClass
+DECL|typedef|GimpSourceOptionsClass
 typedef|typedef
 name|struct
-name|_GimpPaintOptionsClass
-name|GimpCloneOptionsClass
+name|_GimpSourceOptionsClass
+name|GimpSourceOptionsClass
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpCloneOptions
+DECL|struct|_GimpSourceOptions
 struct|struct
-name|_GimpCloneOptions
+name|_GimpSourceOptions
 block|{
-DECL|member|paint_options
+DECL|member|parent_instance
 name|GimpPaintOptions
-name|paint_options
-decl_stmt|;
-DECL|member|clone_type
-name|GimpCloneType
-name|clone_type
+name|parent_instance
 decl_stmt|;
 DECL|member|align_mode
-name|GimpCloneAlignMode
+name|GimpSourceAlignMode
 name|align_mode
 decl_stmt|;
 DECL|member|sample_merged
@@ -128,9 +124,22 @@ block|}
 struct|;
 end_struct
 
+begin_struct
+DECL|struct|_GimpSourceOptionsClass
+struct|struct
+name|_GimpSourceOptionsClass
+block|{
+DECL|member|parent_class
+name|GimpPaintOptionsClass
+name|parent_class
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
 begin_decl_stmt
 name|GType
-name|gimp_clone_options_get_type
+name|gimp_source_options_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -144,7 +153,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMP_CLONE_OPTIONS_H__  */
+comment|/*  __GIMP_SOURCE_OPTIONS_H__  */
 end_comment
 
 end_unit

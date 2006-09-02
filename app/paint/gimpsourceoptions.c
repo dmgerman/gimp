@@ -30,34 +30,15 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpcloneoptions.h"
+file|"gimpsourceoptions.h"
 end_include
-
-begin_define
-DECL|macro|CLONE_DEFAULT_TYPE
-define|#
-directive|define
-name|CLONE_DEFAULT_TYPE
-value|GIMP_IMAGE_CLONE
-end_define
-
-begin_define
-DECL|macro|CLONE_DEFAULT_ALIGN_MODE
-define|#
-directive|define
-name|CLONE_DEFAULT_ALIGN_MODE
-value|GIMP_CLONE_ALIGN_NO
-end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c28c620103
+DECL|enum|__anon28a4b4da0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
-block|,
-DECL|enumerator|PROP_CLONE_TYPE
-name|PROP_CLONE_TYPE
 block|,
 DECL|enumerator|PROP_ALIGN_MODE
 name|PROP_ALIGN_MODE
@@ -71,7 +52,7 @@ end_enum
 begin_function_decl
 specifier|static
 name|void
-name|gimp_clone_options_set_property
+name|gimp_source_options_set_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -95,7 +76,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_clone_options_get_property
+name|gimp_source_options_get_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -116,12 +97,12 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpCloneOptions,gimp_clone_options,GIMP_TYPE_PAINT_OPTIONS)
+DECL|function|G_DEFINE_TYPE (GimpSourceOptions,gimp_source_options,GIMP_TYPE_PAINT_OPTIONS)
 name|G_DEFINE_TYPE
 argument_list|(
-argument|GimpCloneOptions
+argument|GimpSourceOptions
 argument_list|,
-argument|gimp_clone_options
+argument|gimp_source_options
 argument_list|,
 argument|GIMP_TYPE_PAINT_OPTIONS
 argument_list|)
@@ -130,9 +111,9 @@ end_macro
 begin_function
 specifier|static
 name|void
-name|gimp_clone_options_class_init
+name|gimp_source_options_class_init
 parameter_list|(
-name|GimpCloneOptionsClass
+name|GimpSourceOptionsClass
 modifier|*
 name|klass
 parameter_list|)
@@ -150,30 +131,13 @@ name|object_class
 operator|->
 name|set_property
 operator|=
-name|gimp_clone_options_set_property
+name|gimp_source_options_set_property
 expr_stmt|;
 name|object_class
 operator|->
 name|get_property
 operator|=
-name|gimp_clone_options_get_property
-expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_ENUM
-argument_list|(
-name|object_class
-argument_list|,
-name|PROP_CLONE_TYPE
-argument_list|,
-literal|"clone-type"
-argument_list|,
-name|NULL
-argument_list|,
-name|GIMP_TYPE_CLONE_TYPE
-argument_list|,
-name|CLONE_DEFAULT_TYPE
-argument_list|,
-name|GIMP_PARAM_STATIC_STRINGS
-argument_list|)
+name|gimp_source_options_get_property
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_ENUM
 argument_list|(
@@ -185,9 +149,9 @@ literal|"align-mode"
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_TYPE_CLONE_ALIGN_MODE
+name|GIMP_TYPE_SOURCE_ALIGN_MODE
 argument_list|,
-name|CLONE_DEFAULT_ALIGN_MODE
+name|GIMP_SOURCE_ALIGN_NO
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
@@ -213,10 +177,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_clone_options_init (GimpCloneOptions * options)
-name|gimp_clone_options_init
+DECL|function|gimp_source_options_init (GimpSourceOptions * options)
+name|gimp_source_options_init
 parameter_list|(
-name|GimpCloneOptions
+name|GimpSourceOptions
 modifier|*
 name|options
 parameter_list|)
@@ -226,8 +190,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_clone_options_set_property (GObject * object,guint property_id,const GValue * value,GParamSpec * pspec)
-name|gimp_clone_options_set_property
+DECL|function|gimp_source_options_set_property (GObject * object,guint property_id,const GValue * value,GParamSpec * pspec)
+name|gimp_source_options_set_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -246,11 +210,11 @@ modifier|*
 name|pspec
 parameter_list|)
 block|{
-name|GimpCloneOptions
+name|GimpSourceOptions
 modifier|*
 name|options
 init|=
-name|GIMP_CLONE_OPTIONS
+name|GIMP_SOURCE_OPTIONS
 argument_list|(
 name|object
 argument_list|)
@@ -260,19 +224,6 @@ condition|(
 name|property_id
 condition|)
 block|{
-case|case
-name|PROP_CLONE_TYPE
-case|:
-name|options
-operator|->
-name|clone_type
-operator|=
-name|g_value_get_enum
-argument_list|(
-name|value
-argument_list|)
-expr_stmt|;
-break|break;
 case|case
 name|PROP_ALIGN_MODE
 case|:
@@ -317,8 +268,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_clone_options_get_property (GObject * object,guint property_id,GValue * value,GParamSpec * pspec)
-name|gimp_clone_options_get_property
+DECL|function|gimp_source_options_get_property (GObject * object,guint property_id,GValue * value,GParamSpec * pspec)
+name|gimp_source_options_get_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -336,11 +287,11 @@ modifier|*
 name|pspec
 parameter_list|)
 block|{
-name|GimpCloneOptions
+name|GimpSourceOptions
 modifier|*
 name|options
 init|=
-name|GIMP_CLONE_OPTIONS
+name|GIMP_SOURCE_OPTIONS
 argument_list|(
 name|object
 argument_list|)
@@ -350,19 +301,6 @@ condition|(
 name|property_id
 condition|)
 block|{
-case|case
-name|PROP_CLONE_TYPE
-case|:
-name|g_value_set_enum
-argument_list|(
-name|value
-argument_list|,
-name|options
-operator|->
-name|clone_type
-argument_list|)
-expr_stmt|;
-break|break;
 case|case
 name|PROP_ALIGN_MODE
 case|:

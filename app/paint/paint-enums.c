@@ -146,8 +146,8 @@ end_function
 
 begin_function
 name|GType
-DECL|function|gimp_clone_align_mode_get_type (void)
-name|gimp_clone_align_mode_get_type
+DECL|function|gimp_source_align_mode_get_type (void)
+name|gimp_source_align_mode_get_type
 parameter_list|(
 name|void
 parameter_list|)
@@ -160,33 +160,33 @@ index|[]
 init|=
 block|{
 block|{
-name|GIMP_CLONE_ALIGN_NO
+name|GIMP_SOURCE_ALIGN_NO
 block|,
-literal|"GIMP_CLONE_ALIGN_NO"
+literal|"GIMP_SOURCE_ALIGN_NO"
 block|,
 literal|"no"
 block|}
 block|,
 block|{
-name|GIMP_CLONE_ALIGN_YES
+name|GIMP_SOURCE_ALIGN_YES
 block|,
-literal|"GIMP_CLONE_ALIGN_YES"
+literal|"GIMP_SOURCE_ALIGN_YES"
 block|,
 literal|"yes"
 block|}
 block|,
 block|{
-name|GIMP_CLONE_ALIGN_REGISTERED
+name|GIMP_SOURCE_ALIGN_REGISTERED
 block|,
-literal|"GIMP_CLONE_ALIGN_REGISTERED"
+literal|"GIMP_SOURCE_ALIGN_REGISTERED"
 block|,
 literal|"registered"
 block|}
 block|,
 block|{
-name|GIMP_CLONE_ALIGN_FIXED
+name|GIMP_SOURCE_ALIGN_FIXED
 block|,
-literal|"GIMP_CLONE_ALIGN_FIXED"
+literal|"GIMP_SOURCE_ALIGN_FIXED"
 block|,
 literal|"fixed"
 block|}
@@ -208,7 +208,7 @@ index|[]
 init|=
 block|{
 block|{
-name|GIMP_CLONE_ALIGN_NO
+name|GIMP_SOURCE_ALIGN_NO
 block|,
 name|N_
 argument_list|(
@@ -219,7 +219,7 @@ name|NULL
 block|}
 block|,
 block|{
-name|GIMP_CLONE_ALIGN_YES
+name|GIMP_SOURCE_ALIGN_YES
 block|,
 name|N_
 argument_list|(
@@ -230,7 +230,7 @@ name|NULL
 block|}
 block|,
 block|{
-name|GIMP_CLONE_ALIGN_REGISTERED
+name|GIMP_SOURCE_ALIGN_REGISTERED
 block|,
 name|N_
 argument_list|(
@@ -241,7 +241,7 @@ name|NULL
 block|}
 block|,
 block|{
-name|GIMP_CLONE_ALIGN_FIXED
+name|GIMP_SOURCE_ALIGN_FIXED
 block|,
 name|N_
 argument_list|(
@@ -276,7 +276,7 @@ name|type
 operator|=
 name|g_enum_register_static
 argument_list|(
-literal|"GimpCloneAlignMode"
+literal|"GimpSourceAlignMode"
 argument_list|,
 name|values
 argument_list|)
