@@ -1353,7 +1353,7 @@ operator|=
 name|blob_union
 expr_stmt|;
 block|}
-comment|/* Get the the buffer */
+comment|/* Get the buffer */
 name|ink
 operator|->
 name|cur_blob
@@ -2403,7 +2403,7 @@ comment|/* Some of this stuff should probably be combined with the  * code it wa
 end_comment
 
 begin_enum
-DECL|enum|__anon29b693090103
+DECL|enum|__anon27eec8b60103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum
