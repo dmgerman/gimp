@@ -400,6 +400,11 @@ define|#
 directive|define
 name|GIMP_STOCK_TOOL_FUZZY_SELECT
 value|"gimp-tool-fuzzy-select"
+DECL|macro|GIMP_STOCK_TOOL_HEAL
+define|#
+directive|define
+name|GIMP_STOCK_TOOL_HEAL
+value|"gimp-tool-heal"
 DECL|macro|GIMP_STOCK_TOOL_HUE_SATURATION
 define|#
 directive|define

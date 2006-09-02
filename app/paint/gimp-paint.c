@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpheal.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpink.h"
 end_include
 
@@ -168,6 +174,8 @@ block|,
 name|gimp_convolve_register
 block|,
 name|gimp_clone_register
+block|,
+name|gimp_heal_register
 block|,
 name|gimp_ink_register
 block|,

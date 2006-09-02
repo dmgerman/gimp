@@ -68,7 +68,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c0ceca30103
+DECL|enum|__anon27fd8eee0103
 block|{
 DECL|enumerator|GIMP_BRUSH_HARD
 name|GIMP_BRUSH_HARD
@@ -107,7 +107,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2c0ceca30203
+DECL|enum|__anon27fd8eee0203
 block|{
 DECL|enumerator|GIMP_CLONE_ALIGN_NO
 name|GIMP_CLONE_ALIGN_NO
@@ -151,7 +151,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c0ceca30303
+DECL|enum|__anon27fd8eee0303
 block|{
 DECL|enumerator|GIMP_BLUR_CONVOLVE
 name|GIMP_BLUR_CONVOLVE
@@ -192,7 +192,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2c0ceca30403
+DECL|enum|__anon27fd8eee0403
 block|{
 DECL|enumerator|GIMP_INK_BLOB_TYPE_ELLIPSE
 name|GIMP_INK_BLOB_TYPE_ELLIPSE
@@ -208,6 +208,47 @@ name|GimpInkBlobType
 typedef|;
 end_typedef
 
+begin_define
+DECL|macro|GIMP_TYPE_HEAL_ALIGN_MODE
+define|#
+directive|define
+name|GIMP_TYPE_HEAL_ALIGN_MODE
+value|(gimp_heal_align_mode_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_heal_align_mode_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_typedef
+typedef|typedef
+enum|enum
+comment|/*< pdb-skip>*/
+DECL|enum|__anon27fd8eee0503
+block|{
+DECL|enumerator|GIMP_HEAL_ALIGN_NO
+name|GIMP_HEAL_ALIGN_NO
+block|,
+comment|/*< desc="None">*/
+DECL|enumerator|GIMP_HEAL_ALIGN_YES
+name|GIMP_HEAL_ALIGN_YES
+block|,
+comment|/*< desc="Aligned">*/
+DECL|enumerator|GIMP_HEAL_ALIGN_FIXED
+name|GIMP_HEAL_ALIGN_FIXED
+comment|/*< desc="Fixed">*/
+DECL|typedef|GimpHealAlignMode
+block|}
+name|GimpHealAlignMode
+typedef|;
+end_typedef
+
 begin_comment
 comment|/*  * non-registered enums; register them if needed  */
 end_comment
@@ -216,7 +257,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip, pdb-skip>*/
-DECL|enum|__anon2c0ceca30503
+DECL|enum|__anon27fd8eee0603
 block|{
 DECL|enumerator|GIMP_PAINT_STATE_INIT
 name|GIMP_PAINT_STATE_INIT

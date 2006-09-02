@@ -1745,6 +1745,14 @@ value|"gimp-tool-fuzzy-select"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_TOOL_HEAL
+define|#
+directive|define
+name|GIMP_HELP_TOOL_HEAL
+value|"gimp-tool-heal"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_TOOL_HUE_SATURATION
 define|#
 directive|define

@@ -306,14 +306,14 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpHealTool,gimp_heal_tool,GIMP_TYPE_PAINT_TOOL)
+DECL|function|G_DEFINE_TYPE (GimpHealTool,gimp_heal_tool,GIMP_TYPE_BRUSH_TOOL)
 name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpHealTool
 argument_list|,
 argument|gimp_heal_tool
 argument_list|,
-argument|GIMP_TYPE_PAINT_TOOL
+argument|GIMP_TYPE_BRUSH_TOOL
 argument_list|)
 end_macro
 
@@ -335,53 +335,40 @@ call|)
 argument_list|(
 name|GIMP_TYPE_HEAL_TOOL
 argument_list|,
-comment|/* tool type */
 name|GIMP_TYPE_HEAL_OPTIONS
 argument_list|,
-comment|/* tool option type */
 name|gimp_heal_options_gui
 argument_list|,
-comment|/* options gui */
 name|GIMP_PAINT_OPTIONS_CONTEXT_MASK
 argument_list|,
-comment|/* context properties */
 literal|"gimp-heal-tool"
 argument_list|,
-comment|/* identifier */
 name|_
 argument_list|(
 literal|"Heal"
 argument_list|)
 argument_list|,
-comment|/* blurb */
 name|_
 argument_list|(
 literal|"Heal image irregularities"
 argument_list|)
 argument_list|,
-comment|/* help */
 name|N_
 argument_list|(
 literal|"_Heal"
 argument_list|)
 argument_list|,
-comment|/* menu path */
 literal|"H"
 argument_list|,
-comment|/* menu accelerator */
 name|NULL
 argument_list|,
-comment|/* help domain */
 name|GIMP_HELP_TOOL_HEAL
 argument_list|,
-comment|/* help data */
 name|GIMP_STOCK_TOOL_HEAL
 argument_list|,
-comment|/* stock id */
 name|data
 argument_list|)
 expr_stmt|;
-comment|/* register */
 block|}
 end_function
 
@@ -396,7 +383,6 @@ modifier|*
 name|klass
 parameter_list|)
 block|{
-comment|/* get parent classes where we override methods */
 name|GimpToolClass
 modifier|*
 name|tool_class
@@ -415,7 +401,6 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
-comment|/* override the methods */
 name|tool_class
 operator|->
 name|has_display
@@ -834,7 +819,7 @@ name|use_saved_proj
 operator|=
 name|FALSE
 expr_stmt|;
-comment|/* state holds a set of bit-flags to indicate the state of modifier keys and    * mouse buttons in various event types. Typical modifier keys are Shift,    * Control, Meta, Super, Hyper, Alt, Compose, Apple, CapsLock or ShiftLock.     * Part of gtk -> GdkModifierType */
+comment|/* state holds a set of bit-flags to indicate the state of modifier keys and    * mouse buttons in various event types. Typical modifier keys are Shift,    * Control, Meta, Super, Hyper, Alt, Compose, Apple, CapsLock or ShiftLock.    * Part of gtk -> GdkModifierType */
 if|if
 condition|(
 operator|(
@@ -978,7 +963,7 @@ argument_list|,
 name|display
 argument_list|)
 expr_stmt|;
-comment|/* set the tool display's source position to match the current heal     * implementation source position */
+comment|/* set the tool display's source position to match the current heal    * implementation source position */
 name|heal_tool
 operator|->
 name|src_x
@@ -1747,10 +1732,20 @@ block|{
 name|GObject
 modifier|*
 name|config
+init|=
+name|G_OBJECT
+argument_list|(
+name|tool_options
+argument_list|)
 decl_stmt|;
 name|GtkWidget
 modifier|*
 name|vbox
+init|=
+name|gimp_paint_options_gui
+argument_list|(
+name|tool_options
+argument_list|)
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -1764,20 +1759,6 @@ name|GtkWidget
 modifier|*
 name|combo
 decl_stmt|;
-name|config
-operator|=
-name|G_OBJECT
-argument_list|(
-name|tool_options
-argument_list|)
-expr_stmt|;
-name|vbox
-operator|=
-name|gimp_paint_options_gui
-argument_list|(
-name|tool_options
-argument_list|)
-expr_stmt|;
 comment|/* create and attach the sample merged checkbox */
 name|button
 operator|=

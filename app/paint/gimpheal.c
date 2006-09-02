@@ -111,9 +111,13 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
+begin_comment
+comment|/* NOTES:  *  * I had the code working for healing from a pattern, but the results look  * terrible and I can't see a use for it right now.  *  * The support for registered alignment has been removed because it doesn't make  * sense for healing.  */
+end_comment
+
 begin_enum
 enum|enum
-DECL|enum|__anon28ff819a0103
+DECL|enum|__anon2901c1760103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -463,18 +467,6 @@ literal|0.0
 expr_stmt|;
 name|heal
 operator|->
-name|orig_src_x
-operator|=
-literal|0.0
-expr_stmt|;
-name|heal
-operator|->
-name|orig_src_y
-operator|=
-literal|0.0
-expr_stmt|;
-name|heal
-operator|->
 name|offset_x
 operator|=
 literal|0.0
@@ -710,15 +702,6 @@ argument_list|(
 name|paint_core
 argument_list|)
 decl_stmt|;
-name|GimpHealOptions
-modifier|*
-name|options
-init|=
-name|GIMP_HEAL_OPTIONS
-argument_list|(
-name|paint_options
-argument_list|)
-decl_stmt|;
 comment|/* gimp passes the current state of the painting system to the function */
 switch|switch
 condition|(
@@ -766,39 +749,6 @@ operator|.
 name|y
 expr_stmt|;
 comment|/* set first stroke to be true */
-name|heal
-operator|->
-name|first_stroke
-operator|=
-name|TRUE
-expr_stmt|;
-block|}
-elseif|else
-if|if
-condition|(
-name|options
-operator|->
-name|align_mode
-operator|==
-name|GIMP_HEAL_ALIGN_NO
-condition|)
-block|{
-name|heal
-operator|->
-name|orig_src_x
-operator|=
-name|heal
-operator|->
-name|src_x
-expr_stmt|;
-name|heal
-operator|->
-name|orig_src_y
-operator|=
-name|heal
-operator|->
-name|src_y
-expr_stmt|;
 name|heal
 operator|->
 name|first_stroke
@@ -867,38 +817,7 @@ name|cur_coords
 operator|.
 name|y
 decl_stmt|;
-comment|/* update the coordinates depending on the alignment mode */
-if|if
-condition|(
-name|options
-operator|->
-name|align_mode
-operator|==
-name|GIMP_HEAL_ALIGN_FIXED
-condition|)
-block|{
-name|heal
-operator|->
-name|offset_x
-operator|=
-name|heal
-operator|->
-name|src_x
-operator|-
-name|dest_x
-expr_stmt|;
-name|heal
-operator|->
-name|offset_y
-operator|=
-name|heal
-operator|->
-name|src_y
-operator|-
-name|dest_y
-expr_stmt|;
-block|}
-elseif|else
+comment|/* if this is the first stroke, record the offset of the destination            * relative to the source */
 if|if
 condition|(
 name|heal
@@ -933,6 +852,7 @@ operator|=
 name|FALSE
 expr_stmt|;
 block|}
+comment|/* if this is not the first stroke, set the source as            * destination + offset */
 name|heal
 operator|->
 name|src_x
@@ -953,7 +873,7 @@ name|heal
 operator|->
 name|offset_y
 expr_stmt|;
-comment|/* defined later, does the actual healing */
+comment|/* defined later, does the actual cloning */
 name|gimp_heal_motion
 argument_list|(
 name|paint_core
@@ -962,45 +882,6 @@ name|drawable
 argument_list|,
 name|paint_options
 argument_list|)
-expr_stmt|;
-block|}
-break|break;
-case|case
-name|GIMP_PAINT_STATE_FINISH
-case|:
-if|if
-condition|(
-operator|(
-name|options
-operator|->
-name|align_mode
-operator|==
-name|GIMP_HEAL_ALIGN_NO
-operator|)
-operator|&&
-operator|(
-operator|!
-name|heal
-operator|->
-name|first_stroke
-operator|)
-condition|)
-block|{
-name|heal
-operator|->
-name|src_x
-operator|=
-name|heal
-operator|->
-name|orig_src_x
-expr_stmt|;
-name|heal
-operator|->
-name|src_y
-operator|=
-name|heal
-operator|->
-name|orig_src_y
 expr_stmt|;
 block|}
 break|break;
@@ -1032,7 +913,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  * Substitute any zeros in the input PixelRegion for ones.  This is needed by   * the algorithm to avoid division by zero, and to get a more realistic image   * since multiplying by zero is often incorrect (i.e., healing from a dark to   * a light region will have incorrect spots of zero)  */
+comment|/*  * Substitute any zeros in the input PixelRegion for ones.  This is needed by  * the algorithm to avoid division by zero, and to get a more realistic image  * since multiplying by zero is often incorrect (i.e., healing from a dark to  * a light region will have incorrect spots of zero)  */
 end_comment
 
 begin_function
@@ -1351,7 +1232,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*   * multiply first by secondPR and store the result as a PixelRegion   */
+comment|/*  * multiply first by secondPR and store the result as a PixelRegion  */
 end_comment
 
 begin_function
@@ -1943,7 +1824,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*   * The healing brush algorithm.  Heal tempPR and store the result in srcPR.  * Algorithm Design:  * T. Georgiev, "Image Reconstruction Invariant to Relighting", EUROGRAPHICS  * 2005, http://www.tgeorgiev.net/  */
+comment|/*  * Algorithm Design:  *  * T. Georgiev, "Image Reconstruction Invariant to Relighting", EUROGRAPHICS  * 2005, http://www.tgeorgiev.net/  */
 end_comment
 
 begin_function
@@ -2072,95 +1953,6 @@ block|}
 end_function
 
 begin_function
-DECL|function|print_uchar_matrix (guchar * matrix,gint width,gint height,gint depth,gint rowstride)
-name|void
-name|print_uchar_matrix
-parameter_list|(
-name|guchar
-modifier|*
-name|matrix
-parameter_list|,
-name|gint
-name|width
-parameter_list|,
-name|gint
-name|height
-parameter_list|,
-name|gint
-name|depth
-parameter_list|,
-name|gint
-name|rowstride
-parameter_list|)
-block|{
-name|gint
-name|i
-decl_stmt|,
-name|j
-decl_stmt|;
-name|guchar
-modifier|*
-name|temp
-decl_stmt|;
-for|for
-control|(
-name|i
-operator|=
-literal|0
-init|;
-name|i
-operator|<
-name|height
-condition|;
-name|i
-operator|++
-control|)
-block|{
-name|temp
-operator|=
-name|matrix
-expr_stmt|;
-for|for
-control|(
-name|j
-operator|=
-literal|0
-init|;
-name|j
-operator|<
-name|width
-condition|;
-name|j
-operator|++
-control|)
-block|{
-name|printf
-argument_list|(
-literal|"%d\t"
-argument_list|,
-operator|*
-name|temp
-argument_list|)
-expr_stmt|;
-name|temp
-operator|+=
-name|depth
-expr_stmt|;
-block|}
-name|printf
-argument_list|(
-literal|"\n"
-argument_list|)
-expr_stmt|;
-name|matrix
-operator|+=
-name|rowstride
-expr_stmt|;
-block|}
-block|}
-end_function
-
-begin_function
 specifier|static
 name|void
 DECL|function|gimp_heal_motion (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options)
@@ -2260,7 +2052,7 @@ decl_stmt|;
 name|gint
 name|offset_y
 decl_stmt|;
-comment|/* FIXME: Why doesn't the sample merged option work?  It is set up exactly as    * in the clone tool, but nothing gets displayed properly.    *    * Currently merged is disabled in gimphealtool.c.  If you want to try    * and get it working, enable it there.    */
+comment|/* get the image */
 name|image
 operator|=
 name|gimp_item_get_image
@@ -2271,12 +2063,14 @@ name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/* FIXME: This test expects a GimpImageType variable, not GimpImage */
+comment|/* display a warning about indexed images and return */
 if|if
 condition|(
 name|GIMP_IMAGE_TYPE_IS_INDEXED
 argument_list|(
-name|image
+name|drawable
+operator|->
+name|type
 argument_list|)
 condition|)
 block|{
@@ -2395,11 +2189,7 @@ operator|+=
 name|off_y
 expr_stmt|;
 block|}
-name|gimp_pickable_flush
-argument_list|(
-name|src_pickable
-argument_list|)
-expr_stmt|;
+comment|/* get the canvas area */
 name|area
 operator|=
 name|gimp_paint_core_get_paint_area
@@ -2431,7 +2221,7 @@ argument_list|(
 name|src_pickable
 argument_list|)
 expr_stmt|;
-comment|/* FIXME: the area under the cursor and the source area should be x% larger    * than the brush size so that we have seamless blending.  Otherwise the brush    * must be a lot bigger than the area to heal in order to get good results.    * Having the user pick such a large brush is perhaps counter-intutitive? */
+comment|/* FIXME: the area under the cursor and the source area should be x% larger    * than the brush size.  Otherwise the brush must be a lot bigger than the    * area to heal to get good results.  Having the user pick such a large brush    * is perhaps counter-intutitive? */
 comment|/* Get the area underneath the cursor */
 block|{
 name|TempBuf
@@ -2538,7 +2328,7 @@ operator|)
 operator|)
 condition|)
 return|return;
-comment|/*  get the original image data */
+comment|/*  get the original image data at the cursor location */
 if|if
 condition|(
 name|options
@@ -2771,51 +2561,7 @@ operator|)
 operator|)
 condition|)
 return|return;
-comment|/* if we have a different source and destination image */
-if|if
-condition|(
-operator|(
-name|options
-operator|->
-name|sample_merged
-operator|&&
-operator|(
-name|src_image
-operator|!=
-name|image
-operator|)
-operator|)
-operator|||
-operator|(
-operator|!
-name|options
-operator|->
-name|sample_merged
-operator|&&
-operator|(
-name|heal
-operator|->
-name|src_drawable
-operator|!=
-name|drawable
-operator|)
-operator|)
-condition|)
-block|{
-comment|/* FIXME: Here we need to initialize srcPR using data from the other          * image.  */
-name|g_message
-argument_list|(
-name|_
-argument_list|(
-literal|"Healing between images is not currently supported."
-argument_list|)
-argument_list|)
-expr_stmt|;
-return|return;
-block|}
-comment|/* if we don't have a different source and destination image */
-else|else
-block|{
+comment|/* get the original image data at the sample location */
 if|if
 condition|(
 name|options
@@ -2880,7 +2626,6 @@ operator|-
 name|y1
 argument_list|)
 expr_stmt|;
-block|}
 comment|/* set the proper offset */
 name|offset_x
 operator|=
@@ -2929,7 +2674,7 @@ operator|.
 name|h
 argument_list|)
 expr_stmt|;
-comment|/* FIXME: Can we ensure that this is true in the code above?      * Is it already guaranteed to be true before we get here? */
+comment|/* FIXME: Can we ensure that this is true in the code above?    * Is it already guaranteed to be true before we get here? */
 comment|/* check that srcPR, tempPR, and destPR are the same size */
 if|if
 condition|(
@@ -3025,14 +2770,23 @@ operator|.
 name|h
 argument_list|)
 expr_stmt|;
-comment|/* add an alpha region to the area if necessary */
+comment|/* add an alpha region to the area if necessary.    * sample_merged doesn't need an alpha because its always 4 bpp */
 if|if
 condition|(
+operator|(
 operator|!
 name|gimp_drawable_has_alpha
 argument_list|(
 name|drawable
 argument_list|)
+operator|)
+operator|&&
+operator|(
+operator|!
+name|options
+operator|->
+name|sample_merged
+operator|)
 condition|)
 name|add_alpha_region
 argument_list|(
@@ -3053,6 +2807,7 @@ operator|&
 name|destPR
 argument_list|)
 expr_stmt|;
+comment|/* check the brush pressure */
 if|if
 condition|(
 name|pressure_options
@@ -3069,6 +2824,7 @@ name|cur_coords
 operator|.
 name|pressure
 expr_stmt|;
+comment|/* replace the canvas with our healed data */
 name|gimp_brush_core_replace_canvas
 argument_list|(
 name|GIMP_BRUSH_CORE

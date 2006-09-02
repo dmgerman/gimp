@@ -239,6 +239,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimphealtool.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimphuesaturationtool.h"
 end_include
 
@@ -480,6 +486,8 @@ block|,
 name|gimp_smudge_tool_register
 block|,
 name|gimp_convolve_tool_register
+block|,
+name|gimp_heal_tool_register
 block|,
 name|gimp_clone_tool_register
 block|,
@@ -1955,6 +1963,19 @@ block|{
 name|paint_core_name
 operator|=
 literal|"gimp-clone"
+expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+name|tool_type
+operator|==
+name|GIMP_TYPE_HEAL_TOOL
+condition|)
+block|{
+name|paint_core_name
+operator|=
+literal|"gimp-heal"
 expr_stmt|;
 block|}
 elseif|else
