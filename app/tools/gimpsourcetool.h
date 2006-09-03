@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_CLONE_TOOL_H__
+name|__GIMP_SOURCE_TOOL_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_CLONE_TOOL_H__
+DECL|macro|__GIMP_SOURCE_TOOL_H__
 define|#
 directive|define
-name|__GIMP_CLONE_TOOL_H__
+name|__GIMP_SOURCE_TOOL_H__
 end_define
 
 begin_include
@@ -23,90 +23,90 @@ file|"gimpbrushtool.h"
 end_include
 
 begin_define
-DECL|macro|GIMP_TYPE_CLONE_TOOL
+DECL|macro|GIMP_TYPE_SOURCE_TOOL
 define|#
 directive|define
-name|GIMP_TYPE_CLONE_TOOL
-value|(gimp_clone_tool_get_type ())
+name|GIMP_TYPE_SOURCE_TOOL
+value|(gimp_source_tool_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_CLONE_TOOL (obj)
+DECL|macro|GIMP_SOURCE_TOOL (obj)
 define|#
 directive|define
-name|GIMP_CLONE_TOOL
+name|GIMP_SOURCE_TOOL
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_CLONE_TOOL, GimpCloneTool))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_SOURCE_TOOL, GimpSourceTool))
 end_define
 
 begin_define
-DECL|macro|GIMP_CLONE_TOOL_CLASS (klass)
+DECL|macro|GIMP_SOURCE_TOOL_CLASS (klass)
 define|#
 directive|define
-name|GIMP_CLONE_TOOL_CLASS
+name|GIMP_SOURCE_TOOL_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_CLONE_TOOL, GimpCloneToolClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_SOURCE_TOOL, GimpSourceToolClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_CLONE_TOOL (obj)
+DECL|macro|GIMP_IS_SOURCE_TOOL (obj)
 define|#
 directive|define
-name|GIMP_IS_CLONE_TOOL
+name|GIMP_IS_SOURCE_TOOL
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_CLONE_TOOL))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_SOURCE_TOOL))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_CLONE_TOOL_CLASS (klass)
+DECL|macro|GIMP_IS_SOURCE_TOOL_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_CLONE_TOOL_CLASS
+name|GIMP_IS_SOURCE_TOOL_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_CLONE_TOOL))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_SOURCE_TOOL))
 end_define
 
 begin_define
-DECL|macro|GIMP_CLONE_TOOL_GET_CLASS (obj)
+DECL|macro|GIMP_SOURCE_TOOL_GET_CLASS (obj)
 define|#
 directive|define
-name|GIMP_CLONE_TOOL_GET_CLASS
+name|GIMP_SOURCE_TOOL_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_CLONE_TOOL, GimpCloneToolClass))
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_SOURCE_TOOL, GimpSourceToolClass))
 end_define
 
 begin_typedef
-DECL|typedef|GimpCloneTool
+DECL|typedef|GimpSourceTool
 typedef|typedef
 name|struct
-name|_GimpCloneTool
-name|GimpCloneTool
+name|_GimpSourceTool
+name|GimpSourceTool
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpCloneToolClass
+DECL|typedef|GimpSourceToolClass
 typedef|typedef
 name|struct
-name|_GimpCloneToolClass
-name|GimpCloneToolClass
+name|_GimpSourceToolClass
+name|GimpSourceToolClass
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpCloneTool
+DECL|struct|_GimpSourceTool
 struct|struct
-name|_GimpCloneTool
+name|_GimpSourceTool
 block|{
 DECL|member|parent_instance
 name|GimpBrushTool
@@ -125,14 +125,32 @@ DECL|member|src_y
 name|gint
 name|src_y
 decl_stmt|;
+DECL|member|status_paint
+specifier|const
+name|gchar
+modifier|*
+name|status_paint
+decl_stmt|;
+DECL|member|status_set_source
+specifier|const
+name|gchar
+modifier|*
+name|status_set_source
+decl_stmt|;
+DECL|member|status_set_source_ctrl
+specifier|const
+name|gchar
+modifier|*
+name|status_set_source_ctrl
+decl_stmt|;
 block|}
 struct|;
 end_struct
 
 begin_struct
-DECL|struct|_GimpCloneToolClass
+DECL|struct|_GimpSourceToolClass
 struct|struct
-name|_GimpCloneToolClass
+name|_GimpSourceToolClass
 block|{
 DECL|member|parent_class
 name|GimpBrushToolClass
@@ -142,22 +160,9 @@ block|}
 struct|;
 end_struct
 
-begin_function_decl
-name|void
-name|gimp_clone_tool_register
-parameter_list|(
-name|GimpToolRegisterCallback
-name|callback
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_decl_stmt
 name|GType
-name|gimp_clone_tool_get_type
+name|gimp_source_tool_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -171,7 +176,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMP_CLONE_TOOL_H__  */
+comment|/*  __GIMP_SOURCE_TOOL_H__  */
 end_comment
 
 end_unit
