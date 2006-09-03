@@ -120,6 +120,11 @@ DECL|member|sample_merged
 name|gboolean
 name|sample_merged
 decl_stmt|;
+DECL|member|use_source
+name|gboolean
+name|use_source
+decl_stmt|;
+comment|/* not a property */
 block|}
 struct|;
 end_struct
