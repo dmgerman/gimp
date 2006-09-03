@@ -324,6 +324,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"palette-import-dialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"preferences-dialog.h"
 end_include
 
@@ -575,6 +581,33 @@ argument_list|(
 name|context
 operator|->
 name|gimp
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_function
+name|GtkWidget
+modifier|*
+DECL|function|dialogs_palette_import_get (GimpDialogFactory * factory,GimpContext * context,gint view_size)
+name|dialogs_palette_import_get
+parameter_list|(
+name|GimpDialogFactory
+modifier|*
+name|factory
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
+name|gint
+name|view_size
+parameter_list|)
+block|{
+return|return
+name|palette_import_dialog_new
+argument_list|(
+name|context
 argument_list|)
 return|;
 block|}

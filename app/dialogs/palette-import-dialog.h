@@ -17,21 +17,13 @@ name|__PALETTE_IMPORT_H__
 end_define
 
 begin_function_decl
-name|void
-name|palette_import_dialog_show
-parameter_list|(
-name|Gimp
+name|GtkWidget
 modifier|*
-name|gimp
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|palette_import_dialog_destroy
+name|palette_import_dialog_new
 parameter_list|(
-name|void
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 function_decl|;
 end_function_decl
