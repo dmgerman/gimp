@@ -108,6 +108,12 @@ name|gint
 name|ID
 decl_stmt|;
 comment|/*  unique instance ID                  */
+DECL|member|undo_desc
+name|gchar
+modifier|*
+name|undo_desc
+decl_stmt|;
+comment|/*  undo description                    */
 DECL|member|start_coords
 name|GimpCoords
 name|start_coords
