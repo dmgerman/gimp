@@ -114,6 +114,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplayshell-selection.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpdisplayshell-transform.h"
 end_include
 
@@ -1056,7 +1062,7 @@ operator|->
 name|control
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_selection_visibility
+name|gimp_display_shell_selection_control
 argument_list|(
 name|shell
 argument_list|,
@@ -1482,7 +1488,7 @@ name|guide_orientation
 operator|=
 name|GIMP_ORIENTATION_UNKNOWN
 expr_stmt|;
-name|gimp_display_shell_selection_visibility
+name|gimp_display_shell_selection_control
 argument_list|(
 name|shell
 argument_list|,
@@ -1696,7 +1702,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-name|gimp_display_shell_selection_visibility
+name|gimp_display_shell_selection_control
 argument_list|(
 name|shell
 argument_list|,
@@ -3209,7 +3215,7 @@ argument_list|(
 name|move
 argument_list|)
 decl_stmt|;
-name|gimp_display_shell_selection_visibility
+name|gimp_display_shell_selection_control
 argument_list|(
 name|GIMP_DISPLAY_SHELL
 argument_list|(

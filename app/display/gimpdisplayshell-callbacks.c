@@ -1667,11 +1667,11 @@ name|shell
 argument_list|)
 expr_stmt|;
 comment|/* restart (and recalculate) the selection boundaries */
-name|gimp_display_shell_selection_start
+name|gimp_display_shell_selection_control
 argument_list|(
 name|shell
-operator|->
-name|select
+argument_list|,
+name|GIMP_SELECTION_ON
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_resume

@@ -8497,9 +8497,9 @@ name|object
 argument_list|,
 literal|"marching-ants-speed"
 argument_list|,
-literal|10.0
+literal|1.0
 argument_list|,
-literal|100.0
+literal|10.0
 argument_list|,
 literal|0
 argument_list|,
@@ -8916,7 +8916,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2bd25c7f0108
+DECL|struct|__anon2960ccc60108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -10079,7 +10079,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2bd25c7f0208
+DECL|struct|__anon2960ccc60208
 block|{
 DECL|member|label
 specifier|const
@@ -10983,7 +10983,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2bd25c7f0308
+DECL|struct|__anon2960ccc60308
 block|{
 DECL|member|property_name
 specifier|const
@@ -11138,7 +11138,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2bd25c7f0408
+DECL|struct|__anon2960ccc60408
 block|{
 DECL|member|tree_label
 specifier|const

@@ -138,6 +138,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplayshell-selection.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpdisplayshell-transform.h"
 end_include
 
@@ -167,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bcda0b70103
+DECL|enum|__anon2882d4d50103
 block|{
 DECL|enumerator|PICKED
 name|PICKED
@@ -990,7 +996,7 @@ name|sample_point
 operator|->
 name|y
 expr_stmt|;
-name|gimp_display_shell_selection_visibility
+name|gimp_display_shell_selection_control
 argument_list|(
 name|shell
 argument_list|,
@@ -1221,7 +1227,7 @@ operator|=
 operator|-
 literal|1
 expr_stmt|;
-name|gimp_display_shell_selection_visibility
+name|gimp_display_shell_selection_control
 argument_list|(
 name|shell
 argument_list|,
@@ -1372,7 +1378,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|gimp_display_shell_selection_visibility
+name|gimp_display_shell_selection_control
 argument_list|(
 name|shell
 argument_list|,
@@ -3124,7 +3130,7 @@ argument_list|(
 name|tool
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_selection_visibility
+name|gimp_display_shell_selection_control
 argument_list|(
 name|GIMP_DISPLAY_SHELL
 argument_list|(

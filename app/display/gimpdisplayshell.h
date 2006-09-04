@@ -360,12 +360,12 @@ name|gboolean
 name|snap_to_vectors
 decl_stmt|;
 comment|/*  should the active path be snapped  */
-DECL|member|select
+DECL|member|selection
 name|Selection
 modifier|*
-name|select
+name|selection
 decl_stmt|;
-comment|/*  Selection object                   */
+comment|/*  Selection (marching ants)          */
 DECL|member|canvas
 name|GtkWidget
 modifier|*
@@ -974,20 +974,6 @@ parameter_list|(
 name|GimpDisplayShell
 modifier|*
 name|shell
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_display_shell_selection_visibility
-parameter_list|(
-name|GimpDisplayShell
-modifier|*
-name|shell
-parameter_list|,
-name|GimpSelectionControl
-name|control
 parameter_list|)
 function_decl|;
 end_function_decl

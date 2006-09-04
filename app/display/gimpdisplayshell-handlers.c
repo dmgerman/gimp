@@ -1658,7 +1658,7 @@ modifier|*
 name|shell
 parameter_list|)
 block|{
-name|gimp_display_shell_selection_visibility
+name|gimp_display_shell_selection_control
 argument_list|(
 name|shell
 argument_list|,
@@ -2608,14 +2608,14 @@ modifier|*
 name|shell
 parameter_list|)
 block|{
-name|gimp_display_shell_selection_visibility
+name|gimp_display_shell_selection_control
 argument_list|(
 name|shell
 argument_list|,
 name|GIMP_SELECTION_PAUSE
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_selection_visibility
+name|gimp_display_shell_selection_control
 argument_list|(
 name|shell
 argument_list|,

@@ -73,7 +73,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2989b31c0103
+DECL|enum|__anon296f24e90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -367,11 +367,11 @@ literal|"marching-ants-speed"
 argument_list|,
 name|MARCHING_ANTS_SPEED_BLURB
 argument_list|,
-literal|50
+literal|10
 argument_list|,
-name|G_MAXINT
+literal|1000
 argument_list|,
-literal|300
+literal|100
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)

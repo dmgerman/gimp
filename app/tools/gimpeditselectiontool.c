@@ -1778,7 +1778,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  pause the current selection  */
-name|gimp_display_shell_selection_visibility
+name|gimp_display_shell_selection_control
 argument_list|(
 name|shell
 argument_list|,
@@ -1870,7 +1870,7 @@ modifier|*
 name|active_item
 decl_stmt|;
 comment|/*  resume the current selection  */
-name|gimp_display_shell_selection_visibility
+name|gimp_display_shell_selection_control
 argument_list|(
 name|shell
 argument_list|,
