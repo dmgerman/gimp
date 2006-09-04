@@ -275,7 +275,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b8ede40103
+DECL|enum|__anon28a4b0bf0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -288,7 +288,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b8ede40203
+DECL|enum|__anon28a4b0bf0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1290,6 +1290,8 @@ operator||
 name|GDK_KEY_RELEASE_MASK
 operator||
 name|GDK_FOCUS_CHANGE_MASK
+operator||
+name|GDK_VISIBILITY_NOTIFY_MASK
 operator||
 name|GDK_SCROLL_MASK
 operator|)
