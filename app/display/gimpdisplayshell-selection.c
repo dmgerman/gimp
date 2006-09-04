@@ -87,46 +87,11 @@ directive|include
 file|"gimpdisplayshell-transform.h"
 end_include
 
-begin_define
-DECL|macro|USE_DRAWPOINTS
-define|#
-directive|define
-name|USE_DRAWPOINTS
-end_define
-
 begin_undef
 undef|#
 directive|undef
 name|VERBOSE
 end_undef
-
-begin_comment
-comment|/*  The possible internal drawing states...  */
-end_comment
-
-begin_define
-DECL|macro|INVISIBLE
-define|#
-directive|define
-name|INVISIBLE
-value|0
-end_define
-
-begin_define
-DECL|macro|INTRO
-define|#
-directive|define
-name|INTRO
-value|1
-end_define
-
-begin_define
-DECL|macro|MARCHING
-define|#
-directive|define
-name|MARCHING
-value|2
-end_define
 
 begin_define
 DECL|macro|INITIAL_DELAY
@@ -140,6 +105,109 @@ begin_comment
 DECL|macro|INITIAL_DELAY
 comment|/* in milleseconds */
 end_comment
+
+begin_define
+DECL|macro|USE_DRAWPOINTS
+define|#
+directive|define
+name|USE_DRAWPOINTS
+value|1
+end_define
+
+begin_struct
+DECL|struct|_Selection
+struct|struct
+name|_Selection
+block|{
+DECL|member|shell
+name|GimpDisplayShell
+modifier|*
+name|shell
+decl_stmt|;
+comment|/*  shell that owns the selection     */
+DECL|member|segs_in
+name|GdkSegment
+modifier|*
+name|segs_in
+decl_stmt|;
+comment|/*  gdk segments of area boundary     */
+DECL|member|segs_out
+name|GdkSegment
+modifier|*
+name|segs_out
+decl_stmt|;
+comment|/*  gdk segments of area boundary     */
+DECL|member|segs_layer
+name|GdkSegment
+modifier|*
+name|segs_layer
+decl_stmt|;
+comment|/*  gdk segments of layer boundary    */
+DECL|member|num_segs_in
+name|gint
+name|num_segs_in
+decl_stmt|;
+comment|/*  number of segments in segs1       */
+DECL|member|num_segs_out
+name|gint
+name|num_segs_out
+decl_stmt|;
+comment|/*  number of segments in segs2       */
+DECL|member|num_segs_layer
+name|gint
+name|num_segs_layer
+decl_stmt|;
+comment|/*  number of segments in segs3       */
+DECL|member|index
+name|guint
+name|index
+decl_stmt|;
+comment|/*  index of current stipple pattern  */
+DECL|member|paused
+name|gint
+name|paused
+decl_stmt|;
+comment|/*  count of pause requests           */
+DECL|member|recalc
+name|gboolean
+name|recalc
+decl_stmt|;
+comment|/*  flag to recalculate the selection */
+DECL|member|hidden
+name|gboolean
+name|hidden
+decl_stmt|;
+comment|/*  is the selection hidden?          */
+DECL|member|layer_hidden
+name|gboolean
+name|layer_hidden
+decl_stmt|;
+comment|/*  is the layer boundary hidden?     */
+DECL|member|timeout_id
+name|guint
+name|timeout_id
+decl_stmt|;
+comment|/*  timer for successive draws        */
+DECL|member|points_in
+name|GdkPoint
+modifier|*
+name|points_in
+index|[
+literal|8
+index|]
+decl_stmt|;
+comment|/*  points of segs_in for fast ants   */
+DECL|member|num_points_in
+name|gint
+name|num_points_in
+index|[
+literal|8
+index|]
+decl_stmt|;
+comment|/*  number of points in points_in     */
+block|}
+struct|;
+end_struct
 
 begin_comment
 comment|/*  local function prototypes  */
@@ -255,8 +323,9 @@ specifier|static
 name|gboolean
 name|selection_start_marching
 parameter_list|(
-name|gpointer
-name|data
+name|Selection
+modifier|*
+name|select
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -266,8 +335,9 @@ specifier|static
 name|gboolean
 name|selection_march_ants
 parameter_list|(
-name|gpointer
-name|data
+name|Selection
+modifier|*
+name|select
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -318,12 +388,6 @@ operator|->
 name|shell
 operator|=
 name|shell
-expr_stmt|;
-name|new
-operator|->
-name|state
-operator|=
-name|INVISIBLE
 expr_stmt|;
 name|new
 operator|->
@@ -448,12 +512,6 @@ expr_stmt|;
 block|}
 name|select
 operator|->
-name|state
-operator|=
-name|INVISIBLE
-expr_stmt|;
-name|select
-operator|->
 name|paused
 operator|++
 expr_stmt|;
@@ -478,13 +536,6 @@ name|paused
 operator|==
 literal|1
 condition|)
-block|{
-name|select
-operator|->
-name|state
-operator|=
-name|INTRO
-expr_stmt|;
 name|select
 operator|->
 name|timeout_id
@@ -493,12 +544,14 @@ name|g_timeout_add
 argument_list|(
 name|INITIAL_DELAY
 argument_list|,
+operator|(
+name|GSourceFunc
+operator|)
 name|selection_start_marching
 argument_list|,
 name|select
 argument_list|)
 expr_stmt|;
-block|}
 name|select
 operator|->
 name|paused
@@ -509,22 +562,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_selection_start (Selection * select,gboolean recalc)
+DECL|function|gimp_display_shell_selection_start (Selection * select)
 name|gimp_display_shell_selection_start
 parameter_list|(
 name|Selection
 modifier|*
 name|select
-parameter_list|,
-name|gboolean
-name|recalc
 parameter_list|)
 block|{
-comment|/*  A call to selection_start with recalc == TRUE means that    *  we want to recalculate the selection boundary--usually    *  after scaling or panning the display, or modifying the    *  selection in some way.  If recalc == FALSE, the already    *  calculated boundary is simply redrawn.    */
-if|if
-condition|(
-name|recalc
-condition|)
 name|select
 operator|->
 name|recalc
@@ -541,13 +586,6 @@ operator|>
 literal|0
 condition|)
 return|return;
-name|select
-operator|->
-name|state
-operator|=
-name|INTRO
-expr_stmt|;
-comment|/*  The state before the first draw  */
 if|if
 condition|(
 name|select
@@ -569,6 +607,9 @@ name|g_timeout_add
 argument_list|(
 name|INITIAL_DELAY
 argument_list|,
+operator|(
+name|GSourceFunc
+operator|)
 name|selection_start_marching
 argument_list|,
 name|select
@@ -617,12 +658,6 @@ operator|=
 literal|0
 expr_stmt|;
 block|}
-name|select
-operator|->
-name|state
-operator|=
-name|INVISIBLE
-expr_stmt|;
 comment|/*  Find the bounds of the selection  */
 if|if
 condition|(
@@ -675,8 +710,6 @@ block|{
 name|gimp_display_shell_selection_start
 argument_list|(
 name|select
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
@@ -734,12 +767,6 @@ operator|=
 literal|0
 expr_stmt|;
 block|}
-name|select
-operator|->
-name|state
-operator|=
-name|INVISIBLE
-expr_stmt|;
 if|if
 condition|(
 name|select
@@ -1013,8 +1040,6 @@ expr_stmt|;
 name|gimp_display_shell_selection_start
 argument_list|(
 name|select
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
@@ -1062,8 +1087,6 @@ expr_stmt|;
 name|gimp_display_shell_selection_start
 argument_list|(
 name|select
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
@@ -2595,33 +2618,18 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|selection_start_marching (gpointer data)
+DECL|function|selection_start_marching (Selection * select)
 name|selection_start_marching
 parameter_list|(
-name|gpointer
-name|data
-parameter_list|)
-block|{
 name|Selection
 modifier|*
 name|select
-init|=
-operator|(
-name|Selection
-operator|*
-operator|)
-name|data
-decl_stmt|;
+parameter_list|)
+block|{
 name|GimpCanvas
 modifier|*
 name|canvas
-decl_stmt|;
-name|GimpDisplayConfig
-modifier|*
-name|config
-decl_stmt|;
-name|canvas
-operator|=
+init|=
 name|GIMP_CANVAS
 argument_list|(
 name|select
@@ -2630,7 +2638,11 @@ name|shell
 operator|->
 name|canvas
 argument_list|)
-expr_stmt|;
+decl_stmt|;
+name|GimpDisplayConfig
+modifier|*
+name|config
+decl_stmt|;
 name|config
 operator|=
 name|GIMP_DISPLAY_CONFIG
@@ -2648,7 +2660,6 @@ operator|->
 name|config
 argument_list|)
 expr_stmt|;
-comment|/*  if the RECALC bit is set, reprocess the boundaries  */
 if|if
 condition|(
 name|select
@@ -2666,7 +2677,6 @@ argument_list|(
 name|select
 argument_list|)
 expr_stmt|;
-comment|/* Toggle the RECALC flag */
 name|select
 operator|->
 name|recalc
@@ -2679,13 +2689,6 @@ operator|->
 name|index
 operator|=
 literal|0
-expr_stmt|;
-comment|/*  Make sure the state is set to marching  */
-name|select
-operator|->
-name|state
-operator|=
-name|MARCHING
 expr_stmt|;
 if|if
 condition|(
@@ -2760,6 +2763,9 @@ name|config
 operator|->
 name|marching_ants_speed
 argument_list|,
+operator|(
+name|GSourceFunc
+operator|)
 name|selection_march_ants
 argument_list|,
 name|select
@@ -2774,19 +2780,14 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|selection_march_ants (gpointer data)
+DECL|function|selection_march_ants (Selection * select)
 name|selection_march_ants
 parameter_list|(
-name|gpointer
-name|data
-parameter_list|)
-block|{
 name|Selection
 modifier|*
 name|select
-init|=
-name|data
-decl_stmt|;
+parameter_list|)
+block|{
 name|select
 operator|->
 name|index

@@ -275,7 +275,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d96ee90103
+DECL|enum|__anon27b9786e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -288,7 +288,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d96ee90203
+DECL|enum|__anon27b9786e0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -6719,8 +6719,6 @@ argument_list|(
 name|shell
 operator|->
 name|select
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 break|break;

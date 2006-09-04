@@ -1672,8 +1672,6 @@ argument_list|(
 name|shell
 operator|->
 name|select
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_resume
