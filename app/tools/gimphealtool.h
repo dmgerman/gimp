@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gimpbrushtool.h"
+file|"gimpsourcetool.h"
 end_include
 
 begin_define
@@ -109,22 +109,8 @@ struct|struct
 name|_GimpHealTool
 block|{
 DECL|member|parent_instance
-name|GimpBrushTool
+name|GimpSourceTool
 name|parent_instance
-decl_stmt|;
-DECL|member|src_display
-name|GimpDisplay
-modifier|*
-name|src_display
-decl_stmt|;
-comment|/* Detail about the source location to paint from */
-DECL|member|src_x
-name|gint
-name|src_x
-decl_stmt|;
-DECL|member|src_y
-name|gint
-name|src_y
 decl_stmt|;
 block|}
 struct|;
@@ -136,7 +122,7 @@ struct|struct
 name|_GimpHealToolClass
 block|{
 DECL|member|parent_class
-name|GimpBrushToolClass
+name|GimpSourceToolClass
 name|parent_class
 decl_stmt|;
 block|}
