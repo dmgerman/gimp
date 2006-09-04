@@ -114,6 +114,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdisplayshell-selection.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdisplayshell-title.h"
 end_include
 
