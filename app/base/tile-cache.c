@@ -45,18 +45,6 @@ directive|include
 file|"tile-private.h"
 end_include
 
-begin_comment
-comment|/*  This is the percentage of the maximum cache size that should be cleared  *  from the cache when an eviction is necessary  */
-end_comment
-
-begin_define
-DECL|macro|FREE_QUANTUM
-define|#
-directive|define
-name|FREE_QUANTUM
-value|0.1
-end_define
-
 begin_define
 DECL|macro|IDLE_SWAPPER_TIMEOUT
 define|#
@@ -437,6 +425,9 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
+ifndef|#
+directive|ifndef
+name|ENABLE_THREADED_TILE_SWAPPER
 if|if
 condition|(
 name|idle_swapper
@@ -452,6 +443,8 @@ operator|=
 literal|0
 expr_stmt|;
 block|}
+endif|#
+directive|endif
 name|tile_cache_set_size
 argument_list|(
 literal|0
@@ -741,9 +734,10 @@ operator|&&
 name|cur_cache_dirty
 operator|*
 literal|2
-operator|<
+operator|>
 name|max_cache_size
 condition|)
+block|{
 name|idle_swapper
 operator|=
 name|g_timeout_add_full
@@ -759,6 +753,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+block|}
 endif|#
 directive|endif
 block|}
