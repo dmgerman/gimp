@@ -180,7 +180,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27cdbc080103
+DECL|enum|__anon29f43b680103
 block|{
 DECL|enumerator|PLUG_IN_OPENED
 name|PLUG_IN_OPENED
@@ -2092,13 +2092,6 @@ operator|=
 name|NULL
 expr_stmt|;
 comment|/* bind plug-in text domains  */
-if|if
-condition|(
-operator|!
-name|gimp
-operator|->
-name|no_interface
-condition|)
 block|{
 name|gchar
 modifier|*
@@ -2214,14 +2207,6 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/* sort the load and save procedures  */
-if|if
-condition|(
-operator|!
-name|gimp
-operator|->
-name|no_interface
-condition|)
-block|{
 name|manager
 operator|->
 name|load_procs
@@ -2252,7 +2237,6 @@ argument_list|,
 name|manager
 argument_list|)
 expr_stmt|;
-block|}
 comment|/* run automatically started extensions */
 block|{
 name|GList
