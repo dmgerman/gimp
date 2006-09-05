@@ -66,12 +66,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimptoolinfo.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdialogfactory.h"
 end_include
 
