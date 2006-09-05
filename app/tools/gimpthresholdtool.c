@@ -78,12 +78,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimptoolinfo.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimphelp-ids.h"
 end_include
 
@@ -792,6 +786,11 @@ decl_stmt|;
 name|GimpToolOptions
 modifier|*
 name|tool_options
+init|=
+name|GIMP_TOOL_GET_OPTIONS
+argument_list|(
+name|image_map_tool
+argument_list|)
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -813,17 +812,6 @@ name|GtkWidget
 modifier|*
 name|button
 decl_stmt|;
-name|tool_options
-operator|=
-name|GIMP_TOOL
-argument_list|(
-name|t_tool
-argument_list|)
-operator|->
-name|tool_info
-operator|->
-name|tool_options
-expr_stmt|;
 name|vbox
 operator|=
 name|image_map_tool

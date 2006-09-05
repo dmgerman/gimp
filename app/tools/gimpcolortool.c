@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2882d4d50103
+DECL|enum|__anon2c2ee7750103
 block|{
 DECL|enumerator|PICKED
 name|PICKED
@@ -2476,23 +2476,21 @@ argument_list|)
 decl_stmt|;
 name|GimpContext
 modifier|*
-name|user_context
+name|context
 decl_stmt|;
 name|GimpDialogFactory
 modifier|*
 name|dialog_factory
 decl_stmt|;
-name|user_context
+comment|/*  use this tool's own options here (NOT color_tool->options)  */
+name|context
 operator|=
-name|gimp_get_user_context
+name|GIMP_CONTEXT
+argument_list|(
+name|gimp_tool_get_options
 argument_list|(
 name|tool
-operator|->
-name|display
-operator|->
-name|image
-operator|->
-name|gimp
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|dialog_factory
@@ -2666,7 +2664,7 @@ name|GIMP_COLOR_PICK_MODE_FOREGROUND
 case|:
 name|gimp_context_set_foreground
 argument_list|(
-name|user_context
+name|context
 argument_list|,
 name|color
 argument_list|)
@@ -2677,7 +2675,7 @@ name|GIMP_COLOR_PICK_MODE_BACKGROUND
 case|:
 name|gimp_context_set_background
 argument_list|(
-name|user_context
+name|context
 argument_list|,
 name|color
 argument_list|)
@@ -2780,7 +2778,7 @@ name|GIMP_DATA
 argument_list|(
 name|gimp_context_get_palette
 argument_list|(
-name|user_context
+name|context
 argument_list|)
 argument_list|)
 expr_stmt|;

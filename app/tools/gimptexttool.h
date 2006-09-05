@@ -74,6 +74,17 @@ parameter_list|)
 value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_TEXT_TOOL))
 end_define
 
+begin_define
+DECL|macro|GIMP_TEXT_TOOL_GET_OPTIONS (t)
+define|#
+directive|define
+name|GIMP_TEXT_TOOL_GET_OPTIONS
+parameter_list|(
+name|t
+parameter_list|)
+value|(GIMP_TEXT_OPTIONS (gimp_tool_get_options (GIMP_TOOL (t))))
+end_define
+
 begin_typedef
 DECL|typedef|GimpTextTool
 typedef|typedef

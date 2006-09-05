@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b6d9e6c0103
+DECL|enum|__anon2b53cf530103
 block|{
 DECL|enumerator|GIMP_RECTANGLE_TOOL_PROP_0
 name|GIMP_RECTANGLE_TOOL_PROP_0
@@ -111,13 +111,24 @@ parameter_list|)
 value|(G_TYPE_INSTANCE_GET_INTERFACE ((obj), GIMP_TYPE_RECTANGLE_TOOL, GimpRectangleToolInterface))
 end_define
 
+begin_define
+DECL|macro|GIMP_RECTANGLE_TOOL_GET_OPTIONS (t)
+define|#
+directive|define
+name|GIMP_RECTANGLE_TOOL_GET_OPTIONS
+parameter_list|(
+name|t
+parameter_list|)
+value|(GIMP_RECTANGLE_OPTIONS (gimp_tool_get_options (GIMP_TOOL (t))))
+end_define
+
 begin_comment
 comment|/*  possible functions  */
 end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6d9e6c0203
+DECL|enum|__anon2b53cf530203
 block|{
 DECL|enumerator|RECT_INACTIVE
 name|RECT_INACTIVE

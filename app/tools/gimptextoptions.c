@@ -54,13 +54,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimp.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimptoolinfo.h"
+file|"core/gimpviewable.h"
 end_include
 
 begin_include
@@ -137,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon273d8ba10103
+DECL|enum|__anon2b291a2e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

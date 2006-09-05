@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd0dedd0103
+DECL|enum|__anon293dd7040103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1209,6 +1209,49 @@ end_function
 begin_comment
 comment|/*  public functions  */
 end_comment
+
+begin_function
+name|GimpToolOptions
+modifier|*
+DECL|function|gimp_tool_get_options (GimpTool * tool)
+name|gimp_tool_get_options
+parameter_list|(
+name|GimpTool
+modifier|*
+name|tool
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_TOOL
+argument_list|(
+name|tool
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_TOOL_INFO
+argument_list|(
+name|tool
+operator|->
+name|tool_info
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+return|return
+name|tool
+operator|->
+name|tool_info
+operator|->
+name|tool_options
+return|;
+block|}
+end_function
 
 begin_function
 name|gboolean

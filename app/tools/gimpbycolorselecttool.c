@@ -60,12 +60,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimptoolinfo.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimphelp-ids.h"
 end_include
 
@@ -291,6 +285,11 @@ decl_stmt|;
 name|GimpSelectionOptions
 modifier|*
 name|options
+init|=
+name|GIMP_SELECTION_TOOL_GET_OPTIONS
+argument_list|(
+name|tool
+argument_list|)
 decl_stmt|;
 name|GimpDrawable
 modifier|*
@@ -309,17 +308,6 @@ name|x
 decl_stmt|,
 name|y
 decl_stmt|;
-name|options
-operator|=
-name|GIMP_SELECTION_OPTIONS
-argument_list|(
-name|tool
-operator|->
-name|tool_info
-operator|->
-name|tool_options
-argument_list|)
-expr_stmt|;
 name|drawable
 operator|=
 name|gimp_image_active_drawable

@@ -29,7 +29,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c50b62b0103
+DECL|enum|__anon2c9380c10103
 block|{
 DECL|enumerator|VECTORS_SELECT_VECTOR
 name|VECTORS_SELECT_VECTOR
@@ -145,6 +145,17 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_VECTOR_TOOL, GimpVectorToolClass))
+end_define
+
+begin_define
+DECL|macro|GIMP_VECTOR_TOOL_GET_OPTIONS (t)
+define|#
+directive|define
+name|GIMP_VECTOR_TOOL_GET_OPTIONS
+parameter_list|(
+name|t
+parameter_list|)
+value|(GIMP_VECTOR_OPTIONS (gimp_tool_get_options (GIMP_TOOL (t))))
 end_define
 
 begin_typedef

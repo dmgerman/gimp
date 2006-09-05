@@ -60,12 +60,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimptoolinfo.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"display/gimpdisplay.h"
 end_include
 
@@ -407,13 +401,9 @@ condition|)
 return|return;
 name|options
 operator|=
-name|GIMP_SELECTION_OPTIONS
+name|GIMP_SELECTION_TOOL_GET_OPTIONS
 argument_list|(
 name|tool
-operator|->
-name|tool_info
-operator|->
-name|tool_options
 argument_list|)
 expr_stmt|;
 if|if
@@ -651,13 +641,9 @@ name|selection_empty
 decl_stmt|;
 name|options
 operator|=
-name|GIMP_SELECTION_OPTIONS
+name|GIMP_SELECTION_TOOL_GET_OPTIONS
 argument_list|(
 name|tool
-operator|->
-name|tool_info
-operator|->
-name|tool_options
 argument_list|)
 expr_stmt|;
 name|selection

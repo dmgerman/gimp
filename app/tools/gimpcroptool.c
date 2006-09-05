@@ -42,12 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimptoolinfo.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimphelp-ids.h"
 end_include
 
@@ -777,13 +771,9 @@ name|GimpCropOptions
 modifier|*
 name|options
 init|=
-name|GIMP_CROP_OPTIONS
+name|GIMP_CROP_TOOL_GET_OPTIONS
 argument_list|(
 name|tool
-operator|->
-name|tool_info
-operator|->
-name|tool_options
 argument_list|)
 decl_stmt|;
 if|if
@@ -989,6 +979,11 @@ decl_stmt|;
 name|GimpCropOptions
 modifier|*
 name|options
+init|=
+name|GIMP_CROP_TOOL_GET_OPTIONS
+argument_list|(
+name|tool
+argument_list|)
 decl_stmt|;
 name|GimpImage
 modifier|*
@@ -1002,17 +997,6 @@ decl_stmt|;
 name|gboolean
 name|rectangle_exists
 decl_stmt|;
-name|options
-operator|=
-name|GIMP_CROP_OPTIONS
-argument_list|(
-name|tool
-operator|->
-name|tool_info
-operator|->
-name|tool_options
-argument_list|)
-expr_stmt|;
 name|gimp_tool_pop_status
 argument_list|(
 name|tool

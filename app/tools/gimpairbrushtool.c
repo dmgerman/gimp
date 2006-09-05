@@ -30,12 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimptoolinfo.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"paint/gimpairbrushoptions.h"
 end_include
 

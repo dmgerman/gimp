@@ -54,12 +54,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimptoolinfo.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimphelp-ids.h"
 end_include
 
@@ -1234,6 +1228,11 @@ block|{
 name|GimpTransformOptions
 modifier|*
 name|options
+init|=
+name|GIMP_TRANSFORM_TOOL_GET_OPTIONS
+argument_list|(
+name|tr_tool
+argument_list|)
 decl_stmt|;
 name|gdouble
 name|angle1
@@ -1305,20 +1304,6 @@ name|cury
 expr_stmt|;
 return|return;
 block|}
-name|options
-operator|=
-name|GIMP_TRANSFORM_OPTIONS
-argument_list|(
-name|GIMP_TOOL
-argument_list|(
-name|tr_tool
-argument_list|)
-operator|->
-name|tool_info
-operator|->
-name|tool_options
-argument_list|)
-expr_stmt|;
 name|cx
 operator|=
 name|tr_tool

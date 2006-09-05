@@ -85,6 +85,17 @@ parameter_list|)
 value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_BUCKET_FILL_TOOL, GimpBucketFillToolClass))
 end_define
 
+begin_define
+DECL|macro|GIMP_BUCKET_FILL_TOOL_GET_OPTIONS (t)
+define|#
+directive|define
+name|GIMP_BUCKET_FILL_TOOL_GET_OPTIONS
+parameter_list|(
+name|t
+parameter_list|)
+value|(GIMP_BUCKET_FILL_OPTIONS (gimp_tool_get_options (GIMP_TOOL (t))))
+end_define
+
 begin_typedef
 DECL|typedef|GimpBucketFillTool
 typedef|typedef

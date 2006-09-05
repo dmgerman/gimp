@@ -85,6 +85,17 @@ parameter_list|)
 value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_TOOL, GimpToolClass))
 end_define
 
+begin_define
+DECL|macro|GIMP_TOOL_GET_OPTIONS (t)
+define|#
+directive|define
+name|GIMP_TOOL_GET_OPTIONS
+parameter_list|(
+name|t
+parameter_list|)
+value|(gimp_tool_get_options (GIMP_TOOL (t)))
+end_define
+
 begin_typedef
 DECL|typedef|GimpToolClass
 typedef|typedef
@@ -407,6 +418,18 @@ argument_list|)
 name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
+
+begin_function_decl
+name|GimpToolOptions
+modifier|*
+name|gimp_tool_get_options
+parameter_list|(
+name|GimpTool
+modifier|*
+name|tool
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 name|gboolean
