@@ -94,19 +94,6 @@ name|VERBOSE
 end_undef
 
 begin_define
-DECL|macro|INITIAL_DELAY
-define|#
-directive|define
-name|INITIAL_DELAY
-value|15
-end_define
-
-begin_comment
-DECL|macro|INITIAL_DELAY
-comment|/* in milleseconds */
-end_comment
-
-begin_define
 DECL|macro|MAX_POINTS_INC
 define|#
 directive|define
@@ -981,10 +968,8 @@ name|selection
 operator|->
 name|timeout
 operator|=
-name|g_timeout_add
+name|g_idle_add
 argument_list|(
-name|INITIAL_DELAY
-argument_list|,
 operator|(
 name|GSourceFunc
 operator|)
@@ -1084,10 +1069,8 @@ name|selection
 operator|->
 name|timeout
 operator|=
-name|g_timeout_add
+name|g_idle_add
 argument_list|(
-name|INITIAL_DELAY
-argument_list|,
 operator|(
 name|GSourceFunc
 operator|)
@@ -3139,11 +3122,6 @@ modifier|*
 name|selection
 parameter_list|)
 block|{
-name|g_printerr
-argument_list|(
-literal|"."
-argument_list|)
-expr_stmt|;
 name|selection
 operator|->
 name|index
