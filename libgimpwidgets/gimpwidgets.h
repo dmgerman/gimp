@@ -169,6 +169,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimpwidgets/gimphintbox.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimpwidgets/gimpintcombobox.h>
 end_include
 
