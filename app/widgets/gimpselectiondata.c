@@ -2772,6 +2772,8 @@ return|return
 name|NULL
 return|;
 block|}
+name|D
+argument_list|(
 name|g_printerr
 argument_list|(
 literal|"%s: name = '%s'\n"
@@ -2779,6 +2781,7 @@ argument_list|,
 name|G_STRFUNC
 argument_list|,
 name|name
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -2881,6 +2884,8 @@ name|str
 operator|+
 name|name_offset
 decl_stmt|;
+name|D
+argument_list|(
 name|g_printerr
 argument_list|(
 literal|"%s: pid = %d, addr = %p, name = '%s'\n"
@@ -2892,6 +2897,7 @@ argument_list|,
 name|object_addr
 argument_list|,
 name|name
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
