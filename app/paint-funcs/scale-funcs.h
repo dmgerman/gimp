@@ -41,19 +41,19 @@ value|(4)
 end_define
 
 begin_define
-DECL|macro|LANCZOS_SAMPLES
-define|#
-directive|define
-name|LANCZOS_SAMPLES
-value|(1 + (LANCZOS_SPP * LANCZOS_WIDTH))
-end_define
-
-begin_define
 DECL|macro|LANCZOS_WIDTH2
 define|#
 directive|define
 name|LANCZOS_WIDTH2
-value|(LANCZOS_WIDTH * 2)
+value|(1 + (LANCZOS_WIDTH * 2))
+end_define
+
+begin_define
+DECL|macro|LANCZOS_SAMPLES
+define|#
+directive|define
+name|LANCZOS_SAMPLES
+value|(LANCZOS_SPP * (LANCZOS_WIDTH + 1))
 end_define
 
 begin_function_decl
