@@ -116,10 +116,6 @@ DECL|member|layer_only
 name|gboolean
 name|layer_only
 decl_stmt|;
-DECL|member|crop_mode
-name|GimpCropMode
-name|crop_mode
-decl_stmt|;
 block|}
 struct|;
 end_struct

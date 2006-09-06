@@ -767,23 +767,6 @@ modifier|*
 name|display
 parameter_list|)
 block|{
-name|GimpCropOptions
-modifier|*
-name|options
-init|=
-name|GIMP_CROP_TOOL_GET_OPTIONS
-argument_list|(
-name|tool
-argument_list|)
-decl_stmt|;
-if|if
-condition|(
-name|options
-operator|->
-name|crop_mode
-operator|==
-name|GIMP_CROP_MODE_CROP
-condition|)
 name|gimp_tool_push_status
 argument_list|(
 name|tool
@@ -793,19 +776,6 @@ argument_list|,
 name|_
 argument_list|(
 literal|"Click or press enter to crop."
-argument_list|)
-argument_list|)
-expr_stmt|;
-else|else
-name|gimp_tool_push_status
-argument_list|(
-name|tool
-argument_list|,
-name|display
-argument_list|,
-name|_
-argument_list|(
-literal|"Click or press enter to resize."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1149,11 +1119,7 @@ name|options
 operator|->
 name|layer_only
 argument_list|,
-name|options
-operator|->
-name|crop_mode
-operator|==
-name|GIMP_CROP_MODE_CROP
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush
