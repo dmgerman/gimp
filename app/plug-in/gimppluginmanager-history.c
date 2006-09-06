@@ -199,6 +199,22 @@ name|procedure
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/* return early if the procedure is already at the top */
+if|if
+condition|(
+name|manager
+operator|->
+name|history
+operator|&&
+name|manager
+operator|->
+name|history
+operator|->
+name|data
+operator|==
+name|procedure
+condition|)
+return|return;
 name|history_size
 operator|=
 name|gimp_plug_in_manager_history_size
