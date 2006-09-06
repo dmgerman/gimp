@@ -716,7 +716,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bdbd98a0108
+DECL|struct|__anon297afc3b0108
 block|{
 DECL|member|propagate_mode
 name|gint
@@ -884,7 +884,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bdbd98a0208
+DECL|struct|__anon297afc3b0208
 block|{
 DECL|member|applicable_image_type
 name|gint
@@ -2531,7 +2531,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Value Propagating"
+literal|"Value Propagate"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2672,16 +2672,8 @@ expr_stmt|;
 comment|/* *** copy source value to best value holder *** */
 name|memcpy
 argument_list|(
-operator|(
-name|void
-operator|*
-operator|)
 name|best
 argument_list|,
-operator|(
-name|void
-operator|*
-operator|)
 name|here
 argument_list|,
 name|bytes
@@ -2917,7 +2909,6 @@ name|nr
 operator|=
 name|swap
 expr_stmt|;
-comment|/* update each UPDATE_STEP (optimizer must generate cheap code) */
 if|if
 condition|(
 operator|(
@@ -2933,16 +2924,15 @@ operator|&&
 operator|!
 name|preview
 condition|)
-comment|/*(y % (int) ((endy - begy) / UPDATE_STEP)) == 0 */
 name|gimp_progress_update
 argument_list|(
 operator|(
-name|double
+name|gdouble
 operator|)
 name|y
 operator|/
 call|(
-name|double
+name|gdouble
 call|)
 argument_list|(
 name|endy
@@ -4047,7 +4037,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bdbd98a0308
+DECL|struct|__anon297afc3b0308
 block|{
 DECL|member|min_modified
 name|gshort
