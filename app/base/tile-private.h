@@ -153,53 +153,10 @@ name|gpointer
 name|listhead
 decl_stmt|;
 comment|/* Pointer to the head of the list this tile is on */
-ifdef|#
-directive|ifdef
-name|ENABLE_THREADED_TILE_SWAPPER
-DECL|member|mutex
-name|GMutex
-modifier|*
-name|mutex
-decl_stmt|;
-endif|#
-directive|endif
 block|}
 struct|;
 end_struct
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|ENABLE_THREADED_TILE_SWAPPER
-end_ifdef
-
-begin_define
-DECL|macro|TILE_MUTEX_LOCK (tile)
-define|#
-directive|define
-name|TILE_MUTEX_LOCK
-parameter_list|(
-name|tile
-parameter_list|)
-value|g_mutex_lock((tile)->mutex)
-end_define
-
-begin_define
-DECL|macro|TILE_MUTEX_UNLOCK (tile)
-define|#
-directive|define
-name|TILE_MUTEX_UNLOCK
-parameter_list|(
-name|tile
-parameter_list|)
-value|g_mutex_unlock((tile)->mutex)
-end_define
-
-begin_else
-else|#
-directive|else
-end_else
-
 begin_define
 DECL|macro|TILE_MUTEX_LOCK (tile)
 define|#
@@ -229,11 +186,6 @@ begin_comment
 DECL|macro|TILE_MUTEX_UNLOCK (tile)
 comment|/* nothing */
 end_comment
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_endif
 endif|#
