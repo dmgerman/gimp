@@ -205,6 +205,12 @@ name|paint_area_offset_x
 parameter_list|,
 name|gint
 name|paint_area_offset_y
+parameter_list|,
+name|gint
+name|paint_area_width
+parameter_list|,
+name|gint
+name|paint_area_height
 parameter_list|)
 function_decl|;
 block|}

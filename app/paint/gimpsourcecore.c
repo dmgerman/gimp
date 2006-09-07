@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ec18d40103
+DECL|enum|__anon2ad65ca90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1053,6 +1053,12 @@ modifier|*
 name|paint_area
 decl_stmt|;
 name|gint
+name|paint_area_width
+decl_stmt|;
+name|gint
+name|paint_area_height
+decl_stmt|;
+name|gint
 name|offset_x
 decl_stmt|;
 name|gint
@@ -1193,6 +1199,18 @@ operator|!
 name|paint_area
 condition|)
 return|return;
+name|paint_area_width
+operator|=
+name|paint_area
+operator|->
+name|width
+expr_stmt|;
+name|paint_area_height
+operator|=
+name|paint_area
+operator|->
+name|height
+expr_stmt|;
 if|if
 condition|(
 name|options
@@ -1466,6 +1484,18 @@ operator|+
 name|offset_y
 operator|)
 expr_stmt|;
+name|paint_area_width
+operator|=
+name|x2
+operator|-
+name|x1
+expr_stmt|;
+name|paint_area_height
+operator|=
+name|y2
+operator|-
+name|y1
+expr_stmt|;
 block|}
 comment|/*  Set the paint area to transparent  */
 name|temp_buf_data_clear
@@ -1500,6 +1530,10 @@ argument_list|,
 name|offset_x
 argument_list|,
 name|offset_y
+argument_list|,
+name|paint_area_width
+argument_list|,
+name|paint_area_height
 argument_list|)
 expr_stmt|;
 block|}

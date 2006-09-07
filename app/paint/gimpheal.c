@@ -138,6 +138,12 @@ name|paint_area_offset_x
 parameter_list|,
 name|gint
 name|paint_area_offset_y
+parameter_list|,
+name|gint
+name|paint_area_width
+parameter_list|,
+name|gint
+name|paint_area_height
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1279,7 +1285,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_heal_motion (GimpSourceCore * source_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,gdouble opacity,GimpImage * src_image,GimpPickable * src_pickable,PixelRegion * srcPR,TempBuf * paint_area,gint paint_area_offset_x,gint paint_area_offset_y)
+DECL|function|gimp_heal_motion (GimpSourceCore * source_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,gdouble opacity,GimpImage * src_image,GimpPickable * src_pickable,PixelRegion * srcPR,TempBuf * paint_area,gint paint_area_offset_x,gint paint_area_offset_y,gint paint_area_width,gint paint_area_height)
 name|gimp_heal_motion
 parameter_list|(
 name|GimpSourceCore
@@ -1318,6 +1324,12 @@ name|paint_area_offset_x
 parameter_list|,
 name|gint
 name|paint_area_offset_y
+parameter_list|,
+name|gint
+name|paint_area_width
+parameter_list|,
+name|gint
+name|paint_area_height
 parameter_list|)
 block|{
 name|GimpPaintCore
@@ -1511,17 +1523,13 @@ name|x2
 operator|=
 name|x1
 operator|+
-name|srcPR
-operator|->
-name|w
+name|paint_area_width
 expr_stmt|;
 name|y2
 operator|=
 name|y1
 operator|+
-name|srcPR
-operator|->
-name|h
+name|paint_area_height
 expr_stmt|;
 comment|/* get the original image data at the cursor location */
 name|orig
@@ -1552,13 +1560,9 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|x2
-operator|-
-name|x1
+name|paint_area_width
 argument_list|,
-name|y2
-operator|-
-name|y1
+name|paint_area_height
 argument_list|)
 expr_stmt|;
 block|}
@@ -1724,13 +1728,9 @@ name|paint_area_offset_x
 argument_list|,
 name|paint_area_offset_y
 argument_list|,
-name|srcPR
-operator|->
-name|w
+name|paint_area_width
 argument_list|,
-name|srcPR
-operator|->
-name|h
+name|paint_area_height
 argument_list|)
 expr_stmt|;
 comment|/* check that srcPR, tempPR, and destPR are the same size */
