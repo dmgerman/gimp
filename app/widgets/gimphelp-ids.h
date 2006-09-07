@@ -1833,6 +1833,14 @@ value|"gimp-tool-perspective"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_TOOL_PERSPECTIVE_CLONE
+define|#
+directive|define
+name|GIMP_HELP_TOOL_PERSPECTIVE_CLONE
+value|"gimp-tool-perspective-clone"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_TOOL_POSTERIZE
 define|#
 directive|define

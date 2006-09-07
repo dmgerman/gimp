@@ -108,6 +108,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpperspectiveclone.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpsmudge.h"
 end_include
 
@@ -173,9 +179,11 @@ name|gimp_smudge_register
 block|,
 name|gimp_convolve_register
 block|,
-name|gimp_clone_register
+name|gimp_perspective_clone_register
 block|,
 name|gimp_heal_register
+block|,
+name|gimp_clone_register
 block|,
 name|gimp_ink_register
 block|,

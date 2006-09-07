@@ -455,6 +455,11 @@ define|#
 directive|define
 name|GIMP_STOCK_TOOL_PERSPECTIVE
 value|"gimp-tool-perspective"
+DECL|macro|GIMP_STOCK_TOOL_PERSPECTIVE_CLONE
+define|#
+directive|define
+name|GIMP_STOCK_TOOL_PERSPECTIVE_CLONE
+value|"gimp-tool-perspective-clone"
 DECL|macro|GIMP_STOCK_TOOL_POSTERIZE
 define|#
 directive|define

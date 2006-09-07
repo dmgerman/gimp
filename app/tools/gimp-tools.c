@@ -299,6 +299,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpperspectiveclonetool.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpperspectivetool.h"
 end_include
 
@@ -486,6 +492,8 @@ block|,
 name|gimp_smudge_tool_register
 block|,
 name|gimp_convolve_tool_register
+block|,
+name|gimp_perspective_clone_tool_register
 block|,
 name|gimp_heal_tool_register
 block|,
@@ -1976,6 +1984,19 @@ block|{
 name|paint_core_name
 operator|=
 literal|"gimp-heal"
+expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+name|tool_type
+operator|==
+name|GIMP_TYPE_PERSPECTIVE_CLONE_TOOL
+condition|)
+block|{
+name|paint_core_name
+operator|=
+literal|"gimp-perspective-clone"
 expr_stmt|;
 block|}
 elseif|else

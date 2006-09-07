@@ -68,7 +68,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c3a7600103
+DECL|enum|__anon29f9e4300103
 block|{
 DECL|enumerator|GIMP_BRUSH_HARD
 name|GIMP_BRUSH_HARD
@@ -82,6 +82,43 @@ comment|/*< pdb-skip, skip>*/
 DECL|typedef|GimpBrushApplicationMode
 block|}
 name|GimpBrushApplicationMode
+typedef|;
+end_typedef
+
+begin_define
+DECL|macro|GIMP_TYPE_PERSPECTIVE_CLONE_MODE
+define|#
+directive|define
+name|GIMP_TYPE_PERSPECTIVE_CLONE_MODE
+value|(gimp_perspective_clone_mode_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_perspective_clone_mode_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_typedef
+typedef|typedef
+enum|enum
+comment|/*< pdb-skip>*/
+DECL|enum|__anon29f9e4300203
+block|{
+DECL|enumerator|GIMP_PERSPECTIVE_CLONE_MODE_ADJUST
+name|GIMP_PERSPECTIVE_CLONE_MODE_ADJUST
+block|,
+comment|/*< desc="Modify Perspective Plane">*/
+DECL|enumerator|GIMP_PERSPECTIVE_CLONE_MODE_PAINT
+name|GIMP_PERSPECTIVE_CLONE_MODE_PAINT
+comment|/*< desc="Perspective Clone">*/
+DECL|typedef|GimpPerspectiveCloneMode
+block|}
+name|GimpPerspectiveCloneMode
 typedef|;
 end_typedef
 
@@ -107,7 +144,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon29c3a7600203
+DECL|enum|__anon29f9e4300303
 block|{
 DECL|enumerator|GIMP_SOURCE_ALIGN_NO
 name|GIMP_SOURCE_ALIGN_NO
@@ -151,7 +188,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c3a7600303
+DECL|enum|__anon29f9e4300403
 block|{
 DECL|enumerator|GIMP_BLUR_CONVOLVE
 name|GIMP_BLUR_CONVOLVE
@@ -192,7 +229,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon29c3a7600403
+DECL|enum|__anon29f9e4300503
 block|{
 DECL|enumerator|GIMP_INK_BLOB_TYPE_ELLIPSE
 name|GIMP_INK_BLOB_TYPE_ELLIPSE
@@ -216,7 +253,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip, pdb-skip>*/
-DECL|enum|__anon29c3a7600503
+DECL|enum|__anon29f9e4300603
 block|{
 DECL|enumerator|GIMP_PAINT_STATE_INIT
 name|GIMP_PAINT_STATE_INIT

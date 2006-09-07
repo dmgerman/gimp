@@ -162,6 +162,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpperspectiveclonetool.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpsmudgetool.h"
 end_include
 
@@ -822,6 +828,10 @@ name|GIMP_TYPE_HEAL_TOOL
 operator|||
 name|tool_type
 operator|==
+name|GIMP_TYPE_PERSPECTIVE_CLONE_TOOL
+operator|||
+name|tool_type
+operator|==
 name|GIMP_TYPE_CONVOLVE_TOOL
 operator|||
 name|tool_type
@@ -1071,6 +1081,10 @@ name|GIMP_TYPE_HEAL_TOOL
 operator|||
 name|tool_type
 operator|==
+name|GIMP_TYPE_PERSPECTIVE_CLONE_TOOL
+operator|||
+name|tool_type
+operator|==
 name|GIMP_TYPE_DODGE_BURN_TOOL
 operator|||
 name|tool_type
@@ -1122,6 +1136,10 @@ operator|||
 name|tool_type
 operator|==
 name|GIMP_TYPE_HEAL_TOOL
+operator|||
+name|tool_type
+operator|==
+name|GIMP_TYPE_PERSPECTIVE_CLONE_TOOL
 operator|||
 name|tool_type
 operator|==
@@ -1226,6 +1244,10 @@ operator|||
 name|tool_type
 operator|==
 name|GIMP_TYPE_HEAL_TOOL
+operator|||
+name|tool_type
+operator|==
+name|GIMP_TYPE_PERSPECTIVE_CLONE_TOOL
 operator|||
 name|tool_type
 operator|==
