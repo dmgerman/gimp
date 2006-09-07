@@ -734,15 +734,6 @@ argument_list|(
 name|tool
 argument_list|)
 decl_stmt|;
-name|GimpSelectionOptions
-modifier|*
-name|options
-init|=
-name|GIMP_SELECTION_TOOL_GET_OPTIONS
-argument_list|(
-name|tool
-argument_list|)
-decl_stmt|;
 name|gimp_draw_tool_stop
 argument_list|(
 name|GIMP_DRAW_TOOL
