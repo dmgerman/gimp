@@ -2347,6 +2347,38 @@ begin_function
 specifier|static
 name|WidgetInfo
 modifier|*
+DECL|function|create_hint_box (void)
+name|create_hint_box
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+name|GtkWidget
+modifier|*
+name|box
+init|=
+name|gimp_hint_box_new
+argument_list|(
+literal|"This is a user hint."
+argument_list|)
+decl_stmt|;
+return|return
+name|new_widget_info
+argument_list|(
+literal|"gimp-hint-box"
+argument_list|,
+name|box
+argument_list|,
+name|MEDIUM
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|WidgetInfo
+modifier|*
 DECL|function|create_int_combo_box (void)
 name|create_int_combo_box
 parameter_list|(
@@ -3581,6 +3613,16 @@ argument_list|(
 name|retval
 argument_list|,
 name|create_frame
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|retval
+operator|=
+name|g_list_append
+argument_list|(
+name|retval
+argument_list|,
+name|create_hint_box
 argument_list|()
 argument_list|)
 expr_stmt|;
