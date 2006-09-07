@@ -129,6 +129,12 @@ name|PixelRegion
 modifier|*
 name|srcPR
 parameter_list|,
+name|gint
+name|src_offset_x
+parameter_list|,
+name|gint
+name|src_offset_y
+parameter_list|,
 name|TempBuf
 modifier|*
 name|paint_area
@@ -1285,7 +1291,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_heal_motion (GimpSourceCore * source_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,gdouble opacity,GimpImage * src_image,GimpPickable * src_pickable,PixelRegion * srcPR,TempBuf * paint_area,gint paint_area_offset_x,gint paint_area_offset_y,gint paint_area_width,gint paint_area_height)
+DECL|function|gimp_heal_motion (GimpSourceCore * source_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,gdouble opacity,GimpImage * src_image,GimpPickable * src_pickable,PixelRegion * srcPR,gint src_offset_x,gint src_offset_y,TempBuf * paint_area,gint paint_area_offset_x,gint paint_area_offset_y,gint paint_area_width,gint paint_area_height)
 name|gimp_heal_motion
 parameter_list|(
 name|GimpSourceCore
@@ -1314,6 +1320,12 @@ parameter_list|,
 name|PixelRegion
 modifier|*
 name|srcPR
+parameter_list|,
+name|gint
+name|src_offset_x
+parameter_list|,
+name|gint
+name|src_offset_y
 parameter_list|,
 name|TempBuf
 modifier|*

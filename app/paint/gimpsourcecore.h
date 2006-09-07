@@ -196,6 +196,12 @@ name|PixelRegion
 modifier|*
 name|srcPR
 parameter_list|,
+name|gint
+name|src_offset_x
+parameter_list|,
+name|gint
+name|src_offset_y
+parameter_list|,
 name|TempBuf
 modifier|*
 name|paint_area
