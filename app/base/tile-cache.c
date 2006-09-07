@@ -841,11 +841,6 @@ else|else
 return|return
 name|FALSE
 return|;
-name|TILE_MUTEX_LOCK
-argument_list|(
-name|tile
-argument_list|)
-expr_stmt|;
 name|tile_cache_flush_internal
 argument_list|(
 name|tile
@@ -892,21 +887,11 @@ name|data
 operator|=
 name|NULL
 expr_stmt|;
-name|TILE_MUTEX_UNLOCK
-argument_list|(
-name|tile
-argument_list|)
-expr_stmt|;
 return|return
 name|TRUE
 return|;
 block|}
 comment|/* unable to swap out tile for some reason */
-name|TILE_MUTEX_UNLOCK
-argument_list|(
-name|tile
-argument_list|)
-expr_stmt|;
 return|return
 name|FALSE
 return|;

@@ -157,36 +157,6 @@ block|}
 struct|;
 end_struct
 
-begin_define
-DECL|macro|TILE_MUTEX_LOCK (tile)
-define|#
-directive|define
-name|TILE_MUTEX_LOCK
-parameter_list|(
-name|tile
-parameter_list|)
-end_define
-
-begin_comment
-DECL|macro|TILE_MUTEX_LOCK (tile)
-comment|/* nothing */
-end_comment
-
-begin_define
-DECL|macro|TILE_MUTEX_UNLOCK (tile)
-define|#
-directive|define
-name|TILE_MUTEX_UNLOCK
-parameter_list|(
-name|tile
-parameter_list|)
-end_define
-
-begin_comment
-DECL|macro|TILE_MUTEX_UNLOCK (tile)
-comment|/* nothing */
-end_comment
-
 begin_endif
 endif|#
 directive|endif

@@ -436,11 +436,6 @@ name|tile_ref_count
 operator|++
 expr_stmt|;
 comment|/* Increment this tile's reference count.    */
-name|TILE_MUTEX_LOCK
-argument_list|(
-name|tile
-argument_list|)
-expr_stmt|;
 name|tile
 operator|->
 name|ref_count
@@ -489,11 +484,6 @@ name|tile
 argument_list|)
 expr_stmt|;
 block|}
-name|TILE_MUTEX_UNLOCK
-argument_list|(
-name|tile
-argument_list|)
-expr_stmt|;
 comment|/* Call 'tile_manager_validate' if the tile was invalid.    */
 if|if
 condition|(
@@ -539,11 +529,6 @@ block|{
 comment|/* Decrement the global reference count.    */
 name|tile_ref_count
 operator|--
-expr_stmt|;
-name|TILE_MUTEX_LOCK
-argument_list|(
-name|tile
-argument_list|)
 expr_stmt|;
 comment|/* Decrement this tile's reference count.    */
 name|tile
@@ -640,11 +625,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|TILE_MUTEX_UNLOCK
-argument_list|(
-name|tile
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -815,11 +795,6 @@ argument_list|(
 name|tile
 argument_list|)
 expr_stmt|;
-name|TILE_MUTEX_UNLOCK
-argument_list|(
-name|tile
-argument_list|)
-expr_stmt|;
 name|g_free
 argument_list|(
 name|tile
@@ -940,21 +915,11 @@ modifier|*
 name|tile
 parameter_list|)
 block|{
-name|TILE_MUTEX_LOCK
-argument_list|(
-name|tile
-argument_list|)
-expr_stmt|;
 name|tile
 operator|->
 name|valid
 operator|=
 name|TRUE
-expr_stmt|;
-name|TILE_MUTEX_UNLOCK
-argument_list|(
-name|tile
-argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -1240,15 +1205,7 @@ name|ref_count
 operator|==
 literal|0
 condition|)
-block|{
 name|tile_destroy
-argument_list|(
-name|tile
-argument_list|)
-expr_stmt|;
-return|return;
-block|}
-name|TILE_MUTEX_UNLOCK
 argument_list|(
 name|tile
 argument_list|)
@@ -1272,7 +1229,7 @@ name|gint
 name|yoff
 parameter_list|)
 block|{
-name|gint
+name|gsize
 name|offset
 init|=
 name|yoff
