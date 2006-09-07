@@ -370,7 +370,7 @@ name|Tile
 modifier|*
 name|tile
 parameter_list|,
-name|gint
+name|SwapCommand
 name|cmd
 parameter_list|,
 name|gpointer
@@ -383,25 +383,6 @@ begin_function_decl
 specifier|static
 name|void
 name|tile_swap_default_in
-parameter_list|(
-name|DefSwapFile
-modifier|*
-name|def_swap_file
-parameter_list|,
-name|gint
-name|fd
-parameter_list|,
-name|Tile
-modifier|*
-name|tile
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|tile_swap_default_in_async
 parameter_list|(
 name|DefSwapFile
 modifier|*
@@ -1230,36 +1211,6 @@ end_function
 
 begin_function
 name|void
-DECL|function|tile_swap_in_async (Tile * tile)
-name|tile_swap_in_async
-parameter_list|(
-name|Tile
-modifier|*
-name|tile
-parameter_list|)
-block|{
-if|if
-condition|(
-name|tile
-operator|->
-name|swap_offset
-operator|==
-operator|-
-literal|1
-condition|)
-return|return;
-name|tile_swap_command
-argument_list|(
-name|tile
-argument_list|,
-name|SWAP_IN_ASYNC
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-name|void
 DECL|function|tile_swap_in (Tile * tile)
 name|tile_swap_in
 parameter_list|(
@@ -1330,25 +1281,6 @@ argument_list|(
 name|tile
 argument_list|,
 name|SWAP_DELETE
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-name|void
-DECL|function|tile_swap_compress (gint swap_num)
-name|tile_swap_compress
-parameter_list|(
-name|gint
-name|swap_num
-parameter_list|)
-block|{
-name|tile_swap_command
-argument_list|(
-name|NULL
-argument_list|,
-name|SWAP_COMPRESS
 argument_list|)
 expr_stmt|;
 block|}
@@ -1757,7 +1689,7 @@ end_comment
 begin_function
 specifier|static
 name|int
-DECL|function|tile_swap_default (gint fd,Tile * tile,gint cmd,gpointer user_data)
+DECL|function|tile_swap_default (gint fd,Tile * tile,SwapCommand cmd,gpointer user_data)
 name|tile_swap_default
 parameter_list|(
 name|gint
@@ -1767,7 +1699,7 @@ name|Tile
 modifier|*
 name|tile
 parameter_list|,
-name|gint
+name|SwapCommand
 name|cmd
 parameter_list|,
 name|gpointer
@@ -1777,15 +1709,13 @@ block|{
 name|DefSwapFile
 modifier|*
 name|def_swap_file
-decl_stmt|;
-name|def_swap_file
-operator|=
+init|=
 operator|(
 name|DefSwapFile
 operator|*
 operator|)
 name|user_data
-expr_stmt|;
+decl_stmt|;
 switch|switch
 condition|(
 name|cmd
@@ -1795,19 +1725,6 @@ case|case
 name|SWAP_IN
 case|:
 name|tile_swap_default_in
-argument_list|(
-name|def_swap_file
-argument_list|,
-name|fd
-argument_list|,
-name|tile
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
-name|SWAP_IN_ASYNC
-case|:
-name|tile_swap_default_in_async
 argument_list|(
 name|def_swap_file
 argument_list|,
@@ -1843,48 +1760,12 @@ name|tile
 argument_list|)
 expr_stmt|;
 break|break;
-case|case
-name|SWAP_COMPRESS
-case|:
-name|g_warning
-argument_list|(
-literal|"tile_swap_default: SWAP_COMPRESS: UNFINISHED"
-argument_list|)
-expr_stmt|;
-break|break;
 block|}
 return|return
 name|FALSE
 return|;
 block|}
 end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|tile_swap_default_in_async (DefSwapFile * def_swap_file,gint fd,Tile * tile)
-name|tile_swap_default_in_async
-parameter_list|(
-name|DefSwapFile
-modifier|*
-name|def_swap_file
-parameter_list|,
-name|gint
-name|fd
-parameter_list|,
-name|Tile
-modifier|*
-name|tile
-parameter_list|)
-block|{
-comment|/* ignore; it's only a hint anyway */
-comment|/* this could be changed to call out to another program that    * tries to make the OS read the data in from disk.    */
-block|}
-end_function
-
-begin_comment
-comment|/* NOTE: if you change this function, check to see if your changes  * apply to tile_swap_in_attempt() near the end of the file.  The  * difference is that this version makes guarantees about what it  * provides, but tile_swap_in_attempt() just tries and gives up if  * anything goes wrong.  *  * I'm not sure that it is worthwhile to try to pull out common  * bits; I think the two functions are (at least for now) different  * enough to keep as two functions.  *  * N.B. the mutex on the tile must already have been locked on entry  * to this function.  DO NOT LOCK IT HERE.  */
-end_comment
 
 begin_function
 specifier|static
@@ -1905,19 +1786,11 @@ name|tile
 parameter_list|)
 block|{
 name|gint
-name|err
-decl_stmt|;
-name|gint
 name|nleft
 decl_stmt|;
 name|off_t
 name|offset
 decl_stmt|;
-name|err
-operator|=
-operator|-
-literal|1
-expr_stmt|;
 if|if
 condition|(
 name|tile
@@ -1971,9 +1844,12 @@ name|seek_err_msg
 condition|)
 name|g_message
 argument_list|(
-literal|"unable to seek to tile location on disk: %d"
+literal|"unable to seek to tile location on disk: %s"
 argument_list|,
-name|err
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|seek_err_msg
@@ -2001,6 +1877,9 @@ operator|>
 literal|0
 condition|)
 block|{
+name|gint
+name|err
+decl_stmt|;
 do|do
 block|{
 name|err
@@ -2125,9 +2004,6 @@ name|gint
 name|bytes
 decl_stmt|;
 name|gint
-name|err
-decl_stmt|;
-name|gint
 name|nleft
 decl_stmt|;
 name|off_t
@@ -2242,8 +2118,9 @@ operator|>
 literal|0
 condition|)
 block|{
+name|gint
 name|err
-operator|=
+init|=
 name|write
 argument_list|(
 name|fd
@@ -2260,7 +2137,7 @@ name|nleft
 argument_list|,
 name|nleft
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|err
@@ -3060,16 +2937,14 @@ block|{
 name|Gap
 modifier|*
 name|gap
-decl_stmt|;
-name|gap
-operator|=
+init|=
 name|g_new
 argument_list|(
 name|Gap
 argument_list|,
 literal|1
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|gap
 operator|->
 name|start
