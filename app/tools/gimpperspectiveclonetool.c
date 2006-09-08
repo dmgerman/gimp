@@ -495,15 +495,16 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Paint using Image Regions Preserving the Perspective of the Image"
+literal|"Paint using Image Regions Preserving "
+literal|"the Perspective of the Image"
 argument_list|)
 argument_list|,
 name|N_
 argument_list|(
-literal|"_Clone"
+literal|"_Perspective Clone"
 argument_list|)
 argument_list|,
-literal|"C"
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,
