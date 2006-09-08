@@ -93,12 +93,6 @@ directive|include
 file|"tool_manager.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gimp-intl.h"
-end_include
-
 begin_typedef
 DECL|typedef|GimpToolManager
 typedef|typedef
@@ -1896,16 +1890,14 @@ block|{
 name|GimpDisplay
 modifier|*
 name|display
-decl_stmt|;
-name|display
-operator|=
+init|=
 name|gimp_tool_has_image
 argument_list|(
 name|tool
 argument_list|,
 name|image
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|display

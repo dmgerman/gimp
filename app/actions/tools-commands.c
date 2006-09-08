@@ -205,15 +205,9 @@ expr_stmt|;
 block|}
 name|tool_info
 operator|=
-operator|(
-name|GimpToolInfo
-operator|*
-operator|)
-name|gimp_container_get_child_by_name
+name|gimp_get_tool_info
 argument_list|(
 name|gimp
-operator|->
-name|tool_info_list
 argument_list|,
 name|value
 argument_list|)

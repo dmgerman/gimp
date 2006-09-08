@@ -275,7 +275,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a4b0bf0103
+DECL|enum|__anon288c16600103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -288,7 +288,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a4b0bf0203
+DECL|enum|__anon288c16600203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1214,6 +1214,12 @@ operator|->
 name|space_release_pending
 operator|=
 name|FALSE
+expr_stmt|;
+name|shell
+operator|->
+name|space_shaded_tool
+operator|=
+name|NULL
 expr_stmt|;
 name|shell
 operator|->

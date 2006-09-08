@@ -612,6 +612,12 @@ DECL|member|space_release_pending
 name|gboolean
 name|space_release_pending
 decl_stmt|;
+DECL|member|space_shaded_tool
+specifier|const
+name|gchar
+modifier|*
+name|space_shaded_tool
+decl_stmt|;
 DECL|member|scrolling
 name|gboolean
 name|scrolling
