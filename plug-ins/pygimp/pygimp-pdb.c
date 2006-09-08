@@ -23,6 +23,25 @@ end_endif
 begin_include
 include|#
 directive|include
+file|<glib-object.h>
+end_include
+
+begin_define
+DECL|macro|NO_IMPORT_PYGOBJECT
+define|#
+directive|define
+name|NO_IMPORT_PYGOBJECT
+end_define
+
+begin_include
+include|#
+directive|include
+file|<pygobject.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"pygimp.h"
 end_include
 
@@ -43,18 +62,6 @@ begin_include
 include|#
 directive|include
 file|<structmember.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<glib-object.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<pygobject.h>
 end_include
 
 begin_ifndef
@@ -85,7 +92,7 @@ comment|/* Declarations for objects of type pdb */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2a1afb030108
+DECL|struct|__anon2b8d486a0108
 typedef|typedef
 struct|struct
 block|{
@@ -105,7 +112,7 @@ comment|/* Declarations for objects of type pdbFunc */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2a1afb030208
+DECL|struct|__anon2b8d486a0208
 typedef|typedef
 struct|struct
 block|{

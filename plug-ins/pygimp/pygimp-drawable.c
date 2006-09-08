@@ -23,6 +23,25 @@ end_endif
 begin_include
 include|#
 directive|include
+file|<glib-object.h>
+end_include
+
+begin_define
+DECL|macro|NO_IMPORT_PYGOBJECT
+define|#
+directive|define
+name|NO_IMPORT_PYGOBJECT
+end_define
+
+begin_include
+include|#
+directive|include
+file|<pygobject.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"pygimp.h"
 end_include
 
@@ -37,18 +56,6 @@ begin_include
 include|#
 directive|include
 file|"pygimpcolor-api.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|<glib-object.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<pygobject.h>
 end_include
 
 begin_function
