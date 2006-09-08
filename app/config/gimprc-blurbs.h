@@ -830,6 +830,15 @@ value|N_("Show a tooltip when the pointer hovers over an item.")
 end_define
 
 begin_define
+DECL|macro|SPACE_BAR_ACTION_BLURB
+define|#
+directive|define
+name|SPACE_BAR_ACTION_BLURB
+define|\
+value|N_("What to do when the space bar is pressed in the image window.")
+end_define
+
+begin_define
 DECL|macro|SWAP_PATH_BLURB
 define|#
 directive|define

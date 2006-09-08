@@ -210,6 +210,10 @@ DECL|member|activate_on_focus
 name|gboolean
 name|activate_on_focus
 decl_stmt|;
+DECL|member|space_bar_action
+name|GimpSpaceBarAction
+name|space_bar_action
+decl_stmt|;
 block|}
 struct|;
 end_struct

@@ -37,7 +37,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27561ee40103
+DECL|enum|__anon2a1f2ec90103
 block|{
 DECL|enumerator|GIMP_CURSOR_MODE_TOOL_ICON
 name|GIMP_CURSOR_MODE_TOOL_ICON
@@ -77,7 +77,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27561ee40203
+DECL|enum|__anon2a1f2ec90203
 block|{
 DECL|enumerator|GIMP_CANVAS_PADDING_MODE_DEFAULT
 name|GIMP_CANVAS_PADDING_MODE_DEFAULT
@@ -104,6 +104,46 @@ comment|/*< skip>*/
 DECL|typedef|GimpCanvasPaddingMode
 block|}
 name|GimpCanvasPaddingMode
+typedef|;
+end_typedef
+
+begin_define
+DECL|macro|GIMP_TYPE_SPACE_BAR_ACTION
+define|#
+directive|define
+name|GIMP_TYPE_SPACE_BAR_ACTION
+value|(gimp_space_bar_action_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_space_bar_action_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2a1f2ec90303
+block|{
+DECL|enumerator|GIMP_SPACE_BAR_ACTION_NONE
+name|GIMP_SPACE_BAR_ACTION_NONE
+block|,
+comment|/*< desc="None">*/
+DECL|enumerator|GIMP_SPACE_BAR_ACTION_PAN
+name|GIMP_SPACE_BAR_ACTION_PAN
+block|,
+comment|/*< desc="Pan">*/
+DECL|enumerator|GIMP_SPACE_BAR_ACTION_MOVE
+name|GIMP_SPACE_BAR_ACTION_MOVE
+comment|/*< desc="Move">*/
+DECL|typedef|GimpSpaceBarAction
+block|}
+name|GimpSpaceBarAction
 typedef|;
 end_typedef
 
