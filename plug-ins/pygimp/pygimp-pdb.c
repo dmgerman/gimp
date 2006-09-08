@@ -20,12 +20,6 @@ endif|#
 directive|endif
 end_endif
 
-begin_include
-include|#
-directive|include
-file|<glib-object.h>
-end_include
-
 begin_define
 DECL|macro|NO_IMPORT_PYGOBJECT
 define|#
@@ -64,6 +58,12 @@ directive|include
 file|<structmember.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|<glib-object.h>
+end_include
+
 begin_ifndef
 ifndef|#
 directive|ifndef
@@ -92,7 +92,7 @@ comment|/* Declarations for objects of type pdb */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b8d486a0108
+DECL|struct|__anon276f7f2f0108
 typedef|typedef
 struct|struct
 block|{
@@ -112,7 +112,7 @@ comment|/* Declarations for objects of type pdbFunc */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b8d486a0208
+DECL|struct|__anon276f7f2f0208
 typedef|typedef
 struct|struct
 block|{
