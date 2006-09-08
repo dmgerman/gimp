@@ -1781,7 +1781,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon2c171ed70108
+DECL|struct|__anon28994cd80108
 block|{
 DECL|member|modifiers
 name|GdkModifierType
@@ -2051,6 +2051,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/* pretty much straight copy of _gtk_accel_label_class_get_accelerator_label */
+end_comment
+
 begin_function
 name|gchar
 modifier|*
@@ -2149,22 +2153,30 @@ block|{
 case|case
 literal|' '
 case|:
+comment|/* do not translate the part before the | */
 name|g_string_append
 argument_list|(
 name|gstring
 argument_list|,
-literal|"Space"
+name|Q_
+argument_list|(
+literal|"keyboard label|Space"
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
 case|case
 literal|'\\'
 case|:
+comment|/* do not translate the part before the | */
 name|g_string_append
 argument_list|(
 name|gstring
 argument_list|,
-literal|"Backslash"
+name|Q_
+argument_list|(
+literal|"keyboard label|Backslash"
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
