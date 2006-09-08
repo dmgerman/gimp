@@ -157,10 +157,6 @@ parameter_list|,
 name|gdouble
 name|opacity
 parameter_list|,
-name|GimpImage
-modifier|*
-name|src_image
-parameter_list|,
 name|GimpPickable
 modifier|*
 name|src_pickable
@@ -481,7 +477,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_clone_motion (GimpSourceCore * source_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,gdouble opacity,GimpImage * src_image,GimpPickable * src_pickable,PixelRegion * srcPR,gint src_offset_x,gint src_offset_y,TempBuf * paint_area,gint paint_area_offset_x,gint paint_area_offset_y,gint paint_area_width,gint paint_area_height)
+DECL|function|gimp_clone_motion (GimpSourceCore * source_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,gdouble opacity,GimpPickable * src_pickable,PixelRegion * srcPR,gint src_offset_x,gint src_offset_y,TempBuf * paint_area,gint paint_area_offset_x,gint paint_area_offset_y,gint paint_area_width,gint paint_area_height)
 name|gimp_clone_motion
 parameter_list|(
 name|GimpSourceCore
@@ -498,10 +494,6 @@ name|paint_options
 parameter_list|,
 name|gdouble
 name|opacity
-parameter_list|,
-name|GimpImage
-modifier|*
-name|src_image
 parameter_list|,
 name|GimpPickable
 modifier|*
@@ -572,6 +564,10 @@ argument_list|)
 decl_stmt|;
 name|GimpImage
 modifier|*
+name|src_image
+decl_stmt|;
+name|GimpImage
+modifier|*
 name|image
 decl_stmt|;
 name|gpointer
@@ -591,6 +587,13 @@ name|pattern
 init|=
 name|NULL
 decl_stmt|;
+name|src_image
+operator|=
+name|gimp_pickable_get_image
+argument_list|(
+name|src_pickable
+argument_list|)
+expr_stmt|;
 name|image
 operator|=
 name|gimp_item_get_image
