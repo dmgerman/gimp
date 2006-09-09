@@ -37,6 +37,10 @@ begin_function_decl
 name|void
 name|gimp_errors_init
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*

@@ -1364,18 +1364,6 @@ expr_stmt|;
 name|gimp_init_signal_handlers
 argument_list|()
 expr_stmt|;
-name|gimp_errors_init
-argument_list|(
-name|argv
-index|[
-literal|0
-index|]
-argument_list|,
-name|use_debug_handler
-argument_list|,
-name|stack_trace_mode
-argument_list|)
-expr_stmt|;
 name|app_run
 argument_list|(
 name|argv
@@ -1410,6 +1398,8 @@ argument_list|,
 name|use_cpu_accel
 argument_list|,
 name|console_messages
+argument_list|,
+name|use_debug_handler
 argument_list|,
 name|stack_trace_mode
 argument_list|,

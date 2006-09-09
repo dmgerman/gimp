@@ -170,15 +170,30 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_decl_stmt
+DECL|variable|the_errors_gimp
+specifier|static
+name|Gimp
+modifier|*
+name|the_errors_gimp
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
 begin_comment
 comment|/*  public functions  */
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_errors_init (const gchar * _full_prog_name,gboolean _use_debug_handler,GimpStackTraceMode _stack_trace_mode)
+DECL|function|gimp_errors_init (Gimp * gimp,const gchar * _full_prog_name,gboolean _use_debug_handler,GimpStackTraceMode _stack_trace_mode)
 name|gimp_errors_init
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -191,6 +206,14 @@ name|GimpStackTraceMode
 name|_stack_trace_mode
 parameter_list|)
 block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_GIMP
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|_full_prog_name
@@ -227,6 +250,10 @@ directive|endif
 endif|#
 directive|endif
 comment|/* GIMP_UNSTABLE */
+name|the_errors_gimp
+operator|=
+name|gimp
+expr_stmt|;
 name|use_debug_handler
 operator|=
 name|_use_debug_handler
@@ -537,6 +564,15 @@ operator|&
 name|sigset
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|the_errors_gimp
+condition|)
+name|gimp_gui_ungrab
+argument_list|(
+name|the_errors_gimp
 argument_list|)
 expr_stmt|;
 name|g_on_error_query

@@ -417,7 +417,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|app_run (const gchar * full_prog_name,const gchar ** filenames,const gchar * alternate_system_gimprc,const gchar * alternate_gimprc,const gchar * session_name,const gchar * batch_interpreter,const gchar ** batch_commands,gboolean no_interface,gboolean no_data,gboolean no_fonts,gboolean no_splash,gboolean be_verbose,gboolean use_shm,gboolean use_cpu_accel,gboolean console_messages,GimpStackTraceMode stack_trace_mode,GimpPDBCompatMode pdb_compat_mode)
+DECL|function|app_run (const gchar * full_prog_name,const gchar ** filenames,const gchar * alternate_system_gimprc,const gchar * alternate_gimprc,const gchar * session_name,const gchar * batch_interpreter,const gchar ** batch_commands,gboolean no_interface,gboolean no_data,gboolean no_fonts,gboolean no_splash,gboolean be_verbose,gboolean use_shm,gboolean use_cpu_accel,gboolean console_messages,gboolean use_debug_handler,GimpStackTraceMode stack_trace_mode,GimpPDBCompatMode pdb_compat_mode)
 name|app_run
 parameter_list|(
 specifier|const
@@ -480,6 +480,9 @@ name|use_cpu_accel
 parameter_list|,
 name|gboolean
 name|console_messages
+parameter_list|,
+name|gboolean
+name|use_debug_handler
 parameter_list|,
 name|GimpStackTraceMode
 name|stack_trace_mode
@@ -583,6 +586,17 @@ argument_list|,
 name|stack_trace_mode
 argument_list|,
 name|pdb_compat_mode
+argument_list|)
+expr_stmt|;
+name|gimp_errors_init
+argument_list|(
+name|gimp
+argument_list|,
+name|full_prog_name
+argument_list|,
+name|use_debug_handler
+argument_list|,
+name|stack_trace_mode
 argument_list|)
 expr_stmt|;
 for|for
