@@ -207,9 +207,8 @@ name|GimpDrawable
 modifier|*
 name|d_drawable
 parameter_list|,
-name|GimpPickable
-modifier|*
-name|s_pickable
+name|GimpImageType
+name|src_type
 parameter_list|,
 name|guchar
 modifier|*
@@ -570,6 +569,9 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
+name|GimpImageType
+name|src_type
+decl_stmt|;
 name|gpointer
 name|pr
 init|=
@@ -602,6 +604,31 @@ name|GIMP_ITEM
 argument_list|(
 name|drawable
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|src_type
+operator|=
+name|gimp_pickable_get_image_type
+argument_list|(
+name|src_pickable
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|gimp_pickable_get_bytes
+argument_list|(
+name|src_pickable
+argument_list|)
+operator|<
+name|srcPR
+operator|->
+name|bytes
+condition|)
+name|src_type
+operator|=
+name|GIMP_IMAGE_TYPE_WITH_ALPHA
+argument_list|(
+name|src_type
 argument_list|)
 expr_stmt|;
 comment|/*  configure the destination  */
@@ -757,7 +784,7 @@ name|src_image
 argument_list|,
 name|drawable
 argument_list|,
-name|src_pickable
+name|src_type
 argument_list|,
 name|s
 argument_list|,
@@ -896,7 +923,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_clone_line_image (GimpImage * dest,GimpImage * src,GimpDrawable * d_drawable,GimpPickable * s_pickable,guchar * s,guchar * d,gint src_bytes,gint dest_bytes,gint width)
+DECL|function|gimp_clone_line_image (GimpImage * dest,GimpImage * src,GimpDrawable * d_drawable,GimpImageType src_type,guchar * s,guchar * d,gint src_bytes,gint dest_bytes,gint width)
 name|gimp_clone_line_image
 parameter_list|(
 name|GimpImage
@@ -911,9 +938,8 @@ name|GimpDrawable
 modifier|*
 name|d_drawable
 parameter_list|,
-name|GimpPickable
-modifier|*
-name|s_pickable
+name|GimpImageType
+name|src_type
 parameter_list|,
 name|guchar
 modifier|*
@@ -958,10 +984,7 @@ name|gimp_image_get_color
 argument_list|(
 name|src
 argument_list|,
-name|gimp_pickable_get_image_type
-argument_list|(
-name|s_pickable
-argument_list|)
+name|src_type
 argument_list|,
 name|s
 argument_list|,
