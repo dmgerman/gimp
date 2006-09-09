@@ -37,7 +37,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1f2ec90103
+DECL|enum|__anon2ab41f570103
 block|{
 DECL|enumerator|GIMP_CURSOR_MODE_TOOL_ICON
 name|GIMP_CURSOR_MODE_TOOL_ICON
@@ -77,7 +77,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1f2ec90203
+DECL|enum|__anon2ab41f570203
 block|{
 DECL|enumerator|GIMP_CANVAS_PADDING_MODE_DEFAULT
 name|GIMP_CANVAS_PADDING_MODE_DEFAULT
@@ -128,19 +128,19 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1f2ec90303
+DECL|enum|__anon2ab41f570303
 block|{
 DECL|enumerator|GIMP_SPACE_BAR_ACTION_NONE
 name|GIMP_SPACE_BAR_ACTION_NONE
 block|,
-comment|/*< desc="None">*/
+comment|/*< desc="No action">*/
 DECL|enumerator|GIMP_SPACE_BAR_ACTION_PAN
 name|GIMP_SPACE_BAR_ACTION_PAN
 block|,
-comment|/*< desc="Pan">*/
+comment|/*< desc="Pan view">*/
 DECL|enumerator|GIMP_SPACE_BAR_ACTION_MOVE
 name|GIMP_SPACE_BAR_ACTION_MOVE
-comment|/*< desc="Move">*/
+comment|/*< desc="Switch to Move tool">*/
 DECL|typedef|GimpSpaceBarAction
 block|}
 name|GimpSpaceBarAction

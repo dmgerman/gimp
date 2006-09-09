@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpwidgets/gimpwidgets.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"dialogs-types.h"
 end_include
 
@@ -86,7 +92,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a048c10108
+DECL|struct|__anon28cb8e410108
 block|{
 DECL|member|dialog
 name|GtkWidget

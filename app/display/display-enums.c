@@ -380,7 +380,7 @@ name|GIMP_SPACE_BAR_ACTION_NONE
 block|,
 name|N_
 argument_list|(
-literal|"None"
+literal|"No action"
 argument_list|)
 block|,
 name|NULL
@@ -391,7 +391,7 @@ name|GIMP_SPACE_BAR_ACTION_PAN
 block|,
 name|N_
 argument_list|(
-literal|"Pan"
+literal|"Pan view"
 argument_list|)
 block|,
 name|NULL
@@ -402,7 +402,7 @@ name|GIMP_SPACE_BAR_ACTION_MOVE
 block|,
 name|N_
 argument_list|(
-literal|"Move"
+literal|"Switch to Move tool"
 argument_list|)
 block|,
 name|NULL
