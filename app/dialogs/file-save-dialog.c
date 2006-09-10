@@ -915,6 +915,45 @@ argument_list|(
 name|utf8
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|DEBUG_SPEW
+name|g_print
+argument_list|(
+literal|"%s: set basename to %s, rerunning response and "
+literal|"bailing out\n"
+argument_list|,
+name|G_STRFUNC
+argument_list|,
+name|basename
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
+comment|/*  call the response callback again, so the                *  overwrite-confirm logic can check the changed uri                */
+name|gtk_dialog_response
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|save_dialog
+argument_list|)
+argument_list|,
+name|GTK_RESPONSE_OK
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|uri
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|basename
+argument_list|)
+expr_stmt|;
+return|return
+name|FALSE
+return|;
 block|}
 else|else
 block|{
