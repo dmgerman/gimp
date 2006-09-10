@@ -5985,7 +5985,7 @@ argument_list|)
 expr_stmt|;
 name|dm
 operator|->
-name|depthMap1Drawable
+name|depthMap2Drawable
 operator|=
 operator|(
 operator|(
