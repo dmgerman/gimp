@@ -1491,7 +1491,7 @@ name|GIMP_STROKE_STYLE_SOLID
 block|,
 name|N_
 argument_list|(
-literal|"Solid"
+literal|"Solid color"
 argument_list|)
 block|,
 name|NULL

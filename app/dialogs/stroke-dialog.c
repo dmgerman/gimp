@@ -906,7 +906,7 @@ name|gimp
 operator|->
 name|paint_info_list
 argument_list|,
-name|NULL
+name|context
 argument_list|,
 literal|16
 argument_list|,
