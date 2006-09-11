@@ -8214,7 +8214,10 @@ name|gimp
 operator|->
 name|templates
 argument_list|,
-name|NULL
+name|gimp_get_user_context
+argument_list|(
+name|gimp
+argument_list|)
 argument_list|,
 literal|16
 argument_list|,
@@ -8971,7 +8974,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2963f57f0108
+DECL|struct|__anon29677e550108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -10134,7 +10137,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2963f57f0208
+DECL|struct|__anon29677e550208
 block|{
 DECL|member|label
 specifier|const
@@ -11038,7 +11041,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2963f57f0308
+DECL|struct|__anon29677e550308
 block|{
 DECL|member|property_name
 specifier|const
@@ -11193,7 +11196,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2963f57f0408
+DECL|struct|__anon29677e550408
 block|{
 DECL|member|tree_label
 specifier|const
