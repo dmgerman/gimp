@@ -49,7 +49,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bfe9dcb0103
+DECL|enum|__anon2acd0b060103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -63,7 +63,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bfe9dcb0208
+DECL|struct|__anon2acd0b060208
 block|{
 DECL|member|x
 DECL|member|y
@@ -1870,6 +1870,7 @@ name|drawable
 operator|->
 name|bpp
 argument_list|,
+operator|(
 name|buf
 operator|+
 operator|(
@@ -1877,6 +1878,10 @@ name|draw_x
 operator|-
 name|x
 operator|)
+operator|*
+name|drawable
+operator|->
+name|bpp
 operator|+
 operator|(
 name|draw_y
@@ -1885,6 +1890,7 @@ name|y
 operator|)
 operator|*
 name|rowstride
+operator|)
 argument_list|,
 name|rowstride
 argument_list|,
