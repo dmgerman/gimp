@@ -108,13 +108,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/gimpcolortool.h"
+file|"tools/gimpmovetool.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tools/gimpmovetool.h"
+file|"tools/gimppainttool.h"
 end_include
 
 begin_include
@@ -5039,10 +5039,28 @@ operator|(
 operator|(
 name|sample_point
 operator|&&
+operator|(
 name|GIMP_IS_COLOR_TOOL
 argument_list|(
 name|active_tool
 argument_list|)
+operator|&&
+operator|!
+operator|(
+name|GIMP_IS_PAINT_TOOL
+argument_list|(
+name|active_tool
+argument_list|)
+operator|&&
+operator|!
+name|GIMP_PAINT_TOOL
+argument_list|(
+name|active_tool
+argument_list|)
+operator|->
+name|pick_colors
+operator|)
+operator|)
 operator|)
 operator|||
 operator|(
