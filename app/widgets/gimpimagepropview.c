@@ -130,7 +130,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c3c97d0103
+DECL|enum|__anon2bdc9c040103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -702,7 +702,7 @@ operator|++
 argument_list|,
 name|_
 argument_list|(
-literal|"Filename:"
+literal|"File Name:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -719,7 +719,7 @@ operator|++
 argument_list|,
 name|_
 argument_list|(
-literal|"Filesize:"
+literal|"File Size:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -735,7 +735,7 @@ name|row
 argument_list|,
 name|_
 argument_list|(
-literal|"Filetype:"
+literal|"File Type:"
 argument_list|)
 argument_list|)
 expr_stmt|;
