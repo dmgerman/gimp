@@ -86,7 +86,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* Retrieve all help domains */
+comment|/* Retrieve all locale domains */
 end_comment
 
 begin_function_decl
