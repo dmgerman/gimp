@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0963fb0103
+DECL|enum|__anon2c5ad2e50103
 block|{
 DECL|enumerator|RECTANGLE_CHANGED
 name|RECTANGLE_CHANGED
@@ -7031,13 +7031,6 @@ operator|->
 name|display
 operator|==
 name|display
-operator|&&
-operator|!
-operator|(
-name|state
-operator|&
-name|GDK_BUTTON1_MASK
-operator|)
 condition|)
 block|{
 name|guint

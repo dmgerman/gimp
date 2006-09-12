@@ -2229,13 +2229,6 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|state
-operator|&
-name|GDK_BUTTON1_MASK
-condition|)
-return|return;
-if|if
-condition|(
 name|key
 operator|==
 name|GDK_SHIFT_MASK

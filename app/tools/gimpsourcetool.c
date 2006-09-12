@@ -1000,16 +1000,6 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-operator|!
-operator|(
-name|state
-operator|&
-name|GDK_BUTTON1_MASK
-operator|)
-condition|)
-block|{
-if|if
-condition|(
 name|options
 operator|->
 name|use_source
@@ -1040,7 +1030,6 @@ name|source_tool
 operator|->
 name|status_paint
 expr_stmt|;
-block|}
 block|}
 name|GIMP_TOOL_CLASS
 argument_list|(
