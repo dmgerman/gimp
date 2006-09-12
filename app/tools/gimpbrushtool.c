@@ -1001,6 +1001,11 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
+name|brush_tool
+operator|->
+name|show_cursor
+operator|&&
+operator|!
 name|gimp_color_tool_is_enabled
 argument_list|(
 name|GIMP_COLOR_TOOL
@@ -1009,10 +1014,14 @@ name|tool
 argument_list|)
 argument_list|)
 operator|&&
-operator|!
-name|brush_tool
+name|gimp_tool_control_get_cursor_modifier
+argument_list|(
+name|tool
 operator|->
-name|show_cursor
+name|control
+argument_list|)
+operator|!=
+name|GIMP_CURSOR_MODIFIER_BAD
 condition|)
 block|{
 name|gimp_tool_set_cursor
@@ -1028,8 +1037,9 @@ argument_list|,
 name|GIMP_CURSOR_MODIFIER_NONE
 argument_list|)
 expr_stmt|;
-return|return;
 block|}
+else|else
+block|{
 name|GIMP_TOOL_CLASS
 argument_list|(
 name|parent_class
@@ -1046,6 +1056,7 @@ argument_list|,
 name|display
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
