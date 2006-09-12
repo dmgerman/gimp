@@ -29,7 +29,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27978d550103
+DECL|enum|__anon291fa7890103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -160,6 +160,16 @@ name|MeasureFunction
 name|function
 decl_stmt|;
 comment|/*  function we're performing  */
+DECL|member|mouse_x
+name|gdouble
+name|mouse_x
+decl_stmt|;
+comment|/*  pointer x coordinate       */
+DECL|member|mouse_y
+name|gdouble
+name|mouse_y
+decl_stmt|;
+comment|/*  pointer y coordinate       */
 DECL|member|last_x
 name|gint
 name|last_x
