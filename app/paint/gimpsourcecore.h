@@ -283,6 +283,29 @@ name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
 
+begin_comment
+comment|/* TEMP HACK */
+end_comment
+
+begin_function_decl
+name|void
+name|gimp_source_core_motion
+parameter_list|(
+name|GimpSourceCore
+modifier|*
+name|source_core
+parameter_list|,
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|,
+name|GimpPaintOptions
+modifier|*
+name|paint_options
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

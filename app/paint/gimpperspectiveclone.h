@@ -112,32 +112,6 @@ DECL|member|parent_instance
 name|GimpClone
 name|parent_instance
 decl_stmt|;
-DECL|member|set_source
-name|gboolean
-name|set_source
-decl_stmt|;
-DECL|member|src_drawable
-name|GimpDrawable
-modifier|*
-name|src_drawable
-decl_stmt|;
-DECL|member|src_x
-name|gdouble
-name|src_x
-decl_stmt|;
-comment|/* coordinates where the cross that indicate where is copying each moment is painted */
-DECL|member|src_y
-name|gdouble
-name|src_y
-decl_stmt|;
-DECL|member|orig_src_x
-name|gdouble
-name|orig_src_x
-decl_stmt|;
-DECL|member|orig_src_y
-name|gdouble
-name|orig_src_y
-decl_stmt|;
 DECL|member|dest_x
 name|gdouble
 name|dest_x
@@ -165,18 +139,6 @@ DECL|member|dest_y_fv
 name|gdouble
 name|dest_y_fv
 decl_stmt|;
-DECL|member|offset_x
-name|gdouble
-name|offset_x
-decl_stmt|;
-DECL|member|offset_y
-name|gdouble
-name|offset_y
-decl_stmt|;
-DECL|member|first_stroke
-name|gboolean
-name|first_stroke
-decl_stmt|;
 DECL|member|transform
 name|GimpMatrix3
 name|transform
@@ -184,6 +146,11 @@ decl_stmt|;
 DECL|member|transform_inv
 name|GimpMatrix3
 name|transform_inv
+decl_stmt|;
+DECL|member|src_area
+name|TempBuf
+modifier|*
+name|src_area
 decl_stmt|;
 block|}
 struct|;
@@ -257,7 +224,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMP_CLONE_VANISHIGN_H__  */
+comment|/*  __GIMP_PERSPECTIVE_CLONE_H__  */
 end_comment
 
 end_unit

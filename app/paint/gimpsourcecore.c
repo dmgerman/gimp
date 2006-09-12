@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon296a3f430103
+DECL|enum|__anon2a1b2dd50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -179,25 +179,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-specifier|static
-name|void
-name|gimp_source_core_motion
-parameter_list|(
-name|GimpSourceCore
-modifier|*
-name|source_core
-parameter_list|,
-name|GimpDrawable
-modifier|*
-name|drawable
-parameter_list|,
-name|GimpPaintOptions
-modifier|*
-name|paint_options
-parameter_list|)
-function_decl|;
-end_function_decl
+begin_if
+if|#
+directive|if
+literal|0
+end_if
+
+begin_endif
+unit|static void   gimp_source_core_motion            (GimpSourceCore   *source_core,                                                   GimpDrawable     *drawable,                                                   GimpPaintOptions *paint_options);
+endif|#
+directive|endif
+end_endif
 
 begin_function_decl
 specifier|static
@@ -1045,7 +1037,6 @@ block|}
 end_function
 
 begin_function
-specifier|static
 name|void
 DECL|function|gimp_source_core_motion (GimpSourceCore * source_core,GimpDrawable * drawable,GimpPaintOptions * paint_options)
 name|gimp_source_core_motion

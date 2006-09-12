@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gimppaintoptions.h"
+file|"gimpcloneoptions.h"
 end_include
 
 begin_define
@@ -109,24 +109,12 @@ struct|struct
 name|_GimpPerspectiveCloneOptions
 block|{
 DECL|member|paint_instance
-name|GimpPaintOptions
+name|GimpCloneOptions
 name|paint_instance
 decl_stmt|;
 DECL|member|clone_mode
 name|GimpPerspectiveCloneMode
 name|clone_mode
-decl_stmt|;
-DECL|member|clone_type
-name|GimpCloneType
-name|clone_type
-decl_stmt|;
-DECL|member|align_mode
-name|GimpSourceAlignMode
-name|align_mode
-decl_stmt|;
-DECL|member|sample_merged
-name|gboolean
-name|sample_merged
 decl_stmt|;
 block|}
 struct|;
@@ -138,7 +126,7 @@ struct|struct
 name|_GimpPerspectiveCloneOptionsClass
 block|{
 DECL|member|parent_class
-name|GimpPaintOptionsClass
+name|GimpCloneOptionsClass
 name|parent_class
 decl_stmt|;
 block|}
