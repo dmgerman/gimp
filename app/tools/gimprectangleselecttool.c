@@ -324,7 +324,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_rect_select_tool_modifier_key
+name|gimp_rect_select_tool_active_modifier_key
 parameter_list|(
 name|GimpTool
 modifier|*
@@ -714,9 +714,9 @@ name|gimp_rectangle_tool_key_press
 expr_stmt|;
 name|tool_class
 operator|->
-name|modifier_key
+name|active_modifier_key
 operator|=
-name|gimp_rect_select_tool_modifier_key
+name|gimp_rect_select_tool_active_modifier_key
 expr_stmt|;
 name|tool_class
 operator|->
@@ -1661,8 +1661,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_rect_select_tool_modifier_key (GimpTool * tool,GdkModifierType key,gboolean press,GdkModifierType state,GimpDisplay * display)
-name|gimp_rect_select_tool_modifier_key
+DECL|function|gimp_rect_select_tool_active_modifier_key (GimpTool * tool,GdkModifierType key,gboolean press,GdkModifierType state,GimpDisplay * display)
+name|gimp_rect_select_tool_active_modifier_key
 parameter_list|(
 name|GimpTool
 modifier|*
@@ -1687,7 +1687,7 @@ argument_list|(
 name|parent_class
 argument_list|)
 operator|->
-name|modifier_key
+name|active_modifier_key
 argument_list|(
 name|tool
 argument_list|,
@@ -1700,7 +1700,7 @@ argument_list|,
 name|display
 argument_list|)
 expr_stmt|;
-name|gimp_rectangle_tool_modifier_key
+name|gimp_rectangle_tool_active_modifier_key
 argument_list|(
 name|tool
 argument_list|,

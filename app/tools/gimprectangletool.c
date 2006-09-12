@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5ad2e50103
+DECL|enum|__anon28f0fda60103
 block|{
 DECL|enumerator|RECTANGLE_CHANGED
 name|RECTANGLE_CHANGED
@@ -5321,8 +5321,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_rectangle_tool_modifier_key (GimpTool * tool,GdkModifierType key,gboolean press,GdkModifierType state,GimpDisplay * display)
-name|gimp_rectangle_tool_modifier_key
+DECL|function|gimp_rectangle_tool_active_modifier_key (GimpTool * tool,GdkModifierType key,gboolean press,GdkModifierType state,GimpDisplay * display)
+name|gimp_rectangle_tool_active_modifier_key
 parameter_list|(
 name|GimpTool
 modifier|*
@@ -5360,11 +5360,6 @@ argument_list|(
 name|tool
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|press
-condition|)
-block|{
 if|if
 condition|(
 name|key
@@ -5471,7 +5466,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 block|}
 block|}

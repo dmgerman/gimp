@@ -253,6 +253,24 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|tool_manager_active_modifier_state_active
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
+name|GdkModifierType
+name|state
+parameter_list|,
+name|GimpDisplay
+modifier|*
+name|display
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|tool_manager_oper_update_active
 parameter_list|(
 name|Gimp
