@@ -999,7 +999,7 @@ argument_list|(
 name|_
 argument_list|(
 literal|"Click-Drag to replace the "
-literal|"current selection."
+literal|"current selection"
 argument_list|)
 argument_list|,
 name|modifiers
@@ -1020,13 +1020,15 @@ name|TRUE
 expr_stmt|;
 block|}
 else|else
+block|{
 name|status
 operator|=
 name|_
 argument_list|(
-literal|"Click-Drag to create a new selection."
+literal|"Click-Drag to create a new selection"
 argument_list|)
 expr_stmt|;
+block|}
 break|break;
 case|case
 name|SELECTION_ADD
@@ -1038,7 +1040,7 @@ argument_list|(
 name|_
 argument_list|(
 literal|"Click-Drag to add to the "
-literal|"current selection."
+literal|"current selection"
 argument_list|)
 argument_list|,
 name|modifiers
@@ -1072,7 +1074,7 @@ argument_list|(
 name|_
 argument_list|(
 literal|"Click-Drag to subtract from the "
-literal|"current selection."
+literal|"current selection"
 argument_list|)
 argument_list|,
 name|modifiers
@@ -1106,7 +1108,7 @@ argument_list|(
 name|_
 argument_list|(
 literal|"Click-Drag to intersect with "
-literal|"the current selection."
+literal|"the current selection"
 argument_list|)
 argument_list|,
 name|modifiers
@@ -1136,7 +1138,7 @@ argument_list|(
 name|_
 argument_list|(
 literal|"Click-Drag to move the "
-literal|"selection mask."
+literal|"selection mask"
 argument_list|)
 argument_list|,
 name|modifiers
@@ -1163,7 +1165,7 @@ name|status
 operator|=
 name|_
 argument_list|(
-literal|"Click-Drag to move the selected pixels."
+literal|"Click-Drag to move the selected pixels"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1174,7 +1176,7 @@ name|status
 operator|=
 name|_
 argument_list|(
-literal|"Click-Drag to move a copy of the selected pixels."
+literal|"Click-Drag to move a copy of the selected pixels"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1185,7 +1187,7 @@ name|status
 operator|=
 name|_
 argument_list|(
-literal|"Click to anchor the floating selection."
+literal|"Click to anchor the floating selection"
 argument_list|)
 expr_stmt|;
 break|break;

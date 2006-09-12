@@ -300,7 +300,7 @@ name|status
 operator|=
 name|_
 argument_list|(
-literal|"Click to erase."
+literal|"Click to erase"
 argument_list|)
 expr_stmt|;
 name|paint_tool
@@ -309,7 +309,7 @@ name|status_line
 operator|=
 name|_
 argument_list|(
-literal|"Click to erase the line."
+literal|"Click to erase the line"
 argument_list|)
 expr_stmt|;
 name|paint_tool

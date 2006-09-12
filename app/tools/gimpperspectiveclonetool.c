@@ -2704,7 +2704,7 @@ name|display
 argument_list|,
 name|_
 argument_list|(
-literal|"Ctrl-Click to set a clone source."
+literal|"Ctrl-Click to set a clone source"
 argument_list|)
 argument_list|)
 expr_stmt|;

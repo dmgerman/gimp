@@ -270,7 +270,7 @@ name|status_paint
 operator|=
 name|_
 argument_list|(
-literal|"Click to clone."
+literal|"Click to clone"
 argument_list|)
 expr_stmt|;
 name|source_tool

@@ -4334,7 +4334,7 @@ name|status
 operator|=
 name|_
 argument_list|(
-literal|"Click to pick path to edit."
+literal|"Click to pick path to edit"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -4345,7 +4345,7 @@ name|status
 operator|=
 name|_
 argument_list|(
-literal|"Click to create a new path."
+literal|"Click to create a new path"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -4356,7 +4356,7 @@ name|status
 operator|=
 name|_
 argument_list|(
-literal|"Click to create a new component of the path."
+literal|"Click to create a new component of the path"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -4369,7 +4369,7 @@ name|gimp_suggest_modifiers
 argument_list|(
 name|_
 argument_list|(
-literal|"Click to create a new anchor."
+literal|"Click to create a new anchor"
 argument_list|)
 argument_list|,
 name|GDK_SHIFT_MASK
@@ -4396,7 +4396,7 @@ name|status
 operator|=
 name|_
 argument_list|(
-literal|"Click-Drag to move the anchor around."
+literal|"Click-Drag to move the anchor around"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -4407,7 +4407,7 @@ name|status
 operator|=
 name|_
 argument_list|(
-literal|"Click-Drag to move the anchors around."
+literal|"Click-Drag to move the anchors around"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -4421,7 +4421,7 @@ argument_list|(
 name|_
 argument_list|(
 literal|"Click-Drag to move the handle "
-literal|"around."
+literal|"around"
 argument_list|)
 argument_list|,
 name|GDK_SHIFT_MASK
@@ -4460,7 +4460,7 @@ argument_list|(
 name|_
 argument_list|(
 literal|"Click-Drag to move the "
-literal|"anchors around."
+literal|"anchors around"
 argument_list|)
 argument_list|,
 name|GDK_SHIFT_MASK
@@ -4483,7 +4483,7 @@ argument_list|(
 name|_
 argument_list|(
 literal|"Click-Drag to change the "
-literal|"shape of the curve."
+literal|"shape of the curve"
 argument_list|)
 argument_list|,
 name|GDK_SHIFT_MASK
@@ -4516,7 +4516,7 @@ argument_list|(
 name|_
 argument_list|(
 literal|"Click-Drag to move the "
-literal|"component around."
+literal|"component around"
 argument_list|)
 argument_list|,
 name|GDK_SHIFT_MASK
@@ -4543,7 +4543,7 @@ name|status
 operator|=
 name|_
 argument_list|(
-literal|"Click-Drag to move the path around."
+literal|"Click-Drag to move the path around"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -4557,7 +4557,7 @@ argument_list|(
 name|_
 argument_list|(
 literal|"Click-Drag to insert an anchor "
-literal|"on the path."
+literal|"on the path"
 argument_list|)
 argument_list|,
 name|GDK_SHIFT_MASK
@@ -4584,7 +4584,7 @@ name|status
 operator|=
 name|_
 argument_list|(
-literal|"Click to delete this anchor."
+literal|"Click to delete this anchor"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -4596,7 +4596,7 @@ operator|=
 name|_
 argument_list|(
 literal|"Click to connect this anchor "
-literal|"with the selected endpoint."
+literal|"with the selected endpoint"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -4607,7 +4607,7 @@ name|status
 operator|=
 name|_
 argument_list|(
-literal|"Click to open up the path."
+literal|"Click to open up the path"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -4618,7 +4618,7 @@ name|status
 operator|=
 name|_
 argument_list|(
-literal|"Click to make this node angular."
+literal|"Click to make this node angular"
 argument_list|)
 expr_stmt|;
 break|break;

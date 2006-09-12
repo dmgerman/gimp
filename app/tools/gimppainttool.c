@@ -512,7 +512,7 @@ name|status
 operator|=
 name|_
 argument_list|(
-literal|"Click to paint."
+literal|"Click to paint"
 argument_list|)
 expr_stmt|;
 name|paint_tool
@@ -521,7 +521,7 @@ name|status_line
 operator|=
 name|_
 argument_list|(
-literal|"Click to draw the line."
+literal|"Click to draw the line"
 argument_list|)
 expr_stmt|;
 name|paint_tool
@@ -1892,7 +1892,7 @@ argument_list|,
 name|_
 argument_list|(
 literal|"Click in any image to pick the "
-literal|"foreground color."
+literal|"foreground color"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1909,7 +1909,7 @@ argument_list|,
 name|_
 argument_list|(
 literal|"Click in any image to pick the "
-literal|"background color."
+literal|"background color"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2145,13 +2145,6 @@ operator|)
 condition|)
 block|{
 comment|/*  If shift is down and this is not the first paint stroke,            *  draw a line.            */
-name|gdouble
-name|dx
-decl_stmt|,
-name|dy
-decl_stmt|,
-name|dist
-decl_stmt|;
 name|gchar
 name|status_str
 index|[
@@ -2161,6 +2154,13 @@ decl_stmt|;
 name|gchar
 modifier|*
 name|status_help
+decl_stmt|;
+name|gdouble
+name|dx
+decl_stmt|,
+name|dy
+decl_stmt|,
+name|dist
 decl_stmt|;
 name|gint
 name|off_x

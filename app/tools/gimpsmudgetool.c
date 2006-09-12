@@ -216,7 +216,7 @@ name|status
 operator|=
 name|_
 argument_list|(
-literal|"Click to smudge."
+literal|"Click to smudge"
 argument_list|)
 expr_stmt|;
 name|paint_tool
@@ -225,7 +225,7 @@ name|status_line
 operator|=
 name|_
 argument_list|(
-literal|"Click to smudge the line."
+literal|"Click to smudge the line"
 argument_list|)
 expr_stmt|;
 name|paint_tool

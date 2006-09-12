@@ -1597,7 +1597,7 @@ name|status
 operator|=
 name|_
 argument_list|(
-literal|"Click to add a control point."
+literal|"Click to add a control point"
 argument_list|)
 expr_stmt|;
 block|}
@@ -1617,7 +1617,7 @@ name|status
 operator|=
 name|_
 argument_list|(
-literal|"Click to add control points to all channels."
+literal|"Click to add control points to all channels"
 argument_list|)
 expr_stmt|;
 block|}

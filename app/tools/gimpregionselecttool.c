@@ -624,7 +624,7 @@ name|display
 argument_list|,
 name|_
 argument_list|(
-literal|"Move the mouse to change threshold."
+literal|"Move the mouse to change threshold"
 argument_list|)
 argument_list|)
 expr_stmt|;

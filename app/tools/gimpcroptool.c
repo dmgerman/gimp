@@ -972,7 +972,7 @@ name|display
 argument_list|,
 name|_
 argument_list|(
-literal|"Click or press enter to crop."
+literal|"Click or press enter to crop"
 argument_list|)
 argument_list|)
 expr_stmt|;
