@@ -127,22 +127,32 @@ DECL|member|startx
 name|gdouble
 name|startx
 decl_stmt|;
-comment|/*  starting x coord     */
+comment|/*  starting x coord  */
 DECL|member|starty
 name|gdouble
 name|starty
 decl_stmt|;
-comment|/*  starting y coord     */
+comment|/*  starting y coord  */
 DECL|member|endx
 name|gdouble
 name|endx
 decl_stmt|;
-comment|/*  ending x coord       */
+comment|/*  ending x coord    */
 DECL|member|endy
 name|gdouble
 name|endy
 decl_stmt|;
-comment|/*  ending y coord       */
+comment|/*  ending y coord    */
+DECL|member|mousex
+name|gdouble
+name|mousex
+decl_stmt|;
+comment|/*  pointer x coord   */
+DECL|member|mousey
+name|gdouble
+name|mousey
+decl_stmt|;
+comment|/*  pointer y coord   */
 block|}
 struct|;
 end_struct

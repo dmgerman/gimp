@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b31eb660103
+DECL|enum|__anon2ad194ae0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1761,15 +1761,6 @@ name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_tool_set_active_modifier_state
-argument_list|(
-name|tool
-argument_list|,
-literal|0
-argument_list|,
-name|display
-argument_list|)
-expr_stmt|;
 name|GIMP_TOOL_GET_CLASS
 argument_list|(
 name|tool
@@ -1784,6 +1775,15 @@ argument_list|,
 name|time
 argument_list|,
 name|state
+argument_list|,
+name|display
+argument_list|)
+expr_stmt|;
+name|gimp_tool_set_active_modifier_state
+argument_list|(
+name|tool
+argument_list|,
+literal|0
 argument_list|,
 name|display
 argument_list|)
