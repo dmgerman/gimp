@@ -1440,6 +1440,7 @@ name|y2
 argument_list|)
 condition|)
 block|{
+comment|/* expose will restart the selection */
 name|gimp_display_shell_expose_area
 argument_list|(
 name|selection
@@ -1461,6 +1462,16 @@ name|y2
 operator|-
 name|y1
 operator|)
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|selection_start
+argument_list|(
+name|selection
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
@@ -1653,7 +1664,7 @@ name|y2
 operator|-
 literal|1
 decl_stmt|;
-comment|/*  expose the region  */
+comment|/*  expose the region, this will restart the selection  */
 name|gimp_display_shell_expose_area
 argument_list|(
 name|selection
