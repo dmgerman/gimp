@@ -50,14 +50,6 @@ value|"unsharp"
 end_define
 
 begin_define
-DECL|macro|PLUG_IN_VERSION
-define|#
-directive|define
-name|PLUG_IN_VERSION
-value|"0.10"
-end_define
-
-begin_define
 DECL|macro|SCALE_WIDTH
 define|#
 directive|define
@@ -84,7 +76,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a8bace80108
+DECL|struct|__anon275e36f10108
 block|{
 DECL|member|radius
 name|gdouble
@@ -111,7 +103,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a8bace80208
+DECL|struct|__anon275e36f10208
 block|{
 DECL|member|run
 name|gboolean

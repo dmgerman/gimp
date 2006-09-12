@@ -182,14 +182,6 @@ file|"gfig-stock.h"
 end_include
 
 begin_define
-DECL|macro|BRUSH_PREVIEW_SZ
-define|#
-directive|define
-name|BRUSH_PREVIEW_SZ
-value|32
-end_define
-
-begin_define
 DECL|macro|SEL_BUTTON_WIDTH
 define|#
 directive|define
@@ -206,14 +198,6 @@ value|20
 end_define
 
 begin_define
-DECL|macro|PREVIEW_MASK
-define|#
-directive|define
-name|PREVIEW_MASK
-value|(GDK_EXPOSURE_MASK       | \                        GDK_POINTER_MOTION_MASK | \                        GDK_BUTTON_PRESS_MASK   | \                        GDK_BUTTON_RELEASE_MASK | \                        GDK_BUTTON_MOTION_MASK  | \                        GDK_KEY_PRESS_MASK      | \                        GDK_KEY_RELEASE_MASK)
-end_define
-
-begin_define
 DECL|macro|GRID_TYPE_MENU
 define|#
 directive|define
@@ -226,30 +210,6 @@ DECL|macro|GRID_RENDER_MENU
 define|#
 directive|define
 name|GRID_RENDER_MENU
-value|2
-end_define
-
-begin_define
-DECL|macro|GRID_IGNORE
-define|#
-directive|define
-name|GRID_IGNORE
-value|0
-end_define
-
-begin_define
-DECL|macro|GRID_HIGHTLIGHT
-define|#
-directive|define
-name|GRID_HIGHTLIGHT
-value|1
-end_define
-
-begin_define
-DECL|macro|GRID_RESTORE
-define|#
-directive|define
-name|GRID_RESTORE
 value|2
 end_define
 
@@ -464,7 +424,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7b4ea60108
+DECL|struct|__anon290907dd0108
 block|{
 DECL|member|gridspacing
 name|GtkAdjustment

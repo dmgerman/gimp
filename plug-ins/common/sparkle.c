@@ -91,14 +91,6 @@ comment|/* point spread value */
 end_comment
 
 begin_define
-DECL|macro|EPSILON
-define|#
-directive|define
-name|EPSILON
-value|0.001
-end_define
-
-begin_define
 DECL|macro|NATURAL
 define|#
 directive|define
@@ -125,7 +117,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3499960108
+DECL|struct|__anon2c1ade130108
 block|{
 DECL|member|lum_threshold
 name|gdouble

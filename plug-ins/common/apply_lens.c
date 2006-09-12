@@ -47,14 +47,6 @@ name|PLUG_IN_BINARY
 value|"apply_lens"
 end_define
 
-begin_define
-DECL|macro|ENTRY_WIDTH
-define|#
-directive|define
-name|ENTRY_WIDTH
-value|100
-end_define
-
 begin_comment
 comment|/* Declare local functions.  */
 end_comment
@@ -153,7 +145,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0d27230108
+DECL|struct|__anon27d690d50108
 block|{
 DECL|member|refraction
 name|gdouble

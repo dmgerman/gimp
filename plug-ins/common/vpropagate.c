@@ -678,14 +678,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_define
-DECL|macro|UPDATE_STEP
-define|#
-directive|define
-name|UPDATE_STEP
-value|20
-end_define
-
-begin_define
 DECL|macro|SCALE_WIDTH
 define|#
 directive|define
@@ -698,7 +690,7 @@ DECL|macro|PROPAGATING_VALUE
 define|#
 directive|define
 name|PROPAGATING_VALUE
-value|1<<0
+value|(1<< 0)
 end_define
 
 begin_define
@@ -706,7 +698,7 @@ DECL|macro|PROPAGATING_ALPHA
 define|#
 directive|define
 name|PROPAGATING_ALPHA
-value|1<<1
+value|(1<< 1)
 end_define
 
 begin_comment
@@ -716,7 +708,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297afc3b0108
+DECL|struct|__anon2a8b8d9c0108
 block|{
 DECL|member|propagate_mode
 name|gint
@@ -884,7 +876,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297afc3b0208
+DECL|struct|__anon2a8b8d9c0208
 block|{
 DECL|member|applicable_image_type
 name|gint
@@ -4037,7 +4029,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297afc3b0308
+DECL|struct|__anon2a8b8d9c0308
 block|{
 DECL|member|min_modified
 name|gshort

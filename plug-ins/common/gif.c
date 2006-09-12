@@ -135,7 +135,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ddf9600103
+DECL|enum|__anon278bdc2c0103
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -152,7 +152,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ddf9600208
+DECL|struct|__anon278bdc2c0208
 block|{
 DECL|member|interlace
 name|gint
@@ -6498,15 +6498,6 @@ begin_comment
 comment|/*   * GIF Image compression - modified 'compress'  *  * Based on: compress.c - File compression ala IEEE Computer, June 1984.  *  * By Authors:  Spencer W. Thomas       (decvax!harpo!utah-cs!utah-gr!thomas)  *              Jim McKie               (decvax!mcvax!jim)  *              Steve Davies            (decvax!vax135!petsd!peora!srd)  *              Ken Turkowski           (decvax!decwrl!turtlevax!ken)  *              James A. Woods          (decvax!ihnp4!ames!jaw)  *              Joe Orost               (decvax!vax135!petsd!joe)  *  */
 end_comment
 
-begin_define
-DECL|macro|ARGVAL ()
-define|#
-directive|define
-name|ARGVAL
-parameter_list|()
-value|(*++(*argv) || (--argc&& *++argv))
-end_define
-
 begin_decl_stmt
 DECL|variable|n_bits
 specifier|static
@@ -6676,42 +6667,8 @@ end_decl_stmt
 
 begin_comment
 DECL|variable|hsize
-comment|/* the original reason for this being                                    variable was "for dynamic table sizing",                                    but since it was never actually changed                                    I made it const   --Adam. */
+comment|/* the original reason for this being                                         variable was "for dynamic table sizing",                                         but since it was never actually changed                                         I made it const   --Adam. */
 end_comment
-
-begin_comment
-comment|/*  * To save much memory, we overlay the table used by compress() with those  * used by decompress().  The tab_prefix table is the same size and type  * as the codetab.  The tab_suffix table needs 2**GIF_BITS characters.  We  * get this from the beginning of htab.  The output stack uses the rest  * of htab, and contains characters.  There is plenty of room for any  * possible stack (stack used to be 8000 characters).  */
-end_comment
-
-begin_define
-DECL|macro|tab_prefixof (i)
-define|#
-directive|define
-name|tab_prefixof
-parameter_list|(
-name|i
-parameter_list|)
-value|CodeTabOf(i)
-end_define
-
-begin_define
-DECL|macro|tab_suffixof (i)
-define|#
-directive|define
-name|tab_suffixof
-parameter_list|(
-name|i
-parameter_list|)
-value|((char_type*)(htab))[i]
-end_define
-
-begin_define
-DECL|macro|de_stack
-define|#
-directive|define
-name|de_stack
-value|((char_type*)&tab_suffixof((code_int)1<<GIF_BITS))
-end_define
 
 begin_decl_stmt
 DECL|variable|free_ent

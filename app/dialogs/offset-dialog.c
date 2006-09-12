@@ -106,14 +106,6 @@ file|"gimp-intl.h"
 end_include
 
 begin_define
-DECL|macro|ENTRY_WIDTH
-define|#
-directive|define
-name|ENTRY_WIDTH
-value|60
-end_define
-
-begin_define
 DECL|macro|WRAP_AROUND
 define|#
 directive|define

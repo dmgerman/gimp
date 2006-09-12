@@ -230,22 +230,6 @@ value|(1<<PRECISION_B)
 end_define
 
 begin_define
-DECL|macro|MR
-define|#
-directive|define
-name|MR
-value|(HIST_G_ELEMS*HIST_B_ELEMS)
-end_define
-
-begin_define
-DECL|macro|MG
-define|#
-directive|define
-name|MG
-value|HIST_B_ELEMS
-end_define
-
-begin_define
 DECL|macro|BITS_IN_SAMPLE
 define|#
 directive|define
@@ -423,7 +407,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon27cdbc2d0103
+DECL|enum|__anon2c3ec5510103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1464,7 +1448,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cdbc2d0208
+DECL|struct|__anon2c3ec5510208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1541,7 +1525,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cdbc2d0308
+DECL|struct|__anon2c3ec5510308
 block|{
 DECL|member|ncolors
 name|long
@@ -1726,7 +1710,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cdbc2d0408
+DECL|struct|__anon2c3ec5510408
 block|{
 DECL|member|used_count
 name|signed

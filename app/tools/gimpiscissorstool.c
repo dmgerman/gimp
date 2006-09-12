@@ -194,18 +194,10 @@ comment|/* how far to look when snapping to an edge */
 end_comment
 
 begin_define
-DECL|macro|TARGET_HEIGHT
+DECL|macro|TARGET_SIZE
 define|#
 directive|define
-name|TARGET_HEIGHT
-value|25
-end_define
-
-begin_define
-DECL|macro|TARGET_WIDTH
-define|#
-directive|define
-name|TARGET_WIDTH
+name|TARGET_SIZE
 value|25
 end_define
 
@@ -281,38 +273,6 @@ begin_comment
 DECL|macro|COST_WIDTH
 comment|/* number of bytes for each pixel in cost map  */
 end_comment
-
-begin_define
-DECL|macro|BLOCK_WIDTH
-define|#
-directive|define
-name|BLOCK_WIDTH
-value|64
-end_define
-
-begin_define
-DECL|macro|BLOCK_HEIGHT
-define|#
-directive|define
-name|BLOCK_HEIGHT
-value|64
-end_define
-
-begin_define
-DECL|macro|CONV_WIDTH
-define|#
-directive|define
-name|CONV_WIDTH
-value|(BLOCK_WIDTH + 2)
-end_define
-
-begin_define
-DECL|macro|CONV_HEIGHT
-define|#
-directive|define
-name|CONV_HEIGHT
-value|(BLOCK_HEIGHT + 2)
-end_define
 
 begin_comment
 comment|/* weight to give between gradient (_G) and direction (_D) */
@@ -3268,9 +3228,9 @@ name|iscissors
 operator|->
 name|y
 argument_list|,
-name|TARGET_WIDTH
+name|TARGET_SIZE
 argument_list|,
-name|TARGET_WIDTH
+name|TARGET_SIZE
 argument_list|,
 name|GTK_ANCHOR_CENTER
 argument_list|,

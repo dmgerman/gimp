@@ -90,22 +90,6 @@ value|4
 end_define
 
 begin_define
-DECL|macro|MIN_ANGLE
-define|#
-directive|define
-name|MIN_ANGLE
-value|-36000
-end_define
-
-begin_define
-DECL|macro|MAX_ANGLE
-define|#
-directive|define
-name|MAX_ANGLE
-value|36000
-end_define
-
-begin_define
 DECL|macro|RANDOMNESS
 define|#
 directive|define
@@ -116,7 +100,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3b173c0108
+DECL|struct|__anon2760252c0108
 block|{
 DECL|member|npts
 name|gint
@@ -138,7 +122,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3b173c0208
+DECL|struct|__anon2760252c0208
 block|{
 DECL|member|tile_size
 name|gdouble

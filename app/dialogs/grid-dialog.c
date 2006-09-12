@@ -125,14 +125,6 @@ name|GRID_RESPONSE_RESET
 value|1
 end_define
 
-begin_define
-DECL|macro|GRID_COLOR_SIZE
-define|#
-directive|define
-name|GRID_COLOR_SIZE
-value|20
-end_define
-
 begin_comment
 comment|/*  local functions  */
 end_comment

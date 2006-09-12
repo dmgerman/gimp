@@ -202,14 +202,6 @@ value|0x1
 end_define
 
 begin_define
-DECL|macro|UP_XRANGE_TOP
-define|#
-directive|define
-name|UP_XRANGE_TOP
-value|0x2
-end_define
-
-begin_define
 DECL|macro|UP_PREVIEW_EXPOSE
 define|#
 directive|define
@@ -239,14 +231,6 @@ define|#
 directive|define
 name|UP_ALL
 value|0xFF
-end_define
-
-begin_define
-DECL|macro|ENTRY_WIDTH
-define|#
-directive|define
-name|ENTRY_WIDTH
-value|50
 end_define
 
 begin_define
@@ -680,7 +664,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8a64280108
+DECL|struct|__anon2b4840540108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -734,7 +718,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8a64280208
+DECL|struct|__anon2b4840540208
 block|{
 DECL|member|y
 name|gint32

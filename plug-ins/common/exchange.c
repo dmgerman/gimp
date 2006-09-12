@@ -55,14 +55,6 @@ name|SCALE_WIDTH
 value|128
 end_define
 
-begin_define
-DECL|macro|PREVIEW_SIZE
-define|#
-directive|define
-name|PREVIEW_SIZE
-value|128
-end_define
-
 begin_comment
 comment|/* datastructure to store parameters in */
 end_comment
@@ -70,7 +62,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3b3f270108
+DECL|struct|__anon29c3fc640108
 block|{
 DECL|member|from
 name|GimpRGB

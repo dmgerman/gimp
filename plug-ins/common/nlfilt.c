@@ -56,7 +56,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298fbf7a0108
+DECL|struct|__anon299c5e2f0108
 block|{
 DECL|member|alpha
 name|gdouble
@@ -83,7 +83,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon298fbf7a0203
+DECL|enum|__anon299c5e2f0203
 block|{
 DECL|enumerator|filter_alpha_trim
 name|filter_alpha_trim
@@ -837,15 +837,11 @@ end_function_decl
 begin_decl_stmt
 unit|};
 DECL|variable|noisevariance
+specifier|static
 name|gint
 name|noisevariance
 decl_stmt|;
 end_decl_stmt
-
-begin_comment
-DECL|variable|noisevariance
-comment|/* global so that pixel processing code can get at it quickly */
-end_comment
 
 begin_define
 DECL|macro|MXIVAL
@@ -897,19 +893,6 @@ end_define
 begin_comment
 DECL|macro|SCALE
 comment|/* scale factor */
-end_comment
-
-begin_define
-DECL|macro|MXSVAL
-define|#
-directive|define
-name|MXSVAL
-value|(MXIVAL * SCALE)
-end_define
-
-begin_comment
-DECL|macro|MXSVAL
-comment|/* maximum scaled values */
 end_comment
 
 begin_define

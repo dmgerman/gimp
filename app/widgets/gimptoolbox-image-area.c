@@ -87,22 +87,6 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
-begin_define
-DECL|macro|CELL_WIDTH
-define|#
-directive|define
-name|CELL_WIDTH
-value|48
-end_define
-
-begin_define
-DECL|macro|CELL_HEIGHT
-define|#
-directive|define
-name|CELL_HEIGHT
-value|48
-end_define
-
 begin_function
 specifier|static
 name|void

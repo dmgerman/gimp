@@ -80,22 +80,6 @@ value|3
 end_define
 
 begin_define
-DECL|macro|SCALE_WIDTH
-define|#
-directive|define
-name|SCALE_WIDTH
-value|150
-end_define
-
-begin_define
-DECL|macro|ENTRY_WIDTH
-define|#
-directive|define
-name|ENTRY_WIDTH
-value|60
-end_define
-
-begin_define
 DECL|macro|DESIGN_AREA_MAX_SIZE
 define|#
 directive|define
@@ -138,7 +122,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a0f1830103
+DECL|enum|__anon28907b650103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -158,7 +142,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a0f1830203
+DECL|enum|__anon28907b650203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -174,7 +158,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a0f1830308
+DECL|struct|__anon28907b650308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -196,7 +180,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon28a0f183040a
+DECL|union|__anon28907b65040a
 block|{
 DECL|member|d
 name|gdouble
@@ -221,7 +205,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a0f1830508
+DECL|struct|__anon28907b650508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -251,7 +235,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a0f1830608
+DECL|struct|__anon28907b650608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -286,7 +270,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a0f1830708
+DECL|struct|__anon28907b650708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -322,7 +306,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a0f1830808
+DECL|struct|__anon28907b650808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -389,7 +373,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a0f1830908
+DECL|struct|__anon28907b650908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -538,7 +522,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a0f1830a08
+DECL|struct|__anon28907b650a08
 block|{
 DECL|member|run
 name|gboolean

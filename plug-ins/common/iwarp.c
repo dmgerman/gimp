@@ -62,22 +62,6 @@ value|1
 end_define
 
 begin_define
-DECL|macro|MAX_PREVIEW_WIDTH
-define|#
-directive|define
-name|MAX_PREVIEW_WIDTH
-value|1024
-end_define
-
-begin_define
-DECL|macro|MAX_PREVIEW_HEIGHT
-define|#
-directive|define
-name|MAX_PREVIEW_HEIGHT
-value|1024
-end_define
-
-begin_define
 DECL|macro|MAX_DEFORM_AREA_RADIUS
 define|#
 directive|define
@@ -104,7 +88,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b5e4e1e0103
+DECL|enum|__anon2bca5ae30103
 block|{
 DECL|enumerator|GROW
 name|GROW
@@ -132,7 +116,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5e4e1e0208
+DECL|struct|__anon2bca5ae30208
 block|{
 DECL|member|run
 name|gboolean
@@ -147,7 +131,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5e4e1e0308
+DECL|struct|__anon2bca5ae30308
 block|{
 DECL|member|deform_area_radius
 name|gint

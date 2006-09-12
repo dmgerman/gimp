@@ -137,14 +137,6 @@ value|10
 end_define
 
 begin_define
-DECL|macro|SEED_USER
-define|#
-directive|define
-name|SEED_USER
-value|11
-end_define
-
-begin_define
 DECL|macro|SCALE_WIDTH
 define|#
 directive|define
@@ -173,7 +165,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6583930108
+DECL|struct|__anon2946d0870108
 block|{
 DECL|member|rndm_pct
 name|gdouble

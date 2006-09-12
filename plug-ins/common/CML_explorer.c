@@ -210,7 +210,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4e20390103
+DECL|enum|__anon2b44f8c30103
 block|{
 DECL|enumerator|CML_KEEP_VALUES
 name|CML_KEEP_VALUES
@@ -339,7 +339,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4e20390203
+DECL|enum|__anon2b44f8c30203
 block|{
 DECL|enumerator|COMP_NONE
 name|COMP_NONE
@@ -484,7 +484,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4e20390303
+DECL|enum|__anon2b44f8c30303
 block|{
 DECL|enumerator|STANDARD
 name|STANDARD
@@ -589,7 +589,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4e20390403
+DECL|enum|__anon2b44f8c30403
 block|{
 DECL|enumerator|CML_INITIAL_RANDOM_INDEPENDENT
 name|CML_INITIAL_RANDOM_INDEPENDENT
@@ -687,7 +687,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4e20390508
+DECL|struct|__anon2b44f8c30508
 block|{
 DECL|member|function
 name|gint
@@ -760,7 +760,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4e20390608
+DECL|struct|__anon2b44f8c30608
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -1573,7 +1573,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4e20390708
+DECL|struct|__anon2b44f8c30708
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -4557,19 +4557,6 @@ block|}
 end_function
 
 begin_define
-DECL|macro|AVE_DIST (x,y)
-define|#
-directive|define
-name|AVE_DIST
-parameter_list|(
-name|x
-parameter_list|,
-name|y
-parameter_list|)
-value|(((x) * (x) + (y) * (y))/ 2.0)
-end_define
-
-begin_define
 DECL|macro|LOGISTICS (x)
 define|#
 directive|define
@@ -4592,17 +4579,6 @@ value|(param->env_sensitivity * LOGISTICS (x))
 end_define
 
 begin_define
-DECL|macro|C_ENV_FACTOR (x)
-define|#
-directive|define
-name|C_ENV_FACTOR
-parameter_list|(
-name|x
-parameter_list|)
-value|(param->mod_rate * ENV_FACTOR (x))
-end_define
-
-begin_define
 DECL|macro|CHN_FACTOR (x)
 define|#
 directive|define
@@ -4611,17 +4587,6 @@ parameter_list|(
 name|x
 parameter_list|)
 value|(param->ch_sensitivity * LOGISTICS (x))
-end_define
-
-begin_define
-DECL|macro|C_CHN_FACTOR (x)
-define|#
-directive|define
-name|C_CHN_FACTOR
-parameter_list|(
-name|x
-parameter_list|)
-value|(param->mod_rate * CHN_FACTOR (x))
 end_define
 
 begin_function
@@ -5519,12 +5484,6 @@ end_function
 begin_undef
 undef|#
 directive|undef
-name|AVE_DIST
-end_undef
-
-begin_undef
-undef|#
-directive|undef
 name|LOGISTICS
 end_undef
 
@@ -5537,19 +5496,7 @@ end_undef
 begin_undef
 undef|#
 directive|undef
-name|C_ENV_FACTOR
-end_undef
-
-begin_undef
-undef|#
-directive|undef
 name|CHN_FACTOR
-end_undef
-
-begin_undef
-undef|#
-directive|undef
-name|C_CHN_FACTOR
 end_undef
 
 begin_function

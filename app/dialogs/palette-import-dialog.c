@@ -135,18 +135,10 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
-begin_define
-DECL|macro|IMPORT_PREVIEW_SIZE
-define|#
-directive|define
-name|IMPORT_PREVIEW_SIZE
-value|80
-end_define
-
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295772970103
+DECL|enum|__anon274742790103
 block|{
 DECL|enumerator|GRADIENT_IMPORT
 name|GRADIENT_IMPORT

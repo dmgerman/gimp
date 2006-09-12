@@ -123,14 +123,6 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
-begin_define
-DECL|macro|MAX_SCALE_BUF
-define|#
-directive|define
-name|MAX_SCALE_BUF
-value|20
-end_define
-
 begin_function_decl
 specifier|static
 name|void

@@ -579,30 +579,6 @@ block|}
 end_function
 
 begin_define
-DECL|macro|SIGN (a)
-define|#
-directive|define
-name|SIGN
-parameter_list|(
-name|a
-parameter_list|)
-value|(((a)> 0) ? 1 : -1)
-end_define
-
-begin_define
-DECL|macro|RMS (a,b)
-define|#
-directive|define
-name|RMS
-parameter_list|(
-name|a
-parameter_list|,
-name|b
-parameter_list|)
-value|(sqrt (pow ((a),2) + pow ((b), 2)))
-end_define
-
-begin_define
 DECL|macro|BLACK_REGION (val)
 define|#
 directive|define

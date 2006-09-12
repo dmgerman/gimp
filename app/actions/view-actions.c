@@ -1936,28 +1936,6 @@ name|condition
 parameter_list|)
 define|\
 value|gimp_action_group_set_action_active (group, action, (condition) != 0)
-DECL|macro|SET_VISIBLE (action,condition)
-define|#
-directive|define
-name|SET_VISIBLE
-parameter_list|(
-name|action
-parameter_list|,
-name|condition
-parameter_list|)
-define|\
-value|gimp_action_group_set_action_visible (group, action, (condition) != 0)
-DECL|macro|SET_LABEL (action,label)
-define|#
-directive|define
-name|SET_LABEL
-parameter_list|(
-name|action
-parameter_list|,
-name|label
-parameter_list|)
-define|\
-value|gimp_action_group_set_action_label (group, action, (label))
 DECL|macro|SET_SENSITIVE (action,condition)
 define|#
 directive|define
@@ -2444,12 +2422,6 @@ block|}
 undef|#
 directive|undef
 name|SET_ACTIVE
-undef|#
-directive|undef
-name|SET_VISIBLE
-undef|#
-directive|undef
-name|SET_LABEL
 undef|#
 directive|undef
 name|SET_SENSITIVE

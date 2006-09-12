@@ -7,25 +7,6 @@ begin_comment
 comment|/* Event history:  * V 1.00, PK, 26-Oct-98: Creation.  * V 1.01, PK, 21-Nov-99: Fix problem with working on layered images  *                        Internationalization  * V 1.02, PK, 19-Mar-00: Better explaining text/dialogue  *                        Preview added  *                        Fix problem with divide by zero  * V 1.03,neo, 22-May-00: Fixed divide by zero in preview code.  */
 end_comment
 
-begin_define
-DECL|macro|VERSIO
-define|#
-directive|define
-name|VERSIO
-value|1.03
-end_define
-
-begin_decl_stmt
-DECL|variable|dversio
-specifier|static
-name|char
-name|dversio
-index|[]
-init|=
-literal|"v1.03  22-May-00"
-decl_stmt|;
-end_decl_stmt
-
 begin_include
 include|#
 directive|include
@@ -55,6 +36,18 @@ include|#
 directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
+
+begin_decl_stmt
+DECL|variable|dversio
+specifier|static
+specifier|const
+name|gchar
+name|dversio
+index|[]
+init|=
+literal|"v1.03  22-May-00"
+decl_stmt|;
+end_decl_stmt
 
 begin_define
 DECL|macro|COLOR_MAP_PROC
@@ -99,7 +92,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b3b2fc0108
+DECL|struct|__anon28f43f420108
 block|{
 DECL|member|colors
 name|GimpRGB

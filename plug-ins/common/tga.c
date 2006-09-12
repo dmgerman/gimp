@@ -98,23 +98,6 @@ name|PLUG_IN_BINARY
 value|"tga"
 end_define
 
-begin_comment
-comment|/* Round up a division to the nearest integer. */
-end_comment
-
-begin_define
-DECL|macro|ROUNDUP_DIVIDE (n,d)
-define|#
-directive|define
-name|ROUNDUP_DIVIDE
-parameter_list|(
-name|n
-parameter_list|,
-name|d
-parameter_list|)
-value|(((n) + (d - 1)) / (d))
-end_define
-
 begin_typedef
 DECL|struct|_TgaSaveVals
 typedef|typedef

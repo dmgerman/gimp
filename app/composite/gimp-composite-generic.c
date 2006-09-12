@@ -72,6 +72,14 @@ value|0
 end_define
 
 begin_define
+DECL|macro|RANDOM_TABLE_SIZE
+define|#
+directive|define
+name|RANDOM_TABLE_SIZE
+value|4096
+end_define
+
+begin_define
 DECL|macro|INT_MULT (a,b,t)
 define|#
 directive|define
@@ -84,60 +92,6 @@ parameter_list|,
 name|t
 parameter_list|)
 value|((t) = (a) * (b) + 0x80, ((((t)>> 8) + (t))>> 8))
-end_define
-
-begin_comment
-comment|/* This version of INT_MULT3 is very fast, but suffers from some    slight roundoff errors.  It returns the correct result 99.987    percent of the time */
-end_comment
-
-begin_define
-DECL|macro|INT_MULT3 (a,b,c,t)
-define|#
-directive|define
-name|INT_MULT3
-parameter_list|(
-name|a
-parameter_list|,
-name|b
-parameter_list|,
-name|c
-parameter_list|,
-name|t
-parameter_list|)
-value|((t) = (a) * (b) * (c) + 0x7F5B, ((((t)>> 7) + (t))>> 16))
-end_define
-
-begin_comment
-comment|/*   This version of INT_MULT3 always gives the correct result, but runs at   approximatly one third the speed. */
-end_comment
-
-begin_comment
-comment|/*  #define INT_MULT3(a,b,c,t) (((a) * (b) * (c) + 32512) / 65025.0)  */
-end_comment
-
-begin_define
-DECL|macro|INT_BLEND (a,b,alpha,tmp)
-define|#
-directive|define
-name|INT_BLEND
-parameter_list|(
-name|a
-parameter_list|,
-name|b
-parameter_list|,
-name|alpha
-parameter_list|,
-name|tmp
-parameter_list|)
-value|(INT_MULT((a) - (b), alpha, tmp) + (b))
-end_define
-
-begin_define
-DECL|macro|RANDOM_TABLE_SIZE
-define|#
-directive|define
-name|RANDOM_TABLE_SIZE
-value|4096
 end_define
 
 begin_comment
@@ -5952,7 +5906,7 @@ operator|>=
 name|combined_opacity
 operator|)
 condition|?
-literal|0
+name|TRANSPARENT_OPACITY
 else|:
 name|OPAQUE_OPACITY
 expr_stmt|;

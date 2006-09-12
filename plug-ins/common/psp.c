@@ -43,18 +43,6 @@ name|PSP_DEBUG
 value|0
 end_define
 
-begin_comment
-comment|/* the max number of layers that this plugin should try to load */
-end_comment
-
-begin_define
-DECL|macro|MAX_LAYERS
-define|#
-directive|define
-name|MAX_LAYERS
-value|64
-end_define
-
 begin_define
 DECL|macro|IFDBG (level)
 define|#
@@ -133,7 +121,7 @@ comment|/* Block identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b2ac4b00103
+DECL|enum|__anon29c2cbb60103
 typedef|typedef
 enum|enum
 block|{
@@ -197,7 +185,7 @@ comment|/* Bitmap type.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b2ac4b00203
+DECL|enum|__anon29c2cbb60203
 typedef|typedef
 enum|enum
 block|{
@@ -237,7 +225,7 @@ comment|/* Channel types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b2ac4b00303
+DECL|enum|__anon29c2cbb60303
 typedef|typedef
 enum|enum
 block|{
@@ -269,7 +257,7 @@ comment|/* Possible metrics used to measure resolution.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b2ac4b00403
+DECL|enum|__anon29c2cbb60403
 typedef|typedef
 enum|enum
 block|{
@@ -297,7 +285,7 @@ comment|/* Possible types of compression.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b2ac4b00503
+DECL|enum|__anon29c2cbb60503
 typedef|typedef
 enum|enum
 block|{
@@ -325,7 +313,7 @@ comment|/* Picture tube placement mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b2ac4b00603
+DECL|enum|__anon29c2cbb60603
 typedef|typedef
 enum|enum
 block|{
@@ -347,7 +335,7 @@ comment|/* Picture tube selection mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b2ac4b00703
+DECL|enum|__anon29c2cbb60703
 typedef|typedef
 enum|enum
 block|{
@@ -383,7 +371,7 @@ comment|/* Extended data field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b2ac4b00803
+DECL|enum|__anon29c2cbb60803
 typedef|typedef
 enum|enum
 block|{
@@ -403,7 +391,7 @@ comment|/* Creator field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b2ac4b00903
+DECL|enum|__anon29c2cbb60903
 typedef|typedef
 enum|enum
 block|{
@@ -451,7 +439,7 @@ comment|/* Creator application identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b2ac4b00a03
+DECL|enum|__anon29c2cbb60a03
 typedef|typedef
 enum|enum
 block|{
@@ -475,7 +463,7 @@ comment|/* Layer types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b2ac4b00b03
+DECL|enum|__anon29c2cbb60b03
 typedef|typedef
 enum|enum
 block|{
@@ -536,7 +524,7 @@ comment|/* The following have been reverse engineered.  * If a new version of th
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b2ac4b00c03
+DECL|enum|__anon29c2cbb60c03
 typedef|typedef
 enum|enum
 block|{
@@ -609,7 +597,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2ac4b00d08
+DECL|struct|__anon29c2cbb60d08
 block|{
 DECL|member|width
 DECL|member|height
@@ -762,7 +750,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2ac4b00e08
+DECL|struct|__anon29c2cbb60e08
 block|{
 DECL|member|compression
 name|PSPCompression

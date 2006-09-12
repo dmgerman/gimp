@@ -44,14 +44,6 @@ value|"threshold_alpha"
 end_define
 
 begin_define
-DECL|macro|PROGRESS_UPDATE_NUM
-define|#
-directive|define
-name|PROGRESS_UPDATE_NUM
-value|100
-end_define
-
-begin_define
 DECL|macro|SCALE_WIDTH
 define|#
 directive|define
@@ -153,7 +145,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a0ccde0108
+DECL|struct|__anon2bf3efbd0108
 block|{
 DECL|member|threshold
 name|gint

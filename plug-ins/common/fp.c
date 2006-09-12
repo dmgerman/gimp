@@ -82,14 +82,6 @@ value|4
 end_define
 
 begin_define
-DECL|macro|ALL
-define|#
-directive|define
-name|ALL
-value|255
-end_define
-
-begin_define
 DECL|macro|MARGIN
 define|#
 directive|define
@@ -108,7 +100,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c913cd0108
+DECL|struct|__anon2c2ff34a0108
 block|{
 DECL|member|run
 name|gint
@@ -123,7 +115,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c913cd0208
+DECL|struct|__anon2c2ff34a0208
 block|{
 DECL|member|width
 name|gint
@@ -157,7 +149,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c913cd0303
+DECL|enum|__anon2c2ff34a0303
 block|{
 DECL|enumerator|SHADOWS
 name|SHADOWS
@@ -178,7 +170,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c913cd0403
+DECL|enum|__anon2c2ff34a0403
 block|{
 DECL|enumerator|NONEATALL
 name|NONEATALL
@@ -210,7 +202,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c913cd0503
+DECL|enum|__anon2c2ff34a0503
 block|{
 DECL|enumerator|BY_HUE
 name|BY_HUE
@@ -229,7 +221,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c913cd0603
+DECL|enum|__anon2c2ff34a0603
 block|{
 DECL|enumerator|RED
 name|RED
@@ -257,7 +249,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c913cd0703
+DECL|enum|__anon2c2ff34a0703
 block|{
 DECL|enumerator|DOWN
 name|DOWN
@@ -276,7 +268,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c913cd0808
+DECL|struct|__anon2c2ff34a0808
 block|{
 DECL|member|window
 name|GtkWidget
@@ -307,7 +299,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c913cd0908
+DECL|struct|__anon2c2ff34a0908
 block|{
 DECL|member|roughness
 name|gdouble
@@ -408,7 +400,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c913cd0a08
+DECL|struct|__anon2c2ff34a0a08
 block|{
 DECL|member|roughness_scale
 name|GtkWidget
@@ -1319,7 +1311,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29c913cd0b08
+DECL|struct|__anon2c2ff34a0b08
 block|{
 DECL|member|bna
 name|GtkWidget

@@ -54,14 +54,6 @@ value|"nova"
 end_define
 
 begin_define
-DECL|macro|ENTRY_WIDTH
-define|#
-directive|define
-name|ENTRY_WIDTH
-value|50
-end_define
-
-begin_define
 DECL|macro|SCALE_WIDTH
 define|#
 directive|define
@@ -72,7 +64,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29dbad7f0108
+DECL|struct|__anon29630a9f0108
 block|{
 DECL|member|xcenter
 name|gint
@@ -107,7 +99,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29dbad7f0208
+DECL|struct|__anon29630a9f0208
 block|{
 DECL|member|drawable
 name|GimpDrawable
