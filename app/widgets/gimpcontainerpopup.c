@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcontainerbox.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcontainereditor.h"
 end_include
 
@@ -67,18 +73,6 @@ begin_include
 include|#
 directive|include
 file|"gimpcontainerpopup.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpcontainergridview.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpcontainertreeview.h"
 end_include
 
 begin_include
@@ -107,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aeaf92c0103
+DECL|enum|__anon2c6354840103
 block|{
 DECL|enumerator|CANCEL
 name|CANCEL
