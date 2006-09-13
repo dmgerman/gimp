@@ -381,17 +381,17 @@ literal|"gimp-crop-tool"
 argument_list|,
 name|_
 argument_list|(
-literal|"Crop& Resize"
+literal|"Crop"
 argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Crop or Resize an image"
+literal|"Crop an image"
 argument_list|)
 argument_list|,
 name|N_
 argument_list|(
-literal|"_Crop& Resize"
+literal|"_Crop"
 argument_list|)
 argument_list|,
 literal|"<shift>C"
