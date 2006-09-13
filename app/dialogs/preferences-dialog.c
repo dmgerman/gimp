@@ -6640,7 +6640,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Default _layer& channel preview size:"
+literal|"_Default layer& channel preview size:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -6721,7 +6721,7 @@ literal|"can-change-accels"
 argument_list|,
 name|_
 argument_list|(
-literal|"Use _dynamic keyboard shortcuts"
+literal|"_Use dynamic keyboard shortcuts"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -8974,7 +8974,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon29677e550108
+DECL|struct|__anon27fab9890108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -10137,7 +10137,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29677e550208
+DECL|struct|__anon27fab9890208
 block|{
 DECL|member|label
 specifier|const
@@ -11041,7 +11041,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29677e550308
+DECL|struct|__anon27fab9890308
 block|{
 DECL|member|property_name
 specifier|const
@@ -11196,7 +11196,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29677e550408
+DECL|struct|__anon27fab9890408
 block|{
 DECL|member|tree_label
 specifier|const
