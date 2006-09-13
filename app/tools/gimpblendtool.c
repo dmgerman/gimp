@@ -267,6 +267,22 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|static
+name|void
+name|gimp_blend_tool_push_status
+parameter_list|(
+name|GimpBlendTool
+modifier|*
+name|blend_tool
+parameter_list|,
+name|GimpDisplay
+modifier|*
+name|display
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_macro
 DECL|function|G_DEFINE_TYPE (GimpBlendTool,gimp_blend_tool,GIMP_TYPE_DRAW_TOOL)
 name|G_DEFINE_TYPE
@@ -647,26 +663,13 @@ operator|->
 name|control
 argument_list|)
 expr_stmt|;
-comment|/* initialize the statusbar display */
-name|gimp_tool_push_status_coords
+name|gimp_blend_tool_push_status
 argument_list|(
-name|tool
+name|blend_tool
 argument_list|,
 name|display
-argument_list|,
-name|_
-argument_list|(
-literal|"Blend: "
-argument_list|)
-argument_list|,
-literal|0
-argument_list|,
-literal|", "
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
-comment|/*  Start drawing the blend tool  */
 name|gimp_draw_tool_start
 argument_list|(
 name|GIMP_DRAW_TOOL
@@ -1059,34 +1062,11 @@ argument_list|,
 name|display
 argument_list|)
 expr_stmt|;
-name|gimp_tool_push_status_coords
+name|gimp_blend_tool_push_status
 argument_list|(
-name|tool
+name|blend_tool
 argument_list|,
 name|display
-argument_list|,
-name|_
-argument_list|(
-literal|"Blend: "
-argument_list|)
-argument_list|,
-name|blend_tool
-operator|->
-name|endx
-operator|-
-name|blend_tool
-operator|->
-name|startx
-argument_list|,
-literal|", "
-argument_list|,
-name|blend_tool
-operator|->
-name|endy
-operator|-
-name|blend_tool
-operator|->
-name|starty
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_resume
@@ -1191,6 +1171,20 @@ name|endy
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_tool_pop_status
+argument_list|(
+name|tool
+argument_list|,
+name|display
+argument_list|)
+expr_stmt|;
+name|gimp_blend_tool_push_status
+argument_list|(
+name|blend_tool
+argument_list|,
+name|display
+argument_list|)
+expr_stmt|;
 name|gimp_draw_tool_resume
 argument_list|(
 name|GIMP_DRAW_TOOL
@@ -1415,6 +1409,57 @@ operator|+
 literal|0.5
 argument_list|,
 name|TRUE
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_blend_tool_push_status (GimpBlendTool * blend_tool,GimpDisplay * display)
+name|gimp_blend_tool_push_status
+parameter_list|(
+name|GimpBlendTool
+modifier|*
+name|blend_tool
+parameter_list|,
+name|GimpDisplay
+modifier|*
+name|display
+parameter_list|)
+block|{
+name|gimp_tool_push_status_coords
+argument_list|(
+name|GIMP_TOOL
+argument_list|(
+name|blend_tool
+argument_list|)
+argument_list|,
+name|display
+argument_list|,
+name|_
+argument_list|(
+literal|"Blend: "
+argument_list|)
+argument_list|,
+name|blend_tool
+operator|->
+name|endx
+operator|-
+name|blend_tool
+operator|->
+name|startx
+argument_list|,
+literal|", "
+argument_list|,
+name|blend_tool
+operator|->
+name|endy
+operator|-
+name|blend_tool
+operator|->
+name|starty
 argument_list|)
 expr_stmt|;
 block|}
