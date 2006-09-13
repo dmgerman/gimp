@@ -93,7 +93,7 @@ name|GIMP_PAINT_TOOL_GET_OPTIONS
 parameter_list|(
 name|t
 parameter_list|)
-value|(GIMP_PAINT_OPTIONS (gimp_tool_get_options (GIMP_TOOL (tool))))
+value|(GIMP_PAINT_OPTIONS (gimp_tool_get_options (GIMP_TOOL (t))))
 end_define
 
 begin_typedef

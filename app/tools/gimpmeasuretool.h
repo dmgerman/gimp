@@ -29,7 +29,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon291fa7890103
+DECL|enum|__anon2ad530270103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -125,7 +125,7 @@ name|GIMP_MEASURE_TOOL_GET_OPTIONS
 parameter_list|(
 name|t
 parameter_list|)
-value|(GIMP_MEASURE_OPTIONS (gimp_tool_get_options (GIMP_TOOL (tool))))
+value|(GIMP_MEASURE_OPTIONS (gimp_tool_get_options (GIMP_TOOL (t))))
 end_define
 
 begin_typedef
