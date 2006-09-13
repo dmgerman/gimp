@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpprogress.h"
 end_include
 
@@ -157,6 +163,10 @@ modifier|*
 name|gimp
 parameter_list|)
 block|{
+name|GimpContext
+modifier|*
+name|context
+decl_stmt|;
 name|GtkWidget
 modifier|*
 name|dialog
@@ -432,6 +442,18 @@ argument_list|(
 name|label
 argument_list|)
 expr_stmt|;
+comment|/* we don't want the context to affect the entry, so create    * a scratch one instead of using e.g. the user context    */
+name|context
+operator|=
+name|gimp_context_new
+argument_list|(
+name|gimp
+argument_list|,
+literal|"file-open-location-dialog"
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|entry
 operator|=
 name|gimp_container_entry_new
@@ -440,11 +462,16 @@ name|gimp
 operator|->
 name|documents
 argument_list|,
-name|NULL
+name|context
 argument_list|,
 name|GIMP_VIEW_SIZE_SMALL
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|context
 argument_list|)
 expr_stmt|;
 name|completion
