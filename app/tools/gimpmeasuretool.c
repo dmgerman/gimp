@@ -2211,6 +2211,13 @@ argument_list|(
 name|y
 argument_list|)
 expr_stmt|;
+name|gimp_measure_tool_dialog_update
+argument_list|(
+name|measure
+argument_list|,
+name|display
+argument_list|)
+expr_stmt|;
 name|gimp_draw_tool_resume
 argument_list|(
 name|GIMP_DRAW_TOOL
@@ -3590,7 +3597,7 @@ argument_list|(
 name|buf
 argument_list|)
 argument_list|,
-literal|"%.1f %s, %.2f \302\260 (%d Ã %d)"
+literal|"%.1f %s, %.2f\302\260 (%d Ã %d)"
 argument_list|,
 name|pixel_distance
 argument_list|,
@@ -3618,7 +3625,7 @@ argument_list|(
 name|format
 argument_list|)
 argument_list|,
-literal|"%%.%df %s, %%.2f \302\260 (%%.%df Ã %%.%df)"
+literal|"%%.%df %s, %%.2f\302\260 (%%.%df Ã %%.%df)"
 argument_list|,
 name|_gimp_unit_get_digits
 argument_list|(
