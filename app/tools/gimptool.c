@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3fb3b70103
+DECL|enum|__anon27fa113d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -625,6 +625,18 @@ expr_stmt|;
 name|tool
 operator|->
 name|modifier_state
+operator|=
+literal|0
+expr_stmt|;
+name|tool
+operator|->
+name|active_modifier_state
+operator|=
+literal|0
+expr_stmt|;
+name|tool
+operator|->
+name|button_press_state
 operator|=
 literal|0
 expr_stmt|;
@@ -1761,6 +1773,11 @@ name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|g_object_ref
+argument_list|(
+name|tool
+argument_list|)
+expr_stmt|;
 name|GIMP_TOOL_GET_CLASS
 argument_list|(
 name|tool
@@ -1779,6 +1796,14 @@ argument_list|,
 name|display
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|tool
+operator|->
+name|active_modifier_state
+operator|!=
+literal|0
+condition|)
 name|gimp_tool_set_active_modifier_state
 argument_list|(
 name|tool
@@ -1786,6 +1811,17 @@ argument_list|,
 literal|0
 argument_list|,
 name|display
+argument_list|)
+expr_stmt|;
+name|tool
+operator|->
+name|button_press_state
+operator|=
+literal|0
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|tool
 argument_list|)
 expr_stmt|;
 block|}
@@ -1908,7 +1944,10 @@ directive|ifdef
 name|DEBUG_FOCUS
 name|g_printerr
 argument_list|(
-literal|"gimp_tool_set_focus_display: display: %p  focus_display: %p\n"
+literal|"gimp_tool_set_focus_display: "
+literal|"tool: %p  display: %p  focus_display: %p\n"
+argument_list|,
+name|tool
 argument_list|,
 name|display
 argument_list|,
@@ -1935,6 +1974,25 @@ operator|->
 name|focus_display
 condition|)
 block|{
+if|if
+condition|(
+name|tool
+operator|->
+name|active_modifier_state
+operator|!=
+literal|0
+condition|)
+name|gimp_tool_set_active_modifier_state
+argument_list|(
+name|tool
+argument_list|,
+literal|0
+argument_list|,
+name|tool
+operator|->
+name|focus_display
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|tool
@@ -2140,7 +2198,10 @@ directive|ifdef
 name|DEBUG_FOCUS
 name|g_printerr
 argument_list|(
-literal|"gimp_tool_set_modifier_state: display: %p  focus_display: %p\n"
+literal|"gimp_tool_set_modifier_state: "
+literal|"tool: %p  display: %p  focus_display: %p\n"
+argument_list|,
+name|tool
 argument_list|,
 name|display
 argument_list|,
