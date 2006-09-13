@@ -481,6 +481,10 @@ literal|"inline-completion"
 argument_list|,
 name|TRUE
 argument_list|,
+literal|"popup-single-match"
+argument_list|,
+name|FALSE
+argument_list|,
 literal|"popup-set-width"
 argument_list|,
 name|FALSE
