@@ -200,16 +200,6 @@ argument_list|,
 name|GIMP_TOOL_CURSOR_SMUDGE
 argument_list|)
 expr_stmt|;
-name|gimp_paint_tool_enable_color_picker
-argument_list|(
-name|GIMP_PAINT_TOOL
-argument_list|(
-name|smudge
-argument_list|)
-argument_list|,
-name|GIMP_COLOR_PICK_MODE_FOREGROUND
-argument_list|)
-expr_stmt|;
 name|paint_tool
 operator|->
 name|status
@@ -234,7 +224,6 @@ name|status_ctrl
 operator|=
 name|NULL
 expr_stmt|;
-comment|/* don't suggest Ctrl even if it works */
 block|}
 end_function
 
