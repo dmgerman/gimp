@@ -379,9 +379,9 @@ name|gimp_install_procedure
 argument_list|(
 name|LOAD_PROC
 argument_list|,
-literal|"loads files of the PIX file format"
+literal|"loads files of the Alias|Wavefront Pix file format"
 argument_list|,
-literal|"loads files of the PIX file format"
+literal|"loads files of the Alias|Wavefront Pix file format"
 argument_list|,
 literal|"Michael Taylor"
 argument_list|,
@@ -391,7 +391,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"Alias|Wavefront PIX image"
+literal|"Alias Pix image"
 argument_list|)
 argument_list|,
 name|NULL
@@ -438,7 +438,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"Alias|Wavefront PIX image"
+literal|"Alias Pix image"
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
