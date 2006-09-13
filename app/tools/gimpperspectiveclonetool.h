@@ -115,6 +115,17 @@ parameter_list|)
 value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_PERSPECTIVE_CLONE_TOOL, GimpPerspectiveCloneToolClass))
 end_define
 
+begin_define
+DECL|macro|GIMP_PERSPECTIVE_CLONE_TOOL_GET_OPTIONS (t)
+define|#
+directive|define
+name|GIMP_PERSPECTIVE_CLONE_TOOL_GET_OPTIONS
+parameter_list|(
+name|t
+parameter_list|)
+value|(GIMP_PERSPECTIVE_CLONE_OPTIONS (gimp_tool_get_options (GIMP_TOOL (t))))
+end_define
+
 begin_typedef
 DECL|typedef|GimpPerspectiveCloneTool
 typedef|typedef
