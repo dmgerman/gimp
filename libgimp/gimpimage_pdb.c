@@ -3530,7 +3530,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_image_get_colormap:  * @image_ID: The image.  * @num_bytes: Number of bytes in the colormap array.  *  * Returns the image's colormap  *  * This procedure returns an actual pointer to the image's colormap, as  * well as the number of bytes contained in the colormap. The actual  * number of colors in the transmitted colormap will be \"num_bytes\" /  * 3. If the image is not in Indexed color mode, no colormap is  * returned.  *  * Returns: The image's colormap.  */
+comment|/**  * _gimp_image_get_colormap:  * @image_ID: The image.  * @num_bytes: Number of bytes in the colormap array.  *  * Returns the image's colormap  *  * This procedure returns an actual pointer to the image's colormap, as  * well as the number of bytes contained in the colormap. The actual  * number of colors in the transmitted colormap will be 'num-bytes' /  * 3. If the image is not in Indexed color mode, no colormap is  * returned.  *  * Returns: The image's colormap.  */
 end_comment
 
 begin_function
@@ -3654,7 +3654,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_image_set_colormap:  * @image_ID: The image.  * @num_bytes: Number of bytes in the colormap array.  * @colormap: The new colormap values.  *  * Sets the entries in the image's colormap.  *  * This procedure sets the entries in the specified image's colormap.  * The number of entries is specified by the \"num_bytes\" parameter  * and corresponds to the number of INT8 triples that must be contained  * in the \"colormap\" array. The actual number of colors in the  * transmitted colormap is \"num_bytes\" / 3.  *  * Returns: TRUE on success.  */
+comment|/**  * _gimp_image_set_colormap:  * @image_ID: The image.  * @num_bytes: Number of bytes in the colormap array.  * @colormap: The new colormap values.  *  * Sets the entries in the image's colormap.  *  * This procedure sets the entries in the specified image's colormap.  * The number of entries is specified by the 'num-bytes' parameter and  * corresponds to the number of INT8 triples that must be contained in  * the 'colormap' array. The actual number of colors in the transmitted  * colormap is 'num-bytes' / 3.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function

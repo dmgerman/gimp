@@ -382,7 +382,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_scale:  * @layer_ID: The layer.  * @new_width: New layer width.  * @new_height: New layer height.  * @local_origin: Use a local origin (as opposed to the image origin).  *  * Scale the layer to the specified extents.  *  * This procedure scales the layer so that its new width and height are  * equal to the supplied parameters. The \"local_origin\" parameter  * specifies whether to scale from the center of the layer, or from the  * image origin. This operation only works if the layer has been added  * to an image.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_layer_scale:  * @layer_ID: The layer.  * @new_width: New layer width.  * @new_height: New layer height.  * @local_origin: Use a local origin (as opposed to the image origin).  *  * Scale the layer to the specified extents.  *  * This procedure scales the layer so that its new width and height are  * equal to the supplied parameters. The 'local-origin' parameter  * specifies whether to scale from the center of the layer, or from the  * image origin. This operation only works if the layer has been added  * to an image.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function

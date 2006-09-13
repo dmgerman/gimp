@@ -7772,7 +7772,7 @@ literal|"gimp-drawable-merge-shadow"
 argument_list|,
 literal|"Merge the shadow buffer with the specified drawable."
 argument_list|,
-literal|"This procedure combines the contents of the image's shadow buffer (for temporary processing) with the specified drawable. The \"undo\" parameter specifies whether to add an undo step for the operation. Requesting no undo is useful for such applications as 'auto-apply'."
+literal|"This procedure combines the contents of the image's shadow buffer (for temporary processing) with the specified drawable. The 'undo' parameter specifies whether to add an undo step for the operation. Requesting no undo is useful for such applications as 'auto-apply'."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -8421,7 +8421,7 @@ literal|"gimp-drawable-offset"
 argument_list|,
 literal|"Offset the drawable by the specified amounts in the X and Y directions"
 argument_list|,
-literal|"This procedure offsets the specified drawable by the amounts specified by 'offset_x' and 'offset_y'. If 'wrap_around' is set to TRUE, then portions of the drawable which are offset out of bounds are wrapped around. Alternatively, the undefined regions of the drawable can be filled with transparency or the background color, as specified by the 'fill_type' parameter."
+literal|"This procedure offsets the specified drawable by the amounts specified by 'offset_x' and 'offset_y'. If 'wrap_around' is set to TRUE, then portions of the drawable which are offset out of bounds are wrapped around. Alternatively, the undefined regions of the drawable can be filled with transparency or the background color, as specified by the 'fill-type' parameter."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,

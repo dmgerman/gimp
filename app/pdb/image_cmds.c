@@ -14126,7 +14126,7 @@ literal|"gimp-image-get-colormap"
 argument_list|,
 literal|"Returns the image's colormap"
 argument_list|,
-literal|"This procedure returns an actual pointer to the image's colormap, as well as the number of bytes contained in the colormap. The actual number of colors in the transmitted colormap will be \"num_bytes\" / 3. If the image is not in Indexed color mode, no colormap is returned."
+literal|"This procedure returns an actual pointer to the image's colormap, as well as the number of bytes contained in the colormap. The actual number of colors in the transmitted colormap will be 'num-bytes' / 3. If the image is not in Indexed color mode, no colormap is returned."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -14235,7 +14235,7 @@ literal|"gimp-image-set-colormap"
 argument_list|,
 literal|"Sets the entries in the image's colormap."
 argument_list|,
-literal|"This procedure sets the entries in the specified image's colormap. The number of entries is specified by the \"num_bytes\" parameter and corresponds to the number of INT8 triples that must be contained in the \"colormap\" array. The actual number of colors in the transmitted colormap is \"num_bytes\" / 3."
+literal|"This procedure sets the entries in the specified image's colormap. The number of entries is specified by the 'num-bytes' parameter and corresponds to the number of INT8 triples that must be contained in the 'colormap' array. The actual number of colors in the transmitted colormap is 'num-bytes' / 3."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,

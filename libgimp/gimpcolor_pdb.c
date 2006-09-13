@@ -880,7 +880,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_balance:  * @drawable_ID: The drawable.  * @transfer_mode: Transfer mode.  * @preserve_lum: Preserve luminosity values at each pixel.  * @cyan_red: Cyan-Red color balance.  * @magenta_green: Magenta-Green color balance.  * @yellow_blue: Yellow-Blue color balance.  *  * Modify the color balance of the specified drawable.  *  * Modify the color balance of the specified drawable. There are three  * axis which can be modified: cyan-red, magenta-green, and  * yellow-blue. Negative values increase the amount of the former,  * positive values increase the amount of the latter. Color balance can  * be controlled with the 'transfer_mode' setting, which allows  * shadows, midtones, and highlights in an image to be affected  * differently. The 'preserve_lum' parameter, if TRUE, ensures that the  * luminosity of each pixel remains fixed.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_color_balance:  * @drawable_ID: The drawable.  * @transfer_mode: Transfer mode.  * @preserve_lum: Preserve luminosity values at each pixel.  * @cyan_red: Cyan-Red color balance.  * @magenta_green: Magenta-Green color balance.  * @yellow_blue: Yellow-Blue color balance.  *  * Modify the color balance of the specified drawable.  *  * Modify the color balance of the specified drawable. There are three  * axis which can be modified: cyan-red, magenta-green, and  * yellow-blue. Negative values increase the amount of the former,  * positive values increase the amount of the latter. Color balance can  * be controlled with the 'transfer_mode' setting, which allows  * shadows, midtones, and highlights in an image to be affected  * differently. The 'preserve-lum' parameter, if TRUE, ensures that the  * luminosity of each pixel remains fixed.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -1290,7 +1290,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_hue_saturation:  * @drawable_ID: The drawable.  * @hue_range: Range of affected hues.  * @hue_offset: Hue offset in degrees.  * @lightness: Lightness modification.  * @saturation: Saturation modification.  *  * Modify hue, lightness, and saturation in the specified drawable.  *  * This procedures allows the hue, lightness, and saturation in the  * specified drawable to be modified. The 'hue_range' parameter  * provides the capability to limit range of affected hues.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_hue_saturation:  * @drawable_ID: The drawable.  * @hue_range: Range of affected hues.  * @hue_offset: Hue offset in degrees.  * @lightness: Lightness modification.  * @saturation: Saturation modification.  *  * Modify hue, lightness, and saturation in the specified drawable.  *  * This procedures allows the hue, lightness, and saturation in the  * specified drawable to be modified. The 'hue-range' parameter  * provides the capability to limit range of affected hues.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
