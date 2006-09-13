@@ -174,7 +174,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_smudge_nonclipped_painthit_coords
+name|gimp_smudge_brush_coords
 parameter_list|(
 name|GimpPaintCore
 modifier|*
@@ -507,7 +507,6 @@ break|break;
 default|default:
 break|break;
 block|}
-return|return;
 block|}
 end_function
 
@@ -602,7 +601,7 @@ return|return
 name|FALSE
 return|;
 comment|/*  adjust the x and y coordinates to the upper left corner of the brush  */
-name|gimp_smudge_nonclipped_painthit_coords
+name|gimp_smudge_brush_coords
 argument_list|(
 name|paint_core
 argument_list|,
@@ -640,7 +639,7 @@ operator|*
 name|bytes
 argument_list|)
 expr_stmt|;
-comment|/*  If clipped, prefill the smudge buffer       with the color at the brush position.  */
+comment|/*  If clipped, prefill the smudge buffer with the color at the    *  brush position.    */
 if|if
 condition|(
 name|x
@@ -1022,7 +1021,8 @@ operator|==
 literal|0.0
 condition|)
 return|return;
-name|gimp_smudge_nonclipped_painthit_coords
+comment|/*  Get the unclipped brush coordinates  */
+name|gimp_smudge_brush_coords
 argument_list|(
 name|paint_core
 argument_list|,
@@ -1329,8 +1329,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_smudge_nonclipped_painthit_coords (GimpPaintCore * paint_core,gint * x,gint * y,gint * w,gint * h)
-name|gimp_smudge_nonclipped_painthit_coords
+DECL|function|gimp_smudge_brush_coords (GimpPaintCore * paint_core,gint * x,gint * y,gint * w,gint * h)
+name|gimp_smudge_brush_coords
 parameter_list|(
 name|GimpPaintCore
 modifier|*
