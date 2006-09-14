@@ -162,7 +162,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c390210103
+DECL|enum|__anon2b9e11690103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -175,7 +175,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c390210203
+DECL|enum|__anon2b9e11690203
 block|{
 DECL|enumerator|COLUMN_ICON
 name|COLUMN_ICON
@@ -2662,9 +2662,13 @@ operator|->
 name|dest_info
 argument_list|)
 argument_list|,
-name|NULL
+name|gimp_get_user_context
+argument_list|(
+name|list
+operator|->
+name|gimp
+argument_list|)
 argument_list|,
-comment|/* FIXME */
 name|_
 argument_list|(
 literal|"Configure Controller"
@@ -2728,6 +2732,13 @@ argument_list|(
 name|list
 operator|->
 name|dest_info
+argument_list|,
+name|gimp_get_user_context
+argument_list|(
+name|list
+operator|->
+name|gimp
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
