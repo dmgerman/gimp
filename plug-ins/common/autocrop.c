@@ -254,7 +254,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"_Autocrop Image"
+literal|"Autocrop Imag_e"
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
@@ -299,7 +299,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"_Autocrop Layer"
+literal|"Autocrop Lay_er"
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"

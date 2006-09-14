@@ -733,7 +733,7 @@ name|GIMP_STOCK_TOOL_CROP
 block|,
 name|N_
 argument_list|(
-literal|"Cr_op Layer"
+literal|"_Crop Layer"
 argument_list|)
 block|,
 name|NULL

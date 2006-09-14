@@ -96,7 +96,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc753330103
+DECL|enum|__anon2c76c4b20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -109,7 +109,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc753330203
+DECL|enum|__anon2c76c4b20203
 block|{
 DECL|enumerator|COLUMN_EVENT
 name|COLUMN_EVENT
@@ -742,7 +742,7 @@ literal|"debug-events"
 argument_list|,
 name|_
 argument_list|(
-literal|"Dump events from this controller"
+literal|"_Dump events from this controller"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -780,7 +780,7 @@ literal|"enabled"
 argument_list|,
 name|_
 argument_list|(
-literal|"Enable this controller"
+literal|"_Enable this controller"
 argument_list|)
 argument_list|)
 expr_stmt|;

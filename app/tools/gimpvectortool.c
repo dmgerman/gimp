@@ -684,7 +684,7 @@ argument_list|)
 argument_list|,
 name|N_
 argument_list|(
-literal|"_Paths"
+literal|"Pat_hs"
 argument_list|)
 argument_list|,
 literal|"b"

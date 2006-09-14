@@ -254,7 +254,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Ma_p"
+literal|"_Map"
 argument_list|)
 block|}
 block|,
@@ -265,7 +265,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"_Components"
+literal|"C_omponents"
 argument_list|)
 block|}
 block|,
@@ -551,7 +551,7 @@ name|GTK_STOCK_INFO
 block|,
 name|N_
 argument_list|(
-literal|"Image Properties"
+literal|"Image Pr_operties"
 argument_list|)
 block|,
 name|NULL

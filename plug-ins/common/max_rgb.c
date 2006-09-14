@@ -136,7 +136,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon275b466a0103
+DECL|enum|__anon2c2985500103
 block|{
 DECL|enumerator|MIN_CHANNELS
 name|MIN_CHANNELS
@@ -154,7 +154,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275b466a0208
+DECL|struct|__anon2c2985500208
 block|{
 DECL|member|max_p
 name|gint
@@ -251,7 +251,7 @@ literal|"May 2000"
 argument_list|,
 name|N_
 argument_list|(
-literal|"_Maximum RGB..."
+literal|"Ma_ximum RGB..."
 argument_list|)
 argument_list|,
 literal|"RGB*"
@@ -523,7 +523,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275b466a0308
+DECL|struct|__anon2c2985500308
 block|{
 DECL|member|init_value
 name|gint
