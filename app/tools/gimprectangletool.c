@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a164f250103
+DECL|enum|__anon29e928690103
 block|{
 DECL|enumerator|RECTANGLE_CHANGED
 name|RECTANGLE_CHANGED
@@ -703,6 +703,10 @@ parameter_list|,
 name|gdouble
 modifier|*
 name|alpha
+parameter_list|,
+name|gdouble
+modifier|*
+name|beta
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -3558,6 +3562,9 @@ decl_stmt|;
 name|gdouble
 name|alpha
 decl_stmt|;
+name|gdouble
+name|beta
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_RECTANGLE_TOOL
@@ -4648,6 +4655,9 @@ name|y2
 argument_list|,
 operator|&
 name|alpha
+argument_list|,
+operator|&
+name|beta
 argument_list|)
 condition|)
 block|{
@@ -4660,7 +4670,7 @@ name|alpha
 expr_stmt|;
 name|inc_y
 operator|*=
-name|alpha
+name|beta
 expr_stmt|;
 if|if
 condition|(
@@ -10077,7 +10087,7 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_rectangle_tool_constraint_violated (GimpRectangleTool * rectangle,gint x1,gint y1,gint x2,gint y2,gdouble * alpha)
+DECL|function|gimp_rectangle_tool_constraint_violated (GimpRectangleTool * rectangle,gint x1,gint y1,gint x2,gint y2,gdouble * alpha,gdouble * beta)
 name|gimp_rectangle_tool_constraint_violated
 parameter_list|(
 name|GimpRectangleTool
@@ -10099,6 +10109,10 @@ parameter_list|,
 name|gdouble
 modifier|*
 name|alpha
+parameter_list|,
+name|gdouble
+modifier|*
+name|beta
 parameter_list|)
 block|{
 name|GimpRectangleConstraint
@@ -10138,6 +10152,14 @@ name|max_x
 decl_stmt|,
 name|max_y
 decl_stmt|;
+operator|*
+name|alpha
+operator|=
+operator|*
+name|beta
+operator|=
+literal|1
+expr_stmt|;
 switch|switch
 condition|(
 name|constraint
@@ -10296,7 +10318,7 @@ name|NULL
 argument_list|)
 expr_stmt|;
 operator|*
-name|alpha
+name|beta
 operator|=
 operator|(
 name|ry1
@@ -10384,7 +10406,7 @@ name|NULL
 argument_list|)
 expr_stmt|;
 operator|*
-name|alpha
+name|beta
 operator|=
 operator|(
 name|max_y
