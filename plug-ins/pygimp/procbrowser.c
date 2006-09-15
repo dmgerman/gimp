@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<Python.h>
 end_include
 
@@ -51,10 +57,16 @@ directive|include
 file|"pygimp-api.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"pygimp-intl.h"
+end_include
+
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0273540108
+DECL|struct|__anon28c193df0108
 block|{
 DECL|member|func
 name|PyObject
@@ -593,7 +605,10 @@ name|G_OBJECT
 argument_list|(
 name|gimp_proc_browser_dialog_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Python Procedure Browser"
+argument_list|)
 argument_list|,
 literal|"python-fu-procedure-browser"
 argument_list|,

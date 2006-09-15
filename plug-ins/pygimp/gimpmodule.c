@@ -63,17 +63,11 @@ directive|include
 file|<pygobject.h>
 end_include
 
-begin_comment
-comment|/* maximum bits per pixel ... */
-end_comment
-
-begin_define
-DECL|macro|MAX_BPP
-define|#
-directive|define
-name|MAX_BPP
-value|4
-end_define
+begin_include
+include|#
+directive|include
+file|"pygimp-intl.h"
+end_include
 
 begin_decl_stmt
 DECL|variable|pygimp_error
@@ -7692,6 +7686,29 @@ expr_stmt|;
 name|init_pygimpcolor
 argument_list|()
 expr_stmt|;
+comment|/* initialize i18n support */
+name|bindtextdomain
+argument_list|(
+name|GETTEXT_PACKAGE
+literal|"-python"
+argument_list|,
+name|gimp_locale_directory
+argument_list|()
+argument_list|)
+expr_stmt|;
+ifdef|#
+directive|ifdef
+name|HAVE_BIND_TEXTDOMAIN_CODESET
+name|bind_textdomain_codeset
+argument_list|(
+name|GETTEXT_PACKAGE
+literal|"-python"
+argument_list|,
+literal|"UTF-8"
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 comment|/* set the default python encoding to utf-8 */
 name|PyUnicode_SetDefaultEncoding
 argument_list|(
