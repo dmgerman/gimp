@@ -76,7 +76,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275e36f10108
+DECL|struct|__anon2c1a3b400108
 block|{
 DECL|member|radius
 name|gdouble
@@ -103,7 +103,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275e36f10208
+DECL|struct|__anon2c1a3b400208
 block|{
 DECL|member|run
 name|gboolean
@@ -797,6 +797,12 @@ name|gimp_displays_flush
 argument_list|()
 expr_stmt|;
 comment|/* set data for next use of filter */
+if|if
+condition|(
+name|run_mode
+operator|==
+name|GIMP_RUN_INTERACTIVE
+condition|)
 name|gimp_set_data
 argument_list|(
 name|PLUG_IN_PROC
