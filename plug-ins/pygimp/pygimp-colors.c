@@ -3737,14 +3737,16 @@ operator|=
 operator|*
 name|hsv
 expr_stmt|;
-DECL|macro|SET_MEMBER (m)
+DECL|macro|SET_MEMBER (m,s)
 define|#
 directive|define
 name|SET_MEMBER
 parameter_list|(
 name|m
+parameter_list|,
+name|s
 parameter_list|)
-value|G_STMT_START {				\     if (PyFloat_Check(m))					\         tmphsv.m = PyFloat_AS_DOUBLE(m);			\     else {							\ 	PyErr_SetString(PyExc_TypeError,			\ 			#m " must be a float");			\ 	return NULL;						\     }								\ } G_STMT_END
+value|G_STMT_START {			\     if (PyInt_Check(m))						\         tmphsv.m = (double) PyInt_AS_LONG(m) / s;		\     else if (PyFloat_Check(m))					\         tmphsv.m = PyFloat_AS_DOUBLE(m);			\     else {							\ 	PyErr_SetString(PyExc_TypeError,			\ 			#m " must be a float");			\ 	return NULL;						\     }								\ } G_STMT_END
 if|if
 condition|(
 name|h
@@ -3753,16 +3755,22 @@ block|{
 name|SET_MEMBER
 argument_list|(
 name|h
+argument_list|,
+literal|360.0
 argument_list|)
 expr_stmt|;
 name|SET_MEMBER
 argument_list|(
 name|s
+argument_list|,
+literal|100.0
 argument_list|)
 expr_stmt|;
 name|SET_MEMBER
 argument_list|(
 name|v
+argument_list|,
+literal|100.0
 argument_list|)
 expr_stmt|;
 block|}
@@ -3773,6 +3781,8 @@ condition|)
 name|SET_MEMBER
 argument_list|(
 name|a
+argument_list|,
+literal|255.0
 argument_list|)
 expr_stmt|;
 undef|#
@@ -3863,6 +3873,28 @@ argument_list|,
 name|GimpHSV
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|PyInt_Check
+argument_list|(
+name|py_a
+argument_list|)
+condition|)
+name|hsv
+operator|->
+name|a
+operator|=
+operator|(
+name|double
+operator|)
+name|PyInt_AS_LONG
+argument_list|(
+name|py_a
+argument_list|)
+operator|/
+literal|255.0
+expr_stmt|;
+elseif|else
 if|if
 condition|(
 name|PyFloat_Check
@@ -4145,21 +4177,25 @@ decl_stmt|;
 end_decl_stmt
 
 begin_define
-DECL|macro|MEMBER_ACCESSOR (m)
+DECL|macro|MEMBER_ACCESSOR (m,s)
 define|#
 directive|define
 name|MEMBER_ACCESSOR
 parameter_list|(
 name|m
+parameter_list|,
+name|s
 parameter_list|)
 define|\
-value|static PyObject *							\ hsv_get_ ## m(PyObject *self, void *closure)				\ {									\     return PyFloat_FromDouble(pyg_boxed_get(self, GimpHSV)->m);		\ }									\ static int								\ hsv_set_ ## m(PyObject *self, PyObject *value, void *closure)		\ {									\     GimpHSV *hsv = pyg_boxed_get(self, GimpHSV);			\     if (value == NULL) {						\ 	PyErr_SetString(PyExc_TypeError, "cannot delete value");	\ 	return -1;							\     }									\     if (PyFloat_Check(value))						\         hsv->m = PyFloat_AS_DOUBLE(value);				\     else {								\ 	PyErr_SetString(PyExc_TypeError, "type mismatch");		\ 	return -1;							\     }									\     return 0;								\ }
+value|static PyObject *							\ hsv_get_ ## m(PyObject *self, void *closure)				\ {									\     return PyFloat_FromDouble(pyg_boxed_get(self, GimpHSV)->m);		\ }									\ static int								\ hsv_set_ ## m(PyObject *self, PyObject *value, void *closure)		\ {									\     GimpHSV *hsv = pyg_boxed_get(self, GimpHSV);			\     if (value == NULL) {						\ 	PyErr_SetString(PyExc_TypeError, "cannot delete value");	\ 	return -1;							\     }									\     else if (PyInt_Check(value))					\         hsv->m = (double) PyInt_AS_LONG(value) / s;			\     else if (PyFloat_Check(value))					\         hsv->m = PyFloat_AS_DOUBLE(value);				\     else {								\ 	PyErr_SetString(PyExc_TypeError, "type mismatch");		\ 	return -1;							\     }									\     return 0;								\ }
 end_define
 
 begin_expr_stmt
 name|MEMBER_ACCESSOR
 argument_list|(
 name|h
+argument_list|,
+literal|360.0
 argument_list|)
 expr_stmt|;
 end_expr_stmt
@@ -4168,6 +4204,8 @@ begin_expr_stmt
 name|MEMBER_ACCESSOR
 argument_list|(
 name|s
+argument_list|,
+literal|100.0
 argument_list|)
 expr_stmt|;
 end_expr_stmt
@@ -4176,6 +4214,8 @@ begin_expr_stmt
 name|MEMBER_ACCESSOR
 argument_list|(
 name|v
+argument_list|,
+literal|100.0
 argument_list|)
 expr_stmt|;
 end_expr_stmt
@@ -4184,6 +4224,8 @@ begin_expr_stmt
 name|MEMBER_ACCESSOR
 argument_list|(
 name|a
+argument_list|,
+literal|255.0
 argument_list|)
 expr_stmt|;
 end_expr_stmt
@@ -4369,6 +4411,8 @@ name|hsv
 decl_stmt|;
 name|double
 name|val
+decl_stmt|,
+name|scale_factor
 decl_stmt|;
 if|if
 condition|(
@@ -4425,6 +4469,10 @@ name|hsv
 operator|->
 name|h
 expr_stmt|;
+name|scale_factor
+operator|=
+literal|360.0
+expr_stmt|;
 break|break;
 case|case
 literal|1
@@ -4434,6 +4482,10 @@ operator|=
 name|hsv
 operator|->
 name|s
+expr_stmt|;
+name|scale_factor
+operator|=
+literal|100.0
 expr_stmt|;
 break|break;
 case|case
@@ -4445,6 +4497,10 @@ name|hsv
 operator|->
 name|v
 expr_stmt|;
+name|scale_factor
+operator|=
+literal|100.0
+expr_stmt|;
 break|break;
 case|case
 literal|3
@@ -4454,6 +4510,10 @@ operator|=
 name|hsv
 operator|->
 name|a
+expr_stmt|;
+name|scale_factor
+operator|=
+literal|255.0
 expr_stmt|;
 break|break;
 default|default:
@@ -4465,9 +4525,21 @@ name|NULL
 return|;
 block|}
 return|return
-name|PyFloat_FromDouble
+name|PyInt_FromLong
+argument_list|(
+name|ROUND
+argument_list|(
+name|CLAMP
 argument_list|(
 name|val
+argument_list|,
+literal|0.0
+argument_list|,
+literal|1.0
+argument_list|)
+operator|*
+name|scale_factor
+argument_list|)
 argument_list|)
 return|;
 block|}
@@ -5830,14 +5902,16 @@ operator|=
 operator|*
 name|hsl
 expr_stmt|;
-DECL|macro|SET_MEMBER (m)
+DECL|macro|SET_MEMBER (m,s)
 define|#
 directive|define
 name|SET_MEMBER
 parameter_list|(
 name|m
+parameter_list|,
+name|s
 parameter_list|)
-value|G_STMT_START {				\     if (PyFloat_Check(m))					\         tmphsl.m = PyFloat_AS_DOUBLE(m);			\     else {							\ 	PyErr_SetString(PyExc_TypeError,			\ 			#m " must be a float");			\ 	return NULL;						\     }								\ } G_STMT_END
+value|G_STMT_START {			\     if (PyInt_Check(m))						\         tmphsl.m = (double) PyInt_AS_LONG(m) / s;		\     else if (PyFloat_Check(m))					\         tmphsl.m = PyFloat_AS_DOUBLE(m);			\     else {							\ 	PyErr_SetString(PyExc_TypeError,			\ 			#m " must be a float");			\ 	return NULL;						\     }								\ } G_STMT_END
 if|if
 condition|(
 name|h
@@ -5846,16 +5920,22 @@ block|{
 name|SET_MEMBER
 argument_list|(
 name|h
+argument_list|,
+literal|360.0
 argument_list|)
 expr_stmt|;
 name|SET_MEMBER
 argument_list|(
 name|s
+argument_list|,
+literal|100.0
 argument_list|)
 expr_stmt|;
 name|SET_MEMBER
 argument_list|(
 name|l
+argument_list|,
+literal|100.0
 argument_list|)
 expr_stmt|;
 block|}
@@ -5866,6 +5946,8 @@ condition|)
 name|SET_MEMBER
 argument_list|(
 name|a
+argument_list|,
+literal|255.0
 argument_list|)
 expr_stmt|;
 undef|#
@@ -5956,6 +6038,28 @@ argument_list|,
 name|GimpHSL
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|PyInt_Check
+argument_list|(
+name|py_a
+argument_list|)
+condition|)
+name|hsl
+operator|->
+name|a
+operator|=
+operator|(
+name|double
+operator|)
+name|PyInt_AS_LONG
+argument_list|(
+name|py_a
+argument_list|)
+operator|/
+literal|255.0
+expr_stmt|;
+elseif|else
 if|if
 condition|(
 name|PyFloat_Check
@@ -6194,21 +6298,25 @@ decl_stmt|;
 end_decl_stmt
 
 begin_define
-DECL|macro|MEMBER_ACCESSOR (m)
+DECL|macro|MEMBER_ACCESSOR (m,s)
 define|#
 directive|define
 name|MEMBER_ACCESSOR
 parameter_list|(
 name|m
+parameter_list|,
+name|s
 parameter_list|)
 define|\
-value|static PyObject *							\ hsl_get_ ## m(PyObject *self, void *closure)				\ {									\     return PyFloat_FromDouble(pyg_boxed_get(self, GimpHSL)->m);		\ }									\ static int								\ hsl_set_ ## m(PyObject *self, PyObject *value, void *closure)		\ {									\     GimpHSL *hsl = pyg_boxed_get(self, GimpHSL);			\     if (value == NULL) {						\ 	PyErr_SetString(PyExc_TypeError, "cannot delete value");	\ 	return -1;							\     }									\     if (PyFloat_Check(value))						\         hsl->m = PyFloat_AS_DOUBLE(value);				\     else {								\ 	PyErr_SetString(PyExc_TypeError, "type mismatch");		\ 	return -1;							\     }									\     return 0;								\ }
+value|static PyObject *							\ hsl_get_ ## m(PyObject *self, void *closure)				\ {									\     return PyFloat_FromDouble(pyg_boxed_get(self, GimpHSL)->m);		\ }									\ static int								\ hsl_set_ ## m(PyObject *self, PyObject *value, void *closure)		\ {									\     GimpHSL *hsl = pyg_boxed_get(self, GimpHSL);			\     if (value == NULL) {						\ 	PyErr_SetString(PyExc_TypeError, "cannot delete value");	\ 	return -1;							\     }									\     else if (PyInt_Check(value))					\         hsl->m = (double) PyInt_AS_LONG(value) / s;			\     else if (PyFloat_Check(value))					\         hsl->m = PyFloat_AS_DOUBLE(value);				\     else {								\ 	PyErr_SetString(PyExc_TypeError, "type mismatch");		\ 	return -1;							\     }									\     return 0;								\ }
 end_define
 
 begin_expr_stmt
 name|MEMBER_ACCESSOR
 argument_list|(
 name|h
+argument_list|,
+literal|360.0
 argument_list|)
 expr_stmt|;
 end_expr_stmt
@@ -6217,6 +6325,8 @@ begin_expr_stmt
 name|MEMBER_ACCESSOR
 argument_list|(
 name|s
+argument_list|,
+literal|100.0
 argument_list|)
 expr_stmt|;
 end_expr_stmt
@@ -6225,6 +6335,8 @@ begin_expr_stmt
 name|MEMBER_ACCESSOR
 argument_list|(
 name|l
+argument_list|,
+literal|100.0
 argument_list|)
 expr_stmt|;
 end_expr_stmt
@@ -6233,6 +6345,8 @@ begin_expr_stmt
 name|MEMBER_ACCESSOR
 argument_list|(
 name|a
+argument_list|,
+literal|255.0
 argument_list|)
 expr_stmt|;
 end_expr_stmt
@@ -6418,6 +6532,8 @@ name|hsl
 decl_stmt|;
 name|double
 name|val
+decl_stmt|,
+name|scale_factor
 decl_stmt|;
 if|if
 condition|(
@@ -6474,6 +6590,10 @@ name|hsl
 operator|->
 name|h
 expr_stmt|;
+name|scale_factor
+operator|=
+literal|360.0
+expr_stmt|;
 break|break;
 case|case
 literal|1
@@ -6483,6 +6603,10 @@ operator|=
 name|hsl
 operator|->
 name|s
+expr_stmt|;
+name|scale_factor
+operator|=
+literal|100.0
 expr_stmt|;
 break|break;
 case|case
@@ -6494,6 +6618,10 @@ name|hsl
 operator|->
 name|l
 expr_stmt|;
+name|scale_factor
+operator|=
+literal|100.0
+expr_stmt|;
 break|break;
 case|case
 literal|3
@@ -6503,6 +6631,10 @@ operator|=
 name|hsl
 operator|->
 name|a
+expr_stmt|;
+name|scale_factor
+operator|=
+literal|255.0
 expr_stmt|;
 break|break;
 default|default:
@@ -6514,9 +6646,21 @@ name|NULL
 return|;
 block|}
 return|return
-name|PyFloat_FromDouble
+name|PyInt_FromLong
+argument_list|(
+name|ROUND
+argument_list|(
+name|CLAMP
 argument_list|(
 name|val
+argument_list|,
+literal|0.0
+argument_list|,
+literal|1.0
+argument_list|)
+operator|*
+name|scale_factor
+argument_list|)
 argument_list|)
 return|;
 block|}
