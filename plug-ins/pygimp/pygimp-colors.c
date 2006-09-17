@@ -3149,8 +3149,7 @@ end_function
 
 begin_function
 specifier|static
-name|PyObject
-modifier|*
+name|int
 DECL|function|rgb_init (PyGBoxed * self,PyObject * args,PyObject * kwargs)
 name|rgb_init
 parameter_list|(
@@ -3230,7 +3229,8 @@ name|a
 argument_list|)
 condition|)
 return|return
-name|NULL
+operator|-
+literal|1
 return|;
 DECL|macro|SET_MEMBER (m)
 define|#
@@ -3239,7 +3239,7 @@ name|SET_MEMBER
 parameter_list|(
 name|m
 parameter_list|)
-value|G_STMT_START {				\     if (PyInt_Check(m))						\ 	rgb.m = (double) PyInt_AS_LONG(m) / 255.0;		\     else if (PyFloat_Check(m))					\         rgb.m = PyFloat_AS_DOUBLE(m);				\     else {							\ 	PyErr_SetString(PyExc_TypeError,			\ 			#m " must be an int or a float");	\ 	return NULL;						\     }								\ } G_STMT_END
+value|G_STMT_START {				\     if (PyInt_Check(m))						\ 	rgb.m = (double) PyInt_AS_LONG(m) / 255.0;		\     else if (PyFloat_Check(m))					\         rgb.m = PyFloat_AS_DOUBLE(m);				\     else {							\ 	PyErr_SetString(PyExc_TypeError,			\ 			#m " must be an int or a float");	\ 	return -1;						\     }								\ } G_STMT_END
 name|SET_MEMBER
 argument_list|(
 name|r
@@ -3298,13 +3298,8 @@ operator|&
 name|rgb
 argument_list|)
 expr_stmt|;
-name|Py_INCREF
-argument_list|(
-name|Py_None
-argument_list|)
-expr_stmt|;
 return|return
-name|Py_None
+literal|0
 return|;
 block|}
 end_function
@@ -5237,8 +5232,7 @@ end_function
 
 begin_function
 specifier|static
-name|PyObject
-modifier|*
+name|int
 DECL|function|hsv_init (PyGBoxed * self,PyObject * args,PyObject * kwargs)
 name|hsv_init
 parameter_list|(
@@ -5318,29 +5312,38 @@ name|a
 argument_list|)
 condition|)
 return|return
-name|NULL
+operator|-
+literal|1
 return|;
-DECL|macro|SET_MEMBER (m)
+DECL|macro|SET_MEMBER (m,s)
 define|#
 directive|define
 name|SET_MEMBER
 parameter_list|(
 name|m
+parameter_list|,
+name|s
 parameter_list|)
-value|G_STMT_START {				\     if (PyFloat_Check(m))					\         hsv.m = PyFloat_AS_DOUBLE(m);				\     else {							\ 	PyErr_SetString(PyExc_TypeError,			\ 			#m " must be a float");			\ 	return NULL;						\     }								\ } G_STMT_END
+value|G_STMT_START {			\     if (PyInt_Check(m))						\         hsv.m = (double) PyInt_AS_LONG(m) / s;			\     else if (PyFloat_Check(m))					\         hsv.m = PyFloat_AS_DOUBLE(m);				\     else {							\ 	PyErr_SetString(PyExc_TypeError,			\ 			#m " must be an int or a float");	\ 	return -1;						\     }								\ } G_STMT_END
 name|SET_MEMBER
 argument_list|(
 name|h
+argument_list|,
+literal|360.0
 argument_list|)
 expr_stmt|;
 name|SET_MEMBER
 argument_list|(
 name|s
+argument_list|,
+literal|100.0
 argument_list|)
 expr_stmt|;
 name|SET_MEMBER
 argument_list|(
 name|v
+argument_list|,
+literal|100.0
 argument_list|)
 expr_stmt|;
 if|if
@@ -5350,6 +5353,8 @@ condition|)
 name|SET_MEMBER
 argument_list|(
 name|a
+argument_list|,
+literal|255.0
 argument_list|)
 expr_stmt|;
 else|else
@@ -5386,13 +5391,8 @@ operator|&
 name|hsv
 argument_list|)
 expr_stmt|;
-name|Py_INCREF
-argument_list|(
-name|Py_None
-argument_list|)
-expr_stmt|;
 return|return
-name|Py_None
+literal|0
 return|;
 block|}
 end_function
@@ -7281,8 +7281,7 @@ end_function
 
 begin_function
 specifier|static
-name|PyObject
-modifier|*
+name|int
 DECL|function|hsl_init (PyGBoxed * self,PyObject * args,PyObject * kwargs)
 name|hsl_init
 parameter_list|(
@@ -7362,29 +7361,38 @@ name|a
 argument_list|)
 condition|)
 return|return
-name|NULL
+operator|-
+literal|1
 return|;
-DECL|macro|SET_MEMBER (m)
+DECL|macro|SET_MEMBER (m,s)
 define|#
 directive|define
 name|SET_MEMBER
 parameter_list|(
 name|m
+parameter_list|,
+name|s
 parameter_list|)
-value|G_STMT_START {				\     if (PyFloat_Check(m))					\         hsl.m = PyFloat_AS_DOUBLE(m);				\     else {							\ 	PyErr_SetString(PyExc_TypeError,			\ 			#m " must be a float");			\ 	return NULL;						\     }								\ } G_STMT_END
+value|G_STMT_START {			\     if (PyInt_Check(m))						\         hsl.m = (double) PyInt_AS_LONG(m) / s;			\     else if (PyFloat_Check(m))					\         hsl.m = PyFloat_AS_DOUBLE(m);				\     else {							\ 	PyErr_SetString(PyExc_TypeError,			\ 			#m " must be a float");			\ 	return -1;						\     }								\ } G_STMT_END
 name|SET_MEMBER
 argument_list|(
 name|h
+argument_list|,
+literal|360.0
 argument_list|)
 expr_stmt|;
 name|SET_MEMBER
 argument_list|(
 name|s
+argument_list|,
+literal|100.0
 argument_list|)
 expr_stmt|;
 name|SET_MEMBER
 argument_list|(
 name|l
+argument_list|,
+literal|100.0
 argument_list|)
 expr_stmt|;
 if|if
@@ -7394,6 +7402,8 @@ condition|)
 name|SET_MEMBER
 argument_list|(
 name|a
+argument_list|,
+literal|255.0
 argument_list|)
 expr_stmt|;
 else|else
@@ -7430,13 +7440,8 @@ operator|&
 name|hsl
 argument_list|)
 expr_stmt|;
-name|Py_INCREF
-argument_list|(
-name|Py_None
-argument_list|)
-expr_stmt|;
 return|return
-name|Py_None
+literal|0
 return|;
 block|}
 end_function
@@ -9474,8 +9479,7 @@ end_function
 
 begin_function
 specifier|static
-name|PyObject
-modifier|*
+name|int
 DECL|function|cmyk_init (PyGBoxed * self,PyObject * args,PyObject * kwargs)
 name|cmyk_init
 parameter_list|(
@@ -9563,7 +9567,8 @@ name|a
 argument_list|)
 condition|)
 return|return
-name|NULL
+operator|-
+literal|1
 return|;
 DECL|macro|SET_MEMBER (m)
 define|#
@@ -9572,7 +9577,7 @@ name|SET_MEMBER
 parameter_list|(
 name|m
 parameter_list|)
-value|G_STMT_START {				\     if (PyInt_Check(m))						\ 	cmyk.m = (double) PyInt_AS_LONG(m) / 255.0;		\     else if (PyFloat_Check(m))					\         cmyk.m = PyFloat_AS_DOUBLE(m);				\     else {							\ 	PyErr_SetString(PyExc_TypeError,			\ 			#m " must be an int or a float");	\ 	return NULL;						\     }								\ } G_STMT_END
+value|G_STMT_START {				\     if (PyInt_Check(m))						\ 	cmyk.m = (double) PyInt_AS_LONG(m) / 255.0;		\     else if (PyFloat_Check(m))					\         cmyk.m = PyFloat_AS_DOUBLE(m);				\     else {							\ 	PyErr_SetString(PyExc_TypeError,			\ 			#m " must be an int or a float");	\ 	return -1;						\     }								\ } G_STMT_END
 name|SET_MEMBER
 argument_list|(
 name|c
@@ -9636,13 +9641,8 @@ operator|&
 name|cmyk
 argument_list|)
 expr_stmt|;
-name|Py_INCREF
-argument_list|(
-name|Py_None
-argument_list|)
-expr_stmt|;
 return|return
-name|Py_None
+literal|0
 return|;
 block|}
 end_function
