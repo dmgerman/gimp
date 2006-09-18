@@ -183,7 +183,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Erase to background or transparency"
+literal|"Eraser Tool: Erase to background or transparency using a brush"
 argument_list|)
 argument_list|,
 name|N_

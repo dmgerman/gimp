@@ -349,7 +349,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Pick colors from the image"
+literal|"Color Picker Tool: Set colors from image pixels"
 argument_list|)
 argument_list|,
 name|N_

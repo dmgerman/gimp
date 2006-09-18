@@ -626,7 +626,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Add text to the image"
+literal|"Text Tool: Create or edit text layers"
 argument_list|)
 argument_list|,
 name|N_

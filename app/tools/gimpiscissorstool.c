@@ -1125,7 +1125,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Select shapes from image"
+literal|"Scissors Select Tool: Select shapes using intelligent edge-fitting"
 argument_list|)
 argument_list|,
 name|N_

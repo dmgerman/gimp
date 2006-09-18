@@ -344,7 +344,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Fill with a color gradient"
+literal|"Blend Tool: Fill selected area with a color gradient"
 argument_list|)
 argument_list|,
 name|N_

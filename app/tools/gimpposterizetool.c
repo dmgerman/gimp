@@ -248,7 +248,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Reduce image to a fixed number of colors"
+literal|"Posterize Tool: Reduce to a limited set of colors"
 argument_list|)
 argument_list|,
 name|N_

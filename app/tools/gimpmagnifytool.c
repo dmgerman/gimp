@@ -302,7 +302,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Zoom in& out"
+literal|"Zoom Tool: Adjust the zoom level"
 argument_list|)
 argument_list|,
 name|N_

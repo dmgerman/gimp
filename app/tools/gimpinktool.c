@@ -122,7 +122,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Draw in ink"
+literal|"Ink Tool: Calligraphy-style painting"
 argument_list|)
 argument_list|,
 name|N_

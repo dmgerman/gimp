@@ -483,8 +483,8 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Paint using Image Regions Preserving "
-literal|"the Perspective of the Image"
+literal|"Perspective Clone Tool: Clone from an image source "
+literal|"after applying a perspective transformation"
 argument_list|)
 argument_list|,
 name|N_

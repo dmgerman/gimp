@@ -479,12 +479,12 @@ literal|"gimp-align-tool"
 argument_list|,
 name|_
 argument_list|(
-literal|"Alignment Tool"
+literal|"Align"
 argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Align or arrange layers and other items"
+literal|"Alignment Tool: Align or arrange layers and other objects"
 argument_list|)
 argument_list|,
 name|N_

@@ -208,7 +208,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Change perspective of the layer or selection"
+literal|"Perspective Tool: Change perspective of the layer or selection"
 argument_list|)
 argument_list|,
 name|N_

@@ -474,7 +474,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Adjust hue and saturation"
+literal|"Hue-Saturation Tool: Adjust hue, saturation, and lightness"
 argument_list|)
 argument_list|,
 name|N_
@@ -899,7 +899,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon27d72ab20108
+DECL|struct|__anon2bac72160108
 block|{
 DECL|member|label
 specifier|const

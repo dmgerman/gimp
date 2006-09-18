@@ -377,7 +377,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Adjust color balance"
+literal|"Color Balance Tool: Adjust color distribution"
 argument_list|)
 argument_list|,
 name|N_

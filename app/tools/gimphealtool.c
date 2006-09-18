@@ -139,7 +139,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Heal image irregularities"
+literal|"Healing Tool: Heal image irregularities"
 argument_list|)
 argument_list|,
 name|N_

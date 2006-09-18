@@ -386,7 +386,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Crop an image"
+literal|"Crop Tool: Remove edge areas from image or layer"
 argument_list|)
 argument_list|,
 name|N_

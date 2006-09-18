@@ -219,12 +219,12 @@ literal|"gimp-convolve-tool"
 argument_list|,
 name|_
 argument_list|(
-literal|"Convolve"
+literal|"Blur/Sharpen"
 argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Blur or Sharpen"
+literal|"Blur/Sharpen Tool: Selective blurring or unblurring using a brush"
 argument_list|)
 argument_list|,
 name|N_

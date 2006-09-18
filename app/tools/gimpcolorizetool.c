@@ -361,7 +361,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Colorize the image"
+literal|"Colorize Tool: Colorize the image"
 argument_list|)
 argument_list|,
 name|N_

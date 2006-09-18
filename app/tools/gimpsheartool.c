@@ -294,7 +294,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Shear the layer or selection"
+literal|"Shear Tool: Shear the layer or selection"
 argument_list|)
 argument_list|,
 name|N_

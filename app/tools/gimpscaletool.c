@@ -266,7 +266,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Scale the layer or selection"
+literal|"Scale Tool: Scale the layer or selection"
 argument_list|)
 argument_list|,
 name|N_

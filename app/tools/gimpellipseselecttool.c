@@ -189,7 +189,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Select elliptical regions"
+literal|"Ellipse Select Tool: Select an elliptical region"
 argument_list|)
 argument_list|,
 name|N_

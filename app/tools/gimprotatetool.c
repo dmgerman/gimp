@@ -306,7 +306,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Rotate the layer or selection"
+literal|"Rotate Tool: Rotate the layer or selection"
 argument_list|)
 argument_list|,
 name|N_

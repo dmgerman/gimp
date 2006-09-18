@@ -110,7 +110,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Paint hard edged pixels"
+literal|"Pencil Tool: Hard edge painting using a brush"
 argument_list|)
 argument_list|,
 name|N_

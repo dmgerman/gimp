@@ -228,7 +228,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Flip the layer or selection"
+literal|"Flip Tool: Reverse the layer horizontally or vertically"
 argument_list|)
 argument_list|,
 name|N_

@@ -679,7 +679,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Create and edit paths"
+literal|"Paths Tool: Create and edit paths"
 argument_list|)
 argument_list|,
 name|N_

@@ -127,7 +127,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Smudge image"
+literal|"Smudge Tool: Smudge selectively using a brush"
 argument_list|)
 argument_list|,
 name|N_

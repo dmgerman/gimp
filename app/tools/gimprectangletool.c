@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b49f710103
+DECL|enum|__anon2b05b4d70103
 block|{
 DECL|enumerator|RECTANGLE_CHANGED
 name|RECTANGLE_CHANGED
@@ -6177,6 +6177,15 @@ return|return
 name|TRUE
 return|;
 default|default:
+name|g_print
+argument_list|(
+literal|"Key %d pressed\n"
+argument_list|,
+name|kevent
+operator|->
+name|keyval
+argument_list|)
+expr_stmt|;
 return|return
 name|FALSE
 return|;

@@ -123,7 +123,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Airbrush with variable pressure"
+literal|"Airbrush Tool: Paint using a brush, with variable pressure"
 argument_list|)
 argument_list|,
 name|N_

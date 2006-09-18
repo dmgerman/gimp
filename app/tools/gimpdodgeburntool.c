@@ -224,12 +224,12 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Dodge or Burn strokes"
+literal|"Dodge/Burn Tool: Selectively lighten or darken using a brush"
 argument_list|)
 argument_list|,
 name|N_
 argument_list|(
-literal|"Dod_geBurn"
+literal|"Dod_ge-Burn"
 argument_list|)
 argument_list|,
 literal|"<shift>D"

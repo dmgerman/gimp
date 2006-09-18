@@ -155,7 +155,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Paint using Patterns or Image Regions"
+literal|"Clone Tool: Selectively copy from an image or pattern, using a brush"
 argument_list|)
 argument_list|,
 name|N_

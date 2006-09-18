@@ -423,7 +423,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Move layers& selections"
+literal|"Move Tool: Move layers, selections, and other objects"
 argument_list|)
 argument_list|,
 name|N_

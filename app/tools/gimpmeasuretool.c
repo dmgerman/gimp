@@ -450,7 +450,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Measure distances and angles"
+literal|"Measure Tool: Measure distances and angles"
 argument_list|)
 argument_list|,
 name|N_

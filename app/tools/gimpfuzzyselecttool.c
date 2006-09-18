@@ -151,7 +151,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Select contiguous regions"
+literal|"Fuzzy Select Tool: Select a contiguous region on the basis of color"
 argument_list|)
 argument_list|,
 name|N_

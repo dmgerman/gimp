@@ -383,7 +383,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Adjust brightness and contrast"
+literal|"Brightness/Contrast Tool: Adjust brightness and contrast"
 argument_list|)
 argument_list|,
 name|N_

@@ -652,7 +652,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Adjust color curves"
+literal|"Curves Tool: Adjust color curves"
 argument_list|)
 argument_list|,
 name|N_

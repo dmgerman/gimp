@@ -163,7 +163,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Select regions by color"
+literal|"Select by Color Tool: Select regions with similar colors"
 argument_list|)
 argument_list|,
 name|N_
