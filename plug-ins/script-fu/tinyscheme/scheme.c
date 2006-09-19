@@ -7561,7 +7561,7 @@ name|len
 operator|*
 sizeof|sizeof
 argument_list|(
-name|gint8
+name|guint8
 argument_list|)
 expr_stmt|;
 break|break;
@@ -7784,7 +7784,7 @@ name|sc
 argument_list|,
 operator|(
 operator|(
-name|gint8
+name|guint8
 operator|*
 operator|)
 name|elem
@@ -7953,7 +7953,7 @@ name|array_int8
 case|:
 operator|(
 operator|(
-name|gint8
+name|guint8
 operator|*
 operator|)
 name|elem
@@ -11731,7 +11731,7 @@ decl_stmt|;
 name|int
 name|len
 decl_stmt|;
-DECL|enum|__anon2ade78100103
+DECL|enum|__anon2abdfddc0103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -28869,7 +28869,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon2ade78100208
+DECL|struct|__anon2abdfddc0208
 specifier|static
 struct|struct
 block|{
@@ -29118,7 +29118,7 @@ value|"\017"
 end_define
 
 begin_typedef
-DECL|struct|__anon2ade78100308
+DECL|struct|__anon2abdfddc0308
 typedef|typedef
 struct|struct
 block|{
