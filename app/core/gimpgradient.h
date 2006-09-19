@@ -293,6 +293,22 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|GimpGradient
+modifier|*
+name|gimp_gradient_flatten
+parameter_list|(
+name|GimpGradient
+modifier|*
+name|gradient
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/*  gradient segment functions  */
 end_comment
