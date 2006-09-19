@@ -154,7 +154,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298b94980108
+DECL|struct|__anon28a84ba40108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -201,7 +201,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298b94980208
+DECL|struct|__anon28a84ba40208
 block|{
 DECL|member|run
 name|gboolean
@@ -2053,9 +2053,10 @@ name|errno
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_quit
-argument_list|()
-expr_stmt|;
+return|return
+operator|-
+literal|1
+return|;
 block|}
 name|png_init_io
 argument_list|(
@@ -2419,9 +2420,10 @@ name|filename
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_quit
-argument_list|()
-expr_stmt|;
+return|return
+operator|-
+literal|1
+return|;
 block|}
 comment|/*    * Create the "background" layer to hold the image...    */
 name|layer

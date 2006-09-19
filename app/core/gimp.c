@@ -285,7 +285,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3c92590103
+DECL|enum|__anon2accb51a0103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -4195,6 +4195,11 @@ name|progress
 argument_list|,
 name|NULL
 argument_list|,
+name|message
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
 name|message
 argument_list|)
 expr_stmt|;

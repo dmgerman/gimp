@@ -930,9 +930,21 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-operator|!
 name|file_proc
-operator|&&
+condition|)
+block|{
+comment|/* we found a procedure, clear error that might have been set */
+name|g_clear_error
+argument_list|(
+name|error
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+comment|/* set an error message unless one was already set */
+if|if
+condition|(
 name|error
 operator|&&
 operator|*
@@ -954,6 +966,7 @@ literal|"Unknown file type"
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|file_proc
 return|;
