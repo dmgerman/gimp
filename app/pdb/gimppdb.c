@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ab4df330103
+DECL|enum|__anon2ac481b40103
 block|{
 DECL|enumerator|REGISTER_PROCEDURE
 name|REGISTER_PROCEDURE
@@ -841,6 +841,22 @@ name|procedure
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|procedure
+operator|->
+name|deprecated
+operator|||
+name|pdb
+operator|->
+name|gimp
+operator|->
+name|pdb_compat_mode
+operator|!=
+name|GIMP_PDB_COMPAT_OFF
+condition|)
+block|{
 name|g_signal_emit
 argument_list|(
 name|pdb
@@ -855,6 +871,7 @@ argument_list|,
 name|procedure
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
