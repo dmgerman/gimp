@@ -378,7 +378,7 @@ name|widget_class
 argument_list|,
 name|g_param_spec_int
 argument_list|(
-literal|"tab_border"
+literal|"tab-border"
 argument_list|,
 name|NULL
 argument_list|,
@@ -400,7 +400,7 @@ name|widget_class
 argument_list|,
 name|g_param_spec_enum
 argument_list|(
-literal|"tab_icon_size"
+literal|"tab-icon-size"
 argument_list|,
 name|NULL
 argument_list|,
@@ -712,12 +712,12 @@ name|gtk_widget_style_get
 argument_list|(
 name|widget
 argument_list|,
-literal|"tab_border"
+literal|"tab-border"
 argument_list|,
 operator|&
 name|tab_border
 argument_list|,
-literal|"tab_icon_size"
+literal|"tab-icon_size"
 argument_list|,
 operator|&
 name|icon_size
@@ -731,7 +731,7 @@ name|notebook
 operator|->
 name|notebook
 argument_list|,
-literal|"tab_border"
+literal|"tab-border"
 argument_list|,
 name|tab_border
 argument_list|,
