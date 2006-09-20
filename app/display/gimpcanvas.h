@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b0da09e0103
+DECL|enum|__anon2c541fbd0103
 block|{
 DECL|enumerator|GIMP_CANVAS_STYLE_BLACK
 name|GIMP_CANVAS_STYLE_BLACK
@@ -44,9 +44,6 @@ name|GIMP_CANVAS_STYLE_XOR_DASHED
 block|,
 DECL|enumerator|GIMP_CANVAS_STYLE_XOR_DOTTED
 name|GIMP_CANVAS_STYLE_XOR_DOTTED
-block|,
-DECL|enumerator|GIMP_CANVAS_STYLE_XOR_STIPPLED
-name|GIMP_CANVAS_STYLE_XOR_STIPPLED
 block|,
 DECL|enumerator|GIMP_CANVAS_STYLE_SELECTION_IN
 name|GIMP_CANVAS_STYLE_SELECTION_IN
