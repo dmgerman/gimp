@@ -233,6 +233,10 @@ return|return
 name|FALSE
 return|;
 block|}
+comment|/*  open a process group, so killing the plug-in will kill wget too  */
+name|setpgrp
+argument_list|()
+expr_stmt|;
 if|if
 condition|(
 operator|(
