@@ -118,17 +118,6 @@ file|"gimp-intl.h"
 end_include
 
 begin_define
-DECL|macro|round (x)
-define|#
-directive|define
-name|round
-parameter_list|(
-name|x
-parameter_list|)
-value|((x)>=0?(long)((x)+0.5):(long)((x)-0.5))
-end_define
-
-begin_define
 DECL|macro|MIN4 (a,b,c,d)
 define|#
 directive|define
@@ -540,24 +529,6 @@ modifier|*
 name|options
 init|=
 name|GIMP_SOURCE_OPTIONS
-argument_list|(
-name|paint_options
-argument_list|)
-decl_stmt|;
-name|GimpCloneOptions
-modifier|*
-name|clone_options
-init|=
-name|GIMP_CLONE_OPTIONS
-argument_list|(
-name|paint_options
-argument_list|)
-decl_stmt|;
-name|GimpContext
-modifier|*
-name|context
-init|=
-name|GIMP_CONTEXT
 argument_list|(
 name|paint_options
 argument_list|)
