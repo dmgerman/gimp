@@ -24,6 +24,11 @@ name|EPSILON
 value|(0.0001)
 end_define
 
+begin_comment
+DECL|macro|EPSILON
+comment|/* arbitary small number for avoiding zero */
+end_comment
+
 begin_define
 DECL|macro|LANCZOS_SPP
 define|#
@@ -32,12 +37,25 @@ name|LANCZOS_SPP
 value|(1000)
 end_define
 
+begin_comment
+DECL|macro|LANCZOS_SPP
+comment|/* number of data pts per unit x in lookup table */
+end_comment
+
+begin_define
+DECL|macro|LANCZOS_MIN
+define|#
+directive|define
+name|LANCZOS_MIN
+value|(1.0/LANCZOS_SPP)
+end_define
+
 begin_define
 DECL|macro|LANCZOS_WIDTH
 define|#
 directive|define
 name|LANCZOS_WIDTH
-value|(4)
+value|(3)
 end_define
 
 begin_define
@@ -76,6 +94,16 @@ name|progress_callback
 parameter_list|,
 name|gpointer
 name|progress_data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gdouble
+modifier|*
+name|create_lanczos_lookup
+parameter_list|(
+name|void
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -1773,7 +1773,7 @@ decl_stmt|,
 name|orig_height
 decl_stmt|;
 name|gdouble
-name|y_rat
+name|y_ratio
 decl_stmt|;
 name|gint
 name|i
@@ -1863,7 +1863,7 @@ block|g_printerr ("scale_region: (%d x %d) -> (%d x %d)\n",               orig_w
 endif|#
 directive|endif
 comment|/*  find the ratios of old y to new y  */
-name|y_rat
+name|y_ratio
 operator|=
 operator|(
 name|gdouble
@@ -2019,7 +2019,7 @@ name|inv_ratio
 init|=
 literal|1.0
 operator|/
-name|y_rat
+name|y_ratio
 decl_stmt|;
 name|gint
 name|max
@@ -2063,7 +2063,7 @@ call|)
 argument_list|(
 name|y
 operator|*
-name|y_rat
+name|y_ratio
 argument_list|)
 expr_stmt|;
 name|frac
@@ -2073,7 +2073,7 @@ operator|-
 operator|(
 name|y
 operator|*
-name|y_rat
+name|y_ratio
 operator|-
 name|new_y
 operator|)
@@ -2120,7 +2120,7 @@ operator|+
 literal|1
 operator|)
 operator|*
-name|y_rat
+name|y_ratio
 argument_list|)
 operator|-
 name|new_y
@@ -2218,7 +2218,7 @@ operator|+
 literal|1
 operator|)
 operator|*
-name|y_rat
+name|y_ratio
 operator|-
 operator|(
 call|(
@@ -2231,7 +2231,7 @@ operator|+
 literal|1
 operator|)
 operator|*
-name|y_rat
+name|y_ratio
 argument_list|)
 operator|)
 expr_stmt|;
@@ -2289,7 +2289,7 @@ name|floor
 argument_list|(
 name|y
 operator|*
-name|y_rat
+name|y_ratio
 operator|-
 literal|0.5
 argument_list|)
@@ -2353,7 +2353,7 @@ init|=
 operator|(
 name|y
 operator|*
-name|y_rat
+name|y_ratio
 operator|-
 literal|0.5
 operator|)
@@ -2494,7 +2494,7 @@ init|=
 operator|(
 name|y
 operator|*
-name|y_rat
+name|y_ratio
 operator|-
 literal|0.5
 operator|)
@@ -2997,7 +2997,7 @@ name|subsample
 decl_stmt|;
 specifier|const
 name|gdouble
-name|x_rat
+name|x_ratio
 init|=
 operator|(
 name|gdouble
@@ -3011,7 +3011,7 @@ name|width
 decl_stmt|;
 specifier|const
 name|gdouble
-name|y_rat
+name|y_ratio
 init|=
 operator|(
 name|gdouble
@@ -3066,9 +3066,9 @@ decl_stmt|,
 name|src_col
 decl_stmt|;
 name|gdouble
-name|x_cum
+name|x_sum
 decl_stmt|,
-name|y_cum
+name|y_sum
 decl_stmt|;
 name|gdouble
 name|x_last
@@ -3149,7 +3149,7 @@ name|src_col
 operator|=
 literal|0
 expr_stmt|;
-name|x_cum
+name|x_sum
 operator|=
 operator|(
 name|gdouble
@@ -3158,7 +3158,7 @@ name|src_col
 expr_stmt|;
 name|x_last
 operator|=
-name|x_cum
+name|x_sum
 expr_stmt|;
 for|for
 control|(
@@ -3178,9 +3178,9 @@ control|)
 block|{
 if|if
 condition|(
-name|x_cum
+name|x_sum
 operator|+
-name|x_rat
+name|x_ratio
 operator|<=
 operator|(
 name|src_col
@@ -3191,16 +3191,16 @@ name|EPSILON
 operator|)
 condition|)
 block|{
-name|x_cum
+name|x_sum
 operator|+=
-name|x_rat
+name|x_ratio
 expr_stmt|;
 name|x_frac
 index|[
 name|i
 index|]
 operator|=
-name|x_cum
+name|x_sum
 operator|-
 name|x_last
 expr_stmt|;
@@ -3250,7 +3250,7 @@ name|src_row
 operator|=
 literal|0
 expr_stmt|;
-name|y_cum
+name|y_sum
 operator|=
 operator|(
 name|gdouble
@@ -3259,7 +3259,7 @@ name|src_row
 expr_stmt|;
 name|y_last
 operator|=
-name|y_cum
+name|y_sum
 expr_stmt|;
 name|pixel_region_get_row
 argument_list|(
@@ -3303,7 +3303,7 @@ name|src_col
 operator|=
 literal|0
 expr_stmt|;
-name|x_cum
+name|x_sum
 operator|=
 operator|(
 name|gdouble
@@ -3313,9 +3313,9 @@ expr_stmt|;
 comment|/* determine the fraction of the src pixel we are using for y */
 if|if
 condition|(
-name|y_cum
+name|y_sum
 operator|+
-name|y_rat
+name|y_ratio
 operator|<=
 operator|(
 name|src_row
@@ -3326,13 +3326,13 @@ name|EPSILON
 operator|)
 condition|)
 block|{
-name|y_cum
+name|y_sum
 operator|+=
-name|y_rat
+name|y_ratio
 expr_stmt|;
 name|y_frac
 operator|=
-name|y_cum
+name|y_sum
 operator|-
 name|y_last
 expr_stmt|;
@@ -3420,9 +3420,9 @@ expr_stmt|;
 comment|/*  increment the destination  */
 if|if
 condition|(
-name|x_cum
+name|x_sum
 operator|+
-name|x_rat
+name|x_ratio
 operator|<=
 operator|(
 name|src_col
@@ -3437,9 +3437,9 @@ name|r
 operator|+=
 name|bytes
 expr_stmt|;
-name|x_cum
+name|x_sum
 operator|+=
-name|x_rat
+name|x_ratio
 expr_stmt|;
 name|j
 operator|--
@@ -3467,9 +3467,9 @@ operator|=
 literal|1.0
 operator|/
 operator|(
-name|x_rat
+name|x_ratio
 operator|*
-name|y_rat
+name|y_ratio
 operator|)
 expr_stmt|;
 comment|/*  copy "row" to "dest"  */
@@ -3618,7 +3618,7 @@ argument_list|(
 name|x
 argument_list|)
 operator|<
-name|EPSILON
+name|LANCZOS_MIN
 condition|)
 return|return
 literal|1.0
@@ -3638,7 +3638,7 @@ begin_function
 specifier|static
 specifier|inline
 name|gdouble
-DECL|function|lanczos_sum (guchar * ptr,const gdouble * lu,gint u,gint bytes,gint byte)
+DECL|function|lanczos_sum (guchar * ptr,const gdouble * kernel,gint u,gint bytes,gint byte)
 name|lanczos_sum
 parameter_list|(
 name|guchar
@@ -3648,8 +3648,9 @@ parameter_list|,
 specifier|const
 name|gdouble
 modifier|*
-name|lu
+name|kernel
 parameter_list|,
+comment|/* 1-D kernel of transform coeffs */
 name|gint
 name|u
 parameter_list|,
@@ -3683,7 +3684,7 @@ operator|++
 control|)
 name|sum
 operator|+=
-name|lu
+name|kernel
 index|[
 name|i
 index|]
@@ -3713,7 +3714,7 @@ begin_function
 specifier|static
 specifier|inline
 name|gdouble
-DECL|function|lanczos_sum_mul (guchar * ptr,const gdouble * lu,gint u,gint bytes,gint byte,gint alpha)
+DECL|function|lanczos_sum_mul (guchar * ptr,const gdouble * kernel,gint u,gint bytes,gint byte,gint alpha)
 name|lanczos_sum_mul
 parameter_list|(
 name|guchar
@@ -3723,8 +3724,9 @@ parameter_list|,
 specifier|const
 name|gdouble
 modifier|*
-name|lu
+name|kernel
 parameter_list|,
+comment|/* 1-D kernel of transform coeffs */
 name|gint
 name|u
 parameter_list|,
@@ -3761,7 +3763,7 @@ operator|++
 control|)
 name|sum
 operator|+=
-name|lu
+name|kernel
 index|[
 name|i
 index|]
@@ -3980,12 +3982,15 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/* allocate and fill lookup table of Lanczos windowed sinc funtion */
+end_comment
+
 begin_function
-specifier|static
 name|gdouble
 modifier|*
-DECL|function|kernel_lanczos (void)
-name|kernel_lanczos
+DECL|function|create_lanczos_lookup (void)
+name|create_lanczos_lookup
 parameter_list|(
 name|void
 parameter_list|)
@@ -4010,7 +4015,7 @@ argument_list|)
 decl_stmt|;
 name|gdouble
 modifier|*
-name|kernel
+name|lookup
 init|=
 name|g_new
 argument_list|(
@@ -4041,7 +4046,7 @@ name|i
 operator|++
 control|)
 block|{
-name|kernel
+name|lookup
 index|[
 name|i
 index|]
@@ -4079,7 +4084,7 @@ name|dx
 expr_stmt|;
 block|}
 return|return
-name|kernel
+name|lookup
 return|;
 block|}
 end_function
@@ -4107,43 +4112,40 @@ parameter_list|)
 block|{
 name|gdouble
 modifier|*
-name|kernel
+name|lanczos
 init|=
 name|NULL
 decl_stmt|;
-comment|/* Lanczos kernel                    */
+comment|/* Lanczos lookup table                */
 name|gdouble
-name|lu
+name|x_kernel
 index|[
 name|LANCZOS_WIDTH2
 index|]
 decl_stmt|,
-comment|/* Lanczos sample value              */
-name|lv
+comment|/* 1-D kernels of Lanczos window coeffs */
+name|y_kernel
 index|[
 name|LANCZOS_WIDTH2
 index|]
 decl_stmt|;
-comment|/* Lanczos sample value              */
 name|gdouble
-name|lusum
+name|kx_sum
 decl_stmt|,
-name|lvsum
-decl_stmt|,
-name|weight
+name|ky_sum
 decl_stmt|;
-comment|/* Lanczos weighting vars            */
+comment|/* sums of Lanczos kernel coeffs       */
 name|gdouble
 name|newval
 decl_stmt|;
-comment|/* new interpolated RGB value */
+comment|/* new interpolated RGB value          */
 name|guchar
 modifier|*
 name|win_buf
 init|=
 name|NULL
 decl_stmt|;
-comment|/* Sliding window buffer             */
+comment|/* Sliding window buffer               */
 name|guchar
 modifier|*
 name|win_ptr
@@ -4151,26 +4153,26 @@ index|[
 name|LANCZOS_WIDTH2
 index|]
 decl_stmt|;
-comment|/* Ponters to sliding window rows    */
+comment|/* Ponters to sliding window rows      */
 name|guchar
 modifier|*
 name|dst_buf
 init|=
 name|NULL
 decl_stmt|;
-comment|/* Pointer to destination image data */
+comment|/* Pointer to destination image data   */
 name|gint
 name|x
 decl_stmt|,
 name|y
 decl_stmt|;
-comment|/* Position in destination image     */
+comment|/* Position in destination image       */
 name|gint
 name|i
 decl_stmt|,
 name|byte
 decl_stmt|;
-comment|/* loop vars to fill source window   */
+comment|/* loop vars  */
 name|gint
 name|row
 decl_stmt|;
@@ -4185,7 +4187,7 @@ index|[
 literal|6
 index|]
 decl_stmt|;
-comment|/* Scale transformations             */
+comment|/* Scale transformations               */
 specifier|const
 name|gint
 name|dst_width
@@ -4228,7 +4230,7 @@ name|h
 decl_stmt|;
 specifier|const
 name|gint
-name|src_rowstride
+name|src_row_span
 init|=
 name|src_width
 operator|*
@@ -4236,7 +4238,7 @@ name|bytes
 decl_stmt|;
 specifier|const
 name|gint
-name|dst_rowstride
+name|dst_row_span
 init|=
 name|dst_width
 operator|*
@@ -4244,7 +4246,7 @@ name|bytes
 decl_stmt|;
 specifier|const
 name|gint
-name|win_rowstride
+name|win_row_span
 init|=
 operator|(
 name|src_width
@@ -4256,7 +4258,7 @@ name|bytes
 decl_stmt|;
 specifier|const
 name|gdouble
-name|sx
+name|scale_x
 init|=
 operator|(
 name|gdouble
@@ -4270,7 +4272,7 @@ name|src_width
 decl_stmt|;
 specifier|const
 name|gdouble
-name|sy
+name|scale_y
 init|=
 operator|(
 name|gdouble
@@ -4307,14 +4309,14 @@ index|[
 literal|0
 index|]
 operator|=
-name|sx
+name|scale_x
 expr_stmt|;
 name|trans
 index|[
 literal|4
 index|]
 operator|=
-name|sy
+name|scale_y
 expr_stmt|;
 if|if
 condition|(
@@ -4341,7 +4343,7 @@ name|g_new0
 argument_list|(
 name|guchar
 argument_list|,
-name|dst_rowstride
+name|dst_row_span
 argument_list|)
 expr_stmt|;
 comment|/* if no scaling needed copy data */
@@ -4406,10 +4408,10 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-comment|/* Calculate kernel */
-name|kernel
+comment|/* allocate and fill lanczos lookup table */
+name|lanczos
 operator|=
-name|kernel_lanczos
+name|create_lanczos_lookup
 argument_list|()
 expr_stmt|;
 comment|/* allocate buffer for source rows */
@@ -4419,7 +4421,7 @@ name|g_new0
 argument_list|(
 name|guchar
 argument_list|,
-name|win_rowstride
+name|win_row_span
 operator|*
 name|LANCZOS_WIDTH2
 argument_list|)
@@ -4446,7 +4448,7 @@ operator|=
 name|win_buf
 operator|+
 operator|(
-name|win_rowstride
+name|win_row_span
 operator|*
 name|i
 operator|)
@@ -4564,140 +4566,88 @@ operator|++
 control|)
 block|{
 name|gdouble
-name|du
+name|dsrc_x
 decl_stmt|,
-name|dv
+name|dsrc_y
 decl_stmt|;
-comment|/* Transformed position in source image */
+comment|/* corresponding scaled position in source image */
 name|gint
-name|u
+name|src_x
 decl_stmt|,
-name|v
+name|src_y
 decl_stmt|;
-comment|/* Position in source image */
+comment|/* int coordinates in source image */
 name|gint
-name|su
+name|x_shift
 decl_stmt|,
-name|sv
+name|y_shift
 decl_stmt|;
-comment|/* Lanczos kernel position  */
+comment|/* index into Lanczos lookup  */
 comment|/*              Use linear trans. for determining source coordinates from              destination. Coefficient -0.5 fixes the offset error.            */
-name|du
+comment|/*           dsrc_x = itrans[0] * ((gdouble) x) + itrans[1] * ((gdouble) y) + itrans[2] - 0.5;           dsrc_y = itrans[3] * ((gdouble) x) + itrans[4] * ((gdouble) y) + itrans[5] - 0.5; */
+comment|/*** why use matrix here??? */
+name|dsrc_x
 operator|=
-name|itrans
-index|[
-literal|0
-index|]
-operator|*
-operator|(
-operator|(
-name|gdouble
-operator|)
 name|x
-operator|)
-operator|+
-name|itrans
-index|[
-literal|1
-index|]
-operator|*
-operator|(
-operator|(
-name|gdouble
-operator|)
-name|y
-operator|)
-operator|+
-name|itrans
-index|[
-literal|2
-index|]
-operator|-
-literal|0.5
+operator|/
+name|scale_x
 expr_stmt|;
-name|dv
+name|dsrc_y
 operator|=
-name|itrans
-index|[
-literal|3
-index|]
-operator|*
-operator|(
-operator|(
-name|gdouble
-operator|)
-name|x
-operator|)
-operator|+
-name|itrans
-index|[
-literal|4
-index|]
-operator|*
-operator|(
-operator|(
-name|gdouble
-operator|)
 name|y
-operator|)
-operator|+
-name|itrans
-index|[
-literal|5
-index|]
-operator|-
-literal|0.5
+operator|/
+name|scale_y
 expr_stmt|;
 comment|/* Coordinates in source image */
-name|u
+name|src_x
 operator|=
 operator|(
 name|gint
 operator|)
-name|du
+name|dsrc_x
 expr_stmt|;
-name|v
+name|src_y
 operator|=
 operator|(
 name|gint
 operator|)
-name|dv
+name|dsrc_y
 expr_stmt|;
 comment|/* get weight for fractional error */
-name|su
+name|x_shift
 operator|=
 call|(
 name|gint
 call|)
 argument_list|(
 operator|(
-name|du
+name|dsrc_x
 operator|-
-name|u
+name|src_x
 operator|)
 operator|*
 name|LANCZOS_SPP
 argument_list|)
 expr_stmt|;
-name|sv
+name|y_shift
 operator|=
 call|(
 name|gint
 call|)
 argument_list|(
 operator|(
-name|dv
+name|dsrc_y
 operator|-
-name|v
+name|src_y
 operator|)
 operator|*
 name|LANCZOS_SPP
 argument_list|)
 expr_stmt|;
-comment|/* Fill multipliers in lu[] and lv[]            *            *  kernel = Is a lookup table that contains half of the sinc func.            *            *  su, sv = shift from kernel center due to fractional part            *           of interpollation            *            *  The for loop creates 2 1D kernels for convolution.            *    - If the center position +/- LANCZOS_WIDTH is out of            *      the source image coordinates set the value to 0.0            *    - If the kernel index is out of range set value to 0.0            *      ( caused by offset coef.)            */
-name|lusum
+comment|/*  Fill x_kernel[] and y_kernel[] with lanczos coeffs            *            *  lanczos = Is a lookup table that contains half of the symetrical windowed-sinc func.            *            *  x_shift, y_shift = shift from kernel center due to fractional part            *           of interpollation            *            *  The for-loop creates two 1-D kernels for convolution.            *    - If the center position +/- LANCZOS_WIDTH is out of            *      the source image coordinates set the value to 0.0            *      FIXME => partial kernel. Define a more rigourous border mode.            *    - If the kernel index is out of range set value to 0.0            *      ( caused by offset coeff. obselete??)            */
+name|kx_sum
 operator|=
-name|lvsum
+name|ky_sum
 operator|=
 literal|0.0
 expr_stmt|;
@@ -4725,41 +4675,39 @@ name|LANCZOS_SPP
 decl_stmt|;
 if|if
 condition|(
-name|u
+name|src_x
 operator|+
 name|i
 operator|>=
 literal|0
 operator|&&
-name|u
+name|src_x
 operator|+
 name|i
 operator|<
 name|src_width
 condition|)
-name|lusum
+name|kx_sum
 operator|+=
-name|lu
+name|x_kernel
 index|[
 name|LANCZOS_WIDTH
 operator|+
 name|i
 index|]
 operator|=
-name|kernel
+name|lanczos
 index|[
 name|ABS
 argument_list|(
-name|su
+name|x_shift
 operator|-
 name|pos
 argument_list|)
 index|]
 expr_stmt|;
 else|else
-name|lusum
-operator|+=
-name|lu
+name|x_kernel
 index|[
 name|LANCZOS_WIDTH
 operator|+
@@ -4770,41 +4718,39 @@ literal|0.0
 expr_stmt|;
 if|if
 condition|(
-name|v
+name|src_y
 operator|+
 name|i
 operator|>=
 literal|0
 operator|&&
-name|v
+name|src_y
 operator|+
 name|i
 operator|<
 name|src_height
 condition|)
-name|lvsum
+name|ky_sum
 operator|+=
-name|lv
+name|y_kernel
 index|[
 name|LANCZOS_WIDTH
 operator|+
 name|i
 index|]
 operator|=
-name|kernel
+name|lanczos
 index|[
 name|ABS
 argument_list|(
-name|sv
+name|y_shift
 operator|-
 name|pos
 argument_list|)
 index|]
 expr_stmt|;
 else|else
-name|lvsum
-operator|+=
-name|lv
+name|y_kernel
 index|[
 name|LANCZOS_WIDTH
 operator|+
@@ -4814,19 +4760,48 @@ operator|=
 literal|0.0
 expr_stmt|;
 block|}
-name|weight
+comment|/* normalise the kernel arrays */
+for|for
+control|(
+name|i
 operator|=
-name|lvsum
-operator|*
-name|lusum
+operator|-
+name|LANCZOS_WIDTH
+init|;
+name|i
+operator|<=
+name|LANCZOS_WIDTH
+condition|;
+name|i
+operator|++
+control|)
+block|{
+name|x_kernel
+index|[
+name|LANCZOS_WIDTH
+operator|+
+name|i
+index|]
+operator|/=
+name|kx_sum
 expr_stmt|;
+name|y_kernel
+index|[
+name|LANCZOS_WIDTH
+operator|+
+name|i
+index|]
+operator|/=
+name|ky_sum
+expr_stmt|;
+block|}
 comment|/*             Scaling up             New determined source row is> than last read row             rotate the pointers and get next source row from region.             If no more source rows are available fill buffer with 0             ( Probably not necessary because multipliers should be 0).           */
 for|for
 control|(
 init|;
 name|row
 operator|<
-name|v
+name|src_y
 condition|;
 control|)
 block|{
@@ -4887,7 +4862,7 @@ argument_list|(
 name|guchar
 argument_list|)
 operator|*
-name|src_rowstride
+name|src_row_span
 argument_list|)
 expr_stmt|;
 block|}
@@ -4897,7 +4872,7 @@ control|(
 init|;
 name|row
 operator|>
-name|v
+name|src_y
 condition|;
 control|)
 block|{
@@ -4965,7 +4940,7 @@ argument_list|(
 name|guchar
 argument_list|)
 operator|*
-name|src_rowstride
+name|src_row_span
 argument_list|)
 expr_stmt|;
 block|}
@@ -5013,7 +4988,7 @@ operator|++
 control|)
 name|aval
 operator|+=
-name|lv
+name|y_kernel
 index|[
 name|i
 index|]
@@ -5025,19 +5000,14 @@ index|[
 name|i
 index|]
 argument_list|,
-name|lu
+name|x_kernel
 argument_list|,
-name|u
+name|src_x
 argument_list|,
 name|bytes
 argument_list|,
 name|alpha
 argument_list|)
-expr_stmt|;
-comment|/* calculate alpha of result */
-name|aval
-operator|/=
-name|weight
 expr_stmt|;
 if|if
 condition|(
@@ -5144,7 +5114,7 @@ operator|++
 control|)
 name|newval
 operator|+=
-name|lv
+name|y_kernel
 index|[
 name|i
 index|]
@@ -5156,9 +5126,9 @@ index|[
 name|i
 index|]
 argument_list|,
-name|lu
+name|x_kernel
 argument_list|,
-name|u
+name|src_x
 argument_list|,
 name|bytes
 argument_list|,
@@ -5227,7 +5197,7 @@ operator|++
 control|)
 name|newval
 operator|+=
-name|lv
+name|y_kernel
 index|[
 name|i
 index|]
@@ -5239,18 +5209,14 @@ index|[
 name|i
 index|]
 argument_list|,
-name|lu
+name|x_kernel
 argument_list|,
-name|u
+name|src_x
 argument_list|,
 name|bytes
 argument_list|,
 name|byte
 argument_list|)
-expr_stmt|;
-name|newval
-operator|/=
-name|weight
 expr_stmt|;
 name|dst_buf
 index|[
@@ -5302,7 +5268,7 @@ argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
-name|kernel
+name|lanczos
 argument_list|)
 expr_stmt|;
 block|}
