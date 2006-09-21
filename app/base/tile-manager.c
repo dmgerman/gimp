@@ -3880,11 +3880,11 @@ break|break;
 else|#
 directive|else
 operator|*
-name|dest
+name|buffer
 operator|++
 operator|=
 operator|*
-name|buffer
+name|src
 operator|++
 expr_stmt|;
 endif|#
