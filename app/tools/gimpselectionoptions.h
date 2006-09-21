@@ -155,22 +155,6 @@ DECL|member|shrink_merged
 name|gboolean
 name|shrink_merged
 decl_stmt|;
-DECL|member|fixed_mode
-name|GimpRectSelectMode
-name|fixed_mode
-decl_stmt|;
-DECL|member|fixed_width
-name|gdouble
-name|fixed_width
-decl_stmt|;
-DECL|member|fixed_height
-name|gdouble
-name|fixed_height
-decl_stmt|;
-DECL|member|fixed_unit
-name|GimpUnit
-name|fixed_unit
-decl_stmt|;
 comment|/*  used by iscissors */
 DECL|member|interactive
 name|gboolean
