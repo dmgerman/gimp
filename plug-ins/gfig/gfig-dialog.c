@@ -424,7 +424,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290907dd0108
+DECL|struct|__anon2c05c71d0108
 block|{
 DECL|member|gridspacing
 name|GtkAdjustment
@@ -1107,7 +1107,7 @@ name|img_height
 argument_list|,
 name|GIMP_RGBA_IMAGE
 argument_list|,
-literal|100.
+literal|100.0
 argument_list|,
 name|GIMP_NORMAL_MODE
 argument_list|)
@@ -1856,14 +1856,12 @@ name|default_style
 operator|.
 name|brush_name
 argument_list|,
-operator|-
-literal|1.0
+literal|100.0
 argument_list|,
 operator|-
 literal|1
 argument_list|,
-operator|-
-literal|1
+name|GIMP_NORMAL_MODE
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
