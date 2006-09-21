@@ -4970,6 +4970,12 @@ block|}
 if|if
 condition|(
 operator|!
+name|PyString_Check
+argument_list|(
+name|value
+argument_list|)
+operator|&&
+operator|!
 name|PyUnicode_Check
 argument_list|(
 name|value
