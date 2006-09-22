@@ -2085,6 +2085,11 @@ operator|!
 name|shell
 operator|->
 name|space_pressed
+operator|&&
+operator|!
+name|shell
+operator|->
+name|space_release_pending
 condition|)
 return|return;
 switch|switch
@@ -2187,6 +2192,12 @@ expr_stmt|;
 name|shell
 operator|->
 name|space_pressed
+operator|=
+name|FALSE
+expr_stmt|;
+name|shell
+operator|->
+name|space_release_pending
 operator|=
 name|FALSE
 expr_stmt|;
