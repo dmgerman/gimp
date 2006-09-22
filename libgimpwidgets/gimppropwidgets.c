@@ -230,7 +230,7 @@ end_comment
 begin_function_decl
 specifier|static
 name|void
-name|gimp_prop_toggle_button_callback
+name|gimp_prop_check_button_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -246,7 +246,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_prop_toggle_button_notify
+name|gimp_prop_check_button_notify
 parameter_list|(
 name|GObject
 modifier|*
@@ -286,49 +286,6 @@ specifier|const
 name|gchar
 modifier|*
 name|label
-parameter_list|)
-block|{
-return|return
-name|gimp_prop_toggle_button_new
-argument_list|(
-name|config
-argument_list|,
-name|property_name
-argument_list|,
-name|label
-argument_list|,
-name|TRUE
-argument_list|)
-return|;
-block|}
-end_function
-
-begin_comment
-comment|/**  * gimp_prop_toggle_button_new:  * @config:        Object to which property is attached.  * @property_name: Name of boolean property controlled by checkbutton.  * @label:         Label to give checkbutton (including mnemonic).  * @checkbutton:   TRUE if the toggle button should be a checkbutton.  *  * Creates a #GtkToggleButton that displays and sets the specified  * boolean property.  *  * Return value: The newly created #GtkToggleButton widget.  *  * Since GIMP 2.4  */
-end_comment
-
-begin_function
-name|GtkWidget
-modifier|*
-DECL|function|gimp_prop_toggle_button_new (GObject * config,const gchar * property_name,const gchar * label,gboolean checkbutton)
-name|gimp_prop_toggle_button_new
-parameter_list|(
-name|GObject
-modifier|*
-name|config
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|property_name
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|label
-parameter_list|,
-name|gboolean
-name|checkbutton
 parameter_list|)
 block|{
 name|GParamSpec
@@ -394,21 +351,9 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|checkbutton
-condition|)
 name|button
 operator|=
 name|gtk_check_button_new_with_mnemonic
-argument_list|(
-name|label
-argument_list|)
-expr_stmt|;
-else|else
-name|button
-operator|=
-name|gtk_toggle_button_new_with_mnemonic
 argument_list|(
 name|label
 argument_list|)
@@ -443,7 +388,7 @@ literal|"toggled"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_prop_toggle_button_callback
+name|gimp_prop_check_button_callback
 argument_list|)
 argument_list|,
 name|config
@@ -457,7 +402,7 @@ name|property_name
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_prop_toggle_button_notify
+name|gimp_prop_check_button_notify
 argument_list|)
 argument_list|,
 name|button
@@ -472,8 +417,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_prop_toggle_button_callback (GtkWidget * widget,GObject * config)
-name|gimp_prop_toggle_button_callback
+DECL|function|gimp_prop_check_button_callback (GtkWidget * widget,GObject * config)
+name|gimp_prop_check_button_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -536,8 +481,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_prop_toggle_button_notify (GObject * config,GParamSpec * param_spec,GtkWidget * button)
-name|gimp_prop_toggle_button_notify
+DECL|function|gimp_prop_check_button_notify (GObject * config,GParamSpec * param_spec,GtkWidget * button)
+name|gimp_prop_check_button_notify
 parameter_list|(
 name|GObject
 modifier|*
@@ -585,7 +530,7 @@ name|g_signal_handlers_block_by_func
 argument_list|(
 name|button
 argument_list|,
-name|gimp_prop_toggle_button_callback
+name|gimp_prop_check_button_callback
 argument_list|,
 name|config
 argument_list|)
@@ -612,7 +557,7 @@ name|g_signal_handlers_unblock_by_func
 argument_list|(
 name|button
 argument_list|,
-name|gimp_prop_toggle_button_callback
+name|gimp_prop_check_button_callback
 argument_list|,
 name|config
 argument_list|)
