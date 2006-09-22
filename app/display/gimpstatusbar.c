@@ -3599,8 +3599,6 @@ operator|->
 name|temp_spaces
 index|[
 name|n_spaces
-operator|+
-literal|1
 index|]
 operator|=
 literal|'\0'
