@@ -171,6 +171,8 @@ name|gimp
 argument_list|,
 name|context
 argument_list|,
+name|progress
+argument_list|,
 name|gimp
 operator|->
 name|pattern_factory

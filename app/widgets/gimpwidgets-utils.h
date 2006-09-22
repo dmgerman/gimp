@@ -312,6 +312,20 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_window_set_transient_for
+parameter_list|(
+name|GtkWindow
+modifier|*
+name|window
+parameter_list|,
+name|guint32
+name|parent_ID
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_dialog_set_sensitive
 parameter_list|(
 name|GtkDialog

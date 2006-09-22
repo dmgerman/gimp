@@ -1384,7 +1384,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_pdb_dialog_new (Gimp * gimp,GimpContext * context,GimpContainer * container,const gchar * title,const gchar * callback_name,const gchar * object_name,...)
+DECL|function|gimp_pdb_dialog_new (Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpContainer * container,const gchar * title,const gchar * callback_name,const gchar * object_name,...)
 name|gimp_pdb_dialog_new
 parameter_list|(
 name|Gimp
@@ -1394,6 +1394,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|GimpContainer
 modifier|*
@@ -1437,6 +1441,20 @@ argument_list|(
 name|GIMP_IS_CONTEXT
 argument_list|(
 name|context
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|progress
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_PROGRESS
+argument_list|(
+name|progress
 argument_list|)
 argument_list|,
 name|FALSE
@@ -1500,6 +1518,8 @@ argument_list|(
 name|gimp
 argument_list|,
 name|context
+argument_list|,
+name|progress
 argument_list|,
 name|container
 argument_list|,

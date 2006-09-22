@@ -502,6 +502,10 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
+parameter_list|,
 name|GimpContainer
 modifier|*
 name|container
@@ -1446,7 +1450,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gui_pdb_dialog_new (Gimp * gimp,GimpContext * context,GimpContainer * container,const gchar * title,const gchar * callback_name,const gchar * object_name,va_list args)
+DECL|function|gui_pdb_dialog_new (Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpContainer * container,const gchar * title,const gchar * callback_name,const gchar * object_name,va_list args)
 name|gui_pdb_dialog_new
 parameter_list|(
 name|Gimp
@@ -1456,6 +1460,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|GimpContainer
 modifier|*
@@ -1797,6 +1805,34 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|progress
+condition|)
+block|{
+name|guint32
+name|window
+init|=
+name|gimp_progress_get_window
+argument_list|(
+name|progress
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|window
+condition|)
+name|gimp_window_set_transient_for
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|,
+name|window
+argument_list|)
+expr_stmt|;
+block|}
 name|gtk_widget_show
 argument_list|(
 name|dialog

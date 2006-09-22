@@ -325,6 +325,10 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
+parameter_list|,
 name|GimpContainer
 modifier|*
 name|container
@@ -713,6 +717,10 @@ argument_list|,
 name|GimpContext
 operator|*
 name|context
+argument_list|,
+name|GimpProgress
+operator|*
+name|progress
 argument_list|,
 name|GimpContainer
 operator|*

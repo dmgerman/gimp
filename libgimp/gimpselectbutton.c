@@ -132,10 +132,16 @@ operator|->
 name|temp_callback
 condition|)
 block|{
+name|GimpSelectButtonClass
+modifier|*
+name|klass
+init|=
 name|GIMP_SELECT_BUTTON_GET_CLASS
 argument_list|(
 name|button
 argument_list|)
+decl_stmt|;
+name|klass
 operator|->
 name|select_destroy
 argument_list|(
