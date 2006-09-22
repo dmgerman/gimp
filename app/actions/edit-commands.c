@@ -108,6 +108,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpstatusbar.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpclipboard.h"
 end_include
 
@@ -963,6 +969,17 @@ name|buffer
 argument_list|)
 expr_stmt|;
 block|}
+else|else
+block|{
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"There is no image data in the clipboard to paste."
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -1547,6 +1564,36 @@ block|}
 name|g_object_unref
 argument_list|(
 name|buffer
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|GimpDisplayShell
+modifier|*
+name|shell
+init|=
+name|GIMP_DISPLAY_SHELL
+argument_list|(
+name|display
+operator|->
+name|shell
+argument_list|)
+decl_stmt|;
+name|gimp_statusbar_push_temp
+argument_list|(
+name|GIMP_STATUSBAR
+argument_list|(
+name|shell
+operator|->
+name|statusbar
+argument_list|)
+argument_list|,
+name|_
+argument_list|(
+literal|"There is no image data in "
+literal|"the clipboard to paste."
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

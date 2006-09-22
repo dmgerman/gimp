@@ -228,6 +228,8 @@ argument_list|)
 argument_list|,
 literal|"title"
 argument_list|,
+literal|"%s"
+argument_list|,
 name|title
 argument_list|)
 expr_stmt|;
@@ -406,6 +408,8 @@ name|statusbar
 argument_list|)
 argument_list|,
 literal|"title"
+argument_list|,
+literal|"%s"
 argument_list|,
 name|title
 argument_list|)

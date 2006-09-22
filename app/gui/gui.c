@@ -2387,6 +2387,8 @@ argument_list|)
 argument_list|,
 literal|"menu-tooltip"
 argument_list|,
+literal|"%s"
+argument_list|,
 name|tooltip
 argument_list|)
 expr_stmt|;

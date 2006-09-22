@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27fa113d0103
+DECL|enum|__anon2a222b220103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2904,6 +2904,8 @@ argument_list|(
 name|tool
 argument_list|)
 argument_list|,
+literal|"%s"
+argument_list|,
 name|message
 argument_list|)
 expr_stmt|;
@@ -3134,6 +3136,8 @@ name|G_OBJECT_TYPE_NAME
 argument_list|(
 name|tool
 argument_list|)
+argument_list|,
+literal|"%s"
 argument_list|,
 name|message
 argument_list|)
