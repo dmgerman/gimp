@@ -168,11 +168,6 @@ name|gboolean
 name|visible
 decl_stmt|;
 comment|/*  visility of the display shell     */
-DECL|member|recalc
-name|gboolean
-name|recalc
-decl_stmt|;
-comment|/*  flag to recalculate the selection */
 DECL|member|hidden
 name|gboolean
 name|hidden
@@ -221,9 +216,6 @@ parameter_list|(
 name|Selection
 modifier|*
 name|selection
-parameter_list|,
-name|gboolean
-name|recalc
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -518,12 +510,6 @@ name|TRUE
 expr_stmt|;
 name|selection
 operator|->
-name|recalc
-operator|=
-name|TRUE
-expr_stmt|;
-name|selection
-operator|->
 name|hidden
 operator|=
 operator|!
@@ -721,11 +707,6 @@ block|{
 case|case
 name|GIMP_SELECTION_OFF
 case|:
-name|selection_stop
-argument_list|(
-name|selection
-argument_list|)
-expr_stmt|;
 name|selection_undraw
 argument_list|(
 name|selection
@@ -747,8 +728,6 @@ case|:
 name|selection_start
 argument_list|(
 name|selection
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 break|break;
@@ -839,8 +818,6 @@ expr_stmt|;
 name|selection_start
 argument_list|(
 name|selection
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -912,8 +889,6 @@ expr_stmt|;
 name|selection_start
 argument_list|(
 name|selection
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -928,27 +903,18 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|selection_start (Selection * selection,gboolean recalc)
+DECL|function|selection_start (Selection * selection)
 name|selection_start
 parameter_list|(
 name|Selection
 modifier|*
 name|selection
-parameter_list|,
-name|gboolean
-name|recalc
 parameter_list|)
 block|{
 name|selection_stop
 argument_list|(
 name|selection
 argument_list|)
-expr_stmt|;
-name|selection
-operator|->
-name|recalc
-operator|=
-name|recalc
 expr_stmt|;
 comment|/*  If this selection is paused or invisible, do not start it  */
 if|if
@@ -1076,8 +1042,6 @@ condition|)
 name|selection_start
 argument_list|(
 name|selection
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -1417,7 +1381,11 @@ name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
-comment|/*  Find the bounds of the selection  */
+name|selection_stop
+argument_list|(
+name|selection
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|gimp_display_shell_mask_bounds
@@ -1470,8 +1438,6 @@ block|{
 name|selection_start
 argument_list|(
 name|selection
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
@@ -1537,6 +1503,11 @@ modifier|*
 name|selection
 parameter_list|)
 block|{
+name|selection_stop
+argument_list|(
+name|selection
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|selection
@@ -1771,6 +1742,14 @@ name|y3
 operator|)
 operator|+
 literal|1
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|selection_start
+argument_list|(
+name|selection
 argument_list|)
 expr_stmt|;
 block|}
@@ -2977,13 +2956,6 @@ modifier|*
 name|selection
 parameter_list|)
 block|{
-if|if
-condition|(
-name|selection
-operator|->
-name|recalc
-condition|)
-block|{
 name|selection_free_segs
 argument_list|(
 name|selection
@@ -2994,13 +2966,6 @@ argument_list|(
 name|selection
 argument_list|)
 expr_stmt|;
-name|selection
-operator|->
-name|recalc
-operator|=
-name|FALSE
-expr_stmt|;
-block|}
 name|selection
 operator|->
 name|index
@@ -3180,8 +3145,6 @@ condition|)
 name|selection_start
 argument_list|(
 name|selection
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 else|else
