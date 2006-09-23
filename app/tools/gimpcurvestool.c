@@ -5760,7 +5760,6 @@ operator|->
 name|channel
 argument_list|)
 expr_stmt|;
-block|}
 name|gimp_image_map_tool_preview
 argument_list|(
 name|GIMP_IMAGE_MAP_TOOL
@@ -5769,6 +5768,7 @@ name|tool
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 break|break;
 case|case
 name|GIMP_CURVE_FREE
