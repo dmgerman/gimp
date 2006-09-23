@@ -1987,21 +1987,15 @@ return|return
 name|TRUE
 return|;
 block|}
-name|g_object_get
+name|gimp_rectangle_tool_get_press_coords
 argument_list|(
 name|rectangle
-argument_list|,
-literal|"pressx"
 argument_list|,
 operator|&
 name|pressx
 argument_list|,
-literal|"pressy"
-argument_list|,
 operator|&
 name|pressy
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 comment|/*  if the click was inside the marching ants  */
