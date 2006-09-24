@@ -319,7 +319,7 @@ define|default, flags)\   g_object_class_install_property (class, id,\          
 end_define
 
 begin_comment
-comment|/*  object and pointer properties are _not_ G_PARAM_CONSTRUCT  */
+comment|/*  object, boxed and pointer properties are _not_ G_PARAM_CONSTRUCT  */
 end_comment
 
 begin_define
@@ -342,6 +342,28 @@ name|flags
 parameter_list|)
 define|\
 value|g_object_class_install_property (class, id,\                                    g_param_spec_object (name, NULL, blurb,\                                    object_type,\                                    flags |\                                    G_PARAM_READWRITE |\                                    GIMP_CONFIG_PARAM_SERIALIZE))
+end_define
+
+begin_define
+DECL|macro|GIMP_CONFIG_INSTALL_PROP_BOXED (class,id,name,blurb,boxed_type,flags)
+define|#
+directive|define
+name|GIMP_CONFIG_INSTALL_PROP_BOXED
+parameter_list|(
+name|class
+parameter_list|,
+name|id
+parameter_list|,
+name|name
+parameter_list|,
+name|blurb
+parameter_list|,
+name|boxed_type
+parameter_list|,
+name|flags
+parameter_list|)
+define|\
+value|g_object_class_install_property (class, id,\                                    g_param_spec_boxed (name, NULL, blurb,\                                    boxed_type,\                                    flags |\                                    G_PARAM_READWRITE |\                                    GIMP_CONFIG_PARAM_SERIALIZE))
 end_define
 
 begin_define

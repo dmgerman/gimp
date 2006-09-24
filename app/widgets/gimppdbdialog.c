@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c0cf4c0103
+DECL|enum|__anon2bf9e9de0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -488,13 +488,15 @@ name|object_class
 argument_list|,
 name|PROP_SELECT_TYPE
 argument_list|,
-name|g_param_spec_pointer
+name|g_param_spec_gtype
 argument_list|(
 literal|"select-type"
 argument_list|,
 name|NULL
 argument_list|,
 name|NULL
+argument_list|,
+name|GIMP_TYPE_OBJECT
 argument_list|,
 name|GIMP_PARAM_WRITABLE
 operator||
@@ -918,10 +920,7 @@ name|dialog
 operator|->
 name|select_type
 operator|=
-operator|(
-name|GType
-operator|)
-name|g_value_get_pointer
+name|g_value_get_gtype
 argument_list|(
 name|value
 argument_list|)

@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1aaf400103
+DECL|enum|__anon2be416190103
 block|{
 DECL|enumerator|COLUMN_PROC
 name|COLUMN_PROC
@@ -93,7 +93,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1aaf400203
+DECL|enum|__anon2be416190203
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -379,9 +379,9 @@ name|gtk_list_store_new
 argument_list|(
 name|NUM_COLUMNS
 argument_list|,
-name|G_TYPE_POINTER
+name|GIMP_TYPE_PLUG_IN_PROCEDURE
 argument_list|,
-comment|/*  COLUMN_PROC        */
+comment|/*  COLUMN_PROC   */
 name|G_TYPE_STRING
 argument_list|,
 comment|/*  COLUMN_LABEL       */
@@ -921,6 +921,15 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|proc
+condition|)
+name|g_object_unref
+argument_list|(
+name|proc
+argument_list|)
+expr_stmt|;
 return|return
 name|proc
 return|;
@@ -1027,6 +1036,15 @@ name|this
 argument_list|,
 operator|-
 literal|1
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|this
+condition|)
+name|g_object_unref
+argument_list|(
+name|this
 argument_list|)
 expr_stmt|;
 if|if

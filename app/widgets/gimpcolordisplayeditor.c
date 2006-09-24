@@ -63,7 +63,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bceaecd0103
+DECL|enum|__anon27cedd4e0103
 block|{
 DECL|enumerator|SRC_COLUMN_NAME
 name|SRC_COLUMN_NAME
@@ -79,7 +79,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bceaecd0203
+DECL|enum|__anon27cedd4e0203
 block|{
 DECL|enumerator|DEST_COLUMN_ENABLED
 name|DEST_COLUMN_ENABLED
@@ -550,7 +550,7 @@ name|N_SRC_COLUMNS
 argument_list|,
 name|G_TYPE_STRING
 argument_list|,
-name|G_TYPE_POINTER
+name|G_TYPE_GTYPE
 argument_list|)
 expr_stmt|;
 name|tv
@@ -1839,14 +1839,10 @@ name|GimpColorDisplay
 modifier|*
 name|display
 decl_stmt|;
-name|GValue
-name|val
-init|=
-block|{
-literal|0
-block|, }
+name|GType
+name|type
 decl_stmt|;
-name|gtk_tree_model_get_value
+name|gtk_tree_model_get
 argument_list|(
 name|model
 argument_list|,
@@ -1856,27 +1852,17 @@ argument_list|,
 name|SRC_COLUMN_TYPE
 argument_list|,
 operator|&
-name|val
+name|type
+argument_list|,
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 name|display
 operator|=
 name|gimp_color_display_new
 argument_list|(
-operator|(
-name|GType
-operator|)
-name|g_value_get_pointer
-argument_list|(
-operator|&
-name|val
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_value_unset
-argument_list|(
-operator|&
-name|val
+name|type
 argument_list|)
 expr_stmt|;
 if|if

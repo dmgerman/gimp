@@ -87,7 +87,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b42c7b80103
+DECL|enum|__anon2c76b4730103
 block|{
 DECL|enumerator|PATH_COLUMN
 name|PATH_COLUMN
@@ -591,7 +591,7 @@ name|G_TYPE_STRING
 argument_list|,
 name|G_TYPE_BOOLEAN
 argument_list|,
-name|G_TYPE_POINTER
+name|GIMP_TYPE_MODULE
 argument_list|)
 expr_stmt|;
 name|tv
@@ -1172,6 +1172,15 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|module
+condition|)
+name|g_object_unref
+argument_list|(
+name|module
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
 name|dialog
 operator|->
 name|last_update
@@ -1311,6 +1320,11 @@ condition|(
 name|module
 condition|)
 block|{
+name|g_object_unref
+argument_list|(
+name|module
+argument_list|)
+expr_stmt|;
 name|gimp_module_set_load_inhibit
 argument_list|(
 name|module
@@ -1608,6 +1622,15 @@ name|module
 argument_list|,
 operator|-
 literal|1
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|module
+condition|)
+name|g_object_unref
+argument_list|(
+name|module
 argument_list|)
 expr_stmt|;
 if|if

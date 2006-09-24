@@ -162,7 +162,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9e11690103
+DECL|enum|__anon2c179f290103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -175,7 +175,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9e11690203
+DECL|enum|__anon2c179f290203
 block|{
 DECL|enumerator|COLUMN_ICON
 name|COLUMN_ICON
@@ -702,7 +702,7 @@ name|G_TYPE_STRING
 argument_list|,
 name|G_TYPE_STRING
 argument_list|,
-name|G_TYPE_POINTER
+name|G_TYPE_GTYPE
 argument_list|)
 expr_stmt|;
 name|tv

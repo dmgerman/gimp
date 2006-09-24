@@ -78,7 +78,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bcb47e90103
+DECL|enum|__anon289496540103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -100,7 +100,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bcb47e90203
+DECL|enum|__anon289496540203
 block|{
 DECL|enumerator|EVENT_MAPPED
 name|EVENT_MAPPED
@@ -380,7 +380,7 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_POINTER
+name|GIMP_CONFIG_INSTALL_PROP_BOXED
 argument_list|(
 name|object_class
 argument_list|,
@@ -389,6 +389,8 @@ argument_list|,
 literal|"mapping"
 argument_list|,
 name|NULL
+argument_list|,
+name|G_TYPE_HASH_TABLE
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
@@ -529,6 +531,7 @@ name|info
 operator|->
 name|controller
 condition|)
+block|{
 name|g_object_unref
 argument_list|(
 name|info
@@ -536,19 +539,34 @@ operator|->
 name|controller
 argument_list|)
 expr_stmt|;
+name|info
+operator|->
+name|controller
+operator|=
+name|NULL
+expr_stmt|;
+block|}
 if|if
 condition|(
 name|info
 operator|->
 name|mapping
 condition|)
-name|g_hash_table_destroy
+block|{
+name|g_hash_table_unref
 argument_list|(
 name|info
 operator|->
 name|mapping
 argument_list|)
 expr_stmt|;
+name|info
+operator|->
+name|mapping
+operator|=
+name|NULL
+expr_stmt|;
+block|}
 name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class
@@ -658,10 +676,6 @@ name|info
 operator|->
 name|controller
 operator|=
-operator|(
-name|GimpController
-operator|*
-operator|)
 name|g_value_dup_object
 argument_list|(
 name|value
@@ -706,7 +720,7 @@ name|info
 operator|->
 name|mapping
 condition|)
-name|g_hash_table_destroy
+name|g_hash_table_unref
 argument_list|(
 name|info
 operator|->
@@ -717,7 +731,7 @@ name|info
 operator|->
 name|mapping
 operator|=
-name|g_value_get_pointer
+name|g_value_dup_boxed
 argument_list|(
 name|value
 argument_list|)
@@ -816,7 +830,7 @@ break|break;
 case|case
 name|PROP_MAPPING
 case|:
-name|g_value_set_pointer
+name|g_value_set_boxed
 argument_list|(
 name|value
 argument_list|,
@@ -948,7 +962,7 @@ name|FALSE
 return|;
 name|mapping
 operator|=
-name|g_value_get_pointer
+name|g_value_get_boxed
 argument_list|(
 name|value
 argument_list|)
@@ -1200,7 +1214,7 @@ operator|==
 name|token
 condition|)
 block|{
-name|g_value_set_pointer
+name|g_value_take_boxed
 argument_list|(
 name|value
 argument_list|,
@@ -1219,7 +1233,7 @@ else|else
 block|{
 name|error
 label|:
-name|g_hash_table_destroy
+name|g_hash_table_unref
 argument_list|(
 name|mapping
 argument_list|)
