@@ -128,7 +128,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1d9dc20108
+DECL|struct|__anon298dcec00108
 block|{
 DECL|member|period
 name|gint
@@ -772,6 +772,25 @@ if|if
 condition|(
 name|rvals
 operator|.
+name|period
+operator|<
+literal|1
+condition|)
+block|{
+name|gimp_message
+argument_list|(
+literal|"Ripple: period must be at least 1.\n"
+argument_list|)
+expr_stmt|;
+name|status
+operator|=
+name|GIMP_PDB_CALLING_ERROR
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|rvals
+operator|.
 name|edges
 operator|<
 name|SMEAR
@@ -904,7 +923,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2b1d9dc20208
+DECL|struct|__anon298dcec00208
 typedef|typedef
 struct|struct
 block|{
@@ -2920,7 +2939,7 @@ name|rvals
 operator|.
 name|period
 argument_list|,
-literal|0
+literal|1
 argument_list|,
 literal|200
 argument_list|,
