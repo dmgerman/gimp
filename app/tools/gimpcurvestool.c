@@ -5420,6 +5420,14 @@ literal|255
 operator|-
 name|y
 expr_stmt|;
+name|gimp_image_map_tool_preview
+argument_list|(
+name|GIMP_IMAGE_MAP_TOOL
+argument_list|(
+name|tool
+argument_list|)
+argument_list|)
+expr_stmt|;
 break|break;
 case|case
 name|GIMP_CURVE_FREE
