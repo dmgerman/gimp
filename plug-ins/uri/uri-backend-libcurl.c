@@ -251,6 +251,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|int
 DECL|function|progress_callback (void * clientp,double dltotal,double dlnow,double ultotal,double ulnow)
 name|progress_callback
@@ -272,6 +273,12 @@ name|double
 name|ulnow
 parameter_list|)
 block|{
+name|gchar
+modifier|*
+name|memsize
+init|=
+name|NULL
+decl_stmt|;
 if|if
 condition|(
 name|dltotal
@@ -279,6 +286,23 @@ operator|>
 literal|0.0
 condition|)
 block|{
+name|memsize
+operator|=
+name|gimp_memsize_to_string
+argument_list|(
+name|dltotal
+argument_list|)
+expr_stmt|;
+name|gimp_progress_set_text_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Downloading %s of image data..."
+argument_list|)
+argument_list|,
+name|memsize
+argument_list|)
+expr_stmt|;
 name|gimp_progress_update
 argument_list|(
 name|dlnow
@@ -289,10 +313,32 @@ expr_stmt|;
 block|}
 else|else
 block|{
+name|memsize
+operator|=
+name|gimp_memsize_to_string
+argument_list|(
+name|dlnow
+argument_list|)
+expr_stmt|;
+name|gimp_progress_set_text_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Downloaded %s of image data"
+argument_list|)
+argument_list|,
+name|memsize
+argument_list|)
+expr_stmt|;
 name|gimp_progress_pulse
 argument_list|()
 expr_stmt|;
 block|}
+name|g_free
+argument_list|(
+name|memsize
+argument_list|)
+expr_stmt|;
 return|return
 literal|0
 return|;
@@ -466,11 +512,6 @@ argument_list|,
 literal|""
 argument_list|)
 expr_stmt|;
-name|gimp_progress_update
-argument_list|(
-literal|0.0
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 operator|(
@@ -552,7 +593,8 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Opening '%s' for reading resulted in HTTP response code: %d"
+literal|"Opening '%s' for reading resulted in HTTP "
+literal|"response code: %d"
 argument_list|)
 argument_list|,
 name|uri
