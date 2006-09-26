@@ -476,7 +476,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"No patterns available for this operation."
+literal|"No patterns available for use with this tool."
 argument_list|)
 argument_list|)
 expr_stmt|;

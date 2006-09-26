@@ -602,7 +602,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Indexed images are not currently supported."
+literal|"Perspective Clone does not operate on indexed layers."
 argument_list|)
 argument_list|)
 expr_stmt|;

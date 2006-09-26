@@ -633,7 +633,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Color balance operates only on RGB color layers."
+literal|"Color Balance operates only on RGB color layers."
 argument_list|)
 argument_list|)
 expr_stmt|;
