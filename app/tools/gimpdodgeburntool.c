@@ -219,17 +219,17 @@ literal|"gimp-dodge-burn-tool"
 argument_list|,
 name|_
 argument_list|(
-literal|"Dodge/Burn"
+literal|"Dodge / Burn"
 argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Dodge/Burn Tool: Selectively lighten or darken using a brush"
+literal|"Dodge / Burn Tool: Selectively lighten or darken using a brush"
 argument_list|)
 argument_list|,
 name|N_
 argument_list|(
-literal|"Dod_ge-Burn"
+literal|"Dod_ge / Burn"
 argument_list|)
 argument_list|,
 literal|"<shift>D"
