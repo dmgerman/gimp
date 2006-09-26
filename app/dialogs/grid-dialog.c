@@ -338,6 +338,8 @@ name|gimp_grid_editor_new
 argument_list|(
 name|grid
 argument_list|,
+name|context
+argument_list|,
 name|image
 operator|->
 name|xresolution

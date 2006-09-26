@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|<libgimpbase/gimpbasetypes.h>
+file|<libgimpconfig/gimpconfigtypes.h>
 end_include
 
 begin_include

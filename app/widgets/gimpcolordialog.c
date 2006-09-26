@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpconfig/gimpconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
@@ -31,6 +37,18 @@ begin_include
 include|#
 directive|include
 file|"widgets-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"config/gimpcoreconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimp.h"
 end_include
 
 begin_include
@@ -93,7 +111,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b826b340103
+DECL|enum|__anon29c73f1f0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1113,6 +1131,16 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|context
+condition|)
+name|g_warning
+argument_list|(
+literal|"gimp_color_dialog_new() called with a NULL context"
+argument_list|)
+expr_stmt|;
 name|role
 operator|=
 name|dialog_identifier
@@ -1221,6 +1249,28 @@ name|selection
 argument_list|)
 argument_list|,
 name|show_alpha
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|context
+condition|)
+name|gimp_color_selection_set_config
+argument_list|(
+name|GIMP_COLOR_SELECTION
+argument_list|(
+name|dialog
+operator|->
+name|selection
+argument_list|)
+argument_list|,
+name|context
+operator|->
+name|gimp
+operator|->
+name|config
+operator|->
+name|color_management
 argument_list|)
 expr_stmt|;
 name|gimp_color_selection_set_color

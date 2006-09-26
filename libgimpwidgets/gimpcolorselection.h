@@ -350,6 +350,21 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_color_selection_set_config
+parameter_list|(
+name|GimpColorSelection
+modifier|*
+name|selection
+parameter_list|,
+name|GimpColorConfig
+modifier|*
+name|config
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_macro
 name|G_END_DECLS
 end_macro

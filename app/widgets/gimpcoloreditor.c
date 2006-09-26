@@ -48,6 +48,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpcoreconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpcontext.h"
 end_include
 
@@ -89,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b682a660103
+DECL|enum|__anon277bf7e20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1942,6 +1954,24 @@ name|editor
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_color_selector_set_config
+argument_list|(
+name|GIMP_COLOR_SELECTOR
+argument_list|(
+name|editor
+operator|->
+name|notebook
+argument_list|)
+argument_list|,
+name|context
+operator|->
+name|gimp
+operator|->
+name|config
+operator|->
+name|color_management
+argument_list|)
+expr_stmt|;
 block|}
 name|gimp_fg_bg_editor_set_context
 argument_list|(

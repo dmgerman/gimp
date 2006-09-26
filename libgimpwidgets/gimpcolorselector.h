@@ -297,17 +297,24 @@ name|GimpColorSelectorChannel
 name|channel
 parameter_list|)
 function_decl|;
-comment|/* Padding for future expansion */
-DECL|member|_gimp_reserved1
+comment|/*  another virtual function  */
+DECL|member|set_config
 name|void
 function_decl|(
 modifier|*
-name|_gimp_reserved1
+name|set_config
 function_decl|)
 parameter_list|(
-name|void
+name|GimpColorSelector
+modifier|*
+name|selector
+parameter_list|,
+name|GimpColorConfig
+modifier|*
+name|config
 parameter_list|)
 function_decl|;
+comment|/* Padding for future expansion */
 DECL|member|_gimp_reserved2
 name|void
 function_decl|(
@@ -471,6 +478,21 @@ parameter_list|(
 name|GimpColorSelector
 modifier|*
 name|selector
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_color_selector_set_config
+parameter_list|(
+name|GimpColorSelector
+modifier|*
+name|selector
+parameter_list|,
+name|GimpColorConfig
+modifier|*
+name|config
 parameter_list|)
 function_decl|;
 end_function_decl

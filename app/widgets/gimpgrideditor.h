@@ -108,6 +108,11 @@ name|GimpGrid
 modifier|*
 name|grid
 decl_stmt|;
+DECL|member|context
+name|GimpContext
+modifier|*
+name|context
+decl_stmt|;
 DECL|member|xresolution
 name|gdouble
 name|xresolution
@@ -151,6 +156,10 @@ parameter_list|(
 name|GimpGrid
 modifier|*
 name|grid
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|gdouble
 name|xresolution
