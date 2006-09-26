@@ -131,6 +131,11 @@ parameter_list|,
 name|GimpCoords
 modifier|*
 name|coords
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -380,7 +385,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_clone_start (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpCoords * coords)
+DECL|function|gimp_clone_start (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpCoords * coords,GError ** error)
 name|gimp_clone_start
 parameter_list|(
 name|GimpPaintCore
@@ -398,6 +403,11 @@ parameter_list|,
 name|GimpCoords
 modifier|*
 name|coords
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|GimpCloneOptions
@@ -426,6 +436,8 @@ argument_list|,
 name|paint_options
 argument_list|,
 name|coords
+argument_list|,
+name|error
 argument_list|)
 condition|)
 block|{
@@ -454,8 +466,14 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"No patterns available for this operation."

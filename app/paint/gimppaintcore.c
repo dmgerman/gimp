@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2f19f70103
+DECL|enum|__anon27a997be0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -213,6 +213,11 @@ parameter_list|,
 name|GimpCoords
 modifier|*
 name|coords
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -826,7 +831,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_paint_core_real_start (GimpPaintCore * core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpCoords * coords)
+DECL|function|gimp_paint_core_real_start (GimpPaintCore * core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpCoords * coords,GError ** error)
 name|gimp_paint_core_real_start
 parameter_list|(
 name|GimpPaintCore
@@ -844,6 +849,11 @@ parameter_list|,
 name|GimpCoords
 modifier|*
 name|coords
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 return|return
@@ -1166,7 +1176,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_paint_core_start (GimpPaintCore * core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpCoords * coords)
+DECL|function|gimp_paint_core_start (GimpPaintCore * core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpCoords * coords,GError ** error)
 name|gimp_paint_core_start
 parameter_list|(
 name|GimpPaintCore
@@ -1184,6 +1194,11 @@ parameter_list|,
 name|GimpCoords
 modifier|*
 name|coords
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|GimpItem
@@ -1242,6 +1257,20 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|error
+operator|==
+name|NULL
+operator|||
+operator|*
+name|error
+operator|==
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 name|item
 operator|=
 name|GIMP_ITEM
@@ -1273,6 +1302,8 @@ argument_list|,
 name|paint_options
 argument_list|,
 name|coords
+argument_list|,
+name|error
 argument_list|)
 condition|)
 block|{

@@ -104,8 +104,8 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27951a5e0103
-DECL|enum|__anon27951a5e0203
+DECL|enum|__anon2b290dae0103
+DECL|enum|__anon2b290dae0203
 block|{
 DECL|enumerator|SET_BRUSH
 DECL|enumerator|SET_BRUSH
@@ -154,6 +154,11 @@ parameter_list|,
 name|GimpCoords
 modifier|*
 name|coords
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1393,8 +1398,8 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_brush_core_start (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpCoords * coords)
-DECL|function|gimp_brush_core_start (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpCoords * coords)
+DECL|function|gimp_brush_core_start (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpCoords * coords,GError ** error)
+DECL|function|gimp_brush_core_start (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpCoords * coords,GError ** error)
 name|gimp_brush_core_start
 parameter_list|(
 name|GimpPaintCore
@@ -1412,6 +1417,11 @@ parameter_list|,
 name|GimpCoords
 modifier|*
 name|coords
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|GimpBrushCore
@@ -1460,8 +1470,14 @@ operator|->
 name|main_brush
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"No brushes available for use with this tool."

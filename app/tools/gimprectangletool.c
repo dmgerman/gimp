@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4b14520103
+DECL|enum|__anon292714680103
 block|{
 DECL|enumerator|RECTANGLE_CHANGED
 name|RECTANGLE_CHANGED
@@ -1879,7 +1879,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_rectangle_tool_initialize (GimpTool * tool,GimpDisplay * display)
+DECL|function|gimp_rectangle_tool_initialize (GimpTool * tool,GimpDisplay * display,GError ** error)
 name|gimp_rectangle_tool_initialize
 parameter_list|(
 name|GimpTool
@@ -1889,6 +1889,11 @@ parameter_list|,
 name|GimpDisplay
 modifier|*
 name|display
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|GimpRectangleToolPrivate

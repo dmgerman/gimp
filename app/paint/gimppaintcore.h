@@ -242,6 +242,11 @@ parameter_list|,
 name|GimpCoords
 modifier|*
 name|coords
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 DECL|member|pre_paint
@@ -445,6 +450,11 @@ parameter_list|,
 name|GimpCoords
 modifier|*
 name|coords
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl

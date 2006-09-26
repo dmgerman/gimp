@@ -187,6 +187,11 @@ parameter_list|,
 name|GimpDisplay
 modifier|*
 name|display
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -772,7 +777,7 @@ end_define
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_image_map_tool_initialize (GimpTool * tool,GimpDisplay * display)
+DECL|function|gimp_image_map_tool_initialize (GimpTool * tool,GimpDisplay * display,GError ** error)
 name|gimp_image_map_tool_initialize
 parameter_list|(
 name|GimpTool
@@ -782,6 +787,11 @@ parameter_list|,
 name|GimpDisplay
 modifier|*
 name|display
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|GimpImageMapTool
@@ -796,17 +806,15 @@ decl_stmt|;
 name|GimpToolInfo
 modifier|*
 name|tool_info
+init|=
+name|tool
+operator|->
+name|tool_info
 decl_stmt|;
 name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|tool_info
-operator|=
-name|tool
-operator|->
-name|tool_info
-expr_stmt|;
 comment|/*  set display so the dialog can be hidden on display destruction  */
 name|tool
 operator|->

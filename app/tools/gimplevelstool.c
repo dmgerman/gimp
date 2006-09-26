@@ -84,12 +84,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimp.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpdrawable.h"
 end_include
 
@@ -109,12 +103,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimpimagemap.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimpprogress.h"
 end_include
 
 begin_include
@@ -313,6 +301,11 @@ parameter_list|,
 name|GimpDisplay
 modifier|*
 name|display
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1046,7 +1039,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_levels_tool_initialize (GimpTool * tool,GimpDisplay * display)
+DECL|function|gimp_levels_tool_initialize (GimpTool * tool,GimpDisplay * display,GError ** error)
 name|gimp_levels_tool_initialize
 parameter_list|(
 name|GimpTool
@@ -1056,6 +1049,11 @@ parameter_list|,
 name|GimpDisplay
 modifier|*
 name|display
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|GimpLevelsTool
@@ -1096,18 +1094,13 @@ name|drawable
 argument_list|)
 condition|)
 block|{
-name|gimp_message
+name|g_set_error
 argument_list|(
-name|display
-operator|->
-name|image
-operator|->
-name|gimp
+name|error
 argument_list|,
-name|GIMP_PROGRESS
-argument_list|(
-name|display
-argument_list|)
+literal|0
+argument_list|,
+literal|0
 argument_list|,
 name|_
 argument_list|(
@@ -1192,6 +1185,8 @@ argument_list|(
 name|tool
 argument_list|,
 name|display
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 name|gimp_int_combo_box_set_sensitivity

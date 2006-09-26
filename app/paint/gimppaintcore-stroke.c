@@ -175,6 +175,8 @@ name|strokes
 index|[
 literal|0
 index|]
+argument_list|,
+name|NULL
 argument_list|)
 condition|)
 block|{
@@ -695,6 +697,8 @@ name|coords
 index|[
 literal|0
 index|]
+argument_list|,
+name|NULL
 argument_list|)
 condition|)
 block|{
@@ -1145,6 +1149,8 @@ name|GimpCoords
 argument_list|,
 literal|0
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 condition|)
 block|{

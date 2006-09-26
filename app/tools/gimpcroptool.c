@@ -154,6 +154,11 @@ parameter_list|,
 name|GimpDisplay
 modifier|*
 name|display
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -664,7 +669,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_crop_tool_initialize (GimpTool * tool,GimpDisplay * display)
+DECL|function|gimp_crop_tool_initialize (GimpTool * tool,GimpDisplay * display,GError ** error)
 name|gimp_crop_tool_initialize
 parameter_list|(
 name|GimpTool
@@ -674,6 +679,11 @@ parameter_list|,
 name|GimpDisplay
 modifier|*
 name|display
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|GimpRectangleTool
@@ -753,6 +763,8 @@ argument_list|(
 name|tool
 argument_list|,
 name|display
+argument_list|,
+name|error
 argument_list|)
 return|;
 block|}

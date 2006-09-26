@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2adb4a1e0103
+DECL|enum|__anon29fe384b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -173,6 +173,11 @@ parameter_list|,
 name|GimpCoords
 modifier|*
 name|coords
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -708,7 +713,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_source_core_start (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpCoords * coords)
+DECL|function|gimp_source_core_start (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpCoords * coords,GError ** error)
 name|gimp_source_core_start
 parameter_list|(
 name|GimpPaintCore
@@ -726,6 +731,11 @@ parameter_list|,
 name|GimpCoords
 modifier|*
 name|coords
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|GimpSourceCore
@@ -763,6 +773,8 @@ argument_list|,
 name|paint_options
 argument_list|,
 name|coords
+argument_list|,
+name|error
 argument_list|)
 condition|)
 block|{
@@ -795,9 +807,25 @@ name|source_core
 operator|->
 name|src_drawable
 condition|)
+block|{
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+name|_
+argument_list|(
+literal|"Set a source image first."
+argument_list|)
+argument_list|)
+expr_stmt|;
 return|return
 name|FALSE
 return|;
+block|}
 if|if
 condition|(
 name|options
