@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ef2a3c0103
+DECL|enum|__anon2b1e24ce0103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -2057,15 +2057,6 @@ argument_list|,
 name|h
 argument_list|,
 name|TRUE
-argument_list|)
-expr_stmt|;
-name|copy_region
-argument_list|(
-operator|&
-name|srcPR
-argument_list|,
-operator|&
-name|destPR
 argument_list|)
 expr_stmt|;
 name|image_map
