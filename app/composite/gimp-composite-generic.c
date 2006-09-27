@@ -5678,6 +5678,7 @@ name|dissolve
 operator|.
 name|y
 decl_stmt|;
+specifier|const
 name|guchar
 modifier|*
 name|mask

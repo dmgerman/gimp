@@ -140,6 +140,7 @@ modifier|*
 name|src2
 decl_stmt|;
 DECL|member|mask
+specifier|const
 name|guchar
 modifier|*
 name|mask
