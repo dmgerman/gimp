@@ -74,11 +74,35 @@ value|"plug-in-icc-set"
 end_define
 
 begin_define
+DECL|macro|PLUG_IN_PROC_SET_RGB
+define|#
+directive|define
+name|PLUG_IN_PROC_SET_RGB
+value|"plug-in-icc-set-rgb"
+end_define
+
+begin_define
 DECL|macro|PLUG_IN_PROC_APPLY
 define|#
 directive|define
 name|PLUG_IN_PROC_APPLY
 value|"plug-in-icc-apply"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_PROC_APPLY_RGB
+define|#
+directive|define
+name|PLUG_IN_PROC_APPLY_RGB
+value|"plug-in-icc-apply-rgb"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_PROC_INFO
+define|#
+directive|define
+name|PLUG_IN_PROC_INFO
+value|"plug-in-icc-info"
 end_define
 
 begin_function_decl
@@ -161,6 +185,30 @@ block|{
 specifier|static
 specifier|const
 name|GimpParamDef
+name|base_args
+index|[]
+init|=
+block|{
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"run-mode"
+block|,
+literal|"Interactive, non-interactive"
+block|}
+block|,
+block|{
+name|GIMP_PDB_IMAGE
+block|,
+literal|"image"
+block|,
+literal|"Input image"
+block|}
+block|,   }
+decl_stmt|;
+specifier|static
+specifier|const
+name|GimpParamDef
 name|args
 index|[]
 init|=
@@ -190,11 +238,67 @@ literal|"Filename of an ICC color profile"
 block|}
 block|}
 decl_stmt|;
+specifier|static
+specifier|const
+name|GimpParamDef
+name|info_return_vals
+index|[]
+init|=
+block|{
+block|{
+name|GIMP_PDB_STRING
+block|,
+literal|"product-name"
+block|,
+literal|"Name"
+block|}
+block|,
+block|{
+name|GIMP_PDB_STRING
+block|,
+literal|"product-desc"
+block|,
+literal|"Description"
+block|}
+block|,
+block|{
+name|GIMP_PDB_STRING
+block|,
+literal|"product-info"
+block|,
+literal|"Info"
+block|}
+block|,
+block|{
+name|GIMP_PDB_STRING
+block|,
+literal|"manufacturer"
+block|,
+literal|"Manufacturer"
+block|}
+block|,
+block|{
+name|GIMP_PDB_STRING
+block|,
+literal|"model"
+block|,
+literal|"Model"
+block|}
+block|,
+block|{
+name|GIMP_PDB_STRING
+block|,
+literal|"copyright"
+block|,
+literal|"Copyright"
+block|}
+block|}
+decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC_SET
 argument_list|,
-literal|"Set a color profile on the image w/o applying it"
+literal|"Set ICC color profile on the image"
 argument_list|,
 literal|"This procedure sets an ICC color profile on an "
 literal|"image using the 'icc-profile' parasite. It does "
@@ -206,7 +310,7 @@ literal|"Sven Neumann"
 argument_list|,
 literal|"2006"
 argument_list|,
-literal|"Set ICC Color Profile"
+name|NULL
 argument_list|,
 literal|"RGB*"
 argument_list|,
@@ -220,6 +324,42 @@ argument_list|,
 literal|0
 argument_list|,
 name|args
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_install_procedure
+argument_list|(
+name|PLUG_IN_PROC_SET_RGB
+argument_list|,
+literal|"Set the default RGB color profile on the image"
+argument_list|,
+literal|"This procedure sets the user-configured RGB "
+literal|"profile on an image using the 'icc-profile' "
+literal|"parasite. If no RGB profile is, sRGB is assumed "
+literal|"and the parasite is unset. This procedure does "
+literal|"not do any color conversion."
+argument_list|,
+literal|"Sven Neumann"
+argument_list|,
+literal|"Sven Neumann"
+argument_list|,
+literal|"2006"
+argument_list|,
+name|NULL
+argument_list|,
+literal|"RGB*"
+argument_list|,
+name|GIMP_PLUGIN
+argument_list|,
+name|G_N_ELEMENTS
+argument_list|(
+name|base_args
+argument_list|)
+argument_list|,
+literal|0
+argument_list|,
+name|base_args
 argument_list|,
 name|NULL
 argument_list|)
@@ -242,7 +382,7 @@ literal|"Sven Neumann"
 argument_list|,
 literal|"2006"
 argument_list|,
-literal|"Apply ICC Color Profile"
+name|NULL
 argument_list|,
 literal|"RGB*"
 argument_list|,
@@ -258,6 +398,80 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_install_procedure
+argument_list|(
+name|PLUG_IN_PROC_APPLY_RGB
+argument_list|,
+literal|"Apply default RGB color profile on the image"
+argument_list|,
+literal|"This procedure transform from the image's color "
+literal|"profile (or the default RGB profile if none is "
+literal|"set) to the configured default RGB color profile. "
+literal|"is then set on the image using the 'icc-profile' "
+literal|"parasite. If no RGB color profile is configured, "
+literal|"sRGB is assumed and the parasite is unset."
+argument_list|,
+literal|"Sven Neumann"
+argument_list|,
+literal|"Sven Neumann"
+argument_list|,
+literal|"2006"
+argument_list|,
+name|NULL
+argument_list|,
+literal|"RGB*"
+argument_list|,
+name|GIMP_PLUGIN
+argument_list|,
+name|G_N_ELEMENTS
+argument_list|(
+name|base_args
+argument_list|)
+argument_list|,
+literal|0
+argument_list|,
+name|base_args
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_install_procedure
+argument_list|(
+name|PLUG_IN_PROC_INFO
+argument_list|,
+literal|"Retrieve information about an image's color profile"
+argument_list|,
+literal|"This procedure returns information about the "
+literal|"color profile attached to an image. If no profile "
+literal|"is attached, sRGB is assumed."
+argument_list|,
+literal|"Sven Neumann"
+argument_list|,
+literal|"Sven Neumann"
+argument_list|,
+literal|"2006"
+argument_list|,
+name|NULL
+argument_list|,
+literal|"RGB*"
+argument_list|,
+name|GIMP_PLUGIN
+argument_list|,
+name|G_N_ELEMENTS
+argument_list|(
+name|base_args
+argument_list|)
+argument_list|,
+name|G_N_ELEMENTS
+argument_list|(
+name|info_return_vals
+argument_list|)
+argument_list|,
+name|base_args
+argument_list|,
+name|info_return_vals
 argument_list|)
 expr_stmt|;
 block|}
@@ -395,7 +609,61 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
+name|PLUG_IN_PROC_SET_RGB
+argument_list|)
+operator|==
+literal|0
+condition|)
+block|{
+name|status
+operator|=
+name|GIMP_PDB_EXECUTION_ERROR
+expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|name
+argument_list|,
 name|PLUG_IN_PROC_APPLY
+argument_list|)
+operator|==
+literal|0
+condition|)
+block|{
+name|status
+operator|=
+name|GIMP_PDB_EXECUTION_ERROR
+expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|name
+argument_list|,
+name|PLUG_IN_PROC_APPLY_RGB
+argument_list|)
+operator|==
+literal|0
+condition|)
+block|{
+name|status
+operator|=
+name|GIMP_PDB_EXECUTION_ERROR
+expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|name
+argument_list|,
+name|PLUG_IN_PROC_INFO
 argument_list|)
 operator|==
 literal|0
