@@ -60,12 +60,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimp.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpchannel.h"
 end_include
 
@@ -4474,12 +4468,10 @@ operator|->
 name|image
 argument_list|)
 expr_stmt|;
+comment|/* cannot happen, so don't translate this message */
 name|message
 operator|=
-name|_
-argument_list|(
 literal|"There is no selection to transform."
-argument_list|)
 expr_stmt|;
 break|break;
 case|case
@@ -4513,18 +4505,11 @@ operator|!
 name|active_item
 condition|)
 block|{
-name|gimp_message
+name|gimp_tool_message
 argument_list|(
-name|display
-operator|->
-name|image
-operator|->
-name|gimp
+name|tool
 argument_list|,
-name|GIMP_PROGRESS
-argument_list|(
 name|display
-argument_list|)
 argument_list|,
 name|message
 argument_list|)

@@ -839,6 +839,26 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_tool_message
+parameter_list|(
+name|GimpTool
+modifier|*
+name|tool
+parameter_list|,
+name|GimpDisplay
+modifier|*
+name|display
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|message
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_tool_set_cursor
 parameter_list|(
 name|GimpTool
