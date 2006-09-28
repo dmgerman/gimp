@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7f37090103
+DECL|enum|__anon27ffc8930103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2902,7 +2902,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_tool_push_status (GimpTool * tool,GimpDisplay * display,const gchar * message)
+DECL|function|gimp_tool_push_status (GimpTool * tool,GimpDisplay * display,const gchar * format,...)
 name|gimp_tool_push_status
 parameter_list|(
 name|GimpTool
@@ -2916,12 +2916,17 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|message
+name|format
+parameter_list|,
+modifier|...
 parameter_list|)
 block|{
 name|GimpDisplayShell
 modifier|*
 name|shell
+decl_stmt|;
+name|va_list
+name|args
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -2941,7 +2946,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|message
+name|format
 operator|!=
 name|NULL
 argument_list|)
@@ -2955,7 +2960,14 @@ operator|->
 name|shell
 argument_list|)
 expr_stmt|;
-name|gimp_statusbar_push
+name|va_start
+argument_list|(
+name|args
+argument_list|,
+name|format
+argument_list|)
+expr_stmt|;
+name|gimp_statusbar_push_valist
 argument_list|(
 name|GIMP_STATUSBAR
 argument_list|(
@@ -2969,9 +2981,14 @@ argument_list|(
 name|tool
 argument_list|)
 argument_list|,
-literal|"%s"
+name|format
 argument_list|,
-name|message
+name|args
+argument_list|)
+expr_stmt|;
+name|va_end
+argument_list|(
+name|args
 argument_list|)
 expr_stmt|;
 block|}
@@ -3142,7 +3159,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_tool_replace_status (GimpTool * tool,GimpDisplay * display,const gchar * message)
+DECL|function|gimp_tool_replace_status (GimpTool * tool,GimpDisplay * display,const gchar * format,...)
 name|gimp_tool_replace_status
 parameter_list|(
 name|GimpTool
@@ -3156,12 +3173,17 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|message
+name|format
+parameter_list|,
+modifier|...
 parameter_list|)
 block|{
 name|GimpDisplayShell
 modifier|*
 name|shell
+decl_stmt|;
+name|va_list
+name|args
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -3181,7 +3203,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|message
+name|format
 operator|!=
 name|NULL
 argument_list|)
@@ -3195,7 +3217,14 @@ operator|->
 name|shell
 argument_list|)
 expr_stmt|;
-name|gimp_statusbar_replace
+name|va_start
+argument_list|(
+name|args
+argument_list|,
+name|format
+argument_list|)
+expr_stmt|;
+name|gimp_statusbar_replace_valist
 argument_list|(
 name|GIMP_STATUSBAR
 argument_list|(
@@ -3209,9 +3238,14 @@ argument_list|(
 name|tool
 argument_list|)
 argument_list|,
-literal|"%s"
+name|format
 argument_list|,
-name|message
+name|args
+argument_list|)
+expr_stmt|;
+name|va_end
+argument_list|(
+name|args
 argument_list|)
 expr_stmt|;
 block|}
@@ -3280,7 +3314,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_tool_message (GimpTool * tool,GimpDisplay * display,const gchar * message)
+DECL|function|gimp_tool_message (GimpTool * tool,GimpDisplay * display,const gchar * format,...)
 name|gimp_tool_message
 parameter_list|(
 name|GimpTool
@@ -3294,12 +3328,17 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|message
+name|format
+parameter_list|,
+modifier|...
 parameter_list|)
 block|{
 name|GimpDisplayShell
 modifier|*
 name|shell
+decl_stmt|;
+name|va_list
+name|args
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -3319,7 +3358,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|message
+name|format
 operator|!=
 name|NULL
 argument_list|)
@@ -3333,17 +3372,14 @@ operator|->
 name|shell
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|GTK_WIDGET_VISIBLE
+name|va_start
 argument_list|(
-name|shell
-operator|->
-name|statusbar
+name|args
+argument_list|,
+name|format
 argument_list|)
-condition|)
-block|{
-name|gimp_statusbar_push_temp
+expr_stmt|;
+name|gimp_statusbar_push_temp_valist
 argument_list|(
 name|GIMP_STATUSBAR
 argument_list|(
@@ -3352,35 +3388,16 @@ operator|->
 name|statusbar
 argument_list|)
 argument_list|,
-literal|"%s"
+name|format
 argument_list|,
-name|message
+name|args
 argument_list|)
 expr_stmt|;
-block|}
-else|else
-block|{
-name|gimp_message
+name|va_end
 argument_list|(
-name|tool
-operator|->
-name|tool_info
-operator|->
-name|gimp
-argument_list|,
-name|GIMP_PROGRESS
-argument_list|(
-name|display
-operator|->
-name|shell
-argument_list|)
-argument_list|,
-literal|"%s"
-argument_list|,
-name|message
+name|args
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 

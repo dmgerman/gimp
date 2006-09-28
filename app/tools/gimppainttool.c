@@ -2228,12 +2228,6 @@ condition|)
 block|{
 comment|/*  If shift is down and this is not the first paint stroke,            *  draw a line.            */
 name|gchar
-name|status_str
-index|[
-name|STATUSBAR_SIZE
-index|]
-decl_stmt|;
-name|gchar
 modifier|*
 name|status_help
 decl_stmt|;
@@ -2385,14 +2379,11 @@ name|dy
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_snprintf
+name|gimp_tool_push_status
 argument_list|(
-name|status_str
+name|tool
 argument_list|,
-sizeof|sizeof
-argument_list|(
-name|status_str
-argument_list|)
+name|display
 argument_list|,
 literal|"%.1f %s.  %s"
 argument_list|,
@@ -2493,14 +2484,11 @@ argument_list|)
 argument_list|)
 operator|)
 expr_stmt|;
-name|g_snprintf
+name|gimp_tool_push_status
 argument_list|(
-name|status_str
+name|tool
 argument_list|,
-sizeof|sizeof
-argument_list|(
-name|status_str
-argument_list|)
+name|display
 argument_list|,
 name|format_str
 argument_list|,
@@ -2513,15 +2501,6 @@ block|}
 name|g_free
 argument_list|(
 name|status_help
-argument_list|)
-expr_stmt|;
-name|gimp_tool_push_status
-argument_list|(
-name|tool
-argument_list|,
-name|display
-argument_list|,
-name|status_str
 argument_list|)
 expr_stmt|;
 name|paint_tool
@@ -2542,7 +2521,7 @@ name|modifiers
 init|=
 literal|0
 decl_stmt|;
-comment|/* HACK: A paint tool may set status_ctrl to NULL to indicate that            * it ignores the Ctrl modifier (temporarily or permanently), so            * it should not be suggested.  This is different from how            * gimp_suggest_modifiers() would interpret this parameter. */
+comment|/* HACK: A paint tool may set status_ctrl to NULL to indicate that            * it ignores the Ctrl modifier (temporarily or permanently), so            * it should not be suggested.  This is different from how            * gimp_suggest_modifiers() would interpret this parameter.            */
 if|if
 condition|(
 name|paint_tool
@@ -2555,7 +2534,7 @@ name|modifiers
 operator||=
 name|GDK_CONTROL_MASK
 expr_stmt|;
-comment|/* suggest drawing lines only after the first point is set */
+comment|/* suggest drawing lines only after the first point is set            */
 if|if
 condition|(
 name|display
