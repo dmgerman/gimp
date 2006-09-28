@@ -24,7 +24,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimpprogress.h"
 end_include
 
 begin_include
@@ -71,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac69df20103
+DECL|enum|__anon2b7f37090103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3321,6 +3333,16 @@ operator|->
 name|shell
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|GTK_WIDGET_VISIBLE
+argument_list|(
+name|shell
+operator|->
+name|statusbar
+argument_list|)
+condition|)
+block|{
 name|gimp_statusbar_push_temp
 argument_list|(
 name|GIMP_STATUSBAR
@@ -3335,6 +3357,30 @@ argument_list|,
 name|message
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+name|gimp_message
+argument_list|(
+name|tool
+operator|->
+name|tool_info
+operator|->
+name|gimp
+argument_list|,
+name|GIMP_PROGRESS
+argument_list|(
+name|display
+operator|->
+name|shell
+argument_list|)
+argument_list|,
+literal|"%s"
+argument_list|,
+name|message
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 
