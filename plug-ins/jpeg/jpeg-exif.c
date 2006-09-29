@@ -268,6 +268,21 @@ operator|!
 name|exif_data
 condition|)
 return|return;
+comment|/* return if there is no thumbnail, to work around bug #358117 */
+if|if
+condition|(
+operator|!
+name|exif_data
+operator|->
+name|data
+operator|||
+name|exif_data
+operator|->
+name|size
+operator|==
+literal|0
+condition|)
+return|return;
 comment|/*    * Unfortunately libexif may return a non-null exif_data even if the file    * contains no exif data.  We check for validity by making sure it    * has an ExifVersion tag.   */
 if|if
 condition|(
