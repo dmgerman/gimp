@@ -326,6 +326,8 @@ argument_list|(
 name|G_OBJECT
 argument_list|(
 name|context
+operator|->
+name|gimp
 argument_list|)
 argument_list|,
 literal|"saved-stroke-desc"
@@ -1053,12 +1055,12 @@ argument_list|)
 expr_stmt|;
 name|context
 operator|=
-name|gimp_get_user_context
+name|GIMP_VIEWABLE_DIALOG
 argument_list|(
-name|image
-operator|->
-name|gimp
+name|dialog
 argument_list|)
+operator|->
+name|context
 expr_stmt|;
 switch|switch
 condition|(
@@ -1165,6 +1167,8 @@ argument_list|(
 name|G_OBJECT
 argument_list|(
 name|context
+operator|->
+name|gimp
 argument_list|)
 argument_list|,
 literal|"saved-stroke-desc"
@@ -1211,6 +1215,8 @@ argument_list|(
 name|G_OBJECT
 argument_list|(
 name|context
+operator|->
+name|gimp
 argument_list|)
 argument_list|,
 literal|"saved-stroke-desc"
