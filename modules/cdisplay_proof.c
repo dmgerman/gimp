@@ -198,7 +198,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon298fd7c20103
+DECL|enum|__anon2baa050b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -655,6 +655,12 @@ operator|->
 name|help_id
 operator|=
 literal|"gimp-colordisplay-proof"
+expr_stmt|;
+name|display_class
+operator|->
+name|stock_id
+operator|=
+name|GIMP_STOCK_DISPLAY_FILTER_PROOF
 expr_stmt|;
 name|display_class
 operator|->

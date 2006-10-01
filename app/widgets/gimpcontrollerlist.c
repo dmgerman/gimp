@@ -162,7 +162,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c179f290103
+DECL|enum|__anon2b1a3f730103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -175,7 +175,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c179f290203
+DECL|enum|__anon2b1a3f730203
 block|{
 DECL|enumerator|COLUMN_ICON
 name|COLUMN_ICON
@@ -963,7 +963,9 @@ name|iter
 argument_list|,
 name|COLUMN_ICON
 argument_list|,
-literal|"gimp-info"
+name|controller_class
+operator|->
+name|stock_id
 argument_list|,
 name|COLUMN_NAME
 argument_list|,

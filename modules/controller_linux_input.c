@@ -97,7 +97,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5128820108
+DECL|struct|__anon27c489b40108
 block|{
 DECL|member|code
 name|guint16
@@ -437,7 +437,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5128820203
+DECL|enum|__anon27c489b40203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -987,6 +987,12 @@ operator|->
 name|help_id
 operator|=
 literal|"gimp-controller-linux-input"
+expr_stmt|;
+name|controller_class
+operator|->
+name|stock_id
+operator|=
+name|GIMP_STOCK_CONTROLLER_LINUX_INPUT
 expr_stmt|;
 name|controller_class
 operator|->

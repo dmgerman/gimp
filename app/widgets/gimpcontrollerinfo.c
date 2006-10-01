@@ -78,7 +78,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon289496540103
+DECL|enum|__anon2a21badf0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -100,7 +100,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon289496540203
+DECL|enum|__anon2a21badf0203
 block|{
 DECL|enumerator|EVENT_MAPPED
 name|EVENT_MAPPED
@@ -317,6 +317,15 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
+name|GimpViewableClass
+modifier|*
+name|viewable_class
+init|=
+name|GIMP_VIEWABLE_CLASS
+argument_list|(
+name|klass
+argument_list|)
+decl_stmt|;
 name|object_class
 operator|->
 name|finalize
@@ -334,6 +343,12 @@ operator|->
 name|get_property
 operator|=
 name|gimp_controller_info_get_property
+expr_stmt|;
+name|viewable_class
+operator|->
+name|default_stock_id
+operator|=
+name|GIMP_STOCK_CONTROLLER
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
 argument_list|(
@@ -707,6 +722,23 @@ name|info
 argument_list|)
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|gimp_viewable_set_stock_id
+argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|info
+argument_list|)
+argument_list|,
+name|GIMP_CONTROLLER_GET_CLASS
+argument_list|(
+name|info
+operator|->
+name|controller
+argument_list|)
+operator|->
+name|stock_id
 argument_list|)
 expr_stmt|;
 block|}

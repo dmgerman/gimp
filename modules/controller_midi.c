@@ -126,7 +126,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bafc20d0108
+DECL|struct|__anon2b1cd62c0108
 block|{
 DECL|member|name
 name|gchar
@@ -146,7 +146,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bafc20d0203
+DECL|enum|__anon2b1cd62c0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -964,6 +964,12 @@ operator|->
 name|help_id
 operator|=
 literal|"gimp-controller-midi"
+expr_stmt|;
+name|controller_class
+operator|->
+name|stock_id
+operator|=
+name|GIMP_STOCK_CONTROLLER_MIDI
 expr_stmt|;
 name|controller_class
 operator|->

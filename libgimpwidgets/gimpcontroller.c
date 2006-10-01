@@ -52,9 +52,15 @@ directive|include
 file|"gimpcontroller.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpstock.h"
+end_include
+
 begin_enum
 enum|enum
-DECL|enum|__anon27d601500103
+DECL|enum|__anon27dbbf440103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -70,7 +76,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d601500203
+DECL|enum|__anon27dbbf440203
 block|{
 DECL|enumerator|EVENT
 name|EVENT
@@ -283,6 +289,12 @@ operator|->
 name|help_id
 operator|=
 name|NULL
+expr_stmt|;
+name|klass
+operator|->
+name|stock_id
+operator|=
+name|GIMP_STOCK_CONTROLLER
 expr_stmt|;
 name|klass
 operator|->

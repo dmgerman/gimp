@@ -692,6 +692,12 @@ name|GIMP_HELP_CONTROLLER_WHEEL
 expr_stmt|;
 name|controller_class
 operator|->
+name|stock_id
+operator|=
+name|GIMP_STOCK_CONTROLLER_WHEEL
+expr_stmt|;
+name|controller_class
+operator|->
 name|get_n_events
 operator|=
 name|gimp_controller_wheel_get_n_events

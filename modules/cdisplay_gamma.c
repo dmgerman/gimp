@@ -162,7 +162,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2783d0240103
+DECL|enum|__anon2bb7294b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -554,6 +554,12 @@ operator|->
 name|help_id
 operator|=
 literal|"gimp-colordisplay-gamma"
+expr_stmt|;
+name|display_class
+operator|->
+name|stock_id
+operator|=
+name|GIMP_STOCK_DISPLAY_FILTER_GAMMA
 expr_stmt|;
 name|display_class
 operator|->

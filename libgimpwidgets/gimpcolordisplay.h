@@ -247,17 +247,13 @@ modifier|*
 name|display
 parameter_list|)
 function_decl|;
-comment|/* Padding for future expansion */
-DECL|member|_gimp_reserved1
-name|void
-function_decl|(
+DECL|member|stock_id
+specifier|const
+name|gchar
 modifier|*
-name|_gimp_reserved1
-function_decl|)
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
+name|stock_id
+decl_stmt|;
+comment|/* Padding for future expansion */
 DECL|member|_gimp_reserved2
 name|void
 function_decl|(

@@ -51,9 +51,15 @@ directive|include
 file|"gimpcolordisplay.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpstock.h"
+end_include
+
 begin_enum
 enum|enum
-DECL|enum|__anon2c5c1c720103
+DECL|enum|__anon275541eb0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -66,7 +72,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5c1c720203
+DECL|enum|__anon275541eb0203
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -258,6 +264,12 @@ operator|->
 name|help_id
 operator|=
 name|NULL
+expr_stmt|;
+name|klass
+operator|->
+name|stock_id
+operator|=
+name|GIMP_STOCK_DISPLAY_FILTER
 expr_stmt|;
 name|klass
 operator|->

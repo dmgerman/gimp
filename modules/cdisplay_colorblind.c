@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad397490103
+DECL|enum|__anon2ad7fa920103
 block|{
 DECL|enumerator|COLORBLIND_DEFICIENCY_PROTANOPIA
 name|COLORBLIND_DEFICIENCY_PROTANOPIA
@@ -345,7 +345,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad397490203
+DECL|enum|__anon2ad7fa920203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -907,6 +907,12 @@ operator|->
 name|help_id
 operator|=
 literal|"gimp-colordisplay-colorblind"
+expr_stmt|;
+name|display_class
+operator|->
+name|stock_id
+operator|=
+name|GIMP_STOCK_DISPLAY_FILTER_COLORBLIND
 expr_stmt|;
 name|display_class
 operator|->
