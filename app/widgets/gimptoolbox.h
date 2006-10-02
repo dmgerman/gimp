@@ -185,9 +185,9 @@ name|GimpDialogFactory
 modifier|*
 name|factory
 parameter_list|,
-name|Gimp
+name|GimpContext
 modifier|*
-name|gimp
+name|context
 parameter_list|)
 function_decl|;
 end_function_decl

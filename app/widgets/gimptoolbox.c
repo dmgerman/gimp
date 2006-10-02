@@ -2464,16 +2464,16 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_toolbox_new (GimpDialogFactory * dialog_factory,Gimp * gimp)
+DECL|function|gimp_toolbox_new (GimpDialogFactory * dialog_factory,GimpContext * context)
 name|gimp_toolbox_new
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
 name|dialog_factory
 parameter_list|,
-name|Gimp
+name|GimpContext
 modifier|*
-name|gimp
+name|context
 parameter_list|)
 block|{
 name|GimpToolbox
@@ -2492,9 +2492,9 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|GIMP_IS_GIMP
+name|GIMP_IS_CONTEXT
 argument_list|(
-name|gimp
+name|context
 argument_list|)
 argument_list|,
 name|NULL
@@ -2512,10 +2512,7 @@ name|GIMP_ACRONYM
 argument_list|,
 literal|"context"
 argument_list|,
-name|gimp_get_user_context
-argument_list|(
-name|gimp
-argument_list|)
+name|context
 argument_list|,
 literal|"dialog-factory"
 argument_list|,
@@ -3815,6 +3812,15 @@ modifier|*
 name|tool_info
 parameter_list|)
 block|{
+name|GtkWidget
+modifier|*
+name|toolbox
+init|=
+name|gtk_widget_get_toplevel
+argument_list|(
+name|widget
+argument_list|)
+decl_stmt|;
 if|if
 condition|(
 name|GTK_TOGGLE_BUTTON
@@ -3826,12 +3832,12 @@ name|active
 condition|)
 name|gimp_context_set_tool
 argument_list|(
-name|gimp_get_user_context
+name|GIMP_DOCK
 argument_list|(
-name|tool_info
-operator|->
-name|gimp
+name|toolbox
 argument_list|)
+operator|->
+name|context
 argument_list|,
 name|tool_info
 argument_list|)

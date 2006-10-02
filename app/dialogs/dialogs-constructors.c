@@ -794,8 +794,6 @@ argument_list|(
 name|global_dock_factory
 argument_list|,
 name|context
-operator|->
-name|gimp
 argument_list|)
 return|;
 block|}
