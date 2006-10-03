@@ -407,7 +407,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2c3ec5510103
+DECL|enum|__anon276ec0b40103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1448,7 +1448,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3ec5510208
+DECL|struct|__anon276ec0b40208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1525,7 +1525,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3ec5510308
+DECL|struct|__anon276ec0b40308
 block|{
 DECL|member|ncolors
 name|long
@@ -1710,7 +1710,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3ec5510408
+DECL|struct|__anon276ec0b40408
 block|{
 DECL|member|used_count
 name|signed
@@ -16948,7 +16948,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_convert_set_dither_matrix (gint width,gint height,guchar * source)
+DECL|function|gimp_image_convert_set_dither_matrix (gint width,gint height,const guchar * source)
 name|gimp_image_convert_set_dither_matrix
 parameter_list|(
 name|gint
@@ -16957,6 +16957,7 @@ parameter_list|,
 name|gint
 name|height
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|source
@@ -16967,15 +16968,6 @@ name|x
 decl_stmt|;
 name|gint
 name|y
-decl_stmt|;
-name|gint
-name|high_value
-decl_stmt|;
-name|gint
-name|tmp
-decl_stmt|;
-name|gfloat
-name|scale
 decl_stmt|;
 comment|/* if source is invalid, restore the default matrix */
 if|if
@@ -17035,55 +17027,6 @@ operator|==
 literal|0
 argument_list|)
 expr_stmt|;
-comment|/* find maximum value in input */
-name|high_value
-operator|=
-literal|0
-expr_stmt|;
-for|for
-control|(
-name|x
-operator|=
-literal|0
-init|;
-name|x
-operator|<
-operator|(
-name|width
-operator|*
-name|height
-operator|)
-condition|;
-name|x
-operator|++
-control|)
-block|{
-if|if
-condition|(
-name|source
-index|[
-name|x
-index|]
-operator|>
-name|high_value
-condition|)
-name|high_value
-operator|=
-name|source
-index|[
-name|x
-index|]
-expr_stmt|;
-block|}
-name|scale
-operator|=
-literal|255.0
-operator|/
-operator|(
-name|float
-operator|)
-name|high_value
-expr_stmt|;
 for|for
 control|(
 name|y
@@ -17112,7 +17055,13 @@ name|x
 operator|++
 control|)
 block|{
-name|tmp
+name|DM
+index|[
+name|x
+index|]
+index|[
+name|y
+index|]
 operator|=
 name|source
 index|[
@@ -17132,29 +17081,6 @@ operator|%
 name|height
 operator|)
 index|]
-expr_stmt|;
-name|DM
-index|[
-name|x
-index|]
-index|[
-name|y
-index|]
-operator|=
-call|(
-name|guchar
-call|)
-argument_list|(
-name|ROUND
-argument_list|(
-operator|(
-name|float
-operator|)
-name|tmp
-operator|*
-name|scale
-argument_list|)
-argument_list|)
 expr_stmt|;
 block|}
 block|}

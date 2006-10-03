@@ -72,6 +72,7 @@ parameter_list|,
 name|gint
 name|height
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|source
