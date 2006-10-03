@@ -23,22 +23,6 @@ file|"gimpdata.h"
 end_include
 
 begin_define
-DECL|macro|GIMP_GRADIENT_FILE_EXTENSION
-define|#
-directive|define
-name|GIMP_GRADIENT_FILE_EXTENSION
-value|".ggr"
-end_define
-
-begin_define
-DECL|macro|GIMP_GRADIENT_SVG_FILE_EXTENSION
-define|#
-directive|define
-name|GIMP_GRADIENT_SVG_FILE_EXTENSION
-value|".svg"
-end_define
-
-begin_define
 DECL|macro|GIMP_GRADIENT_DEFAULT_SAMPLE_SIZE
 define|#
 directive|define

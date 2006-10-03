@@ -16,6 +16,22 @@ directive|define
 name|__GIMP_GRADIENT_LOAD_H__
 end_define
 
+begin_define
+DECL|macro|GIMP_GRADIENT_FILE_EXTENSION
+define|#
+directive|define
+name|GIMP_GRADIENT_FILE_EXTENSION
+value|".ggr"
+end_define
+
+begin_define
+DECL|macro|GIMP_GRADIENT_SVG_FILE_EXTENSION
+define|#
+directive|define
+name|GIMP_GRADIENT_SVG_FILE_EXTENSION
+value|".svg"
+end_define
+
 begin_function_decl
 name|GList
 modifier|*

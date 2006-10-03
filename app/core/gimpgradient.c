@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpgradient-load.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpgradient-save.h"
 end_include
 
