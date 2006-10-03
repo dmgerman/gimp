@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2997743d0103
+DECL|enum|__anon274bc3300103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1010,7 +1010,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Affect:"
+literal|"Transform:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1057,7 +1057,7 @@ literal|"direction"
 argument_list|,
 name|_
 argument_list|(
-literal|"Transform Direction"
+literal|"Direction"
 argument_list|)
 argument_list|,
 literal|0

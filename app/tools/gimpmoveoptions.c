@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a5b3d90103
+DECL|enum|__anon2bf3582d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -618,7 +618,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Affect:"
+literal|"Move:"
 argument_list|)
 argument_list|)
 expr_stmt|;

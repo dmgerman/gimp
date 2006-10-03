@@ -669,7 +669,7 @@ name|GIMP_TRANSFORM_TYPE_LAYER
 block|,
 name|N_
 argument_list|(
-literal|"Transform layer"
+literal|"Layer"
 argument_list|)
 block|,
 name|NULL
@@ -680,7 +680,7 @@ name|GIMP_TRANSFORM_TYPE_SELECTION
 block|,
 name|N_
 argument_list|(
-literal|"Transform selection"
+literal|"Selection"
 argument_list|)
 block|,
 name|NULL
@@ -691,7 +691,7 @@ name|GIMP_TRANSFORM_TYPE_PATH
 block|,
 name|N_
 argument_list|(
-literal|"Transform path"
+literal|"Path"
 argument_list|)
 block|,
 name|NULL
