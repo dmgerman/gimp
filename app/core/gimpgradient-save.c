@@ -528,8 +528,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_gradient_save_as_pov (GimpGradient * gradient,const gchar * filename,GError ** error)
-name|gimp_gradient_save_as_pov
+DECL|function|gimp_gradient_save_pov (GimpGradient * gradient,const gchar * filename,GError ** error)
+name|gimp_gradient_save_pov
 parameter_list|(
 name|GimpGradient
 modifier|*

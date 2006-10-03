@@ -380,7 +380,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimp_gradient_save_as_pov
+name|gimp_gradient_save_pov
 argument_list|(
 name|gradient
 argument_list|,

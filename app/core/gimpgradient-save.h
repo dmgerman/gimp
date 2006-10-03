@@ -38,7 +38,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_gradient_save_as_pov
+name|gimp_gradient_save_pov
 parameter_list|(
 name|GimpGradient
 modifier|*
