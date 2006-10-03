@@ -154,6 +154,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimppalette-load.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppickable.h"
 end_include
 
@@ -2119,7 +2125,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27ed51730103
+DECL|enum|__anon2b72111a0103
 block|{
 DECL|enumerator|GIMP_PALETTE_FILE_FORMAT_UNKNOWN
 name|GIMP_PALETTE_FILE_FORMAT_UNKNOWN

@@ -244,6 +244,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimppalette-load.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppattern.h"
 end_include
 
@@ -291,7 +297,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1900af0103
+DECL|enum|__anon2990e2ba0103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
