@@ -23,14 +23,6 @@ file|"gimpbrush.h"
 end_include
 
 begin_define
-DECL|macro|GIMP_BRUSH_PIPE_FILE_EXTENSION
-define|#
-directive|define
-name|GIMP_BRUSH_PIPE_FILE_EXTENSION
-value|".gih"
-end_define
-
-begin_define
 DECL|macro|GIMP_TYPE_BRUSH_PIPE
 define|#
 directive|define
@@ -96,7 +88,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c80fd480103
+DECL|enum|__anon27a2feca0103
 block|{
 DECL|enumerator|PIPE_SELECT_CONSTANT
 name|PIPE_SELECT_CONSTANT
@@ -216,24 +208,6 @@ argument_list|)
 name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
-
-begin_function_decl
-name|GList
-modifier|*
-name|gimp_brush_pipe_load
-parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|filename
-parameter_list|,
-name|GError
-modifier|*
-modifier|*
-name|error
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_endif
 endif|#

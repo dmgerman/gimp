@@ -160,7 +160,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpbrushgenerated.h"
+file|"gimpbrushgenerated-load.h"
 end_include
 
 begin_include
@@ -172,7 +172,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpbrushpipe.h"
+file|"gimpbrushpipe-load.h"
 end_include
 
 begin_include
@@ -291,7 +291,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bac9ee20103
+DECL|enum|__anon2a1900af0103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
