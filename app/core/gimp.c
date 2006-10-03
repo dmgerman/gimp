@@ -250,6 +250,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimppattern-load.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppatternclipboard.h"
 end_include
 
@@ -285,7 +291,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c165c4d0103
+DECL|enum|__anon2bac9ee20103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
