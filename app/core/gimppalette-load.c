@@ -12,6 +12,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|<errno.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<fcntl.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdlib.h>
 end_include
 
@@ -24,7 +36,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<errno.h>
+file|<sys/types.h>
 end_include
 
 begin_ifdef
@@ -44,17 +56,24 @@ endif|#
 directive|endif
 end_endif
 
-begin_include
-include|#
-directive|include
-file|<sys/types.h>
-end_include
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|_O_BINARY
+end_ifndef
 
-begin_include
-include|#
-directive|include
-file|<fcntl.h>
-end_include
+begin_define
+DECL|macro|_O_BINARY
+define|#
+directive|define
+name|_O_BINARY
+value|0
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -217,7 +236,7 @@ name|g_fopen
 argument_list|(
 name|filename
 argument_list|,
-literal|"r"
+literal|"rb"
 argument_list|)
 expr_stmt|;
 if|if
@@ -256,50 +275,24 @@ return|;
 block|}
 name|linenum
 operator|=
-literal|0
-expr_stmt|;
-name|fread
-argument_list|(
-name|str
-argument_list|,
-literal|13
-argument_list|,
 literal|1
-argument_list|,
-name|file
-argument_list|)
 expr_stmt|;
-name|str
-index|[
-literal|13
-index|]
-operator|=
-literal|'\0'
-expr_stmt|;
-name|linenum
-operator|++
-expr_stmt|;
-if|if
-condition|(
-name|strcmp
-argument_list|(
-name|str
-argument_list|,
-literal|"GIMP Palette\n"
-argument_list|)
-condition|)
-block|{
-comment|/* bad magic, but maybe it has \r\n at the end of lines? */
 if|if
 condition|(
 operator|!
-name|strcmp
+name|fgets
 argument_list|(
 name|str
 argument_list|,
-literal|"GIMP Palette\r"
+sizeof|sizeof
+argument_list|(
+name|str
+argument_list|)
+argument_list|,
+name|file
 argument_list|)
 condition|)
+block|{
 name|g_set_error
 argument_list|(
 name|error
@@ -311,17 +304,41 @@ argument_list|,
 name|_
 argument_list|(
 literal|"Fatal parse error in palette file '%s': "
-literal|"Missing magic header.\n"
-literal|"Does this file need converting from DOS?"
+literal|"Read error in line %d."
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
 name|filename
 argument_list|)
+argument_list|,
+name|linenum
 argument_list|)
 expr_stmt|;
-else|else
+name|fclose
+argument_list|(
+name|file
+argument_list|)
+expr_stmt|;
+return|return
+name|NULL
+return|;
+block|}
+if|if
+condition|(
+name|strncmp
+argument_list|(
+name|str
+argument_list|,
+literal|"GIMP Palette"
+argument_list|,
+name|strlen
+argument_list|(
+literal|"GIMP Palette"
+argument_list|)
+argument_list|)
+condition|)
+block|{
 name|g_set_error
 argument_list|(
 name|error
@@ -364,6 +381,9 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|linenum
+operator|++
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -416,9 +436,6 @@ return|return
 name|NULL
 return|;
 block|}
-name|linenum
-operator|++
-expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -443,14 +460,15 @@ name|utf8
 operator|=
 name|gimp_any_to_utf8
 argument_list|(
-operator|&
+name|g_strstrip
+argument_list|(
 name|str
-index|[
+operator|+
 name|strlen
 argument_list|(
 literal|"Name: "
 argument_list|)
-index|]
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -473,11 +491,11 @@ argument_list|(
 name|palette
 argument_list|)
 argument_list|,
-name|g_strstrip
-argument_list|(
 name|utf8
 argument_list|)
-argument_list|)
+expr_stmt|;
+name|linenum
+operator|++
 expr_stmt|;
 if|if
 condition|(
@@ -531,9 +549,6 @@ return|return
 name|NULL
 return|;
 block|}
-name|linenum
-operator|++
-expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -559,14 +574,12 @@ name|atoi
 argument_list|(
 name|g_strstrip
 argument_list|(
-operator|&
 name|str
-index|[
+operator|+
 name|strlen
 argument_list|(
 literal|"Columns: "
 argument_list|)
-index|]
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -609,6 +622,9 @@ name|n_columns
 operator|=
 name|columns
 expr_stmt|;
+name|linenum
+operator|++
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -661,9 +677,6 @@ return|return
 name|NULL
 return|;
 block|}
-name|linenum
-operator|++
-expr_stmt|;
 block|}
 block|}
 else|else
@@ -944,6 +957,9 @@ name|n_colors
 operator|++
 expr_stmt|;
 block|}
+name|linenum
+operator|++
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -1004,9 +1020,6 @@ return|return
 name|NULL
 return|;
 block|}
-name|linenum
-operator|++
-expr_stmt|;
 block|}
 name|fclose
 argument_list|(
@@ -1109,6 +1122,8 @@ argument_list|(
 name|filename
 argument_list|,
 name|O_RDONLY
+operator||
+name|_O_BINARY
 argument_list|,
 literal|0
 argument_list|)
@@ -1316,6 +1331,8 @@ argument_list|(
 name|filename
 argument_list|,
 name|O_RDONLY
+operator||
+name|_O_BINARY
 argument_list|,
 literal|0
 argument_list|)
@@ -1569,6 +1586,8 @@ argument_list|(
 name|filename
 argument_list|,
 name|O_RDONLY
+operator||
+name|_O_BINARY
 argument_list|,
 literal|0
 argument_list|)
@@ -1906,6 +1925,8 @@ argument_list|(
 name|filename
 argument_list|,
 name|O_RDONLY
+operator||
+name|_O_BINARY
 argument_list|,
 literal|0
 argument_list|)

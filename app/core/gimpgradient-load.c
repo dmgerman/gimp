@@ -122,6 +122,9 @@ index|[
 literal|1024
 index|]
 decl_stmt|;
+name|gint
+name|linenum
+decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|filename
@@ -198,6 +201,13 @@ return|return
 name|NULL
 return|;
 block|}
+name|linenum
+operator|=
+literal|1
+expr_stmt|;
+if|if
+condition|(
+operator|!
 name|fgets
 argument_list|(
 name|line
@@ -209,17 +219,52 @@ argument_list|)
 argument_list|,
 name|file
 argument_list|)
+condition|)
+block|{
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|GIMP_DATA_ERROR
+argument_list|,
+name|GIMP_DATA_ERROR_READ
+argument_list|,
+name|_
+argument_list|(
+literal|"Fatal parse error in gradient file '%s': "
+literal|"Read error in line %d."
+argument_list|)
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|)
+argument_list|,
+name|linenum
+argument_list|)
 expr_stmt|;
+name|fclose
+argument_list|(
+name|file
+argument_list|)
+expr_stmt|;
+return|return
+name|NULL
+return|;
+block|}
 if|if
 condition|(
-name|strcmp
+name|strncmp
 argument_list|(
 name|line
 argument_list|,
-literal|"GIMP Gradient\n"
+literal|"GIMP Gradient"
+argument_list|,
+name|strlen
+argument_list|(
+literal|"GIMP Gradient"
 argument_list|)
-operator|!=
-literal|0
+argument_list|)
 condition|)
 block|{
 name|g_set_error
@@ -264,6 +309,12 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|linenum
+operator|++
+expr_stmt|;
+if|if
+condition|(
+operator|!
 name|fgets
 argument_list|(
 name|line
@@ -275,7 +326,44 @@ argument_list|)
 argument_list|,
 name|file
 argument_list|)
+condition|)
+block|{
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|GIMP_DATA_ERROR
+argument_list|,
+name|GIMP_DATA_ERROR_READ
+argument_list|,
+name|_
+argument_list|(
+literal|"Fatal parse error in gradient file '%s': "
+literal|"Read error in line %d."
+argument_list|)
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|)
+argument_list|,
+name|linenum
+argument_list|)
 expr_stmt|;
+name|fclose
+argument_list|(
+name|file
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|gradient
+argument_list|)
+expr_stmt|;
+return|return
+name|NULL
+return|;
+block|}
 if|if
 condition|(
 operator|!
@@ -300,14 +388,15 @@ name|utf8
 operator|=
 name|gimp_any_to_utf8
 argument_list|(
-operator|&
+name|g_strstrip
+argument_list|(
 name|line
-index|[
+operator|+
 name|strlen
 argument_list|(
 literal|"Name: "
 argument_list|)
-index|]
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -330,12 +419,15 @@ argument_list|(
 name|gradient
 argument_list|)
 argument_list|,
-name|g_strstrip
-argument_list|(
 name|utf8
 argument_list|)
-argument_list|)
 expr_stmt|;
+name|linenum
+operator|++
+expr_stmt|;
+if|if
+condition|(
+operator|!
 name|fgets
 argument_list|(
 name|line
@@ -347,7 +439,44 @@ argument_list|)
 argument_list|,
 name|file
 argument_list|)
+condition|)
+block|{
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|GIMP_DATA_ERROR
+argument_list|,
+name|GIMP_DATA_ERROR_READ
+argument_list|,
+name|_
+argument_list|(
+literal|"Fatal parse error in gradient file '%s': "
+literal|"Read error in line %d."
+argument_list|)
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|)
+argument_list|,
+name|linenum
+argument_list|)
 expr_stmt|;
+name|fclose
+argument_list|(
+name|file
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|gradient
+argument_list|)
+expr_stmt|;
+return|return
+name|NULL
+return|;
+block|}
 block|}
 else|else
 comment|/* old gradient format */
@@ -391,13 +520,15 @@ argument_list|,
 name|_
 argument_list|(
 literal|"Fatal parse error in gradient file '%s': "
-literal|"File is corrupt."
+literal|"File is corrupt in line %d."
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
 name|filename
 argument_list|)
+argument_list|,
+name|linenum
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -480,6 +611,12 @@ name|segments
 operator|=
 name|seg
 expr_stmt|;
+name|linenum
+operator|++
+expr_stmt|;
+if|if
+condition|(
+operator|!
 name|fgets
 argument_list|(
 name|line
@@ -491,7 +628,44 @@ argument_list|)
 argument_list|,
 name|file
 argument_list|)
+condition|)
+block|{
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|GIMP_DATA_ERROR
+argument_list|,
+name|GIMP_DATA_ERROR_READ
+argument_list|,
+name|_
+argument_list|(
+literal|"Fatal parse error in gradient file '%s': "
+literal|"Read error in line %d."
+argument_list|)
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|)
+argument_list|,
+name|linenum
+argument_list|)
 expr_stmt|;
+name|fclose
+argument_list|(
+name|file
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|gradient
+argument_list|)
+expr_stmt|;
+return|return
+name|NULL
+return|;
+block|}
 name|seg
 operator|->
 name|left
@@ -804,15 +978,18 @@ name|GIMP_DATA_ERROR_READ
 argument_list|,
 name|_
 argument_list|(
-literal|"Corrupt segment %d in gradient file '%s'."
+literal|"Fatal parse error in gradient file '%s': "
+literal|"Corrupt segment %d in line %d."
 argument_list|)
-argument_list|,
-name|i
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
 name|filename
 argument_list|)
+argument_list|,
+name|i
+argument_list|,
+name|linenum
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -842,15 +1019,18 @@ name|GIMP_DATA_ERROR_READ
 argument_list|,
 name|_
 argument_list|(
-literal|"Corrupt segment %d in gradient file '%s'."
+literal|"Fatal parse error in gradient file '%s': "
+literal|"Corrupt segment %d in line %d."
 argument_list|)
-argument_list|,
-name|i
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
 name|filename
 argument_list|)
+argument_list|,
+name|i
+argument_list|,
+name|linenum
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -1002,7 +1182,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0783590108
+DECL|struct|__anon2c7416cc0108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -1030,7 +1210,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0783590208
+DECL|struct|__anon2c7416cc0208
 block|{
 DECL|member|offset
 name|gdouble

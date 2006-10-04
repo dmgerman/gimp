@@ -123,6 +123,9 @@ index|[
 literal|256
 index|]
 decl_stmt|;
+name|gint
+name|linenum
+decl_stmt|;
 name|gchar
 modifier|*
 name|name
@@ -240,6 +243,10 @@ name|errno
 operator|=
 literal|0
 expr_stmt|;
+name|linenum
+operator|=
+literal|1
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -266,10 +273,11 @@ name|string
 argument_list|,
 literal|"GIMP-VBR"
 argument_list|,
-literal|8
+name|strlen
+argument_list|(
+literal|"GIMP-VBR"
 argument_list|)
-operator|!=
-literal|0
+argument_list|)
 condition|)
 block|{
 name|g_set_error
@@ -300,6 +308,9 @@ comment|/* make sure we are reading a compatible version */
 name|errno
 operator|=
 literal|0
+expr_stmt|;
+name|linenum
+operator|++
 expr_stmt|;
 if|if
 condition|(
@@ -354,13 +365,15 @@ argument_list|,
 name|_
 argument_list|(
 literal|"Fatal parse error in brush file '%s': "
-literal|"Unknown GIMP brush version."
+literal|"Unknown GIMP brush version in line %d."
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
 name|filename
 argument_list|)
+argument_list|,
+name|linenum
 argument_list|)
 expr_stmt|;
 goto|goto
@@ -379,6 +392,9 @@ comment|/* read name */
 name|errno
 operator|=
 literal|0
+expr_stmt|;
+name|linenum
+operator|++
 expr_stmt|;
 if|if
 condition|(
@@ -473,6 +489,9 @@ name|errno
 operator|=
 literal|0
 expr_stmt|;
+name|linenum
+operator|++
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -522,13 +541,15 @@ argument_list|,
 name|_
 argument_list|(
 literal|"Fatal parse error in brush file '%s': "
-literal|"Unknown GIMP brush shape."
+literal|"Unknown GIMP brush shape in line %d."
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
 name|filename
 argument_list|)
+argument_list|,
+name|linenum
 argument_list|)
 expr_stmt|;
 goto|goto
@@ -546,6 +567,9 @@ comment|/* read brush spacing */
 name|errno
 operator|=
 literal|0
+expr_stmt|;
+name|linenum
+operator|++
 expr_stmt|;
 if|if
 condition|(
@@ -579,6 +603,9 @@ name|errno
 operator|=
 literal|0
 expr_stmt|;
+name|linenum
+operator|++
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -611,10 +638,13 @@ condition|(
 name|have_shape
 condition|)
 block|{
-comment|/* read brush radius */
+comment|/* read number of spikes */
 name|errno
 operator|=
 literal|0
+expr_stmt|;
+name|linenum
+operator|++
 expr_stmt|;
 if|if
 condition|(
@@ -654,6 +684,9 @@ name|errno
 operator|=
 literal|0
 expr_stmt|;
+name|linenum
+operator|++
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -686,6 +719,9 @@ name|errno
 operator|=
 literal|0
 expr_stmt|;
+name|linenum
+operator|++
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -717,6 +753,9 @@ comment|/* read brush angle */
 name|errno
 operator|=
 literal|0
+expr_stmt|;
+name|linenum
+operator|++
 expr_stmt|;
 if|if
 condition|(
@@ -816,6 +855,45 @@ name|error
 operator|==
 name|NULL
 condition|)
+block|{
+name|gchar
+modifier|*
+name|msg
+decl_stmt|;
+if|if
+condition|(
+name|errno
+condition|)
+name|msg
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Line %d: %s"
+argument_list|)
+argument_list|,
+name|linenum
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
+argument_list|)
+expr_stmt|;
+else|else
+name|msg
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"File is truncated in line %d"
+argument_list|)
+argument_list|,
+name|linenum
+argument_list|)
+expr_stmt|;
 name|g_set_error
 argument_list|(
 name|error
@@ -834,19 +912,15 @@ argument_list|(
 name|filename
 argument_list|)
 argument_list|,
-name|errno
-condition|?
-name|g_strerror
-argument_list|(
-name|errno
-argument_list|)
-else|:
-name|_
-argument_list|(
-literal|"File is truncated"
-argument_list|)
+name|msg
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|msg
+argument_list|)
+expr_stmt|;
+block|}
 return|return
 name|NULL
 return|;
