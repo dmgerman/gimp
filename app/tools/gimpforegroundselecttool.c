@@ -138,7 +138,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aefc8610108
+DECL|struct|__anon2aded7ca0108
 block|{
 DECL|member|width
 name|gint
@@ -732,7 +732,7 @@ name|tool
 operator|->
 name|control
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_tool_control_set_preserve

@@ -453,7 +453,7 @@ name|tool
 operator|->
 name|control
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_tool_control_set_tool_cursor
