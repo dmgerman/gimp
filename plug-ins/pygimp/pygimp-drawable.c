@@ -5277,9 +5277,6 @@ name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
-if|if
-condition|(
-operator|!
 name|gimp_drawable_mask_bounds
 argument_list|(
 name|self
@@ -5298,17 +5295,7 @@ argument_list|,
 operator|&
 name|y2
 argument_list|)
-condition|)
-block|{
-name|Py_INCREF
-argument_list|(
-name|Py_None
-argument_list|)
 expr_stmt|;
-return|return
-name|Py_None
-return|;
-block|}
 return|return
 name|Py_BuildValue
 argument_list|(
