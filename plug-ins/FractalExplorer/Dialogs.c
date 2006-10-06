@@ -3405,7 +3405,7 @@ name|wvals
 operator|.
 name|iter
 argument_list|,
-literal|0
+literal|1
 argument_list|,
 literal|1000
 argument_list|,
@@ -3413,7 +3413,7 @@ literal|1
 argument_list|,
 literal|10
 argument_list|,
-literal|5
+literal|0
 argument_list|,
 name|TRUE
 argument_list|,
@@ -6185,9 +6185,6 @@ expr_stmt|;
 name|gtk_main
 argument_list|()
 expr_stmt|;
-name|gdk_flush
-argument_list|()
-expr_stmt|;
 name|g_free
 argument_list|(
 name|wint
@@ -6313,7 +6310,7 @@ init|=
 literal|0
 decl_stmt|;
 name|gint
-name|zaehler
+name|counter
 decl_stmt|;
 name|gint
 name|color
@@ -6463,12 +6460,17 @@ name|wimage
 expr_stmt|;
 name|iteration
 operator|=
+name|MAX
+argument_list|(
+literal|1
+argument_list|,
 operator|(
 name|int
 operator|)
 name|wvals
 operator|.
 name|iter
+argument_list|)
 expr_stmt|;
 name|useloglog
 operator|=
@@ -6571,12 +6573,12 @@ expr_stmt|;
 block|}
 for|for
 control|(
-name|zaehler
+name|counter
 operator|=
 literal|0
 init|;
 operator|(
-name|zaehler
+name|counter
 operator|<
 name|iteration
 operator|)
@@ -6595,7 +6597,7 @@ operator|<
 literal|4
 operator|)
 condition|;
-name|zaehler
+name|counter
 operator|++
 control|)
 block|{
@@ -7129,7 +7131,7 @@ call|)
 argument_list|(
 operator|(
 operator|(
-name|zaehler
+name|counter
 operator|-
 name|adjust
 operator|)
@@ -7191,17 +7193,12 @@ operator|+=
 literal|1
 expr_stmt|;
 block|}
-comment|/* for */
 name|py
 operator|+=
 literal|1
 expr_stmt|;
 block|}
-comment|/* for */
 name|preview_redraw
-argument_list|()
-expr_stmt|;
-name|gdk_flush
 argument_list|()
 expr_stmt|;
 block|}
