@@ -55,18 +55,50 @@ directive|endif
 end_endif
 
 begin_define
-DECL|macro|MAXLEN
+DECL|macro|ICO_ALPHA_THRESHOLD
 define|#
 directive|define
-name|MAXLEN
+name|ICO_ALPHA_THRESHOLD
+value|127
+end_define
+
+begin_define
+DECL|macro|ICO_MAXBUF
+define|#
+directive|define
+name|ICO_MAXBUF
 value|4096
 end_define
 
 begin_typedef
-DECL|struct|_MsIconEntry
+DECL|struct|_IcoFileHeader
 typedef|typedef
 struct|struct
-name|_MsIconEntry
+name|_IcoFileHeader
+block|{
+DECL|member|reserved
+name|guint16
+name|reserved
+decl_stmt|;
+DECL|member|resource_type
+name|guint16
+name|resource_type
+decl_stmt|;
+DECL|member|icon_count
+name|guint16
+name|icon_count
+decl_stmt|;
+DECL|typedef|IcoFileHeader
+block|}
+name|IcoFileHeader
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|struct|_IcoFileEntry
+typedef|typedef
+struct|struct
+name|_IcoFileEntry
 block|{
 DECL|member|width
 name|guint8
@@ -82,61 +114,64 @@ DECL|member|num_colors
 name|guint8
 name|num_colors
 decl_stmt|;
-comment|/* Maximum number of colors */
+comment|/* Number of colors of paletted image */
 DECL|member|reserved
 name|guint8
 name|reserved
 decl_stmt|;
-comment|/* Not used */
-DECL|member|num_planes
-name|guint16
-name|num_planes
-decl_stmt|;
-comment|/* Not used */
-DECL|member|bpp
-name|guint16
-name|bpp
-decl_stmt|;
-DECL|member|size
-name|guint32
-name|size
-decl_stmt|;
-comment|/* Length of icon bitmap in bytes */
-DECL|member|offset
-name|guint32
-name|offset
-decl_stmt|;
-comment|/* Offset position of icon bitmap in file */
-DECL|typedef|MsIconEntry
-block|}
-name|MsIconEntry
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|struct|_MsIconData
-typedef|typedef
-struct|struct
-name|_MsIconData
-block|{
-comment|/* Bitmap header data */
-DECL|member|header_size
-name|guint32
-name|header_size
-decl_stmt|;
-comment|/* = 40 Bytes */
-DECL|member|width
-name|guint32
-name|width
-decl_stmt|;
-DECL|member|height
-name|guint32
-name|height
-decl_stmt|;
+comment|/* Must be 0 */
 DECL|member|planes
 name|guint16
 name|planes
 decl_stmt|;
+comment|/* Must be 1 */
+DECL|member|bpp
+name|guint16
+name|bpp
+decl_stmt|;
+comment|/* 1, 4, 8, 24 or 32 bits per pixel */
+DECL|member|size
+name|guint32
+name|size
+decl_stmt|;
+comment|/* Size of icon (including data header) */
+DECL|member|offset
+name|guint32
+name|offset
+decl_stmt|;
+comment|/* Absolute offset of data in a file */
+DECL|typedef|IcoFileEntry
+block|}
+name|IcoFileEntry
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|struct|_IcoFileDataHeader
+typedef|typedef
+struct|struct
+name|_IcoFileDataHeader
+block|{
+DECL|member|header_size
+name|guint32
+name|header_size
+decl_stmt|;
+comment|/* 40 bytes */
+DECL|member|width
+name|guint32
+name|width
+decl_stmt|;
+comment|/* Width of image in pixels */
+DECL|member|height
+name|guint32
+name|height
+decl_stmt|;
+comment|/* Height of image in pixels */
+DECL|member|planes
+name|guint16
+name|planes
+decl_stmt|;
+comment|/* Must be 1 */
 DECL|member|bpp
 name|guint16
 name|bpp
@@ -145,12 +180,12 @@ DECL|member|compression
 name|guint32
 name|compression
 decl_stmt|;
-comment|/* not used for icons */
+comment|/* Not used for icons */
 DECL|member|image_size
 name|guint32
 name|image_size
 decl_stmt|;
-comment|/* size of image */
+comment|/* Size of image (without this header) */
 DECL|member|x_res
 name|guint32
 name|x_res
@@ -167,95 +202,91 @@ DECL|member|important_clrs
 name|guint32
 name|important_clrs
 decl_stmt|;
-DECL|member|palette
-name|guint32
-modifier|*
-name|palette
-decl_stmt|;
-comment|/* Color palette, only if bpp<= 8. */
-DECL|member|xor_map
-name|guint8
-modifier|*
-name|xor_map
-decl_stmt|;
-comment|/* Icon bitmap */
-DECL|member|and_map
-name|guint8
-modifier|*
-name|and_map
-decl_stmt|;
-comment|/* Display bit mask */
-comment|/* Only used when saving: */
-DECL|member|palette_len
-name|gint
-name|palette_len
-decl_stmt|;
-DECL|member|xor_len
-name|gint
-name|xor_len
-decl_stmt|;
-DECL|member|and_len
-name|gint
-name|and_len
-decl_stmt|;
-DECL|typedef|MsIconData
+DECL|typedef|IcoFileDataHeader
 block|}
-name|MsIconData
+name|IcoFileDataHeader
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|_MsIcon
+DECL|struct|_IcoLoadInfo
 typedef|typedef
 struct|struct
-name|_MsIcon
+name|_IcoLoadInfo
 block|{
-DECL|member|fp
-name|FILE
-modifier|*
-name|fp
-decl_stmt|;
-DECL|member|cp
+DECL|member|width
 name|guint
-name|cp
+name|width
 decl_stmt|;
-DECL|member|filename
-specifier|const
-name|gchar
-modifier|*
-name|filename
+DECL|member|height
+name|guint
+name|height
 decl_stmt|;
-DECL|member|reserved
-name|guint16
-name|reserved
+DECL|member|bpp
+name|gint
+name|bpp
 decl_stmt|;
-DECL|member|resource_type
-name|guint16
-name|resource_type
+DECL|member|offset
+name|gint
+name|offset
 decl_stmt|;
-DECL|member|icon_count
-name|guint16
-name|icon_count
+DECL|member|size
+name|gint
+name|size
 decl_stmt|;
-DECL|member|icon_dir
-name|MsIconEntry
-modifier|*
-name|icon_dir
-decl_stmt|;
-DECL|member|icon_data
-name|MsIconData
-modifier|*
-name|icon_data
-decl_stmt|;
-DECL|typedef|MsIcon
+DECL|typedef|IcoLoadInfo
 block|}
-name|MsIcon
+name|IcoLoadInfo
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|struct|_IcoSaveInfo
+typedef|typedef
+struct|struct
+name|_IcoSaveInfo
+block|{
+DECL|member|depths
+name|gint
+modifier|*
+name|depths
+decl_stmt|;
+DECL|member|default_depths
+name|gint
+modifier|*
+name|default_depths
+decl_stmt|;
+DECL|member|layers
+name|gint
+modifier|*
+name|layers
+decl_stmt|;
+DECL|member|num_icons
+name|gint
+name|num_icons
+decl_stmt|;
+DECL|typedef|IcoSaveInfo
+block|}
+name|IcoSaveInfo
 typedef|;
 end_typedef
 
 begin_comment
 comment|/* Miscellaneous helper functions below: */
 end_comment
+
+begin_function_decl
+name|gint
+name|ico_rowstride
+parameter_list|(
+name|gint
+name|width
+parameter_list|,
+name|gint
+name|bpp
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_comment
 comment|/* Allocates a 32-bit padded bitmap for various color depths.    Returns the allocated array directly, and the length of the    array in the len pointer */
@@ -278,17 +309,6 @@ parameter_list|,
 name|gint
 modifier|*
 name|len
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|ico_cleanup
-parameter_list|(
-name|MsIcon
-modifier|*
-name|ico
 parameter_list|)
 function_decl|;
 end_function_decl

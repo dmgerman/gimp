@@ -18,7 +18,7 @@ end_define
 
 begin_function_decl
 name|GimpPDBStatusType
-name|SaveICO
+name|ico_save_image
 parameter_list|(
 specifier|const
 name|gchar
@@ -27,6 +27,23 @@ name|file_name
 parameter_list|,
 name|gint32
 name|image_ID
+parameter_list|,
+name|gint32
+name|run_mode
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|ico_cmap_contains_black
+parameter_list|(
+name|guchar
+modifier|*
+name|cmap
+parameter_list|,
+name|gint
+name|num_colors
 parameter_list|)
 function_decl|;
 end_function_decl
