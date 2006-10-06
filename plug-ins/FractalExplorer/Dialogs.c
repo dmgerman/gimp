@@ -933,11 +933,57 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
+name|gboolean
+name|c_sensitive
+decl_stmt|;
 name|gimp_radio_button_update
 argument_list|(
 name|widget
 argument_list|,
 name|data
+argument_list|)
+expr_stmt|;
+switch|switch
+condition|(
+name|wvals
+operator|.
+name|fractaltype
+condition|)
+block|{
+case|case
+name|TYPE_MANDELBROT
+case|:
+case|case
+name|TYPE_SIERPINSKI
+case|:
+name|c_sensitive
+operator|=
+name|FALSE
+expr_stmt|;
+break|break;
+default|default:
+name|c_sensitive
+operator|=
+name|TRUE
+expr_stmt|;
+break|break;
+block|}
+name|gimp_scale_entry_set_sensitive
+argument_list|(
+name|elements
+operator|->
+name|cx
+argument_list|,
+name|c_sensitive
+argument_list|)
+expr_stmt|;
+name|gimp_scale_entry_set_sensitive
+argument_list|(
+name|elements
+operator|->
+name|cy
+argument_list|,
+name|c_sensitive
 argument_list|)
 expr_stmt|;
 name|set_cmap_preview
@@ -3102,7 +3148,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"XMIN:"
+literal|"Left:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -3130,11 +3176,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|_
-argument_list|(
-literal|"Change the first (minimal) x-coordinate "
-literal|"delimitation"
-argument_list|)
+name|NULL
 argument_list|,
 name|NULL
 argument_list|)
@@ -3175,7 +3217,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"XMAX:"
+literal|"Right:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -3203,11 +3245,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|_
-argument_list|(
-literal|"Change the second (maximal) x-coordinate "
-literal|"delimitation"
-argument_list|)
+name|NULL
 argument_list|,
 name|NULL
 argument_list|)
@@ -3248,7 +3286,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"YMIN:"
+literal|"Top:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -3276,11 +3314,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|_
-argument_list|(
-literal|"Change the first (minimal) y-coordinate "
-literal|"delimitation"
-argument_list|)
+name|NULL
 argument_list|,
 name|NULL
 argument_list|)
@@ -3321,7 +3355,7 @@ literal|3
 argument_list|,
 name|_
 argument_list|(
-literal|"YMAX:"
+literal|"Bottom:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -3349,11 +3383,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|_
-argument_list|(
-literal|"Change the second (maximal) y-coordinate "
-literal|"delimitation"
-argument_list|)
+name|NULL
 argument_list|,
 name|NULL
 argument_list|)
@@ -3394,7 +3424,7 @@ literal|4
 argument_list|,
 name|_
 argument_list|(
-literal|"ITER:"
+literal|"Iterations:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -3423,9 +3453,8 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Change the iteration value. The higher it "
-literal|"is, the more details will be calculated, "
-literal|"which will take more time"
+literal|"The higher the number of iterations, "
+literal|"the more details will be calculated"
 argument_list|)
 argument_list|,
 name|NULL
@@ -3497,9 +3526,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Change the CX value (changes aspect of "
-literal|"fractal, active with every fractal but "
-literal|"Mandelbrot and Sierpinski)"
+literal|"Changes aspect of fractal"
 argument_list|)
 argument_list|,
 name|NULL
@@ -3571,9 +3598,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Change the CY value (changes aspect of "
-literal|"fractal, active with every fractal but "
-literal|"Mandelbrot and Sierpinski)"
+literal|"Changes aspect of fractal"
 argument_list|)
 argument_list|,
 name|NULL
@@ -6205,8 +6230,8 @@ comment|/********************************************************************** 
 end_comment
 
 begin_function
-name|void
 DECL|function|dialog_update_preview (void)
+name|void
 name|dialog_update_preview
 parameter_list|(
 name|void
@@ -7210,9 +7235,9 @@ comment|/********************************************************************** 
 end_comment
 
 begin_function
+DECL|function|cmap_preview_size_allocate (GtkWidget * widget,GtkAllocation * allocation)
 specifier|static
 name|void
-DECL|function|cmap_preview_size_allocate (GtkWidget * widget,GtkAllocation * allocation)
 name|cmap_preview_size_allocate
 parameter_list|(
 name|GtkWidget
@@ -7474,8 +7499,8 @@ comment|/********************************************************************** 
 end_comment
 
 begin_function
-name|void
 DECL|function|set_cmap_preview (void)
+name|void
 name|set_cmap_preview
 parameter_list|(
 name|void
@@ -7557,8 +7582,8 @@ comment|/********************************************************************** 
 end_comment
 
 begin_function
-name|void
 DECL|function|make_color_map (void)
+name|void
 name|make_color_map
 parameter_list|(
 name|void
@@ -8108,8 +8133,8 @@ comment|/********************************************************************** 
 end_comment
 
 begin_function
-name|void
 DECL|function|dialog_change_scale (void)
+name|void
 name|dialog_change_scale
 parameter_list|(
 name|void
@@ -8398,9 +8423,9 @@ comment|/********************************************************************** 
 end_comment
 
 begin_function
+DECL|function|save_options (FILE * fp)
 specifier|static
 name|void
-DECL|function|save_options (FILE * fp)
 name|save_options
 parameter_list|(
 name|FILE
@@ -8784,9 +8809,9 @@ block|}
 end_function
 
 begin_function
+DECL|function|save_callback (void)
 specifier|static
 name|void
-DECL|function|save_callback (void)
 name|save_callback
 parameter_list|(
 name|void
@@ -8909,9 +8934,9 @@ block|}
 end_function
 
 begin_function
+DECL|function|save_file_chooser_response (GtkFileChooser * chooser,gint response_id,gpointer data)
 specifier|static
 name|void
-DECL|function|save_file_chooser_response (GtkFileChooser * chooser,gint response_id,gpointer data)
 name|save_file_chooser_response
 parameter_list|(
 name|GtkFileChooser
@@ -8955,9 +8980,9 @@ block|}
 end_function
 
 begin_function
+DECL|function|file_chooser_set_default_folder (GtkFileChooser * chooser)
 specifier|static
 name|void
-DECL|function|file_chooser_set_default_folder (GtkFileChooser * chooser)
 name|file_chooser_set_default_folder
 parameter_list|(
 name|GtkFileChooser
@@ -9033,9 +9058,9 @@ block|}
 end_function
 
 begin_function
+DECL|function|load_file_chooser_response (GtkFileChooser * chooser,gint response_id,gpointer data)
 specifier|static
 name|void
-DECL|function|load_file_chooser_response (GtkFileChooser * chooser,gint response_id,gpointer data)
 name|load_file_chooser_response
 parameter_list|(
 name|GtkFileChooser
@@ -9104,9 +9129,9 @@ block|}
 end_function
 
 begin_function
+DECL|function|create_load_file_chooser (GtkWidget * widget,GtkWidget * dialog)
 specifier|static
 name|void
-DECL|function|create_load_file_chooser (GtkWidget * widget,GtkWidget * dialog)
 name|create_load_file_chooser
 parameter_list|(
 name|GtkWidget
@@ -9233,9 +9258,9 @@ block|}
 end_function
 
 begin_function
+DECL|function|create_save_file_chooser (GtkWidget * widget,GtkWidget * dialog)
 specifier|static
 name|void
-DECL|function|create_save_file_chooser (GtkWidget * widget,GtkWidget * dialog)
 name|create_save_file_chooser
 parameter_list|(
 name|GtkWidget
@@ -9381,9 +9406,9 @@ block|}
 end_function
 
 begin_function
+DECL|function|get_line (gchar * buf,gint s,FILE * from,gint init)
 name|gchar
 modifier|*
-DECL|function|get_line (gchar * buf,gint s,FILE * from,gint init)
 name|get_line
 parameter_list|(
 name|gchar
@@ -9497,8 +9522,8 @@ block|}
 end_function
 
 begin_function
-name|gint
 DECL|function|load_options (fractalexplorerOBJ * xxx,FILE * fp)
+name|gint
 name|load_options
 parameter_list|(
 name|fractalexplorerOBJ
@@ -10092,8 +10117,8 @@ block|}
 end_function
 
 begin_function
-name|void
 DECL|function|explorer_load (void)
+name|void
 name|explorer_load
 parameter_list|(
 name|void
