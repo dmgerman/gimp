@@ -1180,8 +1180,16 @@ operator|!
 name|drawable
 condition|)
 block|{
-name|g_message
+name|gimp_message
 argument_list|(
+name|image
+operator|->
+name|gimp
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_MESSAGE_WARNING
+argument_list|,
 name|_
 argument_list|(
 literal|"There is no active layer or channel to stroke to."
@@ -1283,8 +1291,16 @@ operator|!
 name|drawable
 condition|)
 block|{
-name|g_message
+name|gimp_message
 argument_list|(
+name|image
+operator|->
+name|gimp
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_MESSAGE_WARNING
+argument_list|,
 name|_
 argument_list|(
 literal|"There is no active layer or channel to stroke to."

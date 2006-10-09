@@ -630,7 +630,7 @@ name|data
 parameter_list|,
 name|count
 parameter_list|)
-value|G_STMT_START { \   info->cp += xcf_write_int32 (info->fp, data, count,&error); \   if (error)                                                   \     {                                                          \       gimp_message (info->gimp, info->progress,                \                     _("Error saving XCF file: %s"),            \                     error->message);                           \       return FALSE;                                            \     }                                                          \   } G_STMT_END
+value|G_STMT_START { \   info->cp += xcf_write_int32 (info->fp, data, count,&error); \   if (error)                                                   \     {                                                          \       gimp_message (info->gimp, G_OBJECT (info->progress),     \                     GIMP_MESSAGE_ERROR,                        \                     _("Error saving XCF file: %s"),            \                     error->message);                           \       return FALSE;                                            \     }                                                          \   } G_STMT_END
 end_define
 
 begin_define
@@ -645,7 +645,7 @@ name|data
 parameter_list|,
 name|count
 parameter_list|)
-value|G_STMT_START { \   info->cp += xcf_write_int8 (info->fp, data, count,&error); \   if (error)                                                  \     {                                                         \       gimp_message (info->gimp, info->progress,               \                     _("Error saving XCF file: %s"),           \                     error->message);                          \       return FALSE;                                           \     }                                                         \   } G_STMT_END
+value|G_STMT_START { \   info->cp += xcf_write_int8 (info->fp, data, count,&error); \   if (error)                                                  \     {                                                         \       gimp_message (info->gimp, G_OBJECT (info->progress),    \                     GIMP_MESSAGE_ERROR,                       \                     _("Error saving XCF file: %s"),           \                     error->message);                          \       return FALSE;                                           \     }                                                         \   } G_STMT_END
 end_define
 
 begin_define
@@ -660,7 +660,7 @@ name|data
 parameter_list|,
 name|count
 parameter_list|)
-value|G_STMT_START { \   info->cp += xcf_write_float (info->fp, data, count,&error); \   if (error)                                                   \     {                                                          \       gimp_message (info->gimp, info->progress,                \                     _("Error saving XCF file: %s"),            \                     error->message);                           \       return FALSE;                                            \     }                                                          \   } G_STMT_END
+value|G_STMT_START { \   info->cp += xcf_write_float (info->fp, data, count,&error); \   if (error)                                                   \     {                                                          \       gimp_message (info->gimp, G_OBJECT (info->progress),     \                     GIMP_MESSAGE_ERROR,                        \                     _("Error saving XCF file: %s"),            \                     error->message);                           \       return FALSE;                                            \     }                                                          \   } G_STMT_END
 end_define
 
 begin_define
@@ -675,7 +675,7 @@ name|data
 parameter_list|,
 name|count
 parameter_list|)
-value|G_STMT_START { \   info->cp += xcf_write_string (info->fp, data, count,&error); \   if (error)                                                    \     {                                                           \       gimp_message (info->gimp, info->progress,                 \                     _("Error saving XCF file: %s"),             \                     error->message);                            \       return FALSE;                                             \     }                                                           \   } G_STMT_END
+value|G_STMT_START { \   info->cp += xcf_write_string (info->fp, data, count,&error); \   if (error)                                                    \     {                                                           \       gimp_message (info->gimp, G_OBJECT (info->progress),      \                     GIMP_MESSAGE_ERROR,                         \                     _("Error saving XCF file: %s"),             \                     error->message);                            \       return FALSE;                                             \     }                                                           \   } G_STMT_END
 end_define
 
 begin_define
@@ -725,7 +725,7 @@ name|info
 parameter_list|,
 name|x
 parameter_list|)
-value|G_STMT_START {               \   if (! (x))                                                  \     {                                                         \       gimp_message (info->gimp, info->progress,               \                     _("Error saving XCF file: %s"),           \                     error->message);                          \       return FALSE;                                           \     }                                                         \   } G_STMT_END
+value|G_STMT_START {               \   if (! (x))                                                  \     {                                                         \       gimp_message (info->gimp, G_OBJECT (info->progress),    \                     GIMP_MESSAGE_ERROR,                       \                     _("Error saving XCF file: %s"),           \                     error->message);                          \       return FALSE;                                           \     }                                                         \   } G_STMT_END
 end_define
 
 begin_define
@@ -6657,7 +6657,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29eb42420108
+DECL|struct|__anon2c6fad150108
 block|{
 DECL|member|info
 name|XcfInfo

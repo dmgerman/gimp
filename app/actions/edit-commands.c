@@ -965,8 +965,14 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|g_message
+name|gimp_message
 argument_list|(
+name|gimp
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_MESSAGE_WARNING
+argument_list|,
 name|_
 argument_list|(
 literal|"There is no image data in the clipboard to paste."
@@ -1563,19 +1569,24 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gimp_display_shell_message
-argument_list|(
-name|GIMP_DISPLAY_SHELL
+name|gimp_message
 argument_list|(
 name|display
 operator|->
-name|shell
+name|image
+operator|->
+name|gimp
+argument_list|,
+name|G_OBJECT
+argument_list|(
+name|display
 argument_list|)
+argument_list|,
+name|GIMP_MESSAGE_WARNING
 argument_list|,
 name|_
 argument_list|(
-literal|"There is no image data in "
-literal|"the clipboard to paste."
+literal|"There is no image data in the clipboard to paste."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1629,8 +1640,16 @@ operator|!
 name|drawable
 condition|)
 block|{
-name|g_message
+name|gimp_message
 argument_list|(
+name|image
+operator|->
+name|gimp
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_MESSAGE_WARNING
+argument_list|,
 name|_
 argument_list|(
 literal|"There is no active layer or channel to cut from."
@@ -1731,8 +1750,16 @@ operator|!
 name|drawable
 condition|)
 block|{
-name|g_message
+name|gimp_message
 argument_list|(
+name|image
+operator|->
+name|gimp
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_MESSAGE_WARNING
+argument_list|,
 name|_
 argument_list|(
 literal|"There is no active layer or channel to copy from."

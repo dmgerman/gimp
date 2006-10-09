@@ -633,9 +633,12 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|GimpProgress
+name|GObject
 modifier|*
-name|progress
+name|handler
+parameter_list|,
+name|GimpMessageSeverity
+name|severity
 parameter_list|,
 specifier|const
 name|gchar
@@ -646,9 +649,9 @@ modifier|...
 parameter_list|)
 function_decl|G_GNUC_PRINTF
 parameter_list|(
-function_decl|3
-operator|,
 function_decl|4
+operator|,
+function_decl|5
 end_function_decl
 
 begin_empty_stmt
@@ -664,9 +667,12 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|GimpProgress
+name|GObject
 modifier|*
-name|progress
+name|handler
+parameter_list|,
+name|GimpMessageSeverity
+name|severity
 parameter_list|,
 specifier|const
 name|gchar

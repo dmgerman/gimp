@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2f1f800103
+DECL|enum|__anon2c5437fd0103
 block|{
 DECL|enumerator|CANCEL
 name|CANCEL
@@ -682,7 +682,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_progress_message (GimpProgress * progress,Gimp * gimp,const gchar * domain,const gchar * message)
+DECL|function|gimp_progress_message (GimpProgress * progress,Gimp * gimp,GimpMessageSeverity severity,const gchar * domain,const gchar * message)
 name|gimp_progress_message
 parameter_list|(
 name|GimpProgress
@@ -692,6 +692,9 @@ parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpMessageSeverity
+name|severity
 parameter_list|,
 specifier|const
 name|gchar
@@ -718,6 +721,34 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_GIMP
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|domain
+operator|!=
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|message
+operator|!=
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 name|progress_iface
 operator|=
 name|GIMP_PROGRESS_GET_INTERFACE
@@ -731,7 +762,7 @@ name|progress_iface
 operator|->
 name|message
 condition|)
-block|{
+return|return
 name|progress_iface
 operator|->
 name|message
@@ -740,15 +771,13 @@ name|progress
 argument_list|,
 name|gimp
 argument_list|,
+name|severity
+argument_list|,
 name|domain
 argument_list|,
 name|message
 argument_list|)
-expr_stmt|;
-return|return
-name|TRUE
 return|;
-block|}
 return|return
 name|FALSE
 return|;

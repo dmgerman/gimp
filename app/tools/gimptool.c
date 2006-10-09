@@ -36,12 +36,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpprogress.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimptoolinfo.h"
 end_include
 
@@ -83,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4266dd0103
+DECL|enum|__anon2782929d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3352,6 +3346,13 @@ name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|format
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
 name|va_start
 argument_list|(
 name|args
@@ -3359,14 +3360,20 @@ argument_list|,
 name|format
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_message_valist
-argument_list|(
-name|GIMP_DISPLAY_SHELL
+name|gimp_message_valist
 argument_list|(
 name|display
 operator|->
-name|shell
+name|image
+operator|->
+name|gimp
+argument_list|,
+name|G_OBJECT
+argument_list|(
+name|display
 argument_list|)
+argument_list|,
+name|GIMP_MESSAGE_WARNING
 argument_list|,
 name|format
 argument_list|,

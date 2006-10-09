@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2772819a0103
+DECL|enum|__anon29013cdf0103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -1081,7 +1081,12 @@ name|imagefile
 operator|->
 name|gimp
 argument_list|,
+name|G_OBJECT
+argument_list|(
 name|progress
+argument_list|)
+argument_list|,
+name|GIMP_MESSAGE_ERROR
 argument_list|,
 name|error
 operator|->

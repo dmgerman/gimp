@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimptexteditor.h"
 end_include
 
@@ -43,6 +49,12 @@ begin_include
 include|#
 directive|include
 file|"widgets/gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"widgets/gimpuimanager.h"
 end_include
 
 begin_include
@@ -456,11 +468,20 @@ name|error
 argument_list|)
 condition|)
 block|{
-name|gimp_show_message_dialog
+name|gimp_message
+argument_list|(
+name|editor
+operator|->
+name|ui_manager
+operator|->
+name|gimp
+argument_list|,
+name|G_OBJECT
 argument_list|(
 name|dialog
+argument_list|)
 argument_list|,
-name|GTK_MESSAGE_ERROR
+name|GIMP_MESSAGE_ERROR
 argument_list|,
 name|_
 argument_list|(

@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
@@ -43,6 +49,12 @@ begin_include
 include|#
 directive|include
 file|"gimpmenufactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpwidgets-utils.h"
 end_include
 
 begin_include
@@ -648,17 +660,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_error_console_add (GimpErrorConsole * console,const gchar * stock_id,const gchar * domain,const gchar * message)
+DECL|function|gimp_error_console_add (GimpErrorConsole * console,GimpMessageSeverity severity,const gchar * domain,const gchar * message)
 name|gimp_error_console_add
 parameter_list|(
 name|GimpErrorConsole
 modifier|*
 name|console
 parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|stock_id
+name|GimpMessageSeverity
+name|severity
 parameter_list|,
 specifier|const
 name|gchar
@@ -671,6 +681,11 @@ modifier|*
 name|message
 parameter_list|)
 block|{
+specifier|const
+name|gchar
+modifier|*
+name|desc
+decl_stmt|;
 name|GtkTextIter
 name|end
 decl_stmt|;
@@ -696,13 +711,6 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|stock_id
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_if_fail
-argument_list|(
 name|domain
 operator|!=
 name|NULL
@@ -712,6 +720,22 @@ name|g_return_if_fail
 argument_list|(
 name|message
 operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_enum_get_value
+argument_list|(
+name|GIMP_TYPE_MESSAGE_SEVERITY
+argument_list|,
+name|severity
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+operator|&
+name|desc
+argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
@@ -733,7 +757,10 @@ name|console
 operator|->
 name|text_view
 argument_list|,
-name|stock_id
+name|gimp_get_message_stock_id
+argument_list|(
+name|severity
+argument_list|)
 argument_list|,
 name|GTK_ICON_SIZE_MENU
 argument_list|,
@@ -776,12 +803,11 @@ name|str
 operator|=
 name|g_strdup_printf
 argument_list|(
-name|_
-argument_list|(
-literal|"%s Message"
-argument_list|)
+literal|"%s %s"
 argument_list|,
 name|domain
+argument_list|,
+name|desc
 argument_list|)
 expr_stmt|;
 name|gtk_text_buffer_insert_with_tags_by_name

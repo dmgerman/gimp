@@ -188,10 +188,8 @@ name|GimpErrorConsole
 modifier|*
 name|console
 parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|stock_id
+name|GimpMessageSeverity
+name|severity
 parameter_list|,
 specifier|const
 name|gchar

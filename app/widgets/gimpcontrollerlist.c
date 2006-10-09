@@ -162,7 +162,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1a3f730103
+DECL|enum|__anon2bca4e740103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -175,7 +175,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1a3f730203
+DECL|enum|__anon2bca4e740203
 block|{
 DECL|enumerator|COLUMN_ICON
 name|COLUMN_ICON
@@ -2232,11 +2232,18 @@ operator|!=
 name|NULL
 condition|)
 block|{
-name|gimp_show_message_dialog
+name|gimp_message
+argument_list|(
+name|list
+operator|->
+name|gimp
+argument_list|,
+name|G_OBJECT
 argument_list|(
 name|button
+argument_list|)
 argument_list|,
-name|GTK_MESSAGE_WARNING
+name|GIMP_MESSAGE_WARNING
 argument_list|,
 name|_
 argument_list|(
@@ -2268,11 +2275,18 @@ operator|!=
 name|NULL
 condition|)
 block|{
-name|gimp_show_message_dialog
+name|gimp_message
+argument_list|(
+name|list
+operator|->
+name|gimp
+argument_list|,
+name|G_OBJECT
 argument_list|(
 name|button
+argument_list|)
 argument_list|,
-name|GTK_MESSAGE_WARNING
+name|GIMP_MESSAGE_WARNING
 argument_list|,
 name|_
 argument_list|(

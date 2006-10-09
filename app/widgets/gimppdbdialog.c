@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf9e9de0103
+DECL|enum|__anon28f063bd0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1287,14 +1287,20 @@ operator|!=
 name|GIMP_PDB_SUCCESS
 condition|)
 block|{
-name|gimp_show_message_dialog
+name|gimp_message
 argument_list|(
-name|GTK_WIDGET
+name|dialog
+operator|->
+name|context
+operator|->
+name|gimp
+argument_list|,
+name|G_OBJECT
 argument_list|(
 name|dialog
 argument_list|)
 argument_list|,
-name|GTK_MESSAGE_ERROR
+name|GIMP_MESSAGE_ERROR
 argument_list|,
 name|_
 argument_list|(

@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac481b40103
+DECL|enum|__anon28dbaa9b0103
 block|{
 DECL|enumerator|REGISTER_PROCEDURE
 name|REGISTER_PROCEDURE
@@ -1205,6 +1205,8 @@ name|gimp
 argument_list|,
 name|progress
 argument_list|,
+name|GIMP_MESSAGE_ERROR
+argument_list|,
 name|_
 argument_list|(
 literal|"PDB calling error:\n"
@@ -1446,6 +1448,8 @@ name|gimp
 argument_list|,
 name|progress
 argument_list|,
+name|GIMP_MESSAGE_ERROR
+argument_list|,
 name|_
 argument_list|(
 literal|"PDB calling error:\n"
@@ -1591,6 +1595,8 @@ operator|->
 name|gimp
 argument_list|,
 name|progress
+argument_list|,
+name|GIMP_MESSAGE_ERROR
 argument_list|,
 name|_
 argument_list|(

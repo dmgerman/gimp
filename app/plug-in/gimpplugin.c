@@ -2486,7 +2486,12 @@ name|manager
 operator|->
 name|gimp
 argument_list|,
+name|G_OBJECT
+argument_list|(
 name|progress
+argument_list|)
+argument_list|,
+name|GIMP_MESSAGE_ERROR
 argument_list|,
 name|_
 argument_list|(

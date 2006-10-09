@@ -871,10 +871,12 @@ name|gimp_message
 argument_list|(
 name|gimp
 argument_list|,
-name|GIMP_PROGRESS
+name|G_OBJECT
 argument_list|(
 name|box
 argument_list|)
+argument_list|,
+name|GIMP_MESSAGE_ERROR
 argument_list|,
 name|_
 argument_list|(
@@ -912,10 +914,12 @@ name|gimp_message
 argument_list|(
 name|gimp
 argument_list|,
-name|GIMP_PROGRESS
+name|G_OBJECT
 argument_list|(
 name|box
 argument_list|)
+argument_list|,
+name|GIMP_MESSAGE_ERROR
 argument_list|,
 name|_
 argument_list|(

@@ -24,9 +24,12 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|GimpProgress
+name|GObject
 modifier|*
-name|progress
+name|handler
+parameter_list|,
+name|GimpMessageSeverity
+name|severity
 parameter_list|,
 specifier|const
 name|gchar

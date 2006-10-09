@@ -297,7 +297,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2990e2ba0103
+DECL|enum|__anon2bebc4d00103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -4132,16 +4132,19 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_message (Gimp * gimp,GimpProgress * progress,const gchar * format,...)
+DECL|function|gimp_message (Gimp * gimp,GObject * handler,GimpMessageSeverity severity,const gchar * format,...)
 name|gimp_message
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|GimpProgress
+name|GObject
 modifier|*
-name|progress
+name|handler
+parameter_list|,
+name|GimpMessageSeverity
+name|severity
 parameter_list|,
 specifier|const
 name|gchar
@@ -4165,7 +4168,9 @@ name|gimp_message_valist
 argument_list|(
 name|gimp
 argument_list|,
-name|progress
+name|handler
+argument_list|,
+name|severity
 argument_list|,
 name|format
 argument_list|,
@@ -4182,16 +4187,19 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_message_valist (Gimp * gimp,GimpProgress * progress,const gchar * format,va_list args)
+DECL|function|gimp_message_valist (Gimp * gimp,GObject * handler,GimpMessageSeverity severity,const gchar * format,va_list args)
 name|gimp_message_valist
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|GimpProgress
+name|GObject
 modifier|*
-name|progress
+name|handler
+parameter_list|,
+name|GimpMessageSeverity
+name|severity
 parameter_list|,
 specifier|const
 name|gchar
@@ -4216,14 +4224,21 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|progress
+name|handler
 operator|==
 name|NULL
 operator|||
-name|GIMP_IS_PROGRESS
+name|G_IS_OBJECT
 argument_list|(
-name|progress
+name|handler
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|format
+operator|!=
+name|NULL
 argument_list|)
 expr_stmt|;
 name|message
@@ -4239,7 +4254,9 @@ name|gimp_show_message
 argument_list|(
 name|gimp
 argument_list|,
-name|progress
+name|handler
+argument_list|,
+name|severity
 argument_list|,
 name|NULL
 argument_list|,

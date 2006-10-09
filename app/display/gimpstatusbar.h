@@ -436,15 +436,20 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
+name|stock_id
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
 name|format
 parameter_list|,
 modifier|...
 parameter_list|)
 function_decl|G_GNUC_PRINTF
 parameter_list|(
-function_decl|2
-operator|,
 function_decl|3
+operator|,
+function_decl|4
 end_function_decl
 
 begin_empty_stmt
@@ -459,6 +464,11 @@ parameter_list|(
 name|GimpStatusbar
 modifier|*
 name|statusbar
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|stock_id
 parameter_list|,
 specifier|const
 name|gchar

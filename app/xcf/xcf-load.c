@@ -1129,9 +1129,14 @@ name|gimp_message
 argument_list|(
 name|gimp
 argument_list|,
+name|G_OBJECT
+argument_list|(
 name|info
 operator|->
 name|progress
+argument_list|)
+argument_list|,
+name|GIMP_MESSAGE_WARNING
 argument_list|,
 literal|"XCF: This file is corrupt!  I have loaded as much\n"
 literal|"of it as I can, but it is incomplete."
@@ -1151,9 +1156,14 @@ name|gimp_message
 argument_list|(
 name|gimp
 argument_list|,
+name|G_OBJECT
+argument_list|(
 name|info
 operator|->
 name|progress
+argument_list|)
+argument_list|,
+name|GIMP_MESSAGE_ERROR
 argument_list|,
 literal|"XCF: This file is corrupt!  I could not even\n"
 literal|"salvage any partial image data from it."
@@ -1245,9 +1255,14 @@ name|info
 operator|->
 name|gimp
 argument_list|,
+name|G_OBJECT
+argument_list|(
 name|info
 operator|->
 name|progress
+argument_list|)
+argument_list|,
+name|GIMP_MESSAGE_WARNING
 argument_list|,
 name|_
 argument_list|(
@@ -1529,9 +1544,14 @@ name|info
 operator|->
 name|gimp
 argument_list|,
+name|G_OBJECT
+argument_list|(
 name|info
 operator|->
 name|progress
+argument_list|)
+argument_list|,
+name|GIMP_MESSAGE_ERROR
 argument_list|,
 literal|"unknown compression type: %d"
 argument_list|,
@@ -1678,9 +1698,14 @@ name|info
 operator|->
 name|gimp
 argument_list|,
+name|G_OBJECT
+argument_list|(
 name|info
 operator|->
 name|progress
+argument_list|)
+argument_list|,
+name|GIMP_MESSAGE_WARNING
 argument_list|,
 literal|"guide orientation out of range in XCF file"
 argument_list|)
@@ -1860,9 +1885,14 @@ name|info
 operator|->
 name|gimp
 argument_list|,
+name|G_OBJECT
+argument_list|(
 name|info
 operator|->
 name|progress
+argument_list|)
+argument_list|,
+name|GIMP_MESSAGE_WARNING
 argument_list|,
 literal|"Warning, resolution out of range in XCF file"
 argument_list|)
@@ -1992,9 +2022,14 @@ name|info
 operator|->
 name|gimp
 argument_list|,
+name|G_OBJECT
+argument_list|(
 name|info
 operator|->
 name|progress
+argument_list|)
+argument_list|,
+name|GIMP_MESSAGE_WARNING
 argument_list|,
 literal|"Error while loading an image's parasites"
 argument_list|)
@@ -2050,9 +2085,14 @@ name|info
 operator|->
 name|gimp
 argument_list|,
+name|G_OBJECT
+argument_list|(
 name|info
 operator|->
 name|progress
+argument_list|)
+argument_list|,
+name|GIMP_MESSAGE_WARNING
 argument_list|,
 literal|"Warning, unit out of range in XCF file, "
 literal|"falling back to inches"
@@ -3020,9 +3060,14 @@ name|info
 operator|->
 name|gimp
 argument_list|,
+name|G_OBJECT
+argument_list|(
 name|info
 operator|->
 name|progress
+argument_list|)
+argument_list|,
+name|GIMP_MESSAGE_WARNING
 argument_list|,
 literal|"Error while loading a layer's parasites"
 argument_list|)
@@ -3652,9 +3697,14 @@ name|info
 operator|->
 name|gimp
 argument_list|,
+name|G_OBJECT
+argument_list|(
 name|info
 operator|->
 name|progress
+argument_list|)
+argument_list|,
+name|GIMP_MESSAGE_WARNING
 argument_list|,
 literal|"Error while loading a channel's parasites"
 argument_list|)
@@ -5204,9 +5254,14 @@ name|info
 operator|->
 name|gimp
 argument_list|,
+name|G_OBJECT
+argument_list|(
 name|info
 operator|->
 name|progress
+argument_list|)
+argument_list|,
+name|GIMP_MESSAGE_ERROR
 argument_list|,
 literal|"not enough tiles found in level"
 argument_list|)
@@ -5537,9 +5592,14 @@ name|info
 operator|->
 name|gimp
 argument_list|,
+name|G_OBJECT
+argument_list|(
 name|info
 operator|->
 name|progress
+argument_list|)
+argument_list|,
+name|GIMP_MESSAGE_ERROR
 argument_list|,
 literal|"encountered garbage after reading level: %d"
 argument_list|,
@@ -6926,9 +6986,14 @@ name|info
 operator|->
 name|gimp
 argument_list|,
+name|G_OBJECT
+argument_list|(
 name|info
 operator|->
 name|progress
+argument_list|)
+argument_list|,
+name|GIMP_MESSAGE_WARNING
 argument_list|,
 literal|"Unknown vectors version: %d (skipping)"
 argument_list|,

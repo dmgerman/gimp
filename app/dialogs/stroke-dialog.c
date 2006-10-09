@@ -102,12 +102,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpwidgets-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"stroke-dialog.h"
 end_include
 
@@ -1145,11 +1139,18 @@ operator|!
 name|drawable
 condition|)
 block|{
-name|gimp_show_message_dialog
+name|gimp_message
+argument_list|(
+name|context
+operator|->
+name|gimp
+argument_list|,
+name|G_OBJECT
 argument_list|(
 name|widget
+argument_list|)
 argument_list|,
-name|GTK_MESSAGE_WARNING
+name|GIMP_MESSAGE_WARNING
 argument_list|,
 name|_
 argument_list|(

@@ -269,7 +269,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
+name|gboolean
 name|gimp_thumb_box_progress_message
 parameter_list|(
 name|GimpProgress
@@ -279,6 +279,9 @@ parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpMessageSeverity
+name|severity
 parameter_list|,
 specifier|const
 name|gchar
@@ -1121,8 +1124,8 @@ end_function
 
 begin_function
 specifier|static
-name|void
-DECL|function|gimp_thumb_box_progress_message (GimpProgress * progress,Gimp * gimp,const gchar * domain,const gchar * message)
+name|gboolean
+DECL|function|gimp_thumb_box_progress_message (GimpProgress * progress,Gimp * gimp,GimpMessageSeverity severity,const gchar * domain,const gchar * message)
 name|gimp_thumb_box_progress_message
 parameter_list|(
 name|GimpProgress
@@ -1132,6 +1135,9 @@ parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpMessageSeverity
+name|severity
 parameter_list|,
 specifier|const
 name|gchar
@@ -1145,6 +1151,9 @@ name|message
 parameter_list|)
 block|{
 comment|/*  GimpThumbBox never shows any messages  */
+return|return
+name|TRUE
+return|;
 block|}
 end_function
 

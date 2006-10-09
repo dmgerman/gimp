@@ -190,7 +190,7 @@ name|progress
 parameter_list|)
 function_decl|;
 DECL|member|message
-name|void
+name|gboolean
 function_decl|(
 modifier|*
 name|message
@@ -203,6 +203,9 @@ parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpMessageSeverity
+name|severity
 parameter_list|,
 specifier|const
 name|gchar
@@ -358,6 +361,9 @@ parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpMessageSeverity
+name|severity
 parameter_list|,
 specifier|const
 name|gchar
