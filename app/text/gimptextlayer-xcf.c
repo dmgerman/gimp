@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c11c760103
+DECL|enum|__anon2a560e5a0103
 block|{
 DECL|enumerator|TEXT_LAYER_XCF_NONE
 name|TEXT_LAYER_XCF_NONE
@@ -203,8 +203,23 @@ condition|(
 name|error
 condition|)
 block|{
-name|g_message
+name|gimp_message
 argument_list|(
+name|gimp_item_get_image
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+operator|*
+name|layer
+argument_list|)
+argument_list|)
+operator|->
+name|gimp
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_MESSAGE_ERROR
+argument_list|,
 name|_
 argument_list|(
 literal|"Problems parsing the text parasite for layer '%s':\n"
@@ -228,8 +243,9 @@ operator|->
 name|message
 argument_list|)
 expr_stmt|;
-name|g_error_free
+name|g_clear_error
 argument_list|(
+operator|&
 name|error
 argument_list|)
 expr_stmt|;

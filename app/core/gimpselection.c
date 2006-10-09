@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcontext.h"
 end_include
 
@@ -1214,11 +1220,22 @@ literal|0
 argument_list|)
 condition|)
 block|{
-name|g_message
+name|gimp_message
 argument_list|(
+name|gimp_item_get_image
+argument_list|(
+name|item
+argument_list|)
+operator|->
+name|gimp
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_MESSAGE_WARNING
+argument_list|,
 name|_
 argument_list|(
-literal|"No selection to stroke."
+literal|"There is no selection to stroke."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2673,8 +2690,16 @@ operator|)
 operator|)
 condition|)
 block|{
-name|g_message
+name|gimp_message
 argument_list|(
+name|image
+operator|->
+name|gimp
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_MESSAGE_WARNING
+argument_list|,
 name|_
 argument_list|(
 literal|"Unable to cut or copy because the "
@@ -3336,8 +3361,16 @@ name|y2
 operator|)
 condition|)
 block|{
-name|g_message
+name|gimp_message
 argument_list|(
+name|image
+operator|->
+name|gimp
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_MESSAGE_WARNING
+argument_list|,
 name|_
 argument_list|(
 literal|"Cannot float selection because the "

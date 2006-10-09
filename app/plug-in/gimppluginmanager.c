@@ -180,7 +180,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon278929b80103
+DECL|enum|__anon2980b2290103
 block|{
 DECL|enumerator|PLUG_IN_OPENED
 name|PLUG_IN_OPENED
@@ -1508,8 +1508,16 @@ name|code
 operator|!=
 name|GIMP_CONFIG_ERROR_OPEN_ENOENT
 condition|)
-name|g_message
+name|gimp_message
 argument_list|(
+name|gimp
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_MESSAGE_ERROR
+argument_list|,
+literal|"%s"
+argument_list|,
 name|error
 operator|->
 name|message
@@ -1962,8 +1970,14 @@ name|error
 argument_list|)
 condition|)
 block|{
-name|g_message
+name|gimp_message
 argument_list|(
+name|gimp
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_MESSAGE_ERROR
+argument_list|,
 literal|"%s"
 argument_list|,
 name|error

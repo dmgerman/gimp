@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7d1e9b0103
+DECL|enum|__anon29c8f4e40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -105,7 +105,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7d1e9b0203
+DECL|enum|__anon29c8f4e40203
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -2062,7 +2062,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7d1e9b0308
+DECL|struct|__anon29c8f4e40308
 block|{
 DECL|member|x
 name|guint
@@ -2722,8 +2722,16 @@ operator|==
 name|G_FILE_ERROR_EXIST
 condition|)
 block|{
-name|g_message
+name|gimp_message
 argument_list|(
+name|manager
+operator|->
+name|gimp
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_MESSAGE_ERROR
+argument_list|,
 literal|"%s\n\n%s\n\n%s"
 argument_list|,
 name|_
@@ -2745,8 +2753,16 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|g_message
+name|gimp_message
 argument_list|(
+name|manager
+operator|->
+name|gimp
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_MESSAGE_ERROR
+argument_list|,
 name|_
 argument_list|(
 literal|"There was an error parsing the menu definition "

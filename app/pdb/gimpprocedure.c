@@ -221,6 +221,10 @@ name|GimpProcedure
 modifier|*
 name|procedure
 parameter_list|,
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|GValueArray
 modifier|*
 name|args
@@ -1314,6 +1318,8 @@ name|gimp_procedure_validate_args
 argument_list|(
 name|procedure
 argument_list|,
+name|gimp
+argument_list|,
 name|args
 argument_list|)
 condition|)
@@ -1486,6 +1492,8 @@ condition|(
 name|gimp_procedure_validate_args
 argument_list|(
 name|procedure
+argument_list|,
+name|gimp
 argument_list|,
 name|args
 argument_list|)
@@ -2055,12 +2063,16 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_procedure_validate_args (GimpProcedure * procedure,GValueArray * args)
+DECL|function|gimp_procedure_validate_args (GimpProcedure * procedure,Gimp * gimp,GValueArray * args)
 name|gimp_procedure_validate_args
 parameter_list|(
 name|GimpProcedure
 modifier|*
 name|procedure
+parameter_list|,
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|,
 name|GValueArray
 modifier|*
@@ -2159,8 +2171,14 @@ argument_list|(
 name|arg_type
 argument_list|)
 decl_stmt|;
-name|g_message
+name|gimp_message
 argument_list|(
+name|gimp
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_MESSAGE_ERROR
+argument_list|,
 name|_
 argument_list|(
 literal|"PDB calling error for procedure '%s':\n"
@@ -2324,8 +2342,14 @@ operator|&
 name|string_value
 argument_list|)
 expr_stmt|;
-name|g_message
+name|gimp_message
 argument_list|(
+name|gimp
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_MESSAGE_ERROR
+argument_list|,
 name|_
 argument_list|(
 literal|"PDB calling error for procedure '%s':\n"

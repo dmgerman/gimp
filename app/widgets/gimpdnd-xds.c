@@ -628,8 +628,16 @@ argument_list|(
 name|uri
 argument_list|)
 decl_stmt|;
-name|g_message
+name|gimp_message
 argument_list|(
+name|image
+operator|->
+name|gimp
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_MESSAGE_ERROR
+argument_list|,
 name|_
 argument_list|(
 literal|"Saving '%s' failed:\n\n%s"
@@ -683,8 +691,16 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-name|g_message
+name|gimp_message
 argument_list|(
+name|image
+operator|->
+name|gimp
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_MESSAGE_ERROR
+argument_list|,
 name|_
 argument_list|(
 literal|"The given filename does not have any known "

@@ -4129,8 +4129,16 @@ argument_list|(
 name|copy
 argument_list|)
 decl_stmt|;
-name|g_message
+name|gimp_message
 argument_list|(
+name|context
+operator|->
+name|gimp
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_MESSAGE_ERROR
+argument_list|,
 name|_
 argument_list|(
 literal|"Opening '%s' failed:\n\n%s"

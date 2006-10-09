@@ -791,8 +791,14 @@ operator|!
 name|file
 condition|)
 block|{
-name|g_message
+name|gimp_message
 argument_list|(
+name|gimp
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_MESSAGE_ERROR
+argument_list|,
 name|_
 argument_list|(
 literal|"Could not open '%s' for writing: %s"

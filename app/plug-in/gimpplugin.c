@@ -979,8 +979,18 @@ literal|1
 operator|)
 condition|)
 block|{
-name|g_message
+name|gimp_message
 argument_list|(
+name|plug_in
+operator|->
+name|manager
+operator|->
+name|gimp
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_MESSAGE_ERROR
+argument_list|,
 literal|"Unable to run plug-in \"%s\"\n(%s)\n\npipe() failed: %s"
 argument_list|,
 name|gimp_object_get_name
@@ -1522,8 +1532,18 @@ name|error
 argument_list|)
 condition|)
 block|{
-name|g_message
+name|gimp_message
 argument_list|(
+name|plug_in
+operator|->
+name|manager
+operator|->
+name|gimp
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_MESSAGE_ERROR
+argument_list|,
 literal|"Unable to run plug-in \"%s\"\n(%s)\n\n%s"
 argument_list|,
 name|gimp_object_get_name
@@ -3508,8 +3528,18 @@ operator|!
 name|proc
 condition|)
 block|{
-name|g_message
+name|gimp_message
 argument_list|(
+name|plug_in
+operator|->
+name|manager
+operator|->
+name|gimp
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_MESSAGE_ERROR
+argument_list|,
 literal|"Plug-in \"%s\"\n(%s)\n"
 literal|"attempted to register the menu item \"%s\" "
 literal|"for the procedure \"%s\".\n"
@@ -3592,8 +3622,18 @@ operator|->
 name|menu_label
 condition|)
 block|{
-name|g_message
+name|gimp_message
 argument_list|(
+name|plug_in
+operator|->
+name|manager
+operator|->
+name|gimp
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_MESSAGE_ERROR
+argument_list|,
 literal|"Plug-in \"%s\"\n(%s)\n"
 literal|"attempted to register the menu item \"%s\" "
 literal|"for procedure \"%s\".\n"
@@ -3640,8 +3680,20 @@ name|error
 argument_list|)
 condition|)
 block|{
-name|g_message
+name|gimp_message
 argument_list|(
+name|plug_in
+operator|->
+name|manager
+operator|->
+name|gimp
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_MESSAGE_ERROR
+argument_list|,
+literal|"%s"
+argument_list|,
 name|error
 operator|->
 name|message

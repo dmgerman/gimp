@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a53cec60103
+DECL|enum|__anon2999d80c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2092,8 +2092,16 @@ name|fonts
 argument_list|)
 condition|)
 block|{
-name|g_message
+name|gimp_message
 argument_list|(
+name|image
+operator|->
+name|gimp
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_MESSAGE_ERROR
+argument_list|,
 name|_
 argument_list|(
 literal|"Due to lack of any fonts, "

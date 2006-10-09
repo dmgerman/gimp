@@ -172,8 +172,16 @@ operator|!
 name|file_proc
 condition|)
 block|{
-name|g_message
+name|gimp_message
 argument_list|(
+name|manager
+operator|->
+name|gimp
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_MESSAGE_ERROR
+argument_list|,
 literal|"attempt to register nonexistent load handler \"%s\""
 argument_list|,
 name|name
@@ -253,8 +261,16 @@ index|]
 argument_list|)
 condition|)
 block|{
-name|g_message
+name|gimp_message
 argument_list|(
+name|manager
+operator|->
+name|gimp
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_MESSAGE_ERROR
+argument_list|,
 literal|"load handler \"%s\" does not take the standard "
 literal|"load handler args"
 argument_list|,
@@ -407,8 +423,16 @@ operator|!
 name|file_proc
 condition|)
 block|{
-name|g_message
+name|gimp_message
 argument_list|(
+name|manager
+operator|->
+name|gimp
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_MESSAGE_ERROR
+argument_list|,
 literal|"attempt to register nonexistent save handler \"%s\""
 argument_list|,
 name|name
@@ -491,8 +515,16 @@ index|]
 argument_list|)
 condition|)
 block|{
-name|g_message
+name|gimp_message
 argument_list|(
+name|manager
+operator|->
+name|gimp
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_MESSAGE_ERROR
+argument_list|,
 literal|"save handler \"%s\" does not take the standard "
 literal|"save handler args"
 argument_list|,

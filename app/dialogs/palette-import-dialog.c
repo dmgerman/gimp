@@ -138,7 +138,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a56c6d60103
+DECL|enum|__anon2c512e220103
 block|{
 DECL|enumerator|GRADIENT_IMPORT
 name|GRADIENT_IMPORT
@@ -3826,6 +3826,8 @@ name|dialog
 argument_list|)
 argument_list|,
 name|GIMP_MESSAGE_ERROR
+argument_list|,
+literal|"%s"
 argument_list|,
 name|error
 operator|->

@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a043b770103
+DECL|enum|__anon2b3ab30d0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -3240,8 +3240,19 @@ literal|0
 argument_list|)
 condition|)
 block|{
-name|g_message
+name|gimp_message
 argument_list|(
+name|gimp_item_get_image
+argument_list|(
+name|item
+argument_list|)
+operator|->
+name|gimp
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_MESSAGE_WARNING
+argument_list|,
 name|_
 argument_list|(
 literal|"Cannot stroke empty channel."

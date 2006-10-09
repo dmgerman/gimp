@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpparamspecs.h"
 end_include
 
@@ -65,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2acd7d740103
+DECL|enum|__anon28b633320103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1092,8 +1098,18 @@ operator|!=
 name|GIMP_PDB_SUCCESS
 condition|)
 block|{
-name|g_message
+name|gimp_message
 argument_list|(
+name|progress
+operator|->
+name|context
+operator|->
+name|gimp
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_MESSAGE_ERROR
+argument_list|,
 name|_
 argument_list|(
 literal|"Unable to run %s callback. "

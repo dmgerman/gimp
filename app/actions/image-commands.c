@@ -1388,6 +1388,10 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
+name|GtkWidget
+modifier|*
+name|widget
+decl_stmt|;
 name|gint
 name|x1
 decl_stmt|,
@@ -1400,6 +1404,13 @@ decl_stmt|;
 name|return_if_no_image
 argument_list|(
 name|image
+argument_list|,
+name|data
+argument_list|)
+expr_stmt|;
+name|return_if_no_widget
+argument_list|(
+name|widget
 argument_list|,
 name|data
 argument_list|)
@@ -1428,8 +1439,19 @@ name|y2
 argument_list|)
 condition|)
 block|{
-name|g_message
+name|gimp_message
 argument_list|(
+name|image
+operator|->
+name|gimp
+argument_list|,
+name|G_OBJECT
+argument_list|(
+name|widget
+argument_list|)
+argument_list|,
+name|GIMP_MESSAGE_WARNING
+argument_list|,
 name|_
 argument_list|(
 literal|"Cannot crop because the current selection is empty."

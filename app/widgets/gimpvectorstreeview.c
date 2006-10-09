@@ -960,6 +960,8 @@ argument_list|)
 argument_list|,
 name|GIMP_MESSAGE_ERROR
 argument_list|,
+literal|"%s"
+argument_list|,
 name|error
 operator|->
 name|message

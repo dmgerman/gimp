@@ -723,7 +723,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a58b18c0108
+DECL|struct|__anon276e5e110108
 block|{
 DECL|member|factory
 name|GimpDataFactory
@@ -1501,8 +1501,16 @@ condition|(
 name|error
 condition|)
 block|{
-name|g_message
+name|gimp_message
 argument_list|(
+name|factory
+operator|->
+name|gimp
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_MESSAGE_ERROR
+argument_list|,
 name|_
 argument_list|(
 literal|"Failed to save data:\n\n%s"
@@ -2094,7 +2102,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_data_factory_data_save_single (GimpDataFactory * factory,GimpData * data)
+DECL|function|gimp_data_factory_data_save_single (GimpDataFactory * factory,GimpData * data,GError ** error)
 name|gimp_data_factory_data_save_single
 parameter_list|(
 name|GimpDataFactory
@@ -2104,14 +2112,13 @@ parameter_list|,
 name|GimpData
 modifier|*
 name|data
-parameter_list|)
-block|{
+parameter_list|,
 name|GError
 modifier|*
+modifier|*
 name|error
-init|=
-name|NULL
-decl_stmt|;
+parameter_list|)
+block|{
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_DATA_FACTORY
@@ -2128,6 +2135,20 @@ name|GIMP_IS_DATA
 argument_list|(
 name|data
 argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|error
+operator|==
+name|NULL
+operator|||
+operator|*
+name|error
+operator|==
+name|NULL
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2164,9 +2185,30 @@ condition|(
 operator|!
 name|writable_dir
 condition|)
+block|{
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|GIMP_DATA_ERROR
+argument_list|,
+literal|0
+argument_list|,
+name|_
+argument_list|(
+literal|"Failed to save data:\n\n%s"
+argument_list|)
+argument_list|,
+name|_
+argument_list|(
+literal|"You don't have a writable data folder configured."
+argument_list|)
+argument_list|)
+expr_stmt|;
 return|return
 name|FALSE
 return|;
+block|}
 name|gimp_data_create_filename
 argument_list|(
 name|data
@@ -2197,7 +2239,6 @@ name|gimp_data_save
 argument_list|(
 name|data
 argument_list|,
-operator|&
 name|error
 argument_list|)
 condition|)
@@ -2205,28 +2246,25 @@ block|{
 comment|/*  check if there actually was an error (no error        *  means the data class does not implement save)        */
 if|if
 condition|(
+operator|!
 name|error
 condition|)
-block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|GIMP_DATA_ERROR
+argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"Failed to save data:\n\n%s"
 argument_list|)
 argument_list|,
-name|error
-operator|->
-name|message
+literal|"Data class does not implement saving"
 argument_list|)
 expr_stmt|;
-name|g_clear_error
-argument_list|(
-operator|&
-name|error
-argument_list|)
-expr_stmt|;
-block|}
 return|return
 name|FALSE
 return|;
@@ -2824,8 +2862,16 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|g_message
+name|gimp_message
 argument_list|(
+name|factory
+operator|->
+name|gimp
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_MESSAGE_ERROR
+argument_list|,
 name|_
 argument_list|(
 literal|"Failed to load data:\n\n%s"
