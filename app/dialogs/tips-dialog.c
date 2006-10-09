@@ -320,20 +320,18 @@ name|tip
 operator|=
 name|gimp_tip_new
 argument_list|(
+literal|"<b>%s</b>"
+argument_list|,
 name|_
 argument_list|(
-literal|"<b>Your GIMP tips file appears to be missing!</b>"
+literal|"Your GIMP tips file appears to be missing!"
 argument_list|)
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
-name|tip
-operator|->
-name|thetip
-operator|=
-name|g_strdup_printf
+name|gimp_tip_set
 argument_list|(
+name|tip
+argument_list|,
 name|_
 argument_list|(
 literal|"There should be a file called '%s'. "
@@ -350,10 +348,19 @@ name|tip
 operator|=
 name|gimp_tip_new
 argument_list|(
+literal|"<b>%s</b>"
+argument_list|,
 name|_
 argument_list|(
-literal|"<b>The GIMP tips file could not be parsed!</b>"
+literal|"The GIMP tips file could not be parsed!"
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_tip_set
+argument_list|(
+name|tip
+argument_list|,
+literal|"%s"
 argument_list|,
 name|error
 operator|->
