@@ -64,7 +64,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29630a9f0108
+DECL|struct|__anon295493a50108
 block|{
 DECL|member|xcenter
 name|gint
@@ -99,7 +99,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29630a9f0208
+DECL|struct|__anon295493a50208
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -3467,6 +3467,9 @@ name|xc
 argument_list|)
 operator|/
 operator|(
+operator|(
+name|gdouble
+operator|)
 name|pvals
 operator|.
 name|radius
@@ -3492,6 +3495,9 @@ name|yc
 argument_list|)
 operator|/
 operator|(
+operator|(
+name|gdouble
+operator|)
 name|pvals
 operator|.
 name|radius
