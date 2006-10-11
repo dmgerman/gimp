@@ -34,7 +34,7 @@ DECL|macro|LANCZOS_SPP
 define|#
 directive|define
 name|LANCZOS_SPP
-value|(1000)
+value|(4000)
 end_define
 
 begin_comment
@@ -57,6 +57,11 @@ directive|define
 name|LANCZOS_WIDTH
 value|(3)
 end_define
+
+begin_comment
+DECL|macro|LANCZOS_WIDTH
+comment|/* 3 for Lanczos3 code, for L4 prefer DUAL_LANCZOS below */
+end_comment
 
 begin_define
 DECL|macro|LANCZOS_WIDTH2
@@ -99,7 +104,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gdouble
+name|gfloat
 modifier|*
 name|create_lanczos_lookup
 parameter_list|(
@@ -115,6 +120,10 @@ end_endif
 
 begin_comment
 comment|/*  __SCALE_FUNCS_H__  */
+end_comment
+
+begin_comment
+comment|/* determining LANCZOS_SPP value   1000 points per unit will produce typically 1 bit of error per channel on a Lanczos3 window   4000 should not produce a detectable error caused by lookup table size.on 8b colours ie 24bit RGB   this req 80kB of memory comparable to a small 250x150 px image. Filling the array is a small part of   the time required for the transform.   This will need reviewing when GIMP handles images with more bytes per pixel. */
 end_comment
 
 end_unit

@@ -3983,11 +3983,15 @@ block|}
 end_function
 
 begin_comment
-comment|/* allocate and fill lookup table of Lanczos windowed sinc funtion */
+comment|/* allocate and fill lookup table of Lanczos windowed sinc function */
+end_comment
+
+begin_comment
+comment|/* use gfloat since errors due to granularity of array far exceed data precision*/
 end_comment
 
 begin_function
-name|gdouble
+name|gfloat
 modifier|*
 DECL|function|create_lanczos_lookup (void)
 name|create_lanczos_lookup
@@ -4013,13 +4017,13 @@ operator|-
 literal|1
 argument_list|)
 decl_stmt|;
-name|gdouble
+name|gfloat
 modifier|*
 name|lookup
 init|=
 name|g_new
 argument_list|(
-name|gdouble
+name|gfloat
 argument_list|,
 name|LANCZOS_SAMPLES
 argument_list|)
@@ -4110,7 +4114,7 @@ name|gpointer
 name|progress_data
 parameter_list|)
 block|{
-name|gdouble
+name|gfloat
 modifier|*
 name|lanczos
 init|=
