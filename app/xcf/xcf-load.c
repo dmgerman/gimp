@@ -5784,6 +5784,16 @@ decl_stmt|,
 modifier|*
 name|xcfdatalimit
 decl_stmt|;
+comment|/* Workaround for bug #357809: avoid crashing on g_malloc() and skip    * this tile (return TRUE without storing data) as if it did not    * contain any data.  It is better than returning FALSE, which would    * skip the whole hierarchy while there may still be some valid    * tiles in the file.    */
+if|if
+condition|(
+name|data_length
+operator|<=
+literal|0
+condition|)
+return|return
+name|TRUE
+return|;
 name|data
 operator|=
 name|tile_data_pointer
