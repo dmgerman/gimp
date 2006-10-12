@@ -135,7 +135,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon278bdc2c0103
+DECL|enum|__anon28f633630103
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -152,7 +152,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278bdc2c0208
+DECL|struct|__anon28f633630208
 block|{
 DECL|member|interlace
 name|gint
@@ -3622,41 +3622,41 @@ name|GtkWidget
 modifier|*
 name|dialog
 decl_stmt|;
-name|GtkWidget
-modifier|*
-name|label
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|vbox
-decl_stmt|;
 name|gboolean
 name|crop
 decl_stmt|;
 name|dialog
 operator|=
-name|gimp_dialog_new
+name|gtk_message_dialog_new
 argument_list|(
-name|_
-argument_list|(
-literal|"GIF Warning"
-argument_list|)
-argument_list|,
-literal|"gif_warning"
-argument_list|,
 name|NULL
 argument_list|,
 literal|0
 argument_list|,
-name|gimp_standard_help_func
+name|GTK_MESSAGE_WARNING
 argument_list|,
-literal|"file-gif-save"
+name|GTK_BUTTONS_NONE
+argument_list|,
+name|_
+argument_list|(
+literal|"The image you are trying to save as a "
+literal|"GIF contains layers which extend beyond "
+literal|"the actual borders of the image."
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_dialog_add_buttons
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|dialog
+argument_list|)
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|,
-name|GTK_STOCK_OK
+name|GIMP_STOCK_TOOL_CROP
 argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,
@@ -3678,16 +3678,6 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-name|gtk_window_set_resizable
-argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|dialog
-argument_list|)
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
 name|gimp_window_set_transient
 argument_list|(
 name|GTK_WINDOW
@@ -3696,86 +3686,21 @@ name|dialog
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*  the warning message  */
-name|vbox
-operator|=
-name|gtk_vbox_new
+name|gtk_message_dialog_format_secondary_text
 argument_list|(
-name|FALSE
-argument_list|,
-literal|12
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|vbox
-argument_list|)
-argument_list|,
-literal|12
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|GTK_DIALOG
+name|GTK_MESSAGE_DIALOG
 argument_list|(
 name|dialog
 argument_list|)
-operator|->
-name|vbox
-argument_list|)
 argument_list|,
-name|vbox
-argument_list|,
-name|TRUE
-argument_list|,
-name|TRUE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|vbox
-argument_list|)
-expr_stmt|;
-name|label
-operator|=
-name|gtk_label_new
-argument_list|(
 name|_
 argument_list|(
-literal|"The image which you are trying to save as a GIF\n"
-literal|"contains layers which extend beyond the actual\n"
-literal|"borders of the image.  This isn't allowed in GIFs,\n"
-literal|"I'm afraid.\n\n"
-literal|"You may choose whether to crop all of the layers to\n"
-literal|"the image borders, or cancel this save."
+literal|"The GIF file format does not "
+literal|"allow this.  You may choose "
+literal|"whether to crop all of the "
+literal|"layers to the image borders, "
+literal|"or cancel this save."
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|vbox
-argument_list|)
-argument_list|,
-name|label
-argument_list|,
-name|TRUE
-argument_list|,
-name|TRUE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|label
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -3786,9 +3711,9 @@ expr_stmt|;
 name|crop
 operator|=
 operator|(
-name|gimp_dialog_run
+name|gtk_dialog_run
 argument_list|(
-name|GIMP_DIALOG
+name|GTK_DIALOG
 argument_list|(
 name|dialog
 argument_list|)
