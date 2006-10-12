@@ -142,33 +142,32 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* Note: cubic function no longer clips result */
+comment|/* Catmull-Rom spline - not bad   * basic intro http://www.mvps.org/directx/articles/catmull/   * This formula will calculate an interpolated point between pt1 and pt2   * dx=0 returns pt1; dx=1 returns pt2   */
 end_comment
 
 begin_function
 specifier|static
 specifier|inline
 name|gdouble
-DECL|function|cubic (gdouble dx,gint jm1,gint j,gint jp1,gint jp2)
-name|cubic
+DECL|function|cubic_spline_fit (gdouble dx,gint pt0,gint pt1,gint pt2,gint pt3)
+name|cubic_spline_fit
 parameter_list|(
 name|gdouble
 name|dx
 parameter_list|,
 name|gint
-name|jm1
+name|pt0
 parameter_list|,
 name|gint
-name|j
+name|pt1
 parameter_list|,
 name|gint
-name|jp1
+name|pt2
 parameter_list|,
 name|gint
-name|jp2
+name|pt3
 parameter_list|)
 block|{
-comment|/* Catmull-Rom - not bad */
 return|return
 call|(
 name|gdouble
@@ -178,17 +177,17 @@ operator|(
 operator|(
 operator|(
 operator|-
-name|jm1
+name|pt0
 operator|+
 literal|3
 operator|*
-name|j
+name|pt1
 operator|-
 literal|3
 operator|*
-name|jp1
+name|pt2
 operator|+
-name|jp2
+name|pt3
 operator|)
 operator|*
 name|dx
@@ -196,17 +195,17 @@ operator|+
 operator|(
 literal|2
 operator|*
-name|jm1
+name|pt0
 operator|-
 literal|5
 operator|*
-name|j
+name|pt1
 operator|+
 literal|4
 operator|*
-name|jp1
+name|pt2
 operator|-
-name|jp2
+name|pt3
 operator|)
 operator|)
 operator|*
@@ -214,18 +213,18 @@ name|dx
 operator|+
 operator|(
 operator|-
-name|jm1
+name|pt0
 operator|+
-name|jp1
+name|pt2
 operator|)
 operator|)
 operator|*
 name|dx
 operator|+
 operator|(
-name|j
+name|pt1
 operator|+
-name|j
+name|pt1
 operator|)
 argument_list|)
 operator|/
@@ -831,7 +830,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|expand_line (gdouble * dest,const gdouble * src,gint bytes,gint old_width,gint width,GimpInterpolationType interp)
+DECL|function|expand_line (gdouble * dest,const gdouble * src,gint bpp,gint old_width,gint width,GimpInterpolationType interp)
 name|expand_line
 parameter_list|(
 name|gdouble
@@ -844,7 +843,7 @@ modifier|*
 name|src
 parameter_list|,
 name|gint
-name|bytes
+name|bpp
 parameter_list|,
 name|gint
 name|old_width
@@ -875,6 +874,7 @@ name|gdouble
 operator|)
 name|width
 decl_stmt|;
+comment|/* ie reverse scaling_factor */
 name|gint
 name|x
 decl_stmt|,
@@ -886,13 +886,13 @@ decl_stmt|;
 name|gdouble
 name|frac
 decl_stmt|;
-comment|/* we can overflow src's boundaries, so we expect our caller to have      allocated extra space for us to do so safely (see scale_region ()) */
-comment|/* this could be optimized much more by precalculating the coefficients for      each x */
+comment|/* we can overflow src's boundaries, so we expect our caller to have   allocated extra space for us to do so safely (see scale_region ()) */
 switch|switch
 condition|(
 name|interp
 condition|)
 block|{
+comment|/* -0.5 is because cubic() interpolates a position between 2nd and 3rd data points        * we are assigning to 2nd in dest, hence mean shift of +0.5        * +1, -1 ensures we dont (int) a negative; first src col only.        */
 case|case
 name|GIMP_INTERPOLATION_CUBIC
 case|:
@@ -910,35 +910,45 @@ name|x
 operator|++
 control|)
 block|{
+name|gdouble
+name|xr
+init|=
+name|x
+operator|*
+name|ratio
+operator|-
+literal|0.5
+decl_stmt|;
+if|if
+condition|(
+name|xr
+operator|<
+literal|0
+condition|)
 name|src_col
 operator|=
-operator|(
 call|(
 name|gint
 call|)
 argument_list|(
-name|x
-operator|*
-name|ratio
+name|xr
 operator|+
-literal|2.0
-operator|-
-literal|0.5
+literal|1
 argument_list|)
-operator|)
 operator|-
-literal|2
+literal|1
 expr_stmt|;
-comment|/* +2, -2 is there because (int) rounds towards 0 and we need              to round down */
-name|frac
+else|else
+name|src_col
 operator|=
 operator|(
-name|x
-operator|*
-name|ratio
-operator|-
-literal|0.5
+name|gint
 operator|)
+name|xr
+expr_stmt|;
+name|frac
+operator|=
+name|xr
 operator|-
 name|src_col
 expr_stmt|;
@@ -949,7 +959,7 @@ name|src
 index|[
 name|src_col
 operator|*
-name|bytes
+name|bpp
 index|]
 expr_stmt|;
 for|for
@@ -960,7 +970,7 @@ literal|0
 init|;
 name|b
 operator|<
-name|bytes
+name|bpp
 condition|;
 name|b
 operator|++
@@ -970,7 +980,7 @@ index|[
 name|b
 index|]
 operator|=
-name|cubic
+name|cubic_spline_fit
 argument_list|(
 name|frac
 argument_list|,
@@ -978,7 +988,7 @@ name|s
 index|[
 name|b
 operator|-
-name|bytes
+name|bpp
 index|]
 argument_list|,
 name|s
@@ -990,14 +1000,14 @@ name|s
 index|[
 name|b
 operator|+
-name|bytes
+name|bpp
 index|]
 argument_list|,
 name|s
 index|[
 name|b
 operator|+
-name|bytes
+name|bpp
 operator|*
 literal|2
 index|]
@@ -1005,10 +1015,11 @@ argument_list|)
 expr_stmt|;
 name|dest
 operator|+=
-name|bytes
+name|bpp
 expr_stmt|;
 block|}
 break|break;
+comment|/* -0.5 corrects the drift from averaging between adjacent points and assigning to dest[b]        * +1, -1 ensures we dont (int) a negative; first src col only.        */
 case|case
 name|GIMP_INTERPOLATION_LINEAR
 case|:
@@ -1026,35 +1037,31 @@ name|x
 operator|++
 control|)
 block|{
-name|src_col
-operator|=
+name|gdouble
+name|xr
+init|=
 operator|(
-call|(
-name|gint
-call|)
-argument_list|(
 name|x
 operator|*
 name|ratio
 operator|+
-literal|2.0
+literal|1
 operator|-
 literal|0.5
-argument_list|)
 operator|)
 operator|-
-literal|2
-expr_stmt|;
-comment|/* +2, -2 is there because (int) rounds towards 0 and we need              to round down */
-name|frac
+literal|1
+decl_stmt|;
+name|src_col
 operator|=
 operator|(
-name|x
-operator|*
-name|ratio
-operator|-
-literal|0.5
+name|gint
 operator|)
+name|xr
+expr_stmt|;
+name|frac
+operator|=
+name|xr
 operator|-
 name|src_col
 expr_stmt|;
@@ -1065,7 +1072,7 @@ name|src
 index|[
 name|src_col
 operator|*
-name|bytes
+name|bpp
 index|]
 expr_stmt|;
 for|for
@@ -1076,7 +1083,7 @@ literal|0
 init|;
 name|b
 operator|<
-name|bytes
+name|bpp
 condition|;
 name|b
 operator|++
@@ -1092,7 +1099,7 @@ name|s
 index|[
 name|b
 operator|+
-name|bytes
+name|bpp
 index|]
 operator|-
 name|s
@@ -1111,7 +1118,7 @@ operator|)
 expr_stmt|;
 name|dest
 operator|+=
-name|bytes
+name|bpp
 expr_stmt|;
 block|}
 break|break;
@@ -1128,6 +1135,8 @@ case|:
 name|g_assert_not_reached
 argument_list|()
 expr_stmt|;
+break|break;
+default|default:
 break|break;
 block|}
 block|}
@@ -2362,7 +2371,7 @@ name|new_y
 decl_stmt|;
 name|p0
 operator|=
-name|cubic
+name|cubic_spline_fit
 argument_list|(
 name|dy
 argument_list|,
@@ -2377,7 +2386,7 @@ argument_list|)
 expr_stmt|;
 name|p1
 operator|=
-name|cubic
+name|cubic_spline_fit
 argument_list|(
 name|dy
 argument_list|,
@@ -2392,7 +2401,7 @@ argument_list|)
 expr_stmt|;
 name|p2
 operator|=
-name|cubic
+name|cubic_spline_fit
 argument_list|(
 name|dy
 argument_list|,
@@ -2407,7 +2416,7 @@ argument_list|)
 expr_stmt|;
 name|p3
 operator|=
-name|cubic
+name|cubic_spline_fit
 argument_list|(
 name|dy
 argument_list|,
@@ -3983,11 +3992,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* allocate and fill lookup table of Lanczos windowed sinc function */
-end_comment
-
-begin_comment
-comment|/* use gfloat since errors due to granularity of array far exceed data precision*/
+comment|/*  * allocate and fill lookup table of Lanczos windowed sinc function  * use gfloat since errors due to granularity of array far exceed data precision  */
 end_comment
 
 begin_function
@@ -4003,9 +4008,6 @@ specifier|const
 name|gdouble
 name|dx
 init|=
-operator|(
-name|gdouble
-operator|)
 name|LANCZOS_WIDTH
 operator|/
 call|(
@@ -4116,7 +4118,7 @@ parameter_list|)
 block|{
 name|gfloat
 modifier|*
-name|lanczos
+name|kernel_lookup
 init|=
 name|NULL
 decl_stmt|;
@@ -4133,12 +4135,6 @@ index|[
 name|LANCZOS_WIDTH2
 index|]
 decl_stmt|;
-name|gdouble
-name|kx_sum
-decl_stmt|,
-name|ky_sum
-decl_stmt|;
-comment|/* sums of Lanczos kernel coeffs       */
 name|gdouble
 name|newval
 decl_stmt|;
@@ -4264,9 +4260,6 @@ specifier|const
 name|gdouble
 name|scale_x
 init|=
-operator|(
-name|gdouble
-operator|)
 name|dst_width
 operator|/
 operator|(
@@ -4278,9 +4271,6 @@ specifier|const
 name|gdouble
 name|scale_y
 init|=
-operator|(
-name|gdouble
-operator|)
 name|dst_height
 operator|/
 operator|(
@@ -4412,8 +4402,8 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-comment|/* allocate and fill lanczos lookup table */
-name|lanczos
+comment|/* allocate and fill kernel_lookup lookup table */
+name|kernel_lookup
 operator|=
 name|create_lanczos_lookup
 argument_list|()
@@ -4576,48 +4566,100 @@ name|dsrc_y
 decl_stmt|;
 comment|/* corresponding scaled position in source image */
 name|gint
-name|src_x
+name|int_src_x
 decl_stmt|,
-name|src_y
+name|int_src_y
 decl_stmt|;
-comment|/* int coordinates in source image */
+comment|/* integer part of coordinates in source image   */
 name|gint
 name|x_shift
 decl_stmt|,
 name|y_shift
 decl_stmt|;
-comment|/* index into Lanczos lookup  */
-comment|/*              Use linear trans. for determining source coordinates from              destination. Coefficient -0.5 fixes the offset error.            */
-comment|/*           dsrc_x = itrans[0] * ((gdouble) x) + itrans[1] * ((gdouble) y) + itrans[2] - 0.5;           dsrc_y = itrans[3] * ((gdouble) x) + itrans[4] * ((gdouble) y) + itrans[5] - 0.5; */
-comment|/*** why use matrix here??? */
+comment|/* index into Lanczos lookup                     */
+name|gdouble
+name|kx_sum
+decl_stmt|,
+name|ky_sum
+decl_stmt|;
+comment|/* sums of Lanczos kernel coeffs                 */
+comment|/* -0.5 corrects image drift.due to average offset used in lookup */
 name|dsrc_x
 operator|=
 name|x
 operator|/
 name|scale_x
+operator|-
+literal|0.5
 expr_stmt|;
 name|dsrc_y
 operator|=
 name|y
 operator|/
 name|scale_y
+operator|-
+literal|0.5
 expr_stmt|;
-comment|/* Coordinates in source image */
-name|src_x
-operator|=
-operator|(
-name|gint
-operator|)
+comment|/* avoid (int) on negative*/
+if|if
+condition|(
 name|dsrc_x
-expr_stmt|;
-name|src_y
+operator|>
+literal|0
+condition|)
+name|int_src_x
 operator|=
-operator|(
+call|(
 name|gint
-operator|)
-name|dsrc_y
+call|)
+argument_list|(
+name|dsrc_x
+argument_list|)
 expr_stmt|;
-comment|/* get weight for fractional error */
+else|else
+name|int_src_x
+operator|=
+call|(
+name|gint
+call|)
+argument_list|(
+name|dsrc_x
+operator|+
+literal|1
+argument_list|)
+operator|-
+literal|1
+expr_stmt|;
+if|if
+condition|(
+name|dsrc_y
+operator|>
+literal|0
+condition|)
+name|int_src_y
+operator|=
+call|(
+name|gint
+call|)
+argument_list|(
+name|dsrc_y
+argument_list|)
+expr_stmt|;
+else|else
+name|int_src_y
+operator|=
+call|(
+name|gint
+call|)
+argument_list|(
+name|dsrc_y
+operator|+
+literal|1
+argument_list|)
+operator|-
+literal|1
+expr_stmt|;
+comment|/* calc lookup offsets for non-interger remainders */
 name|x_shift
 operator|=
 call|(
@@ -4627,10 +4669,12 @@ argument_list|(
 operator|(
 name|dsrc_x
 operator|-
-name|src_x
+name|int_src_x
 operator|)
 operator|*
 name|LANCZOS_SPP
+operator|+
+literal|0.5
 argument_list|)
 expr_stmt|;
 name|y_shift
@@ -4642,13 +4686,15 @@ argument_list|(
 operator|(
 name|dsrc_y
 operator|-
-name|src_y
+name|int_src_y
 operator|)
 operator|*
 name|LANCZOS_SPP
+operator|+
+literal|0.5
 argument_list|)
 expr_stmt|;
-comment|/*  Fill x_kernel[] and y_kernel[] with lanczos coeffs            *            *  lanczos = Is a lookup table that contains half of the symetrical windowed-sinc func.            *            *  x_shift, y_shift = shift from kernel center due to fractional part            *           of interpollation            *            *  The for-loop creates two 1-D kernels for convolution.            *    - If the center position +/- LANCZOS_WIDTH is out of            *      the source image coordinates set the value to 0.0            *      FIXME => partial kernel. Define a more rigourous border mode.            *    - If the kernel index is out of range set value to 0.0            *      ( caused by offset coeff. obselete??)            */
+comment|/*  Fill x_kernel[] and y_kernel[] with lanczos coeffs            *            *  kernel_lookup = Is a lookup table that contains half of the symetrical windowed-sinc func.            *            *  x_shift, y_shift = shift from kernel center due to fractional part            *           of interpollation            *            *  The for-loop creates two 1-D kernels for convolution.            *    - If the center position +/- LANCZOS_WIDTH is out of            *      the source image coordinates set the value to 0.0            *      FIXME => partial kernel. Define a more rigourous border mode.            *    - If the kernel index is out of range set value to 0.0            *      ( caused by offset coeff. obselete??)            */
 name|kx_sum
 operator|=
 name|ky_sum
@@ -4679,13 +4725,13 @@ name|LANCZOS_SPP
 decl_stmt|;
 if|if
 condition|(
-name|src_x
+name|int_src_x
 operator|+
 name|i
 operator|>=
 literal|0
 operator|&&
-name|src_x
+name|int_src_x
 operator|+
 name|i
 operator|<
@@ -4700,7 +4746,7 @@ operator|+
 name|i
 index|]
 operator|=
-name|lanczos
+name|kernel_lookup
 index|[
 name|ABS
 argument_list|(
@@ -4722,13 +4768,13 @@ literal|0.0
 expr_stmt|;
 if|if
 condition|(
-name|src_y
+name|int_src_y
 operator|+
 name|i
 operator|>=
 literal|0
 operator|&&
-name|src_y
+name|int_src_y
 operator|+
 name|i
 operator|<
@@ -4743,7 +4789,7 @@ operator|+
 name|i
 index|]
 operator|=
-name|lanczos
+name|kernel_lookup
 index|[
 name|ABS
 argument_list|(
@@ -4805,7 +4851,7 @@ control|(
 init|;
 name|row
 operator|<
-name|src_y
+name|int_src_y
 condition|;
 control|)
 block|{
@@ -4876,7 +4922,7 @@ control|(
 init|;
 name|row
 operator|>
-name|src_y
+name|int_src_y
 condition|;
 control|)
 block|{
@@ -5006,7 +5052,7 @@ index|]
 argument_list|,
 name|x_kernel
 argument_list|,
-name|src_x
+name|int_src_x
 argument_list|,
 name|bytes
 argument_list|,
@@ -5132,7 +5178,7 @@ index|]
 argument_list|,
 name|x_kernel
 argument_list|,
-name|src_x
+name|int_src_x
 argument_list|,
 name|bytes
 argument_list|,
@@ -5215,7 +5261,7 @@ index|]
 argument_list|,
 name|x_kernel
 argument_list|,
-name|src_x
+name|int_src_x
 argument_list|,
 name|bytes
 argument_list|,
@@ -5272,7 +5318,7 @@ argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
-name|lanczos
+name|kernel_lookup
 argument_list|)
 expr_stmt|;
 block|}
