@@ -3033,7 +3033,7 @@ argument_list|)
 decl_stmt|;
 name|gtk_message_dialog_format_secondary_text
 argument_list|(
-name|GTK_DIALOG
+name|GTK_MESSAGE_DIALOG
 argument_list|(
 name|dialog
 argument_list|)
