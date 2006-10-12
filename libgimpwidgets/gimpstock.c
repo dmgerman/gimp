@@ -2262,7 +2262,7 @@ name|GIMP_STOCK_TOOL_CROP
 block|,
 name|N_
 argument_list|(
-literal|"Crop"
+literal|"Cr_op"
 argument_list|)
 block|,
 literal|0
@@ -2639,7 +2639,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27edf5200108
+DECL|struct|__anon2c5480ca0108
 block|{
 DECL|member|stock_id
 specifier|const
@@ -3451,7 +3451,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27edf5200208
+DECL|struct|__anon2c5480ca0208
 block|{
 DECL|member|stock_id
 specifier|const
@@ -4355,7 +4355,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27edf5200308
+DECL|struct|__anon2c5480ca0308
 block|{
 DECL|member|stock_id
 specifier|const
@@ -4452,7 +4452,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27edf5200408
+DECL|struct|__anon2c5480ca0408
 block|{
 DECL|member|stock_id
 specifier|const
@@ -4597,7 +4597,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27edf5200508
+DECL|struct|__anon2c5480ca0508
 block|{
 DECL|member|stock_id
 specifier|const
