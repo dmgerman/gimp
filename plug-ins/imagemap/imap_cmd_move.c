@@ -83,7 +83,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2b70cdde0108
+DECL|struct|__anon2b7ab6410108
 typedef|typedef
 struct|struct
 block|{
@@ -443,7 +443,7 @@ name|preferences
 operator|->
 name|normal_gc
 argument_list|,
-name|GDK_EQUIV
+name|GDK_XOR
 argument_list|)
 expr_stmt|;
 name|gdk_gc_set_function
@@ -454,7 +454,7 @@ name|preferences
 operator|->
 name|selected_gc
 argument_list|,
-name|GDK_EQUIV
+name|GDK_XOR
 argument_list|)
 expr_stmt|;
 name|hide_url

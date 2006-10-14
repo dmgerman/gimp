@@ -52,7 +52,7 @@ file|"imap_string.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon2a084d640108
+DECL|struct|__anon294b6f040108
 typedef|typedef
 struct|struct
 block|{
@@ -2314,7 +2314,7 @@ name|preferences
 operator|->
 name|normal_gc
 argument_list|,
-name|GDK_EQUIV
+name|GDK_XOR
 argument_list|)
 expr_stmt|;
 name|g_signal_connect

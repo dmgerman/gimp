@@ -4768,7 +4768,7 @@ name|_preferences
 operator|.
 name|normal_gc
 argument_list|,
-name|GDK_EQUIV
+name|GDK_XOR
 argument_list|)
 expr_stmt|;
 name|gdk_gc_set_function
@@ -4777,7 +4777,7 @@ name|_preferences
 operator|.
 name|selected_gc
 argument_list|,
-name|GDK_EQUIV
+name|GDK_XOR
 argument_list|)
 expr_stmt|;
 name|object_list_draw_selected

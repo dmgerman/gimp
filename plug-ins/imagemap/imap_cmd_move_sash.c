@@ -61,7 +61,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon275ddee30108
+DECL|struct|__anon278f15b10108
 typedef|typedef
 struct|struct
 block|{
@@ -598,7 +598,7 @@ argument_list|()
 operator|->
 name|selected_gc
 argument_list|,
-name|GDK_EQUIV
+name|GDK_XOR
 argument_list|)
 expr_stmt|;
 return|return
