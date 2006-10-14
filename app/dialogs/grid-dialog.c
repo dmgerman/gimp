@@ -18,7 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpbase/gimplimits.h"
+file|"libgimpbase/gimpbase.h"
 end_include
 
 begin_include
@@ -199,10 +199,6 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|context
-operator|==
-name|NULL
-operator|||
 name|GIMP_IS_CONTEXT
 argument_list|(
 name|context
