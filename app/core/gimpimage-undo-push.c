@@ -60,13 +60,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimp-parasites.h"
+file|"gimp.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimp.h"
+file|"gimp-parasites.h"
 end_include
 
 begin_include
@@ -79,6 +79,12 @@ begin_include
 include|#
 directive|include
 file|"gimpguide.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpimage.h"
 end_include
 
 begin_include
@@ -114,25 +120,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpimage.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpitemundo.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimplayer-floating-sel.h"
+file|"gimplayer.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimplayer.h"
+file|"gimplayer-floating-sel.h"
 end_include
 
 begin_include
@@ -13656,8 +13656,18 @@ block|{
 case|case
 name|GIMP_UNDO_MODE_UNDO
 case|:
-name|g_message
+name|gimp_message
 argument_list|(
+name|undo
+operator|->
+name|image
+operator|->
+name|gimp
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_MESSAGE_WARNING
+argument_list|,
 name|_
 argument_list|(
 literal|"Can't undo %s"
