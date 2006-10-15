@@ -118,10 +118,16 @@ name|gdouble
 name|max
 parameter_list|,
 name|gdouble
+name|small_inc
+parameter_list|,
+name|gdouble
 name|inc
 parameter_list|,
 name|gdouble
 name|skip_inc
+parameter_list|,
+name|gdouble
+name|delta_factor
 parameter_list|,
 name|gboolean
 name|wrap
@@ -144,6 +150,9 @@ specifier|const
 name|gchar
 modifier|*
 name|property_name
+parameter_list|,
+name|gdouble
+name|small_inc
 parameter_list|,
 name|gdouble
 name|inc

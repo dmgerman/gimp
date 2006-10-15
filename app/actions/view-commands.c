@@ -505,8 +505,14 @@ argument_list|,
 literal|512.0
 argument_list|,
 literal|1.0
+operator|/
+literal|8.0
+argument_list|,
+literal|1.0
 argument_list|,
 literal|16.0
+argument_list|,
+literal|0.0
 argument_list|,
 name|FALSE
 argument_list|)
@@ -885,6 +891,8 @@ name|hsbdata
 operator|->
 name|page_size
 argument_list|,
+literal|1
+argument_list|,
 name|shell
 operator|->
 name|hsbdata
@@ -896,6 +904,8 @@ operator|->
 name|hsbdata
 operator|->
 name|page_increment
+argument_list|,
+literal|0
 argument_list|,
 name|FALSE
 argument_list|)
@@ -988,6 +998,8 @@ name|vsbdata
 operator|->
 name|page_size
 argument_list|,
+literal|1
+argument_list|,
 name|shell
 operator|->
 name|vsbdata
@@ -999,6 +1011,8 @@ operator|->
 name|vsbdata
 operator|->
 name|page_increment
+argument_list|,
+literal|0
 argument_list|,
 name|FALSE
 argument_list|)

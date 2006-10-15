@@ -3771,6 +3771,42 @@ name|NULL
 block|}
 block|,
 block|{
+literal|"context-brush-radius-decrease-less"
+block|,
+name|GIMP_STOCK_BRUSH
+block|,
+literal|"Decrease Radius Less"
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|GIMP_ACTION_SELECT_SMALL_PREVIOUS
+block|,
+name|FALSE
+block|,
+name|NULL
+block|}
+block|,
+block|{
+literal|"context-brush-radius-increase-less"
+block|,
+name|GIMP_STOCK_BRUSH
+block|,
+literal|"Increase Radius Less"
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|GIMP_ACTION_SELECT_SMALL_NEXT
+block|,
+name|FALSE
+block|,
+name|NULL
+block|}
+block|,
+block|{
 literal|"context-brush-radius-decrease"
 block|,
 name|GIMP_STOCK_BRUSH
@@ -3841,7 +3877,43 @@ name|FALSE
 block|,
 name|NULL
 block|}
-block|, }
+block|,
+block|{
+literal|"context-brush-radius-decrease-percent"
+block|,
+name|GIMP_STOCK_BRUSH
+block|,
+literal|"Decrease Radius Relative"
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|GIMP_ACTION_SELECT_PERCENT_PREVIOUS
+block|,
+name|FALSE
+block|,
+name|NULL
+block|}
+block|,
+block|{
+literal|"context-brush-radius-increase-percent"
+block|,
+name|GIMP_STOCK_BRUSH
+block|,
+literal|"Increase Radius Relative"
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|GIMP_ACTION_SELECT_PERCENT_NEXT
+block|,
+name|FALSE
+block|,
+name|NULL
+block|}
+block|}
 decl_stmt|;
 end_decl_stmt
 
@@ -3979,7 +4051,7 @@ name|FALSE
 block|,
 name|NULL
 block|}
-block|, }
+block|}
 decl_stmt|;
 end_decl_stmt
 
@@ -4117,7 +4189,7 @@ name|FALSE
 block|,
 name|NULL
 block|}
-block|, }
+block|}
 decl_stmt|;
 end_decl_stmt
 
@@ -4255,7 +4327,7 @@ name|FALSE
 block|,
 name|NULL
 block|}
-block|, }
+block|}
 decl_stmt|;
 end_decl_stmt
 
@@ -4393,7 +4465,7 @@ name|FALSE
 block|,
 name|NULL
 block|}
-block|, }
+block|}
 decl_stmt|;
 end_decl_stmt
 

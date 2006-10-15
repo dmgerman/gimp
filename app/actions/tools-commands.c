@@ -928,6 +928,8 @@ literal|"average-radius"
 argument_list|,
 literal|1.0
 argument_list|,
+literal|1.0
+argument_list|,
 literal|10.0
 argument_list|,
 name|FALSE
@@ -1002,6 +1004,8 @@ name|tool_options
 argument_list|)
 argument_list|,
 literal|"size"
+argument_list|,
+literal|1.0
 argument_list|,
 literal|1.0
 argument_list|,
@@ -1080,6 +1084,8 @@ argument_list|)
 argument_list|,
 literal|"blob-aspect"
 argument_list|,
+literal|1.0
+argument_list|,
 literal|0.1
 argument_list|,
 literal|1.0
@@ -1156,6 +1162,8 @@ name|tool_options
 argument_list|)
 argument_list|,
 literal|"blob-angle"
+argument_list|,
+literal|1.0
 argument_list|,
 literal|1.0
 argument_list|,

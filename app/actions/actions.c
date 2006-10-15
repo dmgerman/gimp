@@ -132,6 +132,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"actions.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"brush-editor-actions.h"
 end_include
 
@@ -1752,7 +1758,7 @@ end_function
 
 begin_function
 name|gdouble
-DECL|function|action_select_value (GimpActionSelectType select_type,gdouble value,gdouble min,gdouble max,gdouble inc,gdouble skip_inc,gboolean wrap)
+DECL|function|action_select_value (GimpActionSelectType select_type,gdouble value,gdouble min,gdouble max,gdouble small_inc,gdouble inc,gdouble skip_inc,gdouble delta_factor,gboolean wrap)
 name|action_select_value
 parameter_list|(
 name|GimpActionSelectType
@@ -1768,10 +1774,16 @@ name|gdouble
 name|max
 parameter_list|,
 name|gdouble
+name|small_inc
+parameter_list|,
+name|gdouble
 name|inc
 parameter_list|,
 name|gdouble
 name|skip_inc
+parameter_list|,
+name|gdouble
+name|delta_factor
 parameter_list|,
 name|gboolean
 name|wrap
@@ -1796,6 +1808,22 @@ case|:
 name|value
 operator|=
 name|max
+expr_stmt|;
+break|break;
+case|case
+name|GIMP_ACTION_SELECT_SMALL_PREVIOUS
+case|:
+name|value
+operator|-=
+name|small_inc
+expr_stmt|;
+break|break;
+case|case
+name|GIMP_ACTION_SELECT_SMALL_NEXT
+case|:
+name|value
+operator|+=
+name|small_inc
 expr_stmt|;
 break|break;
 case|case
@@ -1828,6 +1856,48 @@ case|:
 name|value
 operator|+=
 name|skip_inc
+expr_stmt|;
+break|break;
+case|case
+name|GIMP_ACTION_SELECT_PERCENT_PREVIOUS
+case|:
+name|g_return_val_if_fail
+argument_list|(
+name|delta_factor
+operator|>=
+literal|0.0
+argument_list|,
+name|value
+argument_list|)
+expr_stmt|;
+name|value
+operator|/=
+operator|(
+literal|1.0
+operator|+
+name|delta_factor
+operator|)
+expr_stmt|;
+break|break;
+case|case
+name|GIMP_ACTION_SELECT_PERCENT_NEXT
+case|:
+name|g_return_val_if_fail
+argument_list|(
+name|delta_factor
+operator|>=
+literal|0.0
+argument_list|,
+name|value
+argument_list|)
+expr_stmt|;
+name|value
+operator|*=
+operator|(
+literal|1.0
+operator|+
+name|delta_factor
+operator|)
 expr_stmt|;
 break|break;
 default|default:
@@ -1925,7 +1995,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|action_select_property (GimpActionSelectType select_type,GObject * object,const gchar * property_name,gdouble inc,gdouble skip_inc,gboolean wrap)
+DECL|function|action_select_property (GimpActionSelectType select_type,GObject * object,const gchar * property_name,gdouble small_inc,gdouble inc,gdouble skip_inc,gboolean wrap)
 name|action_select_property
 parameter_list|(
 name|GimpActionSelectType
@@ -1939,6 +2009,9 @@ specifier|const
 name|gchar
 modifier|*
 name|property_name
+parameter_list|,
+name|gdouble
+name|small_inc
 parameter_list|,
 name|gdouble
 name|inc
@@ -2026,9 +2099,13 @@ argument_list|)
 operator|->
 name|maximum
 argument_list|,
+name|small_inc
+argument_list|,
 name|inc
 argument_list|,
 name|skip_inc
+argument_list|,
+literal|0
 argument_list|,
 name|wrap
 argument_list|)
