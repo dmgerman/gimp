@@ -939,6 +939,14 @@ operator|&
 name|error
 argument_list|)
 expr_stmt|;
+name|gimp_dialog_set_sensitive
+argument_list|(
+name|dialog
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+return|return;
 block|}
 block|}
 name|gtk_widget_destroy
