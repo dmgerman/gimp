@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<errno.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<time.h>
 end_include
 
@@ -85,6 +91,12 @@ directive|include
 file|<winsock2.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|<libgimpbase/gimpwin32-io.h>
+end_include
+
 begin_else
 else|#
 directive|else
@@ -135,12 +147,6 @@ directive|include
 file|<netdb.h>
 end_include
 
-begin_include
-include|#
-directive|include
-file|<errno.h>
-end_include
-
 begin_endif
 endif|#
 directive|endif
@@ -173,7 +179,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"siod-wrapper.h"
+file|"scheme-wrapper.h"
 end_include
 
 begin_include
@@ -413,7 +419,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c4c6e50108
+DECL|struct|__anon2b3af7e60108
 block|{
 DECL|member|command
 name|gchar
@@ -437,7 +443,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c4c6e50208
+DECL|struct|__anon2b3af7e60208
 block|{
 DECL|member|port_entry
 name|GtkWidget
@@ -866,7 +872,7 @@ name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 name|g_warning
 argument_list|(
-literal|"Script-Fu server does handle \"GIMP_RUN_WITH_LAST_VALS\""
+literal|"Script-Fu server does not handle \"GIMP_RUN_WITH_LAST_VALS\""
 argument_list|)
 expr_stmt|;
 default|default:
@@ -1534,7 +1540,7 @@ argument_list|()
 expr_stmt|;
 name|server_log
 argument_list|(
-literal|"Script-fu server initialized and listening...\n"
+literal|"Script-Fu server initialized and listening...\n"
 argument_list|)
 expr_stmt|;
 comment|/*  Loop until the server is finished  */
@@ -1666,7 +1672,7 @@ expr_stmt|;
 comment|/*  run the command  */
 if|if
 condition|(
-name|siod_interpret_string
+name|ts_interpret_string
 argument_list|(
 name|cmd
 operator|->
@@ -1682,7 +1688,7 @@ name|TRUE
 expr_stmt|;
 name|response
 operator|=
-name|siod_get_error_msg
+name|ts_get_error_msg
 argument_list|()
 expr_stmt|;
 name|response_len
@@ -1708,7 +1714,7 @@ name|FALSE
 expr_stmt|;
 name|response
 operator|=
-name|siod_get_success_msg
+name|ts_get_success_msg
 argument_list|()
 expr_stmt|;
 name|response_len

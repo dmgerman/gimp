@@ -6,30 +6,20 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|SIOD_WRAPPER_H
+name|SCHEME_WRAPPER_H
 end_ifndef
 
 begin_define
-DECL|macro|SIOD_WRAPPER_H
+DECL|macro|SCHEME_WRAPPER_H
 define|#
 directive|define
-name|SIOD_WRAPPER_H
+name|SCHEME_WRAPPER_H
 end_define
-
-begin_function_decl
-name|void
-name|siod_init
-parameter_list|(
-name|gboolean
-name|register_scripts
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_function_decl
 name|FILE
 modifier|*
-name|siod_get_output_file
+name|ts_get_output_file
 parameter_list|(
 name|void
 parameter_list|)
@@ -38,7 +28,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|siod_set_output_file
+name|ts_set_output_file
 parameter_list|(
 name|FILE
 modifier|*
@@ -49,7 +39,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|siod_set_console_mode
+name|ts_set_console_mode
 parameter_list|(
 name|int
 name|flag
@@ -59,7 +49,7 @@ end_function_decl
 
 begin_function_decl
 name|gint
-name|siod_get_verbose_level
+name|ts_get_verbose_level
 parameter_list|(
 name|void
 parameter_list|)
@@ -68,17 +58,25 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|siod_set_verbose_level
+name|ts_set_verbose_level
 parameter_list|(
 name|gint
-name|verbose_level
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|void
-name|siod_print_welcome
+name|ts_set_print_flag
+parameter_list|(
+name|gint
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|ts_print_welcome
 parameter_list|(
 name|void
 parameter_list|)
@@ -89,7 +87,7 @@ begin_function_decl
 specifier|const
 name|gchar
 modifier|*
-name|siod_get_error_msg
+name|ts_get_error_msg
 parameter_list|(
 name|void
 parameter_list|)
@@ -100,7 +98,7 @@ begin_function_decl
 specifier|const
 name|gchar
 modifier|*
-name|siod_get_success_msg
+name|ts_get_success_msg
 parameter_list|(
 name|void
 parameter_list|)
@@ -109,30 +107,39 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|siod_output_string
+name|tinyscheme_init
+parameter_list|(
+name|gboolean
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|tinyscheme_deinit
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|ts_output_string
 parameter_list|(
 name|FILE
 modifier|*
 name|fp
 parameter_list|,
-specifier|const
-name|gchar
+name|char
 modifier|*
-name|format
+name|string
 parameter_list|,
-modifier|...
+name|int
+name|len
 parameter_list|)
-function_decl|G_GNUC_PRINTF
-parameter_list|(
-function_decl|2
-operator|,
-function_decl|3
+function_decl|;
 end_function_decl
-
-begin_empty_stmt
-unit|)
-empty_stmt|;
-end_empty_stmt
 
 begin_comment
 comment|/* if the return value is 0, success. error otherwise. */
@@ -140,12 +147,11 @@ end_comment
 
 begin_function_decl
 name|gint
-name|siod_interpret_string
+name|ts_interpret_string
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
-name|expr
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -156,7 +162,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* SIOD_WRAPPER_H */
+comment|/* SCHEME_WRAPPER_H */
 end_comment
 
 end_unit

@@ -30,7 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"siod/siod.h"
+file|"tinyscheme/scheme.h"
 end_include
 
 begin_include
@@ -72,7 +72,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"siod-wrapper.h"
+file|"scheme-wrapper.h"
 end_include
 
 begin_include
@@ -525,14 +525,9 @@ block|{
 name|INIT_I18N
 argument_list|()
 expr_stmt|;
-name|siod_set_console_mode
+name|ts_set_console_mode
 argument_list|(
 literal|0
-argument_list|)
-expr_stmt|;
-name|siod_set_output_file
-argument_list|(
-name|stdout
 argument_list|)
 expr_stmt|;
 comment|/*  Determine before we allow scripts to register themselves    *   whether this is the base, automatically installed script-fu extension    */
@@ -552,8 +547,8 @@ comment|/*  Setup auxillary temporary procedures for the base extension  */
 name|script_fu_extension_init
 argument_list|()
 expr_stmt|;
-comment|/*  Init the interpreter  */
-name|siod_init
+comment|/*  Init the interpreter and register scripts */
+name|tinyscheme_init
 argument_list|(
 name|TRUE
 argument_list|)
@@ -562,7 +557,7 @@ block|}
 else|else
 block|{
 comment|/*  Init the interpreter  */
-name|siod_init
+name|tinyscheme_init
 argument_list|(
 name|FALSE
 argument_list|)
@@ -651,7 +646,7 @@ operator|==
 literal|0
 condition|)
 block|{
-comment|/*        *  The script-fu text console for interactive SIOD development        */
+comment|/*        *  The script-fu text console for interactive Scheme development        */
 name|script_fu_text_console_run
 argument_list|(
 name|name
@@ -679,7 +674,7 @@ operator|==
 literal|0
 condition|)
 block|{
-comment|/*        *  The script-fu console for interactive SIOD development        */
+comment|/*        *  The script-fu console for interactive Scheme development        */
 name|script_fu_console_run
 argument_list|(
 name|name
@@ -924,7 +919,87 @@ literal|"<Image>/Filters"
 argument_list|,
 name|N_
 argument_list|(
+literal|"An_imation"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_branch_register
+argument_list|(
+literal|"<Image>/Filters/Animation"
+argument_list|,
+name|N_
+argument_list|(
+literal|"_Animators"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_branch_register
+argument_list|(
+literal|"<Image>/Filters"
+argument_list|,
+name|N_
+argument_list|(
+literal|"_Artistic"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_branch_register
+argument_list|(
+literal|"<Image>/Filters"
+argument_list|,
+name|N_
+argument_list|(
+literal|"_Blur"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_branch_register
+argument_list|(
+literal|"<Image>/Filters"
+argument_list|,
+name|N_
+argument_list|(
 literal|"_Decor"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_branch_register
+argument_list|(
+literal|"<Image>/Filters"
+argument_list|,
+name|N_
+argument_list|(
+literal|"_Effects"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_branch_register
+argument_list|(
+literal|"<Image>/Filters"
+argument_list|,
+name|N_
+argument_list|(
+literal|"En_hance"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_branch_register
+argument_list|(
+literal|"<Image>/Filters"
+argument_list|,
+name|N_
+argument_list|(
+literal|"_Light and Shadow"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_branch_register
+argument_list|(
+literal|"<Image>/Filters/Light and Shadow"
+argument_list|,
+name|N_
+argument_list|(
+literal|"S_hadow"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -938,6 +1013,16 @@ literal|"_Render"
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gimp_plugin_menu_branch_register
+argument_list|(
+literal|"<Image>/Filters/Effects"
+argument_list|,
+name|N_
+argument_list|(
+literal|"_Alchemy"
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gimp_install_temp_proc
 argument_list|(
 literal|"script-fu-refresh"
@@ -947,7 +1032,7 @@ argument_list|(
 literal|"Re-read all available Script-Fu scripts"
 argument_list|)
 argument_list|,
-literal|"Re-read all available scripts"
+literal|"Re-read all available Script-Fu scripts"
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,

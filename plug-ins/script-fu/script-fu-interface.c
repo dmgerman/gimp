@@ -30,7 +30,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"siod/siod.h"
+file|"tinyscheme/scheme-private.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"scheme-wrapper.h"
 end_include
 
 begin_include
@@ -100,7 +106,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9e0cec0108
+DECL|struct|__anon2c721dc00108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -397,7 +403,7 @@ end_decl_stmt
 
 begin_comment
 DECL|variable|sf_interface
-comment|/*  there can only be at most one 					      interactive interface  */
+comment|/*  there can only be at most one                                               interactive interface  */
 end_comment
 
 begin_comment
@@ -2131,7 +2137,7 @@ name|gimp_pattern_select_button_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Script-fu Pattern Selection"
+literal|"Script-Fu Pattern Selection"
 argument_list|)
 argument_list|,
 name|script
@@ -3875,18 +3881,10 @@ expr_stmt|;
 comment|/*  run the command through the interpreter  */
 if|if
 condition|(
-name|repl_c_string
+name|ts_interpret_string
 argument_list|(
 name|command
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-literal|1
 argument_list|)
-operator|!=
-literal|0
 condition|)
 name|script_fu_error_msg
 argument_list|(

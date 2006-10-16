@@ -47,7 +47,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"siod-wrapper.h"
+file|"scheme-wrapper.h"
 end_include
 
 begin_include
@@ -101,19 +101,21 @@ index|[
 literal|1
 index|]
 decl_stmt|;
-name|siod_set_output_file
+comment|/*  Enable Script-Fu output  */
+name|ts_set_output_file
 argument_list|(
 name|stdout
 argument_list|)
 expr_stmt|;
-name|siod_set_verbose_level
+name|ts_set_verbose_level
 argument_list|(
 literal|2
 argument_list|)
 expr_stmt|;
-name|siod_print_welcome
+name|ts_print_welcome
 argument_list|()
 expr_stmt|;
+comment|/*  Run the interface  */
 name|script_fu_text_console_interface
 argument_list|()
 expr_stmt|;
@@ -301,7 +303,7 @@ name|len
 operator|>
 literal|0
 condition|)
-name|siod_interpret_string
+name|ts_interpret_string
 argument_list|(
 name|command
 operator|->

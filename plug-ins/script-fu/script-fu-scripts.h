@@ -26,20 +26,28 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|LISP
+name|pointer
 name|script_fu_add_script
 parameter_list|(
-name|LISP
+name|scheme
+modifier|*
+name|sc
+parameter_list|,
+name|pointer
 name|a
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|LISP
+name|pointer
 name|script_fu_add_menu
 parameter_list|(
-name|LISP
+name|scheme
+modifier|*
+name|sc
+parameter_list|,
+name|pointer
 name|a
 parameter_list|)
 function_decl|;
