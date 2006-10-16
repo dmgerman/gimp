@@ -84,7 +84,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e778bf0108
+DECL|struct|__anon2b0fe91e0108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -145,7 +145,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e778bf0203
+DECL|enum|__anon2b0fe91e0203
 block|{
 DECL|enumerator|RESPONSE_CLEAR
 name|RESPONSE_CLEAR
