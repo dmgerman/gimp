@@ -294,7 +294,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d9617a0103
+DECL|enum|__anon29b7346a0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -373,7 +373,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d9617a0203
+DECL|enum|__anon29b7346a0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2930,21 +2930,11 @@ operator|->
 name|height
 argument_list|)
 expr_stmt|;
-name|g_object_ref
+name|g_object_ref_sink
 argument_list|(
 name|image
 operator|->
 name|selection_mask
-argument_list|)
-expr_stmt|;
-name|gimp_item_sink
-argument_list|(
-name|GIMP_ITEM
-argument_list|(
-name|image
-operator|->
-name|selection_mask
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -11359,6 +11349,11 @@ operator|->
 name|layers
 argument_list|)
 expr_stmt|;
+name|g_object_ref_sink
+argument_list|(
+name|layer
+argument_list|)
+expr_stmt|;
 name|gimp_container_insert
 argument_list|(
 name|image
@@ -11373,12 +11368,9 @@ argument_list|,
 name|position
 argument_list|)
 expr_stmt|;
-name|gimp_item_sink
-argument_list|(
-name|GIMP_ITEM
+name|g_object_unref
 argument_list|(
 name|layer
-argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  notify the layers dialog of the currently active layer  */
@@ -12461,6 +12453,11 @@ operator|->
 name|channels
 argument_list|)
 expr_stmt|;
+name|g_object_ref_sink
+argument_list|(
+name|channel
+argument_list|)
+expr_stmt|;
 name|gimp_container_insert
 argument_list|(
 name|image
@@ -12475,12 +12472,9 @@ argument_list|,
 name|position
 argument_list|)
 expr_stmt|;
-name|gimp_item_sink
-argument_list|(
-name|GIMP_ITEM
+name|g_object_unref
 argument_list|(
 name|channel
-argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  notify this image of the currently active channel  */
@@ -13513,6 +13507,11 @@ operator|->
 name|vectors
 argument_list|)
 expr_stmt|;
+name|g_object_ref_sink
+argument_list|(
+name|vectors
+argument_list|)
+expr_stmt|;
 name|gimp_container_insert
 argument_list|(
 name|image
@@ -13527,12 +13526,9 @@ argument_list|,
 name|position
 argument_list|)
 expr_stmt|;
-name|gimp_item_sink
-argument_list|(
-name|GIMP_ITEM
+name|g_object_unref
 argument_list|(
 name|vectors
-argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  notify this image of the currently active vectors  */
