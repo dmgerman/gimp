@@ -55,6 +55,14 @@ directive|endif
 end_endif
 
 begin_define
+DECL|macro|ICO_PNG_MAGIC
+define|#
+directive|define
+name|ICO_PNG_MAGIC
+value|0x474e5089
+end_define
+
+begin_define
 DECL|macro|ICO_ALPHA_THRESHOLD
 define|#
 directive|define
@@ -255,6 +263,11 @@ DECL|member|default_depths
 name|gint
 modifier|*
 name|default_depths
+decl_stmt|;
+DECL|member|compress
+name|gboolean
+modifier|*
+name|compress
 decl_stmt|;
 DECL|member|layers
 name|gint
