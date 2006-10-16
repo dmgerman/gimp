@@ -18,12 +18,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gdk/gdkkeysyms.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimp.h"
 end_include
 
@@ -36,7 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"script-fu-intl.h"
+file|<gdk/gdkkeysyms.h>
 end_include
 
 begin_include
@@ -57,6 +51,12 @@ directive|include
 file|"script-fu-console.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"script-fu-intl.h"
+end_include
+
 begin_define
 DECL|macro|TEXT_WIDTH
 define|#
@@ -74,14 +74,6 @@ value|400
 end_define
 
 begin_define
-DECL|macro|BUFSIZE
-define|#
-directive|define
-name|BUFSIZE
-value|256
-end_define
-
-begin_define
 DECL|macro|PROC_NAME
 define|#
 directive|define
@@ -92,7 +84,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291d12130108
+DECL|struct|__anon28e778bf0108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -118,6 +110,11 @@ DECL|member|proc_browser
 name|GtkWidget
 modifier|*
 name|proc_browser
+decl_stmt|;
+DECL|member|save_dialog
+name|GtkWidget
+modifier|*
+name|save_dialog
 decl_stmt|;
 DECL|member|input_id
 name|gint32
@@ -147,14 +144,13 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|TF_RESPONSES
 enum|enum
-name|TF_RESPONSES
+DECL|enum|__anon28e778bf0203
 block|{
 DECL|enumerator|RESPONSE_CLEAR
-DECL|enumerator|RESPONSE_SAVE
 name|RESPONSE_CLEAR
 block|,
+DECL|enumerator|RESPONSE_SAVE
 name|RESPONSE_SAVE
 block|}
 enum|;
@@ -177,7 +173,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|script_fu_response
+name|script_fu_console_response
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -196,11 +192,11 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|script_fu_save_dialog
+name|script_fu_console_save_dialog
 parameter_list|(
-name|GtkWidget
+name|ConsoleInterface
 modifier|*
-name|parent
+name|console
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -208,7 +204,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|script_fu_save_output
+name|script_fu_console_save_response
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -217,8 +213,9 @@ parameter_list|,
 name|gint
 name|response_id
 parameter_list|,
-name|gpointer
-name|data
+name|ConsoleInterface
+modifier|*
+name|console
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -327,39 +324,13 @@ comment|/*  *  Local variables  */
 end_comment
 
 begin_decl_stmt
-DECL|variable|cint
+DECL|variable|output
 specifier|static
-name|ConsoleInterface
-name|cint
+name|GtkWidget
+modifier|*
+name|output
 init|=
-block|{
 name|NULL
-block|,
-comment|/*  dialog  */
-name|NULL
-block|,
-comment|/*  console  */
-name|NULL
-block|,
-comment|/*  current command  */
-name|NULL
-block|,
-comment|/*  text view  */
-name|NULL
-block|,
-comment|/*  proc browser  */
-operator|-
-literal|1
-block|,
-comment|/*  input id  */
-name|NULL
-block|,
-literal|0
-block|,
-literal|0
-block|,
-literal|50
-block|}
 decl_stmt|;
 end_decl_stmt
 
@@ -482,8 +453,12 @@ argument_list|)
 expr_stmt|;
 name|console
 operator|=
-operator|&
-name|cint
+name|g_new0
+argument_list|(
+name|ConsoleInterface
+argument_list|,
+literal|1
+argument_list|)
 expr_stmt|;
 name|console
 operator|->
@@ -491,24 +466,6 @@ name|input_id
 operator|=
 operator|-
 literal|1
-expr_stmt|;
-name|console
-operator|->
-name|history
-operator|=
-name|NULL
-expr_stmt|;
-name|console
-operator|->
-name|history_len
-operator|=
-literal|0
-expr_stmt|;
-name|console
-operator|->
-name|history_cur
-operator|=
-literal|0
 expr_stmt|;
 name|console
 operator|->
@@ -537,17 +494,11 @@ name|gimp_standard_help_func
 argument_list|,
 name|PROC_NAME
 argument_list|,
-name|_
-argument_list|(
-literal|"_Save Output"
-argument_list|)
+name|GTK_STOCK_SAVE
 argument_list|,
 name|RESPONSE_SAVE
 argument_list|,
-name|_
-argument_list|(
-literal|"Cl_ear Output"
-argument_list|)
+name|GTK_STOCK_CLEAR
 argument_list|,
 name|RESPONSE_CLEAR
 argument_list|,
@@ -556,6 +507,43 @@ argument_list|,
 name|GTK_RESPONSE_CLOSE
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_dialog_set_alternative_button_order
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|console
+operator|->
+name|dialog
+argument_list|)
+argument_list|,
+name|GTK_RESPONSE_CLOSE
+argument_list|,
+name|RESPONSE_CLEAR
+argument_list|,
+name|RESPONSE_SAVE
+argument_list|,
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
+name|g_object_add_weak_pointer
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|console
+operator|->
+name|dialog
+argument_list|)
+argument_list|,
+operator|(
+name|gpointer
+operator|)
+operator|&
+name|console
+operator|->
+name|dialog
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -568,29 +556,10 @@ literal|"response"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|script_fu_response
+name|script_fu_console_response
 argument_list|)
 argument_list|,
 name|console
-argument_list|)
-expr_stmt|;
-name|g_signal_connect
-argument_list|(
-name|console
-operator|->
-name|dialog
-argument_list|,
-literal|"destroy"
-argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|gtk_widget_destroyed
-argument_list|)
-argument_list|,
-operator|&
-name|console
-operator|->
-name|dialog
 argument_list|)
 expr_stmt|;
 comment|/*  The main vbox  */
@@ -710,6 +679,12 @@ name|console
 operator|->
 name|console
 argument_list|)
+expr_stmt|;
+name|output
+operator|=
+name|console
+operator|->
+name|text_view
 expr_stmt|;
 name|gtk_text_view_set_editable
 argument_list|(
@@ -1121,6 +1096,23 @@ operator|->
 name|input_id
 argument_list|)
 expr_stmt|;
+name|output
+operator|=
+name|NULL
+expr_stmt|;
+if|if
+condition|(
+name|console
+operator|->
+name|save_dialog
+condition|)
+name|gtk_widget_destroy
+argument_list|(
+name|console
+operator|->
+name|save_dialog
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|console
@@ -1134,14 +1126,19 @@ operator|->
 name|dialog
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|console
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
 begin_function
 specifier|static
 name|void
-DECL|function|script_fu_response (GtkWidget * widget,gint response_id,ConsoleInterface * console)
-name|script_fu_response
+DECL|function|script_fu_console_response (GtkWidget * widget,gint response_id,ConsoleInterface * console)
+name|script_fu_console_response
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -1205,9 +1202,9 @@ break|break;
 case|case
 name|RESPONSE_SAVE
 case|:
-name|script_fu_save_dialog
+name|script_fu_console_save_dialog
 argument_list|(
-name|widget
+name|console
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1223,37 +1220,39 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|script_fu_save_dialog (GtkWidget * parent)
-name|script_fu_save_dialog
+DECL|function|script_fu_console_save_dialog (ConsoleInterface * console)
+name|script_fu_console_save_dialog
 parameter_list|(
-name|GtkWidget
+name|ConsoleInterface
 modifier|*
-name|parent
+name|console
 parameter_list|)
 block|{
-specifier|static
-name|GtkWidget
-modifier|*
-name|dialog
-init|=
-name|NULL
-decl_stmt|;
 if|if
 condition|(
 operator|!
-name|dialog
+name|console
+operator|->
+name|save_dialog
 condition|)
 block|{
-name|dialog
+name|console
+operator|->
+name|save_dialog
 operator|=
 name|gtk_file_chooser_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Save TinyScheme Output"
+literal|"Save Script-Fu Console Output"
 argument_list|)
 argument_list|,
-name|NULL
+name|GTK_WINDOW
+argument_list|(
+name|console
+operator|->
+name|dialog
+argument_list|)
 argument_list|,
 name|GTK_FILE_CHOOSER_ACTION_SAVE
 argument_list|,
@@ -1263,38 +1262,72 @@ name|GTK_RESPONSE_CANCEL
 argument_list|,
 name|GTK_STOCK_SAVE
 argument_list|,
-name|GTK_RESPONSE_ACCEPT
+name|GTK_RESPONSE_OK
 argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|g_signal_connect
+name|gtk_dialog_set_default_response
 argument_list|(
-name|dialog
-argument_list|,
-literal|"destroy"
-argument_list|,
-name|G_CALLBACK
+name|GTK_DIALOG
 argument_list|(
-name|gtk_widget_destroyed
+name|console
+operator|->
+name|save_dialog
 argument_list|)
 argument_list|,
+name|GTK_RESPONSE_OK
+argument_list|)
+expr_stmt|;
+name|gtk_dialog_set_alternative_button_order
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|console
+operator|->
+name|save_dialog
+argument_list|)
+argument_list|,
+name|GTK_RESPONSE_OK
+argument_list|,
+name|GTK_RESPONSE_CANCEL
+argument_list|,
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
+name|g_object_add_weak_pointer
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|console
+operator|->
+name|save_dialog
+argument_list|)
+argument_list|,
+operator|(
+name|gpointer
+operator|)
 operator|&
-name|dialog
+name|console
+operator|->
+name|save_dialog
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|dialog
+name|console
+operator|->
+name|save_dialog
 argument_list|,
 literal|"response"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|script_fu_save_output
+name|script_fu_console_save_response
 argument_list|)
 argument_list|,
-name|NULL
+name|console
 argument_list|)
 expr_stmt|;
 block|}
@@ -1302,7 +1335,9 @@ name|gtk_window_present
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
-name|dialog
+name|console
+operator|->
+name|save_dialog
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1312,8 +1347,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|script_fu_save_output (GtkWidget * dialog,gint response_id,gpointer data)
-name|script_fu_save_output
+DECL|function|script_fu_console_save_response (GtkWidget * dialog,gint response_id,ConsoleInterface * console)
+name|script_fu_console_save_response
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -1322,8 +1357,9 @@ parameter_list|,
 name|gint
 name|response_id
 parameter_list|,
-name|gpointer
-name|data
+name|ConsoleInterface
+modifier|*
+name|console
 parameter_list|)
 block|{
 name|GtkTextIter
@@ -1335,7 +1371,7 @@ if|if
 condition|(
 name|response_id
 operator|==
-name|GTK_RESPONSE_ACCEPT
+name|GTK_RESPONSE_OK
 condition|)
 block|{
 name|gchar
@@ -1375,13 +1411,12 @@ operator|!
 name|fh
 condition|)
 block|{
-name|gchar
-modifier|*
-name|message
-init|=
-name|g_strdup_printf
+name|g_message
+argument_list|(
+name|_
 argument_list|(
 literal|"Could not open '%s' for writing: %s"
+argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
@@ -1393,16 +1428,6 @@ argument_list|(
 name|errno
 argument_list|)
 argument_list|)
-decl_stmt|;
-name|g_message
-argument_list|(
-name|message
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|message
-argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
@@ -1413,8 +1438,8 @@ return|return;
 block|}
 name|gtk_text_buffer_get_start_iter
 argument_list|(
-name|cint
-operator|.
+name|console
+operator|->
 name|console
 argument_list|,
 operator|&
@@ -1423,8 +1448,8 @@ argument_list|)
 expr_stmt|;
 name|gtk_text_buffer_get_end_iter
 argument_list|(
-name|cint
-operator|.
+name|console
+operator|->
 name|console
 argument_list|,
 operator|&
@@ -1435,8 +1460,8 @@ name|str
 operator|=
 name|gtk_text_buffer_get_text
 argument_list|(
-name|cint
-operator|.
+name|console
+operator|->
 name|console
 argument_list|,
 operator|&
@@ -1445,7 +1470,7 @@ argument_list|,
 operator|&
 name|end
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|fputs
@@ -1460,8 +1485,13 @@ argument_list|(
 name|fh
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|str
+argument_list|)
+expr_stmt|;
 block|}
-name|gtk_widget_destroy
+name|gtk_widget_hide
 argument_list|(
 name|dialog
 argument_list|)
@@ -1530,6 +1560,23 @@ name|proc_browser
 argument_list|)
 argument_list|,
 name|GTK_RESPONSE_APPLY
+argument_list|)
+expr_stmt|;
+name|gtk_dialog_set_alternative_button_order
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|console
+operator|->
+name|proc_browser
+argument_list|)
+argument_list|,
+name|GTK_RESPONSE_CLOSE
+argument_list|,
+name|GTK_RESPONSE_APPLY
+argument_list|,
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 name|g_object_add_weak_pointer
@@ -1889,12 +1936,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|script_fu_console_idle_scroll_end (ConsoleInterface * console)
+DECL|function|script_fu_console_idle_scroll_end (GtkWidget * view)
 name|script_fu_console_idle_scroll_end
 parameter_list|(
-name|ConsoleInterface
+name|GtkWidget
 modifier|*
-name|console
+name|view
 parameter_list|)
 block|{
 name|GtkAdjustment
@@ -1903,9 +1950,7 @@ name|adj
 init|=
 name|GTK_TEXT_VIEW
 argument_list|(
-name|console
-operator|->
-name|text_view
+name|view
 argument_list|)
 operator|->
 name|vadjustment
@@ -1923,6 +1968,11 @@ operator|->
 name|page_size
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|view
+argument_list|)
+expr_stmt|;
 return|return
 name|FALSE
 return|;
@@ -1932,15 +1982,20 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|script_fu_console_scroll_end (ConsoleInterface * console)
+DECL|function|script_fu_console_scroll_end (GtkWidget * view)
 name|script_fu_console_scroll_end
 parameter_list|(
-name|ConsoleInterface
+name|GtkWidget
 modifier|*
-name|console
+name|view
 parameter_list|)
 block|{
-comment|/*  the text view idle updates so we need to idle scroll too    */
+comment|/*  the text view idle updates, so we need to idle scroll too    */
+name|g_object_ref
+argument_list|(
+name|view
+argument_list|)
+expr_stmt|;
 name|g_idle_add
 argument_list|(
 operator|(
@@ -1948,7 +2003,7 @@ name|GSourceFunc
 operator|)
 name|script_fu_console_idle_scroll_end
 argument_list|,
-name|console
+name|view
 argument_list|)
 expr_stmt|;
 block|}
@@ -1956,22 +2011,39 @@ end_function
 
 begin_function
 name|void
-DECL|function|script_fu_output_to_console (gchar * text)
+DECL|function|script_fu_output_to_console (const gchar * text)
 name|script_fu_output_to_console
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|text
 parameter_list|)
 block|{
+comment|/* FIXME: This function needs to be passed a pointer to the console.    */
+if|if
+condition|(
+name|output
+condition|)
+block|{
+name|GtkTextBuffer
+modifier|*
+name|buffer
+init|=
+name|gtk_text_view_get_buffer
+argument_list|(
+name|GTK_TEXT_VIEW
+argument_list|(
+name|output
+argument_list|)
+argument_list|)
+decl_stmt|;
 name|GtkTextIter
 name|cursor
 decl_stmt|;
 name|gtk_text_buffer_get_end_iter
 argument_list|(
-name|cint
-operator|.
-name|console
+name|buffer
 argument_list|,
 operator|&
 name|cursor
@@ -1979,9 +2051,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_text_buffer_insert_with_tags_by_name
 argument_list|(
-name|cint
-operator|.
-name|console
+name|buffer
 argument_list|,
 operator|&
 name|cursor
@@ -1998,10 +2068,10 @@ argument_list|)
 expr_stmt|;
 name|script_fu_console_scroll_end
 argument_list|(
-operator|&
-name|cint
+name|output
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -2198,7 +2268,7 @@ argument_list|,
 operator|&
 name|cursor
 argument_list|,
-literal|"\n=> "
+literal|"\n> "
 argument_list|,
 operator|-
 literal|1
@@ -2257,6 +2327,8 @@ expr_stmt|;
 name|script_fu_console_scroll_end
 argument_list|(
 name|console
+operator|->
+name|text_view
 argument_list|)
 expr_stmt|;
 name|gtk_entry_set_text
@@ -2345,11 +2417,13 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
+block|{
 name|console
 operator|->
 name|history_len
 operator|++
 expr_stmt|;
+block|}
 name|console
 operator|->
 name|history_cur
@@ -2467,12 +2541,6 @@ operator|->
 name|history_cur
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|list
-operator|->
-name|data
-condition|)
 name|g_free
 argument_list|(
 name|list

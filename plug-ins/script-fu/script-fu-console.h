@@ -78,6 +78,7 @@ begin_function_decl
 name|void
 name|script_fu_output_to_console
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|text
