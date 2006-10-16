@@ -339,7 +339,6 @@ modifier|*
 name|s2
 parameter_list|)
 block|{
-name|unsigned
 name|char
 modifier|*
 name|s1a
@@ -11731,7 +11730,7 @@ decl_stmt|;
 name|int
 name|len
 decl_stmt|;
-DECL|enum|__anon2a337b820103
+DECL|enum|__anon275851af0103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -12640,13 +12639,11 @@ decl_stmt|;
 name|gunichar
 name|c
 decl_stmt|;
-name|unsigned
 name|char
 modifier|*
 name|s
 init|=
 operator|(
-name|unsigned
 name|char
 operator|*
 operator|)
@@ -28921,7 +28918,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon2a337b820208
+DECL|struct|__anon275851af0208
 specifier|static
 struct|struct
 block|{
@@ -29170,7 +29167,7 @@ value|"\017"
 end_define
 
 begin_typedef
-DECL|struct|__anon2a337b820308
+DECL|struct|__anon275851af0308
 typedef|typedef
 struct|struct
 block|{
