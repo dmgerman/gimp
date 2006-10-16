@@ -706,6 +706,9 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+ifndef|#
+directive|ifndef
+name|GDK_WINDOWING_WIN32
 name|g_signal_handlers_disconnect_matched
 argument_list|(
 name|window
@@ -769,6 +772,8 @@ argument_list|(
 name|parent
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 block|}
 end_function
 

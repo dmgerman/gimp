@@ -1781,7 +1781,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon29fd0f560108
+DECL|struct|__anon2b9b16f40108
 block|{
 DECL|member|modifiers
 name|GdkModifierType
@@ -3062,6 +3062,12 @@ directive|warning
 warning|gimp_window_get_native() unimplementable for the target windowing system
 endif|#
 directive|endif
+return|return
+operator|(
+name|GdkNativeWindow
+operator|)
+literal|0
+return|;
 endif|#
 directive|endif
 ifdef|#
@@ -3177,6 +3183,10 @@ name|guint32
 name|parent_ID
 parameter_list|)
 block|{
+comment|/* Cross-process transient-for is broken in gdk/win32<= 2.10.6. It    * causes hangs, at least when used as by the gimp and script-fu    * processes. In some newer GTK+ version it will be fixed to be a    * no-op. If it eventually is fixed to actually work, change this to    * a run-time check of GTK+ version. Remember to change also the    * function with the same name in libgimp/gimpui.c    */
+ifndef|#
+directive|ifndef
+name|GDK_WINDOWING_WIN32
 name|GdkWindow
 modifier|*
 name|parent
@@ -3237,6 +3247,8 @@ argument_list|(
 name|parent
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 block|}
 end_function
 
