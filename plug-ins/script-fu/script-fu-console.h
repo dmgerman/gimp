@@ -82,6 +82,9 @@ specifier|const
 name|gchar
 modifier|*
 name|text
+parameter_list|,
+name|gint
+name|len
 parameter_list|)
 function_decl|;
 end_function_decl

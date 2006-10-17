@@ -84,7 +84,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0fe91e0108
+DECL|struct|__anon2782f6850108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -145,7 +145,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0fe91e0203
+DECL|enum|__anon2782f6850203
 block|{
 DECL|enumerator|RESPONSE_CLEAR
 name|RESPONSE_CLEAR
@@ -2011,13 +2011,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|script_fu_output_to_console (const gchar * text)
+DECL|function|script_fu_output_to_console (const gchar * text,gint len)
 name|script_fu_output_to_console
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
 name|text
+parameter_list|,
+name|gint
+name|len
 parameter_list|)
 block|{
 comment|/* FIXME: This function needs to be passed a pointer to the console.    */
@@ -2058,8 +2061,7 @@ name|cursor
 argument_list|,
 name|text
 argument_list|,
-operator|-
-literal|1
+name|len
 argument_list|,
 literal|"weak"
 argument_list|,

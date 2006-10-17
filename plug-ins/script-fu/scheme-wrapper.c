@@ -1078,10 +1078,6 @@ name|int
 name|len
 parameter_list|)
 block|{
-name|gchar
-modifier|*
-name|buff
-decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|len
@@ -1092,12 +1088,9 @@ expr_stmt|;
 if|if
 condition|(
 name|len
-operator|==
+operator|>
 literal|0
-condition|)
-return|return;
-if|if
-condition|(
+operator|&&
 name|ts_console_mode
 operator|&&
 name|fp
@@ -1105,45 +1098,23 @@ operator|==
 name|stdout
 condition|)
 block|{
+comment|/* len is the number of UTF-8 characters; we need the number of bytes */
 name|len
 operator|=
 name|g_utf8_offset_to_pointer
 argument_list|(
 name|string
 argument_list|,
-operator|(
-name|long
-operator|)
 name|len
 argument_list|)
 operator|-
 name|string
 expr_stmt|;
-name|buff
-operator|=
-name|g_strndup
+name|script_fu_output_to_console
 argument_list|(
 name|string
 argument_list|,
 name|len
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|buff
-operator|==
-name|NULL
-condition|)
-return|return;
-comment|/* Should "No memory" be output here? */
-name|script_fu_output_to_console
-argument_list|(
-name|buff
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|buff
 argument_list|)
 expr_stmt|;
 block|}
@@ -1220,7 +1191,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Could not initialize TinyScheme!\n"
+literal|"Could not initialize TinyScheme!"
 argument_list|)
 expr_stmt|;
 return|return;
@@ -2914,14 +2885,6 @@ block|}
 block|}
 end_function
 
-begin_comment
-comment|/* This routine will eventually display a dialog box containing */
-end_comment
-
-begin_comment
-comment|/* the error message. For now, just print the message to stderr */
-end_comment
-
 begin_function
 specifier|static
 name|pointer
@@ -2936,14 +2899,44 @@ name|pointer
 name|a
 parameter_list|)
 block|{
-comment|//        if (run_mode == GIMP_RUN_INTERACTIVE)
+if|if
+condition|(
+name|ts_console_mode
+condition|)
+block|{
+name|gchar
+modifier|*
+name|tmp
+init|=
+name|g_strdup_printf
+argument_list|(
+literal|"Error: %s\n"
+argument_list|,
+name|msg
+argument_list|)
+decl_stmt|;
+name|script_fu_output_to_console
+argument_list|(
+name|tmp
+argument_list|,
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|tmp
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
 name|g_message
 argument_list|(
 name|msg
 argument_list|)
 expr_stmt|;
-comment|//        else
-comment|//                fprintf (stderr, "%s\n", msg);
+block|}
 return|return
 name|sc
 operator|.
