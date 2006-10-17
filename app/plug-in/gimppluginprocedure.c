@@ -84,7 +84,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b072d230103
+DECL|enum|__anon2b790e660103
 block|{
 DECL|enumerator|MENU_PATH_ADDED
 name|MENU_PATH_ADDED
@@ -2792,9 +2792,14 @@ end_function
 begin_function
 specifier|static
 name|GimpPlugInImageType
-DECL|function|image_types_parse (const gchar * image_types)
+DECL|function|image_types_parse (const gchar * name,const gchar * image_types)
 name|image_types_parse
 parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|name
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -3126,7 +3131,10 @@ else|else
 block|{
 name|g_printerr
 argument_list|(
-literal|"image_type contains unrecognizable parts: '%s'\n"
+literal|"%s: image-type contains unrecognizable parts:"
+literal|"'%s'\n"
+argument_list|,
+name|name
 argument_list|,
 name|type_spec
 argument_list|)
@@ -3159,9 +3167,11 @@ literal|','
 operator|)
 operator|)
 condition|)
+block|{
 name|image_types
 operator|++
 expr_stmt|;
+block|}
 block|}
 block|}
 block|}
@@ -3222,6 +3232,14 @@ name|image_types_val
 operator|=
 name|image_types_parse
 argument_list|(
+name|gimp_object_get_name
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
+name|proc
+argument_list|)
+argument_list|)
+argument_list|,
 name|proc
 operator|->
 name|image_types
