@@ -114,7 +114,7 @@ name|GimpRectSelectTool
 modifier|*
 name|rect_tool
 parameter_list|,
-name|SelectOps
+name|GimpChannelOps
 name|operation
 parameter_list|,
 name|gint
@@ -388,14 +388,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_ellipse_select_tool_select (GimpRectSelectTool * rect_tool,SelectOps operation,gint x,gint y,gint w,gint h)
+DECL|function|gimp_ellipse_select_tool_select (GimpRectSelectTool * rect_tool,GimpChannelOps operation,gint x,gint y,gint w,gint h)
 name|gimp_ellipse_select_tool_select
 parameter_list|(
 name|GimpRectSelectTool
 modifier|*
 name|rect_tool
 parameter_list|,
-name|SelectOps
+name|GimpChannelOps
 name|operation
 parameter_list|,
 name|gint

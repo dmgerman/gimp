@@ -470,7 +470,7 @@ name|GimpRectSelectTool
 modifier|*
 name|rect_select
 parameter_list|,
-name|SelectOps
+name|GimpChannelOps
 name|operation
 parameter_list|,
 name|gint
@@ -1184,7 +1184,7 @@ name|GimpUndo
 modifier|*
 name|undo
 decl_stmt|;
-name|SelectOps
+name|GimpChannelOps
 name|operation
 decl_stmt|;
 if|if
@@ -1274,7 +1274,7 @@ if|if
 condition|(
 name|operation
 operator|==
-name|SELECTION_REPLACE
+name|GIMP_CHANNEL_OP_REPLACE
 condition|)
 name|gimp_display_shell_set_show_selection
 argument_list|(
@@ -1798,7 +1798,7 @@ decl_stmt|;
 name|gboolean
 name|rectangle_exists
 decl_stmt|;
-name|SelectOps
+name|GimpChannelOps
 name|operation
 decl_stmt|;
 name|gimp_tool_pop_status
@@ -1910,14 +1910,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_rect_select_tool_real_select (GimpRectSelectTool * rect_select,SelectOps operation,gint x,gint y,gint w,gint h)
+DECL|function|gimp_rect_select_tool_real_select (GimpRectSelectTool * rect_select,GimpChannelOps operation,gint x,gint y,gint w,gint h)
 name|gimp_rect_select_tool_real_select
 parameter_list|(
 name|GimpRectSelectTool
 modifier|*
 name|rect_select
 parameter_list|,
-name|SelectOps
+name|GimpChannelOps
 name|operation
 parameter_list|,
 name|gint

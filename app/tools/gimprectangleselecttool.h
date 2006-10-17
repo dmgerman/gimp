@@ -113,7 +113,7 @@ name|GimpSelectionTool
 name|parent_instance
 decl_stmt|;
 DECL|member|operation
-name|SelectOps
+name|GimpChannelOps
 name|operation
 decl_stmt|;
 comment|/* remember for use when modifying   */
@@ -161,7 +161,7 @@ name|GimpRectSelectTool
 modifier|*
 name|rect_select
 parameter_list|,
-name|SelectOps
+name|GimpChannelOps
 name|operation
 parameter_list|,
 name|gint
