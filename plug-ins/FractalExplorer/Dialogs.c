@@ -6230,8 +6230,8 @@ comment|/********************************************************************** 
 end_comment
 
 begin_function
-DECL|function|dialog_update_preview (void)
 name|void
+DECL|function|dialog_update_preview (void)
 name|dialog_update_preview
 parameter_list|(
 name|void
@@ -7235,9 +7235,9 @@ comment|/********************************************************************** 
 end_comment
 
 begin_function
-DECL|function|cmap_preview_size_allocate (GtkWidget * widget,GtkAllocation * allocation)
 specifier|static
 name|void
+DECL|function|cmap_preview_size_allocate (GtkWidget * widget,GtkAllocation * allocation)
 name|cmap_preview_size_allocate
 parameter_list|(
 name|GtkWidget
@@ -7499,8 +7499,8 @@ comment|/********************************************************************** 
 end_comment
 
 begin_function
-DECL|function|set_cmap_preview (void)
 name|void
+DECL|function|set_cmap_preview (void)
 name|set_cmap_preview
 parameter_list|(
 name|void
@@ -7582,8 +7582,8 @@ comment|/********************************************************************** 
 end_comment
 
 begin_function
-DECL|function|make_color_map (void)
 name|void
+DECL|function|make_color_map (void)
 name|make_color_map
 parameter_list|(
 name|void
@@ -8133,8 +8133,8 @@ comment|/********************************************************************** 
 end_comment
 
 begin_function
-DECL|function|dialog_change_scale (void)
 name|void
+DECL|function|dialog_change_scale (void)
 name|dialog_change_scale
 parameter_list|(
 name|void
@@ -8423,9 +8423,9 @@ comment|/********************************************************************** 
 end_comment
 
 begin_function
-DECL|function|save_options (FILE * fp)
 specifier|static
 name|void
+DECL|function|save_options (FILE * fp)
 name|save_options
 parameter_list|(
 name|FILE
@@ -8809,9 +8809,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|save_callback (void)
 specifier|static
 name|void
+DECL|function|save_callback (void)
 name|save_callback
 parameter_list|(
 name|void
@@ -8934,9 +8934,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|save_file_chooser_response (GtkFileChooser * chooser,gint response_id,gpointer data)
 specifier|static
 name|void
+DECL|function|save_file_chooser_response (GtkFileChooser * chooser,gint response_id,gpointer data)
 name|save_file_chooser_response
 parameter_list|(
 name|GtkFileChooser
@@ -8980,9 +8980,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|file_chooser_set_default_folder (GtkFileChooser * chooser)
 specifier|static
 name|void
+DECL|function|file_chooser_set_default_folder (GtkFileChooser * chooser)
 name|file_chooser_set_default_folder
 parameter_list|(
 name|GtkFileChooser
@@ -9058,9 +9058,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|load_file_chooser_response (GtkFileChooser * chooser,gint response_id,gpointer data)
 specifier|static
 name|void
+DECL|function|load_file_chooser_response (GtkFileChooser * chooser,gint response_id,gpointer data)
 name|load_file_chooser_response
 parameter_list|(
 name|GtkFileChooser
@@ -9129,9 +9129,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|create_load_file_chooser (GtkWidget * widget,GtkWidget * dialog)
 specifier|static
 name|void
+DECL|function|create_load_file_chooser (GtkWidget * widget,GtkWidget * dialog)
 name|create_load_file_chooser
 parameter_list|(
 name|GtkWidget
@@ -9258,9 +9258,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|create_save_file_chooser (GtkWidget * widget,GtkWidget * dialog)
 specifier|static
 name|void
+DECL|function|create_save_file_chooser (GtkWidget * widget,GtkWidget * dialog)
 name|create_save_file_chooser
 parameter_list|(
 name|GtkWidget
@@ -9406,9 +9406,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|get_line (gchar * buf,gint s,FILE * from,gint init)
 name|gchar
 modifier|*
+DECL|function|get_line (gchar * buf,gint s,FILE * from,gint init)
 name|get_line
 parameter_list|(
 name|gchar
@@ -9522,8 +9522,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|load_options (fractalexplorerOBJ * xxx,FILE * fp)
 name|gint
+DECL|function|load_options (fractalexplorerOBJ * xxx,FILE * fp)
 name|load_options
 parameter_list|(
 name|fractalexplorerOBJ
@@ -10117,8 +10117,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|explorer_load (void)
 name|void
+DECL|function|explorer_load (void)
 name|explorer_load
 parameter_list|(
 name|void
