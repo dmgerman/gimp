@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon292714680103
+DECL|enum|__anon2958ac7c0103
 block|{
 DECL|enumerator|RECTANGLE_CHANGED
 name|RECTANGLE_CHANGED
@@ -654,7 +654,6 @@ operator|!
 name|iface_type
 condition|)
 block|{
-specifier|static
 specifier|const
 name|GTypeInfo
 name|iface_info

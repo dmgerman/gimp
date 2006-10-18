@@ -99,7 +99,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27496a6b0103
+DECL|enum|__anon27d573100103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY
@@ -112,7 +112,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27496a6b0203
+DECL|enum|__anon27d573100203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -312,7 +312,6 @@ operator|!
 name|data_type
 condition|)
 block|{
-specifier|static
 specifier|const
 name|GTypeInfo
 name|data_info

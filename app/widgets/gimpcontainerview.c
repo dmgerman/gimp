@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e8c4bc0103
+DECL|enum|__anon2c04d0290103
 block|{
 DECL|enumerator|SELECT_ITEM
 name|SELECT_ITEM
@@ -473,7 +473,6 @@ operator|!
 name|iface_type
 condition|)
 block|{
-specifier|static
 specifier|const
 name|GTypeInfo
 name|iface_info

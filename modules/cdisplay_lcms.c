@@ -190,7 +190,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1b47aa0103
+DECL|enum|__anon2934707c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -536,7 +536,6 @@ operator|!
 name|cdisplay_lcms_type
 condition|)
 block|{
-specifier|static
 specifier|const
 name|GTypeInfo
 name|display_info

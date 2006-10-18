@@ -97,7 +97,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c489b40108
+DECL|struct|__anon29a28cd20108
 block|{
 DECL|member|code
 name|guint16
@@ -437,7 +437,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c489b40203
+DECL|enum|__anon29a28cd20203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -826,7 +826,6 @@ operator|!
 name|controller_type
 condition|)
 block|{
-specifier|static
 specifier|const
 name|GTypeInfo
 name|controller_info

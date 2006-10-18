@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad7fa920103
+DECL|enum|__anon2b1cb3910103
 block|{
 DECL|enumerator|COLORBLIND_DEFICIENCY_PROTANOPIA
 name|COLORBLIND_DEFICIENCY_PROTANOPIA
@@ -345,7 +345,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad7fa920203
+DECL|enum|__anon2b1cb3910203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -717,7 +717,6 @@ operator|!
 name|cdisplay_colorblind_type
 condition|)
 block|{
-specifier|static
 specifier|const
 name|GTypeInfo
 name|display_info

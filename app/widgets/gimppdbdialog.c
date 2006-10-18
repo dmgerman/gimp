@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f063bd0103
+DECL|enum|__anon2c4846020103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -284,7 +284,6 @@ operator|!
 name|dialog_type
 condition|)
 block|{
-specifier|static
 specifier|const
 name|GTypeInfo
 name|dialog_info

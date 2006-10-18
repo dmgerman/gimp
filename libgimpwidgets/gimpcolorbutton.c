@@ -159,7 +159,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a342fc10103
+DECL|enum|__anon2c0b820d0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -172,7 +172,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a342fc10203
+DECL|enum|__anon2c0b820d0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -581,7 +581,6 @@ operator|!
 name|button_type
 condition|)
 block|{
-specifier|static
 specifier|const
 name|GTypeInfo
 name|button_info

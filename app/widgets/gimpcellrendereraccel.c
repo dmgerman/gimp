@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon288c56b80103
+DECL|enum|__anon2baf3f200103
 block|{
 DECL|enumerator|ACCEL_EDITED
 name|ACCEL_EDITED
@@ -72,7 +72,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon288c56b80203
+DECL|enum|__anon2baf3f200203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1136,7 +1136,6 @@ operator|!
 name|type
 condition|)
 block|{
-specifier|static
 specifier|const
 name|GTypeInfo
 name|info
@@ -1174,7 +1173,6 @@ name|NULL
 comment|/* instance init  */
 block|}
 decl_stmt|;
-specifier|static
 specifier|const
 name|GInterfaceInfo
 name|editable_info

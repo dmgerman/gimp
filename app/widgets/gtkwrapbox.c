@@ -20,7 +20,7 @@ comment|/* --- properties --- */
 end_comment
 
 begin_enum
-DECL|enum|__anon275ccec30103
+DECL|enum|__anon27bcc2020103
 enum|enum
 block|{
 DECL|enumerator|PROP_0
@@ -54,7 +54,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon275ccec30203
+DECL|enum|__anon27bcc2020203
 enum|enum
 block|{
 DECL|enumerator|CHILD_PROP_0
@@ -354,7 +354,6 @@ operator|!
 name|wrap_box_type
 condition|)
 block|{
-specifier|static
 specifier|const
 name|GTypeInfo
 name|wrap_box_info

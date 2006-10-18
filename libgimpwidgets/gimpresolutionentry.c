@@ -61,7 +61,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2adfff320103
+DECL|enum|__anon27e561450103
 block|{
 DECL|enumerator|WIDTH_CHANGED
 name|WIDTH_CHANGED
@@ -314,7 +314,6 @@ operator|!
 name|gre_type
 condition|)
 block|{
-specifier|static
 specifier|const
 name|GTypeInfo
 name|gre_info

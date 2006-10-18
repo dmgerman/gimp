@@ -162,7 +162,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon27af5b660103
+DECL|enum|__anon2b887ae90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -406,7 +406,6 @@ operator|!
 name|cdisplay_contrast_type
 condition|)
 block|{
-specifier|static
 specifier|const
 name|GTypeInfo
 name|display_info

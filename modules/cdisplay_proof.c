@@ -198,7 +198,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2baa050b0103
+DECL|enum|__anon29d593630103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -469,7 +469,6 @@ operator|!
 name|cdisplay_proof_type
 condition|)
 block|{
-specifier|static
 specifier|const
 name|GTypeInfo
 name|display_info

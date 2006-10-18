@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2937f0de0103
+DECL|enum|__anon299925060103
 block|{
 DECL|enumerator|TITLE_CHANGED
 name|TITLE_CHANGED
@@ -140,7 +140,6 @@ operator|!
 name|docked_iface_type
 condition|)
 block|{
-specifier|static
 specifier|const
 name|GTypeInfo
 name|docked_iface_info

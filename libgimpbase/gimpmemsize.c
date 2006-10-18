@@ -87,7 +87,6 @@ operator|!
 name|memsize_type
 condition|)
 block|{
-specifier|static
 specifier|const
 name|GTypeInfo
 name|type_info
@@ -849,7 +848,6 @@ operator|!
 name|spec_type
 condition|)
 block|{
-specifier|static
 specifier|const
 name|GTypeInfo
 name|type_info

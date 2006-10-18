@@ -199,7 +199,6 @@ operator|!
 name|config_iface_type
 condition|)
 block|{
-specifier|static
 specifier|const
 name|GTypeInfo
 name|config_iface_info

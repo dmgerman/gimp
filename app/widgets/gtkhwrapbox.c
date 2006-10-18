@@ -149,7 +149,6 @@ operator|!
 name|hwrap_box_type
 condition|)
 block|{
-specifier|static
 specifier|const
 name|GTypeInfo
 name|hwrap_box_info

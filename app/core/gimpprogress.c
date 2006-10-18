@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5437fd0103
+DECL|enum|__anon27a104e70103
 block|{
 DECL|enumerator|CANCEL
 name|CANCEL
@@ -115,7 +115,6 @@ operator|!
 name|progress_iface_type
 condition|)
 block|{
-specifier|static
 specifier|const
 name|GTypeInfo
 name|progress_iface_info

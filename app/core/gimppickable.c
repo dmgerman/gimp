@@ -59,7 +59,6 @@ operator|!
 name|pickable_iface_type
 condition|)
 block|{
-specifier|static
 specifier|const
 name|GTypeInfo
 name|pickable_iface_info

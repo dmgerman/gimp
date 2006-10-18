@@ -58,7 +58,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290e08710108
+DECL|struct|__anon288b10ff0108
 block|{
 DECL|member|hscr_policy
 name|GtkPolicyType
@@ -385,7 +385,6 @@ operator|!
 name|preview_type
 condition|)
 block|{
-specifier|static
 specifier|const
 name|GTypeInfo
 name|preview_info

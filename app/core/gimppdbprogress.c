@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b633320103
+DECL|enum|__anon293596150103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -339,7 +339,6 @@ operator|!
 name|type
 condition|)
 block|{
-specifier|static
 specifier|const
 name|GTypeInfo
 name|info
@@ -385,7 +384,6 @@ operator|)
 name|gimp_pdb_progress_init
 block|,       }
 decl_stmt|;
-specifier|static
 specifier|const
 name|GInterfaceInfo
 name|progress_iface_info
