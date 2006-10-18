@@ -638,7 +638,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Angle:"
+literal|"_Angle:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -771,7 +771,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"Center X:"
+literal|"Center _X:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -838,7 +838,7 @@ literal|3
 argument_list|,
 name|_
 argument_list|(
-literal|"Center Y:"
+literal|"Center _Y:"
 argument_list|)
 argument_list|,
 literal|0.0

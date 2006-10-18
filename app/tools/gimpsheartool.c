@@ -590,7 +590,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Shear magnitude X:"
+literal|"Shear magnitude _X:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -670,7 +670,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Shear magnitude Y:"
+literal|"Shear magnitude _Y:"
 argument_list|)
 argument_list|,
 literal|0.0
