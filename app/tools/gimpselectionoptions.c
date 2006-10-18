@@ -96,6 +96,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimprectangleselectoptions.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimptooloptions-gui.h"
 end_include
 
@@ -107,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ad56bb0103
+DECL|enum|__anon298faf0f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -825,7 +831,7 @@ name|tool_info
 operator|->
 name|tool_type
 operator|!=
-name|GIMP_TYPE_RECT_SELECT_TOOL
+name|GIMP_TYPE_FOREGROUND_SELECT_TOOL
 operator|)
 expr_stmt|;
 name|pspec
@@ -1275,17 +1281,8 @@ name|tool_info
 operator|->
 name|tool_type
 operator|==
-name|GIMP_TYPE_RECT_SELECT_TOOL
-operator|||
-name|tool_options
-operator|->
-name|tool_info
-operator|->
-name|tool_type
-operator|==
 name|GIMP_TYPE_FOREGROUND_SELECT_TOOL
 condition|)
-block|{
 name|gtk_widget_set_sensitive
 argument_list|(
 name|button
@@ -1293,7 +1290,12 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-block|}
+name|options
+operator|->
+name|antialias_toggle
+operator|=
+name|button
+expr_stmt|;
 comment|/*  the feather frame  */
 block|{
 name|GtkWidget

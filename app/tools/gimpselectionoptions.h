@@ -160,6 +160,12 @@ DECL|member|interactive
 name|gboolean
 name|interactive
 decl_stmt|;
+comment|/*  options gui  */
+DECL|member|antialias_toggle
+name|GtkWidget
+modifier|*
+name|antialias_toggle
+decl_stmt|;
 block|}
 struct|;
 end_struct

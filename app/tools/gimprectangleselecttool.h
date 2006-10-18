@@ -85,6 +85,17 @@ parameter_list|)
 value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_RECT_SELECT_TOOL, GimpRectSelectToolClass))
 end_define
 
+begin_define
+DECL|macro|GIMP_RECT_SELECT_TOOL_GET_OPTIONS (t)
+define|#
+directive|define
+name|GIMP_RECT_SELECT_TOOL_GET_OPTIONS
+parameter_list|(
+name|t
+parameter_list|)
+value|(GIMP_RECT_SELECT_OPTIONS (gimp_tool_get_options (GIMP_TOOL (t))))
+end_define
+
 begin_typedef
 DECL|typedef|GimpRectSelectTool
 typedef|typedef
