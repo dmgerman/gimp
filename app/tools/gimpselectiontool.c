@@ -277,15 +277,15 @@ parameter_list|)
 block|{
 name|selection_tool
 operator|->
-name|op
+name|function
 operator|=
-name|SELECTION_REPLACE
+name|SELECTION_SELECT
 expr_stmt|;
 name|selection_tool
 operator|->
-name|saved_op
+name|saved_operation
 operator|=
-name|SELECTION_REPLACE
+name|GIMP_CHANNEL_OP_REPLACE
 expr_stmt|;
 name|selection_tool
 operator|->
@@ -414,7 +414,7 @@ operator|==
 name|GDK_MOD1_MASK
 condition|)
 block|{
-name|SelectOps
+name|GimpChannelOps
 name|button_op
 init|=
 name|options
@@ -432,7 +432,7 @@ name|button_op
 operator|=
 name|selection_tool
 operator|->
-name|saved_op
+name|saved_operation
 expr_stmt|;
 block|}
 else|else
@@ -460,7 +460,7 @@ block|{
 comment|/*  first modifier pressed  */
 name|selection_tool
 operator|->
-name|saved_op
+name|saved_operation
 operator|=
 name|options
 operator|->
@@ -489,7 +489,7 @@ name|button_op
 operator|=
 name|selection_tool
 operator|->
-name|saved_op
+name|saved_operation
 expr_stmt|;
 block|}
 block|}
@@ -510,7 +510,7 @@ condition|)
 block|{
 name|button_op
 operator|=
-name|SELECTION_INTERSECT
+name|GIMP_CHANNEL_OP_INTERSECT
 expr_stmt|;
 block|}
 elseif|else
@@ -523,7 +523,7 @@ condition|)
 block|{
 name|button_op
 operator|=
-name|SELECTION_ADD
+name|GIMP_CHANNEL_OP_ADD
 expr_stmt|;
 block|}
 elseif|else
@@ -536,7 +536,7 @@ condition|)
 block|{
 name|button_op
 operator|=
-name|SELECTION_SUBTRACT
+name|GIMP_CHANNEL_OP_SUBTRACT
 expr_stmt|;
 block|}
 block|}
@@ -734,6 +734,12 @@ argument_list|(
 name|selection
 argument_list|)
 expr_stmt|;
+name|selection_tool
+operator|->
+name|function
+operator|=
+name|SELECTION_SELECT
+expr_stmt|;
 if|if
 condition|(
 name|selection_tool
@@ -755,13 +761,13 @@ operator|&&
 name|move_layer
 condition|)
 block|{
+comment|/* move the selection */
 name|selection_tool
 operator|->
-name|op
+name|function
 operator|=
 name|SELECTION_MOVE
 expr_stmt|;
-comment|/* move the selection */
 block|}
 elseif|else
 if|if
@@ -785,13 +791,13 @@ operator|&&
 name|move_layer
 condition|)
 block|{
+comment|/* move a copy of the selection */
 name|selection_tool
 operator|->
-name|op
+name|function
 operator|=
 name|SELECTION_MOVE_COPY
 expr_stmt|;
-comment|/* move a copy of the selection */
 block|}
 elseif|else
 if|if
@@ -810,13 +816,13 @@ operator|!
 name|selection_empty
 condition|)
 block|{
+comment|/* move the selection mask */
 name|selection_tool
 operator|->
-name|op
+name|function
 operator|=
 name|SELECTION_MOVE_MASK
 expr_stmt|;
-comment|/* move the selection mask */
 block|}
 elseif|else
 if|if
@@ -839,13 +845,13 @@ operator|&&
 name|move_floating_sel
 condition|)
 block|{
+comment|/* move the selection */
 name|selection_tool
 operator|->
-name|op
+name|function
 operator|=
 name|SELECTION_MOVE
 expr_stmt|;
-comment|/* move the selection */
 block|}
 elseif|else
 if|if
@@ -855,7 +861,7 @@ name|state
 operator|&
 name|GDK_CONTROL_MASK
 operator|)
-operator|&&
+operator|||
 operator|(
 name|state
 operator|&
@@ -863,45 +869,13 @@ name|GDK_SHIFT_MASK
 operator|)
 condition|)
 block|{
+comment|/* select */
 name|selection_tool
 operator|->
-name|op
+name|function
 operator|=
-name|SELECTION_INTERSECT
+name|SELECTION_SELECT
 expr_stmt|;
-comment|/* intersect with selection */
-block|}
-elseif|else
-if|if
-condition|(
-name|state
-operator|&
-name|GDK_SHIFT_MASK
-condition|)
-block|{
-name|selection_tool
-operator|->
-name|op
-operator|=
-name|SELECTION_ADD
-expr_stmt|;
-comment|/* add to the selection */
-block|}
-elseif|else
-if|if
-condition|(
-name|state
-operator|&
-name|GDK_CONTROL_MASK
-condition|)
-block|{
-name|selection_tool
-operator|->
-name|op
-operator|=
-name|SELECTION_SUBTRACT
-expr_stmt|;
-comment|/* subtract from the selection */
 block|}
 elseif|else
 if|if
@@ -909,23 +883,12 @@ condition|(
 name|floating_sel
 condition|)
 block|{
+comment|/* anchor the selection */
 name|selection_tool
 operator|->
-name|op
+name|function
 operator|=
 name|SELECTION_ANCHOR
-expr_stmt|;
-comment|/* anchor the selection */
-block|}
-else|else
-block|{
-name|selection_tool
-operator|->
-name|op
-operator|=
-name|options
-operator|->
-name|operation
 expr_stmt|;
 block|}
 name|gimp_tool_pop_status
@@ -973,11 +936,21 @@ switch|switch
 condition|(
 name|selection_tool
 operator|->
-name|op
+name|function
 condition|)
 block|{
 case|case
-name|SELECTION_REPLACE
+name|SELECTION_SELECT
+case|:
+switch|switch
+condition|(
+name|options
+operator|->
+name|operation
+condition|)
+block|{
+case|case
+name|GIMP_CHANNEL_OP_REPLACE
 case|:
 if|if
 condition|(
@@ -1024,7 +997,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|SELECTION_ADD
+name|GIMP_CHANNEL_OP_ADD
 case|:
 name|status
 operator|=
@@ -1058,7 +1031,7 @@ name|TRUE
 expr_stmt|;
 break|break;
 case|case
-name|SELECTION_SUBTRACT
+name|GIMP_CHANNEL_OP_SUBTRACT
 case|:
 name|status
 operator|=
@@ -1092,7 +1065,7 @@ name|TRUE
 expr_stmt|;
 break|break;
 case|case
-name|SELECTION_INTERSECT
+name|GIMP_CHANNEL_OP_INTERSECT
 case|:
 name|status
 operator|=
@@ -1120,6 +1093,8 @@ name|free_status
 operator|=
 name|TRUE
 expr_stmt|;
+break|break;
+block|}
 break|break;
 case|case
 name|SELECTION_MOVE_MASK
@@ -1246,12 +1221,23 @@ argument_list|(
 name|tool
 argument_list|)
 decl_stmt|;
+name|GimpSelectionOptions
+modifier|*
+name|options
+decl_stmt|;
 name|GimpToolCursorType
 name|tool_cursor
 decl_stmt|;
 name|GimpCursorModifier
 name|modifier
 decl_stmt|;
+name|options
+operator|=
+name|GIMP_SELECTION_TOOL_GET_OPTIONS
+argument_list|(
+name|tool
+argument_list|)
+expr_stmt|;
 name|tool_cursor
 operator|=
 name|gimp_tool_control_get_tool_cursor
@@ -1269,11 +1255,25 @@ switch|switch
 condition|(
 name|selection_tool
 operator|->
-name|op
+name|function
 condition|)
 block|{
 case|case
-name|SELECTION_ADD
+name|SELECTION_SELECT
+case|:
+switch|switch
+condition|(
+name|options
+operator|->
+name|operation
+condition|)
+block|{
+case|case
+name|GIMP_CHANNEL_OP_REPLACE
+case|:
+break|break;
+case|case
+name|GIMP_CHANNEL_OP_ADD
 case|:
 name|modifier
 operator|=
@@ -1281,7 +1281,7 @@ name|GIMP_CURSOR_MODIFIER_PLUS
 expr_stmt|;
 break|break;
 case|case
-name|SELECTION_SUBTRACT
+name|GIMP_CHANNEL_OP_SUBTRACT
 case|:
 name|modifier
 operator|=
@@ -1289,16 +1289,14 @@ name|GIMP_CURSOR_MODIFIER_MINUS
 expr_stmt|;
 break|break;
 case|case
-name|SELECTION_INTERSECT
+name|GIMP_CHANNEL_OP_INTERSECT
 case|:
 name|modifier
 operator|=
 name|GIMP_CURSOR_MODIFIER_INTERSECT
 expr_stmt|;
 break|break;
-case|case
-name|SELECTION_REPLACE
-case|:
+block|}
 break|break;
 case|case
 name|SELECTION_MOVE_MASK
@@ -1443,7 +1441,7 @@ switch|switch
 condition|(
 name|sel_tool
 operator|->
-name|op
+name|function
 condition|)
 block|{
 case|case

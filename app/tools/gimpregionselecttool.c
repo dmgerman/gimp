@@ -746,7 +746,7 @@ argument_list|(
 name|tool
 argument_list|)
 operator|->
-name|op
+name|function
 operator|==
 name|SELECTION_ANCHOR
 condition|)
@@ -875,12 +875,9 @@ name|off_x
 argument_list|,
 name|off_y
 argument_list|,
-name|GIMP_SELECTION_TOOL
-argument_list|(
-name|tool
-argument_list|)
+name|options
 operator|->
-name|op
+name|operation
 argument_list|,
 name|options
 operator|->

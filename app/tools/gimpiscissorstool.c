@@ -2027,12 +2027,9 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|GIMP_SELECTION_TOOL
-argument_list|(
-name|tool
-argument_list|)
+name|options
 operator|->
-name|op
+name|operation
 argument_list|,
 name|options
 operator|->

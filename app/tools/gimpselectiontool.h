@@ -123,16 +123,16 @@ DECL|member|parent_instance
 name|GimpDrawTool
 name|parent_instance
 decl_stmt|;
-DECL|member|op
-name|SelectOps
-name|op
+DECL|member|function
+name|SelectFunction
+name|function
 decl_stmt|;
-comment|/*  selection operation (SELECTION_ADD etc.)  */
-DECL|member|saved_op
-name|SelectOps
-name|saved_op
+comment|/*  selection function        */
+DECL|member|saved_operation
+name|GimpChannelOps
+name|saved_operation
 decl_stmt|;
-comment|/*  saved tool options state                  */
+comment|/*  saved tool options state  */
 DECL|member|allow_move
 name|gboolean
 name|allow_move
