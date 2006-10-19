@@ -20,7 +20,10 @@ begin_function_decl
 name|void
 name|script_fu_find_scripts
 parameter_list|(
-name|void
+specifier|const
+name|gchar
+modifier|*
+name|path
 parameter_list|)
 function_decl|;
 end_function_decl

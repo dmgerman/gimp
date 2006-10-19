@@ -109,7 +109,13 @@ begin_function_decl
 name|void
 name|tinyscheme_init
 parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|path
+parameter_list|,
 name|gboolean
+name|local_register_scripts
 parameter_list|)
 function_decl|;
 end_function_decl
