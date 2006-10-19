@@ -379,7 +379,7 @@ argument_list|(
 literal|"_Arbitrary Rotation..."
 argument_list|)
 block|,
-name|NULL
+literal|""
 block|,
 name|NULL
 block|,
@@ -1835,25 +1835,6 @@ argument_list|(
 name|action
 argument_list|,
 literal|"<Actions>/tools/tools-by-color-select"
-argument_list|)
-expr_stmt|;
-name|action
-operator|=
-name|gtk_action_group_get_action
-argument_list|(
-name|GTK_ACTION_GROUP
-argument_list|(
-name|group
-argument_list|)
-argument_list|,
-literal|"tools-rotate-arbitrary"
-argument_list|)
-expr_stmt|;
-name|gtk_action_set_accel_path
-argument_list|(
-name|action
-argument_list|,
-literal|"<Actions>/tools/tools-rotate"
 argument_list|)
 expr_stmt|;
 name|gimp_action_group_add_enum_actions
