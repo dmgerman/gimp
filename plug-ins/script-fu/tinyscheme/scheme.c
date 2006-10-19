@@ -9848,7 +9848,7 @@ name|fopen
 argument_list|(
 name|fname
 argument_list|,
-literal|"r"
+literal|"rb"
 argument_list|)
 decl_stmt|;
 if|if
@@ -10126,7 +10126,7 @@ condition|)
 block|{
 name|rw
 operator|=
-literal|"a+"
+literal|"a+b"
 expr_stmt|;
 block|}
 elseif|else
@@ -10139,14 +10139,14 @@ condition|)
 block|{
 name|rw
 operator|=
-literal|"w"
+literal|"wb"
 expr_stmt|;
 block|}
 else|else
 block|{
 name|rw
 operator|=
-literal|"r"
+literal|"rb"
 expr_stmt|;
 block|}
 name|f
@@ -11730,7 +11730,7 @@ decl_stmt|;
 name|int
 name|len
 decl_stmt|;
-DECL|enum|__anon275851af0103
+DECL|enum|__anon27d3e1e80103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -28918,7 +28918,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon275851af0208
+DECL|struct|__anon27d3e1e80208
 specifier|static
 struct|struct
 block|{
@@ -29167,7 +29167,7 @@ value|"\017"
 end_define
 
 begin_typedef
-DECL|struct|__anon275851af0308
+DECL|struct|__anon27d3e1e80308
 typedef|typedef
 struct|struct
 block|{
