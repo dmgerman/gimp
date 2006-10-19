@@ -93,26 +93,10 @@ directive|include
 file|"script-fu-intl.h"
 end_include
 
-begin_define
-DECL|macro|RESPONSE_RESET
-define|#
-directive|define
-name|RESPONSE_RESET
-value|1
-end_define
-
-begin_define
-DECL|macro|RESPONSE_ABOUT
-define|#
-directive|define
-name|RESPONSE_ABOUT
-value|2
-end_define
-
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27fa89a00108
+DECL|struct|__anon289ece8f0108
 block|{
 DECL|member|script
 name|SFScript

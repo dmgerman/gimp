@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<glib/gstdio.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimp.h"
 end_include
 
@@ -84,7 +90,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2782f6850108
+DECL|struct|__anon29024e760108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -145,7 +151,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2782f6850203
+DECL|enum|__anon29024e760203
 block|{
 DECL|enumerator|RESPONSE_CLEAR
 name|RESPONSE_CLEAR
@@ -1398,7 +1404,7 @@ argument_list|)
 expr_stmt|;
 name|fh
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|filename
 argument_list|,
