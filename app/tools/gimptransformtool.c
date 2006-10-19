@@ -1802,11 +1802,13 @@ operator|->
 name|use_grid
 condition|)
 block|{
-name|gimp_transform_tool_doit
+name|gimp_transform_tool_response
 argument_list|(
-name|tr_tool
+name|NULL
 argument_list|,
-name|display
+name|GTK_RESPONSE_OK
+argument_list|,
+name|tr_tool
 argument_list|)
 expr_stmt|;
 block|}
