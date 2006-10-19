@@ -106,7 +106,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b0082d0108
+DECL|struct|__anon294813130108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -1757,6 +1757,24 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 break|break;
+default|default:
+name|g_warning
+argument_list|(
+literal|"unexpected adjustment type: %d"
+argument_list|,
+name|script
+operator|->
+name|arg_defaults
+index|[
+name|i
+index|]
+operator|.
+name|sfa_adjustment
+operator|.
+name|type
+argument_list|)
+expr_stmt|;
+comment|/* fallthrough */
 case|case
 name|SF_SPINNER
 case|:
