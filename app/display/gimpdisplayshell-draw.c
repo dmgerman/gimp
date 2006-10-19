@@ -2222,13 +2222,6 @@ operator|=
 name|shell
 operator|->
 name|disp_xoffset
-operator|>
-literal|0
-condition|?
-name|shell
-operator|->
-name|disp_xoffset
-else|:
 operator|-
 name|shell
 operator|->
@@ -2239,13 +2232,6 @@ operator|=
 name|shell
 operator|->
 name|disp_yoffset
-operator|>
-literal|0
-condition|?
-name|shell
-operator|->
-name|disp_yoffset
-else|:
 operator|-
 name|shell
 operator|->

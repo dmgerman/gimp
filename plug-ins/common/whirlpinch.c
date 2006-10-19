@@ -71,14 +71,6 @@ name|SCALE_WIDTH
 value|200
 end_define
 
-begin_define
-DECL|macro|ENTRY_WIDTH
-define|#
-directive|define
-name|ENTRY_WIDTH
-value|60
-end_define
-
 begin_comment
 comment|/***** Types *****/
 end_comment
@@ -86,7 +78,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7c8bd60108
+DECL|struct|__anon2c52e0f90108
 block|{
 DECL|member|whirl
 name|gdouble
