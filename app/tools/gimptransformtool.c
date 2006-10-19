@@ -3332,15 +3332,9 @@ name|ty2
 operator|)
 operator|)
 expr_stmt|;
-comment|/*  Draw the grid (not for path transform since it looks ugly)  */
+comment|/*  draw the grid  */
 if|if
 condition|(
-name|tr_tool
-operator|->
-name|type
-operator|!=
-name|GIMP_TRANSFORM_TYPE_PATH
-operator|&&
 name|tr_tool
 operator|->
 name|grid_coords
