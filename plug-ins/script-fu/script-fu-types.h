@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba508b90108
+DECL|struct|__anon2ba6a2650108
 block|{
 DECL|member|adj
 name|GtkAdjustment
@@ -69,7 +69,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba508b90208
+DECL|struct|__anon2ba6a2650208
 block|{
 DECL|member|filename
 name|gchar
@@ -85,7 +85,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba508b90308
+DECL|struct|__anon2ba6a2650308
 block|{
 DECL|member|name
 name|gchar
@@ -113,7 +113,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba508b90408
+DECL|struct|__anon2ba6a2650408
 block|{
 DECL|member|list
 name|GSList
@@ -133,7 +133,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba508b90508
+DECL|struct|__anon2ba6a2650508
 block|{
 DECL|member|type_name
 name|gchar
@@ -153,7 +153,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon2ba508b9060a
+DECL|union|__anon2ba6a265060a
 block|{
 DECL|member|sfa_image
 name|gint32
@@ -233,7 +233,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba508b90708
+DECL|struct|__anon2ba6a2650708
 block|{
 DECL|member|name
 name|gchar
@@ -294,10 +294,6 @@ DECL|member|arg_values
 name|SFArgValue
 modifier|*
 name|arg_values
-decl_stmt|;
-DECL|member|image_based
-name|gboolean
-name|image_based
 decl_stmt|;
 DECL|member|args
 name|GimpParamDef

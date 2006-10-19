@@ -106,7 +106,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c721dc00108
+DECL|struct|__anon29b0082d0108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -552,12 +552,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|script_fu_interface (SFScript * script)
+DECL|function|script_fu_interface (SFScript * script,gint start_arg)
 name|script_fu_interface
 parameter_list|(
 name|SFScript
 modifier|*
 name|script
+parameter_list|,
+name|gint
+name|start_arg
 parameter_list|)
 block|{
 name|GtkWidget
@@ -997,12 +1000,6 @@ name|vbox
 argument_list|)
 expr_stmt|;
 comment|/*  The argument table  */
-if|if
-condition|(
-name|script
-operator|->
-name|image_based
-condition|)
 name|sf_interface
 operator|->
 name|table
@@ -1013,25 +1010,7 @@ name|script
 operator|->
 name|num_args
 operator|-
-literal|1
-argument_list|,
-literal|3
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
-else|else
-name|sf_interface
-operator|->
-name|table
-operator|=
-name|gtk_table_new
-argument_list|(
-name|script
-operator|->
-name|num_args
-operator|+
-literal|1
+name|start_arg
 argument_list|,
 literal|3
 argument_list|,
@@ -1098,13 +1077,7 @@ for|for
 control|(
 name|i
 operator|=
-name|script
-operator|->
-name|image_based
-condition|?
-literal|2
-else|:
-literal|0
+name|start_arg
 init|;
 name|i
 operator|<
@@ -1151,15 +1124,9 @@ name|left_align
 init|=
 name|FALSE
 decl_stmt|;
-if|if
-condition|(
-name|script
-operator|->
-name|image_based
-condition|)
 name|row
 operator|-=
-literal|2
+name|start_arg
 expr_stmt|;
 comment|/*  we add a colon after the label;           some languages want an extra space here  */
 name|label_text

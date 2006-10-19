@@ -23,6 +23,9 @@ parameter_list|(
 name|SFScript
 modifier|*
 name|script
+parameter_list|,
+name|gint
+name|start_arg
 parameter_list|)
 function_decl|;
 end_function_decl
