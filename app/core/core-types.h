@@ -445,6 +445,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpDrawableUndo
+typedef|typedef
+name|struct
+name|_GimpDrawableUndo
+name|GimpDrawableUndo
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpUndoStack
 typedef|typedef
 name|struct
