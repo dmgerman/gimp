@@ -1842,16 +1842,13 @@ control|)
 block|{
 if|if
 condition|(
-operator|!
-name|strncmp
+name|g_str_has_prefix
 argument_list|(
-literal|"GIMP_"
-argument_list|,
 name|value
 operator|->
 name|value_name
 argument_list|,
-literal|5
+literal|"GIMP_"
 argument_list|)
 condition|)
 block|{
@@ -1867,7 +1864,10 @@ name|value
 operator|->
 name|value_name
 operator|+
-literal|5
+name|strlen
+argument_list|(
+literal|"GIMP_"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|convert_string
@@ -1964,6 +1964,7 @@ name|gchar
 modifier|*
 name|scheme_name
 decl_stmt|;
+comment|/* FIXME: gimp_unit_get_singular() returns a translated string */
 name|tmp
 operator|=
 name|g_ascii_strup
