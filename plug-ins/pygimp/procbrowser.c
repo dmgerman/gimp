@@ -60,13 +60,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"pygimp-util.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"pygimp-intl.h"
 end_include
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c193df0108
+DECL|struct|__anon298e0e140108
 block|{
 DECL|member|func
 name|PyObject
@@ -788,7 +794,7 @@ name|PyObject
 modifier|*
 name|m
 decl_stmt|;
-name|init_pygobject
+name|pygimp_init_pygobject
 argument_list|()
 expr_stmt|;
 name|init_pygtk

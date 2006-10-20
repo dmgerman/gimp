@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"pygimp-util.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"pygimp-intl.h"
 end_include
 
@@ -7753,7 +7759,7 @@ operator|<
 literal|0
 condition|)
 return|return;
-name|init_pygobject
+name|pygimp_init_pygobject
 argument_list|()
 expr_stmt|;
 name|init_pygimpcolor
