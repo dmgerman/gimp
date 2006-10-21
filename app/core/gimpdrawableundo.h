@@ -128,6 +128,20 @@ DECL|member|height
 name|gint
 name|height
 decl_stmt|;
+comment|/* stuff for "Fade" */
+DECL|member|src2_tiles
+name|TileManager
+modifier|*
+name|src2_tiles
+decl_stmt|;
+DECL|member|paint_mode
+name|GimpLayerModeEffects
+name|paint_mode
+decl_stmt|;
+DECL|member|opacity
+name|gdouble
+name|opacity
+decl_stmt|;
 block|}
 struct|;
 end_struct

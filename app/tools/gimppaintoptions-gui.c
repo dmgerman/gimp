@@ -426,6 +426,8 @@ argument_list|,
 literal|"paint-mode"
 argument_list|,
 name|TRUE
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|label

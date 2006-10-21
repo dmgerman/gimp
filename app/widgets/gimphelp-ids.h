@@ -185,6 +185,14 @@ value|"gimp-edit-undo-clear"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_EDIT_FADE
+define|#
+directive|define
+name|GIMP_HELP_EDIT_FADE
+value|"gimp-edit-fade"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_EDIT_CUT
 define|#
 directive|define

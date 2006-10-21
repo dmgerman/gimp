@@ -69,7 +69,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2a0d811f0103
+DECL|enum|__anon29c517390103
 block|{
 DECL|enumerator|GIMP_CURVE_SMOOTH
 name|GIMP_CURVE_SMOOTH
@@ -105,7 +105,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a0d811f0203
+DECL|enum|__anon29c517390203
 block|{
 DECL|enumerator|GIMP_HISTOGRAM_VALUE
 name|GIMP_HISTOGRAM_VALUE
@@ -169,7 +169,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a0d811f0303
+DECL|enum|__anon29c517390303
 block|{
 DECL|enumerator|GIMP_NORMAL_MODE
 name|GIMP_NORMAL_MODE
@@ -266,14 +266,14 @@ comment|/*< desc="Color erase">*/
 DECL|enumerator|GIMP_ERASE_MODE
 name|GIMP_ERASE_MODE
 block|,
-comment|/*< pdb-skip, skip>*/
+comment|/*< pdb-skip, desc="Erase">*/
 DECL|enumerator|GIMP_REPLACE_MODE
 name|GIMP_REPLACE_MODE
 block|,
-comment|/*< pdb-skip, skip>*/
+comment|/*< pdb-skip, desc="Replace">*/
 DECL|enumerator|GIMP_ANTI_ERASE_MODE
 name|GIMP_ANTI_ERASE_MODE
-comment|/*< pdb-skip, skip>*/
+comment|/*< pdb-skip, desc="Anti erase">*/
 DECL|typedef|GimpLayerModeEffects
 block|}
 name|GimpLayerModeEffects
@@ -301,7 +301,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a0d811f0403
+DECL|enum|__anon29c517390403
 block|{
 DECL|enumerator|GIMP_ALL_HUES
 name|GIMP_ALL_HUES
@@ -337,7 +337,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2a0d811f0503
+DECL|enum|__anon29c517390503
 block|{
 DECL|enumerator|GIMP_NORMAL_CONVOL
 name|GIMP_NORMAL_CONVOL
@@ -360,7 +360,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip, skip>*/
-DECL|enum|__anon2a0d811f0603
+DECL|enum|__anon29c517390603
 block|{
 DECL|enumerator|SIOX_REFINEMENT_NO_CHANGE
 name|SIOX_REFINEMENT_NO_CHANGE

@@ -71,6 +71,9 @@ name|property_name
 parameter_list|,
 name|gboolean
 name|with_behind_mode
+parameter_list|,
+name|gboolean
+name|with_replace_modes
 parameter_list|)
 function_decl|;
 end_function_decl

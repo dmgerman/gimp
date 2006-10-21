@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b4f8160103
+DECL|enum|__anon2c42f8590103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -912,6 +912,27 @@ expr_stmt|;
 name|drawable_undo
 operator|->
 name|tiles
+operator|=
+name|NULL
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|drawable_undo
+operator|->
+name|src2_tiles
+condition|)
+block|{
+name|tile_manager_unref
+argument_list|(
+name|drawable_undo
+operator|->
+name|src2_tiles
+argument_list|)
+expr_stmt|;
+name|drawable_undo
+operator|->
+name|src2_tiles
 operator|=
 name|NULL
 expr_stmt|;

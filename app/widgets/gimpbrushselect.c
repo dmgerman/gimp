@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be6cbff0103
+DECL|enum|__anon2c3d31720103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -758,6 +758,8 @@ operator|=
 name|gimp_paint_mode_menu_new
 argument_list|(
 name|TRUE
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_table_attach_aligned

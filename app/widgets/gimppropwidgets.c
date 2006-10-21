@@ -434,13 +434,13 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_prop_paint_mode_menu_new:  * @config:           #GimpConfig object to which property is attached.  * @property_name:    Name of Enum property.  * @with_behind_mode: Whether to include "Behind" mode in the menu.  *  * Creates a #GimpPaintModeMenu widget to display and set the specified  * Enum property, for which the enum must be #GimpLayerModeEffects.  *  * Return value: The newly created #GimpPaintModeMenu widget.  *  * Since GIMP 2.4  */
+comment|/**  * gimp_prop_paint_mode_menu_new:  * @config:             #GimpConfig object to which property is attached.  * @property_name:      Name of Enum property.  * @with_behind_mode:   Whether to include "Behind" mode in the menu.  * @with_replace_modes: Whether to include the "Replace", "Erase" and  *                      "Anti Erase" modes in the menu.  *  * Creates a #GimpPaintModeMenu widget to display and set the specified  * Enum property, for which the enum must be #GimpLayerModeEffects.  *  * Return value: The newly created #GimpPaintModeMenu widget.  *  * Since GIMP 2.4  */
 end_comment
 
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_prop_paint_mode_menu_new (GObject * config,const gchar * property_name,gboolean with_behind_mode)
+DECL|function|gimp_prop_paint_mode_menu_new (GObject * config,const gchar * property_name,gboolean with_behind_mode,gboolean with_replace_modes)
 name|gimp_prop_paint_mode_menu_new
 parameter_list|(
 name|GObject
@@ -454,6 +454,9 @@ name|property_name
 parameter_list|,
 name|gboolean
 name|with_behind_mode
+parameter_list|,
+name|gboolean
+name|with_replace_modes
 parameter_list|)
 block|{
 name|GParamSpec
@@ -505,6 +508,8 @@ operator|=
 name|gimp_paint_mode_menu_new
 argument_list|(
 name|with_behind_mode
+argument_list|,
+name|with_replace_modes
 argument_list|)
 expr_stmt|;
 name|gimp_int_combo_box_connect
@@ -1798,7 +1803,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294d8be70108
+DECL|struct|__anon27edf2780108
 block|{
 DECL|member|config
 name|GObject

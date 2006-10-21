@@ -1269,6 +1269,8 @@ operator|=
 name|gimp_paint_mode_menu_new
 argument_list|(
 name|FALSE
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_table_attach_aligned
