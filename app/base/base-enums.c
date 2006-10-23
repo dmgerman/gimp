@@ -858,7 +858,7 @@ name|GIMP_ANTI_ERASE_MODE
 block|,
 name|N_
 argument_list|(
-literal|"Anti Erase"
+literal|"Anti erase"
 argument_list|)
 block|,
 name|NULL
