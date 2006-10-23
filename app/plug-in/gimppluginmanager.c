@@ -180,7 +180,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2980b2290103
+DECL|enum|__anon27c376da0103
 block|{
 DECL|enumerator|PLUG_IN_OPENED
 name|PLUG_IN_OPENED
@@ -1197,7 +1197,7 @@ argument_list|(
 name|path
 argument_list|)
 expr_stmt|;
-comment|/* allocate a piece of shared memory for use in transporting tiles    *  to plug-ins. if we can't allocate a piece of shared memory then    *  we'll fall back on sending the data over the pipe.    */
+comment|/*  allocate a piece of shared memory for use in transporting tiles    *  to plug-ins. if we can't allocate a piece of shared memory then    *  we'll fall back on sending the data over the pipe.    */
 if|if
 condition|(
 name|manager
@@ -1498,7 +1498,11 @@ name|rc_defs
 argument_list|)
 expr_stmt|;
 block|}
-else|else
+elseif|else
+if|if
+condition|(
+name|error
+condition|)
 block|{
 if|if
 condition|(
