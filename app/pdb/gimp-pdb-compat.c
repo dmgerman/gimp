@@ -751,7 +751,7 @@ name|pdb_type_quark
 condition|)
 block|{
 struct|struct
-DECL|struct|__anon2b668e660108
+DECL|struct|__anon28f6f3e50108
 block|{
 DECL|member|g_type
 name|GType
@@ -1059,7 +1059,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b668e660208
+DECL|struct|__anon28f6f3e50208
 block|{
 DECL|member|old_name
 specifier|const
@@ -1419,13 +1419,13 @@ comment|/*  deprecations since 2.2  */
 block|{
 literal|"gimp-layer-get-preserve-trans"
 block|,
-literal|"gimp-drawable-get-lock-alpha"
+literal|"gimp-layer-get-lock-alpha"
 block|}
 block|,
 block|{
 literal|"gimp-layer-set-preserve-trans"
 block|,
-literal|"gimp-drawable-set-lock-alpha"
+literal|"gimp-layer-set-lock-alpha"
 block|}
 block|}
 struct|;
