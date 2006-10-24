@@ -27,7 +27,7 @@ file|"pygimp.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon29fd32bd0108
+DECL|struct|__anon2ba47e960108
 typedef|typedef
 struct|struct
 block|{
@@ -313,7 +313,7 @@ modifier|*
 name|self
 parameter_list|)
 block|{
-name|gimp_vectors_stroke_remove
+name|gimp_vectors_remove_stroke
 argument_list|(
 name|self
 operator|->

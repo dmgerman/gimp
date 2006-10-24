@@ -3361,17 +3361,17 @@ name|procedure
 argument_list|,
 literal|"gimp-path-get-points"
 argument_list|,
-literal|"List the points associated with the named path."
+literal|"This procedure is deprecated! Use 'gimp-vectors-stroke-get-points' instead."
 argument_list|,
-literal|"List the points associated with the named path."
+literal|"This procedure is deprecated! Use 'gimp-vectors-stroke-get-points' instead."
 argument_list|,
-literal|"Andy Thomas"
+literal|""
 argument_list|,
-literal|"Andy Thomas"
+literal|""
 argument_list|,
-literal|"1999"
+literal|""
 argument_list|,
-name|NULL
+literal|"gimp-vectors-stroke-get-points"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
