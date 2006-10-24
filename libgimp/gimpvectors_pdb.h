@@ -168,13 +168,13 @@ name|gint
 name|stroke_id
 parameter_list|,
 name|gdouble
-name|prescision
+name|precision
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gdouble
+name|gboolean
 name|gimp_vectors_stroke_get_point_at_dist
 parameter_list|(
 name|gint32
@@ -187,7 +187,11 @@ name|gdouble
 name|dist
 parameter_list|,
 name|gdouble
-name|prescision
+name|precision
+parameter_list|,
+name|gdouble
+modifier|*
+name|x_point
 parameter_list|,
 name|gdouble
 modifier|*
@@ -269,7 +273,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
+name|gdouble
+modifier|*
 name|gimp_vectors_stroke_interpolate
 parameter_list|(
 name|gint32
@@ -279,16 +284,15 @@ name|gint
 name|stroke_id
 parameter_list|,
 name|gdouble
-name|prescision
+name|precision
 parameter_list|,
 name|gint
 modifier|*
 name|num_coords
 parameter_list|,
-name|gdouble
+name|gboolean
 modifier|*
-modifier|*
-name|coords
+name|closed
 parameter_list|)
 function_decl|;
 end_function_decl

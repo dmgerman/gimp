@@ -932,12 +932,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_stroke_get_length:  * @vectors_ID: The vectors object.  * @stroke_id: The stroke ID.  * @prescision: The prescision used for the approximation.  *  * Measure the length of the given stroke.  *  * Measure the length of the given stroke.  *  * Returns: The length (in pixels) of the given stroke.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_vectors_stroke_get_length:  * @vectors_ID: The vectors object.  * @stroke_id: The stroke ID.  * @precision: The precision used for the approximation.  *  * Measure the length of the given stroke.  *  * Measure the length of the given stroke.  *  * Returns: The length (in pixels) of the given stroke.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
 name|gdouble
-DECL|function|gimp_vectors_stroke_get_length (gint32 vectors_ID,gint stroke_id,gdouble prescision)
+DECL|function|gimp_vectors_stroke_get_length (gint32 vectors_ID,gint stroke_id,gdouble precision)
 name|gimp_vectors_stroke_get_length
 parameter_list|(
 name|gint32
@@ -947,7 +947,7 @@ name|gint
 name|stroke_id
 parameter_list|,
 name|gdouble
-name|prescision
+name|precision
 parameter_list|)
 block|{
 name|GimpParam
@@ -981,7 +981,7 @@ name|stroke_id
 argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
-name|prescision
+name|precision
 argument_list|,
 name|GIMP_PDB_END
 argument_list|)
@@ -1024,12 +1024,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_stroke_get_point_at_dist:  * @vectors_ID: The vectors object.  * @stroke_id: The stroke ID.  * @dist: The given distance.  * @prescision: The prescision used for the approximation.  * @y_point: The y position of the point.  * @slope: The slope (dy / dx) at the specified point.  * @valid: Indicator for the validity of the returned data.  *  * Get point at a specified distance along the stroke.  *  * This will return the x,y position of a point at a given distance  * along the stroke. The distance will be obtained by first digitizing  * the curve internally and then walking along the curve. For a closed  * stroke the start of the path is the first point on the path that was  * created. This might not be obvious. If the stroke is not long  * enough, a \"valid\" flag will be FALSE.  *  * Returns: The x position of the point.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_vectors_stroke_get_point_at_dist:  * @vectors_ID: The vectors object.  * @stroke_id: The stroke ID.  * @dist: The given distance.  * @precision: The precision used for the approximation.  * @x_point: The x position of the point.  * @y_point: The y position of the point.  * @slope: The slope (dy / dx) at the specified point.  * @valid: Indicator for the validity of the returned data.  *  * Get point at a specified distance along the stroke.  *  * This will return the x,y position of a point at a given distance  * along the stroke. The distance will be obtained by first digitizing  * the curve internally and then walking along the curve. For a closed  * stroke the start of the path is the first point on the path that was  * created. This might not be obvious. If the stroke is not long  * enough, a \"valid\" flag will be FALSE.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
-name|gdouble
-DECL|function|gimp_vectors_stroke_get_point_at_dist (gint32 vectors_ID,gint stroke_id,gdouble dist,gdouble prescision,gdouble * y_point,gdouble * slope,gboolean * valid)
+name|gboolean
+DECL|function|gimp_vectors_stroke_get_point_at_dist (gint32 vectors_ID,gint stroke_id,gdouble dist,gdouble precision,gdouble * x_point,gdouble * y_point,gdouble * slope,gboolean * valid)
 name|gimp_vectors_stroke_get_point_at_dist
 parameter_list|(
 name|gint32
@@ -1042,7 +1042,11 @@ name|gdouble
 name|dist
 parameter_list|,
 name|gdouble
-name|prescision
+name|precision
+parameter_list|,
+name|gdouble
+modifier|*
+name|x_point
 parameter_list|,
 name|gdouble
 modifier|*
@@ -1064,10 +1068,10 @@ decl_stmt|;
 name|gint
 name|nreturn_vals
 decl_stmt|;
-name|gdouble
-name|x_point
+name|gboolean
+name|success
 init|=
-literal|0.0
+name|TRUE
 decl_stmt|;
 name|return_vals
 operator|=
@@ -1092,13 +1096,33 @@ name|dist
 argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
-name|prescision
+name|precision
 argument_list|,
 name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
+operator|*
+name|x_point
+operator|=
+literal|0.0
+expr_stmt|;
+operator|*
+name|y_point
+operator|=
+literal|0.0
+expr_stmt|;
+operator|*
+name|slope
+operator|=
+literal|0.0
+expr_stmt|;
+operator|*
+name|valid
+operator|=
+name|FALSE
+expr_stmt|;
+name|success
+operator|=
 name|return_vals
 index|[
 literal|0
@@ -1109,8 +1133,13 @@ operator|.
 name|d_status
 operator|==
 name|GIMP_PDB_SUCCESS
+expr_stmt|;
+if|if
+condition|(
+name|success
 condition|)
 block|{
+operator|*
 name|x_point
 operator|=
 name|return_vals
@@ -1167,7 +1196,7 @@ name|nreturn_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|x_point
+name|success
 return|;
 block|}
 end_function
@@ -1497,12 +1526,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_stroke_interpolate:  * @vectors_ID: The vectors object.  * @stroke_id: The stroke ID.  * @prescision: The prescision used for the approximation.  * @num_coords: The number of floats returned.  * @coords: List of the coords along the path (x0, y0, x1, y1, ...).  *  * returns polygonal approximation of the stroke.  *  * returns polygonal approximation of the stroke.  *  * Returns: List of the strokes belonging to the path.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_vectors_stroke_interpolate:  * @vectors_ID: The vectors object.  * @stroke_id: The stroke ID.  * @precision: The precision used for the approximation.  * @num_coords: The number of floats returned.  * @closed: Whether the stroke is closed or not.  *  * returns polygonal approximation of the stroke.  *  * returns polygonal approximation of the stroke.  *  * Returns: List of the coords along the path (x0, y0, x1, y1, ...).  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
-name|gboolean
-DECL|function|gimp_vectors_stroke_interpolate (gint32 vectors_ID,gint stroke_id,gdouble prescision,gint * num_coords,gdouble ** coords)
+name|gdouble
+modifier|*
+DECL|function|gimp_vectors_stroke_interpolate (gint32 vectors_ID,gint stroke_id,gdouble precision,gint * num_coords,gboolean * closed)
 name|gimp_vectors_stroke_interpolate
 parameter_list|(
 name|gint32
@@ -1512,16 +1542,15 @@ name|gint
 name|stroke_id
 parameter_list|,
 name|gdouble
-name|prescision
+name|precision
 parameter_list|,
 name|gint
 modifier|*
 name|num_coords
 parameter_list|,
-name|gdouble
+name|gboolean
 modifier|*
-modifier|*
-name|coords
+name|closed
 parameter_list|)
 block|{
 name|GimpParam
@@ -1531,10 +1560,11 @@ decl_stmt|;
 name|gint
 name|nreturn_vals
 decl_stmt|;
-name|gboolean
-name|closed
+name|gdouble
+modifier|*
+name|coords
 init|=
-name|FALSE
+name|NULL
 decl_stmt|;
 name|return_vals
 operator|=
@@ -1555,7 +1585,7 @@ name|stroke_id
 argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
-name|prescision
+name|precision
 argument_list|,
 name|GIMP_PDB_END
 argument_list|)
@@ -1579,7 +1609,8 @@ operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
 block|{
-name|closed
+operator|*
+name|num_coords
 operator|=
 name|return_vals
 index|[
@@ -1590,19 +1621,6 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
-operator|*
-name|num_coords
-operator|=
-name|return_vals
-index|[
-literal|2
-index|]
-operator|.
-name|data
-operator|.
-name|d_int32
-expr_stmt|;
-operator|*
 name|coords
 operator|=
 name|g_new
@@ -1615,12 +1633,11 @@ argument_list|)
 expr_stmt|;
 name|memcpy
 argument_list|(
-operator|*
 name|coords
 argument_list|,
 name|return_vals
 index|[
-literal|3
+literal|2
 index|]
 operator|.
 name|data
@@ -1636,6 +1653,18 @@ name|gdouble
 argument_list|)
 argument_list|)
 expr_stmt|;
+operator|*
+name|closed
+operator|=
+name|return_vals
+index|[
+literal|3
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
 block|}
 name|gimp_destroy_params
 argument_list|(
@@ -1645,7 +1674,7 @@ name|nreturn_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|closed
+name|coords
 return|;
 block|}
 end_function

@@ -1409,7 +1409,7 @@ name|gint32
 name|stroke_id
 decl_stmt|;
 name|gdouble
-name|prescision
+name|precision
 decl_stmt|;
 name|gdouble
 name|length
@@ -1444,7 +1444,7 @@ literal|1
 index|]
 argument_list|)
 expr_stmt|;
-name|prescision
+name|precision
 operator|=
 name|g_value_get_double
 argument_list|(
@@ -1483,7 +1483,7 @@ name|gimp_stroke_get_length
 argument_list|(
 name|stroke
 argument_list|,
-name|prescision
+name|precision
 argument_list|)
 expr_stmt|;
 else|else
@@ -1573,7 +1573,7 @@ name|gdouble
 name|dist
 decl_stmt|;
 name|gdouble
-name|prescision
+name|precision
 decl_stmt|;
 name|gdouble
 name|x_point
@@ -1636,7 +1636,7 @@ literal|2
 index|]
 argument_list|)
 expr_stmt|;
-name|prescision
+name|precision
 operator|=
 name|g_value_get_double
 argument_list|(
@@ -1681,7 +1681,7 @@ name|stroke
 argument_list|,
 name|dist
 argument_list|,
-name|prescision
+name|precision
 argument_list|,
 operator|&
 name|coord
@@ -2354,12 +2354,7 @@ name|gint32
 name|stroke_id
 decl_stmt|;
 name|gdouble
-name|prescision
-decl_stmt|;
-name|gboolean
-name|closed
-init|=
-name|FALSE
+name|precision
 decl_stmt|;
 name|gint32
 name|num_coords
@@ -2371,6 +2366,11 @@ modifier|*
 name|coords
 init|=
 name|NULL
+decl_stmt|;
+name|gboolean
+name|closed
+init|=
+name|FALSE
 decl_stmt|;
 name|vectors
 operator|=
@@ -2400,7 +2400,7 @@ literal|1
 index|]
 argument_list|)
 expr_stmt|;
-name|prescision
+name|precision
 operator|=
 name|g_value_get_double
 argument_list|(
@@ -2447,7 +2447,7 @@ name|gimp_stroke_interpolate
 argument_list|(
 name|stroke
 argument_list|,
-name|prescision
+name|precision
 argument_list|,
 operator|&
 name|closed
@@ -2566,19 +2566,6 @@ condition|(
 name|success
 condition|)
 block|{
-name|g_value_set_boolean
-argument_list|(
-operator|&
-name|return_vals
-operator|->
-name|values
-index|[
-literal|1
-index|]
-argument_list|,
-name|closed
-argument_list|)
-expr_stmt|;
 name|g_value_set_int
 argument_list|(
 operator|&
@@ -2586,7 +2573,7 @@ name|return_vals
 operator|->
 name|values
 index|[
-literal|2
+literal|1
 index|]
 argument_list|,
 name|num_coords
@@ -2599,12 +2586,25 @@ name|return_vals
 operator|->
 name|values
 index|[
-literal|3
+literal|2
 index|]
 argument_list|,
 name|coords
 argument_list|,
 name|num_coords
+argument_list|)
+expr_stmt|;
+name|g_value_set_boolean
+argument_list|(
+operator|&
+name|return_vals
+operator|->
+name|values
+index|[
+literal|3
+index|]
+argument_list|,
+name|closed
 argument_list|)
 expr_stmt|;
 block|}
@@ -5015,11 +5015,11 @@ name|procedure
 argument_list|,
 name|g_param_spec_double
 argument_list|(
-literal|"prescision"
+literal|"precision"
 argument_list|,
-literal|"prescision"
+literal|"precision"
 argument_list|,
-literal|"The prescision used for the approximation"
+literal|"The precision used for the approximation"
 argument_list|,
 operator|-
 name|G_MAXDOUBLE
@@ -5177,11 +5177,11 @@ name|procedure
 argument_list|,
 name|g_param_spec_double
 argument_list|(
-literal|"prescision"
+literal|"precision"
 argument_list|,
-literal|"prescision"
+literal|"precision"
 argument_list|,
-literal|"The prescision used for the approximation"
+literal|"The precision used for the approximation"
 argument_list|,
 operator|-
 name|G_MAXDOUBLE
@@ -5842,11 +5842,11 @@ name|procedure
 argument_list|,
 name|g_param_spec_double
 argument_list|(
-literal|"prescision"
+literal|"precision"
 argument_list|,
-literal|"prescision"
+literal|"precision"
 argument_list|,
-literal|"The prescision used for the approximation"
+literal|"The precision used for the approximation"
 argument_list|,
 operator|-
 name|G_MAXDOUBLE
@@ -5854,24 +5854,6 @@ argument_list|,
 name|G_MAXDOUBLE
 argument_list|,
 literal|0
-argument_list|,
-name|GIMP_PARAM_READWRITE
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_procedure_add_return_value
-argument_list|(
-name|procedure
-argument_list|,
-name|g_param_spec_boolean
-argument_list|(
-literal|"closed"
-argument_list|,
-literal|"closed"
-argument_list|,
-literal|"List of the strokes belonging to the path."
-argument_list|,
-name|FALSE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -5910,6 +5892,24 @@ argument_list|,
 literal|"coords"
 argument_list|,
 literal|"List of the coords along the path (x0, y0, x1, y1, ...)."
+argument_list|,
+name|GIMP_PARAM_READWRITE
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_add_return_value
+argument_list|(
+name|procedure
+argument_list|,
+name|g_param_spec_boolean
+argument_list|(
+literal|"closed"
+argument_list|,
+literal|"closed"
+argument_list|,
+literal|"Whether the stroke is closed or not."
+argument_list|,
+name|FALSE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
