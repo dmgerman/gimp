@@ -199,7 +199,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon2961ab920108
+DECL|struct|__anon297a583a0108
 typedef|typedef
 struct|struct
 block|{
@@ -244,7 +244,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon2961ab920208
+DECL|struct|__anon297a583a0208
 typedef|typedef
 struct|struct
 block|{
@@ -289,7 +289,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon2961ab920308
+DECL|struct|__anon297a583a0308
 typedef|typedef
 struct|struct
 block|{
@@ -407,7 +407,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon2961ab920408
+DECL|struct|__anon297a583a0408
 typedef|typedef
 struct|struct
 block|{
@@ -464,7 +464,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon2961ab920508
+DECL|struct|__anon297a583a0508
 typedef|typedef
 struct|struct
 block|{
@@ -534,7 +534,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon2961ab920608
+DECL|struct|__anon297a583a0608
 typedef|typedef
 struct|struct
 block|{
@@ -565,7 +565,7 @@ name|pygimp_parasite_check
 parameter_list|(
 name|v
 parameter_list|)
-value|(PyObject_TypeCheck(v,&Paratype))
+value|(PyObject_TypeCheck(v,&PyGimpParasite_Type))
 end_define
 
 begin_function_decl
@@ -579,6 +579,65 @@ name|para
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_typedef
+DECL|struct|__anon297a583a0708
+typedef|typedef
+struct|struct
+block|{
+name|PyObject_HEAD
+DECL|member|ID
+name|gint32
+name|ID
+decl_stmt|;
+DECL|typedef|PyGimpVectors
+block|}
+name|PyGimpVectors
+typedef|;
+end_typedef
+
+begin_decl_stmt
+specifier|extern
+name|PyTypeObject
+name|PyGimpVectors_Type
+decl_stmt|;
+end_decl_stmt
+
+begin_define
+DECL|macro|pygimp_vectors_check (v)
+define|#
+directive|define
+name|pygimp_vectors_check
+parameter_list|(
+name|v
+parameter_list|)
+value|(PyObject_TypeCheck(v,&PyGimpVectors_Type))
+end_define
+
+begin_function_decl
+name|PyObject
+modifier|*
+name|pygimp_vectors_new
+parameter_list|(
+name|gint32
+name|vectors_ID
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_decl_stmt
+specifier|extern
+name|PyTypeObject
+name|PyGimpVectorsStroke_Type
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|PyTypeObject
+name|PyGimpVectorsBezierStroke_Type
+decl_stmt|;
+end_decl_stmt
 
 begin_macro
 name|G_END_DECLS
