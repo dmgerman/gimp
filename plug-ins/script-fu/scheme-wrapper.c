@@ -3599,7 +3599,7 @@ argument_list|(
 name|error_str
 argument_list|)
 argument_list|,
-literal|"Invalid number of arguments supplied to %s (expected %d but received %d)"
+literal|"Invalid number of arguments for %s (expected %d but received %d)"
 argument_list|,
 name|proc_name
 argument_list|,
@@ -3662,8 +3662,6 @@ init|;
 name|i
 operator|<
 name|nparams
-operator|&&
-name|success
 condition|;
 name|i
 operator|++
@@ -6349,6 +6347,13 @@ name|NIL
 argument_list|)
 return|;
 block|}
+comment|/* Break out of loop before i gets updated when error was detected */
+if|if
+condition|(
+operator|!
+name|success
+condition|)
+break|break;
 block|}
 if|if
 condition|(
@@ -6423,7 +6428,7 @@ argument_list|(
 name|error_str
 argument_list|)
 argument_list|,
-literal|"Invalid types specified for argument %d to %s"
+literal|"Invalid type for argument %d to %s"
 argument_list|,
 name|i
 operator|+
