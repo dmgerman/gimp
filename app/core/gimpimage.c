@@ -294,7 +294,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1724620103
+DECL|enum|__anon2750c0be0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -379,7 +379,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1724620203
+DECL|enum|__anon2750c0be0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -7921,7 +7921,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_image_get_foreground (const GimpImage * image,const GimpDrawable * drawable,GimpContext * context,guchar * fg)
+DECL|function|gimp_image_get_foreground (const GimpImage * image,GimpContext * context,GimpImageType dest_type,guchar * fg)
 name|gimp_image_get_foreground
 parameter_list|(
 specifier|const
@@ -7929,14 +7929,12 @@ name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-specifier|const
-name|GimpDrawable
-modifier|*
-name|drawable
-parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpImageType
+name|dest_type
 parameter_list|,
 name|guchar
 modifier|*
@@ -7957,17 +7955,6 @@ argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
 name|image
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_return_if_fail
-argument_list|(
-operator|!
-name|drawable
-operator|||
-name|GIMP_IS_DRAWABLE
-argument_list|(
-name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -8022,7 +8009,7 @@ name|gimp_image_transform_color
 argument_list|(
 name|image
 argument_list|,
-name|drawable
+name|dest_type
 argument_list|,
 name|fg
 argument_list|,
@@ -8036,7 +8023,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_get_background (const GimpImage * image,const GimpDrawable * drawable,GimpContext * context,guchar * bg)
+DECL|function|gimp_image_get_background (const GimpImage * image,GimpContext * context,GimpImageType dest_type,guchar * bg)
 name|gimp_image_get_background
 parameter_list|(
 specifier|const
@@ -8044,14 +8031,12 @@ name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-specifier|const
-name|GimpDrawable
-modifier|*
-name|drawable
-parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpImageType
+name|dest_type
 parameter_list|,
 name|guchar
 modifier|*
@@ -8072,17 +8057,6 @@ argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
 name|image
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_return_if_fail
-argument_list|(
-operator|!
-name|drawable
-operator|||
-name|GIMP_IS_DRAWABLE
-argument_list|(
-name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -8137,7 +8111,7 @@ name|gimp_image_transform_color
 argument_list|(
 name|image
 argument_list|,
-name|drawable
+name|dest_type
 argument_list|,
 name|bg
 argument_list|,
@@ -8341,7 +8315,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_transform_rgb (const GimpImage * dest_image,const GimpDrawable * dest_drawable,const GimpRGB * rgb,guchar * color)
+DECL|function|gimp_image_transform_rgb (const GimpImage * dest_image,GimpImageType dest_type,const GimpRGB * rgb,guchar * color)
 name|gimp_image_transform_rgb
 parameter_list|(
 specifier|const
@@ -8349,10 +8323,8 @@ name|GimpImage
 modifier|*
 name|dest_image
 parameter_list|,
-specifier|const
-name|GimpDrawable
-modifier|*
-name|dest_drawable
+name|GimpImageType
+name|dest_type
 parameter_list|,
 specifier|const
 name|GimpRGB
@@ -8375,17 +8347,6 @@ argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
 name|dest_image
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_return_if_fail
-argument_list|(
-operator|!
-name|dest_drawable
-operator|||
-name|GIMP_IS_DRAWABLE
-argument_list|(
-name|dest_drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -8430,7 +8391,7 @@ name|gimp_image_transform_color
 argument_list|(
 name|dest_image
 argument_list|,
-name|dest_drawable
+name|dest_type
 argument_list|,
 name|color
 argument_list|,
@@ -8444,7 +8405,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_transform_color (const GimpImage * dest_image,const GimpDrawable * dest_drawable,guchar * dest,GimpImageBaseType src_type,const guchar * src)
+DECL|function|gimp_image_transform_color (const GimpImage * dest_image,GimpImageType dest_type,guchar * dest,GimpImageBaseType src_type,const guchar * src)
 name|gimp_image_transform_color
 parameter_list|(
 specifier|const
@@ -8452,10 +8413,8 @@ name|GimpImage
 modifier|*
 name|dest_image
 parameter_list|,
-specifier|const
-name|GimpDrawable
-modifier|*
-name|dest_drawable
+name|GimpImageType
+name|dest_type
 parameter_list|,
 name|guchar
 modifier|*
@@ -8470,9 +8429,6 @@ modifier|*
 name|src
 parameter_list|)
 block|{
-name|GimpImageType
-name|dest_type
-decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
@@ -8487,22 +8443,6 @@ name|src_type
 operator|!=
 name|GIMP_INDEXED
 argument_list|)
-expr_stmt|;
-name|dest_type
-operator|=
-operator|(
-name|dest_drawable
-condition|?
-name|gimp_drawable_type
-argument_list|(
-name|dest_drawable
-argument_list|)
-else|:
-name|gimp_image_base_type_with_alpha
-argument_list|(
-name|dest_image
-argument_list|)
-operator|)
 expr_stmt|;
 switch|switch
 condition|(
@@ -8706,7 +8646,7 @@ end_function
 begin_function
 name|TempBuf
 modifier|*
-DECL|function|gimp_image_transform_temp_buf (const GimpImage * dest_image,const GimpDrawable * dest_drawable,TempBuf * temp_buf,gboolean * new_buf)
+DECL|function|gimp_image_transform_temp_buf (const GimpImage * dest_image,GimpImageType dest_type,TempBuf * temp_buf,gboolean * new_buf)
 name|gimp_image_transform_temp_buf
 parameter_list|(
 specifier|const
@@ -8714,10 +8654,8 @@ name|GimpImage
 modifier|*
 name|dest_image
 parameter_list|,
-specifier|const
-name|GimpDrawable
-modifier|*
-name|dest_drawable
+name|GimpImageType
+name|dest_type
 parameter_list|,
 name|TempBuf
 modifier|*
@@ -8752,16 +8690,6 @@ argument_list|(
 name|GIMP_IMAGE
 argument_list|(
 name|dest_image
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|dest_drawable
 argument_list|)
 argument_list|,
 name|NULL
@@ -8821,17 +8749,17 @@ name|has_alpha
 condition|)
 name|ret_buf_type
 operator|=
-name|gimp_drawable_type_with_alpha
+name|GIMP_IMAGE_TYPE_WITH_ALPHA
 argument_list|(
-name|dest_drawable
+name|dest_type
 argument_list|)
 expr_stmt|;
 else|else
 name|ret_buf_type
 operator|=
-name|gimp_drawable_type_without_alpha
+name|GIMP_IMAGE_TYPE_WITHOUT_ALPHA
 argument_list|(
-name|dest_drawable
+name|dest_type
 argument_list|)
 expr_stmt|;
 name|out_bytes
@@ -8848,9 +8776,9 @@ name|in_bytes
 operator|!=
 name|out_bytes
 operator|||
-name|gimp_drawable_is_indexed
+name|GIMP_IMAGE_TYPE_IS_INDEXED
 argument_list|(
-name|dest_drawable
+name|dest_type
 argument_list|)
 condition|)
 block|{
@@ -8920,7 +8848,7 @@ name|gimp_image_transform_color
 argument_list|(
 name|dest_image
 argument_list|,
-name|dest_drawable
+name|dest_type
 argument_list|,
 name|dest
 argument_list|,

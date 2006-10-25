@@ -1802,7 +1802,10 @@ name|gimp_image_transform_temp_buf
 argument_list|(
 name|image
 argument_list|,
+name|gimp_drawable_type
+argument_list|(
 name|drawable
+argument_list|)
 argument_list|,
 name|temp
 argument_list|,

@@ -167,7 +167,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c861ffe0103
+DECL|enum|__anon2c6fceb20103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1919,9 +1919,12 @@ argument_list|(
 name|item
 argument_list|)
 argument_list|,
-name|drawable
-argument_list|,
 name|context
+argument_list|,
+name|gimp_drawable_type
+argument_list|(
+name|drawable
+argument_list|)
 argument_list|,
 name|bg
 argument_list|)
@@ -4850,7 +4853,7 @@ name|gimp_image_transform_color
 argument_list|(
 name|image
 argument_list|,
-name|drawable
+name|drawable_type
 argument_list|,
 name|c
 argument_list|,
@@ -4916,7 +4919,7 @@ name|gimp_image_transform_temp_buf
 argument_list|(
 name|image
 argument_list|,
-name|drawable
+name|drawable_type
 argument_list|,
 name|pattern
 operator|->

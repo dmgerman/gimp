@@ -104,8 +104,8 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b290dae0103
-DECL|enum|__anon2b290dae0203
+DECL|enum|__anon299a4cd40103
+DECL|enum|__anon299a4cd40203
 block|{
 DECL|enumerator|SET_BRUSH
 DECL|enumerator|SET_BRUSH
@@ -6655,7 +6655,10 @@ name|gimp_image_transform_color
 argument_list|(
 name|dest
 argument_list|,
+name|gimp_drawable_type
+argument_list|(
 name|drawable
+argument_list|)
 argument_list|,
 name|d
 argument_list|,
@@ -6725,7 +6728,10 @@ name|gimp_image_transform_color
 argument_list|(
 name|dest
 argument_list|,
+name|gimp_drawable_type
+argument_list|(
 name|drawable
+argument_list|)
 argument_list|,
 name|d
 argument_list|,

@@ -202,9 +202,8 @@ name|GimpImage
 modifier|*
 name|dest_image
 parameter_list|,
-name|GimpDrawable
-modifier|*
-name|dest_drawable
+name|GimpImageType
+name|dest_type
 parameter_list|,
 name|GimpImage
 modifier|*
@@ -242,9 +241,8 @@ name|GimpImage
 modifier|*
 name|dest_image
 parameter_list|,
-name|GimpDrawable
-modifier|*
-name|dest_drawable
+name|GimpImageType
+name|dest_type
 parameter_list|,
 name|GimpPattern
 modifier|*
@@ -590,6 +588,9 @@ name|src_type
 init|=
 literal|0
 decl_stmt|;
+name|GimpImageType
+name|dest_type
+decl_stmt|;
 name|GimpImage
 modifier|*
 name|image
@@ -734,6 +735,13 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
+name|dest_type
+operator|=
+name|gimp_drawable_type
+argument_list|(
+name|drawable
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 init|;
@@ -795,7 +803,7 @@ name|gimp_clone_line_image
 argument_list|(
 name|image
 argument_list|,
-name|drawable
+name|dest_type
 argument_list|,
 name|src_image
 argument_list|,
@@ -832,7 +840,7 @@ name|gimp_clone_line_pattern
 argument_list|(
 name|image
 argument_list|,
-name|drawable
+name|dest_type
 argument_list|,
 name|pattern
 argument_list|,
@@ -938,16 +946,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_clone_line_image (GimpImage * dest_image,GimpDrawable * dest_drawable,GimpImage * src_image,GimpImageType src_type,guchar * s,guchar * d,gint src_bytes,gint dest_bytes,gint width)
+DECL|function|gimp_clone_line_image (GimpImage * dest_image,GimpImageType dest_type,GimpImage * src_image,GimpImageType src_type,guchar * s,guchar * d,gint src_bytes,gint dest_bytes,gint width)
 name|gimp_clone_line_image
 parameter_list|(
 name|GimpImage
 modifier|*
 name|dest_image
 parameter_list|,
-name|GimpDrawable
-modifier|*
-name|dest_drawable
+name|GimpImageType
+name|dest_type
 parameter_list|,
 name|GimpImage
 modifier|*
@@ -1010,7 +1017,7 @@ name|gimp_image_transform_color
 argument_list|(
 name|dest_image
 argument_list|,
-name|dest_drawable
+name|dest_type
 argument_list|,
 name|d
 argument_list|,
@@ -1044,16 +1051,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_clone_line_pattern (GimpImage * dest_image,GimpDrawable * dest_drawable,GimpPattern * pattern,guchar * d,gint x,gint y,gint dest_bytes,gint width)
+DECL|function|gimp_clone_line_pattern (GimpImage * dest_image,GimpImageType dest_type,GimpPattern * pattern,guchar * d,gint x,gint y,gint dest_bytes,gint width)
 name|gimp_clone_line_pattern
 parameter_list|(
 name|GimpImage
 modifier|*
 name|dest_image
 parameter_list|,
-name|GimpDrawable
-modifier|*
-name|dest_drawable
+name|GimpImageType
+name|dest_type
 parameter_list|,
 name|GimpPattern
 modifier|*
@@ -1220,7 +1226,7 @@ name|gimp_image_transform_color
 argument_list|(
 name|dest_image
 argument_list|,
-name|dest_drawable
+name|dest_type
 argument_list|,
 name|d
 argument_list|,

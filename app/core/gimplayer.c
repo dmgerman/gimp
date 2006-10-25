@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6ced310103
+DECL|enum|__anon2bd00e380103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -177,7 +177,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6ced310203
+DECL|enum|__anon2bd00e380203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -686,9 +686,8 @@ name|PixelRegion
 modifier|*
 name|bufPR
 parameter_list|,
-name|GimpDrawable
-modifier|*
-name|drawable
+name|GimpImageType
+name|dest_type
 parameter_list|,
 name|GimpImageType
 name|src_type
@@ -2616,7 +2615,7 @@ argument_list|,
 operator|&
 name|layerPR
 argument_list|,
-name|NULL
+name|new_type
 argument_list|,
 name|gimp_drawable_type
 argument_list|(
@@ -3782,7 +3781,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_layer_transform_color (GimpImage * image,PixelRegion * layerPR,PixelRegion * bufPR,GimpDrawable * drawable,GimpImageType src_type)
+DECL|function|gimp_layer_transform_color (GimpImage * image,PixelRegion * layerPR,PixelRegion * bufPR,GimpImageType dest_type,GimpImageType src_type)
 name|gimp_layer_transform_color
 parameter_list|(
 name|GimpImage
@@ -3797,9 +3796,8 @@ name|PixelRegion
 modifier|*
 name|bufPR
 parameter_list|,
-name|GimpDrawable
-modifier|*
-name|drawable
+name|GimpImageType
+name|dest_type
 parameter_list|,
 name|GimpImageType
 name|src_type
@@ -3915,7 +3913,7 @@ name|gimp_image_transform_color
 argument_list|(
 name|image
 argument_list|,
-name|drawable
+name|dest_type
 argument_list|,
 name|d
 argument_list|,
@@ -4683,10 +4681,7 @@ name|layerPR
 argument_list|,
 name|region
 argument_list|,
-name|GIMP_DRAWABLE
-argument_list|(
-name|new_layer
-argument_list|)
+name|type
 argument_list|,
 name|src_type
 argument_list|)
@@ -4757,10 +4752,7 @@ name|layerPR
 argument_list|,
 name|region
 argument_list|,
-name|GIMP_DRAWABLE
-argument_list|(
-name|new_layer
-argument_list|)
+name|type
 argument_list|,
 name|src_type
 argument_list|)
@@ -4835,10 +4827,7 @@ name|layerPR
 argument_list|,
 name|region
 argument_list|,
-name|GIMP_DRAWABLE
-argument_list|(
-name|new_layer
-argument_list|)
+name|type
 argument_list|,
 name|src_type
 argument_list|)
@@ -4859,10 +4848,7 @@ name|layerPR
 argument_list|,
 name|region
 argument_list|,
-name|GIMP_DRAWABLE
-argument_list|(
-name|new_layer
-argument_list|)
+name|type
 argument_list|,
 name|src_type
 argument_list|)
@@ -6660,12 +6646,15 @@ name|layer
 argument_list|)
 argument_list|)
 argument_list|,
+name|context
+argument_list|,
+name|gimp_drawable_type
+argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
 name|layer
 argument_list|)
-argument_list|,
-name|context
+argument_list|)
 argument_list|,
 name|bg
 argument_list|)

@@ -2824,9 +2824,12 @@ name|gimp_image_get_background
 argument_list|(
 name|image
 argument_list|,
-name|drawable
-argument_list|,
 name|context
+argument_list|,
+name|gimp_drawable_type
+argument_list|(
+name|drawable
+argument_list|)
 argument_list|,
 name|bg_color
 argument_list|)

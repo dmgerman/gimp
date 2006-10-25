@@ -2557,6 +2557,9 @@ name|width
 decl_stmt|,
 name|height
 decl_stmt|;
+name|GimpImageType
+name|drawable_type
+decl_stmt|;
 name|gint
 name|tiles_bytes
 decl_stmt|;
@@ -2599,6 +2602,13 @@ return|return
 name|TRUE
 return|;
 comment|/*  nothing to do, but the fill succeded  */
+name|drawable_type
+operator|=
+name|gimp_drawable_type
+argument_list|(
+name|drawable
+argument_list|)
+expr_stmt|;
 name|tiles_bytes
 operator|=
 name|gimp_drawable_bytes
@@ -2618,9 +2628,9 @@ name|gimp_image_get_foreground
 argument_list|(
 name|image
 argument_list|,
-name|drawable
-argument_list|,
 name|context
+argument_list|,
+name|drawable_type
 argument_list|,
 name|col
 argument_list|)
@@ -2636,9 +2646,9 @@ name|gimp_image_get_background
 argument_list|(
 name|image
 argument_list|,
-name|drawable
-argument_list|,
 name|context
+argument_list|,
+name|drawable_type
 argument_list|,
 name|col
 argument_list|)
@@ -2679,7 +2689,7 @@ name|gimp_image_transform_color
 argument_list|(
 name|image
 argument_list|,
-name|drawable
+name|drawable_type
 argument_list|,
 name|col
 argument_list|,
@@ -2709,7 +2719,7 @@ name|gimp_image_transform_temp_buf
 argument_list|(
 name|image
 argument_list|,
-name|drawable
+name|drawable_type
 argument_list|,
 name|pattern
 operator|->
