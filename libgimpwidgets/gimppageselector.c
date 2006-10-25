@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29bfb7f60103
+DECL|enum|__anon27680c920103
 block|{
 DECL|enumerator|SELECTION_CHANGED
 name|SELECTION_CHANGED
@@ -81,7 +81,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29bfb7f60203
+DECL|enum|__anon27680c920203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -97,7 +97,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29bfb7f60303
+DECL|enum|__anon27680c920303
 block|{
 DECL|enumerator|COLUMN_PAGE_NO
 name|COLUMN_PAGE_NO
@@ -117,7 +117,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29bfb7f60408
+DECL|struct|__anon27680c920408
 block|{
 DECL|member|n_pages
 name|gint
@@ -4994,6 +4994,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|GdkPixbuf
 modifier|*
 DECL|function|stretch_frame_image (GdkPixbuf * frame_image,gint left_offset,gint top_offset,gint right_offset,gint bottom_offset,gint dest_width,gint dest_height)
