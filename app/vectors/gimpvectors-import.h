@@ -38,6 +38,11 @@ parameter_list|,
 name|gint
 name|position
 parameter_list|,
+name|GList
+modifier|*
+modifier|*
+name|ret_vectors
+parameter_list|,
 name|GError
 modifier|*
 modifier|*
@@ -70,6 +75,11 @@ name|scale
 parameter_list|,
 name|gint
 name|position
+parameter_list|,
+name|GList
+modifier|*
+modifier|*
+name|ret_vectors
 parameter_list|,
 name|GError
 modifier|*

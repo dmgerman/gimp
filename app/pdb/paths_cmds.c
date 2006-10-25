@@ -2765,6 +2765,8 @@ operator|-
 literal|1
 argument_list|,
 name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -2919,6 +2921,8 @@ name|scale
 argument_list|,
 operator|-
 literal|1
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|)
@@ -4683,17 +4687,17 @@ name|procedure
 argument_list|,
 literal|"gimp-path-import"
 argument_list|,
-literal|"Import paths from an SVG file."
+literal|"This procedure is deprecated! Use 'vectors_new_from_file' instead."
 argument_list|,
-literal|"This procedure imports paths from an SVG file. SVG elements other than paths and basic shapes are ignored."
+literal|"This procedure is deprecated! Use 'vectors_new_from_file' instead."
 argument_list|,
-literal|"Sven Neumann<sven@gimp.org>"
+literal|""
 argument_list|,
-literal|"Sven Neumann"
+literal|""
 argument_list|,
-literal|"2003"
+literal|""
 argument_list|,
-name|NULL
+literal|"vectors_new_from_file"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -4812,17 +4816,17 @@ name|procedure
 argument_list|,
 literal|"gimp-path-import-string"
 argument_list|,
-literal|"Import paths from an SVG string."
+literal|"This procedure is deprecated! Use 'vectors_new_from_string' instead."
 argument_list|,
-literal|"This procedure works like 'gimp-path-import' but takes a string rather than reading the SVG from a file. This allows you to write scripts that generate SVG and feed it to GIMP."
+literal|"This procedure is deprecated! Use 'vectors_new_from_string' instead."
 argument_list|,
-literal|"Sven Neumann<sven@gimp.org>"
+literal|""
 argument_list|,
-literal|"Sven Neumann"
+literal|""
 argument_list|,
-literal|"2005"
+literal|""
 argument_list|,
-name|NULL
+literal|"vectors_new_from_string"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument

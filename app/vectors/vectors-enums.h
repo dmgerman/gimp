@@ -16,42 +16,11 @@ directive|define
 name|__VECTORS_ENUMS_H__
 end_define
 
-begin_define
-DECL|macro|GIMP_TYPE_VECTORS_STROKE_TYPE
-define|#
-directive|define
-name|GIMP_TYPE_VECTORS_STROKE_TYPE
-value|(gimp_vectors_stroke_type_get_type ())
-end_define
-
-begin_decl_stmt
-name|GType
-name|gimp_vectors_stroke_type_get_type
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
-
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon288da3090103
-block|{
-DECL|enumerator|GIMP_VECTORS_STROKE_TYPE_BEZIER
-name|GIMP_VECTORS_STROKE_TYPE_BEZIER
-DECL|typedef|GimpVectorsStrokeType
-block|}
-name|GimpVectorsStrokeType
-typedef|;
-end_typedef
-
 begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon288da3090203
+DECL|enum|__anon27e050120103
 block|{
 DECL|enumerator|GIMP_ANCHOR_ANCHOR
 name|GIMP_ANCHOR_ANCHOR
@@ -68,7 +37,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon288da3090303
+DECL|enum|__anon27e050120203
 block|{
 DECL|enumerator|GIMP_ANCHOR_FEATURE_NONE
 name|GIMP_ANCHOR_FEATURE_NONE
@@ -91,7 +60,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon288da3090403
+DECL|enum|__anon27e050120303
 block|{
 DECL|enumerator|EXTEND_SIMPLE
 name|EXTEND_SIMPLE

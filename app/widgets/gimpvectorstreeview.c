@@ -942,6 +942,8 @@ name|TRUE
 argument_list|,
 name|index
 argument_list|,
+name|NULL
+argument_list|,
 operator|&
 name|error
 argument_list|)

@@ -1394,7 +1394,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_path_import:  * @image_ID: The image.  * @filename: The name of the SVG file to import.  * @merge: Merge paths into a single vectors object.  * @scale: Scale the SVG to image dimensions.  *  * Import paths from an SVG file.  *  * This procedure imports paths from an SVG file. SVG elements other  * than paths and basic shapes are ignored.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_path_import:  * @image_ID: The image.  * @filename: The name of the SVG file to import.  * @merge: Merge paths into a single vectors object.  * @scale: Scale the SVG to image dimensions.  *  * This procedure is deprecated! Use vectors_new_from_file() instead.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -1484,7 +1484,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_path_import_string:  * @image_ID: The image.  * @string: A string that must be a complete and valid SVG document.  * @length: Number of bytes in string or -1 if the string is NULL terminated.  * @merge: Merge paths into a single vectors object.  * @scale: Scale the SVG to image dimensions.  *  * Import paths from an SVG string.  *  * This procedure works like gimp_path_import() but takes a string  * rather than reading the SVG from a file. This allows you to write  * scripts that generate SVG and feed it to GIMP.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_path_import_string:  * @image_ID: The image.  * @string: A string that must be a complete and valid SVG document.  * @length: Number of bytes in string or -1 if the string is NULL terminated.  * @merge: Merge paths into a single vectors object.  * @scale: Scale the SVG to image dimensions.  *  * This procedure is deprecated! Use vectors_new_from_string() instead.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function

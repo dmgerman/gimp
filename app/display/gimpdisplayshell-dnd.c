@@ -1129,6 +1129,8 @@ argument_list|,
 operator|-
 literal|1
 argument_list|,
+name|NULL
+argument_list|,
 operator|&
 name|error
 argument_list|)
