@@ -1478,8 +1478,9 @@ name|x_kernel
 index|[
 name|LANCZOS_WIDTH2
 index|]
-decl_stmt|,
+decl_stmt|;
 comment|/* 1-D kernels of Lanczos window coeffs */
+name|gdouble
 name|y_kernel
 index|[
 name|LANCZOS_WIDTH2
