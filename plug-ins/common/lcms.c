@@ -107,7 +107,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0c00850103
+DECL|enum|__anon2be1cebe0103
 block|{
 DECL|enumerator|STATUS
 name|STATUS
@@ -2321,10 +2321,6 @@ argument_list|,
 name|rgn
 operator|.
 name|w
-operator|*
-name|rgn
-operator|.
-name|bpp
 argument_list|)
 expr_stmt|;
 name|data
