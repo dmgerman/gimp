@@ -63,6 +63,12 @@ DECL|member|progress_cancel_id
 name|gulong
 name|progress_cancel_id
 decl_stmt|;
+comment|/*  lists of things to clean up on dispose  */
+DECL|member|cleanups
+name|GList
+modifier|*
+name|cleanups
+decl_stmt|;
 block|}
 struct|;
 end_struct

@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpplugin-cleanup.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpplugin-progress.h"
 end_include
 
@@ -58,7 +64,7 @@ file|"gimppluginprocedure.h"
 end_include
 
 begin_comment
-comment|/*  publuc functions  */
+comment|/*  public functions  */
 end_comment
 
 begin_function
@@ -436,6 +442,19 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|proc_frame
+operator|->
+name|cleanups
+condition|)
+name|gimp_plug_in_cleanup
+argument_list|(
+name|plug_in
+argument_list|,
+name|proc_frame
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
