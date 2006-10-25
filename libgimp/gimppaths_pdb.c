@@ -667,7 +667,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_path_stroke_current:  * @image_ID: The image which contains the path to stroke.  *  * Stroke the current path in the passed image.  *  * Stroke the current path in the passed image.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_path_stroke_current:  * @image_ID: The image which contains the path to stroke.  *  * This procedure is deprecated! Use gimp_edit_stroke_vectors()  * instead.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function

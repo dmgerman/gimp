@@ -3535,17 +3535,17 @@ name|procedure
 argument_list|,
 literal|"gimp-path-stroke-current"
 argument_list|,
-literal|"Stroke the current path in the passed image."
+literal|"This procedure is deprecated! Use 'gimp-edit-stroke-vectors' instead."
 argument_list|,
-literal|"Stroke the current path in the passed image."
+literal|"This procedure is deprecated! Use 'gimp-edit-stroke-vectors' instead."
 argument_list|,
-literal|"Andy Thomas"
+literal|""
 argument_list|,
-literal|"Andy Thomas"
+literal|""
 argument_list|,
-literal|"1999"
+literal|""
 argument_list|,
-name|NULL
+literal|"gimp-edit-stroke-vectors"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
