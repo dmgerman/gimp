@@ -1161,8 +1161,12 @@ argument_list|(
 name|orig_tiles
 argument_list|,
 name|pu
+operator|-
+name|u1
 argument_list|,
 name|pv
+operator|-
+name|v1
 argument_list|,
 operator|&
 name|lwin
