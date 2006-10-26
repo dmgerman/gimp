@@ -3382,17 +3382,17 @@ name|procedure
 argument_list|,
 literal|"gimp-path-set-points"
 argument_list|,
-literal|"This procedure is deprecated! Use 'vectors_stroke_new_from_points' instead."
+literal|"This procedure is deprecated! Use 'vectors-stroke-new-from-points' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'vectors_stroke_new_from_points' instead."
-argument_list|,
-literal|""
+literal|"This procedure is deprecated! Use 'vectors-stroke-new-from-points' instead."
 argument_list|,
 literal|""
 argument_list|,
 literal|""
 argument_list|,
-literal|"vectors_stroke_new_from_points"
+literal|""
+argument_list|,
+literal|"vectors-stroke-new-from-points"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -4529,17 +4529,17 @@ name|procedure
 argument_list|,
 literal|"gimp-path-import"
 argument_list|,
-literal|"This procedure is deprecated! Use 'vectors_new_from_file' instead."
+literal|"This procedure is deprecated! Use 'vectors-new-from-file' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'vectors_new_from_file' instead."
-argument_list|,
-literal|""
+literal|"This procedure is deprecated! Use 'vectors-new-from-file' instead."
 argument_list|,
 literal|""
 argument_list|,
 literal|""
 argument_list|,
-literal|"vectors_new_from_file"
+literal|""
+argument_list|,
+literal|"vectors-new-from-file"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
