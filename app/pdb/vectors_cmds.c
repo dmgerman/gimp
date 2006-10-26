@@ -94,6 +94,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"vectors/gimpstroke-new.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"vectors/gimpvectors-import.h"
 end_include
 
@@ -2893,6 +2899,10 @@ name|gimp_stroke_get_ID
 argument_list|(
 name|stroke
 argument_list|)
+expr_stmt|;
+name|success
+operator|=
+name|TRUE
 expr_stmt|;
 block|}
 name|g_free
