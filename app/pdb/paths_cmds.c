@@ -3382,17 +3382,17 @@ name|procedure
 argument_list|,
 literal|"gimp-path-set-points"
 argument_list|,
-literal|"Set the points associated with the named path."
+literal|"This procedure is deprecated! Use 'vectors_stroke_new_from_points' instead."
 argument_list|,
-literal|"Set the points associated with the named path."
+literal|"This procedure is deprecated! Use 'vectors_stroke_new_from_points' instead."
 argument_list|,
-literal|"Andy Thomas"
+literal|""
 argument_list|,
-literal|"Andy Thomas"
+literal|""
 argument_list|,
-literal|"1999"
+literal|""
 argument_list|,
-name|NULL
+literal|"vectors_stroke_new_from_points"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
