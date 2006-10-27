@@ -99,7 +99,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d573100103
+DECL|enum|__anon2986fc140103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY
@@ -112,7 +112,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d573100203
+DECL|enum|__anon2986fc140203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -546,7 +546,7 @@ name|g_object_class_install_property
 argument_list|(
 name|object_class
 argument_list|,
-name|PROP_WRITABLE
+name|PROP_DELETABLE
 argument_list|,
 name|g_param_spec_boolean
 argument_list|(
