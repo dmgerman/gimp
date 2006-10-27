@@ -92,7 +92,7 @@ comment|/* Declarations for objects of type pdb */
 end_comment
 
 begin_typedef
-DECL|struct|__anon276f7f2f0108
+DECL|struct|__anon2a2dcf7c0108
 typedef|typedef
 struct|struct
 block|{
@@ -112,7 +112,7 @@ comment|/* Declarations for objects of type pdbFunc */
 end_comment
 
 begin_typedef
-DECL|struct|__anon276f7f2f0208
+DECL|struct|__anon2a2dcf7c0208
 typedef|typedef
 struct|struct
 block|{
@@ -1527,7 +1527,7 @@ name|GIMP_PDB_VECTORS
 case|:
 name|value
 operator|=
-name|PyInt_FromLong
+name|pygimp_vectors_new
 argument_list|(
 name|params
 index|[
@@ -3164,7 +3164,7 @@ case|:
 name|check
 argument_list|(
 operator|!
-name|PyInt_Check
+name|pygimp_vectors_check
 argument_list|(
 name|item
 argument_list|)
@@ -3179,10 +3179,15 @@ name|data
 operator|.
 name|d_vectors
 operator|=
-name|PyInt_AsLong
-argument_list|(
+operator|(
+operator|(
+name|PyGimpVectors
+operator|*
+operator|)
 name|item
-argument_list|)
+operator|)
+operator|->
+name|ID
 expr_stmt|;
 break|break;
 case|case
