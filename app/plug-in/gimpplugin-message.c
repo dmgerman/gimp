@@ -1537,9 +1537,6 @@ name|return_vals
 init|=
 name|NULL
 decl_stmt|;
-name|GPProcReturn
-name|proc_return
-decl_stmt|;
 name|canonical
 operator|=
 name|gimp_canonicalize_identifier
@@ -1869,12 +1866,28 @@ operator|->
 name|manager
 argument_list|)
 expr_stmt|;
+name|g_value_array_free
+argument_list|(
+name|args
+argument_list|)
+expr_stmt|;
 name|g_free
 argument_list|(
 name|canonical
 argument_list|)
 expr_stmt|;
-comment|/*  Return the name we got called with, *not* proc_name or canonical,    *  since proc_name may have been remapped by gimp->procedural_compat_ht    *  and canonical may be different too.    */
+comment|/*  Don't bother to send with the return value if executing the    *  procedure closed the plug-in (e.g. if the procedure is gimp-quit)    */
+if|if
+condition|(
+name|plug_in
+operator|->
+name|open
+condition|)
+block|{
+name|GPProcReturn
+name|proc_return
+decl_stmt|;
+comment|/*  Return the name we got called with, *not* proc_name or canonical,        *  since proc_name may have been remapped by gimp->procedural_compat_ht        *  and canonical may be different too.        */
 name|proc_return
 operator|.
 name|name
@@ -1941,21 +1954,17 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
-name|g_value_array_free
-argument_list|(
-name|args
-argument_list|)
-expr_stmt|;
-name|g_value_array_free
-argument_list|(
-name|return_vals
-argument_list|)
-expr_stmt|;
 name|g_free
 argument_list|(
 name|proc_return
 operator|.
 name|params
+argument_list|)
+expr_stmt|;
+block|}
+name|g_value_array_free
+argument_list|(
+name|return_vals
 argument_list|)
 expr_stmt|;
 block|}
