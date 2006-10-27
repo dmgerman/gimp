@@ -74,6 +74,15 @@ value|"Defines the color management behavior."
 end_define
 
 begin_define
+DECL|macro|COLOR_PROFILE_POLICY_BLURB
+define|#
+directive|define
+name|COLOR_PROFILE_POLICY_BLURB
+define|\
+value|N_("How to handle color profiles when opening a file.")
+end_define
+
+begin_define
 DECL|macro|CONFIRM_ON_CLOSE_BLURB
 define|#
 directive|define

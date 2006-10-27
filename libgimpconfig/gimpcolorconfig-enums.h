@@ -37,7 +37,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c4c8b980103
+DECL|enum|__anon2b89592c0103
 block|{
 DECL|enumerator|GIMP_COLOR_MANAGEMENT_OFF
 name|GIMP_COLOR_MANAGEMENT_OFF
@@ -78,7 +78,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c4c8b980203
+DECL|enum|__anon2b89592c0203
 block|{
 DECL|enumerator|GIMP_COLOR_RENDERING_INTENT_PERCEPTUAL
 name|GIMP_COLOR_RENDERING_INTENT_PERCEPTUAL
@@ -98,47 +98,6 @@ comment|/*< desc="Absolute colorimetric">*/
 DECL|typedef|GimpColorRenderingIntent
 block|}
 name|GimpColorRenderingIntent
-typedef|;
-end_typedef
-
-begin_define
-DECL|macro|GIMP_TYPE_COLOR_FILE_OPEN_BEHAVIOUR
-define|#
-directive|define
-name|GIMP_TYPE_COLOR_FILE_OPEN_BEHAVIOUR
-define|\
-value|(gimp_color_file_open_behaviour_get_type ())
-end_define
-
-begin_decl_stmt
-name|GType
-name|gimp_color_file_open_behaviour_get_type
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
-
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon2c4c8b980303
-block|{
-DECL|enumerator|GIMP_COLOR_FILE_OPEN_ASK
-name|GIMP_COLOR_FILE_OPEN_ASK
-block|,
-comment|/*< desc="Ask">*/
-DECL|enumerator|GIMP_COLOR_FILE_OPEN_LEAVE
-name|GIMP_COLOR_FILE_OPEN_LEAVE
-block|,
-comment|/*< desc="Use embedded profile">*/
-DECL|enumerator|GIMP_COLOR_FILE_OPEN_CONVERT_RGB
-name|GIMP_COLOR_FILE_OPEN_CONVERT_RGB
-comment|/*< desc="Convert to RGB workspace">*/
-DECL|typedef|GimpColorFileOpenBehaviour
-block|}
-name|GimpColorFileOpenBehaviour
 typedef|;
 end_typedef
 

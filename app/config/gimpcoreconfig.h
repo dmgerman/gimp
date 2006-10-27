@@ -278,6 +278,10 @@ name|GimpColorConfig
 modifier|*
 name|color_management
 decl_stmt|;
+DECL|member|color_profile_policy
+name|GimpColorProfilePolicy
+name|color_profile_policy
+decl_stmt|;
 DECL|member|save_document_history
 name|gboolean
 name|save_document_history

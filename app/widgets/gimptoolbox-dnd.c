@@ -763,7 +763,7 @@ name|height
 argument_list|,
 name|type
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_image_undo_disable
@@ -1162,7 +1162,7 @@ argument_list|)
 argument_list|,
 name|GIMP_GRAY
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_image_undo_disable
