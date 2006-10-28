@@ -137,24 +137,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_transform_matrix_flip_free (GimpMatrix3 * matrix,gint x,gint y,gint width,gint height,gdouble x1,gdouble y1,gdouble x2,gdouble y2)
+DECL|function|gimp_transform_matrix_flip_free (GimpMatrix3 * matrix,gdouble x1,gdouble y1,gdouble x2,gdouble y2)
 name|gimp_transform_matrix_flip_free
 parameter_list|(
 name|GimpMatrix3
 modifier|*
 name|matrix
-parameter_list|,
-name|gint
-name|x
-parameter_list|,
-name|gint
-name|y
-parameter_list|,
-name|gint
-name|width
-parameter_list|,
-name|gint
-name|height
 parameter_list|,
 name|gdouble
 name|x1
