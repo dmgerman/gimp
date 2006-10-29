@@ -107,7 +107,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a53b6b00103
+DECL|enum|__anon27b34a940103
 block|{
 DECL|enumerator|STATUS
 name|STATUS
@@ -255,7 +255,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|lcms_image_transform_pixels
+name|lcms_image_transform_rgb
 parameter_list|(
 name|gint32
 name|image
@@ -272,7 +272,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|lcms_image_transform_cmap
+name|lcms_image_transform_indexed
 parameter_list|(
 name|gint32
 name|image
@@ -463,7 +463,7 @@ argument_list|(
 literal|"Set color profile"
 argument_list|)
 argument_list|,
-literal|"*"
+literal|"RGB*, INDEXED*"
 argument_list|,
 name|GIMP_PLUGIN
 argument_list|,
@@ -502,7 +502,7 @@ argument_list|(
 literal|"Set default RGB profile"
 argument_list|)
 argument_list|,
-literal|"*"
+literal|"RGB*, INDEXED*"
 argument_list|,
 name|GIMP_PLUGIN
 argument_list|,
@@ -541,7 +541,7 @@ argument_list|(
 literal|"Apply color profile"
 argument_list|)
 argument_list|,
-literal|"*"
+literal|"RGB*, INDEXED*"
 argument_list|,
 name|GIMP_PLUGIN
 argument_list|,
@@ -582,7 +582,7 @@ argument_list|(
 literal|"Apply default RGB profile"
 argument_list|)
 argument_list|,
-literal|"*"
+literal|"RGB*, INDEXED*"
 argument_list|,
 name|GIMP_PLUGIN
 argument_list|,
@@ -1490,6 +1490,8 @@ name|GIMP_PDB_SUCCESS
 return|;
 if|if
 condition|(
+name|src_profile
+operator|&&
 operator|!
 name|lcms_icc_profile_is_rgb
 argument_list|(
@@ -1603,10 +1605,7 @@ block|{
 case|case
 name|GIMP_RGB
 case|:
-case|case
-name|GIMP_GRAY
-case|:
-name|lcms_image_transform_pixels
+name|lcms_image_transform_rgb
 argument_list|(
 name|image
 argument_list|,
@@ -1617,9 +1616,19 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
+name|GIMP_GRAY
+case|:
+name|g_warning
+argument_list|(
+literal|"colorspace conversion not implemented "
+literal|"for grayscale images"
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
 name|GIMP_INDEXED
 case|:
-name|lcms_image_transform_cmap
+name|lcms_image_transform_indexed
 argument_list|(
 name|image
 argument_list|,
@@ -1650,6 +1659,9 @@ name|g_object_unref
 argument_list|(
 name|config
 argument_list|)
+expr_stmt|;
+name|gimp_displays_flush
+argument_list|()
 expr_stmt|;
 return|return
 name|GIMP_PDB_SUCCESS
@@ -2085,8 +2097,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|lcms_image_transform_pixels (gint32 image,cmsHPROFILE src_profile,cmsHPROFILE dest_profile)
-name|lcms_image_transform_pixels
+DECL|function|lcms_image_transform_rgb (gint32 image,cmsHPROFILE src_profile,cmsHPROFILE dest_profile)
+name|lcms_image_transform_rgb
 parameter_list|(
 name|gint32
 name|image
@@ -2164,22 +2176,6 @@ operator|->
 name|bpp
 condition|)
 block|{
-case|case
-literal|1
-case|:
-name|format
-operator|=
-name|TYPE_GRAY_8
-expr_stmt|;
-break|break;
-case|case
-literal|2
-case|:
-name|format
-operator|=
-name|TYPE_GRAYA_8
-expr_stmt|;
-break|break;
 case|case
 literal|3
 case|:
@@ -2298,8 +2294,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|lcms_image_transform_cmap (gint32 image,cmsHPROFILE src_profile,cmsHPROFILE dest_profile)
-name|lcms_image_transform_cmap
+DECL|function|lcms_image_transform_indexed (gint32 image,cmsHPROFILE src_profile,cmsHPROFILE dest_profile)
+name|lcms_image_transform_indexed
 parameter_list|(
 name|gint32
 name|image
@@ -2357,8 +2353,6 @@ argument_list|,
 name|cmap
 argument_list|,
 name|num_colors
-operator|*
-literal|3
 argument_list|)
 expr_stmt|;
 name|cmsDeleteTransform
