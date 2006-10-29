@@ -225,6 +225,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_rc_migrate
+parameter_list|(
+name|GimpRc
+modifier|*
+name|rc
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
