@@ -562,7 +562,7 @@ argument_list|(
 literal|"Rerun the last used plug-in using the same settings"
 argument_list|)
 block|,
-literal|0
+name|GIMP_RUN_WITH_LAST_VALS
 block|,
 name|FALSE
 block|,
@@ -586,7 +586,7 @@ argument_list|(
 literal|"Show the last used plug-in dialog again"
 argument_list|)
 block|,
-literal|0
+name|GIMP_RUN_INTERACTIVE
 block|,
 name|FALSE
 block|,
