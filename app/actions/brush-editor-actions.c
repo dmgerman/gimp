@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"brush-editor-actions.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"data-editor-commands.h"
 end_include
 

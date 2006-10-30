@@ -51,6 +51,12 @@ directive|include
 file|"gimpvectors.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpvectors-warp.h"
+end_include
+
 begin_define
 DECL|macro|EPSILON
 define|#

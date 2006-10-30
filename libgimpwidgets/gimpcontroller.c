@@ -60,7 +60,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27dbbf440103
+DECL|enum|__anon2b580af70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -76,7 +76,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27dbbf440203
+DECL|enum|__anon2b580af70203
 block|{
 DECL|enumerator|EVENT
 name|EVENT
@@ -182,6 +182,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
+specifier|static
 name|gboolean
 DECL|function|gimp_controller_boolean_handled_accumulator (GSignalInvocationHint * ihint,GValue * return_accu,const GValue * handler_return,gpointer dummy)
 name|gimp_controller_boolean_handled_accumulator

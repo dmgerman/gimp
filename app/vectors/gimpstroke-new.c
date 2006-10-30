@@ -30,7 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpstroke.h"
+file|"gimpstroke-new.h"
 end_include
 
 begin_include

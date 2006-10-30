@@ -16,11 +16,29 @@ directive|define
 name|__PLUG_IN_ENUMS_H__
 end_define
 
+begin_define
+DECL|macro|GIMP_TYPE_PLUG_IN_IMAGE_TYPE
+define|#
+directive|define
+name|GIMP_TYPE_PLUG_IN_IMAGE_TYPE
+value|(gimp_plug_in_image_type_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_plug_in_image_type_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
 begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2c15567a0103
+DECL|enum|__anon2be68d3d0103
 block|{
 DECL|enumerator|GIMP_PLUG_IN_RGB_IMAGE
 name|GIMP_PLUG_IN_RGB_IMAGE
@@ -69,11 +87,29 @@ name|GimpPlugInImageType
 typedef|;
 end_typedef
 
+begin_define
+DECL|macro|GIMP_TYPE_PLUG_CALL_MODE
+define|#
+directive|define
+name|GIMP_TYPE_PLUG_CALL_MODE
+value|(gimp_plug_in_call_mode_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_plug_in_call_mode_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
 begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2c15567a0203
+DECL|enum|__anon2be68d3d0203
 block|{
 DECL|enumerator|GIMP_PLUG_IN_CALL_NONE
 name|GIMP_PLUG_IN_CALL_NONE

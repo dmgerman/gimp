@@ -246,6 +246,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|GdkPixbuf
 modifier|*
 DECL|function|stretch_frame_image (GdkPixbuf * frame_image,gint left_offset,gint top_offset,gint right_offset,gint bottom_offset,gint dest_width,gint dest_height)

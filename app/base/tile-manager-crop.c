@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"paint-funcs/paint-funcs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"pixel-region.h"
 end_include
 
@@ -36,7 +42,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"paint-funcs/paint-funcs.h"
+file|"tile-manager-crop.h"
 end_include
 
 begin_comment

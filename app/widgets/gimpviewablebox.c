@@ -669,6 +669,7 @@ comment|/*  gradient boxes  */
 end_comment
 
 begin_function
+specifier|static
 name|GtkWidget
 modifier|*
 DECL|function|gradient_box_new (GimpContainer * container,GimpContext * context,gint spacing,GimpViewType view_type,GimpViewSize view_size,const gchar * reverse_prop)

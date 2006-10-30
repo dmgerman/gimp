@@ -915,6 +915,7 @@ comment|/*  * Perform one iteration of the laplace solver for matrix.  Store the
 end_comment
 
 begin_function
+specifier|static
 name|gdouble
 DECL|function|gimp_heal_laplace_iteration (gdouble * matrix,gint height,gint depth,gint width,gdouble * solution)
 name|gimp_heal_laplace_iteration
@@ -1175,6 +1176,7 @@ comment|/*  * Solve the laplace equation for matrix and store the result in solu
 end_comment
 
 begin_function
+specifier|static
 name|void
 DECL|function|gimp_heal_laplace_loop (gdouble * matrix,gint height,gint depth,gint width,gdouble * solution)
 name|gimp_heal_laplace_loop
@@ -1310,6 +1312,7 @@ comment|/*  * Algorithm Design:  *  * T. Georgiev, "Image Reconstruction Invaria
 end_comment
 
 begin_function
+specifier|static
 name|PixelRegion
 modifier|*
 DECL|function|gimp_heal_region (PixelRegion * tempPR,PixelRegion * srcPR)

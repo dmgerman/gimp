@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpviewrenderer-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpviewrendererbrush.h"
 end_include
 

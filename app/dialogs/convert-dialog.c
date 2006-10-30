@@ -108,13 +108,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"convert-dialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28920e090108
+DECL|struct|__anon2b62248c0108
 block|{
 DECL|member|dialog
 name|GtkWidget

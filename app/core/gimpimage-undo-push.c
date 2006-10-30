@@ -126,6 +126,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage-undo-push.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimplayer.h"
 end_include
 

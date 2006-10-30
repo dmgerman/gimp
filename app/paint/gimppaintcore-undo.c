@@ -45,6 +45,12 @@ directive|include
 file|"gimppaintcore.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimppaintcore-undo.h"
+end_include
+
 begin_comment
 comment|/****************/
 end_comment

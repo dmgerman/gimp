@@ -186,6 +186,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"preferences-dialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"resolution-calibrate-dialog.h"
 end_include
 
@@ -8979,7 +8985,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2a2344230108
+DECL|struct|__anon2779e1f80108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -10142,7 +10148,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a2344230208
+DECL|struct|__anon2779e1f80208
 block|{
 DECL|member|label
 specifier|const
@@ -11046,7 +11052,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a2344230308
+DECL|struct|__anon2779e1f80308
 block|{
 DECL|member|property_name
 specifier|const
@@ -11201,7 +11207,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a2344230408
+DECL|struct|__anon2779e1f80408
 block|{
 DECL|member|tree_label
 specifier|const

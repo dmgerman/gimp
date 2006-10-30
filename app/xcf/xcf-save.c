@@ -220,6 +220,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"xcf-save.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"xcf-seek.h"
 end_include
 
@@ -6657,7 +6663,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6fad150108
+DECL|struct|__anon27963bfc0108
 block|{
 DECL|member|info
 name|XcfInfo
