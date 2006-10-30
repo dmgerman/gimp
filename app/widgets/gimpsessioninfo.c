@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c83d8db0103
+DECL|enum|__anon2a33f5940103
 block|{
 DECL|enumerator|SESSION_INFO_POSITION
 name|SESSION_INFO_POSITION
@@ -1675,6 +1675,7 @@ name|GEnumValue
 modifier|*
 name|enum_value
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|tab_style
