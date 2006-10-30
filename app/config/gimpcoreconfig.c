@@ -119,7 +119,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9dd59f0103
+DECL|enum|__anon2a58b2d80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -439,7 +439,7 @@ name|INTERPOLATION_TYPE_BLURB
 argument_list|,
 name|GIMP_TYPE_INTERPOLATION_TYPE
 argument_list|,
-name|GIMP_INTERPOLATION_LINEAR
+name|GIMP_INTERPOLATION_CUBIC
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
