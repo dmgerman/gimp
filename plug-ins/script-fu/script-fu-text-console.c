@@ -53,6 +53,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"script-fu-text-console.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"script-fu-intl.h"
 end_include
 
@@ -163,9 +169,6 @@ modifier|*
 name|command
 parameter_list|)
 block|{
-name|guchar
-name|c
-decl_stmt|;
 name|gint
 name|next
 decl_stmt|;
@@ -195,13 +198,14 @@ operator|!=
 name|EOF
 condition|)
 block|{
+name|guchar
 name|c
-operator|=
+init|=
 operator|(
 name|guchar
 operator|)
 name|next
-expr_stmt|;
+decl_stmt|;
 switch|switch
 condition|(
 name|c
