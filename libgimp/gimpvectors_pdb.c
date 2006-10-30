@@ -2564,13 +2564,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_new_from_file:  * @image_ID: The image.  * @filename: The name of the SVG file to import.  * @merge: Merge paths into a single vectors object.  * @scale: Scale the SVG to image dimensions.  * @num_vectors: The number of newly created vectors.  *  * Import paths from an SVG file.  *  * This procedure imports paths from an SVG file. SVG elements other  * than paths and basic shapes are ignored.  *  * Returns: The list of newly created vectors.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_vectors_new_from_file:  * @image_ID: The image.  * @filename: The name of the SVG file to import.  * @merge: Merge paths into a single vectors object.  * @scale: Scale the SVG to image dimensions.  * @num_vectors: The number of newly created vectors.  * @vectors_ids: The list of newly created vectors.  *  * Import paths from an SVG file.  *  * This procedure imports paths from an SVG file. SVG elements other  * than paths and basic shapes are ignored.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
-name|gint
-modifier|*
-DECL|function|gimp_vectors_new_from_file (gint32 image_ID,const gchar * filename,gboolean merge,gboolean scale,gint * num_vectors)
+name|gboolean
+DECL|function|gimp_vectors_new_from_file (gint32 image_ID,const gchar * filename,gboolean merge,gboolean scale,gint * num_vectors,gint32 ** vectors_ids)
 name|gimp_vectors_new_from_file
 parameter_list|(
 name|gint32
@@ -2590,6 +2589,11 @@ parameter_list|,
 name|gint
 modifier|*
 name|num_vectors
+parameter_list|,
+name|gint32
+modifier|*
+modifier|*
+name|vectors_ids
 parameter_list|)
 block|{
 name|GimpParam
@@ -2599,11 +2603,10 @@ decl_stmt|;
 name|gint
 name|nreturn_vals
 decl_stmt|;
-name|gint
-modifier|*
-name|vectors_ids
+name|gboolean
+name|success
 init|=
-name|NULL
+name|TRUE
 decl_stmt|;
 name|return_vals
 operator|=
@@ -2638,8 +2641,13 @@ name|num_vectors
 operator|=
 literal|0
 expr_stmt|;
-if|if
-condition|(
+operator|*
+name|vectors_ids
+operator|=
+name|NULL
+expr_stmt|;
+name|success
+operator|=
 name|return_vals
 index|[
 literal|0
@@ -2650,6 +2658,10 @@ operator|.
 name|d_status
 operator|==
 name|GIMP_PDB_SUCCESS
+expr_stmt|;
+if|if
+condition|(
+name|success
 condition|)
 block|{
 operator|*
@@ -2664,6 +2676,7 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
+operator|*
 name|vectors_ids
 operator|=
 name|g_new
@@ -2676,6 +2689,7 @@ argument_list|)
 expr_stmt|;
 name|memcpy
 argument_list|(
+operator|*
 name|vectors_ids
 argument_list|,
 name|return_vals
@@ -2705,19 +2719,18 @@ name|nreturn_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|vectors_ids
+name|success
 return|;
 block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_new_from_string:  * @image_ID: The image.  * @string: A string that must be a complete and valid SVG document.  * @length: Number of bytes in string or -1 if the string is NULL terminated.  * @merge: Merge paths into a single vectors object.  * @scale: Scale the SVG to image dimensions.  * @num_vectors: The number of newly created vectors.  *  * Import paths from an SVG string.  *  * This procedure works like gimp_vectors_new_from_file() but takes a  * string rather than reading the SVG from a file. This allows you to  * write scripts that generate SVG and feed it to GIMP.  *  * Returns: The list of newly created vectors.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_vectors_new_from_string:  * @image_ID: The image.  * @string: A string that must be a complete and valid SVG document.  * @length: Number of bytes in string or -1 if the string is NULL terminated.  * @merge: Merge paths into a single vectors object.  * @scale: Scale the SVG to image dimensions.  * @num_vectors: The number of newly created vectors.  * @vectors_ids: The list of newly created vectors.  *  * Import paths from an SVG string.  *  * This procedure works like gimp_vectors_new_from_file() but takes a  * string rather than reading the SVG from a file. This allows you to  * write scripts that generate SVG and feed it to GIMP.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
-name|gint
-modifier|*
-DECL|function|gimp_vectors_new_from_string (gint32 image_ID,const gchar * string,gint length,gboolean merge,gboolean scale,gint * num_vectors)
+name|gboolean
+DECL|function|gimp_vectors_new_from_string (gint32 image_ID,const gchar * string,gint length,gboolean merge,gboolean scale,gint * num_vectors,gint32 ** vectors_ids)
 name|gimp_vectors_new_from_string
 parameter_list|(
 name|gint32
@@ -2740,6 +2753,11 @@ parameter_list|,
 name|gint
 modifier|*
 name|num_vectors
+parameter_list|,
+name|gint32
+modifier|*
+modifier|*
+name|vectors_ids
 parameter_list|)
 block|{
 name|GimpParam
@@ -2749,11 +2767,10 @@ decl_stmt|;
 name|gint
 name|nreturn_vals
 decl_stmt|;
-name|gint
-modifier|*
-name|vectors_ids
+name|gboolean
+name|success
 init|=
-name|NULL
+name|TRUE
 decl_stmt|;
 name|return_vals
 operator|=
@@ -2792,8 +2809,13 @@ name|num_vectors
 operator|=
 literal|0
 expr_stmt|;
-if|if
-condition|(
+operator|*
+name|vectors_ids
+operator|=
+name|NULL
+expr_stmt|;
+name|success
+operator|=
 name|return_vals
 index|[
 literal|0
@@ -2804,6 +2826,10 @@ operator|.
 name|d_status
 operator|==
 name|GIMP_PDB_SUCCESS
+expr_stmt|;
+if|if
+condition|(
+name|success
 condition|)
 block|{
 operator|*
@@ -2818,6 +2844,7 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
+operator|*
 name|vectors_ids
 operator|=
 name|g_new
@@ -2830,6 +2857,7 @@ argument_list|)
 expr_stmt|;
 name|memcpy
 argument_list|(
+operator|*
 name|vectors_ids
 argument_list|,
 name|return_vals
@@ -2859,7 +2887,7 @@ name|nreturn_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|vectors_ids
+name|success
 return|;
 block|}
 end_function

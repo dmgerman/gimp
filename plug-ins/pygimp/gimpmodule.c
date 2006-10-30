@@ -1990,7 +1990,7 @@ name|PROCESS_FUNC
 parameter_list|(
 name|n
 parameter_list|)
-value|G_STMT_START {					\     if (!PyCallable_Check(pdata->n)) {					\ 	PyErr_SetString(pygimp_error, #n "argument must be callable");	\ 	goto cleanup;							\     }									\     Py_INCREF(pdata->n);						\ } G_STMT_END
+value|G_STMT_START {                                  \     if (!PyCallable_Check(pdata->n)) {                                  \         PyErr_SetString(pygimp_error, #n "argument must be callable");  \         goto cleanup;                                                   \     }                                                                   \     Py_INCREF(pdata->n);                                                \ } G_STMT_END
 name|PROCESS_FUNC
 argument_list|(
 name|start
@@ -6651,8 +6651,6 @@ name|py_file
 argument_list|)
 condition|)
 block|{
-name|vectors
-operator|=
 name|gimp_vectors_new_from_file
 argument_list|(
 name|img
@@ -6670,6 +6668,9 @@ name|scale
 argument_list|,
 operator|&
 name|num_vectors
+argument_list|,
+operator|&
+name|vectors
 argument_list|)
 expr_stmt|;
 block|}
@@ -6804,8 +6805,6 @@ expr_stmt|;
 break|break;
 block|}
 block|}
-name|vectors
-operator|=
 name|gimp_vectors_new_from_string
 argument_list|(
 name|img
@@ -6828,6 +6827,9 @@ name|scale
 argument_list|,
 operator|&
 name|num_vectors
+argument_list|,
+operator|&
+name|vectors
 argument_list|)
 expr_stmt|;
 name|Py_DECREF
@@ -6957,8 +6959,6 @@ condition|)
 return|return
 name|NULL
 return|;
-name|vectors
-operator|=
 name|gimp_vectors_new_from_string
 argument_list|(
 name|img
@@ -6975,6 +6975,9 @@ name|scale
 argument_list|,
 operator|&
 name|num_vectors
+argument_list|,
+operator|&
+name|vectors
 argument_list|)
 expr_stmt|;
 return|return

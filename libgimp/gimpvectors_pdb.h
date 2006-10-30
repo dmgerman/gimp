@@ -489,8 +489,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint
-modifier|*
+name|gboolean
 name|gimp_vectors_new_from_file
 parameter_list|(
 name|gint32
@@ -510,13 +509,17 @@ parameter_list|,
 name|gint
 modifier|*
 name|num_vectors
+parameter_list|,
+name|gint32
+modifier|*
+modifier|*
+name|vectors_ids
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint
-modifier|*
+name|gboolean
 name|gimp_vectors_new_from_string
 parameter_list|(
 name|gint32
@@ -539,6 +542,11 @@ parameter_list|,
 name|gint
 modifier|*
 name|num_vectors
+parameter_list|,
+name|gint32
+modifier|*
+modifier|*
+name|vectors_ids
 parameter_list|)
 function_decl|;
 end_function_decl
