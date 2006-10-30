@@ -5153,6 +5153,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|gboolean
 DECL|function|gimp_display_shell_ruler_button_press (GtkWidget * widget,GdkEventButton * event,GimpDisplayShell * shell,gboolean horizontal)
 name|gimp_display_shell_ruler_button_press
