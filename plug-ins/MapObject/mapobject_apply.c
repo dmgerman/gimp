@@ -62,6 +62,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"mapobject_apply.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
@@ -1014,6 +1020,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|render (gdouble x,gdouble y,GimpRGB * col,gpointer data)
 name|render
@@ -1076,6 +1083,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|show_progress (gint min,gint max,gint curr,gpointer data)
 name|show_progress

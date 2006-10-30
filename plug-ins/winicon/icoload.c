@@ -540,6 +540,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|gboolean
 DECL|function|ico_read_size (FILE * fp,IcoLoadInfo * info)
 name|ico_read_size
@@ -2954,6 +2955,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|gint32
 DECL|function|ico_load_layer (FILE * fp,gint32 image,gint32 icon_num,guchar * buffer,gint maxsize,IcoLoadInfo * info)
 name|ico_load_layer

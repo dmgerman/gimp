@@ -49,6 +49,7 @@ begin_function_decl
 name|void
 name|preview_set_button_label
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|text

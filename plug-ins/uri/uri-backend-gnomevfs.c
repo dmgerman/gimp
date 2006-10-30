@@ -64,6 +64,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"uri-backend.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
@@ -1238,7 +1244,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8918e60108
+DECL|struct|__anon2951409a0108
 block|{
 DECL|member|in_args
 specifier|const

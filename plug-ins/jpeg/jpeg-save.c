@@ -140,7 +140,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296d5f210108
+DECL|struct|__anon2bde517e0108
 block|{
 DECL|member|cinfo
 name|struct
@@ -4872,7 +4872,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296d5f210208
+DECL|struct|__anon2bde517e0208
 block|{
 DECL|member|pub
 name|struct
@@ -4905,6 +4905,7 @@ typedef|;
 end_typedef
 
 begin_function
+specifier|static
 name|void
 DECL|function|init_destination (j_compress_ptr cinfo)
 name|init_destination
@@ -4916,6 +4917,7 @@ block|{ }
 end_function
 
 begin_function
+specifier|static
 name|gboolean
 DECL|function|empty_output_buffer (j_compress_ptr cinfo)
 name|empty_output_buffer
@@ -4987,6 +4989,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|term_destination (j_compress_ptr cinfo)
 name|term_destination

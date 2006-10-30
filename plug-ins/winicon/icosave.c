@@ -64,6 +64,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"icosave.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"icodialog.h"
 end_include
 

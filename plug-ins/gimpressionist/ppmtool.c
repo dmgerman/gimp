@@ -60,6 +60,7 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_function
+specifier|static
 name|int
 DECL|function|readline (FILE * f,char * buffer,int len)
 name|readline
@@ -1305,6 +1306,7 @@ struct|;
 end_struct
 
 begin_function
+specifier|static
 name|void
 DECL|function|msb2lsb (unsigned int * i)
 name|msb2lsb
@@ -1448,6 +1450,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|load_gimp_brush (const gchar * fn,ppm_t * p)
 name|load_gimp_brush

@@ -1078,6 +1078,7 @@ comment|/*************************************************/
 end_comment
 
 begin_function
+specifier|static
 name|gboolean
 DECL|function|check_handle_hit (gint xpos,gint ypos)
 name|check_handle_hit

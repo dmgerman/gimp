@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gfig-ellipse.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
