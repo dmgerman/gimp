@@ -19,6 +19,24 @@ directive|include
 file|"gimp.h"
 end_include
 
+begin_undef
+undef|#
+directive|undef
+name|GIMP_DISABLE_DEPRECATED
+end_undef
+
+begin_undef
+undef|#
+directive|undef
+name|__GIMP_PALETTES_PDB_H__
+end_undef
+
+begin_include
+include|#
+directive|include
+file|"gimppalettes_pdb.h"
+end_include
+
 begin_comment
 comment|/**  * gimp_palettes_refresh:  *  * Refreshes current palettes. This function always succeeds.  *  * This procedure retrieves all palettes currently in the user's  * palette path and updates the palette dialogs accordingly.  *  * Returns: TRUE on success.  */
 end_comment

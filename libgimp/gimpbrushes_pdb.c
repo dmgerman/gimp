@@ -25,6 +25,24 @@ directive|include
 file|"gimp.h"
 end_include
 
+begin_undef
+undef|#
+directive|undef
+name|GIMP_DISABLE_DEPRECATED
+end_undef
+
+begin_undef
+undef|#
+directive|undef
+name|__GIMP_BRUSHES_PDB_H__
+end_undef
+
+begin_include
+include|#
+directive|include
+file|"gimpbrushes_pdb.h"
+end_include
+
 begin_comment
 comment|/**  * gimp_brushes_refresh:  *  * Refresh current brushes. This function always succeeds.  *  * This procedure retrieves all brushes currently in the user's brush  * path and updates the brush dialogs accordingly.  *  * Returns: TRUE on success.  */
 end_comment

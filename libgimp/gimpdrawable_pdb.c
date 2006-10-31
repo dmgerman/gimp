@@ -25,6 +25,24 @@ directive|include
 file|"gimp.h"
 end_include
 
+begin_undef
+undef|#
+directive|undef
+name|GIMP_DISABLE_DEPRECATED
+end_undef
+
+begin_undef
+undef|#
+directive|undef
+name|__GIMP_DRAWABLE_PDB_H__
+end_undef
+
+begin_include
+include|#
+directive|include
+file|"gimpdrawable_pdb.h"
+end_include
+
 begin_comment
 comment|/**  * gimp_drawable_delete:  * @drawable_ID: The drawable to delete.  *  * Delete a drawable.  *  * This procedure deletes the specified drawable. This must not be done  * if the image containing this drawable was already deleted or if the  * drawable was already removed from the image. The only case in which  * this procedure is useful is if you want to get rid of a drawable  * which has not yet been added to an image.  *  * Returns: TRUE on success.  */
 end_comment

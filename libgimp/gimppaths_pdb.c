@@ -25,6 +25,24 @@ directive|include
 file|"gimp.h"
 end_include
 
+begin_undef
+undef|#
+directive|undef
+name|GIMP_DISABLE_DEPRECATED
+end_undef
+
+begin_undef
+undef|#
+directive|undef
+name|__GIMP_PATHS_PDB_H__
+end_undef
+
+begin_include
+include|#
+directive|include
+file|"gimppaths_pdb.h"
+end_include
+
 begin_comment
 comment|/**  * gimp_path_list:  * @image_ID: The image to list the paths from.  * @num_paths: The number of paths returned.  *  * This procedure is deprecated! Use gimp_image_get_vectors() instead.  *  * Returns: List of the paths belonging to this image.  */
 end_comment

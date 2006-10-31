@@ -19,6 +19,24 @@ directive|include
 file|"gimp.h"
 end_include
 
+begin_undef
+undef|#
+directive|undef
+name|GIMP_DISABLE_DEPRECATED
+end_undef
+
+begin_undef
+undef|#
+directive|undef
+name|__GIMP_TRANSFORM_TOOLS_PDB_H__
+end_undef
+
+begin_include
+include|#
+directive|include
+file|"gimptransformtools_pdb.h"
+end_include
+
 begin_comment
 comment|/**  * gimp_flip:  * @drawable_ID: The affected drawable.  * @flip_type: Type of flip.  *  * This procedure is deprecated! Use  * gimp_drawable_transform_flip_simple() instead.  *  * Returns: The flipped drawable.  */
 end_comment
