@@ -92,6 +92,7 @@ file|"core/gimplist.h"
 end_include
 
 begin_function
+specifier|static
 name|GimpGradient
 modifier|*
 DECL|function|gradient_get (Gimp * gimp,const gchar * name,gint segment,GimpGradientSegment ** seg)
@@ -162,6 +163,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|GimpGradient
 modifier|*
 DECL|function|gradient_get_range (Gimp * gimp,const gchar * name,gint start_segment,gint end_segment,GimpGradientSegment ** start_seg,GimpGradientSegment ** end_seg)
