@@ -91,6 +91,12 @@ directive|include
 file|"paint/gimppaintoptions.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"internal_procs.h"
+end_include
+
 begin_decl_stmt
 DECL|variable|default_coords
 specifier|static

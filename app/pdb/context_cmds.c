@@ -91,6 +91,12 @@ directive|include
 file|"plug-in/gimppluginmanager.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"internal_procs.h"
+end_include
+
 begin_function
 specifier|static
 name|GValueArray

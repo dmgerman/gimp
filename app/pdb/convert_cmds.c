@@ -79,6 +79,12 @@ directive|include
 file|"core/gimppalette.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"internal_procs.h"
+end_include
+
 begin_function
 specifier|static
 name|GValueArray
