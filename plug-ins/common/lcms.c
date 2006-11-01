@@ -121,7 +121,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b49ce710103
+DECL|enum|__anon29d040b40103
 block|{
 DECL|enumerator|STATUS
 name|STATUS
@@ -143,7 +143,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b49ce710203
+DECL|enum|__anon29d040b40203
 block|{
 DECL|enumerator|PROC_SET
 name|PROC_SET
@@ -169,7 +169,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b49ce710308
+DECL|struct|__anon29d040b40308
 block|{
 DECL|member|name
 specifier|const
@@ -1114,6 +1114,13 @@ operator|.
 name|d_int32
 operator|=
 name|dont_ask
+expr_stmt|;
+name|g_printerr
+argument_list|(
+literal|"dont-ask: %d\n"
+argument_list|,
+name|dont_ask
+argument_list|)
 expr_stmt|;
 block|}
 break|break;
@@ -3005,6 +3012,12 @@ name|GtkWidget
 modifier|*
 name|label
 decl_stmt|;
+name|GtkWidget
+modifier|*
+name|toggle
+init|=
+name|NULL
+decl_stmt|;
 name|gboolean
 name|run
 decl_stmt|;
@@ -3177,10 +3190,6 @@ condition|(
 name|dont_ask
 condition|)
 block|{
-name|GtkWidget
-modifier|*
-name|toggle
-decl_stmt|;
 name|toggle
 operator|=
 name|gtk_check_button_new_with_mnemonic
@@ -3222,21 +3231,6 @@ argument_list|(
 name|toggle
 argument_list|)
 expr_stmt|;
-name|g_signal_connect
-argument_list|(
-name|toggle
-argument_list|,
-literal|"toggled"
-argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|gimp_toggle_button_update
-argument_list|)
-argument_list|,
-operator|&
-name|dont_ask
-argument_list|)
-expr_stmt|;
 block|}
 name|run
 operator|=
@@ -3251,6 +3245,17 @@ argument_list|)
 operator|==
 name|GTK_RESPONSE_OK
 operator|)
+expr_stmt|;
+operator|*
+name|dont_ask
+operator|=
+name|gtk_toggle_button_get_active
+argument_list|(
+name|GTK_TOGGLE_BUTTON
+argument_list|(
+name|toggle
+argument_list|)
+argument_list|)
 expr_stmt|;
 name|gtk_widget_destroy
 argument_list|(
