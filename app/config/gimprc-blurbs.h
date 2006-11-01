@@ -269,7 +269,7 @@ literal|0
 end_if
 
 begin_endif
-unit|"Sets the gamma correction value for the display. 1.0 corresponds to no " \ "gamma correction.  For most displays, gamma correction should be set " \ "to between 2.0 and 2.6. One important thing to keep in mind: Many images " \ "that you might get from outside sources will in all likelihood already " \ "be gamma-corrected.  In these cases, the image will look washed-out if " \ "the GIMP has gamma-correction turned on.  If you are going to work with " \ "images of this sort, turn gamma correction off by setting the value to 1.0."
+unit|"Sets the gamma correction value for the display. 1.0 corresponds to no " \ "gamma correction.  For most displays, gamma correction should be set " \ "to between 2.0 and 2.6. One important thing to keep in mind: Many images " \ "that you might get from outside sources will in all likelihood already " \ "be gamma-corrected.  In these cases, the image will look washed-out if " \ "GIMP has gamma-correction turned on.  If you are going to work with " \ "images of this sort, turn gamma correction off by setting the value to 1.0."
 endif|#
 directive|endif
 end_endif
@@ -486,7 +486,7 @@ define|#
 directive|define
 name|MIN_COLORS_BLURB
 define|\
-value|N_("Generally only a concern for 8-bit displays, this sets the minimum " \    "number of system colors allocated for the GIMP.")
+value|N_("Generally only a concern for 8-bit displays, this sets the minimum " \    "number of system colors allocated for GIMP.")
 end_define
 
 begin_define
@@ -504,7 +504,7 @@ define|#
 directive|define
 name|MONITOR_RES_FROM_GDK_BLURB
 define|\
-value|"When enabled, the GIMP will use the monitor resolution from the " \ "windowing system."
+value|"When enabled, GIMP will use the monitor resolution from the windowing system."
 end_define
 
 begin_define
@@ -691,7 +691,7 @@ define|#
 directive|define
 name|SAVE_SESSION_INFO_BLURB
 define|\
-value|N_("Save the positions and sizes of the main dialogs when the GIMP exits.")
+value|N_("Save the positions and sizes of the main dialogs when GIMP exits.")
 end_define
 
 begin_define
@@ -700,7 +700,7 @@ define|#
 directive|define
 name|SAVE_TOOL_OPTIONS_BLURB
 define|\
-value|N_("Save the tool options when the GIMP exits.")
+value|N_("Save the tool options when GIMP exits.")
 end_define
 
 begin_define
@@ -889,7 +889,7 @@ define|#
 directive|define
 name|SAVE_ACCELS_BLURB
 define|\
-value|N_("Save changed keyboard shortcuts when the GIMP exits.")
+value|N_("Save changed keyboard shortcuts when GIMP exits.")
 end_define
 
 begin_define
@@ -907,7 +907,7 @@ define|#
 directive|define
 name|TEMP_PATH_BLURB
 define|\
-value|N_("Sets the folder for temporary storage. Files will appear here " \    "during the course of running the GIMP.  Most files will disappear " \    "when the GIMP exits, but some files are likely to remain, so it is " \    "best if this folder not be one that is shared by other users.")
+value|N_("Sets the folder for temporary storage. Files will appear here " \    "during the course of running GIMP.  Most files will disappear " \    "when GIMP exits, but some files are likely to remain, so it " \    "is best if this folder not be one that is shared by other users.")
 end_define
 
 begin_define
@@ -1012,7 +1012,7 @@ define|#
 directive|define
 name|TRUST_DIRTY_FLAG_BLURB
 define|\
-value|N_("When enabled, the GIMP will not save an image if it has not been changed " \    "since it was opened.")
+value|N_("When enabled, GIMP will not save an image if it has not been changed " \    "since it was opened.")
 end_define
 
 begin_define
