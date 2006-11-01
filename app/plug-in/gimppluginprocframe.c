@@ -577,13 +577,16 @@ condition|(
 name|proc_frame
 operator|->
 name|return_vals
-operator|&&
+condition|)
+block|{
+if|if
+condition|(
 name|proc_frame
 operator|->
 name|return_vals
 operator|->
 name|n_values
-operator|==
+operator|>=
 name|proc_frame
 operator|->
 name|procedure
@@ -600,13 +603,7 @@ operator|->
 name|return_vals
 expr_stmt|;
 block|}
-elseif|else
-if|if
-condition|(
-name|proc_frame
-operator|->
-name|return_vals
-condition|)
+else|else
 block|{
 comment|/* Allocate new return values of the correct size. */
 name|return_vals
@@ -638,25 +635,14 @@ argument_list|(
 name|GValue
 argument_list|)
 operator|*
-name|MIN
-argument_list|(
 name|proc_frame
 operator|->
 name|return_vals
 operator|->
 name|n_values
-argument_list|,
-name|proc_frame
-operator|->
-name|procedure
-operator|->
-name|num_values
-operator|+
-literal|1
-argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/* Free the old argument pointer.  This will cause a memory leak        * only if there were more values returned than we need (which        * shouldn't ever happen).        */
+comment|/* Free the old argument pointer. */
 name|g_free
 argument_list|(
 name|proc_frame
@@ -664,6 +650,7 @@ operator|->
 name|return_vals
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 else|else
 block|{
