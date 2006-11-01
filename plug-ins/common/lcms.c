@@ -121,7 +121,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d040b40103
+DECL|enum|__anon2be6d4870103
 block|{
 DECL|enumerator|STATUS
 name|STATUS
@@ -143,7 +143,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d040b40203
+DECL|enum|__anon2be6d4870203
 block|{
 DECL|enumerator|PROC_SET
 name|PROC_SET
@@ -169,7 +169,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d040b40308
+DECL|struct|__anon2be6d4870308
 block|{
 DECL|member|name
 specifier|const
@@ -1114,13 +1114,6 @@ operator|.
 name|d_int32
 operator|=
 name|dont_ask
-expr_stmt|;
-name|g_printerr
-argument_list|(
-literal|"dont-ask: %d\n"
-argument_list|,
-name|dont_ask
-argument_list|)
 expr_stmt|;
 block|}
 break|break;

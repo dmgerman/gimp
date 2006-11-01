@@ -287,15 +287,6 @@ name|FALSE
 expr_stmt|;
 break|break;
 block|}
-name|g_printerr
-argument_list|(
-literal|"%d\n"
-argument_list|,
-name|return_vals
-operator|->
-name|n_values
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|success
@@ -318,16 +309,6 @@ argument_list|,
 literal|1
 argument_list|)
 decl_stmt|;
-name|g_printerr
-argument_list|(
-literal|"%s\n"
-argument_list|,
-name|G_VALUE_TYPE_NAME
-argument_list|(
-name|value
-argument_list|)
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|GIMP_VALUE_HOLDS_INT32
@@ -341,13 +322,6 @@ name|value
 argument_list|)
 condition|)
 block|{
-name|g_printerr
-argument_list|(
-literal|"setting policy to %d\n"
-argument_list|,
-name|policy
-argument_list|)
-expr_stmt|;
 name|g_object_set
 argument_list|(
 name|G_OBJECT
