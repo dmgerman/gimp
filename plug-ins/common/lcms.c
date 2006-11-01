@@ -121,7 +121,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2779fa890103
+DECL|enum|__anon29c6cec50103
 block|{
 DECL|enumerator|STATUS
 name|STATUS
@@ -143,7 +143,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2779fa890203
+DECL|enum|__anon29c6cec50203
 block|{
 DECL|enumerator|PROC_SET
 name|PROC_SET
@@ -169,7 +169,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2779fa890308
+DECL|struct|__anon29c6cec50308
 block|{
 DECL|member|name
 specifier|const
@@ -2002,7 +2002,7 @@ name|desc
 operator|=
 name|g_strdup
 argument_list|(
-literal|"sRGB"
+literal|"sRGB built-in"
 argument_list|)
 expr_stmt|;
 operator|*
@@ -3141,7 +3141,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Convert it to the RGB workspace (%s)?"
+literal|"Convert it to the RGB working space (%s)?"
 argument_list|)
 argument_list|,
 name|desc
@@ -3246,7 +3246,7 @@ name|gimp_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Convert to RGB workspace?"
+literal|"Convert to RGB working space?"
 argument_list|)
 argument_list|,
 name|PLUG_IN_BINARY

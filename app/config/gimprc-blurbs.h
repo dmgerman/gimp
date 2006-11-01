@@ -79,7 +79,7 @@ define|#
 directive|define
 name|COLOR_PROFILE_POLICY_BLURB
 define|\
-value|N_("How to handle color profiles when opening a file.")
+value|N_("How to handle embedded color profiles when opening a file.")
 end_define
 
 begin_define

@@ -81,7 +81,7 @@ define|#
 directive|define
 name|DISPLAY_PROFILE_FROM_GDK_BLURB
 define|\
-value|N_("When enabled, the GIMP will try to use the display color profile " \      "from the windowing system. The configured monitor profile is then " \      "only used as a fallback.")
+value|N_("When enabled, the GIMP will try to use the display color profile " \      "from the windowing system.  The configured monitor profile is then " \      "only used as a fallback.")
 end_define
 
 begin_define
@@ -90,7 +90,7 @@ define|#
 directive|define
 name|RGB_PROFILE_BLURB
 define|\
-value|N_("The default RGB workspace color profile.")
+value|N_("The default RGB working space color profile.")
 end_define
 
 begin_define
@@ -126,12 +126,12 @@ define|#
 directive|define
 name|SIMULATION_RENDERING_INTENT_BLURB
 define|\
-value|N_("Sets how colors are converted from workspace to the print simulation " \      "device.")
+value|N_("Sets how colors are converted from RGB working space to the " \      "print simulation device.")
 end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af71a690103
+DECL|enum|__anon2b9a77710103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

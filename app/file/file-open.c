@@ -101,12 +101,6 @@ end_endif
 begin_include
 include|#
 directive|include
-file|"libgimpconfig/gimpconfig.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/core-types.h"
 end_include
 
@@ -1896,21 +1890,6 @@ name|GimpRunMode
 name|run_mode
 parameter_list|)
 block|{
-if|if
-condition|(
-name|image
-operator|->
-name|gimp
-operator|->
-name|config
-operator|->
-name|color_management
-operator|->
-name|mode
-operator|==
-name|GIMP_COLOR_MANAGEMENT_OFF
-condition|)
-return|return;
 if|if
 condition|(
 name|gimp_image_parasite_find
