@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d652ae0103
+DECL|enum|__anon27546c750103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -637,11 +637,14 @@ operator|->
 name|name_entry
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_sensitive
+name|gtk_editable_set_editable
+argument_list|(
+name|GTK_EDITABLE
 argument_list|(
 name|editor
 operator|->
 name|name_entry
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1803,11 +1806,14 @@ name|data_editable
 operator|=
 name|editable
 expr_stmt|;
-name|gtk_widget_set_sensitive
+name|gtk_editable_set_editable
+argument_list|(
+name|GTK_EDITABLE
 argument_list|(
 name|editor
 operator|->
 name|name_entry
+argument_list|)
 argument_list|,
 name|editable
 argument_list|)
