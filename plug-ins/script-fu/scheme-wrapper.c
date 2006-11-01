@@ -225,7 +225,7 @@ block|,
 name|FALSE
 block|}
 block|,
-comment|/* Tiny-Fu types */
+comment|/* Script-Fu types */
 block|{
 literal|"SF-IMAGE"
 block|,
@@ -340,7 +340,7 @@ block|,
 name|SF_ENUM
 block|}
 block|,
-comment|/* for SF_ADJUSTMENT */
+comment|/* For SF-ADJUSTMENT */
 block|{
 literal|"SF-SLIDER"
 block|,
@@ -507,6 +507,18 @@ block|{
 literal|"ALPHA-MASK"
 block|,
 name|GIMP_ADD_ALPHA_MASK
+block|}
+block|,
+block|{
+literal|"SELECTION-MASK"
+block|,
+name|GIMP_ADD_SELECTION_MASK
+block|}
+block|,
+block|{
+literal|"COPY-MASK"
+block|,
+name|GIMP_ADD_COPY_MASK
 block|}
 block|,
 block|{
@@ -3651,8 +3663,6 @@ name|args
 operator|=
 name|NULL
 expr_stmt|;
-comment|/* The checks on 'if (success)' below stop some code execution */
-comment|/* when the first error in the argument list is encountered.   */
 for|for
 control|(
 name|i
