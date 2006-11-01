@@ -6683,7 +6683,7 @@ name|GIMP_COLOR_PROFILE_POLICY_ASK
 block|,
 name|N_
 argument_list|(
-literal|"Ask"
+literal|"Ask what to do"
 argument_list|)
 block|,
 name|NULL
