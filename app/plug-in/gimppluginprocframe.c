@@ -278,6 +278,15 @@ name|progress_cancel_id
 operator|=
 literal|0
 expr_stmt|;
+if|if
+condition|(
+name|progress
+condition|)
+name|gimp_plug_in_progress_attach
+argument_list|(
+name|progress
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
