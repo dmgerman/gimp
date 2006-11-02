@@ -121,7 +121,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae98b380103
+DECL|enum|__anon2c237c460103
 block|{
 DECL|enumerator|STATUS
 name|STATUS
@@ -143,7 +143,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae98b380203
+DECL|enum|__anon2c237c460203
 block|{
 DECL|enumerator|PROC_SET
 name|PROC_SET
@@ -169,7 +169,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae98b380308
+DECL|struct|__anon2c237c460308
 block|{
 DECL|member|name
 specifier|const
@@ -3054,6 +3054,10 @@ argument_list|,
 literal|"yalign"
 argument_list|,
 literal|0.0
+argument_list|,
+literal|"xpad"
+argument_list|,
+literal|24
 argument_list|,
 name|NULL
 argument_list|)
