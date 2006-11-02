@@ -121,7 +121,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c6cec50103
+DECL|enum|__anon2ae98b380103
 block|{
 DECL|enumerator|STATUS
 name|STATUS
@@ -143,7 +143,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c6cec50203
+DECL|enum|__anon2ae98b380203
 block|{
 DECL|enumerator|PROC_SET
 name|PROC_SET
@@ -169,7 +169,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c6cec50308
+DECL|struct|__anon2ae98b380308
 block|{
 DECL|member|name
 specifier|const
@@ -3141,7 +3141,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Convert it to the RGB working space (%s)?"
+literal|"Convert the image to the RGB working space (%s)?"
 argument_list|)
 argument_list|,
 name|desc
