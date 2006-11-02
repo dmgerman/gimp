@@ -303,30 +303,19 @@ begin_comment
 comment|/* macintosh */
 end_comment
 
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|USE_STRCASECMP
-end_ifndef
-
 begin_define
 DECL|macro|stricmp
 define|#
 directive|define
 name|stricmp
-value|g_utf8_collate
+value|utf8_stricmp
 end_define
 
-begin_else
-else|#
-directive|else
-end_else
-
 begin_function
-DECL|function|stricmp (const char * s1,const char * s2)
+DECL|function|utf8_stricmp (const char * s1,const char * s2)
 specifier|static
 name|int
-name|stricmp
+name|utf8_stricmp
 parameter_list|(
 specifier|const
 name|char
@@ -393,11 +382,6 @@ name|result
 return|;
 block|}
 end_function
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_define
 DECL|macro|min (a,b)
@@ -11730,7 +11714,7 @@ decl_stmt|;
 name|int
 name|len
 decl_stmt|;
-DECL|enum|__anon27d3e1e80103
+DECL|enum|__anon291bcc9c0103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -28918,7 +28902,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon27d3e1e80208
+DECL|struct|__anon291bcc9c0208
 specifier|static
 struct|struct
 block|{
@@ -29167,7 +29151,7 @@ value|"\017"
 end_define
 
 begin_typedef
-DECL|struct|__anon27d3e1e80308
+DECL|struct|__anon291bcc9c0308
 typedef|typedef
 struct|struct
 block|{
@@ -31148,6 +31132,7 @@ end_function
 
 begin_function
 DECL|function|scheme_set_input_port_file (scheme * sc,FILE * fin)
+name|SCHEME_EXPORT
 name|void
 name|scheme_set_input_port_file
 parameter_list|(
@@ -31214,6 +31199,7 @@ end_function
 
 begin_function
 DECL|function|scheme_set_output_port_file (scheme * sc,FILE * fout)
+name|SCHEME_EXPORT
 name|void
 name|scheme_set_output_port_file
 parameter_list|(

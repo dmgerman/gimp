@@ -74,14 +74,6 @@ directive|else
 end_else
 
 begin_define
-DECL|macro|USE_STRCASECMP
-define|#
-directive|define
-name|USE_STRCASECMP
-value|0
-end_define
-
-begin_define
 DECL|macro|USE_STRLWR
 define|#
 directive|define
@@ -418,29 +410,6 @@ end_endif
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|USE_STRCASECMP
-end_ifndef
-
-begin_comment
-comment|/* stricmp for Unix */
-end_comment
-
-begin_define
-DECL|macro|USE_STRCASECMP
-define|#
-directive|define
-name|USE_STRCASECMP
-value|0
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_ifndef
-ifndef|#
-directive|ifndef
 name|USE_STRLWR
 end_ifndef
 
@@ -580,7 +549,7 @@ DECL|member|is_fixnum
 name|char
 name|is_fixnum
 decl_stmt|;
-DECL|union|__anon2b9e1548010a
+DECL|union|__anon2762d967010a
 union|union
 block|{
 DECL|member|ivalue
@@ -666,6 +635,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|SCHEME_EXPORT
 name|void
 name|scheme_set_input_port_file
 parameter_list|(
