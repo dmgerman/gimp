@@ -309,7 +309,7 @@ name|palette
 operator|->
 name|n_columns
 operator|>
-literal|1
+literal|0
 condition|)
 name|cell_width
 operator|=
@@ -353,7 +353,7 @@ name|palette
 operator|->
 name|n_columns
 operator|>
-literal|1
+literal|0
 condition|)
 name|cell_width
 operator|=
