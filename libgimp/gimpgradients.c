@@ -21,6 +21,24 @@ directive|include
 file|"gimp.h"
 end_include
 
+begin_undef
+undef|#
+directive|undef
+name|GIMP_DISABLE_DEPRECATED
+end_undef
+
+begin_undef
+undef|#
+directive|undef
+name|__GIMP_GRADIENTS_H__
+end_undef
+
+begin_include
+include|#
+directive|include
+file|"gimpgradients.h"
+end_include
+
 begin_comment
 comment|/**  * gimp_gradients_get_gradient:  *  * This procedure is deprecated! Use gimp_context_get_gradient() instead.  *  * Returns: The name of the active gradient.  */
 end_comment

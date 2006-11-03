@@ -15,6 +15,24 @@ directive|include
 file|"gimp.h"
 end_include
 
+begin_undef
+undef|#
+directive|undef
+name|GIMP_DISABLE_DEPRECATED
+end_undef
+
+begin_undef
+undef|#
+directive|undef
+name|__GIMP_LAYER_H__
+end_undef
+
+begin_include
+include|#
+directive|include
+file|"gimplayer.h"
+end_include
+
 begin_comment
 comment|/**  * gimp_layer_new:  * @image_ID: The image to which to add the layer.  * @name: The layer name.  * @width: The layer width.  * @height: The layer height.  * @type: The layer type.  * @opacity: The layer opacity.  * @mode: The layer combination mode.  *  * Create a new layer.  *  * This procedure creates a new layer with the specified width, height,  * and type. Name, opacity, and mode are also supplied parameters. The  * new layer still needs to be added to the image, as this is not  * automatic. Add the new layer with the 'gimp_image_add_layer'  * command. Other attributes such as layer mask modes, and offsets  * should be set with explicit procedure calls.  *  * Returns: The newly created layer.  */
 end_comment

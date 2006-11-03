@@ -15,6 +15,24 @@ directive|include
 file|"gimp.h"
 end_include
 
+begin_undef
+undef|#
+directive|undef
+name|GIMP_DISABLE_DEPRECATED
+end_undef
+
+begin_undef
+undef|#
+directive|undef
+name|__GIMP_IMAGE_H__
+end_undef
+
+begin_include
+include|#
+directive|include
+file|"gimpimage.h"
+end_include
+
 begin_comment
 comment|/**  * gimp_image_get_cmap:  * @image_ID:   The image.  * @num_colors: Number of colors in the colormap array.  *  * This procedure is deprecated! Use gimp_image_get_colormap() instead.  *  * Returns: The image's colormap.  */
 end_comment

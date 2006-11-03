@@ -15,6 +15,24 @@ directive|include
 file|"gimp.h"
 end_include
 
+begin_undef
+undef|#
+directive|undef
+name|GIMP_DISABLE_DEPRECATED
+end_undef
+
+begin_undef
+undef|#
+directive|undef
+name|__GIMP_PALETTE_H__
+end_undef
+
+begin_include
+include|#
+directive|include
+file|"gimppalette.h"
+end_include
+
 begin_comment
 comment|/**  * gimp_palette_get_foreground:  * @foreground: The foreground color.  *  * Get the current GIMP foreground color.  *  * This procedure retrieves the current GIMP foreground color. The  * foreground color is used in a variety of tools such as paint tools,  * blending, and bucket fill.  *  * Returns: TRUE on success.  */
 end_comment

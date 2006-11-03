@@ -15,6 +15,24 @@ directive|include
 file|"gimp.h"
 end_include
 
+begin_undef
+undef|#
+directive|undef
+name|GIMP_DISABLE_DEPRECATED
+end_undef
+
+begin_undef
+undef|#
+directive|undef
+name|__GIMP_SELECTION_H__
+end_undef
+
+begin_include
+include|#
+directive|include
+file|"gimpselection.h"
+end_include
+
 begin_comment
 comment|/**  * gimp_selection_float:  * @image_ID: ignored  * @drawable_ID: The drawable from which to float selection.  * @offx: x offset for translation.  * @offy: y offset for translation.  *  * Float the selection from the specified drawable with initial offsets  * as specified.  *  * This procedure determines the region of the specified drawable that  * lies beneath the current selection. The region is then cut from the  * drawable and the resulting data is made into a new layer which is  * instantiated as a floating selection. The offsets allow initial  * positioning of the new floating selection.  *  * Returns: The floated layer.  */
 end_comment
