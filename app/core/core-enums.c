@@ -3813,6 +3813,14 @@ literal|"group-item-resize"
 block|}
 block|,
 block|{
+name|GIMP_UNDO_GROUP_LAYER_ADD
+block|,
+literal|"GIMP_UNDO_GROUP_LAYER_ADD"
+block|,
+literal|"group-layer-add"
+block|}
+block|,
+block|{
 name|GIMP_UNDO_GROUP_LAYER_ADD_MASK
 block|,
 literal|"GIMP_UNDO_GROUP_LAYER_ADD_MASK"
@@ -4548,6 +4556,17 @@ block|,
 name|N_
 argument_list|(
 literal|"Resize item"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_UNDO_GROUP_LAYER_ADD
+block|,
+name|N_
+argument_list|(
+literal|"Add layer"
 argument_list|)
 block|,
 name|NULL

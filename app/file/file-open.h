@@ -188,9 +188,9 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpLayer
+name|GList
 modifier|*
-name|file_open_layer
+name|file_open_layers
 parameter_list|(
 name|Gimp
 modifier|*
@@ -207,6 +207,9 @@ parameter_list|,
 name|GimpImage
 modifier|*
 name|dest_image
+parameter_list|,
+name|gboolean
+name|merge_visible
 parameter_list|,
 specifier|const
 name|gchar
