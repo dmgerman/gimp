@@ -375,10 +375,10 @@ name|unsigned
 name|char
 name|kind
 decl_stmt|;
-DECL|union|__anon2b57548b010a
+DECL|union|__anon27920a5d010a
 union|union
 block|{
-DECL|struct|__anon2b57548b0208
+DECL|struct|__anon27920a5d0208
 struct|struct
 block|{
 DECL|member|file
@@ -394,7 +394,7 @@ DECL|member|stdio
 block|}
 name|stdio
 struct|;
-DECL|struct|__anon2b57548b0308
+DECL|struct|__anon27920a5d0308
 struct|struct
 block|{
 DECL|member|start
@@ -440,10 +440,10 @@ name|unsigned
 name|int
 name|_flag
 decl_stmt|;
-DECL|union|__anon2b57548b040a
+DECL|union|__anon27920a5d040a
 union|union
 block|{
-DECL|struct|__anon2b57548b0508
+DECL|struct|__anon27920a5d0508
 struct|struct
 block|{
 DECL|member|_avalue
@@ -463,7 +463,7 @@ DECL|member|_array
 block|}
 name|_array
 struct|;
-DECL|struct|__anon2b57548b0608
+DECL|struct|__anon27920a5d0608
 struct|struct
 block|{
 DECL|member|_svalue
@@ -492,7 +492,7 @@ DECL|member|_ff
 name|foreign_func
 name|_ff
 decl_stmt|;
-DECL|struct|__anon2b57548b0708
+DECL|struct|__anon27920a5d0708
 struct|struct
 block|{
 DECL|member|_car
@@ -1007,7 +1007,27 @@ end_function_decl
 
 begin_function_decl
 name|int
+name|is_array
+parameter_list|(
+name|pointer
+name|p
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|int
 name|is_character
+parameter_list|(
+name|pointer
+name|p
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|int
+name|string_length
 parameter_list|(
 name|pointer
 name|p
@@ -1183,12 +1203,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|USE_MACRO
-end_ifdef
-
 begin_function_decl
 name|int
 name|is_macro
@@ -1198,11 +1212,6 @@ name|p
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_function_decl
 name|pointer
