@@ -434,13 +434,13 @@ name|g_object_new
 argument_list|(
 name|GIMP_TYPE_IMAGE_PROFILE_VIEW
 argument_list|,
-literal|"parasite"
-argument_list|,
-literal|"icc-profile"
-argument_list|,
 literal|"image"
 argument_list|,
 name|image
+argument_list|,
+literal|"parasite"
+argument_list|,
+literal|"icc-profile"
 argument_list|,
 name|NULL
 argument_list|)
