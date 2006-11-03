@@ -301,7 +301,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a0aca380103
+DECL|enum|__anon2c03242e0103
 block|{
 DECL|enumerator|SHOOT_ROOT
 name|SHOOT_ROOT
@@ -320,7 +320,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0aca380208
+DECL|struct|__anon2c03242e0208
 block|{
 DECL|member|shoot_type
 name|ShootType
@@ -2556,12 +2556,9 @@ literal|"gimp-comment"
 argument_list|,
 name|GIMP_PARASITE_PERSISTENT
 argument_list|,
-name|g_utf8_strlen
+name|strlen
 argument_list|(
 name|comment
-argument_list|,
-operator|-
-literal|1
 argument_list|)
 operator|+
 literal|1
