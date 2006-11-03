@@ -144,6 +144,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpcolorselectorpalette.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpcontrollers.h"
 end_include
 
@@ -1661,6 +1667,14 @@ expr_stmt|;
 name|session_init
 argument_list|(
 name|gimp
+argument_list|)
+expr_stmt|;
+name|g_type_class_unref
+argument_list|(
+name|g_type_class_ref
+argument_list|(
+name|GIMP_TYPE_COLOR_SELECTOR_PALETTE
+argument_list|)
 argument_list|)
 expr_stmt|;
 call|(

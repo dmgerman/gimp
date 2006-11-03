@@ -111,7 +111,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c73f1f0103
+DECL|enum|__anon2c7d97230103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1255,6 +1255,7 @@ if|if
 condition|(
 name|context
 condition|)
+block|{
 name|gimp_color_selection_set_config
 argument_list|(
 name|GIMP_COLOR_SELECTION
@@ -1273,6 +1274,19 @@ operator|->
 name|color_management
 argument_list|)
 expr_stmt|;
+name|g_object_set_data
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|,
+literal|"gimp-context"
+argument_list|,
+name|context
+argument_list|)
+expr_stmt|;
+block|}
 name|gimp_color_selection_set_color
 argument_list|(
 name|GIMP_COLOR_SELECTION
