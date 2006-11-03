@@ -433,7 +433,10 @@ name|GTK_STOCK_CANCEL
 argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|,
-name|GTK_STOCK_OK
+name|_
+argument_list|(
+literal|"_Fade"
+argument_list|)
 argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,
@@ -625,7 +628,7 @@ operator|++
 argument_list|,
 name|_
 argument_list|(
-literal|"Mode:"
+literal|"_Mode:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -663,7 +666,7 @@ operator|++
 argument_list|,
 name|_
 argument_list|(
-literal|"Opacity:"
+literal|"_Opacity:"
 argument_list|)
 argument_list|)
 expr_stmt|;
