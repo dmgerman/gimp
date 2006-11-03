@@ -69,12 +69,6 @@ directive|include
 file|"gimptext-xlfd.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gimp-intl.h"
-end_include
-
 begin_comment
 comment|/****************************************/
 end_comment
@@ -335,7 +329,7 @@ end_function
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a4f34f0103
+DECL|enum|__anon28f567750103
 block|{
 DECL|enumerator|TEXT
 name|TEXT
@@ -560,11 +554,9 @@ condition|)
 block|{
 name|gchar
 modifier|*
-name|utf8_str
-decl_stmt|;
-name|utf8_str
-operator|=
-name|g_locale_to_utf8
+name|tmp
+init|=
+name|gimp_any_to_utf8
 argument_list|(
 name|text
 argument_list|,
@@ -572,35 +564,16 @@ operator|-
 literal|1
 argument_list|,
 name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|g_free
 argument_list|(
 name|text
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|utf8_str
-condition|)
 name|text
 operator|=
-name|utf8_str
-expr_stmt|;
-else|else
-name|text
-operator|=
-name|g_strdup
-argument_list|(
-name|_
-argument_list|(
-literal|"(invalid UTF-8 string)"
-argument_list|)
-argument_list|)
+name|tmp
 expr_stmt|;
 block|}
 name|antialias
