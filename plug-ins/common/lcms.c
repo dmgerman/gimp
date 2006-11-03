@@ -121,7 +121,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2afb66dc0103
+DECL|enum|__anon2be769ef0103
 block|{
 DECL|enumerator|STATUS
 name|STATUS
@@ -143,7 +143,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2afb66dc0203
+DECL|enum|__anon2be769ef0203
 block|{
 DECL|enumerator|PROC_SET
 name|PROC_SET
@@ -169,7 +169,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afb66dc0308
+DECL|struct|__anon2be769ef0308
 block|{
 DECL|member|name
 specifier|const
@@ -2427,6 +2427,11 @@ operator|=
 name|format
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|transform
+condition|)
+block|{
 name|lcms_drawable_transform
 argument_list|(
 name|drawable
@@ -2452,6 +2457,15 @@ operator|/
 name|num_layers
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+name|g_warning
+argument_list|(
+literal|"cmsCreateTransform() failed!"
+argument_list|)
+expr_stmt|;
+block|}
 name|gimp_drawable_detach
 argument_list|(
 name|drawable
@@ -2528,6 +2542,11 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|transform
+condition|)
+block|{
 name|cmsDoTransform
 argument_list|(
 name|transform
@@ -2544,6 +2563,15 @@ argument_list|(
 name|transform
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+name|g_warning
+argument_list|(
+literal|"cmsCreateTransform() failed!"
+argument_list|)
+expr_stmt|;
+block|}
 name|gimp_image_set_colormap
 argument_list|(
 name|image
