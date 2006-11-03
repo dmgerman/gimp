@@ -340,7 +340,7 @@ name|result
 decl_stmt|;
 name|s1a
 operator|=
-name|g_utf8_strdown
+name|g_utf8_casefold
 argument_list|(
 name|s1
 argument_list|,
@@ -350,7 +350,7 @@ argument_list|)
 expr_stmt|;
 name|s2a
 operator|=
-name|g_utf8_strdown
+name|g_utf8_casefold
 argument_list|(
 name|s2
 argument_list|,
@@ -11714,7 +11714,7 @@ decl_stmt|;
 name|int
 name|len
 decl_stmt|;
-DECL|enum|__anon291bcc9c0103
+DECL|enum|__anon2b305d5e0103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -28902,7 +28902,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon291bcc9c0208
+DECL|struct|__anon2b305d5e0208
 specifier|static
 struct|struct
 block|{
@@ -29151,7 +29151,7 @@ value|"\017"
 end_define
 
 begin_typedef
-DECL|struct|__anon291bcc9c0308
+DECL|struct|__anon2b305d5e0308
 typedef|typedef
 struct|struct
 block|{
