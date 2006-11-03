@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|<gtk/gtkvbox.h>
+file|"gimpimageparasiteview.h"
 end_include
 
 begin_define
@@ -100,13 +100,8 @@ struct|struct
 name|_GimpImageProfileView
 block|{
 DECL|member|parent_instance
-name|GtkVBox
+name|GimpImageParasiteView
 name|parent_instance
-decl_stmt|;
-DECL|member|image
-name|GimpImage
-modifier|*
-name|image
 decl_stmt|;
 DECL|member|table
 name|GtkWidget
@@ -147,7 +142,7 @@ struct|struct
 name|_GimpImageProfileViewClass
 block|{
 DECL|member|parent_class
-name|GtkVBoxClass
+name|GimpImageParasiteViewClass
 name|parent_class
 decl_stmt|;
 block|}

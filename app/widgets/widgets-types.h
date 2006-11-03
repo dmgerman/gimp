@@ -899,6 +899,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpImageParasiteView
+typedef|typedef
+name|struct
+name|_GimpImageParasiteView
+name|GimpImageParasiteView
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpImagePropView
 typedef|typedef
 name|struct
