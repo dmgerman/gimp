@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c927a230103
+DECL|enum|__anon294830120103
 block|{
 DECL|enumerator|RECTANGLE_CHANGED
 name|RECTANGLE_CHANGED
@@ -3978,6 +3978,8 @@ operator|=
 name|private
 operator|->
 name|startx
+operator|-
+name|snap_x
 operator|+
 name|inc_x
 expr_stmt|;
@@ -3988,6 +3990,8 @@ operator|=
 name|private
 operator|->
 name|starty
+operator|-
+name|snap_y
 operator|+
 name|inc_y
 expr_stmt|;
