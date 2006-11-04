@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ef2a3c0103
+DECL|enum|__anon27df61180103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -1902,6 +1902,10 @@ modifier|*
 name|image_map
 parameter_list|)
 block|{
+name|GimpImage
+modifier|*
+name|image
+decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
@@ -1929,6 +1933,18 @@ return|return
 name|FALSE
 return|;
 block|}
+name|image
+operator|=
+name|gimp_item_get_image
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|image_map
+operator|->
+name|drawable
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/*  Process up to 16 tiles in one go. This reduces the overhead    *  caused by updating the display while the imagemap is being    *  applied and gives us a tiny speedup.    */
 for|for
 control|(
@@ -1944,10 +1960,6 @@ name|i
 operator|++
 control|)
 block|{
-name|GimpImage
-modifier|*
-name|image
-decl_stmt|;
 name|PixelRegion
 name|srcPR
 decl_stmt|;
@@ -1963,18 +1975,6 @@ name|w
 decl_stmt|,
 name|h
 decl_stmt|;
-name|image
-operator|=
-name|gimp_item_get_image
-argument_list|(
-name|GIMP_ITEM
-argument_list|(
-name|image_map
-operator|->
-name|drawable
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|x
 operator|=
 name|image_map
