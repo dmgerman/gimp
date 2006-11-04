@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2761317f0103
+DECL|enum|__anon2a450c260103
 block|{
 DECL|enumerator|RECTANGLE_CHANGED
 name|RECTANGLE_CHANGED
@@ -3052,6 +3052,30 @@ name|cury
 operator|+=
 name|snap_y
 expr_stmt|;
+comment|/*  If there have been no changes... return  */
+if|if
+condition|(
+name|private
+operator|->
+name|lastx
+operator|==
+name|curx
+operator|&&
+name|private
+operator|->
+name|lasty
+operator|==
+name|cury
+condition|)
+return|return;
+name|gimp_draw_tool_pause
+argument_list|(
+name|GIMP_DRAW_TOOL
+argument_list|(
+name|tool
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/* fix function, startx, starty if user has "flipped" the rectangle */
 name|gimp_rectangle_tool_check_function
 argument_list|(
@@ -3078,22 +3102,6 @@ name|private
 operator|->
 name|starty
 expr_stmt|;
-comment|/*  If there have been no changes... return  */
-if|if
-condition|(
-name|private
-operator|->
-name|lastx
-operator|==
-name|curx
-operator|&&
-name|private
-operator|->
-name|lasty
-operator|==
-name|cury
-condition|)
-return|return;
 name|g_object_get
 argument_list|(
 name|options
@@ -3543,7 +3551,7 @@ block|{
 case|case
 name|RECT_RESIZING_UPPER_LEFT
 case|:
-comment|/*            * The same basically happens for each corner, just with a            * different fixed corner. To keep within aspect ratio and            * at the same time keep the cursor on one edge if not the            * corner itself: - calculate the two positions of the            * corner in question on the base of the current mouse            * cursor position and the fixed corner opposite the one            * selected.  - decide on which egde we are inside the            * rectangle dimension - if we are on the inside of the            * vertical edge then we use the x position of the cursor,            * otherwise we are on the inside (or close enough) of the            * horizontal edge and then we use the y position of the            * cursor for the base of our new corner.            */
+comment|/* The same basically happens for each corner, just with a            * different fixed corner. To keep within aspect ratio and            * at the same time keep the cursor on one edge if not the            * corner itself: - calculate the two positions of the            * corner in question on the base of the current mouse            * cursor position and the fixed corner opposite the one            * selected.  - decide on which egde we are inside the            * rectangle dimension - if we are on the inside of the            * vertical edge then we use the x position of the cursor,            * otherwise we are on the inside (or close enough) of the            * horizontal edge and then we use the y position of the            * cursor for the base of our new corner.            */
 name|x1
 operator|=
 name|rx2
@@ -4035,7 +4043,7 @@ name|lasty
 operator|=
 name|cury
 expr_stmt|;
-comment|/*    * Check to see whether the new rectangle obeys the boundary constraints, if any.    * If not, see whether we can downscale the mouse movement and call this    * motion handler again recursively.  The reason for the recursive call is    * to avoid leaving the rectangle edge hanging some pixels away from the    * constraining boundary if the user moves the pointer quickly.    */
+comment|/* Check to see whether the new rectangle obeys the boundary    * constraints, if any.  If not, see whether we can downscale the    * mouse movement and call this motion handler again recursively.    * The reason for the recursive call is to avoid leaving the    * rectangle edge hanging some pixels away from the constraining    * boundary if the user moves the pointer quickly.    */
 if|if
 condition|(
 name|gimp_rectangle_tool_constraint_violated
@@ -4115,6 +4123,14 @@ name|display
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_draw_tool_resume
+argument_list|(
+name|GIMP_DRAW_TOOL
+argument_list|(
+name|tool
+argument_list|)
+argument_list|)
+expr_stmt|;
 return|return;
 block|}
 comment|/* set startx, starty according to function, to keep rect on cursor */
@@ -4272,14 +4288,6 @@ break|break;
 default|default:
 break|break;
 block|}
-name|gimp_draw_tool_pause
-argument_list|(
-name|GIMP_DRAW_TOOL
-argument_list|(
-name|tool
-argument_list|)
-argument_list|)
-expr_stmt|;
 comment|/*  make sure that the coords are in bounds  */
 name|g_object_set
 argument_list|(
@@ -5850,7 +5858,7 @@ operator|<
 name|handle_w
 operator|)
 operator|&&
-name|inside_y
+name|inside_x
 condition|)
 block|{
 name|function
@@ -5876,7 +5884,7 @@ operator|<
 name|handle_w
 operator|)
 operator|&&
-name|inside_y
+name|inside_x
 condition|)
 block|{
 name|function
@@ -5902,7 +5910,7 @@ operator|<
 name|handle_h
 operator|)
 operator|&&
-name|inside_x
+name|inside_y
 condition|)
 block|{
 name|function
@@ -5928,7 +5936,7 @@ operator|<
 name|handle_h
 operator|)
 operator|&&
-name|inside_x
+name|inside_y
 condition|)
 block|{
 name|function
@@ -6183,15 +6191,6 @@ name|GimpRectangleToolPrivate
 modifier|*
 name|private
 decl_stmt|;
-name|gint
-name|x1
-decl_stmt|,
-name|x2
-decl_stmt|,
-name|y1
-decl_stmt|,
-name|y2
-decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_RECTANGLE_TOOL
@@ -6223,46 +6222,34 @@ operator|==
 name|RECT_INACTIVE
 condition|)
 return|return;
-name|x1
-operator|=
-name|private
-operator|->
-name|x1
-expr_stmt|;
-name|x2
-operator|=
-name|private
-operator|->
-name|x2
-expr_stmt|;
-name|y1
-operator|=
-name|private
-operator|->
-name|y1
-expr_stmt|;
-name|y2
-operator|=
-name|private
-operator|->
-name|y2
-expr_stmt|;
 name|gimp_draw_tool_draw_rectangle
 argument_list|(
 name|draw_tool
 argument_list|,
 name|FALSE
 argument_list|,
+name|private
+operator|->
 name|x1
 argument_list|,
+name|private
+operator|->
 name|y1
 argument_list|,
+name|private
+operator|->
 name|x2
 operator|-
+name|private
+operator|->
 name|x1
 argument_list|,
+name|private
+operator|->
 name|y2
 operator|-
+name|private
+operator|->
 name|y1
 argument_list|,
 name|FALSE
@@ -6300,21 +6287,29 @@ decl_stmt|;
 name|gint
 name|X1
 init|=
+name|private
+operator|->
 name|x1
 decl_stmt|;
 name|gint
 name|Y1
 init|=
+name|private
+operator|->
 name|y1
 decl_stmt|;
 name|gint
 name|X2
 init|=
+name|private
+operator|->
 name|x2
 decl_stmt|;
 name|gint
 name|Y2
 init|=
+name|private
+operator|->
 name|y2
 decl_stmt|;
 name|gboolean
@@ -6356,6 +6351,8 @@ name|RECT_RESIZING_LEFT
 case|:
 name|X2
 operator|=
+name|private
+operator|->
 name|x1
 operator|+
 name|handle_w
@@ -6368,6 +6365,8 @@ name|RECT_RESIZING_RIGHT
 case|:
 name|X1
 operator|=
+name|private
+operator|->
 name|x2
 operator|-
 name|handle_w
@@ -6380,6 +6379,8 @@ name|RECT_RESIZING_TOP
 case|:
 name|Y2
 operator|=
+name|private
+operator|->
 name|y1
 operator|+
 name|handle_h
@@ -6392,6 +6393,8 @@ name|RECT_RESIZING_BOTTOM
 case|:
 name|Y1
 operator|=
+name|private
+operator|->
 name|y2
 operator|-
 name|handle_h
@@ -6462,6 +6465,8 @@ index|]
 operator|.
 name|x
 operator|=
+name|private
+operator|->
 name|x1
 expr_stmt|;
 name|coords
@@ -6471,6 +6476,8 @@ index|]
 operator|.
 name|y
 operator|=
+name|private
+operator|->
 name|y1
 expr_stmt|;
 name|coords
@@ -6480,6 +6487,8 @@ index|]
 operator|.
 name|x
 operator|=
+name|private
+operator|->
 name|x1
 expr_stmt|;
 name|coords
@@ -6489,6 +6498,8 @@ index|]
 operator|.
 name|y
 operator|=
+name|private
+operator|->
 name|y1
 operator|+
 name|handle_h
@@ -6500,6 +6511,8 @@ index|]
 operator|.
 name|x
 operator|=
+name|private
+operator|->
 name|x1
 operator|+
 name|handle_w
@@ -6511,6 +6524,8 @@ index|]
 operator|.
 name|y
 operator|=
+name|private
+operator|->
 name|y1
 expr_stmt|;
 break|break;
@@ -6524,6 +6539,8 @@ index|]
 operator|.
 name|x
 operator|=
+name|private
+operator|->
 name|x2
 expr_stmt|;
 name|coords
@@ -6533,6 +6550,8 @@ index|]
 operator|.
 name|y
 operator|=
+name|private
+operator|->
 name|y1
 expr_stmt|;
 name|coords
@@ -6542,6 +6561,8 @@ index|]
 operator|.
 name|x
 operator|=
+name|private
+operator|->
 name|x2
 expr_stmt|;
 name|coords
@@ -6551,6 +6572,8 @@ index|]
 operator|.
 name|y
 operator|=
+name|private
+operator|->
 name|y1
 operator|+
 name|handle_h
@@ -6562,6 +6585,8 @@ index|]
 operator|.
 name|x
 operator|=
+name|private
+operator|->
 name|x2
 operator|-
 name|handle_w
@@ -6573,6 +6598,8 @@ index|]
 operator|.
 name|y
 operator|=
+name|private
+operator|->
 name|y1
 expr_stmt|;
 break|break;
@@ -6586,6 +6613,8 @@ index|]
 operator|.
 name|x
 operator|=
+name|private
+operator|->
 name|x1
 expr_stmt|;
 name|coords
@@ -6595,6 +6624,8 @@ index|]
 operator|.
 name|y
 operator|=
+name|private
+operator|->
 name|y2
 expr_stmt|;
 name|coords
@@ -6604,6 +6635,8 @@ index|]
 operator|.
 name|x
 operator|=
+name|private
+operator|->
 name|x1
 expr_stmt|;
 name|coords
@@ -6613,6 +6646,8 @@ index|]
 operator|.
 name|y
 operator|=
+name|private
+operator|->
 name|y2
 operator|-
 name|handle_h
@@ -6624,6 +6659,8 @@ index|]
 operator|.
 name|x
 operator|=
+name|private
+operator|->
 name|x1
 operator|+
 name|handle_w
@@ -6635,6 +6672,8 @@ index|]
 operator|.
 name|y
 operator|=
+name|private
+operator|->
 name|y2
 expr_stmt|;
 break|break;
@@ -6648,6 +6687,8 @@ index|]
 operator|.
 name|x
 operator|=
+name|private
+operator|->
 name|x2
 expr_stmt|;
 name|coords
@@ -6657,6 +6698,8 @@ index|]
 operator|.
 name|y
 operator|=
+name|private
+operator|->
 name|y2
 expr_stmt|;
 name|coords
@@ -6666,6 +6709,8 @@ index|]
 operator|.
 name|x
 operator|=
+name|private
+operator|->
 name|x2
 expr_stmt|;
 name|coords
@@ -6675,6 +6720,8 @@ index|]
 operator|.
 name|y
 operator|=
+name|private
+operator|->
 name|y2
 operator|-
 name|handle_h
@@ -6686,6 +6733,8 @@ index|]
 operator|.
 name|x
 operator|=
+name|private
+operator|->
 name|x2
 operator|-
 name|handle_w
@@ -6697,6 +6746,8 @@ index|]
 operator|.
 name|y
 operator|=
+name|private
+operator|->
 name|y2
 expr_stmt|;
 break|break;
@@ -6736,8 +6787,12 @@ name|draw_tool
 argument_list|,
 name|GIMP_HANDLE_FILLED_SQUARE
 argument_list|,
+name|private
+operator|->
 name|x1
 argument_list|,
+name|private
+operator|->
 name|y1
 argument_list|,
 name|ANCHOR_SIZE
@@ -6755,8 +6810,12 @@ name|draw_tool
 argument_list|,
 name|GIMP_HANDLE_FILLED_SQUARE
 argument_list|,
+name|private
+operator|->
 name|x2
 argument_list|,
+name|private
+operator|->
 name|y1
 argument_list|,
 name|ANCHOR_SIZE
@@ -6774,8 +6833,12 @@ name|draw_tool
 argument_list|,
 name|GIMP_HANDLE_FILLED_SQUARE
 argument_list|,
+name|private
+operator|->
 name|x1
 argument_list|,
+name|private
+operator|->
 name|y2
 argument_list|,
 name|ANCHOR_SIZE
@@ -6793,8 +6856,12 @@ name|draw_tool
 argument_list|,
 name|GIMP_HANDLE_FILLED_SQUARE
 argument_list|,
+name|private
+operator|->
 name|x2
 argument_list|,
+name|private
+operator|->
 name|y2
 argument_list|,
 name|ANCHOR_SIZE
