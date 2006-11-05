@@ -77,7 +77,8 @@ name|GIMP_RECTANGLE_OPTIONS_GET_PRIVATE
 parameter_list|(
 name|obj
 parameter_list|)
-value|(gimp_rectangle_options_get_private ((GimpRectangleOptions *) (obj)))
+define|\
+value|(gimp_rectangle_options_get_private (GIMP_RECTANGLE_OPTIONS (obj)))
 end_define
 
 begin_typedef

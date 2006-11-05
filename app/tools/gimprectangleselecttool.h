@@ -148,6 +148,14 @@ name|GimpUndo
 modifier|*
 name|redo
 decl_stmt|;
+DECL|member|round_corners
+name|gboolean
+name|round_corners
+decl_stmt|;
+DECL|member|corner_radius
+name|gdouble
+name|corner_radius
+decl_stmt|;
 block|}
 struct|;
 end_struct
