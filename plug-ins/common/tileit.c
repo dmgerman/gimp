@@ -112,7 +112,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279373c70108
+DECL|struct|__anon2bccdb5e0108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -495,7 +495,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon279373c70203
+DECL|enum|__anon2bccdb5e0203
 block|{
 DECL|enumerator|ALL
 name|ALL
@@ -514,7 +514,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279373c70308
+DECL|struct|__anon2bccdb5e0308
 block|{
 DECL|member|type
 name|AppliedTo
@@ -584,7 +584,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279373c70408
+DECL|struct|__anon2bccdb5e0408
 block|{
 DECL|member|htoggle
 name|GtkWidget
@@ -4878,7 +4878,7 @@ if|if
 condition|(
 name|actiontype
 operator|&
-name|HORIZONTAL
+name|VERTICAL
 condition|)
 block|{
 name|gdouble
@@ -4919,7 +4919,7 @@ if|if
 condition|(
 name|actiontype
 operator|&
-name|VERTICAL
+name|HORIZONTAL
 condition|)
 block|{
 name|gdouble
@@ -5120,7 +5120,7 @@ if|if
 condition|(
 name|actiontype
 operator|&
-name|HORIZONTAL
+name|VERTICAL
 condition|)
 block|{
 name|gdouble
@@ -5161,7 +5161,7 @@ if|if
 condition|(
 name|actiontype
 operator|&
-name|VERTICAL
+name|HORIZONTAL
 condition|)
 block|{
 name|gdouble
