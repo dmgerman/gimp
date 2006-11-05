@@ -16,16 +16,10 @@ directive|define
 name|__GIMP_RECTANGLE_TOOL_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"gimptool.h"
-end_include
-
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b1bd06e0103
+DECL|enum|__anon295d05620103
 block|{
 DECL|enumerator|GIMP_RECTANGLE_TOOL_PROP_0
 name|GIMP_RECTANGLE_TOOL_PROP_0
@@ -64,7 +58,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1bd06e0203
+DECL|enum|__anon295d05620203
 block|{
 DECL|enumerator|RECT_INACTIVE
 name|RECT_INACTIVE
@@ -471,17 +465,6 @@ parameter_list|(
 name|GimpRectangleTool
 modifier|*
 name|rect_tool
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_rectangle_tool_halt
-parameter_list|(
-name|GimpRectangleTool
-modifier|*
-name|rectangle
 parameter_list|)
 function_decl|;
 end_function_decl
