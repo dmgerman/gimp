@@ -265,13 +265,13 @@ name|GIMP_HELP_FILE_OPEN
 block|}
 block|,
 block|{
-literal|"file-open-as-layer"
+literal|"file-open-as-layers"
 block|,
 name|GIMP_STOCK_LAYER
 block|,
 name|N_
 argument_list|(
-literal|"Op_en as Layer..."
+literal|"Op_en as Layers..."
 argument_list|)
 block|,
 literal|"<control><alt>O"
@@ -280,7 +280,7 @@ name|NULL
 block|,
 name|G_CALLBACK
 argument_list|(
-name|file_open_as_layer_cmd_callback
+name|file_open_as_layers_cmd_callback
 argument_list|)
 block|,
 name|GIMP_HELP_FILE_OPEN_AS_LAYER
@@ -992,7 +992,7 @@ define|\
 value|gimp_action_group_set_action_sensitive (group, action, (condition) != 0)
 name|SET_SENSITIVE
 argument_list|(
-literal|"file-open-as-layer"
+literal|"file-open-as-layers"
 argument_list|,
 name|image
 argument_list|)

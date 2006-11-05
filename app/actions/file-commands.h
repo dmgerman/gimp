@@ -46,7 +46,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|file_open_as_layer_cmd_callback
+name|file_open_as_layers_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*

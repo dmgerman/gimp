@@ -196,7 +196,7 @@ modifier|*
 name|uri
 parameter_list|,
 name|gboolean
-name|open_as_layer
+name|open_as_layers
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -394,8 +394,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|file_open_as_layer_cmd_callback (GtkAction * action,gpointer data)
-name|file_open_as_layer_cmd_callback
+DECL|function|file_open_as_layers_cmd_callback (GtkAction * action,gpointer data)
+name|file_open_as_layers_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -1652,7 +1652,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|file_open_dialog_show (GtkWidget * parent,GimpImage * image,const gchar * uri,gboolean open_as_layer)
+DECL|function|file_open_dialog_show (GtkWidget * parent,GimpImage * image,const gchar * uri,gboolean open_as_layers)
 name|file_open_dialog_show
 parameter_list|(
 name|GtkWidget
@@ -1669,7 +1669,7 @@ modifier|*
 name|uri
 parameter_list|,
 name|gboolean
-name|open_as_layer
+name|open_as_layers
 parameter_list|)
 block|{
 name|GtkWidget
@@ -1716,7 +1716,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|open_as_layer
+name|open_as_layers
 condition|)
 block|{
 name|gtk_window_set_title
@@ -1728,7 +1728,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Open Image as Layer"
+literal|"Open Image as Layers"
 argument_list|)
 argument_list|)
 expr_stmt|;
