@@ -636,12 +636,6 @@ argument_list|)
 expr_stmt|;
 name|tool_class
 operator|->
-name|initialize
-operator|=
-name|gimp_rectangle_tool_initialize
-expr_stmt|;
-name|tool_class
-operator|->
 name|control
 operator|=
 name|gimp_rect_select_tool_control
@@ -836,6 +830,11 @@ argument_list|,
 name|params
 argument_list|)
 expr_stmt|;
+name|gimp_rectangle_tool_constructor
+argument_list|(
+name|object
+argument_list|)
+expr_stmt|;
 name|rect_sel
 operator|=
 name|GIMP_RECT_SELECT_TOOL
@@ -896,11 +895,6 @@ argument_list|,
 name|object
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gimp_rectangle_tool_constructor
-argument_list|(
-name|object
 argument_list|)
 expr_stmt|;
 return|return
