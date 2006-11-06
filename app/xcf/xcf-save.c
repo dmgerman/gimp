@@ -6663,7 +6663,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27963bfc0108
+DECL|struct|__anon28bf573e0108
 block|{
 DECL|member|info
 name|XcfInfo
