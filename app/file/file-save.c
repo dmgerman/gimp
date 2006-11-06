@@ -639,6 +639,18 @@ operator|->
 name|mime_type
 argument_list|)
 expr_stmt|;
+comment|/* only save a thumbnail if we are saving as XCF, see bug #25272 */
+if|if
+condition|(
+name|GIMP_PROCEDURE
+argument_list|(
+name|file_proc
+argument_list|)
+operator|->
+name|proc_type
+operator|==
+name|GIMP_INTERNAL
+condition|)
 name|gimp_imagefile_save_thumbnail
 argument_list|(
 name|imagefile

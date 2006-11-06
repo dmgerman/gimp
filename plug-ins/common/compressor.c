@@ -1236,7 +1236,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"No sensible extension, saving as compressed XCF."
+literal|"No sensible file extension, saving as compressed XCF."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1755,6 +1755,25 @@ argument_list|(
 name|tmpname
 argument_list|)
 expr_stmt|;
+comment|/* ask the core to save a thumbnail for compressed XCF files */
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|ext
+argument_list|,
+literal|".xcf"
+argument_list|)
+operator|==
+literal|0
+condition|)
+name|gimp_file_save_thumbnail
+argument_list|(
+name|image_ID
+argument_list|,
+name|filename
+argument_list|)
+expr_stmt|;
 return|return
 name|GIMP_PDB_SUCCESS
 return|;
@@ -1816,8 +1835,8 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"No sensible extension, attempting to load "
-literal|"with file magic."
+literal|"No sensible file extension, "
+literal|"attempting to load with file magic."
 argument_list|)
 argument_list|)
 expr_stmt|;
