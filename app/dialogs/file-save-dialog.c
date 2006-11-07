@@ -117,14 +117,6 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
-begin_define
-DECL|macro|DEBUG_SPEW
-define|#
-directive|define
-name|DEBUG_SPEW
-value|1
-end_define
-
 begin_comment
 comment|/*  local function prototypes  */
 end_comment

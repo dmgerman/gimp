@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28eda3120103
+DECL|enum|__anon289ae6ba0103
 block|{
 DECL|enumerator|RECTANGLE_CHANGED
 name|RECTANGLE_CHANGED
@@ -5905,10 +5905,21 @@ name|function
 condition|)
 block|{
 case|case
-name|RECT_CREATING
-case|:
-case|case
 name|RECT_MOVING
+case|:
+if|if
+condition|(
+name|gimp_tool_control_is_active
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|)
+condition|)
+break|break;
+comment|/* else fallthrough */
+case|case
+name|RECT_CREATING
 case|:
 name|gimp_draw_tool_draw_corner
 argument_list|(
