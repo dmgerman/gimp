@@ -164,7 +164,7 @@ file|"gimp-intl.h"
 end_include
 
 begin_comment
-comment|/*  Other defines...  */
+comment|/*  defines  */
 end_comment
 
 begin_define
@@ -206,21 +206,13 @@ DECL|macro|POINT_WIDTH
 define|#
 directive|define
 name|POINT_WIDTH
-value|9
+value|12
 end_define
 
 begin_comment
 DECL|macro|POINT_WIDTH
 comment|/* size (in pixels) of seed handles */
 end_comment
-
-begin_define
-DECL|macro|POINT_HALFWIDTH
-define|#
-directive|define
-name|POINT_HALFWIDTH
-value|(POINT_WIDTH / 2)
-end_define
 
 begin_define
 DECL|macro|EXTEND_BY
@@ -814,6 +806,7 @@ end_comment
 
 begin_decl_stmt
 specifier|static
+specifier|const
 name|gint
 name|move
 index|[
@@ -4792,7 +4785,9 @@ name|x
 argument_list|,
 name|y
 argument_list|,
-name|POINT_HALFWIDTH
+name|POINT_WIDTH
+operator|/
+literal|2
 argument_list|)
 condition|)
 block|{
@@ -5980,7 +5975,7 @@ argument_list|()
 expr_stmt|;
 while|while
 condition|(
-literal|1
+name|TRUE
 condition|)
 block|{
 name|coords

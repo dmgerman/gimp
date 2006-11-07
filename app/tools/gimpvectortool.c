@@ -188,7 +188,7 @@ DECL|macro|TARGET
 define|#
 directive|define
 name|TARGET
-value|9
+value|12
 end_define
 
 begin_define

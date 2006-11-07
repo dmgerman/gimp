@@ -135,16 +135,12 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
-begin_comment
-comment|/*  definitions  */
-end_comment
-
 begin_define
 DECL|macro|TARGET
 define|#
 directive|define
 name|TARGET
-value|8
+value|12
 end_define
 
 begin_define
@@ -828,8 +824,12 @@ name|i
 index|]
 argument_list|,
 name|TARGET
+operator|*
+literal|2
 argument_list|,
 name|TARGET
+operator|*
+literal|2
 argument_list|,
 name|GTK_ANCHOR_CENTER
 argument_list|,
@@ -2347,8 +2347,12 @@ name|i
 index|]
 argument_list|,
 name|TARGET
+operator|*
+literal|2
 argument_list|,
 name|TARGET
+operator|*
+literal|2
 argument_list|,
 name|GTK_ANCHOR_CENTER
 argument_list|,
@@ -2808,8 +2812,12 @@ literal|0
 index|]
 argument_list|,
 name|ARC_RADIUS
+operator|*
+literal|2
 argument_list|,
 name|ARC_RADIUS
+operator|*
+literal|2
 argument_list|,
 name|angle1
 argument_list|,

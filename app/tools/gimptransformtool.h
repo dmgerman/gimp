@@ -22,23 +22,11 @@ directive|include
 file|"gimpdrawtool.h"
 end_include
 
-begin_comment
-comment|/* buffer sizes for scaling information strings (for the info dialog) */
-end_comment
-
 begin_define
-DECL|macro|MAX_INFO_BUF
+DECL|macro|TRANS_INFO_SIZE
 define|#
 directive|define
-name|MAX_INFO_BUF
-value|40
-end_define
-
-begin_define
-DECL|macro|TRAN_INFO_SIZE
-define|#
-directive|define
-name|TRAN_INFO_SIZE
+name|TRANS_INFO_SIZE
 value|8
 end_define
 
@@ -48,7 +36,7 @@ typedef|typedef
 name|gdouble
 name|TransInfo
 index|[
-name|TRAN_INFO_SIZE
+name|TRANS_INFO_SIZE
 index|]
 typedef|;
 end_typedef
@@ -286,6 +274,16 @@ name|gboolean
 name|use_mid_handles
 decl_stmt|;
 comment|/*  use handles at midpoints of edges */
+DECL|member|handle_w
+name|gint
+name|handle_w
+decl_stmt|;
+comment|/*  handle width                      */
+DECL|member|handle_h
+name|gint
+name|handle_h
+decl_stmt|;
+comment|/*  handle height                     */
 DECL|member|ngx
 DECL|member|ngy
 name|gint

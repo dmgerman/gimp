@@ -256,7 +256,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|TRAN_INFO_SIZE
+name|TRANS_INFO_SIZE
 condition|;
 name|i
 operator|++
@@ -385,7 +385,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|TRAN_INFO_SIZE
+name|TRANS_INFO_SIZE
 condition|;
 name|i
 operator|++

@@ -82,18 +82,10 @@ file|"gimp-intl.h"
 end_include
 
 begin_define
-DECL|macro|TARGET_WIDTH
+DECL|macro|TARGET_SIZE
 define|#
 directive|define
-name|TARGET_WIDTH
-value|15
-end_define
-
-begin_define
-DECL|macro|TARGET_HEIGHT
-define|#
-directive|define
-name|TARGET_HEIGHT
+name|TARGET_SIZE
 value|15
 end_define
 
@@ -1552,9 +1544,9 @@ name|src_y
 operator|+
 name|off_y
 argument_list|,
-name|TARGET_WIDTH
+name|TARGET_SIZE
 argument_list|,
-name|TARGET_WIDTH
+name|TARGET_SIZE
 argument_list|,
 name|GTK_ANCHOR_CENTER
 argument_list|,

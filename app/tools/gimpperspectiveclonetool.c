@@ -116,22 +116,14 @@ DECL|macro|HANDLE_SIZE
 define|#
 directive|define
 name|HANDLE_SIZE
-value|10
+value|25
 end_define
 
 begin_define
-DECL|macro|TARGET_WIDTH
+DECL|macro|TARGET_SIZE
 define|#
 directive|define
-name|TARGET_WIDTH
-value|15
-end_define
-
-begin_define
-DECL|macro|TARGET_HEIGHT
-define|#
-directive|define
-name|TARGET_HEIGHT
+name|TARGET_SIZE
 value|15
 end_define
 
@@ -652,7 +644,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|TRAN_INFO_SIZE
+name|TRANS_INFO_SIZE
 condition|;
 name|i
 operator|++
@@ -929,7 +921,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|TRAN_INFO_SIZE
+name|TRANS_INFO_SIZE
 condition|;
 name|i
 operator|++
@@ -3094,9 +3086,9 @@ name|clone_tool
 operator|->
 name|src_y
 argument_list|,
-name|TARGET_WIDTH
+name|TARGET_SIZE
 argument_list|,
-name|TARGET_WIDTH
+name|TARGET_SIZE
 argument_list|,
 name|GTK_ANCHOR_CENTER
 argument_list|,
