@@ -769,14 +769,6 @@ name|ts_output
 decl_stmt|;
 end_decl_stmt
 
-begin_decl_stmt
-DECL|variable|ts_verbose_level
-specifier|static
-name|int
-name|ts_verbose_level
-decl_stmt|;
-end_decl_stmt
-
 begin_comment
 comment|/* wrapper functions */
 end_comment
@@ -838,36 +830,6 @@ block|}
 end_function
 
 begin_function
-name|int
-DECL|function|ts_get_verbose_level (void)
-name|ts_get_verbose_level
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-return|return
-name|ts_verbose_level
-return|;
-block|}
-end_function
-
-begin_function
-name|void
-DECL|function|ts_set_verbose_level (gint verbose_level)
-name|ts_set_verbose_level
-parameter_list|(
-name|gint
-name|verbose_level
-parameter_list|)
-block|{
-name|ts_verbose_level
-operator|=
-name|verbose_level
-expr_stmt|;
-block|}
-end_function
-
-begin_function
 name|void
 DECL|function|ts_set_print_flag (gint print_flag)
 name|ts_set_print_flag
@@ -893,13 +855,6 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-if|if
-condition|(
-name|ts_verbose_level
-operator|>=
-literal|2
-condition|)
-block|{
 name|fprintf
 argument_list|(
 name|ts_output
@@ -914,7 +869,6 @@ argument_list|,
 literal|"Copyright (c) Dimitrios Souflis\n"
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 

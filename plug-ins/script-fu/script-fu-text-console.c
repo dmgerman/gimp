@@ -113,11 +113,6 @@ argument_list|(
 name|stdout
 argument_list|)
 expr_stmt|;
-name|ts_set_verbose_level
-argument_list|(
-literal|2
-argument_list|)
-expr_stmt|;
 name|ts_print_welcome
 argument_list|()
 expr_stmt|;

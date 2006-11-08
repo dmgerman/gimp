@@ -48,24 +48,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint
-name|ts_get_verbose_level
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|ts_set_verbose_level
-parameter_list|(
-name|gint
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|void
 name|ts_set_print_flag
 parameter_list|(

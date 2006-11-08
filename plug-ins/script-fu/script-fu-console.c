@@ -90,7 +90,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0ea6720108
+DECL|struct|__anon27a99b6d0108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -151,7 +151,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0ea6720203
+DECL|enum|__anon27a99b6d0203
 block|{
 DECL|enumerator|RESPONSE_CLEAR
 name|RESPONSE_CLEAR
@@ -2690,14 +2690,6 @@ argument_list|(
 literal|1
 argument_list|)
 expr_stmt|;
-name|ts_set_verbose_level
-argument_list|(
-literal|2
-argument_list|)
-expr_stmt|;
-name|ts_print_welcome
-argument_list|()
-expr_stmt|;
 block|}
 end_function
 
@@ -2809,11 +2801,6 @@ comment|/*  Disable Script-Fu output  */
 name|ts_set_output_file
 argument_list|(
 name|stdout
-argument_list|)
-expr_stmt|;
-name|ts_set_verbose_level
-argument_list|(
-literal|0
 argument_list|)
 expr_stmt|;
 if|if
