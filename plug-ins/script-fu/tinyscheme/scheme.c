@@ -678,39 +678,6 @@ DECL|macro|UNMARK
 comment|/* 0111111111111111 */
 end_comment
 
-begin_enum
-DECL|enum|array_type
-enum|enum
-name|array_type
-block|{
-DECL|enumerator|array_int32
-name|array_int32
-init|=
-literal|0
-block|,
-DECL|enumerator|array_int16
-name|array_int16
-init|=
-literal|1
-block|,
-DECL|enumerator|array_int8
-name|array_int8
-init|=
-literal|2
-block|,
-DECL|enumerator|array_float
-name|array_float
-init|=
-literal|3
-block|,
-DECL|enumerator|array_string
-name|array_string
-init|=
-literal|4
-block|}
-enum|;
-end_enum
-
 begin_function_decl
 DECL|variable|ts_output_routine
 name|void
@@ -971,39 +938,6 @@ parameter_list|(
 name|p
 parameter_list|)
 value|(typeflag(p)&T_MASKTYPE)
-end_define
-
-begin_define
-DECL|macro|arrayvalue (p)
-define|#
-directive|define
-name|arrayvalue
-parameter_list|(
-name|p
-parameter_list|)
-value|((p)->_object._array._avalue)
-end_define
-
-begin_define
-DECL|macro|arraylength (p)
-define|#
-directive|define
-name|arraylength
-parameter_list|(
-name|p
-parameter_list|)
-value|((p)->_object._array._length)
-end_define
-
-begin_define
-DECL|macro|arraytype (p)
-define|#
-directive|define
-name|arraytype
-parameter_list|(
-name|p
-parameter_list|)
-value|((p)->_object._array._type)
 end_define
 
 begin_function
@@ -11996,7 +11930,7 @@ decl_stmt|;
 name|int
 name|len
 decl_stmt|;
-DECL|enum|__anon29d6cbf80103
+DECL|enum|__anon2b9f7a850103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -29184,7 +29118,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon29d6cbf80208
+DECL|struct|__anon2b9f7a850208
 specifier|static
 struct|struct
 block|{
@@ -29433,7 +29367,7 @@ value|"\017"
 end_define
 
 begin_typedef
-DECL|struct|__anon29d6cbf80308
+DECL|struct|__anon2b9f7a850308
 typedef|typedef
 struct|struct
 block|{
