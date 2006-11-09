@@ -30,12 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/brush-scale.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"base/pixel-region.h"
 end_include
 
@@ -104,8 +98,8 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon299a4cd40103
-DECL|enum|__anon299a4cd40203
+DECL|enum|__anon2b0d70410103
+DECL|enum|__anon2b0d70410203
 block|{
 DECL|enumerator|SET_BRUSH
 DECL|enumerator|SET_BRUSH
@@ -277,7 +271,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
+name|gdouble
 name|gimp_brush_core_calc_brush_size
 parameter_list|(
 name|GimpBrushCore
@@ -401,9 +395,9 @@ name|GimpBrushCore
 modifier|*
 name|core
 parameter_list|,
-name|MaskBuf
+name|GimpBrush
 modifier|*
-name|brush_mask
+name|brush
 parameter_list|,
 name|gdouble
 name|scale
@@ -421,9 +415,9 @@ name|GimpBrushCore
 modifier|*
 name|core
 parameter_list|,
-name|MaskBuf
+name|GimpBrush
 modifier|*
-name|brush_mask
+name|brush
 parameter_list|,
 name|gdouble
 name|scale
@@ -3825,7 +3819,7 @@ end_comment
 
 begin_function
 specifier|static
-name|void
+name|gdouble
 DECL|function|gimp_brush_core_calc_brush_size (GimpBrushCore * core,MaskBuf * mask,gdouble scale,gint * width,gint * height)
 DECL|function|gimp_brush_core_calc_brush_size (GimpBrushCore * core,MaskBuf * mask,gdouble scale,gint * width,gint * height)
 name|gimp_brush_core_calc_brush_size
@@ -3850,6 +3844,11 @@ modifier|*
 name|height
 parameter_list|)
 block|{
+name|gdouble
+name|ratio
+init|=
+literal|1.0
+decl_stmt|;
 name|scale
 operator|=
 name|CLAMP
@@ -3889,9 +3888,6 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gdouble
-name|ratio
-decl_stmt|;
 if|if
 condition|(
 name|scale
@@ -3957,6 +3953,9 @@ literal|1
 argument_list|)
 expr_stmt|;
 block|}
+return|return
+name|ratio
+return|;
 block|}
 end_function
 
@@ -5546,9 +5545,9 @@ name|GimpBrushCore
 modifier|*
 name|core
 parameter_list|,
-name|MaskBuf
+name|GimpBrush
 modifier|*
-name|brush_mask
+name|brush
 parameter_list|,
 name|gdouble
 name|scale
@@ -5587,13 +5586,19 @@ operator|==
 literal|1.0
 condition|)
 return|return
-name|brush_mask
+name|brush
+operator|->
+name|mask
 return|;
+name|scale
+operator|=
 name|gimp_brush_core_calc_brush_size
 argument_list|(
 name|core
 argument_list|,
-name|brush_mask
+name|brush
+operator|->
+name|mask
 argument_list|,
 name|scale
 argument_list|,
@@ -5611,7 +5616,9 @@ name|core
 operator|->
 name|cache_invalid
 operator|&&
-name|brush_mask
+name|brush
+operator|->
+name|mask
 operator|==
 name|core
 operator|->
@@ -5644,7 +5651,9 @@ name|core
 operator|->
 name|last_scale_brush
 operator|=
-name|brush_mask
+name|brush
+operator|->
+name|mask
 expr_stmt|;
 name|core
 operator|->
@@ -5675,13 +5684,11 @@ name|core
 operator|->
 name|scale_brush
 operator|=
-name|brush_scale_mask
+name|gimp_brush_scale_mask
 argument_list|(
-name|brush_mask
+name|brush
 argument_list|,
-name|dest_width
-argument_list|,
-name|dest_height
+name|scale
 argument_list|)
 expr_stmt|;
 name|core
@@ -5711,9 +5718,9 @@ name|GimpBrushCore
 modifier|*
 name|core
 parameter_list|,
-name|MaskBuf
+name|GimpBrush
 modifier|*
-name|brush_mask
+name|brush
 parameter_list|,
 name|gdouble
 name|scale
@@ -5752,13 +5759,19 @@ operator|==
 literal|1.0
 condition|)
 return|return
-name|brush_mask
+name|brush
+operator|->
+name|pixmap
 return|;
+name|scale
+operator|=
 name|gimp_brush_core_calc_brush_size
 argument_list|(
 name|core
 argument_list|,
-name|brush_mask
+name|brush
+operator|->
+name|pixmap
 argument_list|,
 name|scale
 argument_list|,
@@ -5776,7 +5789,9 @@ name|core
 operator|->
 name|cache_invalid
 operator|&&
-name|brush_mask
+name|brush
+operator|->
+name|pixmap
 operator|==
 name|core
 operator|->
@@ -5809,7 +5824,9 @@ name|core
 operator|->
 name|last_scale_pixmap
 operator|=
-name|brush_mask
+name|brush
+operator|->
+name|pixmap
 expr_stmt|;
 name|core
 operator|->
@@ -5840,13 +5857,11 @@ name|core
 operator|->
 name|scale_pixmap
 operator|=
-name|brush_scale_pixmap
+name|gimp_brush_scale_pixmap
 argument_list|(
-name|brush_mask
+name|brush
 argument_list|,
-name|dest_width
-argument_list|,
-name|dest_height
+name|scale
 argument_list|)
 expr_stmt|;
 name|core
@@ -5905,8 +5920,6 @@ argument_list|,
 name|core
 operator|->
 name|brush
-operator|->
-name|mask
 argument_list|,
 name|scale
 argument_list|)
@@ -6170,8 +6183,6 @@ argument_list|,
 name|core
 operator|->
 name|brush
-operator|->
-name|pixmap
 argument_list|,
 name|scale
 argument_list|)
@@ -6197,8 +6208,6 @@ argument_list|,
 name|core
 operator|->
 name|brush
-operator|->
-name|mask
 argument_list|,
 name|scale
 argument_list|)
