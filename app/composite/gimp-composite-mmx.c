@@ -85,15 +85,14 @@ parameter_list|)
 value|"\tmovq %%" #a ", %%" #tmp ";" "psubusb %%" #b ", %%" #tmp ";" "paddb %%" #tmp ", %%" #b "\n"
 end_define
 
-begin_function
-name|void
-DECL|function|debug_display_mmx (void)
-name|debug_display_mmx
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-DECL|macro|mask32 (x)
+begin_if
+if|#
+directive|if
+literal|0
+end_if
+
+begin_define
+unit|static void debug_display_mmx(void) {
 define|#
 directive|define
 name|mask32
@@ -101,7 +100,9 @@ parameter_list|(
 name|x
 parameter_list|)
 value|((x)& (unsigned long long) 0xFFFFFFFF)
-DECL|macro|print64 (reg)
+end_define
+
+begin_define
 define|#
 directive|define
 name|print64
@@ -109,98 +110,13 @@ parameter_list|(
 name|reg
 parameter_list|)
 value|{ unsigned long long reg; asm("movq %%" #reg ",%0" : "=m" (reg)); printf(#reg"=%08llx %08llx", mask32(reg>>32), mask32(reg)); }
-name|printf
-argument_list|(
-literal|"--------------------------------------------\n"
-argument_list|)
-expr_stmt|;
-name|print64
-argument_list|(
-name|mm0
-argument_list|)
-expr_stmt|;
-name|printf
-argument_list|(
-literal|"  "
-argument_list|)
-expr_stmt|;
-name|print64
-argument_list|(
-name|mm1
-argument_list|)
-expr_stmt|;
-name|printf
-argument_list|(
-literal|"\n"
-argument_list|)
-expr_stmt|;
-name|print64
-argument_list|(
-name|mm2
-argument_list|)
-expr_stmt|;
-name|printf
-argument_list|(
-literal|"  "
-argument_list|)
-expr_stmt|;
-name|print64
-argument_list|(
-name|mm3
-argument_list|)
-expr_stmt|;
-name|printf
-argument_list|(
-literal|"\n"
-argument_list|)
-expr_stmt|;
-name|print64
-argument_list|(
-name|mm4
-argument_list|)
-expr_stmt|;
-name|printf
-argument_list|(
-literal|"  "
-argument_list|)
-expr_stmt|;
-name|print64
-argument_list|(
-name|mm5
-argument_list|)
-expr_stmt|;
-name|printf
-argument_list|(
-literal|"\n"
-argument_list|)
-expr_stmt|;
-name|print64
-argument_list|(
-name|mm6
-argument_list|)
-expr_stmt|;
-name|printf
-argument_list|(
-literal|"  "
-argument_list|)
-expr_stmt|;
-name|print64
-argument_list|(
-name|mm7
-argument_list|)
-expr_stmt|;
-name|printf
-argument_list|(
-literal|"\n"
-argument_list|)
-expr_stmt|;
-name|printf
-argument_list|(
-literal|"--------------------------------------------\n"
-argument_list|)
-expr_stmt|;
-block|}
-end_function
+end_define
+
+begin_endif
+unit|printf("--------------------------------------------\n");   print64(mm0); printf("  "); print64(mm1); printf("\n");   print64(mm2); printf("  "); print64(mm3); printf("\n");   print64(mm4); printf("  "); print64(mm5); printf("\n");   print64(mm6); printf("  "); print64(mm7); printf("\n");   printf("--------------------------------------------\n"); }
+endif|#
+directive|endif
+end_endif
 
 begin_decl_stmt
 DECL|variable|rgba8_alpha_mask_64
@@ -1324,51 +1240,96 @@ asm|asm("emms");
 block|}
 end_function
 
-begin_function
-specifier|static
-name|void
-DECL|function|mmx_op_overlay (void)
-name|mmx_op_overlay
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-asm|asm
-specifier|volatile
-asm|(
+begin_if
+if|#
+directive|if
+literal|0
+end_if
+
+begin_comment
+unit|static void mmx_op_overlay(void) {   asm volatile (
 comment|/* low bytes */
-asm|mmx_low_bytes_to_words(mm3,mm5,mm0)                 "\tpcmpeqb   %%mm4,%%mm4\n"                 "\tpsubb     %%mm2,%%mm4\n"
+end_comment
+
+begin_comment
+unit|mmx_low_bytes_to_words(mm3,mm5,mm0)                 "\tpcmpeqb   %%mm4,%%mm4\n"                 "\tpsubb     %%mm2,%%mm4\n"
 comment|/* mm4 = 255 - A */
-asm|"\tpunpcklbw %%mm0,%%mm4\n"
+end_comment
+
+begin_comment
+unit|"\tpunpcklbw %%mm0,%%mm4\n"
 comment|/* mm4 = (low bytes as word) mm4 */
-asm|"\tmovq         %0,%%mm6\n"
+end_comment
+
+begin_comment
+unit|"\tmovq         %0,%%mm6\n"
 comment|/* mm6 = words of value 2 */
-asm|"\tpmullw    %%mm5,%%mm6\n"
+end_comment
+
+begin_comment
+unit|"\tpmullw    %%mm5,%%mm6\n"
 comment|/* mm6 = 2 * low bytes of B */
-asm|mmx_int_mult(mm6,mm4,mm7)
+end_comment
+
+begin_comment
+unit|mmx_int_mult(mm6,mm4,mm7)
 comment|/* mm4 = INT_MULT(mm6, mm4) */
+end_comment
+
+begin_comment
 comment|/* high bytes */
-asm|mmx_high_bytes_to_words(mm3,mm5,mm0)                 "\tpcmpeqb   %%mm1,%%mm1\n"                 "\tpsubb     %%mm2,%%mm1\n"
+end_comment
+
+begin_comment
+unit|mmx_high_bytes_to_words(mm3,mm5,mm0)                 "\tpcmpeqb   %%mm1,%%mm1\n"                 "\tpsubb     %%mm2,%%mm1\n"
 comment|/* mm1 = 255 - A */
-asm|"\tpunpckhbw %%mm0,%%mm1\n"
+end_comment
+
+begin_comment
+unit|"\tpunpckhbw %%mm0,%%mm1\n"
 comment|/* mm1 = (high bytes as word) mm1 */
-asm|"\tmovq         %0,%%mm6\n"
+end_comment
+
+begin_comment
+unit|"\tmovq         %0,%%mm6\n"
 comment|/* mm6 = words of value 2 */
-asm|"\tpmullw    %%mm5,%%mm6\n"
+end_comment
+
+begin_comment
+unit|"\tpmullw    %%mm5,%%mm6\n"
 comment|/* mm6 = 2 * high bytes of B */
-asm|mmx_int_mult(mm6,mm1,mm7)
+end_comment
+
+begin_comment
+unit|mmx_int_mult(mm6,mm1,mm7)
 comment|/* mm1 = INT_MULT(mm6, mm1) */
-asm|"\tpackuswb  %%mm1,%%mm4\n"
+end_comment
+
+begin_comment
+unit|"\tpackuswb  %%mm1,%%mm4\n"
 comment|/* mm4 = intermediate value */
-asm|mmx_low_bytes_to_words(mm4,mm5,mm0)                 mmx_low_bytes_to_words(mm2,mm6,mm0)                 "\tpaddw     %%mm6,%%mm5\n"                 mmx_int_mult(mm6,mm5,mm7)
+end_comment
+
+begin_comment
+unit|mmx_low_bytes_to_words(mm4,mm5,mm0)                 mmx_low_bytes_to_words(mm2,mm6,mm0)                 "\tpaddw     %%mm6,%%mm5\n"                 mmx_int_mult(mm6,mm5,mm7)
 comment|/* mm5 = INT_MULT(mm6, mm5) low bytes */
-asm|mmx_high_bytes_to_words(mm4,mm1,mm0)                 mmx_high_bytes_to_words(mm2,mm6,mm0)                 "\tpaddw     %%mm6,%%mm1\n"                 mmx_int_mult(mm6,mm1,mm7)
+end_comment
+
+begin_comment
+unit|mmx_high_bytes_to_words(mm4,mm1,mm0)                 mmx_high_bytes_to_words(mm2,mm6,mm0)                 "\tpaddw     %%mm6,%%mm1\n"                 mmx_int_mult(mm6,mm1,mm7)
 comment|/* mm1 = INT_MULT(mm6, mm1) high bytes */
-asm|"\tpackuswb  %%mm1,%%mm5\n"                  "\tmovq         %1,%%mm0\n"                 "\tmovq      %%mm0,%%mm1\n"                 "\tpandn     %%mm5,%%mm1\n"                  "\t" pminub(mm2,mm3,mm4) "\n"                 "\tpand      %%mm0,%%mm3\n"                  "\tpor       %%mm3,%%mm1\n"                  :
+end_comment
+
+begin_comment
+unit|"\tpackuswb  %%mm1,%%mm5\n"                  "\tmovq         %1,%%mm0\n"                 "\tmovq      %%mm0,%%mm1\n"                 "\tpandn     %%mm5,%%mm1\n"                  "\t" pminub(mm2,mm3,mm4) "\n"                 "\tpand      %%mm0,%%mm3\n"                  "\tpor       %%mm3,%%mm1\n"                  :
 comment|/* empty */
-asm|: "m" (*rgba8_w2_64), "m" (*rgba8_alpha_mask_64)                 );
-block|}
-end_function
+end_comment
+
+begin_endif
+unit|: "m" (*rgba8_w2_64), "m" (*rgba8_alpha_mask_64)                 ); }
+endif|#
+directive|endif
+end_endif
 
 begin_if
 if|#
