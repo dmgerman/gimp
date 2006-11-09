@@ -53,7 +53,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon279c415c0103
+DECL|enum|__anon2c7753700103
 block|{
 DECL|enumerator|GIMP_MODULE_STATE_ERROR
 name|GIMP_MODULE_STATE_ERROR
@@ -542,7 +542,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMP_MODULE_INFO_H__ */
+comment|/* __GIMP_MODULE_H__ */
 end_comment
 
 end_unit
