@@ -282,27 +282,6 @@ directive|include
 file|<stdlib.h>
 end_include
 
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|macintosh
-end_ifndef
-
-begin_include
-include|#
-directive|include
-file|<malloc.h>
-end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* macintosh */
-end_comment
-
 begin_define
 DECL|macro|stricmp
 define|#
@@ -11714,7 +11693,7 @@ decl_stmt|;
 name|int
 name|len
 decl_stmt|;
-DECL|enum|__anon2b305d5e0103
+DECL|enum|__anon28c027ee0103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -28902,7 +28881,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon2b305d5e0208
+DECL|struct|__anon28c027ee0208
 specifier|static
 struct|struct
 block|{
@@ -29151,7 +29130,7 @@ value|"\017"
 end_define
 
 begin_typedef
-DECL|struct|__anon2b305d5e0308
+DECL|struct|__anon28c027ee0308
 typedef|typedef
 struct|struct
 block|{
