@@ -6,14 +6,31 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<sys/stat.h>
 end_include
+
+begin_if
+if|#
+directive|if
+name|HAVE_UNISTD_H
+end_if
 
 begin_include
 include|#
 directive|include
 file|<unistd.h>
 end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -42,7 +59,7 @@ end_undef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c4ab810103
+DECL|enum|__anon29e8ca9d0103
 block|{
 DECL|enumerator|FILE_TYPE_UNKNOWN
 DECL|enumerator|FILE_TYPE_FILE
