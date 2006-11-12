@@ -329,7 +329,7 @@ end_function
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f567750103
+DECL|enum|__anon295853a30103
 block|{
 DECL|enumerator|TEXT
 name|TEXT
@@ -474,16 +474,13 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|strncmp
+operator|!
+name|g_str_has_prefix
 argument_list|(
 name|str
 argument_list|,
 literal|"GDT10{"
-argument_list|,
-literal|6
 argument_list|)
-operator|!=
-literal|0
 condition|)
 comment|/*  magic value  */
 return|return
@@ -495,7 +492,10 @@ name|g_strsplit
 argument_list|(
 name|str
 operator|+
-literal|6
+name|strlen
+argument_list|(
+literal|"GDT10{"
+argument_list|)
 argument_list|,
 literal|"}{"
 argument_list|,

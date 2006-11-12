@@ -570,14 +570,11 @@ name|NULL
 condition|)
 if|if
 condition|(
-operator|!
-name|strncmp
+name|g_str_has_prefix
 argument_list|(
 name|entry
 argument_list|,
 literal|"gimpswap."
-argument_list|,
-literal|9
 argument_list|)
 condition|)
 block|{

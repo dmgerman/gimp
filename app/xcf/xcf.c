@@ -988,16 +988,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|strncmp
+name|g_str_has_prefix
 argument_list|(
 name|id
 argument_list|,
 literal|"gimp xcf "
-argument_list|,
-literal|9
 argument_list|)
-operator|!=
-literal|0
 condition|)
 block|{
 name|success

@@ -326,16 +326,12 @@ return|;
 block|}
 if|if
 condition|(
-name|strncmp
+operator|!
+name|g_str_has_prefix
 argument_list|(
 name|str
 argument_list|,
 literal|"GIMP Palette"
-argument_list|,
-name|strlen
-argument_list|(
-literal|"GIMP Palette"
-argument_list|)
 argument_list|)
 condition|)
 block|{
@@ -438,17 +434,11 @@ return|;
 block|}
 if|if
 condition|(
-operator|!
-name|strncmp
+name|g_str_has_prefix
 argument_list|(
 name|str
 argument_list|,
 literal|"Name: "
-argument_list|,
-name|strlen
-argument_list|(
-literal|"Name: "
-argument_list|)
 argument_list|)
 condition|)
 block|{
@@ -551,17 +541,11 @@ return|;
 block|}
 if|if
 condition|(
-operator|!
-name|strncmp
+name|g_str_has_prefix
 argument_list|(
 name|str
 argument_list|,
 literal|"Columns: "
-argument_list|,
-name|strlen
-argument_list|(
-literal|"Columns: "
-argument_list|)
 argument_list|)
 condition|)
 block|{
@@ -1958,31 +1942,23 @@ condition|)
 block|{
 if|if
 condition|(
-name|strncmp
+name|g_str_has_prefix
 argument_list|(
 name|header
 operator|+
 literal|0
 argument_list|,
 literal|"RIFF"
-argument_list|,
-literal|4
 argument_list|)
-operator|==
-literal|0
 operator|&&
-name|strncmp
+name|g_str_has_prefix
 argument_list|(
 name|header
 operator|+
 literal|8
 argument_list|,
 literal|"PAL data"
-argument_list|,
-literal|8
 argument_list|)
-operator|==
-literal|0
 condition|)
 block|{
 name|format
@@ -1993,16 +1969,12 @@ block|}
 elseif|else
 if|if
 condition|(
-name|strncmp
+name|g_str_has_prefix
 argument_list|(
 name|header
 argument_list|,
 literal|"GIMP Palette"
-argument_list|,
-literal|12
 argument_list|)
-operator|==
-literal|0
 condition|)
 block|{
 name|format
@@ -2013,16 +1985,12 @@ block|}
 elseif|else
 if|if
 condition|(
-name|strncmp
+name|g_str_has_prefix
 argument_list|(
 name|header
 argument_list|,
 literal|"JASC-PAL"
-argument_list|,
-literal|8
 argument_list|)
-operator|==
-literal|0
 condition|)
 block|{
 name|format

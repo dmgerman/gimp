@@ -254,16 +254,12 @@ return|;
 block|}
 if|if
 condition|(
-name|strncmp
+operator|!
+name|g_str_has_prefix
 argument_list|(
 name|line
 argument_list|,
 literal|"GIMP Gradient"
-argument_list|,
-name|strlen
-argument_list|(
-literal|"GIMP Gradient"
-argument_list|)
 argument_list|)
 condition|)
 block|{
@@ -366,17 +362,11 @@ return|;
 block|}
 if|if
 condition|(
-operator|!
-name|strncmp
+name|g_str_has_prefix
 argument_list|(
 name|line
 argument_list|,
 literal|"Name: "
-argument_list|,
-name|strlen
-argument_list|(
-literal|"Name: "
-argument_list|)
 argument_list|)
 condition|)
 block|{
@@ -1182,7 +1172,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7416cc0108
+DECL|struct|__anon2ba6f0400108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -1210,7 +1200,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7416cc0208
+DECL|struct|__anon2ba6f0400208
 block|{
 DECL|member|offset
 name|gdouble
