@@ -988,6 +988,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|g_str_has_prefix
 argument_list|(
 name|id
