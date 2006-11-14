@@ -84,7 +84,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b5094a0108
+DECL|struct|__anon2936685b0108
 block|{
 DECL|member|compression
 name|gint
@@ -107,7 +107,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b5094a0208
+DECL|struct|__anon2936685b0208
 block|{
 DECL|member|ID
 name|gint32
@@ -4031,7 +4031,15 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
-comment|/*   if (TIFFGetField (tif, TIFFTAG_CLIPPATH,&bytes))     g_printerr ("Tiff clipping path\n");    */
+if|#
+directive|if
+literal|0
+comment|/* TIFFTAG_CLIPPATH seems to be basically unused */
+block|if (TIFFGetField (tif, TIFFTAG_CLIPPATH,&n_bytes,&bytes)&&       TIFFGetField (tif, TIFFTAG_XCLIPPATHUNITS,&xclipunits)&&       TIFFGetField (tif, TIFFTAG_YCLIPPATHUNITS,&yclipunits))     {
+comment|/* Tiff clipping path */
+block|g_printerr ("Tiff clipping path, %d - %d\n", xclipunits, yclipunits);     }
+endif|#
+directive|endif
 if|if
 condition|(
 operator|!
@@ -4110,6 +4118,7 @@ name|pos
 operator|+=
 literal|2
 expr_stmt|;
+comment|/* g_printerr ("id: %x\n", id); */
 name|len
 operator|=
 operator|(
@@ -4546,9 +4555,9 @@ name|j
 operator|%
 literal|2
 condition|?
-name|height
-else|:
 name|width
+else|:
+name|height
 operator|)
 expr_stmt|;
 block|}
