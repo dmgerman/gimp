@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295d05620103
+DECL|enum|__anon2af43f240103
 block|{
 DECL|enumerator|GIMP_RECTANGLE_TOOL_PROP_0
 name|GIMP_RECTANGLE_TOOL_PROP_0
@@ -35,9 +35,6 @@ name|GIMP_RECTANGLE_TOOL_PROP_X2
 block|,
 DECL|enumerator|GIMP_RECTANGLE_TOOL_PROP_Y2
 name|GIMP_RECTANGLE_TOOL_PROP_Y2
-block|,
-DECL|enumerator|GIMP_RECTANGLE_TOOL_PROP_FUNCTION
-name|GIMP_RECTANGLE_TOOL_PROP_FUNCTION
 block|,
 DECL|enumerator|GIMP_RECTANGLE_TOOL_PROP_CONSTRAINT
 name|GIMP_RECTANGLE_TOOL_PROP_CONSTRAINT
@@ -56,9 +53,10 @@ begin_comment
 comment|/*  possible functions  */
 end_comment
 
-begin_enum
+begin_typedef
+typedef|typedef
 enum|enum
-DECL|enum|__anon295d05620203
+DECL|enum|__anon2af43f240203
 block|{
 DECL|enumerator|RECT_INACTIVE
 name|RECT_INACTIVE
@@ -95,9 +93,11 @@ name|RECT_RESIZING_BOTTOM
 block|,
 DECL|enumerator|RECT_EXECUTING
 name|RECT_EXECUTING
+DECL|typedef|GimpRectangleFunction
 block|}
-enum|;
-end_enum
+name|GimpRectangleFunction
+typedef|;
+end_typedef
 
 begin_define
 DECL|macro|GIMP_TYPE_RECTANGLE_TOOL
@@ -490,6 +490,31 @@ name|rectangle
 parameter_list|,
 name|GimpRectangleConstraint
 name|constraint
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GimpRectangleFunction
+name|gimp_rectangle_tool_get_function
+parameter_list|(
+name|GimpRectangleTool
+modifier|*
+name|rectangle
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_rectangle_tool_set_function
+parameter_list|(
+name|GimpRectangleTool
+modifier|*
+name|rectangle
+parameter_list|,
+name|GimpRectangleFunction
+name|function
 parameter_list|)
 function_decl|;
 end_function_decl
