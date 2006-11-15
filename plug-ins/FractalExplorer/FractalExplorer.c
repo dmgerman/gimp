@@ -485,32 +485,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-specifier|static
-name|void
-name|explorer_render_row
-parameter_list|(
-specifier|const
-name|guchar
-modifier|*
-name|src_row
-parameter_list|,
-name|guchar
-modifier|*
-name|dest_row
-parameter_list|,
-name|gint
-name|row
-parameter_list|,
-name|gint
-name|row_width
-parameter_list|,
-name|gint
-name|bytes
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_comment
 comment|/**********************************************************************  Declare local functions  *********************************************************************/
 end_comment
@@ -2108,7 +2082,6 @@ comment|/********************************************************************** 
 end_comment
 
 begin_function
-specifier|static
 name|void
 DECL|function|explorer_render_row (const guchar * src_row,guchar * dest_row,gint row,gint row_width,gint bpp)
 name|explorer_render_row
@@ -2332,16 +2305,16 @@ name|oldy
 operator|=
 name|y
 expr_stmt|;
-if|if
+switch|switch
 condition|(
 name|wvals
 operator|.
 name|fractaltype
-operator|==
-literal|0
 condition|)
 block|{
-comment|/*Mandelbrot*/
+case|case
+name|TYPE_MANDELBROT
+case|:
 name|xx
 operator|=
 name|x
@@ -2364,18 +2337,10 @@ name|y
 operator|+
 name|b
 expr_stmt|;
-block|}
-elseif|else
-if|if
-condition|(
-name|wvals
-operator|.
-name|fractaltype
-operator|==
-literal|1
-condition|)
-block|{
-comment|/* Julia */
+break|break;
+case|case
+name|TYPE_JULIA
+case|:
 name|xx
 operator|=
 name|x
@@ -2398,19 +2363,10 @@ name|y
 operator|+
 name|cy
 expr_stmt|;
-block|}
-elseif|else
-if|if
-condition|(
-name|wvals
-operator|.
-name|fractaltype
-operator|==
-literal|2
-condition|)
-block|{
-comment|/* Some code taken from X-Fractint */
-comment|/* Barnsley M1 */
+break|break;
+case|case
+name|TYPE_BARNSLEY_1
+case|:
 name|foldxinitx
 operator|=
 name|oldx
@@ -2487,18 +2443,10 @@ name|foldxinity
 operator|)
 expr_stmt|;
 block|}
-block|}
-elseif|else
-if|if
-condition|(
-name|wvals
-operator|.
-name|fractaltype
-operator|==
-literal|3
-condition|)
-block|{
-comment|/* Barnsley Unnamed */
+break|break;
+case|case
+name|TYPE_BARNSLEY_2
+case|:
 name|foldxinitx
 operator|=
 name|oldx
@@ -2569,18 +2517,10 @@ operator|+
 name|foldxinity
 expr_stmt|;
 block|}
-block|}
-elseif|else
-if|if
-condition|(
-name|wvals
-operator|.
-name|fractaltype
-operator|==
-literal|4
-condition|)
-block|{
-comment|/*Barnsley 1*/
+break|break;
+case|case
+name|TYPE_BARNSLEY_3
+case|:
 name|foldxinitx
 operator|=
 name|oldx
@@ -2649,18 +2589,11 @@ operator|*
 name|oldx
 expr_stmt|;
 block|}
-block|}
-elseif|else
-if|if
-condition|(
-name|wvals
-operator|.
-name|fractaltype
-operator|==
-literal|5
-condition|)
-block|{
-comment|/* Spider(XAXIS) { c=z=pixel: z=z*z+c; c=c/2+z, |z|<=4 } */
+break|break;
+case|case
+name|TYPE_SPIDER
+case|:
+comment|/* { c=z=pixel: z=z*z+c; c=c/2+z, |z|<=4 } */
 name|xx
 operator|=
 name|x
@@ -2703,18 +2636,10 @@ literal|2
 operator|+
 name|y
 expr_stmt|;
-block|}
-elseif|else
-if|if
-condition|(
-name|wvals
-operator|.
-name|fractaltype
-operator|==
-literal|6
-condition|)
-block|{
-comment|/* ManOWarfpFractal() */
+break|break;
+case|case
+name|TYPE_MAN_O_WAR
+case|:
 name|xx
 operator|=
 name|x
@@ -2749,18 +2674,10 @@ name|tmpy
 operator|=
 name|oldy
 expr_stmt|;
-block|}
-elseif|else
-if|if
-condition|(
-name|wvals
-operator|.
-name|fractaltype
-operator|==
-literal|7
-condition|)
-block|{
-comment|/* Lambda */
+break|break;
+case|case
+name|TYPE_LAMBDA
+case|:
 name|tempsqrx
 operator|=
 name|x
@@ -2816,18 +2733,10 @@ name|cy
 operator|*
 name|tempsqrx
 expr_stmt|;
-block|}
-elseif|else
-if|if
-condition|(
-name|wvals
-operator|.
-name|fractaltype
-operator|==
-literal|8
-condition|)
-block|{
-comment|/* Sierpinski */
+break|break;
+case|case
+name|TYPE_SIERPINSKI
+case|:
 name|xx
 operator|=
 name|oldx
@@ -2865,6 +2774,9 @@ name|xx
 operator|-
 literal|1
 expr_stmt|;
+break|break;
+default|default:
+break|break;
 block|}
 name|x
 operator|=

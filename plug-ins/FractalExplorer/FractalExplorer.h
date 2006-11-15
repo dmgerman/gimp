@@ -98,7 +98,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a55e220103
+DECL|enum|__anon277047a70103
 block|{
 DECL|enumerator|SINUS
 name|SINUS
@@ -114,7 +114,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a55e220203
+DECL|enum|__anon277047a70203
 block|{
 DECL|enumerator|TYPE_MANDELBROT
 name|TYPE_MANDELBROT
@@ -156,7 +156,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a55e220308
+DECL|struct|__anon277047a70308
 block|{
 DECL|member|fractaltype
 name|gint
@@ -255,7 +255,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a55e220408
+DECL|struct|__anon277047a70408
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -284,7 +284,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a55e220508
+DECL|struct|__anon277047a70508
 block|{
 DECL|member|r
 DECL|member|g
@@ -327,7 +327,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a55e220608
+DECL|struct|__anon277047a70608
 block|{
 DECL|member|text
 name|GtkWidget
@@ -808,6 +808,35 @@ modifier|*
 name|drawable
 decl_stmt|;
 end_decl_stmt
+
+begin_comment
+comment|/**********************************************************************   Global functions  *********************************************************************/
+end_comment
+
+begin_function_decl
+name|void
+name|explorer_render_row
+parameter_list|(
+specifier|const
+name|guchar
+modifier|*
+name|src_row
+parameter_list|,
+name|guchar
+modifier|*
+name|dest_row
+parameter_list|,
+name|gint
+name|row
+parameter_list|,
+name|gint
+name|row_width
+parameter_list|,
+name|gint
+name|bpp
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_endif
 endif|#
