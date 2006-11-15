@@ -115,7 +115,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimpdrawablecombobox.h>
+file|<libgimp/gimpitemcombobox.h>
 end_include
 
 begin_include

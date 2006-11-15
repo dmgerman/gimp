@@ -103,6 +103,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpVectorsComboBox
+typedef|typedef
+name|struct
+name|_GimpVectorsComboBox
+name|GimpVectorsComboBox
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpImageComboBox
 typedef|typedef
 name|struct
