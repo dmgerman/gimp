@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c2a9070103
+DECL|enum|__anon27cc1a800103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -1388,7 +1388,7 @@ literal|0.5
 argument_list|)
 expr_stmt|;
 return|return
-name|brush_scale_mask
+name|brush_scale_pixmap
 argument_list|(
 name|brush
 operator|->
