@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b276ca0103
+DECL|enum|__anon27a6db7f0103
 block|{
 DECL|enumerator|RECTANGLE_CHANGED
 name|RECTANGLE_CHANGED
@@ -5513,11 +5513,6 @@ name|cursor
 init|=
 name|GIMP_CURSOR_CROSSHAIR_SMALL
 decl_stmt|;
-name|GimpCursorModifier
-name|modifier
-init|=
-name|GIMP_CURSOR_MODIFIER_NONE
-decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_RECTANGLE_TOOL
@@ -5569,11 +5564,7 @@ name|RECT_MOVING
 case|:
 name|cursor
 operator|=
-name|GIMP_CURSOR_CROSSHAIR_SMALL
-expr_stmt|;
-name|modifier
-operator|=
-name|GIMP_CURSOR_MODIFIER_MOVE
+name|GIMP_CURSOR_MOVE
 expr_stmt|;
 break|break;
 case|case
@@ -5651,15 +5642,6 @@ operator|->
 name|control
 argument_list|,
 name|cursor
-argument_list|)
-expr_stmt|;
-name|gimp_tool_control_set_cursor_modifier
-argument_list|(
-name|tool
-operator|->
-name|control
-argument_list|,
-name|modifier
 argument_list|)
 expr_stmt|;
 block|}
