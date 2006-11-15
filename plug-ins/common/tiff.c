@@ -84,7 +84,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2936685b0108
+DECL|struct|__anon2c7e0f980108
 block|{
 DECL|member|compression
 name|gint
@@ -107,7 +107,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2936685b0208
+DECL|struct|__anon2c7e0f980208
 block|{
 DECL|member|ID
 name|gint32
@@ -1587,6 +1587,51 @@ name|ap_test
 decl_stmt|;
 comment|/* Workaround for: http://bugzilla.gnome.org/show_bug.cgi?id=131975 */
 comment|/* Ignore the warnings about unregistered private tags (>= 32768) */
+if|if
+condition|(
+operator|!
+name|strcmp
+argument_list|(
+name|fmt
+argument_list|,
+literal|"%s: unknown field with tag %d (0x%x) encountered"
+argument_list|)
+condition|)
+block|{
+name|G_VA_COPY
+argument_list|(
+name|ap_test
+argument_list|,
+name|ap
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|va_arg
+argument_list|(
+name|ap_test
+argument_list|,
+name|char
+operator|*
+argument_list|)
+condition|)
+empty_stmt|;
+comment|/* ignore first argument */
+if|if
+condition|(
+name|va_arg
+argument_list|(
+name|ap_test
+argument_list|,
+name|int
+argument_list|)
+operator|>=
+literal|32768
+condition|)
+return|return;
+block|}
+comment|/* for older versions of libtiff? */
+elseif|else
 if|if
 condition|(
 operator|!
