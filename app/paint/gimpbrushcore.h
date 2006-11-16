@@ -323,6 +323,21 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_brush_core_create_bound_segs
+parameter_list|(
+name|GimpBrushCore
+modifier|*
+name|core
+parameter_list|,
+name|GimpPaintOptions
+modifier|*
+name|options
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_brush_core_paste_canvas
 parameter_list|(
 name|GimpBrushCore

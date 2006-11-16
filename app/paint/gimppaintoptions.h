@@ -256,6 +256,10 @@ name|GimpPaintInfo
 modifier|*
 name|paint_info
 decl_stmt|;
+DECL|member|brush_scale
+name|gdouble
+name|brush_scale
+decl_stmt|;
 DECL|member|application_mode
 name|GimpPaintApplicationMode
 name|application_mode
