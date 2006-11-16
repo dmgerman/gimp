@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba6a2650108
+DECL|struct|__anon2923efdd0108
 block|{
 DECL|member|adj
 name|GtkAdjustment
@@ -69,7 +69,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba6a2650208
+DECL|struct|__anon2923efdd0208
 block|{
 DECL|member|filename
 name|gchar
@@ -85,7 +85,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba6a2650308
+DECL|struct|__anon2923efdd0308
 block|{
 DECL|member|name
 name|gchar
@@ -113,7 +113,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba6a2650408
+DECL|struct|__anon2923efdd0408
 block|{
 DECL|member|list
 name|GSList
@@ -133,7 +133,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba6a2650508
+DECL|struct|__anon2923efdd0508
 block|{
 DECL|member|type_name
 name|gchar
@@ -153,7 +153,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon2ba6a265060a
+DECL|union|__anon2923efdd060a
 block|{
 DECL|member|sfa_image
 name|gint32
@@ -170,6 +170,10 @@ decl_stmt|;
 DECL|member|sfa_channel
 name|gint32
 name|sfa_channel
+decl_stmt|;
+DECL|member|sfa_vectors
+name|gint32
+name|sfa_vectors
 decl_stmt|;
 DECL|member|sfa_color
 name|GimpRGB
@@ -233,7 +237,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba6a2650708
+DECL|struct|__anon2923efdd0708
 block|{
 DECL|member|name
 name|gchar

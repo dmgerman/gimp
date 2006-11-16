@@ -23,7 +23,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2aa5f9d10103
+DECL|enum|__anon2b92f42d0103
 block|{
 DECL|enumerator|SF_IMAGE
 name|SF_IMAGE
@@ -38,6 +38,9 @@ name|SF_LAYER
 block|,
 DECL|enumerator|SF_CHANNEL
 name|SF_CHANNEL
+block|,
+DECL|enumerator|SF_VECTORS
+name|SF_VECTORS
 block|,
 DECL|enumerator|SF_COLOR
 name|SF_COLOR
@@ -92,7 +95,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2aa5f9d10203
+DECL|enum|__anon2b92f42d0203
 block|{
 DECL|enumerator|SF_SLIDER
 name|SF_SLIDER

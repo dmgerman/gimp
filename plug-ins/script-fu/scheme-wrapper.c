@@ -251,6 +251,12 @@ name|SF_CHANNEL
 block|}
 block|,
 block|{
+literal|"SF-VECTORS"
+block|,
+name|SF_VECTORS
+block|}
+block|,
+block|{
 literal|"SF-COLOR"
 block|,
 name|SF_COLOR
