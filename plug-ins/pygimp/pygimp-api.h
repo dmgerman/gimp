@@ -97,6 +97,18 @@ name|gint32
 name|ID
 parameter_list|)
 function_decl|;
+DECL|member|vectors_new
+name|PyObject
+modifier|*
+function_decl|(
+modifier|*
+name|vectors_new
+function_decl|)
+parameter_list|(
+name|gint32
+name|ID
+parameter_list|)
+function_decl|;
 DECL|member|PDBFunction_Type
 name|PyTypeObject
 modifier|*
@@ -251,6 +263,14 @@ value|(_PyGimp_API->channel_new)
 end_define
 
 begin_define
+DECL|macro|pygimp_vectors_new
+define|#
+directive|define
+name|pygimp_vectors_new
+value|(_PyGimp_API->vectors_new)
+end_define
+
+begin_define
 DECL|macro|PyGimpPDBFunction_Type
 define|#
 directive|define
@@ -272,7 +292,7 @@ define|#
 directive|define
 name|init_pygimp
 parameter_list|()
-value|G_STMT_START { \     PyObject *gimpmodule = PyImport_ImportModule("gimp"); \     if (gimpmodule != NULL) { \ 	PyObject *mdict = PyModule_GetDict(gimpmodule); \ 	PyObject *cobject = PyDict_GetItemString(mdict, "_PyGimp_API"); \ 	if (PyCObject_Check(cobject)) \ 	    _PyGimp_API = PyCObject_AsVoidPtr(cobject); \ 	else { \ 	    PyErr_SetString(PyExc_RuntimeError, \ 		            "could not find _PyGimp_API object"); \ 	    return; \ 	} \     } else { \ 	PyErr_SetString(PyExc_ImportError, \ 	                "could not import gimp"); \ 	return; \     } \ } G_STMT_END
+value|G_STMT_START { \     PyObject *gimpmodule = PyImport_ImportModule("gimp"); \     if (gimpmodule != NULL) { \         PyObject *mdict = PyModule_GetDict(gimpmodule); \         PyObject *cobject = PyDict_GetItemString(mdict, "_PyGimp_API"); \         if (PyCObject_Check(cobject)) \             _PyGimp_API = PyCObject_AsVoidPtr(cobject); \         else { \             PyErr_SetString(PyExc_RuntimeError, \                             "could not find _PyGimp_API object"); \             return; \         } \     } else { \         PyErr_SetString(PyExc_ImportError, \                         "could not import gimp"); \         return; \     } \ } G_STMT_END
 end_define
 
 begin_endif

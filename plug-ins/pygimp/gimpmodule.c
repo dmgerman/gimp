@@ -8121,6 +8121,8 @@ name|pygimp_layer_new
 block|,
 name|pygimp_channel_new
 block|,
+name|pygimp_vectors_new
+block|,
 operator|&
 name|PyGimpPDBFunction_Type
 block|,

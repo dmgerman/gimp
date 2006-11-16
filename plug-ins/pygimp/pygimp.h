@@ -199,7 +199,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon297a583a0108
+DECL|struct|__anon2b8bcf4d0108
 typedef|typedef
 struct|struct
 block|{
@@ -244,7 +244,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon297a583a0208
+DECL|struct|__anon2b8bcf4d0208
 typedef|typedef
 struct|struct
 block|{
@@ -289,7 +289,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon297a583a0308
+DECL|struct|__anon2b8bcf4d0308
 typedef|typedef
 struct|struct
 block|{
@@ -407,7 +407,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon297a583a0408
+DECL|struct|__anon2b8bcf4d0408
 typedef|typedef
 struct|struct
 block|{
@@ -464,7 +464,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon297a583a0508
+DECL|struct|__anon2b8bcf4d0508
 typedef|typedef
 struct|struct
 block|{
@@ -534,7 +534,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon297a583a0608
+DECL|struct|__anon2b8bcf4d0608
 typedef|typedef
 struct|struct
 block|{
@@ -581,7 +581,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon297a583a0708
+DECL|struct|__anon2b8bcf4d0708
 typedef|typedef
 struct|struct
 block|{
