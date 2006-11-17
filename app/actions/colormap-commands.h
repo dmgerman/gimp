@@ -6,19 +6,19 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__COLORMAP_EDITOR_COMMANDS_H__
+name|__COLORMAP_COMMANDS_H__
 end_ifndef
 
 begin_define
-DECL|macro|__COLORMAP_EDITOR_COMMANDS_H__
+DECL|macro|__COLORMAP_COMMANDS_H__
 define|#
 directive|define
-name|__COLORMAP_EDITOR_COMMANDS_H__
+name|__COLORMAP_COMMANDS_H__
 end_define
 
 begin_function_decl
 name|void
-name|colormap_editor_edit_color_cmd_callback
+name|colormap_edit_color_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -32,7 +32,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|colormap_editor_add_color_cmd_callback
+name|colormap_add_color_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -53,7 +53,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __COLORMAP_EDITOR_COMMANDS_H__ */
+comment|/* __COLORMAP_COMMANDS_H__ */
 end_comment
 
 end_unit

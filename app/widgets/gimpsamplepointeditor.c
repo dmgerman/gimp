@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon279f7eb30103
+DECL|enum|__anon2af130c70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1215,11 +1215,11 @@ name|menu_factory
 argument_list|,
 literal|"menu-identifier"
 argument_list|,
-literal|"<SamplePointEditor>"
+literal|"<SamplePoints>"
 argument_list|,
 literal|"ui-path"
 argument_list|,
-literal|"/sample-point-editor-popup"
+literal|"/sample-points-popup"
 argument_list|,
 name|NULL
 argument_list|)

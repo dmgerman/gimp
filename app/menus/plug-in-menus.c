@@ -1218,7 +1218,7 @@ name|manager
 operator|->
 name|name
 argument_list|,
-literal|"<ColormapEditor>"
+literal|"<Colormap>"
 argument_list|)
 condition|)
 block|{
@@ -1226,7 +1226,7 @@ name|plug_in_menus_add_proc
 argument_list|(
 name|manager
 argument_list|,
-literal|"/colormap-editor-popup"
+literal|"/colormap-popup"
 argument_list|,
 name|plug_in_proc
 argument_list|,

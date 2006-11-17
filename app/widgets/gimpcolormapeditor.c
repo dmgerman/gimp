@@ -146,7 +146,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b41b8a0103
+DECL|enum|__anon2b1a7f7d0103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -1056,9 +1056,9 @@ argument_list|(
 name|editor
 argument_list|)
 argument_list|,
-literal|"colormap-editor"
+literal|"colormap"
 argument_list|,
-literal|"colormap-editor-edit-color"
+literal|"colormap-edit-color"
 argument_list|,
 name|NULL
 argument_list|)
@@ -1074,11 +1074,11 @@ argument_list|(
 name|editor
 argument_list|)
 argument_list|,
-literal|"colormap-editor"
+literal|"colormap"
 argument_list|,
-literal|"colormap-editor-add-color-from-fg"
+literal|"colormap-add-color-from-fg"
 argument_list|,
-literal|"colormap-editor-add-color-from-bg"
+literal|"colormap-add-color-from-bg"
 argument_list|,
 name|GDK_CONTROL_MASK
 argument_list|,
@@ -1437,11 +1437,11 @@ name|menu_factory
 argument_list|,
 literal|"menu-identifier"
 argument_list|,
-literal|"<ColormapEditor>"
+literal|"<Colormap>"
 argument_list|,
 literal|"ui-path"
 argument_list|,
-literal|"/colormap-editor-popup"
+literal|"/colormap-popup"
 argument_list|,
 name|NULL
 argument_list|)
@@ -3630,9 +3630,9 @@ argument_list|)
 operator|->
 name|ui_manager
 argument_list|,
-literal|"colormap-editor"
+literal|"colormap"
 argument_list|,
-literal|"colormap-editor-edit-color"
+literal|"colormap-edit-color"
 argument_list|)
 expr_stmt|;
 if|if

@@ -939,11 +939,11 @@ name|menu_factory
 argument_list|,
 literal|"menu-identifier"
 argument_list|,
-literal|"<SelectionEditor>"
+literal|"<Selection>"
 argument_list|,
 literal|"ui-path"
 argument_list|,
-literal|"/selection-editor-popup"
+literal|"/selection-popup"
 argument_list|,
 name|NULL
 argument_list|)

@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b2656b0103
+DECL|enum|__anon28e771b20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -889,11 +889,11 @@ name|menu_factory
 argument_list|,
 literal|"menu-identifier"
 argument_list|,
-literal|"<UndoEditor>"
+literal|"<Undo>"
 argument_list|,
 literal|"ui-path"
 argument_list|,
-literal|"/undo-editor-popup"
+literal|"/undo-popup"
 argument_list|,
 literal|"view-size"
 argument_list|,

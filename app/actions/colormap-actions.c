@@ -60,13 +60,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"colormap-editor-actions.h"
+file|"colormap-actions.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"colormap-editor-commands.h"
+file|"colormap-commands.h"
 end_include
 
 begin_include
@@ -76,16 +76,16 @@ file|"gimp-intl.h"
 end_include
 
 begin_decl_stmt
-DECL|variable|colormap_editor_actions
+DECL|variable|colormap_actions
 specifier|static
 specifier|const
 name|GimpActionEntry
-name|colormap_editor_actions
+name|colormap_actions
 index|[]
 init|=
 block|{
 block|{
-literal|"colormap-editor-popup"
+literal|"colormap-popup"
 block|,
 name|GIMP_STOCK_COLORMAP
 block|,
@@ -104,7 +104,7 @@ name|GIMP_HELP_INDEXED_PALETTE_DIALOG
 block|}
 block|,
 block|{
-literal|"colormap-editor-edit-color"
+literal|"colormap-edit-color"
 block|,
 name|GTK_STOCK_EDIT
 block|,
@@ -122,7 +122,7 @@ argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
-name|colormap_editor_edit_color_cmd_callback
+name|colormap_edit_color_cmd_callback
 argument_list|)
 block|,
 name|GIMP_HELP_INDEXED_PALETTE_EDIT
@@ -132,16 +132,16 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|colormap_editor_add_color_actions
+DECL|variable|colormap_add_color_actions
 specifier|static
 specifier|const
 name|GimpEnumActionEntry
-name|colormap_editor_add_color_actions
+name|colormap_add_color_actions
 index|[]
 init|=
 block|{
 block|{
-literal|"colormap-editor-add-color-from-fg"
+literal|"colormap-add-color-from-fg"
 block|,
 name|GTK_STOCK_ADD
 block|,
@@ -165,7 +165,7 @@ name|GIMP_HELP_INDEXED_PALETTE_ADD
 block|}
 block|,
 block|{
-literal|"colormap-editor-add-color-from-bg"
+literal|"colormap-add-color-from-bg"
 block|,
 name|GTK_STOCK_ADD
 block|,
@@ -193,8 +193,8 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|colormap_editor_actions_setup (GimpActionGroup * group)
-name|colormap_editor_actions_setup
+DECL|function|colormap_actions_setup (GimpActionGroup * group)
+name|colormap_actions_setup
 parameter_list|(
 name|GimpActionGroup
 modifier|*
@@ -205,11 +205,11 @@ name|gimp_action_group_add_actions
 argument_list|(
 name|group
 argument_list|,
-name|colormap_editor_actions
+name|colormap_actions
 argument_list|,
 name|G_N_ELEMENTS
 argument_list|(
-name|colormap_editor_actions
+name|colormap_actions
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -217,16 +217,16 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
-name|colormap_editor_add_color_actions
+name|colormap_add_color_actions
 argument_list|,
 name|G_N_ELEMENTS
 argument_list|(
-name|colormap_editor_add_color_actions
+name|colormap_add_color_actions
 argument_list|)
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|colormap_editor_add_color_cmd_callback
+name|colormap_add_color_cmd_callback
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -235,8 +235,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|colormap_editor_actions_update (GimpActionGroup * group,gpointer data)
-name|colormap_editor_actions_update
+DECL|function|colormap_actions_update (GimpActionGroup * group,gpointer data)
+name|colormap_actions_update
 parameter_list|(
 name|GimpActionGroup
 modifier|*
@@ -347,7 +347,7 @@ define|\
 value|gimp_action_group_set_action_color (group, action, color, FALSE);
 name|SET_SENSITIVE
 argument_list|(
-literal|"colormap-editor-edit-color"
+literal|"colormap-edit-color"
 argument_list|,
 name|image
 operator|&&
@@ -356,7 +356,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"colormap-editor-add-color-from-fg"
+literal|"colormap-add-color-from-fg"
 argument_list|,
 name|image
 operator|&&
@@ -369,7 +369,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"colormap-editor-add-color-from-bg"
+literal|"colormap-add-color-from-bg"
 argument_list|,
 name|image
 operator|&&
@@ -382,7 +382,7 @@ argument_list|)
 expr_stmt|;
 name|SET_COLOR
 argument_list|(
-literal|"colormap-editor-add-color-from-fg"
+literal|"colormap-add-color-from-fg"
 argument_list|,
 name|context
 condition|?
@@ -394,7 +394,7 @@ argument_list|)
 expr_stmt|;
 name|SET_COLOR
 argument_list|(
-literal|"colormap-editor-add-color-from-bg"
+literal|"colormap-add-color-from-bg"
 argument_list|,
 name|context
 condition|?

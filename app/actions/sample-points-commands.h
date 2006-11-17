@@ -6,19 +6,19 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__SAMPLE_POINT_EDITOR_COMMANDS_H__
+name|__SAMPLE_POINTS_COMMANDS_H__
 end_ifndef
 
 begin_define
-DECL|macro|__SAMPLE_POINT_EDITOR_COMMANDS_H__
+DECL|macro|__SAMPLE_POINTS_COMMANDS_H__
 define|#
 directive|define
-name|__SAMPLE_POINT_EDITOR_COMMANDS_H__
+name|__SAMPLE_POINTS_COMMANDS_H__
 end_define
 
 begin_function_decl
 name|void
-name|sample_point_editor_sample_merged_cmd_callback
+name|sample_points_sample_merged_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -36,7 +36,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __SAMPLE_POINT_EDITOR_COMMANDS_H__ */
+comment|/* __SAMPLE_POINTS_COMMANDS_H__ */
 end_comment
 
 end_unit

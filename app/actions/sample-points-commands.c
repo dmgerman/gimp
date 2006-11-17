@@ -48,7 +48,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"sample-point-editor-commands.h"
+file|"sample-points-commands.h"
 end_include
 
 begin_include
@@ -63,8 +63,8 @@ end_comment
 
 begin_function
 name|void
-DECL|function|sample_point_editor_sample_merged_cmd_callback (GtkAction * action,gpointer data)
-name|sample_point_editor_sample_merged_cmd_callback
+DECL|function|sample_points_sample_merged_cmd_callback (GtkAction * action,gpointer data)
+name|sample_points_sample_merged_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*

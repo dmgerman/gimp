@@ -48,13 +48,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"sample-point-editor-actions.h"
+file|"sample-points-actions.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"sample-point-editor-commands.h"
+file|"sample-points-commands.h"
 end_include
 
 begin_include
@@ -64,16 +64,16 @@ file|"gimp-intl.h"
 end_include
 
 begin_decl_stmt
-DECL|variable|sample_point_editor_actions
+DECL|variable|sample_points_actions
 specifier|static
 specifier|const
 name|GimpActionEntry
-name|sample_point_editor_actions
+name|sample_points_actions
 index|[]
 init|=
 block|{
 block|{
-literal|"sample-point-editor-popup"
+literal|"sample-points-popup"
 block|,
 name|GIMP_STOCK_SAMPLE_POINT
 block|,
@@ -95,16 +95,16 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|sample_point_editor_toggle_actions
+DECL|variable|sample_points_toggle_actions
 specifier|static
 specifier|const
 name|GimpToggleActionEntry
-name|sample_point_editor_toggle_actions
+name|sample_points_toggle_actions
 index|[]
 init|=
 block|{
 block|{
-literal|"sample-point-editor-sample-merged"
+literal|"sample-points-sample-merged"
 block|,
 name|NULL
 block|,
@@ -122,7 +122,7 @@ argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
-name|sample_point_editor_sample_merged_cmd_callback
+name|sample_points_sample_merged_cmd_callback
 argument_list|)
 block|,
 name|TRUE
@@ -135,8 +135,8 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|sample_point_editor_actions_setup (GimpActionGroup * group)
-name|sample_point_editor_actions_setup
+DECL|function|sample_points_actions_setup (GimpActionGroup * group)
+name|sample_points_actions_setup
 parameter_list|(
 name|GimpActionGroup
 modifier|*
@@ -147,11 +147,11 @@ name|gimp_action_group_add_actions
 argument_list|(
 name|group
 argument_list|,
-name|sample_point_editor_actions
+name|sample_points_actions
 argument_list|,
 name|G_N_ELEMENTS
 argument_list|(
-name|sample_point_editor_actions
+name|sample_points_actions
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -159,11 +159,11 @@ name|gimp_action_group_add_toggle_actions
 argument_list|(
 name|group
 argument_list|,
-name|sample_point_editor_toggle_actions
+name|sample_points_toggle_actions
 argument_list|,
 name|G_N_ELEMENTS
 argument_list|(
-name|sample_point_editor_toggle_actions
+name|sample_points_toggle_actions
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -172,8 +172,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|sample_point_editor_actions_update (GimpActionGroup * group,gpointer data)
-name|sample_point_editor_actions_update
+DECL|function|sample_points_actions_update (GimpActionGroup * group,gpointer data)
+name|sample_points_actions_update
 parameter_list|(
 name|GimpActionGroup
 modifier|*
@@ -205,7 +205,7 @@ define|\
 value|gimp_action_group_set_action_active (group, action, (condition) != 0)
 name|SET_ACTIVE
 argument_list|(
-literal|"sample-point-editor-sample-merged"
+literal|"sample-points-sample-merged"
 argument_list|,
 name|gimp_sample_point_editor_get_sample_merged
 argument_list|(

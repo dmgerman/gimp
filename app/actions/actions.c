@@ -162,7 +162,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"colormap-editor-actions.h"
+file|"colormap-actions.h"
 end_include
 
 begin_include
@@ -306,7 +306,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"sample-point-editor-actions.h"
+file|"sample-points-actions.h"
 end_include
 
 begin_include
@@ -444,18 +444,18 @@ name|channels_actions_update
 block|}
 block|,
 block|{
-literal|"colormap-editor"
+literal|"colormap"
 block|,
 name|N_
 argument_list|(
-literal|"Colormap Editor"
+literal|"Colormap"
 argument_list|)
 block|,
 name|GIMP_STOCK_COLORMAP
 block|,
-name|colormap_editor_actions_setup
+name|colormap_actions_setup
 block|,
-name|colormap_editor_actions_update
+name|colormap_actions_update
 block|}
 block|,
 block|{
@@ -804,7 +804,7 @@ name|quick_mask_actions_update
 block|}
 block|,
 block|{
-literal|"sample-point-editor"
+literal|"sample-points"
 block|,
 name|N_
 argument_list|(
@@ -813,9 +813,9 @@ argument_list|)
 block|,
 name|GIMP_STOCK_SAMPLE_POINT
 block|,
-name|sample_point_editor_actions_setup
+name|sample_points_actions_setup
 block|,
-name|sample_point_editor_actions_update
+name|sample_points_actions_update
 block|}
 block|,
 block|{

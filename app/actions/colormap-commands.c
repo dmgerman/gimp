@@ -78,7 +78,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"colormap-editor-commands.h"
+file|"colormap-commands.h"
 end_include
 
 begin_include
@@ -94,7 +94,7 @@ end_comment
 begin_function_decl
 specifier|static
 name|void
-name|colormap_editor_edit_color_update
+name|colormap_edit_color_update
 parameter_list|(
 name|GimpColorDialog
 modifier|*
@@ -121,8 +121,8 @@ end_comment
 
 begin_function
 name|void
-DECL|function|colormap_editor_edit_color_cmd_callback (GtkAction * action,gpointer data)
-name|colormap_editor_edit_color_cmd_callback
+DECL|function|colormap_edit_color_cmd_callback (GtkAction * action,gpointer data)
+name|colormap_edit_color_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -307,7 +307,7 @@ literal|"update"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|colormap_editor_edit_color_update
+name|colormap_edit_color_update
 argument_list|)
 argument_list|,
 name|editor
@@ -383,8 +383,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|colormap_editor_add_color_cmd_callback (GtkAction * action,gint value,gpointer data)
-name|colormap_editor_add_color_cmd_callback
+DECL|function|colormap_add_color_cmd_callback (GtkAction * action,gint value,gpointer data)
+name|colormap_add_color_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -476,8 +476,8 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|colormap_editor_edit_color_update (GimpColorDialog * dialog,const GimpRGB * color,GimpColorDialogState state,GimpColormapEditor * editor)
-name|colormap_editor_edit_color_update
+DECL|function|colormap_edit_color_update (GimpColorDialog * dialog,const GimpRGB * color,GimpColorDialogState state,GimpColormapEditor * editor)
+name|colormap_edit_color_update
 parameter_list|(
 name|GimpColorDialog
 modifier|*

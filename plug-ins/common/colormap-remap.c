@@ -323,7 +323,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 name|PLUG_IN_PROC_REMAP
 argument_list|,
-literal|"<ColormapEditor>"
+literal|"<Colormap>"
 argument_list|)
 expr_stmt|;
 name|gimp_plugin_icon_register
@@ -1656,7 +1656,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ff38370103
+DECL|enum|__anon29c10ca90103
 block|{
 DECL|enumerator|COLOR_INDEX
 name|COLOR_INDEX

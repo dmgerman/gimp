@@ -84,7 +84,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be51ec40103
+DECL|enum|__anon2ae7010b0103
 block|{
 DECL|enumerator|MENU_PATH_ADDED
 name|MENU_PATH_ADDED
@@ -1690,7 +1690,7 @@ name|g_str_has_prefix
 argument_list|(
 name|menu_path
 argument_list|,
-literal|"<ColormapEditor>"
+literal|"<Colormap>"
 argument_list|)
 condition|)
 block|{
@@ -2017,7 +2017,7 @@ literal|"attempted to install procedure \"%s\" "
 literal|"in the invalid menu location \"%s\".\n"
 literal|"Use either \"<Toolbox>\", \"<Image>\", "
 literal|"\"<Layers>\", \"<Channels>\", \"<Vectors>\", "
-literal|"\"<ColormapEditor>\", \"<Load>\", \"<Save>\", "
+literal|"\"<Colormap>\", \"<Load>\", \"<Save>\", "
 literal|"\"<Brushes>\", \"<Gradients>\", \"<Palettes>\", "
 literal|"\"<Patterns>\" or \"<Buffers>\"."
 argument_list|,
