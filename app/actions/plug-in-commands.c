@@ -233,6 +233,11 @@ name|GimpObject
 modifier|*
 name|object
 parameter_list|,
+name|GParamSpec
+modifier|*
+modifier|*
+name|pspecs
+parameter_list|,
 name|GValueArray
 modifier|*
 name|args
@@ -255,6 +260,11 @@ parameter_list|,
 name|GimpImage
 modifier|*
 name|image
+parameter_list|,
+name|GParamSpec
+modifier|*
+modifier|*
+name|pspecs
 parameter_list|,
 name|GValueArray
 modifier|*
@@ -283,6 +293,11 @@ name|GimpItem
 modifier|*
 name|item
 parameter_list|,
+name|GParamSpec
+modifier|*
+modifier|*
+name|pspecs
+parameter_list|,
 name|GValueArray
 modifier|*
 name|args
@@ -305,6 +320,11 @@ parameter_list|,
 name|GimpImage
 modifier|*
 name|image
+parameter_list|,
+name|GParamSpec
+modifier|*
+modifier|*
+name|pspecs
 parameter_list|,
 name|GValueArray
 modifier|*
@@ -508,6 +528,10 @@ name|action
 argument_list|,
 name|object
 argument_list|,
+name|procedure
+operator|->
+name|args
+argument_list|,
 name|args
 argument_list|,
 name|n_args
@@ -550,6 +574,10 @@ argument_list|(
 name|action
 argument_list|,
 name|image
+argument_list|,
+name|procedure
+operator|->
+name|args
 argument_list|,
 name|args
 argument_list|,
@@ -621,6 +649,10 @@ name|image
 argument_list|,
 name|item
 argument_list|,
+name|procedure
+operator|->
+name|args
+argument_list|,
 name|args
 argument_list|,
 name|n_args
@@ -649,6 +681,10 @@ operator|->
 name|image
 else|:
 name|NULL
+argument_list|,
+name|procedure
+operator|->
+name|args
 argument_list|,
 name|args
 argument_list|,
@@ -807,6 +843,13 @@ name|display
 operator|->
 name|image
 argument_list|,
+name|GIMP_PROCEDURE
+argument_list|(
+name|procedure
+argument_list|)
+operator|->
+name|args
+argument_list|,
 name|args
 argument_list|,
 literal|1
@@ -912,6 +955,13 @@ argument_list|,
 name|display
 operator|->
 name|image
+argument_list|,
+name|GIMP_PROCEDURE
+argument_list|(
+name|procedure
+argument_list|)
+operator|->
+name|args
 argument_list|,
 name|args
 argument_list|,
@@ -1157,7 +1207,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|plug_in_collect_data_args (GtkAction * action,GimpObject * object,GValueArray * args,gint n_args)
+DECL|function|plug_in_collect_data_args (GtkAction * action,GimpObject * object,GParamSpec ** pspecs,GValueArray * args,gint n_args)
 name|plug_in_collect_data_args
 parameter_list|(
 name|GtkAction
@@ -1167,6 +1217,11 @@ parameter_list|,
 name|GimpObject
 modifier|*
 name|object
+parameter_list|,
+name|GParamSpec
+modifier|*
+modifier|*
+name|pspecs
 parameter_list|,
 name|GValueArray
 modifier|*
@@ -1184,12 +1239,9 @@ name|n_values
 operator|>
 name|n_args
 operator|&&
-name|G_VALUE_HOLDS_STRING
+name|GIMP_IS_PARAM_SPEC_STRING
 argument_list|(
-operator|&
-name|args
-operator|->
-name|values
+name|pspecs
 index|[
 name|n_args
 index|]
@@ -1243,7 +1295,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|plug_in_collect_image_args (GtkAction * action,GimpImage * image,GValueArray * args,gint n_args)
+DECL|function|plug_in_collect_image_args (GtkAction * action,GimpImage * image,GParamSpec ** pspecs,GValueArray * args,gint n_args)
 name|plug_in_collect_image_args
 parameter_list|(
 name|GtkAction
@@ -1253,6 +1305,11 @@ parameter_list|,
 name|GimpImage
 modifier|*
 name|image
+parameter_list|,
+name|GParamSpec
+modifier|*
+modifier|*
+name|pspecs
 parameter_list|,
 name|GValueArray
 modifier|*
@@ -1270,12 +1327,9 @@ name|n_values
 operator|>
 name|n_args
 operator|&&
-name|GIMP_VALUE_HOLDS_IMAGE_ID
+name|GIMP_IS_PARAM_SPEC_IMAGE_ID
 argument_list|(
-operator|&
-name|args
-operator|->
-name|values
+name|pspecs
 index|[
 name|n_args
 index|]
@@ -1326,7 +1380,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|plug_in_collect_item_args (GtkAction * action,GimpImage * image,GimpItem * item,GValueArray * args,gint n_args)
+DECL|function|plug_in_collect_item_args (GtkAction * action,GimpImage * image,GimpItem * item,GParamSpec ** pspecs,GValueArray * args,gint n_args)
 name|plug_in_collect_item_args
 parameter_list|(
 name|GtkAction
@@ -1340,6 +1394,11 @@ parameter_list|,
 name|GimpItem
 modifier|*
 name|item
+parameter_list|,
+name|GParamSpec
+modifier|*
+modifier|*
+name|pspecs
 parameter_list|,
 name|GValueArray
 modifier|*
@@ -1357,12 +1416,9 @@ name|n_values
 operator|>
 name|n_args
 operator|&&
-name|GIMP_VALUE_HOLDS_IMAGE_ID
+name|GIMP_IS_PARAM_SPEC_IMAGE_ID
 argument_list|(
-operator|&
-name|args
-operator|->
-name|values
+name|pspecs
 index|[
 name|n_args
 index|]
@@ -1398,12 +1454,9 @@ name|n_values
 operator|>
 name|n_args
 operator|&&
-name|GIMP_VALUE_HOLDS_ITEM_ID
+name|GIMP_IS_PARAM_SPEC_ITEM_ID
 argument_list|(
-operator|&
-name|args
-operator|->
-name|values
+name|pspecs
 index|[
 name|n_args
 index|]
@@ -1413,6 +1466,24 @@ block|{
 if|if
 condition|(
 name|item
+operator|&&
+name|g_type_is_a
+argument_list|(
+name|G_TYPE_FROM_INSTANCE
+argument_list|(
+name|item
+argument_list|)
+argument_list|,
+name|GIMP_PARAM_SPEC_ITEM_ID
+argument_list|(
+name|pspecs
+index|[
+name|n_args
+index|]
+argument_list|)
+operator|->
+name|item_type
+argument_list|)
 condition|)
 block|{
 name|gimp_value_set_item
@@ -1456,7 +1527,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|plug_in_collect_drawable_args (GtkAction * action,GimpImage * image,GValueArray * args,gint n_args)
+DECL|function|plug_in_collect_drawable_args (GtkAction * action,GimpImage * image,GParamSpec ** pspecs,GValueArray * args,gint n_args)
 name|plug_in_collect_drawable_args
 parameter_list|(
 name|GtkAction
@@ -1466,6 +1537,11 @@ parameter_list|,
 name|GimpImage
 modifier|*
 name|image
+parameter_list|,
+name|GParamSpec
+modifier|*
+modifier|*
+name|pspecs
 parameter_list|,
 name|GValueArray
 modifier|*
@@ -1483,12 +1559,9 @@ name|n_values
 operator|>
 name|n_args
 operator|&&
-name|GIMP_VALUE_HOLDS_IMAGE_ID
+name|GIMP_IS_PARAM_SPEC_IMAGE_ID
 argument_list|(
-operator|&
-name|args
-operator|->
-name|values
+name|pspecs
 index|[
 name|n_args
 index|]
@@ -1524,12 +1597,9 @@ name|n_values
 operator|>
 name|n_args
 operator|&&
-name|GIMP_VALUE_HOLDS_DRAWABLE_ID
+name|GIMP_IS_PARAM_SPEC_DRAWABLE_ID
 argument_list|(
-operator|&
-name|args
-operator|->
-name|values
+name|pspecs
 index|[
 name|n_args
 index|]
