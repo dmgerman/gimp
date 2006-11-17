@@ -1892,6 +1892,13 @@ name|NULL
 decl_stmt|;
 if|if
 condition|(
+name|gimp_image_base_type
+argument_list|(
+name|image
+argument_list|)
+operator|!=
+name|GIMP_GRAY
+operator|&&
 operator|!
 name|plug_in_icc_profile_apply_rgb
 argument_list|(
