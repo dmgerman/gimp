@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0c9eba0103
+DECL|enum|__anon2c806f4a0103
 block|{
 DECL|enumerator|PICKED
 name|PICKED
@@ -634,7 +634,7 @@ argument_list|(
 name|color_tool
 argument_list|)
 decl_stmt|;
-name|gimp_tool_control_set_action_value_1
+name|gimp_tool_control_set_action_value_2
 argument_list|(
 name|tool
 operator|->

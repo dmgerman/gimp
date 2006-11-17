@@ -3813,7 +3813,7 @@ name|GIMP_STOCK_BRUSH
 block|,
 literal|"Decrease Radius"
 block|,
-literal|"bracketleft"
+name|NULL
 block|,
 name|NULL
 block|,
@@ -3831,7 +3831,7 @@ name|GIMP_STOCK_BRUSH
 block|,
 literal|"Increase Radius"
 block|,
-literal|"bracketright"
+name|NULL
 block|,
 name|NULL
 block|,
@@ -3849,7 +3849,7 @@ name|GIMP_STOCK_BRUSH
 block|,
 literal|"Decrease Radius More"
 block|,
-literal|"<shift>bracketleft"
+name|NULL
 block|,
 name|NULL
 block|,
@@ -3867,7 +3867,7 @@ name|GIMP_STOCK_BRUSH
 block|,
 literal|"Increase Radius More"
 block|,
-literal|"<shift>bracketright"
+name|NULL
 block|,
 name|NULL
 block|,

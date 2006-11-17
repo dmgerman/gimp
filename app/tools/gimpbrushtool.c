@@ -403,7 +403,7 @@ name|tool
 operator|->
 name|control
 argument_list|,
-literal|"context/context-brush-radius-set"
+literal|"tools/tools-paint-brush-scale-set"
 argument_list|)
 expr_stmt|;
 name|gimp_tool_control_set_action_value_3

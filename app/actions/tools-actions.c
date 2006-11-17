@@ -530,6 +530,144 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
+DECL|variable|tools_paint_brush_scale_actions
+specifier|static
+specifier|const
+name|GimpEnumActionEntry
+name|tools_paint_brush_scale_actions
+index|[]
+init|=
+block|{
+block|{
+literal|"tools-paint-brush-scale-set"
+block|,
+name|GIMP_STOCK_TOOL_PAINTBRUSH
+block|,
+literal|"Set Brush Scale"
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|GIMP_ACTION_SELECT_SET
+block|,
+name|TRUE
+block|,
+name|NULL
+block|}
+block|,
+block|{
+literal|"tools-paint-brush-scale-minimum"
+block|,
+name|GIMP_STOCK_TOOL_PAINTBRUSH
+block|,
+literal|"Minumum Brush Scale"
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|GIMP_ACTION_SELECT_FIRST
+block|,
+name|FALSE
+block|,
+name|NULL
+block|}
+block|,
+block|{
+literal|"tools-paint-brush-scale-maximum"
+block|,
+name|GIMP_STOCK_TOOL_PAINTBRUSH
+block|,
+literal|"Maximum Brush Scale"
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|GIMP_ACTION_SELECT_LAST
+block|,
+name|FALSE
+block|,
+name|NULL
+block|}
+block|,
+block|{
+literal|"tools-paint-brush-scale-decrease"
+block|,
+name|GIMP_STOCK_TOOL_PAINTBRUSH
+block|,
+literal|"Decrease Brush Scale"
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|GIMP_ACTION_SELECT_PREVIOUS
+block|,
+name|FALSE
+block|,
+name|NULL
+block|}
+block|,
+block|{
+literal|"tools-paint-brush-scale-increase"
+block|,
+name|GIMP_STOCK_TOOL_PAINTBRUSH
+block|,
+literal|"Increase Brush Scale"
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|GIMP_ACTION_SELECT_NEXT
+block|,
+name|FALSE
+block|,
+name|NULL
+block|}
+block|,
+block|{
+literal|"tools-paint-brush-scale-decrease-skip"
+block|,
+name|GIMP_STOCK_TOOL_PAINTBRUSH
+block|,
+literal|"Decrease Brush Scale More"
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|GIMP_ACTION_SELECT_SKIP_PREVIOUS
+block|,
+name|FALSE
+block|,
+name|NULL
+block|}
+block|,
+block|{
+literal|"tools-paint-brush-scale-increase-skip"
+block|,
+name|GIMP_STOCK_TOOL_PAINTBRUSH
+block|,
+literal|"Increase Brush Scale More"
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|GIMP_ACTION_SELECT_SKIP_NEXT
+block|,
+name|FALSE
+block|,
+name|NULL
+block|}
+block|, }
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
 DECL|variable|tools_ink_blob_size_actions
 specifier|static
 specifier|const
@@ -1073,7 +1211,7 @@ name|GIMP_STOCK_TOOL_OPTIONS
 block|,
 literal|"Decrease Value 1"
 block|,
-name|NULL
+literal|"less"
 block|,
 name|NULL
 block|,
@@ -1091,7 +1229,7 @@ name|GIMP_STOCK_TOOL_OPTIONS
 block|,
 literal|"Increase Value 1"
 block|,
-name|NULL
+literal|"greater"
 block|,
 name|NULL
 block|,
@@ -1109,7 +1247,7 @@ name|GIMP_STOCK_TOOL_OPTIONS
 block|,
 literal|"Decrease Value 1 More"
 block|,
-name|NULL
+literal|"<control>less"
 block|,
 name|NULL
 block|,
@@ -1127,7 +1265,7 @@ name|GIMP_STOCK_TOOL_OPTIONS
 block|,
 literal|"Increase Value 1 More"
 block|,
-name|NULL
+literal|"<control>greater"
 block|,
 name|NULL
 block|,
@@ -1211,7 +1349,7 @@ name|GIMP_STOCK_TOOL_OPTIONS
 block|,
 literal|"Decrease Value 2"
 block|,
-name|NULL
+literal|"bracketleft"
 block|,
 name|NULL
 block|,
@@ -1229,7 +1367,7 @@ name|GIMP_STOCK_TOOL_OPTIONS
 block|,
 literal|"Increase Value 2"
 block|,
-name|NULL
+literal|"bracketright"
 block|,
 name|NULL
 block|,
@@ -1247,7 +1385,7 @@ name|GIMP_STOCK_TOOL_OPTIONS
 block|,
 literal|"Decrease Value 2 More"
 block|,
-name|NULL
+literal|"<shift>bracketleft"
 block|,
 name|NULL
 block|,
@@ -1265,7 +1403,7 @@ name|GIMP_STOCK_TOOL_OPTIONS
 block|,
 literal|"Increase Value 2 More"
 block|,
-name|NULL
+literal|"<shift>bracketright"
 block|,
 name|NULL
 block|,
@@ -1851,6 +1989,23 @@ argument_list|,
 name|G_CALLBACK
 argument_list|(
 name|tools_color_average_radius_cmd_callback
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_action_group_add_enum_actions
+argument_list|(
+name|group
+argument_list|,
+name|tools_paint_brush_scale_actions
+argument_list|,
+name|G_N_ELEMENTS
+argument_list|(
+name|tools_paint_brush_scale_actions
+argument_list|)
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|tools_paint_brush_scale_cmd_callback
 argument_list|)
 argument_list|)
 expr_stmt|;
