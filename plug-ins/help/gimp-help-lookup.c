@@ -42,19 +42,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"domain.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"help.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"locales.h"
+file|"gimphelp.h"
 end_include
 
 begin_decl_stmt
@@ -367,7 +355,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|domain_register
+name|gimp_help_register_domain
 argument_list|(
 name|GIMP_HELP_DEFAULT_DOMAIN
 argument_list|,
@@ -442,18 +430,6 @@ block|}
 end_function
 
 begin_function
-name|void
-DECL|function|help_exit (void)
-name|help_exit
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-comment|/* nothing */
-block|}
-end_function
-
-begin_function
 specifier|static
 name|gchar
 modifier|*
@@ -476,11 +452,11 @@ modifier|*
 name|help_id
 parameter_list|)
 block|{
-name|HelpDomain
+name|GimpHelpDomain
 modifier|*
 name|domain
 init|=
-name|domain_lookup
+name|gimp_help_lookup_domain
 argument_list|(
 name|help_domain
 argument_list|)
@@ -494,7 +470,7 @@ name|GList
 modifier|*
 name|locales
 init|=
-name|locales_parse
+name|gimp_help_parse_locales
 argument_list|(
 name|help_locales
 argument_list|)
@@ -503,13 +479,15 @@ name|gchar
 modifier|*
 name|full_uri
 init|=
-name|domain_map
+name|gimp_help_domain_map
 argument_list|(
 name|domain
 argument_list|,
 name|locales
 argument_list|,
 name|help_id
+argument_list|,
+name|NULL
 argument_list|)
 decl_stmt|;
 name|g_list_foreach
