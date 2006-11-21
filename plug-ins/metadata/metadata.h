@@ -10,10 +10,10 @@ name|__METADATA_H__
 end_ifndef
 
 begin_define
-DECL|macro|__HATADATA_H__
+DECL|macro|__METADATA_H__
 define|#
 directive|define
-name|__HATADATA_H__
+name|__METADATA_H__
 end_define
 
 begin_define
