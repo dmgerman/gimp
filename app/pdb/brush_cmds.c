@@ -1415,6 +1415,12 @@ operator|->
 name|mask
 operator|->
 name|width
+operator|*
+name|brush
+operator|->
+name|mask
+operator|->
+name|bytes
 expr_stmt|;
 name|mask_bytes
 operator|=
@@ -1458,6 +1464,12 @@ operator|->
 name|pixmap
 operator|->
 name|width
+operator|*
+name|brush
+operator|->
+name|pixmap
+operator|->
+name|bytes
 expr_stmt|;
 name|color_bytes
 operator|=
