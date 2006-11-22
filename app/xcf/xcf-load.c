@@ -1008,8 +1008,12 @@ name|image
 argument_list|,
 name|channel
 argument_list|,
-operator|-
-literal|1
+name|gimp_container_num_children
+argument_list|(
+name|image
+operator|->
+name|channels
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* restore the saved position so we'll be ready to        *  read the next offset.        */
