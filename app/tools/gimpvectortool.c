@@ -813,7 +813,7 @@ name|tool
 operator|->
 name|control
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_tool_control_set_handle_empty_image
@@ -6506,6 +6506,7 @@ argument_list|(
 name|cur_stroke
 argument_list|)
 condition|)
+block|{
 name|gimp_vectors_stroke_remove
 argument_list|(
 name|vector_tool
@@ -6515,6 +6516,11 @@ argument_list|,
 name|cur_stroke
 argument_list|)
 expr_stmt|;
+name|cur_stroke
+operator|=
+name|NULL
+expr_stmt|;
+block|}
 block|}
 block|}
 name|g_list_free
