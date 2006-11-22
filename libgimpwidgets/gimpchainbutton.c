@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d3262b0103
+DECL|enum|__anon2a53ca380103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -48,7 +48,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d3262b0203
+DECL|enum|__anon2a53ca380203
 block|{
 DECL|enumerator|TOGGLED
 name|TOGGLED
@@ -1640,7 +1640,7 @@ argument_list|)
 argument_list|,
 name|gimp_chain_stock_items
 index|[
-name|num
+name|i
 index|]
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
