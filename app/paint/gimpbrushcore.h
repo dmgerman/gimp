@@ -235,6 +235,11 @@ DECL|member|jitter
 name|gdouble
 name|jitter
 decl_stmt|;
+DECL|member|rand
+name|GRand
+modifier|*
+name|rand
+decl_stmt|;
 comment|/*  don't use these...  */
 DECL|member|brush_bound_segs
 name|BoundSeg
