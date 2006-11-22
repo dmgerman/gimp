@@ -240,10 +240,6 @@ literal|"weight"
 argument_list|,
 name|PANGO_WEIGHT_BOLD
 argument_list|,
-literal|"scale"
-argument_list|,
-name|PANGO_SCALE_LARGE
-argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
@@ -254,6 +250,10 @@ operator|->
 name|text_buffer
 argument_list|,
 literal|"message"
+argument_list|,
+literal|"scale"
+argument_list|,
+name|PANGO_SCALE_SMALL
 argument_list|,
 name|NULL
 argument_list|)
