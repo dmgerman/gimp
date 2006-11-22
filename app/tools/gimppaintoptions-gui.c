@@ -520,17 +520,12 @@ expr_stmt|;
 comment|/*  the brush  */
 if|if
 condition|(
+name|g_type_is_a
+argument_list|(
 name|tool_type
-operator|!=
-name|GIMP_TYPE_BUCKET_FILL_TOOL
-operator|&&
-name|tool_type
-operator|!=
-name|GIMP_TYPE_BLEND_TOOL
-operator|&&
-name|tool_type
-operator|!=
-name|GIMP_TYPE_INK_TOOL
+argument_list|,
+name|GIMP_TYPE_BRUSH_TOOL
+argument_list|)
 condition|)
 block|{
 name|button
@@ -579,6 +574,13 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|tool_type
+operator|!=
+name|GIMP_TYPE_SMUDGE_TOOL
+condition|)
+block|{
 name|gimp_prop_scale_entry_new
 argument_list|(
 name|config
@@ -613,6 +615,7 @@ argument_list|,
 literal|0.0
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 comment|/*  the gradient  */
 if|if

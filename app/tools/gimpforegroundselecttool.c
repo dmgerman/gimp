@@ -138,7 +138,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b19f7d60108
+DECL|struct|__anon2ba65a920108
 block|{
 DECL|member|width
 name|gint
@@ -760,6 +760,15 @@ operator|->
 name|control
 argument_list|,
 name|GIMP_TOOL_CURSOR_FREE_SELECT
+argument_list|)
+expr_stmt|;
+name|gimp_tool_control_set_action_value_2
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|,
+literal|"tools/tools-foreground-select-brush-size-set"
 argument_list|)
 expr_stmt|;
 name|fg_select
