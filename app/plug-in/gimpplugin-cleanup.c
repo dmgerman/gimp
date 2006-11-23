@@ -199,7 +199,7 @@ argument_list|)
 expr_stmt|;
 name|g_printerr
 argument_list|(
-literal|"\n%s: procedure %s starts undo group on\n"
+literal|"\n%s: procedure %s starts undo group on "
 literal|"image with group count %d\n"
 argument_list|,
 name|G_STRFUNC
@@ -344,7 +344,7 @@ argument_list|)
 expr_stmt|;
 name|g_printerr
 argument_list|(
-literal|"\n%s: procedure %s ends undo group on\n"
+literal|"\n%s: procedure %s ends undo group on "
 literal|"image with group count %d\n"
 argument_list|,
 name|G_STRFUNC
