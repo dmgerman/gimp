@@ -2222,7 +2222,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_layer_position:  * @image_ID: The image.  * @layer_ID: The layer.  *  * Returns the position of the layer in the layer stack.  *  * This procedure determines the positioin of the specified layer in  * the images layer stack. If the layer doesn't exist in the image, an  * error is returned.  *  * Returns: The position of the layer in the layer stack.  */
+comment|/**  * gimp_image_get_layer_position:  * @image_ID: The image.  * @layer_ID: The layer.  *  * Returns the position of the layer in the layer stack.  *  * This procedure determines the positioin of the specified layer in  * the images layer stack. If the layer doesn't exist in the image, an  * error is returned.  *  * Returns: The position of the layer in the layer stack.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
@@ -2758,7 +2758,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_channel_position:  * @image_ID: The image.  * @channel_ID: The channel.  *  * Returns the position of the channel in the channel stack.  *  * This procedure determines the positioin of the specified channel in  * the images channel stack. If the channel doesn't exist in the image,  * an error is returned.  *  * Returns: The position of the channel in the channel stack.  */
+comment|/**  * gimp_image_get_channel_position:  * @image_ID: The image.  * @channel_ID: The channel.  *  * Returns the position of the channel in the channel stack.  *  * This procedure determines the positioin of the specified channel in  * the images channel stack. If the channel doesn't exist in the image,  * an error is returned.  *  * Returns: The position of the channel in the channel stack.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
@@ -3146,7 +3146,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_vectors_position:  * @image_ID: The image.  * @vectors_ID: The vectors object.  *  * Returns the position of the vectors object in the vectors objects  * stack.  *  * This procedure determines the positioin of the specified vectors  * object in the images vectors object stack. If the vectors object  * doesn't exist in the image, an error is returned.  *  * Returns: The position of the vectors object in the vectors stack.  */
+comment|/**  * gimp_image_get_vectors_position:  * @image_ID: The image.  * @vectors_ID: The vectors object.  *  * Returns the position of the vectors object in the vectors objects  * stack.  *  * This procedure determines the positioin of the specified vectors  * object in the images vectors object stack. If the vectors object  * doesn't exist in the image, an error is returned.  *  * Returns: The position of the vectors object in the vectors stack.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function

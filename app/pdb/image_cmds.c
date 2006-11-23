@@ -12627,7 +12627,7 @@ literal|"Simon Budig"
 argument_list|,
 literal|"Simon Budig"
 argument_list|,
-literal|"&image_get_layer_position"
+literal|"2006"
 argument_list|,
 name|NULL
 argument_list|)
@@ -13322,7 +13322,7 @@ literal|"Simon Budig"
 argument_list|,
 literal|"Simon Budig"
 argument_list|,
-literal|"&image_get_channel_position"
+literal|"2006"
 argument_list|,
 name|NULL
 argument_list|)
@@ -13831,7 +13831,7 @@ literal|"Simon Budig"
 argument_list|,
 literal|"Simon Budig"
 argument_list|,
-literal|"&image_get_vectors_position"
+literal|"2006"
 argument_list|,
 name|NULL
 argument_list|)
