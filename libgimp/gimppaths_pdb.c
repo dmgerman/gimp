@@ -1412,7 +1412,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_path_import:  * @image_ID: The image.  * @filename: The name of the SVG file to import.  * @merge: Merge paths into a single vectors object.  * @scale: Scale the SVG to image dimensions.  *  * This procedure is deprecated! Use vectors_new_from_file() instead.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_path_import:  * @image_ID: The image.  * @filename: The name of the SVG file to import.  * @merge: Merge paths into a single vectors object.  * @scale: Scale the SVG to image dimensions.  *  * This procedure is deprecated! Use vectors_import_from_file()  * instead.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function

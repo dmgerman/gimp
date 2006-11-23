@@ -3010,7 +3010,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_import_from_string:  * @image_ID: The image.  * @string: A string that must be a complete and valid SVG document.  * @length: Number of bytes in string or -1 if the string is NULL terminated.  * @merge: Merge paths into a single vectors object.  * @scale: Scale the SVG to image dimensions.  * @num_vectors: The number of newly created vectors.  * @vectors_ids: The list of newly created vectors.  *  * Import paths from an SVG string.  *  * This procedure works like gimp_vectors_new_from_file() but takes a  * string rather than reading the SVG from a file. This allows you to  * write scripts that generate SVG and feed it to GIMP.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_vectors_import_from_string:  * @image_ID: The image.  * @string: A string that must be a complete and valid SVG document.  * @length: Number of bytes in string or -1 if the string is NULL terminated.  * @merge: Merge paths into a single vectors object.  * @scale: Scale the SVG to image dimensions.  * @num_vectors: The number of newly created vectors.  * @vectors_ids: The list of newly created vectors.  *  * Import paths from an SVG string.  *  * This procedure works like gimp_vectors_import_from_file() but takes  * a string rather than reading the SVG from a file. This allows you to  * write scripts that generate SVG and feed it to GIMP.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function

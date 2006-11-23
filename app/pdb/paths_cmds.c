@@ -4535,17 +4535,17 @@ name|procedure
 argument_list|,
 literal|"gimp-path-import"
 argument_list|,
-literal|"This procedure is deprecated! Use 'vectors-new-from-file' instead."
+literal|"This procedure is deprecated! Use 'vectors-import-from-file' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'vectors-new-from-file' instead."
-argument_list|,
-literal|""
+literal|"This procedure is deprecated! Use 'vectors-import-from-file' instead."
 argument_list|,
 literal|""
 argument_list|,
 literal|""
 argument_list|,
-literal|"vectors-new-from-file"
+literal|""
+argument_list|,
+literal|"vectors-import-from-file"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
