@@ -6869,6 +6869,53 @@ block|}
 block|}
 end_function
 
+begin_function
+DECL|function|set_safe_foreign (scheme * sc,pointer data)
+name|void
+name|set_safe_foreign
+parameter_list|(
+name|scheme
+modifier|*
+name|sc
+parameter_list|,
+name|pointer
+name|data
+parameter_list|)
+block|{
+if|if
+condition|(
+name|sc
+operator|->
+name|safe_foreign
+operator|==
+name|sc
+operator|->
+name|NIL
+condition|)
+block|{
+name|fprintf
+argument_list|(
+name|stderr
+argument_list|,
+literal|"get_safe_foreign called outside a foreign function\n"
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|car
+argument_list|(
+name|sc
+operator|->
+name|safe_foreign
+argument_list|)
+operator|=
+name|data
+expr_stmt|;
+block|}
+block|}
+end_function
+
 begin_comment
 comment|/* char_cnt is length of string in chars. */
 end_comment
@@ -8957,6 +9004,13 @@ argument_list|(
 name|sc
 operator|->
 name|value
+argument_list|)
+expr_stmt|;
+name|mark
+argument_list|(
+name|sc
+operator|->
+name|safe_foreign
 argument_list|)
 expr_stmt|;
 name|mark
@@ -11174,7 +11228,7 @@ decl_stmt|;
 name|int
 name|len
 decl_stmt|;
-DECL|enum|__anon2bf402550103
+DECL|enum|__anon28cbc3190103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -16542,6 +16596,23 @@ name|code
 argument_list|)
 condition|)
 block|{
+name|sc
+operator|->
+name|safe_foreign
+operator|=
+name|cons
+argument_list|(
+name|sc
+argument_list|,
+name|sc
+operator|->
+name|NIL
+argument_list|,
+name|sc
+operator|->
+name|safe_foreign
+argument_list|)
+expr_stmt|;
 name|x
 operator|=
 name|sc
@@ -16557,6 +16628,17 @@ argument_list|,
 name|sc
 operator|->
 name|args
+argument_list|)
+expr_stmt|;
+name|sc
+operator|->
+name|safe_foreign
+operator|=
+name|cdr
+argument_list|(
+name|sc
+operator|->
+name|safe_foreign
 argument_list|)
 expr_stmt|;
 name|s_return
@@ -27848,7 +27930,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon2bf402550208
+DECL|struct|__anon28cbc3190208
 specifier|static
 struct|struct
 block|{
@@ -28083,7 +28165,7 @@ value|"\016"
 end_define
 
 begin_typedef
-DECL|struct|__anon2bf402550308
+DECL|struct|__anon28cbc3190308
 typedef|typedef
 struct|struct
 block|{
@@ -29642,6 +29724,14 @@ operator|->
 name|bc_flag
 operator|=
 literal|0
+expr_stmt|;
+name|sc
+operator|->
+name|safe_foreign
+operator|=
+name|sc
+operator|->
+name|NIL
 expr_stmt|;
 comment|/* init sc->NIL */
 name|typeflag

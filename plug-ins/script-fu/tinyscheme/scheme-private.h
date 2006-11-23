@@ -74,10 +74,10 @@ name|unsigned
 name|char
 name|kind
 decl_stmt|;
-DECL|union|__anon2c3dccdb010a
+DECL|union|__anon2b45adf9010a
 union|union
 block|{
-DECL|struct|__anon2c3dccdb0208
+DECL|struct|__anon2b45adf90208
 struct|struct
 block|{
 DECL|member|file
@@ -93,7 +93,7 @@ DECL|member|stdio
 block|}
 name|stdio
 struct|;
-DECL|struct|__anon2c3dccdb0308
+DECL|struct|__anon2b45adf90308
 struct|struct
 block|{
 DECL|member|start
@@ -139,10 +139,10 @@ name|unsigned
 name|int
 name|_flag
 decl_stmt|;
-DECL|union|__anon2c3dccdb040a
+DECL|union|__anon2b45adf9040a
 union|union
 block|{
-DECL|struct|__anon2c3dccdb0508
+DECL|struct|__anon2b45adf90508
 struct|struct
 block|{
 DECL|member|_svalue
@@ -171,7 +171,7 @@ DECL|member|_ff
 name|foreign_func
 name|_ff
 decl_stmt|;
-DECL|struct|__anon2c3dccdb0608
+DECL|struct|__anon2b45adf90608
 struct|struct
 block|{
 DECL|member|_car
@@ -252,7 +252,7 @@ DECL|member|last_cell_seg
 name|int
 name|last_cell_seg
 decl_stmt|;
-comment|/* We use 4 registers. */
+comment|/* We use 5 registers. */
 DECL|member|args
 name|pointer
 name|args
@@ -273,6 +273,11 @@ name|pointer
 name|dump
 decl_stmt|;
 comment|/* stack register for next evaluation */
+DECL|member|safe_foreign
+name|pointer
+name|safe_foreign
+decl_stmt|;
+comment|/* register to avoid gc problems */
 DECL|member|interactive_repl
 name|int
 name|interactive_repl
