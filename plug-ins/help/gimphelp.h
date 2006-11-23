@@ -80,12 +80,9 @@ name|GIMP_HELP_ENV_URI
 value|"GIMP2_HELP_URI"
 end_define
 
-begin_define
-DECL|macro|GIMP_HELP_DEBUG
-define|#
-directive|define
-name|GIMP_HELP_DEBUG
-end_define
+begin_comment
+comment|/* #define GIMP_HELP_DEBUG */
+end_comment
 
 begin_function_decl
 name|gboolean

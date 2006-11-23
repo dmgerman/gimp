@@ -66,7 +66,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c47b84f0108
+DECL|struct|__anon2c74c1af0108
 block|{
 DECL|member|procedure
 name|gchar
@@ -1049,6 +1049,8 @@ argument_list|,
 name|idle_help
 operator|->
 name|help_id
+argument_list|,
+name|NULL
 argument_list|,
 operator|&
 name|fatal_error

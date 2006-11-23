@@ -114,6 +114,11 @@ name|gchar
 modifier|*
 name|help_id
 parameter_list|,
+name|GimpHelpLocale
+modifier|*
+modifier|*
+name|locale
+parameter_list|,
 name|gboolean
 modifier|*
 name|fatal_error

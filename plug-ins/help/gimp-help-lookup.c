@@ -488,6 +488,8 @@ argument_list|,
 name|help_id
 argument_list|,
 name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 decl_stmt|;
 name|g_list_foreach

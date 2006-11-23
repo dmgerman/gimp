@@ -376,7 +376,7 @@ end_function
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_help_domain_map (GimpHelpDomain * domain,GList * help_locales,const gchar * help_id,gboolean * fatal_error)
+DECL|function|gimp_help_domain_map (GimpHelpDomain * domain,GList * help_locales,const gchar * help_id,GimpHelpLocale ** ret_locale,gboolean * fatal_error)
 name|gimp_help_domain_map
 parameter_list|(
 name|GimpHelpDomain
@@ -391,6 +391,11 @@ specifier|const
 name|gchar
 modifier|*
 name|help_id
+parameter_list|,
+name|GimpHelpLocale
+modifier|*
+modifier|*
+name|ret_locale
 parameter_list|,
 name|gboolean
 modifier|*
@@ -537,6 +542,15 @@ operator|->
 name|help_missing
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|ret_locale
+condition|)
+operator|*
+name|ret_locale
+operator|=
+name|locale
+expr_stmt|;
 if|if
 condition|(
 name|ref
