@@ -170,6 +170,13 @@ operator|->
 name|help_missing
 argument_list|)
 expr_stmt|;
+name|g_list_free
+argument_list|(
+name|locale
+operator|->
+name|toplevel_items
+argument_list|)
+expr_stmt|;
 name|g_free
 argument_list|(
 name|locale
@@ -238,7 +245,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2aab54f20103
+DECL|enum|__anon2bdaabdf0103
 block|{
 DECL|enumerator|LOCALE_START
 name|LOCALE_START
@@ -263,7 +270,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aab54f20208
+DECL|struct|__anon2bdaabdf0208
 block|{
 DECL|member|filename
 specifier|const

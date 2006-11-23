@@ -171,6 +171,13 @@ operator|->
 name|parent
 argument_list|)
 expr_stmt|;
+name|g_list_free
+argument_list|(
+name|item
+operator|->
+name|children
+argument_list|)
+expr_stmt|;
 name|g_free
 argument_list|(
 name|item

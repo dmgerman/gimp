@@ -36,6 +36,7 @@ name|gchar
 modifier|*
 name|parent
 decl_stmt|;
+comment|/* eek */
 DECL|member|children
 name|GList
 modifier|*

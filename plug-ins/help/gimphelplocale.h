@@ -36,6 +36,12 @@ name|gchar
 modifier|*
 name|help_missing
 decl_stmt|;
+comment|/* eek */
+DECL|member|toplevel_items
+name|GList
+modifier|*
+name|toplevel_items
+decl_stmt|;
 block|}
 struct|;
 end_struct
