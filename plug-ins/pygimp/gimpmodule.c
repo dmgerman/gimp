@@ -6596,8 +6596,8 @@ begin_function
 specifier|static
 name|PyObject
 modifier|*
-DECL|function|pygimp_vectors_new_from_file (PyObject * self,PyObject * args,PyObject * kwargs)
-name|pygimp_vectors_new_from_file
+DECL|function|pygimp_vectors_import_from_file (PyObject * self,PyObject * args,PyObject * kwargs)
+name|pygimp_vectors_import_from_file
 parameter_list|(
 name|PyObject
 modifier|*
@@ -6662,7 +6662,7 @@ name|args
 argument_list|,
 name|kwargs
 argument_list|,
-literal|"O!O|ii:vectors_new_from_file"
+literal|"O!O|ii:vectors_import_from_file"
 argument_list|,
 name|kwlist
 argument_list|,
@@ -6693,7 +6693,7 @@ name|py_file
 argument_list|)
 condition|)
 block|{
-name|gimp_vectors_new_from_file
+name|gimp_vectors_import_from_file
 argument_list|(
 name|img
 operator|->
@@ -6847,7 +6847,7 @@ expr_stmt|;
 break|break;
 block|}
 block|}
-name|gimp_vectors_new_from_string
+name|gimp_vectors_import_from_string
 argument_list|(
 name|img
 operator|->
@@ -6905,8 +6905,8 @@ begin_function
 specifier|static
 name|PyObject
 modifier|*
-DECL|function|pygimp_vectors_new_from_string (PyObject * self,PyObject * args,PyObject * kwargs)
-name|pygimp_vectors_new_from_string
+DECL|function|pygimp_vectors_import_from_string (PyObject * self,PyObject * args,PyObject * kwargs)
+name|pygimp_vectors_import_from_string
 parameter_list|(
 name|PyObject
 modifier|*
@@ -6975,7 +6975,7 @@ name|args
 argument_list|,
 name|kwargs
 argument_list|,
-literal|"O!s#|ii:vectors_new_from_file"
+literal|"O!s#|ii:vectors_import_from_string"
 argument_list|,
 name|kwlist
 argument_list|,
@@ -7001,7 +7001,7 @@ condition|)
 return|return
 name|NULL
 return|;
-name|gimp_vectors_new_from_string
+name|gimp_vectors_import_from_string
 argument_list|(
 name|img
 operator|->
@@ -8017,12 +8017,12 @@ name|METH_KEYWORDS
 block|}
 block|,
 block|{
-literal|"vectors_new_from_file"
+literal|"vectors_import_from_file"
 block|,
 operator|(
 name|PyCFunction
 operator|)
-name|pygimp_vectors_new_from_file
+name|pygimp_vectors_import_from_file
 block|,
 name|METH_VARARGS
 operator||
@@ -8030,12 +8030,12 @@ name|METH_KEYWORDS
 block|}
 block|,
 block|{
-literal|"vectors_new_from_string"
+literal|"vectors_import_from_string"
 block|,
 operator|(
 name|PyCFunction
 operator|)
-name|pygimp_vectors_new_from_string
+name|pygimp_vectors_import_from_string
 block|,
 name|METH_VARARGS
 operator||
