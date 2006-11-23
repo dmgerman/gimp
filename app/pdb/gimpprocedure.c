@@ -225,9 +225,20 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
+name|GParamSpec
+modifier|*
+modifier|*
+name|param_specs
+parameter_list|,
+name|gint
+name|n_param_specs
+parameter_list|,
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|gboolean
+name|return_vals
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1320,7 +1331,17 @@ name|procedure
 argument_list|,
 name|gimp
 argument_list|,
+name|procedure
+operator|->
 name|args
+argument_list|,
+name|procedure
+operator|->
+name|num_args
+argument_list|,
+name|args
+argument_list|,
+name|FALSE
 argument_list|)
 condition|)
 block|{
@@ -1495,9 +1516,20 @@ name|procedure
 argument_list|,
 name|gimp
 argument_list|,
+name|procedure
+operator|->
 name|args
+argument_list|,
+name|procedure
+operator|->
+name|num_args
+argument_list|,
+name|args
+argument_list|,
+name|FALSE
 argument_list|)
 condition|)
+block|{
 name|GIMP_PROCEDURE_GET_CLASS
 argument_list|(
 name|procedure
@@ -1518,6 +1550,7 @@ argument_list|,
 name|display
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -2063,7 +2096,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_procedure_validate_args (GimpProcedure * procedure,Gimp * gimp,GValueArray * args)
+DECL|function|gimp_procedure_validate_args (GimpProcedure * procedure,Gimp * gimp,GParamSpec ** param_specs,gint n_param_specs,GValueArray * args,gboolean return_vals)
 name|gimp_procedure_validate_args
 parameter_list|(
 name|GimpProcedure
@@ -2074,9 +2107,20 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
+name|GParamSpec
+modifier|*
+modifier|*
+name|param_specs
+parameter_list|,
+name|gint
+name|n_param_specs
+parameter_list|,
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|gboolean
+name|return_vals
 parameter_list|)
 block|{
 name|gint
@@ -2096,9 +2140,7 @@ name|args
 operator|->
 name|n_values
 argument_list|,
-name|procedure
-operator|->
-name|num_args
+name|n_param_specs
 argument_list|)
 condition|;
 name|i
@@ -2121,9 +2163,7 @@ name|GParamSpec
 modifier|*
 name|pspec
 init|=
-name|procedure
-operator|->
-name|args
+name|param_specs
 index|[
 name|i
 index|]
@@ -2151,26 +2191,11 @@ operator|!=
 name|spec_type
 condition|)
 block|{
-specifier|const
-name|gchar
-modifier|*
-name|type_name
-init|=
-name|g_type_name
-argument_list|(
-name|spec_type
-argument_list|)
-decl_stmt|;
-specifier|const
-name|gchar
-modifier|*
-name|got
-init|=
-name|g_type_name
-argument_list|(
-name|arg_type
-argument_list|)
-decl_stmt|;
+if|if
+condition|(
+name|return_vals
+condition|)
+block|{
 name|gimp_message
 argument_list|(
 name|gimp
@@ -2181,9 +2206,9 @@ name|GIMP_MESSAGE_ERROR
 argument_list|,
 name|_
 argument_list|(
-literal|"PDB calling error for procedure '%s':\n"
-literal|"Argument '%s' (#%d, type %s) type mismatch "
-literal|"(got %s)."
+literal|"Procedure '%s' returned a wrong value type "
+literal|"for return value '%s' (#%d). "
+literal|"Expected %s, got %s."
 argument_list|)
 argument_list|,
 name|gimp_object_get_name
@@ -2203,11 +2228,64 @@ name|i
 operator|+
 literal|1
 argument_list|,
-name|type_name
+name|g_type_name
+argument_list|(
+name|spec_type
+argument_list|)
 argument_list|,
-name|got
+name|g_type_name
+argument_list|(
+name|arg_type
+argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+name|gimp_message
+argument_list|(
+name|gimp
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_MESSAGE_ERROR
+argument_list|,
+name|_
+argument_list|(
+literal|"Procedure '%s' has been called with a "
+literal|"wrong value type for argument '%s' (#%d). "
+literal|"Expected %s, got %s."
+argument_list|)
+argument_list|,
+name|gimp_object_get_name
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
+name|procedure
+argument_list|)
+argument_list|)
+argument_list|,
+name|g_param_spec_get_name
+argument_list|(
+name|pspec
+argument_list|)
+argument_list|,
+name|i
+operator|+
+literal|1
+argument_list|,
+name|g_type_name
+argument_list|(
+name|spec_type
+argument_list|)
+argument_list|,
+name|g_type_name
+argument_list|(
+name|arg_type
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
 return|return
 name|FALSE
 return|;
@@ -2292,6 +2370,11 @@ operator|-
 literal|1
 condition|)
 block|{
+if|if
+condition|(
+name|return_vals
+condition|)
+block|{
 name|gimp_message
 argument_list|(
 name|gimp
@@ -2302,10 +2385,11 @@ name|GIMP_MESSAGE_ERROR
 argument_list|,
 name|_
 argument_list|(
-literal|"Procedure '%s' has been called with an "
-literal|"invalid ID for argument '%s'. Most likely "
-literal|"a plug-in is trying to work on a layer "
-literal|"that doesn't exist any longer."
+literal|"Procedure '%s' returned an "
+literal|"invalid ID for argument '%s'. "
+literal|"Most likely a plug-in is trying "
+literal|"to work on a layer that doesn't "
+literal|"exist any longer."
 argument_list|)
 argument_list|,
 name|gimp_object_get_name
@@ -2322,6 +2406,41 @@ name|pspec
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+name|gimp_message
+argument_list|(
+name|gimp
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_MESSAGE_ERROR
+argument_list|,
+name|_
+argument_list|(
+literal|"Procedure '%s' has been called with an "
+literal|"invalid ID for argument '%s'. "
+literal|"Most likely a plug-in is trying"
+literal|"to work on a layer that doesn't "
+literal|"exist any longer."
+argument_list|)
+argument_list|,
+name|gimp_object_get_name
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
+name|procedure
+argument_list|)
+argument_list|)
+argument_list|,
+name|g_param_spec_get_name
+argument_list|(
+name|pspec
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 elseif|else
 if|if
@@ -2340,6 +2459,11 @@ operator|-
 literal|1
 condition|)
 block|{
+if|if
+condition|(
+name|return_vals
+condition|)
+block|{
 name|gimp_message
 argument_list|(
 name|gimp
@@ -2350,10 +2474,11 @@ name|GIMP_MESSAGE_ERROR
 argument_list|,
 name|_
 argument_list|(
-literal|"Procedure '%s' has been called with an "
-literal|"invalid ID for argument '%s'.  Most likely "
-literal|"a plug-in is trying to work on an image "
-literal|"that doesn't exist any longer."
+literal|"Procedure '%s' returned an "
+literal|"invalid ID for argument '%s'. "
+literal|"Most likely a plug-in is trying "
+literal|"to work on an image that doesn't "
+literal|"exist any longer."
 argument_list|)
 argument_list|,
 name|gimp_object_get_name
@@ -2373,72 +2498,6 @@ expr_stmt|;
 block|}
 else|else
 block|{
-specifier|const
-name|gchar
-modifier|*
-name|type_name
-init|=
-name|g_type_name
-argument_list|(
-name|spec_type
-argument_list|)
-decl_stmt|;
-name|gchar
-modifier|*
-name|old_value
-decl_stmt|;
-name|gchar
-modifier|*
-name|new_value
-decl_stmt|;
-name|old_value
-operator|=
-name|g_value_dup_string
-argument_list|(
-operator|&
-name|string_value
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|g_value_type_transformable
-argument_list|(
-name|arg_type
-argument_list|,
-name|G_TYPE_STRING
-argument_list|)
-condition|)
-name|g_value_transform
-argument_list|(
-name|arg
-argument_list|,
-operator|&
-name|string_value
-argument_list|)
-expr_stmt|;
-else|else
-name|g_value_set_static_string
-argument_list|(
-operator|&
-name|string_value
-argument_list|,
-literal|"<not transformable to string>"
-argument_list|)
-expr_stmt|;
-name|new_value
-operator|=
-name|g_value_dup_string
-argument_list|(
-operator|&
-name|string_value
-argument_list|)
-expr_stmt|;
-name|g_value_unset
-argument_list|(
-operator|&
-name|string_value
-argument_list|)
-expr_stmt|;
 name|gimp_message
 argument_list|(
 name|gimp
@@ -2449,9 +2508,11 @@ name|GIMP_MESSAGE_ERROR
 argument_list|,
 name|_
 argument_list|(
-literal|"PDB calling error for procedure '%s':\n"
-literal|"Argument '%s' (#%d, type %s) out of bounds "
-literal|"(validation changed '%s' to '%s')"
+literal|"Procedure '%s' has been called with an "
+literal|"invalid ID for argument '%s'. "
+literal|"Most likely a plug-in is trying "
+literal|"to work on an image that doesn't "
+literal|"exist any longer."
 argument_list|)
 argument_list|,
 name|gimp_object_get_name
@@ -2466,28 +2527,111 @@ name|g_param_spec_get_name
 argument_list|(
 name|pspec
 argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+else|else
+block|{
+if|if
+condition|(
+name|return_vals
+condition|)
+block|{
+name|gimp_message
+argument_list|(
+name|gimp
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_MESSAGE_ERROR
+argument_list|,
+name|_
+argument_list|(
+literal|"Procedure '%s' returned "
+literal|"'%s' as return value '%s' "
+literal|"(#%d, type %s). "
+literal|"This value is out of range."
+argument_list|)
+argument_list|,
+name|gimp_object_get_name
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
+name|procedure
+argument_list|)
+argument_list|)
+argument_list|,
+name|g_value_get_string
+argument_list|(
+operator|&
+name|string_value
+argument_list|)
+argument_list|,
+name|g_param_spec_get_name
+argument_list|(
+name|pspec
+argument_list|)
 argument_list|,
 name|i
 operator|+
 literal|1
 argument_list|,
-name|type_name
-argument_list|,
-name|old_value
-argument_list|,
-name|new_value
-argument_list|)
-expr_stmt|;
-name|g_free
+name|g_type_name
 argument_list|(
-name|old_value
+name|spec_type
+argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_free
+block|}
+else|else
+block|{
+name|gimp_message
 argument_list|(
-name|new_value
+name|gimp
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_MESSAGE_ERROR
+argument_list|,
+name|_
+argument_list|(
+literal|"Procedure '%s' has been called with "
+literal|"value '%s' for argument '%s' "
+literal|"(#%d, type %s). "
+literal|"This value is out of range."
+argument_list|)
+argument_list|,
+name|gimp_object_get_name
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
+name|procedure
+argument_list|)
+argument_list|)
+argument_list|,
+name|g_value_get_string
+argument_list|(
+operator|&
+name|string_value
+argument_list|)
+argument_list|,
+name|g_param_spec_get_name
+argument_list|(
+name|pspec
+argument_list|)
+argument_list|,
+name|i
+operator|+
+literal|1
+argument_list|,
+name|g_type_name
+argument_list|(
+name|spec_type
+argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 return|return
 name|FALSE
