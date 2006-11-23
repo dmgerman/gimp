@@ -84,7 +84,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7e0f980108
+DECL|struct|__anon2b43310c0108
 block|{
 DECL|member|compression
 name|gint
@@ -107,7 +107,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7e0f980208
+DECL|struct|__anon2b43310c0208
 block|{
 DECL|member|ID
 name|gint32
@@ -4320,6 +4320,8 @@ literal|0
 decl_stmt|;
 name|gboolean
 name|closed
+init|=
+name|FALSE
 decl_stmt|;
 name|vectors
 operator|=
