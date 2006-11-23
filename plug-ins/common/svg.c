@@ -118,7 +118,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e064ee0108
+DECL|struct|__anon2a2d688b0108
 block|{
 DECL|member|resolution
 name|gdouble
@@ -866,7 +866,7 @@ name|gint32
 modifier|*
 name|vectors
 decl_stmt|;
-name|gimp_vectors_new_from_file
+name|gimp_vectors_import_from_file
 argument_list|(
 name|image_ID
 argument_list|,

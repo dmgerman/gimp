@@ -5010,8 +5010,8 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|vectors_new_from_file_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
-name|vectors_new_from_file_invoker
+DECL|function|vectors_import_from_file_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+name|vectors_import_from_file_invoker
 parameter_list|(
 name|GimpProcedure
 modifier|*
@@ -5288,8 +5288,8 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|vectors_new_from_string_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
-name|vectors_new_from_string_invoker
+DECL|function|vectors_import_from_string_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+name|vectors_import_from_string_invoker
 parameter_list|(
 name|GimpProcedure
 modifier|*
@@ -9549,12 +9549,12 @@ argument_list|(
 name|procedure
 argument_list|)
 expr_stmt|;
-comment|/*    * gimp-vectors-new-from-file    */
+comment|/*    * gimp-vectors-import-from-file    */
 name|procedure
 operator|=
 name|gimp_procedure_new
 argument_list|(
-name|vectors_new_from_file_invoker
+name|vectors_import_from_file_invoker
 argument_list|)
 expr_stmt|;
 name|gimp_object_set_static_name
@@ -9564,14 +9564,14 @@ argument_list|(
 name|procedure
 argument_list|)
 argument_list|,
-literal|"gimp-vectors-new-from-file"
+literal|"gimp-vectors-import-from-file"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-vectors-new-from-file"
+literal|"gimp-vectors-import-from-file"
 argument_list|,
 literal|"Import paths from an SVG file."
 argument_list|,
@@ -9716,12 +9716,12 @@ argument_list|(
 name|procedure
 argument_list|)
 expr_stmt|;
-comment|/*    * gimp-vectors-new-from-string    */
+comment|/*    * gimp-vectors-import-from-string    */
 name|procedure
 operator|=
 name|gimp_procedure_new
 argument_list|(
-name|vectors_new_from_string_invoker
+name|vectors_import_from_string_invoker
 argument_list|)
 expr_stmt|;
 name|gimp_object_set_static_name
@@ -9731,14 +9731,14 @@ argument_list|(
 name|procedure
 argument_list|)
 argument_list|,
-literal|"gimp-vectors-new-from-string"
+literal|"gimp-vectors-import-from-string"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-vectors-new-from-string"
+literal|"gimp-vectors-import-from-string"
 argument_list|,
 literal|"Import paths from an SVG string."
 argument_list|,

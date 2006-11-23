@@ -556,7 +556,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_vectors_new_from_file
+name|gimp_vectors_import_from_file
 parameter_list|(
 name|gint32
 name|image_ID
@@ -586,7 +586,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_vectors_new_from_string
+name|gimp_vectors_import_from_string
 parameter_list|(
 name|gint32
 name|image_ID
