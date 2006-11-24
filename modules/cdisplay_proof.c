@@ -198,7 +198,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon27497f130103
+DECL|enum|__anon29b06a100103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -214,32 +214,6 @@ name|PROP_PROFILE
 block|}
 enum|;
 end_enum
-
-begin_function_decl
-name|G_MODULE_EXPORT
-specifier|const
-name|GimpModuleInfo
-modifier|*
-name|gimp_module_query
-parameter_list|(
-name|GTypeModule
-modifier|*
-name|module
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|G_MODULE_EXPORT
-name|gboolean
-name|gimp_module_register
-parameter_list|(
-name|GTypeModule
-modifier|*
-name|module
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_function_decl
 specifier|static

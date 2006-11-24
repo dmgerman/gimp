@@ -53,7 +53,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c7753700103
+DECL|enum|__anon2b4d43380103
 block|{
 DECL|enumerator|GIMP_MODULE_STATE_ERROR
 name|GIMP_MODULE_STATE_ERROR
@@ -147,6 +147,36 @@ name|module
 parameter_list|)
 function_decl|;
 end_typedef
+
+begin_comment
+comment|/* GimpModules have to implement these */
+end_comment
+
+begin_function_decl
+name|G_MODULE_EXPORT
+specifier|const
+name|GimpModuleInfo
+modifier|*
+name|gimp_module_query
+parameter_list|(
+name|GTypeModule
+modifier|*
+name|module
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|G_MODULE_EXPORT
+name|gboolean
+name|gimp_module_register
+parameter_list|(
+name|GTypeModule
+modifier|*
+name|module
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_define
 DECL|macro|GIMP_TYPE_MODULE

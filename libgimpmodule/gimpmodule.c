@@ -27,6 +27,12 @@ directive|include
 file|"libgimpbase/gimpbase.h"
 end_include
 
+begin_undef
+undef|#
+directive|undef
+name|GIMP_DISABLE_DEPRECATED
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -41,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c74812b0103
+DECL|enum|__anon279408400103
 block|{
 DECL|enumerator|MODIFIED
 name|MODIFIED
