@@ -126,7 +126,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29377ff70108
+DECL|struct|__anon28e2fe0b0108
 block|{
 DECL|member|name
 name|gchar
@@ -146,7 +146,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon29377ff70203
+DECL|enum|__anon28e2fe0b0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -316,6 +316,32 @@ decl_stmt|;
 block|}
 struct|;
 end_struct
+
+begin_function_decl
+name|G_MODULE_EXPORT
+specifier|const
+name|GimpModuleInfo
+modifier|*
+name|gimp_module_query
+parameter_list|(
+name|GTypeModule
+modifier|*
+name|module
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|G_MODULE_EXPORT
+name|gboolean
+name|gimp_module_register
+parameter_list|(
+name|GTypeModule
+modifier|*
+name|module
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 name|GType

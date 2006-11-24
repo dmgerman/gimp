@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b1cb3910103
+DECL|enum|__anon2c52e2f80103
 block|{
 DECL|enumerator|COLORBLIND_DEFICIENCY_PROTANOPIA
 name|COLORBLIND_DEFICIENCY_PROTANOPIA
@@ -345,7 +345,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1cb3910203
+DECL|enum|__anon2c52e2f80203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -355,6 +355,32 @@ name|PROP_DEFICIENCY
 block|}
 enum|;
 end_enum
+
+begin_function_decl
+name|G_MODULE_EXPORT
+specifier|const
+name|GimpModuleInfo
+modifier|*
+name|gimp_module_query
+parameter_list|(
+name|GTypeModule
+modifier|*
+name|module
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|G_MODULE_EXPORT
+name|gboolean
+name|gimp_module_register
+parameter_list|(
+name|GTypeModule
+modifier|*
+name|module
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 specifier|static
