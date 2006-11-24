@@ -7309,6 +7309,8 @@ block|}
 end_function
 
 begin_function
+specifier|static
+specifier|inline
 name|void
 DECL|function|anti_erase_inten_pixels (const guchar * src1,const guchar * src2,guchar * dest,const guchar * mask,guint opacity,const gboolean * affect,guint length,guint bytes)
 name|anti_erase_inten_pixels
@@ -7472,6 +7474,8 @@ block|}
 end_function
 
 begin_function
+specifier|static
+specifier|inline
 name|void
 DECL|function|anti_erase_indexed_pixels (const guchar * src1,const guchar * src2,guchar * dest,const guchar * mask,guint opacity,const gboolean * affect,guint length,guint bytes)
 name|anti_erase_indexed_pixels
@@ -7628,6 +7632,7 @@ end_function
 
 begin_function
 specifier|static
+specifier|inline
 name|void
 DECL|function|color_erase_helper (GimpRGB * src,const GimpRGB * color)
 name|color_erase_helper
@@ -8096,6 +8101,8 @@ block|}
 end_function
 
 begin_function
+specifier|static
+specifier|inline
 name|void
 DECL|function|color_erase_inten_pixels (const guchar * src1,const guchar * src2,guchar * dest,const guchar * mask,guint opacity,const gboolean * affect,guint length,guint bytes)
 name|color_erase_inten_pixels
@@ -19949,6 +19956,7 @@ struct|;
 end_struct
 
 begin_function
+specifier|static
 name|void
 DECL|function|initial_sub_region (struct initial_regions_struct * st,PixelRegion * src,PixelRegion * dest,PixelRegion * mask)
 name|initial_sub_region

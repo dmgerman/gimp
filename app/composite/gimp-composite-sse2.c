@@ -531,15 +531,14 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_function
-name|void
-DECL|function|debug_display_sse (void)
-name|debug_display_sse
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-DECL|macro|mask32 (x)
+begin_if
+if|#
+directive|if
+literal|0
+end_if
+
+begin_define
+unit|void debug_display_sse (void) {
 define|#
 directive|define
 name|mask32
@@ -547,7 +546,9 @@ parameter_list|(
 name|x
 parameter_list|)
 value|((x)& (unsigned long long) 0xFFFFFFFF)
-DECL|macro|print128 (reg)
+end_define
+
+begin_define
 define|#
 directive|define
 name|print128
@@ -555,98 +556,13 @@ parameter_list|(
 name|reg
 parameter_list|)
 value|{ \   unsigned long long reg[2]; \   asm("movdqu %%" #reg ",%0" : "=m" (reg)); \   printf(#reg"=%08llx %08llx", mask32(reg[0]>>32), mask32(reg[0])); \   printf(" %08llx %08llx", mask32(reg[1]>>32), mask32(reg[1])); \  }
-name|printf
-argument_list|(
-literal|"--------------------------------------------\n"
-argument_list|)
-expr_stmt|;
-name|print128
-argument_list|(
-name|xmm0
-argument_list|)
-expr_stmt|;
-name|printf
-argument_list|(
-literal|"  "
-argument_list|)
-expr_stmt|;
-name|print128
-argument_list|(
-name|xmm1
-argument_list|)
-expr_stmt|;
-name|printf
-argument_list|(
-literal|"\n"
-argument_list|)
-expr_stmt|;
-name|print128
-argument_list|(
-name|xmm2
-argument_list|)
-expr_stmt|;
-name|printf
-argument_list|(
-literal|"  "
-argument_list|)
-expr_stmt|;
-name|print128
-argument_list|(
-name|xmm3
-argument_list|)
-expr_stmt|;
-name|printf
-argument_list|(
-literal|"\n"
-argument_list|)
-expr_stmt|;
-name|print128
-argument_list|(
-name|xmm4
-argument_list|)
-expr_stmt|;
-name|printf
-argument_list|(
-literal|"  "
-argument_list|)
-expr_stmt|;
-name|print128
-argument_list|(
-name|xmm5
-argument_list|)
-expr_stmt|;
-name|printf
-argument_list|(
-literal|"\n"
-argument_list|)
-expr_stmt|;
-name|print128
-argument_list|(
-name|xmm6
-argument_list|)
-expr_stmt|;
-name|printf
-argument_list|(
-literal|"  "
-argument_list|)
-expr_stmt|;
-name|print128
-argument_list|(
-name|xmm7
-argument_list|)
-expr_stmt|;
-name|printf
-argument_list|(
-literal|"\n"
-argument_list|)
-expr_stmt|;
-name|printf
-argument_list|(
-literal|"--------------------------------------------\n"
-argument_list|)
-expr_stmt|;
-block|}
-end_function
+end_define
+
+begin_endif
+unit|printf("--------------------------------------------\n");   print128(xmm0); printf("  "); print128(xmm1); printf("\n");   print128(xmm2); printf("  "); print128(xmm3); printf("\n");   print128(xmm4); printf("  "); print128(xmm5); printf("\n");   print128(xmm6); printf("  "); print128(xmm7); printf("\n");   printf("--------------------------------------------\n"); }
+endif|#
+directive|endif
+end_endif
 
 begin_function
 name|void

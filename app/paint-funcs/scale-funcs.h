@@ -17,19 +17,6 @@ name|__SCALE_FUNCS_H__
 end_define
 
 begin_define
-DECL|macro|EPSILON
-define|#
-directive|define
-name|EPSILON
-value|(0.0001)
-end_define
-
-begin_comment
-DECL|macro|EPSILON
-comment|/* arbitary small number for avoiding zero */
-end_comment
-
-begin_define
 DECL|macro|LANCZOS_SPP
 define|#
 directive|define
@@ -99,6 +86,24 @@ name|progress_callback
 parameter_list|,
 name|gpointer
 name|progress_data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|subsample_region
+parameter_list|(
+name|PixelRegion
+modifier|*
+name|srcPR
+parameter_list|,
+name|PixelRegion
+modifier|*
+name|destPR
+parameter_list|,
+name|gint
+name|subsample
 parameter_list|)
 function_decl|;
 end_function_decl

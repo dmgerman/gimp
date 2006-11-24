@@ -45,6 +45,19 @@ directive|include
 file|"scale-funcs.h"
 end_include
 
+begin_define
+DECL|macro|EPSILON
+define|#
+directive|define
+name|EPSILON
+value|(0.0001)
+end_define
+
+begin_comment
+DECL|macro|EPSILON
+comment|/* arbitary small number for avoiding zero */
+end_comment
+
 begin_function_decl
 specifier|static
 name|void

@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"paint-funcs/scale-funcs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpbuffer.h"
 end_include
 
