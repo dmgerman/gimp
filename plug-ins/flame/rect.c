@@ -166,6 +166,7 @@ end_comment
 
 begin_function
 DECL|function|normalize_vector (v,n)
+specifier|static
 name|void
 name|normalize_vector
 parameter_list|(

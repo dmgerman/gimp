@@ -29,7 +29,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbc1ccb0108
+DECL|struct|__anon2c0ba7e60108
 block|{
 DECL|member|data
 name|coordinate_type
@@ -124,7 +124,7 @@ name|p_o
 parameter_list|,
 name|n
 parameter_list|)
-value|((n) == 0				\                          ? O_LENGTH (p_o) - 1			\                          : (n) - 1)
+value|((n) == 0 ? O_LENGTH (p_o) - 1 : (n) - 1)
 end_define
 
 begin_comment
@@ -134,7 +134,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbc1ccb0208
+DECL|struct|__anon2c0ba7e60208
 block|{
 DECL|member|data
 name|pixel_outline_type
@@ -191,7 +191,9 @@ begin_function_decl
 specifier|extern
 name|pixel_outline_list_type
 name|find_outline_pixels
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 function_decl|;
 end_function_decl
 

@@ -5143,10 +5143,12 @@ comment|/* returns a uniform variable from 0 to 1 */
 end_comment
 
 begin_function
-DECL|function|random_uniform01 ()
+DECL|function|random_uniform01 (void)
 name|double
 name|random_uniform01
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 return|return
 name|g_random_double
@@ -5156,10 +5158,12 @@ block|}
 end_function
 
 begin_function
-DECL|function|random_uniform11 ()
+DECL|function|random_uniform11 (void)
 name|double
 name|random_uniform11
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 return|return
 name|g_random_double_range
@@ -5178,10 +5182,12 @@ comment|/* returns a mean 0 variance 1 random variable    see numerical recipies
 end_comment
 
 begin_function
-DECL|function|random_gaussian ()
+DECL|function|random_gaussian (void)
 name|double
 name|random_gaussian
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 specifier|static
 name|int

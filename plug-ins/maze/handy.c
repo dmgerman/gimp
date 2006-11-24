@@ -25,6 +25,12 @@ directive|include
 file|"libgimp/gimp.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"maze.h"
+end_include
+
 begin_comment
 comment|/* get_colors Returns the current foreground and background colors in    nice little arrays.  It works nicely for RGB and grayscale images,    however handling of indexed images is somewhat broken.  Patches    appreciated. */
 end_comment
@@ -249,6 +255,30 @@ end_comment
 begin_comment
 comment|/* Further optimizations that could be made...  *  Currently, the row buffer is re-filled with every call.  However,  *  plug-ins such as maze and checkerboard only use two colors, and  *  for the most part, have rows of the same size with every call.  *  We could keep a row of each color on hand so we wouldn't have to  *  re-fill it every time...  */
 end_comment
+
+begin_include
+include|#
+directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|<stdlib.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"maze.h"
+end_include
 
 begin_function
 name|void

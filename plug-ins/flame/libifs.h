@@ -84,7 +84,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a3deca70108
+DECL|struct|__anon292634f00108
 typedef|typedef
 struct|struct
 block|{
@@ -124,7 +124,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a3deca70208
+DECL|struct|__anon292634f00208
 typedef|typedef
 struct|struct
 block|{
@@ -426,7 +426,9 @@ begin_function_decl
 specifier|extern
 name|double
 name|random_uniform01
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 function_decl|;
 end_function_decl
 
@@ -434,7 +436,9 @@ begin_function_decl
 specifier|extern
 name|double
 name|random_uniform11
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 function_decl|;
 end_function_decl
 
@@ -442,7 +446,9 @@ begin_function_decl
 specifier|extern
 name|double
 name|random_gaussian
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 function_decl|;
 end_function_decl
 

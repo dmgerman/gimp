@@ -15,33 +15,16 @@ begin_comment
 comment|/*  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  *  */
 end_comment
 
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|SOLO_COMPILE
-end_ifndef
-
 begin_include
 include|#
 directive|include
 file|"config.h"
 end_include
 
-begin_endif
-endif|#
-directive|endif
-end_endif
-
 begin_include
 include|#
 directive|include
 file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|"maze.h"
 end_include
 
 begin_include
@@ -60,6 +43,12 @@ begin_include
 include|#
 directive|include
 file|"libgimp/stdplugins-intl.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"maze.h"
 end_include
 
 begin_decl_stmt
