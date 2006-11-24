@@ -264,7 +264,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b6fe3290103
+DECL|enum|__anon275868e50103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -464,7 +464,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b6fe3290203
+DECL|enum|__anon275868e50203
 block|{
 DECL|enumerator|PTYP_NOT_SUPPORTED
 name|PTYP_NOT_SUPPORTED
@@ -524,7 +524,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b6fe3290303
+DECL|enum|__anon275868e50303
 block|{
 DECL|enumerator|XJT_IMAGE_PARASITE
 name|XJT_IMAGE_PARASITE
@@ -554,7 +554,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b6fe3290403
+DECL|enum|__anon275868e50403
 block|{
 DECL|enumerator|XJT_RGB
 name|XJT_RGB
@@ -576,7 +576,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b6fe3290503
+DECL|enum|__anon275868e50503
 block|{
 DECL|enumerator|XJT_PATHTYPE_UNDEF
 name|XJT_PATHTYPE_UNDEF
@@ -596,7 +596,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b6fe3290603
+DECL|enum|__anon275868e50603
 block|{
 DECL|enumerator|XJT_UNIT_PIXEL
 name|XJT_UNIT_PIXEL
@@ -631,7 +631,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b6fe3290703
+DECL|enum|__anon275868e50703
 block|{
 DECL|enumerator|XJT_NORMAL_MODE
 name|XJT_NORMAL_MODE
@@ -756,7 +756,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6fe3290808
+DECL|struct|__anon275868e50808
 block|{
 DECL|member|prop_id
 name|t_proptype
@@ -792,7 +792,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6fe3290908
+DECL|struct|__anon275868e50908
 block|{
 DECL|member|int_val1
 name|gint32
@@ -841,7 +841,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6fe3290a08
+DECL|struct|__anon275868e50a08
 block|{
 DECL|member|parasite_type
 name|t_parasitetype
@@ -878,7 +878,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6fe3290b08
+DECL|struct|__anon275868e50b08
 block|{
 DECL|member|path_type
 name|gint32
@@ -928,7 +928,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6fe3290c08
+DECL|struct|__anon275868e50c08
 block|{
 DECL|member|active_channel
 name|gint
@@ -1002,7 +1002,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6fe3290d08
+DECL|struct|__anon275868e50d08
 block|{
 DECL|member|active_layer
 name|gint
@@ -1087,7 +1087,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6fe3290e08
+DECL|struct|__anon275868e50e08
 block|{
 DECL|member|position
 name|gint32
@@ -1111,7 +1111,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6fe3290f08
+DECL|struct|__anon275868e50f08
 block|{
 DECL|member|version
 name|gchar
@@ -1873,6 +1873,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 DECL|function|p_system (const gchar * cmd)
 name|int
 name|p_system
@@ -2794,6 +2795,7 @@ comment|/* -- type transformer routines XJT -- GIMP internal enums -------------
 end_comment
 
 begin_function
+specifier|static
 name|gint32
 DECL|function|p_to_GimpOrientation (gint32 orientation)
 name|p_to_GimpOrientation
@@ -2817,6 +2819,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|gint32
 DECL|function|p_to_XJTOrientation (gint32 orientation)
 name|p_to_XJTOrientation
@@ -2840,6 +2843,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|GimpLayerModeEffects
 DECL|function|p_to_GimpLayerModeEffects (XJTLayerModeEffects intype)
 name|p_to_GimpLayerModeEffects
@@ -3032,6 +3036,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|XJTLayerModeEffects
 DECL|function|p_to_XJTLayerModeEffects (GimpLayerModeEffects intype)
 name|p_to_XJTLayerModeEffects
@@ -3224,6 +3229,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|gint32
 DECL|function|p_to_GimpPathType (XJTPathType intype)
 name|p_to_GimpPathType
@@ -3290,6 +3296,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|XJTPathType
 DECL|function|p_to_XJTPathType (gint32 intype)
 name|p_to_XJTPathType
@@ -3360,6 +3367,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|GimpUnit
 DECL|function|p_to_GimpUnit (XJTUnitType intype)
 name|p_to_GimpUnit
@@ -3458,6 +3466,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|XJTUnitType
 DECL|function|p_to_XJTUnitType (GimpUnit intype)
 name|p_to_XJTUnitType
@@ -4080,6 +4089,7 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
+specifier|static
 name|gchar
 modifier|*
 DECL|function|p_float_to_str (gdouble flt_val)
@@ -4197,6 +4207,7 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
+specifier|static
 name|gchar
 modifier|*
 DECL|function|p_namedup (const gchar * name)
@@ -4390,6 +4401,7 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
+specifier|static
 name|gchar
 modifier|*
 DECL|function|p_write_prop_string (t_proptype proptype,t_param_prop * param,gint wr_all_prp)
@@ -5230,6 +5242,7 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
+specifier|static
 name|gint
 DECL|function|p_write_parasite (const gchar * dirname,FILE * fp,GimpParasite * parasite,gint wr_all_prp)
 name|p_write_parasite
@@ -5516,6 +5529,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|p_write_image_paths (FILE * fp,gint32 image_id,gint wr_all_prp)
 name|p_write_image_paths
@@ -5849,6 +5863,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|p_write_image_parasites (const gchar * dirname,FILE * fp,gint32 image_id,gint wr_all_prp)
 name|p_write_image_parasites
@@ -5970,6 +5985,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|p_write_drawable_parasites (const gchar * dirname,FILE * fp,gint32 drawable_id,gint wr_all_prp)
 name|p_write_drawable_parasites
@@ -7373,7 +7389,7 @@ name|l_wr_all_prp
 operator|=
 name|FALSE
 expr_stmt|;
-comment|/* FALSE write only non-default properties                               * TRUE  write all properties (should be used for DEBUG only) 			      */
+comment|/* FALSE write only non-default properties                               * TRUE  write all properties (should be used for DEBUG only)                               */
 name|global_parasite_id
 operator|=
 literal|0
@@ -8413,9 +8429,10 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|p_new_layer_prop (void)
+specifier|static
 name|t_layer_props
 modifier|*
+DECL|function|p_new_layer_prop (void)
 name|p_new_layer_prop
 parameter_list|(
 name|void
@@ -8674,9 +8691,10 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|p_new_channel_prop (void)
+specifier|static
 name|t_channel_props
 modifier|*
+DECL|function|p_new_channel_prop (void)
 name|p_new_channel_prop
 parameter_list|(
 name|void
@@ -8901,9 +8919,10 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|p_new_guide_prop (void)
+specifier|static
 name|t_guide_props
 modifier|*
+DECL|function|p_new_guide_prop (void)
 name|p_new_guide_prop
 parameter_list|(
 name|void
@@ -8956,9 +8975,10 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|p_new_parasite_prop (void)
+specifier|static
 name|t_parasite_props
 modifier|*
+DECL|function|p_new_parasite_prop (void)
 name|p_new_parasite_prop
 parameter_list|(
 name|void
@@ -9031,9 +9051,10 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|p_new_path_prop (void)
+specifier|static
 name|t_path_props
 modifier|*
+DECL|function|p_new_path_prop (void)
 name|p_new_path_prop
 parameter_list|(
 name|void
@@ -9133,9 +9154,10 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|p_new_image_prop (void)
+specifier|static
 name|t_image_props
 modifier|*
+DECL|function|p_new_image_prop (void)
 name|p_new_image_prop
 parameter_list|(
 name|void
@@ -11008,6 +11030,7 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
+specifier|static
 name|t_parasite_props
 modifier|*
 DECL|function|p_find_parasite (t_parasite_props * parasite_props,gint32 parasite_id)
@@ -11128,6 +11151,7 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
+specifier|static
 name|gint
 DECL|function|p_create_and_attach_parasite (gint32 gimp_obj_id,const gchar * dirname,t_parasite_props * parasite_props)
 name|p_create_and_attach_parasite
@@ -11445,6 +11469,7 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
+specifier|static
 name|void
 DECL|function|p_check_and_add_parasite (gint32 gimp_obj_id,const gchar * dirname,t_parasite_props * parasite_props,gint32 pos,t_parasitetype parasite_type)
 name|p_check_and_add_parasite
@@ -11533,8 +11558,9 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|p_scann_layer_prop (gchar * scan_ptr,t_image_props * image_prop)
+specifier|static
 name|gint
+DECL|function|p_scann_layer_prop (gchar * scan_ptr,t_image_props * image_prop)
 name|p_scann_layer_prop
 parameter_list|(
 name|gchar
@@ -11949,8 +11975,9 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|p_scann_channel_prop (const gchar * scan_ptr,t_image_props * image_prop)
+specifier|static
 name|gint
+DECL|function|p_scann_channel_prop (const gchar * scan_ptr,t_image_props * image_prop)
 name|p_scann_channel_prop
 parameter_list|(
 specifier|const
@@ -12355,8 +12382,9 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|p_scann_image_prop (gchar * scan_ptr,t_image_props * image_prop)
+specifier|static
 name|gint
+DECL|function|p_scann_image_prop (gchar * scan_ptr,t_image_props * image_prop)
 name|p_scann_image_prop
 parameter_list|(
 name|gchar
@@ -12775,8 +12803,9 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|p_scann_parasite_prop (const gchar * scan_ptr,t_image_props * image_prop)
+specifier|static
 name|gint
+DECL|function|p_scann_parasite_prop (const gchar * scan_ptr,t_image_props * image_prop)
 name|p_scann_parasite_prop
 parameter_list|(
 specifier|const
@@ -12981,8 +13010,9 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|p_scann_path_prop (gchar * scan_ptr,t_image_props * image_prop)
+specifier|static
 name|gint
+DECL|function|p_scann_path_prop (gchar * scan_ptr,t_image_props * image_prop)
 name|p_scann_path_prop
 parameter_list|(
 name|gchar
@@ -13189,7 +13219,7 @@ name|flt_val_list
 expr_stmt|;
 break|break;
 default|default :
-comment|/* fprintf(stderr, "XJT: PRP file scanned bad line:\n%s\n", scan_ptr); */
+comment|/* fprintf (stderr, "XJT: PRP file scanned bad line:\n%s\n", scan_ptr); */
 comment|/* return -1; */
 comment|/* skip unknow tokens */
 break|break;
@@ -13207,6 +13237,7 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
+specifier|static
 name|void
 DECL|function|p_add_paths (gint32 image_id,t_path_props * path_props)
 name|p_add_paths
@@ -13408,6 +13439,7 @@ comment|/* end p_add_paths */
 end_comment
 
 begin_function
+specifier|static
 name|gchar
 modifier|*
 DECL|function|p_load_linefile (const gchar * filename,gint32 * len)
@@ -13564,6 +13596,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|gint32
 DECL|function|p_next_lineindex (const gchar * file_buff,gint32 max_len,gint32 pos)
 name|p_next_lineindex
@@ -13638,9 +13671,10 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|p_load_prop_file (const gchar * prop_filename)
+specifier|static
 name|t_image_props
 modifier|*
+DECL|function|p_load_prop_file (const gchar * prop_filename)
 name|p_load_prop_file
 parameter_list|(
 specifier|const
@@ -15317,7 +15351,7 @@ operator|<
 literal|0
 condition|)
 block|{
-comment|/* in case of error add floating_selection like an ordinary layer 	   * (if patches are not installed you'll get the error for sure) 	   */
+comment|/* in case of error add floating_selection like an ordinary layer            * (if patches are not installed you'll get the error for sure)            */
 name|printf
 argument_list|(
 literal|"XJT: floating_selection is added as top-layer (attach failed)\n"

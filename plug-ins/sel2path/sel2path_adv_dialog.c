@@ -31,6 +31,12 @@ directive|include
 file|"types.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"sel2path.h"
+end_include
+
 begin_define
 DECL|macro|SCALE_WIDTH
 define|#
@@ -180,6 +186,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|gpointer
 DECL|function|def_val (gdouble default_value)
 name|def_val
