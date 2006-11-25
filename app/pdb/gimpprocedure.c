@@ -2421,7 +2421,7 @@ name|_
 argument_list|(
 literal|"Procedure '%s' has been called with an "
 literal|"invalid ID for argument '%s'. "
-literal|"Most likely a plug-in is trying"
+literal|"Most likely a plug-in is trying "
 literal|"to work on a layer that doesn't "
 literal|"exist any longer."
 argument_list|)
