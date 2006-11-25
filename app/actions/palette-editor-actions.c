@@ -332,8 +332,7 @@ argument_list|(
 literal|"Zoom all"
 argument_list|)
 block|,
-name|GIMP_ZOOM_TO
-comment|/* abused */
+name|GIMP_ZOOM_OUT_MAX
 block|,
 name|FALSE
 block|,

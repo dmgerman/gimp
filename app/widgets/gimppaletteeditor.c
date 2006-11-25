@@ -2315,6 +2315,12 @@ name|zoom_type
 condition|)
 block|{
 case|case
+name|GIMP_ZOOM_IN_MAX
+case|:
+case|case
+name|GIMP_ZOOM_IN_MORE
+case|:
+case|case
 name|GIMP_ZOOM_IN
 case|:
 name|zoom_factor
@@ -2322,6 +2328,9 @@ operator|+=
 literal|0.1
 expr_stmt|;
 break|break;
+case|case
+name|GIMP_ZOOM_OUT_MORE
+case|:
 case|case
 name|GIMP_ZOOM_OUT
 case|:
@@ -2331,9 +2340,12 @@ literal|0.1
 expr_stmt|;
 break|break;
 case|case
+name|GIMP_ZOOM_OUT_MAX
+case|:
+case|case
 name|GIMP_ZOOM_TO
 case|:
-comment|/* used as ZOOM_ALL */
+comment|/* abused as ZOOM_ALL */
 block|{
 name|gint
 name|height

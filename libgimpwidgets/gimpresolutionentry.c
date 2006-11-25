@@ -61,7 +61,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e561450103
+DECL|enum|__anon2a047ed00103
 block|{
 DECL|enumerator|WIDTH_CHANGED
 name|WIDTH_CHANGED
@@ -2631,8 +2631,8 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_resolution_entry_set_height_value (GimpResolutionEntry * gre,gdouble value)
-name|gimp_resolution_entry_set_height_value
+DECL|function|gimp_resolution_entry_set_height (GimpResolutionEntry * gre,gdouble value)
+name|gimp_resolution_entry_set_height
 parameter_list|(
 name|GimpResolutionEntry
 modifier|*

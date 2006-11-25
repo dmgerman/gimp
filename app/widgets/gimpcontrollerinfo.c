@@ -78,7 +78,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a21badf0103
+DECL|enum|__anon2b9528d40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -100,7 +100,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a21badf0203
+DECL|enum|__anon2b9528d40203
 block|{
 DECL|enumerator|EVENT_MAPPED
 name|EVENT_MAPPED
@@ -691,9 +691,12 @@ name|info
 operator|->
 name|controller
 operator|=
+name|GIMP_CONTROLLER
+argument_list|(
 name|g_value_dup_object
 argument_list|(
 name|value
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if

@@ -2604,6 +2604,12 @@ name|zoom_type
 condition|)
 block|{
 case|case
+name|GIMP_ZOOM_IN_MAX
+case|:
+case|case
+name|GIMP_ZOOM_IN_MORE
+case|:
+case|case
 name|GIMP_ZOOM_IN
 case|:
 name|editor
@@ -2632,6 +2638,9 @@ operator|/
 literal|2.0
 expr_stmt|;
 break|break;
+case|case
+name|GIMP_ZOOM_OUT_MORE
+case|:
 case|case
 name|GIMP_ZOOM_OUT
 case|:
@@ -2697,6 +2706,9 @@ operator|-
 name|page_size
 expr_stmt|;
 break|break;
+case|case
+name|GIMP_ZOOM_OUT_MAX
+case|:
 case|case
 name|GIMP_ZOOM_TO
 case|:
