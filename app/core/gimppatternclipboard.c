@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf4d6af0103
+DECL|enum|__anon2ae06aee0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -439,12 +439,9 @@ name|pattern
 operator|->
 name|gimp
 operator|=
-name|GIMP
-argument_list|(
 name|g_value_get_object
 argument_list|(
 name|value
-argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;

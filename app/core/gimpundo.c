@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d62efc0103
+DECL|enum|__anon2bacbed50103
 block|{
 DECL|enumerator|POP
 name|POP
@@ -105,7 +105,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d62efc0203
+DECL|enum|__anon2bacbed50203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -913,10 +913,6 @@ name|undo
 operator|->
 name|image
 operator|=
-operator|(
-name|GimpImage
-operator|*
-operator|)
 name|g_value_get_object
 argument_list|(
 name|value

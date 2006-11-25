@@ -138,7 +138,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2756200a0103
+DECL|enum|__anon28faad890103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -737,12 +737,9 @@ name|status
 operator|->
 name|gimp
 operator|=
-name|GIMP
-argument_list|(
 name|g_value_get_object
 argument_list|(
 name|value
-argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;

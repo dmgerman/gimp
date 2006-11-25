@@ -115,7 +115,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b7579c0103
+DECL|enum|__anon28e4ed5e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -131,7 +131,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b7579c0203
+DECL|enum|__anon28e4ed5e0203
 block|{
 DECL|enumerator|BOOK_ADDED
 name|BOOK_ADDED
@@ -888,12 +888,9 @@ name|dock
 operator|->
 name|dialog_factory
 operator|=
-name|GIMP_DIALOG_FACTORY
-argument_list|(
 name|g_value_get_object
 argument_list|(
 name|value
-argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;

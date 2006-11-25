@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad027350103
+DECL|enum|__anon2c3537eb0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -260,12 +260,9 @@ name|GimpToolInfo
 modifier|*
 name|tool_info
 init|=
-name|GIMP_TOOL_INFO
-argument_list|(
 name|g_value_get_object
 argument_list|(
 name|value
-argument_list|)
 argument_list|)
 decl_stmt|;
 name|g_return_if_fail

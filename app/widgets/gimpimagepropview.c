@@ -130,7 +130,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon275afabd0103
+DECL|enum|__anon29b0b7a80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -726,12 +726,9 @@ name|view
 operator|->
 name|image
 operator|=
-name|GIMP_IMAGE
-argument_list|(
 name|g_value_get_object
 argument_list|(
 name|value
-argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;

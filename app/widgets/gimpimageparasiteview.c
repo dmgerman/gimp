@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a346ea30103
+DECL|enum|__anon290a26ea0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -81,7 +81,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a346ea30203
+DECL|enum|__anon290a26ea0203
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -427,12 +427,9 @@ name|view
 operator|->
 name|image
 operator|=
-name|GIMP_IMAGE
-argument_list|(
 name|g_value_get_object
 argument_list|(
 name|value
-argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
