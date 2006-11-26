@@ -1136,13 +1136,6 @@ parameter_list|)
 block|{
 return|return
 operator|(
-name|type
-argument_list|(
-name|p
-argument_list|)
-operator|==
-name|T_NUMBER
-operator|&&
 operator|(
 name|p
 operator|)
@@ -11275,7 +11268,7 @@ decl_stmt|;
 name|int
 name|len
 decl_stmt|;
-DECL|enum|__anon2ba9ea030103
+DECL|enum|__anon2b9edfbf0103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -27977,7 +27970,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon2ba9ea030208
+DECL|struct|__anon2b9edfbf0208
 specifier|static
 struct|struct
 block|{
@@ -28212,7 +28205,7 @@ value|"\016"
 end_define
 
 begin_typedef
-DECL|struct|__anon2ba9ea030308
+DECL|struct|__anon2b9edfbf0308
 typedef|typedef
 struct|struct
 block|{
