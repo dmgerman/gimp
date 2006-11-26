@@ -1136,6 +1136,13 @@ parameter_list|)
 block|{
 return|return
 operator|(
+name|type
+argument_list|(
+name|p
+argument_list|)
+operator|==
+name|T_NUMBER
+operator|&&
 operator|(
 name|p
 operator|)
@@ -3571,6 +3578,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
+name|INLINE
 name|void
 name|dump_stack_mark
 parameter_list|(
@@ -3753,6 +3761,45 @@ name|name
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_function_decl
+name|scheme
+modifier|*
+name|scheme_init_new
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_if
+if|#
+directive|if
+operator|!
+name|STANDALONE
+end_if
+
+begin_function_decl
+name|void
+name|scheme_call
+parameter_list|(
+name|scheme
+modifier|*
+name|sc
+parameter_list|,
+name|pointer
+name|func
+parameter_list|,
+name|pointer
+name|args
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_define
 DECL|macro|num_ivalue (n)
@@ -11228,7 +11275,7 @@ decl_stmt|;
 name|int
 name|len
 decl_stmt|;
-DECL|enum|__anon28cbc3190103
+DECL|enum|__anon2ba9ea030103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -27930,7 +27977,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon28cbc3190208
+DECL|struct|__anon2ba9ea030208
 specifier|static
 struct|struct
 block|{
@@ -28165,7 +28212,7 @@ value|"\016"
 end_define
 
 begin_typedef
-DECL|struct|__anon28cbc3190308
+DECL|struct|__anon2ba9ea030308
 typedef|typedef
 struct|struct
 block|{
@@ -29316,11 +29363,13 @@ directive|endif
 end_endif
 
 begin_function
-DECL|function|scheme_init_new ()
+DECL|function|scheme_init_new (void)
 name|scheme
 modifier|*
 name|scheme_init_new
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|scheme
 modifier|*
@@ -31085,10 +31134,18 @@ argument_list|)
 end_if
 
 begin_function
-DECL|function|main ()
+DECL|function|main (int argc,char ** argv)
 name|int
 name|main
-parameter_list|()
+parameter_list|(
+name|int
+name|argc
+parameter_list|,
+name|char
+modifier|*
+modifier|*
+name|argv
+parameter_list|)
 block|{
 extern|extern MacTS_main(int argc
 operator|,
