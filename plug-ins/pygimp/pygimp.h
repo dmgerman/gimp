@@ -22,34 +22,23 @@ directive|include
 file|<Python.h>
 end_include
 
-begin_if
-if|#
-directive|if
-name|PY_VERSION_HEX
-operator|<
-literal|0x020300F0
-end_if
-
-begin_define
-DECL|macro|PyBool_FromLong (v)
-define|#
-directive|define
-name|PyBool_FromLong
-parameter_list|(
-name|v
-parameter_list|)
-value|PyInt_FromLong((v) ? 1L : 0L);
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
 begin_include
 include|#
 directive|include
 file|<libgimp/gimp.h>
+end_include
+
+begin_define
+DECL|macro|_INSIDE_PYGIMP_
+define|#
+directive|define
+name|_INSIDE_PYGIMP_
+end_define
+
+begin_include
+include|#
+directive|include
+file|"pygimp-api.h"
 end_include
 
 begin_decl_stmt
@@ -198,22 +187,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_typedef
-DECL|struct|__anon2b8bcf4d0108
-typedef|typedef
-struct|struct
-block|{
-name|PyObject_HEAD
-DECL|member|ID
-name|gint32
-name|ID
-decl_stmt|;
-DECL|typedef|PyGimpImage
-block|}
-name|PyGimpImage
-typedef|;
-end_typedef
-
 begin_decl_stmt
 specifier|extern
 name|PyTypeObject
@@ -243,22 +216,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_typedef
-DECL|struct|__anon2b8bcf4d0208
-typedef|typedef
-struct|struct
-block|{
-name|PyObject_HEAD
-DECL|member|ID
-name|gint32
-name|ID
-decl_stmt|;
-DECL|typedef|PyGimpDisplay
-block|}
-name|PyGimpDisplay
-typedef|;
-end_typedef
-
 begin_decl_stmt
 specifier|extern
 name|PyTypeObject
@@ -287,33 +244,6 @@ name|ID
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_typedef
-DECL|struct|__anon2b8bcf4d0308
-typedef|typedef
-struct|struct
-block|{
-name|PyObject_HEAD
-DECL|member|ID
-name|gint32
-name|ID
-decl_stmt|;
-DECL|member|drawable
-name|GimpDrawable
-modifier|*
-name|drawable
-decl_stmt|;
-DECL|typedef|PyGimpDrawable
-DECL|typedef|PyGimpLayer
-DECL|typedef|PyGimpChannel
-block|}
-name|PyGimpDrawable
-operator|,
-name|PyGimpLayer
-operator|,
-name|PyGimpChannel
-typedef|;
-end_typedef
 
 begin_decl_stmt
 specifier|extern
@@ -407,7 +337,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon2b8bcf4d0408
+DECL|struct|__anon2bf83f000108
 typedef|typedef
 struct|struct
 block|{
@@ -464,7 +394,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon2b8bcf4d0508
+DECL|struct|__anon2bf83f000208
 typedef|typedef
 struct|struct
 block|{
@@ -534,7 +464,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon2b8bcf4d0608
+DECL|struct|__anon2bf83f000308
 typedef|typedef
 struct|struct
 block|{
@@ -579,22 +509,6 @@ name|para
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_typedef
-DECL|struct|__anon2b8bcf4d0708
-typedef|typedef
-struct|struct
-block|{
-name|PyObject_HEAD
-DECL|member|ID
-name|gint32
-name|ID
-decl_stmt|;
-DECL|typedef|PyGimpVectors
-block|}
-name|PyGimpVectors
-typedef|;
-end_typedef
 
 begin_decl_stmt
 specifier|extern

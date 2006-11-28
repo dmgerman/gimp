@@ -32,19 +32,6 @@ directive|include
 file|"pygimpcolor-api.h"
 end_include
 
-begin_define
-DECL|macro|_INSIDE_PYGIMP_
-define|#
-directive|define
-name|_INSIDE_PYGIMP_
-end_define
-
-begin_include
-include|#
-directive|include
-file|"pygimp-api.h"
-end_include
-
 begin_include
 include|#
 directive|include
@@ -8224,23 +8211,36 @@ name|_PyGimp_Functions
 name|pygimp_api_functions
 init|=
 block|{
+operator|&
+name|PyGimpImage_Type
+block|,
 name|pygimp_image_new
+block|,
+operator|&
+name|PyGimpDisplay_Type
 block|,
 name|pygimp_display_new
 block|,
+operator|&
+name|PyGimpDrawable_Type
+block|,
 name|pygimp_drawable_new
+block|,
+operator|&
+name|PyGimpLayer_Type
 block|,
 name|pygimp_layer_new
 block|,
+operator|&
+name|PyGimpChannel_Type
+block|,
 name|pygimp_channel_new
 block|,
-name|pygimp_vectors_new
-block|,
 operator|&
-name|PyGimpPDBFunction_Type
+name|PyGimpVectors_Type
 block|,
-name|pygimp_pdb_function_new
-block|}
+name|pygimp_vectors_new
+block|, }
 decl_stmt|;
 end_decl_stmt
 
@@ -8885,6 +8885,12 @@ name|PyGimpVectors_Type
 argument_list|)
 expr_stmt|;
 comment|/* for other modules */
+name|pygimp_api_functions
+operator|.
+name|pygimp_error
+operator|=
+name|pygimp_error
+expr_stmt|;
 name|PyDict_SetItemString
 argument_list|(
 name|d
