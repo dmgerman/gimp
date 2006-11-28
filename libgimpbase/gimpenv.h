@@ -19,6 +19,63 @@ end_define
 begin_decl_stmt
 name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
+ifdef|#
+directive|ifdef
+name|LIBGIMP_COMPILATION
+DECL|macro|GIMPVAR
+define|#
+directive|define
+name|GIMPVAR
+value|__declspec(dllexport)
+else|#
+directive|else
+comment|/* !LIBGIMP_COMPILATION */
+define|#
+directive|define
+name|GIMPVAR
+value|extern __declspec(dllimport)
+endif|#
+directive|endif
+comment|/* !LIBGIMP_COMPILATION */
+else|#
+directive|else
+comment|/* !G_OS_WIN32 */
+define|#
+directive|define
+name|GIMPVAR
+value|extern
+endif|#
+directive|endif
+DECL|variable|gimp_major_version
+name|GIMPVAR
+specifier|const
+name|guint
+name|gimp_major_version
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|gimp_minor_version
+name|GIMPVAR
+specifier|const
+name|guint
+name|gimp_minor_version
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|gimp_micro_version
+name|GIMPVAR
+specifier|const
+name|guint
+name|gimp_micro_version
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
 specifier|const
 name|gchar
 modifier|*

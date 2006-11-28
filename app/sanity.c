@@ -30,7 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpbase/gimpenv.h"
+file|"libgimpbase/gimpbase.h"
 end_include
 
 begin_include
@@ -44,6 +44,17 @@ include|#
 directive|include
 file|"gimp-intl.h"
 end_include
+
+begin_function_decl
+specifier|static
+name|gchar
+modifier|*
+name|sanity_check_gimp
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 specifier|static
@@ -107,9 +118,19 @@ name|gchar
 modifier|*
 name|abort_message
 init|=
-name|sanity_check_glib
+name|sanity_check_gimp
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+operator|!
+name|abort_message
+condition|)
+name|abort_message
+operator|=
+name|sanity_check_glib
+argument_list|()
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -149,6 +170,60 @@ end_function
 begin_comment
 comment|/*  private functions  */
 end_comment
+
+begin_function
+specifier|static
+name|gchar
+modifier|*
+DECL|function|sanity_check_gimp (void)
+name|sanity_check_gimp
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+if|if
+condition|(
+name|GIMP_MAJOR_VERSION
+operator|!=
+name|gimp_major_version
+operator|||
+name|GIMP_MINOR_VERSION
+operator|!=
+name|gimp_minor_version
+operator|||
+name|GIMP_MICRO_VERSION
+operator|!=
+name|gimp_micro_version
+condition|)
+block|{
+return|return
+name|g_strdup_printf
+argument_list|(
+literal|"Libgimp version mismatch!\n\n"
+literal|"The GIMP binary cannot run with a libgimp version\n"
+literal|"other than its own. This is GIMP %d.%d.%d, but the\n"
+literal|"libgimp version is %d.%d.%d.\n\n"
+literal|"Maybe you have GIMP versions in both /usr and /usr/local ?"
+argument_list|,
+name|GIMP_MAJOR_VERSION
+argument_list|,
+name|GIMP_MINOR_VERSION
+argument_list|,
+name|GIMP_MICRO_VERSION
+argument_list|,
+name|gimp_major_version
+argument_list|,
+name|gimp_minor_version
+argument_list|,
+name|gimp_micro_version
+argument_list|)
+return|;
+block|}
+return|return
+name|NULL
+return|;
+block|}
+end_function
 
 begin_function
 specifier|static
