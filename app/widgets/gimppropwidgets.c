@@ -746,7 +746,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_prop_color_button_new:  * @config:        #GimpConfig object to which property is attached.  * @property_name: Name of #GimpRGB property.  * @context:       #GimpContext to take the color management config from  * @title:         Title of the #GimpColorPanel that is to be created  * @width:         Width of color button.  * @height:        Height of color button.  * @type:          How transparency is represented.  *  * Creates a #GimpColorPanel to set and display the value of a #GimpRGB  * property.  Pressing the button brings up a color selector dialog.  *  * Return value:  A new #GimpColorPanel widget.  *  * Since GIMP 2.4  */
+comment|/**  * gimp_prop_color_button_new:  * @config:        #GimpConfig object to which property is attached.  * @property_name: Name of #GimpRGB property.  * @title:         Title of the #GimpColorPanel that is to be created  * @width:         Width of color button.  * @height:        Height of color button.  * @type:          How transparency is represented.  *  * Creates a #GimpColorPanel to set and display the value of a #GimpRGB  * property.  Pressing the button brings up a color selector dialog.  *  * Return value:  A new #GimpColorPanel widget.  *  * Since GIMP 2.4  */
 end_comment
 
 begin_function
@@ -1803,7 +1803,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278939e30108
+DECL|struct|__anon2b8d555f0108
 block|{
 DECL|member|config
 name|GObject
