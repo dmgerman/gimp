@@ -29,28 +29,8 @@ file|"gimptransformtool.h"
 end_include
 
 begin_comment
-comment|/* Quit, but define TransInfo */
+comment|/* for TransInfo */
 end_comment
-
-begin_comment
-comment|/* buffer sizes for scaling information strings (for the info dialog) */
-end_comment
-
-begin_define
-DECL|macro|MAX_INFO_BUF
-define|#
-directive|define
-name|MAX_INFO_BUF
-value|40
-end_define
-
-begin_define
-DECL|macro|TRAN_INFO_SIZE
-define|#
-directive|define
-name|TRAN_INFO_SIZE
-value|8
-end_define
 
 begin_define
 DECL|macro|GIMP_TYPE_PERSPECTIVE_CLONE_TOOL
