@@ -706,11 +706,12 @@ operator|(
 operator|(
 name|gdouble
 operator|)
+name|gimp_brush_get_spacing
+argument_list|(
 name|pipe
 operator|->
 name|current
-operator|->
-name|spacing
+argument_list|)
 operator|/
 literal|100
 operator|)

@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon289154a40103
+DECL|enum|__anon28e4479b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2097,6 +2097,10 @@ literal|"mime-type"
 argument_list|,
 literal|"application/x-gimp-brush-generated"
 argument_list|,
+literal|"spacing"
+argument_list|,
+literal|20
+argument_list|,
 literal|"shape"
 argument_list|,
 name|shape
@@ -2123,15 +2127,6 @@ name|angle
 argument_list|,
 name|NULL
 argument_list|)
-expr_stmt|;
-name|GIMP_BRUSH
-argument_list|(
-name|brush
-argument_list|)
-operator|->
-name|spacing
-operator|=
-literal|20
 expr_stmt|;
 return|return
 name|GIMP_DATA

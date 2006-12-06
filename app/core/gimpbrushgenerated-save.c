@@ -320,12 +320,13 @@ name|G_ASCII_DTOSTR_BUF_SIZE
 argument_list|,
 literal|"%f"
 argument_list|,
+name|gimp_brush_get_spacing
+argument_list|(
 name|GIMP_BRUSH
 argument_list|(
 name|brush
 argument_list|)
-operator|->
-name|spacing
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
