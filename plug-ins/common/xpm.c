@@ -39,11 +39,11 @@ begin_comment
 comment|/* For GDK_WINDOWING_WIN32 */
 end_comment
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|GDK_WINDOWING_WIN32
-end_ifdef
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|GDK_WINDOWING_X11
+end_ifndef
 
 begin_ifndef
 ifndef|#
@@ -154,7 +154,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298e4d230108
+DECL|struct|__anon2bd4df570108
 block|{
 DECL|member|threshold
 name|gint
@@ -169,7 +169,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298e4d230208
+DECL|struct|__anon2bd4df570208
 block|{
 DECL|member|r
 name|guchar
