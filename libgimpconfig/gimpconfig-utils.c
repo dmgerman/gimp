@@ -966,13 +966,10 @@ argument_list|)
 expr_stmt|;
 name|gimp_config_reset
 argument_list|(
-name|GIMP_CONFIG
-argument_list|(
 name|g_value_get_object
 argument_list|(
 operator|&
 name|value
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1192,13 +1189,10 @@ argument_list|)
 expr_stmt|;
 name|gimp_config_reset
 argument_list|(
-name|GIMP_CONFIG
-argument_list|(
 name|g_value_get_object
 argument_list|(
 operator|&
 name|value
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
