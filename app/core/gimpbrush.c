@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c85be4b0103
+DECL|enum|__anon28c84bfa0103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -84,7 +84,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c85be4b0203
+DECL|enum|__anon28c84bfa0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -430,6 +430,18 @@ name|G_TYPE_NONE
 argument_list|,
 literal|0
 argument_list|)
+expr_stmt|;
+name|object_class
+operator|->
+name|get_property
+operator|=
+name|gimp_brush_get_property
+expr_stmt|;
+name|object_class
+operator|->
+name|set_property
+operator|=
+name|gimp_brush_set_property
 expr_stmt|;
 name|object_class
 operator|->

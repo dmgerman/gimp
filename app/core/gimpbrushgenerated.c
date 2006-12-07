@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e4479b0103
+DECL|enum|__anon2c50bb3d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2099,7 +2099,7 @@ literal|"application/x-gimp-brush-generated"
 argument_list|,
 literal|"spacing"
 argument_list|,
-literal|20
+literal|20.0
 argument_list|,
 literal|"shape"
 argument_list|,
