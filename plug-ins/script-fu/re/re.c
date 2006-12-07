@@ -69,6 +69,32 @@ name|T_STRING
 value|1
 end_define
 
+begin_function_decl
+name|pointer
+name|foreign_re_match
+parameter_list|(
+name|scheme
+modifier|*
+name|sc
+parameter_list|,
+name|pointer
+name|args
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|EXPORT
+name|void
+name|init_re
+parameter_list|(
+name|scheme
+modifier|*
+name|sc
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_function
 DECL|function|set_vector_elem (pointer vec,int ielem,pointer newel)
 specifier|static
@@ -586,32 +612,20 @@ return|;
 block|}
 end_function
 
-begin_decl_stmt
-DECL|variable|utilities
-specifier|static
-name|char
-modifier|*
-name|utilities
-init|=
-literal|";; return the substring of STRING matched in MATCH-VECTOR, \n"
-literal|";; the Nth subexpression match (default 0).\n"
-literal|"(define (re-match-nth string match-vector . n)\n"
-literal|"  (let ((n (if (pair? n) (car n) 0)))\n"
-literal|"    (substring string (car (vector-ref match-vector n))\n"
-literal|"                    (cdr (vector-ref match-vector n)))))\n"
-literal|"(define (re-before-nth string match-vector . n)\n"
-literal|"  (let ((n (if (pair? n) (car n) 0)))\n"
-literal|"    (substring string 0 (car (vector-ref match-vector n)))))\n"
-literal|"(define (re-after-nth string match-vector . n)\n"
-literal|"  (let ((n (if (pair? n) (car n) 0)))\n"
-literal|"    (substring string (cdr (vector-ref match-vector n))\n"
-literal|"             (string-length string))))\n"
-decl_stmt|;
-end_decl_stmt
+begin_if
+if|#
+directive|if
+literal|0
+end_if
+
+begin_endif
+unit|static char* utilities=";; return the substring of STRING matched in MATCH-VECTOR, \n" ";; the Nth subexpression match (default 0).\n" "(define (re-match-nth string match-vector . n)\n" "  (let ((n (if (pair? n) (car n) 0)))\n" "    (substring string (car (vector-ref match-vector n))\n" "                    (cdr (vector-ref match-vector n)))))\n" "(define (re-before-nth string match-vector . n)\n" "  (let ((n (if (pair? n) (car n) 0)))\n" "    (substring string 0 (car (vector-ref match-vector n)))))\n" "(define (re-after-nth string match-vector . n)\n" "  (let ((n (if (pair? n) (car n) 0)))\n" "    (substring string (cdr (vector-ref match-vector n))\n" "             (string-length string))))\n";
+endif|#
+directive|endif
+end_endif
 
 begin_function
 DECL|function|init_re (scheme * sc)
-name|EXPORT
 name|void
 name|init_re
 parameter_list|(

@@ -318,6 +318,23 @@ directive|include
 file|<stdlib.h>
 end_include
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|__APPLE__
+end_ifndef
+
+begin_include
+include|#
+directive|include
+file|<malloc.h>
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_define
 DECL|macro|stricmp
 define|#
@@ -10577,6 +10594,12 @@ return|return
 name|EOF
 return|;
 block|}
+else|else
+block|{
+return|return
+literal|'\n'
+return|;
+block|}
 goto|goto
 name|again
 goto|;
@@ -11268,7 +11291,7 @@ decl_stmt|;
 name|int
 name|len
 decl_stmt|;
-DECL|enum|__anon2b9edfbf0103
+DECL|enum|__anon2c858df80103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -27970,7 +27993,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon2b9edfbf0208
+DECL|struct|__anon2c858df80208
 specifier|static
 struct|struct
 block|{
@@ -28205,7 +28228,7 @@ value|"\016"
 end_define
 
 begin_typedef
-DECL|struct|__anon2b9edfbf0308
+DECL|struct|__anon2c858df80308
 typedef|typedef
 struct|struct
 block|{
@@ -31116,7 +31139,7 @@ if|#
 directive|if
 name|defined
 argument_list|(
-name|macintosh
+name|__APPLE__
 argument_list|)
 operator|&&
 operator|!
