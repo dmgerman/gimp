@@ -1431,15 +1431,6 @@ condition|(
 name|tool_info
 operator|->
 name|options_presets
-operator|&&
-name|gimp_container_num_children
-argument_list|(
-name|tool_info
-operator|->
-name|options_presets
-argument_list|)
-operator|>
-literal|0
 condition|)
 block|{
 name|gchar
