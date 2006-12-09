@@ -136,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1ce3590103
+DECL|enum|__anon27b1bb930103
 block|{
 DECL|enumerator|PSD_UNKNOWN_IMAGE
 name|PSD_UNKNOWN_IMAGE
@@ -324,7 +324,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1ce3590208
+DECL|struct|__anon27b1bb930208
 block|{
 DECL|member|hRes
 name|Fixed
@@ -574,7 +574,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2a1ce3590308
+DECL|struct|__anon27b1bb930308
 block|{
 DECL|member|signature
 name|gchar
@@ -9329,7 +9329,7 @@ condition|)
 block|{
 name|printf
 argument_list|(
-literal|"PSD: The GIMP only supports 8-bit or 1-bit deep PSD images "
+literal|"PSD: GIMP only supports 8-bit or 1-bit deep PSD images "
 literal|"at this time.\n"
 argument_list|)
 expr_stmt|;

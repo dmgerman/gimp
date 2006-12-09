@@ -357,7 +357,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dbe57d0108
+DECL|struct|__anon28c1c4070108
 block|{
 DECL|member|raw
 name|gint
@@ -388,7 +388,7 @@ DECL|macro|SAVE_COMMENT_STRING
 define|#
 directive|define
 name|SAVE_COMMENT_STRING
-value|"# CREATOR: The GIMP's PNM Filter Version 1.1\n"
+value|"# CREATOR: GIMP PNM Filter Version 1.1\n"
 end_define
 
 begin_comment

@@ -343,7 +343,7 @@ comment|/* Data structure holding data between runs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon27d65f070108
+DECL|struct|__anon2c79bf600108
 typedef|typedef
 struct|struct
 block|{
@@ -390,7 +390,7 @@ comment|/* The dialog information */
 end_comment
 
 begin_typedef
-DECL|struct|__anon27d65f070208
+DECL|struct|__anon2c79bf600208
 typedef|typedef
 struct|struct
 block|{
@@ -480,7 +480,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/* We create a DIB section to hold the grabbed area. The scanlines in  * DIB sections are aligned ona LONG (four byte) boundary. Its pixel  * data is in RGB (BGR actually) format, three bytes per pixel.  *  * The GIMP uses no alignment for its pixel regions. The GIMP image we  * create is of type RGB, i.e. three bytes per pixel, too. Thus in  * order to be able to quickly transfer all of the image at a time, we  * must use a DIB section and pixel region the scanline width in  * bytes of which is evenly divisible with both 3 and 4. I.e. it must  * be a multiple of 12 bytes, or in pixels, a multiple of four pixels.  */
+comment|/* We create a DIB section to hold the grabbed area. The scanlines in  * DIB sections are aligned ona LONG (four byte) boundary. Its pixel  * data is in RGB (BGR actually) format, three bytes per pixel.  *  * GIMP uses no alignment for its pixel regions. The GIMP image we  * create is of type RGB, i.e. three bytes per pixel, too. Thus in  * order to be able to quickly transfer all of the image at a time, we  * must use a DIB section and pixel region the scanline width in  * bytes of which is evenly divisible with both 3 and 4. I.e. it must  * be a multiple of 12 bytes, or in pixels, a multiple of four pixels.  */
 end_comment
 
 begin_define

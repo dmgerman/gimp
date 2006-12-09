@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * Multiple-image Network Graphics (MNG) plug-in for The GIMP -- an image  * manipulation program  *  * Copyright (C) 2002 S. Mukund<muks@mukund.org>  * Portions are copyright of the authors of the file-gif-save, file-png-save  * and file-jpeg-save plug-ins' code. The exact ownership of these code  * fragments has not been determined.  *  * This work was sponsored by Xinit Systems Limited, UK.  * http://www.xinitsystems.com/  *  * THIS SOURCE CODE DOES NOT INCLUDE ANY FUNCTIONALITY FOR READING  * OR WRITING CONTENT IN THE GIF IMAGE FORMAT.  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  * --  *  * For now, this MNG plug-in can only save images. It cannot load images.  * Save your working copy as .xcf and use this for "exporting" your images  * to MNG. Supports animation the same way as animated GIFs. Supports alpha  * transparency. Uses the libmng library (http://www.libmng.com/).  * The MIME content-type for MNG images is video/x-mng for now. Make sure  * your web-server is configured appropriately if you want to serve MNG  * images.  *  * Since libmng cannot write PNG, JNG and delta PNG chunks at this time  * (when this text was written), this plug-in uses libpng and jpeglib to  * create the data for the chunks.  *  */
+comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * Multiple-image Network Graphics (MNG) plug-in  *  * Copyright (C) 2002 S. Mukund<muks@mukund.org>  * Portions are copyright of the authors of the file-gif-save, file-png-save  * and file-jpeg-save plug-ins' code. The exact ownership of these code  * fragments has not been determined.  *  * This work was sponsored by Xinit Systems Limited, UK.  * http://www.xinitsystems.com/  *  * THIS SOURCE CODE DOES NOT INCLUDE ANY FUNCTIONALITY FOR READING  * OR WRITING CONTENT IN THE GIF IMAGE FORMAT.  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  * --  *  * For now, this MNG plug-in can only save images. It cannot load images.  * Save your working copy as .xcf and use this for "exporting" your images  * to MNG. Supports animation the same way as animated GIFs. Supports alpha  * transparency. Uses the libmng library (http://www.libmng.com/).  * The MIME content-type for MNG images is video/x-mng for now. Make sure  * your web-server is configured appropriately if you want to serve MNG  * images.  *  * Since libmng cannot write PNG, JNG and delta PNG chunks at this time  * (when this text was written), this plug-in uses libpng and jpeglib to  * create the data for the chunks.  *  */
 end_comment
 
 begin_include
@@ -241,7 +241,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c0abc90103
+DECL|enum|__anon2906282d0103
 block|{
 DECL|enumerator|CHUNKS_PNG_D
 name|CHUNKS_PNG_D
@@ -260,7 +260,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c0abc90203
+DECL|enum|__anon2906282d0203
 block|{
 DECL|enumerator|DISPOSE_COMBINE
 name|DISPOSE_COMBINE
@@ -2358,7 +2358,7 @@ name|MNG_TEXT_TITLE
 argument_list|,
 literal|22
 argument_list|,
-literal|"Created using The GIMP"
+literal|"Created using GIMP"
 argument_list|)
 operator|)
 operator|!=

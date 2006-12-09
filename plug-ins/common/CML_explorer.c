@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * CML_explorer.c -- This is a plug-in for The GIMP 1.0  * Time-stamp:<2000-02-13 18:18:37 yasuhiro>  * Copyright (C) 1997 Shuji Narazaki<narazaki@InetQ.or.jp>  * Version: 1.0.11  * URL: http://www.inetq.or.jp/~narazaki/TheGIMP/  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * Comment:  *  CML is the abbreviation of Coupled-Map Lattice that is a model of  *  complex systems, proposed by a physicist[1,2].  *  *  Similar models are summaried as follows:  *  *                      Value    Time     Space  *  Coupled-Map Lattice cont.    discrete discrete  *  Celluar Automata    discrete discrete discrete  *  Diffrential Eq.     cont.    cont.    cont.  *  *  (But this program uses a parameter: hold-rate to avoid very fast changes.  *  Thus time is rather continuous than discrete.  *  Yes, this change to model changes the output completely.)  *  *  References:  *  1. Kunihiko Kaneko, Period-doubling of kind-antikink patterns,  *     quasi-periodicity in antiferro-like structures and spatial  *     intermittency in coupled map lattices -- Toward a prelude to a  *     "field theory of chaos", Prog. Theor. Phys. 72 (1984) 480.  *  *  2. Kunihiko Kaneko ed., Theory and Applications of Coupled Map  *     Lattices (Wiley, 1993).  *  *  About Parameter File:  *  I assume that the possible longest line in CMP parameter file is 1023.  *  Please read CML_save_to_file_callback if you want know details of syntax.  *  *  Format version 1.0 starts with:  *    ; This is a parameter file for CML_explorer  *    ; File format version: 1.0  *    ;  *      Hue  *  *  The old format for CML_explorer included in gimp-0.99.[89] is:  *    ; CML parameter file (version: 1.0)  *    ; Hue  *  * (This file format is interpreted as format version 0.99 now.)  *  * Thanks:  *  This version contains patches from:  *    Tim Mooney<mooney@dogbert.cc.ndsu.NoDak.edu>  *    Sean P Cier<scier@andrew.cmu.edu>  *    David Mosberger-Tang<davidm@azstarnet.com>  *    Michael Sweet<mike@easysw.com>  *  */
+comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * CML_explorer.c  * Time-stamp:<2000-02-13 18:18:37 yasuhiro>  * Copyright (C) 1997 Shuji Narazaki<narazaki@InetQ.or.jp>  * Version: 1.0.11  * URL: http://www.inetq.or.jp/~narazaki/TheGIMP/  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * Comment:  *  CML is the abbreviation of Coupled-Map Lattice that is a model of  *  complex systems, proposed by a physicist[1,2].  *  *  Similar models are summaried as follows:  *  *                      Value    Time     Space  *  Coupled-Map Lattice cont.    discrete discrete  *  Celluar Automata    discrete discrete discrete  *  Diffrential Eq.     cont.    cont.    cont.  *  *  (But this program uses a parameter: hold-rate to avoid very fast changes.  *  Thus time is rather continuous than discrete.  *  Yes, this change to model changes the output completely.)  *  *  References:  *  1. Kunihiko Kaneko, Period-doubling of kind-antikink patterns,  *     quasi-periodicity in antiferro-like structures and spatial  *     intermittency in coupled map lattices -- Toward a prelude to a  *     "field theory of chaos", Prog. Theor. Phys. 72 (1984) 480.  *  *  2. Kunihiko Kaneko ed., Theory and Applications of Coupled Map  *     Lattices (Wiley, 1993).  *  *  About Parameter File:  *  I assume that the possible longest line in CMP parameter file is 1023.  *  Please read CML_save_to_file_callback if you want know details of syntax.  *  *  Format version 1.0 starts with:  *    ; This is a parameter file for CML_explorer  *    ; File format version: 1.0  *    ;  *      Hue  *  *  The old format for CML_explorer included in gimp-0.99.[89] is:  *    ; CML parameter file (version: 1.0)  *    ; Hue  *  * (This file format is interpreted as format version 0.99 now.)  *  * Thanks:  *  This version contains patches from:  *    Tim Mooney<mooney@dogbert.cc.ndsu.NoDak.edu>  *    Sean P Cier<scier@andrew.cmu.edu>  *    David Mosberger-Tang<davidm@azstarnet.com>  *    Michael Sweet<mike@easysw.com>  *  */
 end_comment
 
 begin_include
@@ -210,7 +210,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon28dd50fc0103
+DECL|enum|__anon2758f37e0103
 block|{
 DECL|enumerator|CML_KEEP_VALUES
 name|CML_KEEP_VALUES
@@ -339,7 +339,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon28dd50fc0203
+DECL|enum|__anon2758f37e0203
 block|{
 DECL|enumerator|COMP_NONE
 name|COMP_NONE
@@ -484,7 +484,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon28dd50fc0303
+DECL|enum|__anon2758f37e0303
 block|{
 DECL|enumerator|STANDARD
 name|STANDARD
@@ -589,7 +589,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon28dd50fc0403
+DECL|enum|__anon2758f37e0403
 block|{
 DECL|enumerator|CML_INITIAL_RANDOM_INDEPENDENT
 name|CML_INITIAL_RANDOM_INDEPENDENT
@@ -687,7 +687,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dd50fc0508
+DECL|struct|__anon2758f37e0508
 block|{
 DECL|member|function
 name|gint
@@ -760,7 +760,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dd50fc0608
+DECL|struct|__anon2758f37e0608
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -1573,7 +1573,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dd50fc0708
+DECL|struct|__anon2758f37e0708
 block|{
 DECL|member|widget
 name|GtkWidget

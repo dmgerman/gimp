@@ -4,7 +4,7 @@ comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* SVG loader for The GIMP  * (C) Copyright 2003  Dom Lachowicz<cinamod@hotmail.com>  *  * Largely rewritten in September 2003 by Sven Neumann<sven@gimp.org>  */
+comment|/* SVG loader plug-in  * (C) Copyright 2003  Dom Lachowicz<cinamod@hotmail.com>  *  * Largely rewritten in September 2003 by Sven Neumann<sven@gimp.org>  */
 end_comment
 
 begin_include
@@ -118,7 +118,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27964ad40108
+DECL|struct|__anon293f4b980108
 block|{
 DECL|member|resolution
 name|gdouble

@@ -419,7 +419,7 @@ comment|/* Currently unused... Eventually may be used  * to track dialog data.  
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c3096c10108
+DECL|struct|__anon28d13d300108
 typedef|typedef
 struct|struct
 block|{
@@ -1411,7 +1411,7 @@ comment|/* Data used to carry data between each of  * the callback function call
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c3096c10208
+DECL|struct|__anon28d13d300208
 typedef|typedef
 struct|struct
 block|{
@@ -2110,7 +2110,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  * oneBytePerSampleTransferCallback  *  * The following function is called for each memory  * block that is transferred from the data source if  * the image type is Grayscale or RGB.  This transfer  * mode is quicker than the modes that require translation  * from a greater number of bits per sample down to the  * 8 bits per sample understood by The GIMP.  */
+comment|/*  * oneBytePerSampleTransferCallback  *  * The following function is called for each memory  * block that is transferred from the data source if  * the image type is Grayscale or RGB.  This transfer  * mode is quicker than the modes that require translation  * from a greater number of bits per sample down to the  * 8 bits per sample understood by GIMP.  */
 end_comment
 
 begin_function
@@ -2187,7 +2187,7 @@ operator|*
 name|bytesPerPixel
 argument_list|)
 expr_stmt|;
-comment|/* The bytes coming from the source may not be padded in    * a way that The GIMP is terribly happy with.  It is    * possible to transfer row by row, but that is particularly    * expensive in terms of performance.  It is much cheaper    * to rearrange the data and transfer it in one large chunk.    * The next chunk of code rearranges the incoming data into    * a non-padded chunk for The GIMP.    */
+comment|/* The bytes coming from the source may not be padded in    * a way that GIMP is terribly happy with.  It is    * possible to transfer row by row, but that is particularly    * expensive in terms of performance.  It is much cheaper    * to rearrange the data and transfer it in one large chunk.    * The next chunk of code rearranges the incoming data into    * a non-padded chunk for GIMP.    */
 name|srcBuf
 operator|=
 operator|(
@@ -2397,7 +2397,7 @@ operator|->
 name|SamplesPerPixel
 argument_list|)
 expr_stmt|;
-comment|/* The bytes coming from the source may not be padded in    * a way that The GIMP is terribly happy with.  It is    * possible to transfer row by row, but that is particularly    * expensive in terms of performance.  It is much cheaper    * to rearrange the data and transfer it in one large chunk.    * The next chunk of code rearranges the incoming data into    * a non-padded chunk for The GIMP.  This function must also    * reduce from multiple bytes per sample down to single byte    * per sample.    */
+comment|/* The bytes coming from the source may not be padded in    * a way that GIMP is terribly happy with.  It is    * possible to transfer row by row, but that is particularly    * expensive in terms of performance.  It is much cheaper    * to rearrange the data and transfer it in one large chunk.    * The next chunk of code rearranges the incoming data into    * a non-padded chunk for GIMP.  This function must also    * reduce from multiple bytes per sample down to single byte    * per sample.    */
 comment|/* Work through the rows */
 for|for
 control|(
@@ -2587,7 +2587,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  * palettedTransferCallback  *  * The following function is called for each memory  * block that is transferred from the data source if  * the image type is paletted.  This does not create  * an indexed image type in The GIMP because for some  * reason it does not allow creation of a specific  * palette.  This function will create an RGB or Gray  * image and use the palette to set the details of  * the pixels.  */
+comment|/*  * palettedTransferCallback  *  * The following function is called for each memory  * block that is transferred from the data source if  * the image type is paletted.  This does not create  * an indexed image type in GIMP because for some  * reason it does not allow creation of a specific  * palette.  This function will create an RGB or Gray  * image and use the palette to set the details of  * the pixels.  */
 end_comment
 
 begin_function
