@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27f724670103
+DECL|enum|__anon2c75b05b0103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -1051,7 +1051,7 @@ name|gimp_thumbnail_save_failure
 argument_list|(
 name|thumbnail
 argument_list|,
-literal|"The GIMP "
+literal|"GIMP "
 name|GIMP_VERSION
 argument_list|,
 operator|&
@@ -2908,7 +2908,7 @@ name|thumbnail
 argument_list|,
 name|pixbuf
 argument_list|,
-literal|"The GIMP "
+literal|"GIMP "
 name|GIMP_VERSION
 argument_list|,
 name|error

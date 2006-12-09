@@ -1094,11 +1094,11 @@ return|return
 name|g_strdup_printf
 argument_list|(
 literal|"%s\n\n"
-literal|"The GIMP requires Gtk+ version %d.%d.%d or later.\n"
-literal|"Installed Gtk+ version is %d.%d.%d.\n\n"
+literal|"GIMP requires GTK+ version %d.%d.%d or later.\n"
+literal|"Installed GTK+ version is %d.%d.%d.\n\n"
 literal|"Somehow you or your software packager managed\n"
-literal|"to install The GIMP with an older Gtk+ version.\n\n"
-literal|"Please upgrade to Gtk+ version %d.%d.%d or later."
+literal|"to install GIMP with an older GTK+ version.\n\n"
+literal|"Please upgrade to GTK+ version %d.%d.%d or later."
 argument_list|,
 name|mismatch
 argument_list|,
