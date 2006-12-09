@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * Motion Blur plug-in for GIMP 0.99  * Copyright (C) 1997 Daniel Skarda (0rfelyus@atrey.karlin.mff.cuni.cz)  *  * This plug-in is port of Motion Blur plug-in for GIMP 0.54 by  * Thorsten Martinsen  *      Copyright (C) 1996 Torsten Martinsen<torsten@danbbs.dk>  *      Bresenham algorithm stuff hacked from HP2xx written by  *      Heinz W. Werntges  *      Changes for version 1.11/1.12 Copyright (C) 1996 Federico Mena Quintero  *      quartic@polloux.fciencias.unam.mx  *  * I also used some code from Whirl and Pinch plug-in by Federico Mena Quintero  *      (federico@nuclecu.unam.mx)  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * Motion Blur plug-in for GIMP 0.99  * Copyright (C) 1997 Daniel Skarda (0rfelyus@atrey.karlin.mff.cuni.cz)  *  * This plug-in is port of Motion Blur plug-in for GIMP 0.54 by  * Thorsten Martinsen  *      Copyright (C) 1996 Torsten Martinsen<torsten@danbbs.dk>  *      Bresenham algorithm stuff hacked from HP2xx written by  *      Heinz W. Werntges  *      Changes for version 1.11/1.12 Copyright (C) 1996 Federico Mena Quintero  *      quartic@polloux.fciencias.unam.mx  *  * I also used some code from Whirl and Pinch plug-in by Federico Mena Quintero  *      (federico@nuclecu.unam.mx)  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_comment
@@ -58,7 +58,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29fc58d20103
+DECL|enum|__anon2794bf9f0103
 block|{
 DECL|enumerator|MBLUR_LINEAR
 name|MBLUR_LINEAR
@@ -82,7 +82,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fc58d20208
+DECL|struct|__anon2794bf9f0208
 block|{
 DECL|member|mblur_type
 name|gint32
