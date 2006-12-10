@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28dc0e5f0103
+DECL|enum|__anon29bf639a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -869,16 +869,6 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|g_file_test
-argument_list|(
-name|filename
-argument_list|,
-name|G_FILE_TEST_EXISTS
-argument_list|)
-condition|)
-block|{
-if|if
-condition|(
 name|be_verbose
 condition|)
 name|g_print
@@ -911,6 +901,16 @@ argument_list|,
 name|error
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|retval
+condition|)
+block|{
 name|gimp_list_reverse
 argument_list|(
 name|GIMP_LIST
@@ -955,11 +955,6 @@ name|NULL
 argument_list|)
 expr_stmt|;
 block|}
-name|g_free
-argument_list|(
-name|filename
-argument_list|)
-expr_stmt|;
 return|return
 name|retval
 return|;
