@@ -45,7 +45,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c85bc10103
+DECL|enum|__anon2b8659af0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1373,7 +1373,7 @@ name|g_object_new
 argument_list|(
 name|GIMP_TYPE_LIST
 argument_list|,
-literal|"children_type"
+literal|"children-type"
 argument_list|,
 name|children_type
 argument_list|,
@@ -1454,7 +1454,7 @@ name|g_object_new
 argument_list|(
 name|GIMP_TYPE_LIST
 argument_list|,
-literal|"children_type"
+literal|"children-type"
 argument_list|,
 name|children_type
 argument_list|,

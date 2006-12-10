@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimptoolpresets.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpeditor.h"
 end_include
 
@@ -331,7 +337,7 @@ name|gimp_container_get_child_by_index
 argument_list|(
 name|tool_info
 operator|->
-name|options_presets
+name|presets
 argument_list|,
 name|value
 argument_list|)
@@ -440,15 +446,11 @@ name|options
 decl_stmt|;
 name|options
 operator|=
-operator|(
-name|GimpToolOptions
-operator|*
-operator|)
-name|gimp_container_get_child_by_index
+name|gimp_tool_presets_get_options
 argument_list|(
 name|tool_info
 operator|->
-name|options_presets
+name|presets
 argument_list|,
 name|value
 argument_list|)
@@ -530,15 +532,11 @@ name|options
 decl_stmt|;
 name|options
 operator|=
-operator|(
-name|GimpToolOptions
-operator|*
-operator|)
-name|gimp_container_get_child_by_index
+name|gimp_tool_presets_get_options
 argument_list|(
 name|tool_info
 operator|->
-name|options_presets
+name|presets
 argument_list|,
 name|value
 argument_list|)
@@ -659,7 +657,7 @@ name|gimp_container_get_child_by_index
 argument_list|(
 name|tool_info
 operator|->
-name|options_presets
+name|presets
 argument_list|,
 name|value
 argument_list|)
@@ -672,7 +670,7 @@ name|gimp_container_remove
 argument_list|(
 name|tool_info
 operator|->
-name|options_presets
+name|presets
 argument_list|,
 name|GIMP_OBJECT
 argument_list|(
@@ -1011,7 +1009,7 @@ name|gimp_container_insert
 argument_list|(
 name|tool_info
 operator|->
-name|options_presets
+name|presets
 argument_list|,
 name|GIMP_OBJECT
 argument_list|(

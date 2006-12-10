@@ -495,9 +495,9 @@ name|GIMP_TYPE_DOCUMENT_LIST
 argument_list|,
 literal|"name"
 argument_list|,
-literal|"document_list"
+literal|"document-list"
 argument_list|,
-literal|"children_type"
+literal|"children-type"
 argument_list|,
 name|GIMP_TYPE_IMAGEFILE
 argument_list|,

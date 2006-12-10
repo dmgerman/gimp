@@ -226,6 +226,15 @@ name|GimpDocumentList
 typedef|;
 end_typedef
 
+begin_typedef
+DECL|typedef|GimpToolPresets
+typedef|typedef
+name|struct
+name|_GimpToolPresets
+name|GimpToolPresets
+typedef|;
+end_typedef
+
 begin_comment
 comment|/*  context objects  */
 end_comment

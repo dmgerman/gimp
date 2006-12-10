@@ -76,7 +76,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c89aeb70108
+DECL|struct|__anon2a0569590108
 block|{
 DECL|member|filter
 name|GimpObjectFilterFunc
@@ -194,7 +194,7 @@ argument_list|(
 name|container
 argument_list|)
 argument_list|,
-literal|"children_type"
+literal|"children-type"
 argument_list|,
 name|gimp_container_children_type
 argument_list|(

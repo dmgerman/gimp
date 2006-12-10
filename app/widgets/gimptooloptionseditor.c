@@ -1413,7 +1413,7 @@ modifier|*
 name|editor
 parameter_list|)
 block|{
-name|GimpContainer
+name|GimpToolPresets
 modifier|*
 name|presets
 decl_stmt|;
@@ -1449,7 +1449,7 @@ name|visible_tool_options
 operator|->
 name|tool_info
 operator|->
-name|options_presets
+name|presets
 expr_stmt|;
 if|if
 condition|(
@@ -1507,7 +1507,7 @@ name|presets
 operator|=
 name|tool_info
 operator|->
-name|options_presets
+name|presets
 expr_stmt|;
 if|if
 condition|(
@@ -1628,7 +1628,10 @@ expr_stmt|;
 block|}
 name|gimp_tool_options_editor_presets_changed
 argument_list|(
+name|GIMP_CONTAINER
+argument_list|(
 name|presets
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -1704,6 +1707,8 @@ name|gimp_container_num_children
 argument_list|(
 name|container
 argument_list|)
+operator|>
+literal|0
 condition|)
 block|{
 name|restore_sensitive

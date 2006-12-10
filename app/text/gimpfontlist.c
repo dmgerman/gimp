@@ -240,7 +240,7 @@ name|g_object_new
 argument_list|(
 name|GIMP_TYPE_FONT_LIST
 argument_list|,
-literal|"children_type"
+literal|"children-type"
 argument_list|,
 name|GIMP_TYPE_FONT
 argument_list|,
