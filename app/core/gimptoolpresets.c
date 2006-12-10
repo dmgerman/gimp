@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af815e90103
+DECL|enum|__anon28dc0e5f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -226,14 +226,21 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tool_presets_init (GimpToolPresets * list)
+DECL|function|gimp_tool_presets_init (GimpToolPresets * presets)
 name|gimp_tool_presets_init
 parameter_list|(
 name|GimpToolPresets
 modifier|*
-name|list
+name|presets
 parameter_list|)
-block|{ }
+block|{
+name|presets
+operator|->
+name|tool_info
+operator|=
+name|NULL
+expr_stmt|;
+block|}
 end_function
 
 begin_function
@@ -932,7 +939,6 @@ argument_list|(
 name|list
 argument_list|)
 control|)
-block|{
 name|g_object_set
 argument_list|(
 name|list
@@ -948,7 +954,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 name|g_free
 argument_list|(
