@@ -382,12 +382,25 @@ argument_list|(
 name|progress
 argument_list|)
 decl_stmt|;
-if|if
+switch|switch
 condition|(
 name|severity
-operator|!=
+condition|)
+block|{
+case|case
 name|GIMP_MESSAGE_ERROR
-operator|&&
+case|:
+comment|/* error messages are never handled here */
+return|return
+name|FALSE
+return|;
+case|case
+name|GIMP_MESSAGE_WARNING
+case|:
+comment|/* warning messages go to the statusbar, if it's visible */
+if|if
+condition|(
+operator|!
 name|GTK_WIDGET_VISIBLE
 argument_list|(
 name|shell
@@ -395,6 +408,14 @@ operator|->
 name|statusbar
 argument_list|)
 condition|)
+return|return
+name|FALSE
+return|;
+comment|/* else fallthrough */
+case|case
+name|GIMP_MESSAGE_INFO
+case|:
+comment|/* info messages go to the statusbar, no matter if it's visible or not */
 return|return
 name|gimp_progress_message
 argument_list|(
@@ -414,9 +435,7 @@ argument_list|,
 name|message
 argument_list|)
 return|;
-return|return
-name|FALSE
-return|;
+block|}
 block|}
 end_function
 
