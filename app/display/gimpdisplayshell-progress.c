@@ -391,9 +391,7 @@ case|case
 name|GIMP_MESSAGE_ERROR
 case|:
 comment|/* error messages are never handled here */
-return|return
-name|FALSE
-return|;
+break|break;
 case|case
 name|GIMP_MESSAGE_WARNING
 case|:
@@ -408,9 +406,7 @@ operator|->
 name|statusbar
 argument_list|)
 condition|)
-return|return
-name|FALSE
-return|;
+break|break;
 comment|/* else fallthrough */
 case|case
 name|GIMP_MESSAGE_INFO
@@ -436,6 +432,9 @@ name|message
 argument_list|)
 return|;
 block|}
+return|return
+name|FALSE
+return|;
 block|}
 end_function
 
