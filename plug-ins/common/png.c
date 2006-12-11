@@ -154,7 +154,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a409eed0108
+DECL|struct|__anon2900e8800108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -201,7 +201,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a409eed0208
+DECL|struct|__anon2900e8800208
 block|{
 DECL|member|run
 name|gboolean
@@ -427,7 +427,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gboolean
+name|void
 name|load_defaults
 parameter_list|(
 name|void
@@ -480,9 +480,11 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|pngvals
+DECL|variable|defaults
+specifier|static
+specifier|const
 name|PngSaveVals
-name|pngvals
+name|defaults
 init|=
 block|{
 name|FALSE
@@ -503,6 +505,14 @@ name|TRUE
 block|,
 literal|9
 block|}
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|pngvals
+specifier|static
+name|PngSaveVals
+name|pngvals
 decl_stmt|;
 end_decl_stmt
 
@@ -7211,7 +7221,7 @@ end_function
 
 begin_function
 specifier|static
-name|gboolean
+name|void
 DECL|function|load_defaults (void)
 name|load_defaults
 parameter_list|(
@@ -7222,6 +7232,18 @@ name|GimpParasite
 modifier|*
 name|parasite
 decl_stmt|;
+name|parasite
+operator|=
+name|gimp_parasite_find
+argument_list|(
+name|PNG_DEFAULTS_PARASITE
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|parasite
+condition|)
+block|{
 name|gchar
 modifier|*
 name|def_str
@@ -7232,21 +7254,6 @@ decl_stmt|;
 name|gint
 name|num_fields
 decl_stmt|;
-name|parasite
-operator|=
-name|gimp_parasite_find
-argument_list|(
-name|PNG_DEFAULTS_PARASITE
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-operator|!
-name|parasite
-condition|)
-return|return
-name|FALSE
-return|;
 name|def_str
 operator|=
 name|g_strndup
@@ -7347,16 +7354,23 @@ name|tmpvals
 argument_list|)
 argument_list|)
 expr_stmt|;
-return|return
-name|TRUE
-return|;
+return|return;
 block|}
-else|else
-block|{
-return|return
-name|FALSE
-return|;
 block|}
+name|memcpy
+argument_list|(
+operator|&
+name|pngvals
+argument_list|,
+operator|&
+name|defaults
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|defaults
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -7465,23 +7479,9 @@ modifier|*
 name|pg
 parameter_list|)
 block|{
-if|if
-condition|(
-operator|!
 name|load_defaults
 argument_list|()
-condition|)
-block|{
-name|g_message
-argument_list|(
-name|_
-argument_list|(
-literal|"Could not load PNG defaults"
-argument_list|)
-argument_list|)
 expr_stmt|;
-return|return;
-block|}
 DECL|macro|SET_ACTIVE (field)
 define|#
 directive|define
@@ -7490,7 +7490,7 @@ parameter_list|(
 name|field
 parameter_list|)
 define|\
-value|gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (pg->field), pngvals.field)
+value|if (GTK_WIDGET_IS_SENSITIVE (pg->field)) \     gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (pg->field), pngvals.field)
 name|SET_ACTIVE
 argument_list|(
 name|interlaced
