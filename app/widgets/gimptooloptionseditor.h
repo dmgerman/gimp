@@ -143,6 +143,15 @@ name|GimpToolOptions
 modifier|*
 name|visible_tool_options
 decl_stmt|;
+DECL|member|save_queue
+name|GList
+modifier|*
+name|save_queue
+decl_stmt|;
+DECL|member|save_idle_id
+name|guint
+name|save_idle_id
+decl_stmt|;
 block|}
 struct|;
 end_struct
