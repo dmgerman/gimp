@@ -615,6 +615,13 @@ name|image
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_image_saved
+argument_list|(
+name|image
+argument_list|,
+name|uri
+argument_list|)
+expr_stmt|;
 name|documents
 operator|=
 name|GIMP_DOCUMENT_LIST

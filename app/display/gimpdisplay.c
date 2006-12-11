@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon273d66970103
+DECL|enum|__anon2923703a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1276,7 +1276,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/*  If there isn't an interface, never create a displaylay  */
+comment|/*  If there isn't an interface, never create a display  */
 if|if
 condition|(
 name|image
