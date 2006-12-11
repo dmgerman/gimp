@@ -170,9 +170,6 @@ name|GimpToolPresets
 modifier|*
 name|presets
 parameter_list|,
-name|gboolean
-name|be_verbose
-parameter_list|,
 name|GError
 modifier|*
 modifier|*
@@ -188,9 +185,6 @@ parameter_list|(
 name|GimpToolPresets
 modifier|*
 name|presets
-parameter_list|,
-name|gboolean
-name|be_verbose
 parameter_list|,
 name|GError
 modifier|*

@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimptoolinfo.h"
 end_include
 
@@ -71,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29bf639a0103
+DECL|enum|__anon27ddaa980103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -556,15 +562,12 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_tool_presets_save (GimpToolPresets * presets,gboolean be_verbose,GError ** error)
+DECL|function|gimp_tool_presets_save (GimpToolPresets * presets,GError ** error)
 name|gimp_tool_presets_save
 parameter_list|(
 name|GimpToolPresets
 modifier|*
 name|presets
-parameter_list|,
-name|gboolean
-name|be_verbose
 parameter_list|,
 name|GError
 modifier|*
@@ -572,6 +575,10 @@ modifier|*
 name|error
 parameter_list|)
 block|{
+name|Gimp
+modifier|*
+name|gimp
+decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
@@ -609,6 +616,14 @@ name|NULL
 argument_list|,
 name|FALSE
 argument_list|)
+expr_stmt|;
+name|gimp
+operator|=
+name|presets
+operator|->
+name|tool_info
+operator|->
+name|gimp
 expr_stmt|;
 name|name
 operator|=
@@ -650,6 +665,8 @@ name|footer
 decl_stmt|;
 if|if
 condition|(
+name|gimp
+operator|->
 name|be_verbose
 condition|)
 name|g_print
@@ -720,6 +737,8 @@ condition|)
 block|{
 if|if
 condition|(
+name|gimp
+operator|->
 name|be_verbose
 condition|)
 name|g_print
@@ -788,15 +807,12 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_tool_presets_load (GimpToolPresets * presets,gboolean be_verbose,GError ** error)
+DECL|function|gimp_tool_presets_load (GimpToolPresets * presets,GError ** error)
 name|gimp_tool_presets_load
 parameter_list|(
 name|GimpToolPresets
 modifier|*
 name|presets
-parameter_list|,
-name|gboolean
-name|be_verbose
 parameter_list|,
 name|GError
 modifier|*
@@ -804,6 +820,10 @@ modifier|*
 name|error
 parameter_list|)
 block|{
+name|Gimp
+modifier|*
+name|gimp
+decl_stmt|;
 name|GList
 modifier|*
 name|list
@@ -846,6 +866,22 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+name|gimp
+operator|=
+name|presets
+operator|->
+name|tool_info
+operator|->
+name|gimp
+expr_stmt|;
+name|gimp_container_clear
+argument_list|(
+name|GIMP_CONTAINER
+argument_list|(
+name|presets
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|name
 operator|=
 name|gimp_object_get_name
@@ -869,6 +905,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|gimp
+operator|->
 name|be_verbose
 condition|)
 name|g_print
@@ -892,10 +930,6 @@ argument_list|)
 argument_list|,
 name|filename
 argument_list|,
-name|presets
-operator|->
-name|tool_info
-operator|->
 name|gimp
 argument_list|,
 name|error
@@ -906,11 +940,6 @@ argument_list|(
 name|filename
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|retval
-condition|)
-block|{
 name|gimp_list_reverse
 argument_list|(
 name|GIMP_LIST
@@ -954,7 +983,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-block|}
 return|return
 name|retval
 return|;

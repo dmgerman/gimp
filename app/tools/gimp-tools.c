@@ -1223,10 +1223,6 @@ name|tool_info
 operator|->
 name|presets
 argument_list|,
-name|gimp
-operator|->
-name|be_verbose
-argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
@@ -1349,10 +1345,6 @@ argument_list|(
 name|tool_info
 operator|->
 name|presets
-argument_list|,
-name|gimp
-operator|->
-name|be_verbose
 argument_list|,
 name|NULL
 argument_list|)
