@@ -147,7 +147,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a45fadf0103
+DECL|enum|__anon27a8c9090103
 block|{
 DECL|enumerator|DOCKABLE_ADDED
 name|DOCKABLE_ADDED
@@ -1583,6 +1583,17 @@ name|dockbook
 operator|->
 name|dock
 argument_list|)
+operator|&&
+name|GIMP_IMAGE_DOCK
+argument_list|(
+name|dockbook
+operator|->
+name|dock
+argument_list|)
+operator|->
+name|ui_manager
+operator|!=
+name|NULL
 condition|)
 block|{
 specifier|const
