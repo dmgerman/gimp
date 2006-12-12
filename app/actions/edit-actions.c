@@ -1311,6 +1311,11 @@ argument_list|(
 name|redo_name
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|fade_name
+argument_list|)
+expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"edit-cut"
