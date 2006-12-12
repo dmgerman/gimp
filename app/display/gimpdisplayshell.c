@@ -275,7 +275,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27705d550103
+DECL|enum|__anon28fa53670103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -288,7 +288,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27705d550203
+DECL|enum|__anon28fa53670203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -556,7 +556,14 @@ literal|"{\n"
 literal|"  GtkMenuBar::shadow-type      = none\n"
 literal|"  GtkMenuBar::internal-padding = 0\n"
 literal|"}\n"
-literal|"widget \"*.gimp-menubar-fullscreen\" style \"fullscreen-menubar-style\""
+literal|"widget \"*.gimp-menubar-fullscreen\" style \"fullscreen-menubar-style\"\n"
+literal|"\n"
+literal|"style \"check-button-style\"\n"
+literal|"{\n"
+literal|"  GtkToggleButton::child-displacement-x = 0\n"
+literal|"  GtkToggleButton::child-displacement-y = 0\n"
+literal|"}\n"
+literal|"widget \"*\" style \"check-button-style\""
 decl_stmt|;
 end_decl_stmt
 
@@ -980,7 +987,7 @@ name|NULL
 expr_stmt|;
 name|shell
 operator|->
-name|origin_button
+name|origin
 operator|=
 name|NULL
 expr_stmt|;
@@ -2121,7 +2128,7 @@ name|gimp_display_shell_menu_position
 argument_list|,
 name|shell
 operator|->
-name|origin_button
+name|origin
 argument_list|,
 name|NULL
 argument_list|,
@@ -3292,19 +3299,10 @@ comment|/*  create the contents of the inner_table  ****************************
 comment|/*  the menu popup button  */
 name|shell
 operator|->
-name|origin_button
+name|origin
 operator|=
-name|gtk_button_new
+name|gtk_event_box_new
 argument_list|()
-expr_stmt|;
-name|GTK_WIDGET_UNSET_FLAGS
-argument_list|(
-name|shell
-operator|->
-name|origin_button
-argument_list|,
-name|GTK_CAN_FOCUS
-argument_list|)
 expr_stmt|;
 name|image
 operator|=
@@ -3321,7 +3319,7 @@ name|GTK_CONTAINER
 argument_list|(
 name|shell
 operator|->
-name|origin_button
+name|origin
 argument_list|)
 argument_list|,
 name|image
@@ -3336,7 +3334,7 @@ name|g_signal_connect
 argument_list|(
 name|shell
 operator|->
-name|origin_button
+name|origin
 argument_list|,
 literal|"button-press-event"
 argument_list|,
@@ -3352,11 +3350,11 @@ name|gimp_help_set_help_data
 argument_list|(
 name|shell
 operator|->
-name|origin_button
+name|origin
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_HELP_IMAGE_WINDOW_ORIGIN_BUTTON
+name|GIMP_HELP_IMAGE_WINDOW_ORIGIN
 argument_list|)
 expr_stmt|;
 name|shell
@@ -3822,33 +3820,23 @@ name|shell
 operator|->
 name|zoom_button
 operator|=
-name|gtk_check_button_new
-argument_list|()
-expr_stmt|;
-name|gtk_toggle_button_set_mode
+name|g_object_new
 argument_list|(
-name|GTK_TOGGLE_BUTTON
-argument_list|(
-name|shell
-operator|->
-name|zoom_button
-argument_list|)
+name|GTK_TYPE_CHECK_BUTTON
+argument_list|,
+literal|"draw-indicator"
 argument_list|,
 name|FALSE
-argument_list|)
-expr_stmt|;
-name|gtk_widget_set_size_request
-argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|shell
-operator|->
-name|zoom_button
-argument_list|)
 argument_list|,
-literal|16
+literal|"width-request"
 argument_list|,
-literal|16
+literal|18
+argument_list|,
+literal|"height-request"
+argument_list|,
+literal|18
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_UNSET_FLAGS
@@ -3925,33 +3913,23 @@ name|shell
 operator|->
 name|quick_mask_button
 operator|=
-name|gtk_check_button_new
-argument_list|()
-expr_stmt|;
-name|gtk_toggle_button_set_mode
+name|g_object_new
 argument_list|(
-name|GTK_TOGGLE_BUTTON
-argument_list|(
-name|shell
-operator|->
-name|quick_mask_button
-argument_list|)
+name|GTK_TYPE_CHECK_BUTTON
+argument_list|,
+literal|"draw-indicator"
 argument_list|,
 name|FALSE
-argument_list|)
-expr_stmt|;
-name|gtk_widget_set_size_request
-argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|shell
-operator|->
-name|quick_mask_button
-argument_list|)
 argument_list|,
-literal|16
+literal|"width-request"
 argument_list|,
-literal|16
+literal|18
+argument_list|,
+literal|"height-request"
+argument_list|,
+literal|18
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_UNSET_FLAGS
@@ -4156,7 +4134,7 @@ argument_list|)
 argument_list|,
 name|shell
 operator|->
-name|origin_button
+name|origin
 argument_list|,
 literal|0
 argument_list|,
@@ -4399,7 +4377,7 @@ name|gtk_widget_show
 argument_list|(
 name|shell
 operator|->
-name|origin_button
+name|origin
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

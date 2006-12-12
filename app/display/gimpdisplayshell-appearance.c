@@ -466,7 +466,7 @@ name|gtk_widget_show
 argument_list|(
 name|shell
 operator|->
-name|origin_button
+name|origin
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -508,7 +508,7 @@ name|gtk_widget_hide
 argument_list|(
 name|shell
 operator|->
-name|origin_button
+name|origin
 argument_list|)
 expr_stmt|;
 name|gtk_widget_hide

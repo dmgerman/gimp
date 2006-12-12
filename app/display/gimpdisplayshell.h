@@ -417,12 +417,12 @@ name|GtkWidget
 modifier|*
 name|vrule
 decl_stmt|;
-DECL|member|origin_button
+DECL|member|origin
 name|GtkWidget
 modifier|*
-name|origin_button
+name|origin
 decl_stmt|;
-comment|/*  NW: origin button                  */
+comment|/*  NW: origin                         */
 DECL|member|quick_mask_button
 name|GtkWidget
 modifier|*

@@ -585,19 +585,11 @@ value|"gimp-image-window"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_IMAGE_WINDOW_ORIGIN_BUTTON
+DECL|macro|GIMP_HELP_IMAGE_WINDOW_ORIGIN
 define|#
 directive|define
-name|GIMP_HELP_IMAGE_WINDOW_ORIGIN_BUTTON
-value|"gimp-image-window-origin-button"
-end_define
-
-begin_define
-DECL|macro|GIMP_HELP_IMAGE_WINDOW_PADDING_BUTTON
-define|#
-directive|define
-name|GIMP_HELP_IMAGE_WINDOW_PADDING_BUTTON
-value|"gimp-image-window-padding-button"
+name|GIMP_HELP_IMAGE_WINDOW_ORIGIN
+value|"gimp-image-window-origin"
 end_define
 
 begin_define

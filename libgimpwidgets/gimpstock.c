@@ -2639,7 +2639,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c5480ca0108
+DECL|struct|__anon2a3080ab0108
 block|{
 DECL|member|stock_id
 specifier|const
@@ -3451,7 +3451,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c5480ca0208
+DECL|struct|__anon2a3080ab0208
 block|{
 DECL|member|stock_id
 specifier|const
@@ -3869,27 +3869,27 @@ block|,
 block|{
 name|GIMP_STOCK_QUICK_MASK_OFF
 block|,
-name|stock_quick_mask_off_16
+name|stock_quick_mask_off_12
 block|}
 block|,
 block|{
 name|GIMP_STOCK_QUICK_MASK_ON
 block|,
-name|stock_quick_mask_on_16
+name|stock_quick_mask_on_12
 block|}
 block|,
 block|{
 literal|"gimp-qmask-off"
 block|,
 comment|/* compat */
-name|stock_quick_mask_off_16
+name|stock_quick_mask_off_12
 block|}
 block|,
 block|{
 literal|"gimp-qmask-on"
 block|,
 comment|/* compat */
-name|stock_quick_mask_on_16
+name|stock_quick_mask_on_12
 block|}
 block|,
 block|{
@@ -4355,7 +4355,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c5480ca0308
+DECL|struct|__anon2a3080ab0308
 block|{
 DECL|member|stock_id
 specifier|const
@@ -4452,7 +4452,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c5480ca0408
+DECL|struct|__anon2a3080ab0408
 block|{
 DECL|member|stock_id
 specifier|const
@@ -4597,7 +4597,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c5480ca0508
+DECL|struct|__anon2a3080ab0508
 block|{
 DECL|member|stock_id
 specifier|const
