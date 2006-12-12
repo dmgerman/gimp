@@ -275,7 +275,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fa53670103
+DECL|enum|__anon2a1a079c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -288,7 +288,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fa53670203
+DECL|enum|__anon2a1a079c0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -3177,7 +3177,7 @@ argument_list|(
 name|right_vbox
 argument_list|)
 expr_stmt|;
-comment|/*  the hbox containing quickmask button, vertical scrollbar and nav button  */
+comment|/*  the hbox containing the quickmask button, vertical scrollbar and       the navigation button  */
 name|lower_hbox
 operator|=
 name|gtk_hbox_new
@@ -3352,7 +3352,10 @@ name|shell
 operator|->
 name|origin
 argument_list|,
-name|NULL
+name|_
+argument_list|(
+literal|"Access the image menu"
+argument_list|)
 argument_list|,
 name|GIMP_HELP_IMAGE_WINDOW_ORIGIN
 argument_list|)
@@ -3828,6 +3831,10 @@ literal|"draw-indicator"
 argument_list|,
 name|FALSE
 argument_list|,
+literal|"relief"
+argument_list|,
+name|GTK_RELIEF_NONE
+argument_list|,
 literal|"width-request"
 argument_list|,
 literal|18
@@ -3920,6 +3927,10 @@ argument_list|,
 literal|"draw-indicator"
 argument_list|,
 name|FALSE
+argument_list|,
+literal|"relief"
+argument_list|,
+name|GTK_RELIEF_NONE
 argument_list|,
 literal|"width-request"
 argument_list|,
@@ -4096,7 +4107,10 @@ name|shell
 operator|->
 name|nav_ebox
 argument_list|,
-name|NULL
+name|_
+argument_list|(
+literal|"Navigate the image display"
+argument_list|)
 argument_list|,
 name|GIMP_HELP_IMAGE_WINDOW_NAV_BUTTON
 argument_list|)
