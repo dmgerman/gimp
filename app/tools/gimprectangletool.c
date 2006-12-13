@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf3797a0103
+DECL|enum|__anon27dae92b0103
 block|{
 DECL|enumerator|RECTANGLE_CHANGED
 name|RECTANGLE_CHANGED
@@ -1310,7 +1310,7 @@ break|break;
 case|case
 name|GIMP_RECTANGLE_TOOL_PROP_CONSTRAINT
 case|:
-name|g_value_set_uint
+name|g_value_set_enum
 argument_list|(
 name|value
 argument_list|,
