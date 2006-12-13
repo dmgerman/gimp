@@ -403,10 +403,7 @@ block|{
 block|{
 name|GIMP_RECTANGLE_CONSTRAIN_NONE
 block|,
-name|N_
-argument_list|(
-literal|"No constraint"
-argument_list|)
+literal|"GIMP_RECTANGLE_CONSTRAIN_NONE"
 block|,
 name|NULL
 block|}
@@ -414,10 +411,7 @@ block|,
 block|{
 name|GIMP_RECTANGLE_CONSTRAIN_IMAGE
 block|,
-name|N_
-argument_list|(
-literal|"Image bounds"
-argument_list|)
+literal|"GIMP_RECTANGLE_CONSTRAIN_IMAGE"
 block|,
 name|NULL
 block|}
@@ -425,10 +419,7 @@ block|,
 block|{
 name|GIMP_RECTANGLE_CONSTRAIN_DRAWABLE
 block|,
-name|N_
-argument_list|(
-literal|"Drawable bounds"
-argument_list|)
+literal|"GIMP_RECTANGLE_CONSTRAIN_DRAWABLE"
 block|,
 name|NULL
 block|}

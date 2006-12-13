@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon275996b10103
+DECL|enum|__anon2bf3797a0103
 block|{
 DECL|enumerator|RECTANGLE_CHANGED
 name|RECTANGLE_CHANGED
@@ -733,7 +733,7 @@ name|g_object_interface_install_property
 argument_list|(
 name|iface
 argument_list|,
-name|g_param_spec_uint
+name|g_param_spec_enum
 argument_list|(
 literal|"constraint"
 argument_list|,
@@ -741,9 +741,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_RECTANGLE_CONSTRAIN_NONE
-argument_list|,
-name|GIMP_RECTANGLE_CONSTRAIN_DRAWABLE
+name|GIMP_TYPE_RECTANGLE_CONSTRAINT
 argument_list|,
 name|GIMP_RECTANGLE_CONSTRAIN_NONE
 argument_list|,
@@ -1189,7 +1187,7 @@ name|gimp_rectangle_tool_set_constraint
 argument_list|(
 name|rectangle
 argument_list|,
-name|g_value_get_uint
+name|g_value_get_enum
 argument_list|(
 name|value
 argument_list|)
