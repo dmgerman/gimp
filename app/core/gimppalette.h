@@ -254,6 +254,27 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|GimpPaletteEntry
+modifier|*
+name|gimp_palette_find_entry
+parameter_list|(
+name|GimpPalette
+modifier|*
+name|palette
+parameter_list|,
+specifier|const
+name|GimpRGB
+modifier|*
+name|color
+parameter_list|,
+name|GimpPaletteEntry
+modifier|*
+name|start_from
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
