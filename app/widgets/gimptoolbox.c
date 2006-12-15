@@ -1468,14 +1468,8 @@ modifier|*
 name|event
 parameter_list|)
 block|{
-name|GtkAction
-modifier|*
-name|action
-decl_stmt|;
-comment|/* activate the action instead of simply calling gimp_exit(), so the    * quit action's senistivity is taken into account    */
-name|action
-operator|=
-name|gimp_ui_manager_find_action
+comment|/* Activate the action instead of simply calling gimp_exit(),    * so that the quit action's sensitivity is taken into account.    */
+name|gimp_ui_manager_activate_action
 argument_list|(
 name|GIMP_IMAGE_DOCK
 argument_list|(
@@ -1487,15 +1481,6 @@ argument_list|,
 literal|"file"
 argument_list|,
 literal|"file-quit"
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|action
-condition|)
-name|gtk_action_activate
-argument_list|(
-name|action
 argument_list|)
 expr_stmt|;
 return|return

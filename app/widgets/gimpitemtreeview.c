@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a0b26c0103
+DECL|enum|__anon287c06440103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -2667,13 +2667,7 @@ operator|->
 name|activate_action
 condition|)
 block|{
-name|GtkAction
-modifier|*
-name|action
-decl_stmt|;
-name|action
-operator|=
-name|gimp_ui_manager_find_action
+name|gimp_ui_manager_activate_action
 argument_list|(
 name|GIMP_EDITOR
 argument_list|(
@@ -2689,15 +2683,6 @@ argument_list|,
 name|item_view_class
 operator|->
 name|activate_action
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|action
-condition|)
-name|gtk_action_activate
-argument_list|(
-name|action
 argument_list|)
 expr_stmt|;
 block|}

@@ -146,7 +146,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1f215f0103
+DECL|enum|__anon277b0ce50103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -3614,14 +3614,7 @@ name|type
 operator|==
 name|GDK_2BUTTON_PRESS
 condition|)
-block|{
-name|GtkAction
-modifier|*
-name|action
-decl_stmt|;
-name|action
-operator|=
-name|gimp_ui_manager_find_action
+name|gimp_ui_manager_activate_action
 argument_list|(
 name|GIMP_EDITOR
 argument_list|(
@@ -3635,16 +3628,6 @@ argument_list|,
 literal|"colormap-edit-color"
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|action
-condition|)
-name|gtk_action_activate
-argument_list|(
-name|action
-argument_list|)
-expr_stmt|;
-block|}
 return|return
 name|TRUE
 return|;

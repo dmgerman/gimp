@@ -319,6 +319,27 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gboolean
+name|gimp_ui_manager_activate_action
+parameter_list|(
+name|GimpUIManager
+modifier|*
+name|manager
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|group_name
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|action_name
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_ui_manager_ui_register
 parameter_list|(
