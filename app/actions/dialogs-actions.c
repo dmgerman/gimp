@@ -593,7 +593,7 @@ argument_list|(
 literal|"B_uffers"
 argument_list|)
 block|,
-literal|"<control><shift>V"
+literal|""
 block|,
 name|N_
 argument_list|(
