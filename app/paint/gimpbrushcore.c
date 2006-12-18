@@ -104,8 +104,8 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0252170103
-DECL|enum|__anon2a0252170203
+DECL|enum|__anon2abe18140103
+DECL|enum|__anon2abe18140203
 block|{
 DECL|enumerator|SET_BRUSH
 DECL|enumerator|SET_BRUSH
@@ -2870,8 +2870,7 @@ name|cur_coords
 operator|.
 name|x
 operator|+=
-name|jitter_x
-operator|*
+operator|(
 name|core
 operator|->
 name|brush
@@ -2879,6 +2878,17 @@ operator|->
 name|x_axis
 operator|.
 name|x
+operator|+
+name|core
+operator|->
+name|brush
+operator|->
+name|y_axis
+operator|.
+name|x
+operator|)
+operator|*
+name|jitter_x
 operator|*
 name|scale
 expr_stmt|;
@@ -2888,8 +2898,7 @@ name|cur_coords
 operator|.
 name|y
 operator|+=
-name|jitter_y
-operator|*
+operator|(
 name|core
 operator|->
 name|brush
@@ -2897,6 +2906,17 @@ operator|->
 name|y_axis
 operator|.
 name|y
+operator|+
+name|core
+operator|->
+name|brush
+operator|->
+name|x_axis
+operator|.
+name|y
+operator|)
+operator|*
+name|jitter_y
 operator|*
 name|scale
 expr_stmt|;
