@@ -232,7 +232,7 @@ argument_list|)
 block|}
 block|,
 block|{
-literal|"undo-editor-popup"
+literal|"undo-popup"
 block|,
 name|GTK_STOCK_UNDO
 block|,
