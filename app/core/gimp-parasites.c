@@ -476,7 +476,7 @@ name|header
 init|=
 literal|"GIMP parasiterc\n"
 literal|"\n"
-literal|"This file will be entirely rewritten every time you quit the gimp."
+literal|"This file will be entirely rewritten each time you exit."
 decl_stmt|;
 specifier|const
 name|gchar

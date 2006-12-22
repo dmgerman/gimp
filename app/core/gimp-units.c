@@ -148,7 +148,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon279db64e0103
+DECL|enum|__anon28feb23b0103
 block|{
 DECL|enumerator|UNIT_INFO
 name|UNIT_INFO
@@ -648,8 +648,8 @@ literal|"This file contains the user unit database. "
 literal|"You can edit this list with the unit "
 literal|"editor. You are not supposed to edit it "
 literal|"manually, but of course you can do.\n"
-literal|"This file will be entirely rewritten every "
-literal|"time you quit the gimp."
+literal|"This file will be entirely rewritten each "
+literal|"time you exit."
 argument_list|,
 name|NULL
 argument_list|)
