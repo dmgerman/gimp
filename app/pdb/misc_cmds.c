@@ -364,9 +364,9 @@ name|procedure
 argument_list|,
 literal|"gimp-version"
 argument_list|,
-literal|"Returns the host gimp version."
+literal|"Returns the host GIMP version."
 argument_list|,
-literal|"This procedure returns the version number of the currently running gimp."
+literal|"This procedure returns the version number of the currently running GIMP."
 argument_list|,
 literal|"Manish Singh"
 argument_list|,
@@ -387,7 +387,7 @@ literal|"version"
 argument_list|,
 literal|"version"
 argument_list|,
-literal|"The gimp version"
+literal|"GIMP version number"
 argument_list|,
 name|FALSE
 argument_list|,
@@ -435,9 +435,9 @@ name|procedure
 argument_list|,
 literal|"gimp-getpid"
 argument_list|,
-literal|"Returns the PID of the host gimp process."
+literal|"Returns the PID of the host GIMP process."
 argument_list|,
-literal|"This procedure returns the process ID of the currently running gimp."
+literal|"This procedure returns the process ID of the currently running GIMP."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -506,9 +506,9 @@ name|procedure
 argument_list|,
 literal|"gimp-quit"
 argument_list|,
-literal|"Causes the gimp to exit gracefully."
+literal|"Causes GIMP to exit gracefully."
 argument_list|,
-literal|"The internal procedure which can either be used to make the gimp quit. If there are unsaved images in an interactive GIMP session, the user will be asked for confirmation. If force is TRUE, the application is quit without querying the user to save any dirty images."
+literal|"If there are unsaved images in an interactive GIMP session, the user will be asked for confirmation. If force is TRUE, the application is quit without querying the user to save any dirty images."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -529,7 +529,7 @@ literal|"force"
 argument_list|,
 literal|"force"
 argument_list|,
-literal|"Flag specifying whether to force the gimp to or exit normally"
+literal|"Force GIMP to quit without asking"
 argument_list|,
 name|FALSE
 argument_list|,

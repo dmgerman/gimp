@@ -1904,9 +1904,9 @@ name|procedure
 argument_list|,
 literal|"gimp-parasite-find"
 argument_list|,
-literal|"Finds the named parasite."
+literal|"Look up a global parasite."
 argument_list|,
-literal|"Finds and returns the named parasite that was previously attached to the gimp."
+literal|"Finds and returns the global parasite that was previously attached."
 argument_list|,
 literal|"Jay Cox"
 argument_list|,
@@ -1991,9 +1991,9 @@ name|procedure
 argument_list|,
 literal|"gimp-parasite-attach"
 argument_list|,
-literal|"Add a parasite to the gimp."
+literal|"Add a global parasite."
 argument_list|,
-literal|"This procedure attaches a parasite to the gimp. It has no return values."
+literal|"This procedure attaches a global parasite. It has no return values."
 argument_list|,
 literal|"Jay Cox"
 argument_list|,
@@ -2014,7 +2014,7 @@ literal|"parasite"
 argument_list|,
 literal|"parasite"
 argument_list|,
-literal|"The parasite to attach to the gimp"
+literal|"The parasite to attach"
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -2056,9 +2056,9 @@ name|procedure
 argument_list|,
 literal|"gimp-parasite-detach"
 argument_list|,
-literal|"Removes a parasite from the gimp."
+literal|"Removes a global parasite."
 argument_list|,
-literal|"This procedure detaches a parasite from the gimp. It has no return values."
+literal|"This procedure detaches a global parasite from. It has no return values."
 argument_list|,
 literal|"Jay Cox"
 argument_list|,
@@ -2079,7 +2079,7 @@ literal|"name"
 argument_list|,
 literal|"name"
 argument_list|,
-literal|"The name of the parasite to detach from the gimp."
+literal|"The name of the parasite to detach."
 argument_list|,
 name|FALSE
 argument_list|,
@@ -2129,7 +2129,7 @@ literal|"gimp-parasite-list"
 argument_list|,
 literal|"List all parasites."
 argument_list|,
-literal|"Returns a list of all currently attached parasites."
+literal|"Returns a list of all currently attached global parasites."
 argument_list|,
 literal|"Marc Lehmann"
 argument_list|,
@@ -2214,9 +2214,9 @@ name|procedure
 argument_list|,
 literal|"gimp-image-parasite-find"
 argument_list|,
-literal|"Finds the named parasite in an image"
+literal|"Look up a parasite in an image"
 argument_list|,
-literal|"Finds and returns the named parasite that was previously attached to an image."
+literal|"Finds and returns the parasite that was previously attached to an image."
 argument_list|,
 literal|"Jay Cox"
 argument_list|,
@@ -2612,9 +2612,9 @@ name|procedure
 argument_list|,
 literal|"gimp-drawable-parasite-find"
 argument_list|,
-literal|"Finds the named parasite in a drawable"
+literal|"Look up a parasite in a drawable"
 argument_list|,
-literal|"Finds and returns the named parasite that was previously attached to a drawable."
+literal|"Finds and returns the parasite that was previously attached to a drawable."
 argument_list|,
 literal|"Jay Cox"
 argument_list|,
@@ -3010,9 +3010,9 @@ name|procedure
 argument_list|,
 literal|"gimp-vectors-parasite-find"
 argument_list|,
-literal|"Finds the named parasite in a vectors object"
+literal|"Look up a parasite in a vectors object"
 argument_list|,
-literal|"Finds and returns the named parasite that was previously attached to a vectors object."
+literal|"Finds and returns the parasite that was previously attached to a vectors object."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,

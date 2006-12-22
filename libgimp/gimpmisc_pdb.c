@@ -20,7 +20,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * gimp_version:  *  * Returns the host gimp version.  *  * This procedure returns the version number of the currently running  * gimp.  *  * Returns: The gimp version.  */
+comment|/**  * gimp_version:  *  * Returns the host GIMP version.  *  * This procedure returns the version number of the currently running  * GIMP.  *  * Returns: GIMP version number.  */
 end_comment
 
 begin_function
@@ -98,7 +98,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_getpid:  *  * Returns the PID of the host gimp process.  *  * This procedure returns the process ID of the currently running gimp.  *  * Returns: The PID.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_getpid:  *  * Returns the PID of the host GIMP process.  *  * This procedure returns the process ID of the currently running GIMP.  *  * Returns: The PID.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function

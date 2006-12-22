@@ -20,7 +20,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * gimp_parasite_find:  * @name: The name of the parasite to find.  *  * Finds the named parasite.  *  * Finds and returns the named parasite that was previously attached to  * the gimp.  *  * Returns: The found parasite.  */
+comment|/**  * gimp_parasite_find:  * @name: The name of the parasite to find.  *  * Look up a global parasite.  *  * Finds and returns the global parasite that was previously attached.  *  * Returns: The found parasite.  */
 end_comment
 
 begin_function
@@ -106,7 +106,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_parasite_attach:  * @parasite: The parasite to attach to the gimp.  *  * Add a parasite to the gimp.  *  * This procedure attaches a parasite to the gimp. It has no return  * values.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_parasite_attach:  * @parasite: The parasite to attach.  *  * Add a global parasite.  *  * This procedure attaches a global parasite. It has no return values.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -175,7 +175,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_parasite_detach:  * @name: The name of the parasite to detach from the gimp.  *  * Removes a parasite from the gimp.  *  * This procedure detaches a parasite from the gimp. It has no return  * values.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_parasite_detach:  * @name: The name of the parasite to detach.  *  * Removes a global parasite.  *  * This procedure detaches a global parasite from. It has no return  * values.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -244,7 +244,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_parasite_list:  * @num_parasites: The number of attached parasites.  * @parasites: The names of currently attached parasites.  *  * List all parasites.  *  * Returns a list of all currently attached parasites.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_parasite_list:  * @num_parasites: The number of attached parasites.  * @parasites: The names of currently attached parasites.  *  * List all parasites.  *  * Returns a list of all currently attached global parasites.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -394,7 +394,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_parasite_find:  * @image_ID: The image.  * @name: The name of the parasite to find.  *  * Finds the named parasite in an image  *  * Finds and returns the named parasite that was previously attached to  * an image.  *  * Returns: The found parasite.  */
+comment|/**  * gimp_image_parasite_find:  * @image_ID: The image.  * @name: The name of the parasite to find.  *  * Look up a parasite in an image  *  * Finds and returns the parasite that was previously attached to an  * image.  *  * Returns: The found parasite.  */
 end_comment
 
 begin_function
@@ -796,7 +796,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_parasite_find:  * @drawable_ID: The drawable.  * @name: The name of the parasite to find.  *  * Finds the named parasite in a drawable  *  * Finds and returns the named parasite that was previously attached to  * a drawable.  *  * Returns: The found parasite.  */
+comment|/**  * gimp_drawable_parasite_find:  * @drawable_ID: The drawable.  * @name: The name of the parasite to find.  *  * Look up a parasite in a drawable  *  * Finds and returns the parasite that was previously attached to a  * drawable.  *  * Returns: The found parasite.  */
 end_comment
 
 begin_function
@@ -1198,7 +1198,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_parasite_find:  * @vectors_ID: The vectors object.  * @name: The name of the parasite to find.  *  * Finds the named parasite in a vectors object  *  * Finds and returns the named parasite that was previously attached to  * a vectors object.  *  * Returns: The found parasite.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_vectors_parasite_find:  * @vectors_ID: The vectors object.  * @name: The name of the parasite to find.  *  * Look up a parasite in a vectors object  *  * Finds and returns the parasite that was previously attached to a  * vectors object.  *  * Returns: The found parasite.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
