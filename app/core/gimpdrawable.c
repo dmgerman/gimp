@@ -167,7 +167,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2bdf580103
+DECL|enum|__anon296396d20103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -439,7 +439,7 @@ parameter_list|,
 name|gint
 name|recursion_level
 parameter_list|,
-name|gboolean
+name|GimpTransformResize
 name|clip_result
 parameter_list|,
 name|GimpProgress
@@ -2365,7 +2365,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_drawable_transform (GimpItem * item,GimpContext * context,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gboolean supersample,gint recursion_level,gboolean clip_result,GimpProgress * progress)
+DECL|function|gimp_drawable_transform (GimpItem * item,GimpContext * context,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gboolean supersample,gint recursion_level,GimpTransformResize clip_result,GimpProgress * progress)
 name|gimp_drawable_transform
 parameter_list|(
 name|GimpItem
@@ -2393,7 +2393,7 @@ parameter_list|,
 name|gint
 name|recursion_level
 parameter_list|,
-name|gboolean
+name|GimpTransformResize
 name|clip_result
 parameter_list|,
 name|GimpProgress

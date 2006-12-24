@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a8d494b0103
+DECL|enum|__anon2c5f50a40103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -177,7 +177,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a8d494b0203
+DECL|enum|__anon2c5f50a40203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -579,7 +579,7 @@ parameter_list|,
 name|gint
 name|recursion_level
 parameter_list|,
-name|gboolean
+name|GimpTransformResize
 name|clip_result
 parameter_list|,
 name|GimpProgress
@@ -3352,7 +3352,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_layer_transform (GimpItem * item,GimpContext * context,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gboolean supersample,gint recursion_level,gboolean clip_result,GimpProgress * progress)
+DECL|function|gimp_layer_transform (GimpItem * item,GimpContext * context,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gboolean supersample,gint recursion_level,GimpTransformResize clip_result,GimpProgress * progress)
 name|gimp_layer_transform
 parameter_list|(
 name|GimpItem
@@ -3380,7 +3380,7 @@ parameter_list|,
 name|gint
 name|recursion_level
 parameter_list|,
-name|gboolean
+name|GimpTransformResize
 name|clip_result
 parameter_list|,
 name|GimpProgress

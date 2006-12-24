@@ -4855,7 +4855,7 @@ case|case
 name|GIMP_TRANSFORM_TYPE_SELECTION
 case|:
 block|{
-name|gboolean
+name|GimpTransformResize
 name|clip_result
 init|=
 name|options
@@ -4888,7 +4888,7 @@ literal|1
 condition|)
 name|clip_result
 operator|=
-name|TRUE
+name|GIMP_TRANSFORM_RESIZE_CLIP
 expr_stmt|;
 name|ret
 operator|=

@@ -152,7 +152,7 @@ parameter_list|,
 name|gint
 name|recursion_level
 parameter_list|,
-name|gboolean
+name|GimpTransformResize
 name|clip_result
 parameter_list|)
 function_decl|;
@@ -192,7 +192,7 @@ parameter_list|,
 name|gboolean
 name|interpolate
 parameter_list|,
-name|gboolean
+name|GimpTransformResize
 name|clip_result
 parameter_list|)
 function_decl|;
@@ -254,7 +254,7 @@ parameter_list|,
 name|gint
 name|recursion_level
 parameter_list|,
-name|gboolean
+name|GimpTransformResize
 name|clip_result
 parameter_list|)
 function_decl|;
@@ -282,7 +282,7 @@ parameter_list|,
 name|gboolean
 name|interpolate
 parameter_list|,
-name|gboolean
+name|GimpTransformResize
 name|clip_result
 parameter_list|)
 function_decl|;
@@ -319,7 +319,7 @@ parameter_list|,
 name|gint
 name|recursion_level
 parameter_list|,
-name|gboolean
+name|GimpTransformResize
 name|clip_result
 parameter_list|)
 function_decl|;
@@ -347,7 +347,7 @@ parameter_list|,
 name|gboolean
 name|interpolate
 parameter_list|,
-name|gboolean
+name|GimpTransformResize
 name|clip_result
 parameter_list|)
 function_decl|;
@@ -378,7 +378,7 @@ parameter_list|,
 name|gint
 name|recursion_level
 parameter_list|,
-name|gboolean
+name|GimpTransformResize
 name|clip_result
 parameter_list|)
 function_decl|;
@@ -400,7 +400,7 @@ parameter_list|,
 name|gboolean
 name|interpolate
 parameter_list|,
-name|gboolean
+name|GimpTransformResize
 name|clip_result
 parameter_list|)
 function_decl|;
@@ -446,7 +446,7 @@ parameter_list|,
 name|gint
 name|recursion_level
 parameter_list|,
-name|gboolean
+name|GimpTransformResize
 name|clip_result
 parameter_list|)
 function_decl|;
@@ -483,7 +483,7 @@ parameter_list|,
 name|gboolean
 name|interpolate
 parameter_list|,
-name|gboolean
+name|GimpTransformResize
 name|clip_result
 parameter_list|)
 function_decl|;
@@ -535,7 +535,7 @@ parameter_list|,
 name|gint
 name|recursion_level
 parameter_list|,
-name|gboolean
+name|GimpTransformResize
 name|clip_result
 parameter_list|)
 function_decl|;
@@ -578,7 +578,7 @@ parameter_list|,
 name|gboolean
 name|interpolate
 parameter_list|,
-name|gboolean
+name|GimpTransformResize
 name|clip_result
 parameter_list|)
 function_decl|;

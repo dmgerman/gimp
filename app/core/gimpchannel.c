@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8985680103
+DECL|enum|__anon291d7c270103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -470,7 +470,7 @@ parameter_list|,
 name|gint
 name|recursion_level
 parameter_list|,
-name|gboolean
+name|GimpTransformResize
 name|clip_result
 parameter_list|,
 name|GimpProgress
@@ -3079,7 +3079,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_channel_transform (GimpItem * item,GimpContext * context,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gboolean supersample,gint recursion_level,gboolean clip_result,GimpProgress * progress)
+DECL|function|gimp_channel_transform (GimpItem * item,GimpContext * context,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gboolean supersample,gint recursion_level,GimpTransformResize clip_result,GimpProgress * progress)
 name|gimp_channel_transform
 parameter_list|(
 name|GimpItem
@@ -3107,7 +3107,7 @@ parameter_list|,
 name|gint
 name|recursion_level
 parameter_list|,
-name|gboolean
+name|GimpTransformResize
 name|clip_result
 parameter_list|,
 name|GimpProgress

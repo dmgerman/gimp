@@ -1132,7 +1132,7 @@ decl_stmt|;
 name|gint32
 name|recursion_level
 decl_stmt|;
-name|gboolean
+name|gint32
 name|clip_result
 decl_stmt|;
 name|drawable
@@ -1308,7 +1308,7 @@ argument_list|)
 expr_stmt|;
 name|clip_result
 operator|=
-name|g_value_get_boolean
+name|g_value_get_enum
 argument_list|(
 operator|&
 name|args
@@ -1585,7 +1585,7 @@ decl_stmt|;
 name|gboolean
 name|interpolate
 decl_stmt|;
-name|gboolean
+name|gint32
 name|clip_result
 decl_stmt|;
 name|drawable
@@ -1722,7 +1722,7 @@ argument_list|)
 expr_stmt|;
 name|clip_result
 operator|=
-name|g_value_get_boolean
+name|g_value_get_enum
 argument_list|(
 operator|&
 name|args
@@ -2249,7 +2249,7 @@ decl_stmt|;
 name|gint32
 name|recursion_level
 decl_stmt|;
-name|gboolean
+name|gint32
 name|clip_result
 decl_stmt|;
 name|drawable
@@ -2373,7 +2373,7 @@ argument_list|)
 expr_stmt|;
 name|clip_result
 operator|=
-name|g_value_get_boolean
+name|g_value_get_enum
 argument_list|(
 operator|&
 name|args
@@ -2641,7 +2641,7 @@ decl_stmt|;
 name|gboolean
 name|interpolate
 decl_stmt|;
-name|gboolean
+name|gint32
 name|clip_result
 decl_stmt|;
 name|drawable
@@ -2726,7 +2726,7 @@ argument_list|)
 expr_stmt|;
 name|clip_result
 operator|=
-name|g_value_get_boolean
+name|g_value_get_enum
 argument_list|(
 operator|&
 name|args
@@ -3020,7 +3020,7 @@ decl_stmt|;
 name|gint32
 name|recursion_level
 decl_stmt|;
-name|gboolean
+name|gint32
 name|clip_result
 decl_stmt|;
 name|drawable
@@ -3144,7 +3144,7 @@ argument_list|)
 expr_stmt|;
 name|clip_result
 operator|=
-name|g_value_get_boolean
+name|g_value_get_enum
 argument_list|(
 operator|&
 name|args
@@ -3415,7 +3415,7 @@ decl_stmt|;
 name|gboolean
 name|interpolate
 decl_stmt|;
-name|gboolean
+name|gint32
 name|clip_result
 decl_stmt|;
 name|drawable
@@ -3500,7 +3500,7 @@ argument_list|)
 expr_stmt|;
 name|clip_result
 operator|=
-name|g_value_get_boolean
+name|g_value_get_enum
 argument_list|(
 operator|&
 name|args
@@ -3791,7 +3791,7 @@ decl_stmt|;
 name|gint32
 name|recursion_level
 decl_stmt|;
-name|gboolean
+name|gint32
 name|clip_result
 decl_stmt|;
 name|drawable
@@ -3889,7 +3889,7 @@ argument_list|)
 expr_stmt|;
 name|clip_result
 operator|=
-name|g_value_get_boolean
+name|g_value_get_enum
 argument_list|(
 operator|&
 name|args
@@ -4136,7 +4136,7 @@ decl_stmt|;
 name|gboolean
 name|interpolate
 decl_stmt|;
-name|gboolean
+name|gint32
 name|clip_result
 decl_stmt|;
 name|drawable
@@ -4195,7 +4195,7 @@ argument_list|)
 expr_stmt|;
 name|clip_result
 operator|=
-name|g_value_get_boolean
+name|g_value_get_enum
 argument_list|(
 operator|&
 name|args
@@ -4483,7 +4483,7 @@ decl_stmt|;
 name|gint32
 name|recursion_level
 decl_stmt|;
-name|gboolean
+name|gint32
 name|clip_result
 decl_stmt|;
 name|drawable
@@ -4646,7 +4646,7 @@ argument_list|)
 expr_stmt|;
 name|clip_result
 operator|=
-name|g_value_get_boolean
+name|g_value_get_enum
 argument_list|(
 operator|&
 name|args
@@ -4930,7 +4930,7 @@ decl_stmt|;
 name|gboolean
 name|interpolate
 decl_stmt|;
-name|gboolean
+name|gint32
 name|clip_result
 decl_stmt|;
 name|drawable
@@ -5054,7 +5054,7 @@ argument_list|)
 expr_stmt|;
 name|clip_result
 operator|=
-name|g_value_get_boolean
+name|g_value_get_enum
 argument_list|(
 operator|&
 name|args
@@ -5370,7 +5370,7 @@ decl_stmt|;
 name|gint32
 name|recursion_level
 decl_stmt|;
-name|gboolean
+name|gint32
 name|clip_result
 decl_stmt|;
 name|drawable
@@ -5559,7 +5559,7 @@ argument_list|)
 expr_stmt|;
 name|clip_result
 operator|=
-name|g_value_get_boolean
+name|g_value_get_enum
 argument_list|(
 operator|&
 name|args
@@ -5911,7 +5911,7 @@ decl_stmt|;
 name|gboolean
 name|interpolate
 decl_stmt|;
-name|gboolean
+name|gint32
 name|clip_result
 decl_stmt|;
 name|drawable
@@ -6061,7 +6061,7 @@ argument_list|)
 expr_stmt|;
 name|clip_result
 operator|=
-name|g_value_get_boolean
+name|g_value_get_enum
 argument_list|(
 operator|&
 name|args
@@ -7390,15 +7390,17 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_boolean
+name|g_param_spec_enum
 argument_list|(
 literal|"clip-result"
 argument_list|,
 literal|"clip result"
 argument_list|,
-literal|"Whether to clip results"
+literal|"How to clip results"
 argument_list|,
-name|FALSE
+name|GIMP_TYPE_TRANSFORM_RESIZE
+argument_list|,
+name|GIMP_TRANSFORM_RESIZE_ADJUST
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -7703,15 +7705,17 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_boolean
+name|g_param_spec_enum
 argument_list|(
 literal|"clip-result"
 argument_list|,
 literal|"clip result"
 argument_list|,
-literal|"Whether to clip results"
+literal|"How to clip results"
 argument_list|,
-name|FALSE
+name|GIMP_TYPE_TRANSFORM_RESIZE
+argument_list|,
+name|GIMP_TRANSFORM_RESIZE_ADJUST
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -8172,15 +8176,17 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_boolean
+name|g_param_spec_enum
 argument_list|(
 literal|"clip-result"
 argument_list|,
 literal|"clip result"
 argument_list|,
-literal|"Whether to clip results"
+literal|"How to clip results"
 argument_list|,
-name|FALSE
+name|GIMP_TYPE_TRANSFORM_RESIZE
+argument_list|,
+name|GIMP_TRANSFORM_RESIZE_ADJUST
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -8386,15 +8392,17 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_boolean
+name|g_param_spec_enum
 argument_list|(
 literal|"clip-result"
 argument_list|,
 literal|"clip result"
 argument_list|,
-literal|"Whether to clip results"
+literal|"How to clip results"
 argument_list|,
-name|FALSE
+name|GIMP_TYPE_TRANSFORM_RESIZE
+argument_list|,
+name|GIMP_TRANSFORM_RESIZE_ADJUST
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -8669,15 +8677,17 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_boolean
+name|g_param_spec_enum
 argument_list|(
 literal|"clip-result"
 argument_list|,
 literal|"clip result"
 argument_list|,
-literal|"Whether to clip results"
+literal|"How to clip results"
 argument_list|,
-name|FALSE
+name|GIMP_TYPE_TRANSFORM_RESIZE
+argument_list|,
+name|GIMP_TRANSFORM_RESIZE_ADJUST
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -8890,15 +8900,17 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_boolean
+name|g_param_spec_enum
 argument_list|(
 literal|"clip-result"
 argument_list|,
 literal|"clip result"
 argument_list|,
-literal|"Whether to clip results"
+literal|"How to clip results"
 argument_list|,
-name|FALSE
+name|GIMP_TYPE_TRANSFORM_RESIZE
+argument_list|,
+name|GIMP_TRANSFORM_RESIZE_ADJUST
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -9139,15 +9151,17 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_boolean
+name|g_param_spec_enum
 argument_list|(
 literal|"clip-result"
 argument_list|,
 literal|"clip result"
 argument_list|,
-literal|"Whether to clip results"
+literal|"How to clip results"
 argument_list|,
-name|FALSE
+name|GIMP_TYPE_TRANSFORM_RESIZE
+argument_list|,
+name|GIMP_TRANSFORM_RESIZE_ADJUST
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -9326,15 +9340,17 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_boolean
+name|g_param_spec_enum
 argument_list|(
 literal|"clip-result"
 argument_list|,
 literal|"clip result"
 argument_list|,
-literal|"Whether to clip results"
+literal|"How to clip results"
 argument_list|,
-name|FALSE
+name|GIMP_TYPE_TRANSFORM_RESIZE
+argument_list|,
+name|GIMP_TRANSFORM_RESIZE_ADJUST
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -9678,15 +9694,17 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_boolean
+name|g_param_spec_enum
 argument_list|(
 literal|"clip-result"
 argument_list|,
 literal|"clip result"
 argument_list|,
-literal|"Whether to clip results"
+literal|"How to clip results"
 argument_list|,
-name|FALSE
+name|GIMP_TYPE_TRANSFORM_RESIZE
+argument_list|,
+name|GIMP_TRANSFORM_RESIZE_ADJUST
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -9968,15 +9986,17 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_boolean
+name|g_param_spec_enum
 argument_list|(
 literal|"clip-result"
 argument_list|,
 literal|"clip result"
 argument_list|,
-literal|"Whether to clip results"
+literal|"How to clip results"
 argument_list|,
-name|FALSE
+name|GIMP_TYPE_TRANSFORM_RESIZE
+argument_list|,
+name|GIMP_TRANSFORM_RESIZE_ADJUST
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -10366,15 +10386,17 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_boolean
+name|g_param_spec_enum
 argument_list|(
 literal|"clip-result"
 argument_list|,
 literal|"clip result"
 argument_list|,
-literal|"Whether to clip results"
+literal|"How to clip results"
 argument_list|,
-name|FALSE
+name|GIMP_TYPE_TRANSFORM_RESIZE
+argument_list|,
+name|GIMP_TRANSFORM_RESIZE_ADJUST
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -10702,15 +10724,17 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_boolean
+name|g_param_spec_enum
 argument_list|(
 literal|"clip-result"
 argument_list|,
 literal|"clip result"
 argument_list|,
-literal|"Whether to clip results"
+literal|"How to clip results"
 argument_list|,
-name|FALSE
+name|GIMP_TYPE_TRANSFORM_RESIZE
+argument_list|,
+name|GIMP_TRANSFORM_RESIZE_ADJUST
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
