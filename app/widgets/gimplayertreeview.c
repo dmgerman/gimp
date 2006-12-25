@@ -2544,6 +2544,11 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|renderer
+condition|)
+block|{
 name|gimp_view_renderer_set_context
 argument_list|(
 name|renderer
@@ -2556,6 +2561,7 @@ argument_list|(
 name|renderer
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 block|}
