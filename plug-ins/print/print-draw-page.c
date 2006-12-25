@@ -60,7 +60,7 @@ DECL|macro|HEADER_HEIGHT
 define|#
 directive|define
 name|HEADER_HEIGHT
-value|(20*72/25.4)
+value|(20 * 72.0 / 25.4)
 end_define
 
 begin_define

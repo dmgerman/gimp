@@ -40,6 +40,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<glib/gstdio.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"print.h"
 end_include
 
@@ -489,19 +495,17 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Unable to get contents of settings key file.\n"
+literal|"Unable to get contents of settings key file."
 argument_list|)
 expr_stmt|;
 return|return;
 block|}
 name|fname
 operator|=
-name|g_strconcat
+name|g_build_filename
 argument_list|(
 name|gimp_directory
 argument_list|()
-argument_list|,
-name|G_DIR_SEPARATOR_S
 argument_list|,
 literal|"print-settings"
 argument_list|,
@@ -510,7 +514,7 @@ argument_list|)
 expr_stmt|;
 name|settings_file
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|fname
 argument_list|,
@@ -525,7 +529,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Unable to create resource file for print settings.\n"
+literal|"Unable to create resource file for print settings."
 argument_list|)
 expr_stmt|;
 return|return;
@@ -613,7 +617,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Unable to get contents of settings key file.\n"
+literal|"Unable to get contents of settings key file."
 argument_list|)
 expr_stmt|;
 return|return;

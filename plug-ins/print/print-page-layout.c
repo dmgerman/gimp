@@ -50,7 +50,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289449ff0108
+DECL|struct|__anon27711fff0108
 block|{
 DECL|member|data
 name|PrintData

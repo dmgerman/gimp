@@ -149,8 +149,9 @@ name|GtkPrintContext
 modifier|*
 name|context
 parameter_list|,
-name|gpointer
-name|user_data
+name|PrintData
+modifier|*
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -168,8 +169,9 @@ name|GtkPrintContext
 modifier|*
 name|context
 parameter_list|,
-name|gpointer
-name|user_data
+name|PrintData
+modifier|*
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -190,8 +192,9 @@ parameter_list|,
 name|int
 name|page_nr
 parameter_list|,
-name|gpointer
-name|user_data
+name|PrintData
+modifier|*
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -206,8 +209,9 @@ name|GtkPrintOperation
 modifier|*
 name|operation
 parameter_list|,
-name|gpointer
-name|user_data
+name|PrintData
+modifier|*
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -225,8 +229,9 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|gpointer
-name|user_data
+name|PrintData
+modifier|*
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -252,8 +257,9 @@ name|GtkWindow
 modifier|*
 name|parent
 parameter_list|,
-name|gpointer
-name|user_data
+name|PrintData
+modifier|*
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -801,6 +807,7 @@ expr_stmt|;
 block|}
 block|}
 else|else
+block|{
 name|gtk_print_operation_run
 argument_list|(
 name|operation
@@ -813,6 +820,7 @@ operator|&
 name|error
 argument_list|)
 expr_stmt|;
+block|}
 name|g_object_unref
 argument_list|(
 name|operation
@@ -838,7 +846,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|begin_print (GtkPrintOperation * operation,GtkPrintContext * context,gpointer user_data)
+DECL|function|begin_print (GtkPrintOperation * operation,GtkPrintContext * context,PrintData * data)
 name|begin_print
 parameter_list|(
 name|GtkPrintOperation
@@ -849,20 +857,11 @@ name|GtkPrintContext
 modifier|*
 name|context
 parameter_list|,
-name|gpointer
-name|user_data
-parameter_list|)
-block|{
 name|PrintData
 modifier|*
 name|data
-init|=
-operator|(
-name|PrintData
-operator|*
-operator|)
-name|user_data
-decl_stmt|;
+parameter_list|)
+block|{
 name|data
 operator|->
 name|num_pages
@@ -884,7 +883,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|end_print (GtkPrintOperation * operation,GtkPrintContext * context,gpointer user_data)
+DECL|function|end_print (GtkPrintOperation * operation,GtkPrintContext * context,PrintData * data)
 name|end_print
 parameter_list|(
 name|GtkPrintOperation
@@ -895,8 +894,9 @@ name|GtkPrintContext
 modifier|*
 name|context
 parameter_list|,
-name|gpointer
-name|user_data
+name|PrintData
+modifier|*
+name|data
 parameter_list|)
 block|{
 name|GtkPrintSettings
@@ -916,7 +916,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|draw_page (GtkPrintOperation * operation,GtkPrintContext * context,int page_nr,gpointer user_data)
+DECL|function|draw_page (GtkPrintOperation * operation,GtkPrintContext * context,int page_nr,PrintData * data)
 name|draw_page
 parameter_list|(
 name|GtkPrintOperation
@@ -930,16 +930,11 @@ parameter_list|,
 name|int
 name|page_nr
 parameter_list|,
-name|gpointer
-name|user_data
-parameter_list|)
-block|{
 name|PrintData
 modifier|*
 name|data
-init|=
-name|user_data
-decl_stmt|;
+parameter_list|)
+block|{
 name|draw_page_cairo
 argument_list|(
 name|context
@@ -958,36 +953,23 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|create_custom_widget (GtkPrintOperation * operation,gpointer user_data)
+DECL|function|create_custom_widget (GtkPrintOperation * operation,PrintData * data)
 name|create_custom_widget
 parameter_list|(
 name|GtkPrintOperation
 modifier|*
 name|operation
 parameter_list|,
-name|gpointer
-name|user_data
-parameter_list|)
-block|{
-name|GtkWidget
-modifier|*
-name|vbox
-decl_stmt|;
 name|PrintData
 modifier|*
 name|data
-init|=
-name|user_data
-decl_stmt|;
-name|vbox
-operator|=
+parameter_list|)
+block|{
+return|return
 name|print_page_layout_gui
 argument_list|(
 name|data
 argument_list|)
-expr_stmt|;
-return|return
-name|vbox
 return|;
 block|}
 end_function
@@ -999,7 +981,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|custom_widget_apply (GtkPrintOperation * operation,GtkWidget * widget,gpointer user_data)
+DECL|function|custom_widget_apply (GtkPrintOperation * operation,GtkWidget * widget,PrintData * data)
 name|custom_widget_apply
 parameter_list|(
 name|GtkPrintOperation
@@ -1010,16 +992,11 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|gpointer
-name|user_data
-parameter_list|)
-block|{
 name|PrintData
 modifier|*
 name|data
-init|=
-name|user_data
-decl_stmt|;
+parameter_list|)
+block|{
 if|if
 condition|(
 name|data
@@ -1082,7 +1059,7 @@ end_define
 begin_function
 specifier|static
 name|gboolean
-DECL|function|print_preview (GtkPrintOperation * operation,GtkPrintOperationPreview * preview,GtkPrintContext * context,GtkWindow * parent,gpointer user_data)
+DECL|function|print_preview (GtkPrintOperation * operation,GtkPrintOperationPreview * preview,GtkPrintContext * context,GtkWindow * parent,PrintData * data)
 name|print_preview
 parameter_list|(
 name|GtkPrintOperation
@@ -1101,16 +1078,11 @@ name|GtkWindow
 modifier|*
 name|parent
 parameter_list|,
-name|gpointer
-name|user_data
-parameter_list|)
-block|{
 name|PrintData
 modifier|*
 name|data
-init|=
-name|user_data
-decl_stmt|;
+parameter_list|)
+block|{
 name|GtkPageSetup
 modifier|*
 name|page_setup
