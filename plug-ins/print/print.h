@@ -6,7 +6,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276a9d660108
+DECL|struct|__anon28d28a060108
 block|{
 DECL|member|num_pages
 name|gint
@@ -55,10 +55,6 @@ decl_stmt|;
 DECL|member|yres
 name|gdouble
 name|yres
-decl_stmt|;
-DECL|member|print_size_changed
-name|gboolean
-name|print_size_changed
 decl_stmt|;
 DECL|member|orientation
 name|GtkPageOrientation

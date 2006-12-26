@@ -50,7 +50,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1874620108
+DECL|struct|__anon2773bc5f0108
 block|{
 DECL|member|data
 name|PrintData
@@ -2035,12 +2035,6 @@ operator|->
 name|yres
 operator|=
 name|yres
-expr_stmt|;
-name|data
-operator|->
-name|print_size_changed
-operator|=
-name|TRUE
 expr_stmt|;
 name|g_signal_handlers_block_by_func
 argument_list|(
