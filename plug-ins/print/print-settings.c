@@ -802,6 +802,10 @@ name|GimpParasite
 modifier|*
 name|parasite
 decl_stmt|;
+name|GKeyFile
+modifier|*
+name|key_file
+decl_stmt|;
 name|GError
 modifier|*
 name|error
@@ -825,15 +829,11 @@ condition|)
 return|return
 name|NULL
 return|;
-else|else
-block|{
-name|GKeyFile
-modifier|*
 name|key_file
-init|=
+operator|=
 name|g_key_file_new
 argument_list|()
-decl_stmt|;
+expr_stmt|;
 name|g_key_file_set_list_separator
 argument_list|(
 name|key_file
@@ -891,7 +891,6 @@ expr_stmt|;
 return|return
 name|key_file
 return|;
-block|}
 block|}
 end_function
 
@@ -1151,12 +1150,14 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
+block|{
 name|data
 operator|->
 name|show_info_header
 operator|=
 name|FALSE
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|g_key_file_has_key
@@ -1190,12 +1191,14 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
+block|{
 name|data
 operator|->
 name|unit
 operator|=
 name|GIMP_UNIT_INCH
 expr_stmt|;
+block|}
 name|gtk_print_operation_set_print_settings
 argument_list|(
 name|operation
@@ -1235,6 +1238,9 @@ name|NULL
 decl_stmt|;
 if|if
 condition|(
+operator|!
+name|key_file
+operator|||
 operator|!
 name|g_key_file_has_group
 argument_list|(
