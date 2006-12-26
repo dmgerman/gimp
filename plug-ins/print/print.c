@@ -1407,6 +1407,7 @@ name|GtkWidget
 modifier|*
 name|image
 decl_stmt|;
+comment|/* FIXME: add a Print action to the Preview dialog */
 name|dialog
 operator|=
 name|gtk_dialog_new
@@ -1428,11 +1429,6 @@ expr_stmt|;
 name|image
 operator|=
 name|gtk_image_new_from_file
-argument_list|(
-name|filename
-argument_list|)
-expr_stmt|;
-name|g_unlink
 argument_list|(
 name|filename
 argument_list|)
@@ -1477,6 +1473,11 @@ name|dialog
 argument_list|)
 expr_stmt|;
 block|}
+name|g_unlink
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
 name|g_free
 argument_list|(
 name|filename
