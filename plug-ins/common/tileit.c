@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This is a plug-in for the GIMP.  *  * Tileit - This plugin will take an image an make repeated  * copies of it the stepping is 1/(2**n); 1<=n<=6  *  * Copyright (C) 1997 Andy Thomas  alt@picnic.demon.co.uk  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * A fair proprotion of this code was taken from the Whirl plug-in  * which was copyrighted by Federico Mena Quintero (as below).  *  * Whirl plug-in --- distort an image into a whirlpool  * Copyright (C) 1997 Federico Mena Quintero  *  */
+comment|/*  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This is a plug-in for the GIMP.  *  * Tileit - This plugin take an image and makes repeated copies of it.  *  * Copyright (C) 1997 Andy Thomas  alt@picnic.demon.co.uk  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * A fair proprotion of this code was taken from the Whirl plug-in  * which was copyrighted by Federico Mena Quintero (as below).  *  * Whirl plug-in --- distort an image into a whirlpool  * Copyright (C) 1997 Federico Mena Quintero  *  */
 end_comment
 
 begin_comment
@@ -112,7 +112,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bccdb5e0108
+DECL|struct|__anon2c13cf750108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -495,7 +495,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bccdb5e0203
+DECL|enum|__anon2c13cf750203
 block|{
 DECL|enumerator|ALL
 name|ALL
@@ -514,7 +514,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bccdb5e0308
+DECL|struct|__anon2c13cf750308
 block|{
 DECL|member|type
 name|AppliedTo
@@ -584,7 +584,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bccdb5e0408
+DECL|struct|__anon2c13cf750408
 block|{
 DECL|member|htoggle
 name|GtkWidget
@@ -2778,7 +2778,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-literal|"1 / (2 ** _n)"
+literal|"_nÂ²"
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
