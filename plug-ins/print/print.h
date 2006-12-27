@@ -6,7 +6,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d28a060108
+DECL|struct|__anon276f91730108
 block|{
 DECL|member|num_pages
 name|gint
@@ -37,16 +37,6 @@ DECL|member|layout_preview_image
 name|GtkWidget
 modifier|*
 name|layout_preview_image
-decl_stmt|;
-DECL|member|caption_buffer
-name|GtkTextBuffer
-modifier|*
-name|caption_buffer
-decl_stmt|;
-DECL|member|caption
-name|guchar
-modifier|*
-name|caption
 decl_stmt|;
 DECL|member|xres
 name|gdouble
