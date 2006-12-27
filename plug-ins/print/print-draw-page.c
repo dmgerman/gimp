@@ -82,12 +82,6 @@ modifier|*
 name|pixels
 parameter_list|,
 name|gint
-name|x
-parameter_list|,
-name|gint
-name|y
-parameter_list|,
-name|gint
 name|width
 parameter_list|,
 name|gint
@@ -572,10 +566,6 @@ name|create_surface
 argument_list|(
 name|pixels
 argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
 name|width
 argument_list|,
 name|h
@@ -661,18 +651,12 @@ begin_function
 specifier|static
 name|cairo_surface_t
 modifier|*
-DECL|function|create_surface (guchar * pixels,gint x,gint y,gint width,gint height,gint rowstride)
+DECL|function|create_surface (guchar * pixels,gint width,gint height,gint rowstride)
 name|create_surface
 parameter_list|(
 name|guchar
 modifier|*
 name|pixels
-parameter_list|,
-name|gint
-name|x
-parameter_list|,
-name|gint
-name|y
 parameter_list|,
 name|gint
 name|width
