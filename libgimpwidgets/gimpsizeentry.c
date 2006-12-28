@@ -54,7 +54,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b96cb5a0103
+DECL|enum|__anon29fb7d8d0103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED
@@ -2012,7 +2012,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_size_entry_set_value_boundaries:  * @gse:   The sizeentry you want to set value boundaries for.  * @field: The index of the field you want to set value boundaries for.  * @lower: The new lower boundary of the value of the chosen @field.  * @upper: The new upper boundary of the value of the chosen @field.  *  * Limits the range of possible values which can be entered in field # @field  * of the #GimpSizeEntry.  *  * The current value of the @field will be clamped to fit in the @field's  * new boundaries.  *  * NOTE: In most cases you won't be interested in these values because the  *       #GimpSizeEntry's purpose is to shield the programmer from unit  *       calculations. Use gimp_size_entry_set_refval_boundaries() instead.  *       Whatever you do, don't mix these calls. A size entry should either  *       be clamped by the value or the reference value.  **/
+comment|/**  * gimp_size_entry_set_value_boundaries:  * @gse:   The sizeentry you want to set value boundaries for.  * @field: The index of the field you want to set value boundaries for.  * @lower: The new lower boundary of the value of the chosen @field.  * @upper: The new upper boundary of the value of the chosen @field.  *  * Limits the range of possible values which can be entered in field # @field  * of the #GimpSizeEntry.  *  * The current value of the @field will be clamped to fit in the @field's  * new boundaries.  *  * NOTE: In most cases you won't be interested in this function because the  *       #GimpSizeEntry's purpose is to shield the programmer from unit  *       calculations. Use gimp_size_entry_set_refval_boundaries() instead.  *       Whatever you do, don't mix these calls. A size entry should either  *       be clamped by the value or the reference value.  **/
 end_comment
 
 begin_function
