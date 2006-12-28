@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon291e1d0c0103
+DECL|enum|__anon28b264f60103
 block|{
 DECL|enumerator|UNIT_CHANGED
 name|UNIT_CHANGED
@@ -72,7 +72,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon291e1d0c0203
+DECL|enum|__anon28b264f60203
 block|{
 DECL|enumerator|UNIT_COLUMN
 name|UNIT_COLUMN
