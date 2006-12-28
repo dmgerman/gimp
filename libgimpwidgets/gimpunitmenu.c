@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b264f60103
+DECL|enum|__anon2b876c860103
 block|{
 DECL|enumerator|UNIT_CHANGED
 name|UNIT_CHANGED
@@ -72,7 +72,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b264f60203
+DECL|enum|__anon2b876c860203
 block|{
 DECL|enumerator|UNIT_COLUMN
 name|UNIT_COLUMN
@@ -2022,6 +2022,18 @@ parameter_list|)
 block|{
 name|GtkWidget
 modifier|*
+name|parent
+init|=
+name|gtk_widget_get_toplevel
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|menu
+argument_list|)
+argument_list|)
+decl_stmt|;
+name|GtkWidget
+modifier|*
 name|vbox
 decl_stmt|;
 name|GtkWidget
@@ -2062,10 +2074,7 @@ argument_list|)
 argument_list|,
 literal|"gimp-unit-selection"
 argument_list|,
-name|GTK_WIDGET
-argument_list|(
-name|menu
-argument_list|)
+name|parent
 argument_list|,
 name|GTK_DIALOG_DESTROY_WITH_PARENT
 argument_list|,
