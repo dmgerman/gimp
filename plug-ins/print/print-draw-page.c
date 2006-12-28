@@ -341,16 +341,6 @@ argument_list|,
 name|scale_y
 argument_list|)
 expr_stmt|;
-name|gimp_tile_cache_ntiles
-argument_list|(
-literal|1
-operator|+
-name|width
-operator|/
-name|gimp_tile_width
-argument_list|()
-argument_list|)
-expr_stmt|;
 name|gimp_pixel_rgn_init
 argument_list|(
 operator|&
