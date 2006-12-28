@@ -82,7 +82,7 @@ name|GIMP_DASH_EDITOR_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_DASH_EDITOR, GimpDashEditor))
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_DASH_EDITOR, GimpDashEditorClass))
 end_define
 
 begin_typedef
