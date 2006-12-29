@@ -48,7 +48,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2893b3b10108
+DECL|struct|__anon28c689470108
 block|{
 DECL|member|data
 name|PrintData
@@ -1197,7 +1197,12 @@ name|gimp_size_entry_new
 argument_list|(
 literal|1
 argument_list|,
-name|GIMP_UNIT_INCH
+name|gimp_image_get_unit
+argument_list|(
+name|data
+operator|->
+name|image_id
+argument_list|)
 argument_list|,
 name|_
 argument_list|(

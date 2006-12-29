@@ -594,12 +594,8 @@ name|data
 operator|->
 name|unit
 operator|=
-name|gimp_image_get_unit
-argument_list|(
-name|data
-operator|->
-name|image_id
-argument_list|)
+name|gimp_get_default_unit
+argument_list|()
 expr_stmt|;
 name|gimp_image_get_resolution
 argument_list|(
