@@ -767,6 +767,16 @@ argument_list|(
 name|operation
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|status
+operator|&&
+name|strlen
+argument_list|(
+name|status
+argument_list|)
+condition|)
+block|{
 comment|/* display status of the print operation in the status bar */
 name|gimp_progress_set_text_printf
 argument_list|(
@@ -778,11 +788,7 @@ argument_list|,
 name|status
 argument_list|)
 expr_stmt|;
-while|while
-condition|(
-name|gtk_events_pending
-argument_list|()
-condition|)
+block|}
 name|gtk_main_iteration
 argument_list|()
 expr_stmt|;
