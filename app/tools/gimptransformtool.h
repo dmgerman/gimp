@@ -192,6 +192,11 @@ decl_stmt|,
 name|cy
 decl_stmt|;
 comment|/*  center point (for rotation)       */
+DECL|member|aspect
+name|gdouble
+name|aspect
+decl_stmt|;
+comment|/*  original aspect ratio             */
 DECL|member|tx1
 DECL|member|ty1
 name|gdouble
