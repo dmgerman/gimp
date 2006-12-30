@@ -1803,7 +1803,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1a6dcb0108
+DECL|struct|__anon27ded00e0108
 block|{
 DECL|member|config
 name|GObject
@@ -2422,7 +2422,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_ratio_entry_set_fraction
 argument_list|(
-name|GTK_RATIO_ENTRY
+name|GIMP_RATIO_ENTRY
 argument_list|(
 name|entry
 argument_list|)
