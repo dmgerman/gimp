@@ -503,7 +503,7 @@ condition|(
 name|error
 condition|)
 block|{
-name|g_message
+name|g_warning
 argument_list|(
 literal|"Unable to get contents of settings key file: %s"
 argument_list|,
@@ -547,7 +547,7 @@ name|error
 argument_list|)
 condition|)
 block|{
-name|g_message
+name|g_warning
 argument_list|(
 literal|"Unable to write print settings to '%s': %s"
 argument_list|,
@@ -630,7 +630,7 @@ operator|!
 name|contents
 condition|)
 block|{
-name|g_message
+name|g_warning
 argument_list|(
 literal|"Unable to get contents of settings key file: %s"
 argument_list|,
