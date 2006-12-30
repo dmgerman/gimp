@@ -247,6 +247,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimpwidgets/gimpratioentry.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimpwidgets/gimpresolutionentry.h>
 end_include
 
