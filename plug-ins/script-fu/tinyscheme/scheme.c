@@ -326,23 +326,6 @@ directive|include
 file|<stdlib.h>
 end_include
 
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|__APPLE__
-end_ifndef
-
-begin_include
-include|#
-directive|include
-file|<malloc.h>
-end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
 begin_define
 DECL|macro|min (a,b)
 define|#
@@ -11414,7 +11397,7 @@ decl_stmt|;
 name|int
 name|len
 decl_stmt|;
-DECL|enum|__anon2be3cf0a0103
+DECL|enum|__anon27c746c40103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -28158,7 +28141,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon2be3cf0a0208
+DECL|struct|__anon27c746c40208
 specifier|static
 struct|struct
 block|{
@@ -28393,7 +28376,7 @@ value|"\016"
 end_define
 
 begin_typedef
-DECL|struct|__anon2be3cf0a0308
+DECL|struct|__anon27c746c40308
 typedef|typedef
 struct|struct
 block|{
