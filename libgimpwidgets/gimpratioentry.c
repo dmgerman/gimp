@@ -55,7 +55,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29581d5c0103
+DECL|enum|__anon2b69968c0103
 block|{
 DECL|enumerator|RATIO_CHANGED
 name|RATIO_CHANGED
@@ -68,7 +68,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29581d5c0203
+DECL|enum|__anon2b69968c0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -617,7 +617,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_ratio_entry_set_ratio:  * @entry: a #GimpRatioEntry widget  * @ratio: ratio to set in the widget  * @calc_fraction: convert into a fraction?  *  * Sets the ratio displayed by a #GimpRatioEntry. If the new ratio is  * different than the previous ratio, the "ratio-changed" signal is  * emitted.  *  * An attempt is made to convert the decimal number into a fraction with  * numerator and denominator< 1000.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_ratio_entry_set_ratio:  * @entry: a #GimpRatioEntry widget  * @ratio: ratio to set in the widget  *  * Sets the ratio displayed by a #GimpRatioEntry. If the new ratio is  * different than the previous ratio, the "ratio-changed" signal is  * emitted.  *  * An attempt is made to convert the decimal number into a fraction with  * numerator and denominator< 1000.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -791,7 +791,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_ratio_entry_get_ratio:  * @entry: a #GimpRatioEntry widget  *  * Retrieves the ratio value displayed by a #GimpRatioEntry.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_ratio_entry_get_ratio:  * @entry: a #GimpRatioEntry widget  *  * Retrieves the ratio value displayed by a #GimpRatioEntry.  *  * Returns: The ratio value.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
