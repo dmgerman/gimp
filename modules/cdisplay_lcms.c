@@ -190,7 +190,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d854d80103
+DECL|enum|__anon2af7b5e70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1656,11 +1656,11 @@ name|proof_profile
 argument_list|,
 name|config
 operator|->
-name|display_intent
+name|simulation_intent
 argument_list|,
 name|config
 operator|->
-name|simulation_intent
+name|display_intent
 argument_list|,
 name|cmsFLAGS_SOFTPROOFING
 argument_list|)
