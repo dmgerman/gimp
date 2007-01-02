@@ -129,7 +129,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf866880103
+DECL|enum|__anon2afa74970103
 block|{
 DECL|enumerator|STATUS
 name|STATUS
@@ -151,7 +151,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf866880203
+DECL|enum|__anon2afa74970203
 block|{
 DECL|enumerator|PROC_SET
 name|PROC_SET
@@ -180,7 +180,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf866880308
+DECL|struct|__anon2afa74970308
 block|{
 DECL|member|name
 specifier|const
@@ -1145,10 +1145,10 @@ name|proc
 condition|)
 block|{
 case|case
-name|PROC_SET_RGB
+name|PROC_SET
 case|:
 case|case
-name|PROC_APPLY_RGB
+name|PROC_APPLY
 case|:
 name|filename
 operator|=
@@ -1163,10 +1163,10 @@ name|d_string
 expr_stmt|;
 comment|/* fallthrough */
 case|case
-name|PROC_SET
+name|PROC_SET_RGB
 case|:
 case|case
-name|PROC_APPLY
+name|PROC_APPLY_RGB
 case|:
 name|run_mode
 operator|=
