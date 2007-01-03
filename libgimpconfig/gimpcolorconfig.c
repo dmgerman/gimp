@@ -81,7 +81,7 @@ define|#
 directive|define
 name|DISPLAY_PROFILE_FROM_GDK_BLURB
 define|\
-value|N_("When enabled, the GIMP will try to use the display color profile " \      "from the windowing system.  The configured monitor profile is then " \      "only used as a fallback.")
+value|N_("When enabled, GIMP will try to use the display color profile from " \      "the windowing system.  The configured monitor profile is then only " \      "used as a fallback.")
 end_define
 
 begin_define
@@ -131,7 +131,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9a77710103
+DECL|enum|__anon29e7f91a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
