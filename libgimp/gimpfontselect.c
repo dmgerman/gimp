@@ -171,7 +171,7 @@ block|,
 literal|"If the dialog was closing "
 literal|"[0 = No, 1 = Yes]"
 block|}
-block|,   }
+block|}
 decl_stmt|;
 name|gchar
 modifier|*
@@ -188,15 +188,15 @@ literal|"Temporary font popup callback procedure"
 argument_list|,
 literal|""
 argument_list|,
-literal|"Andy Thomas"
+literal|""
 argument_list|,
-literal|"Andy Thomas"
+literal|""
 argument_list|,
-literal|"1997"
+literal|""
 argument_list|,
 name|NULL
 argument_list|,
-literal|"RGB*, GRAY*"
+literal|""
 argument_list|,
 name|GIMP_TEMPORARY
 argument_list|,

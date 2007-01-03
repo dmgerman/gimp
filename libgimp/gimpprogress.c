@@ -393,15 +393,15 @@ literal|"Temporary progress callback procedure"
 argument_list|,
 literal|""
 argument_list|,
-literal|"Michael Natterer<mitch@gimp.org>"
+literal|""
 argument_list|,
-literal|"Michael Natterer"
+literal|""
 argument_list|,
-literal|"2004"
+literal|""
 argument_list|,
 name|NULL
 argument_list|,
-literal|"RGB*, GRAY*, INDEXED*"
+literal|""
 argument_list|,
 name|GIMP_TEMPORARY
 argument_list|,
