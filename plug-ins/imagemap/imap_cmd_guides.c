@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpwidgets/gimpwidgets.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"imap_commands.h"
 end_include
 
@@ -52,7 +58,7 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon2bf66c1a0108
+DECL|struct|__anon28beece00108
 typedef|typedef
 struct|struct
 block|{
@@ -710,9 +716,9 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
-name|label
+name|hbox
 operator|=
-name|gtk_label_new
+name|gimp_hint_box_new
 argument_list|(
 name|_
 argument_list|(
@@ -721,38 +727,6 @@ literal|"them by their width, height, and spacing from each other. This "
 literal|"allows you to rapidly create the most common image map type - "
 literal|"image collection of \"thumbnails\", suitable for navigation bars."
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_label_set_line_wrap
-argument_list|(
-name|GTK_LABEL
-argument_list|(
-name|label
-argument_list|)
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
-name|gtk_label_set_justify
-argument_list|(
-name|GTK_LABEL
-argument_list|(
-name|label
-argument_list|)
-argument_list|,
-name|GTK_JUSTIFY_LEFT
-argument_list|)
-expr_stmt|;
-name|gtk_misc_set_alignment
-argument_list|(
-name|GTK_MISC
-argument_list|(
-name|label
-argument_list|)
-argument_list|,
-literal|0.0
-argument_list|,
-literal|0.5
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -764,7 +738,7 @@ operator|->
 name|vbox
 argument_list|)
 argument_list|,
-name|label
+name|hbox
 argument_list|,
 name|FALSE
 argument_list|,
@@ -775,7 +749,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|label
+name|hbox
 argument_list|)
 expr_stmt|;
 name|data
@@ -1598,7 +1572,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2bf66c1a0208
+DECL|struct|__anon28beece00208
 typedef|typedef
 struct|struct
 block|{

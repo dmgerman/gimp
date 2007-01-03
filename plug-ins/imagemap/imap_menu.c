@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpwidgets/gimpwidgets.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"imap_about.h"
 end_include
 
@@ -97,12 +103,6 @@ begin_include
 include|#
 directive|include
 file|"libgimp/stdplugins-intl.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimpwidgets/gimpstock.h"
 end_include
 
 begin_comment
@@ -859,7 +859,10 @@ literal|"FileMenu"
 block|,
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"_File"
+argument_list|)
 block|}
 block|,
 block|{
@@ -867,21 +870,19 @@ literal|"Open"
 block|,
 name|GTK_STOCK_OPEN
 block|,
+name|N_
+argument_list|(
 literal|"_Open..."
+argument_list|)
 block|,
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Open"
+argument_list|)
 block|,
 name|do_file_open_dialog
-block|}
-block|,
-block|{
-literal|"OpenRecentMenu"
-block|,
-name|NULL
-block|,
-literal|"Open Recent"
 block|}
 block|,
 block|{
@@ -889,11 +890,17 @@ literal|"Save"
 block|,
 name|GTK_STOCK_SAVE
 block|,
+name|N_
+argument_list|(
 literal|"_Save..."
+argument_list|)
 block|,
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Save"
+argument_list|)
 block|,
 name|save
 block|}
@@ -903,7 +910,10 @@ literal|"SaveAs"
 block|,
 name|GTK_STOCK_SAVE_AS
 block|,
+name|N_
+argument_list|(
 literal|"Save _As..."
+argument_list|)
 block|,
 literal|"<shift><control>S"
 block|,
@@ -945,7 +955,10 @@ literal|"EditMenu"
 block|,
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"_Edit"
+argument_list|)
 block|}
 block|,
 block|{
@@ -957,7 +970,10 @@ name|NULL
 block|,
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Undo"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -971,7 +987,10 @@ name|NULL
 block|,
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Redo"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -985,7 +1004,10 @@ name|NULL
 block|,
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Cut"
+argument_list|)
 block|,
 name|do_cut
 block|}
@@ -999,7 +1021,10 @@ name|NULL
 block|,
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Copy"
+argument_list|)
 block|,
 name|do_copy
 block|}
@@ -1013,7 +1038,10 @@ name|NULL
 block|,
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Paste"
+argument_list|)
 block|,
 name|do_paste
 block|}
@@ -1025,7 +1053,10 @@ name|GTK_STOCK_DELETE
 block|,
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Delete"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1037,7 +1068,10 @@ literal|"SelectAll"
 block|,
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Select _All"
+argument_list|)
 block|,
 literal|"<control>A"
 block|,
@@ -1051,7 +1085,10 @@ literal|"DeselectAll"
 block|,
 name|NULL
 block|,
-literal|"Deselect _All"
+name|N_
+argument_list|(
+literal|"D_eselect All"
+argument_list|)
 block|,
 literal|"<shift><control>A"
 block|,
@@ -1065,11 +1102,17 @@ literal|"EditAreaInfo"
 block|,
 name|GTK_STOCK_EDIT
 block|,
-literal|"Edit Area Info..."
+name|N_
+argument_list|(
+literal|"Edit Area _Info..."
+argument_list|)
 block|,
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Edit selected area info"
+argument_list|)
 block|,
 name|do_edit_selected_shape
 block|}
@@ -1083,7 +1126,10 @@ name|NULL
 block|,
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Preferences"
+argument_list|)
 block|,
 name|do_preferences_dialog
 block|}
@@ -1097,7 +1143,10 @@ literal|""
 block|,
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Move to Front"
+argument_list|)
 block|,
 name|do_move_to_front
 block|}
@@ -1111,7 +1160,10 @@ literal|""
 block|,
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Send to Back"
+argument_list|)
 block|,
 name|do_send_to_back
 block|}
@@ -1121,7 +1173,10 @@ literal|"DeleteArea"
 block|,
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Delete Area"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1135,7 +1190,10 @@ literal|"MoveUp"
 block|,
 name|GTK_STOCK_GO_UP
 block|,
+name|N_
+argument_list|(
 literal|"Move Up"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1149,7 +1207,10 @@ literal|"MoveDown"
 block|,
 name|GTK_STOCK_GO_DOWN
 block|,
+name|N_
+argument_list|(
 literal|"Move Down"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1163,7 +1224,10 @@ literal|"InsertPoint"
 block|,
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Insert Point"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1177,7 +1241,10 @@ literal|"DeletePoint"
 block|,
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Delete Point"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1191,7 +1258,10 @@ literal|"ViewMenu"
 block|,
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"_View"
+argument_list|)
 block|}
 block|,
 block|{
@@ -1199,7 +1269,10 @@ literal|"Source"
 block|,
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Source..."
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1217,7 +1290,10 @@ name|NULL
 block|,
 literal|"plus"
 block|,
+name|N_
+argument_list|(
 literal|"Zoom in"
+argument_list|)
 block|,
 name|do_zoom_in
 block|}
@@ -1231,7 +1307,10 @@ name|NULL
 block|,
 literal|"minus"
 block|,
+name|N_
+argument_list|(
 literal|"Zoom out"
+argument_list|)
 block|,
 name|do_zoom_out
 block|}
@@ -1241,7 +1320,10 @@ literal|"ZoomToMenu"
 block|,
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"_Zoom To"
+argument_list|)
 block|}
 block|,
 block|{
@@ -1249,7 +1331,10 @@ literal|"MappingMenu"
 block|,
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"_Mapping"
+argument_list|)
 block|}
 block|,
 block|{
@@ -1257,11 +1342,17 @@ literal|"EditMapInfo"
 block|,
 name|GTK_STOCK_INFO
 block|,
+name|N_
+argument_list|(
 literal|"Edit Map Info..."
+argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Edit Map Info"
+argument_list|)
 block|,
 name|do_settings_dialog
 block|}
@@ -1271,7 +1362,10 @@ literal|"ToolsMenu"
 block|,
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"_Tools"
+argument_list|)
 block|}
 block|,
 block|{
@@ -1279,7 +1373,10 @@ literal|"GridSettings"
 block|,
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Grid Settings..."
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1293,7 +1390,10 @@ literal|"UseGimpGuides"
 block|,
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Use GIMP Guides..."
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1307,7 +1407,10 @@ literal|"CreateGuides"
 block|,
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Create Guides..."
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1321,7 +1424,10 @@ literal|"HelpMenu"
 block|,
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"_Help"
+argument_list|)
 block|}
 block|,
 block|{
@@ -1329,7 +1435,10 @@ literal|"Contents"
 block|,
 name|GTK_STOCK_HELP
 block|,
+name|N_
+argument_list|(
 literal|"_Contents"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1357,7 +1466,10 @@ literal|"ZoomMenu"
 block|,
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"_Zoom"
+argument_list|)
 block|}
 block|, }
 decl_stmt|;
@@ -1381,7 +1493,10 @@ literal|"AreaList"
 block|,
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Area List"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1397,11 +1512,17 @@ literal|"Grid"
 block|,
 name|GIMP_STOCK_GRID
 block|,
+name|N_
+argument_list|(
 literal|"_Grid"
+argument_list|)
 block|,
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Grid"
+argument_list|)
 block|,
 name|toggle_grid
 block|,
@@ -1425,7 +1546,10 @@ literal|"Color"
 block|,
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Color"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1439,7 +1563,10 @@ literal|"Gray"
 block|,
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Gray"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1465,11 +1592,17 @@ literal|"Arrow"
 block|,
 name|GIMP_STOCK_CURSOR
 block|,
+name|N_
+argument_list|(
 literal|"Arrow"
+argument_list|)
 block|,
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Select existing area"
+argument_list|)
 block|,
 literal|0
 block|}
@@ -1479,11 +1612,17 @@ literal|"Rectangle"
 block|,
 name|IMAP_STOCK_RECTANGLE
 block|,
+name|N_
+argument_list|(
 literal|"Rectangle"
+argument_list|)
 block|,
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Define Rectangle area"
+argument_list|)
 block|,
 literal|1
 block|}
@@ -1493,11 +1632,17 @@ literal|"Circle"
 block|,
 name|IMAP_STOCK_CIRCLE
 block|,
+name|N_
+argument_list|(
 literal|"Circle"
+argument_list|)
 block|,
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Define Circle/Oval area"
+argument_list|)
 block|,
 literal|2
 block|}
@@ -1507,11 +1652,17 @@ literal|"Polygon"
 block|,
 name|IMAP_STOCK_POLYGON
 block|,
+name|N_
+argument_list|(
 literal|"Polygon"
+argument_list|)
 block|,
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Define Polygon area"
+argument_list|)
 block|,
 literal|3
 block|}
@@ -1647,9 +1798,9 @@ begin_decl_stmt
 DECL|variable|ui_description
 specifier|static
 specifier|const
-name|char
-modifier|*
+name|gchar
 name|ui_description
+index|[]
 init|=
 literal|"<ui>"
 literal|"<menubar name='MainMenu'>"
@@ -1834,6 +1985,13 @@ argument_list|(
 literal|"MenuActions"
 argument_list|)
 expr_stmt|;
+name|gtk_action_group_set_translation_domain
+argument_list|(
+name|action_group
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|gtk_action_group_add_actions
 argument_list|(
 name|action_group
@@ -1977,7 +2135,7 @@ name|error
 argument_list|)
 condition|)
 block|{
-name|g_message
+name|g_warning
 argument_list|(
 literal|"building menus failed: %s"
 argument_list|,
