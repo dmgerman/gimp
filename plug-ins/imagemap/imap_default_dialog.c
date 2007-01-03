@@ -301,9 +301,10 @@ name|title
 argument_list|,
 literal|"imagemap"
 argument_list|,
-name|NULL
+name|get_dialog
+argument_list|()
 argument_list|,
-literal|0
+name|GTK_DIALOG_DESTROY_WITH_PARENT
 argument_list|,
 comment|/* gimp_standard_help_func,                                       "plug-in-imagemap", */
 name|gimp_standard_help_func
@@ -384,16 +385,6 @@ name|GTK_RESPONSE_CANCEL
 argument_list|,
 operator|-
 literal|1
-argument_list|)
-expr_stmt|;
-name|gimp_window_set_transient
-argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|data
-operator|->
-name|dialog
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_signal_connect

@@ -1255,7 +1255,7 @@ block|,
 block|{
 literal|"EditMapInfo"
 block|,
-name|IMAP_STOCK_MAP_INFO
+name|GTK_STOCK_INFO
 block|,
 literal|"Edit Map Info..."
 block|,

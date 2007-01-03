@@ -27,12 +27,6 @@ directive|include
 file|"images/imap-stock-pixbufs.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"libgimp/stdplugins-intl.h"
-end_include
-
 begin_decl_stmt
 DECL|variable|imap_icon_factory
 specifier|static
@@ -98,22 +92,6 @@ block|,
 literal|0
 block|,
 name|NULL
-block|}
-block|,
-block|{
-name|IMAP_STOCK_MAP_INFO
-block|,
-name|N_
-argument_list|(
-literal|"Edit Map Info..."
-argument_list|)
-block|,
-literal|0
-block|,
-literal|0
-block|,
-name|GETTEXT_PACKAGE
-literal|"-std-plug-ins"
 block|}
 block|,
 block|{
@@ -314,13 +292,6 @@ argument_list|(
 name|IMAP_STOCK_JAVA
 argument_list|,
 name|stock_java
-argument_list|)
-expr_stmt|;
-name|add_stock_icon
-argument_list|(
-name|IMAP_STOCK_MAP_INFO
-argument_list|,
-name|stock_map_info
 argument_list|)
 expr_stmt|;
 name|add_stock_icon

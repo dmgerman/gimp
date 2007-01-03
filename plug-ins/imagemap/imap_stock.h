@@ -65,14 +65,6 @@ value|"imap-link"
 end_define
 
 begin_define
-DECL|macro|IMAP_STOCK_MAP_INFO
-define|#
-directive|define
-name|IMAP_STOCK_MAP_INFO
-value|"imap-map-info"
-end_define
-
-begin_define
 DECL|macro|IMAP_STOCK_POLYGON
 define|#
 directive|define

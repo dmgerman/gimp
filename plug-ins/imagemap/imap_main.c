@@ -5526,6 +5526,14 @@ argument_list|,
 name|GTK_WIN_POS_MOUSE
 argument_list|)
 expr_stmt|;
+name|gimp_window_set_transient
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|dlg
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|g_signal_connect
 argument_list|(
 name|dlg
