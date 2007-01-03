@@ -27,6 +27,12 @@ directive|include
 file|"imap_default_dialog.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"imap_main.h"
+end_include
+
 begin_function
 specifier|static
 name|void
@@ -304,7 +310,7 @@ argument_list|,
 name|get_dialog
 argument_list|()
 argument_list|,
-name|GTK_DIALOG_DESTROY_WITH_PARENT
+literal|0
 argument_list|,
 comment|/* gimp_standard_help_func,                                       "plug-in-imagemap", */
 name|gimp_standard_help_func
