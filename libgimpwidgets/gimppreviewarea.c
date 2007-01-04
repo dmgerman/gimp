@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b52990e0103
+DECL|enum|__anon29c83d080103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1353,7 +1353,7 @@ operator|*
 name|bpp
 expr_stmt|;
 name|width
-operator|-=
+operator|+=
 name|x
 expr_stmt|;
 name|x
@@ -1393,7 +1393,7 @@ operator|*
 name|rowstride
 expr_stmt|;
 name|height
-operator|-=
+operator|+=
 name|y
 expr_stmt|;
 name|y
@@ -2724,7 +2724,7 @@ operator|*
 name|bpp
 expr_stmt|;
 name|width
-operator|-=
+operator|+=
 name|x
 expr_stmt|;
 name|x
@@ -2770,7 +2770,7 @@ operator|*
 name|rowstride2
 expr_stmt|;
 name|height
-operator|-=
+operator|+=
 name|y
 expr_stmt|;
 name|y
@@ -5064,7 +5064,7 @@ operator|-=
 name|x
 expr_stmt|;
 name|width
-operator|-=
+operator|+=
 name|x
 expr_stmt|;
 name|x
@@ -5116,7 +5116,7 @@ operator|*
 name|rowstride_mask
 expr_stmt|;
 name|height
-operator|-=
+operator|+=
 name|y
 expr_stmt|;
 name|y
@@ -8478,7 +8478,7 @@ literal|0
 condition|)
 block|{
 name|width
-operator|-=
+operator|+=
 name|x
 expr_stmt|;
 name|x
@@ -8512,7 +8512,7 @@ literal|0
 condition|)
 block|{
 name|height
-operator|-=
+operator|+=
 name|y
 expr_stmt|;
 name|y
