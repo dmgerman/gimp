@@ -97,7 +97,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a28cd20108
+DECL|struct|__anon2b6321ce0108
 block|{
 DECL|member|code
 name|guint16
@@ -389,24 +389,156 @@ index|[]
 init|=
 block|{
 block|{
-name|REL_WHEEL
+name|REL_X
 block|,
-literal|"wheel-turn-left"
+literal|"x-move-left"
 block|,
 name|N_
 argument_list|(
-literal|"Wheel Turn Left"
+literal|"X Move Left"
 argument_list|)
 block|}
 block|,
 block|{
-name|REL_WHEEL
+name|REL_X
 block|,
-literal|"wheel-turn-right"
+literal|"x-move-right"
 block|,
 name|N_
 argument_list|(
-literal|"Wheel Turn Right"
+literal|"X Move Right"
+argument_list|)
+block|}
+block|,
+block|{
+name|REL_Y
+block|,
+literal|"y-move-down"
+block|,
+name|N_
+argument_list|(
+literal|"Y Move Down"
+argument_list|)
+block|}
+block|,
+block|{
+name|REL_Y
+block|,
+literal|"y-move-up"
+block|,
+name|N_
+argument_list|(
+literal|"Y Move Up"
+argument_list|)
+block|}
+block|,
+block|{
+name|REL_Z
+block|,
+literal|"z-move-down"
+block|,
+name|N_
+argument_list|(
+literal|"Z Move Down"
+argument_list|)
+block|}
+block|,
+block|{
+name|REL_Z
+block|,
+literal|"z-move-up"
+block|,
+name|N_
+argument_list|(
+literal|"Z Move Up"
+argument_list|)
+block|}
+block|,
+block|{
+name|REL_RX
+block|,
+literal|"x-axis-turn-left"
+block|,
+name|N_
+argument_list|(
+literal|"X Axis Turn Left"
+argument_list|)
+block|}
+block|,
+block|{
+name|REL_RX
+block|,
+literal|"x-axis-turn-right"
+block|,
+name|N_
+argument_list|(
+literal|"X Axis Turn Right"
+argument_list|)
+block|}
+block|,
+block|{
+name|REL_RY
+block|,
+literal|"y-axis-turn-back"
+block|,
+name|N_
+argument_list|(
+literal|"Y Axis Turn Back"
+argument_list|)
+block|}
+block|,
+block|{
+name|REL_RY
+block|,
+literal|"y-axis-turn-forward"
+block|,
+name|N_
+argument_list|(
+literal|"Y Axis Turn Forward"
+argument_list|)
+block|}
+block|,
+block|{
+name|REL_RZ
+block|,
+literal|"z-axis-turn-left"
+block|,
+name|N_
+argument_list|(
+literal|"Z Axis Turn Left"
+argument_list|)
+block|}
+block|,
+block|{
+name|REL_RZ
+block|,
+literal|"z-axis-turn-right"
+block|,
+name|N_
+argument_list|(
+literal|"Z Axis Turn Right"
+argument_list|)
+block|}
+block|,
+block|{
+name|REL_HWHEEL
+block|,
+literal|"horizontal-wheel-turn-back"
+block|,
+name|N_
+argument_list|(
+literal|"Horiz. Wheel Turn Back"
+argument_list|)
+block|}
+block|,
+block|{
+name|REL_HWHEEL
+block|,
+literal|"horizontal-wheel-turn-forward"
+block|,
+name|N_
+argument_list|(
+literal|"Horiz. Wheel Turn Forward"
 argument_list|)
 block|}
 block|,
@@ -431,13 +563,35 @@ argument_list|(
 literal|"Dial Turn Right"
 argument_list|)
 block|}
+block|,
+block|{
+name|REL_WHEEL
+block|,
+literal|"wheel-turn-left"
+block|,
+name|N_
+argument_list|(
+literal|"Wheel Turn Left"
+argument_list|)
+block|}
+block|,
+block|{
+name|REL_WHEEL
+block|,
+literal|"wheel-turn-right"
+block|,
+name|N_
+argument_list|(
+literal|"Wheel Turn Right"
+argument_list|)
+block|}
 block|, }
 decl_stmt|;
 end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a28cd20203
+DECL|enum|__anon2b6321ce0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
