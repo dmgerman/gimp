@@ -111,6 +111,26 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
+begin_comment
+comment|/* maximal width of the string holding the cursor-coordinates for  * the status line  */
+end_comment
+
+begin_define
+DECL|macro|CURSOR_LEN
+define|#
+directive|define
+name|CURSOR_LEN
+value|256
+end_define
+
+begin_define
+DECL|macro|MESSAGE_TIMEOUT
+define|#
+directive|define
+name|MESSAGE_TIMEOUT
+value|5000
+end_define
+
 begin_typedef
 DECL|typedef|GimpStatusbarMsg
 typedef|typedef
@@ -142,18 +162,6 @@ decl_stmt|;
 block|}
 struct|;
 end_struct
-
-begin_comment
-comment|/* maximal width of the string holding the cursor-coordinates for  * the status line  */
-end_comment
-
-begin_define
-DECL|macro|CURSOR_LEN
-define|#
-directive|define
-name|CURSOR_LEN
-value|256
-end_define
 
 begin_function_decl
 specifier|static
@@ -3208,7 +3216,7 @@ name|temp_timeout_id
 operator|=
 name|g_timeout_add
 argument_list|(
-literal|3000
+name|MESSAGE_TIMEOUT
 argument_list|,
 operator|(
 name|GSourceFunc
