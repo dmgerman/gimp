@@ -4,7 +4,7 @@ comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* Disclaimer:  *  * It is a really bad idea to use Drag'n'Drop for inter-client  * communication. Dont even think about doing this in your own newly  * created application. We do this *only*, because we are in a  * feature freeze for Gimp 1.2 and adding a completely new communication  * infrastructure for remote controlling Gimp is definitely a new  * feature...  *                                                Simon  */
+comment|/* Disclaimer:  *  * It is a really bad idea to use Drag'n'Drop for inter-client  * communication. Dont even think about doing this in your own newly  * created application. We do this *only*, because we are in a  * feature freeze for GIMP 1.2 and adding a completely new communication  * infrastructure for remote controlling GIMP is definitely a new  * feature...  *                                                Simon  */
 end_comment
 
 begin_include
@@ -381,6 +381,41 @@ argument_list|(
 name|display
 argument_list|)
 expr_stmt|;
+name|role_atom
+operator|=
+name|XInternAtom
+argument_list|(
+name|xdisplay
+argument_list|,
+literal|"WM_WINDOW_ROLE"
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+name|string_atom
+operator|=
+name|XInternAtom
+argument_list|(
+name|xdisplay
+argument_list|,
+literal|"STRING"
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|role_atom
+operator|==
+name|None
+operator|||
+name|string_atom
+operator|==
+name|None
+condition|)
+return|return
+name|NULL
+return|;
 if|if
 condition|(
 name|XQueryTree
@@ -422,28 +457,6 @@ condition|)
 return|return
 name|NULL
 return|;
-name|role_atom
-operator|=
-name|XInternAtom
-argument_list|(
-name|xdisplay
-argument_list|,
-literal|"WM_WINDOW_ROLE"
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
-name|string_atom
-operator|=
-name|XInternAtom
-argument_list|(
-name|xdisplay
-argument_list|,
-literal|"STRING"
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
 for|for
 control|(
 name|i
@@ -492,7 +505,7 @@ name|i
 index|]
 argument_list|)
 expr_stmt|;
-comment|/*  We are searching for the Gimp toolbox: Its WM_WINDOW_ROLE Property        *  (as set by gtk_window_set_role ()) has the value "gimp-toolbox".        *  This is pretty reliable, since ask for a special property,        *  explicitly set by the gimp. See below... :-)        */
+comment|/*  We are searching for the GIMP toolbox: Its WM_WINDOW_ROLE Property        *  (as set by gtk_window_set_role ()) has the value "gimp-toolbox".        *  This is pretty reliable, since it ask for a special property,        *  explicitly set by GIMP. See below... :-)        */
 if|if
 condition|(
 name|XGetWindowProperty
@@ -1673,7 +1686,7 @@ condition|)
 block|{
 name|g_printerr
 argument_list|(
-literal|"Gimp Window doesnt use Xdnd-Protocol - huh?\n"
+literal|"GIMP Window doesnt use Xdnd-Protocol - huh?\n"
 argument_list|)
 expr_stmt|;
 return|return
@@ -1721,7 +1734,7 @@ argument_list|(
 name|source
 argument_list|)
 expr_stmt|;
-comment|/*  specify the id and the content-type of the selection used to            *  pass the URIs to Gimp.            */
+comment|/*  specify the id and the content-type of the selection used to            *  pass the URIs to GIMP.            */
 name|sel_id
 operator|=
 name|gdk_atom_intern
