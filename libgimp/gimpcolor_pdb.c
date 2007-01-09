@@ -898,7 +898,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_balance:  * @drawable_ID: The drawable.  * @transfer_mode: Transfer mode.  * @preserve_lum: Preserve luminosity values at each pixel.  * @cyan_red: Cyan-Red color balance.  * @magenta_green: Magenta-Green color balance.  * @yellow_blue: Yellow-Blue color balance.  *  * Modify the color balance of the specified drawable.  *  * Modify the color balance of the specified drawable. There are three  * axis which can be modified: cyan-red, magenta-green, and  * yellow-blue. Negative values increase the amount of the former,  * positive values increase the amount of the latter. Color balance can  * be controlled with the 'transfer_mode' setting, which allows  * shadows, midtones, and highlights in an image to be affected  * differently. The 'preserve-lum' parameter, if TRUE, ensures that the  * luminosity of each pixel remains fixed.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_color_balance:  * @drawable_ID: The drawable.  * @transfer_mode: Transfer mode.  * @preserve_lum: Preserve luminosity values at each pixel.  * @cyan_red: Cyan-Red color balance.  * @magenta_green: Magenta-Green color balance.  * @yellow_blue: Yellow-Blue color balance.  *  * Modify the color balance of the specified drawable.  *  * Modify the color balance of the specified drawable. There are three  * axis which can be modified: cyan-red, magenta-green, and  * yellow-blue. Negative values increase the amount of the former,  * positive values increase the amount of the latter. Color balance can  * be controlled with the 'transfer_mode' setting, which allows  * shadows, mid-tones, and highlights in an image to be affected  * differently. The 'preserve-lum' parameter, if TRUE, ensures that the  * luminosity of each pixel remains fixed.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -1000,7 +1000,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_colorize:  * @drawable_ID: The drawable.  * @hue: Hue in degrees.  * @saturation: Saturation in percent.  * @lightness: Lightness in percent.  *  * Render the drawable as a grayscale image seen through a colored  * glass.  *  * Desatures the drawable, then tints it with the specified color. This  * tool is only valid on RGB color images. It will not operate on  * grayscale or indexed drawables.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_colorize:  * @drawable_ID: The drawable.  * @hue: Hue in degrees.  * @saturation: Saturation in percent.  * @lightness: Lightness in percent.  *  * Render the drawable as a grayscale image seen through a colored  * glass.  *  * Desaturates the drawable, then tints it with the specified color.  * This tool is only valid on RGB color images. It will not operate on  * grayscale or indexed drawables.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function

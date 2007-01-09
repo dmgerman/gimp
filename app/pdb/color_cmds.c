@@ -5234,7 +5234,7 @@ literal|"gimp-color-balance"
 argument_list|,
 literal|"Modify the color balance of the specified drawable."
 argument_list|,
-literal|"Modify the color balance of the specified drawable. There are three axis which can be modified: cyan-red, magenta-green, and yellow-blue. Negative values increase the amount of the former, positive values increase the amount of the latter. Color balance can be controlled with the 'transfer_mode' setting, which allows shadows, midtones, and highlights in an image to be affected differently. The 'preserve-lum' parameter, if TRUE, ensures that the luminosity of each pixel remains fixed."
+literal|"Modify the color balance of the specified drawable. There are three axis which can be modified: cyan-red, magenta-green, and yellow-blue. Negative values increase the amount of the former, positive values increase the amount of the latter. Color balance can be controlled with the 'transfer_mode' setting, which allows shadows, mid-tones, and highlights in an image to be affected differently. The 'preserve-lum' parameter, if TRUE, ensures that the luminosity of each pixel remains fixed."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -5415,7 +5415,7 @@ literal|"gimp-colorize"
 argument_list|,
 literal|"Render the drawable as a grayscale image seen through a colored glass."
 argument_list|,
-literal|"Desatures the drawable, then tints it with the specified color. This tool is only valid on RGB color images. It will not operate on grayscale or indexed drawables."
+literal|"Desaturates the drawable, then tints it with the specified color. This tool is only valid on RGB color images. It will not operate on grayscale or indexed drawables."
 argument_list|,
 literal|"Sven Neumann<sven@gimp.org>"
 argument_list|,
