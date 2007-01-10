@@ -97,7 +97,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6321ce0108
+DECL|struct|__anon28e3ebe20108
 block|{
 DECL|member|code
 name|guint16
@@ -413,33 +413,22 @@ block|,
 block|{
 name|REL_Y
 block|,
-literal|"y-move-down"
+literal|"y-move-away"
 block|,
 name|N_
 argument_list|(
-literal|"Y Move Down"
+literal|"Y Move Away"
 argument_list|)
 block|}
 block|,
 block|{
 name|REL_Y
 block|,
-literal|"y-move-up"
+literal|"y-move-near"
 block|,
 name|N_
 argument_list|(
-literal|"Y Move Up"
-argument_list|)
-block|}
-block|,
-block|{
-name|REL_Z
-block|,
-literal|"z-move-down"
-block|,
-name|N_
-argument_list|(
-literal|"Z Move Down"
+literal|"Y Move Near"
 argument_list|)
 block|}
 block|,
@@ -455,46 +444,60 @@ argument_list|)
 block|}
 block|,
 block|{
-name|REL_RX
+name|REL_Z
 block|,
-literal|"x-axis-turn-left"
+literal|"z-move-down"
 block|,
 name|N_
 argument_list|(
-literal|"X Axis Turn Left"
+literal|"Z Move Down"
+argument_list|)
+block|}
+block|,
+ifdef|#
+directive|ifdef
+name|REL_RX
+block|{
+name|REL_RX
+block|,
+literal|"x-axis-tilt-away"
+block|,
+name|N_
+argument_list|(
+literal|"X Axis Tilt Away"
 argument_list|)
 block|}
 block|,
 block|{
 name|REL_RX
 block|,
-literal|"x-axis-turn-right"
+literal|"x-axis-tilt-near"
 block|,
 name|N_
 argument_list|(
-literal|"X Axis Turn Right"
+literal|"X Axis Tilt Near"
 argument_list|)
 block|}
 block|,
 block|{
 name|REL_RY
 block|,
-literal|"y-axis-turn-back"
+literal|"y-axis-tilt-right"
 block|,
 name|N_
 argument_list|(
-literal|"Y Axis Turn Back"
+literal|"Y Axis Tilt Right"
 argument_list|)
 block|}
 block|,
 block|{
 name|REL_RY
 block|,
-literal|"y-axis-turn-forward"
+literal|"y-axis-tilt-left"
 block|,
 name|N_
 argument_list|(
-literal|"Y Axis Turn Forward"
+literal|"Y Axis Tilt Left"
 argument_list|)
 block|}
 block|,
@@ -520,6 +523,9 @@ literal|"Z Axis Turn Right"
 argument_list|)
 block|}
 block|,
+endif|#
+directive|endif
+comment|/* REL_RX */
 block|{
 name|REL_HWHEEL
 block|,
@@ -591,7 +597,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6321ce0203
+DECL|enum|__anon28e3ebe20203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
