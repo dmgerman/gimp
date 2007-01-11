@@ -184,7 +184,7 @@ name|MAIN
 argument_list|()
 comment|/******************************************************************************/
 expr|enum
-DECL|enum|__anon2b454b1a0103
+DECL|enum|__anon277df0b10103
 block|{
 DECL|enumerator|OUTSIDE_TYPE_WRAP
 name|OUTSIDE_TYPE_WRAP
@@ -204,7 +204,7 @@ end_expr_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b454b1a0208
+DECL|struct|__anon277df0b10208
 block|{
 DECL|member|x1
 name|gdouble
@@ -411,7 +411,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b454b1a0308
+DECL|struct|__anon277df0b10308
 block|{
 DECL|member|x1
 name|gint
@@ -454,7 +454,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b454b1a0408
+DECL|struct|__anon277df0b10408
 block|{
 DECL|member|width
 name|gint
@@ -1009,7 +1009,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b454b1a0508
+DECL|struct|__anon277df0b10508
 block|{
 DECL|member|r
 name|guchar
@@ -2887,7 +2887,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b454b1a0608
+DECL|struct|__anon277df0b10608
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -4079,7 +4079,7 @@ name|outside_type
 argument_list|,
 name|_
 argument_list|(
-literal|"_Warp"
+literal|"_Wrap"
 argument_list|)
 argument_list|,
 name|OUTSIDE_TYPE_WRAP
