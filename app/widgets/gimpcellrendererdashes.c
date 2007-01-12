@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon290dac110103
+DECL|enum|__anon2c16672f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -292,13 +292,15 @@ name|object_class
 argument_list|,
 name|PROP_PATTERN
 argument_list|,
-name|g_param_spec_pointer
+name|g_param_spec_boxed
 argument_list|(
 literal|"pattern"
 argument_list|,
 name|NULL
 argument_list|,
 name|NULL
+argument_list|,
+name|GIMP_TYPE_DASH_PATTERN
 argument_list|,
 name|GIMP_PARAM_WRITABLE
 argument_list|)
@@ -446,9 +448,9 @@ block|{
 case|case
 name|PROP_PATTERN
 case|:
-name|gimp_dash_pattern_segments_set
+name|gimp_dash_pattern_fill_segments
 argument_list|(
-name|g_value_get_pointer
+name|g_value_get_boxed
 argument_list|(
 name|value
 argument_list|)

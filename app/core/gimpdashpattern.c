@@ -28,10 +28,52 @@ file|"gimpdashpattern.h"
 end_include
 
 begin_function
+name|GType
+DECL|function|gimp_dash_pattern_get_type (void)
+name|gimp_dash_pattern_get_type
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+specifier|static
+name|GType
+name|type
+init|=
+literal|0
+decl_stmt|;
+if|if
+condition|(
+operator|!
+name|type
+condition|)
+name|type
+operator|=
+name|g_boxed_type_register_static
+argument_list|(
+literal|"GimpDashPattern"
+argument_list|,
+operator|(
+name|GBoxedCopyFunc
+operator|)
+name|gimp_dash_pattern_copy
+argument_list|,
+operator|(
+name|GBoxedFreeFunc
+operator|)
+name|gimp_dash_pattern_free
+argument_list|)
+expr_stmt|;
+return|return
+name|type
+return|;
+block|}
+end_function
+
+begin_function
 name|GArray
 modifier|*
-DECL|function|gimp_dash_pattern_from_preset (GimpDashPreset preset)
-name|gimp_dash_pattern_from_preset
+DECL|function|gimp_dash_pattern_new_from_preset (GimpDashPreset preset)
+name|gimp_dash_pattern_new_from_preset
 parameter_list|(
 name|GimpDashPreset
 name|preset
@@ -398,11 +440,9 @@ operator|<
 literal|2
 condition|)
 block|{
-name|g_array_free
+name|gimp_dash_pattern_free
 argument_list|(
 name|pattern
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 return|return
@@ -418,8 +458,8 @@ end_function
 begin_function
 name|GArray
 modifier|*
-DECL|function|gimp_dash_pattern_from_segments (const gboolean * segments,gint n_segments,gdouble dash_length)
-name|gimp_dash_pattern_from_segments
+DECL|function|gimp_dash_pattern_new_from_segments (const gboolean * segments,gint n_segments,gdouble dash_length)
+name|gimp_dash_pattern_new_from_segments
 parameter_list|(
 specifier|const
 name|gboolean
@@ -553,11 +593,9 @@ operator|<
 literal|2
 condition|)
 block|{
-name|g_array_free
+name|gimp_dash_pattern_free
 argument_list|(
 name|pattern
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 return|return
@@ -572,8 +610,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_dash_pattern_segments_set (GArray * pattern,gboolean * segments,gint n_segments)
-name|gimp_dash_pattern_segments_set
+DECL|function|gimp_dash_pattern_fill_segments (GArray * pattern,gboolean * segments,gint n_segments)
+name|gimp_dash_pattern_fill_segments
 parameter_list|(
 name|GArray
 modifier|*
@@ -774,43 +812,21 @@ end_function
 begin_function
 name|GArray
 modifier|*
-DECL|function|gimp_dash_pattern_from_value (const GValue * value)
-name|gimp_dash_pattern_from_value
+DECL|function|gimp_dash_pattern_from_value_array (GValueArray * value_array)
+name|gimp_dash_pattern_from_value_array
 parameter_list|(
-specifier|const
-name|GValue
-modifier|*
-name|value
-parameter_list|)
-block|{
 name|GValueArray
 modifier|*
-name|val_array
-decl_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|G_VALUE_HOLDS_BOXED
-argument_list|(
-name|value
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|val_array
-operator|=
-name|g_value_get_boxed
-argument_list|(
-name|value
-argument_list|)
-expr_stmt|;
+name|value_array
+parameter_list|)
+block|{
 if|if
 condition|(
-name|val_array
+name|value_array
 operator|==
 name|NULL
 operator|||
-name|val_array
+name|value_array
 operator|->
 name|n_values
 operator|==
@@ -843,7 +859,7 @@ argument_list|(
 name|gdouble
 argument_list|)
 argument_list|,
-name|val_array
+name|value_array
 operator|->
 name|n_values
 argument_list|)
@@ -856,7 +872,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|val_array
+name|value_array
 operator|->
 name|n_values
 condition|;
@@ -870,7 +886,7 @@ name|item
 init|=
 name|g_value_array_get_nth
 argument_list|(
-name|val_array
+name|value_array
 argument_list|,
 name|i
 argument_list|)
@@ -911,27 +927,16 @@ block|}
 end_function
 
 begin_function
-name|void
-DECL|function|gimp_dash_pattern_value_set (GArray * pattern,GValue * value)
-name|gimp_dash_pattern_value_set
+name|GValueArray
+modifier|*
+DECL|function|gimp_dash_pattern_to_value_array (GArray * pattern)
+name|gimp_dash_pattern_to_value_array
 parameter_list|(
 name|GArray
 modifier|*
 name|pattern
-parameter_list|,
-name|GValue
-modifier|*
-name|value
 parameter_list|)
 block|{
-name|g_return_if_fail
-argument_list|(
-name|G_VALUE_HOLDS_BOXED
-argument_list|(
-name|value
-argument_list|)
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|pattern
@@ -945,19 +950,15 @@ operator|==
 literal|0
 condition|)
 block|{
-name|g_value_set_boxed
-argument_list|(
-name|value
-argument_list|,
+return|return
 name|NULL
-argument_list|)
-expr_stmt|;
+return|;
 block|}
 else|else
 block|{
 name|GValueArray
 modifier|*
-name|val_array
+name|value_array
 init|=
 name|g_value_array_new
 argument_list|(
@@ -1017,20 +1018,22 @@ argument_list|)
 expr_stmt|;
 name|g_value_array_append
 argument_list|(
-name|val_array
+name|value_array
 argument_list|,
 operator|&
 name|item
 argument_list|)
 expr_stmt|;
 block|}
-name|g_value_set_boxed
+name|g_value_unset
 argument_list|(
-name|value
-argument_list|,
-name|val_array
+operator|&
+name|item
 argument_list|)
 expr_stmt|;
+return|return
+name|value_array
+return|;
 block|}
 block|}
 end_function

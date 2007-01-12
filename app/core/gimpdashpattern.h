@@ -16,10 +16,39 @@ directive|define
 name|__GIMP_DASH_PATTERN_H__
 end_define
 
+begin_define
+DECL|macro|GIMP_TYPE_DASH_PATTERN
+define|#
+directive|define
+name|GIMP_TYPE_DASH_PATTERN
+value|(gimp_dash_pattern_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_VALUE_HOLDS_DASH_PATTERN (value)
+define|#
+directive|define
+name|GIMP_VALUE_HOLDS_DASH_PATTERN
+parameter_list|(
+name|value
+parameter_list|)
+value|(G_TYPE_CHECK_VALUE_TYPE ((value), GIMP_TYPE_DASH_PATTERN))
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_dash_pattern_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
 begin_function_decl
 name|GArray
 modifier|*
-name|gimp_dash_pattern_from_preset
+name|gimp_dash_pattern_new_from_preset
 parameter_list|(
 name|GimpDashPreset
 name|preset
@@ -30,7 +59,7 @@ end_function_decl
 begin_function_decl
 name|GArray
 modifier|*
-name|gimp_dash_pattern_from_segments
+name|gimp_dash_pattern_new_from_segments
 parameter_list|(
 specifier|const
 name|gboolean
@@ -48,7 +77,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_dash_pattern_segments_set
+name|gimp_dash_pattern_fill_segments
 parameter_list|(
 name|GArray
 modifier|*
@@ -67,27 +96,23 @@ end_function_decl
 begin_function_decl
 name|GArray
 modifier|*
-name|gimp_dash_pattern_from_value
+name|gimp_dash_pattern_from_value_array
 parameter_list|(
-specifier|const
-name|GValue
+name|GValueArray
 modifier|*
-name|value
+name|value_array
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
-name|gimp_dash_pattern_value_set
+name|GValueArray
+modifier|*
+name|gimp_dash_pattern_to_value_array
 parameter_list|(
 name|GArray
 modifier|*
 name|pattern
-parameter_list|,
-name|GValue
-modifier|*
-name|value
 parameter_list|)
 function_decl|;
 end_function_decl

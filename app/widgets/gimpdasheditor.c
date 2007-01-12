@@ -77,7 +77,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad67b140103
+DECL|enum|__anon2af94df10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2004,7 +2004,7 @@ name|editor
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_dash_pattern_segments_set
+name|gimp_dash_pattern_fill_segments
 argument_list|(
 name|editor
 operator|->
@@ -2039,7 +2039,7 @@ name|GArray
 modifier|*
 name|pattern
 init|=
-name|gimp_dash_pattern_from_segments
+name|gimp_dash_pattern_new_from_segments
 argument_list|(
 name|editor
 operator|->
