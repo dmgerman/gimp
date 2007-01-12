@@ -23,6 +23,16 @@ end_define
 begin_function_decl
 name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
+name|gboolean
+name|gimp_image_is_valid
+parameter_list|(
+name|gint32
+name|image_ID
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gint
 modifier|*
 name|gimp_image_list

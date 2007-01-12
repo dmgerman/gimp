@@ -44,13 +44,13 @@ file|"gimpdrawable_pdb.h"
 end_include
 
 begin_comment
-comment|/**  * gimp_drawable_delete:  * @drawable_ID: The drawable to delete.  *  * Delete a drawable.  *  * This procedure deletes the specified drawable. This must not be done  * if the image containing this drawable was already deleted or if the  * drawable was already removed from the image. The only case in which  * this procedure is useful is if you want to get rid of a drawable  * which has not yet been added to an image.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_drawable_is_valid:  * @drawable_ID: The drawable to check.  *  * Returns TRUE if the drawable is valid.  *  * This procedure checks if the given drawable ID is valid and refers  * to an existing drawable.  *  * Returns: Whether the drawable ID is valid.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_drawable_delete (gint32 drawable_ID)
-name|gimp_drawable_delete
+DECL|function|gimp_drawable_is_valid (gint32 drawable_ID)
+name|gimp_drawable_is_valid
 parameter_list|(
 name|gint32
 name|drawable_ID
@@ -64,15 +64,15 @@ name|gint
 name|nreturn_vals
 decl_stmt|;
 name|gboolean
-name|success
+name|valid
 init|=
-name|TRUE
+name|FALSE
 decl_stmt|;
 name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp-drawable-delete"
+literal|"gimp-drawable-is-valid"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -84,8 +84,8 @@ argument_list|,
 name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
-name|success
-operator|=
+if|if
+condition|(
 name|return_vals
 index|[
 literal|0
@@ -96,6 +96,17 @@ operator|.
 name|d_status
 operator|==
 name|GIMP_PDB_SUCCESS
+condition|)
+name|valid
+operator|=
+name|return_vals
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
 expr_stmt|;
 name|gimp_destroy_params
 argument_list|(
@@ -105,7 +116,7 @@ name|nreturn_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|success
+name|valid
 return|;
 block|}
 end_function
@@ -1148,6 +1159,73 @@ operator|.
 name|d_int32
 expr_stmt|;
 block|}
+name|gimp_destroy_params
+argument_list|(
+name|return_vals
+argument_list|,
+name|nreturn_vals
+argument_list|)
+expr_stmt|;
+return|return
+name|success
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_drawable_delete:  * @drawable_ID: The drawable to delete.  *  * Delete a drawable.  *  * This procedure deletes the specified drawable. This must not be done  * if the image containing this drawable was already deleted or if the  * drawable was already removed from the image. The only case in which  * this procedure is useful is if you want to get rid of a drawable  * which has not yet been added to an image.  *  * Returns: TRUE on success.  */
+end_comment
+
+begin_function
+name|gboolean
+DECL|function|gimp_drawable_delete (gint32 drawable_ID)
+name|gimp_drawable_delete
+parameter_list|(
+name|gint32
+name|drawable_ID
+parameter_list|)
+block|{
+name|GimpParam
+modifier|*
+name|return_vals
+decl_stmt|;
+name|gint
+name|nreturn_vals
+decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|TRUE
+decl_stmt|;
+name|return_vals
+operator|=
+name|gimp_run_procedure
+argument_list|(
+literal|"gimp-drawable-delete"
+argument_list|,
+operator|&
+name|nreturn_vals
+argument_list|,
+name|GIMP_PDB_DRAWABLE
+argument_list|,
+name|drawable_ID
+argument_list|,
+name|GIMP_PDB_END
+argument_list|)
+expr_stmt|;
+name|success
+operator|=
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|GIMP_PDB_SUCCESS
+expr_stmt|;
 name|gimp_destroy_params
 argument_list|(
 name|return_vals

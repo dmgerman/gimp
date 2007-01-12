@@ -24,7 +24,7 @@ begin_function_decl
 name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
 name|gboolean
-name|gimp_drawable_delete
+name|gimp_drawable_is_valid
 parameter_list|(
 name|gint32
 name|drawable_ID
@@ -166,6 +166,16 @@ parameter_list|,
 name|gint
 modifier|*
 name|offset_y
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|gimp_drawable_delete
+parameter_list|(
+name|gint32
+name|drawable_ID
 parameter_list|)
 function_decl|;
 end_function_decl
