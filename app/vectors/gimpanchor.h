@@ -95,9 +95,11 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
-name|gimp_anchor_free
+name|GimpAnchor
+modifier|*
+name|gimp_anchor_copy
 parameter_list|(
+specifier|const
 name|GimpAnchor
 modifier|*
 name|anchor
@@ -106,11 +108,9 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpAnchor
-modifier|*
-name|gimp_anchor_duplicate
+name|void
+name|gimp_anchor_free
 parameter_list|(
-specifier|const
 name|GimpAnchor
 modifier|*
 name|anchor

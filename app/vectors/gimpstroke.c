@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2987b5000103
+DECL|enum|__anon277234b90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4192,7 +4192,7 @@ name|list
 operator|->
 name|data
 operator|=
-name|gimp_anchor_duplicate
+name|gimp_anchor_copy
 argument_list|(
 name|GIMP_ANCHOR
 argument_list|(

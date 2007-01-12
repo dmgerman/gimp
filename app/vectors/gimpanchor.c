@@ -55,7 +55,7 @@ argument_list|,
 operator|(
 name|GBoxedCopyFunc
 operator|)
-name|gimp_anchor_duplicate
+name|gimp_anchor_copy
 argument_list|,
 operator|(
 name|GBoxedFreeFunc
@@ -119,28 +119,10 @@ block|}
 end_function
 
 begin_function
-name|void
-DECL|function|gimp_anchor_free (GimpAnchor * anchor)
-name|gimp_anchor_free
-parameter_list|(
 name|GimpAnchor
 modifier|*
-name|anchor
-parameter_list|)
-block|{
-name|g_free
-argument_list|(
-name|anchor
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-name|GimpAnchor
-modifier|*
-DECL|function|gimp_anchor_duplicate (const GimpAnchor * anchor)
-name|gimp_anchor_duplicate
+DECL|function|gimp_anchor_copy (const GimpAnchor * anchor)
+name|gimp_anchor_copy
 parameter_list|(
 specifier|const
 name|GimpAnchor
@@ -159,6 +141,24 @@ name|GimpAnchor
 argument_list|)
 argument_list|)
 return|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|gimp_anchor_free (GimpAnchor * anchor)
+name|gimp_anchor_free
+parameter_list|(
+name|GimpAnchor
+modifier|*
+name|anchor
+parameter_list|)
+block|{
+name|g_free
+argument_list|(
+name|anchor
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
