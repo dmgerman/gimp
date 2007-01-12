@@ -1286,6 +1286,13 @@ literal|"[FILE|URI...]"
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|g_option_context_set_summary
+argument_list|(
+name|context
+argument_list|,
+name|GIMP_NAME
+argument_list|)
+expr_stmt|;
 name|g_option_context_add_main_entries
 argument_list|(
 name|context
