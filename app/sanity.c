@@ -249,12 +249,12 @@ DECL|macro|GLIB_REQUIRED_MINOR
 define|#
 directive|define
 name|GLIB_REQUIRED_MINOR
-value|10
+value|12
 DECL|macro|GLIB_REQUIRED_MICRO
 define|#
 directive|define
 name|GLIB_REQUIRED_MICRO
-value|2
+value|3
 name|mismatch
 operator|=
 name|glib_check_version
