@@ -112,7 +112,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c13cf750108
+DECL|struct|__anon2c25f1db0108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -495,7 +495,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c13cf750203
+DECL|enum|__anon2c25f1db0203
 block|{
 DECL|enumerator|ALL
 name|ALL
@@ -514,7 +514,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c13cf750308
+DECL|struct|__anon2c25f1db0308
 block|{
 DECL|member|type
 name|AppliedTo
@@ -584,7 +584,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c13cf750408
+DECL|struct|__anon2c25f1db0408
 block|{
 DECL|member|htoggle
 name|GtkWidget
@@ -798,7 +798,7 @@ name|PLUG_IN_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Tile image into smaller versions of the orginal"
+literal|"Tile image into smaller versions of the original"
 argument_list|)
 argument_list|,
 literal|"More here later"
