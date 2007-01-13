@@ -186,13 +186,12 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_thumb_box_set_uri
+name|gimp_thumb_box_take_uri
 parameter_list|(
 name|GimpThumbBox
 modifier|*
 name|box
 parameter_list|,
-specifier|const
 name|gchar
 modifier|*
 name|uri

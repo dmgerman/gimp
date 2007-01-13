@@ -2035,14 +2035,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_thumb_box_set_uri (GimpThumbBox * box,const gchar * uri)
-name|gimp_thumb_box_set_uri
+DECL|function|gimp_thumb_box_take_uri (GimpThumbBox * box,gchar * uri)
+name|gimp_thumb_box_take_uri
 parameter_list|(
 name|GimpThumbBox
 modifier|*
 name|box
 parameter_list|,
-specifier|const
 name|gchar
 modifier|*
 name|uri
@@ -2077,7 +2076,7 @@ operator|=
 literal|0
 expr_stmt|;
 block|}
-name|gimp_object_set_name
+name|gimp_object_take_name
 argument_list|(
 name|GIMP_OBJECT
 argument_list|(
