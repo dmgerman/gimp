@@ -623,7 +623,7 @@ index|[
 literal|16
 index|]
 decl_stmt|;
-name|snprintf
+name|g_snprintf
 argument_list|(
 name|scratch
 argument_list|,
