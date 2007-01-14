@@ -146,7 +146,8 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-specifier|extern
+DECL|variable|ts_output_routine
+name|SCHEME_EXPORT
 name|void
 modifier|*
 name|ts_output_routine

@@ -568,7 +568,7 @@ DECL|member|is_fixnum
 name|char
 name|is_fixnum
 decl_stmt|;
-DECL|union|__anon29a3bd50010a
+DECL|union|__anon27e993b5010a
 union|union
 block|{
 DECL|member|ivalue
@@ -1013,6 +1013,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|SCHEME_EXPORT
 name|void
 name|set_safe_foreign
 parameter_list|(
