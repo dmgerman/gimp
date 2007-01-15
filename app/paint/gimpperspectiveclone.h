@@ -112,15 +112,6 @@ DECL|member|parent_instance
 name|GimpClone
 name|parent_instance
 decl_stmt|;
-DECL|member|dest_x
-name|gdouble
-name|dest_x
-decl_stmt|;
-comment|/* coords where the stroke starts */
-DECL|member|dest_y
-name|gdouble
-name|dest_y
-decl_stmt|;
 DECL|member|src_x_fv
 name|gdouble
 name|src_x_fv
@@ -214,6 +205,21 @@ parameter_list|,
 name|gdouble
 modifier|*
 name|newy
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_perspective_clone_get_matrix
+parameter_list|(
+name|GimpPerspectiveClone
+modifier|*
+name|clone
+parameter_list|,
+name|GimpMatrix3
+modifier|*
+name|matrix
 parameter_list|)
 function_decl|;
 end_function_decl
