@@ -664,7 +664,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3d6c040108
+DECL|struct|__anon29be01020108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -718,7 +718,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3d6c040208
+DECL|struct|__anon29be01020208
 block|{
 DECL|member|y
 name|gint32
@@ -2790,11 +2790,6 @@ name|data
 operator|.
 name|d_drawable
 expr_stmt|;
-name|gimp_image_undo_group_start
-argument_list|(
-name|l_image_id
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -2832,25 +2827,6 @@ operator|>=
 literal|0
 condition|)
 block|{
-comment|/* apply the layermask        *   some transitions (especially rotate) cant operate proper on        *   layers with masks !        */
-if|if
-condition|(
-name|run_mode
-operator|==
-name|GIMP_RUN_NONINTERACTIVE
-condition|)
-block|{
-name|gimp_layer_remove_mask
-argument_list|(
-name|l_layer_id
-argument_list|,
-literal|0
-comment|/* 0==APPLY */
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
 name|g_message
 argument_list|(
 name|_
@@ -2863,7 +2839,6 @@ name|status
 operator|=
 name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
-block|}
 block|}
 comment|/* if there is a selection, make it the floating selection layer */
 name|l_active_drawable_id
@@ -2883,17 +2858,6 @@ literal|0
 condition|)
 block|{
 comment|/* could not float the selection because selection rectangle        * is completely empty return GIMP_PDB_EXECUTION_ERROR        */
-name|status
-operator|=
-name|GIMP_PDB_EXECUTION_ERROR
-expr_stmt|;
-if|if
-condition|(
-name|run_mode
-operator|!=
-name|GIMP_RUN_NONINTERACTIVE
-condition|)
-block|{
 name|g_message
 argument_list|(
 name|_
@@ -2902,7 +2866,10 @@ literal|"Cannot operate on empty selections."
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
+name|status
+operator|=
+name|GIMP_PDB_EXECUTION_ERROR
+expr_stmt|;
 block|}
 else|else
 block|{
@@ -3300,6 +3267,11 @@ operator|->
 name|run
 condition|)
 block|{
+name|gimp_image_undo_group_start
+argument_list|(
+name|l_image_id
+argument_list|)
+expr_stmt|;
 name|l_bent_layer_id
 operator|=
 name|p_main_bend
@@ -3313,6 +3285,11 @@ argument_list|,
 name|cd
 operator|->
 name|work_on_copy
+argument_list|)
+expr_stmt|;
+name|gimp_image_undo_group_end
+argument_list|(
+name|l_image_id
 argument_list|)
 expr_stmt|;
 comment|/* Store variable states for next run */
@@ -3337,11 +3314,6 @@ operator|=
 name|GIMP_PDB_CANCEL
 expr_stmt|;
 block|}
-name|gimp_image_undo_group_end
-argument_list|(
-name|l_image_id
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|run_mode
@@ -3350,14 +3322,6 @@ name|GIMP_RUN_NONINTERACTIVE
 condition|)
 name|gimp_displays_flush
 argument_list|()
-expr_stmt|;
-block|}
-else|else
-block|{
-name|gimp_image_undo_group_end
-argument_list|(
-name|l_image_id
-argument_list|)
 expr_stmt|;
 block|}
 name|values
