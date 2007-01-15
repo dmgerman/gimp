@@ -1876,7 +1876,7 @@ argument_list|(
 name|canonical
 argument_list|)
 expr_stmt|;
-comment|/*  Don't bother to send with the return value if executing the    *  procedure closed the plug-in (e.g. if the procedure is gimp-quit)    */
+comment|/*  Don't bother to send the return value if executing the procedure    *  closed the plug-in (e.g. if the procedure is gimp-quit)    */
 if|if
 condition|(
 name|plug_in
