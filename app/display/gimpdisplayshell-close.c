@@ -180,13 +180,11 @@ parameter_list|(
 name|guint
 name|then
 parameter_list|,
-name|gchar
-modifier|*
+name|gint
 modifier|*
 name|hours
 parameter_list|,
-name|gchar
-modifier|*
+name|gint
 modifier|*
 name|minutes
 parameter_list|)
@@ -760,17 +758,15 @@ operator|->
 name|dirty_time
 condition|)
 block|{
-name|gchar
-modifier|*
+name|gint
 name|hours
 init|=
-name|NULL
+literal|0
 decl_stmt|;
-name|gchar
-modifier|*
+name|gint
 name|minutes
 init|=
-name|NULL
+literal|0
 decl_stmt|;
 name|gimp_time_since
 argument_list|(
@@ -788,54 +784,85 @@ expr_stmt|;
 if|if
 condition|(
 name|hours
-operator|&&
-name|minutes
+operator|>
+literal|0
 condition|)
-comment|/* time period ("... from the last 3 hours and 20 minutes ...") */
+block|{
+if|if
+condition|(
+name|hours
+operator|>
+literal|1
+operator|||
+name|minutes
+operator|==
+literal|0
+condition|)
 name|gimp_message_box_set_text
 argument_list|(
 name|box
 argument_list|,
-name|_
+name|ngettext
 argument_list|(
-literal|"If you don't save the image, changes "
-literal|"from the last %s and %s will be lost."
+literal|"If you don't save the image, "
+literal|"changes from the last hour "
+literal|"will be lost."
+argument_list|,
+literal|"If you don't save the image, "
+literal|"changes from the last %d "
+literal|"hours will be lost."
+argument_list|,
+name|hours
 argument_list|)
 argument_list|,
 name|hours
-argument_list|,
-name|minutes
 argument_list|)
 expr_stmt|;
 else|else
-comment|/* time period ("... from the last 20 minutes ...") */
 name|gimp_message_box_set_text
 argument_list|(
 name|box
 argument_list|,
-name|_
+name|ngettext
 argument_list|(
-literal|"If you don't save the image, changes "
-literal|"from the last %s will be lost."
+literal|"If you don't save the image, "
+literal|"changes from the last hour "
+literal|"and %d minute will be lost."
+argument_list|,
+literal|"If you don't save the image, "
+literal|"changes from the last hour "
+literal|"and %d minutes will be lost."
+argument_list|,
+name|minutes
 argument_list|)
 argument_list|,
-name|hours
-condition|?
-name|hours
-else|:
 name|minutes
 argument_list|)
 expr_stmt|;
-name|g_free
+block|}
+else|else
+block|{
+name|gimp_message_box_set_text
 argument_list|(
-name|hours
+name|box
+argument_list|,
+name|ngettext
+argument_list|(
+literal|"If you don't save the image, "
+literal|"changes from the last minute "
+literal|"will be lost."
+argument_list|,
+literal|"If you don't save the image, "
+literal|"changes from the last %d "
+literal|"minutes will be lost."
+argument_list|,
+name|minutes
 argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
+argument_list|,
 name|minutes
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 else|else
 block|{
@@ -916,19 +943,17 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_time_since (guint then,gchar ** hours,gchar ** minutes)
+DECL|function|gimp_time_since (guint then,gint * hours,gint * minutes)
 name|gimp_time_since
 parameter_list|(
 name|guint
 name|then
 parameter_list|,
-name|gchar
-modifier|*
+name|gint
 modifier|*
 name|hours
 parameter_list|,
-name|gchar
-modifier|*
+name|gint
 modifier|*
 name|minutes
 parameter_list|)
@@ -950,16 +975,6 @@ name|now
 operator|-
 name|then
 decl_stmt|;
-operator|*
-name|minutes
-operator|=
-name|NULL
-expr_stmt|;
-operator|*
-name|hours
-operator|=
-name|NULL
-expr_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|now
@@ -1030,23 +1045,9 @@ block|{
 operator|*
 name|hours
 operator|=
-name|g_strdup_printf
-argument_list|(
-name|ngettext
-argument_list|(
-literal|"%d hour"
-argument_list|,
-literal|"%d hours"
-argument_list|,
 name|diff
 operator|/
 literal|60
-argument_list|)
-argument_list|,
-name|diff
-operator|/
-literal|60
-argument_list|)
 expr_stmt|;
 name|diff
 operator|=
@@ -1057,28 +1058,10 @@ literal|60
 operator|)
 expr_stmt|;
 block|}
-if|if
-condition|(
-name|diff
-operator|>
-literal|0
-condition|)
 operator|*
 name|minutes
 operator|=
-name|g_strdup_printf
-argument_list|(
-name|ngettext
-argument_list|(
-literal|"minute"
-argument_list|,
-literal|"%d minutes"
-argument_list|,
 name|diff
-argument_list|)
-argument_list|,
-name|diff
-argument_list|)
 expr_stmt|;
 block|}
 end_function
