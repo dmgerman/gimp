@@ -1359,15 +1359,6 @@ argument_list|(
 name|label
 argument_list|)
 expr_stmt|;
-name|gimp_help_set_help_data
-argument_list|(
-name|image
-argument_list|,
-name|name
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 name|g_free
 argument_list|(
 name|name
