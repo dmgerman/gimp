@@ -1035,11 +1035,12 @@ operator|)
 operator|*
 literal|5
 expr_stmt|;
+comment|/*  determine full hours  */
 if|if
 condition|(
 name|diff
 operator|>=
-literal|120
+literal|60
 condition|)
 block|{
 operator|*
@@ -1056,6 +1057,29 @@ name|diff
 operator|%
 literal|60
 operator|)
+expr_stmt|;
+block|}
+comment|/*  round up to full hours for 2 and more  */
+if|if
+condition|(
+operator|*
+name|hours
+operator|>
+literal|1
+operator|&&
+name|diff
+operator|>
+literal|0
+condition|)
+block|{
+operator|*
+name|hours
+operator|+=
+literal|1
+expr_stmt|;
+name|diff
+operator|=
+literal|0
 expr_stmt|;
 block|}
 operator|*
