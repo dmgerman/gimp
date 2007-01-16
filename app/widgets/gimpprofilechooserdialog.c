@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon274f0a390103
+DECL|enum|__anon28da5e390103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -473,6 +473,41 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
+ifndef|#
+directive|ifndef
+name|G_OS_WIN32
+block|{
+specifier|const
+name|gchar
+name|folder
+index|[]
+init|=
+literal|"/usr/share/color/icc"
+decl_stmt|;
+if|if
+condition|(
+name|g_file_test
+argument_list|(
+name|folder
+argument_list|,
+name|G_FILE_TEST_IS_DIR
+argument_list|)
+condition|)
+name|gtk_file_chooser_add_shortcut_folder
+argument_list|(
+name|GTK_FILE_CHOOSER
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|,
+name|folder
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+block|}
+endif|#
+directive|endif
 name|filter
 operator|=
 name|gtk_file_filter_new
@@ -516,7 +551,7 @@ name|filter
 argument_list|,
 name|_
 argument_list|(
-literal|"ICC color profile (*.icc)"
+literal|"ICC color profile (*.icc, *.icm)"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -525,6 +560,13 @@ argument_list|(
 name|filter
 argument_list|,
 literal|"*.[Ii][Cc][Cc]"
+argument_list|)
+expr_stmt|;
+name|gtk_file_filter_add_pattern
+argument_list|(
+name|filter
+argument_list|,
+literal|"*.[Ii][Cc][Mm]"
 argument_list|)
 expr_stmt|;
 name|gtk_file_chooser_add_filter
