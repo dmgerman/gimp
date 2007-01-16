@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28da5e390103
+DECL|enum|__anon2a104a410103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -453,7 +453,7 @@ name|GTK_RESPONSE_CANCEL
 argument_list|,
 name|GTK_STOCK_OPEN
 argument_list|,
-name|GTK_RESPONSE_OK
+name|GTK_RESPONSE_ACCEPT
 argument_list|,
 name|NULL
 argument_list|)
@@ -465,12 +465,22 @@ argument_list|(
 name|dialog
 argument_list|)
 argument_list|,
-name|GTK_RESPONSE_OK
+name|GTK_RESPONSE_ACCEPT
 argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|,
 operator|-
 literal|1
+argument_list|)
+expr_stmt|;
+name|gtk_dialog_set_default_response
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|,
+name|GTK_RESPONSE_ACCEPT
 argument_list|)
 expr_stmt|;
 ifndef|#
