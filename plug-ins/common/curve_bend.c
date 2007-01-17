@@ -664,7 +664,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29be01020108
+DECL|struct|__anon2b94f9400108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -718,7 +718,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29be01020208
+DECL|struct|__anon2b94f9400208
 block|{
 DECL|member|y
 name|gint32
@@ -9231,6 +9231,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
+name|cd
+condition|)
+return|return;
+if|if
+condition|(
 name|cd
 operator|->
 name|curve_type
@@ -9399,18 +9405,16 @@ block|{
 name|BenderDialog
 modifier|*
 name|cd
-decl_stmt|;
-name|int
-name|i
-decl_stmt|;
-name|cd
-operator|=
+init|=
 operator|(
 name|BenderDialog
 operator|*
 operator|)
 name|client_data
-expr_stmt|;
+decl_stmt|;
+name|gint
+name|i
+decl_stmt|;
 comment|/*  Initialize the values  */
 for|for
 control|(
