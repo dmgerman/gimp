@@ -3887,7 +3887,7 @@ argument_list|)
 operator|||
 operator|(
 name|low_threshold
-operator|>=
+operator|>
 name|high_threshold
 operator|)
 condition|)
