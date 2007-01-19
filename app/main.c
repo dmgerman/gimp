@@ -108,6 +108,23 @@ endif|#
 directive|endif
 end_endif
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|GIMP_CONSOLE_COMPILATION
+end_ifndef
+
+begin_include
+include|#
+directive|include
+file|<gdk/gdk.h>
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_include
 include|#
 directive|include
@@ -1557,6 +1574,9 @@ name|g_print
 argument_list|(
 literal|"Found another GIMP instance, using that.\n"
 argument_list|)
+expr_stmt|;
+name|gdk_notify_startup_complete
+argument_list|()
 expr_stmt|;
 return|return
 name|EXIT_SUCCESS
