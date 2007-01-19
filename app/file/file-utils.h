@@ -27,9 +27,9 @@ name|gchar
 modifier|*
 name|file_utils_filename_to_uri
 parameter_list|(
-name|GSList
+name|Gimp
 modifier|*
-name|procs
+name|gimp
 parameter_list|,
 specifier|const
 name|gchar
@@ -49,9 +49,9 @@ name|gchar
 modifier|*
 name|file_utils_any_to_uri
 parameter_list|(
-name|GSList
+name|Gimp
 modifier|*
-name|procs
+name|gimp
 parameter_list|,
 specifier|const
 name|gchar

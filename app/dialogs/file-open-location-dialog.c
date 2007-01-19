@@ -54,12 +54,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"plug-in/gimppluginmanager.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"file/file-open.h"
 end_include
 
@@ -757,10 +751,6 @@ operator|=
 name|file_utils_filename_to_uri
 argument_list|(
 name|gimp
-operator|->
-name|plug_in_manager
-operator|->
-name|load_procs
 argument_list|,
 name|text
 argument_list|,

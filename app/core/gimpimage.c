@@ -234,12 +234,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"plug-in/gimppluginmanager.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"file/file-utils.h"
 end_include
 
@@ -294,7 +288,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon293721d50103
+DECL|enum|__anon27dffb030103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -382,7 +376,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon293721d50203
+DECL|enum|__anon27dffb030203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -5678,6 +5672,34 @@ block|}
 end_function
 
 begin_function
+specifier|static
+name|void
+DECL|function|gimp_image_take_uri (GimpImage * image,gchar * uri)
+name|gimp_image_take_uri
+parameter_list|(
+name|GimpImage
+modifier|*
+name|image
+parameter_list|,
+name|gchar
+modifier|*
+name|uri
+parameter_list|)
+block|{
+name|gimp_object_take_name
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
+name|image
+argument_list|)
+argument_list|,
+name|uri
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
 specifier|const
 name|gchar
 modifier|*
@@ -5761,37 +5783,20 @@ name|filename
 argument_list|)
 condition|)
 block|{
-name|gchar
-modifier|*
-name|uri
-decl_stmt|;
-name|uri
-operator|=
+name|gimp_image_take_uri
+argument_list|(
+name|image
+argument_list|,
 name|file_utils_filename_to_uri
 argument_list|(
 name|image
 operator|->
 name|gimp
-operator|->
-name|plug_in_manager
-operator|->
-name|load_procs
 argument_list|,
 name|filename
 argument_list|,
 name|NULL
 argument_list|)
-expr_stmt|;
-name|gimp_image_set_uri
-argument_list|(
-name|image
-argument_list|,
-name|uri
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|uri
 argument_list|)
 expr_stmt|;
 block|}

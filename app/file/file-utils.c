@@ -130,6 +130,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"plug-in/gimppluginmanager.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"plug-in/gimppluginprocedure.h"
 end_include
 
@@ -148,7 +154,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27c3d8a10103
+DECL|enum|__anon2bc0a8e00103
 block|{
 DECL|enumerator|FILE_MATCH_NONE
 name|FILE_MATCH_NONE
@@ -346,12 +352,12 @@ end_comment
 begin_function
 name|gchar
 modifier|*
-DECL|function|file_utils_filename_to_uri (GSList * procs,const gchar * filename,GError ** error)
+DECL|function|file_utils_filename_to_uri (Gimp * gimp,const gchar * filename,GError ** error)
 name|file_utils_filename_to_uri
 parameter_list|(
-name|GSList
+name|Gimp
 modifier|*
-name|procs
+name|gimp
 parameter_list|,
 specifier|const
 name|gchar
@@ -374,9 +380,10 @@ name|uri
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|procs
-operator|!=
-name|NULL
+name|GIMP_IS_GIMP
+argument_list|(
+name|gimp
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -409,7 +416,11 @@ if|if
 condition|(
 name|file_proc_find_by_prefix
 argument_list|(
-name|procs
+name|gimp
+operator|->
+name|plug_in_manager
+operator|->
+name|load_procs
 argument_list|,
 name|filename
 argument_list|,
@@ -642,12 +653,12 @@ end_function
 begin_function
 name|gchar
 modifier|*
-DECL|function|file_utils_any_to_uri (GSList * procs,const gchar * filename_or_uri,GError ** error)
+DECL|function|file_utils_any_to_uri (Gimp * gimp,const gchar * filename_or_uri,GError ** error)
 name|file_utils_any_to_uri
 parameter_list|(
-name|GSList
+name|Gimp
 modifier|*
-name|procs
+name|gimp
 parameter_list|,
 specifier|const
 name|gchar
@@ -666,9 +677,10 @@ name|uri
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|procs
-operator|!=
-name|NULL
+name|GIMP_IS_GIMP
+argument_list|(
+name|gimp
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -732,7 +744,7 @@ name|uri
 operator|=
 name|file_utils_filename_to_uri
 argument_list|(
-name|procs
+name|gimp
 argument_list|,
 name|filename_or_uri
 argument_list|,

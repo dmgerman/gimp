@@ -178,10 +178,6 @@ operator|=
 name|file_utils_filename_to_uri
 argument_list|(
 name|gimp
-operator|->
-name|plug_in_manager
-operator|->
-name|load_procs
 argument_list|,
 name|g_value_get_string
 argument_list|(
@@ -471,10 +467,6 @@ init|=
 name|file_utils_filename_to_uri
 argument_list|(
 name|gimp
-operator|->
-name|plug_in_manager
-operator|->
-name|load_procs
 argument_list|,
 name|filename
 argument_list|,
@@ -694,10 +686,6 @@ init|=
 name|file_utils_filename_to_uri
 argument_list|(
 name|gimp
-operator|->
-name|plug_in_manager
-operator|->
-name|load_procs
 argument_list|,
 name|filename
 argument_list|,
@@ -933,10 +921,6 @@ operator|=
 name|file_utils_filename_to_uri
 argument_list|(
 name|gimp
-operator|->
-name|plug_in_manager
-operator|->
-name|load_procs
 argument_list|,
 name|g_value_get_string
 argument_list|(
