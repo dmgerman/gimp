@@ -859,6 +859,13 @@ operator|->
 name|core
 argument_list|)
 expr_stmt|;
+name|gimp_tool_pop_status
+argument_list|(
+name|tool
+argument_list|,
+name|display
+argument_list|)
+expr_stmt|;
 break|break;
 block|}
 name|GIMP_TOOL_CLASS
