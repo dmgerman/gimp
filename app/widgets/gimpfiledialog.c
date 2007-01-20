@@ -1643,7 +1643,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_file_dialog_set_image (GimpFileDialog * dialog,GimpImage * image,gboolean save_a_copy)
+DECL|function|gimp_file_dialog_set_image (GimpFileDialog * dialog,GimpImage * image,gboolean save_a_copy,gboolean close_after_saving)
 name|gimp_file_dialog_set_image
 parameter_list|(
 name|GimpFileDialog
@@ -1656,6 +1656,9 @@ name|image
 parameter_list|,
 name|gboolean
 name|save_a_copy
+parameter_list|,
+name|gboolean
+name|close_after_saving
 parameter_list|)
 block|{
 specifier|const
@@ -1700,6 +1703,12 @@ operator|->
 name|save_a_copy
 operator|=
 name|save_a_copy
+expr_stmt|;
+name|dialog
+operator|->
+name|close_after_saving
+operator|=
+name|close_after_saving
 expr_stmt|;
 if|if
 condition|(

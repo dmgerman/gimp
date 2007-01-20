@@ -115,6 +115,10 @@ DECL|member|save_a_copy
 name|gboolean
 name|save_a_copy
 decl_stmt|;
+DECL|member|close_after_saving
+name|gboolean
+name|close_after_saving
+decl_stmt|;
 DECL|member|thumb_box
 name|GtkWidget
 modifier|*
@@ -248,6 +252,9 @@ name|image
 parameter_list|,
 name|gboolean
 name|save_a_copy
+parameter_list|,
+name|gboolean
+name|close_after_saving
 parameter_list|)
 function_decl|;
 end_function_decl

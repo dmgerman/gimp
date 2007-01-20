@@ -31,7 +31,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c35c4830103
+DECL|enum|__anon2bf846130103
 block|{
 DECL|enumerator|GIMP_ACTION_SELECT_SET
 name|GIMP_ACTION_SELECT_SET
@@ -100,6 +100,28 @@ literal|10
 DECL|typedef|GimpActionSelectType
 block|}
 name|GimpActionSelectType
+typedef|;
+end_typedef
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2bf846130203
+block|{
+DECL|enumerator|GIMP_SAVE_MODE_SAVE
+name|GIMP_SAVE_MODE_SAVE
+block|,
+DECL|enumerator|GIMP_SAVE_MODE_SAVE_AS
+name|GIMP_SAVE_MODE_SAVE_AS
+block|,
+DECL|enumerator|GIMP_SAVE_MODE_SAVE_A_COPY
+name|GIMP_SAVE_MODE_SAVE_A_COPY
+block|,
+DECL|enumerator|GIMP_SAVE_MODE_SAVE_AND_CLOSE
+name|GIMP_SAVE_MODE_SAVE_AND_CLOSE
+DECL|typedef|GimpSaveMode
+block|}
+name|GimpSaveMode
 typedef|;
 end_typedef
 
