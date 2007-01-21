@@ -8991,7 +8991,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon288fa2c50108
+DECL|struct|__anon2c41b6cd0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -9579,7 +9579,7 @@ name|prefs_frame_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Get Monitor Resolution"
+literal|"Monitor Resolution"
 argument_list|)
 argument_list|,
 name|GTK_CONTAINER
@@ -9784,8 +9784,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"From _windowing system "
-literal|"(currently %d Ã %d ppi)"
+literal|"_Detect automatically (currently %d Ã %d ppi)"
 argument_list|)
 argument_list|,
 name|ROUND
@@ -9903,7 +9902,7 @@ name|group
 argument_list|,
 name|_
 argument_list|(
-literal|"_Manually"
+literal|"_Enter manually"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -10154,7 +10153,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon288fa2c50208
+DECL|struct|__anon2c41b6cd0208
 block|{
 DECL|member|label
 specifier|const
@@ -11133,7 +11132,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon288fa2c50308
+DECL|struct|__anon2c41b6cd0308
 block|{
 DECL|member|property_name
 specifier|const
@@ -11288,7 +11287,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon288fa2c50408
+DECL|struct|__anon2c41b6cd0408
 block|{
 DECL|member|tree_label
 specifier|const
