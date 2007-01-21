@@ -126,7 +126,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9506090108
+DECL|struct|__anon28908a350108
 block|{
 DECL|member|name
 name|gchar
@@ -146,7 +146,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9506090203
+DECL|enum|__anon28908a350203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1817,8 +1817,10 @@ name|midi
 operator|->
 name|sequencer
 argument_list|,
-name|g_get_application_name
-argument_list|()
+name|_
+argument_list|(
+literal|"GIMP"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|ret
@@ -1831,7 +1833,7 @@ name|sequencer
 argument_list|,
 name|_
 argument_list|(
-literal|"GIMP MIDI controller"
+literal|"GIMP MIDI Input Controller"
 argument_list|)
 argument_list|,
 name|SND_SEQ_PORT_CAP_WRITE
