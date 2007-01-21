@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27b5fd200103
+DECL|enum|__anon2a4895ac0103
 block|{
 DECL|enumerator|GIMP_HANDLE_SQUARE
 name|GIMP_HANDLE_SQUARE
@@ -139,6 +139,11 @@ name|gint
 name|paused_count
 decl_stmt|;
 comment|/*  count to keep track of multiple pauses */
+DECL|member|is_drawn
+name|gboolean
+name|is_drawn
+decl_stmt|;
+comment|/*  is the stuff we draw currently visible */
 DECL|member|vectors
 name|GList
 modifier|*
@@ -150,7 +155,7 @@ name|GimpMatrix3
 modifier|*
 name|transform
 decl_stmt|;
-comment|/*  Transformation matrix fof the vectors  */
+comment|/*  Transformation matrix of the vectors   */
 block|}
 struct|;
 end_struct
@@ -242,6 +247,17 @@ end_function_decl
 begin_function_decl
 name|void
 name|gimp_draw_tool_resume
+parameter_list|(
+name|GimpDrawTool
+modifier|*
+name|draw_tool
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|gimp_draw_tool_is_drawn
 parameter_list|(
 name|GimpDrawTool
 modifier|*

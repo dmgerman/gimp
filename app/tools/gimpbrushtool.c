@@ -1132,6 +1132,7 @@ operator|->
 name|core
 argument_list|)
 decl_stmt|;
+comment|/*  don't create the segments for the purpose of undrawing (if we        *  don't have the segments, we can hardly have drawn them before)        */
 if|if
 condition|(
 operator|!
@@ -1142,6 +1143,12 @@ operator|&&
 name|brush_core
 operator|->
 name|main_brush
+operator|&&
+operator|!
+name|gimp_draw_tool_is_drawn
+argument_list|(
+name|draw_tool
+argument_list|)
 condition|)
 block|{
 name|gimp_brush_core_create_bound_segs
