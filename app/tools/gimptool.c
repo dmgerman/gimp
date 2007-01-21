@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e9ebd20103
+DECL|enum|__anon27bb12ee0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2990,7 +2990,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_tool_push_status_coords (GimpTool * tool,GimpDisplay * display,const gchar * title,gdouble x,const gchar * separator,gdouble y)
+DECL|function|gimp_tool_push_status_coords (GimpTool * tool,GimpDisplay * display,const gchar * title,gdouble x,const gchar * separator,gdouble y,const gchar * help)
 name|gimp_tool_push_status_coords
 parameter_list|(
 name|GimpTool
@@ -3016,6 +3016,11 @@ name|separator
 parameter_list|,
 name|gdouble
 name|y
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|help
 parameter_list|)
 block|{
 name|GimpDisplayShell
@@ -3068,6 +3073,8 @@ argument_list|,
 name|separator
 argument_list|,
 name|y
+argument_list|,
+name|help
 argument_list|)
 expr_stmt|;
 block|}
@@ -3075,7 +3082,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_tool_push_status_length (GimpTool * tool,GimpDisplay * display,const gchar * title,GimpOrientationType axis,gdouble value)
+DECL|function|gimp_tool_push_status_length (GimpTool * tool,GimpDisplay * display,const gchar * title,GimpOrientationType axis,gdouble value,const gchar * help)
 name|gimp_tool_push_status_length
 parameter_list|(
 name|GimpTool
@@ -3096,6 +3103,11 @@ name|axis
 parameter_list|,
 name|gdouble
 name|value
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|help
 parameter_list|)
 block|{
 name|GimpDisplayShell
@@ -3146,6 +3158,8 @@ argument_list|,
 name|axis
 argument_list|,
 name|value
+argument_list|,
+name|help
 argument_list|)
 expr_stmt|;
 block|}

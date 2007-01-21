@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a08a1990103
+DECL|enum|__anon2b57b6e70103
 block|{
 DECL|enumerator|RECTANGLE_CHANGED
 name|RECTANGLE_CHANGED
@@ -3971,6 +3971,8 @@ argument_list|,
 literal|" Ã "
 argument_list|,
 name|h
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -6775,6 +6777,8 @@ argument_list|,
 literal|" x "
 argument_list|,
 literal|0
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_start

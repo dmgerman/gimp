@@ -1634,6 +1634,8 @@ argument_list|,
 literal|", "
 argument_list|,
 literal|0
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_start
@@ -2571,6 +2573,8 @@ argument_list|,
 name|edit_select
 operator|->
 name|cumly
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_resume

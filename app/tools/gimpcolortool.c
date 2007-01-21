@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4439a60103
+DECL|enum|__anon29b618020103
 block|{
 DECL|enumerator|PICKED
 name|PICKED
@@ -1027,6 +1027,8 @@ argument_list|,
 name|color_tool
 operator|->
 name|sample_point_y
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -1761,6 +1763,8 @@ argument_list|,
 name|color_tool
 operator|->
 name|sample_point_y
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}

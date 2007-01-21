@@ -783,6 +783,11 @@ name|separator
 parameter_list|,
 name|gdouble
 name|y
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|help
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -809,6 +814,11 @@ name|axis
 parameter_list|,
 name|gdouble
 name|value
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|help
 parameter_list|)
 function_decl|;
 end_function_decl

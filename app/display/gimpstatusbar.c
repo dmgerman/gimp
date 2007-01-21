@@ -2358,7 +2358,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_statusbar_push_coords (GimpStatusbar * statusbar,const gchar * context,const gchar * title,gdouble x,const gchar * separator,gdouble y)
+DECL|function|gimp_statusbar_push_coords (GimpStatusbar * statusbar,const gchar * context,const gchar * title,gdouble x,const gchar * separator,gdouble y,const gchar * help)
 name|gimp_statusbar_push_coords
 parameter_list|(
 name|GimpStatusbar
@@ -2385,6 +2385,11 @@ name|separator
 parameter_list|,
 name|gdouble
 name|y
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|help
 parameter_list|)
 block|{
 name|GimpDisplayShell
@@ -2413,6 +2418,18 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|help
+operator|==
+name|NULL
+condition|)
+block|{
+name|help
+operator|=
+literal|""
+expr_stmt|;
+block|}
 name|shell
 operator|=
 name|statusbar
@@ -2457,6 +2474,8 @@ name|RINT
 argument_list|(
 name|y
 argument_list|)
+argument_list|,
+name|help
 argument_list|)
 expr_stmt|;
 block|}
@@ -2516,6 +2535,8 @@ operator|/
 name|image
 operator|->
 name|yresolution
+argument_list|,
+name|help
 argument_list|)
 expr_stmt|;
 block|}
@@ -2524,7 +2545,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_statusbar_push_length (GimpStatusbar * statusbar,const gchar * context,const gchar * title,GimpOrientationType axis,gdouble value)
+DECL|function|gimp_statusbar_push_length (GimpStatusbar * statusbar,const gchar * context,const gchar * title,GimpOrientationType axis,gdouble value,const gchar * help)
 name|gimp_statusbar_push_length
 parameter_list|(
 name|GimpStatusbar
@@ -2546,6 +2567,11 @@ name|axis
 parameter_list|,
 name|gdouble
 name|value
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|help
 parameter_list|)
 block|{
 name|GimpDisplayShell
@@ -2567,6 +2593,18 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|help
+operator|==
+name|NULL
+condition|)
+block|{
+name|help
+operator|=
+literal|""
+expr_stmt|;
+block|}
 name|shell
 operator|=
 name|statusbar
@@ -2601,6 +2639,8 @@ name|RINT
 argument_list|(
 name|value
 argument_list|)
+argument_list|,
+name|help
 argument_list|)
 expr_stmt|;
 block|}
@@ -2682,6 +2722,8 @@ operator|*
 name|unit_factor
 operator|/
 name|resolution
+argument_list|,
+name|help
 argument_list|)
 expr_stmt|;
 block|}
@@ -3628,6 +3670,8 @@ name|RINT
 argument_list|(
 name|y
 argument_list|)
+argument_list|,
+literal|""
 argument_list|)
 expr_stmt|;
 block|}
@@ -3669,6 +3713,8 @@ argument_list|,
 literal|", "
 argument_list|,
 name|y
+argument_list|,
+literal|""
 argument_list|)
 expr_stmt|;
 block|}
@@ -4270,7 +4316,7 @@ operator|->
 name|cursor_format_str
 argument_list|)
 argument_list|,
-literal|"%%s%%d%%s%%d"
+literal|"%%s%%d%%s%%d%%s"
 argument_list|)
 expr_stmt|;
 name|g_snprintf
@@ -4286,7 +4332,7 @@ operator|->
 name|length_format_str
 argument_list|)
 argument_list|,
-literal|"%%s%%d"
+literal|"%%s%%d%%s"
 argument_list|)
 expr_stmt|;
 block|}
@@ -4306,7 +4352,7 @@ operator|->
 name|cursor_format_str
 argument_list|)
 argument_list|,
-literal|"%%s%%.%df%%s%%.%df"
+literal|"%%s%%.%df%%s%%.%df%%s"
 argument_list|,
 name|_gimp_unit_get_digits
 argument_list|(
@@ -4344,7 +4390,7 @@ operator|->
 name|length_format_str
 argument_list|)
 argument_list|,
-literal|"%%s%%.%df"
+literal|"%%s%%.%df%%s"
 argument_list|,
 name|_gimp_unit_get_digits
 argument_list|(

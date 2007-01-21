@@ -1090,6 +1090,8 @@ argument_list|,
 name|move
 operator|->
 name|guide_position
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 return|return;
@@ -2178,6 +2180,8 @@ argument_list|,
 name|move
 operator|->
 name|guide_position
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
