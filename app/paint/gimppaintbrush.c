@@ -401,6 +401,7 @@ operator|!
 name|area
 condition|)
 return|return;
+comment|/* optionally take the color from the current gradient */
 if|if
 condition|(
 name|gimp_paint_options_get_gradient_color
@@ -488,6 +489,7 @@ operator|=
 name|GIMP_PAINT_INCREMENTAL
 expr_stmt|;
 block|}
+comment|/* otherwise check if the brush has a pixmap and use that to color the area */
 elseif|else
 if|if
 condition|(
@@ -502,7 +504,6 @@ operator|->
 name|pixmap
 condition|)
 block|{
-comment|/* if it's a pixmap, do pixmap stuff */
 name|gimp_brush_core_color_area_with_pixmap
 argument_list|(
 name|brush_core
@@ -528,6 +529,7 @@ operator|=
 name|GIMP_PAINT_INCREMENTAL
 expr_stmt|;
 block|}
+comment|/* otherwise fill the area with the foreground color */
 else|else
 block|{
 name|gimp_image_get_foreground
@@ -594,6 +596,7 @@ name|cur_coords
 operator|.
 name|pressure
 expr_stmt|;
+comment|/* finally, let the brush core paste the colored area on the canvas */
 name|gimp_brush_core_paste_canvas
 argument_list|(
 name|brush_core

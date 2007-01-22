@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon274e4fa10103
+DECL|enum|__anon2a0a23aa0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2373,6 +2373,7 @@ decl_stmt|;
 name|gint
 name|drawable_height
 decl_stmt|;
+specifier|const
 name|guchar
 modifier|*
 name|s
@@ -2659,10 +2660,6 @@ argument_list|)
 expr_stmt|;
 name|s
 operator|=
-operator|(
-name|guchar
-operator|*
-operator|)
 name|tile_data_pointer
 argument_list|(
 name|undo_tile
@@ -2820,6 +2817,7 @@ decl_stmt|;
 name|gint
 name|pickable_height
 decl_stmt|;
+specifier|const
 name|guchar
 modifier|*
 name|s
@@ -3104,10 +3102,6 @@ argument_list|)
 expr_stmt|;
 name|s
 operator|=
-operator|(
-name|guchar
-operator|*
-operator|)
 name|tile_data_pointer
 argument_list|(
 name|saved_tile
