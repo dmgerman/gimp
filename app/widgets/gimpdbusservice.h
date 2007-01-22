@@ -200,6 +200,22 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|gboolean
+name|gimp_dbus_service_activate
+parameter_list|(
+name|GimpDBusService
+modifier|*
+name|service
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|dbus_error
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_macro
 name|G_END_DECLS
 end_macro
