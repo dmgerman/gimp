@@ -235,6 +235,23 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|file_open_from_command_line
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+modifier|*
+name|uris
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
