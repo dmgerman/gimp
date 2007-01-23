@@ -1558,7 +1558,12 @@ name|be_verbose
 condition|)
 name|g_print
 argument_list|(
-literal|"Found another GIMP instance, using that.\n"
+literal|"%s\n"
+argument_list|,
+name|_
+argument_list|(
+literal|"Another GIMP instance is already running."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gdk_notify_startup_complete
@@ -1587,9 +1592,9 @@ name|DBUS_GERROR_SERVICE_UNKNOWN
 operator|)
 condition|)
 block|{
-name|g_printerr
+name|g_print
 argument_list|(
-literal|"Error: %s\n"
+literal|"%s\n"
 argument_list|,
 name|error
 operator|->
