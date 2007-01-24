@@ -3877,7 +3877,7 @@ literal|"context-brush-radius-minimum"
 block|,
 name|GIMP_STOCK_BRUSH
 block|,
-literal|"Minumum Radius"
+literal|"Minimum Radius"
 block|,
 name|NULL
 block|,
@@ -4087,7 +4087,7 @@ literal|"context-brush-spikes-minimum"
 block|,
 name|GIMP_STOCK_BRUSH
 block|,
-literal|"Minumum Spikes"
+literal|"Minimum Spikes"
 block|,
 name|NULL
 block|,
@@ -4225,7 +4225,7 @@ literal|"context-brush-hardness-minimum"
 block|,
 name|GIMP_STOCK_BRUSH
 block|,
-literal|"Minumum Hardness"
+literal|"Minimum Hardness"
 block|,
 name|NULL
 block|,
@@ -4363,7 +4363,7 @@ literal|"context-brush-aspect-minimum"
 block|,
 name|GIMP_STOCK_BRUSH
 block|,
-literal|"Minumum Aspect"
+literal|"Minimum Aspect"
 block|,
 name|NULL
 block|,

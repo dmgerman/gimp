@@ -423,7 +423,7 @@ literal|"tools-color-average-radius-minimum"
 block|,
 name|GIMP_STOCK_TOOL_COLOR_PICKER
 block|,
-literal|"Minumum Color Picker Radius"
+literal|"M Color Picker Radius"
 block|,
 name|NULL
 block|,
@@ -561,7 +561,7 @@ literal|"tools-paint-brush-scale-minimum"
 block|,
 name|GIMP_STOCK_TOOL_PAINTBRUSH
 block|,
-literal|"Minumum Brush Scale"
+literal|"M Brush Scale"
 block|,
 name|NULL
 block|,
@@ -699,7 +699,7 @@ literal|"tools-ink-blob-size-minimum"
 block|,
 name|GIMP_STOCK_TOOL_INK
 block|,
-literal|"Minumum Ink Blob Size"
+literal|"M Ink Blob Size"
 block|,
 name|NULL
 block|,
@@ -837,7 +837,7 @@ literal|"tools-ink-blob-aspect-minimum"
 block|,
 name|GIMP_STOCK_TOOL_INK
 block|,
-literal|"Minumum Ink Blob Aspect"
+literal|"M Ink Blob Aspect"
 block|,
 name|NULL
 block|,
@@ -975,7 +975,7 @@ literal|"tools-ink-blob-angle-minimum"
 block|,
 name|GIMP_STOCK_TOOL_INK
 block|,
-literal|"Minumum Ink Blob Angle"
+literal|"M Ink Blob Angle"
 block|,
 name|NULL
 block|,
@@ -1113,7 +1113,7 @@ literal|"tools-foreground-select-brush-size-minimum"
 block|,
 name|GIMP_STOCK_TOOL_FOREGROUND_SELECT
 block|,
-literal|"Minumum Foreground Select Brush Size"
+literal|"M Foreground Select Brush Size"
 block|,
 name|NULL
 block|,
