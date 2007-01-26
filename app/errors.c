@@ -338,16 +338,6 @@ literal|"This is a development version of GIMP.  "
 literal|"Debug messages may appear here.\n\n"
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|G_OS_WIN32
-name|g_printerr
-argument_list|(
-literal|"You can minimize this window, but don't close it.\n\n"
-argument_list|)
-expr_stmt|;
-endif|#
-directive|endif
 endif|#
 directive|endif
 comment|/* GIMP_UNSTABLE */
