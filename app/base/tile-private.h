@@ -22,6 +22,91 @@ directive|include
 file|<sys/types.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
+end_ifdef
+
+begin_function_decl
+name|int
+name|gimp_win32_large_truncate
+parameter_list|(
+name|int
+name|fd
+parameter_list|,
+name|gint64
+name|size
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_define
+DECL|macro|LARGE_SEEK (f,o,w)
+define|#
+directive|define
+name|LARGE_SEEK
+parameter_list|(
+name|f
+parameter_list|,
+name|o
+parameter_list|,
+name|w
+parameter_list|)
+value|_lseeki64 (f, o, w)
+end_define
+
+begin_define
+DECL|macro|LARGE_TRUNCATE (f,s)
+define|#
+directive|define
+name|LARGE_TRUNCATE
+parameter_list|(
+name|f
+parameter_list|,
+name|s
+parameter_list|)
+value|gimp_win32_large_truncate (f, s)
+end_define
+
+begin_else
+else|#
+directive|else
+end_else
+
+begin_define
+DECL|macro|LARGE_SEEK (f,o,t)
+define|#
+directive|define
+name|LARGE_SEEK
+parameter_list|(
+name|f
+parameter_list|,
+name|o
+parameter_list|,
+name|t
+parameter_list|)
+value|lseek (f, o, t)
+end_define
+
+begin_define
+DECL|macro|LARGE_TRUNCATE (f,s)
+define|#
+directive|define
+name|LARGE_TRUNCATE
+parameter_list|(
+name|f
+parameter_list|,
+name|s
+parameter_list|)
+value|ftruncate (f, s)
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_typedef
 DECL|typedef|TileLink
 typedef|typedef
@@ -128,7 +213,7 @@ name|swap_num
 decl_stmt|;
 comment|/* the index into the file table of the file to be used                          * for swapping. swap_num 1 is always the global                          * swap file.                          */
 DECL|member|swap_offset
-name|off_t
+name|gint64
 name|swap_offset
 decl_stmt|;
 comment|/* the offset within the swap file of the tile data.                          * if the tile data is in memory this will be set                          * to -1.                          */

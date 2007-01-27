@@ -77,6 +77,12 @@ end_ifdef
 begin_include
 include|#
 directive|include
+file|<windows.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpbase/gimpwin32-io.h"
 end_include
 
@@ -252,11 +258,11 @@ modifier|*
 name|gaps
 decl_stmt|;
 DECL|member|swap_file_end
-name|off_t
+name|gint64
 name|swap_file_end
 decl_stmt|;
 DECL|member|cur_position
-name|off_t
+name|gint64
 name|cur_position
 decl_stmt|;
 block|}
@@ -269,11 +275,11 @@ struct|struct
 name|_Gap
 block|{
 DECL|member|start
-name|off_t
+name|gint64
 name|start
 decl_stmt|;
 DECL|member|end
-name|off_t
+name|gint64
 name|end
 decl_stmt|;
 block|}
@@ -438,7 +444,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|off_t
+name|gint64
 name|tile_swap_find_offset
 parameter_list|(
 name|DefSwapFile
@@ -448,7 +454,7 @@ parameter_list|,
 name|gint
 name|fd
 parameter_list|,
-name|off_t
+name|gint64
 name|bytes
 parameter_list|)
 function_decl|;
@@ -466,7 +472,7 @@ parameter_list|,
 name|gint
 name|fd
 parameter_list|,
-name|off_t
+name|gint64
 name|new_size
 parameter_list|)
 function_decl|;
@@ -478,10 +484,10 @@ name|Gap
 modifier|*
 name|tile_swap_gap_new
 parameter_list|(
-name|off_t
+name|gint64
 name|start
 parameter_list|,
-name|off_t
+name|gint64
 name|end
 parameter_list|)
 function_decl|;
@@ -555,7 +561,7 @@ begin_decl_stmt
 DECL|variable|swap_file_grow
 specifier|static
 specifier|const
-name|off_t
+name|gint64
 name|swap_file_grow
 init|=
 literal|1024
@@ -597,6 +603,64 @@ init|=
 name|TRUE
 decl_stmt|;
 end_decl_stmt
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
+end_ifdef
+
+begin_function
+name|int
+DECL|function|gimp_win32_large_truncate (int fd,gint64 size)
+name|gimp_win32_large_truncate
+parameter_list|(
+name|int
+name|fd
+parameter_list|,
+name|gint64
+name|size
+parameter_list|)
+block|{
+if|if
+condition|(
+name|LARGE_SEEK
+argument_list|(
+name|fd
+argument_list|,
+name|size
+argument_list|,
+name|SEEK_SET
+argument_list|)
+operator|==
+name|size
+operator|&&
+name|SetEndOfFile
+argument_list|(
+operator|(
+name|HANDLE
+operator|)
+name|_get_osfhandle
+argument_list|(
+name|fd
+argument_list|)
+argument_list|)
+condition|)
+return|return
+literal|0
+return|;
+else|else
+return|return
+operator|-
+literal|1
+return|;
+block|}
+end_function
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_ifdef
 ifdef|#
@@ -1788,7 +1852,7 @@ block|{
 name|gint
 name|nleft
 decl_stmt|;
-name|off_t
+name|gint64
 name|offset
 decl_stmt|;
 if|if
@@ -1819,7 +1883,7 @@ name|swap_offset
 expr_stmt|;
 name|offset
 operator|=
-name|lseek
+name|LARGE_SEEK
 argument_list|(
 name|fd
 argument_list|,
@@ -2006,10 +2070,10 @@ decl_stmt|;
 name|gint
 name|nleft
 decl_stmt|;
-name|off_t
+name|gint64
 name|offset
 decl_stmt|;
-name|off_t
+name|gint64
 name|newpos
 decl_stmt|;
 name|bytes
@@ -2061,7 +2125,7 @@ condition|)
 block|{
 name|offset
 operator|=
-name|lseek
+name|LARGE_SEEK
 argument_list|(
 name|fd
 argument_list|,
@@ -2239,10 +2303,10 @@ name|Gap
 modifier|*
 name|gap2
 decl_stmt|;
-name|off_t
+name|gint64
 name|start
 decl_stmt|;
-name|off_t
+name|gint64
 name|end
 decl_stmt|;
 if|if
@@ -2678,7 +2742,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|tile_swap_resize (DefSwapFile * def_swap_file,gint fd,off_t new_size)
+DECL|function|tile_swap_resize (DefSwapFile * def_swap_file,gint fd,gint64 new_size)
 name|tile_swap_resize
 parameter_list|(
 name|DefSwapFile
@@ -2688,7 +2752,7 @@ parameter_list|,
 name|gint
 name|fd
 parameter_list|,
-name|off_t
+name|gint64
 name|new_size
 parameter_list|)
 block|{
@@ -2703,7 +2767,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|ftruncate
+name|LARGE_TRUNCATE
 argument_list|(
 name|fd
 argument_list|,
@@ -2737,8 +2801,8 @@ end_function
 
 begin_function
 specifier|static
-name|off_t
-DECL|function|tile_swap_find_offset (DefSwapFile * def_swap_file,gint fd,off_t bytes)
+name|gint64
+DECL|function|tile_swap_find_offset (DefSwapFile * def_swap_file,gint fd,gint64 bytes)
 name|tile_swap_find_offset
 parameter_list|(
 name|DefSwapFile
@@ -2748,7 +2812,7 @@ parameter_list|,
 name|gint
 name|fd
 parameter_list|,
-name|off_t
+name|gint64
 name|bytes
 parameter_list|)
 block|{
@@ -2760,7 +2824,7 @@ name|Gap
 modifier|*
 name|gap
 decl_stmt|;
-name|off_t
+name|gint64
 name|offset
 decl_stmt|;
 name|tmp
@@ -2924,13 +2988,13 @@ begin_function
 specifier|static
 name|Gap
 modifier|*
-DECL|function|tile_swap_gap_new (off_t start,off_t end)
+DECL|function|tile_swap_gap_new (gint64 start,gint64 end)
 name|tile_swap_gap_new
 parameter_list|(
-name|off_t
+name|gint64
 name|start
 parameter_list|,
-name|off_t
+name|gint64
 name|end
 parameter_list|)
 block|{

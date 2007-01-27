@@ -7898,7 +7898,7 @@ block|{
 case|case
 name|SWAP_IN
 case|:
-name|lseek
+name|LARGE_SEEK
 argument_list|(
 name|fd
 argument_list|,
