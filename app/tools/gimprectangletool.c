@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b97c0b0103
+DECL|enum|__anon28b60fcd0103
 block|{
 DECL|enumerator|RECTANGLE_CHANGED
 name|RECTANGLE_CHANGED
@@ -506,18 +506,6 @@ parameter_list|,
 name|gint
 modifier|*
 name|h
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|guint
-name|gimp_rectangle_tool_fix_resize_direction
-parameter_list|(
-name|GimpRectangleToolPrivate
-modifier|*
-name|private
 parameter_list|)
 function_decl|;
 end_function_decl
