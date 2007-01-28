@@ -463,6 +463,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpItemPropUndo
+typedef|typedef
+name|struct
+name|_GimpItemPropUndo
+name|GimpItemPropUndo
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpChannelUndo
 typedef|typedef
 name|struct
