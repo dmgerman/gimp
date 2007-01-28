@@ -2751,9 +2751,6 @@ name|GimpUndo
 modifier|*
 name|new
 decl_stmt|;
-name|gint64
-name|size
-decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
@@ -2870,15 +2867,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|size
-operator|=
-name|tile_manager_get_memsize
-argument_list|(
-name|tiles
-argument_list|,
-name|sparse
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 operator|(
@@ -2890,7 +2878,7 @@ name|image
 argument_list|,
 name|GIMP_TYPE_DRAWABLE_UNDO
 argument_list|,
-name|size
+literal|0
 argument_list|,
 literal|0
 argument_list|,
