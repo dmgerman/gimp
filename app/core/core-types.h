@@ -490,6 +490,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpLayerPropUndo
+typedef|typedef
+name|struct
+name|_GimpLayerPropUndo
+name|GimpLayerPropUndo
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpUndoStack
 typedef|typedef
 name|struct
