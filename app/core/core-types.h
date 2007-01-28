@@ -445,6 +445,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpImageUndo
+typedef|typedef
+name|struct
+name|_GimpImageUndo
+name|GimpImageUndo
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpItemUndo
 typedef|typedef
 name|struct
