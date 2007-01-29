@@ -481,6 +481,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpChannelPropUndo
+typedef|typedef
+name|struct
+name|_GimpChannelPropUndo
+name|GimpChannelPropUndo
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpDrawableUndo
 typedef|typedef
 name|struct
