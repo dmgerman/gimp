@@ -1865,7 +1865,7 @@ case|case
 name|GIMP_UNDO_GROUP_IMAGE_GRID
 case|:
 case|case
-name|GIMP_UNDO_GROUP_IMAGE_GUIDE
+name|GIMP_UNDO_GROUP_GUIDE
 case|:
 return|return
 name|GIMP_DIRTY_IMAGE_META

@@ -1020,7 +1020,7 @@ block|{
 case|case
 name|GIMP_ORIENTATION_HORIZONTAL
 case|:
-name|gimp_image_undo_push_image_guide
+name|gimp_image_undo_push_guide
 argument_list|(
 name|image
 argument_list|,
@@ -1051,7 +1051,7 @@ break|break;
 case|case
 name|GIMP_ORIENTATION_VERTICAL
 case|:
-name|gimp_image_undo_push_image_guide
+name|gimp_image_undo_push_guide
 argument_list|(
 name|image
 argument_list|,
@@ -1133,7 +1133,7 @@ block|{
 case|case
 name|GIMP_ORIENTATION_HORIZONTAL
 case|:
-name|gimp_image_undo_push_image_guide
+name|gimp_image_undo_push_guide
 argument_list|(
 name|image
 argument_list|,
@@ -1153,7 +1153,7 @@ break|break;
 case|case
 name|GIMP_ORIENTATION_VERTICAL
 case|:
-name|gimp_image_undo_push_image_guide
+name|gimp_image_undo_push_guide
 argument_list|(
 name|image
 argument_list|,

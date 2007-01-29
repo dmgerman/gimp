@@ -125,7 +125,7 @@ if|if
 condition|(
 name|push_undo
 condition|)
-name|gimp_image_undo_push_image_guide
+name|gimp_image_undo_push_guide
 argument_list|(
 name|image
 argument_list|,
@@ -224,7 +224,7 @@ if|if
 condition|(
 name|push_undo
 condition|)
-name|gimp_image_undo_push_image_guide
+name|gimp_image_undo_push_guide
 argument_list|(
 name|image
 argument_list|,
@@ -409,7 +409,7 @@ if|if
 condition|(
 name|push_undo
 condition|)
-name|gimp_image_undo_push_image_guide
+name|gimp_image_undo_push_guide
 argument_list|(
 name|image
 argument_list|,
@@ -533,7 +533,7 @@ if|if
 condition|(
 name|push_undo
 condition|)
-name|gimp_image_undo_push_image_guide
+name|gimp_image_undo_push_guide
 argument_list|(
 name|image
 argument_list|,

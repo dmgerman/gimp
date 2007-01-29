@@ -641,7 +641,7 @@ block|{
 case|case
 name|GIMP_ORIENTATION_HORIZONTAL
 case|:
-name|gimp_image_undo_push_image_guide
+name|gimp_image_undo_push_guide
 argument_list|(
 name|image
 argument_list|,
@@ -667,7 +667,7 @@ break|break;
 case|case
 name|GIMP_ORIENTATION_VERTICAL
 case|:
-name|gimp_image_undo_push_image_guide
+name|gimp_image_undo_push_guide
 argument_list|(
 name|image
 argument_list|,
@@ -721,7 +721,7 @@ name|list
 operator|->
 name|data
 decl_stmt|;
-name|gimp_image_undo_push_image_sample_point
+name|gimp_image_undo_push_sample_point
 argument_list|(
 name|image
 argument_list|,

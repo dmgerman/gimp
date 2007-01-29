@@ -109,10 +109,14 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/*  guide& sample point undos  */
+end_comment
+
 begin_function_decl
 name|GimpUndo
 modifier|*
-name|gimp_image_undo_push_image_guide
+name|gimp_image_undo_push_guide
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -133,7 +137,7 @@ end_function_decl
 begin_function_decl
 name|GimpUndo
 modifier|*
-name|gimp_image_undo_push_image_sample_point
+name|gimp_image_undo_push_sample_point
 parameter_list|(
 name|GimpImage
 modifier|*

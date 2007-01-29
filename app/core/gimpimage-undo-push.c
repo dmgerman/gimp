@@ -190,15 +190,15 @@ file|"gimp-intl.h"
 end_include
 
 begin_comment
-comment|/*********************/
+comment|/*****************/
 end_comment
 
 begin_comment
-comment|/*  Image Type Undo  */
+comment|/*  Image Undos  */
 end_comment
 
 begin_comment
-comment|/*********************/
+comment|/*****************/
 end_comment
 
 begin_function
@@ -253,18 +253,6 @@ argument_list|)
 return|;
 block|}
 end_function
-
-begin_comment
-comment|/*********************/
-end_comment
-
-begin_comment
-comment|/*  Image Size Undo  */
-end_comment
-
-begin_comment
-comment|/*********************/
-end_comment
 
 begin_function
 name|GimpUndo
@@ -321,18 +309,6 @@ return|;
 block|}
 end_function
 
-begin_comment
-comment|/***************************/
-end_comment
-
-begin_comment
-comment|/*  Image Resolution Undo  */
-end_comment
-
-begin_comment
-comment|/***************************/
-end_comment
-
 begin_function
 name|GimpUndo
 modifier|*
@@ -385,18 +361,6 @@ argument_list|)
 return|;
 block|}
 end_function
-
-begin_comment
-comment|/****************/
-end_comment
-
-begin_comment
-comment|/*  Grid Undo   */
-end_comment
-
-begin_comment
-comment|/****************/
-end_comment
 
 begin_function
 name|GimpUndo
@@ -468,18 +432,6 @@ argument_list|)
 return|;
 block|}
 end_function
-
-begin_comment
-comment|/*******************/
-end_comment
-
-begin_comment
-comment|/*  Colormap Undo  */
-end_comment
-
-begin_comment
-comment|/*******************/
-end_comment
 
 begin_function
 name|GimpUndo
@@ -580,7 +532,7 @@ end_struct
 begin_function_decl
 specifier|static
 name|gboolean
-name|undo_pop_image_guide
+name|undo_pop_guide
 parameter_list|(
 name|GimpUndo
 modifier|*
@@ -599,7 +551,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|undo_free_image_guide
+name|undo_free_guide
 parameter_list|(
 name|GimpUndo
 modifier|*
@@ -614,8 +566,8 @@ end_function_decl
 begin_function
 name|GimpUndo
 modifier|*
-DECL|function|gimp_image_undo_push_image_guide (GimpImage * image,const gchar * undo_desc,GimpGuide * guide)
-name|gimp_image_undo_push_image_guide
+DECL|function|gimp_image_undo_push_guide (GimpImage * image,const gchar * undo_desc,GimpGuide * guide)
+name|gimp_image_undo_push_guide
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -676,15 +628,15 @@ argument_list|(
 name|GuideUndo
 argument_list|)
 argument_list|,
-name|GIMP_UNDO_IMAGE_GUIDE
+name|GIMP_UNDO_GUIDE
 argument_list|,
 name|undo_desc
 argument_list|,
 name|GIMP_DIRTY_IMAGE_META
 argument_list|,
-name|undo_pop_image_guide
+name|undo_pop_guide
 argument_list|,
-name|undo_free_image_guide
+name|undo_free_guide
 argument_list|,
 name|NULL
 argument_list|)
@@ -739,8 +691,8 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|undo_pop_image_guide (GimpUndo * undo,GimpUndoMode undo_mode,GimpUndoAccumulator * accum)
-name|undo_pop_image_guide
+DECL|function|undo_pop_guide (GimpUndo * undo,GimpUndoMode undo_mode,GimpUndoAccumulator * accum)
+name|undo_pop_guide
 parameter_list|(
 name|GimpUndo
 modifier|*
@@ -937,8 +889,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|undo_free_image_guide (GimpUndo * undo,GimpUndoMode undo_mode)
-name|undo_free_image_guide
+DECL|function|undo_free_guide (GimpUndo * undo,GimpUndoMode undo_mode)
+name|undo_free_guide
 parameter_list|(
 name|GimpUndo
 modifier|*
@@ -1017,7 +969,7 @@ end_struct
 begin_function_decl
 specifier|static
 name|gboolean
-name|undo_pop_image_sample_point
+name|undo_pop_sample_point
 parameter_list|(
 name|GimpUndo
 modifier|*
@@ -1036,7 +988,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|undo_free_image_sample_point
+name|undo_free_sample_point
 parameter_list|(
 name|GimpUndo
 modifier|*
@@ -1051,8 +1003,8 @@ end_function_decl
 begin_function
 name|GimpUndo
 modifier|*
-DECL|function|gimp_image_undo_push_image_sample_point (GimpImage * image,const gchar * undo_desc,GimpSamplePoint * sample_point)
-name|gimp_image_undo_push_image_sample_point
+DECL|function|gimp_image_undo_push_sample_point (GimpImage * image,const gchar * undo_desc,GimpSamplePoint * sample_point)
+name|gimp_image_undo_push_sample_point
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -1112,15 +1064,15 @@ argument_list|(
 name|SamplePointUndo
 argument_list|)
 argument_list|,
-name|GIMP_UNDO_IMAGE_SAMPLE_POINT
+name|GIMP_UNDO_SAMPLE_POINT
 argument_list|,
 name|undo_desc
 argument_list|,
 name|GIMP_DIRTY_IMAGE_META
 argument_list|,
-name|undo_pop_image_sample_point
+name|undo_pop_sample_point
 argument_list|,
-name|undo_free_image_sample_point
+name|undo_free_sample_point
 argument_list|,
 name|NULL
 argument_list|)
@@ -1173,8 +1125,8 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|undo_pop_image_sample_point (GimpUndo * undo,GimpUndoMode undo_mode,GimpUndoAccumulator * accum)
-name|undo_pop_image_sample_point
+DECL|function|undo_pop_sample_point (GimpUndo * undo,GimpUndoMode undo_mode,GimpUndoAccumulator * accum)
+name|undo_pop_sample_point
 parameter_list|(
 name|GimpUndo
 modifier|*
@@ -1391,8 +1343,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|undo_free_image_sample_point (GimpUndo * undo,GimpUndoMode undo_mode)
-name|undo_free_image_sample_point
+DECL|function|undo_free_sample_point (GimpUndo * undo,GimpUndoMode undo_mode)
+name|undo_free_sample_point
 parameter_list|(
 name|GimpUndo
 modifier|*

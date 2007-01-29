@@ -944,7 +944,7 @@ name|display
 operator|->
 name|image
 argument_list|,
-name|GIMP_UNDO_GROUP_IMAGE_GUIDE
+name|GIMP_UNDO_GROUP_GUIDE
 argument_list|,
 name|_
 argument_list|(

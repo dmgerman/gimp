@@ -163,7 +163,7 @@ if|if
 condition|(
 name|push_undo
 condition|)
-name|gimp_image_undo_push_image_sample_point
+name|gimp_image_undo_push_sample_point
 argument_list|(
 name|image
 argument_list|,
@@ -427,7 +427,7 @@ if|if
 condition|(
 name|push_undo
 condition|)
-name|gimp_image_undo_push_image_sample_point
+name|gimp_image_undo_push_sample_point
 argument_list|(
 name|image
 argument_list|,
@@ -599,7 +599,7 @@ if|if
 condition|(
 name|push_undo
 condition|)
-name|gimp_image_undo_push_image_sample_point
+name|gimp_image_undo_push_sample_point
 argument_list|(
 name|image
 argument_list|,
