@@ -214,7 +214,8 @@ comment|/*********************/
 end_comment
 
 begin_function
-name|gboolean
+name|GimpUndo
+modifier|*
 DECL|function|gimp_image_undo_push_image_type (GimpImage * image,const gchar * undo_desc)
 name|gimp_image_undo_push_image_type
 parameter_list|(
@@ -228,10 +229,6 @@ modifier|*
 name|undo_desc
 parameter_list|)
 block|{
-name|GimpUndo
-modifier|*
-name|new
-decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
@@ -239,14 +236,10 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|(
-name|new
-operator|=
+return|return
 name|gimp_image_undo_push
 argument_list|(
 name|image
@@ -269,15 +262,6 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|)
-operator|)
-condition|)
-block|{
-return|return
-name|TRUE
-return|;
-block|}
-return|return
-name|FALSE
 return|;
 block|}
 end_function
@@ -295,7 +279,8 @@ comment|/*********************/
 end_comment
 
 begin_function
-name|gboolean
+name|GimpUndo
+modifier|*
 DECL|function|gimp_image_undo_push_image_size (GimpImage * image,const gchar * undo_desc)
 name|gimp_image_undo_push_image_size
 parameter_list|(
@@ -309,10 +294,6 @@ modifier|*
 name|undo_desc
 parameter_list|)
 block|{
-name|GimpUndo
-modifier|*
-name|new
-decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
@@ -320,14 +301,10 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|(
-name|new
-operator|=
+return|return
 name|gimp_image_undo_push
 argument_list|(
 name|image
@@ -352,15 +329,6 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|)
-operator|)
-condition|)
-block|{
-return|return
-name|TRUE
-return|;
-block|}
-return|return
-name|FALSE
 return|;
 block|}
 end_function
@@ -378,7 +346,8 @@ comment|/***************************/
 end_comment
 
 begin_function
-name|gboolean
+name|GimpUndo
+modifier|*
 DECL|function|gimp_image_undo_push_image_resolution (GimpImage * image,const gchar * undo_desc)
 name|gimp_image_undo_push_image_resolution
 parameter_list|(
@@ -392,10 +361,6 @@ modifier|*
 name|undo_desc
 parameter_list|)
 block|{
-name|GimpUndo
-modifier|*
-name|new
-decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
@@ -403,14 +368,10 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|(
-name|new
-operator|=
+return|return
 name|gimp_image_undo_push
 argument_list|(
 name|image
@@ -433,15 +394,6 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|)
-operator|)
-condition|)
-block|{
-return|return
-name|TRUE
-return|;
-block|}
-return|return
-name|FALSE
 return|;
 block|}
 end_function
@@ -524,7 +476,8 @@ function_decl|;
 end_function_decl
 
 begin_function
-name|gboolean
+name|GimpUndo
+modifier|*
 DECL|function|gimp_image_undo_push_image_guide (GimpImage * image,const gchar * undo_desc,GimpGuide * guide)
 name|gimp_image_undo_push_image_guide
 parameter_list|(
@@ -553,7 +506,7 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -563,7 +516,7 @@ argument_list|(
 name|guide
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -638,11 +591,11 @@ name|guide
 argument_list|)
 expr_stmt|;
 return|return
-name|TRUE
+name|new
 return|;
 block|}
 return|return
-name|FALSE
+name|NULL
 return|;
 block|}
 end_function
@@ -952,7 +905,8 @@ function_decl|;
 end_function_decl
 
 begin_function
-name|gboolean
+name|GimpUndo
+modifier|*
 DECL|function|gimp_image_undo_push_image_grid (GimpImage * image,const gchar * undo_desc,GimpGrid * grid)
 name|gimp_image_undo_push_image_grid
 parameter_list|(
@@ -981,7 +935,7 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -991,7 +945,7 @@ argument_list|(
 name|grid
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -1051,11 +1005,11 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
-name|TRUE
+name|new
 return|;
 block|}
 return|return
-name|FALSE
+name|NULL
 return|;
 block|}
 end_function
@@ -1257,7 +1211,8 @@ function_decl|;
 end_function_decl
 
 begin_function
-name|gboolean
+name|GimpUndo
+modifier|*
 DECL|function|gimp_image_undo_push_image_sample_point (GimpImage * image,const gchar * undo_desc,GimpSamplePoint * sample_point)
 name|gimp_image_undo_push_image_sample_point
 parameter_list|(
@@ -1286,7 +1241,7 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -1295,7 +1250,7 @@ name|sample_point
 operator|!=
 name|NULL
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -1368,11 +1323,11 @@ operator|->
 name|y
 expr_stmt|;
 return|return
-name|TRUE
+name|new
 return|;
 block|}
 return|return
-name|FALSE
+name|NULL
 return|;
 block|}
 end_function
@@ -1706,7 +1661,8 @@ function_decl|;
 end_function_decl
 
 begin_function
-name|gboolean
+name|GimpUndo
+modifier|*
 DECL|function|gimp_image_undo_push_image_colormap (GimpImage * image,const gchar * undo_desc)
 name|gimp_image_undo_push_image_colormap
 parameter_list|(
@@ -1731,7 +1687,7 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -1806,11 +1762,11 @@ literal|3
 argument_list|)
 expr_stmt|;
 return|return
-name|TRUE
+name|new
 return|;
 block|}
 return|return
-name|FALSE
+name|NULL
 return|;
 block|}
 end_function
@@ -1977,7 +1933,8 @@ comment|/*******************/
 end_comment
 
 begin_function
-name|gboolean
+name|GimpUndo
+modifier|*
 DECL|function|gimp_image_undo_push_drawable (GimpImage * image,const gchar * undo_desc,GimpDrawable * drawable,TileManager * tiles,gboolean sparse,gint x,gint y,gint width,gint height)
 name|gimp_image_undo_push_drawable
 parameter_list|(
@@ -2018,10 +1975,6 @@ name|GimpItem
 modifier|*
 name|item
 decl_stmt|;
-name|GimpUndo
-modifier|*
-name|new
-decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
@@ -2029,7 +1982,7 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -2039,7 +1992,7 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -2048,7 +2001,7 @@ name|tiles
 operator|!=
 name|NULL
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -2064,7 +2017,7 @@ argument_list|)
 operator|==
 name|width
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -2080,7 +2033,7 @@ argument_list|)
 operator|==
 name|height
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|item
@@ -2097,7 +2050,7 @@ argument_list|(
 name|item
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -2116,7 +2069,7 @@ argument_list|(
 name|item
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -2135,14 +2088,10 @@ argument_list|(
 name|item
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|(
-name|new
-operator|=
+return|return
 name|gimp_image_undo_push
 argument_list|(
 name|image
@@ -2195,15 +2144,6 @@ name|height
 argument_list|,
 name|NULL
 argument_list|)
-operator|)
-condition|)
-block|{
-return|return
-name|TRUE
-return|;
-block|}
-return|return
-name|FALSE
 return|;
 block|}
 end_function
@@ -2290,7 +2230,8 @@ function_decl|;
 end_function_decl
 
 begin_function
-name|gboolean
+name|GimpUndo
+modifier|*
 DECL|function|gimp_image_undo_push_drawable_mod (GimpImage * image,const gchar * undo_desc,GimpDrawable * drawable)
 name|gimp_image_undo_push_drawable_mod
 parameter_list|(
@@ -2322,7 +2263,7 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -2332,7 +2273,7 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -2345,7 +2286,7 @@ name|drawable
 argument_list|)
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|size
@@ -2453,11 +2394,11 @@ operator|->
 name|offset_y
 expr_stmt|;
 return|return
-name|TRUE
+name|new
 return|;
 block|}
 return|return
-name|FALSE
+name|NULL
 return|;
 block|}
 end_function
@@ -2683,7 +2624,8 @@ comment|/***************/
 end_comment
 
 begin_function
-name|gboolean
+name|GimpUndo
+modifier|*
 DECL|function|gimp_image_undo_push_mask (GimpImage * image,const gchar * undo_desc,GimpChannel * mask)
 name|gimp_image_undo_push_mask
 parameter_list|(
@@ -2701,10 +2643,6 @@ modifier|*
 name|mask
 parameter_list|)
 block|{
-name|GimpUndo
-modifier|*
-name|new
-decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
@@ -2712,7 +2650,7 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -2722,7 +2660,7 @@ argument_list|(
 name|mask
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -2735,14 +2673,10 @@ name|mask
 argument_list|)
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|(
-name|new
-operator|=
+return|return
 name|gimp_image_undo_push
 argument_list|(
 name|image
@@ -2778,15 +2712,6 @@ name|mask
 argument_list|,
 name|NULL
 argument_list|)
-operator|)
-condition|)
-block|{
-return|return
-name|TRUE
-return|;
-block|}
-return|return
-name|FALSE
 return|;
 block|}
 end_function
@@ -2804,7 +2729,8 @@ comment|/**********************/
 end_comment
 
 begin_function
-name|gboolean
+name|GimpUndo
+modifier|*
 DECL|function|gimp_image_undo_push_item_rename (GimpImage * image,const gchar * undo_desc,GimpItem * item)
 name|gimp_image_undo_push_item_rename
 parameter_list|(
@@ -2822,10 +2748,6 @@ modifier|*
 name|item
 parameter_list|)
 block|{
-name|GimpUndo
-modifier|*
-name|new
-decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
@@ -2833,7 +2755,7 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -2843,7 +2765,7 @@ argument_list|(
 name|item
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -2853,14 +2775,10 @@ argument_list|(
 name|item
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|(
-name|new
-operator|=
+return|return
 name|gimp_image_undo_push
 argument_list|(
 name|image
@@ -2887,15 +2805,6 @@ name|item
 argument_list|,
 name|NULL
 argument_list|)
-operator|)
-condition|)
-block|{
-return|return
-name|TRUE
-return|;
-block|}
-return|return
-name|FALSE
 return|;
 block|}
 end_function
@@ -2913,7 +2822,8 @@ comment|/****************************/
 end_comment
 
 begin_function
-name|gboolean
+name|GimpUndo
+modifier|*
 DECL|function|gimp_image_undo_push_item_displace (GimpImage * image,const gchar * undo_desc,GimpItem * item)
 name|gimp_image_undo_push_item_displace
 parameter_list|(
@@ -2931,10 +2841,6 @@ modifier|*
 name|item
 parameter_list|)
 block|{
-name|GimpUndo
-modifier|*
-name|new
-decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
@@ -2942,7 +2848,7 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -2952,7 +2858,7 @@ argument_list|(
 name|item
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -2962,14 +2868,10 @@ argument_list|(
 name|item
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|(
-name|new
-operator|=
+return|return
 name|gimp_image_undo_push
 argument_list|(
 name|image
@@ -3007,15 +2909,6 @@ name|item
 argument_list|,
 name|NULL
 argument_list|)
-operator|)
-condition|)
-block|{
-return|return
-name|TRUE
-return|;
-block|}
-return|return
-name|FALSE
 return|;
 block|}
 end_function
@@ -3033,7 +2926,8 @@ comment|/******************************/
 end_comment
 
 begin_function
-name|gboolean
+name|GimpUndo
+modifier|*
 DECL|function|gimp_image_undo_push_item_visibility (GimpImage * image,const gchar * undo_desc,GimpItem * item)
 name|gimp_image_undo_push_item_visibility
 parameter_list|(
@@ -3051,10 +2945,6 @@ modifier|*
 name|item
 parameter_list|)
 block|{
-name|GimpUndo
-modifier|*
-name|new
-decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
@@ -3062,7 +2952,7 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -3072,7 +2962,7 @@ argument_list|(
 name|item
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -3082,14 +2972,10 @@ argument_list|(
 name|item
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|(
-name|new
-operator|=
+return|return
 name|gimp_image_undo_push
 argument_list|(
 name|image
@@ -3116,15 +3002,6 @@ name|item
 argument_list|,
 name|NULL
 argument_list|)
-operator|)
-condition|)
-block|{
-return|return
-name|TRUE
-return|;
-block|}
-return|return
-name|FALSE
 return|;
 block|}
 end_function
@@ -3142,7 +3019,8 @@ comment|/**********************/
 end_comment
 
 begin_function
-name|gboolean
+name|GimpUndo
+modifier|*
 DECL|function|gimp_image_undo_push_item_linked (GimpImage * image,const gchar * undo_desc,GimpItem * item)
 name|gimp_image_undo_push_item_linked
 parameter_list|(
@@ -3160,10 +3038,6 @@ modifier|*
 name|item
 parameter_list|)
 block|{
-name|GimpUndo
-modifier|*
-name|new
-decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
@@ -3171,7 +3045,7 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -3181,7 +3055,7 @@ argument_list|(
 name|item
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -3191,14 +3065,10 @@ argument_list|(
 name|item
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|(
-name|new
-operator|=
+return|return
 name|gimp_image_undo_push
 argument_list|(
 name|image
@@ -3225,15 +3095,6 @@ name|item
 argument_list|,
 name|NULL
 argument_list|)
-operator|)
-condition|)
-block|{
-return|return
-name|TRUE
-return|;
-block|}
-return|return
-name|FALSE
 return|;
 block|}
 end_function
@@ -3281,7 +3142,8 @@ end_struct
 
 begin_function_decl
 specifier|static
-name|gboolean
+name|GimpUndo
+modifier|*
 name|undo_push_layer
 parameter_list|(
 name|GimpImage
@@ -3345,7 +3207,8 @@ function_decl|;
 end_function_decl
 
 begin_function
-name|gboolean
+name|GimpUndo
+modifier|*
 DECL|function|gimp_image_undo_push_layer_add (GimpImage * image,const gchar * undo_desc,GimpLayer * layer,gint prev_position,GimpLayer * prev_layer)
 name|gimp_image_undo_push_layer_add
 parameter_list|(
@@ -3377,7 +3240,7 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -3387,7 +3250,7 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -3401,7 +3264,7 @@ name|layer
 argument_list|)
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -3415,7 +3278,7 @@ argument_list|(
 name|prev_layer
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 return|return
@@ -3438,7 +3301,8 @@ block|}
 end_function
 
 begin_function
-name|gboolean
+name|GimpUndo
+modifier|*
 DECL|function|gimp_image_undo_push_layer_remove (GimpImage * image,const gchar * undo_desc,GimpLayer * layer,gint prev_position,GimpLayer * prev_layer)
 name|gimp_image_undo_push_layer_remove
 parameter_list|(
@@ -3470,7 +3334,7 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -3480,7 +3344,7 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -3493,7 +3357,7 @@ name|layer
 argument_list|)
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -3507,7 +3371,7 @@ argument_list|(
 name|prev_layer
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 return|return
@@ -3531,7 +3395,8 @@ end_function
 
 begin_function
 specifier|static
-name|gboolean
+name|GimpUndo
+modifier|*
 DECL|function|undo_push_layer (GimpImage * image,const gchar * undo_desc,GimpUndoType type,GimpLayer * layer,gint prev_position,GimpLayer * prev_layer)
 name|undo_push_layer
 parameter_list|(
@@ -3649,11 +3514,11 @@ operator|=
 name|prev_layer
 expr_stmt|;
 return|return
-name|TRUE
+name|new
 return|;
 block|}
 return|return
-name|FALSE
+name|NULL
 return|;
 block|}
 end_function
@@ -4089,7 +3954,8 @@ comment|/***************************/
 end_comment
 
 begin_function
-name|gboolean
+name|GimpUndo
+modifier|*
 DECL|function|gimp_image_undo_push_layer_reposition (GimpImage * image,const gchar * undo_desc,GimpLayer * layer)
 name|gimp_image_undo_push_layer_reposition
 parameter_list|(
@@ -4107,10 +3973,6 @@ modifier|*
 name|layer
 parameter_list|)
 block|{
-name|GimpUndo
-modifier|*
-name|new
-decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
@@ -4118,7 +3980,7 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -4128,7 +3990,7 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -4141,14 +4003,10 @@ name|layer
 argument_list|)
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|(
-name|new
-operator|=
+return|return
 name|gimp_image_undo_push
 argument_list|(
 name|image
@@ -4175,15 +4033,6 @@ name|layer
 argument_list|,
 name|NULL
 argument_list|)
-operator|)
-condition|)
-block|{
-return|return
-name|TRUE
-return|;
-block|}
-return|return
-name|FALSE
 return|;
 block|}
 end_function
@@ -4201,7 +4050,8 @@ comment|/*********************/
 end_comment
 
 begin_function
-name|gboolean
+name|GimpUndo
+modifier|*
 DECL|function|gimp_image_undo_push_layer_mode (GimpImage * image,const gchar * undo_desc,GimpLayer * layer)
 name|gimp_image_undo_push_layer_mode
 parameter_list|(
@@ -4219,10 +4069,6 @@ modifier|*
 name|layer
 parameter_list|)
 block|{
-name|GimpUndo
-modifier|*
-name|new
-decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
@@ -4230,7 +4076,7 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -4240,7 +4086,7 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -4253,14 +4099,10 @@ name|layer
 argument_list|)
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|(
-name|new
-operator|=
+return|return
 name|gimp_image_undo_push
 argument_list|(
 name|image
@@ -4287,15 +4129,6 @@ name|layer
 argument_list|,
 name|NULL
 argument_list|)
-operator|)
-condition|)
-block|{
-return|return
-name|TRUE
-return|;
-block|}
-return|return
-name|FALSE
 return|;
 block|}
 end_function
@@ -4313,7 +4146,8 @@ comment|/************************/
 end_comment
 
 begin_function
-name|gboolean
+name|GimpUndo
+modifier|*
 DECL|function|gimp_image_undo_push_layer_opacity (GimpImage * image,const gchar * undo_desc,GimpLayer * layer)
 name|gimp_image_undo_push_layer_opacity
 parameter_list|(
@@ -4331,10 +4165,6 @@ modifier|*
 name|layer
 parameter_list|)
 block|{
-name|GimpUndo
-modifier|*
-name|new
-decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
@@ -4342,7 +4172,7 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -4352,7 +4182,7 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -4365,14 +4195,10 @@ name|layer
 argument_list|)
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|(
-name|new
-operator|=
+return|return
 name|gimp_image_undo_push
 argument_list|(
 name|image
@@ -4399,15 +4225,6 @@ name|layer
 argument_list|,
 name|NULL
 argument_list|)
-operator|)
-condition|)
-block|{
-return|return
-name|TRUE
-return|;
-block|}
-return|return
-name|FALSE
 return|;
 block|}
 end_function
@@ -4425,7 +4242,8 @@ comment|/***************************/
 end_comment
 
 begin_function
-name|gboolean
+name|GimpUndo
+modifier|*
 DECL|function|gimp_image_undo_push_layer_lock_alpha (GimpImage * image,const gchar * undo_desc,GimpLayer * layer)
 name|gimp_image_undo_push_layer_lock_alpha
 parameter_list|(
@@ -4443,10 +4261,6 @@ modifier|*
 name|layer
 parameter_list|)
 block|{
-name|GimpUndo
-modifier|*
-name|new
-decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
@@ -4454,7 +4268,7 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -4464,7 +4278,7 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -4477,14 +4291,10 @@ name|layer
 argument_list|)
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|(
-name|new
-operator|=
+return|return
 name|gimp_image_undo_push
 argument_list|(
 name|image
@@ -4511,15 +4321,6 @@ name|layer
 argument_list|,
 name|NULL
 argument_list|)
-operator|)
-condition|)
-block|{
-return|return
-name|TRUE
-return|;
-block|}
-return|return
-name|FALSE
 return|;
 block|}
 end_function
@@ -4537,7 +4338,8 @@ comment|/*********************/
 end_comment
 
 begin_function
-name|gboolean
+name|GimpUndo
+modifier|*
 DECL|function|gimp_image_undo_push_text_layer (GimpImage * image,const gchar * undo_desc,GimpTextLayer * layer,const GParamSpec * pspec)
 name|gimp_image_undo_push_text_layer
 parameter_list|(
@@ -4560,10 +4362,6 @@ modifier|*
 name|pspec
 parameter_list|)
 block|{
-name|GimpUndo
-modifier|*
-name|new
-decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
@@ -4571,7 +4369,7 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -4581,7 +4379,7 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -4594,14 +4392,10 @@ name|layer
 argument_list|)
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|(
-name|new
-operator|=
+return|return
 name|gimp_image_undo_push
 argument_list|(
 name|image
@@ -4634,15 +4428,6 @@ name|pspec
 argument_list|,
 name|NULL
 argument_list|)
-operator|)
-condition|)
-block|{
-return|return
-name|TRUE
-return|;
-block|}
-return|return
-name|FALSE
 return|;
 block|}
 end_function
@@ -4716,7 +4501,8 @@ function_decl|;
 end_function_decl
 
 begin_function
-name|gboolean
+name|GimpUndo
+modifier|*
 DECL|function|gimp_image_undo_push_text_layer_modified (GimpImage * image,const gchar * undo_desc,GimpTextLayer * layer)
 name|gimp_image_undo_push_text_layer_modified
 parameter_list|(
@@ -4745,7 +4531,7 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -4755,7 +4541,7 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -4768,7 +4554,7 @@ name|layer
 argument_list|)
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -4828,11 +4614,11 @@ operator|->
 name|modified
 expr_stmt|;
 return|return
-name|TRUE
+name|new
 return|;
 block|}
 return|return
-name|FALSE
+name|NULL
 return|;
 block|}
 end_function
@@ -4988,7 +4774,8 @@ end_struct
 
 begin_function_decl
 specifier|static
-name|gboolean
+name|GimpUndo
+modifier|*
 name|undo_push_layer_mask
 parameter_list|(
 name|GimpImage
@@ -5049,7 +4836,8 @@ function_decl|;
 end_function_decl
 
 begin_function
-name|gboolean
+name|GimpUndo
+modifier|*
 DECL|function|gimp_image_undo_push_layer_mask_add (GimpImage * image,const gchar * undo_desc,GimpLayer * layer,GimpLayerMask * mask)
 name|gimp_image_undo_push_layer_mask_add
 parameter_list|(
@@ -5078,7 +4866,7 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -5088,7 +4876,7 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -5101,7 +4889,7 @@ name|layer
 argument_list|)
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -5111,7 +4899,7 @@ argument_list|(
 name|mask
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -5125,7 +4913,7 @@ name|mask
 argument_list|)
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 return|return
@@ -5146,7 +4934,8 @@ block|}
 end_function
 
 begin_function
-name|gboolean
+name|GimpUndo
+modifier|*
 DECL|function|gimp_image_undo_push_layer_mask_remove (GimpImage * image,const gchar * undo_desc,GimpLayer * layer,GimpLayerMask * mask)
 name|gimp_image_undo_push_layer_mask_remove
 parameter_list|(
@@ -5175,7 +4964,7 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -5185,7 +4974,7 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -5198,7 +4987,7 @@ name|layer
 argument_list|)
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -5208,7 +4997,7 @@ argument_list|(
 name|mask
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -5221,7 +5010,7 @@ name|mask
 argument_list|)
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -5232,7 +5021,7 @@ name|layer
 operator|==
 name|layer
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -5243,7 +5032,7 @@ name|mask
 operator|==
 name|mask
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 return|return
@@ -5265,7 +5054,8 @@ end_function
 
 begin_function
 specifier|static
-name|gboolean
+name|GimpUndo
+modifier|*
 DECL|function|undo_push_layer_mask (GimpImage * image,const gchar * undo_desc,GimpUndoType type,GimpLayer * layer,GimpLayerMask * mask)
 name|undo_push_layer_mask
 parameter_list|(
@@ -5377,11 +5167,11 @@ name|mask
 argument_list|)
 expr_stmt|;
 return|return
-name|TRUE
+name|new
 return|;
 block|}
 return|return
-name|FALSE
+name|NULL
 return|;
 block|}
 end_function
@@ -5605,7 +5395,8 @@ end_struct
 
 begin_function_decl
 specifier|static
-name|gboolean
+name|GimpUndo
+modifier|*
 name|undo_push_layer_mask_properties
 parameter_list|(
 name|GimpImage
@@ -5662,7 +5453,8 @@ function_decl|;
 end_function_decl
 
 begin_function
-name|gboolean
+name|GimpUndo
+modifier|*
 DECL|function|gimp_image_undo_push_layer_mask_apply (GimpImage * image,const gchar * undo_desc,GimpLayerMask * mask)
 name|gimp_image_undo_push_layer_mask_apply
 parameter_list|(
@@ -5696,7 +5488,8 @@ block|}
 end_function
 
 begin_function
-name|gboolean
+name|GimpUndo
+modifier|*
 DECL|function|gimp_image_undo_push_layer_mask_show (GimpImage * image,const gchar * undo_desc,GimpLayerMask * mask)
 name|gimp_image_undo_push_layer_mask_show
 parameter_list|(
@@ -5731,7 +5524,8 @@ end_function
 
 begin_function
 specifier|static
-name|gboolean
+name|GimpUndo
+modifier|*
 DECL|function|undo_push_layer_mask_properties (GimpImage * image,GimpUndoType undo_type,const gchar * undo_desc,GimpLayerMask * mask)
 name|undo_push_layer_mask_properties
 parameter_list|(
@@ -5766,7 +5560,7 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -5776,7 +5570,7 @@ argument_list|(
 name|mask
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -5789,7 +5583,7 @@ name|mask
 argument_list|)
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|size
@@ -5863,11 +5657,11 @@ name|mask
 argument_list|)
 expr_stmt|;
 return|return
-name|TRUE
+name|new
 return|;
 block|}
 return|return
-name|FALSE
+name|NULL
 return|;
 block|}
 end_function
@@ -6061,7 +5855,8 @@ end_struct
 
 begin_function_decl
 specifier|static
-name|gboolean
+name|GimpUndo
+modifier|*
 name|undo_push_channel
 parameter_list|(
 name|GimpImage
@@ -6125,7 +5920,8 @@ function_decl|;
 end_function_decl
 
 begin_function
-name|gboolean
+name|GimpUndo
+modifier|*
 DECL|function|gimp_image_undo_push_channel_add (GimpImage * image,const gchar * undo_desc,GimpChannel * channel,gint prev_position,GimpChannel * prev_channel)
 name|gimp_image_undo_push_channel_add
 parameter_list|(
@@ -6157,7 +5953,7 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -6167,7 +5963,7 @@ argument_list|(
 name|channel
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -6181,7 +5977,7 @@ name|channel
 argument_list|)
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -6195,7 +5991,7 @@ argument_list|(
 name|prev_channel
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 return|return
@@ -6218,7 +6014,8 @@ block|}
 end_function
 
 begin_function
-name|gboolean
+name|GimpUndo
+modifier|*
 DECL|function|gimp_image_undo_push_channel_remove (GimpImage * image,const gchar * undo_desc,GimpChannel * channel,gint prev_position,GimpChannel * prev_channel)
 name|gimp_image_undo_push_channel_remove
 parameter_list|(
@@ -6250,7 +6047,7 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -6260,7 +6057,7 @@ argument_list|(
 name|channel
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -6273,7 +6070,7 @@ name|channel
 argument_list|)
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -6287,7 +6084,7 @@ argument_list|(
 name|prev_channel
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 return|return
@@ -6311,7 +6108,8 @@ end_function
 
 begin_function
 specifier|static
-name|gboolean
+name|GimpUndo
+modifier|*
 DECL|function|undo_push_channel (GimpImage * image,const gchar * undo_desc,GimpUndoType type,GimpChannel * channel,gint prev_position,GimpChannel * prev_channel)
 name|undo_push_channel
 parameter_list|(
@@ -6429,11 +6227,11 @@ operator|=
 name|prev_channel
 expr_stmt|;
 return|return
-name|TRUE
+name|new
 return|;
 block|}
 return|return
-name|FALSE
+name|NULL
 return|;
 block|}
 end_function
@@ -6704,7 +6502,8 @@ comment|/******************************/
 end_comment
 
 begin_function
-name|gboolean
+name|GimpUndo
+modifier|*
 DECL|function|gimp_image_undo_push_channel_reposition (GimpImage * image,const gchar * undo_desc,GimpChannel * channel)
 name|gimp_image_undo_push_channel_reposition
 parameter_list|(
@@ -6722,10 +6521,6 @@ modifier|*
 name|channel
 parameter_list|)
 block|{
-name|GimpUndo
-modifier|*
-name|new
-decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
@@ -6733,7 +6528,7 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -6743,7 +6538,7 @@ argument_list|(
 name|channel
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -6756,14 +6551,10 @@ name|channel
 argument_list|)
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|(
-name|new
-operator|=
+return|return
 name|gimp_image_undo_push
 argument_list|(
 name|image
@@ -6790,15 +6581,6 @@ name|channel
 argument_list|,
 name|NULL
 argument_list|)
-operator|)
-condition|)
-block|{
-return|return
-name|TRUE
-return|;
-block|}
-return|return
-name|FALSE
 return|;
 block|}
 end_function
@@ -6816,7 +6598,8 @@ comment|/************************/
 end_comment
 
 begin_function
-name|gboolean
+name|GimpUndo
+modifier|*
 DECL|function|gimp_image_undo_push_channel_color (GimpImage * image,const gchar * undo_desc,GimpChannel * channel)
 name|gimp_image_undo_push_channel_color
 parameter_list|(
@@ -6834,10 +6617,6 @@ modifier|*
 name|channel
 parameter_list|)
 block|{
-name|GimpUndo
-modifier|*
-name|new
-decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
@@ -6845,7 +6624,7 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -6855,7 +6634,7 @@ argument_list|(
 name|channel
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -6868,14 +6647,10 @@ name|channel
 argument_list|)
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|(
-name|new
-operator|=
+return|return
 name|gimp_image_undo_push
 argument_list|(
 name|image
@@ -6904,15 +6679,6 @@ name|channel
 argument_list|,
 name|NULL
 argument_list|)
-operator|)
-condition|)
-block|{
-return|return
-name|TRUE
-return|;
-block|}
-return|return
-name|FALSE
 return|;
 block|}
 end_function
@@ -6960,7 +6726,8 @@ end_struct
 
 begin_function_decl
 specifier|static
-name|gboolean
+name|GimpUndo
+modifier|*
 name|undo_push_vectors
 parameter_list|(
 name|GimpImage
@@ -7024,7 +6791,8 @@ function_decl|;
 end_function_decl
 
 begin_function
-name|gboolean
+name|GimpUndo
+modifier|*
 DECL|function|gimp_image_undo_push_vectors_add (GimpImage * image,const gchar * undo_desc,GimpVectors * vectors,gint prev_position,GimpVectors * prev_vectors)
 name|gimp_image_undo_push_vectors_add
 parameter_list|(
@@ -7056,7 +6824,7 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -7066,7 +6834,7 @@ argument_list|(
 name|vectors
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -7080,7 +6848,7 @@ name|vectors
 argument_list|)
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -7094,7 +6862,7 @@ argument_list|(
 name|prev_vectors
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 return|return
@@ -7117,7 +6885,8 @@ block|}
 end_function
 
 begin_function
-name|gboolean
+name|GimpUndo
+modifier|*
 DECL|function|gimp_image_undo_push_vectors_remove (GimpImage * image,const gchar * undo_desc,GimpVectors * vectors,gint prev_position,GimpVectors * prev_vectors)
 name|gimp_image_undo_push_vectors_remove
 parameter_list|(
@@ -7149,7 +6918,7 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -7159,7 +6928,7 @@ argument_list|(
 name|vectors
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -7172,7 +6941,7 @@ name|vectors
 argument_list|)
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -7186,7 +6955,7 @@ argument_list|(
 name|prev_vectors
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 return|return
@@ -7210,7 +6979,8 @@ end_function
 
 begin_function
 specifier|static
-name|gboolean
+name|GimpUndo
+modifier|*
 DECL|function|undo_push_vectors (GimpImage * image,const gchar * undo_desc,GimpUndoType type,GimpVectors * vectors,gint prev_position,GimpVectors * prev_vectors)
 name|undo_push_vectors
 parameter_list|(
@@ -7328,11 +7098,11 @@ operator|=
 name|prev_vectors
 expr_stmt|;
 return|return
-name|TRUE
+name|new
 return|;
 block|}
 return|return
-name|FALSE
+name|NULL
 return|;
 block|}
 end_function
@@ -7644,7 +7414,8 @@ function_decl|;
 end_function_decl
 
 begin_function
-name|gboolean
+name|GimpUndo
+modifier|*
 DECL|function|gimp_image_undo_push_vectors_mod (GimpImage * image,const gchar * undo_desc,GimpVectors * vectors)
 name|gimp_image_undo_push_vectors_mod
 parameter_list|(
@@ -7680,7 +7451,7 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -7690,7 +7461,7 @@ argument_list|(
 name|vectors
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -7703,7 +7474,7 @@ name|vectors
 argument_list|)
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|copy
@@ -7799,7 +7570,7 @@ operator|=
 name|copy
 expr_stmt|;
 return|return
-name|TRUE
+name|new
 return|;
 block|}
 if|if
@@ -7812,7 +7583,7 @@ name|copy
 argument_list|)
 expr_stmt|;
 return|return
-name|FALSE
+name|NULL
 return|;
 block|}
 end_function
@@ -8111,7 +7882,8 @@ function_decl|;
 end_function_decl
 
 begin_function
-name|gboolean
+name|GimpUndo
+modifier|*
 DECL|function|gimp_image_undo_push_vectors_reposition (GimpImage * image,const gchar * undo_desc,GimpVectors * vectors)
 name|gimp_image_undo_push_vectors_reposition
 parameter_list|(
@@ -8140,7 +7912,7 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -8150,7 +7922,7 @@ argument_list|(
 name|vectors
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -8163,7 +7935,7 @@ name|vectors
 argument_list|)
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -8226,11 +7998,11 @@ name|vectors
 argument_list|)
 expr_stmt|;
 return|return
-name|TRUE
+name|new
 return|;
 block|}
 return|return
-name|FALSE
+name|NULL
 return|;
 block|}
 end_function
@@ -8420,7 +8192,8 @@ function_decl|;
 end_function_decl
 
 begin_function
-name|gboolean
+name|GimpUndo
+modifier|*
 DECL|function|gimp_image_undo_push_fs_to_layer (GimpImage * image,const gchar * undo_desc,GimpLayer * floating_layer,GimpDrawable * drawable)
 name|gimp_image_undo_push_fs_to_layer
 parameter_list|(
@@ -8453,7 +8226,7 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -8463,7 +8236,7 @@ argument_list|(
 name|floating_layer
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -8473,7 +8246,7 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -8533,7 +8306,7 @@ operator|=
 name|drawable
 expr_stmt|;
 return|return
-name|TRUE
+name|new
 return|;
 block|}
 name|tile_manager_unref
@@ -8554,7 +8327,7 @@ operator|=
 name|NULL
 expr_stmt|;
 return|return
-name|FALSE
+name|NULL
 return|;
 block|}
 end_function
@@ -8939,7 +8712,8 @@ function_decl|;
 end_function_decl
 
 begin_function
-name|gboolean
+name|GimpUndo
+modifier|*
 DECL|function|gimp_image_undo_push_fs_rigor (GimpImage * image,const gchar * undo_desc,GimpLayer * floating_layer)
 name|gimp_image_undo_push_fs_rigor
 parameter_list|(
@@ -8968,7 +8742,7 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -8978,7 +8752,7 @@ argument_list|(
 name|floating_layer
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -9016,11 +8790,11 @@ operator|)
 condition|)
 block|{
 return|return
-name|TRUE
+name|new
 return|;
 block|}
 return|return
-name|FALSE
+name|NULL
 return|;
 block|}
 end_function
@@ -9136,7 +8910,8 @@ function_decl|;
 end_function_decl
 
 begin_function
-name|gboolean
+name|GimpUndo
+modifier|*
 DECL|function|gimp_image_undo_push_fs_relax (GimpImage * image,const gchar * undo_desc,GimpLayer * floating_layer)
 name|gimp_image_undo_push_fs_relax
 parameter_list|(
@@ -9165,7 +8940,7 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -9175,7 +8950,7 @@ argument_list|(
 name|floating_layer
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -9213,11 +8988,11 @@ operator|)
 condition|)
 block|{
 return|return
-name|TRUE
+name|new
 return|;
 block|}
 return|return
-name|FALSE
+name|NULL
 return|;
 block|}
 end_function
@@ -9386,7 +9161,8 @@ function_decl|;
 end_function_decl
 
 begin_function
-name|gboolean
+name|GimpUndo
+modifier|*
 DECL|function|gimp_image_undo_push_image_parasite (GimpImage * image,const gchar * undo_desc,const GimpParasite * parasite)
 name|gimp_image_undo_push_image_parasite
 parameter_list|(
@@ -9416,7 +9192,7 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -9504,17 +9280,18 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
-name|TRUE
+name|new
 return|;
 block|}
 return|return
-name|FALSE
+name|NULL
 return|;
 block|}
 end_function
 
 begin_function
-name|gboolean
+name|GimpUndo
+modifier|*
 DECL|function|gimp_image_undo_push_image_parasite_remove (GimpImage * image,const gchar * undo_desc,const gchar * name)
 name|gimp_image_undo_push_image_parasite_remove
 parameter_list|(
@@ -9544,7 +9321,7 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -9629,17 +9406,18 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
-name|TRUE
+name|new
 return|;
 block|}
 return|return
-name|FALSE
+name|NULL
 return|;
 block|}
 end_function
 
 begin_function
-name|gboolean
+name|GimpUndo
+modifier|*
 DECL|function|gimp_image_undo_push_item_parasite (GimpImage * image,const gchar * undo_desc,GimpItem * item,const GimpParasite * parasite)
 name|gimp_image_undo_push_item_parasite
 parameter_list|(
@@ -9673,7 +9451,7 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -9683,7 +9461,7 @@ argument_list|(
 name|item
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -9693,7 +9471,7 @@ argument_list|(
 name|item
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -9781,17 +9559,18 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
-name|TRUE
+name|new
 return|;
 block|}
 return|return
-name|FALSE
+name|NULL
 return|;
 block|}
 end_function
 
 begin_function
-name|gboolean
+name|GimpUndo
+modifier|*
 DECL|function|gimp_image_undo_push_item_parasite_remove (GimpImage * image,const gchar * undo_desc,GimpItem * item,const gchar * name)
 name|gimp_image_undo_push_item_parasite_remove
 parameter_list|(
@@ -9825,7 +9604,7 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -9835,7 +9614,7 @@ argument_list|(
 name|item
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -9845,7 +9624,7 @@ argument_list|(
 name|item
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -9930,11 +9709,11 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
-name|TRUE
+name|new
 return|;
 block|}
 return|return
-name|FALSE
+name|NULL
 return|;
 block|}
 end_function
@@ -10241,7 +10020,8 @@ function_decl|;
 end_function_decl
 
 begin_function
-name|gboolean
+name|GimpUndo
+modifier|*
 DECL|function|gimp_image_undo_push_cantundo (GimpImage * image,const gchar * undo_desc)
 name|gimp_image_undo_push_cantundo
 parameter_list|(
@@ -10255,10 +10035,6 @@ modifier|*
 name|undo_desc
 parameter_list|)
 block|{
-name|GimpUndo
-modifier|*
-name|new
-decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
@@ -10266,15 +10042,11 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 comment|/* This is the sole purpose of this type of undo: the ability to    * mark an image as having been mutated, without really providing    * any adequate undo facility.    */
-if|if
-condition|(
-operator|(
-name|new
-operator|=
+return|return
 name|gimp_image_undo_push
 argument_list|(
 name|image
@@ -10297,15 +10069,6 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|)
-operator|)
-condition|)
-block|{
-return|return
-name|TRUE
-return|;
-block|}
-return|return
-name|FALSE
 return|;
 block|}
 end_function

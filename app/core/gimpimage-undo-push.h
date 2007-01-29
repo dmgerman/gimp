@@ -21,7 +21,8 @@ comment|/*  image undos  */
 end_comment
 
 begin_function_decl
-name|gboolean
+name|GimpUndo
+modifier|*
 name|gimp_image_undo_push_image_type
 parameter_list|(
 name|GimpImage
@@ -37,7 +38,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
+name|GimpUndo
+modifier|*
 name|gimp_image_undo_push_image_size
 parameter_list|(
 name|GimpImage
@@ -53,7 +55,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
+name|GimpUndo
+modifier|*
 name|gimp_image_undo_push_image_resolution
 parameter_list|(
 name|GimpImage
@@ -69,7 +72,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
+name|GimpUndo
+modifier|*
 name|gimp_image_undo_push_image_guide
 parameter_list|(
 name|GimpImage
@@ -89,7 +93,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
+name|GimpUndo
+modifier|*
 name|gimp_image_undo_push_image_grid
 parameter_list|(
 name|GimpImage
@@ -109,7 +114,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
+name|GimpUndo
+modifier|*
 name|gimp_image_undo_push_image_sample_point
 parameter_list|(
 name|GimpImage
@@ -129,7 +135,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
+name|GimpUndo
+modifier|*
 name|gimp_image_undo_push_image_colormap
 parameter_list|(
 name|GimpImage
@@ -149,7 +156,8 @@ comment|/*  drawable undo  */
 end_comment
 
 begin_function_decl
-name|gboolean
+name|GimpUndo
+modifier|*
 name|gimp_image_undo_push_drawable
 parameter_list|(
 name|GimpImage
@@ -188,7 +196,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
+name|GimpUndo
+modifier|*
 name|gimp_image_undo_push_drawable_mod
 parameter_list|(
 name|GimpImage
@@ -212,7 +221,8 @@ comment|/*  mask undo  */
 end_comment
 
 begin_function_decl
-name|gboolean
+name|GimpUndo
+modifier|*
 name|gimp_image_undo_push_mask
 parameter_list|(
 name|GimpImage
@@ -236,7 +246,8 @@ comment|/*  item undos  */
 end_comment
 
 begin_function_decl
-name|gboolean
+name|GimpUndo
+modifier|*
 name|gimp_image_undo_push_item_rename
 parameter_list|(
 name|GimpImage
@@ -256,7 +267,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
+name|GimpUndo
+modifier|*
 name|gimp_image_undo_push_item_displace
 parameter_list|(
 name|GimpImage
@@ -276,7 +288,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
+name|GimpUndo
+modifier|*
 name|gimp_image_undo_push_item_visibility
 parameter_list|(
 name|GimpImage
@@ -296,7 +309,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
+name|GimpUndo
+modifier|*
 name|gimp_image_undo_push_item_linked
 parameter_list|(
 name|GimpImage
@@ -320,7 +334,8 @@ comment|/*  layer undos  */
 end_comment
 
 begin_function_decl
-name|gboolean
+name|GimpUndo
+modifier|*
 name|gimp_image_undo_push_layer_add
 parameter_list|(
 name|GimpImage
@@ -347,7 +362,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
+name|GimpUndo
+modifier|*
 name|gimp_image_undo_push_layer_remove
 parameter_list|(
 name|GimpImage
@@ -374,7 +390,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
+name|GimpUndo
+modifier|*
 name|gimp_image_undo_push_layer_reposition
 parameter_list|(
 name|GimpImage
@@ -394,7 +411,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
+name|GimpUndo
+modifier|*
 name|gimp_image_undo_push_layer_mode
 parameter_list|(
 name|GimpImage
@@ -414,7 +432,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
+name|GimpUndo
+modifier|*
 name|gimp_image_undo_push_layer_opacity
 parameter_list|(
 name|GimpImage
@@ -434,7 +453,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
+name|GimpUndo
+modifier|*
 name|gimp_image_undo_push_layer_lock_alpha
 parameter_list|(
 name|GimpImage
@@ -458,7 +478,8 @@ comment|/*  text layer undos  */
 end_comment
 
 begin_function_decl
-name|gboolean
+name|GimpUndo
+modifier|*
 name|gimp_image_undo_push_text_layer
 parameter_list|(
 name|GimpImage
@@ -483,7 +504,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
+name|GimpUndo
+modifier|*
 name|gimp_image_undo_push_text_layer_modified
 parameter_list|(
 name|GimpImage
@@ -507,7 +529,8 @@ comment|/*  layer mask undos  */
 end_comment
 
 begin_function_decl
-name|gboolean
+name|GimpUndo
+modifier|*
 name|gimp_image_undo_push_layer_mask_add
 parameter_list|(
 name|GimpImage
@@ -531,7 +554,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
+name|GimpUndo
+modifier|*
 name|gimp_image_undo_push_layer_mask_remove
 parameter_list|(
 name|GimpImage
@@ -555,7 +579,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
+name|GimpUndo
+modifier|*
 name|gimp_image_undo_push_layer_mask_apply
 parameter_list|(
 name|GimpImage
@@ -575,7 +600,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
+name|GimpUndo
+modifier|*
 name|gimp_image_undo_push_layer_mask_show
 parameter_list|(
 name|GimpImage
@@ -599,7 +625,8 @@ comment|/*  channel undos  */
 end_comment
 
 begin_function_decl
-name|gboolean
+name|GimpUndo
+modifier|*
 name|gimp_image_undo_push_channel_add
 parameter_list|(
 name|GimpImage
@@ -626,7 +653,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
+name|GimpUndo
+modifier|*
 name|gimp_image_undo_push_channel_remove
 parameter_list|(
 name|GimpImage
@@ -653,7 +681,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
+name|GimpUndo
+modifier|*
 name|gimp_image_undo_push_channel_reposition
 parameter_list|(
 name|GimpImage
@@ -673,7 +702,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
+name|GimpUndo
+modifier|*
 name|gimp_image_undo_push_channel_color
 parameter_list|(
 name|GimpImage
@@ -697,7 +727,8 @@ comment|/*  vectors undos  */
 end_comment
 
 begin_function_decl
-name|gboolean
+name|GimpUndo
+modifier|*
 name|gimp_image_undo_push_vectors_add
 parameter_list|(
 name|GimpImage
@@ -724,7 +755,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
+name|GimpUndo
+modifier|*
 name|gimp_image_undo_push_vectors_remove
 parameter_list|(
 name|GimpImage
@@ -751,7 +783,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
+name|GimpUndo
+modifier|*
 name|gimp_image_undo_push_vectors_mod
 parameter_list|(
 name|GimpImage
@@ -771,7 +804,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
+name|GimpUndo
+modifier|*
 name|gimp_image_undo_push_vectors_reposition
 parameter_list|(
 name|GimpImage
@@ -795,7 +829,8 @@ comment|/*  floating selection undos  */
 end_comment
 
 begin_function_decl
-name|gboolean
+name|GimpUndo
+modifier|*
 name|gimp_image_undo_push_fs_to_layer
 parameter_list|(
 name|GimpImage
@@ -819,7 +854,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
+name|GimpUndo
+modifier|*
 name|gimp_image_undo_push_fs_rigor
 parameter_list|(
 name|GimpImage
@@ -839,7 +875,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
+name|GimpUndo
+modifier|*
 name|gimp_image_undo_push_fs_relax
 parameter_list|(
 name|GimpImage
@@ -863,7 +900,8 @@ comment|/*  parasite undos  */
 end_comment
 
 begin_function_decl
-name|gboolean
+name|GimpUndo
+modifier|*
 name|gimp_image_undo_push_image_parasite
 parameter_list|(
 name|GimpImage
@@ -884,7 +922,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
+name|GimpUndo
+modifier|*
 name|gimp_image_undo_push_image_parasite_remove
 parameter_list|(
 name|GimpImage
@@ -905,7 +944,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
+name|GimpUndo
+modifier|*
 name|gimp_image_undo_push_item_parasite
 parameter_list|(
 name|GimpImage
@@ -930,7 +970,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
+name|GimpUndo
+modifier|*
 name|gimp_image_undo_push_item_parasite_remove
 parameter_list|(
 name|GimpImage
@@ -959,7 +1000,8 @@ comment|/*  EEK undo  */
 end_comment
 
 begin_function_decl
-name|gboolean
+name|GimpUndo
+modifier|*
 name|gimp_image_undo_push_cantundo
 parameter_list|(
 name|GimpImage
