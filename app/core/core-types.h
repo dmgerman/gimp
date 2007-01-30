@@ -508,6 +508,24 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpGuideUndo
+typedef|typedef
+name|struct
+name|_GimpGuideUndo
+name|GimpGuideUndo
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpSamplePointUndo
+typedef|typedef
+name|struct
+name|_GimpSamplePointUndo
+name|GimpSamplePointUndo
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpUndoStack
 typedef|typedef
 name|struct
