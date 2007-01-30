@@ -119,6 +119,10 @@ name|GValue
 modifier|*
 name|value
 decl_stmt|;
+DECL|member|modified
+name|gboolean
+name|modified
+decl_stmt|;
 block|}
 struct|;
 end_struct
