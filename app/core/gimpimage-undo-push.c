@@ -60,12 +60,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpchannelundo.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdrawableundo.h"
 end_include
 
@@ -145,6 +139,12 @@ begin_include
 include|#
 directive|include
 file|"gimplist.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpmaskundo.h"
 end_include
 
 begin_include
@@ -1412,7 +1412,7 @@ name|gimp_image_undo_push
 argument_list|(
 name|image
 argument_list|,
-name|GIMP_TYPE_CHANNEL_UNDO
+name|GIMP_TYPE_MASK_UNDO
 argument_list|,
 literal|0
 argument_list|,

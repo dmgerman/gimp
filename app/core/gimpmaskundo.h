@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_CHANNEL_UNDO_H__
+name|__GIMP_MASK_UNDO_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_CHANNEL_UNDO_H__
+DECL|macro|__GIMP_MASK_UNDO_H__
 define|#
 directive|define
-name|__GIMP_CHANNEL_UNDO_H__
+name|__GIMP_MASK_UNDO_H__
 end_define
 
 begin_include
@@ -23,81 +23,81 @@ file|"gimpitemundo.h"
 end_include
 
 begin_define
-DECL|macro|GIMP_TYPE_CHANNEL_UNDO
+DECL|macro|GIMP_TYPE_MASK_UNDO
 define|#
 directive|define
-name|GIMP_TYPE_CHANNEL_UNDO
-value|(gimp_channel_undo_get_type ())
+name|GIMP_TYPE_MASK_UNDO
+value|(gimp_mask_undo_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_CHANNEL_UNDO (obj)
+DECL|macro|GIMP_MASK_UNDO (obj)
 define|#
 directive|define
-name|GIMP_CHANNEL_UNDO
+name|GIMP_MASK_UNDO
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_CHANNEL_UNDO, GimpChannelUndo))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_MASK_UNDO, GimpMaskUndo))
 end_define
 
 begin_define
-DECL|macro|GIMP_CHANNEL_UNDO_CLASS (klass)
+DECL|macro|GIMP_MASK_UNDO_CLASS (klass)
 define|#
 directive|define
-name|GIMP_CHANNEL_UNDO_CLASS
+name|GIMP_MASK_UNDO_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_CHANNEL_UNDO, GimpChannelUndoClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_MASK_UNDO, GimpMaskUndoClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_CHANNEL_UNDO (obj)
+DECL|macro|GIMP_IS_MASK_UNDO (obj)
 define|#
 directive|define
-name|GIMP_IS_CHANNEL_UNDO
+name|GIMP_IS_MASK_UNDO
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_CHANNEL_UNDO))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_MASK_UNDO))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_CHANNEL_UNDO_CLASS (klass)
+DECL|macro|GIMP_IS_MASK_UNDO_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_CHANNEL_UNDO_CLASS
+name|GIMP_IS_MASK_UNDO_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_CHANNEL_UNDO))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_MASK_UNDO))
 end_define
 
 begin_define
-DECL|macro|GIMP_CHANNEL_UNDO_GET_CLASS (obj)
+DECL|macro|GIMP_MASK_UNDO_GET_CLASS (obj)
 define|#
 directive|define
-name|GIMP_CHANNEL_UNDO_GET_CLASS
+name|GIMP_MASK_UNDO_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_CHANNEL_UNDO, GimpChannelUndoClass))
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_MASK_UNDO, GimpMaskUndoClass))
 end_define
 
 begin_typedef
-DECL|typedef|GimpChannelUndoClass
+DECL|typedef|GimpMaskUndoClass
 typedef|typedef
 name|struct
-name|_GimpChannelUndoClass
-name|GimpChannelUndoClass
+name|_GimpMaskUndoClass
+name|GimpMaskUndoClass
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpChannelUndo
+DECL|struct|_GimpMaskUndo
 struct|struct
-name|_GimpChannelUndo
+name|_GimpMaskUndo
 block|{
 DECL|member|parent_instance
 name|GimpItemUndo
@@ -121,9 +121,9 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|_GimpChannelUndoClass
+DECL|struct|_GimpMaskUndoClass
 struct|struct
-name|_GimpChannelUndoClass
+name|_GimpMaskUndoClass
 block|{
 DECL|member|parent_class
 name|GimpItemUndoClass
@@ -135,7 +135,7 @@ end_struct
 
 begin_decl_stmt
 name|GType
-name|gimp_channel_undo_get_type
+name|gimp_mask_undo_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -149,7 +149,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMP_CHANNEL_UNDO_H__ */
+comment|/* __GIMP_MASK_UNDO_H__ */
 end_comment
 
 end_unit

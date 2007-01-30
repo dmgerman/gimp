@@ -18,12 +18,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpbase/gimpbase.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core-types.h"
 end_include
 
@@ -60,14 +54,14 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpchannelundo.h"
+file|"gimpmaskundo.h"
 end_include
 
 begin_function_decl
 specifier|static
 name|GObject
 modifier|*
-name|gimp_channel_undo_constructor
+name|gimp_mask_undo_constructor
 parameter_list|(
 name|GType
 name|type
@@ -85,7 +79,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_channel_undo_pop
+name|gimp_mask_undo_pop
 parameter_list|(
 name|GimpUndo
 modifier|*
@@ -104,7 +98,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_channel_undo_free
+name|gimp_mask_undo_free
 parameter_list|(
 name|GimpUndo
 modifier|*
@@ -117,12 +111,12 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpChannelUndo,gimp_channel_undo,GIMP_TYPE_ITEM_UNDO)
+DECL|function|G_DEFINE_TYPE (GimpMaskUndo,gimp_mask_undo,GIMP_TYPE_ITEM_UNDO)
 name|G_DEFINE_TYPE
 argument_list|(
-argument|GimpChannelUndo
+argument|GimpMaskUndo
 argument_list|,
-argument|gimp_channel_undo
+argument|gimp_mask_undo
 argument_list|,
 argument|GIMP_TYPE_ITEM_UNDO
 argument_list|)
@@ -133,15 +127,15 @@ DECL|macro|parent_class
 define|#
 directive|define
 name|parent_class
-value|gimp_channel_undo_parent_class
+value|gimp_mask_undo_parent_class
 end_define
 
 begin_function
 specifier|static
 name|void
-name|gimp_channel_undo_class_init
+name|gimp_mask_undo_class_init
 parameter_list|(
-name|GimpChannelUndoClass
+name|GimpMaskUndoClass
 modifier|*
 name|klass
 parameter_list|)
@@ -168,19 +162,19 @@ name|object_class
 operator|->
 name|constructor
 operator|=
-name|gimp_channel_undo_constructor
+name|gimp_mask_undo_constructor
 expr_stmt|;
 name|undo_class
 operator|->
 name|pop
 operator|=
-name|gimp_channel_undo_pop
+name|gimp_mask_undo_pop
 expr_stmt|;
 name|undo_class
 operator|->
 name|free
 operator|=
-name|gimp_channel_undo_free
+name|gimp_mask_undo_free
 expr_stmt|;
 block|}
 end_function
@@ -188,10 +182,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_channel_undo_init (GimpChannelUndo * undo)
-name|gimp_channel_undo_init
+DECL|function|gimp_mask_undo_init (GimpMaskUndo * undo)
+name|gimp_mask_undo_init
 parameter_list|(
-name|GimpChannelUndo
+name|GimpMaskUndo
 modifier|*
 name|undo
 parameter_list|)
@@ -202,8 +196,8 @@ begin_function
 specifier|static
 name|GObject
 modifier|*
-DECL|function|gimp_channel_undo_constructor (GType type,guint n_params,GObjectConstructParam * params)
-name|gimp_channel_undo_constructor
+DECL|function|gimp_mask_undo_constructor (GType type,guint n_params,GObjectConstructParam * params)
+name|gimp_mask_undo_constructor
 parameter_list|(
 name|GType
 name|type
@@ -220,9 +214,9 @@ name|GObject
 modifier|*
 name|object
 decl_stmt|;
-name|GimpChannelUndo
+name|GimpMaskUndo
 modifier|*
-name|channel_undo
+name|mask_undo
 decl_stmt|;
 name|GimpChannel
 modifier|*
@@ -253,9 +247,9 @@ argument_list|,
 name|params
 argument_list|)
 expr_stmt|;
-name|channel_undo
+name|mask_undo
 operator|=
-name|GIMP_CHANNEL_UNDO
+name|GIMP_MASK_UNDO
 argument_list|(
 name|object
 argument_list|)
@@ -319,7 +313,7 @@ name|srcPR
 decl_stmt|,
 name|destPR
 decl_stmt|;
-name|channel_undo
+name|mask_undo
 operator|->
 name|tiles
 operator|=
@@ -339,13 +333,13 @@ name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|channel_undo
+name|mask_undo
 operator|->
 name|x
 operator|=
 name|x1
 expr_stmt|;
-name|channel_undo
+name|mask_undo
 operator|->
 name|y
 operator|=
@@ -381,7 +375,7 @@ argument_list|(
 operator|&
 name|destPR
 argument_list|,
-name|channel_undo
+name|mask_undo
 operator|->
 name|tiles
 argument_list|,
@@ -418,7 +412,7 @@ name|size
 operator|+=
 name|tile_manager_get_memsize
 argument_list|(
-name|channel_undo
+name|mask_undo
 operator|->
 name|tiles
 argument_list|,
@@ -435,8 +429,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_channel_undo_pop (GimpUndo * undo,GimpUndoMode undo_mode,GimpUndoAccumulator * accum)
-name|gimp_channel_undo_pop
+DECL|function|gimp_mask_undo_pop (GimpUndo * undo,GimpUndoMode undo_mode,GimpUndoAccumulator * accum)
+name|gimp_mask_undo_pop
 parameter_list|(
 name|GimpUndo
 modifier|*
@@ -450,11 +444,11 @@ modifier|*
 name|accum
 parameter_list|)
 block|{
-name|GimpChannelUndo
+name|GimpMaskUndo
 modifier|*
-name|channel_undo
+name|mask_undo
 init|=
-name|GIMP_CHANNEL_UNDO
+name|GIMP_MASK_UNDO
 argument_list|(
 name|undo
 argument_list|)
@@ -517,7 +511,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|channel_undo
+name|mask_undo
 operator|->
 name|tiles
 condition|)
@@ -527,7 +521,7 @@ name|size
 operator|-=
 name|tile_manager_get_memsize
 argument_list|(
-name|channel_undo
+name|mask_undo
 operator|->
 name|tiles
 argument_list|,
@@ -678,7 +672,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|channel_undo
+name|mask_undo
 operator|->
 name|tiles
 condition|)
@@ -687,7 +681,7 @@ name|width
 operator|=
 name|tile_manager_width
 argument_list|(
-name|channel_undo
+name|mask_undo
 operator|->
 name|tiles
 argument_list|)
@@ -696,7 +690,7 @@ name|height
 operator|=
 name|tile_manager_height
 argument_list|(
-name|channel_undo
+name|mask_undo
 operator|->
 name|tiles
 argument_list|)
@@ -706,7 +700,7 @@ argument_list|(
 operator|&
 name|srcPR
 argument_list|,
-name|channel_undo
+name|mask_undo
 operator|->
 name|tiles
 argument_list|,
@@ -733,11 +727,11 @@ argument_list|)
 operator|->
 name|tiles
 argument_list|,
-name|channel_undo
+name|mask_undo
 operator|->
 name|x
 argument_list|,
-name|channel_undo
+name|mask_undo
 operator|->
 name|y
 argument_list|,
@@ -759,7 +753,7 @@ argument_list|)
 expr_stmt|;
 name|tile_manager_unref
 argument_list|(
-name|channel_undo
+name|mask_undo
 operator|->
 name|tiles
 argument_list|)
@@ -776,7 +770,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|channel_undo
+name|mask_undo
 operator|->
 name|tiles
 condition|)
@@ -791,7 +785,7 @@ name|channel
 operator|->
 name|x1
 operator|=
-name|channel_undo
+name|mask_undo
 operator|->
 name|x
 expr_stmt|;
@@ -799,7 +793,7 @@ name|channel
 operator|->
 name|y1
 operator|=
-name|channel_undo
+name|mask_undo
 operator|->
 name|y
 expr_stmt|;
@@ -807,7 +801,7 @@ name|channel
 operator|->
 name|x2
 operator|=
-name|channel_undo
+name|mask_undo
 operator|->
 name|x
 operator|+
@@ -817,7 +811,7 @@ name|channel
 operator|->
 name|y2
 operator|=
-name|channel_undo
+name|mask_undo
 operator|->
 name|y
 operator|+
@@ -875,19 +869,19 @@ operator|=
 name|TRUE
 expr_stmt|;
 comment|/*  set the new mask undo parameters  */
-name|channel_undo
+name|mask_undo
 operator|->
 name|tiles
 operator|=
 name|new_tiles
 expr_stmt|;
-name|channel_undo
+name|mask_undo
 operator|->
 name|x
 operator|=
 name|x1
 expr_stmt|;
-name|channel_undo
+name|mask_undo
 operator|->
 name|y
 operator|=
@@ -921,7 +915,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|channel_undo
+name|mask_undo
 operator|->
 name|tiles
 condition|)
@@ -931,7 +925,7 @@ name|size
 operator|+=
 name|tile_manager_get_memsize
 argument_list|(
-name|channel_undo
+name|mask_undo
 operator|->
 name|tiles
 argument_list|,
@@ -944,8 +938,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_channel_undo_free (GimpUndo * undo,GimpUndoMode undo_mode)
-name|gimp_channel_undo_free
+DECL|function|gimp_mask_undo_free (GimpUndo * undo,GimpUndoMode undo_mode)
+name|gimp_mask_undo_free
 parameter_list|(
 name|GimpUndo
 modifier|*
@@ -955,30 +949,30 @@ name|GimpUndoMode
 name|undo_mode
 parameter_list|)
 block|{
-name|GimpChannelUndo
+name|GimpMaskUndo
 modifier|*
-name|channel_undo
+name|mask_undo
 init|=
-name|GIMP_CHANNEL_UNDO
+name|GIMP_MASK_UNDO
 argument_list|(
 name|undo
 argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|channel_undo
+name|mask_undo
 operator|->
 name|tiles
 condition|)
 block|{
 name|tile_manager_unref
 argument_list|(
-name|channel_undo
+name|mask_undo
 operator|->
 name|tiles
 argument_list|)
 expr_stmt|;
-name|channel_undo
+name|mask_undo
 operator|->
 name|tiles
 operator|=
