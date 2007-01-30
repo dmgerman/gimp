@@ -964,18 +964,6 @@ argument_list|(
 name|undo
 argument_list|)
 decl_stmt|;
-name|GIMP_UNDO_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|free
-argument_list|(
-name|undo
-argument_list|,
-name|undo_mode
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|channel_undo
@@ -997,6 +985,18 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
+name|GIMP_UNDO_CLASS
+argument_list|(
+name|parent_class
+argument_list|)
+operator|->
+name|free
+argument_list|(
+name|undo
+argument_list|,
+name|undo_mode
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af4f1400103
+DECL|enum|__anon28c9b4e40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -736,18 +736,6 @@ argument_list|(
 name|undo
 argument_list|)
 decl_stmt|;
-name|GIMP_UNDO_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|free
-argument_list|(
-name|undo
-argument_list|,
-name|undo_mode
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|sample_point_undo
@@ -769,6 +757,18 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
+name|GIMP_UNDO_CLASS
+argument_list|(
+name|parent_class
+argument_list|)
+operator|->
+name|free
+argument_list|(
+name|undo
+argument_list|,
+name|undo_mode
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
