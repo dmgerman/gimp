@@ -160,6 +160,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpsamplepoint.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpunit.h"
 end_include
 
@@ -6663,7 +6669,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c417f0b0108
+DECL|struct|__anon2c4ee2890108
 block|{
 DECL|member|info
 name|XcfInfo

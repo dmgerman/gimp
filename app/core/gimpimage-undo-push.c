@@ -162,6 +162,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpsamplepoint.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpselection.h"
 end_include
 
@@ -1091,7 +1097,7 @@ name|spu
 operator|->
 name|sample_point
 operator|=
-name|gimp_image_sample_point_ref
+name|gimp_sample_point_ref
 argument_list|(
 name|sample_point
 argument_list|)
@@ -1222,7 +1228,7 @@ name|spu
 operator|->
 name|y
 expr_stmt|;
-name|gimp_image_sample_point_ref
+name|gimp_sample_point_ref
 argument_list|(
 name|spu
 operator|->
@@ -1362,7 +1368,7 @@ name|undo
 operator|->
 name|data
 decl_stmt|;
-name|gimp_image_sample_point_unref
+name|gimp_sample_point_unref
 argument_list|(
 name|gu
 operator|->

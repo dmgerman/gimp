@@ -93,6 +93,12 @@ directive|include
 file|"gimpprogress.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpsamplepoint.h"
+end_include
+
 begin_function_decl
 specifier|static
 name|void
@@ -1241,6 +1247,15 @@ decl_stmt|;
 name|gint
 name|old_y
 decl_stmt|;
+name|gimp_image_undo_push_sample_point
+argument_list|(
+name|image
+argument_list|,
+name|NULL
+argument_list|,
+name|sample_point
+argument_list|)
+expr_stmt|;
 name|old_x
 operator|=
 name|sample_point

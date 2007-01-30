@@ -102,18 +102,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpimage-guides.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimpimage-sample-points.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpimage-snap.h"
 end_include
 
@@ -121,6 +109,12 @@ begin_include
 include|#
 directive|include
 file|"core/gimpmarshal.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimpsamplepoint.h"
 end_include
 
 begin_include
@@ -275,7 +269,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1a079c0103
+DECL|enum|__anon298ec4e90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -288,7 +282,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1a079c0203
+DECL|enum|__anon298ec4e90203
 block|{
 DECL|enumerator|SCALED
 name|SCALED

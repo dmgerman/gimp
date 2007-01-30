@@ -54,19 +54,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpimage-guides.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimpimage-sample-points.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimplist.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimpsamplepoint.h"
 end_include
 
 begin_include

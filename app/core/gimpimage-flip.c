@@ -93,6 +93,12 @@ directive|include
 file|"gimpprogress.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpsamplepoint.h"
+end_include
+
 begin_function
 name|void
 DECL|function|gimp_image_flip (GimpImage * image,GimpContext * context,GimpOrientationType flip_type,GimpProgress * progress)

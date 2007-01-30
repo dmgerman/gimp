@@ -108,13 +108,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpsamplepoint.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2878bfa50103
+DECL|enum|__anon29bfcc680103
 block|{
 DECL|enumerator|AUTO_CROP_NOTHING
 name|AUTO_CROP_NOTHING

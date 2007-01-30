@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpsamplepoint.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpcolormapeditor.h"
 end_include
 
@@ -173,7 +179,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b618020103
+DECL|enum|__anon2aefed550103
 block|{
 DECL|enumerator|PICKED
 name|PICKED

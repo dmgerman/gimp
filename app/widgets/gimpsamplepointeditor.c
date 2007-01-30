@@ -48,7 +48,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpimage-sample-points.h"
+file|"core/gimpsamplepoint.h"
 end_include
 
 begin_include
@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e921ec0103
+DECL|enum|__anon2bf9fa300103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

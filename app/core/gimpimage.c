@@ -216,6 +216,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpsamplepoint.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpselection.h"
 end_include
 
@@ -288,7 +294,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon27dffb030103
+DECL|enum|__anon2b1eae6d0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -376,7 +382,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27dffb030203
+DECL|enum|__anon2b1eae6d0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3870,7 +3876,7 @@ argument_list|,
 operator|(
 name|GFunc
 operator|)
-name|gimp_image_sample_point_unref
+name|gimp_sample_point_unref
 argument_list|,
 name|NULL
 argument_list|)
