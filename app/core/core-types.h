@@ -508,6 +508,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpLayerMaskPropUndo
+typedef|typedef
+name|struct
+name|_GimpLayerMaskPropUndo
+name|GimpLayerMaskPropUndo
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpLayerUndo
 typedef|typedef
 name|struct
