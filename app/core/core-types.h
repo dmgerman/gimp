@@ -571,6 +571,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpFloatingSelUndo
+typedef|typedef
+name|struct
+name|_GimpFloatingSelUndo
+name|GimpFloatingSelUndo
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpUndoStack
 typedef|typedef
 name|struct
