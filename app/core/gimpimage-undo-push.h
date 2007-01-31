@@ -840,10 +840,6 @@ parameter_list|,
 name|GimpLayer
 modifier|*
 name|floating_layer
-parameter_list|,
-name|GimpDrawable
-modifier|*
-name|drawable
 parameter_list|)
 function_decl|;
 end_function_decl

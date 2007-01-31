@@ -811,12 +811,6 @@ argument_list|,
 name|NULL
 argument_list|,
 name|layer
-argument_list|,
-name|layer
-operator|->
-name|fs
-operator|.
-name|drawable
 argument_list|)
 expr_stmt|;
 comment|/*  clear the selection  */

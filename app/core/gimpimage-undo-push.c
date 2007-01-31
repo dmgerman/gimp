@@ -3596,7 +3596,7 @@ end_function_decl
 begin_function
 name|GimpUndo
 modifier|*
-DECL|function|gimp_image_undo_push_fs_to_layer (GimpImage * image,const gchar * undo_desc,GimpLayer * floating_layer,GimpDrawable * drawable)
+DECL|function|gimp_image_undo_push_fs_to_layer (GimpImage * image,const gchar * undo_desc,GimpLayer * floating_layer)
 name|gimp_image_undo_push_fs_to_layer
 parameter_list|(
 name|GimpImage
@@ -3611,10 +3611,6 @@ parameter_list|,
 name|GimpLayer
 modifier|*
 name|floating_layer
-parameter_list|,
-name|GimpDrawable
-modifier|*
-name|drawable
 parameter_list|)
 block|{
 name|GimpUndo
@@ -3636,16 +3632,6 @@ argument_list|(
 name|GIMP_IS_LAYER
 argument_list|(
 name|floating_layer
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|GIMP_IS_DRAWABLE
-argument_list|(
-name|drawable
 argument_list|)
 argument_list|,
 name|NULL
@@ -3705,6 +3691,10 @@ name|fsu
 operator|->
 name|drawable
 operator|=
+name|floating_layer
+operator|->
+name|fs
+operator|.
 name|drawable
 expr_stmt|;
 return|return
