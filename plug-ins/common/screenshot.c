@@ -301,7 +301,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2aa7eea80103
+DECL|enum|__anon2b3086970103
 block|{
 DECL|enumerator|SHOOT_ROOT
 name|SHOOT_ROOT
@@ -320,7 +320,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aa7eea80208
+DECL|struct|__anon2b3086970208
 block|{
 DECL|member|shoot_type
 name|ShootType
@@ -658,9 +658,9 @@ argument_list|,
 literal|"Sven Neumann<sven@gimp.org>, "
 literal|"Henrik Brix Andersen<brix@gimp.org>"
 argument_list|,
-literal|"1998 - 2003"
+literal|"1998 - 2007"
 argument_list|,
-literal|"v0.9.7 (2003/11/15)"
+literal|"v0.9.8 (2007/01/31)"
 argument_list|,
 name|N_
 argument_list|(
@@ -869,21 +869,14 @@ name|data
 operator|.
 name|d_int32
 decl_stmt|;
-if|if
-condition|(
+name|shootvals
+operator|.
+name|shoot_type
+operator|=
 name|do_root
-condition|)
-name|shootvals
-operator|.
-name|shoot_type
-operator|=
+condition|?
 name|SHOOT_ROOT
-expr_stmt|;
-else|else
-name|shootvals
-operator|.
-name|shoot_type
-operator|=
+else|:
 name|SHOOT_WINDOW
 expr_stmt|;
 name|shootvals
@@ -1330,24 +1323,61 @@ operator|!=
 name|GrabSuccess
 condition|)
 block|{
+name|gint
+name|x
+decl_stmt|,
+name|y
+decl_stmt|;
+name|guint
+name|xmask
+decl_stmt|;
+comment|/* if we can't grab the pointer, return the window under the pointer */
+name|XQueryPointer
+argument_list|(
+name|x_dpy
+argument_list|,
+name|x_root
+argument_list|,
+operator|&
+name|x_root
+argument_list|,
+operator|&
+name|x_win
+argument_list|,
+operator|&
+name|x
+argument_list|,
+operator|&
+name|y
+argument_list|,
+operator|&
+name|x
+argument_list|,
+operator|&
+name|y
+argument_list|,
+operator|&
+name|xmask
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|x_win
+operator|==
+name|None
+operator|||
+name|x_win
+operator|==
+name|x_root
+condition|)
 name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Error grabbing the pointer"
+literal|"Error selecting the window"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|XFreeCursor
-argument_list|(
-name|x_dpy
-argument_list|,
-name|x_cursor
-argument_list|)
-expr_stmt|;
-return|return
-literal|0
-return|;
 block|}
 if|if
 condition|(
@@ -2274,6 +2304,12 @@ name|keys
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|status
+operator|==
+name|GrabSuccess
+condition|)
 name|XUngrabPointer
 argument_list|(
 name|x_dpy
