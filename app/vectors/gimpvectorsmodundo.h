@@ -6,128 +6,116 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_DRAWABLE_MOD_UNDO_H__
+name|__GIMP_VECTORS_MOD_UNDO_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_DRAWABLE_MOD_UNDO_H__
+DECL|macro|__GIMP_VECTORS_MOD_UNDO_H__
 define|#
 directive|define
-name|__GIMP_DRAWABLE_MOD_UNDO_H__
+name|__GIMP_VECTORS_MOD_UNDO_H__
 end_define
 
 begin_include
 include|#
 directive|include
-file|"gimpitemundo.h"
+file|"core/gimpitemundo.h"
 end_include
 
 begin_define
-DECL|macro|GIMP_TYPE_DRAWABLE_MOD_UNDO
+DECL|macro|GIMP_TYPE_VECTORS_MOD_UNDO
 define|#
 directive|define
-name|GIMP_TYPE_DRAWABLE_MOD_UNDO
-value|(gimp_drawable_mod_undo_get_type ())
+name|GIMP_TYPE_VECTORS_MOD_UNDO
+value|(gimp_vectors_mod_undo_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_DRAWABLE_MOD_UNDO (obj)
+DECL|macro|GIMP_VECTORS_MOD_UNDO (obj)
 define|#
 directive|define
-name|GIMP_DRAWABLE_MOD_UNDO
+name|GIMP_VECTORS_MOD_UNDO
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_DRAWABLE_MOD_UNDO, GimpDrawableModUndo))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_VECTORS_MOD_UNDO, GimpVectorsModUndo))
 end_define
 
 begin_define
-DECL|macro|GIMP_DRAWABLE_MOD_UNDO_CLASS (klass)
+DECL|macro|GIMP_VECTORS_MOD_UNDO_CLASS (klass)
 define|#
 directive|define
-name|GIMP_DRAWABLE_MOD_UNDO_CLASS
+name|GIMP_VECTORS_MOD_UNDO_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_DRAWABLE_MOD_UNDO, GimpDrawableModUndoClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_VECTORS_MOD_UNDO, GimpVectorsModUndoClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_DRAWABLE_MOD_UNDO (obj)
+DECL|macro|GIMP_IS_VECTORS_MOD_UNDO (obj)
 define|#
 directive|define
-name|GIMP_IS_DRAWABLE_MOD_UNDO
+name|GIMP_IS_VECTORS_MOD_UNDO
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_DRAWABLE_MOD_UNDO))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_VECTORS_MOD_UNDO))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_DRAWABLE_MOD_UNDO_CLASS (klass)
+DECL|macro|GIMP_IS_VECTORS_MOD_UNDO_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_DRAWABLE_MOD_UNDO_CLASS
+name|GIMP_IS_VECTORS_MOD_UNDO_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_DRAWABLE_MOD_UNDO))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_VECTORS_MOD_UNDO))
 end_define
 
 begin_define
-DECL|macro|GIMP_DRAWABLE_MOD_UNDO_GET_CLASS (obj)
+DECL|macro|GIMP_VECTORS_MOD_UNDO_GET_CLASS (obj)
 define|#
 directive|define
-name|GIMP_DRAWABLE_MOD_UNDO_GET_CLASS
+name|GIMP_VECTORS_MOD_UNDO_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_DRAWABLE_MOD_UNDO, GimpDrawableModUndoClass))
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_VECTORS_MOD_UNDO, GimpVectorsModUndoClass))
 end_define
 
 begin_typedef
-DECL|typedef|GimpDrawableModUndoClass
+DECL|typedef|GimpVectorsModUndoClass
 typedef|typedef
 name|struct
-name|_GimpDrawableModUndoClass
-name|GimpDrawableModUndoClass
+name|_GimpVectorsModUndoClass
+name|GimpVectorsModUndoClass
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpDrawableModUndo
+DECL|struct|_GimpVectorsModUndo
 struct|struct
-name|_GimpDrawableModUndo
+name|_GimpVectorsModUndo
 block|{
 DECL|member|parent_instance
 name|GimpItemUndo
 name|parent_instance
 decl_stmt|;
-DECL|member|tiles
-name|TileManager
+DECL|member|vectors
+name|GimpVectors
 modifier|*
-name|tiles
-decl_stmt|;
-DECL|member|type
-name|GimpImageType
-name|type
-decl_stmt|;
-DECL|member|offset_x
-name|gint
-name|offset_x
-decl_stmt|;
-DECL|member|offset_y
-name|gint
-name|offset_y
+name|vectors
 decl_stmt|;
 block|}
 struct|;
 end_struct
 
 begin_struct
-DECL|struct|_GimpDrawableModUndoClass
+DECL|struct|_GimpVectorsModUndoClass
 struct|struct
-name|_GimpDrawableModUndoClass
+name|_GimpVectorsModUndoClass
 block|{
 DECL|member|parent_class
 name|GimpItemUndoClass
@@ -139,7 +127,7 @@ end_struct
 
 begin_decl_stmt
 name|GType
-name|gimp_drawable_mod_undo_get_type
+name|gimp_vectors_mod_undo_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -153,7 +141,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMP_DRAWABLE_MOD_UNDO_H__ */
+comment|/* __GIMP_VECTORS_MOD_UNDO_H__ */
 end_comment
 
 end_unit

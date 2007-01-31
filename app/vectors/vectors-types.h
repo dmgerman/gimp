@@ -56,6 +56,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpVectorsModUndo
+typedef|typedef
+name|struct
+name|_GimpVectorsModUndo
+name|GimpVectorsModUndo
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpVectorsPropUndo
 typedef|typedef
 name|struct
