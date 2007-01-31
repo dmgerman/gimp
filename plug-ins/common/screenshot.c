@@ -301,7 +301,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bd27edc0103
+DECL|enum|__anon2aa7eea80103
 block|{
 DECL|enumerator|SHOOT_ROOT
 name|SHOOT_ROOT
@@ -320,7 +320,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd27edc0208
+DECL|struct|__anon2aa7eea80208
 block|{
 DECL|member|shoot_type
 name|ShootType
@@ -3863,7 +3863,7 @@ name|spinner
 argument_list|,
 name|_
 argument_list|(
-literal|"The number of seconds to wait after "
+literal|"The number of seconds to wait before "
 literal|"selecting the window or region and "
 literal|"actually taking the screenshot."
 argument_list|)
