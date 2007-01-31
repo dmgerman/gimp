@@ -294,7 +294,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1eae6d0103
+DECL|enum|__anon2798916e0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -382,7 +382,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1eae6d0203
+DECL|enum|__anon2798916e0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -11390,8 +11390,6 @@ argument_list|)
 argument_list|,
 name|layer
 argument_list|,
-literal|0
-argument_list|,
 name|active_layer
 argument_list|)
 expr_stmt|;
@@ -12847,8 +12845,6 @@ argument_list|)
 argument_list|,
 name|channel
 argument_list|,
-literal|0
-argument_list|,
 name|active_channel
 argument_list|)
 expr_stmt|;
@@ -13900,8 +13896,6 @@ literal|"Add Path"
 argument_list|)
 argument_list|,
 name|vectors
-argument_list|,
-literal|0
 argument_list|,
 name|active_vectors
 argument_list|)

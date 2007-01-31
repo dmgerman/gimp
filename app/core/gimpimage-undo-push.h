@@ -156,7 +156,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*  drawable undo  */
+comment|/*  drawable undos  */
 end_comment
 
 begin_function_decl
@@ -354,9 +354,6 @@ parameter_list|,
 name|GimpLayer
 modifier|*
 name|layer
-parameter_list|,
-name|gint
-name|prev_position
 parameter_list|,
 name|GimpLayer
 modifier|*
@@ -646,9 +643,6 @@ name|GimpChannel
 modifier|*
 name|channel
 parameter_list|,
-name|gint
-name|prev_position
-parameter_list|,
 name|GimpChannel
 modifier|*
 name|prev_channel
@@ -747,9 +741,6 @@ parameter_list|,
 name|GimpVectors
 modifier|*
 name|vectors
-parameter_list|,
-name|gint
-name|prev_position
 parameter_list|,
 name|GimpVectors
 modifier|*
