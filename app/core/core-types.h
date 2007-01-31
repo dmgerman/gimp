@@ -499,6 +499,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpDrawableModUndo
+typedef|typedef
+name|struct
+name|_GimpDrawableModUndo
+name|GimpDrawableModUndo
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpLayerMaskUndo
 typedef|typedef
 name|struct
