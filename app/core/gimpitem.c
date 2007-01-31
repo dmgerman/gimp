@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bee82ad0103
+DECL|enum|__anon29235f7f0103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -144,7 +144,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bee82ad0203
+DECL|enum|__anon29235f7f0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4386,6 +4386,13 @@ name|GIMP_IS_ITEM
 argument_list|(
 name|item
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|name
+operator|!=
+name|NULL
 argument_list|)
 expr_stmt|;
 name|parasite
