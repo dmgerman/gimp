@@ -1798,7 +1798,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon2bf180eb0108
+DECL|struct|__anon2be71a250108
 block|{
 DECL|member|modifiers
 name|GdkModifierType
@@ -2778,16 +2778,16 @@ block|{
 name|g_warning
 argument_list|(
 literal|"GDK returned bogus values for the screen resolution, "
-literal|"using 75 dpi instead."
+literal|"using 96 dpi instead."
 argument_list|)
 expr_stmt|;
 name|x
 operator|=
-literal|75.0
+literal|96.0
 expr_stmt|;
 name|y
 operator|=
-literal|75.0
+literal|96.0
 expr_stmt|;
 block|}
 comment|/*  round the value to full integers to give more pleasant results  */

@@ -71,9 +71,17 @@ name|DEFAULT_ACTIVATE_ON_FOCUS
 value|TRUE
 end_define
 
+begin_define
+DECL|macro|DEFAULT_MONITOR_RESOLUTION
+define|#
+directive|define
+name|DEFAULT_MONITOR_RESOLUTION
+value|96.0
+end_define
+
 begin_enum
 enum|enum
-DECL|enum|__anon2bba413a0103
+DECL|enum|__anon2c4f122d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -571,7 +579,7 @@ literal|"monitor-xresolution"
 argument_list|,
 name|MONITOR_XRESOLUTION_BLURB
 argument_list|,
-literal|72.0
+name|DEFAULT_MONITOR_RESOLUTION
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
@@ -586,7 +594,7 @@ literal|"monitor-yresolution"
 argument_list|,
 name|MONITOR_YRESOLUTION_BLURB
 argument_list|,
-literal|72.0
+name|DEFAULT_MONITOR_RESOLUTION
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
