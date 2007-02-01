@@ -237,6 +237,16 @@ argument_list|,
 literal|" "
 argument_list|)
 expr_stmt|;
+name|gtk_progress_bar_set_ellipsize
+argument_list|(
+name|GTK_PROGRESS_BAR
+argument_list|(
+name|bar
+argument_list|)
+argument_list|,
+name|PANGO_ELLIPSIZE_END
+argument_list|)
+expr_stmt|;
 name|vtable
 operator|.
 name|start

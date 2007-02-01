@@ -51,6 +51,14 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
+begin_define
+DECL|macro|PROGRESS_DIALOG_WIDTH
+define|#
+directive|define
+name|PROGRESS_DIALOG_WIDTH
+value|400
+end_define
+
 begin_function_decl
 specifier|static
 name|void
@@ -322,6 +330,19 @@ name|dialog
 argument_list|)
 argument_list|,
 name|GTK_RESPONSE_CANCEL
+argument_list|)
+expr_stmt|;
+name|gtk_widget_set_size_request
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|,
+name|PROGRESS_DIALOG_WIDTH
+argument_list|,
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 block|}
