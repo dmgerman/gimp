@@ -141,7 +141,7 @@ end_endif
 begin_include
 include|#
 directive|include
-file|"app_procs.h"
+file|"app.h"
 end_include
 
 begin_include
@@ -419,9 +419,6 @@ name|loop
 decl_stmt|;
 name|gboolean
 name|swap_is_ok
-decl_stmt|;
-name|gint
-name|i
 decl_stmt|;
 comment|/*  Create an instance of the "Gimp" object which is the root of the    *  core object system    */
 name|gimp

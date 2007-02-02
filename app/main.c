@@ -170,7 +170,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"app_procs.h"
+file|"app.h"
 end_include
 
 begin_include

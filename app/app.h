@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__APP_PROCS_H__
+name|__APP_H__
 end_ifndef
 
 begin_define
-DECL|macro|__APP_PROCS_H__
+DECL|macro|__APP_H__
 define|#
 directive|define
-name|__APP_PROCS_H__
+name|__APP_H__
 end_define
 
 begin_ifndef
@@ -25,7 +25,7 @@ end_ifndef
 begin_error
 error|#
 directive|error
-error|You must not #include "app_procs.h" from an app/ subdir
+error|You must not #include "app.h" from a subdir
 end_error
 
 begin_endif
@@ -157,7 +157,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __APP_PROCS_H__ */
+comment|/* __APP_H__ */
 end_comment
 
 end_unit
