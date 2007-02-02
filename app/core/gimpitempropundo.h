@@ -124,6 +124,16 @@ DECL|member|linked
 name|gboolean
 name|linked
 decl_stmt|;
+DECL|member|parasite_name
+name|gchar
+modifier|*
+name|parasite_name
+decl_stmt|;
+DECL|member|parasite
+name|GimpParasite
+modifier|*
+name|parasite
+decl_stmt|;
 block|}
 struct|;
 end_struct
