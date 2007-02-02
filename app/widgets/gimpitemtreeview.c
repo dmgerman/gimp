@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon287c06440103
+DECL|enum|__anon2b384b3a0103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -3910,7 +3910,8 @@ name|gboolean
 name|push_undo
 parameter_list|)
 function_decl|;
-name|gboolean
+name|GimpUndo
+modifier|*
 function_decl|(
 modifier|*
 name|pusher
