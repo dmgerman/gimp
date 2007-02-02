@@ -155,7 +155,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2a84280103
+DECL|enum|__anon2b279ac80103
 block|{
 DECL|enumerator|PROJECTION
 name|PROJECTION
@@ -200,7 +200,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2a84280208
+DECL|struct|__anon2b279ac80208
 block|{
 DECL|member|transformSequence
 name|TransformType
@@ -239,7 +239,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2a84280308
+DECL|struct|__anon2b279ac80308
 block|{
 DECL|member|info
 name|ExpInfo
@@ -3869,7 +3869,7 @@ name|gtk_file_chooser_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Save (middle transform) as QBE File"
+literal|"Save as QBE File"
 argument_list|)
 argument_list|,
 name|GTK_WINDOW
@@ -3913,6 +3913,16 @@ name|dialog
 argument_list|)
 argument_list|,
 name|GTK_RESPONSE_OK
+argument_list|)
+expr_stmt|;
+name|gtk_file_chooser_set_do_overwrite_confirmation
+argument_list|(
+name|GTK_FILE_CHOOSER
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gtk_file_chooser_set_filename

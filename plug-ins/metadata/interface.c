@@ -171,7 +171,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6df4fd0108
+DECL|struct|__anon2c9a0f380108
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -728,7 +728,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6df4fd0208
+DECL|struct|__anon2c9a0f380208
 block|{
 DECL|member|schema
 specifier|const
@@ -2228,7 +2228,6 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-comment|/* FIXME: gimp_help_connect? */
 name|gtk_dialog_set_default_response
 argument_list|(
 name|GTK_DIALOG
@@ -2609,7 +2608,6 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-comment|/* FIXME: gimp_help_connect? */
 name|gtk_dialog_set_default_response
 argument_list|(
 name|GTK_DIALOG
@@ -2618,6 +2616,16 @@ name|dlg
 argument_list|)
 argument_list|,
 name|GTK_RESPONSE_OK
+argument_list|)
+expr_stmt|;
+name|gtk_file_chooser_set_do_overwrite_confirmation
+argument_list|(
+name|GTK_FILE_CHOOSER
+argument_list|(
+name|dlg
+argument_list|)
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|g_signal_connect

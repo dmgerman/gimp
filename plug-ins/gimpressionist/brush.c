@@ -1092,6 +1092,16 @@ argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|)
 expr_stmt|;
+name|gtk_file_chooser_set_do_overwrite_confirmation
+argument_list|(
+name|GTK_FILE_CHOOSER
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 name|path
 operator|=
 name|g_build_filename

@@ -424,7 +424,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27baf91a0108
+DECL|struct|__anon2770e8740108
 block|{
 DECL|member|gridspacing
 name|GtkAdjustment
@@ -3186,6 +3186,16 @@ name|dialog
 argument_list|)
 argument_list|,
 name|GTK_RESPONSE_OK
+argument_list|)
+expr_stmt|;
+name|gtk_file_chooser_set_do_overwrite_confirmation
+argument_list|(
+name|GTK_FILE_CHOOSER
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|g_object_add_weak_pointer

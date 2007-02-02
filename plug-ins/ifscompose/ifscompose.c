@@ -122,7 +122,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon286ca5a70103
+DECL|enum|__anon289159060103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -142,7 +142,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon286ca5a70203
+DECL|enum|__anon289159060203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -158,7 +158,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon286ca5a70308
+DECL|struct|__anon289159060308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -180,7 +180,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon286ca5a7040a
+DECL|union|__anon28915906040a
 block|{
 DECL|member|d
 name|gdouble
@@ -205,7 +205,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon286ca5a70508
+DECL|struct|__anon289159060508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -235,7 +235,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon286ca5a70608
+DECL|struct|__anon289159060608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -270,7 +270,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon286ca5a70708
+DECL|struct|__anon289159060708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -306,7 +306,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon286ca5a70808
+DECL|struct|__anon289159060808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -373,7 +373,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon286ca5a70908
+DECL|struct|__anon289159060908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -522,7 +522,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon286ca5a70a08
+DECL|struct|__anon289159060a08
 block|{
 DECL|member|run
 name|gboolean
@@ -12837,6 +12837,16 @@ name|dialog
 argument_list|)
 argument_list|,
 name|GTK_RESPONSE_OK
+argument_list|)
+expr_stmt|;
+name|gtk_file_chooser_set_do_overwrite_confirmation
+argument_list|(
+name|GTK_FILE_CHOOSER
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
