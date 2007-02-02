@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b5ce6030103
+DECL|enum|__anon29ed461d0103
 block|{
 DECL|enumerator|SQUARES
 name|SQUARES
@@ -174,7 +174,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5ce6030208
+DECL|struct|__anon29ed461d0208
 block|{
 DECL|member|x
 DECL|member|y
@@ -192,7 +192,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5ce6030308
+DECL|struct|__anon29ed461d0308
 block|{
 DECL|member|npts
 name|guint
@@ -214,7 +214,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5ce6030408
+DECL|struct|__anon29ed461d0408
 block|{
 DECL|member|base_x
 DECL|member|base_y
@@ -243,7 +243,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5ce6030508
+DECL|struct|__anon29ed461d0508
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -4432,11 +4432,13 @@ operator|-
 literal|1
 operator|)
 condition|)
+block|{
 operator|*
 name|gr
 operator|=
 name|MAG_THRESHOLD
 expr_stmt|;
+block|}
 else|else
 block|{
 name|hmax
@@ -4468,7 +4470,7 @@ argument_list|)
 operator|+
 name|SQR
 argument_list|(
-name|hmax
+name|vmax
 argument_list|)
 argument_list|)
 expr_stmt|;
