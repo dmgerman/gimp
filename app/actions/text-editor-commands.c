@@ -248,6 +248,16 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+name|gtk_dialog_set_default_response
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|chooser
+argument_list|)
+argument_list|,
+name|GTK_RESPONSE_OK
+argument_list|)
+expr_stmt|;
 name|g_signal_connect
 argument_list|(
 name|chooser
