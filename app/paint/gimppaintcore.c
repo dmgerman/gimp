@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fac7520103
+DECL|enum|__anon2911e4ba0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1069,19 +1069,11 @@ name|image
 argument_list|,
 name|GIMP_TYPE_PAINT_CORE_UNDO
 argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
 name|GIMP_UNDO_PAINT
 argument_list|,
 name|undo_desc
 argument_list|,
 literal|0
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|,
 literal|"paint-core"
 argument_list|,

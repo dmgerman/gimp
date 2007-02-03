@@ -977,19 +977,11 @@ name|image
 argument_list|,
 name|GIMP_TYPE_INK_UNDO
 argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
 name|GIMP_UNDO_INK
 argument_list|,
 name|undo_desc
 argument_list|,
 literal|0
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|,
 literal|"paint-core"
 argument_list|,
@@ -2486,7 +2478,7 @@ comment|/* Some of this stuff should probably be combined with the  * code it wa
 end_comment
 
 begin_enum
-DECL|enum|__anon2b0f0c6f0103
+DECL|enum|__anon2987bdce0103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum

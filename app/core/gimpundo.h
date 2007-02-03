@@ -152,31 +152,11 @@ name|GimpUndoType
 name|undo_type
 decl_stmt|;
 comment|/* undo type                          */
-DECL|member|data
-name|gpointer
-name|data
-decl_stmt|;
-comment|/* data to implement the undo         */
-DECL|member|size
-name|gint64
-name|size
-decl_stmt|;
-comment|/* size of undo item                  */
 DECL|member|dirty_mask
 name|GimpDirtyMask
 name|dirty_mask
 decl_stmt|;
 comment|/* affected parts of the image        */
-DECL|member|pop_func
-name|GimpUndoPopFunc
-name|pop_func
-decl_stmt|;
-comment|/* function pointer to undo pop proc  */
-DECL|member|free_func
-name|GimpUndoFreeFunc
-name|free_func
-decl_stmt|;
-comment|/* function pointer to free undo data */
 DECL|member|preview
 name|TempBuf
 modifier|*

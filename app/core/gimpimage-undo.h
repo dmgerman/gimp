@@ -113,12 +113,6 @@ argument_list|,
 name|GType
 name|object_type
 argument_list|,
-name|gint64
-name|size
-argument_list|,
-name|gsize
-name|struct_size
-argument_list|,
 name|GimpUndoType
 name|undo_type
 argument_list|,
@@ -129,12 +123,6 @@ name|name
 argument_list|,
 name|GimpDirtyMask
 name|dirty_mask
-argument_list|,
-name|GimpUndoPopFunc
-name|pop_func
-argument_list|,
-name|GimpUndoFreeFunc
-name|free_func
 argument_list|,
 operator|...
 argument_list|)

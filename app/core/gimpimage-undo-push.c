@@ -264,19 +264,11 @@ name|image
 argument_list|,
 name|GIMP_TYPE_IMAGE_UNDO
 argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
 name|GIMP_UNDO_IMAGE_TYPE
 argument_list|,
 name|undo_desc
 argument_list|,
 name|GIMP_DIRTY_IMAGE
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|,
 name|NULL
 argument_list|)
@@ -317,10 +309,6 @@ name|image
 argument_list|,
 name|GIMP_TYPE_IMAGE_UNDO
 argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
 name|GIMP_UNDO_IMAGE_SIZE
 argument_list|,
 name|undo_desc
@@ -328,10 +316,6 @@ argument_list|,
 name|GIMP_DIRTY_IMAGE
 operator||
 name|GIMP_DIRTY_IMAGE_SIZE
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|,
 name|NULL
 argument_list|)
@@ -372,19 +356,11 @@ name|image
 argument_list|,
 name|GIMP_TYPE_IMAGE_UNDO
 argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
 name|GIMP_UNDO_IMAGE_RESOLUTION
 argument_list|,
 name|undo_desc
 argument_list|,
 name|GIMP_DIRTY_IMAGE
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|,
 name|NULL
 argument_list|)
@@ -439,19 +415,11 @@ name|image
 argument_list|,
 name|GIMP_TYPE_IMAGE_UNDO
 argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
 name|GIMP_UNDO_IMAGE_GRID
 argument_list|,
 name|undo_desc
 argument_list|,
 name|GIMP_DIRTY_IMAGE_META
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|,
 literal|"grid"
 argument_list|,
@@ -496,19 +464,11 @@ name|image
 argument_list|,
 name|GIMP_TYPE_IMAGE_UNDO
 argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
 name|GIMP_UNDO_IMAGE_COLORMAP
 argument_list|,
 name|undo_desc
 argument_list|,
 name|GIMP_DIRTY_IMAGE
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|,
 name|NULL
 argument_list|)
@@ -563,19 +523,11 @@ name|image
 argument_list|,
 name|GIMP_TYPE_IMAGE_UNDO
 argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
 name|GIMP_UNDO_PARASITE_ATTACH
 argument_list|,
 name|undo_desc
 argument_list|,
 name|GIMP_DIRTY_IMAGE_META
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|,
 literal|"parasite-name"
 argument_list|,
@@ -637,19 +589,11 @@ name|image
 argument_list|,
 name|GIMP_TYPE_IMAGE_UNDO
 argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
 name|GIMP_UNDO_PARASITE_REMOVE
 argument_list|,
 name|undo_desc
 argument_list|,
 name|GIMP_DIRTY_IMAGE_META
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|,
 literal|"parasite-name"
 argument_list|,
@@ -720,19 +664,11 @@ name|image
 argument_list|,
 name|GIMP_TYPE_GUIDE_UNDO
 argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
 name|GIMP_UNDO_GUIDE
 argument_list|,
 name|undo_desc
 argument_list|,
 name|GIMP_DIRTY_IMAGE_META
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|,
 literal|"guide"
 argument_list|,
@@ -790,19 +726,11 @@ name|image
 argument_list|,
 name|GIMP_TYPE_SAMPLE_POINT_UNDO
 argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
 name|GIMP_UNDO_SAMPLE_POINT
 argument_list|,
 name|undo_desc
 argument_list|,
 name|GIMP_DIRTY_IMAGE_META
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|,
 literal|"sample-point"
 argument_list|,
@@ -992,10 +920,6 @@ name|image
 argument_list|,
 name|GIMP_TYPE_DRAWABLE_UNDO
 argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
 name|GIMP_UNDO_DRAWABLE
 argument_list|,
 name|undo_desc
@@ -1003,10 +927,6 @@ argument_list|,
 name|GIMP_DIRTY_ITEM
 operator||
 name|GIMP_DIRTY_DRAWABLE
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|,
 literal|"item"
 argument_list|,
@@ -1102,10 +1022,6 @@ name|image
 argument_list|,
 name|GIMP_TYPE_DRAWABLE_MOD_UNDO
 argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
 name|GIMP_UNDO_DRAWABLE_MOD
 argument_list|,
 name|undo_desc
@@ -1113,10 +1029,6 @@ argument_list|,
 name|GIMP_DIRTY_ITEM
 operator||
 name|GIMP_DIRTY_DRAWABLE
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|,
 literal|"item"
 argument_list|,
@@ -1200,10 +1112,6 @@ name|image
 argument_list|,
 name|GIMP_TYPE_MASK_UNDO
 argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
 name|GIMP_UNDO_MASK
 argument_list|,
 name|undo_desc
@@ -1219,10 +1127,6 @@ name|GIMP_DIRTY_ITEM
 operator||
 name|GIMP_DIRTY_DRAWABLE
 argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
 literal|"item"
 argument_list|,
 name|mask
@@ -1234,15 +1138,15 @@ block|}
 end_function
 
 begin_comment
-comment|/*************************/
+comment|/****************/
 end_comment
 
 begin_comment
-comment|/*  Item Property Undos  */
+comment|/*  Item Undos  */
 end_comment
 
 begin_comment
-comment|/*************************/
+comment|/****************/
 end_comment
 
 begin_function
@@ -1302,19 +1206,11 @@ name|image
 argument_list|,
 name|GIMP_TYPE_ITEM_PROP_UNDO
 argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
 name|GIMP_UNDO_ITEM_RENAME
 argument_list|,
 name|undo_desc
 argument_list|,
 name|GIMP_DIRTY_ITEM_META
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|,
 literal|"item"
 argument_list|,
@@ -1383,10 +1279,6 @@ name|image
 argument_list|,
 name|GIMP_TYPE_ITEM_PROP_UNDO
 argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
 name|GIMP_UNDO_ITEM_DISPLACE
 argument_list|,
 name|undo_desc
@@ -1403,10 +1295,6 @@ else|:
 name|GIMP_DIRTY_ITEM
 operator||
 name|GIMP_DIRTY_VECTORS
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|,
 literal|"item"
 argument_list|,
@@ -1475,19 +1363,11 @@ name|image
 argument_list|,
 name|GIMP_TYPE_ITEM_PROP_UNDO
 argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
 name|GIMP_UNDO_ITEM_VISIBILITY
 argument_list|,
 name|undo_desc
 argument_list|,
 name|GIMP_DIRTY_ITEM_META
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|,
 literal|"item"
 argument_list|,
@@ -1556,19 +1436,11 @@ name|image
 argument_list|,
 name|GIMP_TYPE_ITEM_PROP_UNDO
 argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
 name|GIMP_UNDO_ITEM_LINKED
 argument_list|,
 name|undo_desc
 argument_list|,
 name|GIMP_DIRTY_ITEM_META
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|,
 literal|"item"
 argument_list|,
@@ -1651,19 +1523,11 @@ name|image
 argument_list|,
 name|GIMP_TYPE_ITEM_PROP_UNDO
 argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
 name|GIMP_UNDO_PARASITE_ATTACH
 argument_list|,
 name|undo_desc
 argument_list|,
 name|GIMP_DIRTY_ITEM_META
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|,
 literal|"item"
 argument_list|,
@@ -1753,19 +1617,11 @@ name|image
 argument_list|,
 name|GIMP_TYPE_ITEM_PROP_UNDO
 argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
 name|GIMP_UNDO_PARASITE_REMOVE
 argument_list|,
 name|undo_desc
 argument_list|,
 name|GIMP_DIRTY_ITEM_META
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|,
 literal|"item"
 argument_list|,
@@ -1782,15 +1638,15 @@ block|}
 end_function
 
 begin_comment
-comment|/***************************/
+comment|/*****************/
 end_comment
 
 begin_comment
-comment|/*  Layer Add/Remove Undo  */
+comment|/*  Layer Undos  */
 end_comment
 
 begin_comment
-comment|/***************************/
+comment|/*****************/
 end_comment
 
 begin_function
@@ -1872,19 +1728,11 @@ name|image
 argument_list|,
 name|GIMP_TYPE_LAYER_UNDO
 argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
 name|GIMP_UNDO_LAYER_ADD
 argument_list|,
 name|undo_desc
 argument_list|,
 name|GIMP_DIRTY_IMAGE_STRUCTURE
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|,
 literal|"item"
 argument_list|,
@@ -1981,19 +1829,11 @@ name|image
 argument_list|,
 name|GIMP_TYPE_LAYER_UNDO
 argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
 name|GIMP_UNDO_LAYER_REMOVE
 argument_list|,
 name|undo_desc
 argument_list|,
 name|GIMP_DIRTY_IMAGE_STRUCTURE
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|,
 literal|"item"
 argument_list|,
@@ -2012,18 +1852,6 @@ argument_list|)
 return|;
 block|}
 end_function
-
-begin_comment
-comment|/**************************/
-end_comment
-
-begin_comment
-comment|/*  Layer Property Undos  */
-end_comment
-
-begin_comment
-comment|/**************************/
-end_comment
 
 begin_function
 name|GimpUndo
@@ -2085,19 +1913,11 @@ name|image
 argument_list|,
 name|GIMP_TYPE_LAYER_PROP_UNDO
 argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
 name|GIMP_UNDO_LAYER_REPOSITION
 argument_list|,
 name|undo_desc
 argument_list|,
 name|GIMP_DIRTY_IMAGE_STRUCTURE
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|,
 literal|"item"
 argument_list|,
@@ -2169,19 +1989,11 @@ name|image
 argument_list|,
 name|GIMP_TYPE_LAYER_PROP_UNDO
 argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
 name|GIMP_UNDO_LAYER_MODE
 argument_list|,
 name|undo_desc
 argument_list|,
 name|GIMP_DIRTY_ITEM_META
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|,
 literal|"item"
 argument_list|,
@@ -2253,19 +2065,11 @@ name|image
 argument_list|,
 name|GIMP_TYPE_LAYER_PROP_UNDO
 argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
 name|GIMP_UNDO_LAYER_OPACITY
 argument_list|,
 name|undo_desc
 argument_list|,
 name|GIMP_DIRTY_ITEM_META
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|,
 literal|"item"
 argument_list|,
@@ -2337,19 +2141,11 @@ name|image
 argument_list|,
 name|GIMP_TYPE_LAYER_PROP_UNDO
 argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
 name|GIMP_UNDO_LAYER_LOCK_ALPHA
 argument_list|,
 name|undo_desc
 argument_list|,
 name|GIMP_DIRTY_ITEM_META
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|,
 literal|"item"
 argument_list|,
@@ -2438,10 +2234,6 @@ name|image
 argument_list|,
 name|GIMP_TYPE_TEXT_UNDO
 argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
 name|GIMP_UNDO_TEXT_LAYER
 argument_list|,
 name|undo_desc
@@ -2449,10 +2241,6 @@ argument_list|,
 name|GIMP_DIRTY_ITEM
 operator||
 name|GIMP_DIRTY_DRAWABLE
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|,
 literal|"item"
 argument_list|,
@@ -2528,19 +2316,11 @@ name|image
 argument_list|,
 name|GIMP_TYPE_TEXT_UNDO
 argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
 name|GIMP_UNDO_TEXT_LAYER_MODIFIED
 argument_list|,
 name|undo_desc
 argument_list|,
 name|GIMP_DIRTY_ITEM_META
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|,
 literal|"item"
 argument_list|,
@@ -2553,15 +2333,15 @@ block|}
 end_function
 
 begin_comment
-comment|/********************************/
+comment|/**********************/
 end_comment
 
 begin_comment
-comment|/*  Layer Mask Add/Remove Undo  */
+comment|/*  Layer Mask Undos  */
 end_comment
 
 begin_comment
-comment|/********************************/
+comment|/**********************/
 end_comment
 
 begin_function
@@ -2652,19 +2432,11 @@ name|image
 argument_list|,
 name|GIMP_TYPE_LAYER_MASK_UNDO
 argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
 name|GIMP_UNDO_LAYER_MASK_ADD
 argument_list|,
 name|undo_desc
 argument_list|,
 name|GIMP_DIRTY_IMAGE_STRUCTURE
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|,
 literal|"item"
 argument_list|,
@@ -2791,19 +2563,11 @@ name|image
 argument_list|,
 name|GIMP_TYPE_LAYER_MASK_UNDO
 argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
 name|GIMP_UNDO_LAYER_MASK_REMOVE
 argument_list|,
 name|undo_desc
 argument_list|,
 name|GIMP_DIRTY_IMAGE_STRUCTURE
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|,
 literal|"item"
 argument_list|,
@@ -2818,18 +2582,6 @@ argument_list|)
 return|;
 block|}
 end_function
-
-begin_comment
-comment|/*******************************/
-end_comment
-
-begin_comment
-comment|/*  Layer Mask Property Undos  */
-end_comment
-
-begin_comment
-comment|/*******************************/
-end_comment
 
 begin_function
 name|GimpUndo
@@ -2891,19 +2643,11 @@ name|image
 argument_list|,
 name|GIMP_TYPE_LAYER_MASK_PROP_UNDO
 argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
 name|GIMP_UNDO_LAYER_MASK_APPLY
 argument_list|,
 name|undo_desc
 argument_list|,
 name|GIMP_DIRTY_ITEM_META
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|,
 literal|"item"
 argument_list|,
@@ -2975,19 +2719,11 @@ name|image
 argument_list|,
 name|GIMP_TYPE_LAYER_MASK_PROP_UNDO
 argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
 name|GIMP_UNDO_LAYER_MASK_SHOW
 argument_list|,
 name|undo_desc
 argument_list|,
 name|GIMP_DIRTY_ITEM_META
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|,
 literal|"item"
 argument_list|,
@@ -3000,15 +2736,15 @@ block|}
 end_function
 
 begin_comment
-comment|/*****************************/
+comment|/*******************/
 end_comment
 
 begin_comment
-comment|/*  Add/Remove Channel Undo  */
+comment|/*  Channel Undos  */
 end_comment
 
 begin_comment
-comment|/*****************************/
+comment|/*******************/
 end_comment
 
 begin_function
@@ -3090,19 +2826,11 @@ name|image
 argument_list|,
 name|GIMP_TYPE_CHANNEL_UNDO
 argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
 name|GIMP_UNDO_CHANNEL_ADD
 argument_list|,
 name|undo_desc
 argument_list|,
 name|GIMP_DIRTY_IMAGE_STRUCTURE
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|,
 literal|"item"
 argument_list|,
@@ -3199,19 +2927,11 @@ name|image
 argument_list|,
 name|GIMP_TYPE_CHANNEL_UNDO
 argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
 name|GIMP_UNDO_CHANNEL_REMOVE
 argument_list|,
 name|undo_desc
 argument_list|,
 name|GIMP_DIRTY_IMAGE_STRUCTURE
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|,
 literal|"item"
 argument_list|,
@@ -3230,18 +2950,6 @@ argument_list|)
 return|;
 block|}
 end_function
-
-begin_comment
-comment|/****************************/
-end_comment
-
-begin_comment
-comment|/*  Channel Property Undos  */
-end_comment
-
-begin_comment
-comment|/****************************/
-end_comment
 
 begin_function
 name|GimpUndo
@@ -3303,19 +3011,11 @@ name|image
 argument_list|,
 name|GIMP_TYPE_CHANNEL_PROP_UNDO
 argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
 name|GIMP_UNDO_CHANNEL_REPOSITION
 argument_list|,
 name|undo_desc
 argument_list|,
 name|GIMP_DIRTY_IMAGE_STRUCTURE
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|,
 literal|"item"
 argument_list|,
@@ -3387,10 +3087,6 @@ name|image
 argument_list|,
 name|GIMP_TYPE_CHANNEL_PROP_UNDO
 argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
 name|GIMP_UNDO_CHANNEL_COLOR
 argument_list|,
 name|undo_desc
@@ -3398,10 +3094,6 @@ argument_list|,
 name|GIMP_DIRTY_ITEM
 operator||
 name|GIMP_DIRTY_DRAWABLE
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|,
 literal|"item"
 argument_list|,
@@ -3414,15 +3106,15 @@ block|}
 end_function
 
 begin_comment
-comment|/*****************************/
+comment|/*******************/
 end_comment
 
 begin_comment
-comment|/*  Add/Remove Vectors Undo  */
+comment|/*  Vectors Undos  */
 end_comment
 
 begin_comment
-comment|/*****************************/
+comment|/*******************/
 end_comment
 
 begin_function
@@ -3504,19 +3196,11 @@ name|image
 argument_list|,
 name|GIMP_TYPE_VECTORS_UNDO
 argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
 name|GIMP_UNDO_VECTORS_ADD
 argument_list|,
 name|undo_desc
 argument_list|,
 name|GIMP_DIRTY_IMAGE_STRUCTURE
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|,
 literal|"item"
 argument_list|,
@@ -3613,19 +3297,11 @@ name|image
 argument_list|,
 name|GIMP_TYPE_VECTORS_UNDO
 argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
 name|GIMP_UNDO_VECTORS_REMOVE
 argument_list|,
 name|undo_desc
 argument_list|,
 name|GIMP_DIRTY_IMAGE_STRUCTURE
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|,
 literal|"item"
 argument_list|,
@@ -3644,18 +3320,6 @@ argument_list|)
 return|;
 block|}
 end_function
-
-begin_comment
-comment|/**********************/
-end_comment
-
-begin_comment
-comment|/*  Vectors Mod Undo  */
-end_comment
-
-begin_comment
-comment|/**********************/
-end_comment
 
 begin_function
 name|GimpUndo
@@ -3717,10 +3381,6 @@ name|image
 argument_list|,
 name|GIMP_TYPE_VECTORS_MOD_UNDO
 argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
 name|GIMP_UNDO_VECTORS_MOD
 argument_list|,
 name|undo_desc
@@ -3728,10 +3388,6 @@ argument_list|,
 name|GIMP_DIRTY_ITEM
 operator||
 name|GIMP_DIRTY_VECTORS
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|,
 literal|"item"
 argument_list|,
@@ -3742,18 +3398,6 @@ argument_list|)
 return|;
 block|}
 end_function
-
-begin_comment
-comment|/******************************/
-end_comment
-
-begin_comment
-comment|/*  Vectors Properties Undos  */
-end_comment
-
-begin_comment
-comment|/******************************/
-end_comment
 
 begin_function
 name|GimpUndo
@@ -3815,19 +3459,11 @@ name|image
 argument_list|,
 name|GIMP_TYPE_VECTORS_PROP_UNDO
 argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
 name|GIMP_UNDO_VECTORS_REPOSITION
 argument_list|,
 name|undo_desc
 argument_list|,
 name|GIMP_DIRTY_IMAGE_STRUCTURE
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|,
 literal|"item"
 argument_list|,
@@ -3840,15 +3476,15 @@ block|}
 end_function
 
 begin_comment
-comment|/**************************************/
+comment|/******************************/
 end_comment
 
 begin_comment
-comment|/*  Floating Selection to Layer Undo  */
+comment|/*  Floating Selection Undos  */
 end_comment
 
 begin_comment
-comment|/**************************************/
+comment|/******************************/
 end_comment
 
 begin_function
@@ -3903,19 +3539,11 @@ name|image
 argument_list|,
 name|GIMP_TYPE_FLOATING_SEL_UNDO
 argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
 name|GIMP_UNDO_FS_TO_LAYER
 argument_list|,
 name|undo_desc
 argument_list|,
 name|GIMP_DIRTY_IMAGE_STRUCTURE
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|,
 literal|"item"
 argument_list|,
@@ -3953,18 +3581,6 @@ name|undo
 return|;
 block|}
 end_function
-
-begin_comment
-comment|/******************************************/
-end_comment
-
-begin_comment
-comment|/*  Floating Selection Rigor/Relax Undos  */
-end_comment
-
-begin_comment
-comment|/******************************************/
-end_comment
 
 begin_function
 name|GimpUndo
@@ -4013,19 +3629,11 @@ name|image
 argument_list|,
 name|GIMP_TYPE_FLOATING_SEL_UNDO
 argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
 name|GIMP_UNDO_FS_RIGOR
 argument_list|,
 name|undo_desc
 argument_list|,
 name|GIMP_DIRTY_NONE
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|,
 literal|"item"
 argument_list|,
@@ -4084,19 +3692,11 @@ name|image
 argument_list|,
 name|GIMP_TYPE_FLOATING_SEL_UNDO
 argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
 name|GIMP_UNDO_FS_RELAX
 argument_list|,
 name|undo_desc
 argument_list|,
 name|GIMP_DIRTY_NONE
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|,
 literal|"item"
 argument_list|,
@@ -4219,19 +3819,11 @@ name|image
 argument_list|,
 name|GIMP_TYPE_UNDO
 argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
 name|GIMP_UNDO_CANT
 argument_list|,
 name|undo_desc
 argument_list|,
 name|GIMP_DIRTY_ALL
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|,
 name|NULL
 argument_list|)
