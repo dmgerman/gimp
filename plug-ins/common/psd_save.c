@@ -534,7 +534,7 @@ parameter_list|,
 name|gint32
 name|drawableID
 parameter_list|,
-name|gint32
+name|glong
 modifier|*
 name|ChanLenPosition
 parameter_list|,
@@ -1444,7 +1444,7 @@ index|[
 literal|2
 index|]
 decl_stmt|;
-name|gint32
+name|glong
 name|pos
 decl_stmt|;
 name|b
@@ -2716,15 +2716,15 @@ name|gboolean
 name|ActiveLayerPresent
 decl_stmt|;
 comment|/* TRUE if there's an active layer */
-name|gint32
+name|glong
 name|eof_pos
 decl_stmt|;
 comment|/* Position for End of file */
-name|gint32
+name|glong
 name|rsc_pos
 decl_stmt|;
 comment|/* Position for Lengths of Resources section */
-name|gint32
+name|glong
 name|name_sec
 decl_stmt|;
 comment|/* Position for Lengths of Channel Names */
@@ -3794,23 +3794,23 @@ name|gint
 name|mask
 decl_stmt|;
 comment|/* Layer mask */
-name|gint32
+name|glong
 name|eof_pos
 decl_stmt|;
 comment|/* Position: End of file */
-name|gint32
+name|glong
 name|ExtraDataPos
 decl_stmt|;
 comment|/* Position: Extra data length */
-name|gint32
+name|glong
 name|LayerMaskPos
 decl_stmt|;
 comment|/* Position: Layer& Mask section length */
-name|gint32
+name|glong
 name|LayerInfoPos
 decl_stmt|;
 comment|/* Position: Layer info section length*/
-name|gint32
+name|glong
 modifier|*
 modifier|*
 name|ChannelLengthPos
@@ -3827,7 +3827,7 @@ name|ChannelLengthPos
 operator|=
 name|g_new
 argument_list|(
-name|gint32
+name|glong
 operator|*
 argument_list|,
 name|PSDImageData
@@ -4211,7 +4211,7 @@ index|]
 operator|=
 name|g_new
 argument_list|(
-name|gint32
+name|glong
 argument_list|,
 name|nChannelsLayer
 argument_list|)
@@ -4949,7 +4949,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|write_pixel_data (FILE * fd,gint32 drawableID,gint32 * ChanLenPosition,gint32 ltable_offset)
+DECL|function|write_pixel_data (FILE * fd,gint32 drawableID,glong * ChanLenPosition,gint32 ltable_offset)
 name|write_pixel_data
 parameter_list|(
 name|FILE
@@ -4959,7 +4959,7 @@ parameter_list|,
 name|gint32
 name|drawableID
 parameter_list|,
-name|gint32
+name|glong
 modifier|*
 name|ChanLenPosition
 parameter_list|,
@@ -5043,7 +5043,7 @@ modifier|*
 name|rledata
 decl_stmt|;
 comment|/* Compressed data from a region */
-name|gint32
+name|glong
 name|length_table_pos
 decl_stmt|;
 comment|/* position in file of the length table */
@@ -5307,7 +5307,7 @@ expr_stmt|;
 name|IF_DEEP_DBG
 name|printf
 argument_list|(
-literal|"\t\t\t\t. ltable, pos %d len %d\n"
+literal|"\t\t\t\t. ltable, pos %ld len %d\n"
 argument_list|,
 name|length_table_pos
 argument_list|,
@@ -5598,7 +5598,7 @@ expr_stmt|;
 name|IF_DEEP_DBG
 name|printf
 argument_list|(
-literal|"\t\t\t\t. ltable, pos %d\n"
+literal|"\t\t\t\t. ltable, pos %ld\n"
 argument_list|,
 name|length_table_pos
 argument_list|)
@@ -5641,7 +5641,7 @@ expr_stmt|;
 name|IF_DEEP_DBG
 name|printf
 argument_list|(
-literal|"\t\t\t\t. ltable, pos %d len %d\n"
+literal|"\t\t\t\t. ltable, pos %ld len %d\n"
 argument_list|,
 name|length_table_pos
 argument_list|,
@@ -5916,7 +5916,7 @@ name|gint32
 name|imageHeight
 decl_stmt|;
 comment|/* Height of image */
-name|gint32
+name|glong
 name|offset
 decl_stmt|;
 comment|/* offset in file of rle lengths */

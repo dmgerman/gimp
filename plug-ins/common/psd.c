@@ -136,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27b1bb930103
+DECL|enum|__anon2a582dcf0103
 block|{
 DECL|enumerator|PSD_UNKNOWN_IMAGE
 name|PSD_UNKNOWN_IMAGE
@@ -324,7 +324,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b1bb930208
+DECL|struct|__anon2a582dcf0208
 block|{
 DECL|member|hRes
 name|Fixed
@@ -574,7 +574,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27b1bb930308
+DECL|struct|__anon2a582dcf0308
 block|{
 DECL|member|signature
 name|gchar
@@ -5435,7 +5435,7 @@ name|PSDheader
 operator|.
 name|miscsizelen
 decl_stmt|;
-name|guint32
+name|glong
 name|offset_now
 init|=
 name|ftell
@@ -10234,9 +10234,6 @@ name|psd_image
 operator|.
 name|num_layers
 argument_list|,
-operator|(
-name|glong
-operator|)
 name|ftell
 argument_list|(
 name|fd
@@ -11454,6 +11451,9 @@ name|fseek
 argument_list|(
 name|fd
 argument_list|,
+operator|(
+name|glong
+operator|)
 name|n
 argument_list|,
 name|SEEK_CUR
@@ -11992,7 +11992,7 @@ block|{
 name|guint16
 name|w
 decl_stmt|;
-name|gint32
+name|glong
 name|pos
 decl_stmt|;
 name|gchar
