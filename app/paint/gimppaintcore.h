@@ -372,7 +372,8 @@ name|paint_options
 parameter_list|)
 function_decl|;
 DECL|member|push_undo
-name|gboolean
+name|GimpUndo
+modifier|*
 function_decl|(
 modifier|*
 name|push_undo

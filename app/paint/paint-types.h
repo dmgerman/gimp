@@ -42,11 +42,29 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpPaintCoreUndo
+typedef|typedef
+name|struct
+name|_GimpPaintCoreUndo
+name|GimpPaintCoreUndo
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpBrushCore
 typedef|typedef
 name|struct
 name|_GimpBrushCore
 name|GimpBrushCore
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpInkUndo
+typedef|typedef
+name|struct
+name|_GimpInkUndo
+name|GimpInkUndo
 typedef|;
 end_typedef
 
