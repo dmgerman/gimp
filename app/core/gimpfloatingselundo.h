@@ -103,6 +103,11 @@ DECL|member|parent_instance
 name|GimpItemUndo
 name|parent_instance
 decl_stmt|;
+DECL|member|drawable
+name|GimpDrawable
+modifier|*
+name|drawable
+decl_stmt|;
 block|}
 struct|;
 end_struct
