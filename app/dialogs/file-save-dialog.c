@@ -224,10 +224,6 @@ name|save_proc
 parameter_list|,
 name|gboolean
 name|save_a_copy
-parameter_list|,
-name|gboolean
-modifier|*
-name|file_saved
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -454,11 +450,6 @@ name|save_proc
 argument_list|)
 condition|)
 block|{
-name|gboolean
-name|file_saved
-init|=
-name|FALSE
-decl_stmt|;
 if|if
 condition|(
 name|file_save_dialog_save_image
@@ -476,9 +467,6 @@ argument_list|,
 name|dialog
 operator|->
 name|save_a_copy
-argument_list|,
-operator|&
-name|file_saved
 argument_list|)
 condition|)
 block|{
@@ -494,8 +482,6 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|file_saved
-operator|&&
 name|dialog
 operator|->
 name|close_after_saving
@@ -1637,7 +1623,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|file_save_dialog_save_image (GtkWidget * save_dialog,GimpImage * image,const gchar * uri,GimpPlugInProcedure * save_proc,gboolean save_a_copy,gboolean * file_saved)
+DECL|function|file_save_dialog_save_image (GtkWidget * save_dialog,GimpImage * image,const gchar * uri,GimpPlugInProcedure * save_proc,gboolean save_a_copy)
 name|file_save_dialog_save_image
 parameter_list|(
 name|GtkWidget
@@ -1659,10 +1645,6 @@ name|save_proc
 parameter_list|,
 name|gboolean
 name|save_a_copy
-parameter_list|,
-name|gboolean
-modifier|*
-name|file_saved
 parameter_list|)
 block|{
 name|GimpPDBStatusType
@@ -1681,7 +1663,7 @@ decl_stmt|;
 name|gboolean
 name|success
 init|=
-name|TRUE
+name|FALSE
 decl_stmt|;
 for|for
 control|(
@@ -1782,11 +1764,6 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
-operator|*
-name|file_saved
-operator|=
-name|FALSE
-expr_stmt|;
 switch|switch
 condition|(
 name|status
@@ -1795,12 +1772,11 @@ block|{
 case|case
 name|GIMP_PDB_SUCCESS
 case|:
-operator|*
-name|file_saved
+name|success
 operator|=
 name|TRUE
 expr_stmt|;
-comment|/* fallthru */
+break|break;
 case|case
 name|GIMP_PDB_CANCEL
 case|:
@@ -1851,10 +1827,6 @@ name|g_free
 argument_list|(
 name|filename
 argument_list|)
-expr_stmt|;
-name|success
-operator|=
-name|FALSE
 expr_stmt|;
 block|}
 break|break;
