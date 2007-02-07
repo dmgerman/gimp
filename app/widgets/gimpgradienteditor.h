@@ -33,7 +33,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c1de5080103
+DECL|enum|__anon276f888e0103
 block|{
 DECL|enumerator|GRAD_DRAG_NONE
 name|GRAD_DRAG_NONE
@@ -134,6 +134,11 @@ block|{
 DECL|member|parent_instance
 name|GimpDataEditor
 name|parent_instance
+decl_stmt|;
+DECL|member|current_color
+name|GtkWidget
+modifier|*
+name|current_color
 decl_stmt|;
 DECL|member|hint_label1
 name|GtkWidget

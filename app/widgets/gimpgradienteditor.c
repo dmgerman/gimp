@@ -188,7 +188,15 @@ DECL|macro|GRAD_CONTROL_HEIGHT
 define|#
 directive|define
 name|GRAD_CONTROL_HEIGHT
-value|10
+value|14
+end_define
+
+begin_define
+DECL|macro|GRAD_CURRENT_COLOR_WIDTH
+define|#
+directive|define
+name|GRAD_CURRENT_COLOR_WIDTH
+value|64
 end_define
 
 begin_define
@@ -1160,6 +1168,23 @@ name|GtkWidget
 modifier|*
 name|button
 decl_stmt|;
+name|GimpRGB
+name|transp
+decl_stmt|;
+name|gimp_rgba_set
+argument_list|(
+operator|&
+name|transp
+argument_list|,
+literal|0.0
+argument_list|,
+literal|0.0
+argument_list|,
+literal|0.0
+argument_list|,
+literal|0.0
+argument_list|)
+expr_stmt|;
 comment|/* Frame for gradient view and gradient control */
 name|frame
 operator|=
@@ -1616,7 +1641,7 @@ operator|->
 name|scrollbar
 argument_list|)
 expr_stmt|;
-comment|/* Instant update toggle */
+comment|/* Box for current color and instant update toggle */
 name|editor
 operator|->
 name|instant_update
@@ -1653,6 +1678,93 @@ argument_list|(
 name|hbox
 argument_list|)
 expr_stmt|;
+comment|/* Frame showing current active color */
+name|frame
+operator|=
+name|gtk_frame_new
+argument_list|(
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_frame_set_shadow_type
+argument_list|(
+name|GTK_FRAME
+argument_list|(
+name|frame
+argument_list|)
+argument_list|,
+name|GTK_SHADOW_IN
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_start
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|hbox
+argument_list|)
+argument_list|,
+name|frame
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|frame
+argument_list|)
+expr_stmt|;
+name|editor
+operator|->
+name|current_color
+operator|=
+name|gimp_color_area_new
+argument_list|(
+operator|&
+name|transp
+argument_list|,
+name|GIMP_COLOR_AREA_SMALL_CHECKS
+argument_list|,
+name|GDK_BUTTON1_MASK
+operator||
+name|GDK_BUTTON2_MASK
+argument_list|)
+expr_stmt|;
+name|gtk_container_add
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|frame
+argument_list|)
+argument_list|,
+name|editor
+operator|->
+name|current_color
+argument_list|)
+expr_stmt|;
+name|gtk_widget_set_size_request
+argument_list|(
+name|editor
+operator|->
+name|current_color
+argument_list|,
+name|GRAD_CURRENT_COLOR_WIDTH
+argument_list|,
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|editor
+operator|->
+name|current_color
+argument_list|)
+expr_stmt|;
+comment|/* Instant update toggle */
 name|button
 operator|=
 name|gtk_check_button_new_with_label
@@ -3351,7 +3463,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Displaying [%0.6f, %0.6f]"
+literal|"Displaying [%0.4f, %0.4f]"
 argument_list|)
 argument_list|,
 name|adjustment
@@ -4129,6 +4241,19 @@ operator|&
 name|rgb
 argument_list|)
 expr_stmt|;
+name|gimp_color_area_set_color
+argument_list|(
+name|GIMP_COLOR_AREA
+argument_list|(
+name|editor
+operator|->
+name|current_color
+argument_list|)
+argument_list|,
+operator|&
+name|rgb
+argument_list|)
+expr_stmt|;
 name|gimp_rgb_to_hsv
 argument_list|(
 operator|&
@@ -4144,7 +4269,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Position: %0.6f"
+literal|"Position: %0.4f"
 argument_list|)
 argument_list|,
 name|xpos
@@ -4178,7 +4303,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"HSV (%0.3f, %0.3f, %0.3f)"
+literal|"HSV (%0.1f, %0.1f, %0.1f)"
 argument_list|)
 argument_list|,
 name|hsv
@@ -4190,10 +4315,14 @@ argument_list|,
 name|hsv
 operator|.
 name|s
+operator|*
+literal|100.0
 argument_list|,
 name|hsv
 operator|.
 name|v
+operator|*
+literal|100.0
 argument_list|)
 expr_stmt|;
 name|str4
@@ -4202,7 +4331,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Luminance: %0.3f    Opacity: %0.3f"
+literal|"Luminance: %0.1f    Opacity: %0.1f"
 argument_list|)
 argument_list|,
 name|GIMP_RGB_LUMINANCE
@@ -4219,10 +4348,14 @@ name|rgb
 operator|.
 name|b
 argument_list|)
+operator|*
+literal|100.0
 argument_list|,
 name|rgb
 operator|.
 name|a
+operator|*
+literal|100.0
 argument_list|)
 expr_stmt|;
 name|gradient_editor_set_hint
@@ -6376,7 +6509,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Handle position: %0.6f"
+literal|"Handle position: %0.4f"
 argument_list|)
 argument_list|,
 name|seg
@@ -6412,7 +6545,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Handle position: %0.6f"
+literal|"Handle position: %0.4f"
 argument_list|)
 argument_list|,
 name|seg
@@ -6510,7 +6643,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Distance: %0.6f"
+literal|"Distance: %0.4f"
 argument_list|)
 argument_list|,
 name|editor
