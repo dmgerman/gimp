@@ -393,6 +393,14 @@ value|"gimp-view-dot-for-dot"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_VIEW_ZOOM_REVERT
+define|#
+directive|define
+name|GIMP_HELP_VIEW_ZOOM_REVERT
+value|"gimp-view-zoom-revert"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_VIEW_ZOOM_OUT
 define|#
 directive|define

@@ -353,6 +353,43 @@ end_function
 
 begin_function
 name|void
+DECL|function|view_zoom_revert_cmd_callback (GtkAction * action,gpointer data)
+name|view_zoom_revert_cmd_callback
+parameter_list|(
+name|GtkAction
+modifier|*
+name|action
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+block|{
+name|GimpDisplay
+modifier|*
+name|display
+decl_stmt|;
+name|return_if_no_display
+argument_list|(
+name|display
+argument_list|,
+name|data
+argument_list|)
+expr_stmt|;
+name|gimp_display_shell_scale_revert
+argument_list|(
+name|GIMP_DISPLAY_SHELL
+argument_list|(
+name|display
+operator|->
+name|shell
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
 DECL|function|view_zoom_cmd_callback (GtkAction * action,gint value,gpointer data)
 name|view_zoom_cmd_callback
 parameter_list|(

@@ -317,6 +317,20 @@ DECL|member|offset_y
 name|gint
 name|offset_y
 decl_stmt|;
+DECL|member|last_scale
+name|gdouble
+name|last_scale
+decl_stmt|;
+comment|/*  scale used when reverting zoom     */
+DECL|member|last_offset_x
+name|gint
+name|last_offset_x
+decl_stmt|;
+comment|/*  offsets used when reverting zoom   */
+DECL|member|last_offset_y
+name|gint
+name|last_offset_y
+decl_stmt|;
 DECL|member|disp_width
 name|gint
 name|disp_width

@@ -105,6 +105,14 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
+begin_define
+DECL|macro|SCALE_EPSILON
+define|#
+directive|define
+name|SCALE_EPSILON
+value|0.0001
+end_define
+
 begin_typedef
 DECL|typedef|ScaleDialogData
 typedef|typedef
@@ -811,6 +819,104 @@ directive|endif
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_display_shell_scale_revert:  * @shell:     the #GimpDisplayShell  *  * Reverts the display to the previously used scale.  If no previous scale  * exist then the call does nothing.  *  * Return value: %TRUE if the scale was reverted, otherwise %FALSE.  **/
+end_comment
+
+begin_function
+name|gboolean
+DECL|function|gimp_display_shell_scale_revert (GimpDisplayShell * shell)
+name|gimp_display_shell_scale_revert
+parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY_SHELL
+argument_list|(
+name|shell
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+comment|/* don't bother if no scale has been set */
+if|if
+condition|(
+name|shell
+operator|->
+name|last_scale
+operator|<
+name|SCALE_EPSILON
+condition|)
+return|return
+name|FALSE
+return|;
+name|gimp_display_shell_scale_by_values
+argument_list|(
+name|shell
+argument_list|,
+name|shell
+operator|->
+name|last_scale
+argument_list|,
+name|shell
+operator|->
+name|last_offset_x
+argument_list|,
+name|shell
+operator|->
+name|last_offset_y
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+comment|/* don't resize the window */
+return|return
+name|TRUE
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_display_shell_scale_can_revert:  * @shell:     the #GimpDisplayShell  *  * Return value: %TRUE if a previous display scale exists, otherwise %FALSE.  **/
+end_comment
+
+begin_function
+name|gboolean
+DECL|function|gimp_display_shell_scale_can_revert (GimpDisplayShell * shell)
+name|gimp_display_shell_scale_can_revert
+parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY_SHELL
+argument_list|(
+name|shell
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+return|return
+operator|(
+name|shell
+operator|->
+name|last_scale
+operator|>
+name|SCALE_EPSILON
+operator|)
+return|;
+block|}
+end_function
+
 begin_function
 name|void
 DECL|function|gimp_display_shell_scale_set_dot_for_dot (GimpDisplayShell * shell,gboolean dot_for_dot)
@@ -1495,6 +1601,34 @@ operator|==
 name|offset_y
 condition|)
 return|return;
+comment|/* remember the current scale and offsets to allow reverting the scaling */
+name|shell
+operator|->
+name|last_scale
+operator|=
+name|gimp_zoom_model_get_factor
+argument_list|(
+name|shell
+operator|->
+name|zoom
+argument_list|)
+expr_stmt|;
+name|shell
+operator|->
+name|last_offset_x
+operator|=
+name|shell
+operator|->
+name|offset_x
+expr_stmt|;
+name|shell
+operator|->
+name|last_offset_y
+operator|=
+name|shell
+operator|->
+name|offset_y
+expr_stmt|;
 comment|/* freeze the active tool */
 name|gimp_display_shell_pause
 argument_list|(
@@ -1736,8 +1870,8 @@ name|shell
 operator|->
 name|other_scale
 argument_list|)
-operator|<=
-literal|0.0001
+operator|<
+name|SCALE_EPSILON
 condition|)
 block|{
 comment|/* other_scale not yet initialized */
