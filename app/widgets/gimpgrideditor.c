@@ -96,12 +96,12 @@ DECL|macro|GRID_EDITOR_COLOR_BUTTON_HEIGHT
 define|#
 directive|define
 name|GRID_EDITOR_COLOR_BUTTON_HEIGHT
-value|20
+value|24
 end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27bb72130103
+DECL|enum|__anon2acde9610103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

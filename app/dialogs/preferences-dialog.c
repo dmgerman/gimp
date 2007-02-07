@@ -4481,7 +4481,7 @@ name|title
 argument_list|,
 literal|60
 argument_list|,
-literal|20
+literal|24
 argument_list|,
 name|GIMP_COLOR_AREA_FLAT
 argument_list|)
@@ -8991,7 +8991,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2c41b6cd0108
+DECL|struct|__anon2af094f80108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -10153,7 +10153,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c41b6cd0208
+DECL|struct|__anon2af094f80208
 block|{
 DECL|member|label
 specifier|const
@@ -11132,7 +11132,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c41b6cd0308
+DECL|struct|__anon2af094f80308
 block|{
 DECL|member|property_name
 specifier|const
@@ -11287,7 +11287,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c41b6cd0408
+DECL|struct|__anon2af094f80408
 block|{
 DECL|member|tree_label
 specifier|const
