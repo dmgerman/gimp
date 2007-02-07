@@ -27,6 +27,13 @@ directive|if
 name|HAVE_DBUS_GLIB
 end_if
 
+begin_define
+DECL|macro|DBUS_API_SUBJECT_TO_CHANGE
+define|#
+directive|define
+name|DBUS_API_SUBJECT_TO_CHANGE
+end_define
+
 begin_include
 include|#
 directive|include
