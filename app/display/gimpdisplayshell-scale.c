@@ -113,6 +113,19 @@ name|SCALE_EPSILON
 value|0.0001
 end_define
 
+begin_define
+DECL|macro|SCALE_EQUALS (a,b)
+define|#
+directive|define
+name|SCALE_EQUALS
+parameter_list|(
+name|a
+parameter_list|,
+name|b
+parameter_list|)
+value|(fabs ((a) - (b))< SCALE_EPSILON)
+end_define
+
 begin_typedef
 DECL|typedef|ScaleDialogData
 typedef|typedef
@@ -1049,13 +1062,16 @@ name|zoom_type
 operator|==
 name|GIMP_ZOOM_TO
 operator|&&
+name|SCALE_EQUALS
+argument_list|(
 name|new_scale
-operator|==
+argument_list|,
 name|gimp_zoom_model_get_factor
 argument_list|(
 name|shell
 operator|->
 name|zoom
+argument_list|)
 argument_list|)
 condition|)
 return|return;
@@ -1579,14 +1595,17 @@ expr_stmt|;
 comment|/*  Abort early if the values are all setup already. We don't    *  want to inadvertently resize the window (bug #164281).    */
 if|if
 condition|(
+name|SCALE_EQUALS
+argument_list|(
 name|gimp_zoom_model_get_factor
 argument_list|(
 name|shell
 operator|->
 name|zoom
 argument_list|)
-operator|==
+argument_list|,
 name|scale
+argument_list|)
 operator|&&
 name|shell
 operator|->
@@ -1864,14 +1883,14 @@ return|return;
 block|}
 if|if
 condition|(
-name|fabs
+name|SCALE_EQUALS
 argument_list|(
 name|shell
 operator|->
 name|other_scale
+argument_list|,
+literal|0.0
 argument_list|)
-operator|<
-name|SCALE_EPSILON
 condition|)
 block|{
 comment|/* other_scale not yet initialized */
