@@ -379,7 +379,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
+name|gboolean
 name|gimp_rect_select_tool_select
 parameter_list|(
 name|GimpRectangleTool
@@ -1965,7 +1965,7 @@ end_function
 
 begin_function
 specifier|static
-name|void
+name|gboolean
 DECL|function|gimp_rect_select_tool_select (GimpRectangleTool * rectangle,gint x,gint y,gint w,gint h)
 name|gimp_rect_select_tool_select
 parameter_list|(
@@ -2126,6 +2126,9 @@ argument_list|,
 name|h
 argument_list|)
 expr_stmt|;
+return|return
+name|rectangle_exists
+return|;
 block|}
 end_function
 
@@ -2968,6 +2971,8 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
 name|gimp_rect_select_tool_select
 argument_list|(
 name|rectangle
@@ -2984,8 +2989,9 @@ name|y2
 operator|-
 name|y1
 argument_list|)
-expr_stmt|;
-comment|/* save the undo that we got when executing */
+condition|)
+block|{
+comment|/* save the undo that we got when executing, but only if            * we actually selected something            */
 name|rect_select
 operator|->
 name|undo
@@ -3003,6 +3009,7 @@ name|redo
 operator|=
 name|NULL
 expr_stmt|;
+block|}
 if|if
 condition|(
 operator|!
