@@ -87,7 +87,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5c05290103
+DECL|enum|__anon287dc50a0103
 block|{
 DECL|enumerator|PATH_COLUMN
 name|PATH_COLUMN
@@ -2377,6 +2377,21 @@ argument_list|,
 literal|0.5
 argument_list|)
 expr_stmt|;
+name|gtk_label_set_ellipsize
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|dialog
+operator|->
+name|label
+index|[
+name|i
+index|]
+argument_list|)
+argument_list|,
+name|PANGO_ELLIPSIZE_END
+argument_list|)
+expr_stmt|;
 name|gtk_table_attach
 argument_list|(
 name|GTK_TABLE
@@ -2403,7 +2418,7 @@ name|i
 operator|+
 literal|1
 argument_list|,
-name|GTK_SHRINK
+name|GTK_EXPAND
 operator||
 name|GTK_FILL
 argument_list|,
