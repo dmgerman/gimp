@@ -86,15 +86,6 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_AIRBRUSH, GimpAirbrushClass))
 end_define
 
 begin_typedef
-DECL|typedef|GimpAirbrush
-typedef|typedef
-name|struct
-name|_GimpAirbrush
-name|GimpAirbrush
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpAirbrushClass
 typedef|typedef
 name|struct

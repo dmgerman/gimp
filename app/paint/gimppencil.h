@@ -86,15 +86,6 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_PENCIL, GimpPencilClass))
 end_define
 
 begin_typedef
-DECL|typedef|GimpPencil
-typedef|typedef
-name|struct
-name|_GimpPencil
-name|GimpPencil
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpPencilClass
 typedef|typedef
 name|struct

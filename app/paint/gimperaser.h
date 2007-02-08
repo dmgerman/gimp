@@ -86,15 +86,6 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_ERASER, GimpEraserClass))
 end_define
 
 begin_typedef
-DECL|typedef|GimpEraser
-typedef|typedef
-name|struct
-name|_GimpEraser
-name|GimpEraser
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpEraserClass
 typedef|typedef
 name|struct

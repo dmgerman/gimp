@@ -86,15 +86,6 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_SOURCE_CORE, GimpSourceCoreCl
 end_define
 
 begin_typedef
-DECL|typedef|GimpSourceCore
-typedef|typedef
-name|struct
-name|_GimpSourceCore
-name|GimpSourceCore
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpSourceCoreClass
 typedef|typedef
 name|struct

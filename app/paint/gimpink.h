@@ -108,15 +108,6 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_INK, GimpInkClass))
 end_define
 
 begin_typedef
-DECL|typedef|GimpInk
-typedef|typedef
-name|struct
-name|_GimpInk
-name|GimpInk
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpInkClass
 typedef|typedef
 name|struct

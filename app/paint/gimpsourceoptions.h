@@ -86,15 +86,6 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_SOURCE_OPTIONS, GimpSourceOpt
 end_define
 
 begin_typedef
-DECL|typedef|GimpSourceOptions
-typedef|typedef
-name|struct
-name|_GimpSourceOptions
-name|GimpSourceOptions
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpSourceOptionsClass
 typedef|typedef
 name|struct

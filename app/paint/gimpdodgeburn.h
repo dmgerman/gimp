@@ -75,15 +75,6 @@ value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_DODGE_BURN))
 end_define
 
 begin_typedef
-DECL|typedef|GimpDodgeBurn
-typedef|typedef
-name|struct
-name|_GimpDodgeBurn
-name|GimpDodgeBurn
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpDodgeBurnClass
 typedef|typedef
 name|struct

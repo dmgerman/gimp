@@ -86,15 +86,6 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_CONVOLVE, GimpConvolveClass))
 end_define
 
 begin_typedef
-DECL|typedef|GimpConvolve
-typedef|typedef
-name|struct
-name|_GimpConvolve
-name|GimpConvolve
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpConvolveClass
 typedef|typedef
 name|struct

@@ -86,15 +86,6 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_PAINTBRUSH, GimpPaintbrushCla
 end_define
 
 begin_typedef
-DECL|typedef|GimpPaintbrush
-typedef|typedef
-name|struct
-name|_GimpPaintbrush
-name|GimpPaintbrush
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpPaintbrushClass
 typedef|typedef
 name|struct

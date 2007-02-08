@@ -92,15 +92,6 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_SMUDGE, GimpSmudgeClass))
 end_define
 
 begin_typedef
-DECL|typedef|GimpSmudge
-typedef|typedef
-name|struct
-name|_GimpSmudge
-name|GimpSmudge
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpSmudgeClass
 typedef|typedef
 name|struct

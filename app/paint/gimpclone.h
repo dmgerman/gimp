@@ -86,15 +86,6 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_CLONE, GimpCloneClass))
 end_define
 
 begin_typedef
-DECL|typedef|GimpClone
-typedef|typedef
-name|struct
-name|_GimpClone
-name|GimpClone
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpCloneClass
 typedef|typedef
 name|struct

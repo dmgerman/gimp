@@ -86,15 +86,6 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_PERSPECTIVE_CLONE, GimpPerspe
 end_define
 
 begin_typedef
-DECL|typedef|GimpPerspectiveClone
-typedef|typedef
-name|struct
-name|_GimpPerspectiveClone
-name|GimpPerspectiveClone
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpPerspectiveCloneClass
 typedef|typedef
 name|struct

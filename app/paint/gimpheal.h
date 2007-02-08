@@ -86,15 +86,6 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_HEAL, GimpHealClass))
 end_define
 
 begin_typedef
-DECL|typedef|GimpHeal
-typedef|typedef
-name|struct
-name|_GimpHeal
-name|GimpHeal
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpHealClass
 typedef|typedef
 name|struct
