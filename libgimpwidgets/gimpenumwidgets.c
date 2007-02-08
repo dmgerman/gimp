@@ -884,6 +884,16 @@ argument_list|(
 name|group
 argument_list|)
 expr_stmt|;
+name|gtk_button_set_relief
+argument_list|(
+name|GTK_BUTTON
+argument_list|(
+name|button
+argument_list|)
+argument_list|,
+name|GTK_RELIEF_NONE
+argument_list|)
+expr_stmt|;
 name|gtk_toggle_button_set_mode
 argument_list|(
 name|GTK_TOGGLE_BUTTON
