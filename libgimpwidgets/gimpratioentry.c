@@ -55,7 +55,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2969e9980103
+DECL|enum|__anon2a2f04a40103
 block|{
 DECL|enumerator|RATIO_CHANGED
 name|RATIO_CHANGED
@@ -68,7 +68,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2969e9980203
+DECL|enum|__anon2a2f04a40203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -90,7 +90,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2969e9980303
+DECL|enum|__anon2a2f04a40303
 block|{
 DECL|enumerator|COLUMN_NUMERATOR
 name|COLUMN_NUMERATOR
@@ -763,6 +763,10 @@ name|entry
 argument_list|)
 operator|->
 name|history
+argument_list|,
+literal|"inline-completion"
+argument_list|,
+name|TRUE
 argument_list|,
 name|NULL
 argument_list|)
