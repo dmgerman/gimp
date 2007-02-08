@@ -819,7 +819,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|2
+literal|0
 argument_list|)
 expr_stmt|;
 name|g_object_weak_ref

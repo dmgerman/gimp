@@ -3565,16 +3565,6 @@ argument_list|,
 literal|2
 argument_list|)
 expr_stmt|;
-name|gtk_box_set_spacing
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|hbox
-argument_list|)
-argument_list|,
-literal|4
-argument_list|)
-expr_stmt|;
 name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
