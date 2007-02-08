@@ -141,8 +141,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/*  GParamDouble, GParamDouble, GParamBoolean, GParamDouble, GParamDouble  */
+end_comment
+
 begin_function_decl
-name|void
+name|GtkWidget
+modifier|*
 name|gimp_prop_aspect_ratio_new
 parameter_list|(
 name|GObject
@@ -173,19 +178,6 @@ specifier|const
 name|gchar
 modifier|*
 name|height_property
-parameter_list|,
-name|gint
-name|digits
-parameter_list|,
-name|GtkTable
-modifier|*
-name|table
-parameter_list|,
-name|gint
-name|row0
-parameter_list|,
-name|gint
-name|col0
 parameter_list|)
 function_decl|;
 end_function_decl
