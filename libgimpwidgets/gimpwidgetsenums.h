@@ -19,11 +19,51 @@ end_define
 begin_decl_stmt
 name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
+DECL|macro|GIMP_TYPE_ASPECT_TYPE
+define|#
+directive|define
+name|GIMP_TYPE_ASPECT_TYPE
+value|(gimp_aspect_type_get_type ())
+name|GType
+name|gimp_aspect_type_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2b4e60f30103
+block|{
+DECL|enumerator|GIMP_ASPECT_SQUARE
+name|GIMP_ASPECT_SQUARE
+block|,
+comment|/*< desc="Square">*/
+DECL|enumerator|GIMP_ASPECT_PORTRAIT
+name|GIMP_ASPECT_PORTRAIT
+block|,
+comment|/*< desc="Portrait">*/
+DECL|enumerator|GIMP_ASPECT_LANDSCAPE
+name|GIMP_ASPECT_LANDSCAPE
+comment|/*< desc="Landscape">*/
+DECL|typedef|GimpAspectType
+block|}
+name|GimpAspectType
+typedef|;
+end_typedef
+
+begin_define
 DECL|macro|GIMP_TYPE_CHAIN_POSITION
 define|#
 directive|define
 name|GIMP_TYPE_CHAIN_POSITION
 value|(gimp_chain_position_get_type ())
+end_define
+
+begin_decl_stmt
 name|GType
 name|gimp_chain_position_get_type
 argument_list|(
@@ -36,7 +76,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c02c2430103
+DECL|enum|__anon2b4e60f30203
 block|{
 DECL|enumerator|GIMP_CHAIN_TOP
 name|GIMP_CHAIN_TOP
@@ -76,7 +116,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c02c2430203
+DECL|enum|__anon2b4e60f30303
 block|{
 DECL|enumerator|GIMP_COLOR_AREA_FLAT
 name|GIMP_COLOR_AREA_FLAT
@@ -115,7 +155,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c02c2430303
+DECL|enum|__anon2b4e60f30403
 block|{
 DECL|enumerator|GIMP_COLOR_SELECTOR_HUE
 name|GIMP_COLOR_SELECTOR_HUE
@@ -171,7 +211,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c02c2430403
+DECL|enum|__anon2b4e60f30503
 block|{
 DECL|enumerator|GIMP_PAGE_SELECTOR_TARGET_LAYERS
 name|GIMP_PAGE_SELECTOR_TARGET_LAYERS
@@ -207,7 +247,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c02c2430503
+DECL|enum|__anon2b4e60f30603
 block|{
 DECL|enumerator|GIMP_SIZE_ENTRY_UPDATE_NONE
 name|GIMP_SIZE_ENTRY_UPDATE_NONE
@@ -250,7 +290,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c02c2430603
+DECL|enum|__anon2b4e60f30703
 block|{
 DECL|enumerator|GIMP_ZOOM_IN
 name|GIMP_ZOOM_IN
