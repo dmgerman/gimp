@@ -122,6 +122,11 @@ DECL|member|parent_class
 name|GtkEntryClass
 name|parent_class
 decl_stmt|;
+DECL|member|history
+name|GtkListStore
+modifier|*
+name|history
+decl_stmt|;
 DECL|member|ratio_changed
 name|void
 function_decl|(
