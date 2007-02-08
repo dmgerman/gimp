@@ -142,7 +142,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*  GParamDouble, GParamDouble, GParamBoolean, GParamDouble, GParamDouble  */
+comment|/*  GParamDouble, GParamDouble, GParamBoolean  */
 end_comment
 
 begin_function_decl
@@ -168,16 +168,6 @@ specifier|const
 name|gchar
 modifier|*
 name|fixed_aspect_property
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|width_property
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|height_property
 parameter_list|)
 function_decl|;
 end_function_decl
