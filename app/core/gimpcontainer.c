@@ -124,7 +124,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b6c6b30103
+DECL|enum|__anon2c7daa390103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -149,7 +149,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b6c6b30203
+DECL|enum|__anon2c7daa390203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1116,7 +1116,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b6c6b30308
+DECL|struct|__anon2c7daa390308
 block|{
 DECL|member|writer
 name|GimpConfigWriter
@@ -1618,11 +1618,37 @@ operator|=
 name|TRUE
 expr_stmt|;
 block|}
+elseif|else
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|name
+argument_list|,
+name|gimp_object_get_name
+argument_list|(
+name|child
+argument_list|)
+argument_list|)
+condition|)
+block|{
+comment|/*  we found the child by name, but the name isn't the same?                  *  this must be an obscure case like template migration,                  *  so set the deserialized name on the already existing                  *  object.                  */
+name|gimp_object_take_name
+argument_list|(
+name|child
+argument_list|,
+name|name
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
 name|g_free
 argument_list|(
 name|name
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 operator|!
