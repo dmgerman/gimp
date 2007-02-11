@@ -64,7 +64,7 @@ end_ifdef
 
 begin_enum
 enum|enum
-DECL|enum|__anon28eb076a0103
+DECL|enum|__anon299d18610103
 block|{
 DECL|enumerator|COLUMN_UDI
 name|COLUMN_UDI
@@ -378,7 +378,7 @@ name|store
 operator|->
 name|context
 argument_list|,
-literal|"input.mouse"
+literal|"input"
 argument_list|,
 operator|&
 name|num_devices
@@ -682,7 +682,7 @@ index|[
 name|i
 index|]
 argument_list|,
-literal|"input.mouse"
+literal|"input"
 argument_list|)
 condition|)
 continue|continue;
@@ -962,7 +962,7 @@ name|context
 argument_list|,
 name|udi
 argument_list|,
-literal|"linux.device_file"
+literal|"input.device"
 argument_list|,
 name|NULL
 argument_list|)
