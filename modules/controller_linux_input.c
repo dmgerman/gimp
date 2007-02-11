@@ -91,13 +91,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpinputdevicestore.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/libgimp-intl.h"
 end_include
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299fdd3d0108
+DECL|struct|__anon2c1717070108
 block|{
 DECL|member|code
 name|guint16
@@ -608,7 +614,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon299fdd3d0203
+DECL|enum|__anon2c1717070203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -748,6 +754,18 @@ parameter_list|(
 name|ControllerLinuxInputClass
 modifier|*
 name|klass
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|linux_input_init
+parameter_list|(
+name|ControllerLinuxInput
+modifier|*
+name|controller
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1036,8 +1054,10 @@ block|,
 literal|0
 block|,
 comment|/* n_preallocs    */
-name|NULL
-comment|/* instance_init  */
+operator|(
+name|GInstanceInitFunc
+operator|)
+name|linux_input_init
 block|}
 decl_stmt|;
 name|controller_type
@@ -1181,6 +1201,23 @@ operator|->
 name|get_event_blurb
 operator|=
 name|linux_input_get_event_blurb
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|linux_input_init (ControllerLinuxInput * controller)
+name|linux_input_init
+parameter_list|(
+name|ControllerLinuxInput
+modifier|*
+name|controller
+parameter_list|)
+block|{
+name|gimp_input_device_store_new
+argument_list|()
 expr_stmt|;
 block|}
 end_function
