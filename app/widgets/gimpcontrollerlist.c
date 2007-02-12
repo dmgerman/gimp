@@ -145,12 +145,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpviewabledialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpwidgets-utils.h"
 end_include
 
@@ -162,7 +156,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon290e0b680103
+DECL|enum|__anon29eb06060103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -175,7 +169,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon290e0b680203
+DECL|enum|__anon29eb06060203
 block|{
 DECL|enumerator|COLUMN_ICON
 name|COLUMN_ICON
@@ -2669,40 +2663,21 @@ return|return;
 block|}
 name|dialog
 operator|=
-name|gimp_viewable_dialog_new
+name|gimp_dialog_new
 argument_list|(
-name|GIMP_VIEWABLE
-argument_list|(
-name|list
-operator|->
-name|dest_info
-argument_list|)
-argument_list|,
-name|gimp_get_user_context
-argument_list|(
-name|list
-operator|->
-name|gimp
-argument_list|)
-argument_list|,
-name|_
-argument_list|(
-literal|"Configure Controller"
-argument_list|)
-argument_list|,
-literal|"gimp-controller-editor-dialog"
-argument_list|,
-name|GTK_STOCK_EDIT
-argument_list|,
 name|_
 argument_list|(
 literal|"Configure Input Controller"
 argument_list|)
 argument_list|,
-name|GTK_WIDGET
+literal|"gimp-controller-editor-dialog"
+argument_list|,
+name|gtk_widget_get_toplevel
 argument_list|(
-name|list
+name|button
 argument_list|)
+argument_list|,
+name|GTK_DIALOG_DESTROY_WITH_PARENT
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
