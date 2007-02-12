@@ -277,6 +277,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimpwidgets/gimpstringcombobox.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimpwidgets/gimpunitmenu.h>
 end_include
 

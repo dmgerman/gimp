@@ -523,6 +523,33 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|GtkWidget
+modifier|*
+name|gimp_prop_string_combo_box_new
+parameter_list|(
+name|GObject
+modifier|*
+name|config
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|property_name
+parameter_list|,
+name|GtkTreeStore
+modifier|*
+name|store
+parameter_list|,
+name|gint
+name|id_column
+parameter_list|,
+name|gint
+name|label_column
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/*  GimpParamPath  */
 end_comment

@@ -370,6 +370,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpStringComboBox
+typedef|typedef
+name|struct
+name|_GimpStringComboBox
+name|GimpStringComboBox
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpUnitMenu
 typedef|typedef
 name|struct
