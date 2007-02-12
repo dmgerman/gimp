@@ -64,7 +64,7 @@ end_ifdef
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a153840103
+DECL|enum|__anon2abe3cfb0103
 block|{
 DECL|enumerator|COLUMN_UDI
 name|COLUMN_UDI
@@ -779,13 +779,6 @@ argument_list|)
 argument_list|,
 operator|&
 name|iter
-argument_list|)
-expr_stmt|;
-name|g_printerr
-argument_list|(
-literal|"%s\n"
-argument_list|,
-name|str
 argument_list|)
 expr_stmt|;
 name|gtk_list_store_set
