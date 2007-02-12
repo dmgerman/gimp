@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon287e36f30103
+DECL|enum|__anon299edf420103
 block|{
 DECL|enumerator|COLORBLIND_DEFICIENCY_PROTANOPIA
 name|COLORBLIND_DEFICIENCY_PROTANOPIA
@@ -345,7 +345,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon287e36f30203
+DECL|enum|__anon299edf420203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -811,6 +811,14 @@ argument_list|,
 literal|"CDisplayColorblindDeficiency"
 argument_list|,
 name|enum_values
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_domain
+argument_list|(
+name|cdisplay_colorblind_deficiency_type
+argument_list|,
+name|GETTEXT_PACKAGE
+literal|"-libgimp"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
