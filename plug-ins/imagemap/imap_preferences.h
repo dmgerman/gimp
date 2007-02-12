@@ -23,7 +23,7 @@ file|"imap_default_dialog.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon29b2fc0f0108
+DECL|struct|__anon2a44c9050108
 typedef|typedef
 struct|struct
 block|{
@@ -50,7 +50,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29b2fc0f0208
+DECL|struct|__anon2a44c9050208
 typedef|typedef
 struct|struct
 block|{
@@ -121,7 +121,9 @@ end_typedef
 begin_function_decl
 name|void
 name|do_preferences_dialog
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 function_decl|;
 end_function_decl
 

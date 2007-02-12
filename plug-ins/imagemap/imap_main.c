@@ -219,6 +219,26 @@ name|PLUG_IN_PROC
 value|"plug-in-imagemap"
 end_define
 
+begin_function_decl
+specifier|static
+name|gint
+name|zoom_in
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|gint
+name|zoom_out
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/* Global variables */
 end_comment
@@ -313,7 +333,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|_image_name
 specifier|static
-name|char
+name|gchar
 modifier|*
 name|_image_name
 decl_stmt|;
@@ -1305,6 +1325,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|gint
 DECL|function|zoom_out (void)
 name|zoom_out
@@ -1924,7 +1945,7 @@ end_function
 
 begin_function
 specifier|const
-name|char
+name|gchar
 modifier|*
 DECL|function|get_image_name (void)
 name|get_image_name

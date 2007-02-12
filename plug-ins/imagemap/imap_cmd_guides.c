@@ -58,7 +58,7 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon28beece00108
+DECL|struct|__anon29d35c9b0108
 typedef|typedef
 struct|struct
 block|{
@@ -1498,8 +1498,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|do_create_guides_dialog (ObjectList_t * list)
-name|do_create_guides_dialog
+DECL|function|do_create_guides_dialog_local (ObjectList_t * list)
+name|do_create_guides_dialog_local
 parameter_list|(
 name|ObjectList_t
 modifier|*
@@ -1572,7 +1572,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon28beece00208
+DECL|struct|__anon29d35c9b0208
 typedef|typedef
 struct|struct
 block|{
@@ -1660,7 +1660,7 @@ operator|*
 operator|)
 name|parent
 decl_stmt|;
-name|do_create_guides_dialog
+name|do_create_guides_dialog_local
 argument_list|(
 name|command
 operator|->

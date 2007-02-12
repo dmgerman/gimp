@@ -993,7 +993,7 @@ value|((obj)->class->get_stock_icon_name())
 end_define
 
 begin_typedef
-DECL|struct|__anon2bc1d49f0108
+DECL|struct|__anon278343af0108
 typedef|typedef
 struct|struct
 block|{
@@ -1097,7 +1097,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon2bc1d49f0208
+DECL|struct|__anon278343af0208
 typedef|typedef
 struct|struct
 block|{
@@ -1162,7 +1162,9 @@ begin_function_decl
 name|ObjectList_t
 modifier|*
 name|make_object_list
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 function_decl|;
 end_function_decl
 
