@@ -64,7 +64,7 @@ end_ifdef
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d239a50103
+DECL|enum|__anon27a153840103
 block|{
 DECL|enumerator|COLUMN_UDI
 name|COLUMN_UDI
@@ -547,14 +547,6 @@ decl_stmt|;
 name|gboolean
 name|iter_valid
 decl_stmt|;
-name|g_value_init
-argument_list|(
-operator|&
-name|value
-argument_list|,
-name|G_TYPE_STRING
-argument_list|)
-expr_stmt|;
 for|for
 control|(
 name|iter_valid
@@ -614,13 +606,14 @@ argument_list|)
 operator|==
 literal|0
 condition|)
-break|break;
-name|g_value_reset
+block|{
+name|g_value_unset
 argument_list|(
 operator|&
 name|value
 argument_list|)
 expr_stmt|;
+break|break;
 block|}
 name|g_value_unset
 argument_list|(
@@ -628,6 +621,7 @@ operator|&
 name|value
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|iter_valid
 return|;

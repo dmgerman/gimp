@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon287b1eaf0103
+DECL|enum|__anon2a0e268e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -55,7 +55,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287b1eaf0208
+DECL|struct|__anon2a0e268e0208
 block|{
 DECL|member|id_column
 name|gint
@@ -734,14 +734,6 @@ name|gboolean
 name|iter_valid
 decl_stmt|;
 comment|/*  This lookup could be backed up by a hash table or some other    *  data structure instead of doing a list traversal. But since this    *  is a GtkComboBox, there shouldn't be many entries anyway...    */
-name|g_value_init
-argument_list|(
-operator|&
-name|value
-argument_list|,
-name|G_TYPE_STRING
-argument_list|)
-expr_stmt|;
 for|for
 control|(
 name|iter_valid
@@ -803,13 +795,14 @@ argument_list|)
 operator|==
 literal|0
 condition|)
-break|break;
-name|g_value_reset
+block|{
+name|g_value_unset
 argument_list|(
 operator|&
 name|value
 argument_list|)
 expr_stmt|;
+break|break;
 block|}
 name|g_value_unset
 argument_list|(
@@ -817,6 +810,7 @@ operator|&
 name|value
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|iter_valid
 return|;
