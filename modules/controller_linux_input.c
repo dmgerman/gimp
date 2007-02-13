@@ -103,7 +103,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad637760108
+DECL|struct|__anon29d152060108
 block|{
 DECL|member|code
 name|guint16
@@ -330,7 +330,7 @@ literal|"button-back"
 block|,
 name|N_
 argument_list|(
-literal|"Button Forward"
+literal|"Button Back"
 argument_list|)
 block|}
 block|,
@@ -614,7 +614,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad637760203
+DECL|enum|__anon29d152060203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
