@@ -21,7 +21,7 @@ DECL|macro|GIMP_TYPE_INPUT_DEVICE_STORE
 define|#
 directive|define
 name|GIMP_TYPE_INPUT_DEVICE_STORE
-value|(gimp_input_device_store_get_type ())
+value|(gimp_input_device_store_type)
 end_define
 
 begin_define
@@ -56,14 +56,22 @@ typedef|;
 end_typedef
 
 begin_decl_stmt
+specifier|extern
 name|GType
-name|gimp_input_device_store_get_type
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
+name|gimp_input_device_store_type
 decl_stmt|;
 end_decl_stmt
+
+begin_function_decl
+name|GType
+name|gimp_input_device_store_get_type
+parameter_list|(
+name|GTypeModule
+modifier|*
+name|module
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 name|GimpInputDeviceStore

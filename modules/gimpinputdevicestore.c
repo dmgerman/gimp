@@ -64,7 +64,7 @@ end_ifdef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4966d70103
+DECL|enum|__anon29416e3f0103
 block|{
 DECL|enumerator|COLUMN_UDI
 name|COLUMN_UDI
@@ -80,7 +80,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4966d70203
+DECL|enum|__anon29416e3f0203
 block|{
 DECL|enumerator|DEVICE_ADDED
 name|DEVICE_ADDED
@@ -273,6 +273,26 @@ function_decl|;
 end_function_decl
 
 begin_decl_stmt
+DECL|variable|gimp_input_device_store_type
+name|GType
+name|gimp_input_device_store_type
+init|=
+literal|0
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|parent_class
+specifier|static
+name|GtkListStoreClass
+modifier|*
+name|parent_class
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
 DECL|variable|store_signals
 specifier|static
 name|guint
@@ -287,21 +307,94 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_macro
-DECL|function|G_DEFINE_TYPE (GimpInputDeviceStore,gimp_input_device_store,GTK_TYPE_LIST_STORE)
-name|G_DEFINE_TYPE
+begin_function
+name|GType
+DECL|function|gimp_input_device_store_get_type (GTypeModule * module)
+name|gimp_input_device_store_get_type
+parameter_list|(
+name|GTypeModule
+modifier|*
+name|module
+parameter_list|)
+block|{
+if|if
+condition|(
+operator|!
+name|gimp_input_device_store_type
+condition|)
+block|{
+specifier|const
+name|GTypeInfo
+name|info
+init|=
+block|{
+sizeof|sizeof
 argument_list|(
-argument|GimpInputDeviceStore
-argument_list|,
-argument|gimp_input_device_store
-argument_list|,
-argument|GTK_TYPE_LIST_STORE
+name|GimpInputDeviceStoreClass
 argument_list|)
-end_macro
+block|,
+operator|(
+name|GBaseInitFunc
+operator|)
+name|NULL
+block|,
+operator|(
+name|GBaseFinalizeFunc
+operator|)
+name|NULL
+block|,
+operator|(
+name|GClassInitFunc
+operator|)
+name|gimp_input_device_store_class_init
+block|,
+name|NULL
+block|,
+comment|/* class_finalize */
+name|NULL
+block|,
+comment|/* class_data     */
+sizeof|sizeof
+argument_list|(
+name|GimpInputDeviceStore
+argument_list|)
+block|,
+literal|0
+block|,
+comment|/* n_preallocs    */
+operator|(
+name|GInstanceInitFunc
+operator|)
+name|gimp_input_device_store_init
+block|}
+decl_stmt|;
+name|gimp_input_device_store_type
+operator|=
+name|g_type_module_register_type
+argument_list|(
+name|module
+argument_list|,
+name|GTK_TYPE_LIST_STORE
+argument_list|,
+literal|"GimpInputDeviceStore"
+argument_list|,
+operator|&
+name|info
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+block|}
+return|return
+name|gimp_input_device_store_type
+return|;
+block|}
+end_function
 
 begin_function
 specifier|static
 name|void
+DECL|function|gimp_input_device_store_class_init (GimpInputDeviceStoreClass * klass)
 name|gimp_input_device_store_class_init
 parameter_list|(
 name|GimpInputDeviceStoreClass
@@ -318,6 +411,13 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
+name|parent_class
+operator|=
+name|g_type_class_peek_parent
+argument_list|(
+name|klass
+argument_list|)
+expr_stmt|;
 name|store_signals
 index|[
 name|DEVICE_ADDED
@@ -660,7 +760,7 @@ expr_stmt|;
 block|}
 name|G_OBJECT_CLASS
 argument_list|(
-name|gimp_input_device_store_parent_class
+name|parent_class
 argument_list|)
 operator|->
 name|finalize
@@ -1280,10 +1380,12 @@ end_else
 
 begin_function
 name|GType
-DECL|function|gimp_input_device_store_get_type (void)
+DECL|function|gimp_input_device_store_get_type (GTypeModule * module)
 name|gimp_input_device_store_get_type
 parameter_list|(
-name|void
+name|GTypeModule
+modifier|*
+name|module
 parameter_list|)
 block|{
 return|return
