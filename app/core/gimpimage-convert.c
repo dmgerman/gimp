@@ -407,7 +407,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon279bee1a0103
+DECL|enum|__anon29b426da0103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1448,7 +1448,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279bee1a0208
+DECL|struct|__anon29b426da0208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1525,7 +1525,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279bee1a0308
+DECL|struct|__anon29b426da0308
 block|{
 DECL|member|ncolors
 name|long
@@ -1710,7 +1710,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279bee1a0408
+DECL|struct|__anon29b426da0408
 block|{
 DECL|member|used_count
 name|signed
@@ -4404,6 +4404,11 @@ name|total_size
 init|=
 literal|0
 decl_stmt|;
+name|gint
+name|count
+init|=
+literal|0
+decl_stmt|;
 name|gboolean
 name|has_alpha
 init|=
@@ -4512,6 +4517,9 @@ name|pixel_regions_process
 argument_list|(
 name|pr
 argument_list|)
+operator|,
+name|count
+operator|++
 control|)
 block|{
 specifier|const
@@ -5045,6 +5053,14 @@ block|}
 if|if
 condition|(
 name|progress
+operator|&&
+operator|(
+name|count
+operator|%
+literal|16
+operator|==
+literal|0
+operator|)
 condition|)
 name|gimp_progress_set_value
 argument_list|(
@@ -7490,6 +7506,14 @@ expr_stmt|;
 if|if
 condition|(
 name|progress
+operator|&&
+operator|(
+name|numboxes
+operator|%
+literal|16
+operator|==
+literal|0
+operator|)
 condition|)
 name|gimp_progress_set_value
 argument_list|(
@@ -11819,6 +11843,11 @@ name|glong
 name|layer_size
 decl_stmt|;
 name|gint
+name|count
+init|=
+literal|0
+decl_stmt|;
+name|gint
 name|nth_layer
 init|=
 name|quantobj
@@ -11983,6 +12012,9 @@ name|pixel_regions_process
 argument_list|(
 name|pr
 argument_list|)
+operator|,
+name|count
+operator|++
 control|)
 block|{
 name|src
@@ -12247,6 +12279,14 @@ condition|(
 name|quantobj
 operator|->
 name|progress
+operator|&&
+operator|(
+name|count
+operator|%
+literal|16
+operator|==
+literal|0
+operator|)
 condition|)
 name|gimp_progress_set_value
 argument_list|(
@@ -12408,6 +12448,11 @@ literal|0
 decl_stmt|;
 name|glong
 name|layer_size
+decl_stmt|;
+name|gint
+name|count
+init|=
+literal|0
 decl_stmt|;
 name|gint
 name|nth_layer
@@ -12574,6 +12619,9 @@ name|pixel_regions_process
 argument_list|(
 name|pr
 argument_list|)
+operator|,
+name|count
+operator|++
 control|)
 block|{
 name|src
@@ -13297,6 +13345,14 @@ condition|(
 name|quantobj
 operator|->
 name|progress
+operator|&&
+operator|(
+name|count
+operator|%
+literal|16
+operator|==
+literal|0
+operator|)
 condition|)
 name|gimp_progress_set_value
 argument_list|(
@@ -17124,6 +17180,14 @@ condition|(
 name|quantobj
 operator|->
 name|progress
+operator|&&
+operator|(
+name|row
+operator|%
+literal|16
+operator|==
+literal|0
+operator|)
 condition|)
 name|gimp_progress_set_value
 argument_list|(
