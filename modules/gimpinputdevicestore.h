@@ -66,7 +66,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function_decl
-name|GtkListStore
+name|GimpInputDeviceStore
 modifier|*
 name|gimp_input_device_store_new
 parameter_list|(
