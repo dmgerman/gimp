@@ -100,6 +100,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|GError
+modifier|*
+name|gimp_input_device_store_get_error
+parameter_list|(
+name|GimpInputDeviceStore
+modifier|*
+name|store
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
