@@ -64,7 +64,7 @@ end_ifdef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6e284b0103
+DECL|enum|__anon29e057860103
 block|{
 DECL|enumerator|COLUMN_UDI
 name|COLUMN_UDI
@@ -80,7 +80,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6e284b0203
+DECL|enum|__anon29e057860203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -93,7 +93,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6e284b0303
+DECL|enum|__anon29e057860303
 block|{
 DECL|enumerator|DEVICE_ADDED
 name|DEVICE_ADDED
@@ -1667,15 +1667,12 @@ block|}
 end_function
 
 begin_function
-name|GtkListStore
+name|GimpInputDeviceStore
 modifier|*
-DECL|function|gimp_input_device_store_new (GError ** error)
+DECL|function|gimp_input_device_store_new (void)
 name|gimp_input_device_store_new
 parameter_list|(
-name|GError
-modifier|*
-modifier|*
-name|error
+name|void
 parameter_list|)
 block|{
 return|return
