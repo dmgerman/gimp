@@ -156,7 +156,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29eb06060103
+DECL|enum|__anon29d0b2f80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -169,7 +169,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29eb06060203
+DECL|enum|__anon29d0b2f80203
 block|{
 DECL|enumerator|COLUMN_ICON
 name|COLUMN_ICON
@@ -2674,7 +2674,10 @@ literal|"gimp-controller-editor-dialog"
 argument_list|,
 name|gtk_widget_get_toplevel
 argument_list|(
-name|button
+name|GTK_WIDGET
+argument_list|(
+name|list
+argument_list|)
 argument_list|)
 argument_list|,
 name|GTK_DIALOG_DESTROY_WITH_PARENT
