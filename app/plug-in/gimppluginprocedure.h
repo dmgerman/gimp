@@ -358,6 +358,25 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|const
+name|gchar
+modifier|*
+name|gimp_plug_in_procedure_get_blurb
+parameter_list|(
+specifier|const
+name|GimpPlugInProcedure
+modifier|*
+name|proc
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|locale_domain
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_plug_in_procedure_set_icon
 parameter_list|(
