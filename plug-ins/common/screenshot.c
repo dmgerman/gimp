@@ -307,7 +307,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a2960d70103
+DECL|enum|__anon29776dc50103
 block|{
 DECL|enumerator|SHOOT_ROOT
 name|SHOOT_ROOT
@@ -326,7 +326,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2960d70208
+DECL|struct|__anon29776dc50208
 block|{
 DECL|member|shoot_type
 name|ShootType
@@ -4354,20 +4354,6 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|button
-argument_list|)
-expr_stmt|;
-name|gimp_help_set_help_data
-argument_list|(
-name|button
-argument_list|,
-name|_
-argument_list|(
-literal|"If enabled, you can use the mouse to "
-literal|"select a rectangular region of the "
-literal|"screen."
-argument_list|)
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|g_object_set_data
