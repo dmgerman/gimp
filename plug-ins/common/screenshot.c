@@ -307,7 +307,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29776dc50103
+DECL|enum|__anon2afaeff30103
 block|{
 DECL|enumerator|SHOOT_ROOT
 name|SHOOT_ROOT
@@ -326,7 +326,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29776dc50208
+DECL|struct|__anon2afaeff30208
 block|{
 DECL|member|shoot_type
 name|ShootType
@@ -3760,7 +3760,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"_Grab"
+literal|"S_nap"
 argument_list|)
 argument_list|,
 name|GTK_RESPONSE_OK
@@ -3941,8 +3941,8 @@ name|SHOOT_WINDOW
 argument_list|,
 name|_
 argument_list|(
-literal|"After the delay, click in a window to snap it. Or "
-literal|"click and hold in a window before the delay ends."
+literal|"At the end of the delay, click in a window "
+literal|"to snap it."
 argument_list|)
 argument_list|)
 expr_stmt|;
