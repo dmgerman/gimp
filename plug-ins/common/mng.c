@@ -241,7 +241,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2906282d0103
+DECL|enum|__anon290f8cab0103
 block|{
 DECL|enumerator|CHUNKS_PNG_D
 name|CHUNKS_PNG_D
@@ -260,7 +260,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2906282d0203
+DECL|enum|__anon290f8cab0203
 block|{
 DECL|enumerator|DISPOSE_COMBINE
 name|DISPOSE_COMBINE
@@ -1780,9 +1780,6 @@ name|rows
 decl_stmt|,
 name|cols
 decl_stmt|;
-name|gdouble
-name|gamma
-decl_stmt|;
 specifier|volatile
 name|gint
 name|i
@@ -2406,11 +2403,6 @@ operator|.
 name|gama
 condition|)
 block|{
-name|gamma
-operator|=
-name|gimp_gamma
-argument_list|()
-expr_stmt|;
 if|if
 condition|(
 operator|(
@@ -2426,19 +2418,12 @@ operator|(
 literal|1.0
 operator|/
 operator|(
-operator|(
-name|gamma
-operator|!=
-literal|1.0
-operator|)
-condition|?
-name|gamma
-else|:
-literal|2.2
-operator|)
+name|gimp_gamma
+argument_list|()
 operator|)
 operator|*
 literal|100000
+operator|)
 argument_list|)
 operator|)
 operator|!=
