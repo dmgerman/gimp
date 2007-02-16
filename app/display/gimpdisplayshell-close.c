@@ -398,7 +398,7 @@ name|gimp_message_dialog_new
 argument_list|(
 name|title
 argument_list|,
-name|GIMP_STOCK_WARNING
+name|GTK_STOCK_SAVE
 argument_list|,
 name|GTK_WIDGET
 argument_list|(

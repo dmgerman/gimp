@@ -932,8 +932,30 @@ name|box
 argument_list|,
 name|_
 argument_list|(
-literal|"Are you sure you want to delete "
-literal|"'%s' from the list and from disk?"
+literal|"Delete '%s'?"
+argument_list|)
+argument_list|,
+name|GIMP_OBJECT
+argument_list|(
+name|data
+argument_list|)
+operator|->
+name|name
+argument_list|)
+expr_stmt|;
+name|gimp_message_box_set_text
+argument_list|(
+name|GIMP_MESSAGE_DIALOG
+argument_list|(
+name|dialog
+argument_list|)
+operator|->
+name|box
+argument_list|,
+name|_
+argument_list|(
+literal|"Are you sure you want to remove '%s' "
+literal|"from the list and delete it on disk?"
 argument_list|)
 argument_list|,
 name|GIMP_OBJECT
