@@ -55,12 +55,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimp-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpmarshal.h"
 end_include
 
@@ -78,7 +72,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9feaa30103
+DECL|enum|__anon2895149d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -100,7 +94,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9feaa30203
+DECL|enum|__anon2895149d0203
 block|{
 DECL|enumerator|EVENT_MAPPED
 name|EVENT_MAPPED
@@ -433,7 +427,7 @@ argument_list|,
 name|event_mapped
 argument_list|)
 argument_list|,
-name|gimp_boolean_handled_accum
+name|g_signal_accumulator_true_handled
 argument_list|,
 name|NULL
 argument_list|,

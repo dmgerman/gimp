@@ -60,7 +60,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b580af70103
+DECL|enum|__anon2961d3bf0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -76,7 +76,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b580af70203
+DECL|enum|__anon2961d3bf0203
 block|{
 DECL|enumerator|EVENT
 name|EVENT
@@ -180,60 +180,6 @@ literal|0
 block|}
 decl_stmt|;
 end_decl_stmt
-
-begin_function
-specifier|static
-name|gboolean
-DECL|function|gimp_controller_boolean_handled_accumulator (GSignalInvocationHint * ihint,GValue * return_accu,const GValue * handler_return,gpointer dummy)
-name|gimp_controller_boolean_handled_accumulator
-parameter_list|(
-name|GSignalInvocationHint
-modifier|*
-name|ihint
-parameter_list|,
-name|GValue
-modifier|*
-name|return_accu
-parameter_list|,
-specifier|const
-name|GValue
-modifier|*
-name|handler_return
-parameter_list|,
-name|gpointer
-name|dummy
-parameter_list|)
-block|{
-name|gboolean
-name|continue_emission
-decl_stmt|;
-name|gboolean
-name|signal_handled
-decl_stmt|;
-name|signal_handled
-operator|=
-name|g_value_get_boolean
-argument_list|(
-name|handler_return
-argument_list|)
-expr_stmt|;
-name|g_value_set_boolean
-argument_list|(
-name|return_accu
-argument_list|,
-name|signal_handled
-argument_list|)
-expr_stmt|;
-name|continue_emission
-operator|=
-operator|!
-name|signal_handled
-expr_stmt|;
-return|return
-name|continue_emission
-return|;
-block|}
-end_function
 
 begin_function
 specifier|static
@@ -382,7 +328,7 @@ argument_list|,
 name|event
 argument_list|)
 argument_list|,
-name|gimp_controller_boolean_handled_accumulator
+name|g_signal_accumulator_true_handled
 argument_list|,
 name|NULL
 argument_list|,

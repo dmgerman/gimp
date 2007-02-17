@@ -297,7 +297,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a300c650103
+DECL|enum|__anon29bdbeaa0103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -599,7 +599,7 @@ argument_list|,
 name|exit
 argument_list|)
 argument_list|,
-name|gimp_boolean_handled_accum
+name|g_signal_accumulator_true_handled
 argument_list|,
 name|NULL
 argument_list|,
