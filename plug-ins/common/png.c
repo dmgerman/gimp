@@ -154,7 +154,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c398e550108
+DECL|struct|__anon273c74670108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -201,7 +201,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c398e550208
+DECL|struct|__anon273c74670208
 block|{
 DECL|member|run
 name|gboolean
@@ -3274,6 +3274,13 @@ name|bpp
 operator|=
 name|bpp
 expr_stmt|;
+name|error_data
+operator|.
+name|pixel_rgn
+operator|=
+operator|&
+name|pixel_rgn
+expr_stmt|;
 name|png_set_error_fn
 argument_list|(
 name|pp
@@ -3388,13 +3395,6 @@ operator|.
 name|num
 operator|=
 name|num
-expr_stmt|;
-name|error_data
-operator|.
-name|pixel_rgn
-operator|=
-operator|&
-name|pixel_rgn
 expr_stmt|;
 name|png_read_rows
 argument_list|(
