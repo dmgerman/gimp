@@ -619,7 +619,7 @@ function_decl|;
 end_function_decl
 
 begin_enum
-DECL|enum|__anon29270ace0103
+DECL|enum|__anon2b2f12540103
 DECL|enumerator|UNDEFINED
 DECL|enumerator|RECTANGLE
 DECL|enumerator|CIRCLE
@@ -6600,7 +6600,7 @@ name|yysize_overflow
 init|=
 literal|0
 decl_stmt|;
-DECL|enum|__anon29270ace0203
+DECL|enum|__anon2b2f12540203
 DECL|enumerator|YYERROR_VERBOSE_ARGS_MAXIMUM
 enum|enum
 block|{
@@ -8167,7 +8167,7 @@ operator|=
 operator|(
 name|gint
 operator|)
-name|atof
+name|g_ascii_strtod
 argument_list|(
 operator|(
 name|yyvsp
@@ -8183,6 +8183,8 @@ index|]
 operator|.
 name|id
 operator|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}

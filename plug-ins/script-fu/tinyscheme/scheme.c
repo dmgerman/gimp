@@ -8351,9 +8351,11 @@ name|mk_real
 argument_list|(
 name|sc
 argument_list|,
-name|atof
+name|g_ascii_strtod
 argument_list|(
 name|q
+argument_list|,
+name|NULL
 argument_list|)
 argument_list|)
 return|;
@@ -11469,7 +11471,7 @@ decl_stmt|;
 name|int
 name|len
 decl_stmt|;
-DECL|enum|__anon2a0b7a330103
+DECL|enum|__anon2ae719880103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -28224,7 +28226,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon2a0b7a330208
+DECL|struct|__anon2ae719880208
 specifier|static
 struct|struct
 block|{
@@ -28459,7 +28461,7 @@ value|"\016"
 end_define
 
 begin_typedef
-DECL|struct|__anon2a0b7a330308
+DECL|struct|__anon2ae719880308
 typedef|typedef
 struct|struct
 block|{

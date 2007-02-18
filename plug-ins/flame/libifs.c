@@ -4570,12 +4570,14 @@ operator|*
 name|slot
 operator|++
 operator|=
-name|atof
+name|g_strtod
 argument_list|(
 name|argv
 index|[
 name|i
 index|]
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}

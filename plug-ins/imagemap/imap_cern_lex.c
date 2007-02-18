@@ -3830,6 +3830,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<glib.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"imap_cern_parse.h"
 end_include
 
@@ -3858,7 +3864,7 @@ end_comment
 begin_line
 line|#
 directive|line
-number|572
+number|574
 file|"<stdout>"
 end_line
 
@@ -4377,11 +4383,11 @@ name|yy_act
 decl_stmt|;
 line|#
 directive|line
-number|43
+number|45
 file|"imap_cern.l"
 line|#
 directive|line
-number|729
+number|731
 file|"<stdout>"
 if|if
 condition|(
@@ -4684,7 +4690,7 @@ comment|/* rule 1 can match eol */
 name|YY_RULE_SETUP
 line|#
 directive|line
-number|45
+number|47
 file|"imap_cern.l"
 block|{
 name|BEGIN
@@ -4704,7 +4710,7 @@ comment|/* rule 2 can match eol */
 name|YY_RULE_SETUP
 line|#
 directive|line
-number|50
+number|52
 file|"imap_cern.l"
 block|{
 name|BEGIN
@@ -4724,7 +4730,7 @@ comment|/* rule 3 can match eol */
 name|YY_RULE_SETUP
 line|#
 directive|line
-number|55
+number|57
 file|"imap_cern.l"
 block|{
 name|BEGIN
@@ -4762,7 +4768,7 @@ comment|/* set up cern_text again */
 name|YY_RULE_SETUP
 line|#
 directive|line
-number|60
+number|62
 file|"imap_cern.l"
 block|{
 name|BEGIN
@@ -4790,7 +4796,7 @@ case|:
 name|YY_RULE_SETUP
 line|#
 directive|line
-number|66
+number|68
 file|"imap_cern.l"
 return|return
 name|RECTANGLE
@@ -4802,7 +4808,7 @@ case|:
 name|YY_RULE_SETUP
 line|#
 directive|line
-number|68
+number|70
 file|"imap_cern.l"
 return|return
 name|CIRCLE
@@ -4814,7 +4820,7 @@ case|:
 name|YY_RULE_SETUP
 line|#
 directive|line
-number|70
+number|72
 file|"imap_cern.l"
 return|return
 name|POLYGON
@@ -4826,7 +4832,7 @@ case|:
 name|YY_RULE_SETUP
 line|#
 directive|line
-number|72
+number|74
 file|"imap_cern.l"
 return|return
 name|DEFAULT
@@ -4857,7 +4863,7 @@ comment|/* set up cern_text again */
 name|YY_RULE_SETUP
 line|#
 directive|line
-number|74
+number|76
 file|"imap_cern.l"
 block|{
 name|strcpy
@@ -4880,16 +4886,18 @@ case|:
 name|YY_RULE_SETUP
 line|#
 directive|line
-number|79
+number|81
 file|"imap_cern.l"
 block|{
 name|cern_lval
 operator|.
 name|value
 operator|=
-name|atof
+name|g_ascii_strtod
 argument_list|(
 name|cern_text
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 return|return
@@ -4904,7 +4912,7 @@ comment|/* rule 11 can match eol */
 name|YY_RULE_SETUP
 line|#
 directive|line
-number|84
+number|86
 file|"imap_cern.l"
 expr_stmt|;
 comment|/* Eat white space */
@@ -4915,7 +4923,7 @@ case|:
 name|YY_RULE_SETUP
 line|#
 directive|line
-number|86
+number|88
 file|"imap_cern.l"
 return|return
 operator|*
@@ -4928,7 +4936,7 @@ case|:
 name|YY_RULE_SETUP
 line|#
 directive|line
-number|88
+number|90
 file|"imap_cern.l"
 DECL|variable|ECHO
 name|ECHO
@@ -4936,7 +4944,7 @@ decl_stmt|;
 name|YY_BREAK
 line|#
 directive|line
-number|906
+number|908
 file|"<stdout>"
 case|case
 name|YY_STATE_EOF
@@ -8134,7 +8142,7 @@ end_define
 begin_line
 line|#
 directive|line
-number|88
+number|90
 file|"imap_cern.l"
 end_line
 

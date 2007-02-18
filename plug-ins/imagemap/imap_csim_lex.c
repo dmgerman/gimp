@@ -4192,6 +4192,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<glib.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"imap_csim_parse.h"
 end_include
 
@@ -4220,7 +4226,7 @@ end_comment
 begin_line
 line|#
 directive|line
-number|591
+number|593
 file|"<stdout>"
 end_line
 
@@ -4747,11 +4753,11 @@ name|yy_act
 decl_stmt|;
 line|#
 directive|line
-number|44
+number|46
 file|"imap_csim.l"
 line|#
 directive|line
-number|749
+number|751
 file|"<stdout>"
 if|if
 condition|(
@@ -5053,7 +5059,7 @@ case|:
 name|YY_RULE_SETUP
 line|#
 directive|line
-number|46
+number|48
 file|"imap_csim.l"
 block|{
 name|BEGIN
@@ -5072,7 +5078,7 @@ case|:
 name|YY_RULE_SETUP
 line|#
 directive|line
-number|51
+number|53
 file|"imap_csim.l"
 block|{
 name|BEGIN
@@ -5091,7 +5097,7 @@ case|:
 name|YY_RULE_SETUP
 line|#
 directive|line
-number|56
+number|58
 file|"imap_csim.l"
 block|{
 name|BEGIN
@@ -5110,7 +5116,7 @@ case|:
 name|YY_RULE_SETUP
 line|#
 directive|line
-number|61
+number|63
 file|"imap_csim.l"
 block|{
 name|BEGIN
@@ -5148,7 +5154,7 @@ comment|/* set up csim_text again */
 name|YY_RULE_SETUP
 line|#
 directive|line
-number|66
+number|68
 file|"imap_csim.l"
 block|{
 name|strcpy
@@ -5182,7 +5188,7 @@ case|:
 name|YY_RULE_SETUP
 line|#
 directive|line
-number|72
+number|74
 file|"imap_csim.l"
 return|return
 name|IMG
@@ -5194,7 +5200,7 @@ case|:
 name|YY_RULE_SETUP
 line|#
 directive|line
-number|74
+number|76
 file|"imap_csim.l"
 return|return
 name|SRC
@@ -5206,7 +5212,7 @@ case|:
 name|YY_RULE_SETUP
 line|#
 directive|line
-number|76
+number|78
 file|"imap_csim.l"
 return|return
 name|WIDTH
@@ -5218,7 +5224,7 @@ case|:
 name|YY_RULE_SETUP
 line|#
 directive|line
-number|78
+number|80
 file|"imap_csim.l"
 return|return
 name|HEIGHT
@@ -5230,7 +5236,7 @@ case|:
 name|YY_RULE_SETUP
 line|#
 directive|line
-number|80
+number|82
 file|"imap_csim.l"
 return|return
 name|BORDER
@@ -5242,7 +5248,7 @@ case|:
 name|YY_RULE_SETUP
 line|#
 directive|line
-number|82
+number|84
 file|"imap_csim.l"
 return|return
 name|USEMAP
@@ -5254,7 +5260,7 @@ case|:
 name|YY_RULE_SETUP
 line|#
 directive|line
-number|84
+number|86
 file|"imap_csim.l"
 return|return
 name|START_MAP
@@ -5266,7 +5272,7 @@ case|:
 name|YY_RULE_SETUP
 line|#
 directive|line
-number|86
+number|88
 file|"imap_csim.l"
 return|return
 name|END_MAP
@@ -5278,7 +5284,7 @@ case|:
 name|YY_RULE_SETUP
 line|#
 directive|line
-number|88
+number|90
 file|"imap_csim.l"
 return|return
 name|NAME
@@ -5290,7 +5296,7 @@ case|:
 name|YY_RULE_SETUP
 line|#
 directive|line
-number|90
+number|92
 file|"imap_csim.l"
 return|return
 name|AREA
@@ -5302,7 +5308,7 @@ case|:
 name|YY_RULE_SETUP
 line|#
 directive|line
-number|92
+number|94
 file|"imap_csim.l"
 return|return
 name|SHAPE
@@ -5314,7 +5320,7 @@ case|:
 name|YY_RULE_SETUP
 line|#
 directive|line
-number|94
+number|96
 file|"imap_csim.l"
 return|return
 name|COORDS
@@ -5326,7 +5332,7 @@ case|:
 name|YY_RULE_SETUP
 line|#
 directive|line
-number|96
+number|98
 file|"imap_csim.l"
 return|return
 name|TARGET
@@ -5338,7 +5344,7 @@ case|:
 name|YY_RULE_SETUP
 line|#
 directive|line
-number|98
+number|100
 file|"imap_csim.l"
 return|return
 name|ONMOUSEOVER
@@ -5350,7 +5356,7 @@ case|:
 name|YY_RULE_SETUP
 line|#
 directive|line
-number|100
+number|102
 file|"imap_csim.l"
 return|return
 name|ONMOUSEOUT
@@ -5362,7 +5368,7 @@ case|:
 name|YY_RULE_SETUP
 line|#
 directive|line
-number|102
+number|104
 file|"imap_csim.l"
 return|return
 name|ONFOCUS
@@ -5374,7 +5380,7 @@ case|:
 name|YY_RULE_SETUP
 line|#
 directive|line
-number|104
+number|106
 file|"imap_csim.l"
 return|return
 name|ONBLUR
@@ -5386,7 +5392,7 @@ case|:
 name|YY_RULE_SETUP
 line|#
 directive|line
-number|106
+number|108
 file|"imap_csim.l"
 return|return
 name|ALT
@@ -5398,7 +5404,7 @@ case|:
 name|YY_RULE_SETUP
 line|#
 directive|line
-number|108
+number|110
 file|"imap_csim.l"
 return|return
 name|HREF
@@ -5410,7 +5416,7 @@ case|:
 name|YY_RULE_SETUP
 line|#
 directive|line
-number|110
+number|112
 file|"imap_csim.l"
 return|return
 name|NOHREF
@@ -5422,7 +5428,7 @@ case|:
 name|YY_RULE_SETUP
 line|#
 directive|line
-number|112
+number|114
 file|"imap_csim.l"
 block|{
 name|BEGIN
@@ -5445,7 +5451,7 @@ case|:
 name|YY_RULE_SETUP
 line|#
 directive|line
-number|117
+number|119
 file|"imap_csim.l"
 block|{
 name|BEGIN
@@ -5465,7 +5471,7 @@ comment|/* rule 28 can match eol */
 name|YY_RULE_SETUP
 line|#
 directive|line
-number|122
+number|124
 file|"imap_csim.l"
 name|strcpy
 parameter_list|(
@@ -5483,16 +5489,18 @@ case|:
 name|YY_RULE_SETUP
 line|#
 directive|line
-number|124
+number|126
 file|"imap_csim.l"
 block|{
 name|csim_lval
 operator|.
 name|value
 operator|=
-name|atof
+name|g_ascii_strtod
 argument_list|(
 name|csim_text
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 return|return
@@ -5507,7 +5515,7 @@ comment|/* rule 30 can match eol */
 name|YY_RULE_SETUP
 line|#
 directive|line
-number|129
+number|131
 file|"imap_csim.l"
 expr_stmt|;
 comment|/* Eat white space */
@@ -5518,7 +5526,7 @@ case|:
 name|YY_RULE_SETUP
 line|#
 directive|line
-number|131
+number|133
 file|"imap_csim.l"
 return|return
 operator|*
@@ -5531,7 +5539,7 @@ case|:
 name|YY_RULE_SETUP
 line|#
 directive|line
-number|133
+number|135
 file|"imap_csim.l"
 DECL|variable|ECHO
 name|ECHO
@@ -5539,7 +5547,7 @@ decl_stmt|;
 name|YY_BREAK
 line|#
 directive|line
-number|1022
+number|1024
 file|"<stdout>"
 case|case
 name|YY_STATE_EOF
@@ -8743,7 +8751,7 @@ end_define
 begin_line
 line|#
 directive|line
-number|133
+number|135
 file|"imap_csim.l"
 end_line
 

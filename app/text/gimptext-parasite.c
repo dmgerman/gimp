@@ -329,7 +329,7 @@ end_function
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3b3fdd0103
+DECL|enum|__anon2b8733250103
 block|{
 DECL|enumerator|TEXT
 name|TEXT
@@ -629,12 +629,14 @@ break|break;
 block|}
 name|spacing
 operator|=
-name|atof
+name|g_strtod
 argument_list|(
 name|params
 index|[
 name|LINE_SPACING
 index|]
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|color

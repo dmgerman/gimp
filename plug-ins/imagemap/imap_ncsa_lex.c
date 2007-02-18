@@ -3342,6 +3342,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<glib.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"imap_ncsa_parse.h"
 end_include
 
@@ -3370,7 +3376,7 @@ end_comment
 begin_line
 line|#
 directive|line
-number|543
+number|545
 file|"<stdout>"
 end_line
 
@@ -3897,11 +3903,11 @@ name|yy_act
 decl_stmt|;
 line|#
 directive|line
-number|44
+number|46
 file|"imap_ncsa.l"
 line|#
 directive|line
-number|701
+number|703
 file|"<stdout>"
 if|if
 condition|(
@@ -4203,7 +4209,7 @@ case|:
 name|YY_RULE_SETUP
 line|#
 directive|line
-number|46
+number|48
 file|"imap_ncsa.l"
 block|{
 name|BEGIN
@@ -4222,7 +4228,7 @@ case|:
 name|YY_RULE_SETUP
 line|#
 directive|line
-number|51
+number|53
 file|"imap_ncsa.l"
 block|{
 name|BEGIN
@@ -4241,7 +4247,7 @@ case|:
 name|YY_RULE_SETUP
 line|#
 directive|line
-number|56
+number|58
 file|"imap_ncsa.l"
 block|{
 name|BEGIN
@@ -4260,7 +4266,7 @@ case|:
 name|YY_RULE_SETUP
 line|#
 directive|line
-number|61
+number|63
 file|"imap_ncsa.l"
 block|{
 name|BEGIN
@@ -4279,7 +4285,7 @@ case|:
 name|YY_RULE_SETUP
 line|#
 directive|line
-number|66
+number|68
 file|"imap_ncsa.l"
 block|{
 name|BEGIN
@@ -4307,7 +4313,7 @@ case|:
 name|YY_RULE_SETUP
 line|#
 directive|line
-number|72
+number|74
 file|"imap_ncsa.l"
 block|{
 name|BEGIN
@@ -4326,7 +4332,7 @@ case|:
 name|YY_RULE_SETUP
 line|#
 directive|line
-number|77
+number|79
 file|"imap_ncsa.l"
 block|{
 name|BEGIN
@@ -4345,7 +4351,7 @@ case|:
 name|YY_RULE_SETUP
 line|#
 directive|line
-number|82
+number|84
 file|"imap_ncsa.l"
 block|{
 name|BEGIN
@@ -4364,7 +4370,7 @@ case|:
 name|YY_RULE_SETUP
 line|#
 directive|line
-number|87
+number|89
 file|"imap_ncsa.l"
 block|{
 name|BEGIN
@@ -4383,7 +4389,7 @@ case|:
 name|YY_RULE_SETUP
 line|#
 directive|line
-number|92
+number|94
 file|"imap_ncsa.l"
 block|{
 name|BEGIN
@@ -4422,16 +4428,18 @@ case|:
 name|YY_RULE_SETUP
 line|#
 directive|line
-number|99
+number|101
 file|"imap_ncsa.l"
 block|{
 name|ncsa_lval
 operator|.
 name|value
 operator|=
-name|atof
+name|g_ascii_strtod
 argument_list|(
 name|ncsa_text
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 return|return
@@ -4446,7 +4454,7 @@ comment|/* rule 12 can match eol */
 name|YY_RULE_SETUP
 line|#
 directive|line
-number|104
+number|106
 file|"imap_ncsa.l"
 expr_stmt|;
 comment|/* Eat white space */
@@ -4457,7 +4465,7 @@ case|:
 name|YY_RULE_SETUP
 line|#
 directive|line
-number|106
+number|108
 file|"imap_ncsa.l"
 return|return
 operator|*
@@ -4470,7 +4478,7 @@ case|:
 name|YY_RULE_SETUP
 line|#
 directive|line
-number|108
+number|110
 file|"imap_ncsa.l"
 DECL|variable|ECHO
 name|ECHO
@@ -4478,7 +4486,7 @@ decl_stmt|;
 name|YY_BREAK
 line|#
 directive|line
-number|891
+number|893
 file|"<stdout>"
 case|case
 name|YY_STATE_EOF
@@ -7682,7 +7690,7 @@ end_define
 begin_line
 line|#
 directive|line
-number|108
+number|110
 file|"imap_ncsa.l"
 end_line
 
