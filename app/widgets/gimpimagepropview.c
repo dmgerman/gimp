@@ -113,6 +113,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"plug-in/gimppluginprocedure.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimagepropview.h"
 end_include
 
@@ -130,7 +136,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27cb96900103
+DECL|enum|__anon276f2c420103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1519,10 +1525,8 @@ name|text
 operator|=
 name|proc
 condition|?
-name|gimp_plug_in_manager_get_label
+name|gimp_plug_in_procedure_get_label
 argument_list|(
-name|manager
-argument_list|,
 name|proc
 argument_list|)
 else|:

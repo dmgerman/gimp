@@ -2227,12 +2227,8 @@ name|i
 decl_stmt|;
 name|label
 operator|=
-name|gimp_plug_in_manager_get_label
+name|gimp_plug_in_procedure_get_label
 argument_list|(
-name|gimp
-operator|->
-name|plug_in_manager
-argument_list|,
 name|file_proc
 argument_list|)
 expr_stmt|;

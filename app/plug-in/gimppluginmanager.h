@@ -450,22 +450,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|gchar
-modifier|*
-name|gimp_plug_in_manager_get_label
-parameter_list|(
-name|GimpPlugInManager
-modifier|*
-name|manager
-parameter_list|,
-name|GimpPlugInProcedure
-modifier|*
-name|proc
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_endif
 endif|#
 directive|endif
