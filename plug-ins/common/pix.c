@@ -101,7 +101,7 @@ name|a
 parameter_list|,
 name|b
 parameter_list|)
-value|fprintf(stderr,a,b)
+value|g_printerr (a,b)
 end_define
 
 begin_else

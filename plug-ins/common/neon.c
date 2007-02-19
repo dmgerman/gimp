@@ -56,7 +56,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29863e280108
+DECL|struct|__anon275073f30108
 block|{
 DECL|member|radius
 name|gdouble
@@ -3264,7 +3264,6 @@ name|a
 decl_stmt|,
 name|b
 decl_stmt|;
-comment|/*     for (i = 0; i<=4; i++)       {         fprintf (stderr, "n_p[%d] = %f\n", i, n_p[i]);         fprintf (stderr, "n_m[%d] = %f\n", i, n_m[i]);         fprintf (stderr, "d_p[%d] = %f\n", i, d_p[i]);       }     */
 name|sum_n_p
 operator|=
 literal|0.0

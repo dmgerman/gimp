@@ -56,7 +56,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299c5e2f0108
+DECL|struct|__anon2b2c52aa0108
 block|{
 DECL|member|alpha
 name|gdouble
@@ -83,7 +83,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon299c5e2f0203
+DECL|enum|__anon2b2c52aa0203
 block|{
 DECL|enumerator|filter_alpha_trim
 name|filter_alpha_trim
@@ -1832,10 +1832,8 @@ comment|/* not used */
 block|}
 break|break;
 default|default:
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"unknown filter %d\n"
 argument_list|,
 name|filter

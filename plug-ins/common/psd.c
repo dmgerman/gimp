@@ -136,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a582dcf0103
+DECL|enum|__anon27e880ba0103
 block|{
 DECL|enumerator|PSD_UNKNOWN_IMAGE
 name|PSD_UNKNOWN_IMAGE
@@ -324,7 +324,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a582dcf0208
+DECL|struct|__anon27e880ba0208
 block|{
 DECL|member|hRes
 name|Fixed
@@ -574,7 +574,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2a582dcf0308
+DECL|struct|__anon27e880ba0308
 block|{
 DECL|member|signature
 name|gchar
@@ -8204,10 +8204,8 @@ name|data
 argument_list|)
 expr_stmt|;
 name|IFDBG
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"YAH0a\n"
 argument_list|)
 decl_stmt|;
@@ -8493,20 +8491,16 @@ name|data
 argument_list|)
 expr_stmt|;
 name|IFDBG
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"YAH0b\n"
 argument_list|)
 decl_stmt|;
 block|}
 block|}
 name|IFDBG
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"YAH1\n"
 argument_list|)
 decl_stmt|;
@@ -8587,10 +8581,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 name|IFDBG
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"YAH2\n"
 argument_list|)
 decl_stmt|;
@@ -8617,10 +8609,8 @@ literal|0
 argument_list|)
 expr_stmt|;
 name|IFDBG
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"YAH3\n"
 argument_list|)
 decl_stmt|;
@@ -8668,10 +8658,8 @@ modifier|*
 name|lm_data
 decl_stmt|;
 name|IFDBG
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"Unpacking a layer mask!\n"
 argument_list|)
 decl_stmt|;
@@ -8912,10 +8900,8 @@ expr_stmt|;
 block|}
 block|}
 name|IFDBG
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"YAH4\n"
 argument_list|)
 decl_stmt|;
@@ -8958,10 +8944,8 @@ name|layer_ID
 argument_list|)
 expr_stmt|;
 name|IFDBG
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"YAH5 - merged_data=%p, drawable=%p, drawdim=%dx%dx%d\n"
 argument_list|,
 name|merged_data
@@ -9041,10 +9025,8 @@ name|height
 argument_list|)
 expr_stmt|;
 name|IFDBG
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"YAH6\n"
 argument_list|)
 decl_stmt|;

@@ -264,7 +264,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ade4bf80103
+DECL|enum|__anon27ebffb20103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -464,7 +464,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ade4bf80203
+DECL|enum|__anon27ebffb20203
 block|{
 DECL|enumerator|PTYP_NOT_SUPPORTED
 name|PTYP_NOT_SUPPORTED
@@ -524,7 +524,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ade4bf80303
+DECL|enum|__anon27ebffb20303
 block|{
 DECL|enumerator|XJT_IMAGE_PARASITE
 name|XJT_IMAGE_PARASITE
@@ -554,7 +554,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ade4bf80403
+DECL|enum|__anon27ebffb20403
 block|{
 DECL|enumerator|XJT_RGB
 name|XJT_RGB
@@ -576,7 +576,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ade4bf80503
+DECL|enum|__anon27ebffb20503
 block|{
 DECL|enumerator|XJT_PATHTYPE_UNDEF
 name|XJT_PATHTYPE_UNDEF
@@ -596,7 +596,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ade4bf80603
+DECL|enum|__anon27ebffb20603
 block|{
 DECL|enumerator|XJT_UNIT_PIXEL
 name|XJT_UNIT_PIXEL
@@ -631,7 +631,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ade4bf80703
+DECL|enum|__anon27ebffb20703
 block|{
 DECL|enumerator|XJT_NORMAL_MODE
 name|XJT_NORMAL_MODE
@@ -756,7 +756,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ade4bf80808
+DECL|struct|__anon27ebffb20808
 block|{
 DECL|member|prop_id
 name|t_proptype
@@ -792,7 +792,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ade4bf80908
+DECL|struct|__anon27ebffb20908
 block|{
 DECL|member|int_val1
 name|gint32
@@ -841,7 +841,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ade4bf80a08
+DECL|struct|__anon27ebffb20a08
 block|{
 DECL|member|parasite_type
 name|t_parasitetype
@@ -878,7 +878,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ade4bf80b08
+DECL|struct|__anon27ebffb20b08
 block|{
 DECL|member|path_type
 name|gint32
@@ -928,7 +928,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ade4bf80c08
+DECL|struct|__anon27ebffb20c08
 block|{
 DECL|member|active_channel
 name|gint
@@ -1002,7 +1002,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ade4bf80d08
+DECL|struct|__anon27ebffb20d08
 block|{
 DECL|member|active_layer
 name|gint
@@ -1087,7 +1087,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ade4bf80e08
+DECL|struct|__anon27ebffb20e08
 block|{
 DECL|member|position
 name|gint32
@@ -1111,7 +1111,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ade4bf80f08
+DECL|struct|__anon27ebffb20f08
 block|{
 DECL|member|version
 name|gchar
@@ -1922,10 +1922,8 @@ name|l_rc
 operator|>>
 literal|8
 expr_stmt|;
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"ERROR system: %s\nreturncodes %d %d"
 argument_list|,
 name|cmd
@@ -9685,10 +9683,8 @@ operator|==
 literal|':'
 condition|)
 block|{
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"XJT: PRP syntax error (bool property %s terminated with :)\n"
 argument_list|,
 name|l_token
@@ -9758,10 +9754,8 @@ operator|!=
 literal|':'
 condition|)
 block|{
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"XJT: PRP syntax error (int property %s not terminated with :)\n"
 argument_list|,
 name|l_token
@@ -9800,10 +9794,8 @@ operator|==
 name|l_ptr2
 condition|)
 block|{
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"XJT: PRP syntax error (int property %s :integer value missing)\n"
 argument_list|,
 name|l_token
@@ -9873,10 +9865,8 @@ operator|!=
 literal|','
 condition|)
 block|{
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"XJT: PRP syntax error (int property %s comma missing)\n"
 argument_list|,
 name|l_token
@@ -9918,10 +9908,8 @@ operator|==
 name|l_ptr2
 condition|)
 block|{
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"XJT: PRP syntax error (int property %s : 2.nd integer value missing)\n"
 argument_list|,
 name|l_token
@@ -9978,10 +9966,8 @@ operator|!=
 literal|','
 condition|)
 block|{
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"XJT: PRP syntax error (int property %s comma missing)\n"
 argument_list|,
 name|l_token
@@ -10023,10 +10009,8 @@ operator|==
 name|l_ptr2
 condition|)
 block|{
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"XJT: PRP syntax error (int property %s : 3.rd integer value missing)\n"
 argument_list|,
 name|l_token
@@ -10084,10 +10068,8 @@ operator|!=
 literal|':'
 condition|)
 block|{
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"XJT: PRP syntax error (float property %s not terminated with :)\n"
 argument_list|,
 name|l_token
@@ -10123,10 +10105,8 @@ operator|==
 name|l_ptr2
 condition|)
 block|{
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"XJT: PRP syntax error (float property %s :float value missing)\n"
 argument_list|,
 name|l_token
@@ -10193,10 +10173,8 @@ operator|!=
 literal|','
 condition|)
 block|{
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"XJT: PRP syntax error (float property %s comma missing)\n"
 argument_list|,
 name|l_token
@@ -10235,10 +10213,8 @@ operator|==
 name|l_ptr2
 condition|)
 block|{
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"XJT: PRP syntax error (float property %s : 2.nd float value missing)\n"
 argument_list|,
 name|l_token
@@ -10292,10 +10268,8 @@ operator|!=
 literal|','
 condition|)
 block|{
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"XJT: PRP syntax error (float property %s comma missing)\n"
 argument_list|,
 name|l_token
@@ -10334,10 +10308,8 @@ operator|==
 name|l_ptr2
 condition|)
 block|{
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"XJT: PRP syntax error (float property %s : 3.rd float value missing)\n"
 argument_list|,
 name|l_token
@@ -10386,10 +10358,8 @@ operator|!=
 literal|':'
 condition|)
 block|{
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"XJT: PRP syntax error (floatlist property %s not terminated with :)\n"
 argument_list|,
 name|l_token
@@ -10513,10 +10483,8 @@ operator|==
 literal|0
 condition|)
 block|{
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"XJT: PRP syntax error (floatlist property %s :no float value found)\n"
 argument_list|,
 name|l_token
@@ -10590,10 +10558,8 @@ literal|'\n'
 operator|)
 condition|)
 block|{
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"XJT: PRP syntax error (floatlist property %s :list contains illegal character: %c)\n"
 argument_list|,
 name|l_token
@@ -10632,10 +10598,8 @@ operator|!=
 literal|':'
 condition|)
 block|{
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"XJT: PRP syntax error (string property %s not terminated with :)\n"
 argument_list|,
 name|l_token
@@ -10663,10 +10627,8 @@ operator|!=
 literal|'\"'
 condition|)
 block|{
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"XJT: PRP syntax error (string property %s starting \" is missing)\n"
 argument_list|,
 name|l_token
@@ -10898,10 +10860,8 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"XJT: PRP syntax error (string property %s terminating \" is missing)\n"
 argument_list|,
 name|l_token
@@ -10920,10 +10880,8 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"XJT: ** Warning ** PRP file with unsupported property %s\n"
 argument_list|,
 name|l_token
@@ -10998,10 +10956,8 @@ operator|==
 name|PROP_SYNTAX_ERROR
 condition|)
 block|{
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"XJT: ** Warning ** PRP file skipping property: %s\n"
 argument_list|,
 name|l_token
@@ -11651,10 +11607,8 @@ operator|==
 name|scan_ptr
 condition|)
 block|{
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"XJT: PRP file layer# missing, scanned bad line:\n%s\n"
 argument_list|,
 name|scan_ptr
@@ -11957,7 +11911,7 @@ expr_stmt|;
 block|}
 break|break;
 default|default :
-comment|/* fprintf(stderr, "XJT: PRP file scanned bad line:\n%s\n", scan_ptr); */
+comment|/* g_printerr ("XJT: PRP file scanned bad line:\n%s\n", scan_ptr); */
 comment|/* return -1; */
 comment|/* skip unknow tokens */
 break|break;
@@ -12042,10 +11996,8 @@ operator|==
 name|scan_ptr
 condition|)
 block|{
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"XJT: PRP file channel# missing, scanned bad line:\n%s\n"
 argument_list|,
 name|scan_ptr
@@ -12364,7 +12316,7 @@ expr_stmt|;
 block|}
 break|break;
 default|default :
-comment|/* fprintf(stderr, "XJT: PRP file scanned bad line:\n%s\n", scan_ptr); */
+comment|/* g_printerr ("XJT: PRP file scanned bad line:\n%s\n", scan_ptr); */
 comment|/* return -1; */
 comment|/* skip unknow tokens */
 break|break;
@@ -12431,10 +12383,8 @@ operator|!=
 literal|0
 condition|)
 block|{
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"XJT: PRP file %s identstring missing, scanned bad line:\n%s\n"
 argument_list|,
 name|GIMP_XJ_IMAGE
@@ -12566,10 +12516,8 @@ name|GIMP_GRAY
 expr_stmt|;
 break|break;
 default|default:
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"XJT: PRP unsupported image_type %d\n"
 argument_list|,
 operator|(
@@ -12785,7 +12733,7 @@ name|int_val1
 expr_stmt|;
 break|break;
 default|default :
-comment|/* fprintf(stderr, "XJT: Warning PRP unexpected token in line:\n%s\n", scan_ptr); */
+comment|/* g_printerr ("XJT: Warning PRP unexpected token in line:\n%s\n", scan_ptr); */
 comment|/* return -1; */
 comment|/* skip unknow tokens */
 break|break;
@@ -12859,10 +12807,8 @@ operator|==
 name|scan_ptr
 condition|)
 block|{
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"XJT: PRP file parasite# missing, scanned bad line:\n%s\n"
 argument_list|,
 name|scan_ptr
@@ -12992,7 +12938,7 @@ name|int_val1
 expr_stmt|;
 break|break;
 default|default :
-comment|/* fprintf(stderr, "XJT: PRP file scanned bad line:\n%s\n", scan_ptr); */
+comment|/* g_printerr ("XJT: PRP file scanned bad line:\n%s\n", scan_ptr); */
 comment|/* return -1; */
 comment|/* skip unknow tokens */
 break|break;
@@ -13075,10 +13021,8 @@ operator|!=
 literal|0
 condition|)
 block|{
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"XJT: PRP scanned bad line:\n%s\n"
 argument_list|,
 name|scan_ptr
@@ -13219,7 +13163,7 @@ name|flt_val_list
 expr_stmt|;
 break|break;
 default|default :
-comment|/* fprintf (stderr, "XJT: PRP file scanned bad line:\n%s\n", scan_ptr); */
+comment|/* g_printerr ("XJT: PRP file scanned bad line:\n%s\n", scan_ptr); */
 comment|/* return -1; */
 comment|/* skip unknow tokens */
 break|break;
@@ -14018,10 +13962,8 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"XJT: Warning, undefined PRP line scanned:\n%s\n"
 argument_list|,
 name|l_line_ptr

@@ -171,7 +171,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c9a0f380108
+DECL|struct|__anon27d89ad60108
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -728,7 +728,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c9a0f380208
+DECL|struct|__anon27d89ad60208
 block|{
 DECL|member|schema
 specifier|const
@@ -2415,7 +2415,6 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-comment|/*       fprintf (stderr, "\nwriting %d bytes to %s...\n",                strlen (buffer), filename);       */
 if|if
 condition|(
 name|write

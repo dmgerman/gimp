@@ -664,7 +664,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b94f9400108
+DECL|struct|__anon2c85e3cd0108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -718,7 +718,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b94f9400208
+DECL|struct|__anon2c85e3cd0208
 block|{
 DECL|member|y
 name|gint32
@@ -14091,11 +14091,9 @@ operator|!
 name|l_new_drawable
 condition|)
 block|{
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
-literal|"p_ad_layer: cant get new_drawable\n"
+literal|"p_add_layer: cant get new_drawable\n"
 argument_list|)
 expr_stmt|;
 return|return

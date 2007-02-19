@@ -456,10 +456,8 @@ directive|if
 name|PG_DEBUG
 operator|>
 literal|0
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"Params for %s:"
 argument_list|,
 name|name

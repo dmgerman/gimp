@@ -419,7 +419,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bad46db0108
+DECL|struct|__anon28928e6d0108
 block|{
 DECL|member|command
 name|gchar
@@ -443,7 +443,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bad46db0208
+DECL|struct|__anon28928e6d0208
 block|{
 DECL|member|port_entry
 name|GtkWidget
@@ -3453,10 +3453,8 @@ name|unk
 expr_stmt|;
 break|break;
 block|}
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"%s failed: %s\n"
 argument_list|,
 name|api_name

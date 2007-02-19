@@ -92,7 +92,7 @@ comment|/* Declarations for objects of type pdb */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2a2dcf7c0108
+DECL|struct|__anon29c6ea710108
 typedef|typedef
 struct|struct
 block|{
@@ -112,7 +112,7 @@ comment|/* Declarations for objects of type pdbFunc */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2a2dcf7c0208
+DECL|struct|__anon29c6ea710208
 typedef|typedef
 struct|struct
 block|{
@@ -254,10 +254,8 @@ block|{
 case|case
 name|GIMP_PDB_INT32
 case|:
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"%i. int %i\n"
 argument_list|,
 name|i
@@ -276,10 +274,8 @@ break|break;
 case|case
 name|GIMP_PDB_INT16
 case|:
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"%i. int %i\n"
 argument_list|,
 name|i
@@ -298,10 +294,8 @@ break|break;
 case|case
 name|GIMP_PDB_INT8
 case|:
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"%i. int %u\n"
 argument_list|,
 name|i
@@ -320,10 +314,8 @@ break|break;
 case|case
 name|GIMP_PDB_FLOAT
 case|:
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"%i. float %f\n"
 argument_list|,
 name|i
@@ -342,10 +334,8 @@ break|break;
 case|case
 name|GIMP_PDB_STRING
 case|:
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"%i. string %s\n"
 argument_list|,
 name|i
@@ -376,10 +366,8 @@ case|:
 case|case
 name|GIMP_PDB_STRINGARRAY
 case|:
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"%i. array of type %i %s\n"
 argument_list|,
 name|i
@@ -411,10 +399,8 @@ break|break;
 case|case
 name|GIMP_PDB_STATUS
 case|:
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"%i. status %i\n"
 argument_list|,
 name|i
@@ -431,10 +417,8 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"%i. other %i\n"
 argument_list|,
 name|i
@@ -4440,10 +4424,8 @@ directive|if
 name|PG_DEBUG
 operator|>
 literal|0
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"--- %s --- "
 argument_list|,
 name|PyString_AsString
@@ -4662,10 +4644,8 @@ directive|if
 name|PG_DEBUG
 operator|>=
 literal|1
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"ret == NULL\n"
 argument_list|)
 expr_stmt|;
@@ -4695,10 +4675,8 @@ directive|if
 name|PG_DEBUG
 operator|>
 literal|0
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"execution error\n"
 argument_list|)
 expr_stmt|;
@@ -4730,10 +4708,8 @@ directive|if
 name|PG_DEBUG
 operator|>
 literal|0
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"calling error\n"
 argument_list|)
 expr_stmt|;
@@ -4765,10 +4741,8 @@ directive|if
 name|PG_DEBUG
 operator|>
 literal|0
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"success\n"
 argument_list|)
 expr_stmt|;
@@ -4819,10 +4793,8 @@ directive|if
 name|PG_DEBUG
 operator|>
 literal|0
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"unknown - %i (type %i)\n"
 argument_list|,
 name|ret

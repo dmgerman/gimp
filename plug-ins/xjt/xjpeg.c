@@ -312,10 +312,8 @@ argument_list|(
 name|infile
 argument_list|)
 expr_stmt|;
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"XJT: JPEG load error\n"
 argument_list|)
 expr_stmt|;
@@ -453,10 +451,8 @@ name|GIMP_RGB_IMAGE
 expr_stmt|;
 break|break;
 default|default:
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"XJT: cant load layer %s (type is not GRAY and not RGB)\n"
 argument_list|,
 name|filename
@@ -502,10 +498,8 @@ operator|<
 literal|0
 condition|)
 block|{
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"XJT: cant create new layer\n"
 argument_list|)
 expr_stmt|;
@@ -869,10 +863,8 @@ argument_list|(
 name|infile
 argument_list|)
 expr_stmt|;
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"XJT: JPEG alpha load error\n"
 argument_list|)
 expr_stmt|;
@@ -999,10 +991,8 @@ operator|==
 name|NULL
 condition|)
 block|{
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"XJT: gimp_drawable_get failed on layer id %d\n"
 argument_list|,
 operator|(
@@ -1053,10 +1043,8 @@ name|height
 operator|)
 condition|)
 block|{
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"XJT: cant load %s as alpha channel\n"
 argument_list|,
 name|filename
@@ -1515,10 +1503,8 @@ argument_list|(
 name|infile
 argument_list|)
 expr_stmt|;
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"XJT: JPEG load error\n"
 argument_list|)
 expr_stmt|;
@@ -1641,10 +1627,8 @@ operator|!=
 literal|1
 condition|)
 block|{
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"XJT: cant load RGB layer %s into GRAY Image\n"
 argument_list|,
 name|filename
@@ -1696,10 +1680,8 @@ operator|<
 literal|0
 condition|)
 block|{
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"XJT: cant create new channel\n"
 argument_list|)
 expr_stmt|;
@@ -1762,10 +1744,8 @@ name|output_components
 operator|)
 condition|)
 block|{
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"XJT: cant load-overwrite drawable (size missmatch)\n"
 argument_list|)
 expr_stmt|;
