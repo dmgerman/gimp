@@ -6105,6 +6105,15 @@ argument_list|(
 name|flat_image
 argument_list|)
 expr_stmt|;
+comment|/* gimp_image_flatten() may fail if there are no visible layers */
+if|if
+condition|(
+name|flat_drawable
+operator|!=
+operator|-
+literal|1
+condition|)
+block|{
 name|IFDBG
 name|printf
 argument_list|(
@@ -6122,6 +6131,7 @@ argument_list|,
 name|offset
 argument_list|)
 expr_stmt|;
+block|}
 name|gimp_image_delete
 argument_list|(
 name|flat_image
