@@ -64,7 +64,7 @@ end_ifdef
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e057860103
+DECL|enum|__anon2804fd9e0103
 block|{
 DECL|enumerator|COLUMN_UDI
 name|COLUMN_UDI
@@ -80,7 +80,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e057860203
+DECL|enum|__anon2804fd9e0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -93,7 +93,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e057860303
+DECL|enum|__anon2804fd9e0303
 block|{
 DECL|enumerator|DEVICE_ADDED
 name|DEVICE_ADDED
@@ -1649,6 +1649,15 @@ begin_else
 else|#
 directive|else
 end_else
+
+begin_decl_stmt
+DECL|variable|gimp_input_device_store_type
+name|GType
+name|gimp_input_device_store_type
+init|=
+literal|0
+decl_stmt|;
+end_decl_stmt
 
 begin_function
 name|GType
