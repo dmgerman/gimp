@@ -64,7 +64,7 @@ end_ifdef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2804fd9e0103
+DECL|enum|__anon2acbf13a0103
 block|{
 DECL|enumerator|COLUMN_UDI
 name|COLUMN_UDI
@@ -80,7 +80,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2804fd9e0203
+DECL|enum|__anon2acbf13a0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -93,7 +93,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2804fd9e0303
+DECL|enum|__anon2acbf13a0303
 block|{
 DECL|enumerator|DEVICE_ADDED
 name|DEVICE_ADDED
@@ -1655,7 +1655,7 @@ DECL|variable|gimp_input_device_store_type
 name|GType
 name|gimp_input_device_store_type
 init|=
-literal|0
+name|G_TYPE_NONE
 decl_stmt|;
 end_decl_stmt
 

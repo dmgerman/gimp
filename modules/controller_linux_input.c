@@ -103,7 +103,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c7888e0108
+DECL|struct|__anon297695a20108
 block|{
 DECL|member|code
 name|guint16
@@ -614,7 +614,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c7888e0203
+DECL|enum|__anon297695a20203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1211,6 +1211,9 @@ name|GIMP_CONFIG_PARAM_FLAGS
 argument_list|)
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|HAVE_LIBHAL
 name|g_object_class_install_property
 argument_list|(
 name|object_class
@@ -1231,6 +1234,8 @@ name|G_PARAM_READABLE
 argument_list|)
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 name|controller_class
 operator|->
 name|name
