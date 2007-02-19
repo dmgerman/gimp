@@ -96,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dc92b10108
+DECL|struct|__anon2a10ed380108
 block|{
 DECL|member|script
 name|SFScript
@@ -421,10 +421,8 @@ modifier|*
 name|msg
 parameter_list|)
 block|{
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 name|msg
 argument_list|)
 expr_stmt|;

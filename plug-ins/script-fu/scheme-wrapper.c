@@ -3245,10 +3245,8 @@ block|,
 literal|"GIMP_PDB_CANCEL"
 block|}
 decl_stmt|;
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"\nIn marshall_proc_db_call ()\n"
 argument_list|)
 expr_stmt|;
@@ -3326,10 +3324,8 @@ expr_stmt|;
 ifdef|#
 directive|ifdef
 name|DEBUG_MARSHALL
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"  proc name: %s\n"
 argument_list|,
 name|proc_name
@@ -3340,10 +3336,8 @@ directive|endif
 if|#
 directive|if
 name|DEBUG_MARSHALL
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"  parms rcvd: %d\n"
 argument_list|,
 name|sc
@@ -3411,10 +3405,8 @@ block|{
 ifdef|#
 directive|ifdef
 name|DEBUG_MARSHALL
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"  Invalid procedure name\n"
 argument_list|)
 expr_stmt|;
@@ -3540,10 +3532,8 @@ block|{
 if|#
 directive|if
 name|DEBUG_MARSHALL
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"  Invalid number of arguments (expected %d but received %d)"
 argument_list|,
 name|nparams
@@ -3655,10 +3645,8 @@ expr_stmt|;
 if|#
 directive|if
 name|DEBUG_MARSHALL
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"    param %d - expecting type %s (%d)\n"
 argument_list|,
 name|i
@@ -3683,10 +3671,8 @@ operator|.
 name|type
 argument_list|)
 expr_stmt|;
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"      passed arg is type %s (%d)\n"
 argument_list|,
 name|ts_types
@@ -3826,10 +3812,8 @@ expr_stmt|;
 if|#
 directive|if
 name|DEBUG_MARSHALL
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"      int32 arg is '%d'\n"
 argument_list|,
 name|args
@@ -3908,10 +3892,8 @@ expr_stmt|;
 if|#
 directive|if
 name|DEBUG_MARSHALL
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"      int16 arg is '%d'\n"
 argument_list|,
 name|args
@@ -3990,10 +3972,8 @@ expr_stmt|;
 if|#
 directive|if
 name|DEBUG_MARSHALL
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"      int8 arg is '%u'\n"
 argument_list|,
 name|args
@@ -4069,10 +4049,8 @@ expr_stmt|;
 if|#
 directive|if
 name|DEBUG_MARSHALL
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"      float arg is '%f'\n"
 argument_list|,
 name|args
@@ -4148,10 +4126,8 @@ expr_stmt|;
 if|#
 directive|if
 name|DEBUG_MARSHALL
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"      string arg is '%s'\n"
 argument_list|,
 name|args
@@ -4406,10 +4382,8 @@ argument_list|(
 name|vector
 argument_list|)
 decl_stmt|;
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"      int32 vector has %ld elements\n"
 argument_list|,
 name|count
@@ -4422,10 +4396,8 @@ operator|>
 literal|0
 condition|)
 block|{
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"     "
 argument_list|)
 expr_stmt|;
@@ -4442,10 +4414,8 @@ condition|;
 operator|++
 name|j
 control|)
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|" %ld"
 argument_list|,
 name|sc
@@ -4467,10 +4437,8 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"\n"
 argument_list|)
 expr_stmt|;
@@ -4716,10 +4684,8 @@ argument_list|(
 name|vector
 argument_list|)
 decl_stmt|;
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"      int16 vector has %ld elements\n"
 argument_list|,
 name|count
@@ -4732,10 +4698,8 @@ operator|>
 literal|0
 condition|)
 block|{
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"     "
 argument_list|)
 expr_stmt|;
@@ -4752,10 +4716,8 @@ condition|;
 operator|++
 name|j
 control|)
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|" %ld"
 argument_list|,
 name|sc
@@ -4777,10 +4739,8 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"\n"
 argument_list|)
 expr_stmt|;
@@ -5026,10 +4986,8 @@ argument_list|(
 name|vector
 argument_list|)
 decl_stmt|;
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"      int8 vector has %ld elements\n"
 argument_list|,
 name|count
@@ -5042,10 +5000,8 @@ operator|>
 literal|0
 condition|)
 block|{
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"     "
 argument_list|)
 expr_stmt|;
@@ -5062,10 +5018,8 @@ condition|;
 operator|++
 name|j
 control|)
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|" %ld"
 argument_list|,
 name|sc
@@ -5087,10 +5041,8 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"\n"
 argument_list|)
 expr_stmt|;
@@ -5336,10 +5288,8 @@ argument_list|(
 name|vector
 argument_list|)
 decl_stmt|;
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"      float vector has %ld elements\n"
 argument_list|,
 name|count
@@ -5352,10 +5302,8 @@ operator|>
 literal|0
 condition|)
 block|{
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"     "
 argument_list|)
 expr_stmt|;
@@ -5372,10 +5320,8 @@ condition|;
 operator|++
 name|j
 control|)
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|" %f"
 argument_list|,
 name|sc
@@ -5397,10 +5343,8 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"\n"
 argument_list|)
 expr_stmt|;
@@ -5648,10 +5592,8 @@ argument_list|(
 name|vector
 argument_list|)
 decl_stmt|;
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"      string vector has %ld elements\n"
 argument_list|,
 name|count
@@ -5664,10 +5606,8 @@ operator|>
 literal|0
 condition|)
 block|{
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"     "
 argument_list|)
 expr_stmt|;
@@ -5684,10 +5624,8 @@ condition|;
 operator|++
 name|j
 control|)
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|" \"%s\""
 argument_list|,
 name|sc
@@ -5709,10 +5647,8 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"\n"
 argument_list|)
 expr_stmt|;
@@ -5801,10 +5737,8 @@ expr_stmt|;
 if|#
 directive|if
 name|DEBUG_MARSHALL
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"      (%s)\n"
 argument_list|,
 name|sc
@@ -6011,10 +5945,8 @@ expr_stmt|;
 if|#
 directive|if
 name|DEBUG_MARSHALL
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"      (%d %d %d)\n"
 argument_list|,
 name|r
@@ -6248,10 +6180,8 @@ expr_stmt|;
 if|#
 directive|if
 name|DEBUG_MARSHALL
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"      (%d %d %d %d)\n"
 argument_list|,
 name|args
@@ -6424,10 +6354,8 @@ expr_stmt|;
 if|#
 directive|if
 name|DEBUG_MARSHALL
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"      name '%s'\n"
 argument_list|,
 name|args
@@ -6512,10 +6440,8 @@ expr_stmt|;
 if|#
 directive|if
 name|DEBUG_MARSHALL
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"      flags %d"
 argument_list|,
 name|args
@@ -6627,10 +6553,8 @@ expr_stmt|;
 if|#
 directive|if
 name|DEBUG_MARSHALL
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|", size %d\n"
 argument_list|,
 name|args
@@ -6645,10 +6569,8 @@ operator|.
 name|size
 argument_list|)
 expr_stmt|;
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"      data '%s'\n"
 argument_list|,
 operator|(
@@ -6736,10 +6658,8 @@ if|#
 directive|if
 name|DEBUG_MARSHALL
 block|{
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"    calling %s..."
 argument_list|,
 name|proc_name
@@ -6764,10 +6684,8 @@ expr_stmt|;
 if|#
 directive|if
 name|DEBUG_MARSHALL
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"  done.\n"
 argument_list|)
 expr_stmt|;
@@ -6779,10 +6697,8 @@ block|{
 if|#
 directive|if
 name|DEBUG_MARSHALL
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"  Invalid type for argument %d\n"
 argument_list|,
 name|i
@@ -6831,10 +6747,8 @@ block|{
 if|#
 directive|if
 name|DEBUG_MARSHALL
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"  Did not return status\n"
 argument_list|)
 expr_stmt|;
@@ -6868,10 +6782,8 @@ block|}
 if|#
 directive|if
 name|DEBUG_MARSHALL
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"    return value is %s\n"
 argument_list|,
 name|status_types
@@ -6963,10 +6875,8 @@ case|:
 if|#
 directive|if
 name|DEBUG_MARSHALL
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"    values returned: %d\n"
 argument_list|,
 name|nvalues
@@ -6995,10 +6905,8 @@ block|{
 if|#
 directive|if
 name|DEBUG_MARSHALL
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"      value %d is type %s (%d)\n"
 argument_list|,
 name|i
@@ -8343,10 +8251,8 @@ expr_stmt|;
 if|#
 directive|if
 name|DEBUG_MARSHALL
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"      name '%s'\n"
 argument_list|,
 name|values
@@ -8363,10 +8269,8 @@ operator|.
 name|name
 argument_list|)
 expr_stmt|;
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"      flags %d"
 argument_list|,
 name|values
@@ -8383,10 +8287,8 @@ operator|.
 name|flags
 argument_list|)
 expr_stmt|;
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|", size %d\n"
 argument_list|,
 name|values
@@ -8403,10 +8305,8 @@ operator|.
 name|size
 argument_list|)
 expr_stmt|;
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"      data '%.*s'\n"
 argument_list|,
 name|values
