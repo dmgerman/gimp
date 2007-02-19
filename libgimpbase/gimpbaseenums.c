@@ -2768,7 +2768,7 @@ name|GIMP_INTERPOLATION_LANCZOS
 block|,
 name|N_
 argument_list|(
-literal|"Lanczos"
+literal|"Sinc (Lanczos3)"
 argument_list|)
 block|,
 name|NULL
