@@ -11471,7 +11471,7 @@ decl_stmt|;
 name|int
 name|len
 decl_stmt|;
-DECL|enum|__anon2ae719880103
+DECL|enum|__anon288b588c0103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -12830,9 +12830,16 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|sprintf
+name|g_ascii_formatd
 argument_list|(
 name|p
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|sc
+operator|->
+name|strbuff
+argument_list|)
 argument_list|,
 literal|"%.10g"
 argument_list|,
@@ -28226,7 +28233,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon2ae719880208
+DECL|struct|__anon288b588c0208
 specifier|static
 struct|struct
 block|{
@@ -28461,7 +28468,7 @@ value|"\016"
 end_define
 
 begin_typedef
-DECL|struct|__anon2ae719880308
+DECL|struct|__anon288b588c0308
 typedef|typedef
 struct|struct
 block|{
