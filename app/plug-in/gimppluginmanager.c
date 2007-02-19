@@ -102,6 +102,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpplugindef.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppluginmanager.h"
 end_include
 
@@ -163,12 +169,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"plug-in-def.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"plug-in-rc.h"
 end_include
 
@@ -180,7 +180,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aac982a0103
+DECL|enum|__anon2b4ac8960103
 block|{
 DECL|enumerator|PLUG_IN_OPENED
 name|PLUG_IN_OPENED
@@ -265,7 +265,7 @@ name|GimpPlugInManager
 modifier|*
 name|manager
 parameter_list|,
-name|PlugInDef
+name|GimpPlugInDef
 modifier|*
 name|plug_in_def
 parameter_list|)
@@ -1568,7 +1568,7 @@ operator|->
 name|next
 control|)
 block|{
-name|PlugInDef
+name|GimpPlugInDef
 modifier|*
 name|plug_in_def
 init|=
@@ -1618,7 +1618,7 @@ operator|->
 name|next
 control|)
 block|{
-name|PlugInDef
+name|GimpPlugInDef
 modifier|*
 name|plug_in_def
 init|=
@@ -1736,7 +1736,7 @@ operator|->
 name|next
 control|)
 block|{
-name|PlugInDef
+name|GimpPlugInDef
 modifier|*
 name|plug_in_def
 init|=
@@ -1780,7 +1780,7 @@ operator|->
 name|next
 control|)
 block|{
-name|PlugInDef
+name|GimpPlugInDef
 modifier|*
 name|plug_in_def
 init|=
@@ -1891,7 +1891,7 @@ operator|->
 name|next
 control|)
 block|{
-name|PlugInDef
+name|GimpPlugInDef
 modifier|*
 name|plug_in_def
 init|=
@@ -2026,7 +2026,7 @@ operator|->
 name|next
 control|)
 block|{
-name|PlugInDef
+name|GimpPlugInDef
 modifier|*
 name|plug_in_def
 init|=
@@ -2091,7 +2091,7 @@ argument_list|,
 operator|(
 name|GFunc
 operator|)
-name|plug_in_def_free
+name|g_object_unref
 argument_list|,
 name|NULL
 argument_list|)
@@ -2662,7 +2662,7 @@ operator|->
 name|next
 control|)
 block|{
-name|PlugInDef
+name|GimpPlugInDef
 modifier|*
 name|plug_in_def
 init|=
@@ -2681,7 +2681,7 @@ argument_list|,
 name|tmp_proc
 argument_list|)
 condition|)
-name|plug_in_def_remove_procedure
+name|gimp_plug_in_def_remove_procedure
 argument_list|(
 name|plug_in_def
 argument_list|,
@@ -3196,7 +3196,7 @@ name|manager
 init|=
 name|data
 decl_stmt|;
-name|PlugInDef
+name|GimpPlugInDef
 modifier|*
 name|plug_in_def
 decl_stmt|;
@@ -3281,14 +3281,14 @@ expr_stmt|;
 block|}
 name|plug_in_def
 operator|=
-name|plug_in_def_new
+name|gimp_plug_in_def_new
 argument_list|(
 name|file_data
 operator|->
 name|filename
 argument_list|)
 expr_stmt|;
-name|plug_in_def_set_mtime
+name|gimp_plug_in_def_set_mtime
 argument_list|(
 name|plug_in_def
 argument_list|,
@@ -3297,7 +3297,7 @@ operator|->
 name|mtime
 argument_list|)
 expr_stmt|;
-name|plug_in_def_set_needs_query
+name|gimp_plug_in_def_set_needs_query
 argument_list|(
 name|plug_in_def
 argument_list|,
@@ -3323,14 +3323,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_plug_in_manager_add_from_rc (GimpPlugInManager * manager,PlugInDef * plug_in_def)
+DECL|function|gimp_plug_in_manager_add_from_rc (GimpPlugInManager * manager,GimpPlugInDef * plug_in_def)
 name|gimp_plug_in_manager_add_from_rc
 parameter_list|(
 name|GimpPlugInManager
 modifier|*
 name|manager
 parameter_list|,
-name|PlugInDef
+name|GimpPlugInDef
 modifier|*
 name|plug_in_def
 parameter_list|)
@@ -3383,7 +3383,7 @@ argument_list|(
 literal|"plug_ins_def_add_from_rc: filename not absolute (skipping)"
 argument_list|)
 expr_stmt|;
-name|plug_in_def_free
+name|g_object_unref
 argument_list|(
 name|plug_in_def
 argument_list|)
@@ -3500,7 +3500,7 @@ operator|->
 name|next
 control|)
 block|{
-name|PlugInDef
+name|GimpPlugInDef
 modifier|*
 name|ondisk_plug_in_def
 init|=
@@ -3564,7 +3564,7 @@ name|data
 operator|=
 name|plug_in_def
 expr_stmt|;
-name|plug_in_def_free
+name|g_object_unref
 argument_list|(
 name|ondisk_plug_in_def
 argument_list|)
@@ -3573,7 +3573,7 @@ block|}
 else|else
 block|{
 comment|/* Use ondisk entry, deleting pluginrc entry */
-name|plug_in_def_free
+name|g_object_unref
 argument_list|(
 name|plug_in_def
 argument_list|)
@@ -3620,7 +3620,7 @@ name|prog
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|plug_in_def_free
+name|g_object_unref
 argument_list|(
 name|plug_in_def
 argument_list|)

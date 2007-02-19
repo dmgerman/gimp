@@ -102,6 +102,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpplugindef.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppluginshm.h"
 end_include
 
@@ -109,12 +115,6 @@ begin_include
 include|#
 directive|include
 file|"gimptemporaryprocedure.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"plug-in-def.h"
 end_include
 
 begin_include
@@ -2707,7 +2707,7 @@ if|if
 condition|(
 name|proc
 condition|)
-name|plug_in_def_remove_procedure
+name|gimp_plug_in_def_remove_procedure
 argument_list|(
 name|plug_in
 operator|->
@@ -3071,7 +3071,7 @@ case|:
 case|case
 name|GIMP_EXTENSION
 case|:
-name|plug_in_def_add_procedure
+name|gimp_plug_in_def_add_procedure
 argument_list|(
 name|plug_in
 operator|->
@@ -3260,7 +3260,7 @@ operator|==
 name|GIMP_PLUG_IN_CALL_QUERY
 condition|)
 block|{
-name|plug_in_def_set_has_init
+name|gimp_plug_in_def_set_has_init
 argument_list|(
 name|plug_in
 operator|->

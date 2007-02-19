@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpplugindef.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppluginmanager.h"
 end_include
 
@@ -121,12 +127,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"plug-in-def.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"plug-in-params.h"
 end_include
 
@@ -142,7 +142,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_plug_in_manager_call_query (GimpPlugInManager * manager,GimpContext * context,PlugInDef * plug_in_def)
+DECL|function|gimp_plug_in_manager_call_query (GimpPlugInManager * manager,GimpContext * context,GimpPlugInDef * plug_in_def)
 name|gimp_plug_in_manager_call_query
 parameter_list|(
 name|GimpPlugInManager
@@ -153,7 +153,7 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|PlugInDef
+name|GimpPlugInDef
 modifier|*
 name|plug_in_def
 parameter_list|)
@@ -180,9 +180,10 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
+name|GIMP_IS_PLUG_IN_DEF
+argument_list|(
 name|plug_in_def
-operator|!=
-name|NULL
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|plug_in
@@ -289,7 +290,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_plug_in_manager_call_init (GimpPlugInManager * manager,GimpContext * context,PlugInDef * plug_in_def)
+DECL|function|gimp_plug_in_manager_call_init (GimpPlugInManager * manager,GimpContext * context,GimpPlugInDef * plug_in_def)
 name|gimp_plug_in_manager_call_init
 parameter_list|(
 name|GimpPlugInManager
@@ -300,7 +301,7 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|PlugInDef
+name|GimpPlugInDef
 modifier|*
 name|plug_in_def
 parameter_list|)
@@ -327,9 +328,10 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
+name|GIMP_IS_PLUG_IN_DEF
+argument_list|(
 name|plug_in_def
-operator|!=
-name|NULL
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|plug_in

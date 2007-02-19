@@ -38,6 +38,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpPlugInDef
+typedef|typedef
+name|struct
+name|_GimpPlugInDef
+name|GimpPlugInDef
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpPlugInManager
 typedef|typedef
 name|struct
@@ -70,15 +79,6 @@ typedef|typedef
 name|struct
 name|_GimpPlugInShm
 name|GimpPlugInShm
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|PlugInDef
-typedef|typedef
-name|struct
-name|_PlugInDef
-name|PlugInDef
 typedef|;
 end_typedef
 

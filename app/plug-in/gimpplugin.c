@@ -329,6 +329,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpplugindef.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppluginmanager.h"
 end_include
 
@@ -348,12 +354,6 @@ begin_include
 include|#
 directive|include
 file|"gimptemporaryprocedure.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"plug-in-def.h"
 end_include
 
 begin_include

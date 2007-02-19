@@ -49,7 +49,7 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|PlugInDef
+name|GimpPlugInDef
 modifier|*
 name|plug_in_def
 parameter_list|)
@@ -72,7 +72,7 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|PlugInDef
+name|GimpPlugInDef
 modifier|*
 name|plug_in_def
 parameter_list|)

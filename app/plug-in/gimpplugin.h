@@ -196,7 +196,7 @@ modifier|*
 name|temp_proc_frames
 decl_stmt|;
 DECL|member|plug_in_def
-name|PlugInDef
+name|GimpPlugInDef
 modifier|*
 name|plug_in_def
 decl_stmt|;
