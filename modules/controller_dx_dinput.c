@@ -3,6 +3,10 @@ begin_comment
 comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995-1997 Spencer Kimball and Peter Mattis  *  * controller_dx_dinput.c  * Copyright (C) 2004-2007 Sven Neumann<sven@gimp.org>  *                         Michael Natterer<mitch@gimp.org>  *                         Tor Lillqvist<tml@iki.fi>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
+begin_comment
+comment|/* When using gcc with the February 2007 version of the DirectX SDK,  * at least, you need to fix a couple of duplicate typedefs in the  * DirectX<dinput.h>. Unfortunately I can't include the diff here,  * both for copyright reasons, and because that would confuse the C  * lexer even if inside #if 0.  */
+end_comment
+
 begin_include
 include|#
 directive|include
@@ -106,7 +110,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1b24ba0103
+DECL|enum|__anon27a7e59d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
