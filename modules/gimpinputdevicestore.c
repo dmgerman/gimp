@@ -115,7 +115,7 @@ end_ifdef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2991ac230103
+DECL|enum|__anon27985b7d0103
 block|{
 DECL|enumerator|COLUMN_UDI
 name|COLUMN_UDI
@@ -131,7 +131,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2991ac230203
+DECL|enum|__anon27985b7d0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -144,7 +144,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2991ac230303
+DECL|enum|__anon27985b7d0303
 block|{
 DECL|enumerator|DEVICE_ADDED
 name|DEVICE_ADDED
@@ -1707,7 +1707,7 @@ end_elif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2991ac230403
+DECL|enum|__anon27985b7d0403
 block|{
 DECL|enumerator|COLUMN_GUID
 name|COLUMN_GUID
@@ -1726,7 +1726,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2991ac230503
+DECL|enum|__anon27985b7d0503
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1739,7 +1739,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2991ac230603
+DECL|enum|__anon27985b7d0603
 block|{
 DECL|enumerator|DEVICE_ADDED
 name|DEVICE_ADDED
