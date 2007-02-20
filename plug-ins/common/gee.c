@@ -131,12 +131,6 @@ parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
-parameter_list|,
-name|gint
-name|response_id
-parameter_list|,
-name|gpointer
-name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -589,7 +583,7 @@ parameter_list|)
 block|{
 name|GtkWidget
 modifier|*
-name|dlg
+name|dialog
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -610,7 +604,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|dlg
+name|dialog
 operator|=
 name|gimp_dialog_new
 argument_list|(
@@ -638,7 +632,7 @@ name|gtk_dialog_add_button
 argument_list|(
 name|GTK_DIALOG
 argument_list|(
-name|dlg
+name|dialog
 argument_list|)
 argument_list|,
 name|_
@@ -651,7 +645,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|dlg
+name|dialog
 argument_list|,
 literal|"response"
 argument_list|,
@@ -723,7 +717,7 @@ name|GTK_BOX
 argument_list|(
 name|GTK_DIALOG
 argument_list|(
-name|dlg
+name|dialog
 argument_list|)
 operator|->
 name|vbox
@@ -774,7 +768,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|dlg
+name|dialog
 argument_list|)
 expr_stmt|;
 name|idle_tag
@@ -847,7 +841,6 @@ name|i
 operator|++
 control|)
 block|{
-comment|/* k = i + RINT (((double)LIGHT) * pow(((double)i / 255.0), 0.5)); 	 k = i + ((LIGHT*i)/255); */
 name|k
 operator|=
 name|i
@@ -871,14 +864,6 @@ literal|255
 operator|)
 operator|)
 expr_stmt|;
-if|#
-directive|if
-literal|0
-block|k = i + ((LIGHT*(
-comment|/* (255*255*255)- */
-block|i*i*i))/(255*255*255));
-endif|#
-directive|endif
 name|k
 operator|=
 name|k
@@ -953,8 +938,10 @@ name|i
 decl_stmt|;
 name|palette
 operator|=
-name|g_malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 literal|256
 operator|*
 literal|3
@@ -1067,10 +1054,6 @@ name|IHEIGHT
 argument_list|,
 name|GDK_RGB_DITHER_NORMAL
 argument_list|,
-operator|(
-name|guchar
-operator|*
-operator|)
 name|disp
 argument_list|,
 name|IWIDTH
@@ -1101,38 +1084,37 @@ name|int
 name|size
 parameter_list|)
 block|{
-name|int
-name|o
+name|gint
+name|j
 decl_stmt|;
-comment|/*  for (o=0; o<size; o++)     {       bump[x+(size/2)+(y+o)*IWIDTH] = 255;     }   memset(&bump[x+(y+(size/2))*IWIDTH], 255, size);   */
 for|for
 control|(
-name|o
+name|j
 operator|=
 literal|0
 init|;
-name|o
+name|j
 operator|<
 name|size
 condition|;
-name|o
+name|j
 operator|++
 control|)
 block|{
 name|int
-name|p
+name|i
 decl_stmt|;
 for|for
 control|(
-name|p
+name|i
 operator|=
 literal|0
 init|;
-name|p
+name|i
 operator|<
 name|size
 condition|;
-name|p
+name|i
 operator|++
 control|)
 block|{
@@ -1148,14 +1130,14 @@ name|k
 operator|=
 name|destbump
 index|[
-name|p
+name|i
 operator|+
 name|x
 operator|+
 operator|(
 name|y
 operator|+
-name|o
+name|j
 operator|)
 operator|*
 name|IWIDTH
@@ -1171,14 +1153,14 @@ literal|256
 condition|)
 name|destbump
 index|[
-name|p
+name|i
 operator|+
 name|x
 operator|+
 operator|(
 name|y
 operator|+
-name|o
+name|j
 operator|)
 operator|*
 name|IWIDTH
@@ -1189,14 +1171,14 @@ expr_stmt|;
 else|else
 name|destbump
 index|[
-name|p
+name|i
 operator|+
 name|x
 operator|+
 operator|(
 name|y
 operator|+
-name|o
+name|j
 operator|)
 operator|*
 name|IWIDTH
@@ -1205,7 +1187,6 @@ operator|=
 name|k
 expr_stmt|;
 block|}
-comment|/* memset(&destbump[x+(y+o)*IWIDTH], 131, size); */
 block|}
 block|}
 end_function
@@ -1254,19 +1235,16 @@ name|guchar
 modifier|*
 name|basebump
 decl_stmt|;
-name|unsigned
-name|int
+name|guint
 name|basesx
 decl_stmt|;
-name|unsigned
-name|int
+name|guint
 name|basesy
 decl_stmt|;
 name|GRand
 modifier|*
 name|gr
 decl_stmt|;
-comment|/*  signed int bycxmcybx;   signed int bx2,by2;   signed int cx2,cy2;   const gint bx = -(123-128);   const gint by = (128+123);   const gint cx = by;   const gint cy = -bx;*/
 DECL|macro|bx
 define|#
 directive|define
@@ -1360,9 +1338,6 @@ name|bump2
 else|:
 name|bump1
 expr_stmt|;
-comment|/* WARP DISTORTION MAP (plughole-effect) */
-comment|/* this setup obsolete, tranformation is constant */
-comment|/*if ((cx+bx) == 0)     cx++;      if ((cy+by) == 0)     by++;    bycxmcybx = (by*cx-cy*bx);    if (bycxmcybx == 0)     bycxmcybx = 1;    bx2 = ((bx)<<19)/bycxmcybx;   cx2 = ((cx)<<19)/bycxmcybx;   by2 = ((by)<<19)/bycxmcybx;   cy2 = ((cy)<<19)/bycxmcybx;   */
 comment|/* A little sub-pixel jitter to liven things up. */
 name|basesx
 operator|=
@@ -1448,13 +1423,6 @@ name|basebump
 operator|=
 name|srcbump
 expr_stmt|;
-if|#
-directive|if
-literal|0
-comment|/* identity only */
-block|j = IHEIGHT;   while (j--)     {       i = IWIDTH;       while (i--) 	{ 	  *dest++ = *environment++; 	}     }   return;
-endif|#
-directive|endif
 comment|/* MELT DISTORTION MAP, APPLY IT */
 name|j
 operator|=
@@ -1466,12 +1434,10 @@ name|j
 operator|--
 condition|)
 block|{
-name|unsigned
-name|int
+name|guint
 name|tx
 decl_stmt|;
-name|unsigned
-name|int
+name|guint
 name|ty
 decl_stmt|;
 name|ty
@@ -1500,8 +1466,7 @@ name|i
 operator|--
 condition|)
 block|{
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|bptr
 init|=
@@ -1604,7 +1569,7 @@ name|ty
 operator|-=
 name|cy2
 expr_stmt|;
-comment|/* TODO: Can accelerate search for non-zero bumps with 	     casting an aligned long-word search. */
+comment|/* TODO: Can accelerate search for non-zero bumps with              casting an aligned long-word search. */
 if|if
 condition|(
 name|thisbump
@@ -1633,7 +1598,6 @@ operator|)
 operator|)
 operator|)
 expr_stmt|;
-comment|/* *(dest++) = 111; */
 operator|*
 operator|(
 name|destbump
@@ -1674,7 +1638,6 @@ name|thisbump
 operator|=
 literal|131
 expr_stmt|;
-comment|/* sy = j + ( ((thisbump) - *(destbump+IWIDTH))<<1); 		 sx = i + ( ((thisbump) - *(++destbump))<<1);  + blah; */
 name|sy
 operator|=
 name|j
@@ -1731,7 +1694,6 @@ operator|)
 operator|)
 operator|)
 expr_stmt|;
-comment|/* sx = ( ((thisbump) - *(destbump+IWIDTH))); 		 sy = ( ((thisbump) - *(++destbump))); 		 *dest++ = (sx) | (sy<<8) | (sx<<16); */
 block|}
 block|}
 block|}
@@ -1859,7 +1821,6 @@ operator|)
 operator|)
 operator|)
 expr_stmt|;
-comment|/* cptr = (guchar*)((guint32*)(( dest+ (0xffff^(sx | (sy<<8) )) ))); */
 name|cptr
 operator|=
 operator|(
@@ -1917,7 +1878,7 @@ operator|*
 name|cptr
 index|]
 expr_stmt|;
-comment|/* this second point of light's offset (1 across, 1 down) 		 isn't really 'right' but it gives a more pleasing, 		 diffuse look. */
+comment|/* this second point of light's offset (1 across, 1 down)                  isn't really 'right' but it gives a more pleasing,                  diffuse look. */
 name|cptr
 operator|+=
 literal|2
@@ -2121,6 +2082,12 @@ operator|!
 operator|(
 operator|(
 name|posx
+operator|<
+literal|1
+operator|)
+operator|||
+operator|(
+name|posx
 operator|>
 name|IWIDTH
 operator|-
@@ -2129,22 +2096,16 @@ operator|)
 operator|||
 operator|(
 name|posy
-operator|>
-name|IHEIGHT
-operator|-
-name|size
-operator|)
-operator|||
-operator|(
-name|posx
 operator|<
 literal|1
 operator|)
 operator|||
 operator|(
 name|posy
-operator|<
-literal|1
+operator|>
+name|IHEIGHT
+operator|-
+name|size
 operator|)
 operator|)
 condition|)
@@ -2171,26 +2132,11 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-specifier|static
-name|int
-name|frame
-init|=
-literal|0
-decl_stmt|;
-if|#
-directive|if
-literal|0
-block|if (frame==0)     {       gint i, bytes;        bytes = IWIDTH*IHEIGHT*4;        for (i=0;i<bytes;i++) 	{ 	  disp[i] = env[i]; 	}     }
-endif|#
-directive|endif
 name|iterate
 argument_list|()
 expr_stmt|;
 name|show
 argument_list|()
-expr_stmt|;
-name|frame
-operator|++
 expr_stmt|;
 block|}
 end_function
@@ -2224,8 +2170,10 @@ argument_list|)
 expr_stmt|;
 name|env
 operator|=
-name|g_malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 literal|4
 operator|*
 name|IWIDTH
@@ -2237,8 +2185,10 @@ argument_list|)
 expr_stmt|;
 name|disp
 operator|=
-name|g_malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 operator|(
 name|IWIDTH
 operator|+
@@ -2254,8 +2204,10 @@ argument_list|)
 expr_stmt|;
 name|bump1base
 operator|=
-name|g_malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 name|IWIDTH
 operator|*
 name|IHEIGHT
@@ -2267,8 +2219,10 @@ argument_list|)
 expr_stmt|;
 name|bump2base
 operator|=
-name|g_malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 name|IWIDTH
 operator|*
 name|IHEIGHT
@@ -2349,7 +2303,6 @@ name|width
 operator|>
 literal|256
 condition|?
-operator|(
 name|drawable
 operator|->
 name|width
@@ -2357,7 +2310,6 @@ operator|/
 literal|2
 operator|-
 literal|128
-operator|)
 else|:
 literal|0
 argument_list|,
@@ -2368,7 +2320,6 @@ name|height
 operator|>
 literal|256
 condition|?
-operator|(
 name|drawable
 operator|->
 name|height
@@ -2376,7 +2327,6 @@ operator|/
 literal|2
 operator|-
 literal|128
-operator|)
 else|:
 literal|0
 operator|)
@@ -3402,9 +3352,7 @@ name|env
 index|[
 literal|4
 operator|*
-operator|(
 name|i
-operator|)
 operator|+
 literal|0
 index|]
@@ -3413,9 +3361,7 @@ name|env
 index|[
 literal|4
 operator|*
-operator|(
 name|i
-operator|)
 operator|+
 literal|0
 index|]
@@ -3466,9 +3412,7 @@ name|env
 index|[
 literal|4
 operator|*
-operator|(
 name|i
-operator|)
 operator|+
 literal|1
 index|]
@@ -3477,9 +3421,7 @@ name|env
 index|[
 literal|4
 operator|*
-operator|(
 name|i
-operator|)
 operator|+
 literal|1
 index|]
@@ -3530,9 +3472,7 @@ name|env
 index|[
 literal|4
 operator|*
-operator|(
 name|i
-operator|)
 operator|+
 literal|2
 index|]
@@ -3541,9 +3481,7 @@ name|env
 index|[
 literal|4
 operator|*
-operator|(
 name|i
-operator|)
 operator|+
 literal|2
 index|]
@@ -3616,18 +3554,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|window_response_callback (GtkWidget * widget,gint response_id,gpointer data)
+DECL|function|window_response_callback (GtkWidget * widget)
 name|window_response_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
-parameter_list|,
-name|gint
-name|response_id
-parameter_list|,
-name|gpointer
-name|data
 parameter_list|)
 block|{
 name|g_source_remove
