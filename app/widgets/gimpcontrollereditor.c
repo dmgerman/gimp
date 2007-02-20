@@ -102,7 +102,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29be46840103
+DECL|enum|__anon27afe6f30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -118,7 +118,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29be46840203
+DECL|enum|__anon27afe6f30203
 block|{
 DECL|enumerator|COLUMN_EVENT
 name|COLUMN_EVENT
@@ -2301,6 +2301,10 @@ name|delete_sensitive
 operator|=
 name|TRUE
 expr_stmt|;
+if|if
+condition|(
+name|event
+condition|)
 name|delete_help
 operator|=
 name|g_strdup_printf
@@ -2318,6 +2322,10 @@ name|edit_sensitive
 operator|=
 name|TRUE
 expr_stmt|;
+if|if
+condition|(
+name|event
+condition|)
 name|edit_help
 operator|=
 name|g_strdup_printf
