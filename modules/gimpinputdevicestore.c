@@ -90,6 +90,25 @@ directive|include
 file|<rpc.h>
 end_include
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS
+end_ifndef
+
+begin_define
+DECL|macro|GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS
+define|#
+directive|define
+name|GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS
+value|0x00000004
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_include
 include|#
 directive|include
@@ -115,7 +134,7 @@ end_ifdef
 
 begin_enum
 enum|enum
-DECL|enum|__anon27985b7d0103
+DECL|enum|__anon27b97ad60103
 block|{
 DECL|enumerator|COLUMN_UDI
 name|COLUMN_UDI
@@ -131,7 +150,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27985b7d0203
+DECL|enum|__anon27b97ad60203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -144,7 +163,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27985b7d0303
+DECL|enum|__anon27b97ad60303
 block|{
 DECL|enumerator|DEVICE_ADDED
 name|DEVICE_ADDED
@@ -1707,7 +1726,7 @@ end_elif
 
 begin_enum
 enum|enum
-DECL|enum|__anon27985b7d0403
+DECL|enum|__anon27b97ad60403
 block|{
 DECL|enumerator|COLUMN_GUID
 name|COLUMN_GUID
@@ -1726,7 +1745,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27985b7d0503
+DECL|enum|__anon27b97ad60503
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1739,7 +1758,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27985b7d0603
+DECL|enum|__anon27b97ad60603
 block|{
 DECL|enumerator|DEVICE_ADDED
 name|DEVICE_ADDED
