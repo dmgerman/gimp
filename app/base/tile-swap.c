@@ -752,10 +752,6 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-specifier|extern
-name|gint
-name|tile_ref_count
-decl_stmt|;
 name|SwapFile
 modifier|*
 name|swap_file
@@ -766,7 +762,8 @@ name|def_swap_file
 decl_stmt|;
 if|if
 condition|(
-name|tile_ref_count
+name|tile_global_refcount
+argument_list|()
 operator|!=
 literal|0
 condition|)
@@ -774,7 +771,8 @@ name|g_warning
 argument_list|(
 literal|"tile ref count balance: %d\n"
 argument_list|,
-name|tile_ref_count
+name|tile_global_refcount
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|swap_file

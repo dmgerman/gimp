@@ -292,6 +292,15 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|gint
+name|tile_global_refcount
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/* tile_attach attaches a tile to a tile manager: this function  * increments the tile's share count and inserts a tilelink into the  * tile's link list.  tile_detach reverses the process.  * If a tile's share count is zero after a tile_detach, the tile is  * discarded.  */
 end_comment
