@@ -136,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27e880ba0103
+DECL|enum|__anon2b78c88f0103
 block|{
 DECL|enumerator|PSD_UNKNOWN_IMAGE
 name|PSD_UNKNOWN_IMAGE
@@ -324,7 +324,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e880ba0208
+DECL|struct|__anon2b78c88f0208
 block|{
 DECL|member|hRes
 name|Fixed
@@ -574,7 +574,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27e880ba0308
+DECL|struct|__anon2b78c88f0308
 block|{
 DECL|member|signature
 name|gchar
@@ -1747,6 +1747,7 @@ return|return
 name|GIMP_INDEXED
 return|;
 default|default:
+comment|/* If I follow the code that calls this function correctly, this        * should never happen, so a g_assert_not_reached() would        * probably be better. --tml        */
 name|g_message
 argument_list|(
 literal|"Error: Can't convert PSD imagetype to GIMP imagetype"
@@ -1755,9 +1756,6 @@ expr_stmt|;
 name|gimp_quit
 argument_list|()
 expr_stmt|;
-return|return
-name|GIMP_RGB
-return|;
 block|}
 block|}
 end_function
@@ -1838,6 +1836,20 @@ name|psdtype
 condition|)
 block|{
 case|case
+literal|0
+case|:
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"Cannot handle bitmap PSD files"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_quit
+argument_list|()
+expr_stmt|;
+case|case
 literal|1
 case|:
 return|return
@@ -1855,18 +1867,76 @@ case|:
 return|return
 name|GIMP_RGB
 return|;
-default|default:
+case|case
+literal|4
+case|:
 name|g_message
 argument_list|(
-literal|"Error: Can't convert PSD mode to GIMP base imagetype"
+name|_
+argument_list|(
+literal|"Cannot handle PSD files in CMYK color"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_quit
 argument_list|()
 expr_stmt|;
-return|return
-name|GIMP_RGB
-return|;
+case|case
+literal|7
+case|:
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"Cannot handle PSD files in Multichannel color"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_quit
+argument_list|()
+expr_stmt|;
+case|case
+literal|8
+case|:
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"Cannot handle PSD files in Duotone color"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_quit
+argument_list|()
+expr_stmt|;
+case|case
+literal|9
+case|:
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"Cannot handle PSD files in Lab color"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_quit
+argument_list|()
+expr_stmt|;
+default|default:
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"Cannot handle the color mode %d of the PSD file"
+argument_list|)
+argument_list|,
+name|psdtype
+argument_list|)
+expr_stmt|;
+name|gimp_quit
+argument_list|()
+expr_stmt|;
 block|}
 block|}
 end_function
@@ -2235,10 +2305,14 @@ operator|>
 name|MAX_CHANNELS
 condition|)
 block|{
-name|printf
+name|g_message
 argument_list|(
-literal|"\nPSD: Sorry - this image has too many "
-literal|"aux channels.  Tell Adam!\n"
+name|_
+argument_list|(
+literal|"Cannot handle PSD file with more than %d channels"
+argument_list|)
+argument_list|,
+name|MAX_CHANNELS
 argument_list|)
 expr_stmt|;
 name|gimp_quit
@@ -5337,7 +5411,6 @@ expr_stmt|;
 name|gimp_quit
 argument_list|()
 expr_stmt|;
-break|break;
 block|}
 name|g_free
 argument_list|(
@@ -8361,7 +8434,6 @@ expr_stmt|;
 name|gimp_quit
 argument_list|()
 expr_stmt|;
-break|break;
 block|}
 name|merged_data
 operator|=
@@ -8597,7 +8669,6 @@ expr_stmt|;
 name|gimp_quit
 argument_list|()
 expr_stmt|;
-break|break;
 block|}
 name|gimp_image_add_layer
 argument_list|(
@@ -9225,9 +9296,12 @@ name|PSD_RGBA_IMAGE
 expr_stmt|;
 break|break;
 default|default:
-name|printf
+name|g_message
 argument_list|(
-literal|"PSD: cannot handle CMYK with more than 5 channels\n"
+name|_
+argument_list|(
+literal|"Cannot handle PSD files in CMYK color with more than 5 channels"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -9259,9 +9333,12 @@ operator|==
 name|PSD_UNKNOWN_IMAGE
 condition|)
 block|{
-name|printf
+name|g_message
 argument_list|(
-literal|"PSD: Image type %d (%s) is not supported in this data format\n"
+name|_
+argument_list|(
+literal|"Cannot handle image mode %d (%s)"
+argument_list|)
 argument_list|,
 name|PSDheader
 operator|.
@@ -9271,8 +9348,11 @@ operator|(
 name|PSDheader
 operator|.
 name|mode
-operator|>
-literal|10
+operator|>=
+name|G_N_ELEMENTS
+argument_list|(
+name|modename
+argument_list|)
 operator|)
 condition|?
 literal|"<out of range>"
@@ -9309,10 +9389,16 @@ literal|1
 operator|)
 condition|)
 block|{
-name|printf
+name|g_message
 argument_list|(
-literal|"PSD: GIMP only supports 8-bit or 1-bit deep PSD images "
-literal|"at this time.\n"
+name|_
+argument_list|(
+literal|"Cannot handle %d bits per channel PSD files"
+argument_list|)
+argument_list|,
+name|PSDheader
+operator|.
+name|bpp
 argument_list|)
 expr_stmt|;
 return|return
@@ -12349,9 +12435,12 @@ operator|!=
 literal|0
 condition|)
 block|{
-name|printf
+name|g_message
 argument_list|(
-literal|"PSD: not an Adobe Photoshop PSD file\n"
+name|_
+argument_list|(
+literal|"This is not an Adobe Photoshop PSD file"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_quit
@@ -12367,9 +12456,12 @@ operator|!=
 literal|1
 condition|)
 block|{
-name|printf
+name|g_message
 argument_list|(
-literal|"PSD: bad version number '%d', not 1\n"
+name|_
+argument_list|(
+literal|"The PSD file has bad version number '%d', not 1"
+argument_list|)
 argument_list|,
 name|PSDheader
 operator|.
