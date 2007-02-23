@@ -27,13 +27,13 @@ name|pixel_surround_new
 parameter_list|(
 name|TileManager
 modifier|*
-name|tm
+name|tiles
 parameter_list|,
 name|gint
-name|w
+name|width
 parameter_list|,
 name|gint
-name|h
+name|height
 parameter_list|,
 specifier|const
 name|guchar

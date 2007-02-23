@@ -3178,11 +3178,6 @@ literal|255
 argument_list|)
 expr_stmt|;
 block|}
-name|pixel_surround_release
-argument_list|(
-name|surround
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -3754,8 +3749,8 @@ name|gint
 name|y3
 parameter_list|)
 block|{
-if|if
-condition|(
+return|return
+operator|(
 name|abs
 argument_list|(
 name|x0
@@ -3827,12 +3822,7 @@ name|y0
 argument_list|)
 operator|>
 name|FIXED_UNIT
-condition|)
-return|return
-name|TRUE
-return|;
-return|return
-name|FALSE
+operator|)
 return|;
 block|}
 end_function
@@ -5224,11 +5214,6 @@ literal|255
 argument_list|)
 expr_stmt|;
 block|}
-name|pixel_surround_release
-argument_list|(
-name|surround
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
