@@ -111,6 +111,7 @@ end_comment
 
 begin_function_decl
 specifier|static
+specifier|inline
 name|gboolean
 name|supersample_dtest
 parameter_list|(
@@ -187,6 +188,7 @@ name|guchar
 modifier|*
 name|color
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|bg_color
@@ -313,7 +315,10 @@ name|progress
 parameter_list|)
 block|{
 name|PixelSurround
+modifier|*
 name|surround
+init|=
+name|NULL
 decl_stmt|;
 name|GimpImageType
 name|pickable_type
@@ -595,11 +600,10 @@ break|break;
 case|case
 name|GIMP_INTERPOLATION_CUBIC
 case|:
-name|pixel_surround_init
-argument_list|(
-operator|&
 name|surround
-argument_list|,
+operator|=
+name|pixel_surround_new
+argument_list|(
 name|orig_tiles
 argument_list|,
 literal|4
@@ -613,11 +617,10 @@ break|break;
 case|case
 name|GIMP_INTERPOLATION_LINEAR
 case|:
-name|pixel_surround_init
-argument_list|(
-operator|&
 name|surround
-argument_list|,
+operator|=
+name|pixel_surround_new
+argument_list|(
 name|orig_tiles
 argument_list|,
 literal|2
@@ -2682,7 +2685,6 @@ name|GIMP_INTERPOLATION_LINEAR
 case|:
 name|sample_linear
 argument_list|(
-operator|&
 name|surround
 argument_list|,
 name|u
@@ -2712,7 +2714,6 @@ name|GIMP_INTERPOLATION_CUBIC
 case|:
 name|sample_cubic
 argument_list|(
-operator|&
 name|surround
 argument_list|,
 name|u
@@ -2837,33 +2838,15 @@ argument_list|,
 literal|1.0
 argument_list|)
 expr_stmt|;
-switch|switch
+if|if
 condition|(
-name|interpolation_type
+name|surround
 condition|)
-block|{
-case|case
-name|GIMP_INTERPOLATION_NONE
-case|:
-break|break;
-case|case
-name|GIMP_INTERPOLATION_CUBIC
-case|:
-case|case
-name|GIMP_INTERPOLATION_LINEAR
-case|:
-name|pixel_surround_clear
+name|pixel_surround_destroy
 argument_list|(
-operator|&
 name|surround
 argument_list|)
 expr_stmt|;
-break|break;
-case|case
-name|GIMP_INTERPOLATION_LANCZOS
-case|:
-break|break;
-block|}
 name|g_free
 argument_list|(
 name|dest
@@ -2954,17 +2937,19 @@ name|v
 argument_list|)
 decl_stmt|;
 name|gint
-name|row
+name|rowstride
 decl_stmt|;
 name|gdouble
 name|du
 decl_stmt|,
 name|dv
 decl_stmt|;
+specifier|const
 name|guchar
 modifier|*
 name|alphachan
 decl_stmt|;
+specifier|const
 name|guchar
 modifier|*
 name|data
@@ -2979,13 +2964,9 @@ argument_list|,
 name|iu
 argument_list|,
 name|iv
-argument_list|)
-expr_stmt|;
-name|row
-operator|=
-name|pixel_surround_rowstride
-argument_list|(
-name|surround
+argument_list|,
+operator|&
+name|rowstride
 argument_list|)
 expr_stmt|;
 comment|/* the fractional error */
@@ -3026,12 +3007,12 @@ index|]
 argument_list|,
 name|alphachan
 index|[
-name|row
+name|rowstride
 index|]
 argument_list|,
 name|alphachan
 index|[
-name|row
+name|rowstride
 operator|+
 name|bytes
 index|]
@@ -3118,7 +3099,9 @@ control|)
 block|{
 name|gint
 name|newval
-init|=
+decl_stmt|;
+name|newval
+operator|=
 operator|(
 name|a_recip
 operator|*
@@ -3148,26 +3131,26 @@ index|]
 argument_list|,
 name|alphachan
 index|[
-name|row
+name|rowstride
 index|]
 operator|*
 name|data
 index|[
-name|row
+name|rowstride
 operator|+
 name|i
 index|]
 argument_list|,
 name|alphachan
 index|[
-name|row
+name|rowstride
 operator|+
 name|bytes
 index|]
 operator|*
 name|data
 index|[
-name|row
+name|rowstride
 operator|+
 name|bytes
 operator|+
@@ -3179,7 +3162,7 @@ argument_list|,
 name|dv
 argument_list|)
 operator|)
-decl_stmt|;
+expr_stmt|;
 name|color
 index|[
 name|i
@@ -3252,7 +3235,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|sample_bi (TileManager * tm,gint x,gint y,guchar * color,guchar * bg_color,gint bpp,gint alpha)
+DECL|function|sample_bi (TileManager * tm,gint x,gint y,guchar * color,const guchar * bg_color,gint bpp,gint alpha)
 name|sample_bi
 parameter_list|(
 name|TileManager
@@ -3269,6 +3252,7 @@ name|guchar
 modifier|*
 name|color
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|bg_color
@@ -3740,6 +3724,7 @@ end_comment
 
 begin_function
 specifier|static
+specifier|inline
 name|gboolean
 DECL|function|supersample_test (gint x0,gint y0,gint x1,gint y1,gint x2,gint y2,gint x3,gint y3)
 name|supersample_test
@@ -3858,6 +3843,7 @@ end_comment
 
 begin_function
 specifier|static
+specifier|inline
 name|gboolean
 DECL|function|supersample_dtest (gdouble x0,gdouble y0,gdouble x1,gdouble y1,gdouble x2,gdouble y2,gdouble x3,gdouble y3)
 name|supersample_dtest
@@ -3887,8 +3873,8 @@ name|gdouble
 name|y3
 parameter_list|)
 block|{
-if|if
-condition|(
+return|return
+operator|(
 name|fabs
 argument_list|(
 name|x0
@@ -3960,12 +3946,7 @@ name|y0
 argument_list|)
 operator|>
 literal|1.0
-condition|)
-return|return
-name|TRUE
-return|;
-return|return
-name|FALSE
+operator|)
 return|;
 block|}
 end_function
@@ -3977,7 +3958,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|get_sample (TileManager * tm,gint xc,gint yc,gint x0,gint y0,gint x1,gint y1,gint x2,gint y2,gint x3,gint y3,gint * cc,gint level,guint * color,guchar * bg_color,gint bpp,gint alpha)
+DECL|function|get_sample (TileManager * tm,gint xc,gint yc,gint x0,gint y0,gint x1,gint y1,gint x2,gint y2,gint x3,gint y3,gint * cc,gint level,guint * color,const guchar * bg_color,gint bpp,gint alpha)
 name|get_sample
 parameter_list|(
 name|TileManager
@@ -4025,6 +4006,7 @@ name|guint
 modifier|*
 name|color
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|bg_color
@@ -4479,7 +4461,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|sample_adapt (TileManager * tm,gdouble xc,gdouble yc,gdouble x0,gdouble y0,gdouble x1,gdouble y1,gdouble x2,gdouble y2,gdouble x3,gdouble y3,gint level,guchar * color,guchar * bg_color,gint bpp,gint alpha)
+DECL|function|sample_adapt (TileManager * tm,gdouble xc,gdouble yc,gdouble x0,gdouble y0,gdouble x1,gdouble y1,gdouble x2,gdouble y2,gdouble x3,gdouble y3,gint level,guchar * color,const guchar * bg_color,gint bpp,gint alpha)
 name|sample_adapt
 parameter_list|(
 name|TileManager
@@ -4523,6 +4505,7 @@ name|guchar
 modifier|*
 name|color
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|bg_color
@@ -4935,13 +4918,14 @@ name|v
 argument_list|)
 decl_stmt|;
 name|gint
-name|row
+name|rowstride
 decl_stmt|;
 name|gdouble
 name|du
 decl_stmt|,
 name|dv
 decl_stmt|;
+specifier|const
 name|guchar
 modifier|*
 name|data
@@ -4960,13 +4944,9 @@ argument_list|,
 name|iv
 operator|-
 literal|1
-argument_list|)
-expr_stmt|;
-name|row
-operator|=
-name|pixel_surround_rowstride
-argument_list|(
-name|surround
+argument_list|,
+operator|&
+name|rowstride
 argument_list|)
 expr_stmt|;
 comment|/* the fractional error */
@@ -4997,7 +4977,7 @@ name|data
 operator|+
 name|alpha
 operator|+
-name|row
+name|rowstride
 operator|*
 literal|0
 argument_list|,
@@ -5012,7 +4992,7 @@ name|data
 operator|+
 name|alpha
 operator|+
-name|row
+name|rowstride
 operator|*
 literal|1
 argument_list|,
@@ -5027,7 +5007,7 @@ name|data
 operator|+
 name|alpha
 operator|+
-name|row
+name|rowstride
 operator|*
 literal|2
 argument_list|,
@@ -5042,7 +5022,7 @@ name|data
 operator|+
 name|alpha
 operator|+
-name|row
+name|rowstride
 operator|*
 literal|3
 argument_list|,
@@ -5143,7 +5123,7 @@ name|i
 operator|+
 name|data
 operator|+
-name|row
+name|rowstride
 operator|*
 literal|0
 argument_list|,
@@ -5151,7 +5131,7 @@ name|data
 operator|+
 name|alpha
 operator|+
-name|row
+name|rowstride
 operator|*
 literal|0
 argument_list|,
@@ -5166,7 +5146,7 @@ name|i
 operator|+
 name|data
 operator|+
-name|row
+name|rowstride
 operator|*
 literal|1
 argument_list|,
@@ -5174,7 +5154,7 @@ name|data
 operator|+
 name|alpha
 operator|+
-name|row
+name|rowstride
 operator|*
 literal|1
 argument_list|,
@@ -5189,7 +5169,7 @@ name|i
 operator|+
 name|data
 operator|+
-name|row
+name|rowstride
 operator|*
 literal|2
 argument_list|,
@@ -5197,7 +5177,7 @@ name|data
 operator|+
 name|alpha
 operator|+
-name|row
+name|rowstride
 operator|*
 literal|2
 argument_list|,
@@ -5212,7 +5192,7 @@ name|i
 operator|+
 name|data
 operator|+
-name|row
+name|rowstride
 operator|*
 literal|3
 argument_list|,
@@ -5220,7 +5200,7 @@ name|data
 operator|+
 name|alpha
 operator|+
-name|row
+name|rowstride
 operator|*
 literal|3
 argument_list|,
