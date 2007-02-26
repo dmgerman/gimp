@@ -5195,9 +5195,9 @@ expr_stmt|;
 comment|/* get rid of preview artifacts left outside the drawable's area */
 name|gtk_widget_queue_draw
 argument_list|(
-name|display
-operator|->
 name|shell
+operator|->
+name|canvas
 argument_list|)
 expr_stmt|;
 block|}
