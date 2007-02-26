@@ -335,10 +335,6 @@ control|)
 block|{
 name|item
 operator|=
-operator|(
-name|GimpItem
-operator|*
-operator|)
 name|list
 operator|->
 name|data
@@ -401,10 +397,6 @@ control|)
 block|{
 name|item
 operator|=
-operator|(
-name|GimpItem
-operator|*
-operator|)
 name|list
 operator|->
 name|data
@@ -505,10 +497,6 @@ control|)
 block|{
 name|item
 operator|=
-operator|(
-name|GimpItem
-operator|*
-operator|)
 name|list
 operator|->
 name|data
