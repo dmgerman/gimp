@@ -146,6 +146,7 @@ parameter_list|,
 name|gint
 name|v2
 parameter_list|,
+specifier|const
 name|GimpMatrix3
 modifier|*
 name|m
@@ -153,6 +154,7 @@ parameter_list|,
 name|gint
 name|alpha
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|bg_color
@@ -201,6 +203,7 @@ parameter_list|,
 name|gint
 name|v2
 parameter_list|,
+specifier|const
 name|GimpMatrix3
 modifier|*
 name|m
@@ -208,6 +211,7 @@ parameter_list|,
 name|gint
 name|alpha
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|bg_color
@@ -223,7 +227,7 @@ begin_function_decl
 specifier|static
 specifier|inline
 name|void
-name|transform_coordinates
+name|normalize_coordinates
 parameter_list|(
 specifier|const
 name|gint
@@ -1510,7 +1514,7 @@ name|gint
 name|i
 decl_stmt|;
 comment|/*  normalize homogeneous coords  */
-name|transform_coordinates
+name|normalize_coordinates
 argument_list|(
 literal|5
 argument_list|,
@@ -1953,7 +1957,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_transform_region_nearest (TileManager * orig_tiles,PixelRegion * destPR,gint dest_x1,gint dest_y1,gint dest_x2,gint dest_y2,gint u1,gint v1,gint u2,gint v2,GimpMatrix3 * m,gint alpha,guchar * bg_color,GimpProgress * progress)
+DECL|function|gimp_transform_region_nearest (TileManager * orig_tiles,PixelRegion * destPR,gint dest_x1,gint dest_y1,gint dest_x2,gint dest_y2,gint u1,gint v1,gint u2,gint v2,const GimpMatrix3 * m,gint alpha,const guchar * bg_color,GimpProgress * progress)
 name|gimp_transform_region_nearest
 parameter_list|(
 name|TileManager
@@ -1988,6 +1992,7 @@ parameter_list|,
 name|gint
 name|v2
 parameter_list|,
+specifier|const
 name|GimpMatrix3
 modifier|*
 name|m
@@ -1995,6 +2000,7 @@ parameter_list|,
 name|gint
 name|alpha
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|bg_color
@@ -2282,7 +2288,7 @@ decl_stmt|,
 name|iv
 decl_stmt|;
 comment|/*  normalize homogeneous coords  */
-name|transform_coordinates
+name|normalize_coordinates
 argument_list|(
 literal|1
 argument_list|,
@@ -2455,7 +2461,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_transform_region_lanczos (TileManager * orig_tiles,PixelRegion * destPR,gint dest_x1,gint dest_y1,gint dest_x2,gint dest_y2,gint u1,gint v1,gint u2,gint v2,GimpMatrix3 * m,gint alpha,guchar * bg_color,GimpProgress * progress)
+DECL|function|gimp_transform_region_lanczos (TileManager * orig_tiles,PixelRegion * destPR,gint dest_x1,gint dest_y1,gint dest_x2,gint dest_y2,gint u1,gint v1,gint u2,gint v2,const GimpMatrix3 * m,gint alpha,const guchar * bg_color,GimpProgress * progress)
 name|gimp_transform_region_lanczos
 parameter_list|(
 name|TileManager
@@ -2490,6 +2496,7 @@ parameter_list|,
 name|gint
 name|v2
 parameter_list|,
+specifier|const
 name|GimpMatrix3
 modifier|*
 name|m
@@ -2497,6 +2504,7 @@ parameter_list|,
 name|gint
 name|alpha
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|bg_color
@@ -2830,7 +2838,7 @@ index|[
 literal|2
 index|]
 expr_stmt|;
-name|transform_coordinates
+name|normalize_coordinates
 argument_list|(
 literal|1
 argument_list|,
@@ -3393,8 +3401,8 @@ begin_function
 specifier|static
 specifier|inline
 name|void
-DECL|function|transform_coordinates (const gint coords,const gdouble * tu,const gdouble * tv,const gdouble * tw,gdouble * u,gdouble * v)
-name|transform_coordinates
+DECL|function|normalize_coordinates (const gint coords,const gdouble * tu,const gdouble * tv,const gdouble * tw,gdouble * u,gdouble * v)
+name|normalize_coordinates
 parameter_list|(
 specifier|const
 name|gint
