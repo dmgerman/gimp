@@ -52,11 +52,26 @@ directive|include
 file|<gdk/gdkx.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_X11_EXTENSIONS_SHAPE_H
+end_ifdef
+
 begin_include
 include|#
 directive|include
 file|<X11/extensions/shape.h>
 end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* HAVE_X11_EXTENSIONS_SHAPE_H */
+end_comment
 
 begin_ifdef
 ifdef|#
@@ -307,7 +322,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b3f1ade0103
+DECL|enum|__anon2be5a1bb0103
 block|{
 DECL|enumerator|SHOOT_ROOT
 name|SHOOT_ROOT
@@ -326,7 +341,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3f1ade0208
+DECL|struct|__anon2be5a1bb0208
 block|{
 DECL|member|shoot_type
 name|ShootType
@@ -2479,6 +2494,11 @@ directive|if
 name|defined
 argument_list|(
 name|GDK_WINDOWING_X11
+argument_list|)
+operator|&&
+name|defined
+argument_list|(
+name|HAVE_X11_EXTENSIONS_SHAPE_H
 argument_list|)
 name|Display
 modifier|*
