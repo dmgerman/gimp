@@ -171,6 +171,9 @@ parameter_list|,
 name|GdkModifierType
 name|state
 parameter_list|,
+name|GimpButtonReleaseType
+name|release_type
+parameter_list|,
 name|GimpDisplay
 modifier|*
 name|display
@@ -703,7 +706,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_free_select_tool_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
+DECL|function|gimp_free_select_tool_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpButtonReleaseType release_type,GimpDisplay * display)
 name|gimp_free_select_tool_button_release
 parameter_list|(
 name|GimpTool
@@ -719,6 +722,9 @@ name|time
 parameter_list|,
 name|GdkModifierType
 name|state
+parameter_list|,
+name|GimpButtonReleaseType
+name|release_type
 parameter_list|,
 name|GimpDisplay
 modifier|*
@@ -749,12 +755,11 @@ operator|->
 name|control
 argument_list|)
 expr_stmt|;
-comment|/*  First take care of the case where the user "cancels" the action  */
 if|if
 condition|(
-name|state
-operator|&
-name|GDK_BUTTON3_MASK
+name|release_type
+operator|==
+name|GIMP_BUTTON_RELEASE_CANCEL
 condition|)
 return|return;
 if|if
@@ -766,7 +771,6 @@ operator|==
 literal|1
 condition|)
 block|{
-comment|/*  If there is a floating selection, anchor it  */
 if|if
 condition|(
 name|gimp_image_floating_sel
@@ -777,6 +781,7 @@ name|image
 argument_list|)
 condition|)
 block|{
+comment|/*  If there is a floating selection, anchor it  */
 name|floating_sel_anchor
 argument_list|(
 name|gimp_image_floating_sel
@@ -788,9 +793,9 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  Otherwise, clear the selection mask  */
 else|else
 block|{
+comment|/*  Otherwise, clear the selection mask  */
 name|gimp_channel_clear
 argument_list|(
 name|gimp_image_get_mask

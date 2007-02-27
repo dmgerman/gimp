@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27bb12ee0103
+DECL|enum|__anon28db5f6f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -264,6 +264,9 @@ name|time
 parameter_list|,
 name|GdkModifierType
 name|state
+parameter_list|,
+name|GimpButtonReleaseType
+name|release_type
 parameter_list|,
 name|GimpDisplay
 modifier|*
@@ -1075,7 +1078,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tool_real_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
+DECL|function|gimp_tool_real_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpButtonReleaseType release_type,GimpDisplay * display)
 name|gimp_tool_real_button_release
 parameter_list|(
 name|GimpTool
@@ -1091,6 +1094,9 @@ name|time
 parameter_list|,
 name|GdkModifierType
 name|state
+parameter_list|,
+name|GimpButtonReleaseType
+name|release_type
 parameter_list|,
 name|GimpDisplay
 modifier|*
@@ -1802,6 +1808,11 @@ modifier|*
 name|display
 parameter_list|)
 block|{
+name|GimpButtonReleaseType
+name|release_type
+init|=
+name|GIMP_BUTTON_RELEASE_NORMAL
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_TOOL
@@ -1830,6 +1841,16 @@ argument_list|(
 name|tool
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|state
+operator|&
+name|GDK_BUTTON3_MASK
+condition|)
+name|release_type
+operator|=
+name|GIMP_BUTTON_RELEASE_CANCEL
+expr_stmt|;
 name|GIMP_TOOL_GET_CLASS
 argument_list|(
 name|tool
@@ -1844,6 +1865,8 @@ argument_list|,
 name|time
 argument_list|,
 name|state
+argument_list|,
+name|release_type
 argument_list|,
 name|display
 argument_list|)

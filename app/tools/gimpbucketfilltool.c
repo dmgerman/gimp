@@ -154,6 +154,9 @@ parameter_list|,
 name|GdkModifierType
 name|state
 parameter_list|,
+name|GimpButtonReleaseType
+name|release_type
+parameter_list|,
 name|GimpDisplay
 modifier|*
 name|display
@@ -521,7 +524,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_bucket_fill_tool_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
+DECL|function|gimp_bucket_fill_tool_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpButtonReleaseType release_type,GimpDisplay * display)
 name|gimp_bucket_fill_tool_button_release
 parameter_list|(
 name|GimpTool
@@ -537,6 +540,9 @@ name|time
 parameter_list|,
 name|GdkModifierType
 name|state
+parameter_list|,
+name|GimpButtonReleaseType
+name|release_type
 parameter_list|,
 name|GimpDisplay
 modifier|*
@@ -570,15 +576,11 @@ argument_list|(
 name|options
 argument_list|)
 decl_stmt|;
-comment|/*  if the 3rd button isn't pressed, fill the selected region  */
 if|if
 condition|(
-operator|!
-operator|(
-name|state
-operator|&
-name|GDK_BUTTON3_MASK
-operator|)
+name|release_type
+operator|!=
+name|GIMP_BUTTON_RELEASE_CANCEL
 condition|)
 block|{
 name|gimp_drawable_bucket_fill

@@ -293,6 +293,9 @@ parameter_list|,
 name|GdkModifierType
 name|state
 parameter_list|,
+name|GimpButtonReleaseType
+name|release_type
+parameter_list|,
 name|GimpDisplay
 modifier|*
 name|display

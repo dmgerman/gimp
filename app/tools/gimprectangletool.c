@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aaca5950103
+DECL|enum|__anon27bc0dfe0103
 block|{
 DECL|enumerator|RECTANGLE_CHANGED
 name|RECTANGLE_CHANGED
@@ -2145,7 +2145,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_rectangle_tool_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
+DECL|function|gimp_rectangle_tool_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpButtonReleaseType release_type,GimpDisplay * display)
 name|gimp_rectangle_tool_button_release
 parameter_list|(
 name|GimpTool
@@ -2161,6 +2161,9 @@ name|time
 parameter_list|,
 name|GdkModifierType
 name|state
+parameter_list|,
+name|GimpButtonReleaseType
+name|release_type
 parameter_list|,
 name|GimpDisplay
 modifier|*
@@ -2264,12 +2267,9 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-operator|!
-operator|(
-name|state
-operator|&
-name|GDK_BUTTON3_MASK
-operator|)
+name|release_type
+operator|!=
+name|GIMP_BUTTON_RELEASE_CANCEL
 condition|)
 block|{
 if|if

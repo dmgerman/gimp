@@ -180,6 +180,9 @@ parameter_list|,
 name|GdkModifierType
 name|state
 parameter_list|,
+name|GimpButtonReleaseType
+name|release_type
+parameter_list|,
 name|GimpDisplay
 modifier|*
 name|display
@@ -661,7 +664,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_region_select_tool_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
+DECL|function|gimp_region_select_tool_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpButtonReleaseType release_type,GimpDisplay * display)
 name|gimp_region_select_tool_button_release
 parameter_list|(
 name|GimpTool
@@ -677,6 +680,9 @@ name|time
 parameter_list|,
 name|GdkModifierType
 name|state
+parameter_list|,
+name|GimpButtonReleaseType
+name|release_type
 parameter_list|,
 name|GimpDisplay
 modifier|*
@@ -723,15 +729,11 @@ operator|->
 name|control
 argument_list|)
 expr_stmt|;
-comment|/*  First take care of the case where the user "cancels" the action  */
 if|if
 condition|(
-operator|!
-operator|(
-name|state
-operator|&
-name|GDK_BUTTON3_MASK
-operator|)
+name|release_type
+operator|!=
+name|GIMP_BUTTON_RELEASE_CANCEL
 condition|)
 block|{
 name|gint

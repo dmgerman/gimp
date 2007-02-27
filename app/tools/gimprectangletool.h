@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c5b1a970103
+DECL|enum|__anon2a3e0af40103
 block|{
 DECL|enumerator|GIMP_RECTANGLE_TOOL_PROP_0
 name|GIMP_RECTANGLE_TOOL_PROP_0
@@ -56,7 +56,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c5b1a970203
+DECL|enum|__anon2a3e0af40203
 block|{
 DECL|enumerator|RECT_INACTIVE
 name|RECT_INACTIVE
@@ -313,6 +313,9 @@ name|time
 parameter_list|,
 name|GdkModifierType
 name|state
+parameter_list|,
+name|GimpButtonReleaseType
+name|release_type
 parameter_list|,
 name|GimpDisplay
 modifier|*

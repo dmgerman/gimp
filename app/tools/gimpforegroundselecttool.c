@@ -138,7 +138,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275c4cd80108
+DECL|struct|__anon2913d9640108
 block|{
 DECL|member|width
 name|gint
@@ -351,6 +351,9 @@ name|time
 parameter_list|,
 name|GdkModifierType
 name|state
+parameter_list|,
+name|GimpButtonReleaseType
+name|release_type
 parameter_list|,
 name|GimpDisplay
 modifier|*
@@ -1747,7 +1750,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_foreground_select_tool_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
+DECL|function|gimp_foreground_select_tool_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpButtonReleaseType release_type,GimpDisplay * display)
 name|gimp_foreground_select_tool_button_release
 parameter_list|(
 name|GimpTool
@@ -1763,6 +1766,9 @@ name|time
 parameter_list|,
 name|GdkModifierType
 name|state
+parameter_list|,
+name|GimpButtonReleaseType
+name|release_type
 parameter_list|,
 name|GimpDisplay
 modifier|*
@@ -1855,6 +1861,8 @@ argument_list|,
 name|time
 argument_list|,
 name|state
+argument_list|,
+name|release_type
 argument_list|,
 name|display
 argument_list|)

@@ -182,6 +182,9 @@ parameter_list|,
 name|GdkModifierType
 name|state
 parameter_list|,
+name|GimpButtonReleaseType
+name|release_type
+parameter_list|,
 name|GimpDisplay
 modifier|*
 name|display
@@ -783,7 +786,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_crop_tool_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
+DECL|function|gimp_crop_tool_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpButtonReleaseType release_type,GimpDisplay * display)
 name|gimp_crop_tool_button_release
 parameter_list|(
 name|GimpTool
@@ -799,6 +802,9 @@ name|time
 parameter_list|,
 name|GdkModifierType
 name|state
+parameter_list|,
+name|GimpButtonReleaseType
+name|release_type
 parameter_list|,
 name|GimpDisplay
 modifier|*
@@ -826,6 +832,8 @@ argument_list|,
 name|time
 argument_list|,
 name|state
+argument_list|,
+name|release_type
 argument_list|,
 name|display
 argument_list|)

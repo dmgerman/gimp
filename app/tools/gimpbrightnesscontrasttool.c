@@ -209,6 +209,9 @@ parameter_list|,
 name|GdkModifierType
 name|state
 parameter_list|,
+name|GimpButtonReleaseType
+name|release_type
+parameter_list|,
 name|GimpDisplay
 modifier|*
 name|display
@@ -296,14 +299,15 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|brightness_contrast_brightness_adjustment_update
+name|brightness_contrast_brightness_changed
 parameter_list|(
 name|GtkAdjustment
 modifier|*
 name|adj
 parameter_list|,
-name|gpointer
-name|data
+name|GimpBrightnessContrastTool
+modifier|*
+name|bc_tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -311,14 +315,15 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|brightness_contrast_contrast_adjustment_update
+name|brightness_contrast_contrast_changed
 parameter_list|(
 name|GtkAdjustment
 modifier|*
 name|adj
 parameter_list|,
-name|gpointer
-name|data
+name|GimpBrightnessContrastTool
+modifier|*
+name|bc_tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -857,7 +862,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_brightness_contrast_tool_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
+DECL|function|gimp_brightness_contrast_tool_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpButtonReleaseType release_type,GimpDisplay * display)
 name|gimp_brightness_contrast_tool_button_release
 parameter_list|(
 name|GimpTool
@@ -873,6 +878,9 @@ name|time
 parameter_list|,
 name|GdkModifierType
 name|state
+parameter_list|,
+name|GimpButtonReleaseType
+name|release_type
 parameter_list|,
 name|GimpDisplay
 modifier|*
@@ -921,11 +929,9 @@ condition|)
 return|return;
 if|if
 condition|(
-operator|(
-name|state
-operator|&
-name|GDK_BUTTON3_MASK
-operator|)
+name|release_type
+operator|==
+name|GIMP_BUTTON_RELEASE_CANCEL
 condition|)
 name|gimp_brightness_contrast_tool_reset
 argument_list|(
@@ -1256,7 +1262,7 @@ literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|brightness_contrast_brightness_adjustment_update
+name|brightness_contrast_brightness_changed
 argument_list|)
 argument_list|,
 name|bc_tool
@@ -1346,7 +1352,7 @@ literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|brightness_contrast_contrast_adjustment_update
+name|brightness_contrast_contrast_changed
 argument_list|)
 argument_list|,
 name|bc_tool
@@ -1451,26 +1457,18 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|brightness_contrast_brightness_adjustment_update (GtkAdjustment * adjustment,gpointer data)
-name|brightness_contrast_brightness_adjustment_update
+DECL|function|brightness_contrast_brightness_changed (GtkAdjustment * adjustment,GimpBrightnessContrastTool * bc_tool)
+name|brightness_contrast_brightness_changed
 parameter_list|(
 name|GtkAdjustment
 modifier|*
 name|adjustment
 parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
 name|GimpBrightnessContrastTool
 modifier|*
 name|bc_tool
-init|=
-name|GIMP_BRIGHTNESS_CONTRAST_TOOL
-argument_list|(
-name|data
-argument_list|)
-decl_stmt|;
+parameter_list|)
+block|{
 if|if
 condition|(
 name|bc_tool
@@ -1505,26 +1503,18 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|brightness_contrast_contrast_adjustment_update (GtkAdjustment * adjustment,gpointer data)
-name|brightness_contrast_contrast_adjustment_update
+DECL|function|brightness_contrast_contrast_changed (GtkAdjustment * adjustment,GimpBrightnessContrastTool * bc_tool)
+name|brightness_contrast_contrast_changed
 parameter_list|(
 name|GtkAdjustment
 modifier|*
 name|adjustment
 parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
 name|GimpBrightnessContrastTool
 modifier|*
 name|bc_tool
-init|=
-name|GIMP_BRIGHTNESS_CONTRAST_TOOL
-argument_list|(
-name|data
-argument_list|)
-decl_stmt|;
+parameter_list|)
+block|{
 if|if
 condition|(
 name|bc_tool
