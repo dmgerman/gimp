@@ -354,7 +354,7 @@ name|list
 operator|->
 name|data
 expr_stmt|;
-name|gimp_sub_progress_set_steps
+name|gimp_sub_progress_set_step
 argument_list|(
 name|GIMP_SUB_PROGRESS
 argument_list|(
@@ -415,7 +415,7 @@ name|list
 operator|->
 name|data
 expr_stmt|;
-name|gimp_sub_progress_set_steps
+name|gimp_sub_progress_set_step
 argument_list|(
 name|GIMP_SUB_PROGRESS
 argument_list|(
@@ -447,7 +447,7 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/*  Don't forget the selection mask!  */
-name|gimp_sub_progress_set_steps
+name|gimp_sub_progress_set_step
 argument_list|(
 name|GIMP_SUB_PROGRESS
 argument_list|(
@@ -513,7 +513,7 @@ name|list
 operator|->
 name|data
 expr_stmt|;
-name|gimp_sub_progress_set_steps
+name|gimp_sub_progress_set_step
 argument_list|(
 name|GIMP_SUB_PROGRESS
 argument_list|(
