@@ -687,6 +687,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpSubProgress
+typedef|typedef
+name|struct
+name|_GimpSubProgress
+name|GimpSubProgress
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpStrokeDesc
 typedef|typedef
 name|struct
