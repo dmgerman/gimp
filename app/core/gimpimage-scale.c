@@ -141,8 +141,6 @@ decl_stmt|;
 name|GimpProgress
 modifier|*
 name|sub_progress
-init|=
-name|NULL
 decl_stmt|;
 name|GList
 modifier|*
@@ -172,13 +170,9 @@ literal|1.0
 decl_stmt|;
 name|gint
 name|progress_steps
-init|=
-literal|1
 decl_stmt|;
 name|gint
 name|progress_current
-init|=
-literal|0
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -218,11 +212,6 @@ operator|->
 name|gimp
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|progress
-condition|)
-block|{
 name|sub_progress
 operator|=
 name|gimp_sub_progress_new
@@ -255,7 +244,6 @@ literal|1
 comment|/* selection */
 operator|)
 expr_stmt|;
-block|}
 name|g_object_freeze_notify
 argument_list|(
 name|G_OBJECT
@@ -366,10 +354,6 @@ name|list
 operator|->
 name|data
 expr_stmt|;
-if|if
-condition|(
-name|sub_progress
-condition|)
 name|gimp_sub_progress_set_steps
 argument_list|(
 name|GIMP_SUB_PROGRESS
@@ -431,10 +415,6 @@ name|list
 operator|->
 name|data
 expr_stmt|;
-if|if
-condition|(
-name|sub_progress
-condition|)
 name|gimp_sub_progress_set_steps
 argument_list|(
 name|GIMP_SUB_PROGRESS
@@ -467,10 +447,6 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/*  Don't forget the selection mask!  */
-if|if
-condition|(
-name|sub_progress
-condition|)
 name|gimp_sub_progress_set_steps
 argument_list|(
 name|GIMP_SUB_PROGRESS
@@ -537,10 +513,6 @@ name|list
 operator|->
 name|data
 expr_stmt|;
-if|if
-condition|(
-name|sub_progress
-condition|)
 name|gimp_sub_progress_set_steps
 argument_list|(
 name|GIMP_SUB_PROGRESS
@@ -793,10 +765,6 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|sub_progress
-condition|)
 name|g_object_unref
 argument_list|(
 name|sub_progress

@@ -168,17 +168,17 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_sub_progress_set_steps
+name|gimp_sub_progress_set_step
 parameter_list|(
 name|GimpSubProgress
 modifier|*
 name|progress
 parameter_list|,
 name|gint
-name|num
+name|index
 parameter_list|,
 name|gint
-name|steps
+name|num_steps
 parameter_list|)
 function_decl|;
 end_function_decl

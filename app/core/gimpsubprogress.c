@@ -741,6 +741,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_sub_progress_new:  * @progress: parent progress or %NULL  *  * GimpSubProgress implements the GimpProgress interface and can be  * used whereever a GimpProgress is needed. It maps progress  * information to a sub-range of its parent @progress. This is useful  * when an action breaks down into multiple sub-actions that itself  * need a #GimpProgress pointer. See gimp_image_scale() for an example.  *  * Return value: a new #GimpProgress object  */
+end_comment
+
 begin_function
 name|GimpProgress
 modifier|*
@@ -758,6 +762,10 @@ name|sub
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
+name|progress
+operator|==
+name|NULL
+operator|||
 name|GIMP_IS_PROGRESS
 argument_list|(
 name|progress
@@ -775,6 +783,10 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|progress
+condition|)
 name|sub
 operator|->
 name|progress
@@ -792,6 +804,10 @@ argument_list|)
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_sub_progress_set_range:  * @start: start value of range on the parent process  * @end:   end value of range on the parent process  *  * Sets a range on the parent progress that this @progress should be  * mapped to.  */
+end_comment
 
 begin_function
 name|void
@@ -839,20 +855,24 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_sub_progress_set_step:  * @index:     step index  * @num_steps: number of steps  *  * A more convenient form of gimp_sub_progress_set_range().  */
+end_comment
+
 begin_function
 name|void
-DECL|function|gimp_sub_progress_set_steps (GimpSubProgress * progress,gint num,gint steps)
-name|gimp_sub_progress_set_steps
+DECL|function|gimp_sub_progress_set_step (GimpSubProgress * progress,gint index,gint num_steps)
+name|gimp_sub_progress_set_step
 parameter_list|(
 name|GimpSubProgress
 modifier|*
 name|progress
 parameter_list|,
 name|gint
-name|num
+name|index
 parameter_list|,
 name|gint
-name|steps
+name|num_steps
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -865,11 +885,11 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|num
+name|index
 operator|<
-name|steps
+name|num_steps
 operator|&&
-name|steps
+name|num_steps
 operator|>
 literal|0
 argument_list|)
@@ -881,9 +901,9 @@ operator|=
 operator|(
 name|gdouble
 operator|)
-name|num
+name|index
 operator|/
-name|steps
+name|num_steps
 expr_stmt|;
 name|progress
 operator|->
@@ -893,12 +913,12 @@ call|(
 name|gdouble
 call|)
 argument_list|(
-name|num
+name|index
 operator|+
 literal|1
 argument_list|)
 operator|/
-name|steps
+name|num_steps
 expr_stmt|;
 block|}
 end_function
