@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2931a20f0103
+DECL|enum|__anon28acf5510103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -748,6 +748,17 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+name|g_object_set
+argument_list|(
+name|combo
+argument_list|,
+literal|"ellipsize"
+argument_list|,
+name|PANGO_ELLIPSIZE_END
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|gimp_enum_combo_box_set_stock_prefix
 argument_list|(
 name|GIMP_ENUM_COMBO_BOX
@@ -797,6 +808,17 @@ argument_list|,
 literal|0
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|g_object_set
+argument_list|(
+name|combo
+argument_list|,
+literal|"ellipsize"
+argument_list|,
+name|PANGO_ELLIPSIZE_END
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_table_attach_aligned
