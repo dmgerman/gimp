@@ -128,6 +128,11 @@ name|gboolean
 name|handle_empty_image
 decl_stmt|;
 comment|/*  invoke the tool on images       *                                           *  without active drawable         */
+DECL|member|wants_click
+name|gboolean
+name|wants_click
+decl_stmt|;
+comment|/*  wants click detection           */
 DECL|member|dirty_mask
 name|GimpDirtyMask
 name|dirty_mask
@@ -377,6 +382,31 @@ end_function_decl
 begin_function_decl
 name|gboolean
 name|gimp_tool_control_get_handle_empty_image
+parameter_list|(
+name|GimpToolControl
+modifier|*
+name|control
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_tool_control_set_wants_click
+parameter_list|(
+name|GimpToolControl
+modifier|*
+name|control
+parameter_list|,
+name|gboolean
+name|wants_click
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|gimp_tool_control_get_wants_click
 parameter_list|(
 name|GimpToolControl
 modifier|*

@@ -752,6 +752,15 @@ argument_list|(
 name|rect_select
 argument_list|)
 decl_stmt|;
+name|gimp_tool_control_set_wants_click
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 name|gimp_tool_control_set_tool_cursor
 argument_list|(
 name|tool
@@ -1562,15 +1571,6 @@ argument_list|(
 name|tool
 argument_list|)
 decl_stmt|;
-name|GimpRectangleTool
-modifier|*
-name|rectangle
-init|=
-name|GIMP_RECTANGLE_TOOL
-argument_list|(
-name|tool
-argument_list|)
-decl_stmt|;
 name|gimp_tool_pop_status
 argument_list|(
 name|tool
@@ -1595,10 +1595,9 @@ expr_stmt|;
 comment|/*    * if the user has not moved the mouse, we need to redo the operation    * that was undone on button press.    */
 if|if
 condition|(
-name|gimp_rectangle_tool_no_movement
-argument_list|(
-name|rectangle
-argument_list|)
+name|release_type
+operator|==
+name|GIMP_BUTTON_RELEASE_CLICK
 condition|)
 block|{
 name|GimpImage
