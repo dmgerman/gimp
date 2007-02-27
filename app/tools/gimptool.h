@@ -141,7 +141,7 @@ modifier|*
 name|drawable
 decl_stmt|;
 comment|/*  pointer to the tool's current drawable */
-comment|/*  focus_display and [active_]modifier_state are *private* state of    *  gimp_tool_set_focus_display() and    *  gimp_tool_set_[active_]modifier_state().    *  ignore them in tool implementations, they don't exist!    */
+comment|/*  private state of gimp_tool_set_focus_display() and    *  gimp_tool_set_[active_]modifier_state()    */
 DECL|member|focus_display
 name|GimpDisplay
 modifier|*
@@ -159,17 +159,18 @@ DECL|member|active_modifier_state
 name|GdkModifierType
 name|active_modifier_state
 decl_stmt|;
+comment|/*  private state for click detection    */
 DECL|member|in_click_distance
 name|gboolean
 name|in_click_distance
 decl_stmt|;
-DECL|member|press_coords
+DECL|member|button_press_coords
 name|GimpCoords
-name|press_coords
+name|button_press_coords
 decl_stmt|;
-DECL|member|press_time
+DECL|member|button_press_time
 name|guint32
-name|press_time
+name|button_press_time
 decl_stmt|;
 block|}
 struct|;

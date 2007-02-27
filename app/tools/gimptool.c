@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7e6cda0103
+DECL|enum|__anon2c11fc5e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1798,14 +1798,14 @@ name|TRUE
 expr_stmt|;
 name|tool
 operator|->
-name|press_coords
+name|button_press_coords
 operator|=
 operator|*
 name|coords
 expr_stmt|;
 name|tool
 operator|->
-name|press_time
+name|button_press_time
 operator|=
 name|time
 expr_stmt|;
@@ -1886,7 +1886,7 @@ name|time
 operator|-
 name|tool
 operator|->
-name|press_time
+name|button_press_time
 operator|)
 operator|>
 name|double_click_time
@@ -1897,7 +1897,7 @@ name|SQR
 argument_list|(
 name|tool
 operator|->
-name|press_coords
+name|button_press_coords
 operator|.
 name|x
 operator|-
@@ -1910,7 +1910,7 @@ name|SQR
 argument_list|(
 name|tool
 operator|->
-name|press_coords
+name|button_press_coords
 operator|.
 name|y
 operator|-
@@ -1962,6 +1962,9 @@ name|release_type
 init|=
 name|GIMP_BUTTON_RELEASE_NORMAL
 decl_stmt|;
+name|GimpCoords
+name|my_coords
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_TOOL
@@ -1989,6 +1992,11 @@ name|g_object_ref
 argument_list|(
 name|tool
 argument_list|)
+expr_stmt|;
+name|my_coords
+operator|=
+operator|*
+name|coords
 expr_stmt|;
 if|if
 condition|(
@@ -2032,6 +2040,12 @@ name|release_type
 operator|=
 name|GIMP_BUTTON_RELEASE_CLICK
 expr_stmt|;
+name|my_coords
+operator|=
+name|tool
+operator|->
+name|button_press_coords
+expr_stmt|;
 name|GIMP_TOOL_GET_CLASS
 argument_list|(
 name|tool
@@ -2042,9 +2056,7 @@ argument_list|(
 name|tool
 argument_list|,
 operator|&
-name|tool
-operator|->
-name|press_coords
+name|my_coords
 argument_list|,
 name|time
 argument_list|,
@@ -2066,7 +2078,8 @@ name|button_release
 argument_list|(
 name|tool
 argument_list|,
-name|coords
+operator|&
+name|my_coords
 argument_list|,
 name|time
 argument_list|,
