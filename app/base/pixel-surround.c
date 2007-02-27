@@ -55,18 +55,22 @@ name|TileManager
 modifier|*
 name|mgr
 decl_stmt|;
+comment|/*  tile manager to access tiles from   */
 DECL|member|bpp
 name|gint
 name|bpp
 decl_stmt|;
+comment|/*  bytes per pixel in tile manager     */
 DECL|member|w
 name|gint
 name|w
 decl_stmt|;
+comment|/*  width of pixel surround area        */
 DECL|member|h
 name|gint
 name|h
 decl_stmt|;
+comment|/*  height of pixel surround area       */
 DECL|member|bg
 name|guchar
 name|bg
@@ -74,30 +78,36 @@ index|[
 name|MAX_CHANNELS
 index|]
 decl_stmt|;
+comment|/*  color to use for uncovered regions  */
 DECL|member|tile
 name|Tile
 modifier|*
 name|tile
 decl_stmt|;
+comment|/*  locked tile (may be NULL)           */
 DECL|member|tile_x
 name|gint
 name|tile_x
 decl_stmt|;
+comment|/*  origin of locked tile               */
 DECL|member|tile_y
 name|gint
 name|tile_y
 decl_stmt|;
+comment|/*  origin of locked tile               */
 DECL|member|tile_w
 name|gint
 name|tile_w
 decl_stmt|;
+comment|/*  width of locked tile                */
 DECL|member|tile_h
 name|gint
 name|tile_h
 decl_stmt|;
-DECL|member|buff
+comment|/*  height of locked tile               */
+DECL|member|buf
 name|guchar
-name|buff
+name|buf
 index|[
 literal|0
 index|]
@@ -520,7 +530,7 @@ name|dest
 operator|=
 name|surround
 operator|->
-name|buff
+name|buf
 expr_stmt|;
 for|for
 control|(
@@ -670,7 +680,7 @@ expr_stmt|;
 return|return
 name|surround
 operator|->
-name|buff
+name|buf
 return|;
 block|}
 end_function
