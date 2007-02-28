@@ -29,7 +29,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c7481cf0103
+DECL|enum|__anon298167650103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -216,6 +216,11 @@ name|gdouble
 name|angle2
 decl_stmt|;
 comment|/*  second angle               */
+DECL|member|status_help
+name|gboolean
+name|status_help
+decl_stmt|;
+comment|/*  help is currently in s.bar */
 DECL|member|dialog
 name|GtkWidget
 modifier|*

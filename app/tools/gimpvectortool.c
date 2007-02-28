@@ -4296,6 +4296,15 @@ argument_list|(
 name|tool
 argument_list|)
 decl_stmt|;
+name|GimpVectorOptions
+modifier|*
+name|options
+init|=
+name|GIMP_VECTOR_TOOL_GET_OPTIONS
+argument_list|(
+name|tool
+argument_list|)
+decl_stmt|;
 name|gimp_tool_pop_status
 argument_list|(
 name|tool
@@ -4368,7 +4377,8 @@ name|gimp_suggest_modifiers
 argument_list|(
 name|_
 argument_list|(
-literal|"Click to create a new anchor"
+literal|"Click or Click-Drag to create "
+literal|"a new anchor"
 argument_list|)
 argument_list|,
 name|GDK_SHIFT_MASK
@@ -4391,6 +4401,43 @@ break|break;
 case|case
 name|VECTORS_MOVE_ANCHOR
 case|:
+if|if
+condition|(
+name|options
+operator|->
+name|edit_mode
+operator|!=
+name|GIMP_VECTOR_MODE_EDIT
+condition|)
+block|{
+name|status
+operator|=
+name|gimp_suggest_modifiers
+argument_list|(
+name|_
+argument_list|(
+literal|"Click-Drag to move the "
+literal|"anchor around"
+argument_list|)
+argument_list|,
+name|GDK_CONTROL_MASK
+operator|&
+operator|~
+name|state
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|free_status
+operator|=
+name|TRUE
+expr_stmt|;
+block|}
+else|else
 name|status
 operator|=
 name|_
