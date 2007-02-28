@@ -146,7 +146,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2748a3b50108
+DECL|struct|__anon2b74a9eb0108
 block|{
 DECL|member|x
 DECL|member|y
@@ -164,7 +164,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2748a3b50208
+DECL|struct|__anon2b74a9eb0208
 block|{
 DECL|member|xmin
 DECL|member|xmax
