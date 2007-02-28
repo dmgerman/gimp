@@ -146,7 +146,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc73ae50108
+DECL|struct|__anon2748a3b50108
 block|{
 DECL|member|x
 DECL|member|y
@@ -164,7 +164,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc73ae50208
+DECL|struct|__anon2748a3b50208
 block|{
 DECL|member|xmin
 DECL|member|xmax
@@ -2436,7 +2436,7 @@ block|{
 name|fixed_width
 operator|=
 operator|(
-name|int
+name|gint
 operator|)
 name|ceil
 argument_list|(
