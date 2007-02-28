@@ -2882,6 +2882,14 @@ condition|(
 name|tool
 operator|->
 name|display
+operator|&&
+operator|!
+name|gimp_tool_control_is_active
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|)
 condition|)
 block|{
 name|GimpRectSelectTool
