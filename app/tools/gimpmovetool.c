@@ -1761,9 +1761,9 @@ operator|->
 name|move_tool_changes_active
 operator|||
 operator|(
-name|state
-operator|&
-name|GDK_BUTTON3_MASK
+name|release_type
+operator|==
+name|GIMP_BUTTON_RELEASE_CANCEL
 operator|)
 condition|)
 block|{
@@ -1818,15 +1818,11 @@ name|NULL
 expr_stmt|;
 block|}
 block|}
-comment|/*  Take care of the case where the user "cancels" the action  */
 if|if
 condition|(
-operator|!
-operator|(
-name|state
-operator|&
-name|GDK_BUTTON3_MASK
-operator|)
+name|release_type
+operator|!=
+name|GIMP_BUTTON_RELEASE_CANCEL
 condition|)
 block|{
 if|if

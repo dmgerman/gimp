@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c11fc5e0103
+DECL|enum|__anon2b30f8b70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1845,6 +1845,17 @@ modifier|*
 name|display
 parameter_list|)
 block|{
+name|GimpDisplayShell
+modifier|*
+name|shell
+init|=
+name|GIMP_DISPLAY_SHELL
+argument_list|(
+name|display
+operator|->
+name|shell
+argument_list|)
+decl_stmt|;
 name|GtkSettings
 modifier|*
 name|settings
@@ -1895,6 +1906,10 @@ name|sqrt
 argument_list|(
 name|SQR
 argument_list|(
+name|SCALEX
+argument_list|(
+name|shell
+argument_list|,
 name|tool
 operator|->
 name|button_press_coords
@@ -1905,9 +1920,14 @@ name|coords
 operator|->
 name|x
 argument_list|)
+argument_list|)
 operator|+
 name|SQR
 argument_list|(
+name|SCALEY
+argument_list|(
+name|shell
+argument_list|,
 name|tool
 operator|->
 name|button_press_coords
@@ -1917,6 +1937,7 @@ operator|-
 name|coords
 operator|->
 name|y
+argument_list|)
 argument_list|)
 argument_list|)
 operator|>
