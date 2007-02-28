@@ -3844,7 +3844,7 @@ literal|1
 index|]
 argument_list|)
 argument_list|,
-literal|" "
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_label_set_text
@@ -3859,7 +3859,7 @@ literal|0
 index|]
 argument_list|)
 argument_list|,
-literal|" "
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -3964,7 +3964,7 @@ literal|1
 index|]
 argument_list|)
 argument_list|,
-literal|" "
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_label_set_text
@@ -3979,7 +3979,7 @@ literal|1
 index|]
 argument_list|)
 argument_list|,
-literal|" "
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -4090,7 +4090,7 @@ literal|1
 index|]
 argument_list|)
 argument_list|,
-literal|" "
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_label_set_text
@@ -4105,7 +4105,7 @@ literal|2
 index|]
 argument_list|)
 argument_list|,
-literal|" "
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -4216,7 +4216,7 @@ literal|1
 index|]
 argument_list|)
 argument_list|,
-literal|" "
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_label_set_text
@@ -4231,7 +4231,7 @@ literal|3
 index|]
 argument_list|)
 argument_list|,
-literal|" "
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -4465,6 +4465,16 @@ argument_list|(
 literal|"0.0"
 argument_list|)
 expr_stmt|;
+name|gtk_label_set_selectable
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 name|gtk_misc_set_alignment
 argument_list|(
 name|GTK_MISC
@@ -4559,6 +4569,16 @@ argument_list|(
 literal|"0.0"
 argument_list|)
 expr_stmt|;
+name|gtk_label_set_selectable
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 name|gtk_misc_set_alignment
 argument_list|(
 name|GTK_MISC
@@ -4605,7 +4625,7 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
-literal|" "
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -4702,6 +4722,16 @@ argument_list|(
 literal|"0.0"
 argument_list|)
 expr_stmt|;
+name|gtk_label_set_selectable
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 name|gtk_misc_set_alignment
 argument_list|(
 name|GTK_MISC
@@ -4790,7 +4820,17 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
-literal|" "
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_label_set_selectable
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -4839,7 +4879,7 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
-literal|" "
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -4936,6 +4976,16 @@ argument_list|(
 literal|"0.0"
 argument_list|)
 expr_stmt|;
+name|gtk_label_set_selectable
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 name|gtk_misc_set_alignment
 argument_list|(
 name|GTK_MISC
@@ -5030,6 +5080,16 @@ argument_list|(
 literal|"0.0"
 argument_list|)
 expr_stmt|;
+name|gtk_label_set_selectable
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 name|gtk_misc_set_alignment
 argument_list|(
 name|GTK_MISC
@@ -5076,7 +5136,7 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
-literal|" "
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -5173,6 +5233,16 @@ argument_list|(
 literal|"0.0"
 argument_list|)
 expr_stmt|;
+name|gtk_label_set_selectable
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 name|gtk_misc_set_alignment
 argument_list|(
 name|GTK_MISC
@@ -5267,6 +5337,16 @@ argument_list|(
 literal|"0.0"
 argument_list|)
 expr_stmt|;
+name|gtk_label_set_selectable
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 name|gtk_misc_set_alignment
 argument_list|(
 name|GTK_MISC
@@ -5313,7 +5393,7 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
-literal|" "
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
