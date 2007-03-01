@@ -126,7 +126,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f305350108
+DECL|struct|__anon289d15be0108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -197,7 +197,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f305350208
+DECL|struct|__anon289d15be0208
 block|{
 DECL|member|PR
 name|PixelRegion
@@ -860,25 +860,13 @@ operator|->
 name|gimp
 argument_list|)
 expr_stmt|;
+comment|/*  Always create an alpha temp buf (for generality) */
 name|bytes
 operator|=
-name|gimp_drawable_bytes
+name|gimp_drawable_bytes_with_alpha
 argument_list|(
 name|drawable
 argument_list|)
-expr_stmt|;
-comment|/*  Always create an alpha temp buf (for generality) */
-if|if
-condition|(
-operator|!
-name|gimp_drawable_has_alpha
-argument_list|(
-name|drawable
-argument_list|)
-condition|)
-name|bytes
-operator|+=
-literal|1
 expr_stmt|;
 name|buf_tiles
 operator|=
