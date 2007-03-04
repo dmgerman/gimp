@@ -106,6 +106,14 @@ file|"gimp-intl.h"
 end_include
 
 begin_define
+DECL|macro|SCALE_TIMEOUT
+define|#
+directive|define
+name|SCALE_TIMEOUT
+value|1
+end_define
+
+begin_define
 DECL|macro|SCALE_EPSILON
 define|#
 directive|define
@@ -872,6 +880,12 @@ condition|)
 return|return
 name|FALSE
 return|;
+name|shell
+operator|->
+name|last_scale_time
+operator|=
+literal|0
+expr_stmt|;
 name|gimp_display_shell_scale_by_values
 argument_list|(
 name|shell
@@ -1604,6 +1618,9 @@ name|gboolean
 name|resize_window
 parameter_list|)
 block|{
+name|guint
+name|now
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY_SHELL
@@ -1641,6 +1658,24 @@ name|offset_y
 condition|)
 return|return;
 comment|/* remember the current scale and offsets to allow reverting the scaling */
+name|now
+operator|=
+name|time
+argument_list|(
+name|NULL
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|now
+operator|-
+name|shell
+operator|->
+name|last_scale_time
+operator|>
+name|SCALE_TIMEOUT
+condition|)
+block|{
 name|shell
 operator|->
 name|last_scale
@@ -1667,6 +1702,13 @@ operator|=
 name|shell
 operator|->
 name|offset_y
+expr_stmt|;
+block|}
+name|shell
+operator|->
+name|last_scale_time
+operator|=
+name|now
 expr_stmt|;
 comment|/* freeze the active tool */
 name|gimp_display_shell_pause

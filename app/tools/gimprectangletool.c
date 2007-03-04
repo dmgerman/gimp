@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b215bdc0103
+DECL|enum|__anon28a282c30103
 block|{
 DECL|enumerator|RECTANGLE_CHANGED
 name|RECTANGLE_CHANGED
@@ -526,18 +526,6 @@ parameter_list|(
 name|GimpRectangleTool
 modifier|*
 name|rectangle
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|guint
-name|gimp_rectangle_tool_fix_resize_direction
-parameter_list|(
-name|GimpRectangleToolPrivate
-modifier|*
-name|private
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -7949,9 +7937,7 @@ argument_list|(
 literal|"Invalid rectangle constraint.\n"
 argument_list|)
 expr_stmt|;
-return|return
-name|FALSE
-return|;
+return|return;
 block|}
 if|if
 condition|(

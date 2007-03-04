@@ -322,6 +322,11 @@ name|gdouble
 name|last_scale
 decl_stmt|;
 comment|/*  scale used when reverting zoom     */
+DECL|member|last_scale_time
+name|guint
+name|last_scale_time
+decl_stmt|;
+comment|/*  time when last_scale was set       */
 DECL|member|last_offset_x
 name|gint
 name|last_offset_x
