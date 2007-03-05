@@ -92,7 +92,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4615820108
+DECL|struct|__anon2c1be8050108
 block|{
 DECL|member|scale
 name|gint
@@ -119,7 +119,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a4615820203
+DECL|enum|__anon2c1be8050203
 block|{
 DECL|enumerator|filter_uniform
 name|filter_uniform
@@ -177,7 +177,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4615820308
+DECL|struct|__anon2c1be8050308
 block|{
 DECL|member|N
 name|gint
@@ -551,7 +551,7 @@ literal|"2003"
 argument_list|,
 name|N_
 argument_list|(
-literal|"_Retinex..."
+literal|"Retine_x..."
 argument_list|)
 argument_list|,
 literal|"RGB*"
