@@ -12,7 +12,7 @@ comment|/*  * Revision history:  *  *  2004-02-12 / v3.0.14 / Adam D. Moss  *   
 end_comment
 
 begin_comment
-comment|/*  * TODO:  *  *      Crush 16bpp channels *  *	CMYK -> RGB *  *      * I don't think these should be done lossily -- wait for  *        GIMP to be able to support them natively.  *  *      Read in the paths.  *  */
+comment|/*  * TODO:  *  *      Crush 16bpp channels *  *        CMYK -> RGB *  *      * I don't think these should be done lossily -- wait for  *        GIMP to be able to support them natively.  *  *      Read in the paths.  *  */
 end_comment
 
 begin_comment
@@ -136,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b78c88f0103
+DECL|enum|__anon27cef9f30103
 block|{
 DECL|enumerator|PSD_UNKNOWN_IMAGE
 name|PSD_UNKNOWN_IMAGE
@@ -324,7 +324,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b78c88f0208
+DECL|struct|__anon27cef9f30208
 block|{
 DECL|member|hRes
 name|Fixed
@@ -350,7 +350,7 @@ DECL|member|heightUnit
 name|gint16
 name|heightUnit
 decl_stmt|;
-comment|/* Res_unit : 	1 == Pixels per inch         2 == Pixels per cm */
+comment|/* Res_unit :         1 == Pixels per inch         2 == Pixels per cm */
 DECL|typedef|PSDresolution
 block|}
 name|PSDresolution
@@ -574,7 +574,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b78c88f0308
+DECL|struct|__anon27cef9f30308
 block|{
 DECL|member|signature
 name|gchar
@@ -2071,16 +2071,17 @@ if|if
 condition|(
 operator|(
 name|ID
-operator|<
+operator|<=
 literal|0x0bb6
 operator|)
 operator|&&
 operator|(
 name|ID
-operator|>
+operator|>=
 literal|0x07d0
 operator|)
 condition|)
+comment|/* 2998&& 2000 */
 block|{
 name|IFDBG
 name|printf
@@ -2114,6 +2115,7 @@ block|{
 case|case
 literal|0x03ee
 case|:
+comment|/* 1006 */
 block|{
 name|gint32
 name|remaining
@@ -2370,6 +2372,7 @@ break|break;
 case|case
 literal|0x03ef
 case|:
+comment|/* 1007 */
 name|IFDBG
 name|printf
 argument_list|(
@@ -2396,6 +2399,7 @@ break|break;
 case|case
 literal|0x03f0
 case|:
+comment|/* 1008 */
 comment|/* FIXME: untested */
 block|{
 name|psd_image
@@ -2450,6 +2454,7 @@ break|break;
 case|case
 literal|0x03f2
 case|:
+comment|/* 1010 */
 name|IFDBG
 name|printf
 argument_list|(
@@ -2476,6 +2481,7 @@ break|break;
 case|case
 literal|0x03f4
 case|:
+comment|/* 1012 */
 name|IFDBG
 name|printf
 argument_list|(
@@ -2502,6 +2508,7 @@ break|break;
 case|case
 literal|0x03f5
 case|:
+comment|/* 1013 */
 name|IFDBG
 name|printf
 argument_list|(
@@ -2528,6 +2535,7 @@ break|break;
 case|case
 literal|0x03f6
 case|:
+comment|/* 1014 */
 name|IFDBG
 name|printf
 argument_list|(
@@ -2554,6 +2562,7 @@ break|break;
 case|case
 literal|0x03f7
 case|:
+comment|/* 1015 */
 name|IFDBG
 name|printf
 argument_list|(
@@ -2580,6 +2589,7 @@ break|break;
 case|case
 literal|0x03f8
 case|:
+comment|/* 1016 */
 name|IFDBG
 name|printf
 argument_list|(
@@ -2606,6 +2616,7 @@ break|break;
 case|case
 literal|0x03f9
 case|:
+comment|/* 1017 */
 name|IFDBG
 name|printf
 argument_list|(
@@ -2632,6 +2643,7 @@ break|break;
 case|case
 literal|0x03fa
 case|:
+comment|/* 1018 */
 name|IFDBG
 name|printf
 argument_list|(
@@ -2658,6 +2670,7 @@ break|break;
 case|case
 literal|0x03fb
 case|:
+comment|/* 1019 */
 name|IFDBG
 name|printf
 argument_list|(
@@ -2684,6 +2697,7 @@ break|break;
 case|case
 literal|0x03fe
 case|:
+comment|/* 1022 */
 name|IFDBG
 name|printf
 argument_list|(
@@ -2710,6 +2724,7 @@ break|break;
 case|case
 literal|0x0400
 case|:
+comment|/* 1024 */
 block|{
 name|IFDBG
 name|printf
@@ -2753,6 +2768,7 @@ break|break;
 case|case
 literal|0x0402
 case|:
+comment|/* 1026 */
 name|IFDBG
 name|printf
 argument_list|(
@@ -2794,6 +2810,7 @@ break|break;
 case|case
 literal|0x0405
 case|:
+comment|/* 1029 */
 name|IFDBG
 name|printf
 argument_list|(
@@ -2820,6 +2837,7 @@ break|break;
 case|case
 literal|0x0408
 case|:
+comment|/* 1032 */
 block|{
 name|gint32
 name|remaining
@@ -3292,6 +3310,7 @@ break|break;
 case|case
 literal|0x03ed
 case|:
+comment|/* 1005 */
 block|{
 name|IFDBG
 name|printf
@@ -3417,6 +3436,7 @@ break|break;
 case|case
 literal|0x0409
 case|:
+comment|/* 1033 */
 comment|/* DATA LAYOUT for thumbail resource */
 comment|/* 4 bytes     format             (1 = jfif, 0 = raw) */
 comment|/* 4 bytes     width              width of thumbnail  */
@@ -3433,7 +3453,7 @@ argument_list|(
 literal|"\t\t<Photoshop 4.0 style thumbnail (BGR)>  unhandled\n"
 argument_list|)
 decl_stmt|;
-comment|/* for resource 0x0409 we have to swap the r and b channels 	   after decoding */
+comment|/* for resource 0x0409 we have to swap the r and b channels            after decoding */
 name|throwchunk
 argument_list|(
 name|Size
@@ -3454,6 +3474,7 @@ break|break;
 case|case
 literal|0x040C
 case|:
+comment|/* 1036 */
 comment|/* See above */
 name|IFDBG
 name|printf
@@ -3481,30 +3502,39 @@ break|break;
 case|case
 literal|0x03e9
 case|:
+comment|/* 1001 */
 case|case
 literal|0x03f1
 case|:
+comment|/* 1009 */
 case|case
 literal|0x03f3
 case|:
+comment|/* 1011 */
 case|case
 literal|0x03fd
 case|:
+comment|/* 1021 */
 case|case
 literal|0x0401
 case|:
+comment|/* 1025 */
 case|case
 literal|0x0404
 case|:
+comment|/* 1028 */
 case|case
 literal|0x0406
 case|:
+comment|/* 1030 */
 case|case
 literal|0x0bb7
 case|:
+comment|/* 2999 */
 case|case
 literal|0x2710
 case|:
+comment|/* 10000 */
 name|IFDBG
 name|printf
 argument_list|(
@@ -3531,9 +3561,11 @@ break|break;
 case|case
 literal|0x03e8
 case|:
+comment|/* 1000 */
 case|case
 literal|0x03eb
 case|:
+comment|/* 1003 */
 name|IFDBG
 name|printf
 argument_list|(
@@ -3560,12 +3592,15 @@ break|break;
 case|case
 literal|0x03fc
 case|:
+comment|/* 1020 */
 case|case
 literal|0x03ff
 case|:
+comment|/* 1023 */
 case|case
 literal|0x0403
 case|:
+comment|/* 1027 */
 name|IFDBG
 name|printf
 argument_list|(
@@ -5286,7 +5321,7 @@ if|#
 directive|if
 literal|0
 comment|/* Pad raw data to multiple of 2? */
-block|if ((height * width)& 1) 	  { 	    getguchar (fd, "raw channel padding"); 	    offset++; 	  }
+block|if ((height * width)& 1)           {             getguchar (fd, "raw channel padding");             offset++;           }
 endif|#
 directive|endif
 block|}
@@ -5302,7 +5337,7 @@ decl_stmt|;
 name|gint
 name|blockread
 decl_stmt|;
-comment|/* we throw this away because in theory we can trust the 	   data to unpack to the right length... hmm... */
+comment|/* we throw this away because in theory we can trust the            data to unpack to the right length... hmm... */
 name|throwchunk
 argument_list|(
 name|height
@@ -5324,7 +5359,7 @@ name|blockread
 operator|=
 name|offset
 expr_stmt|;
-comment|/*IFDBG {printf("\nHere comes the guitar solo...\n"); 	  fflush(stdout);}*/
+comment|/*IFDBG {printf("\nHere comes the guitar solo...\n");           fflush(stdout);}*/
 for|for
 control|(
 name|linei
@@ -5606,7 +5641,7 @@ literal|"     That sounds strange to me.\n"
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*      if ((getguchar(fd, "mask info throw")!=0) || 	  (getguchar(fd, "mask info throw")!=0) || 	  (getguchar(fd, "mask info throw")!=0) || 	  (getguchar(fd, "mask info throw")!=0)) 	{ 	  printf("*** This mask info block looks pretty bogus.\n"); 	}*/
+comment|/*      if ((getguchar(fd, "mask info throw")!=0) ||           (getguchar(fd, "mask info throw")!=0) ||           (getguchar(fd, "mask info throw")!=0) ||           (getguchar(fd, "mask info throw")!=0))         {           printf("*** This mask info block looks pretty bogus.\n");         }*/
 block|}
 else|else
 name|printf
@@ -7795,7 +7830,7 @@ operator|/
 literal|65536.0
 argument_list|)
 expr_stmt|;
-comment|/* currently can only set one unit for the image so we use the 	     horizontal unit from the psd image */
+comment|/* currently can only set one unit for the image so we use the              horizontal unit from the psd image */
 name|gimp_image_set_unit
 argument_list|(
 name|image_ID
@@ -7859,7 +7894,7 @@ name|empty
 init|=
 name|FALSE
 decl_stmt|;
-comment|/* 	   * Since PS supports sloppy bounding boxes it is possible to 	   * have a 0x0 or Xx0 or 0xY layer.  Gimp doesn't support a 	   * 0x0 layer so we insert an empty layer of image size 	   * instead. 	   */
+comment|/*            * Since PS supports sloppy bounding boxes it is possible to            * have a 0x0 or Xx0 or 0xY layer.  Gimp doesn't support a            * 0x0 layer so we insert an empty layer of image size            * instead.            */
 if|if
 condition|(
 operator|(
@@ -8766,7 +8801,7 @@ argument_list|,
 name|iter
 argument_list|)
 expr_stmt|;
-comment|/* PS layer masks can be a different size to 		       their owning layer, so we have to resize them. */
+comment|/* PS layer masks can be a different size to                        their owning layer, so we have to resize them. */
 name|resize_mask
 argument_list|(
 name|layer

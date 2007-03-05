@@ -1105,9 +1105,30 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
+name|GIMP_HARDLIGHT_MODE
+case|:
+name|strcpy
+argument_list|(
+name|psdMode
+argument_list|,
+literal|"hLit"
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|GIMP_SOFTLIGHT_MODE
+case|:
+name|strcpy
+argument_list|(
+name|psdMode
+argument_list|,
+literal|"sLit"
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
 name|GIMP_OVERLAY_MODE
 case|:
-comment|/* ? */
 name|strcpy
 argument_list|(
 name|psdMode
@@ -2729,7 +2750,7 @@ name|name_sec
 decl_stmt|;
 comment|/* Position for Lengths of Channel Names */
 comment|/* Only relevant resources in GIMP are: 0x03EE, 0x03F0& 0x0400 */
-comment|/* For Adobe Photoshop version 4.0 these can also be considered:      0x0408, 0x040A& 0x040B */
+comment|/* For Adobe Photoshop version 4.0 these can also be considered:      0x0408, 0x040A& 0x040B (1006, 1008, 1024, 1032, 1034, and 1035) */
 name|IFDBG
 name|printf
 argument_list|(
@@ -2878,6 +2899,7 @@ argument_list|,
 literal|"0x03EE Id"
 argument_list|)
 expr_stmt|;
+comment|/* 1006 */
 comment|/* write_pascalstring (fd, Name, "Id name"); */
 name|write_gint16
 argument_list|(
@@ -3101,6 +3123,7 @@ argument_list|,
 literal|"0x0408 Id (Guides)"
 argument_list|)
 expr_stmt|;
+comment|/* 1032 */
 comment|/* write_pascalstring (fd, Name, "Id name"); */
 name|write_gint16
 argument_list|(
@@ -3393,6 +3416,7 @@ argument_list|,
 literal|"0x03ed Id (resolution)"
 argument_list|)
 expr_stmt|;
+comment|/* 1005 */
 name|write_gint16
 argument_list|(
 name|fd
@@ -3493,6 +3517,7 @@ argument_list|,
 literal|"0x0400 Id"
 argument_list|)
 expr_stmt|;
+comment|/* 1024 */
 comment|/* write_pascalstring (fd, Name, "Id name"); */
 name|write_gint16
 argument_list|(
