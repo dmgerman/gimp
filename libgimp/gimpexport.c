@@ -65,7 +65,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f3331a0108
+DECL|struct|__anon279cf4740108
 block|{
 DECL|member|default_action
 name|ExportFunc
@@ -771,7 +771,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"%s can't handle layers"
+literal|"%s plug-in can't handle layers"
 argument_list|)
 block|,
 block|{
@@ -801,7 +801,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"%s can't handle layer offsets, size or opacity"
+literal|"%s plug-in can't handle layer offsets, size or opacity"
 argument_list|)
 block|,
 block|{
@@ -831,7 +831,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"%s can only handle layers as animation frames"
+literal|"%s plug-in can only handle layers as animation frames"
 argument_list|)
 block|,
 block|{
@@ -864,7 +864,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"%s can only handle layers as animation frames"
+literal|"%s plug-in can only handle layers as animation frames"
 argument_list|)
 block|,
 block|{
@@ -897,7 +897,7 @@ name|export_merge
 block|,
 name|N_
 argument_list|(
-literal|"%s can't handle layers"
+literal|"%s plug-in can't handle layers"
 argument_list|)
 block|,
 block|{
@@ -930,7 +930,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"%s can't handle transparency"
+literal|"%s plug-in can't handle transparency"
 argument_list|)
 block|,
 block|{
@@ -960,7 +960,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"%s can't handle layer masks"
+literal|"%s plug-in can't handle layer masks"
 argument_list|)
 block|,
 block|{
@@ -990,7 +990,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"%s can only handle RGB images"
+literal|"%s plug-in can only handle RGB images"
 argument_list|)
 block|,
 block|{
@@ -1020,7 +1020,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"%s can only handle grayscale images"
+literal|"%s plug-in can only handle grayscale images"
 argument_list|)
 block|,
 block|{
@@ -1050,7 +1050,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"%s can only handle indexed images"
+literal|"%s plug-in can only handle indexed images"
 argument_list|)
 block|,
 block|{
@@ -1081,7 +1081,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"%s can only handle bitmap (two color) indexed images"
+literal|"%s plug-in can only handle bitmap (two color) indexed images"
 argument_list|)
 block|,
 block|{
@@ -1112,7 +1112,7 @@ name|export_convert_grayscale
 block|,
 name|N_
 argument_list|(
-literal|"%s can only handle RGB or grayscale images"
+literal|"%s plug-in can only handle RGB or grayscale images"
 argument_list|)
 block|,
 block|{
@@ -1145,7 +1145,7 @@ name|export_convert_indexed
 block|,
 name|N_
 argument_list|(
-literal|"%s can only handle RGB or indexed images"
+literal|"%s plug-in  can only handle RGB or indexed images"
 argument_list|)
 block|,
 block|{
@@ -1179,7 +1179,7 @@ name|export_convert_grayscale
 block|,
 name|N_
 argument_list|(
-literal|"%s can only handle grayscale or indexed images"
+literal|"%s plug-in can only handle grayscale or indexed images"
 argument_list|)
 block|,
 block|{
@@ -1213,7 +1213,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"%s needs an alpha channel"
+literal|"%s plug-in needs an alpha channel"
 argument_list|)
 block|,
 block|{
