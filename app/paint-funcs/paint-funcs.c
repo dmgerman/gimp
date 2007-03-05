@@ -16874,10 +16874,14 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/* Computes whether pixels in `buf[1]', if they are selected, have neighbouring    pixels that are unselected. Put result in `transition'. */
+end_comment
+
 begin_function
 specifier|static
 name|void
-DECL|function|compute_transition (guchar * transition,guchar ** buf,gint32 width)
+DECL|function|compute_transition (guchar * transition,guchar ** buf,gint32 width,gboolean edge_lock)
 name|compute_transition
 parameter_list|(
 name|guchar
@@ -16891,6 +16895,9 @@ name|buf
 parameter_list|,
 name|gint32
 name|width
+parameter_list|,
+name|gboolean
+name|edge_lock
 parameter_list|)
 block|{
 specifier|register
@@ -16913,7 +16920,7 @@ index|[
 literal|1
 index|]
 index|[
-name|x
+literal|0
 index|]
 operator|>
 literal|127
@@ -16924,7 +16931,7 @@ index|[
 literal|0
 index|]
 index|[
-name|x
+literal|0
 index|]
 operator|<
 literal|128
@@ -16934,7 +16941,7 @@ index|[
 literal|2
 index|]
 index|[
-name|x
+literal|0
 index|]
 operator|<
 literal|128
@@ -16942,7 +16949,7 @@ operator|)
 condition|)
 name|transition
 index|[
-name|x
+literal|0
 index|]
 operator|=
 literal|255
@@ -16950,7 +16957,7 @@ expr_stmt|;
 else|else
 name|transition
 index|[
-name|x
+literal|0
 index|]
 operator|=
 literal|0
@@ -16964,12 +16971,15 @@ index|[
 literal|1
 index|]
 index|[
-name|x
+literal|0
 index|]
 operator|>
 literal|127
+operator|&&
+name|edge_lock
 condition|)
 block|{
+comment|/* The pixel to the left (outside of the canvas) is considered selected,          so we check if there are any unselected pixels in neighbouring pixels          _on_ the canvas. */
 if|if
 condition|(
 name|buf
@@ -17028,6 +17038,7 @@ index|]
 operator|<
 literal|128
 condition|)
+block|{
 name|transition
 index|[
 name|x
@@ -17035,13 +17046,42 @@ index|]
 operator|=
 literal|255
 expr_stmt|;
+block|}
 else|else
+block|{
 name|transition
 index|[
 name|x
 index|]
 operator|=
 literal|0
+expr_stmt|;
+block|}
+block|}
+elseif|else
+if|if
+condition|(
+name|buf
+index|[
+literal|1
+index|]
+index|[
+literal|0
+index|]
+operator|>
+literal|127
+operator|&&
+operator|!
+name|edge_lock
+condition|)
+block|{
+comment|/* We must not care about neighbouring pixels on the image canvas since          there always are unselected pixels to the left (which is outside of          the image canvas). */
+name|transition
+index|[
+name|x
+index|]
+operator|=
+literal|255
 expr_stmt|;
 block|}
 else|else
@@ -17211,12 +17251,17 @@ index|[
 literal|1
 index|]
 index|[
-name|x
+name|width
+operator|-
+literal|1
 index|]
 operator|>=
 literal|128
+operator|&&
+name|edge_lock
 condition|)
 block|{
+comment|/* The pixel to the right (outside of the canvas) is considered selected,          so we check if there are any unselected pixels in neighbouring pixels          _on_ the canvas. */
 if|if
 condition|(
 name|buf
@@ -17275,27 +17320,67 @@ index|]
 operator|<
 literal|128
 condition|)
+block|{
 name|transition
 index|[
-name|x
+name|width
+operator|-
+literal|1
 index|]
 operator|=
 literal|255
-expr_stmt|;
-else|else
-name|transition
-index|[
-name|x
-index|]
-operator|=
-literal|0
 expr_stmt|;
 block|}
 else|else
 block|{
 name|transition
 index|[
-name|x
+name|width
+operator|-
+literal|1
+index|]
+operator|=
+literal|0
+expr_stmt|;
+block|}
+block|}
+elseif|else
+if|if
+condition|(
+name|buf
+index|[
+literal|1
+index|]
+index|[
+name|width
+operator|-
+literal|1
+index|]
+operator|>=
+literal|128
+operator|&&
+operator|!
+name|edge_lock
+condition|)
+block|{
+comment|/* We must not care about neighbouring pixels on the image canvas since          there always are unselected pixels to the right (which is outside of          the image canvas). */
+name|transition
+index|[
+name|width
+operator|-
+literal|1
+index|]
+operator|=
+literal|255
+expr_stmt|;
+block|}
+else|else
+block|{
+name|transition
+index|[
+name|width
+operator|-
+literal|1
 index|]
 operator|=
 literal|0
@@ -17306,7 +17391,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|border_region (PixelRegion * src,gint16 xradius,gint16 yradius,gboolean feather)
+DECL|function|border_region (PixelRegion * src,gint16 xradius,gint16 yradius,gboolean feather,gboolean edge_lock)
 name|border_region
 parameter_list|(
 name|PixelRegion
@@ -17321,6 +17406,9 @@ name|yradius
 parameter_list|,
 name|gboolean
 name|feather
+parameter_list|,
+name|gboolean
+name|edge_lock
 parameter_list|)
 block|{
 comment|/*      This function has no bugs, but if you imagine some you can      blame them on jaycox@gimp.org   */
@@ -17334,6 +17422,7 @@ name|x
 decl_stmt|,
 name|y
 decl_stmt|;
+comment|/* A cache used in the algorithm as it works its way down. `buf[1]' is the      current row. Thus, at algorithm initialization, `buf[0]' represents the      row 'above' the first row of the region. */
 name|guchar
 modifier|*
 name|buf
@@ -17341,23 +17430,27 @@ index|[
 literal|3
 index|]
 decl_stmt|;
+comment|/* The resulting selection is calculated row by row, and this buffer holds the      output for each individual row, on each iteration. */
 name|guchar
 modifier|*
 name|out
 decl_stmt|;
-name|gint16
-modifier|*
-name|max
-decl_stmt|;
-name|guchar
-modifier|*
-modifier|*
-name|density
-decl_stmt|;
+comment|/* Keeps track of transitional pixels (pixels that are selected and have      unselected neighbouring pixels). */
 name|guchar
 modifier|*
 modifier|*
 name|transition
+decl_stmt|;
+comment|/* TODO: Figure out role clearly in algorithm. */
+name|gint16
+modifier|*
+name|max
+decl_stmt|;
+comment|/* TODO: Figure out role clearly in algorithm. */
+name|guchar
+modifier|*
+modifier|*
+name|density
 decl_stmt|;
 name|guchar
 name|last_max
@@ -17383,6 +17476,7 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
+comment|/* A border without a width is no border at all; return an empty region. */
 if|if
 condition|(
 name|xradius
@@ -17409,6 +17503,7 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
+comment|/* optimize this case specifically */
 if|if
 condition|(
 name|xradius
@@ -17419,7 +17514,6 @@ name|yradius
 operator|==
 literal|1
 condition|)
-comment|/* optimize this case specifically */
 block|{
 name|guchar
 modifier|*
@@ -17470,6 +17564,25 @@ operator|->
 name|w
 argument_list|)
 expr_stmt|;
+comment|/* With `edge_lock', initialize row above image as selected, otherwise,          initialize as unselected. */
+name|memset
+argument_list|(
+name|source
+index|[
+literal|0
+index|]
+argument_list|,
+name|edge_lock
+condition|?
+literal|255
+else|:
+literal|0
+argument_list|,
+name|src
+operator|->
+name|w
+argument_list|)
+expr_stmt|;
 name|pixel_region_get_row
 argument_list|(
 name|src
@@ -17490,27 +17603,10 @@ name|w
 argument_list|,
 name|source
 index|[
-literal|0
-index|]
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|memcpy
-argument_list|(
-name|source
-index|[
 literal|1
 index|]
 argument_list|,
-name|source
-index|[
-literal|0
-index|]
-argument_list|,
-name|src
-operator|->
-name|w
+literal|1
 argument_list|)
 expr_stmt|;
 if|if
@@ -17574,6 +17670,8 @@ argument_list|,
 name|src
 operator|->
 name|w
+argument_list|,
+name|edge_lock
 argument_list|)
 expr_stmt|;
 name|pixel_region_set_row
@@ -17628,6 +17726,7 @@ name|src
 operator|->
 name|h
 condition|)
+block|{
 name|pixel_region_get_row
 argument_list|(
 name|src
@@ -17656,24 +17755,29 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
+block|}
 else|else
-name|memcpy
+block|{
+comment|/* Depending on `edge_lock', set the row below the image as either                  selected or non-selected. */
+name|memset
 argument_list|(
 name|source
 index|[
 literal|2
 index|]
 argument_list|,
-name|source
-index|[
-literal|1
-index|]
+name|edge_lock
+condition|?
+literal|255
+else|:
+literal|0
 argument_list|,
 name|src
 operator|->
 name|w
 argument_list|)
 expr_stmt|;
+block|}
 name|compute_transition
 argument_list|(
 name|transition
@@ -17683,6 +17787,8 @@ argument_list|,
 name|src
 operator|->
 name|w
+argument_list|,
+name|edge_lock
 argument_list|)
 expr_stmt|;
 name|pixel_region_set_row
@@ -17733,6 +17839,7 @@ argument_list|(
 name|transition
 argument_list|)
 expr_stmt|;
+comment|/* Finnished handling the radius = 1 special case, return here. */
 return|return;
 block|}
 name|max
@@ -17912,6 +18019,7 @@ name|density
 operator|+=
 name|xradius
 expr_stmt|;
+comment|/* allocate density[][] */
 for|for
 control|(
 name|x
@@ -17929,7 +18037,6 @@ condition|;
 name|x
 operator|++
 control|)
-comment|/* allocate density[][] */
 block|{
 name|density
 index|[
@@ -17966,6 +18073,7 @@ name|x
 index|]
 expr_stmt|;
 block|}
+comment|/* compute density[][] */
 for|for
 control|(
 name|x
@@ -17983,7 +18091,6 @@ condition|;
 name|x
 operator|++
 control|)
-comment|/* compute density[][] */
 block|{
 specifier|register
 name|gdouble
@@ -18185,6 +18292,25 @@ name|a
 expr_stmt|;
 block|}
 block|}
+comment|/* Since the algorithm considerers `buf[0]' to be 'over' the row currently      calculated, we must start with `buf[0]' as non-selected if there is no      `edge_lock. If there is an 'edge_lock', initialize the first row to      'selected'. Refer to bug #350009. */
+name|memset
+argument_list|(
+name|buf
+index|[
+literal|0
+index|]
+argument_list|,
+name|edge_lock
+condition|?
+literal|255
+else|:
+literal|0
+argument_list|,
+name|src
+operator|->
+name|w
+argument_list|)
+expr_stmt|;
 name|pixel_region_get_row
 argument_list|(
 name|src
@@ -18205,27 +18331,10 @@ name|w
 argument_list|,
 name|buf
 index|[
-literal|0
-index|]
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|memcpy
-argument_list|(
-name|buf
-index|[
 literal|1
 index|]
 argument_list|,
-name|buf
-index|[
-literal|0
-index|]
-argument_list|,
-name|src
-operator|->
-name|w
+literal|1
 argument_list|)
 expr_stmt|;
 if|if
@@ -18292,8 +18401,11 @@ argument_list|,
 name|src
 operator|->
 name|w
+argument_list|,
+name|edge_lock
 argument_list|)
 expr_stmt|;
+comment|/* set up top of image */
 for|for
 control|(
 name|y
@@ -18315,7 +18427,6 @@ condition|;
 name|y
 operator|++
 control|)
-comment|/* set up top of image */
 block|{
 name|rotate_pointers
 argument_list|(
@@ -18366,9 +18477,12 @@ argument_list|,
 name|src
 operator|->
 name|w
+argument_list|,
+name|edge_lock
 argument_list|)
 expr_stmt|;
 block|}
+comment|/* set up max[] for top of image */
 for|for
 control|(
 name|x
@@ -18384,7 +18498,6 @@ condition|;
 name|x
 operator|++
 control|)
-comment|/* set up max[] for top of image */
 block|{
 name|max
 index|[
@@ -18434,6 +18547,7 @@ expr_stmt|;
 break|break;
 block|}
 block|}
+comment|/* main calculation loop */
 for|for
 control|(
 name|y
@@ -18449,7 +18563,6 @@ condition|;
 name|y
 operator|++
 control|)
-comment|/* main calculation loop */
 block|{
 name|rotate_pointers
 argument_list|(
@@ -18524,10 +18637,17 @@ argument_list|,
 name|src
 operator|->
 name|w
+argument_list|,
+name|edge_lock
 argument_list|)
 expr_stmt|;
 block|}
 else|else
+block|{
+if|if
+condition|(
+name|edge_lock
+condition|)
 block|{
 name|memcpy
 argument_list|(
@@ -18549,6 +18669,42 @@ name|w
 argument_list|)
 expr_stmt|;
 block|}
+else|else
+block|{
+comment|/* No edge lock, set everything 'below canvas' as seen from the                  algorithm as unselected. */
+name|memset
+argument_list|(
+name|buf
+index|[
+literal|2
+index|]
+argument_list|,
+literal|0
+argument_list|,
+name|src
+operator|->
+name|w
+argument_list|)
+expr_stmt|;
+name|compute_transition
+argument_list|(
+name|transition
+index|[
+name|yradius
+index|]
+argument_list|,
+name|buf
+argument_list|,
+name|src
+operator|->
+name|w
+argument_list|,
+name|edge_lock
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+comment|/* update max array */
 for|for
 control|(
 name|x
@@ -18564,7 +18720,6 @@ condition|;
 name|x
 operator|++
 control|)
-comment|/* update max array */
 block|{
 if|if
 condition|(
@@ -18728,6 +18883,7 @@ name|last_index
 operator|=
 literal|1
 expr_stmt|;
+comment|/* render scan line */
 for|for
 control|(
 name|x
@@ -18743,7 +18899,6 @@ condition|;
 name|x
 operator|++
 control|)
-comment|/* render scan line */
 block|{
 name|last_index
 operator|--
@@ -19242,6 +19397,10 @@ block|}
 block|}
 block|}
 end_function
+
+begin_comment
+comment|/* Computes whether pixels in `buf[1]' have neighbouring pixels that are    unselected. Put result in `transition'. */
+end_comment
 
 begin_function
 specifier|static

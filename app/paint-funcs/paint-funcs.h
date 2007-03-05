@@ -1531,6 +1531,9 @@ name|yradius
 parameter_list|,
 name|gboolean
 name|feather
+parameter_list|,
+name|gboolean
+name|edge_lock
 parameter_list|)
 function_decl|;
 end_function_decl
