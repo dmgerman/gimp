@@ -297,7 +297,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29bdbeaa0103
+DECL|enum|__anon2bdfa3cf0103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -1756,6 +1756,8 @@ argument_list|(
 name|gimp
 operator|->
 name|image_table
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|memsize
@@ -1765,6 +1767,8 @@ argument_list|(
 name|gimp
 operator|->
 name|item_table
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|memsize

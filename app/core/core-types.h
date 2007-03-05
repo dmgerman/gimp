@@ -864,6 +864,25 @@ parameter_list|)
 function_decl|;
 end_typedef
 
+begin_typedef
+DECL|typedef|GimpMemsizeFunc
+typedef|typedef
+name|gint64
+function_decl|(
+modifier|*
+name|GimpMemsizeFunc
+function_decl|)
+parameter_list|(
+name|gpointer
+name|instance
+parameter_list|,
+name|gint64
+modifier|*
+name|gui_size
+parameter_list|)
+function_decl|;
+end_typedef
+
 begin_comment
 comment|/*  structs  */
 end_comment
