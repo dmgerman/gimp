@@ -3368,12 +3368,7 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/* could move this function to a more central location  * so it can be used by other tools?  */
-end_comment
-
 begin_function
-specifier|static
 name|gint
 DECL|function|process_event_queue_keys (GdkEventKey * kevent,...)
 name|process_event_queue_keys
@@ -3906,7 +3901,7 @@ condition|)
 return|return
 name|FALSE
 return|;
-comment|/*  adapt arrow velocity to the zoom factor  */
+comment|/*  adapt arrow velocity to the zoom factor when holding<shift>  */
 name|velocity
 operator|=
 operator|(
