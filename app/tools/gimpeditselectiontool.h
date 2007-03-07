@@ -247,20 +247,24 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/* could move this function to a more central location  * so it can be used by other tools?  */
-end_comment
-
 begin_function_decl
-name|gint
-name|process_event_queue_keys
+name|gboolean
+name|gimp_edit_selection_tool_translate
 parameter_list|(
+name|GimpTool
+modifier|*
+name|tool
+parameter_list|,
 name|GdkEventKey
 modifier|*
 name|kevent
 parameter_list|,
-modifier|...
-comment|/* GdkKeyType, GdkModifierType, value ... 0 */
+name|GimpTransformType
+name|translate_type
+parameter_list|,
+name|GimpDisplay
+modifier|*
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
