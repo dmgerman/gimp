@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a282c30103
+DECL|enum|__anon296e7d350103
 block|{
 DECL|enumerator|RECTANGLE_CHANGED
 name|RECTANGLE_CHANGED
@@ -4811,6 +4811,11 @@ name|GIMP_DRAW_TOOL
 argument_list|(
 name|tool
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_rectangle_tool_rectangle_changed
+argument_list|(
+name|rectangle
 argument_list|)
 expr_stmt|;
 comment|/*  Evil hack to suppress oper updates. We do this because we don't    *  want the rectangle tool to change function while the rectangle    *  is being resized or moved using the keyboard.    */
