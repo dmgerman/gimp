@@ -628,21 +628,11 @@ name|guchar
 modifier|*
 name|src
 decl_stmt|;
-name|guchar
-modifier|*
-name|dest
-decl_stmt|;
-name|gint
-name|i
-decl_stmt|,
-name|j
-decl_stmt|;
 name|gint
 name|w
 decl_stmt|,
 name|h
 decl_stmt|;
-comment|/*  return a pointer to the data if it covers the whole region  */
 name|src
 operator|=
 name|pixel_surround_get_data
@@ -676,24 +666,46 @@ name|surround
 operator|->
 name|h
 condition|)
+block|{
+comment|/*  return a pointer to the data if it covers the whole region  */
 return|return
 name|src
 return|;
+block|}
+else|else
+block|{
 comment|/*  otherwise, copy region to our internal buffer  */
-comment|/*  These loops are somewhat twisted. The idea is to make as few    *  calls to pixel_surround_get_data() as possible. Thus whenever we    *  have source data, we copy all of it to the destination buffer.    *  The inner loops that copy data are nested into outer loops that    *  make sure that the destination area is completley filled.    */
-for|for
-control|(
+name|guchar
+modifier|*
+name|dest
+init|=
+name|surround
+operator|->
+name|buf
+decl_stmt|;
+name|gint
 name|i
-operator|=
+init|=
 literal|0
-init|;
+decl_stmt|;
+name|gint
+name|j
+init|=
+literal|0
+decl_stmt|;
+comment|/*  These loops are somewhat twisted. The idea is to make as few        *  calls to pixel_surround_get_data() as possible. Thus whenever we        *  have source data, we copy all of it to the destination buffer.        *  The inner loops that copy data are nested into outer loops that        *  make sure that the destination area is completley filled.        */
+comment|/*  jump right into the loops since we already have source data  */
+goto|goto
+name|start
+goto|;
+while|while
+condition|(
 name|i
 operator|<
 name|surround
 operator|->
 name|w
-condition|;
-control|)
+condition|)
 block|{
 name|dest
 operator|=
@@ -747,6 +759,8 @@ argument_list|,
 name|rowstride
 argument_list|)
 expr_stmt|;
+name|start
+label|:
 name|w
 operator|=
 name|MIN
@@ -797,7 +811,7 @@ init|=
 name|dest
 decl_stmt|;
 name|gint
-name|b
+name|bytes
 init|=
 name|w
 operator|*
@@ -807,7 +821,7 @@ name|bpp
 decl_stmt|;
 while|while
 condition|(
-name|b
+name|bytes
 operator|--
 condition|)
 operator|*
@@ -839,6 +853,7 @@ name|i
 operator|+=
 name|w
 expr_stmt|;
+block|}
 block|}
 operator|*
 name|rowstride
