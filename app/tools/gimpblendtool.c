@@ -1667,10 +1667,16 @@ name|gimp_suggest_modifiers
 argument_list|(
 literal|""
 argument_list|,
+operator|(
+operator|(
 name|GDK_CONTROL_MASK
+operator||
+name|GDK_MOD1_MASK
+operator|)
 operator|&
 operator|~
 name|state
+operator|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -1679,7 +1685,10 @@ argument_list|(
 literal|"%s for constrained angles"
 argument_list|)
 argument_list|,
-name|NULL
+name|_
+argument_list|(
+literal|"%s to move the whole line"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_tool_push_status_coords
