@@ -123,34 +123,44 @@ DECL|member|parent_instance
 name|GimpDrawTool
 name|parent_instance
 decl_stmt|;
-DECL|member|startx
+DECL|member|start_x
 name|gdouble
-name|startx
+name|start_x
 decl_stmt|;
 comment|/*  starting x coord  */
-DECL|member|starty
+DECL|member|start_y
 name|gdouble
-name|starty
+name|start_y
 decl_stmt|;
 comment|/*  starting y coord  */
-DECL|member|endx
+DECL|member|end_x
 name|gdouble
-name|endx
+name|end_x
 decl_stmt|;
 comment|/*  ending x coord    */
-DECL|member|endy
+DECL|member|end_y
 name|gdouble
-name|endy
+name|end_y
 decl_stmt|;
 comment|/*  ending y coord    */
-DECL|member|mousex
+DECL|member|last_x
 name|gdouble
-name|mousex
+name|last_x
+decl_stmt|;
+comment|/*  last x coord      */
+DECL|member|last_y
+name|gdouble
+name|last_y
+decl_stmt|;
+comment|/*  last y coord      */
+DECL|member|mouse_x
+name|gdouble
+name|mouse_x
 decl_stmt|;
 comment|/*  pointer x coord   */
-DECL|member|mousey
+DECL|member|mouse_y
 name|gdouble
-name|mousey
+name|mouse_y
 decl_stmt|;
 comment|/*  pointer y coord   */
 block|}
