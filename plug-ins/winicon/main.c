@@ -493,7 +493,7 @@ specifier|static
 name|GimpParam
 name|values
 index|[
-literal|2
+literal|4
 index|]
 decl_stmt|;
 name|gint32
