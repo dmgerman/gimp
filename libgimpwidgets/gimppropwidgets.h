@@ -537,9 +537,9 @@ name|gchar
 modifier|*
 name|property_name
 parameter_list|,
-name|GtkTreeStore
+name|GtkTreeModel
 modifier|*
-name|store
+name|model
 parameter_list|,
 name|gint
 name|id_column

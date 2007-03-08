@@ -6493,13 +6493,13 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_prop_string_combo_box_new:  * @config:        Object to which property is attached.  * @property_name: Name of int property controlled by combo box.  * @store:         #GtkTreeStore holding list of values  * @id_column:     column in @store that holds string IDs  * @label_column:  column in @store that holds labels to use in the combo-box  *  * Creates a #GimpStringComboBox widget to display and set the  * specified property.  The contents of the widget are determined by  * @store.  *  * Return value: The newly created #GimpStringComboBox widget, optionally  *               wrapped into a #GtkEventBox.  *  * Since GIMP 2.4  */
+comment|/**  * gimp_prop_string_combo_box_new:  * @config:        Object to which property is attached.  * @property_name: Name of int property controlled by combo box.  * @model:         #GtkTreeStore holding list of values  * @id_column:     column in @store that holds string IDs  * @label_column:  column in @store that holds labels to use in the combo-box  *  * Creates a #GimpStringComboBox widget to display and set the  * specified property.  The contents of the widget are determined by  * @store.  *  * Return value: The newly created #GimpStringComboBox widget, optionally  *               wrapped into a #GtkEventBox.  *  * Since GIMP 2.4  */
 end_comment
 
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_prop_string_combo_box_new (GObject * config,const gchar * property_name,GtkTreeStore * store,gint id_column,gint label_column)
+DECL|function|gimp_prop_string_combo_box_new (GObject * config,const gchar * property_name,GtkTreeModel * model,gint id_column,gint label_column)
 name|gimp_prop_string_combo_box_new
 parameter_list|(
 name|GObject
@@ -6511,9 +6511,9 @@ name|gchar
 modifier|*
 name|property_name
 parameter_list|,
-name|GtkTreeStore
+name|GtkTreeModel
 modifier|*
-name|store
+name|model
 parameter_list|,
 name|gint
 name|id_column
@@ -6557,6 +6557,16 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GTK_IS_TREE_MODEL
+argument_list|(
+name|model
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|param_spec
 operator|=
 name|check_param_spec_w
@@ -6594,7 +6604,7 @@ name|combo_box
 operator|=
 name|gimp_string_combo_box_new
 argument_list|(
-name|store
+name|model
 argument_list|,
 name|id_column
 argument_list|,
