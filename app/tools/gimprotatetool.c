@@ -430,15 +430,6 @@ argument_list|)
 expr_stmt|;
 name|tr_tool
 operator|->
-name|shell_desc
-operator|=
-name|_
-argument_list|(
-literal|"Rotation Information"
-argument_list|)
-expr_stmt|;
-name|tr_tool
-operator|->
 name|progress_text
 operator|=
 name|_

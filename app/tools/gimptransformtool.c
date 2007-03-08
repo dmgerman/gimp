@@ -1085,12 +1085,6 @@ name|NULL
 expr_stmt|;
 name|tr_tool
 operator|->
-name|shell_desc
-operator|=
-name|NULL
-expr_stmt|;
-name|tr_tool
-operator|->
 name|progress_text
 operator|=
 name|_
@@ -7513,9 +7507,9 @@ argument_list|,
 name|NULL
 comment|/* tool->display->shell */
 argument_list|,
-name|tr_tool
+name|tool_info
 operator|->
-name|shell_desc
+name|blurb
 argument_list|,
 name|GIMP_STOCK_RESET
 argument_list|,

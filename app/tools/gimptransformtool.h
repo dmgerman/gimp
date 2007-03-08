@@ -323,12 +323,6 @@ name|gchar
 modifier|*
 name|undo_desc
 decl_stmt|;
-DECL|member|shell_desc
-specifier|const
-name|gchar
-modifier|*
-name|shell_desc
-decl_stmt|;
 DECL|member|progress_text
 specifier|const
 name|gchar
