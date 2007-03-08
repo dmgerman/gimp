@@ -123,16 +123,6 @@ DECL|member|parent_instance
 name|GimpTool
 name|parent_instance
 decl_stmt|;
-DECL|member|target_x
-name|gint
-name|target_x
-decl_stmt|;
-comment|/*  starting x coord  */
-DECL|member|target_y
-name|gint
-name|target_y
-decl_stmt|;
-comment|/*  starting y coord  */
 block|}
 struct|;
 end_struct
