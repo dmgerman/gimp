@@ -24,12 +24,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpmath/gimpmath.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"tools-types.h"
 end_include
 
@@ -1364,6 +1358,13 @@ decl_stmt|;
 name|GimpDisplayShell
 modifier|*
 name|shell
+init|=
+name|GIMP_DISPLAY_SHELL
+argument_list|(
+name|display
+operator|->
+name|shell
+argument_list|)
 decl_stmt|;
 name|GimpDrawable
 modifier|*
@@ -1380,15 +1381,6 @@ decl_stmt|;
 name|PixelRegion
 name|maskPR
 decl_stmt|;
-name|shell
-operator|=
-name|GIMP_DISPLAY_SHELL
-argument_list|(
-name|display
-operator|->
-name|shell
-argument_list|)
-expr_stmt|;
 name|drawable
 operator|=
 name|gimp_image_active_drawable

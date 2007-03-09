@@ -18,18 +18,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpbase/gimpbase.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimpconfig/gimpconfig.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
@@ -37,12 +25,6 @@ begin_include
 include|#
 directive|include
 file|"tools-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimp.h"
 end_include
 
 begin_include
@@ -120,12 +102,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdodgeburntool.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimperasertool.h"
 end_include
 
@@ -139,12 +115,6 @@ begin_include
 include|#
 directive|include
 file|"gimpinktool.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimppaintbrushtool.h"
 end_include
 
 begin_include

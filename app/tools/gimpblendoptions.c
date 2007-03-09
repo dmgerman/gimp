@@ -36,12 +36,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimp.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpdatafactory.h"
 end_include
 
@@ -71,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28acf5510103
+DECL|enum|__anon28d518260103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

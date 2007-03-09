@@ -24,12 +24,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gdk/gdkkeysyms.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
@@ -37,18 +31,6 @@ begin_include
 include|#
 directive|include
 file|"tools-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config/gimpdisplayconfig.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimp.h"
 end_include
 
 begin_include
@@ -79,12 +61,6 @@ begin_include
 include|#
 directive|include
 file|"widgets/gimphelp-ids.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"widgets/gimpwidgets-utils.h"
 end_include
 
 begin_include
@@ -642,12 +618,7 @@ decl_stmt|;
 name|GimpDisplayShell
 modifier|*
 name|shell
-decl_stmt|;
-name|gdouble
-name|current
-decl_stmt|;
-name|shell
-operator|=
+init|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
 name|tool
@@ -656,7 +627,10 @@ name|display
 operator|->
 name|shell
 argument_list|)
-expr_stmt|;
+decl_stmt|;
+name|gdouble
+name|current
+decl_stmt|;
 name|gimp_draw_tool_stop
 argument_list|(
 name|GIMP_DRAW_TOOL

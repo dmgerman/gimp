@@ -36,24 +36,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpmath/gimpmath.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimpbase/gimpbase.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimpwidgets/gimpwidgets.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"tools-types.h"
 end_include
 
@@ -427,16 +409,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_edit_selection_tool_calc_coords (GimpEditSelectionTool * edit_select,GimpDisplay * display,gdouble x,gdouble y)
+DECL|function|gimp_edit_selection_tool_calc_coords (GimpEditSelectionTool * edit_select,gdouble x,gdouble y)
 name|gimp_edit_selection_tool_calc_coords
 parameter_list|(
 name|GimpEditSelectionTool
 modifier|*
 name|edit_select
-parameter_list|,
-name|GimpDisplay
-modifier|*
-name|display
 parameter_list|,
 name|gdouble
 name|x
@@ -445,10 +423,6 @@ name|gdouble
 name|y
 parameter_list|)
 block|{
-name|GimpDisplayShell
-modifier|*
-name|shell
-decl_stmt|;
 name|gdouble
 name|x1
 decl_stmt|,
@@ -459,15 +433,6 @@ name|dx
 decl_stmt|,
 name|dy
 decl_stmt|;
-name|shell
-operator|=
-name|GIMP_DISPLAY_SHELL
-argument_list|(
-name|display
-operator|->
-name|shell
-argument_list|)
-expr_stmt|;
 name|dx
 operator|=
 name|x
@@ -1020,8 +985,6 @@ block|}
 name|gimp_edit_selection_tool_calc_coords
 argument_list|(
 name|edit_select
-argument_list|,
-name|display
 argument_list|,
 name|edit_select
 operator|->
@@ -1776,8 +1739,6 @@ name|gimp_edit_selection_tool_calc_coords
 argument_list|(
 name|edit_select
 argument_list|,
-name|display
-argument_list|,
 name|coords
 operator|->
 name|x
@@ -2187,8 +2148,6 @@ comment|/* now do the actual move. */
 name|gimp_edit_selection_tool_calc_coords
 argument_list|(
 name|edit_select
-argument_list|,
-name|display
 argument_list|,
 name|motion_x
 argument_list|,

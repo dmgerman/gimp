@@ -24,12 +24,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpmath/gimpmath.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
@@ -48,25 +42,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpimage.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimpdrawable-transform.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimphelp-ids.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"display/gimpdisplay.h"
 end_include
 
 begin_include

@@ -12,12 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -31,12 +25,6 @@ begin_include
 include|#
 directive|include
 file|"tools-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimpchannel.h"
 end_include
 
 begin_include

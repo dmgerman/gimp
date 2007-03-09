@@ -24,12 +24,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpconfig/gimpconfig.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
@@ -42,19 +36,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimp.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpdrawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimpimage.h"
 end_include
 
 begin_include
@@ -73,12 +55,6 @@ begin_include
 include|#
 directive|include
 file|"widgets/gimptooldialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"widgets/gimpviewabledialog.h"
 end_include
 
 begin_include

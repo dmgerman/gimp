@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b386d60103
+DECL|enum|__anon2ae9bac30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -313,6 +313,7 @@ name|scale
 argument_list|)
 expr_stmt|;
 break|break;
+default|default:
 name|G_OBJECT_WARN_INVALID_PROPERTY_ID
 argument_list|(
 name|object

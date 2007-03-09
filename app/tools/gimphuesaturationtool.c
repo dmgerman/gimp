@@ -24,12 +24,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpmath/gimpmath.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
@@ -894,7 +888,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon2c0a75e90108
+DECL|struct|__anon2c65b9030108
 block|{
 DECL|member|label
 specifier|const

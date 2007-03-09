@@ -120,12 +120,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpviewabledialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimpwidgets-utils.h"
 end_include
 

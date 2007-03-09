@@ -78,12 +78,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpcanvas.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"display/gimpdisplay.h"
 end_include
 
@@ -131,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29891b0e0103
+DECL|enum|__anon2b3efb2c0103
 block|{
 DECL|enumerator|RECTANGLE_CHANGED
 name|RECTANGLE_CHANGED

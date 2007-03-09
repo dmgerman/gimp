@@ -42,12 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpbase/gimpbase.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimpconfig/gimpconfig.h"
 end_include
 
@@ -114,12 +108,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpundo.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpundostack.h"
 end_include
 
@@ -150,6 +138,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"vectors/gimpvectors-warp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpdialogfactory.h"
 end_include
 
@@ -169,12 +163,6 @@ begin_include
 include|#
 directive|include
 file|"widgets/gimpviewabledialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"vectors/gimpvectors-warp.h"
 end_include
 
 begin_include

@@ -179,7 +179,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ea3c060103
+DECL|enum|__anon2b9bda9d0103
 block|{
 DECL|enumerator|PICKED
 name|PICKED
@@ -823,18 +823,12 @@ name|sample_point
 operator|&&
 name|gimp_display_shell_get_show_sample_points
 argument_list|(
-name|GIMP_DISPLAY_SHELL
-argument_list|(
 name|shell
-argument_list|)
 argument_list|)
 condition|)
 name|gimp_display_shell_draw_sample_point
 argument_list|(
-name|GIMP_DISPLAY_SHELL
-argument_list|(
 name|shell
-argument_list|)
 argument_list|,
 name|color_tool
 operator|->
@@ -855,18 +849,12 @@ name|sample_point
 operator|&&
 name|gimp_display_shell_get_show_sample_points
 argument_list|(
-name|GIMP_DISPLAY_SHELL
-argument_list|(
 name|shell
-argument_list|)
 argument_list|)
 condition|)
 name|gimp_display_shell_draw_sample_point
 argument_list|(
-name|GIMP_DISPLAY_SHELL
-argument_list|(
 name|shell
-argument_list|)
 argument_list|,
 name|color_tool
 operator|->

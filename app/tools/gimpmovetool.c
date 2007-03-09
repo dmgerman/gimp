@@ -108,6 +108,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpdisplay.h"
 end_include
 
@@ -139,12 +145,6 @@ begin_include
 include|#
 directive|include
 file|"display/gimpdisplayshell-transform.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"widgets/gimphelp-ids.h"
 end_include
 
 begin_include
@@ -743,18 +743,12 @@ name|guide
 operator|&&
 name|gimp_display_shell_get_show_guides
 argument_list|(
-name|GIMP_DISPLAY_SHELL
-argument_list|(
 name|shell
-argument_list|)
 argument_list|)
 condition|)
 name|gimp_display_shell_draw_guide
 argument_list|(
-name|GIMP_DISPLAY_SHELL
-argument_list|(
 name|shell
-argument_list|)
 argument_list|,
 name|move
 operator|->
@@ -775,18 +769,12 @@ name|guide
 operator|&&
 name|gimp_display_shell_get_show_guides
 argument_list|(
-name|GIMP_DISPLAY_SHELL
-argument_list|(
 name|shell
-argument_list|)
 argument_list|)
 condition|)
 name|gimp_display_shell_draw_guide
 argument_list|(
-name|GIMP_DISPLAY_SHELL
-argument_list|(
 name|shell
-argument_list|)
 argument_list|,
 name|move
 operator|->

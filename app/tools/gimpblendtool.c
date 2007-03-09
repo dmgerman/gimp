@@ -24,12 +24,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpbase/gimpbase.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
@@ -37,12 +31,6 @@ begin_include
 include|#
 directive|include
 file|"tools-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimp.h"
 end_include
 
 begin_include

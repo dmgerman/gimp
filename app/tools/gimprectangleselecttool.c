@@ -78,12 +78,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpundo.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpundostack.h"
 end_include
 
@@ -109,12 +103,6 @@ begin_include
 include|#
 directive|include
 file|"widgets/gimpwidgets-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"display/gimpcanvas.h"
 end_include
 
 begin_include

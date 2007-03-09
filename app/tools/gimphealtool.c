@@ -30,12 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"paint/gimpheal.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"paint/gimpsourceoptions.h"
 end_include
 
@@ -43,18 +37,6 @@ begin_include
 include|#
 directive|include
 file|"widgets/gimphelp-ids.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"widgets/gimpwidgets-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"display/gimpdisplay.h"
 end_include
 
 begin_include

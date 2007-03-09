@@ -30,12 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpmath/gimpmath.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
@@ -85,12 +79,6 @@ begin_include
 include|#
 directive|include
 file|"widgets/gimptooldialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"widgets/gimpviewabledialog.h"
 end_include
 
 begin_include
@@ -716,19 +704,17 @@ decl_stmt|;
 name|GimpDisplayShell
 modifier|*
 name|shell
-decl_stmt|;
-name|gint
-name|i
-decl_stmt|;
-name|shell
-operator|=
+init|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
 name|display
 operator|->
 name|shell
 argument_list|)
-expr_stmt|;
+decl_stmt|;
+name|gint
+name|i
+decl_stmt|;
 comment|/*  if we are changing displays, pop the statusbar of the old one  */
 if|if
 condition|(
