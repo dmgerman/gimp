@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpmath/gimpmath.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"paint-types.h"
 end_include
 
@@ -104,8 +110,8 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2abe18140103
-DECL|enum|__anon2abe18140203
+DECL|enum|__anon29581e4d0103
+DECL|enum|__anon29581e4d0203
 block|{
 DECL|enumerator|SET_BRUSH
 DECL|enumerator|SET_BRUSH

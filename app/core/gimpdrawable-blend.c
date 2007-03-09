@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpmath/gimpmath.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpcolor/gimpcolor.h"
 end_include
 
@@ -126,7 +132,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289d15be0108
+DECL|struct|__anon2bc294720108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -197,7 +203,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289d15be0208
+DECL|struct|__anon2bc294720208
 block|{
 DECL|member|PR
 name|PixelRegion

@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpmath/gimpmath.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"paint-types.h"
 end_include
 
@@ -2478,7 +2484,7 @@ comment|/* Some of this stuff should probably be combined with the  * code it wa
 end_comment
 
 begin_enum
-DECL|enum|__anon2987bdce0103
+DECL|enum|__anon287cab530103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum

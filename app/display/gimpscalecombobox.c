@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpmath/gimpmath.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display-types.h"
 end_include
 
@@ -43,7 +49,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ec5f800103
+DECL|enum|__anon28d1b8480103
 block|{
 DECL|enumerator|SCALE
 name|SCALE

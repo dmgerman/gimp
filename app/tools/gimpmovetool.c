@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpmath/gimpmath.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
@@ -176,14 +182,6 @@ include|#
 directive|include
 file|"gimp-intl.h"
 end_include
-
-begin_define
-DECL|macro|ARROW_VELOCITY
-define|#
-directive|define
-name|ARROW_VELOCITY
-value|25
-end_define
 
 begin_define
 DECL|macro|SWAP_ORIENT (orient)

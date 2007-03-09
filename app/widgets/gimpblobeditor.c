@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpmath/gimpmath.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"paint/gimpink-blob.h"
 end_include
 
@@ -35,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bdcb1200103
+DECL|enum|__anon279ed7640103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

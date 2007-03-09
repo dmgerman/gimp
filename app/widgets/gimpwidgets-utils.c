@@ -128,6 +128,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpmath/gimpmath.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpcolor/gimpcolor.h"
 end_include
 
@@ -1798,7 +1804,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon2be71a250108
+DECL|struct|__anon296ce3000108
 block|{
 DECL|member|modifiers
 name|GdkModifierType

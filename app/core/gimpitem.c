@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpmath/gimpmath.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core-types.h"
 end_include
 
@@ -125,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29235f7f0103
+DECL|enum|__anon2a1ba0fd0103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -144,7 +150,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29235f7f0203
+DECL|enum|__anon2a1ba0fd0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"libgimpmath/gimpmath.h"
+file|"libgimpmath/gimpmathtypes.h"
 end_include
 
 begin_include

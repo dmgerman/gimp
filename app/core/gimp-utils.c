@@ -111,6 +111,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpmath/gimpmath.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpcolor/gimpcolor.h"
 end_include
 
@@ -301,7 +307,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1ec34a0108
+DECL|struct|__anon291c36e90108
 block|{
 DECL|member|func
 name|GimpMemsizeFunc

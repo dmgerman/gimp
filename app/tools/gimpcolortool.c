@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpmath/gimpmath.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpcolor/gimpcolor.h"
 end_include
 
@@ -179,7 +185,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9bda9d0103
+DECL|enum|__anon276bb1730103
 block|{
 DECL|enumerator|PICKED
 name|PICKED
