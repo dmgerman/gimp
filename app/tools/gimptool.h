@@ -164,6 +164,10 @@ DECL|member|in_click_distance
 name|gboolean
 name|in_click_distance
 decl_stmt|;
+DECL|member|got_motion_event
+name|gboolean
+name|got_motion_event
+decl_stmt|;
 DECL|member|button_press_coords
 name|GimpCoords
 name|button_press_coords

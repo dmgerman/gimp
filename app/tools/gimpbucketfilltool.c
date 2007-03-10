@@ -399,9 +399,15 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
+operator|(
 name|release_type
 operator|==
 name|GIMP_BUTTON_RELEASE_CLICK
+operator|||
+name|release_type
+operator|==
+name|GIMP_BUTTON_RELEASE_NO_MOTION
+operator|)
 operator|&&
 name|gimp_image_coords_in_active_pickable
 argument_list|(

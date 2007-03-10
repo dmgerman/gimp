@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b81bb400103
+DECL|enum|__anon28f8bc890103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1804,6 +1804,12 @@ name|TRUE
 expr_stmt|;
 name|tool
 operator|->
+name|got_motion_event
+operator|=
+name|FALSE
+expr_stmt|;
+name|tool
+operator|->
 name|button_press_coords
 operator|=
 operator|*
@@ -2076,6 +2082,16 @@ block|}
 elseif|else
 if|if
 condition|(
+name|gimp_tool_control_get_wants_click
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|)
+condition|)
+block|{
+if|if
+condition|(
 name|gimp_tool_check_click_distance
 argument_list|(
 name|tool
@@ -2098,7 +2114,7 @@ name|tool
 operator|->
 name|button_press_coords
 expr_stmt|;
-comment|/*  synthesize a motion event back to the recorded press coordinates  */
+comment|/*  synthesize a motion event back to the recorded press            *  coordinates            */
 name|GIMP_TOOL_GET_CLASS
 argument_list|(
 name|tool
@@ -2120,6 +2136,21 @@ argument_list|,
 name|display
 argument_list|)
 expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+operator|!
+name|tool
+operator|->
+name|got_motion_event
+condition|)
+block|{
+name|release_type
+operator|=
+name|GIMP_BUTTON_RELEASE_NO_MOTION
+expr_stmt|;
+block|}
 block|}
 name|GIMP_TOOL_GET_CLASS
 argument_list|(
@@ -2229,6 +2260,12 @@ operator|->
 name|control
 argument_list|)
 argument_list|)
+expr_stmt|;
+name|tool
+operator|->
+name|got_motion_event
+operator|=
+name|TRUE
 expr_stmt|;
 name|gimp_tool_check_click_distance
 argument_list|(
