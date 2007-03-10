@@ -19,12 +19,6 @@ end_define
 begin_include
 include|#
 directive|include
-file|"libgimpmath/gimpmathtypes.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimpmodule/gimpmoduletypes.h"
 end_include
 

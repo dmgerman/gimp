@@ -25,6 +25,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpmath/gimpmathtypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimpcolor/gimpcolortypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"paint-funcs/paint-funcs-types.h"
 end_include
 
