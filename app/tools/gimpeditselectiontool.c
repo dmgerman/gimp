@@ -2489,12 +2489,6 @@ name|first_move
 argument_list|)
 expr_stmt|;
 break|break;
-default|default:
-name|g_warning
-argument_list|(
-literal|"esm / BAD FALLTHROUGH"
-argument_list|)
-expr_stmt|;
 block|}
 name|edit_select
 operator|->
