@@ -626,8 +626,13 @@ name|G_FILE_ERROR_FAILED
 argument_list|,
 name|_
 argument_list|(
-literal|"Plug-In returned SUCCESS but did not "
+literal|"%s plug-in returned SUCCESS but did not "
 literal|"return an image"
+argument_list|)
+argument_list|,
+name|gimp_plug_in_procedure_get_label
+argument_list|(
+name|file_proc
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -657,7 +662,12 @@ name|G_FILE_ERROR_FAILED
 argument_list|,
 name|_
 argument_list|(
-literal|"Plug-In could not open image"
+literal|"%s plug-In could not open image"
+argument_list|)
+argument_list|,
+name|gimp_plug_in_procedure_get_label
+argument_list|(
+name|file_proc
 argument_list|)
 argument_list|)
 expr_stmt|;

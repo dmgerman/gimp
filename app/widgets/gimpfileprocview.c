@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a329d020103
+DECL|enum|__anon295803290103
 block|{
 DECL|enumerator|COLUMN_PROC
 name|COLUMN_PROC
@@ -81,7 +81,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a329d020203
+DECL|enum|__anon295803290203
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -435,6 +435,7 @@ name|prefixes_list
 condition|)
 comment|/*  skip URL loaders  */
 block|{
+specifier|const
 name|gchar
 modifier|*
 name|label
@@ -497,11 +498,6 @@ name|help_id
 argument_list|,
 operator|-
 literal|1
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|label
 argument_list|)
 expr_stmt|;
 block|}

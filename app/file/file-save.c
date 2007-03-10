@@ -707,7 +707,12 @@ name|G_FILE_ERROR_FAILED
 argument_list|,
 name|_
 argument_list|(
-literal|"Plug-In could not save image"
+literal|"%s plug-in could not save image"
+argument_list|)
+argument_list|,
+name|gimp_plug_in_procedure_get_label
+argument_list|(
+name|file_proc
 argument_list|)
 argument_list|)
 expr_stmt|;

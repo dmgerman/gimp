@@ -145,6 +145,11 @@ name|GList
 modifier|*
 name|menu_paths
 decl_stmt|;
+DECL|member|label
+name|gchar
+modifier|*
+name|label
+decl_stmt|;
 DECL|member|icon_type
 name|GimpIconType
 name|icon_type
@@ -410,11 +415,11 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|const
 name|gchar
 modifier|*
 name|gimp_plug_in_procedure_get_label
 parameter_list|(
-specifier|const
 name|GimpPlugInProcedure
 modifier|*
 name|proc

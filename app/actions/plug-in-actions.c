@@ -2160,6 +2160,7 @@ condition|(
 name|proc
 condition|)
 block|{
+specifier|const
 name|gchar
 modifier|*
 name|label
@@ -2200,11 +2201,6 @@ argument_list|(
 literal|"R_e-Show \"%s\""
 argument_list|)
 argument_list|,
-name|label
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
 name|label
 argument_list|)
 expr_stmt|;
@@ -2298,10 +2294,6 @@ operator|+
 literal|1
 argument_list|)
 decl_stmt|;
-name|gchar
-modifier|*
-name|label
-decl_stmt|;
 name|action
 operator|=
 name|gtk_action_group_get_action
@@ -2328,13 +2320,6 @@ argument_list|,
 name|i
 argument_list|)
 expr_stmt|;
-name|label
-operator|=
-name|gimp_plug_in_procedure_get_label
-argument_list|(
-name|proc
-argument_list|)
-expr_stmt|;
 name|g_object_set
 argument_list|(
 name|action
@@ -2349,7 +2334,10 @@ name|proc
 argument_list|,
 literal|"label"
 argument_list|,
-name|label
+name|gimp_plug_in_procedure_get_label
+argument_list|(
+name|proc
+argument_list|)
 argument_list|,
 literal|"stock-id"
 argument_list|,
@@ -2366,11 +2354,6 @@ name|proc
 argument_list|)
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|label
 argument_list|)
 expr_stmt|;
 block|}

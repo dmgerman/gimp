@@ -2210,10 +2210,6 @@ init|=
 name|gtk_file_filter_new
 argument_list|()
 decl_stmt|;
-name|gchar
-modifier|*
-name|label
-decl_stmt|;
 name|GString
 modifier|*
 name|str
@@ -2225,23 +2221,14 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
-name|label
-operator|=
-name|gimp_plug_in_procedure_get_label
-argument_list|(
-name|file_proc
-argument_list|)
-expr_stmt|;
 name|str
 operator|=
 name|g_string_new
 argument_list|(
-name|label
-argument_list|)
-expr_stmt|;
-name|g_free
+name|gimp_plug_in_procedure_get_label
 argument_list|(
-name|label
+name|file_proc
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  an arbitrary limit to keep the file dialog from becoming too wide  */

@@ -136,7 +136,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon276f2c420103
+DECL|enum|__anon293f7bad0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1470,10 +1470,6 @@ name|GimpPlugInProcedure
 modifier|*
 name|proc
 decl_stmt|;
-name|gchar
-modifier|*
-name|text
-decl_stmt|;
 name|proc
 operator|=
 name|gimp_image_get_save_proc
@@ -1521,8 +1517,13 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|text
-operator|=
+name|gtk_label_set_text
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
 name|proc
 condition|?
 name|gimp_plug_in_procedure_get_label
@@ -1531,20 +1532,6 @@ name|proc
 argument_list|)
 else|:
 name|NULL
-expr_stmt|;
-name|gtk_label_set_text
-argument_list|(
-name|GTK_LABEL
-argument_list|(
-name|label
-argument_list|)
-argument_list|,
-name|text
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|text
 argument_list|)
 expr_stmt|;
 block|}

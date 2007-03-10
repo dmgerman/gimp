@@ -84,7 +84,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fbd7a30103
+DECL|enum|__anon28eceeb70103
 block|{
 DECL|enumerator|MENU_PATH_ADDED
 name|MENU_PATH_ADDED
@@ -441,6 +441,13 @@ argument_list|(
 name|proc
 operator|->
 name|menu_paths
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|proc
+operator|->
+name|label
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -2337,12 +2344,12 @@ block|}
 end_function
 
 begin_function
+specifier|const
 name|gchar
 modifier|*
-DECL|function|gimp_plug_in_procedure_get_label (const GimpPlugInProcedure * proc)
+DECL|function|gimp_plug_in_procedure_get_label (GimpPlugInProcedure * proc)
 name|gimp_plug_in_procedure_get_label
 parameter_list|(
-specifier|const
 name|GimpPlugInProcedure
 modifier|*
 name|proc
@@ -2375,6 +2382,17 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|proc
+operator|->
+name|label
+condition|)
+return|return
+name|proc
+operator|->
+name|label
+return|;
 if|if
 condition|(
 name|proc
@@ -2499,7 +2517,15 @@ name|ellipsis
 operator|=
 literal|'\0'
 expr_stmt|;
+name|proc
+operator|->
+name|label
+operator|=
+name|label
+expr_stmt|;
 return|return
+name|proc
+operator|->
 name|label
 return|;
 block|}
