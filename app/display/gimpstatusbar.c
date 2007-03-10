@@ -1422,6 +1422,12 @@ name|statusbar
 operator|->
 name|progressbar
 decl_stmt|;
+name|statusbar
+operator|->
+name|progress_active
+operator|=
+name|FALSE
+expr_stmt|;
 name|gimp_statusbar_pop
 argument_list|(
 name|statusbar
@@ -1454,12 +1460,6 @@ name|statusbar
 operator|->
 name|cancel_button
 argument_list|)
-expr_stmt|;
-name|statusbar
-operator|->
-name|progress_active
-operator|=
-name|FALSE
 expr_stmt|;
 block|}
 block|}
