@@ -2070,7 +2070,7 @@ end_comment
 begin_function
 name|MaskBuf
 modifier|*
-DECL|function|mask_buf_new (gint width,gint height)
+DECL|function|mask_buf_new (gint width,gint height,gint bpp)
 name|mask_buf_new
 parameter_list|(
 name|gint
@@ -2078,6 +2078,9 @@ name|width
 parameter_list|,
 name|gint
 name|height
+parameter_list|,
+name|gint
+name|bpp
 parameter_list|)
 block|{
 specifier|static
@@ -2093,7 +2096,7 @@ name|width
 argument_list|,
 name|height
 argument_list|,
-literal|1
+name|bpp
 argument_list|,
 literal|0
 argument_list|,

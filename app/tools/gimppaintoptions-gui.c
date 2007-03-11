@@ -301,6 +301,10 @@ name|button
 decl_stmt|;
 name|GtkWidget
 modifier|*
+name|adj
+decl_stmt|;
+name|GtkWidget
+modifier|*
 name|incremental_toggle
 init|=
 name|NULL
@@ -551,6 +555,8 @@ operator|!=
 name|GIMP_TYPE_SMUDGE_TOOL
 condition|)
 block|{
+name|adj
+operator|=
 name|gimp_prop_scale_entry_new
 argument_list|(
 name|config
@@ -583,6 +589,13 @@ argument_list|,
 literal|0.0
 argument_list|,
 literal|0.0
+argument_list|)
+expr_stmt|;
+name|gimp_scale_entry_set_logarithmic
+argument_list|(
+name|adj
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
