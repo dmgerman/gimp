@@ -225,7 +225,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af9b8f20103
+DECL|enum|__anon2bf866530103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -486,7 +486,7 @@ name|NULL
 argument_list|,
 literal|0.0
 argument_list|,
-literal|100.0
+literal|1.0
 argument_list|,
 name|DEFAULT_BRUSH_SCALE
 argument_list|,
