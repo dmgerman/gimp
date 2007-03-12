@@ -153,6 +153,7 @@ name|plug_in_manager
 operator|->
 name|current_plug_in
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|undo_desc
@@ -195,15 +196,6 @@ name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_MISC
 argument_list|,
-name|undo_desc
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|undo_desc
-condition|)
-name|g_free
-argument_list|(
 name|undo_desc
 argument_list|)
 expr_stmt|;

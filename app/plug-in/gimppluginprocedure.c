@@ -84,7 +84,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28eceeb70103
+DECL|enum|__anon2c1e18d70103
 block|{
 DECL|enumerator|MENU_PATH_ADDED
 name|MENU_PATH_ADDED
@@ -363,6 +363,12 @@ operator|->
 name|proc_type
 operator|=
 name|GIMP_PLUGIN
+expr_stmt|;
+name|proc
+operator|->
+name|label
+operator|=
+name|NULL
 expr_stmt|;
 name|proc
 operator|->

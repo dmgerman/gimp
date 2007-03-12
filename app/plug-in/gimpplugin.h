@@ -358,6 +358,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|const
 name|gchar
 modifier|*
 name|gimp_plug_in_get_undo_desc

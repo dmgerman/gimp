@@ -136,6 +136,7 @@ condition|(
 name|success
 condition|)
 block|{
+specifier|const
 name|gchar
 modifier|*
 name|domain
@@ -175,11 +176,6 @@ argument_list|,
 name|domain
 argument_list|,
 name|message
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|domain
 argument_list|)
 expr_stmt|;
 block|}
