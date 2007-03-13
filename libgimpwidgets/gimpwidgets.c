@@ -3371,7 +3371,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6347720108
+DECL|struct|__anon2c07a3060108
 block|{
 DECL|member|chainbutton
 name|GimpChainButton
@@ -5731,7 +5731,7 @@ name|PANGO_ATTR_STRIKETHROUGH
 case|:
 name|attr
 operator|=
-name|pango_attr_underline_new
+name|pango_attr_strikethrough_new
 argument_list|(
 name|va_arg
 argument_list|(
