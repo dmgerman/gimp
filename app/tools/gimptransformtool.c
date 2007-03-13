@@ -6343,7 +6343,7 @@ name|tr_tool
 operator|->
 name|dialog
 condition|)
-name|gtk_widget_hide
+name|gimp_dialog_factory_hide_dialog
 argument_list|(
 name|tr_tool
 operator|->

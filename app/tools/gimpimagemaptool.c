@@ -114,6 +114,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpdialogfactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimptooldialog.h"
 end_include
 
@@ -1913,7 +1919,7 @@ break|break;
 case|case
 name|GTK_RESPONSE_OK
 case|:
-name|gtk_widget_hide
+name|gimp_dialog_factory_hide_dialog
 argument_list|(
 name|image_map_tool
 operator|->
@@ -2010,7 +2016,7 @@ name|NULL
 expr_stmt|;
 break|break;
 default|default:
-name|gtk_widget_hide
+name|gimp_dialog_factory_hide_dialog
 argument_list|(
 name|image_map_tool
 operator|->

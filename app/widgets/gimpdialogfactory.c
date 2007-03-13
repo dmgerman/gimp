@@ -376,7 +376,6 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpDialogFactory,gimp_dialog_factory,GIMP_TYPE_OBJECT)
 name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpDialogFactory
@@ -395,9 +394,23 @@ name|parent_class
 value|gimp_dialog_factory_parent_class
 end_define
 
+begin_decl_stmt
+specifier|static
+name|gboolean
+name|dialogs_shown
+init|=
+name|TRUE
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+comment|/* FIXME */
+end_comment
+
 begin_function
 specifier|static
 name|void
+DECL|function|gimp_dialog_factory_class_init (GimpDialogFactoryClass * klass)
 name|gimp_dialog_factory_class_init
 parameter_list|(
 name|GimpDialogFactoryClass
@@ -3579,6 +3592,80 @@ end_function
 
 begin_function
 name|void
+DECL|function|gimp_dialog_factory_hide_dialog (GtkWidget * dialog)
+name|gimp_dialog_factory_hide_dialog
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|dialog
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GTK_IS_WIDGET
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GTK_WIDGET_TOPLEVEL
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|gimp_dialog_factory_from_widget
+argument_list|(
+name|dialog
+argument_list|,
+name|NULL
+argument_list|)
+condition|)
+block|{
+name|g_warning
+argument_list|(
+literal|"%s: dialog was not created by a GimpDialogFactory"
+argument_list|,
+name|G_STRFUNC
+argument_list|)
+expr_stmt|;
+return|return;
+block|}
+name|gtk_widget_hide
+argument_list|(
+name|dialog
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|dialogs_shown
+condition|)
+name|g_object_set_data
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|,
+name|GIMP_DIALOG_VISIBILITY_KEY
+argument_list|,
+name|GINT_TO_POINTER
+argument_list|(
+name|GIMP_DIALOG_VISIBILITY_INVISIBLE
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
 DECL|function|gimp_dialog_factories_session_save (GimpConfigWriter * writer)
 name|gimp_dialog_factories_session_save
 parameter_list|(
@@ -3702,13 +3789,6 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-specifier|static
-name|gboolean
-name|shown
-init|=
-name|TRUE
-decl_stmt|;
-comment|/* FIXME */
 name|GimpDialogFactoryClass
 modifier|*
 name|factory_class
@@ -3722,10 +3802,10 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|shown
+name|dialogs_shown
 condition|)
 block|{
-name|shown
+name|dialogs_shown
 operator|=
 name|FALSE
 expr_stmt|;
@@ -3746,7 +3826,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|shown
+name|dialogs_shown
 operator|=
 name|TRUE
 expr_stmt|;
