@@ -90,7 +90,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29989a080108
+DECL|struct|__anon276b4b8e0108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -151,7 +151,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon29989a080203
+DECL|enum|__anon276b4b8e0203
 block|{
 DECL|enumerator|RESPONSE_CLEAR
 name|RESPONSE_CLEAR
@@ -803,7 +803,7 @@ init|=
 block|{
 literal|"strong"
 block|,
-name|_
+name|N_
 argument_list|(
 literal|"Welcome to TinyScheme"
 argument_list|)
@@ -822,7 +822,7 @@ literal|"\n"
 block|,
 literal|"strong"
 block|,
-name|_
+name|N_
 argument_list|(
 literal|"Script-Fu Console"
 argument_list|)
@@ -833,7 +833,7 @@ literal|" - "
 block|,
 literal|"emphasis"
 block|,
-name|_
+name|N_
 argument_list|(
 literal|"Interactive Scheme Development"
 argument_list|)
@@ -893,12 +893,15 @@ argument_list|,
 operator|&
 name|cursor
 argument_list|,
+name|gettext
+argument_list|(
 name|greetings
 index|[
 name|i
 operator|+
 literal|1
 index|]
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -921,12 +924,15 @@ argument_list|,
 operator|&
 name|cursor
 argument_list|,
+name|gettext
+argument_list|(
 name|greetings
 index|[
 name|i
 operator|+
 literal|1
 index|]
+argument_list|)
 argument_list|,
 operator|-
 literal|1
