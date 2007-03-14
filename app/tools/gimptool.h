@@ -176,6 +176,12 @@ DECL|member|button_press_time
 name|guint32
 name|button_press_time
 decl_stmt|;
+comment|/*  private list of displays which have a status message from this tool    */
+DECL|member|status_displays
+name|GList
+modifier|*
+name|status_displays
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -885,6 +891,17 @@ parameter_list|,
 name|GimpDisplay
 modifier|*
 name|display
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_tool_clear_status
+parameter_list|(
+name|GimpTool
+modifier|*
+name|tool
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -962,6 +962,11 @@ operator|->
 name|control
 argument_list|)
 expr_stmt|;
+name|gimp_tool_clear_status
+argument_list|(
+name|tool
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 block|}
