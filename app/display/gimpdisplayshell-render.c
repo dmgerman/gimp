@@ -170,16 +170,19 @@ modifier|*
 name|src_tiles
 decl_stmt|;
 DECL|member|alpha
+specifier|const
 name|guint
 modifier|*
 name|alpha
 decl_stmt|;
 DECL|member|scale
+specifier|const
 name|guchar
 modifier|*
 name|scale
 decl_stmt|;
 DECL|member|src
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -266,16 +269,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|tile_shift
-specifier|static
-name|guint
-name|tile_shift
-init|=
-literal|0
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|check_mod
 specifier|static
 name|guint
@@ -313,6 +306,13 @@ name|gimp
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|tile_buf
+operator|==
+name|NULL
+argument_list|)
+expr_stmt|;
 name|g_signal_connect
 argument_list|(
 name|gimp
@@ -343,6 +343,18 @@ name|render_setup_notify
 argument_list|)
 argument_list|,
 name|gimp
+argument_list|)
+expr_stmt|;
+comment|/*  allocate a buffer for arranging information from a row of tiles  */
+name|tile_buf
+operator|=
+name|g_new
+argument_list|(
+name|guchar
+argument_list|,
+name|GIMP_RENDER_BUF_WIDTH
+operator|*
+name|MAX_CHANNELS
 argument_list|)
 expr_stmt|;
 name|render_setup_notify
@@ -437,41 +449,6 @@ operator|&
 name|check_size
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-comment|/*  based on the tile size, determine the tile shift amount    *  (assume here that tile_height and tile_width are equal)    */
-name|tile_shift
-operator|=
-literal|0
-expr_stmt|;
-while|while
-condition|(
-operator|(
-literal|1
-operator|<<
-name|tile_shift
-operator|)
-operator|<
-name|TILE_WIDTH
-condition|)
-name|tile_shift
-operator|++
-expr_stmt|;
-comment|/*  allocate a buffer for arranging information from a row of tiles  */
-if|if
-condition|(
-operator|!
-name|tile_buf
-condition|)
-name|tile_buf
-operator|=
-name|g_new
-argument_list|(
-name|guchar
-argument_list|,
-name|GIMP_RENDER_BUF_WIDTH
-operator|*
-name|MAX_CHANNELS
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -655,6 +632,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
+specifier|const
 name|guint
 modifier|*
 name|render_image_init_alpha
@@ -667,6 +645,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
+specifier|const
 name|guchar
 modifier|*
 name|render_image_accelerate_scaling
@@ -685,6 +664,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
+specifier|const
 name|guchar
 modifier|*
 name|render_image_tile_fault
@@ -3944,6 +3924,7 @@ end_function
 
 begin_function
 specifier|static
+specifier|const
 name|guint
 modifier|*
 DECL|function|render_image_init_alpha (gint mult)
@@ -4034,6 +4015,7 @@ end_function
 
 begin_function
 specifier|static
+specifier|const
 name|guchar
 modifier|*
 DECL|function|render_image_accelerate_scaling (gint width,gint start,gdouble scalex)
@@ -4127,6 +4109,7 @@ end_function
 
 begin_function
 specifier|static
+specifier|const
 name|guchar
 modifier|*
 DECL|function|render_image_tile_fault (RenderInfo * info)
@@ -4342,8 +4325,8 @@ if|if
 condition|(
 operator|(
 name|x
-operator|>>
-name|tile_shift
+operator|/
+name|TILE_WIDTH
 operator|)
 operator|!=
 name|tilex
