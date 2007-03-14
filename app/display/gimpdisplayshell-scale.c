@@ -1012,6 +1012,11 @@ name|dot_for_dot
 operator|=
 name|dot_for_dot
 expr_stmt|;
+name|gimp_display_shell_scale_factor_changed
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
 name|gimp_display_shell_scale_resize
 argument_list|(
 name|shell

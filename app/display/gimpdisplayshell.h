@@ -81,7 +81,7 @@ name|SCALEFACTOR_X
 parameter_list|(
 name|s
 parameter_list|)
-value|(gimp_zoom_model_get_factor ((s)->zoom) \                            * SCREEN_XRES(s) / (s)->display->image->xresolution)
+value|(s->scale_factor_x)
 end_define
 
 begin_define
@@ -92,7 +92,7 @@ name|SCALEFACTOR_Y
 parameter_list|(
 name|s
 parameter_list|)
-value|(gimp_zoom_model_get_factor ((s)->zoom) \                            * SCREEN_YRES(s) / (s)->display->image->yresolution)
+value|(s->scale_factor_y)
 end_define
 
 begin_comment
@@ -317,6 +317,16 @@ DECL|member|offset_y
 name|gint
 name|offset_y
 decl_stmt|;
+DECL|member|scale_factor_x
+name|gdouble
+name|scale_factor_x
+decl_stmt|;
+comment|/*  cache for scale factor             */
+DECL|member|scale_factor_y
+name|gdouble
+name|scale_factor_y
+decl_stmt|;
+comment|/*  cache for scale factor             */
 DECL|member|last_scale
 name|gdouble
 name|last_scale
@@ -768,6 +778,17 @@ end_function_decl
 begin_function_decl
 name|void
 name|gimp_display_shell_reconnect
+parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_display_shell_scale_factor_changed
 parameter_list|(
 name|GimpDisplayShell
 modifier|*

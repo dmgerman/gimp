@@ -1725,6 +1725,11 @@ modifier|*
 name|shell
 parameter_list|)
 block|{
+name|gimp_display_shell_scale_factor_changed
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|shell
@@ -2385,6 +2390,11 @@ operator|->
 name|monitor_yres
 expr_stmt|;
 block|}
+name|gimp_display_shell_scale_factor_changed
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
