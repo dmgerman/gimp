@@ -70,32 +70,6 @@ value|((s)->dot_for_dot ? \                            (s)->display->image->yres
 end_define
 
 begin_comment
-comment|/* calculate scale factors (double) */
-end_comment
-
-begin_define
-DECL|macro|SCALEFACTOR_X (s)
-define|#
-directive|define
-name|SCALEFACTOR_X
-parameter_list|(
-name|s
-parameter_list|)
-value|(s->scale_factor_x)
-end_define
-
-begin_define
-DECL|macro|SCALEFACTOR_Y (s)
-define|#
-directive|define
-name|SCALEFACTOR_Y
-parameter_list|(
-name|s
-parameter_list|)
-value|(s->scale_factor_y)
-end_define
-
-begin_comment
 comment|/* scale values */
 end_comment
 
@@ -109,7 +83,7 @@ name|s
 parameter_list|,
 name|x
 parameter_list|)
-value|PROJ_ROUND ((x) * SCALEFACTOR_X(s))
+value|PROJ_ROUND ((x) * (s)->scale_x)
 end_define
 
 begin_define
@@ -122,7 +96,7 @@ name|s
 parameter_list|,
 name|y
 parameter_list|)
-value|PROJ_ROUND ((y) * SCALEFACTOR_Y(s))
+value|PROJ_ROUND ((y) * (s)->scale_y)
 end_define
 
 begin_comment
@@ -139,7 +113,7 @@ name|s
 parameter_list|,
 name|x
 parameter_list|)
-value|((gint) ((x) / SCALEFACTOR_X(s)))
+value|((gint) ((x) / (s)->scale_x))
 end_define
 
 begin_define
@@ -152,7 +126,7 @@ name|s
 parameter_list|,
 name|y
 parameter_list|)
-value|((gint) ((y) / SCALEFACTOR_Y(s)))
+value|((gint) ((y) / (s)->scale_y))
 end_define
 
 begin_comment
@@ -169,7 +143,7 @@ name|s
 parameter_list|,
 name|x
 parameter_list|)
-value|((x) / SCALEFACTOR_X(s))
+value|((x) / (s)->scale_x)
 end_define
 
 begin_define
@@ -182,7 +156,7 @@ name|s
 parameter_list|,
 name|y
 parameter_list|)
-value|((y) / SCALEFACTOR_Y(s))
+value|((y) / (s)->scale_y)
 end_define
 
 begin_define
@@ -317,16 +291,16 @@ DECL|member|offset_y
 name|gint
 name|offset_y
 decl_stmt|;
-DECL|member|scale_factor_x
+DECL|member|scale_x
 name|gdouble
-name|scale_factor_x
+name|scale_x
 decl_stmt|;
-comment|/*  cache for scale factor             */
-DECL|member|scale_factor_y
+comment|/*  horizontal scale factor            */
+DECL|member|scale_y
 name|gdouble
-name|scale_factor_y
+name|scale_y
 decl_stmt|;
-comment|/*  cache for scale factor             */
+comment|/*  vertical scale factor              */
 DECL|member|last_scale
 name|gdouble
 name|last_scale
@@ -788,7 +762,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_display_shell_scale_factor_changed
+name|gimp_display_shell_scale_changed
 parameter_list|(
 name|GimpDisplayShell
 modifier|*

@@ -1725,7 +1725,7 @@ modifier|*
 name|shell
 parameter_list|)
 block|{
-name|gimp_display_shell_scale_factor_changed
+name|gimp_display_shell_scale_changed
 argument_list|(
 name|shell
 argument_list|)
@@ -2390,7 +2390,7 @@ operator|->
 name|monitor_yres
 expr_stmt|;
 block|}
-name|gimp_display_shell_scale_factor_changed
+name|gimp_display_shell_scale_changed
 argument_list|(
 name|shell
 argument_list|)

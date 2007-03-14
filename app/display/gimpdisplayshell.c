@@ -275,7 +275,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b606630103
+DECL|enum|__anon274e5d9c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -288,7 +288,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b606630203
+DECL|enum|__anon274e5d9c0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -873,13 +873,13 @@ literal|0
 expr_stmt|;
 name|shell
 operator|->
-name|scale_factor_x
+name|scale_x
 operator|=
 literal|1.0
 expr_stmt|;
 name|shell
 operator|->
-name|scale_factor_y
+name|scale_y
 operator|=
 literal|1.0
 expr_stmt|;
@@ -1357,7 +1357,7 @@ literal|"zoomed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_display_shell_scale_factor_changed
+name|gimp_display_shell_scale_changed
 argument_list|)
 argument_list|,
 name|shell
@@ -4659,8 +4659,8 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_scale_factor_changed (GimpDisplayShell * shell)
-name|gimp_display_shell_scale_factor_changed
+DECL|function|gimp_display_shell_scale_changed (GimpDisplayShell * shell)
+name|gimp_display_shell_scale_changed
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
@@ -4677,7 +4677,7 @@ argument_list|)
 expr_stmt|;
 name|shell
 operator|->
-name|scale_factor_x
+name|scale_x
 operator|=
 operator|(
 name|gimp_zoom_model_get_factor
@@ -4703,7 +4703,7 @@ operator|)
 expr_stmt|;
 name|shell
 operator|->
-name|scale_factor_y
+name|scale_y
 operator|=
 operator|(
 name|gimp_zoom_model_get_factor

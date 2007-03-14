@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c63b8760103
+DECL|enum|__anon2bbfc4d90103
 block|{
 DECL|enumerator|RECTANGLE_CHANGED
 name|RECTANGLE_CHANGED
@@ -4973,10 +4973,9 @@ name|private
 operator|->
 name|handle_w
 operator|/
-name|SCALEFACTOR_X
-argument_list|(
 name|shell
-argument_list|)
+operator|->
+name|scale_x
 decl_stmt|;
 name|gdouble
 name|handle_h
@@ -4985,10 +4984,9 @@ name|private
 operator|->
 name|handle_h
 operator|/
-name|SCALEFACTOR_Y
-argument_list|(
 name|shell
-argument_list|)
+operator|->
+name|scale_y
 decl_stmt|;
 if|if
 condition|(
