@@ -61,62 +61,65 @@ name|TileManager
 modifier|*
 name|mgr
 decl_stmt|;
-comment|/*  tile manager to access tiles from   */
+comment|/*  tile manager to access tiles from    */
 DECL|member|bpp
 name|gint
 name|bpp
 decl_stmt|;
-comment|/*  bytes per pixel in tile manager     */
+comment|/*  bytes per pixel in tile manager      */
 DECL|member|w
 name|gint
 name|w
 decl_stmt|;
-comment|/*  width of pixel surround area        */
+comment|/*  width of pixel surround area         */
 DECL|member|h
 name|gint
 name|h
 decl_stmt|;
-comment|/*  height of pixel surround area       */
+comment|/*  height of pixel surround area        */
 DECL|member|tile
 name|Tile
 modifier|*
 name|tile
 decl_stmt|;
-comment|/*  locked tile (may be NULL)           */
+comment|/*  locked tile (may be NULL)            */
 DECL|member|tile_x
 name|gint
 name|tile_x
 decl_stmt|;
-comment|/*  origin of locked tile               */
+comment|/*  origin of locked tile                */
 DECL|member|tile_y
 name|gint
 name|tile_y
 decl_stmt|;
-comment|/*  origin of locked tile               */
+comment|/*  origin of locked tile                */
 DECL|member|tile_w
 name|gint
 name|tile_w
 decl_stmt|;
-comment|/*  width of locked tile                */
+comment|/*  width of locked tile                 */
 DECL|member|tile_h
 name|gint
 name|tile_h
 decl_stmt|;
-comment|/*  height of locked tile               */
+comment|/*  height of locked tile                */
 DECL|member|rowstride
 name|gint
 name|rowstride
 decl_stmt|;
+comment|/*  rowstride of buffers                 */
 DECL|member|bg
 name|guchar
 modifier|*
 name|bg
 decl_stmt|;
+comment|/*  buffer filled with background color  */
 DECL|member|buf
 name|guchar
 modifier|*
 name|buf
 decl_stmt|;
+comment|/*  buffer used for combining tile data  */
 block|}
 struct|;
 end_struct
