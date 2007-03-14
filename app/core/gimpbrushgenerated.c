@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2895171c0103
+DECL|enum|__anon278dae520103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1825,7 +1825,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* This function is shared between gimp_brush_scale_size and  * gimp_brush_generated_calc, therefore we provide a bunch of optional pointers  * for returnvalues.  */
+comment|/* This function is shared between gimp_brush_scale_size and  * gimp_brush_generated_calc, therefore we provide a bunch of optional  * pointers for returnvalues.  */
 end_comment
 
 begin_function
@@ -2155,7 +2155,7 @@ operator|*
 name|radius
 expr_stmt|;
 block|}
-comment|/* These will typically be set then this function is called by      gimp_brush_generated_calc, which needs the values in its algorithms. */
+comment|/*  These will typically be set then this function is called by    *  gimp_brush_generated_calc, which needs the values in its algorithms.    */
 if|if
 condition|(
 name|_s
@@ -2206,12 +2206,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_brush_generated_real_scale_size (GimpBrush * brush,gdouble scale,gint * width,gint * height)
+DECL|function|gimp_brush_generated_real_scale_size (GimpBrush * gbrush,gdouble scale,gint * width,gint * height)
 name|gimp_brush_generated_real_scale_size
 parameter_list|(
 name|GimpBrush
 modifier|*
-name|brush
+name|gbrush
 parameter_list|,
 name|gdouble
 name|scale
@@ -2227,7 +2227,12 @@ parameter_list|)
 block|{
 name|GimpBrushGenerated
 modifier|*
+name|brush
+init|=
+name|GIMP_BRUSH_GENERATED
+argument_list|(
 name|gbrush
+argument_list|)
 decl_stmt|;
 name|gint
 name|half_width
@@ -2235,40 +2240,33 @@ decl_stmt|;
 name|gint
 name|half_height
 decl_stmt|;
-name|gbrush
-operator|=
-name|GIMP_BRUSH_GENERATED
-argument_list|(
-name|brush
-argument_list|)
-expr_stmt|;
 name|gimp_brush_generated_get_half_size
 argument_list|(
-name|gbrush
+name|brush
 argument_list|,
-name|gbrush
+name|brush
 operator|->
 name|shape
 argument_list|,
-name|gbrush
+name|brush
 operator|->
 name|radius
 operator|*
 name|scale
 argument_list|,
-name|gbrush
+name|brush
 operator|->
 name|spikes
 argument_list|,
-name|gbrush
+name|brush
 operator|->
 name|hardness
 argument_list|,
-name|gbrush
+name|brush
 operator|->
 name|aspect_ratio
 argument_list|,
-name|gbrush
+name|brush
 operator|->
 name|angle
 argument_list|,
