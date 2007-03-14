@@ -897,17 +897,6 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_tool_clear_status
-parameter_list|(
-name|GimpTool
-modifier|*
-name|tool
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|gimp_tool_message
 parameter_list|(
 name|GimpTool
