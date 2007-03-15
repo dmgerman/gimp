@@ -65,6 +65,10 @@ parameter_list|(
 name|GimpPlugIn
 modifier|*
 name|plug_in
+parameter_list|,
+name|GimpPlugInProcFrame
+modifier|*
+name|proc_frame
 parameter_list|)
 function_decl|;
 end_function_decl

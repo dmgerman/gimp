@@ -329,6 +329,8 @@ block|{
 name|gimp_plug_in_progress_end
 argument_list|(
 name|plug_in
+argument_list|,
+name|proc_frame
 argument_list|)
 expr_stmt|;
 if|if

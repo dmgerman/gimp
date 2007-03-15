@@ -105,7 +105,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b1a06c0108
+DECL|struct|__anon291cb16c0108
 block|{
 DECL|member|tilable
 name|gboolean
@@ -1258,6 +1258,11 @@ name|max_progress
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 block|}
 comment|/*  Update the drawable  */
 if|if
