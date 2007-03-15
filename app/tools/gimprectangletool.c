@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbfc4d90103
+DECL|enum|__anon2c39494b0103
 block|{
 DECL|enumerator|RECTANGLE_CHANGED
 name|RECTANGLE_CHANGED
@@ -350,6 +350,10 @@ parameter_list|(
 name|GimpRectangleTool
 modifier|*
 name|rectangle
+parameter_list|,
+name|GimpDisplay
+modifier|*
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1666,15 +1670,11 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|tool
-operator|->
-name|display
-operator|=
-name|display
-expr_stmt|;
 name|gimp_rectangle_tool_start
 argument_list|(
 name|rectangle
+argument_list|,
+name|display
 argument_list|)
 expr_stmt|;
 block|}
@@ -6510,12 +6510,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_rectangle_tool_start (GimpRectangleTool * rectangle)
+DECL|function|gimp_rectangle_tool_start (GimpRectangleTool * rectangle,GimpDisplay * display)
 name|gimp_rectangle_tool_start
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
 name|rectangle
+parameter_list|,
+name|GimpDisplay
+modifier|*
+name|display
 parameter_list|)
 block|{
 name|GimpTool
@@ -6527,6 +6531,12 @@ argument_list|(
 name|rectangle
 argument_list|)
 decl_stmt|;
+name|tool
+operator|->
+name|display
+operator|=
+name|display
+expr_stmt|;
 name|gimp_rectangle_tool_configure
 argument_list|(
 name|rectangle
@@ -6590,6 +6600,12 @@ argument_list|(
 name|rectangle
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|tool
+operator|->
+name|display
+condition|)
 name|gimp_display_shell_set_highlight
 argument_list|(
 name|GIMP_DISPLAY_SHELL
