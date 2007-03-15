@@ -301,10 +301,6 @@ name|button
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|adj
-decl_stmt|;
-name|GtkWidget
-modifier|*
 name|incremental_toggle
 init|=
 name|NULL
@@ -555,6 +551,10 @@ operator|!=
 name|GIMP_TYPE_SMUDGE_TOOL
 condition|)
 block|{
+name|GtkObject
+modifier|*
+name|adj
+decl_stmt|;
 name|adj
 operator|=
 name|gimp_prop_scale_entry_new
