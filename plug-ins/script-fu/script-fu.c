@@ -380,10 +380,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug-in-script-fu-console"
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Toolbox>/Xtns/Languages/Script-Fu"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
@@ -462,10 +459,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug-in-script-fu-server"
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Toolbox>/Xtns/Languages/Script-Fu"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
@@ -1186,10 +1180,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 literal|"script-fu-refresh"
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Toolbox>/Xtns/Languages/Script-Fu"
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
