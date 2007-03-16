@@ -653,8 +653,33 @@ operator|->
 name|n_values
 argument_list|)
 expr_stmt|;
-comment|/* Free the old argument pointer. */
+comment|/* Free the old arguments. */
 name|g_free
+argument_list|(
+name|proc_frame
+operator|->
+name|return_vals
+operator|->
+name|values
+argument_list|)
+expr_stmt|;
+name|proc_frame
+operator|->
+name|return_vals
+operator|->
+name|values
+operator|=
+literal|0
+expr_stmt|;
+name|proc_frame
+operator|->
+name|return_vals
+operator|->
+name|n_values
+operator|=
+literal|0
+expr_stmt|;
+name|g_value_array_free
 argument_list|(
 name|proc_frame
 operator|->
@@ -662,6 +687,13 @@ name|return_vals
 argument_list|)
 expr_stmt|;
 block|}
+comment|/* We have consumed any saved values, so clear them. */
+name|proc_frame
+operator|->
+name|return_vals
+operator|=
+name|NULL
+expr_stmt|;
 block|}
 else|else
 block|{
@@ -678,13 +710,6 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* We have consumed any saved values, so clear them. */
-name|proc_frame
-operator|->
-name|return_vals
-operator|=
-name|NULL
-expr_stmt|;
 return|return
 name|return_vals
 return|;
