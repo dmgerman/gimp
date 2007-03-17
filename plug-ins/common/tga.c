@@ -656,13 +656,15 @@ argument_list|,
 literal|"image/x-tga"
 argument_list|)
 expr_stmt|;
-name|gimp_register_load_handler
+name|gimp_register_magic_load_handler
 argument_list|(
 name|LOAD_PROC
 argument_list|,
-literal|"tga"
+literal|"tga,vda,icb,vst"
 argument_list|,
 literal|""
+argument_list|,
+literal|"-18&,string,TRUEVISION-XFILE.,-1,byte,0"
 argument_list|)
 expr_stmt|;
 name|gimp_install_procedure

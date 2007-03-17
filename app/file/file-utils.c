@@ -154,7 +154,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bc0a8e00103
+DECL|enum|__anon27a9aae80103
 block|{
 DECL|enumerator|FILE_MATCH_NONE
 name|FILE_MATCH_NONE
@@ -993,9 +993,6 @@ name|size_match_count
 init|=
 literal|0
 decl_stmt|;
-name|FileMatchType
-name|match_val
-decl_stmt|;
 name|guchar
 name|head
 index|[
@@ -1103,6 +1100,9 @@ operator|>=
 literal|4
 condition|)
 block|{
+name|FileMatchType
+name|match_val
+decl_stmt|;
 name|match_val
 operator|=
 name|file_check_magic_list
@@ -1122,9 +1122,8 @@ if|if
 condition|(
 name|match_val
 operator|==
-literal|2
+name|FILE_MATCH_SIZE
 condition|)
-comment|/* size match ? */
 block|{
 comment|/* Use it only if no other magic matches */
 name|size_match_count
@@ -1139,6 +1138,8 @@ elseif|else
 if|if
 condition|(
 name|match_val
+operator|!=
+name|FILE_MATCH_NONE
 condition|)
 block|{
 name|fclose
@@ -3133,15 +3134,6 @@ condition|)
 return|return
 name|FILE_MATCH_NONE
 return|;
-if|if
-condition|(
-name|offs
-operator|<
-literal|0
-condition|)
-return|return
-name|FILE_MATCH_NONE
-return|;
 comment|/* Check type of test */
 name|num_operator_ptr
 operator|=
@@ -3471,10 +3463,16 @@ elseif|else
 if|if
 condition|(
 name|offs
+operator|>
+literal|0
+operator|&&
+operator|(
+name|offs
 operator|+
 name|numbytes
 operator|<=
 name|headsize
+operator|)
 condition|)
 comment|/* We have it in memory ? */
 block|{
@@ -3526,7 +3524,15 @@ name|ifp
 argument_list|,
 name|offs
 argument_list|,
+operator|(
+name|offs
+operator|>
+literal|0
+operator|)
+condition|?
 name|SEEK_SET
+else|:
+name|SEEK_END
 argument_list|)
 operator|<
 literal|0
@@ -3679,10 +3685,16 @@ return|;
 if|if
 condition|(
 name|offs
+operator|>
+literal|0
+operator|&&
+operator|(
+name|offs
 operator|+
 name|numbytes
 operator|<=
 name|headsize
+operator|)
 condition|)
 comment|/* We have it in memory ? */
 block|{
@@ -3715,7 +3727,15 @@ name|ifp
 argument_list|,
 name|offs
 argument_list|,
+operator|(
+name|offs
+operator|>
+literal|0
+operator|)
+condition|?
 name|SEEK_SET
+else|:
+name|SEEK_END
 argument_list|)
 operator|<
 literal|0
@@ -3825,10 +3845,10 @@ name|and
 init|=
 name|FALSE
 decl_stmt|;
-name|FileMatchType
+name|gboolean
 name|found
 init|=
-name|FILE_MATCH_NONE
+name|FALSE
 decl_stmt|;
 name|FileMatchType
 name|match_val
@@ -3934,12 +3954,20 @@ name|found
 operator|=
 name|found
 operator|&&
+operator|(
 name|match_val
+operator|!=
+name|FILE_MATCH_NONE
+operator|)
 expr_stmt|;
 else|else
 name|found
 operator|=
+operator|(
 name|match_val
+operator|!=
+name|FILE_MATCH_NONE
+operator|)
 expr_stmt|;
 name|and
 operator|=
@@ -3956,10 +3984,8 @@ operator|)
 expr_stmt|;
 if|if
 condition|(
-operator|(
 operator|!
 name|and
-operator|)
 operator|&&
 name|found
 condition|)
