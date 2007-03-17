@@ -96,6 +96,16 @@ end_include
 begin_include
 include|#
 directive|include
+file|"paint/gimppaintoptions.h"
+end_include
+
+begin_comment
+comment|/* GIMP_PAINT_OPTIONS_CONTEXT_MASK */
+end_comment
+
+begin_include
+include|#
+directive|include
 file|"vectors/gimpanchor.h"
 end_include
 
@@ -659,8 +669,11 @@ name|GIMP_TYPE_VECTOR_OPTIONS
 argument_list|,
 name|gimp_vector_options_gui
 argument_list|,
-literal|0
+name|GIMP_PAINT_OPTIONS_CONTEXT_MASK
+operator||
+name|GIMP_CONTEXT_GRADIENT_MASK
 argument_list|,
+comment|/* for stroking */
 literal|"gimp-vector-tool"
 argument_list|,
 name|_
