@@ -108,11 +108,6 @@ name|GtkWidget
 modifier|*
 name|view
 decl_stmt|;
-DECL|member|scrolled_window
-name|GtkWidget
-modifier|*
-name|scrolled_window
-decl_stmt|;
 DECL|member|color_name
 name|GtkWidget
 modifier|*

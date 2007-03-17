@@ -131,6 +131,12 @@ name|GtkWidget
 modifier|*
 name|name_entry
 decl_stmt|;
+DECL|member|view
+name|GtkWidget
+modifier|*
+name|view
+decl_stmt|;
+comment|/* filled by subclasses */
 DECL|member|save_button
 name|GtkWidget
 modifier|*

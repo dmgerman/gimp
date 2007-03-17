@@ -103,11 +103,6 @@ DECL|member|parent_instance
 name|GimpDataEditor
 name|parent_instance
 decl_stmt|;
-DECL|member|view
-name|GtkWidget
-modifier|*
-name|view
-decl_stmt|;
 DECL|member|shape_group
 name|GtkWidget
 modifier|*
