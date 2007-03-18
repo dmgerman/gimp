@@ -101,7 +101,6 @@ end_include
 
 begin_define
 DECL|macro|EPSILON
-DECL|macro|EPSILON
 define|#
 directive|define
 name|EPSILON
@@ -110,14 +109,11 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f7d2020103
-DECL|enum|__anon28f7d2020203
+DECL|enum|__anon2c4f9dd80103
 block|{
-DECL|enumerator|SET_BRUSH
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
 block|,
-DECL|enumerator|LAST_SIGNAL
 DECL|enumerator|LAST_SIGNAL
 name|LAST_SIGNAL
 block|}
@@ -515,7 +511,6 @@ end_macro
 
 begin_define
 DECL|macro|parent_class
-DECL|macro|parent_class
 define|#
 directive|define
 name|parent_class
@@ -539,7 +534,6 @@ end_decl_stmt
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_brush_core_class_init (GimpBrushCoreClass * klass)
 DECL|function|gimp_brush_core_class_init (GimpBrushCoreClass * klass)
 name|gimp_brush_core_class_init
 parameter_list|(
@@ -662,7 +656,6 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_brush_core_init (GimpBrushCore * core)
 DECL|function|gimp_brush_core_init (GimpBrushCore * core)
 name|gimp_brush_core_init
 parameter_list|(
@@ -902,7 +895,6 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_brush_core_finalize (GObject * object)
 DECL|function|gimp_brush_core_finalize (GObject * object)
 name|gimp_brush_core_finalize
 parameter_list|(
@@ -1231,7 +1223,6 @@ begin_function
 specifier|static
 name|gboolean
 DECL|function|gimp_brush_core_pre_paint (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpPaintState paint_state,guint32 time)
-DECL|function|gimp_brush_core_pre_paint (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpPaintState paint_state,guint32 time)
 name|gimp_brush_core_pre_paint
 parameter_list|(
 name|GimpPaintCore
@@ -1362,7 +1353,6 @@ begin_function
 specifier|static
 name|void
 DECL|function|gimp_brush_core_post_paint (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpPaintState paint_state,guint32 time)
-DECL|function|gimp_brush_core_post_paint (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpPaintState paint_state,guint32 time)
 name|gimp_brush_core_post_paint
 parameter_list|(
 name|GimpPaintCore
@@ -1415,7 +1405,6 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_brush_core_start (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpCoords * coords,GError ** error)
 DECL|function|gimp_brush_core_start (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpCoords * coords,GError ** error)
 name|gimp_brush_core_start
 parameter_list|(
@@ -1575,7 +1564,6 @@ begin_function
 specifier|static
 name|void
 DECL|function|gimp_avoid_exact_integer (gdouble * x)
-DECL|function|gimp_avoid_exact_integer (gdouble * x)
 name|gimp_avoid_exact_integer
 parameter_list|(
 name|gdouble
@@ -1641,7 +1629,6 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_brush_core_interpolate (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,guint32 time)
 DECL|function|gimp_brush_core_interpolate (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,guint32 time)
 name|gimp_brush_core_interpolate
 parameter_list|(
@@ -2987,7 +2974,6 @@ specifier|static
 name|TempBuf
 modifier|*
 DECL|function|gimp_brush_core_get_paint_area (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options)
-DECL|function|gimp_brush_core_get_paint_area (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options)
 name|gimp_brush_core_get_paint_area
 parameter_list|(
 name|GimpPaintCore
@@ -3258,7 +3244,6 @@ begin_function
 specifier|static
 name|void
 DECL|function|gimp_brush_core_real_set_brush (GimpBrushCore * core,GimpBrush * brush)
-DECL|function|gimp_brush_core_real_set_brush (GimpBrushCore * core,GimpBrush * brush)
 name|gimp_brush_core_real_set_brush
 parameter_list|(
 name|GimpBrushCore
@@ -3384,7 +3369,6 @@ end_function
 begin_function
 name|void
 DECL|function|gimp_brush_core_set_brush (GimpBrushCore * core,GimpBrush * brush)
-DECL|function|gimp_brush_core_set_brush (GimpBrushCore * core,GimpBrush * brush)
 name|gimp_brush_core_set_brush
 parameter_list|(
 name|GimpBrushCore
@@ -3435,7 +3419,6 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_brush_core_create_bound_segs (GimpBrushCore * core,GimpPaintOptions * paint_options)
 DECL|function|gimp_brush_core_create_bound_segs (GimpBrushCore * core,GimpPaintOptions * paint_options)
 name|gimp_brush_core_create_bound_segs
 parameter_list|(
@@ -3640,7 +3623,6 @@ end_function
 begin_function
 name|void
 DECL|function|gimp_brush_core_paste_canvas (GimpBrushCore * core,GimpDrawable * drawable,gdouble brush_opacity,gdouble image_opacity,GimpLayerModeEffects paint_mode,GimpBrushApplicationMode brush_hardness,GimpPaintApplicationMode mode)
-DECL|function|gimp_brush_core_paste_canvas (GimpBrushCore * core,GimpDrawable * drawable,gdouble brush_opacity,gdouble image_opacity,GimpLayerModeEffects paint_mode,GimpBrushApplicationMode brush_hardness,GimpPaintApplicationMode mode)
 name|gimp_brush_core_paste_canvas
 parameter_list|(
 name|GimpBrushCore
@@ -3830,7 +3812,6 @@ end_comment
 begin_function
 name|void
 DECL|function|gimp_brush_core_replace_canvas (GimpBrushCore * core,GimpDrawable * drawable,gdouble brush_opacity,gdouble image_opacity,GimpBrushApplicationMode brush_hardness,GimpPaintApplicationMode mode)
-DECL|function|gimp_brush_core_replace_canvas (GimpBrushCore * core,GimpDrawable * drawable,gdouble brush_opacity,gdouble image_opacity,GimpBrushApplicationMode brush_hardness,GimpPaintApplicationMode mode)
 name|gimp_brush_core_replace_canvas
 parameter_list|(
 name|GimpBrushCore
@@ -4012,7 +3993,6 @@ begin_function
 specifier|static
 name|void
 DECL|function|gimp_brush_core_invalidate_cache (GimpBrush * brush,GimpBrushCore * core)
-DECL|function|gimp_brush_core_invalidate_cache (GimpBrush * brush,GimpBrushCore * core)
 name|gimp_brush_core_invalidate_cache
 parameter_list|(
 name|GimpBrush
@@ -4056,7 +4036,6 @@ begin_function
 specifier|static
 name|gdouble
 DECL|function|gimp_brush_core_calc_brush_scale (GimpBrushCore * core,GimpPaintOptions * paint_options,gdouble pressure)
-DECL|function|gimp_brush_core_calc_brush_scale (GimpBrushCore * core,GimpPaintOptions * paint_options,gdouble pressure)
 name|gimp_brush_core_calc_brush_scale
 parameter_list|(
 name|GimpBrushCore
@@ -4096,16 +4075,10 @@ operator|->
 name|use_pressure
 condition|)
 block|{
-name|GimpPressureOptions
-modifier|*
-name|pressure_options
-init|=
-name|paint_options
-operator|->
-name|pressure_options
-decl_stmt|;
 if|if
 condition|(
+name|paint_options
+operator|->
 name|pressure_options
 operator|->
 name|inverse_size
@@ -4121,6 +4094,8 @@ expr_stmt|;
 elseif|else
 if|if
 condition|(
+name|paint_options
+operator|->
 name|pressure_options
 operator|->
 name|size
@@ -4169,7 +4144,6 @@ begin_function
 specifier|static
 specifier|inline
 name|void
-DECL|function|rotate_pointers (gulong ** p,guint32 n)
 DECL|function|rotate_pointers (gulong ** p,guint32 n)
 name|rotate_pointers
 parameter_list|(
@@ -4239,7 +4213,6 @@ begin_function
 specifier|static
 name|MaskBuf
 modifier|*
-DECL|function|gimp_brush_core_subsample_mask (GimpBrushCore * core,MaskBuf * mask,gdouble x,gdouble y)
 DECL|function|gimp_brush_core_subsample_mask (GimpBrushCore * core,MaskBuf * mask,gdouble x,gdouble y)
 name|gimp_brush_core_subsample_mask
 parameter_list|(
@@ -4950,7 +4923,6 @@ specifier|static
 name|MaskBuf
 modifier|*
 DECL|function|gimp_brush_core_pressurize_mask (GimpBrushCore * core,MaskBuf * brush_mask,gdouble x,gdouble y,gdouble pressure)
-DECL|function|gimp_brush_core_pressurize_mask (GimpBrushCore * core,MaskBuf * brush_mask,gdouble x,gdouble y,gdouble pressure)
 name|gimp_brush_core_pressurize_mask
 parameter_list|(
 name|GimpBrushCore
@@ -5061,7 +5033,7 @@ expr_stmt|;
 ifdef|#
 directive|ifdef
 name|FANCY_PRESSURE
-comment|/* Create the pressure profile    *    * It is: I'(I) = tanh (20 * (pressure - 0.5) * I)           : pressure> 0.5    *        I'(I) = 1 - tanh (20 * (0.5 - pressure) * (1 - I)) : pressure< 0.5    *    * It looks like:    *    *    low pressure      medium pressure     high pressure    *    *         |                   /                 --    *         |                    /                 /    *        /                    /                 |    *      --                  /                         |    */
+comment|/* Create the pressure profile    *    * It is: I'(I) = tanh (20 * (pressure - 0.5) * I)           : pressure> 0.5    *        I'(I) = 1 - tanh (20 * (0.5 - pressure) * (1 - I)) : pressure< 0.5    *    * It looks like:    *    *    low pressure      medium pressure     high pressure    *    *         |                   /                  --    *         |                  /                  /    *        /                  /                  |    *      --                  /                   |    */
 block|{
 specifier|static
 name|gdouble
@@ -5261,6 +5233,7 @@ operator|)
 argument_list|)
 expr_stmt|;
 block|}
+block|}
 else|#
 directive|else
 comment|/* ! FANCY_PRESSURE */
@@ -5378,9 +5351,13 @@ operator|->
 name|pressure_brush
 return|;
 block|}
+end_function
+
+begin_function
 specifier|static
 name|MaskBuf
 modifier|*
+DECL|function|gimp_brush_core_solidify_mask (GimpBrushCore * core,MaskBuf * brush_mask,gdouble x,gdouble y)
 name|gimp_brush_core_solidify_mask
 parameter_list|(
 name|GimpBrushCore
@@ -5742,9 +5719,13 @@ return|return
 name|dest
 return|;
 block|}
+end_function
+
+begin_function
 specifier|static
 name|MaskBuf
 modifier|*
+DECL|function|gimp_brush_core_scale_mask (GimpBrushCore * core,GimpBrush * brush)
 name|gimp_brush_core_scale_mask
 parameter_list|(
 name|GimpBrushCore
@@ -5757,10 +5738,10 @@ name|brush
 parameter_list|)
 block|{
 name|gint
-name|dest_width
+name|width
 decl_stmt|;
 name|gint
-name|dest_height
+name|height
 decl_stmt|;
 if|if
 condition|(
@@ -5795,10 +5776,10 @@ operator|->
 name|scale
 argument_list|,
 operator|&
-name|dest_width
+name|width
 argument_list|,
 operator|&
-name|dest_height
+name|height
 argument_list|)
 expr_stmt|;
 if|if
@@ -5820,13 +5801,13 @@ name|core
 operator|->
 name|last_scale_brush
 operator|&&
-name|dest_width
+name|width
 operator|==
 name|core
 operator|->
 name|last_scale_width
 operator|&&
-name|dest_height
+name|height
 operator|==
 name|core
 operator|->
@@ -5851,13 +5832,13 @@ name|core
 operator|->
 name|last_scale_width
 operator|=
-name|dest_width
+name|width
 expr_stmt|;
 name|core
 operator|->
 name|last_scale_height
 operator|=
-name|dest_height
+name|height
 expr_stmt|;
 if|if
 condition|(
@@ -5903,9 +5884,13 @@ operator|->
 name|scale_brush
 return|;
 block|}
+end_function
+
+begin_function
 specifier|static
 name|MaskBuf
 modifier|*
+DECL|function|gimp_brush_core_scale_pixmap (GimpBrushCore * core,GimpBrush * brush)
 name|gimp_brush_core_scale_pixmap
 parameter_list|(
 name|GimpBrushCore
@@ -5918,10 +5903,10 @@ name|brush
 parameter_list|)
 block|{
 name|gint
-name|dest_width
+name|width
 decl_stmt|;
 name|gint
-name|dest_height
+name|height
 decl_stmt|;
 if|if
 condition|(
@@ -5956,10 +5941,10 @@ operator|->
 name|scale
 argument_list|,
 operator|&
-name|dest_width
+name|width
 argument_list|,
 operator|&
-name|dest_height
+name|height
 argument_list|)
 expr_stmt|;
 if|if
@@ -5981,13 +5966,13 @@ name|core
 operator|->
 name|last_scale_pixmap
 operator|&&
-name|dest_width
+name|width
 operator|==
 name|core
 operator|->
 name|last_scale_pixmap_width
 operator|&&
-name|dest_height
+name|height
 operator|==
 name|core
 operator|->
@@ -6012,13 +5997,13 @@ name|core
 operator|->
 name|last_scale_pixmap_width
 operator|=
-name|dest_width
+name|width
 expr_stmt|;
 name|core
 operator|->
 name|last_scale_pixmap_height
 operator|=
-name|dest_height
+name|height
 expr_stmt|;
 if|if
 condition|(
@@ -6058,9 +6043,13 @@ operator|->
 name|scale_pixmap
 return|;
 block|}
+end_function
+
+begin_function
 specifier|static
 name|MaskBuf
 modifier|*
+DECL|function|gimp_brush_core_get_brush_mask (GimpBrushCore * core,GimpBrushApplicationMode brush_hardness)
 name|gimp_brush_core_get_brush_mask
 parameter_list|(
 name|GimpBrushCore
@@ -6224,10 +6213,23 @@ return|return
 name|mask
 return|;
 block|}
+end_function
+
+begin_comment
 comment|/**************************************************/
+end_comment
+
+begin_comment
 comment|/*  Brush pipe utility functions                  */
+end_comment
+
+begin_comment
 comment|/**************************************************/
+end_comment
+
+begin_function
 name|void
+DECL|function|gimp_brush_core_color_area_with_pixmap (GimpBrushCore * core,GimpDrawable * drawable,TempBuf * area,GimpBrushApplicationMode mode)
 name|gimp_brush_core_color_area_with_pixmap
 parameter_list|(
 name|GimpBrushCore
@@ -6585,8 +6587,12 @@ expr_stmt|;
 block|}
 block|}
 block|}
+end_function
+
+begin_function
 specifier|static
 name|void
+DECL|function|paint_line_pixmap_mask (GimpImage * dest,GimpDrawable * drawable,TempBuf * pixmap_mask,TempBuf * brush_mask,guchar * d,gint x,gint y,gint bytes,gint width,GimpBrushApplicationMode mode)
 name|paint_line_pixmap_mask
 parameter_list|(
 name|GimpImage
