@@ -154,7 +154,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a9aae80103
+DECL|enum|__anon29f5f3b10103
 block|{
 DECL|enumerator|FILE_MATCH_NONE
 name|FILE_MATCH_NONE
@@ -3463,7 +3463,7 @@ elseif|else
 if|if
 condition|(
 name|offs
-operator|>
+operator|>=
 literal|0
 operator|&&
 operator|(
@@ -3526,7 +3526,7 @@ name|offs
 argument_list|,
 operator|(
 name|offs
-operator|>
+operator|>=
 literal|0
 operator|)
 condition|?
@@ -3685,7 +3685,7 @@ return|;
 if|if
 condition|(
 name|offs
-operator|>
+operator|>=
 literal|0
 operator|&&
 operator|(
@@ -3729,7 +3729,7 @@ name|offs
 argument_list|,
 operator|(
 name|offs
-operator|>
+operator|>=
 literal|0
 operator|)
 condition|?
