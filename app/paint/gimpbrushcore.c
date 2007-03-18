@@ -110,8 +110,8 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c356ea30103
-DECL|enum|__anon2c356ea30203
+DECL|enum|__anon28f7d2020103
+DECL|enum|__anon28f7d2020203
 block|{
 DECL|enumerator|SET_BRUSH
 DECL|enumerator|SET_BRUSH
@@ -402,9 +402,6 @@ parameter_list|,
 name|GimpBrush
 modifier|*
 name|brush
-parameter_list|,
-name|gdouble
-name|scale
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -422,9 +419,6 @@ parameter_list|,
 name|GimpBrush
 modifier|*
 name|brush
-parameter_list|,
-name|gdouble
-name|scale
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -441,9 +435,6 @@ name|core
 parameter_list|,
 name|GimpBrushApplicationMode
 name|brush_hardness
-parameter_list|,
-name|gdouble
-name|scale
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1693,9 +1684,6 @@ decl_stmt|;
 name|gdouble
 name|delta_wheel
 decl_stmt|;
-name|gdouble
-name|scale
-decl_stmt|;
 name|GimpVector2
 name|temp_vec
 decl_stmt|;
@@ -1893,12 +1881,6 @@ operator|!
 name|delta_wheel
 condition|)
 return|return;
-name|scale
-operator|=
-name|core
-operator|->
-name|scale
-expr_stmt|;
 comment|/* calculate the distance traveled in the coordinate space of the brush */
 name|temp_vec
 operator|=
@@ -1913,6 +1895,8 @@ argument_list|(
 operator|&
 name|temp_vec
 argument_list|,
+name|core
+operator|->
 name|scale
 argument_list|)
 expr_stmt|;
@@ -1954,6 +1938,8 @@ argument_list|(
 operator|&
 name|temp_vec
 argument_list|,
+name|core
+operator|->
 name|scale
 argument_list|)
 expr_stmt|;
@@ -2814,6 +2800,8 @@ operator|)
 operator|*
 name|jitter_x
 operator|*
+name|core
+operator|->
 name|scale
 expr_stmt|;
 name|paint_core
@@ -2842,6 +2830,8 @@ operator|)
 operator|*
 name|jitter_y
 operator|*
+name|core
+operator|->
 name|scale
 expr_stmt|;
 block|}
@@ -3686,10 +3676,6 @@ argument_list|(
 name|core
 argument_list|,
 name|brush_hardness
-argument_list|,
-name|core
-operator|->
-name|scale
 argument_list|)
 decl_stmt|;
 if|if
@@ -3877,10 +3863,6 @@ argument_list|(
 name|core
 argument_list|,
 name|brush_hardness
-argument_list|,
-name|core
-operator|->
-name|scale
 argument_list|)
 decl_stmt|;
 if|if
@@ -5772,9 +5754,6 @@ parameter_list|,
 name|GimpBrush
 modifier|*
 name|brush
-parameter_list|,
-name|gdouble
-name|scale
 parameter_list|)
 block|{
 name|gint
@@ -5783,19 +5762,12 @@ decl_stmt|;
 name|gint
 name|dest_height
 decl_stmt|;
-name|scale
-operator|=
-name|MAX
-argument_list|(
-name|scale
-argument_list|,
-literal|0.0
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
+name|core
+operator|->
 name|scale
-operator|==
+operator|<=
 literal|0.0
 condition|)
 return|return
@@ -5803,6 +5775,8 @@ name|NULL
 return|;
 if|if
 condition|(
+name|core
+operator|->
 name|scale
 operator|==
 literal|1.0
@@ -5816,6 +5790,8 @@ name|gimp_brush_scale_size
 argument_list|(
 name|brush
 argument_list|,
+name|core
+operator|->
 name|scale
 argument_list|,
 operator|&
@@ -5904,6 +5880,8 @@ name|gimp_brush_scale_mask
 argument_list|(
 name|brush
 argument_list|,
+name|core
+operator|->
 name|scale
 argument_list|)
 expr_stmt|;
@@ -5937,9 +5915,6 @@ parameter_list|,
 name|GimpBrush
 modifier|*
 name|brush
-parameter_list|,
-name|gdouble
-name|scale
 parameter_list|)
 block|{
 name|gint
@@ -5948,19 +5923,12 @@ decl_stmt|;
 name|gint
 name|dest_height
 decl_stmt|;
-name|scale
-operator|=
-name|MAX
-argument_list|(
-name|scale
-argument_list|,
-literal|0.0
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
+name|core
+operator|->
 name|scale
-operator|==
+operator|<=
 literal|0.0
 condition|)
 return|return
@@ -5968,6 +5936,8 @@ name|NULL
 return|;
 if|if
 condition|(
+name|core
+operator|->
 name|scale
 operator|==
 literal|1.0
@@ -5981,6 +5951,8 @@ name|gimp_brush_scale_size
 argument_list|(
 name|brush
 argument_list|,
+name|core
+operator|->
 name|scale
 argument_list|,
 operator|&
@@ -6069,6 +6041,8 @@ name|gimp_brush_scale_pixmap
 argument_list|(
 name|brush
 argument_list|,
+name|core
+operator|->
 name|scale
 argument_list|)
 expr_stmt|;
@@ -6095,9 +6069,6 @@ name|core
 parameter_list|,
 name|GimpBrushApplicationMode
 name|brush_hardness
-parameter_list|,
-name|gdouble
-name|scale
 parameter_list|)
 block|{
 name|GimpPaintCore
@@ -6122,8 +6093,6 @@ argument_list|,
 name|core
 operator|->
 name|brush
-argument_list|,
-name|scale
 argument_list|)
 expr_stmt|;
 if|if
@@ -6383,10 +6352,6 @@ argument_list|,
 name|core
 operator|->
 name|brush
-argument_list|,
-name|core
-operator|->
-name|scale
 argument_list|)
 expr_stmt|;
 if|if
@@ -6410,10 +6375,6 @@ argument_list|,
 name|core
 operator|->
 name|brush
-argument_list|,
-name|core
-operator|->
-name|scale
 argument_list|)
 expr_stmt|;
 else|else
