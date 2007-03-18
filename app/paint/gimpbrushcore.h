@@ -406,10 +406,6 @@ name|GimpBrushCore
 modifier|*
 name|core
 parameter_list|,
-name|GimpImage
-modifier|*
-name|dest
-parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -417,9 +413,6 @@ parameter_list|,
 name|TempBuf
 modifier|*
 name|area
-parameter_list|,
-name|gdouble
-name|scale
 parameter_list|,
 name|GimpBrushApplicationMode
 name|mode

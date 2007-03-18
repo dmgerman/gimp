@@ -508,15 +508,9 @@ name|gimp_brush_core_color_area_with_pixmap
 argument_list|(
 name|brush_core
 argument_list|,
-name|image
-argument_list|,
 name|drawable
 argument_list|,
 name|area
-argument_list|,
-name|brush_core
-operator|->
-name|scale
 argument_list|,
 name|gimp_paint_options_get_brush_mode
 argument_list|(

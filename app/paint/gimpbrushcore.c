@@ -110,8 +110,8 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5da56f0103
-DECL|enum|__anon2c5da56f0203
+DECL|enum|__anon2c356ea30103
+DECL|enum|__anon2c356ea30203
 block|{
 DECL|enumerator|SET_BRUSH
 DECL|enumerator|SET_BRUSH
@@ -6265,10 +6265,6 @@ name|GimpBrushCore
 modifier|*
 name|core
 parameter_list|,
-name|GimpImage
-modifier|*
-name|dest
-parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -6276,9 +6272,6 @@ parameter_list|,
 name|TempBuf
 modifier|*
 name|area
-parameter_list|,
-name|gdouble
-name|scale
 parameter_list|,
 name|GimpBrushApplicationMode
 name|mode
@@ -6292,6 +6285,10 @@ name|GIMP_PAINT_CORE
 argument_list|(
 name|core
 argument_list|)
+decl_stmt|;
+name|GimpImage
+modifier|*
+name|image
 decl_stmt|;
 name|PixelRegion
 name|destPR
@@ -6366,6 +6363,16 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
+name|image
+operator|=
+name|gimp_item_get_image
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/*  scale the brushes  */
 name|pixmap_mask
 operator|=
@@ -6377,6 +6384,8 @@ name|core
 operator|->
 name|brush
 argument_list|,
+name|core
+operator|->
 name|scale
 argument_list|)
 expr_stmt|;
@@ -6402,6 +6411,8 @@ name|core
 operator|->
 name|brush
 argument_list|,
+name|core
+operator|->
 name|scale
 argument_list|)
 expr_stmt|;
@@ -6577,7 +6588,7 @@ control|)
 block|{
 name|paint_line_pixmap_mask
 argument_list|(
-name|dest
+name|image
 argument_list|,
 name|drawable
 argument_list|,
