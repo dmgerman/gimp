@@ -3540,7 +3540,7 @@ name|GIMP_TRANSFORM_FORWARD
 block|,
 name|N_
 argument_list|(
-literal|"Forward"
+literal|"Normal (Forward)"
 argument_list|)
 block|,
 name|NULL
@@ -3551,7 +3551,7 @@ name|GIMP_TRANSFORM_BACKWARD
 block|,
 name|N_
 argument_list|(
-literal|"Backward"
+literal|"Corrective (Backward)"
 argument_list|)
 block|,
 name|NULL
