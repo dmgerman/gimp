@@ -504,7 +504,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_statusbar_set_cursor
+name|gimp_statusbar_update_cursor
 parameter_list|(
 name|GimpStatusbar
 modifier|*

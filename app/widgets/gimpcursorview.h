@@ -235,6 +235,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_cursor_view_clear_cursor
+parameter_list|(
+name|GimpCursorView
+modifier|*
+name|view
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

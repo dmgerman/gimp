@@ -3553,8 +3553,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_statusbar_set_cursor (GimpStatusbar * statusbar,gdouble x,gdouble y)
-name|gimp_statusbar_set_cursor
+DECL|function|gimp_statusbar_update_cursor (GimpStatusbar * statusbar,gdouble x,gdouble y)
+name|gimp_statusbar_update_cursor
 parameter_list|(
 name|GimpStatusbar
 modifier|*
@@ -4456,7 +4456,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_statusbar_set_cursor
+name|gimp_statusbar_update_cursor
 argument_list|(
 name|statusbar
 argument_list|,
