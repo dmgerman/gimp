@@ -118,7 +118,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c3b28d0108
+DECL|struct|__anon297eadfb0108
 block|{
 DECL|member|resolution
 name|gdouble
@@ -345,7 +345,7 @@ name|GIMP_PDB_FLOAT
 block|,
 literal|"resolution"
 block|,
-literal|"Resolution to use for rendering the SVG (defaults to 72 dpi"
+literal|"Resolution to use for rendering the SVG (defaults to 90 dpi)"
 block|}
 block|,
 block|{
@@ -793,7 +793,7 @@ name|GIMP_RUN_WITH_LAST_VALS
 case|:
 break|break;
 block|}
-comment|/* Don't clamp this, insane values are probably not meant to be used as        * resoution anyway.        */
+comment|/* Don't clamp this; insane values are probably not meant to be        * used as resolution anyway.        */
 if|if
 condition|(
 name|load_vals
@@ -860,12 +860,12 @@ operator|.
 name|import
 condition|)
 block|{
-name|gint
-name|num_vectors
-decl_stmt|;
 name|gint32
 modifier|*
 name|vectors
+decl_stmt|;
+name|gint
+name|num_vectors
 decl_stmt|;
 name|gimp_vectors_import_from_file
 argument_list|(
@@ -889,6 +889,8 @@ expr_stmt|;
 if|if
 condition|(
 name|num_vectors
+operator|>
+literal|0
 condition|)
 name|g_free
 argument_list|(
