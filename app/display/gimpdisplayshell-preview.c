@@ -2498,12 +2498,9 @@ name|offset
 decl_stmt|;
 if|if
 condition|(
-operator|!
-operator|(
 name|x2
-operator|-
+operator|==
 name|x1
-operator|)
 condition|)
 return|return;
 name|g_return_if_fail
@@ -3258,12 +3255,9 @@ name|offset
 decl_stmt|;
 if|if
 condition|(
-operator|!
-operator|(
 name|x2
-operator|-
+operator|==
 name|x1
-operator|)
 condition|)
 return|return;
 name|g_return_if_fail
@@ -4228,7 +4222,7 @@ decl_stmt|;
 if|if
 condition|(
 name|dy
-operator|==
+operator|<=
 literal|0
 condition|)
 return|return;
