@@ -868,7 +868,8 @@ name|progress
 decl_stmt|;
 name|gint
 name|off_x
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|off_y
 decl_stmt|;
 name|progress
@@ -978,7 +979,7 @@ name|blend_tool
 operator|->
 name|end_x
 operator|-
-name|off_y
+name|off_x
 argument_list|,
 name|blend_tool
 operator|->
