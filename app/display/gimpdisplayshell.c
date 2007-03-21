@@ -275,7 +275,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon274e5d9c0103
+DECL|enum|__anon2af826ef0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -288,7 +288,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon274e5d9c0203
+DECL|enum|__anon2af826ef0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -2520,17 +2520,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_zoom_model_zoom
-argument_list|(
-name|shell
-operator|->
-name|zoom
-argument_list|,
-name|GIMP_ZOOM_TO
-argument_list|,
-name|scale
-argument_list|)
-expr_stmt|;
 name|shell
 operator|->
 name|display
@@ -2610,6 +2599,17 @@ name|fullscreen_options
 argument_list|)
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|gimp_zoom_model_zoom
+argument_list|(
+name|shell
+operator|->
+name|zoom
+argument_list|,
+name|GIMP_ZOOM_TO
+argument_list|,
+name|scale
 argument_list|)
 expr_stmt|;
 comment|/* adjust the initial scale -- so that window fits on screen the 75%    * value is the same as in gimp_display_shell_shrink_wrap. It    * probably should be a user-configurable option.    */
