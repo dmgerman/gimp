@@ -118,7 +118,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293f4b980108
+DECL|struct|__anon27c3b28d0108
 block|{
 DECL|member|resolution
 name|gdouble
@@ -793,6 +793,7 @@ name|GIMP_RUN_WITH_LAST_VALS
 case|:
 break|break;
 block|}
+comment|/* Don't clamp this, insane values are probably not meant to be used as        * resoution anyway.        */
 if|if
 condition|(
 name|load_vals
