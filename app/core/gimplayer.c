@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5f50a40103
+DECL|enum|__anon2c2ea5230103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -177,7 +177,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5f50a40203
+DECL|enum|__anon2c2ea5230203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4971,31 +4971,6 @@ name|_
 argument_list|(
 literal|"Unable to add a layer mask since "
 literal|"the layer already has one."
-argument_list|)
-argument_list|)
-expr_stmt|;
-return|return
-name|NULL
-return|;
-block|}
-if|if
-condition|(
-operator|!
-name|gimp_drawable_has_alpha
-argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|layer
-argument_list|)
-argument_list|)
-condition|)
-block|{
-name|g_message
-argument_list|(
-name|_
-argument_list|(
-literal|"Cannot add layer mask to a layer "
-literal|"with no alpha channel."
 argument_list|)
 argument_list|)
 expr_stmt|;
