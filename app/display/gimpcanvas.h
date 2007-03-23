@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9d28940103
+DECL|enum|__anon294162ae0103
 block|{
 DECL|enumerator|GIMP_CANVAS_STYLE_BLACK
 name|GIMP_CANVAS_STYLE_BLACK
@@ -166,6 +166,11 @@ DECL|member|parent_instance
 name|GtkDrawingArea
 name|parent_instance
 decl_stmt|;
+DECL|member|gimp
+name|Gimp
+modifier|*
+name|gimp
+decl_stmt|;
 DECL|member|gc
 name|GdkGC
 modifier|*
@@ -219,7 +224,9 @@ name|GtkWidget
 modifier|*
 name|gimp_canvas_new
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 function_decl|;
 end_function_decl

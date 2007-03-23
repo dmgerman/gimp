@@ -275,7 +275,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af826ef0103
+DECL|enum|__anon2b0ed2cf0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -288,7 +288,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af826ef0203
+DECL|enum|__anon2b0ed2cf0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -3418,7 +3418,15 @@ operator|->
 name|canvas
 operator|=
 name|gimp_canvas_new
-argument_list|()
+argument_list|(
+name|shell
+operator|->
+name|display
+operator|->
+name|image
+operator|->
+name|gimp
+argument_list|)
 expr_stmt|;
 name|gimp_display_shell_selection_init
 argument_list|(

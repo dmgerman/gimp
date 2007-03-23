@@ -47,21 +47,21 @@ value|""
 end_define
 
 begin_define
-DECL|macro|CANVAS_PADDING_MODE_BLURB
-define|#
-directive|define
-name|CANVAS_PADDING_MODE_BLURB
-define|\
-value|N_("Specifies how the area around the image should be drawn.")
-end_define
-
-begin_define
 DECL|macro|CANVAS_PADDING_COLOR_BLURB
 define|#
 directive|define
 name|CANVAS_PADDING_COLOR_BLURB
 define|\
 value|N_("Sets the canvas padding color used if the padding mode is set to " \    "custom color.")
+end_define
+
+begin_define
+DECL|macro|CANVAS_PADDING_MODE_BLURB
+define|#
+directive|define
+name|CANVAS_PADDING_MODE_BLURB
+define|\
+value|N_("Specifies how the area around the image should be drawn.")
 end_define
 
 begin_define
@@ -1058,6 +1058,15 @@ directive|define
 name|WEB_BROWSER_BLURB
 define|\
 value|N_("Sets the external web browser to be used.  This can be an absolute " \    "path or the name of an executable to search for in the user's PATH. " \    "If the command contains '%s' it will be replaced with the URL, else " \    "the URL will be appended to the command with a space separating the " \    "two.")
+end_define
+
+begin_define
+DECL|macro|XOR_COLOR_BLURB
+define|#
+directive|define
+name|XOR_COLOR_BLURB
+define|\
+value|"Sets the color that is used for XOR drawing. This setting only exists as " \ "a workaround for buggy display drivers. If lines on the canvas are not " \ "correctly undrawn, try to set this to white."
 end_define
 
 begin_endif
