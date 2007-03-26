@@ -25,7 +25,7 @@ DECL|macro|GIMP_DBUS_SERVICE_NAME
 define|#
 directive|define
 name|GIMP_DBUS_SERVICE_NAME
-value|"org.gimp.GIMP"
+value|"org.gimp.GIMP.UI"
 end_define
 
 begin_define
@@ -33,7 +33,7 @@ DECL|macro|GIMP_DBUS_SERVICE_PATH
 define|#
 directive|define
 name|GIMP_DBUS_SERVICE_PATH
-value|"/org/gimp/GIMP"
+value|"/org/gimp/GIMP/UI"
 end_define
 
 begin_define
@@ -41,7 +41,7 @@ DECL|macro|GIMP_DBUS_SERVICE_INTERFACE
 define|#
 directive|define
 name|GIMP_DBUS_SERVICE_INTERFACE
-value|"org.gimp.GIMP"
+value|"org.gimp.GIMP.UI"
 end_define
 
 begin_define
@@ -195,7 +195,7 @@ parameter_list|,
 name|GError
 modifier|*
 modifier|*
-name|error
+name|dbus_error
 parameter_list|)
 function_decl|;
 end_function_decl
