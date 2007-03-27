@@ -181,7 +181,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_dbus_service_open (GimpDBusService * service,const gchar * filename,GError ** dbus_error)
+DECL|function|gimp_dbus_service_open (GimpDBusService * service,const gchar * filename,gboolean * success,GError ** dbus_error)
 name|gimp_dbus_service_open
 parameter_list|(
 name|GimpDBusService
@@ -192,6 +192,10 @@ specifier|const
 name|gchar
 modifier|*
 name|filename
+parameter_list|,
+name|gboolean
+modifier|*
+name|success
 parameter_list|,
 name|GError
 modifier|*
@@ -209,12 +213,27 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
+name|g_return_val_if_fail
+argument_list|(
 name|filename
 operator|!=
 name|NULL
-condition|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|success
+operator|!=
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+operator|*
+name|success
+operator|=
 name|file_open_from_command_line
 argument_list|(
 name|service

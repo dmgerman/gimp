@@ -191,6 +191,10 @@ name|gchar
 modifier|*
 name|filename
 parameter_list|,
+name|gboolean
+modifier|*
+name|success
+parameter_list|,
 name|GError
 modifier|*
 modifier|*

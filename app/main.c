@@ -2807,6 +2807,10 @@ name|i
 operator|++
 control|)
 block|{
+name|gboolean
+name|retval
+decl_stmt|;
+comment|/* ignored */
 name|success
 operator|=
 name|dbus_g_proxy_call
@@ -2826,6 +2830,11 @@ name|i
 index|]
 argument_list|,
 name|G_TYPE_INVALID
+argument_list|,
+name|G_TYPE_BOOLEAN
+argument_list|,
+operator|&
+name|retval
 argument_list|,
 name|G_TYPE_INVALID
 argument_list|)
