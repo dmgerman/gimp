@@ -236,7 +236,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
+name|gboolean
 name|file_open_from_command_line
 parameter_list|(
 name|Gimp
@@ -246,8 +246,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-modifier|*
-name|uris
+name|filename
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -189,8 +189,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-modifier|*
-name|uris
+name|filename
 parameter_list|,
 name|GError
 modifier|*
