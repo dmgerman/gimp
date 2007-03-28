@@ -794,7 +794,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_create_mask:  * @layer_ID: The layer to which to add the mask.  * @mask_type: The type of mask.  *  * Create a layer mask for the specified specified layer.  *  * This procedure creates a layer mask for the specified layer. Layer  * masks serve as an additional alpha channel for a layer. A number of  * ifferent types of masks are allowed for initialisation: completely  * white masks (which will leave the layer fully visible), completely  * black masks (which will give the layer complete transparency, the  * layer's already existing alpha channel (which will leave the layer  * fully visible, but which may be more useful than a white mask), the  * current selection or a grayscale copy of the layer. The layer mask  * still needs to be added to the layer. This can be done with a call  * to gimp_layer_add_mask().  *  * Returns: The newly created mask.  */
+comment|/**  * gimp_layer_create_mask:  * @layer_ID: The layer to which to add the mask.  * @mask_type: The type of mask.  *  * Create a layer mask for the specified specified layer.  *  * This procedure creates a layer mask for the specified layer. Layer  * masks serve as an additional alpha channel for a layer. A number of  * different types of masks are allowed for initialisation: completely  * white masks (which will leave the layer fully visible), completely  * black masks (which will give the layer complete transparency, the  * layer's already existing alpha channel (which will leave the layer  * fully visible, but which may be more useful than a white mask), the  * current selection or a grayscale copy of the layer. The layer mask  * still needs to be added to the layer. This can be done with a call  * to gimp_layer_add_mask().  *  * Returns: The newly created mask.  */
 end_comment
 
 begin_function
@@ -1038,7 +1038,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_add_mask:  * @layer_ID: The layer to receive the mask.  * @mask_ID: The mask to add to the layer.  *  * Add a layer mask to the specified layer.  *  * This procedure adds a layer mask to the specified layer. Layer masks  * serve as an additional alpha channel for a layer. This procedure  * will fail if a number of prerequisites aren't met. The layer cannot  * already have a layer mask. The specified mask must exist and have  * the same dimensions as the layer. Both the mask and the layer must  * have been created for use with the specified image.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_layer_add_mask:  * @layer_ID: The layer to receive the mask.  * @mask_ID: The mask to add to the layer.  *  * Add a layer mask to the specified layer.  *  * This procedure adds a layer mask to the specified layer. Layer masks  * serve as an additional alpha channel for a layer. This procedure  * will fail if a number of prerequisites aren't met. The layer cannot  * already have a layer mask. The specified mask must exist and have  * the same dimensions as the layer. The layer must have been created  * for use with the specified image and the mask must have been created  * with the procedure 'gimp-layer-create-mask'.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
