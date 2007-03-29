@@ -304,11 +304,7 @@ name|pr
 operator|->
 name|rowstride
 operator|=
-name|pr
-operator|->
-name|bpp
-operator|*
-name|TILE_WIDTH
+literal|0
 expr_stmt|;
 name|pr
 operator|->
