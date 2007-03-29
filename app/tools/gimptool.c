@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba5b7680103
+DECL|enum|__anon2b776f9a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2098,8 +2098,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|sqrt
-argument_list|(
+operator|(
 name|SQR
 argument_list|(
 name|dx
@@ -2109,9 +2108,12 @@ name|SQR
 argument_list|(
 name|dy
 argument_list|)
-argument_list|)
+operator|)
 operator|>
+name|SQR
+argument_list|(
 name|double_click_distance
+argument_list|)
 condition|)
 block|{
 name|tool
