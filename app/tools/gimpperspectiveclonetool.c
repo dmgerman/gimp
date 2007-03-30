@@ -2415,9 +2415,9 @@ decl_stmt|;
 name|gdouble
 name|dist
 decl_stmt|;
-name|closest_dist
+name|dist
 operator|=
-name|gimp_draw_tool_calc_distance
+name|gimp_draw_tool_calc_distance_square
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -2440,6 +2440,10 @@ operator|->
 name|ty1
 argument_list|)
 expr_stmt|;
+name|closest_dist
+operator|=
+name|dist
+expr_stmt|;
 name|clone_tool
 operator|->
 name|function
@@ -2448,7 +2452,7 @@ name|TRANSFORM_HANDLE_NW
 expr_stmt|;
 name|dist
 operator|=
-name|gimp_draw_tool_calc_distance
+name|gimp_draw_tool_calc_distance_square
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -2491,7 +2495,7 @@ expr_stmt|;
 block|}
 name|dist
 operator|=
-name|gimp_draw_tool_calc_distance
+name|gimp_draw_tool_calc_distance_square
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -2534,7 +2538,7 @@ expr_stmt|;
 block|}
 name|dist
 operator|=
-name|gimp_draw_tool_calc_distance
+name|gimp_draw_tool_calc_distance_square
 argument_list|(
 name|draw_tool
 argument_list|,
