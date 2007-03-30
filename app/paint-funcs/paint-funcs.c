@@ -103,6 +103,19 @@ name|EPSILON
 value|0.0001
 end_define
 
+begin_define
+DECL|macro|LOG_1_255
+define|#
+directive|define
+name|LOG_1_255
+value|-5.541263545
+end_define
+
+begin_comment
+DECL|macro|LOG_1_255
+comment|/*  log (1.0 / 255.0)  */
+end_comment
+
 begin_comment
 comment|/*  Layer modes information  */
 end_comment
@@ -157,7 +170,7 @@ name|LayerMode
 name|layer_modes
 index|[]
 init|=
-comment|/* This must obviously be in the same                                 * order as the corresponding values                                  * in the GimpLayerModeEffects enumeration.                                 */
+comment|/* This must be in the same order as the    * corresponding values in GimpLayerModeEffects.    */
 block|{
 block|{
 name|TRUE
@@ -498,7 +511,7 @@ modifier|*
 name|make_curve
 parameter_list|(
 name|gdouble
-name|sigma
+name|sigma_square
 parameter_list|,
 name|gint
 modifier|*
@@ -1256,18 +1269,18 @@ block|}
 end_function
 
 begin_comment
-comment|/*  * The equations: g(r) = exp (- r^2 / (2 * sigma^2))  *                   r = sqrt (x^2 + y ^2)  */
+comment|/*  * The equations: g(r) = exp (- r^2 / (2 * sigma^2))  *                   r = sqrt (x^2 + y^2)  */
 end_comment
 
 begin_function
 specifier|static
 name|gint
 modifier|*
-DECL|function|make_curve (gdouble sigma,gint * length)
+DECL|function|make_curve (gdouble sigma_square,gint * length)
 name|make_curve
 parameter_list|(
 name|gdouble
-name|sigma
+name|sigma_square
 parameter_list|,
 name|gint
 modifier|*
@@ -1280,9 +1293,7 @@ name|sigma2
 init|=
 literal|2
 operator|*
-name|sigma
-operator|*
-name|sigma
+name|sigma_square
 decl_stmt|;
 specifier|const
 name|gdouble
@@ -1293,12 +1304,7 @@ argument_list|(
 operator|-
 name|sigma2
 operator|*
-name|log
-argument_list|(
-literal|1.0
-operator|/
-literal|255.0
-argument_list|)
+name|LOG_1_255
 argument_list|)
 decl_stmt|;
 name|gint
@@ -1386,11 +1392,10 @@ argument_list|(
 name|exp
 argument_list|(
 operator|-
-operator|(
+name|SQR
+argument_list|(
 name|i
-operator|*
-name|i
-operator|)
+argument_list|)
 operator|/
 name|sigma2
 argument_list|)
@@ -11707,9 +11712,6 @@ name|gdouble
 name|radius_y
 parameter_list|)
 block|{
-name|gdouble
-name|std_dev
-decl_stmt|;
 name|glong
 name|width
 decl_stmt|,
@@ -11880,34 +11882,21 @@ operator|!=
 literal|0.0
 condition|)
 block|{
-name|std_dev
-operator|=
-name|sqrt
-argument_list|(
-operator|-
-operator|(
-name|radius_y
-operator|*
-name|radius_y
-operator|)
-operator|/
-operator|(
-literal|2
-operator|*
-name|log
-argument_list|(
-literal|1.0
-operator|/
-literal|255.0
-argument_list|)
-operator|)
-argument_list|)
-expr_stmt|;
 name|curve
 operator|=
 name|make_curve
 argument_list|(
-name|std_dev
+operator|-
+name|SQR
+argument_list|(
+name|radius_y
+argument_list|)
+operator|/
+operator|(
+literal|2
+operator|*
+name|LOG_1_255
+operator|)
 argument_list|,
 operator|&
 name|length
@@ -12289,34 +12278,21 @@ operator|!=
 literal|0.0
 condition|)
 block|{
-name|std_dev
-operator|=
-name|sqrt
-argument_list|(
-operator|-
-operator|(
-name|radius_x
-operator|*
-name|radius_x
-operator|)
-operator|/
-operator|(
-literal|2
-operator|*
-name|log
-argument_list|(
-literal|1.0
-operator|/
-literal|255.0
-argument_list|)
-operator|)
-argument_list|)
-expr_stmt|;
 name|curve
 operator|=
 name|make_curve
 argument_list|(
-name|std_dev
+operator|-
+name|SQR
+argument_list|(
+name|radius_x
+argument_list|)
+operator|/
+operator|(
+literal|2
+operator|*
+name|LOG_1_255
+operator|)
 argument_list|,
 operator|&
 name|length
