@@ -629,7 +629,16 @@ index|]
 operator|.
 name|tooltip
 operator|=
-name|NULL
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Move this window to "
+literal|"screen %s"
+argument_list|)
+argument_list|,
+name|screen_name
+argument_list|)
 expr_stmt|;
 name|entries
 index|[
@@ -776,6 +785,20 @@ name|i
 index|]
 operator|.
 name|name
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+operator|(
+name|gchar
+operator|*
+operator|)
+name|entries
+index|[
+name|i
+index|]
+operator|.
+name|tooltip
 argument_list|)
 expr_stmt|;
 name|g_free

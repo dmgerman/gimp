@@ -387,7 +387,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Modify paint mode and opacity of the last pixel manipulation"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -585,7 +588,10 @@ argument_list|)
 block|,
 literal|"<control><shift>X"
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Move the selected pixels to a named buffer"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -607,7 +613,10 @@ argument_list|)
 block|,
 literal|"<control><shift>C"
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Copy the selected pixels to a named buffer"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -630,7 +639,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Copy the selected region to a named buffer"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -652,7 +664,10 @@ argument_list|)
 block|,
 literal|"<control><shift>V"
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Paste the content of a named buffer"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(

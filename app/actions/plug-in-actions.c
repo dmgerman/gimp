@@ -522,7 +522,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Set all plug-in to their default settings"
+literal|"Reset all plug-ins to their default settings"
 argument_list|)
 block|,
 name|G_CALLBACK

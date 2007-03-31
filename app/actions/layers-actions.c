@@ -1351,7 +1351,10 @@ argument_list|)
 block|,
 literal|"Home"
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Select the topmost layer"
+argument_list|)
 block|,
 name|GIMP_ACTION_SELECT_FIRST
 block|,
@@ -1372,7 +1375,10 @@ argument_list|)
 block|,
 literal|"End"
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Select the bottommost layer"
+argument_list|)
 block|,
 name|GIMP_ACTION_SELECT_LAST
 block|,
@@ -1393,7 +1399,10 @@ argument_list|)
 block|,
 literal|"Prior"
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Select the layer above the current layer"
+argument_list|)
 block|,
 name|GIMP_ACTION_SELECT_PREVIOUS
 block|,
@@ -1414,7 +1423,10 @@ argument_list|)
 block|,
 literal|"Next"
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Select the layer below the current layer"
+argument_list|)
 block|,
 name|GIMP_ACTION_SELECT_NEXT
 block|,

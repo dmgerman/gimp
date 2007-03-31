@@ -392,7 +392,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Stroke path..."
+literal|"Paint along the path"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -417,7 +417,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Stroke path with last values"
+literal|"Paint along the path with last values"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -753,7 +753,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Selection to path"
+argument_list|)
 block|,
 name|FALSE
 block|,

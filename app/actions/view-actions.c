@@ -590,7 +590,10 @@ argument_list|)
 block|,
 literal|"<control><shift>T"
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Display the image's guides"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -614,7 +617,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Display the image's grid"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -638,7 +644,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Display the image's color sample points"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -662,7 +671,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Tool operations snap to guides"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -686,7 +698,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Tool operations snap to the grid"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -710,7 +725,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Tool operations snap to the canvas edges"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -734,7 +752,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Tool operations snap to the active path"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -758,7 +779,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Show this window's menubar"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -782,7 +806,10 @@ argument_list|)
 block|,
 literal|"<control><shift>R"
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Show this window's rulers"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -806,7 +833,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Show this window's scrollbars"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -830,7 +860,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Show this window's statusbar"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -1014,7 +1047,7 @@ name|GIMP_STOCK_CHAR_PICKER
 block|,
 name|N_
 argument_list|(
-literal|"Zoom in"
+literal|"Zoom In"
 argument_list|)
 block|,
 literal|"KP_Add"
@@ -1091,7 +1124,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Zoom 16:1"
+argument_list|)
 block|,
 literal|160000
 block|,
@@ -1110,7 +1146,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Zoom 8:1"
+argument_list|)
 block|,
 literal|80000
 block|,
@@ -1129,7 +1168,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Zoom 4:1"
+argument_list|)
 block|,
 literal|40000
 block|,
@@ -1148,7 +1190,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Zoom 1:1"
+argument_list|)
 block|,
 literal|20000
 block|,
@@ -1189,7 +1234,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Zoom 1:2"
+argument_list|)
 block|,
 literal|5000
 block|,
@@ -1208,7 +1256,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Zoom 1:4"
+argument_list|)
 block|,
 literal|2500
 block|,
@@ -1227,7 +1278,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Zoom 1:8"
+argument_list|)
 block|,
 literal|1250
 block|,
@@ -1246,7 +1300,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Zoom 1:16"
+argument_list|)
 block|,
 literal|625
 block|,
@@ -1265,7 +1322,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Set a custom zoom factor"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1296,7 +1356,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Use the current theme's background color"
+argument_list|)
 block|,
 name|GIMP_CANVAS_PADDING_MODE_DEFAULT
 block|,
@@ -1317,7 +1380,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Use the light check color"
+argument_list|)
 block|,
 name|GIMP_CANVAS_PADDING_MODE_LIGHT_CHECK
 block|,
@@ -1338,7 +1404,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Use the dark check color"
+argument_list|)
 block|,
 name|GIMP_CANVAS_PADDING_MODE_DARK_CHECK
 block|,
@@ -1359,7 +1428,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Use an arbitrary color"
+argument_list|)
 block|,
 name|GIMP_CANVAS_PADDING_MODE_CUSTOM
 block|,
@@ -1380,7 +1452,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Reset padding color to what's configured in preferences"
+argument_list|)
 block|,
 name|GIMP_CANVAS_PADDING_MODE_RESET
 block|,

@@ -89,7 +89,10 @@ argument_list|)
 block|,
 literal|"F1"
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Open the GIMP user manual"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -111,7 +114,10 @@ argument_list|)
 block|,
 literal|"<shift>F1"
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Show the help for a specific user interface item"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(

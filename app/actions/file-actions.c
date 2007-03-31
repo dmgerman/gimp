@@ -232,7 +232,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Open an image file"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -254,7 +257,10 @@ argument_list|)
 block|,
 literal|"<control><alt>O"
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Open an image file as layers"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -276,7 +282,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Open an image file from a specified location"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -410,7 +419,10 @@ argument_list|)
 block|,
 literal|"<control>S"
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Save this image"
+argument_list|)
 block|,
 name|GIMP_SAVE_MODE_SAVE
 block|,
@@ -431,7 +443,10 @@ argument_list|)
 block|,
 literal|"<control><shift>S"
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Save this image with a different name"
+argument_list|)
 block|,
 name|GIMP_SAVE_MODE_SAVE_AS
 block|,
@@ -452,7 +467,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Save this image with a different name, but keep its current name"
+argument_list|)
 block|,
 name|GIMP_SAVE_MODE_SAVE_A_COPY
 block|,
@@ -473,7 +491,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Save this image and close its window"
+argument_list|)
 block|,
 name|GIMP_SAVE_MODE_SAVE_AND_CLOSE
 block|,

@@ -362,7 +362,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Select regions with similar colors"
+argument_list|)
 block|,
 literal|"gimp-by-color-select-tool"
 block|,
@@ -381,7 +384,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Rotate by an arbitrary angle"
+argument_list|)
 block|,
 literal|"gimp-rotate-layer"
 block|,

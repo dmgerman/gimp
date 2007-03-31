@@ -100,7 +100,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Open a Layers, Channels& Paths dock"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -122,7 +125,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Open a Brushes, Patterns& Gradients dock"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -144,7 +150,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Open a dock containing miscellaneous dialogs"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -166,7 +175,10 @@ argument_list|)
 block|,
 literal|"<control>B"
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Raise the toolbox"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -201,7 +213,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Tool Options"
+literal|"Open the tool options dialog"
 argument_list|)
 block|,
 literal|"gimp-tool-options"
@@ -223,7 +235,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Device Status"
+literal|"Open the device status dialog"
 argument_list|)
 block|,
 literal|"gimp-device-status"
@@ -245,7 +257,7 @@ literal|"<control>L"
 block|,
 name|N_
 argument_list|(
-literal|"Layers"
+literal|"Open the layers dialog"
 argument_list|)
 block|,
 literal|"gimp-layer-list"
@@ -267,7 +279,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Channels"
+literal|"Open the channels dialog"
 argument_list|)
 block|,
 literal|"gimp-channel-list"
@@ -289,7 +301,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Paths"
+literal|"Open the paths dialog"
 argument_list|)
 block|,
 literal|"gimp-vectors-list"
@@ -311,7 +323,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Colormap"
+literal|"Open the colormap dialog"
 argument_list|)
 block|,
 literal|"gimp-indexed-palette"
@@ -333,7 +345,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Histogram"
+literal|"Open the histogram dialog"
 argument_list|)
 block|,
 literal|"gimp-histogram-editor"
@@ -355,7 +367,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Selection Editor"
+literal|"Open the selection editor"
 argument_list|)
 block|,
 literal|"gimp-selection-editor"
@@ -377,7 +389,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Display Navigation"
+literal|"Open the display navigation dialog"
 argument_list|)
 block|,
 literal|"gimp-navigation-view"
@@ -399,7 +411,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Undo History"
+literal|"Open the undo history dialog"
 argument_list|)
 block|,
 literal|"gimp-undo-history"
@@ -421,7 +433,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Pointer Information"
+literal|"Open the pointer information dialog"
 argument_list|)
 block|,
 literal|"gimp-cursor-view"
@@ -443,7 +455,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Sample Points"
+literal|"Open the sample points dialog"
 argument_list|)
 block|,
 literal|"gimp-sample-point-editor"
@@ -465,7 +477,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"FG/BG Color"
+literal|"Open the FG/BG color dialog"
 argument_list|)
 block|,
 literal|"gimp-color-editor"
@@ -487,7 +499,7 @@ literal|"<control><shift>B"
 block|,
 name|N_
 argument_list|(
-literal|"Brushes"
+literal|"Open the brushes dialog"
 argument_list|)
 block|,
 literal|"gimp-brush-grid|gimp-brush-list"
@@ -509,7 +521,7 @@ literal|"<control><shift>P"
 block|,
 name|N_
 argument_list|(
-literal|"Patterns"
+literal|"Open the patterns dialog"
 argument_list|)
 block|,
 literal|"gimp-pattern-grid|gimp-pattern-list"
@@ -531,7 +543,7 @@ literal|"<control>G"
 block|,
 name|N_
 argument_list|(
-literal|"Gradients"
+literal|"Open the gradients dialog"
 argument_list|)
 block|,
 literal|"gimp-gradient-list|gimp-gradient-grid"
@@ -553,7 +565,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Palettes"
+literal|"Open the palettes dialog"
 argument_list|)
 block|,
 literal|"gimp-palette-list|gimp-palette-grid"
@@ -575,7 +587,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Fonts"
+literal|"Open the fonts dialog"
 argument_list|)
 block|,
 literal|"gimp-font-list|gimp-font-grid"
@@ -597,7 +609,7 @@ literal|""
 block|,
 name|N_
 argument_list|(
-literal|"Buffers"
+literal|"Open the named buffers dialog"
 argument_list|)
 block|,
 literal|"gimp-buffer-list|gimp-buffer-grid"
@@ -619,7 +631,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Images"
+literal|"Open the images dialog"
 argument_list|)
 block|,
 literal|"gimp-image-list|gimp-image-grid"
@@ -641,7 +653,7 @@ literal|""
 block|,
 name|N_
 argument_list|(
-literal|"Document History"
+literal|"Open the document history dialog"
 argument_list|)
 block|,
 literal|"gimp-document-list|gimp-document-grid"
@@ -663,7 +675,7 @@ literal|""
 block|,
 name|N_
 argument_list|(
-literal|"Image Templates"
+literal|"Open the image templates dialog"
 argument_list|)
 block|,
 literal|"gimp-template-list|gimp-template-grid"
@@ -685,7 +697,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Tools"
+literal|"Open the tools dialog"
 argument_list|)
 block|,
 literal|"gimp-tool-list|gimp-tool-grid"
@@ -707,7 +719,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Error Console"
+literal|"Open the error console"
 argument_list|)
 block|,
 literal|"gimp-error-console"
@@ -750,7 +762,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Open the preferences dialog"
+argument_list|)
 block|,
 literal|"gimp-preferences-dialog"
 block|,
@@ -769,7 +784,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Open the keyboard shortcuts editor"
+argument_list|)
 block|,
 literal|"gimp-keyboard-shortcuts-dialog"
 block|,
@@ -788,7 +806,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Open the module manager dialog"
+argument_list|)
 block|,
 literal|"gimp-module-dialog"
 block|,
@@ -807,7 +828,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Show the tip of the day"
+argument_list|)
 block|,
 literal|"gimp-tips-dialog"
 block|,
@@ -826,7 +850,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"About GIMP"
+argument_list|)
 block|,
 literal|"gimp-about-dialog"
 block|,
