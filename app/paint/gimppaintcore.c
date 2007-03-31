@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2911e4ba0103
+DECL|enum|__anon27a58f710103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1085,6 +1085,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/*  public functions  */
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_paint_core_paint (GimpPaintCore * core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpPaintState paint_state,guint32 time)
@@ -1426,6 +1430,12 @@ name|core
 operator|->
 name|saved_proj_tiles
 argument_list|)
+expr_stmt|;
+name|core
+operator|->
+name|saved_proj_tiles
+operator|=
+name|NULL
 expr_stmt|;
 if|if
 condition|(
