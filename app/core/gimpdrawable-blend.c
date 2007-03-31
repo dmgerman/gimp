@@ -132,7 +132,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc294720108
+DECL|struct|__anon275ee2550108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -203,7 +203,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc294720208
+DECL|struct|__anon275ee2550208
 block|{
 DECL|member|PR
 name|PixelRegion
@@ -1124,13 +1124,15 @@ name|r
 operator|=
 name|sqrt
 argument_list|(
+name|SQR
+argument_list|(
 name|x
-operator|*
-name|x
+argument_list|)
 operator|+
+name|SQR
+argument_list|(
 name|y
-operator|*
-name|y
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|vec
