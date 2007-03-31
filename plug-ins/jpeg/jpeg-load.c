@@ -314,9 +314,10 @@ name|errno
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_quit
-argument_list|()
-expr_stmt|;
+return|return
+operator|-
+literal|1
+return|;
 block|}
 if|if
 condition|(
@@ -390,9 +391,10 @@ condition|)
 name|destroy_preview
 argument_list|()
 expr_stmt|;
-name|gimp_quit
-argument_list|()
-expr_stmt|;
+return|return
+operator|-
+literal|1
+return|;
 block|}
 comment|/* Now we can initialize the JPEG decompression object. */
 name|jpeg_create_decompress
@@ -616,9 +618,10 @@ operator|.
 name|jpeg_color_space
 argument_list|)
 expr_stmt|;
-name|gimp_quit
-argument_list|()
-expr_stmt|;
+return|return
+operator|-
+literal|1
+return|;
 break|break;
 block|}
 if|if
@@ -1851,7 +1854,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aa71a130108
+DECL|struct|__anon291ccf020108
 block|{
 DECL|member|pub
 name|struct

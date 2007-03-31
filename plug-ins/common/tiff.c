@@ -84,7 +84,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d0f9100108
+DECL|struct|__anon28945d420108
 block|{
 DECL|member|compression
 name|gint
@@ -107,7 +107,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d0f9100208
+DECL|struct|__anon28945d420208
 block|{
 DECL|member|ID
 name|gint32
@@ -2116,9 +2116,10 @@ name|errno
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_quit
-argument_list|()
-expr_stmt|;
+return|return
+operator|-
+literal|1
+return|;
 block|}
 name|TIFFSetWarningHandler
 argument_list|(
@@ -2229,9 +2230,10 @@ name|filename
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_quit
-argument_list|()
-expr_stmt|;
+return|return
+operator|-
+literal|1
+return|;
 block|}
 if|if
 condition|(
@@ -2257,9 +2259,10 @@ name|filename
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_quit
-argument_list|()
-expr_stmt|;
+return|return
+operator|-
+literal|1
+return|;
 block|}
 if|if
 condition|(
@@ -2650,9 +2653,10 @@ argument_list|(
 literal|"Could not create a new image"
 argument_list|)
 expr_stmt|;
-name|gimp_quit
-argument_list|()
-expr_stmt|;
+return|return
+operator|-
+literal|1
+return|;
 block|}
 name|gimp_image_undo_disable
 argument_list|(
@@ -3225,9 +3229,10 @@ name|filename
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_quit
-argument_list|()
-expr_stmt|;
+return|return
+operator|-
+literal|1
+return|;
 block|}
 for|for
 control|(
