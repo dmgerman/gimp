@@ -1805,6 +1805,8 @@ argument_list|(
 name|severity
 argument_list|)
 argument_list|,
+literal|"%s"
+argument_list|,
 name|message
 argument_list|)
 expr_stmt|;
