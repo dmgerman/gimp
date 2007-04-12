@@ -917,7 +917,7 @@ literal|"gimp-display-delete"
 argument_list|,
 literal|"Delete the specified display."
 argument_list|,
-literal|"This procedure removes the specified display. If this is the last remaining display for the underlying image, then the image is deleted also."
+literal|"This procedure removes the specified display. If this is the last remaining display for the underlying image, then the image is deleted also. Note that the display is closed no matter if the image is dirty or not. Better save the image before calling this procedure."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,

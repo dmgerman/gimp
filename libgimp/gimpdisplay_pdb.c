@@ -177,7 +177,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_delete:  * @display_ID: The display to delete.  *  * Delete the specified display.  *  * This procedure removes the specified display. If this is the last  * remaining display for the underlying image, then the image is  * deleted also.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_display_delete:  * @display_ID: The display to delete.  *  * Delete the specified display.  *  * This procedure removes the specified display. If this is the last  * remaining display for the underlying image, then the image is  * deleted also. Note that the display is closed no matter if the image  * is dirty or not. Better save the image before calling this  * procedure.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
