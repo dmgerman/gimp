@@ -8020,10 +8020,6 @@ name|GimpParasite
 modifier|*
 name|p
 init|=
-operator|(
-name|GimpParasite
-operator|*
-operator|)
 operator|&
 name|params
 index|[

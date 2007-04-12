@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be750040103
+DECL|enum|__anon2937f0b60103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED
@@ -511,6 +511,10 @@ name|GimpMemsizeEntry
 modifier|*
 name|entry
 decl_stmt|;
+name|GtkObject
+modifier|*
+name|adj
+decl_stmt|;
 name|guint
 name|shift
 decl_stmt|;
@@ -627,15 +631,8 @@ name|spinbutton
 operator|=
 name|gimp_spin_button_new
 argument_list|(
-operator|(
-name|GtkObject
-operator|*
-operator|*
-operator|)
 operator|&
-name|entry
-operator|->
-name|adjustment
+name|adj
 argument_list|,
 name|CAST
 argument_list|(
@@ -672,6 +669,15 @@ expr_stmt|;
 undef|#
 directive|undef
 name|CAST
+name|entry
+operator|->
+name|adjustment
+operator|=
+name|GTK_ADJUSTMENT
+argument_list|(
+name|adj
+argument_list|)
+expr_stmt|;
 name|g_object_ref_sink
 argument_list|(
 name|entry

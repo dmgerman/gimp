@@ -70,7 +70,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27e4c77d0103
+DECL|enum|__anon28b91ad90103
 block|{
 DECL|enumerator|DRAWABLE_COMBO_BOX
 name|DRAWABLE_COMBO_BOX
@@ -783,6 +783,8 @@ parameter_list|)
 block|{
 name|GType
 name|combo_box_type
+init|=
+name|G_TYPE_NONE
 decl_stmt|;
 name|GtkWidget
 modifier|*
