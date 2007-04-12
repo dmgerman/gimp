@@ -106,7 +106,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf8639f0108
+DECL|struct|__anon27c668400108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -2528,6 +2528,10 @@ name|history
 argument_list|)
 expr_stmt|;
 break|break;
+case|case
+name|SF_DISPLAY
+case|:
+break|break;
 block|}
 if|if
 condition|(
@@ -3450,6 +3454,9 @@ case|:
 case|case
 name|SF_VECTORS
 case|:
+case|case
+name|SF_DISPLAY
+case|:
 name|g_string_append_printf
 argument_list|(
 name|s
@@ -4027,6 +4034,9 @@ name|SF_CHANNEL
 case|:
 case|case
 name|SF_VECTORS
+case|:
+case|case
+name|SF_DISPLAY
 case|:
 break|break;
 case|case

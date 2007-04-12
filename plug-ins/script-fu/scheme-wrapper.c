@@ -347,6 +347,12 @@ block|,
 name|SF_ENUM
 block|}
 block|,
+block|{
+literal|"SF-DISPLAY"
+block|,
+name|SF_DISPLAY
+block|}
+block|,
 comment|/* For SF-ADJUSTMENT */
 block|{
 literal|"SF-SLIDER"
