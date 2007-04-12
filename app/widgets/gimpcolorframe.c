@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c49633a0103
+DECL|enum|__anon29bcbe9d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1454,6 +1454,11 @@ modifier|*
 name|frame
 parameter_list|)
 block|{
+name|gint
+name|value
+decl_stmt|;
+if|if
+condition|(
 name|gimp_int_combo_box_get_active
 argument_list|(
 name|GIMP_INT_COMBO_BOX
@@ -1461,21 +1466,23 @@ argument_list|(
 name|widget
 argument_list|)
 argument_list|,
-operator|(
-name|gint
-operator|*
-operator|)
 operator|&
+name|value
+argument_list|)
+condition|)
+block|{
 name|frame
 operator|->
 name|frame_mode
-argument_list|)
+operator|=
+name|value
 expr_stmt|;
 name|gimp_color_frame_update
 argument_list|(
 name|frame
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 

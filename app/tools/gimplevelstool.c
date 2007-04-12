@@ -4452,6 +4452,11 @@ modifier|*
 name|tool
 parameter_list|)
 block|{
+name|gint
+name|value
+decl_stmt|;
+if|if
+condition|(
 name|gimp_int_combo_box_get_active
 argument_list|(
 name|GIMP_INT_COMBO_BOX
@@ -4459,15 +4464,16 @@ argument_list|(
 name|widget
 argument_list|)
 argument_list|,
-operator|(
-name|gint
-operator|*
-operator|)
 operator|&
+name|value
+argument_list|)
+condition|)
+block|{
 name|tool
 operator|->
 name|channel
-argument_list|)
+operator|=
+name|value
 expr_stmt|;
 name|gimp_histogram_view_set_channel
 argument_list|(
@@ -4514,6 +4520,7 @@ argument_list|,
 name|ALL
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 

@@ -146,7 +146,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon277b0ce50103
+DECL|enum|__anon27c9461e0103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -610,6 +610,10 @@ name|GtkWidget
 modifier|*
 name|table
 decl_stmt|;
+name|GtkObject
+modifier|*
+name|adj
+decl_stmt|;
 name|editor
 operator|->
 name|col_index
@@ -857,15 +861,8 @@ name|index_spinbutton
 operator|=
 name|gimp_spin_button_new
 argument_list|(
-operator|(
-name|GtkObject
-operator|*
-operator|*
-operator|)
 operator|&
-name|editor
-operator|->
-name|index_adjustment
+name|adj
 argument_list|,
 literal|0
 argument_list|,
@@ -882,6 +879,15 @@ argument_list|,
 literal|1.0
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|editor
+operator|->
+name|index_adjustment
+operator|=
+name|GTK_ADJUSTMENT
+argument_list|(
+name|adj
 argument_list|)
 expr_stmt|;
 name|gimp_table_attach_aligned
