@@ -72,7 +72,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27b954250103
+DECL|enum|__anon2b945b520103
 block|{
 DECL|enumerator|CM_RED_CHANNEL
 name|CM_RED_CHANNEL
@@ -91,7 +91,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b954250208
+DECL|struct|__anon2b945b520208
 block|{
 DECL|member|red_gain
 name|gdouble
@@ -114,7 +114,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b954250308
+DECL|struct|__anon2b945b520308
 block|{
 DECL|member|red
 name|CmChannelType
@@ -5602,6 +5602,11 @@ modifier|*
 name|mix
 parameter_list|)
 block|{
+name|gint
+name|value
+decl_stmt|;
+if|if
+condition|(
 name|gimp_int_combo_box_get_active
 argument_list|(
 name|GIMP_INT_COMBO_BOX
@@ -5609,21 +5614,23 @@ argument_list|(
 name|widget
 argument_list|)
 argument_list|,
-operator|(
-name|gint
-operator|*
-operator|)
 operator|&
+name|value
+argument_list|)
+condition|)
+block|{
 name|mix
 operator|->
 name|output_channel
-argument_list|)
+operator|=
+name|value
 expr_stmt|;
 name|cm_set_adjusters
 argument_list|(
 name|mix
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
