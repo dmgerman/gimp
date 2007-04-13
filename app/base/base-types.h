@@ -272,15 +272,6 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|MaskBuf
-typedef|typedef
-name|struct
-name|_TempBuf
-name|MaskBuf
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|Tile
 typedef|typedef
 name|struct

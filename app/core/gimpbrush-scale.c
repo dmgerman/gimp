@@ -76,11 +76,11 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|MaskBuf
+name|TempBuf
 modifier|*
 name|gimp_brush_scale_mask_down
 parameter_list|(
-name|MaskBuf
+name|TempBuf
 modifier|*
 name|brush_mask
 parameter_list|,
@@ -95,11 +95,11 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|MaskBuf
+name|TempBuf
 modifier|*
 name|gimp_brush_scale_pixmap_down
 parameter_list|(
-name|MaskBuf
+name|TempBuf
 modifier|*
 name|pixmap
 parameter_list|,
@@ -450,12 +450,12 @@ end_function
 
 begin_function
 specifier|static
-name|MaskBuf
+name|TempBuf
 modifier|*
-DECL|function|gimp_brush_scale_mask_down (MaskBuf * brush_mask,gint dest_width,gint dest_height)
+DECL|function|gimp_brush_scale_mask_down (TempBuf * brush_mask,gint dest_width,gint dest_height)
 name|gimp_brush_scale_mask_down
 parameter_list|(
-name|MaskBuf
+name|TempBuf
 modifier|*
 name|brush_mask
 parameter_list|,
@@ -466,7 +466,7 @@ name|gint
 name|dest_height
 parameter_list|)
 block|{
-name|MaskBuf
+name|TempBuf
 modifier|*
 name|scale_brush
 decl_stmt|;
@@ -552,11 +552,19 @@ name|height
 expr_stmt|;
 name|scale_brush
 operator|=
-name|mask_buf_new
+name|temp_buf_new
 argument_list|(
 name|dest_width
 argument_list|,
 name|dest_height
+argument_list|,
+literal|1
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -571,14 +579,14 @@ expr_stmt|;
 comment|/*  get the data  */
 name|dest
 operator|=
-name|mask_buf_data
+name|temp_buf_data
 argument_list|(
 name|scale_brush
 argument_list|)
 expr_stmt|;
 name|src
 operator|=
-name|mask_buf_data
+name|temp_buf_data
 argument_list|(
 name|brush_mask
 argument_list|)
@@ -1101,12 +1109,12 @@ end_define
 
 begin_function
 specifier|static
-name|MaskBuf
+name|TempBuf
 modifier|*
-DECL|function|gimp_brush_scale_pixmap_down (MaskBuf * pixmap,gint dest_width,gint dest_height)
+DECL|function|gimp_brush_scale_pixmap_down (TempBuf * pixmap,gint dest_width,gint dest_height)
 name|gimp_brush_scale_pixmap_down
 parameter_list|(
-name|MaskBuf
+name|TempBuf
 modifier|*
 name|pixmap
 parameter_list|,
@@ -1117,7 +1125,7 @@ name|gint
 name|dest_height
 parameter_list|)
 block|{
-name|MaskBuf
+name|TempBuf
 modifier|*
 name|scale_brush
 decl_stmt|;
@@ -1245,14 +1253,14 @@ expr_stmt|;
 comment|/*  get the data  */
 name|dest
 operator|=
-name|mask_buf_data
+name|temp_buf_data
 argument_list|(
 name|scale_brush
 argument_list|)
 expr_stmt|;
 name|src
 operator|=
-name|mask_buf_data
+name|temp_buf_data
 argument_list|(
 name|pixmap
 argument_list|)

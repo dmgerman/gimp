@@ -147,12 +147,12 @@ name|scale
 decl_stmt|;
 comment|/*  brush buffers  */
 DECL|member|pressure_brush
-name|MaskBuf
+name|TempBuf
 modifier|*
 name|pressure_brush
 decl_stmt|;
 DECL|member|solid_brushes
-name|MaskBuf
+name|TempBuf
 modifier|*
 name|solid_brushes
 index|[
@@ -163,7 +163,7 @@ name|BRUSH_CORE_SOLID_SUBSAMPLE
 index|]
 decl_stmt|;
 DECL|member|last_solid_brush
-name|MaskBuf
+name|TempBuf
 modifier|*
 name|last_solid_brush
 decl_stmt|;
@@ -172,12 +172,12 @@ name|gboolean
 name|solid_cache_invalid
 decl_stmt|;
 DECL|member|scale_brush
-name|MaskBuf
+name|TempBuf
 modifier|*
 name|scale_brush
 decl_stmt|;
 DECL|member|last_scale_brush
-name|MaskBuf
+name|TempBuf
 modifier|*
 name|last_scale_brush
 decl_stmt|;
@@ -190,12 +190,12 @@ name|gint
 name|last_scale_height
 decl_stmt|;
 DECL|member|scale_pixmap
-name|MaskBuf
+name|TempBuf
 modifier|*
 name|scale_pixmap
 decl_stmt|;
 DECL|member|last_scale_pixmap
-name|MaskBuf
+name|TempBuf
 modifier|*
 name|last_scale_pixmap
 decl_stmt|;
@@ -208,7 +208,7 @@ name|gint
 name|last_scale_pixmap_height
 decl_stmt|;
 DECL|member|kernel_brushes
-name|MaskBuf
+name|TempBuf
 modifier|*
 name|kernel_brushes
 index|[
@@ -223,7 +223,7 @@ literal|1
 index|]
 decl_stmt|;
 DECL|member|last_brush_mask
-name|MaskBuf
+name|TempBuf
 modifier|*
 name|last_brush_mask
 decl_stmt|;
