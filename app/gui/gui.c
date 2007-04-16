@@ -1135,12 +1135,12 @@ DECL|macro|GTK_REQUIRED_MINOR
 define|#
 directive|define
 name|GTK_REQUIRED_MINOR
-value|8
+value|10
 DECL|macro|GTK_REQUIRED_MICRO
 define|#
 directive|define
 name|GTK_REQUIRED_MICRO
-value|17
+value|6
 name|mismatch
 operator|=
 name|gtk_check_version
