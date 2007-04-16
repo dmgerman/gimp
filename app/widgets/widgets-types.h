@@ -1118,15 +1118,6 @@ comment|/*  cell renderers  */
 end_comment
 
 begin_typedef
-DECL|typedef|GimpCellRendererAccel
-typedef|typedef
-name|struct
-name|_GimpCellRendererAccel
-name|GimpCellRendererAccel
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpCellRendererDashes
 typedef|typedef
 name|struct
