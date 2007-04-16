@@ -441,7 +441,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * pixel_surround_new:  * @tm:     tile manager  * @width:  width of surround region  * @height: height of surround region  * @bg:     color to use for pixels that are not covered by the tile manager  *  * Return value: a new #PixelSurround.  */
+comment|/**  * pixel_surround_new:  * @tiles:  tile manager  * @width:  width of surround region  * @height: height of surround region  * @bg:     color to use for pixels that are not covered by the tile manager  *  * Return value: a new #PixelSurround.  */
 end_comment
 
 begin_function
