@@ -459,6 +459,9 @@ modifier|*
 name|filenames
 parameter_list|,
 name|gboolean
+name|as_new
+parameter_list|,
+name|gboolean
 name|be_verbose
 parameter_list|)
 function_decl|;
@@ -535,6 +538,16 @@ modifier|*
 name|filenames
 init|=
 name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|as_new
+specifier|static
+name|gboolean
+name|as_new
+init|=
+name|FALSE
 decl_stmt|;
 end_decl_stmt
 
@@ -821,6 +834,26 @@ block|,
 name|N_
 argument_list|(
 literal|"Start a new GIMP instance"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+literal|"as-new"
+block|,
+literal|'a'
+block|,
+literal|0
+block|,
+name|G_OPTION_ARG_NONE
+block|,
+operator|&
+name|as_new
+block|,
+name|N_
+argument_list|(
+literal|"Open images as new"
 argument_list|)
 block|,
 name|NULL
@@ -1615,6 +1648,8 @@ name|gimp_dbus_open
 argument_list|(
 name|filenames
 argument_list|,
+name|as_new
+argument_list|,
 name|be_verbose
 argument_list|)
 condition|)
@@ -1659,6 +1694,8 @@ argument_list|,
 name|batch_interpreter
 argument_list|,
 name|batch_commands
+argument_list|,
+name|as_new
 argument_list|,
 name|no_interface
 argument_list|,
@@ -2717,7 +2754,7 @@ end_comment
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_dbus_open (const gchar ** filenames,gboolean be_verbose)
+DECL|function|gimp_dbus_open (const gchar ** filenames,gboolean as_new,gboolean be_verbose)
 name|gimp_dbus_open
 parameter_list|(
 specifier|const
@@ -2725,6 +2762,9 @@ name|gchar
 modifier|*
 modifier|*
 name|filenames
+parameter_list|,
+name|gboolean
+name|as_new
 parameter_list|,
 name|gboolean
 name|be_verbose
@@ -2783,6 +2823,17 @@ condition|(
 name|filenames
 condition|)
 block|{
+specifier|const
+name|gchar
+modifier|*
+name|method
+init|=
+name|as_new
+condition|?
+literal|"OpenAsNew"
+else|:
+literal|"Open"
+decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
@@ -2817,7 +2868,7 @@ name|dbus_g_proxy_call
 argument_list|(
 name|proxy
 argument_list|,
-literal|"Open"
+name|method
 argument_list|,
 operator|&
 name|error

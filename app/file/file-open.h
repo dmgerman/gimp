@@ -43,6 +43,9 @@ name|gchar
 modifier|*
 name|entered_filename
 parameter_list|,
+name|gboolean
+name|as_new
+parameter_list|,
 name|GimpPlugInProcedure
 modifier|*
 name|file_proc
@@ -132,6 +135,9 @@ name|gchar
 modifier|*
 name|uri
 parameter_list|,
+name|gboolean
+name|as_new
+parameter_list|,
 name|GimpPDBStatusType
 modifier|*
 name|status
@@ -170,6 +176,9 @@ specifier|const
 name|gchar
 modifier|*
 name|entered_filename
+parameter_list|,
+name|gboolean
+name|as_new
 parameter_list|,
 name|GimpPlugInProcedure
 modifier|*
@@ -247,6 +256,9 @@ specifier|const
 name|gchar
 modifier|*
 name|filename
+parameter_list|,
+name|gboolean
+name|as_new
 parameter_list|)
 function_decl|;
 end_function_decl

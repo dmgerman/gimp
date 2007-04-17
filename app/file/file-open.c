@@ -226,6 +226,9 @@ parameter_list|(
 name|GimpImage
 modifier|*
 name|image
+parameter_list|,
+name|gboolean
+name|as_new
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -260,7 +263,7 @@ end_comment
 begin_function
 name|GimpImage
 modifier|*
-DECL|function|file_open_image (Gimp * gimp,GimpContext * context,GimpProgress * progress,const gchar * uri,const gchar * entered_filename,GimpPlugInProcedure * file_proc,GimpRunMode run_mode,GimpPDBStatusType * status,const gchar ** mime_type,GError ** error)
+DECL|function|file_open_image (Gimp * gimp,GimpContext * context,GimpProgress * progress,const gchar * uri,const gchar * entered_filename,gboolean as_new,GimpPlugInProcedure * file_proc,GimpRunMode run_mode,GimpPDBStatusType * status,const gchar ** mime_type,GError ** error)
 name|file_open_image
 parameter_list|(
 name|Gimp
@@ -284,6 +287,9 @@ specifier|const
 name|gchar
 modifier|*
 name|entered_filename
+parameter_list|,
+name|gboolean
+name|as_new
 parameter_list|,
 name|GimpPlugInProcedure
 modifier|*
@@ -600,6 +606,8 @@ block|{
 name|file_open_sanitize_image
 argument_list|(
 name|image
+argument_list|,
+name|as_new
 argument_list|)
 expr_stmt|;
 if|if
@@ -1042,6 +1050,8 @@ block|{
 name|file_open_sanitize_image
 argument_list|(
 name|image
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 operator|*
@@ -1089,7 +1099,7 @@ end_function
 begin_function
 name|GimpImage
 modifier|*
-DECL|function|file_open_with_display (Gimp * gimp,GimpContext * context,GimpProgress * progress,const gchar * uri,GimpPDBStatusType * status,GError ** error)
+DECL|function|file_open_with_display (Gimp * gimp,GimpContext * context,GimpProgress * progress,const gchar * uri,gboolean as_new,GimpPDBStatusType * status,GError ** error)
 name|file_open_with_display
 parameter_list|(
 name|Gimp
@@ -1108,6 +1118,9 @@ specifier|const
 name|gchar
 modifier|*
 name|uri
+parameter_list|,
+name|gboolean
+name|as_new
 parameter_list|,
 name|GimpPDBStatusType
 modifier|*
@@ -1132,6 +1145,8 @@ name|uri
 argument_list|,
 name|uri
 argument_list|,
+name|as_new
+argument_list|,
 name|NULL
 argument_list|,
 name|status
@@ -1145,7 +1160,7 @@ end_function
 begin_function
 name|GimpImage
 modifier|*
-DECL|function|file_open_with_proc_and_display (Gimp * gimp,GimpContext * context,GimpProgress * progress,const gchar * uri,const gchar * entered_filename,GimpPlugInProcedure * file_proc,GimpPDBStatusType * status,GError ** error)
+DECL|function|file_open_with_proc_and_display (Gimp * gimp,GimpContext * context,GimpProgress * progress,const gchar * uri,const gchar * entered_filename,gboolean as_new,GimpPlugInProcedure * file_proc,GimpPDBStatusType * status,GError ** error)
 name|file_open_with_proc_and_display
 parameter_list|(
 name|Gimp
@@ -1169,6 +1184,9 @@ specifier|const
 name|gchar
 modifier|*
 name|entered_filename
+parameter_list|,
+name|gboolean
+name|as_new
 parameter_list|,
 name|GimpPlugInProcedure
 modifier|*
@@ -1252,6 +1270,8 @@ name|uri
 argument_list|,
 name|entered_filename
 argument_list|,
+name|as_new
+argument_list|,
 name|file_proc
 argument_list|,
 name|GIMP_RUN_INTERACTIVE
@@ -1269,6 +1289,25 @@ condition|(
 name|image
 condition|)
 block|{
+name|gimp_create_display
+argument_list|(
+name|image
+operator|->
+name|gimp
+argument_list|,
+name|image
+argument_list|,
+name|GIMP_UNIT_PIXEL
+argument_list|,
+literal|1.0
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|as_new
+condition|)
+block|{
 name|GimpDocumentList
 modifier|*
 name|documents
@@ -1284,19 +1323,6 @@ name|GimpImagefile
 modifier|*
 name|imagefile
 decl_stmt|;
-name|gimp_create_display
-argument_list|(
-name|image
-operator|->
-name|gimp
-argument_list|,
-name|image
-argument_list|,
-name|GIMP_UNIT_PIXEL
-argument_list|,
-literal|1.0
-argument_list|)
-expr_stmt|;
 name|imagefile
 operator|=
 name|gimp_document_list_add_uri
@@ -1308,7 +1334,7 @@ argument_list|,
 name|mime_type
 argument_list|)
 expr_stmt|;
-comment|/*  can only create a thumbnail if the passed uri and the        *  resulting image's uri match.        */
+comment|/*  can only create a thumbnail if the passed uri and the            *  resulting image's uri match.            */
 if|if
 condition|(
 name|strcmp
@@ -1360,6 +1386,7 @@ argument_list|,
 name|mime_type
 argument_list|)
 expr_stmt|;
+block|}
 comment|/*  the display owns the image now  */
 name|g_object_unref
 argument_list|(
@@ -1526,6 +1553,8 @@ argument_list|,
 name|uri
 argument_list|,
 name|uri
+argument_list|,
+name|FALSE
 argument_list|,
 name|file_proc
 argument_list|,
@@ -1867,7 +1896,7 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|file_open_from_command_line (Gimp * gimp,const gchar * filename)
+DECL|function|file_open_from_command_line (Gimp * gimp,const gchar * filename,gboolean as_new)
 name|file_open_from_command_line
 parameter_list|(
 name|Gimp
@@ -1878,6 +1907,9 @@ specifier|const
 name|gchar
 modifier|*
 name|filename
+parameter_list|,
+name|gboolean
+name|as_new
 parameter_list|)
 block|{
 name|GError
@@ -1953,6 +1985,8 @@ argument_list|,
 name|NULL
 argument_list|,
 name|uri
+argument_list|,
+name|as_new
 argument_list|,
 operator|&
 name|status
@@ -2051,14 +2085,31 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|file_open_sanitize_image (GimpImage * image)
+DECL|function|file_open_sanitize_image (GimpImage * image,gboolean as_new)
 name|file_open_sanitize_image
 parameter_list|(
 name|GimpImage
 modifier|*
 name|image
+parameter_list|,
+name|gboolean
+name|as_new
 parameter_list|)
 block|{
+if|if
+condition|(
+name|as_new
+condition|)
+name|gimp_object_set_name
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
+name|image
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 comment|/* clear all undo steps */
 name|gimp_image_undo_free
 argument_list|(

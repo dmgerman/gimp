@@ -326,7 +326,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|app_run (const gchar * full_prog_name,const gchar ** filenames,const gchar * alternate_system_gimprc,const gchar * alternate_gimprc,const gchar * session_name,const gchar * batch_interpreter,const gchar ** batch_commands,gboolean no_interface,gboolean no_data,gboolean no_fonts,gboolean no_splash,gboolean be_verbose,gboolean use_shm,gboolean use_cpu_accel,gboolean console_messages,gboolean use_debug_handler,GimpStackTraceMode stack_trace_mode,GimpPDBCompatMode pdb_compat_mode)
+DECL|function|app_run (const gchar * full_prog_name,const gchar ** filenames,const gchar * alternate_system_gimprc,const gchar * alternate_gimprc,const gchar * session_name,const gchar * batch_interpreter,const gchar ** batch_commands,gboolean as_new,gboolean no_interface,gboolean no_data,gboolean no_fonts,gboolean no_splash,gboolean be_verbose,gboolean use_shm,gboolean use_cpu_accel,gboolean console_messages,gboolean use_debug_handler,GimpStackTraceMode stack_trace_mode,GimpPDBCompatMode pdb_compat_mode)
 name|app_run
 parameter_list|(
 specifier|const
@@ -365,6 +365,9 @@ name|gchar
 modifier|*
 modifier|*
 name|batch_commands
+parameter_list|,
+name|gboolean
+name|as_new
 parameter_list|,
 name|gboolean
 name|no_interface
@@ -685,6 +688,8 @@ name|filenames
 index|[
 name|i
 index|]
+argument_list|,
+name|as_new
 argument_list|)
 expr_stmt|;
 block|}

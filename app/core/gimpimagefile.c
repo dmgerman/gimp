@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c75b05b0103
+DECL|enum|__anon277966a90103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -986,6 +986,8 @@ argument_list|,
 name|thumbnail
 operator|->
 name|image_uri
+argument_list|,
+name|FALSE
 argument_list|,
 name|NULL
 argument_list|,

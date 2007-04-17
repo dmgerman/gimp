@@ -116,6 +116,9 @@ modifier|*
 name|batch_commands
 parameter_list|,
 name|gboolean
+name|as_new
+parameter_list|,
+name|gboolean
 name|no_interface
 parameter_list|,
 name|gboolean
