@@ -1908,10 +1908,7 @@ name|be_verbose
 condition|)
 name|g_print
 argument_list|(
-name|_
-argument_list|(
 literal|"Terminating plug-in: '%s'\n"
-argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
@@ -2047,10 +2044,7 @@ name|be_verbose
 condition|)
 name|g_print
 argument_list|(
-name|_
-argument_list|(
 literal|"Terminating plug-in: '%s'\n"
-argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(

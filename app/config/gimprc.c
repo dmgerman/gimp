@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8877ca0103
+DECL|enum|__anon2bc222ac0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -922,10 +922,7 @@ name|verbose
 condition|)
 name|g_print
 argument_list|(
-name|_
-argument_list|(
 literal|"Parsing '%s'\n"
-argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
@@ -986,10 +983,7 @@ name|verbose
 condition|)
 name|g_print
 argument_list|(
-name|_
-argument_list|(
 literal|"Parsing '%s'\n"
-argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
@@ -1808,10 +1802,7 @@ name|verbose
 condition|)
 name|g_print
 argument_list|(
-name|_
-argument_list|(
-literal|"Saving '%s'\n"
-argument_list|)
+literal|"Writing '%s'\n"
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(

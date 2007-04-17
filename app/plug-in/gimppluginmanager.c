@@ -180,7 +180,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1cdaa90103
+DECL|enum|__anon2bdd5d2f0103
 block|{
 DECL|enumerator|PLUG_IN_OPENED
 name|PLUG_IN_OPENED
@@ -1548,10 +1548,7 @@ name|be_verbose
 condition|)
 name|g_print
 argument_list|(
-name|_
-argument_list|(
 literal|"Parsing '%s'\n"
-argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
@@ -1786,10 +1783,7 @@ name|be_verbose
 condition|)
 name|g_print
 argument_list|(
-name|_
-argument_list|(
 literal|"Querying plug-in: '%s'\n"
-argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
@@ -1948,10 +1942,7 @@ name|be_verbose
 condition|)
 name|g_print
 argument_list|(
-name|_
-argument_list|(
 literal|"Initializing plug-in: '%s'\n"
-argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
@@ -2056,10 +2047,7 @@ name|be_verbose
 condition|)
 name|g_print
 argument_list|(
-name|_
-argument_list|(
 literal|"Writing '%s'\n"
-argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
@@ -2117,7 +2105,7 @@ argument_list|(
 name|pluginrc
 argument_list|)
 expr_stmt|;
-comment|/* create help_path and locale_domain lists */
+comment|/* create locale and help domain lists */
 for|for
 control|(
 name|list
@@ -2516,10 +2504,7 @@ name|be_verbose
 condition|)
 name|g_print
 argument_list|(
-name|_
-argument_list|(
 literal|"Starting extension: '%s'\n"
-argument_list|)
 argument_list|,
 name|GIMP_OBJECT
 argument_list|(
@@ -2735,7 +2720,7 @@ argument_list|)
 expr_stmt|;
 name|g_printerr
 argument_list|(
-literal|"removing duplicate PDB procedure \"%s\" "
+literal|"Removing duplicate PDB procedure '%s' "
 literal|"registered by '%s'\n"
 argument_list|,
 name|GIMP_OBJECT
@@ -3365,7 +3350,7 @@ condition|)
 block|{
 name|g_printerr
 argument_list|(
-literal|"skipping duplicate plug-in: '%s'\n"
+literal|"Skipping duplicate plug-in: '%s'\n"
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
@@ -3719,7 +3704,7 @@ name|TRUE
 expr_stmt|;
 name|g_printerr
 argument_list|(
-literal|"executable not found: '%s'\n"
+literal|"Executable not found: '%s'\n"
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
