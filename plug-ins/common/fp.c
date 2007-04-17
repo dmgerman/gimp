@@ -100,7 +100,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3f92420108
+DECL|struct|__anon274a286f0108
 block|{
 DECL|member|run
 name|gint
@@ -115,7 +115,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3f92420208
+DECL|struct|__anon274a286f0208
 block|{
 DECL|member|width
 name|gint
@@ -149,7 +149,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c3f92420303
+DECL|enum|__anon274a286f0303
 block|{
 DECL|enumerator|SHADOWS
 name|SHADOWS
@@ -170,7 +170,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3f92420403
+DECL|enum|__anon274a286f0403
 block|{
 DECL|enumerator|NONEATALL
 name|NONEATALL
@@ -202,7 +202,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3f92420503
+DECL|enum|__anon274a286f0503
 block|{
 DECL|enumerator|BY_HUE
 name|BY_HUE
@@ -221,7 +221,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3f92420603
+DECL|enum|__anon274a286f0603
 block|{
 DECL|enumerator|RED
 name|RED
@@ -249,7 +249,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3f92420703
+DECL|enum|__anon274a286f0703
 block|{
 DECL|enumerator|DOWN
 name|DOWN
@@ -268,7 +268,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3f92420808
+DECL|struct|__anon274a286f0808
 block|{
 DECL|member|window
 name|GtkWidget
@@ -299,7 +299,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3f92420908
+DECL|struct|__anon274a286f0908
 block|{
 DECL|member|roughness
 name|gdouble
@@ -400,7 +400,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3f92420a08
+DECL|struct|__anon274a286f0a08
 block|{
 DECL|member|roughness_scale
 name|GtkWidget
@@ -1312,7 +1312,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c3f92420b08
+DECL|struct|__anon274a286f0b08
 block|{
 DECL|member|bna
 name|GtkWidget
@@ -9678,17 +9678,6 @@ index|[
 literal|256
 index|]
 decl_stmt|;
-if|if
-condition|(
-name|RW
-operator|==
-literal|0
-operator|||
-name|RH
-operator|==
-literal|0
-condition|)
-return|return;
 name|a
 operator|=
 name|g_new
@@ -9809,9 +9798,6 @@ index|[
 literal|0
 index|]
 operator|=
-operator|(
-name|int
-operator|)
 name|reduced
 operator|->
 name|rgb
@@ -9839,9 +9825,6 @@ index|[
 literal|1
 index|]
 operator|=
-operator|(
-name|int
-operator|)
 name|reduced
 operator|->
 name|rgb
@@ -9869,9 +9852,6 @@ index|[
 literal|2
 index|]
 operator|=
-operator|(
-name|int
-operator|)
 name|reduced
 operator|->
 name|rgb
