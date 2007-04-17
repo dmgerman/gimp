@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c83d080103
+DECL|enum|__anon2956fc920103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1279,11 +1279,11 @@ expr_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|width
-operator|>
+operator|>=
 literal|0
 operator|&&
 name|height
-operator|>
+operator|>=
 literal|0
 argument_list|)
 expr_stmt|;
@@ -2576,11 +2576,11 @@ expr_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|width
-operator|>
+operator|>=
 literal|0
 operator|&&
 name|height
-operator|>
+operator|>=
 literal|0
 argument_list|)
 expr_stmt|;
@@ -4952,11 +4952,11 @@ expr_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|width
-operator|>
+operator|>=
 literal|0
 operator|&&
 name|height
-operator|>
+operator|>=
 literal|0
 argument_list|)
 expr_stmt|;
@@ -8432,11 +8432,11 @@ expr_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|width
-operator|>
+operator|>=
 literal|0
 operator|&&
 name|height
-operator|>
+operator|>=
 literal|0
 argument_list|)
 expr_stmt|;
