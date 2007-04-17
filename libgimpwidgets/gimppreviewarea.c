@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2956fc920103
+DECL|enum|__anon2b09ccba0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1287,6 +1287,17 @@ operator|>=
 literal|0
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|width
+operator|==
+literal|0
+operator|||
+name|height
+operator|==
+literal|0
+condition|)
+return|return;
 name|g_return_if_fail
 argument_list|(
 name|buf
@@ -2584,6 +2595,17 @@ operator|>=
 literal|0
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|width
+operator|==
+literal|0
+operator|||
+name|height
+operator|==
+literal|0
+condition|)
+return|return;
 name|g_return_if_fail
 argument_list|(
 name|buf1
@@ -4960,6 +4982,17 @@ operator|>=
 literal|0
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|width
+operator|==
+literal|0
+operator|||
+name|height
+operator|==
+literal|0
+condition|)
+return|return;
 name|g_return_if_fail
 argument_list|(
 name|buf1
@@ -8373,7 +8406,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_preview_area_fill:  * @area:   a #GimpPreviewArea widget.  * @x:      x offset in preview  * @y:      y offset in preview  * @width:  buffer width  * @height: buffer height  * @red:    red component of the fill color (0-255)  * @green:  green component of the fill color (0-255)  * @blue:   red component of the fill color (0-255)  *  * Fills @area in the given color and queues a redraw on the given  * rectangle.  *  * Since GIMP 2.2  **/
+comment|/**  * gimp_preview_area_fill:  * @area:   a #GimpPreviewArea widget.  * @x:      x offset in preview  * @y:      y offset in preview  * @width:  width of the rectangle to fill  * @height: height of the rectangle to fill  * @red:    red component of the fill color (0-255)  * @green:  green component of the fill color (0-255)  * @blue:   red component of the fill color (0-255)  *  * Fills the given rectangle of @area in the given color and queues a  * redraw.  *  * Since GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -8440,6 +8473,17 @@ operator|>=
 literal|0
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|width
+operator|==
+literal|0
+operator|||
+name|height
+operator|==
+literal|0
+condition|)
+return|return;
 if|if
 condition|(
 name|x
