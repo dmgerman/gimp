@@ -208,6 +208,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|gchar
+modifier|*
+name|gimp_interpreter_db_get_extensions
+parameter_list|(
+name|GimpInterpreterDB
+modifier|*
+name|db
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
