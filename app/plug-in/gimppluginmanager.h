@@ -307,24 +307,6 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_plug_in_manager_restore
-parameter_list|(
-name|GimpPlugInManager
-modifier|*
-name|manager
-parameter_list|,
-name|GimpContext
-modifier|*
-name|context
-parameter_list|,
-name|GimpInitStatusFunc
-name|status_callback
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|gimp_plug_in_manager_exit
 parameter_list|(
 name|GimpPlugInManager

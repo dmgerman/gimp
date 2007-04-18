@@ -76,6 +76,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"plug-in/gimppluginmanager-restore.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"paint/gimp-paint.h"
 end_include
 
@@ -297,7 +303,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bdfa3cf0103
+DECL|enum|__anon2aea90d20103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
