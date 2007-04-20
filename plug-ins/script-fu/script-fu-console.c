@@ -90,7 +90,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276b4b8e0108
+DECL|struct|__anon297758ba0108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -151,7 +151,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon276b4b8e0203
+DECL|enum|__anon297758ba0203
 block|{
 DECL|enumerator|RESPONSE_CLEAR
 name|RESPONSE_CLEAR
@@ -702,6 +702,18 @@ name|text_view
 argument_list|)
 argument_list|,
 name|FALSE
+argument_list|)
+expr_stmt|;
+name|gtk_text_view_set_wrap_mode
+argument_list|(
+name|GTK_TEXT_VIEW
+argument_list|(
+name|console
+operator|->
+name|text_view
+argument_list|)
+argument_list|,
+name|GTK_WRAP_WORD
 argument_list|)
 expr_stmt|;
 name|gtk_text_view_set_left_margin
