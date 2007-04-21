@@ -181,7 +181,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_dbus_service_open (GimpDBusService * service,const gchar * filename,gboolean * success,GError ** dbus_error)
+DECL|function|gimp_dbus_service_open (GimpDBusService * service,const gchar * uri,gboolean * success,GError ** dbus_error)
 name|gimp_dbus_service_open
 parameter_list|(
 name|GimpDBusService
@@ -191,7 +191,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|filename
+name|uri
 parameter_list|,
 name|gboolean
 modifier|*
@@ -215,7 +215,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|filename
+name|uri
 operator|!=
 name|NULL
 argument_list|,
@@ -240,7 +240,7 @@ name|service
 operator|->
 name|gimp
 argument_list|,
-name|filename
+name|uri
 argument_list|,
 name|FALSE
 argument_list|)
@@ -253,7 +253,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_dbus_service_open_as_new (GimpDBusService * service,const gchar * filename,gboolean * success,GError ** dbus_error)
+DECL|function|gimp_dbus_service_open_as_new (GimpDBusService * service,const gchar * uri,gboolean * success,GError ** dbus_error)
 name|gimp_dbus_service_open_as_new
 parameter_list|(
 name|GimpDBusService
@@ -263,7 +263,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|filename
+name|uri
 parameter_list|,
 name|gboolean
 modifier|*
@@ -287,7 +287,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|filename
+name|uri
 operator|!=
 name|NULL
 argument_list|,
@@ -312,7 +312,7 @@ name|service
 operator|->
 name|gimp
 argument_list|,
-name|filename
+name|uri
 argument_list|,
 name|TRUE
 argument_list|)

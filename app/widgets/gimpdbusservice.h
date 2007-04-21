@@ -189,7 +189,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|filename
+name|uri
 parameter_list|,
 name|gboolean
 modifier|*
@@ -214,7 +214,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|filename
+name|uri
 parameter_list|,
 name|gboolean
 modifier|*
