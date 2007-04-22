@@ -526,6 +526,11 @@ name|palette
 argument_list|)
 operator|->
 name|writable
+operator|&&
+name|strlen
+argument_list|(
+name|new_name
+argument_list|)
 condition|)
 block|{
 name|gimp_object_set_name
