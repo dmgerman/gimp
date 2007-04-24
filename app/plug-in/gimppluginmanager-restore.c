@@ -606,6 +606,26 @@ operator|->
 name|locale_domain_path
 argument_list|)
 expr_stmt|;
+else|else
+comment|/* FIXME: this consumes too much memory */
+name|gimp_plug_in_def_set_locale_domain
+argument_list|(
+name|plug_in_def
+argument_list|,
+name|gimp_plug_in_manager_get_locale_domain
+argument_list|(
+name|manager
+argument_list|,
+name|plug_in_def
+operator|->
+name|prog
+argument_list|,
+name|NULL
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|plug_in_def
