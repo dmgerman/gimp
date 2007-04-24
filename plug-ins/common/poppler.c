@@ -78,7 +78,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27f652010108
+DECL|struct|__anon29ff64870108
 block|{
 DECL|member|target
 name|GimpPageSelectorTarget
@@ -119,7 +119,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27f652010208
+DECL|struct|__anon29ff64870208
 block|{
 DECL|member|n_pages
 name|gint
@@ -2029,7 +2029,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27f652010308
+DECL|struct|__anon29ff64870308
 block|{
 DECL|member|document
 name|PopplerDocument
@@ -2054,7 +2054,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27f652010408
+DECL|struct|__anon29ff64870408
 block|{
 DECL|member|selector
 name|GimpPageSelector
@@ -2462,6 +2462,18 @@ name|selector
 argument_list|)
 argument_list|,
 name|n_pages
+argument_list|)
+expr_stmt|;
+name|gimp_page_selector_set_target
+argument_list|(
+name|GIMP_PAGE_SELECTOR
+argument_list|(
+name|selector
+argument_list|)
+argument_list|,
+name|loadvals
+operator|.
+name|target
 argument_list|)
 expr_stmt|;
 for|for
