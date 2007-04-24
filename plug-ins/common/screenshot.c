@@ -322,7 +322,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be5a1bb0103
+DECL|enum|__anon27a02d1e0103
 block|{
 DECL|enumerator|SHOOT_ROOT
 name|SHOOT_ROOT
@@ -341,7 +341,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be5a1bb0208
+DECL|struct|__anon27a02d1e0208
 block|{
 DECL|member|shoot_type
 name|ShootType
@@ -3742,6 +3742,10 @@ operator|=
 name|g_object_new
 argument_list|(
 name|GTK_TYPE_NOTEBOOK
+argument_list|,
+literal|"show-border"
+argument_list|,
+name|FALSE
 argument_list|,
 literal|"show-tabs"
 argument_list|,
