@@ -607,7 +607,7 @@ name|locale_domain_path
 argument_list|)
 expr_stmt|;
 else|else
-comment|/* FIXME: this consumes too much memory */
+comment|/* set the default plug-in locale domain */
 name|gimp_plug_in_def_set_locale_domain
 argument_list|(
 name|plug_in_def

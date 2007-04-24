@@ -126,13 +126,11 @@ modifier|*
 name|prog
 decl_stmt|;
 DECL|member|locale_domain
-name|gchar
-modifier|*
+name|GQuark
 name|locale_domain
 decl_stmt|;
 DECL|member|help_domain
-name|gchar
-modifier|*
+name|GQuark
 name|help_domain
 decl_stmt|;
 DECL|member|menu_label
