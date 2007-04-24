@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27680c920103
+DECL|enum|__anon2c5a12320103
 block|{
 DECL|enumerator|SELECTION_CHANGED
 name|SELECTION_CHANGED
@@ -81,7 +81,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27680c920203
+DECL|enum|__anon2c5a12320203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -97,7 +97,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27680c920303
+DECL|enum|__anon2c5a12320303
 block|{
 DECL|enumerator|COLUMN_PAGE_NO
 name|COLUMN_PAGE_NO
@@ -117,7 +117,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27680c920408
+DECL|struct|__anon2c5a12320408
 block|{
 DECL|member|n_pages
 name|gint
@@ -3367,7 +3367,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_page_selector_get_selected_pages:  * @selector: Pointer to a #GimpPageSelector.  * @n_selected_pages: Returns the number of selected pages.  *  * Returns: An array of page numbers of selected pages. Use g_free() if  *          you don't need the array any longer.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_page_selector_get_selected_pages:  * @selector: Pointer to a #GimpPageSelector.  * @n_selected_pages: Returns the number of selected pages.  *  * Returns: A sorted array of page numbers of selected pages. Use g_free() if  *          you don't need the array any longer.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
