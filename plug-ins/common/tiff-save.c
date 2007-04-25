@@ -70,13 +70,13 @@ DECL|macro|PLUG_IN_BINARY
 define|#
 directive|define
 name|PLUG_IN_BINARY
-value|"tiff"
+value|"tiff-save"
 end_define
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b1af720108
+DECL|struct|__anon29fbff910108
 block|{
 DECL|member|compression
 name|gint
@@ -99,7 +99,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b1af720208
+DECL|struct|__anon29fbff910208
 block|{
 DECL|member|ID
 name|gint32
