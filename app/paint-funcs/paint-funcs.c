@@ -11050,10 +11050,13 @@ else|:
 operator|(
 name|guchar
 operator|)
+name|ROUND
+argument_list|(
 name|total
 index|[
 name|b
 index|]
+argument_list|)
 expr_stmt|;
 block|}
 name|s_row
@@ -11248,10 +11251,13 @@ else|:
 operator|(
 name|guchar
 operator|)
+name|ROUND
+argument_list|(
 name|total
 index|[
 name|b
 index|]
+argument_list|)
 expr_stmt|;
 block|}
 name|s_row
