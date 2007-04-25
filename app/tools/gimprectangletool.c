@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e183660103
+DECL|enum|__anon297a062d0103
 block|{
 DECL|enumerator|RECTANGLE_CHANGED
 name|RECTANGLE_CHANGED
@@ -7713,7 +7713,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  * check whether the coordinates extend outside the bounds of the image  * or active drawable, if it is constrained not to.  If it does,truncates  * the corrners to the constraints.  */
+comment|/*  * check whether the coordinates extend outside the bounds of the image  * or active drawable, if it is constrained not to.  If it does, clamp  * the corners to the constraints.  */
 end_comment
 
 begin_function

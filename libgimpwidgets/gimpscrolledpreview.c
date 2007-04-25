@@ -58,7 +58,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afd0bfb0108
+DECL|struct|__anon28ed3a080108
 block|{
 DECL|member|hscr_policy
 name|GtkPolicyType
@@ -800,7 +800,8 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|g_signal_connect
+comment|/* Connect after here so that plug-ins get a chance to override the    * default behavior. See bug #364432.    */
+name|g_signal_connect_after
 argument_list|(
 name|GIMP_PREVIEW
 argument_list|(
@@ -1687,6 +1688,9 @@ block|{
 case|case
 literal|1
 case|:
+case|case
+literal|2
+case|:
 name|gtk_widget_get_pointer
 argument_list|(
 name|area
@@ -1737,10 +1741,6 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-literal|2
-case|:
-break|break;
-case|case
 literal|3
 case|:
 return|return
@@ -1757,11 +1757,19 @@ name|priv
 operator|->
 name|in_drag
 operator|&&
+operator|(
 name|button_event
 operator|->
 name|button
 operator|==
 literal|1
+operator|||
+name|button_event
+operator|->
+name|button
+operator|==
+literal|2
+operator|)
 condition|)
 block|{
 name|gtk_grab_remove
