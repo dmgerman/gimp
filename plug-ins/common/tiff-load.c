@@ -68,7 +68,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9b2c5b0108
+DECL|struct|__anon2bf86a2f0108
 block|{
 DECL|member|compression
 name|gint
@@ -91,7 +91,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9b2c5b0208
+DECL|struct|__anon2bf86a2f0208
 block|{
 DECL|member|ID
 name|gint32
@@ -125,7 +125,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9b2c5b0308
+DECL|struct|__anon2bf86a2f0308
 block|{
 DECL|member|n_pages
 name|gint
@@ -1056,7 +1056,7 @@ condition|)
 block|{
 name|target
 operator|=
-name|GIMP_PAGE_SELECTOR_TARGET_IMAGES
+name|GIMP_PAGE_SELECTOR_TARGET_LAYERS
 expr_stmt|;
 name|pages
 operator|.
@@ -1959,17 +1959,17 @@ operator|&&
 operator|(
 name|target
 operator|==
-name|GIMP_PAGE_SELECTOR_TARGET_LAYERS
+name|GIMP_PAGE_SELECTOR_TARGET_IMAGES
 operator|)
 condition|)
 name|do_images
 operator|=
-name|FALSE
+name|TRUE
 expr_stmt|;
 else|else
 name|do_images
 operator|=
-name|TRUE
+name|FALSE
 expr_stmt|;
 name|gimp_progress_init_printf
 argument_list|(
