@@ -5875,6 +5875,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -6083,6 +6085,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -6171,6 +6175,8 @@ argument_list|,
 literal|"name"
 argument_list|,
 literal|"the new name of the path"
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -9830,6 +9836,8 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
+name|TRUE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -9994,6 +10002,8 @@ argument_list|,
 literal|"A string that must be a complete and valid SVG document."
 argument_list|,
 name|TRUE
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,

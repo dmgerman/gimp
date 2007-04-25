@@ -907,11 +907,6 @@ condition|)
 block|{
 if|if
 condition|(
-name|strlen
-argument_list|(
-name|buffer_name
-argument_list|)
-operator|&&
 name|gimp_item_is_attached
 argument_list|(
 name|GIMP_ITEM
@@ -1093,11 +1088,6 @@ condition|)
 block|{
 if|if
 condition|(
-name|strlen
-argument_list|(
-name|buffer_name
-argument_list|)
-operator|&&
 name|gimp_item_is_attached
 argument_list|(
 name|GIMP_ITEM
@@ -1277,14 +1267,6 @@ condition|(
 name|success
 condition|)
 block|{
-if|if
-condition|(
-name|strlen
-argument_list|(
-name|buffer_name
-argument_list|)
-condition|)
-block|{
 name|real_name
 operator|=
 operator|(
@@ -1311,12 +1293,6 @@ argument_list|(
 name|real_name
 argument_list|)
 expr_stmt|;
-else|else
-name|success
-operator|=
-name|FALSE
-expr_stmt|;
-block|}
 else|else
 name|success
 operator|=
@@ -3758,6 +3734,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|TRUE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -3775,6 +3753,8 @@ argument_list|,
 literal|"real name"
 argument_list|,
 literal|"The real name given to the buffer, or NULL if the selection contained only transparent pixels"
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -3873,6 +3853,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|TRUE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -3890,6 +3872,8 @@ argument_list|,
 literal|"real name"
 argument_list|,
 literal|"The real name given to the buffer, or NULL if the selection contained only transparent pixels"
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -3988,6 +3972,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|TRUE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -4005,6 +3991,8 @@ argument_list|,
 literal|"real name"
 argument_list|,
 literal|"The real name given to the buffer"
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -4098,6 +4086,8 @@ argument_list|,
 literal|"buffer name"
 argument_list|,
 literal|"The name of the buffer to paste"
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -4209,6 +4199,8 @@ argument_list|,
 literal|"buffer name"
 argument_list|,
 literal|"The name of the buffer to paste"
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,

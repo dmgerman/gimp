@@ -494,6 +494,12 @@ name|null_ok
 range|:
 literal|1
 decl_stmt|;
+DECL|member|non_empty
+name|guint
+name|non_empty
+range|:
+literal|1
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -533,6 +539,9 @@ name|no_validate
 parameter_list|,
 name|gboolean
 name|null_ok
+parameter_list|,
+name|gboolean
+name|non_empty
 parameter_list|,
 specifier|const
 name|gchar

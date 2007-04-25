@@ -1870,6 +1870,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -1940,6 +1942,8 @@ argument_list|,
 name|TRUE
 argument_list|,
 name|FALSE
+argument_list|,
+name|TRUE
 argument_list|,
 name|NULL
 argument_list|,
@@ -2012,6 +2016,8 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -2031,6 +2037,8 @@ argument_list|,
 literal|"The regex for procedure blurb"
 argument_list|,
 name|TRUE
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -2056,6 +2064,8 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -2075,6 +2085,8 @@ argument_list|,
 literal|"The regex for procedure author"
 argument_list|,
 name|TRUE
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -2100,6 +2112,8 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -2122,6 +2136,8 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -2141,6 +2157,8 @@ argument_list|,
 literal|"The regex for procedure type: { 'Internal GIMP procedure', 'GIMP Plug-In', 'GIMP Extension', 'Temporary Procedure' }"
 argument_list|,
 name|TRUE
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -2253,6 +2271,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|TRUE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -2270,6 +2290,8 @@ argument_list|,
 literal|"blurb"
 argument_list|,
 literal|"A short blurb"
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -2297,6 +2319,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -2314,6 +2338,8 @@ argument_list|,
 literal|"author"
 argument_list|,
 literal|"Author(s) of the procedure"
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -2341,6 +2367,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -2358,6 +2386,8 @@ argument_list|,
 literal|"date"
 argument_list|,
 literal|"Copyright date"
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -2498,6 +2528,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|TRUE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -2577,6 +2609,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -2594,6 +2628,8 @@ argument_list|,
 literal|"arg desc"
 argument_list|,
 literal|"A description of the argument"
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -2669,6 +2705,8 @@ argument_list|,
 name|FALSE
 argument_list|,
 name|FALSE
+argument_list|,
+name|TRUE
 argument_list|,
 name|NULL
 argument_list|,
@@ -2749,6 +2787,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -2766,6 +2806,8 @@ argument_list|,
 literal|"val desc"
 argument_list|,
 literal|"A description of the return value"
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -2841,6 +2883,8 @@ argument_list|,
 name|FALSE
 argument_list|,
 name|FALSE
+argument_list|,
+name|TRUE
 argument_list|,
 name|NULL
 argument_list|,
@@ -2951,6 +2995,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|TRUE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -3043,6 +3089,8 @@ argument_list|,
 name|FALSE
 argument_list|,
 name|FALSE
+argument_list|,
+name|TRUE
 argument_list|,
 name|NULL
 argument_list|,

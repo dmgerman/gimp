@@ -1620,6 +1620,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -1726,6 +1728,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -1819,6 +1823,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -1878,6 +1884,8 @@ argument_list|,
 literal|"fontname"
 argument_list|,
 literal|"The name of the font"
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -2132,6 +2140,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -2238,6 +2248,8 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -2257,6 +2269,8 @@ argument_list|,
 literal|"The font family"
 argument_list|,
 name|TRUE
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -2282,6 +2296,8 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -2301,6 +2317,8 @@ argument_list|,
 literal|"The font slant"
 argument_list|,
 name|TRUE
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -2326,6 +2344,8 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -2345,6 +2365,8 @@ argument_list|,
 literal|"The font spacing"
 argument_list|,
 name|TRUE
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -2370,6 +2392,8 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -2389,6 +2413,8 @@ argument_list|,
 literal|"The font encoding"
 argument_list|,
 name|TRUE
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -2485,6 +2511,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -2549,6 +2577,8 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -2568,6 +2598,8 @@ argument_list|,
 literal|"The font family"
 argument_list|,
 name|TRUE
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -2593,6 +2625,8 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -2612,6 +2646,8 @@ argument_list|,
 literal|"The font slant"
 argument_list|,
 name|TRUE
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -2637,6 +2673,8 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -2656,6 +2694,8 @@ argument_list|,
 literal|"The font spacing"
 argument_list|,
 name|TRUE
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -2681,6 +2721,8 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -2700,6 +2742,8 @@ argument_list|,
 literal|"The font encoding"
 argument_list|,
 name|TRUE
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,

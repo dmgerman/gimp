@@ -2991,6 +2991,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -3079,6 +3081,8 @@ argument_list|,
 literal|"name"
 argument_list|,
 literal|"The name of the path to make current."
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -3177,6 +3181,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -3265,6 +3271,8 @@ argument_list|,
 literal|"name"
 argument_list|,
 literal|"The name of the path whose points should be listed."
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -3440,6 +3448,8 @@ argument_list|,
 literal|"name"
 argument_list|,
 literal|"The name of the path to create. If it exists then a unique name will be created - query the list of paths if you want to make sure that the name of the path you create is unique. This will be set as the current path."
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -3830,6 +3840,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -3940,6 +3952,8 @@ argument_list|,
 literal|"name"
 argument_list|,
 literal|"the name of the path whose tattoo should be set"
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -4082,6 +4096,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -4170,6 +4186,8 @@ argument_list|,
 literal|"name"
 argument_list|,
 literal|"The name of the path whose locked status should be obtained."
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -4286,6 +4304,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -4392,6 +4412,8 @@ argument_list|,
 literal|"name"
 argument_list|,
 literal|"The name of the path which should be made into selection."
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -4589,6 +4611,8 @@ argument_list|,
 literal|"The name of the SVG file to import."
 argument_list|,
 name|TRUE
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,

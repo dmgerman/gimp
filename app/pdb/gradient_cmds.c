@@ -356,14 +356,6 @@ condition|(
 name|success
 condition|)
 block|{
-if|if
-condition|(
-name|strlen
-argument_list|(
-name|name
-argument_list|)
-condition|)
-block|{
 name|GimpData
 modifier|*
 name|data
@@ -394,12 +386,6 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-else|else
-name|success
-operator|=
-name|FALSE
-expr_stmt|;
-block|}
 else|else
 name|success
 operator|=
@@ -860,11 +846,6 @@ name|gradient
 argument_list|)
 operator|->
 name|writable
-operator|&&
-name|strlen
-argument_list|(
-name|new_name
-argument_list|)
 condition|)
 block|{
 name|gimp_object_set_name
@@ -5756,6 +5737,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|TRUE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -5773,6 +5756,8 @@ argument_list|,
 literal|"actual name"
 argument_list|,
 literal|"The actual new gradient name"
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -5849,6 +5834,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -5866,6 +5853,8 @@ argument_list|,
 literal|"copy name"
 argument_list|,
 literal|"The name of the gradient's copy"
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -5937,6 +5926,8 @@ argument_list|,
 literal|"name"
 argument_list|,
 literal|"The gradient name"
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -6031,6 +6022,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -6053,6 +6046,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|TRUE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -6070,6 +6065,8 @@ argument_list|,
 literal|"actual name"
 argument_list|,
 literal|"The actual new name of the gradient"
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -6146,6 +6143,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -6212,6 +6211,8 @@ argument_list|,
 literal|"name"
 argument_list|,
 literal|"The gradient name"
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -6361,6 +6362,8 @@ argument_list|,
 literal|"name"
 argument_list|,
 literal|"The gradient name"
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -6531,6 +6534,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -6667,6 +6672,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -6797,6 +6804,8 @@ argument_list|,
 literal|"name"
 argument_list|,
 literal|"The gradient name"
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -6938,6 +6947,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -7073,6 +7084,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -7184,6 +7197,8 @@ argument_list|,
 literal|"name"
 argument_list|,
 literal|"The gradient name"
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -7327,6 +7342,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -7438,6 +7455,8 @@ argument_list|,
 literal|"name"
 argument_list|,
 literal|"The gradient name"
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -7581,6 +7600,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -7692,6 +7713,8 @@ argument_list|,
 literal|"name"
 argument_list|,
 literal|"The gradient name"
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -7835,6 +7858,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -7948,6 +7973,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -8056,6 +8083,8 @@ argument_list|,
 literal|"name"
 argument_list|,
 literal|"The gradient name"
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -8196,6 +8225,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -8331,6 +8362,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -8441,6 +8474,8 @@ argument_list|,
 literal|"name"
 argument_list|,
 literal|"The gradient name"
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -8583,6 +8618,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -8693,6 +8730,8 @@ argument_list|,
 literal|"name"
 argument_list|,
 literal|"The gradient name"
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -8835,6 +8874,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -8945,6 +8986,8 @@ argument_list|,
 literal|"name"
 argument_list|,
 literal|"The gradient name"
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -9065,6 +9108,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -9180,6 +9225,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -9290,6 +9337,8 @@ argument_list|,
 literal|"name"
 argument_list|,
 literal|"The gradient name"
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,

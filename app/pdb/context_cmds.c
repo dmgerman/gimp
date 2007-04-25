@@ -2412,6 +2412,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -2478,6 +2480,8 @@ argument_list|,
 literal|"name"
 argument_list|,
 literal|"The name of the paint method"
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -3208,6 +3212,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -3274,6 +3280,8 @@ argument_list|,
 literal|"name"
 argument_list|,
 literal|"The name of the brush"
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -3350,6 +3358,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -3416,6 +3426,8 @@ argument_list|,
 literal|"name"
 argument_list|,
 literal|"The name of the pattern"
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -3492,6 +3504,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -3558,6 +3572,8 @@ argument_list|,
 literal|"name"
 argument_list|,
 literal|"The name of the gradient"
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -3634,6 +3650,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -3700,6 +3718,8 @@ argument_list|,
 literal|"name"
 argument_list|,
 literal|"The name of the palette"
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -3776,6 +3796,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -3842,6 +3864,8 @@ argument_list|,
 literal|"name"
 argument_list|,
 literal|"The name of the font"
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,

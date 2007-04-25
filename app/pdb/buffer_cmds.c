@@ -327,11 +327,6 @@ decl_stmt|;
 if|if
 condition|(
 name|buffer
-operator|&&
-name|strlen
-argument_list|(
-name|new_name
-argument_list|)
 condition|)
 block|{
 name|gimp_object_set_name
@@ -1100,6 +1095,8 @@ name|FALSE
 argument_list|,
 name|TRUE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -1209,6 +1206,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -1231,6 +1230,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|TRUE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -1248,6 +1249,8 @@ argument_list|,
 literal|"real name"
 argument_list|,
 literal|"The real name given to the buffer"
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1324,6 +1327,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -1390,6 +1395,8 @@ argument_list|,
 literal|"buffer name"
 argument_list|,
 literal|"The buffer name"
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1488,6 +1495,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -1581,6 +1590,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -1669,6 +1680,8 @@ argument_list|,
 literal|"buffer name"
 argument_list|,
 literal|"The buffer name"
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,

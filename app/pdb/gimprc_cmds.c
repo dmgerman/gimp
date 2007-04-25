@@ -914,6 +914,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -931,6 +933,8 @@ argument_list|,
 literal|"value"
 argument_list|,
 literal|"The value associated with the queried token"
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1007,6 +1011,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -1024,6 +1030,8 @@ argument_list|,
 literal|"value"
 argument_list|,
 literal|"The value to set the token to"
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1095,6 +1103,8 @@ argument_list|,
 literal|"comment"
 argument_list|,
 literal|"Default image comment"
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1337,6 +1347,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -1408,6 +1420,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -1474,6 +1488,8 @@ argument_list|,
 literal|"load inhibit"
 argument_list|,
 literal|"The list of modules"
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,

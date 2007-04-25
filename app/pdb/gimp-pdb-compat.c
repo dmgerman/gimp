@@ -225,6 +225,8 @@ name|TRUE
 argument_list|,
 name|TRUE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|G_PARAM_READWRITE
@@ -751,7 +753,7 @@ name|pdb_type_quark
 condition|)
 block|{
 struct|struct
-DECL|struct|__anon28829e800108
+DECL|struct|__anon29c951720108
 block|{
 DECL|member|g_type
 name|GType
@@ -1059,7 +1061,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon28829e800208
+DECL|struct|__anon29c951720208
 block|{
 DECL|member|old_name
 specifier|const

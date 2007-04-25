@@ -1933,6 +1933,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -2080,6 +2082,8 @@ argument_list|,
 literal|"name"
 argument_list|,
 literal|"The name of the parasite to detach."
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -2260,6 +2264,8 @@ argument_list|,
 literal|"name"
 argument_list|,
 literal|"The name of the parasite to find"
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -2456,6 +2462,8 @@ argument_list|,
 literal|"name"
 argument_list|,
 literal|"The name of the parasite to detach from an image."
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -2663,6 +2671,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -2854,6 +2864,8 @@ argument_list|,
 literal|"name"
 argument_list|,
 literal|"The name of the parasite to detach from a drawable."
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -3061,6 +3073,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -3252,6 +3266,8 @@ argument_list|,
 literal|"name"
 argument_list|,
 literal|"The name of the parasite to detach from a vectors object."
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,

@@ -1600,6 +1600,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|TRUE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -1667,6 +1669,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|TRUE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -1688,6 +1692,8 @@ argument_list|,
 name|FALSE
 argument_list|,
 name|FALSE
+argument_list|,
+name|TRUE
 argument_list|,
 name|NULL
 argument_list|,
@@ -1711,6 +1717,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|TRUE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -1732,6 +1740,8 @@ argument_list|,
 name|FALSE
 argument_list|,
 name|FALSE
+argument_list|,
+name|TRUE
 argument_list|,
 name|NULL
 argument_list|,
@@ -2026,6 +2036,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -2306,6 +2318,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -2394,6 +2408,8 @@ argument_list|,
 literal|"abbreviation"
 argument_list|,
 literal|"The unit's abbreviation"
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -2492,6 +2508,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -2580,6 +2598,8 @@ argument_list|,
 literal|"plural"
 argument_list|,
 literal|"The unit's plural form"
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,

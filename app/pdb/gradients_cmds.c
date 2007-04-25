@@ -1272,6 +1272,8 @@ name|FALSE
 argument_list|,
 name|TRUE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -1651,6 +1653,8 @@ name|FALSE
 argument_list|,
 name|TRUE
 argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
@@ -1710,6 +1714,8 @@ argument_list|,
 literal|"actual name"
 argument_list|,
 literal|"The gradient name"
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
