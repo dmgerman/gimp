@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon287eafe50103
+DECL|enum|__anon2b07a9cc0103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -84,7 +84,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon287eafe50203
+DECL|enum|__anon2b07a9cc0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1766,7 +1766,6 @@ name|height
 expr_stmt|;
 return|return;
 block|}
-return|return
 name|GIMP_BRUSH_GET_CLASS
 argument_list|(
 name|brush
@@ -1782,7 +1781,7 @@ name|width
 argument_list|,
 name|height
 argument_list|)
-return|;
+expr_stmt|;
 block|}
 end_function
 
