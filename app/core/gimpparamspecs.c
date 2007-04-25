@@ -1191,6 +1191,14 @@ index|]
 operator|.
 name|v_pointer
 decl_stmt|;
+ifdef|#
+directive|ifdef
+name|__GNUC__
+warning|#
+directive|warning
+warning|FIXME: use GParamSpecString::ensure_non_null and chain up once we depend on glib 2.12.11 or glib 2.14
+endif|#
+directive|endif
 if|if
 condition|(
 name|string
