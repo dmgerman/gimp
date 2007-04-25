@@ -68,7 +68,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279513d00108
+DECL|struct|__anon2bc2b01b0108
 block|{
 DECL|member|compression
 name|gint
@@ -91,7 +91,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279513d00208
+DECL|struct|__anon2bc2b01b0208
 block|{
 DECL|member|ID
 name|gint32
@@ -125,7 +125,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279513d00308
+DECL|struct|__anon2bc2b01b0308
 block|{
 DECL|member|n_pages
 name|gint
@@ -182,6 +182,23 @@ name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|gboolean
+name|load_dialog
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|filename
+parameter_list|,
+name|TiffSelectedPages
+modifier|*
+name|pages
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -550,23 +567,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-specifier|static
-name|gboolean
-name|load_dialog
-parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|filename
-parameter_list|,
-name|TiffSelectedPages
-modifier|*
-name|pages
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
 specifier|const
@@ -618,9 +618,9 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
+DECL|variable|target
 specifier|static
 name|GimpPageSelectorTarget
-DECL|variable|target
 name|target
 init|=
 name|GIMP_PAGE_SELECTOR_TARGET_LAYERS

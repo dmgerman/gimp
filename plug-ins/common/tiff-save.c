@@ -76,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fbff910108
+DECL|struct|__anon275cd6940108
 block|{
 DECL|member|compression
 name|gint
@@ -99,7 +99,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fbff910208
+DECL|struct|__anon275cd6940208
 block|{
 DECL|member|ID
 name|gint32
@@ -625,6 +625,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|(
 name|strcmp
 argument_list|(
 name|name
@@ -633,7 +634,9 @@ name|SAVE_PROC
 argument_list|)
 operator|==
 literal|0
+operator|)
 operator|||
+operator|(
 name|strcmp
 argument_list|(
 name|name
@@ -642,6 +645,7 @@ name|SAVE2_PROC
 argument_list|)
 operator|==
 literal|0
+operator|)
 condition|)
 block|{
 comment|/* Plug-in is either file_tiff_save or file_tiff_save2 */
