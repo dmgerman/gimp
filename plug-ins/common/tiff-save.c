@@ -76,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275cd6940108
+DECL|struct|__anon2b6f8efd0108
 block|{
 DECL|member|compression
 name|gint
@@ -99,7 +99,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275cd6940208
+DECL|struct|__anon2b6f8efd0208
 block|{
 DECL|member|ID
 name|gint32
@@ -3143,6 +3143,11 @@ expr_stmt|;
 name|TIFFClose
 argument_list|(
 name|tif
+argument_list|)
+expr_stmt|;
+name|gimp_progress_update
+argument_list|(
+literal|1.0
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_detach
