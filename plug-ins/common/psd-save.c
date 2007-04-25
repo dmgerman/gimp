@@ -78,7 +78,7 @@ DECL|macro|PLUG_IN_BINARY
 define|#
 directive|define
 name|PLUG_IN_BINARY
-value|"psd_save"
+value|"psd-save"
 end_define
 
 begin_comment

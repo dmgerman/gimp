@@ -94,7 +94,7 @@ DECL|macro|PLUG_IN_BINARY
 define|#
 directive|define
 name|PLUG_IN_BINARY
-value|"gif"
+value|"gif-save"
 end_define
 
 begin_comment
@@ -135,7 +135,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f633630103
+DECL|enum|__anon2b632c410103
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -152,7 +152,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f633630208
+DECL|struct|__anon2b632c410208
 block|{
 DECL|member|interlace
 name|gint

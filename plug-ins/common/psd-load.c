@@ -31,14 +31,6 @@ name|LOAD_PROC
 value|"file-psd-load"
 end_define
 
-begin_define
-DECL|macro|PLUG_IN_BINARY
-define|#
-directive|define
-name|PLUG_IN_BINARY
-value|"psd"
-end_define
-
 begin_comment
 comment|/* set to TRUE if you want debugging, FALSE otherwise */
 end_comment
@@ -136,7 +128,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27cef9f30103
+DECL|enum|__anon294a06cb0103
 block|{
 DECL|enumerator|PSD_UNKNOWN_IMAGE
 name|PSD_UNKNOWN_IMAGE
@@ -324,7 +316,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cef9f30208
+DECL|struct|__anon294a06cb0208
 block|{
 DECL|member|hRes
 name|Fixed
@@ -574,7 +566,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27cef9f30308
+DECL|struct|__anon294a06cb0308
 block|{
 DECL|member|signature
 name|gchar
