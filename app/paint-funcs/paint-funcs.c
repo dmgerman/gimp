@@ -3138,7 +3138,6 @@ name|affect
 index|[
 name|b
 index|]
-operator|)
 condition|?
 name|INT_BLEND
 argument_list|(
@@ -3161,6 +3160,7 @@ name|src1
 index|[
 name|b
 index|]
+operator|)
 expr_stmt|;
 name|m
 operator|++
@@ -3210,7 +3210,6 @@ name|affect
 index|[
 name|b
 index|]
-operator|)
 condition|?
 name|INT_BLEND
 argument_list|(
@@ -3233,6 +3232,7 @@ name|src1
 index|[
 name|b
 index|]
+operator|)
 expr_stmt|;
 name|src1
 operator|+=
@@ -3370,7 +3370,6 @@ name|affect
 index|[
 name|b
 index|]
-operator|)
 condition|?
 name|INT_BLEND
 argument_list|(
@@ -3393,6 +3392,7 @@ name|src1
 index|[
 name|b
 index|]
+operator|)
 expr_stmt|;
 name|m
 operator|++
@@ -3582,7 +3582,6 @@ name|affect
 index|[
 name|b
 index|]
-operator|)
 condition|?
 name|INT_BLEND
 argument_list|(
@@ -3605,6 +3604,7 @@ name|src1
 index|[
 name|b
 index|]
+operator|)
 expr_stmt|;
 name|src1
 operator|+=
@@ -10555,10 +10555,12 @@ name|GIMP_NORMAL_CONVOL
 expr_stmt|;
 block|}
 else|else
+block|{
 name|offset
 operator|=
 literal|0
 expr_stmt|;
+block|}
 comment|/*  check for the boundary cases  */
 if|if
 condition|(
@@ -10827,7 +10829,7 @@ index|[
 literal|3
 index|]
 operator|=
-literal|0.0
+literal|0
 expr_stmt|;
 name|weighted_divisor
 operator|=
@@ -10917,10 +10919,12 @@ operator|++
 expr_stmt|;
 block|}
 else|else
+block|{
 name|s
 operator|+=
 name|bytes
 expr_stmt|;
+block|}
 name|m
 operator|++
 expr_stmt|;
@@ -11092,7 +11096,7 @@ index|[
 literal|3
 index|]
 operator|=
-literal|0.0
+literal|0
 expr_stmt|;
 name|i
 operator|=
@@ -15119,7 +15123,6 @@ condition|;
 name|i
 operator|--
 control|)
-block|{
 name|max
 index|[
 name|x
@@ -15162,7 +15165,6 @@ name|x
 index|]
 argument_list|)
 expr_stmt|;
-block|}
 name|max
 index|[
 name|x
