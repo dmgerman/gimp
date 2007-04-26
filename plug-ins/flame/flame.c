@@ -139,7 +139,7 @@ end_define
 
 begin_struct
 struct|struct
-DECL|struct|__anon2c232b350108
+DECL|struct|__anon27a033580108
 block|{
 DECL|member|randomize
 name|gint
@@ -1942,7 +1942,7 @@ name|g_fopen
 argument_list|(
 name|filename
 argument_list|,
-literal|"r"
+literal|"rb"
 argument_list|)
 expr_stmt|;
 if|if
@@ -2069,7 +2069,7 @@ name|g_fopen
 argument_list|(
 name|filename
 argument_list|,
-literal|"w"
+literal|"wb"
 argument_list|)
 decl_stmt|;
 if|if

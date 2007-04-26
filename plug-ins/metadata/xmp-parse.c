@@ -127,7 +127,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c5166190103
+DECL|enum|__anon2c3c14250103
 block|{
 DECL|enumerator|STATE_START
 name|STATE_START
@@ -221,7 +221,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5166190208
+DECL|struct|__anon2c3c14250208
 block|{
 DECL|member|depth
 name|gint
@@ -4335,7 +4335,7 @@ literal|0
 condition|)
 block|{
 comment|/* FIXME: remove this debugging code */
-comment|/*             FILE *ttt;              ttt = fopen ("/tmp/xmp-thumb.jpg", "w");             fwrite (decoded, decoded_size, 1, ttt);             fclose (ttt);             */
+comment|/*             FILE *ttt;              ttt = fopen ("/tmp/xmp-thumb.jpg", "wb");             fwrite (decoded, decoded_size, 1, ttt);             fclose (ttt);             */
 name|g_print
 argument_list|(
 literal|"XMP: Thumb text len: %d (1/4 = %d)\nMax size: %d\nUsed size: %d\n"

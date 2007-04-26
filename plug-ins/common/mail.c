@@ -239,7 +239,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4da98c0103
+DECL|enum|__anon2bf6b86a0103
 block|{
 DECL|enumerator|ENCAPSULATION_UUENCODE
 name|ENCAPSULATION_UUENCODE
@@ -277,7 +277,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4da98c0208
+DECL|struct|__anon2bf6b86a0208
 block|{
 DECL|member|receipt
 name|gchar
@@ -3515,7 +3515,7 @@ name|fdopen
 argument_list|(
 name|fd
 argument_list|,
-literal|"w"
+literal|"wb"
 argument_list|)
 return|;
 block|}
