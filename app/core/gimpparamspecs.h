@@ -482,9 +482,9 @@ DECL|member|parent_instance
 name|GParamSpecString
 name|parent_instance
 decl_stmt|;
-DECL|member|no_validate
+DECL|member|allow_non_utf8
 name|guint
-name|no_validate
+name|allow_non_utf8
 range|:
 literal|1
 decl_stmt|;
@@ -535,7 +535,7 @@ modifier|*
 name|blurb
 parameter_list|,
 name|gboolean
-name|no_validate
+name|allow_non_utf8
 parameter_list|,
 name|gboolean
 name|null_ok

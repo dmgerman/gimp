@@ -1135,7 +1135,7 @@ argument_list|)
 decl_stmt|;
 name|sspec
 operator|->
-name|no_validate
+name|allow_non_utf8
 operator|=
 name|FALSE
 expr_stmt|;
@@ -1278,7 +1278,7 @@ condition|(
 operator|!
 name|sspec
 operator|->
-name|no_validate
+name|allow_non_utf8
 operator|&&
 operator|!
 name|g_utf8_validate
@@ -1466,7 +1466,7 @@ end_function
 begin_function
 name|GParamSpec
 modifier|*
-DECL|function|gimp_param_spec_string (const gchar * name,const gchar * nick,const gchar * blurb,gboolean no_validate,gboolean null_ok,gboolean non_empty,const gchar * default_value,GParamFlags flags)
+DECL|function|gimp_param_spec_string (const gchar * name,const gchar * nick,const gchar * blurb,gboolean allow_non_utf8,gboolean null_ok,gboolean non_empty,const gchar * default_value,GParamFlags flags)
 name|gimp_param_spec_string
 parameter_list|(
 specifier|const
@@ -1485,7 +1485,7 @@ modifier|*
 name|blurb
 parameter_list|,
 name|gboolean
-name|no_validate
+name|allow_non_utf8
 parameter_list|,
 name|gboolean
 name|null_ok
@@ -1562,9 +1562,9 @@ argument_list|)
 expr_stmt|;
 name|sspec
 operator|->
-name|no_validate
+name|allow_non_utf8
 operator|=
-name|no_validate
+name|allow_non_utf8
 condition|?
 name|TRUE
 else|:
