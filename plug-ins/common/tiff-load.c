@@ -68,7 +68,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2761a24f0108
+DECL|struct|__anon275900200108
 block|{
 DECL|member|compression
 name|gint
@@ -91,7 +91,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2761a24f0208
+DECL|struct|__anon275900200208
 block|{
 DECL|member|ID
 name|gint32
@@ -125,7 +125,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2761a24f0308
+DECL|struct|__anon275900200308
 block|{
 DECL|member|o_pages
 name|gint
@@ -3739,6 +3739,7 @@ name|channel
 operator|=
 name|NULL
 expr_stmt|;
+comment|/* TODO: in GIMP 2.6, use a dialog to selectively enable the        * following code, as the save plug-in will then save layer offests        * as well.        */
 comment|/* compute bounding box of all layers read so far */
 if|if
 condition|(
