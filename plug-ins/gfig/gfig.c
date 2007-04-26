@@ -1597,7 +1597,7 @@ name|g_fopen
 argument_list|(
 name|filename
 argument_list|,
-literal|"r"
+literal|"rb"
 argument_list|)
 expr_stmt|;
 if|if
@@ -3029,7 +3029,7 @@ name|g_fopen
 argument_list|(
 name|fname
 argument_list|,
-literal|"w"
+literal|"wb"
 argument_list|)
 expr_stmt|;
 if|if
@@ -3150,7 +3150,7 @@ name|g_fopen
 argument_list|(
 name|savename
 argument_list|,
-literal|"w+"
+literal|"wb+"
 argument_list|)
 expr_stmt|;
 if|if
