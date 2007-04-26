@@ -12110,7 +12110,9 @@ name|length
 expr_stmt|;
 name|val
 operator|=
-literal|0
+name|total
+operator|/
+literal|2
 expr_stmt|;
 name|i
 operator|=
@@ -12512,7 +12514,9 @@ name|length
 expr_stmt|;
 name|val
 operator|=
-literal|0
+name|total
+operator|/
+literal|2
 expr_stmt|;
 name|i
 operator|=

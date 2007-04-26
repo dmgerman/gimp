@@ -1111,6 +1111,8 @@ name|col
 operator|+
 name|bytes
 index|]
+operator|+
+literal|4
 operator|)
 operator|/
 literal|9
@@ -1127,10 +1129,7 @@ operator|*
 name|d
 operator|++
 operator|=
-operator|(
-call|(
-name|gint
-call|)
+name|ROUND
 argument_list|(
 operator|(
 call|(
@@ -1427,7 +1426,6 @@ name|ind
 index|]
 operator|)
 argument_list|)
-operator|)
 expr_stmt|;
 block|}
 block|}
