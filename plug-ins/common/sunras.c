@@ -127,7 +127,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2881c1750108
+DECL|struct|__anon2afa022f0108
 block|{
 DECL|member|l_ras_magic
 name|L_CARD32
@@ -216,7 +216,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2881c1750208
+DECL|struct|__anon2afa022f0208
 block|{
 DECL|member|val
 name|gint
@@ -320,8 +320,8 @@ parameter_list|,
 name|L_SUNFILEHEADER
 modifier|*
 parameter_list|,
-name|unsigned
-name|char
+specifier|const
+name|guchar
 modifier|*
 parameter_list|)
 function_decl|;
@@ -812,7 +812,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2881c1750308
+DECL|struct|__anon2afa022f0308
 block|{
 DECL|member|rle
 name|gboolean
@@ -3914,7 +3914,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|set_color_table (gint32 image_ID,L_SUNFILEHEADER * sunhdr,guchar * suncolmap)
+DECL|function|set_color_table (gint32 image_ID,L_SUNFILEHEADER * sunhdr,const guchar * suncolmap)
 name|set_color_table
 parameter_list|(
 name|gint32
@@ -3924,16 +3924,12 @@ name|L_SUNFILEHEADER
 modifier|*
 name|sunhdr
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|suncolmap
 parameter_list|)
 block|{
-name|int
-name|ncols
-decl_stmt|,
-name|j
-decl_stmt|;
 name|guchar
 name|ColorMap
 index|[
@@ -3941,6 +3937,11 @@ literal|256
 operator|*
 literal|3
 index|]
+decl_stmt|;
+name|gint
+name|ncols
+decl_stmt|,
+name|j
 decl_stmt|;
 name|ncols
 operator|=
@@ -3965,7 +3966,12 @@ literal|0
 init|;
 name|j
 operator|<
+name|MIN
+argument_list|(
 name|ncols
+argument_list|,
+literal|256
+argument_list|)
 condition|;
 name|j
 operator|++
@@ -3976,6 +3982,8 @@ index|[
 name|j
 operator|*
 literal|3
+operator|+
+literal|0
 index|]
 operator|=
 name|suncolmap
