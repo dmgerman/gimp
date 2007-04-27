@@ -341,7 +341,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4269650108
+DECL|struct|__anon2c74b59d0108
 block|{
 DECL|member|dst_id
 name|gint32
@@ -410,7 +410,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4269650208
+DECL|struct|__anon2c74b59d0208
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -518,7 +518,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4269650308
+DECL|struct|__anon2c74b59d0308
 block|{
 DECL|member|color
 name|guchar
@@ -547,7 +547,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4269650408
+DECL|struct|__anon2c74b59d0408
 block|{
 DECL|member|all_samples
 name|gint32
@@ -574,7 +574,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4269650508
+DECL|struct|__anon2c74b59d0508
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -5013,13 +5013,7 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 decl_stmt|;
-name|gchar
-name|text
-index|[
-literal|20
-index|]
-decl_stmt|;
-name|double
+name|gdouble
 name|width
 decl_stmt|,
 name|mid
