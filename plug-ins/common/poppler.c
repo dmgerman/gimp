@@ -78,7 +78,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ff64870108
+DECL|struct|__anon2932c1d80108
 block|{
 DECL|member|target
 name|GimpPageSelectorTarget
@@ -87,10 +87,6 @@ decl_stmt|;
 DECL|member|resolution
 name|gdouble
 name|resolution
-decl_stmt|;
-DECL|member|antialias
-name|gboolean
-name|antialias
 decl_stmt|;
 DECL|typedef|PdfLoadVals
 block|}
@@ -108,10 +104,7 @@ block|{
 name|GIMP_PAGE_SELECTOR_TARGET_LAYERS
 block|,
 literal|100.00
-block|,
 comment|/* 100 dpi   */
-name|TRUE
-comment|/* antialias */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -119,7 +112,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ff64870208
+DECL|struct|__anon2932c1d80208
 block|{
 DECL|member|n_pages
 name|gint
@@ -202,9 +195,6 @@ name|target
 parameter_list|,
 name|guint32
 name|resolution
-parameter_list|,
-name|gboolean
-name|antialias
 parameter_list|,
 name|PdfSelectedPages
 modifier|*
@@ -370,14 +360,6 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"antialias"
-block|,
-literal|"Whether to antialias"
-block|}
-block|,
-block|{
-name|GIMP_PDB_INT32
-block|,
 literal|"n-pages"
 block|,
 literal|"Number of pages to load (0 for all)"
@@ -386,7 +368,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32ARRAY
 block|,
-literal|"page"
+literal|"pages"
 block|,
 literal|"The pages to load"
 block|}
@@ -782,7 +764,7 @@ case|:
 case|case
 name|GIMP_RUN_NONINTERACTIVE
 case|:
-comment|/* bah! hardly any file plugins work non-interactively.            * why should we? */
+comment|/* FIXME: implement non-interactive mode */
 name|status
 operator|=
 name|GIMP_PDB_EXECUTION_ERROR
@@ -820,10 +802,6 @@ argument_list|,
 name|loadvals
 operator|.
 name|resolution
-argument_list|,
-name|loadvals
-operator|.
-name|antialias
 argument_list|,
 name|pages
 argument_list|)
@@ -940,7 +918,7 @@ literal|1
 decl_stmt|;
 name|GdkPixbuf
 modifier|*
-name|buf
+name|pixbuf
 init|=
 name|NULL
 decl_stmt|;
@@ -1005,7 +983,7 @@ name|page
 argument_list|)
 expr_stmt|;
 block|}
-name|buf
+name|pixbuf
 operator|=
 name|get_thumbnail
 argument_list|(
@@ -1023,10 +1001,15 @@ operator|.
 name|d_int32
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|doc
+argument_list|)
+expr_stmt|;
 block|}
 if|if
 condition|(
-name|buf
+name|pixbuf
 condition|)
 block|{
 name|image
@@ -1035,12 +1018,12 @@ name|gimp_image_new
 argument_list|(
 name|gdk_pixbuf_get_width
 argument_list|(
-name|buf
+name|pixbuf
 argument_list|)
 argument_list|,
 name|gdk_pixbuf_get_height
 argument_list|(
-name|buf
+name|pixbuf
 argument_list|)
 argument_list|,
 name|GIMP_RGB
@@ -1059,11 +1042,16 @@ literal|"thumbnail"
 argument_list|,
 literal|0
 argument_list|,
-name|buf
+name|pixbuf
 argument_list|,
 literal|0.0
 argument_list|,
 literal|1.0
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|pixbuf
 argument_list|)
 expr_stmt|;
 name|gimp_image_undo_enable
@@ -1095,24 +1083,6 @@ expr_stmt|;
 name|height
 operator|*=
 name|scale
-expr_stmt|;
-if|if
-condition|(
-name|doc
-condition|)
-name|g_object_unref
-argument_list|(
-name|doc
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|buf
-condition|)
-name|g_object_unref
-argument_list|(
-name|buf
-argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -1397,7 +1367,7 @@ end_function
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_image (PopplerDocument * doc,const gchar * filename,GimpRunMode run_mode,GimpPageSelectorTarget target,guint32 resolution,gboolean antialias,PdfSelectedPages * pages)
+DECL|function|load_image (PopplerDocument * doc,const gchar * filename,GimpRunMode run_mode,GimpPageSelectorTarget target,guint32 resolution,PdfSelectedPages * pages)
 name|load_image
 parameter_list|(
 name|PopplerDocument
@@ -1417,9 +1387,6 @@ name|target
 parameter_list|,
 name|guint32
 name|resolution
-parameter_list|,
-name|gboolean
-name|antialias
 parameter_list|,
 name|PdfSelectedPages
 modifier|*
@@ -1488,12 +1455,6 @@ name|GIMP_UNIT_POINT
 argument_list|)
 expr_stmt|;
 comment|/* read the file */
-if|#
-directive|if
-literal|0
-block|poppler_set_antialias (antialias);
-endif|#
-directive|endif
 for|for
 control|(
 name|i
@@ -1696,23 +1657,9 @@ name|height
 argument_list|,
 name|scale
 argument_list|,
-ifdef|#
-directive|ifdef
-name|HAVE_POPPLER_0_4_1
 literal|0
 argument_list|,
-endif|#
-directive|endif
 name|buf
-ifndef|#
-directive|ifndef
-name|HAVE_POPPLER_0_4
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-endif|#
-directive|endif
 argument_list|)
 expr_stmt|;
 name|layer_from_pixbuf
@@ -1926,11 +1873,13 @@ operator|!
 name|pixbuf
 condition|)
 block|{
-name|double
+name|gdouble
 name|width
-decl_stmt|,
+decl_stmt|;
+name|gdouble
 name|height
-decl_stmt|,
+decl_stmt|;
+name|gdouble
 name|scale
 decl_stmt|;
 name|poppler_page_get_size
@@ -1947,7 +1896,7 @@ expr_stmt|;
 name|scale
 operator|=
 operator|(
-name|double
+name|gdouble
 operator|)
 name|preferred_size
 operator|/
@@ -1995,23 +1944,9 @@ name|height
 argument_list|,
 name|scale
 argument_list|,
-ifdef|#
-directive|ifdef
-name|HAVE_POPPLER_0_4_1
 literal|0
 argument_list|,
-endif|#
-directive|endif
 name|pixbuf
-ifndef|#
-directive|ifndef
-name|HAVE_POPPLER_0_4
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-endif|#
-directive|endif
 argument_list|)
 expr_stmt|;
 block|}
@@ -2029,7 +1964,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ff64870308
+DECL|struct|__anon2932c1d80308
 block|{
 DECL|member|document
 name|PopplerDocument
@@ -2054,7 +1989,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ff64870408
+DECL|struct|__anon2932c1d80408
 block|{
 DECL|member|selector
 name|GimpPageSelector
@@ -2266,10 +2201,6 @@ decl_stmt|;
 name|GtkWidget
 modifier|*
 name|resolution
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|toggle
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -2728,67 +2659,6 @@ operator|&
 name|loadvals
 operator|.
 name|resolution
-argument_list|)
-expr_stmt|;
-comment|/* Antialiasing */
-name|toggle
-operator|=
-name|gtk_check_button_new_with_mnemonic
-argument_list|(
-name|_
-argument_list|(
-literal|"A_ntialiasing"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_toggle_button_set_active
-argument_list|(
-name|GTK_TOGGLE_BUTTON
-argument_list|(
-name|toggle
-argument_list|)
-argument_list|,
-name|loadvals
-operator|.
-name|antialias
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|vbox
-argument_list|)
-argument_list|,
-name|toggle
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|toggle
-argument_list|)
-expr_stmt|;
-name|g_signal_connect
-argument_list|(
-name|toggle
-argument_list|,
-literal|"toggled"
-argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|gimp_toggle_button_update
-argument_list|)
-argument_list|,
-operator|&
-name|loadvals
-operator|.
-name|antialias
 argument_list|)
 expr_stmt|;
 comment|/* Setup done; display the dialog */
