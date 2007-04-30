@@ -188,9 +188,9 @@ name|GimpChannel
 modifier|*
 name|selection
 parameter_list|,
-name|GimpDrawable
+name|GimpPickable
 modifier|*
-name|drawable
+name|pickable
 parameter_list|,
 name|GimpContext
 modifier|*

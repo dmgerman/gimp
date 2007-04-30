@@ -3296,7 +3296,10 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
+name|GIMP_PICKABLE
+argument_list|(
 name|drawable
+argument_list|)
 argument_list|,
 name|context
 argument_list|,
@@ -3345,7 +3348,10 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
+name|GIMP_PICKABLE
+argument_list|(
 name|drawable
+argument_list|)
 argument_list|,
 name|context
 argument_list|,
@@ -3366,7 +3372,10 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
+name|GIMP_PICKABLE
+argument_list|(
 name|drawable
+argument_list|)
 argument_list|,
 name|context
 argument_list|,
