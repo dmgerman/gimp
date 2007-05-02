@@ -160,25 +160,6 @@ modifier|*
 name|pixel
 parameter_list|)
 function_decl|;
-DECL|member|get_color_at
-name|guchar
-modifier|*
-function_decl|(
-modifier|*
-name|get_color_at
-function_decl|)
-parameter_list|(
-name|GimpPickable
-modifier|*
-name|pickable
-parameter_list|,
-name|gint
-name|x
-parameter_list|,
-name|gint
-name|y
-parameter_list|)
-function_decl|;
 DECL|member|get_opacity_at
 name|gint
 function_decl|(
@@ -290,8 +271,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|guchar
-modifier|*
+name|gboolean
 name|gimp_pickable_get_color_at
 parameter_list|(
 name|GimpPickable
@@ -303,6 +283,10 @@ name|x
 parameter_list|,
 name|gint
 name|y
+parameter_list|,
+name|GimpRGB
+modifier|*
+name|color
 parameter_list|)
 function_decl|;
 end_function_decl
