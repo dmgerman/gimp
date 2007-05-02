@@ -78,7 +78,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2932c1d80108
+DECL|struct|__anon27d7632a0108
 block|{
 DECL|member|target
 name|GimpPageSelectorTarget
@@ -112,7 +112,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2932c1d80208
+DECL|struct|__anon27d7632a0208
 block|{
 DECL|member|n_pages
 name|gint
@@ -1964,7 +1964,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2932c1d80308
+DECL|struct|__anon27d7632a0308
 block|{
 DECL|member|document
 name|PopplerDocument
@@ -1989,7 +1989,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2932c1d80408
+DECL|struct|__anon27d7632a0408
 block|{
 DECL|member|selector
 name|GimpPageSelector
@@ -2362,6 +2362,15 @@ operator|=
 name|gimp_page_selector_new
 argument_list|()
 expr_stmt|;
+name|gtk_widget_set_size_request
+argument_list|(
+name|selector
+argument_list|,
+literal|380
+argument_list|,
+literal|360
+argument_list|)
+expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
@@ -2376,6 +2385,11 @@ argument_list|,
 name|TRUE
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|selector
 argument_list|)
 expr_stmt|;
 name|n_pages
@@ -2505,11 +2519,6 @@ name|gtk_window_activate_default
 argument_list|)
 argument_list|,
 name|dialog
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|selector
 argument_list|)
 expr_stmt|;
 name|thread_data
