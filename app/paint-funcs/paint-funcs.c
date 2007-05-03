@@ -10466,22 +10466,14 @@ parameter_list|)
 block|{
 comment|/*  Convolve the src image using the convolution matrix, writing to dest  */
 comment|/*  Convolve is not tile-enabled--use accordingly  */
+specifier|const
 name|guchar
 modifier|*
 name|src
-decl_stmt|,
-modifier|*
-name|s_row
-decl_stmt|,
-modifier|*
-name|s
 decl_stmt|;
 name|guchar
 modifier|*
 name|dest
-decl_stmt|,
-modifier|*
-name|d
 decl_stmt|;
 specifier|const
 name|gfloat
@@ -10742,12 +10734,18 @@ name|y
 operator|++
 control|)
 block|{
+specifier|const
+name|guchar
+modifier|*
 name|s_row
-operator|=
+init|=
 name|src
-expr_stmt|;
+decl_stmt|;
+specifier|const
+name|guchar
+modifier|*
 name|s
-operator|=
+init|=
 name|s_row
 operator|+
 name|srcR
@@ -10755,11 +10753,13 @@ operator|->
 name|rowstride
 operator|*
 name|margin
-expr_stmt|;
+decl_stmt|;
+name|guchar
+modifier|*
 name|d
-operator|=
+init|=
 name|dest
-expr_stmt|;
+decl_stmt|;
 comment|/* handle the first margin pixels... */
 name|b
 operator|=
