@@ -10526,7 +10526,8 @@ literal|0.0
 decl_stmt|;
 name|gdouble
 name|weighted_divisor
-decl_stmt|,
+decl_stmt|;
+name|gdouble
 name|mult_alpha
 decl_stmt|;
 comment|/*  If the mode is NEGATIVE_CONVOL, the offset should be 128  */
@@ -11792,7 +11793,8 @@ name|alpha
 decl_stmt|;
 name|gint
 name|initial_p
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|initial_m
 decl_stmt|;
 if|if
