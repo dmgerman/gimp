@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29bcbe9d0103
+DECL|enum|__anon2c1a36df0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1631,6 +1631,24 @@ name|frame
 operator|->
 name|sample_valid
 condition|)
+block|{
+comment|/* color_index will be -1 for an averaged sample */
+if|if
+condition|(
+name|frame
+operator|->
+name|color_index
+operator|<
+literal|0
+condition|)
+name|names
+index|[
+literal|4
+index|]
+operator|=
+name|NULL
+expr_stmt|;
+else|else
 name|values
 index|[
 literal|4
@@ -1645,6 +1663,7 @@ operator|->
 name|color_index
 argument_list|)
 expr_stmt|;
+block|}
 comment|/* fallthrough */
 case|case
 name|GIMP_RGB
