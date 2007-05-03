@@ -786,7 +786,7 @@ operator|=
 literal|32
 expr_stmt|;
 block|}
-comment|// vista icons
+comment|/* vista icons */
 if|if
 condition|(
 name|gimp_drawable_width
@@ -938,7 +938,7 @@ argument_list|,
 operator|-
 literal|1
 argument_list|,
-literal|120
+literal|200
 operator|+
 operator|(
 name|info
@@ -977,18 +977,12 @@ argument_list|(
 name|dialog
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
+return|return
+operator|(
 name|response
 operator|==
 name|GTK_RESPONSE_OK
-condition|)
-return|return
-name|TRUE
-return|;
-else|else
-return|return
-name|FALSE
+operator|)
 return|;
 block|}
 end_function
