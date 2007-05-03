@@ -370,9 +370,9 @@ literal|"hint"
 argument_list|,
 name|_
 argument_list|(
-literal|"Large icons and compression (PNG) are not "
-literal|"supported by all programs. Older applications "
-literal|"may not open this file correctly."
+literal|"Large icons and compression are not supported "
+literal|"by all programs. Older applications may not "
+literal|"open this file correctly."
 argument_list|)
 argument_list|,
 name|NULL
