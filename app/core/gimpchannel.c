@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29024ff50103
+DECL|enum|__anon2be381df0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -496,6 +496,10 @@ parameter_list|,
 name|GimpStrokeDesc
 modifier|*
 name|stroke_desc
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -3163,7 +3167,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_channel_stroke (GimpItem * item,GimpDrawable * drawable,GimpStrokeDesc * stroke_desc)
+DECL|function|gimp_channel_stroke (GimpItem * item,GimpDrawable * drawable,GimpStrokeDesc * stroke_desc,GimpProgress * progress)
 name|gimp_channel_stroke
 parameter_list|(
 name|GimpItem
@@ -3177,6 +3181,10 @@ parameter_list|,
 name|GimpStrokeDesc
 modifier|*
 name|stroke_desc
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|)
 block|{
 name|GimpChannel
@@ -3252,7 +3260,10 @@ argument_list|)
 operator|->
 name|gimp
 argument_list|,
-name|NULL
+name|G_OBJECT
+argument_list|(
+name|progress
+argument_list|)
 argument_list|,
 name|GIMP_MESSAGE_WARNING
 argument_list|,
@@ -3959,12 +3970,6 @@ name|boundary_known
 condition|)
 block|{
 comment|/* free the out of date boundary segments */
-if|if
-condition|(
-name|channel
-operator|->
-name|segs_in
-condition|)
 name|g_free
 argument_list|(
 name|channel
@@ -3972,12 +3977,6 @@ operator|->
 name|segs_in
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|channel
-operator|->
-name|segs_out
-condition|)
 name|g_free
 argument_list|(
 name|channel
@@ -4246,7 +4245,12 @@ operator|->
 name|num_segs_out
 expr_stmt|;
 return|return
-name|TRUE
+operator|(
+operator|!
+name|channel
+operator|->
+name|empty
+operator|)
 return|;
 block|}
 end_function

@@ -1446,6 +1446,8 @@ argument_list|,
 name|desc
 argument_list|,
 name|FALSE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_object_unref

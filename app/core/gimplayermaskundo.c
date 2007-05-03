@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon275aa9800103
+DECL|enum|__anon28c8dd780103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -427,9 +427,12 @@ name|layer_mask_undo
 operator|->
 name|layer_mask
 operator|=
+name|GIMP_LAYER_MASK
+argument_list|(
 name|g_value_dup_object
 argument_list|(
 name|value
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;

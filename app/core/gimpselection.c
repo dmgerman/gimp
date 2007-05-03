@@ -278,6 +278,10 @@ parameter_list|,
 name|GimpStrokeDesc
 modifier|*
 name|stroke_desc
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1153,7 +1157,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_selection_stroke (GimpItem * item,GimpDrawable * drawable,GimpStrokeDesc * stroke_desc)
+DECL|function|gimp_selection_stroke (GimpItem * item,GimpDrawable * drawable,GimpStrokeDesc * stroke_desc,GimpProgress * progress)
 name|gimp_selection_stroke
 parameter_list|(
 name|GimpItem
@@ -1167,6 +1171,10 @@ parameter_list|,
 name|GimpStrokeDesc
 modifier|*
 name|stroke_desc
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|)
 block|{
 name|GimpSelection
@@ -1238,7 +1246,10 @@ argument_list|)
 operator|->
 name|gimp
 argument_list|,
-name|NULL
+name|G_OBJECT
+argument_list|(
+name|progress
+argument_list|)
 argument_list|,
 name|GIMP_MESSAGE_WARNING
 argument_list|,
@@ -1272,6 +1283,8 @@ argument_list|,
 name|drawable
 argument_list|,
 name|stroke_desc
+argument_list|,
+name|progress
 argument_list|)
 expr_stmt|;
 name|selection

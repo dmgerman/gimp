@@ -467,6 +467,10 @@ parameter_list|,
 name|GimpStrokeDesc
 modifier|*
 name|stroke_desc
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|)
 function_decl|;
 DECL|member|default_name
@@ -972,6 +976,10 @@ name|stroke_desc
 parameter_list|,
 name|gboolean
 name|use_default_values
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|)
 function_decl|;
 end_function_decl
