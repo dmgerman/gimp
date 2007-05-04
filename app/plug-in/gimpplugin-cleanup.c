@@ -191,40 +191,12 @@ argument_list|,
 name|image
 argument_list|)
 expr_stmt|;
-name|g_printerr
-argument_list|(
-literal|"\n%s: procedure %s starts undo group on "
-literal|"image with group count %d\n"
-argument_list|,
-name|G_STRFUNC
-argument_list|,
-name|GIMP_OBJECT
-argument_list|(
-name|proc_frame
-operator|->
-name|procedure
-argument_list|)
-operator|->
-name|name
-argument_list|,
-name|image
-operator|->
-name|group_count
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 operator|!
 name|cleanup
 condition|)
 block|{
-name|g_printerr
-argument_list|(
-literal|"%s: creating new cleanup entry => SUCCESS\n"
-argument_list|,
-name|G_STRFUNC
-argument_list|)
-expr_stmt|;
 name|cleanup
 operator|=
 name|g_new0
@@ -259,16 +231,6 @@ operator|->
 name|cleanups
 argument_list|,
 name|cleanup
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
-name|g_printerr
-argument_list|(
-literal|"%s: using existing cleanup entry => SUCCESS\n"
-argument_list|,
-name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 block|}
@@ -336,44 +298,14 @@ argument_list|,
 name|image
 argument_list|)
 expr_stmt|;
-name|g_printerr
-argument_list|(
-literal|"\n%s: procedure %s ends undo group on "
-literal|"image with group count %d\n"
-argument_list|,
-name|G_STRFUNC
-argument_list|,
-name|GIMP_OBJECT
-argument_list|(
-name|proc_frame
-operator|->
-name|procedure
-argument_list|)
-operator|->
-name|name
-argument_list|,
-name|image
-operator|->
-name|group_count
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 operator|!
 name|cleanup
 condition|)
-block|{
-name|g_printerr
-argument_list|(
-literal|"%s: no cleanup entry found => FAILURE\n"
-argument_list|,
-name|G_STRFUNC
-argument_list|)
-expr_stmt|;
 return|return
 name|FALSE
 return|;
-block|}
 if|if
 condition|(
 name|cleanup
@@ -387,13 +319,6 @@ operator|-
 literal|1
 condition|)
 block|{
-name|g_printerr
-argument_list|(
-literal|"%s: group count balanced, deleting cleanup entry => SUCCESS\n"
-argument_list|,
-name|G_STRFUNC
-argument_list|)
-expr_stmt|;
 name|proc_frame
 operator|->
 name|cleanups
@@ -410,16 +335,6 @@ expr_stmt|;
 name|g_free
 argument_list|(
 name|cleanup
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
-name|g_printerr
-argument_list|(
-literal|"%s: undo groups still open, keeping cleanup entry => SUCCESS\n"
-argument_list|,
-name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 block|}
@@ -526,17 +441,6 @@ operator|==
 name|GIMP_UNDO_GROUP_NONE
 condition|)
 continue|continue;
-name|g_printerr
-argument_list|(
-literal|"\n%s: checking image with group count %d\n"
-argument_list|,
-name|G_STRFUNC
-argument_list|,
-name|image
-operator|->
-name|group_count
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|cleanup
