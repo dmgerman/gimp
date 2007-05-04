@@ -84,7 +84,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2881983e0103
+DECL|enum|__anon2c52894f0103
 block|{
 DECL|enumerator|BLUR_IIR
 name|BLUR_IIR
@@ -100,7 +100,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2881983e0208
+DECL|struct|__anon2c52894f0208
 block|{
 DECL|member|horizontal
 name|gdouble
@@ -3452,13 +3452,7 @@ block|}
 operator|*
 name|dest
 operator|=
-operator|(
 name|val
-operator|+
-name|ctotal
-operator|/
-literal|2
-operator|)
 operator|/
 name|ctotal
 expr_stmt|;
@@ -3846,7 +3840,7 @@ name|progress_step
 operator|=
 name|width
 operator|/
-literal|100
+literal|16
 expr_stmt|;
 if|if
 condition|(
@@ -4412,7 +4406,7 @@ name|progress_step
 operator|=
 name|height
 operator|/
-literal|100
+literal|16
 expr_stmt|;
 if|if
 condition|(
@@ -5283,7 +5277,7 @@ name|progress_step
 operator|=
 name|width
 operator|/
-literal|150
+literal|16
 expr_stmt|;
 if|if
 condition|(
@@ -5676,7 +5670,7 @@ name|progress_step
 operator|=
 name|height
 operator|/
-literal|150
+literal|16
 expr_stmt|;
 if|if
 condition|(
