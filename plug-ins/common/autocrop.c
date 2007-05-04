@@ -130,6 +130,9 @@ parameter_list|,
 name|gint
 name|bytes
 parameter_list|,
+name|gboolean
+name|has_alpha
+parameter_list|,
 name|guchar
 modifier|*
 name|color
@@ -753,6 +756,13 @@ name|height
 argument_list|,
 name|bytes
 argument_list|,
+name|gimp_drawable_has_alpha
+argument_list|(
+name|drawable
+operator|->
+name|drawable_id
+argument_list|)
+argument_list|,
 name|color
 argument_list|)
 expr_stmt|;
@@ -929,8 +939,7 @@ argument_list|)
 expr_stmt|;
 block|}
 name|y2
-operator|+=
-literal|1
+operator|++
 expr_stmt|;
 comment|/* to make y2 - y1 == height */
 comment|/* The coordinates are now the first rows which DON'T match    * the color. Crop instead to one row larger:    */
@@ -1119,8 +1128,7 @@ argument_list|)
 expr_stmt|;
 block|}
 name|x2
-operator|+=
-literal|1
+operator|++
 expr_stmt|;
 comment|/* to make x2 - x1 == width */
 comment|/* The coordinates are now the first columns which DON'T match    * the color. Crop instead to one column larger:    */
@@ -1315,7 +1323,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|guess_bgcolor (GimpPixelRgn * pr,gint width,gint height,gint bytes,guchar * color)
+DECL|function|guess_bgcolor (GimpPixelRgn * pr,gint width,gint height,gint bytes,gboolean has_alpha,guchar * color)
 name|guess_bgcolor
 parameter_list|(
 name|GimpPixelRgn
@@ -1330,6 +1338,9 @@ name|height
 parameter_list|,
 name|gint
 name|bytes
+parameter_list|,
+name|gboolean
+name|has_alpha
 parameter_list|,
 name|guchar
 modifier|*
@@ -1409,7 +1420,92 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-comment|/* Algorithm pinched from pnmcrop.    * To guess the background, first see if 3 corners are equal.    * Then if two are equal.    * Otherwise average the colors.    */
+comment|/* First check if there's transparency to crop. */
+if|if
+condition|(
+name|has_alpha
+condition|)
+block|{
+name|gint
+name|alpha
+init|=
+name|bytes
+operator|-
+literal|1
+decl_stmt|;
+if|if
+condition|(
+operator|(
+name|tl
+index|[
+name|alpha
+index|]
+operator|==
+literal|0
+operator|&&
+name|tr
+index|[
+name|alpha
+index|]
+operator|==
+literal|0
+operator|)
+operator|||
+operator|(
+name|tl
+index|[
+name|alpha
+index|]
+operator|==
+literal|0
+operator|&&
+name|bl
+index|[
+name|alpha
+index|]
+operator|==
+literal|0
+operator|)
+operator|||
+operator|(
+name|tr
+index|[
+name|alpha
+index|]
+operator|==
+literal|0
+operator|&&
+name|br
+index|[
+name|alpha
+index|]
+operator|==
+literal|0
+operator|)
+operator|||
+operator|(
+name|bl
+index|[
+name|alpha
+index|]
+operator|==
+literal|0
+operator|&&
+name|br
+index|[
+name|alpha
+index|]
+operator|==
+literal|0
+operator|)
+condition|)
+block|{
+return|return
+literal|2
+return|;
+block|}
+block|}
+comment|/* Algorithm pinched from pnmcrop.    * To guess the background, first see if 3 corners are equal.    * Then if two are equal. Otherwise average the colors.    */
 if|if
 condition|(
 name|colors_equal
@@ -1661,7 +1757,6 @@ condition|(
 name|bytes
 operator|--
 condition|)
-block|{
 name|color
 index|[
 name|bytes
@@ -1691,7 +1786,6 @@ operator|)
 operator|/
 literal|4
 expr_stmt|;
-block|}
 return|return
 literal|0
 return|;
