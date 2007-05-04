@@ -56,7 +56,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27bbbccf0108
+DECL|struct|__anon29513ae90108
 block|{
 DECL|member|inner
 name|gdouble
@@ -781,10 +781,12 @@ break|break;
 block|}
 block|}
 else|else
+block|{
 name|status
 operator|=
 name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|status
@@ -844,6 +846,11 @@ expr_stmt|;
 name|gimp_image_undo_group_end
 argument_list|(
 name|image_ID
+argument_list|)
+expr_stmt|;
+name|gimp_progress_update
+argument_list|(
+literal|1.0
 argument_list|)
 expr_stmt|;
 comment|/*  Store data  */
@@ -3575,7 +3582,7 @@ condition|(
 operator|(
 name|col
 operator|%
-literal|20
+literal|32
 operator|)
 operator|==
 literal|0
@@ -3966,7 +3973,7 @@ condition|(
 operator|(
 name|row
 operator|%
-literal|20
+literal|32
 operator|)
 operator|==
 literal|0
