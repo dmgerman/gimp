@@ -128,7 +128,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon294a06cb0103
+DECL|enum|__anon2c7637370103
 block|{
 DECL|enumerator|PSD_UNKNOWN_IMAGE
 name|PSD_UNKNOWN_IMAGE
@@ -316,7 +316,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294a06cb0208
+DECL|struct|__anon2c7637370208
 block|{
 DECL|member|hRes
 name|Fixed
@@ -566,7 +566,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon294a06cb0308
+DECL|struct|__anon2c7637370308
 block|{
 DECL|member|signature
 name|gchar
@@ -9986,7 +9986,7 @@ else|else
 block|{
 name|gimp_progress_update
 argument_list|(
-literal|10
+literal|1.0
 argument_list|)
 expr_stmt|;
 name|cmykbuf
