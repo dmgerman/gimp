@@ -42,7 +42,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab2ab680108
+DECL|struct|__anon2acd086d0108
 block|{
 DECL|member|point
 name|GdkPoint
@@ -5163,6 +5163,8 @@ name|gint
 name|i
 decl_stmt|,
 name|k
+decl_stmt|,
+name|n
 decl_stmt|;
 name|gdouble
 name|x
@@ -5221,11 +5223,6 @@ name|gdouble
 name|brush_offset
 init|=
 literal|0.0
-decl_stmt|;
-name|gint
-name|next_progress
-init|=
-literal|0
 decl_stmt|;
 if|if
 condition|(
@@ -5477,6 +5474,13 @@ name|b
 operator|=
 literal|0
 expr_stmt|;
+comment|/* n is used to limit the number of progress updates */
+name|n
+operator|=
+name|nsteps
+operator|/
+literal|32
+expr_stmt|;
 comment|/* now run the iteration */
 for|for
 control|(
@@ -5498,22 +5502,15 @@ operator|!
 name|preview
 operator|&&
 operator|(
+operator|(
 name|i
-operator|>
-name|next_progress
+operator|%
+name|n
+operator|)
+operator|==
+literal|0
 operator|)
 condition|)
-block|{
-name|next_progress
-operator|=
-name|i
-operator|+
-name|nsteps
-operator|/
-literal|32
-operator|+
-literal|100
-expr_stmt|;
 name|gimp_progress_update
 argument_list|(
 operator|(
@@ -5527,7 +5524,6 @@ operator|)
 name|nsteps
 argument_list|)
 expr_stmt|;
-block|}
 name|p0
 operator|=
 name|g_random_int
