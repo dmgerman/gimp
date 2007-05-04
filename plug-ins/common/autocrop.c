@@ -845,18 +845,26 @@ operator|!
 name|abort
 condition|)
 block|{
-comment|/* whee - a plain color drawable. Do nothing. */
-name|g_free
-argument_list|(
-name|buffer
-argument_list|)
+comment|/* whee - a plain color drawable. */
+name|x1
+operator|=
+literal|0
 expr_stmt|;
-name|gimp_drawable_detach
-argument_list|(
-name|drawable
-argument_list|)
+name|x2
+operator|=
+name|width
 expr_stmt|;
-return|return;
+name|y1
+operator|=
+literal|0
+expr_stmt|;
+name|y2
+operator|=
+name|height
+expr_stmt|;
+goto|goto
+name|done
+goto|;
 block|}
 if|if
 condition|(
@@ -1150,6 +1158,8 @@ condition|)
 name|x2
 operator|++
 expr_stmt|;
+name|done
+label|:
 name|g_free
 argument_list|(
 name|buffer
@@ -1162,6 +1172,9 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|layer_only
+operator|&&
+operator|(
 name|x2
 operator|-
 name|x1
@@ -1173,11 +1186,7 @@ operator|-
 name|y1
 operator|!=
 name|height
-condition|)
-block|{
-if|if
-condition|(
-name|layer_only
+operator|)
 condition|)
 block|{
 name|gimp_layer_resize
@@ -1249,7 +1258,7 @@ name|image_id
 argument_list|)
 condition|)
 block|{
-comment|/*                * partially outside the image area, we need to                * resize the image to be able to crop properly.                */
+comment|/*            * partially outside the image area, we need to            * resize the image to be able to crop properly.            */
 name|gimp_image_resize
 argument_list|(
 name|image_id
@@ -1307,14 +1316,13 @@ name|image_id
 argument_list|)
 expr_stmt|;
 block|}
-block|}
 if|if
 condition|(
 name|show_progress
 condition|)
 name|gimp_progress_update
 argument_list|(
-literal|1.00
+literal|1.0
 argument_list|)
 expr_stmt|;
 block|}
