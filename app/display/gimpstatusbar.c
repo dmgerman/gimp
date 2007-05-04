@@ -1783,19 +1783,6 @@ argument_list|(
 name|progress
 argument_list|)
 decl_stmt|;
-comment|/*  we can handle only one-liners  */
-if|if
-condition|(
-name|strchr
-argument_list|(
-name|message
-argument_list|,
-literal|'\n'
-argument_list|)
-condition|)
-return|return
-name|FALSE
-return|;
 name|gimp_statusbar_push_temp
 argument_list|(
 name|statusbar
