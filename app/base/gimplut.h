@@ -151,25 +151,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|void
-name|gimp_lut_process_value
-parameter_list|(
-name|GimpLut
-modifier|*
-name|lut
-parameter_list|,
-name|PixelRegion
-modifier|*
-name|srcPR
-parameter_list|,
-name|PixelRegion
-modifier|*
-name|destPR
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_comment
 comment|/* gimp_lut_process_inline is like gimp_lut_process except it uses a  * single PixelRegion as both the source and destination  */
 end_comment
