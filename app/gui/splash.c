@@ -64,7 +64,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295032f50108
+DECL|struct|__anon2c53df8f0108
 block|{
 DECL|member|window
 name|GtkWidget
@@ -870,17 +870,6 @@ name|progress
 operator|=
 name|gtk_progress_bar_new
 argument_list|()
-expr_stmt|;
-name|gtk_widget_set_size_request
-argument_list|(
-name|splash
-operator|->
-name|progress
-argument_list|,
-literal|1
-argument_list|,
-literal|12
-argument_list|)
 expr_stmt|;
 name|gtk_box_pack_end
 argument_list|(
