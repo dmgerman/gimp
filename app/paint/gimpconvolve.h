@@ -103,6 +103,17 @@ DECL|member|parent_instance
 name|GimpBrushCore
 name|parent_instance
 decl_stmt|;
+DECL|member|matrix
+name|gfloat
+name|matrix
+index|[
+literal|9
+index|]
+decl_stmt|;
+DECL|member|matrix_divisor
+name|gfloat
+name|matrix_divisor
+decl_stmt|;
 block|}
 struct|;
 end_struct
