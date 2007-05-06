@@ -103,7 +103,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297695a20108
+DECL|struct|__anon2a177bf30108
 block|{
 DECL|member|code
 name|guint16
@@ -430,22 +430,22 @@ block|,
 block|{
 name|REL_Y
 block|,
-literal|"y-move-away"
+literal|"y-move-forward"
 block|,
 name|N_
 argument_list|(
-literal|"Y Move Away"
+literal|"Y Move Forward"
 argument_list|)
 block|}
 block|,
 block|{
 name|REL_Y
 block|,
-literal|"y-move-near"
+literal|"y-move-back"
 block|,
 name|N_
 argument_list|(
-literal|"Y Move Near"
+literal|"Y Move Back"
 argument_list|)
 block|}
 block|,
@@ -477,22 +477,22 @@ name|REL_RX
 block|{
 name|REL_RX
 block|,
-literal|"x-axis-tilt-away"
+literal|"x-axis-tilt-forward"
 block|,
 name|N_
 argument_list|(
-literal|"X Axis Tilt Away"
+literal|"X Axis Tilt Forward"
 argument_list|)
 block|}
 block|,
 block|{
 name|REL_RX
 block|,
-literal|"x-axis-tilt-near"
+literal|"x-axis-tilt-back"
 block|,
 name|N_
 argument_list|(
-literal|"X Axis Tilt Near"
+literal|"X Axis Tilt Back"
 argument_list|)
 block|}
 block|,
@@ -614,7 +614,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon297695a20203
+DECL|enum|__anon2a177bf30203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

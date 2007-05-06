@@ -783,10 +783,12 @@ name|FALSE
 expr_stmt|;
 block|}
 else|else
-name|success
+block|{
+name|image
 operator|=
-name|FALSE
+name|NULL
 expr_stmt|;
+block|}
 name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
@@ -3618,7 +3620,7 @@ literal|"gimp-edit-paste-as-new"
 argument_list|,
 literal|"Paste buffer to a new image."
 argument_list|,
-literal|"This procedure pastes a copy of the internal GIMP edit buffer to a new image. The GIMP edit buffer will be empty unless a call was previously made to either 'gimp-edit-cut' or 'gimp-edit-copy'. This procedure returns the new image."
+literal|"This procedure pastes a copy of the internal GIMP edit buffer to a new image. The GIMP edit buffer will be empty unless a call was previously made to either 'gimp-edit-cut' or 'gimp-edit-copy'. This procedure returns the new image or -1 if the edit buffer was empty."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,

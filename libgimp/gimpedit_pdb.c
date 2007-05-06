@@ -340,7 +340,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_edit_paste_as_new:  *  * Paste buffer to a new image.  *  * This procedure pastes a copy of the internal GIMP edit buffer to a  * new image. The GIMP edit buffer will be empty unless a call was  * previously made to either gimp_edit_cut() or gimp_edit_copy(). This  * procedure returns the new image.  *  * Returns: The new image.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_edit_paste_as_new:  *  * Paste buffer to a new image.  *  * This procedure pastes a copy of the internal GIMP edit buffer to a  * new image. The GIMP edit buffer will be empty unless a call was  * previously made to either gimp_edit_cut() or gimp_edit_copy(). This  * procedure returns the new image or -1 if the edit buffer was empty.  *  * Returns: The new image.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
