@@ -170,7 +170,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8b363c0108
+DECL|struct|__anon295cd6000108
 block|{
 DECL|member|width
 name|gint32
@@ -192,7 +192,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8b363c0203
+DECL|enum|__anon295cd6000203
 block|{
 DECL|enumerator|HISTORY_TITLE
 name|HISTORY_TITLE
@@ -874,7 +874,7 @@ name|DialogData
 name|data
 init|=
 block|{
-literal|640
+literal|720
 block|,
 literal|560
 block|,
