@@ -70,26 +70,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|const
-name|gchar
-modifier|*
-name|gimp_exif_entry_get_value
-parameter_list|(
-name|ExifEntry
-modifier|*
-name|entry
-parameter_list|,
-name|gchar
-modifier|*
-name|value
-parameter_list|,
-name|guint
-name|maxlen
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|void
 name|gimp_exif_data_remove_entry
 parameter_list|(

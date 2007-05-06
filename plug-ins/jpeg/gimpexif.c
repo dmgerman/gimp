@@ -55,14 +55,6 @@ directive|include
 file|"gimpexif.h"
 end_include
 
-begin_decl_stmt
-DECL|variable|exif_data
-name|ExifData
-modifier|*
-name|exif_data
-decl_stmt|;
-end_decl_stmt
-
 begin_comment
 comment|/*  * gimp_metadata_store_exif:  * @image_ID:    the GIMP image to work on.  * @exif_data:   the Exif data that is to be stored.  *  * This function is supposed to load the "gimp-metadata" parasite  * (which is in XMP format), parse it, add the exif information,  * reformat it into XMP, and store the result as the new parasite.  * The infrastructure to do this is not yet available, so for the  * moment it does something much simpler -- it calls upon libexif  * to serialize the exif data, and stores the result in a parasite  * called "exif-data".  */
 end_comment
@@ -255,7 +247,7 @@ condition|(
 name|entry
 condition|)
 return|return
-name|gimp_exif_entry_get_value
+name|exif_entry_get_value
 argument_list|(
 name|entry
 argument_list|,
@@ -268,65 +260,6 @@ else|else
 return|return
 name|NULL
 return|;
-block|}
-end_function
-
-begin_comment
-comment|/*  * gimp_exif_entry_get_value:  * @content:   ExifEntry from which to get value  * @value:     Place to put the result  * @maxlen:    Maximum size of returned string  *  * This function is a wrapper around the libexif function  * exif_entry_get_value(), necessary to deal with an incompatible  * API change.  It looks up the value of the specifed entry,  * returning the result as a human-readable string.  Note that  * @value must be pre-allocated.  */
-end_comment
-
-begin_function
-specifier|const
-name|gchar
-modifier|*
-DECL|function|gimp_exif_entry_get_value (ExifEntry * entry,gchar * value,guint maxlen)
-name|gimp_exif_entry_get_value
-parameter_list|(
-name|ExifEntry
-modifier|*
-name|entry
-parameter_list|,
-name|gchar
-modifier|*
-name|value
-parameter_list|,
-name|guint
-name|maxlen
-parameter_list|)
-block|{
-ifdef|#
-directive|ifdef
-name|HAVE_EXIF_0_6
-return|return
-name|exif_entry_get_value
-argument_list|(
-name|entry
-argument_list|,
-name|value
-argument_list|,
-name|maxlen
-argument_list|)
-return|;
-else|#
-directive|else
-name|strncpy
-argument_list|(
-name|value
-argument_list|,
-name|exif_entry_get_value
-argument_list|(
-name|entry
-argument_list|)
-argument_list|,
-name|maxlen
-argument_list|)
-expr_stmt|;
-return|return
-name|value
-return|;
-endif|#
-directive|endif
-comment|/* HAVE_EXIF_0_6 */
 block|}
 end_function
 

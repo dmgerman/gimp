@@ -196,6 +196,27 @@ name|drawable_ID_global
 decl_stmt|;
 end_decl_stmt
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_EXIF
+end_ifdef
+
+begin_decl_stmt
+DECL|variable|exif_data
+name|ExifData
+modifier|*
+name|exif_data
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
 specifier|const
