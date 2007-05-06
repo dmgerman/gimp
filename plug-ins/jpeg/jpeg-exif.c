@@ -305,7 +305,7 @@ operator|==
 literal|0
 condition|)
 return|return;
-comment|/*    * Unfortunately libexif may return a non-null exif_data even if the file    * contains no exif data.  We check for validity by making sure it    * has suitable tags for the EXIF or GPS or Interoperability IFDs.   */
+comment|/*    * Unfortunately libexif may return a non-null exif_data even if the file    * contains no exif data.  We check for validity by making sure it    * has suitable tags for the EXIF or GPS or Interoperability IFDs.    *    * EXIF_TAG_GPS_VERSION_ID was added in libexif 0.6.13.    */
 if|if
 condition|(
 operator|(
@@ -323,6 +323,9 @@ name|EXIF_TAG_EXIF_VERSION
 argument_list|)
 operator|)
 operator|&&
+ifdef|#
+directive|ifdef
+name|EXIF_TAG_GPS_VERSION_ID
 operator|(
 operator|!
 name|exif_content_get_entry
@@ -338,6 +341,8 @@ name|EXIF_TAG_GPS_VERSION_ID
 argument_list|)
 operator|)
 operator|&&
+endif|#
+directive|endif
 operator|(
 operator|!
 name|exif_content_get_entry
