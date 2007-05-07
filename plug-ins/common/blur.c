@@ -524,7 +524,7 @@ name|CLAMP
 argument_list|(
 name|y
 argument_list|,
-literal|1
+literal|0
 argument_list|,
 name|pixel_rgn
 operator|->
@@ -562,7 +562,6 @@ condition|;
 name|b
 operator|++
 control|)
-block|{
 name|data
 index|[
 operator|-
@@ -581,6 +580,21 @@ index|[
 name|b
 index|]
 expr_stmt|;
+for|for
+control|(
+name|b
+operator|=
+literal|0
+init|;
+name|b
+operator|<
+name|pixel_rgn
+operator|->
+name|bpp
+condition|;
+name|b
+operator|++
+control|)
 name|data
 index|[
 name|w
@@ -608,7 +622,6 @@ name|b
 index|]
 expr_stmt|;
 block|}
-block|}
 end_function
 
 begin_comment
@@ -630,17 +643,6 @@ name|GimpPixelRgn
 name|srcPR
 decl_stmt|,
 name|destPR
-decl_stmt|,
-name|destPR2
-decl_stmt|,
-modifier|*
-name|sp
-decl_stmt|,
-modifier|*
-name|dp
-decl_stmt|,
-modifier|*
-name|tp
 decl_stmt|;
 name|gint
 name|width
@@ -857,40 +859,6 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|gimp_pixel_rgn_init
-argument_list|(
-operator|&
-name|destPR2
-argument_list|,
-name|drawable
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-name|width
-argument_list|,
-name|height
-argument_list|,
-name|TRUE
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
-name|sp
-operator|=
-operator|&
-name|srcPR
-expr_stmt|;
-name|dp
-operator|=
-operator|&
-name|destPR
-expr_stmt|;
-name|tp
-operator|=
-name|NULL
-expr_stmt|;
 name|pr
 operator|=
 name|prev_row
@@ -912,7 +880,8 @@ expr_stmt|;
 comment|/*    *  prepare the first row and previous row    */
 name|blur_prepare_row
 argument_list|(
-name|sp
+operator|&
+name|srcPR
 argument_list|,
 name|pr
 argument_list|,
@@ -931,7 +900,8 @@ argument_list|)
 expr_stmt|;
 name|blur_prepare_row
 argument_list|(
-name|sp
+operator|&
+name|srcPR
 argument_list|,
 name|cr
 argument_list|,
@@ -964,7 +934,8 @@ block|{
 comment|/*  prepare the next row  */
 name|blur_prepare_row
 argument_list|(
-name|sp
+operator|&
+name|srcPR
 argument_list|,
 name|nr
 argument_list|,
@@ -1432,7 +1403,8 @@ block|}
 comment|/*        *  Save the modified row, shuffle the row pointers, and every        *  so often, update the progress meter.        */
 name|gimp_pixel_rgn_set_row
 argument_list|(
-name|dp
+operator|&
+name|destPR
 argument_list|,
 name|dest
 argument_list|,
