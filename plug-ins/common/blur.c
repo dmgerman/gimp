@@ -35,18 +35,6 @@ begin_comment
 comment|/*********************************  *  *  PLUGIN-SPECIFIC CONSTANTS  *  ********************************/
 end_comment
 
-begin_comment
-comment|/*  *  progress meter update frequency  */
-end_comment
-
-begin_define
-DECL|macro|PROG_UPDATE_TIME
-define|#
-directive|define
-name|PROG_UPDATE_TIME
-value|((row % 10) == 0)
-end_define
-
 begin_define
 DECL|macro|PLUG_IN_PROC
 define|#
@@ -1437,7 +1425,13 @@ name|tmp
 expr_stmt|;
 if|if
 condition|(
-name|PROG_UPDATE_TIME
+operator|(
+name|row
+operator|%
+literal|32
+operator|)
+operator|==
+literal|0
 condition|)
 name|gimp_progress_update
 argument_list|(
