@@ -1291,7 +1291,7 @@ name|GIMP_IMAGE_CLONE
 block|,
 name|N_
 argument_list|(
-literal|"Image source"
+literal|"Image"
 argument_list|)
 block|,
 name|NULL
@@ -1302,7 +1302,7 @@ name|GIMP_PATTERN_CLONE
 block|,
 name|N_
 argument_list|(
-literal|"Pattern source"
+literal|"Pattern"
 argument_list|)
 block|,
 name|NULL
