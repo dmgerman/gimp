@@ -8,11 +8,11 @@ comment|/*                      Peter Kirchgessner                              
 end_comment
 
 begin_comment
-comment|/*                      e-mail: pkirchg@aol.com                               */
+comment|/*                      e-mail: peter@kirchgessner.net                        */
 end_comment
 
 begin_comment
-comment|/*                      WWW   : http://members.aol.com/pkirchg                */
+comment|/*                      WWW   : http://www.kirchgessner.net                   */
 end_comment
 
 begin_comment
@@ -156,11 +156,11 @@ comment|/*  Date of Gen.  : 12-Apr-97                                           
 end_comment
 
 begin_comment
-comment|/*  Last modified : 20-Dec-97                                                 */
+comment|/*  Last modified : 25-Aug-06                                                 */
 end_comment
 
 begin_comment
-comment|/*  Version       : 0.11                                                      */
+comment|/*  Version       : 0.12                                                      */
 end_comment
 
 begin_comment
@@ -173,6 +173,10 @@ end_comment
 
 begin_comment
 comment|/*  #MOD-0001, nn, 20-Dec-97, Initialize some variables                       */
+end_comment
+
+begin_comment
+comment|/*  #MOD-0002, pk, 16-Aug-06, Fix problems with internationalization          */
 end_comment
 
 begin_comment
@@ -228,7 +232,7 @@ DECL|macro|VERSIO
 define|#
 directive|define
 name|VERSIO
-value|0.11
+value|0.12
 end_define
 
 begin_comment
@@ -244,7 +248,7 @@ comment|/* Copyright (C) 1997 Peter Kirchgessner                                
 end_comment
 
 begin_comment
-comment|/* (email: pkirchg@aol.com, WWW: http://members.aol.com/pkirchg)              */
+comment|/* (email: peter@kirchgessner.net, WWW: http://www.kirchgessner.net)          */
 end_comment
 
 begin_comment
@@ -252,15 +256,15 @@ comment|/* The library was developed for a FITS-plug-in to GIMP, the GNU Image  
 end_comment
 
 begin_comment
-comment|/* Manipulation Program. But it is completely independant to that. If someone */
+comment|/* Manipulation Program. But it is completely independant to that (beside use */
 end_comment
 
 begin_comment
-comment|/* finds it useful for other purposes, try to keep it independant from your   */
+comment|/* of glib). If someone finds it useful for other purposes, try to keep it    */
 end_comment
 
 begin_comment
-comment|/* application.                                                               */
+comment|/* independant from your application.                                         */
 end_comment
 
 begin_comment
@@ -343,6 +347,18 @@ begin_include
 include|#
 directive|include
 file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<errno.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<glib.h>
 end_include
 
 begin_include
@@ -750,7 +766,7 @@ parameter_list|,
 name|value
 parameter_list|)
 define|\
-value|{char card[81], dbl[21], *istr; \  sprintf (dbl, "%20f", (double)value); istr = strstr (dbl, "e"); \  if (istr) *istr = 'E'; \  sprintf (card, "%-8.8s= %20.20s%50s", key, dbl, " "); \  fwrite (card, 1, 80, fp); }
+value|{char card[81], dbl[21], *istr; \  g_ascii_formatd (dbl, sizeof(dbl), "%f", (gdouble)value); \  istr = strstr (dbl, "e"); \  if (istr) *istr = 'E'; \  sprintf (card, "%-8.8s= %20.20s%50s", key, dbl, " "); \  fwrite (card, 1, 80, fp); }
 end_define
 
 begin_define
@@ -782,6 +798,253 @@ parameter_list|)
 define|\
 value|{char card[81]; \  sprintf (card, "%-80.80s", value); \  fwrite (card, 1, 80, fp); }
 end_define
+
+begin_comment
+comment|/* Macro to convert a double value to a string using '.' as decimal point */
+end_comment
+
+begin_define
+DECL|macro|FDTOSTR (buf,val)
+define|#
+directive|define
+name|FDTOSTR
+parameter_list|(
+name|buf
+parameter_list|,
+name|val
+parameter_list|)
+value|g_ascii_dtostr (buf, sizeof(buf), (gdouble)(val))
+end_define
+
+begin_comment
+comment|/*****************************************************************************/
+end_comment
+
+begin_comment
+comment|/* #BEG-PAR                                                                  */
+end_comment
+
+begin_comment
+comment|/*                                                                           */
+end_comment
+
+begin_comment
+comment|/* Function  : fits_scanfdouble - (local) scan a string for a double value   */
+end_comment
+
+begin_comment
+comment|/*                                                                           */
+end_comment
+
+begin_comment
+comment|/* Parameters:                                                               */
+end_comment
+
+begin_comment
+comment|/* const char *buf  [I] : the string to scan                                 */
+end_comment
+
+begin_comment
+comment|/* double *value    [O] : where to write the double value to                 */
+end_comment
+
+begin_comment
+comment|/*                                                                           */
+end_comment
+
+begin_comment
+comment|/* Scan a string for a double value represented in "C" locale.               */
+end_comment
+
+begin_comment
+comment|/* On success 1 is returned. On failure 0 is returned.                       */
+end_comment
+
+begin_comment
+comment|/*                                                                           */
+end_comment
+
+begin_comment
+comment|/* #END-PAR                                                                  */
+end_comment
+
+begin_comment
+comment|/*****************************************************************************/
+end_comment
+
+begin_function
+DECL|function|fits_scanfdouble (const char * buf,double * value)
+specifier|static
+name|int
+name|fits_scanfdouble
+parameter_list|(
+specifier|const
+name|char
+modifier|*
+name|buf
+parameter_list|,
+name|double
+modifier|*
+name|value
+parameter_list|)
+block|{
+name|int
+name|retval
+init|=
+literal|0
+decl_stmt|;
+name|gchar
+modifier|*
+name|bufcopy
+init|=
+name|g_strdup
+argument_list|(
+name|buf
+argument_list|)
+decl_stmt|;
+comment|/* We should use g_ascii_strtod. This also allows scanning of hexadecimal */
+comment|/* values like 0x02. But we want the behaviour of sscanf ("0x02","%lf",...*/
+comment|/* that gives 0.0 in this case. So check the string if we have a hex-value*/
+if|if
+condition|(
+name|bufcopy
+condition|)
+block|{
+name|gchar
+modifier|*
+name|bufptr
+init|=
+name|bufcopy
+decl_stmt|;
+comment|/* Remove leading white space */
+name|g_strchug
+argument_list|(
+name|bufcopy
+argument_list|)
+expr_stmt|;
+comment|/* Skip leading sign character */
+if|if
+condition|(
+operator|(
+operator|*
+name|bufptr
+operator|==
+literal|'-'
+operator|)
+operator|||
+operator|(
+operator|*
+name|bufptr
+operator|==
+literal|'+'
+operator|)
+condition|)
+name|bufptr
+operator|++
+expr_stmt|;
+comment|/* Start of hex value ? Take this as 0.0 */
+if|if
+condition|(
+operator|(
+name|bufptr
+index|[
+literal|0
+index|]
+operator|==
+literal|'0'
+operator|)
+operator|&&
+operator|(
+name|g_ascii_toupper
+argument_list|(
+name|bufptr
+index|[
+literal|1
+index|]
+argument_list|)
+operator|==
+literal|'X'
+operator|)
+condition|)
+block|{
+operator|*
+name|value
+operator|=
+literal|0.0
+expr_stmt|;
+name|retval
+operator|=
+literal|1
+expr_stmt|;
+block|}
+else|else
+block|{
+if|if
+condition|(
+operator|*
+name|bufptr
+operator|==
+literal|'.'
+condition|)
+comment|/* leading decimal point ? Skip it */
+name|bufptr
+operator|++
+expr_stmt|;
+if|if
+condition|(
+name|g_ascii_isdigit
+argument_list|(
+operator|*
+name|bufptr
+argument_list|)
+condition|)
+comment|/* Expect the complete string is decimal */
+block|{
+name|gchar
+modifier|*
+name|endptr
+decl_stmt|;
+name|gdouble
+name|gvalue
+init|=
+name|g_ascii_strtod
+argument_list|(
+name|bufcopy
+argument_list|,
+operator|&
+name|endptr
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|errno
+operator|==
+literal|0
+condition|)
+block|{
+operator|*
+name|value
+operator|=
+name|gvalue
+expr_stmt|;
+name|retval
+operator|=
+literal|1
+expr_stmt|;
+block|}
+block|}
+block|}
+name|g_free
+argument_list|(
+name|bufcopy
+argument_list|)
+expr_stmt|;
+block|}
+return|return
+name|retval
+return|;
+block|}
+end_function
 
 begin_comment
 comment|/*****************************************************************************/
@@ -2994,6 +3257,12 @@ block|{
 name|int
 name|k
 decl_stmt|;
+name|char
+name|buf
+index|[
+name|G_ASCII_DTOSTR_BUF_SIZE
+index|]
+decl_stmt|;
 if|if
 condition|(
 name|hdr
@@ -3064,20 +3333,30 @@ argument_list|)
 expr_stmt|;
 name|printf
 argument_list|(
-literal|"pixmin        : %f\n"
+literal|"pixmin        : %s\n"
+argument_list|,
+name|FDTOSTR
+argument_list|(
+name|buf
 argument_list|,
 name|hdr
 operator|->
 name|pixmin
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|printf
 argument_list|(
-literal|"pixmax        : %f\n"
+literal|"pixmax        : %s\n"
+argument_list|,
+name|FDTOSTR
+argument_list|(
+name|buf
 argument_list|,
 name|hdr
 operator|->
 name|pixmax
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|printf
@@ -3162,11 +3441,16 @@ name|datamin
 condition|)
 name|printf
 argument_list|(
-literal|"datamin       : %f\n"
+literal|"datamin       : %s\n"
+argument_list|,
+name|FDTOSTR
+argument_list|(
+name|buf
 argument_list|,
 name|hdr
 operator|->
 name|datamin
+argument_list|)
 argument_list|)
 expr_stmt|;
 else|else
@@ -3185,11 +3469,16 @@ name|datamax
 condition|)
 name|printf
 argument_list|(
-literal|"datamax       : %f\n"
+literal|"datamax       : %s\n"
+argument_list|,
+name|FDTOSTR
+argument_list|(
+name|buf
 argument_list|,
 name|hdr
 operator|->
 name|datamax
+argument_list|)
 argument_list|)
 expr_stmt|;
 else|else
@@ -3254,11 +3543,16 @@ name|bscale
 condition|)
 name|printf
 argument_list|(
-literal|"bscale        : %f\n"
+literal|"bscale        : %s\n"
+argument_list|,
+name|FDTOSTR
+argument_list|(
+name|buf
 argument_list|,
 name|hdr
 operator|->
 name|bscale
+argument_list|)
 argument_list|)
 expr_stmt|;
 else|else
@@ -3277,11 +3571,16 @@ name|bzero
 condition|)
 name|printf
 argument_list|(
-literal|"bzero         : %f\n"
+literal|"bzero         : %s\n"
+argument_list|,
+name|FDTOSTR
+argument_list|(
+name|buf
 argument_list|,
 name|hdr
 operator|->
 name|bzero
+argument_list|)
 argument_list|)
 expr_stmt|;
 else|else
@@ -6650,6 +6949,11 @@ decl_stmt|,
 modifier|*
 name|end
 decl_stmt|;
+name|int
+name|ErrCount
+init|=
+literal|0
+decl_stmt|;
 if|if
 condition|(
 name|card
@@ -6707,6 +7011,9 @@ argument_list|(
 name|msg
 argument_list|)
 expr_stmt|;
+name|ErrCount
+operator|++
+expr_stmt|;
 block|}
 switch|switch
 condition|(
@@ -6750,13 +7057,17 @@ argument_list|)
 operator|!=
 literal|1
 condition|)
-name|FITS_RETURN
+block|{
+name|fits_set_error
 argument_list|(
 literal|"fits_decode_card: error decoding typ_bitpix16"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
+name|ErrCount
+operator|++
+expr_stmt|;
+break|break;
+block|}
 name|data
 operator|.
 name|bitpix16
@@ -6786,13 +7097,17 @@ argument_list|)
 operator|!=
 literal|1
 condition|)
-name|FITS_RETURN
+block|{
+name|fits_set_error
 argument_list|(
 literal|"fits_decode_card: error decoding typ_bitpix32"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
+name|ErrCount
+operator|++
+expr_stmt|;
+break|break;
+block|}
 name|data
 operator|.
 name|bitpix32
@@ -6808,13 +7123,11 @@ name|typ_bitpixm32
 case|:
 if|if
 condition|(
-name|sscanf
+name|fits_scanfdouble
 argument_list|(
 name|l_card
 operator|+
 literal|10
-argument_list|,
-literal|"%lf"
 argument_list|,
 operator|&
 name|l_double
@@ -6822,13 +7135,17 @@ argument_list|)
 operator|!=
 literal|1
 condition|)
-name|FITS_RETURN
+block|{
+name|fits_set_error
 argument_list|(
 literal|"fits_decode_card: error decoding typ_bitpixm32"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
+name|ErrCount
+operator|++
+expr_stmt|;
+break|break;
+block|}
 name|data
 operator|.
 name|bitpixm32
@@ -6844,13 +7161,11 @@ name|typ_bitpixm64
 case|:
 if|if
 condition|(
-name|sscanf
+name|fits_scanfdouble
 argument_list|(
 name|l_card
 operator|+
 literal|10
-argument_list|,
-literal|"%lf"
 argument_list|,
 operator|&
 name|l_double
@@ -6858,13 +7173,17 @@ argument_list|)
 operator|!=
 literal|1
 condition|)
-name|FITS_RETURN
+block|{
+name|fits_set_error
 argument_list|(
 literal|"fits_decode_card: error decoding typ_bitpixm64"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
+name|ErrCount
+operator|++
+expr_stmt|;
+break|break;
+block|}
 name|data
 operator|.
 name|bitpixm64
@@ -6901,12 +7220,14 @@ name|cp
 operator|==
 literal|'T'
 condition|)
+block|{
 name|data
 operator|.
 name|fbool
 operator|=
 literal|1
 expr_stmt|;
+block|}
 elseif|else
 if|if
 condition|(
@@ -6915,20 +7236,26 @@ name|cp
 operator|==
 literal|'F'
 condition|)
+block|{
 name|data
 operator|.
 name|fbool
 operator|=
 literal|0
 expr_stmt|;
+block|}
 else|else
-name|FITS_RETURN
+block|{
+name|fits_set_error
 argument_list|(
 literal|"fits_decode_card: error decoding typ_fbool"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
+name|ErrCount
+operator|++
+expr_stmt|;
+break|break;
+block|}
 break|break;
 case|case
 name|typ_flong
@@ -6949,13 +7276,17 @@ argument_list|)
 operator|!=
 literal|1
 condition|)
-name|FITS_RETURN
+block|{
+name|fits_set_error
 argument_list|(
 literal|"fits_decode_card: error decoding typ_flong"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
+name|ErrCount
+operator|++
+expr_stmt|;
+break|break;
+block|}
 name|data
 operator|.
 name|flong
@@ -6971,13 +7302,11 @@ name|typ_fdouble
 case|:
 if|if
 condition|(
-name|sscanf
+name|fits_scanfdouble
 argument_list|(
 name|l_card
 operator|+
 literal|10
-argument_list|,
-literal|"%lf"
 argument_list|,
 operator|&
 name|l_double
@@ -6985,13 +7314,17 @@ argument_list|)
 operator|!=
 literal|1
 condition|)
-name|FITS_RETURN
+block|{
+name|fits_set_error
 argument_list|(
 literal|"fits_decode_card: error decoding typ_fdouble"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
+name|ErrCount
+operator|++
+expr_stmt|;
+break|break;
+block|}
 name|data
 operator|.
 name|fdouble
@@ -7018,13 +7351,17 @@ name|cp
 operator|!=
 literal|'\''
 condition|)
-name|FITS_RETURN
+block|{
+name|fits_set_error
 argument_list|(
 literal|"fits_decode_card: missing \' decoding typ_fstring"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
+name|ErrCount
+operator|++
+expr_stmt|;
+break|break;
+block|}
 name|dst
 operator|=
 name|data
@@ -7124,8 +7461,16 @@ break|break;
 block|}
 return|return
 operator|(
+operator|(
+name|ErrCount
+operator|==
+literal|0
+operator|)
+condition|?
 operator|&
 name|data
+else|:
+name|NULL
 operator|)
 return|;
 block|}

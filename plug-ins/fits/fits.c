@@ -4,7 +4,7 @@ comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* Event history:  * V 1.00, PK, 05-May-97: Creation  * V 1.01, PK, 19-May-97: Problem with compilation on Irix fixed  * V 1.02, PK, 08-Jun-97: Bug with saving gray images fixed  * V 1.03, PK, 05-Oct-97: Parse rc-file  * V 1.04, PK, 12-Oct-97: No progress bars for non-interactive mode  * V 1.05, nn, 20-Dec-97: Initialize image_ID in run()  * V 1.06, PK, 21-Nov-99: Internationalization  *                        Fix bug with gimp_export_image()  *                        (moved it from load to save)  */
+comment|/* Event history:  * V 1.00, PK, 05-May-97: Creation  * V 1.01, PK, 19-May-97: Problem with compilation on Irix fixed  * V 1.02, PK, 08-Jun-97: Bug with saving gray images fixed  * V 1.03, PK, 05-Oct-97: Parse rc-file  * V 1.04, PK, 12-Oct-97: No progress bars for non-interactive mode  * V 1.05, nn, 20-Dec-97: Initialize image_ID in run()  * V 1.06, PK, 21-Nov-99: Internationalization  *                        Fix bug with gimp_export_image()  *                        (moved it from load to save)  * V 1.07, PK, 16-Aug-06: Fix problems with internationalization  *                        (writing 255,0 instead of 255.0)  *                        Fix problem with not filling up properly last record  */
 end_comment
 
 begin_include
@@ -86,7 +86,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf62eda0108
+DECL|struct|__anon290ccb270108
 block|{
 DECL|member|replace
 name|gint
@@ -3494,7 +3494,7 @@ block|}
 block|}
 name|nbytes
 operator|+=
-name|bpsl
+name|width
 expr_stmt|;
 name|src
 operator|-=
