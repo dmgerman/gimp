@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba705a50103
+DECL|enum|__anon28c4dfd90103
 block|{
 DECL|enumerator|TEXT_CHANGED
 name|TEXT_CHANGED
@@ -473,6 +473,10 @@ literal|"role"
 argument_list|,
 literal|"gimp-text-editor"
 argument_list|,
+literal|"transient-for"
+argument_list|,
+name|parent
+argument_list|,
 literal|"help-func"
 argument_list|,
 name|gimp_standard_help_func
@@ -508,20 +512,6 @@ name|gtk_widget_destroy
 argument_list|)
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|parent
-condition|)
-name|gtk_window_set_transient_for
-argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|editor
-argument_list|)
-argument_list|,
-name|parent
 argument_list|)
 expr_stmt|;
 name|editor
