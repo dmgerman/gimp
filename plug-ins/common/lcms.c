@@ -129,7 +129,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27dc1ffa0103
+DECL|enum|__anon297c152c0103
 block|{
 DECL|enumerator|STATUS
 name|STATUS
@@ -151,7 +151,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27dc1ffa0203
+DECL|enum|__anon297c152c0203
 block|{
 DECL|enumerator|PROC_SET
 name|PROC_SET
@@ -180,7 +180,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dc1ffa0308
+DECL|struct|__anon297c152c0308
 block|{
 DECL|member|name
 specifier|const
@@ -1805,17 +1805,6 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-operator|!
-name|src_profile
-operator|&&
-operator|!
-name|dest_profile
-condition|)
-return|return
-name|GIMP_PDB_SUCCESS
-return|;
-if|if
-condition|(
 name|src_profile
 operator|&&
 operator|!
@@ -1825,9 +1814,9 @@ name|src_profile
 argument_list|)
 condition|)
 block|{
-name|g_warning
+name|g_printerr
 argument_list|(
-literal|"Attached color profile is not for RGB color space."
+literal|"lcms: attached color profile is not for RGB color space."
 argument_list|)
 expr_stmt|;
 name|cmsCloseProfile
@@ -1840,6 +1829,17 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
+if|if
+condition|(
+operator|!
+name|src_profile
+operator|&&
+operator|!
+name|dest_profile
+condition|)
+return|return
+name|GIMP_PDB_SUCCESS
+return|;
 if|if
 condition|(
 operator|!
@@ -3048,7 +3048,7 @@ condition|(
 name|count
 operator|++
 operator|%
-literal|16
+literal|32
 operator|==
 literal|0
 condition|)

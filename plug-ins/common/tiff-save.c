@@ -76,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0f869f0108
+DECL|struct|__anon27e0fa340108
 block|{
 DECL|member|compression
 name|gint
@@ -99,7 +99,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0f869f0208
+DECL|struct|__anon27e0fa340208
 block|{
 DECL|member|ID
 name|gint32
@@ -3122,6 +3122,16 @@ name|FALSE
 return|;
 block|}
 block|}
+if|if
+condition|(
+operator|(
+name|row
+operator|%
+literal|32
+operator|)
+operator|==
+literal|0
+condition|)
 name|gimp_progress_update
 argument_list|(
 operator|(

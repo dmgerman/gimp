@@ -81,21 +81,10 @@ name|MODE_INTEN
 value|1
 end_define
 
-begin_define
-DECL|macro|INTENSITY (p)
-define|#
-directive|define
-name|INTENSITY
-parameter_list|(
-name|p
-parameter_list|)
-value|((guint) (p[0]*77+p[1]*150+p[2]*29)>> 8)
-end_define
-
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295629940108
+DECL|struct|__anon289147340108
 block|{
 DECL|member|mask_size
 name|gdouble
@@ -1718,9 +1707,22 @@ condition|)
 block|{
 name|c
 operator|=
-name|INTENSITY
+name|GIMP_RGB_LUMINANCE
 argument_list|(
 name|src
+index|[
+literal|0
+index|]
+argument_list|,
+name|src
+index|[
+literal|1
+index|]
+argument_list|,
+name|src
+index|[
+literal|2
+index|]
 argument_list|)
 expr_stmt|;
 operator|++
