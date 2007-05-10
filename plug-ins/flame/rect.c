@@ -1413,7 +1413,7 @@ operator|(
 name|sbc
 operator|++
 operator|&
-literal|7
+literal|32
 operator|)
 condition|)
 call|(
@@ -2076,7 +2076,7 @@ operator|!
 operator|(
 name|j
 operator|&
-literal|15
+literal|32
 operator|)
 condition|)
 call|(
