@@ -203,6 +203,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"file-procedure.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"file-utils.h"
 end_include
 
@@ -397,7 +403,7 @@ name|file_proc
 condition|)
 name|file_proc
 operator|=
-name|file_utils_find_proc
+name|file_procedure_find
 argument_list|(
 name|gimp
 operator|->
@@ -832,7 +838,7 @@ literal|0
 expr_stmt|;
 name|file_proc
 operator|=
-name|file_utils_find_proc
+name|file_procedure_find
 argument_list|(
 name|gimp
 operator|->

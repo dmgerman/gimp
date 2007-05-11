@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"file/file-procedure.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"file/file-save.h"
 end_include
 
@@ -486,7 +492,7 @@ argument_list|)
 expr_stmt|;
 name|proc
 operator|=
-name|file_utils_find_proc
+name|file_procedure_find
 argument_list|(
 name|image
 operator|->

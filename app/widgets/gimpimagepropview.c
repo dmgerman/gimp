@@ -101,6 +101,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"file/file-procedure.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"file/file-utils.h"
 end_include
 
@@ -136,7 +142,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon293f7bad0103
+DECL|enum|__anon28ffe2270103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1499,7 +1505,7 @@ condition|)
 block|{
 name|proc
 operator|=
-name|file_utils_find_proc
+name|file_procedure_find
 argument_list|(
 name|manager
 operator|->

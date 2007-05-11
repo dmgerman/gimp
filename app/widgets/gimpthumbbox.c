@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"file/file-procedure.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"file/file-utils.h"
 end_include
 
@@ -3148,7 +3154,7 @@ argument_list|(
 name|thumb
 argument_list|)
 operator|&&
-name|file_utils_find_proc_by_extension
+name|file_procedure_find_by_extension
 argument_list|(
 name|gimp
 operator|->

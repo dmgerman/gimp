@@ -94,6 +94,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"file/file-procedure.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"file/file-save.h"
 end_include
 
@@ -208,7 +214,7 @@ argument_list|)
 return|;
 name|file_proc
 operator|=
-name|file_utils_find_proc
+name|file_procedure_find
 argument_list|(
 name|gimp
 operator|->
@@ -951,7 +957,7 @@ argument_list|)
 return|;
 name|file_proc
 operator|=
-name|file_utils_find_proc
+name|file_procedure_find
 argument_list|(
 name|gimp
 operator|->
