@@ -2878,10 +2878,6 @@ name|gchar
 modifier|*
 name|uri
 decl_stmt|;
-name|gboolean
-name|retval
-decl_stmt|;
-comment|/* ignored */
 if|if
 condition|(
 name|strstr
@@ -2975,6 +2971,10 @@ condition|(
 name|uri
 condition|)
 block|{
+name|gboolean
+name|retval
+decl_stmt|;
+comment|/* ignored */
 name|success
 operator|=
 name|dbus_g_proxy_call
