@@ -2884,6 +2884,26 @@ decl_stmt|;
 comment|/* ignored */
 if|if
 condition|(
+name|strstr
+argument_list|(
+name|filename
+argument_list|,
+literal|"://"
+argument_list|)
+condition|)
+block|{
+name|uri
+operator|=
+name|g_strdup
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+if|if
+condition|(
 operator|!
 name|g_path_is_absolute
 argument_list|(
@@ -2949,6 +2969,7 @@ name|error
 argument_list|)
 expr_stmt|;
 block|}
+block|}
 if|if
 condition|(
 name|uri
@@ -2989,12 +3010,7 @@ else|else
 block|{
 name|g_printerr
 argument_list|(
-literal|"conversion to uri failed for '%s': %s\n"
-argument_list|,
-name|gimp_filename_to_utf8
-argument_list|(
-name|filename
-argument_list|)
+literal|"conversion to uri failed: %s\n"
 argument_list|,
 name|error
 operator|->
