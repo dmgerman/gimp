@@ -23,6 +23,23 @@ file|<gdk-pixbuf/gdk-pixbuf.h>
 end_include
 
 begin_function_decl
+name|gboolean
+name|file_utils_filename_is_uri
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|filename
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gchar
 modifier|*
 name|file_utils_filename_to_uri
