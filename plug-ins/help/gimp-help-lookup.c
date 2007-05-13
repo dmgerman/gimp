@@ -24,19 +24,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib.h>
+file|<glib-object.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimpbase/gimpversion.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimpbase/gimpenv.h"
+file|"libgimpbase/gimpbase.h"
 end_include
 
 begin_include
