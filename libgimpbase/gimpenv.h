@@ -136,6 +136,18 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
+name|gchar
+modifier|*
+name|gimp_user_directory
+argument_list|(
+name|GimpUserDirectory
+name|type
+argument_list|)
+name|G_GNUC_MALLOC
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
 specifier|const
 name|gchar
 modifier|*

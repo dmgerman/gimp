@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This code is a slightly modified copy of xdg-user-dir-lockup.c  * as written by Alexander Larsson.  *  * See http://www.freedesktop.org/wiki/Software/xdg-user-dirs  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * This code is a slightly modified copy of xdg-user-dir-lockup.c  * as written by Alexander Larsson.  *  * See http://www.freedesktop.org/wiki/Software/xdg-user-dirs  */
 end_comment
 
 begin_comment
@@ -44,8 +44,8 @@ end_comment
 begin_function
 name|gchar
 modifier|*
-DECL|function|xdg_user_dir_lookup (const gchar * type)
-name|xdg_user_dir_lookup
+DECL|function|_xdg_user_dir_lookup (const gchar * type)
+name|_xdg_user_dir_lookup
 parameter_list|(
 specifier|const
 name|gchar
