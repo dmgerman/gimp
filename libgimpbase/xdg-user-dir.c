@@ -160,7 +160,7 @@ name|g_fopen
 argument_list|(
 name|filename
 argument_list|,
-literal|"rb"
+literal|"r"
 argument_list|)
 expr_stmt|;
 name|g_free
