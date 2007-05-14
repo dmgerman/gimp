@@ -281,7 +281,7 @@ end_ifdef
 begin_include
 include|#
 directive|include
-file|"CoreServices/CoreServices.h"
+file|<CoreServices/CoreServices.h>
 end_include
 
 begin_endif
@@ -1280,7 +1280,7 @@ name|int
 name|csidl
 parameter_list|)
 block|{
-DECL|union|__anon2ae3fdcd010a
+DECL|union|__anon2c3ba7ce010a
 union|union
 block|{
 DECL|member|c
