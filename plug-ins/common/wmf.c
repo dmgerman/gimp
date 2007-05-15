@@ -100,7 +100,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2b14dc0108
+DECL|struct|__anon27df6d690108
 block|{
 DECL|member|resolution
 name|gdouble
@@ -2049,6 +2049,14 @@ name|dialog
 argument_list|)
 argument_list|,
 name|FALSE
+argument_list|)
+expr_stmt|;
+name|gimp_window_set_transient
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|dialog
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|hbox
