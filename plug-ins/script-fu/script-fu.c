@@ -972,7 +972,7 @@ literal|"<Toolbox>/Xtns"
 argument_list|,
 name|N_
 argument_list|(
-literal|"_Utils"
+literal|"_Utilities"
 argument_list|)
 argument_list|)
 expr_stmt|;
