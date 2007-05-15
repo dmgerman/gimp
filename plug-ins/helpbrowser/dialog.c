@@ -170,7 +170,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295cd6000108
+DECL|struct|__anon2b95ac7d0108
 block|{
 DECL|member|width
 name|gint32
@@ -192,7 +192,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon295cd6000203
+DECL|enum|__anon2b95ac7d0203
 block|{
 DECL|enumerator|HISTORY_TITLE
 name|HISTORY_TITLE
@@ -1899,11 +1899,6 @@ name|dialog_unmap
 argument_list|)
 argument_list|,
 name|paned
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|window
 argument_list|)
 expr_stmt|;
 block|}
