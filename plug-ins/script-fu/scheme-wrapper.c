@@ -4314,7 +4314,7 @@ name|sc
 operator|->
 name|vptr
 operator|->
-name|is_integer
+name|is_number
 argument_list|(
 name|v_element
 argument_list|)
@@ -4329,7 +4329,7 @@ argument_list|(
 name|error_str
 argument_list|)
 argument_list|,
-literal|"Item %d in vector is not INT32 (argument %d for function %s)\n"
+literal|"Item %d in vector is not a number (argument %d for function %s)\n"
 argument_list|,
 name|j
 operator|+
@@ -4616,7 +4616,7 @@ name|sc
 operator|->
 name|vptr
 operator|->
-name|is_integer
+name|is_number
 argument_list|(
 name|v_element
 argument_list|)
@@ -4631,7 +4631,7 @@ argument_list|(
 name|error_str
 argument_list|)
 argument_list|,
-literal|"Item %d in vector is not INT16 (argument %d for function %s)\n"
+literal|"Item %d in vector is not a number (argument %d for function %s)\n"
 argument_list|,
 name|j
 operator|+
@@ -4918,7 +4918,7 @@ name|sc
 operator|->
 name|vptr
 operator|->
-name|is_integer
+name|is_number
 argument_list|(
 name|v_element
 argument_list|)
@@ -4933,7 +4933,7 @@ argument_list|(
 name|error_str
 argument_list|)
 argument_list|,
-literal|"Item %d in vector is not INT8 (argument %d for function %s)\n"
+literal|"Item %d in vector is not a number (argument %d for function %s)\n"
 argument_list|,
 name|j
 operator|+
@@ -5235,7 +5235,7 @@ argument_list|(
 name|error_str
 argument_list|)
 argument_list|,
-literal|"Item %d in vector is not FLOAT (argument %d for function %s)\n"
+literal|"Item %d in vector is not a number (argument %d for function %s)\n"
 argument_list|,
 name|j
 operator|+
@@ -5538,7 +5538,7 @@ argument_list|(
 name|error_str
 argument_list|)
 argument_list|,
-literal|"Item %d in vector is not STRING (argument %d for function %s)\n"
+literal|"Item %d in vector is not a string (argument %d for function %s)\n"
 argument_list|,
 name|j
 operator|+
