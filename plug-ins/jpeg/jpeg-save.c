@@ -140,7 +140,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3ed7360108
+DECL|struct|__anon2ab05cf50108
 block|{
 DECL|member|cinfo
 name|struct
@@ -2466,7 +2466,7 @@ name|cinfo
 operator|.
 name|next_scanline
 operator|%
-literal|16
+literal|32
 operator|)
 operator|==
 literal|0
@@ -4872,7 +4872,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3ed7360208
+DECL|struct|__anon2ab05cf50208
 block|{
 DECL|member|pub
 name|struct

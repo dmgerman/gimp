@@ -1709,6 +1709,16 @@ if|if
 condition|(
 operator|!
 name|preview
+operator|&&
+operator|(
+name|cinfo
+operator|.
+name|output_scanline
+operator|%
+literal|32
+operator|)
+operator|==
+literal|0
 condition|)
 name|gimp_progress_update
 argument_list|(
@@ -1854,7 +1864,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291ccf020108
+DECL|struct|__anon27e9c0d10108
 block|{
 DECL|member|pub
 name|struct
