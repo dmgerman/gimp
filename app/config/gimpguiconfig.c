@@ -101,7 +101,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b74fd40103
+DECL|enum|__anon2a0980880103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -595,7 +595,7 @@ literal|"toolbox-color-area"
 argument_list|,
 name|TOOLBOX_COLOR_AREA_BLURB
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)

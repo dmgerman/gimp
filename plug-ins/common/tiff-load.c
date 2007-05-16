@@ -68,7 +68,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277dd34d0108
+DECL|struct|__anon28e173650108
 block|{
 DECL|member|compression
 name|gint
@@ -91,7 +91,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277dd34d0208
+DECL|struct|__anon28e173650208
 block|{
 DECL|member|ID
 name|gint32
@@ -125,7 +125,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277dd34d0308
+DECL|struct|__anon28e173650308
 block|{
 DECL|member|o_pages
 name|gint
@@ -4754,13 +4754,18 @@ call|(
 name|double
 call|)
 argument_list|(
+call|(
+name|gchar
+call|)
+argument_list|(
 operator|(
 name|coord
 operator|>>
 literal|24
 operator|)
 operator|&
-literal|0x7F
+literal|0xFF
+argument_list|)
 argument_list|)
 operator|+
 call|(
@@ -4776,17 +4781,6 @@ operator|(
 name|double
 operator|)
 literal|0xFFFFFF
-expr_stmt|;
-if|if
-condition|(
-name|coord
-operator|&
-literal|0x80000000
-condition|)
-name|f
-operator|*=
-operator|-
-literal|1
 expr_stmt|;
 comment|/* coords are stored with vertical component                            * first, gimp expects the horizontal component                            * first. Sigh.  */
 name|points
