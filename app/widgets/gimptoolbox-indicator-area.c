@@ -104,7 +104,7 @@ DECL|macro|CELL_SIZE
 define|#
 directive|define
 name|CELL_SIZE
-value|26
+value|24
 end_define
 
 begin_comment
@@ -117,7 +117,7 @@ DECL|macro|GRAD_CELL_WIDTH
 define|#
 directive|define
 name|GRAD_CELL_WIDTH
-value|54
+value|52
 end_define
 
 begin_comment
@@ -130,7 +130,7 @@ DECL|macro|GRAD_CELL_HEIGHT
 define|#
 directive|define
 name|GRAD_CELL_HEIGHT
-value|14
+value|12
 end_define
 
 begin_comment
@@ -512,7 +512,7 @@ name|CELL_SIZE
 argument_list|,
 name|CELL_SIZE
 argument_list|,
-literal|0
+literal|1
 argument_list|,
 name|FALSE
 argument_list|,
@@ -629,7 +629,7 @@ name|CELL_SIZE
 argument_list|,
 name|CELL_SIZE
 argument_list|,
-literal|0
+literal|1
 argument_list|,
 name|FALSE
 argument_list|,
@@ -746,7 +746,7 @@ name|GRAD_CELL_WIDTH
 argument_list|,
 name|GRAD_CELL_HEIGHT
 argument_list|,
-literal|0
+literal|1
 argument_list|,
 name|FALSE
 argument_list|,
