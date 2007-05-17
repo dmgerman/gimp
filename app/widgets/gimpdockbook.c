@@ -147,7 +147,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a8c9090103
+DECL|enum|__anon29a20e3d0103
 block|{
 DECL|enumerator|DOCKABLE_ADDED
 name|DOCKABLE_ADDED
@@ -665,6 +665,16 @@ name|dockbook
 argument_list|)
 argument_list|,
 name|TRUE
+argument_list|)
+expr_stmt|;
+name|gtk_notebook_set_show_border
+argument_list|(
+name|GTK_NOTEBOOK
+argument_list|(
+name|dockbook
+argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gtk_drag_dest_set
