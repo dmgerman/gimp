@@ -96,7 +96,7 @@ DECL|macro|HELP_TEXT
 define|#
 directive|define
 name|HELP_TEXT
-value|_("You can drop dockable dialogs here.")
+value|_("You can drop dockable dialogs here")
 end_define
 
 begin_function_decl
