@@ -68,7 +68,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e173650108
+DECL|struct|__anon29cdf2100108
 block|{
 DECL|member|compression
 name|gint
@@ -91,7 +91,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e173650208
+DECL|struct|__anon29cdf2100208
 block|{
 DECL|member|ID
 name|gint32
@@ -125,7 +125,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e173650308
+DECL|struct|__anon29cdf2100308
 block|{
 DECL|member|o_pages
 name|gint
@@ -4269,6 +4269,9 @@ name|width
 decl_stmt|,
 name|height
 decl_stmt|;
+name|gint
+name|path_index
+decl_stmt|;
 name|width
 operator|=
 name|gimp_image_width
@@ -4309,6 +4312,10 @@ name|bytes
 argument_list|)
 condition|)
 return|return;
+name|path_index
+operator|=
+literal|0
+expr_stmt|;
 name|pos
 operator|=
 literal|0
@@ -4545,9 +4552,11 @@ name|image
 argument_list|,
 name|vectors
 argument_list|,
-operator|-
-literal|1
+name|path_index
 argument_list|)
+expr_stmt|;
+name|path_index
+operator|++
 expr_stmt|;
 while|while
 condition|(
