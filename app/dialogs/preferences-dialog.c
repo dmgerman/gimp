@@ -2936,16 +2936,6 @@ argument_list|,
 literal|12
 argument_list|)
 expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|vbox
-argument_list|)
-argument_list|,
-literal|12
-argument_list|)
-expr_stmt|;
 name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
@@ -5846,7 +5836,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|0
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -8959,7 +8949,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2bbfea7b0108
+DECL|struct|__anon2be5b73f0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -10121,7 +10111,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2bbfea7b0208
+DECL|struct|__anon2be5b73f0208
 block|{
 DECL|member|label
 specifier|const
@@ -11100,7 +11090,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2bbfea7b0308
+DECL|struct|__anon2be5b73f0308
 block|{
 DECL|member|property_name
 specifier|const
@@ -11255,7 +11245,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2bbfea7b0408
+DECL|struct|__anon2be5b73f0408
 block|{
 DECL|member|tree_label
 specifier|const
