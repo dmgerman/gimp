@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3e38b40103
+DECL|enum|__anon28713a510103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -55,7 +55,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3e38b40208
+DECL|struct|__anon28713a510208
 block|{
 DECL|member|user_data_type
 name|GType
@@ -784,6 +784,9 @@ modifier|*
 name|store
 parameter_list|)
 block|{
+name|GtkTreeIter
+name|iter
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|store
@@ -793,17 +796,6 @@ operator|==
 name|NULL
 argument_list|)
 expr_stmt|;
-name|store
-operator|->
-name|empty_iter
-operator|=
-name|g_new0
-argument_list|(
-name|GtkTreeIter
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
 name|gtk_list_store_prepend
 argument_list|(
 name|GTK_LIST_STORE
@@ -811,9 +803,8 @@ argument_list|(
 name|store
 argument_list|)
 argument_list|,
-name|store
-operator|->
-name|empty_iter
+operator|&
+name|iter
 argument_list|)
 expr_stmt|;
 name|gtk_list_store_set
@@ -823,9 +814,8 @@ argument_list|(
 name|store
 argument_list|)
 argument_list|,
-name|store
-operator|->
-name|empty_iter
+operator|&
+name|iter
 argument_list|,
 name|GIMP_INT_STORE_VALUE
 argument_list|,
@@ -843,6 +833,16 @@ operator|)
 argument_list|,
 operator|-
 literal|1
+argument_list|)
+expr_stmt|;
+name|store
+operator|->
+name|empty_iter
+operator|=
+name|gtk_tree_iter_copy
+argument_list|(
+operator|&
+name|iter
 argument_list|)
 expr_stmt|;
 block|}
