@@ -3989,7 +3989,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -5906,6 +5906,16 @@ argument_list|,
 literal|6
 argument_list|)
 expr_stmt|;
+name|gtk_container_set_border_width
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|hbox
+argument_list|)
+argument_list|,
+literal|6
+argument_list|)
+expr_stmt|;
 name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
@@ -5972,7 +5982,7 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
-literal|6
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -5998,7 +6008,7 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
-literal|6
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -8948,7 +8958,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon27cdc6ff0108
+DECL|struct|__anon2b44749e0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -10110,7 +10120,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27cdc6ff0208
+DECL|struct|__anon2b44749e0208
 block|{
 DECL|member|label
 specifier|const
@@ -11089,7 +11099,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27cdc6ff0308
+DECL|struct|__anon2b44749e0308
 block|{
 DECL|member|property_name
 specifier|const
@@ -11244,7 +11254,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27cdc6ff0408
+DECL|struct|__anon2b44749e0408
 block|{
 DECL|member|tree_label
 specifier|const
