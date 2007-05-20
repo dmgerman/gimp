@@ -76,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a38a520108
+DECL|struct|__anon27feeafc0108
 block|{
 DECL|member|compression
 name|gint
@@ -99,7 +99,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a38a520208
+DECL|struct|__anon27feeafc0208
 block|{
 DECL|member|ID
 name|gint32
@@ -1798,7 +1798,7 @@ name|data
 operator|->
 name|len
 operator|%
-literal|1
+literal|2
 condition|)
 comment|/* padding to even size */
 name|g_string_append_c
