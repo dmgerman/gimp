@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb6f41c0103
+DECL|enum|__anon294452ae0103
 block|{
 DECL|enumerator|COLUMN_RENDERER
 name|COLUMN_RENDERER
@@ -646,7 +646,7 @@ operator|=
 operator|(
 name|GDestroyNotify
 operator|)
-name|g_free
+name|gtk_tree_iter_free
 expr_stmt|;
 block|}
 end_function
@@ -2204,18 +2204,8 @@ name|view
 argument_list|)
 decl_stmt|;
 name|GtkTreeIter
-modifier|*
 name|iter
 decl_stmt|;
-name|iter
-operator|=
-name|g_new0
-argument_list|(
-name|GtkTreeIter
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|index
@@ -2232,6 +2222,7 @@ operator|->
 name|model
 argument_list|)
 argument_list|,
+operator|&
 name|iter
 argument_list|)
 expr_stmt|;
@@ -2245,6 +2236,7 @@ operator|->
 name|model
 argument_list|)
 argument_list|,
+operator|&
 name|iter
 argument_list|,
 name|index
@@ -2254,16 +2246,18 @@ name|gimp_container_tree_view_set
 argument_list|(
 name|tree_view
 argument_list|,
+operator|&
 name|iter
 argument_list|,
 name|viewable
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
-name|gpointer
-operator|)
+name|gtk_tree_iter_copy
+argument_list|(
+operator|&
 name|iter
+argument_list|)
 return|;
 block|}
 end_function

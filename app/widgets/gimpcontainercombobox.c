@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29502f6b0103
+DECL|enum|__anon28c37cf40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -88,7 +88,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29502f6b0203
+DECL|enum|__anon28c37cf40203
 block|{
 DECL|enumerator|COLUMN_RENDERER
 name|COLUMN_RENDERER
@@ -538,7 +538,7 @@ operator|=
 operator|(
 name|GDestroyNotify
 operator|)
-name|g_free
+name|gtk_tree_iter_free
 expr_stmt|;
 block|}
 end_function
@@ -1340,18 +1340,8 @@ argument_list|)
 argument_list|)
 decl_stmt|;
 name|GtkTreeIter
-modifier|*
 name|iter
 decl_stmt|;
-name|iter
-operator|=
-name|g_new0
-argument_list|(
-name|GtkTreeIter
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|index
@@ -1366,6 +1356,7 @@ argument_list|(
 name|model
 argument_list|)
 argument_list|,
+operator|&
 name|iter
 argument_list|)
 expr_stmt|;
@@ -1377,6 +1368,7 @@ argument_list|(
 name|model
 argument_list|)
 argument_list|,
+operator|&
 name|iter
 argument_list|,
 name|index
@@ -1412,16 +1404,18 @@ argument_list|(
 name|view
 argument_list|)
 argument_list|,
+operator|&
 name|iter
 argument_list|,
 name|viewable
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
-name|gpointer
-operator|)
+name|gtk_tree_iter_copy
+argument_list|(
+operator|&
 name|iter
+argument_list|)
 return|;
 block|}
 end_function
