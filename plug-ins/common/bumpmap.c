@@ -119,7 +119,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d263cd0103
+DECL|enum|__anon27a7b6760103
 block|{
 DECL|enumerator|LINEAR
 name|LINEAR
@@ -137,7 +137,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d263cd0203
+DECL|enum|__anon27a7b6760203
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE
@@ -153,7 +153,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d263cd0308
+DECL|struct|__anon27a7b6760308
 block|{
 DECL|member|bumpmap_id
 name|gint32
@@ -212,7 +212,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d263cd0408
+DECL|struct|__anon27a7b6760408
 block|{
 DECL|member|lx
 DECL|member|ly
@@ -257,7 +257,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d263cd0508
+DECL|struct|__anon27a7b6760508
 block|{
 DECL|member|mouse_x
 name|gint
@@ -2047,21 +2047,24 @@ operator|.
 name|lut
 argument_list|)
 expr_stmt|;
-name|progress
-operator|=
-literal|0
-expr_stmt|;
 for|for
 control|(
 name|y
 operator|=
 name|sel_y1
+operator|,
+name|progress
+operator|=
+literal|0
 init|;
 name|y
 operator|<
 name|sel_y2
 condition|;
 name|y
+operator|++
+operator|,
+name|progress
 operator|++
 control|)
 block|{
@@ -2247,12 +2250,21 @@ name|lut
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+operator|(
+name|progress
+operator|%
+literal|16
+operator|)
+operator|==
+literal|0
+condition|)
 name|gimp_progress_update
 argument_list|(
 operator|(
-name|double
+name|gdouble
 operator|)
-operator|++
 name|progress
 operator|/
 name|sel_height

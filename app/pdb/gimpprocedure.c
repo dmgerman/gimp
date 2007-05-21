@@ -225,6 +225,10 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
+parameter_list|,
 name|GParamSpec
 modifier|*
 modifier|*
@@ -1331,6 +1335,8 @@ name|procedure
 argument_list|,
 name|gimp
 argument_list|,
+name|progress
+argument_list|,
 name|procedure
 operator|->
 name|args
@@ -1515,6 +1521,8 @@ argument_list|(
 name|procedure
 argument_list|,
 name|gimp
+argument_list|,
+name|progress
 argument_list|,
 name|procedure
 operator|->
@@ -2096,7 +2104,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_procedure_validate_args (GimpProcedure * procedure,Gimp * gimp,GParamSpec ** param_specs,gint n_param_specs,GValueArray * args,gboolean return_vals)
+DECL|function|gimp_procedure_validate_args (GimpProcedure * procedure,Gimp * gimp,GimpProgress * progress,GParamSpec ** param_specs,gint n_param_specs,GValueArray * args,gboolean return_vals)
 name|gimp_procedure_validate_args
 parameter_list|(
 name|GimpProcedure
@@ -2106,6 +2114,10 @@ parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|GParamSpec
 modifier|*
@@ -2200,7 +2212,10 @@ name|gimp_message
 argument_list|(
 name|gimp
 argument_list|,
-name|NULL
+name|G_OBJECT
+argument_list|(
+name|progress
+argument_list|)
 argument_list|,
 name|GIMP_MESSAGE_ERROR
 argument_list|,
@@ -2246,7 +2261,10 @@ name|gimp_message
 argument_list|(
 name|gimp
 argument_list|,
-name|NULL
+name|G_OBJECT
+argument_list|(
+name|progress
+argument_list|)
 argument_list|,
 name|GIMP_MESSAGE_ERROR
 argument_list|,
@@ -2379,7 +2397,10 @@ name|gimp_message
 argument_list|(
 name|gimp
 argument_list|,
-name|NULL
+name|G_OBJECT
+argument_list|(
+name|progress
+argument_list|)
 argument_list|,
 name|GIMP_MESSAGE_ERROR
 argument_list|,
@@ -2413,7 +2434,10 @@ name|gimp_message
 argument_list|(
 name|gimp
 argument_list|,
-name|NULL
+name|G_OBJECT
+argument_list|(
+name|progress
+argument_list|)
 argument_list|,
 name|GIMP_MESSAGE_ERROR
 argument_list|,
@@ -2468,7 +2492,10 @@ name|gimp_message
 argument_list|(
 name|gimp
 argument_list|,
-name|NULL
+name|G_OBJECT
+argument_list|(
+name|progress
+argument_list|)
 argument_list|,
 name|GIMP_MESSAGE_ERROR
 argument_list|,
@@ -2502,7 +2529,10 @@ name|gimp_message
 argument_list|(
 name|gimp
 argument_list|,
-name|NULL
+name|G_OBJECT
+argument_list|(
+name|progress
+argument_list|)
 argument_list|,
 name|GIMP_MESSAGE_ERROR
 argument_list|,
@@ -2542,7 +2572,10 @@ name|gimp_message
 argument_list|(
 name|gimp
 argument_list|,
-name|NULL
+name|G_OBJECT
+argument_list|(
+name|progress
+argument_list|)
 argument_list|,
 name|GIMP_MESSAGE_ERROR
 argument_list|,
@@ -2590,7 +2623,10 @@ name|gimp_message
 argument_list|(
 name|gimp
 argument_list|,
-name|NULL
+name|G_OBJECT
+argument_list|(
+name|progress
+argument_list|)
 argument_list|,
 name|GIMP_MESSAGE_ERROR
 argument_list|,
