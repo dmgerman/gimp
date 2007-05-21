@@ -127,9 +127,17 @@ endif|#
 directive|endif
 end_endif
 
+begin_define
+DECL|macro|DEFAULT_RESOLUTION
+define|#
+directive|define
+name|DEFAULT_RESOLUTION
+value|72.0
+end_define
+
 begin_enum
 enum|enum
-DECL|enum|__anon2c72667e0103
+DECL|enum|__anon28c471c10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -396,7 +404,7 @@ argument_list|(
 literal|"The horizontal image resolution."
 argument_list|)
 argument_list|,
-literal|72.0
+name|DEFAULT_RESOLUTION
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
@@ -414,7 +422,7 @@ argument_list|(
 literal|"The vertical image resolution."
 argument_list|)
 argument_list|,
-literal|72.0
+name|DEFAULT_RESOLUTION
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
