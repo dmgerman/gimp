@@ -3362,7 +3362,10 @@ name|image
 operator|->
 name|gimp
 argument_list|,
-name|NULL
+name|G_OBJECT
+argument_list|(
+name|view
+argument_list|)
 argument_list|,
 name|GIMP_MESSAGE_ERROR
 argument_list|,

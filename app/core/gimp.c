@@ -303,7 +303,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aea90d20103
+DECL|enum|__anon29a407410103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -4140,6 +4140,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_message:  * @gimp:     a pointer to the %Gimp object  * @handler:  either a %GimpProgress or a %GtkWidget pointer  * @severity: severity of the message  * @format:   printf-like format string  * @...:      arguments to use with @format  *  * Present a message to the user. How exactly the message is displayed  * depends on the @severity, the @handler object and user preferences.  **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_message (Gimp * gimp,GObject * handler,GimpMessageSeverity severity,const gchar * format,...)
@@ -4194,6 +4198,10 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_message_valist:  * @gimp:     a pointer to the %Gimp object  * @handler:  either a %GimpProgress or a %GtkWidget pointer  * @severity: severity of the message  * @format:   printf-like format string  * @args:     arguments to use with @format  *  * See documentation for gimp_message().  **/
+end_comment
 
 begin_function
 name|void

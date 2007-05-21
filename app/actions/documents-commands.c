@@ -148,18 +148,9 @@ file|"gimp-intl.h"
 end_include
 
 begin_typedef
-DECL|typedef|RaiseClosure
 typedef|typedef
-name|struct
-name|_RaiseClosure
-name|RaiseClosure
-typedef|;
-end_typedef
-
-begin_struct
-DECL|struct|_RaiseClosure
 struct|struct
-name|_RaiseClosure
+DECL|struct|__anon2be83fa80108
 block|{
 DECL|member|name
 specifier|const
@@ -171,9 +162,11 @@ DECL|member|found
 name|gboolean
 name|found
 decl_stmt|;
+DECL|typedef|RaiseClosure
 block|}
-struct|;
-end_struct
+name|RaiseClosure
+typedef|;
+end_typedef
 
 begin_comment
 comment|/*  local function prototypes  */
@@ -184,6 +177,10 @@ specifier|static
 name|void
 name|documents_open_image
 parameter_list|(
+name|GtkWidget
+modifier|*
+name|editor
+parameter_list|,
 name|GimpContext
 modifier|*
 name|context
@@ -200,11 +197,13 @@ specifier|static
 name|void
 name|documents_raise_display
 parameter_list|(
-name|gpointer
-name|data
+name|GimpDisplay
+modifier|*
+name|display
 parameter_list|,
-name|gpointer
-name|user_data
+name|RaiseClosure
+modifier|*
+name|closure
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -289,6 +288,11 @@ condition|)
 block|{
 name|documents_open_image
 argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|editor
+argument_list|)
+argument_list|,
 name|context
 argument_list|,
 name|imagefile
@@ -418,6 +422,9 @@ name|gimp
 operator|->
 name|displays
 argument_list|,
+operator|(
+name|GFunc
+operator|)
 name|documents_raise_display
 argument_list|,
 operator|&
@@ -433,6 +440,11 @@ name|found
 condition|)
 name|documents_open_image
 argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|editor
+argument_list|)
+argument_list|,
 name|context
 argument_list|,
 name|imagefile
@@ -1124,9 +1136,13 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|documents_open_image (GimpContext * context,GimpImagefile * imagefile)
+DECL|function|documents_open_image (GtkWidget * editor,GimpContext * context,GimpImagefile * imagefile)
 name|documents_open_image
 parameter_list|(
+name|GtkWidget
+modifier|*
+name|editor
+parameter_list|,
 name|GimpContext
 modifier|*
 name|context
@@ -1212,7 +1228,10 @@ name|context
 operator|->
 name|gimp
 argument_list|,
-name|NULL
+name|G_OBJECT
+argument_list|(
+name|editor
+argument_list|)
 argument_list|,
 name|GIMP_MESSAGE_ERROR
 argument_list|,
@@ -1246,35 +1265,23 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|documents_raise_display (gpointer data,gpointer user_data)
+DECL|function|documents_raise_display (GimpDisplay * display,RaiseClosure * closure)
 name|documents_raise_display
 parameter_list|(
-name|gpointer
-name|data
-parameter_list|,
-name|gpointer
-name|user_data
-parameter_list|)
-block|{
 name|GimpDisplay
 modifier|*
 name|display
-init|=
-name|data
-decl_stmt|;
+parameter_list|,
 name|RaiseClosure
 modifier|*
 name|closure
-init|=
-name|user_data
-decl_stmt|;
+parameter_list|)
+block|{
 specifier|const
 name|gchar
 modifier|*
 name|uri
-decl_stmt|;
-name|uri
-operator|=
+init|=
 name|gimp_object_get_name
 argument_list|(
 name|GIMP_OBJECT
@@ -1284,7 +1291,7 @@ operator|->
 name|image
 argument_list|)
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|uri
