@@ -101,17 +101,14 @@ value|6
 end_define
 
 begin_comment
-comment|/* Initializes the fields of a tile to "good" values.  */
+comment|/* Returns a newly allocated Tile with all fields initialized to "good" values.  */
 end_comment
 
 begin_function_decl
-name|void
-name|tile_init
-parameter_list|(
 name|Tile
 modifier|*
-name|tile
-parameter_list|,
+name|tile_new
+parameter_list|(
 name|gint
 name|bpp
 parameter_list|)

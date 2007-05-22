@@ -337,18 +337,24 @@ block|}
 end_function
 
 begin_function
-name|void
-DECL|function|tile_init (Tile * tile,gint bpp)
-name|tile_init
-parameter_list|(
 name|Tile
 modifier|*
-name|tile
-parameter_list|,
+DECL|function|tile_new (gint bpp)
+name|tile_new
+parameter_list|(
 name|gint
 name|bpp
 parameter_list|)
 block|{
+name|Tile
+modifier|*
+name|tile
+init|=
+name|g_slice_new
+argument_list|(
+name|Tile
+argument_list|)
+decl_stmt|;
 name|tile
 operator|->
 name|ref_count
@@ -454,6 +460,9 @@ operator|++
 expr_stmt|;
 endif|#
 directive|endif
+return|return
+name|tile
+return|;
 block|}
 end_function
 
@@ -844,8 +853,10 @@ argument_list|(
 name|tile
 argument_list|)
 expr_stmt|;
-name|g_free
+name|g_slice_free
 argument_list|(
+name|Tile
+argument_list|,
 name|tile
 argument_list|)
 expr_stmt|;
