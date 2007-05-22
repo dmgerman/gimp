@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimpregioniterator.c  *  * FIXME: fix the following comment:  * Contains all kinds of miscellaneous routines factored out from different  * plug-ins. They stay here until their API has crystalized a bit and we can  * put them into the file where they belong (Maurits Rijk  *<lpeek.mrijk@consunet.nl> if you want to blame someone for this mess)  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimpregioniterator.c  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -44,16 +44,19 @@ modifier|*
 name|drawable
 decl_stmt|;
 DECL|member|x1
-DECL|member|y1
-DECL|member|x2
-DECL|member|y2
 name|gint
 name|x1
-decl_stmt|,
+decl_stmt|;
+DECL|member|y1
+name|gint
 name|y1
-decl_stmt|,
+decl_stmt|;
+DECL|member|x2
+name|gint
 name|x2
-decl_stmt|,
+decl_stmt|;
+DECL|member|y2
+name|gint
 name|y2
 decl_stmt|;
 block|}
@@ -135,7 +138,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_rgn_iterator_new:  * @drawable: a #GimpDrawable  * @unused:   ignored  *  * Creates a new #GimpRgnIterator for @drawable. The #GimpRunMode  * parameter is ignored.  *  * Return value: a newly allocated #GimpRgnIterator.  **/
+comment|/**  * gimp_rgn_iterator_new:  * @drawable: a #GimpDrawable  * @unused:   ignored  *  * Creates a new #GimpRgnIterator for @drawable. The #GimpRunMode  * parameter is ignored. Use gimp_rgn_iterator_free() to free thsi  * iterator.  *  * Return value: a newly allocated #GimpRgnIterator.  **/
 end_comment
 
 begin_function
@@ -155,14 +158,23 @@ block|{
 name|GimpRgnIterator
 modifier|*
 name|iter
-init|=
-name|g_new
+decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|drawable
+operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|iter
+operator|=
+name|g_slice_new
 argument_list|(
 name|GimpRgnIterator
-argument_list|,
-literal|1
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|iter
 operator|->
 name|drawable
@@ -216,8 +228,17 @@ modifier|*
 name|iter
 parameter_list|)
 block|{
-name|g_free
+name|g_return_if_fail
 argument_list|(
+name|iter
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_slice_free
+argument_list|(
+name|GimpRgnIterator
+argument_list|,
 name|iter
 argument_list|)
 expr_stmt|;
@@ -243,6 +264,13 @@ block|{
 name|GimpPixelRgn
 name|srcPR
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|iter
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
 name|gimp_pixel_rgn_init
 argument_list|(
 operator|&
@@ -338,6 +366,13 @@ decl_stmt|;
 name|gint
 name|area_so_far
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|iter
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
 name|x1
 operator|=
 name|iter
@@ -665,6 +700,13 @@ block|{
 name|GimpPixelRgn
 name|destPR
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|iter
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
 name|gimp_pixel_rgn_init
 argument_list|(
 operator|&
@@ -816,6 +858,13 @@ decl_stmt|;
 name|gint
 name|progress_skip
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|drawable
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
 name|gimp_drawable_mask_bounds
 argument_list|(
 name|drawable
@@ -1078,6 +1127,13 @@ decl_stmt|;
 name|gint
 name|progress_skip
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|drawable
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
 name|gimp_drawable_mask_bounds
 argument_list|(
 name|drawable

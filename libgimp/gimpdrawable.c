@@ -98,11 +98,9 @@ argument_list|)
 expr_stmt|;
 name|drawable
 operator|=
-name|g_new0
+name|g_slice_new0
 argument_list|(
 name|GimpDrawable
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|drawable
@@ -215,8 +213,10 @@ operator|->
 name|shadow_tiles
 argument_list|)
 expr_stmt|;
-name|g_free
+name|g_slice_free
 argument_list|(
+name|GimpDrawable
+argument_list|,
 name|drawable
 argument_list|)
 expr_stmt|;
