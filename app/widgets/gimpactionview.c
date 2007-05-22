@@ -1745,7 +1745,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb098c10108
+DECL|struct|__anon2b4b9c9f0108
 block|{
 DECL|member|manager
 name|GimpUIManager
@@ -1852,8 +1852,10 @@ operator|->
 name|accel_path
 argument_list|)
 expr_stmt|;
-name|g_free
+name|g_slice_free
 argument_list|(
+name|ConfirmData
+argument_list|,
 name|confirm_data
 argument_list|)
 expr_stmt|;
@@ -1954,11 +1956,9 @@ argument_list|)
 expr_stmt|;
 name|confirm_data
 operator|=
-name|g_new0
+name|g_slice_new
 argument_list|(
 name|ConfirmData
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|confirm_data
