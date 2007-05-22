@@ -66,7 +66,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9acf160108
+DECL|struct|__anon2b8871390108
 block|{
 DECL|member|name
 name|gchar
@@ -419,11 +419,9 @@ argument_list|)
 expr_stmt|;
 name|data
 operator|=
-name|g_new0
+name|g_slice_new0
 argument_list|(
 name|GimpScannerData
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|data
@@ -556,8 +554,10 @@ operator|->
 name|name
 argument_list|)
 expr_stmt|;
-name|g_free
+name|g_slice_free
 argument_list|(
+name|GimpScannerData
+argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
@@ -1056,7 +1056,7 @@ end_function
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a9acf160203
+DECL|enum|__anon2b8871390203
 block|{
 DECL|enumerator|COLOR_RGB
 name|COLOR_RGB
