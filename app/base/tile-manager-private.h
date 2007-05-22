@@ -75,13 +75,13 @@ DECL|member|cached_num
 name|gint
 name|cached_num
 decl_stmt|;
-comment|/*  number of cached tile */
+comment|/*  number of cached tile                */
 DECL|member|cached_tile
 name|Tile
 modifier|*
 name|cached_tile
 decl_stmt|;
-comment|/*  the actual cached tile */
+comment|/*  the actual cached tile               */
 DECL|member|user_data
 name|gpointer
 name|user_data
