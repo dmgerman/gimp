@@ -194,13 +194,14 @@ name|tile
 operator|->
 name|rowhint
 operator|=
-name|g_new0
+name|g_slice_alloc0
+argument_list|(
+sizeof|sizeof
 argument_list|(
 name|TileRowHint
-argument_list|,
-name|tile
-operator|->
-name|eheight
+argument_list|)
+operator|*
+name|TILE_HEIGHT
 argument_list|)
 expr_stmt|;
 block|}
@@ -315,11 +316,13 @@ name|rowhint
 expr_stmt|;
 block|}
 else|else
+block|{
 name|g_error
 argument_list|(
 literal|"SET_ROWHINT OUT OF RANGE"
 argument_list|)
 expr_stmt|;
+block|}
 else|#
 directive|else
 name|tile
@@ -811,8 +814,15 @@ operator|->
 name|rowhint
 condition|)
 block|{
-name|g_free
+name|g_slice_free1
 argument_list|(
+sizeof|sizeof
+argument_list|(
+name|TileRowHint
+argument_list|)
+operator|*
+name|TILE_HEIGHT
+argument_list|,
 name|tile
 operator|->
 name|rowhint
@@ -1081,11 +1091,9 @@ directive|endif
 comment|/* link this tile into the tile's tilelink chain */
 name|tmp
 operator|=
-name|g_new
+name|g_slice_new
 argument_list|(
 name|TileLink
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|tmp
@@ -1248,8 +1256,10 @@ name|tmp
 operator|->
 name|next
 expr_stmt|;
-name|g_free
+name|g_slice_free
 argument_list|(
+name|TileLink
+argument_list|,
 name|tmp
 argument_list|)
 expr_stmt|;

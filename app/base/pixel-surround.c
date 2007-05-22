@@ -490,11 +490,9 @@ argument_list|)
 expr_stmt|;
 name|surround
 operator|=
-name|g_new0
+name|g_slice_new0
 argument_list|(
 name|PixelSurround
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|surround
@@ -963,8 +961,10 @@ operator|->
 name|bg
 argument_list|)
 expr_stmt|;
-name|g_free
+name|g_slice_free
 argument_list|(
+name|PixelSurround
+argument_list|,
 name|surround
 argument_list|)
 expr_stmt|;
