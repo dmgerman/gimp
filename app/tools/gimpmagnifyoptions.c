@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2932b68d0103
+DECL|enum|__anon2c62f9540103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -90,6 +90,7 @@ name|PROP_ZOOM_TYPE
 block|,
 DECL|enumerator|PROP_THRESHOLD
 name|PROP_THRESHOLD
+comment|/* kept for config file compatibility only */
 block|}
 enum|;
 end_enum
@@ -352,15 +353,7 @@ break|break;
 case|case
 name|PROP_THRESHOLD
 case|:
-name|options
-operator|->
-name|threshold
-operator|=
-name|g_value_get_double
-argument_list|(
-name|value
-argument_list|)
-expr_stmt|;
+comment|/* compat */
 break|break;
 default|default:
 name|G_OBJECT_WARN_INVALID_PROPERTY_ID
@@ -446,11 +439,10 @@ name|g_value_set_double
 argument_list|(
 name|value
 argument_list|,
-name|options
-operator|->
-name|threshold
+literal|8.0
 argument_list|)
 expr_stmt|;
+comment|/* compat */
 break|break;
 default|default:
 name|G_OBJECT_WARN_INVALID_PROPERTY_ID

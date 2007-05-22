@@ -120,10 +120,6 @@ DECL|member|zoom_type
 name|GimpZoomType
 name|zoom_type
 decl_stmt|;
-DECL|member|threshold
-name|gdouble
-name|threshold
-decl_stmt|;
 block|}
 struct|;
 end_struct
