@@ -102,11 +102,9 @@ argument_list|)
 expr_stmt|;
 name|parser
 operator|=
-name|g_new
+name|g_slice_new
 argument_list|(
 name|GimpXmlParser
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|parser
@@ -850,8 +848,10 @@ operator|->
 name|context
 argument_list|)
 expr_stmt|;
-name|g_free
+name|g_slice_free
 argument_list|(
+name|GimpXmlParser
+argument_list|,
 name|parser
 argument_list|)
 expr_stmt|;
