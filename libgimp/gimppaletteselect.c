@@ -16,18 +16,9 @@ file|"gimp.h"
 end_include
 
 begin_typedef
-DECL|typedef|GimpPaletteData
 typedef|typedef
-name|struct
-name|_GimpPaletteData
-name|GimpPaletteData
-typedef|;
-end_typedef
-
-begin_struct
-DECL|struct|_GimpPaletteData
 struct|struct
-name|_GimpPaletteData
+DECL|struct|__anon2acba3350108
 block|{
 DECL|member|palette_callback
 name|gchar
@@ -59,13 +50,27 @@ DECL|member|data
 name|gpointer
 name|data
 decl_stmt|;
+DECL|typedef|GimpPaletteData
 block|}
-struct|;
-end_struct
+name|GimpPaletteData
+typedef|;
+end_typedef
 
 begin_comment
 comment|/*  local function prototypes  */
 end_comment
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_palette_data_free
+parameter_list|(
+name|GimpPaletteData
+modifier|*
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 specifier|static
@@ -252,6 +257,7 @@ condition|(
 operator|!
 name|gimp_palette_select_ht
 condition|)
+block|{
 name|gimp_palette_select_ht
 operator|=
 name|g_hash_table_new_full
@@ -262,16 +268,18 @@ name|g_str_equal
 argument_list|,
 name|g_free
 argument_list|,
-name|g_free
+operator|(
+name|GDestroyNotify
+operator|)
+name|gimp_palette_data_free
 argument_list|)
 expr_stmt|;
+block|}
 name|palette_data
 operator|=
-name|g_new0
+name|g_slice_new0
 argument_list|(
 name|GimpPaletteData
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|palette_data
@@ -423,6 +431,27 @@ end_function
 begin_comment
 comment|/*  private functions  */
 end_comment
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_palette_data_free (GimpPaletteData * data)
+name|gimp_palette_data_free
+parameter_list|(
+name|GimpPaletteData
+modifier|*
+name|data
+parameter_list|)
+block|{
+name|g_slice_free
+argument_list|(
+name|GimpPaletteData
+argument_list|,
+name|data
+argument_list|)
+expr_stmt|;
+block|}
+end_function
 
 begin_function
 specifier|static

@@ -16,18 +16,9 @@ file|"gimp.h"
 end_include
 
 begin_typedef
-DECL|typedef|GimpBrushData
 typedef|typedef
-name|struct
-name|_GimpBrushData
-name|GimpBrushData
-typedef|;
-end_typedef
-
-begin_struct
-DECL|struct|_GimpBrushData
 struct|struct
-name|_GimpBrushData
+DECL|struct|__anon290bc5350108
 block|{
 DECL|member|brush_callback
 name|gchar
@@ -80,13 +71,27 @@ DECL|member|data
 name|gpointer
 name|data
 decl_stmt|;
+DECL|typedef|GimpBrushData
 block|}
-struct|;
-end_struct
+name|GimpBrushData
+typedef|;
+end_typedef
 
 begin_comment
 comment|/*  local function prototypes  */
 end_comment
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_brush_data_free
+parameter_list|(
+name|GimpBrushData
+modifier|*
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 specifier|static
@@ -335,6 +340,7 @@ condition|(
 operator|!
 name|gimp_brush_select_ht
 condition|)
+block|{
 name|gimp_brush_select_ht
 operator|=
 name|g_hash_table_new_full
@@ -345,16 +351,18 @@ name|g_str_equal
 argument_list|,
 name|g_free
 argument_list|,
-name|g_free
+operator|(
+name|GDestroyNotify
+operator|)
+name|gimp_brush_data_free
 argument_list|)
 expr_stmt|;
+block|}
 name|brush_data
 operator|=
-name|g_new0
+name|g_slice_new0
 argument_list|(
 name|GimpBrushData
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|brush_data
@@ -513,6 +521,27 @@ end_function
 begin_comment
 comment|/*  private functions  */
 end_comment
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_brush_data_free (GimpBrushData * data)
+name|gimp_brush_data_free
+parameter_list|(
+name|GimpBrushData
+modifier|*
+name|data
+parameter_list|)
+block|{
+name|g_slice_free
+argument_list|(
+name|GimpBrushData
+argument_list|,
+name|data
+argument_list|)
+expr_stmt|;
+block|}
+end_function
 
 begin_function
 specifier|static

@@ -16,18 +16,9 @@ file|"gimp.h"
 end_include
 
 begin_typedef
-DECL|typedef|GimpFontData
 typedef|typedef
-name|struct
-name|_GimpFontData
-name|GimpFontData
-typedef|;
-end_typedef
-
-begin_struct
-DECL|struct|_GimpFontData
 struct|struct
-name|_GimpFontData
+DECL|struct|__anon2bc42f870108
 block|{
 DECL|member|font_callback
 name|gchar
@@ -55,13 +46,27 @@ DECL|member|data
 name|gpointer
 name|data
 decl_stmt|;
+DECL|typedef|GimpFontData
 block|}
-struct|;
-end_struct
+name|GimpFontData
+typedef|;
+end_typedef
 
 begin_comment
 comment|/*  local function prototypes  */
 end_comment
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_font_data_free
+parameter_list|(
+name|GimpFontData
+modifier|*
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 specifier|static
@@ -240,6 +245,7 @@ condition|(
 operator|!
 name|gimp_font_select_ht
 condition|)
+block|{
 name|gimp_font_select_ht
 operator|=
 name|g_hash_table_new_full
@@ -250,16 +256,18 @@ name|g_str_equal
 argument_list|,
 name|g_free
 argument_list|,
-name|g_free
+operator|(
+name|GDestroyNotify
+operator|)
+name|gimp_font_data_free
 argument_list|)
 expr_stmt|;
+block|}
 name|font_data
 operator|=
-name|g_new0
+name|g_slice_new0
 argument_list|(
 name|GimpFontData
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|font_data
@@ -411,6 +419,27 @@ end_function
 begin_comment
 comment|/*  private functions  */
 end_comment
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_font_data_free (GimpFontData * data)
+name|gimp_font_data_free
+parameter_list|(
+name|GimpFontData
+modifier|*
+name|data
+parameter_list|)
+block|{
+name|g_slice_free
+argument_list|(
+name|GimpFontData
+argument_list|,
+name|data
+argument_list|)
+expr_stmt|;
+block|}
+end_function
 
 begin_function
 specifier|static

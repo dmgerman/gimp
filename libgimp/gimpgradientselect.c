@@ -16,18 +16,9 @@ file|"gimp.h"
 end_include
 
 begin_typedef
-DECL|typedef|GimpGradientData
 typedef|typedef
-name|struct
-name|_GimpGradientData
-name|GimpGradientData
-typedef|;
-end_typedef
-
-begin_struct
-DECL|struct|_GimpGradientData
 struct|struct
-name|_GimpGradientData
+DECL|struct|__anon2b5475560108
 block|{
 DECL|member|gradient_callback
 name|gchar
@@ -64,13 +55,27 @@ DECL|member|data
 name|gpointer
 name|data
 decl_stmt|;
+DECL|typedef|GimpGradientData
 block|}
-struct|;
-end_struct
+name|GimpGradientData
+typedef|;
+end_typedef
 
 begin_comment
 comment|/*  local function prototypes  */
 end_comment
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_gradient_data_free
+parameter_list|(
+name|GimpGradientData
+modifier|*
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 specifier|static
@@ -270,6 +275,7 @@ condition|(
 operator|!
 name|gimp_gradient_select_ht
 condition|)
+block|{
 name|gimp_gradient_select_ht
 operator|=
 name|g_hash_table_new_full
@@ -280,16 +286,18 @@ name|g_str_equal
 argument_list|,
 name|g_free
 argument_list|,
-name|g_free
+operator|(
+name|GDestroyNotify
+operator|)
+name|gimp_gradient_data_free
 argument_list|)
 expr_stmt|;
+block|}
 name|gradient_data
 operator|=
-name|g_new0
+name|g_slice_new0
 argument_list|(
 name|GimpGradientData
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|gradient_data
@@ -448,6 +456,27 @@ end_function
 begin_comment
 comment|/*  private functions  */
 end_comment
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_gradient_data_free (GimpGradientData * data)
+name|gimp_gradient_data_free
+parameter_list|(
+name|GimpGradientData
+modifier|*
+name|data
+parameter_list|)
+block|{
+name|g_slice_free
+argument_list|(
+name|GimpGradientData
+argument_list|,
+name|data
+argument_list|)
+expr_stmt|;
+block|}
+end_function
 
 begin_function
 specifier|static
