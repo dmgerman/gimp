@@ -176,7 +176,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27b3f38c0103
+DECL|enum|__anon2b0c9fd80103
 block|{
 DECL|enumerator|SWAP_IN
 name|SWAP_IN
@@ -743,15 +743,6 @@ name|fd
 operator|=
 operator|-
 literal|1
-expr_stmt|;
-name|g_printerr
-argument_list|(
-literal|"%s\n"
-argument_list|,
-name|gimp_swap_file
-operator|->
-name|filename
-argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(

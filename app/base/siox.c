@@ -136,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4851f00108
+DECL|struct|__anon2a4c91010108
 block|{
 DECL|member|l
 name|gfloat
@@ -246,7 +246,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4851f00208
+DECL|struct|__anon2a4c91010208
 block|{
 DECL|member|bgdist
 name|gfloat
@@ -261,6 +261,26 @@ block|}
 name|classresult
 typedef|;
 end_typedef
+
+begin_function
+specifier|static
+name|void
+DECL|function|siox_cache_entry_free (gpointer entry)
+name|siox_cache_entry_free
+parameter_list|(
+name|gpointer
+name|entry
+parameter_list|)
+block|{
+name|g_slice_free
+argument_list|(
+name|classresult
+argument_list|,
+name|entry
+argument_list|)
+expr_stmt|;
+block|}
+end_function
 
 begin_comment
 comment|/* Progressbar update callback */
@@ -3092,7 +3112,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|g_free
+operator|(
+name|GDestroyNotify
+operator|)
+name|siox_cache_entry_free
 argument_list|)
 expr_stmt|;
 name|cpercep_init
@@ -4871,11 +4894,9 @@ endif|#
 directive|endif
 name|cr
 operator|=
-name|g_new0
+name|g_slice_new0
 argument_list|(
 name|classresult
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|calc_lab
