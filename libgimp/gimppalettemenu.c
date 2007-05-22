@@ -40,18 +40,9 @@ file|"gimppalettemenu.h"
 end_include
 
 begin_typedef
-DECL|typedef|CompatCallbackData
 typedef|typedef
-name|struct
-name|_CompatCallbackData
-name|CompatCallbackData
-typedef|;
-end_typedef
-
-begin_struct
-DECL|struct|_CompatCallbackData
 struct|struct
-name|_CompatCallbackData
+DECL|struct|__anon27a736290108
 block|{
 DECL|member|callback
 name|GimpRunPaletteCallback
@@ -61,9 +52,11 @@ DECL|member|data
 name|gpointer
 name|data
 decl_stmt|;
+DECL|typedef|CompatCallbackData
 block|}
-struct|;
-end_struct
+name|CompatCallbackData
+typedef|;
+end_typedef
 
 begin_function_decl
 specifier|static
@@ -82,7 +75,20 @@ parameter_list|,
 name|gboolean
 name|dialog_closing
 parameter_list|,
-name|gpointer
+name|CompatCallbackData
+modifier|*
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|compat_callback_data_free
+parameter_list|(
+name|CompatCallbackData
+modifier|*
 name|data
 parameter_list|)
 function_decl|;
@@ -143,11 +149,9 @@ argument_list|)
 expr_stmt|;
 name|compat_data
 operator|=
-name|g_new
+name|g_slice_new
 argument_list|(
 name|CompatCallbackData
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|compat_data
@@ -178,7 +182,7 @@ argument_list|,
 operator|(
 name|GClosureNotify
 operator|)
-name|g_free
+name|compat_callback_data_free
 argument_list|,
 literal|0
 argument_list|)
@@ -263,7 +267,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|compat_callback (GimpPaletteSelectButton * palette_button,const gchar * palette_name,gboolean dialog_closing,gpointer data)
+DECL|function|compat_callback (GimpPaletteSelectButton * palette_button,const gchar * palette_name,gboolean dialog_closing,CompatCallbackData * data)
 name|compat_callback
 parameter_list|(
 name|GimpPaletteSelectButton
@@ -278,17 +282,12 @@ parameter_list|,
 name|gboolean
 name|dialog_closing
 parameter_list|,
-name|gpointer
+name|CompatCallbackData
+modifier|*
 name|data
 parameter_list|)
 block|{
-name|CompatCallbackData
-modifier|*
-name|compat_data
-init|=
 name|data
-decl_stmt|;
-name|compat_data
 operator|->
 name|callback
 argument_list|(
@@ -296,8 +295,29 @@ name|palette_name
 argument_list|,
 name|dialog_closing
 argument_list|,
-name|compat_data
+name|data
 operator|->
+name|data
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|compat_callback_data_free (CompatCallbackData * data)
+name|compat_callback_data_free
+parameter_list|(
+name|CompatCallbackData
+modifier|*
+name|data
+parameter_list|)
+block|{
+name|g_slice_free
+argument_list|(
+name|CompatCallbackData
+argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
