@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon279408400103
+DECL|enum|__anon27e93a7b0103
 block|{
 DECL|enumerator|MODIFIED
 name|MODIFIED
@@ -1483,16 +1483,12 @@ block|{
 name|GimpModuleInfo
 modifier|*
 name|info
-decl_stmt|;
-name|info
-operator|=
-name|g_new0
+init|=
+name|g_slice_new0
 argument_list|(
 name|GimpModuleInfo
-argument_list|,
-literal|1
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|info
 operator|->
 name|abi_version
@@ -1662,8 +1658,10 @@ operator|->
 name|date
 argument_list|)
 expr_stmt|;
-name|g_free
+name|g_slice_free
 argument_list|(
+name|GimpModuleInfo
+argument_list|,
 name|info
 argument_list|)
 expr_stmt|;
