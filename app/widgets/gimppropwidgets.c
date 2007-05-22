@@ -1478,7 +1478,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c981a80108
+DECL|struct|__anon2b9252dd0108
 block|{
 DECL|member|config
 name|GObject
@@ -1508,6 +1508,27 @@ block|}
 name|AspectData
 typedef|;
 end_typedef
+
+begin_function
+specifier|static
+name|void
+DECL|function|aspect_data_free (AspectData * data)
+name|aspect_data_free
+parameter_list|(
+name|AspectData
+modifier|*
+name|data
+parameter_list|)
+block|{
+name|g_slice_free
+argument_list|(
+name|AspectData
+argument_list|,
+name|data
+argument_list|)
+expr_stmt|;
+block|}
+end_function
 
 begin_function_decl
 specifier|static
@@ -1608,11 +1629,9 @@ argument_list|)
 expr_stmt|;
 name|aspect_data
 operator|=
-name|g_new0
+name|g_slice_new
 argument_list|(
 name|AspectData
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|aspect_data
@@ -1654,7 +1673,7 @@ argument_list|,
 literal|7
 argument_list|)
 expr_stmt|;
-name|g_object_set_data
+name|g_object_set_data_full
 argument_list|(
 name|G_OBJECT
 argument_list|(
@@ -1664,6 +1683,11 @@ argument_list|,
 literal|"gimp-ratio-entry-aspect-data"
 argument_list|,
 name|aspect_data
+argument_list|,
+operator|(
+name|GDestroyNotify
+operator|)
+name|aspect_data_free
 argument_list|)
 expr_stmt|;
 name|gimp_ratio_entry_set_fraction
