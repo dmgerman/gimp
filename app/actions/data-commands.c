@@ -826,11 +826,9 @@ name|dialog
 decl_stmt|;
 name|delete_data
 operator|=
-name|g_new0
+name|g_slice_new0
 argument_list|(
 name|GimpDataDeleteData
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|delete_data
@@ -1260,8 +1258,10 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|g_free
+name|g_slice_free
 argument_list|(
+name|GimpDataDeleteData
+argument_list|,
 name|delete_data
 argument_list|)
 expr_stmt|;

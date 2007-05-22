@@ -105,8 +105,10 @@ operator|->
 name|menu_label
 argument_list|)
 expr_stmt|;
-name|g_free
+name|g_slice_free
 argument_list|(
+name|GimpPlugInMenuBranch
+argument_list|,
 name|branch
 argument_list|)
 expr_stmt|;
@@ -187,11 +189,9 @@ argument_list|)
 expr_stmt|;
 name|branch
 operator|=
-name|g_new
+name|g_slice_new
 argument_list|(
 name|GimpPlugInMenuBranch
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|branch

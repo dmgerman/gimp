@@ -144,11 +144,9 @@ argument_list|)
 expr_stmt|;
 name|temp
 operator|=
-name|g_new
+name|g_slice_new
 argument_list|(
 name|TempBuf
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|temp
@@ -1584,8 +1582,10 @@ operator|->
 name|data
 argument_list|)
 expr_stmt|;
-name|g_free
+name|g_slice_free
 argument_list|(
+name|TempBuf
+argument_list|,
 name|temp_buf
 argument_list|)
 expr_stmt|;

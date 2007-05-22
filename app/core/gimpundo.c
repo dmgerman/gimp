@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ae82b70103
+DECL|enum|__anon2c377a560103
 block|{
 DECL|enumerator|POP
 name|POP
@@ -105,7 +105,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ae82b70203
+DECL|enum|__anon2c377a560203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1507,8 +1507,10 @@ operator|->
 name|context
 argument_list|)
 expr_stmt|;
-name|g_free
+name|g_slice_free
 argument_list|(
+name|GimpUndoIdle
+argument_list|,
 name|idle
 argument_list|)
 expr_stmt|;
@@ -1582,11 +1584,9 @@ name|GimpUndoIdle
 modifier|*
 name|idle
 init|=
-name|g_new0
+name|g_slice_new0
 argument_list|(
 name|GimpUndoIdle
-argument_list|,
-literal|1
 argument_list|)
 decl_stmt|;
 name|idle

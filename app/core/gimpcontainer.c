@@ -124,7 +124,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2761232f0103
+DECL|enum|__anon2794229c0103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -149,7 +149,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2761232f0203
+DECL|enum|__anon2794229c0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1116,7 +1116,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2761232f0308
+DECL|struct|__anon2794229c0308
 block|{
 DECL|member|writer
 name|GimpConfigWriter
@@ -3285,11 +3285,9 @@ argument_list|)
 expr_stmt|;
 name|handler
 operator|=
-name|g_new0
+name|g_slice_new0
 argument_list|(
 name|GimpContainerHandler
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 comment|/*  create a unique key for this handler  */
@@ -3591,8 +3589,10 @@ operator|->
 name|signame
 argument_list|)
 expr_stmt|;
-name|g_free
+name|g_slice_free
 argument_list|(
+name|GimpContainerHandler
+argument_list|,
 name|handler
 argument_list|)
 expr_stmt|;

@@ -1318,11 +1318,9 @@ name|Boundary
 modifier|*
 name|boundary
 init|=
-name|g_new0
+name|g_slice_new0
 argument_list|(
 name|Boundary
-argument_list|,
-literal|1
 argument_list|)
 decl_stmt|;
 if|if
@@ -1508,8 +1506,10 @@ operator|->
 name|empty_segs_l
 argument_list|)
 expr_stmt|;
-name|g_free
+name|g_slice_free
 argument_list|(
+name|Boundary
+argument_list|,
 name|boundary
 argument_list|)
 expr_stmt|;

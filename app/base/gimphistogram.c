@@ -188,11 +188,9 @@ name|GimpHistogram
 modifier|*
 name|histogram
 init|=
-name|g_new0
+name|g_slice_new0
 argument_list|(
 name|GimpHistogram
-argument_list|,
-literal|1
 argument_list|)
 decl_stmt|;
 ifdef|#
@@ -236,8 +234,10 @@ argument_list|(
 name|histogram
 argument_list|)
 expr_stmt|;
-name|g_free
+name|g_slice_free
 argument_list|(
+name|GimpHistogram
+argument_list|,
 name|histogram
 argument_list|)
 expr_stmt|;

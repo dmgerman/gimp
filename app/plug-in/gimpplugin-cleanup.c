@@ -199,11 +199,9 @@ condition|)
 block|{
 name|cleanup
 operator|=
-name|g_new0
+name|g_slice_new0
 argument_list|(
 name|GimpPlugInCleanupImage
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|cleanup
@@ -332,8 +330,10 @@ argument_list|,
 name|cleanup
 argument_list|)
 expr_stmt|;
-name|g_free
+name|g_slice_free
 argument_list|(
+name|GimpPlugInCleanupImage
+argument_list|,
 name|cleanup
 argument_list|)
 expr_stmt|;
@@ -502,8 +502,10 @@ condition|)
 break|break;
 block|}
 block|}
-name|g_free
+name|g_slice_free
 argument_list|(
+name|GimpPlugInCleanupImage
+argument_list|,
 name|cleanup
 argument_list|)
 expr_stmt|;

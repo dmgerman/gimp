@@ -140,8 +140,10 @@ operator|->
 name|domain_uri
 argument_list|)
 expr_stmt|;
-name|g_free
+name|g_slice_free
 argument_list|(
+name|GimpPlugInHelpDomain
+argument_list|,
 name|domain
 argument_list|)
 expr_stmt|;
@@ -215,11 +217,9 @@ argument_list|)
 expr_stmt|;
 name|domain
 operator|=
-name|g_new
+name|g_slice_new
 argument_list|(
 name|GimpPlugInHelpDomain
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|domain

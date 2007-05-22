@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a12402d0103
+DECL|enum|__anon28e72f8b0103
 block|{
 DECL|enumerator|SESSION_INFO_POSITION
 name|SESSION_INFO_POSITION
@@ -479,11 +479,9 @@ argument_list|)
 expr_stmt|;
 name|aux
 operator|=
-name|g_new0
+name|g_slice_new0
 argument_list|(
 name|GimpSessionInfoAux
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|aux
@@ -541,8 +539,10 @@ operator|->
 name|value
 argument_list|)
 expr_stmt|;
-name|g_free
+name|g_slice_free
 argument_list|(
+name|GimpSessionInfoAux
+argument_list|,
 name|aux
 argument_list|)
 expr_stmt|;
@@ -4796,11 +4796,9 @@ case|:
 block|{
 name|aux_info
 operator|=
-name|g_new0
+name|g_slice_new0
 argument_list|(
 name|GimpSessionInfoAux
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|aux_info

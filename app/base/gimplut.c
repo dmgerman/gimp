@@ -48,11 +48,9 @@ name|lut
 decl_stmt|;
 name|lut
 operator|=
-name|g_new
+name|g_slice_new
 argument_list|(
 name|GimpLut
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|lut
@@ -118,8 +116,10 @@ operator|->
 name|luts
 argument_list|)
 expr_stmt|;
-name|g_free
+name|g_slice_free
 argument_list|(
+name|GimpLut
+argument_list|,
 name|lut
 argument_list|)
 expr_stmt|;

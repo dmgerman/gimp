@@ -126,11 +126,9 @@ argument_list|)
 expr_stmt|;
 name|proc_frame
 operator|=
-name|g_new0
+name|g_slice_new0
 argument_list|(
 name|GimpPlugInProcFrame
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|proc_frame
@@ -550,8 +548,10 @@ argument_list|,
 name|plug_in
 argument_list|)
 expr_stmt|;
-name|g_free
+name|g_slice_free
 argument_list|(
+name|GimpPlugInProcFrame
+argument_list|,
 name|proc_frame
 argument_list|)
 expr_stmt|;
