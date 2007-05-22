@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c8ae220103
+DECL|enum|__anon2aedd3390103
 block|{
 DECL|enumerator|SELECT_ITEM
 name|SELECT_ITEM
@@ -907,8 +907,10 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
-name|g_free
+name|g_slice_free
 argument_list|(
+name|GimpContainerViewPrivate
+argument_list|,
 name|private
 argument_list|)
 expr_stmt|;
@@ -991,11 +993,9 @@ argument_list|)
 expr_stmt|;
 name|private
 operator|=
-name|g_new0
+name|g_slice_new0
 argument_list|(
 name|GimpContainerViewPrivate
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|private

@@ -292,11 +292,9 @@ argument_list|)
 expr_stmt|;
 name|gimp_clip
 operator|=
-name|g_new0
+name|g_slice_new0
 argument_list|(
 name|GimpClipboard
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|g_object_set_data_full
@@ -514,7 +512,7 @@ name|gimp
 operator|->
 name|be_verbose
 condition|)
-name|g_print
+name|g_printerr
 argument_list|(
 literal|"clipboard: writable pixbuf format: %s\n"
 argument_list|,
@@ -1847,8 +1845,10 @@ operator|->
 name|svg_target_entries
 argument_list|)
 expr_stmt|;
-name|g_free
+name|g_slice_free
 argument_list|(
+name|GimpClipboard
+argument_list|,
 name|gimp_clip
 argument_list|)
 expr_stmt|;
