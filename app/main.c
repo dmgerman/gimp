@@ -158,6 +158,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"file/file-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpdbusservice.h"
 end_include
 
@@ -2877,6 +2883,8 @@ decl_stmt|;
 name|gchar
 modifier|*
 name|uri
+init|=
+name|NULL
 decl_stmt|;
 if|if
 condition|(
