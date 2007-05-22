@@ -96,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb10e8f0108
+DECL|struct|__anon2bbaaf420108
 block|{
 DECL|member|script
 name|SFScript
@@ -524,11 +524,9 @@ block|}
 comment|/*  Create a new script  */
 name|script
 operator|=
-name|g_new0
+name|g_slice_new0
 argument_list|(
 name|SFScript
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 comment|/*  Find the script name  */
@@ -4103,11 +4101,9 @@ block|}
 comment|/*  Create a new list of menus  */
 name|menu
 operator|=
-name|g_new0
+name|g_slice_new0
 argument_list|(
 name|SFMenu
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|menu
@@ -4458,8 +4454,10 @@ operator|->
 name|menu_path
 argument_list|)
 expr_stmt|;
-name|g_free
+name|g_slice_free
 argument_list|(
+name|SFMenu
+argument_list|,
 name|menu
 argument_list|)
 expr_stmt|;
@@ -4508,21 +4506,13 @@ argument_list|(
 name|list
 argument_list|)
 control|)
-block|{
-name|SFScript
-modifier|*
-name|script
-init|=
+name|script_fu_free_script
+argument_list|(
 name|list
 operator|->
 name|data
-decl_stmt|;
-name|script_fu_free_script
-argument_list|(
-name|script
 argument_list|)
 expr_stmt|;
-block|}
 name|g_list_free
 argument_list|(
 name|scripts
@@ -6111,8 +6101,10 @@ operator|->
 name|arg_values
 argument_list|)
 expr_stmt|;
-name|g_free
+name|g_slice_free
 argument_list|(
+name|SFScript
+argument_list|,
 name|script
 argument_list|)
 expr_stmt|;

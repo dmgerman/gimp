@@ -106,7 +106,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fc74930108
+DECL|struct|__anon2b7fbad80108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -719,11 +719,9 @@ expr_stmt|;
 block|}
 name|sf_interface
 operator|=
-name|g_new0
+name|g_slice_new0
 argument_list|(
 name|SFInterface
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|sf_interface
@@ -2885,8 +2883,10 @@ operator|->
 name|last_command
 argument_list|)
 expr_stmt|;
-name|g_free
+name|g_slice_free
 argument_list|(
+name|SFInterface
+argument_list|,
 name|sf_interface
 argument_list|)
 expr_stmt|;
