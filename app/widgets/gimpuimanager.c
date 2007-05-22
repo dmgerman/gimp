@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c53c8fb0103
+DECL|enum|__anon27a430c10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -105,7 +105,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c53c8fb0203
+DECL|enum|__anon27a430c10203
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1095,8 +1095,10 @@ operator|->
 name|widget
 argument_list|)
 expr_stmt|;
-name|g_free
+name|g_slice_free
 argument_list|(
+name|GimpUIManagerUIEntry
+argument_list|,
 name|entry
 argument_list|)
 expr_stmt|;
@@ -2103,11 +2105,9 @@ argument_list|)
 expr_stmt|;
 name|entry
 operator|=
-name|g_new0
+name|g_slice_new0
 argument_list|(
 name|GimpUIManagerUIEntry
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|entry
@@ -2165,7 +2165,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c53c8fb0308
+DECL|struct|__anon27a430c10308
 block|{
 DECL|member|x
 name|guint
@@ -2180,6 +2180,27 @@ block|}
 name|MenuPos
 typedef|;
 end_typedef
+
+begin_function
+specifier|static
+name|void
+DECL|function|menu_pos_free (MenuPos * pos)
+name|menu_pos_free
+parameter_list|(
+name|MenuPos
+modifier|*
+name|pos
+parameter_list|)
+block|{
+name|g_slice_free
+argument_list|(
+name|MenuPos
+argument_list|,
+name|pos
+argument_list|)
+expr_stmt|;
+block|}
+end_function
 
 begin_function
 name|void
@@ -2412,11 +2433,9 @@ condition|)
 block|{
 name|menu_pos
 operator|=
-name|g_new0
+name|g_slice_new0
 argument_list|(
 name|MenuPos
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|g_object_set_data_full
@@ -2430,7 +2449,10 @@ literal|"menu-pos"
 argument_list|,
 name|menu_pos
 argument_list|,
-name|g_free
+operator|(
+name|GDestroyNotify
+operator|)
+name|menu_pos_free
 argument_list|)
 expr_stmt|;
 block|}

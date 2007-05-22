@@ -20,7 +20,7 @@ comment|/* --- properties --- */
 end_comment
 
 begin_enum
-DECL|enum|__anon27bcc2020103
+DECL|enum|__anon28d780f00103
 enum|enum
 block|{
 DECL|enumerator|PROP_0
@@ -54,7 +54,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon27bcc2020203
+DECL|enum|__anon28d780f00203
 enum|enum
 block|{
 DECL|enumerator|CHILD_PROP_0
@@ -2200,11 +2200,9 @@ argument_list|)
 expr_stmt|;
 name|child_info
 operator|=
-name|g_new
+name|g_slice_new
 argument_list|(
 name|GtkWrapBoxChild
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|child_info
@@ -3467,8 +3465,10 @@ name|child
 operator|->
 name|next
 expr_stmt|;
-name|g_free
+name|g_slice_free
 argument_list|(
+name|GtkWrapBoxChild
+argument_list|,
 name|child
 argument_list|)
 expr_stmt|;

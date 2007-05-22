@@ -328,11 +328,9 @@ name|FALSE
 return|;
 name|popup
 operator|=
-name|g_new0
+name|g_slice_new0
 argument_list|(
 name|GimpViewPopup
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|popup
@@ -591,8 +589,10 @@ operator|->
 name|widget
 argument_list|)
 expr_stmt|;
-name|g_free
+name|g_slice_free
 argument_list|(
+name|GimpViewPopup
+argument_list|,
 name|popup
 argument_list|)
 expr_stmt|;

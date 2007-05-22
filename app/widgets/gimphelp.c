@@ -162,8 +162,9 @@ specifier|static
 name|gint
 name|gimp_idle_help
 parameter_list|(
-name|gpointer
-name|data
+name|GimpIdleHelp
+modifier|*
+name|idle_help
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -308,11 +309,9 @@ name|GimpIdleHelp
 modifier|*
 name|idle_help
 init|=
-name|g_new0
+name|g_slice_new0
 argument_list|(
 name|GimpIdleHelp
-argument_list|,
-literal|1
 argument_list|)
 decl_stmt|;
 name|idle_help
@@ -368,6 +367,9 @@ argument_list|)
 expr_stmt|;
 name|g_idle_add
 argument_list|(
+operator|(
+name|GSourceFunc
+operator|)
 name|gimp_idle_help
 argument_list|,
 name|idle_help
@@ -407,19 +409,14 @@ end_comment
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_idle_help (gpointer data)
+DECL|function|gimp_idle_help (GimpIdleHelp * idle_help)
 name|gimp_idle_help
 parameter_list|(
-name|gpointer
-name|data
-parameter_list|)
-block|{
 name|GimpIdleHelp
 modifier|*
 name|idle_help
-init|=
-name|data
-decl_stmt|;
+parameter_list|)
+block|{
 name|GimpGuiConfig
 modifier|*
 name|config
@@ -559,8 +556,10 @@ operator|->
 name|help_id
 argument_list|)
 expr_stmt|;
-name|g_free
+name|g_slice_free
 argument_list|(
+name|GimpIdleHelp
+argument_list|,
 name|idle_help
 argument_list|)
 expr_stmt|;
