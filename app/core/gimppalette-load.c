@@ -866,11 +866,9 @@ expr_stmt|;
 comment|/* don't call gimp_palette_add_entry here, it's rather inefficient */
 name|entry
 operator|=
-name|g_new0
+name|g_slice_new0
 argument_list|(
 name|GimpPaletteEntry
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|gimp_rgba_set_uchar
