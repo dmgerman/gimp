@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b07a9cc0103
+DECL|enum|__anon2b6420a50103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -84,7 +84,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b07a9cc0203
+DECL|enum|__anon2b6420a50203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1001,7 +1001,7 @@ decl_stmt|,
 name|y
 decl_stmt|;
 name|gboolean
-name|scale
+name|scaled
 init|=
 name|FALSE
 decl_stmt|;
@@ -1139,7 +1139,7 @@ name|mask_buf
 operator|->
 name|height
 expr_stmt|;
-name|scale
+name|scaled
 operator|=
 name|TRUE
 expr_stmt|;
@@ -1314,7 +1314,7 @@ block|}
 block|}
 if|if
 condition|(
-name|scale
+name|scaled
 condition|)
 block|{
 name|temp_buf_free
