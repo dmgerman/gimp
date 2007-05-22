@@ -208,8 +208,10 @@ operator|->
 name|stock_id
 argument_list|)
 expr_stmt|;
-name|g_free
+name|g_slice_free
 argument_list|(
+name|GimpActionFactoryEntry
+argument_list|,
 name|entry
 argument_list|)
 expr_stmt|;
@@ -372,11 +374,9 @@ argument_list|)
 expr_stmt|;
 name|entry
 operator|=
-name|g_new0
+name|g_slice_new0
 argument_list|(
 name|GimpActionFactoryEntry
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|entry
