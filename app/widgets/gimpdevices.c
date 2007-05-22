@@ -316,11 +316,9 @@ argument_list|)
 expr_stmt|;
 name|manager
 operator|=
-name|g_new0
+name|g_slice_new0
 argument_list|(
 name|GimpDeviceManager
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|g_object_set_data_full
@@ -1515,8 +1513,10 @@ operator|->
 name|device_info_list
 argument_list|)
 expr_stmt|;
-name|g_free
+name|g_slice_free
 argument_list|(
+name|GimpDeviceManager
+argument_list|,
 name|manager
 argument_list|)
 expr_stmt|;

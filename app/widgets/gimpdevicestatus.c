@@ -138,7 +138,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a44e4f90103
+DECL|enum|__anon28e3dbfe0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -825,8 +825,10 @@ argument_list|,
 name|entry
 argument_list|)
 expr_stmt|;
-name|g_free
+name|g_slice_free
 argument_list|(
+name|GimpDeviceStatusEntry
+argument_list|,
 name|entry
 argument_list|)
 expr_stmt|;
@@ -913,11 +915,9 @@ condition|)
 return|return;
 name|entry
 operator|=
-name|g_new0
+name|g_slice_new0
 argument_list|(
 name|GimpDeviceStatusEntry
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|status
@@ -1866,8 +1866,10 @@ argument_list|,
 name|entry
 argument_list|)
 expr_stmt|;
-name|g_free
+name|g_slice_free
 argument_list|(
+name|GimpDeviceStatusEntry
+argument_list|,
 name|entry
 argument_list|)
 expr_stmt|;
