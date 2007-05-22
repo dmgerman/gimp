@@ -60,6 +60,17 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|void
+name|gimp_area_free
+parameter_list|(
+name|GimpArea
+modifier|*
+name|area
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GSList
 modifier|*
 name|gimp_area_list_process
@@ -76,8 +87,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GSList
-modifier|*
+name|void
 name|gimp_area_list_free
 parameter_list|(
 name|GSList

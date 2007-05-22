@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b56236c0103
+DECL|enum|__anon29f6093c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1510,16 +1510,18 @@ name|NULL
 argument_list|)
 expr_stmt|;
 comment|/*  free the update area lists  */
-name|display
-operator|->
-name|update_areas
-operator|=
 name|gimp_area_list_free
 argument_list|(
 name|display
 operator|->
 name|update_areas
 argument_list|)
+expr_stmt|;
+name|display
+operator|->
+name|update_areas
+operator|=
+name|NULL
 expr_stmt|;
 if|if
 condition|(
@@ -2069,16 +2071,18 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|display
-operator|->
-name|update_areas
-operator|=
 name|gimp_area_list_free
 argument_list|(
 name|display
 operator|->
 name|update_areas
 argument_list|)
+expr_stmt|;
+name|display
+operator|->
+name|update_areas
+operator|=
+name|NULL
 expr_stmt|;
 block|}
 name|gimp_display_shell_flush

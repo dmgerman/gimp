@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28feb0ad0103
+DECL|enum|__anon27b7dddf0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1881,16 +1881,18 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/*  Free the update lists  */
-name|proj
-operator|->
-name|update_areas
-operator|=
 name|gimp_area_list_free
 argument_list|(
 name|proj
 operator|->
 name|update_areas
 argument_list|)
+expr_stmt|;
+name|proj
+operator|->
+name|update_areas
+operator|=
+name|NULL
 expr_stmt|;
 block|}
 block|}
@@ -1911,11 +1913,7 @@ name|GSList
 modifier|*
 name|list
 decl_stmt|;
-name|GimpArea
-modifier|*
-name|area
-decl_stmt|;
-comment|/* We need to merge the IdleRender's and the GimpProjection's update_areas list    * to keep track of which of the updates have been flushed and hence need    * to be drawn.    */
+comment|/* We need to merge the IdleRender's and the GimpProjection's update_areas    * list to keep track of which of the updates have been flushed and hence    * need to be drawn.    */
 for|for
 control|(
 name|list
@@ -1934,20 +1932,14 @@ name|list
 argument_list|)
 control|)
 block|{
+name|GimpArea
+modifier|*
 name|area
-operator|=
-name|g_memdup
-argument_list|(
+init|=
 name|list
 operator|->
 name|data
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpArea
-argument_list|)
-argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|proj
 operator|->
 name|idle_render
@@ -1962,7 +1954,24 @@ name|idle_render
 operator|.
 name|update_areas
 argument_list|,
+name|gimp_area_new
+argument_list|(
 name|area
+operator|->
+name|x1
+argument_list|,
+name|area
+operator|->
+name|y1
+argument_list|,
+name|area
+operator|->
+name|x2
+argument_list|,
+name|area
+operator|->
+name|y2
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -1976,8 +1985,10 @@ operator|.
 name|idle_id
 condition|)
 block|{
+name|GimpArea
+modifier|*
 name|area
-operator|=
+init|=
 name|gimp_area_new
 argument_list|(
 name|proj
@@ -2032,7 +2043,7 @@ name|base_y
 operator|)
 operator|)
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|proj
 operator|->
 name|idle_render
@@ -2386,10 +2397,6 @@ name|FALSE
 return|;
 name|area
 operator|=
-operator|(
-name|GimpArea
-operator|*
-operator|)
 name|proj
 operator|->
 name|idle_render
@@ -2475,7 +2482,7 @@ name|area
 operator|->
 name|y1
 expr_stmt|;
-name|g_free
+name|gimp_area_free
 argument_list|(
 name|area
 argument_list|)
