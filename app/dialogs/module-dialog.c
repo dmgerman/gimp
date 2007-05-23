@@ -87,7 +87,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon287dc50a0103
+DECL|enum|__anon2b4473f40103
 block|{
 DECL|enumerator|PATH_COLUMN
 name|PATH_COLUMN
@@ -105,18 +105,9 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|typedef|ModuleDialog
 typedef|typedef
-name|struct
-name|_ModuleDialog
-name|ModuleDialog
-typedef|;
-end_typedef
-
-begin_struct
-DECL|struct|_ModuleDialog
 struct|struct
-name|_ModuleDialog
+DECL|struct|__anon2b4473f40208
 block|{
 DECL|member|gimp
 name|Gimp
@@ -156,9 +147,11 @@ name|GtkWidget
 modifier|*
 name|button_label
 decl_stmt|;
+DECL|typedef|ModuleDialog
 block|}
-struct|;
-end_struct
+name|ModuleDialog
+typedef|;
+end_typedef
 
 begin_comment
 comment|/*  local function prototypes  */
@@ -407,11 +400,9 @@ argument_list|)
 expr_stmt|;
 name|dialog
 operator|=
-name|g_new0
+name|g_slice_new0
 argument_list|(
 name|ModuleDialog
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|dialog
@@ -1109,8 +1100,10 @@ argument_list|,
 name|dialog
 argument_list|)
 expr_stmt|;
-name|g_free
+name|g_slice_free
 argument_list|(
+name|ModuleDialog
+argument_list|,
 name|dialog
 argument_list|)
 expr_stmt|;

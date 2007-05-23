@@ -109,6 +109,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|static
+name|void
+name|channel_options_dialog_free
+parameter_list|(
+name|ChannelOptionsDialog
+modifier|*
+name|options
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/*  public functions  */
 end_comment
@@ -326,11 +338,9 @@ argument_list|)
 expr_stmt|;
 name|options
 operator|=
-name|g_new0
+name|g_slice_new0
 argument_list|(
 name|ChannelOptionsDialog
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|options
@@ -446,7 +456,7 @@ argument_list|,
 operator|(
 name|GWeakNotify
 operator|)
-name|g_free
+name|channel_options_dialog_free
 argument_list|,
 name|options
 argument_list|)
@@ -919,6 +929,27 @@ operator|.
 name|a
 operator|*
 literal|100.0
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|channel_options_dialog_free (ChannelOptionsDialog * options)
+name|channel_options_dialog_free
+parameter_list|(
+name|ChannelOptionsDialog
+modifier|*
+name|options
+parameter_list|)
+block|{
+name|g_slice_free
+argument_list|(
+name|ChannelOptionsDialog
+argument_list|,
+name|options
 argument_list|)
 expr_stmt|;
 block|}

@@ -134,7 +134,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba7d39b0108
+DECL|struct|__anon2792fb890108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -179,7 +179,7 @@ end_comment
 begin_function_decl
 specifier|static
 name|void
-name|image_new_free
+name|image_new_dialog_free
 parameter_list|(
 name|ImageNewDialog
 modifier|*
@@ -191,7 +191,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|image_new_response
+name|image_new_dialog_response
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -294,11 +294,9 @@ argument_list|)
 expr_stmt|;
 name|dialog
 operator|=
-name|g_new0
+name|g_slice_new0
 argument_list|(
 name|ImageNewDialog
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|dialog
@@ -391,7 +389,7 @@ argument_list|,
 operator|(
 name|GDestroyNotify
 operator|)
-name|image_new_free
+name|image_new_dialog_free
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -404,7 +402,7 @@ literal|"response"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|image_new_response
+name|image_new_dialog_response
 argument_list|)
 argument_list|,
 name|dialog
@@ -831,8 +829,8 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|image_new_free (ImageNewDialog * dialog)
-name|image_new_free
+DECL|function|image_new_dialog_free (ImageNewDialog * dialog)
+name|image_new_dialog_free
 parameter_list|(
 name|ImageNewDialog
 modifier|*
@@ -853,8 +851,10 @@ operator|->
 name|template
 argument_list|)
 expr_stmt|;
-name|g_free
+name|g_slice_free
 argument_list|(
+name|ImageNewDialog
+argument_list|,
 name|dialog
 argument_list|)
 expr_stmt|;
@@ -864,8 +864,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|image_new_response (GtkWidget * widget,gint response_id,ImageNewDialog * dialog)
-name|image_new_response
+DECL|function|image_new_dialog_response (GtkWidget * widget,gint response_id,ImageNewDialog * dialog)
+name|image_new_dialog_response
 parameter_list|(
 name|GtkWidget
 modifier|*

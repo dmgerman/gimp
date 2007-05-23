@@ -120,7 +120,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a044ba80108
+DECL|struct|__anon2bb197650108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -239,6 +239,18 @@ name|GimpPalette
 modifier|*
 name|palette
 parameter_list|,
+name|IndexedDialog
+modifier|*
+name|dialog
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|convert_dialog_free
+parameter_list|(
 name|IndexedDialog
 modifier|*
 name|dialog
@@ -432,11 +444,9 @@ argument_list|)
 expr_stmt|;
 name|dialog
 operator|=
-name|g_new0
+name|g_slice_new0
 argument_list|(
 name|IndexedDialog
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|dialog
@@ -596,7 +606,7 @@ argument_list|,
 operator|(
 name|GWeakNotify
 operator|)
-name|g_free
+name|convert_dialog_free
 argument_list|,
 name|dialog
 argument_list|)
@@ -1794,6 +1804,27 @@ operator|=
 name|palette
 expr_stmt|;
 block|}
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|convert_dialog_free (IndexedDialog * dialog)
+name|convert_dialog_free
+parameter_list|(
+name|IndexedDialog
+modifier|*
+name|dialog
+parameter_list|)
+block|{
+name|g_slice_free
+argument_list|(
+name|IndexedDialog
+argument_list|,
+name|dialog
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

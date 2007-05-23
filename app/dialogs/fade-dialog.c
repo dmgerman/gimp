@@ -106,18 +106,9 @@ file|"gimp-intl.h"
 end_include
 
 begin_typedef
-DECL|typedef|FadeDialog
 typedef|typedef
-name|struct
-name|_FadeDialog
-name|FadeDialog
-typedef|;
-end_typedef
-
-begin_struct
-DECL|struct|_FadeDialog
 struct|struct
-name|_FadeDialog
+DECL|struct|__anon2acb4b980108
 block|{
 DECL|member|image
 name|GimpImage
@@ -146,9 +137,11 @@ DECL|member|orig_opacity
 name|gdouble
 name|orig_opacity
 decl_stmt|;
+DECL|typedef|FadeDialog
 block|}
-struct|;
-end_struct
+name|FadeDialog
+typedef|;
+end_typedef
 
 begin_function_decl
 specifier|static
@@ -173,6 +166,18 @@ begin_function_decl
 specifier|static
 name|void
 name|fade_dialog_context_changed
+parameter_list|(
+name|FadeDialog
+modifier|*
+name|private
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|fade_dialog_free
 parameter_list|(
 name|FadeDialog
 modifier|*
@@ -307,11 +312,9 @@ argument_list|)
 expr_stmt|;
 name|private
 operator|=
-name|g_new0
+name|g_slice_new0
 argument_list|(
 name|FadeDialog
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|private
@@ -483,7 +486,7 @@ argument_list|,
 operator|(
 name|GWeakNotify
 operator|)
-name|g_free
+name|fade_dialog_free
 argument_list|,
 name|private
 argument_list|)
@@ -833,6 +836,27 @@ name|image
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|fade_dialog_free (FadeDialog * private)
+name|fade_dialog_free
+parameter_list|(
+name|FadeDialog
+modifier|*
+name|private
+parameter_list|)
+block|{
+name|g_slice_free
+argument_list|(
+name|FadeDialog
+argument_list|,
+name|private
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

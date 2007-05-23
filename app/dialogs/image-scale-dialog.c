@@ -100,18 +100,9 @@ file|"gimp-intl.h"
 end_include
 
 begin_typedef
-DECL|typedef|ImageScaleDialog
 typedef|typedef
-name|struct
-name|_ImageScaleDialog
-name|ImageScaleDialog
-typedef|;
-end_typedef
-
-begin_struct
-DECL|struct|_ImageScaleDialog
 struct|struct
-name|_ImageScaleDialog
+DECL|struct|__anon2b9e526a0108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -159,9 +150,11 @@ DECL|member|user_data
 name|gpointer
 name|user_data
 decl_stmt|;
+DECL|typedef|ImageScaleDialog
 block|}
-struct|;
-end_struct
+name|ImageScaleDialog
+typedef|;
+end_typedef
 
 begin_function_decl
 specifier|static
@@ -199,6 +192,18 @@ name|resolution_unit
 parameter_list|,
 name|gpointer
 name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|image_scale_dialog_free
+parameter_list|(
+name|ImageScaleDialog
+modifier|*
+name|dialog
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -335,11 +340,9 @@ argument_list|)
 expr_stmt|;
 name|dialog
 operator|=
-name|g_new0
+name|g_slice_new0
 argument_list|(
 name|ImageScaleDialog
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|dialog
@@ -395,7 +398,7 @@ argument_list|,
 operator|(
 name|GWeakNotify
 operator|)
-name|g_free
+name|image_scale_dialog_free
 argument_list|,
 name|dialog
 argument_list|)
@@ -663,6 +666,27 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|image_scale_dialog_free (ImageScaleDialog * dialog)
+name|image_scale_dialog_free
+parameter_list|(
+name|ImageScaleDialog
+modifier|*
+name|dialog
+parameter_list|)
+block|{
+name|g_slice_free
+argument_list|(
+name|ImageScaleDialog
+argument_list|,
+name|dialog
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

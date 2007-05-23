@@ -45,9 +45,17 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
-begin_comment
-comment|/*  public functions  */
-end_comment
+begin_function_decl
+specifier|static
+name|void
+name|vectors_import_dialog_free
+parameter_list|(
+name|VectorsImportDialog
+modifier|*
+name|dialog
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function
 name|VectorsImportDialog
@@ -108,11 +116,9 @@ argument_list|)
 expr_stmt|;
 name|dialog
 operator|=
-name|g_new0
+name|g_slice_new0
 argument_list|(
 name|VectorsImportDialog
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|dialog
@@ -239,7 +245,7 @@ argument_list|,
 operator|(
 name|GWeakNotify
 operator|)
-name|g_free
+name|vectors_import_dialog_free
 argument_list|,
 name|dialog
 argument_list|)
@@ -515,6 +521,27 @@ expr_stmt|;
 return|return
 name|dialog
 return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|vectors_import_dialog_free (VectorsImportDialog * dialog)
+name|vectors_import_dialog_free
+parameter_list|(
+name|VectorsImportDialog
+modifier|*
+name|dialog
+parameter_list|)
+block|{
+name|g_slice_free
+argument_list|(
+name|VectorsImportDialog
+argument_list|,
+name|dialog
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

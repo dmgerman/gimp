@@ -128,18 +128,9 @@ value|(GIMP_OFFSET_BACKGROUND | GIMP_OFFSET_TRANSPARENT)
 end_define
 
 begin_typedef
-DECL|typedef|OffsetDialog
 typedef|typedef
-name|struct
-name|_OffsetDialog
-name|OffsetDialog
-typedef|;
-end_typedef
-
-begin_struct
-DECL|struct|_OffsetDialog
 struct|struct
-name|_OffsetDialog
+DECL|struct|__anon2c365c540108
 block|{
 DECL|member|context
 name|GimpContext
@@ -165,9 +156,11 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
+DECL|typedef|OffsetDialog
 block|}
-struct|;
-end_struct
+name|OffsetDialog
+typedef|;
+end_typedef
 
 begin_comment
 comment|/*  local function prototypes  */
@@ -201,6 +194,18 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
+name|OffsetDialog
+modifier|*
+name|dialog
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|offset_dialog_free
+parameter_list|(
 name|OffsetDialog
 modifier|*
 name|dialog
@@ -310,11 +315,9 @@ argument_list|)
 expr_stmt|;
 name|dialog
 operator|=
-name|g_new0
+name|g_slice_new0
 argument_list|(
 name|OffsetDialog
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|dialog
@@ -488,7 +491,7 @@ argument_list|,
 operator|(
 name|GWeakNotify
 operator|)
-name|g_free
+name|offset_dialog_free
 argument_list|,
 name|dialog
 argument_list|)
@@ -1368,6 +1371,27 @@ literal|2
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|offset_dialog_free (OffsetDialog * dialog)
+name|offset_dialog_free
+parameter_list|(
+name|OffsetDialog
+modifier|*
+name|dialog
+parameter_list|)
+block|{
+name|g_slice_free
+argument_list|(
+name|OffsetDialog
+argument_list|,
+name|dialog
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
