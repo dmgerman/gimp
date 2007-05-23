@@ -84,11 +84,9 @@ name|item
 decl_stmt|;
 name|item
 operator|=
-name|g_new
+name|g_slice_new
 argument_list|(
 name|GimpRecentItem
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|item
@@ -199,8 +197,10 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
-name|g_free
+name|g_slice_free
 argument_list|(
+name|GimpRecentItem
+argument_list|,
 name|item
 argument_list|)
 expr_stmt|;

@@ -85,11 +85,9 @@ name|sample_point
 decl_stmt|;
 name|sample_point
 operator|=
-name|g_new0
+name|g_slice_new0
 argument_list|(
 name|GimpSamplePoint
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|sample_point
@@ -185,8 +183,10 @@ name|ref_count
 operator|<
 literal|1
 condition|)
-name|g_free
+name|g_slice_free
 argument_list|(
+name|GimpSamplePoint
+argument_list|,
 name|sample_point
 argument_list|)
 expr_stmt|;

@@ -88,18 +88,9 @@ file|"gimp-intl.h"
 end_include
 
 begin_typedef
-DECL|typedef|LayerSelect
 typedef|typedef
-name|struct
-name|_LayerSelect
-name|LayerSelect
-typedef|;
-end_typedef
-
-begin_struct
-DECL|struct|_LayerSelect
 struct|struct
-name|_LayerSelect
+DECL|struct|__anon2a17823c0108
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -126,9 +117,11 @@ name|GimpLayer
 modifier|*
 name|orig_layer
 decl_stmt|;
+DECL|typedef|LayerSelect
 block|}
-struct|;
-end_struct
+name|LayerSelect
+typedef|;
+end_typedef
 
 begin_comment
 comment|/*  local function prototypes  */
@@ -375,11 +368,9 @@ name|alignment
 decl_stmt|;
 name|layer_select
 operator|=
-name|g_new0
+name|g_slice_new0
 argument_list|(
 name|LayerSelect
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|layer_select
@@ -772,8 +763,10 @@ name|image
 argument_list|)
 expr_stmt|;
 block|}
-name|g_free
+name|g_slice_free
 argument_list|(
+name|LayerSelect
+argument_list|,
 name|layer_select
 argument_list|)
 expr_stmt|;

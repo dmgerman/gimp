@@ -141,18 +141,9 @@ value|(fabs ((a) - (b))< SCALE_EPSILON)
 end_define
 
 begin_typedef
-DECL|typedef|ScaleDialogData
 typedef|typedef
-name|struct
-name|_ScaleDialogData
-name|ScaleDialogData
-typedef|;
-end_typedef
-
-begin_struct
-DECL|struct|_ScaleDialogData
 struct|struct
-name|_ScaleDialogData
+DECL|struct|__anon2c3472a40108
 block|{
 DECL|member|shell
 name|GimpDisplayShell
@@ -179,9 +170,11 @@ name|GtkObject
 modifier|*
 name|denom_adj
 decl_stmt|;
+DECL|typedef|ScaleDialogData
 block|}
-struct|;
-end_struct
+name|ScaleDialogData
+typedef|;
+end_typedef
 
 begin_comment
 comment|/*  local function prototypes  */
@@ -199,6 +192,18 @@ parameter_list|,
 name|gint
 name|response_id
 parameter_list|,
+name|ScaleDialogData
+modifier|*
+name|dialog
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_display_shell_scale_dialog_free
+parameter_list|(
 name|ScaleDialogData
 modifier|*
 name|dialog
@@ -1986,11 +1991,9 @@ name|image
 expr_stmt|;
 name|data
 operator|=
-name|g_new
+name|g_slice_new
 argument_list|(
 name|ScaleDialogData
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|data
@@ -2100,7 +2103,7 @@ argument_list|,
 operator|(
 name|GWeakNotify
 operator|)
-name|g_free
+name|gimp_display_shell_scale_dialog_free
 argument_list|,
 name|data
 argument_list|)
@@ -2725,6 +2728,27 @@ operator|->
 name|shell
 operator|->
 name|scale_dialog
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_display_shell_scale_dialog_free (ScaleDialogData * dialog)
+name|gimp_display_shell_scale_dialog_free
+parameter_list|(
+name|ScaleDialogData
+modifier|*
+name|dialog
+parameter_list|)
+block|{
+name|g_slice_free
+argument_list|(
+name|ScaleDialogData
+argument_list|,
+name|dialog
 argument_list|)
 expr_stmt|;
 block|}

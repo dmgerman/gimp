@@ -88,18 +88,9 @@ file|"gimp-intl.h"
 end_include
 
 begin_typedef
-DECL|typedef|ColorDisplayDialog
 typedef|typedef
-name|struct
-name|_ColorDisplayDialog
-name|ColorDisplayDialog
-typedef|;
-end_typedef
-
-begin_struct
-DECL|struct|_ColorDisplayDialog
 struct|struct
-name|_ColorDisplayDialog
+DECL|struct|__anon288676380108
 block|{
 DECL|member|shell
 name|GimpDisplayShell
@@ -116,9 +107,11 @@ name|GimpColorDisplayStack
 modifier|*
 name|old_stack
 decl_stmt|;
+DECL|typedef|ColorDisplayDialog
 block|}
-struct|;
-end_struct
+name|ColorDisplayDialog
+typedef|;
+end_typedef
 
 begin_comment
 comment|/*  local function prototypes  */
@@ -136,6 +129,18 @@ parameter_list|,
 name|gint
 name|response_id
 parameter_list|,
+name|ColorDisplayDialog
+modifier|*
+name|cdd
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_display_shell_filter_dialog_free
+parameter_list|(
 name|ColorDisplayDialog
 modifier|*
 name|cdd
@@ -190,11 +195,9 @@ name|image
 expr_stmt|;
 name|cdd
 operator|=
-name|g_new0
+name|g_slice_new0
 argument_list|(
 name|ColorDisplayDialog
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|cdd
@@ -298,7 +301,7 @@ argument_list|,
 operator|(
 name|GWeakNotify
 operator|)
-name|g_free
+name|gimp_display_shell_filter_dialog_free
 argument_list|,
 name|cdd
 argument_list|)
@@ -475,6 +478,27 @@ name|cdd
 operator|->
 name|dialog
 argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_display_shell_filter_dialog_free (ColorDisplayDialog * cdd)
+name|gimp_display_shell_filter_dialog_free
+parameter_list|(
+name|ColorDisplayDialog
+modifier|*
+name|cdd
+parameter_list|)
+block|{
+name|g_slice_free
+argument_list|(
+name|ColorDisplayDialog
+argument_list|,
+name|cdd
 argument_list|)
 expr_stmt|;
 block|}

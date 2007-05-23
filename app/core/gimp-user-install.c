@@ -164,7 +164,7 @@ end_struct
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296144a70103
+DECL|enum|__anon29c90ac40103
 block|{
 DECL|enumerator|USER_INSTALL_MKDIR
 name|USER_INSTALL_MKDIR
@@ -183,7 +183,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon296144a70208
+DECL|struct|__anon29c90ac40208
 block|{
 DECL|member|name
 specifier|const
@@ -509,11 +509,9 @@ name|GimpUserInstall
 modifier|*
 name|install
 init|=
-name|g_new0
+name|g_slice_new0
 argument_list|(
 name|GimpUserInstall
-argument_list|,
-literal|1
 argument_list|)
 decl_stmt|;
 name|gchar
@@ -813,8 +811,10 @@ operator|->
 name|old_dir
 argument_list|)
 expr_stmt|;
-name|g_free
+name|g_slice_free
 argument_list|(
+name|GimpUserInstall
+argument_list|,
 name|install
 argument_list|)
 expr_stmt|;
