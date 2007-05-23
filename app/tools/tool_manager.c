@@ -232,11 +232,9 @@ argument_list|)
 expr_stmt|;
 name|tool_manager
 operator|=
-name|g_new0
+name|g_slice_new0
 argument_list|(
 name|GimpToolManager
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|tool_manager
@@ -405,8 +403,10 @@ operator|->
 name|active_tool
 argument_list|)
 expr_stmt|;
-name|g_free
+name|g_slice_free
 argument_list|(
+name|GimpToolManager
+argument_list|,
 name|tool_manager
 argument_list|)
 expr_stmt|;

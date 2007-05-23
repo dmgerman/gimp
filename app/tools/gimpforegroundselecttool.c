@@ -144,7 +144,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2957d9130108
+DECL|struct|__anon292e70b10108
 block|{
 DECL|member|width
 name|gint
@@ -1051,8 +1051,10 @@ operator|->
 name|points
 argument_list|)
 expr_stmt|;
-name|g_free
+name|g_slice_free
 argument_list|(
+name|FgSelectStroke
+argument_list|,
 name|stroke
 argument_list|)
 expr_stmt|;
@@ -3280,11 +3282,9 @@ argument_list|)
 expr_stmt|;
 name|stroke
 operator|=
-name|g_new
+name|g_slice_new
 argument_list|(
 name|FgSelectStroke
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|stroke

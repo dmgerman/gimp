@@ -578,8 +578,10 @@ modifier|*
 name|private
 parameter_list|)
 block|{
-name|g_free
+name|g_slice_free
 argument_list|(
+name|GimpRectangleOptionsPrivate
+argument_list|,
 name|private
 argument_list|)
 expr_stmt|;
@@ -649,11 +651,9 @@ condition|)
 block|{
 name|private
 operator|=
-name|g_new0
+name|g_slice_new0
 argument_list|(
 name|GimpRectangleOptionsPrivate
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|g_object_set_qdata_full
