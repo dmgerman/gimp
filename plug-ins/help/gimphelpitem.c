@@ -100,11 +100,9 @@ name|GimpHelpItem
 modifier|*
 name|item
 init|=
-name|g_new0
+name|g_slice_new0
 argument_list|(
 name|GimpHelpItem
-argument_list|,
-literal|1
 argument_list|)
 decl_stmt|;
 name|item
@@ -178,8 +176,10 @@ operator|->
 name|children
 argument_list|)
 expr_stmt|;
-name|g_free
+name|g_slice_free
 argument_list|(
+name|GimpHelpItem
+argument_list|,
 name|item
 argument_list|)
 expr_stmt|;

@@ -139,11 +139,9 @@ name|GimpHelpDomain
 modifier|*
 name|domain
 init|=
-name|g_new0
+name|g_slice_new0
 argument_list|(
 name|GimpHelpDomain
-argument_list|,
-literal|1
 argument_list|)
 decl_stmt|;
 name|domain
@@ -264,8 +262,10 @@ operator|->
 name|help_root
 argument_list|)
 expr_stmt|;
-name|g_free
+name|g_slice_free
 argument_list|(
+name|GimpHelpDomain
+argument_list|,
 name|domain
 argument_list|)
 expr_stmt|;
