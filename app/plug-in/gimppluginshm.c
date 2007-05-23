@@ -268,11 +268,9 @@ name|GimpPlugInShm
 modifier|*
 name|shm
 init|=
-name|g_new0
+name|g_slice_new0
 argument_list|(
 name|GimpPlugInShm
-argument_list|,
-literal|1
 argument_list|)
 decl_stmt|;
 name|shm
@@ -747,8 +745,10 @@ operator|-
 literal|1
 condition|)
 block|{
-name|g_free
+name|g_slice_free
 argument_list|(
+name|GimpPlugInShm
+argument_list|,
 name|shm
 argument_list|)
 expr_stmt|;
@@ -893,8 +893,10 @@ expr_stmt|;
 endif|#
 directive|endif
 block|}
-name|g_free
+name|g_slice_free
 argument_list|(
+name|GimpPlugInShm
+argument_list|,
 name|shm
 argument_list|)
 expr_stmt|;

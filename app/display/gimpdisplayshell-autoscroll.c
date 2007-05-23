@@ -106,7 +106,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3b1d1f0108
+DECL|struct|__anon29ade9000108
 block|{
 DECL|member|mevent
 name|GdkEventMotion
@@ -193,11 +193,9 @@ condition|)
 return|return;
 name|info
 operator|=
-name|g_new0
+name|g_slice_new0
 argument_list|(
 name|ScrollInfo
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|info
@@ -312,8 +310,10 @@ operator|=
 literal|0
 expr_stmt|;
 block|}
-name|g_free
+name|g_slice_free
 argument_list|(
+name|ScrollInfo
+argument_list|,
 name|info
 argument_list|)
 expr_stmt|;
@@ -605,8 +605,10 @@ return|;
 block|}
 else|else
 block|{
-name|g_free
+name|g_slice_free
 argument_list|(
+name|ScrollInfo
+argument_list|,
 name|info
 argument_list|)
 expr_stmt|;

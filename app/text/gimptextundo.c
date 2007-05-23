@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3df1660103
+DECL|enum|__anon28ed259d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -436,11 +436,9 @@ name|text_undo
 operator|->
 name|value
 operator|=
-name|g_new0
+name|g_slice_new0
 argument_list|(
 name|GValue
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|g_value_init
@@ -826,11 +824,9 @@ argument_list|)
 expr_stmt|;
 name|value
 operator|=
-name|g_new0
+name|g_slice_new0
 argument_list|(
 name|GValue
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|g_value_init
@@ -889,8 +885,10 @@ operator|->
 name|value
 argument_list|)
 expr_stmt|;
-name|g_free
+name|g_slice_free
 argument_list|(
+name|GValue
+argument_list|,
 name|text_undo
 operator|->
 name|value
@@ -1103,8 +1101,10 @@ operator|->
 name|value
 argument_list|)
 expr_stmt|;
-name|g_free
+name|g_slice_free
 argument_list|(
+name|GValue
+argument_list|,
 name|text_undo
 operator|->
 name|value

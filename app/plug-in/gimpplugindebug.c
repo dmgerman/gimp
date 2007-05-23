@@ -194,11 +194,9 @@ return|;
 block|}
 name|debug
 operator|=
-name|g_new
+name|g_slice_new
 argument_list|(
 name|GimpPlugInDebug
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|debug
@@ -320,8 +318,10 @@ operator|->
 name|args
 argument_list|)
 expr_stmt|;
-name|g_free
+name|g_slice_free
 argument_list|(
+name|GimpPlugInDebug
+argument_list|,
 name|debug
 argument_list|)
 expr_stmt|;

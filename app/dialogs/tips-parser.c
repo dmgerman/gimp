@@ -48,7 +48,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon275bc2030103
+DECL|enum|__anon2b6eb62c0103
 block|{
 DECL|enumerator|TIPS_START
 name|TIPS_START
@@ -76,7 +76,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon275bc2030203
+DECL|enum|__anon2b6eb62c0203
 block|{
 DECL|enumerator|TIPS_LOCALE_NONE
 name|TIPS_LOCALE_NONE
@@ -93,18 +93,9 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|TipsParser
 typedef|typedef
-name|struct
-name|_TipsParser
-name|TipsParser
-typedef|;
-end_typedef
-
-begin_struct
-DECL|struct|_TipsParser
 struct|struct
-name|_TipsParser
+DECL|struct|__anon2b6eb62c0308
 block|{
 DECL|member|state
 name|TipsParserState
@@ -147,9 +138,11 @@ name|GList
 modifier|*
 name|tips
 decl_stmt|;
+DECL|typedef|TipsParser
 block|}
-struct|;
-end_struct
+name|TipsParser
+typedef|;
+end_typedef
 
 begin_function_decl
 specifier|static
@@ -395,11 +388,9 @@ argument_list|)
 expr_stmt|;
 name|tip
 operator|=
-name|g_new0
+name|g_slice_new0
 argument_list|(
 name|GimpTip
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|va_start
@@ -528,8 +519,10 @@ operator|->
 name|thetip
 argument_list|)
 expr_stmt|;
-name|g_free
+name|g_slice_free
 argument_list|(
+name|GimpTip
+argument_list|,
 name|tip
 argument_list|)
 expr_stmt|;
@@ -562,8 +555,11 @@ modifier|*
 name|xml_parser
 decl_stmt|;
 name|TipsParser
-modifier|*
 name|parser
+init|=
+block|{
+literal|0
+block|, }
 decl_stmt|;
 specifier|const
 name|gchar
@@ -600,16 +596,7 @@ name|NULL
 argument_list|)
 expr_stmt|;
 name|parser
-operator|=
-name|g_new0
-argument_list|(
-name|TipsParser
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|parser
-operator|->
+operator|.
 name|value
 operator|=
 name|g_string_new
@@ -653,18 +640,20 @@ operator|!=
 literal|'C'
 condition|)
 name|parser
-operator|->
+operator|.
 name|locale
 operator|=
 name|tips_locale
 expr_stmt|;
 block|}
 else|else
+block|{
 name|g_warning
 argument_list|(
 literal|"Wrong translation for 'tips-locale:', fix the translation!"
 argument_list|)
 expr_stmt|;
+block|}
 name|xml_parser
 operator|=
 name|gimp_xml_parser_new
@@ -672,6 +661,7 @@ argument_list|(
 operator|&
 name|markup_parser
 argument_list|,
+operator|&
 name|parser
 argument_list|)
 expr_stmt|;
@@ -694,29 +684,24 @@ operator|=
 name|g_list_reverse
 argument_list|(
 name|parser
-operator|->
+operator|.
 name|tips
 argument_list|)
 expr_stmt|;
 name|gimp_tip_free
 argument_list|(
 name|parser
-operator|->
+operator|.
 name|current_tip
 argument_list|)
 expr_stmt|;
 name|g_string_free
 argument_list|(
 name|parser
-operator|->
+operator|.
 name|value
 argument_list|,
 name|TRUE
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|parser
 argument_list|)
 expr_stmt|;
 return|return
@@ -808,10 +793,6 @@ name|TipsParser
 modifier|*
 name|parser
 init|=
-operator|(
-name|TipsParser
-operator|*
-operator|)
 name|user_data
 decl_stmt|;
 switch|switch
@@ -873,11 +854,9 @@ name|parser
 operator|->
 name|current_tip
 operator|=
-name|g_new0
+name|g_slice_new0
 argument_list|(
 name|GimpTip
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 block|}
@@ -1045,10 +1024,6 @@ name|TipsParser
 modifier|*
 name|parser
 init|=
-operator|(
-name|TipsParser
-operator|*
-operator|)
 name|user_data
 decl_stmt|;
 switch|switch
@@ -1250,10 +1225,6 @@ name|TipsParser
 modifier|*
 name|parser
 init|=
-operator|(
-name|TipsParser
-operator|*
-operator|)
 name|user_data
 decl_stmt|;
 switch|switch
@@ -1326,6 +1297,7 @@ index|]
 operator|!=
 literal|'\r'
 condition|)
+block|{
 name|g_string_append_c
 argument_list|(
 name|parser
@@ -1338,6 +1310,7 @@ name|i
 index|]
 argument_list|)
 expr_stmt|;
+block|}
 elseif|else
 if|if
 condition|(
@@ -1366,6 +1339,7 @@ index|]
 operator|!=
 literal|' '
 condition|)
+block|{
 name|g_string_append_c
 argument_list|(
 name|parser
@@ -1375,6 +1349,7 @@ argument_list|,
 literal|' '
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 break|break;

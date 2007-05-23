@@ -270,6 +270,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|static
+name|void
+name|plug_in_menu_entry_free
+parameter_list|(
+name|PlugInMenuEntry
+modifier|*
+name|entry
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/*  public functions  */
 end_comment
@@ -432,7 +444,10 @@ name|NULL
 argument_list|,
 name|g_free
 argument_list|,
-name|g_free
+operator|(
+name|GDestroyNotify
+operator|)
+name|plug_in_menu_entry_free
 argument_list|)
 expr_stmt|;
 for|for
@@ -537,11 +552,9 @@ name|PlugInMenuEntry
 modifier|*
 name|entry
 init|=
-name|g_new0
+name|g_slice_new0
 argument_list|(
 name|PlugInMenuEntry
-argument_list|,
-literal|1
 argument_list|)
 decl_stmt|;
 specifier|const
@@ -2174,6 +2187,27 @@ block|}
 return|return
 name|action_path
 return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|plug_in_menu_entry_free (PlugInMenuEntry * entry)
+name|plug_in_menu_entry_free
+parameter_list|(
+name|PlugInMenuEntry
+modifier|*
+name|entry
+parameter_list|)
+block|{
+name|g_slice_free
+argument_list|(
+name|PlugInMenuEntry
+argument_list|,
+name|entry
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

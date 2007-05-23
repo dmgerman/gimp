@@ -222,8 +222,9 @@ specifier|static
 name|void
 name|gimp_environ_table_free_value
 parameter_list|(
-name|gpointer
-name|value
+name|GimpEnvironValue
+modifier|*
+name|val
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -553,6 +554,9 @@ name|gimp_environ_table_str_equal
 argument_list|,
 name|g_free
 argument_list|,
+operator|(
+name|GDestroyNotify
+operator|)
 name|gimp_environ_table_free_value
 argument_list|)
 expr_stmt|;
@@ -636,11 +640,9 @@ argument_list|)
 expr_stmt|;
 name|val
 operator|=
-name|g_new
+name|g_slice_new
 argument_list|(
 name|GimpEnvironValue
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|val
@@ -1117,11 +1119,9 @@ condition|)
 block|{
 name|val
 operator|=
-name|g_new
+name|g_slice_new
 argument_list|(
 name|GimpEnvironValue
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|val
@@ -1700,19 +1700,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_environ_table_free_value (gpointer value)
+DECL|function|gimp_environ_table_free_value (GimpEnvironValue * val)
 name|gimp_environ_table_free_value
 parameter_list|(
-name|gpointer
-name|value
-parameter_list|)
-block|{
 name|GimpEnvironValue
 modifier|*
 name|val
-init|=
-name|value
-decl_stmt|;
+parameter_list|)
+block|{
 name|g_free
 argument_list|(
 name|val
@@ -1727,8 +1722,10 @@ operator|->
 name|separator
 argument_list|)
 expr_stmt|;
-name|g_free
+name|g_slice_free
 argument_list|(
+name|GimpEnvironValue
+argument_list|,
 name|val
 argument_list|)
 expr_stmt|;
