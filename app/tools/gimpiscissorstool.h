@@ -29,7 +29,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27c3d8510103
+DECL|enum|__anon2be7ea670103
 block|{
 DECL|enumerator|NO_ACTION
 name|NO_ACTION
@@ -55,7 +55,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27c3d8510203
+DECL|enum|__anon2be7ea670203
 block|{
 DECL|enumerator|DRAW_NOTHING
 name|DRAW_NOTHING
@@ -94,7 +94,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27c3d8510303
+DECL|enum|__anon2be7ea670303
 block|{
 DECL|enumerator|ISCISSORS_OP_NONE
 name|ISCISSORS_OP_NONE
@@ -271,7 +271,7 @@ name|curve2
 decl_stmt|;
 comment|/*  2nd curve connected to current point  */
 DECL|member|curves
-name|GSList
+name|GQueue
 modifier|*
 name|curves
 decl_stmt|;
