@@ -76,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27feeafc0108
+DECL|struct|__anon2a9da99b0108
 block|{
 DECL|member|compression
 name|gint
@@ -99,7 +99,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27feeafc0208
+DECL|struct|__anon2a9da99b0208
 block|{
 DECL|member|ID
 name|gint32
@@ -1949,9 +1949,11 @@ argument_list|)
 expr_stmt|;
 continue|continue;
 block|}
-name|bzero
+name|memset
 argument_list|(
 name|pointrecord
+argument_list|,
+literal|0
 argument_list|,
 literal|26
 argument_list|)
