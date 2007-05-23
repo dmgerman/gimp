@@ -226,18 +226,9 @@ file|"gimp-intl.h"
 end_include
 
 begin_typedef
-DECL|typedef|ImageResizeOptions
 typedef|typedef
-name|struct
-name|_ImageResizeOptions
-name|ImageResizeOptions
-typedef|;
-end_typedef
-
-begin_struct
-DECL|struct|_ImageResizeOptions
 struct|struct
-name|_ImageResizeOptions
+DECL|struct|__anon2bcc693f0108
 block|{
 DECL|member|context
 name|GimpContext
@@ -249,9 +240,11 @@ name|GimpDisplay
 modifier|*
 name|display
 decl_stmt|;
+DECL|typedef|ImageResizeOptions
 block|}
-struct|;
-end_struct
+name|ImageResizeOptions
+typedef|;
+end_typedef
 
 begin_comment
 comment|/*  local function prototypes  */
@@ -290,6 +283,18 @@ name|layer_set
 parameter_list|,
 name|gpointer
 name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|image_resize_options_free
+parameter_list|(
+name|ImageResizeOptions
+modifier|*
+name|options
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -876,11 +881,9 @@ argument_list|)
 expr_stmt|;
 name|options
 operator|=
-name|g_new0
+name|g_slice_new
 argument_list|(
 name|ImageResizeOptions
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|options
@@ -975,7 +978,7 @@ argument_list|,
 operator|(
 name|GWeakNotify
 operator|)
-name|g_free
+name|image_resize_options_free
 argument_list|,
 name|options
 argument_list|)
@@ -2188,6 +2191,27 @@ literal|"Both width and height must be greater than zero."
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|image_resize_options_free (ImageResizeOptions * options)
+name|image_resize_options_free
+parameter_list|(
+name|ImageResizeOptions
+modifier|*
+name|options
+parameter_list|)
+block|{
+name|g_slice_free
+argument_list|(
+name|ImageResizeOptions
+argument_list|,
+name|options
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
