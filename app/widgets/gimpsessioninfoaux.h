@@ -130,7 +130,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_session_info_set_aux_info
+name|gimp_session_info_aux_set_list
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -146,7 +146,7 @@ end_function_decl
 begin_function_decl
 name|GList
 modifier|*
-name|gimp_session_info_get_aux_info
+name|gimp_session_info_aux_get_list
 parameter_list|(
 name|GtkWidget
 modifier|*

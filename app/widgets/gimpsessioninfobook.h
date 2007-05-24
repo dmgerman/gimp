@@ -60,7 +60,7 @@ name|gimp_session_info_book_free
 parameter_list|(
 name|GimpSessionInfoBook
 modifier|*
-name|book
+name|info
 parameter_list|)
 function_decl|;
 end_function_decl

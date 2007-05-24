@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ca99920103
+DECL|enum|__anon2aa551c30103
 block|{
 DECL|enumerator|SESSION_INFO_DOCKABLE_TAB_STYLE
 name|SESSION_INFO_DOCKABLE_TAB_STYLE
@@ -115,44 +115,44 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_session_info_dockable_free (GimpSessionInfoDockable * dockable)
+DECL|function|gimp_session_info_dockable_free (GimpSessionInfoDockable * info)
 name|gimp_session_info_dockable_free
 parameter_list|(
 name|GimpSessionInfoDockable
 modifier|*
-name|dockable
+name|info
 parameter_list|)
 block|{
 name|g_return_if_fail
 argument_list|(
-name|dockable
+name|info
 operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|dockable
+name|info
 operator|->
 name|identifier
 condition|)
 name|g_free
 argument_list|(
-name|dockable
+name|info
 operator|->
 name|identifier
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|dockable
+name|info
 operator|->
 name|aux_info
 condition|)
 block|{
 name|g_list_foreach
 argument_list|(
-name|dockable
+name|info
 operator|->
 name|aux_info
 argument_list|,
@@ -166,7 +166,7 @@ argument_list|)
 expr_stmt|;
 name|g_list_free
 argument_list|(
-name|dockable
+name|info
 operator|->
 name|aux_info
 argument_list|)
@@ -176,7 +176,7 @@ name|g_slice_free
 argument_list|(
 name|GimpSessionInfoDockable
 argument_list|,
-name|dockable
+name|info
 argument_list|)
 expr_stmt|;
 block|}
@@ -881,7 +881,7 @@ name|info
 operator|->
 name|aux_info
 condition|)
-name|gimp_session_info_set_aux_info
+name|gimp_session_info_aux_set_list
 argument_list|(
 name|dockable
 argument_list|,

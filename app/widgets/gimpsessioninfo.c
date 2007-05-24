@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2895b4f10103
+DECL|enum|__anon2992793a0103
 block|{
 DECL|enumerator|SESSION_INFO_POSITION
 name|SESSION_INFO_POSITION
@@ -1178,7 +1178,7 @@ name|info
 operator|->
 name|aux_info
 condition|)
-name|gimp_session_info_set_aux_info
+name|gimp_session_info_aux_set_list
 argument_list|(
 name|dialog
 argument_list|,

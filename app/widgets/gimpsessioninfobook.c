@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2779c7ec0103
+DECL|enum|__anon2bd1edbf0103
 block|{
 DECL|enumerator|SESSION_INFO_BOOK_POSITION
 name|SESSION_INFO_BOOK_POSITION
@@ -103,31 +103,31 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_session_info_book_free (GimpSessionInfoBook * book)
+DECL|function|gimp_session_info_book_free (GimpSessionInfoBook * info)
 name|gimp_session_info_book_free
 parameter_list|(
 name|GimpSessionInfoBook
 modifier|*
-name|book
+name|info
 parameter_list|)
 block|{
 name|g_return_if_fail
 argument_list|(
-name|book
+name|info
 operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|book
+name|info
 operator|->
 name|dockables
 condition|)
 block|{
 name|g_list_foreach
 argument_list|(
-name|book
+name|info
 operator|->
 name|dockables
 argument_list|,
@@ -141,7 +141,7 @@ argument_list|)
 expr_stmt|;
 name|g_list_free
 argument_list|(
-name|book
+name|info
 operator|->
 name|dockables
 argument_list|)
@@ -151,7 +151,7 @@ name|g_slice_free
 argument_list|(
 name|GimpSessionInfoBook
 argument_list|,
-name|book
+name|info
 argument_list|)
 expr_stmt|;
 block|}

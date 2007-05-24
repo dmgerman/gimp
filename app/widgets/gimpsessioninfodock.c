@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2acc75a40103
+DECL|enum|__anon2989493b0103
 block|{
 DECL|enumerator|SESSION_INFO_BOOK
 name|SESSION_INFO_BOOK
@@ -484,7 +484,7 @@ name|info
 operator|->
 name|aux_info
 condition|)
-name|gimp_session_info_set_aux_info
+name|gimp_session_info_aux_set_list
 argument_list|(
 name|GTK_WIDGET
 argument_list|(

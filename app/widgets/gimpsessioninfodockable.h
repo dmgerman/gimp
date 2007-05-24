@@ -60,7 +60,7 @@ name|gimp_session_info_dockable_free
 parameter_list|(
 name|GimpSessionInfoDockable
 modifier|*
-name|dockable
+name|info
 parameter_list|)
 function_decl|;
 end_function_decl

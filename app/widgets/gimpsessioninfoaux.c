@@ -753,7 +753,7 @@ argument_list|)
 expr_stmt|;
 name|aux_info
 operator|=
-name|gimp_session_info_get_aux_info
+name|gimp_session_info_aux_get_list
 argument_list|(
 name|widget
 argument_list|)
@@ -1033,8 +1033,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_session_info_set_aux_info (GtkWidget * dialog,GList * aux_info)
-name|gimp_session_info_set_aux_info
+DECL|function|gimp_session_info_aux_set_list (GtkWidget * dialog,GList * aux_list)
+name|gimp_session_info_aux_set_list
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -1042,7 +1042,7 @@ name|dialog
 parameter_list|,
 name|GList
 modifier|*
-name|aux_info
+name|aux_list
 parameter_list|)
 block|{
 comment|/* FIXME: make the aux-info stuff generic */
@@ -1060,7 +1060,7 @@ argument_list|(
 name|dialog
 argument_list|)
 argument_list|,
-name|aux_info
+name|aux_list
 argument_list|)
 expr_stmt|;
 elseif|else
@@ -1078,7 +1078,7 @@ argument_list|(
 name|dialog
 argument_list|)
 argument_list|,
-name|aux_info
+name|aux_list
 argument_list|)
 expr_stmt|;
 block|}
@@ -1087,8 +1087,8 @@ end_function
 begin_function
 name|GList
 modifier|*
-DECL|function|gimp_session_info_get_aux_info (GtkWidget * dialog)
-name|gimp_session_info_get_aux_info
+DECL|function|gimp_session_info_aux_get_list (GtkWidget * dialog)
+name|gimp_session_info_aux_get_list
 parameter_list|(
 name|GtkWidget
 modifier|*
