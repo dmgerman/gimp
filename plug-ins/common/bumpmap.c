@@ -1,42 +1,10 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * Bump map plug-in --- emboss an image by using another image as a bump map  * Copyright (C) 1997 Federico Mena Quintero<federico@nuclecu.unam.mx>  * Copyright (C) 1997-2000 Jens Lautenbacher<jtl@gimp.org>  * Copyright (C) 2000 Sven Neumann<sven@gimp.org>  *  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * Bump map plug-in --- emboss an image by using another image as a bump map  * Copyright (C) 1997 Federico Mena Quintero<federico@nuclecu.unam.mx>  * Copyright (C) 1997-2000 Jens Lautenbacher<jtl@gimp.org>  * Copyright (C) 2000 Sven Neumann<sven@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_comment
 comment|/* This plug-in uses the algorithm described by John Schlag, "Fast  * Embossing Effects on Raster Image Data" in Graphics Gems IV (ISBN  * 0-12-336155-9).  It takes a grayscale image to be applied as a  * bump-map to another image, producing a nice embossing effect.  */
-end_comment
-
-begin_comment
-comment|/* Version 3.0-pre1-ac2:  *  * - waterlevel/ambient restricted to 0-255  * - correctly initialize bumpmap_offsets  */
-end_comment
-
-begin_comment
-comment|/* Version 3.0-pre1-ac1:  *  * - Now able not to tile the bumpmap - this is the default.  * - Added new PDB call plug_in_bumpmap_tiled.  * - Added scrollbars for preview.  * - Fixed slider feedback for bumpmap offset and set initial offsets  *   from drawable offsets.  * - Make it work as intended from the very beginning...  */
-end_comment
-
-begin_comment
-comment|/* Version 2.04:  *  * - The preview is now scrollable via draging with button 1 in the  * preview area. Thanks to Quartic for helping with gdk event handling.  *  * - The bumpmap's offset can alternatively be adjusted by dragging with  * button 3 in the preview area.  */
-end_comment
-
-begin_comment
-comment|/* Version 2.03:  *  * - Now transparency in the bumpmap drawable is handled as specified  * by the waterlevel parameter.  Thanks to Jens for suggesting it!  *  * - New cool ambient lighting method.  Thanks to Jens Lautenbacher  * for creating it!  Something useful actually came out of those IRC  * sessions ;-)  *  * - Added proper rounding wherever it seemed appropriate.  This fixes  * some minor artifacts in the output.  */
-end_comment
-
-begin_comment
-comment|/* Version 2.02:  *  * - Fixed a stupid bug in the preview code (offsets were not wrapped  * correctly in some situations).  Thanks to Jens Lautenbacher for  * reporting it!  */
-end_comment
-
-begin_comment
-comment|/* Version 2.01:  *  * - For the preview, vertical scrolling and setting the vertical  * bumpmap offset are now *much* faster.  Instead of calling  * gimp_pixel_rgn_get_row() a lot of times, I now use an adapted  * version of gimp_pixel_rgn_get_rect().  */
-end_comment
-
-begin_comment
-comment|/* Version 2.00:  *  * - Rewrote from the 0.54 version (well, from the 0.99.9  * distribution, actually...).  New in this release are the correct  * handling of all image depths, sizes, and offsets.  Also the  * different map types, the compensation and map inversion options  * were added.  The preview widget is new, too.  */
-end_comment
-
-begin_comment
-comment|/* TODO:  *  * - Speed-ups  */
 end_comment
 
 begin_include
@@ -119,7 +87,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a7b6760103
+DECL|enum|__anon2a94dcb60103
 block|{
 DECL|enumerator|LINEAR
 name|LINEAR
@@ -137,7 +105,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a7b6760203
+DECL|enum|__anon2a94dcb60203
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE
@@ -153,7 +121,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a7b6760308
+DECL|struct|__anon2a94dcb60308
 block|{
 DECL|member|bumpmap_id
 name|gint32
@@ -212,7 +180,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a7b6760408
+DECL|struct|__anon2a94dcb60408
 block|{
 DECL|member|lx
 DECL|member|ly
@@ -257,7 +225,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a7b6760508
+DECL|struct|__anon2a94dcb60508
 block|{
 DECL|member|mouse_x
 name|gint
@@ -403,6 +371,7 @@ specifier|static
 name|void
 name|bumpmap_row
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|src_row
@@ -420,14 +389,17 @@ parameter_list|,
 name|gboolean
 name|has_alpha
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|bm_row1
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|bm_row2
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|bm_row3
@@ -469,6 +441,7 @@ parameter_list|,
 name|gboolean
 name|has_alpha
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|lut
@@ -2351,11 +2324,30 @@ modifier|*
 name|params
 parameter_list|)
 block|{
+comment|/* Convert to radians */
+specifier|const
 name|gdouble
 name|azimuth
+init|=
+name|G_PI
+operator|*
+name|bmvals
+operator|.
+name|azimuth
+operator|/
+literal|180.0
 decl_stmt|;
+specifier|const
 name|gdouble
 name|elevation
+init|=
+name|G_PI
+operator|*
+name|bmvals
+operator|.
+name|elevation
+operator|/
+literal|180.0
 decl_stmt|;
 name|gint
 name|lz
@@ -2365,30 +2357,6 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
-name|gdouble
-name|n
-decl_stmt|;
-comment|/* Convert to radians */
-name|azimuth
-operator|=
-name|G_PI
-operator|*
-name|bmvals
-operator|.
-name|azimuth
-operator|/
-literal|180.0
-expr_stmt|;
-name|elevation
-operator|=
-name|G_PI
-operator|*
-name|bmvals
-operator|.
-name|elevation
-operator|/
-literal|180.0
-expr_stmt|;
 comment|/* Calculate the light vector */
 name|params
 operator|->
@@ -2492,6 +2460,9 @@ name|i
 operator|++
 control|)
 block|{
+name|gdouble
+name|n
+decl_stmt|;
 switch|switch
 condition|(
 name|bmvals
@@ -2625,9 +2596,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|bumpmap_row (guchar * src,guchar * dest,gint width,gint bpp,gboolean has_alpha,guchar * bm_row1,guchar * bm_row2,guchar * bm_row3,gint bm_width,gint bm_xofs,gboolean tiled,gboolean row_in_bumpmap,bumpmap_params_t * params)
+DECL|function|bumpmap_row (const guchar * src,guchar * dest,gint width,gint bpp,gboolean has_alpha,const guchar * bm_row1,const guchar * bm_row2,const guchar * bm_row3,gint bm_width,gint bm_xofs,gboolean tiled,gboolean row_in_bumpmap,bumpmap_params_t * params)
 name|bumpmap_row
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -2645,14 +2617,17 @@ parameter_list|,
 name|gboolean
 name|has_alpha
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|bm_row1
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|bm_row2
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|bm_row3
@@ -2678,19 +2653,6 @@ name|gint
 name|xofs1
 decl_stmt|,
 name|xofs2
-decl_stmt|,
-name|xofs3
-decl_stmt|;
-name|gint
-name|shade
-decl_stmt|;
-name|gint
-name|ndotl
-decl_stmt|;
-name|gint
-name|nx
-decl_stmt|,
-name|ny
 decl_stmt|;
 name|gint
 name|x
@@ -2750,6 +2712,17 @@ name|x
 operator|++
 control|)
 block|{
+name|gint
+name|xofs3
+decl_stmt|;
+name|gint
+name|shade
+decl_stmt|;
+name|gint
+name|nx
+decl_stmt|,
+name|ny
+decl_stmt|;
 comment|/* Calculate surface normal from bump map */
 if|if
 condition|(
@@ -2926,16 +2899,19 @@ operator|==
 literal|0
 operator|)
 condition|)
+block|{
 name|shade
 operator|=
 name|params
 operator|->
 name|background
 expr_stmt|;
+block|}
 else|else
 block|{
+name|gint
 name|ndotl
-operator|=
+init|=
 name|nx
 operator|*
 name|params
@@ -2951,13 +2927,14 @@ operator|+
 name|params
 operator|->
 name|nzlz
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|ndotl
 operator|<
 literal|0
 condition|)
+block|{
 name|shade
 operator|=
 name|params
@@ -2968,6 +2945,7 @@ name|bmvals
 operator|.
 name|ambient
 expr_stmt|;
+block|}
 else|else
 block|{
 name|shade
@@ -3023,6 +3001,7 @@ name|bmvals
 operator|.
 name|compensate
 condition|)
+block|{
 for|for
 control|(
 name|k
@@ -3065,7 +3044,9 @@ name|result
 argument_list|)
 expr_stmt|;
 block|}
+block|}
 else|else
+block|{
 for|for
 control|(
 name|k
@@ -3089,6 +3070,7 @@ name|shade
 operator|/
 literal|255
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|has_alpha
@@ -3120,7 +3102,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|bumpmap_convert_row (guchar * row,gint width,gint bpp,gboolean has_alpha,guchar * lut)
+DECL|function|bumpmap_convert_row (guchar * row,gint width,gint bpp,gboolean has_alpha,const guchar * lut)
 name|bumpmap_convert_row
 parameter_list|(
 name|guchar
@@ -3136,6 +3118,7 @@ parameter_list|,
 name|gboolean
 name|has_alpha
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|lut
@@ -3144,11 +3127,9 @@ block|{
 name|guchar
 modifier|*
 name|p
-decl_stmt|;
-name|p
-operator|=
+init|=
 name|row
-expr_stmt|;
+decl_stmt|;
 name|has_alpha
 operator|=
 name|has_alpha
@@ -5984,17 +5965,6 @@ name|height
 parameter_list|)
 block|{
 comment|/* This is shamelessly ripped off from gimp_pixel_rgn_get_rect().    * Its function is exactly the same, but it can fetch an image    * rectangle to a sparse buffer which is defined as separate    * rows instead of one big linear region.    */
-name|GimpTile
-modifier|*
-name|tile
-decl_stmt|;
-name|guchar
-modifier|*
-name|src
-decl_stmt|,
-modifier|*
-name|dest
-decl_stmt|;
 name|gint
 name|xstart
 decl_stmt|,
@@ -6028,19 +5998,16 @@ name|ty
 decl_stmt|;
 name|gint
 name|tile_width
-decl_stmt|,
-name|tile_height
-decl_stmt|;
-name|tile_width
-operator|=
+init|=
 name|gimp_tile_width
 argument_list|()
-expr_stmt|;
+decl_stmt|;
+name|gint
 name|tile_height
-operator|=
+init|=
 name|gimp_tile_height
 argument_list|()
-expr_stmt|;
+decl_stmt|;
 name|bpp
 operator|=
 name|pr
@@ -6090,6 +6057,10 @@ operator|<
 name|xend
 condition|)
 block|{
+name|GimpTile
+modifier|*
+name|tile
+decl_stmt|;
 name|tile
 operator|=
 name|gimp_drawable_get_tile2
@@ -6180,6 +6151,15 @@ name|ty
 operator|++
 control|)
 block|{
+specifier|const
+name|guchar
+modifier|*
+name|src
+decl_stmt|;
+name|guchar
+modifier|*
+name|dest
+decl_stmt|;
 name|src
 operator|=
 name|tile
@@ -6300,14 +6280,6 @@ decl_stmt|;
 name|gint
 name|y
 decl_stmt|;
-name|guchar
-modifier|*
-name|sp
-decl_stmt|;
-name|guchar
-modifier|*
-name|p
-decl_stmt|;
 name|dialog_get_rows
 argument_list|(
 operator|&
@@ -6350,8 +6322,11 @@ name|y
 operator|++
 control|)
 block|{
+specifier|const
+name|guchar
+modifier|*
 name|sp
-operator|=
+init|=
 name|bmint
 operator|.
 name|src_rows
@@ -6364,9 +6339,11 @@ operator|*
 name|sel_width
 operator|-
 literal|1
-expr_stmt|;
+decl_stmt|;
+name|guchar
+modifier|*
 name|p
-operator|=
+init|=
 name|bmint
 operator|.
 name|src_rows
@@ -6379,7 +6356,7 @@ operator|*
 name|sel_width
 operator|-
 literal|1
-expr_stmt|;
+decl_stmt|;
 for|for
 control|(
 name|x
