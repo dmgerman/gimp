@@ -49,15 +49,6 @@ comment|/* For information look into the C source or the html documentation */
 end_comment
 
 begin_typedef
-DECL|typedef|GimpHost
-typedef|typedef
-name|struct
-name|_GimpHost
-name|GimpHost
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpParasite
 typedef|typedef
 name|struct
