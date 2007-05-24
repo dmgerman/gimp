@@ -102,8 +102,12 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_session_info_save
+name|gimp_session_info_serialize
 parameter_list|(
+name|GimpConfigWriter
+modifier|*
+name|writer
+parameter_list|,
 name|GimpSessionInfo
 modifier|*
 name|info
@@ -112,10 +116,6 @@ specifier|const
 name|gchar
 modifier|*
 name|factory_name
-parameter_list|,
-name|GimpConfigWriter
-modifier|*
-name|writer
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -129,7 +129,7 @@ modifier|*
 name|scanner
 parameter_list|,
 name|gint
-name|old_scope
+name|scope
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -4462,8 +4462,10 @@ name|session_managed
 operator|)
 condition|)
 continue|continue;
-name|gimp_session_info_save
+name|gimp_session_info_serialize
 argument_list|(
+name|writer
+argument_list|,
 name|info
 argument_list|,
 name|GIMP_OBJECT
@@ -4472,8 +4474,6 @@ name|factory
 argument_list|)
 operator|->
 name|name
-argument_list|,
-name|writer
 argument_list|)
 expr_stmt|;
 block|}
