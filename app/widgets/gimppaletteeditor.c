@@ -114,7 +114,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpsessioninfoaux.h"
+file|"gimpsessioninfo-aux.h"
 end_include
 
 begin_include

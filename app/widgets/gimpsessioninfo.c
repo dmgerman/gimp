@@ -54,24 +54,24 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpsessioninfoaux.h"
+file|"gimpsessioninfo-aux.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpsessioninfobook.h"
+file|"gimpsessioninfo-book.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpsessioninfodock.h"
+file|"gimpsessioninfo-dock.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2992793a0103
+DECL|enum|__anon28eebbb30103
 block|{
 DECL|enumerator|SESSION_INFO_POSITION
 name|SESSION_INFO_POSITION

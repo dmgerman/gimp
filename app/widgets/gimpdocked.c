@@ -48,12 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpsessioninfoaux.h"
+file|"gimpsessioninfo-aux.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc4265c0103
+DECL|enum|__anon29ed11540103
 block|{
 DECL|enumerator|TITLE_CHANGED
 name|TITLE_CHANGED

@@ -102,7 +102,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpsessioninfoaux.h"
+file|"gimpsessioninfo-aux.h"
 end_include
 
 begin_include
@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1a3ff60103
+DECL|enum|__anon2969089e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
