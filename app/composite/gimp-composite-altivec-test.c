@@ -142,7 +142,7 @@ condition|)
 block|{
 name|g_print
 argument_list|(
-literal|"gimp_composite_altivec: Instruction set is not available.\n"
+literal|"\ngimp_composite_altivec: Instruction set is not available.\n"
 argument_list|)
 expr_stmt|;
 return|return
