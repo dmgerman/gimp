@@ -12,12 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdlib.h>
 end_include
 
@@ -233,7 +227,7 @@ name|i
 operator|++
 control|)
 block|{
-name|printf
+name|g_print
 argument_list|(
 literal|"#%02x\n"
 argument_list|,
@@ -285,7 +279,7 @@ name|i
 operator|++
 control|)
 block|{
-name|printf
+name|g_print
 argument_list|(
 literal|"#%02x,%02X\n"
 argument_list|,
@@ -344,7 +338,7 @@ name|i
 operator|++
 control|)
 block|{
-name|printf
+name|g_print
 argument_list|(
 literal|"#%02x%02x%02x\n"
 argument_list|,
@@ -410,7 +404,7 @@ name|i
 operator|++
 control|)
 block|{
-name|printf
+name|g_print
 argument_list|(
 literal|"#%02x%02x%02x,%02X\n"
 argument_list|,
@@ -461,7 +455,7 @@ modifier|*
 name|rgba8
 parameter_list|)
 block|{
-name|printf
+name|g_print
 argument_list|(
 literal|"#%02x%02x%02x,%02X"
 argument_list|,
@@ -482,11 +476,6 @@ operator|->
 name|a
 argument_list|)
 expr_stmt|;
-name|fflush
-argument_list|(
-name|stdout
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -504,7 +493,7 @@ modifier|*
 name|va8
 parameter_list|)
 block|{
-name|printf
+name|g_print
 argument_list|(
 literal|"#%02x,%02X"
 argument_list|,
@@ -515,11 +504,6 @@ argument_list|,
 name|va8
 operator|->
 name|a
-argument_list|)
-expr_stmt|;
-name|fflush
-argument_list|(
-name|stdout
 argument_list|)
 expr_stmt|;
 block|}
@@ -561,7 +545,7 @@ case|case
 name|GIMP_PIXELFORMAT_N
 case|:
 default|default:
-name|printf
+name|g_print
 argument_list|(
 literal|"Bad pixelformat! %d\n"
 argument_list|,
@@ -604,7 +588,7 @@ index|]
 argument_list|)
 condition|)
 block|{
-name|printf
+name|g_print
 argument_list|(
 literal|"%s: failed to agree\n"
 argument_list|,
@@ -646,7 +630,7 @@ index|]
 argument_list|)
 condition|)
 block|{
-name|printf
+name|g_print
 argument_list|(
 literal|"%s: failed to agree\n"
 argument_list|,
@@ -688,7 +672,7 @@ index|]
 argument_list|)
 condition|)
 block|{
-name|printf
+name|g_print
 argument_list|(
 literal|"%s: failed to agree\n"
 argument_list|,
@@ -778,7 +762,7 @@ index|]
 argument_list|)
 condition|)
 block|{
-name|printf
+name|g_print
 argument_list|(
 literal|"%s: failed to agree\n"
 argument_list|,
@@ -820,7 +804,7 @@ index|]
 argument_list|)
 condition|)
 block|{
-name|printf
+name|g_print
 argument_list|(
 literal|"%s: failed to agree\n"
 argument_list|,
@@ -862,7 +846,7 @@ index|]
 argument_list|)
 condition|)
 block|{
-name|printf
+name|g_print
 argument_list|(
 literal|"%s: failed to agree\n"
 argument_list|,
@@ -904,7 +888,7 @@ index|]
 argument_list|)
 condition|)
 block|{
-name|printf
+name|g_print
 argument_list|(
 literal|"%s: failed to agree\n"
 argument_list|,
@@ -951,7 +935,7 @@ index|]
 argument_list|)
 condition|)
 block|{
-name|printf
+name|g_print
 argument_list|(
 literal|"%s: failed to agree\n"
 argument_list|,
@@ -993,7 +977,7 @@ index|]
 argument_list|)
 condition|)
 block|{
-name|printf
+name|g_print
 argument_list|(
 literal|"%s: failed to agree\n"
 argument_list|,
@@ -1035,7 +1019,7 @@ index|]
 argument_list|)
 condition|)
 block|{
-name|printf
+name|g_print
 argument_list|(
 literal|"%s: failed to agree\n"
 argument_list|,
@@ -1077,7 +1061,7 @@ index|]
 argument_list|)
 condition|)
 block|{
-name|printf
+name|g_print
 argument_list|(
 literal|"%s: failed to agree\n"
 argument_list|,
@@ -1262,7 +1246,7 @@ block|{
 name|fail_count
 operator|++
 expr_stmt|;
-name|printf
+name|g_print
 argument_list|(
 literal|"%s %8lu A="
 argument_list|,
@@ -1291,7 +1275,7 @@ operator|)
 literal|0
 condition|)
 block|{
-name|printf
+name|g_print
 argument_list|(
 literal|" B="
 argument_list|)
@@ -1306,7 +1290,7 @@ index|]
 argument_list|)
 expr_stmt|;
 block|}
-name|printf
+name|g_print
 argument_list|(
 literal|"   expected="
 argument_list|)
@@ -1320,7 +1304,7 @@ name|i
 index|]
 argument_list|)
 expr_stmt|;
-name|printf
+name|g_print
 argument_list|(
 literal|" actual="
 argument_list|)
@@ -1334,7 +1318,7 @@ name|i
 index|]
 argument_list|)
 expr_stmt|;
-name|printf
+name|g_print
 argument_list|(
 literal|"\n"
 argument_list|)
@@ -1472,7 +1456,7 @@ block|{
 name|fail_count
 operator|++
 expr_stmt|;
-name|printf
+name|g_print
 argument_list|(
 literal|"%s %8d A="
 argument_list|,
@@ -1501,7 +1485,7 @@ operator|)
 literal|0
 condition|)
 block|{
-name|printf
+name|g_print
 argument_list|(
 literal|" B="
 argument_list|)
@@ -1516,12 +1500,12 @@ index|]
 argument_list|)
 expr_stmt|;
 block|}
-name|printf
+name|g_print
 argument_list|(
 literal|"   "
 argument_list|)
 expr_stmt|;
-name|printf
+name|g_print
 argument_list|(
 literal|"expected="
 argument_list|)
@@ -1535,7 +1519,7 @@ name|i
 index|]
 argument_list|)
 expr_stmt|;
-name|printf
+name|g_print
 argument_list|(
 literal|" actual="
 argument_list|)
@@ -1549,7 +1533,7 @@ name|i
 index|]
 argument_list|)
 expr_stmt|;
-name|printf
+name|g_print
 argument_list|(
 literal|"\n"
 argument_list|)
@@ -1595,7 +1579,7 @@ block|{
 name|int
 name|i
 decl_stmt|;
-name|printf
+name|g_print
 argument_list|(
 literal|"%s\n"
 argument_list|,
@@ -1616,7 +1600,7 @@ name|i
 operator|++
 control|)
 block|{
-name|printf
+name|g_print
 argument_list|(
 literal|"%5d: "
 argument_list|,
@@ -1632,7 +1616,7 @@ name|i
 index|]
 argument_list|)
 expr_stmt|;
-name|printf
+name|g_print
 argument_list|(
 literal|"\n"
 argument_list|)
@@ -1664,7 +1648,7 @@ name|t1
 parameter_list|,
 name|t2
 parameter_list|)
-value|printf("%-32s %10.4f %10.4f %10.4f%c\n", name, tv_to_secs(t1), tv_to_secs(t2), tv_to_secs(t1)/tv_to_secs(t2), tv_to_secs(t1)/tv_to_secs(t2)> 1.0 ? ' ' : '*');
+value|g_print("%-32s %10.4f %10.4f %10.4f%c\n", name, tv_to_secs(t1), tv_to_secs(t2), tv_to_secs(t1)/tv_to_secs(t2), tv_to_secs(t1)/tv_to_secs(t2)> 1.0 ? ' ' : '*');
 end_define
 
 begin_comment
@@ -1687,7 +1671,7 @@ name|double
 name|t2
 parameter_list|)
 block|{
-name|printf
+name|g_print
 argument_list|(
 literal|"%-32s %10.4f %10.4f %10.4f%c\n"
 argument_list|,

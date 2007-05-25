@@ -12,12 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<glib-object.h>
 end_include
 
@@ -555,11 +549,11 @@ name|print128
 parameter_list|(
 name|reg
 parameter_list|)
-value|{ \   unsigned long long reg[2]; \   asm("movdqu %%" #reg ",%0" : "=m" (reg)); \   printf(#reg"=%08llx %08llx", mask32(reg[0]>>32), mask32(reg[0])); \   printf(" %08llx %08llx", mask32(reg[1]>>32), mask32(reg[1])); \  }
+value|{ \   unsigned long long reg[2]; \   asm("movdqu %%" #reg ",%0" : "=m" (reg)); \   g_print(#reg"=%08llx %08llx", mask32(reg[0]>>32), mask32(reg[0])); \   g_print(" %08llx %08llx", mask32(reg[1]>>32), mask32(reg[1])); \  }
 end_define
 
 begin_endif
-unit|printf("--------------------------------------------\n");   print128(xmm0); printf("  "); print128(xmm1); printf("\n");   print128(xmm2); printf("  "); print128(xmm3); printf("\n");   print128(xmm4); printf("  "); print128(xmm5); printf("\n");   print128(xmm6); printf("  "); print128(xmm7); printf("\n");   printf("--------------------------------------------\n"); }
+unit|g_print("--------------------------------------------\n");   print128(xmm0); g_print("  "); print128(xmm1); g_print("\n");   print128(xmm2); g_print("  "); print128(xmm3); g_print("\n");   print128(xmm4); g_print("  "); print128(xmm5); g_print("\n");   print128(xmm6); g_print("  "); print128(xmm7); g_print("\n");   g_print("--------------------------------------------\n"); }
 endif|#
 directive|endif
 end_endif

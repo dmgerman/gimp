@@ -16,12 +16,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<glib-object.h>
 end_include
 
@@ -109,11 +103,11 @@ name|print64
 parameter_list|(
 name|reg
 parameter_list|)
-value|{ unsigned long long reg; asm("movq %%" #reg ",%0" : "=m" (reg)); printf(#reg"=%08llx %08llx", mask32(reg>>32), mask32(reg)); }
+value|{ unsigned long long reg; asm("movq %%" #reg ",%0" : "=m" (reg)); g_print(#reg"=%08llx %08llx", mask32(reg>>32), mask32(reg)); }
 end_define
 
 begin_endif
-unit|printf("--------------------------------------------\n");   print64(mm0); printf("  "); print64(mm1); printf("\n");   print64(mm2); printf("  "); print64(mm3); printf("\n");   print64(mm4); printf("  "); print64(mm5); printf("\n");   print64(mm6); printf("  "); print64(mm7); printf("\n");   printf("--------------------------------------------\n"); }
+unit|g_print("--------------------------------------------\n");   print64(mm0); g_print("  "); print64(mm1); g_print("\n");   print64(mm2); g_print("  "); print64(mm3); g_print("\n");   print64(mm4); g_print("  "); print64(mm5); g_print("\n");   print64(mm6); g_print("  "); print64(mm7); g_print("\n");   g_print("--------------------------------------------\n"); }
 endif|#
 directive|endif
 end_endif
