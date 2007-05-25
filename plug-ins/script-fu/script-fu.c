@@ -672,6 +672,10 @@ literal|0
 condition|)
 block|{
 comment|/*        *  The script-fu text console for interactive Scheme development        */
+name|ts_output_routine
+operator|=
+name|NULL
+expr_stmt|;
 name|script_fu_text_console_run
 argument_list|(
 name|name

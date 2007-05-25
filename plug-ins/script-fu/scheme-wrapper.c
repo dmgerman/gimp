@@ -877,6 +877,25 @@ block|}
 end_function
 
 begin_function
+name|void
+DECL|function|ts_interpret_stdin (void)
+name|ts_interpret_stdin
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+name|scheme_load_file
+argument_list|(
+operator|&
+name|sc
+argument_list|,
+name|stdin
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
 name|gint
 DECL|function|ts_interpret_string (const gchar * expr)
 name|ts_interpret_string
