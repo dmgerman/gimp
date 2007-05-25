@@ -8,12 +8,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdlib.h>
 end_include
 
@@ -21,12 +15,6 @@ begin_include
 include|#
 directive|include
 file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<sys/time.h>
 end_include
 
 begin_include
@@ -144,11 +132,6 @@ decl_stmt|;
 name|int
 name|i
 decl_stmt|;
-name|printf
-argument_list|(
-literal|"\nRunning gimp_composite_altivec tests...\n"
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|gimp_composite_altivec_init
@@ -157,17 +140,20 @@ operator|==
 literal|0
 condition|)
 block|{
-name|printf
+name|g_print
 argument_list|(
 literal|"gimp_composite_altivec: Instruction set is not available.\n"
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
-literal|0
-operator|)
+name|EXIT_SUCCESS
 return|;
 block|}
+name|g_print
+argument_list|(
+literal|"\nRunning gimp_composite_altivec tests...\n"
+argument_list|)
+expr_stmt|;
 name|rgba8A
 operator|=
 name|gimp_composite_regression_random_rgba8
@@ -395,9 +381,7 @@ block|}
 endif|#
 directive|endif
 return|return
-operator|(
-literal|0
-operator|)
+name|EXIT_SUCCESS
 return|;
 block|}
 end_function
@@ -564,16 +548,14 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|printf
+name|g_print
 argument_list|(
 literal|"Usage: gimp-composites-*-test [-i|--iterations n] [-n|--n-pixels n]"
 argument_list|)
 expr_stmt|;
-name|exit
-argument_list|(
-literal|1
-argument_list|)
-expr_stmt|;
+return|return
+name|EXIT_FAILURE
+return|;
 block|}
 block|}
 name|gimp_composite_generic_install

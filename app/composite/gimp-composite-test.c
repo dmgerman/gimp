@@ -8,12 +8,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdlib.h>
 end_include
 
@@ -21,12 +15,6 @@ begin_include
 include|#
 directive|include
 file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<sys/time.h>
 end_include
 
 begin_include
@@ -500,9 +488,7 @@ name|i
 expr_stmt|;
 block|}
 return|return
-operator|(
-literal|0
-operator|)
+name|EXIT_SUCCESS
 return|;
 block|}
 end_function
@@ -543,14 +529,12 @@ operator|*
 literal|256
 expr_stmt|;
 return|return
-operator|(
 name|gimp_composite_regression
 argument_list|(
 name|iterations
 argument_list|,
 name|n_pixels
 argument_list|)
-operator|)
 return|;
 block|}
 end_function
