@@ -691,6 +691,23 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|object_move_sash
+parameter_list|(
+name|Object_t
+modifier|*
+name|obj
+parameter_list|,
+name|gint
+name|dx
+parameter_list|,
+name|gint
+name|dy
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|object_remove
 parameter_list|(
 name|Object_t
@@ -993,7 +1010,7 @@ value|((obj)->class->get_stock_icon_name())
 end_define
 
 begin_typedef
-DECL|struct|__anon278343af0108
+DECL|struct|__anon28e41de10108
 typedef|typedef
 struct|struct
 block|{
@@ -1097,7 +1114,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon278343af0208
+DECL|struct|__anon28e41de10208
 typedef|typedef
 struct|struct
 block|{
@@ -1626,6 +1643,23 @@ parameter_list|(
 name|ObjectList_t
 modifier|*
 name|list
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|object_list_move_sash_selected
+parameter_list|(
+name|ObjectList_t
+modifier|*
+name|list
+parameter_list|,
+name|gint
+name|dx
+parameter_list|,
+name|gint
+name|dy
 parameter_list|)
 function_decl|;
 end_function_decl
