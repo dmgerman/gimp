@@ -732,11 +732,9 @@ name|NULL
 return|;
 name|parasite
 operator|=
-name|g_new
+name|g_slice_new
 argument_list|(
 name|GimpParasite
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|parasite
@@ -835,8 +833,10 @@ operator|->
 name|data
 argument_list|)
 expr_stmt|;
-name|g_free
+name|g_slice_free
 argument_list|(
+name|GimpParasite
+argument_list|,
 name|parasite
 argument_list|)
 expr_stmt|;
