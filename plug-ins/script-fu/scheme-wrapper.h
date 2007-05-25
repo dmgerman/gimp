@@ -115,10 +115,7 @@ begin_function_decl
 name|void
 name|ts_output_string
 parameter_list|(
-name|FILE
-modifier|*
-name|fp
-parameter_list|,
+specifier|const
 name|char
 modifier|*
 name|string

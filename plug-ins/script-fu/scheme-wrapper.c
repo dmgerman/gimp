@@ -1046,13 +1046,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|ts_output_string (FILE * fp,char * string,int len)
+DECL|function|ts_output_string (const char * string,int len)
 name|ts_output_string
 parameter_list|(
-name|FILE
-modifier|*
-name|fp
-parameter_list|,
+specifier|const
 name|char
 modifier|*
 name|string
@@ -1075,10 +1072,6 @@ operator|>
 literal|0
 operator|&&
 name|ts_console_mode
-operator|&&
-name|fp
-operator|==
-name|stdout
 condition|)
 block|{
 comment|/* len is the number of UTF-8 characters; we need the number of bytes */

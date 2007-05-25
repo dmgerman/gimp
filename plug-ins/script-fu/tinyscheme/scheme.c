@@ -3744,6 +3744,7 @@ modifier|*
 name|ts_output_routine
 function_decl|)
 parameter_list|(
+specifier|const
 name|char
 modifier|*
 parameter_list|,
@@ -11098,10 +11099,6 @@ modifier|*
 name|ts_output_routine
 call|)
 argument_list|(
-operator|(
-name|char
-operator|*
-operator|)
 name|chars
 argument_list|,
 name|char_cnt
@@ -11438,7 +11435,7 @@ decl_stmt|;
 name|int
 name|len
 decl_stmt|;
-DECL|enum|__anon289008d00103
+DECL|enum|__anon2ba8d1a50103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -28200,7 +28197,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon289008d00208
+DECL|struct|__anon2ba8d1a50208
 specifier|static
 struct|struct
 block|{
@@ -28435,7 +28432,7 @@ value|"\016"
 end_define
 
 begin_typedef
-DECL|struct|__anon289008d00308
+DECL|struct|__anon2ba8d1a50308
 typedef|typedef
 struct|struct
 block|{

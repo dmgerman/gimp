@@ -568,7 +568,7 @@ DECL|member|is_fixnum
 name|char
 name|is_fixnum
 decl_stmt|;
-DECL|union|__anon275f486c010a
+DECL|union|__anon2a203c55010a
 union|union
 block|{
 DECL|member|ivalue
@@ -605,6 +605,7 @@ modifier|*
 name|ts_output_routine
 function_decl|)
 parameter_list|(
+specifier|const
 name|char
 modifier|*
 parameter_list|,
