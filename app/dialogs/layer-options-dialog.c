@@ -350,7 +350,7 @@ argument_list|,
 operator|(
 name|GWeakNotify
 operator|)
-name|g_free
+name|layer_options_dialog_free
 argument_list|,
 name|options
 argument_list|)
