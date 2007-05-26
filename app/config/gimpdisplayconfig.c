@@ -87,7 +87,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7f0ad10103
+DECL|enum|__anon2b56a9c00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -309,7 +309,7 @@ decl_stmt|;
 name|GimpRGB
 name|color
 decl_stmt|;
-name|gimp_rgb_set_uchar
+name|gimp_rgba_set_uchar
 argument_list|(
 operator|&
 name|color
@@ -319,6 +319,8 @@ argument_list|,
 literal|0xff
 argument_list|,
 literal|0x80
+argument_list|,
+literal|0xff
 argument_list|)
 expr_stmt|;
 name|object_class
