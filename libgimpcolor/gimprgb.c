@@ -2492,8 +2492,13 @@ else|else
 block|{
 name|guint32
 name|int1
-decl_stmt|,
+init|=
+literal|0
+decl_stmt|;
+name|guint32
 name|int2
+init|=
+literal|0
 decl_stmt|;
 if|if
 condition|(
