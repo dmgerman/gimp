@@ -73,7 +73,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a592440103
+DECL|enum|__anon2be5af090103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -149,10 +149,6 @@ DECL|member|res_label
 name|GtkWidget
 modifier|*
 name|res_label
-decl_stmt|;
-DECL|member|aspect
-name|gdouble
-name|aspect
 decl_stmt|;
 block|}
 struct|;
@@ -795,24 +791,6 @@ argument_list|(
 name|entry
 argument_list|)
 argument_list|)
-expr_stmt|;
-name|priv
-operator|->
-name|aspect
-operator|=
-operator|(
-name|gdouble
-operator|)
-name|box
-operator|->
-name|width
-operator|/
-operator|(
-name|gdouble
-operator|)
-name|box
-operator|->
-name|height
 expr_stmt|;
 comment|/*    * let gimp_prop_coordinates_callback know how to interpret the chainbutton    */
 name|g_object_set_data
