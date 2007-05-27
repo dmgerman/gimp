@@ -229,7 +229,7 @@ name|gimp_layer_set_lock_alpha
 argument_list|(
 name|layer
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 name|FALSE
 argument_list|)
@@ -845,6 +845,15 @@ name|layer
 argument_list|)
 argument_list|,
 name|TRUE
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+name|gimp_layer_set_lock_alpha
+argument_list|(
+name|layer
+argument_list|,
+name|FALSE
 argument_list|,
 name|TRUE
 argument_list|)
