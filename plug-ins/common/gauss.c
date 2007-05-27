@@ -84,7 +84,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon287bedc60103
+DECL|enum|__anon29d4fd9b0103
 block|{
 DECL|enumerator|BLUR_IIR
 name|BLUR_IIR
@@ -100,7 +100,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287bedc60208
+DECL|struct|__anon29d4fd9b0208
 block|{
 DECL|member|horizontal
 name|gdouble
@@ -2992,11 +2992,9 @@ expr_stmt|;
 operator|*
 name|dest
 operator|=
-name|CLAMP
+name|MIN
 argument_list|(
 name|val
-argument_list|,
-literal|0
 argument_list|,
 literal|255
 argument_list|)
@@ -3473,11 +3471,9 @@ expr_stmt|;
 operator|*
 name|dest
 operator|=
-name|CLAMP
+name|MIN
 argument_list|(
 name|val
-argument_list|,
-literal|0
 argument_list|,
 literal|255
 argument_list|)
