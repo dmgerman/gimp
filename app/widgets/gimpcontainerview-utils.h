@@ -28,6 +28,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_container_view_remove_active
+parameter_list|(
+name|GimpContainerView
+modifier|*
+name|view
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
