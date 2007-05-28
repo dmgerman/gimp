@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon298c387a0103
+DECL|enum|__anon28b9dd950103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -152,14 +152,14 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpFgBgView,gimp_fg_bg_view,GTK_TYPE_DRAWING_AREA)
+DECL|function|G_DEFINE_TYPE (GimpFgBgView,gimp_fg_bg_view,GTK_TYPE_WIDGET)
 name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpFgBgView
 argument_list|,
 argument|gimp_fg_bg_view
 argument_list|,
-argument|GTK_TYPE_DRAWING_AREA
+argument|GTK_TYPE_WIDGET
 argument_list|)
 end_macro
 
@@ -266,6 +266,13 @@ modifier|*
 name|view
 parameter_list|)
 block|{
+name|GTK_WIDGET_SET_FLAGS
+argument_list|(
+name|view
+argument_list|,
+name|GTK_NO_WINDOW
+argument_list|)
+expr_stmt|;
 name|view
 operator|->
 name|context
@@ -745,6 +752,11 @@ name|widget
 argument_list|)
 decl_stmt|;
 name|gint
+name|x
+decl_stmt|,
+name|y
+decl_stmt|;
+name|gint
 name|width
 decl_stmt|,
 name|height
@@ -768,6 +780,22 @@ condition|)
 return|return
 name|FALSE
 return|;
+name|x
+operator|=
+name|widget
+operator|->
+name|allocation
+operator|.
+name|x
+expr_stmt|;
+name|y
+operator|=
+name|widget
+operator|->
+name|allocation
+operator|.
+name|y
+expr_stmt|;
 name|width
 operator|=
 name|widget
@@ -835,12 +863,16 @@ index|[
 literal|0
 index|]
 argument_list|,
+name|x
+operator|+
 name|width
 operator|-
 name|rect_w
 operator|+
 literal|1
 argument_list|,
+name|y
+operator|+
 name|height
 operator|-
 name|rect_h
@@ -880,10 +912,14 @@ name|widget
 argument_list|,
 name|NULL
 argument_list|,
+name|x
+operator|+
 name|width
 operator|-
 name|rect_w
 argument_list|,
+name|y
+operator|+
 name|height
 operator|-
 name|rect_h
@@ -928,8 +964,12 @@ index|[
 literal|0
 index|]
 argument_list|,
+name|x
+operator|+
 literal|1
 argument_list|,
+name|y
+operator|+
 literal|1
 argument_list|,
 name|rect_w
@@ -965,9 +1005,9 @@ name|widget
 argument_list|,
 name|NULL
 argument_list|,
-literal|0
+name|x
 argument_list|,
-literal|0
+name|y
 argument_list|,
 name|rect_w
 argument_list|,

@@ -100,7 +100,7 @@ struct|struct
 name|_GimpFgBgView
 block|{
 DECL|member|parent_instance
-name|GtkDrawingArea
+name|GtkWidget
 name|parent_instance
 decl_stmt|;
 DECL|member|context
@@ -127,7 +127,7 @@ struct|struct
 name|_GimpFgBgViewClass
 block|{
 DECL|member|parent_class
-name|GtkDrawingAreaClass
+name|GtkWidgetClass
 name|parent_class
 decl_stmt|;
 block|}
