@@ -758,6 +758,15 @@ literal|"This module provides interfaces to allow you to write gimp plugins"
 decl_stmt|;
 end_decl_stmt
 
+begin_function_decl
+name|void
+name|initgimpcolor
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_function
 name|PyMODINIT_FUNC
 DECL|function|initgimpcolor (void)
@@ -772,10 +781,6 @@ name|m
 decl_stmt|,
 modifier|*
 name|d
-decl_stmt|;
-name|PyObject
-modifier|*
-name|i
 decl_stmt|;
 name|pygimp_init_pygobject
 argument_list|()
@@ -920,14 +925,12 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* for other modules */
-name|PyDict_SetItemString
+name|PyModule_AddObject
 argument_list|(
-name|d
+name|m
 argument_list|,
 literal|"_PyGimpColor_API"
 argument_list|,
-name|i
-operator|=
 name|PyCObject_FromVoidPtr
 argument_list|(
 operator|&
@@ -935,11 +938,6 @@ name|pygimpcolor_api_functions
 argument_list|,
 name|NULL
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|Py_DECREF
-argument_list|(
-name|i
 argument_list|)
 expr_stmt|;
 comment|/* Check for errors */

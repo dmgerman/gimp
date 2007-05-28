@@ -114,22 +114,22 @@ literal|"This module provides interfaces to allow you to write gimp plugins"
 decl_stmt|;
 end_decl_stmt
 
-begin_macro
-name|DL_EXPORT
-argument_list|(
-argument|void
-argument_list|)
-end_macro
+begin_function_decl
+name|void
+name|init_gimpui
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
 
-begin_macro
+begin_function
+name|PyMODINIT_FUNC
 DECL|function|init_gimpui (void)
 name|init_gimpui
-argument_list|(
-argument|void
-argument_list|)
-end_macro
-
-begin_block
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|PyObject
 modifier|*
@@ -267,7 +267,7 @@ literal|"can't initialize module _gimpui"
 argument_list|)
 expr_stmt|;
 block|}
-end_block
+end_function
 
 end_unit
 

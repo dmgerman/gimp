@@ -1739,6 +1739,10 @@ argument_list|)
 expr_stmt|;
 name|pixel
 operator|=
+operator|(
+name|guint8
+operator|*
+operator|)
 name|PyString_AsString
 argument_list|(
 name|seq

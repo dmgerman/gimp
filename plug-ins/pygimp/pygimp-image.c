@@ -4298,6 +4298,10 @@ name|ret
 operator|=
 name|PyString_FromStringAndSize
 argument_list|(
+operator|(
+name|char
+operator|*
+operator|)
 name|cmap
 argument_list|,
 name|n_colours
@@ -4384,6 +4388,10 @@ name|self
 operator|->
 name|ID
 argument_list|,
+operator|(
+name|guchar
+operator|*
+operator|)
 name|PyString_AsString
 argument_list|(
 name|value

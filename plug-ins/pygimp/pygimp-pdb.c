@@ -92,7 +92,7 @@ comment|/* Declarations for objects of type pdb */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b671d960108
+DECL|struct|__anon2c2529d20108
 typedef|typedef
 struct|struct
 block|{
@@ -112,7 +112,7 @@ comment|/* Declarations for objects of type pdbFunc */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b671d960208
+DECL|struct|__anon2c2529d20208
 typedef|typedef
 struct|struct
 block|{
@@ -4546,6 +4546,9 @@ name|GIMP_TYPE_RUN_MODE
 argument_list|,
 name|val
 argument_list|,
+operator|(
+name|gpointer
+operator|)
 operator|&
 name|run_mode
 argument_list|)
