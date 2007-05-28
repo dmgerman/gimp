@@ -399,11 +399,14 @@ comment|/* warning messages go to the statusbar, if it's visible */
 if|if
 condition|(
 operator|!
-name|GTK_WIDGET_VISIBLE
+name|gimp_statusbar_get_visible
+argument_list|(
+name|GIMP_STATUSBAR
 argument_list|(
 name|shell
 operator|->
 name|statusbar
+argument_list|)
 argument_list|)
 condition|)
 break|break;

@@ -117,6 +117,12 @@ directive|include
 file|"gimpdisplayshell-selection.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpstatusbar.h"
+end_include
+
 begin_define
 DECL|macro|GET_OPTIONS (shell)
 define|#
@@ -897,23 +903,16 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|show
-condition|)
-name|gtk_widget_show
+name|gimp_statusbar_set_visible
+argument_list|(
+name|GIMP_STATUSBAR
 argument_list|(
 name|shell
 operator|->
 name|statusbar
 argument_list|)
-expr_stmt|;
-else|else
-name|gtk_widget_hide
-argument_list|(
-name|shell
-operator|->
-name|statusbar
+argument_list|,
+name|show
 argument_list|)
 expr_stmt|;
 name|SET_ACTIVE
