@@ -851,6 +851,15 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+name|gimp_item_set_visible
+argument_list|(
+name|new_item
+argument_list|,
+name|TRUE
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 name|gimp_image_add_layer
 argument_list|(
 name|image
