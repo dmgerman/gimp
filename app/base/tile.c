@@ -175,8 +175,8 @@ end_function_decl
 
 begin_function
 name|void
-DECL|function|tile_sanitize_rowhints (Tile * tile)
-name|tile_sanitize_rowhints
+DECL|function|tile_allocate_rowhints (Tile * tile)
+name|tile_allocate_rowhints
 parameter_list|(
 name|Tile
 modifier|*

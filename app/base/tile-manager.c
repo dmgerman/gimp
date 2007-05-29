@@ -927,7 +927,7 @@ operator|->
 name|rowhint
 condition|)
 block|{
-name|tile_sanitize_rowhints
+name|tile_allocate_rowhints
 argument_list|(
 name|new
 argument_list|)

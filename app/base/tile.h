@@ -262,7 +262,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|tile_sanitize_rowhints
+name|tile_allocate_rowhints
 parameter_list|(
 name|Tile
 modifier|*

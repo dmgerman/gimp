@@ -654,7 +654,7 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-name|tile_sanitize_rowhints
+name|tile_allocate_rowhints
 argument_list|(
 name|tile
 argument_list|)
