@@ -294,7 +294,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon27bc421a0103
+DECL|enum|__anon278ac2be0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -382,7 +382,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27bc421a0203
+DECL|enum|__anon278ac2be0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -9374,19 +9374,11 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/*  make a temp copy of the struct because    *  gimp_parasite_shift_parent() changes it    */
-name|memcpy
-argument_list|(
-operator|&
+comment|/*  make a temporary copy of the GimpParasite struct because    *  gimp_parasite_shift_parent() changes it    */
 name|copy
-argument_list|,
+operator|=
+operator|*
 name|parasite
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpParasite
-argument_list|)
-argument_list|)
 expr_stmt|;
 comment|/* only set the dirty bit manually if we can be saved and the new      parasite differs from the current one and we aren't undoable */
 if|if

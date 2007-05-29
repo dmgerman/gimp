@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b57a66d0103
+DECL|enum|__anon2aba22570103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -150,7 +150,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b57a66d0203
+DECL|enum|__anon2aba22570203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4191,19 +4191,11 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/*  make a temp copy of the struct because    *  gimp_parasite_shift_parent() changes it    */
-name|memcpy
-argument_list|(
-operator|&
+comment|/*  make a temporary copy of the GimpParasite struct because    *  gimp_parasite_shift_parent() changes it    */
 name|copy
-argument_list|,
+operator|=
+operator|*
 name|parasite
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpParasite
-argument_list|)
-argument_list|)
 expr_stmt|;
 if|if
 condition|(
