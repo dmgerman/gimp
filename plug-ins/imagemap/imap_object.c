@@ -71,7 +71,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon2bccd6cd0108
+DECL|struct|__anon2c1e2d800108
 typedef|typedef
 struct|struct
 block|{
@@ -1482,6 +1482,9 @@ name|width
 decl_stmt|,
 name|height
 decl_stmt|;
+name|MoveSashFunc_t
+name|sash_func
+decl_stmt|;
 name|obj
 operator|->
 name|class
@@ -1541,9 +1544,8 @@ name|y
 operator|+=
 name|height
 expr_stmt|;
-name|MoveSashFunc_t
 name|sash_func
-init|=
+operator|=
 name|obj
 operator|->
 name|class
@@ -1556,7 +1558,7 @@ name|x
 argument_list|,
 name|y
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 if|if
 condition|(
 name|sash_func
