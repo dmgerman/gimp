@@ -289,15 +289,6 @@ name|TileManager
 typedef|;
 end_typedef
 
-begin_typedef
-DECL|typedef|PixelDataHandle
-typedef|typedef
-name|struct
-name|_PixelDataHandle
-name|PixelDataHandle
-typedef|;
-end_typedef
-
 begin_comment
 comment|/*  functions  */
 end_comment
