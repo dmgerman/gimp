@@ -4449,6 +4449,13 @@ argument_list|(
 name|curve
 argument_list|)
 expr_stmt|;
+name|SPLINE_LINEARITY
+argument_list|(
+name|spline
+argument_list|)
+operator|=
+literal|0
+expr_stmt|;
 name|start_vector
 operator|=
 name|make_vector
