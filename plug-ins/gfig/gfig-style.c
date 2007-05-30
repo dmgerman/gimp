@@ -770,6 +770,14 @@ block|}
 block|}
 end_function
 
+begin_define
+DECL|macro|MAX_STYLE_TEXT_ENTRIES
+define|#
+directive|define
+name|MAX_STYLE_TEXT_ENTRIES
+value|100
+end_define
+
 begin_function
 name|gboolean
 DECL|function|gfig_load_style (Style * style,FILE * fp)
@@ -797,7 +805,7 @@ name|gchar
 modifier|*
 name|style_text
 index|[
-literal|100
+name|MAX_STYLE_TEXT_ENTRIES
 index|]
 decl_stmt|;
 name|gint
@@ -957,7 +965,7 @@ if|if
 condition|(
 name|nitems
 operator|>=
-literal|100
+name|MAX_STYLE_TEXT_ENTRIES
 condition|)
 break|break;
 block|}
@@ -971,7 +979,7 @@ operator|||
 operator|(
 name|nitems
 operator|>=
-literal|100
+name|MAX_STYLE_TEXT_ENTRIES
 operator|)
 condition|)
 block|{
