@@ -76,10 +76,10 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2773ed1b0108
+DECL|struct|__anon28a3bc7b0108
 block|{
 union|union
-DECL|union|__anon2773ed1b020a
+DECL|union|__anon28a3bc7b020a
 block|{
 DECL|member|ID
 name|gint32
@@ -651,7 +651,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2773ed1b0308
+DECL|struct|__anon28a3bc7b0308
 block|{
 DECL|member|compose_type
 specifier|const
@@ -1190,7 +1190,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2773ed1b0408
+DECL|struct|__anon28a3bc7b0408
 block|{
 DECL|member|inputs
 name|ComposeInput
@@ -1230,7 +1230,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2773ed1b0508
+DECL|struct|__anon28a3bc7b0508
 block|{
 DECL|member|width
 DECL|member|height
@@ -2021,7 +2021,7 @@ argument_list|(
 name|parasite
 argument_list|)
 argument_list|,
-literal|"source=%d type=%s %d %d %d %d"
+literal|"source=%d type=%31s %d %d %d %d"
 argument_list|,
 operator|&
 name|composevals
