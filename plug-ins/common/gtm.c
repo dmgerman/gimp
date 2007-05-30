@@ -72,7 +72,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1a82480108
+DECL|struct|__anon28fad3730108
 block|{
 DECL|member|captiontxt
 name|gchar
@@ -893,31 +893,9 @@ argument_list|)
 expr_stmt|;
 name|width
 operator|=
-name|g_malloc
-argument_list|(
-literal|2
-argument_list|)
-expr_stmt|;
 name|height
 operator|=
-name|g_malloc
-argument_list|(
-literal|2
-argument_list|)
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|width
-argument_list|,
-literal|" "
-argument_list|)
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|height
-argument_list|,
-literal|" "
-argument_list|)
+name|NULL
 expr_stmt|;
 if|if
 condition|(
@@ -935,22 +913,8 @@ condition|)
 block|{
 name|width
 operator|=
-name|g_malloc
+name|g_strdup_printf
 argument_list|(
-name|strlen
-argument_list|(
-name|gtmvals
-operator|.
-name|clwidth
-argument_list|)
-operator|+
-literal|11
-argument_list|)
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|width
-argument_list|,
 literal|" WIDTH=\"%s\""
 argument_list|,
 name|gtmvals
@@ -975,22 +939,8 @@ condition|)
 block|{
 name|height
 operator|=
-name|g_malloc
+name|g_strdup_printf
 argument_list|(
-name|strlen
-argument_list|(
-name|gtmvals
-operator|.
-name|clheight
-argument_list|)
-operator|+
-literal|13
-argument_list|)
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|height
-argument_list|,
 literal|" HEIGHT=\"%s\" "
 argument_list|,
 name|gtmvals
@@ -999,6 +949,30 @@ name|clheight
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+operator|!
+name|width
+condition|)
+name|width
+operator|=
+name|g_strdup
+argument_list|(
+literal|" "
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|height
+condition|)
+name|height
+operator|=
+name|g_strdup
+argument_list|(
+literal|" "
+argument_list|)
+expr_stmt|;
 comment|/* Initialize array to hold ROWSPAN and COLSPAN cell allocation table */
 for|for
 control|(
