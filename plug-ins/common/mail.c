@@ -239,7 +239,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf6b86a0103
+DECL|enum|__anon28c8e76b0103
 block|{
 DECL|enumerator|ENCAPSULATION_UUENCODE
 name|ENCAPSULATION_UUENCODE
@@ -277,7 +277,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf6b86a0208
+DECL|struct|__anon28c8e76b0208
 block|{
 DECL|member|receipt
 name|gchar
@@ -3086,6 +3086,8 @@ name|fprintf
 argument_list|(
 name|mailpipe
 argument_list|,
+literal|"%s"
+argument_list|,
 name|mail_info
 operator|.
 name|comment
@@ -3106,6 +3108,8 @@ condition|)
 name|fprintf
 argument_list|(
 name|mailpipe
+argument_list|,
+literal|"%s"
 argument_list|,
 name|mesg_body
 argument_list|)
