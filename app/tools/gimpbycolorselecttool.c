@@ -302,10 +302,6 @@ decl_stmt|;
 name|GimpRGB
 name|color
 decl_stmt|;
-name|guchar
-modifier|*
-name|col
-decl_stmt|;
 name|gint
 name|x
 decl_stmt|,

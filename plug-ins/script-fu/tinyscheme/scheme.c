@@ -4997,6 +4997,7 @@ condition|(
 operator|(
 operator|(
 name|unsigned
+name|long
 operator|)
 name|cp
 operator|)
@@ -11435,7 +11436,7 @@ decl_stmt|;
 name|int
 name|len
 decl_stmt|;
-DECL|enum|__anon2ba8d1a50103
+DECL|enum|__anon2bb5bc2b0103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -28197,7 +28198,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon2ba8d1a50208
+DECL|struct|__anon2bb5bc2b0208
 specifier|static
 struct|struct
 block|{
@@ -28432,7 +28433,7 @@ value|"\016"
 end_define
 
 begin_typedef
-DECL|struct|__anon2ba8d1a50308
+DECL|struct|__anon2bb5bc2b0308
 typedef|typedef
 struct|struct
 block|{

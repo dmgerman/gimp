@@ -635,6 +635,9 @@ name|g_str_equal
 argument_list|,
 name|g_free
 argument_list|,
+operator|(
+name|GDestroyNotify
+operator|)
 name|gimp_environ_table_free_value
 argument_list|)
 expr_stmt|;
