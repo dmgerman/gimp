@@ -917,9 +917,6 @@ name|height
 init|=
 literal|0
 decl_stmt|;
-name|gint32
-name|image_ID
-decl_stmt|;
 name|image_ID
 operator|=
 name|load_thumbnail_image
