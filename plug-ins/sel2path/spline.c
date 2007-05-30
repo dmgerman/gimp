@@ -101,6 +101,13 @@ operator|=
 operator|-
 literal|1
 expr_stmt|;
+name|SPLINE_LINEARITY
+argument_list|(
+name|spline
+argument_list|)
+operator|=
+literal|0
+expr_stmt|;
 return|return
 name|spline
 return|;
