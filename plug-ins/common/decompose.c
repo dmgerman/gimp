@@ -969,7 +969,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1621820108
+DECL|struct|__anon290f71b60108
 block|{
 DECL|member|type
 specifier|const
@@ -1682,7 +1682,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1621820208
+DECL|struct|__anon290f71b60208
 block|{
 DECL|member|extract_type
 name|gchar
@@ -8542,7 +8542,12 @@ index|]
 operator|.
 name|type
 argument_list|,
-literal|31
+sizeof|sizeof
+name|decovals
+operator|.
+name|extract_type
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 return|return
