@@ -953,6 +953,13 @@ expr_stmt|;
 name|nitems
 operator|++
 expr_stmt|;
+if|if
+condition|(
+name|nitems
+operator|>=
+literal|100
+condition|)
+break|break;
 block|}
 if|if
 condition|(
@@ -960,6 +967,12 @@ name|feof
 argument_list|(
 name|fp
 argument_list|)
+operator|||
+operator|(
+name|nitems
+operator|>=
+literal|100
+operator|)
 condition|)
 block|{
 name|g_message
