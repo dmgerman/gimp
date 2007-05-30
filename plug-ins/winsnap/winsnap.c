@@ -343,7 +343,7 @@ comment|/* Data structure holding data between runs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c79bf600108
+DECL|struct|__anon2c5d20040108
 typedef|typedef
 struct|struct
 block|{
@@ -390,7 +390,7 @@ comment|/* The dialog information */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c79bf600208
+DECL|struct|__anon2c5d20040208
 typedef|typedef
 struct|struct
 block|{
@@ -503,13 +503,17 @@ comment|/*  * formatWindowsError  *  * Format the latest Windows error message i
 end_comment
 
 begin_function
+specifier|static
 name|void
-DECL|function|formatWindowsError (char * buffer)
+DECL|function|formatWindowsError (char * buffer,int buf_size)
 name|formatWindowsError
 parameter_list|(
 name|char
 modifier|*
 name|buffer
+parameter_list|,
+name|int
+name|buf_size
 parameter_list|)
 block|{
 name|LPVOID
@@ -548,11 +552,15 @@ name|NULL
 argument_list|)
 expr_stmt|;
 comment|/* Copy to the buffer */
-name|strcpy
+name|strncpy
 argument_list|(
 name|buffer
 argument_list|,
 name|lpMsgBuf
+argument_list|,
+name|buf_size
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 name|LocalFree
@@ -749,6 +757,9 @@ block|{
 name|formatWindowsError
 argument_list|(
 name|buffer
+argument_list|,
+sizeof|sizeof
+name|buffer
 argument_list|)
 expr_stmt|;
 name|g_error
@@ -780,6 +791,9 @@ condition|)
 block|{
 name|formatWindowsError
 argument_list|(
+name|buffer
+argument_list|,
+sizeof|sizeof
 name|buffer
 argument_list|)
 expr_stmt|;
@@ -822,6 +836,9 @@ condition|)
 block|{
 name|formatWindowsError
 argument_list|(
+name|buffer
+argument_list|,
+sizeof|sizeof
 name|buffer
 argument_list|)
 expr_stmt|;
@@ -960,6 +977,9 @@ block|{
 name|formatWindowsError
 argument_list|(
 name|buffer
+argument_list|,
+sizeof|sizeof
+name|buffer
 argument_list|)
 expr_stmt|;
 name|g_error
@@ -1051,6 +1071,9 @@ block|{
 name|formatWindowsError
 argument_list|(
 name|buffer
+argument_list|,
+sizeof|sizeof
+name|buffer
 argument_list|)
 expr_stmt|;
 name|g_error
@@ -1079,6 +1102,9 @@ condition|)
 block|{
 name|formatWindowsError
 argument_list|(
+name|buffer
+argument_list|,
+sizeof|sizeof
 name|buffer
 argument_list|)
 expr_stmt|;
@@ -2278,6 +2304,9 @@ condition|)
 block|{
 name|formatWindowsError
 argument_list|(
+name|buffer
+argument_list|,
+sizeof|sizeof
 name|buffer
 argument_list|)
 expr_stmt|;
