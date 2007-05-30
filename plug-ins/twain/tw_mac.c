@@ -435,7 +435,7 @@ comment|/* main bits */
 end_comment
 
 begin_comment
-comment|// mojo from http://lists.wxwidgets.org/archive/wxPython-mac/msg00117.html
+comment|/* http://lists.wxwidgets.org/archive/wxPython-mac/msg00117.html */
 end_comment
 
 begin_function_decl
