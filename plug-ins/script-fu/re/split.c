@@ -11,6 +11,12 @@ directive|include
 file|<string.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|"split.h"
+end_include
+
 begin_comment
 comment|/*  - split - divide a string into fields, like awk split()  = int split(char *string, char *fields[], int nfields, char *sep);  */
 end_comment
@@ -1057,7 +1063,7 @@ comment|/* some table entries know this */
 end_comment
 
 begin_struct
-DECL|struct|__anon2b3c54660108
+DECL|struct|__anon293dd66d0108
 struct|struct
 block|{
 DECL|member|str

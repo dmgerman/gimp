@@ -38,6 +38,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"split.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"main.ih"
 end_include
 
@@ -111,14 +117,6 @@ init|=
 literal|0
 decl_stmt|;
 end_decl_stmt
-
-begin_function_decl
-specifier|extern
-name|int
-name|split
-parameter_list|()
-function_decl|;
-end_function_decl
 
 begin_function_decl
 specifier|extern
