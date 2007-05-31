@@ -851,7 +851,7 @@ name|sscanf
 argument_list|(
 name|load_buf2
 argument_list|,
-literal|"<Style %s>"
+literal|"<Style %99s>"
 argument_list|,
 name|name
 argument_list|)
