@@ -91,13 +91,6 @@ decl_stmt|,
 name|j
 decl_stmt|;
 name|gint
-name|offset
-decl_stmt|,
-name|offset2
-decl_stmt|,
-name|offset3
-decl_stmt|;
-name|gint
 name|num_iters
 init|=
 name|NUM_ITERS
@@ -138,7 +131,12 @@ argument_list|)
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|"\nPerformance tests for GimpPreviewArea (%s, %d iterations):\n\n"
+literal|"\nPerformance tests for GimpPreviewArea "
+literal|"(%d x %d, %s, %d iterations):\n\n"
+argument_list|,
+name|WIDTH
+argument_list|,
+name|HEIGHT
 argument_list|,
 name|visible
 condition|?
@@ -229,8 +227,9 @@ name|i
 operator|++
 control|)
 block|{
+name|gint
 name|offset
-operator|=
+init|=
 operator|(
 name|rand
 argument_list|()
@@ -246,7 +245,7 @@ operator|)
 operator|&
 operator|-
 literal|4
-expr_stmt|;
+decl_stmt|;
 name|gimp_preview_area_draw
 argument_list|(
 name|GIMP_PREVIEW_AREA
@@ -332,8 +331,9 @@ name|i
 operator|++
 control|)
 block|{
+name|gint
 name|offset
-operator|=
+init|=
 operator|(
 name|rand
 argument_list|()
@@ -349,7 +349,7 @@ operator|)
 operator|&
 operator|-
 literal|4
-expr_stmt|;
+decl_stmt|;
 name|gimp_preview_area_draw
 argument_list|(
 name|GIMP_PREVIEW_AREA
@@ -404,7 +404,7 @@ name|start_time
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|"%-16s "
+literal|"%-20s "
 literal|"draw  :  %5.2fs, %8.1f fps, %8.2f megapixels/s\n"
 argument_list|,
 name|enum_value
@@ -454,8 +454,9 @@ name|i
 operator|++
 control|)
 block|{
+name|gint
 name|offset
-operator|=
+init|=
 operator|(
 name|rand
 argument_list|()
@@ -471,9 +472,10 @@ operator|)
 operator|&
 operator|-
 literal|4
-expr_stmt|;
+decl_stmt|;
+name|gint
 name|offset2
-operator|=
+init|=
 operator|(
 name|rand
 argument_list|()
@@ -489,7 +491,7 @@ operator|)
 operator|&
 operator|-
 literal|4
-expr_stmt|;
+decl_stmt|;
 name|gimp_preview_area_blend
 argument_list|(
 name|GIMP_PREVIEW_AREA
@@ -557,7 +559,7 @@ name|start_time
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|"%-16s "
+literal|"%-20s "
 literal|"blend :  %5.2fs, %8.1f fps, %8.2f megapixels/s\n"
 argument_list|,
 name|enum_value
@@ -607,8 +609,9 @@ name|i
 operator|++
 control|)
 block|{
+name|gint
 name|offset
-operator|=
+init|=
 operator|(
 name|rand
 argument_list|()
@@ -624,9 +627,10 @@ operator|)
 operator|&
 operator|-
 literal|4
-expr_stmt|;
+decl_stmt|;
+name|gint
 name|offset2
-operator|=
+init|=
 operator|(
 name|rand
 argument_list|()
@@ -642,9 +646,10 @@ operator|)
 operator|&
 operator|-
 literal|4
-expr_stmt|;
+decl_stmt|;
+name|gint
 name|offset3
-operator|=
+init|=
 operator|(
 name|rand
 argument_list|()
@@ -660,7 +665,7 @@ operator|)
 operator|&
 operator|-
 literal|4
-expr_stmt|;
+decl_stmt|;
 name|gimp_preview_area_mask
 argument_list|(
 name|GIMP_PREVIEW_AREA
@@ -729,7 +734,7 @@ name|start_time
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|"%-16s "
+literal|"%-20s "
 literal|"mask  :  %5.2fs, %8.1f fps, %8.2f megapixels/s\n"
 argument_list|,
 name|enum_value
@@ -856,7 +861,7 @@ name|start_time
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|"%-16s "
+literal|"%-20s "
 literal|"fill  :  %5.2fs, %8.1f fps, %8.2f megapixels/s\n"
 argument_list|,
 literal|"Color fill"
@@ -910,6 +915,16 @@ operator|=
 name|gtk_window_new
 argument_list|(
 name|GTK_WINDOW_TOPLEVEL
+argument_list|)
+expr_stmt|;
+name|gtk_window_set_accept_focus
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|window
+argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|area
