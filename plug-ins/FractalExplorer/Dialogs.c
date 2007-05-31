@@ -8741,7 +8741,7 @@ name|sscanf
 argument_list|(
 name|load_buf
 argument_list|,
-literal|"%s %s"
+literal|"%255s %255s"
 argument_list|,
 name|str_buf
 argument_list|,

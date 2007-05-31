@@ -6641,7 +6641,7 @@ decl_stmt|;
 name|gchar
 name|type_label
 index|[
-literal|20
+literal|21
 index|]
 decl_stmt|;
 name|gchar
@@ -6760,7 +6760,7 @@ name|fscanf
 argument_list|(
 name|fp
 argument_list|,
-literal|" Type: %s"
+literal|" Type: %20s"
 argument_list|,
 name|type_label
 argument_list|)
