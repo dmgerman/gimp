@@ -24,6 +24,20 @@ begin_comment
 comment|/* For information look into the C source or the html documentation */
 end_comment
 
+begin_typedef
+DECL|typedef|GimpColorManaged
+typedef|typedef
+name|struct
+name|_GimpColorManaged
+name|GimpColorManaged
+typedef|;
+end_typedef
+
+begin_comment
+DECL|typedef|GimpColorManaged
+comment|/* dummy typedef */
+end_comment
+
 begin_comment
 comment|/*  usually we don't keep the structure definitions in the types file  *  but GimpRGB appears in too many header files...  */
 end_comment
