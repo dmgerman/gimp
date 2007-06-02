@@ -873,6 +873,15 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+name|gimp_item_set_linked
+argument_list|(
+name|new_item
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 name|item_view_class
 operator|->
 name|add_item

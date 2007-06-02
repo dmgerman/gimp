@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b384b3a0103
+DECL|enum|__anon2b15944f0103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -3019,6 +3019,15 @@ argument_list|,
 name|item_type
 argument_list|,
 name|TRUE
+argument_list|)
+expr_stmt|;
+name|gimp_item_set_linked
+argument_list|(
+name|new_item
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|item_view_class
