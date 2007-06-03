@@ -729,7 +729,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298618740108
+DECL|struct|__anon28e9b03b0108
 block|{
 DECL|member|factory
 name|GimpDataFactory
@@ -2866,7 +2866,13 @@ name|data_list
 argument_list|)
 expr_stmt|;
 block|}
-else|else
+if|if
+condition|(
+name|G_UNLIKELY
+argument_list|(
+name|error
+argument_list|)
+condition|)
 block|{
 name|gimp_message
 argument_list|(
