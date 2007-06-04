@@ -1321,7 +1321,7 @@ name|area
 argument_list|,
 name|widget
 argument_list|,
-literal|"trough"
+name|NULL
 argument_list|,
 name|x
 argument_list|,
