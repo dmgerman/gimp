@@ -252,6 +252,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|G_UNLIKELY
+argument_list|(
 name|next
 operator|!=
 name|token
@@ -266,6 +268,7 @@ name|next
 operator|==
 name|G_TOKEN_IDENTIFIER
 operator|)
+argument_list|)
 condition|)
 block|{
 break|break;
