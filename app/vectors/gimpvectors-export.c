@@ -313,6 +313,8 @@ name|fprintf
 argument_list|(
 name|file
 argument_list|,
+literal|"%s"
+argument_list|,
 name|str
 operator|->
 name|str
