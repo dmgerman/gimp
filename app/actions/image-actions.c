@@ -426,7 +426,7 @@ name|GIMP_STOCK_TOOL_CROP
 block|,
 name|N_
 argument_list|(
-literal|"_Crop Image"
+literal|"_Crop to Selection"
 argument_list|)
 block|,
 name|NULL
