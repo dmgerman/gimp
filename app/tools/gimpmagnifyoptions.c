@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c62f9540103
+DECL|enum|__anon2b0de5e90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -87,10 +87,6 @@ name|PROP_AUTO_RESIZE
 block|,
 DECL|enumerator|PROP_ZOOM_TYPE
 name|PROP_ZOOM_TYPE
-block|,
-DECL|enumerator|PROP_THRESHOLD
-name|PROP_THRESHOLD
-comment|/* kept for config file compatibility only */
 block|}
 enum|;
 end_enum
@@ -252,25 +248,6 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
-argument_list|(
-name|object_class
-argument_list|,
-name|PROP_THRESHOLD
-argument_list|,
-literal|"threshold"
-argument_list|,
-name|NULL
-argument_list|,
-literal|1.0
-argument_list|,
-literal|15.0
-argument_list|,
-literal|8.0
-argument_list|,
-name|GIMP_PARAM_STATIC_STRINGS
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -350,11 +327,6 @@ name|value
 argument_list|)
 expr_stmt|;
 break|break;
-case|case
-name|PROP_THRESHOLD
-case|:
-comment|/* compat */
-break|break;
 default|default:
 name|G_OBJECT_WARN_INVALID_PROPERTY_ID
 argument_list|(
@@ -431,18 +403,6 @@ operator|->
 name|zoom_type
 argument_list|)
 expr_stmt|;
-break|break;
-case|case
-name|PROP_THRESHOLD
-case|:
-name|g_value_set_double
-argument_list|(
-name|value
-argument_list|,
-literal|8.0
-argument_list|)
-expr_stmt|;
-comment|/* compat */
 break|break;
 default|default:
 name|G_OBJECT_WARN_INVALID_PROPERTY_ID
