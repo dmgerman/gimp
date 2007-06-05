@@ -170,7 +170,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2744cf3f0108
+DECL|struct|__anon2b6453b50108
 block|{
 DECL|member|width
 name|gint32
@@ -192,7 +192,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2744cf3f0203
+DECL|enum|__anon2b6453b50203
 block|{
 DECL|enumerator|HISTORY_TITLE
 name|HISTORY_TITLE
@@ -3014,6 +3014,10 @@ name|GtkTreePath
 modifier|*
 name|path
 decl_stmt|;
+name|GtkTreePath
+modifier|*
+name|scroll_path
+decl_stmt|;
 name|selection
 operator|=
 name|gtk_tree_view_get_selection
@@ -3043,6 +3047,18 @@ argument_list|,
 name|iter
 argument_list|)
 expr_stmt|;
+name|scroll_path
+operator|=
+name|gtk_tree_path_copy
+argument_list|(
+name|path
+argument_list|)
+expr_stmt|;
+name|gtk_tree_path_up
+argument_list|(
+name|path
+argument_list|)
+expr_stmt|;
 name|gtk_tree_view_expand_to_path
 argument_list|(
 name|GTK_TREE_VIEW
@@ -3060,7 +3076,7 @@ argument_list|(
 name|tree_view
 argument_list|)
 argument_list|,
-name|path
+name|scroll_path
 argument_list|,
 name|NULL
 argument_list|,
@@ -3074,6 +3090,11 @@ expr_stmt|;
 name|gtk_tree_path_free
 argument_list|(
 name|path
+argument_list|)
+expr_stmt|;
+name|gtk_tree_path_free
+argument_list|(
+name|scroll_path
 argument_list|)
 expr_stmt|;
 name|gtk_tree_selection_select_iter
