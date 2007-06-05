@@ -170,7 +170,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292188110108
+DECL|struct|__anon2744cf3f0108
 block|{
 DECL|member|width
 name|gint32
@@ -192,7 +192,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon292188110203
+DECL|enum|__anon2744cf3f0203
 block|{
 DECL|enumerator|HISTORY_TITLE
 name|HISTORY_TITLE
@@ -781,6 +781,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|help_dnd_target_table
 specifier|static
+specifier|const
 name|GtkTargetEntry
 name|help_dnd_target_table
 index|[]

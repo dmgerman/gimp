@@ -1162,6 +1162,7 @@ end_function
 begin_decl_stmt
 DECL|variable|target_table
 specifier|static
+specifier|const
 name|GtkTargetEntry
 name|target_table
 index|[]
