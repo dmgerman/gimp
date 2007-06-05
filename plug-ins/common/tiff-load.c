@@ -68,7 +68,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28928e620108
+DECL|struct|__anon27c6a7e20108
 block|{
 DECL|member|compression
 name|gint
@@ -91,7 +91,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28928e620208
+DECL|struct|__anon27c6a7e20208
 block|{
 DECL|member|ID
 name|gint32
@@ -125,7 +125,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28928e620308
+DECL|struct|__anon27c6a7e20308
 block|{
 DECL|member|o_pages
 name|gint
@@ -4440,8 +4440,6 @@ argument_list|(
 name|name
 argument_list|,
 name|len
-operator|-
-literal|3
 argument_list|,
 name|NULL
 argument_list|)
