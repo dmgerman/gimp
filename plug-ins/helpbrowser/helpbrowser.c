@@ -831,6 +831,11 @@ argument_list|,
 name|locale
 argument_list|)
 expr_stmt|;
+name|browser_dialog_goto_index
+argument_list|(
+name|full_uri
+argument_list|)
+expr_stmt|;
 name|g_free
 argument_list|(
 name|full_uri

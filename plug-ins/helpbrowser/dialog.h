@@ -55,6 +55,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|browser_dialog_goto_index
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|ref
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
