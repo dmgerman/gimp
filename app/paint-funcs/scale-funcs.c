@@ -879,6 +879,7 @@ name|gdouble
 modifier|*
 name|s
 decl_stmt|;
+comment|/* reverse scaling_factor */
 specifier|const
 name|gdouble
 name|ratio
@@ -893,7 +894,6 @@ name|gdouble
 operator|)
 name|width
 decl_stmt|;
-comment|/* ie reverse scaling_factor */
 name|gint
 name|x
 decl_stmt|,
@@ -905,13 +905,13 @@ decl_stmt|;
 name|gdouble
 name|frac
 decl_stmt|;
-comment|/* we can overflow src's boundaries, so we expect our caller to have   allocated extra space for us to do so safely (see scale_region ()) */
+comment|/* we can overflow src's boundaries, so we expect our caller to have    * allocated extra space for us to do so safely (see scale_region ())    */
 switch|switch
 condition|(
 name|interp
 condition|)
 block|{
-comment|/* -0.5 is because cubic() interpolates a position between 2nd and 3rd data points        * we are assigning to 2nd in dest, hence mean shift of +0.5        * +1, -1 ensures we dont (int) a negative; first src col only.        */
+comment|/* -0.5 is because cubic() interpolates a position between 2nd and 3rd        * data points we are assigning to 2nd in dest, hence mean shift of +0.5        * +1, -1 ensures we dont (int) a negative; first src col only.        */
 case|case
 name|GIMP_INTERPOLATION_CUBIC
 case|:
@@ -1038,7 +1038,7 @@ name|bpp
 expr_stmt|;
 block|}
 break|break;
-comment|/* -0.5 corrects the drift from averaging between adjacent points and assigning to dest[b]        * +1, -1 ensures we dont (int) a negative; first src col only.        */
+comment|/* -0.5 corrects the drift from averaging between adjacent points and        * assigning to dest[b]        * +1, -1 ensures we dont (int) a negative; first src col only.        */
 case|case
 name|GIMP_INTERPOLATION_LINEAR
 case|:
@@ -1777,7 +1777,8 @@ decl_stmt|;
 name|gdouble
 modifier|*
 name|row
-decl_stmt|,
+decl_stmt|;
+name|gdouble
 modifier|*
 name|accum
 decl_stmt|;
@@ -1809,20 +1810,18 @@ operator|-
 literal|4
 decl_stmt|;
 name|gint
-name|new_y
-decl_stmt|;
-name|gint
 name|x
 decl_stmt|,
 name|y
 decl_stmt|;
-if|if
+switch|switch
 condition|(
 name|interpolation
-operator|==
-name|GIMP_INTERPOLATION_NONE
 condition|)
 block|{
+case|case
+name|GIMP_INTERPOLATION_NONE
+case|:
 name|scale_region_no_resample
 argument_list|(
 name|srcPR
@@ -1831,7 +1830,30 @@ name|destPR
 argument_list|)
 expr_stmt|;
 return|return;
+case|case
+name|GIMP_INTERPOLATION_LINEAR
+case|:
+case|case
+name|GIMP_INTERPOLATION_CUBIC
+case|:
+break|break;
+case|case
+name|GIMP_INTERPOLATION_LANCZOS
+case|:
+name|scale_region_lanczos
+argument_list|(
+name|srcPR
+argument_list|,
+name|destPR
+argument_list|,
+name|progress_callback
+argument_list|,
+name|progress_data
+argument_list|)
+expr_stmt|;
+return|return;
 block|}
+comment|/* the following code is only run for linear and cubic interpolation */
 name|orig_width
 operator|=
 name|srcPR
@@ -1856,30 +1878,6 @@ name|destPR
 operator|->
 name|h
 expr_stmt|;
-if|if
-condition|(
-name|interpolation
-operator|==
-name|GIMP_INTERPOLATION_LANCZOS
-operator|&&
-name|orig_height
-operator|<=
-name|height
-condition|)
-block|{
-name|scale_region_lanczos
-argument_list|(
-name|srcPR
-argument_list|,
-name|destPR
-argument_list|,
-name|progress_callback
-argument_list|,
-name|progress_data
-argument_list|)
-expr_stmt|;
-return|return;
-block|}
 if|#
 directive|if
 literal|0
@@ -2044,6 +2042,9 @@ operator|/
 name|y_ratio
 decl_stmt|;
 name|gint
+name|new_y
+decl_stmt|;
+name|gint
 name|max
 decl_stmt|;
 name|gdouble
@@ -2080,7 +2081,7 @@ expr_stmt|;
 name|new_y
 operator|=
 call|(
-name|int
+name|gint
 call|)
 argument_list|(
 name|y
@@ -2133,7 +2134,7 @@ expr_stmt|;
 name|max
 operator|=
 call|(
-name|int
+name|gint
 call|)
 argument_list|(
 operator|(
@@ -2305,8 +2306,9 @@ operator|>
 name|orig_height
 condition|)
 block|{
+name|gint
 name|new_y
-operator|=
+init|=
 name|floor
 argument_list|(
 name|y
@@ -2315,7 +2317,7 @@ name|y_ratio
 operator|-
 literal|0.5
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 while|while
 condition|(
 name|old_y
