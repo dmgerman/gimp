@@ -137,7 +137,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c471c10103
+DECL|enum|__anon293af80c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1065,19 +1065,6 @@ comment|/* alpha      */
 operator|+
 literal|1
 comment|/* selection  */
-operator|+
-operator|(
-name|template
-operator|->
-name|image_type
-operator|==
-name|GIMP_RGB
-condition|?
-literal|4
-else|:
-literal|2
-operator|)
-comment|/* projection */
 operator|)
 expr_stmt|;
 name|template
@@ -1104,6 +1091,25 @@ name|template
 operator|->
 name|height
 operator|)
+expr_stmt|;
+name|template
+operator|->
+name|initial_size
+operator|+=
+name|gimp_projection_estimate_memsize
+argument_list|(
+name|template
+operator|->
+name|image_type
+argument_list|,
+name|template
+operator|->
+name|width
+argument_list|,
+name|template
+operator|->
+name|height
+argument_list|)
 expr_stmt|;
 if|if
 condition|(

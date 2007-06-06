@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b7dddf0103
+DECL|enum|__anon2c1badd00103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -880,6 +880,41 @@ name|object
 argument_list|,
 name|gui_size
 argument_list|)
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_projection_estimate_memsize:  * @type:   the image base type  * @width:  image width  * @height: image height  *  * Calculates a rough estimate of the memory that is required for the  * projection of an image with the given @width and @height.  *  * Return value: a rough estimate of the memory requirements.  **/
+end_comment
+
+begin_function
+name|gint64
+DECL|function|gimp_projection_estimate_memsize (GimpImageBaseType type,gint width,gint height)
+name|gimp_projection_estimate_memsize
+parameter_list|(
+name|GimpImageBaseType
+name|type
+parameter_list|,
+name|gint
+name|width
+parameter_list|,
+name|gint
+name|height
+parameter_list|)
+block|{
+return|return
+literal|4
+operator|*
+operator|(
+name|gint64
+operator|)
+name|width
+operator|*
+operator|(
+name|gint64
+operator|)
+name|height
 return|;
 block|}
 end_function
