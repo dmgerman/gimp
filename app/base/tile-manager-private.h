@@ -82,6 +82,12 @@ modifier|*
 name|cached_tile
 decl_stmt|;
 comment|/*  the actual cached tile               */
+DECL|member|level_below
+name|TileManager
+modifier|*
+name|level_below
+decl_stmt|;
+comment|/*  The TileManager containing the level                                      *  below in an image pyramid.                                      */
 DECL|member|user_data
 name|gpointer
 name|user_data
