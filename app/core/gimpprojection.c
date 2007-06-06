@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a036610103
+DECL|enum|__anon29fe75920103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1410,11 +1410,13 @@ argument_list|(
 name|base_level
 argument_list|)
 condition|)
+block|{
 name|gimp_projection_alloc_levels
 argument_list|(
 name|proj
 argument_list|)
 expr_stmt|;
+block|}
 name|g_return_val_if_fail
 argument_list|(
 name|level
@@ -1534,7 +1536,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_projection_scale_to_level:  * @proj:   pointer to a GimpProjection  * @scalex: scale to use  *  * Return value: Returns the level (base level = 0) that should be used for scale @scalex.  **/
+comment|/**  * gimp_projection_scale_to_level:  * @proj:   pointer to a GimpProjection  * @scalex: scale to use  *  * Return value: Returns the level (base level = 0) that should be used  *               for scale @scalex.  **/
 end_comment
 
 begin_function
@@ -1912,7 +1914,7 @@ index|]
 condition|)
 block|{
 name|gint
-name|current_width
+name|width
 init|=
 name|tile_manager_width
 argument_list|(
@@ -1925,7 +1927,7 @@ index|]
 argument_list|)
 decl_stmt|;
 name|gint
-name|current_height
+name|height
 init|=
 name|tile_manager_height
 argument_list|(
@@ -1957,7 +1959,7 @@ name|image
 operator|->
 name|width
 operator|!=
-name|current_width
+name|width
 operator|||
 name|proj
 operator|->
@@ -1965,7 +1967,7 @@ name|image
 operator|->
 name|height
 operator|!=
-name|current_height
+name|height
 condition|)
 block|{
 name|gint
@@ -2085,6 +2087,17 @@ operator|<<
 name|level
 operator|)
 decl_stmt|;
+if|if
+condition|(
+name|level_width
+operator|==
+literal|0
+operator|||
+name|level_height
+operator|==
+literal|0
+condition|)
+break|break;
 comment|/* There is no use having levels that have the same number of            * tiles as the parent level.            */
 if|if
 condition|(
@@ -2103,14 +2116,6 @@ operator|<=
 name|TILE_HEIGHT
 operator|/
 literal|2
-operator|||
-name|level_width
-operator|==
-literal|0
-operator|||
-name|level_height
-operator|==
-literal|0
 condition|)
 break|break;
 name|proj
@@ -3281,7 +3286,7 @@ operator|<<
 name|level
 operator|)
 decl_stmt|;
-comment|/* Tile invalidation must propagate all the way up in the pyramid, so keep        * width and height> 0.        */
+comment|/* Tile invalidation must propagate all the way up in the pyramid,        * so keep width and height> 0.        */
 name|gint
 name|invalidation_width
 init|=
@@ -3584,7 +3589,7 @@ name|x
 operator|++
 control|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|;
 for|for
